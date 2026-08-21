@@ -19,6 +19,7 @@ import {
 import { FlashcardPractice } from './FlashcardPractice';
 import { useModalFocus } from '../hooks/useModalFocus';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
+import { getLessonName } from '../data/lessonCatalog';
 import {
   BookOpen,
   CheckCircle,
@@ -235,7 +236,7 @@ export const PedagogicalDeepDive: React.FC<{
         </span>
       </button>
       {isOpen && (
-        <div id={panelId} className="border-t border-teal-200 bg-white p-4 sm:p-6">
+        <div id={panelId} className="border-t border-teal-200 bg-white p-2 sm:p-4 lg:p-6">
           {state === 'loading' && (
             <div className="flex min-h-28 items-center justify-center gap-2 text-sm font-semibold text-teal-800" role="status">
               <LoaderCircle className="h-4 w-4 animate-spin" /> Carregando aprofundamento…
@@ -321,6 +322,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
   const [showFeedback, setShowFeedback] = useState<Record<string, boolean>>({});
   const [sectionNotes, setSectionNotes] = useState<ModuleNotes>({});
+  const [openNoteEditors, setOpenNoteEditors] = useState<Record<number, boolean>>({});
   const [notesSyncState, setNotesSyncState] = useState<
     'idle' | 'loading' | 'saving' | 'saved' | 'error' | 'local'
   >('idle');
@@ -356,6 +358,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     setSectionNotes(localNotes);
     setSelectedAnswers({});
     setShowFeedback({});
+    setOpenNoteEditors({});
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     if (!user) {
@@ -487,7 +490,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const askTutorAboutSection = (section: ModuleData['sections'][number]) => {
     const selectedExcerpt = window.getSelection()?.toString().trim().slice(0, 600);
     onAskTutor(
-      `Aula ${String(moduleData.num).padStart(2, '0')}: ${moduleData.title}. Seção: ${section.title}. ` +
+      `${getLessonName(moduleData.id, 'full')}. Seção: ${section.title}. ` +
       (section.summary ? `Objetivo de estudo: ${section.summary.slice(0, 360)}.` : '') +
       (selectedExcerpt ? ` Trecho selecionado pelo aluno: “${selectedExcerpt}”.` : '')
     );
@@ -498,15 +501,16 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const nextModule = currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null;
   const coreModuleCount = modules.filter((module) => /^mod\d+$/.test(module.id)).length;
   const hasSimulado = modules.some((module) => module.id === 'simulado');
+  const isExpandedStudy = isFocusMode || Boolean(openUnitId);
 
   return (
     <div
       className={`pb-16 items-start ${
-        isFocusMode ? 'block' : 'grid grid-cols-1 gap-8 lg:grid-cols-12'
+        isExpandedStudy ? 'block' : 'grid grid-cols-1 gap-6 lg:grid-cols-[15rem_minmax(0,1fr)]'
       }`}
     >
       {/* Mobile Module Selector Trigger Bar */}
-      <div className={isFocusMode ? 'hidden' : 'lg:hidden col-span-1'}>
+      <div className={isExpandedStudy ? 'hidden' : 'lg:hidden'}>
         <button
           type="button"
           onClick={() => setIsMobileDrawerOpen(true)}
@@ -517,9 +521,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           aria-haspopup="dialog"
         >
           <div className="flex items-center space-x-3 min-w-0">
-            <span className="text-xs font-bold bg-teal-50 text-teal-800 px-2.5 py-1 rounded-md border border-teal-200 shrink-0">
-              Aula {String(moduleData.num).padStart(2, '0')}
-            </span>
+            <span className="text-xs font-bold bg-teal-50 text-teal-800 px-2.5 py-1 rounded-md border border-teal-200 shrink-0">Tema atual</span>
             <span className="text-sm font-bold text-slate-900 truncate">
               {moduleData.title}
             </span>
@@ -529,7 +531,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
       </div>
 
       {/* Mobile Sidebar Drawer */}
-      {!isFocusMode && isMobileDrawerOpen && (
+      {!isExpandedStudy && isMobileDrawerOpen && (
         <div
           className="lg:hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex flex-col justify-end"
           onClick={() => setIsMobileDrawerOpen(false)}
@@ -574,9 +576,6 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                     }`}
                   >
                     <div className="flex items-center space-x-2.5 min-w-0">
-                      <span className="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-mono font-bold shrink-0">
-                        M{m.num}
-                      </span>
                       <span className="truncate">{m.title}</span>
                     </div>
                     {isSelected && <CheckCircle className="w-4 h-4 text-teal-700 shrink-0" />}
@@ -591,9 +590,9 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
       {/* Desktop Sticky Sidebar (280px equivalent: 3 cols out of 12) */}
       <aside
         className={
-          isFocusMode
+          isExpandedStudy
             ? 'hidden'
-            : 'hidden lg:block lg:col-span-3 sticky top-20 max-h-[calc(100vh-120px)] overflow-y-auto pr-1'
+            : 'hidden lg:block sticky top-20 max-h-[calc(100vh-120px)] overflow-y-auto pr-1'
         }
       >
         <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-2xs space-y-3">
@@ -603,7 +602,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               <h2 className="font-bold text-slate-900 text-sm">Sumário da Apostila</h2>
             </div>
             <span className="text-[11px] font-medium text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full">
-              {coreModuleCount} aulas{hasSimulado ? ' + simulado' : ''}
+              {coreModuleCount} grupos{hasSimulado ? ' + simulado' : ''}
             </span>
           </div>
 
@@ -621,15 +620,6 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                   }`}
                 >
                   <div className="flex items-center space-x-2.5 min-w-0">
-                    <span
-                      className={`text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0 ${
-                        isSelected
-                          ? 'bg-teal-100 text-teal-800'
-                          : 'bg-slate-100 text-slate-700 group-hover:bg-slate-200'
-                      }`}
-                    >
-                      M{m.num}
-                    </span>
                     <span className="truncate">{m.title}</span>
                   </div>
                   <ChevronRight
@@ -650,7 +640,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
       <article
         key={moduleData.id}
         className={`col-span-1 min-w-0 space-y-8 module-content-enter ${
-          isFocusMode ? 'mx-auto max-w-4xl lg:col-span-12' : 'lg:col-span-9'
+          isExpandedStudy ? 'mx-auto w-full max-w-7xl' : ''
         }`}
       >
         {isFocusMode && (
@@ -669,7 +659,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full flex items-center gap-1.5">
               <BookOpen className="w-3.5 h-3.5 text-teal-700" />
-              Aula {String(moduleData.num).padStart(2, '0')} de {coreModuleCount - 1}
+              Percurso {currentIndex + 1} de {coreModuleCount}
             </span>
 
             <div className="flex items-center space-x-2 text-xs text-slate-500 font-medium">
@@ -716,7 +706,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               <details className="group mt-4 border-t border-teal-200/80 pt-3 text-sm text-slate-700">
                 <summary className="flex min-h-[44px] cursor-pointer list-none items-center gap-2 font-bold text-teal-900 marker:hidden">
                   <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true" />
-                  Como aplicar o mapa nesta aula
+                  Como aplicar o mapa neste tema
                 </summary>
                 <ol className="mt-2 space-y-2 pl-5 leading-relaxed marker:font-bold marker:text-teal-800">
                   {moduleData.suvecaMethod.steps.map((step) => <li key={step}>{step}</li>)}
@@ -784,7 +774,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
           <div className="pt-2 flex flex-wrap gap-2">
             <button
-              onClick={() => onAskTutor(`Dúvidas na Aula ${String(moduleData.num).padStart(2, '0')}: ${moduleData.title}`)}
+              onClick={() => onAskTutor(`Dúvidas em ${getLessonName(moduleData.id, 'full')}`)}
               className="button-secondary text-xs"
             >
               <Bot className="w-4 h-4 text-teal-700" />
@@ -838,11 +828,17 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
         {/* Sections Content with Markdown */}
         <div className="space-y-8">
-          {moduleData.sections.map((section, idx) => (
+          {moduleData.sections.map((section, idx) => {
+            const noteKey = `section-${idx}`;
+            const noteIsEmpty = isRichNoteEmpty(sectionNotes[noteKey]);
+            const noteEditorIsOpen = Boolean(openNoteEditors[idx]);
+            const notePanelId = `section-note-editor-${moduleData.id}-${idx}`;
+
+            return (
             <section
               id={integrationUnitIdForSection(section) ? `module-unit-${integrationUnitIdForSection(section)}` : undefined}
               key={`${section.lessonId || moduleData.id}:${section.groupId || idx}:${section.contentUrl || section.title}`}
-              className="min-w-0 overflow-hidden surface p-4 sm:p-8 space-y-5"
+              className="min-w-0 overflow-hidden surface p-2.5 sm:p-6 space-y-5"
             >
               <div className="border-b border-slate-100 pb-3 flex items-start justify-between gap-3">
                 <div className="min-w-0 space-y-2">
@@ -850,7 +846,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                     <h2 className="break-words text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
                       {section.title}
                     </h2>
-                    {!isRichNoteEmpty(sectionNotes[`section-${idx}`]) && (
+                    {!noteIsEmpty && (
                       <span className="inline-flex items-center gap-1 rounded-full bg-teal-100 border border-teal-300 px-2.5 py-0.5 text-[11px] font-extrabold text-teal-900 shadow-2xs">
                         <FileText className="w-3 h-3 text-teal-700" />
                         Anotação registrada
@@ -866,8 +862,8 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                     </span>
                   )}
                 </div>
-                <span className="shrink-0 pt-1 text-xs font-semibold text-slate-700">
-                  {idx + 1}.{moduleData.sections.length}
+                <span className="shrink-0 pt-1 text-xs font-semibold text-slate-700" aria-label={`Unidade ${idx + 1} de ${moduleData.sections.length}`}>
+                  Unidade {idx + 1} de {moduleData.sections.length}
                 </span>
               </div>
 
@@ -988,56 +984,61 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                 </div>
               )}
 
-              <div
-                className={
-                  isFocusMode
-                    ? 'hidden'
-                    : 'rounded-2xl border border-teal-100 bg-teal-50/40 p-4 sm:p-5 space-y-3'
-                }
-              >
+              <div className={isFocusMode ? 'hidden' : 'rounded-2xl border border-teal-100 bg-teal-50/40 p-3 sm:p-4 space-y-3'}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 h-4 text-teal-700" />
-                    <h3 className="text-sm font-bold text-slate-900">
-                      Minhas anotações desta seção
-                    </h3>
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900">Minhas anotações</h3>
+                      <p className="text-[11px] text-slate-600">Registre regras, dúvidas e exemplos sem ocupar a leitura principal.</p>
+                    </div>
                   </div>
-                  <span
-                    className={`text-[11px] font-semibold px-2.5 py-1 rounded-full border ${
-                      notesSyncState === 'error'
-                        ? 'text-rose-700 bg-rose-50 border-rose-200'
-                        : notesSyncState === 'local'
-                        ? 'text-amber-800 bg-amber-50 border-amber-200'
-                        : 'text-emerald-700 bg-emerald-50 border-emerald-200'
-                    }`}
+                  <button
+                    type="button"
+                    aria-expanded={noteEditorIsOpen}
+                    aria-controls={notePanelId}
+                    onClick={() => setOpenNoteEditors((current) => ({ ...current, [idx]: !noteEditorIsOpen }))}
+                    className="button-secondary min-h-11 text-xs"
                   >
-                    {notesSyncState === 'loading'
-                      ? 'Carregando do Firestore...'
-                      : notesSyncState === 'saving'
-                      ? 'Salvando no Firestore...'
-                      : notesSyncState === 'saved'
-                      ? '✓ Sincronizado no Firestore'
-                      : notesSyncState === 'error'
-                      ? 'Falha ao sincronizar'
-                      : 'Salvo localmente'}
-                  </span>
+                    <FileText className="h-4 w-4" />
+                    {noteEditorIsOpen ? 'Fechar anotações' : noteIsEmpty ? 'Adicionar anotação' : 'Editar anotação'}
+                  </button>
                 </div>
 
-                <RichNoteEditor
-                  value={sectionNotes[`section-${idx}`] || ''}
-                  onChange={(value) => handleNoteChange(`section-${idx}`, value)}
-                  disabled={
-                    notesSyncState === 'loading' ||
-                    loadedNotesOwnerId !== currentNotesOwnerId
-                  }
-                  ariaLabel={`Anotações da seção ${section.title}`}
-                  placeholder="Registre a regra, uma exceção ou seu próprio exemplo..."
-                />
-
-                {!user && (
-                  <p className="text-xs text-slate-500">
-                    Entre na sua conta para sincronizar esta anotação com o Firestore.
-                  </p>
+                {noteEditorIsOpen && (
+                  <div id={notePanelId} className="space-y-3 border-t border-teal-100 pt-3">
+                    <div className="flex justify-end">
+                      <span
+                        className={`text-[11px] font-semibold px-2.5 py-1 rounded-full border ${
+                          notesSyncState === 'error'
+                            ? 'text-rose-700 bg-rose-50 border-rose-200'
+                            : notesSyncState === 'local'
+                            ? 'text-amber-800 bg-amber-50 border-amber-200'
+                            : 'text-emerald-700 bg-emerald-50 border-emerald-200'
+                        }`}
+                        role="status"
+                      >
+                        {notesSyncState === 'loading'
+                          ? 'Carregando do Firestore...'
+                          : notesSyncState === 'saving'
+                          ? 'Salvando no Firestore...'
+                          : notesSyncState === 'saved'
+                          ? '✓ Sincronizado no Firestore'
+                          : notesSyncState === 'error'
+                          ? 'Falha ao sincronizar'
+                          : 'Salvo localmente'}
+                      </span>
+                    </div>
+                    <RichNoteEditor
+                      value={sectionNotes[noteKey] || ''}
+                      onChange={(value) => handleNoteChange(noteKey, value)}
+                      disabled={notesSyncState === 'loading' || loadedNotesOwnerId !== currentNotesOwnerId}
+                      ariaLabel={`Anotações da seção ${section.title}`}
+                      autoFocus
+                      placeholder="Registre a regra, uma exceção ou seu próprio exemplo..."
+                    />
+                    {!user && <p className="text-xs text-slate-500">Entre na sua conta para sincronizar esta anotação com o Firestore.</p>}
+                  </div>
                 )}
               </div>
 
@@ -1063,7 +1064,8 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                 </div>
               )}
             </section>
-          ))}
+            );
+          })}
         </div>
 
         {!isFocusMode && errors && onUpdateErrorStatus && (

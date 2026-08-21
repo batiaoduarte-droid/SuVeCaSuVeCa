@@ -54,7 +54,7 @@ describe('DecisionTreeViewer', () => {
     expect(screen.getByRole('status')).toHaveTextContent(/carregando roteiros/i);
     expect(await screen.findByRole('heading', { name: /contar letras e fonemas/i })).toBeInTheDocument();
     expect(screen.getByLabelText(/buscar nos roteiros/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/^aula$/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/tema curricular/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/^tema$/i)).toBeInTheDocument();
 
     const results = screen.getByRole('navigation', { name: /roteiros de resolução encontrados/i });
@@ -64,7 +64,7 @@ describe('DecisionTreeViewer', () => {
     expect(screen.getByText(/verifique a regência/i)).toBeInTheDocument();
   });
 
-  it('filtra por texto e por aula sem expor os identificadores editoriais', async () => {
+  it('filtra por texto e por tema curricular sem expor os identificadores editoriais', async () => {
     const user = userEvent.setup();
     render(<DecisionTreeViewer />);
     await screen.findByRole('heading', { name: /contar letras e fonemas/i });
@@ -75,7 +75,7 @@ describe('DecisionTreeViewer', () => {
     expect(within(results).getByRole('button', { name: /crase/i })).toBeInTheDocument();
 
     await user.clear(screen.getByLabelText(/buscar nos roteiros/i));
-    await user.selectOptions(screen.getByLabelText(/^aula$/i), 'A00');
+    await user.selectOptions(screen.getByLabelText(/tema curricular/i), 'A00');
     expect(within(results).getAllByRole('button')).toHaveLength(1);
     expect(within(results).getByRole('button', { name: /fonética e fonologia/i })).toBeInTheDocument();
     expect(screen.queryByText(/IP-A|G0[16]|EDITORIAL:/)).not.toBeInTheDocument();

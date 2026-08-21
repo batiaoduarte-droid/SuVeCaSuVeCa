@@ -20,7 +20,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Dominar o algoritmo aritmético universal de contagem de letras e fonemas para bancas de concurso (Cebraspe, FGV, FCC)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-hardened"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A00-G02",
@@ -30,7 +30,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Construir do zero a base fonológica e silábica da Língua Portuguesa, conceituando o papel da vogal como centro da sílaba, detalhando todos os encontros vocálicos (ditongos crescentes e decrescentes, tritongos e hiatos), encontros consonantais (perfeitos e imperfeitos), dígrafos (consonantais e vocálicos), dífono da letra X, regras de partição silábica e o cálculo exato de grafemas versus fonemas, articulando teoria, mnemônicos (\"mantras\") e resolução de vocábulos complexos em nível de concursos públicos (Cebraspe, FGV, FCC)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A00-G03",
@@ -42,7 +42,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Estudo da Sílaba - Questões no eixo Camada própria, fora do núcleo SuVeCA e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A00-G04",
@@ -52,91 +52,91 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Mapear, sistematizar e aplicar as 7 justificativas gramaticais de acentuação gráfica exigidas pelas bancas de concursos públicos (com ênfase especial no modelo de julgamento de assertivas do CEBRASPE/CESPE), desarmando pegadinhas recorrentes de classificação silábica, encontros vocálicos e pronomes enclíticos."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A00-G05",
     "lessonId": "A00",
-    "title": "Acentuação Gráfica - Regras Especiais e Acordo Ortográfico",
+    "title": "Emprego do Hífen - Fundamentos",
     "learningObjectives": [
       "Construir uma base lógica, fonética e operacional para o emprego do hífen na Língua Portuguesa, superando a memorização mecânica por meio de princípios articulatórios (mantras mnemônicos), distinções prosódicas (tônico vs. átono), tratamentos consonantais específicos (hiper-, sub-, co-, mal), consolidação em um mapa mental de 5 casos essenciais e aplicação imediata em itens práticos de provas de concursos públicos."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A00-G06",
     "lessonId": "A00",
-    "title": "Emprego das Letras e Homônimos",
+    "title": "Emprego do Hífen - Questões",
     "learningObjectives": [
       "Consolidar a teoria e a prática do emprego do hífen segundo a ortografia oficial (Acordo Ortográfico), estabelecendo uma distinção estrutural entre as regras de prefixação e as regras de nomes compostos, sistematizando a categorização em 5 Casos de hifenização e desarmando pegadinhas recorrentes em provas de concurso público (com ênfase em itens Certo/Errado e múltipla escolha do Cebraspe)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A00-G07",
     "lessonId": "A00",
-    "title": "Emprego do Hífen",
+    "title": "Emprego dos Porquês",
     "learningObjectives": [
       "Consolidar a teoria gramatical, a classificação morfossintática e as estratégias práticas de resolução de questões de concursos públicos sobre as quatro formas ortográficas da expressão: porquê, por que, por quê e porque."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A01-G01",
     "lessonId": "A01",
-    "title": "Substantivos - Flexão de Gênero, Número e Grau",
+    "title": "Classes Variáveis e Invariáveis",
     "learningObjectives": [
       "Apresentar a divisão morfológica fundamental da Língua Portuguesa entre classes variáveis (que admitem flexão de gênero e número) e invariáveis (sem flexão), detalhar o comportamento de palavras simples em contraste com suas locuções correspondentes, ensinar o procedimento prático do Método das Setas para classificação em contexto e consolidar a teoria por meio de exercícios de fixação e resolução de questões de bancas examinadoras."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A01-G02",
     "lessonId": "A01",
-    "title": "Adjetivos - Flexão e Adjetivos Compostos",
+    "title": "Emprego das Classes de Palavras",
     "learningObjectives": [
       "Reconstruir os fundamentos morfológicos e sintáticos das classes gramaticais (Substantivo, Adjetivo e Advérbio), dominar a dinâmica do sintagma nominal (anteposição adjetiva), reconhecer o processo de derivação imprópria (substantivação por determinantes) e aplicar métodos operacionais infalíveis (Técnica das Setas, Teste do \"Que é\", Teste do Intensificador \"Muito\") na resolução de itens do modelo Certo/Errado da banca CEBRASPE."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A01-G03",
     "lessonId": "A01",
-    "title": "Artigos e Numerais - Valores Discursivos e Emprego",
+    "title": "Advérbios",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Advérbios.",
       "Aplicar regras canônicas e procedimentos decisórios de Advérbios na resolução de questões.",
       "Analisar o papel de Advérbios no eixo Conexão forte e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A01-G04",
     "lessonId": "A01",
-    "title": "Advérbios e Locuções Adverbiais",
+    "title": "Artigos",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Artigos.",
       "Aplicar regras canônicas e procedimentos decisórios de Artigos na resolução de questões.",
       "Analisar o papel de Artigos no eixo Apoio estrutural e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A01-G05",
     "lessonId": "A01",
-    "title": "Interjeições e Palavras Denotativas",
+    "title": "Numerais e Interjeições",
     "learningObjectives": [
       "Consolidar a teoria morfossintática, os testes diagnósticos e os padrões de cobrança em concursos públicos para as classes de palavras Numeral e Interjeição. O percurso aborda desde os quatro tipos canônicos de numerais e suas pegadinhas contextuais mais recorrentes (artigo vs. numeral, funções da palavra segundo, numerais coletivos, valor aproximativo contextual e flexões de meio/metade) até a natureza invariável, a ausência de função sintática e os dois modelos de questões de interjeição (identificação/derivação imprópria e valor semântico contextual)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A02-G01",
@@ -149,7 +149,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Identificar locuções prepositivas e preservar o paralelismo sintático-semântico em processos de reescrita."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-hardened"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A02-G02",
@@ -159,7 +159,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Reconstruir de forma articulada a fundamentação teórica, as peculiaridades sintático-semânticas e a aplicação prática das conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas e explicativas), integrando a memorização das listas de conectivos com a análise contextual discursiva exigida em provas de concursos públicos (com foco especial na banca CEBRASPE) e consolidando os métodos de resolução de questões de valor semântico e reescritura/substituição textual."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A02-G03",
@@ -169,17 +169,17 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Fornecer o domínio teórico, sintático e semântico integral das Conjunções Subordinativas (Integrantes e Adverbiais), instrumentalizar o candidato com métodos diagnósticos mnemônicos (6Cs + FTP, Mantra do Referente Posterior e Teste do \"ISSO\"), aprofundar a análise de conectivos polissêmicos de alta complexidade (desde que e uma vez que) e validar procedimentos práticos de resolução de reescrituras e substituição de conectivos em questões recentes de concursos públicos, com ênfase na banca Cebraspe/CESPE."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A02-G04",
     "lessonId": "A02",
-    "title": "Conjunções Integrantes",
+    "title": "Valores de E e Pois",
     "learningObjectives": [
       "Capacitar o estudante a identificar, distinguir e aplicar com precisão cirúrgica os múltiplos valores semânticos e sintáticos das conjunções E e POIS em textos de concursos públicos, dominando métodos de análise funcional (análise do elemento posterior e critério posicional relativo ao verbo), diferenciando relações de causa e explicação por meio do teste fático da consequência, e neutralizando pegadinhas de alto nível das bancas examinadoras (especialmente Cebraspe/CESPE), tais como a armadilha da colocação pronominal na troca de conjunções por ponto e vírgula e a falsa conclusão induzida por adjuntos adverbiais intercalados após o conector."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A02-G05",
@@ -189,7 +189,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Desenvolver o domínio completo da semântica de conectores em provas de concursos públicos, capacitando o candidato a reconhecer os 5 valores do vocábulo \"como\" (comparação, conformidade, causa, adição, exemplificação), aplicar técnicas de leitura de períodos extensos, dominar as regras de substituição sintática sem alteração de sentido e neutralizar as armadilhas clássicas da banca CEBRASPE/CESPE (como as distinções entre porquanto vs. conquanto, posto que vs. visto que e a pontuação do conector pois)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A03-G01",
@@ -201,49 +201,49 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Pronomes Pessoais no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A03-G02",
     "lessonId": "A03",
-    "title": "Pronomes de Tratamento",
+    "title": "Pronomes Pessoais - Questões",
     "learningObjectives": [
       "Consolidar integralmente as regras de emprego, regência, valor semântico-possessivo, alterações morfofonológicas e colocação dos pronomes pessoais na norma-padrão por meio de um quadro sintético teórico e da resolução exaustiva das Questões 12 a 24 das principais bancas de concursos públicos do país (FCC, VUNESP, CONSULPLAN, FGV e CEBRASPE/CESPE)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A03-G03",
     "lessonId": "A03",
-    "title": "Pronomes Possessivos",
+    "title": "Possessivos Indefinidos e Interrogativos",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Possessivos Indefinidos e Interrogativos.",
       "Aplicar regras canônicas e procedimentos decisórios de Possessivos Indefinidos e Interrogativos na resolução de questões.",
       "Analisar o papel de Possessivos Indefinidos e Interrogativos no eixo Conexão forte e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A03-G04",
     "lessonId": "A03",
-    "title": "Pronomes Demonstrativos",
+    "title": "Demonstrativos e Relativos",
     "learningObjectives": [
       "Fornecer um domínio sistemático e aprofundado sobre duas das classes pronominais mais cobradas em concursos públicos: os Pronomes Demonstrativos e os Pronomes Relativos. O escopo abrange o método de decisão tripla nos demonstrativos (espaço, tempo e texto), as funções déiticas e anafóricas/catafóricas, a resolução de múltiplos referentes, a distinção crítica entre normas para redação discursiva versus provas objetivas, a técnica de reconhecimento de pronomes relativos em dois passos, a diferenciação da palavra que (relativo, integrante, realce, preposição e consecutiva), a identificação exata do antecedente de natureza substantiva (substantivos, pronomes substantivos como o/os, numerais substantivos como milhões), a estrutura de concordância versus referência de cujo/cuja, e o impacto da mudança de referentes sobre o sentido textual original."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A03-G05",
     "lessonId": "A03",
-    "title": "Pronomes Indefinidos e Interrogativos",
+    "title": "Emprego dos Pronomes Relativos",
     "learningObjectives": [
       "Capacitar o estudante a dominar o emprego sintático, semântico e prescritivo de todos os pronomes relativos da Língua Portuguesa (que, o qual e flexões, quem, onde, aonde, donde, como, quando, quanto, cujo e flexões), instrumentalizando-o para resolver com precisão questões de reescritura, substituição pronominal, concordância nominal, regência verbal/nominal com deslocamento de preposição e manutenção de coesão anafórica nas principais bancas examinadoras do país (VUNESP, FCC, CESPE/CEBRASPE, FGV, AOCP, IBFC, FUNCAB, COPESE/UFPI e INSTITUTO CIDADES)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A03-G06",
@@ -255,17 +255,17 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Pronomes Relativos - Regência e Reescrita no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A03-G07",
     "lessonId": "A03",
-    "title": "Funções Sintáticas dos Pronomes Relativos",
+    "title": "Colocação dos Pronomes Átonos",
     "learningObjectives": [
       "Reconstruir e consolidar a matriz teórica e prática da Colocação Pronominal para concursos públicos, integrando os fundamentos sintáticos básicos (3 Proibições, 1 Regra Geral, 2 Exceções, 1 Mantra), o aprofundamento em casos complexos (distinção infinitivo vs. futuro do subjuntivo, intercalações pós-vírgula, locuções verbais, atração a distância e aposínclise) e a aplicação exaustiva em itens recentes da banca Cebraspe (2021 a 2024)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A03-G08",
@@ -275,71 +275,71 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Consolidar os tópicos mais complexos, controvertidos e minados da sintaxe de colocação pronominal (próclise, ênclise, mesóclise e apossínclese), instrumentalizando o estudante a resolver com precisão e agilidade itens recentes da banca Cebraspe/CESPE (2023–2024) por meio de modelagem teórica em lousa, algoritmos práticos de validação (Método 3-1-2) e análise exaustiva de jurisprudência examinadora."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G01",
     "lessonId": "A04",
-    "title": "Estrutura Morfológica dos Verbos",
+    "title": "Tempos e Modos Verbais",
     "learningObjectives": [
       "Fornecer um método ágil e sistemático para o reconhecimento e a identificação imediata de tempos, modos e formas nominais sob a pressão de provas de concurso público. O grupo consolida desde a fundamentação teórica — substituindo a memorização estática de tabelas de conjugação por gatilhos mentais diretos (\"palavras mágicas\"), paradigmas de verbos líderes e regras de derivação do modo imperativo — até o treinamento prático e o desarmamento de pegadinhas contextuais recorrentes em bancas de alto nível, com ênfase no padrão Cebraspe (itens de Certo/Errado)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G02",
     "lessonId": "A04",
-    "title": "Modos e Tempos Verbais - Modo Indicativo (Presente e Pretéritos)",
+    "title": "Semântica dos Tempos e Modos Verbais",
     "learningObjectives": [
       "Sistematizar a matriz teórica dos valores semânticos dos tempos e modos verbais (Indicativo e Subjuntivo) e capacitar o candidato a resolver questões de alto nível da banca Cebraspe/CESPE por meio de métodos morfossintáticos e contextuais rigorosos (#ANOTAAÍ, teste das palavras-chave, fatiamento de assertivas e regra da contextualização anafórica/catafórica), neutralizando armadilhas clássicas entre hipótese, dúvida, impossibilidade e aspectualidade."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G03",
     "lessonId": "A04",
-    "title": "Tempos Verbais - Futuros do Indicativo",
+    "title": "Desinências Verbais",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Desinências Verbais.",
       "Aplicar regras canônicas e procedimentos decisórios de Desinências Verbais na resolução de questões.",
       "Analisar o papel de Desinências Verbais no eixo Apoio estrutural e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G04",
     "lessonId": "A04",
-    "title": "Modo Subjuntivo e Correlação Verbal",
+    "title": "Formas Nominais do Verbo",
     "learningObjectives": [
       "Capacitar o estudante a dominar a morfologia, a sintaxe e a semântica das três formas nominais do verbo (Infinitivo, Gerúndio e Particípio), compreendendo suas funções nominais (substantivo, adjetivo, advérbio), as regras normativas de flexão e escolha de particípio em locuções verbais, o manuseio seguro do infinitivo pessoal (flexionado e não flexionado), a distinção morfossintática em relação ao futuro do subjuntivo, a identificação dos valores semânticos do gerúndio em orações reduzidas, a eliminação de vícios estilísticos (gerundismo e gerúndio posterior) e o tratamento de ambiguidades morfológicas em bancas de alto nível (FGV, FCC, CESPE/Cebraspe)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G05",
     "lessonId": "A04",
-    "title": "Modo Imperativo (Afirmativo e Negativo)",
+    "title": "Verbos Irregulares - Líderes e Bons Amigos",
     "learningObjectives": [
       "Apresentar a arquitetura completa do Grupo 1 de Verbos Irregulares (Verbos Líderes e Bons Amigos), ensinando o paradigma dos 4 verbos primitivos matrizes (PÔR, TER, VER, VIR), o mecanismo de herança flexional para todos os seus verbos derivados cognatos, os gatilhos mnemônicos temporais (\"Rodinhas de Bicicleta\"), os testes de diagnóstico morfológico (Infinitivo Pessoal vs. Futuro do Subjuntivo, Particípio vs. Gerúndio homógrafos de VIR via Teste do Verbo CHEGAR), a sistematização das desinências da 2ª pessoa do plural (VÓS), as regras morfossintáticas aplicadas (acentuação diferencial e próclise obrigatória com conjunção integrante) e consolidar o Método Operacional dos 4 Passos por meio da resolução guiada e exaustiva de 26 exercícios práticos de fixação."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G06",
     "lessonId": "A04",
-    "title": "Formas Nominais do Verbo (Infinitivo, Gerúndio e Particípio)",
+    "title": "Verbos Irregulares - Questões",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Verbos Irregulares - Questões.",
       "Aplicar regras canônicas e procedimentos decisórios de Verbos Irregulares - Questões na resolução de questões.",
       "Analisar o papel de Verbos Irregulares - Questões no eixo Apoio indireto e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G07",
@@ -349,97 +349,97 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Consolidar a metodologia de flexão dos verbos que fogem aos paradigmas regulares padrão da língua portuguesa, dividindo o estudo em \"Falsos Amigos\" (prover, requerer) e \"Verbos de Difícil Conjugação\" (caber, crer, haver, aprazer, ir, aderir), fundamentando a análise no Paradigma de Formação dos Tempos Verbais (Tempos Primitivos $\\rightarrow$ Tempos Derivados) e aplicando técnicas de resolução (Método dos 4 Passos, Verbos Líderes, \"Colinha Temporal\" e testes de regência/crase) em questões das principais bancas organizadoras."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G08",
     "lessonId": "A04",
-    "title": "Verbos Anômalos, Defectivos e Abundantes",
+    "title": "Verbos em EAR e IAR e Defectivos",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Verbos em EAR e IAR e Defectivos.",
       "Aplicar regras canônicas e procedimentos decisórios de Verbos em EAR e IAR e Defectivos na resolução de questões.",
       "Analisar o papel de Verbos em EAR e IAR e Defectivos no eixo Apoio indireto e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A04-G09",
     "lessonId": "A04",
-    "title": "Verbos Notáveis e Derivados (TER, VIR, VER, LER, PÔR)",
+    "title": "Correlação de Tempos Verbais",
     "learningObjectives": [
       "Reconstruir de forma integrada a teoria e a prática da Correlação de Tempos Verbais (também tratada como Articulação Verbal ou Paralelismo Semântico), partindo dos fundamentos conceituais, matrizes temporais de harmonia, regras de independência modal e exceções semânticas (material de origem), avançando para o método de eliminação em bloco, análise de locuções verbais, gatilhos de atração do subjuntivo e resolução exaustiva de questões das bancas VUNESP, FCC, FGV e CEBRASPE (material de origem)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G01",
     "lessonId": "A05",
-    "title": "Semântica dos Tempos Verbais e Aspecto",
+    "title": "Transitividade Verbal - Fundamentos",
     "learningObjectives": [
       "Estabelecer a base conceitual, metodológica e operacional da análise sintática oracional por meio do estudo exaustivo da Predicação e Transitividade Verbal. O percurso pedagógico parte da ruptura com paradigmas morfológicos isolados, sistematiza a classificação macro (verbos nocionais vs. relacionais), constrói os 9 Mantras da Análise Sintática, introduz o Passo a Passo da Análise Sintática em 5 Etapas com a técnica de Colchetes e Setas, e consolida a teoria por meio da resolução minuciosa de uma bateria de 20 frases de fixação, tratando desambiguações críticas (Estado vs. Modo, Adjunto Adverbial vs. Complemento, Locuções Verbais, Tipologia de Sujeito) e divergências doutrinárias de bancas examinadoras (FGV, FCC, Cebraspe, Vunesp)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G02",
     "lessonId": "A05",
-    "title": "Articulação Temporal e Correlação no Período",
+    "title": "Transitividade Verbal - Questões",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Transitividade Verbal - Questões.",
       "Aplicar regras canônicas e procedimentos decisórios de Transitividade Verbal - Questões na resolução de questões.",
       "Analisar o papel de Transitividade Verbal - Questões no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G03",
     "lessonId": "A05",
-    "title": "Locuções Verbais e Tempos Compostos",
+    "title": "Complementos e Objetos Pleonásticos",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Complementos e Objetos Pleonásticos.",
       "Aplicar regras canônicas e procedimentos decisórios de Complementos e Objetos Pleonásticos na resolução de questões.",
       "Analisar o papel de Complementos e Objetos Pleonásticos no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G04",
     "lessonId": "A05",
-    "title": "Aspecto Verbal e Valores Discursivos",
+    "title": "Vozes Verbais - Fundamentos",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Vozes Verbais - Fundamentos.",
       "Aplicar regras canônicas e procedimentos decisórios de Vozes Verbais - Fundamentos na resolução de questões.",
       "Analisar o papel de Vozes Verbais - Fundamentos no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G05",
     "lessonId": "A05",
-    "title": "Emprego do Infinitivo Pessoal vs Impessoal",
+    "title": "Vozes Verbais - Questões",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Vozes Verbais - Questões.",
       "Aplicar regras canônicas e procedimentos decisórios de Vozes Verbais - Questões na resolução de questões.",
       "Analisar o papel de Vozes Verbais - Questões no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G06",
     "lessonId": "A05",
-    "title": "Transposição de Discurso Direto e Indireto",
+    "title": "Reescritura de Vozes - Fundamentos",
     "learningObjectives": [
       "Dominar o processo de transposição de orações da voz ativa para a voz passiva analítica em todos os seus níveis de complexidade. O bloco estabelece o método mnemônico e procedimental das \"Quatro Instruções\" (\"Chamar o feito à ordem\"), detalha as restrições sintáticas de transitividade e treina exaustivamente a resolução de 25 itens (10 exercícios de fixação e 15 questões de provas recentes das bancas VUNESP, Instituto AOCP, FCC, FGV e CEBRASPE/CESPE)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G07",
@@ -451,7 +451,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Reescritura de Vozes - Partes 02 e 03 no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G08",
@@ -463,7 +463,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Reescritura de Vozes - Partes 04 a 07 no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G09",
@@ -478,46 +478,46 @@ export const PEDAGOGICAL_VIEW_INDEX = [
   {
     "unitId": "IP-A05-G10",
     "lessonId": "A05",
-    "title": "Funções da Partícula 'SE' - Voz Passiva Sintética e Indeterminação do Sujeito",
+    "title": "Verbos Impessoais e Auxiliares",
     "learningObjectives": [
       "Fornecer um domínio teórico-prático exaustivo sobre a sintaxe e a semântica dos verbos impessoais (fenômenos naturais denotativos vs. conotativos, verbos haver e fazer) e das locuções verbais (distribuição funcional entre verbo principal e auxiliar, tempos compostos, intercalação de termos e cadeias complexas), consolidando o princípio da hierarquia sintática (\"O principal manda, o auxiliar obedece\" / \"O auxiliar carrega a (im)pessoalidade do principal\") e a distinção precisa da tipologia do sujeito (oculto, elíptico contextual, desinencial, indeterminado e inexistente) para resolução de questões de bancas como Cebraspe, FGV e Vunesp."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G11",
     "lessonId": "A05",
-    "title": "Funções da Partícula 'SE' - Reflexivo, Recíproco e Parte Integrante",
+    "title": "Verbos Impessoais e Auxiliares - Questões",
     "learningObjectives": [
       "Consolidar, por meio da resolução comentada de 17 questões de concursos públicos de diversas bancas examinadoras (CONSESP, PCRJ, FUNRIO, FUNDATEC, FCC, FAFIFA, Cesgranrio, IBGP, CESPE/Cebraspe e Quadrix), o domínio prático sobre a identificação e classificação de verbos impessoais (fenômenos naturais denotativos, haver existencial/temporal, fazer cronológico/climático, passar de indicativo de horas), a distinção rigorosa entre oração sem sujeito, sujeito indeterminado, sujeito elíptico e sujeito oracional, além da estrutura formal, dinâmica hierárquica e distribuição de flexões nas locuções verbais."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A05-G12",
     "lessonId": "A05",
-    "title": "Funções da Partícula 'SE' - Realce (Expletiva) e Conjunções",
+    "title": "Verbos Pronominais",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Verbos Pronominais.",
       "Aplicar regras canônicas e procedimentos decisórios de Verbos Pronominais na resolução de questões.",
       "Analisar o papel de Verbos Pronominais no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A06-G01",
     "lessonId": "A06",
-    "title": "Termos Essenciais da Oração - Sujeito",
+    "title": "Análise Sintática - Conceitos Iniciais",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Análise Sintática - Conceitos Iniciais.",
       "Aplicar regras canônicas e procedimentos decisórios de Análise Sintática - Conceitos Iniciais na resolução de questões.",
       "Analisar o papel de Análise Sintática - Conceitos Iniciais no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A06-G02",
@@ -530,29 +530,29 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Dominar as orações sem sujeito (verbos impessoais HAVER e FAZER) e seu contraste direto com EXISTIR, OCORRER e ACONTECER."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-hardened"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A06-G03",
     "lessonId": "A06",
-    "title": "Termos Integrantes - Objeto Direto",
+    "title": "Predicação Verbal e Tipos de Predicado",
     "learningObjectives": [
       "Capacitar o estudante a executar a análise morfossintática integral da oração a partir do verbo, superando a memorização mecânica de listas descontextualizadas de verbos por meio de algoritmos operacionais (\"Mantra do Contexto\", \"Método das Setas Sintáticas\", \"Critério Bivalente do Verbo de Ligação\" e \"Teste de Substituição\"), habilitando-o a classificar corretamente a transitividade, isolar os complementos e adjuntos, reconhecer predicativos e determinar a natureza do predicado em bancas de alto nível (com ênfase na FGV)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A06-G04",
     "lessonId": "A06",
-    "title": "Termos Integrantes - Objeto Indireto e Pronomes Oblíquos",
+    "title": "Objetos e Transitividade Verbal",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Objetos e Transitividade Verbal.",
       "Aplicar regras canônicas e procedimentos decisórios de Objetos e Transitividade Verbal na resolução de questões.",
       "Analisar o papel de Objetos e Transitividade Verbal no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A06-G05",
@@ -562,29 +562,29 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Estabelecer a fundamentação teórica, a metodologia operacional de análise sintática (\"Método das Setas\") e a consolidação morfossintática do Complemento Nominal e do Agente da Passiva, capacitando o estudante a diferenciá-los com rigor de termos concorrentes (Objeto Indireto, Objeto Direto e Adjunto Adverbial de Causa) em provas de concursos públicos contemporâneos."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A06-G06",
     "lessonId": "A06",
-    "title": "Termos Acessórios - Adjunto Adverbial e Adjunto Adnominal",
+    "title": "Vocativo e Aposto",
     "learningObjectives": [
       "Sistematizar a teoria, a morfossintaxe, as regras de pontuação e os critérios diagnósticos de diferenciação de dois termos fundamentais da sintaxe da oração — o vocativo e o aposto —, articulando as armadilhas clássicas de concursos (diferenciação entre vocativo e sujeito, vocativo e aposto explicativo, aposto e predicativo deslocado, aposto especificativo e adjunto adnominal, concordância com aposto resumitivo e dissecação da estrutura coesiva \"o que\")."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A06-G07",
     "lessonId": "A06",
-    "title": "Termos Acessórios - Aposto e Vocábulo Independente Vocativo",
+    "title": "Adjuntos Adverbial e Adnominal",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Adjuntos Adverbial e Adnominal.",
       "Aplicar regras canônicas e procedimentos decisórios de Adjuntos Adverbial e Adnominal na resolução de questões.",
       "Analisar o papel de Adjuntos Adverbial e Adnominal no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A06-G08",
@@ -594,17 +594,17 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Consolidar a teoria morfossintática e o instrumental analítico operacional para o reconhecimento infalível dos termos modificadores e qualificadores da oração. O grupo desmistifica crenças reducionistas escolares, define o predicativo do sujeito e do objeto, fundamenta a mecânica de satélite do adjunto adnominal, esclarece a coexistência de predicativos com qualquer transitividade verbal e estabelece procedimentos de desambiguação sintática entre predicativo do sujeito versus adjunto adverbial de modo e entre predicativo do objeto versus adjunto adnominal."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G01",
     "lessonId": "A07",
-    "title": "Período Composto por Coordenação",
+    "title": "Período Composto - Fundamentos",
     "learningObjectives": [
       "Estabelecer as bases conceituais, metodológicas e operacionais para a análise da sintaxe do período composto, superando métodos intuitivos tradicionais por meio da classificação estrutural orientada por conectivos (\"de trás para frente\" / \"método ninja\"), delimitando as fronteiras entre período simples (oração absoluta) e composto, diferenciando coordenação de subordinação, tipificando as orações coordenadas em assindéticas e sindéticas, e fixando esses conceitos por meio da resolução comentada de questões representativas de bancas examinadoras (IBADE, FGV, Instituto AOCP, CESPE/Cebraspe)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G02",
@@ -614,113 +614,113 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Estruturar, aprofundar e consolidar a sintaxe e a semântica das orações coordenadas (assindéticas e as 5 espécies de sindéticas: aditivas, adversativas, alternativas, conclusivas e explicativas), instrumentalizando o estudante para reconhecer a polissemia dos conectivos (e, mas, pois, nem), diferenciar nuances contextuais de alto rendimento (alternância vs. exclusão; oposição vs. ressalva; explicação vs. causa) e aplicar procedimentos de resolução rápida e precisa em bancas examinadoras de diferentes níveis de complexidade (AOCP, VUNESP, FGV, AMAUC, IBADE, FUNDEP, FCC, Quadrix e CEBRASPE)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G03",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Substantivas - Subjetivas e Objetivas Diretas",
+    "title": "Subordinadas Substantivas e Adjetivas",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Subordinadas Substantivas e Adjetivas.",
       "Aplicar regras canônicas e procedimentos decisórios de Subordinadas Substantivas e Adjetivas na resolução de questões.",
       "Analisar o papel de Subordinadas Substantivas e Adjetivas no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G04",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Substantivas - Objetivas Indiretas, Completivas Nominais e Predicativas",
+    "title": "Orações Subordinadas Adverbiais",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Orações Subordinadas Adverbiais.",
       "Aplicar regras canônicas e procedimentos decisórios de Orações Subordinadas Adverbiais na resolução de questões.",
       "Analisar o papel de Orações Subordinadas Adverbiais no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G05",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Substantivas - Apositivas",
+    "title": "Orações Reduzidas - Fundamentos",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Orações Reduzidas - Fundamentos.",
       "Aplicar regras canônicas e procedimentos decisórios de Orações Reduzidas - Fundamentos na resolução de questões.",
       "Analisar o papel de Orações Reduzidas - Fundamentos no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G06",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Adjetivas - Explicativas vs Restritivas",
+    "title": "Orações Reduzidas - Questões",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Orações Reduzidas - Questões.",
       "Aplicar regras canônicas e procedimentos decisórios de Orações Reduzidas - Questões na resolução de questões.",
       "Analisar o papel de Orações Reduzidas - Questões no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G07",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Adverbiais - Causais, Comparativas e Concessivas",
+    "title": "Orações Reduzidas - Revisão e Reescrita",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Orações Reduzidas - Revisão e Reescrita.",
       "Aplicar regras canônicas e procedimentos decisórios de Orações Reduzidas - Revisão e Reescrita na resolução de questões.",
       "Analisar o papel de Orações Reduzidas - Revisão e Reescrita no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G08",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Adverbiais - Condicionais, Conformativas e Consecutivas",
+    "title": "Desenvolvimento das Orações Reduzidas",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Desenvolvimento das Orações Reduzidas.",
       "Aplicar regras canônicas e procedimentos decisórios de Desenvolvimento das Orações Reduzidas na resolução de questões.",
       "Analisar o papel de Desenvolvimento das Orações Reduzidas no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G09",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Adverbiais - Finais, Proporcionais e Temporais",
+    "title": "Palavra QUE",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Palavra QUE.",
       "Aplicar regras canônicas e procedimentos decisórios de Palavra QUE na resolução de questões.",
       "Analisar o papel de Palavra QUE no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A07-G10",
     "lessonId": "A07",
-    "title": "Orações Reduzidas de Infinitivo, Gerúndio e Particípio",
+    "title": "Palavra SE",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Palavra SE.",
       "Aplicar regras canônicas e procedimentos decisórios de Palavra SE na resolução de questões.",
       "Analisar o papel de Palavra SE no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A08-G01",
     "lessonId": "A08",
-    "title": "Emprego da Vírgula - Termos da Oração",
+    "title": "Sinais de Pontuação - Visão Geral",
     "learningObjectives": [
       "Apresentar a base estrutural do emprego dos sinais de pontuação na Língua Portuguesa com foco no modelo de cobrança de bancas de concurso (notadamente Cebraspe/CESPE). O grupo estabelece a regra de ouro da proibição da vírgula no esquema sintático canônico (SVC), detalha as regras obrigatórias de isolamento do vocativo e do aposto explicativo (com base estritamente substantiva), e define os limites sintáticos da pontuação em enumerações e do uso dos dois-pontos."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A08-G02",
@@ -733,29 +733,29 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Identificar e neutralizar armadilhas clássicas de pontuação da banca Cebraspe e FGV em processos de reescrita."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-hardened"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A08-G03",
     "lessonId": "A08",
-    "title": "Ponto e Vírgula e Dois-Pontos",
+    "title": "Uso da Vírgula - Aprofundamento",
     "learningObjectives": [
       "Sistematizar as regras avançadas, os mecanismos sintático-semânticos e as armadilhas de prova no emprego da vírgula em períodos simples e compostos. O bloco capacita o estudante a dominar desde a distinção semântica entre orações adjetivas restritivas e explicativas (com foco em questões de dupla leitura e leitura única) até a identificação de vírgula vicária (elipse verbal), proibições absolutas de quebra da ordem direta (SVC), pontuação de orações adverbiais, vírgula de dupla função em apostos explicativos, casuística da conjunção aditiva \"e\" e a matriz mestra de vírgula facultativa para resolução de questões de supressão de pontuação em bancas de alto nível (Cebraspe e FGV)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A08-G04",
     "lessonId": "A08",
-    "title": "Ponto Final, Ponto de Interrogação e Ponto de Exclamação",
+    "title": "Ponto e Vírgula Dois-Pontos e Aspas",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Ponto e Vírgula Dois-Pontos e Aspas.",
       "Aplicar regras canônicas e procedimentos decisórios de Ponto e Vírgula Dois-Pontos e Aspas na resolução de questões.",
       "Analisar o papel de Ponto e Vírgula Dois-Pontos e Aspas no eixo Conexão forte e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A08-G05",
@@ -767,7 +767,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Travessão e Parênteses no eixo Apoio estrutural e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A08-G06",
@@ -777,7 +777,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Consolidar a aplicação prática e avançada das regras de pontuação na Língua Portuguesa através da resolução comentada de questões oficiais de bancas examinadoras de alto nível (VUNESP, IBFC, FCC, FGV e Cebraspe), cobrindo o emprego de vírgula, ponto e vírgula, dois-pontos, travessões, parênteses, aspas e ponto final, além de analisar os impactos sintáticos, semânticos e estilísticos em propostas de reescrita e substituição de sinais."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A09-G01",
@@ -790,7 +790,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Dominar a flexão em estruturas com conectivos especiais (COM, OU), verbos temporais (DAR, BATER, SOAR) e na voz passiva com SE."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-hardened"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A09-G02",
@@ -800,7 +800,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Aprofundar as estruturas sintáticas de maior complexidade e incidência em concursos públicos no âmbito da concordância verbal, compreendendo as regras e exceções de orações sem sujeito (verbos impessoais), a mecânica de transferência de impessoalidade em locuções verbais, a morfossintaxe do sujeito oracional (orações subordinadas substantivas subjetivas desenvolvidas e reduzidas), o contraste entre voz passiva sintética e indeterminação do sujeito, a resolução de ambiguidades com o pronome relativo que, a identificação de sujeitos pospostos invertidos e o emprego correto de locuções modais como haver de + infinitivo."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A09-G03",
@@ -810,7 +810,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Sistematizar as regras gerais e os casos especiais de concordância verbal da língua portuguesa por meio de uma progressão pedagógica que integra: (1) fixação prática multirregra em 15 frases estruturadas; (2) consolidação teórica e esquemática dos 5 tipos de sujeito da gramática normativa com a resolução comentada de questões de múltipla escolha de bancas de referência (VUNESP, CESGRANRIO, FCC); e (3) resolução analítica aprofundada de uma bateria de 18 itens no formato Certo/Errado da banca CESPE/CEBRASPE, desarmando armadilhas sintáticas recorrentes em concursos de alto nível."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A09-G04",
@@ -820,31 +820,31 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Sistematizar a teoria integral da concordância verbal na língua portuguesa padrão, partindo da fundamentação funcional do núcleo do sujeito, cobrindo os 6 grandes casos canônicos e especiais (sujeito simples, composto, pronome relativo, expressões partitivas/porcentagem, sujeito oracional e orações sem sujeito/verbos impessoais), detalhando as particularidades de flexão do infinitivo, a sintaxe da partícula SE e aplicando algoritmos de resolução a questões de alto nível das bancas VUNESP, FCC e FGV."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A09-G05",
     "lessonId": "A09",
-    "title": "Concordância Verbal - Partícula 'SE'",
+    "title": "Concordância Nominal - Parte 01",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Concordância Nominal - Parte 01.",
       "Aplicar regras canônicas e procedimentos decisórios de Concordância Nominal - Parte 01 na resolução de questões.",
       "Analisar o papel de Concordância Nominal - Parte 01 no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A09-G06",
     "lessonId": "A09",
-    "title": "Concordância Verbal - Verbo SER",
+    "title": "Concordância Nominal - Parte 02",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Concordância Nominal - Parte 02.",
       "Aplicar regras canônicas e procedimentos decisórios de Concordância Nominal - Parte 02 na resolução de questões.",
       "Analisar o papel de Concordância Nominal - Parte 02 no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A09-G07",
@@ -856,7 +856,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Concordância Nominal - Parte 03 no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A09-G08",
@@ -868,7 +868,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Concordância Nominal - Partes 04 e 05 no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A10-G01",
@@ -878,7 +878,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Estabelecer as bases conceituais, sintáticas e metodológicas do estudo da regência verbal para concursos públicos; dissecar exaustivamente os dois grandes blocos de verbos da língua portuguesa (verbos que alteram a regência com alteração de sentido e verbos que admitem variação de regência mantendo rigorosamente o mesmo significado semântico); fixar o comportamento sintático de verbos pronominais e arcaísmos sintáticos; e aplicar esses modelos na resolução analítica de questões das principais bancas examinadoras do país."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A10-G02",
@@ -890,39 +890,39 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Regência Verbal - Aprofundamento no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A10-G03",
     "lessonId": "A10",
-    "title": "Regência Nominal - Substantivos e Adjetivos",
+    "title": "Regência e Pronomes Relativos",
     "learningObjectives": [
       "Desenvolver a competência de identificação, análise e aplicação da regência verbal e nominal em períodos compostos por subordinação adjetiva, capacitando o estudante a determinar a presença ou ausência de preposição antes de pronomes relativos (que, quem, o qual, cujo, onde), dominar o algoritmo analítico dos \"Três Passos\" e resolver com precisão questões de concursos públicos das bancas Cesgranrio, Vunesp, FCC e FGV."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A10-G04",
     "lessonId": "A10",
-    "title": "Crase - Casos Obrigatórios e Proibidos",
+    "title": "Regência e Pronomes Pessoais",
     "learningObjectives": [
       "Construir e consolidar o domínio prático e normativo do emprego dos pronomes oblíquos átonos (o/a/os/as, lhe/lhes, me/te/se/nos/vos) e pronomes relativos em estrita dependência da regência verbal e nominal, capacitando o estudante a resolver questões de alto nível de bancas examinadoras (VUNESP, FGV e Cebraspe), neutralizar armadilhas de eufonia coloquial e aplicar o paralelismo sintático rigoroso."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A10-G05",
     "lessonId": "A10",
-    "title": "Crase - Casos Facultativos e Especiais",
+    "title": "Regência Nominal",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Regência Nominal.",
       "Aplicar regras canônicas e procedimentos decisórios de Regência Nominal na resolução de questões.",
       "Analisar o papel de Regência Nominal no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A10-G06",
@@ -935,7 +935,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Dominar a regra do 'A singular diante de palavra plural' e memorizar com precisão os 3 casos de crase facultativa."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-hardened"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A10-G07",
@@ -945,7 +945,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Realizar uma sistematização esquemática (mapa mental) de todo o conteúdo de crase abordado até o momento, apresentando o roteiro estrutural dos tópicos indispensáveis (regras gerais, casos facultativos, crase no plural, casos proibidos e paralelismo) e detalhando a composição do Fenômeno Fonético, além de reforçar o método de estudo indispensável para concursos públicos. Explicar aprofundadamente a fundamentação sintático-morfológica dos três casos clássicos em que a crase é facultativa na Língua Portuguesa, detalhar as exceções e condições que tornam o acento obrigatório ou proibido dentro desses mesmos contextos, e consolidar o aprendizado mediante resolução comentada de exercícios de fixação."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A11-G01",
@@ -958,81 +958,81 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Aplicar protocolos de auditoria semântico-gramatical em questões de reescrita e paráfrase de bancas (Cebraspe e FGV)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-hardened"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A11-G02",
     "lessonId": "A11",
-    "title": "Coesão Lexical - Hiperônimos, Hipônimos, Sinônimos e Elipse",
+    "title": "Coesão Sequencial",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Coesão Sequencial.",
       "Aplicar regras canônicas e procedimentos decisórios de Coesão Sequencial na resolução de questões.",
       "Analisar o papel de Coesão Sequencial no eixo Conexão forte e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A11-G03",
     "lessonId": "A11",
-    "title": "Coesão Sequencial e Marcadores Discursivos",
+    "title": "Coesão Referencial",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Coesão Referencial.",
       "Aplicar regras canônicas e procedimentos decisórios de Coesão Referencial na resolução de questões.",
       "Analisar o papel de Coesão Referencial no eixo Conexão forte e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A12-G01",
     "lessonId": "A12",
-    "title": "Tipologia Textual - Narração",
+    "title": "Sentido Próprio e Figurado",
     "learningObjectives": [
       "Construir as bases teóricas da semântica contextual, diferenciar de forma categórica o sentido próprio (denotativo, real, lógico, dicionarizado, literal) do sentido figurado (conotativo, não lógico, metafórico), dominar a distinção entre polissemia e conotação, reconhecer figuras semânticas de alta recorrência (como a reificação), capacitar o candidato no método operacional das \"setas semânticas\" e resolver integralmente baterias de fixação e questões de alto nível das principais bancas examinadoras (FGV, VUNESP, Instituto Consulplan, FCC e Cebraspe)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A12-G02",
     "lessonId": "A12",
-    "title": "Tipologia Textual - Descrição",
+    "title": "Sinônimos e Antônimos",
     "learningObjectives": [
       "Fornecer o mapeamento conceitual completo dos pilares da semântica lexical (sinônimos, antônimos, homônimos, parônimos, hiperônimos e hipônimos), diferenciar com rigor técnico os pares conceituais de maior incidência de erro, desmistificar a memorização passiva de dicionários e instrumentalizar o candidato com métodos operacionais de resolução de prova (polaridade semântica, método dos blocos semânticos/colchetes, análise de antônimos correlativos e identificação de sentidos contextuais eruditos) aplicados às bancas FGV, FCC, Cebraspe, VUNESP e Consulplan."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A12-G03",
     "lessonId": "A12",
-    "title": "Tipologia Textual - Dissertação Expositiva vs Argumentativa",
+    "title": "Hiperonímia e Hiponímia",
     "learningObjectives": [
       "Estabelecer a fundamentação teórica rigorosa das relações de gênero/espécie (hiperonímia/hiponímia) sob a chave de validação do teste lógico \"tipo de\", diferenciá-las de sinonímia contextual e contiguidade temática (campo semântico/anáfora associativa), e consolidar sua aplicação prática em mecanismos coesivos anafóricos, estruturas de verbetes lexicográficos e estratégias de eliminação de distratores nas principais bancas de concursos públicos (FGV, CEBRASPE, VUNESP, CESGRANRIO, FCC, IBFC, IBADE, FUNRIO, CEPUERJ, CEPERJ)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A12-G04",
     "lessonId": "A12",
-    "title": "Tipologia Textual - Injunção e Prescrição",
+    "title": "Polissemia",
     "learningObjectives": [
       "Estabelecer a fundamentação teórica e estrutural da polissemia; diferenciar a polissemia da homonímia imperfeita (homófonos e homógrafos), da paronímia e da homonímia perfeita; analisar a dinâmica entre o plano denotativo e conotativo; delimitar a fronteira entre polissemia (fenômeno do léxico) e ambiguidade (defeito ou recurso da frase); explorar o papel delimitador do contexto na neutralização semântica; distinguir a polissemia de conectores gramaticais (preposições); e consolidar estratégias de resolução de questões de concurso público em bancas com abordagens estilísticas complexas (FGV), conceituais diretas (CEBRASPE) e tradicionais (Instituto AOCP, Objetiva, IBADE, CESGRANRIO e Consulplan)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A12-G05",
     "lessonId": "A12",
-    "title": "Gêneros Textuais e Intertextualidade",
+    "title": "Ambiguidade Homônimos e Parônimos",
     "learningObjectives": [
       "Desenvolver a capacidade analítica do estudante para identificar, classificar e resolver fenômenos de duplicidade de sentido (ambiguidade lexical e estrutural) e relações formais/semânticas entre palavras (homônimos perfeitos, homófonos, homógrafos, parônimos, hiperônimos e hipônimos), capacitando-o a reconhecer armadilhas clássicas em provas de alto nível (com ênfase nas bancas FGV, FCC, IBADE, Instituto Consulplan e CEBRASPE)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A12-G06",
@@ -1044,7 +1044,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Analisar o papel de Figuras de Linguagem - Fundamentos no eixo Apoio estrutural e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A12-G07",
@@ -1054,73 +1054,73 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Fornecer o domínio exaustivo, teórico e prático das figuras de linguagem para concursos públicos, estabelecendo distinções conceituais finas entre pares comumente confundidos, demonstrando métodos sintáticos e semânticos de resolução, delimitando as diretrizes normativas para redações discursivas e dissecando o padrão de cobrança das principais bancas examinadoras (com ênfase especial na Fundação Getulio Vargas — FGV)."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A13-G01",
     "lessonId": "A13",
-    "title": "Variação Linguística - Diatópica, Diastrática, Diafásica e Diacrônica",
+    "title": "Recorrência",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Recorrência.",
       "Aplicar regras canônicas e procedimentos decisórios de Recorrência na resolução de questões.",
       "Analisar o papel de Recorrência no eixo Apoio estrutural e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A13-G02",
     "lessonId": "A13",
-    "title": "Semântica - Sinonímia, Antonímia, Paronímia e Homonímia",
+    "title": "Inferência",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Inferência.",
       "Aplicar regras canônicas e procedimentos decisórios de Inferência na resolução de questões.",
       "Analisar o papel de Inferência no eixo Apoio estrutural e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A13-G03",
     "lessonId": "A13",
-    "title": "Semântica - Polissemia e Ambiguidade",
+    "title": "Narração e Descrição",
     "learningObjectives": [
       "Capacitar o estudante a distinguir categoricamente sequências narrativas e descritivas em provas de concursos públicos (com ênfase no padrão Cebraspe), estabelecendo a temporalidade interna (simultaneidade vs. sucessividade) e a intenção comunicativa do autor como critérios determinantes supremos, desmistificando a memorização cega de tempos verbais por meio do entendimento do presente histórico, da descrição institucional/de rotina no presente e das regras de predominância tipológica em textos híbridos."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A13-G04",
     "lessonId": "A13",
-    "title": "Denotação vs Conotação",
+    "title": "Narração e Dissertação Expositiva",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Narração e Dissertação Expositiva.",
       "Aplicar regras canônicas e procedimentos decisórios de Narração e Dissertação Expositiva na resolução de questões.",
       "Analisar o papel de Narração e Dissertação Expositiva no eixo Apoio estrutural e reconhecer armadilhas e variações de bancas."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A13-G05",
     "lessonId": "A13",
-    "title": "Funções da Linguagem",
+    "title": "Dissertação Expositiva e Argumentativa",
     "learningObjectives": [
       "Capacitar o estudante a compreender teoricamente e diagnosticar com precisão operacional a diferença entre dissertação expositiva (ou informativa) e dissertação argumentativa, aplicando o critério soberano da intenção comunicativa do autor e desarmando as pegadinhas mais sofisticadas de bancas de alto nível (notadamente o Cebraspe) estruturadas em torno do uso de dados estatísticos, modalizadores discursivos e conceitos normativos/doutrinários."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A13-G06",
     "lessonId": "A13",
-    "title": "Pressupostos, Subentendidos e Implícitos",
+    "title": "Miscelânea de Interpretação",
     "learningObjectives": [
       "Sistematizar e aplicar um algoritmo analítico em três passos (quadro #ANOTAAÍ) para classificar com precisão tipologias textuais (dissertativa expositiva/informativa, dissertativa argumentativa, narrativa e descritiva) e interpretar textos híbridos em itens da banca Cebraspe."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-semantic-authoring"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A13-G07",
@@ -1133,7 +1133,7 @@ export const PEDAGOGICAL_VIEW_INDEX = [
       "Identificar marcadores enunciativos e resolver com precisão questões das bancas Cebraspe, FGV e FCC."
     ],
     "unitType": "regular",
-    "viewSchemaVersion": "4.2.0-hardened"
+    "viewSchemaVersion": "4.2.2-source-backed-coverage"
   },
   {
     "unitId": "IP-A14-S01",

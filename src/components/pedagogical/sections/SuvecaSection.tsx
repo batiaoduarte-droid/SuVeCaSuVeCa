@@ -36,7 +36,7 @@ export const SuvecaSection: React.FC<SuvecaSectionProps> = ({ view }) => {
   return (
     <div className="space-y-5 select-text">
       {/* Quadro Principal de Conexão com o Método SuVeCA */}
-      <div className="rounded-2xl border border-teal-200 bg-white p-5 sm:p-6 shadow-xs space-y-5">
+      <div className="rounded-2xl border border-teal-200 bg-white p-3 sm:p-5 shadow-xs space-y-5">
         {/* Cabeçalho */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-teal-100 pb-4">
           <div className="flex items-center gap-3">

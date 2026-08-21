@@ -34,6 +34,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
 
   for (const block of blocks) {
     if (block.type === 'list' && block.items && block.items.length > 0) {
+      const residualItems: string[] = [];
       for (const item of block.items) {
         const colonMatch = item.match(/^([^:]+):\s*(.*)$/);
         if (colonMatch && colonMatch[1].length < 40) {
@@ -41,15 +42,19 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
             term: colonMatch[1].trim(),
             desc: colonMatch[2].trim(),
           });
+        } else {
+          residualItems.push(item);
         }
       }
+      if (residualItems.length > 0) otherBlocks.push({ ...block, items: residualItems });
     } else {
       otherBlocks.push(block);
     }
   }
 
   const handleCopy = () => {
-    const textToCopy = listItems.map((i) => `• ${i.term}: ${i.desc}`).join('\n');
+    const structuredItems = items.map((item) => [item.name, item.reason, item.activationPrompt].filter(Boolean).join(' — '));
+    const textToCopy = [...structuredItems, ...listItems.map((item) => `• ${item.term}: ${item.desc}`)].join('\n');
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -57,7 +62,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
 
   return (
     <div className="space-y-5 select-text">
-      <div className="rounded-2xl border border-teal-200 bg-white p-5 sm:p-6 shadow-xs space-y-5">
+      <div className="rounded-2xl border border-teal-200 bg-white p-3 sm:p-5 shadow-xs space-y-5">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-800 shadow-2xs select-none">

@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A07-G02",
     "lessonId": "A07",
     "title": "Orações Coordenadas Assindéticas e Sindéticas",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A07-G02",
@@ -105,6 +106,68 @@
             "Esforçou-se muito, e não conseguiu a vaga (= mas não conseguiu)."
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A07-G02-001",
+          "table": {
+            "tableId": "TABLE-IP-A07-G02-001",
+            "caption": "Regras canônicas",
+            "headers": [
+              "Tipologia",
+              "Conectivos Canônicos",
+              "Valor Semântico Central",
+              "Regra de Reconhecimento Rápido",
+              "Referência"
+            ],
+            "rows": [
+              [
+                "Assindética",
+                "Nenhum (justapostas por pontuação)",
+                "Independência sintática sem conector",
+                "Ausência total de conjunção entre as orações",
+                "KB-A07-G02-COORD-SIND-001"
+              ],
+              [
+                "Sindética Aditiva",
+                "e, nem, não só... mas também/como",
+                "Soma, acréscimo, sequência cronológica",
+                "Conecta proposições de mesma orientação;nem = e não",
+                "KB-A07-G02-COORD-SIND-003"
+              ],
+              [
+                "Sindética Adversativa",
+                "mas, porém, contudo, todavia, entretanto, no entanto",
+                "Oposição, quebra de expectativa, ressalva",
+                "Conecta polos semânticos contraditórios (+ com -)",
+                "KB-A07-G02-COORD-SIND-009"
+              ],
+              [
+                "Sindética Alternativa",
+                "ou, ou...ou, ora...ora, seja...seja, quer...quer",
+                "Alternância (revezamento) ou Exclusão (mútua)",
+                "Pares permutáveis; se anula o outro = exclusão",
+                "KB-A07-G02-COORD-SIND-008"
+              ],
+              [
+                "Sindética Conclusiva",
+                "logo, portanto, então, assim, por conseguinte, pois (posposto)",
+                "Dedução lógica, desfecho, consequência",
+                "Pois deslocado após o verbo, isolado entre vírgulas",
+                "KB-A07-G02-COORD-SIND-010"
+              ],
+              [
+                "Sindética Explicativa",
+                "porque, que (= pois), porquanto, pois (anteposto)",
+                "Justificativa, fundamentação discursiva",
+                "Verbo no imperativo antecedente ou justificativa",
+                "KB-A07-G02-COORD-SIND-011"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "resolution": {
@@ -141,6 +204,67 @@
           "practicalHeuristic": "Polissíndeto = muitos 'e's. Assíndeto = zero conjunção.",
           "pitfall": "Confundir polissíndeto com erro de repetição viciosa."
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A07-G02-002",
+          "table": {
+            "tableId": "TABLE-IP-A07-G02-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Par de Conceitos",
+              "Critério Decisivo de Diferenciação",
+              "Exemplo Típico A",
+              "Exemplo Típico B"
+            ],
+            "rows": [
+              [
+                "Adição vs. Adversidade no conectivo \"E\"",
+                "Homogeneidade (+/+ ou -/-) versus Heterogeneidade (+/-) das polaridades semânticas",
+                "\"Apaguei as luzes e acelerei.\" (Adição)",
+                "\"Trabalhou muito e nada recebeu.\" (Adversidade)"
+              ],
+              [
+                "Alternância vs. Exclusão no conectivo \"OU\"",
+                "Revezamento de ações no tempo versus Incompatibilidade/anulação mútua entre polos",
+                "\"Ora ri, ora chora.\" (Alternância)",
+                "\"Ou você estuda ou será reprovado.\" (Exclusão)"
+              ],
+              [
+                "Oposição vs. Ressalva no conectivo \"MAS\"",
+                "Choque direto de antônimos versus Ponderação compensatória atenuante (em compensação)",
+                "\"Dispensa teorias, mas é a base.\" (Oposição)",
+                "\"Não li o livro, mas vi o filme.\" (Ressalva)"
+              ],
+              [
+                "Explicativa vs. Causal com \"PORQUE\"",
+                "Justificativa/indício do julgamento do falante versus Causa física geradora no mundo real",
+                "\"Ela era feliz, porque vivia sorrindo.\" (Explicativa)",
+                "\"O chão molhou porque choveu.\" (Causal)"
+              ],
+              [
+                "POIS Conclusivo vs. POIS Explicativo",
+                "Posição sintática: deslocado após o verbo entre vírgulas versus posicionado antes do verbo",
+                "\"Estudou; foi, pois, aprovado.\" (Conclusivo)",
+                "\"Venha, pois já é tarde.\" (Explicativo)"
+              ],
+              [
+                "Conexão Intertermos vs. Interoracional",
+                "Ligação de termos nominais da mesma oração versus Ligação de orações dotadas de verbos próprios",
+                "\"Gosto de café e leite.\" (Intertermos)",
+                "\"Tomei café e comi pão.\" (Interoracional)"
+              ],
+              [
+                "Adversativa vs. Concessiva",
+                "Regime sintático: Coordenação independente versus Subordinação com oração principal",
+                "\"Estudei, mas não passei.\" (Adversativa)",
+                "\"Embora tenha estudado, não passei.\" (Concessiva)"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "examples": {
@@ -152,6 +276,103 @@
           "analysis": "Usa-se ponto e vírgula para separar as duas orações coordenadas, e a conjunção conclusiva 'portanto' vem isolada entre vírgulas por estar deslocada.",
           "pedagogicalTakeaway": "O ponto e vírgula separa orações coordenadas extensas que já possuem termos internos separados por vírgula.",
           "targetLO": "LO-A07-G02-01"
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A07-G02-003",
+          "table": {
+            "tableId": "TABLE-IP-A07-G02-003",
+            "caption": "Exemplos resolvidos",
+            "headers": [
+              "Nº / ID",
+              "Frase Analisada",
+              "Conectivo / Estrutura",
+              "Classificação Sintática",
+              "Fundamentação Teórica"
+            ],
+            "rows": [
+              [
+                "01",
+                "Não desejo nada, não temo nada, sou livre.",
+                "Sem conectivo",
+                "Orações Coordenadas Assindéticas",
+                "Três orações justapostas e delimitadas por vírgulas."
+              ],
+              [
+                "02",
+                "Sente aqui, que precisamos conversar.",
+                "que (= pois)",
+                "O. C. Sindética Explicativa",
+                "Justificativa discursiva associada ao verbo no imperativo (Sente)."
+              ],
+              [
+                "03",
+                "Dario abre a boca, move os lábios, não se ouve resposta.",
+                "Sem conectivo",
+                "Orações Coordenadas Assindéticas",
+                "Sequência narrativa de orações justapostas independentes."
+              ],
+              [
+                "04",
+                "Apaguei as luzes do carro e acelerei.",
+                "e",
+                "O. C. Sindética Aditiva",
+                "Soma sequencial de duas ações de mesma polaridade."
+              ],
+              [
+                "05",
+                "...não sabem ler nem escrever.",
+                "nem (= e não)",
+                "O. C. Sindética Aditiva",
+                "Adição de proposições de polaridade negativa."
+              ],
+              [
+                "06",
+                "...dominava o inglês, pois estudara em escolas americanas.",
+                "pois (anteposto)",
+                "O. C. Sindética Explicativa",
+                "Conectivo no início da oração introduzindo justificativa evidente."
+              ],
+              [
+                "07",
+                "Eu odeio celular, mas acabei tendo um...",
+                "mas",
+                "O. C. Sindética Adversativa",
+                "Oposição direta entre sentimento de aversão e fato de possuir."
+              ],
+              [
+                "08",
+                "Trabalhou com afinco... e não obteve reconhecimento.",
+                "e (= porém)",
+                "O. C. Sindética Adversativa",
+                "Choque de expectativas entre dedicação (+) e frustração (-)."
+              ],
+              [
+                "09",
+                "Ora estava alegre, ora ficava calado em um canto.",
+                "ora... ora",
+                "O. C. Sindética Alternativa",
+                "Alternância distributiva de estados emocionais no tempo."
+              ],
+              [
+                "10",
+                "Eles se admiravam, contudo não se falavam.",
+                "contudo",
+                "O. C. Sindética Adversativa",
+                "Contraste semântico clássico entre admiração e silêncio."
+              ],
+              [
+                "11",
+                "...dependem, pois, de seu método e talento.",
+                "pois (deslocado)",
+                "O. C. Sindética Conclusiva",
+                "Conectivo posposto ao verbo e entre vírgulas (=portanto)."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },
@@ -284,7 +505,31 @@
         "confidence": 0.98
       },
       "answerSha256": "6ee11820dfef1e0e401f2b259ca857d12c6da2a686c8d771a75eeedcff19722e",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "(CEBRASPE / CGDF / 2023) Com efeito, dado que seja gênero de múltiplas espécies, podem ser elencadas como modalidades de resistência fiscal:",
+        "options": [
+          {
+            "label": "A",
+            "text": "a resistência à cobrança de tributos ilícitos/inconstitucionais, que tem total amparo no princípio constitucional da legalidade tributária, tendo os contribuintes direito de resistir a essa tributação ilegal/inconstitucional;"
+          },
+          {
+            "label": "B",
+            "text": "a resistência à cobrança ou à instituição de tributos que, mesmo amparados na lei e na Constituição Federal de 1988, são, porém, rechaçados pela sociedade, considerados ilegítimos pela população, ou rechaçados por camada social que se veja prejudicada com sua instituição;"
+          },
+          {
+            "label": "C",
+            "text": "o crime tributário, que não passa de uma ofensa deliberada à lei; e"
+          },
+          {
+            "label": "D",
+            "text": "a resistência lícita, na qual se opta por alternativa legal menos onerosa ou pela abstenção de conduta tributável. No 4.º parágrafo do texto CB1A1, o vocábulo “que” empregado nos segmentos identificados por “a)”, “b)” e “c)” apresentam, em todas as ocorrências, a mesma função sintática de introdução a oração A) coordenada explicativa. B) subordinada adverbial consecutiva. C) subordinada substantiva. D) subordinada adjetiva."
+          }
+        ],
+        "sourceField": "questionPayload.prompt",
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",

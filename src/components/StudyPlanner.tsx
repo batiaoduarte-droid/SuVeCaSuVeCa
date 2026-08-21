@@ -3,19 +3,18 @@ import { ChecklistItem } from '../types/suveca';
 import {
   CalendarCheck,
   CheckCircle2,
-  Clock,
   BookOpen,
-  FileText,
-  Award,
-  Layers,
-  Sparkles,
   ChevronLeft,
   ChevronRight,
+  Brain,
+  Workflow,
+  RefreshCcw,
+  NotebookPen,
 } from 'lucide-react';
 import { ProgressBar } from './ui/ProgressBar';
 import { MODULES_DATA } from '../data/modulesData';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
-import { StudyBadge, StudySurface } from './study-visuals';
+import { getLessonName } from '../data/lessonCatalog';
 
 const CHECKLIST_STORAGE_KEY = `suveca_checklist_editorial_${PEDAGOGICAL_KNOWLEDGE_BUILD.buildId}`;
 const INITIAL_CHECKLIST: ChecklistItem[] = MODULES_DATA
@@ -27,8 +26,22 @@ const INITIAL_CHECKLIST: ChecklistItem[] = MODULES_DATA
     status: 'nao_iniciado' as const,
   }));
 
+const REVIEW_CYCLE = [
+  { title: 'Compreender', action: 'Explique a regra decisiva com suas palavras.', Icon: Brain, tone: 'border-teal-200 bg-teal-50 text-teal-900' },
+  { title: 'Aplicar', action: 'Execute o procedimento em uma questão real.', Icon: Workflow, tone: 'border-sky-200 bg-sky-50 text-sky-950' },
+  { title: 'Recuperar', action: 'Responda novamente sem consultar o material.', Icon: RefreshCcw, tone: 'border-violet-200 bg-violet-50 text-violet-950' },
+  { title: 'Corrigir e revisar', action: 'Registre a causa do erro e programe a retomada.', Icon: NotebookPen, tone: 'border-amber-200 bg-amber-50 text-amber-950' },
+] as const;
+
+const SESSION_CHECKLIST = [
+  'Expliquei a regra com minhas palavras.',
+  'Resolvi uma questão sem consultar o gabarito.',
+  'Registrei a causa do erro, não apenas a resposta.',
+  'Programei uma recuperação por flashcard ou roteiro.',
+] as const;
+
 export const StudyPlanner: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'checklist' | 'weeks' | 'essay'>('checklist');
+  const [activeTab, setActiveTab] = useState<'checklist' | 'weeks' | 'cycle'>('checklist');
   const [checklist, setChecklist] = useState<ChecklistItem[]>(INITIAL_CHECKLIST);
   const tabListRef = useRef<HTMLDivElement>(null);
   const [tabScroll, setTabScroll] = useState({ left: false, right: true });
@@ -78,7 +91,7 @@ export const StudyPlanner: React.FC = () => {
   const progressPct = Math.round((masteredCount / checklist.length) * 100);
 
   return (
-    <div className="space-y-8 pb-16 max-w-5xl mx-auto">
+    <div className="tool-content-shell space-y-8 pb-16">
       {/* Header Banner */}
       <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-2">
@@ -107,6 +120,9 @@ export const StudyPlanner: React.FC = () => {
         <button type="button" onClick={() => scrollTabs(-1)} disabled={!tabScroll.left} className="mr-1 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs disabled:opacity-30" aria-label="Ver abas anteriores"><ChevronLeft className="h-4 w-4" /></button>
         <div ref={tabListRef} onScroll={updateTabScroll} className="flex min-w-0 flex-1 items-center space-x-2 overflow-x-auto scroll-smooth" role="tablist" aria-label="Seções do planejamento">
         <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'checklist'}
           onClick={() => setActiveTab('checklist')}
           className={`px-4 py-2.5 rounded-xl font-bold transition whitespace-nowrap cursor-pointer ${
             activeTab === 'checklist'
@@ -117,6 +133,9 @@ export const StudyPlanner: React.FC = () => {
           Checklist do Edital
         </button>
         <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'weeks'}
           onClick={() => setActiveTab('weeks')}
           className={`px-4 py-2.5 rounded-xl font-bold transition whitespace-nowrap cursor-pointer ${
             activeTab === 'weeks'
@@ -127,9 +146,12 @@ export const StudyPlanner: React.FC = () => {
           Trilha de 8 Semanas
         </button>
         <button
-          onClick={() => setActiveTab('essay')}
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'cycle'}
+          onClick={() => setActiveTab('cycle')}
           className={`px-4 py-2.5 rounded-xl font-bold transition whitespace-nowrap cursor-pointer ${
-            activeTab === 'essay'
+            activeTab === 'cycle'
               ? 'bg-white text-slate-900 shadow-2xs font-extrabold'
               : 'text-slate-600 hover:text-slate-900'
           }`}
@@ -154,10 +176,8 @@ export const StudyPlanner: React.FC = () => {
                 className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs"
               >
                 <div className="flex items-start sm:items-center space-x-3 flex-1 min-w-0">
-                  <span className="text-[10px] font-bold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200 shrink-0">
-                    Aula {String(item.moduleNum).padStart(2, '0')}
-                  </span>
-                  <span className="font-semibold text-slate-800 leading-snug">{item.topic}</span>
+                  <span className="font-semibold text-slate-900 leading-snug">{item.topic}</span>
+                  <span className="hidden text-[11px] leading-relaxed text-slate-500 lg:inline">{getLessonName(item.moduleNum, 'full')}</span>
                 </div>
 
                 <div className="flex flex-wrap gap-1.5 w-full sm:w-auto pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200">
@@ -172,7 +192,7 @@ export const StudyPlanner: React.FC = () => {
                       onClick={() =>
                         handleUpdateChecklistStatus(item.id, st.id as ChecklistItem['status'])
                       }
-                      className={`text-[11px] px-2.5 py-1.5 rounded-lg transition font-medium border cursor-pointer ${
+                      className={`min-h-11 text-[11px] px-2.5 py-1.5 rounded-lg transition font-medium border cursor-pointer ${
                         item.status === st.id
                           ? 'bg-teal-800 text-white border-teal-800 font-bold shadow-2xs'
                           : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
@@ -191,14 +211,14 @@ export const StudyPlanner: React.FC = () => {
       {activeTab === 'weeks' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { sem: 1, mods: 'Aulas 00 e 01', f: 'Ortografia e Classes de Palavras I', tasks: ['Diagnóstico de ortografia', 'Acentuação, hífen e porquês', 'Classes variáveis em contexto'] },
-            { sem: 2, mods: 'Aulas 02 e 03', f: 'Conectores e Pronomes', tasks: ['Relações das preposições e conjunções', 'Referenciação pronominal', 'Colocação pronominal em contexto'] },
-            { sem: 3, mods: 'Aulas 04 e 05', f: 'Sistema Verbal', tasks: ['Tempos, modos e formas nominais', 'Correlação e vozes verbais', 'Transitividade e funções da partícula se'] },
-            { sem: 4, mods: 'Aulas 06 e 07', f: 'Sintaxe da Oração e do Período', tasks: ['Reconstrução da ordem direta', 'Termos da oração', 'Coordenação e subordinação'] },
-            { sem: 5, mods: 'Aulas 08 e 09', f: 'Pontuação e Concordância', tasks: ['Pontuação guiada pela estrutura sintática', 'Concordância verbal', 'Concordância nominal e casos especiais'] },
-            { sem: 6, mods: 'Aula 10', f: 'Regência e Crase', tasks: ['Regência por acepção e estrutura', 'Procedimento decisório da crase', 'Questões cumulativas da aula'] },
-            { sem: 7, mods: 'Aulas 11, 12 e 13', f: 'Texto, Sentido e Interpretação', tasks: ['Coesão, coerência e reescrita', 'Relações semânticas e figuras', 'Recorrência, inferência e tipologia'] },
-            { sem: 8, mods: 'Aula 14 + Simulado', f: 'Revisão Cumulativa', tasks: ['Revisão ativa pelos temas prioritários', 'Simulado editorial de 20 questões', 'Revisão do Caderno de Erros'] },
+            { sem: 1, mods: `${getLessonName('A00')} + ${getLessonName('A01')}`, f: 'Ortografia e Classes de Palavras I', tasks: ['Diagnóstico de ortografia', 'Acentuação, hífen e porquês', 'Classes variáveis em contexto'] },
+            { sem: 2, mods: `${getLessonName('A02')} + ${getLessonName('A03')}`, f: 'Conectores e Pronomes', tasks: ['Relações das preposições e conjunções', 'Referenciação pronominal', 'Colocação pronominal em contexto'] },
+            { sem: 3, mods: `${getLessonName('A04')} + ${getLessonName('A05')}`, f: 'Sistema Verbal', tasks: ['Tempos, modos e formas nominais', 'Correlação e vozes verbais', 'Transitividade e funções da partícula se'] },
+            { sem: 4, mods: `${getLessonName('A06')} + ${getLessonName('A07')}`, f: 'Sintaxe da Oração e do Período', tasks: ['Reconstrução da ordem direta', 'Termos da oração', 'Coordenação e subordinação'] },
+            { sem: 5, mods: `${getLessonName('A08')} + ${getLessonName('A09')}`, f: 'Pontuação e Concordância', tasks: ['Pontuação guiada pela estrutura sintática', 'Concordância verbal', 'Concordância nominal e casos especiais'] },
+            { sem: 6, mods: getLessonName('A10'), f: 'Regência e Crase', tasks: ['Regência por acepção e estrutura', 'Procedimento decisório da crase', 'Questões cumulativas do tema'] },
+            { sem: 7, mods: 'Coesão, semântica e interpretação', f: 'Texto, Sentido e Interpretação', tasks: ['Coesão, coerência e reescrita', 'Relações semânticas e figuras', 'Recorrência, inferência e tipologia'] },
+            { sem: 8, mods: `${getLessonName('A14')} + Simulado`, f: 'Revisão Cumulativa', tasks: ['Revisão ativa pelos temas prioritários', 'Simulado editorial de 20 questões', 'Revisão do Caderno de Erros'] },
           ].map((w) => (
             <div
               key={w.sem}
@@ -226,41 +246,49 @@ export const StudyPlanner: React.FC = () => {
         </div>
       )}
 
-      {activeTab === 'essay' && (
+      {activeTab === 'cycle' && (
         <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6">
           <div className="space-y-2 border-b border-slate-100 pb-4">
             <span className="text-xs font-bold text-teal-800 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200">
-              Integração pedagógica das aulas 00–14
+              Percurso completo de Língua Portuguesa
             </span>
             <h2 className="text-xl font-bold text-slate-900 tracking-tight">
               Como transformar estudo em domínio recuperável
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Use a apostila como percurso principal e combine cada aula com suas expansões didáticas, roteiros de decisão, questões editoriais, flashcards e registros do Caderno de Erros.
+              Use a apostila como percurso principal e combine cada tema com suas expansões didáticas, roteiros de decisão, questões editoriais, flashcards e registros do Caderno de Erros.
             </p>
           </div>
 
-          <div className="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-              <h3 className="font-bold text-teal-900 text-sm">
-                Ciclo de aprendizagem em quatro movimentos
-              </h3>
-              <p className="text-slate-800 font-semibold text-xs bg-white p-3 rounded-lg border border-slate-200 leading-relaxed">
-                COMPREENDER A REGRA → APLICAR O PROCEDIMENTO → RECUPERAR SEM CONSULTA → CORRIGIR E REVISAR
-              </p>
-            </div>
+          <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <section aria-labelledby="learning-cycle-title">
+              <h3 id="learning-cycle-title" className="mb-3 font-bold text-teal-950 text-sm">Ciclo de aprendizagem e revisão</h3>
+              <ol className="relative grid list-none gap-3 p-0 md:grid-cols-4">
+                {REVIEW_CYCLE.map(({ title, action, Icon, tone }, index) => (
+                  <li key={title} className={`relative rounded-2xl border p-4 ${tone}`}>
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/80 text-xs font-black shadow-2xs">{index + 1}</span>
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                      <h4 className="font-extrabold">{title}</h4>
+                    </div>
+                    <p className="mt-3 text-xs font-medium leading-relaxed">{action}</p>
+                    {index < REVIEW_CYCLE.length - 1 && <ChevronRight className="absolute -right-3 top-1/2 z-10 hidden h-5 w-5 -translate-y-1/2 rounded-full bg-white text-slate-500 md:block" aria-hidden="true" />}
+                  </li>
+                ))}
+              </ol>
+            </section>
 
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-              <h3 className="font-bold text-emerald-900 text-sm">
-                Checklist para encerrar uma sessão
-              </h3>
-              <ul className="list-disc list-inside space-y-1.5 text-slate-700 font-medium">
-                <li>Explique com suas palavras a regra decisiva estudada.</li>
-                <li>Resolva ao menos uma questão sem consultar o gabarito.</li>
-                <li>Registre o erro pelo motivo, não apenas pela resposta correta.</li>
-                <li>Agende a recuperação ativa por flashcard ou roteiro de decisão.</li>
+            <section className="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5" aria-labelledby="session-checklist-title">
+              <h3 id="session-checklist-title" className="font-bold text-emerald-950 text-sm">Checklist para encerrar uma sessão</h3>
+              <ul className="mt-3 grid list-none gap-2 p-0 sm:grid-cols-2">
+                {SESSION_CHECKLIST.map((item) => (
+                  <li key={item} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white p-3 font-medium text-slate-700">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
-            </div>
+            </section>
           </div>
         </div>
       )}

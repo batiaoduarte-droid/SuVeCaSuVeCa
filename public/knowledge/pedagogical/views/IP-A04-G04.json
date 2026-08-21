@@ -1,20 +1,22 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A04-G04",
     "lessonId": "A04",
-    "title": "Modo Subjuntivo e Correlação Verbal",
+    "title": "Formas Nominais do Verbo",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A04-G04",
     "lessonId": "A04",
-    "title": "Modo Subjuntivo e Correlação Verbal",
+    "title": "Formas Nominais do Verbo",
     "learningObjectives": [
       "Capacitar o estudante a dominar a morfologia, a sintaxe e a semântica das três formas nominais do verbo (Infinitivo, Gerúndio e Particípio), compreendendo suas funções nominais (substantivo, adjetivo, advérbio), as regras normativas de flexão e escolha de particípio em locuções verbais, o manuseio seguro do infinitivo pessoal (flexionado e não flexionado), a distinção morfossintática em relação ao futuro do subjuntivo, a identificação dos valores semânticos do gerúndio em orações reduzidas, a eliminação de vícios estilísticos (gerundismo e gerúndio posterior) e o tratamento de ambiguidades morfológicas em bancas de alto nível (FGV, FCC, CESPE/Cebraspe)."
     ],
-    "conceptCount": 2,
+    "conceptCount": 9,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A04-G04-01"
@@ -26,173 +28,2211 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "O Modo Subjuntivo é o modo da hipótese, da incerteza, do desejo, da probabilidade e da subordinação. A correlação verbal (consecutio temporum) estabelece a harmonia temporal e modal obrigatória entre as orações de um período composto.",
-      "visualBlueprint": "Tempos do Subjuntivo: Presente (Que eu estude) | Pretérito Imperfeito (Se eu estudasse) | Futuro (Quando eu estudar). Correlações Mestras: 1. Presente do Ind + Presente do Subj (Quero que você venha) | 2. Pretérito + Imperfeito do Subj (Quis que você viesse) | 3. Futuro do Subj + Futuro do Presente (Se você vier, eu irei).",
-      "cognitiveAnchor": "O modo subjuntivo não vive sozinho: é quase sempre disparado por uma oração matriz subordinadora.",
-      "strategicSignificance": "Elimina os erros mais punidos em provas discursivas e acerta questões decisivas de flexão de verbos irregulares no subjuntivo (ver, vir, ter, pôr, querer, saber).",
-      "coreTension": "Confundir a conjugação do Futuro do Subjuntivo dos verbos VER (quando eu VIR) e VIR (quando eu VIER)."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Formas Nominais do Verbo",
+      "summary": "Articulação morfossintática e semântica de Formas Nominais do Verbo com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A04-04",
-          "name": "Conjugação Verbal e Período Composto",
-          "reason": "Dominar os tempos primitivos e derivados para conjugar o subjuntivo.",
-          "activationPrompt": "Como se conjuga o verbo 'ver' no futuro do subjuntivo: 'Quando eu ver' ou 'Quando eu vir'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A04-G04",
+          "title": "Mapa de Dependência: Formas Nominais do Verbo",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Formas Nominais do Verbo",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Os 3 Tempos do Modo Subjuntivo",
-          "pedagogicalGoal": "Compreender a formação e o valor semântico dos tempos do subjuntivo.",
+          "groupId": "GRP-IP-A04-G04-01",
+          "title": "Fundamentação Epistemológica das Formas Nominais e Conceito de \"Nome\"",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "table",
-              "title": "Tempos do Modo Subjuntivo",
-              "columns": [
-                "Tempo",
-                "Palavra-Guia / Gatilho",
-                "Ideia Central",
-                "Exemplos Notáveis"
-              ],
-              "rows": [
-                [
-                  "Presente do Subjuntivo",
-                  "QUE...",
-                  "Desejo, dúvida atual, probabilidade",
-                  "Que eu cante, que eu venda, que eu ponha, que eu saiba, que eu veja"
-                ],
-                [
-                  "Pretérito Imperfeito do Subjuntivo",
-                  "SE...",
-                  "Condição irreal, hipótese no passado",
-                  "Se eu cantasse, se eu vendesse, se eu pusesse, se eu soubesse, se eu visse"
-                ],
-                [
-                  "Futuro do Subjuntivo",
-                  "QUANDO / SE...",
-                  "Ação eventual/possível no futuro",
-                  "Quando eu cantar, quando eu vender, quando eu puser, quando eu souber, quando eu VIR (ver) / VIER (vir)"
-                ]
-              ],
-              "text": "O subjuntivo estrutura as modalidades de incerteza, volição e eventualidade."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAs Formas Nominais do Verbo (Infinitivo, Gerúndio e Particípio) recebem essa designação porque, além de expressarem processos verbais (ações, estados ou fenômenos), desprovidas de flexões tempo-modais típicas do verbo finito, desempenham na oração as funções sintático-semânticas características dos nomes. Na taxonomia da gramática normativa, a categoria de \"nome\" engloba tudo o que não é verbo: Substantivo, Adjetivo e Advérbio.\nExplicação consolidada\nQuando um verbo assume forma nominal, ele sofre um processo de transposição funcional:\nInfinitivo $\\rightarrow$ Valor preferencial de Substantivo: Atua como núcleo de funções sintáticas substantivas (sujeito, objeto, predicativo). Pode vir substantivado por determinantes.\nParticípio $\\rightarrow$ Valor preferencial de Adjetivo: Atua modificando ou caracterizando um substantivo, concordando com ele em gênero e número (quando fora de tempos compostos da voz ativa).\nGerúndio $\\rightarrow$ Valor preferencial de Advérbio: Atua expressando circunstâncias adverbiais (tempo, causa, modo, consequência, condição) que modificam a oração principal.\nCritérios de reconhecimento ou aplicação\nSe o verbo puder ser substituído por um substantivo correspondente mantendo a função sintática básica $\\rightarrow$ Valor de Substantivo.\nSe o verbo qualificar diretamente um substantivo concordando em gênero/número $\\rightarrow$ Valor de Adjetivo.\nSe o verbo introduzir circunstância modificadora da ação principal $\\rightarrow$ Valor de Advérbio.\nExemplos e contraexemplos\nInfinitivo como Substantivo: \"Fumar é proibido.\" (Equivale a: \"O fumo é proibido\"; fumar é sujeito da oração).\nParticípio como Adjetivo: \"Tempo perdido.\" (Perdido qualifica o substantivo tempo).\nGerúndio como Advérbio: \"Amanhecendo, partiremos.\" (Amanhecendo estabelece circunstância temporal: \"Quando amanhecer, partiremos\").\nRelações\nExpande em: , , .\nExemplificado por: ."
             }
           ]
         },
         {
-          "groupId": "GRP-02",
-          "title": "Tabela de Correlação Verbal Obrigatória",
-          "pedagogicalGoal": "Aplicar a harmonia temporal exata entre a oração principal e a subordinada.",
+          "groupId": "GRP-IP-A04-G04-02",
+          "title": "Morfologia das Formas Nominais e Desinências Características",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Quadro da Harmonia Verbal",
-              "columns": [
-                "Oração Principal (Matriz)",
-                "Oração Subordinada Obrigatória",
-                "Exemplo Correto"
-              ],
-              "rows": [
-                [
-                  "Presente do Indicativo (Espero)",
-                  "Presente do Subjuntivo (venhas)",
-                  "Espero que você venha."
-                ],
-                [
-                  "Pretérito Perfeito do Indicativo (Esperei)",
-                  "Pretérito Imperfeito do Subjuntivo (viesses)",
-                  "Esperei que você viesse."
-                ],
-                [
-                  "Futuro do Presente do Indicativo (Irei)",
-                  "Futuro do Subjuntivo (vieres)",
-                  "Irei se você vier."
-                ],
-                [
-                  "Futuro do Pretérito do Indicativo (Iria)",
-                  "Pretérito Imperfeito do Subjuntivo (viesses)",
-                  "Iria se você viesse."
-                ],
-                [
-                  "Pretérito Mais-Que-Perfeito (Houvera)",
-                  "Pretérito Imperfeito do Subjuntivo (soubesse)",
-                  "Teria ido se soubesse a verdade."
-                ]
-              ],
-              "text": "A quebra da correlação temporal gera incoerência sintática e semântica imediata."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAs três formas nominais identificam-se morfologicamente por desinências específicas:\nInfinitivo: Desinência -R (ex.: falar, beber, partir).\nGerúndio: Desinência -NDO (ex.: falando, bebendo, partindo).\nParticípio Regular: Desinência -DO (ex.: falado, bebido, partido).\nRADICAL + VOGAL TEMÁTICA + DESINÊNCIA NOMINAL FALA + -R > Infinitivo (falar) FALA + -NDO > Gerúndio (falando) FALA + -DO > Particípio Regular (falado)\nExplicação consolidada\nO Infinitivo enuncia o processo verbal em abstrato (o nome do verbo).\nO Gerúndio expressa o processo verbal em curso, inacabado, em desenvolvimento (aspecto imperfeito/durativo).\nO Particípio expressa o resultado concluído da ação, o estado atingido ou o aspecto perfectivo acabado."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G04-03",
+          "title": "Morfologia e Sintaxe do Particípio: Verbos Abundantes e Não Abundantes",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nOs verbos dividem-se quanto ao particípio em Abundantes (possuem dupla forma: regular e irregular) e Não Abundantes (possuem uma única forma de particípio, que pode ser exclusivamente regular ou exclusivamente irregular).\nExplicação consolidada\nVerbos Abundantes de Particípio:\nForma Regular: Termina obrigatoriamente em -DO (ex.: aceitado, entregado, limpado, inserido, suspendido, acendido, imprimido, enxugado, prendido).\nForma Irregular: Forma reduzida que não termina em -DO, apresentando terminações como -to, -so, -gue, -po (ex.: aceito, entregue, limpo, inserto, suspenso, aceso, impresso, enxuto, preso).\nVerbos Não Abundantes de Particípio:\nExclusivamente Regulares: Possuem apenas a forma em -DO.\nChegar $\\rightarrow$ chegado (A forma \"chego\" não existe como particípio na norma culta).\nTrazer $\\rightarrow$ trazido (A forma \"trago\" não existe como particípio na norma culta).\nExclusivamente Irregulares: Possuem apenas a forma reduzida sem -DO. Não admitem desinência regular.\nDizer $\\rightarrow$ dito (Não existe \"dizido\").\nPôr $\\rightarrow$ posto (Não existe \"ponhado\" ou \"podo\").\nCobrir $\\rightarrow$ coberto (Não existe \"cobrido\").\nFazer $\\rightarrow$ feito (Não existe \"fazido\").\nEscrever $\\rightarrow$ escrito (Não existe \"escrevido\").\nAlerta sobre \"Chego\" e \"Trago\"\nAs palavras chego e trago são legítimas na língua portuguesa apenas como formas flexionadas do Presente do Indicativo na 1ª pessoa do singular (\"Eu chego cedo\", \"Eu trago o café\"). Seu emprego com verbos auxiliares de tempos compostos ou voz passiva (\"tinha chego\", \"foi trago\") constitui desvio gramatical grave em provas.\nRelações\nRegulado por: ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G04-04",
+          "title": "Regras Sintáticas de Emprego dos Particípios e a Exceção do \"Vale Tudo\"",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Regra Geral Sintática dos Auxiliares\nPara verbos abundantes, a seleção entre o particípio regular e o irregular obedece estritamente ao verbo auxiliar que compõe a locução:\nDiferenciação entre Valor Verbal e Valor Nominal do Particípio\nParticípio com Valor Verbal: Integra locução de tempo composto com auxiliar. Permanece invariável no masculino singular. Ex.: \"O homem tinha viajado\" (viajado = verbo).\nParticípio com Valor Nominal (Adjetivo): Modifica diretamente um substantivo, flexionando-se em gênero e número. Ex.: \"O homem viajado é experiente\" (viajado = adjetivo/nome).\nExceção Normativa Consagrada: A \"Regra do Vale Tudo\"\nA gramática normativa e os manuais de referência consagram uma exceção plena para quatro verbos: GANHAR, GASTAR, PEGAR e PAGAR.\nPara esses 4 verbos, qualquer forma de particípio (regular ou irregular) é aceita com qualquer verbo auxiliar:\nPAGAR: \"Tinha pagado\" OU \"Tinha pago\" / \"Foi pagado\" OU \"Foi pago\".\nGANHAR: \"Tinha ganhado\" OU \"Tinha ganho\" / \"Foi ganhado\" OU \"Foi ganho\".\nGASTAR: \"Tinha gastado\" OU \"Tinha gasto\" / \"Foi gastado\" OU \"Foi gasto\".\nPEGAR: \"Tinha pegado\" OU \"Tinha pego\" / \"Foi pegado\" OU \"Foi pego\".\nRelações\nProcedimento operacional: .\nExemplificado por: .\nPossui Dica: TIP-A04-G04-FORMAS-NOMINAIS-001."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G04-05",
+          "title": "Infinitivo Impessoal vs. Infinitivo Pessoal (Flexionado vs. Não Flexionado)",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO Infinitivo divide-se em Impessoal (não faz referência a nenhum sujeito ou pessoa gramatical) e Pessoal (possui sujeito ou agente determinado). Por sua vez, o Infinitivo Pessoal pode apresentar-se sob duas formas: Flexionado ou Não Flexionado.\nQuadro Comparativo de Classificação do Infinitivo\nINFINITIVO ┴ INFINITIVO IMPESSOAL INFINITIVO PESSOAL • Não tem pessoa / Sem sujeito • Tem pessoa / Sujeito determinado • Enunciação vaga / Nome do verbo • Conjugável com \"PARA\" • Ex: \"É preciso acabar com a miséria.\" ┴ FLEXIONADO NÃO FLEXIONADO • Apresenta desinência pessoal • Sem desinência gráfica • Desinências: -es, -mos, • Sujeito recuperado no contexto -des, -em • Ex: \"...estudemos para PASSAR.\" • Ex: \"Para PASSARES...\" (Sujeito de passar: nós)\nExplicação consolidada\nInfinitivo Impessoal:\nExpressa a ação em si, de maneira indeterminada, genérica ou abstrata.\nNão admite flexão. Ex.: \"Viver é aprender.\" / \"É fundamental preservar o meio ambiente.\"\nInfinitivo Pessoal Flexionado:\nO verbo recebe desinência número-pessoal explícita (-es, -mos, -des, -em) para concordar graficamente com seu sujeito.\nConjugação com auxílio da preposição para: para eu falar, para tu falares, para ele falar, para nós falarmos, para vós falardes, para eles falarem.\nExemplo: \"Para passares em concurso, é preciso estudo\" (Sujeito: tu $\\rightarrow$ desinência -es).\nInfinitivo Pessoal Não Flexionado (Regra de Ouro):\n\"Nem todo infinitivo que tem sujeito se flexiona.\"\nOcorre quando o infinitivo possui um sujeito determinado na oração (frequentemente correferencial com o sujeito da oração principal), mas o redator opta por manter o verbo na sua forma não flexionada.\nExemplo: \"É importante que estudemos para passar em concurso.\"\nQuem vai passar? O sujeito de passar é nós (identificado pela flexão de estudemos).\nComo não recebeu a desinência -mos, classifica-se como Infinitivo Pessoal Não Flexionado.\nRelações\nProcedimento associado: .\nExemplificado por: , .\nPossui Citação: QUOTE-A04-G04-FORMAS-NOMINAIS-001."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G04-06",
+          "title": "Confronto entre Infinitivo Pessoal e Futuro do Subjuntivo em Verbos Regulares",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nNos verbos regulares, o Infinitivo Pessoal e o Futuro do Subjuntivo apresentam homografia e homofonia absolutas (grafia e som exatamente idênticos em todas as pessoas gramaticais). A distinção sintática exige a identificação dos conectores oracionais ou a aplicação do Macete da Substituição por Verbos Irregulares Modelo.\nTabela de Coincidência Gráfica (Verbo Regular: Falar)\nPor que a coincidência NÃO ocorre em verbos irregulares?\nNos verbos irregulares, o Futuro do Subjuntivo deriva da 3ª pessoa do plural do Pretérito Perfeito do Indicativo (eliminando-se a terminação -ram), gerando radicais distintos do infinitivo:\nFazer: Infinitivo = fazer | Futuro Subjuntivo = fizer (fizeres, fizermos...)\nDizer: Infinitivo = dizer | Futuro Subjuntivo = disser (disseres, dissermos...)\nPôr: Infinitivo = pôr | Futuro Subjuntivo = puser (puseres, pusermos...)\nTrazer: Infinitivo = trazer | Futuro Subjuntivo = trouxer (trouxeres, trouxermos...)\nMacete da Substituição (Fazer/Fizer ou Dizer/Disser)\nPara desmascarar a forma verbal regular em uma prova:\nSubstitua o verbo regular pelo verbo irregular FAZER ou DIZER.\nRegra de Decisão:\nSe a frase exigir a forma FAZER / DIZER $\\rightarrow$ Trata-se de INFINITIVO.\nSe a frase exigir a forma FIZER / DISSER $\\rightarrow$ Trata-se de FUTURO DO SUBJUNTIVO.\nPistas dos Conectores Sintáticos:\nPreposição ou Locução Prepositiva (para, a fim de, por, de, sem) $\\rightarrow$ Exige Infinitivo.\nConjunção Subordinativa (quando, se, assim que, logo que, da próxima vez que) $\\rightarrow$ Exige Futuro do Subjuntivo.\nExemplos Comparativos\n\"A fim de falares bem uma língua...\" $\\rightarrow$ \"A fim de fazeres...\" $\\rightarrow$ Infinitivo Pessoal Flexionado.\n\"Assim que falares com o diretor...\" $\\rightarrow$ \"Assim que fizeres...\" $\\rightarrow$ Futuro do Subjuntivo.\nRelações\nProcedimento operacional: .(Questão FGV SUDENE-PE)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G04-07",
+          "title": "Gerúndio: Aspecto Verbal, \"Bom Gerúndio\" vs. \"Mau Gerúndio\" (Gerundismo e Ação Posterior)",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO Gerúndio (terminação -NDO) expressa o aspecto verbal imperfeito, designando uma ação em curso ou processo contínuo. A norma culta distingue com rigor o emprego legítimo (\"Bom Gerúndio\") dos usos viciosos e agramaticais (\"Mau Gerúndio\" ou Gerundismo).\nQuadro de Oposição: Bom Gerúndio vs. Mau Gerúndio\nExplicação consolidada\nDesmistificando o Preconceito: O gerúndio não é um erro gramatical em si. É forma nominal essencial da língua para ações durativas e simultâneas.\nPor que o Gerúndio Instantâneo Irrita? Porque uma ação pontual (transferir uma ligação, enviar um e-mail) realiza-se em um instante. Ao empregar \"vou estar transferindo\", o falante projeta uma ação instantânea como se fosse um processo infinito no tempo.\nO Perigo do Gerúndio Posterior em Redações: Nas redações discursivas e em questões da FGV/FCC, o uso do gerúndio posterior (\"O governo aprovou a medida, reduzindo os impostos na semana seguinte\") é fortemente penalizado. Ações cronologicamente sucessivas exigem coordenação aditiva (\"O governo aprovou a medida e reduziu os impostos...\").(Questão FGV IBGE)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G04-08",
+          "title": "Valores Semânticos do Gerúndio em Orações Reduzidas",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO gerúndio introduz orações reduzidas com função adverbial equivalente às orações subordinadas adverbiais desenvolvidas. Os principais valores semânticos cobrados em concursos são: Tempo, Causa, Consequência e Adição/Consequência.\nMetodologia de Identificação\nA determinação do valor semântico nunca deve ser feita isolando-se o gerúndio; exige a análise da relação lógica de sentido entre a oração no gerúndio e o verbo da oração principal:\n[ VERBO DA ORAÇÃO PRINCIPAL ] [ VERBO NO GERÚNDIO ]\nValor de Tempo (Temporal):\nO gerúndio expressa a circunstância cronológica em que ocorre a ação principal.\nEquivale a conjunções temporais (quando, assim que, logo que).\nExemplo: \"Chegando cedo, avise-me.\" $\\rightarrow$ \"Avise-me quando chegar.\"\nValor de Causa (Causal):\nO gerúndio expressa a razão, motivação ou fato gerador da ação principal.\nEquivale a conjunções causais (porque, visto que, já que).\nExemplo: \"Terminando o trabalho, foi descansar.\" $\\rightarrow$ \"Foi descansar porque terminou o trabalho.\"\nValor de Consequência (Consecutivo):\nO gerúndio expressa o resultado, efeito ou desfecho decorrente da ação principal.\nFrequentemente correlacionado a intensificadores (tão, tanto, tal) ou substituível por locuções consecutivas (de maneira a, de modo que, de forma que).\nExemplo: \"Ele chegou tão feliz, contagiando a todos.\" $\\rightarrow$ \"Ele chegou tão feliz de modo que contagiou a todos.\"\nValor de Adição com Efeito Consecutivo:\nOcorre quando a oração no gerúndio acrescenta uma nova informação que decorre logicamente da primeira.\nSubstituível por oração coordenada aditiva (e + verbo flexionado).\nExemplo: \"Os modelos focam na teoria, obrigando a decorar fórmulas.\" $\\rightarrow$ \"Os modelos focam na teoria e obrigam a decorar fórmulas.\"\nRelações\nProcedimento operacional: .(FCC TST), (FCC FCRIA), (FGV DPE-RJ)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G04-09",
+          "title": "Caso Especial do Verbo VIR: Ambiguidade da Forma \"Vindo\" (Gerúndio vs. Particípio Irregular)",
+          "conceptRefs": [
+            "KB-A04-G04-FORMAS-NOMINAIS-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO verbo VIR (e seus derivados: intervir, convir, provir, advir) apresenta uma particularidade morfológica explorada como armadilha clássica em concursos: a forma VINDO funciona tanto como Gerúndio quanto como Particípio Irregular. A forma regular \"vido\" não existe na língua portuguesa.\nEstrutura Morfológica do Verbo VIR\nVERBO \"VIR\" E DERIVADOS ┴ GERÚNDIO PARTICÍPIO VINDO ┴ (Terminação -ndo) Expressa ação contínua PARTICÍPIO REGULAR PARTICÍPIO IRREGULAR (Forma em -DO) (Sem terminação -DO) ~VIDO~ VINDO (NÃO EXISTE!) (Homógrafo ao Gerúndio)\nTeste de Substituição para Diferenciação Contextual\nPara determinar se uma ocorrência da palavra vindo em um texto é gerúndio ou particípio, substitui-se o verbo por um verbo modelo de flexões regulares distintas (como chegar ou trazer):\nSe no contexto a frase exigir -ANDO / -ENDO / -INDO (ex.: chegando / trazendo) $\\rightarrow$ VINDO é GERÚNDIO (exprime ação em andamento).\nExemplo: \"Eu estou vindo para o trabalho.\" $\\rightarrow$ \"Estou chegando...\" $\\rightarrow$ Gerúndio.\nSe no contexto a frase exigir -ADO / -IDO (ex.: chegado / trazido / procedente) $\\rightarrow$ VINDO é PARTICÍPIO IRREGULAR (exprime estado, origem ou resultado).\nExemplo 1: \"Ele tem vindo com frequência.\" $\\rightarrow$ \"Ele tem chegado...\" $\\rightarrow$ Particípio Irregular (tempo composto com auxiliar ter).\nExemplo 2: \"Vindo de Portugal, o produto é refinado.\" $\\rightarrow$ \"Trazido de Portugal / Procedente de Portugal...\" $\\rightarrow$ Particípio Irregular (adjetivo indicando procedência).\nRelações\nProcedimento operacional: .(Questão CESPE)."
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-001",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Verbos Auxiliares",
+                  "Particípio Exigido",
+                  "Estrutura Sintática Típica",
+                  "Exemplos Corretos"
+                ],
+                "rows": [
+                  [
+                    "TER / HAVER",
+                    "REGULAR (-DO)",
+                    "Voz Ativa (Tempos Compostos)",
+                    "Eles haviam enxugado a louça.Tinham prendido o infrator.Haviam imprimido as provas."
+                  ],
+                  [
+                    "SER / ESTAR / FICAR(ou qualquer outra situação)",
+                    "IRREGULAR (sem -DO)",
+                    "Voz Passiva Analítica / Expressão de Estado / Orações Reduzidas",
+                    "A louça estava enxuta.O infrator foi preso.O relatório foi impresso."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-002",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-002",
+                "caption": "Explicação central",
+                "headers": [
+                  "Pessoa Gramatical",
+                  "Infinitivo Pessoal(com preposição 'para')",
+                  "Futuro do Subjuntivo(com conjunção 'quando')",
+                  "Situação"
+                ],
+                "rows": [
+                  [
+                    "1ª sing. (eu)",
+                    "(para eu)falar",
+                    "(quando eu)falar",
+                    "Idêntico"
+                  ],
+                  [
+                    "2ª sing. (tu)",
+                    "(para tu)falares",
+                    "(quando tu)falares",
+                    "Idêntico"
+                  ],
+                  [
+                    "3ª sing. (ele)",
+                    "(para ele)falar",
+                    "(quando ele)falar",
+                    "Idêntico"
+                  ],
+                  [
+                    "1ª plur. (nós)",
+                    "(para nós)falarmos",
+                    "(quando nós)falarmos",
+                    "Idêntico"
+                  ],
+                  [
+                    "2ª plur. (vós)",
+                    "(para vós)falardes",
+                    "(quando vós)falardes",
+                    "Idêntico"
+                  ],
+                  [
+                    "3ª plur. (eles)",
+                    "(para eles)falarem",
+                    "(quando eles)falarem",
+                    "Idêntico"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-003",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-003",
+                "caption": "Explicação central",
+                "headers": [
+                  "Categoria",
+                  "Tipo de Ação",
+                  "Critério Gramatical",
+                  "Exemplo e Correção"
+                ],
+                "rows": [
+                  [
+                    "BOM GERÚNDIO(Uso Adequado)",
+                    "Ação Contínua / Durativa",
+                    "A ação verbal exige naturalmente transcurso temporal prolongado.",
+                    "Fiquei escrevendo a minha redação ontem à noite. (Correto)"
+                  ],
+                  [
+                    "BOM GERÚNDIO(Uso Adequado)",
+                    "Ação Simultânea",
+                    "A ação do gerúndio ocorre concorrentemente (ao mesmo tempo) com a ação principal.",
+                    "Ele fala gesticulando.Podemos almoçar conversando? (Corretos)"
+                  ],
+                  [
+                    "MAU GERÚNDIO(Inadequado)",
+                    "Gerúndio Instantâneo(Gerundismo)",
+                    "Aplica-se a estrutura contínua do gerúndio a uma ação pontual/instantânea no futuro.",
+                    "Inadequado: Vou estar transferindo a ligação.Culto: Vou transferir a ligação."
+                  ],
+                  [
+                    "MAU GERÚNDIO(Inadequado)",
+                    "Gerúndio Posterior",
+                    "Emprega-se o gerúndio para indicar uma ação que ocorre cronologicamenteapós a ação principal.",
+                    "Inadequado: Escreveu o relatório, enviando-o ao diretor.Culto: Escreveu o relatório e enviou-o ao diretor."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-008",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-008",
+                "caption": "Regra Geral Sintática dos Auxiliares",
+                "headers": [
+                  "Verbos Auxiliares",
+                  "Particípio Exigido",
+                  "Estrutura Sintática Típica",
+                  "Exemplos Corretos"
+                ],
+                "rows": [
+                  [
+                    "TER / HAVER",
+                    "REGULAR (-DO)",
+                    "Voz Ativa (Tempos Compostos)",
+                    "Eles haviam enxugado a louça.Tinham prendido o infrator.Haviam imprimido as provas."
+                  ],
+                  [
+                    "SER / ESTAR / FICAR(ou qualquer outra situação)",
+                    "IRREGULAR (sem -DO)",
+                    "Voz Passiva Analítica / Expressão de Estado / Orações Reduzidas",
+                    "A louça estava enxuta.O infrator foi preso.O relatório foi impresso."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-009",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-009",
+                "caption": "Tabela de Coincidência Gráfica (Verbo Regular: Falar)",
+                "headers": [
+                  "Pessoa Gramatical",
+                  "Infinitivo Pessoal(com preposição 'para')",
+                  "Futuro do Subjuntivo(com conjunção 'quando')",
+                  "Situação"
+                ],
+                "rows": [
+                  [
+                    "1ª sing. (eu)",
+                    "(para eu)falar",
+                    "(quando eu)falar",
+                    "Idêntico"
+                  ],
+                  [
+                    "2ª sing. (tu)",
+                    "(para tu)falares",
+                    "(quando tu)falares",
+                    "Idêntico"
+                  ],
+                  [
+                    "3ª sing. (ele)",
+                    "(para ele)falar",
+                    "(quando ele)falar",
+                    "Idêntico"
+                  ],
+                  [
+                    "1ª plur. (nós)",
+                    "(para nós)falarmos",
+                    "(quando nós)falarmos",
+                    "Idêntico"
+                  ],
+                  [
+                    "2ª plur. (vós)",
+                    "(para vós)falardes",
+                    "(quando vós)falardes",
+                    "Idêntico"
+                  ],
+                  [
+                    "3ª plur. (eles)",
+                    "(para eles)falarem",
+                    "(quando eles)falarem",
+                    "Idêntico"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-010",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-010",
+                "caption": "Quadro de Oposição: Bom Gerúndio vs. Mau Gerúndio",
+                "headers": [
+                  "Categoria",
+                  "Tipo de Ação",
+                  "Critério Gramatical",
+                  "Exemplo e Correção"
+                ],
+                "rows": [
+                  [
+                    "BOM GERÚNDIO(Uso Adequado)",
+                    "Ação Contínua / Durativa",
+                    "A ação verbal exige naturalmente transcurso temporal prolongado.",
+                    "Fiquei escrevendo a minha redação ontem à noite. (Correto)"
+                  ],
+                  [
+                    "BOM GERÚNDIO(Uso Adequado)",
+                    "Ação Simultânea",
+                    "A ação do gerúndio ocorre concorrentemente (ao mesmo tempo) com a ação principal.",
+                    "Ele fala gesticulando.Podemos almoçar conversando? (Corretos)"
+                  ],
+                  [
+                    "MAU GERÚNDIO(Inadequado)",
+                    "Gerúndio Instantâneo(Gerundismo)",
+                    "Aplica-se a estrutura contínua do gerúndio a uma ação pontual/instantânea no futuro.",
+                    "Inadequado: Vou estar transferindo a ligação.Culto: Vou transferir a ligação."
+                  ],
+                  [
+                    "MAU GERÚNDIO(Inadequado)",
+                    "Gerúndio Posterior",
+                    "Emprega-se o gerúndio para indicar uma ação que ocorre cronologicamenteapós a ação principal.",
+                    "Inadequado: Escreveu o relatório, enviando-o ao diretor.Culto: Escreveu o relatório e enviou-o ao diretor."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAs Formas Nominais do Verbo (Infinitivo, Gerúndio e Particípio) recebem essa designação porque, além de expressarem processos verbais (ações, estados ou fenômenos), desprovidas de flexões tempo-modais típicas do verbo finito, desempenham na oração as funções sintático-semânticas características dos nomes. Na taxonomia da gramática normativa, a categoria de \"nome\" engloba tudo o que não é verbo: Substantivo, Adjetivo e Advérbio.\nExplicação consolidada\nQuando um verbo assume forma nominal, ele sofre um processo de transposição funcional:\nInfinitivo $\\rightarrow$ Valor preferencial de Substantivo: Atua como núcleo de funções sintáticas substantivas (sujeito, objeto, predicativo). Pode vir substantivado por determinantes.\nParticípio $\\rightarrow$ Valor preferencial de Adjetivo: Atua modificando ou caracterizando um substantivo, concordando com ele em gênero e número (quando fora de tempos compostos da voz ativa).\nGerúndio $\\rightarrow$ Valor preferencial de Advérbio: Atua expressando circunstâncias adverbiais (tempo, causa, modo, consequência, condição) que modificam a oração principal.\nCritérios de reconhecimento ou aplicação\nSe o verbo puder ser substituído por um substantivo correspondente mantendo a função sintática básica $\\rightarrow$ Valor de Substantivo.\nSe o verbo qualificar diretamente um substantivo concordando em gênero/número $\\rightarrow$ Valor de Adjetivo.\nSe o verbo introduzir circunstância modificadora da ação principal $\\rightarrow$ Valor de Advérbio.\nExemplos e contraexemplos\nInfinitivo como Substantivo: \"Fumar é proibido.\" (Equivale a: \"O fumo é proibido\"; fumar é sujeito da oração).\nParticípio como Adjetivo: \"Tempo perdido.\" (Perdido qualifica o substantivo tempo).\nGerúndio como Advérbio: \"Amanhecendo, partiremos.\" (Amanhecendo estabelece circunstância temporal: \"Quando amanhecer, partiremos\").\nRelações\nExpande em: , , .\nExemplificado por: ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAs três formas nominais identificam-se morfologicamente por desinências específicas:\nInfinitivo: Desinência -R (ex.: falar, beber, partir).\nGerúndio: Desinência -NDO (ex.: falando, bebendo, partindo).\nParticípio Regular: Desinência -DO (ex.: falado, bebido, partido).\nRADICAL + VOGAL TEMÁTICA + DESINÊNCIA NOMINAL FALA + -R > Infinitivo (falar) FALA + -NDO > Gerúndio (falando) FALA + -DO > Particípio Regular (falado)\nExplicação consolidada\nO Infinitivo enuncia o processo verbal em abstrato (o nome do verbo).\nO Gerúndio expressa o processo verbal em curso, inacabado, em desenvolvimento (aspecto imperfeito/durativo).\nO Particípio expressa o resultado concluído da ação, o estado atingido ou o aspecto perfectivo acabado."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nOs verbos dividem-se quanto ao particípio em Abundantes (possuem dupla forma: regular e irregular) e Não Abundantes (possuem uma única forma de particípio, que pode ser exclusivamente regular ou exclusivamente irregular).\nExplicação consolidada\nVerbos Abundantes de Particípio:\nForma Regular: Termina obrigatoriamente em -DO (ex.: aceitado, entregado, limpado, inserido, suspendido, acendido, imprimido, enxugado, prendido).\nForma Irregular: Forma reduzida que não termina em -DO, apresentando terminações como -to, -so, -gue, -po (ex.: aceito, entregue, limpo, inserto, suspenso, aceso, impresso, enxuto, preso).\nVerbos Não Abundantes de Particípio:\nExclusivamente Regulares: Possuem apenas a forma em -DO.\nChegar $\\rightarrow$ chegado (A forma \"chego\" não existe como particípio na norma culta).\nTrazer $\\rightarrow$ trazido (A forma \"trago\" não existe como particípio na norma culta).\nExclusivamente Irregulares: Possuem apenas a forma reduzida sem -DO. Não admitem desinência regular.\nDizer $\\rightarrow$ dito (Não existe \"dizido\").\nPôr $\\rightarrow$ posto (Não existe \"ponhado\" ou \"podo\").\nCobrir $\\rightarrow$ coberto (Não existe \"cobrido\").\nFazer $\\rightarrow$ feito (Não existe \"fazido\").\nEscrever $\\rightarrow$ escrito (Não existe \"escrevido\").\nAlerta sobre \"Chego\" e \"Trago\"\nAs palavras chego e trago são legítimas na língua portuguesa apenas como formas flexionadas do Presente do Indicativo na 1ª pessoa do singular (\"Eu chego cedo\", \"Eu trago o café\"). Seu emprego com verbos auxiliares de tempos compostos ou voz passiva (\"tinha chego\", \"foi trago\") constitui desvio gramatical grave em provas.\nRelações\nRegulado por: ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Regra Geral Sintática dos Auxiliares\nPara verbos abundantes, a seleção entre o particípio regular e o irregular obedece estritamente ao verbo auxiliar que compõe a locução:\nDiferenciação entre Valor Verbal e Valor Nominal do Particípio\nParticípio com Valor Verbal: Integra locução de tempo composto com auxiliar. Permanece invariável no masculino singular. Ex.: \"O homem tinha viajado\" (viajado = verbo).\nParticípio com Valor Nominal (Adjetivo): Modifica diretamente um substantivo, flexionando-se em gênero e número. Ex.: \"O homem viajado é experiente\" (viajado = adjetivo/nome).\nExceção Normativa Consagrada: A \"Regra do Vale Tudo\"\nA gramática normativa e os manuais de referência consagram uma exceção plena para quatro verbos: GANHAR, GASTAR, PEGAR e PAGAR.\nPara esses 4 verbos, qualquer forma de particípio (regular ou irregular) é aceita com qualquer verbo auxiliar:\nPAGAR: \"Tinha pagado\" OU \"Tinha pago\" / \"Foi pagado\" OU \"Foi pago\".\nGANHAR: \"Tinha ganhado\" OU \"Tinha ganho\" / \"Foi ganhado\" OU \"Foi ganho\".\nGASTAR: \"Tinha gastado\" OU \"Tinha gasto\" / \"Foi gastado\" OU \"Foi gasto\".\nPEGAR: \"Tinha pegado\" OU \"Tinha pego\" / \"Foi pegado\" OU \"Foi pego\".\nRelações\nProcedimento operacional: .\nExemplificado por: .\nPossui Dica: TIP-A04-G04-FORMAS-NOMINAIS-001."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO Infinitivo divide-se em Impessoal (não faz referência a nenhum sujeito ou pessoa gramatical) e Pessoal (possui sujeito ou agente determinado). Por sua vez, o Infinitivo Pessoal pode apresentar-se sob duas formas: Flexionado ou Não Flexionado.\nQuadro Comparativo de Classificação do Infinitivo\nINFINITIVO ┴ INFINITIVO IMPESSOAL INFINITIVO PESSOAL • Não tem pessoa / Sem sujeito • Tem pessoa / Sujeito determinado • Enunciação vaga / Nome do verbo • Conjugável com \"PARA\" • Ex: \"É preciso acabar com a miséria.\" ┴ FLEXIONADO NÃO FLEXIONADO • Apresenta desinência pessoal • Sem desinência gráfica • Desinências: -es, -mos, • Sujeito recuperado no contexto -des, -em • Ex: \"...estudemos para PASSAR.\" • Ex: \"Para PASSARES...\" (Sujeito de passar: nós)\nExplicação consolidada\nInfinitivo Impessoal:\nExpressa a ação em si, de maneira indeterminada, genérica ou abstrata.\nNão admite flexão. Ex.: \"Viver é aprender.\" / \"É fundamental preservar o meio ambiente.\"\nInfinitivo Pessoal Flexionado:\nO verbo recebe desinência número-pessoal explícita (-es, -mos, -des, -em) para concordar graficamente com seu sujeito.\nConjugação com auxílio da preposição para: para eu falar, para tu falares, para ele falar, para nós falarmos, para vós falardes, para eles falarem.\nExemplo: \"Para passares em concurso, é preciso estudo\" (Sujeito: tu $\\rightarrow$ desinência -es).\nInfinitivo Pessoal Não Flexionado (Regra de Ouro):\n\"Nem todo infinitivo que tem sujeito se flexiona.\"\nOcorre quando o infinitivo possui um sujeito determinado na oração (frequentemente correferencial com o sujeito da oração principal), mas o redator opta por manter o verbo na sua forma não flexionada.\nExemplo: \"É importante que estudemos para passar em concurso.\"\nQuem vai passar? O sujeito de passar é nós (identificado pela flexão de estudemos).\nComo não recebeu a desinência -mos, classifica-se como Infinitivo Pessoal Não Flexionado.\nRelações\nProcedimento associado: .\nExemplificado por: , .\nPossui Citação: QUOTE-A04-G04-FORMAS-NOMINAIS-001."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nNos verbos regulares, o Infinitivo Pessoal e o Futuro do Subjuntivo apresentam homografia e homofonia absolutas (grafia e som exatamente idênticos em todas as pessoas gramaticais). A distinção sintática exige a identificação dos conectores oracionais ou a aplicação do Macete da Substituição por Verbos Irregulares Modelo.\nTabela de Coincidência Gráfica (Verbo Regular: Falar)\nPor que a coincidência NÃO ocorre em verbos irregulares?\nNos verbos irregulares, o Futuro do Subjuntivo deriva da 3ª pessoa do plural do Pretérito Perfeito do Indicativo (eliminando-se a terminação -ram), gerando radicais distintos do infinitivo:\nFazer: Infinitivo = fazer | Futuro Subjuntivo = fizer (fizeres, fizermos...)\nDizer: Infinitivo = dizer | Futuro Subjuntivo = disser (disseres, dissermos...)\nPôr: Infinitivo = pôr | Futuro Subjuntivo = puser (puseres, pusermos...)\nTrazer: Infinitivo = trazer | Futuro Subjuntivo = trouxer (trouxeres, trouxermos...)\nMacete da Substituição (Fazer/Fizer ou Dizer/Disser)\nPara desmascarar a forma verbal regular em uma prova:\nSubstitua o verbo regular pelo verbo irregular FAZER ou DIZER.\nRegra de Decisão:\nSe a frase exigir a forma FAZER / DIZER $\\rightarrow$ Trata-se de INFINITIVO.\nSe a frase exigir a forma FIZER / DISSER $\\rightarrow$ Trata-se de FUTURO DO SUBJUNTIVO.\nPistas dos Conectores Sintáticos:\nPreposição ou Locução Prepositiva (para, a fim de, por, de, sem) $\\rightarrow$ Exige Infinitivo.\nConjunção Subordinativa (quando, se, assim que, logo que, da próxima vez que) $\\rightarrow$ Exige Futuro do Subjuntivo.\nExemplos Comparativos\n\"A fim de falares bem uma língua...\" $\\rightarrow$ \"A fim de fazeres...\" $\\rightarrow$ Infinitivo Pessoal Flexionado.\n\"Assim que falares com o diretor...\" $\\rightarrow$ \"Assim que fizeres...\" $\\rightarrow$ Futuro do Subjuntivo.\nRelações\nProcedimento operacional: .(Questão FGV SUDENE-PE)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO Gerúndio (terminação -NDO) expressa o aspecto verbal imperfeito, designando uma ação em curso ou processo contínuo. A norma culta distingue com rigor o emprego legítimo (\"Bom Gerúndio\") dos usos viciosos e agramaticais (\"Mau Gerúndio\" ou Gerundismo).\nQuadro de Oposição: Bom Gerúndio vs. Mau Gerúndio\nExplicação consolidada\nDesmistificando o Preconceito: O gerúndio não é um erro gramatical em si. É forma nominal essencial da língua para ações durativas e simultâneas.\nPor que o Gerúndio Instantâneo Irrita? Porque uma ação pontual (transferir uma ligação, enviar um e-mail) realiza-se em um instante. Ao empregar \"vou estar transferindo\", o falante projeta uma ação instantânea como se fosse um processo infinito no tempo.\nO Perigo do Gerúndio Posterior em Redações: Nas redações discursivas e em questões da FGV/FCC, o uso do gerúndio posterior (\"O governo aprovou a medida, reduzindo os impostos na semana seguinte\") é fortemente penalizado. Ações cronologicamente sucessivas exigem coordenação aditiva (\"O governo aprovou a medida e reduziu os impostos...\").(Questão FGV IBGE)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO gerúndio introduz orações reduzidas com função adverbial equivalente às orações subordinadas adverbiais desenvolvidas. Os principais valores semânticos cobrados em concursos são: Tempo, Causa, Consequência e Adição/Consequência.\nMetodologia de Identificação\nA determinação do valor semântico nunca deve ser feita isolando-se o gerúndio; exige a análise da relação lógica de sentido entre a oração no gerúndio e o verbo da oração principal:\n[ VERBO DA ORAÇÃO PRINCIPAL ] [ VERBO NO GERÚNDIO ]\nValor de Tempo (Temporal):\nO gerúndio expressa a circunstância cronológica em que ocorre a ação principal.\nEquivale a conjunções temporais (quando, assim que, logo que).\nExemplo: \"Chegando cedo, avise-me.\" $\\rightarrow$ \"Avise-me quando chegar.\"\nValor de Causa (Causal):\nO gerúndio expressa a razão, motivação ou fato gerador da ação principal.\nEquivale a conjunções causais (porque, visto que, já que).\nExemplo: \"Terminando o trabalho, foi descansar.\" $\\rightarrow$ \"Foi descansar porque terminou o trabalho.\"\nValor de Consequência (Consecutivo):\nO gerúndio expressa o resultado, efeito ou desfecho decorrente da ação principal.\nFrequentemente correlacionado a intensificadores (tão, tanto, tal) ou substituível por locuções consecutivas (de maneira a, de modo que, de forma que).\nExemplo: \"Ele chegou tão feliz, contagiando a todos.\" $\\rightarrow$ \"Ele chegou tão feliz de modo que contagiou a todos.\"\nValor de Adição com Efeito Consecutivo:\nOcorre quando a oração no gerúndio acrescenta uma nova informação que decorre logicamente da primeira.\nSubstituível por oração coordenada aditiva (e + verbo flexionado).\nExemplo: \"Os modelos focam na teoria, obrigando a decorar fórmulas.\" $\\rightarrow$ \"Os modelos focam na teoria e obrigam a decorar fórmulas.\"\nRelações\nProcedimento operacional: .(FCC TST), (FCC FCRIA), (FGV DPE-RJ)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO verbo VIR (e seus derivados: intervir, convir, provir, advir) apresenta uma particularidade morfológica explorada como armadilha clássica em concursos: a forma VINDO funciona tanto como Gerúndio quanto como Particípio Irregular. A forma regular \"vido\" não existe na língua portuguesa.\nEstrutura Morfológica do Verbo VIR\nVERBO \"VIR\" E DERIVADOS ┴ GERÚNDIO PARTICÍPIO VINDO ┴ (Terminação -ndo) Expressa ação contínua PARTICÍPIO REGULAR PARTICÍPIO IRREGULAR (Forma em -DO) (Sem terminação -DO) ~VIDO~ VINDO (NÃO EXISTE!) (Homógrafo ao Gerúndio)\nTeste de Substituição para Diferenciação Contextual\nPara determinar se uma ocorrência da palavra vindo em um texto é gerúndio ou particípio, substitui-se o verbo por um verbo modelo de flexões regulares distintas (como chegar ou trazer):\nSe no contexto a frase exigir -ANDO / -ENDO / -INDO (ex.: chegando / trazendo) $\\rightarrow$ VINDO é GERÚNDIO (exprime ação em andamento).\nExemplo: \"Eu estou vindo para o trabalho.\" $\\rightarrow$ \"Estou chegando...\" $\\rightarrow$ Gerúndio.\nSe no contexto a frase exigir -ADO / -IDO (ex.: chegado / trazido / procedente) $\\rightarrow$ VINDO é PARTICÍPIO IRREGULAR (exprime estado, origem ou resultado).\nExemplo 1: \"Ele tem vindo com frequência.\" $\\rightarrow$ \"Ele tem chegado...\" $\\rightarrow$ Particípio Irregular (tempo composto com auxiliar ter).\nExemplo 2: \"Vindo de Portugal, o produto é refinado.\" $\\rightarrow$ \"Trazido de Portugal / Procedente de Portugal...\" $\\rightarrow$ Particípio Irregular (adjetivo indicando procedência).\nRelações\nProcedimento operacional: .(Questão CESPE)."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-SUBJ-01",
-          "title": "Formação do Futuro do Subjuntivo a partir da 3ª Pessoa Plural do Pretérito Perfeito",
-          "statement": "O Futuro do Subjuntivo e o Pretérito Imperfeito do Subjuntivo derivam-se diretamente da 3ª pessoa do plural do Pretérito Perfeito do Indicativo: corta-se a terminação '-ram' e adicionam-se as desinências correspondentes (-sse para imperfeito, -r para futuro).",
-          "formalCondition": "Base = [3ª pessoa plural Pret. Perfeito] - 'ram'. Imperfeito = Base + sse; Futuro = Base + r.",
-          "scope": "Universal para 100% dos verbos regulares e irregulares da língua.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A04-G04-001",
+          "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "verbs_conjugation",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
           "exceptions": [],
-          "examples": [
-            "Eles puseram -> tirou 'ram' (puse-) -> se eu pusesse / quando eu puser",
-            "Eles viram (ver) -> tirou 'ram' (vi-) -> se eu visse / quando eu vir",
-            "Eles vieram (vir) -> tirou 'ram' (vie-) -> se eu viesse / quando eu vier",
-            "Eles souberam -> tirou 'ram' (soube-) -> se eu soubesse / quando eu souber"
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A04-G04-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-004",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-004",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "ID Canônico",
+                  "Conceito / Regra",
+                  "Formulação Canônica Compacta",
+                  "Referência Detalhada"
+                ],
+                "rows": [
+                  [
+                    "CANON-G04-001",
+                    "Conceito de Nome",
+                    "Na gramática normativa, \"nome\" é tudo o que não é verbo, compreendendo Substantivo, Adjetivo e Advérbio.",
+                    "KB-A04-G04-FORMAS-NOMINAIS-001"
+                  ],
+                  [
+                    "CANON-G04-002",
+                    "Desinências Nominais",
+                    "Infinitivo =-R; Gerúndio = -NDO; Particípio Regular = -DO.",
+                    "KB-A04-G04-FORMAS-NOMINAIS-002"
+                  ],
+                  [
+                    "CANON-G04-003",
+                    "Verbos Abundantes",
+                    "Verbos que possuem duplo particípio: regular em-DO e irregular reduzido (sem -DO).",
+                    "KB-A04-G04-FORMAS-NOMINAIS-003"
+                  ],
+                  [
+                    "CANON-G04-004",
+                    "Verbos Não Abundantes",
+                    "Verbos que possuem apenas uma forma de particípio (exclusivamente regular comochegado, ou exclusivamente irregular como dito, posto, coberto).",
+                    "KB-A04-G04-FORMAS-NOMINAIS-003"
+                  ],
+                  [
+                    "CANON-G04-005",
+                    "Regra dos Auxiliares",
+                    "AuxiliaresTER/HAVER exigem particípio regular em -DO; auxiliares SER/ESTAR/FICAR exigem particípio irregular.",
+                    "KB-A04-G04-FORMAS-NOMINAIS-004"
+                  ],
+                  [
+                    "CANON-G04-006",
+                    "Regra do \"Vale Tudo\"",
+                    "ParaGanhar, Gastar, Pegar e Pagar, a norma culta admite qualquer forma de particípio com qualquer verbo auxiliar.",
+                    "KB-A04-G04-FORMAS-NOMINAIS-004"
+                  ],
+                  [
+                    "CANON-G04-007",
+                    "Infinitivo Pessoal",
+                    "Infinitivo que possui sujeito determinado. Subdivide-se em Flexionado (com desinência explícita) e Não Flexionado (invariável).",
+                    "KB-A04-G04-FORMAS-NOMINAIS-005"
+                  ],
+                  [
+                    "CANON-G04-008",
+                    "Regra de Ouro do Infinitivo",
+                    "\"Nem todo infinitivo que possui sujeito se flexiona.\"",
+                    "KB-A04-G04-FORMAS-NOMINAIS-005"
+                  ],
+                  [
+                    "CANON-G04-009",
+                    "Distinção Infinitivo x Futuro Subjuntivo",
+                    "Em verbos regulares, as formas são homógrafas; aplica-se a substituição porFAZER/FIZER ou DIZER/DISSER.",
+                    "KB-A04-G04-FORMAS-NOMINAIS-006"
+                  ],
+                  [
+                    "CANON-G04-010",
+                    "Bom Gerúndio",
+                    "Uso legítimo do gerúndio para exprimir processos durativos ou ações simultâneas à ação principal.",
+                    "KB-A04-G04-FORMAS-NOMINAIS-007"
+                  ],
+                  [
+                    "CANON-G04-011",
+                    "Mau Gerúndio (Gerundismo / Posterior)",
+                    "Uso vicioso do gerúndio para ações instantâneas projetadas no futuro ou para ações cronologicamente posteriores.",
+                    "KB-A04-G04-FORMAS-NOMINAIS-007"
+                  ],
+                  [
+                    "CANON-G04-012",
+                    "Particípio de \"VIR\"",
+                    "O verboVIR não possui a forma \"vido\"; seu particípio irregular é VINDO, homógrafo ao gerúndio.",
+                    "KB-A04-G04-FORMAS-NOMINAIS-009"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A04-G04-001",
+              "EXP-IP-A04-G04-041"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-SUBJ-01",
-          "title": "Método Infalível para Conjugar Verbos Irregulares no Futuro do Subjuntivo",
-          "triggerCondition": "Dúvida na conjugação de verbos irregulares (ver, vir, pôr, ter, trazer, caber, saber).",
+          "entityId": "PROC-A04-G04-FORMAS-NOMINAIS-001",
+          "title": "Algoritmo de Escolha da Forma de Particípio em Locuções",
           "steps": [
-            "1. Conjuge o verbo na 3ª pessoa do plural do Pretérito Perfeito: 'Eles ... ontem' (ex: Eles viram, Eles vieram, Eles puseram, Eles trouxeram).",
-            "2. Elimine a terminação '-RAM' (sobra: vi-, vie-, puse-, trouxe-).",
-            "3. Adicione '-R, -RES, -R, -RMOS, -RDES, -REM' para formar o Futuro do Subjuntivo.",
-            "4. Resultado garantido: quando eu VIR (ver), quando eu VIER (vir), quando eu PUSER (pôr), quando eu TROUXER (trazer)."
+            {
+              "order": 1,
+              "action": "INÍCIO: Identificar o verbo principal da oração a ser colocado no particípio",
+              "explanation": "Procedimento operacional para Algoritmo de Escolha da Forma de Particípio em Locuções.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? SIM > \"Regra do Vale Tudo\": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar",
+              "explanation": "Procedimento operacional para Algoritmo de Escolha da Forma de Particípio em Locuções.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "(FIM) NÃO > Avançar para o PASSO 2",
+              "explanation": "Procedimento operacional para Algoritmo de Escolha da Forma de Particípio em Locuções.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "PASSO 2: O verbo é ABUNDANTE no particípio? NÃO > Use a ÚNICA forma existente do verbo na norma culta: Se for exclusivamente regular: usar em -DO (ex.: \"tinha chegado\", \"foi trazido\")",
+              "explanation": "Procedimento operacional para Algoritmo de Escolha da Forma de Particípio em Locuções.",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se a raiz coincide rigorosamente com o pretérito perfeito 'eles ...ram'.",
-          "typicalFailureModes": [
-            "Usar o infinitivo no lugar do futuro do subjuntivo (*quando eu ver o filme -> correto: quando eu vir)."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo de Escolha da Forma de Particípio em Locuções."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo de Escolha da Forma de Particípio em Locuções."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Algoritmo de Escolha da Forma de Particípio em Locuções",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "derived",
+          "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "INÍCIO: Identificar o verbo principal da oração a ser colocado no particípio. │ ├── PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? │ ├── SIM ──> \"Regra do Vale Tudo\": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar. (FIM) │ └── NÃO ──> Avançar para o PASSO 2. │ ├── PASSO 2: O verbo é ABUNDANTE no particípio? │ ├── NÃO ──> Use a ÚNICA forma existente do verbo na norma culta: │ │ • Se for exclusivamente regular: usar em -DO (ex.: \"tinha chegado\", \"foi trazido\"). │ │ • Se for exclusivamente irregular: usar forma reduzida (ex.: \"tinha dito\", \"foi posto\", \"estava coberto\"). (FIM) │ └── SIM ──> Avançar para o PASSO 3. │ └── PASSO 3: Identificar o VERBO AUXILIAR da locução: ├── Se for TER ou HAVER (Voz Ativa / Tempos Compostos): │ └── Selecionar obrigatoriamente o PARTICÍPIO REGULAR em -DO (ex.: \"havia entregado\", \"tinham imprimido\"). │ └── Se for SER, ESTAR, FICAR (ou voz passiva / estado / oração reduzida): └── Selecionar obrigatoriamente o PARTICÍPIO IRREGULAR (ex.: \"foi entregue\", \"estava impresso\", \"ficou suspenso\"). (FIM)"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A04-G04-FORMAS-NOMINAIS-001",
+              "EXP-IP-A04-G04-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A04-G04-FORMAS-NOMINAIS-002",
+          "title": "Identificação Sintática do Infinitivo Não Flexionado",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a oração reduzida de infinitivo cujo verbo não possui desinência pessoal visível (-es, -mos, -des, -em).",
+              "explanation": "Passo 1 do algoritmo de Identificação Sintática do Infinitivo Não Flexionado.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formule a pergunta de agente",
+              "explanation": "\"Quem realiza ou é o sujeito da ação expressa por este infinitivo?\"",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Inspecione o contexto sintático",
+              "explanation": "Passo 3 do algoritmo de Identificação Sintática do Infinitivo Não Flexionado.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o sujeito for indeterminado, genérico ou inexistente (qualquer pessoa, todo mundo) $\\rightarrow$ Classifique como Infinitivo Impessoal.",
+              "explanation": "Passo 4 do algoritmo de Identificação Sintática do Infinitivo Não Flexionado.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se houver um sujeito determinado expresso ou desinencial em outra oração do mesmo período $\\rightarrow$ Classifique como Infinitivo Pessoal Não Flexionado.",
+              "explanation": "Passo 5 do algoritmo de Identificação Sintática do Infinitivo Não Flexionado.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Identificação Sintática do Infinitivo Não Flexionado."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Identificação Sintática do Infinitivo Não Flexionado."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Identificação Sintática do Infinitivo Não Flexionado",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localize a oração reduzida de infinitivo cujo verbo não possui desinência pessoal visível (-es, -mos, -des, -em).",
+                "Formule a pergunta de agente: \"Quem realiza ou é o sujeito da ação expressa por este infinitivo?\"",
+                "Inspecione o contexto sintático:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o sujeito for indeterminado, genérico ou inexistente (qualquer pessoa, todo mundo) $\\rightarrow$ Classifique como Infinitivo Impessoal.",
+                "Se houver um sujeito determinado expresso ou desinencial em outra oração do mesmo período $\\rightarrow$ Classifique como Infinitivo Pessoal Não Flexionado."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A04-G04-FORMAS-NOMINAIS-002",
+              "EXP-IP-A04-G04-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A04-G04-FORMAS-NOMINAIS-003",
+          "title": "Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificação do Alvo",
+              "explanation": "Isole o verbo regular em dúvida terminado em -r, -res, -rmos, -rem.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substituição Mecânica",
+              "explanation": "Troque o verbo regular por uma das formas do par irregular modelo:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Par 1",
+              "explanation": "FAZER (Infinitivo) vs. FIZER (Futuro do Subjuntivo).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Par 2",
+              "explanation": "DIZER (Infinitivo) vs. DISSER (Futuro do Subjuntivo).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Julgamento Sintático",
+              "explanation": "Avalie a harmonia morfológica no ponto da frase:",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Encaixou FAZER / DIZER $\\rightarrow$ A forma original é INFINITIVO.",
+              "explanation": "Passo 6 do algoritmo de Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo).",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Encaixou FIZER / DISSER $\\rightarrow$ A forma original é FUTURO DO SUBJUNTIVO.",
+              "explanation": "Passo 7 do algoritmo de Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo).",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Regra de Ouro da Aplicação",
+              "explanation": "Não leia a frase inteira buscando coerência semântica com o sentido de \"fazer\"; avalie exclusivamente o ajuste morfossintático da forma verbal diante do conector (preposição ou conjunção).",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Macete da Substituição (Infinitivo Pessoal vs. Futuro do Subjuntivo)",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificação do Alvo: Isole o verbo regular em dúvida terminado em -r, -res, -rmos, -rem.",
+                "Substituição Mecânica: Troque o verbo regular por uma das formas do par irregular modelo:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Par 1: FAZER (Infinitivo) vs. FIZER (Futuro do Subjuntivo).",
+                "Par 2: DIZER (Infinitivo) vs. DISSER (Futuro do Subjuntivo)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Julgamento Sintático: Avalie a harmonia morfológica no ponto da frase:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Encaixou FAZER / DIZER $\\rightarrow$ A forma original é INFINITIVO.",
+                "Encaixou FIZER / DISSER $\\rightarrow$ A forma original é FUTURO DO SUBJUNTIVO."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra de Ouro da Aplicação: Não leia a frase inteira buscando coerência semântica com o sentido de \"fazer\"; avalie exclusivamente o ajuste morfossintático da forma verbal diante do conector (preposição ou conjunção)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A04-G04-FORMAS-NOMINAIS-003",
+              "EXP-IP-A04-G04-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A04-G04-FORMAS-NOMINAIS-004",
+          "title": "Roteiro de Identificação de Valores Semânticos do Gerúndio",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole o Gerúndio",
+              "explanation": "Destaque o verbo com terminação -NDO.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localize o Verbo Principal",
+              "explanation": "Encontre o verbo da oração principal ao qual o gerúndio está conectado.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Teste de Conectivos Equivalentes",
+              "explanation": "Passo 3 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
+              "test": "Teste de Conectivos Equivalentes:"
+            },
+            {
+              "order": 4,
+              "action": "Troque a oração por \"Quando / Assim que + verbo flexionado\" $\\rightarrow$ Manteve o sentido? Valor de TEMPO.",
+              "explanation": "Passo 4 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Troque a oração por \"Porque / Visto que + verbo flexionado\" $\\rightarrow$ Indica a causa do fato principal? Valor de CAUSA.",
+              "explanation": "Passo 5 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Troque a oração por \"De modo que / De forma que + verbo flexionado\" $\\rightarrow$ Indica a consequência ou resultado? Valor de CONSEQUÊNCIA.",
+              "explanation": "Passo 6 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Troque por \"e + verbo no mesmo tempo da oração principal\" $\\rightarrow$ Adiciona um fato consequente? Valor de ADIÇÃO / CONSEQUÊNCIA.",
+              "explanation": "Passo 7 do algoritmo de Roteiro de Identificação de Valores Semânticos do Gerúndio.",
+              "test": "Troque por \"e + verbo no mesmo tempo da oração principal\" $\\rightarrow$ Adiciona um fato consequente? Valor de ADIÇÃO / CONSEQUÊNCIA."
+            },
+            {
+              "order": 8,
+              "action": "Seleção da Alternativa",
+              "explanation": "Opte pela alternativa que corresponda à relação lógica comprovada, rejeitando escolhas baseadas apenas em \"sonoridade agradável\".",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Roteiro de Identificação de Valores Semânticos do Gerúndio."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro de Identificação de Valores Semânticos do Gerúndio."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Roteiro de Identificação de Valores Semânticos do Gerúndio",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Isole o Gerúndio: Destaque o verbo com terminação -NDO.",
+                "Localize o Verbo Principal: Encontre o verbo da oração principal ao qual o gerúndio está conectado.",
+                "Teste de Conectivos Equivalentes:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Troque a oração por \"Quando / Assim que + verbo flexionado\" $\\rightarrow$ Manteve o sentido? Valor de TEMPO.",
+                "Troque a oração por \"Porque / Visto que + verbo flexionado\" $\\rightarrow$ Indica a causa do fato principal? Valor de CAUSA.",
+                "Troque a oração por \"De modo que / De forma que + verbo flexionado\" $\\rightarrow$ Indica a consequência ou resultado? Valor de CONSEQUÊNCIA.",
+                "Troque por \"e + verbo no mesmo tempo da oração principal\" $\\rightarrow$ Adiciona um fato consequente? Valor de ADIÇÃO / CONSEQUÊNCIA."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Seleção da Alternativa: Opte pela alternativa que corresponda à relação lógica comprovada, rejeitando escolhas baseadas apenas em \"sonoridade agradável\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A04-G04-FORMAS-NOMINAIS-004",
+              "EXP-IP-A04-G04-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A04-G04-FORMAS-NOMINAIS-005",
+          "title": "Teste do \"Chegando/Chegado\" para a Forma \"VINDO\"",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a palavra VINDO (ou de verbos derivados",
+              "explanation": "intervindo, convindo, provindo) no texto da prova.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua mentalmente pelo verbo regular chegar ou trazer",
+              "explanation": "Passo 2 do algoritmo de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\".",
+              "test": "Substitua mentalmente pelo verbo regular chegar ou trazer:"
+            },
+            {
+              "order": 3,
+              "action": "Se a frase pedir a forma em -ANDO (chegando / trazendo), a palavra vindo é um GERÚNDIO (ação em andamento).",
+              "explanation": "Passo 3 do algoritmo de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a frase pedir a forma em -ADO / -IDO (chegado / trazido / procedente), a palavra vindo é um PARTICÍPIO IRREGULAR (origem, estado ou tempo composto).",
+              "explanation": "Passo 4 do algoritmo de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\".",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Julgue as assertivas da banca examinadora com base nessa classificação categorial.",
+              "explanation": "Passo 5 do algoritmo de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\".",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do \"Chegando/Chegado\" para a Forma \"VINDO\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste do \"Chegando/Chegado\" para a Forma \"VINDO\"",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localize a palavra VINDO (ou de verbos derivados: intervindo, convindo, provindo) no texto da prova.",
+                "Substitua mentalmente pelo verbo regular chegar ou trazer:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se a frase pedir a forma em -ANDO (chegando / trazendo), a palavra vindo é um GERÚNDIO (ação em andamento).",
+                "Se a frase pedir a forma em -ADO / -IDO (chegado / trazido / procedente), a palavra vindo é um PARTICÍPIO IRREGULAR (origem, estado ou tempo composto)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Julgue as assertivas da banca examinadora com base nessa classificação categorial."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A04-G04-FORMAS-NOMINAIS-005",
+              "EXP-IP-A04-G04-PROC-005"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-SUBJ-01",
-          "conceptA": "Quando eu VIR (Verbo VER)",
-          "conceptB": "Quando eu VIER (Verbo VIR)",
-          "decisiveDifference": "'Quando eu vir' deriva de 'eles viram' e pertence ao verbo VER (enxergar); 'Quando eu vier' deriva de 'eles vieram' e pertence ao verbo VIR (deslocar-se).",
-          "minimalPair": {
-            "sentenceA": "Quando eu vir o documento, assinarei. (Verbo VER)",
-            "sentenceB": "Quando eu vier à cidade, visitarei você. (Verbo VIR)",
-            "difference": "Vir (enxergar) vs Vier (chegar/deslocar)."
+          "entityId": "CONTRAST-IP-A04-G04-001",
+          "title": "8.1. Infinitivo Pessoal Flexionado vs. Infinitivo Pessoal Não Flexionado vs. Infinitivo Impessoal",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Quem enxerga, VÊ -> quando VIR. Quem chega, VEM -> quando VIER.",
-          "pitfall": "Dizer *quando eu ver o resultado da prova."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "8.1. Infinitivo Pessoal Flexionado vs. Infinitivo Pessoal Não Flexionado vs. Infinitivo Impessoal",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A04-G04-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-005",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-005",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério",
+                  "Infinitivo Impessoal",
+                  "Infinitivo Pessoal Não Flexionado",
+                  "Infinitivo Pessoal Flexionado"
+                ],
+                "rows": [
+                  [
+                    "Sujeito",
+                    "Inexistente / Indeterminado / Vago",
+                    "Determinado (expresso ou contextual)",
+                    "Determinado (expresso ou contextual)"
+                  ],
+                  [
+                    "Desinência Pessoal",
+                    "Inexistente (forma pura)",
+                    "Inexistente (forma invariável)",
+                    "Presente (-es, -mos, -des, -em)"
+                  ],
+                  [
+                    "Função / Sentido",
+                    "Nome da ação em abstrato",
+                    "Ação referida a sujeito específico",
+                    "Ação referida a sujeito específico"
+                  ],
+                  [
+                    "Exemplo Típico",
+                    "É preciso trabalhar.",
+                    "Compramos o curso para estudar.",
+                    "Para estudarmos melhor, compramos o curso."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A04-G04-001",
+              "EXP-IP-A04-G04-047"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A04-G04-002",
+          "title": "8.2. Bom Gerúndio vs. Mau Gerúndio (Critérios Decisivos de Correção)",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "8.2. Bom Gerúndio vs. Mau Gerúndio (Critérios Decisivos de Correção)",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A04-G04-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-006",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-006",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Aspecto",
+                  "Bom Gerúndio (Correto)",
+                  "Mau Gerúndio / Gerundismo (Incorreto)"
+                ],
+                "rows": [
+                  [
+                    "Natureza Temporal",
+                    "Ação Durativa / Contínua ou Simultânea",
+                    "Ação Instantânea no Futuro ou Ação Posterior Sucessiva"
+                  ],
+                  [
+                    "Relação com a Oração Principal",
+                    "Ocorre durante o mesmo intervalo de tempo",
+                    "Ocorre em um instante pontual ou cronologicamentedepois"
+                  ],
+                  [
+                    "Aceitação em Concursos / Redações",
+                    "Plenamente aceito pela norma culta",
+                    "Severamente penalizado pelas bancas (FGV, FCC, CESPE)"
+                  ],
+                  [
+                    "Fórmula de Correção",
+                    "Manter o gerúndio (\"Ele estuda ouvindo música\")",
+                    "Substituir por Futuro do Presente ou Coordenação Aditiva (\"e enviou\")"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A04-G04-002",
+              "EXP-IP-A04-G04-048"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A04-G04-003",
+          "title": "8.3. Verbo VIR: Gerúndio vs. Particípio Irregular (\"Vindo\")",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "8.3. Verbo VIR: Gerúndio vs. Particípio Irregular (\"Vindo\")",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A04-G04-003",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G04-007",
+              "table": {
+                "tableId": "TABLE-IP-A04-G04-007",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Característica",
+                  "\"Vindo\" como Gerúndio",
+                  "\"Vindo\" como Particípio Irregular"
+                ],
+                "rows": [
+                  [
+                    "Morfologia",
+                    "Desinência regular-ndo",
+                    "Forma irregular sem-do (substitui o inexistente \"vido\")"
+                  ],
+                  [
+                    "Valor Gramatical",
+                    "Processo verbal durativo / em curso",
+                    "Estado, qualificador adjetivo, origem ou tempo composto"
+                  ],
+                  [
+                    "Verbo Auxiliar Típico",
+                    "Estar, continuar, andar (\"Está vindo\")",
+                    "Ter, haver, ser (\"Tem vindo\", \"Sendo vindo\")"
+                  ],
+                  [
+                    "Substituto no Teste",
+                    "Chegando / Trazendo",
+                    "Chegado / Trazido / Procedente"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A04-G04-003",
+              "EXP-IP-A04-G04-049"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-SUBJ-01",
-          "title": "Verbo REQUERER no Presente do Subjuntivo",
-          "sentence": "Exijo que a empresa requeira a documentação legal.",
-          "analysis": "Requerer não segue 'querer' no presente do subjuntivo (querer -> queira; requerer -> REQUEIRA, pois é regular com 'e' mantido). Deriva de 'eu requeiro' -> que eu requeira.",
-          "pedagogicalTakeaway": "O verbo requerer difere do verbo querer e forma o presente do subjuntivo em 'requeira' (e não *requeira como anômalo).",
-          "targetLO": "LO-A04-G04-01"
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-001",
+          "title": "EX-A04-G04-FORMAS-NOMINAIS-001 — Identificação dos Três Valores Nominais em Frases",
+          "statement": "Frase 1: \"Fumar é proibido.\"\nAnálise: O infinitivo fumar desempenha papel de Substantivo (núcleo do sujeito da oração), equivalente a \"O fumo\".\nFrase 2: \"Tempo perdido.\"\nAnálise: O particípio perdido desempenha papel de Adjetivo, qualificando o substantivo tempo.\nFrase 3: \"Amanhecendo, partiremos.\"\nAnálise: O gerúndio amanhecendo desempenha papel de Advérbio de tempo, indicando a circunstância temporal da partida (\"Quando amanhecer\").",
+          "prompt": "Frase 1: \"Fumar é proibido.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 1",
+              "rationale": "\"Fumar é proibido.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O infinitivo fumar desempenha papel de Substantivo (núcleo do sujeito da oração), equivalente a \"O fumo\"."
+            },
+            {
+              "order": 3,
+              "action": "Frase 2",
+              "rationale": "\"Tempo perdido.\""
+            },
+            {
+              "order": 4,
+              "action": "Análise",
+              "rationale": "O particípio perdido desempenha papel de Adjetivo, qualificando o substantivo tempo."
+            },
+            {
+              "order": 5,
+              "action": "Frase 3",
+              "rationale": "\"Amanhecendo, partiremos.\""
+            }
+          ],
+          "result": "Análise: O gerúndio amanhecendo desempenha papel de Advérbio de tempo, indicando a circunstância temporal da partida (\"Quando amanhecer\").",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase 1: \"Fumar é proibido.\"\nAnálise: O infinitivo fumar desempenha papel de Substantivo (núcleo do sujeito da oração), equivalente a \"O fumo\".\nFrase 2: \"Tempo perdido.\"\nAnálise: O particípio perdido desempenha papel de Adjetivo, qualificando o substantivo tempo.\nFrase 3: \"Amanhecendo, partiremos.\"\nAnálise: O gerúndio amanhecendo desempenha papel de Advérbio de tempo, indicando a circunstância temporal da partida (\"Quando amanhecer\").'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G04-FORMAS-NOMINAIS-001 — Identificação dos Três Valores Nominais em Frases sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G04-FORMAS-NOMINAIS-001 — Identificação dos Três Valores Nominais em Frases.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G04-FORMAS-NOMINAIS-001 — Identificação dos Três Valores Nominais em Frases.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase 1: \"Fumar é proibido.\"",
+                "Análise: O infinitivo fumar desempenha papel de Substantivo (núcleo do sujeito da oração), equivalente a \"O fumo\".",
+                "Frase 2: \"Tempo perdido.\"",
+                "Análise: O particípio perdido desempenha papel de Adjetivo, qualificando o substantivo tempo.",
+                "Frase 3: \"Amanhecendo, partiremos.\"",
+                "Análise: O gerúndio amanhecendo desempenha papel de Advérbio de tempo, indicando a circunstância temporal da partida (\"Quando amanhecer\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-001",
+              "EXP-IP-A04-G04-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-002",
+          "title": "EX-A04-G04-FORMAS-NOMINAIS-002 — Fixação Prática de Particípio em Locuções Verbais",
+          "statement": "Haviam  toda a louça. (enxugar) $\\rightarrow$ enxugado (Auxiliar haver exige Particípio Regular).\nA louça estava . (enxugar) $\\rightarrow$ enxuta (Auxiliar estar exige Particípio Irregular).\nTinham  o ladrão em flagrante. (prender) $\\rightarrow$ prendido (Auxiliar ter exige Particípio Regular).\nO ladrão foi  em flagrante. (prender) $\\rightarrow$ preso (Auxiliar ser exige Particípio Irregular).\nEles tinham  o fogo. (acender) $\\rightarrow$ acendido (Auxiliar ter exige Particípio Regular).\nO fogo estava . (acender) $\\rightarrow$ aceso (Auxiliar estar exige Particípio Irregular).\nEu havia  o material. (entregar) $\\rightarrow$ entregado (Auxiliar haver exige Particípio Regular).\nHaviam  o livro. (imprimir) $\\rightarrow$ imprimido (Auxiliar haver exige Particípio Regular).\nO livro foi . (imprimir) $\\rightarrow$ impresso (Auxiliar ser exige Particípio Irregular).",
+          "prompt": "Haviam  toda a louça. (enxugar) $\\rightarrow$ enxugado (Auxiliar haver exige Particípio Regular).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Haviam  toda a louça. (enxugar) $\\rightarrow$ enxugado (Auxiliar haver exige Particípio Regular).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "A louça estava . (enxugar) $\\rightarrow$ enxuta (Auxiliar estar exige Particípio Irregular).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "Tinham  o ladrão em flagrante. (prender) $\\rightarrow$ prendido (Auxiliar ter exige Particípio Regular).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "O ladrão foi  em flagrante. (prender) $\\rightarrow$ preso (Auxiliar ser exige Particípio Irregular).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Eles tinham  o fogo. (acender) $\\rightarrow$ acendido (Auxiliar ter exige Particípio Regular).",
+              "rationale": null
+            }
+          ],
+          "result": "O livro foi . (imprimir) $\\rightarrow$ impresso (Auxiliar ser exige Particípio Irregular).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Haviam  toda a louça. (enxugar) $\\rightarrow$ enxugado (Auxiliar haver exige Particípio Regular).\nA louça estava . (enxugar) $\\rightarrow$ enxuta (Auxiliar estar exige Particípio Irregular).\nTinham  o ladrão em flagrante. (prender) $\\rightarrow$ prendido (Auxiliar ter exige Particípio Regular).\nO ladrão foi  em flagrante. (prender) $\\rightarrow$ preso (Auxiliar ser exige Particípio Irregular).\nEles tinham  o fogo. (acender) $\\rightarrow$ acendido (Auxiliar ter exige Particípio Regular).\nO fogo estava . (acender) $\\rightarrow$ aceso (Auxiliar estar exige Particípio Irregular).\nEu havia  o material. (entregar) $\\rightarrow$ entregado (Auxiliar haver exige Particípio Regular).\nHaviam  o livro. (imprimir) $\\rightarrow$ imprimido (Auxiliar haver exige Particípio Regular).\nO livro foi . (imprimir) $\\rightarrow$ impresso (Auxiliar ser exige Particípio Irregular).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G04-FORMAS-NOMINAIS-002 — Fixação Prática de Particípio em Locuções Verbais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G04-FORMAS-NOMINAIS-002 — Fixação Prática de Particípio em Locuções Verbais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G04-FORMAS-NOMINAIS-002 — Fixação Prática de Particípio em Locuções Verbais.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Haviam  toda a louça. (enxugar) $\\rightarrow$ enxugado (Auxiliar haver exige Particípio Regular).",
+                "A louça estava . (enxugar) $\\rightarrow$ enxuta (Auxiliar estar exige Particípio Irregular).",
+                "Tinham  o ladrão em flagrante. (prender) $\\rightarrow$ prendido (Auxiliar ter exige Particípio Regular).",
+                "O ladrão foi  em flagrante. (prender) $\\rightarrow$ preso (Auxiliar ser exige Particípio Irregular).",
+                "Eles tinham  o fogo. (acender) $\\rightarrow$ acendido (Auxiliar ter exige Particípio Regular).",
+                "O fogo estava . (acender) $\\rightarrow$ aceso (Auxiliar estar exige Particípio Irregular).",
+                "Eu havia  o material. (entregar) $\\rightarrow$ entregado (Auxiliar haver exige Particípio Regular).",
+                "Haviam  o livro. (imprimir) $\\rightarrow$ imprimido (Auxiliar haver exige Particípio Regular).",
+                "O livro foi . (imprimir) $\\rightarrow$ impresso (Auxiliar ser exige Particípio Irregular)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-002",
+              "EXP-IP-A04-G04-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-003",
+          "title": "EX-A04-G04-FORMAS-NOMINAIS-003 — Infinitivo Pessoal Flexionado em Contexto",
+          "statement": "Frase: \"Para passares em concurso, é preciso estudo.\"\nAnálise Pedagógica: O verbo passares possui sujeito determinado (tu) e exibe a desinência pessoal -es (2ª pessoa do singular). Classificação: Infinitivo Pessoal Flexionado.",
+          "prompt": "Frase: \"Para passares em concurso, é preciso estudo.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Para passares em concurso, é preciso estudo.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "O verbo passares possui sujeito determinado (tu) e exibe a desinência pessoal -es (2ª pessoa do singular). Classificação: Infinitivo Pessoal Flexionado."
+            }
+          ],
+          "result": "Análise Pedagógica: O verbo passares possui sujeito determinado (tu) e exibe a desinência pessoal -es (2ª pessoa do singular). Classificação: Infinitivo Pessoal Flexionado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase: \"Para passares em concurso, é preciso estudo.\"\nAnálise Pedagógica: O verbo passares possui sujeito determinado (tu) e exibe a desinência pessoal -es (2ª pessoa do singular). Classificação: Infinitivo Pessoal Flexionado.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G04-FORMAS-NOMINAIS-003 — Infinitivo Pessoal Flexionado em Contexto sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G04-FORMAS-NOMINAIS-003 — Infinitivo Pessoal Flexionado em Contexto.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G04-FORMAS-NOMINAIS-003 — Infinitivo Pessoal Flexionado em Contexto.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"Para passares em concurso, é preciso estudo.\"",
+                "Análise Pedagógica: O verbo passares possui sujeito determinado (tu) e exibe a desinência pessoal -es (2ª pessoa do singular). Classificação: Infinitivo Pessoal Flexionado."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-003",
+              "EXP-IP-A04-G04-052"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-004",
+          "title": "EX-A04-G04-FORMAS-NOMINAIS-004 — Infinitivo Pessoal Não Flexionado em Contexto",
+          "statement": "Frase: \"É importante que estudemos para passar em concurso.\"\nAnálise Pedagógica: O verbo passar não recebeu desinência pessoal, mas seu sujeito é recuperável pela forma estudemos (sujeito nós). Trata-se de Infinitivo Pessoal Não Flexionado.",
+          "prompt": "Frase: \"É importante que estudemos para passar em concurso.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"É importante que estudemos para passar em concurso.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Pedagógica",
+              "rationale": "O verbo passar não recebeu desinência pessoal, mas seu sujeito é recuperável pela forma estudemos (sujeito nós). Trata-se de Infinitivo Pessoal Não Flexionado."
+            }
+          ],
+          "result": "Análise Pedagógica: O verbo passar não recebeu desinência pessoal, mas seu sujeito é recuperável pela forma estudemos (sujeito nós). Trata-se de Infinitivo Pessoal Não Flexionado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase: \"É importante que estudemos para passar em concurso.\"\nAnálise Pedagógica: O verbo passar não recebeu desinência pessoal, mas seu sujeito é recuperável pela forma estudemos (sujeito nós). Trata-se de Infinitivo Pessoal Não Flexionado.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G04-FORMAS-NOMINAIS-004 — Infinitivo Pessoal Não Flexionado em Contexto sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G04-FORMAS-NOMINAIS-004 — Infinitivo Pessoal Não Flexionado em Contexto.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G04-FORMAS-NOMINAIS-004 — Infinitivo Pessoal Não Flexionado em Contexto.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"É importante que estudemos para passar em concurso.\"",
+                "Análise Pedagógica: O verbo passar não recebeu desinência pessoal, mas seu sujeito é recuperável pela forma estudemos (sujeito nós). Trata-se de Infinitivo Pessoal Não Flexionado."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-004",
+              "EXP-IP-A04-G04-053"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-005",
+          "title": "Texto e Enunciado",
+          "statement": "“E, para garantir-se (1) que a alternativa não se repita, é preciso cuidar (2) para não desmoralizar (3) demais a política e os políticos, que seja. Melhor uma democracia imperfeita do que uma ordem falsa, mas incontestável. Da próxima vez que desesperar (4) dos nossos políticos, portanto, e que alguma notícia de Brasília lhe enojar (5), ou você concluir que o país estaria melhor sem esses dirigentes e representantes que só representam seus interesses, e seus bolsos, respire fundo e pense na alternativa\".  As formas verbais destacadas correspondem a formas de infinitivo ou de futuro do subjuntivo. Assinale a alternativa que apresenta apenas as que pertencem a formas de infinitivo. A) 1 – 2 – 3. B) 4 – 5. C) 1 – 2 – 3 – 4. D) 2 – 3 – 4 – 5. E) 2 – 3 – 5.",
+          "prompt": "Texto e Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Texto e Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Texto e Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Texto e Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Texto e Enunciado\" com a norma culta de Texto e Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '“E, para garantir-se (1) que a alternativa não se repita, é preciso cuidar (2) para não desmoralizar (3) demais a política e os políticos, que seja. Melhor uma democracia imperfeita do que uma ordem falsa, mas incontestável. Da próxima vez que desesperar (4) dos nossos políticos, portanto, e que alguma notícia de Brasília lhe enojar (5), ou você concluir que o país estaria melhor sem esses dirigentes e representantes que só representam seus interesses, e seus bolsos, respire fundo e pense na alternativa\".  As formas verbais destacadas correspondem a formas de infinitivo ou de futuro do subjuntivo. Assinale a alternativa que apresenta apenas as que pertencem a formas de infinitivo. A) 1 – 2 – 3. B) 4 – 5. C) 1 – 2 – 3 – 4. D) 2 – 3 – 4 – 5. E) 2 – 3 – 5.'.",
+          "decisivePoint": "Critério decisório de Texto e Enunciado aplicado a \"Texto e Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto e Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto e Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-005",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "“E, para garantir-se (1) que a alternativa não se repita, é preciso cuidar (2) para não desmoralizar (3) demais a política e os políticos, que seja. Melhor uma democracia imperfeita do que uma ordem falsa, mas incontestável. Da próxima vez que desesperar (4) dos nossos políticos, portanto, e que alguma notícia de Brasília lhe enojar (5), ou você concluir que o país estaria melhor sem esses dirigentes e representantes que só representam seus interesses, e seus bolsos, respire fundo e pense na alternativa\".  As formas verbais destacadas correspondem a formas de infinitivo ou de futuro do subjuntivo. Assinale a alternativa que apresenta apenas as que pertencem a formas de infinitivo. A) 1 – 2 – 3. B) 4 – 5. C) 1 – 2 – 3 – 4. D) 2 – 3 – 4 – 5. E) 2 – 3 – 5."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-005",
+              "EXP-IP-A04-G04-054"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-006",
+          "title": "Resolução Passo a Passo (Aplicação do Macete FAZER / FIZER)",
+          "statement": "(1) garantir-se: \"para fazer-se...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo.\n(2) cuidar: \"é preciso fazer...\" (Expressão é preciso rege infinitivo) $\\rightarrow$ Infinitivo.\n(3) desmoralizar: \"para não fazer...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo.\n(4) desesperar: \"Da próxima vez que fizer...\" (Conectivo temporal exige futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo.\n(5) enojar: \"e que alguma notícia... lhe fizer...\" (Conjunção que rege futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo.\nGabarito Oficial: A (1 – 2 – 3).",
+          "prompt": "(1) garantir-se: \"para fazer-se...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "(1) garantir-se",
+              "rationale": "\"para fazer-se...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo."
+            },
+            {
+              "order": 2,
+              "action": "(2) cuidar",
+              "rationale": "\"é preciso fazer...\" (Expressão é preciso rege infinitivo) $\\rightarrow$ Infinitivo."
+            },
+            {
+              "order": 3,
+              "action": "(3) desmoralizar",
+              "rationale": "\"para não fazer...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo."
+            },
+            {
+              "order": 4,
+              "action": "(4) desesperar",
+              "rationale": "\"Da próxima vez que fizer...\" (Conectivo temporal exige futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo."
+            },
+            {
+              "order": 5,
+              "action": "(5) enojar",
+              "rationale": "\"e que alguma notícia... lhe fizer...\" (Conjunção que rege futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo."
+            }
+          ],
+          "result": "Gabarito Oficial: A (1 – 2 – 3).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '(1) garantir-se: \"para fazer-se...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo.\n(2) cuidar: \"é preciso fazer...\" (Expressão é preciso rege infinitivo) $\\rightarrow$ Infinitivo.\n(3) desmoralizar: \"para não fazer...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo.\n(4) desesperar: \"Da próxima vez que fizer...\" (Conectivo temporal exige futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo.\n(5) enojar: \"e que alguma notícia... lhe fizer...\" (Conjunção que rege futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo.\nGabarito Oficial: A (1 – 2 – 3).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo (Aplicação do Macete FAZER / FIZER) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo (Aplicação do Macete FAZER / FIZER).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo (Aplicação do Macete FAZER / FIZER).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "(1) garantir-se: \"para fazer-se...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo.",
+                "(2) cuidar: \"é preciso fazer...\" (Expressão é preciso rege infinitivo) $\\rightarrow$ Infinitivo.",
+                "(3) desmoralizar: \"para não fazer...\" (Preposição para exige infinitivo) $\\rightarrow$ Infinitivo.",
+                "(4) desesperar: \"Da próxima vez que fizer...\" (Conectivo temporal exige futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo.",
+                "(5) enojar: \"e que alguma notícia... lhe fizer...\" (Conjunção que rege futuro do subjuntivo) $\\rightarrow$ Futuro do Subjuntivo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gabarito Oficial: A (1 – 2 – 3)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-006",
+              "EXP-IP-A04-G04-055"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-007",
+          "title": "Enunciado",
+          "statement": "A frase em que o emprego do gerúndio mostra adequação é:\nA) Entrou na sala, sentando-se na primeira fila;\nB) Nasceu em Curitiba, sendo filho de imigrantes;\nC) Repreendeu a torcida, condenando as ofensas;\nD) Desceu as escadas, chegando rapidamente ao térreo;\nE) Saiu da festa, pegando um táxi na porta.",
+          "prompt": "A frase em que o emprego do gerúndio mostra adequação é:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) Entrou na sala, sentando-se na primeira fila;",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "B) Nasceu em Curitiba, sendo filho de imigrantes;",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "C) Repreendeu a torcida, condenando as ofensas;",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "D) Desceu as escadas, chegando rapidamente ao térreo;",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "E) Saiu da festa, pegando um táxi na porta.",
+              "rationale": null
+            }
+          ],
+          "result": "E) Saiu da festa, pegando um táxi na porta.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'A frase em que o emprego do gerúndio mostra adequação é:\nA) Entrou na sala, sentando-se na primeira fila;\nB) Nasceu em Curitiba, sendo filho de imigrantes;\nC) Repreendeu a torcida, condenando as ofensas;\nD) Desceu as escadas, chegando rapidamente ao térreo;\nE) Saiu da festa, pegando um táxi na porta.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-007",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A frase em que o emprego do gerúndio mostra adequação é:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A) Entrou na sala, sentando-se na primeira fila;",
+                "B) Nasceu em Curitiba, sendo filho de imigrantes;",
+                "C) Repreendeu a torcida, condenando as ofensas;",
+                "D) Desceu as escadas, chegando rapidamente ao térreo;",
+                "E) Saiu da festa, pegando um táxi na porta."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-007",
+              "EXP-IP-A04-G04-056"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-008",
+          "title": "Resolução Passo a Passo",
+          "statement": "Alternativa A: Entrou... sentando-se. Ação posterior cronológica (primeiro entra, depois senta). Inadequado no gerúndio. Correção: \"Entrou na sala e sentou-se...\".\nAlternativa B: Nasceu... sendo filho. Não expressa processo durativo/simultâneo. Inadequado. Correção: \"Nasceu em Curitiba e é filho...\".\nAlternativa C: Repreendeu... condenando. Ações perfeitamente simultâneas (o próprio ato de repreender materializa-se na condenação das ofensas). [CORRETA / ADEQUADA].\nAlternativa D: Desceu... chegando. Ação posterior sucessiva. Inadequado. Correção: \"Desceu as escadas e chegou...\".\nAlternativa E: Saiu... pegando. Ação posterior sucessiva. Inadequado. Correção: \"Saiu da festa e pegou um táxi...\".\nGabarito Oficial: C.",
+          "prompt": "Alternativa A: Entrou... sentando-se. Ação posterior cronológica (primeiro entra, depois senta). Inadequado no gerúndio. Correção: \"Entrou na sala e sentou-se...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Alternativa A",
+              "rationale": "Entrou... sentando-se. Ação posterior cronológica (primeiro entra, depois senta). Inadequado no gerúndio. Correção: \"Entrou na sala e sentou-se...\"."
+            },
+            {
+              "order": 2,
+              "action": "Alternativa B",
+              "rationale": "Nasceu... sendo filho. Não expressa processo durativo/simultâneo. Inadequado. Correção: \"Nasceu em Curitiba e é filho...\"."
+            },
+            {
+              "order": 3,
+              "action": "Alternativa C",
+              "rationale": "Repreendeu... condenando. Ações perfeitamente simultâneas (o próprio ato de repreender materializa-se na condenação das ofensas). [CORRETA / ADEQUADA]."
+            },
+            {
+              "order": 4,
+              "action": "Alternativa D",
+              "rationale": "Desceu... chegando. Ação posterior sucessiva. Inadequado. Correção: \"Desceu as escadas e chegou...\"."
+            },
+            {
+              "order": 5,
+              "action": "Alternativa E",
+              "rationale": "Saiu... pegando. Ação posterior sucessiva. Inadequado. Correção: \"Saiu da festa e pegou um táxi...\"."
+            }
+          ],
+          "result": "Gabarito Oficial: C.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Alternativa A: Entrou... sentando-se. Ação posterior cronológica (primeiro entra, depois senta). Inadequado no gerúndio. Correção: \"Entrou na sala e sentou-se...\".\nAlternativa B: Nasceu... sendo filho. Não expressa processo durativo/simultâneo. Inadequado. Correção: \"Nasceu em Curitiba e é filho...\".\nAlternativa C: Repreendeu... condenando. Ações perfeitamente simultâneas (o próprio ato de repreender materializa-se na condenação das ofensas). [CORRETA / ADEQUADA].\nAlternativa D: Desceu... chegando. Ação posterior sucessiva. Inadequado. Correção: \"Desceu as escadas e chegou...\".\nAlternativa E: Saiu... pegando. Ação posterior sucessiva. Inadequado. Correção: \"Saiu da festa e pegou um táxi...\".\nGabarito Oficial: C.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Alternativa A: Entrou... sentando-se. Ação posterior cronológica (primeiro entra, depois senta). Inadequado no gerúndio. Correção: \"Entrou na sala e sentou-se...\".",
+                "Alternativa B: Nasceu... sendo filho. Não expressa processo durativo/simultâneo. Inadequado. Correção: \"Nasceu em Curitiba e é filho...\".",
+                "Alternativa C: Repreendeu... condenando. Ações perfeitamente simultâneas (o próprio ato de repreender materializa-se na condenação das ofensas). [CORRETA / ADEQUADA].",
+                "Alternativa D: Desceu... chegando. Ação posterior sucessiva. Inadequado. Correção: \"Desceu as escadas e chegou...\".",
+                "Alternativa E: Saiu... pegando. Ação posterior sucessiva. Inadequado. Correção: \"Saiu da festa e pegou um táxi...\".",
+                "Gabarito Oficial: C."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-008",
+              "EXP-IP-A04-G04-057"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-009",
+          "title": "Texto de Suporte",
+          "statement": "\"As distâncias entre os locais de trabalho, estudo, recreio e habitação serão limitadas a percursos de, no máximo, 15 minutos de marcha. Isso evitará a perda de tempo em transportes, permitindo folga suficiente para recreação e prática de esportes\", declarou Niemeyer...",
+          "prompt": "Texto de Suporte",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Texto de Suporte\".",
+              "rationale": "Constatação do elemento sob exame de Texto de Suporte."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Texto de Suporte.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Texto de Suporte\" com a norma culta de Texto de Suporte.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '\"As distâncias entre os locais de trabalho, estudo, recreio e habitação serão limitadas a percursos de, no máximo, 15 minutos de marcha. Isso evitará a perda de tempo em transportes, permitindo folga suficiente para recreação e prática de esportes\", declarou Niemeyer...'.",
+          "decisivePoint": "Critério decisório de Texto de Suporte aplicado a \"Texto de Suporte\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto de Suporte.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto de Suporte.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-009",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"As distâncias entre os locais de trabalho, estudo, recreio e habitação serão limitadas a percursos de, no máximo, 15 minutos de marcha. Isso evitará a perda de tempo em transportes, permitindo folga suficiente para recreação e prática de esportes\", declarou Niemeyer..."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-009",
+              "EXP-IP-A04-G04-058"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-010",
+          "title": "Enunciado e Resolução",
+          "statement": "O gerúndio do segmento acima introduz uma oração que expressa:\nA) consequência, e pode ser substituído por \"de maneira a permitir\".\nAnálise: A oração principal expressa uma causa (\"Isso evitará a perda de tempo...\"), cujo efeito/consequência lógica é a concessão de folga suficiente (\"permitindo folga...\" $\\rightarrow$ \"de maneira a permitir folga...\").\nGabarito Oficial: A.",
+          "prompt": "O gerúndio do segmento acima introduz uma oração que expressa:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) consequência, e pode ser substituído por \"de maneira a permitir\".",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "A oração principal expressa uma causa (\"Isso evitará a perda de tempo...\"), cujo efeito/consequência lógica é a concessão de folga suficiente (\"permitindo folga...\" $\\rightarrow$ \"de maneira a permitir folga...\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "A."
+            }
+          ],
+          "result": "Gabarito Oficial: A.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O gerúndio do segmento acima introduz uma oração que expressa:\nA) consequência, e pode ser substituído por \"de maneira a permitir\".\nAnálise: A oração principal expressa uma causa (\"Isso evitará a perda de tempo...\"), cujo efeito/consequência lógica é a concessão de folga suficiente (\"permitindo folga...\" $\\rightarrow$ \"de maneira a permitir folga...\").\nGabarito Oficial: A.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e Resolução.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-010",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O gerúndio do segmento acima introduz uma oração que expressa:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A) consequência, e pode ser substituído por \"de maneira a permitir\".",
+                "Análise: A oração principal expressa uma causa (\"Isso evitará a perda de tempo...\"), cujo efeito/consequência lógica é a concessão de folga suficiente (\"permitindo folga...\" $\\rightarrow$ \"de maneira a permitir folga...\").",
+                "Gabarito Oficial: A."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-010",
+              "EXP-IP-A04-G04-059"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-011",
+          "title": "Texto de Suporte",
+          "statement": "Ele tem grande percepção para o comportamento social e suas mudanças e semelhanças no passar do tempo, revelando mais sobre a atual classe média brasileira em seus textos do que todos os ficcionistas vivos do país, somados.",
+          "prompt": "Texto de Suporte",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Texto de Suporte\".",
+              "rationale": "Constatação do elemento sob exame de Texto de Suporte."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Texto de Suporte.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Texto de Suporte\" com a norma culta de Texto de Suporte.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Ele tem grande percepção para o comportamento social e suas mudanças e semelhanças no passar do tempo, revelando mais sobre a atual classe média brasileira em seus textos do que todos os ficcionistas vivos do país, somados.'.",
+          "decisivePoint": "Critério decisório de Texto de Suporte aplicado a \"Texto de Suporte\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto de Suporte.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto de Suporte.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-011",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "Ele tem grande percepção para o comportamento social e suas mudanças e semelhanças no passar do tempo, revelando mais sobre a atual classe média brasileira em seus textos do que todos os ficcionistas vivos do país, somados."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-011",
+              "EXP-IP-A04-G04-060"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-012",
+          "title": "Enunciado e Resolução",
+          "statement": "Mantendo-se um sentido adequado ao contexto, o gerúndio presente em...revelando mais sobre a atual classe média brasileira... pode ser substituído por:\nA) de maneira que revela\nAnálise: A grande percepção (fato gerador/causa) gera o resultado consecutivo de revelar mais sobre a classe média (\"de maneira que revela\" = conjunção consecutiva).\nGabarito Oficial: A.",
+          "prompt": "Mantendo-se um sentido adequado ao contexto, o gerúndio presente em...revelando mais sobre a atual classe média brasileira... pode ser substituído por:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) de maneira que revela",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "A grande percepção (fato gerador/causa) gera o resultado consecutivo de revelar mais sobre a classe média (\"de maneira que revela\" = conjunção consecutiva)."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "A."
+            }
+          ],
+          "result": "Gabarito Oficial: A.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Mantendo-se um sentido adequado ao contexto, o gerúndio presente em...revelando mais sobre a atual classe média brasileira... pode ser substituído por:\nA) de maneira que revela\nAnálise: A grande percepção (fato gerador/causa) gera o resultado consecutivo de revelar mais sobre a classe média (\"de maneira que revela\" = conjunção consecutiva).\nGabarito Oficial: A.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e Resolução.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-012",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Mantendo-se um sentido adequado ao contexto, o gerúndio presente em...revelando mais sobre a atual classe média brasileira... pode ser substituído por:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A) de maneira que revela",
+                "Análise: A grande percepção (fato gerador/causa) gera o resultado consecutivo de revelar mais sobre a classe média (\"de maneira que revela\" = conjunção consecutiva).",
+                "Gabarito Oficial: A."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-012",
+              "EXP-IP-A04-G04-061"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-013",
+          "title": "Texto de Suporte",
+          "statement": "\"Os modelos pedagógicos de nossas escolas ainda são muito mais direcionados ao ensino teórico para passar no funil do vestibular, obrigando os alunos a decorar fórmulas matemáticas...\"",
+          "prompt": "Texto de Suporte",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Texto de Suporte\".",
+              "rationale": "Constatação do elemento sob exame de Texto de Suporte."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Texto de Suporte.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Texto de Suporte\" com a norma culta de Texto de Suporte.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '\"Os modelos pedagógicos de nossas escolas ainda são muito mais direcionados ao ensino teórico para passar no funil do vestibular, obrigando os alunos a decorar fórmulas matemáticas...\"'.",
+          "decisivePoint": "Critério decisório de Texto de Suporte aplicado a \"Texto de Suporte\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto de Suporte.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto de Suporte.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-013",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Os modelos pedagógicos de nossas escolas ainda são muito mais direcionados ao ensino teórico para passar no funil do vestibular, obrigando os alunos a decorar fórmulas matemáticas...\""
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-013",
+              "EXP-IP-A04-G04-062"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-014",
+          "title": "Enunciado e Resolução",
+          "statement": "O gerúndio \"obrigando\" poderia ser adequadamente substituído pela seguinte forma desenvolvida:\nA) e obrigam;\nAnálise: O gerúndio expressa uma adição com consequência lógica decorrente do direcionamento teórico. A forma desenvolvida adequada une os fatos por coordenação aditiva (\"são direcionados... e obrigam\").\nGabarito Oficial: A.",
+          "prompt": "O gerúndio \"obrigando\" poderia ser adequadamente substituído pela seguinte forma desenvolvida:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) e obrigam;",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O gerúndio expressa uma adição com consequência lógica decorrente do direcionamento teórico. A forma desenvolvida adequada une os fatos por coordenação aditiva (\"são direcionados... e obrigam\")."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "A."
+            }
+          ],
+          "result": "Gabarito Oficial: A.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O gerúndio \"obrigando\" poderia ser adequadamente substituído pela seguinte forma desenvolvida:\nA) e obrigam;\nAnálise: O gerúndio expressa uma adição com consequência lógica decorrente do direcionamento teórico. A forma desenvolvida adequada une os fatos por coordenação aditiva (\"são direcionados... e obrigam\").\nGabarito Oficial: A.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e Resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e Resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e Resolução.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-014",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O gerúndio \"obrigando\" poderia ser adequadamente substituído pela seguinte forma desenvolvida:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A) e obrigam;",
+                "Análise: O gerúndio expressa uma adição com consequência lógica decorrente do direcionamento teórico. A forma desenvolvida adequada une os fatos por coordenação aditiva (\"são direcionados... e obrigam\").",
+                "Gabarito Oficial: A."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-014",
+              "EXP-IP-A04-G04-063"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-015",
+          "title": "Texto de Suporte",
+          "statement": "Delicioso e nutritivo, o bacalhau pode ser saboreado assado, grelhado, ensopado... Vindo de fornecedores selecionados de Portugal e da Noruega, salgado ou dessalgado, o bacalhau pode ser encontrado em nossas lojas pelos menores preços.",
+          "prompt": "Texto de Suporte",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Texto de Suporte\".",
+              "rationale": "Constatação do elemento sob exame de Texto de Suporte."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Texto de Suporte.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Texto de Suporte\" com a norma culta de Texto de Suporte.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Delicioso e nutritivo, o bacalhau pode ser saboreado assado, grelhado, ensopado... Vindo de fornecedores selecionados de Portugal e da Noruega, salgado ou dessalgado, o bacalhau pode ser encontrado em nossas lojas pelos menores preços.'.",
+          "decisivePoint": "Critério decisório de Texto de Suporte aplicado a \"Texto de Suporte\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Texto de Suporte.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Texto de Suporte.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-015",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "Delicioso e nutritivo, o bacalhau pode ser saboreado assado, grelhado, ensopado... Vindo de fornecedores selecionados de Portugal e da Noruega, salgado ou dessalgado, o bacalhau pode ser encontrado em nossas lojas pelos menores preços."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-015",
+              "EXP-IP-A04-G04-064"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-016",
+          "title": "Item",
+          "statement": "O termo \"Vindo\" (l.5) corresponde ao gerúndio do verbo vir e, no texto, indica um prolongamento da ação de que trata a última oração do texto. (Certo / Errado)",
+          "prompt": "Vindo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O termo \"Vindo\" (l.5) corresponde ao gerúndio do verbo vir e, no texto, indica um prolongamento da ação de que trata a última oração do texto",
+              "rationale": "Etapa 1 de análise para Item."
+            },
+            {
+              "order": 2,
+              "action": "(Certo / Errado)",
+              "rationale": "Etapa 2 de análise para Item."
+            }
+          ],
+          "result": "(Certo / Errado)",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O termo \"Vindo\" (l.5) corresponde ao gerúndio do verbo vir e, no texto, indica um prolongamento da ação de que trata a última oração do texto. (Certo / Errado)'.",
+          "decisivePoint": "Critério decisório de Item aplicado a \"Vindo\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Item.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Item.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-016",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O termo \"Vindo\" (l.5) corresponde ao gerúndio do verbo vir e, no texto, indica um prolongamento da ação de que trata a última oração do texto. (Certo / Errado)"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-016",
+              "EXP-IP-A04-G04-065"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G04-017",
+          "title": "Resolução Passo a Passo",
+          "statement": "Aplicando o teste de substituição por trazer: \"Trazido de fornecedores selecionados...\" / \"Procedente de fornecedores...\".\nA oração exige a forma do particípio (adjetivo qualificando bacalhau), e não gerúndio (\"trazendo\").\nA palavra Vindo no texto é o Particípio Irregular do verbo VIR, não expressando nenhum prolongamento de ação.\nGabarito Oficial: ERRADO.",
+          "prompt": "Aplicando o teste de substituição por trazer: \"Trazido de fornecedores selecionados...\" / \"Procedente de fornecedores...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Aplicando o teste de substituição por trazer",
+              "rationale": "\"Trazido de fornecedores selecionados...\" / \"Procedente de fornecedores...\"."
+            },
+            {
+              "order": 2,
+              "action": "A oração exige a forma do particípio (adjetivo qualificando bacalhau), e não gerúndio (\"trazendo\").",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "A palavra Vindo no texto é o Particípio Irregular do verbo VIR, não expressando nenhum prolongamento de ação.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Aplicando o teste de substituição por trazer: \"Trazido de fornecedores selecionados...\" / \"Procedente de fornecedores...\".\nA oração exige a forma do particípio (adjetivo qualificando bacalhau), e não gerúndio (\"trazendo\").\nA palavra Vindo no texto é o Particípio Irregular do verbo VIR, não expressando nenhum prolongamento de ação.\nGabarito Oficial: ERRADO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Passo a Passo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Passo a Passo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Passo a Passo.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G04-017",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aplicando o teste de substituição por trazer: \"Trazido de fornecedores selecionados...\" / \"Procedente de fornecedores...\".",
+                "A oração exige a forma do particípio (adjetivo qualificando bacalhau), e não gerúndio (\"trazendo\").",
+                "A palavra Vindo no texto é o Particípio Irregular do verbo VIR, não expressando nenhum prolongamento de ação."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gabarito Oficial: ERRADO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G04-017",
+              "EXP-IP-A04-G04-066"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -200,51 +2240,151 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-SUBJ-01",
-          "title": "Eles ...RAM Resolve Tudo!",
-          "content": "Para acertar o subjuntivo irregular, chame 'ELES ...RAM' no passado! Corta o RAM e ganhe a questão!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Conjugação do Pretérito Imperfeito e Futuro do Subjuntivo.",
-          "limitations": "Válido para todos os verbos da língua portuguesa.",
-          "text": "A 3ª pessoa do plural do pretérito perfeito gera o imperfeito e futuro do subjuntivo."
+          "title": "Mantra de Fixação: Formas Nominais do Verbo",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Formas Nominais do Verbo, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Formas Nominais do Verbo, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-SUBJ-01",
-          "title": "O Uso Incorreto de 'Se eu manter' e 'Se eu propor'",
-          "trigger": "Verbos derivados de TER e PÔR no futuro do subjuntivo.",
-          "whyItFails": "O candidato conjuga o derivado como verbo regular no infinitivo (*se ele manter a postura, *se ele propor o acordo).",
-          "correctApproach": "Verbos derivados seguem rigorosamente a conjugação do primitivo: se ele TIVER -> se ele MANTIVER / RETIVER / CONTIVER; se ele PUSER -> se ele PROPUSER / COMPUSER / DISPUSER.",
-          "bankTechnique": "Inserir 'Caso o governo mantenha e proponha...' e no passado 'Se o governo mantivesse e propusesse...'.",
-          "counterRule": "Derivados de ter e pôr flexionam-se obrigatoriamente como tiver e puser."
+          "entityId": "WARN-A04-G04-FORMAS-NOMINAIS-001",
+          "title": "O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro Crasso do Falso Particípio \"Chego\" e \"Trago\".",
+          "trapId": "WARN-A04-G04-FORMAS-NOMINAIS-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Erro: Dizer ou escrever \"Ele tinha chego atrasado\" ou \"O documento foi trago pelo mensageiro\".",
+                "Por que ocorre: Confusão com verbos abundantes legítimos (entregado/entregue, imprimido/impresso).",
+                "A Regra: Chegar e trazer não são abundantes. Possuem exclusivamente particípio regular: chegado e trazido (\"Tinha chegado\", \"Foi trazido\"). Chego e trago pertencem unicamente ao presente do indicativo (\"Eu chego\", \"Eu trago\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A04-G04-FORMAS-NOMINAIS-001",
+              "EXP-IP-A04-G04-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A04-G04-FORMAS-NOMINAIS-002",
+          "title": "O Vício Redacional do Gerúndio Posterior",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Vício Redacional do Gerúndio Posterior.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Vício Redacional do Gerúndio Posterior.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Vício Redacional do Gerúndio Posterior no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Vício Redacional do Gerúndio Posterior.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Vício Redacional do Gerúndio Posterior.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Vício Redacional do Gerúndio Posterior para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Vício Redacional do Gerúndio Posterior.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Vício Redacional do Gerúndio Posterior.",
+          "trapId": "WARN-A04-G04-FORMAS-NOMINAIS-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Erro: Conectar duas ações sucessivas no tempo por meio de gerúndio (ex.: \"O policial sacou a arma, efetuando o disparo em seguida\").",
+                "Por que é penalizado: O gerúndio exige simultaneidade ou aspecto durativo contínuo. Se a ação ocorre depois, viola-se a coesão temporal.",
+                "Como Evitar: Use oração coordenada aditiva: \"O policial sacou a arma e efetuou o disparo...\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A04-G04-FORMAS-NOMINAIS-002",
+              "EXP-IP-A04-G04-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A04-G04-FORMAS-NOMINAIS-003",
+          "title": "A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha da Forma \"VINDO\" no CESPE/Cebraspe.",
+          "trapId": "WARN-A04-G04-FORMAS-NOMINAIS-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A Pegadinha: A banca apresenta um texto com a palavra vindo qualificando um substantivo ou indicando procedência/origem (ex.: \"Produto vindo do exterior...\") e afirma que se trata de gerúndio com ação contínua.",
+                "O Fato: O particípio de VIR é irregular e homógrafo ao gerúndio (vindo). No contexto de estado/origem, trata-se de particípio, tornando a assertiva da banca incorreta."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A04-G04-FORMAS-NOMINAIS-003",
+              "EXP-IP-A04-G04-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Consecutio Temporum",
-          "shortDefinition": "Regra de harmonia e correlação entre os tempos e modos verbais no período composto.",
-          "fullDefinition": "Princípio da sintaxe oracional que disciplina a correspondência lógica entre o tempo do verbo da oração matriz e o tempo do verbo da oração subordinada, garantindo a verossimilhança cronológica e modal do enunciado.",
-          "domain": "Sintaxe e Semântica Verbal",
-          "commonMisconception": "Achar que se pode misturar qualquer tempo do indicativo com qualquer tempo do subjuntivo."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Fundamentação Epistemológica das Formas Nominais e Conceito de \"Nome\"**: Definição ou ideia central\nAs Formas Nominais do Verbo (Infinitivo, Gerúndio e Particípio) recebem essa designação porque, além de expressarem processos verbais (ações, estados ou fenômenos), desprovidas de flexões tempo-modais típicas do verbo finito, desempenham na oração as funções sintático-semânticas características dos nomes. Na taxonomia da gramática normativa, a categoria de \"nome\" engloba tudo o que não é verbo: Substantivo, Adjetivo e Advérbio.\nExplicação consolidada\nQuando um verbo assume forma nominal, ele sofre um processo de transposição funcional:\nInfinitivo $\\rightarrow$ Valor preferencial de Substantivo: Atua como núcleo de funções sintáticas substantivas (sujeito, objeto, predicativo). Pode vir substantivado por determinantes.\nParticípio $\\rightarrow$ Valor preferencial de Adjetivo: Atua modificando ou caracterizando um substantivo, concordando com ele em gênero e número (quando fora de tempos compostos da voz ativa).\nGerúndio $\\rightarrow$ Valor preferencial de Advérbio: Atua expressando circunstâncias adverbiais (tempo, causa, modo, consequência, condição) que modificam a oração principal.\nCritérios de reconhecimento ou aplicação\nSe o verbo puder ser substituído por um substantivo correspondente mantendo a função sintática básica $\\rightarrow$ Valor de Substantivo.\nSe o verbo qualificar diretamente um substantivo concordando em gênero/número $\\rightarrow$ Valor de Adjetivo.\nSe o verbo introduzir circunstância modificadora da ação principal $\\rightarrow$ Valor de Advérbio.\nExemplos e contraexemplos\nInfinitivo como Substantivo: \"Fumar é proibido.\" (Equivale a: \"O fumo é proibido\"; fumar é sujeito da oração).\nParticípio como Adjetivo: \"Tempo perdido.\" (Perdido qualifica o substantivo tempo).\nGerúndio como Advérbio: \"Amanhecendo, partiremos.\" (Amanhecendo estabelece circunstância temporal: \"Quando amanhecer, partiremos\").\nRelações\nExpande em: , , .\nExemplificado por: .",
+            "**Morfologia das Formas Nominais e Desinências Características**: Definição ou ideia central\nAs três formas nominais identificam-se morfologicamente por desinências específicas:\nInfinitivo: Desinência -R (ex.: falar, beber, partir).\nGerúndio: Desinência -NDO (ex.: falando, bebendo, partindo).\nParticípio Regular: Desinência -DO (ex.: falado, bebido, partido).\nRADICAL + VOGAL TEMÁTICA + DESINÊNCIA NOMINAL FALA + -R > Infinitivo (falar) FALA + -NDO > Gerúndio (falando) FALA + -DO > Particípio Regular (falado)\nExplicação consolidada\nO Infinitivo enuncia o processo verbal em abstrato (o nome do verbo).\nO Gerúndio expressa o processo verbal em curso, inacabado, em desenvolvimento (aspecto imperfeito/durativo).\nO Particípio expressa o resultado concluído da ação, o estado atingido ou o aspecto perfectivo acabado.",
+            "**Morfologia e Sintaxe do Particípio: Verbos Abundantes e Não Abundantes**: Definição ou ideia central\nOs verbos dividem-se quanto ao particípio em Abundantes (possuem dupla forma: regular e irregular) e Não Abundantes (possuem uma única forma de particípio, que pode ser exclusivamente regular ou exclusivamente irregular).\nExplicação consolidada\nVerbos Abundantes de Particípio:\nForma Regular: Termina obrigatoriamente em -DO (ex.: aceitado, entregado, limpado, inserido, suspendido, acendido, imprimido, enxugado, prendido).\nForma Irregular: Forma reduzida que não termina em -DO, apresentando terminações como -to, -so, -gue, -po (ex.: aceito, entregue, limpo, inserto, suspenso, aceso, impresso, enxuto, preso).\nVerbos Não Abundantes de Particípio:\nExclusivamente Regulares: Possuem apenas a forma em -DO.\nChegar $\\rightarrow$ chegado (A forma \"chego\" não existe como particípio na norma culta).\nTrazer $\\rightarrow$ trazido (A forma \"trago\" não existe como particípio na norma culta).\nExclusivamente Irregulares: Possuem apenas a forma reduzida sem -DO. Não admitem desinência regular.\nDizer $\\rightarrow$ dito (Não existe \"dizido\").\nPôr $\\rightarrow$ posto (Não existe \"ponhado\" ou \"podo\").\nCobrir $\\rightarrow$ coberto (Não existe \"cobrido\").\nFazer $\\rightarrow$ feito (Não existe \"fazido\").\nEscrever $\\rightarrow$ escrito (Não existe \"escrevido\").\nAlerta sobre \"Chego\" e \"Trago\"\nAs palavras chego e trago são legítimas na língua portuguesa apenas como formas flexionadas do Presente do Indicativo na 1ª pessoa do singular (\"Eu chego cedo\", \"Eu trago o café\"). Seu emprego com verbos auxiliares de tempos compostos ou voz passiva (\"tinha chego\", \"foi trago\") constitui desvio gramatical grave em provas.\nRelações\nRegulado por: .",
+            "**Regras Sintáticas de Emprego dos Particípios e a Exceção do \"Vale Tudo\"**: Regra Geral Sintática dos Auxiliares\nPara verbos abundantes, a seleção entre o particípio regular e o irregular obedece estritamente ao verbo auxiliar que compõe a locução:\nDiferenciação entre Valor Verbal e Valor Nominal do Particípio\nParticípio com Valor Verbal: Integra locução de tempo composto com auxiliar. Permanece invariável no masculino singular. Ex.: \"O homem tinha viajado\" (viajado = verbo).\nParticípio com Valor Nominal (Adjetivo): Modifica diretamente um substantivo, flexionando-se em gênero e número. Ex.: \"O homem viajado é experiente\" (viajado = adjetivo/nome).\nExceção Normativa Consagrada: A \"Regra do Vale Tudo\"\nA gramática normativa e os manuais de referência consagram uma exceção plena para quatro verbos: GANHAR, GASTAR, PEGAR e PAGAR.\nPara esses 4 verbos, qualquer forma de particípio (regular ou irregular) é aceita com qualquer verbo auxiliar:\nPAGAR: \"Tinha pagado\" OU \"Tinha pago\" / \"Foi pagado\" OU \"Foi pago\".\nGANHAR: \"Tinha ganhado\" OU \"Tinha ganho\" / \"Foi ganhado\" OU \"Foi ganho\".\nGASTAR: \"Tinha gastado\" OU \"Tinha gasto\" / \"Foi gastado\" OU \"Foi gasto\".\nPEGAR: \"Tinha pegado\" OU \"Tinha pego\" / \"Foi pegado\" OU \"Foi pego\".\nRelações\nProcedimento operacional: .\nExemplificado por: .\nPossui Dica: TIP-A04-G04-FORMAS-NOMINAIS-001.",
+            "**Infinitivo Impessoal vs. Infinitivo Pessoal (Flexionado vs. Não Flexionado)**: Definição ou ideia central\nO Infinitivo divide-se em Impessoal (não faz referência a nenhum sujeito ou pessoa gramatical) e Pessoal (possui sujeito ou agente determinado). Por sua vez, o Infinitivo Pessoal pode apresentar-se sob duas formas: Flexionado ou Não Flexionado.\nQuadro Comparativo de Classificação do Infinitivo\nINFINITIVO ┴ INFINITIVO IMPESSOAL INFINITIVO PESSOAL • Não tem pessoa / Sem sujeito • Tem pessoa / Sujeito determinado • Enunciação vaga / Nome do verbo • Conjugável com \"PARA\" • Ex: \"É preciso acabar com a miséria.\" ┴ FLEXIONADO NÃO FLEXIONADO • Apresenta desinência pessoal • Sem desinência gráfica • Desinências: -es, -mos, • Sujeito recuperado no contexto -des, -em • Ex: \"...estudemos para PASSAR.\" • Ex: \"Para PASSARES...\" (Sujeito de passar: nós)\nExplicação consolidada\nInfinitivo Impessoal:\nExpressa a ação em si, de maneira indeterminada, genérica ou abstrata.\nNão admite flexão. Ex.: \"Viver é aprender.\" / \"É fundamental preservar o meio ambiente.\"\nInfinitivo Pessoal Flexionado:\nO verbo recebe desinência número-pessoal explícita (-es, -mos, -des, -em) para concordar graficamente com seu sujeito.\nConjugação com auxílio da preposição para: para eu falar, para tu falares, para ele falar, para nós falarmos, para vós falardes, para eles falarem.\nExemplo: \"Para passares em concurso, é preciso estudo\" (Sujeito: tu $\\rightarrow$ desinência -es).\nInfinitivo Pessoal Não Flexionado (Regra de Ouro):\n\"Nem todo infinitivo que tem sujeito se flexiona.\"\nOcorre quando o infinitivo possui um sujeito determinado na oração (frequentemente correferencial com o sujeito da oração principal), mas o redator opta por manter o verbo na sua forma não flexionada.\nExemplo: \"É importante que estudemos para passar em concurso.\"\nQuem vai passar? O sujeito de passar é nós (identificado pela flexão de estudemos).\nComo não recebeu a desinência -mos, classifica-se como Infinitivo Pessoal Não Flexionado.\nRelações\nProcedimento associado: .\nExemplificado por: , .\nPossui Citação: QUOTE-A04-G04-FORMAS-NOMINAIS-001.",
+            "**Confronto entre Infinitivo Pessoal e Futuro do Subjuntivo em Verbos Regulares**: Definição ou ideia central\nNos verbos regulares, o Infinitivo Pessoal e o Futuro do Subjuntivo apresentam homografia e homofonia absolutas (grafia e som exatamente idênticos em todas as pessoas gramaticais). A distinção sintática exige a identificação dos conectores oracionais ou a aplicação do Macete da Substituição por Verbos Irregulares Modelo.\nTabela de Coincidência Gráfica (Verbo Regular: Falar)\nPor que a coincidência NÃO ocorre em verbos irregulares?\nNos verbos irregulares, o Futuro do Subjuntivo deriva da 3ª pessoa do plural do Pretérito Perfeito do Indicativo (eliminando-se a terminação -ram), gerando radicais distintos do infinitivo:\nFazer: Infinitivo = fazer | Futuro Subjuntivo = fizer (fizeres, fizermos...)\nDizer: Infinitivo = dizer | Futuro Subjuntivo = disser (disseres, dissermos...)\nPôr: Infinitivo = pôr | Futuro Subjuntivo = puser (puseres, pusermos...)\nTrazer: Infinitivo = trazer | Futuro Subjuntivo = trouxer (trouxeres, trouxermos...)\nMacete da Substituição (Fazer/Fizer ou Dizer/Disser)\nPara desmascarar a forma verbal regular em uma prova:\nSubstitua o verbo regular pelo verbo irregular FAZER ou DIZER.\nRegra de Decisão:\nSe a frase exigir a forma FAZER / DIZER $\\rightarrow$ Trata-se de INFINITIVO.\nSe a frase exigir a forma FIZER / DISSER $\\rightarrow$ Trata-se de FUTURO DO SUBJUNTIVO.\nPistas dos Conectores Sintáticos:\nPreposição ou Locução Prepositiva (para, a fim de, por, de, sem) $\\rightarrow$ Exige Infinitivo.\nConjunção Subordinativa (quando, se, assim que, logo que, da próxima vez que) $\\rightarrow$ Exige Futuro do Subjuntivo.\nExemplos Comparativos\n\"A fim de falares bem uma língua...\" $\\rightarrow$ \"A fim de fazeres...\" $\\rightarrow$ Infinitivo Pessoal Flexionado.\n\"Assim que falares com o diretor...\" $\\rightarrow$ \"Assim que fizeres...\" $\\rightarrow$ Futuro do Subjuntivo.\nRelações\nProcedimento operacional: .(Questão FGV SUDENE-PE).",
+            "**Gerúndio: Aspecto Verbal, \"Bom Gerúndio\" vs. \"Mau Gerúndio\" (Gerundismo e Ação Posterior)**: Definição ou ideia central\nO Gerúndio (terminação -NDO) expressa o aspecto verbal imperfeito, designando uma ação em curso ou processo contínuo. A norma culta distingue com rigor o emprego legítimo (\"Bom Gerúndio\") dos usos viciosos e agramaticais (\"Mau Gerúndio\" ou Gerundismo).\nQuadro de Oposição: Bom Gerúndio vs. Mau Gerúndio\nExplicação consolidada\nDesmistificando o Preconceito: O gerúndio não é um erro gramatical em si. É forma nominal essencial da língua para ações durativas e simultâneas.\nPor que o Gerúndio Instantâneo Irrita? Porque uma ação pontual (transferir uma ligação, enviar um e-mail) realiza-se em um instante. Ao empregar \"vou estar transferindo\", o falante projeta uma ação instantânea como se fosse um processo infinito no tempo.\nO Perigo do Gerúndio Posterior em Redações: Nas redações discursivas e em questões da FGV/FCC, o uso do gerúndio posterior (\"O governo aprovou a medida, reduzindo os impostos na semana seguinte\") é fortemente penalizado. Ações cronologicamente sucessivas exigem coordenação aditiva (\"O governo aprovou a medida e reduziu os impostos...\").(Questão FGV IBGE).",
+            "**Valores Semânticos do Gerúndio em Orações Reduzidas**: Definição ou ideia central\nO gerúndio introduz orações reduzidas com função adverbial equivalente às orações subordinadas adverbiais desenvolvidas. Os principais valores semânticos cobrados em concursos são: Tempo, Causa, Consequência e Adição/Consequência.\nMetodologia de Identificação\nA determinação do valor semântico nunca deve ser feita isolando-se o gerúndio; exige a análise da relação lógica de sentido entre a oração no gerúndio e o verbo da oração principal:\n[ VERBO DA ORAÇÃO PRINCIPAL ] [ VERBO NO GERÚNDIO ]\nValor de Tempo (Temporal):\nO gerúndio expressa a circunstância cronológica em que ocorre a ação principal.\nEquivale a conjunções temporais (quando, assim que, logo que).\nExemplo: \"Chegando cedo, avise-me.\" $\\rightarrow$ \"Avise-me quando chegar.\"\nValor de Causa (Causal):\nO gerúndio expressa a razão, motivação ou fato gerador da ação principal.\nEquivale a conjunções causais (porque, visto que, já que).\nExemplo: \"Terminando o trabalho, foi descansar.\" $\\rightarrow$ \"Foi descansar porque terminou o trabalho.\"\nValor de Consequência (Consecutivo):\nO gerúndio expressa o resultado, efeito ou desfecho decorrente da ação principal.\nFrequentemente correlacionado a intensificadores (tão, tanto, tal) ou substituível por locuções consecutivas (de maneira a, de modo que, de forma que).\nExemplo: \"Ele chegou tão feliz, contagiando a todos.\" $\\rightarrow$ \"Ele chegou tão feliz de modo que contagiou a todos.\"\nValor de Adição com Efeito Consecutivo:\nOcorre quando a oração no gerúndio acrescenta uma nova informação que decorre logicamente da primeira.\nSubstituível por oração coordenada aditiva (e + verbo flexionado).\nExemplo: \"Os modelos focam na teoria, obrigando a decorar fórmulas.\" $\\rightarrow$ \"Os modelos focam na teoria e obrigam a decorar fórmulas.\"\nRelações\nProcedimento operacional: .(FCC TST), (FCC FCRIA), (FGV DPE-RJ).",
+            "**Caso Especial do Verbo VIR: Ambiguidade da Forma \"Vindo\" (Gerúndio vs. Particípio Irregular)**: Definição ou ideia central\nO verbo VIR (e seus derivados: intervir, convir, provir, advir) apresenta uma particularidade morfológica explorada como armadilha clássica em concursos: a forma VINDO funciona tanto como Gerúndio quanto como Particípio Irregular. A forma regular \"vido\" não existe na língua portuguesa.\nEstrutura Morfológica do Verbo VIR\nVERBO \"VIR\" E DERIVADOS ┴ GERÚNDIO PARTICÍPIO VINDO ┴ (Terminação -ndo) Expressa ação contínua PARTICÍPIO REGULAR PARTICÍPIO IRREGULAR (Forma em -DO) (Sem terminação -DO) ~VIDO~ VINDO (NÃO EXISTE!) (Homógrafo ao Gerúndio)\nTeste de Substituição para Diferenciação Contextual\nPara determinar se uma ocorrência da palavra vindo em um texto é gerúndio ou particípio, substitui-se o verbo por um verbo modelo de flexões regulares distintas (como chegar ou trazer):\nSe no contexto a frase exigir -ANDO / -ENDO / -INDO (ex.: chegando / trazendo) $\\rightarrow$ VINDO é GERÚNDIO (exprime ação em andamento).\nExemplo: \"Eu estou vindo para o trabalho.\" $\\rightarrow$ \"Estou chegando...\" $\\rightarrow$ Gerúndio.\nSe no contexto a frase exigir -ADO / -IDO (ex.: chegado / trazido / procedente) $\\rightarrow$ VINDO é PARTICÍPIO IRREGULAR (exprime estado, origem ou resultado).\nExemplo 1: \"Ele tem vindo com frequência.\" $\\rightarrow$ \"Ele tem chegado...\" $\\rightarrow$ Particípio Irregular (tempo composto com auxiliar ter).\nExemplo 2: \"Vindo de Portugal, o produto é refinado.\" $\\rightarrow$ \"Trazido de Portugal / Procedente de Portugal...\" $\\rightarrow$ Particípio Irregular (adjetivo indicando procedência).\nRelações\nProcedimento operacional: .(Questão CESPE)."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-SUBJ-01",
-          "question": "Como se conjugam os verbos MANTER e VER na 3ª pessoa do singular do Futuro do Subjuntivo?",
-          "keyPoints": [
-            "Manter: 'Quando ele MANTIVER' (deriva de eles mantiveram).",
-            "Ver: 'Quando ele VIR' (deriva de eles viram)."
-          ],
-          "targetConcept": "Futuro do Subjuntivo Irregular",
-          "targetLO": "LO-A04-G04-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Formas Nominais do Verbo?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

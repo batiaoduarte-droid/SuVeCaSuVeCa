@@ -154,7 +154,7 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
                       isFirst ? 'text-teal-900' : 'text-slate-500'
                     }`}
                   >
-                    {header}
+                    <InlineRichText>{header}</InlineRichText>
                   </span>
                   <div
                     className={`text-xs leading-relaxed ${

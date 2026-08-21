@@ -62,8 +62,8 @@ describe('CumulativeReviewRenderer', () => {
 
   it('renderiza o cabeçalho e objetivo da unidade de revisão', () => {
     render(<CumulativeReviewRenderer view={mockCumulativeReview} />);
-    expect(screen.getByText(/Revisão Geral Cumulativa • Aula 14 \(S01\)/i)).toBeInTheDocument();
-    expect(screen.getByText('Revisão Cumulativa: Ortografia')).toBeInTheDocument();
+    expect(screen.getByText(/Revisão geral cumulativa • S01/i)).toBeInTheDocument();
+    expect(screen.getByText('Ortografia')).toBeInTheDocument();
     expect(screen.getByText(/Recuperar as decisões centrais de acentuação e hífen/i)).toBeInTheDocument();
   });
 

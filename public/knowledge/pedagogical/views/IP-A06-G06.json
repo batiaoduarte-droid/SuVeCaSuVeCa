@@ -1,21 +1,23 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A06-G06",
     "lessonId": "A06",
-    "title": "Termos Acessórios - Adjunto Adverbial e Adjunto Adnominal",
+    "title": "Vocativo e Aposto",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A06-G06",
     "lessonId": "A06",
-    "title": "Termos Acessórios - Adjunto Adverbial e Adjunto Adnominal",
+    "title": "Vocativo e Aposto",
     "learningObjectives": [
       "Sistematizar a teoria, a morfossintaxe, as regras de pontuação e os critérios diagnósticos de diferenciação de dois termos fundamentais da sintaxe da oração — o vocativo e o aposto —, articulando as armadilhas clássicas de concursos (diferenciação entre vocativo e sujeito, vocativo e aposto explicativo, aposto e predicativo deslocado, aposto especificativo e adjunto adnominal, concordância com aposto resumitivo e dissecação da estrutura coesiva \"o que\")."
     ],
-    "conceptCount": 1,
-    "ruleCount": 1,
+    "conceptCount": 12,
+    "ruleCount": 2,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A06-G06-01"
     ],
@@ -26,133 +28,1436 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "Os Termos Acessórios desempenham papéis secundários de caracterização, especificação e circunstanciação na oração. O Adjunto Adnominal gravita em torno do substantivo (modificador nominal), enquanto o Adjunto Adverbial gravita em torno do verbo, do adjetivo ou de outro advérbio (modificador oracional de circunstância).",
-      "visualBlueprint": "Adjunto Adnominal: Artigos, Adjetivos, Locuções Adjetivas, Pronomes Adjetivos, Numerais (Ligados estritamente ao NOME substantivo) | Adjunto Adverbial: Advérbios e Locuções Adverbiais (Ligados ao VERBO, adjetivo ou advérbio, expressando tempo, lugar, modo, causa, instrumento, meio, companhia).",
-      "cognitiveAnchor": "O Adjunto Adnominal não sai de perto do substantivo dele; o Adjunto Adverbial é móvel e expressa as circunstâncias da ação verbal.",
-      "strategicSignificance": "Fundamental para a correta pontuação de adjuntos adverbiais deslocados (vírgula obrigatória para longa extensão) e concordância nominal.",
-      "coreTension": "Confundir adjetivo como adjunto adnominal com adjetivo exercendo função de predicativo ou advérbio."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Vocativo e Aposto",
+      "summary": "Articulação morfossintática e semântica de Vocativo e Aposto com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A06-06",
-          "name": "Morfologia de Nomes e Advérbios",
-          "reason": "Compreender as classes nominais e invariáveis para deduzir suas funções sintáticas.",
-          "activationPrompt": "Na frase 'O aluno calmo respondeu calmamente', quais são os modificadores?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A06-G06",
+          "title": "Mapa de Dependência: Vocativo e Aposto",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Vocativo e Aposto",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Confronto: Adjunto Adnominal vs Adjunto Adverbial",
-          "pedagogicalGoal": "Distinguir o alvo de modificação de cada classe de adjunto.",
+          "groupId": "GRP-IP-A06-G06-01",
+          "title": "Fundamentos dos Termos Acessórios da Oração",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Adjunto Adnominal vs Adjunto Adverbial",
-              "columns": [
-                "Propriedade",
-                "Adjunto Adnominal (AA)",
-                "Adjunto Adverbial (AAdv)"
-              ],
-              "rows": [
-                [
-                  "Alvo de Modificação",
-                  "SUBSTANTIVO (concreto ou abstrato)",
-                  "VERBO, ADJETIVO ou outro ADVÉRBIO"
-                ],
-                [
-                  "Classes Morfológicas",
-                  "Artigo, Adjetivo, Pronome Adjetivo, Numeral, Locução Adjetiva",
-                  "Advérbio, Locução Adverbial, Oração Subordinada Adverbial"
-                ],
-                [
-                  "Mobilidade Sintática",
-                  "BAIXA MOBILIDADE (fica colado ao substantivo nuclear)",
-                  "ALTA MOBILIDADE (pode iniciar, intercalar ou finalizar o período)"
-                ],
-                [
-                  "Flexão",
-                  "VARIÁVEL (concorda em gênero e número com o substantivo)",
-                  "INVARIÁVEL (não sofre flexão gramatical)"
-                ],
-                [
-                  "Exemplo Típico",
-                  "Os [três] [belos] pássaros [da floresta] cantam.",
-                  "Os pássaros cantam [suavemente] [no jardim] [ao amanhecer]."
-                ]
-              ],
-              "text": "O adjunto adnominal delimita o ser; o adjunto adverbial modula o cenário e a maneira da predicação."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nOs termos acessórios da oração (aposto, vocativo e adjunto adverbial) são elementos que desempenham função secundária na estrutura oracional, caracterizando-se pela não obrigatoriedade sintática (\"enfeites\"), diferindo estruturalmente dos termos essenciais e integrantes.\nExplicação consolidada\nDiferentemente dos termos integrantes (objeto direto, objeto indireto, complemento nominal e agente da passiva), que são compulsoriamente exigidos pela transitividade verbal ou regência nominal, os termos acessórios agregam informações circunstanciais, explicações, enumerações, delimitações ou apelos discursivos.\nEmbora o vocativo seja tradicionalmente agrupado sob a rubrica geral dos termos acessórios para fins curriculares de concurso, no plano estritamente sintático ele é um termo independente, desprovido de ligação sintática direta com o sujeito ou com o predicado da oração. Já o aposto é um termo acessório de valor substantivo subordinado anafóricamente a outro substantivo/pronome da estrutura oracional.\nRelações\nExpande em: (Vocativo) e (Aposto)."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-02",
+          "title": "Conceito, Natureza e Personificação do Vocativo",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO vocativo é o termo sintático de chamamento, interpelação ou invocação dirigido diretamente ao interlocutor (segunda pessoa do discurso), podendo ter como destinatário um ser humano real ou uma entidade inanimada/abstrata personificada.\nExplicação consolidada\nO vocativo atua como um marcador pragmático-discursivo de interpelação direta. Seus destinatários dividem-se em duas categorias:\nPessoas ou seres animados reais: interlocutores concretos aos quais se dirige a mensagem (Adriana, Senhor, Alunos).\nCoisas ou entidades personificadas: recurso expressivo/figura de linguagem em que se confere voz, escuta ou estatuto de interlocutor a eventos, conceitos, nações ou elementos inanimados (Carnaval, Brasil, Deus, Minha terra).\nExemplos\nAdriana, veja isto. \"Adriana\" é vocativo dirigido a uma pessoa real.\nEu te amo, Carnaval! \"Carnaval\" é vocativo dirigido a uma festa personificada.\n\"Brasil, mostra tua cara.\" \"Brasil\" é vocativo personificado (país invocado como interlocutor).\nRelações\nPossui restrição morfológica em: .\nDistingue-se de: (Sujeito)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-03",
+          "title": "Morfossintaxe do Vocativo: Exclusividade de Núcleo Substantivo e Substantivação",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nNo plano morfossintático, o núcleo do vocativo é obrigatoriamente um substantivo ou pronome substantivo. Vocábulos originalmente adjetivos empregados como chamamento passam compulsoriamente pelo processo de derivação imprópria (substantivação contextual).\nExplicação consolidada\nNa língua portuguesa, a função sintática de vocativo é privativa da esfera substantiva. Se uma palavra de natureza qualificadora/adjetiva for utilizada para interpelar alguém, ela abandona a classe dos adjetivos no contexto e assume a classe morfológica de substantivo.\nEm provas de concurso (como no precedente da banca Vunesp com o verso \"Pretinha, eu te amo!\"), as bancas questionam a classe gramatical do vocábulo grifado. O candidato não deve analisar o termo isolado no dicionário (onde pretinha pode ser adjetivo, como em garrafa pretinha), mas sim sua função sintática na oração: atuando como vocativo, sua classe morfológica contextual é substantivo.\nExemplos e Contraexemplos\nContexto de Vocativo: \"Pretinha, eu te amo!\" $\\rightarrow$ Função: Vocativo | Classe: Substantivo.\nContexto de Modificador: \"Comprei uma bicicleta pretinha.\" $\\rightarrow$ Função: Adjunto Adnominal | Classe: Adjetivo."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-04",
+          "title": "Distinção Sintática entre Vocativo e Sujeito no Modo Imperativo",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO vocativo e o sujeito são termos sintáticos inconfundíveis: o vocativo é isolado por pontuação e não rege a flexão do verbo; o sujeito nunca se separa de seu predicado direto por vírgula e determina a concordância verbal.\nExplicação consolidada\nEm orações no modo imperativo (que expressam ordens, pedidos, convites ou súplicas), os candidatos tendem a confundir o interlocutor chamado com o sujeito do verbo. A resolução apoia-se em dois princípios:\nRegra de Bloqueio da Vírgula: É terminantemente proibido separar sujeito de predicado por vírgula simples. Se o termo nominal inicial estiver seguido de vírgula antes do verbo, ele não pode ser o sujeito.\nSujeito no Modo Imperativo: Em estruturas como \"Mãe, venha aqui.\" ou \"Brasil, mostra tua cara.\", o termo isolado por vírgula é o vocativo, enquanto o sujeito do verbo no imperativo é oculto / elíptico / implícito (você no primeiro caso; tu no segundo).\nExemplos\n\"Mãe, venha aqui.\"\nMãe = Vocativo (chamamento).\nvenha = Verbo no imperativo afirmativo (3ª pessoa).\nSujeito = Oculto/elíptico (você).\n\"Brasil, mostra tua cara.\"\nBrasil = Vocativo personificado.\nmostra = Verbo no imperativo afirmativo (2ª pessoa do singular, concordando com o possessivo tua).\nSujeito = Oculto/elíptico (tu).\nRelações\nGera procedimento: ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-05",
+          "title": "Regras de Pontuação do Vocativo: Isolamento Obrigatório e o Caso Epistolar dos Dois-Pontos",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nNa norma padrão culta, o vocativo deve ser obrigatoriamente isolado por sinais de pontuação (vírgula no início, entre vírgulas no meio, ou antecedido de vírgula no fim); em correspondências formais e na literatura clássica, admite-se legitimamente o uso de dois-pontos.\nExplicação consolidada\nMobilidade Sintática e Vírgula: O vocativo pode ocupar qualquer posição na frase (início, meio ou fim), exigindo compulsoriamente o isolamento pontual. No cotidiano e em aplicativos de mensagens instantâneas (WhatsApp), a omissão da vírgula é frequente por informalidade, mas constitui erro na norma culta.\nSupressão de Vírgula (Aposto Explicativo vs. Vocativo): A alteração da pontuação altera simultaneamente a sintaxe e a semântica:\n[Nicole], [a representante da turma], [chegou neste instante]. $\\rightarrow$ Nicole = Sujeito; a representante da turma = Aposto explicativo.\n[Nicole], [a representante da turma] [chegou neste instante]. (supressão da 2ª vírgula) $\\rightarrow$ Nicole = Vocativo; a representante da turma = Sujeito.\nCaso Especial Cebraspe (Dois-Pontos em Cartas): Em correspondência clássica de Machado de Assis analisada pelo Cebraspe (\"Meu amigo:\"), a banca questionou se o termo era aposto. Trata-se legitimamente de vocativo, pontuado por dois-pontos conforme a tradição epistolar.\nRelações\nPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-001.\nGera procedimento: ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-06",
+          "title": "Conceito Morfossintático e o \"Mantra\" do Aposto",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO aposto é um termo acessório de natureza substantiva ou pronominal que se agrega anafóricamente a outro substantivo ou pronome para explicá-lo, enumerá-lo, distribuí-lo, resumi-lo, especificá-lo ou referir-se a uma oração inteira.\nExplicação consolidada\nA morfossintaxe dita que tudo o que o substantivo desempenha, o pronome substantivo também é capaz de desempenhar. Para blindar a resolução de questões de sintaxe, formula-se o mantra mnemônico:\n\"Aposto é caso de substantivo que se refere a outro substantivo.\"\nO aposto não qualifica atributos (função privativa do adjetivo), mas estabelece relações de equivalência, desdobramento, resumo ou identificação nominal com o termo antecedente.\nRelações\nContrasta com: (Predicativo Deslocado).\nExpande em: a ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-07",
+          "title": "Diferenciação Morfossintática: Aposto vs. Predicativo do Sujeito Deslocado",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nNem todo termo explicativo isolado entre vírgulas é aposto. Elementos de natureza adjetiva que qualificam o sujeito entre vírgulas exercem a função sintática de predicativo do sujeito deslocado.\nExplicação consolidada\nAs bancas exploram o vício mecânico de associar qualquer elemento entre vírgulas ao aposto explicativo. O teste decisivo é morfológico:\nSe o termo for substantivo (ou pronome) $\\rightarrow$ Aposto.\nSe o termo for adjetivo (ou particípio adjetivado) expressando estado transitório ou permanente $\\rightarrow$ Predicativo do sujeito deslocado.\nNa ordem direta da frase \"As meninas, entusiasmadas, aplaudiam\", a estrutura revela um predicado verbo-nominal: \"As meninas aplaudiam e estavam entusiasmadas\". Como \"entusiasmadas\" é adjetivo, é impossível classificá-lo como aposto.\nExemplos\n\"As meninas, [entusiasmadas], aplaudiam.\" $\\rightarrow$ entusiasmadas = Adjetivo $\\rightarrow$ Predicativo do sujeito deslocado.\n\"As meninas, [estudantes dedicadas], aplaudiam.\" $\\rightarrow$ estudantes = Substantivo $\\rightarrow$ Aposto explicativo.Possui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-002."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-08",
+          "title": "Estrutura do Núcleo do Aposto e Termos Satélites",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO sintagma do aposto possui um núcleo fundamental constituído por substantivo ou pronome substantivo que nunca vem antecedido diretamente de preposição; os elementos preposicionados subordinados a ele atuam como \"termos satélites\" (adjuntos adnominais).\nExplicação consolidada\nAo analisar apostos complexos e extensos:\nIsola-se todo o segmento explicativo/distributivo entre colchetes.\nIdentifica-se a palavra-base substantiva ou pronominal não regida por preposição interna, que constitui o núcleo do aposto.\nOs segmentos modificadores preposicionados que orbitam ao redor desse núcleo são termos satélites exercendo função interna de adjunto adnominal.\nExemplos\n\"Machado de Assis, [um dos maiores nomes da literatura mundial], escreveu...\"\nNúcleo do aposto: um (pronome indefinido substantivo equivalente a \"algum\").\nTermos satélites: dos maiores nomes da literatura mundial (adjuntos adnominais do pronome um).\n\"Eram dois grandes nomes do esporte: [um do automobilismo, outro do tênis].\"\nNúcleos do aposto: um e outro (pronomes indefinidos).\nTermos satélites: do automobilismo e do tênis (adjuntos adnominais preposicionados)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-09",
+          "title": "Tipologias de Aposto: Explicativo, Enumerativo e Distributivo",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO aposto explicativo esclarece ou conceitua o antecedente; o aposto enumerativo desdobra o termo em dois ou mais elementos componentes; o aposto distributivo distribui os antecedentes simetricamente por pares correlativos (um... outro, este... aquele, ambos).\nExplicação consolidada\nAposto Explicativo: Tipo mais recorrente em provas. Vem necessariamente isolado por vírgulas, travessões ou parênteses (Machado de Assis, grande escritor,...).\nAposto Enumerativo: Apresenta uma listagem de dois ou mais núcleos substantivos/pronominais que detalham uma síntese antecedente, vindo comumente após dois-pontos (Recorri a dois amigos: Gilson e Itamar.).\nAposto Distributivo: É uma variante estilístico-gramatical do enumerativo. Distribui simetricamente elementos antecedentes. Atenção em provas: Caso a questão não disponibilize o código \"distributivo\", deve ser assinalado como \"enumerativo\".\nExemplos\nExplicativo: \"A geografia, [estudo da terra], é uma disciplina fundamental...\"\nEnumerativo: \"Vendemos de tudo: [alimentos, roupas, brinquedos...]\"\nDistributivo: \"Ambas foram premiadas: [a cantora e a instrumentista].\""
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-10",
+          "title": "Aposto Resumitivo e Regra de Concordância Verbal Especialíssima",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO aposto resumitivo sintetiza uma enumeração de termos antecedentes através de um pronome indefinido substantivo (ninguém, tudo, nada), provocando uma regra de concordância verbal especialíssima, na qual o verbo concorda compulsoriamente no singular com o aposto resumitivo, e não com o sujeito composto.\nExplicação consolidada\nNa estrutura clássica avaliada pelo Cebraspe: \"Empresários, trabalhadores, ninguém confia em nossos governantes.\"\nO termo \"Empresários, trabalhadores\" exerce a função sintática de sujeito composto.\nO vocábulo \"ninguém\" é morfologicamente pronome indefinido e sintaticamente aposto resumitivo.\nO verbo \"confia\" flexiona-se no singular para concordar com o aposto resumitivo \"ninguém\".\nAlerta de Concurso: É incorreto afirmar que \"ninguém\" é o sujeito da oração ou que houve silépse/concordância ideológica.\nEfeito da Inversão Sintática: O aposto possui posição anafórica (aparece depois). Se a ordem for invertida para \"Ninguém, empresários, trabalhadores, confia...\", o termo \"Ninguém\" torna-se o sujeito simples, e \"empresários, trabalhadores\" converte-se em aposto enumerativo."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-11",
+          "title": "Aposto Especificativo vs. Adjunto Adnominal: O Critério da Denominação",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-011"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO aposto especificativo individualiza um substantivo comum de sentido genérico atribuindo-lhe um nome próprio, constituindo a única tipologia de aposto que não admite pontuação; distingue-se do adjunto adnominal pelo critério da denominação (nomeação).\nExplicação consolidada\nRegra de Pontuação: O aposto especificativo proíbe terminantemente vírgulas, travessões ou parênteses (A cidade de Paris, O rio Tietê, A professora Adriana).\nCritério da Denominação:\nAposto Especificativo: O termo preposicionado ou justaposto expressa o próprio nome do elemento (Mês de maio $\\rightarrow$ \"Maio\" é o nome do mês; Lei de Responsabilidade Fiscal $\\rightarrow$ \"Responsabilidade Fiscal\" é o nome da lei — caso Cebraspe / Promotor de Justiça).\nAdjunto Adnominal: O termo preposicionado não dá nome, mas estabelece relação de restrição, qualificação ou posse temática (Mês das noivas $\\rightarrow$ \"Noivas\" não é nome de mês; Mês do Carlos $\\rightarrow$ \"Carlos\" não é nome de mês, indica referência ao aniversário).\nExemplos ComparativosPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-003."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G06-12",
+          "title": "Aposto em Referência a uma Oração e a Cadeia Coesiva na Construção \"o que\"",
+          "conceptRefs": [
+            "KB-A06-G06-VOCATIVO-E-APOSTO-012"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO aposto em referência a uma oração (aposto oracional) sintetiza o conteúdo de uma oração inteira antecedente, materializando-se por meio de substantivos genéricos (coisa, fato, razão, motivo, sinal) ou pelo pronome demonstrativo o (= isso) na construção \"o que\".\nExplicação consolidada\nDiferença para o Aposto Resumitivo: O aposto resumitivo sintetiza uma lista de substantivos; o aposto oracional sintetiza uma oração estruturada com verbo.\nCadeia Coesiva na Estrutura \"o que\": Na oração \"Eles eram felizes, o que todos percebiam\":\nO vocábulo \"o\" equivale morfologicamente a \"isso\" (pronome demonstrativo) e exerce a função sintática de aposto em referência à oração \"Eles eram felizes\".\nO vocábulo \"que\" é um pronome relativo que retoma o pronome demonstrativo antecedente \"o\".\nForma-se o circuito anafórico: [Eles eram felizes] $\\leftarrow$ retoma $\\leftarrow$ [o (aposto)] $\\leftarrow$ retoma $\\leftarrow$ [que (pronome relativo)].\nEstrutura Substantiva com Conjunção Integrante: Em \"Há vários pratos na pia, sinal de que você recebeu visitas\", o termo \"sinal\" é substantivo aposto da oração anterior, e o \"que\" introduz oração subordinada substantiva completiva nominal (\"sinal disso\"), atuando como conjunção integrante.\nRelações\nPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-004."
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G06-001",
+              "table": {
+                "tableId": "TABLE-IP-A06-G06-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Estrutura",
+                  "Pergunta-chave: \"É o nome próprio?\"",
+                  "Classificação Sintática"
+                ],
+                "rows": [
+                  [
+                    "Mês de maio",
+                    "Sim, \"Maio\" é o nome do mês",
+                    "Aposto Especificativo"
+                  ],
+                  [
+                    "Mês das noivas",
+                    "Não, qualifica o mês tematicamente",
+                    "Adjunto Adnominal"
+                  ],
+                  [
+                    "Mês do Carlos",
+                    "Não, indica posse/referência pessoal",
+                    "Adjunto Adnominal"
+                  ],
+                  [
+                    "Lei de Responsabilidade Fiscal",
+                    "Sim, é o nome próprio da lei",
+                    "Aposto Especificativo"
+                  ],
+                  [
+                    "A cidade de Roma",
+                    "Sim, \"Roma\" é o nome da cidade",
+                    "Aposto Especificativo"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G06-004",
+              "table": {
+                "tableId": "TABLE-IP-A06-G06-004",
+                "caption": "Exemplos Comparativos",
+                "headers": [
+                  "Estrutura",
+                  "Pergunta-chave: \"É o nome próprio?\"",
+                  "Classificação Sintática"
+                ],
+                "rows": [
+                  [
+                    "Mês de maio",
+                    "Sim, \"Maio\" é o nome do mês",
+                    "Aposto Especificativo"
+                  ],
+                  [
+                    "Mês das noivas",
+                    "Não, qualifica o mês tematicamente",
+                    "Adjunto Adnominal"
+                  ],
+                  [
+                    "Mês do Carlos",
+                    "Não, indica posse/referência pessoal",
+                    "Adjunto Adnominal"
+                  ],
+                  [
+                    "Lei de Responsabilidade Fiscal",
+                    "Sim, é o nome próprio da lei",
+                    "Aposto Especificativo"
+                  ],
+                  [
+                    "A cidade de Roma",
+                    "Sim, \"Roma\" é o nome da cidade",
+                    "Aposto Especificativo"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nOs termos acessórios da oração (aposto, vocativo e adjunto adverbial) são elementos que desempenham função secundária na estrutura oracional, caracterizando-se pela não obrigatoriedade sintática (\"enfeites\"), diferindo estruturalmente dos termos essenciais e integrantes.\nExplicação consolidada\nDiferentemente dos termos integrantes (objeto direto, objeto indireto, complemento nominal e agente da passiva), que são compulsoriamente exigidos pela transitividade verbal ou regência nominal, os termos acessórios agregam informações circunstanciais, explicações, enumerações, delimitações ou apelos discursivos.\nEmbora o vocativo seja tradicionalmente agrupado sob a rubrica geral dos termos acessórios para fins curriculares de concurso, no plano estritamente sintático ele é um termo independente, desprovido de ligação sintática direta com o sujeito ou com o predicado da oração. Já o aposto é um termo acessório de valor substantivo subordinado anafóricamente a outro substantivo/pronome da estrutura oracional.\nRelações\nExpande em: (Vocativo) e (Aposto)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO vocativo é o termo sintático de chamamento, interpelação ou invocação dirigido diretamente ao interlocutor (segunda pessoa do discurso), podendo ter como destinatário um ser humano real ou uma entidade inanimada/abstrata personificada.\nExplicação consolidada\nO vocativo atua como um marcador pragmático-discursivo de interpelação direta. Seus destinatários dividem-se em duas categorias:\nPessoas ou seres animados reais: interlocutores concretos aos quais se dirige a mensagem (Adriana, Senhor, Alunos).\nCoisas ou entidades personificadas: recurso expressivo/figura de linguagem em que se confere voz, escuta ou estatuto de interlocutor a eventos, conceitos, nações ou elementos inanimados (Carnaval, Brasil, Deus, Minha terra).\nExemplos\nAdriana, veja isto. \"Adriana\" é vocativo dirigido a uma pessoa real.\nEu te amo, Carnaval! \"Carnaval\" é vocativo dirigido a uma festa personificada.\n\"Brasil, mostra tua cara.\" \"Brasil\" é vocativo personificado (país invocado como interlocutor).\nRelações\nPossui restrição morfológica em: .\nDistingue-se de: (Sujeito)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nNo plano morfossintático, o núcleo do vocativo é obrigatoriamente um substantivo ou pronome substantivo. Vocábulos originalmente adjetivos empregados como chamamento passam compulsoriamente pelo processo de derivação imprópria (substantivação contextual).\nExplicação consolidada\nNa língua portuguesa, a função sintática de vocativo é privativa da esfera substantiva. Se uma palavra de natureza qualificadora/adjetiva for utilizada para interpelar alguém, ela abandona a classe dos adjetivos no contexto e assume a classe morfológica de substantivo.\nEm provas de concurso (como no precedente da banca Vunesp com o verso \"Pretinha, eu te amo!\"), as bancas questionam a classe gramatical do vocábulo grifado. O candidato não deve analisar o termo isolado no dicionário (onde pretinha pode ser adjetivo, como em garrafa pretinha), mas sim sua função sintática na oração: atuando como vocativo, sua classe morfológica contextual é substantivo.\nExemplos e Contraexemplos\nContexto de Vocativo: \"Pretinha, eu te amo!\" $\\rightarrow$ Função: Vocativo | Classe: Substantivo.\nContexto de Modificador: \"Comprei uma bicicleta pretinha.\" $\\rightarrow$ Função: Adjunto Adnominal | Classe: Adjetivo."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO vocativo e o sujeito são termos sintáticos inconfundíveis: o vocativo é isolado por pontuação e não rege a flexão do verbo; o sujeito nunca se separa de seu predicado direto por vírgula e determina a concordância verbal.\nExplicação consolidada\nEm orações no modo imperativo (que expressam ordens, pedidos, convites ou súplicas), os candidatos tendem a confundir o interlocutor chamado com o sujeito do verbo. A resolução apoia-se em dois princípios:\nRegra de Bloqueio da Vírgula: É terminantemente proibido separar sujeito de predicado por vírgula simples. Se o termo nominal inicial estiver seguido de vírgula antes do verbo, ele não pode ser o sujeito.\nSujeito no Modo Imperativo: Em estruturas como \"Mãe, venha aqui.\" ou \"Brasil, mostra tua cara.\", o termo isolado por vírgula é o vocativo, enquanto o sujeito do verbo no imperativo é oculto / elíptico / implícito (você no primeiro caso; tu no segundo).\nExemplos\n\"Mãe, venha aqui.\"\nMãe = Vocativo (chamamento).\nvenha = Verbo no imperativo afirmativo (3ª pessoa).\nSujeito = Oculto/elíptico (você).\n\"Brasil, mostra tua cara.\"\nBrasil = Vocativo personificado.\nmostra = Verbo no imperativo afirmativo (2ª pessoa do singular, concordando com o possessivo tua).\nSujeito = Oculto/elíptico (tu).\nRelações\nGera procedimento: ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nNa norma padrão culta, o vocativo deve ser obrigatoriamente isolado por sinais de pontuação (vírgula no início, entre vírgulas no meio, ou antecedido de vírgula no fim); em correspondências formais e na literatura clássica, admite-se legitimamente o uso de dois-pontos.\nExplicação consolidada\nMobilidade Sintática e Vírgula: O vocativo pode ocupar qualquer posição na frase (início, meio ou fim), exigindo compulsoriamente o isolamento pontual. No cotidiano e em aplicativos de mensagens instantâneas (WhatsApp), a omissão da vírgula é frequente por informalidade, mas constitui erro na norma culta.\nSupressão de Vírgula (Aposto Explicativo vs. Vocativo): A alteração da pontuação altera simultaneamente a sintaxe e a semântica:\n[Nicole], [a representante da turma], [chegou neste instante]. $\\rightarrow$ Nicole = Sujeito; a representante da turma = Aposto explicativo.\n[Nicole], [a representante da turma] [chegou neste instante]. (supressão da 2ª vírgula) $\\rightarrow$ Nicole = Vocativo; a representante da turma = Sujeito.\nCaso Especial Cebraspe (Dois-Pontos em Cartas): Em correspondência clássica de Machado de Assis analisada pelo Cebraspe (\"Meu amigo:\"), a banca questionou se o termo era aposto. Trata-se legitimamente de vocativo, pontuado por dois-pontos conforme a tradição epistolar.\nRelações\nPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-001.\nGera procedimento: ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO aposto é um termo acessório de natureza substantiva ou pronominal que se agrega anafóricamente a outro substantivo ou pronome para explicá-lo, enumerá-lo, distribuí-lo, resumi-lo, especificá-lo ou referir-se a uma oração inteira.\nExplicação consolidada\nA morfossintaxe dita que tudo o que o substantivo desempenha, o pronome substantivo também é capaz de desempenhar. Para blindar a resolução de questões de sintaxe, formula-se o mantra mnemônico:\n\"Aposto é caso de substantivo que se refere a outro substantivo.\"\nO aposto não qualifica atributos (função privativa do adjetivo), mas estabelece relações de equivalência, desdobramento, resumo ou identificação nominal com o termo antecedente.\nRelações\nContrasta com: (Predicativo Deslocado).\nExpande em: a ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nNem todo termo explicativo isolado entre vírgulas é aposto. Elementos de natureza adjetiva que qualificam o sujeito entre vírgulas exercem a função sintática de predicativo do sujeito deslocado.\nExplicação consolidada\nAs bancas exploram o vício mecânico de associar qualquer elemento entre vírgulas ao aposto explicativo. O teste decisivo é morfológico:\nSe o termo for substantivo (ou pronome) $\\rightarrow$ Aposto.\nSe o termo for adjetivo (ou particípio adjetivado) expressando estado transitório ou permanente $\\rightarrow$ Predicativo do sujeito deslocado.\nNa ordem direta da frase \"As meninas, entusiasmadas, aplaudiam\", a estrutura revela um predicado verbo-nominal: \"As meninas aplaudiam e estavam entusiasmadas\". Como \"entusiasmadas\" é adjetivo, é impossível classificá-lo como aposto.\nExemplos\n\"As meninas, [entusiasmadas], aplaudiam.\" $\\rightarrow$ entusiasmadas = Adjetivo $\\rightarrow$ Predicativo do sujeito deslocado.\n\"As meninas, [estudantes dedicadas], aplaudiam.\" $\\rightarrow$ estudantes = Substantivo $\\rightarrow$ Aposto explicativo.Possui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-002."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO sintagma do aposto possui um núcleo fundamental constituído por substantivo ou pronome substantivo que nunca vem antecedido diretamente de preposição; os elementos preposicionados subordinados a ele atuam como \"termos satélites\" (adjuntos adnominais).\nExplicação consolidada\nAo analisar apostos complexos e extensos:\nIsola-se todo o segmento explicativo/distributivo entre colchetes.\nIdentifica-se a palavra-base substantiva ou pronominal não regida por preposição interna, que constitui o núcleo do aposto.\nOs segmentos modificadores preposicionados que orbitam ao redor desse núcleo são termos satélites exercendo função interna de adjunto adnominal.\nExemplos\n\"Machado de Assis, [um dos maiores nomes da literatura mundial], escreveu...\"\nNúcleo do aposto: um (pronome indefinido substantivo equivalente a \"algum\").\nTermos satélites: dos maiores nomes da literatura mundial (adjuntos adnominais do pronome um).\n\"Eram dois grandes nomes do esporte: [um do automobilismo, outro do tênis].\"\nNúcleos do aposto: um e outro (pronomes indefinidos).\nTermos satélites: do automobilismo e do tênis (adjuntos adnominais preposicionados)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO aposto explicativo esclarece ou conceitua o antecedente; o aposto enumerativo desdobra o termo em dois ou mais elementos componentes; o aposto distributivo distribui os antecedentes simetricamente por pares correlativos (um... outro, este... aquele, ambos).\nExplicação consolidada\nAposto Explicativo: Tipo mais recorrente em provas. Vem necessariamente isolado por vírgulas, travessões ou parênteses (Machado de Assis, grande escritor,...).\nAposto Enumerativo: Apresenta uma listagem de dois ou mais núcleos substantivos/pronominais que detalham uma síntese antecedente, vindo comumente após dois-pontos (Recorri a dois amigos: Gilson e Itamar.).\nAposto Distributivo: É uma variante estilístico-gramatical do enumerativo. Distribui simetricamente elementos antecedentes. Atenção em provas: Caso a questão não disponibilize o código \"distributivo\", deve ser assinalado como \"enumerativo\".\nExemplos\nExplicativo: \"A geografia, [estudo da terra], é uma disciplina fundamental...\"\nEnumerativo: \"Vendemos de tudo: [alimentos, roupas, brinquedos...]\"\nDistributivo: \"Ambas foram premiadas: [a cantora e a instrumentista].\""
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO aposto resumitivo sintetiza uma enumeração de termos antecedentes através de um pronome indefinido substantivo (ninguém, tudo, nada), provocando uma regra de concordância verbal especialíssima, na qual o verbo concorda compulsoriamente no singular com o aposto resumitivo, e não com o sujeito composto.\nExplicação consolidada\nNa estrutura clássica avaliada pelo Cebraspe: \"Empresários, trabalhadores, ninguém confia em nossos governantes.\"\nO termo \"Empresários, trabalhadores\" exerce a função sintática de sujeito composto.\nO vocábulo \"ninguém\" é morfologicamente pronome indefinido e sintaticamente aposto resumitivo.\nO verbo \"confia\" flexiona-se no singular para concordar com o aposto resumitivo \"ninguém\".\nAlerta de Concurso: É incorreto afirmar que \"ninguém\" é o sujeito da oração ou que houve silépse/concordância ideológica.\nEfeito da Inversão Sintática: O aposto possui posição anafórica (aparece depois). Se a ordem for invertida para \"Ninguém, empresários, trabalhadores, confia...\", o termo \"Ninguém\" torna-se o sujeito simples, e \"empresários, trabalhadores\" converte-se em aposto enumerativo."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO aposto especificativo individualiza um substantivo comum de sentido genérico atribuindo-lhe um nome próprio, constituindo a única tipologia de aposto que não admite pontuação; distingue-se do adjunto adnominal pelo critério da denominação (nomeação).\nExplicação consolidada\nRegra de Pontuação: O aposto especificativo proíbe terminantemente vírgulas, travessões ou parênteses (A cidade de Paris, O rio Tietê, A professora Adriana).\nCritério da Denominação:\nAposto Especificativo: O termo preposicionado ou justaposto expressa o próprio nome do elemento (Mês de maio $\\rightarrow$ \"Maio\" é o nome do mês; Lei de Responsabilidade Fiscal $\\rightarrow$ \"Responsabilidade Fiscal\" é o nome da lei — caso Cebraspe / Promotor de Justiça).\nAdjunto Adnominal: O termo preposicionado não dá nome, mas estabelece relação de restrição, qualificação ou posse temática (Mês das noivas $\\rightarrow$ \"Noivas\" não é nome de mês; Mês do Carlos $\\rightarrow$ \"Carlos\" não é nome de mês, indica referência ao aniversário).\nExemplos ComparativosPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-003."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO aposto em referência a uma oração (aposto oracional) sintetiza o conteúdo de uma oração inteira antecedente, materializando-se por meio de substantivos genéricos (coisa, fato, razão, motivo, sinal) ou pelo pronome demonstrativo o (= isso) na construção \"o que\".\nExplicação consolidada\nDiferença para o Aposto Resumitivo: O aposto resumitivo sintetiza uma lista de substantivos; o aposto oracional sintetiza uma oração estruturada com verbo.\nCadeia Coesiva na Estrutura \"o que\": Na oração \"Eles eram felizes, o que todos percebiam\":\nO vocábulo \"o\" equivale morfologicamente a \"isso\" (pronome demonstrativo) e exerce a função sintática de aposto em referência à oração \"Eles eram felizes\".\nO vocábulo \"que\" é um pronome relativo que retoma o pronome demonstrativo antecedente \"o\".\nForma-se o circuito anafórico: [Eles eram felizes] $\\leftarrow$ retoma $\\leftarrow$ [o (aposto)] $\\leftarrow$ retoma $\\leftarrow$ [que (pronome relativo)].\nEstrutura Substantiva com Conjunção Integrante: Em \"Há vários pratos na pia, sinal de que você recebeu visitas\", o termo \"sinal\" é substantivo aposto da oração anterior, e o \"que\" introduz oração subordinada substantiva completiva nominal (\"sinal disso\"), atuando como conjunção integrante.\nRelações\nPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-004."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-ADV-PONT-01",
-          "title": "Pontuação do Adjunto Adverbial Deslocado",
-          "statement": "O Adjunto Adverbial em ordem direta (no final da oração) dispensa vírgula. Quando DESLOCADO para o início ou meio do período: se for de LONGA EXTENSÃO (3 ou mais palavras), a vírgula é OBRIGATÓRIA; se for de PEQUENA EXTENSÃO (1 ou 2 palavras), a vírgula é FACULTATIVA.",
-          "formalCondition": "AAdv_Longo_Deslocado -> Vírgula Obrigatória; AAdv_Curto_Deslocado -> Vírgula Facultativa.",
-          "scope": "Universal na sintaxe de pontuação culta.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A06-G06-001",
+          "title": "Vocativo",
+          "statement": "Definição Canônica: Termo de chamamento ou invocação discursiva direta a interlocutor humano ou entidade inanimada personificada (KB-A06-G06-VOCATIVO-E-APOSTO-002).\nRegra de Núcleo: O núcleo é restrito a substantivos ou pronomes substantivos; qualificadores adjetivos sofrem substantivação contextual compulsória (KB-A06-G06-VOCATIVO-E-APOSTO-003).\nRegra de Pontuação Geral: Isolamento obrigatório por vírgula(s) em qualquer posição (KB-A06-G06-VOCATIVO-E-APOSTO-005).\nRegra de Pontuação Epistolar: Autorizado formalmente o emprego de dois-pontos em cabeçalhos de cartas (KB-A06-G06-VOCATIVO-E-APOSTO-005).",
+          "scope": "syntax",
+          "conditions": [
+            "Definição Canônica: Termo de chamamento ou invocação discursiva direta a interlocutor humano ou entidade inanimada personificada (KB-A06-G06-VOCATIVO-E-APOSTO-002).",
+            "Regra de Núcleo: O núcleo é restrito a substantivos ou pronomes substantivos; qualificadores adjetivos sofrem substantivação contextual compulsória (KB-A06-G06-VOCATIVO-E-APOSTO-003).",
+            "Regra de Pontuação Geral: Isolamento obrigatório por vírgula(s) em qualquer posição (KB-A06-G06-VOCATIVO-E-APOSTO-005).",
+            "Regra de Pontuação Epistolar: Autorizado formalmente o emprego de dois-pontos em cabeçalhos de cartas (KB-A06-G06-VOCATIVO-E-APOSTO-005)."
+          ],
           "exceptions": [],
-          "examples": [
-            "Na manhã de ontem, todos compareceram ao fórum (longo: vírgula obrigatória).",
-            "Ontem(,) todos compareceram ao fórum (curto: vírgula facultativa)."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A06-G06-001"
+        },
+        {
+          "entityId": "RULE-IP-A06-G06-002",
+          "title": "Aposto",
+          "statement": "Mantra Morfossintático: Substantivo ou pronome que se refere a outro substantivo ou pronome (KB-A06-G06-VOCATIVO-E-APOSTO-006).\nQuadro Canônico das 6 Tipologias de Aposto:",
+          "scope": "syntax",
+          "conditions": [
+            "Mantra Morfossintático: Substantivo ou pronome que se refere a outro substantivo ou pronome (KB-A06-G06-VOCATIVO-E-APOSTO-006).",
+            "Quadro Canônico das 6 Tipologias de Aposto:"
+          ],
+          "exceptions": [],
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A06-G06-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mantra Morfossintático: Substantivo ou pronome que se refere a outro substantivo ou pronome (KB-A06-G06-VOCATIVO-E-APOSTO-006).",
+                "Quadro Canônico das 6 Tipologias de Aposto:"
+              ]
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G06-002",
+              "table": {
+                "tableId": "TABLE-IP-A06-G06-002",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Tipologia do Aposto",
+                  "Função Semântico-Sintática",
+                  "Exigência de Pontuação",
+                  "Exemplo Canônico",
+                  "Unidade Detalhada"
+                ],
+                "rows": [
+                  [
+                    "Explicativo",
+                    "Esclarece/conceitua substantivo antecedente",
+                    "Sim (vírgulas, travessões, parênteses)",
+                    "Machado de Assis, um dos maiores nomes da literatura mundial,...",
+                    "KB-...-009"
+                  ],
+                  [
+                    "Enumerativo",
+                    "Desdobra antecedente em dois ou mais elementos",
+                    "Sim (comumente dois-pontos)",
+                    "Recorri a dois amigos: Gilson e Itamar.",
+                    "KB-...-009"
+                  ],
+                  [
+                    "Distributivo",
+                    "Distribui simetricamente elementos em pares correlativos",
+                    "Sim (dois-pontos ou vírgulas)",
+                    "Eram dois grandes nomes: um do automobilismo, outro do tênis.",
+                    "KB-...-009"
+                  ],
+                  [
+                    "Resumitivo",
+                    "Sintetiza lista antecedente via pronome indefinido (nada, tudo, ninguém)",
+                    "Sim (vírgula)",
+                    "Empresários, trabalhadores, ninguém confia nos governantes.",
+                    "KB-...-010"
+                  ],
+                  [
+                    "Especificativo",
+                    "Nomeia e individualiza substantivo comum genérico",
+                    "NÃO (Proibida qualquer pontuação)",
+                    "A cidade de Paris / O rio Tietê / A Lei de Responsabilidade Fiscal",
+                    "KB-...-011"
+                  ],
+                  [
+                    "Em Ref. a uma Oração",
+                    "Sintetiza uma oração inteira (coisa, fato, sinal ou pronome o)",
+                    "Sim (vírgula)",
+                    "Eles eram felizes, o que todos percebiam.",
+                    "KB-...-012"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A06-G06-002",
+              "EXP-IP-A06-G06-046"
+            ],
+            "hideGenericScaffold": false
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-ADJ-01",
-          "title": "Identificação Rápida do Tipo de Adjunto",
-          "triggerCondition": "Determinar se o termo sublinhado é Adjunto Adnominal ou Adjunto Adverbial.",
+          "entityId": "PROC-A06-G06-VOCATIVO-E-APOSTO-001",
+          "title": "Teste Diagnóstico: Vocativo vs. Sujeito em Orações Imperativas",
           "steps": [
-            "1. Localize a qual palavra o termo sublinhado está diretamente subordinado.",
-            "2. Aponte a seta sintática: O termo se liga a um SUBSTANTIVO? -> Trata-se de ADJUNTO ADNOMINAL.",
-            "3. O termo se liga a um VERBO, ADJETIVO ou ADVÉRBIO indicando tempo, lugar, modo, causa, instrumento? -> Trata-se de ADJUNTO ADVERBIAL.",
-            "4. Exemplo: 'Ele comprou uma casa [de praia]' (de praia liga-se ao substantivo casa -> Adjunto Adnominal) vs 'Ele descansou [na praia]' (na praia liga-se ao verbo descansou -> Adjunto Adverbial de Lugar)."
+            {
+              "order": 1,
+              "action": "Localizar a forma verbal",
+              "explanation": "Verificar se o verbo expressa comando, ordem, pedido ou apelo (modo imperativo).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspecionar a pontuação imediata",
+              "explanation": "Verificar a existência de vírgula isolando o elemento nominal inicial do restante da oração.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Aplicar a regra de bloqueio do sujeito",
+              "explanation": "Havendo vírgula entre o termo nominal inicial e o verbo, esse termo não pode ser o sujeito (pois sujeito e predicado não se separam por vírgula simples).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Classificar o vocativo",
+              "explanation": "O elemento nominal isolado é classificado como vocativo (o destinatário do chamamento).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Determinar o sujeito implícito",
+              "explanation": "O sujeito sintático da oração imperativa é determinado pela desinência verbal como oculto / elíptico / implícito (você, vocês, tu ou vós).",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se o termo qualifica um nome ou circunstancia um processo verbal.",
-          "typicalFailureModes": [
-            "Classificar 'de praia' em 'casa de praia' como adjunto adverbial de lugar."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico: Vocativo vs. Sujeito em Orações Imperativas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico: Vocativo vs. Sujeito em Orações Imperativas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste Diagnóstico: Vocativo vs. Sujeito em Orações Imperativas",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A06-G06-VOCATIVO-E-APOSTO-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localizar a forma verbal: Verificar se o verbo expressa comando, ordem, pedido ou apelo (modo imperativo).",
+                "Inspecionar a pontuação imediata: Verificar a existência de vírgula isolando o elemento nominal inicial do restante da oração.",
+                "Aplicar a regra de bloqueio do sujeito: Havendo vírgula entre o termo nominal inicial e o verbo, esse termo não pode ser o sujeito (pois sujeito e predicado não se separam por vírgula simples).",
+                "Classificar o vocativo: O elemento nominal isolado é classificado como vocativo (o destinatário do chamamento).",
+                "Determinar o sujeito implícito: O sujeito sintático da oração imperativa é determinado pela desinência verbal como oculto / elíptico / implícito (você, vocês, tu ou vós)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A06-G06-VOCATIVO-E-APOSTO-001",
+              "EXP-IP-A06-G06-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A06-G06-VOCATIVO-E-APOSTO-002",
+          "title": "Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Análise da Estrutura Padrão (2 Vírgulas)",
+              "explanation": "[Nome 1], [Expressão Substantiva 2], [Verbo]...",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Nome 1 = Sujeito do verbo.",
+              "explanation": "Passo 2 do algoritmo de Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Expressão Substantiva 2 = Aposto Explicativo intercalado entre vírgulas.",
+              "explanation": "Passo 3 do algoritmo de Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Análise da Estrutura Modificada (Supressão da 2ª Vírgula)",
+              "explanation": "[Nome 1], [Expressão Substantiva 2] [Verbo]...",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Nome 1 = Converte-se em Vocativo (isolado pela vírgula restante).",
+              "explanation": "Passo 5 do algoritmo de Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Expressão Substantiva 2 = Liga-se diretamente ao verbo sem pontuação, convertendo-se no novo Sujeito.",
+              "explanation": "Passo 6 do algoritmo de Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo).",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Conclusão para Questões de Prova",
+              "explanation": "Validar que a retirada de uma única vírgula gera dupla modificação: alteração sintática de ambos os termos e alteração semântica no sentido global do texto.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Diagnóstico do Impacto da Supressão de Vírgula (Aposto vs. Vocativo)",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A06-G06-VOCATIVO-E-APOSTO-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Análise da Estrutura Padrão (2 Vírgulas):[Nome 1], [Expressão Substantiva 2], [Verbo]..."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Nome 1 = Sujeito do verbo.",
+                "Expressão Substantiva 2 = Aposto Explicativo intercalado entre vírgulas."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Análise da Estrutura Modificada (Supressão da 2ª Vírgula):[Nome 1], [Expressão Substantiva 2] [Verbo]..."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Nome 1 = Converte-se em Vocativo (isolado pela vírgula restante).",
+                "Expressão Substantiva 2 = Liga-se diretamente ao verbo sem pontuação, convertendo-se no novo Sujeito."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Conclusão para Questões de Prova: Validar que a retirada de uma única vírgula gera dupla modificação: alteração sintática de ambos os termos e alteração semântica no sentido global do texto."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A06-G06-VOCATIVO-E-APOSTO-002",
+              "EXP-IP-A06-G06-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A06-G06-VOCATIVO-E-APOSTO-003",
+          "title": "Procedimento Sistemático para Reconhecimento e Classificação de Aposto",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Delimitação Estrutural",
+              "explanation": "Isolar todo o bloco explicativo/especificativo/resumitivo entre colchetes [... ].",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Filtro Morfológico",
+              "explanation": "Passo 2 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "O termo é adjetivo? $\\rightarrow$ Não é aposto (classifica-se como predicativo deslocado).",
+              "explanation": "Passo 3 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O termo é substantivo ou pronome substantivo? $\\rightarrow$ É candidato a aposto.",
+              "explanation": "Passo 4 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Extração do Núcleo",
+              "explanation": "Localizar a palavra-base que não esteja regida diretamente por preposição interna.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Aplicação dos Testes Tipológicos",
+              "explanation": "Passo 6 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": "Aplicação dos Testes Tipológicos:"
+            },
+            {
+              "order": 7,
+              "action": "Explica antecedente entre pausas? $\\rightarrow$ Explicativo.",
+              "explanation": "Passo 7 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Desdobra antecedente em lista? $\\rightarrow$ Enumerativo.",
+              "explanation": "Passo 8 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Distribui em pares simétricos (um/outro, este/aquele)? $\\rightarrow$ Distributivo.",
+              "explanation": "Passo 9 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Sintetiza vários termos por pronome indefinido (tudo, nada, ninguém)? $\\rightarrow$ Resumitivo (força verbo no singular).",
+              "explanation": "Passo 10 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Dá o nome próprio a um termo comum sem vírgulas? $\\rightarrow$ Especificativo.",
+              "explanation": "Passo 11 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Sintetiza uma oração inteira via substantivo genérico ou pronome \"o\"? $\\rightarrow$ Em referência a uma oração.",
+              "explanation": "Passo 12 do algoritmo de Procedimento Sistemático para Reconhecimento e Classificação de Aposto.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento Sistemático para Reconhecimento e Classificação de Aposto."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento Sistemático para Reconhecimento e Classificação de Aposto."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Procedimento Sistemático para Reconhecimento e Classificação de Aposto",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A06-G06-VOCATIVO-E-APOSTO-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Delimitação Estrutural: Isolar todo o bloco explicativo/especificativo/resumitivo entre colchetes [... ].",
+                "Filtro Morfológico:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O termo é adjetivo? $\\rightarrow$ Não é aposto (classifica-se como predicativo deslocado).",
+                "O termo é substantivo ou pronome substantivo? $\\rightarrow$ É candidato a aposto."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Extração do Núcleo: Localizar a palavra-base que não esteja regida diretamente por preposição interna.",
+                "Aplicação dos Testes Tipológicos:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Explica antecedente entre pausas? $\\rightarrow$ Explicativo.",
+                "Desdobra antecedente em lista? $\\rightarrow$ Enumerativo.",
+                "Distribui em pares simétricos (um/outro, este/aquele)? $\\rightarrow$ Distributivo.",
+                "Sintetiza vários termos por pronome indefinido (tudo, nada, ninguém)? $\\rightarrow$ Resumitivo (força verbo no singular).",
+                "Dá o nome próprio a um termo comum sem vírgulas? $\\rightarrow$ Especificativo.",
+                "Sintetiza uma oração inteira via substantivo genérico ou pronome \"o\"? $\\rightarrow$ Em referência a uma oração."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A06-G06-VOCATIVO-E-APOSTO-003",
+              "EXP-IP-A06-G06-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-ADJ-01",
-          "conceptA": "Casa de praia (Adjunto Adnominal)",
-          "conceptB": "Mora na praia (Adjunto Adverbial de Lugar)",
-          "decisiveDifference": "'De praia' qualifica e especifica o tipo de substantivo 'casa'; 'Na praia' indica o espaço geográfico onde se desenvolve a ação de 'morar'.",
-          "minimalPair": {
-            "sentenceA": "Comprei um belo barco de pesca. ('de pesca' liga-se ao substantivo barco -> AA)",
-            "sentenceB": "Os homens vivem de pesca. ('de pesca' liga-se ao verbo vivem -> Adjunto Adverbial de Meio)",
-            "difference": "Modificador do substantivo (AA) vs Circunstância do verbo (AAdv)."
+          "entityId": "CONTRAST-IP-A06-G06-001",
+          "title": "Matriz Comparativa de Distinções Sintáticas",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Ligado ao nome = Adnominal. Ligado ao verbo = Adverbial.",
-          "pitfall": "Olhar apenas para a preposição sem ver a qual palavra o sintagma está subordinado."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Matriz Comparativa de Distinções Sintáticas",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A06-G06-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G06-003",
+              "table": {
+                "tableId": "TABLE-IP-A06-G06-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Estrutura Sintática",
+                  "Critério Morfológico",
+                  "Critério de Pontuação",
+                  "Função Sintática Resultante",
+                  "Exemplo Típico"
+                ],
+                "rows": [
+                  [
+                    "Vocativo",
+                    "Substantivo (ou derivado)",
+                    "Isolado obrigatoriamente (vírgulas / dois-pontos)",
+                    "Chamamento discursivo independente",
+                    "Alunos, estudem com afinco."
+                  ],
+                  [
+                    "Sujeito (no Imperativo)",
+                    "Oculto / Implícito",
+                    "Proibida vírgula entre ele e o verbo",
+                    "Elemento que executa a ação verbal",
+                    "(Vocês) estudem com afinco."
+                  ],
+                  [
+                    "Aposto Explicativo",
+                    "Substantivo ou Pronome",
+                    "Isolado obrigatoriamente (entre vírgulas)",
+                    "Esclarece/define termo antecedente",
+                    "A diretora, educadora nata, falou."
+                  ],
+                  [
+                    "Predicativo Deslocado",
+                    "Adjetivo",
+                    "Isolado entre vírgulas",
+                    "Atribui estado/qualidade ao sujeito",
+                    "A diretora, emocionada, falou."
+                  ],
+                  [
+                    "Aposto Resumitivo",
+                    "Pronome Indefinido",
+                    "Isolado após enumeração por vírgula",
+                    "Sintetiza termos e atrai concordância verbal singular",
+                    "Livros, cadernos, tudo sumiu."
+                  ],
+                  [
+                    "Aposto Especificativo",
+                    "Substantivo Próprio",
+                    "Proibida qualquer pontuação",
+                    "Dá nome próprio ao substantivo comum genérico",
+                    "O poeta Drummond nasceu em Minas."
+                  ],
+                  [
+                    "Adjunto Adnominal",
+                    "Preposição + Substantivo",
+                    "Sem pontuação",
+                    "Expressa posse, relação ou restrição sem dar nome próprio",
+                    "O carro do Carlos enguiçou."
+                  ],
+                  [
+                    "Aposto Oracional",
+                    "Pronome \"o\" (= isso) / Substantivo genérico",
+                    "Precedido de vírgula",
+                    "Sintetiza o conteúdo de uma oração inteira",
+                    "Ela venceu, o que era esperado."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A06-G06-001",
+              "EXP-IP-A06-G06-050"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-ADJ-01",
-          "title": "Adjunto Adverbial de Concessão e Meio",
-          "sentence": "Apesar da tempestade (Concessão), os marinheiros chegaram ao porto por navio (Meio).",
-          "analysis": "'Apesar da tempestade' é adjunto adverbial de concessão deslocado (vírgula obrigatória). 'Ao porto' é adjunto adverbial de lugar. 'Por navio' é adjunto adverbial de meio.",
-          "pedagogicalTakeaway": "A oração pode comportar múltiplos adjuntos adverbiais expressando circunstâncias lógicas distintas.",
-          "targetLO": "LO-A06-G06-01"
+          "entityId": "WORKED_EXAMPLE-IP-A06-G06-001",
+          "title": "EX-A06-G06-VOCATIVO-E-APOSTO-001 — Pegadinha Vunesp: Substantivação de Adjetivo em Vocativo",
+          "statement": "Enunciado/Contexto: Em letra musical, analisa-se a estrutura \"Pretinha, eu te amo!\". A banca Vunesp exigiu a determinação da classe morfológica do termo grifado (Pretinha).\nPegadinha da banca: A maioria dos concorrentes assinalou \"adjetivo\", associando a palavra ao adjetivo primitivo de cor/qualidade (menina pretinha).\nResolução Morfossintática: Como o vocábulo opera como chamamento isolado por pontuação, sua função sintática é de vocativo. Como o núcleo do vocativo é privativo dos substantivos, ocorreu derivação imprópria/substantivação contextual.\nGabarito: Substantivo.",
+          "prompt": "Enunciado/Contexto: Em letra musical, analisa-se a estrutura \"Pretinha, eu te amo!\". A banca Vunesp exigiu a determinação da classe morfológica do termo grifado (Pretinha).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado/Contexto",
+              "rationale": "Em letra musical, analisa-se a estrutura \"Pretinha, eu te amo!\". A banca Vunesp exigiu a determinação da classe morfológica do termo grifado (Pretinha)."
+            },
+            {
+              "order": 2,
+              "action": "Pegadinha da banca",
+              "rationale": "A maioria dos concorrentes assinalou \"adjetivo\", associando a palavra ao adjetivo primitivo de cor/qualidade (menina pretinha)."
+            },
+            {
+              "order": 3,
+              "action": "Resolução Morfossintática",
+              "rationale": "Como o vocábulo opera como chamamento isolado por pontuação, sua função sintática é de vocativo. Como o núcleo do vocativo é privativo dos substantivos, ocorreu derivação imprópria/substantivação contextual."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "Substantivo."
+            }
+          ],
+          "result": "Gabarito: Substantivo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado/Contexto: Em letra musical, analisa-se a estrutura \"Pretinha, eu te amo!\". A banca Vunesp exigiu a determinação da classe morfológica do termo grifado (Pretinha).\nPegadinha da banca: A maioria dos concorrentes assinalou \"adjetivo\", associando a palavra ao adjetivo primitivo de cor/qualidade (menina pretinha).\nResolução Morfossintática: Como o vocábulo opera como chamamento isolado por pontuação, sua função sintática é de vocativo. Como o núcleo do vocativo é privativo dos substantivos, ocorreu derivação imprópria/substantivação contextual.\nGabarito: Substantivo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-001 — Pegadinha Vunesp: Substantivação de Adjetivo em Vocativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-001 — Pegadinha Vunesp: Substantivação de Adjetivo em Vocativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-001 — Pegadinha Vunesp: Substantivação de Adjetivo em Vocativo.",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G06-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado/Contexto: Em letra musical, analisa-se a estrutura \"Pretinha, eu te amo!\". A banca Vunesp exigiu a determinação da classe morfológica do termo grifado (Pretinha).",
+                "Pegadinha da banca: A maioria dos concorrentes assinalou \"adjetivo\", associando a palavra ao adjetivo primitivo de cor/qualidade (menina pretinha).",
+                "Resolução Morfossintática: Como o vocábulo opera como chamamento isolado por pontuação, sua função sintática é de vocativo. Como o núcleo do vocativo é privativo dos substantivos, ocorreu derivação imprópria/substantivação contextual.",
+                "Gabarito: Substantivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G06-001",
+              "EXP-IP-A06-G06-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G06-002",
+          "title": "EX-A06-G06-VOCATIVO-E-APOSTO-002 — Exercício de Fixação: Sujeito + Aposto vs. Vocativo + Sujeito",
+          "statement": "Enunciado Original: \"Nicole, a representante da turma, chegou neste instante.\"\nAnálise da Frase Original:\nNicole = Sujeito do verbo chegou.\na representante da turma = Aposto Explicativo (intercalado entre duas vírgulas).\nResposta quanto ao vocativo: Não há vocativo na frase original.\nManipulação Pedagógica (Supressão da 2ª vírgula): \"Nicole, a representante da turma chegou neste instante.\"\nNicole = Converte-se em Vocativo.\na representante da turma = Converte-se no novo Sujeito de chegou.",
+          "prompt": "Enunciado Original: \"Nicole, a representante da turma, chegou neste instante.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado Original",
+              "rationale": "\"Nicole, a representante da turma, chegou neste instante.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise da Frase Original",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Nicole = Sujeito do verbo chegou.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "a representante da turma = Aposto Explicativo (intercalado entre duas vírgulas).",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Resposta quanto ao vocativo",
+              "rationale": "Não há vocativo na frase original."
+            }
+          ],
+          "result": "a representante da turma = Converte-se no novo Sujeito de chegou.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado Original: \"Nicole, a representante da turma, chegou neste instante.\"\nAnálise da Frase Original:\nNicole = Sujeito do verbo chegou.\na representante da turma = Aposto Explicativo (intercalado entre duas vírgulas).\nResposta quanto ao vocativo: Não há vocativo na frase original.\nManipulação Pedagógica (Supressão da 2ª vírgula): \"Nicole, a representante da turma chegou neste instante.\"\nNicole = Converte-se em Vocativo.\na representante da turma = Converte-se no novo Sujeito de chegou.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-002 — Exercício de Fixação: Sujeito + Aposto vs. Vocativo + Sujeito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-002 — Exercício de Fixação: Sujeito + Aposto vs. Vocativo + Sujeito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-002 — Exercício de Fixação: Sujeito + Aposto vs. Vocativo + Sujeito.",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G06-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado Original: \"Nicole, a representante da turma, chegou neste instante.\"",
+                "Análise da Frase Original:",
+                "Nicole = Sujeito do verbo chegou.",
+                "a representante da turma = Aposto Explicativo (intercalado entre duas vírgulas).",
+                "Resposta quanto ao vocativo: Não há vocativo na frase original.",
+                "Manipulação Pedagógica (Supressão da 2ª vírgula): \"Nicole, a representante da turma chegou neste instante.\"",
+                "Nicole = Converte-se em Vocativo.",
+                "a representante da turma = Converte-se no novo Sujeito de chegou."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G06-002",
+              "EXP-IP-A06-G06-052"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G06-003",
+          "title": "EX-A06-G06-VOCATIVO-E-APOSTO-003 — Exercício de Fixação: Extração do Núcleo do Vocativo",
+          "statement": "Enunciado: \"Bom dia, meu caro senhor!\"\nAnálise Sintática:\nSintagma completo do vocativo posicionado ao final: \"meu caro senhor\".\nNúcleo do vocativo: \"senhor\" (substantivo).\nElementos satélites: \"meu\" (pronome possessivo adjunto) e \"caro\" (adjetivo adjunto).",
+          "prompt": "Enunciado: \"Bom dia, meu caro senhor!\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "\"Bom dia, meu caro senhor!\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Sintática",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Sintagma completo do vocativo posicionado ao final",
+              "rationale": "\"meu caro senhor\"."
+            },
+            {
+              "order": 4,
+              "action": "Núcleo do vocativo",
+              "rationale": "\"senhor\" (substantivo)."
+            },
+            {
+              "order": 5,
+              "action": "Elementos satélites",
+              "rationale": "\"meu\" (pronome possessivo adjunto) e \"caro\" (adjetivo adjunto)."
+            }
+          ],
+          "result": "Elementos satélites: \"meu\" (pronome possessivo adjunto) e \"caro\" (adjetivo adjunto).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: \"Bom dia, meu caro senhor!\"\nAnálise Sintática:\nSintagma completo do vocativo posicionado ao final: \"meu caro senhor\".\nNúcleo do vocativo: \"senhor\" (substantivo).\nElementos satélites: \"meu\" (pronome possessivo adjunto) e \"caro\" (adjetivo adjunto).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-003 — Exercício de Fixação: Extração do Núcleo do Vocativo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-003 — Exercício de Fixação: Extração do Núcleo do Vocativo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-003 — Exercício de Fixação: Extração do Núcleo do Vocativo.",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G06-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: \"Bom dia, meu caro senhor!\"",
+                "Análise Sintática:",
+                "Sintagma completo do vocativo posicionado ao final: \"meu caro senhor\".",
+                "Núcleo do vocativo: \"senhor\" (substantivo).",
+                "Elementos satélites: \"meu\" (pronome possessivo adjunto) e \"caro\" (adjetivo adjunto)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G06-003",
+              "EXP-IP-A06-G06-053"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G06-004",
+          "title": "EX-A06-G06-VOCATIVO-E-APOSTO-004 — Questão Cebraspe: Concordância Especial com Aposto Resumitivo",
+          "statement": "Estrutura analisada: \"Empresários, trabalhadores, ninguém confia em nossos governantes.\"\nProposição típica Cebraspe: \"O verbo confia está flexionado na terceira pessoa do singular para concordar com o seu sujeito ninguém.\"\nJulgamento do item: ERRADO.\nFundamentação: O sujeito da oração é composto (Empresários, trabalhadores). O termo ninguém é aposto resumitivo. O verbo concorda compulsoriamente com o aposto resumitivo por força de uma regra de concordância verbal especialíssima, e não por concordância regular de sujeito.",
+          "prompt": "Estrutura analisada: \"Empresários, trabalhadores, ninguém confia em nossos governantes.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "\"Empresários, trabalhadores, ninguém confia em nossos governantes.\""
+            },
+            {
+              "order": 2,
+              "action": "Proposição típica Cebraspe",
+              "rationale": "\"O verbo confia está flexionado na terceira pessoa do singular para concordar com o seu sujeito ninguém.\""
+            },
+            {
+              "order": 3,
+              "action": "Julgamento do item",
+              "rationale": "ERRADO."
+            },
+            {
+              "order": 4,
+              "action": "Fundamentação",
+              "rationale": "O sujeito da oração é composto (Empresários, trabalhadores). O termo ninguém é aposto resumitivo. O verbo concorda compulsoriamente com o aposto resumitivo por força de uma regra de concordância verbal especialíssima, e não por concordância regular de sujeito."
+            }
+          ],
+          "result": "Fundamentação: O sujeito da oração é composto (Empresários, trabalhadores). O termo ninguém é aposto resumitivo. O verbo concorda compulsoriamente com o aposto resumitivo por força de uma regra de concordância verbal especialíssima, e não por concordância regular de sujeito.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura analisada: \"Empresários, trabalhadores, ninguém confia em nossos governantes.\"\nProposição típica Cebraspe: \"O verbo confia está flexionado na terceira pessoa do singular para concordar com o seu sujeito ninguém.\"\nJulgamento do item: ERRADO.\nFundamentação: O sujeito da oração é composto (Empresários, trabalhadores). O termo ninguém é aposto resumitivo. O verbo concorda compulsoriamente com o aposto resumitivo por força de uma regra de concordância verbal especialíssima, e não por concordância regular de sujeito.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-004 — Questão Cebraspe: Concordância Especial com Aposto Resumitivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-004 — Questão Cebraspe: Concordância Especial com Aposto Resumitivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-004 — Questão Cebraspe: Concordância Especial com Aposto Resumitivo.",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G06-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura analisada: \"Empresários, trabalhadores, ninguém confia em nossos governantes.\"",
+                "Proposição típica Cebraspe: \"O verbo confia está flexionado na terceira pessoa do singular para concordar com o seu sujeito ninguém.\"",
+                "Julgamento do item: ERRADO.",
+                "Fundamentação: O sujeito da oração é composto (Empresários, trabalhadores). O termo ninguém é aposto resumitivo. O verbo concorda compulsoriamente com o aposto resumitivo por força de uma regra de concordância verbal especialíssima, e não por concordância regular de sujeito."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G06-004",
+              "EXP-IP-A06-G06-054"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G06-005",
+          "title": "EX-A06-G06-VOCATIVO-E-APOSTO-005 — Questão Cebraspe (Promotor de Justiça): Aposto Especificativo Preposicionado",
+          "statement": "Estrutura analisada: \"A Lei de Responsabilidade Fiscal transformou a gestão pública.\"\nProposição Cebraspe: \"O segmento 'de Responsabilidade Fiscal' exerce a função sintática de aposto.\"\nJulgamento do item: CERTO.\nFundamentação: \"Responsabilidade Fiscal\" é o nome próprio dado ao substantivo comum genérico \"Lei\". Como dá nome sem uso de vírgulas, trata-se de aposto especificativo (que admite preposição de ligação).",
+          "prompt": "Estrutura analisada: \"A Lei de Responsabilidade Fiscal transformou a gestão pública.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "\"A Lei de Responsabilidade Fiscal transformou a gestão pública.\""
+            },
+            {
+              "order": 2,
+              "action": "Proposição Cebraspe",
+              "rationale": "\"O segmento 'de Responsabilidade Fiscal' exerce a função sintática de aposto.\""
+            },
+            {
+              "order": 3,
+              "action": "Julgamento do item",
+              "rationale": "CERTO."
+            },
+            {
+              "order": 4,
+              "action": "Fundamentação",
+              "rationale": "\"Responsabilidade Fiscal\" é o nome próprio dado ao substantivo comum genérico \"Lei\". Como dá nome sem uso de vírgulas, trata-se de aposto especificativo (que admite preposição de ligação)."
+            }
+          ],
+          "result": "Fundamentação: \"Responsabilidade Fiscal\" é o nome próprio dado ao substantivo comum genérico \"Lei\". Como dá nome sem uso de vírgulas, trata-se de aposto especificativo (que admite preposição de ligação).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura analisada: \"A Lei de Responsabilidade Fiscal transformou a gestão pública.\"\nProposição Cebraspe: \"O segmento 'de Responsabilidade Fiscal' exerce a função sintática de aposto.\"\nJulgamento do item: CERTO.\nFundamentação: \"Responsabilidade Fiscal\" é o nome próprio dado ao substantivo comum genérico \"Lei\". Como dá nome sem uso de vírgulas, trata-se de aposto especificativo (que admite preposição de ligação).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-005 — Questão Cebraspe (Promotor de Justiça): Aposto Especificativo Preposicionado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-005 — Questão Cebraspe (Promotor de Justiça): Aposto Especificativo Preposicionado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-005 — Questão Cebraspe (Promotor de Justiça): Aposto Especificativo Preposicionado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G06-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura analisada: \"A Lei de Responsabilidade Fiscal transformou a gestão pública.\"",
+                "Proposição Cebraspe: \"O segmento 'de Responsabilidade Fiscal' exerce a função sintática de aposto.\"",
+                "Julgamento do item: CERTO.",
+                "Fundamentação: \"Responsabilidade Fiscal\" é o nome próprio dado ao substantivo comum genérico \"Lei\". Como dá nome sem uso de vírgulas, trata-se de aposto especificativo (que admite preposição de ligação)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G06-005",
+              "EXP-IP-A06-G06-055"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G06-006",
+          "title": "EX-A06-G06-VOCATIVO-E-APOSTO-006 — Dissecação de Exercícios de Fixação de Aposto (Slide 3)",
+          "statement": "Códigos: (1) Explicativo | (2) Enumerativo | (3) Distributivo | (4) Especificativo | (5) Referência a uma Oração.\n( 4 ) A tragédia Hamlet é uma das mais encenadas no mundo.\nJustificativa: \"Hamlet\" é substantivo próprio que dá nome à tragédia sem sinais de pontuação $\\rightarrow$ Aposto especificativo.\n( 2 ) Vendemos de tudo: alimentos, roupas, brinquedos...\nJustificativa: A listagem após dois-pontos desdobra o pronome \"tudo\" $\\rightarrow$ Aposto enumerativo.\n( 1 ) A geografia, estudo da terra, é uma disciplina fundamental do currículo escolar.\nJustificativa: \"estudo da terra\" (núcleo substantivo \"estudo\") explica o termo antecedente entre vírgulas $\\rightarrow$ Aposto explicativo.\n( 5 ) Há vários pratos e copos na pia, sinal de que você recebeu visitas.\nJustificativa: O substantivo \"sinal\" retoma e sintetiza toda a oração anterior $\\rightarrow$ Aposto em referência a uma oração.\n( 3 ) Ambas foram premiadas: a cantora e a instrumentista.\nJustificativa: Desdobra simetricamente o pronome \"Ambas\" $\\rightarrow$ Aposto distributivo (na ausência do código 3, seria classificado como código 2 - enumerativo).",
+          "prompt": "Códigos: (1) Explicativo | (2) Enumerativo | (3) Distributivo | (4) Especificativo | (5) Referência a uma Oração.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "( 4 ) A tragédia Hamlet é uma das mais encenadas no mundo.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Justificativa",
+              "rationale": "\"Hamlet\" é substantivo próprio que dá nome à tragédia sem sinais de pontuação $\\rightarrow$ Aposto especificativo."
+            },
+            {
+              "order": 3,
+              "action": "( 2 ) Vendemos de tudo",
+              "rationale": "alimentos, roupas, brinquedos..."
+            },
+            {
+              "order": 4,
+              "action": "Justificativa",
+              "rationale": "A listagem após dois-pontos desdobra o pronome \"tudo\" $\\rightarrow$ Aposto enumerativo."
+            },
+            {
+              "order": 5,
+              "action": "( 1 ) A geografia, estudo da terra, é uma disciplina fundamental do currículo escolar.",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: Desdobra simetricamente o pronome \"Ambas\" $\\rightarrow$ Aposto distributivo (na ausência do código 3, seria classificado como código 2 - enumerativo).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Códigos: (1) Explicativo | (2) Enumerativo | (3) Distributivo | (4) Especificativo | (5) Referência a uma Oração.\n( 4 ) A tragédia Hamlet é uma das mais encenadas no mundo.\nJustificativa: \"Hamlet\" é substantivo próprio que dá nome à tragédia sem sinais de pontuação $\\rightarrow$ Aposto especificativo.\n( 2 ) Vendemos de tudo: alimentos, roupas, brinquedos...\nJustificativa: A listagem após dois-pontos desdobra o pronome \"tudo\" $\\rightarrow$ Aposto enumerativo.\n( 1 ) A geografia, estudo da terra, é uma disciplina fundamental do currículo escolar.\nJustificativa: \"estudo da terra\" (núcleo substantivo \"estudo\") explica o termo antecedente entre vírgulas $\\rightarrow$ Aposto explicativo.\n( 5 ) Há vários pratos e copos na pia, sinal de que você recebeu visitas.\nJustificativa: O substantivo \"sinal\" retoma e sintetiza toda a oração anterior $\\rightarrow$ Aposto em referência a uma oração.\n( 3 ) Ambas foram premiadas: a cantora e a instrumentista.\nJustificativa: Desdobra simetricamente o pronome \"Ambas\" $\\rightarrow$ Aposto distributivo (na ausência do código 3, seria classificado como código 2 - enumerativo).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-006 — Dissecação de Exercícios de Fixação de Aposto (Slide 3) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-006 — Dissecação de Exercícios de Fixação de Aposto (Slide 3).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-006 — Dissecação de Exercícios de Fixação de Aposto (Slide 3).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G06-006",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Códigos: (1) Explicativo | (2) Enumerativo | (3) Distributivo | (4) Especificativo | (5) Referência a uma Oração."
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "( 4 ) A tragédia Hamlet é uma das mais encenadas no mundo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Justificativa: \"Hamlet\" é substantivo próprio que dá nome à tragédia sem sinais de pontuação $\\rightarrow$ Aposto especificativo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "( 2 ) Vendemos de tudo: alimentos, roupas, brinquedos..."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Justificativa: A listagem após dois-pontos desdobra o pronome \"tudo\" $\\rightarrow$ Aposto enumerativo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "( 1 ) A geografia, estudo da terra, é uma disciplina fundamental do currículo escolar."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Justificativa: \"estudo da terra\" (núcleo substantivo \"estudo\") explica o termo antecedente entre vírgulas $\\rightarrow$ Aposto explicativo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "( 5 ) Há vários pratos e copos na pia, sinal de que você recebeu visitas."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Justificativa: O substantivo \"sinal\" retoma e sintetiza toda a oração anterior $\\rightarrow$ Aposto em referência a uma oração."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "( 3 ) Ambas foram premiadas: a cantora e a instrumentista."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Justificativa: Desdobra simetricamente o pronome \"Ambas\" $\\rightarrow$ Aposto distributivo (na ausência do código 3, seria classificado como código 2 - enumerativo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G06-006",
+              "EXP-IP-A06-G06-056"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G06-007",
+          "title": "EX-A06-G06-VOCATIVO-E-APOSTO-007 — Análise da Cadeia Coesiva na Estrutura \"o que\"",
+          "statement": "Estrutura analisada: \"Eles eram felizes, o que todos percebiam.\"\nAnálise Morfossintática Completa:\nEles eram felizes = Oração principal antecedente.\no = Pronome demonstrativo equivalente a \"isso\", atuando como aposto em referência à oração.\nque = Pronome relativo que retoma o pronome demonstrativo antecedente o (equivalente a \"o qual todos percebiam\").",
+          "prompt": "Estrutura analisada: \"Eles eram felizes, o que todos percebiam.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "\"Eles eram felizes, o que todos percebiam.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise Morfossintática Completa",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Eles eram felizes = Oração principal antecedente.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "o = Pronome demonstrativo equivalente a \"isso\", atuando como aposto em referência à oração.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "que = Pronome relativo que retoma o pronome demonstrativo antecedente o (equivalente a \"o qual todos percebiam\").",
+              "rationale": null
+            }
+          ],
+          "result": "que = Pronome relativo que retoma o pronome demonstrativo antecedente o (equivalente a \"o qual todos percebiam\").",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura analisada: \"Eles eram felizes, o que todos percebiam.\"\nAnálise Morfossintática Completa:\nEles eram felizes = Oração principal antecedente.\no = Pronome demonstrativo equivalente a \"isso\", atuando como aposto em referência à oração.\nque = Pronome relativo que retoma o pronome demonstrativo antecedente o (equivalente a \"o qual todos percebiam\").'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G06-VOCATIVO-E-APOSTO-007 — Análise da Cadeia Coesiva na Estrutura \"o que\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G06-VOCATIVO-E-APOSTO-007 — Análise da Cadeia Coesiva na Estrutura \"o que\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G06-VOCATIVO-E-APOSTO-007 — Análise da Cadeia Coesiva na Estrutura \"o que\".",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G06-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura analisada: \"Eles eram felizes, o que todos percebiam.\"",
+                "Análise Morfossintática Completa:",
+                "Eles eram felizes = Oração principal antecedente.",
+                "o = Pronome demonstrativo equivalente a \"isso\", atuando como aposto em referência à oração.",
+                "que = Pronome relativo que retoma o pronome demonstrativo antecedente o (equivalente a \"o qual todos percebiam\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G06-007",
+              "EXP-IP-A06-G06-057"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -160,51 +1465,225 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-ADJ-01",
-          "title": "Ad-NOME vs Ad-VERBO",
-          "content": "Ad-NOMINAL só anda de mãos dadas com o NOME (Substantivo)! Ad-VERBIAL viaja com o VERBO para onde o vento soprar!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Distinção estrutural de adjuntos.",
-          "limitations": "Adjunto adverbial também modifica adjetivo e advérbio.",
-          "text": "Adjunto adnominal modifica substantivo; adjunto adverbial modifica verbo, adjetivo e advérbio."
+          "title": "Mantra de Fixação: Vocativo e Aposto",
+          "content": "Mantra do Sujeito: Ache o verbo e pergunte 'Quem/O que + verbo?'. O sujeito nunca vem preposicionado!",
+          "text": "Mantra do Sujeito: Ache o verbo e pergunte 'Quem/O que + verbo?'. O sujeito nunca vem preposicionado!"
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-ADJ-01",
-          "title": "A Vírgula Proibida no Adjunto Adnominal",
-          "trigger": "Isolamento de adjunto adnominal por vírgula em redações.",
-          "whyItFails": "O aluno separa o adjetivo ou locução adjetiva do substantivo nuclear por vírgula (*Os alunos, aplicados, passaram na prova).",
-          "correctApproach": "O adjunto adnominal NÃO pode ser separado do seu substantivo por vírgula. Se for colocado entre vírgulas, o adjetivo perde o papel restritivo de adjunto e converte-se em PREDICATIVO explicativo.",
-          "bankTechnique": "Afirmar que a inserção de vírgulas em torno de um adjetivo não altera a sua função sintática.",
-          "counterRule": "O isolamento por vírgulas transforma o adjunto adnominal em predicativo explicativo."
+          "entityId": "WARN-A06-G06-VOCATIVO-E-APOSTO-001",
+          "title": "Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Morfologia: Adjetivo no Vocativo Sofre Substantivação.",
+          "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Armadilha: A banca destaca uma palavra originária da classe dos adjetivos em um chamamento (Querido, Pretinha, Amor) e pergunta sua classe morfológica.",
+                "Erro comum: Marcar \"adjetivo\" por lembrar da definição dicionarizada primitiva.",
+                "Correção: No contexto de vocativo, a palavra funciona compulsoriamente como substantivo (processo de derivação imprópria)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G06-VOCATIVO-E-APOSTO-001",
+              "EXP-IP-A06-G06-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G06-VOCATIVO-E-APOSTO-002",
+          "title": "Erro Grave: Tratar Vocativo como Sujeito do Imperativo",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro Grave: Tratar Vocativo como Sujeito do Imperativo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro Grave: Tratar Vocativo como Sujeito do Imperativo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro Grave: Tratar Vocativo como Sujeito do Imperativo.",
+          "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Armadilha: Julgar que em \"Alunos, façam a prova.\", a palavra \"Alunos\" é o sujeito do verbo façam.",
+                "Correção: A vírgula impede que o termo seja sujeito. \"Alunos\" é vocativo; o sujeito de façam é oculto/elíptico (vocês)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G06-VOCATIVO-E-APOSTO-002",
+              "EXP-IP-A06-G06-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G06-VOCATIVO-E-APOSTO-003",
+          "title": "Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto)",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto).",
+          "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Armadilha: Classificar qualquer termo explicativo entre vírgulas como aposto.",
+                "Correção: O aposto exige núcleo substantivo/pronominal. Adjetivos isolados entre vírgulas (\"Os alunos, atentos, anotavam tudo\") são predicativos do sujeito deslocados."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G06-VOCATIVO-E-APOSTO-003",
+              "EXP-IP-A06-G06-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G06-VOCATIVO-E-APOSTO-004",
+          "title": "Armadilha Cebraspe: Sujeito com Aposto Resumitivo",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Armadilha Cebraspe: Sujeito com Aposto Resumitivo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Armadilha Cebraspe: Sujeito com Aposto Resumitivo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Armadilha Cebraspe: Sujeito com Aposto Resumitivo.",
+          "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Armadilha: Afirmar que na frase \"Pais, professores, alunos, ninguém faltou\", a palavra ninguém é o sujeito da oração.",
+                "Correção: O sujeito é composto (Pais, professores, alunos). O termo ninguém é aposto resumitivo, e o verbo vai para o singular por concordância especialíssima com o aposto."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G06-VOCATIVO-E-APOSTO-004",
+              "EXP-IP-A06-G06-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G06-VOCATIVO-E-APOSTO-005",
+          "title": "Exceção Absoluta: Aposto Especificativo Proíbe Pontuação",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Exceção Absoluta: Aposto Especificativo Proíbe Pontuação no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Exceção Absoluta: Aposto Especificativo Proíbe Pontuação.",
+          "trapId": "WARN-A06-G06-VOCATIVO-E-APOSTO-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Armadilha: Inserir vírgula antes do aposto especificativo (\"A cidade, de São Paulo, cresceu\").",
+                "Correção: O aposto especificativo é a única exceção da língua portuguesa que não admite sinal de pontuação isolador. A colocação de vírgula gera erro gramatical."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G06-VOCATIVO-E-APOSTO-005",
+              "EXP-IP-A06-G06-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Adjunto Adnominal",
-          "shortDefinition": "Termo acessório que determina, especifica ou qualifica diretamente um substantivo.",
-          "fullDefinition": "Função sintática exercida por classes nominais (adjetivos, artigos, pronomes adjetivos, numerais e locuções adjetivas) que se acoplam diretamente ao núcleo de qualquer sintagma nominal da oração (sujeito, objeto, predicativo, agente da passiva).",
-          "domain": "Sintaxe da Oração",
-          "commonMisconception": "Achar que adjunto adnominal só existe dentro do sujeito."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Fundamentos dos Termos Acessórios da Oração**: Definição ou ideia central\nOs termos acessórios da oração (aposto, vocativo e adjunto adverbial) são elementos que desempenham função secundária na estrutura oracional, caracterizando-se pela não obrigatoriedade sintática (\"enfeites\"), diferindo estruturalmente dos termos essenciais e integrantes.\nExplicação consolidada\nDiferentemente dos termos integrantes (objeto direto, objeto indireto, complemento nominal e agente da passiva), que são compulsoriamente exigidos pela transitividade verbal ou regência nominal, os termos acessórios agregam informações circunstanciais, explicações, enumerações, delimitações ou apelos discursivos.\nEmbora o vocativo seja tradicionalmente agrupado sob a rubrica geral dos termos acessórios para fins curriculares de concurso, no plano estritamente sintático ele é um termo independente, desprovido de ligação sintática direta com o sujeito ou com o predicado da oração. Já o aposto é um termo acessório de valor substantivo subordinado anafóricamente a outro substantivo/pronome da estrutura oracional.\nRelações\nExpande em: (Vocativo) e (Aposto).",
+            "**Conceito, Natureza e Personificação do Vocativo**: Definição ou ideia central\nO vocativo é o termo sintático de chamamento, interpelação ou invocação dirigido diretamente ao interlocutor (segunda pessoa do discurso), podendo ter como destinatário um ser humano real ou uma entidade inanimada/abstrata personificada.\nExplicação consolidada\nO vocativo atua como um marcador pragmático-discursivo de interpelação direta. Seus destinatários dividem-se em duas categorias:\nPessoas ou seres animados reais: interlocutores concretos aos quais se dirige a mensagem (Adriana, Senhor, Alunos).\nCoisas ou entidades personificadas: recurso expressivo/figura de linguagem em que se confere voz, escuta ou estatuto de interlocutor a eventos, conceitos, nações ou elementos inanimados (Carnaval, Brasil, Deus, Minha terra).\nExemplos\nAdriana, veja isto. \"Adriana\" é vocativo dirigido a uma pessoa real.\nEu te amo, Carnaval! \"Carnaval\" é vocativo dirigido a uma festa personificada.\n\"Brasil, mostra tua cara.\" \"Brasil\" é vocativo personificado (país invocado como interlocutor).\nRelações\nPossui restrição morfológica em: .\nDistingue-se de: (Sujeito).",
+            "**Morfossintaxe do Vocativo: Exclusividade de Núcleo Substantivo e Substantivação**: Definição ou ideia central\nNo plano morfossintático, o núcleo do vocativo é obrigatoriamente um substantivo ou pronome substantivo. Vocábulos originalmente adjetivos empregados como chamamento passam compulsoriamente pelo processo de derivação imprópria (substantivação contextual).\nExplicação consolidada\nNa língua portuguesa, a função sintática de vocativo é privativa da esfera substantiva. Se uma palavra de natureza qualificadora/adjetiva for utilizada para interpelar alguém, ela abandona a classe dos adjetivos no contexto e assume a classe morfológica de substantivo.\nEm provas de concurso (como no precedente da banca Vunesp com o verso \"Pretinha, eu te amo!\"), as bancas questionam a classe gramatical do vocábulo grifado. O candidato não deve analisar o termo isolado no dicionário (onde pretinha pode ser adjetivo, como em garrafa pretinha), mas sim sua função sintática na oração: atuando como vocativo, sua classe morfológica contextual é substantivo.\nExemplos e Contraexemplos\nContexto de Vocativo: \"Pretinha, eu te amo!\" $\\rightarrow$ Função: Vocativo | Classe: Substantivo.\nContexto de Modificador: \"Comprei uma bicicleta pretinha.\" $\\rightarrow$ Função: Adjunto Adnominal | Classe: Adjetivo.",
+            "**Distinção Sintática entre Vocativo e Sujeito no Modo Imperativo**: Definição ou ideia central\nO vocativo e o sujeito são termos sintáticos inconfundíveis: o vocativo é isolado por pontuação e não rege a flexão do verbo; o sujeito nunca se separa de seu predicado direto por vírgula e determina a concordância verbal.\nExplicação consolidada\nEm orações no modo imperativo (que expressam ordens, pedidos, convites ou súplicas), os candidatos tendem a confundir o interlocutor chamado com o sujeito do verbo. A resolução apoia-se em dois princípios:\nRegra de Bloqueio da Vírgula: É terminantemente proibido separar sujeito de predicado por vírgula simples. Se o termo nominal inicial estiver seguido de vírgula antes do verbo, ele não pode ser o sujeito.\nSujeito no Modo Imperativo: Em estruturas como \"Mãe, venha aqui.\" ou \"Brasil, mostra tua cara.\", o termo isolado por vírgula é o vocativo, enquanto o sujeito do verbo no imperativo é oculto / elíptico / implícito (você no primeiro caso; tu no segundo).\nExemplos\n\"Mãe, venha aqui.\"\nMãe = Vocativo (chamamento).\nvenha = Verbo no imperativo afirmativo (3ª pessoa).\nSujeito = Oculto/elíptico (você).\n\"Brasil, mostra tua cara.\"\nBrasil = Vocativo personificado.\nmostra = Verbo no imperativo afirmativo (2ª pessoa do singular, concordando com o possessivo tua).\nSujeito = Oculto/elíptico (tu).\nRelações\nGera procedimento: .",
+            "**Regras de Pontuação do Vocativo: Isolamento Obrigatório e o Caso Epistolar dos Dois-Pontos**: Definição ou ideia central\nNa norma padrão culta, o vocativo deve ser obrigatoriamente isolado por sinais de pontuação (vírgula no início, entre vírgulas no meio, ou antecedido de vírgula no fim); em correspondências formais e na literatura clássica, admite-se legitimamente o uso de dois-pontos.\nExplicação consolidada\nMobilidade Sintática e Vírgula: O vocativo pode ocupar qualquer posição na frase (início, meio ou fim), exigindo compulsoriamente o isolamento pontual. No cotidiano e em aplicativos de mensagens instantâneas (WhatsApp), a omissão da vírgula é frequente por informalidade, mas constitui erro na norma culta.\nSupressão de Vírgula (Aposto Explicativo vs. Vocativo): A alteração da pontuação altera simultaneamente a sintaxe e a semântica:\n[Nicole], [a representante da turma], [chegou neste instante]. $\\rightarrow$ Nicole = Sujeito; a representante da turma = Aposto explicativo.\n[Nicole], [a representante da turma] [chegou neste instante]. (supressão da 2ª vírgula) $\\rightarrow$ Nicole = Vocativo; a representante da turma = Sujeito.\nCaso Especial Cebraspe (Dois-Pontos em Cartas): Em correspondência clássica de Machado de Assis analisada pelo Cebraspe (\"Meu amigo:\"), a banca questionou se o termo era aposto. Trata-se legitimamente de vocativo, pontuado por dois-pontos conforme a tradição epistolar.\nRelações\nPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-001.\nGera procedimento: .",
+            "**Conceito Morfossintático e o \"Mantra\" do Aposto**: Definição ou ideia central\nO aposto é um termo acessório de natureza substantiva ou pronominal que se agrega anafóricamente a outro substantivo ou pronome para explicá-lo, enumerá-lo, distribuí-lo, resumi-lo, especificá-lo ou referir-se a uma oração inteira.\nExplicação consolidada\nA morfossintaxe dita que tudo o que o substantivo desempenha, o pronome substantivo também é capaz de desempenhar. Para blindar a resolução de questões de sintaxe, formula-se o mantra mnemônico:\n\"Aposto é caso de substantivo que se refere a outro substantivo.\"\nO aposto não qualifica atributos (função privativa do adjetivo), mas estabelece relações de equivalência, desdobramento, resumo ou identificação nominal com o termo antecedente.\nRelações\nContrasta com: (Predicativo Deslocado).\nExpande em: a .",
+            "**Diferenciação Morfossintática: Aposto vs. Predicativo do Sujeito Deslocado**: Definição ou ideia central\nNem todo termo explicativo isolado entre vírgulas é aposto. Elementos de natureza adjetiva que qualificam o sujeito entre vírgulas exercem a função sintática de predicativo do sujeito deslocado.\nExplicação consolidada\nAs bancas exploram o vício mecânico de associar qualquer elemento entre vírgulas ao aposto explicativo. O teste decisivo é morfológico:\nSe o termo for substantivo (ou pronome) $\\rightarrow$ Aposto.\nSe o termo for adjetivo (ou particípio adjetivado) expressando estado transitório ou permanente $\\rightarrow$ Predicativo do sujeito deslocado.\nNa ordem direta da frase \"As meninas, entusiasmadas, aplaudiam\", a estrutura revela um predicado verbo-nominal: \"As meninas aplaudiam e estavam entusiasmadas\". Como \"entusiasmadas\" é adjetivo, é impossível classificá-lo como aposto.\nExemplos\n\"As meninas, [entusiasmadas], aplaudiam.\" $\\rightarrow$ entusiasmadas = Adjetivo $\\rightarrow$ Predicativo do sujeito deslocado.\n\"As meninas, [estudantes dedicadas], aplaudiam.\" $\\rightarrow$ estudantes = Substantivo $\\rightarrow$ Aposto explicativo.Possui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-002.",
+            "**Estrutura do Núcleo do Aposto e Termos Satélites**: Definição ou ideia central\nO sintagma do aposto possui um núcleo fundamental constituído por substantivo ou pronome substantivo que nunca vem antecedido diretamente de preposição; os elementos preposicionados subordinados a ele atuam como \"termos satélites\" (adjuntos adnominais).\nExplicação consolidada\nAo analisar apostos complexos e extensos:\nIsola-se todo o segmento explicativo/distributivo entre colchetes.\nIdentifica-se a palavra-base substantiva ou pronominal não regida por preposição interna, que constitui o núcleo do aposto.\nOs segmentos modificadores preposicionados que orbitam ao redor desse núcleo são termos satélites exercendo função interna de adjunto adnominal.\nExemplos\n\"Machado de Assis, [um dos maiores nomes da literatura mundial], escreveu...\"\nNúcleo do aposto: um (pronome indefinido substantivo equivalente a \"algum\").\nTermos satélites: dos maiores nomes da literatura mundial (adjuntos adnominais do pronome um).\n\"Eram dois grandes nomes do esporte: [um do automobilismo, outro do tênis].\"\nNúcleos do aposto: um e outro (pronomes indefinidos).\nTermos satélites: do automobilismo e do tênis (adjuntos adnominais preposicionados).",
+            "**Tipologias de Aposto: Explicativo, Enumerativo e Distributivo**: Definição ou ideia central\nO aposto explicativo esclarece ou conceitua o antecedente; o aposto enumerativo desdobra o termo em dois ou mais elementos componentes; o aposto distributivo distribui os antecedentes simetricamente por pares correlativos (um... outro, este... aquele, ambos).\nExplicação consolidada\nAposto Explicativo: Tipo mais recorrente em provas. Vem necessariamente isolado por vírgulas, travessões ou parênteses (Machado de Assis, grande escritor,...).\nAposto Enumerativo: Apresenta uma listagem de dois ou mais núcleos substantivos/pronominais que detalham uma síntese antecedente, vindo comumente após dois-pontos (Recorri a dois amigos: Gilson e Itamar.).\nAposto Distributivo: É uma variante estilístico-gramatical do enumerativo. Distribui simetricamente elementos antecedentes. Atenção em provas: Caso a questão não disponibilize o código \"distributivo\", deve ser assinalado como \"enumerativo\".\nExemplos\nExplicativo: \"A geografia, [estudo da terra], é uma disciplina fundamental...\"\nEnumerativo: \"Vendemos de tudo: [alimentos, roupas, brinquedos...]\"\nDistributivo: \"Ambas foram premiadas: [a cantora e a instrumentista].\"",
+            "**Aposto Resumitivo e Regra de Concordância Verbal Especialíssima**: Definição ou ideia central\nO aposto resumitivo sintetiza uma enumeração de termos antecedentes através de um pronome indefinido substantivo (ninguém, tudo, nada), provocando uma regra de concordância verbal especialíssima, na qual o verbo concorda compulsoriamente no singular com o aposto resumitivo, e não com o sujeito composto.\nExplicação consolidada\nNa estrutura clássica avaliada pelo Cebraspe: \"Empresários, trabalhadores, ninguém confia em nossos governantes.\"\nO termo \"Empresários, trabalhadores\" exerce a função sintática de sujeito composto.\nO vocábulo \"ninguém\" é morfologicamente pronome indefinido e sintaticamente aposto resumitivo.\nO verbo \"confia\" flexiona-se no singular para concordar com o aposto resumitivo \"ninguém\".\nAlerta de Concurso: É incorreto afirmar que \"ninguém\" é o sujeito da oração ou que houve silépse/concordância ideológica.\nEfeito da Inversão Sintática: O aposto possui posição anafórica (aparece depois). Se a ordem for invertida para \"Ninguém, empresários, trabalhadores, confia...\", o termo \"Ninguém\" torna-se o sujeito simples, e \"empresários, trabalhadores\" converte-se em aposto enumerativo.",
+            "**Aposto Especificativo vs. Adjunto Adnominal: O Critério da Denominação**: Definição ou ideia central\nO aposto especificativo individualiza um substantivo comum de sentido genérico atribuindo-lhe um nome próprio, constituindo a única tipologia de aposto que não admite pontuação; distingue-se do adjunto adnominal pelo critério da denominação (nomeação).\nExplicação consolidada\nRegra de Pontuação: O aposto especificativo proíbe terminantemente vírgulas, travessões ou parênteses (A cidade de Paris, O rio Tietê, A professora Adriana).\nCritério da Denominação:\nAposto Especificativo: O termo preposicionado ou justaposto expressa o próprio nome do elemento (Mês de maio $\\rightarrow$ \"Maio\" é o nome do mês; Lei de Responsabilidade Fiscal $\\rightarrow$ \"Responsabilidade Fiscal\" é o nome da lei — caso Cebraspe / Promotor de Justiça).\nAdjunto Adnominal: O termo preposicionado não dá nome, mas estabelece relação de restrição, qualificação ou posse temática (Mês das noivas $\\rightarrow$ \"Noivas\" não é nome de mês; Mês do Carlos $\\rightarrow$ \"Carlos\" não é nome de mês, indica referência ao aniversário).\nExemplos ComparativosPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-003.",
+            "**Aposto em Referência a uma Oração e a Cadeia Coesiva na Construção \"o que\"**: Definição ou ideia central\nO aposto em referência a uma oração (aposto oracional) sintetiza o conteúdo de uma oração inteira antecedente, materializando-se por meio de substantivos genéricos (coisa, fato, razão, motivo, sinal) ou pelo pronome demonstrativo o (= isso) na construção \"o que\".\nExplicação consolidada\nDiferença para o Aposto Resumitivo: O aposto resumitivo sintetiza uma lista de substantivos; o aposto oracional sintetiza uma oração estruturada com verbo.\nCadeia Coesiva na Estrutura \"o que\": Na oração \"Eles eram felizes, o que todos percebiam\":\nO vocábulo \"o\" equivale morfologicamente a \"isso\" (pronome demonstrativo) e exerce a função sintática de aposto em referência à oração \"Eles eram felizes\".\nO vocábulo \"que\" é um pronome relativo que retoma o pronome demonstrativo antecedente \"o\".\nForma-se o circuito anafórico: [Eles eram felizes] $\\leftarrow$ retoma $\\leftarrow$ [o (aposto)] $\\leftarrow$ retoma $\\leftarrow$ [que (pronome relativo)].\nEstrutura Substantiva com Conjunção Integrante: Em \"Há vários pratos na pia, sinal de que você recebeu visitas\", o termo \"sinal\" é substantivo aposto da oração anterior, e o \"que\" introduz oração subordinada substantiva completiva nominal (\"sinal disso\"), atuando como conjunção integrante.\nRelações\nPossui dica: TIP-A06-G06-VOCATIVO-E-APOSTO-004."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-ADJ-01",
-          "question": "Qual a função sintática de 'da capital' em: 'O prefeito comprou os carros da capital' e 'O prefeito chegou da capital'?",
-          "keyPoints": [
-            "1ª frase: ADJUNTO ADNOMINAL (modifica o substantivo 'carros' = carros procedentes da capital).",
-            "2ª frase: ADJUNTO ADVERBIAL DE LUGAR / PROCEDÊNCIA (modifica o verbo 'chegou')."
-          ],
-          "targetConcept": "Adjunto Adnominal vs Adjunto Adverbial",
-          "targetLO": "LO-A06-G06-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Vocativo e Aposto?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

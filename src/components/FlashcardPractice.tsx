@@ -547,7 +547,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               <p className="text-xs text-slate-600 mt-1">
                 {editorialModuleId
                   ? 'Gere cards com a Regra Decisiva do seu Caderno ou revise os conteúdos editoriais desta aula.'
-                  : 'Gere cards com a Regra Decisiva do seu Caderno ou revise os conteúdos editoriais das aulas 00–14.'}
+                  : 'Gere cards com a Regra Decisiva do seu Caderno ou revise os conteúdos do percurso curricular.'}
               </p>
             </div>
           </div>

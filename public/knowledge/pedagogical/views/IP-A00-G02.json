@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A00-G02",
     "lessonId": "A00",
     "title": "Encontros Vocálicos e Consonantais",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A00-G02",
@@ -184,6 +185,67 @@
           },
           "practicalHeuristic": "Se o M ou N estiver em fim de sílaba nasalizando a vogal, trata-se de dígrafo vocálico.",
           "pitfall": "Classificar 'nt' como encontro consonantal em vez de reconhecer 'an' como dígrafo vocálico."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A00-G02-001",
+          "table": {
+            "tableId": "TABLE-IP-A00-G02-001",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Critério",
+              "Encontro Consonantal",
+              "Dígrafo Consonantal",
+              "Ditongo Crescente",
+              "Ditongo Decrescente",
+              "Hiato"
+            ],
+            "rows": [
+              [
+                "Composição Fonética",
+                "Consoante + Consoante",
+                "2 letras = 1 fonema",
+                "$\\text{Semivogal} + \\text{Vogal}$",
+                "$\\text{Vogal} + \\text{Semivogal}$",
+                "$\\text{Vogal} + \\text{Vogal}$"
+              ],
+              [
+                "Alocação Silábica",
+                "Mesma ou separada",
+                "Mesma ou separada",
+                "Mesma sílaba",
+                "Mesma sílaba",
+                "Sílabas distintas"
+              ],
+              [
+                "Comportamento ($= H$)",
+                "Inaplicável",
+                "Inaplicável",
+                "Pode virar Hiato ($DC=H$)",
+                "NUNCA vira Hiato ($DD \\neq H$)",
+                "É o próprio Hiato"
+              ],
+              [
+                "Presença de Semivogal",
+                "Não",
+                "Não",
+                "Sim (1 semivogal)",
+                "Sim (1 semivogal)",
+                "NÃO possui semivogal"
+              ],
+              [
+                "Exemplo Típico",
+                "BLUSA, AFTA",
+                "CHAVE, CARRO",
+                "SÉRIE, LÍRIO",
+                "PAI, ÓRFÃO",
+                "JUIZ, SAÚDE"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

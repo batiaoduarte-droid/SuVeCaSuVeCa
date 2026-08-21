@@ -4,6 +4,28 @@ import type { CanonicalEntityView, ContentBlock } from '../../types/pedagogicalV
 import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
 import { ExceptionCard } from './ExceptionCard';
 
+const modalityLabels: Record<string, string> = {
+  prescriptive: 'Prescritiva',
+  mandatory: 'Obrigatória',
+  proscriptive: 'Restritiva',
+  permissive: 'Permitida',
+  prohibited: 'Proibida',
+  MANDATORY: 'Obrigatória',
+};
+
+const scopeLabels: Record<string, string> = {
+  phonetics_phonology: 'Fonética e fonologia',
+  morphology: 'Morfologia',
+  verbs_conjugation: 'Verbos e conjugação',
+  syntax: 'Sintaxe',
+  punctuation: 'Pontuação',
+  agreement: 'Concordância',
+  regency_crasis: 'Regência e crase',
+  textual_cohesion: 'Coesão textual',
+  semantics: 'Semântica',
+  text_interpretation: 'Interpretação de textos',
+};
+
 interface GoldenRuleCardProps {
   rule: CanonicalEntityView;
   renderBlock?: (block: ContentBlock) => React.ReactNode;
@@ -15,6 +37,8 @@ export const GoldenRuleCard: React.FC<GoldenRuleCardProps> = ({
   renderBlock,
   className = '',
 }) => {
+  const showStructuredScaffold = !rule.presentation?.hideGenericScaffold;
+
   return (
     <div
       className={`flex flex-col justify-between rounded-2xl border border-teal-200 bg-white p-4 sm:p-6 shadow-xs hover:border-teal-300 transition-all select-text ${className}`}
@@ -34,19 +58,19 @@ export const GoldenRuleCard: React.FC<GoldenRuleCardProps> = ({
           <div className="flex items-center gap-1.5 select-none">
             {rule.modality && (
               <span className="rounded-full bg-teal-50 border border-teal-200 px-2.5 py-0.5 text-[10px] font-extrabold text-teal-800 uppercase tracking-wider">
-                {rule.modality}
+                {modalityLabels[rule.modality] || rule.modality}
               </span>
             )}
             {rule.scope && (
               <span className="rounded-full bg-slate-100 border border-slate-200 px-2 py-0.5 text-[10px] font-bold text-slate-600">
-                {rule.scope}
+                {scopeLabels[rule.scope] || rule.scope}
               </span>
             )}
           </div>
         </div>
 
         {/* Statement / Regra Decisiva Principal */}
-        {rule.statement && (
+        {showStructuredScaffold && rule.statement && (
           <div className="rounded-xl border border-teal-300 bg-teal-50/70 p-3.5 sm:p-4">
             <span className="text-[10px] font-black uppercase tracking-wider text-teal-800 block mb-1 select-none">
               Enunciado da Regra
@@ -57,8 +81,19 @@ export const GoldenRuleCard: React.FC<GoldenRuleCardProps> = ({
           </div>
         )}
 
+        {showStructuredScaffold && rule.formalCondition && (
+          <div className="rounded-xl border border-violet-200 bg-violet-50/60 p-3.5">
+            <span className="mb-1 block text-[10px] font-black uppercase tracking-wider text-violet-800 select-none">
+              Forma operacional
+            </span>
+            <p className="text-xs sm:text-sm font-semibold leading-relaxed text-violet-950">
+              <InlineRichText>{rule.formalCondition}</InlineRichText>
+            </p>
+          </div>
+        )}
+
         {/* Conditions Checklist */}
-        {rule.conditions && rule.conditions.length > 0 && (
+        {showStructuredScaffold && rule.conditions && rule.conditions.length > 0 && (
           <div className="space-y-1.5 pt-1">
             <span className="text-[11px] font-black uppercase tracking-wider text-slate-500 block select-none">
               Condições Obrigatórias:
@@ -80,8 +115,26 @@ export const GoldenRuleCard: React.FC<GoldenRuleCardProps> = ({
         )}
 
         {/* Exceptions */}
-        {rule.exceptions && rule.exceptions.length > 0 && (
+        {showStructuredScaffold && rule.exceptions && rule.exceptions.length > 0 && (
           <ExceptionCard exceptions={rule.exceptions} />
+        )}
+
+        {showStructuredScaffold && rule.boundaries && rule.boundaries.length > 0 && (
+          <div className="rounded-xl border border-violet-200 bg-violet-50/60 p-3.5">
+            <span className="mb-1.5 block text-[10px] font-black uppercase tracking-wider text-violet-800">Limites de aplicação</span>
+            <ul className="space-y-1 pl-4 text-xs font-medium leading-relaxed text-violet-950">
+              {rule.boundaries.map((boundary, index) => <li key={index}><InlineRichText>{boundary}</InlineRichText></li>)}
+            </ul>
+          </div>
+        )}
+
+        {showStructuredScaffold && rule.examples && rule.examples.length > 0 && (
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-3.5">
+            <span className="mb-1.5 block text-[10px] font-black uppercase tracking-wider text-emerald-800">Exemplos de aplicação</span>
+            <ul className="space-y-1 pl-4 text-xs font-medium leading-relaxed text-emerald-950">
+              {rule.examples.map((example, index) => <li key={index}><InlineRichText>{example}</InlineRichText></li>)}
+            </ul>
+          </div>
         )}
 
         {/* Secondary Content Blocks */}

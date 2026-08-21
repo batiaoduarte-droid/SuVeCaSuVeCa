@@ -242,13 +242,11 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
   };
 
   return (
-    <div className="pedagogical-unit-view space-y-6">
+    <div className="pedagogical-unit-view structured-content space-y-4 sm:space-y-6">
       {/* Cabeçalho da Unidade */}
       <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-800">
-          <span className="rounded-md bg-teal-100 px-2 py-0.5 text-teal-900 font-extrabold">
-            {unit.groupId || unit.lessonId}
-          </span>
+          <span className="rounded-md bg-teal-100 px-2 py-0.5 text-teal-900 font-extrabold">Conteúdo aprofundado</span>
           <span>•</span>
           <span className="text-slate-600">{unit.variant}</span>
         </div>
@@ -259,7 +257,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
 
       {/* Objetivos de Aprendizagem */}
       {unit.learningObjectives && unit.learningObjectives.length > 0 && (
-        <div className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5 space-y-2.5">
+        <div className="rounded-2xl border border-teal-200 bg-teal-50/50 p-3 sm:p-5 space-y-2.5">
           <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-950 select-none">
             <Sparkles className="h-4 w-4 text-teal-700" />
             <span>Objetivos desta Unidade Pedagógica</span>
@@ -275,7 +273,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
       )}
 
       {/* Sumário Dinâmico */}
-      <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5 shadow-2xs" aria-label={`Sumário da unidade ${unit.title}`}>
+      <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-3 sm:p-5 shadow-2xs" aria-label={`Sumário da unidade ${unit.title}`}>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <h2 className="m-0 flex items-center gap-2 text-base font-bold text-teal-950">
             <ListTree className="h-5 w-5 text-teal-700" /> Nesta unidade ({presentSections.length} seções)
@@ -334,7 +332,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                 </div>
                 <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
               </summary>
-              <div className="border-t border-slate-200 p-4 sm:p-6 reading-content">
+              <div className="border-t border-slate-200 p-3 sm:p-5 reading-content">
                 {sec.render()}
 
                 {/* Botões de Ação Rápida no final de cada seção */}

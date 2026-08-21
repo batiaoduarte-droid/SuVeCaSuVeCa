@@ -65,7 +65,11 @@ export async function openTab(page: Page, name: string) {
     }
   }
 
-  await expect(page.locator('main .tab-content-enter')).toBeVisible();
+  if (/cron.metro foco/i.test(name)) {
+    await expect(page.getByRole('heading', { name: /cron.metro de foco/i })).toBeVisible();
+  } else {
+    await expect(page.locator('main .tab-content-enter')).toBeVisible();
+  }
   await page.waitForTimeout(350);
 }
 

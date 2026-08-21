@@ -4,7 +4,14 @@
 
 Implementação concluída sobre o diagnóstico registrado em `PEDAGOGICAL_UNIT_DEEP_LEARNING_AUDIT.md`.
 
-O hardening atua somente no produto `SuVeCaSuVeCa`. O Semantic AST, as 115 View Models publicadas, a semântica v4.2, questões oficiais e gabaritos permaneceram inalterados.
+O hardening visual atua no produto `SuVeCaSuVeCa`. Uma auditoria posterior de identidade encontrou 66 unidades v4.2 cuja autoria havia associado seções de outra competência. Essas projeções foram reconciliadas na fábrica e republicadas como v4.2.1. O canonical, os payloads de questões oficiais, os gabaritos, as decisões editoriais protegidas e o PBL permaneceram inalterados.
+
+Artefatos de rastreabilidade:
+
+- `public/knowledge/pedagogical/identity-reconciliation.json`: 66 identidades reconciliadas;
+- `public/knowledge/pedagogical/question-presentation-repair.json`: alternativas recuperadas e conflitos bloqueados;
+- `Notebook LM/tools/reconcile_v4_2_identity.py`: reconciliação reproduzível a partir dos context packs canônicos;
+- `Notebook LM/tools/repair_question_presentations.py`: compilação da apresentação segura sem mutar o payload oficial.
 
 ## Contrato de publicação
 
@@ -52,6 +59,16 @@ O renderer suporta os dois contratos publicados: a projeção antiga e o payload
 
 O gabarito e o comentário começam ocultos. Havendo alternativas, o aluno precisa selecionar uma antes de confirmar a tentativa. Questões de certo/errado sem alternativas explícitas recebem apenas a projeção visual derivada `Certo`/`Errado`.
 
+A auditoria das 615 ocorrências publicadas encontrou conjuntos incompletos, rótulos duplicados e alternativas incorporadas ao próprio enunciado. Vinte e uma apresentações foram recompiladas com texto já preservado na fonte. Três ocorrências com gabaritos contraditórios são exibidas como indisponíveis e nunca liberam resposta ou comentário. O gate falha se uma questão incompleta voltar a ficar interativa sem projeção comprovada.
+
+### Fidelidade das seções
+
+- exemplos aceitam `prompt`/`sentence`, `analysisSteps`/`analysis` e `result`/`pedagogicalTakeaway`, preservando comentário, conclusão e erro comum;
+- pegadinhas aceitam os aliases canônicos de raciocínio, correção e regra corretiva;
+- roteiros removem marcadores duplicados apenas na apresentação e exibem gatilho, condição de parada, verificação e falhas típicas;
+- mnemônicos não expõem classificações internas como `EXAM_HEURISTIC`;
+- anotações permanecem recolhidas até a ação explícita do aluno.
+
 ### Recuperação ativa
 
 Recall agora separa tentativa, conferência e autoavaliação. Pontos-chave só aparecem depois da ação “Já respondi — conferir”, e a classificação de domínio fica bloqueada até a tentativa.
@@ -85,6 +102,34 @@ suveca_cumulative_protocol_v1_<unitId>
 - Landmarks de questões possuem nomes únicos, a hierarquia de headings foi corrigida e as cores SuVeCA atendem ao contraste do gate Axe.
 - O viewport small mobile do Playwright é o requerido `320 × 568`.
 
+### Refinamento transversal de experiência
+
+O produto usa três larguras semânticas compartilhadas em vez de limites locais arbitrários:
+
+- `app-content-shell`: navegação e superfícies gerais, com aproveitamento amplo do desktop;
+- `tool-content-shell`: ferramentas que precisam de concentração sem voltar ao antigo corredor estreito;
+- `reading-column`: trechos de leitura contínua que preservam um comprimento de linha confortável.
+
+As margens são fluidas e diminuem até 320 px. Ao abrir uma unidade pedagógica completa, o sumário lateral deixa de reservar espaço e o aprofundamento ocupa a largura disponível. As seções também reduzem aninhamento e padding no mobile sem remover hierarquia ou identidade semântica.
+
+O catálogo curricular de apresentação fica centralizado em `src/data/lessonCatalog.ts`. IDs como `A00`, `A01` e `mod0` continuam nos contratos internos, mas seletores, badges, buscas, competências e retomadas exibem nomes como “Ortografia e fonologia” e “Classes de palavras”. Não alterar os IDs persistidos ou publicados para obter essa apresentação.
+
+Os títulos de competência passam por `src/lib/learnerFacingLabels.ts`: o prefixo redundante “Competência:” é removido e a função pedagógica aparece separadamente do assunto. Revisões cumulativas também recebem títulos limpos e intervalos traduzidos para nomes curriculares.
+
+O esquema estruturado escolhe a representação inicial de acordo com o dado:
+
+- decisões e sequências usam fluxo ordenado;
+- hierarquias usam árvore;
+- tabelas permanecem tabulares;
+- conjuntos independentes usam cards;
+- o texto-fonte permanece disponível como projeção alternativa.
+
+A seleção é determinística e apenas visual; o renderer não reescreve a semântica v4.2.
+
+O Pomodoro permanece montado ao trocar de tela. Minimizar devolve o aluno ao último conteúdo, mantém o mini-painel acessível e preserva tempo, modo e estado da sessão; expandir restaura a experiência completa.
+
+No Planejamento, o “Ciclo de revisão” é apresentado como sequência de quatro momentos — compreender, aplicar, recuperar, corrigir e revisar — seguida de um checklist curto de encerramento. Essa projeção organiza as orientações existentes e não cria conteúdo curricular novo.
+
 ## Continuidade
 
 Unidades regulares e A14 terminam com uma ação explícita de prática. Quando há conceitos associados, a ação usa o fluxo de prática já existente no produto; não foi criado sistema paralelo.
@@ -103,6 +148,15 @@ Os testes adicionados verificam:
 - deep link, refresh, Back, renderer regular e renderer A14;
 - ausência de overflow em 1440 × 900, 768 × 1024, 390 × 844 e 320 × 568;
 - zero violações Axe na experiência regular representativa e na A14.
+- uso horizontal mínimo do shell em desktop e da unidade aprofundada em 320 px;
+- ausência de overflow nas 14 experiências navegáveis, em quatro viewports;
+- persistência do Pomodoro entre minimizar, estudar e expandir;
+- catálogo curricular completo e apresentação não redundante das 190 competências PBL;
+- classificação determinística e controles acessíveis do esquema estruturado.
+- auditoria integral de 615 questões, 1.108 exemplos, 420 pegadinhas e 291 procedimentos;
+- projeção segura de C/E, recuperação comprovada de alternativas e bloqueio de conflitos de fonte;
+- aliases canônicos de exemplos e pegadinhas sem perda de conteúdo;
+- reconciliação das 66 identidades sem referências quebradas ou tipos sem renderer.
 
 O preflight inclui o contrato de roteamento das views e a suíte E2E semântica, além dos gates curriculares, PBL, TypeScript, Vitest e build.
 

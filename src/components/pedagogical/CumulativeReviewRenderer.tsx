@@ -5,6 +5,7 @@ import { SuvecaSection } from './sections/SuvecaSection';
 import { ContentBlockRenderer } from './blocks/ContentBlockRenderer';
 import { InlineRichText } from './blocks/InlineRichText';
 import { PedagogicalCallout } from '../ui/PedagogicalCallout';
+import { stripContextualPrefix } from '../../lib/learnerFacingLabels';
 
 interface CumulativeReviewRendererProps {
   view: CumulativeReviewView;
@@ -24,6 +25,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
   if (!view || !view.unit) return null;
 
   const { unit, sections } = view;
+  const reviewTitle = stripContextualPrefix(unit.title, /^Revisão Cumulativa:\s*/i);
 
   const [checkedProtocol, setCheckedProtocol] = useState<Record<number, boolean>>(() => {
     try {
@@ -78,15 +80,15 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
   const protocolPercent = protocolItems.length > 0 ? Math.round((completedProtocol / protocolItems.length) * 100) : 0;
 
   return (
-    <div className="cumulative-review-view space-y-6">
+    <div className="cumulative-review-view structured-content space-y-4 sm:space-y-6">
       {/* Cabeçalho da Unidade de Revisão */}
       <div className="space-y-2">
         <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-800">
           <RotateCcw className="h-4 w-4 text-teal-600" />
-          <span>Revisão Geral Cumulativa • Aula 14 ({unit.sectionId})</span>
+          <span>Revisão geral cumulativa • {unit.sectionId}</span>
         </div>
         <h1 className="m-0 text-2xl sm:text-3xl font-black tracking-tight text-teal-950">
-          {unit.title}
+          {reviewTitle}
         </h1>
       </div>
 
@@ -100,7 +102,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
       )}
 
       {/* Sumário das 6 Seções */}
-      <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5" aria-label={`Sumário da revisão ${unit.title}`}>
+      <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-3 sm:p-5" aria-label={`Sumário da revisão ${reviewTitle}`}>
         <h2 className="m-0 mb-3 flex items-center gap-2 text-base font-bold text-teal-950">
           <ListTree className="h-5 w-5 text-teal-700" /> Roteiro de Revisão (6 Dimensões)
         </h2>

@@ -22,7 +22,7 @@ export const StudySurface: React.FC<StudySurfaceProps> = ({
     <div
       className={`rounded-2xl border transition-colors select-text ${config.surfaceBorder} ${config.surfaceBg} ${
         borderLeft ? `border-l-4 ${config.accentColor.replace('text-', 'border-')}` : ''
-      } ${padded ? 'p-4 sm:p-5' : ''} ${className}`}
+      } ${padded ? 'p-3 sm:p-5' : ''} ${className}`}
     >
       {children}
     </div>

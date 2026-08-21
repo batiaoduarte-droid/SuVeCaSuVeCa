@@ -36,7 +36,8 @@ interface PomodoroTimerProps {
   onCompleteSession?: (session: PomodoroSession) => void;
   user?: User | null;
   onAskTutor?: (context: string) => void;
-  isFloatingInitially?: boolean;
+  isPageActive?: boolean;
+  onMinimize?: () => void;
   onExpandTab?: () => void;
 }
 
@@ -129,7 +130,8 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
   onCompleteSession,
   user,
   onAskTutor,
-  isFloatingInitially = false,
+  isPageActive = true,
+  onMinimize,
   onExpandTab,
 }) => {
   const [mode, setMode] = useState<PomodoroMode>('foco');
@@ -137,7 +139,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
   const [timeLeft, setTimeLeft] = useState<number>(DEFAULT_DURATIONS.foco * 60);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
-  const [isMinimized, setIsMinimized] = useState<boolean>(isFloatingInitially);
+  const [isMinimized, setIsMinimized] = useState(false);
 
   // Topic selection state
   const selectedModule = MODULES_DATA.find((m) => m.id === selectedModuleId) || MODULES_DATA[0];
@@ -370,11 +372,13 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
   );
   const totalFocusMinutesToday = todaySessions.reduce((acc, s) => acc + s.durationMinutes, 0);
 
-  // If floating mini widget
-  if (isMinimized) {
+  // The timer remains mounted at the App level so navigation never resets an
+  // active session. Only the visual projection changes between page, mini and
+  // hidden states.
+  if (!isPageActive && isMinimized) {
     return (
       <div
-        className="fixed bottom-20 right-4 z-40 flex items-center gap-3 rounded-full border border-amber-300 bg-amber-950/90 text-amber-50 px-4 py-2.5 shadow-xl backdrop-blur-md transition-all hover:bg-amber-950 sm:bottom-6 sm:right-6"
+        className="fixed bottom-20 left-4 right-auto z-40 flex items-center gap-3 rounded-full border border-amber-300 bg-amber-950/90 px-4 py-2.5 text-amber-50 shadow-xl backdrop-blur-md transition-all hover:bg-amber-950 sm:bottom-6 sm:left-auto sm:right-6"
         role="region"
         aria-label="Cronômetro Pomodoro em mini-painel"
       >
@@ -422,8 +426,10 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
     );
   }
 
+  if (!isPageActive) return null;
+
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-7 shadow-xs space-y-6">
+    <section className="tool-content-shell rounded-2xl border border-slate-200 bg-white p-4 sm:p-7 shadow-xs space-y-6">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
         <div className="flex items-center gap-3">
@@ -460,7 +466,10 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
 
           <button
             type="button"
-            onClick={() => setIsMinimized(true)}
+            onClick={() => {
+              setIsMinimized(true);
+              onMinimize?.();
+            }}
             className="flex h-9 items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors"
             title="Minimizar para mini-painel flutuante"
           >

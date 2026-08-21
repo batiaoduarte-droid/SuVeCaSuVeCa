@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-hardened",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A08-G02",
     "lessonId": "A08",
     "title": "Pontuação: Emprego da Vírgula, Ordem Direta, Deslocamentos e Conectivos",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A08-G02",
@@ -383,6 +384,61 @@
               "text": "O candidato, aprovado (ERRADO) vs O candidato, ontem à tarde, foi aprovado (CERTO)."
             }
           ]
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A08-G02-001",
+          "table": {
+            "tableId": "TABLE-IP-A08-G02-001",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Estrutura Sintática",
+              "Posição na Frase",
+              "Extensão / Critério",
+              "Emprego da Vírgula",
+              "Justificativa Sintática"
+            ],
+            "rows": [
+              [
+                "Adjunto Adverbial",
+                "Ordem Direta (Final)",
+                "Qualquer extensão",
+                "Facultativa",
+                "Posição canônica na frase (pausa por expressividade)"
+              ],
+              [
+                "Adjunto Adverbial",
+                "Deslocado (Início/Meio)",
+                "Curto (1 ou 2 palavras)",
+                "Facultativa",
+                "Termo sintático simples sem quebra de coesão"
+              ],
+              [
+                "Adjunto Adverbial",
+                "Deslocado (Início/Meio)",
+                "Longo (3 ou mais palavras)",
+                "Obrigatória",
+                "Risco de truncamento sintático pela extensão"
+              ],
+              [
+                "Oração Adverbial",
+                "Ordem Direta (Final)",
+                "Qualquer extensão",
+                "Facultativa (Objetiva) / Recomendada (Redação)",
+                "Oração subordinada em ordem canônica"
+              ],
+              [
+                "Oração Adverbial",
+                "Deslocada (Início/Meio)",
+                "Qualquer extensão",
+                "Obrigatória",
+                "Presença de verbo (\"O de Oração = O de Obrigatória\")"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

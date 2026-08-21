@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-hardened",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A06-G02",
     "lessonId": "A06",
     "title": "Sintaxe da Oração: Tipos de Sujeito, Barreira Preposicional e Impessoalidade",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A06-G02",
@@ -375,6 +376,75 @@
             }
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A06-G02-001",
+          "table": {
+            "tableId": "TABLE-IP-A06-G02-001",
+            "caption": "Regras canônicas",
+            "headers": [
+              "Tipologia do Sujeito",
+              "O Sujeito Existe?",
+              "Subdivisões Formais",
+              "Regra Canônica / O que Decorar",
+              "Exemplo Canônico de Fixação",
+              "ID de Detalhamento"
+            ],
+            "rows": [
+              [
+                "1. Sujeito Simples",
+                "SIM",
+                "Não há subdivisões",
+                "Apresentaexatamente um único núcleo substantivo explícito (inclusive se for pronome indefinido).",
+                "[O menino] chegou.[Alguém] acordou cedo.",
+                "KB-A06-G02-003"
+              ],
+              [
+                "2. Sujeito Oculto (Elíptico)",
+                "SIM (escondido)",
+                "(I) Desinencial(II) Não-desinencial",
+                "(I) Verbo na 1ª pessoa (EU / NÓS) marcado na terminação.(II) Verbo na 3ª pessoa do singular cujo referente está no contexto.",
+                "Estou feliz. / Estamos felizes.João chegou. [Ele] Estava feliz.",
+                "KB-A06-G02-004"
+              ],
+              [
+                "3. Sujeito Composto",
+                "SIM",
+                "Não há subdivisões",
+                "Apresentadois ou mais núcleos explícitos coordenados (e, nem, ou).",
+                "[João e Maria] chegaram.Andavam [bois, vacas e bezerros].",
+                "KB-A06-G02-001"
+              ],
+              [
+                "4. Sujeito Indeterminado",
+                "SIM (alguém)",
+                "(I) 3ª P. Plural(II) 3ª P. Sing. + SE(III) Infinitivo Impessoal",
+                "O agente existe, mas a estruturanão identifica quem é (sem referente prévio, com IIS ou infinitivo).",
+                "Chegaram cedo.Precisa-se de vendedores.É bom estudar.",
+                "KB-A06-G02-005"
+              ],
+              [
+                "5. Sujeito Inexistente (Oração Sem Sujeito)",
+                "NÃO",
+                "(I) Haver = Existir(II) Fenômenos da Natureza(III) Haver/Fazer = Tempo",
+                "Construído comVerbos Impessoais (sem pessoa/agente). Verbo fixo na 3ª do singular.",
+                "Há alunos aqui.Chove muito. (literal)Faz dois anos que estudo.",
+                "KB-A06-G02-006"
+              ],
+              [
+                "6. Sujeito Oracional",
+                "SIM (= ISSO)",
+                "(I) Oração Desenvolvida(II) Oração Reduzida",
+                "É aquele que tem verbo. Oração subordinada substantiva subjetiva. Verbo principal na 3ª sing.",
+                "Basta [que você estude]. (= ISSO)Basta [estudar muito]. (= ISSO)",
+                "KB-A06-G02-007"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "resolution": {
@@ -449,6 +519,85 @@
               "text": "Havia motivos (singular) vs Existiam motivos (plural)."
             }
           ]
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A06-G02-002",
+          "table": {
+            "tableId": "TABLE-IP-A06-G02-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Estrutura Analisada",
+              "Classificação do Sujeito",
+              "Justificativa Sintático-Semântica Decisiva",
+              "Diferencial em Prova de Concurso"
+            ],
+            "rows": [
+              [
+                "\"Eles acordaram cedo.\"",
+                "Sujeito Simples",
+                "O pronomeEles está expresso e grafado na oração como núcleo único.",
+                "Verbo na 3ª do plural com pronome explícito não é sujeito indeterminado."
+              ],
+              [
+                "\"Eles acordaram e saíram.\" (análise de saíram)",
+                "Sujeito Oculto (Elíptico)",
+                "O verbosaíram não traz pronome ao lado, mas seu referente anafórico (Eles) está no contexto.",
+                "A existência de âncora textual prévia impede a indeterminação do sujeito."
+              ],
+              [
+                "\"Saíram cedo.\" (frase isolada)",
+                "Sujeito Indeterminado",
+                "Verbo na 3ª pessoa do plural desprovido de sujeito expresso e sem referente no texto.",
+                "Factualmente alguém saiu, mas a sintaxe não revela quem é."
+              ],
+              [
+                "\"Alguém acordou cedo.\"",
+                "Sujeito Simples",
+                "O termoAlguém está grafado na frase como núcleo único (pronome indefinido substantivo).",
+                "O pronome é indefinido na morfologia; o sujeito é simples na sintaxe."
+              ],
+              [
+                "\"Chove muito na cidade.\"",
+                "Sujeito Inexistente",
+                "Verbo de fenômeno meteorológico empregado em seu sentido literal e denotativo.",
+                "Verbo impessoal; ausência ontológica e gramatical de agente."
+              ],
+              [
+                "\"Choveram elogios para ele.\"",
+                "Sujeito Simples",
+                "Verbo meteorológico em sentido figurado/conotativo (significaocorrer em abundância).",
+                "O termoelogios é o núcleo do sujeito simples; o verbo flexiona no plural."
+              ],
+              [
+                "\"Houve duas rebeliões.\"",
+                "Sujeito Inexistente",
+                "Verbohaver com sentido de existir/ocorrer é impessoal; duas rebeliões = Objeto Direto.",
+                "Invariável no singular; erro grave tentar pluralizar (\"houveram\")."
+              ],
+              [
+                "\"Ocorreram duas rebeliões.\"",
+                "Sujeito Simples",
+                "Verboocorrer é verbo pessoal pleno; duas rebeliões = Sujeito Simples posposto.",
+                "Flexiona compulsoriamente no plural para concordar com o núcleorebeliões."
+              ],
+              [
+                "\"Alugam-se casas.\"",
+                "Sujeito Simples (Paciente)",
+                "Verbo transitivo direto comse PA; equivale a \"Casas são alugadas\".",
+                "Há sujeito expresso (casas); o verbo concorda obrigatoriamente no plural."
+              ],
+              [
+                "\"Precisa-se de vendedores.\"",
+                "Sujeito Indeterminado",
+                "Verbo transitivo indireto comse IIS; o termo de vendedores é objeto indireto.",
+                "O termo é preposicionado e não pode ser sujeito; o verbo fica fixo no singular."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

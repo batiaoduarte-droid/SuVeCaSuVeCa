@@ -158,7 +158,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header className="sticky top-0 z-40 bg-[var(--surface)] border-b border-[var(--border)] text-[var(--text)] shadow-xs">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="app-content-shell">
           {/* Row 1: Logo, Search & Account */}
           <div className="flex items-center justify-between h-16 border-b border-slate-100/80">
             {/* Logo */}

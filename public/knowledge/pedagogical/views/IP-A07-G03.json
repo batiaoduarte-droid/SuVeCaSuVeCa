@@ -1,22 +1,24 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A07-G03",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Substantivas - Subjetivas e Objetivas Diretas",
+    "title": "Subordinadas Substantivas e Adjetivas",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A07-G03",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Substantivas - Subjetivas e Objetivas Diretas",
+    "title": "Subordinadas Substantivas e Adjetivas",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Subordinadas Substantivas e Adjetivas.",
       "Aplicar regras canônicas e procedimentos decisórios de Subordinadas Substantivas e Adjetivas na resolução de questões.",
       "Analisar o papel de Subordinadas Substantivas e Adjetivas no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
-    "conceptCount": 1,
+    "conceptCount": 16,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A07-G03-001",
@@ -30,127 +32,1438 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "As Orações Subordinadas Substantivas desempenham funções sintáticas próprias de termos substantivos da Oração Principal. A Oração Subordinada Substantiva Subjetiva funciona como o Sujeito da oração principal, enquanto a Objetiva Direta funciona como seu Objeto Direto.",
-      "visualBlueprint": "Subjetiva: [Oração Principal sem sujeito] + [QUE/SE + Oração] = 'ISSO' é o Sujeito (É necessário [que você venha] = ISSO é necessário) | Objetiva Direta: [Oração Principal com sujeito + VTD] + [QUE/SE + Oração] = 'ISSO' é o Objeto Direto (O diretor disse [que o prazo acabou] = O diretor disse ISSO).",
-      "cognitiveAnchor": "Se a oração principal NÃO TEM sujeito expresso e inicia por Verbo de Ligação + Predicativo (É bom...), Verbo Unipessoal (Convém...) ou Voz Passiva Sintética (Sabe-se...), a oração subordinada será SUBJETIVA.",
-      "strategicSignificance": "Elimina a armadilha de classificar orações subjetivas como objetivas diretas em provas de concursos.",
-      "coreTension": "Confundir Oração Subjetiva (quando o verbo principal não tem sujeito) com Oração Objetiva Direta."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Subordinadas Substantivas e Adjetivas",
+      "summary": "Articulação morfossintática e semântica de Subordinadas Substantivas e Adjetivas com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A07-03",
-          "name": "Conjunções Integrantes e Sujeito",
-          "reason": "Aplicar o teste do pronome 'ISSO' e verificar a presença de sujeito na matriz.",
-          "activationPrompt": "Na frase 'É preciso que todos estudem', quem é o sujeito de 'é preciso'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A07-G03",
+          "title": "Mapa de Dependência: Subordinadas Substantivas e Adjetivas",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Subordinadas Substantivas e Adjetivas",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Os 3 Modelos Estruturais da Oração Subjetiva",
-          "pedagogicalGoal": "Reconhecer as 3 estruturas sintáticas da Oração Principal que exigem Oração Subjetiva.",
+          "groupId": "GRP-IP-A07-G03-01",
+          "title": "Divisão Geral do Período Composto por Subordinação",
+          "conceptRefs": [
+            "KB-A07-G03-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "table",
-              "title": "As 3 Estruturas da Oração Subjetiva",
-              "columns": [
-                "Estrutura da Oração Principal",
-                "Verbos Típicos",
-                "Exemplo Canônico",
-                "Equivalência com ISSO"
-              ],
-              "rows": [
-                [
-                  "1. Verbo de Ligação + Predicativo",
-                  "É bom, é necessário, é urgente, é justo, é claro",
-                  "É necessário [que você estude].",
-                  "ISSO é necessário (ISSO = Sujeito)"
-                ],
-                [
-                  "2. Verbos Unipessoais na 3ª pessoa",
-                  "Convém, cumpre, importa, parece, consta, urge",
-                  "Convém [que todos participem].",
-                  "ISSO convém (ISSO = Sujeito)"
-                ],
-                [
-                  "3. Verbo na Voz Passiva (Sintética ou Analítica)",
-                  "Sabe-se, comenta-se, foi anunciado, foi dito",
-                  "Sabe-se [que a prova foi adiada].",
-                  "ISSO é sabido (ISSO = Sujeito)"
-                ]
-              ],
-              "text": "Em todas essas três estruturas, a oração principal carece de sujeito interno, sendo a oração subordinada o seu sujeito externo."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nNo sistema da Língua Portuguesa, as orações subordinadas dependem sintática e funcionalmente de uma oração principal, estruturando-se em três grandes grupos funcionais: Substantivas, Adverbiais e Adjetivas.\nExplicação consolidada\nA diferenciação entre os três grupos apoia-se no papel morfossintático assumido pela oração subordinada em relação à oração principal:\nSubstantivas: Exercem funções sintáticas típicas de um substantivo (sujeito, objeto direto, objeto indireto, complemento nominal, predicativo ou aposto). Podem ser integralmente substituídas pelo pronome demonstrativo neutro ISSO.\nAdverbiais: Expressam circunstâncias adverbiais modificadoras do predicado da oração principal. São divididas em 9 circunstâncias mnemônicas agrupadas na fórmula 6 Cs + FTP (Causal, Comparativa, Concessiva, Condicional, Conformativa, Consecutiva, Final, Temporal e Proporcional).\nAdjetivas: Exercem função qualificadora ou delimitadora equivalente a um adjetivo. Quando desenvolvidas, são introduzidas por um pronome relativo (que, quem, cujo, onde, o qual, etc.) e exercem invariavelmente o papel de adjunto adnominal do substantivo antecedente.\nCritérios de reconhecimento\nTroca por ISSO $\\rightarrow$ Oração Substantiva (introduzida por conjunção integrante).\nTroca por o qual / a qual $\\rightarrow$ Oração Adjetiva (introduzida por pronome relativo).\nValor circunstancial adverbial $\\rightarrow$ Oração Adverbial (introduzida por conjunção subordinativa adverbial).\nRelações\nExpande-se em: , \nEvidenciado visualmente por: VIS-A07-G03-001"
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-02",
+          "title": "Conceito e Teste Operacional das Orações Subordinadas Substantivas",
+          "conceptRefs": [
+            "KB-A07-G03-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada substantiva desempenha papel reservado a um núcleo substantivo perante a oração principal, sendo introduzida primariamente por conjunções integrantes (que, se). O teste diagnóstico definitivo consiste na substituição integral da oração subordinada pelo pronome ISSO (ou formas preposicionadas DISSO / NISSO).\nExplicação consolidada\nAo isolar a oração introduzida por que ou se e substituí-la por isso, se o período mantiver integridade de sentido e gramaticalidade, comprova-se o valor substantivo da oração subordinada e a classificação do conectivo como conjunção integrante. A função sintática específica do pronome isso em relação à oração principal definirá a classificação da oração subordinada substantiva entre as 6 categorias normativas.\nExemplos e contraexemplos\n\"Sei [que serei aprovado]\" $\\rightarrow$ \"Sei [isso]\" (Objeto Direto $\\rightarrow$ Substantiva Objetiva Direta).\n\"Não quero [que você venha]\" $\\rightarrow$ \"Não quero [isso]\" (Objeto Direto $\\rightarrow$ Substantiva Objetiva Direta).\nContraexemplo: \"O homem [que trabalha]...\" $\\rightarrow$ \"O homem [isso]...\" (Sentido truncado $\\rightarrow$ Não é substantiva; trata-se de adjetiva: \"o homem [o qual] trabalha\").\nRelações\nProcedimento associado: \nDica: TIP-A07-G03-001"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-03",
+          "title": "Oração Subordinada Substantiva Subjetiva (Sujeito Oracional)",
+          "conceptRefs": [
+            "KB-A07-G03-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada substantiva subjetiva funciona como o sujeito sintático da oração principal (sujeito oracional). A oração principal não possui sujeito próprio anteposto ou interno e articula-se obrigatoriamente na 3ª pessoa do singular.\nExplicação consolidada\nIdentificam-se três matrizes estruturais típicas na oração principal que exigem sujeito oracional:\nVerbos Unipessoais na 3ª pessoa do singular: Verbos como urgir, convir, cumprir, importar, parecer, acontecer, seguidos de conectivo integrante ou infinitivo (\"Urge que você chegue\" $\\rightarrow$ \"Isso urge\").\nVoz Passiva Sintética ou Analítica: Estruturas com pronome apassivador se ou verbo auxiliar ser/estar (\"Sabe-se que ela mentiu\" $\\rightarrow$ \"Isso é sabido\"; \"Diz-se que...\" $\\rightarrow$ \"Isso é dito\").\nVerbo de Ligação + Predicativo do Sujeito: Construções formadas por verbo de ligação acompanhado de predicativo sem sujeito anteposto (\"Está claro que ela mentiu\" $\\rightarrow$ \"Isso está claro\").\nCritérios de reconhecimento e validação\nLocaliza-se o verbo da oração principal.\nAplica-se a pergunta de identificação de sujeito: \"O que é que [verbo]?\".\nSubstitui-se a oração por ISSO e monta-se a ordem direta: $\\text{ISSO (Sujeito)} + \\text{Verbo} + \\text{Complemento / Predicativo}$.\nRelações\nContrasta com: (Predicativa)\nDica: TIP-A07-G03-004\nExemplificado por: (itens 3 e 7)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-04",
+          "title": "Orações Subordinadas Substantivas Objetivas e a Regra da Preposição Facultativa",
+          "conceptRefs": [
+            "KB-A07-G03-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAs orações objetivas integram o sentido de verbos transitivos da oração principal:\nObjetiva Direta (Objeto Direto Oracional): Complementa verbo transitivo direto (VTD) sem preposição.\nObjetiva Indireta (Objeto Indireto Oracional): Complementa verbo transitivo indireto (VTI). Apresenta a regra normativa especial de facultatividade da preposição regencial.\nExplicação consolidada\nObjetiva Direta: Liga-se diretamente ao verbo transitivo direto (\"Espero [que ela volte logo]\" $\\rightarrow$ \"Espero isso\").\nObjetiva Indireta e a Regra da Preposição Facultativa: Quando o complemento de um VTI é um substantivo simples, a preposição é obrigatória (\"Necessito de ajuda\"). Porém, quando o complemento assume formato oracional, a norma culta consagrada em bancas examinadoras estabelece que a preposição regencial antes da conjunção integrante torna-se facultativa:\n\\text{\"Necessito de que me ajudem\"} \\iff \\text{\"Necessito que me ajudem\"}\nA supressão da preposição em objetos indiretos oracionais não acarreta incorreção gramatical.\nAlertas e pegadinhas\nA facultatividade da preposição é exclusiva do objeto indireto oracional. Não se aplica ao objeto indireto nominal simples nem a orações completivas nominais.Exemplificado por: (itens 2, 5 e 8)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-05",
+          "title": "Oração Subordinada Substantiva Completiva Nominal vs. Objetiva Indireta",
+          "conceptRefs": [
+            "KB-A07-G03-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração completiva nominal completa o sentido de um nome (substantivo abstrato, adjetivo ou advérbio cognato) da oração principal que exige complemento preposicionado. Sua preposição introdutória é estritamente obrigatória.\nDistinção crítica\nA fronteira entre a Completiva Nominal e a Objetiva Indireta reside no alvo regente do complemento:\nCompletiva Nominal: Completa um NOME (necessidade, esperança, certeza, impressão). Preposição OBRIGATÓRIA.\nExemplo: \"Tenho certeza [de que passaremos]\" (certeza = substantivo abstrato).\nObjetiva Indireta: Completa um VERBO (necessitar, lembrar-se, gostar, precisar). Preposição FACULTATIVA.\nExemplo: \"Necessito [(de) que me ajudem]\" (necessitar = verbo transitivo indireto).\nRelações\nContrasta com: \nExemplificado por: (item 4)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-06",
+          "title": "Oração Subordinada Substantiva Predicativa vs. Subjetiva com Verbo de Ligação",
+          "conceptRefs": [
+            "KB-A07-G03-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada substantiva predicativa desempenha a função de predicativo do sujeito da oração principal, surgindo imediatamente após um verbo de ligação (ser, estar, parecer, etc.) quando o sujeito já se encontra expressamente declarado na oração principal.\nCritério decisivo de diferenciação\nAmbas as estruturas contêm Verbo de Ligação (VL), mas distinguem-se pela posição e presença do sujeito:\nOração Predicativa: $\\text{Sujeito (expresso na OP)} + \\text{Verbo de Ligação} + \\text{[Oração Substantiva Predicativa]}$\n\"Meu desejo (sujeito) era (VL) [que todos fossem aprovados] (oração predicativa).\"\nOração Subjetiva: $\\text{Verbo de Ligação} + \\text{Predicativo} + \\text{[Oração Substantiva Subjetiva]}$\n\"Era indispensável (VL + Predicativo) [que todos fossem aprovados] (sujeito oracional).\" $\\rightarrow$ Ordem direta: \"[Isso] era indispensável\".\nRelações\nContrasta com: \nExemplificado por: (item 6)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-07",
+          "title": "Oração Subordinada Substantiva Apositiva (Aposto Oracional)",
+          "conceptRefs": [
+            "KB-A07-G03-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada substantiva apositiva funciona como aposto explicativo de um substantivo da oração principal, esclarecendo seu conteúdo por meio de conjunção integrante e demarcação obrigatória por sinais de pontuação (dois-pontos, travessão ou vírgula).\nExplicação consolidada\nO aposto oracional especifica a identidade de um nome antecedente (\"Só desejo uma coisa: que você vença\"). Em provas (notadamente Cebraspe), é frequente a simplificação da nomenclatura para a função sintática direta: aposto oracional.\nAlerta de fronteira\nNão confundir a Oração Substantiva Apositiva (introduzida por conjunção integrante = isso, com valor substantivo) com a Oração Adjetiva Explicativa (introduzida por pronome relativo = o qual, com valor adjetivo de adjunto adnominal).Exemplificado por: (item 1)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-08",
+          "title": "Terminologia de Bancas: O Conceito Amplo de \"Oração Completiva\" (Cebraspe)",
+          "conceptRefs": [
+            "KB-A07-G03-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nEm bancas como o Cebraspe/CESPE, a denominação \"oração completiva\" é empregada em sentido genérico e funcional, abrangendo qualquer oração integrante que complete o sentido de um termo regente anterior, compreendendo tanto completivas verbais (objetos diretos e indiretos oracionais) quanto completivas nominais.\nExplicação consolidada\nAo analisar itens que afirmam que uma conjunção integrante introduz uma \"oração completiva\", o candidato não deve restringir sua análise à oração completiva nominal estrita. Se a oração exercer função de objeto direto subordinado a um verbo transitivo direto, a afirmação da banca é considerada rigorosamente correta.Exemplificado por:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-09",
+          "title": "A Oração Subordinada Adjetiva e sua Função Invariável de Adjunto Adnominal",
+          "conceptRefs": [
+            "KB-A07-G03-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada adjetiva qualifica, caracteriza ou delimita um substantivo (ou pronome substantivo) da oração principal. Por acoplar-se diretamente a esse núcleo nominal, sua função sintática na oração principal é invariavelmente a de Adjunto Adnominal.\nExplicação consolidada\nAo contrário das orações subordinadas substantivas (que assumem múltiplos papéis como sujeito, objeto, etc.), a oração adjetiva possui uma única função sintática perante a oração principal: a de adjunto adnominal do termo ao qual se refere. Isso é válido tanto para as orações adjetivas restritivas quanto para as explicativas.Exemplificado por: (Questão 13)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-10",
+          "title": "Classificação Morfossintática Multivalente da Palavra \"QUE\"",
+          "conceptRefs": [
+            "KB-A07-G03-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA palavra que possui comportamento morfossintático polivalente em Língua Portuguesa, demandando testes operacionais para sua correta identificação em questões de concurso.\nQuadro de comportamentos canônicos do \"QUE\"\nPronome Relativo: Introduz oração subordinada adjetiva e retoma termo antecedente. É substituível por o qual, a qual, os quais, as quais (\"Gostou do arroz [o qual] fiz\").\nConjunção Integrante: Introduz oração subordinada substantiva. A oração inteira pode ser substituída por ISSO (\"Não quero [isso]\").\nPartícula / Expressão Expletiva ou de Realce: Possui finalidade enfática e pode ser eliminada da oração sem provocar fratura sintática ou alteração no conteúdo proposicional (\"Eu [é que] não saio daqui\" $\\rightarrow$ \"Eu não saio daqui\"; \"Quase [que] caí\" $\\rightarrow$ \"Quase caí\").\nIntegrante de Locução Conjuntiva Adverbial: Compõe blocos conjuntivos indivisíveis:\nConcessiva: mesmo que, ainda que, sem que (= embora).\nConsecutiva: tanto... que, tão... que, tamanho... que (consequência).\nCondicional: contanto que (= caso, se).\nPreposição Acidental: Atua como conectivo em locução verbal de obrigação/necessidade com verbo no infinitivo, equivalendo exatamente a de (\"Tivemos que reduzir custos\" = \"Tivemos de reduzir custos\").\nPronome Interrogativo: Introduz orações interrogativas diretas ou indiretas (\"O que é a felicidade?\").\nRelações\nProcedimentos associados: , , \nExemplificado por: (Questões 01 a 07)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-11",
+          "title": "Antecedentes do Pronome Relativo: Substantivos e Pronomes Demonstrativos (\"o que\")",
+          "conceptRefs": [
+            "KB-A07-G03-011"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO antecedente anafórico retomado pelo pronome relativo pode ser um substantivo ou um pronome substantivo demonstrativo (o, a, os, as), comutável por aquilo, aquele ou aquela.\nExplicação consolidada\nNa estrutura recorrente em provas \"plantamos o que colhemos\" ou \"conseguir o que você quer\":\nO vocábulo o atua como pronome demonstrativo (= aquilo).\nA palavra que atua rigorosamente como pronome relativo (= o qual), introduzindo oração adjetiva que qualifica o pronome demonstrativo antecedente (\"plantamos aquilo [o qual] colhemos\").\nRelações\nDica associada: TIP-A07-G03-002\nExemplificado por: (Questões 03 e 07)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-12",
+          "title": "Orações Adjetivas Restritivas vs. Explicativas: Pontuação, Semântica e Intercalação",
+          "conceptRefs": [
+            "KB-A07-G03-012"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAs orações adjetivas restritivas e explicativas são morfologicamente idênticas (ambas são orações adjetivas) e sintaticamente idênticas (ambas são adjuntos adnominais), diferenciando-se exclusivamente na semântica e na pontuação.\nQuadro contrastivo\nEfeito intercalado (\"Grude\")\nComo a oração adjetiva deve situar-se imediatamente contígua ao substantivo antecedente, ela frequentemente surge intercalada no meio da oração principal (\"O homem [que trabalha] perde tempo precioso\"), exigindo o isolamento em barras para correta reconstituição da oração principal.\nRelações\nProcedimento: \nExemplificado por:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-13",
+          "title": "Inventário dos Conectivos Relativos e suas Peculiaridades",
+          "conceptRefs": [
+            "KB-A07-G03-013"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO conjunto dos pronomes relativos não se limita ao vocábulo que, englobando pronomes especializados em referências semânticas específicas:\nque / o qual (e flexões): Relativo universal para pessoas ou coisas.\nquem: Empregado exclusivamente para pessoas ou seres personificados, sempre preposicionado quando atua como objeto (\"o adulto com quem convivem\").\ncujo / cuja / cujos / cujas: Expressa relação de posse entre o antecedente e o termo consequente; concorda em gênero e número com a coisa possuída e nunca admite artigo subsequente (\"A menina cuja mãe é professora\").\nonde: Empregado unicamente para indicar lugar físico/espacial concreto.\nquanto / quanta (e flexões): Empregado após pronomes indefinidos (tudo, tanto, todos).\ncomo / quando: Podem atuar como pronomes relativos quando retomam substantivos de valor modal (a maneira como...) ou temporal (o dia quando...).\nRelações\nExpande-se em: \nExemplificado por: (Questões 14, 15 e 16)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-14",
+          "title": "O Pronome Relativo \"ONDE\": Restrição Semântica e Função Fixa de Adjunto Adverbial de Lugar",
+          "conceptRefs": [
+            "KB-A07-G03-014"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO pronome relativo onde retoma substantivos indicadores de lugar físico delimitado e desempenha sempre e invariavelmente a função sintática de Adjunto Adverbial de Lugar na oração subordinada adjetiva.\nExplicação consolidada\nEnquanto pronomes como que ou o qual variam de função sintática conforme a regência do predicado adjetivo, o pronome onde embute em sua semântica a preposição de lugar (no qual, em que). Logo, sua função sintática é prefixada:\nMorfologia: Pronome Relativo.\nSintaxe na oração adjetiva: Adjunto Adverbial de Lugar.\nLimite de uso\nNão deve ser empregado para antecedentes de natureza temporal (\"na época onde...\" $\\rightarrow$ incorreto; use em que / na qual) ou conceitual/abstrata (\"no texto onde...\" $\\rightarrow$ use em que / no qual).\nRelações\nDica: TIP-A07-G03-003\nExemplificado por: (Frase 2)"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-15",
+          "title": "Princípio da Independência Funcional entre Relativo e Antecedente",
+          "conceptRefs": [
+            "KB-A07-G03-015"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA função sintática exercida pelo pronome relativo na oração subordinada adjetiva é totalmente independente e autônoma em relação à função sintática que seu antecedente exerce na oração principal.\nExplicação consolidada\nO antecedente pertence à Oração Principal (OP) e desempenha nela uma função sintática determinada pelo verbo da OP (ex.: Sujeito, Predicativo, Objeto).\nO pronome relativo pertence à Oração Subordinada Adjetiva e desempenha nela uma função sintática determinada pelo verbo da oração adjetiva.\nNão existe correspondência necessária entre as duas funções. Buscar a função do relativo analisando o verbo da oração principal constitui o erro metodológico denominado \"recaída sintática\".Procedimento validador:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G03-16",
+          "title": "O Método Canônico dos Três Passos para Determinação da Função Sintática do Pronome Relativo",
+          "conceptRefs": [
+            "KB-A07-G03-016"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAlgoritmo mecânico infalível estruturado em três etapas consecutivas para apurar a função sintática de qualquer pronome relativo sem incorrer em ambiguidades ou projeções indevidas da oração principal.\nAs Três Etapas Operacionais\nPasso 1: Isolar a Oração Adjetiva: Inserir barras divisórias (|) imediatamente antes do pronome relativo e no término da oração subordinada adjetiva. Destacar o bloco interno visualmente (marca-texto) para bloquear o foco na oração principal.\nPasso 2: Substituir o Relativo pelo Antecedente da OP: Identificar o substantivo retomado na oração principal e inseri-lo diretamente na oração adjetiva no lugar do pronome relativo.\nPasso 3: Colocar a Oração Adjetiva na Ordem Direta (S-V-C): Reorganizar os termos da oração adjetiva na sequência Canônica: $\\text{Sujeito} + \\text{Verbo} + \\text{Complementos/Adjuntos}$. Analisar a função sintática do substantivo substituído perante o verbo da oração adjetiva. Essa será exatamente a função sintática do pronome relativo.\nRelações\nProcedimento detalhado: \nExemplificado por:"
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G03-001",
+              "table": {
+                "tableId": "TABLE-IP-A07-G03-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Dimensão",
+                  "Oração Adjetiva Restritiva",
+                  "Oração Adjetiva Explicativa"
+                ],
+                "rows": [
+                  [
+                    "Semântica",
+                    "Delimita, particulariza ou restringe o universo do antecedente a um subconjunto.",
+                    "Generaliza, universaliza ou acrescenta uma qualidade adicional/acessória a todos os elementos."
+                  ],
+                  [
+                    "Pontuação",
+                    "SEM pontuação de isolamento (sem vírgulas).",
+                    "OBRIGATORIAMENTE isolada por vírgulas, travessões ou parênteses."
+                  ],
+                  [
+                    "Mobilidade/Supressão",
+                    "Informação essencial; sua retirada desconfigura o sentido delimitador original.",
+                    "Informação acessória; pode ser suprimida sem truncamento gramatical."
+                  ],
+                  [
+                    "Exemplo Típico",
+                    "\"Os alunos que acabaram a prova podem sair.\" (Apenas os que terminaram).",
+                    "\"Os alunos, que acabaram a prova, podem sair.\" (Todos terminaram)."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G03-005",
+              "table": {
+                "tableId": "TABLE-IP-A07-G03-005",
+                "caption": "Quadro contrastivo",
+                "headers": [
+                  "Dimensão",
+                  "Oração Adjetiva Restritiva",
+                  "Oração Adjetiva Explicativa"
+                ],
+                "rows": [
+                  [
+                    "Semântica",
+                    "Delimita, particulariza ou restringe o universo do antecedente a um subconjunto.",
+                    "Generaliza, universaliza ou acrescenta uma qualidade adicional/acessória a todos os elementos."
+                  ],
+                  [
+                    "Pontuação",
+                    "SEM pontuação de isolamento (sem vírgulas).",
+                    "OBRIGATORIAMENTE isolada por vírgulas, travessões ou parênteses."
+                  ],
+                  [
+                    "Mobilidade/Supressão",
+                    "Informação essencial; sua retirada desconfigura o sentido delimitador original.",
+                    "Informação acessória; pode ser suprimida sem truncamento gramatical."
+                  ],
+                  [
+                    "Exemplo Típico",
+                    "\"Os alunos que acabaram a prova podem sair.\" (Apenas os que terminaram).",
+                    "\"Os alunos, que acabaram a prova, podem sair.\" (Todos terminaram)."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nNo sistema da Língua Portuguesa, as orações subordinadas dependem sintática e funcionalmente de uma oração principal, estruturando-se em três grandes grupos funcionais: Substantivas, Adverbiais e Adjetivas.\nExplicação consolidada\nA diferenciação entre os três grupos apoia-se no papel morfossintático assumido pela oração subordinada em relação à oração principal:\nSubstantivas: Exercem funções sintáticas típicas de um substantivo (sujeito, objeto direto, objeto indireto, complemento nominal, predicativo ou aposto). Podem ser integralmente substituídas pelo pronome demonstrativo neutro ISSO.\nAdverbiais: Expressam circunstâncias adverbiais modificadoras do predicado da oração principal. São divididas em 9 circunstâncias mnemônicas agrupadas na fórmula 6 Cs + FTP (Causal, Comparativa, Concessiva, Condicional, Conformativa, Consecutiva, Final, Temporal e Proporcional).\nAdjetivas: Exercem função qualificadora ou delimitadora equivalente a um adjetivo. Quando desenvolvidas, são introduzidas por um pronome relativo (que, quem, cujo, onde, o qual, etc.) e exercem invariavelmente o papel de adjunto adnominal do substantivo antecedente.\nCritérios de reconhecimento\nTroca por ISSO $\\rightarrow$ Oração Substantiva (introduzida por conjunção integrante).\nTroca por o qual / a qual $\\rightarrow$ Oração Adjetiva (introduzida por pronome relativo).\nValor circunstancial adverbial $\\rightarrow$ Oração Adverbial (introduzida por conjunção subordinativa adverbial).\nRelações\nExpande-se em: , \nEvidenciado visualmente por: VIS-A07-G03-001"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada substantiva desempenha papel reservado a um núcleo substantivo perante a oração principal, sendo introduzida primariamente por conjunções integrantes (que, se). O teste diagnóstico definitivo consiste na substituição integral da oração subordinada pelo pronome ISSO (ou formas preposicionadas DISSO / NISSO).\nExplicação consolidada\nAo isolar a oração introduzida por que ou se e substituí-la por isso, se o período mantiver integridade de sentido e gramaticalidade, comprova-se o valor substantivo da oração subordinada e a classificação do conectivo como conjunção integrante. A função sintática específica do pronome isso em relação à oração principal definirá a classificação da oração subordinada substantiva entre as 6 categorias normativas.\nExemplos e contraexemplos\n\"Sei [que serei aprovado]\" $\\rightarrow$ \"Sei [isso]\" (Objeto Direto $\\rightarrow$ Substantiva Objetiva Direta).\n\"Não quero [que você venha]\" $\\rightarrow$ \"Não quero [isso]\" (Objeto Direto $\\rightarrow$ Substantiva Objetiva Direta).\nContraexemplo: \"O homem [que trabalha]...\" $\\rightarrow$ \"O homem [isso]...\" (Sentido truncado $\\rightarrow$ Não é substantiva; trata-se de adjetiva: \"o homem [o qual] trabalha\").\nRelações\nProcedimento associado: \nDica: TIP-A07-G03-001"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada substantiva subjetiva funciona como o sujeito sintático da oração principal (sujeito oracional). A oração principal não possui sujeito próprio anteposto ou interno e articula-se obrigatoriamente na 3ª pessoa do singular.\nExplicação consolidada\nIdentificam-se três matrizes estruturais típicas na oração principal que exigem sujeito oracional:\nVerbos Unipessoais na 3ª pessoa do singular: Verbos como urgir, convir, cumprir, importar, parecer, acontecer, seguidos de conectivo integrante ou infinitivo (\"Urge que você chegue\" $\\rightarrow$ \"Isso urge\").\nVoz Passiva Sintética ou Analítica: Estruturas com pronome apassivador se ou verbo auxiliar ser/estar (\"Sabe-se que ela mentiu\" $\\rightarrow$ \"Isso é sabido\"; \"Diz-se que...\" $\\rightarrow$ \"Isso é dito\").\nVerbo de Ligação + Predicativo do Sujeito: Construções formadas por verbo de ligação acompanhado de predicativo sem sujeito anteposto (\"Está claro que ela mentiu\" $\\rightarrow$ \"Isso está claro\").\nCritérios de reconhecimento e validação\nLocaliza-se o verbo da oração principal.\nAplica-se a pergunta de identificação de sujeito: \"O que é que [verbo]?\".\nSubstitui-se a oração por ISSO e monta-se a ordem direta: $\\text{ISSO (Sujeito)} + \\text{Verbo} + \\text{Complemento / Predicativo}$.\nRelações\nContrasta com: (Predicativa)\nDica: TIP-A07-G03-004\nExemplificado por: (itens 3 e 7)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAs orações objetivas integram o sentido de verbos transitivos da oração principal:\nObjetiva Direta (Objeto Direto Oracional): Complementa verbo transitivo direto (VTD) sem preposição.\nObjetiva Indireta (Objeto Indireto Oracional): Complementa verbo transitivo indireto (VTI). Apresenta a regra normativa especial de facultatividade da preposição regencial.\nExplicação consolidada\nObjetiva Direta: Liga-se diretamente ao verbo transitivo direto (\"Espero [que ela volte logo]\" $\\rightarrow$ \"Espero isso\").\nObjetiva Indireta e a Regra da Preposição Facultativa: Quando o complemento de um VTI é um substantivo simples, a preposição é obrigatória (\"Necessito de ajuda\"). Porém, quando o complemento assume formato oracional, a norma culta consagrada em bancas examinadoras estabelece que a preposição regencial antes da conjunção integrante torna-se facultativa:\n\\text{\"Necessito de que me ajudem\"} \\iff \\text{\"Necessito que me ajudem\"}\nA supressão da preposição em objetos indiretos oracionais não acarreta incorreção gramatical.\nAlertas e pegadinhas\nA facultatividade da preposição é exclusiva do objeto indireto oracional. Não se aplica ao objeto indireto nominal simples nem a orações completivas nominais.Exemplificado por: (itens 2, 5 e 8)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração completiva nominal completa o sentido de um nome (substantivo abstrato, adjetivo ou advérbio cognato) da oração principal que exige complemento preposicionado. Sua preposição introdutória é estritamente obrigatória.\nDistinção crítica\nA fronteira entre a Completiva Nominal e a Objetiva Indireta reside no alvo regente do complemento:\nCompletiva Nominal: Completa um NOME (necessidade, esperança, certeza, impressão). Preposição OBRIGATÓRIA.\nExemplo: \"Tenho certeza [de que passaremos]\" (certeza = substantivo abstrato).\nObjetiva Indireta: Completa um VERBO (necessitar, lembrar-se, gostar, precisar). Preposição FACULTATIVA.\nExemplo: \"Necessito [(de) que me ajudem]\" (necessitar = verbo transitivo indireto).\nRelações\nContrasta com: \nExemplificado por: (item 4)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada substantiva predicativa desempenha a função de predicativo do sujeito da oração principal, surgindo imediatamente após um verbo de ligação (ser, estar, parecer, etc.) quando o sujeito já se encontra expressamente declarado na oração principal.\nCritério decisivo de diferenciação\nAmbas as estruturas contêm Verbo de Ligação (VL), mas distinguem-se pela posição e presença do sujeito:\nOração Predicativa: $\\text{Sujeito (expresso na OP)} + \\text{Verbo de Ligação} + \\text{[Oração Substantiva Predicativa]}$\n\"Meu desejo (sujeito) era (VL) [que todos fossem aprovados] (oração predicativa).\"\nOração Subjetiva: $\\text{Verbo de Ligação} + \\text{Predicativo} + \\text{[Oração Substantiva Subjetiva]}$\n\"Era indispensável (VL + Predicativo) [que todos fossem aprovados] (sujeito oracional).\" $\\rightarrow$ Ordem direta: \"[Isso] era indispensável\".\nRelações\nContrasta com: \nExemplificado por: (item 6)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada substantiva apositiva funciona como aposto explicativo de um substantivo da oração principal, esclarecendo seu conteúdo por meio de conjunção integrante e demarcação obrigatória por sinais de pontuação (dois-pontos, travessão ou vírgula).\nExplicação consolidada\nO aposto oracional especifica a identidade de um nome antecedente (\"Só desejo uma coisa: que você vença\"). Em provas (notadamente Cebraspe), é frequente a simplificação da nomenclatura para a função sintática direta: aposto oracional.\nAlerta de fronteira\nNão confundir a Oração Substantiva Apositiva (introduzida por conjunção integrante = isso, com valor substantivo) com a Oração Adjetiva Explicativa (introduzida por pronome relativo = o qual, com valor adjetivo de adjunto adnominal).Exemplificado por: (item 1)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nEm bancas como o Cebraspe/CESPE, a denominação \"oração completiva\" é empregada em sentido genérico e funcional, abrangendo qualquer oração integrante que complete o sentido de um termo regente anterior, compreendendo tanto completivas verbais (objetos diretos e indiretos oracionais) quanto completivas nominais.\nExplicação consolidada\nAo analisar itens que afirmam que uma conjunção integrante introduz uma \"oração completiva\", o candidato não deve restringir sua análise à oração completiva nominal estrita. Se a oração exercer função de objeto direto subordinado a um verbo transitivo direto, a afirmação da banca é considerada rigorosamente correta.Exemplificado por:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada adjetiva qualifica, caracteriza ou delimita um substantivo (ou pronome substantivo) da oração principal. Por acoplar-se diretamente a esse núcleo nominal, sua função sintática na oração principal é invariavelmente a de Adjunto Adnominal.\nExplicação consolidada\nAo contrário das orações subordinadas substantivas (que assumem múltiplos papéis como sujeito, objeto, etc.), a oração adjetiva possui uma única função sintática perante a oração principal: a de adjunto adnominal do termo ao qual se refere. Isso é válido tanto para as orações adjetivas restritivas quanto para as explicativas.Exemplificado por: (Questão 13)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA palavra que possui comportamento morfossintático polivalente em Língua Portuguesa, demandando testes operacionais para sua correta identificação em questões de concurso.\nQuadro de comportamentos canônicos do \"QUE\"\nPronome Relativo: Introduz oração subordinada adjetiva e retoma termo antecedente. É substituível por o qual, a qual, os quais, as quais (\"Gostou do arroz [o qual] fiz\").\nConjunção Integrante: Introduz oração subordinada substantiva. A oração inteira pode ser substituída por ISSO (\"Não quero [isso]\").\nPartícula / Expressão Expletiva ou de Realce: Possui finalidade enfática e pode ser eliminada da oração sem provocar fratura sintática ou alteração no conteúdo proposicional (\"Eu [é que] não saio daqui\" $\\rightarrow$ \"Eu não saio daqui\"; \"Quase [que] caí\" $\\rightarrow$ \"Quase caí\").\nIntegrante de Locução Conjuntiva Adverbial: Compõe blocos conjuntivos indivisíveis:\nConcessiva: mesmo que, ainda que, sem que (= embora).\nConsecutiva: tanto... que, tão... que, tamanho... que (consequência).\nCondicional: contanto que (= caso, se).\nPreposição Acidental: Atua como conectivo em locução verbal de obrigação/necessidade com verbo no infinitivo, equivalendo exatamente a de (\"Tivemos que reduzir custos\" = \"Tivemos de reduzir custos\").\nPronome Interrogativo: Introduz orações interrogativas diretas ou indiretas (\"O que é a felicidade?\").\nRelações\nProcedimentos associados: , , \nExemplificado por: (Questões 01 a 07)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO antecedente anafórico retomado pelo pronome relativo pode ser um substantivo ou um pronome substantivo demonstrativo (o, a, os, as), comutável por aquilo, aquele ou aquela.\nExplicação consolidada\nNa estrutura recorrente em provas \"plantamos o que colhemos\" ou \"conseguir o que você quer\":\nO vocábulo o atua como pronome demonstrativo (= aquilo).\nA palavra que atua rigorosamente como pronome relativo (= o qual), introduzindo oração adjetiva que qualifica o pronome demonstrativo antecedente (\"plantamos aquilo [o qual] colhemos\").\nRelações\nDica associada: TIP-A07-G03-002\nExemplificado por: (Questões 03 e 07)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAs orações adjetivas restritivas e explicativas são morfologicamente idênticas (ambas são orações adjetivas) e sintaticamente idênticas (ambas são adjuntos adnominais), diferenciando-se exclusivamente na semântica e na pontuação.\nQuadro contrastivo\nEfeito intercalado (\"Grude\")\nComo a oração adjetiva deve situar-se imediatamente contígua ao substantivo antecedente, ela frequentemente surge intercalada no meio da oração principal (\"O homem [que trabalha] perde tempo precioso\"), exigindo o isolamento em barras para correta reconstituição da oração principal.\nRelações\nProcedimento: \nExemplificado por:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO conjunto dos pronomes relativos não se limita ao vocábulo que, englobando pronomes especializados em referências semânticas específicas:\nque / o qual (e flexões): Relativo universal para pessoas ou coisas.\nquem: Empregado exclusivamente para pessoas ou seres personificados, sempre preposicionado quando atua como objeto (\"o adulto com quem convivem\").\ncujo / cuja / cujos / cujas: Expressa relação de posse entre o antecedente e o termo consequente; concorda em gênero e número com a coisa possuída e nunca admite artigo subsequente (\"A menina cuja mãe é professora\").\nonde: Empregado unicamente para indicar lugar físico/espacial concreto.\nquanto / quanta (e flexões): Empregado após pronomes indefinidos (tudo, tanto, todos).\ncomo / quando: Podem atuar como pronomes relativos quando retomam substantivos de valor modal (a maneira como...) ou temporal (o dia quando...).\nRelações\nExpande-se em: \nExemplificado por: (Questões 14, 15 e 16)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO pronome relativo onde retoma substantivos indicadores de lugar físico delimitado e desempenha sempre e invariavelmente a função sintática de Adjunto Adverbial de Lugar na oração subordinada adjetiva.\nExplicação consolidada\nEnquanto pronomes como que ou o qual variam de função sintática conforme a regência do predicado adjetivo, o pronome onde embute em sua semântica a preposição de lugar (no qual, em que). Logo, sua função sintática é prefixada:\nMorfologia: Pronome Relativo.\nSintaxe na oração adjetiva: Adjunto Adverbial de Lugar.\nLimite de uso\nNão deve ser empregado para antecedentes de natureza temporal (\"na época onde...\" $\\rightarrow$ incorreto; use em que / na qual) ou conceitual/abstrata (\"no texto onde...\" $\\rightarrow$ use em que / no qual).\nRelações\nDica: TIP-A07-G03-003\nExemplificado por: (Frase 2)"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA função sintática exercida pelo pronome relativo na oração subordinada adjetiva é totalmente independente e autônoma em relação à função sintática que seu antecedente exerce na oração principal.\nExplicação consolidada\nO antecedente pertence à Oração Principal (OP) e desempenha nela uma função sintática determinada pelo verbo da OP (ex.: Sujeito, Predicativo, Objeto).\nO pronome relativo pertence à Oração Subordinada Adjetiva e desempenha nela uma função sintática determinada pelo verbo da oração adjetiva.\nNão existe correspondência necessária entre as duas funções. Buscar a função do relativo analisando o verbo da oração principal constitui o erro metodológico denominado \"recaída sintática\".Procedimento validador:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAlgoritmo mecânico infalível estruturado em três etapas consecutivas para apurar a função sintática de qualquer pronome relativo sem incorrer em ambiguidades ou projeções indevidas da oração principal.\nAs Três Etapas Operacionais\nPasso 1: Isolar a Oração Adjetiva: Inserir barras divisórias (|) imediatamente antes do pronome relativo e no término da oração subordinada adjetiva. Destacar o bloco interno visualmente (marca-texto) para bloquear o foco na oração principal.\nPasso 2: Substituir o Relativo pelo Antecedente da OP: Identificar o substantivo retomado na oração principal e inseri-lo diretamente na oração adjetiva no lugar do pronome relativo.\nPasso 3: Colocar a Oração Adjetiva na Ordem Direta (S-V-C): Reorganizar os termos da oração adjetiva na sequência Canônica: $\\text{Sujeito} + \\text{Verbo} + \\text{Complementos/Adjuntos}$. Analisar a função sintática do substantivo substituído perante o verbo da oração adjetiva. Essa será exatamente a função sintática do pronome relativo.\nRelações\nProcedimento detalhado: \nExemplificado por:"
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-SUBST-SUBJ-01",
-          "title": "Regra do Sujeito Oracional",
-          "statement": "Toda vez que a Oração Principal for formada por [Verbo de Ligação + Predicativo], [Verbo Unipessoal na 3ª singular] ou [Voz Passiva], a Oração Subordinada Substantiva introduzida por conjunção integrante exercerá OBRIGATORIAMENTE a função de Sujeito (Oração Subordinada Substantiva Subjetiva).",
-          "formalCondition": "Matriz in {VL+Pred, Unipessoal, Voz_Passiva} -> Subordinada == Subjetiva.",
-          "scope": "Universal na sintaxe do período composto.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A07-G03-001",
+          "title": "Regras canônicas",
+          "statement": "Oração Subordinada Substantiva: Oração que equivale a um substantivo e aceita substituição integral por ISSO (KB-A07-G03-002).\nSujeito Oracional (Subjetiva): Ocorre com verbos na 3ª pessoa do singular (unipessoais, voz passiva ou VL + predicativo) em que a oração subordinada atua como sujeito (KB-A07-G03-003).\nRegra da Preposição no Objeto Indireto Oracional: Preposição estritamente facultativa antes de conjunção integrante em verbos transitivos indiretos (KB-A07-G03-004).\nRegra da Preposição na Completiva Nominal: Preposição estritamente obrigatória na complementação de substantivos, adjetivos ou advérbios (KB-A07-G03-005).\nOração Completiva (Sentido Amplo): Categoria de bancas examinadoras que abrange completivas verbais (OD/OI) e completivas nominais (KB-A07-G03-008).\nFunção Sintática Externa das Adjetivas: Toda oração subordinada adjetiva (restritiva ou explicativa) exerce a função sintática de Adjunto Adnominal (KB-A07-G03-009).\nOração Adjetiva Restritiva: Sem pontuação de isolamento; restringe e particulariza o universo do antecedente (KB-A07-G03-012).\nOração Adjetiva Explicativa: Isolada por vírgulas, travessões ou parênteses; generaliza e fornece dado acessório (KB-A07-G03-012).\nFunção Sintática do \"Onde\": Quando retoma lugar físico, atua invariavelmente como Adjunto Adverbial de Lugar (KB-A07-G03-014).\nRegra de Blindagem da Recaída Sintática: A função sintática do pronome relativo pertence à oração adjetiva; a função do antecedente pertence à oração principal (KB-A07-G03-015).",
+          "scope": "syntax",
+          "conditions": [
+            "Oração Subordinada Substantiva: Oração que equivale a um substantivo e aceita substituição integral por ISSO (KB-A07-G03-002).",
+            "Sujeito Oracional (Subjetiva): Ocorre com verbos na 3ª pessoa do singular (unipessoais, voz passiva ou VL + predicativo) em que a oração subordinada atua como sujeito (KB-A07-G03-003).",
+            "Regra da Preposição no Objeto Indireto Oracional: Preposição estritamente facultativa antes de conjunção integrante em verbos transitivos indiretos (KB-A07-G03-004).",
+            "Regra da Preposição na Completiva Nominal: Preposição estritamente obrigatória na complementação de substantivos, adjetivos ou advérbios (KB-A07-G03-005)."
+          ],
           "exceptions": [],
-          "examples": [
-            "É evidente que todos vencerão (Subjetiva).",
-            "Consta que o concurso sairá este mês (Subjetiva)."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A07-G03-001"
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-SUBST-01",
-          "title": "Algoritmo: Subjetiva vs Objetiva Direta",
-          "triggerCondition": "Distinguir se a oração substantiva é Subjetiva ou Objetiva Direta.",
+          "entityId": "PROC-A07-G03-001",
+          "title": "Procedimento do Teste do \"ISSO\" para Orações Substantivas",
           "steps": [
-            "1. Isole a oração subordinada iniciada pelo 'QUE' ou 'SE' e substitua-a pela palavra 'ISSO'.",
-            "2. Olhe para a Oração Principal restante: ELA TEM SUJEITO PRÓPRIO?",
-            "3. Se a oração principal JÁ TEM SUJEITO (ex: 'O professor [sujeito] disse [VTD] ISSO') -> A oração subordinada é OBJETIVA DIRETA.",
-            "4. Se a oração principal NÃO TEM SUJEITO (ex: 'É necessário ISSO' -> 'ISSO é necessário') -> A oração subordinada é SUBJETIVA."
+            {
+              "order": 1,
+              "action": "Localize a oração subordinada iniciada por que ou se.",
+              "explanation": "Passo 1 do algoritmo de Procedimento do Teste do \"ISSO\" para Orações Substantivas.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua o bloco oracional subordinado por ISSO (ou DISSO / NISSO).",
+              "explanation": "Passo 2 do algoritmo de Procedimento do Teste do \"ISSO\" para Orações Substantivas.",
+              "test": "Substitua o bloco oracional subordinado por ISSO (ou DISSO / NISSO)."
+            },
+            {
+              "order": 3,
+              "action": "Se a frase resultante mantiver correção gramatical e coerência, comprova-se",
+              "explanation": "Passo 3 do algoritmo de Procedimento do Teste do \"ISSO\" para Orações Substantivas.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "A oração é Subordinada Substantiva.",
+              "explanation": "Passo 4 do algoritmo de Procedimento do Teste do \"ISSO\" para Orações Substantivas.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O conectivo que/se é Conjunção Integrante.",
+              "explanation": "Passo 5 do algoritmo de Procedimento do Teste do \"ISSO\" para Orações Substantivas.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Identifique a função sintática de ISSO perante a oração principal para classificar a substantiva (Sujeito $\\rightarrow$ Subjetiva; Objeto Direto $\\rightarrow$ Objetiva Direta; etc.).",
+              "explanation": "Passo 6 do algoritmo de Procedimento do Teste do \"ISSO\" para Orações Substantivas.",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se a inversão 'ISSO + Verbo Principal' coloca o 'ISSO' como sujeito da frase.",
-          "typicalFailureModes": [
-            "Classificar 'que você venha' em 'É bom que você venha' como objeto direto."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento do Teste do \"ISSO\" para Orações Substantivas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento do Teste do \"ISSO\" para Orações Substantivas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Procedimento do Teste do \"ISSO\" para Orações Substantivas",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G03-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localize a oração subordinada iniciada por que ou se.",
+                "Substitua o bloco oracional subordinado por ISSO (ou DISSO / NISSO).",
+                "Se a frase resultante mantiver correção gramatical e coerência, comprova-se:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A oração é Subordinada Substantiva.",
+                "O conectivo que/se é Conjunção Integrante."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique a função sintática de ISSO perante a oração principal para classificar a substantiva (Sujeito $\\rightarrow$ Subjetiva; Objeto Direto $\\rightarrow$ Objetiva Direta; etc.)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G03-001",
+              "EXP-IP-A07-G03-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G03-002",
+          "title": "Teste do \"O QUAL / A QUAL\" para Pronome Relativo",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a palavra que conectiva.",
+              "explanation": "Passo 1 do algoritmo de Teste do \"O QUAL / A QUAL\" para Pronome Relativo.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identifique o substantivo ou pronome antecedente.",
+              "explanation": "Passo 2 do algoritmo de Teste do \"O QUAL / A QUAL\" para Pronome Relativo.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Substitua o que por o qual, a qual, os quais, as quais concordando com o antecedente.",
+              "explanation": "Passo 3 do algoritmo de Teste do \"O QUAL / A QUAL\" para Pronome Relativo.",
+              "test": "Substitua o que por o qual, a qual, os quais, as quais concordando com o antecedente."
+            },
+            {
+              "order": 4,
+              "action": "Se a substituição for perfeita e mantiver a recuperação anafórica, classifica-se",
+              "explanation": "Passo 4 do algoritmo de Teste do \"O QUAL / A QUAL\" para Pronome Relativo.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "A palavra que é Pronome Relativo.",
+              "explanation": "Passo 5 do algoritmo de Teste do \"O QUAL / A QUAL\" para Pronome Relativo.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "A oração introduzida é Subordinada Adjetiva.",
+              "explanation": "Passo 6 do algoritmo de Teste do \"O QUAL / A QUAL\" para Pronome Relativo.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do \"O QUAL / A QUAL\" para Pronome Relativo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do \"O QUAL / A QUAL\" para Pronome Relativo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste do \"O QUAL / A QUAL\" para Pronome Relativo",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G03-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localize a palavra que conectiva.",
+                "Identifique o substantivo ou pronome antecedente.",
+                "Substitua o que por o qual, a qual, os quais, as quais concordando com o antecedente.",
+                "Se a substituição for perfeita e mantiver a recuperação anafórica, classifica-se:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A palavra que é Pronome Relativo.",
+                "A oração introduzida é Subordinada Adjetiva."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G03-002",
+              "EXP-IP-A07-G03-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G03-003",
+          "title": "Teste de Supressão para Expressões e Partículas Expletivas/Realce",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique estruturas como é que, quase que ou que optativo/inicial.",
+              "explanation": "Passo 1 do algoritmo de Teste de Supressão para Expressões e Partículas Expletivas/Realce.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Suprima mentalmente o termo ou a locução inteira.",
+              "explanation": "Passo 2 do algoritmo de Teste de Supressão para Expressões e Partículas Expletivas/Realce.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se o período permanecer gramaticalmente perfeito, preservando seu núcleo informativo proposicional (perdendo apenas a ênfase estilística), classifica-se como Palavra/Expressão Expletiva ou de Realce.",
+              "explanation": "Passo 3 do algoritmo de Teste de Supressão para Expressões e Partículas Expletivas/Realce.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Supressão para Expressões e Partículas Expletivas/Realce."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Supressão para Expressões e Partículas Expletivas/Realce."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste de Supressão para Expressões e Partículas Expletivas/Realce",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G03-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique estruturas como é que, quase que ou que optativo/inicial.",
+                "Suprima mentalmente o termo ou a locução inteira.",
+                "Se o período permanecer gramaticalmente perfeito, preservando seu núcleo informativo proposicional (perdendo apenas a ênfase estilística), classifica-se como Palavra/Expressão Expletiva ou de Realce."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G03-003",
+              "EXP-IP-A07-G03-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G03-004",
+          "title": "Divisão de Períodos com Oração Adjetiva Intercalada (\"Efeito Grude\")",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Sublinhe todos os verbos e locuções verbais do período.",
+              "explanation": "Passo 1 do algoritmo de Divisão de Períodos com Oração Adjetiva Intercalada (\"Efeito Grude\").",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localize o pronome relativo acoplado ao substantivo da oração principal.",
+              "explanation": "Passo 2 do algoritmo de Divisão de Períodos com Oração Adjetiva Intercalada (\"Efeito Grude\").",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passe a primeira barra divisória ( ) antes do pronome relativo.",
+              "explanation": "Passo 3 do algoritmo de Divisão de Períodos com Oração Adjetiva Intercalada (\"Efeito Grude\").",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Localize o término do predicado da oração adjetiva e passe a segunda barra ( ).",
+              "explanation": "Passo 4 do algoritmo de Divisão de Períodos com Oração Adjetiva Intercalada (\"Efeito Grude\").",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Reúna a parte inicial e a parte final externa às barras",
+              "explanation": "essa estrutura contínua constitui a Oração Principal (OP).",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Divisão de Períodos com Oração Adjetiva Intercalada (\"Efeito Grude\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Divisão de Períodos com Oração Adjetiva Intercalada (\"Efeito Grude\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Divisão de Períodos com Oração Adjetiva Intercalada (\"Efeito Grude\")",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "derived",
+          "procedureId": "PROC-A07-G03-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sublinhe todos os verbos e locuções verbais do período.",
+                "Localize o pronome relativo acoplado ao substantivo da oração principal.",
+                "Passe a primeira barra divisória (|) antes do pronome relativo.",
+                "Localize o término do predicado da oração adjetiva e passe a segunda barra (|).",
+                "Reúna a parte inicial e a parte final externa às barras: essa estrutura contínua constitui a Oração Principal (OP)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G03-004",
+              "EXP-IP-A07-G03-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G03-005",
+          "title": "Algoritmo dos Três Passos para Funções Sintáticas dos Relativos",
+          "steps": [
+            {
+              "order": 1,
+              "action": "[Início: Período Composto com Pronome Relativo] [PASSO 1: ISOLAR A ORAÇÃO ADJETIVA] Inserir barra ( ) antes do pronome relativo e no fim da oração adjetiva",
+              "explanation": "Procedimento operacional para Algoritmo dos Três Passos para Funções Sintáticas dos Relativos.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Realçar com marca-texto (bloquear visualmente a Oração Principal)",
+              "explanation": "Procedimento operacional para Algoritmo dos Três Passos para Funções Sintáticas dos Relativos.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "[PASSO 2: SUBSTITUIR PELO ANTECEDENTE] Localizar o núcleo nominal antecedente na OP",
+              "explanation": "Procedimento operacional para Algoritmo dos Três Passos para Funções Sintáticas dos Relativos.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Reescrever a oração adjetiva inserindo o substantivo no lugar do pronome relativo",
+              "explanation": "Procedimento operacional para Algoritmo dos Três Passos para Funções Sintáticas dos Relativos.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo dos Três Passos para Funções Sintáticas dos Relativos."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo dos Três Passos para Funções Sintáticas dos Relativos."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Algoritmo dos Três Passos para Funções Sintáticas dos Relativos",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "derived",
+          "procedureId": "PROC-A07-G03-005",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "[Início: Período Composto com Pronome Relativo] │ ▼ [PASSO 1: ISOLAR A ORAÇÃO ADJETIVA] ├─ Inserir barra (|) antes do pronome relativo e no fim da oração adjetiva. └─ Realçar com marca-texto (bloquear visualmente a Oração Principal). │ ▼ [PASSO 2: SUBSTITUIR PELO ANTECEDENTE] ├─ Localizar o núcleo nominal antecedente na OP. └─ Reescrever a oração adjetiva inserindo o substantivo no lugar do pronome relativo. │ ▼ [PASSO 3: ORDEM DIRETA (S - V - C) E ANÁLISE] ├─ Organizar: Sujeito + Verbo + Complemento / Adjunto. ├─ Fazer a análise sintática do substantivo perante o verbo da oração adjetiva. └─ A função obtida É A FUNÇÃO SINTÁTICA DO PRONOME RELATIVO."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G03-005",
+              "EXP-IP-A07-G03-PROC-005"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-SUBST-01",
-          "conceptA": "É preciso que você venha (Subjetiva)",
-          "conceptB": "Quero que você venha (Objetiva Direta)",
-          "decisiveDifference": "Em 'É preciso que você venha', a matriz não tem sujeito (a oração inteira é o sujeito); em 'Quero que você venha', o sujeito de quero é 'Eu' oculto e a oração funciona como objeto direto.",
-          "minimalPair": {
-            "sentenceA": "Constatou-se [que o plano falhou]. (Subjetiva: 'que o plano falhou' é o sujeito de constatou-se)",
-            "sentenceB": "O perito constatou [que o plano falhou]. (Objetiva Direta: 'que o plano falhou' é o OD de constatou)",
-            "difference": "Sem sujeito na matriz (Subjetiva) vs Com sujeito explícito na matriz (Objetiva Direta)."
+          "entityId": "CONTRAST-IP-A07-G03-001",
+          "title": "1. Oração Substantiva Apositiva vs. Oração Adjetiva Explicativa",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Tem sujeito na matriz? Objetiva Direta. Não tem sujeito na matriz? Subjetiva.",
-          "pitfall": "Classificar passiva com 'se' como objeto direto."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "1. Oração Substantiva Apositiva vs. Oração Adjetiva Explicativa",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A07-G03-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G03-002",
+              "table": {
+                "tableId": "TABLE-IP-A07-G03-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério",
+                  "Oração Subordinada Substantiva Apositiva",
+                  "Oração Subordinada Adjetiva Explicativa"
+                ],
+                "rows": [
+                  [
+                    "Natureza Morfológica",
+                    "Valor de Substantivo.",
+                    "Valor de Adjetivo."
+                  ],
+                  [
+                    "Conectivo Introdutor",
+                    "Conjunção Integrante (que, se).",
+                    "Pronome Relativo (que, o qual, quem, cujo)."
+                  ],
+                  [
+                    "Teste de Substituição",
+                    "Troca por\"ISSO\" (\"Desejo isto: [isso]\").",
+                    "Troca por\"O QUAL / A QUAL\" (\"..., a qual é...\")."
+                  ],
+                  [
+                    "Função Sintática na OP",
+                    "Aposto (Aposto Oracional).",
+                    "Adjunto Adnominal."
+                  ],
+                  [
+                    "Pontuação",
+                    "Dois-pontos, travessão ou vírgula.",
+                    "Vírgulas, travessões ou parênteses."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A07-G03-001",
+              "EXP-IP-A07-G03-063"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A07-G03-002",
+          "title": "2. Objeto Indireto Oracional vs. Complemento Nominal Oracional",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "syntactic",
+          "conceptA": "2. Objeto Indireto Oracional vs. Complemento Nominal Oracional",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A07-G03-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G03-003",
+              "table": {
+                "tableId": "TABLE-IP-A07-G03-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério",
+                  "Objeto Indireto Oracional",
+                  "Complemento Nominal Oracional"
+                ],
+                "rows": [
+                  [
+                    "Elemento Regente",
+                    "VERBO Transitivo Indireto (VTI).",
+                    "NOME (Substantivo abstrato / Adjetivo)."
+                  ],
+                  [
+                    "Regime da Preposição",
+                    "FACULTATIVA antes da conjunção integrante.",
+                    "ESTRITAMENTE OBRIGATÓRIA."
+                  ],
+                  [
+                    "Exemplo Canônico",
+                    "\"Necessito [(de)] que me ajudem.\"",
+                    "\"Tenho necessidade [de que me ajudem].\""
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A07-G03-002",
+              "EXP-IP-A07-G03-064"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A07-G03-003",
+          "title": "3. Função do Pronome Relativo vs. Função do Antecedente na OP",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "morphological",
+          "conceptA": "3. Função do Pronome Relativo vs. Função do Antecedente na OP",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A07-G03-003",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G03-004",
+              "table": {
+                "tableId": "TABLE-IP-A07-G03-004",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Dimensão Sintática",
+                  "Termo Antecedente",
+                  "Pronome Relativo"
+                ],
+                "rows": [
+                  [
+                    "Localização Estrutural",
+                    "Pertence àOração Principal (OP).",
+                    "Pertence àOração Subordinada Adjetiva."
+                  ],
+                  [
+                    "Verbo Determinante",
+                    "Vinculado ao verbo da Oração Principal.",
+                    "Vinculado ao verbo da Oração Adjetiva."
+                  ],
+                  [
+                    "Independência",
+                    "Exemplo:\"As roupas (Sujeito) já estavam passadas\".",
+                    "Exemplo:\"[que (Objeto Direto)] ia vestir\"."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A07-G03-003",
+              "EXP-IP-A07-G03-065"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-SUBST-01",
-          "title": "Oração Subjetiva com Verbo Unipessoal 'Parecer'",
-          "sentence": "Parece que tudo vai se resolver.",
-          "analysis": "Oração Principal: 'Parece' (verbo unipessoal sem sujeito interno). Oração Subordinada: '[que tudo vai se resolver]' = ISSO. Ordem direta: 'ISSO parece'. Logo, a oração é Subordinada Substantiva Subjetiva.",
-          "pedagogicalTakeaway": "Verbos unipessoais constroem orações subjetivas.",
-          "targetLO": "LO-A07-G03-01"
+          "entityId": "WORKED_EXAMPLE-IP-A07-G03-001",
+          "title": "EX-A07-G03-001 — Bateria de Fixação: Orações Substantivas (V007)",
+          "statement": "Código: (1) Subjetiva | (2) Objetiva Direta | (3) Objetiva Indireta | (4) Completiva Nominal | (5) Predicativa | (6) Apositiva\n( 6 ) Reafirmo meu desejo: que todos tenham boa sorte. $\\rightarrow$ Explica o substantivo desejo: após dois-pontos = Apositiva.\n( 3 ) Lembrou-se de que a reunião fora adiada. $\\rightarrow$ Completa o VTI lembrou-se = Objetiva Indireta.\n( 1 ) É indispensável que todos entendam o problema. $\\rightarrow$ Ordem direta: \"Isso é indispensável\" (VL + Predicativo) = Subjetiva.\n( 4 ) Tenho a impressão de que mentiste para mim. $\\rightarrow$ Completa o substantivo impressão = Completiva Nominal.\n( 2 ) O pai esperava que o filho reagisse. $\\rightarrow$ Completa o VTD esperava (\"esperava isso\") = Objetiva Direta.\n( 5 ) O desejo da família era que se formasse logo. $\\rightarrow$ Sujeito expresso (O desejo) + VL (era) = Predicativa.\n( 1 ) Parece que a decisão foi justa. $\\rightarrow$ Verbo unipessoal inicial; ordem direta: \"Isso parece\" = Subjetiva.\n( 2 ) Peço a todos que não se atrasem. $\\rightarrow$ Verbo bitransitivo (pedir algo a alguém): a todos = OI; que não se atrasem = Objetiva Direta.",
+          "prompt": "Código: (1) Subjetiva | (2) Objetiva Direta | (3) Objetiva Indireta | (4) Completiva Nominal | (5) Predicativa | (6) Apositiva",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "( 6 ) Reafirmo meu desejo",
+              "rationale": "que todos tenham boa sorte. $\\rightarrow$ Explica o substantivo desejo: após dois-pontos = Apositiva."
+            },
+            {
+              "order": 2,
+              "action": "( 3 ) Lembrou-se de que a reunião fora adiada. $\\rightarrow$ Completa o VTI lembrou-se = Objetiva Indireta.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "( 1 ) É indispensável que todos entendam o problema. $\\rightarrow$ Ordem direta",
+              "rationale": "\"Isso é indispensável\" (VL + Predicativo) = Subjetiva."
+            },
+            {
+              "order": 4,
+              "action": "( 4 ) Tenho a impressão de que mentiste para mim. $\\rightarrow$ Completa o substantivo impressão = Completiva Nominal.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "( 2 ) O pai esperava que o filho reagisse. $\\rightarrow$ Completa o VTD esperava (\"esperava isso\") = Objetiva Direta.",
+              "rationale": null
+            }
+          ],
+          "result": "( 2 ) Peço a todos que não se atrasem. $\\rightarrow$ Verbo bitransitivo (pedir algo a alguém): a todos = OI; que não se atrasem = Objetiva Direta.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Código: (1) Subjetiva | (2) Objetiva Direta | (3) Objetiva Indireta | (4) Completiva Nominal | (5) Predicativa | (6) Apositiva\n( 6 ) Reafirmo meu desejo: que todos tenham boa sorte. $\\rightarrow$ Explica o substantivo desejo: após dois-pontos = Apositiva.\n( 3 ) Lembrou-se de que a reunião fora adiada. $\\rightarrow$ Completa o VTI lembrou-se = Objetiva Indireta.\n( 1 ) É indispensável que todos entendam o problema. $\\rightarrow$ Ordem direta: \"Isso é indispensável\" (VL + Predicativo) = Subjetiva.\n( 4 ) Tenho a impressão de que mentiste para mim. $\\rightarrow$ Completa o substantivo impressão = Completiva Nominal.\n( 2 ) O pai esperava que o filho reagisse. $\\rightarrow$ Completa o VTD esperava (\"esperava isso\") = Objetiva Direta.\n( 5 ) O desejo da família era que se formasse logo. $\\rightarrow$ Sujeito expresso (O desejo) + VL (era) = Predicativa.\n( 1 ) Parece que a decisão foi justa. $\\rightarrow$ Verbo unipessoal inicial; ordem direta: \"Isso parece\" = Subjetiva.\n( 2 ) Peço a todos que não se atrasem. $\\rightarrow$ Verbo bitransitivo (pedir algo a alguém): a todos = OI; que não se atrasem = Objetiva Direta.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G03-001 — Bateria de Fixação: Orações Substantivas (V007) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G03-001 — Bateria de Fixação: Orações Substantivas (V007).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G03-001 — Bateria de Fixação: Orações Substantivas (V007).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G03-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Código: (1) Subjetiva | (2) Objetiva Direta | (3) Objetiva Indireta | (4) Completiva Nominal | (5) Predicativa | (6) Apositiva"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "( 6 ) Reafirmo meu desejo: que todos tenham boa sorte. $\\rightarrow$ Explica o substantivo desejo: após dois-pontos = Apositiva.",
+                "( 3 ) Lembrou-se de que a reunião fora adiada. $\\rightarrow$ Completa o VTI lembrou-se = Objetiva Indireta.",
+                "( 1 ) É indispensável que todos entendam o problema. $\\rightarrow$ Ordem direta: \"Isso é indispensável\" (VL + Predicativo) = Subjetiva.",
+                "( 4 ) Tenho a impressão de que mentiste para mim. $\\rightarrow$ Completa o substantivo impressão = Completiva Nominal.",
+                "( 2 ) O pai esperava que o filho reagisse. $\\rightarrow$ Completa o VTD esperava (\"esperava isso\") = Objetiva Direta.",
+                "( 5 ) O desejo da família era que se formasse logo. $\\rightarrow$ Sujeito expresso (O desejo) + VL (era) = Predicativa.",
+                "( 1 ) Parece que a decisão foi justa. $\\rightarrow$ Verbo unipessoal inicial; ordem direta: \"Isso parece\" = Subjetiva.",
+                "( 2 ) Peço a todos que não se atrasem. $\\rightarrow$ Verbo bitransitivo (pedir algo a alguém): a todos = OI; que não se atrasem = Objetiva Direta."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G03-001",
+              "EXP-IP-A07-G03-066"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G03-002",
+          "title": "EX-A07-G03-002 — Questão CESPE – STM – Analista Judiciário (2017) (V007)",
+          "statement": "Texto: \"...pode decidir se o autor vai ser entendido ou não...\" (linhas 4-7).\nItem: A palavra “se” (l.5) classifica-se como conjunção e introduz uma oração completiva.\nResolução: A locução pode decidir é transitiva direta (\"decidir [isso]\"). A oração introduzida por se funciona como objeto direto oracional (completiva verbal). Como a banca Cebraspe emprega \"oração completiva\" em sentido amplo para abranger complementos verbais e nominais, o item é verdadeiro.\nGabarito: CERTO.",
+          "prompt": "Texto: \"...pode decidir se o autor vai ser entendido ou não...\" (linhas 4-7).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...pode decidir se o autor vai ser entendido ou não...\" (linhas 4-7)."
+            },
+            {
+              "order": 2,
+              "action": "Item",
+              "rationale": "A palavra “se” (l.5) classifica-se como conjunção e introduz uma oração completiva."
+            },
+            {
+              "order": 3,
+              "action": "Resolução",
+              "rationale": "A locução pode decidir é transitiva direta (\"decidir [isso]\"). A oração introduzida por se funciona como objeto direto oracional (completiva verbal). Como a banca Cebraspe emprega \"oração completiva\" em sentido amplo para abranger complementos verbais e nominais, o item é verdadeiro."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Texto: \"...pode decidir se o autor vai ser entendido ou não...\" (linhas 4-7).\nItem: A palavra “se” (l.5) classifica-se como conjunção e introduz uma oração completiva.\nResolução: A locução pode decidir é transitiva direta (\"decidir [isso]\"). A oração introduzida por se funciona como objeto direto oracional (completiva verbal). Como a banca Cebraspe emprega \"oração completiva\" em sentido amplo para abranger complementos verbais e nominais, o item é verdadeiro.\nGabarito: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G03-002 — Questão CESPE – STM – Analista Judiciário (2017) (V007) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G03-002 — Questão CESPE – STM – Analista Judiciário (2017) (V007).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G03-002 — Questão CESPE – STM – Analista Judiciário (2017) (V007).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G03-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Texto: \"...pode decidir se o autor vai ser entendido ou não...\" (linhas 4-7).",
+                "Item: A palavra “se” (l.5) classifica-se como conjunção e introduz uma oração completiva.",
+                "Resolução: A locução pode decidir é transitiva direta (\"decidir [isso]\"). A oração introduzida por se funciona como objeto direto oracional (completiva verbal). Como a banca Cebraspe emprega \"oração completiva\" em sentido amplo para abranger complementos verbais e nominais, o item é verdadeiro.",
+                "Gabarito: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G03-002",
+              "EXP-IP-A07-G03-067"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G03-003",
+          "title": "EX-A07-G03-003 — Bateria de Triagem Morfossintática do \"QUE\" (V008)",
+          "statement": "Q1 (VUNESP 2019 / Pref. São José dos Campos): \"Passou a receber somente as pessoas [que desejava receber]\" $\\rightarrow$ pessoas as quais $\\rightarrow$ Pronome Relativo (Gabarito: D).\nQ2 (VUNESP 2019 / Câm. Piracicaba): \"Ela tem uma sapucaia, [que produz um ouriço]...\" $\\rightarrow$ sapucaia a qual $\\rightarrow$ Pronome Relativo (Gabarito: A). (Nota: alternativa E continha tivemos que reduzir = Preposição Acidental).\nQ3 (VUNESP 2018 / Pref. Buritizal): \"Quase não havia cabelos brancos entre os poucos [que sobreviviam]\" $\\rightarrow$ poucos os quais $\\rightarrow$ Pronome Relativo retomando pronome substantivo indefinido poucos (Gabarito: C).\nQ4 (FCC 2019 / Pref. São José do Rio Preto): \"Os adolescentes [que namoram]...\" $\\rightarrow$ adolescentes os quais $\\rightarrow$ Pronome Relativo (Gabarito: A). (Nota: C = tanto... que consecutiva; D = contanto que condicional; E = Que realce).\nQ5 (FCC 2018 / SEGEP-MA): \"...tentando evitar [que os brancos as caçassem]\" $\\rightarrow$ evitar [isso] $\\rightarrow$ Conjunção Integrante (Gabarito: D).\nQ6 (INSTITUTO AOCP 2020 / Pref. Cariacica): \"Lembrei-me das cólicas [que minha cadela nunca teve]\" $\\rightarrow$ cólicas as quais $\\rightarrow$ Pronome Relativo anafórico (Gabarito: A).\nQ7 (FGV / CODEBA): Busca por sequência de Pronome Relativo + Conjunção Integrante: \"O otimista é um cara [que (1)] acredita [que (2)] o que está para acontecer...\" $\\rightarrow$ (1) cara o qual = Pronome Relativo; (2) acredita [isso] = Conjunção Integrante (Gabarito: E).",
+          "prompt": "Q1 (VUNESP 2019 / Pref. São José dos Campos): \"Passou a receber somente as pessoas [que desejava receber]\" $\\rightarrow$ pessoas as quais $\\rightarrow$ Pronome Relativo (Gabarito: D).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Q1 (VUNESP 2019 / Pref. São José dos Campos)",
+              "rationale": "\"Passou a receber somente as pessoas [que desejava receber]\" $\\rightarrow$ pessoas as quais $\\rightarrow$ Pronome Relativo (Gabarito: D)."
+            },
+            {
+              "order": 2,
+              "action": "Q2 (VUNESP 2019 / Câm. Piracicaba)",
+              "rationale": "\"Ela tem uma sapucaia, [que produz um ouriço]...\" $\\rightarrow$ sapucaia a qual $\\rightarrow$ Pronome Relativo (Gabarito: A). (Nota: alternativa E continha tivemos que reduzir = Preposição Acidental)."
+            },
+            {
+              "order": 3,
+              "action": "Q3 (VUNESP 2018 / Pref. Buritizal)",
+              "rationale": "\"Quase não havia cabelos brancos entre os poucos [que sobreviviam]\" $\\rightarrow$ poucos os quais $\\rightarrow$ Pronome Relativo retomando pronome substantivo indefinido poucos (Gabarito: C)."
+            },
+            {
+              "order": 4,
+              "action": "Q4 (FCC 2019 / Pref. São José do Rio Preto)",
+              "rationale": "\"Os adolescentes [que namoram]...\" $\\rightarrow$ adolescentes os quais $\\rightarrow$ Pronome Relativo (Gabarito: A). (Nota: C = tanto... que consecutiva; D = contanto que condicional; E = Que realce)."
+            },
+            {
+              "order": 5,
+              "action": "Q5 (FCC 2018 / SEGEP-MA)",
+              "rationale": "\"...tentando evitar [que os brancos as caçassem]\" $\\rightarrow$ evitar [isso] $\\rightarrow$ Conjunção Integrante (Gabarito: D)."
+            }
+          ],
+          "result": "Q7 (FGV / CODEBA): Busca por sequência de Pronome Relativo + Conjunção Integrante: \"O otimista é um cara [que (1)] acredita [que (2)] o que está para acontecer...\" $\\rightarrow$ (1) cara o qual = Pronome Relativo; (2) acredita [isso] = Conjunção Integrante (Gabarito: E).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Q1 (VUNESP 2019 / Pref. São José dos Campos): \"Passou a receber somente as pessoas [que desejava receber]\" $\\rightarrow$ pessoas as quais $\\rightarrow$ Pronome Relativo (Gabarito: D).\nQ2 (VUNESP 2019 / Câm. Piracicaba): \"Ela tem uma sapucaia, [que produz um ouriço]...\" $\\rightarrow$ sapucaia a qual $\\rightarrow$ Pronome Relativo (Gabarito: A). (Nota: alternativa E continha tivemos que reduzir = Preposição Acidental).\nQ3 (VUNESP 2018 / Pref. Buritizal): \"Quase não havia cabelos brancos entre os poucos [que sobreviviam]\" $\\rightarrow$ poucos os quais $\\rightarrow$ Pronome Relativo retomando pronome substantivo indefinido poucos (Gabarito: C).\nQ4 (FCC 2019 / Pref. São José do Rio Preto): \"Os adolescentes [que namoram]...\" $\\rightarrow$ adolescentes os quais $\\rightarrow$ Pronome Relativo (Gabarito: A). (Nota: C = tanto... que consecutiva; D = contanto que condicional; E = Que realce).\nQ5 (FCC 2018 / SEGEP-MA): \"...tentando evitar [que os brancos as caçassem]\" $\\rightarrow$ evitar [isso] $\\rightarrow$ Conjunção Integrante (Gabarito: D).\nQ6 (INSTITUTO AOCP 2020 / Pref. Cariacica): \"Lembrei-me das cólicas [que minha cadela nunca teve]\" $\\rightarrow$ cólicas as quais $\\rightarrow$ Pronome Relativo anafórico (Gabarito: A).\nQ7 (FGV / CODEBA): Busca por sequência de Pronome Relativo + Conjunção Integrante: \"O otimista é um cara [que (1)] acredita [que (2)] o que está para acontecer...\" $\\rightarrow$ (1) cara o qual = Pronome Relativo; (2) acredita [isso] = Conjunção Integrante (Gabarito: E).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G03-003 — Bateria de Triagem Morfossintática do \"QUE\" (V008) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G03-003 — Bateria de Triagem Morfossintática do \"QUE\" (V008).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G03-003 — Bateria de Triagem Morfossintática do \"QUE\" (V008).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G03-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Q1 (VUNESP 2019 / Pref. São José dos Campos): \"Passou a receber somente as pessoas [que desejava receber]\" $\\rightarrow$ pessoas as quais $\\rightarrow$ Pronome Relativo (Gabarito: D).",
+                "Q2 (VUNESP 2019 / Câm. Piracicaba): \"Ela tem uma sapucaia, [que produz um ouriço]...\" $\\rightarrow$ sapucaia a qual $\\rightarrow$ Pronome Relativo (Gabarito: A). (Nota: alternativa E continha tivemos que reduzir = Preposição Acidental).",
+                "Q3 (VUNESP 2018 / Pref. Buritizal): \"Quase não havia cabelos brancos entre os poucos [que sobreviviam]\" $\\rightarrow$ poucos os quais $\\rightarrow$ Pronome Relativo retomando pronome substantivo indefinido poucos (Gabarito: C).",
+                "Q4 (FCC 2019 / Pref. São José do Rio Preto): \"Os adolescentes [que namoram]...\" $\\rightarrow$ adolescentes os quais $\\rightarrow$ Pronome Relativo (Gabarito: A). (Nota: C = tanto... que consecutiva; D = contanto que condicional; E = Que realce).",
+                "Q5 (FCC 2018 / SEGEP-MA): \"...tentando evitar [que os brancos as caçassem]\" $\\rightarrow$ evitar [isso] $\\rightarrow$ Conjunção Integrante (Gabarito: D).",
+                "Q6 (INSTITUTO AOCP 2020 / Pref. Cariacica): \"Lembrei-me das cólicas [que minha cadela nunca teve]\" $\\rightarrow$ cólicas as quais $\\rightarrow$ Pronome Relativo anafórico (Gabarito: A).",
+                "Q7 (FGV / CODEBA): Busca por sequência de Pronome Relativo + Conjunção Integrante: \"O otimista é um cara [que (1)] acredita [que (2)] o que está para acontecer...\" $\\rightarrow$ (1) cara o qual = Pronome Relativo; (2) acredita [isso] = Conjunção Integrante (Gabarito: E)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G03-003",
+              "EXP-IP-A07-G03-068"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G03-004",
+          "title": "EX-A07-G03-004 — Bateria de Orações Adjetivas e Pontuação (V009)",
+          "statement": "Q8 (VUNESP 2018 / Câm. Itaquaquecetuba): \"...abacate era uma fruta gordurosa, [que engordava]\" $\\rightarrow$ Adjetiva explicativa com vírgula, explicitando a visão anterior depreciativa (Gabarito: D).\nQ9 (INSTITUTO AOCP / UFSM): \"A pesquisadora Ana Claudia Latronico, [que atua na área...]...\" $\\rightarrow$ Entre vírgulas = Adjetiva Explicativa (Gabarito: D).\nQ10 (INSTITUTO AOCP 2020 / Pref. Novo Hamburgo): \"[...] uma comunidade [em que as pessoas se sentem agradecidas]...\" $\\rightarrow$ Sem vírgulas = Adjetiva Restritiva (Gabarito: B).\nQ11 (INSTITUTO AOCP 2019 / Pref. Vitória): \"...programa 'Hospital Beds', [que construiu canteiros]...\" $\\rightarrow$ Com vírgula = Adjetiva Explicativa (Gabarito: D).\nQ12 (INSTITUTO AOCP / Pref. Juiz de Fora): \"...uma série de informações [que antes não tinha]\" $\\rightarrow$ Sem vírgulas = Adjetiva Restritiva (Gabarito: C).\nQ13 (INSTITUTO AOCP / Pref. Paranavaí): \"A primeira coisa [que chamou minha atenção]...\" $\\rightarrow$ Adjetiva Restritiva com função de Adjunto Adnominal (Gabarito: D).\nQ14 (INSTITUTO AOCP 2019 / SEECT-PB): \"[...] um adulto [com quem mantenham uma relação]...\" $\\rightarrow$ Relativo quem preposicionado, sem vírgulas = Adjetiva Restritiva (Gabarito: C).\nQ15 (INSTITUTO EXCELÊNCIA 2018 / Pref. São Luís do Paraitinga): \"A menina, [cuja mãe é professora], passou...\" $\\rightarrow$ Relativo cuja entre vírgulas = Adjetiva Explicativa (Gabarito: B).\nQ16 (INSTITUTO AOCP 2019 / UFRB): \"Mariana — [cuja barragem pertencia à Samarco] — deveria ter servido...\" $\\rightarrow$ Relativo cuja isolado por travessões = Adjetiva Explicativa (Gabarito: C).",
+          "prompt": "Q8 (VUNESP 2018 / Câm. Itaquaquecetuba): \"...abacate era uma fruta gordurosa, [que engordava]\" $\\rightarrow$ Adjetiva explicativa com vírgula, explicitando a visão anterior depreciativa (Gabarito: D).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Q8 (VUNESP 2018 / Câm. Itaquaquecetuba)",
+              "rationale": "\"...abacate era uma fruta gordurosa, [que engordava]\" $\\rightarrow$ Adjetiva explicativa com vírgula, explicitando a visão anterior depreciativa (Gabarito: D)."
+            },
+            {
+              "order": 2,
+              "action": "Q9 (INSTITUTO AOCP / UFSM)",
+              "rationale": "\"A pesquisadora Ana Claudia Latronico, [que atua na área...]...\" $\\rightarrow$ Entre vírgulas = Adjetiva Explicativa (Gabarito: D)."
+            },
+            {
+              "order": 3,
+              "action": "Q10 (INSTITUTO AOCP 2020 / Pref. Novo Hamburgo)",
+              "rationale": "\"[...] uma comunidade [em que as pessoas se sentem agradecidas]...\" $\\rightarrow$ Sem vírgulas = Adjetiva Restritiva (Gabarito: B)."
+            },
+            {
+              "order": 4,
+              "action": "Q11 (INSTITUTO AOCP 2019 / Pref. Vitória)",
+              "rationale": "\"...programa 'Hospital Beds', [que construiu canteiros]...\" $\\rightarrow$ Com vírgula = Adjetiva Explicativa (Gabarito: D)."
+            },
+            {
+              "order": 5,
+              "action": "Q12 (INSTITUTO AOCP / Pref. Juiz de Fora)",
+              "rationale": "\"...uma série de informações [que antes não tinha]\" $\\rightarrow$ Sem vírgulas = Adjetiva Restritiva (Gabarito: C)."
+            }
+          ],
+          "result": "Q16 (INSTITUTO AOCP 2019 / UFRB): \"Mariana — [cuja barragem pertencia à Samarco] — deveria ter servido...\" $\\rightarrow$ Relativo cuja isolado por travessões = Adjetiva Explicativa (Gabarito: C).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Q8 (VUNESP 2018 / Câm. Itaquaquecetuba): \"...abacate era uma fruta gordurosa, [que engordava]\" $\\rightarrow$ Adjetiva explicativa com vírgula, explicitando a visão anterior depreciativa (Gabarito: D).\nQ9 (INSTITUTO AOCP / UFSM): \"A pesquisadora Ana Claudia Latronico, [que atua na área...]...\" $\\rightarrow$ Entre vírgulas = Adjetiva Explicativa (Gabarito: D).\nQ10 (INSTITUTO AOCP 2020 / Pref. Novo Hamburgo): \"[...] uma comunidade [em que as pessoas se sentem agradecidas]...\" $\\rightarrow$ Sem vírgulas = Adjetiva Restritiva (Gabarito: B).\nQ11 (INSTITUTO AOCP 2019 / Pref. Vitória): \"...programa 'Hospital Beds', [que construiu canteiros]...\" $\\rightarrow$ Com vírgula = Adjetiva Explicativa (Gabarito: D).\nQ12 (INSTITUTO AOCP / Pref. Juiz de Fora): \"...uma série de informações [que antes não tinha]\" $\\rightarrow$ Sem vírgulas = Adjetiva Restritiva (Gabarito: C).\nQ13 (INSTITUTO AOCP / Pref. Paranavaí): \"A primeira coisa [que chamou minha atenção]...\" $\\rightarrow$ Adjetiva Restritiva com função de Adjunto Adnominal (Gabarito: D).\nQ14 (INSTITUTO AOCP 2019 / SEECT-PB): \"[...] um adulto [com quem mantenham uma relação]...\" $\\rightarrow$ Relativo quem preposicionado, sem vírgulas = Adjetiva Restritiva (Gabarito: C).\nQ15 (INSTITUTO EXCELÊNCIA 2018 / Pref. São Luís do Paraitinga): \"A menina, [cuja mãe é professora], passou...\" $\\rightarrow$ Relativo cuja entre vírgulas = Adjetiva Explicativa (Gabarito: B).\nQ16 (INSTITUTO AOCP 2019 / UFRB): \"Mariana — [cuja barragem pertencia à Samarco] — deveria ter servido...\" $\\rightarrow$ Relativo cuja isolado por travessões = Adjetiva Explicativa (Gabarito: C).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G03-004 — Bateria de Orações Adjetivas e Pontuação (V009) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G03-004 — Bateria de Orações Adjetivas e Pontuação (V009).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G03-004 — Bateria de Orações Adjetivas e Pontuação (V009).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G03-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Q8 (VUNESP 2018 / Câm. Itaquaquecetuba): \"...abacate era uma fruta gordurosa, [que engordava]\" $\\rightarrow$ Adjetiva explicativa com vírgula, explicitando a visão anterior depreciativa (Gabarito: D).",
+                "Q9 (INSTITUTO AOCP / UFSM): \"A pesquisadora Ana Claudia Latronico, [que atua na área...]...\" $\\rightarrow$ Entre vírgulas = Adjetiva Explicativa (Gabarito: D).",
+                "Q10 (INSTITUTO AOCP 2020 / Pref. Novo Hamburgo): \"[...] uma comunidade [em que as pessoas se sentem agradecidas]...\" $\\rightarrow$ Sem vírgulas = Adjetiva Restritiva (Gabarito: B).",
+                "Q11 (INSTITUTO AOCP 2019 / Pref. Vitória): \"...programa 'Hospital Beds', [que construiu canteiros]...\" $\\rightarrow$ Com vírgula = Adjetiva Explicativa (Gabarito: D).",
+                "Q12 (INSTITUTO AOCP / Pref. Juiz de Fora): \"...uma série de informações [que antes não tinha]\" $\\rightarrow$ Sem vírgulas = Adjetiva Restritiva (Gabarito: C).",
+                "Q13 (INSTITUTO AOCP / Pref. Paranavaí): \"A primeira coisa [que chamou minha atenção]...\" $\\rightarrow$ Adjetiva Restritiva com função de Adjunto Adnominal (Gabarito: D).",
+                "Q14 (INSTITUTO AOCP 2019 / SEECT-PB): \"[...] um adulto [com quem mantenham uma relação]...\" $\\rightarrow$ Relativo quem preposicionado, sem vírgulas = Adjetiva Restritiva (Gabarito: C).",
+                "Q15 (INSTITUTO EXCELÊNCIA 2018 / Pref. São Luís do Paraitinga): \"A menina, [cuja mãe é professora], passou...\" $\\rightarrow$ Relativo cuja entre vírgulas = Adjetiva Explicativa (Gabarito: B).",
+                "Q16 (INSTITUTO AOCP 2019 / UFRB): \"Mariana — [cuja barragem pertencia à Samarco] — deveria ter servido...\" $\\rightarrow$ Relativo cuja isolado por travessões = Adjetiva Explicativa (Gabarito: C)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G03-004",
+              "EXP-IP-A07-G03-069"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G03-005",
+          "title": "EX-A07-G03-005 — Aplicação do Método dos 3 Passos nas Funções Sintáticas dos Relativos (V010)",
+          "statement": "Frase 1: \"As pessoas que a gente ama deviam morrer com todas as suas coisas.\"\nPasso 1 (Isolar): As pessoas | [que a gente ama] | deviam morrer... $\\rightarrow$ Oração Adjetiva Restritiva.\nPasso 2 (Substituir): Antecedente = pessoas $\\rightarrow$ pessoas a gente ama.\nPasso 3 (Ordem Direta): A gente (Sujeito) ama (VTD) pessoas (Objeto Direto).\nConclusão: O pronome que é Objeto Direto.\nFrase 2: \"Aquele era o lugar onde as pessoas tomavam chá.\"\nPasso 1 (Isolar): Aquele era o lugar | [onde as pessoas tomavam chá]. $\\rightarrow$ Oração Adjetiva Restritiva.\nPasso 2 (Substituir): onde = no lugar.\nPasso 3 (Ordem Direta): As pessoas (Sujeito) tomavam (VTD) chá (OD) no lugar (Adjunto Adverbial de Lugar).\nConclusão: O pronome onde é Adjunto Adverbial de Lugar.\nFrase 3: \"As roupas que ia vestir já estavam passadas.\"\nPasso 1 (Isolar): As roupas | [que ia vestir] | já estavam passadas. $\\rightarrow$ Oração Adjetiva Restritiva Intercalada.\nPasso 2 (Substituir): Antecedente = roupas $\\rightarrow$ roupas ia vestir.\nPasso 3 (Ordem Direta): [Eu/Ele] (Sujeito elíptico) ia vestir (Locução VTD) as roupas (Objeto Direto).\nConclusão: O pronome que é Objeto Direto.",
+          "prompt": "Frase 1: \"As pessoas que a gente ama deviam morrer com todas as suas coisas.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase 1",
+              "rationale": "\"As pessoas que a gente ama deviam morrer com todas as suas coisas.\""
+            },
+            {
+              "order": 2,
+              "action": "Passo 1 (Isolar)",
+              "rationale": "As pessoas | [que a gente ama] | deviam morrer... $\\rightarrow$ Oração Adjetiva Restritiva."
+            },
+            {
+              "order": 3,
+              "action": "Passo 2 (Substituir)",
+              "rationale": "Antecedente = pessoas $\\rightarrow$ pessoas a gente ama."
+            },
+            {
+              "order": 4,
+              "action": "Passo 3 (Ordem Direta)",
+              "rationale": "A gente (Sujeito) ama (VTD) pessoas (Objeto Direto)."
+            },
+            {
+              "order": 5,
+              "action": "Conclusão",
+              "rationale": "O pronome que é Objeto Direto."
+            }
+          ],
+          "result": "Conclusão: O pronome que é Objeto Direto.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase 1: \"As pessoas que a gente ama deviam morrer com todas as suas coisas.\"\nPasso 1 (Isolar): As pessoas | [que a gente ama] | deviam morrer... $\\rightarrow$ Oração Adjetiva Restritiva.\nPasso 2 (Substituir): Antecedente = pessoas $\\rightarrow$ pessoas a gente ama.\nPasso 3 (Ordem Direta): A gente (Sujeito) ama (VTD) pessoas (Objeto Direto).\nConclusão: O pronome que é Objeto Direto.\nFrase 2: \"Aquele era o lugar onde as pessoas tomavam chá.\"\nPasso 1 (Isolar): Aquele era o lugar | [onde as pessoas tomavam chá]. $\\rightarrow$ Oração Adjetiva Restritiva.\nPasso 2 (Substituir): onde = no lugar.\nPasso 3 (Ordem Direta): As pessoas (Sujeito) tomavam (VTD) chá (OD) no lugar (Adjunto Adverbial de Lugar).\nConclusão: O pronome onde é Adjunto Adverbial de Lugar.\nFrase 3: \"As roupas que ia vestir já estavam passadas.\"\nPasso 1 (Isolar): As roupas | [que ia vestir] | já estavam passadas. $\\rightarrow$ Oração Adjetiva Restritiva Intercalada.\nPasso 2 (Substituir): Antecedente = roupas $\\rightarrow$ roupas ia vestir.\nPasso 3 (Ordem Direta): [Eu/Ele] (Sujeito elíptico) ia vestir (Locução VTD) as roupas (Objeto Direto).\nConclusão: O pronome que é Objeto Direto.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G03-005 — Aplicação do Método dos 3 Passos nas Funções Sintáticas dos Relativos (V010) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G03-005 — Aplicação do Método dos 3 Passos nas Funções Sintáticas dos Relativos (V010).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G03-005 — Aplicação do Método dos 3 Passos nas Funções Sintáticas dos Relativos (V010).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G03-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Frase 1: \"As pessoas que a gente ama deviam morrer com todas as suas coisas.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Passo 1 (Isolar): As pessoas | [que a gente ama] | deviam morrer... $\\rightarrow$ Oração Adjetiva Restritiva.",
+                "Passo 2 (Substituir): Antecedente = pessoas $\\rightarrow$ pessoas a gente ama.",
+                "Passo 3 (Ordem Direta): A gente (Sujeito) ama (VTD) pessoas (Objeto Direto).",
+                "Conclusão: O pronome que é Objeto Direto."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Frase 2: \"Aquele era o lugar onde as pessoas tomavam chá.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Passo 1 (Isolar): Aquele era o lugar | [onde as pessoas tomavam chá]. $\\rightarrow$ Oração Adjetiva Restritiva.",
+                "Passo 2 (Substituir): onde = no lugar.",
+                "Passo 3 (Ordem Direta): As pessoas (Sujeito) tomavam (VTD) chá (OD) no lugar (Adjunto Adverbial de Lugar).",
+                "Conclusão: O pronome onde é Adjunto Adverbial de Lugar."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Frase 3: \"As roupas que ia vestir já estavam passadas.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Passo 1 (Isolar): As roupas | [que ia vestir] | já estavam passadas. $\\rightarrow$ Oração Adjetiva Restritiva Intercalada.",
+                "Passo 2 (Substituir): Antecedente = roupas $\\rightarrow$ roupas ia vestir.",
+                "Passo 3 (Ordem Direta): [Eu/Ele] (Sujeito elíptico) ia vestir (Locução VTD) as roupas (Objeto Direto).",
+                "Conclusão: O pronome que é Objeto Direto."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G03-005",
+              "EXP-IP-A07-G03-070"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -158,51 +1471,271 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-SUBST-01",
-          "title": "Quem Não Tem Sujeito Pede a Subjetiva!",
-          "content": "A Oração Principal tá sem sujeito? A Subordinada corre para virar o SUJEITO dela! Virou Subjetiva com certeza!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Identificação de orações substantivas subjetivas.",
-          "limitations": "Verifique se a oração pode ser substituída por ISSO.",
-          "text": "Se a oração matriz não tem sujeito, a oração substantiva é subjetiva."
+          "title": "Mantra de Fixação: Subordinadas Substantivas e Adjetivas",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Subordinadas Substantivas e Adjetivas, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Subordinadas Substantivas e Adjetivas, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-SUBST-01",
-          "title": "A Confusão em 'Sabe-se que...'",
-          "trigger": "Frases com verbo na voz passiva sintética seguida de conjunção integrante.",
-          "whyItFails": "O aluno vê o verbo 'saber' (VTD) e acha que a oração subordinada é objeto direto.",
-          "correctApproach": "Como há a partícula apassivadora 'SE' em 'Sabe-se', o verbo está na voz passiva e NÃO PODE TER OBJETO DIRETO. A oração 'que a prova foi adiada' é o SUJEITO PACIENTE (Oração Subordinada Substantiva Subjetiva = 'ISSO é sabido').",
-          "bankTechnique": "Perguntar a função da oração em 'Comentou-se que haveria greve'.",
-          "counterRule": "VTD + SE gera Oração Subordinada Substantiva Subjetiva."
+          "entityId": "WARN-A07-G03-001",
+          "title": "Preposição Facultativa é Exclusividade do Objeto Indireto Oracional",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Preposição Facultativa é Exclusividade do Objeto Indireto Oracional.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Preposição Facultativa é Exclusividade do Objeto Indireto Oracional.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Preposição Facultativa é Exclusividade do Objeto Indireto Oracional no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Preposição Facultativa é Exclusividade do Objeto Indireto Oracional.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Preposição Facultativa é Exclusividade do Objeto Indireto Oracional.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Preposição Facultativa é Exclusividade do Objeto Indireto Oracional para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Preposição Facultativa é Exclusividade do Objeto Indireto Oracional.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Preposição Facultativa é Exclusividade do Objeto Indireto Oracional.",
+          "trapId": "WARN-A07-G03-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinha: A banca afirma que a preposição de um objeto indireto nominal simples pode ser suprimida, ou que a preposição de uma oração completiva nominal é facultativa.",
+                "Regra Corrigida: A preposição é facultativa unicamente no Objeto Indireto Oracional. No objeto indireto simples (\"Necessito de ajuda\") e em todas as completivas nominais (\"Certeza de que...\"), a preposição é estritamente obrigatória."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G03-001",
+              "EXP-IP-A07-G03-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G03-002",
+          "title": "A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe.",
+          "trapId": "WARN-A07-G03-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinha: O candidato lê que determinada oração é \"completiva\" e julga o item errado por entender que o termo se restringe a \"completiva nominal\", quando a oração analisada é objeto direto.",
+                "Regra Corrigida: Para o Cebraspe, \"completiva\" é gênero que abrange completivas verbais (OD/OI oracionais) e completivas nominais."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G03-002",
+              "EXP-IP-A07-G03-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G03-003",
+          "title": "A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A \"Recaída Sintática\": Analisar o Antecedente na Oração Principal.",
+          "trapId": "WARN-A07-G03-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinha: O candidato identifica que o relativo que retoma as roupas em \"As roupas que ia vestir já estavam passadas\", constata que as roupas é sujeito de estavam passadas na OP e conclui erroneamente que o pronome que é sujeito.",
+                "Regra Corrigida: O pronome relativo exerce a função que o termo teria dentro da oração adjetiva (ia vestir as roupas $\\rightarrow$ Objeto Direto). Antecedente e relativo possuem funções sintáticas independentes."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G03-003",
+              "EXP-IP-A07-G03-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G03-004",
+          "title": "Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva.",
+          "trapId": "WARN-A07-G03-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinha: Supor que toda oração entre vírgulas ou com valor explicativo seja aposto.",
+                "Regra Corrigida: Se for encabeçada por pronome relativo (o qual), é Oração Adjetiva Explicativa (com função sintática de Adjunto Adnominal). Se for encabeçada por conjunção integrante (isso), é Oração Substantiva Apositiva (com função de Aposto)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G03-004",
+              "EXP-IP-A07-G03-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G03-005",
+          "title": "Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV)",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV).",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV).",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV).",
+          "trapId": "WARN-A07-G03-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinhas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "A banca destaca apenas o que em locuções de realce como \"Quando é que vou poder...\" para induzir a busca de referente. (Solução: teste de supressão de é que).",
+                "A banca exige sequência \"respectivamente Pronome Relativo e Conjunção Integrante\" e insere a ordem inversa na alternativa A. (Solução: checagem rigorosa do comando ordenador)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G03-005",
+              "EXP-IP-A07-G03-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G03-006",
+          "title": "Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas.",
+          "trapId": "WARN-A07-G03-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinha: O item afirma que a colocação ou retirada de vírgulas em uma oração adjetiva altera a sua função sintática.",
+                "Regra Corrigida: A função sintática permanece rigorosamente a mesma (Adjunto Adnominal). A mudança ocorre exclusivamente na semântica (de restrição para explicação ou vice-versa)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G03-006",
+              "EXP-IP-A07-G03-TRAP-006"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Oração Substantiva Subjetiva",
-          "shortDefinition": "Oração subordinada que exerce a função sintática de sujeito do verbo da oração principal.",
-          "fullDefinition": "Proposição encaixada que atua como o sujeito oracional de uma matriz desprovida de núcleo nominal próprio, respondendo à pergunta 'O que é que [verbo da matriz]?' mediante a fórmula 'ISSO [verbo da matriz]'.",
-          "domain": "Sintaxe do Período Composto",
-          "commonMisconception": "Pensar que o sujeito de uma oração só pode ser uma palavra isolada."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Divisão Geral do Período Composto por Subordinação**: Definição ou ideia central\nNo sistema da Língua Portuguesa, as orações subordinadas dependem sintática e funcionalmente de uma oração principal, estruturando-se em três grandes grupos funcionais: Substantivas, Adverbiais e Adjetivas.\nExplicação consolidada\nA diferenciação entre os três grupos apoia-se no papel morfossintático assumido pela oração subordinada em relação à oração principal:\nSubstantivas: Exercem funções sintáticas típicas de um substantivo (sujeito, objeto direto, objeto indireto, complemento nominal, predicativo ou aposto). Podem ser integralmente substituídas pelo pronome demonstrativo neutro ISSO.\nAdverbiais: Expressam circunstâncias adverbiais modificadoras do predicado da oração principal. São divididas em 9 circunstâncias mnemônicas agrupadas na fórmula 6 Cs + FTP (Causal, Comparativa, Concessiva, Condicional, Conformativa, Consecutiva, Final, Temporal e Proporcional).\nAdjetivas: Exercem função qualificadora ou delimitadora equivalente a um adjetivo. Quando desenvolvidas, são introduzidas por um pronome relativo (que, quem, cujo, onde, o qual, etc.) e exercem invariavelmente o papel de adjunto adnominal do substantivo antecedente.\nCritérios de reconhecimento\nTroca por ISSO $\\rightarrow$ Oração Substantiva (introduzida por conjunção integrante).\nTroca por o qual / a qual $\\rightarrow$ Oração Adjetiva (introduzida por pronome relativo).\nValor circunstancial adverbial $\\rightarrow$ Oração Adverbial (introduzida por conjunção subordinativa adverbial).\nRelações\nExpande-se em: , \nEvidenciado visualmente por: VIS-A07-G03-001",
+            "**Conceito e Teste Operacional das Orações Subordinadas Substantivas**: Definição ou ideia central\nA oração subordinada substantiva desempenha papel reservado a um núcleo substantivo perante a oração principal, sendo introduzida primariamente por conjunções integrantes (que, se). O teste diagnóstico definitivo consiste na substituição integral da oração subordinada pelo pronome ISSO (ou formas preposicionadas DISSO / NISSO).\nExplicação consolidada\nAo isolar a oração introduzida por que ou se e substituí-la por isso, se o período mantiver integridade de sentido e gramaticalidade, comprova-se o valor substantivo da oração subordinada e a classificação do conectivo como conjunção integrante. A função sintática específica do pronome isso em relação à oração principal definirá a classificação da oração subordinada substantiva entre as 6 categorias normativas.\nExemplos e contraexemplos\n\"Sei [que serei aprovado]\" $\\rightarrow$ \"Sei [isso]\" (Objeto Direto $\\rightarrow$ Substantiva Objetiva Direta).\n\"Não quero [que você venha]\" $\\rightarrow$ \"Não quero [isso]\" (Objeto Direto $\\rightarrow$ Substantiva Objetiva Direta).\nContraexemplo: \"O homem [que trabalha]...\" $\\rightarrow$ \"O homem [isso]...\" (Sentido truncado $\\rightarrow$ Não é substantiva; trata-se de adjetiva: \"o homem [o qual] trabalha\").\nRelações\nProcedimento associado: \nDica: TIP-A07-G03-001",
+            "**Oração Subordinada Substantiva Subjetiva (Sujeito Oracional)**: Definição ou ideia central\nA oração subordinada substantiva subjetiva funciona como o sujeito sintático da oração principal (sujeito oracional). A oração principal não possui sujeito próprio anteposto ou interno e articula-se obrigatoriamente na 3ª pessoa do singular.\nExplicação consolidada\nIdentificam-se três matrizes estruturais típicas na oração principal que exigem sujeito oracional:\nVerbos Unipessoais na 3ª pessoa do singular: Verbos como urgir, convir, cumprir, importar, parecer, acontecer, seguidos de conectivo integrante ou infinitivo (\"Urge que você chegue\" $\\rightarrow$ \"Isso urge\").\nVoz Passiva Sintética ou Analítica: Estruturas com pronome apassivador se ou verbo auxiliar ser/estar (\"Sabe-se que ela mentiu\" $\\rightarrow$ \"Isso é sabido\"; \"Diz-se que...\" $\\rightarrow$ \"Isso é dito\").\nVerbo de Ligação + Predicativo do Sujeito: Construções formadas por verbo de ligação acompanhado de predicativo sem sujeito anteposto (\"Está claro que ela mentiu\" $\\rightarrow$ \"Isso está claro\").\nCritérios de reconhecimento e validação\nLocaliza-se o verbo da oração principal.\nAplica-se a pergunta de identificação de sujeito: \"O que é que [verbo]?\".\nSubstitui-se a oração por ISSO e monta-se a ordem direta: $\\text{ISSO (Sujeito)} + \\text{Verbo} + \\text{Complemento / Predicativo}$.\nRelações\nContrasta com: (Predicativa)\nDica: TIP-A07-G03-004\nExemplificado por: (itens 3 e 7)",
+            "**Orações Subordinadas Substantivas Objetivas e a Regra da Preposição Facultativa**: Definição ou ideia central\nAs orações objetivas integram o sentido de verbos transitivos da oração principal:\nObjetiva Direta (Objeto Direto Oracional): Complementa verbo transitivo direto (VTD) sem preposição.\nObjetiva Indireta (Objeto Indireto Oracional): Complementa verbo transitivo indireto (VTI). Apresenta a regra normativa especial de facultatividade da preposição regencial.\nExplicação consolidada\nObjetiva Direta: Liga-se diretamente ao verbo transitivo direto (\"Espero [que ela volte logo]\" $\\rightarrow$ \"Espero isso\").\nObjetiva Indireta e a Regra da Preposição Facultativa: Quando o complemento de um VTI é um substantivo simples, a preposição é obrigatória (\"Necessito de ajuda\"). Porém, quando o complemento assume formato oracional, a norma culta consagrada em bancas examinadoras estabelece que a preposição regencial antes da conjunção integrante torna-se facultativa:\n\\text{\"Necessito de que me ajudem\"} \\iff \\text{\"Necessito que me ajudem\"}\nA supressão da preposição em objetos indiretos oracionais não acarreta incorreção gramatical.\nAlertas e pegadinhas\nA facultatividade da preposição é exclusiva do objeto indireto oracional. Não se aplica ao objeto indireto nominal simples nem a orações completivas nominais.Exemplificado por: (itens 2, 5 e 8)",
+            "**Oração Subordinada Substantiva Completiva Nominal vs. Objetiva Indireta**: Definição ou ideia central\nA oração completiva nominal completa o sentido de um nome (substantivo abstrato, adjetivo ou advérbio cognato) da oração principal que exige complemento preposicionado. Sua preposição introdutória é estritamente obrigatória.\nDistinção crítica\nA fronteira entre a Completiva Nominal e a Objetiva Indireta reside no alvo regente do complemento:\nCompletiva Nominal: Completa um NOME (necessidade, esperança, certeza, impressão). Preposição OBRIGATÓRIA.\nExemplo: \"Tenho certeza [de que passaremos]\" (certeza = substantivo abstrato).\nObjetiva Indireta: Completa um VERBO (necessitar, lembrar-se, gostar, precisar). Preposição FACULTATIVA.\nExemplo: \"Necessito [(de) que me ajudem]\" (necessitar = verbo transitivo indireto).\nRelações\nContrasta com: \nExemplificado por: (item 4)",
+            "**Oração Subordinada Substantiva Predicativa vs. Subjetiva com Verbo de Ligação**: Definição ou ideia central\nA oração subordinada substantiva predicativa desempenha a função de predicativo do sujeito da oração principal, surgindo imediatamente após um verbo de ligação (ser, estar, parecer, etc.) quando o sujeito já se encontra expressamente declarado na oração principal.\nCritério decisivo de diferenciação\nAmbas as estruturas contêm Verbo de Ligação (VL), mas distinguem-se pela posição e presença do sujeito:\nOração Predicativa: $\\text{Sujeito (expresso na OP)} + \\text{Verbo de Ligação} + \\text{[Oração Substantiva Predicativa]}$\n\"Meu desejo (sujeito) era (VL) [que todos fossem aprovados] (oração predicativa).\"\nOração Subjetiva: $\\text{Verbo de Ligação} + \\text{Predicativo} + \\text{[Oração Substantiva Subjetiva]}$\n\"Era indispensável (VL + Predicativo) [que todos fossem aprovados] (sujeito oracional).\" $\\rightarrow$ Ordem direta: \"[Isso] era indispensável\".\nRelações\nContrasta com: \nExemplificado por: (item 6)",
+            "**Oração Subordinada Substantiva Apositiva (Aposto Oracional)**: Definição ou ideia central\nA oração subordinada substantiva apositiva funciona como aposto explicativo de um substantivo da oração principal, esclarecendo seu conteúdo por meio de conjunção integrante e demarcação obrigatória por sinais de pontuação (dois-pontos, travessão ou vírgula).\nExplicação consolidada\nO aposto oracional especifica a identidade de um nome antecedente (\"Só desejo uma coisa: que você vença\"). Em provas (notadamente Cebraspe), é frequente a simplificação da nomenclatura para a função sintática direta: aposto oracional.\nAlerta de fronteira\nNão confundir a Oração Substantiva Apositiva (introduzida por conjunção integrante = isso, com valor substantivo) com a Oração Adjetiva Explicativa (introduzida por pronome relativo = o qual, com valor adjetivo de adjunto adnominal).Exemplificado por: (item 1)",
+            "**Terminologia de Bancas: O Conceito Amplo de \"Oração Completiva\" (Cebraspe)**: Definição ou ideia central\nEm bancas como o Cebraspe/CESPE, a denominação \"oração completiva\" é empregada em sentido genérico e funcional, abrangendo qualquer oração integrante que complete o sentido de um termo regente anterior, compreendendo tanto completivas verbais (objetos diretos e indiretos oracionais) quanto completivas nominais.\nExplicação consolidada\nAo analisar itens que afirmam que uma conjunção integrante introduz uma \"oração completiva\", o candidato não deve restringir sua análise à oração completiva nominal estrita. Se a oração exercer função de objeto direto subordinado a um verbo transitivo direto, a afirmação da banca é considerada rigorosamente correta.Exemplificado por:",
+            "**A Oração Subordinada Adjetiva e sua Função Invariável de Adjunto Adnominal**: Definição ou ideia central\nA oração subordinada adjetiva qualifica, caracteriza ou delimita um substantivo (ou pronome substantivo) da oração principal. Por acoplar-se diretamente a esse núcleo nominal, sua função sintática na oração principal é invariavelmente a de Adjunto Adnominal.\nExplicação consolidada\nAo contrário das orações subordinadas substantivas (que assumem múltiplos papéis como sujeito, objeto, etc.), a oração adjetiva possui uma única função sintática perante a oração principal: a de adjunto adnominal do termo ao qual se refere. Isso é válido tanto para as orações adjetivas restritivas quanto para as explicativas.Exemplificado por: (Questão 13)",
+            "**Classificação Morfossintática Multivalente da Palavra \"QUE\"**: Definição ou ideia central\nA palavra que possui comportamento morfossintático polivalente em Língua Portuguesa, demandando testes operacionais para sua correta identificação em questões de concurso.\nQuadro de comportamentos canônicos do \"QUE\"\nPronome Relativo: Introduz oração subordinada adjetiva e retoma termo antecedente. É substituível por o qual, a qual, os quais, as quais (\"Gostou do arroz [o qual] fiz\").\nConjunção Integrante: Introduz oração subordinada substantiva. A oração inteira pode ser substituída por ISSO (\"Não quero [isso]\").\nPartícula / Expressão Expletiva ou de Realce: Possui finalidade enfática e pode ser eliminada da oração sem provocar fratura sintática ou alteração no conteúdo proposicional (\"Eu [é que] não saio daqui\" $\\rightarrow$ \"Eu não saio daqui\"; \"Quase [que] caí\" $\\rightarrow$ \"Quase caí\").\nIntegrante de Locução Conjuntiva Adverbial: Compõe blocos conjuntivos indivisíveis:\nConcessiva: mesmo que, ainda que, sem que (= embora).\nConsecutiva: tanto... que, tão... que, tamanho... que (consequência).\nCondicional: contanto que (= caso, se).\nPreposição Acidental: Atua como conectivo em locução verbal de obrigação/necessidade com verbo no infinitivo, equivalendo exatamente a de (\"Tivemos que reduzir custos\" = \"Tivemos de reduzir custos\").\nPronome Interrogativo: Introduz orações interrogativas diretas ou indiretas (\"O que é a felicidade?\").\nRelações\nProcedimentos associados: , , \nExemplificado por: (Questões 01 a 07)",
+            "**Antecedentes do Pronome Relativo: Substantivos e Pronomes Demonstrativos (\"o que\")**: Definição ou ideia central\nO antecedente anafórico retomado pelo pronome relativo pode ser um substantivo ou um pronome substantivo demonstrativo (o, a, os, as), comutável por aquilo, aquele ou aquela.\nExplicação consolidada\nNa estrutura recorrente em provas \"plantamos o que colhemos\" ou \"conseguir o que você quer\":\nO vocábulo o atua como pronome demonstrativo (= aquilo).\nA palavra que atua rigorosamente como pronome relativo (= o qual), introduzindo oração adjetiva que qualifica o pronome demonstrativo antecedente (\"plantamos aquilo [o qual] colhemos\").\nRelações\nDica associada: TIP-A07-G03-002\nExemplificado por: (Questões 03 e 07)",
+            "**Orações Adjetivas Restritivas vs. Explicativas: Pontuação, Semântica e Intercalação**: Definição ou ideia central\nAs orações adjetivas restritivas e explicativas são morfologicamente idênticas (ambas são orações adjetivas) e sintaticamente idênticas (ambas são adjuntos adnominais), diferenciando-se exclusivamente na semântica e na pontuação.\nQuadro contrastivo\nEfeito intercalado (\"Grude\")\nComo a oração adjetiva deve situar-se imediatamente contígua ao substantivo antecedente, ela frequentemente surge intercalada no meio da oração principal (\"O homem [que trabalha] perde tempo precioso\"), exigindo o isolamento em barras para correta reconstituição da oração principal.\nRelações\nProcedimento: \nExemplificado por:",
+            "**Inventário dos Conectivos Relativos e suas Peculiaridades**: Definição ou ideia central\nO conjunto dos pronomes relativos não se limita ao vocábulo que, englobando pronomes especializados em referências semânticas específicas:\nque / o qual (e flexões): Relativo universal para pessoas ou coisas.\nquem: Empregado exclusivamente para pessoas ou seres personificados, sempre preposicionado quando atua como objeto (\"o adulto com quem convivem\").\ncujo / cuja / cujos / cujas: Expressa relação de posse entre o antecedente e o termo consequente; concorda em gênero e número com a coisa possuída e nunca admite artigo subsequente (\"A menina cuja mãe é professora\").\nonde: Empregado unicamente para indicar lugar físico/espacial concreto.\nquanto / quanta (e flexões): Empregado após pronomes indefinidos (tudo, tanto, todos).\ncomo / quando: Podem atuar como pronomes relativos quando retomam substantivos de valor modal (a maneira como...) ou temporal (o dia quando...).\nRelações\nExpande-se em: \nExemplificado por: (Questões 14, 15 e 16)",
+            "**O Pronome Relativo \"ONDE\": Restrição Semântica e Função Fixa de Adjunto Adverbial de Lugar**: Definição ou ideia central\nO pronome relativo onde retoma substantivos indicadores de lugar físico delimitado e desempenha sempre e invariavelmente a função sintática de Adjunto Adverbial de Lugar na oração subordinada adjetiva.\nExplicação consolidada\nEnquanto pronomes como que ou o qual variam de função sintática conforme a regência do predicado adjetivo, o pronome onde embute em sua semântica a preposição de lugar (no qual, em que). Logo, sua função sintática é prefixada:\nMorfologia: Pronome Relativo.\nSintaxe na oração adjetiva: Adjunto Adverbial de Lugar.\nLimite de uso\nNão deve ser empregado para antecedentes de natureza temporal (\"na época onde...\" $\\rightarrow$ incorreto; use em que / na qual) ou conceitual/abstrata (\"no texto onde...\" $\\rightarrow$ use em que / no qual).\nRelações\nDica: TIP-A07-G03-003\nExemplificado por: (Frase 2)",
+            "**Princípio da Independência Funcional entre Relativo e Antecedente**: Definição ou ideia central\nA função sintática exercida pelo pronome relativo na oração subordinada adjetiva é totalmente independente e autônoma em relação à função sintática que seu antecedente exerce na oração principal.\nExplicação consolidada\nO antecedente pertence à Oração Principal (OP) e desempenha nela uma função sintática determinada pelo verbo da OP (ex.: Sujeito, Predicativo, Objeto).\nO pronome relativo pertence à Oração Subordinada Adjetiva e desempenha nela uma função sintática determinada pelo verbo da oração adjetiva.\nNão existe correspondência necessária entre as duas funções. Buscar a função do relativo analisando o verbo da oração principal constitui o erro metodológico denominado \"recaída sintática\".Procedimento validador:",
+            "**O Método Canônico dos Três Passos para Determinação da Função Sintática do Pronome Relativo**: Definição ou ideia central\nAlgoritmo mecânico infalível estruturado em três etapas consecutivas para apurar a função sintática de qualquer pronome relativo sem incorrer em ambiguidades ou projeções indevidas da oração principal.\nAs Três Etapas Operacionais\nPasso 1: Isolar a Oração Adjetiva: Inserir barras divisórias (|) imediatamente antes do pronome relativo e no término da oração subordinada adjetiva. Destacar o bloco interno visualmente (marca-texto) para bloquear o foco na oração principal.\nPasso 2: Substituir o Relativo pelo Antecedente da OP: Identificar o substantivo retomado na oração principal e inseri-lo diretamente na oração adjetiva no lugar do pronome relativo.\nPasso 3: Colocar a Oração Adjetiva na Ordem Direta (S-V-C): Reorganizar os termos da oração adjetiva na sequência Canônica: $\\text{Sujeito} + \\text{Verbo} + \\text{Complementos/Adjuntos}$. Analisar a função sintática do substantivo substituído perante o verbo da oração adjetiva. Essa será exatamente a função sintática do pronome relativo.\nRelações\nProcedimento detalhado: \nExemplificado por:"
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-SUBST-01",
-          "question": "Classifique a oração entre colchetes: 'É imperioso [que todos cumpram o prazo]'.",
-          "keyPoints": [
-            "Oração Subordinada Substantiva SUBJETIVA.",
-            "A oração principal 'É imperioso' é formada por Verbo de Ligação + Predicativo e não tem sujeito (Equivale a: 'ISSO é imperioso' -> ISSO é o Sujeito)."
-          ],
-          "targetConcept": "Oração Substantiva Subjetiva",
-          "targetLO": "LO-A07-G03-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Subordinadas Substantivas e Adjetivas?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

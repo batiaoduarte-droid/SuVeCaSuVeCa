@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BadgeCheck, Building2, CalendarDays, CircleHelp, Check, X, Eye, EyeOff, Sparkles } from 'lucide-react';
+import { AlertTriangle, BadgeCheck, Building2, CalendarDays, CircleHelp, Check, X, Eye, EyeOff, Sparkles } from 'lucide-react';
 
 export interface QuestionBlockModel {
   title: string;
@@ -10,6 +10,7 @@ export interface QuestionBlockModel {
   extra?: string;
   board?: string;
   year?: string;
+  interactionUnavailableReason?: string;
 }
 
 interface QuestionBlockProps extends QuestionBlockModel {
@@ -26,6 +27,7 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
   extra,
   board,
   year,
+  interactionUnavailableReason,
   renderMarkdown,
   onAskTutor,
 }) => {
@@ -41,7 +43,8 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
     setSelectedOption(letter);
   };
 
-  const canRevealAnswer = options.length === 0 || selectedOption !== null;
+  const hasSelectableAnswer = options.length > 0;
+  const canRevealAnswer = hasSelectableAnswer && selectedOption !== null;
 
   return (
     <article className="question-block my-5 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs transition">
@@ -90,7 +93,13 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
             ) : (
               <>
                 <Eye className="h-3.5 w-3.5 text-teal-700" />
-                <span>{canRevealAnswer ? 'Confirmar tentativa e corrigir' : 'Selecione uma resposta'}</span>
+                <span>
+                  {!hasSelectableAnswer
+                    ? 'Tentativa indisponível'
+                    : canRevealAnswer
+                      ? 'Confirmar tentativa e corrigir'
+                      : 'Selecione uma resposta'}
+                </span>
               </>
             )}
           </button>
@@ -165,6 +174,16 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
               })}
             </ol>
           </section>
+        )}
+
+        {!hasSelectableAnswer && (
+          <div className="flex items-start gap-2.5 rounded-xl border border-amber-300 bg-amber-50 p-3.5 text-xs text-amber-950" role="status">
+            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" aria-hidden="true" />
+            <div>
+              <strong className="block font-black">Tentativa não disponível</strong>
+              <span>{interactionUnavailableReason || 'As alternativas desta questão estão incompletas.'}</span>
+            </div>
+          </div>
         )}
 
         {/* Gabarito e Solução Comentada (Revelada apenas quando showAnswer é true) */}

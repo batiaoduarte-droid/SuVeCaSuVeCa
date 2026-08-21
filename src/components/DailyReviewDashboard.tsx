@@ -393,7 +393,7 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6 pb-16">
+    <div className="tool-content-shell space-y-6 pb-16">
       <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>

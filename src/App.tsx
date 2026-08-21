@@ -153,6 +153,7 @@ const writeStudyLocation = (location: StudyLocation, mode: 'push' | 'replace') =
 export default function App() {
   const initialStudyLocation = useRef(readStudyLocation()).current;
   const [activeTab, setActiveTab] = useState<TabType>('modules');
+  const lastNonPomodoroTab = useRef<TabType>('modules');
   const [selectedModuleId, setSelectedModuleId] = useState<string>(initialStudyLocation.moduleId || 'mod0');
   const [openUnitId, setOpenUnitId] = useState<string | null>(initialStudyLocation.unitId);
   const [openUnitSectionId, setOpenUnitSectionId] = useState<string | null>(initialStudyLocation.sectionId);
@@ -162,6 +163,10 @@ export default function App() {
   const [isImmersiveFocus, setIsImmersiveFocus] = useState(false);
   const [officialSimuladoQuestions, setOfficialSimuladoQuestions] = useState<QuizQuestion[] | null>(null);
   const [isOnboardingOpen, setIsOnboardingOpen] = useState<boolean>(() => !hasCompletedOnboarding());
+
+  useEffect(() => {
+    if (activeTab !== 'pomodoro') lastNonPomodoroTab.current = activeTab;
+  }, [activeTab]);
 
   // Firebase Auth State
   const [user, setUser] = useState<User | null>(null);
@@ -468,7 +473,7 @@ export default function App() {
       <main className={`${
         isImmersiveFocus
           ? 'mx-auto w-full flex-1 px-4 py-4 sm:px-6 lg:px-10'
-          : 'max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-28 lg:pb-8 flex-1 w-full'
+          : 'app-content-shell py-4 sm:py-6 pb-28 lg:pb-8 flex-1'
       }`}>
         <DailyReviewReminder
           errors={cadernoErrors}
@@ -496,7 +501,7 @@ export default function App() {
                               {selectedCurriculumModule.suvecaMethod.definition}
                             </p>
                             <p className="text-xs leading-relaxed text-teal-100">
-                              <strong>{selectedCurriculumModule.suvecaMethod.label} nesta aula:</strong>{' '}
+                              <strong>{selectedCurriculumModule.suvecaMethod.label} neste tema:</strong>{' '}
                               {selectedCurriculumModule.suvecaMethod.summary}
                             </p>
                           </div>
@@ -573,7 +578,7 @@ export default function App() {
               <div className="space-y-3">
                 {officialSimuladoQuestions && (
                   <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-teal-200 bg-teal-50 p-3 text-sm text-teal-900">
-                    <span><strong>{officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'Prática editorial' : 'Prática autoral de apoio'}:</strong> {officialSimuladoQuestions.length} questões {officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'selecionadas da nova fonte das aulas 00–13' : 'identificadas claramente como autorais'}.</span>
+                    <span><strong>{officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'Prática editorial' : 'Prática autoral de apoio'}:</strong> {officialSimuladoQuestions.length} questões {officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'selecionadas do percurso curricular publicado' : 'identificadas claramente como autorais'}.</span>
                     <button type="button" className="button-secondary min-h-[44px]" onClick={() => setOfficialSimuladoQuestions(null)}>Voltar ao simulado editorial</button>
                   </div>
                 )}
@@ -605,15 +610,6 @@ export default function App() {
                 errors={cadernoErrors}
                 onUpdateErrorStatus={handleUpdateErrorStatus}
                 userId={user?.uid}
-              />
-            )}
-
-            {activeTab === 'pomodoro' && (
-              <PomodoroTimer
-                selectedModuleId={selectedModuleId}
-                user={user}
-                onAskTutor={handleOpenTutorWithContext}
-                onCompleteSession={() => recordStudyActivity()}
               />
             )}
 
@@ -680,6 +676,17 @@ export default function App() {
             </Suspense>
           </ErrorBoundary>
         </div>
+        <Suspense fallback={activeTab === 'pomodoro' ? <ToolLoading /> : null}>
+          <PomodoroTimer
+            selectedModuleId={selectedModuleId}
+            user={user}
+            onAskTutor={handleOpenTutorWithContext}
+            onCompleteSession={() => recordStudyActivity()}
+            isPageActive={activeTab === 'pomodoro'}
+            onMinimize={() => setActiveTab(lastNonPomodoroTab.current)}
+            onExpandTab={() => setActiveTab('pomodoro')}
+          />
+        </Suspense>
       </main>
 
       {/* Floating Action Button (FAB) - Mobile Only */}

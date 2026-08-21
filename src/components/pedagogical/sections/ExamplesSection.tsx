@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
 import { BookOpenCheck, Copy, Check } from 'lucide-react';
-import type { WorkedExampleView } from '../../../types/pedagogicalView';
+import type { SemanticBlock, WorkedExampleView } from '../../../types/pedagogicalView';
 import { WorkedExampleCard } from '../../study-visuals/WorkedExampleCard';
 import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
+import { semanticBlocksToPlainText } from '../../../lib/semanticBlockText';
 
 interface ExamplesSectionProps {
   items?: WorkedExampleView[];
+  supplementaryBlocks?: SemanticBlock[];
 }
 
-export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [] }) => {
+export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], supplementaryBlocks = [] }) => {
   const [copied, setCopied] = useState(false);
 
   if (!items || items.length === 0) return null;
 
   const handleCopy = () => {
     const text = items
-      .map(
-        (e, i) =>
-          `${i + 1}. ${e.title}\nFrase: ${e.prompt || ''}\nResultado: ${e.result || ''}`
-      )
+      .map((e, i) => {
+        if (e.presentation?.hideGenericScaffold) {
+          return `${i + 1}. ${e.title}\n${semanticBlocksToPlainText(e.blocks)}`;
+        }
+        const analysis = e.analysisSteps?.map((step) => `${step.order}. ${step.action}${step.rationale ? ` — ${step.rationale}` : ''}`).join('\n') || e.analysis || '';
+        return `${i + 1}. ${e.title}\nFrase: ${e.prompt || e.sentence || ''}\nAnálise: ${analysis}\nConclusão: ${e.result || e.pedagogicalTakeaway || ''}`;
+      })
+      .concat(semanticBlocksToPlainText(supplementaryBlocks))
+      .filter(Boolean)
       .join('\n\n');
     navigator.clipboard.writeText(text);
     setCopied(true);
@@ -28,7 +35,7 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [] }) 
   return (
     <div className="space-y-5 select-text">
       {/* Cabeçalho da Seção */}
-      <div className="rounded-2xl border border-emerald-200 bg-white p-5 sm:p-6 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-emerald-200 bg-white p-3 sm:p-5 shadow-xs space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-emerald-100 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-900 text-emerald-200 shadow-2xs select-none">
@@ -79,6 +86,11 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [] }) 
             />
           ))}
         </div>
+        {supplementaryBlocks.length > 0 && (
+          <div className="space-y-3 border-t border-emerald-100 pt-4">
+            {supplementaryBlocks.map((block, index) => <ContentBlockRenderer key={index} block={block} />)}
+          </div>
+        )}
       </div>
     </div>
   );

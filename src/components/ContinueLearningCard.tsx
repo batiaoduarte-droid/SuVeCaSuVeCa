@@ -31,7 +31,7 @@ export function ContinueLearningCard({
           <p className="mt-1 text-sm leading-6 text-slate-700">
             {dueCount > 0
               ? `${dueCount} revisão${dueCount === 1 ? '' : 'ões'} vencida${dueCount === 1 ? '' : 's'} antes do próximo bloco.`
-              : 'Retome a aula atual e conclua uma prática para consolidar o aprendizado.'}
+              : 'Retome o tema atual e conclua uma prática para consolidar o aprendizado.'}
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:min-w-56">

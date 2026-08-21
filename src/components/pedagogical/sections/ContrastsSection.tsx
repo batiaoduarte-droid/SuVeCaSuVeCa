@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { ArrowLeftRight, Copy, Check, Split } from 'lucide-react';
-import type { ContrastView } from '../../../types/pedagogicalView';
-import { ContrastBoard } from '../../study-visuals/ContrastBoard';
+import type { ContrastView, SemanticBlock } from '../../../types/pedagogicalView';
+import { ContrastBoard, contrastToPlainText } from '../../study-visuals/ContrastBoard';
 import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
+import { semanticBlocksToPlainText } from '../../../lib/semanticBlockText';
 
 interface ContrastsSectionProps {
   items?: ContrastView[];
+  supplementaryBlocks?: SemanticBlock[];
 }
 
-export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [] }) => {
+export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [], supplementaryBlocks = [] }) => {
   const [copied, setCopied] = useState(false);
 
   if (!items || items.length === 0) return null;
 
   const handleCopy = () => {
-    const text = items
-      .map(
-        (c, i) =>
-          `${i + 1}. ${c.title}\n${c.conceptA || ''} vs ${c.conceptB || ''}\nCritério: ${c.decisionCriterion || ''}`
-      )
-      .join('\n\n');
+    const text = [
+      items.map((contrast, index) => `${index + 1}. ${contrastToPlainText(contrast)}`).join('\n\n'),
+      semanticBlocksToPlainText(supplementaryBlocks),
+    ].filter(Boolean).join('\n\n');
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -28,7 +28,7 @@ export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [] }
   return (
     <div className="space-y-5 select-text">
       {/* Cabeçalho da Seção */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-5 shadow-xs space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white shadow-2xs select-none">
@@ -79,6 +79,11 @@ export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [] }
             />
           ))}
         </div>
+        {supplementaryBlocks.length > 0 && (
+          <div className="space-y-3 border-t border-slate-100 pt-4">
+            {supplementaryBlocks.map((block, index) => <ContentBlockRenderer key={index} block={block} />)}
+          </div>
+        )}
       </div>
     </div>
   );

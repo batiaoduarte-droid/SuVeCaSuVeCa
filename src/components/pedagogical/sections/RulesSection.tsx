@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
 import { Scale, Copy, Check } from 'lucide-react';
-import type { CanonicalEntityView } from '../../../types/pedagogicalView';
+import type { CanonicalEntityView, SemanticBlock } from '../../../types/pedagogicalView';
 import { GoldenRuleCard } from '../../study-visuals/GoldenRuleCard';
 import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
+import { semanticBlocksToPlainText } from '../../../lib/semanticBlockText';
 
 interface RulesSectionProps {
   items: CanonicalEntityView[];
+  supplementaryBlocks?: SemanticBlock[];
 }
 
-export const RulesSection: React.FC<RulesSectionProps> = ({ items }) => {
+export const RulesSection: React.FC<RulesSectionProps> = ({ items, supplementaryBlocks = [] }) => {
   const [copied, setCopied] = useState(false);
 
   if (!items || items.length === 0) return null;
 
   const handleCopy = () => {
-    const textToCopy = items.map((r, i) => `${i + 1}. ${r.title}\n${r.statement || ''}`).join('\n\n');
+    const textToCopy = items.map((rule, index) => [
+      `${index + 1}. ${rule.title}`,
+      rule.presentation?.hideGenericScaffold ? semanticBlocksToPlainText(rule.blocks) : rule.statement,
+      !rule.presentation?.hideGenericScaffold && rule.formalCondition ? `Forma operacional: ${rule.formalCondition}` : undefined,
+      ...(!rule.presentation?.hideGenericScaffold ? rule.conditions?.map((condition) => `Condição: ${condition}`) || [] : []),
+      ...(!rule.presentation?.hideGenericScaffold ? rule.exceptions?.map((exception) => `Exceção: ${exception}`) || [] : []),
+      ...(!rule.presentation?.hideGenericScaffold ? rule.boundaries?.map((boundary) => `Limite: ${boundary}`) || [] : []),
+      ...(!rule.presentation?.hideGenericScaffold ? rule.examples?.map((example) => `Exemplo: ${example}`) || [] : []),
+    ].filter(Boolean).join('\n')).concat(semanticBlocksToPlainText(supplementaryBlocks)).filter(Boolean).join('\n\n');
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -31,7 +41,7 @@ export const RulesSection: React.FC<RulesSectionProps> = ({ items }) => {
   return (
     <div className="space-y-5 select-text">
       {/* Cabeçalho da Seção */}
-      <div className="rounded-2xl border border-teal-200 bg-white p-5 sm:p-6 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-teal-200 bg-white p-3 sm:p-5 shadow-xs space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-teal-100 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-900 text-teal-200 shadow-2xs select-none">
@@ -82,6 +92,11 @@ export const RulesSection: React.FC<RulesSectionProps> = ({ items }) => {
             />
           ))}
         </div>
+        {supplementaryBlocks.length > 0 && (
+          <div className="space-y-3 border-t border-teal-100 pt-4">
+            {supplementaryBlocks.map((block, index) => <ContentBlockRenderer key={index} block={block} />)}
+          </div>
+        )}
       </div>
     </div>
   );

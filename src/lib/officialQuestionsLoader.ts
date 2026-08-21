@@ -2,6 +2,7 @@ export interface NormalizedQuestion {
   id: string;
   originalQuestionId: string;
   prompt: string;
+  questionType?: string;
   options?: Array<{ letter: string; text: string }>;
   correctAnswer?: string;
   commentary?: string;

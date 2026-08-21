@@ -505,7 +505,7 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
                 <div className="flex items-start gap-2 text-xs font-semibold text-slate-800 leading-relaxed">
                   <CheckCircle2 className="h-4 w-4 text-teal-700 mt-0.5 shrink-0 select-none" />
                   <span>
-                    <strong>1. Estude na Apostila:</strong> Domine a teoria concisa e aplique os testes decisivos de cada aula.
+                    <strong>1. Estude na Apostila:</strong> Domine a teoria concisa e aplique os testes decisivos de cada tema.
                   </span>
                 </div>
                 <div className="flex items-start gap-2 text-xs font-semibold text-slate-800 leading-relaxed">
@@ -571,7 +571,7 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
                 >
                   <div className="flex items-center gap-2 text-teal-950 font-black text-xs sm:text-sm mb-1">
                     <BookOpen className="h-4 w-4 text-teal-700 group-hover:scale-110 transition" />
-                    <span>Apostila (Aula 00)</span>
+                    <span>Apostila (Ortografia e fonologia)</span>
                   </div>
                   <p className="text-[11px] text-slate-600 font-medium">
                     Iniciar os módulos curriculares

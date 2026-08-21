@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A06-G05",
     "lessonId": "A06",
     "title": "Complemento Nominal vs Adjunto Adnominal",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A06-G05",
@@ -63,6 +64,116 @@
               "text": "O fluxograma resolve 100% dos confrontos sintáticos entre Complemento Nominal e Adjunto Adnominal."
             }
           ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G05-001",
+              "table": {
+                "tableId": "TABLE-IP-A06-G05-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Termo Sintático",
+                  "Papel Sintático",
+                  "Referente (Seta para)",
+                  "Exigência Preposicional",
+                  "Morfologia do Núcleo",
+                  "Exemplo Canônico Consolidado"
+                ],
+                "rows": [
+                  [
+                    "Objeto Direto (OD)",
+                    "Completa o verbo",
+                    "Verbo",
+                    "Não obrigatória (admite OD preposicionado)",
+                    "Substantivo (ou pronome)",
+                    "João leu o livro."
+                  ],
+                  [
+                    "Objeto Indireto (OI)",
+                    "Completa o verbo",
+                    "Verbo",
+                    "Obrigatória",
+                    "Substantivo (ou pronome)",
+                    "João gosta de suco."
+                  ],
+                  [
+                    "Complemento Nominal (CN)",
+                    "Completa o nome",
+                    "Nome (Subst., Adj., Adv.)",
+                    "Obrigatória",
+                    "Substantivo (ou pronome)",
+                    "João tem saudade da família."
+                  ],
+                  [
+                    "Agente da Passiva (AP)",
+                    "Pratica a ação na voz passiva",
+                    "Ninguém (— / $\\emptyset$)",
+                    "Obrigatória (por / de)",
+                    "Substantivo (ou pronome)",
+                    "João foi elogiado pela professora."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G05-003",
+              "table": {
+                "tableId": "TABLE-IP-A06-G05-003",
+                "caption": "Explicação consolidada",
+                "headers": [
+                  "Termo Sintático",
+                  "Papel Sintático",
+                  "Referente (Seta para)",
+                  "Exigência Preposicional",
+                  "Morfologia do Núcleo",
+                  "Exemplo Canônico Consolidado"
+                ],
+                "rows": [
+                  [
+                    "Objeto Direto (OD)",
+                    "Completa o verbo",
+                    "Verbo",
+                    "Não obrigatória (admite OD preposicionado)",
+                    "Substantivo (ou pronome)",
+                    "João leu o livro."
+                  ],
+                  [
+                    "Objeto Indireto (OI)",
+                    "Completa o verbo",
+                    "Verbo",
+                    "Obrigatória",
+                    "Substantivo (ou pronome)",
+                    "João gosta de suco."
+                  ],
+                  [
+                    "Complemento Nominal (CN)",
+                    "Completa o nome",
+                    "Nome (Subst., Adj., Adv.)",
+                    "Obrigatória",
+                    "Substantivo (ou pronome)",
+                    "João tem saudade da família."
+                  ],
+                  [
+                    "Agente da Passiva (AP)",
+                    "Pratica a ação na voz passiva",
+                    "Ninguém (— / $\\emptyset$)",
+                    "Obrigatória (por / de)",
+                    "Substantivo (ou pronome)",
+                    "João foi elogiado pela professora."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
         }
       ]
     },
@@ -116,6 +227,49 @@
           },
           "practicalHeuristic": "Quem faz = Adjunto Adnominal. Quem recebe = Complemento Nominal.",
           "pitfall": "Classificar 'da lâmpada' como adjunto adnominal."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A06-G05-002",
+          "table": {
+            "tableId": "TABLE-IP-A06-G05-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Critério de Confronto",
+              "Termo Sintático A",
+              "Termo Sintático B",
+              "Fator Decisivo de Diferenciação"
+            ],
+            "rows": [
+              [
+                "Regente Verbal vs. Regente Nominal",
+                "Objeto Indireto (OI)(ex.: necessita de ajuda)",
+                "Complemento Nominal (CN)(ex.: necessidade de ajuda)",
+                "A classe do regente: OI completaverbo; CN completa nome (subst., adj., adv.)."
+              ],
+              [
+                "Executor Ativo vs. Motivo Causal",
+                "Agente da Passiva (AP)(ex.: filmado pela TV)",
+                "Adjunto Adverbial de Causa(ex.: elogiado pela inteligência)",
+                "Teste da ativa: AP vira sujeito agente (A TV filmou); o adjunto de causa não pode virar sujeito (A inteligência não elogia)."
+              ],
+              [
+                "Agente em Particípio Reduzido vs. Referência de Particípio",
+                "Agente da Passiva com \"de\"(ex.: cercado de curiosos)",
+                "Complemento Nominal de Particípio(ex.: herança recebida dos pais)",
+                "Sentido do agente:Curiosos cercaram o menino (AP); Os pais não receberam a herança, eles a deixaram (CN de recebida)."
+              ],
+              [
+                "Comportamento Vetorial",
+                "OD, OI e CN",
+                "Agente da Passiva",
+                "OD, OI e CNmandam seta de subordinação; o Agente da Passiva não manda seta (—)."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A08-G05",
     "lessonId": "A08",
     "title": "Travessão, Parênteses e Aspas",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A08-G05",
@@ -86,6 +87,96 @@
               "text": "A troca entre vírgulas, travessões e parênteses mantém a correção gramatical, alterando apenas a modulação enfática."
             }
           ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A08-G05-001",
+              "table": {
+                "tableId": "TABLE-IP-A08-G05-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Categoria",
+                  "Plano de Linguagem",
+                  "Abrangência",
+                  "Presença de Ideia Nova?"
+                ],
+                "rows": [
+                  [
+                    "Explicação",
+                    "Abstrato / Conceitual",
+                    "Termo único ou oração com conector causal (pois)",
+                    "Não (Diz o mesmo com outras palavras)"
+                  ],
+                  [
+                    "Enumeração",
+                    "Concreto / Descritivo",
+                    "Lista TODOS os componentes do conjunto",
+                    "Não (Apenas lista as partes)"
+                  ],
+                  [
+                    "Exemplificação",
+                    "Concreto / Factual",
+                    "Amostra parcial (não traz todos; uso de\"etc.\")",
+                    "Sim (Acrescenta casos práticos)"
+                  ],
+                  [
+                    "Comentário do Autor",
+                    "Subjetivo / Opinativo",
+                    "Oração com verbo / 1ª pessoa / reflexão",
+                    "Sim (Ponderação e juízo de valor do enunciador)"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A08-G05-006",
+              "table": {
+                "tableId": "TABLE-IP-A08-G05-006",
+                "caption": "Critérios de reconhecimento",
+                "headers": [
+                  "Categoria",
+                  "Plano de Linguagem",
+                  "Abrangência",
+                  "Presença de Ideia Nova?"
+                ],
+                "rows": [
+                  [
+                    "Explicação",
+                    "Abstrato / Conceitual",
+                    "Termo único ou oração com conector causal (pois)",
+                    "Não (Diz o mesmo com outras palavras)"
+                  ],
+                  [
+                    "Enumeração",
+                    "Concreto / Descritivo",
+                    "Lista TODOS os componentes do conjunto",
+                    "Não (Apenas lista as partes)"
+                  ],
+                  [
+                    "Exemplificação",
+                    "Concreto / Factual",
+                    "Amostra parcial (não traz todos; uso de\"etc.\")",
+                    "Sim (Acrescenta casos práticos)"
+                  ],
+                  [
+                    "Comentário do Autor",
+                    "Subjetivo / Opinativo",
+                    "Oração com verbo / 1ª pessoa / reflexão",
+                    "Sim (Ponderação e juízo de valor do enunciador)"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
         }
       ]
     },
@@ -103,6 +194,79 @@
             "Machado escreveu: 'O tempo é um rato roedor das coisas.' (Ponto dentro).",
             "O réu considerou a sentença 'injusta e desproporcional'. (Ponto fora)."
           ]
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A08-G05-002",
+          "table": {
+            "tableId": "TABLE-IP-A08-G05-002",
+            "caption": "Regras canônicas",
+            "headers": [
+              "ID Canônico",
+              "Conceito / Regra",
+              "Formulação Sintética Canônica",
+              "Unidade Detalhada"
+            ],
+            "rows": [
+              [
+                "CANON-G05-001",
+                "Ponto Final e Aspas",
+                "Citação é a frase inteira$\\rightarrow$ Ponto DENTRO (\".....\"); Citação é parte da frase $\\rightarrow$ Ponto FORA (\"....\".).",
+                "KB-A08-G05-001"
+              ],
+              [
+                "CANON-G05-002",
+                "Citação Direta vs. Indireta",
+                "Citação Direta = Discurso Direto = Transcrição (Cópia fiel com aspas); Citação Indireta = Paráfrase (Sem aspas).",
+                "KB-A08-G05-002"
+              ],
+              [
+                "CANON-G05-003",
+                "Reescritura com Duplo Travessão",
+                "[— X —] $\\leftrightarrow$ [, X,] $\\leftrightarrow$ [( X )] preservam sentido proposicional e correção; alteram apenas ênfase.",
+                "KB-A08-G05-003"
+              ],
+              [
+                "CANON-G05-004",
+                "Sequência —... —,",
+                "Abertura com travessão e fechamento com vírgula (—...,) é ERRO; Travessão seguido de vírgula (—... —,) é CORRETO por cumulação sintática externa.",
+                "KB-A08-G05-004"
+              ],
+              [
+                "CANON-G05-005",
+                "Isolamento Parentético",
+                "Parênteses isolam termos sintaticamente acessórios (secundários); não podem segmentar termos integrantes ou orações dependentes.",
+                "KB-A08-G05-005"
+              ],
+              [
+                "CANON-G05-006",
+                "Tipologia Textual",
+                "Explicação (abstrato / diz o mesmo)$\\neq$ Enumeração (todos os elementos) $\\neq$ Exemplificação (amostra concreta / \"etc.\") $\\neq$ Comentário (ideia nova opinativa).",
+                "KB-A08-G05-006"
+              ],
+              [
+                "CANON-G05-007",
+                "Dicotomia FGV do Conteúdo",
+                "Explicação / Esclarecimento = \"Diz o mesmo\"; Ampliação / Nova Ideia = \"Diz além\" (soma dados ou dimensões temporais).",
+                "KB-A08-G05-007"
+              ],
+              [
+                "CANON-G05-008",
+                "Função Resumitiva",
+                "Função Resumitiva = Função Recapitulativa (condensa elementos anteriores em palavra-síntese).",
+                "KB-A08-G05-008"
+              ],
+              [
+                "CANON-G05-009",
+                "Conceito Estrito de Ironia",
+                "Ironia = Dizer tecnicamente o oposto do que se pensa. Crítica direta sem inversão de sentido NÃO é ironia.",
+                "KB-A08-G05-009"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },
@@ -139,6 +303,129 @@
           },
           "practicalHeuristic": "Se o autor discorda do que escreveu, usou aspas de ironia.",
           "pitfall": "Interpretar aspas irônicas como se fossem elogio literal."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A08-G05-003",
+          "table": {
+            "tableId": "TABLE-IP-A08-G05-003",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Sinal Gráfico",
+              "Estrutura",
+              "Grau de Ênfase / Relevo",
+              "Função Discursiva",
+              "Impacto no Sentido Proposicional"
+            ],
+            "rows": [
+              [
+                "Travessões Duplos",
+                "— X —",
+                "Máxima / Destaque",
+                "Põe a informação em evidência / Chama atenção visual do leitor.",
+                "Mantido (Sentido inalterado)"
+              ],
+              [
+                "Parênteses",
+                "( X )",
+                "Atenuada / Desênfase",
+                "Recolhe a informação a segundo plano / Isolamento secundário.",
+                "Mantido (Sentido inalterado)"
+              ],
+              [
+                "Vírgulas Duplas",
+                ", X,",
+                "Neutra / Padrão",
+                "Intercalação sintática padrão sem marcação expressiva especial.",
+                "Mantido (Sentido inalterado)"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A08-G05-004",
+          "table": {
+            "tableId": "TABLE-IP-A08-G05-004",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Conceito",
+              "Definição Operacional",
+              "Relação Lógica",
+              "Exemplo Característico"
+            ],
+            "rows": [
+              [
+                "Explicação / Aposto",
+                "Reformulação conceitual no plano abstrato.",
+                "Diz o mesmo com outras palavras; sem ideia nova.",
+                "A inflação — aumento de preços — corrói a renda."
+              ],
+              [
+                "Enumeração",
+                "Listagem de todos os componentes da totalidade.",
+                "Desdobramento exaustivo das partes de um todo.",
+                "As estações — primavera, verão, outono e inverno."
+              ],
+              [
+                "Exemplificação",
+                "Apresentação de instâncias concretas não exaustivas.",
+                "Transita do abstrato para amostras práticas (etc.).",
+                "Redes sociais — Facebook, Instagram etc."
+              ],
+              [
+                "Comentário do Autor",
+                "Inserção opinativa / subjetiva do enunciador.",
+                "Oração intercalada com verbo / 1ª pessoa / reflexão.",
+                "Nossa mente — se não enlouquecemos — resiste."
+              ],
+              [
+                "Ampliação",
+                "Adição de dados novos ou dimensões temporais.",
+                "Diz além; soma informações com conector aditivo.",
+                "...fato que atraiu (e ainda atrai) pessoas..."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A08-G05-005",
+          "table": {
+            "tableId": "TABLE-IP-A08-G05-005",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Par Contrastivo",
+              "Termo A",
+              "Termo B",
+              "Critério Decisivo de Diferenciação"
+            ],
+            "rows": [
+              [
+                "Retificação vs. Ratificação",
+                "Retificação: Corrigir erro prévio.",
+                "Ratificação: Confirmar / reiterar o mesmo.",
+                "Retificar anula o termo anterior; ratificar valida e repete o que foi dito."
+              ],
+              [
+                "Ainda (Tempo vs. Intensidade)",
+                "Tempo: Continuidade no presente (agora, até hoje).",
+                "Intensificação: Aumento de grau (muito mais).",
+                "Testar troca pormuito mais (intensidade) versus atualmente/neste momento (tempo)."
+              ],
+              [
+                "Ironia vs. Crítica Direta",
+                "Ironia: Dizer o oposto do que se pensa.",
+                "Crítica Direta: Expressar julgamento negativo literal.",
+                "Na ironia há inversão semântica obrigatória; na crítica direta o autor diz textualmente o que pensa."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

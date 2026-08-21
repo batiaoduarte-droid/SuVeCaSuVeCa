@@ -235,6 +235,7 @@ export interface TableRefBlock {
   type: 'table_ref';
   tableId: string;
   table?: CanonicalTableView;
+  coverageOrigin?: 'canonical_table_backfill';
 }
 
 export interface CalloutBlock {
@@ -355,6 +356,13 @@ export interface PrerequisiteView {
   isCritical?: boolean;
 }
 
+export interface SourceBackedPresentation {
+  status: 'source_backed';
+  sourceKind: 'canonical_content_block';
+  sourceEntityRefs: string[];
+  hideGenericScaffold: boolean;
+}
+
 export interface CanonicalEntityView {
   entityId?: string;
   ruleId?: string;
@@ -368,7 +376,10 @@ export interface CanonicalEntityView {
   boundaries?: string[];
   examples?: string[];
   normativity?: string;
+  priority?: string;
+  hasExceptions?: boolean;
   blocks?: SemanticBlock[];
+  presentation?: SourceBackedPresentation;
 }
 
 export type CanonicalRuleView = CanonicalEntityView;
@@ -377,35 +388,52 @@ export interface ProcedureView {
   procedureId?: string;
   title: string;
   objective?: string;
+  goal?: string;
   triggerCondition?: string;
   stoppingCondition?: string;
   typicalFailureModes?: string[];
-  verificationCriteria?: string[];
+  verificationCriteria?: string | string[];
   inputs?: { name: string; description: string }[];
   steps?: { order: number; action: string; explanation?: string; test?: string }[] | string[];
   outputs?: { name: string; description: string }[];
   formulas?: string[];
+  computability?: string;
   blocks?: SemanticBlock[];
+  presentation?: SourceBackedPresentation;
+}
+
+export interface ContrastSideView {
+  label?: string;
+  criteria?: string[];
+  description?: string;
 }
 
 export interface ContrastView {
   contrastId?: string;
-  title: string;
+  title?: string;
   contrastType?: string;
   conceptA?: string;
   conceptB?: string;
-  sideA?: { label: string; criteria: string[] };
-  sideB?: { label: string; criteria: string[] };
+  statement?: string;
+  left?: string | null;
+  right?: string | null;
+  sideA?: string | ContrastSideView;
+  sideB?: string | ContrastSideView;
   decisionCriterion?: string;
   decisiveDifference?: string;
   minimalPair?: {
-    left: string;
-    right: string;
-    decisiveDifference: string;
+    left?: string;
+    right?: string;
+    decisiveDifference?: string;
+    sentenceA?: string;
+    sentenceB?: string;
+    difference?: string;
   };
   practicalHeuristic?: string;
   pitfall?: string;
+  commonConfusion?: string;
   blocks?: SemanticBlock[];
+  presentation?: SourceBackedPresentation;
 }
 
 export interface WorkedExampleView {
@@ -413,15 +441,18 @@ export interface WorkedExampleView {
   title: string;
   prompt?: string;
   sentence?: string;
+  statement?: string;
   targetLO?: string;
   analysisSteps?: { order: number; action: string; rationale?: string }[];
   analysis?: string;
+  reasoning?: string;
   result?: string;
   decisivePoint?: string;
   commonMistake?: string;
   examTip?: string;
   pedagogicalTakeaway?: string;
   blocks?: SemanticBlock[];
+  presentation?: SourceBackedPresentation;
 }
 
 export interface ExamTrapView {
@@ -434,12 +465,16 @@ export interface ExamTrapView {
   decisiveTest?: string;
   studentCaveat?: string;
   errorPattern?: string;
+  examBoardBehavior?: string;
+  example?: string | null;
+  counterexample?: string | null;
   correctiveRule?: string;
   whyItFails?: string;
   correctApproach?: string;
   counterRule?: string;
   bankTechnique?: string;
   blocks?: SemanticBlock[];
+  presentation?: SourceBackedPresentation;
 }
 
 export interface GlossaryItemView {
@@ -463,6 +498,16 @@ export interface OfficialQuestionOptionView {
   text: string;
 }
 
+export interface OfficialQuestionPresentationView {
+  status: 'ready' | 'source_incomplete' | 'source_conflict';
+  stem?: string;
+  options: OfficialQuestionOptionView[];
+  answer?: string;
+  sourceField?: string;
+  reason?: string;
+  sourcePayloadPreserved: boolean;
+}
+
 export interface QuestionPedagogicalEvaluation {
   officialAnswer: string;
   acceptedPedagogicalAnswers?: string[];
@@ -484,7 +529,7 @@ export interface OfficialQuestionView {
   sourceQuestionId?: string;
   lessonId?: string;
   schemaVersion?: string;
-  questionType?: 'multiple_choice' | 'true_false' | 'certo_errado';
+  questionType?: string;
   examBoard?: string;
   organization?: string;
   year?: number;
@@ -499,9 +544,10 @@ export interface OfficialQuestionView {
   solutionStrategy?: string;
   pedagogicalEvaluation?: QuestionPedagogicalEvaluation;
   distractorAnalysis?: DistractorAnalysisView[];
+  questionPresentation?: OfficialQuestionPresentationView;
   questionPayload?: {
     question_id?: string;
-    question_type?: 'multiple_choice' | 'true_false' | 'certo_errado';
+    question_type?: string;
     exam_board?: string;
     organization?: string;
     year?: number;
@@ -541,15 +587,18 @@ export interface PedagogicalUnitSections {
   };
   rules?: {
     items: CanonicalRuleView[];
+    supplementaryBlocks?: SemanticBlock[];
   };
   resolution?: {
     procedures: ProcedureView[];
   };
   contrasts?: {
     items: ContrastView[];
+    supplementaryBlocks?: SemanticBlock[];
   };
   examples?: {
     items: WorkedExampleView[];
+    supplementaryBlocks?: SemanticBlock[];
   };
   mnemonics?: {
     blocks: SemanticBlock[];

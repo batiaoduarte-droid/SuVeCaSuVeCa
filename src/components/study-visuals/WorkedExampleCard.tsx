@@ -21,6 +21,10 @@ export const WorkedExampleCard: React.FC<WorkedExampleCardProps> = ({
   renderBlock,
   className = '',
 }) => {
+  const resolvedPrompt = example.prompt || example.sentence;
+  const resolvedResult = example.result || example.pedagogicalTakeaway;
+  const showStructuredScaffold = !example.presentation?.hideGenericScaffold;
+
   return (
     <div
       className={`rounded-2xl border border-emerald-200 bg-white p-4 sm:p-6 shadow-xs hover:border-emerald-300 transition-all space-y-4 select-text ${className}`}
@@ -42,19 +46,19 @@ export const WorkedExampleCard: React.FC<WorkedExampleCardProps> = ({
       </div>
 
       {/* Prompt / Frase em análise */}
-      {example.prompt && (
+      {showStructuredScaffold && resolvedPrompt && (
         <div className="rounded-xl border border-emerald-100 bg-emerald-50/40 p-3.5">
           <span className="text-[10px] font-black uppercase tracking-wider text-emerald-800 block mb-1 select-none">
             Frase / Termo em Análise:
           </span>
           <p className="text-xs sm:text-sm font-bold text-slate-900 leading-relaxed font-serif">
-            “<InlineRichText>{example.prompt}</InlineRichText>”
+            “<InlineRichText>{resolvedPrompt}</InlineRichText>”
           </p>
         </div>
       )}
 
       {/* Structured Analysis Steps */}
-      {example.analysisSteps && example.analysisSteps.length > 0 && (
+      {showStructuredScaffold && example.analysisSteps && example.analysisSteps.length > 0 && (
         <div className="space-y-2 pt-1">
           <span className="text-[11px] font-black uppercase tracking-wider text-slate-500 block select-none">
             Raciocínio Passo a Passo:
@@ -84,21 +88,32 @@ export const WorkedExampleCard: React.FC<WorkedExampleCardProps> = ({
         </div>
       )}
 
+      {showStructuredScaffold && !example.analysisSteps?.length && example.analysis && (
+        <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-3.5">
+          <span className="mb-1 block text-[10px] font-black uppercase tracking-wider text-slate-600 select-none">
+            Comentário e análise
+          </span>
+          <div className="text-xs sm:text-sm font-medium leading-relaxed text-slate-800">
+            <InlineRichText>{example.analysis}</InlineRichText>
+          </div>
+        </div>
+      )}
+
       {/* Result / Conclusão */}
-      {example.result && (
+      {showStructuredScaffold && resolvedResult && (
         <div className="rounded-xl border border-teal-300 bg-teal-50/80 p-3.5 space-y-1.5 shadow-2xs">
           <div className="flex items-center gap-1.5 text-teal-900 font-black text-xs select-none">
             <CheckCircle2 className="h-4 w-4 text-teal-700" />
             <span className="uppercase tracking-wider text-[10px]">Resultado e Classificação</span>
           </div>
           <div className="text-xs sm:text-sm font-bold text-teal-950 leading-relaxed">
-            <InlineRichText>{example.result}</InlineRichText>
+            <InlineRichText>{resolvedResult}</InlineRichText>
           </div>
         </div>
       )}
 
       {/* Decisive Point & Exam Tip */}
-      {(example.decisivePoint || example.examTip || example.commonMistake) && (
+      {showStructuredScaffold && (example.decisivePoint || example.examTip || example.commonMistake) && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
           {example.decisivePoint && (
             <div className="rounded-xl border border-sky-200 bg-sky-50/50 p-2.5 text-xs text-sky-950 font-medium">
@@ -115,6 +130,15 @@ export const WorkedExampleCard: React.FC<WorkedExampleCardProps> = ({
                 Dica da Banca:
               </strong>
               <InlineRichText>{example.examTip}</InlineRichText>
+            </div>
+          )}
+
+          {example.commonMistake && (
+            <div className="rounded-xl border border-rose-200 bg-rose-50/60 p-2.5 text-xs font-medium text-rose-950">
+              <strong className="mb-0.5 block text-[10px] uppercase tracking-wider text-rose-900">
+                Erro comum
+              </strong>
+              <InlineRichText>{example.commonMistake}</InlineRichText>
             </div>
           )}
         </div>

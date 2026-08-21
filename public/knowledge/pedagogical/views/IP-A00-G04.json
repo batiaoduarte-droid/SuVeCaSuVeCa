@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A00-G04",
     "lessonId": "A00",
     "title": "Acentuação Gráfica - Regras Gerais",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A00-G04",
@@ -108,6 +109,73 @@
             "metafísica"
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A00-G04-001",
+          "table": {
+            "tableId": "TABLE-IP-A00-G04-001",
+            "caption": "Regras canônicas",
+            "headers": [
+              "Justificativa / Regra",
+              "Terminações Exigidas / Critério",
+              "Exemplos Canônicos",
+              "ID Detalhado"
+            ],
+            "rows": [
+              [
+                "(1) Oxítonas",
+                "Terminadas em-A(s), -E(s), -O(s), -EM(ens) (2+ sílabas)",
+                "sofá, café, alguém, contém, até, nomeá-la",
+                "KB-A00-G04-002"
+              ],
+              [
+                "(2) Paroxítonas (Geral)",
+                "Terminadas em qualquer terminaçãoEXCETO -A, -E, -O, -EM(ens)",
+                "cáqui, ônix, ímã, Méier, interminável",
+                "KB-A00-G04-003"
+              ],
+              [
+                "(3) Proparoxítonas",
+                "Todas são acentuadas (sílaba tônica na antepenúltima)",
+                "lâmpada, álibi, ínterim, logística, varíola",
+                "KB-A00-G04-004"
+              ],
+              [
+                "(4) Monossílabos Tônicos",
+                "Terminados em-A(s), -E(s), -O(s) (1 única sílaba)",
+                "pá, gás, fé, mês, pé, dó, pós",
+                "KB-A00-G04-005"
+              ],
+              [
+                "(5) Paroxítonas em Ditongo",
+                "Terminadas em encontro vocálico (vogal + semivogal na mesma sílaba)",
+                "órfão, história, fáceis, móveis, previsíveis",
+                "KB-A00-G04-006"
+              ],
+              [
+                "(5/3) Proparoxítona Eventual",
+                "Paroxítonas terminadas emditongo crescente (dupla divisão)",
+                "secretária / se-cre-tá-ri-a, memória",
+                "KB-A00-G04-007"
+              ],
+              [
+                "(6) Hiato em I / U Tônico",
+                "2ª vogal do hiato sendo I/U tônico, sozinho ou com S, sem NH/Z",
+                "sa-í-da, ba-ú, ju-í-za, ca-fe-í-na",
+                "KB-A00-G04-008"
+              ],
+              [
+                "(7) Acento Diferencial",
+                "3 casos fixos:têm/vêm (plurais), pôr (verbo), pôde (passado)",
+                "eles têm, pôr (vs por), pôde (vs pode)",
+                "KB-A00-G04-009"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "resolution": {
@@ -142,6 +210,79 @@
           },
           "practicalHeuristic": "Conte as sílabas: 1 sílaba = regra dos monossílabos; 2+ sílabas = regra das oxítonas.",
           "pitfall": "Marcar como correta a assertiva que afirma que 'já' e 'maracujá' são acentuadas pela mesma regra."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A00-G04-002",
+          "table": {
+            "tableId": "TABLE-IP-A00-G04-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Critério",
+              "Oxítona (KB-A00-G04-002)",
+              "Monossílabo Tônico (KB-A00-G04-005)"
+            ],
+            "rows": [
+              [
+                "Quantidade de Sílabas",
+                "2 ou mais sílabas",
+                "Exatamente 1 sílaba"
+              ],
+              [
+                "Terminações Válidas",
+                "-A(s), -E(s), -O(s), -EM, -ENS",
+                "-A(s), -E(s), -O(s)"
+              ],
+              [
+                "Terminação -EM / -ENS",
+                "Acentuada (al-guém, con-tém)",
+                "NÃO acentuada (trem, bem, sem)"
+              ],
+              [
+                "Pares de Comparação",
+                "café (oxítona) $\\neq$ fé (monossílabo); até (oxítona) $\\neq$ pé (monossílabo)",
+                ""
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A00-G04-003",
+          "table": {
+            "tableId": "TABLE-IP-A00-G04-003",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Vocábulo",
+              "Divisão Silábica",
+              "Posição do \"I\" no Encontro",
+              "Justificativa Oficial"
+            ],
+            "rows": [
+              [
+                "Varíola",
+                "va - rí - o - la",
+                "1ª Vogal do Hiato (antepenúltima sílaba)",
+                "Regra 3: Proparoxítona"
+              ],
+              [
+                "Saída",
+                "sa - í - da",
+                "2ª Vogal do Hiato (penúltima sílaba)",
+                "Regra 6: Hiato Tônico em I"
+              ],
+              [
+                "Cafeína",
+                "ca - fe - í - na",
+                "2ª Vogal do Hiato (penúltima sílaba)",
+                "Regra 6: Hiato Tônico em I"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

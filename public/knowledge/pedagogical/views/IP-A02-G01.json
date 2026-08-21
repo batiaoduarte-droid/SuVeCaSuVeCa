@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-hardened",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A02-G01",
     "lessonId": "A02",
     "title": "Classes de Palavras: Preposições, Conexões Sintáticas e Valores Semânticos",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A02-G01",
@@ -389,6 +390,73 @@
             }
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A02-G01-001",
+          "table": {
+            "tableId": "TABLE-IP-A02-G01-001",
+            "caption": "Regras canônicas",
+            "headers": [
+              "ID Canônico",
+              "Conceito / Regra",
+              "Formulação Sintética Canônica",
+              "ID Detalhado de Referência"
+            ],
+            "rows": [
+              [
+                "DEF-01",
+                "Preposição",
+                "Palavra invariável que funciona como conector entre termos de uma oração ou entre orações de um período.",
+                "KB-A02-G01-PREPOSICOES-001"
+              ],
+              [
+                "CLASS-01",
+                "Preposições Essenciais",
+                "Conjunto de 18 palavras invariáveis puramente prepositivas:a, ante, até, após, com, contra, de, desde, em, entre, para, per, perante, por, sem, sob, sobre, trás.",
+                "KB-A02-G01-PREPOSICOES-002"
+              ],
+              [
+                "REG-01",
+                "Vedação de Crase",
+                "É proibida a crase após preposição essencial, pois o conector impede a fusão da preposiçãoa com o artigo; a única exceção facultativa é até.",
+                "KB-A02-G01-PREPOSICOES-003"
+              ],
+              [
+                "REG-02",
+                "Reescrita de Locuções",
+                "Preposição/Locução Prepositiva (+ Infinitivo) equivale semanticamente a Locução Conjuntiva (+ Subjuntivo), exigindo flexão verbal adequada.",
+                "KB-A02-G01-PREPOSICOES-004"
+              ],
+              [
+                "DIST-01",
+                "Preposição Relacional",
+                "Preposição imposta por regência verbal ou nominal; sem valor semântico próprio; inicia Objeto Indireto e Complemento Nominal.",
+                "KB-A02-G01-PREPOSICOES-005"
+              ],
+              [
+                "DIST-02",
+                "Preposição Nocional",
+                "Preposição não obrigatória por regência; introduz circunstâncias e noções; inicia Adjunto Adverbial, Adjunto Adnominal e Agente da Passiva.",
+                "KB-A02-G01-PREPOSICOES-005"
+              ],
+              [
+                "CLASS-02",
+                "Valências do \"PARA\"",
+                "A preposiçãopara assume 5 valores semânticos: Finalidade, Direção/Lugar, Destinatário, Conformidade e Tempo.",
+                "KB-A02-G01-PREPOSICOES-007"
+              ],
+              [
+                "REG-03",
+                "Paralelismo Aditivo",
+                "Elementos introduzidos por preposição ligados por pares correlativos aditivos (não apenas... mas também...) possuem idêntico valor semântico.",
+                "KB-A02-G01-PREPOSICOES-009"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "resolution": {
@@ -477,6 +545,111 @@
               "text": "Morreu de veneno (Causa) vs Envenenou com veneno (Instrumento)."
             }
           ]
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A02-G01-002",
+          "table": {
+            "tableId": "TABLE-IP-A02-G01-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Parâmetro Comparativo",
+              "Preposição Relacional (Gramatical)",
+              "Preposição Nocional (Semântica)"
+            ],
+            "rows": [
+              [
+                "Valor Semântico Próprio",
+                "Nulo (não introduz nova noção circunstancial).",
+                "Pleno (tempo, lugar, causa, posse, matéria, etc.)."
+              ],
+              [
+                "Funções Sintáticas Típicas",
+                "Objeto Indireto (OI) e Complemento Nominal (CN).",
+                "Adjunto Adverbial (AA), Adjunto Adnominal (ADN), Agente da Passiva."
+              ],
+              [
+                "Exemplo Típico",
+                "\"Gosto de você\" / \"Tinha medo de chuva\".",
+                "\"Casa de tijolo\" / \"Saiu de manhã\"."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A02-G01-003",
+          "table": {
+            "tableId": "TABLE-IP-A02-G01-003",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Critério",
+              "Locução Prepositiva",
+              "Locução Conjuntiva"
+            ],
+            "rows": [
+              [
+                "Terminação Obrigatória",
+                "Preposição essencial (de, a, com...).",
+                "Conjunção integrante (que)."
+              ],
+              [
+                "Exemplos",
+                "a fim de, apesar de, devido a, antes de",
+                "a fim de que, apesar de que, visto que, antes que"
+              ],
+              [
+                "Estrutura Verbal Regida",
+                "Verbo noInfinitivo (Oração Reduzida).",
+                "VerboConjugado no Subjuntivo (Oração Desenvolvida)."
+              ],
+              [
+                "Sentido em Reescrita",
+                "Idêntico ao da locução conjuntiva correspondente.",
+                "Idêntico ao da locução prepositiva correspondente."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A02-G01-004",
+          "table": {
+            "tableId": "TABLE-IP-A02-G01-004",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Construção Contrastada 1",
+              "Construção Contrastada 2",
+              "Critério Distintivo"
+            ],
+            "rows": [
+              [
+                "\"Saíram cedo para o trabalho.\" $\\rightarrow$ Lugar / Direção",
+                "\"Saíram cedo para trabalhar.\" $\\rightarrow$ Finalidade",
+                "No primeiro caso,trabalho é substantivo (destino físico); no segundo, trabalhar é verbo no infinitivo (objetivo/meta)."
+              ],
+              [
+                "\"Livro para o aluno.\" $\\rightarrow$ Destinatário",
+                "\"Para o aluno, a prova foi fácil.\" $\\rightarrow$ Conformidade",
+                "No primeiro caso, o aluno recebe o objeto; no segundo, expressa sua opinião/ponto de vista (segundo o aluno)."
+              ],
+              [
+                "\"Decisão para o final do ano.\" $\\rightarrow$ Tempo",
+                "\"Correu para o final da rua.\" $\\rightarrow$ Lugar / Direção",
+                "Final do ano é marco cronológico; final da rua é coordenada espacial."
+              ],
+              [
+                "\"Trabalhou para sempre.\" $\\rightarrow$ Tempo (Locução Adverbial)",
+                "\"Implementadas para sempre permitirem...\" $\\rightarrow$ Finalidade (Oração)",
+                "No primeiro caso,para sempre indica perpetuidade; no segundo, para rege a oração com sentido de a fim de permitirem perpetuamente."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

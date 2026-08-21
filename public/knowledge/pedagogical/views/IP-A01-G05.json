@@ -1,20 +1,22 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A01-G05",
     "lessonId": "A01",
-    "title": "Interjeições e Palavras Denotativas",
+    "title": "Numerais e Interjeições",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A01-G05",
     "lessonId": "A01",
-    "title": "Interjeições e Palavras Denotativas",
+    "title": "Numerais e Interjeições",
     "learningObjectives": [
       "Consolidar a teoria morfossintática, os testes diagnósticos e os padrões de cobrança em concursos públicos para as classes de palavras Numeral e Interjeição. O percurso aborda desde os quatro tipos canônicos de numerais e suas pegadinhas contextuais mais recorrentes (artigo vs. numeral, funções da palavra segundo, numerais coletivos, valor aproximativo contextual e flexões de meio/metade) até a natureza invariável, a ausência de função sintática e os dois modelos de questões de interjeição (identificação/derivação imprópria e valor semântico contextual)."
     ],
-    "conceptCount": 1,
+    "conceptCount": 9,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A01-G05-01"
@@ -26,154 +28,2369 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "Interjeições expressam emoções súbitas e estados emotivos puros, enquanto as palavras denotativas desempenham papéis de realce, inclusão, exclusão, retificação e explicação que não se enquadram nas 10 classes morfológicas tradicionais da NGB.",
-      "visualBlueprint": "Interjeições: Ah!, Eita!, Oxalá!, Cuidado! (Carga emotiva, entoação exclamativa). Palavras Denotativas: Inclusão (até, inclusive, mesmo) | Exclusão (apenas, salvo, exceto) | Explicação (ou seja, isto é) | Retificação (aliás, ou melhor) | Realce (é que, cá, lá).",
-      "cognitiveAnchor": "Palavras denotativas não possuem função sintática oracional autônoma (não são sujeito, objeto ou adjunto), mas funcionam como operadores discursivos de argumentação.",
-      "strategicSignificance": "Evita o erro de forçar análises sintáticas tradicionais em palavras denotativas e garante a correta pontuação de expressões explicativas/retificativas.",
-      "coreTension": "Confundir palavras denotativas de inclusão/exclusão com advérbios tradicionais."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Numerais e Interjeições",
+      "summary": "Articulação morfossintática e semântica de Numerais e Interjeições com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A01-05",
-          "name": "Classificação Morfológica Geral",
-          "reason": "Entender por que a NGB separou as palavras denotativas das 10 classes tradicionais.",
-          "activationPrompt": "Na frase 'Ele comeu até a casca', qual a classe de 'até'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A01-G05",
+          "title": "Mapa de Dependência: Numerais e Interjeições",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Numerais e Interjeições",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Palavras e Expressões Denotativas",
-          "pedagogicalGoal": "Categorizar as principais funções das partículas e locuções denotativas.",
+          "groupId": "GRP-IP-A01-G05-01",
+          "title": "Conceito Gramatical e Categorias Tradicionais de Numerais",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "classification",
-              "title": "Classificação das Palavras Denotativas",
-              "categories": [
-                {
-                  "category": "Inclusão",
-                  "items": [
-                    "inclusive",
-                    "até",
-                    "mesmo",
-                    "também"
-                  ],
-                  "description": "Agregam um elemento ao conjunto discursivo"
-                },
-                {
-                  "category": "Exclusão",
-                  "items": [
-                    "apenas",
-                    "somente",
-                    "salvo",
-                    "exceto",
-                    "senão"
-                  ],
-                  "description": "Restringem e delimitam os elementos participantes"
-                },
-                {
-                  "category": "Retificação",
-                  "items": [
-                    "aliás",
-                    "ou melhor",
-                    "isto é",
-                    "digo"
-                  ],
-                  "description": "Corrigem ou redefinem a informação precedente"
-                },
-                {
-                  "category": "Explicação",
-                  "items": [
-                    "a saber",
-                    "por exemplo",
-                    "ou seja",
-                    "isto é"
-                  ],
-                  "description": "Esclarecem e detalham o conteúdo anterior"
-                },
-                {
-                  "category": "Realce / Expletivas",
-                  "items": [
-                    "é que",
-                    "lá",
-                    "cá",
-                    "só que"
-                  ],
-                  "description": "Enfatizam a mensagem e podem ser suprimidas sem perda de sentido"
-                }
-              ],
-              "text": "As palavras denotativas estruturam a argumentação e operam na coesão textual."
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nO numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas.\nExplicação Consolidada\nA gramática divide os numerais em quatro categorias funcionais:\nCardinais: Indicam contagem direta e quantidade básica absoluta de seres (ex.: um, dois, treze, mil, milhão). Exemplo em frase: \"Treze candidatos chegaram atrasados.\"\nOrdinais: Indicam a posição, lugar ou ordem relativa de um elemento em uma sequência determinada (ex.: primeiro, segundo, milésimo, milionésimo). Exemplo em frase: \"A primeira conquista foi aos 18 anos.\"\nFracionários: Indicam a divisão proporcional de uma quantidade, referindo-se a frações ou partes do todo (ex.: meio, um terço, três quartos, um quinto). Exemplo em frase: \"Já percorremos um terço do caminho.\"\nMultiplicativos: Indicam o aumento proporcional da quantidade por multiplicação (ex.: dobro, triplo, quádruplo). Exemplo em frase: \"Ele tem o triplo da experiência que eu tenho.\"\nCritérios de Reconhecimento\nPergunte à palavra no texto: ela conta (cardinal), posiciona (ordinal), divide (fracionário) ou multiplica (multiplicativo)?\nRelações\nContrasta com: (Numerais Coletivos).a 005."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G05-02",
+          "title": "Diferenciação entre Artigo Indefinido e Numeral Cardinal (*Um/Uma* e a Contração *Num*)",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nOs vocábulos um e uma (isolados ou em contrações prepositivas como num, numa, dum, duma) só atuam como numerais cardinais se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é artigo indefinido.\nExplicação Consolidada\nBancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: \"faria uma viagem, mas poderia fazer duas\"). No rigor da morfologia de concurso:\nHipótese Inicial Padrão: Todo um/uma deve ser tratado prioritariamente como artigo indefinido (indeterminador/generalizador).\nRequisito para Numeral Cardinal: O termo só mudará de classe para numeral se o contexto trouxer palavras de restrição numérica ou ênfase de contagem (ex.: somente, apenas, unicamente, exclusivamente, não dois, não três).\nCasos com Contração Prepositiva: Em estruturas como \"...se encontrassem num almoço...\" (em + um), o vocábulo um não expressa contagem numérica (não se opõe a dois almoços), mas introduz um evento indeterminado. Logo, num é a contração de preposição em com artigo indefinido um.\nExemplos e Contraexemplos\nArtigo Indefinido (Sem pista de contagem):\n\"Faria uma viagem.\" (indefinido)\n\"Um médico chegou.\" (indefinido)\n\"Assisti a um filme interessante ontem.\" (indefinido)\n\"Precisamos de uma solução para isso.\" (indefinido)\n\"...se encontrassem num almoço...\" (indefinido)\nNumeral Cardinal (Com pista explícita de quantificação):\n\"Tinha somente um vestido.\" (somente = pista)\n\"Trouxe apenas uma moeda.\" (apenas = pista)\n\"Havia apenas uma pessoa na fila de espera.\" (apenas = pista)\n\"A reunião ocorreu num só dia.\" (só = pista)(Método de Classificação de Um/Uma).002, 004, 006."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G05-03",
+          "title": "Funções e Classificações da Palavra \"Segundo\"",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nA palavra segundo pode atuar como numeral ordinal (indicando ordem sequencial) ou como conector conformativo (introduzindo referência/conformidade, equivalente a de acordo com ou conforme).\nExplicação Consolidada\nEmprego como Numeral Ordinal: Ocorre quando situa um elemento na posição número dois de uma série (ex.: \"Este é o segundo livro da coleção\").\nEmprego como Conector Conformativo: Ocorre quando introduz uma fonte, dado ou conformidade (ex.: \"Segundo o chefe da Divisão...\" / \"Segundo a previsão do tempo...\").\nGramática Tradicional (\"Raiz\"): Classifica o termo como preposição acidental, visto que desempenha o papel da locução prepositiva de acordo com.\nManuais Didáticos e Algumas Bancas: Denominam o termo como conjunção conformativa.\nPostura em Provas: O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal.(Teste de Substituição de Segundo).005, 007."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G05-04",
+          "title": "Numerais Coletivos e a Fronteira com Numerais Cardinais",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nPalavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos numerais coletivos, não se confundindo morfologicamente com os numerais cardinais.\nExplicação Consolidada\nExemplos canônicos cobrados em concursos:\nDúzia: grupo de 12 unidades.\nDécada: período/grupo de 10 anos.\nBimestre: período de 2 meses.\nNovena: período de 9 dias.\nDezena: grupo de 10 unidades.\nCentena: grupo de 100 unidades.\nAlerta de Prova\nAs bancas tentam induzir o candidato ao erro afirmando que dúzia ou década são numerais cardinais por corresponderem numericamente a 12 ou 10. A norma gramatical prescreve que são numerais coletivos, pois dão nome ao agrupamento de seres.\nRelações\nContrasta com: (Cardinais)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G05-05",
+          "title": "O Numeral Cardinal e o Papel do Contexto (Quantidade Exata vs. Aproximada)",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nEm tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma quantidade aproximada no plano textual, sem perder sua classificação morfológica de numeral cardinal.\nExplicação Consolidada\nEstrutura sem modificador: \"Dez alunos chegaram.\" O vocábulo dez é um numeral cardinal e expressa quantidade exata (rigorosamente 10).\nEstrutura com modificador aproximativo: \"Cerca de dez alunos chegaram.\" A palavra dez continua sendo morfologicamente um numeral cardinal, mas no contexto semântico transmite uma quantidade aproximada."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G05-06",
+          "title": "Empregos e Regras de Flexão de \"Metade\" e \"Meio\"",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nO vocábulo metade é sempre um numeral fracionário. A palavra meio admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número.\nExplicação Consolidada\nA Palavra \"Metade\": É invariavelmente um numeral fracionário e varia em número (a metade, as metades).\nA Palavra \"Meio\":\nA) Numeral Fracionário: Ocorre quando equivale a \"metade de uma fração\". É variável em gênero e número (concorda com o substantivo). Exemplo: \"Tomou meio copo de leite\" / \"Tomou meia caneca de leite\".\nB) Substantivo: Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É variável em número. Exemplo: \"O meio ambiente\" / \"Os meios de comunicação\".\nC) Advérbio: Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a \"um pouco\". É INVARIÁVEL (nunca flexiona para o feminino meia nem para o plural). Exemplo: \"Ela está meio cansada\" (e nunca \"meia cansada\").\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-003 (Substituição por \"um pouco\")."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G05-07",
+          "title": "Conceito, Invariabilidade e Ausência de Função Sintática das Interjeições",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nA interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (interjeição simples) ou como grupo de palavras (locução interjetiva).\nPropriedades Gramaticais Críticas\nInvariabilidade Morfológica: Pertence ao bloco das palavras invariáveis (ao lado de preposições, conjunções, advérbios e palavras denotativas), não sofrendo flexão de gênero, número ou pessoa.\nAusência de Função Sintática: A interjeição não exerce nenhuma função sintática na oração (não pode ser sujeito, predicado, objeto direto, objeto indireto, adjunto adnominal, adjunto adverbial ou complemento nominal). Ela atua como um bloco expressivo autônomo.\nPontuação: Embora seja tipicamente acompanhada de ponto de exclamação (!) por sua carga enfática, a interjeição pode vir isolada por vírgulas ou seguida de reticências (...), sem perder sua natureza de interjeição.\nRelações\nExpande em: e 009.\nGlossário associado: TERM-A01-G05-NUMERAIS-INTERJEICOES-007 e 008."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G05-08",
+          "title": "Metodologia de Concursos para Interjeição: Identificação e Derivação Imprópria",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nNo Modelo I de Questões (Identificação Morfológica), as bancas exigem o reconhecimento da interjeição no texto ou avaliam a derivação imprópria, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada.\nO Caso Emblemático da FGV (Senado Federal)\nTrecho examinado: \"E, surpresa!, quem a esta altura clama pelo surgimento...\"\nAnálise morfológica: O termo surpresa é originariamente um substantivo (\"Ganhei uma surpresa\"). No entanto, colocado entre vírgula e exclamação como brado exclamativo de impacto, ele assume o papel de interjeição.\nPista no enunciado da FGV: O comando da questão advertiu que o termo \"assume um papel gramatical distinto de sua classificação original\", fornecendo a pista direta da mudança de classe.\nDistinção Crucial entre Usos de \"Surpresa\"\nComo Substantivo: \"A festa surpresa foi adiada\" / \"Recebi uma surpresa\".\nComo Adjetivo / Predicativo: \"A professora ficou surpresa\" (qualifica o sujeito).\nComo Interjeição: \"E, surpresa!, consegui a vaga!\" (exclamação isolada emotiva).\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-004.009, 010, 011."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G05-09",
+          "title": "Metodologia de Concursos para Interjeição: Análise do Valor Semântico Contextual",
+          "conceptRefs": [
+            "KB-A01-G05-NUMERAIS-INTERJEICOES-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nNo Modelo II de Questões (Valor Semântico), a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição nunca é fixo de forma isolada; ele depende obrigatoriamente da leitura da sequência textual subsequente.\nPrincipais Matizes Semânticos em Concursos\nRealce / Enfatização Expressiva: A interjeição sublinha a emoção ou lirismo da oração seguinte (ex.: \"Ah, que minha história fosse como um raio de sol...\" — CESGRANRIO).\nChamamento (Função Apelativa): A interjeição serve para atrair a atenção do ouvinte, diferindo da ação expressa na oração posterior (ex.: \"Ei! Vamos embora!\" \"Ei!\" expressa chamamento, enquanto \"vamos embora\" é a despedida — CONSESP).\nDesejo / Esperança: Expressa um anseio ou pedido de concretização futura (ex.: \"Oxalá concluas a viagem\" = \"Tomara que concluas...\" — CESPE / Machado de Assis; \"Se Deus quiser...\" — ITAME).\nSurpresa / Espanto: Expressa a quebra de expectativa diante do inesperado (ex.: \"Puxa! Não esperava te ver aqui!\" — ITAME).\nApelo / Súplica: Expressa pedido urgente de ajuda (ex.: \"Socorro! Alguém me dê um coração\" — CESPE / Titãs).\nAlerta / Advertência: Expressa aviso de perigo iminente (ex.: \"Cuidado com o carro!\").(Método de Análise Semântica Contextual).a 017."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nO numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas.\nExplicação Consolidada\nA gramática divide os numerais em quatro categorias funcionais:\nCardinais: Indicam contagem direta e quantidade básica absoluta de seres (ex.: um, dois, treze, mil, milhão). Exemplo em frase: \"Treze candidatos chegaram atrasados.\"\nOrdinais: Indicam a posição, lugar ou ordem relativa de um elemento em uma sequência determinada (ex.: primeiro, segundo, milésimo, milionésimo). Exemplo em frase: \"A primeira conquista foi aos 18 anos.\"\nFracionários: Indicam a divisão proporcional de uma quantidade, referindo-se a frações ou partes do todo (ex.: meio, um terço, três quartos, um quinto). Exemplo em frase: \"Já percorremos um terço do caminho.\"\nMultiplicativos: Indicam o aumento proporcional da quantidade por multiplicação (ex.: dobro, triplo, quádruplo). Exemplo em frase: \"Ele tem o triplo da experiência que eu tenho.\"\nCritérios de Reconhecimento\nPergunte à palavra no texto: ela conta (cardinal), posiciona (ordinal), divide (fracionário) ou multiplica (multiplicativo)?\nRelações\nContrasta com: (Numerais Coletivos).a 005."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nOs vocábulos um e uma (isolados ou em contrações prepositivas como num, numa, dum, duma) só atuam como numerais cardinais se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é artigo indefinido.\nExplicação Consolidada\nBancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: \"faria uma viagem, mas poderia fazer duas\"). No rigor da morfologia de concurso:\nHipótese Inicial Padrão: Todo um/uma deve ser tratado prioritariamente como artigo indefinido (indeterminador/generalizador).\nRequisito para Numeral Cardinal: O termo só mudará de classe para numeral se o contexto trouxer palavras de restrição numérica ou ênfase de contagem (ex.: somente, apenas, unicamente, exclusivamente, não dois, não três).\nCasos com Contração Prepositiva: Em estruturas como \"...se encontrassem num almoço...\" (em + um), o vocábulo um não expressa contagem numérica (não se opõe a dois almoços), mas introduz um evento indeterminado. Logo, num é a contração de preposição em com artigo indefinido um.\nExemplos e Contraexemplos\nArtigo Indefinido (Sem pista de contagem):\n\"Faria uma viagem.\" (indefinido)\n\"Um médico chegou.\" (indefinido)\n\"Assisti a um filme interessante ontem.\" (indefinido)\n\"Precisamos de uma solução para isso.\" (indefinido)\n\"...se encontrassem num almoço...\" (indefinido)\nNumeral Cardinal (Com pista explícita de quantificação):\n\"Tinha somente um vestido.\" (somente = pista)\n\"Trouxe apenas uma moeda.\" (apenas = pista)\n\"Havia apenas uma pessoa na fila de espera.\" (apenas = pista)\n\"A reunião ocorreu num só dia.\" (só = pista)(Método de Classificação de Um/Uma).002, 004, 006."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nA palavra segundo pode atuar como numeral ordinal (indicando ordem sequencial) ou como conector conformativo (introduzindo referência/conformidade, equivalente a de acordo com ou conforme).\nExplicação Consolidada\nEmprego como Numeral Ordinal: Ocorre quando situa um elemento na posição número dois de uma série (ex.: \"Este é o segundo livro da coleção\").\nEmprego como Conector Conformativo: Ocorre quando introduz uma fonte, dado ou conformidade (ex.: \"Segundo o chefe da Divisão...\" / \"Segundo a previsão do tempo...\").\nGramática Tradicional (\"Raiz\"): Classifica o termo como preposição acidental, visto que desempenha o papel da locução prepositiva de acordo com.\nManuais Didáticos e Algumas Bancas: Denominam o termo como conjunção conformativa.\nPostura em Provas: O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal.(Teste de Substituição de Segundo).005, 007."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nPalavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos numerais coletivos, não se confundindo morfologicamente com os numerais cardinais.\nExplicação Consolidada\nExemplos canônicos cobrados em concursos:\nDúzia: grupo de 12 unidades.\nDécada: período/grupo de 10 anos.\nBimestre: período de 2 meses.\nNovena: período de 9 dias.\nDezena: grupo de 10 unidades.\nCentena: grupo de 100 unidades.\nAlerta de Prova\nAs bancas tentam induzir o candidato ao erro afirmando que dúzia ou década são numerais cardinais por corresponderem numericamente a 12 ou 10. A norma gramatical prescreve que são numerais coletivos, pois dão nome ao agrupamento de seres.\nRelações\nContrasta com: (Cardinais)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nEm tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma quantidade aproximada no plano textual, sem perder sua classificação morfológica de numeral cardinal.\nExplicação Consolidada\nEstrutura sem modificador: \"Dez alunos chegaram.\" O vocábulo dez é um numeral cardinal e expressa quantidade exata (rigorosamente 10).\nEstrutura com modificador aproximativo: \"Cerca de dez alunos chegaram.\" A palavra dez continua sendo morfologicamente um numeral cardinal, mas no contexto semântico transmite uma quantidade aproximada."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nO vocábulo metade é sempre um numeral fracionário. A palavra meio admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número.\nExplicação Consolidada\nA Palavra \"Metade\": É invariavelmente um numeral fracionário e varia em número (a metade, as metades).\nA Palavra \"Meio\":\nA) Numeral Fracionário: Ocorre quando equivale a \"metade de uma fração\". É variável em gênero e número (concorda com o substantivo). Exemplo: \"Tomou meio copo de leite\" / \"Tomou meia caneca de leite\".\nB) Substantivo: Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É variável em número. Exemplo: \"O meio ambiente\" / \"Os meios de comunicação\".\nC) Advérbio: Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a \"um pouco\". É INVARIÁVEL (nunca flexiona para o feminino meia nem para o plural). Exemplo: \"Ela está meio cansada\" (e nunca \"meia cansada\").\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-003 (Substituição por \"um pouco\")."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nA interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (interjeição simples) ou como grupo de palavras (locução interjetiva).\nPropriedades Gramaticais Críticas\nInvariabilidade Morfológica: Pertence ao bloco das palavras invariáveis (ao lado de preposições, conjunções, advérbios e palavras denotativas), não sofrendo flexão de gênero, número ou pessoa.\nAusência de Função Sintática: A interjeição não exerce nenhuma função sintática na oração (não pode ser sujeito, predicado, objeto direto, objeto indireto, adjunto adnominal, adjunto adverbial ou complemento nominal). Ela atua como um bloco expressivo autônomo.\nPontuação: Embora seja tipicamente acompanhada de ponto de exclamação (!) por sua carga enfática, a interjeição pode vir isolada por vírgulas ou seguida de reticências (...), sem perder sua natureza de interjeição.\nRelações\nExpande em: e 009.\nGlossário associado: TERM-A01-G05-NUMERAIS-INTERJEICOES-007 e 008."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nNo Modelo I de Questões (Identificação Morfológica), as bancas exigem o reconhecimento da interjeição no texto ou avaliam a derivação imprópria, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada.\nO Caso Emblemático da FGV (Senado Federal)\nTrecho examinado: \"E, surpresa!, quem a esta altura clama pelo surgimento...\"\nAnálise morfológica: O termo surpresa é originariamente um substantivo (\"Ganhei uma surpresa\"). No entanto, colocado entre vírgula e exclamação como brado exclamativo de impacto, ele assume o papel de interjeição.\nPista no enunciado da FGV: O comando da questão advertiu que o termo \"assume um papel gramatical distinto de sua classificação original\", fornecendo a pista direta da mudança de classe.\nDistinção Crucial entre Usos de \"Surpresa\"\nComo Substantivo: \"A festa surpresa foi adiada\" / \"Recebi uma surpresa\".\nComo Adjetivo / Predicativo: \"A professora ficou surpresa\" (qualifica o sujeito).\nComo Interjeição: \"E, surpresa!, consegui a vaga!\" (exclamação isolada emotiva).\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-004.009, 010, 011."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nNo Modelo II de Questões (Valor Semântico), a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição nunca é fixo de forma isolada; ele depende obrigatoriamente da leitura da sequência textual subsequente.\nPrincipais Matizes Semânticos em Concursos\nRealce / Enfatização Expressiva: A interjeição sublinha a emoção ou lirismo da oração seguinte (ex.: \"Ah, que minha história fosse como um raio de sol...\" — CESGRANRIO).\nChamamento (Função Apelativa): A interjeição serve para atrair a atenção do ouvinte, diferindo da ação expressa na oração posterior (ex.: \"Ei! Vamos embora!\" \"Ei!\" expressa chamamento, enquanto \"vamos embora\" é a despedida — CONSESP).\nDesejo / Esperança: Expressa um anseio ou pedido de concretização futura (ex.: \"Oxalá concluas a viagem\" = \"Tomara que concluas...\" — CESPE / Machado de Assis; \"Se Deus quiser...\" — ITAME).\nSurpresa / Espanto: Expressa a quebra de expectativa diante do inesperado (ex.: \"Puxa! Não esperava te ver aqui!\" — ITAME).\nApelo / Súplica: Expressa pedido urgente de ajuda (ex.: \"Socorro! Alguém me dê um coração\" — CESPE / Titãs).\nAlerta / Advertência: Expressa aviso de perigo iminente (ex.: \"Cuidado com o carro!\").(Método de Análise Semântica Contextual).a 017."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-DEN-01",
-          "title": "Pontuação de Expressões Retificativas e Explicativas",
-          "statement": "Expressões denotativas de explicação e retificação (isto é, ou seja, por exemplo, aliás, a saber) devem ser isoladas por vírgulas quando intercaladas no período.",
-          "formalCondition": "Frase_1, Expressão_Denotativa, Frase_2.",
-          "scope": "Universal na sintaxe de pontuação.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A01-G05-001",
+          "title": "Quadro Resumo de Regras Canônicas",
+          "statement": "Quadro Resumo de Regras Canônicas",
+          "scope": "morphology",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Quadro Resumo de Regras Canônicas."
+          ],
           "exceptions": [],
-          "examples": [
-            "O projeto, aliás, já foi aprovado.",
-            "O réu, ou seja, o acusado, não compareceu."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A01-G05-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A01-G05-001",
+              "table": {
+                "tableId": "TABLE-IP-A01-G05-001",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Conceito / Termo",
+                  "Classificação Canônica",
+                  "Critério Decisivo de Reconhecimento",
+                  "ID de Referência"
+                ],
+                "rows": [
+                  [
+                    "Numeral Cardinal",
+                    "Morfologia (Variável)",
+                    "Indica contagem direta ou quantidade básica absoluta.",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-001"
+                  ],
+                  [
+                    "Numeral Ordinal",
+                    "Morfologia (Variável)",
+                    "Indica ordem, posição ou lugar em uma série sequencial.",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-001"
+                  ],
+                  [
+                    "Numeral Fracionário",
+                    "Morfologia (Variável)",
+                    "Expressa divisão proporcional ou frações de um todo (meio, um terço).",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-001"
+                  ],
+                  [
+                    "Numeral Multiplicativo",
+                    "Morfologia (Variável)",
+                    "Expressa o aumento proporcional da quantidade por múltiplos (dobro, triplo).",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-001"
+                  ],
+                  [
+                    "Numeral Coletivo",
+                    "Morfologia (Substantivo coletivo numérico)",
+                    "Nomeia no singular um grupo com número exato de unidades (dúzia, década).",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-004"
+                  ],
+                  [
+                    "Artigo Indefinido (Um/Uma)",
+                    "Morfologia (Variável)",
+                    "Generaliza ou indetermina o substantivo na ausência de palavras-pista de contagem.",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-002"
+                  ],
+                  [
+                    "Segundo (Ordinal)",
+                    "Numeral Ordinal",
+                    "Indica a posição 2º em uma sequência ou série.",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-003"
+                  ],
+                  [
+                    "Segundo (Conformativo)",
+                    "Preposição Acidental / Conjunção Conformativa",
+                    "Equivale ade acordo com ou conforme; introduz conformidade.",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-003"
+                  ],
+                  [
+                    "Meio (Fracionário)",
+                    "Numeral Fracionário (Variável)",
+                    "Equivale a \"metade de uma fração\" e concorda com o substantivo (meio copo, meia caneca).",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-006"
+                  ],
+                  [
+                    "Meio (Substantivo)",
+                    "Substantivo (Variável)",
+                    "Nomeia ambiente, lugar ou recurso (o meio ambiente, os meios).",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-006"
+                  ],
+                  [
+                    "Meio (Advérbio)",
+                    "Advérbio Modificador (Invariável)",
+                    "Equivale a \"um pouco\" e modifica adjetivos (meio cansada).",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-006"
+                  ],
+                  [
+                    "Interjeição",
+                    "Morfologia (Invariável)",
+                    "Expressa estados emotivos/apelos e possui 0 função sintática.",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-007"
+                  ],
+                  [
+                    "Locução Interjetiva",
+                    "Morfologia (Invariável)",
+                    "Expressão plurivocabular com função e valor de interjeição (pelo amor de Deus!).",
+                    "KB-A01-G05-NUMERAIS-INTERJEICOES-007"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A01-G05-001",
+              "EXP-IP-A01-G05-035"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-DEN-01",
-          "title": "Identificação da Partícula Expletiva / de Realce 'É QUE'",
-          "triggerCondition": "Verificar se a estrutura 'é que' tem função sintática ou é mero realce.",
+          "entityId": "PROC-A01-G05-NUMERAIS-INTERJEICOES-001",
+          "title": "Procedimento para Classificar *Um / Uma* (Artigo Indefinido vs. Numeral Cardinal)",
           "steps": [
-            "1. Isole a expressão 'é que' na frase.",
-            "2. Elimine a expressão 'é que' mentalmente da oração.",
-            "3. Se a frase mantiver a integridade sintática e o sentido básico intacto (perdendo apenas a ênfase), trata-se de partícula de realce (expletiva).",
-            "4. Exemplo: 'Nós é que sabemos a verdade' -> 'Nós sabemos a verdade'."
+            {
+              "order": 1,
+              "action": "Passo 1 (Assumir Hipótese Padrão)",
+              "explanation": "Ao visualizar a palavra um ou uma, estabeleça mentalmente que o termo é Artigo Indefinido. Não procure validar a tese de numeral de imediato.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Varredura de Pistas Contextuais)",
+              "explanation": "Inspecione o período e as orações vizinhas em busca de termos que restrinjam ou explicitem a contagem numérica:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Pistas",
+              "explanation": "apenas, somente, unicamente, exclusivamente, não dois, não três.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Passo 3 (Tomada de Decisão)",
+              "explanation": "Passo 4 do algoritmo de Procedimento para Classificar *Um / Uma* (Artigo Indefinido vs. Numeral Cardinal).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se houver pista expressa",
+              "explanation": "Classifique como Numeral Cardinal.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se não houver pista expressa",
+              "explanation": "Mantenha a classificação de Artigo Indefinido.",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se a retirada de 'é que' não destrói a oração principal.",
-          "typicalFailureModes": [
-            "Classificar 'é que' como verbo de ligação + conjunção integrante em estruturas puramente enfáticas."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento para Classificar *Um / Uma* (Artigo Indefinido vs. Numeral Cardinal)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento para Classificar *Um / Uma* (Artigo Indefinido vs. Numeral Cardinal)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Procedimento para Classificar *Um / Uma* (Artigo Indefinido vs. Numeral Cardinal)",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A01-G05-NUMERAIS-INTERJEICOES-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Objetivo: Determinar com exatidão a classe gramatical de um, uma ou formas contraídas (num, dum) em itens de prova."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos Operacionais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 (Assumir Hipótese Padrão): Ao visualizar a palavra um ou uma, estabeleça mentalmente que o termo é Artigo Indefinido. Não procure validar a tese de numeral de imediato.",
+                "Passo 2 (Varredura de Pistas Contextuais): Inspecione o período e as orações vizinhas em busca de termos que restrinjam ou explicitem a contagem numérica:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pistas: apenas, somente, unicamente, exclusivamente, não dois, não três."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 3 (Tomada de Decisão):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se houver pista expressa: Classifique como Numeral Cardinal.",
+                "Se não houver pista expressa: Mantenha a classificação de Artigo Indefinido."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A01-G05-NUMERAIS-INTERJEICOES-001",
+              "EXP-IP-A01-G05-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A01-G05-NUMERAIS-INTERJEICOES-002",
+          "title": "Teste de Substituição para a Palavra \"Segundo\"",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Verificação de Ordem)",
+              "explanation": "Cheque se a palavra expressa a posição 2º em uma fila, série ou enumeração. Se sim, trata-se de Numeral Ordinal.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Substituição por Locução Prepositiva / Conjunção)",
+              "explanation": "Caso não indique ordem, troque mentalmente a palavra por \"de acordo com\" ou \"conforme\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 (Validação)",
+              "explanation": "Mantendo-se o sentido e a correção, confirme que a palavra é uma Preposição Acidental (ou Conjunção Conformativa) e invalide qualquer assertiva que a chame de numeral.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Substituição para a Palavra \"Segundo\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Substituição para a Palavra \"Segundo\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste de Substituição para a Palavra \"Segundo\"",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A01-G05-NUMERAIS-INTERJEICOES-002",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Objetivo: Discriminar se segundo é numeral ordinal ou conector conformativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos Operacionais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 (Verificação de Ordem): Cheque se a palavra expressa a posição 2º em uma fila, série ou enumeração. Se sim, trata-se de Numeral Ordinal.",
+                "Passo 2 (Substituição por Locução Prepositiva / Conjunção): Caso não indique ordem, troque mentalmente a palavra por \"de acordo com\" ou \"conforme\".",
+                "Passo 3 (Validação): Mantendo-se o sentido e a correção, confirme que a palavra é uma Preposição Acidental (ou Conjunção Conformativa) e invalide qualquer assertiva que a chame de numeral."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A01-G05-NUMERAIS-INTERJEICOES-002",
+              "EXP-IP-A01-G05-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A01-G05-NUMERAIS-INTERJEICOES-003",
+          "title": "Teste de Invariabilidade do Advérbio \"Meio\"",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Substituição por \"Um Pouco\")",
+              "explanation": "Substitua o vocábulo meio pela locução adverbial \"um pouco\".",
+              "test": "Passo 1 (Substituição por \"Um Pouco\"): Substitua o vocábulo meio pela locução adverbial \"um pouco\"."
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Avaliação do Termo Modificado)",
+              "explanation": "Se a substituição fizer sentido e a palavra estiver modificando um adjetivo (ex.: cansada, aberta, tonta), trata-se de um Advérbio.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 (Aplicação da Invariabilidade)",
+              "explanation": "Por ser advérbio, o termo deve permanecer rigidamente no masculino singular (\"meio cansada\"), sendo gramaticalmente incorreto o uso de \"meia cansada\".",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Invariabilidade do Advérbio \"Meio\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Invariabilidade do Advérbio \"Meio\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste de Invariabilidade do Advérbio \"Meio\"",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A01-G05-NUMERAIS-INTERJEICOES-003",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Objetivo: Evitar erros de concordância nominal e classificar acertadamente o vocábulo meio."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos Operacionais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 (Substituição por \"Um Pouco\"): Substitua o vocábulo meio pela locução adverbial \"um pouco\".",
+                "Passo 2 (Avaliação do Termo Modificado): Se a substituição fizer sentido e a palavra estiver modificando um adjetivo (ex.: cansada, aberta, tonta), trata-se de um Advérbio.",
+                "Passo 3 (Aplicação da Invariabilidade): Por ser advérbio, o termo deve permanecer rigidamente no masculino singular (\"meio cansada\"), sendo gramaticalmente incorreto o uso de \"meia cansada\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A01-G05-NUMERAIS-INTERJEICOES-003",
+              "EXP-IP-A01-G05-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A01-G05-NUMERAIS-INTERJEICOES-004",
+          "title": "Método de Análise Semântica Contextual de Interjeições",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Passo 1 (Isolar a Interjeição)",
+              "explanation": "Delimite a interjeição ou locução interjetiva no texto (ex.: \"Ei!\").",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 (Examinar a Sequência Textual)",
+              "explanation": "Leia a frase ou oração subsequente à interjeição (ex.: \"Vamos embora!\").",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Passo 3 (Separar a Função da Interjeição da Ação da Frase)",
+              "explanation": "Passo 3 do algoritmo de Método de Análise Semântica Contextual de Interjeições.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "A frase indica a ação que se deseja realizar (partir/despedir-se).",
+              "explanation": "Passo 4 do algoritmo de Método de Análise Semântica Contextual de Interjeições.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "A interjeição indica o mecanismo de contato e apelo (chamar a atenção do interlocutor).",
+              "explanation": "Passo 5 do algoritmo de Método de Análise Semântica Contextual de Interjeições.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 4 (Conclusão)",
+              "explanation": "O valor da interjeição \"Ei!\" é chamamento (função apelativa).",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método de Análise Semântica Contextual de Interjeições."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método de Análise Semântica Contextual de Interjeições."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Método de Análise Semântica Contextual de Interjeições",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A01-G05-NUMERAIS-INTERJEICOES-004",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Objetivo: Identificar o valor semântico exato da interjeição sem confundir a intenção do vocábulo com a ação descrita na frase seguinte."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos Operacionais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 (Isolar a Interjeição): Delimite a interjeição ou locução interjetiva no texto (ex.: \"Ei!\").",
+                "Passo 2 (Examinar a Sequência Textual): Leia a frase ou oração subsequente à interjeição (ex.: \"Vamos embora!\").",
+                "Passo 3 (Separar a Função da Interjeição da Ação da Frase):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A frase indica a ação que se deseja realizar (partir/despedir-se).",
+                "A interjeição indica o mecanismo de contato e apelo (chamar a atenção do interlocutor)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 4 (Conclusão): O valor da interjeição \"Ei!\" é chamamento (função apelativa)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A01-G05-NUMERAIS-INTERJEICOES-004",
+              "EXP-IP-A01-G05-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-DEN-01",
-          "conceptA": "Até (Palavra Denotativa de Inclusão)",
-          "conceptB": "Até (Preposição de Limite)",
-          "decisiveDifference": "'Até' de inclusão equivale a 'inclusive, mesmo'; 'Até' preposição indica limite de espaço ou tempo.",
-          "minimalPair": {
-            "sentenceA": "Até os mais céticos acreditaram. (Inclusão = inclusive os mais céticos)",
-            "sentenceB": "Caminhamos até a praia. (Preposição = limite espacial)",
-            "difference": "Inclusão (denotativa) vs Limite físico (preposição essencial)."
+          "entityId": "CONTRAST-IP-A01-G05-001",
+          "title": "Tabela Comparativa de Fronteiras Gramaticais Críticas",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Substitua por 'inclusive': se funcionar, é palavra denotativa de inclusão.",
-          "pitfall": "Classificar 'até' como preposição quando tiver sentido de 'inclusive'."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Tabela Comparativa de Fronteiras Gramaticais Críticas",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A01-G05-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A01-G05-002",
+              "table": {
+                "tableId": "TABLE-IP-A01-G05-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Termo / Par em Contraste",
+                  "Categoria A",
+                  "Categoria B",
+                  "Critério Decisivo de Diferenciação"
+                ],
+                "rows": [
+                  [
+                    "Um / Uma",
+                    "Artigo Indefinido: Generaliza o substantivo (\"uma viagem\").",
+                    "Numeral Cardinal: Conta e restringe a quantidade (\"apenas uma viagem\").",
+                    "Presença ou ausência de palavra-pista de quantificação (apenas, somente)."
+                  ],
+                  [
+                    "Segundo",
+                    "Numeral Ordinal: Indica posição sequencial (\"segundo andar\").",
+                    "Preposição Acidental / Conjunção: Indica conformidade (\"Segundo o autor...\").",
+                    "Substituibilidade por\"de acordo com\" ou \"conforme\"."
+                  ],
+                  [
+                    "Dúzia / Década",
+                    "Numeral Coletivo: Substantivo que nomeia conjunto exato.",
+                    "Numeral Cardinal: Palavra que opera contagem direta (doze, dez).",
+                    "Estrutura de agrupamento coletivo vs. contagem pura."
+                  ],
+                  [
+                    "Dez / Cerca de dez",
+                    "Quantidade Exata: Numeral cardinal puro (\"Dez alunos\").",
+                    "Quantidade Aproximada: Numeral cardinal com modificador (\"Cerca de dez alunos\").",
+                    "Presença do modificador contextual aproximativo (cerca de)."
+                  ],
+                  [
+                    "Meio (Fracionário vs. Advérbio)",
+                    "Numeral Fracionário: Variável, equivale a \"metade\" (\"meia maçã\").",
+                    "Advérbio: Invariável, equivale a \"um pouco\" (\"meio triste\").",
+                    "Troca por \"metade\" (variável) vs. troca por \"um pouco\" (invariável)."
+                  ],
+                  [
+                    "Surpresa (Subst. vs. Interjeição)",
+                    "Substantivo: Nomeia evento/coisa (\"Ganhei uma surpresa\").",
+                    "Interjeição: Brado emotivo contextual isolado (\"E, surpresa!...\").",
+                    "Emprego isolado com exclamação (derivação imprópria da FGV)."
+                  ],
+                  [
+                    "Interjeição vs. Verbo Imperativo",
+                    "Interjeição: Palavra invariável sem flexão (\"Bravo!\", \"Pô!\").",
+                    "Verbo no Imperativo: Ação verbal conjugada de ordem/pedido (\"Corra!\").",
+                    "Existência de flexão verbal de pessoa e modo imperativo."
+                  ],
+                  [
+                    "Interjeição vs. Locução Verbal",
+                    "Interjeição: Palavra expressiva invariável (\"Ah!\").",
+                    "Locução Verbal Exclamativa: Tempo composto verbal (\"Tenho dito!\" = ter + dito).",
+                    "Estrutura sintática verbal composta com particípio."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A01-G05-001",
+              "EXP-IP-A01-G05-044"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-DEN-01",
-          "title": "Uso da Expressão de Realce 'Lá'",
-          "sentence": "Eu lá sei onde ele colocou as chaves!",
-          "analysis": "'Lá' não indica lugar físico nesta frase; atua como palavra denotativa de realce/expletiva para enfatizar o desconhecimento do emissor.",
-          "pedagogicalTakeaway": "Palavras aparentemente de lugar ou tempo podem esvaziar-se de sentido referencial e atuar puramente como realce enfático.",
-          "targetLO": "LO-A01-G05-01"
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-001",
+          "title": "Enunciado",
+          "statement": "Classifique a palavra sublinhada com a convenção: (1) numeral (2) artigo (3) conjunção. \"Assisti a um filme interessante ontem.\"",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Classifique a palavra sublinhada com a convenção: (1) numeral (2) artigo (3) conjunção. \"Assisti a um filme interessante ontem.\"'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-001",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "Classifique a palavra sublinhada com a convenção: (1) numeral (2) artigo (3) conjunção. \"Assisti a um filme interessante ontem.\""
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-001",
+              "EXP-IP-A01-G05-045"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-002",
+          "title": "Resolução Consolidada",
+          "statement": "A oração não traz modificadores de restrição numérica (somente, apenas). O falante apenas apresenta um filme de forma indeterminada. Trata-se de artigo indefinido. Gabarito: ( 2 ) Artigo [Artigo Indefinido].",
+          "prompt": "A oração não traz modificadores de restrição numérica (somente, apenas)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A oração não traz modificadores de restrição numérica (somente, apenas)",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "O falante apenas apresenta um filme de forma indeterminada",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Trata-se de artigo indefinido",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito: ( 2 ) Artigo [Artigo Indefinido].",
+              "rationale": "Etapa 4 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: ( 2 ) Artigo [Artigo Indefinido].",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'A oração não traz modificadores de restrição numérica (somente, apenas). O falante apenas apresenta um filme de forma indeterminada. Trata-se de artigo indefinido. Gabarito: ( 2 ) Artigo [Artigo Indefinido].'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"A oração não traz modificadores de restr\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-002",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A oração não traz modificadores de restrição numérica (somente, apenas). O falante apenas apresenta um filme de forma indeterminada. Trata-se de artigo indefinido. Gabarito: ( 2 ) Artigo [Artigo Indefinido]."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-002",
+              "EXP-IP-A01-G05-046"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-003",
+          "title": "Enunciado",
+          "statement": "\"Havia apenas uma pessoa na fila de espera.\"",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '\"Havia apenas uma pessoa na fila de espera.\"'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-003",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Havia apenas uma pessoa na fila de espera.\""
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-003",
+              "EXP-IP-A01-G05-047"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-004",
+          "title": "Resolução Consolidada",
+          "statement": "O vocábulo uma é antecedido diretamente pelo modificador restritivo apenas, configurando pista explícita de contagem. Trata-se de numeral cardinal. Gabarito: ( 1 ) Numeral [Numeral Cardinal].",
+          "prompt": "O vocábulo uma é antecedido diretamente pelo modificador restritivo apenas, configurando pista explícita de contagem",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O vocábulo uma é antecedido diretamente pelo modificador restritivo apenas, configurando pista explícita de contagem",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Trata-se de numeral cardinal",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito: ( 1 ) Numeral [Numeral Cardinal].",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: ( 1 ) Numeral [Numeral Cardinal].",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O vocábulo uma é antecedido diretamente pelo modificador restritivo apenas, configurando pista explícita de contagem. Trata-se de numeral cardinal. Gabarito: ( 1 ) Numeral [Numeral Cardinal].'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"O vocábulo uma é antecedido diretamente \".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-004",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O vocábulo uma é antecedido diretamente pelo modificador restritivo apenas, configurando pista explícita de contagem. Trata-se de numeral cardinal. Gabarito: ( 1 ) Numeral [Numeral Cardinal]."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-004",
+              "EXP-IP-A01-G05-048"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-005",
+          "title": "Enunciado",
+          "statement": "\"Este é o segundo livro da coleção.\"",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '\"Este é o segundo livro da coleção.\"'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-005",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Este é o segundo livro da coleção.\""
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-005",
+              "EXP-IP-A01-G05-049"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-006",
+          "title": "Resolução Consolidada",
+          "statement": "A palavra segundo indica a posição do livro na série/coleção (primeiro, segundo, terceiro). Trata-se de numeral ordinal. Gabarito: ( 1 ) Numeral [Numeral Ordinal].",
+          "prompt": "A palavra segundo indica a posição do livro na série/coleção (primeiro, segundo, terceiro)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A palavra segundo indica a posição do livro na série/coleção (primeiro, segundo, terceiro)",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Trata-se de numeral ordinal",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito: ( 1 ) Numeral [Numeral Ordinal].",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: ( 1 ) Numeral [Numeral Ordinal].",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'A palavra segundo indica a posição do livro na série/coleção (primeiro, segundo, terceiro). Trata-se de numeral ordinal. Gabarito: ( 1 ) Numeral [Numeral Ordinal].'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"A palavra segundo indica a posição do li\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-006",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A palavra segundo indica a posição do livro na série/coleção (primeiro, segundo, terceiro). Trata-se de numeral ordinal. Gabarito: ( 1 ) Numeral [Numeral Ordinal]."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-006",
+              "EXP-IP-A01-G05-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-007",
+          "title": "Enunciado",
+          "statement": "\"Precisamos de uma solução para isso.\"",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '\"Precisamos de uma solução para isso.\"'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-007",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Precisamos de uma solução para isso.\""
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-007",
+              "EXP-IP-A01-G05-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-008",
+          "title": "Resolução Consolidada",
+          "statement": "O falante busca uma solução qualquer. Não há palavra de quantificação explícita. Trata-se de artigo indefinido. Gabarito: ( 2 ) Artigo [Artigo Indefinido].",
+          "prompt": "O falante busca uma solução qualquer",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O falante busca uma solução qualquer",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Não há palavra de quantificação explícita",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Trata-se de artigo indefinido",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito: ( 2 ) Artigo [Artigo Indefinido].",
+              "rationale": "Etapa 4 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: ( 2 ) Artigo [Artigo Indefinido].",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O falante busca uma solução qualquer. Não há palavra de quantificação explícita. Trata-se de artigo indefinido. Gabarito: ( 2 ) Artigo [Artigo Indefinido].'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"O falante busca uma solução qualquer\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-008",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O falante busca uma solução qualquer. Não há palavra de quantificação explícita. Trata-se de artigo indefinido. Gabarito: ( 2 ) Artigo [Artigo Indefinido]."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-008",
+              "EXP-IP-A01-G05-052"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-009",
+          "title": "Enunciado",
+          "statement": "\"Segundo um quinto dos entrevistados, as mudanças são inevitáveis.\"",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '\"Segundo um quinto dos entrevistados, as mudanças são inevitáveis.\"'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-009",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Segundo um quinto dos entrevistados, as mudanças são inevitáveis.\""
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-009",
+              "EXP-IP-A01-G05-053"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-010",
+          "title": "Resolução Consolidada",
+          "statement": "Segundo: Equivale a \"de acordo com\" / \"conforme\". Classifica-se como conjunção conformativa / preposição acidental. Código: ( 3 ).\num quinto: Expressa fração matemática da totalidade dos entrevistados. Trata-se de numeral fracionário. Código: ( 1 ).",
+          "prompt": "Segundo: Equivale a \"de acordo com\" / \"conforme\". Classifica-se como conjunção conformativa / preposição acidental. Código: ( 3 ).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Segundo",
+              "rationale": "Equivale a \"de acordo com\" / \"conforme\". Classifica-se como conjunção conformativa / preposição acidental. Código: ( 3 )."
+            },
+            {
+              "order": 2,
+              "action": "um quinto",
+              "rationale": "Expressa fração matemática da totalidade dos entrevistados. Trata-se de numeral fracionário. Código: ( 1 )."
+            }
+          ],
+          "result": "um quinto: Expressa fração matemática da totalidade dos entrevistados. Trata-se de numeral fracionário. Código: ( 1 ).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Segundo: Equivale a \"de acordo com\" / \"conforme\". Classifica-se como conjunção conformativa / preposição acidental. Código: ( 3 ).\num quinto: Expressa fração matemática da totalidade dos entrevistados. Trata-se de numeral fracionário. Código: ( 1 ).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-010",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Segundo: Equivale a \"de acordo com\" / \"conforme\". Classifica-se como conjunção conformativa / preposição acidental. Código: ( 3 ).",
+                "um quinto: Expressa fração matemática da totalidade dos entrevistados. Trata-se de numeral fracionário. Código: ( 1 )."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-010",
+              "EXP-IP-A01-G05-054"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-011",
+          "title": "Enunciado",
+          "statement": "CESPE/CEBRASPE – Prefeitura de São Cristóvão – SE – Professor de Educação Básica Texto 9A2-I (l. 8–10): \"...se os ministros da Fazenda de Israel e do Irã se encontrassem num almoço, eles teriam uma linguagem econômica comum e poderiam facilmente compartilhar agruras.\" Item: O vocábulo “num” (l.9) é formado pela contração da preposição em com o numeral um. Certo Errado",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'CESPE/CEBRASPE – Prefeitura de São Cristóvão – SE – Professor de Educação Básica Texto 9A2-I (l. 8–10): \"...se os ministros da Fazenda de Israel e do Irã se encontrassem num almoço, eles teriam uma linguagem econômica comum e poderiam facilmente compartilhar agruras.\" Item: O vocábulo “num” (l.9) é formado pela contração da preposição em com o numeral um. Certo Errado'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-011",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "CESPE/CEBRASPE – Prefeitura de São Cristóvão – SE – Professor de Educação Básica Texto 9A2-I (l. 8–10): \"...se os ministros da Fazenda de Israel e do Irã se encontrassem num almoço, eles teriam uma linguagem econômica comum e poderiam facilmente compartilhar agruras.\" Item: O vocábulo “num” (l.9) é formado pela contração da preposição em com o numeral um. Certo Errado"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-011",
+              "EXP-IP-A01-G05-055"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-012",
+          "title": "Resolução Consolidada",
+          "statement": "O vocábulo num resulta da fusão de em + um. No entanto, \"num almoço\" refere-se a uma refeição genérica e não a uma contagem (não se opõe a dois ou três almoços). Logo, um é artigo indefinido. A assertiva erra ao classificá-lo como numeral. Gabarito: ERRADO.",
+          "prompt": "num almoço",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O vocábulo num resulta da fusão de em + um",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "No entanto, \"num almoço\" refere-se a uma refeição genérica e não a uma contagem (não se opõe a dois ou três almoços)",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Logo, um é artigo indefinido",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 4,
+              "action": "A assertiva erra ao classificá-lo como numeral",
+              "rationale": "Etapa 4 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O vocábulo num resulta da fusão de em + um. No entanto, \"num almoço\" refere-se a uma refeição genérica e não a uma contagem (não se opõe a dois ou três almoços). Logo, um é artigo indefinido. A assertiva erra ao classificá-lo como numeral. Gabarito: ERRADO.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"num almoço\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-012",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O vocábulo num resulta da fusão de em + um. No entanto, \"num almoço\" refere-se a uma refeição genérica e não a uma contagem (não se opõe a dois ou três almoços). Logo, um é artigo indefinido. A assertiva erra ao classificá-lo como numeral. Gabarito: ERRADO."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-012",
+              "EXP-IP-A01-G05-056"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-013",
+          "title": "Enunciado",
+          "statement": "CESPE/CEBRASPE (ADAPTADA) – INMETRO – Todos os Cargos Texto [3º Parágrafo] (l. 15–17): \"Segundo o chefe da Divisão de Programa de Avaliação da Conformidade do INMETRO, Gustavo Kuster, hoje o Brasil tem mais de doze tipos diferentes de plugues...\" Item: Como empregado no texto, o vocábulo “Segundo” (l.15) classifica-se como numeral ordinal. Certo Errado",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'CESPE/CEBRASPE (ADAPTADA) – INMETRO – Todos os Cargos Texto [3º Parágrafo] (l. 15–17): \"Segundo o chefe da Divisão de Programa de Avaliação da Conformidade do INMETRO, Gustavo Kuster, hoje o Brasil tem mais de doze tipos diferentes de plugues...\" Item: Como empregado no texto, o vocábulo “Segundo” (l.15) classifica-se como numeral ordinal. Certo Errado'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-013",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "CESPE/CEBRASPE (ADAPTADA) – INMETRO – Todos os Cargos Texto [3º Parágrafo] (l. 15–17): \"Segundo o chefe da Divisão de Programa de Avaliação da Conformidade do INMETRO, Gustavo Kuster, hoje o Brasil tem mais de doze tipos diferentes de plugues...\" Item: Como empregado no texto, o vocábulo “Segundo” (l.15) classifica-se como numeral ordinal. Certo Errado"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-013",
+              "EXP-IP-A01-G05-057"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-014",
+          "title": "Resolução Consolidada",
+          "statement": "A palavra \"Segundo\" equivale a \"De acordo com o chefe...\" ou \"Conforme o chefe...\". Possui valor de conformidade, atuando como preposição acidental / conjunção conformativa, e não como numeral ordinal. Gabarito: ERRADO.",
+          "prompt": "Segundo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A palavra \"Segundo\" equivale a \"De acordo com o chefe...\" ou \"Conforme o chefe...\"",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Possui valor de conformidade, atuando como preposição acidental / conjunção conformativa, e não como numeral ordinal",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito: ERRADO.",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'A palavra \"Segundo\" equivale a \"De acordo com o chefe...\" ou \"Conforme o chefe...\". Possui valor de conformidade, atuando como preposição acidental / conjunção conformativa, e não como numeral ordinal. Gabarito: ERRADO.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"Segundo\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-014",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A palavra \"Segundo\" equivale a \"De acordo com o chefe...\" ou \"Conforme o chefe...\". Possui valor de conformidade, atuando como preposição acidental / conjunção conformativa, e não como numeral ordinal. Gabarito: ERRADO."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-014",
+              "EXP-IP-A01-G05-058"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-015",
+          "title": "Enunciado",
+          "statement": "OMINI - Prefeitura de Miguelópolis - SP - Professor de Geografia \"Assinale a alternativa que CORRESPONDE à classe de palavras do elemento em destaque: 'Para não dar parte de fraco, ah, Senhora, fui beber com os amigos...'\" A) Artigo. B) Preposição. C) Conjunção. D) Interjeição.",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'OMINI - Prefeitura de Miguelópolis - SP - Professor de Geografia \"Assinale a alternativa que CORRESPONDE à classe de palavras do elemento em destaque: 'Para não dar parte de fraco, ah, Senhora, fui beber com os amigos...'\" A) Artigo. B) Preposição. C) Conjunção. D) Interjeição.'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-015",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "OMINI - Prefeitura de Miguelópolis - SP - Professor de Geografia \"Assinale a alternativa que CORRESPONDE à classe de palavras do elemento em destaque: 'Para não dar parte de fraco, ah, Senhora, fui beber com os amigos...'\" A) Artigo. B) Preposição. C) Conjunção. D) Interjeição."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-015",
+              "EXP-IP-A01-G05-059"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-016",
+          "title": "Resolução Consolidada",
+          "statement": "O vocábulo ah traduz desabafo e estado de espírito do emissor, classificando-se como interjeição. Gabarito: D) Interjeição.",
+          "prompt": "O vocábulo ah traduz desabafo e estado de espírito do emissor, classificando-se como interjeição",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O vocábulo ah traduz desabafo e estado de espírito do emissor, classificando-se como interjeição",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito: D) Interjeição.",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: D) Interjeição.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O vocábulo ah traduz desabafo e estado de espírito do emissor, classificando-se como interjeição. Gabarito: D) Interjeição.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"O vocábulo ah traduz desabafo e estado d\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-016",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O vocábulo ah traduz desabafo e estado de espírito do emissor, classificando-se como interjeição. Gabarito: D) Interjeição."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-016",
+              "EXP-IP-A01-G05-060"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-017",
+          "title": "Enunciado",
+          "statement": "Instituto UniFil - Prefeitura de Sertaneja - PR - Técnico em Enfermagem \"Analise: 'Você está lá, saudável, assistindo o futebol na sua sala quando, sem mais nem menos, pimba!' O termo sublinhado é:\" A) substantivo. B) interjeição. C) numeral. D) adjetivo.",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Instituto UniFil - Prefeitura de Sertaneja - PR - Técnico em Enfermagem \"Analise: 'Você está lá, saudável, assistindo o futebol na sua sala quando, sem mais nem menos, pimba!' O termo sublinhado é:\" A) substantivo. B) interjeição. C) numeral. D) adjetivo.'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-017",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "Instituto UniFil - Prefeitura de Sertaneja - PR - Técnico em Enfermagem \"Analise: 'Você está lá, saudável, assistindo o futebol na sua sala quando, sem mais nem menos, pimba!' O termo sublinhado é:\" A) substantivo. B) interjeição. C) numeral. D) adjetivo."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-017",
+              "EXP-IP-A01-G05-061"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-018",
+          "title": "Resolução Consolidada",
+          "statement": "O vocábulo pimba! expressa uma reação súbita e enfática, constituindo uma interjeição. Gabarito: B) interjeição.",
+          "prompt": "O vocábulo pimba! expressa uma reação súbita e enfática, constituindo uma interjeição",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O vocábulo pimba! expressa uma reação súbita e enfática, constituindo uma interjeição",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito: B) interjeição.",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: B) interjeição.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O vocábulo pimba! expressa uma reação súbita e enfática, constituindo uma interjeição. Gabarito: B) interjeição.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"O vocábulo pimba! expressa uma reação sú\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-018",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O vocábulo pimba! expressa uma reação súbita e enfática, constituindo uma interjeição. Gabarito: B) interjeição."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-018",
+              "EXP-IP-A01-G05-062"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-019",
+          "title": "Enunciado",
+          "statement": "Instituto Excelência - Prefeitura de Cruzeiro - SP \"Indique a alternativa em que aparece uma interjeição:\" A) Bravo! Vou indicar esse espetáculo aos meus amigos. B) Ela chorou um rio de lágrimas. C) Corra, pois precisamos chegar o quanto antes. D) Nenhuma das alternativas.",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Instituto Excelência - Prefeitura de Cruzeiro - SP \"Indique a alternativa em que aparece uma interjeição:\" A) Bravo! Vou indicar esse espetáculo aos meus amigos. B) Ela chorou um rio de lágrimas. C) Corra, pois precisamos chegar o quanto antes. D) Nenhuma das alternativas.'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-019",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "Instituto Excelência - Prefeitura de Cruzeiro - SP \"Indique a alternativa em que aparece uma interjeição:\" A) Bravo! Vou indicar esse espetáculo aos meus amigos. B) Ela chorou um rio de lágrimas. C) Corra, pois precisamos chegar o quanto antes. D) Nenhuma das alternativas."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-019",
+              "EXP-IP-A01-G05-063"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-020",
+          "title": "Resolução Consolidada",
+          "statement": "A palavra Bravo! na letra A é uma interjeição de aclamação/entusiasmo. Na letra C, Corra é flexão do verbo correr no modo imperativo, não devendo ser confundido com interjeição. Gabarito: A) Bravo! Vou indicar esse espetáculo aos meus amigos.",
+          "prompt": "A palavra Bravo! na letra A é uma interjeição de aclamação/entusiasmo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A palavra Bravo! na letra A é uma interjeição de aclamação/entusiasmo",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Na letra C, Corra é flexão do verbo correr no modo imperativo, não devendo ser confundido com interjeição",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito: A) Bravo! Vou indicar esse espetáculo aos meus amigos.",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: A) Bravo! Vou indicar esse espetáculo aos meus amigos.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'A palavra Bravo! na letra A é uma interjeição de aclamação/entusiasmo. Na letra C, Corra é flexão do verbo correr no modo imperativo, não devendo ser confundido com interjeição. Gabarito: A) Bravo! Vou indicar esse espetáculo aos meus amigos.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"A palavra Bravo! na letra A é uma interj\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-020",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A palavra Bravo! na letra A é uma interjeição de aclamação/entusiasmo. Na letra C, Corra é flexão do verbo correr no modo imperativo, não devendo ser confundido com interjeição. Gabarito: A) Bravo! Vou indicar esse espetáculo aos meus amigos."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-020",
+              "EXP-IP-A01-G05-064"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-021",
+          "title": "Enunciado",
+          "statement": "FGV - Senado Federal - Analista Legislativo \"E, surpresa!, quem a esta altura clama pelo surgimento de um lúcido pensamento de esquerda, a contrabalançar os populismos de direita, é o famoso Francis Fukuyama.\" No período acima, o termo sublinhado assume um papel gramatical distinto de sua classificação original. Esse papel assumido no período é de: A) conjunção. B) advérbio. C) interjeição. D) substantivo. E) adjetivo.",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'FGV - Senado Federal - Analista Legislativo \"E, surpresa!, quem a esta altura clama pelo surgimento de um lúcido pensamento de esquerda, a contrabalançar os populismos de direita, é o famoso Francis Fukuyama.\" No período acima, o termo sublinhado assume um papel gramatical distinto de sua classificação original. Esse papel assumido no período é de: A) conjunção. B) advérbio. C) interjeição. D) substantivo. E) adjetivo.'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-021",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "FGV - Senado Federal - Analista Legislativo \"E, surpresa!, quem a esta altura clama pelo surgimento de um lúcido pensamento de esquerda, a contrabalançar os populismos de direita, é o famoso Francis Fukuyama.\" No período acima, o termo sublinhado assume um papel gramatical distinto de sua classificação original. Esse papel assumido no período é de: A) conjunção. B) advérbio. C) interjeição. D) substantivo. E) adjetivo."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-021",
+              "EXP-IP-A01-G05-065"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-022",
+          "title": "Resolução Consolidada",
+          "statement": "O vocábulo surpresa é originalmente um substantivo (\"fazer uma surpresa\"). Isolado no período entre vírgula e ponto de exclamação para produzir efeito expressivo, atua por derivação imprópria como interjeição. Gabarito: C) interjeição.",
+          "prompt": "fazer uma surpresa",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O vocábulo surpresa é originalmente um substantivo (\"fazer uma surpresa\")",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Isolado no período entre vírgula e ponto de exclamação para produzir efeito expressivo, atua por derivação imprópria como interjeição",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito: C) interjeição.",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: C) interjeição.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O vocábulo surpresa é originalmente um substantivo (\"fazer uma surpresa\"). Isolado no período entre vírgula e ponto de exclamação para produzir efeito expressivo, atua por derivação imprópria como interjeição. Gabarito: C) interjeição.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"fazer uma surpresa\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-022",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O vocábulo surpresa é originalmente um substantivo (\"fazer uma surpresa\"). Isolado no período entre vírgula e ponto de exclamação para produzir efeito expressivo, atua por derivação imprópria como interjeição. Gabarito: C) interjeição."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-022",
+              "EXP-IP-A01-G05-066"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-023",
+          "title": "Enunciado",
+          "statement": "CESGRANRIO - Petrobras - Profissional Júnior \"No período 'Ah, que minha história fosse como um raio de sol, irresistivelmente louro, quente, vivo, em sua vida de moça reclusa, enlutada, doente.' (L. 9-12), a interjeição em destaque apresenta o efeito expressivo de:\" A) retificação B) espanto C) realce D) adversidade E) descontinuidade",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'CESGRANRIO - Petrobras - Profissional Júnior \"No período 'Ah, que minha história fosse como um raio de sol, irresistivelmente louro, quente, vivo, em sua vida de moça reclusa, enlutada, doente.' (L. 9-12), a interjeição em destaque apresenta o efeito expressivo de:\" A) retificação B) espanto C) realce D) adversidade E) descontinuidade'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-023",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "CESGRANRIO - Petrobras - Profissional Júnior \"No período 'Ah, que minha história fosse como um raio de sol, irresistivelmente louro, quente, vivo, em sua vida de moça reclusa, enlutada, doente.' (L. 9-12), a interjeição em destaque apresenta o efeito expressivo de:\" A) retificação B) espanto C) realce D) adversidade E) descontinuidade"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-023",
+              "EXP-IP-A01-G05-067"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-024",
+          "title": "Resolução Consolidada",
+          "statement": "A interjeição Ah introduz a oração conferindo realce, ênfase e intensificação emotiva ao anseio do narrador. Gabarito: C) realce.",
+          "prompt": "A interjeição Ah introduz a oração conferindo realce, ênfase e intensificação emotiva ao anseio do narrador",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A interjeição Ah introduz a oração conferindo realce, ênfase e intensificação emotiva ao anseio do narrador",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito: C) realce.",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: C) realce.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'A interjeição Ah introduz a oração conferindo realce, ênfase e intensificação emotiva ao anseio do narrador. Gabarito: C) realce.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"A interjeição Ah introduz a oração confe\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-024",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A interjeição Ah introduz a oração conferindo realce, ênfase e intensificação emotiva ao anseio do narrador. Gabarito: C) realce."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-024",
+              "EXP-IP-A01-G05-068"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-025",
+          "title": "Enunciado",
+          "statement": "CONSESP - Prefeitura de Extrema - MG - Analista de Finanças Em: 'Ei! Vamos embora!', a palavra destacada é uma interjeição que exprime sentido de: A) concordância. B) despedida. C) desculpa. D) chamamento.",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'CONSESP - Prefeitura de Extrema - MG - Analista de Finanças Em: 'Ei! Vamos embora!', a palavra destacada é uma interjeição que exprime sentido de: A) concordância. B) despedida. C) desculpa. D) chamamento.'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-025",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "CONSESP - Prefeitura de Extrema - MG - Analista de Finanças Em: 'Ei! Vamos embora!', a palavra destacada é uma interjeição que exprime sentido de: A) concordância. B) despedida. C) desculpa. D) chamamento."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-025",
+              "EXP-IP-A01-G05-069"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-026",
+          "title": "Resolução Consolidada",
+          "statement": "O vocábulo Ei! atua na função apelativa de chamar o interlocutor. A ideia de despedida pertence à oração \"Vamos embora!\", mas a interjeição isolada expressa chamamento. Gabarito: D) chamamento.",
+          "prompt": "Vamos embora!",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O vocábulo Ei! atua na função apelativa de chamar o interlocutor",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "A ideia de despedida pertence à oração \"Vamos embora!\", mas a interjeição isolada expressa chamamento",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito: D) chamamento.",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: D) chamamento.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O vocábulo Ei! atua na função apelativa de chamar o interlocutor. A ideia de despedida pertence à oração \"Vamos embora!\", mas a interjeição isolada expressa chamamento. Gabarito: D) chamamento.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"Vamos embora!\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-026",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O vocábulo Ei! atua na função apelativa de chamar o interlocutor. A ideia de despedida pertence à oração \"Vamos embora!\", mas a interjeição isolada expressa chamamento. Gabarito: D) chamamento."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-026",
+              "EXP-IP-A01-G05-070"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-027",
+          "title": "Enunciado",
+          "statement": "ITAME - Câmara Municipal de Inhumas - GO \"Aponte qual das interjeições ou locuções interjetivas está corretamente associada ao seu valor semântico:\" A) Cuidado com o carro! (aversão) B) Se Deus quiser, consigo chegar a tempo! (apelo) C) Credo! Que nojo! (dor) D) Puxa! Não esperava te ver aqui! (surpresa)",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'ITAME - Câmara Municipal de Inhumas - GO \"Aponte qual das interjeições ou locuções interjetivas está corretamente associada ao seu valor semântico:\" A) Cuidado com o carro! (aversão) B) Se Deus quiser, consigo chegar a tempo! (apelo) C) Credo! Que nojo! (dor) D) Puxa! Não esperava te ver aqui! (surpresa)'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-027",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "ITAME - Câmara Municipal de Inhumas - GO \"Aponte qual das interjeições ou locuções interjetivas está corretamente associada ao seu valor semântico:\" A) Cuidado com o carro! (aversão) B) Se Deus quiser, consigo chegar a tempo! (apelo) C) Credo! Que nojo! (dor) D) Puxa! Não esperava te ver aqui! (surpresa)"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-027",
+              "EXP-IP-A01-G05-071"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-028",
+          "title": "Resolução Consolidada",
+          "statement": "Letra A: Cuidado expressa alerta (e não aversão).\nLetra B: Se Deus quiser expressa desejo/esperança (e não apelo).\nLetra C: Credo expressa repulsa/aversão/nojo (e não dor).\nLetra D: Puxa! expressa surpresa/espanto diante do encontro inesperado.\nGabarito: D) Puxa! Não esperava te ver aqui! (surpresa).",
+          "prompt": "Gabarito: D) Puxa! Não esperava te ver aqui! (surpresa).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Letra A",
+              "rationale": "Cuidado expressa alerta (e não aversão)."
+            },
+            {
+              "order": 2,
+              "action": "Letra B",
+              "rationale": "Se Deus quiser expressa desejo/esperança (e não apelo)."
+            },
+            {
+              "order": 3,
+              "action": "Letra C",
+              "rationale": "Credo expressa repulsa/aversão/nojo (e não dor)."
+            },
+            {
+              "order": 4,
+              "action": "Letra D",
+              "rationale": "Puxa! expressa surpresa/espanto diante do encontro inesperado."
+            }
+          ],
+          "result": "Letra D: Puxa! expressa surpresa/espanto diante do encontro inesperado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Letra A: Cuidado expressa alerta (e não aversão).\nLetra B: Se Deus quiser expressa desejo/esperança (e não apelo).\nLetra C: Credo expressa repulsa/aversão/nojo (e não dor).\nLetra D: Puxa! expressa surpresa/espanto diante do encontro inesperado.\nGabarito: D) Puxa! Não esperava te ver aqui! (surpresa).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Resolução Consolidada sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-028",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Letra A: Cuidado expressa alerta (e não aversão).",
+                "Letra B: Se Deus quiser expressa desejo/esperança (e não apelo).",
+                "Letra C: Credo expressa repulsa/aversão/nojo (e não dor).",
+                "Letra D: Puxa! expressa surpresa/espanto diante do encontro inesperado."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Gabarito: D) Puxa! Não esperava te ver aqui! (surpresa)."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-028",
+              "EXP-IP-A01-G05-072"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-029",
+          "title": "Enunciado",
+          "statement": "CESPE / CEBRASPE – SEED-PR – Professor de Língua Portuguesa Poema \"Socorro\" (Titãs): \"Socorro, eu não estou sentindo nada... Socorro, alguém me dê um coração...\" Item: No primeiro verso de cada estrofe do texto, o termo \"Socorro\", isolado por vírgula: A) tem função de aposto. B) tem função de vocativo. C) consiste em um advérbio deslocado. D) consiste em uma interjeição. E) consiste em uma forma verbal no modo imperativo.",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'CESPE / CEBRASPE – SEED-PR – Professor de Língua Portuguesa Poema \"Socorro\" (Titãs): \"Socorro, eu não estou sentindo nada... Socorro, alguém me dê um coração...\" Item: No primeiro verso de cada estrofe do texto, o termo \"Socorro\", isolado por vírgula: A) tem função de aposto. B) tem função de vocativo. C) consiste em um advérbio deslocado. D) consiste em uma interjeição. E) consiste em uma forma verbal no modo imperativo.'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-029",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "CESPE / CEBRASPE – SEED-PR – Professor de Língua Portuguesa Poema \"Socorro\" (Titãs): \"Socorro, eu não estou sentindo nada... Socorro, alguém me dê um coração...\" Item: No primeiro verso de cada estrofe do texto, o termo \"Socorro\", isolado por vírgula: A) tem função de aposto. B) tem função de vocativo. C) consiste em um advérbio deslocado. D) consiste em uma interjeição. E) consiste em uma forma verbal no modo imperativo."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-029",
+              "EXP-IP-A01-G05-073"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-030",
+          "title": "Resolução Consolidada",
+          "statement": "O vocábulo Socorro constitui um brado/apelo emotivo isolado por vírgula, desprovido de função sintática oracional, caracterizando a classe das interjeições. Gabarito: D) consiste em uma interjeição.",
+          "prompt": "O vocábulo Socorro constitui um brado/apelo emotivo isolado por vírgula, desprovido de função sintática oracional, caracterizando a classe das interjeições",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O vocábulo Socorro constitui um brado/apelo emotivo isolado por vírgula, desprovido de função sintática oracional, caracterizando a classe das interjeições",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito: D) consiste em uma interjeição.",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: D) consiste em uma interjeição.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O vocábulo Socorro constitui um brado/apelo emotivo isolado por vírgula, desprovido de função sintática oracional, caracterizando a classe das interjeições. Gabarito: D) consiste em uma interjeição.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"O vocábulo Socorro constitui um brado/ap\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-030",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O vocábulo Socorro constitui um brado/apelo emotivo isolado por vírgula, desprovido de função sintática oracional, caracterizando a classe das interjeições. Gabarito: D) consiste em uma interjeição."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-030",
+              "EXP-IP-A01-G05-074"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-031",
+          "title": "Enunciado",
+          "statement": "CESPE – SEDUC-PA – Professor de História Tirinha \"O pato\": \"...TENHO DITO!\" (Quadro 2) / \"AH! Quase me esqueço...\" (Quadro 3). Item: 'Tenho dito' (segundo quadro), assim como 'Ah' (terceiro quadro), são exemplos de interjeições que expressam o estado emocional do falante. Certo Errado",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'CESPE – SEDUC-PA – Professor de História Tirinha \"O pato\": \"...TENHO DITO!\" (Quadro 2) / \"AH! Quase me esqueço...\" (Quadro 3). Item: 'Tenho dito' (segundo quadro), assim como 'Ah' (terceiro quadro), são exemplos de interjeições que expressam o estado emocional do falante. Certo Errado'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-031",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "CESPE – SEDUC-PA – Professor de História Tirinha \"O pato\": \"...TENHO DITO!\" (Quadro 2) / \"AH! Quase me esqueço...\" (Quadro 3). Item: 'Tenho dito' (segundo quadro), assim como 'Ah' (terceiro quadro), são exemplos de interjeições que expressam o estado emocional do falante. Certo Errado"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-031",
+              "EXP-IP-A01-G05-075"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-032",
+          "title": "Resolução Consolidada",
+          "statement": "O termo Ah é interjeição. No entanto, Tenho dito é uma locução verbal em tempo composto (Pretérito Perfeito Composto do Indicativo: verbo ter + particípio dito). A presença da exclamação não transforma uma estrutura verbal em interjeição. Gabarito: ERRADO.",
+          "prompt": "O termo Ah é interjeição",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "O termo Ah é interjeição",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "No entanto, Tenho dito é uma locução verbal em tempo composto (Pretérito Perfeito Composto do Indicativo: verbo ter + particípio dito)",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 3,
+              "action": "A presença da exclamação não transforma uma estrutura verbal em interjeição",
+              "rationale": "Etapa 3 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 4,
+              "action": "Gabarito: ERRADO.",
+              "rationale": "Etapa 4 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'O termo Ah é interjeição. No entanto, Tenho dito é uma locução verbal em tempo composto (Pretérito Perfeito Composto do Indicativo: verbo ter + particípio dito). A presença da exclamação não transforma uma estrutura verbal em interjeição. Gabarito: ERRADO.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"O termo Ah é interjeição\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-032",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "O termo Ah é interjeição. No entanto, Tenho dito é uma locução verbal em tempo composto (Pretérito Perfeito Composto do Indicativo: verbo ter + particípio dito). A presença da exclamação não transforma uma estrutura verbal em interjeição. Gabarito: ERRADO."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-032",
+              "EXP-IP-A01-G05-076"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-033",
+          "title": "Enunciado",
+          "statement": "CESPE – TRE-BA – Nível Superior Texto (Machado de Assis): \"...e oxalá concluas a viagem sem as contrariedades a que aludes...\" Item: Em \"oxalá concluas a viagem\" (L. 8-9), o vocábulo \"oxalá\" pode ser substituído por tomara que, mantendo-se o sentido do trecho. Certo Errado",
+          "prompt": "Enunciado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificar a estrutura frasal em: \"Enunciado\".",
+              "rationale": "Constatação do elemento sob exame de Enunciado."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os preceitos normativos específicos de Enunciado.",
+              "rationale": "Verificação das regras gramaticais e exceções."
+            },
+            {
+              "order": 3,
+              "action": "Definir a classificação e conformidade do segmento.",
+              "rationale": "Conclusão definitiva do exemplo."
+            }
+          ],
+          "result": "Conformidade da estrutura \"Enunciado\" com a norma culta de Enunciado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'CESPE – TRE-BA – Nível Superior Texto (Machado de Assis): \"...e oxalá concluas a viagem sem as contrariedades a que aludes...\" Item: Em \"oxalá concluas a viagem\" (L. 8-9), o vocábulo \"oxalá\" pode ser substituído por tomara que, mantendo-se o sentido do trecho. Certo Errado'.",
+          "decisivePoint": "Critério decisório de Enunciado aplicado a \"Enunciado\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-033",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "CESPE – TRE-BA – Nível Superior Texto (Machado de Assis): \"...e oxalá concluas a viagem sem as contrariedades a que aludes...\" Item: Em \"oxalá concluas a viagem\" (L. 8-9), o vocábulo \"oxalá\" pode ser substituído por tomara que, mantendo-se o sentido do trecho. Certo Errado"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-033",
+              "EXP-IP-A01-G05-077"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G05-034",
+          "title": "Resolução Consolidada",
+          "statement": "Tanto oxalá (interjeição) quanto tomara que (locução interjetiva) expressam o valor semântico de desejo/esperança, operando substituição perfeita no texto. Gabarito: CERTO.",
+          "prompt": "Tanto oxalá (interjeição) quanto tomara que (locução interjetiva) expressam o valor semântico de desejo/esperança, operando substituição perfeita no texto",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Tanto oxalá (interjeição) quanto tomara que (locução interjetiva) expressam o valor semântico de desejo/esperança, operando substituição perfeita no texto",
+              "rationale": "Etapa 1 de análise para Resolução Consolidada."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito: CERTO.",
+              "rationale": "Etapa 2 de análise para Resolução Consolidada."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Tanto oxalá (interjeição) quanto tomara que (locução interjetiva) expressam o valor semântico de desejo/esperança, operando substituição perfeita no texto. Gabarito: CERTO.'.",
+          "decisivePoint": "Critério decisório de Resolução Consolidada aplicado a \"Tanto oxalá (interjeição) quanto tomara \".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Resolução Consolidada.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Resolução Consolidada.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G05-034",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tanto oxalá (interjeição) quanto tomara que (locução interjetiva) expressam o valor semântico de desejo/esperança, operando substituição perfeita no texto. Gabarito: CERTO."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G05-034",
+              "EXP-IP-A01-G05-078"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -181,51 +2398,293 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-DEN-01",
-          "title": "Expletiva É Enfeite",
-          "content": "Partícula Expletiva é como bijuteria: se você tirar do texto, a estrutura da roupa (frase) continua perfeitamente inteira!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Reconhecimento de termos de realce.",
-          "limitations": "Cuidado para não remover verbos predicativos legítimos.",
-          "text": "Expressões expletivas podem ser retiradas da oração sem prejuízo sintático."
+          "title": "Mantra de Fixação: Numerais e Interjeições",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Numerais e Interjeições, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Numerais e Interjeições, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-DEN-01",
-          "title": "Tentar Achar Função Sintática para 'Isto É' e 'Ou Seja'",
-          "trigger": "Questões de sintaxe que sublinham locuções denotativas explicativas.",
-          "whyItFails": "O candidato tenta classificar 'ou seja' como oração coordenada ou 'isto é' como sujeito + predicativo.",
-          "correctApproach": "Na análise sintática, 'isto é', 'ou seja', 'aliás' são classificadas como locuções denotativas / conectores explicativos, não exercendo funções de termos da oração.",
-          "bankTechnique": "Pedir a função sintática de 'ou seja' em uma oração.",
-          "counterRule": "Palavras e locuções denotativas não desempenham funções sintáticas internas de termos da oração."
+          "entityId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-001",
+          "title": "Pegadinha de Inferência Extratextual em *Um/Uma*",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Inferência Extratextual em *Um/Uma*.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Inferência Extratextual em *Um/Uma*.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Inferência Extratextual em *Um/Uma* no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Inferência Extratextual em *Um/Uma*.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Inferência Extratextual em *Um/Uma*.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Pegadinha de Inferência Extratextual em *Um/Uma* para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Inferência Extratextual em *Um/Uma*.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Inferência Extratextual em *Um/Uma*.",
+          "trapId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro do Candidato: Argumentar que \"Faria uma viagem\" é numeral porque \"poderiam ser duas viagens\".",
+                "Como Evitar: A gramática de concurso não trabalha com suposições fora do texto. Sem palavra de restrição (somente, apenas), o termo é estritamente Artigo Indefinido."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G05-NUMERAIS-INTERJEICOES-001",
+              "EXP-IP-A01-G05-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-002",
+          "title": "Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada.",
+          "trapId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro do Candidato: Olhar a palavra Segundo e marcá-la imediatamente como numeral ordinal por lembrar de 1º, 2º, 3º.",
+                "Como Evitar: Sempre verificar se o termo introduz citação ou fonte de informação (\"Segundo o diretor...\" = conector conformativo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G05-NUMERAIS-INTERJEICOES-002",
+              "EXP-IP-A01-G05-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-003",
+          "title": "Confundir Numerais Coletivos com Cardinais",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Numerais Coletivos com Cardinais.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Numerais Coletivos com Cardinais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Numerais Coletivos com Cardinais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Numerais Coletivos com Cardinais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Numerais Coletivos com Cardinais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Numerais Coletivos com Cardinais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Numerais Coletivos com Cardinais.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Numerais Coletivos com Cardinais.",
+          "trapId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro do Candidato: Considerar dúzia, década, bimestre ou novena como numerais cardinais pelo fato de conterem valores matemáticos fixos (12, 10, 2, 9).",
+                "Como Evitar: Lembrar que a norma prescreve esses termos como numerais coletivos por designarem grupos/conjuntos de seres."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G05-NUMERAIS-INTERJEICOES-003",
+              "EXP-IP-A01-G05-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-004",
+          "title": "Ignorar Modificadores Aproximativos em Numerais Cardinais",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ignorar Modificadores Aproximativos em Numerais Cardinais.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ignorar Modificadores Aproximativos em Numerais Cardinais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ignorar Modificadores Aproximativos em Numerais Cardinais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ignorar Modificadores Aproximativos em Numerais Cardinais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ignorar Modificadores Aproximativos em Numerais Cardinais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Ignorar Modificadores Aproximativos em Numerais Cardinais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ignorar Modificadores Aproximativos em Numerais Cardinais.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ignorar Modificadores Aproximativos em Numerais Cardinais.",
+          "trapId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro do Candidato: Achar que todo numeral cardinal expressa obrigatoriamente quantidade exata no texto.",
+                "Como Evitar: Em frases com cerca de (\"cerca de dez alunos\"), o termo permanece classificado como numeral cardinal, mas passa a transmitir semanticamente uma quantidade aproximada."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G05-NUMERAIS-INTERJEICOES-004",
+              "EXP-IP-A01-G05-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-005",
+          "title": "Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*)",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*).",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*).",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*).",
+          "trapId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro do Candidato: Flexionar meio para meia diante de adjetivo feminino.",
+                "Como Evitar: Quando significa \"um pouco\", meio é advérbio, classe invariável. O correto é sempre \"ela está meio cansada\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G05-NUMERAIS-INTERJEICOES-005",
+              "EXP-IP-A01-G05-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-006",
+          "title": "Confundir Verbo no Modo Imperativo com Interjeição",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Verbo no Modo Imperativo com Interjeição.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Verbo no Modo Imperativo com Interjeição.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Verbo no Modo Imperativo com Interjeição no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Verbo no Modo Imperativo com Interjeição.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Verbo no Modo Imperativo com Interjeição.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Verbo no Modo Imperativo com Interjeição para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Verbo no Modo Imperativo com Interjeição.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Verbo no Modo Imperativo com Interjeição.",
+          "trapId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro do Candidato: Classificar qualquer palavra inicial exclamativa (\"Corra!\") como interjeição.",
+                "Como Evitar: Corra é verbo conjugado no modo imperativo. Interjeições não possuem conjugação verbal de pessoa."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G05-NUMERAIS-INTERJEICOES-006",
+              "EXP-IP-A01-G05-TRAP-006"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-007",
+          "title": "Confundir Locuções Verbais Exclamativas com Interjeições",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Locuções Verbais Exclamativas com Interjeições.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Locuções Verbais Exclamativas com Interjeições.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Locuções Verbais Exclamativas com Interjeições no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Locuções Verbais Exclamativas com Interjeições.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Locuções Verbais Exclamativas com Interjeições.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Locuções Verbais Exclamativas com Interjeições para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Locuções Verbais Exclamativas com Interjeições.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Locuções Verbais Exclamativas com Interjeições.",
+          "trapId": "WARN-A01-G05-NUMERAIS-INTERJEICOES-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro do Candidato: Achar que expressões verbais compostas como \"Tenho dito!\" viram interjeições devido ao ponto de exclamação.",
+                "Como Evitar: Trata-se de uma locução verbal (Pretérito Perfeito Composto: ter + dito), mantendo natureza puramente verbal."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G05-NUMERAIS-INTERJEICOES-007",
+              "EXP-IP-A01-G05-TRAP-007"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Palavra Denotativa",
-          "shortDefinition": "Vocábulo invariável que não se enquadra nas 10 classes gramaticais tradicionais e expressa noções semântico-discursivas.",
-          "fullDefinition": "Termo classificado pela Nomenclatura Gramatical Brasileira (NGB) à margem das classes morfológicas estritas, atuando como marcador de inclusão, exclusão, realce, retificação, designação ou afetividade.",
-          "domain": "Morfologia e Discurso",
-          "commonMisconception": "Confundir palavra denotativa com advérbio de modo ou intensidade."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Conceito Gramatical e Categorias Tradicionais de Numerais**: Definição ou Ideia Central\nO numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas.\nExplicação Consolidada\nA gramática divide os numerais em quatro categorias funcionais:\nCardinais: Indicam contagem direta e quantidade básica absoluta de seres (ex.: um, dois, treze, mil, milhão). Exemplo em frase: \"Treze candidatos chegaram atrasados.\"\nOrdinais: Indicam a posição, lugar ou ordem relativa de um elemento em uma sequência determinada (ex.: primeiro, segundo, milésimo, milionésimo). Exemplo em frase: \"A primeira conquista foi aos 18 anos.\"\nFracionários: Indicam a divisão proporcional de uma quantidade, referindo-se a frações ou partes do todo (ex.: meio, um terço, três quartos, um quinto). Exemplo em frase: \"Já percorremos um terço do caminho.\"\nMultiplicativos: Indicam o aumento proporcional da quantidade por multiplicação (ex.: dobro, triplo, quádruplo). Exemplo em frase: \"Ele tem o triplo da experiência que eu tenho.\"\nCritérios de Reconhecimento\nPergunte à palavra no texto: ela conta (cardinal), posiciona (ordinal), divide (fracionário) ou multiplica (multiplicativo)?\nRelações\nContrasta com: (Numerais Coletivos).a 005.",
+            "**Diferenciação entre Artigo Indefinido e Numeral Cardinal (*Um/Uma* e a Contração *Num*)**: Definição ou Ideia Central\nOs vocábulos um e uma (isolados ou em contrações prepositivas como num, numa, dum, duma) só atuam como numerais cardinais se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é artigo indefinido.\nExplicação Consolidada\nBancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: \"faria uma viagem, mas poderia fazer duas\"). No rigor da morfologia de concurso:\nHipótese Inicial Padrão: Todo um/uma deve ser tratado prioritariamente como artigo indefinido (indeterminador/generalizador).\nRequisito para Numeral Cardinal: O termo só mudará de classe para numeral se o contexto trouxer palavras de restrição numérica ou ênfase de contagem (ex.: somente, apenas, unicamente, exclusivamente, não dois, não três).\nCasos com Contração Prepositiva: Em estruturas como \"...se encontrassem num almoço...\" (em + um), o vocábulo um não expressa contagem numérica (não se opõe a dois almoços), mas introduz um evento indeterminado. Logo, num é a contração de preposição em com artigo indefinido um.\nExemplos e Contraexemplos\nArtigo Indefinido (Sem pista de contagem):\n\"Faria uma viagem.\" (indefinido)\n\"Um médico chegou.\" (indefinido)\n\"Assisti a um filme interessante ontem.\" (indefinido)\n\"Precisamos de uma solução para isso.\" (indefinido)\n\"...se encontrassem num almoço...\" (indefinido)\nNumeral Cardinal (Com pista explícita de quantificação):\n\"Tinha somente um vestido.\" (somente = pista)\n\"Trouxe apenas uma moeda.\" (apenas = pista)\n\"Havia apenas uma pessoa na fila de espera.\" (apenas = pista)\n\"A reunião ocorreu num só dia.\" (só = pista)(Método de Classificação de Um/Uma).002, 004, 006.",
+            "**Funções e Classificações da Palavra \"Segundo\"**: Definição ou Ideia Central\nA palavra segundo pode atuar como numeral ordinal (indicando ordem sequencial) ou como conector conformativo (introduzindo referência/conformidade, equivalente a de acordo com ou conforme).\nExplicação Consolidada\nEmprego como Numeral Ordinal: Ocorre quando situa um elemento na posição número dois de uma série (ex.: \"Este é o segundo livro da coleção\").\nEmprego como Conector Conformativo: Ocorre quando introduz uma fonte, dado ou conformidade (ex.: \"Segundo o chefe da Divisão...\" / \"Segundo a previsão do tempo...\").\nGramática Tradicional (\"Raiz\"): Classifica o termo como preposição acidental, visto que desempenha o papel da locução prepositiva de acordo com.\nManuais Didáticos e Algumas Bancas: Denominam o termo como conjunção conformativa.\nPostura em Provas: O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal.(Teste de Substituição de Segundo).005, 007.",
+            "**Numerais Coletivos e a Fronteira com Numerais Cardinais**: Definição ou Ideia Central\nPalavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos numerais coletivos, não se confundindo morfologicamente com os numerais cardinais.\nExplicação Consolidada\nExemplos canônicos cobrados em concursos:\nDúzia: grupo de 12 unidades.\nDécada: período/grupo de 10 anos.\nBimestre: período de 2 meses.\nNovena: período de 9 dias.\nDezena: grupo de 10 unidades.\nCentena: grupo de 100 unidades.\nAlerta de Prova\nAs bancas tentam induzir o candidato ao erro afirmando que dúzia ou década são numerais cardinais por corresponderem numericamente a 12 ou 10. A norma gramatical prescreve que são numerais coletivos, pois dão nome ao agrupamento de seres.\nRelações\nContrasta com: (Cardinais).",
+            "**O Numeral Cardinal e o Papel do Contexto (Quantidade Exata vs. Aproximada)**: Definição ou Ideia Central\nEm tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma quantidade aproximada no plano textual, sem perder sua classificação morfológica de numeral cardinal.\nExplicação Consolidada\nEstrutura sem modificador: \"Dez alunos chegaram.\" O vocábulo dez é um numeral cardinal e expressa quantidade exata (rigorosamente 10).\nEstrutura com modificador aproximativo: \"Cerca de dez alunos chegaram.\" A palavra dez continua sendo morfologicamente um numeral cardinal, mas no contexto semântico transmite uma quantidade aproximada.",
+            "**Empregos e Regras de Flexão de \"Metade\" e \"Meio\"**: Definição ou Ideia Central\nO vocábulo metade é sempre um numeral fracionário. A palavra meio admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número.\nExplicação Consolidada\nA Palavra \"Metade\": É invariavelmente um numeral fracionário e varia em número (a metade, as metades).\nA Palavra \"Meio\":\nA) Numeral Fracionário: Ocorre quando equivale a \"metade de uma fração\". É variável em gênero e número (concorda com o substantivo). Exemplo: \"Tomou meio copo de leite\" / \"Tomou meia caneca de leite\".\nB) Substantivo: Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É variável em número. Exemplo: \"O meio ambiente\" / \"Os meios de comunicação\".\nC) Advérbio: Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a \"um pouco\". É INVARIÁVEL (nunca flexiona para o feminino meia nem para o plural). Exemplo: \"Ela está meio cansada\" (e nunca \"meia cansada\").\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-003 (Substituição por \"um pouco\").",
+            "**Conceito, Invariabilidade e Ausência de Função Sintática das Interjeições**: Definição ou Ideia Central\nA interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (interjeição simples) ou como grupo de palavras (locução interjetiva).\nPropriedades Gramaticais Críticas\nInvariabilidade Morfológica: Pertence ao bloco das palavras invariáveis (ao lado de preposições, conjunções, advérbios e palavras denotativas), não sofrendo flexão de gênero, número ou pessoa.\nAusência de Função Sintática: A interjeição não exerce nenhuma função sintática na oração (não pode ser sujeito, predicado, objeto direto, objeto indireto, adjunto adnominal, adjunto adverbial ou complemento nominal). Ela atua como um bloco expressivo autônomo.\nPontuação: Embora seja tipicamente acompanhada de ponto de exclamação (!) por sua carga enfática, a interjeição pode vir isolada por vírgulas ou seguida de reticências (...), sem perder sua natureza de interjeição.\nRelações\nExpande em: e 009.\nGlossário associado: TERM-A01-G05-NUMERAIS-INTERJEICOES-007 e 008.",
+            "**Metodologia de Concursos para Interjeição: Identificação e Derivação Imprópria**: Definição ou Ideia Central\nNo Modelo I de Questões (Identificação Morfológica), as bancas exigem o reconhecimento da interjeição no texto ou avaliam a derivação imprópria, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada.\nO Caso Emblemático da FGV (Senado Federal)\nTrecho examinado: \"E, surpresa!, quem a esta altura clama pelo surgimento...\"\nAnálise morfológica: O termo surpresa é originariamente um substantivo (\"Ganhei uma surpresa\"). No entanto, colocado entre vírgula e exclamação como brado exclamativo de impacto, ele assume o papel de interjeição.\nPista no enunciado da FGV: O comando da questão advertiu que o termo \"assume um papel gramatical distinto de sua classificação original\", fornecendo a pista direta da mudança de classe.\nDistinção Crucial entre Usos de \"Surpresa\"\nComo Substantivo: \"A festa surpresa foi adiada\" / \"Recebi uma surpresa\".\nComo Adjetivo / Predicativo: \"A professora ficou surpresa\" (qualifica o sujeito).\nComo Interjeição: \"E, surpresa!, consegui a vaga!\" (exclamação isolada emotiva).\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-004.009, 010, 011.",
+            "**Metodologia de Concursos para Interjeição: Análise do Valor Semântico Contextual**: Definição ou Ideia Central\nNo Modelo II de Questões (Valor Semântico), a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição nunca é fixo de forma isolada; ele depende obrigatoriamente da leitura da sequência textual subsequente.\nPrincipais Matizes Semânticos em Concursos\nRealce / Enfatização Expressiva: A interjeição sublinha a emoção ou lirismo da oração seguinte (ex.: \"Ah, que minha história fosse como um raio de sol...\" — CESGRANRIO).\nChamamento (Função Apelativa): A interjeição serve para atrair a atenção do ouvinte, diferindo da ação expressa na oração posterior (ex.: \"Ei! Vamos embora!\" \"Ei!\" expressa chamamento, enquanto \"vamos embora\" é a despedida — CONSESP).\nDesejo / Esperança: Expressa um anseio ou pedido de concretização futura (ex.: \"Oxalá concluas a viagem\" = \"Tomara que concluas...\" — CESPE / Machado de Assis; \"Se Deus quiser...\" — ITAME).\nSurpresa / Espanto: Expressa a quebra de expectativa diante do inesperado (ex.: \"Puxa! Não esperava te ver aqui!\" — ITAME).\nApelo / Súplica: Expressa pedido urgente de ajuda (ex.: \"Socorro! Alguém me dê um coração\" — CESPE / Titãs).\nAlerta / Advertência: Expressa aviso de perigo iminente (ex.: \"Cuidado com o carro!\").(Método de Análise Semântica Contextual).a 017."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-DEN-01",
-          "question": "Como testar se a expressão 'é que' em uma frase é mera partícula expletiva de realce?",
-          "keyPoints": [
-            "Eliminar mentalmente a expressão 'é que' da oração.",
-            "Se a estrutura e a correção gramatical permanecerem intactas, trata-se de partícula de realce."
-          ],
-          "targetConcept": "Partícula Expletiva de Realce",
-          "targetLO": "LO-A01-G05-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Numerais e Interjeições?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

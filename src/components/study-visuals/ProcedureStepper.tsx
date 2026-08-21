@@ -42,11 +42,19 @@ export const ProcedureStepper: React.FC<ProcedureStepperProps> = ({
   const [completedSteps, setCompletedSteps] = useState<Record<number, boolean>>({});
 
   const resolvedTitle = title || procedure?.title || 'Roteiro de Resolução Passo a Passo';
-  const resolvedObjective = objective || procedure?.objective;
+  const resolvedObjective = objective || procedure?.objective || procedure?.goal;
   const resolvedSteps = steps || procedure?.steps || [];
   const resolvedInputs = inputs || procedure?.inputs || [];
   const resolvedOutputs = outputs || procedure?.outputs || [];
   const resolvedFormulas = formulas || procedure?.formulas || [];
+  const triggerCondition = procedure?.triggerCondition;
+  const stoppingCondition = procedure?.stoppingCondition;
+  const verificationCriteria = procedure?.verificationCriteria
+    ? Array.isArray(procedure.verificationCriteria)
+      ? procedure.verificationCriteria
+      : [procedure.verificationCriteria]
+    : [];
+  const typicalFailureModes = procedure?.typicalFailureModes || [];
 
   const toggleStep = (order: number) => {
     setCompletedSteps((prev) => ({
@@ -82,18 +90,44 @@ export const ProcedureStepper: React.FC<ProcedureStepperProps> = ({
         </div>
       )}
 
+      {(triggerCondition || stoppingCondition) && (
+        <div className="grid gap-2.5 md:grid-cols-2">
+          {triggerCondition && (
+            <div className="rounded-xl border border-sky-200 bg-sky-50/60 p-3 text-xs font-medium text-sky-950">
+              <strong className="mb-1 block text-[10px] uppercase tracking-wider text-sky-800">Quando usar</strong>
+              <InlineRichText>{triggerCondition}</InlineRichText>
+            </div>
+          )}
+          {stoppingCondition && (
+            <div className="rounded-xl border border-teal-200 bg-teal-50/60 p-3 text-xs font-medium text-teal-950">
+              <strong className="mb-1 block text-[10px] uppercase tracking-wider text-teal-800">Quando concluir</strong>
+              <InlineRichText>{stoppingCondition}</InlineRichText>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Inputs / Entradas se houver */}
       {resolvedInputs.length > 0 && (
-        <div className="flex flex-wrap items-center gap-2 text-xs">
-          <span className="font-bold text-slate-600">Entradas requeridas:</span>
-          {resolvedInputs.map((inp, idx) => (
-            <span
-              key={idx}
-              className="inline-flex items-center gap-1 rounded-md bg-slate-100 border border-slate-200 px-2 py-0.5 font-medium text-slate-800"
-            >
-              <InlineRichText>{inp.name}</InlineRichText>
-            </span>
-          ))}
+        <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+          <span className="mb-2 block text-[10px] font-black uppercase tracking-wider text-slate-600">Entradas requeridas</span>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {resolvedInputs.map((input, index) => (
+              <div key={index} className="rounded-lg border border-slate-200 bg-white p-2.5 text-xs text-slate-800">
+                <strong className="block text-slate-900"><InlineRichText>{input.name}</InlineRichText></strong>
+                {input.description && <span className="mt-0.5 block leading-relaxed"><InlineRichText>{input.description}</InlineRichText></span>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {resolvedFormulas.length > 0 && (
+        <div className="rounded-xl border border-violet-200 bg-violet-50/60 p-3">
+          <span className="mb-1.5 block text-[10px] font-black uppercase tracking-wider text-violet-800">Fórmulas e relações</span>
+          <ul className="m-0 space-y-1 pl-4 text-xs font-semibold leading-relaxed text-violet-950">
+            {resolvedFormulas.map((formula, index) => <li key={index}><InlineRichText>{formula}</InlineRichText></li>)}
+          </ul>
         </div>
       )}
 
@@ -167,6 +201,27 @@ export const ProcedureStepper: React.FC<ProcedureStepperProps> = ({
           );
         })}
       </div>
+
+      {(verificationCriteria.length > 0 || typicalFailureModes.length > 0) && (
+        <div className="grid gap-2.5 md:grid-cols-2">
+          {verificationCriteria.length > 0 && (
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-3">
+              <strong className="mb-1.5 block text-[10px] uppercase tracking-wider text-emerald-800">Como conferir</strong>
+              <ul className="m-0 space-y-1 pl-4 text-xs font-medium text-emerald-950">
+                {verificationCriteria.map((criterion, index) => <li key={index}><InlineRichText>{criterion}</InlineRichText></li>)}
+              </ul>
+            </div>
+          )}
+          {typicalFailureModes.length > 0 && (
+            <div className="rounded-xl border border-rose-200 bg-rose-50/60 p-3">
+              <strong className="mb-1.5 block text-[10px] uppercase tracking-wider text-rose-800">Evite</strong>
+              <ul className="m-0 space-y-1 pl-4 text-xs font-medium text-rose-950">
+                {typicalFailureModes.map((failure, index) => <li key={index}><InlineRichText>{failure}</InlineRichText></li>)}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Outputs / Conclusão */}
       {resolvedOutputs.length > 0 && (

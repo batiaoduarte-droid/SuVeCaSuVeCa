@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A05-G08",
     "lessonId": "A05",
     "title": "Vozes Verbais - Reflexiva e Recíproca",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A05-G08",
@@ -86,6 +87,78 @@
               "text": "O pronome reflexivo assume a função de objeto de acordo com a transitividade e os demais complementos da oração."
             }
           ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A05-G08-001",
+              "table": {
+                "tableId": "TABLE-IP-A05-G08-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Estrutura",
+                  "Classificação da Voz",
+                  "Classificação do Sujeito",
+                  "Classificação do Agente",
+                  "Função do Termo Nominal"
+                ],
+                "rows": [
+                  [
+                    "Aluga-se apartamento",
+                    "Voz Passiva Sintética",
+                    "Determinado (Paciente)",
+                    "Indeterminado",
+                    "Sujeito Paciente"
+                  ],
+                  [
+                    "Alugam apartamento",
+                    "Voz Ativa",
+                    "Indeterminado",
+                    "Indeterminado (no sujeito)",
+                    "Objeto Direto"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A05-G08-004",
+              "table": {
+                "tableId": "TABLE-IP-A05-G08-004",
+                "caption": "Quadro Sinóptico de Diferenciação",
+                "headers": [
+                  "Estrutura",
+                  "Classificação da Voz",
+                  "Classificação do Sujeito",
+                  "Classificação do Agente",
+                  "Função do Termo Nominal"
+                ],
+                "rows": [
+                  [
+                    "Aluga-se apartamento",
+                    "Voz Passiva Sintética",
+                    "Determinado (Paciente)",
+                    "Indeterminado",
+                    "Sujeito Paciente"
+                  ],
+                  [
+                    "Alugam apartamento",
+                    "Voz Ativa",
+                    "Indeterminado",
+                    "Indeterminado (no sujeito)",
+                    "Objeto Direto"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
         }
       ]
     },
@@ -139,6 +212,113 @@
           },
           "practicalHeuristic": "Se o corpo/objeto já apareceu na frase, o pronome vira Objeto Indireto.",
           "pitfall": "Classificar todo 'se' reflexivo automaticamente como objeto direto."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A05-G08-002",
+          "table": {
+            "tableId": "TABLE-IP-A05-G08-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Estrutura / Função",
+              "Transitividade Exigida",
+              "Sujeito Sintático",
+              "Agente da Ação",
+              "Flexão do Verbo",
+              "Exemplo Canônico"
+            ],
+            "rows": [
+              [
+                "Pronome Apassivador (PA)",
+                "$\\text{VTD}$ ou $\\text{VTDI}$",
+                "Determinado (Paciente)",
+                "Indeterminado",
+                "Concorda com o sujeito (Singular/Plural)",
+                "Vendem-se casas."
+              ],
+              [
+                "Índice de Indeterminação (IIS/PIS)",
+                "$\\text{VI}$, $\\text{VTI}$ (prep.) ou $\\text{VL}$",
+                "Indeterminado",
+                "Indeterminado",
+                "Fixo na3ª pessoa do singular",
+                "Precisa-se de técnicos."
+              ],
+              [
+                "Parte Integrante do Verbo (PIV)",
+                "Verbo Pronominal",
+                "Determinado ou Oculto",
+                "O próprio sujeito",
+                "Varia com o sujeito ($\\text{1ª, 2ª, 3ª p.}$)",
+                "Eles queixavam-se."
+              ],
+              [
+                "Pronome Reflexivo",
+                "$\\text{VTD}$ ou $\\text{VTDI}$",
+                "Determinado (Ag./Pac.)",
+                "O próprio sujeito",
+                "Varia com o sujeito",
+                "Ela cortou-se."
+              ],
+              [
+                "Conjunção Integrante / Condic.",
+                "Conectivo oracional",
+                "Depende da oração",
+                "Depende da oração",
+                "Flexão normal",
+                "Não sei se virão."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A05-G08-003",
+          "table": {
+            "tableId": "TABLE-IP-A05-G08-003",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Transposição de Vozes",
+              "Quantidade na Origem",
+              "Quantidade no Destino",
+              "Regra de Cardinalidade",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "Sintética $\\rightarrow$ Analítica (Simples)",
+                "1 verbo",
+                "2 verbos",
+                "Soma 1 verbo (+SER)",
+                "vende-se (1) $\\rightarrow$ é vendida (2)"
+              ],
+              [
+                "Sintética $\\rightarrow$ Analítica (Locução)",
+                "2 verbos",
+                "3 verbos",
+                "Soma 1 verbo (+SER)",
+                "começou a se definir (2) $\\rightarrow$ começou a ser definida (3)"
+              ],
+              [
+                "Sintética $\\rightarrow$ Ativa (Simples)",
+                "1 verbo",
+                "1 verbo",
+                "Mantém o número",
+                "vende-se (1) $\\rightarrow$ vendem (1)"
+              ],
+              [
+                "Sintética $\\rightarrow$ Ativa (Locução)",
+                "2 verbos",
+                "2 verbos",
+                "Mantém o número",
+                "deveriam instituir-se (2) $\\rightarrow$ deveriam instituir (2)"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

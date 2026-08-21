@@ -21,6 +21,11 @@ export const BankTrapCard: React.FC<BankTrapCardProps> = ({
   renderBlock,
   className = '',
 }) => {
+  const resolvedMisleadingReasoning = trap.misleadingReasoning || trap.whyItFails;
+  const resolvedCorrectReasoning = trap.correctReasoning || trap.correctApproach;
+  const resolvedCorrectiveRule = trap.correctiveRule || trap.counterRule;
+  const showStructuredScaffold = !trap.presentation?.hideGenericScaffold;
+
   return (
     <div
       className={`rounded-2xl border border-amber-200 bg-white p-4 sm:p-6 shadow-xs hover:border-amber-300 transition-all space-y-4 select-text ${className}`}
@@ -42,7 +47,7 @@ export const BankTrapCard: React.FC<BankTrapCardProps> = ({
       </div>
 
       {/* Trigger & Misleading Reasoning (O que parece / Por que engana) */}
-      {(trap.trigger || trap.misleadingReasoning) && (
+      {showStructuredScaffold && (trap.trigger || trap.errorPattern || resolvedMisleadingReasoning) && (
         <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-3.5 space-y-2">
           {trap.trigger && (
             <div>
@@ -55,13 +60,24 @@ export const BankTrapCard: React.FC<BankTrapCardProps> = ({
             </div>
           )}
 
-          {trap.misleadingReasoning && (
+          {trap.errorPattern && trap.errorPattern !== trap.trigger && (
+            <div>
+              <span className="mb-0.5 block text-[10px] font-black uppercase tracking-wider text-amber-900 select-none">
+                Padrão do erro
+              </span>
+              <p className="text-xs font-medium leading-relaxed text-slate-700">
+                <InlineRichText>{trap.errorPattern}</InlineRichText>
+              </p>
+            </div>
+          )}
+
+          {resolvedMisleadingReasoning && (
             <div>
               <span className="text-[10px] font-black uppercase tracking-wider text-amber-900 block mb-0.5 select-none">
                 Por que a banca engana o candidato:
               </span>
               <p className="text-xs font-medium text-slate-700 leading-relaxed">
-                <InlineRichText>{trap.misleadingReasoning}</InlineRichText>
+                <InlineRichText>{resolvedMisleadingReasoning}</InlineRichText>
               </p>
             </div>
           )}
@@ -78,7 +94,7 @@ export const BankTrapCard: React.FC<BankTrapCardProps> = ({
       )}
 
       {/* Decisive Test */}
-      {trap.decisiveTest && (
+      {showStructuredScaffold && trap.decisiveTest && (
         <div className="rounded-xl border border-sky-200 bg-sky-50/60 p-3.5 space-y-1">
           <div className="flex items-center gap-1.5 text-sky-900 font-black text-xs select-none">
             <HelpCircle className="h-4 w-4 text-sky-700" />
@@ -91,7 +107,7 @@ export const BankTrapCard: React.FC<BankTrapCardProps> = ({
       )}
 
       {/* Logical Vaccine / Correct Rule (Vacina) */}
-      {(trap.correctReasoning || trap.correctiveRule) && (
+      {showStructuredScaffold && (resolvedCorrectReasoning || resolvedCorrectiveRule) && (
         <div className="rounded-xl border border-emerald-300 bg-emerald-50/70 p-3.5 space-y-1.5">
           <div className="flex items-center gap-1.5 text-emerald-900 font-black text-xs select-none">
             <ShieldCheck className="h-4 w-4 text-emerald-700" />
@@ -99,15 +115,53 @@ export const BankTrapCard: React.FC<BankTrapCardProps> = ({
               Vacina Lógica / Correção Definitiva
             </span>
           </div>
-          {trap.correctReasoning && (
+          {resolvedCorrectReasoning && (
             <p className="text-xs sm:text-sm font-bold text-emerald-950 leading-relaxed">
-              <InlineRichText>{trap.correctReasoning}</InlineRichText>
+              <InlineRichText>{resolvedCorrectReasoning}</InlineRichText>
             </p>
           )}
-          {trap.correctiveRule && (
+          {resolvedCorrectiveRule && (
             <p className="text-xs text-emerald-900 font-semibold leading-relaxed border-t border-emerald-200 pt-1">
-              <strong>Regra de Ouro:</strong> <InlineRichText>{trap.correctiveRule}</InlineRichText>
+              <strong>Regra de Ouro:</strong> <InlineRichText>{resolvedCorrectiveRule}</InlineRichText>
             </p>
+          )}
+        </div>
+      )}
+
+      {showStructuredScaffold && trap.bankTechnique && (
+        <div className="rounded-xl border border-violet-200 bg-violet-50/60 p-3 text-xs font-medium leading-relaxed text-violet-950">
+          <strong className="mb-1 block text-[10px] uppercase tracking-wider text-violet-900">Como a banca cobra</strong>
+          <InlineRichText>{trap.bankTechnique}</InlineRichText>
+        </div>
+      )}
+
+      {showStructuredScaffold && trap.examBoardBehavior && trap.examBoardBehavior !== trap.bankTechnique && (
+        <div className="rounded-xl border border-violet-200 bg-violet-50/60 p-3 text-xs font-medium leading-relaxed text-violet-950">
+          <strong className="mb-1 block text-[10px] uppercase tracking-wider text-violet-900">Comportamento recorrente da banca</strong>
+          <InlineRichText>{trap.examBoardBehavior}</InlineRichText>
+        </div>
+      )}
+
+      {showStructuredScaffold && trap.studentCaveat && (
+        <div className="rounded-xl border border-rose-200 bg-rose-50/60 p-3 text-xs font-medium leading-relaxed text-rose-950">
+          <strong className="mb-1 block text-[10px] uppercase tracking-wider text-rose-900">Atenção do aluno</strong>
+          <InlineRichText>{trap.studentCaveat}</InlineRichText>
+        </div>
+      )}
+
+      {showStructuredScaffold && (trap.example || trap.counterexample) && (
+        <div className="grid gap-2.5 md:grid-cols-2">
+          {trap.example && (
+            <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-xs font-medium leading-relaxed text-amber-950">
+              <strong className="mb-1 block text-[10px] uppercase tracking-wider text-amber-900">Exemplo da armadilha</strong>
+              <InlineRichText>{trap.example}</InlineRichText>
+            </div>
+          )}
+          {trap.counterexample && (
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-3 text-xs font-medium leading-relaxed text-emerald-950">
+              <strong className="mb-1 block text-[10px] uppercase tracking-wider text-emerald-900">Contraprova</strong>
+              <InlineRichText>{trap.counterexample}</InlineRichText>
+            </div>
           )}
         </div>
       )}

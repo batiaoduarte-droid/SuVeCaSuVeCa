@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A08-G06",
     "lessonId": "A08",
     "title": "Pontuação e Efeitos de Sentido",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A08-G06",
@@ -88,6 +89,84 @@
               "text": "A colocação da vírgula altera as fronteiras de escopo dos operadores de negação e qualificação."
             }
           ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A08-G06-001",
+              "table": {
+                "tableId": "TABLE-IP-A08-G06-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Categoria",
+                  "Natureza",
+                  "Estrutura Sintática",
+                  "Exemplo Típico"
+                ],
+                "rows": [
+                  [
+                    "Exemplificação",
+                    "Concreta / Ilustrativa",
+                    "Rol aberto (separado apenas por vírgulas, sem \"e\")",
+                    "\"Comprei frutas: banana, maçã.\""
+                  ],
+                  [
+                    "Enumeração",
+                    "Exaustiva / Finita",
+                    "Rol fechado (presença da conjunção\"e\" no fim)",
+                    "\"Comprei frutas: banana e maçã.\""
+                  ],
+                  [
+                    "Explicação",
+                    "Abstrata / Teórica",
+                    "Paráfrase ou definição conceitual",
+                    "\"Definiu a meta: vencer as eleições.\""
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A08-G06-003",
+              "table": {
+                "tableId": "TABLE-IP-A08-G06-003",
+                "caption": "Quadro Comparativo Decisivo",
+                "headers": [
+                  "Categoria",
+                  "Natureza",
+                  "Estrutura Sintática",
+                  "Exemplo Típico"
+                ],
+                "rows": [
+                  [
+                    "Exemplificação",
+                    "Concreta / Ilustrativa",
+                    "Rol aberto (separado apenas por vírgulas, sem \"e\")",
+                    "\"Comprei frutas: banana, maçã.\""
+                  ],
+                  [
+                    "Enumeração",
+                    "Exaustiva / Finita",
+                    "Rol fechado (presença da conjunção\"e\" no fim)",
+                    "\"Comprei frutas: banana e maçã.\""
+                  ],
+                  [
+                    "Explicação",
+                    "Abstrata / Teórica",
+                    "Paráfrase ou definição conceitual",
+                    "\"Definiu a meta: vencer as eleições.\""
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
         }
       ]
     },
@@ -141,6 +220,67 @@
           },
           "practicalHeuristic": "A vírgula após o 'não' inverte o comando verbal.",
           "pitfall": "Interpretar 'Não, espere' como ordem de partida."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A08-G06-002",
+          "table": {
+            "tableId": "TABLE-IP-A08-G06-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Sinal / Fenômeno",
+              "Função Normativa Primária",
+              "Aplicação Típica em Prova",
+              "Pegadinha Recorrente"
+            ],
+            "rows": [
+              [
+                "Vírgula antes de \"E\"",
+                "Separa orações aditivas com sujeitos diferentes ou com valor conclusivo/adversativo.",
+                "\"Chegou atrasado, e não se inteirou\" (conclusivo = facultativa).",
+                "Achar que vírgula antes de \"e\" com mesmo sujeito é sempre proibida."
+              ],
+              [
+                "Parênteses",
+                "Isola dados estritamente acessórios.",
+                "Inserção de comentários removíveis sem prejuízo sintático.",
+                "Isolar verbos ou complementos essenciais da oração principal."
+              ],
+              [
+                "Travessão Duplo",
+                "Isola intercalações explicativas ou enfáticas.",
+                "Inserção de Fato (Informação) vs. Comentário (Opinião).",
+                "Confundir isolamento de termo explicativo com fala de personagem."
+              ],
+              [
+                "Dois-Pontos",
+                "Anuncia fala direta, enumeração ou explicação.",
+                "Apósverbum dicendi (fala); após termo geral (explicação).",
+                "Confundir enumeração (fechada por \"e\") com exemplificação (rol aberto)."
+              ],
+              [
+                "Ponto e Vírgula",
+                "Separa enumerações complexas ou orações coordenadas.",
+                "Lista de crimes com vírgulas internas; oração com \"agora\" adversativo.",
+                "Julgar que ponto e vírgula é causado por intercalação interna."
+              ],
+              [
+                "Aspas Duplas / Simples",
+                "Delimita citações, títulos, conotação e destaque semântico.",
+                "Termos metafóricos ou ênfase no debate ideológico.",
+                "Classificar automaticamente qualquer palavra aspeada como \"ironia\"."
+              ],
+              [
+                "Ponto Final",
+                "Conclui e encerra períodos gramaticais completos.",
+                "Fracionamento de períodos extensos com orações autônomas.",
+                "Julgar que ponto final atua para \"interromper pensamentos\"."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

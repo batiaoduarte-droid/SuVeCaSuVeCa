@@ -6,6 +6,8 @@ import { pblEngine } from '../../lib/pbl/engine/PBLEngine';
 import { PBLSessionRepository } from '../../lib/pbl/persistence/PBLSessionRepository';
 import { PBLSessionView } from './PBLSessionView';
 import { ArrowRight, Brain, ChevronLeft, ChevronRight, Clock3, Play, RotateCw, Search, Sparkles } from 'lucide-react';
+import { formatLessonRange, getLessonName, getLessonSearchLabel } from '../../data/lessonCatalog';
+import { presentCompetencyTitle, stripContextualPrefix } from '../../lib/learnerFacingLabels';
 
 interface PBLDashboardProps {
   userId?: string;
@@ -106,7 +108,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
     const normalizedQuery = query.trim().toLocaleLowerCase('pt-BR');
     return competencies.filter((competency) =>
       (selectedLesson === 'ALL' || competency.lessonId === selectedLesson) &&
-      (!normalizedQuery || `${competency.title} ${competency.description}`.toLocaleLowerCase('pt-BR').includes(normalizedQuery))
+      (!normalizedQuery || `${competency.title} ${competency.description} ${getLessonSearchLabel(competency.lessonId)}`.toLocaleLowerCase('pt-BR').includes(normalizedQuery))
     );
   }, [competencies, query, selectedLesson]);
   const totalPages = Math.max(1, Math.ceil(filteredCompetencies.length / PAGE_SIZE));
@@ -127,11 +129,11 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   }
 
   if (loading && !competencies.length) {
-    return <div role="status" className="mx-auto max-w-6xl p-8 text-center text-sm font-semibold text-slate-700">Carregando trilhas PBL…</div>;
+    return <div role="status" className="tool-content-shell p-8 text-center text-sm font-semibold text-slate-700">Carregando trilhas PBL…</div>;
   }
 
   return (
-    <div className="mx-auto max-w-6xl space-y-8 p-4 sm:p-6">
+    <div className="tool-content-shell space-y-8">
       {errorMessage && <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm font-semibold text-rose-900">{errorMessage}</div>}
 
       {resumableSession && (
@@ -161,7 +163,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
         <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {(showAllCumulative ? cumulativeSessions : cumulativeSessions.slice(0, 6)).map((item) => (
             <article key={item.sessionId} className="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <div><div className="text-xs font-bold text-indigo-900">{item.title}</div><p className="mt-1 line-clamp-2 text-[11px] text-slate-600">{item.sessionGoal}</p></div>
+              <div><div className="text-xs font-bold text-indigo-900">{stripContextualPrefix(item.title, /^Revisão Cumulativa:\s*/i)}</div><p className="mt-1 line-clamp-2 text-[11px] text-slate-600">{item.sessionGoal.replace(/(?:temas|conteúdos)\s+de\s+(A\d{2})\s+até\s+(A\d{2})/gi, (_match, start, end) => `conteúdos de ${formatLessonRange(start, end)}`)}</p></div>
               <button type="button" disabled={loading} onClick={() => handleStartSession({ mode: 'cumulative', cumulativeSessionId: item.sessionId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-1.5 rounded-lg bg-indigo-600 px-3 text-xs font-bold text-white hover:bg-indigo-700 disabled:opacity-50">Praticar revisão <ArrowRight className="h-3 w-3" /></button>
             </article>
           ))}
@@ -174,9 +176,9 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
           <div><h2 id="competency-title" className="text-sm font-bold uppercase tracking-wider text-slate-800">Escolher uma competência</h2><p className="text-xs text-slate-600">Mostrando {visibleCompetencies.length} de {filteredCompetencies.length}; o mapa completo permanece disponível por filtro.</p></div>
           <div className="flex flex-wrap gap-2">
             <label className="relative"><span className="sr-only">Buscar competência</span><Search className="pointer-events-none absolute left-3 top-2.5 h-4 w-4 text-slate-400" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar tema" className="rounded-xl border border-slate-200 py-2 pl-9 pr-3 text-xs text-slate-800" /></label>
-            <select value={selectedLesson} aria-label="Filtrar competências por aula" onChange={(event) => setSelectedLesson(event.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-800">
-              <option value="ALL">Todas as aulas</option>
-              {Array.from(new Set(competencies.map((item) => item.lessonId))).sort().map((lesson) => <option key={lesson} value={lesson}>Aula {lesson}</option>)}
+            <select value={selectedLesson} aria-label="Filtrar competências por tema curricular" onChange={(event) => setSelectedLesson(event.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-800">
+              <option value="ALL">Todos os temas curriculares</option>
+              {Array.from(new Set(competencies.map((item) => item.lessonId))).sort().map((lesson) => <option key={lesson} value={lesson}>{getLessonName(lesson)}</option>)}
             </select>
           </div>
         </div>
@@ -186,9 +188,15 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
             const mastery = userMastery[competency.competencyId];
             const score = mastery ? Math.round(mastery.score * 100) : 0;
             const unavailable = unavailableCompetencyIds.has(competency.competencyId);
+            const presentation = presentCompetencyTitle(competency.title);
             return (
               <article key={competency.competencyId} className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-xs">
-                <div><span className="rounded-md bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-700">Aula {competency.lessonId}</span><h3 className="mt-2 line-clamp-2 text-xs font-bold text-slate-900">{competency.title}</h3><p className="mt-1 line-clamp-2 text-[11px] text-slate-600">{competency.description}</p></div>
+                <div>
+                  <span className="inline-flex rounded-md bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-700">{getLessonName(competency.lessonId)}</span>
+                  <h3 className="mt-2 text-sm font-extrabold leading-snug text-slate-950">{presentation.title}</h3>
+                  <span className="mt-1 inline-flex rounded-full border border-indigo-100 bg-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-800">{presentation.kind}</span>
+                  <p className="mt-2 line-clamp-3 text-[11px] leading-relaxed text-slate-600">{competency.description}</p>
+                </div>
                 <div className="mt-4 border-t border-slate-100 pt-3"><div className="flex justify-between text-[11px] text-slate-600"><span>Domínio atual</span><strong className="text-indigo-700">{score}%</strong></div><div className="mt-1 h-1.5 rounded-full bg-slate-100"><div className="h-full rounded-full bg-indigo-600" style={{ width: `${score}%` }} /></div><button type="button" disabled={loading || unavailable} onClick={() => handleStartSession({ mode: 'guided', targetCompetencyId: competency.competencyId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 text-xs font-bold text-indigo-800 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"><Clock3 className="h-3.5 w-3.5" /> {unavailable ? 'Aguardando gabarito oficial' : 'Praticar por 3–5 min'}</button></div>
               </article>
             );

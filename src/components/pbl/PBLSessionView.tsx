@@ -248,7 +248,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const elapsedMinutes = Math.max(1, Math.ceil(session.sessionStats.totalTimeMs / 60000));
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 p-4">
+    <div className="mx-auto w-full max-w-6xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
         <button type="button" onClick={() => setShowExitConfirmation(true)} className="inline-flex min-h-11 items-center gap-1 text-xs font-bold text-slate-600 hover:text-slate-900">
           <ArrowLeft className="h-4 w-4" /> Sair da sessão

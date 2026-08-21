@@ -14,8 +14,10 @@ export const sanitizePedagogicalText = (text: string): string => {
 
   return text
     // Remove referências brutas a IDs técnicos e scaffolding
+    .replace(/^\s*\d+\s*-\s*.+?\.md\s*(?:\([^)]*\))?\s*$/gmi, '')
     .replace(/Contrasta com:\s*KB-[A-Z0-9_-]+\s*\(([^)]+)\)/gi, 'Contrasta com: **$1**')
     .replace(/Expandido em:\s*KB-[A-Z0-9_-]+\s*a\s*KB-[A-Z0-9_-]+/gi, 'Detalhamento disponível nos tópicos do módulo')
+    .replace(/\s*\b(?:KB|WARN|PROC|TIP|TERM|ORAL)-[A-Z0-9_.-]+\b\s*(?:\([^)]*\))?/g, '')
     .replace(/\s*\(KB-[^)]+\)/gi, '')
     .replace(/\s*\bKB-[A-Z0-9_-]{6,}\b/gi, '')
     .replace(/\s*\bWARN-[A-Z0-9_-]{6,}\b/gi, '')
@@ -27,11 +29,14 @@ export const sanitizePedagogicalText = (text: string): string => {
     .replace(/Aplicado em:\s*\.?/gmi, '')
     .replace(/Depende de:\s*\.?/gmi, '')
     .replace(/Relacionado a:\s*\.?/gmi, '')
+    .replace(/Possui (?:dica|procedimento):\s*\.?/gmi, '')
+    .replace(/Termo associado:\s*\.?/gmi, '')
+    .replace(/Origens Cruzadas:\s*\.?/gmi, '')
     // Correções de concatenação de palavras em tabelas e títulos
     .replace(/Preposiçãopor/g, 'Preposição "por"')
     .replace(/Preposiçãoque/g, 'Preposição + Conjunção "que"')
     .replace(/DesignaçãoEis/g, 'Designação "Eis"')
-    .replace(/(Preposição|Conjunção|Substantivo|Pronome|Adjetivo|Advérbio)([A-ZÁÉÍÓÚÀÂÊÔÃÕa-záéíóúàâêôãõ])/g, '$1 $2')
+    .replace(/(Preposição|Conjunção|Substantivo|Pronome|Adjetivo|Advérbio)([A-ZÁÉÍÓÚÀÂÊÔÃÕ])/g, '$1 $2')
     // Substitui caracteres especiais dentro de fórmulas matemáticas para evitar warnings no KaTeX
     .replace(/\$([^$]+)\$/g, (_match, mathContent) => {
       const sanitizedMath = mathContent

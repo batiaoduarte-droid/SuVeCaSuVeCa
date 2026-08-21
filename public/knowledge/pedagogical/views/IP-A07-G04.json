@@ -1,22 +1,24 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A07-G04",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Substantivas - Objetivas Indiretas, Completivas Nominais e Predicativas",
+    "title": "Orações Subordinadas Adverbiais",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A07-G04",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Substantivas - Objetivas Indiretas, Completivas Nominais e Predicativas",
+    "title": "Orações Subordinadas Adverbiais",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Orações Subordinadas Adverbiais.",
       "Aplicar regras canônicas e procedimentos decisórios de Orações Subordinadas Adverbiais na resolução de questões.",
       "Analisar o papel de Orações Subordinadas Adverbiais no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
-    "conceptCount": 1,
+    "conceptCount": 8,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A07-G04-001",
@@ -30,131 +32,1253 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "As Orações Subordinadas Substantivas completam termos regidos por preposição (Objetivas Indiretas e Completivas Nominais) ou completam verbos de ligação (Predicativas). A distinção entre Objetiva Indireta e Completiva Nominal reside em saber se a preposição é regida por um VERBO ou por um NOME.",
-      "visualBlueprint": "Objetiva Indireta: Verbo Transitivo Indireto + Preposição + Oração (Gosto [DE QUE me apoiem] = Gosto DISSO) | Completiva Nominal: Nome Substantivo/Adjetivo + Preposição + Oração (Tenho certeza [DE QUE passarei] = Tenho certeza DISSO) | Predicativa: Sujeito + Verbo de Ligação + Oração (Meu desejo é [QUE você passe] = Meu desejo é ISSO).",
-      "cognitiveAnchor": "Preposição ligada a VERBO = Objetiva Indireta; Preposição ligada a NOME = Completiva Nominal.",
-      "strategicSignificance": "Elimina a confusão sintática crônica entre complemento de verbo e complemento de nome no período composto.",
-      "coreTension": "Confundir Completiva Nominal com Objetiva Indireta quando a preposição 'de' estiver elíptica antes do 'que'."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Orações Subordinadas Adverbiais",
+      "summary": "Articulação morfossintática e semântica de Orações Subordinadas Adverbiais com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A07-04",
-          "name": "Termos Integrantes (OI vs CN)",
-          "reason": "Compreender a diferença entre regência verbal e regência nominal no período simples.",
-          "activationPrompt": "Na frase 'Tenho medo de que chova', a preposição 'de' liga-se ao verbo 'tenho' ou ao substantivo 'medo'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A07-G04",
+          "title": "Mapa de Dependência: Orações Subordinadas Adverbiais",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Orações Subordinadas Adverbiais",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Confronto Triplo: Objetiva Indireta, Completiva Nominal e Predicativa",
-          "pedagogicalGoal": "Diferenciar com precisão as três funções oracionais substantivas preposicionadas e predicativas.",
+          "groupId": "GRP-IP-A07-G04-01",
+          "title": "Natureza Sintático-Semântica das Orações Subordinadas Adverbiais",
+          "conceptRefs": [
+            "KB-A07-G04-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Estrutura das Orações OI, CN e Predicativa",
-              "columns": [
-                "Tipo de Oração",
-                "Termo Regente na Matriz",
-                "Conectivo / Preposição",
-                "Exemplo",
-                "Equivalência com ISSO"
-              ],
-              "rows": [
-                [
-                  "Objetiva Indireta",
-                  "VERBO Transitivo Indireto (necessitar, gostar, obedecer)",
-                  "Preposição obrigatória (de que, a que, em que)",
-                  "Necessito [de que você me ajude].",
-                  "Necessito [DISSO]"
-                ],
-                [
-                  "Completiva Nominal",
-                  "SUBSTANTIVO ABSTRATO ou ADJETIVO (certeza, medo, convicto)",
-                  "Preposição obrigatória (de que, a que, em que)",
-                  "Tenho certeza [de que venceremos]. / Estou convicto [de que é verdade].",
-                  "Tenho certeza [DISSO] / Convicto [DISSO]"
-                ],
-                [
-                  "Predicativa",
-                  "Sujeito + VERBO DE LIGAÇÃO (é, era, foi)",
-                  "Conjunção integrante direta (que, se)",
-                  "A verdade é [que ele mentiu].",
-                  "A verdade é [ISSO]"
-                ]
-              ],
-              "text": "O termo regente antecedente dita a classificação da oração substantiva correspondente."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada adverbial é a unidade oracional dependente que exerce a função sintática equivalente à de um adjunto adverbial, modificando o verbo da oração principal ao atribuir-lhe uma circunstância lógica e contextual específica.\nExplicação consolidada\nNo período composto por subordinação, as orações adverbiais conectam-se à oração principal expressando matizes semânticos como motivo, consequência, tempo, hipótese ou finalidade. Estruturalmente, dividem-se em:\nOrações Desenvolvidas: Introduzidas expressamente por conjunções ou locuções conjuntivas subordinativas adverbiais e grafadas com verbo flexionado (nos modos indicativo ou subjuntivo);\nOrações Reduzidas: Construídas sem conectivo introdutório explícito e estruturadas com verbo em uma das formas nominais (infinitivo, gerúndio ou particípio).\nCritérios de reconhecimento ou aplicação\nVerifique se a oração introduz uma circunstância modificadora do predicado verbal principal;\nVerifique se há conectivo subordinativo (desenvolvida) ou forma nominal isolada (reduzida);\nRealize o teste de mobilidade sintática: a oração adverbial pode figurar anteposta, intercalada ou posposta à oração principal.\nExemplos e contraexemplos\nExemplo Desenvolvido: \"Como chovia muito, não fui à escola.\" (Oração adverbial causal introduzida pela conjunção como).\nExemplo Reduzido: \"Terminada a aula, os alunos saíram.\" (Oração adverbial temporal reduzida de particípio).\nRelações\nExpande-se em: (Mnemônico de Classificação 6C + FTP).a ."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G04-02",
+          "title": "O Mnemônico Estruturador das 9 Subclasses Adverbiais (6C + FTP)",
+          "conceptRefs": [
+            "KB-A07-G04-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA taxonomia completa das 9 circunstâncias expressas pelas orações subordinadas adverbiais desenvolvidas é organizada pela regra mnemônica 6C + FTP.\nExplicação consolidada\nAs nove subclasses distribuem-se em dois agrupamentos estruturais:\nBloco dos 6C (Seis circunstâncias iniciadas pela letra C):\nCausais: Razão, justificativa ou fato gerador anterior;\nConsecutivas: Efeito, impacto ou resultado decorrente de intensidade;\nConcessivas: Ressalva ou fato contrário que não impede a realização principal;\nCondicionais: Pré-requisito, hipótese indispensável ou causa potencial;\nComparativas: Confronto analógico de termos ou orações;\nConformativas: Concordância, acordo, modelo ou norma de referência.\nBloco FTP (Três circunstâncias funcionais):\nFinais (F): Objetivo, meta ou propósito visado;\nTemporais (T): Marco temporal cronológico ou imediato;\nProporcionais (P): Variação gradual, concomitante e simultânea.Exemplificado por: a"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G04-03",
+          "title": "Relações de Causa e Consequência e a Estrutura Intensificadora Correlativa",
+          "conceptRefs": [
+            "KB-A07-G04-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nCausa e consequência configuram faces indissociáveis da mesma relação de causalidade: a causa é o fato gerador, cronológica e logicamente anterior; a consequência é o efeito ou desfecho factual gerado.\nExplicação consolidada\nOração Subordinada Adverbial Causal: Expressa a causa originária. Principais conectivos: porque, já que, visto que, uma vez que, como (quando anteposto à oração principal).\nOração Subordinada Adverbial Consecutiva: Expressa o resultado da intensidade enunciada na oração principal. Estrutura-se obrigatoriamente pelo par correlativo formado pelo mecanismo dos 4 T's na oração principal (tão, tanto, tamanho/tamanha, tal) seguido da conjunção subordinativa que na oração consecutiva, além de locuções conjuntivas como de modo que, de sorte que, de forma que.\nCausalidade em Estruturas Justapostas: Em períodos coordenados ou justapostos sem conjunção subordinativa explícita, a causalidade é comprovada pelo teste semântico mental: \"O fato de [Causa] faz com que / fez com que [Consequência]\".\nExemplos e contraexemplos\nCausal com \"já que\": \"As vendas subirão, uma vez que os juros baixaram.\" (Baixar os juros = Causa).\nCausal com \"como\" anteposto: \"Como não o convenceu, trouxe uma porca...\" (Não convencer = Causa).\nConsecutiva com intensificador: \"A comida era tão boa que todos silenciaram em volta da mesa.\" (tão boa = intensidade causal; que todos silenciaram = consequência).\nConsecutiva com \"tamanha\": \"A preocupação é tamanha que o tema ganhou lugar de destaque...\".(Inversão entre causa e efeito).(Teste de causalidade)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G04-04",
+          "title": "Relações Condicionais e a Condição como \"Possível Causa\" (Causa Futura)",
+          "conceptRefs": [
+            "KB-A07-G04-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada adverbial condicional formula uma hipótese ou pré-requisito indispensável para que o fato da oração principal se concretize. No plano lógico cobrado em concursos públicos, a condição opera como uma causa potencial (causa futura hipotética), e a oração principal atua como sua possível ação consequente.\nExplicação consolidada\nDinâmica Lógica Causa × Condição: Enquanto o evento reside no campo hipotético/irreal, ele constitui uma condição. No momento em que se concretiza no plano factual, converte-se automaticamente na causa que gera o efeito previsto na oração principal.\nConectivos Usuais: se, caso, contanto que, desde que (este obrigatoriamente associado a verbo no modo subjuntivo).\nEstrutura Interoracional:\nOração Subordinada Condicional = Condição / Hipótese / Possível Causa;\nOração Principal = Possível Ação Consequente / Efeito Futuro.\nExemplos e contraexemplos\n\"Se você não me ajudar com a lição de casa [condição / possível causa], eu vou processar você [possível consequência].\"\n\"Se reforma for adiada [condição], direitos serão perdidos [consequência].\"\nCom \"desde que\": \"...é fácil trocá-las agora, desde que a razão não trabalhe...\" (trabalhe no presente do subjuntivo confirma o valor condicional equivalente a contanto que).\nRelações\nDistingue-se de: (Causalidade factual vs. Causalidade hipotética).\nPossui dica: TIP-A07-G04-002 (Mantra da condição como possível causa)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G04-05",
+          "title": "Relações Concessivas: Subordinação, Modo Subjuntivo e Dimensão Argumentativa Discursiva",
+          "conceptRefs": [
+            "KB-A07-G04-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada adverbial concessiva introduz uma ressalva, obstáculo real/suposto ou quebra de expectativa que, embora contrária à ideia central, é incapaz de anular ou impedir a realização do fato enunciado na oração principal.\nExplicação consolidada\nMorfossintaxe da Concessão: Ao contrário das coordenadas adversativas, a concessiva subordinada rege tipicamente o verbo no modo subjuntivo. Conectivos clássicos: embora, conquanto, ainda que, mesmo que, posto que, apesar de que.\nEstratégia Discursivo-Argumentativa (Perfil FGV): No texto dissertativo, expressões assertivas como \"É certo que...\" operam como abertura de concessão: o autor admite uma verdade ou argumento contrário para, em seguida, neutralizá-lo e sobrepor sua tese principal por meio de uma oração coordenada adversativa (\"É certo que [concessão]..., mas [adversativa principal]...\").\nConectivo Concessivo com Carga Negativa (\"Sem que\"): A locução \"sem que\" pode atuar no campo concessivo, porém traz carga intrínseca de negação, privação ou ausência, invertendo a polaridade afirmativa da proposição subordinada (\"sem que eu discorde\" = não discordo / concordo).\nExemplos e contraexemplos\nPadrão Prototípico: \"Embora seja cedo para qualquer conclusão definitiva, as evidências colhidas sugerem...\"\nConcessivo com \"conquanto\": \"Conquanto estivesse descontente, não desistia do plano.\"\nArgumentativo: \"É certo que o mundo mudou... [concessão discursiva] Mas a vocação de lazer jamais deve ser perdida [tese adversativa].\"\nRelações\nContrasta com: Orações Coordenadas Adversativas (as concessivas admitem a oposição sem que ela prevaleça sobre a oração principal).(Confundir o período de concessão \"É certo que\" com a adversativa subsequente)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G04-06",
+          "title": "Orações Comparativas e o Fenômeno da Elipse Verbal",
+          "conceptRefs": [
+            "KB-A07-G04-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração subordinada adverbial comparativa estabelece um confronto de igualdade, superioridade ou inferioridade entre dois elementos, caracterizando-se pela frequente elipse (omissão subentendida) do verbo na oração subordinada para evitar repetição discursiva.\nExplicação consolidada\nEm questões de contagem de orações e análise sintática do período composto:\nA ausência física do segundo verbo não descaracteriza a existência da segunda oração;\nToda estrutura comparativa que confronta dois termos pressupõe a existência de duas orações completas.\nConectivos usuais: como, assim como, quanto, que / do que (antecedidos por mais, menos, melhor, pior).\nCritérios de reconhecimento ou aplicação\nPara validar a oração comparativa com verbo elíptico, reconstitua o verbo suprimido na segunda oração:\n\\text{\"Ele é alto como o pai [é alto]\"}\nExemplos e contraexemplos\n\"É inteligente como o pai [é].\" $\\rightarrow$ Oração 1: \"É inteligente\"; Oração 2: \"como o pai [é]\" (Período composto por 2 orações).\n\"As mulheres sempre são mais maldosas que os homens [são].\" $\\rightarrow$ Oração comparativa de superioridade com elipse do verbo ser.(Pegadinha de contagem de orações)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G04-07",
+          "title": "Sistematização das Orações Conformativas, Finais, Proporcionais e Temporais",
+          "conceptRefs": [
+            "KB-A07-G04-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nConsolidação das quatro circunstâncias adverbiais restantes do modelo 6C + FTP:\nConformativas: Expressam conformidade, norma, parecer ou modelo com base no qual algo se desenvolve (conforme, segundo, consoante, como).\nExemplo: \"Segundo previu o economista, o mercado se estabilizou.\"\nFinais: Indicam a meta, propósito ou objetivo visado (para que, a fim de que, que, para + verbo no infinitivo).\nExemplo: \"Faremos esforço, para que não haja conflitos.\" / \"...faz fila para ganhar o alimento.\"\nProporcionais: Traduzem variação gradual e concomitância direta ou inversa (à medida que, à proporção que, ao passo que, quanto mais... mais).\nExemplo: \"...quanto mais longe enxergamos, mais ao passado voltamos.\"\nTemporais: Localizam no tempo o processo verbal da oração principal (quando, enquanto, logo que, assim que, antes que, mal).\nNuance de \"Mal\": O conectivo temporal mal veicula expressamente a circunstância de tempo imediato (\"Mal se sentou na cadeira..., passou a ver conspirações\" = assim que / logo que se sentou)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G04-08",
+          "title": "Polissemia de Conectivos e Critérios Diagnósticos de Desambiguação",
+          "conceptRefs": [
+            "KB-A07-G04-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nDeterminados conectivos da língua portuguesa transitam por múltiplas categorias sintático-semânticas, exigindo procedimentos formais e contextuais de desambiguação:\n\"Assim como\":\nAditivo: Quando conecta termos de mesma função sintática (\"João, assim como José, chegaram\");\nComparativo: Quando conecta orações, confrontando ações (\"João estuda muito, assim como o irmão [estuda]\").\n\"Como\":\nCausal: Em início de período (anteposto à oração principal), equivalendo a já que / visto que (\"Como não o convenceu, trouxe uma porca\");\nComparativo: Quando estabelece analogia (\"Dormiu como um anjo\");\nConformativo: Quando indica modelo/norma (\"Fez o trabalho como o mestre mandou\").\n\"Desde que\":\nCondicional: Quando seguido de verbo no modo subjuntivo (\"desde que a razão não trabalhe\");\nTemporal: Quando associado a verbo no modo indicativo marcando início cronológico (\"Desde que cheguei, trabalho sem parar\").\n\"Sem que\":\nCondicional ou Concessivo: Transita nas duas listas, mas possui como traço intrínseco o valor semântico de negação/privação/ausência.\nRelações\nProcedimentos associados: , , ."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada adverbial é a unidade oracional dependente que exerce a função sintática equivalente à de um adjunto adverbial, modificando o verbo da oração principal ao atribuir-lhe uma circunstância lógica e contextual específica.\nExplicação consolidada\nNo período composto por subordinação, as orações adverbiais conectam-se à oração principal expressando matizes semânticos como motivo, consequência, tempo, hipótese ou finalidade. Estruturalmente, dividem-se em:\nOrações Desenvolvidas: Introduzidas expressamente por conjunções ou locuções conjuntivas subordinativas adverbiais e grafadas com verbo flexionado (nos modos indicativo ou subjuntivo);\nOrações Reduzidas: Construídas sem conectivo introdutório explícito e estruturadas com verbo em uma das formas nominais (infinitivo, gerúndio ou particípio).\nCritérios de reconhecimento ou aplicação\nVerifique se a oração introduz uma circunstância modificadora do predicado verbal principal;\nVerifique se há conectivo subordinativo (desenvolvida) ou forma nominal isolada (reduzida);\nRealize o teste de mobilidade sintática: a oração adverbial pode figurar anteposta, intercalada ou posposta à oração principal.\nExemplos e contraexemplos\nExemplo Desenvolvido: \"Como chovia muito, não fui à escola.\" (Oração adverbial causal introduzida pela conjunção como).\nExemplo Reduzido: \"Terminada a aula, os alunos saíram.\" (Oração adverbial temporal reduzida de particípio).\nRelações\nExpande-se em: (Mnemônico de Classificação 6C + FTP).a ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA taxonomia completa das 9 circunstâncias expressas pelas orações subordinadas adverbiais desenvolvidas é organizada pela regra mnemônica 6C + FTP.\nExplicação consolidada\nAs nove subclasses distribuem-se em dois agrupamentos estruturais:\nBloco dos 6C (Seis circunstâncias iniciadas pela letra C):\nCausais: Razão, justificativa ou fato gerador anterior;\nConsecutivas: Efeito, impacto ou resultado decorrente de intensidade;\nConcessivas: Ressalva ou fato contrário que não impede a realização principal;\nCondicionais: Pré-requisito, hipótese indispensável ou causa potencial;\nComparativas: Confronto analógico de termos ou orações;\nConformativas: Concordância, acordo, modelo ou norma de referência.\nBloco FTP (Três circunstâncias funcionais):\nFinais (F): Objetivo, meta ou propósito visado;\nTemporais (T): Marco temporal cronológico ou imediato;\nProporcionais (P): Variação gradual, concomitante e simultânea.Exemplificado por: a"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nCausa e consequência configuram faces indissociáveis da mesma relação de causalidade: a causa é o fato gerador, cronológica e logicamente anterior; a consequência é o efeito ou desfecho factual gerado.\nExplicação consolidada\nOração Subordinada Adverbial Causal: Expressa a causa originária. Principais conectivos: porque, já que, visto que, uma vez que, como (quando anteposto à oração principal).\nOração Subordinada Adverbial Consecutiva: Expressa o resultado da intensidade enunciada na oração principal. Estrutura-se obrigatoriamente pelo par correlativo formado pelo mecanismo dos 4 T's na oração principal (tão, tanto, tamanho/tamanha, tal) seguido da conjunção subordinativa que na oração consecutiva, além de locuções conjuntivas como de modo que, de sorte que, de forma que.\nCausalidade em Estruturas Justapostas: Em períodos coordenados ou justapostos sem conjunção subordinativa explícita, a causalidade é comprovada pelo teste semântico mental: \"O fato de [Causa] faz com que / fez com que [Consequência]\".\nExemplos e contraexemplos\nCausal com \"já que\": \"As vendas subirão, uma vez que os juros baixaram.\" (Baixar os juros = Causa).\nCausal com \"como\" anteposto: \"Como não o convenceu, trouxe uma porca...\" (Não convencer = Causa).\nConsecutiva com intensificador: \"A comida era tão boa que todos silenciaram em volta da mesa.\" (tão boa = intensidade causal; que todos silenciaram = consequência).\nConsecutiva com \"tamanha\": \"A preocupação é tamanha que o tema ganhou lugar de destaque...\".(Inversão entre causa e efeito).(Teste de causalidade)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada adverbial condicional formula uma hipótese ou pré-requisito indispensável para que o fato da oração principal se concretize. No plano lógico cobrado em concursos públicos, a condição opera como uma causa potencial (causa futura hipotética), e a oração principal atua como sua possível ação consequente.\nExplicação consolidada\nDinâmica Lógica Causa × Condição: Enquanto o evento reside no campo hipotético/irreal, ele constitui uma condição. No momento em que se concretiza no plano factual, converte-se automaticamente na causa que gera o efeito previsto na oração principal.\nConectivos Usuais: se, caso, contanto que, desde que (este obrigatoriamente associado a verbo no modo subjuntivo).\nEstrutura Interoracional:\nOração Subordinada Condicional = Condição / Hipótese / Possível Causa;\nOração Principal = Possível Ação Consequente / Efeito Futuro.\nExemplos e contraexemplos\n\"Se você não me ajudar com a lição de casa [condição / possível causa], eu vou processar você [possível consequência].\"\n\"Se reforma for adiada [condição], direitos serão perdidos [consequência].\"\nCom \"desde que\": \"...é fácil trocá-las agora, desde que a razão não trabalhe...\" (trabalhe no presente do subjuntivo confirma o valor condicional equivalente a contanto que).\nRelações\nDistingue-se de: (Causalidade factual vs. Causalidade hipotética).\nPossui dica: TIP-A07-G04-002 (Mantra da condição como possível causa)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada adverbial concessiva introduz uma ressalva, obstáculo real/suposto ou quebra de expectativa que, embora contrária à ideia central, é incapaz de anular ou impedir a realização do fato enunciado na oração principal.\nExplicação consolidada\nMorfossintaxe da Concessão: Ao contrário das coordenadas adversativas, a concessiva subordinada rege tipicamente o verbo no modo subjuntivo. Conectivos clássicos: embora, conquanto, ainda que, mesmo que, posto que, apesar de que.\nEstratégia Discursivo-Argumentativa (Perfil FGV): No texto dissertativo, expressões assertivas como \"É certo que...\" operam como abertura de concessão: o autor admite uma verdade ou argumento contrário para, em seguida, neutralizá-lo e sobrepor sua tese principal por meio de uma oração coordenada adversativa (\"É certo que [concessão]..., mas [adversativa principal]...\").\nConectivo Concessivo com Carga Negativa (\"Sem que\"): A locução \"sem que\" pode atuar no campo concessivo, porém traz carga intrínseca de negação, privação ou ausência, invertendo a polaridade afirmativa da proposição subordinada (\"sem que eu discorde\" = não discordo / concordo).\nExemplos e contraexemplos\nPadrão Prototípico: \"Embora seja cedo para qualquer conclusão definitiva, as evidências colhidas sugerem...\"\nConcessivo com \"conquanto\": \"Conquanto estivesse descontente, não desistia do plano.\"\nArgumentativo: \"É certo que o mundo mudou... [concessão discursiva] Mas a vocação de lazer jamais deve ser perdida [tese adversativa].\"\nRelações\nContrasta com: Orações Coordenadas Adversativas (as concessivas admitem a oposição sem que ela prevaleça sobre a oração principal).(Confundir o período de concessão \"É certo que\" com a adversativa subsequente)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração subordinada adverbial comparativa estabelece um confronto de igualdade, superioridade ou inferioridade entre dois elementos, caracterizando-se pela frequente elipse (omissão subentendida) do verbo na oração subordinada para evitar repetição discursiva.\nExplicação consolidada\nEm questões de contagem de orações e análise sintática do período composto:\nA ausência física do segundo verbo não descaracteriza a existência da segunda oração;\nToda estrutura comparativa que confronta dois termos pressupõe a existência de duas orações completas.\nConectivos usuais: como, assim como, quanto, que / do que (antecedidos por mais, menos, melhor, pior).\nCritérios de reconhecimento ou aplicação\nPara validar a oração comparativa com verbo elíptico, reconstitua o verbo suprimido na segunda oração:\n\\text{\"Ele é alto como o pai [é alto]\"}\nExemplos e contraexemplos\n\"É inteligente como o pai [é].\" $\\rightarrow$ Oração 1: \"É inteligente\"; Oração 2: \"como o pai [é]\" (Período composto por 2 orações).\n\"As mulheres sempre são mais maldosas que os homens [são].\" $\\rightarrow$ Oração comparativa de superioridade com elipse do verbo ser.(Pegadinha de contagem de orações)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nConsolidação das quatro circunstâncias adverbiais restantes do modelo 6C + FTP:\nConformativas: Expressam conformidade, norma, parecer ou modelo com base no qual algo se desenvolve (conforme, segundo, consoante, como).\nExemplo: \"Segundo previu o economista, o mercado se estabilizou.\"\nFinais: Indicam a meta, propósito ou objetivo visado (para que, a fim de que, que, para + verbo no infinitivo).\nExemplo: \"Faremos esforço, para que não haja conflitos.\" / \"...faz fila para ganhar o alimento.\"\nProporcionais: Traduzem variação gradual e concomitância direta ou inversa (à medida que, à proporção que, ao passo que, quanto mais... mais).\nExemplo: \"...quanto mais longe enxergamos, mais ao passado voltamos.\"\nTemporais: Localizam no tempo o processo verbal da oração principal (quando, enquanto, logo que, assim que, antes que, mal).\nNuance de \"Mal\": O conectivo temporal mal veicula expressamente a circunstância de tempo imediato (\"Mal se sentou na cadeira..., passou a ver conspirações\" = assim que / logo que se sentou)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nDeterminados conectivos da língua portuguesa transitam por múltiplas categorias sintático-semânticas, exigindo procedimentos formais e contextuais de desambiguação:\n\"Assim como\":\nAditivo: Quando conecta termos de mesma função sintática (\"João, assim como José, chegaram\");\nComparativo: Quando conecta orações, confrontando ações (\"João estuda muito, assim como o irmão [estuda]\").\n\"Como\":\nCausal: Em início de período (anteposto à oração principal), equivalendo a já que / visto que (\"Como não o convenceu, trouxe uma porca\");\nComparativo: Quando estabelece analogia (\"Dormiu como um anjo\");\nConformativo: Quando indica modelo/norma (\"Fez o trabalho como o mestre mandou\").\n\"Desde que\":\nCondicional: Quando seguido de verbo no modo subjuntivo (\"desde que a razão não trabalhe\");\nTemporal: Quando associado a verbo no modo indicativo marcando início cronológico (\"Desde que cheguei, trabalho sem parar\").\n\"Sem que\":\nCondicional ou Concessivo: Transita nas duas listas, mas possui como traço intrínseco o valor semântico de negação/privação/ausência.\nRelações\nProcedimentos associados: , , ."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-OI-CN-ORAC-01",
-          "title": "Regra do Termo Antecedente Imediato",
-          "statement": "Se a oração preposicionada (de que, a que, em que) completar o sentido de um VERBO da oração principal, será Objetiva Indireta. Se completar o sentido de um SUBSTANTIVO ou ADJETIVO da oração principal, será OBRIGATORIAMENTE Completiva Nominal.",
-          "formalCondition": "Regente in Verbos -> Objetiva Indireta; Regente in Nomes -> Completiva Nominal.",
-          "scope": "Universal na sintaxe do período composto.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A07-G04-001",
+          "title": "Tabela Sintética das 9 Subclasses Adverbiais (6C + FTP)",
+          "statement": "Tabela Sintética das 9 Subclasses Adverbiais (6C + FTP)",
+          "scope": "syntax",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela Sintética das 9 Subclasses Adverbiais (6C + FTP)."
+          ],
           "exceptions": [],
-          "examples": [
-            "O réu duvidava [de que houvesse provas] (Duvidava = Verbo -> Objetiva Indireta).",
-            "O réu tinha dúvidas [de que houvesse provas] (Dúvidas = Substantivo -> Completiva Nominal)."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A07-G04-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G04-001",
+              "table": {
+                "tableId": "TABLE-IP-A07-G04-001",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Subclasse",
+                  "Ideia Central / Relação Lógica",
+                  "Conectivos Prototípicos",
+                  "Identificador Detalhado"
+                ],
+                "rows": [
+                  [
+                    "Causal",
+                    "Motivo, razão, fato gerador antecedente",
+                    "porque, já que, visto que, uma vez que, como (anteposto)",
+                    "KB-A07-G04-003"
+                  ],
+                  [
+                    "Consecutiva",
+                    "Efeito, resultado decorrente de intensidade",
+                    "que (precedido de tão, tanto, tamanho, tal), de modo que",
+                    "KB-A07-G04-003"
+                  ],
+                  [
+                    "Concessiva",
+                    "Oposição inócua, quebra de expectativa",
+                    "embora, conquanto, ainda que, mesmo que, posto que",
+                    "KB-A07-G04-005"
+                  ],
+                  [
+                    "Condicional",
+                    "Hipótese, pré-requisito, possível causa",
+                    "se, caso, desde que (+ subjuntivo), contanto que",
+                    "KB-A07-G04-004"
+                  ],
+                  [
+                    "Comparativa",
+                    "Confronto de igualdade/grau (elipse verbal)",
+                    "como, assim como, mais/menos... [do] que, quanto",
+                    "KB-A07-G04-006"
+                  ],
+                  [
+                    "Conformativa",
+                    "Acordo, modelo, regra de referência",
+                    "conforme, segundo, consoante, como",
+                    "KB-A07-G04-007"
+                  ],
+                  [
+                    "Final",
+                    "Meta, objetivo, propósito pretendido",
+                    "para que, a fim de que, para (+ infinitivo)",
+                    "KB-A07-G04-007"
+                  ],
+                  [
+                    "Proporcional",
+                    "Variação concomitante e gradual",
+                    "à medida que, à proporção que, quanto mais... mais",
+                    "KB-A07-G04-007"
+                  ],
+                  [
+                    "Temporal",
+                    "Localização no tempo (inclusive tempo imediato)",
+                    "quando, enquanto, assim que, logo que, mal, antes que",
+                    "KB-A07-G04-007"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A07-G04-001",
+              "EXP-IP-A07-G04-033"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-OI-CN-01",
-          "title": "Distinção Passo a Passo: Objetiva Indireta vs Completiva Nominal",
-          "triggerCondition": "Classificar uma oração substantiva iniciada por preposição (ou equivalendo a DISSO).",
+          "entityId": "PROC-A07-G04-001",
+          "title": "O Teste Semântico Operacional de Causa e Consequência",
           "steps": [
-            "1. Isole a oração subordinada e troque por DISSO / NISSO / A ISSO.",
-            "2. Olhe para a palavra imediatamente anterior à preposição na oração principal.",
-            "3. A palavra é um VERBO? (ex: 'gostava [de que]', 'insistiu [em que]') -> Oração Subordinada Substantiva OBJETIVA INDIRETA.",
-            "4. A palavra é um SUBSTANTIVO ou ADJETIVO? (ex: 'certeza [de que]', 'favorável [a que]') -> Oração Subordinada Substantiva COMPLETIVA NOMINAL."
+            {
+              "order": 1,
+              "action": "Isolamento dos Fatos",
+              "explanation": "Identifique os dois acontecimentos interconectados no período (Fato A e Fato B).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Molde Universal",
+              "explanation": "Monte mentalmente a estrutura:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Determinação dos Papéis",
+              "explanation": "Passo 3 do algoritmo de O Teste Semântico Operacional de Causa e Consequência.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O fato que preenche a lacuna de \"O fato de...\" é a CAUSA (motivo originador);",
+              "explanation": "Passo 4 do algoritmo de O Teste Semântico Operacional de Causa e Consequência.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O fato que preenche a lacuna de \"...fez com que\" é a CONSEQUÊNCIA / EFEITO (desfecho derivado).",
+              "explanation": "Passo 5 do algoritmo de O Teste Semântico Operacional de Causa e Consequência.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Conferência da Pergunta da Banca",
+              "explanation": "Passo 6 do algoritmo de O Teste Semântico Operacional de Causa e Consequência.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Se o enunciado sublinhou o trecho que preenche \"O fato de...\", assinale CAUSAL;",
+              "explanation": "Passo 7 do algoritmo de O Teste Semântico Operacional de Causa e Consequência.",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se o enunciado sublinhou o trecho que preenche \"fez com que...\", assinale CONSECUTIVA.",
+              "explanation": "Passo 8 do algoritmo de O Teste Semântico Operacional de Causa e Consequência.",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se o termo anterior é classe verbal ou classe nominal.",
-          "typicalFailureModes": [
-            "Classificar 'de que passarei' em 'Tenho fé de que passarei' como objeto indireto (fé é substantivo -> CN)."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de O Teste Semântico Operacional de Causa e Consequência."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de O Teste Semântico Operacional de Causa e Consequência."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para O Teste Semântico Operacional de Causa e Consequência",
+          "formulas": [
+            "\\text{\"O fato de [Fato A] fez com que acontecesse [Fato B]\"}"
+          ],
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G04-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arquivo de origem: 011 -....md (PROC-A07-V011-001), 012 -....md (PROC-A07-V012-001), 013 -....md (PROC-A07-V013-ORAC-SUB-ADV-P02-001), 014 -....md (PROC-A07-V014-FGV-001)"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Identificar com precisão qual oração do período atua como Causa e qual atua como Consequência, evitando a inversão posicional de gabarito."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a passo estruturado"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Isolamento dos Fatos: Identifique os dois acontecimentos interconectados no período (Fato A e Fato B).",
+                "Aplicação do Molde Universal: Monte mentalmente a estrutura:"
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{\"O fato de [Fato A] fez com que acontecesse [Fato B]\"}"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Determinação dos Papéis:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O fato que preenche a lacuna de \"O fato de...\" é a CAUSA (motivo originador);",
+                "O fato que preenche a lacuna de \"...fez com que\" é a CONSEQUÊNCIA / EFEITO (desfecho derivado)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Conferência da Pergunta da Banca:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o enunciado sublinhou o trecho que preenche \"O fato de...\", assinale CAUSAL;",
+                "Se o enunciado sublinhou o trecho que preenche \"fez com que...\", assinale CONSECUTIVA."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G04-001",
+              "EXP-IP-A07-G04-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G04-002",
+          "title": "Técnica de Resolução Vertical por Inspeção de Conectivos",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Comando da Questão",
+              "explanation": "Identifique a relação semântica exigida pela banca (ex.: \"a segunda parte expressa consequência\").",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Localização dos Marcadores de Divisão",
+              "explanation": "Observe a barra / ou vírgula que separa as orações nas alternativas A, B, C, D, E.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Inspeção Vertical dos Conectivos",
+              "explanation": "Passo 3 do algoritmo de Técnica de Resolução Vertical por Inspeção de Conectivos.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Conjunção alternativa (ou) $\\rightarrow$ Elimine;",
+              "explanation": "Passo 4 do algoritmo de Técnica de Resolução Vertical por Inspeção de Conectivos.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Locução causal (já que, visto que) $\\rightarrow$ Elimine;",
+              "explanation": "Passo 5 do algoritmo de Técnica de Resolução Vertical por Inspeção de Conectivos.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Conjunção adversativa (mas, porém) $\\rightarrow$ Elimine;",
+              "explanation": "Passo 6 do algoritmo de Técnica de Resolução Vertical por Inspeção de Conectivos.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Pronome relativo (que) com valor adjetivo restritivo $\\rightarrow$ Elimine;",
+              "explanation": "Passo 7 do algoritmo de Técnica de Resolução Vertical por Inspeção de Conectivos.",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Intensificador correlato (tão, tanto, tamanho) na 1ª oração seguido de que na 2ª $\\rightarrow$ Marque o gabarito.",
+              "explanation": "Passo 8 do algoritmo de Técnica de Resolução Vertical por Inspeção de Conectivos.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica de Resolução Vertical por Inspeção de Conectivos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica de Resolução Vertical por Inspeção de Conectivos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Técnica de Resolução Vertical por Inspeção de Conectivos",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G04-002",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arquivo de origem: 012 -....md (PROC-A07-V012-002)"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Resolver questões longas de correspondência e correlação semântica com agilidade em provas de concurso."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a passo estruturado"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Comando da Questão: Identifique a relação semântica exigida pela banca (ex.: \"a segunda parte expressa consequência\").",
+                "Localização dos Marcadores de Divisão: Observe a barra / ou vírgula que separa as orações nas alternativas A, B, C, D, E.",
+                "Inspeção Vertical dos Conectivos:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Conjunção alternativa (ou) $\\rightarrow$ Elimine;",
+                "Locução causal (já que, visto que) $\\rightarrow$ Elimine;",
+                "Conjunção adversativa (mas, porém) $\\rightarrow$ Elimine;",
+                "Pronome relativo (que) com valor adjetivo restritivo $\\rightarrow$ Elimine;",
+                "Intensificador correlato (tão, tanto, tamanho) na 1ª oração seguido de que na 2ª $\\rightarrow$ Marque o gabarito."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G04-002",
+              "EXP-IP-A07-G04-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G04-003",
+          "title": "Desambiguação Funcional da Locução \"Assim Como\"",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique os elementos articulados pela locução",
+              "explanation": "Passo 1 do algoritmo de Desambiguação Funcional da Locução \"Assim Como\".",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se conecta termos nominais, somando sujeitos para o mesmo predicado $\\rightarrow$ Valor Aditivo (\"A professora, assim como os alunos, compareceu\");",
+              "explanation": "Passo 2 do algoritmo de Desambiguação Funcional da Locução \"Assim Como\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se conecta duas orações completas (com verbos expressos ou elípticos), confrontando condutas ou estados $\\rightarrow$ Valor Comparativo (\"Ele agiu com firmeza, assim como o pai agira\").",
+              "explanation": "Passo 3 do algoritmo de Desambiguação Funcional da Locução \"Assim Como\".",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Desambiguação Funcional da Locução \"Assim Como\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Desambiguação Funcional da Locução \"Assim Como\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Desambiguação Funcional da Locução \"Assim Como\"",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G04-003",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arquivo de origem: 011 -....md (PROC-A07-V011-002)"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Classificar a locução \"assim como\" como aditiva ou comparativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a passo estruturado"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique os elementos articulados pela locução:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se conecta termos nominais, somando sujeitos para o mesmo predicado $\\rightarrow$ Valor Aditivo (\"A professora, assim como os alunos, compareceu\");",
+                "Se conecta duas orações completas (com verbos expressos ou elípticos), confrontando condutas ou estados $\\rightarrow$ Valor Comparativo (\"Ele agiu com firmeza, assim como o pai agira\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G04-003",
+              "EXP-IP-A07-G04-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G04-004",
+          "title": "Teste do Modo Verbal para a Locução \"Desde que\"",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localize a oração subordinada encabeçada por \"desde que\";",
+              "explanation": "Passo 1 do algoritmo de Teste do Modo Verbal para a Locução \"Desde que\".",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inspecione a forma verbal associada",
+              "explanation": "Passo 2 do algoritmo de Teste do Modo Verbal para a Locução \"Desde que\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verbo no Modo Subjuntivo (trabalhe, fizesse, venha) $\\rightarrow$ Equivale a contanto que $\\rightarrow$ Condição;",
+              "explanation": "Passo 3 do algoritmo de Teste do Modo Verbal para a Locução \"Desde que\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Verbo no Modo Indicativo (chegou, começou, mora) $\\rightarrow$ Marca cronológica de início $\\rightarrow$ Tempo.",
+              "explanation": "Passo 4 do algoritmo de Teste do Modo Verbal para a Locução \"Desde que\".",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do Modo Verbal para a Locução \"Desde que\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do Modo Verbal para a Locução \"Desde que\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste do Modo Verbal para a Locução \"Desde que\"",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G04-004",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arquivo de origem: 013 -....md (PROC-A07-V013-ORAC-SUB-ADV-P02-002)"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Diferenciar se a locução \"desde que\" possui valor condicional ou temporal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a passo estruturado"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localize a oração subordinada encabeçada por \"desde que\";",
+                "Inspecione a forma verbal associada:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbo no Modo Subjuntivo (trabalhe, fizesse, venha) $\\rightarrow$ Equivale a contanto que $\\rightarrow$ Condição;",
+                "Verbo no Modo Indicativo (chegou, começou, mora) $\\rightarrow$ Marca cronológica de início $\\rightarrow$ Tempo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G04-004",
+              "EXP-IP-A07-G04-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-OI-CN-01",
-          "conceptA": "Lembrei-me [de que tínhamos prova] (Objetiva Indireta)",
-          "conceptB": "Tive a lembrança [de que tínhamos prova] (Completiva Nominal)",
-          "decisiveDifference": "Em 'lembrei-me', o termo regente é o verbo pronominal 'lembrar-se' (OI); em 'tive a lembrança', o termo regente é o substantivo abstrato 'lembrança' (CN).",
-          "minimalPair": {
-            "sentenceA": "Ele precisa [de que o apoiem]. (Precisa = Verbo -> Objetiva Indireta)",
-            "sentenceB": "Ele tem necessidade [de que o apoiem]. (Necessidade = Substantivo -> Completiva Nominal)",
-            "difference": "Regida por verbo (Objetiva Indireta) vs Regida por substantivo (Completiva Nominal)."
+          "entityId": "CONTRAST-IP-A07-G04-001",
+          "title": "1. Causa vs. Condição vs. Consequência",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Verbo antes = Objetiva Indireta. Nome antes = Completiva Nominal.",
-          "pitfall": "Olhar apenas para a preposição 'de' sem checar a palavra anterior."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "1. Causa vs. Condição vs. Consequência",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A07-G04-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G04-002",
+              "table": {
+                "tableId": "TABLE-IP-A07-G04-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Conceito",
+                  "Natureza Temporal / Realidade",
+                  "Função no Período",
+                  "Teste Diagnóstico"
+                ],
+                "rows": [
+                  [
+                    "Causa",
+                    "Fato real, consumado ou preexistente",
+                    "Motivo gerador do fato principal",
+                    "Encaixa-se em\"O fato de [X]...\""
+                  ],
+                  [
+                    "Condição",
+                    "Hipótese, fato futuro ou incerto",
+                    "Causa em potencial para possível consequência",
+                    "Substituível por\"caso\" ou \"contanto que\""
+                  ],
+                  [
+                    "Consequência",
+                    "Efeito ou resultado derivado da causa",
+                    "Desfecho decorrente da intensidade/ação",
+                    "Encaixa-se em\"...fez com que [Y]\""
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A07-G04-001",
+              "EXP-IP-A07-G04-046"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A07-G04-002",
+          "title": "2. Oposição Adversativa vs. Oposição Concessiva",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "2. Oposição Adversativa vs. Oposição Concessiva",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A07-G04-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G04-003",
+              "table": {
+                "tableId": "TABLE-IP-A07-G04-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério",
+                  "Oração Coordenada Adversativa",
+                  "Oração Subordinada Adverbial Concessiva"
+                ],
+                "rows": [
+                  [
+                    "Relação Sintática",
+                    "Independência sintática (Coordenação)",
+                    "Dependência funcional de adjunto (Subordinação)"
+                  ],
+                  [
+                    "Modo Verbal Típico",
+                    "Modo Indicativo (\"Estudou, mas não passou\")",
+                    "Modo Subjuntivo (\"Embora tenha estudado, não passou\")"
+                  ],
+                  [
+                    "Hierarquia Argumentativa",
+                    "O argumento mais forte reside na oração adversativa",
+                    "A oração principal prevalece; a concessão cede"
+                  ],
+                  [
+                    "Conectivos Prototípicos",
+                    "mas, porém, contudo, todavia, no entanto",
+                    "embora, conquanto, ainda que, mesmo que, posto que"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A07-G04-002",
+              "EXP-IP-A07-G04-047"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A07-G04-003",
+          "title": "3. Perfil de Cobrança por Bancas Examinadoras",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "3. Perfil de Cobrança por Bancas Examinadoras",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A07-G04-003",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G04-004",
+              "table": {
+                "tableId": "TABLE-IP-A07-G04-004",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Banca",
+                  "Padrão Estrutural de Cobrança",
+                  "Foco da Pegadinha"
+                ],
+                "rows": [
+                  [
+                    "Vunesp",
+                    "Identificação direta de conectivos e relações lógicas clássicas (TJ-SP exige condição = causa potencial).",
+                    "Confundir condição com causa ou trocar o termo correlato."
+                  ],
+                  [
+                    "Instituto AOCP / FCC",
+                    "Questões diretas com conectivos típicos (embora, quanto mais... mais, desde que).",
+                    "Inversão entre causa e consequência nas alternativas."
+                  ],
+                  [
+                    "FGV",
+                    "Questões discursivas, argumentativas e reescrita de períodos inteiros.",
+                    "5 opções da mesma classe com alteração de sentido/polaridade (sem que); concessão em \"É certo que...\"."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A07-G04-003",
+              "EXP-IP-A07-G04-048"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-OI-CN-01",
-          "title": "Oração Substantiva Predicativa",
-          "sentence": "Nosso grande objetivo é que todos sejam homologados com excelência.",
-          "analysis": "Oração Principal: 'Nosso grande objetivo [Sujeito] é [Verbo de Ligação]'. Oração Subordinada: '[que todos sejam homologados com excelência]'. Funciona como Predicativo do Sujeito da oração principal.",
-          "pedagogicalTakeaway": "A oração substantiva que se liga ao sujeito por meio de verbo de ligação é Predicativa.",
-          "targetLO": "LO-A07-G04-01"
+          "entityId": "WORKED_EXAMPLE-IP-A07-G04-001",
+          "title": "Bateria 1: Exercícios de Fixação com Código Numérico (material de origem)",
+          "statement": "Sistema de Códigos: (1) Causal | (2) Consecutiva | (3) Concessiva | (4) Condicional | (5) Comparativa | (6) Conformativa | (7) Final | (8) Proporcional | (9) Temporal\nEX-A07-G04-001 (EX-A07-V011-001 / ): \"O que você faria se ela entrasse por aquela porta?\" $\\rightarrow$ se introduz hipótese $\\rightarrow$ Código (4) Condicional.\nEX-A07-G04-002 (EX-A07-V011-002 / ): \"Antes que essa coluna fosse publicada, tomei a decisão.\" $\\rightarrow$ Antes que localiza no tempo $\\rightarrow$ Código (9) Temporal.\nEX-A07-G04-003 (EX-A07-V011-003 / ): \"Nossa aventura existencial terá mais ou menos chance à medida que esse chão for confiável.\" $\\rightarrow$ à medida que indica proporção $\\rightarrow$ Código (8) Proporcional.\nEX-A07-G04-004 (EX-A07-V011-004 / ): \"Conquanto estivesse descontente, não desistia do plano.\" $\\rightarrow$ Conquanto equivale a embora $\\rightarrow$ Código (3) Concessiva.\nEX-A07-G04-005 (EX-A07-V011-005 / ): \"Segundo previu o economista, o mercado se estabilizou.\" $\\rightarrow$ Segundo indica conformidade $\\rightarrow$ Código (6) Conformativa.\nEX-A07-G04-006 (EX-A07-V011-006 / ): \"As vendas subirão, uma vez que os juros baixaram.\" $\\rightarrow$ uma vez que expressa motivo $\\rightarrow$ Código (1) Causal.\nEX-A07-G04-007 (EX-A07-V011-007 / ): \"A comida era tão boa que todos silenciaram em volta da mesa.\" $\\rightarrow$ tão... que indica efeito $\\rightarrow$ Código (2) Consecutiva.\nEX-A07-G04-008 (EX-A07-V011-008 / ): \"As mulheres sempre são mais maldosas que os homens [são].\" $\\rightarrow$ mais... que com elipse verbal $\\rightarrow$ Código (5) Comparativa.\nEX-A07-G04-009 (EX-A07-V011-009 / ): \"Faremos esforço, para que não haja conflitos.\" $\\rightarrow$ para que indica objetivo $\\rightarrow$ Código (7) Final.\nEX-A07-G04-010 (EX-A07-V011-010 / ): \"Mal se sentou na cadeira presidencial, passou a ver conspirações em tudo.\" $\\rightarrow$ Mal indica tempo imediato $\\rightarrow$ Código (9) Temporal.\nEX-A07-G04-011 (EX-A07-V011-011 / ): \"Mesmo que insista no pedido, não irei à posse do prefeito.\" $\\rightarrow$ Mesmo que expressa ressalva $\\rightarrow$ Código (3) Concessiva.",
+          "prompt": "Sistema de Códigos: (1) Causal | (2) Consecutiva | (3) Concessiva | (4) Condicional | (5) Comparativa | (6) Conformativa | (7) Final | (8) Proporcional | (9) Temporal",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A07-G04-001 (EX-A07-V011-001 / )",
+              "rationale": "\"O que você faria se ela entrasse por aquela porta?\" $\\rightarrow$ se introduz hipótese $\\rightarrow$ Código (4) Condicional."
+            },
+            {
+              "order": 2,
+              "action": "EX-A07-G04-002 (EX-A07-V011-002 / )",
+              "rationale": "\"Antes que essa coluna fosse publicada, tomei a decisão.\" $\\rightarrow$ Antes que localiza no tempo $\\rightarrow$ Código (9) Temporal."
+            },
+            {
+              "order": 3,
+              "action": "EX-A07-G04-003 (EX-A07-V011-003 / )",
+              "rationale": "\"Nossa aventura existencial terá mais ou menos chance à medida que esse chão for confiável.\" $\\rightarrow$ à medida que indica proporção $\\rightarrow$ Código (8) Proporcional."
+            },
+            {
+              "order": 4,
+              "action": "EX-A07-G04-004 (EX-A07-V011-004 / )",
+              "rationale": "\"Conquanto estivesse descontente, não desistia do plano.\" $\\rightarrow$ Conquanto equivale a embora $\\rightarrow$ Código (3) Concessiva."
+            },
+            {
+              "order": 5,
+              "action": "EX-A07-G04-005 (EX-A07-V011-005 / )",
+              "rationale": "\"Segundo previu o economista, o mercado se estabilizou.\" $\\rightarrow$ Segundo indica conformidade $\\rightarrow$ Código (6) Conformativa."
+            }
+          ],
+          "result": "EX-A07-G04-011 (EX-A07-V011-011 / ): \"Mesmo que insista no pedido, não irei à posse do prefeito.\" $\\rightarrow$ Mesmo que expressa ressalva $\\rightarrow$ Código (3) Concessiva.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Sistema de Códigos: (1) Causal | (2) Consecutiva | (3) Concessiva | (4) Condicional | (5) Comparativa | (6) Conformativa | (7) Final | (8) Proporcional | (9) Temporal\nEX-A07-G04-001 (EX-A07-V011-001 / ): \"O que você faria se ela entrasse por aquela porta?\" $\\rightarrow$ se introduz hipótese $\\rightarrow$ Código (4) Condicional.\nEX-A07-G04-002 (EX-A07-V011-002 / ): \"Antes que essa coluna fosse publicada, tomei a decisão.\" $\\rightarrow$ Antes que localiza no tempo $\\rightarrow$ Código (9) Temporal.\nEX-A07-G04-003 (EX-A07-V011-003 / ): \"Nossa aventura existencial terá mais ou menos chance à medida que esse chão for confiável.\" $\\rightarrow$ à medida que indica proporção $\\rightarrow$ Código (8) Proporcional.\nEX-A07-G04-004 (EX-A07-V011-004 / ): \"Conquanto estivesse descontente, não desistia do plano.\" $\\rightarrow$ Conquanto equivale a embora $\\rightarrow$ Código (3) Concessiva.\nEX-A07-G04-005 (EX-A07-V011-005 / ): \"Segundo previu o economista, o mercado se estabilizou.\" $\\rightarrow$ Segundo indica conformidade $\\rightarrow$ Código (6) Conformativa.\nEX-A07-G04-006 (EX-A07-V011-006 / ): \"As vendas subirão, uma vez que os juros baixaram.\" $\\rightarrow$ uma vez que expressa motivo $\\rightarrow$ Código (1) Causal.\nEX-A07-G04-007 (EX-A07-V011-007 / ): \"A comida era tão boa que todos silenciaram em volta da mesa.\" $\\rightarrow$ tão... que indica efeito $\\rightarrow$ Código (2) Consecutiva.\nEX-A07-G04-008 (EX-A07-V011-008 / ): \"As mulheres sempre são mais maldosas que os homens [são].\" $\\rightarrow$ mais... que com elipse verbal $\\rightarrow$ Código (5) Comparativa.\nEX-A07-G04-009 (EX-A07-V011-009 / ): \"Faremos esforço, para que não haja conflitos.\" $\\rightarrow$ para que indica objetivo $\\rightarrow$ Código (7) Final.\nEX-A07-G04-010 (EX-A07-V011-010 / ): \"Mal se sentou na cadeira presidencial, passou a ver conspirações em tudo.\" $\\rightarrow$ Mal indica tempo imediato $\\rightarrow$ Código (9) Temporal.\nEX-A07-G04-011 (EX-A07-V011-011 / ): \"Mesmo que insista no pedido, não irei à posse do prefeito.\" $\\rightarrow$ Mesmo que expressa ressalva $\\rightarrow$ Código (3) Concessiva.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Bateria 1: Exercícios de Fixação com Código Numérico (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Bateria 1: Exercícios de Fixação com Código Numérico (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Bateria 1: Exercícios de Fixação com Código Numérico (material de origem).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G04-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Sistema de Códigos: (1) Causal | (2) Consecutiva | (3) Concessiva | (4) Condicional | (5) Comparativa | (6) Conformativa | (7) Final | (8) Proporcional | (9) Temporal"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "EX-A07-G04-001 (EX-A07-V011-001 / ): \"O que você faria se ela entrasse por aquela porta?\" $\\rightarrow$ se introduz hipótese $\\rightarrow$ Código (4) Condicional.",
+                "EX-A07-G04-002 (EX-A07-V011-002 / ): \"Antes que essa coluna fosse publicada, tomei a decisão.\" $\\rightarrow$ Antes que localiza no tempo $\\rightarrow$ Código (9) Temporal.",
+                "EX-A07-G04-003 (EX-A07-V011-003 / ): \"Nossa aventura existencial terá mais ou menos chance à medida que esse chão for confiável.\" $\\rightarrow$ à medida que indica proporção $\\rightarrow$ Código (8) Proporcional.",
+                "EX-A07-G04-004 (EX-A07-V011-004 / ): \"Conquanto estivesse descontente, não desistia do plano.\" $\\rightarrow$ Conquanto equivale a embora $\\rightarrow$ Código (3) Concessiva.",
+                "EX-A07-G04-005 (EX-A07-V011-005 / ): \"Segundo previu o economista, o mercado se estabilizou.\" $\\rightarrow$ Segundo indica conformidade $\\rightarrow$ Código (6) Conformativa.",
+                "EX-A07-G04-006 (EX-A07-V011-006 / ): \"As vendas subirão, uma vez que os juros baixaram.\" $\\rightarrow$ uma vez que expressa motivo $\\rightarrow$ Código (1) Causal.",
+                "EX-A07-G04-007 (EX-A07-V011-007 / ): \"A comida era tão boa que todos silenciaram em volta da mesa.\" $\\rightarrow$ tão... que indica efeito $\\rightarrow$ Código (2) Consecutiva.",
+                "EX-A07-G04-008 (EX-A07-V011-008 / ): \"As mulheres sempre são mais maldosas que os homens [são].\" $\\rightarrow$ mais... que com elipse verbal $\\rightarrow$ Código (5) Comparativa.",
+                "EX-A07-G04-009 (EX-A07-V011-009 / ): \"Faremos esforço, para que não haja conflitos.\" $\\rightarrow$ para que indica objetivo $\\rightarrow$ Código (7) Final.",
+                "EX-A07-G04-010 (EX-A07-V011-010 / ): \"Mal se sentou na cadeira presidencial, passou a ver conspirações em tudo.\" $\\rightarrow$ Mal indica tempo imediato $\\rightarrow$ Código (9) Temporal.",
+                "EX-A07-G04-011 (EX-A07-V011-011 / ): \"Mesmo que insista no pedido, não irei à posse do prefeito.\" $\\rightarrow$ Mesmo que expressa ressalva $\\rightarrow$ Código (3) Concessiva."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G04-001",
+              "EXP-IP-A07-G04-049"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G04-002",
+          "title": "Bateria 2: Questões da Banca VUNESP (material de origem)",
+          "statement": "EX-A07-G04-012 (EX-A07-V012-001 / / PC-SP 2018): \"Se eu resolver isso aqui, vou acabar com o conflito...\" $\\rightarrow$ Se encabeça hipótese $\\rightarrow$ Gabarito: B (condição).\nEX-A07-G04-013 (EX-A07-V012-002 / / TJ-SP Escrevente): \"– (I) Se você não me ajudar com a lição de casa, (II) eu vou processar você –\" $\\rightarrow$ (I) Condição (possível causa) e (II) Possível ação consequente $\\rightarrow$ Gabarito: B.\nEX-A07-G04-014 (EX-A07-V012-003 / / Pref. Guaratinguetá 2019): \"Embora seja cedo para qualquer conclusão definitiva...\" $\\rightarrow$ Conectivo concessivo prototípico $\\rightarrow$ Gabarito: D (concessão).\nEX-A07-G04-015 (EX-A07-V012-004 / / PC-SP 2018): \"Não pagavam conta de luz e gás porque luz e gás não consumiam.\" $\\rightarrow$ porque expressa a causa geradora $\\rightarrow$ Gabarito: E (causa).\nEX-A07-G04-016 (EX-A07-V012-005 / / Pref. Serrana 2018): \"A preocupação é tamanha que o tema ganhou lugar de destaque...\" $\\rightarrow$ Par correlativo tamanha... que $\\rightarrow$ Gabarito: B (consequência).\nEX-A07-G04-017 (EX-A07-V012-006 / / Câm. Indaiatuba 2018): \"(I) Basta estacionar o carro, / (II) e um grupo de pessoas carentes faz fila / (III) para ganhar o alimento.\" $\\rightarrow$ I = Causa/Condição; II = Consequência de I; III = Finalidade de II $\\rightarrow$ Gabarito: E.\nEX-A07-G04-018 (EX-A07-V012-007 / / Câm. Dois Córregos 2018): Alternativa cuja segunda parte expressa consequência $\\rightarrow$ \"...com tantos detalhes e com uma exatidão tão perfeita / que são comparáveis a uma gravação\" $\\rightarrow$ Gabarito: B.",
+          "prompt": "EX-A07-G04-012 (EX-A07-V012-001 / / PC-SP 2018): \"Se eu resolver isso aqui, vou acabar com o conflito...\" $\\rightarrow$ Se encabeça hipótese $\\rightarrow$ Gabarito: B (condição).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A07-G04-012 (EX-A07-V012-001 / / PC-SP 2018)",
+              "rationale": "\"Se eu resolver isso aqui, vou acabar com o conflito...\" $\\rightarrow$ Se encabeça hipótese $\\rightarrow$ Gabarito: B (condição)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A07-G04-013 (EX-A07-V012-002 / / TJ-SP Escrevente)",
+              "rationale": "\"– (I) Se você não me ajudar com a lição de casa, (II) eu vou processar você –\" $\\rightarrow$ (I) Condição (possível causa) e (II) Possível ação consequente $\\rightarrow$ Gabarito: B."
+            },
+            {
+              "order": 3,
+              "action": "EX-A07-G04-014 (EX-A07-V012-003 / / Pref. Guaratinguetá 2019)",
+              "rationale": "\"Embora seja cedo para qualquer conclusão definitiva...\" $\\rightarrow$ Conectivo concessivo prototípico $\\rightarrow$ Gabarito: D (concessão)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A07-G04-015 (EX-A07-V012-004 / / PC-SP 2018)",
+              "rationale": "\"Não pagavam conta de luz e gás porque luz e gás não consumiam.\" $\\rightarrow$ porque expressa a causa geradora $\\rightarrow$ Gabarito: E (causa)."
+            },
+            {
+              "order": 5,
+              "action": "EX-A07-G04-016 (EX-A07-V012-005 / / Pref. Serrana 2018)",
+              "rationale": "\"A preocupação é tamanha que o tema ganhou lugar de destaque...\" $\\rightarrow$ Par correlativo tamanha... que $\\rightarrow$ Gabarito: B (consequência)."
+            }
+          ],
+          "result": "EX-A07-G04-018 (EX-A07-V012-007 / / Câm. Dois Córregos 2018): Alternativa cuja segunda parte expressa consequência $\\rightarrow$ \"...com tantos detalhes e com uma exatidão tão perfeita / que são comparáveis a uma gravação\" $\\rightarrow$ Gabarito: B.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'EX-A07-G04-012 (EX-A07-V012-001 / / PC-SP 2018): \"Se eu resolver isso aqui, vou acabar com o conflito...\" $\\rightarrow$ Se encabeça hipótese $\\rightarrow$ Gabarito: B (condição).\nEX-A07-G04-013 (EX-A07-V012-002 / / TJ-SP Escrevente): \"– (I) Se você não me ajudar com a lição de casa, (II) eu vou processar você –\" $\\rightarrow$ (I) Condição (possível causa) e (II) Possível ação consequente $\\rightarrow$ Gabarito: B.\nEX-A07-G04-014 (EX-A07-V012-003 / / Pref. Guaratinguetá 2019): \"Embora seja cedo para qualquer conclusão definitiva...\" $\\rightarrow$ Conectivo concessivo prototípico $\\rightarrow$ Gabarito: D (concessão).\nEX-A07-G04-015 (EX-A07-V012-004 / / PC-SP 2018): \"Não pagavam conta de luz e gás porque luz e gás não consumiam.\" $\\rightarrow$ porque expressa a causa geradora $\\rightarrow$ Gabarito: E (causa).\nEX-A07-G04-016 (EX-A07-V012-005 / / Pref. Serrana 2018): \"A preocupação é tamanha que o tema ganhou lugar de destaque...\" $\\rightarrow$ Par correlativo tamanha... que $\\rightarrow$ Gabarito: B (consequência).\nEX-A07-G04-017 (EX-A07-V012-006 / / Câm. Indaiatuba 2018): \"(I) Basta estacionar o carro, / (II) e um grupo de pessoas carentes faz fila / (III) para ganhar o alimento.\" $\\rightarrow$ I = Causa/Condição; II = Consequência de I; III = Finalidade de II $\\rightarrow$ Gabarito: E.\nEX-A07-G04-018 (EX-A07-V012-007 / / Câm. Dois Córregos 2018): Alternativa cuja segunda parte expressa consequência $\\rightarrow$ \"...com tantos detalhes e com uma exatidão tão perfeita / que são comparáveis a uma gravação\" $\\rightarrow$ Gabarito: B.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Bateria 2: Questões da Banca VUNESP (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Bateria 2: Questões da Banca VUNESP (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Bateria 2: Questões da Banca VUNESP (material de origem).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G04-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "EX-A07-G04-012 (EX-A07-V012-001 / / PC-SP 2018): \"Se eu resolver isso aqui, vou acabar com o conflito...\" $\\rightarrow$ Se encabeça hipótese $\\rightarrow$ Gabarito: B (condição).",
+                "EX-A07-G04-013 (EX-A07-V012-002 / / TJ-SP Escrevente): \"– (I) Se você não me ajudar com a lição de casa, (II) eu vou processar você –\" $\\rightarrow$ (I) Condição (possível causa) e (II) Possível ação consequente $\\rightarrow$ Gabarito: B.",
+                "EX-A07-G04-014 (EX-A07-V012-003 / / Pref. Guaratinguetá 2019): \"Embora seja cedo para qualquer conclusão definitiva...\" $\\rightarrow$ Conectivo concessivo prototípico $\\rightarrow$ Gabarito: D (concessão).",
+                "EX-A07-G04-015 (EX-A07-V012-004 / / PC-SP 2018): \"Não pagavam conta de luz e gás porque luz e gás não consumiam.\" $\\rightarrow$ porque expressa a causa geradora $\\rightarrow$ Gabarito: E (causa).",
+                "EX-A07-G04-016 (EX-A07-V012-005 / / Pref. Serrana 2018): \"A preocupação é tamanha que o tema ganhou lugar de destaque...\" $\\rightarrow$ Par correlativo tamanha... que $\\rightarrow$ Gabarito: B (consequência).",
+                "EX-A07-G04-017 (EX-A07-V012-006 / / Câm. Indaiatuba 2018): \"(I) Basta estacionar o carro, / (II) e um grupo de pessoas carentes faz fila / (III) para ganhar o alimento.\" $\\rightarrow$ I = Causa/Condição; II = Consequência de I; III = Finalidade de II $\\rightarrow$ Gabarito: E.",
+                "EX-A07-G04-018 (EX-A07-V012-007 / / Câm. Dois Córregos 2018): Alternativa cuja segunda parte expressa consequência $\\rightarrow$ \"...com tantos detalhes e com uma exatidão tão perfeita / que são comparáveis a uma gravação\" $\\rightarrow$ Gabarito: B."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G04-002",
+              "EXP-IP-A07-G04-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G04-003",
+          "title": "Bateria 3: Questões das Bancas Instituto AOCP e FCC (material de origem)",
+          "statement": "EX-A07-G04-019 (EX-A07-V013-ORAC-SUB-ADV-P02-001 / / Inst. AOCP - EBSERH): \"[...] embora acredite na necessidade de uma política penal eficiente [...], é preciso vencer o estupor social.\" $\\rightarrow$ Concessão expressa por embora $\\rightarrow$ Gabarito: D (concessão).\nEX-A07-G04-020 (EX-A07-V013-ORAC-SUB-ADV-P02-002 / / Inst. AOCP - Betim): \"...quanto mais longe enxergamos, mais ao passado voltamos\" $\\rightarrow$ Correlação proporcional $\\rightarrow$ Gabarito: A (Oração subordinada adverbial proporcional).\nEX-A07-G04-021 (EX-A07-V013-ORAC-SUB-ADV-P02-003 / / Inst. AOCP - João Pessoa): \"Se tivesse simplesmente feito isso [...]\" $\\rightarrow$ Hipótese condicional $\\rightarrow$ Gabarito: C (condição).\nEX-A07-G04-022 (EX-A07-V013-ORAC-SUB-ADV-P02-004 / / FCC - Câm. Fortaleza): \"...é fácil trocá-las agora, desde que a razão não trabalhe...\" $\\rightarrow$ desde que + presente do subjuntivo = condição $\\rightarrow$ Gabarito: B (condição).\nEX-A07-G04-023 (EX-A07-V013-ORAC-SUB-ADV-P02-005 / / FCC - TRF 3ª): \"Mas o uso excessivo do aparelho é tão predominante que os pesquisadores cunharam o termo 'nomofobia'...\" $\\rightarrow$ Intensificador tão... que $\\rightarrow$ Gabarito: A (consequência).\nEX-A07-G04-024 (EX-A07-V013-ORAC-SUB-ADV-P02-006 / / FCC - Pref. S. J. Rio Preto): \"Como não o convenceu, trouxe uma porca...\" $\\rightarrow$ Como em início de período = já que (causa) $\\rightarrow$ Gabarito: A (causa).\nEX-A07-G04-025 (EX-A07-V013-ORAC-SUB-ADV-P02-007 / / FCC - TRE-PR): \"O que fica de nosso desfile [...] é pouco, já que o ritmo da mudança não dá tempo...\" $\\rightarrow$ já que expressa a causa da escassez $\\rightarrow$ Gabarito: C (causa).",
+          "prompt": "EX-A07-G04-019 (EX-A07-V013-ORAC-SUB-ADV-P02-001 / / Inst. AOCP - EBSERH): \"[...] embora acredite na necessidade de uma política penal eficiente [...], é preciso vencer o estupor social.\" $\\rightarrow$ Concessão expressa por embora $\\rightarrow$ Gabarito: D (concessão).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A07-G04-019 (EX-A07-V013-ORAC-SUB-ADV-P02-001 / / Inst. AOCP - EBSERH)",
+              "rationale": "\"[...] embora acredite na necessidade de uma política penal eficiente [...], é preciso vencer o estupor social.\" $\\rightarrow$ Concessão expressa por embora $\\rightarrow$ Gabarito: D (concessão)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A07-G04-020 (EX-A07-V013-ORAC-SUB-ADV-P02-002 / / Inst. AOCP - Betim)",
+              "rationale": "\"...quanto mais longe enxergamos, mais ao passado voltamos\" $\\rightarrow$ Correlação proporcional $\\rightarrow$ Gabarito: A (Oração subordinada adverbial proporcional)."
+            },
+            {
+              "order": 3,
+              "action": "EX-A07-G04-021 (EX-A07-V013-ORAC-SUB-ADV-P02-003 / / Inst. AOCP - João Pessoa)",
+              "rationale": "\"Se tivesse simplesmente feito isso [...]\" $\\rightarrow$ Hipótese condicional $\\rightarrow$ Gabarito: C (condição)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A07-G04-022 (EX-A07-V013-ORAC-SUB-ADV-P02-004 / / FCC - Câm. Fortaleza)",
+              "rationale": "\"...é fácil trocá-las agora, desde que a razão não trabalhe...\" $\\rightarrow$ desde que + presente do subjuntivo = condição $\\rightarrow$ Gabarito: B (condição)."
+            },
+            {
+              "order": 5,
+              "action": "EX-A07-G04-023 (EX-A07-V013-ORAC-SUB-ADV-P02-005 / / FCC - TRF 3ª)",
+              "rationale": "\"Mas o uso excessivo do aparelho é tão predominante que os pesquisadores cunharam o termo 'nomofobia'...\" $\\rightarrow$ Intensificador tão... que $\\rightarrow$ Gabarito: A (consequência)."
+            }
+          ],
+          "result": "EX-A07-G04-025 (EX-A07-V013-ORAC-SUB-ADV-P02-007 / / FCC - TRE-PR): \"O que fica de nosso desfile [...] é pouco, já que o ritmo da mudança não dá tempo...\" $\\rightarrow$ já que expressa a causa da escassez $\\rightarrow$ Gabarito: C (causa).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'EX-A07-G04-019 (EX-A07-V013-ORAC-SUB-ADV-P02-001 / / Inst. AOCP - EBSERH): \"[...] embora acredite na necessidade de uma política penal eficiente [...], é preciso vencer o estupor social.\" $\\rightarrow$ Concessão expressa por embora $\\rightarrow$ Gabarito: D (concessão).\nEX-A07-G04-020 (EX-A07-V013-ORAC-SUB-ADV-P02-002 / / Inst. AOCP - Betim): \"...quanto mais longe enxergamos, mais ao passado voltamos\" $\\rightarrow$ Correlação proporcional $\\rightarrow$ Gabarito: A (Oração subordinada adverbial proporcional).\nEX-A07-G04-021 (EX-A07-V013-ORAC-SUB-ADV-P02-003 / / Inst. AOCP - João Pessoa): \"Se tivesse simplesmente feito isso [...]\" $\\rightarrow$ Hipótese condicional $\\rightarrow$ Gabarito: C (condição).\nEX-A07-G04-022 (EX-A07-V013-ORAC-SUB-ADV-P02-004 / / FCC - Câm. Fortaleza): \"...é fácil trocá-las agora, desde que a razão não trabalhe...\" $\\rightarrow$ desde que + presente do subjuntivo = condição $\\rightarrow$ Gabarito: B (condição).\nEX-A07-G04-023 (EX-A07-V013-ORAC-SUB-ADV-P02-005 / / FCC - TRF 3ª): \"Mas o uso excessivo do aparelho é tão predominante que os pesquisadores cunharam o termo 'nomofobia'...\" $\\rightarrow$ Intensificador tão... que $\\rightarrow$ Gabarito: A (consequência).\nEX-A07-G04-024 (EX-A07-V013-ORAC-SUB-ADV-P02-006 / / FCC - Pref. S. J. Rio Preto): \"Como não o convenceu, trouxe uma porca...\" $\\rightarrow$ Como em início de período = já que (causa) $\\rightarrow$ Gabarito: A (causa).\nEX-A07-G04-025 (EX-A07-V013-ORAC-SUB-ADV-P02-007 / / FCC - TRE-PR): \"O que fica de nosso desfile [...] é pouco, já que o ritmo da mudança não dá tempo...\" $\\rightarrow$ já que expressa a causa da escassez $\\rightarrow$ Gabarito: C (causa).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Bateria 3: Questões das Bancas Instituto AOCP e FCC (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Bateria 3: Questões das Bancas Instituto AOCP e FCC (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Bateria 3: Questões das Bancas Instituto AOCP e FCC (material de origem).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G04-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "EX-A07-G04-019 (EX-A07-V013-ORAC-SUB-ADV-P02-001 / / Inst. AOCP - EBSERH): \"[...] embora acredite na necessidade de uma política penal eficiente [...], é preciso vencer o estupor social.\" $\\rightarrow$ Concessão expressa por embora $\\rightarrow$ Gabarito: D (concessão).",
+                "EX-A07-G04-020 (EX-A07-V013-ORAC-SUB-ADV-P02-002 / / Inst. AOCP - Betim): \"...quanto mais longe enxergamos, mais ao passado voltamos\" $\\rightarrow$ Correlação proporcional $\\rightarrow$ Gabarito: A (Oração subordinada adverbial proporcional).",
+                "EX-A07-G04-021 (EX-A07-V013-ORAC-SUB-ADV-P02-003 / / Inst. AOCP - João Pessoa): \"Se tivesse simplesmente feito isso [...]\" $\\rightarrow$ Hipótese condicional $\\rightarrow$ Gabarito: C (condição).",
+                "EX-A07-G04-022 (EX-A07-V013-ORAC-SUB-ADV-P02-004 / / FCC - Câm. Fortaleza): \"...é fácil trocá-las agora, desde que a razão não trabalhe...\" $\\rightarrow$ desde que + presente do subjuntivo = condição $\\rightarrow$ Gabarito: B (condição).",
+                "EX-A07-G04-023 (EX-A07-V013-ORAC-SUB-ADV-P02-005 / / FCC - TRF 3ª): \"Mas o uso excessivo do aparelho é tão predominante que os pesquisadores cunharam o termo 'nomofobia'...\" $\\rightarrow$ Intensificador tão... que $\\rightarrow$ Gabarito: A (consequência).",
+                "EX-A07-G04-024 (EX-A07-V013-ORAC-SUB-ADV-P02-006 / / FCC - Pref. S. J. Rio Preto): \"Como não o convenceu, trouxe uma porca...\" $\\rightarrow$ Como em início de período = já que (causa) $\\rightarrow$ Gabarito: A (causa).",
+                "EX-A07-G04-025 (EX-A07-V013-ORAC-SUB-ADV-P02-007 / / FCC - TRE-PR): \"O que fica de nosso desfile [...] é pouco, já que o ritmo da mudança não dá tempo...\" $\\rightarrow$ já que expressa a causa da escassez $\\rightarrow$ Gabarito: C (causa)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G04-003",
+              "EXP-IP-A07-G04-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G04-004",
+          "title": "Bateria 4: Questões da Banca FGV (material de origem)",
+          "statement": "EX-A07-G04-026 (EX-A07-V014-FGV-001 / / FGV - FBN): \"'É certo que o mundo mudou [...]. Mas a vocação de encontro e de lazer desses espaços públicos jamais deve ser perdida'.\" $\\rightarrow$ O período iniciado por É certo que possui função de concessão no arranjo dissertativo $\\rightarrow$ Gabarito: A (concessivo).\nEX-A07-G04-027 (EX-A07-V014-FGV-002 / / FGV - Pref. João Pessoa): Reescrita de \"Embora em alguns pontos eu discorde do escritor\". A alternativa A (\"Sem que em alguns pontos eu discorde...\") altera o sentido original porque sem que traz carga de negação (não discordo / concordo) $\\rightarrow$ Gabarito: A.\nEX-A07-G04-028 (EX-A07-V014-FGV-003 / / FGV - IBGE): Manchete: \"Se reforma for adiada, direitos serão perdidos\" $\\rightarrow$ Sequência de condição (causa hipotética) seguida de consequência $\\rightarrow$ Gabarito: B (uma condição seguida de uma consequência).\nEX-A07-G04-029 (EX-A07-V014-FGV-004 / / FGV - IBGE): \"'a caça predatória de animais [...]; todos esses animais, de uma forma ou de outra, rendem expressivos lucros'.\" $\\rightarrow$ O fato de render lucros é a causa motivadora da caça predatória $\\rightarrow$ Gabarito: B (causa).",
+          "prompt": "EX-A07-G04-026 (EX-A07-V014-FGV-001 / / FGV - FBN): \"'É certo que o mundo mudou [...]. Mas a vocação de encontro e de lazer desses espaços públicos jamais deve ser perdida'.\" $\\rightarrow$ O período iniciado por É certo que possui função de concessão no arranjo dissertativo $\\rightarrow$ Gabarito: A (concessivo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "EX-A07-G04-026 (EX-A07-V014-FGV-001 / / FGV - FBN)",
+              "rationale": "\"'É certo que o mundo mudou [...]. Mas a vocação de encontro e de lazer desses espaços públicos jamais deve ser perdida'.\" $\\rightarrow$ O período iniciado por É certo que possui função de concessão no arranjo dissertativo $\\rightarrow$ Gabarito: A (concessivo)."
+            },
+            {
+              "order": 2,
+              "action": "EX-A07-G04-027 (EX-A07-V014-FGV-002 / / FGV - Pref. João Pessoa)",
+              "rationale": "Reescrita de \"Embora em alguns pontos eu discorde do escritor\". A alternativa A (\"Sem que em alguns pontos eu discorde...\") altera o sentido original porque sem que traz carga de negação (não discordo / concordo) $\\rightarrow$ Gabarito: A."
+            },
+            {
+              "order": 3,
+              "action": "EX-A07-G04-028 (EX-A07-V014-FGV-003 / / FGV - IBGE)",
+              "rationale": "Manchete: \"Se reforma for adiada, direitos serão perdidos\" $\\rightarrow$ Sequência de condição (causa hipotética) seguida de consequência $\\rightarrow$ Gabarito: B (uma condição seguida de uma consequência)."
+            },
+            {
+              "order": 4,
+              "action": "EX-A07-G04-029 (EX-A07-V014-FGV-004 / / FGV - IBGE)",
+              "rationale": "\"'a caça predatória de animais [...]; todos esses animais, de uma forma ou de outra, rendem expressivos lucros'.\" $\\rightarrow$ O fato de render lucros é a causa motivadora da caça predatória $\\rightarrow$ Gabarito: B (causa)."
+            }
+          ],
+          "result": "EX-A07-G04-029 (EX-A07-V014-FGV-004 / / FGV - IBGE): \"'a caça predatória de animais [...]; todos esses animais, de uma forma ou de outra, rendem expressivos lucros'.\" $\\rightarrow$ O fato de render lucros é a causa motivadora da caça predatória $\\rightarrow$ Gabarito: B (causa).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'EX-A07-G04-026 (EX-A07-V014-FGV-001 / / FGV - FBN): \"'É certo que o mundo mudou [...]. Mas a vocação de encontro e de lazer desses espaços públicos jamais deve ser perdida'.\" $\\rightarrow$ O período iniciado por É certo que possui função de concessão no arranjo dissertativo $\\rightarrow$ Gabarito: A (concessivo).\nEX-A07-G04-027 (EX-A07-V014-FGV-002 / / FGV - Pref. João Pessoa): Reescrita de \"Embora em alguns pontos eu discorde do escritor\". A alternativa A (\"Sem que em alguns pontos eu discorde...\") altera o sentido original porque sem que traz carga de negação (não discordo / concordo) $\\rightarrow$ Gabarito: A.\nEX-A07-G04-028 (EX-A07-V014-FGV-003 / / FGV - IBGE): Manchete: \"Se reforma for adiada, direitos serão perdidos\" $\\rightarrow$ Sequência de condição (causa hipotética) seguida de consequência $\\rightarrow$ Gabarito: B (uma condição seguida de uma consequência).\nEX-A07-G04-029 (EX-A07-V014-FGV-004 / / FGV - IBGE): \"'a caça predatória de animais [...]; todos esses animais, de uma forma ou de outra, rendem expressivos lucros'.\" $\\rightarrow$ O fato de render lucros é a causa motivadora da caça predatória $\\rightarrow$ Gabarito: B (causa).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Bateria 4: Questões da Banca FGV (material de origem) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Bateria 4: Questões da Banca FGV (material de origem).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Bateria 4: Questões da Banca FGV (material de origem).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G04-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "EX-A07-G04-026 (EX-A07-V014-FGV-001 / / FGV - FBN): \"'É certo que o mundo mudou [...]. Mas a vocação de encontro e de lazer desses espaços públicos jamais deve ser perdida'.\" $\\rightarrow$ O período iniciado por É certo que possui função de concessão no arranjo dissertativo $\\rightarrow$ Gabarito: A (concessivo).",
+                "EX-A07-G04-027 (EX-A07-V014-FGV-002 / / FGV - Pref. João Pessoa): Reescrita de \"Embora em alguns pontos eu discorde do escritor\". A alternativa A (\"Sem que em alguns pontos eu discorde...\") altera o sentido original porque sem que traz carga de negação (não discordo / concordo) $\\rightarrow$ Gabarito: A.",
+                "EX-A07-G04-028 (EX-A07-V014-FGV-003 / / FGV - IBGE): Manchete: \"Se reforma for adiada, direitos serão perdidos\" $\\rightarrow$ Sequência de condição (causa hipotética) seguida de consequência $\\rightarrow$ Gabarito: B (uma condição seguida de uma consequência).",
+                "EX-A07-G04-029 (EX-A07-V014-FGV-004 / / FGV - IBGE): \"'a caça predatória de animais [...]; todos esses animais, de uma forma ou de outra, rendem expressivos lucros'.\" $\\rightarrow$ O fato de render lucros é a causa motivadora da caça predatória $\\rightarrow$ Gabarito: B (causa)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G04-004",
+              "EXP-IP-A07-G04-052"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -162,51 +1286,200 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-OI-CN-01",
-          "title": "Preposição no Verbo é OI, Preposição no Nome é CN!",
-          "content": "A preposição colou no VERBO? É Objetiva Indireta! A preposição colou no NOME? É Completiva Nominal! Sem erro!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Distinção entre OI e CN oracionais.",
-          "limitations": "Verifique se a oração substitui DISSO/NISSO.",
-          "text": "Regência por verbo gera oração objetiva indireta; regência por nome gera completiva nominal."
+          "title": "Mantra de Fixação: Orações Subordinadas Adverbiais",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Orações Subordinadas Adverbiais, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Orações Subordinadas Adverbiais, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-OI-CN-01",
-          "title": "A Omissão da Preposição 'DE' na Fala Coloquial",
-          "trigger": "Frases como 'Tenho certeza que você vai passar' (omissão do 'de').",
-          "whyItFails": "O aluno não vê a preposição 'de' e classifica a oração como objetiva direta.",
-          "correctApproach": "O substantivo 'certeza' rege a preposição 'de' obrigatoriamente na norma padrão ('certeza de que'). Mesmo que a preposição tenha sido elidida na frase, a oração continua sendo COMPLETIVA NOMINAL.",
-          "bankTechnique": "Omitir a preposição em orações completivas nominais para induzir à classificação de objetiva direta.",
-          "counterRule": "A oração ligada a substantivo que aceita troca por DISSO é completiva nominal."
+          "entityId": "WARN-A07-G04-001",
+          "title": "A Armadilha de Inverter Causa e Consequência",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha de Inverter Causa e Consequência.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha de Inverter Causa e Consequência.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha de Inverter Causa e Consequência no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha de Inverter Causa e Consequência.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha de Inverter Causa e Consequência.",
+          "correctReasoning": "Arquivo de origem: 013 -....md (WARN-A07-V013-ORAC-SUB-ADV-P02-001), 014 -....md (WARN-A07-V014-FGV-002)",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha de Inverter Causa e Consequência.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha de Inverter Causa e Consequência.",
+          "trapId": "WARN-A07-G04-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arquivo de origem: 013 -....md (WARN-A07-V013-ORAC-SUB-ADV-P02-001), 014 -....md (WARN-A07-V014-FGV-002)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Problema: O candidato compreende a relação global de causalidade do texto, mas assinala a opção inversa: marca \"consequência\" quando o enunciado destacou a causa, ou vice-versa.",
+                "Como Evitar: A classificação sintática pertence exclusivamente à oração destacada/sublinhada. Use o molde \"O fato de [A] fez com que [B]\": se o grifo estiver no elemento [A], marque Causa; se estiver no elemento [B], marque Consequência."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G04-001",
+              "EXP-IP-A07-G04-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G04-002",
+          "title": "Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "correctReasoning": "Arquivo de origem: 014 -....md (WARN-A07-V014-FGV-001)",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir a Concessão \"É certo que...\" com a Adversativa Subsequente \"Mas...\".",
+          "trapId": "WARN-A07-G04-002",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arquivo de origem: 014 -....md (WARN-A07-V014-FGV-001)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Problema: Diante da estrutura \"É certo que [A], mas [B]\", a banca FGV indaga o valor do período que contém \"É certo que [A]\". O candidato visualiza o mas logo após e assinala apressadamente \"adversativo\".",
+                "Como Evitar: Lembre-se de que a adversativa é a oração iniciada por Mas [B]. A oração \"É certo que [A]\" atua como a concessão prévia que prepara o terreno argumentativo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G04-002",
+              "EXP-IP-A07-G04-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G04-003",
+          "title": "Pegadinha de Contagem de Orações em Comparativas com Elipse",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Pegadinha de Contagem de Orações em Comparativas com Elipse no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "correctReasoning": "Arquivo de origem: 011 -....md (WARN-A07-V011-002)",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Pegadinha de Contagem de Orações em Comparativas com Elipse.",
+          "trapId": "WARN-A07-G04-003",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arquivo de origem: 011 -....md (WARN-A07-V011-002)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Problema: O candidato conta apenas os verbos explícitos e erra o número de orações em períodos com comparativas.",
+                "Como Evitar: Em \"Ele é inteligente como o pai\", existem duas orações, pois a oração comparativa possui o verbo elíptico (\"como o pai [é]\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G04-003",
+              "EXP-IP-A07-G04-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G04-004",
+          "title": "A Carga de Negação no Conectivo Concessivo \"Sem que\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Carga de Negação no Conectivo Concessivo \"Sem que\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "correctReasoning": "Arquivo de origem: 014 -....md (KB-A07-V014-FGV-002)",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Carga de Negação no Conectivo Concessivo \"Sem que\".",
+          "trapId": "WARN-A07-G04-004",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Arquivo de origem: 014 -....md (KB-A07-V014-FGV-002)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Problema: O candidato considera que trocar embora por sem que preserva integralmente o sentido por pertencerem ao campo concessivo.",
+                "Como Evitar: Lembre-se de que sem que embute negação/privação. \"Embora eu discorde\" (eu discordo) $\\neq$ \"Sem que eu discorde\" (eu não discordo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G04-004",
+              "EXP-IP-A07-G04-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Oração Substantiva Completiva Nominal",
-          "shortDefinition": "Oração subordinada preposicionada que completa o sentido de um nome da oração principal.",
-          "fullDefinition": "Proposição subordinada introduzida por conjunção integrante preposicionada que desempenha o papel de complemento nominal de um substantivo abstrato ou adjetivo pertencente à oração matriz.",
-          "domain": "Sintaxe do Período Composto",
-          "commonMisconception": "Confundir completiva nominal com oração subordinada adjetiva restritiva."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Natureza Sintático-Semântica das Orações Subordinadas Adverbiais**: Definição ou ideia central\nA oração subordinada adverbial é a unidade oracional dependente que exerce a função sintática equivalente à de um adjunto adverbial, modificando o verbo da oração principal ao atribuir-lhe uma circunstância lógica e contextual específica.\nExplicação consolidada\nNo período composto por subordinação, as orações adverbiais conectam-se à oração principal expressando matizes semânticos como motivo, consequência, tempo, hipótese ou finalidade. Estruturalmente, dividem-se em:\nOrações Desenvolvidas: Introduzidas expressamente por conjunções ou locuções conjuntivas subordinativas adverbiais e grafadas com verbo flexionado (nos modos indicativo ou subjuntivo);\nOrações Reduzidas: Construídas sem conectivo introdutório explícito e estruturadas com verbo em uma das formas nominais (infinitivo, gerúndio ou particípio).\nCritérios de reconhecimento ou aplicação\nVerifique se a oração introduz uma circunstância modificadora do predicado verbal principal;\nVerifique se há conectivo subordinativo (desenvolvida) ou forma nominal isolada (reduzida);\nRealize o teste de mobilidade sintática: a oração adverbial pode figurar anteposta, intercalada ou posposta à oração principal.\nExemplos e contraexemplos\nExemplo Desenvolvido: \"Como chovia muito, não fui à escola.\" (Oração adverbial causal introduzida pela conjunção como).\nExemplo Reduzido: \"Terminada a aula, os alunos saíram.\" (Oração adverbial temporal reduzida de particípio).\nRelações\nExpande-se em: (Mnemônico de Classificação 6C + FTP).a .",
+            "**O Mnemônico Estruturador das 9 Subclasses Adverbiais (6C + FTP)**: Definição ou ideia central\nA taxonomia completa das 9 circunstâncias expressas pelas orações subordinadas adverbiais desenvolvidas é organizada pela regra mnemônica 6C + FTP.\nExplicação consolidada\nAs nove subclasses distribuem-se em dois agrupamentos estruturais:\nBloco dos 6C (Seis circunstâncias iniciadas pela letra C):\nCausais: Razão, justificativa ou fato gerador anterior;\nConsecutivas: Efeito, impacto ou resultado decorrente de intensidade;\nConcessivas: Ressalva ou fato contrário que não impede a realização principal;\nCondicionais: Pré-requisito, hipótese indispensável ou causa potencial;\nComparativas: Confronto analógico de termos ou orações;\nConformativas: Concordância, acordo, modelo ou norma de referência.\nBloco FTP (Três circunstâncias funcionais):\nFinais (F): Objetivo, meta ou propósito visado;\nTemporais (T): Marco temporal cronológico ou imediato;\nProporcionais (P): Variação gradual, concomitante e simultânea.Exemplificado por: a",
+            "**Relações de Causa e Consequência e a Estrutura Intensificadora Correlativa**: Definição ou ideia central\nCausa e consequência configuram faces indissociáveis da mesma relação de causalidade: a causa é o fato gerador, cronológica e logicamente anterior; a consequência é o efeito ou desfecho factual gerado.\nExplicação consolidada\nOração Subordinada Adverbial Causal: Expressa a causa originária. Principais conectivos: porque, já que, visto que, uma vez que, como (quando anteposto à oração principal).\nOração Subordinada Adverbial Consecutiva: Expressa o resultado da intensidade enunciada na oração principal. Estrutura-se obrigatoriamente pelo par correlativo formado pelo mecanismo dos 4 T's na oração principal (tão, tanto, tamanho/tamanha, tal) seguido da conjunção subordinativa que na oração consecutiva, além de locuções conjuntivas como de modo que, de sorte que, de forma que.\nCausalidade em Estruturas Justapostas: Em períodos coordenados ou justapostos sem conjunção subordinativa explícita, a causalidade é comprovada pelo teste semântico mental: \"O fato de [Causa] faz com que / fez com que [Consequência]\".\nExemplos e contraexemplos\nCausal com \"já que\": \"As vendas subirão, uma vez que os juros baixaram.\" (Baixar os juros = Causa).\nCausal com \"como\" anteposto: \"Como não o convenceu, trouxe uma porca...\" (Não convencer = Causa).\nConsecutiva com intensificador: \"A comida era tão boa que todos silenciaram em volta da mesa.\" (tão boa = intensidade causal; que todos silenciaram = consequência).\nConsecutiva com \"tamanha\": \"A preocupação é tamanha que o tema ganhou lugar de destaque...\".(Inversão entre causa e efeito).(Teste de causalidade).",
+            "**Relações Condicionais e a Condição como \"Possível Causa\" (Causa Futura)**: Definição ou ideia central\nA oração subordinada adverbial condicional formula uma hipótese ou pré-requisito indispensável para que o fato da oração principal se concretize. No plano lógico cobrado em concursos públicos, a condição opera como uma causa potencial (causa futura hipotética), e a oração principal atua como sua possível ação consequente.\nExplicação consolidada\nDinâmica Lógica Causa × Condição: Enquanto o evento reside no campo hipotético/irreal, ele constitui uma condição. No momento em que se concretiza no plano factual, converte-se automaticamente na causa que gera o efeito previsto na oração principal.\nConectivos Usuais: se, caso, contanto que, desde que (este obrigatoriamente associado a verbo no modo subjuntivo).\nEstrutura Interoracional:\nOração Subordinada Condicional = Condição / Hipótese / Possível Causa;\nOração Principal = Possível Ação Consequente / Efeito Futuro.\nExemplos e contraexemplos\n\"Se você não me ajudar com a lição de casa [condição / possível causa], eu vou processar você [possível consequência].\"\n\"Se reforma for adiada [condição], direitos serão perdidos [consequência].\"\nCom \"desde que\": \"...é fácil trocá-las agora, desde que a razão não trabalhe...\" (trabalhe no presente do subjuntivo confirma o valor condicional equivalente a contanto que).\nRelações\nDistingue-se de: (Causalidade factual vs. Causalidade hipotética).\nPossui dica: TIP-A07-G04-002 (Mantra da condição como possível causa).",
+            "**Relações Concessivas: Subordinação, Modo Subjuntivo e Dimensão Argumentativa Discursiva**: Definição ou ideia central\nA oração subordinada adverbial concessiva introduz uma ressalva, obstáculo real/suposto ou quebra de expectativa que, embora contrária à ideia central, é incapaz de anular ou impedir a realização do fato enunciado na oração principal.\nExplicação consolidada\nMorfossintaxe da Concessão: Ao contrário das coordenadas adversativas, a concessiva subordinada rege tipicamente o verbo no modo subjuntivo. Conectivos clássicos: embora, conquanto, ainda que, mesmo que, posto que, apesar de que.\nEstratégia Discursivo-Argumentativa (Perfil FGV): No texto dissertativo, expressões assertivas como \"É certo que...\" operam como abertura de concessão: o autor admite uma verdade ou argumento contrário para, em seguida, neutralizá-lo e sobrepor sua tese principal por meio de uma oração coordenada adversativa (\"É certo que [concessão]..., mas [adversativa principal]...\").\nConectivo Concessivo com Carga Negativa (\"Sem que\"): A locução \"sem que\" pode atuar no campo concessivo, porém traz carga intrínseca de negação, privação ou ausência, invertendo a polaridade afirmativa da proposição subordinada (\"sem que eu discorde\" = não discordo / concordo).\nExemplos e contraexemplos\nPadrão Prototípico: \"Embora seja cedo para qualquer conclusão definitiva, as evidências colhidas sugerem...\"\nConcessivo com \"conquanto\": \"Conquanto estivesse descontente, não desistia do plano.\"\nArgumentativo: \"É certo que o mundo mudou... [concessão discursiva] Mas a vocação de lazer jamais deve ser perdida [tese adversativa].\"\nRelações\nContrasta com: Orações Coordenadas Adversativas (as concessivas admitem a oposição sem que ela prevaleça sobre a oração principal).(Confundir o período de concessão \"É certo que\" com a adversativa subsequente).",
+            "**Orações Comparativas e o Fenômeno da Elipse Verbal**: Definição ou ideia central\nA oração subordinada adverbial comparativa estabelece um confronto de igualdade, superioridade ou inferioridade entre dois elementos, caracterizando-se pela frequente elipse (omissão subentendida) do verbo na oração subordinada para evitar repetição discursiva.\nExplicação consolidada\nEm questões de contagem de orações e análise sintática do período composto:\nA ausência física do segundo verbo não descaracteriza a existência da segunda oração;\nToda estrutura comparativa que confronta dois termos pressupõe a existência de duas orações completas.\nConectivos usuais: como, assim como, quanto, que / do que (antecedidos por mais, menos, melhor, pior).\nCritérios de reconhecimento ou aplicação\nPara validar a oração comparativa com verbo elíptico, reconstitua o verbo suprimido na segunda oração:\n\\text{\"Ele é alto como o pai [é alto]\"}\nExemplos e contraexemplos\n\"É inteligente como o pai [é].\" $\\rightarrow$ Oração 1: \"É inteligente\"; Oração 2: \"como o pai [é]\" (Período composto por 2 orações).\n\"As mulheres sempre são mais maldosas que os homens [são].\" $\\rightarrow$ Oração comparativa de superioridade com elipse do verbo ser.(Pegadinha de contagem de orações).",
+            "**Sistematização das Orações Conformativas, Finais, Proporcionais e Temporais**: Definição ou ideia central\nConsolidação das quatro circunstâncias adverbiais restantes do modelo 6C + FTP:\nConformativas: Expressam conformidade, norma, parecer ou modelo com base no qual algo se desenvolve (conforme, segundo, consoante, como).\nExemplo: \"Segundo previu o economista, o mercado se estabilizou.\"\nFinais: Indicam a meta, propósito ou objetivo visado (para que, a fim de que, que, para + verbo no infinitivo).\nExemplo: \"Faremos esforço, para que não haja conflitos.\" / \"...faz fila para ganhar o alimento.\"\nProporcionais: Traduzem variação gradual e concomitância direta ou inversa (à medida que, à proporção que, ao passo que, quanto mais... mais).\nExemplo: \"...quanto mais longe enxergamos, mais ao passado voltamos.\"\nTemporais: Localizam no tempo o processo verbal da oração principal (quando, enquanto, logo que, assim que, antes que, mal).\nNuance de \"Mal\": O conectivo temporal mal veicula expressamente a circunstância de tempo imediato (\"Mal se sentou na cadeira..., passou a ver conspirações\" = assim que / logo que se sentou).",
+            "**Polissemia de Conectivos e Critérios Diagnósticos de Desambiguação**: Definição ou ideia central\nDeterminados conectivos da língua portuguesa transitam por múltiplas categorias sintático-semânticas, exigindo procedimentos formais e contextuais de desambiguação:\n\"Assim como\":\nAditivo: Quando conecta termos de mesma função sintática (\"João, assim como José, chegaram\");\nComparativo: Quando conecta orações, confrontando ações (\"João estuda muito, assim como o irmão [estuda]\").\n\"Como\":\nCausal: Em início de período (anteposto à oração principal), equivalendo a já que / visto que (\"Como não o convenceu, trouxe uma porca\");\nComparativo: Quando estabelece analogia (\"Dormiu como um anjo\");\nConformativo: Quando indica modelo/norma (\"Fez o trabalho como o mestre mandou\").\n\"Desde que\":\nCondicional: Quando seguido de verbo no modo subjuntivo (\"desde que a razão não trabalhe\");\nTemporal: Quando associado a verbo no modo indicativo marcando início cronológico (\"Desde que cheguei, trabalho sem parar\").\n\"Sem que\":\nCondicional ou Concessivo: Transita nas duas listas, mas possui como traço intrínseco o valor semântico de negação/privação/ausência.\nRelações\nProcedimentos associados: , , ."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-OI-CN-01",
-          "question": "Classifique as duas orações subordinadas: (1) 'Gostaria [de que todos viessem]' e (2) 'Estava esperançoso [de que todos viessem]'.",
-          "keyPoints": [
-            "(1) Oração Subordinada Substantiva OBJETIVA INDIRETA (completa o verbo 'gostaria').",
-            "(2) Oração Subordinada Substantiva COMPLETIVA NOMINAL (completa o adjetivo 'esperançoso')."
-          ],
-          "targetConcept": "Objetiva Indireta vs Completiva Nominal Oracional",
-          "targetLO": "LO-A07-G04-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Orações Subordinadas Adverbiais?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

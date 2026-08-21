@@ -10,9 +10,14 @@
 import type { ModuleData } from '../types/suveca';
 import { MODULES_DATA as GENERATED_MODULES_DATA } from './modules.generated';
 import { PEDAGOGICAL_VIEW_BY_ID } from './pedagogicalViewIndex.generated';
+import { getLessonEntry } from './lessonCatalog';
 
-export const MODULES_DATA: ModuleData[] = GENERATED_MODULES_DATA.map((module) => ({
+export const MODULES_DATA: ModuleData[] = GENERATED_MODULES_DATA.map((module) => {
+  const lesson = getLessonEntry(module.id);
+  return ({
   ...module,
+  title: lesson?.shortTitle || module.title,
+  subtitle: lesson ? `${lesson.fullTitle} · ${module.sections.length} unidades pedagógicas` : module.subtitle,
   sections: module.sections.map((section) => {
     const unitId = section.editorial?.integrationUnitId;
     const publishedView = unitId ? PEDAGOGICAL_VIEW_BY_ID[unitId] : undefined;
@@ -35,4 +40,5 @@ export const MODULES_DATA: ModuleData[] = GENERATED_MODULES_DATA.map((module) =>
       title: PEDAGOGICAL_VIEW_BY_ID[source.id]?.title || source.title,
     })),
   } : module.knowledge,
-}));
+  });
+});

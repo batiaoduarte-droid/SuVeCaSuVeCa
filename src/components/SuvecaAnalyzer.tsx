@@ -130,9 +130,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
 
   return (
     <div
-      className={`space-y-8 pb-16 mx-auto transition-[max-width] duration-300 ${
-        isFocusMode ? 'max-w-7xl' : 'max-w-5xl'
-      }`}
+      className="tool-content-shell space-y-8 pb-16"
     >
       {/* Header Banner */}
       {isFocusMode ? (

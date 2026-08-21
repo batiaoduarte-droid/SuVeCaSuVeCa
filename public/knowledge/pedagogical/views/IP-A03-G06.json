@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A03-G06",
     "lessonId": "A03",
     "title": "Pronomes Relativos - Emprego e Regência",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A03-G06",
@@ -139,6 +140,64 @@
             "A empresa cujos lucros cresceram contratou mais."
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A03-G06-001",
+          "table": {
+            "tableId": "TABLE-IP-A03-G06-001",
+            "caption": "Regras canônicas",
+            "headers": [
+              "Elemento / Tópico",
+              "Formulação Canônica Consolidada",
+              "ID Detalhado"
+            ],
+            "rows": [
+              [
+                "Pronome Relativo",
+                "Classe que substitui um termo antecedente de valor substantivo e conecta orações subordinadas adjetivas (RETOMAR = SUBSTITUIR).",
+                "KB-A03-G06-001"
+              ],
+              [
+                "Antecedente Válido",
+                "Termo de natureza substantiva obrigatória: Substantivo, Pronome Substantivo Demonstrativo (o, a, os, as = aquilo, aquele) ou Numeral Substantivo. Jamais adjetivo.",
+                "KB-A03-G06-002"
+              ],
+              [
+                "Relativos Coringas",
+                "Que e O qual (retomam pessoas e coisas; aptos a receber preposições; só não substituem o relativo de posse cujo).",
+                "KB-A03-G06-003"
+              ],
+              [
+                "Pronome \"Quem\"",
+                "Exige antecedente referente a pessoa e presença obrigatória de preposição; com VTD gera Objeto Direto Preposicionado (a quem).",
+                "KB-A03-G06-004"
+              ],
+              [
+                "Relativos Espaciais",
+                "Onde (permanência / em), Aonde (movimento / a), Donde (origem / de). Exclusivos para lugares físicos concretos.",
+                "KB-A03-G06-006"
+              ],
+              [
+                "Pronome \"Cujo\"",
+                "Expressa posse entre dois substantivos, concorda com o consequente, internaliza a preposiçãode, proíbe artigo e acopla preposição verbal antes de si.",
+                "KB-A03-G06-007"
+              ],
+              [
+                "Regência com Relativo",
+                "A preposição antes do pronome relativo é regida pelo verbo/nome da oração adjetiva (após o relativo), revelada ao organizar a oração na ordem direta com o antecedente no final.",
+                "KB-A03-G06-008"
+              ],
+              [
+                "Dupla Regência em Reescrita",
+                "Verbos com dupla transitividade (ex.:entender de [VTI] vs. entender [VTD]) mantêm a correção gramatical na troca do relativo, mas alteram o sentido.",
+                "KB-A03-G06-009"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "resolution": {
@@ -174,6 +233,55 @@
             "difference": "Onde (físico/geográfico) vs Em que (figurado/conceitual/textual)."
           },
           "practicalHeuristic": "Pode apontar no mapa ou tocar no chão? Se NÃO, não use 'onde'; use 'em que'."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A03-G06-002",
+          "table": {
+            "tableId": "TABLE-IP-A03-G06-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Par Comparativo",
+              "Critério Decisivo",
+              "Exemplo Correto",
+              "Exemplo Incorreto / Pegadinha"
+            ],
+            "rows": [
+              [
+                "ONDE vs. AONDE vs. DONDE",
+                "Preposição exigida pelo regente:onde (em), aonde (a), donde (de). Exclusivo para lugar físico.",
+                "A cidade onde moro / aonde vou / donde venho.",
+                "A lei onde diz... (Incorreto: termo abstrato) / A cidade aonde moro. (Incorreto: morar rege em)"
+              ],
+              [
+                "QUE vs. CUJO",
+                "Que é coringa e não indica posse; Cujo expressa posse e é insubstituível.",
+                "O livro cujo autor foi premiado.",
+                "O livro que o autor foi premiado. (Incorreto: não substitui cujo e coloca artigo)"
+              ],
+              [
+                "A QUAL vs. À QUAL",
+                "A qual traz apenas artigo definido; À qual funde preposição a + artigo a (crase).",
+                "Esta é a cidade à qual me dirigi.",
+                "Esta é a cidade a qual me dirigi. (Incorreto: omitiu crase/preposição)"
+              ],
+              [
+                "QUEM vs. QUE com VTD",
+                "Quem exige preposição a formando Objeto Direto Preposicionado; Que dispensa preposição.",
+                "A pessoa a quem vi / que vi.",
+                "A pessoa quem vi. (Incorreto: quem desacompanhado de preposição)"
+              ],
+              [
+                "Correção Gramatical vs. Sentido",
+                "Dupla regência verbal pode manter a correção gramatical da frase, mas alterar sua nuance semântica.",
+                "Original:coisas das quais entende.Reescrita: coisas que entende (Gramática OK; Sentido alterado).",
+                "Marcar \"Certo\" em item do CESPE que afirma mantersentido em verbos com dupla transitividade."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

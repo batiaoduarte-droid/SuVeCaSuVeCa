@@ -1,20 +1,22 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A04-G09",
     "lessonId": "A04",
-    "title": "Verbos Notáveis e Derivados (TER, VIR, VER, LER, PÔR)",
+    "title": "Correlação de Tempos Verbais",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A04-G09",
     "lessonId": "A04",
-    "title": "Verbos Notáveis e Derivados (TER, VIR, VER, LER, PÔR)",
+    "title": "Correlação de Tempos Verbais",
     "learningObjectives": [
       "Reconstruir de forma integrada a teoria e a prática da Correlação de Tempos Verbais (também tratada como Articulação Verbal ou Paralelismo Semântico), partindo dos fundamentos conceituais, matrizes temporais de harmonia, regras de independência modal e exceções semânticas (material de origem), avançando para o método de eliminação em bloco, análise de locuções verbais, gatilhos de atração do subjuntivo e resolução exaustiva de questões das bancas VUNESP, FCC, FGV e CEBRASPE (material de origem)."
     ],
-    "conceptCount": 1,
+    "conceptCount": 10,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A04-G09-01"
@@ -26,135 +28,1625 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "Os verbos primitivos TER, VIR, VER, LER, PÔR e seus respectivos derivados (manter, intervir, prever, compor) constituem o núcleo com maior taxa de armadilhas conjugacionais e ortográficas em concursos públicos.",
-      "visualBlueprint": "Regra Áurea dos Derivados: TODO VERBO DERIVADO SEGUE 100% A CONJUGAÇÃO DO SEU PRIMITIVO. Se 'ter' faz 'tiver', 'manter' faz 'mantiver' (e NUNCA *manter); Se 'vir' faz 'vier', 'intervir' faz 'intervier' (e NUNCA *intervir); Se 'pôr' faz 'puser', 'propor' faz 'propuser' (e NUNCA *propor).",
-      "cognitiveAnchor": "O derivado é espelho fiel do primitivo em todos os tempos, modos e pessoas.",
-      "strategicSignificance": "Tema campeão de questões da FCC, FGV e Cespe em substituição de tempos e identificação de erros de flexão.",
-      "coreTension": "Flexionar o derivado como se fosse verbo regular independente (ex: 'Se ele intervir' -> ERRO -> 'Se ele intervier')."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Correlação de Tempos Verbais",
+      "summary": "Articulação morfossintática e semântica de Correlação de Tempos Verbais com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A04-09",
-          "name": "Conjugação dos Verbos Primitivos",
-          "reason": "Saber conjugar ter, vir, ver, pôr para aplicar nos derivados.",
-          "activationPrompt": "Qual o pretérito perfeito de 'intervir' e de 'propor'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A04-G09",
+          "title": "Mapa de Dependência: Correlação de Tempos Verbais",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Correlação de Tempos Verbais",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "A Família dos Derivados Notáveis",
-          "pedagogicalGoal": "Conectar cada família de derivados ao seu respectivo modelo primitivo.",
+          "groupId": "GRP-IP-A04-G09-01",
+          "title": "Conceito, Nomenclaturas e Origem da Correlação Verbal",
+          "conceptRefs": [
+            "KB-A04-G09-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "table",
-              "title": "Mapeamento dos Verbos Notáveis e seus Derivados",
-              "columns": [
-                "Primitivo",
-                "Derivados Principais",
-                "Pretérito Perfeito (3ª sing)",
-                "Futuro do Subjuntivo (3ª sing)"
-              ],
-              "rows": [
-                [
-                  "TER (ele teve / se tiver)",
-                  "manter, conter, reter, deter, obter, suster",
-                  "manteve, conteve, reteve, obteve",
-                  "mantiver, contiver, retiver, obtiver (NUNCA *manter)"
-                ],
-                [
-                  "VIR (ele veio / se vier)",
-                  "intervir, convir, advir, provir, sobrevir",
-                  "interveio, conveio, adveio, proveio",
-                  "intervier, convier, advier, provier (NUNCA *intervir)"
-                ],
-                [
-                  "VER (ele viu / se vir)",
-                  "prever, entrever, rever, antever",
-                  "previu, entreviu, reviu, anteviu",
-                  "previr, entrevir, revir, antevir (NUNCA *prever)"
-                ],
-                [
-                  "PÔR (ele pôs / se puser)",
-                  "compor, dispor, propor, supor, repor, interpor",
-                  "compôs, dispôs, propôs, repôs",
-                  "propuser, dispuser, compuser, repuser (NUNCA *propor)"
-                ]
-              ],
-              "text": "A conjugação dos derivados é uma projeção idêntica dos padrões do verbo primitivo correspondente."
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nA Correlação de Tempos Verbais (ou Articulação Verbal / Paralelismo Semântico) é o princípio sintático e semântico pelo qual as formas verbais coordenadas ou subordinadas em um período harmonizam-se mutuamente, garantindo a sequenciação temporal lógica, a clareza cronológica e a coerência discursiva do enunciado.\nExplicação Consolidada\nO tema consolidou-se nas provas de concursos públicos a partir de uma iniciativa diagnóstica da banca FCC (Fundação Carlos Chagas), sendo posteriormente assimilado por VUNESP, FGV e CEBRASPE / CESPE. As bancas perceberam que candidatos com alto domínio da norma-padrão cometiam com frequência quebras graves de linha temporal ao redigir parágrafos de conclusão em redações dissertativas — iniciando argumentos no Presente e derivando bruscamente para o Pretérito Imperfeito do Subjuntivo ou Futuro do Pretérito sem justificativa semântica.\nEm editais e enunciados de provas, o assunto apresenta três nomenclaturas sinônimas:\nCorrelação de Tempos e Modos Verbais (nomenclatura clássica e padrão da FCC e VUNESP);\nArticulação de Tempos Verbais (adotada frequentemente pela VUNESP);\nParalelismo Semântico Verbal (terminologia frequentemente utilizada pela FGV).\nCritérios de Reconhecimento ou Aplicação\nIdentificar se os verbos associados em um período pertencem ao mesmo eixo cronológico de referência (Presente/Futuro ou Pretérito/Hipótese).\nReconhecer que termos sinônimos exigem a mesma verificação da harmonia entre o tempo do verbo principal e os tempos dos verbos dependentes.\nExemplos e Contraexemplos\nInadequação típica de redação: \"É necessário que o Brasil invista [Presente] em educação. Seria importante também que se buscassem [Futuro do Pretérito + Pretérito] novos investimentos...\" (Quebra de correlação no mesmo parágrafo).\nAdequação padronizada: \"É necessário que o Brasil invista em educação. É importante também que se busquem novos investimentos...\" (Harmonia no eixo do Presente).\nRelações\nExpande em: , , \nExemplificado por: \nTermos associados: TERM-A04-G09-001, TERM-A04-G09-002"
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-02",
+          "title": "Regra Fundamental do Primeiro Verbo como Bússola Temporal",
+          "conceptRefs": [
+            "KB-A04-G09-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nA regra diretora da correlação verbal estabelece que o primeiro verbo da estrutura oracional funciona como a bússola temporal de referência. Os demais verbos correlatos devem alinhar sua flexão ao eixo cronológico (Presente ou Pretérito) delimitado por esse verbo inicial.\nExplicação Consolidada\nAo analisar qualquer período composto para julgar sua correspondência verbal:\nLocaliza-se o primeiro verbo da oração (ou a oração principal que rege a estrutura).\nDetermina-se a qual eixo temporal esse verbo pertence:\nSe pertencer ao Eixo do Presente, os verbos dependentes devem alinhar-se ao Presente ou ao Futuro do Presente.\nSe pertencer ao Eixo do Pretérito / Condicional, os verbos dependentes devem alinhar-se ao Pretérito ou ao Futuro do Pretérito.\nOs verbos subordinados ou subsequentes orbitam ao redor do eixo fixado pela bússola temporal do primeiro verbo.\n Eixo do PRESENTE Exige PRESENTE ou FUTURO DO PRESENTE 1º VERBO (Bússola) Eixo do PRETÉRITO Exige PRETÉRITO ou FUTURO DO PRETÉRITO\nCritérios de Reconhecimento ou Aplicação\nNão iniciar a análise pelo meio do período; sempre fixar o tempo de partida da oração principal ou da primeira oração subordinada integrante/adverbial.\nHavendo inversão sintática (ex.: oração condicional antecipada iniciada por Se ou Caso), o verbo da oração antecipada dita o tempo da oração principal subsequente.\nRelações\nFundamenta: \nRamifica-se em: , \nCitado em: QUOTE-A04-G09-001"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-03",
+          "title": "Matriz Canônica do Eixo do Presente e Futuro do Presente",
+          "conceptRefs": [
+            "KB-A04-G09-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nQuando a oração de partida situa-se no Eixo do Presente, os verbos correlatos devem ser flexionados no Presente (do Indicativo ou Subjuntivo) ou no Futuro do Presente (do Indicativo).\nExplicação Consolidada\nA matriz canônica do Presente obedece à fórmula estrutural:\n\\text{Presente} \\longrightarrow \\begin{cases} \\text{Presente (Indicativo ou Subjuntivo)} \\\\ \\text{Futuro do Presente (Indicativo)} \\end{cases}\nDa mesma forma, quando a oração subordinada abre o período no Futuro do Subjuntivo ou no Presente do Subjuntivo, a oração principal correlata projeta-se no Futuro do Presente do Indicativo:\n$\\text{Presente do Subjuntivo / Futuro do Subjuntivo} \\longrightarrow \\text{Futuro do Presente do Indicativo}$\nExemplos e Contraexemplos\nPresente + Presente: Acredito [Pres. Ind.] que esteja [Pres. Subj.] doente. (Correto).\nPresente + Presente: É [Pres. Ind.] legítimo que as pessoas lutem [Pres. Subj.] por melhores condições. (Correto).\nPresente do Subjuntivo + Futuro do Presente: Caso eu estude [Pres. Subj.], o resultado será [Fut. Pres. Ind.] satisfatório. (Correto).\nFuturo do Subjuntivo + Futuro do Presente: Quem vier [Fut. Subj.] a se empenhar, estará [Fut. Pres. Ind.] mais perto... (Correto).\nInadequação por descompasso: Acredito [Presente] que estivesse [Pret. Imp. Subj.] doente. (Incorreto).\nRelações\nContrasta com: \nExemplificado por: ,"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-04",
+          "title": "Matriz Canônica do Eixo do Pretérito e Futuro do Pretérito",
+          "conceptRefs": [
+            "KB-A04-G09-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nQuando a oração de partida pertence ao Eixo do Pretérito (Passado) ou ao Futuro do Pretérito, os verbos correlatos devem alinhar-se obrigatoriamente a tempos do Pretérito ou ao Futuro do Pretérito.\nExplicação Consolidada\nA matriz canônica do Pretérito rege as estruturas condicionais e hipotéticas segundo as fórmulas:\n\\text{Pretérito} \\longrightarrow \\begin{cases} \\text{Pretérito (Indicativo ou Subjuntivo)} \\\\ \\text{Futuro do Pretérito (Indicativo)} \\end{cases}\n\\text{Futuro do Pretérito} \\longrightarrow \\text{Pretérito Imperfeito do Subjuntivo}\n\\text{Pretérito Imperfeito do Subjuntivo} \\longrightarrow \\text{Futuro do Pretérito do Indicativo}\nNas estruturas compostas, o paralelismo mantém-se rigorosamente no pretérito:\n$\\text{Pretérito Imperfeito do Subjuntivo Composto} \\longrightarrow \\text{Futuro do Pretérito Composto}$\nFórmula: Se [tivesse + particípio], [teria + particípio].\nExemplos e Contraexemplos\nPretérito + Futuro do Pretérito: Se eu fosse [Pret. Imp. Subj.] rico, estaria [Fut. Pret.] viajando. (Correto).\nFuturo do Pretérito + Pretérito: Seria [Fut. Pret.] necessário que estudasse [Pret. Imp. Subj.] mais. (Correto).\nFuturo do Pretérito + Pretérito: Seria [Fut. Pret.] legítimo que as pessoas lutassem [Pret. Imp. Subj.] por melhores condições. (Correto).\nPretérito Composto + Futuro do Pretérito Composto: Se Dolores tivesse tornado [Pret. Imp. Subj. Comp.] seus dias úteis, teria recebido [Fut. Pret. Comp.] seu livro. (Correto).\nInadequação por descompasso: Se eu tivesse dinheiro, viajo. ou Se estudasse, passará. (Incorretos).\nRelações\nContrasta com: \nComplementa-se com: \nExemplificado por: , ,"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-05",
+          "title": "Princípio da Independência de Modo Verbal (Indicativo vs. Subjuntivo)",
+          "conceptRefs": [
+            "KB-A04-G09-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nA exigência de simetria na correlação verbal recai exclusivamente sobre o TEMPO cronológico (linha do Presente vs. linha do Pretérito), e NÃO sobre o MODO verbal. É perfeitamente legítimo e padrão correlacionar um verbo no Modo Indicativo com outro no Modo Subjuntivo.\nExplicação Consolidada\nUm dos erros conceituais mais danosos em provas de concursos é supor que períodos correlacionados devam possuir verbos pertencentes ao mesmo modo gramatical (ex.: crer que verbo no Indicativo exige outro no Indicativo).\nA regência sintática e o emprego de conjunções subordinativas frequentemente forçam a alternância modal (ex.: matriz declarativa que exige oração subordinada em modo subjuntivo). A harmonia verbal consiste em assegurar que ambos os modos convivam dentro do mesmo ecrã temporal:\nPresente do Indicativo harmoniza-se com Presente do Subjuntivo;\nFuturo do Pretérito do Indicativo harmoniza-se com Pretérito Imperfeito do Subjuntivo.\nTabela de Coexistência Modal\nRelações\nEvita o erro descrito em: \nCitado em: QUOTE-A04-G09-002"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-06",
+          "title": "A Dinâmica dos Futuros: Flexibilidade do Futuro do Presente vs. Exclusividade do Futuro do Pretérito",
+          "conceptRefs": [
+            "KB-A04-G09-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nA didática dos \"Amigos do Futuro\" estabelece uma distinção comportamental nítida: o Futuro do Presente (e o Futuro do Subjuntivo) possui ampla flexibilidade de combinação sintática, enquanto o Futuro do Pretérito é um tempo rígido, associando-se com exclusividade ao Pretérito.\nExplicação Consolidada\n Amigo do PRESENTE (Indicativo ou Subjuntivo) FUTURO DO PRESENTE ┼ Amigo do FUTURO DO SUBJUNTIVO (Tem muitos amigos) Amigo do próprio FUTURO DO PRESENTE\nFUTURO DO PRETÉRITO Amigo EXCLUSIVO do PRETÉRITO (especialmente Pret. Imp. Subj.) (Só tem 1 amigo)\nFlexibilidade do Futuro do Presente:\nA presença do Futuro do Presente na oração principal não impede nem proíbe que orações coordenadas ou subordinadas tragam verbos no Presente do Indicativo.\nAplicação em prova: Em um texto narrando eventos vindouros, a oração \"O encontro terá [Fut. Pres.]... onde estão [Pres. Ind.] programados temas...\" é perfeitamente legítima e não quebra a correlação.\nExclusividade do Futuro do Pretérito:\nO Futuro do Pretérito traz o termo \"pretérito\" em sua estrutura conceitual. Ele expressa uma hipótese condicionada a um fato passado irrealizado.\nJamais admite correlação com o Presente do Indicativo ou com o Futuro do Presente. Se uma oração traz passará (Futuro do Presente), não se pode substituir seu verbo correlato exigirá por exigiria.Mnemônico: TIP-A04-G09-002\nCitado em: QUOTE-A04-G09-003"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-07",
+          "title": "Gatilhos Sintáticos de Atração Obrigatória do Modo Subjuntivo",
+          "conceptRefs": [
+            "KB-A04-G09-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nCertas estruturas sintáticas operam como gatilhos atratores compulsórios do Modo Subjuntivo, descartando de imediato quaisquer formas flexionadas no Modo Indicativo nas orações por elas introduzidas.\nExplicação Consolidada\nOs dois principais gatilhos atratores cobrados em provas são:\nConjunções e Locuções Concessivas (mesmo que, embora, ainda que, se bem que):\nA relação concessiva pressupõe a admissão de um fato hipotético em oposição à oração principal. Por isso, toda concessiva exige verbo no Subjuntivo.\nDiante de mesmo que, formas como serei, sou, era e foi são sumariamente eliminadas, aceitando-se unicamente seja (Presente do Subjuntivo) ou fosse (Pretérito Imperfeito do Subjuntivo).\nVerbos e Expressões de Desejo, Vontade ou Expectativa (desejava que, esperava que, queria que):\nO verbo volitivo no pretérito projeta uma expectativa não factual no passado (equivalente a hipótese).\nA oração completiva subordinada deve conter obrigatoriamente o Pretérito Imperfeito do Subjuntivo (marcado pela desinência -sse-).\nExemplo: \"Antigamente, eu desejava que todo mundo conhecesse [e não conhecia/conheceu] meu nome...\".Mnemônico: TIP-A04-G09-003"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-08",
+          "title": "Correlação Verbal em Locuções Verbais (O Papel do Verbo Auxiliar)",
+          "conceptRefs": [
+            "KB-A04-G09-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nNas locuções verbais, a carga flexional gramatical (tempo, modo, número e pessoa) reside integralmente no VERBO AUXILIAR. Para fins de análise de correlação verbal, examina-se única e exclusivamente a flexão do verbo auxiliar, ignorando a terminação invariável do verbo principal.\nExplicação Consolidada\nO verbo principal em uma locução permanece em forma nominal (infinitivo, gerúndio ou particípio) e carrega apenas a semântica da ação. Toda a informação temporal e modal que participa do paralelismo sintático é determinada pelo verbo auxiliar.\nDemonstração Prática\nNa oração: \"Quem vier a se empenhar na prática da dúvida... estará mais perto... do que os fatos costumam ocultar\":\nNa locução vier a se empenhar: o auxiliar é vier (Futuro do Subjuntivo do verbo vir). Tempo da locução = Futuro.\nNa oração seguinte: o verbo estará encontra-se no Futuro do Presente do Indicativo.\nNa locução costumam ocultar: o auxiliar é costumam (Presente do Indicativo). Tempo da locução = Presente.\nDiagnóstico: Correlação perfeitamente harmônica no Eixo Presente/Futuro.Componente de:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-09",
+          "title": "Exceções Semânticas Legítimas na Correlação entre Presente e Pretérito",
+          "conceptRefs": [
+            "KB-A04-G09-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nEmbora a regra geral condene a alternância injustificada de tempos, existem exceções semânticas plenamente legítimas em que a articulação entre um verbo no Presente e outro no Pretérito é gramaticalmente correta e semanticamente necessária para expressar que a situação atual do sujeito é efeito/consequência de ações pretéritas.\nExplicação Consolidada\nA língua portuguesa não deve ser interpretada de modo puramente mecânico (\"robótico\"). Bancas refinadas (como FCC e FGV) constroem itens explorando a correlação de causa e efeito temporal.\nSe o propósito comunicativo do texto for contrapor a situação atual a eventos antecedentes acumulados, a estrutura Presente + Pretérito Perfeito é perfeitamente válida. Marcadores temporais como o advérbio \"Hoje\" reforçam a intencionalidade do contraste.\nExemplo Modelo de Exceção\n\"Hoje eu sou [Presente] o que sou por tudo que já conquistei [Pretérito Perfeito] no passado.\"\nJulgamento: Frase CORRETA.\nJustificativa Semântica: A identidade atual do falante (sou) resulta da totalidade de ações concretizadas em sua trajetória pregressa (conquistei).\nRelações\nPrevine o erro de: \nExemplificado por: \nCitado em: QUOTE-A04-G09-004"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A04-G09-10",
+          "title": "Distinção Crítica no CEBRASPE: Correlação Temporal vs. Alteração de Sentido",
+          "conceptRefs": [
+            "KB-A04-G09-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nNas provas do CEBRASPE / CESPE, o candidato deve distinguir com precisão itens que questionam a manutenção da correlação e correção gramatical daqueles que questionam a preservação do sentido original.\nExplicação Consolidada\nA substituição de uma forma no Presente do Subjuntivo (relatem) por uma no Presente do Indicativo (relatam):\nAltera o sentido: Sim, pois o Modo Subjuntivo expressa possibilidade/hipótese, enquanto o Modo Indicativo afirma um fato categórico e certo.\nMantém a correlação verbal: Sim, pois ambas as formas verbais situam-se rigorosamente no Eixo do Presente, mantendo a harmonia sintática com o verbo da oração principal (parece).\nSe o comando da banca indagar se a troca pode ser feita \"sem prejuízo para a correlação de tempos e modos verbais\", o item deve ser julgado como CERTO.Previne a pegadinha:"
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G09-001",
+              "table": {
+                "tableId": "TABLE-IP-A04-G09-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Ordem Oracional",
+                  "Verbo da Oração Principal",
+                  "Verbo da Oração Subordinada",
+                  "Eixo Temporal Comum",
+                  "Avaliação"
+                ],
+                "rows": [
+                  [
+                    "Principal$\\rightarrow$ Subordinada",
+                    "Acredito (Pres. Indicativo)",
+                    "esteja (Pres. Subjuntivo)",
+                    "Presente",
+                    "Correto"
+                  ],
+                  [
+                    "Subordinada$\\rightarrow$ Principal",
+                    "estudasse (Pret. Imp. Subjuntivo)",
+                    "seria (Fut. Pret. Indicativo)",
+                    "Pretérito / Hipótese",
+                    "Correto"
+                  ],
+                  [
+                    "Principal$\\rightarrow$ Subordinada",
+                    "É legítimo (Pres. Indicativo)",
+                    "lutem (Pres. Subjuntivo)",
+                    "Presente",
+                    "Correto"
+                  ],
+                  [
+                    "Principal$\\rightarrow$ Subordinada",
+                    "Seria legítimo (Fut. Pret. Indicativo)",
+                    "lutassem (Pret. Imp. Subjuntivo)",
+                    "Pretérito / Hipótese",
+                    "Correto"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G09-005",
+              "table": {
+                "tableId": "TABLE-IP-A04-G09-005",
+                "caption": "Tabela de Coexistência Modal",
+                "headers": [
+                  "Ordem Oracional",
+                  "Verbo da Oração Principal",
+                  "Verbo da Oração Subordinada",
+                  "Eixo Temporal Comum",
+                  "Avaliação"
+                ],
+                "rows": [
+                  [
+                    "Principal$\\rightarrow$ Subordinada",
+                    "Acredito (Pres. Indicativo)",
+                    "esteja (Pres. Subjuntivo)",
+                    "Presente",
+                    "Correto"
+                  ],
+                  [
+                    "Subordinada$\\rightarrow$ Principal",
+                    "estudasse (Pret. Imp. Subjuntivo)",
+                    "seria (Fut. Pret. Indicativo)",
+                    "Pretérito / Hipótese",
+                    "Correto"
+                  ],
+                  [
+                    "Principal$\\rightarrow$ Subordinada",
+                    "É legítimo (Pres. Indicativo)",
+                    "lutem (Pres. Subjuntivo)",
+                    "Presente",
+                    "Correto"
+                  ],
+                  [
+                    "Principal$\\rightarrow$ Subordinada",
+                    "Seria legítimo (Fut. Pret. Indicativo)",
+                    "lutassem (Pret. Imp. Subjuntivo)",
+                    "Pretérito / Hipótese",
+                    "Correto"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nA Correlação de Tempos Verbais (ou Articulação Verbal / Paralelismo Semântico) é o princípio sintático e semântico pelo qual as formas verbais coordenadas ou subordinadas em um período harmonizam-se mutuamente, garantindo a sequenciação temporal lógica, a clareza cronológica e a coerência discursiva do enunciado.\nExplicação Consolidada\nO tema consolidou-se nas provas de concursos públicos a partir de uma iniciativa diagnóstica da banca FCC (Fundação Carlos Chagas), sendo posteriormente assimilado por VUNESP, FGV e CEBRASPE / CESPE. As bancas perceberam que candidatos com alto domínio da norma-padrão cometiam com frequência quebras graves de linha temporal ao redigir parágrafos de conclusão em redações dissertativas — iniciando argumentos no Presente e derivando bruscamente para o Pretérito Imperfeito do Subjuntivo ou Futuro do Pretérito sem justificativa semântica.\nEm editais e enunciados de provas, o assunto apresenta três nomenclaturas sinônimas:\nCorrelação de Tempos e Modos Verbais (nomenclatura clássica e padrão da FCC e VUNESP);\nArticulação de Tempos Verbais (adotada frequentemente pela VUNESP);\nParalelismo Semântico Verbal (terminologia frequentemente utilizada pela FGV).\nCritérios de Reconhecimento ou Aplicação\nIdentificar se os verbos associados em um período pertencem ao mesmo eixo cronológico de referência (Presente/Futuro ou Pretérito/Hipótese).\nReconhecer que termos sinônimos exigem a mesma verificação da harmonia entre o tempo do verbo principal e os tempos dos verbos dependentes.\nExemplos e Contraexemplos\nInadequação típica de redação: \"É necessário que o Brasil invista [Presente] em educação. Seria importante também que se buscassem [Futuro do Pretérito + Pretérito] novos investimentos...\" (Quebra de correlação no mesmo parágrafo).\nAdequação padronizada: \"É necessário que o Brasil invista em educação. É importante também que se busquem novos investimentos...\" (Harmonia no eixo do Presente).\nRelações\nExpande em: , , \nExemplificado por: \nTermos associados: TERM-A04-G09-001, TERM-A04-G09-002"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nA regra diretora da correlação verbal estabelece que o primeiro verbo da estrutura oracional funciona como a bússola temporal de referência. Os demais verbos correlatos devem alinhar sua flexão ao eixo cronológico (Presente ou Pretérito) delimitado por esse verbo inicial.\nExplicação Consolidada\nAo analisar qualquer período composto para julgar sua correspondência verbal:\nLocaliza-se o primeiro verbo da oração (ou a oração principal que rege a estrutura).\nDetermina-se a qual eixo temporal esse verbo pertence:\nSe pertencer ao Eixo do Presente, os verbos dependentes devem alinhar-se ao Presente ou ao Futuro do Presente.\nSe pertencer ao Eixo do Pretérito / Condicional, os verbos dependentes devem alinhar-se ao Pretérito ou ao Futuro do Pretérito.\nOs verbos subordinados ou subsequentes orbitam ao redor do eixo fixado pela bússola temporal do primeiro verbo.\n Eixo do PRESENTE Exige PRESENTE ou FUTURO DO PRESENTE 1º VERBO (Bússola) Eixo do PRETÉRITO Exige PRETÉRITO ou FUTURO DO PRETÉRITO\nCritérios de Reconhecimento ou Aplicação\nNão iniciar a análise pelo meio do período; sempre fixar o tempo de partida da oração principal ou da primeira oração subordinada integrante/adverbial.\nHavendo inversão sintática (ex.: oração condicional antecipada iniciada por Se ou Caso), o verbo da oração antecipada dita o tempo da oração principal subsequente.\nRelações\nFundamenta: \nRamifica-se em: , \nCitado em: QUOTE-A04-G09-001"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nQuando a oração de partida situa-se no Eixo do Presente, os verbos correlatos devem ser flexionados no Presente (do Indicativo ou Subjuntivo) ou no Futuro do Presente (do Indicativo).\nExplicação Consolidada\nA matriz canônica do Presente obedece à fórmula estrutural:\n\\text{Presente} \\longrightarrow \\begin{cases} \\text{Presente (Indicativo ou Subjuntivo)} \\\\ \\text{Futuro do Presente (Indicativo)} \\end{cases}\nDa mesma forma, quando a oração subordinada abre o período no Futuro do Subjuntivo ou no Presente do Subjuntivo, a oração principal correlata projeta-se no Futuro do Presente do Indicativo:\n$\\text{Presente do Subjuntivo / Futuro do Subjuntivo} \\longrightarrow \\text{Futuro do Presente do Indicativo}$\nExemplos e Contraexemplos\nPresente + Presente: Acredito [Pres. Ind.] que esteja [Pres. Subj.] doente. (Correto).\nPresente + Presente: É [Pres. Ind.] legítimo que as pessoas lutem [Pres. Subj.] por melhores condições. (Correto).\nPresente do Subjuntivo + Futuro do Presente: Caso eu estude [Pres. Subj.], o resultado será [Fut. Pres. Ind.] satisfatório. (Correto).\nFuturo do Subjuntivo + Futuro do Presente: Quem vier [Fut. Subj.] a se empenhar, estará [Fut. Pres. Ind.] mais perto... (Correto).\nInadequação por descompasso: Acredito [Presente] que estivesse [Pret. Imp. Subj.] doente. (Incorreto).\nRelações\nContrasta com: \nExemplificado por: ,"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nQuando a oração de partida pertence ao Eixo do Pretérito (Passado) ou ao Futuro do Pretérito, os verbos correlatos devem alinhar-se obrigatoriamente a tempos do Pretérito ou ao Futuro do Pretérito.\nExplicação Consolidada\nA matriz canônica do Pretérito rege as estruturas condicionais e hipotéticas segundo as fórmulas:\n\\text{Pretérito} \\longrightarrow \\begin{cases} \\text{Pretérito (Indicativo ou Subjuntivo)} \\\\ \\text{Futuro do Pretérito (Indicativo)} \\end{cases}\n\\text{Futuro do Pretérito} \\longrightarrow \\text{Pretérito Imperfeito do Subjuntivo}\n\\text{Pretérito Imperfeito do Subjuntivo} \\longrightarrow \\text{Futuro do Pretérito do Indicativo}\nNas estruturas compostas, o paralelismo mantém-se rigorosamente no pretérito:\n$\\text{Pretérito Imperfeito do Subjuntivo Composto} \\longrightarrow \\text{Futuro do Pretérito Composto}$\nFórmula: Se [tivesse + particípio], [teria + particípio].\nExemplos e Contraexemplos\nPretérito + Futuro do Pretérito: Se eu fosse [Pret. Imp. Subj.] rico, estaria [Fut. Pret.] viajando. (Correto).\nFuturo do Pretérito + Pretérito: Seria [Fut. Pret.] necessário que estudasse [Pret. Imp. Subj.] mais. (Correto).\nFuturo do Pretérito + Pretérito: Seria [Fut. Pret.] legítimo que as pessoas lutassem [Pret. Imp. Subj.] por melhores condições. (Correto).\nPretérito Composto + Futuro do Pretérito Composto: Se Dolores tivesse tornado [Pret. Imp. Subj. Comp.] seus dias úteis, teria recebido [Fut. Pret. Comp.] seu livro. (Correto).\nInadequação por descompasso: Se eu tivesse dinheiro, viajo. ou Se estudasse, passará. (Incorretos).\nRelações\nContrasta com: \nComplementa-se com: \nExemplificado por: , ,"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nA exigência de simetria na correlação verbal recai exclusivamente sobre o TEMPO cronológico (linha do Presente vs. linha do Pretérito), e NÃO sobre o MODO verbal. É perfeitamente legítimo e padrão correlacionar um verbo no Modo Indicativo com outro no Modo Subjuntivo.\nExplicação Consolidada\nUm dos erros conceituais mais danosos em provas de concursos é supor que períodos correlacionados devam possuir verbos pertencentes ao mesmo modo gramatical (ex.: crer que verbo no Indicativo exige outro no Indicativo).\nA regência sintática e o emprego de conjunções subordinativas frequentemente forçam a alternância modal (ex.: matriz declarativa que exige oração subordinada em modo subjuntivo). A harmonia verbal consiste em assegurar que ambos os modos convivam dentro do mesmo ecrã temporal:\nPresente do Indicativo harmoniza-se com Presente do Subjuntivo;\nFuturo do Pretérito do Indicativo harmoniza-se com Pretérito Imperfeito do Subjuntivo.\nTabela de Coexistência Modal\nRelações\nEvita o erro descrito em: \nCitado em: QUOTE-A04-G09-002"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nA didática dos \"Amigos do Futuro\" estabelece uma distinção comportamental nítida: o Futuro do Presente (e o Futuro do Subjuntivo) possui ampla flexibilidade de combinação sintática, enquanto o Futuro do Pretérito é um tempo rígido, associando-se com exclusividade ao Pretérito.\nExplicação Consolidada\n Amigo do PRESENTE (Indicativo ou Subjuntivo) FUTURO DO PRESENTE ┼ Amigo do FUTURO DO SUBJUNTIVO (Tem muitos amigos) Amigo do próprio FUTURO DO PRESENTE\nFUTURO DO PRETÉRITO Amigo EXCLUSIVO do PRETÉRITO (especialmente Pret. Imp. Subj.) (Só tem 1 amigo)\nFlexibilidade do Futuro do Presente:\nA presença do Futuro do Presente na oração principal não impede nem proíbe que orações coordenadas ou subordinadas tragam verbos no Presente do Indicativo.\nAplicação em prova: Em um texto narrando eventos vindouros, a oração \"O encontro terá [Fut. Pres.]... onde estão [Pres. Ind.] programados temas...\" é perfeitamente legítima e não quebra a correlação.\nExclusividade do Futuro do Pretérito:\nO Futuro do Pretérito traz o termo \"pretérito\" em sua estrutura conceitual. Ele expressa uma hipótese condicionada a um fato passado irrealizado.\nJamais admite correlação com o Presente do Indicativo ou com o Futuro do Presente. Se uma oração traz passará (Futuro do Presente), não se pode substituir seu verbo correlato exigirá por exigiria.Mnemônico: TIP-A04-G09-002\nCitado em: QUOTE-A04-G09-003"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nCertas estruturas sintáticas operam como gatilhos atratores compulsórios do Modo Subjuntivo, descartando de imediato quaisquer formas flexionadas no Modo Indicativo nas orações por elas introduzidas.\nExplicação Consolidada\nOs dois principais gatilhos atratores cobrados em provas são:\nConjunções e Locuções Concessivas (mesmo que, embora, ainda que, se bem que):\nA relação concessiva pressupõe a admissão de um fato hipotético em oposição à oração principal. Por isso, toda concessiva exige verbo no Subjuntivo.\nDiante de mesmo que, formas como serei, sou, era e foi são sumariamente eliminadas, aceitando-se unicamente seja (Presente do Subjuntivo) ou fosse (Pretérito Imperfeito do Subjuntivo).\nVerbos e Expressões de Desejo, Vontade ou Expectativa (desejava que, esperava que, queria que):\nO verbo volitivo no pretérito projeta uma expectativa não factual no passado (equivalente a hipótese).\nA oração completiva subordinada deve conter obrigatoriamente o Pretérito Imperfeito do Subjuntivo (marcado pela desinência -sse-).\nExemplo: \"Antigamente, eu desejava que todo mundo conhecesse [e não conhecia/conheceu] meu nome...\".Mnemônico: TIP-A04-G09-003"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nNas locuções verbais, a carga flexional gramatical (tempo, modo, número e pessoa) reside integralmente no VERBO AUXILIAR. Para fins de análise de correlação verbal, examina-se única e exclusivamente a flexão do verbo auxiliar, ignorando a terminação invariável do verbo principal.\nExplicação Consolidada\nO verbo principal em uma locução permanece em forma nominal (infinitivo, gerúndio ou particípio) e carrega apenas a semântica da ação. Toda a informação temporal e modal que participa do paralelismo sintático é determinada pelo verbo auxiliar.\nDemonstração Prática\nNa oração: \"Quem vier a se empenhar na prática da dúvida... estará mais perto... do que os fatos costumam ocultar\":\nNa locução vier a se empenhar: o auxiliar é vier (Futuro do Subjuntivo do verbo vir). Tempo da locução = Futuro.\nNa oração seguinte: o verbo estará encontra-se no Futuro do Presente do Indicativo.\nNa locução costumam ocultar: o auxiliar é costumam (Presente do Indicativo). Tempo da locução = Presente.\nDiagnóstico: Correlação perfeitamente harmônica no Eixo Presente/Futuro.Componente de:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nEmbora a regra geral condene a alternância injustificada de tempos, existem exceções semânticas plenamente legítimas em que a articulação entre um verbo no Presente e outro no Pretérito é gramaticalmente correta e semanticamente necessária para expressar que a situação atual do sujeito é efeito/consequência de ações pretéritas.\nExplicação Consolidada\nA língua portuguesa não deve ser interpretada de modo puramente mecânico (\"robótico\"). Bancas refinadas (como FCC e FGV) constroem itens explorando a correlação de causa e efeito temporal.\nSe o propósito comunicativo do texto for contrapor a situação atual a eventos antecedentes acumulados, a estrutura Presente + Pretérito Perfeito é perfeitamente válida. Marcadores temporais como o advérbio \"Hoje\" reforçam a intencionalidade do contraste.\nExemplo Modelo de Exceção\n\"Hoje eu sou [Presente] o que sou por tudo que já conquistei [Pretérito Perfeito] no passado.\"\nJulgamento: Frase CORRETA.\nJustificativa Semântica: A identidade atual do falante (sou) resulta da totalidade de ações concretizadas em sua trajetória pregressa (conquistei).\nRelações\nPrevine o erro de: \nExemplificado por: \nCitado em: QUOTE-A04-G09-004"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nNas provas do CEBRASPE / CESPE, o candidato deve distinguir com precisão itens que questionam a manutenção da correlação e correção gramatical daqueles que questionam a preservação do sentido original.\nExplicação Consolidada\nA substituição de uma forma no Presente do Subjuntivo (relatem) por uma no Presente do Indicativo (relatam):\nAltera o sentido: Sim, pois o Modo Subjuntivo expressa possibilidade/hipótese, enquanto o Modo Indicativo afirma um fato categórico e certo.\nMantém a correlação verbal: Sim, pois ambas as formas verbais situam-se rigorosamente no Eixo do Presente, mantendo a harmonia sintática com o verbo da oração principal (parece).\nSe o comando da banca indagar se a troca pode ser feita \"sem prejuízo para a correlação de tempos e modos verbais\", o item deve ser julgado como CERTO.Previne a pegadinha:"
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-DERIV-01",
-          "title": "Acento Diferencial nos Derivados de TER e VIR",
-          "statement": "Nos verbos derivados de TER e VIR (manter, intervir, conter, provir), a 3ª pessoa do singular do Presente do Indicativo recebe ACENTO AGUDO (ele mantém, ele intervém) e a 3ª pessoa do plural recebe ACENTO CIRCUNFLEXO (eles mantêm, eles intervêm).",
-          "formalCondition": "Singular == oxítona em -em com agudo (mantém, convém); Plural == circunflexo (mantêm, convêm).",
-          "scope": "Universal na ortografia e acentuação padrão.",
-          "normativity": "MANDATORY",
-          "exceptions": [
-            "Os primitivos 'ele tem' e 'ele vem' não têm acento no singular."
+          "entityId": "RULE-IP-A04-G09-001",
+          "title": "Tabela Sintética de Combinações Canônicas",
+          "statement": "Tabela Sintética de Combinações Canônicas",
+          "scope": "verbs_conjugation",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela Sintética de Combinações Canônicas."
           ],
-          "examples": [
-            "O policial mantém a ordem / Os policiais mantêm a ordem.",
-            "O juiz intervém no caso / Os juízes intervêm no caso."
-          ]
+          "exceptions": [],
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A04-G09-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G09-002",
+              "table": {
+                "tableId": "TABLE-IP-A04-G09-002",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Tempo / Estrutura Inicial (1º Verbo)",
+                  "Tempos Correlatos Permitidos",
+                  "Exemplo de Aplicação Canônica",
+                  "ID Detalhado"
+                ],
+                "rows": [
+                  [
+                    "Presente do Indicativo",
+                    "Presente do Indicativo / Presente do Subjuntivo / Futuro do Presente",
+                    "Acredito que esteja doente. / É legítimo que lutem.",
+                    "KB-A04-G09-003"
+                  ],
+                  [
+                    "Presente do Subjuntivo",
+                    "Futuro do Presente do Indicativo / Presente do Indicativo",
+                    "Caso estude, o resultado será satisfatório.",
+                    "KB-A04-G09-003"
+                  ],
+                  [
+                    "Futuro do Subjuntivo",
+                    "Futuro do Presente do Indicativo",
+                    "Quem vier a se empenhar, estará mais perto.",
+                    "KB-A04-G09-003"
+                  ],
+                  [
+                    "Pretérito Imperfeito do Subjuntivo",
+                    "Futuro do Pretérito do Indicativo",
+                    "Se eu fosse rico, estaria viajando.",
+                    "KB-A04-G09-004"
+                  ],
+                  [
+                    "Futuro do Pretérito do Indicativo",
+                    "Pretérito Imperfeito do Subjuntivo",
+                    "Seria necessário que estudasse mais.",
+                    "KB-A04-G09-004"
+                  ],
+                  [
+                    "Pret. Imperfeito Subj. Composto",
+                    "Futuro do Pretérito Composto do Indicativo",
+                    "Se tivesse tornado, teria recebido o livro.",
+                    "KB-A04-G09-004"
+                  ],
+                  [
+                    "Presente do Indicativo (Resultado)",
+                    "Pretérito Perfeito do Indicativo (Causa pregressa)",
+                    "Hoje sou o que sou por tudo que conquistei.",
+                    "KB-A04-G09-009"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A04-G09-001",
+              "EXP-IP-A04-G09-042"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-DERIV-01",
-          "title": "Algoritmo de Conjugação de Verbo Derivado",
-          "triggerCondition": "Flexionar qualquer verbo derivado de TER, VIR, VER ou PÔR.",
+          "entityId": "PROC-A04-G09-001",
+          "title": "Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha",
           "steps": [
-            "1. Isole o prefixo do verbo derivado (ex: intervir -> prefixo INTER- + verbo VIR).",
-            "2. Conjuge o verbo primitivo no tempo e pessoa solicitados (ex: Se ele ... [vir] -> Se ele VIER).",
-            "3. Reatribua o prefixo à forma conjugada obtida (INTER + VIER = INTERVIER).",
-            "4. Resultado correto e infalível: 'Se o juiz INTERVIER' (NUNCA *se o juiz intervir)."
+            {
+              "order": 1,
+              "action": "Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV) com rapidez e segurança, descartando alternativas inviáveis em segundos",
+              "explanation": "Procedimento operacional para Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "[ Passo 1: Leitura Vertical e Localização do 1º Verbo ] [ Passo 2: Diagnóstico Semântico Rápido ] Ideia de PRESENTE / FUTURO? Ideia de PASSADO / HIPÓTESE? [ Passo 3: Varredura e Eliminação em Bloco ] Descartar misturas grosseiras (Futuro + Pretérito Perfeito, etc.) Reter apenas as 2 ou 3 alternativas com eixos congruentes [ Passo 4: Verificação de Gatilhos Sintáticos e Conectivos ] Presença de Concessiva (mesmo que / embora) -> exige Subjuntivo Presença de Verbo Volitivo (desejava que) -> exige Pret",
+              "explanation": "Procedimento operacional para Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Presença de Condicional irreal (se / caso) -> exige correlação modal [ Passo 5: Teste de Lógica Textual e Marcação ] Confirmar nexo semântico global Marcar gabarito SEM tentar consertar alternativas erradas",
+              "explanation": "Procedimento operacional para Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha.",
+              "test": "└── Presença de Condicional irreal (se / caso) -> exige correlação modal │ ▼ [ Passo 5: Teste de Lógica Textual e Marcação ] ├── Confirmar nexo semântico global └── Marcar gabarito SEM tentar consertar alternativas erradas"
+            }
           ],
-          "verificationCriteria": "Verificar se a forma final contém a raiz conjugada do primitivo.",
-          "typicalFailureModes": [
-            "Deixar o verbo derivado no infinitivo (*Se ele compor a música -> correto: Se ele compuser)."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "derived",
+          "procedureId": "PROC-A04-G09-001",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV) com rapidez e segurança, descartando alternativas inviáveis em segundos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Fluxograma Operacional"
+            },
+            {
+              "type": "paragraph",
+              "text": "[ Passo 1: Leitura Vertical e Localização do 1º Verbo ] │ ▼ [ Passo 2: Diagnóstico Semântico Rápido ] ├── Ideia de PRESENTE / FUTURO? └── Ideia de PASSADO / HIPÓTESE? │ ▼ [ Passo 3: Varredura e Eliminação em Bloco ] ├── Descartar misturas grosseiras (Futuro + Pretérito Perfeito, etc.) └── Reter apenas as 2 ou 3 alternativas com eixos congruentes │ ▼ [ Passo 4: Verificação de Gatilhos Sintáticos e Conectivos ] ├── Presença de Concessiva (mesmo que / embora) -> exige Subjuntivo ├── Presença de Verbo Volitivo (desejava que) -> exige Pret. Imp. Subj. └── Presença de Condicional irreal (se / caso) -> exige correlação modal │ ▼ [ Passo 5: Teste de Lógica Textual e Marcação ] ├── Confirmar nexo semântico global └── Marcar gabarito SEM tentar consertar alternativas erradas"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A04-G09-001",
+              "EXP-IP-A04-G09-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A04-G09-002",
+          "title": "Procedimento de Avaliação de Locuções Verbais",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Diante de uma locução verbal (ex.",
+              "explanation": "vier a se empenhar, haverá de granjear, costumam ocultar), sublinhar imediatamente o primeiro verbo (verbo auxiliar).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Isolar o tempo e modo do verbo auxiliar, ignorando a terminação do verbo principal no particípio/infinitivo.",
+              "explanation": "Passo 2 do algoritmo de Procedimento de Avaliação de Locuções Verbais.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Projetar a regra do 1º verbo a partir do tempo identificado no verbo auxiliar.",
+              "explanation": "Passo 3 do algoritmo de Procedimento de Avaliação de Locuções Verbais.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento de Avaliação de Locuções Verbais."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento de Avaliação de Locuções Verbais."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Procedimento de Avaliação de Locuções Verbais",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A04-G09-002",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a Passo Operacional"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diante de uma locução verbal (ex.: vier a se empenhar, haverá de granjear, costumam ocultar), sublinhar imediatamente o primeiro verbo (verbo auxiliar).",
+                "Isolar o tempo e modo do verbo auxiliar, ignorando a terminação do verbo principal no particípio/infinitivo.",
+                "Projetar a regra do 1º verbo a partir do tempo identificado no verbo auxiliar."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A04-G09-002",
+              "EXP-IP-A04-G09-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-DERIV-01",
-          "conceptA": "Ele Interveio (Pretérito Perfeito)",
-          "conceptB": "*Ele Interviu (Forma Incorreta)",
-          "decisiveDifference": "O verbo primitivo é VIR (ele veio), logo o derivado só pode ser 'ele interveio'. 'Interviu' seria derivado de VER (ele viu), o que não faz sentido.",
-          "minimalPair": {
-            "sentenceA": "O governo interveio na economia. (Correto: derivado de vir -> veio)",
-            "sentenceB": "*O governo interviu na economia. (Erro crasso de concurso)",
-            "difference": "Interveio (derivado correto de vir) vs *Interviu (forma espúria inexistente)."
+          "entityId": "CONTRAST-IP-A04-G09-001",
+          "title": "Tabela 1: Futuro do Presente vs. Futuro do Pretérito",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Ele veio -> Ele interveio. Ele virá -> Ele intervirá. Ele viesse -> Ele interviesse.",
-          "pitfall": "Marcar 'interviu' achando que está correto."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Tabela 1: Futuro do Presente vs. Futuro do Pretérito",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A04-G09-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G09-003",
+              "table": {
+                "tableId": "TABLE-IP-A04-G09-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Parâmetro",
+                  "Futuro do Presente do Indicativo",
+                  "Futuro do Pretérito do Indicativo"
+                ],
+                "rows": [
+                  [
+                    "Sentido Central",
+                    "Ação certa ou provável posterior ao momento da fala",
+                    "Ação hipotética, condicionada ou posterior a um fato passado"
+                  ],
+                  [
+                    "Comportamento Relacional",
+                    "Amplo / Flexível (\"Tem muitos amigos\")",
+                    "Rígido / Exclusivo (\"Só é amigo do pretérito\")"
+                  ],
+                  [
+                    "Harmoniza-se com:",
+                    "Presente do Indicativo, Presente do Subjuntivo, Futuro do Subjuntivo",
+                    "Pretérito Imperfeito do Subjuntivo, Pretérito Mais-que-Perfeito"
+                  ],
+                  [
+                    "Exemplo Típico",
+                    "Se você vier, eu participarei. / O evento terá... onde estão programados...",
+                    "Se você viesse, eu participaria. / Seria bom que viesse."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A04-G09-001",
+              "EXP-IP-A04-G09-046"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A04-G09-002",
+          "title": "Tabela 2: Correlação Verbal vs. Identidade Modal",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Tabela 2: Correlação Verbal vs. Identidade Modal",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A04-G09-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A04-G09-004",
+              "table": {
+                "tableId": "TABLE-IP-A04-G09-004",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Conceito",
+                  "O que exige?",
+                  "O que NÃO exige?",
+                  "Erro Típico de Prova"
+                ],
+                "rows": [
+                  [
+                    "Correlação Verbal",
+                    "Simetria delinha temporal (Eixo Presente com Presente; Eixo Passado com Passado).",
+                    "Não exige que ambos os verbos estejam no mesmomodo verbal.",
+                    "Julgar errada a fraseAcredito [Indicativo] que venha [Subjuntivo] por terem modos diferentes."
+                  ],
+                  [
+                    "Identidade Modal (Mito)",
+                    "Exigência inexistente de manter Indicativo com Indicativo ou Subjuntivo com Subjuntivo.",
+                    "Incompatível com as regras de subordinação substantiva e adverbial da língua portuguesa.",
+                    "Tentar forçar o verbo subordinado para o Indicativo após conectivo concessivo ou volitivo."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A04-G09-002",
+              "EXP-IP-A04-G09-047"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-DERIV-01",
-          "title": "Verbo PREVER no Futuro do Subjuntivo",
-          "sentence": "Quando o meteorologista previr tempestades, emitirá o alerta.",
-          "analysis": "Prever deriva de VER (quando ele VIR). Com o prefixo pre-, obtém-se PREVIR. 'Quando ele prever' é erro crasso de infinitivo no lugar do futuro do subjuntivo.",
-          "pedagogicalTakeaway": "O futuro do subjuntivo de prever é 'quando ele previr'.",
-          "targetLO": "LO-A04-G09-01"
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-001",
+          "title": "EX-A04-G09-001 — Treino de Fixação Inicial (Frases 1 a 4 do Quadro #ANOTAAÍ)",
+          "statement": "Caso eu estude para esse concurso, o resultado  (ser) satisfatório.\nPreenchimento: será (Futuro do Presente).\nJustificativa: A oração subordinada abre com estude (Presente do Subjuntivo), exigindo Futuro do Presente na oração principal.\nSe eu estudasse para esse concurso, o resultado  (ser) satisfatório.\nPreenchimento: seria (Futuro do Pretérito).\nJustificativa: A oração subordinada abre com estudasse (Pretérito Imperfeito do Subjuntivo), atraindo o Futuro do Pretérito na principal.\nSeria legítimo que as pessoas  (lutar) por melhores condições de vida.\nPreenchimento: lutassem (Pretérito Imperfeito do Subjuntivo).\nJustificativa: O primeiro verbo é seria (Futuro do Pretérito), exigindo Pretérito Imperfeito do Subjuntivo na subordinada.\nÉ legítimo que as pessoas  (lutar) por melhores condições de vida.\nPreenchimento: lutem (Presente do Subjuntivo).\nJustificativa: O primeiro verbo é é (Presente do Indicativo), exigindo Presente do Subjuntivo na subordinada.",
+          "prompt": "Caso eu estude para esse concurso, o resultado  (ser) satisfatório.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Caso eu estude para esse concurso, o resultado  (ser) satisfatório.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "Preenchimento",
+              "rationale": "será (Futuro do Presente)."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "A oração subordinada abre com estude (Presente do Subjuntivo), exigindo Futuro do Presente na oração principal."
+            },
+            {
+              "order": 4,
+              "action": "Se eu estudasse para esse concurso, o resultado  (ser) satisfatório.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Preenchimento",
+              "rationale": "seria (Futuro do Pretérito)."
+            }
+          ],
+          "result": "Justificativa: O primeiro verbo é é (Presente do Indicativo), exigindo Presente do Subjuntivo na subordinada.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Caso eu estude para esse concurso, o resultado  (ser) satisfatório.\nPreenchimento: será (Futuro do Presente).\nJustificativa: A oração subordinada abre com estude (Presente do Subjuntivo), exigindo Futuro do Presente na oração principal.\nSe eu estudasse para esse concurso, o resultado  (ser) satisfatório.\nPreenchimento: seria (Futuro do Pretérito).\nJustificativa: A oração subordinada abre com estudasse (Pretérito Imperfeito do Subjuntivo), atraindo o Futuro do Pretérito na principal.\nSeria legítimo que as pessoas  (lutar) por melhores condições de vida.\nPreenchimento: lutassem (Pretérito Imperfeito do Subjuntivo).\nJustificativa: O primeiro verbo é seria (Futuro do Pretérito), exigindo Pretérito Imperfeito do Subjuntivo na subordinada.\nÉ legítimo que as pessoas  (lutar) por melhores condições de vida.\nPreenchimento: lutem (Presente do Subjuntivo).\nJustificativa: O primeiro verbo é é (Presente do Indicativo), exigindo Presente do Subjuntivo na subordinada.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-001 — Treino de Fixação Inicial (Frases 1 a 4 do Quadro #ANOTAAÍ) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-001 — Treino de Fixação Inicial (Frases 1 a 4 do Quadro #ANOTAAÍ).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-001 — Treino de Fixação Inicial (Frases 1 a 4 do Quadro #ANOTAAÍ).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Caso eu estude para esse concurso, o resultado  (ser) satisfatório."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Preenchimento: será (Futuro do Presente).",
+                "Justificativa: A oração subordinada abre com estude (Presente do Subjuntivo), exigindo Futuro do Presente na oração principal."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Se eu estudasse para esse concurso, o resultado  (ser) satisfatório."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Preenchimento: seria (Futuro do Pretérito).",
+                "Justificativa: A oração subordinada abre com estudasse (Pretérito Imperfeito do Subjuntivo), atraindo o Futuro do Pretérito na principal."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Seria legítimo que as pessoas  (lutar) por melhores condições de vida."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Preenchimento: lutassem (Pretérito Imperfeito do Subjuntivo).",
+                "Justificativa: O primeiro verbo é seria (Futuro do Pretérito), exigindo Pretérito Imperfeito do Subjuntivo na subordinada."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "É legítimo que as pessoas  (lutar) por melhores condições de vida."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Preenchimento: lutem (Presente do Subjuntivo).",
+                "Justificativa: O primeiro verbo é é (Presente do Indicativo), exigindo Presente do Subjuntivo na subordinada."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-001",
+              "EXP-IP-A04-G09-048"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-002",
+          "title": "EX-A04-G09-002 — Modelo Presente + Presente",
+          "statement": "Frase: \"Acredito que esteja doente.\"\nAnálise: Acredito (Presente do Indicativo) + esteja (Presente do Subjuntivo).\nJulgamento: Correta. Contraexemplo incorreto: Acredito que estivesse doente.",
+          "prompt": "Frase: \"Acredito que esteja doente.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Acredito que esteja doente.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Acredito (Presente do Indicativo) + esteja (Presente do Subjuntivo)."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento",
+              "rationale": "Correta. Contraexemplo incorreto: Acredito que estivesse doente."
+            }
+          ],
+          "result": "Julgamento: Correta. Contraexemplo incorreto: Acredito que estivesse doente.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase: \"Acredito que esteja doente.\"\nAnálise: Acredito (Presente do Indicativo) + esteja (Presente do Subjuntivo).\nJulgamento: Correta. Contraexemplo incorreto: Acredito que estivesse doente.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-002 — Modelo Presente + Presente sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-002 — Modelo Presente + Presente.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-002 — Modelo Presente + Presente.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"Acredito que esteja doente.\"",
+                "Análise: Acredito (Presente do Indicativo) + esteja (Presente do Subjuntivo).",
+                "Julgamento: Correta. Contraexemplo incorreto: Acredito que estivesse doente."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-002",
+              "EXP-IP-A04-G09-049"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-003",
+          "title": "EX-A04-G09-003 — Modelo Pretérito + Futuro do Pretérito",
+          "statement": "Frase: \"Se fosse rico, estaria viajando.\"\nAnálise: fosse (Pretérito Imperfeito do Subjuntivo) + estaria (Futuro do Pretérito do Indicativo).\nJulgamento: Correta.",
+          "prompt": "Frase: \"Se fosse rico, estaria viajando.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Se fosse rico, estaria viajando.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "fosse (Pretérito Imperfeito do Subjuntivo) + estaria (Futuro do Pretérito do Indicativo)."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento",
+              "rationale": "Correta."
+            }
+          ],
+          "result": "Julgamento: Correta.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase: \"Se fosse rico, estaria viajando.\"\nAnálise: fosse (Pretérito Imperfeito do Subjuntivo) + estaria (Futuro do Pretérito do Indicativo).\nJulgamento: Correta.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-003 — Modelo Pretérito + Futuro do Pretérito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-003 — Modelo Pretérito + Futuro do Pretérito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-003 — Modelo Pretérito + Futuro do Pretérito.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"Se fosse rico, estaria viajando.\"",
+                "Análise: fosse (Pretérito Imperfeito do Subjuntivo) + estaria (Futuro do Pretérito do Indicativo).",
+                "Julgamento: Correta."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-003",
+              "EXP-IP-A04-G09-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-004",
+          "title": "EX-A04-G09-004 — Modelo Futuro do Pretérito + Pretérito",
+          "statement": "Frase: \"Seria necessário que estudasse mais.\"\nAnálise: Seria (Futuro do Pretérito) + estudasse (Pretérito Imperfeito do Subjuntivo).\nJulgamento: Correta.",
+          "prompt": "Frase: \"Seria necessário que estudasse mais.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Seria necessário que estudasse mais.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "Seria (Futuro do Pretérito) + estudasse (Pretérito Imperfeito do Subjuntivo)."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento",
+              "rationale": "Correta."
+            }
+          ],
+          "result": "Julgamento: Correta.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase: \"Seria necessário que estudasse mais.\"\nAnálise: Seria (Futuro do Pretérito) + estudasse (Pretérito Imperfeito do Subjuntivo).\nJulgamento: Correta.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-004 — Modelo Futuro do Pretérito + Pretérito sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-004 — Modelo Futuro do Pretérito + Pretérito.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-004 — Modelo Futuro do Pretérito + Pretérito.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"Seria necessário que estudasse mais.\"",
+                "Análise: Seria (Futuro do Pretérito) + estudasse (Pretérito Imperfeito do Subjuntivo).",
+                "Julgamento: Correta."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-004",
+              "EXP-IP-A04-G09-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-005",
+          "title": "EX-A04-G09-005 — Exemplo Canônico de Exceção Semântica",
+          "statement": "Frase: \"Hoje eu sou o que sou por tudo que já conquistei.\"\nAnálise: sou (Presente) + conquistei (Pretérito Perfeito).\nJulgamento: CORRETA. Contexto legítimo de causa e efeito temporal (estado presente decorrente de fatos passados).",
+          "prompt": "Frase: \"Hoje eu sou o que sou por tudo que já conquistei.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase",
+              "rationale": "\"Hoje eu sou o que sou por tudo que já conquistei.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "sou (Presente) + conquistei (Pretérito Perfeito)."
+            },
+            {
+              "order": 3,
+              "action": "Julgamento",
+              "rationale": "CORRETA. Contexto legítimo de causa e efeito temporal (estado presente decorrente de fatos passados)."
+            }
+          ],
+          "result": "Julgamento: CORRETA. Contexto legítimo de causa e efeito temporal (estado presente decorrente de fatos passados).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase: \"Hoje eu sou o que sou por tudo que já conquistei.\"\nAnálise: sou (Presente) + conquistei (Pretérito Perfeito).\nJulgamento: CORRETA. Contexto legítimo de causa e efeito temporal (estado presente decorrente de fatos passados).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-005 — Exemplo Canônico de Exceção Semântica sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-005 — Exemplo Canônico de Exceção Semântica.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-005 — Exemplo Canônico de Exceção Semântica.",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"Hoje eu sou o que sou por tudo que já conquistei.\"",
+                "Análise: sou (Presente) + conquistei (Pretérito Perfeito).",
+                "Julgamento: CORRETA. Contexto legítimo de causa e efeito temporal (estado presente decorrente de fatos passados)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-005",
+              "EXP-IP-A04-G09-052"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-006",
+          "title": "EX-A04-G09-006 — Questão 10 (VUNESP 2022 - Prefeitura de Jundiaí)",
+          "statement": "Enunciado: Assinale a alternativa em que a frase apresenta corretamente a correlação verbal.\nA) Se Dolores tornar seus dias úteis, ela recebeu seu livro.\nB) Se Dolores tornara seus dias úteis, ela receberia seu livro.\nC) Se Dolores tornasse seus dias úteis, ela receberá seu livro.\nD) Se Dolores tornou seus dias úteis, ela receberia seu livro.\nE) Se Dolores tivesse tornado seus dias úteis, ela teria recebido seu livro.\nGabarito: E\nJustificativa: A alternativa E constrói o par perfeito no pretérito composto: Pretérito Imperfeito do Subjuntivo Composto (tivesse tornado) + Futuro do Pretérito Composto (teria recebido). Nas demais opções, há choques temporais (Futuro com Passado em A; Mais-que-perfeito com Futuro do Pretérito em B; Pretérito com Futuro do Presente em C; Pretérito Perfeito com Futuro do Pretérito em D).",
+          "prompt": "Enunciado: Assinale a alternativa em que a frase apresenta corretamente a correlação verbal.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que a frase apresenta corretamente a correlação verbal."
+            },
+            {
+              "order": 2,
+              "action": "A) Se Dolores tornar seus dias úteis, ela recebeu seu livro.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) Se Dolores tornara seus dias úteis, ela receberia seu livro.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) Se Dolores tornasse seus dias úteis, ela receberá seu livro.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) Se Dolores tornou seus dias úteis, ela receberia seu livro.",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: A alternativa E constrói o par perfeito no pretérito composto: Pretérito Imperfeito do Subjuntivo Composto (tivesse tornado) + Futuro do Pretérito Composto (teria recebido). Nas demais opções, há choques temporais (Futuro com Passado em A; Mais-que-perfeito com Futuro do Pretérito em B; Pretérito com Futuro do Presente em C; Pretérito Perfeito com Futuro do Pretérito em D).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Assinale a alternativa em que a frase apresenta corretamente a correlação verbal.\nA) Se Dolores tornar seus dias úteis, ela recebeu seu livro.\nB) Se Dolores tornara seus dias úteis, ela receberia seu livro.\nC) Se Dolores tornasse seus dias úteis, ela receberá seu livro.\nD) Se Dolores tornou seus dias úteis, ela receberia seu livro.\nE) Se Dolores tivesse tornado seus dias úteis, ela teria recebido seu livro.\nGabarito: E\nJustificativa: A alternativa E constrói o par perfeito no pretérito composto: Pretérito Imperfeito do Subjuntivo Composto (tivesse tornado) + Futuro do Pretérito Composto (teria recebido). Nas demais opções, há choques temporais (Futuro com Passado em A; Mais-que-perfeito com Futuro do Pretérito em B; Pretérito com Futuro do Presente em C; Pretérito Perfeito com Futuro do Pretérito em D).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-006 — Questão 10 (VUNESP 2022 - Prefeitura de Jundiaí) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-006 — Questão 10 (VUNESP 2022 - Prefeitura de Jundiaí).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-006 — Questão 10 (VUNESP 2022 - Prefeitura de Jundiaí).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Assinale a alternativa em que a frase apresenta corretamente a correlação verbal.",
+                "A) Se Dolores tornar seus dias úteis, ela recebeu seu livro.",
+                "B) Se Dolores tornara seus dias úteis, ela receberia seu livro.",
+                "C) Se Dolores tornasse seus dias úteis, ela receberá seu livro.",
+                "D) Se Dolores tornou seus dias úteis, ela receberia seu livro.",
+                "E) Se Dolores tivesse tornado seus dias úteis, ela teria recebido seu livro.",
+                "Gabarito: E",
+                "Justificativa: A alternativa E constrói o par perfeito no pretérito composto: Pretérito Imperfeito do Subjuntivo Composto (tivesse tornado) + Futuro do Pretérito Composto (teria recebido). Nas demais opções, há choques temporais (Futuro com Passado em A; Mais-que-perfeito com Futuro do Pretérito em B; Pretérito com Futuro do Presente em C; Pretérito Perfeito com Futuro do Pretérito em D)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-006",
+              "EXP-IP-A04-G09-053"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-007",
+          "title": "EX-A04-G09-007 — Questão 11 (VUNESP 2021 - Semae de Piracicaba)",
+          "statement": "Enunciado: ... e mesmo que , quase certamente não  ir.\nA) serei... poderei\nB) sou... poderia\nC) seja... poderei\nD) era... pudesse\nE) for... pude ir\nGabarito: C\nJustificativa: A locução concessiva mesmo que atrai compulsoriamente o Modo Subjuntivo, eliminando A, B e D. Entre C (seja... poderei) e E (for... pude), a alternativa E falha porque pude (Pretérito Perfeito) quebra a linha do futuro. A opção C alinha perfeitamente o Presente do Subjuntivo ao Futuro do Presente.",
+          "prompt": "Enunciado: ... e mesmo que , quase certamente não  ir.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "... e mesmo que , quase certamente não  ir."
+            },
+            {
+              "order": 2,
+              "action": "A) serei... poderei",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) sou... poderia",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) seja... poderei",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) era... pudesse",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: A locução concessiva mesmo que atrai compulsoriamente o Modo Subjuntivo, eliminando A, B e D. Entre C (seja... poderei) e E (for... pude), a alternativa E falha porque pude (Pretérito Perfeito) quebra a linha do futuro. A opção C alinha perfeitamente o Presente do Subjuntivo ao Futuro do Presente.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: ... e mesmo que , quase certamente não  ir.\nA) serei... poderei\nB) sou... poderia\nC) seja... poderei\nD) era... pudesse\nE) for... pude ir\nGabarito: C\nJustificativa: A locução concessiva mesmo que atrai compulsoriamente o Modo Subjuntivo, eliminando A, B e D. Entre C (seja... poderei) e E (for... pude), a alternativa E falha porque pude (Pretérito Perfeito) quebra a linha do futuro. A opção C alinha perfeitamente o Presente do Subjuntivo ao Futuro do Presente.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-007 — Questão 11 (VUNESP 2021 - Semae de Piracicaba) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-007 — Questão 11 (VUNESP 2021 - Semae de Piracicaba).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-007 — Questão 11 (VUNESP 2021 - Semae de Piracicaba).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: ... e mesmo que , quase certamente não  ir.",
+                "A) serei... poderei",
+                "B) sou... poderia",
+                "C) seja... poderei",
+                "D) era... pudesse",
+                "E) for... pude ir",
+                "Gabarito: C",
+                "Justificativa: A locução concessiva mesmo que atrai compulsoriamente o Modo Subjuntivo, eliminando A, B e D. Entre C (seja... poderei) e E (for... pude), a alternativa E falha porque pude (Pretérito Perfeito) quebra a linha do futuro. A opção C alinha perfeitamente o Presente do Subjuntivo ao Futuro do Presente."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-007",
+              "EXP-IP-A04-G09-054"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-008",
+          "title": "EX-A04-G09-008 — Questão 12 (VUNESP 2020 - Prefeitura de Cananéia)",
+          "statement": "Enunciado: Antigamente, eu desejava que todo mundo  meu nome e quem eu .\nA) conhecia... sabia... fora\nB) conhecera... soubera... serei\nC) conheceu... soube... seria\nD) conhece... sabe... sou\nE) conhecesse... soubesse... era\nGabarito: E\nJustificativa: A expressão volitiva no passado desejava que atua como gatilho do Pretérito Imperfeito do Subjuntivo (conhecesse... soubesse). A alternativa E é a única que traz a terminação -sse requerida.",
+          "prompt": "Enunciado: Antigamente, eu desejava que todo mundo  meu nome e quem eu .",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Antigamente, eu desejava que todo mundo  meu nome e quem eu ."
+            },
+            {
+              "order": 2,
+              "action": "A) conhecia... sabia... fora",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) conhecera... soubera... serei",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) conheceu... soube... seria",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) conhece... sabe... sou",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: A expressão volitiva no passado desejava que atua como gatilho do Pretérito Imperfeito do Subjuntivo (conhecesse... soubesse). A alternativa E é a única que traz a terminação -sse requerida.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Antigamente, eu desejava que todo mundo  meu nome e quem eu .\nA) conhecia... sabia... fora\nB) conhecera... soubera... serei\nC) conheceu... soube... seria\nD) conhece... sabe... sou\nE) conhecesse... soubesse... era\nGabarito: E\nJustificativa: A expressão volitiva no passado desejava que atua como gatilho do Pretérito Imperfeito do Subjuntivo (conhecesse... soubesse). A alternativa E é a única que traz a terminação -sse requerida.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-008 — Questão 12 (VUNESP 2020 - Prefeitura de Cananéia) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-008 — Questão 12 (VUNESP 2020 - Prefeitura de Cananéia).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-008 — Questão 12 (VUNESP 2020 - Prefeitura de Cananéia).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Antigamente, eu desejava que todo mundo  meu nome e quem eu .",
+                "A) conhecia... sabia... fora",
+                "B) conhecera... soubera... serei",
+                "C) conheceu... soube... seria",
+                "D) conhece... sabe... sou",
+                "E) conhecesse... soubesse... era",
+                "Gabarito: E",
+                "Justificativa: A expressão volitiva no passado desejava que atua como gatilho do Pretérito Imperfeito do Subjuntivo (conhecesse... soubesse). A alternativa E é a única que traz a terminação -sse requerida."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-008",
+              "EXP-IP-A04-G09-055"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-009",
+          "title": "EX-A04-G09-009 — Questão 13 (FCC 2018 - Prefeitura de Macapá)",
+          "statement": "Enunciado: Está plenamente adequada a correlação entre os tempos verbais na frase:\nA) Não fosse Saramago um escritor tão atento... sua prosa não haverá de granjear... (Incorreto: \"fosse\" exige \"haveria\")\nB) A frase de Ricardo Reis houvesse de ter soado mal para um outro escritor que preferisse... (Incorreto: falta de nexo semântico)\nC) Quem vier a se empenhar na prática da dúvida sistemática estará mais perto de reconhecer o que os fatos costumam ocultar.\nD) O relato dos fatos históricos passados evidencia que os vitoriosos determinassem... (Incorreto: \"evidencia\" não casa com \"determinassem\")\nE) Sempre que alguém ultrapasse as limitações... teria verificado... (Incorreto: \"ultrapasse\" não casa com \"teria verificado\")\nGabarito: C\nJustificativa: Correlação impecável no Eixo Presente/Futuro analisada a partir dos verbos auxiliares: vier a se empenhar (Futuro do Subjuntivo) $\\rightarrow$ estará (Futuro do Presente) $\\rightarrow$ costumam ocultar (Presente do Indicativo).",
+          "prompt": "Enunciado: Está plenamente adequada a correlação entre os tempos verbais na frase:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Está plenamente adequada a correlação entre os tempos verbais na frase:"
+            },
+            {
+              "order": 2,
+              "action": "A) Não fosse Saramago um escritor tão atento... sua prosa não haverá de granjear... (Incorreto",
+              "rationale": "\"fosse\" exige \"haveria\")"
+            },
+            {
+              "order": 3,
+              "action": "B) A frase de Ricardo Reis houvesse de ter soado mal para um outro escritor que preferisse... (Incorreto",
+              "rationale": "falta de nexo semântico)"
+            },
+            {
+              "order": 4,
+              "action": "C) Quem vier a se empenhar na prática da dúvida sistemática estará mais perto de reconhecer o que os fatos costumam ocultar.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) O relato dos fatos históricos passados evidencia que os vitoriosos determinassem... (Incorreto",
+              "rationale": "\"evidencia\" não casa com \"determinassem\")"
+            }
+          ],
+          "result": "Justificativa: Correlação impecável no Eixo Presente/Futuro analisada a partir dos verbos auxiliares: vier a se empenhar (Futuro do Subjuntivo) $\\rightarrow$ estará (Futuro do Presente) $\\rightarrow$ costumam ocultar (Presente do Indicativo).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Está plenamente adequada a correlação entre os tempos verbais na frase:\nA) Não fosse Saramago um escritor tão atento... sua prosa não haverá de granjear... (Incorreto: \"fosse\" exige \"haveria\")\nB) A frase de Ricardo Reis houvesse de ter soado mal para um outro escritor que preferisse... (Incorreto: falta de nexo semântico)\nC) Quem vier a se empenhar na prática da dúvida sistemática estará mais perto de reconhecer o que os fatos costumam ocultar.\nD) O relato dos fatos históricos passados evidencia que os vitoriosos determinassem... (Incorreto: \"evidencia\" não casa com \"determinassem\")\nE) Sempre que alguém ultrapasse as limitações... teria verificado... (Incorreto: \"ultrapasse\" não casa com \"teria verificado\")\nGabarito: C\nJustificativa: Correlação impecável no Eixo Presente/Futuro analisada a partir dos verbos auxiliares: vier a se empenhar (Futuro do Subjuntivo) $\\rightarrow$ estará (Futuro do Presente) $\\rightarrow$ costumam ocultar (Presente do Indicativo).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-009 — Questão 13 (FCC 2018 - Prefeitura de Macapá) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-009 — Questão 13 (FCC 2018 - Prefeitura de Macapá).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-009 — Questão 13 (FCC 2018 - Prefeitura de Macapá).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Está plenamente adequada a correlação entre os tempos verbais na frase:",
+                "A) Não fosse Saramago um escritor tão atento... sua prosa não haverá de granjear... (Incorreto: \"fosse\" exige \"haveria\")",
+                "B) A frase de Ricardo Reis houvesse de ter soado mal para um outro escritor que preferisse... (Incorreto: falta de nexo semântico)",
+                "C) Quem vier a se empenhar na prática da dúvida sistemática estará mais perto de reconhecer o que os fatos costumam ocultar.",
+                "D) O relato dos fatos históricos passados evidencia que os vitoriosos determinassem... (Incorreto: \"evidencia\" não casa com \"determinassem\")",
+                "E) Sempre que alguém ultrapasse as limitações... teria verificado... (Incorreto: \"ultrapasse\" não casa com \"teria verificado\")",
+                "Gabarito: C",
+                "Justificativa: Correlação impecável no Eixo Presente/Futuro analisada a partir dos verbos auxiliares: vier a se empenhar (Futuro do Subjuntivo) $\\rightarrow$ estará (Futuro do Presente) $\\rightarrow$ costumam ocultar (Presente do Indicativo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-009",
+              "EXP-IP-A04-G09-056"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-010",
+          "title": "EX-A04-G09-010 — Questão 14 (FCC - TRT 9ª Região)",
+          "statement": "Enunciado: Estará plenamente adequada a correlação entre tempos e modos verbais na completude da seguinte frase: Não houvessem os alemães bombardeado Londres, provavelmente...\nA) não ocorrera...\nB) foi evitado...\nC) não ocorreria o bombardeio que arrasou Dresden.\nD) terá deixado...\nE) tinha sido evitado...\nGabarito: C\nJustificativa: A estrutura hipotética irreal no passado introduzida por Não houvessem bombardeado (Pret. Imp. Subj. Comp.) combinada ao advérbio de probabilidade exige oração principal no Futuro do Pretérito (ocorreria), que por sua vez se articula com o fato histórico consumado arrasou (Pretérito Perfeito).",
+          "prompt": "Enunciado: Estará plenamente adequada a correlação entre tempos e modos verbais na completude da seguinte frase: Não houvessem os alemães bombardeado Londres, provavelmente...",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Estará plenamente adequada a correlação entre tempos e modos verbais na completude da seguinte frase: Não houvessem os alemães bombardeado Londres, provavelmente..."
+            },
+            {
+              "order": 2,
+              "action": "A) não ocorrera...",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) foi evitado...",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) não ocorreria o bombardeio que arrasou Dresden.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) terá deixado...",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: A estrutura hipotética irreal no passado introduzida por Não houvessem bombardeado (Pret. Imp. Subj. Comp.) combinada ao advérbio de probabilidade exige oração principal no Futuro do Pretérito (ocorreria), que por sua vez se articula com o fato histórico consumado arrasou (Pretérito Perfeito).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Estará plenamente adequada a correlação entre tempos e modos verbais na completude da seguinte frase: Não houvessem os alemães bombardeado Londres, provavelmente...\nA) não ocorrera...\nB) foi evitado...\nC) não ocorreria o bombardeio que arrasou Dresden.\nD) terá deixado...\nE) tinha sido evitado...\nGabarito: C\nJustificativa: A estrutura hipotética irreal no passado introduzida por Não houvessem bombardeado (Pret. Imp. Subj. Comp.) combinada ao advérbio de probabilidade exige oração principal no Futuro do Pretérito (ocorreria), que por sua vez se articula com o fato histórico consumado arrasou (Pretérito Perfeito).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-010 — Questão 14 (FCC - TRT 9ª Região) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-010 — Questão 14 (FCC - TRT 9ª Região).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-010 — Questão 14 (FCC - TRT 9ª Região).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-010",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Estará plenamente adequada a correlação entre tempos e modos verbais na completude da seguinte frase: Não houvessem os alemães bombardeado Londres, provavelmente...",
+                "A) não ocorrera...",
+                "B) foi evitado...",
+                "C) não ocorreria o bombardeio que arrasou Dresden.",
+                "D) terá deixado...",
+                "E) tinha sido evitado...",
+                "Gabarito: C",
+                "Justificativa: A estrutura hipotética irreal no passado introduzida por Não houvessem bombardeado (Pret. Imp. Subj. Comp.) combinada ao advérbio de probabilidade exige oração principal no Futuro do Pretérito (ocorreria), que por sua vez se articula com o fato histórico consumado arrasou (Pretérito Perfeito)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-010",
+              "EXP-IP-A04-G09-057"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-011",
+          "title": "EX-A04-G09-011 — Questão 15 (FGV 2018 - AL-RO)",
+          "statement": "Enunciado: Assinale a frase cujas formas verbais mostram correspondência adequada de tempos.\nA)... pode fundar-se... fosse... (pode [Pres.] / fosse [Pret.])\nB)... deixam... podes estar... estivessem... (deixam [Pres.] / estivessem [Pret.])\nC)... é... eliminássemos... (é [Pres.] / eliminássemos [Pret.])\nD)... Foi... permitiu... conheça... (permitiu [Pret.] / conheça [Pres.])\nE) \"Tenho a impressão de que a exclamação 'A pátria corre perigo' não seja tão terrível quanto 'A cultura corre perigo!'\"\nGabarito: E\nJustificativa: Tenho (Presente do Indicativo) alinha-se ao verbo dependente seja (Presente do Subjuntivo). Ambas as formas pertencem com simetria ao Eixo do Presente.",
+          "prompt": "Enunciado: Assinale a frase cujas formas verbais mostram correspondência adequada de tempos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a frase cujas formas verbais mostram correspondência adequada de tempos."
+            },
+            {
+              "order": 2,
+              "action": "A)... pode fundar-se... fosse... (pode [Pres.] / fosse [Pret.])",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B)... deixam... podes estar... estivessem... (deixam [Pres.] / estivessem [Pret.])",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C)... é... eliminássemos... (é [Pres.] / eliminássemos [Pret.])",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D)... Foi... permitiu... conheça... (permitiu [Pret.] / conheça [Pres.])",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: Tenho (Presente do Indicativo) alinha-se ao verbo dependente seja (Presente do Subjuntivo). Ambas as formas pertencem com simetria ao Eixo do Presente.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Assinale a frase cujas formas verbais mostram correspondência adequada de tempos.\nA)... pode fundar-se... fosse... (pode [Pres.] / fosse [Pret.])\nB)... deixam... podes estar... estivessem... (deixam [Pres.] / estivessem [Pret.])\nC)... é... eliminássemos... (é [Pres.] / eliminássemos [Pret.])\nD)... Foi... permitiu... conheça... (permitiu [Pret.] / conheça [Pres.])\nE) \"Tenho a impressão de que a exclamação 'A pátria corre perigo' não seja tão terrível quanto 'A cultura corre perigo!'\"\nGabarito: E\nJustificativa: Tenho (Presente do Indicativo) alinha-se ao verbo dependente seja (Presente do Subjuntivo). Ambas as formas pertencem com simetria ao Eixo do Presente.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-011 — Questão 15 (FGV 2018 - AL-RO) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-011 — Questão 15 (FGV 2018 - AL-RO).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-011 — Questão 15 (FGV 2018 - AL-RO).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-011",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Assinale a frase cujas formas verbais mostram correspondência adequada de tempos.",
+                "A)... pode fundar-se... fosse... (pode [Pres.] / fosse [Pret.])",
+                "B)... deixam... podes estar... estivessem... (deixam [Pres.] / estivessem [Pret.])",
+                "C)... é... eliminássemos... (é [Pres.] / eliminássemos [Pret.])",
+                "D)... Foi... permitiu... conheça... (permitiu [Pret.] / conheça [Pres.])",
+                "E) \"Tenho a impressão de que a exclamação 'A pátria corre perigo' não seja tão terrível quanto 'A cultura corre perigo!'\"",
+                "Gabarito: E",
+                "Justificativa: Tenho (Presente do Indicativo) alinha-se ao verbo dependente seja (Presente do Subjuntivo). Ambas as formas pertencem com simetria ao Eixo do Presente."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-011",
+              "EXP-IP-A04-G09-058"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-012",
+          "title": "EX-A04-G09-012 — Questão 16 (FGV - CODESP-SP)",
+          "statement": "Enunciado: Assinale a alternativa em que, ao se fazer uma transformação da primeira fala do quadrinho (\"Como está o seu filho que engoliu várias moedas de 1 real?\"), manteve-se exata correlação de tempos e modos verbais.\nA) estaria... engolia\nB) estivera... engolira\nC) estará... engolisse\nD) está... engolir\nE) Como teria estado o seu filho se houvesse engolido várias moedas de um real?\nGabarito: E\nJustificativa: Estrutura condicional hipotética no passado construída com formas compostas: Futuro do Pretérito Composto (teria estado) + Pretérito Imperfeito do Subjuntivo Composto (se houvesse engolido).",
+          "prompt": "Enunciado: Assinale a alternativa em que, ao se fazer uma transformação da primeira fala do quadrinho (\"Como está o seu filho que engoliu várias moedas de 1 real?\"), manteve-se exata correlação de tempos e modos verbais.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Assinale a alternativa em que, ao se fazer uma transformação da primeira fala do quadrinho (\"Como está o seu filho que engoliu várias moedas de 1 real?\"), manteve-se exata correlação de tempos e modos verbais."
+            },
+            {
+              "order": 2,
+              "action": "A) estaria... engolia",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "B) estivera... engolira",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "C) estará... engolisse",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "D) está... engolir",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativa: Estrutura condicional hipotética no passado construída com formas compostas: Futuro do Pretérito Composto (teria estado) + Pretérito Imperfeito do Subjuntivo Composto (se houvesse engolido).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Assinale a alternativa em que, ao se fazer uma transformação da primeira fala do quadrinho (\"Como está o seu filho que engoliu várias moedas de 1 real?\"), manteve-se exata correlação de tempos e modos verbais.\nA) estaria... engolia\nB) estivera... engolira\nC) estará... engolisse\nD) está... engolir\nE) Como teria estado o seu filho se houvesse engolido várias moedas de um real?\nGabarito: E\nJustificativa: Estrutura condicional hipotética no passado construída com formas compostas: Futuro do Pretérito Composto (teria estado) + Pretérito Imperfeito do Subjuntivo Composto (se houvesse engolido).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-012 — Questão 16 (FGV - CODESP-SP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-012 — Questão 16 (FGV - CODESP-SP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-012 — Questão 16 (FGV - CODESP-SP).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-012",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Assinale a alternativa em que, ao se fazer uma transformação da primeira fala do quadrinho (\"Como está o seu filho que engoliu várias moedas de 1 real?\"), manteve-se exata correlação de tempos e modos verbais.",
+                "A) estaria... engolia",
+                "B) estivera... engolira",
+                "C) estará... engolisse",
+                "D) está... engolir",
+                "E) Como teria estado o seu filho se houvesse engolido várias moedas de um real?",
+                "Gabarito: E",
+                "Justificativa: Estrutura condicional hipotética no passado construída com formas compostas: Futuro do Pretérito Composto (teria estado) + Pretérito Imperfeito do Subjuntivo Composto (se houvesse engolido)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-012",
+              "EXP-IP-A04-G09-059"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-013",
+          "title": "EX-A04-G09-013 — Questão 17 (CEBRASPE - CNPq)",
+          "statement": "Enunciado: A forma verbal \"relatem\" (L.3), no presente do subjuntivo, poderia ser corretamente substituída por \"relatam\", forma no presente do indicativo, sem prejuízo para a correlação de tempos e modos verbais.\nGabarito: CERTO\nJustificativa: A oração principal possui o verbo parece (Presente do Indicativo). Tanto relatem quanto relatam mantêm a correlação temporal no Eixo do Presente. O item aborda estritamente a correlação gramatical e não a conservação do sentido primitivo.",
+          "prompt": "Enunciado: A forma verbal \"relatem\" (L.3), no presente do subjuntivo, poderia ser corretamente substituída por \"relatam\", forma no presente do indicativo, sem prejuízo para a correlação de tempos e modos verbais.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "A forma verbal \"relatem\" (L.3), no presente do subjuntivo, poderia ser corretamente substituída por \"relatam\", forma no presente do indicativo, sem prejuízo para a correlação de tempos e modos verbais."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "A oração principal possui o verbo parece (Presente do Indicativo). Tanto relatem quanto relatam mantêm a correlação temporal no Eixo do Presente. O item aborda estritamente a correlação gramatical e não a conservação do sentido primitivo."
+            }
+          ],
+          "result": "Justificativa: A oração principal possui o verbo parece (Presente do Indicativo). Tanto relatem quanto relatam mantêm a correlação temporal no Eixo do Presente. O item aborda estritamente a correlação gramatical e não a conservação do sentido primitivo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: A forma verbal \"relatem\" (L.3), no presente do subjuntivo, poderia ser corretamente substituída por \"relatam\", forma no presente do indicativo, sem prejuízo para a correlação de tempos e modos verbais.\nGabarito: CERTO\nJustificativa: A oração principal possui o verbo parece (Presente do Indicativo). Tanto relatem quanto relatam mantêm a correlação temporal no Eixo do Presente. O item aborda estritamente a correlação gramatical e não a conservação do sentido primitivo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-013 — Questão 17 (CEBRASPE - CNPq) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-013 — Questão 17 (CEBRASPE - CNPq).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-013 — Questão 17 (CEBRASPE - CNPq).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-013",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: A forma verbal \"relatem\" (L.3), no presente do subjuntivo, poderia ser corretamente substituída por \"relatam\", forma no presente do indicativo, sem prejuízo para a correlação de tempos e modos verbais.",
+                "Gabarito: CERTO",
+                "Justificativa: A oração principal possui o verbo parece (Presente do Indicativo). Tanto relatem quanto relatam mantêm a correlação temporal no Eixo do Presente. O item aborda estritamente a correlação gramatical e não a conservação do sentido primitivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-013",
+              "EXP-IP-A04-G09-060"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-014",
+          "title": "EX-A04-G09-014 — Questão 18 (CEBRASPE - TRT 10ª Região)",
+          "statement": "Enunciado: Como o texto trata de um evento que ocorrerá no futuro, o emprego do presente do indicativo em \"estão\" (L.13) está em desacordo com as exigências gramaticais de correlação entre os tempos e modos verbais.\nGabarito: ERRADO\nJustificativa: O Futuro do Presente (terá) harmoniza-se perfeitamente com o Presente do Indicativo (estão). Não há qualquer desacordo com as normas de correlação.",
+          "prompt": "Enunciado: Como o texto trata de um evento que ocorrerá no futuro, o emprego do presente do indicativo em \"estão\" (L.13) está em desacordo com as exigências gramaticais de correlação entre os tempos e modos verbais.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Como o texto trata de um evento que ocorrerá no futuro, o emprego do presente do indicativo em \"estão\" (L.13) está em desacordo com as exigências gramaticais de correlação entre os tempos e modos verbais."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "O Futuro do Presente (terá) harmoniza-se perfeitamente com o Presente do Indicativo (estão). Não há qualquer desacordo com as normas de correlação."
+            }
+          ],
+          "result": "Justificativa: O Futuro do Presente (terá) harmoniza-se perfeitamente com o Presente do Indicativo (estão). Não há qualquer desacordo com as normas de correlação.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Como o texto trata de um evento que ocorrerá no futuro, o emprego do presente do indicativo em \"estão\" (L.13) está em desacordo com as exigências gramaticais de correlação entre os tempos e modos verbais.\nGabarito: ERRADO\nJustificativa: O Futuro do Presente (terá) harmoniza-se perfeitamente com o Presente do Indicativo (estão). Não há qualquer desacordo com as normas de correlação.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-014 — Questão 18 (CEBRASPE - TRT 10ª Região) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-014 — Questão 18 (CEBRASPE - TRT 10ª Região).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-014 — Questão 18 (CEBRASPE - TRT 10ª Região).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-014",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Como o texto trata de um evento que ocorrerá no futuro, o emprego do presente do indicativo em \"estão\" (L.13) está em desacordo com as exigências gramaticais de correlação entre os tempos e modos verbais.",
+                "Gabarito: ERRADO",
+                "Justificativa: O Futuro do Presente (terá) harmoniza-se perfeitamente com o Presente do Indicativo (estão). Não há qualquer desacordo com as normas de correlação."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-014",
+              "EXP-IP-A04-G09-061"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A04-G09-015",
+          "title": "EX-A04-G09-015 — Questão 19 (CEBRASPE - TCE-RS)",
+          "statement": "Enunciado: A substituição de \"exigirá\" (L.8) por \"exigiria\" manteria a correta correlação entre os tempos e modos verbais empregados no período.\nGabarito: ERRADO\nJustificativa: O verbo de referência no período é passará (Futuro do Presente). A introdução de exigiria (Futuro do Pretérito) quebraria a correlação, pois o Futuro do Pretérito não se correlaciona com o Futuro do Presente, mas exclusivamente com o Pretérito.",
+          "prompt": "Enunciado: A substituição de \"exigirá\" (L.8) por \"exigiria\" manteria a correta correlação entre os tempos e modos verbais empregados no período.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "A substituição de \"exigirá\" (L.8) por \"exigiria\" manteria a correta correlação entre os tempos e modos verbais empregados no período."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO"
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "O verbo de referência no período é passará (Futuro do Presente). A introdução de exigiria (Futuro do Pretérito) quebraria a correlação, pois o Futuro do Pretérito não se correlaciona com o Futuro do Presente, mas exclusivamente com o Pretérito."
+            }
+          ],
+          "result": "Justificativa: O verbo de referência no período é passará (Futuro do Presente). A introdução de exigiria (Futuro do Pretérito) quebraria a correlação, pois o Futuro do Pretérito não se correlaciona com o Futuro do Presente, mas exclusivamente com o Pretérito.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: A substituição de \"exigirá\" (L.8) por \"exigiria\" manteria a correta correlação entre os tempos e modos verbais empregados no período.\nGabarito: ERRADO\nJustificativa: O verbo de referência no período é passará (Futuro do Presente). A introdução de exigiria (Futuro do Pretérito) quebraria a correlação, pois o Futuro do Pretérito não se correlaciona com o Futuro do Presente, mas exclusivamente com o Pretérito.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A04-G09-015 — Questão 19 (CEBRASPE - TCE-RS) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A04-G09-015 — Questão 19 (CEBRASPE - TCE-RS).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A04-G09-015 — Questão 19 (CEBRASPE - TCE-RS).",
+          "exampleId": "WORKED_EXAMPLE-IP-A04-G09-015",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: A substituição de \"exigirá\" (L.8) por \"exigiria\" manteria a correta correlação entre os tempos e modos verbais empregados no período.",
+                "Gabarito: ERRADO",
+                "Justificativa: O verbo de referência no período é passará (Futuro do Presente). A introdução de exigiria (Futuro do Pretérito) quebraria a correlação, pois o Futuro do Pretérito não se correlaciona com o Futuro do Presente, mas exclusivamente com o Pretérito."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A04-G09-015",
+              "EXP-IP-A04-G09-062"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -162,51 +1654,189 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-DERIV-01",
-          "title": "Filho de Peixe, Peixinho É!",
-          "content": "Derivado de TER faz -TIVER. Derivado de VIR faz -VIER. Derivado de PÔR faz -PUSER. Derivado de VER faz -VIR!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Conjugação de verbos derivados no subjuntivo.",
-          "limitations": "Verbo requerer não segue querer no subjuntivo.",
-          "text": "Os verbos derivados herdam integralmente a morfologia dos seus verbos primitivos."
+          "title": "Mantra de Fixação: Correlação de Tempos Verbais",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Correlação de Tempos Verbais, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Correlação de Tempos Verbais, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-DERIV-01",
-          "title": "A Falsa Conjugação de 'Prover' vs 'Provir'",
-          "trigger": "Confusão entre os verbos PROVER (abastecer) e PROVIR (originar-se).",
-          "whyItFails": "O aluno trata prover como derivado de ver e provir como derivado de vir sem distinguir os sentidos.",
-          "correctApproach": "PROVIR (originar-se) deriva de VIR: provém (sing), provêm (plur), proveio (passado), provier (subjuntivo). PROVER (abastecer) segue VER apenas no presente (provejo, provês), mas é REGULAR no pretérito perfeito (proveu, proveram) e no subjuntivo (provesse, prover).",
-          "bankTechnique": "Escrever 'O juiz proveu o recurso' (aceitou) vs 'Os recursos provieram da união' (originaram-se).",
-          "counterRule": "Prover abastece e é regular no passado; Provir origina-se e segue o verbo vir."
+          "entityId": "WARN-A04-G09-001",
+          "title": "Confundir Equivalência de Modo com Equivalência de Tempo",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Equivalência de Modo com Equivalência de Tempo.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Equivalência de Modo com Equivalência de Tempo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Equivalência de Modo com Equivalência de Tempo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Equivalência de Modo com Equivalência de Tempo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Equivalência de Modo com Equivalência de Tempo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Equivalência de Modo com Equivalência de Tempo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Equivalência de Modo com Equivalência de Tempo.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Equivalência de Modo com Equivalência de Tempo.",
+          "trapId": "WARN-A04-G09-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Erro: Achar que se o primeiro verbo está no Indicativo, o segundo também deve estar no Indicativo.",
+                "Como Detectar: Frases legítimas que unem Presente do Indicativo a Presente do Subjuntivo (ex.: Acredito que ele venha).",
+                "Como Evitar: Lembre-se de que a simetria exigida é temporal (Presente com Presente; Pretérito com Pretérito); os modos podem variar livremente."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A04-G09-001",
+              "EXP-IP-A04-G09-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A04-G09-002",
+          "title": "Perigo do \"Raciocínio Robótico\" em Exceções Semânticas",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Perigo do \"Raciocínio Robótico\" em Exceções Semânticas.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Perigo do \"Raciocínio Robótico\" em Exceções Semânticas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Perigo do \"Raciocínio Robótico\" em Exceções Semânticas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Perigo do \"Raciocínio Robótico\" em Exceções Semânticas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Perigo do \"Raciocínio Robótico\" em Exceções Semânticas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Perigo do \"Raciocínio Robótico\" em Exceções Semânticas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Perigo do \"Raciocínio Robótico\" em Exceções Semânticas.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Perigo do \"Raciocínio Robótico\" em Exceções Semânticas.",
+          "trapId": "WARN-A04-G09-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Erro: Eliminar automaticamente qualquer frase que combine Presente com Pretérito sem ler o contexto discursivo.",
+                "Como Detectar: Frases em que o verbo no Presente expressa o estado atual como resultado/efeito de fatos acumulados no Passado (ex.: Hoje sou o que sou por tudo que conquistei).",
+                "Como Evitar: Faça o teste semântico: \"A frase quer evidenciar o presente como consequência do passado?\". Se sim, a construção é válida."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A04-G09-002",
+              "EXP-IP-A04-G09-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A04-G09-003",
+          "title": "A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico)",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico).",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico).",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha Semântica da FCC (Mesmo Tempo/Modo sem Nexo Lógico).",
+          "trapId": "WARN-A04-G09-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Erro: Achar que basta dois verbos estarem no mesmo tempo/modo para a frase estar correta.",
+                "Como a Banca Arma: A FCC elabora alternativas contendo dois verbos no Pretérito Imperfeito do Subjuntivo (ex.: houvesse de ter soado... que preferisse), mas articulados de maneira desconexa e sem sentido condicional/causal.",
+                "Como Evitar: Além de verificar os tempos verbais, valide sempre se a oração possui coerência lógica e semântica de causa, hipótese ou concessão."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A04-G09-003",
+              "EXP-IP-A04-G09-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A04-G09-004",
+          "title": "A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\".",
+          "trapId": "WARN-A04-G09-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Erro: Julgar um item como ERRADO porque a troca de Subjuntivo por Indicativo alterou o valor semântico (hipótese para fato).",
+                "Como Evitar: Leia com extrema atenção o comando. Se a questão perguntar se a alteração mantém a correlação dos tempos verbais (harmonia sintática), o item é CERTO caso ambos permaneçam no mesmo eixo temporal (ex.: Presente com Presente)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A04-G09-004",
+              "EXP-IP-A04-G09-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Verbo Derivado",
-          "shortDefinition": "Verbo formado a partir de um verbo primitivo mediante o acréscimo de prefixos.",
-          "fullDefinition": "Formação verbal que incorpora um prefixo latino ou grego à raiz de um verbo primitivo notável (ter, vir, pôr, ver), mantendo com ele identidade total de anomalias, irregularidades e desinências morfológicas.",
-          "domain": "Morfologia Verbal",
-          "commonMisconception": "Pensar que o verbo derivado pode criar desinências próprias independentes do verbo matriz."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Conceito, Nomenclaturas e Origem da Correlação Verbal**: Definição ou Ideia Central\nA Correlação de Tempos Verbais (ou Articulação Verbal / Paralelismo Semântico) é o princípio sintático e semântico pelo qual as formas verbais coordenadas ou subordinadas em um período harmonizam-se mutuamente, garantindo a sequenciação temporal lógica, a clareza cronológica e a coerência discursiva do enunciado.\nExplicação Consolidada\nO tema consolidou-se nas provas de concursos públicos a partir de uma iniciativa diagnóstica da banca FCC (Fundação Carlos Chagas), sendo posteriormente assimilado por VUNESP, FGV e CEBRASPE / CESPE. As bancas perceberam que candidatos com alto domínio da norma-padrão cometiam com frequência quebras graves de linha temporal ao redigir parágrafos de conclusão em redações dissertativas — iniciando argumentos no Presente e derivando bruscamente para o Pretérito Imperfeito do Subjuntivo ou Futuro do Pretérito sem justificativa semântica.\nEm editais e enunciados de provas, o assunto apresenta três nomenclaturas sinônimas:\nCorrelação de Tempos e Modos Verbais (nomenclatura clássica e padrão da FCC e VUNESP);\nArticulação de Tempos Verbais (adotada frequentemente pela VUNESP);\nParalelismo Semântico Verbal (terminologia frequentemente utilizada pela FGV).\nCritérios de Reconhecimento ou Aplicação\nIdentificar se os verbos associados em um período pertencem ao mesmo eixo cronológico de referência (Presente/Futuro ou Pretérito/Hipótese).\nReconhecer que termos sinônimos exigem a mesma verificação da harmonia entre o tempo do verbo principal e os tempos dos verbos dependentes.\nExemplos e Contraexemplos\nInadequação típica de redação: \"É necessário que o Brasil invista [Presente] em educação. Seria importante também que se buscassem [Futuro do Pretérito + Pretérito] novos investimentos...\" (Quebra de correlação no mesmo parágrafo).\nAdequação padronizada: \"É necessário que o Brasil invista em educação. É importante também que se busquem novos investimentos...\" (Harmonia no eixo do Presente).\nRelações\nExpande em: , , \nExemplificado por: \nTermos associados: TERM-A04-G09-001, TERM-A04-G09-002",
+            "**Regra Fundamental do Primeiro Verbo como Bússola Temporal**: Definição ou Ideia Central\nA regra diretora da correlação verbal estabelece que o primeiro verbo da estrutura oracional funciona como a bússola temporal de referência. Os demais verbos correlatos devem alinhar sua flexão ao eixo cronológico (Presente ou Pretérito) delimitado por esse verbo inicial.\nExplicação Consolidada\nAo analisar qualquer período composto para julgar sua correspondência verbal:\nLocaliza-se o primeiro verbo da oração (ou a oração principal que rege a estrutura).\nDetermina-se a qual eixo temporal esse verbo pertence:\nSe pertencer ao Eixo do Presente, os verbos dependentes devem alinhar-se ao Presente ou ao Futuro do Presente.\nSe pertencer ao Eixo do Pretérito / Condicional, os verbos dependentes devem alinhar-se ao Pretérito ou ao Futuro do Pretérito.\nOs verbos subordinados ou subsequentes orbitam ao redor do eixo fixado pela bússola temporal do primeiro verbo.\n Eixo do PRESENTE Exige PRESENTE ou FUTURO DO PRESENTE 1º VERBO (Bússola) Eixo do PRETÉRITO Exige PRETÉRITO ou FUTURO DO PRETÉRITO\nCritérios de Reconhecimento ou Aplicação\nNão iniciar a análise pelo meio do período; sempre fixar o tempo de partida da oração principal ou da primeira oração subordinada integrante/adverbial.\nHavendo inversão sintática (ex.: oração condicional antecipada iniciada por Se ou Caso), o verbo da oração antecipada dita o tempo da oração principal subsequente.\nRelações\nFundamenta: \nRamifica-se em: , \nCitado em: QUOTE-A04-G09-001",
+            "**Matriz Canônica do Eixo do Presente e Futuro do Presente**: Definição ou Ideia Central\nQuando a oração de partida situa-se no Eixo do Presente, os verbos correlatos devem ser flexionados no Presente (do Indicativo ou Subjuntivo) ou no Futuro do Presente (do Indicativo).\nExplicação Consolidada\nA matriz canônica do Presente obedece à fórmula estrutural:\n\\text{Presente} \\longrightarrow \\begin{cases} \\text{Presente (Indicativo ou Subjuntivo)} \\\\ \\text{Futuro do Presente (Indicativo)} \\end{cases}\nDa mesma forma, quando a oração subordinada abre o período no Futuro do Subjuntivo ou no Presente do Subjuntivo, a oração principal correlata projeta-se no Futuro do Presente do Indicativo:\n$\\text{Presente do Subjuntivo / Futuro do Subjuntivo} \\longrightarrow \\text{Futuro do Presente do Indicativo}$\nExemplos e Contraexemplos\nPresente + Presente: Acredito [Pres. Ind.] que esteja [Pres. Subj.] doente. (Correto).\nPresente + Presente: É [Pres. Ind.] legítimo que as pessoas lutem [Pres. Subj.] por melhores condições. (Correto).\nPresente do Subjuntivo + Futuro do Presente: Caso eu estude [Pres. Subj.], o resultado será [Fut. Pres. Ind.] satisfatório. (Correto).\nFuturo do Subjuntivo + Futuro do Presente: Quem vier [Fut. Subj.] a se empenhar, estará [Fut. Pres. Ind.] mais perto... (Correto).\nInadequação por descompasso: Acredito [Presente] que estivesse [Pret. Imp. Subj.] doente. (Incorreto).\nRelações\nContrasta com: \nExemplificado por: ,",
+            "**Matriz Canônica do Eixo do Pretérito e Futuro do Pretérito**: Definição ou Ideia Central\nQuando a oração de partida pertence ao Eixo do Pretérito (Passado) ou ao Futuro do Pretérito, os verbos correlatos devem alinhar-se obrigatoriamente a tempos do Pretérito ou ao Futuro do Pretérito.\nExplicação Consolidada\nA matriz canônica do Pretérito rege as estruturas condicionais e hipotéticas segundo as fórmulas:\n\\text{Pretérito} \\longrightarrow \\begin{cases} \\text{Pretérito (Indicativo ou Subjuntivo)} \\\\ \\text{Futuro do Pretérito (Indicativo)} \\end{cases}\n\\text{Futuro do Pretérito} \\longrightarrow \\text{Pretérito Imperfeito do Subjuntivo}\n\\text{Pretérito Imperfeito do Subjuntivo} \\longrightarrow \\text{Futuro do Pretérito do Indicativo}\nNas estruturas compostas, o paralelismo mantém-se rigorosamente no pretérito:\n$\\text{Pretérito Imperfeito do Subjuntivo Composto} \\longrightarrow \\text{Futuro do Pretérito Composto}$\nFórmula: Se [tivesse + particípio], [teria + particípio].\nExemplos e Contraexemplos\nPretérito + Futuro do Pretérito: Se eu fosse [Pret. Imp. Subj.] rico, estaria [Fut. Pret.] viajando. (Correto).\nFuturo do Pretérito + Pretérito: Seria [Fut. Pret.] necessário que estudasse [Pret. Imp. Subj.] mais. (Correto).\nFuturo do Pretérito + Pretérito: Seria [Fut. Pret.] legítimo que as pessoas lutassem [Pret. Imp. Subj.] por melhores condições. (Correto).\nPretérito Composto + Futuro do Pretérito Composto: Se Dolores tivesse tornado [Pret. Imp. Subj. Comp.] seus dias úteis, teria recebido [Fut. Pret. Comp.] seu livro. (Correto).\nInadequação por descompasso: Se eu tivesse dinheiro, viajo. ou Se estudasse, passará. (Incorretos).\nRelações\nContrasta com: \nComplementa-se com: \nExemplificado por: , ,",
+            "**Princípio da Independência de Modo Verbal (Indicativo vs. Subjuntivo)**: Definição ou Ideia Central\nA exigência de simetria na correlação verbal recai exclusivamente sobre o TEMPO cronológico (linha do Presente vs. linha do Pretérito), e NÃO sobre o MODO verbal. É perfeitamente legítimo e padrão correlacionar um verbo no Modo Indicativo com outro no Modo Subjuntivo.\nExplicação Consolidada\nUm dos erros conceituais mais danosos em provas de concursos é supor que períodos correlacionados devam possuir verbos pertencentes ao mesmo modo gramatical (ex.: crer que verbo no Indicativo exige outro no Indicativo).\nA regência sintática e o emprego de conjunções subordinativas frequentemente forçam a alternância modal (ex.: matriz declarativa que exige oração subordinada em modo subjuntivo). A harmonia verbal consiste em assegurar que ambos os modos convivam dentro do mesmo ecrã temporal:\nPresente do Indicativo harmoniza-se com Presente do Subjuntivo;\nFuturo do Pretérito do Indicativo harmoniza-se com Pretérito Imperfeito do Subjuntivo.\nTabela de Coexistência Modal\nRelações\nEvita o erro descrito em: \nCitado em: QUOTE-A04-G09-002",
+            "**A Dinâmica dos Futuros: Flexibilidade do Futuro do Presente vs. Exclusividade do Futuro do Pretérito**: Definição ou Ideia Central\nA didática dos \"Amigos do Futuro\" estabelece uma distinção comportamental nítida: o Futuro do Presente (e o Futuro do Subjuntivo) possui ampla flexibilidade de combinação sintática, enquanto o Futuro do Pretérito é um tempo rígido, associando-se com exclusividade ao Pretérito.\nExplicação Consolidada\n Amigo do PRESENTE (Indicativo ou Subjuntivo) FUTURO DO PRESENTE ┼ Amigo do FUTURO DO SUBJUNTIVO (Tem muitos amigos) Amigo do próprio FUTURO DO PRESENTE\nFUTURO DO PRETÉRITO Amigo EXCLUSIVO do PRETÉRITO (especialmente Pret. Imp. Subj.) (Só tem 1 amigo)\nFlexibilidade do Futuro do Presente:\nA presença do Futuro do Presente na oração principal não impede nem proíbe que orações coordenadas ou subordinadas tragam verbos no Presente do Indicativo.\nAplicação em prova: Em um texto narrando eventos vindouros, a oração \"O encontro terá [Fut. Pres.]... onde estão [Pres. Ind.] programados temas...\" é perfeitamente legítima e não quebra a correlação.\nExclusividade do Futuro do Pretérito:\nO Futuro do Pretérito traz o termo \"pretérito\" em sua estrutura conceitual. Ele expressa uma hipótese condicionada a um fato passado irrealizado.\nJamais admite correlação com o Presente do Indicativo ou com o Futuro do Presente. Se uma oração traz passará (Futuro do Presente), não se pode substituir seu verbo correlato exigirá por exigiria.Mnemônico: TIP-A04-G09-002\nCitado em: QUOTE-A04-G09-003",
+            "**Gatilhos Sintáticos de Atração Obrigatória do Modo Subjuntivo**: Definição ou Ideia Central\nCertas estruturas sintáticas operam como gatilhos atratores compulsórios do Modo Subjuntivo, descartando de imediato quaisquer formas flexionadas no Modo Indicativo nas orações por elas introduzidas.\nExplicação Consolidada\nOs dois principais gatilhos atratores cobrados em provas são:\nConjunções e Locuções Concessivas (mesmo que, embora, ainda que, se bem que):\nA relação concessiva pressupõe a admissão de um fato hipotético em oposição à oração principal. Por isso, toda concessiva exige verbo no Subjuntivo.\nDiante de mesmo que, formas como serei, sou, era e foi são sumariamente eliminadas, aceitando-se unicamente seja (Presente do Subjuntivo) ou fosse (Pretérito Imperfeito do Subjuntivo).\nVerbos e Expressões de Desejo, Vontade ou Expectativa (desejava que, esperava que, queria que):\nO verbo volitivo no pretérito projeta uma expectativa não factual no passado (equivalente a hipótese).\nA oração completiva subordinada deve conter obrigatoriamente o Pretérito Imperfeito do Subjuntivo (marcado pela desinência -sse-).\nExemplo: \"Antigamente, eu desejava que todo mundo conhecesse [e não conhecia/conheceu] meu nome...\".Mnemônico: TIP-A04-G09-003",
+            "**Correlação Verbal em Locuções Verbais (O Papel do Verbo Auxiliar)**: Definição ou Ideia Central\nNas locuções verbais, a carga flexional gramatical (tempo, modo, número e pessoa) reside integralmente no VERBO AUXILIAR. Para fins de análise de correlação verbal, examina-se única e exclusivamente a flexão do verbo auxiliar, ignorando a terminação invariável do verbo principal.\nExplicação Consolidada\nO verbo principal em uma locução permanece em forma nominal (infinitivo, gerúndio ou particípio) e carrega apenas a semântica da ação. Toda a informação temporal e modal que participa do paralelismo sintático é determinada pelo verbo auxiliar.\nDemonstração Prática\nNa oração: \"Quem vier a se empenhar na prática da dúvida... estará mais perto... do que os fatos costumam ocultar\":\nNa locução vier a se empenhar: o auxiliar é vier (Futuro do Subjuntivo do verbo vir). Tempo da locução = Futuro.\nNa oração seguinte: o verbo estará encontra-se no Futuro do Presente do Indicativo.\nNa locução costumam ocultar: o auxiliar é costumam (Presente do Indicativo). Tempo da locução = Presente.\nDiagnóstico: Correlação perfeitamente harmônica no Eixo Presente/Futuro.Componente de:",
+            "**Exceções Semânticas Legítimas na Correlação entre Presente e Pretérito**: Definição ou Ideia Central\nEmbora a regra geral condene a alternância injustificada de tempos, existem exceções semânticas plenamente legítimas em que a articulação entre um verbo no Presente e outro no Pretérito é gramaticalmente correta e semanticamente necessária para expressar que a situação atual do sujeito é efeito/consequência de ações pretéritas.\nExplicação Consolidada\nA língua portuguesa não deve ser interpretada de modo puramente mecânico (\"robótico\"). Bancas refinadas (como FCC e FGV) constroem itens explorando a correlação de causa e efeito temporal.\nSe o propósito comunicativo do texto for contrapor a situação atual a eventos antecedentes acumulados, a estrutura Presente + Pretérito Perfeito é perfeitamente válida. Marcadores temporais como o advérbio \"Hoje\" reforçam a intencionalidade do contraste.\nExemplo Modelo de Exceção\n\"Hoje eu sou [Presente] o que sou por tudo que já conquistei [Pretérito Perfeito] no passado.\"\nJulgamento: Frase CORRETA.\nJustificativa Semântica: A identidade atual do falante (sou) resulta da totalidade de ações concretizadas em sua trajetória pregressa (conquistei).\nRelações\nPrevine o erro de: \nExemplificado por: \nCitado em: QUOTE-A04-G09-004",
+            "**Distinção Crítica no CEBRASPE: Correlação Temporal vs. Alteração de Sentido**: Definição ou Ideia Central\nNas provas do CEBRASPE / CESPE, o candidato deve distinguir com precisão itens que questionam a manutenção da correlação e correção gramatical daqueles que questionam a preservação do sentido original.\nExplicação Consolidada\nA substituição de uma forma no Presente do Subjuntivo (relatem) por uma no Presente do Indicativo (relatam):\nAltera o sentido: Sim, pois o Modo Subjuntivo expressa possibilidade/hipótese, enquanto o Modo Indicativo afirma um fato categórico e certo.\nMantém a correlação verbal: Sim, pois ambas as formas verbais situam-se rigorosamente no Eixo do Presente, mantendo a harmonia sintática com o verbo da oração principal (parece).\nSe o comando da banca indagar se a troca pode ser feita \"sem prejuízo para a correlação de tempos e modos verbais\", o item deve ser julgado como CERTO.Previne a pegadinha:"
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-DERIV-01",
-          "question": "Como se conjugam na 3ª pessoa do singular do Pretérito Perfeito os verbos INTERVIR e REPOR?",
-          "keyPoints": [
-            "Intervir: 'Ele interveio' (deriva de vir -> ele veio).",
-            "Repor: 'Ele repôs' (deriva de pôr -> ele pôs)."
-          ],
-          "targetConcept": "Pretérito Perfeito dos Derivados",
-          "targetLO": "LO-A04-G09-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Correlação de Tempos Verbais?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

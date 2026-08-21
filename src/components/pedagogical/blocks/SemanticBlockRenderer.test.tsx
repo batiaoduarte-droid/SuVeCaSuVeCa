@@ -227,7 +227,7 @@ describe('SemanticBlockRenderer - Unit Tests for v4.2 AST Blocks', () => {
 
     expect(screen.getByText('Mantra do Dígrafo e Dífono')).toBeInTheDocument();
     expect(screen.getByText('Letra menos dígrafo mais dífono!')).toBeInTheDocument();
-    expect(screen.getByText('EXAM_HEURISTIC')).toBeInTheDocument();
+    expect(screen.queryByText('EXAM_HEURISTIC')).not.toBeInTheDocument();
     expect(screen.getByText('Não se aplica a variantes regionais com rhotics especiais.')).toBeInTheDocument();
   });
 

@@ -94,6 +94,7 @@ interface RichNoteEditorProps {
   disabled?: boolean;
   placeholder?: string;
   ariaLabel: string;
+  autoFocus?: boolean;
 }
 
 const studyTags = [
@@ -133,6 +134,7 @@ export const RichNoteEditor: React.FC<RichNoteEditorProps> = ({
   disabled = false,
   placeholder = 'Registre uma ideia importante, regra de ouro ou exemplo...',
   ariaLabel,
+  autoFocus = false,
 }) => {
   const editorRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
@@ -149,6 +151,10 @@ export const RichNoteEditor: React.FC<RichNoteEditorProps> = ({
       editor.innerHTML = safeValue;
     }
   }, [value]);
+
+  useEffect(() => {
+    if (autoFocus && !disabled) editorRef.current?.focus();
+  }, [autoFocus, disabled]);
 
   const emitValue = () => {
     const editor = editorRef.current;

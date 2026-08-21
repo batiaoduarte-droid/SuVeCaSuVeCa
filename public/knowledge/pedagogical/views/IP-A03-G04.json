@@ -1,20 +1,22 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A03-G04",
     "lessonId": "A03",
-    "title": "Pronomes Demonstrativos",
+    "title": "Demonstrativos e Relativos",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A03-G04",
     "lessonId": "A03",
-    "title": "Pronomes Demonstrativos",
+    "title": "Demonstrativos e Relativos",
     "learningObjectives": [
       "Fornecer um domínio sistemático e aprofundado sobre duas das classes pronominais mais cobradas em concursos públicos: os Pronomes Demonstrativos e os Pronomes Relativos. O escopo abrange o método de decisão tripla nos demonstrativos (espaço, tempo e texto), as funções déiticas e anafóricas/catafóricas, a resolução de múltiplos referentes, a distinção crítica entre normas para redação discursiva versus provas objetivas, a técnica de reconhecimento de pronomes relativos em dois passos, a diferenciação da palavra que (relativo, integrante, realce, preposição e consecutiva), a identificação exata do antecedente de natureza substantiva (substantivos, pronomes substantivos como o/os, numerais substantivos como milhões), a estrutura de concordância versus referência de cujo/cuja, e o impacto da mudança de referentes sobre o sentido textual original."
     ],
-    "conceptCount": 2,
+    "conceptCount": 14,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A03-G04-01"
@@ -26,170 +28,1432 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "Os pronomes demonstrativos situam seres e elementos no tempo, no espaço físico e no próprio tecido textual (mecanismos endofóricos de anáfora e catáfora).",
-      "visualBlueprint": "Espaço: ESTE (aqui, perto de quem fala) | ESSE (aí, perto de quem ouve) | AQUELE (lá, longe de ambos). Tempo: ESTE (presente / ano corrente) | ESSE (passado ou futuro próximo) | AQUELE (passado remoto / época distante). Texto: ESTE (catáfora / termo mais próximo) | ESSE (anáfora geral) | AQUELE (termo mais distante em pares).",
-      "cognitiveAnchor": "Este joga para a frente (catáfora: 'Digo isto: estudem') ou retoma o último citado; Esse resgata o que já foi dito (anáfora: 'Estudem: esse é o caminho').",
-      "strategicSignificance": "O emprego correto dos demonstrativos é o pilar mais cobrado em coesão referencial em concursos públicos e redações dissertativas.",
-      "coreTension": "Confundir ESTE (catáfora / último termo) com ESSE (anáfora geral) e errar o par distributivo 'este... aquele'."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Demonstrativos e Relativos",
+      "summary": "Articulação morfossintática e semântica de Demonstrativos e Relativos com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A03-04",
-          "name": "Coesão Textual e Pessoas do Discurso",
-          "reason": "Compreender como os elementos coesivos articulam partes do texto.",
-          "activationPrompt": "Qual a diferença entre 'Isto é importante: dedicação' e 'Dedicação: isso é importante'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A03-G04",
+          "title": "Mapa de Dependência: Demonstrativos e Relativos",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Demonstrativos e Relativos",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "O Emprego dos Demonstrativos no Texto (Endofórico)",
-          "pedagogicalGoal": "Dominar as funções anafórica, catafórica e distributiva no texto.",
+          "groupId": "GRP-IP-A03-G04-01",
+          "title": "A Regra de Ouro dos Demonstrativos: O Algoritmo da Pergunta Tripla",
+          "conceptRefs": [
+            "KB-A03-G04-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Demonstrativos no Texto",
-              "columns": [
-                "Função Textual",
-                "Pronome Empregado",
-                "Mecanismo",
-                "Exemplo"
-              ],
-              "rows": [
-                [
-                  "Catáfora (anuncia o que virá)",
-                  "ESTE, ESTA, ISTO",
-                  "Aponta para termo posterior ainda não dito",
-                  "Minha meta é ESTA: passar no concurso."
-                ],
-                [
-                  "Anáfora Simples (retoma o já dito)",
-                  "ESSE, ESSA, ISSO",
-                  "Resgata termo ou oração anterior",
-                  "Ele foi aprovado. ESSA conquista mudou sua vida."
-                ],
-                [
-                  "Anáfora Distributiva (2 termos citados)",
-                  "ESTE (último / mais perto) vs AQUELE (primeiro / mais longe)",
-                  "Diferencia os dois referentes",
-                  "Machado e Drummond são mestres: ESTE na poesia (Drummond), AQUELE na prosa (Machado)."
-                ],
-                [
-                  "Anáfora Distributiva (3 termos citados)",
-                  "AQUELE (1º), ESSE (2º), ESTE (3º)",
-                  "Mapeia os três referentes em ordem",
-                  "Pedro, Paulo e Lucas saíram: AQUELE dormiu, ESSE comeu e ESTE estudou."
-                ]
-              ],
-              "text": "Os pronomes demonstrativos organizam a malha de referências do texto com precisão matemática."
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nAntes de selecionar a forma morfológica correta do pronome demonstrativo (este/isto, esse/isso ou aquele/aquilo), o estudante deve obrigatoriamente identificar a situação de uso da referência: a palavra aponta para o Espaço, para o Tempo ou para o Texto?\nExplicação Consolidada\nO pronome demonstrativo altera sua regra de aplicação gramatical de acordo com o plano referencial em que está inserido. Tentar aplicar critérios físicos de proximidade a frases estruturadas em planos cronológicos ou textuais é a principal causa de erros em concursos. Os três planos referenciais operam da seguinte forma:\nNo Espaço: Regula a posição física dos seres/objetos em relação aos interlocutores da comunicação (1ª, 2ª ou 3ª pessoa).\nNo Tempo: Regula a localização cronológica do fato em relação ao momento da enunciação (presente, futuro próximo, passado recente ou tempo remoto).\nNo Texto: Regula a articulação coesiva endofórica entre termos e proposições dentro do discurso escrito/falado (retomada anafórica, antecipação catafórica ou distribuição entre múltiplos antecedentes).\nExemplos e Contraexemplos\nExemplo no Espaço: \"Você mora neste coração\" (aponta fisicamente para o coração do emissor = Espaço / 1ª pessoa).\nExemplo no Texto: \"Dezembro. Esse mês é o meu preferido\" (o pronome aponta para a palavra escrita \"Dezembro\" já expressa no texto = Texto / Anáfora).\nExemplo no Tempo: \"Este mês é o meu preferido\" (o pronome aponta diretamente para o mês presente em que se enuncia a frase = Tempo / Presente).\nRelações\nFundamenta: (Algoritmo de Escolha do Demonstrativo).\nSubdivide-se em: (Espaço), (Tempo) e (Texto)."
             }
           ]
         },
         {
-          "groupId": "GRP-02",
-          "title": "Demonstrativos no Espaço e no Tempo",
-          "pedagogicalGoal": "Aplicar os demonstrativos segundo a posição física e a distância cronológica.",
+          "groupId": "GRP-IP-A03-G04-02",
+          "title": "Funções Discursivas dos Demonstrativos: Dêixis Exofórica vs Coesão Endofórica",
+          "conceptRefs": [
+            "KB-A03-G04-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "classification",
-              "title": "Emprego Espacial e Temporal",
-              "categories": [
-                {
-                  "category": "1ª Pessoa (ESTE / ESTA / ISTO)",
-                  "items": [
-                    "Espaço: Este relógio aqui no meu pulso",
-                    "Tempo: Este ano de 2026 (presente)"
-                  ],
-                  "description": "Próximo do emissor / tempo presente atual"
-                },
-                {
-                  "category": "2ª Pessoa (ESSE / ESSA / ISSO)",
-                  "items": [
-                    "Espaço: Esse livro aí na sua mesa",
-                    "Tempo: Esse último mês (passado recente)"
-                  ],
-                  "description": "Próximo do interlocutor / tempo passado próximo"
-                },
-                {
-                  "category": "3ª Pessoa (AQUELE / AQUELA / AQUILO)",
-                  "items": [
-                    "Espaço: Aquele prédio lá no horizonte",
-                    "Tempo: Em 1500, naquele tempo remoto"
-                  ],
-                  "description": "Distante de ambos / passado ou futuro longínquo"
-                }
-              ],
-              "text": "A distância física e cronológica comanda o uso dos demonstrativos no discurso oral e escrito."
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nClassificação funcional que divide o emprego dos pronomes demonstrativos conforme o seu referente esteja situado no mundo extralinguístico (Função Exofórica ou Déitica) ou no interior do próprio texto (Função Endofórica).\nExplicação Consolidada\nFunção Exofórica (ou Déitica): O pronome aponta para o contexto externo à linguagem.\nNo Espaço: Depende da posição física de quem fala (emissor) e de quem ouve (receptor).\nNo Tempo: Depende do momento cronológico em que ocorre o ato de fala.\nFunção Endofórica: O pronome atua estritamente como conectivo textual intraoracional.\nAnáfora: Aponta para trás, resgatando um termo ou oração já enunciado.\nCatáfora: Aponta para a frente, antecipando uma informação que será apresentada a seguir.\nRelações\nContrasta com: (Anáfora vs Deixis de Advérbios Espaciais)."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-03",
+          "title": "Emprego dos Demonstrativos no Espaço e a Perspectiva Oficial",
+          "conceptRefs": [
+            "KB-A03-G04-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Regra Canônica\nNo espaço tridimensional, a seleção morfológica é determinada pela proximidade física em relação aos três polos do discurso:\nISTO / ESTE(S) / ESTA(S): Próximo do falante/emissor (1ª pessoa). Correlaciona-se com os advérbios aqui e cá.\nISSO / ESSE(S) / ESSA(S): Próximo do ouvinte/destinatário (2ª pessoa). Correlaciona-se com o advérbio aí.\nAQUILO / AQUELE(S) / AQUELA(S): Distante de ambos os interlocutores (3ª pessoa). Correlaciona-se com os advérbios ali e lá.\nAplicação em Redação Oficial e Correspondências Formais\nNa confecção de e-mails, memorandos e ofícios, a referência absoluta de 1ª pessoa é sempre quem redige o documento:\nPara referir-se ao próprio documento ou à unidade em que o redator atua: usar ESTE (\"Encaminho este e-mail para solicitar...\", \"Nesta seção...\").\nPara referir-se a processos ou elementos em posse do órgão destinatário: usar ESSE (\"Solicitamos o envio desse processo que tramita em sua vara...\").\nRelações\nPossui alerta em: (Erro de ponto de vista em documentos).\nMacetes associados: TIP-A03-G04-002 (Advérbios correlatos)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-04",
+          "title": "Emprego dos Demonstrativos no Tempo e Distinções Idiomáticas",
+          "conceptRefs": [
+            "KB-A03-G04-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Regra Canônica\nNo plano temporal cronológico, o demonstrativo quantifica a distância do acontecimento em relação ao presente da enunciação:\nESTE(S) / ESTA(S) / ISTO:\nMomento presente: (\"Neste ano estamos focados na aprovação\").\nFuturo próximo: (\"Nestas próximas férias viajarei\").\nLocução obrigatória de futuro: \"Um dia destes visitarei você\" (com \"T\" = futuro vindouro).\nESSE(S) / ESSA(S) / ISSO:\nPassado não distante (recente): (\"Nesse domingo passado fui ao estádio\").\nLocução obrigatória de passado: \"Um dia desses encontrei seu irmão\" (com \"S\" = passado recente).\nAQUELE(S) / AQUELA(S) / AQUILO:\nPassado remoto (distante): (\"Naquelas férias de 2000 éramos felizes\").\nFuturo remoto (distante): (\"Naquelas férias de 2030 estaremos aposentados\").\nExpressão idiomática: \"Ela está naqueles dias\" (sinaliza distanciamento afetivo/temporal).\nRelações\nPossui macete em: TIP-A03-G04-001 (Macete do \"T\" para futuro e \"S\" para passado).\nPossui alerta em: (Pegadinha do \"um dia destes\" vs \"um dia desses\")."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-05",
+          "title": "Emprego no Texto: Anáfora, Catáfora, Múltiplos Referentes e o Cisma Cebraspe",
+          "conceptRefs": [
+            "KB-A03-G04-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Regras de Coesão Textual\nUm único referente:\nESSE / ISSO (Anáfora): Resgata ideia/termo já citado. Em conectivos conclusivos de redação: diante disso, isso posto, por causa disso.\nESTE / ISTO (Catáfora): Anuncia ideia/termo que virá transcrito adiante (comumente antes de dois-pontos ou travessão). Ex.: \"A regra é esta: foco total\".\nDois antecedentes explícitos no texto:\nESTE(S) / ESTA(S): Retoma o antecedente mais próximo (citado por último).\nAQUELE(S) / AQUELA(S): Retoma o antecedente mais distante (citado em primeiro lugar).\nTrês ou mais antecedentes explícitos (Proibição do \"Esse\" intermediário):\nPara o primeiro (mais distante): usar Aquele.\nPara o último (mais próximo): usar Este.\nPara os elementos do meio: é estritamente proibido usar esse (gera ambiguidade insolúvel). Deve-se obrigatoriamente empregar numerais ordinais (o segundo, o terceiro).\nExceção do Plural Totalizador: O plural esses/essas pode ser empregado licitamente se o objetivo for resumir todos os elementos da lista em conjunto (\"João, Pedro e Paulo estudaram. Esses foram aprovados\").\nO Cisma Gramatical: Prova Objetiva vs Redação Discursiva:\nEm Provas Objetivas de Gramática: Bancas como o Cebraspe aceitam o emprego de este retomando termo único antecedente, amparadas na vertente de gramáticos modernos.\nEm Provas Discursivas / Redações: A banca examinadora penaliza severamente o candidato que usar este no lugar de esse para retomar um único antecedente. Na redação discursiva formal, o uso de esse/isso é mandatório.\nRelações\nPossui alertas em: (Ambiguidade com 3 termos) e (Cisma Cebraspe)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-06",
+          "title": "Arquitetura dos Pronomes Relativos: Os 4 Desafios de Concurso",
+          "conceptRefs": [
+            "KB-A03-G04-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição e Estrutura Didática\nO pronome relativo é a classe gramatical morfológica com maior índice de cobrança em concursos. Seu estudo estruturado organiza-se em 4 blocos operacionais de desafios:\nDesafio 1 (Reconhecimento da Classe): Saber identificar se a palavra (em especial o vocábulo que) é um pronome relativo, diferenciando-a de outras classes homônimas.\nDesafio 2 (Localização do Antecedente): Saber determinar o termo exato de natureza substantiva retomado pelo pronome no período anterior.\nDesafio 3 (Emprego dos Relativos Específicos): Dominar as exigências semântico-sintáticas de cada pronome relativo (que, quem, cujo, onde, o qual, quanto, como).\nDesafio 4 (Regência com Pronome Relativo): Identificar a necessidade de preposição antecedendo o relativo em função da regência exigida pelo verbo ou nome da oração subordinada."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-07",
+          "title": "Reconhecimento do Pronome Relativo em 2 Passos",
+          "conceptRefs": [
+            "KB-A03-G04-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nO pronome relativo projeta anaforicamente um antecedente substantivo para dentro de uma oração subordinada adjetiva. O reconhecimento categórico do relativo dá-se pela aplicação simultânea de dois critérios:\nPasso 1 (Retomada Semântica): O termo retoma diretamente um elemento antecedente de natureza substantiva.\nPasso 2 (Teste da Substituição Equivalente): O termo pode ser substituído por o qual, a qual, os quais ou as quais, mantendo-se a correção gramatical e o sentido original.\nExemplos do Poema de Ferreira Gullar\n\"...há no meu corpo um incêndio que queima sem esperança...\" $\\rightarrow$ que retoma incêndio (= o qual queima).\n\"...a própria terra que piso...\" $\\rightarrow$ que retoma terra (= a qual piso).\n\"...corre em meu sangue um veneno... veneno que tem teu nome.\" $\\rightarrow$ que retoma veneno (= o qual tem teu nome).\nRelações\nFundamenta: (Roteiro de Reconhecimento do Relativo)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-08",
+          "title": "Diferenciação da Palavra \"QUE\": Relativo vs Conjunção Integrante, Realce, Preposição e Consecutiva",
+          "conceptRefs": [
+            "KB-A03-G04-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Distinções Sintáticas Canônicas\nPronome Relativo: Retoma substantivo/pronome antecedente, introduz oração adjetiva e troca-se por \"o qual / a qual\".\nConjunção Integrante: Não retoma nenhum termo anterior; introduz oração subordinada substantiva e a oração inteira troca-se por \"ISSO\" (\"Eu vi que você chegou\" $\\rightarrow$ \"Eu vi ISSO\").\nExpressão Expletiva ou de Realce (é que): Empregada para ênfase estilística; pode ser retirada da oração sem qualquer prejuízo sintático ou semântico (\"Quando é que você vai?\" $\\rightarrow$ \"Quando você vai?\").\nPreposição Acidental: Ocorre em locuções verbais com verbos auxiliares (como ter e haver), equivalendo à preposição \"de\" (\"Tivemos que reduzir custos\" $\\rightarrow$ \"Tivemos de reduzir custos\").\nConjunção Subordinativa Adverbial Consecutiva: Aparece acoplada a vocábulos intensificadores antecedentes (tanto, tão, tal, tamanho), introduzindo uma oração de consequência e não exercendo papel anafórico (\"Insistiu tanto com Teresa que ela se afastou\").\nRelações\nPossui macete em: TIP-A03-G04-003 (Macete \"ISSO\" x \"O QUAL\").\nPossui alerta em: (Armadilha do falso relativo consecutivo)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-09",
+          "title": "Elementos de Natureza Substantiva: Substantivos, Pronomes Substantivos e Numerais Substantivos",
+          "conceptRefs": [
+            "KB-A03-G04-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou Ideia Central\nO antecedente de um pronome relativo não precisa ser exclusivamente um substantivo comum morfológico. O requisito gramatical é que seja um elemento de natureza substantiva, o que engloba três categorias funcionais:\nSubstantivo: Nome pleno do ser (\"o livro que li\").\nPronome Substantivo: Pronome que substitui o substantivo, ocupando de forma autônoma o núcleo da oração (\"aquilo que comprei\"). Diferencia-se do Pronome Adjetivo, que apenas acompanha um substantivo existente (\"meus amigos\").\nNumeral Substantivo: Numeral que substitui o substantivo, atuando como cabeça do sintagma (\"os dois que chegaram\"). Diferencia-se do Numeral Adjetivo, que quantifica um substantivo contíguo (\"dois alunos chegaram\").\nRelações\nFundamenta: e ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-10",
+          "title": "O Pronome Demonstrativo \"o/os\" (e Contrações \"do/dos\") como Antecedente do Relativo",
+          "conceptRefs": [
+            "KB-A03-G04-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Gradação Estrutural da Referência\nEm estruturas onde o vocábulo que vem precedido imediatamente por o, a, os, as (ou contrações do, da, dos, das, ao, aos):\nO termo o/os não é artigo, mas sim um pronome demonstrativo equivalente a aquilo / aqueles.\nComo esse pronome não acompanha nenhum substantivo, ele atua como pronome substantivo.\nO pronome relativo que tem como antecedente direto exatamente esse pronome demonstrativo o/os.\nÉ ótimo o livro que você comprou. -> \"que\" retoma o SUBSTANTIVO \"livro\"\nÉ ótimo aquilo que você comprou. -> \"que\" retoma o PRONOME SUBSTANTIVO \"aquilo\"\nÉ ótimo o que você comprou. -> \"que\" retoma o PRONOME DEMONSTRATIVO \"o\" (= aquilo)\nGostei do que você comprou. -> \"que\" retoma o PRONOME \"o\" dentro de \"do\" (= daquilo)\nRelações\nPossui macete em: TIP-A03-G04-004 (Teste da troca por aquilo/aqueles)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-11",
+          "title": "Sintagma Nominal Completo vs Núcleo Substantivo/Numeral e a Jurisprudência FGV",
+          "conceptRefs": [
+            "KB-A03-G04-011"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição e Divergência de Delimitação\nQuando o antecedente do relativo é uma expressão nominal composta (sintagma nominal determinado), a doutrina gramatical e as bancas adotam duas posturas:\nSintagma Nominal Amplo: Considera como antecedente toda a expressão (\"panorama nacional\", \"120 milhões de reais\").\nNúcleo Gramatical Substantivo/Numeral: Considera estritamente a palavra que funciona como núcleo sintático do sintagma (\"panorama\", \"milhões\").\nO Caso Paradigmático da Banca FGV\nNa frase \"consumiu boa parte dos 120 milhões de reais que o governo gastou\", o que o governo gastou foram os 120 milhões de reais. A banca FGV, no entanto, não ofereceu a expressão inteira nas alternativas e considerou como gabarito unicamente o vocábulo milhões (numeral substantivo que é núcleo do sintagma nominal)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-12",
+          "title": "Distanciamento do Antecedente e Paralelismo Sintático Coordenado",
+          "conceptRefs": [
+            "KB-A03-G04-012"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Regras Avançadas de Sintaxe Anafórica\nDistanciamento do Antecedente: O pronome relativo não precisa ficar colado ao substantivo que retoma. Ele pode estar separado por adjuntos adnominais, orações reduzidas ou termos explicativos. O referente real é descoberto pela análise semântica da oração adjetiva subordinada.\nParalelismo Sintático com Conjunção \"E\": Quando dois pronomes relativos vêm coordenados pela conjunção aditiva e (\"...daqueles que foram catalogados... e que devolvem e endossam...\"), ambos os pronomes relativos compartilham rigorosamente o mesmo termo antecedente."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-13",
+          "title": "O Pronome \"Cujo/Cuja\": A Dupla Polaridade (Concordância Posposta vs Referência Antecedente)",
+          "conceptRefs": [
+            "KB-A03-G04-013"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Mecanismo de Funcionamento do Pronome Cujo/Cuja\nO pronome relativo possessivo opera em duas direções gramaticais distintas:\nConcordância Morfossintática: Flexiona-se em gênero e número com o substantivo posposto (a coisa possuída).\nReferência Anafórica (Antecedente): Retoma e substitui o substantivo antecedente (o possuidor).\n[ Termo ANTECEDENTE (Possuidor) ] [ Termo POSPOSTO (Possuído) ] Ex.: \"Programa\" \"cuja\" \"base\"\nA Pegadinha Topológica do Cebraspe\nAfirmar que o \"antecedente\" de cuja é o substantivo posposto base constitui um erro conceitual e topológico primário. Por definição etimológica e funcional, o antecedente é sempre a palavra que antecede (vem antes) no texto.\nRelações\nPossui alerta em: (Falso antecedente em cujo)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A03-G04-14",
+          "title": "Alteração de Referente e o Princípio Semântico: \"Mudança de Seta = Mudança de Sentido\"",
+          "conceptRefs": [
+            "KB-A03-G04-014"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "O Princípio da Invariância Semântica\nQuando uma questão propõe a alteração flexional de um pronome relativo (ex.: de as quais para o qual) e tal mudança faz com que o pronome passe a se referir a outro substantivo gramaticalmente viável da oração anterior:\nA nova redação pode até manter a correção gramatical da frase;\nNo entanto, ao mudar o alvo da referência anafórica (mudar a \"seta\"), o sentido original do texto é irremediavelmente alterado.\nItens que afirmam que essa substituição ocorreria \"sem prejuízo para a correção gramatical e para os sentidos originais do texto\" são incorretos."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nAntes de selecionar a forma morfológica correta do pronome demonstrativo (este/isto, esse/isso ou aquele/aquilo), o estudante deve obrigatoriamente identificar a situação de uso da referência: a palavra aponta para o Espaço, para o Tempo ou para o Texto?\nExplicação Consolidada\nO pronome demonstrativo altera sua regra de aplicação gramatical de acordo com o plano referencial em que está inserido. Tentar aplicar critérios físicos de proximidade a frases estruturadas em planos cronológicos ou textuais é a principal causa de erros em concursos. Os três planos referenciais operam da seguinte forma:\nNo Espaço: Regula a posição física dos seres/objetos em relação aos interlocutores da comunicação (1ª, 2ª ou 3ª pessoa).\nNo Tempo: Regula a localização cronológica do fato em relação ao momento da enunciação (presente, futuro próximo, passado recente ou tempo remoto).\nNo Texto: Regula a articulação coesiva endofórica entre termos e proposições dentro do discurso escrito/falado (retomada anafórica, antecipação catafórica ou distribuição entre múltiplos antecedentes).\nExemplos e Contraexemplos\nExemplo no Espaço: \"Você mora neste coração\" (aponta fisicamente para o coração do emissor = Espaço / 1ª pessoa).\nExemplo no Texto: \"Dezembro. Esse mês é o meu preferido\" (o pronome aponta para a palavra escrita \"Dezembro\" já expressa no texto = Texto / Anáfora).\nExemplo no Tempo: \"Este mês é o meu preferido\" (o pronome aponta diretamente para o mês presente em que se enuncia a frase = Tempo / Presente).\nRelações\nFundamenta: (Algoritmo de Escolha do Demonstrativo).\nSubdivide-se em: (Espaço), (Tempo) e (Texto)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nClassificação funcional que divide o emprego dos pronomes demonstrativos conforme o seu referente esteja situado no mundo extralinguístico (Função Exofórica ou Déitica) ou no interior do próprio texto (Função Endofórica).\nExplicação Consolidada\nFunção Exofórica (ou Déitica): O pronome aponta para o contexto externo à linguagem.\nNo Espaço: Depende da posição física de quem fala (emissor) e de quem ouve (receptor).\nNo Tempo: Depende do momento cronológico em que ocorre o ato de fala.\nFunção Endofórica: O pronome atua estritamente como conectivo textual intraoracional.\nAnáfora: Aponta para trás, resgatando um termo ou oração já enunciado.\nCatáfora: Aponta para a frente, antecipando uma informação que será apresentada a seguir.\nRelações\nContrasta com: (Anáfora vs Deixis de Advérbios Espaciais)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Regra Canônica\nNo espaço tridimensional, a seleção morfológica é determinada pela proximidade física em relação aos três polos do discurso:\nISTO / ESTE(S) / ESTA(S): Próximo do falante/emissor (1ª pessoa). Correlaciona-se com os advérbios aqui e cá.\nISSO / ESSE(S) / ESSA(S): Próximo do ouvinte/destinatário (2ª pessoa). Correlaciona-se com o advérbio aí.\nAQUILO / AQUELE(S) / AQUELA(S): Distante de ambos os interlocutores (3ª pessoa). Correlaciona-se com os advérbios ali e lá.\nAplicação em Redação Oficial e Correspondências Formais\nNa confecção de e-mails, memorandos e ofícios, a referência absoluta de 1ª pessoa é sempre quem redige o documento:\nPara referir-se ao próprio documento ou à unidade em que o redator atua: usar ESTE (\"Encaminho este e-mail para solicitar...\", \"Nesta seção...\").\nPara referir-se a processos ou elementos em posse do órgão destinatário: usar ESSE (\"Solicitamos o envio desse processo que tramita em sua vara...\").\nRelações\nPossui alerta em: (Erro de ponto de vista em documentos).\nMacetes associados: TIP-A03-G04-002 (Advérbios correlatos)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Regra Canônica\nNo plano temporal cronológico, o demonstrativo quantifica a distância do acontecimento em relação ao presente da enunciação:\nESTE(S) / ESTA(S) / ISTO:\nMomento presente: (\"Neste ano estamos focados na aprovação\").\nFuturo próximo: (\"Nestas próximas férias viajarei\").\nLocução obrigatória de futuro: \"Um dia destes visitarei você\" (com \"T\" = futuro vindouro).\nESSE(S) / ESSA(S) / ISSO:\nPassado não distante (recente): (\"Nesse domingo passado fui ao estádio\").\nLocução obrigatória de passado: \"Um dia desses encontrei seu irmão\" (com \"S\" = passado recente).\nAQUELE(S) / AQUELA(S) / AQUILO:\nPassado remoto (distante): (\"Naquelas férias de 2000 éramos felizes\").\nFuturo remoto (distante): (\"Naquelas férias de 2030 estaremos aposentados\").\nExpressão idiomática: \"Ela está naqueles dias\" (sinaliza distanciamento afetivo/temporal).\nRelações\nPossui macete em: TIP-A03-G04-001 (Macete do \"T\" para futuro e \"S\" para passado).\nPossui alerta em: (Pegadinha do \"um dia destes\" vs \"um dia desses\")."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Regras de Coesão Textual\nUm único referente:\nESSE / ISSO (Anáfora): Resgata ideia/termo já citado. Em conectivos conclusivos de redação: diante disso, isso posto, por causa disso.\nESTE / ISTO (Catáfora): Anuncia ideia/termo que virá transcrito adiante (comumente antes de dois-pontos ou travessão). Ex.: \"A regra é esta: foco total\".\nDois antecedentes explícitos no texto:\nESTE(S) / ESTA(S): Retoma o antecedente mais próximo (citado por último).\nAQUELE(S) / AQUELA(S): Retoma o antecedente mais distante (citado em primeiro lugar).\nTrês ou mais antecedentes explícitos (Proibição do \"Esse\" intermediário):\nPara o primeiro (mais distante): usar Aquele.\nPara o último (mais próximo): usar Este.\nPara os elementos do meio: é estritamente proibido usar esse (gera ambiguidade insolúvel). Deve-se obrigatoriamente empregar numerais ordinais (o segundo, o terceiro).\nExceção do Plural Totalizador: O plural esses/essas pode ser empregado licitamente se o objetivo for resumir todos os elementos da lista em conjunto (\"João, Pedro e Paulo estudaram. Esses foram aprovados\").\nO Cisma Gramatical: Prova Objetiva vs Redação Discursiva:\nEm Provas Objetivas de Gramática: Bancas como o Cebraspe aceitam o emprego de este retomando termo único antecedente, amparadas na vertente de gramáticos modernos.\nEm Provas Discursivas / Redações: A banca examinadora penaliza severamente o candidato que usar este no lugar de esse para retomar um único antecedente. Na redação discursiva formal, o uso de esse/isso é mandatório.\nRelações\nPossui alertas em: (Ambiguidade com 3 termos) e (Cisma Cebraspe)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição e Estrutura Didática\nO pronome relativo é a classe gramatical morfológica com maior índice de cobrança em concursos. Seu estudo estruturado organiza-se em 4 blocos operacionais de desafios:\nDesafio 1 (Reconhecimento da Classe): Saber identificar se a palavra (em especial o vocábulo que) é um pronome relativo, diferenciando-a de outras classes homônimas.\nDesafio 2 (Localização do Antecedente): Saber determinar o termo exato de natureza substantiva retomado pelo pronome no período anterior.\nDesafio 3 (Emprego dos Relativos Específicos): Dominar as exigências semântico-sintáticas de cada pronome relativo (que, quem, cujo, onde, o qual, quanto, como).\nDesafio 4 (Regência com Pronome Relativo): Identificar a necessidade de preposição antecedendo o relativo em função da regência exigida pelo verbo ou nome da oração subordinada."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nO pronome relativo projeta anaforicamente um antecedente substantivo para dentro de uma oração subordinada adjetiva. O reconhecimento categórico do relativo dá-se pela aplicação simultânea de dois critérios:\nPasso 1 (Retomada Semântica): O termo retoma diretamente um elemento antecedente de natureza substantiva.\nPasso 2 (Teste da Substituição Equivalente): O termo pode ser substituído por o qual, a qual, os quais ou as quais, mantendo-se a correção gramatical e o sentido original.\nExemplos do Poema de Ferreira Gullar\n\"...há no meu corpo um incêndio que queima sem esperança...\" $\\rightarrow$ que retoma incêndio (= o qual queima).\n\"...a própria terra que piso...\" $\\rightarrow$ que retoma terra (= a qual piso).\n\"...corre em meu sangue um veneno... veneno que tem teu nome.\" $\\rightarrow$ que retoma veneno (= o qual tem teu nome).\nRelações\nFundamenta: (Roteiro de Reconhecimento do Relativo)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Distinções Sintáticas Canônicas\nPronome Relativo: Retoma substantivo/pronome antecedente, introduz oração adjetiva e troca-se por \"o qual / a qual\".\nConjunção Integrante: Não retoma nenhum termo anterior; introduz oração subordinada substantiva e a oração inteira troca-se por \"ISSO\" (\"Eu vi que você chegou\" $\\rightarrow$ \"Eu vi ISSO\").\nExpressão Expletiva ou de Realce (é que): Empregada para ênfase estilística; pode ser retirada da oração sem qualquer prejuízo sintático ou semântico (\"Quando é que você vai?\" $\\rightarrow$ \"Quando você vai?\").\nPreposição Acidental: Ocorre em locuções verbais com verbos auxiliares (como ter e haver), equivalendo à preposição \"de\" (\"Tivemos que reduzir custos\" $\\rightarrow$ \"Tivemos de reduzir custos\").\nConjunção Subordinativa Adverbial Consecutiva: Aparece acoplada a vocábulos intensificadores antecedentes (tanto, tão, tal, tamanho), introduzindo uma oração de consequência e não exercendo papel anafórico (\"Insistiu tanto com Teresa que ela se afastou\").\nRelações\nPossui macete em: TIP-A03-G04-003 (Macete \"ISSO\" x \"O QUAL\").\nPossui alerta em: (Armadilha do falso relativo consecutivo)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou Ideia Central\nO antecedente de um pronome relativo não precisa ser exclusivamente um substantivo comum morfológico. O requisito gramatical é que seja um elemento de natureza substantiva, o que engloba três categorias funcionais:\nSubstantivo: Nome pleno do ser (\"o livro que li\").\nPronome Substantivo: Pronome que substitui o substantivo, ocupando de forma autônoma o núcleo da oração (\"aquilo que comprei\"). Diferencia-se do Pronome Adjetivo, que apenas acompanha um substantivo existente (\"meus amigos\").\nNumeral Substantivo: Numeral que substitui o substantivo, atuando como cabeça do sintagma (\"os dois que chegaram\"). Diferencia-se do Numeral Adjetivo, que quantifica um substantivo contíguo (\"dois alunos chegaram\").\nRelações\nFundamenta: e ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Gradação Estrutural da Referência\nEm estruturas onde o vocábulo que vem precedido imediatamente por o, a, os, as (ou contrações do, da, dos, das, ao, aos):\nO termo o/os não é artigo, mas sim um pronome demonstrativo equivalente a aquilo / aqueles.\nComo esse pronome não acompanha nenhum substantivo, ele atua como pronome substantivo.\nO pronome relativo que tem como antecedente direto exatamente esse pronome demonstrativo o/os.\nÉ ótimo o livro que você comprou. -> \"que\" retoma o SUBSTANTIVO \"livro\"\nÉ ótimo aquilo que você comprou. -> \"que\" retoma o PRONOME SUBSTANTIVO \"aquilo\"\nÉ ótimo o que você comprou. -> \"que\" retoma o PRONOME DEMONSTRATIVO \"o\" (= aquilo)\nGostei do que você comprou. -> \"que\" retoma o PRONOME \"o\" dentro de \"do\" (= daquilo)\nRelações\nPossui macete em: TIP-A03-G04-004 (Teste da troca por aquilo/aqueles)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição e Divergência de Delimitação\nQuando o antecedente do relativo é uma expressão nominal composta (sintagma nominal determinado), a doutrina gramatical e as bancas adotam duas posturas:\nSintagma Nominal Amplo: Considera como antecedente toda a expressão (\"panorama nacional\", \"120 milhões de reais\").\nNúcleo Gramatical Substantivo/Numeral: Considera estritamente a palavra que funciona como núcleo sintático do sintagma (\"panorama\", \"milhões\").\nO Caso Paradigmático da Banca FGV\nNa frase \"consumiu boa parte dos 120 milhões de reais que o governo gastou\", o que o governo gastou foram os 120 milhões de reais. A banca FGV, no entanto, não ofereceu a expressão inteira nas alternativas e considerou como gabarito unicamente o vocábulo milhões (numeral substantivo que é núcleo do sintagma nominal)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Regras Avançadas de Sintaxe Anafórica\nDistanciamento do Antecedente: O pronome relativo não precisa ficar colado ao substantivo que retoma. Ele pode estar separado por adjuntos adnominais, orações reduzidas ou termos explicativos. O referente real é descoberto pela análise semântica da oração adjetiva subordinada.\nParalelismo Sintático com Conjunção \"E\": Quando dois pronomes relativos vêm coordenados pela conjunção aditiva e (\"...daqueles que foram catalogados... e que devolvem e endossam...\"), ambos os pronomes relativos compartilham rigorosamente o mesmo termo antecedente."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Mecanismo de Funcionamento do Pronome Cujo/Cuja\nO pronome relativo possessivo opera em duas direções gramaticais distintas:\nConcordância Morfossintática: Flexiona-se em gênero e número com o substantivo posposto (a coisa possuída).\nReferência Anafórica (Antecedente): Retoma e substitui o substantivo antecedente (o possuidor).\n[ Termo ANTECEDENTE (Possuidor) ] [ Termo POSPOSTO (Possuído) ] Ex.: \"Programa\" \"cuja\" \"base\"\nA Pegadinha Topológica do Cebraspe\nAfirmar que o \"antecedente\" de cuja é o substantivo posposto base constitui um erro conceitual e topológico primário. Por definição etimológica e funcional, o antecedente é sempre a palavra que antecede (vem antes) no texto.\nRelações\nPossui alerta em: (Falso antecedente em cujo)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "O Princípio da Invariância Semântica\nQuando uma questão propõe a alteração flexional de um pronome relativo (ex.: de as quais para o qual) e tal mudança faz com que o pronome passe a se referir a outro substantivo gramaticalmente viável da oração anterior:\nA nova redação pode até manter a correção gramatical da frase;\nNo entanto, ao mudar o alvo da referência anafórica (mudar a \"seta\"), o sentido original do texto é irremediavelmente alterado.\nItens que afirmam que essa substituição ocorreria \"sem prejuízo para a correção gramatical e para os sentidos originais do texto\" são incorretos."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-DEM-01",
-          "title": "Regra da Retomada Binarizada (Este vs Aquele)",
-          "statement": "Ao retomar dois elementos citados anteriormente no texto, ESTE refere-se ao elemento mencionado por último (mais próximo textualmente) e AQUELE refere-se ao elemento mencionado em primeiro lugar (mais distante textualmente).",
-          "formalCondition": "Elemento_A ... Elemento_B -> ESTE (= Elemento_B) e AQUELE (= Elemento_A).",
-          "scope": "Universal na coesão textual padrão.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A03-G04-001",
+          "title": "Tabela de Consulta Canônica Rápida",
+          "statement": "Tabela de Consulta Canônica Rápida",
+          "scope": "morphology",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela de Consulta Canônica Rápida."
+          ],
           "exceptions": [],
-          "examples": [
-            "A física e a literatura são fascinantes: esta (literatura) emociona, aquela (física) explica."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A03-G04-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A03-G04-001",
+              "table": {
+                "tableId": "TABLE-IP-A03-G04-001",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Fenômeno Gramatical",
+                  "Regra Canônica / Estrutura",
+                  "Unidade Detalhada"
+                ],
+                "rows": [
+                  [
+                    "Pergunta Tripla",
+                    "Antes de escolher o demonstrativo, identificar se o plano éEspaço, Tempo ou Texto.",
+                    "KB-A03-G04-001"
+                  ],
+                  [
+                    "Demonstrativo no Espaço",
+                    "Este = 1ª P. (aqui); Esse = 2ª P. (aí); Aquele = 3ª P. (lá).",
+                    "KB-A03-G04-003"
+                  ],
+                  [
+                    "Demonstrativo no Tempo",
+                    "Este = presente / futuro próximo (um dia destes); Esse = passado recente (um dia desses); Aquele = tempo remoto.",
+                    "KB-A03-G04-004"
+                  ],
+                  [
+                    "Demonstrativo no Texto",
+                    "Esse = anáfora (termo único / redação); Este = catáfora; 2 antecedentes = este (próximo) e aquele (distante); 3 antecedentes = ordinais no meio.",
+                    "KB-A03-G04-005"
+                  ],
+                  [
+                    "Reconhecimento do Relativo",
+                    "Retoma antecedente de natureza substantiva + troca-se poro qual, a qual, os quais, as quais.",
+                    "KB-A03-G04-007"
+                  ],
+                  [
+                    "Relativo vs Conjunção Integrante",
+                    "Relativo = troca por o qual; Conjunção Integrante = troca a oração por ISSO.",
+                    "KB-A03-G04-008"
+                  ],
+                  [
+                    "Elemento de Natureza Substantiva",
+                    "Compreende Substantivo, Pronome Substantivo (aquilo, o/os) e Numeral Substantivo (milhões, os dois).",
+                    "KB-A03-G04-009"
+                  ],
+                  [
+                    "Estruturas \"o que\" / \"dos que\"",
+                    "o/os = pronome demonstrativo substantivo (antecedente); que = pronome relativo.",
+                    "KB-A03-G04-010"
+                  ],
+                  [
+                    "Paralelismo Sintático (\"e que...\")",
+                    "Relativos coordenados pela conjunçãoe compartilham obrigatoriamente o mesmo antecedente.",
+                    "KB-A03-G04-012"
+                  ],
+                  [
+                    "Pronome \"Cujo/Cuja\"",
+                    "Concorda com o substantivoposposto (possuído), mas retoma o antecedente (possuidor).",
+                    "KB-A03-G04-013"
+                  ],
+                  [
+                    "Regra da Seta de Referência",
+                    "Mudança de seta = Mudança de sentido. Trocar o referente anafórico altera o sentido original.",
+                    "KB-A03-G04-014"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A03-G04-001",
+              "EXP-IP-A03-G04-035"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-DEM-01",
-          "title": "Algoritmo de Escolha: Este vs Esse em Textos",
-          "triggerCondition": "Decidir entre 'este/isto' e 'esse/isso' na produção ou análise textual.",
+          "entityId": "PROC-A03-G04-001",
+          "title": "Algoritmo de Escolha do Pronome Demonstrativo",
           "steps": [
-            "1. A informação a que o pronome se refere já foi explicitada no texto anterior? -> Se SIM: use ESSE / ESSA / ISSO (anáfora).",
-            "2. A informação vem logo depois, anunciada por dois-pontos ou verbo? -> Se SIM: use ESTE / ESTA / ISTO (catáfora).",
-            "3. Há dois termos citados que precisam ser retomados distintamente? -> Use ESTE (para o último) e AQUELE (para o primeiro).",
-            "4. Refere-se ao tempo presente/ano atual? -> Use ESTE (ex: 'este ano de 2026')."
+            {
+              "order": 1,
+              "action": "Passo 1 — A Pergunta Tripla",
+              "explanation": "Identifique se a frase/lacuna aponta para o Espaço, Tempo ou Texto.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo 2 — Identificação de Pistas Contextuais",
+              "explanation": "Passo 2 do algoritmo de Algoritmo de Escolha do Pronome Demonstrativo.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se for Espaço",
+              "explanation": "Busque advérbios de lugar (aqui/cá, aí, ali/lá) e a pessoa gramatical dos verbos (estou lendo = falante; estás lendo = ouvinte).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se for Tempo",
+              "explanation": "Busque os tempos verbais (passou = pretérito recente $\\rightarrow$ esse; viajarei = futuro próximo $\\rightarrow$ este) e advérbios temporais.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se for Texto",
+              "explanation": "Verifique se a informação está antes da lacuna (anáfora $\\rightarrow$ esse), depois (catáfora $\\rightarrow$ este) ou se há 2 antecedentes (este para o mais próximo, aquele para o mais distante).",
+              "test": "Se for Texto: Verifique se a informação está antes da lacuna (anáfora $\\rightarrow$ esse), depois (catáfora $\\rightarrow$ este) ou se há 2 antecedentes (este para o mais próximo, aquele para o mais distante)."
+            },
+            {
+              "order": 6,
+              "action": "Passo 3 — Validação de Flexão e Contração",
+              "explanation": "Ajuste gênero/número e realize contrações prepositivas (de + este = deste; em + esse = nesse; de + aquele = daquele).",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se o referente está antes (esse) ou depois (este).",
-          "typicalFailureModes": [
-            "Usar 'isto' para retomar fatos passados (*Ele passou na prova e isto alegrou a todos -> correto: isso)."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Escolha do Pronome Demonstrativo."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Escolha do Pronome Demonstrativo."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Algoritmo de Escolha do Pronome Demonstrativo",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A03-G04-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 — A Pergunta Tripla: Identifique se a frase/lacuna aponta para o Espaço, Tempo ou Texto.",
+                "Passo 2 — Identificação de Pistas Contextuais:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se for Espaço: Busque advérbios de lugar (aqui/cá, aí, ali/lá) e a pessoa gramatical dos verbos (estou lendo = falante; estás lendo = ouvinte).",
+                "Se for Tempo: Busque os tempos verbais (passou = pretérito recente $\\rightarrow$ esse; viajarei = futuro próximo $\\rightarrow$ este) e advérbios temporais.",
+                "Se for Texto: Verifique se a informação está antes da lacuna (anáfora $\\rightarrow$ esse), depois (catáfora $\\rightarrow$ este) ou se há 2 antecedentes (este para o mais próximo, aquele para o mais distante)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 3 — Validação de Flexão e Contração: Ajuste gênero/número e realize contrações prepositivas (de + este = deste; em + esse = nesse; de + aquele = daquele)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A03-G04-001",
+              "EXP-IP-A03-G04-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A03-G04-002",
+          "title": "Roteiro Unificado para Reconhecer Pronomes Relativos e Descartar Homônimos",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Varredura Eliminatória Prévia",
+              "explanation": "Inspecione o vocábulo imediatamente anterior ao que. Se for um verbo, advérbio ou preposição simples sem termo substantivo implícito, descarte imediatamente a hipótese de relativo (tratar-se-á de conjunção integrante, preposição ou realce).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verificação de Retomada Semântica",
+              "explanation": "Havendo substantivo, confirme se o que está substituindo e inserindo esse termo na oração adjetiva.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Teste de Substituição Canônica",
+              "explanation": "Troque o que por o qual / a qual / os quais / as quais. Se o período mantiver a correção e o sentido, o pronome relativo está confirmado.",
+              "test": "Teste de Substituição Canônica: Troque o que por o qual / a qual / os quais / as quais. Se o período mantiver a correção e o sentido, o pronome relativo está confirmado."
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Roteiro Unificado para Reconhecer Pronomes Relativos e Descartar Homônimos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Roteiro Unificado para Reconhecer Pronomes Relativos e Descartar Homônimos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Roteiro Unificado para Reconhecer Pronomes Relativos e Descartar Homônimos",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A03-G04-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Varredura Eliminatória Prévia: Inspecione o vocábulo imediatamente anterior ao que. Se for um verbo, advérbio ou preposição simples sem termo substantivo implícito, descarte imediatamente a hipótese de relativo (tratar-se-á de conjunção integrante, preposição ou realce).",
+                "Verificação de Retomada Semântica: Havendo substantivo, confirme se o que está substituindo e inserindo esse termo na oração adjetiva.",
+                "Teste de Substituição Canônica: Troque o que por o qual / a qual / os quais / as quais. Se o período mantiver a correção e o sentido, o pronome relativo está confirmado."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A03-G04-002",
+              "EXP-IP-A03-G04-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A03-G04-003",
+          "title": "Método da Leitura Posterior do Predicado para Resolver Múltiplos Antecedentes",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Mapeamento de Candidatos",
+              "explanation": "Isole todos os substantivos anteriores que poderiam, em tese, ser o referente do pronome relativo.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Passo Crítico (Leitura Posterior)",
+              "explanation": "Não tente adivinhar olhando apenas para trás. Leia a oração subordinada adjetiva que vem DEPOIS do pronome relativo.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Interrogação do Verbo Adjetivo",
+              "explanation": "Pergunte ao verbo da oração adjetiva: Quem ou o que pratica/sofre a ação expressa por este verbo no contexto do texto?",
+              "test": "Interrogação do Verbo Adjetivo: Pergunte ao verbo da oração adjetiva: Quem ou o que pratica/sofre a ação expressa por este verbo no contexto do texto?"
+            },
+            {
+              "order": 4,
+              "action": "Análise de Concordância Sintática",
+              "explanation": "Verifique a flexão de número do verbo posterior (ex.: verbo no plural estouraram ou chegaram elimina candidatos no singular).",
+              "test": "Análise de Concordância Sintática: Verifique a flexão de número do verbo posterior (ex.: verbo no plural estouraram ou chegaram elimina candidatos no singular)."
+            },
+            {
+              "order": 5,
+              "action": "Encaixe e Confirmação",
+              "explanation": "Substitua o antecedente eleito no lugar do pronome relativo e confirme a coerência textual.",
+              "test": "Encaixe e Confirmação: Substitua o antecedente eleito no lugar do pronome relativo e confirme a coerência textual."
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método da Leitura Posterior do Predicado para Resolver Múltiplos Antecedentes."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método da Leitura Posterior do Predicado para Resolver Múltiplos Antecedentes."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Método da Leitura Posterior do Predicado para Resolver Múltiplos Antecedentes",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A03-G04-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Mapeamento de Candidatos: Isole todos os substantivos anteriores que poderiam, em tese, ser o referente do pronome relativo.",
+                "Passo Crítico (Leitura Posterior): Não tente adivinhar olhando apenas para trás. Leia a oração subordinada adjetiva que vem DEPOIS do pronome relativo.",
+                "Interrogação do Verbo Adjetivo: Pergunte ao verbo da oração adjetiva: Quem ou o que pratica/sofre a ação expressa por este verbo no contexto do texto?",
+                "Análise de Concordância Sintática: Verifique a flexão de número do verbo posterior (ex.: verbo no plural estouraram ou chegaram elimina candidatos no singular).",
+                "Encaixe e Confirmação: Substitua o antecedente eleito no lugar do pronome relativo e confirme a coerência textual."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A03-G04-003",
+              "EXP-IP-A03-G04-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A03-G04-004",
+          "title": "Teste de Validação para a Estrutura \"o que\" / \"do que\" / \"dos que\"",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique a ocorrência das sequências o que, a que, do que, dos que, ao que.",
+              "explanation": "Passo 1 do algoritmo de Teste de Validação para a Estrutura \"o que\" / \"do que\" / \"dos que\".",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua o termo inicial",
+              "explanation": "o por aquilo, os por aqueles, do por daquilo, dos por daqueles.",
+              "test": "Substitua o termo inicial: o por aquilo, os por aqueles, do por daquilo, dos por daqueles."
+            },
+            {
+              "order": 3,
+              "action": "Se a frase resultante mantiver plenitude semântica",
+              "explanation": "Passo 3 do algoritmo de Teste de Validação para a Estrutura \"o que\" / \"do que\" / \"dos que\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O vocábulo o/os é categorizado como Pronome Demonstrativo Substantivo (atuando como antecedente).",
+              "explanation": "Passo 4 do algoritmo de Teste de Validação para a Estrutura \"o que\" / \"do que\" / \"dos que\".",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "O vocábulo que é categorizado como Pronome Relativo.",
+              "explanation": "Passo 5 do algoritmo de Teste de Validação para a Estrutura \"o que\" / \"do que\" / \"dos que\".",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste de Validação para a Estrutura \"o que\" / \"do que\" / \"dos que\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste de Validação para a Estrutura \"o que\" / \"do que\" / \"dos que\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste de Validação para a Estrutura \"o que\" / \"do que\" / \"dos que\"",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A03-G04-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique a ocorrência das sequências o que, a que, do que, dos que, ao que.",
+                "Substitua o termo inicial: o por aquilo, os por aqueles, do por daquilo, dos por daqueles.",
+                "Se a frase resultante mantiver plenitude semântica:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O vocábulo o/os é categorizado como Pronome Demonstrativo Substantivo (atuando como antecedente).",
+                "O vocábulo que é categorizado como Pronome Relativo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A03-G04-004",
+              "EXP-IP-A03-G04-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-DEM-01",
-          "conceptA": "Isto (Catafórico)",
-          "conceptB": "Isso (Anafórico)",
-          "decisiveDifference": "'Isto' aponta para o que ainda será revelado no texto; 'Isso' sintetiza e resgata o que já foi exposto.",
-          "minimalPair": {
-            "sentenceA": "Só desejo isto: que você seja aprovado. (Catáfora: informação à frente)",
-            "sentenceB": "Você foi aprovado: isso é o que eu desejava. (Anáfora: informação atrás)",
-            "difference": "Isto (aponta para frente) vs Isso (retoma o passado textual)."
+          "entityId": "CONTRAST-IP-A03-G04-001",
+          "title": "8.1. Matriz dos Demonstrativos: Espaço vs Tempo vs Texto",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "8.1. Matriz dos Demonstrativos: Espaço",
+            "criteria": [
+              "Características diagnósticas de 8.1. Matriz dos Demonstrativos: Espaço"
+            ]
           },
-          "practicalHeuristic": "Isto abre o baú (o que vem dentro); Isso fecha o baú (o que já foi guardado).",
-          "pitfall": "Escrever *Digo isso: estudem muito."
+          "sideB": {
+            "label": "Tempo",
+            "criteria": [
+              "Características diagnósticas de Tempo"
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "8.1. Matriz dos Demonstrativos: Espaço",
+          "conceptB": "Tempo",
+          "commonConfusion": "Confundir 8.1. Matriz dos Demonstrativos: Espaço com Tempo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A03-G04-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A03-G04-002",
+              "table": {
+                "tableId": "TABLE-IP-A03-G04-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Pronomes",
+                  "No Espaço (Dêixis)",
+                  "No Tempo (Dêixis)",
+                  "No Texto (Endofórica)"
+                ],
+                "rows": [
+                  [
+                    "Isto / Este(s) / Esta(s)",
+                    "Perto do emissor/falante (1ª P. /aqui).",
+                    "Presente ou futuro próximo (um dia destes).",
+                    "Catáfora (virá adiante) / Antecedente mais próximo (em listas de 2)."
+                  ],
+                  [
+                    "Isso / Esse(s) / Essa(s)",
+                    "Perto do receptor/ouvinte (2ª P. /aí).",
+                    "Passado não distante / recente (um dia desses).",
+                    "Anáfora (já dito / termo único / redação formal)."
+                  ],
+                  [
+                    "Aquilo / Aquele(s) / Aquela(s)",
+                    "Distante de ambos (3ª P. /ali, lá).",
+                    "Passado remoto ou futuro distante.",
+                    "Antecedente mais distante (em listas de 2) / Primeiro da lista (em listas de 3+)."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A03-G04-001",
+              "EXP-IP-A03-G04-040"
+            ],
+            "hideGenericScaffold": false
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A03-G04-002",
+          "title": "8.2. Matriz Diferencial das Funções da Palavra \"QUE\"",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "8.2. Matriz Diferencial das Funções da Palavra \"QUE\"",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A03-G04-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A03-G04-003",
+              "table": {
+                "tableId": "TABLE-IP-A03-G04-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Função Gramatical",
+                  "Mecanismo Sintático",
+                  "Teste Prático Infalível",
+                  "Exemplo Típico da Aula"
+                ],
+                "rows": [
+                  [
+                    "Pronome Relativo",
+                    "Retoma antecedente substantivo; introduz oração adjetiva.",
+                    "Substituir poro qual / a qual.",
+                    "\"A própria terra que piso...\""
+                  ],
+                  [
+                    "Conjunção Integrante",
+                    "Conecta oração substantiva sem valor anafórico.",
+                    "Substituir a oração porISSO.",
+                    "\"Eu vi que a senhora tem uma sapucaia.\""
+                  ],
+                  [
+                    "Expressão de Realce",
+                    "Dá ênfase enfática/estilística (é que).",
+                    "Eliminar da oração sem prejuízo.",
+                    "\"Quando é que vou poder colher?\""
+                  ],
+                  [
+                    "Preposição Acidental",
+                    "Liga verbos em locuções modais/aspectuais.",
+                    "Substituir pela preposiçãode.",
+                    "\"Tivemos que reduzir custos.\""
+                  ],
+                  [
+                    "Conjunção Consecutiva",
+                    "Introduz consequência ligada a intensificador.",
+                    "Par correlativo comtanto/tão/tal.",
+                    "\"Insistiu tanto com Teresa que ela se afastou.\""
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A03-G04-002",
+              "EXP-IP-A03-G04-041"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A03-G04-003",
+          "title": "8.3. Distinção de Classes: Função Adjetiva vs Função Substantiva",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "8.3. Distinção de Classes: Função Adjetiva",
+            "criteria": [
+              "Características diagnósticas de 8.3. Distinção de Classes: Função Adjetiva"
+            ]
+          },
+          "sideB": {
+            "label": "Função Substantiva",
+            "criteria": [
+              "Características diagnósticas de Função Substantiva"
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "8.3. Distinção de Classes: Função Adjetiva",
+          "conceptB": "Função Substantiva",
+          "commonConfusion": "Confundir 8.3. Distinção de Classes: Função Adjetiva com Função Substantiva por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A03-G04-003",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A03-G04-004",
+              "table": {
+                "tableId": "TABLE-IP-A03-G04-004",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Classe Gramatical",
+                  "Modalidade Adjetiva (Acompanha o Nome)",
+                  "Modalidade Substantiva (Substitui o Nome / Núcleo)"
+                ],
+                "rows": [
+                  [
+                    "Pronomes",
+                    "Pronome Adjetivo: Determina um substantivo explícito.Ex.: \"Meus amigos chegaram.\"",
+                    "Pronome Substantivo: Substitui o substantivo sozinho.Ex.: \"Eles chegaram.\" / \"O que comprei\" (o = aquilo)."
+                  ],
+                  [
+                    "Numerais",
+                    "Numeral Adjetivo: Quantifica um substantivo contíguo.Ex.: \"Dois alunos chegaram.\"",
+                    "Numeral Substantivo: Assume o papel de núcleo substantivo.Ex.: \"Os dois chegaram.\" / \"120 milhões de reais\"."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A03-G04-003",
+              "EXP-IP-A03-G04-042"
+            ],
+            "hideGenericScaffold": false
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-DEM-01",
-          "title": "Pronomes O, A, OS, AS com Valor Demonstrativo",
-          "sentence": "Não ouvi o que ele disse, mas aceitei o de sempre.",
-          "analysis": "'O que' = 'AQUILO que' (o 'o' é pronome demonstrativo equivalente a aquilo). 'O de sempre' = 'AQUELE de sempre'.",
-          "pedagogicalTakeaway": "Os artigos definidos 'o, a, os, as' funcionam como pronomes demonstrativos quando equivalem a 'aquele, aquela, aquilo' antes de 'que' ou 'de'.",
-          "targetLO": "LO-A03-G04-01"
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-001",
+          "title": "EX-A03-G04-001 — Fixação de Demonstrativos no Espaço, Tempo e Texto (15 Casos do Bloco III)",
+          "statement": "livro que estás lendo é infantil? $\\rightarrow$ Esse (Espaço: nas mãos do ouvinte / 2ª pessoa).\nNão.  livro que estou lendo é sobre política. $\\rightarrow$ Este (Espaço: nas mãos do falante / 1ª pessoa).\nGuilherme, traga-me  CD que ficou lá no seu quarto. $\\rightarrow$ aquele (Espaço: distante de ambos / advérbio lá).\nUm dia  visitarei o seu pai. $\\rightarrow$ destes (Tempo: futuro do presente visitarei $\\rightarrow$ futuro próximo).\nGuilherme, dê-me  CD que está aí. $\\rightarrow$ esse (Espaço: perto do ouvinte / advérbio aí).\nLuísa,  é o Eduardo? $\\rightarrow$ esse / aquele (Espaço: descontextualizado; se perto de Luísa = esse, se longe de ambos = aquele).\nano que passou foi muito proveitoso para mim. $\\rightarrow$ Esse (Tempo: pretérito recente passou).\nmês que passou choveu muito. Para  mês que começa, porém, a previsão é de tempo bom. $\\rightarrow$ Nesse / este (Tempo: passado recente vs futuro próximo).\naqui são meus primos. $\\rightarrow$ Estes (Espaço: proximidade do falante / advérbio aqui).\nO que foi combinado aqui não pode sair d sala. $\\rightarrow$ desta (Espaço: sala do falante / advérbio aqui).\n\"Qual é a relação entre dialética e retórica? A  pergunta Aristóteles responde...\" $\\rightarrow$ essa (Texto: anáfora / resgate de pergunta anterior).\né a pergunta que Aristóteles responde desde a primeira frase: qual é a relação...? $\\rightarrow$ Esta (Texto: catáfora / anúncio prévio).\nAo comparar os diversos rios do mundo com o Amazonas, defendia a proeminência d sobre cada um d. $\\rightarrow$ deste / daqueles (Texto: 2 antecedentes $\\rightarrow$ deste retoma Amazonas [mais próximo]; daqueles retoma rios [mais distante]).\nAtentem para : o que se guarda no coração jamais se esquece. $\\rightarrow$ isto (Texto: catáfora antecipatória).\nHomens e mulheres participaram das festividades. , simpáticas e elegantes. , sérios e tímidos. $\\rightarrow$ Estas / Aqueles (Texto: 2 antecedentes $\\rightarrow$ Estas = mulheres [próximo]; Aqueles = Homens [distante]).",
+          "prompt": "livro que estás lendo é infantil? $\\rightarrow$ Esse (Espaço: nas mãos do ouvinte / 2ª pessoa).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "livro que estás lendo é infantil? $\\rightarrow$ Esse (Espaço",
+              "rationale": "nas mãos do ouvinte / 2ª pessoa)."
+            },
+            {
+              "order": 2,
+              "action": "Não.  livro que estou lendo é sobre política. $\\rightarrow$ Este (Espaço",
+              "rationale": "nas mãos do falante / 1ª pessoa)."
+            },
+            {
+              "order": 3,
+              "action": "Guilherme, traga-me  CD que ficou lá no seu quarto. $\\rightarrow$ aquele (Espaço",
+              "rationale": "distante de ambos / advérbio lá)."
+            },
+            {
+              "order": 4,
+              "action": "Um dia  visitarei o seu pai. $\\rightarrow$ destes (Tempo",
+              "rationale": "futuro do presente visitarei $\\rightarrow$ futuro próximo)."
+            },
+            {
+              "order": 5,
+              "action": "Guilherme, dê-me  CD que está aí. $\\rightarrow$ esse (Espaço",
+              "rationale": "perto do ouvinte / advérbio aí)."
+            }
+          ],
+          "result": "Homens e mulheres participaram das festividades. , simpáticas e elegantes. , sérios e tímidos. $\\rightarrow$ Estas / Aqueles (Texto: 2 antecedentes $\\rightarrow$ Estas = mulheres [próximo]; Aqueles = Homens [distante]).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'livro que estás lendo é infantil? $\\rightarrow$ Esse (Espaço: nas mãos do ouvinte / 2ª pessoa).\nNão.  livro que estou lendo é sobre política. $\\rightarrow$ Este (Espaço: nas mãos do falante / 1ª pessoa).\nGuilherme, traga-me  CD que ficou lá no seu quarto. $\\rightarrow$ aquele (Espaço: distante de ambos / advérbio lá).\nUm dia  visitarei o seu pai. $\\rightarrow$ destes (Tempo: futuro do presente visitarei $\\rightarrow$ futuro próximo).\nGuilherme, dê-me  CD que está aí. $\\rightarrow$ esse (Espaço: perto do ouvinte / advérbio aí).\nLuísa,  é o Eduardo? $\\rightarrow$ esse / aquele (Espaço: descontextualizado; se perto de Luísa = esse, se longe de ambos = aquele).\nano que passou foi muito proveitoso para mim. $\\rightarrow$ Esse (Tempo: pretérito recente passou).\nmês que passou choveu muito. Para  mês que começa, porém, a previsão é de tempo bom. $\\rightarrow$ Nesse / este (Tempo: passado recente vs futuro próximo).\naqui são meus primos. $\\rightarrow$ Estes (Espaço: proximidade do falante / advérbio aqui).\nO que foi combinado aqui não pode sair d sala. $\\rightarrow$ desta (Espaço: sala do falante / advérbio aqui).\n\"Qual é a relação entre dialética e retórica? A  pergunta Aristóteles responde...\" $\\rightarrow$ essa (Texto: anáfora / resgate de pergunta anterior).\né a pergunta que Aristóteles responde desde a primeira frase: qual é a relação...? $\\rightarrow$ Esta (Texto: catáfora / anúncio prévio).\nAo comparar os diversos rios do mundo com o Amazonas, defendia a proeminência d sobre cada um d. $\\rightarrow$ deste / daqueles (Texto: 2 antecedentes $\\rightarrow$ deste retoma Amazonas [mais próximo]; daqueles retoma rios [mais distante]).\nAtentem para : o que se guarda no coração jamais se esquece. $\\rightarrow$ isto (Texto: catáfora antecipatória).\nHomens e mulheres participaram das festividades. , simpáticas e elegantes. , sérios e tímidos. $\\rightarrow$ Estas / Aqueles (Texto: 2 antecedentes $\\rightarrow$ Estas = mulheres [próximo]; Aqueles = Homens [distante]).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G04-001 — Fixação de Demonstrativos no Espaço, Tempo e Texto (15 Casos do Bloco III) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G04-001 — Fixação de Demonstrativos no Espaço, Tempo e Texto (15 Casos do Bloco III).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G04-001 — Fixação de Demonstrativos no Espaço, Tempo e Texto (15 Casos do Bloco III).",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "livro que estás lendo é infantil? $\\rightarrow$ Esse (Espaço: nas mãos do ouvinte / 2ª pessoa).",
+                "Não.  livro que estou lendo é sobre política. $\\rightarrow$ Este (Espaço: nas mãos do falante / 1ª pessoa).",
+                "Guilherme, traga-me  CD que ficou lá no seu quarto. $\\rightarrow$ aquele (Espaço: distante de ambos / advérbio lá).",
+                "Um dia  visitarei o seu pai. $\\rightarrow$ destes (Tempo: futuro do presente visitarei $\\rightarrow$ futuro próximo).",
+                "Guilherme, dê-me  CD que está aí. $\\rightarrow$ esse (Espaço: perto do ouvinte / advérbio aí).",
+                "Luísa,  é o Eduardo? $\\rightarrow$ esse / aquele (Espaço: descontextualizado; se perto de Luísa = esse, se longe de ambos = aquele).",
+                "ano que passou foi muito proveitoso para mim. $\\rightarrow$ Esse (Tempo: pretérito recente passou).",
+                "mês que passou choveu muito. Para  mês que começa, porém, a previsão é de tempo bom. $\\rightarrow$ Nesse / este (Tempo: passado recente vs futuro próximo).",
+                "aqui são meus primos. $\\rightarrow$ Estes (Espaço: proximidade do falante / advérbio aqui).",
+                "O que foi combinado aqui não pode sair d sala. $\\rightarrow$ desta (Espaço: sala do falante / advérbio aqui).",
+                "\"Qual é a relação entre dialética e retórica? A  pergunta Aristóteles responde...\" $\\rightarrow$ essa (Texto: anáfora / resgate de pergunta anterior).",
+                "é a pergunta que Aristóteles responde desde a primeira frase: qual é a relação...? $\\rightarrow$ Esta (Texto: catáfora / anúncio prévio).",
+                "Ao comparar os diversos rios do mundo com o Amazonas, defendia a proeminência d sobre cada um d. $\\rightarrow$ deste / daqueles (Texto: 2 antecedentes $\\rightarrow$ deste retoma Amazonas [mais próximo]; daqueles retoma rios [mais distante]).",
+                "Atentem para : o que se guarda no coração jamais se esquece. $\\rightarrow$ isto (Texto: catáfora antecipatória).",
+                "Homens e mulheres participaram das festividades. , simpáticas e elegantes. , sérios e tímidos. $\\rightarrow$ Estas / Aqueles (Texto: 2 antecedentes $\\rightarrow$ Estas = mulheres [próximo]; Aqueles = Homens [distante])."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-001",
+              "EXP-IP-A03-G04-043"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-002",
+          "title": "Questão 1 (VUNESP - 2019 - Câmara de Piracicaba - SP)",
+          "statement": "Enunciado: Identificar alternativa em que o termo destacado é pronome relativo retomando substantivo (como em \"coisa que não pode cancelar\").\nOpção Correta: \"Ela tem uma sapucaia, que produz um ouriço...\" $\\rightarrow$ Retoma o substantivo sapucaia (= a qual produz). Gabarito: A.\nAnálise dos Distratores: \"vi que\" (Conjunção Integrante: vi isso); \"é que\" (Expressão de Realce); \"escreveu que\" (Conjunção Integrante); \"tivemos que reduzir\" (Preposição Acidental: tivemos de).",
+          "prompt": "Enunciado: Identificar alternativa em que o termo destacado é pronome relativo retomando substantivo (como em \"coisa que não pode cancelar\").",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar alternativa em que o termo destacado é pronome relativo retomando substantivo (como em \"coisa que não pode cancelar\")."
+            },
+            {
+              "order": 2,
+              "action": "Opção Correta",
+              "rationale": "\"Ela tem uma sapucaia, que produz um ouriço...\" $\\rightarrow$ Retoma o substantivo sapucaia (= a qual produz). Gabarito: A."
+            },
+            {
+              "order": 3,
+              "action": "Análise dos Distratores",
+              "rationale": "\"vi que\" (Conjunção Integrante: vi isso); \"é que\" (Expressão de Realce); \"escreveu que\" (Conjunção Integrante); \"tivemos que reduzir\" (Preposição Acidental: tivemos de)."
+            }
+          ],
+          "result": "Análise dos Distratores: \"vi que\" (Conjunção Integrante: vi isso); \"é que\" (Expressão de Realce); \"escreveu que\" (Conjunção Integrante); \"tivemos que reduzir\" (Preposição Acidental: tivemos de).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Identificar alternativa em que o termo destacado é pronome relativo retomando substantivo (como em \"coisa que não pode cancelar\").\nOpção Correta: \"Ela tem uma sapucaia, que produz um ouriço...\" $\\rightarrow$ Retoma o substantivo sapucaia (= a qual produz). Gabarito: A.\nAnálise dos Distratores: \"vi que\" (Conjunção Integrante: vi isso); \"é que\" (Expressão de Realce); \"escreveu que\" (Conjunção Integrante); \"tivemos que reduzir\" (Preposição Acidental: tivemos de).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Questão 1 (VUNESP - 2019 - Câmara de Piracicaba - SP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Questão 1 (VUNESP - 2019 - Câmara de Piracicaba - SP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Questão 1 (VUNESP - 2019 - Câmara de Piracicaba - SP).",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Identificar alternativa em que o termo destacado é pronome relativo retomando substantivo (como em \"coisa que não pode cancelar\").",
+                "Opção Correta: \"Ela tem uma sapucaia, que produz um ouriço...\" $\\rightarrow$ Retoma o substantivo sapucaia (= a qual produz). Gabarito: A.",
+                "Análise dos Distratores: \"vi que\" (Conjunção Integrante: vi isso); \"é que\" (Expressão de Realce); \"escreveu que\" (Conjunção Integrante); \"tivemos que reduzir\" (Preposição Acidental: tivemos de)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-002",
+              "EXP-IP-A03-G04-044"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-003",
+          "title": "Questão 2 (FCC - 2019 - Pref. São José do Rio Preto - SP)",
+          "statement": "Enunciado: Identificar função pronominal relativa.\nOpção Correta: \"Os adolescentes que namoram...\" $\\rightarrow$ Retoma adolescentes (= os quais namoram). Gabarito: A.\nPegadinha Notável: \"...insistiu tanto com Teresa que ela se afastou\" $\\rightarrow$ O que vem após o substantivo Teresa, mas forma par correlativo com tanto (Conjunção Consecutiva).",
+          "prompt": "Enunciado: Identificar função pronominal relativa.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar função pronominal relativa."
+            },
+            {
+              "order": 2,
+              "action": "Opção Correta",
+              "rationale": "\"Os adolescentes que namoram...\" $\\rightarrow$ Retoma adolescentes (= os quais namoram). Gabarito: A."
+            },
+            {
+              "order": 3,
+              "action": "Pegadinha Notável",
+              "rationale": "\"...insistiu tanto com Teresa que ela se afastou\" $\\rightarrow$ O que vem após o substantivo Teresa, mas forma par correlativo com tanto (Conjunção Consecutiva)."
+            }
+          ],
+          "result": "Pegadinha Notável: \"...insistiu tanto com Teresa que ela se afastou\" $\\rightarrow$ O que vem após o substantivo Teresa, mas forma par correlativo com tanto (Conjunção Consecutiva).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Identificar função pronominal relativa.\nOpção Correta: \"Os adolescentes que namoram...\" $\\rightarrow$ Retoma adolescentes (= os quais namoram). Gabarito: A.\nPegadinha Notável: \"...insistiu tanto com Teresa que ela se afastou\" $\\rightarrow$ O que vem após o substantivo Teresa, mas forma par correlativo com tanto (Conjunção Consecutiva).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Questão 2 (FCC - 2019 - Pref. São José do Rio Preto - SP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Questão 2 (FCC - 2019 - Pref. São José do Rio Preto - SP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Questão 2 (FCC - 2019 - Pref. São José do Rio Preto - SP).",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Identificar função pronominal relativa.",
+                "Opção Correta: \"Os adolescentes que namoram...\" $\\rightarrow$ Retoma adolescentes (= os quais namoram). Gabarito: A.",
+                "Pegadinha Notável: \"...insistiu tanto com Teresa que ela se afastou\" $\\rightarrow$ O que vem após o substantivo Teresa, mas forma par correlativo com tanto (Conjunção Consecutiva)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-003",
+              "EXP-IP-A03-G04-045"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-004",
+          "title": "Questão 3 (FCC - 2018 - SEC-BA)",
+          "statement": "Enunciado: Identificar par ordenado de (1º = Conjunção Integrante | 2º = Pronome Relativo).\nOpção Correta: \"[...] é preciso que [1] o que [2] foi dito por um sujeito específico [...] se apague...\" $\\rightarrow$ 1º que: \"é preciso ISSO\" (Conjunção Integrante); 2º que: retoma o pronome demonstrativo o (= aquilo o qual foi dito) (Pronome Relativo). Gabarito: C.",
+          "prompt": "Enunciado: Identificar par ordenado de (1º = Conjunção Integrante | 2º = Pronome Relativo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado",
+              "rationale": "Identificar par ordenado de (1º = Conjunção Integrante | 2º = Pronome Relativo)."
+            },
+            {
+              "order": 2,
+              "action": "Opção Correta",
+              "rationale": "\"[...] é preciso que [1] o que [2] foi dito por um sujeito específico [...] se apague...\" $\\rightarrow$ 1º que: \"é preciso ISSO\" (Conjunção Integrante); 2º que: retoma o pronome demonstrativo o (= aquilo o qual foi dito) (Pronome Relativo). Gabarito: C."
+            }
+          ],
+          "result": "Opção Correta: \"[...] é preciso que [1] o que [2] foi dito por um sujeito específico [...] se apague...\" $\\rightarrow$ 1º que: \"é preciso ISSO\" (Conjunção Integrante); 2º que: retoma o pronome demonstrativo o (= aquilo o qual foi dito) (Pronome Relativo). Gabarito: C.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Identificar par ordenado de (1º = Conjunção Integrante | 2º = Pronome Relativo).\nOpção Correta: \"[...] é preciso que [1] o que [2] foi dito por um sujeito específico [...] se apague...\" $\\rightarrow$ 1º que: \"é preciso ISSO\" (Conjunção Integrante); 2º que: retoma o pronome demonstrativo o (= aquilo o qual foi dito) (Pronome Relativo). Gabarito: C.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Questão 3 (FCC - 2018 - SEC-BA) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Questão 3 (FCC - 2018 - SEC-BA).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Questão 3 (FCC - 2018 - SEC-BA).",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Enunciado: Identificar par ordenado de (1º = Conjunção Integrante | 2º = Pronome Relativo).",
+                "Opção Correta: \"[...] é preciso que [1] o que [2] foi dito por um sujeito específico [...] se apague...\" $\\rightarrow$ 1º que: \"é preciso ISSO\" (Conjunção Integrante); 2º que: retoma o pronome demonstrativo o (= aquilo o qual foi dito) (Pronome Relativo). Gabarito: C."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-004",
+              "EXP-IP-A03-G04-046"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-005",
+          "title": "Questão 4 (FCC - 2018 - FCRIA-AP)",
+          "statement": "Texto: \"...alguns autores de grande qualidade literária que também chegaram...\" / \"...bons cronistas, como o Rubem Braga, que conquistaram o público.\" / \"...o século em que as melhores ideias...\"\nAnálise: O verbo plural chegaram aponta para alguns autores; o verbo plural conquistaram aponta para bons cronistas (e não para Rubem Braga); em que aponta para século. Gabarito: D.",
+          "prompt": "Texto: \"...alguns autores de grande qualidade literária que também chegaram...\" / \"...bons cronistas, como o Rubem Braga, que conquistaram o público.\" / \"...o século em que as melhores ideias...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...alguns autores de grande qualidade literária que também chegaram...\" / \"...bons cronistas, como o Rubem Braga, que conquistaram o público.\" / \"...o século em que as melhores ideias...\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O verbo plural chegaram aponta para alguns autores; o verbo plural conquistaram aponta para bons cronistas (e não para Rubem Braga); em que aponta para século. Gabarito: D."
+            }
+          ],
+          "result": "Análise: O verbo plural chegaram aponta para alguns autores; o verbo plural conquistaram aponta para bons cronistas (e não para Rubem Braga); em que aponta para século. Gabarito: D.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Texto: \"...alguns autores de grande qualidade literária que também chegaram...\" / \"...bons cronistas, como o Rubem Braga, que conquistaram o público.\" / \"...o século em que as melhores ideias...\"\nAnálise: O verbo plural chegaram aponta para alguns autores; o verbo plural conquistaram aponta para bons cronistas (e não para Rubem Braga); em que aponta para século. Gabarito: D.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Questão 4 (FCC - 2018 - FCRIA-AP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Questão 4 (FCC - 2018 - FCRIA-AP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Questão 4 (FCC - 2018 - FCRIA-AP).",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Texto: \"...alguns autores de grande qualidade literária que também chegaram...\" / \"...bons cronistas, como o Rubem Braga, que conquistaram o público.\" / \"...o século em que as melhores ideias...\"",
+                "Análise: O verbo plural chegaram aponta para alguns autores; o verbo plural conquistaram aponta para bons cronistas (e não para Rubem Braga); em que aponta para século. Gabarito: D."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-005",
+              "EXP-IP-A03-G04-047"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-006",
+          "title": "Questão 5 (FCC - 2018 - SABESP)",
+          "statement": "Texto: \"...humanidade que se presume...\" / \"...do discurso daqueles que foram catalogados... e que devolvem e endossam...\" / \"...basta eliminar o vocábulo que o define.\"\nAnálise: 1º que $\\rightarrow$ humanidade; 2º que $\\rightarrow$ daqueles (pelo paralelismo com a conjunção e); pronome oblíquo o $\\rightarrow$ problema. Gabarito: D.",
+          "prompt": "Texto: \"...humanidade que se presume...\" / \"...do discurso daqueles que foram catalogados... e que devolvem e endossam...\" / \"...basta eliminar o vocábulo que o define.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...humanidade que se presume...\" / \"...do discurso daqueles que foram catalogados... e que devolvem e endossam...\" / \"...basta eliminar o vocábulo que o define.\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "1º que $\\rightarrow$ humanidade; 2º que $\\rightarrow$ daqueles (pelo paralelismo com a conjunção e); pronome oblíquo o $\\rightarrow$ problema. Gabarito: D."
+            }
+          ],
+          "result": "Análise: 1º que $\\rightarrow$ humanidade; 2º que $\\rightarrow$ daqueles (pelo paralelismo com a conjunção e); pronome oblíquo o $\\rightarrow$ problema. Gabarito: D.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Texto: \"...humanidade que se presume...\" / \"...do discurso daqueles que foram catalogados... e que devolvem e endossam...\" / \"...basta eliminar o vocábulo que o define.\"\nAnálise: 1º que $\\rightarrow$ humanidade; 2º que $\\rightarrow$ daqueles (pelo paralelismo com a conjunção e); pronome oblíquo o $\\rightarrow$ problema. Gabarito: D.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Questão 5 (FCC - 2018 - SABESP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Questão 5 (FCC - 2018 - SABESP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Questão 5 (FCC - 2018 - SABESP).",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Texto: \"...humanidade que se presume...\" / \"...do discurso daqueles que foram catalogados... e que devolvem e endossam...\" / \"...basta eliminar o vocábulo que o define.\"",
+                "Análise: 1º que $\\rightarrow$ humanidade; 2º que $\\rightarrow$ daqueles (pelo paralelismo com a conjunção e); pronome oblíquo o $\\rightarrow$ problema. Gabarito: D."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-006",
+              "EXP-IP-A03-G04-048"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-007",
+          "title": "Questão 6 (FGV - AL-MA)",
+          "statement": "Texto: \"Abre uma dinâmica de transformação da sociedade que ainda não está visível [...] e cujos desdobramentos vão muito além...\"\nAnálise: O que não está visível é a transformação; os desdobramentos são da transformação. Ambos os pronomes relativos (que e cujos) retomam o antecedente distanciado transformação. Gabarito: A.",
+          "prompt": "Texto: \"Abre uma dinâmica de transformação da sociedade que ainda não está visível [...] e cujos desdobramentos vão muito além...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"Abre uma dinâmica de transformação da sociedade que ainda não está visível [...] e cujos desdobramentos vão muito além...\""
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "O que não está visível é a transformação; os desdobramentos são da transformação. Ambos os pronomes relativos (que e cujos) retomam o antecedente distanciado transformação. Gabarito: A."
+            }
+          ],
+          "result": "Análise: O que não está visível é a transformação; os desdobramentos são da transformação. Ambos os pronomes relativos (que e cujos) retomam o antecedente distanciado transformação. Gabarito: A.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Texto: \"Abre uma dinâmica de transformação da sociedade que ainda não está visível [...] e cujos desdobramentos vão muito além...\"\nAnálise: O que não está visível é a transformação; os desdobramentos são da transformação. Ambos os pronomes relativos (que e cujos) retomam o antecedente distanciado transformação. Gabarito: A.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Questão 6 (FGV - AL-MA) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Questão 6 (FGV - AL-MA).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Questão 6 (FGV - AL-MA).",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Texto: \"Abre uma dinâmica de transformação da sociedade que ainda não está visível [...] e cujos desdobramentos vão muito além...\"",
+                "Análise: O que não está visível é a transformação; os desdobramentos são da transformação. Ambos os pronomes relativos (que e cujos) retomam o antecedente distanciado transformação. Gabarito: A."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-007",
+              "EXP-IP-A03-G04-049"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-008",
+          "title": "Questão 7 (FGV - 2019 - IBGE)",
+          "statement": "Texto: \"...chegamos a uma aldeia onde achamos os gentios [...], porque aqui tem uma maneira de vinho...\"\nAnálise da Inadequação: A alternativa que associou o advérbio aqui a nesta aldeia como relação anafórica é INADEQUADA (Gabarito: B), pois aqui é advérbio deítico espacial e a expressão \"nesta aldeia\" nem sequer constava no texto prévio.",
+          "prompt": "Texto: \"...chegamos a uma aldeia onde achamos os gentios [...], porque aqui tem uma maneira de vinho...\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Texto",
+              "rationale": "\"...chegamos a uma aldeia onde achamos os gentios [...], porque aqui tem uma maneira de vinho...\""
+            },
+            {
+              "order": 2,
+              "action": "Análise da Inadequação",
+              "rationale": "A alternativa que associou o advérbio aqui a nesta aldeia como relação anafórica é INADEQUADA (Gabarito: B), pois aqui é advérbio deítico espacial e a expressão \"nesta aldeia\" nem sequer constava no texto prévio."
+            }
+          ],
+          "result": "Análise da Inadequação: A alternativa que associou o advérbio aqui a nesta aldeia como relação anafórica é INADEQUADA (Gabarito: B), pois aqui é advérbio deítico espacial e a expressão \"nesta aldeia\" nem sequer constava no texto prévio.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Texto: \"...chegamos a uma aldeia onde achamos os gentios [...], porque aqui tem uma maneira de vinho...\"\nAnálise da Inadequação: A alternativa que associou o advérbio aqui a nesta aldeia como relação anafórica é INADEQUADA (Gabarito: B), pois aqui é advérbio deítico espacial e a expressão \"nesta aldeia\" nem sequer constava no texto prévio.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Questão 7 (FGV - 2019 - IBGE) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Questão 7 (FGV - 2019 - IBGE).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Questão 7 (FGV - 2019 - IBGE).",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Texto: \"...chegamos a uma aldeia onde achamos os gentios [...], porque aqui tem uma maneira de vinho...\"",
+                "Análise da Inadequação: A alternativa que associou o advérbio aqui a nesta aldeia como relação anafórica é INADEQUADA (Gabarito: B), pois aqui é advérbio deítico espacial e a expressão \"nesta aldeia\" nem sequer constava no texto prévio."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-008",
+              "EXP-IP-A03-G04-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A03-G04-009",
+          "title": "EX-A03-G04-004 — Análise de Antecedentes em Padrão Cebraspe e Quadrix",
+          "statement": "Questão 8 (CESPE - DPU): \"custos que uma lide judicial impõe\" $\\rightarrow$ que é pronome relativo (= os quais) e retoma custos. Gabarito: CERTO.\nQuestão 9 (CESPE - CGM João Pessoa): \"sua conta que vence naquele dia\" $\\rightarrow$ que retoma conta e relaciona duas orações. Gabarito: CERTO.\nQuestão 10 (CESPE - TJ-DFT): \"...Programa [...] Viver Direito, cuja base é a Agenda...\" $\\rightarrow$ A banca afirmou que o antecedente de cuja era base. \"Base\" é o termo posposto com o qual concorda; o antecedente é Programa. Gabarito: ERRADO.\nQuestão 11 (CESPE - TCE-PA): \"...governos estaduais cujas despesas [...] já alcançaram nível preocupante ou que estouraram o limite de gastos...\" $\\rightarrow$ Quem estourou o limite de gastos foram os governos estaduais, não as despesas. Gabarito: ERRADO.\nQuestão 12 (CESPE - FUB): \"...Programa de Avaliação Seriada (PAS), criado como alternativa ao vestibular, em que candidatos são avaliados...\" $\\rightarrow$ A oração adjetiva descreve a avaliação no Programa (PAS), e não no vestibular (que está em oração intercalada). Gabarito: ERRADO.\nQuestão 13 (CESPE - MPE-CE): \"...objetos sobre os quais informava...\" e \"...mudança da situação sobre a qual se informava...\" $\\rightarrow$ os quais retoma objetos (não portadores físicos); a qual retoma mudança (não situação). Gabarito: ERRADO.\nQuestão 14 (Quadrix - CRN-9): \"...evidencia assimetrias importantes, quando comparado ao trabalho masculino, as quais reservam...\" $\\rightarrow$ Proposta de trocar as quais por o qual alegando que manteria os sentidos originais. A troca altera o referente de assimetrias para trabalho masculino, mudando o sentido (\"Mudança de seta = Mudança de sentido\"). Gabarito: ERRADO.",
+          "prompt": "Questão 8 (CESPE - DPU): \"custos que uma lide judicial impõe\" $\\rightarrow$ que é pronome relativo (= os quais) e retoma custos. Gabarito: CERTO.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Questão 8 (CESPE - DPU)",
+              "rationale": "\"custos que uma lide judicial impõe\" $\\rightarrow$ que é pronome relativo (= os quais) e retoma custos. Gabarito: CERTO."
+            },
+            {
+              "order": 2,
+              "action": "Questão 9 (CESPE - CGM João Pessoa)",
+              "rationale": "\"sua conta que vence naquele dia\" $\\rightarrow$ que retoma conta e relaciona duas orações. Gabarito: CERTO."
+            },
+            {
+              "order": 3,
+              "action": "Questão 10 (CESPE - TJ-DFT)",
+              "rationale": "\"...Programa [...] Viver Direito, cuja base é a Agenda...\" $\\rightarrow$ A banca afirmou que o antecedente de cuja era base. \"Base\" é o termo posposto com o qual concorda; o antecedente é Programa. Gabarito: ERRADO."
+            },
+            {
+              "order": 4,
+              "action": "Questão 11 (CESPE - TCE-PA)",
+              "rationale": "\"...governos estaduais cujas despesas [...] já alcançaram nível preocupante ou que estouraram o limite de gastos...\" $\\rightarrow$ Quem estourou o limite de gastos foram os governos estaduais, não as despesas. Gabarito: ERRADO."
+            },
+            {
+              "order": 5,
+              "action": "Questão 12 (CESPE - FUB)",
+              "rationale": "\"...Programa de Avaliação Seriada (PAS), criado como alternativa ao vestibular, em que candidatos são avaliados...\" $\\rightarrow$ A oração adjetiva descreve a avaliação no Programa (PAS), e não no vestibular (que está em oração intercalada). Gabarito: ERRADO."
+            }
+          ],
+          "result": "Questão 14 (Quadrix - CRN-9): \"...evidencia assimetrias importantes, quando comparado ao trabalho masculino, as quais reservam...\" $\\rightarrow$ Proposta de trocar as quais por o qual alegando que manteria os sentidos originais. A troca altera o referente de assimetrias para trabalho masculino, mudando o sentido (\"Mudança de seta = Mudança de sentido\"). Gabarito: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Questão 8 (CESPE - DPU): \"custos que uma lide judicial impõe\" $\\rightarrow$ que é pronome relativo (= os quais) e retoma custos. Gabarito: CERTO.\nQuestão 9 (CESPE - CGM João Pessoa): \"sua conta que vence naquele dia\" $\\rightarrow$ que retoma conta e relaciona duas orações. Gabarito: CERTO.\nQuestão 10 (CESPE - TJ-DFT): \"...Programa [...] Viver Direito, cuja base é a Agenda...\" $\\rightarrow$ A banca afirmou que o antecedente de cuja era base. \"Base\" é o termo posposto com o qual concorda; o antecedente é Programa. Gabarito: ERRADO.\nQuestão 11 (CESPE - TCE-PA): \"...governos estaduais cujas despesas [...] já alcançaram nível preocupante ou que estouraram o limite de gastos...\" $\\rightarrow$ Quem estourou o limite de gastos foram os governos estaduais, não as despesas. Gabarito: ERRADO.\nQuestão 12 (CESPE - FUB): \"...Programa de Avaliação Seriada (PAS), criado como alternativa ao vestibular, em que candidatos são avaliados...\" $\\rightarrow$ A oração adjetiva descreve a avaliação no Programa (PAS), e não no vestibular (que está em oração intercalada). Gabarito: ERRADO.\nQuestão 13 (CESPE - MPE-CE): \"...objetos sobre os quais informava...\" e \"...mudança da situação sobre a qual se informava...\" $\\rightarrow$ os quais retoma objetos (não portadores físicos); a qual retoma mudança (não situação). Gabarito: ERRADO.\nQuestão 14 (Quadrix - CRN-9): \"...evidencia assimetrias importantes, quando comparado ao trabalho masculino, as quais reservam...\" $\\rightarrow$ Proposta de trocar as quais por o qual alegando que manteria os sentidos originais. A troca altera o referente de assimetrias para trabalho masculino, mudando o sentido (\"Mudança de seta = Mudança de sentido\"). Gabarito: ERRADO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A03-G04-004 — Análise de Antecedentes em Padrão Cebraspe e Quadrix sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A03-G04-004 — Análise de Antecedentes em Padrão Cebraspe e Quadrix.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A03-G04-004 — Análise de Antecedentes em Padrão Cebraspe e Quadrix.",
+          "exampleId": "WORKED_EXAMPLE-IP-A03-G04-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Questão 8 (CESPE - DPU): \"custos que uma lide judicial impõe\" $\\rightarrow$ que é pronome relativo (= os quais) e retoma custos. Gabarito: CERTO.",
+                "Questão 9 (CESPE - CGM João Pessoa): \"sua conta que vence naquele dia\" $\\rightarrow$ que retoma conta e relaciona duas orações. Gabarito: CERTO.",
+                "Questão 10 (CESPE - TJ-DFT): \"...Programa [...] Viver Direito, cuja base é a Agenda...\" $\\rightarrow$ A banca afirmou que o antecedente de cuja era base. \"Base\" é o termo posposto com o qual concorda; o antecedente é Programa. Gabarito: ERRADO.",
+                "Questão 11 (CESPE - TCE-PA): \"...governos estaduais cujas despesas [...] já alcançaram nível preocupante ou que estouraram o limite de gastos...\" $\\rightarrow$ Quem estourou o limite de gastos foram os governos estaduais, não as despesas. Gabarito: ERRADO.",
+                "Questão 12 (CESPE - FUB): \"...Programa de Avaliação Seriada (PAS), criado como alternativa ao vestibular, em que candidatos são avaliados...\" $\\rightarrow$ A oração adjetiva descreve a avaliação no Programa (PAS), e não no vestibular (que está em oração intercalada). Gabarito: ERRADO.",
+                "Questão 13 (CESPE - MPE-CE): \"...objetos sobre os quais informava...\" e \"...mudança da situação sobre a qual se informava...\" $\\rightarrow$ os quais retoma objetos (não portadores físicos); a qual retoma mudança (não situação). Gabarito: ERRADO.",
+                "Questão 14 (Quadrix - CRN-9): \"...evidencia assimetrias importantes, quando comparado ao trabalho masculino, as quais reservam...\" $\\rightarrow$ Proposta de trocar as quais por o qual alegando que manteria os sentidos originais. A troca altera o referente de assimetrias para trabalho masculino, mudando o sentido (\"Mudança de seta = Mudança de sentido\"). Gabarito: ERRADO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A03-G04-009",
+              "EXP-IP-A03-G04-051"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -197,51 +1461,297 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-DEM-01",
-          "title": "ESTE é o Próximo, ESSE é o Passado",
-          "content": "E-S-T-E tem T de Testemunha que vai falar (futuro/catáfora ou último pertinho). E-S-S-E tem SS de Saudade do que já passou (passado/anáfora)!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Distinção entre anáfora e catáfora.",
-          "limitations": "Em pares distributivos, este é o último e aquele é o primeiro.",
-          "text": "Este para o futuro textual (catáfora); Esse para o passado textual (anáfora)."
+          "title": "Mantra de Fixação: Demonstrativos e Relativos",
+          "content": "Mantra da Próclise (Palavras Atrativas): Nariz (Negativas, Advérbios, Relativos, Indefinidos/Interrogativos) puxa o pronome antes do verbo.",
+          "text": "Mantra da Próclise (Palavras Atrativas): Nariz (Negativas, Advérbios, Relativos, Indefinidos/Interrogativos) puxa o pronome antes do verbo."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-DEM-01",
-          "title": "A Inversão no Par 'Este... Aquele'",
-          "trigger": "Questões com dois autores, conceitos ou países citados no texto.",
-          "whyItFails": "O aluno associa 'este' ao primeiro elemento por ter sido o primeiro da frase.",
-          "correctApproach": "ESTE sempre se conecta ao elemento MAIS PRÓXIMO no texto (ou seja, o que foi citado por último). AQUELE se conecta ao elemento MAIS DISTANTE (o que foi citado em primeiro lugar).",
-          "bankTechnique": "Afirmar que 'este' retoma o primeiro termo citado na frase anterior.",
-          "counterRule": "Este retoma o termo mais próximo (último); aquele retoma o mais distante (primeiro)."
+          "entityId": "WARN-A03-G04-001",
+          "title": "Erro de Ponto de Vista em Documentos Oficiais",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro de Ponto de Vista em Documentos Oficiais.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro de Ponto de Vista em Documentos Oficiais.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro de Ponto de Vista em Documentos Oficiais no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro de Ponto de Vista em Documentos Oficiais.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro de Ponto de Vista em Documentos Oficiais.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro de Ponto de Vista em Documentos Oficiais para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro de Ponto de Vista em Documentos Oficiais.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro de Ponto de Vista em Documentos Oficiais.",
+          "trapId": "WARN-A03-G04-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Redigir ofício ou e-mail adotando a perspectiva do destinatário (ex.: escrever \"solicito informações deste processo que tramita no seu tribunal\").",
+                "Forma Correta: O redator é o polo de 1ª pessoa (este documento); o que está com o destinatário é 2ª pessoa (esse processo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A03-G04-001",
+              "EXP-IP-A03-G04-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A03-G04-002",
+          "title": "A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\".",
+          "trapId": "WARN-A03-G04-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Usar \"um dia desses\" para o futuro na norma culta.",
+                "Forma Correta: Para o futuro, empregar exclusivamente \"Um dia destes eu viajo\"; para o passado, \"Um dia desses eu estive lá\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A03-G04-002",
+              "EXP-IP-A03-G04-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A03-G04-003",
+          "title": "Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Ambiguidade de \"Esse\" com 3 Antecedentes e Proibição do Demonstrativo para o Meio.",
+          "trapId": "WARN-A03-G04-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Grave: Achar que em lista tríplice (João, Pedro e Paulo), este retoma Paulo, aquele retoma João e esse retoma Pedro.",
+                "Regra: Esse isolado no singular é terminantemente proibido para o meio. Deve-se usar numerais ordinais (\"o segundo\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A03-G04-003",
+              "EXP-IP-A03-G04-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A03-G04-004",
+          "title": "O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva.",
+          "trapId": "WARN-A03-G04-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Divergência: Em prova objetiva, o Cebraspe aceita este anafórico de termo único. Na redação discursiva/redação, a mesma banca penaliza o uso de este anafórico, exigindo estritamente esse/isso (diante disso, isso posto)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A03-G04-004",
+              "EXP-IP-A03-G04-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A03-G04-005",
+          "title": "A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo)",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo).",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo).",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo).",
+          "trapId": "WARN-A03-G04-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Julgar que toda palavra que após substantivo é pronome relativo.",
+                "Caso Crítico: Em \"...insistiu tanto com Teresa que...\", a palavra que é conjunção adverbial consecutiva ligada a tanto, e não pronome relativo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A03-G04-005",
+              "EXP-IP-A03-G04-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A03-G04-006",
+          "title": "A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha do Antecedente do Pronome \"Cujo/Cuja\".",
+          "trapId": "WARN-A03-G04-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Dizer que em \"cuja base\" o antecedente é base.",
+                "Correção: Base é o termo posposto com o qual concorda. O antecedente é o termo anterior (Programa)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A03-G04-006",
+              "EXP-IP-A03-G04-TRAP-006"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A03-G04-007",
+          "title": "Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados.",
+          "trapId": "WARN-A03-G04-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Eleger o substantivo imediatamente colado ao relativo em orações intercaladas.",
+                "Exemplo: Em \"Programa [...], criado como alternativa ao vestibular, em que candidatos...\", o relativo salta vestibular e retoma o substantivo matriz Programa."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A03-G04-007",
+              "EXP-IP-A03-G04-TRAP-007"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Catáfora",
-          "shortDefinition": "Recurso de coesão textual que antecipa um termo ou ideia que será revelado adiante.",
-          "fullDefinition": "Figura de coesão referencial em que um pronome demonstrativo catafórico (este, esta, isto) projeta o foco discursivo para um sintagma ou oração subsequente no texto.",
-          "domain": "Linguística Textual e Coesão",
-          "commonMisconception": "Confundir catáfora com anáfora."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**A Regra de Ouro dos Demonstrativos: O Algoritmo da Pergunta Tripla**: Definição ou Ideia Central\nAntes de selecionar a forma morfológica correta do pronome demonstrativo (este/isto, esse/isso ou aquele/aquilo), o estudante deve obrigatoriamente identificar a situação de uso da referência: a palavra aponta para o Espaço, para o Tempo ou para o Texto?\nExplicação Consolidada\nO pronome demonstrativo altera sua regra de aplicação gramatical de acordo com o plano referencial em que está inserido. Tentar aplicar critérios físicos de proximidade a frases estruturadas em planos cronológicos ou textuais é a principal causa de erros em concursos. Os três planos referenciais operam da seguinte forma:\nNo Espaço: Regula a posição física dos seres/objetos em relação aos interlocutores da comunicação (1ª, 2ª ou 3ª pessoa).\nNo Tempo: Regula a localização cronológica do fato em relação ao momento da enunciação (presente, futuro próximo, passado recente ou tempo remoto).\nNo Texto: Regula a articulação coesiva endofórica entre termos e proposições dentro do discurso escrito/falado (retomada anafórica, antecipação catafórica ou distribuição entre múltiplos antecedentes).\nExemplos e Contraexemplos\nExemplo no Espaço: \"Você mora neste coração\" (aponta fisicamente para o coração do emissor = Espaço / 1ª pessoa).\nExemplo no Texto: \"Dezembro. Esse mês é o meu preferido\" (o pronome aponta para a palavra escrita \"Dezembro\" já expressa no texto = Texto / Anáfora).\nExemplo no Tempo: \"Este mês é o meu preferido\" (o pronome aponta diretamente para o mês presente em que se enuncia a frase = Tempo / Presente).\nRelações\nFundamenta: (Algoritmo de Escolha do Demonstrativo).\nSubdivide-se em: (Espaço), (Tempo) e (Texto).",
+            "**Funções Discursivas dos Demonstrativos: Dêixis Exofórica vs Coesão Endofórica**: Definição ou Ideia Central\nClassificação funcional que divide o emprego dos pronomes demonstrativos conforme o seu referente esteja situado no mundo extralinguístico (Função Exofórica ou Déitica) ou no interior do próprio texto (Função Endofórica).\nExplicação Consolidada\nFunção Exofórica (ou Déitica): O pronome aponta para o contexto externo à linguagem.\nNo Espaço: Depende da posição física de quem fala (emissor) e de quem ouve (receptor).\nNo Tempo: Depende do momento cronológico em que ocorre o ato de fala.\nFunção Endofórica: O pronome atua estritamente como conectivo textual intraoracional.\nAnáfora: Aponta para trás, resgatando um termo ou oração já enunciado.\nCatáfora: Aponta para a frente, antecipando uma informação que será apresentada a seguir.\nRelações\nContrasta com: (Anáfora vs Deixis de Advérbios Espaciais).",
+            "**Emprego dos Demonstrativos no Espaço e a Perspectiva Oficial**: Definição ou Regra Canônica\nNo espaço tridimensional, a seleção morfológica é determinada pela proximidade física em relação aos três polos do discurso:\nISTO / ESTE(S) / ESTA(S): Próximo do falante/emissor (1ª pessoa). Correlaciona-se com os advérbios aqui e cá.\nISSO / ESSE(S) / ESSA(S): Próximo do ouvinte/destinatário (2ª pessoa). Correlaciona-se com o advérbio aí.\nAQUILO / AQUELE(S) / AQUELA(S): Distante de ambos os interlocutores (3ª pessoa). Correlaciona-se com os advérbios ali e lá.\nAplicação em Redação Oficial e Correspondências Formais\nNa confecção de e-mails, memorandos e ofícios, a referência absoluta de 1ª pessoa é sempre quem redige o documento:\nPara referir-se ao próprio documento ou à unidade em que o redator atua: usar ESTE (\"Encaminho este e-mail para solicitar...\", \"Nesta seção...\").\nPara referir-se a processos ou elementos em posse do órgão destinatário: usar ESSE (\"Solicitamos o envio desse processo que tramita em sua vara...\").\nRelações\nPossui alerta em: (Erro de ponto de vista em documentos).\nMacetes associados: TIP-A03-G04-002 (Advérbios correlatos).",
+            "**Emprego dos Demonstrativos no Tempo e Distinções Idiomáticas**: Definição ou Regra Canônica\nNo plano temporal cronológico, o demonstrativo quantifica a distância do acontecimento em relação ao presente da enunciação:\nESTE(S) / ESTA(S) / ISTO:\nMomento presente: (\"Neste ano estamos focados na aprovação\").\nFuturo próximo: (\"Nestas próximas férias viajarei\").\nLocução obrigatória de futuro: \"Um dia destes visitarei você\" (com \"T\" = futuro vindouro).\nESSE(S) / ESSA(S) / ISSO:\nPassado não distante (recente): (\"Nesse domingo passado fui ao estádio\").\nLocução obrigatória de passado: \"Um dia desses encontrei seu irmão\" (com \"S\" = passado recente).\nAQUELE(S) / AQUELA(S) / AQUILO:\nPassado remoto (distante): (\"Naquelas férias de 2000 éramos felizes\").\nFuturo remoto (distante): (\"Naquelas férias de 2030 estaremos aposentados\").\nExpressão idiomática: \"Ela está naqueles dias\" (sinaliza distanciamento afetivo/temporal).\nRelações\nPossui macete em: TIP-A03-G04-001 (Macete do \"T\" para futuro e \"S\" para passado).\nPossui alerta em: (Pegadinha do \"um dia destes\" vs \"um dia desses\").",
+            "**Emprego no Texto: Anáfora, Catáfora, Múltiplos Referentes e o Cisma Cebraspe**: Regras de Coesão Textual\nUm único referente:\nESSE / ISSO (Anáfora): Resgata ideia/termo já citado. Em conectivos conclusivos de redação: diante disso, isso posto, por causa disso.\nESTE / ISTO (Catáfora): Anuncia ideia/termo que virá transcrito adiante (comumente antes de dois-pontos ou travessão). Ex.: \"A regra é esta: foco total\".\nDois antecedentes explícitos no texto:\nESTE(S) / ESTA(S): Retoma o antecedente mais próximo (citado por último).\nAQUELE(S) / AQUELA(S): Retoma o antecedente mais distante (citado em primeiro lugar).\nTrês ou mais antecedentes explícitos (Proibição do \"Esse\" intermediário):\nPara o primeiro (mais distante): usar Aquele.\nPara o último (mais próximo): usar Este.\nPara os elementos do meio: é estritamente proibido usar esse (gera ambiguidade insolúvel). Deve-se obrigatoriamente empregar numerais ordinais (o segundo, o terceiro).\nExceção do Plural Totalizador: O plural esses/essas pode ser empregado licitamente se o objetivo for resumir todos os elementos da lista em conjunto (\"João, Pedro e Paulo estudaram. Esses foram aprovados\").\nO Cisma Gramatical: Prova Objetiva vs Redação Discursiva:\nEm Provas Objetivas de Gramática: Bancas como o Cebraspe aceitam o emprego de este retomando termo único antecedente, amparadas na vertente de gramáticos modernos.\nEm Provas Discursivas / Redações: A banca examinadora penaliza severamente o candidato que usar este no lugar de esse para retomar um único antecedente. Na redação discursiva formal, o uso de esse/isso é mandatório.\nRelações\nPossui alertas em: (Ambiguidade com 3 termos) e (Cisma Cebraspe).",
+            "**Arquitetura dos Pronomes Relativos: Os 4 Desafios de Concurso**: Definição e Estrutura Didática\nO pronome relativo é a classe gramatical morfológica com maior índice de cobrança em concursos. Seu estudo estruturado organiza-se em 4 blocos operacionais de desafios:\nDesafio 1 (Reconhecimento da Classe): Saber identificar se a palavra (em especial o vocábulo que) é um pronome relativo, diferenciando-a de outras classes homônimas.\nDesafio 2 (Localização do Antecedente): Saber determinar o termo exato de natureza substantiva retomado pelo pronome no período anterior.\nDesafio 3 (Emprego dos Relativos Específicos): Dominar as exigências semântico-sintáticas de cada pronome relativo (que, quem, cujo, onde, o qual, quanto, como).\nDesafio 4 (Regência com Pronome Relativo): Identificar a necessidade de preposição antecedendo o relativo em função da regência exigida pelo verbo ou nome da oração subordinada.",
+            "**Reconhecimento do Pronome Relativo em 2 Passos**: Definição ou Ideia Central\nO pronome relativo projeta anaforicamente um antecedente substantivo para dentro de uma oração subordinada adjetiva. O reconhecimento categórico do relativo dá-se pela aplicação simultânea de dois critérios:\nPasso 1 (Retomada Semântica): O termo retoma diretamente um elemento antecedente de natureza substantiva.\nPasso 2 (Teste da Substituição Equivalente): O termo pode ser substituído por o qual, a qual, os quais ou as quais, mantendo-se a correção gramatical e o sentido original.\nExemplos do Poema de Ferreira Gullar\n\"...há no meu corpo um incêndio que queima sem esperança...\" $\\rightarrow$ que retoma incêndio (= o qual queima).\n\"...a própria terra que piso...\" $\\rightarrow$ que retoma terra (= a qual piso).\n\"...corre em meu sangue um veneno... veneno que tem teu nome.\" $\\rightarrow$ que retoma veneno (= o qual tem teu nome).\nRelações\nFundamenta: (Roteiro de Reconhecimento do Relativo).",
+            "**Diferenciação da Palavra \"QUE\": Relativo vs Conjunção Integrante, Realce, Preposição e Consecutiva**: Distinções Sintáticas Canônicas\nPronome Relativo: Retoma substantivo/pronome antecedente, introduz oração adjetiva e troca-se por \"o qual / a qual\".\nConjunção Integrante: Não retoma nenhum termo anterior; introduz oração subordinada substantiva e a oração inteira troca-se por \"ISSO\" (\"Eu vi que você chegou\" $\\rightarrow$ \"Eu vi ISSO\").\nExpressão Expletiva ou de Realce (é que): Empregada para ênfase estilística; pode ser retirada da oração sem qualquer prejuízo sintático ou semântico (\"Quando é que você vai?\" $\\rightarrow$ \"Quando você vai?\").\nPreposição Acidental: Ocorre em locuções verbais com verbos auxiliares (como ter e haver), equivalendo à preposição \"de\" (\"Tivemos que reduzir custos\" $\\rightarrow$ \"Tivemos de reduzir custos\").\nConjunção Subordinativa Adverbial Consecutiva: Aparece acoplada a vocábulos intensificadores antecedentes (tanto, tão, tal, tamanho), introduzindo uma oração de consequência e não exercendo papel anafórico (\"Insistiu tanto com Teresa que ela se afastou\").\nRelações\nPossui macete em: TIP-A03-G04-003 (Macete \"ISSO\" x \"O QUAL\").\nPossui alerta em: (Armadilha do falso relativo consecutivo).",
+            "**Elementos de Natureza Substantiva: Substantivos, Pronomes Substantivos e Numerais Substantivos**: Definição ou Ideia Central\nO antecedente de um pronome relativo não precisa ser exclusivamente um substantivo comum morfológico. O requisito gramatical é que seja um elemento de natureza substantiva, o que engloba três categorias funcionais:\nSubstantivo: Nome pleno do ser (\"o livro que li\").\nPronome Substantivo: Pronome que substitui o substantivo, ocupando de forma autônoma o núcleo da oração (\"aquilo que comprei\"). Diferencia-se do Pronome Adjetivo, que apenas acompanha um substantivo existente (\"meus amigos\").\nNumeral Substantivo: Numeral que substitui o substantivo, atuando como cabeça do sintagma (\"os dois que chegaram\"). Diferencia-se do Numeral Adjetivo, que quantifica um substantivo contíguo (\"dois alunos chegaram\").\nRelações\nFundamenta: e .",
+            "**O Pronome Demonstrativo \"o/os\" (e Contrações \"do/dos\") como Antecedente do Relativo**: Gradação Estrutural da Referência\nEm estruturas onde o vocábulo que vem precedido imediatamente por o, a, os, as (ou contrações do, da, dos, das, ao, aos):\nO termo o/os não é artigo, mas sim um pronome demonstrativo equivalente a aquilo / aqueles.\nComo esse pronome não acompanha nenhum substantivo, ele atua como pronome substantivo.\nO pronome relativo que tem como antecedente direto exatamente esse pronome demonstrativo o/os.\nÉ ótimo o livro que você comprou. -> \"que\" retoma o SUBSTANTIVO \"livro\"\nÉ ótimo aquilo que você comprou. -> \"que\" retoma o PRONOME SUBSTANTIVO \"aquilo\"\nÉ ótimo o que você comprou. -> \"que\" retoma o PRONOME DEMONSTRATIVO \"o\" (= aquilo)\nGostei do que você comprou. -> \"que\" retoma o PRONOME \"o\" dentro de \"do\" (= daquilo)\nRelações\nPossui macete em: TIP-A03-G04-004 (Teste da troca por aquilo/aqueles).",
+            "**Sintagma Nominal Completo vs Núcleo Substantivo/Numeral e a Jurisprudência FGV**: Definição e Divergência de Delimitação\nQuando o antecedente do relativo é uma expressão nominal composta (sintagma nominal determinado), a doutrina gramatical e as bancas adotam duas posturas:\nSintagma Nominal Amplo: Considera como antecedente toda a expressão (\"panorama nacional\", \"120 milhões de reais\").\nNúcleo Gramatical Substantivo/Numeral: Considera estritamente a palavra que funciona como núcleo sintático do sintagma (\"panorama\", \"milhões\").\nO Caso Paradigmático da Banca FGV\nNa frase \"consumiu boa parte dos 120 milhões de reais que o governo gastou\", o que o governo gastou foram os 120 milhões de reais. A banca FGV, no entanto, não ofereceu a expressão inteira nas alternativas e considerou como gabarito unicamente o vocábulo milhões (numeral substantivo que é núcleo do sintagma nominal).",
+            "**Distanciamento do Antecedente e Paralelismo Sintático Coordenado**: Regras Avançadas de Sintaxe Anafórica\nDistanciamento do Antecedente: O pronome relativo não precisa ficar colado ao substantivo que retoma. Ele pode estar separado por adjuntos adnominais, orações reduzidas ou termos explicativos. O referente real é descoberto pela análise semântica da oração adjetiva subordinada.\nParalelismo Sintático com Conjunção \"E\": Quando dois pronomes relativos vêm coordenados pela conjunção aditiva e (\"...daqueles que foram catalogados... e que devolvem e endossam...\"), ambos os pronomes relativos compartilham rigorosamente o mesmo termo antecedente.",
+            "**O Pronome \"Cujo/Cuja\": A Dupla Polaridade (Concordância Posposta vs Referência Antecedente)**: Mecanismo de Funcionamento do Pronome Cujo/Cuja\nO pronome relativo possessivo opera em duas direções gramaticais distintas:\nConcordância Morfossintática: Flexiona-se em gênero e número com o substantivo posposto (a coisa possuída).\nReferência Anafórica (Antecedente): Retoma e substitui o substantivo antecedente (o possuidor).\n[ Termo ANTECEDENTE (Possuidor) ] [ Termo POSPOSTO (Possuído) ] Ex.: \"Programa\" \"cuja\" \"base\"\nA Pegadinha Topológica do Cebraspe\nAfirmar que o \"antecedente\" de cuja é o substantivo posposto base constitui um erro conceitual e topológico primário. Por definição etimológica e funcional, o antecedente é sempre a palavra que antecede (vem antes) no texto.\nRelações\nPossui alerta em: (Falso antecedente em cujo).",
+            "**Alteração de Referente e o Princípio Semântico: \"Mudança de Seta = Mudança de Sentido\"**: O Princípio da Invariância Semântica\nQuando uma questão propõe a alteração flexional de um pronome relativo (ex.: de as quais para o qual) e tal mudança faz com que o pronome passe a se referir a outro substantivo gramaticalmente viável da oração anterior:\nA nova redação pode até manter a correção gramatical da frase;\nNo entanto, ao mudar o alvo da referência anafórica (mudar a \"seta\"), o sentido original do texto é irremediavelmente alterado.\nItens que afirmam que essa substituição ocorreria \"sem prejuízo para a correção gramatical e para os sentidos originais do texto\" são incorretos."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-DEM-01",
-          "question": "Em 'Santos Dumont e Einstein foram gênios: este na física, aquele na aviação', quem é 'este' e quem é 'aquele'?",
-          "keyPoints": [
-            "'Este' é Einstein (último citado, mais próximo textualmente).",
-            "'Aquele' é Santos Dumont (primeiro citado, mais distante textualmente)."
-          ],
-          "targetConcept": "Retomada Binarizada Este/Aquele",
-          "targetLO": "LO-A03-G04-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Demonstrativos e Relativos?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }
@@ -639,7 +2149,31 @@
         "confidence": 0.99
       },
       "answerSha256": "8a67afd3f5f8339fee043c33e248c07c0791dbf909bf07d9a5779d51ac3b72f7",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Em épocas remotas, as mulheres se sentavam na proa das canoas e os homens, na popa. As\nmulheres caçavam e pescavam. Elas saíam das aldeias e voltavam quando podiam ou queriam.\nOs homens montavam as choças, preparavam a comida, mantinham acesas as fogueiras contra o\nfrio, cuidavam dos filhos e curtiam as peles de abrigo. Assim era a vida entre os índios onas e os\nyaganes, na Terra do Fogo, até que um dia os homens mataram todas as mulheres e puseram as\nmáscaras que as mulheres tinham inventado para aterrorizá-los. Somente as meninas\nrecém-nascidas se salvaram do extermínio. Enquanto elas cresciam, os assassinos lhes diziam e\nrepetiam que servir aos homens era seu destino. Elas acreditaram. Também acreditaram suas\nfilhas e as filhas de suas filhas.\n\nNo texto CG1A2-I, o termo “lhes”, em “os assassinos lhes diziam e repetiam que servir aos\nhomens era seu destino”, refere-se a",
+        "options": [
+          {
+            "label": "A",
+            "text": "“os homens” (quinto período)."
+          },
+          {
+            "label": "B",
+            "text": "“todas as mulheres” (quinto período)."
+          },
+          {
+            "label": "C",
+            "text": "“as meninas recém-nascidas” (sexto período)."
+          },
+          {
+            "label": "D",
+            "text": "“as máscaras” (quinto período).\nComentários:\nQuem ouvia que servir aos homens era seu destino eram as meninas que sobreviveram. Vejamos:\nSomente as meninas recém-nascidas se salvaram do extermínio. Enquanto elas cresciam, os\nassassinos lhes diziam e repetiam que servir aos homens era seu destino.\nos assassinos lhes (a elas, às meninas) diziam e repetiam que servir aos homens era seu destino.\nGabarito letra C."
+          }
+        ],
+        "sourceField": "questionPayload.full_text_original",
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -810,7 +2344,35 @@
         "confidence": 0.99
       },
       "answerSha256": "c3de96a4a490b1cd8cca36aeae8437eabb599a1ff0b8e35192c2a07151b63a5a",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Observa-se que a solidez dos lugares ocupados por cada uma das pessoas, nos moldes da\nfamília nuclear, não se adéqua à realidade social do momento, em que as relações são\ncaracterizadas por sua dinamicidade e pluralidade. De acordo com o médico e psicanalista\nJurandir Freire Costa, “família nem é mais um modo de transmissão do patrimônio material; nem\nde perpetuação de nomes de linhagens; nem da tradição moral ou religiosa; tampouco é a\ninstituição que garante a estabilidade do lugar em que são educadas as crianças”.\nSeria mantida a correção gramatical do texto CG1A1-I se o segmento “em que”, nas linhas 2 e 5,\nfosse substituído, respectivamente, por",
+        "options": [
+          {
+            "label": "A",
+            "text": "onde e onde."
+          },
+          {
+            "label": "B",
+            "text": "onde e que."
+          },
+          {
+            "label": "C",
+            "text": "a qual e o qual."
+          },
+          {
+            "label": "D",
+            "text": "no qual e onde."
+          },
+          {
+            "label": "E",
+            "text": "que e no qual.\nComentários:\nL.2: Observa-se que a solidez dos lugares ocupados por cada uma das pessoas, nos moldes da\nfamília nuclear, não se adéqua à realidade social do momento, em que/no qual (retoma\n“momento”) as relações são caracterizadas por sua dinamicidade e pluralidade.\nL.5: … tampouco é a instituição que garante a estabilidade do lugar em que/onde (retoma lugar\nfísico) são educadas as crianças. Gabarito letra D."
+          }
+        ],
+        "sourceField": "questionPayload.full_text_original",
+        "sourcePayloadPreserved": true
+      }
     }
   ]
 }

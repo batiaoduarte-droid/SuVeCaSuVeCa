@@ -60,16 +60,20 @@ export const MnemonicsSection: React.FC<MnemonicsSectionProps> = ({ blocks = [] 
   }
 
   const handleCopyAll = () => {
-    const text = mnemonics.map((m) => `💡 ${m.title}: ${m.hook}`).join('\n');
+    const nativeMnemonicText = otherBlocks
+      .filter((block) => block.type === 'mnemonic')
+      .map((block) => `💡 ${block.title || 'Mnemônico'}: ${block.content || block.text || ''}`);
+    const text = [...mnemonics.map((m) => `💡 ${m.title}: ${m.hook}`), ...nativeMnemonicText].join('\n');
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+  const mnemonicCount = mnemonics.length + otherBlocks.filter((block) => block.type === 'mnemonic').length;
 
   return (
     <div className="space-y-5 select-text">
       {/* Cabeçalho da Seção */}
-      <div className="rounded-2xl border border-yellow-300 bg-white p-5 sm:p-6 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-yellow-300 bg-white p-3 sm:p-5 shadow-xs space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-yellow-200/70 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-600 text-white shadow-2xs select-none">
@@ -81,7 +85,7 @@ export const MnemonicsSection: React.FC<MnemonicsSectionProps> = ({ blocks = [] 
                   Memorização Inteligente
                 </h3>
                 <span className="rounded-full bg-yellow-100 text-yellow-950 px-2 py-0.5 text-xs font-black select-none border border-yellow-300">
-                  {mnemonics.length} {mnemonics.length === 1 ? 'mnemônico' : 'mnemônicos'}
+                  {mnemonicCount} {mnemonicCount === 1 ? 'mnemônico' : 'mnemônicos'}
                 </span>
               </div>
               <p className="text-xs text-slate-600 font-medium">
@@ -90,7 +94,7 @@ export const MnemonicsSection: React.FC<MnemonicsSectionProps> = ({ blocks = [] 
             </div>
           </div>
 
-          {mnemonics.length > 0 && (
+          {mnemonicCount > 0 && (
             <button
               type="button"
               onClick={handleCopyAll}

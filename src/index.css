@@ -19,6 +19,10 @@
   --danger-soft: #fff1f0;
   --warning: #a16207;
   --warning-soft: #fff8e1;
+  --app-content-max: 100rem;
+  --tool-content-max: 80rem;
+  --page-gutter: clamp(0.5rem, 2vw, 2rem);
+  --surface-padding: clamp(0.75rem, 1.8vw, 1.5rem);
 }
 
 @layer base {
@@ -81,6 +85,42 @@
   background-color: var(--surface-muted);
   border: 1px solid var(--border);
   border-radius: 12px;
+}
+
+/* Shared responsive geometry. The page owns the outer gutter; nested study
+   components spend the remaining width on information instead of margins. */
+.app-content-shell {
+  width: 100%;
+  max-width: var(--app-content-max);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.tool-content-shell {
+  width: 100%;
+  max-width: var(--tool-content-max);
+  margin-inline: auto;
+}
+
+.reading-column {
+  max-width: 76ch;
+}
+
+.structured-content {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --surface-padding: 0.75rem;
+  }
+
+  .page-header,
+  .surface-responsive {
+    padding: var(--surface-padding);
+  }
 }
 
 .page-header {

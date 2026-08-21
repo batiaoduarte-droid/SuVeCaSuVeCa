@@ -29,4 +29,26 @@ describe('QuestionBlock em modo de tentativa', () => {
     expect(screen.getByText(/gabarito oficial:/i)).toBeVisible();
     expect(screen.getByText(/^B$/)).toBeVisible();
   });
+
+  it('não revela gabarito quando a questão não tem alternativas', async () => {
+    const user = userEvent.setup();
+    render(
+      <QuestionBlock
+        title="Questão incompleta"
+        prompt="Assinale a alternativa correta."
+        options={[]}
+        answer="E"
+        solution="Conteúdo protegido até uma tentativa válida."
+        interactionUnavailableReason="Alternativas incompletas."
+        renderMarkdown={(text) => text}
+      />,
+    );
+
+    const unavailable = screen.getByRole('button', { name: /tentativa indisponível/i });
+    expect(unavailable).toBeDisabled();
+    expect(screen.getByText(/alternativas incompletas/i)).toBeVisible();
+    await user.click(unavailable);
+    expect(screen.queryByText(/conteúdo protegido/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/gabarito oficial/i)).not.toBeInTheDocument();
+  });
 });

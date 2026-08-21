@@ -474,7 +474,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
     ? [...questionSetVersions][0]
     : undefined;
   return (
-    <div className="space-y-8 pb-16 max-w-5xl mx-auto">
+    <div className="tool-content-shell space-y-8 pb-16">
       {/* Top Mode Header */}
       <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="space-y-1">

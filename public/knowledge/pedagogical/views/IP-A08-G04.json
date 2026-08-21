@@ -1,22 +1,24 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A08-G04",
     "lessonId": "A08",
-    "title": "Ponto Final, Ponto de Interrogação e Ponto de Exclamação",
+    "title": "Ponto e Vírgula Dois-Pontos e Aspas",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A08-G04",
     "lessonId": "A08",
-    "title": "Ponto Final, Ponto de Interrogação e Ponto de Exclamação",
+    "title": "Ponto e Vírgula Dois-Pontos e Aspas",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Ponto e Vírgula Dois-Pontos e Aspas.",
       "Aplicar regras canônicas e procedimentos decisórios de Ponto e Vírgula Dois-Pontos e Aspas na resolução de questões.",
       "Analisar o papel de Ponto e Vírgula Dois-Pontos e Aspas no eixo Conexão forte e reconhecer armadilhas e variações de bancas."
     ],
-    "conceptCount": 1,
+    "conceptCount": 14,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A08-G04-001",
@@ -30,134 +32,2054 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "Os sinais de pontuação terminal (Ponto Final, Ponto de Interrogação e Ponto de Exclamação) encerram períodos completos e determinam a modalidade ilocucionária da frase: declarativa (afirmativa/negativa), interrogativa direta ou exclamativa (emotiva/expressiva).",
-      "visualBlueprint": "Ponto Final (.): Declaração categórica / Encerramento de período / Abreviaturas | Ponto de Interrogação (?): Pergunta DIRETA (Como você se chama?) [Interrogação indireta usa ponto final: Perguntei como ele se chamava] | Ponto de Exclamação (!): Sentimento, surpresa, ordem enfática, dor, admiração.",
-      "cognitiveAnchor": "Pergunta direta leva '?' no fim; Pergunta indireta termina com ponto final (.).",
-      "strategicSignificance": "Elimina o erro clássico de colocar ponto de interrogação em orações subordinadas interrogativas indiretas.",
-      "coreTension": "Confundir interrogação direta com indireta e colocar '?' em perguntas indiretas (*Quero saber onde você mora?)."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Ponto e Vírgula Dois-Pontos e Aspas",
+      "summary": "Articulação morfossintática e semântica de Ponto e Vírgula Dois-Pontos e Aspas com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A08-04",
-          "name": "Tipos de Frase e Modalidades",
-          "reason": "Diferenciar frases declarativas, interrogativas e exclamativas.",
-          "activationPrompt": "Qual sinal encerra a frase 'Diga-me qual é a sua resposta'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A08-G04",
+          "title": "Mapa de Dependência: Ponto e Vírgula Dois-Pontos e Aspas",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Ponto e Vírgula Dois-Pontos e Aspas",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Modalidades de Frase e Pontuação Terminal",
-          "pedagogicalGoal": "Compreender o papel dos sinais terminais na estruturação do discurso.",
+          "groupId": "GRP-IP-A08-G04-01",
+          "title": "Regra Fundamental e Hipóteses de Emprego do Ponto e Vírgula",
+          "conceptRefs": [
+            "KB-A08-G04-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Sinais Terminais e Modalidades Frasais",
-              "columns": [
-                "Sinal Terminal",
-                "Modalidade Enunciativa",
-                "Entoação / Efeito",
-                "Exemplo Canônico"
-              ],
-              "rows": [
-                [
-                  "Ponto Final (.)",
-                  "Frase Declarativa (Afirmativa ou Negativa)",
-                  "Entoação descendente, término de raciocínio",
-                  "O julgamento terminou às dezenove horas."
-                ],
-                [
-                  "Ponto de Interrogação (?)",
-                  "Frase Interrogativa DIRETA",
-                  "Entoação ascendente de questionamento aberto",
-                  "Qual foi o motivo da decisão tomada pelo tribunal?"
-                ],
-                [
-                  "Ponto Final em Interrogação Indireta",
-                  "Frase Declarativa com valor interrogativo encaixado",
-                  "Entoação plana declarativa subordinada",
-                  "Gostaria de saber qual foi o motivo da decisão."
-                ],
-                [
-                  "Ponto de Exclamação (!)",
-                  "Frase Exclamativa / Imperativa Enfática",
-                  "Carga afetiva, espanto, ordem veemente",
-                  "Que vitória extraordinária conquistamos hoje!"
-                ]
-              ],
-              "text": "A pontuação terminal define o tipo de ato de fala que o emissor realiza perante o interlocutor."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO ponto e vírgula (;) é um sinal de pontuação com valor de pausa intermediária entre a vírgula e o ponto final. Na norma culta e na jurisprudência das bancas de concurso, suas hipóteses legítimas de uso circunscrevem-se a duas funções: separar itens de uma enumeração dispostos em tópicos/alíneas e separar orações coordenadas (sindéticas ou assindéticas).\nExplicação consolidada\nEnumerações Estruturadas: Emprega-se para separar itens em listas, incisos legislativos ou enumerações complexas.\nOrações Coordenadas: Emprega-se para separar orações sintaticamente independentes entre si, especialmente quando as orações já contêm vírgulas internas ou estabelecem contraste acentuado (adversativas, conclusivas).\nEquivalência e Reescritura: O ponto e vírgula pode substituir o ponto final entre orações coordenadas para aproximar períodos com forte liame de sentido, ou substituir a vírgula para conferir maior clareza visual a períodos extensos.\nCritérios de reconhecimento ou aplicação\nIdentificar se a fronteira sintática ocorre entre elementos enumerados em lista ou entre orações independentes (coordenadas).\nSe a oração subsequente iniciar por conjunção coordenativa (ex.: porém, contudo, logo) ou advérbio com valor coordenativo adversativo (ex.: agora = mas), o ponto e vírgula é plenamente admitido.\nExemplos\nEnumeração: Trouxe do mercado: Frutas; Legumes; Pães.\nOração Coordenada: Dedica-se muito à empresa; não é, contudo, reconhecido.\nReescritura com valor adversativo: ...ela é mínima. Agora, dizer... $\\rightarrow$ ...ela é mínima; agora, dizer... (onde Agora equivale a porém).\nRelações\nContrasta com: (Proibição em Orações Subordinadas)."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-02",
+          "title": "Proibição Categórica de Ponto e Vírgula em Orações Subordinadas e Estruturas Reduzidas",
+          "conceptRefs": [
+            "KB-A08-G04-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nÉ terminantemente proibido pela norma gramatical culta e considerado erro gravíssimo em concursos públicos utilizar o ponto e vírgula para separar uma oração subordinada de sua oração principal.\nExplicação consolidada\nO ponto e vírgula assinala uma fronteira sintática relativamente autônoma. Como a oração subordinada exerce função sintática essencial ou circunstancial em relação à principal, a separação por ponto e vírgula quebra indevidamente a subordinação sintática.\nO Mnemônico $6Cs + FTP$: A vedação atinge categoricamente todas as orações subordinadas adverbiais:\n$6Cs$: Causais, Comparativas, Concessivas, Condicionais, Conformativas, Consecutivas;\nF: Finais;\nT: Temporais;\nP: Proporcionais.\nEstruturas Reduzidas e Preposicionadas: O erro é frequentemente camuflado em orações reduzidas de particípio ou gerúndio e construções preposicionadas com valor causal implícito (ex.: Obcecados por..., com a redução no nível...).\nCritérios de reconhecimento ou aplicação\nAplicar a postura do \"farejador de subordinação\": não olhar apenas a palavra antes do sinal, mas analisar a relação lógico-semântica do segmento seguinte.\nSe houver relação de causa e efeito (\"O fato de [A] faz com que [B]\"), condição ou concessão, a troca de vírgula por ponto e vírgula está automaticamente incorreta.\nExemplos e contraexemplos\nIncorreto (Oração Reduzida Causal): Obcecados por conveniência; somos presas fáceis... (Incorreto: o fato de estarmos obcecados é a causa de sermos presas fáceis).\nIncorreto (Construção Circunstancial Causal): O cenário se repete em 2013; com a redução no nível de água... (Incorreto: a redução é a causa da repetição).\nRelações\nDepende de: TIP-A08-G04-001, TIP-A08-G04-002."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-03",
+          "title": "Interação Sintática entre Ponto e Vírgula e Colocação Pronominal",
+          "conceptRefs": [
+            "KB-A08-G04-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA inserção de um ponto e vírgula no lugar de uma conjunção aditiva coordenativa (como \"e\") cria uma pausa forte que atua como início de período oracional, tornando proibida a próclise de pronomes oblíquos átonos imediatamente após a pontuação.\nExplicação consolidada\nNa língua portuguesa culta, não se inicia oração por pronome oblíquo átono (me, te, se, nos, vos, o, a, lhe). Quando a banca propõe trocar a conjunção \"e\" por ponto e vírgula em frases como \"Acolhe-te quando vens e te deixa ir\", a substituição gera a estrutura ...; te deixa ir. Embora a coordenação admitisse o ponto e vírgula, a frase resultante incorre em vício de colocação pronominal (exigindo ênclise: ; deixa-te ir).\nCritérios de reconhecimento ou aplicação\nVerificar se as orações são coordenadas.\nChecar a primeira palavra após o ponto e vírgula proposto: se for pronome oblíquo átono sem fator de atração anterior, o item é gramaticalmente inválido."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-04",
+          "title": "Permutabilidade de Sinais de Pontuação em Estruturas Explicativas (Reescritura)",
+          "conceptRefs": [
+            "KB-A08-G04-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nEm questões de reescritura de frases, estruturas de natureza explicativa, apositiva ou de esclarecimento admitem a substituição mútua entre vírgulas, parênteses, travessões, dois-pontos e ponto e vírgula (este último desde que entre orações coordenadas), preservando a correção gramatical e a coerência textual.\nExplicação consolidada\nMatriz de Permutabilidade Explicativa (#ANOTAAÍ):\nVírgulas $\\longleftrightarrow$ Parênteses $\\longleftrightarrow$ Travessões\nPonto Final / Vírgula $\\longrightarrow$ Dois-Pontos (quando introduz explicação)\nPonto e Vírgula $\\longleftrightarrow$ Travessão / Dois-Pontos (em coordenação explicativa)\nNuances Estilísticas vs. Sentido Gramatical: Embora travessões confiram maior ênfase expressiva e parênteses confiram caráter secundário/isolado, para as bancas de concurso (notadamente Cebraspe) essas variações estilísticas não configuram alteração do sentido gramatical original nem prejuízo à coerência.\nRelações\nExpande: , ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-05",
+          "title": "Funções Discursivo-Textuais dos Dois-Pontos: Citação, Explicação e Enumeração",
+          "conceptRefs": [
+            "KB-A08-G04-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nOs dois-pontos (:) cumprem três grandes funções discursivo-textuais em provas contemporâneas de concurso público:\nIntroduzir citação textual / discurso direto;\nIntroduzir explicação ou esclarecimento;\nIntroduzir enumeração.\nExplicação consolidada\n1. Citação / Discurso Direto: Anuncia a reprodução literal da fala ou escrita de outrem, precedida de verbos de elocução (afirmou, destacou, disse) e acompanhada de aspas ou travessão.\n2. Explicação / Esclarecimento: Introduz segmento que justifica, define, comprova ou parafraseia o termo ou oração antecedente (frequentemente funcionando como aposto explicativo).\n3. Enumeração: Apresenta uma sequência coordenada de itens que desdobram formalmente um conjunto ou hiperônimo citado previamente.\nRelações\nDesdobrado em: , , ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-06",
+          "title": "Os Três Axiomas Semânticos dos Dois-Pontos",
+          "conceptRefs": [
+            "KB-A08-G04-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA análise textual dos dois-pontos em provas de alto nível (FGV, Cesgranrio, Vunesp, FCC, IBFC) fundamenta-se em três axiomas semânticos indispensáveis:\n\\begin{aligned}\n\\text{Axioma 1: } & \\text{EXPLICAÇÃO} \\neq \\text{ENUMERAÇÃO} \\\\\n\\text{Axioma 2: } & \\text{EXPLICAÇÃO} = \\text{ESCLARECIMENTO} \\\\\n\\text{Axioma 3: } & \\text{EXPLICAR} = \\text{JUSTIFICAR} = \\text{DIZER O MESMO} \\neq \\text{IDEIA NOVA}\n\\end{aligned}\nExplicação consolidada\nAxioma 1 (Explicação $\\neq$ Enumeração): Toda enumeração cumpre papel explicativo amplo (pois detalhar itens esclarece o todo), mas nem toda explicação é enumeração. A explicação pura esclarece de forma unívoca o antecedente. A enumeração exige obrigatoriamente o desdobramento formal de um hiperônimo em dois ou mais elementos específicos componentes.\nAxioma 2 (Explicação = Esclarecimento): As bancas utilizam os termos \"explicação\" e \"esclarecimento\" como rigorosos sinônimos. Nenhuma questão válida colocará ambos concorrendo em alternativas opostas.\nAxioma 3 (Explicação $\\neq$ Ideia Nova / Progressividade Textual): A explicação/justificativa pós-dois-pontos mantém-se estritamente circunscrita aos limites semânticos do antecedente. Ela não avança na progressão temática, não acrescenta evento novo independente e não amplia o universo temático; ela apenas reitera, elucida ou justifica o que já foi dito (\"dizer o mesmo\")."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-07",
+          "title": "Requisito Sintático de Oração: Presença Obrigatória de Verbo",
+          "conceptRefs": [
+            "KB-A08-G04-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nPara que uma estrutura antes ou depois dos dois-pontos seja classificada como oração (ex.: \"oração explicativa\", \"oração adversativa\"), é requisito sintático indispensável a presença de um verbo ou locução verbal. Estruturas formadas unicamente por substantivos e adjetivos são frases nominais ou sintagmas nominais/aposto.\nExplicação consolidada\nAo analisar alternativas de concurso que afirmem que os dois-pontos estão \"separando orações coordenadas adversativas\" (como no título Dia das Mães: pouca reivindicação e muito consumismo), deve-se checar a existência de formas verbais. Na ausência de verbos, descarta-se de plano a alternativa, pois inexiste oração."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-08",
+          "title": "Regra Estrutural dos Dois-Pontos: Fechamento no Ponto Final e Proibição de Intercalação Medial",
+          "conceptRefs": [
+            "KB-A08-G04-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nOs dois-pontos possuem uma limitação sintático-estrutural estrita: eles só podem introduzir segmentos que se encerrem no ponto final (.) do período. É expressamente proibido abrir uma explicação ou citação no meio do período com dois-pontos e fechá-la com vírgula (:...,) ou travessão (:... —) para prosseguir a oração principal.\nExplicação consolidada\nPares de Pontuação: Quem faz par com os dois-pontos é exclusivamente o ponto final (:....).\nTratamento de Intercalações Mediais: Se a explicação ou elemento acessório estiver intercalado no meio da oração, deve-se empregar obrigatoriamente sinais duplos simétricos:\nDuas vírgulas: ,...,\nDois travessões: —... —\nParênteses: (... )\nReescritura Terminal (Dois-Pontos $\\longleftrightarrow$ Vírgula): Quando em posição terminal, os dois-pontos podem ser livremente substituídos por vírgula sem alteração semântica."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-09",
+          "title": "Hierarquia das Aspas: Aspas Duplas versus Aspas Simples",
+          "conceptRefs": [
+            "KB-A08-G04-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAs aspas duplas (\" \") são o padrão tipográfico geral da língua portuguesa para citações, destaques, desvios lexicais e sentido figurado. As aspas simples (' ') possuem uso estritamente subordinado: são empregadas unicamente no interior de segmentos já delimitados por aspas duplas, evitando a repetição de aspas duplas em um segundo nível hierárquico.\nExplicação consolidada\nSe um período integral constitui uma citação direta (delimitada externamente por aspas duplas) e, dentro dessa fala citada, houver a necessidade de aspear um neologismo, termo coloquial, destaque ou estrangeirismo, esse termo interno recebe compulsoriamente aspas simples.\nExemplo\nFulano disse: \"Quero ser 'concursado'!\"\n\"...\" $\\rightarrow$ Aspas duplas externas: isolam a citação direta de Fulano.\n'...' $\\rightarrow$ Aspas simples internas: conferem destaque ao termo dentro da citação."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-10",
+          "title": "Casos Gramaticais das Aspas: Citação Direta, Fala Oral, Discurso Direto e Mudança de Interlocutor",
+          "conceptRefs": [
+            "KB-A08-G04-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO primeiro e mais expressivo caso de uso das aspas é delimitar a voz de terceiros introduzida no texto, gerando a seguinte sinonímia técnica de prova:\n\\text{CITAÇÃO DIRETA} = \\text{FALA} = \\text{DISCURSO DIRETO} = \\text{MUDANÇA DE INTERLOCUTOR}\nExplicação consolidada\nTranscrição Literal (Citação Direta): Cópia ipsissima verba de segmento de obra ou texto de outrem, marcada compulsoriamente por aspas. Se o autor reescrever a ideia com suas próprias palavras sem aspas, trata-se de paráfrase/explicação autoral.\nMarcação de Fala Oral / Entrevista: Transcrição das palavras declaradas por um entrevistado/personagem.\nMudança de Interlocutor (Termo FGV/Vunesp): Sinaliza a alternância da voz do autor principal para uma entidade discursiva externa.\nDistinção Crítica de Suporte: Citação de outro texto exige suporte escrito prévio (artigo, livro); Marcar a fala de alguém aplica-se a declarações orais concedidas a repórteres.\nRelações\nContrasta com: (Paráfrase vs. Transcrição)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-11",
+          "title": "Aspas para Desvios Lexicais: Estrangeirismos (Critério VOLP), Neologismos, Arcaísmos e Gírias",
+          "conceptRefs": [
+            "KB-A08-G04-011"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAs aspas são empregadas para assinalar elementos lexicais que não integram a norma culta vernácula contemporânea estabilizada: estrangeirismos, neologismos, arcaísmos e expressões populares/gírias.\nExplicação consolidada\nEstrangeirismos e o Critério do VOLP (ABL):\nSe o termo forasteiro já foi incorporado e oficializado no Vocabulário Ortográfico da Língua Portuguesa como palavra vernácula (ex.: czar = substantivo masculino; internet), o uso das aspas é dispensável.\nSe o termo figurar com a rubrica de língua estrangeira (ex.: delivery = inglês/estrangeira), as aspas são obrigatórias na escrita formal.\nRegra de Ouro para Redação Discursiva: Na dúvida se o vocábulo estrangeiro foi oficializado pelo VOLP, o candidato deve aspeá-lo preventivamente. O uso preventivo de aspas em termos incorporados não gera penalização, mas a omissão de aspas em estrangeirismo não oficializado acarreta perda direta de pontos.\nNeologismos: Criações vocabulares recentes (ex.: czaristas, neologismo derivado por sufixação no português).\nArcaísmos e Gírias: Termos em desuso histórico ou pertencentes ao jargão/coloquialismo que necessitam de sinalização metalinguística em textos formais.\nRelações\nDepende de: TIP-A08-G04-005."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-12",
+          "title": "Aspas para Destaque / Ênfase Semântica (Sinonímia de Prova)",
+          "conceptRefs": [
+            "KB-A08-G04-012"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAs aspas podem ser empregadas com finalidade puramente metalinguística ou enfática, conferindo relevo tipográfico a uma palavra ou expressão em seu sentido denotativo estrito, sem conotação irônica, figurada ou desvio lexical.\nExplicação consolidada\nEm enunciados de concurso, consolida-se a tríade de equivalência operacional:\n\\text{DESTACAR} = \\text{ENFATIZAR} = \\text{RESSALTAR}\nO candidato não deve buscar distinções teóricas entre esses três verbos nas alternativas; a análise deve recair exclusivamente sobre o complemento que descreve o objeto destacado.\nExemplo\nDiga-me \"como\" direi isso a ela. (As aspas isolam o advérbio \"como\" unicamente para dar destaque ao núcleo da indagação).\nTirinha de Calvin: O que é \"nós\"? (Destaque metalinguístico ao vocábulo focalizado).\nRelações\nDepende de: TIP-A08-G04-007."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-13",
+          "title": "Aspas para Sentido Figurado / Conotativo / Relativização Semântica versus Ironia (Método das Setas)",
+          "conceptRefs": [
+            "KB-A08-G04-013"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAs bancas utilizam as aspas para indicar o desvio semântico do vocábulo em relação à sua acepção denotativa estrita. É mandatório distinguir sentido figurado / conotativo (relativização semântica) de ironia.\n\\begin{aligned}\n\\text{Polo Conotativo (Não Literal): } & \\text{Sentido Figurado} = \\text{Sentido Conotativo} = \\text{Relativizar o Significado} = \\text{Diverso do Usual} \\\\\n\\text{Polo Denotativo (Literal): } & \\text{Sentido Real} = \\text{Sentido Denotativo} = \\text{Sentido Literal} = \\text{Sentido do Dicionário}\n\\end{aligned}\nExplicação consolidada\nSentido Diverso do Usual / Relativização Semântica: A palavra é transposta metaforicamente ou ganha significado atenuado/poético fora do dicionário (ex.: juízes que \"traduzem\" a fala dos réus para os autos $\\rightarrow$ transposição de registro sociolinguístico; neto que é \"devolvido\" à avó $\\rightarrow$ metáfora afetiva da infância). Não há ironia.\nIronia: Figura discursiva que consiste em dizer deliberadamente o contrário do que se pensa. Não se confunde com brincadeira ou zoação coloquial.\nO Método das Setas Contextuais: A ironia não pode ser presumida. Para ser validada em prova, o texto deve conter uma pista textual explícita de polaridade contrária. Ao ligar a palavra aspeada ao seu referente por uma seta, se o referente contradisser o sentido literal (ex.: \"brilhante\" $\\longrightarrow$ \"ao dizer aquela asneira\"), comprova-se a ironia. Se apenas houver transposição de sentido sem contradição, trata-se de sentido figurado."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A08-G04-14",
+          "title": "Distinção Semântico-Estilística: Sentido Conotativo (Figurado) versus Registro Coloquial (Popular)",
+          "conceptRefs": [
+            "KB-A08-G04-014"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO uso de aspas para marcar sentido conotativo (figurado) e o uso para marcar linguagem coloquial (popular/informal) são categorias gramaticais absolutamente independentes e mutuamente excludentes nas provas de concurso:\n\\text{SENTIDO FIGURADO (CONOTATIVO)} \\neq \\text{LINGUAGEM COLOQUIAL (POPULAR)}\nExplicação consolidada\nRegistro Coloquial (Popular): Diz respeito à adequação de registro. Sinaliza marca de oralidade, gíria ou termo informal inserido no padrão culto (ex.: \"A 'gente' é feliz\" $\\rightarrow$ \"a gente\" é termo coloquial/popular, mas seu sentido é 100% real/literal, referindo-se às pessoas que falam).\nSentido Conotativo (Figurado): Diz respeito ao significado semântico. Representa transposição metafórica (ex.: \"Você é uma 'flor'\" $\\rightarrow$ \"flor\" pertence à norma padrão culta formal, mas opera em sentido conotativo/metafórico)."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO ponto e vírgula (;) é um sinal de pontuação com valor de pausa intermediária entre a vírgula e o ponto final. Na norma culta e na jurisprudência das bancas de concurso, suas hipóteses legítimas de uso circunscrevem-se a duas funções: separar itens de uma enumeração dispostos em tópicos/alíneas e separar orações coordenadas (sindéticas ou assindéticas).\nExplicação consolidada\nEnumerações Estruturadas: Emprega-se para separar itens em listas, incisos legislativos ou enumerações complexas.\nOrações Coordenadas: Emprega-se para separar orações sintaticamente independentes entre si, especialmente quando as orações já contêm vírgulas internas ou estabelecem contraste acentuado (adversativas, conclusivas).\nEquivalência e Reescritura: O ponto e vírgula pode substituir o ponto final entre orações coordenadas para aproximar períodos com forte liame de sentido, ou substituir a vírgula para conferir maior clareza visual a períodos extensos.\nCritérios de reconhecimento ou aplicação\nIdentificar se a fronteira sintática ocorre entre elementos enumerados em lista ou entre orações independentes (coordenadas).\nSe a oração subsequente iniciar por conjunção coordenativa (ex.: porém, contudo, logo) ou advérbio com valor coordenativo adversativo (ex.: agora = mas), o ponto e vírgula é plenamente admitido.\nExemplos\nEnumeração: Trouxe do mercado: Frutas; Legumes; Pães.\nOração Coordenada: Dedica-se muito à empresa; não é, contudo, reconhecido.\nReescritura com valor adversativo: ...ela é mínima. Agora, dizer... $\\rightarrow$ ...ela é mínima; agora, dizer... (onde Agora equivale a porém).\nRelações\nContrasta com: (Proibição em Orações Subordinadas)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nÉ terminantemente proibido pela norma gramatical culta e considerado erro gravíssimo em concursos públicos utilizar o ponto e vírgula para separar uma oração subordinada de sua oração principal.\nExplicação consolidada\nO ponto e vírgula assinala uma fronteira sintática relativamente autônoma. Como a oração subordinada exerce função sintática essencial ou circunstancial em relação à principal, a separação por ponto e vírgula quebra indevidamente a subordinação sintática.\nO Mnemônico $6Cs + FTP$: A vedação atinge categoricamente todas as orações subordinadas adverbiais:\n$6Cs$: Causais, Comparativas, Concessivas, Condicionais, Conformativas, Consecutivas;\nF: Finais;\nT: Temporais;\nP: Proporcionais.\nEstruturas Reduzidas e Preposicionadas: O erro é frequentemente camuflado em orações reduzidas de particípio ou gerúndio e construções preposicionadas com valor causal implícito (ex.: Obcecados por..., com a redução no nível...).\nCritérios de reconhecimento ou aplicação\nAplicar a postura do \"farejador de subordinação\": não olhar apenas a palavra antes do sinal, mas analisar a relação lógico-semântica do segmento seguinte.\nSe houver relação de causa e efeito (\"O fato de [A] faz com que [B]\"), condição ou concessão, a troca de vírgula por ponto e vírgula está automaticamente incorreta.\nExemplos e contraexemplos\nIncorreto (Oração Reduzida Causal): Obcecados por conveniência; somos presas fáceis... (Incorreto: o fato de estarmos obcecados é a causa de sermos presas fáceis).\nIncorreto (Construção Circunstancial Causal): O cenário se repete em 2013; com a redução no nível de água... (Incorreto: a redução é a causa da repetição).\nRelações\nDepende de: TIP-A08-G04-001, TIP-A08-G04-002."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA inserção de um ponto e vírgula no lugar de uma conjunção aditiva coordenativa (como \"e\") cria uma pausa forte que atua como início de período oracional, tornando proibida a próclise de pronomes oblíquos átonos imediatamente após a pontuação.\nExplicação consolidada\nNa língua portuguesa culta, não se inicia oração por pronome oblíquo átono (me, te, se, nos, vos, o, a, lhe). Quando a banca propõe trocar a conjunção \"e\" por ponto e vírgula em frases como \"Acolhe-te quando vens e te deixa ir\", a substituição gera a estrutura ...; te deixa ir. Embora a coordenação admitisse o ponto e vírgula, a frase resultante incorre em vício de colocação pronominal (exigindo ênclise: ; deixa-te ir).\nCritérios de reconhecimento ou aplicação\nVerificar se as orações são coordenadas.\nChecar a primeira palavra após o ponto e vírgula proposto: se for pronome oblíquo átono sem fator de atração anterior, o item é gramaticalmente inválido."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nEm questões de reescritura de frases, estruturas de natureza explicativa, apositiva ou de esclarecimento admitem a substituição mútua entre vírgulas, parênteses, travessões, dois-pontos e ponto e vírgula (este último desde que entre orações coordenadas), preservando a correção gramatical e a coerência textual.\nExplicação consolidada\nMatriz de Permutabilidade Explicativa (#ANOTAAÍ):\nVírgulas $\\longleftrightarrow$ Parênteses $\\longleftrightarrow$ Travessões\nPonto Final / Vírgula $\\longrightarrow$ Dois-Pontos (quando introduz explicação)\nPonto e Vírgula $\\longleftrightarrow$ Travessão / Dois-Pontos (em coordenação explicativa)\nNuances Estilísticas vs. Sentido Gramatical: Embora travessões confiram maior ênfase expressiva e parênteses confiram caráter secundário/isolado, para as bancas de concurso (notadamente Cebraspe) essas variações estilísticas não configuram alteração do sentido gramatical original nem prejuízo à coerência.\nRelações\nExpande: , ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nOs dois-pontos (:) cumprem três grandes funções discursivo-textuais em provas contemporâneas de concurso público:\nIntroduzir citação textual / discurso direto;\nIntroduzir explicação ou esclarecimento;\nIntroduzir enumeração.\nExplicação consolidada\n1. Citação / Discurso Direto: Anuncia a reprodução literal da fala ou escrita de outrem, precedida de verbos de elocução (afirmou, destacou, disse) e acompanhada de aspas ou travessão.\n2. Explicação / Esclarecimento: Introduz segmento que justifica, define, comprova ou parafraseia o termo ou oração antecedente (frequentemente funcionando como aposto explicativo).\n3. Enumeração: Apresenta uma sequência coordenada de itens que desdobram formalmente um conjunto ou hiperônimo citado previamente.\nRelações\nDesdobrado em: , , ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA análise textual dos dois-pontos em provas de alto nível (FGV, Cesgranrio, Vunesp, FCC, IBFC) fundamenta-se em três axiomas semânticos indispensáveis:\n\\begin{aligned}\n\\text{Axioma 1: } & \\text{EXPLICAÇÃO} \\neq \\text{ENUMERAÇÃO} \\\\\n\\text{Axioma 2: } & \\text{EXPLICAÇÃO} = \\text{ESCLARECIMENTO} \\\\\n\\text{Axioma 3: } & \\text{EXPLICAR} = \\text{JUSTIFICAR} = \\text{DIZER O MESMO} \\neq \\text{IDEIA NOVA}\n\\end{aligned}\nExplicação consolidada\nAxioma 1 (Explicação $\\neq$ Enumeração): Toda enumeração cumpre papel explicativo amplo (pois detalhar itens esclarece o todo), mas nem toda explicação é enumeração. A explicação pura esclarece de forma unívoca o antecedente. A enumeração exige obrigatoriamente o desdobramento formal de um hiperônimo em dois ou mais elementos específicos componentes.\nAxioma 2 (Explicação = Esclarecimento): As bancas utilizam os termos \"explicação\" e \"esclarecimento\" como rigorosos sinônimos. Nenhuma questão válida colocará ambos concorrendo em alternativas opostas.\nAxioma 3 (Explicação $\\neq$ Ideia Nova / Progressividade Textual): A explicação/justificativa pós-dois-pontos mantém-se estritamente circunscrita aos limites semânticos do antecedente. Ela não avança na progressão temática, não acrescenta evento novo independente e não amplia o universo temático; ela apenas reitera, elucida ou justifica o que já foi dito (\"dizer o mesmo\")."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nPara que uma estrutura antes ou depois dos dois-pontos seja classificada como oração (ex.: \"oração explicativa\", \"oração adversativa\"), é requisito sintático indispensável a presença de um verbo ou locução verbal. Estruturas formadas unicamente por substantivos e adjetivos são frases nominais ou sintagmas nominais/aposto.\nExplicação consolidada\nAo analisar alternativas de concurso que afirmem que os dois-pontos estão \"separando orações coordenadas adversativas\" (como no título Dia das Mães: pouca reivindicação e muito consumismo), deve-se checar a existência de formas verbais. Na ausência de verbos, descarta-se de plano a alternativa, pois inexiste oração."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nOs dois-pontos possuem uma limitação sintático-estrutural estrita: eles só podem introduzir segmentos que se encerrem no ponto final (.) do período. É expressamente proibido abrir uma explicação ou citação no meio do período com dois-pontos e fechá-la com vírgula (:...,) ou travessão (:... —) para prosseguir a oração principal.\nExplicação consolidada\nPares de Pontuação: Quem faz par com os dois-pontos é exclusivamente o ponto final (:....).\nTratamento de Intercalações Mediais: Se a explicação ou elemento acessório estiver intercalado no meio da oração, deve-se empregar obrigatoriamente sinais duplos simétricos:\nDuas vírgulas: ,...,\nDois travessões: —... —\nParênteses: (... )\nReescritura Terminal (Dois-Pontos $\\longleftrightarrow$ Vírgula): Quando em posição terminal, os dois-pontos podem ser livremente substituídos por vírgula sem alteração semântica."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAs aspas duplas (\" \") são o padrão tipográfico geral da língua portuguesa para citações, destaques, desvios lexicais e sentido figurado. As aspas simples (' ') possuem uso estritamente subordinado: são empregadas unicamente no interior de segmentos já delimitados por aspas duplas, evitando a repetição de aspas duplas em um segundo nível hierárquico.\nExplicação consolidada\nSe um período integral constitui uma citação direta (delimitada externamente por aspas duplas) e, dentro dessa fala citada, houver a necessidade de aspear um neologismo, termo coloquial, destaque ou estrangeirismo, esse termo interno recebe compulsoriamente aspas simples.\nExemplo\nFulano disse: \"Quero ser 'concursado'!\"\n\"...\" $\\rightarrow$ Aspas duplas externas: isolam a citação direta de Fulano.\n'...' $\\rightarrow$ Aspas simples internas: conferem destaque ao termo dentro da citação."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO primeiro e mais expressivo caso de uso das aspas é delimitar a voz de terceiros introduzida no texto, gerando a seguinte sinonímia técnica de prova:\n\\text{CITAÇÃO DIRETA} = \\text{FALA} = \\text{DISCURSO DIRETO} = \\text{MUDANÇA DE INTERLOCUTOR}\nExplicação consolidada\nTranscrição Literal (Citação Direta): Cópia ipsissima verba de segmento de obra ou texto de outrem, marcada compulsoriamente por aspas. Se o autor reescrever a ideia com suas próprias palavras sem aspas, trata-se de paráfrase/explicação autoral.\nMarcação de Fala Oral / Entrevista: Transcrição das palavras declaradas por um entrevistado/personagem.\nMudança de Interlocutor (Termo FGV/Vunesp): Sinaliza a alternância da voz do autor principal para uma entidade discursiva externa.\nDistinção Crítica de Suporte: Citação de outro texto exige suporte escrito prévio (artigo, livro); Marcar a fala de alguém aplica-se a declarações orais concedidas a repórteres.\nRelações\nContrasta com: (Paráfrase vs. Transcrição)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAs aspas são empregadas para assinalar elementos lexicais que não integram a norma culta vernácula contemporânea estabilizada: estrangeirismos, neologismos, arcaísmos e expressões populares/gírias.\nExplicação consolidada\nEstrangeirismos e o Critério do VOLP (ABL):\nSe o termo forasteiro já foi incorporado e oficializado no Vocabulário Ortográfico da Língua Portuguesa como palavra vernácula (ex.: czar = substantivo masculino; internet), o uso das aspas é dispensável.\nSe o termo figurar com a rubrica de língua estrangeira (ex.: delivery = inglês/estrangeira), as aspas são obrigatórias na escrita formal.\nRegra de Ouro para Redação Discursiva: Na dúvida se o vocábulo estrangeiro foi oficializado pelo VOLP, o candidato deve aspeá-lo preventivamente. O uso preventivo de aspas em termos incorporados não gera penalização, mas a omissão de aspas em estrangeirismo não oficializado acarreta perda direta de pontos.\nNeologismos: Criações vocabulares recentes (ex.: czaristas, neologismo derivado por sufixação no português).\nArcaísmos e Gírias: Termos em desuso histórico ou pertencentes ao jargão/coloquialismo que necessitam de sinalização metalinguística em textos formais.\nRelações\nDepende de: TIP-A08-G04-005."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAs aspas podem ser empregadas com finalidade puramente metalinguística ou enfática, conferindo relevo tipográfico a uma palavra ou expressão em seu sentido denotativo estrito, sem conotação irônica, figurada ou desvio lexical.\nExplicação consolidada\nEm enunciados de concurso, consolida-se a tríade de equivalência operacional:\n\\text{DESTACAR} = \\text{ENFATIZAR} = \\text{RESSALTAR}\nO candidato não deve buscar distinções teóricas entre esses três verbos nas alternativas; a análise deve recair exclusivamente sobre o complemento que descreve o objeto destacado.\nExemplo\nDiga-me \"como\" direi isso a ela. (As aspas isolam o advérbio \"como\" unicamente para dar destaque ao núcleo da indagação).\nTirinha de Calvin: O que é \"nós\"? (Destaque metalinguístico ao vocábulo focalizado).\nRelações\nDepende de: TIP-A08-G04-007."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAs bancas utilizam as aspas para indicar o desvio semântico do vocábulo em relação à sua acepção denotativa estrita. É mandatório distinguir sentido figurado / conotativo (relativização semântica) de ironia.\n\\begin{aligned}\n\\text{Polo Conotativo (Não Literal): } & \\text{Sentido Figurado} = \\text{Sentido Conotativo} = \\text{Relativizar o Significado} = \\text{Diverso do Usual} \\\\\n\\text{Polo Denotativo (Literal): } & \\text{Sentido Real} = \\text{Sentido Denotativo} = \\text{Sentido Literal} = \\text{Sentido do Dicionário}\n\\end{aligned}\nExplicação consolidada\nSentido Diverso do Usual / Relativização Semântica: A palavra é transposta metaforicamente ou ganha significado atenuado/poético fora do dicionário (ex.: juízes que \"traduzem\" a fala dos réus para os autos $\\rightarrow$ transposição de registro sociolinguístico; neto que é \"devolvido\" à avó $\\rightarrow$ metáfora afetiva da infância). Não há ironia.\nIronia: Figura discursiva que consiste em dizer deliberadamente o contrário do que se pensa. Não se confunde com brincadeira ou zoação coloquial.\nO Método das Setas Contextuais: A ironia não pode ser presumida. Para ser validada em prova, o texto deve conter uma pista textual explícita de polaridade contrária. Ao ligar a palavra aspeada ao seu referente por uma seta, se o referente contradisser o sentido literal (ex.: \"brilhante\" $\\longrightarrow$ \"ao dizer aquela asneira\"), comprova-se a ironia. Se apenas houver transposição de sentido sem contradição, trata-se de sentido figurado."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO uso de aspas para marcar sentido conotativo (figurado) e o uso para marcar linguagem coloquial (popular/informal) são categorias gramaticais absolutamente independentes e mutuamente excludentes nas provas de concurso:\n\\text{SENTIDO FIGURADO (CONOTATIVO)} \\neq \\text{LINGUAGEM COLOQUIAL (POPULAR)}\nExplicação consolidada\nRegistro Coloquial (Popular): Diz respeito à adequação de registro. Sinaliza marca de oralidade, gíria ou termo informal inserido no padrão culto (ex.: \"A 'gente' é feliz\" $\\rightarrow$ \"a gente\" é termo coloquial/popular, mas seu sentido é 100% real/literal, referindo-se às pessoas que falam).\nSentido Conotativo (Figurado): Diz respeito ao significado semântico. Representa transposição metafórica (ex.: \"Você é uma 'flor'\" $\\rightarrow$ \"flor\" pertence à norma padrão culta formal, mas opera em sentido conotativo/metafórico)."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-INTERR-01",
-          "title": "Pontuação em Interrogações Indiretas",
-          "statement": "As orações interrogativas indiretas (introduzidas por verbos de questionamento como indagar, perguntar, saber, verificar seguidos de conjunção ou pronome interrogativo) encerram-se OBRIGATORIAMENTE com PONTO FINAL (.), sendo proibido o ponto de interrogação.",
-          "formalCondition": "Interrogação_Indireta -> Pontuação_Final == '.' (Ponto Final).",
-          "scope": "Universal na sintaxe e pontuação padrão.",
-          "normativity": "MANDATORY",
-          "exceptions": [
-            "Quando a oração principal for ela própria uma pergunta direta: 'Você sabe quem fez isso?'."
+          "entityId": "RULE-IP-A08-G04-001",
+          "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "punctuation",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
           ],
-          "examples": [
-            "Perguntei a que horas o trem chegaria (Correto com ponto final).",
-            "*Perguntei a que horas o trem chegaria? (Incorreto)."
-          ]
+          "exceptions": [],
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A08-G04-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A08-G04-001",
+              "table": {
+                "tableId": "TABLE-IP-A08-G04-001",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Sinal / Fenômeno",
+                  "Regra Canônica Consolidada",
+                  "Proibição / Limite Absoluto",
+                  "ID Detalhado"
+                ],
+                "rows": [
+                  [
+                    "Ponto e Vírgula (;)",
+                    "Separa itens de enumeração e orações coordenadas (sindéticas ou assindéticas).",
+                    "Nunca separa orações subordinadas (6Cs + FTP) ou estruturas reduzidas causais.",
+                    "KB-A08-G04-001KB-A08-G04-002"
+                  ],
+                  [
+                    "Ponto e Vírgula + Próclise",
+                    "O ponto e vírgula gera pausa forte inicial de oração coordenada.",
+                    "Proibido iniciar oração pós-ponto e vírgula com pronome oblíquo átono (próclise).",
+                    "KB-A08-G04-003"
+                  ],
+                  [
+                    "Reescritura Explicativa",
+                    "Permutabilidade mútua entre vírgulas, parênteses, travessões, dois-pontos e ponto e vírgula (em coordenadas).",
+                    "Nuances expressivas de ênfase (travessão) ou isolamento (parênteses) não alteram o sentido gramatical.",
+                    "KB-A08-G04-004"
+                  ],
+                  [
+                    "Dois-Pontos (Função)",
+                    "Introduz citação textual/discurso direto, explicação/esclarecimento ou enumeração.",
+                    "Explicação pós-dois-pontosnão introduz ideia nova; enumeração exige $\\ge 2$ elementos.",
+                    "KB-A08-G04-005KB-A08-G04-006"
+                  ],
+                  [
+                    "Dois-Pontos (Estrutura)",
+                    "Exige encerramento obrigatório no ponto final do período (:....).",
+                    "Proibido em intercalações mediais fechadas com vírgula ou travessão (:, ou : —).",
+                    "KB-A08-G04-008"
+                  ],
+                  [
+                    "Aspas Simples (' ')",
+                    "Emprego exclusivo no interior de trechos já delimitados por aspas duplas.",
+                    "Não se empregam aspas duplas dentro de aspas duplas nem aspas simples isoladas.",
+                    "KB-A08-G04-009"
+                  ],
+                  [
+                    "Aspas em Citações",
+                    "Isolam citação direta, transcrição literal, fala oral e mudança de interlocutor.",
+                    "Se a fala for reproduzida em paráfrase autoral (sem aspas), trata-se de explicação do autor.",
+                    "KB-A08-G04-010"
+                  ],
+                  [
+                    "Aspas em Estrangeirismos",
+                    "Obrigatórias em vocábulos estrangeiros não aportuguesados pelo VOLP (ABL).",
+                    "Dispensáveis em estrangeirismos já dicionarizados como substantivos/adjetivos vernáculos.",
+                    "KB-A08-G04-011"
+                  ],
+                  [
+                    "Aspas de Destaque",
+                    "Conferem relevo tipográfico/metalinguístico em sentido literal.",
+                    "Tríade de sinonímia de prova:Destacar = Enfatizar = Ressaltar.",
+                    "KB-A08-G04-012"
+                  ],
+                  [
+                    "Aspas em Sentido Figurado",
+                    "Indicam sentido conotativo, desvio do usual e relativização semântica.",
+                    "Não confundir com ironia. Só é ironia se houver termo contextual contradizendo o sentido literal.",
+                    "KB-A08-G04-013"
+                  ],
+                  [
+                    "Conotativo vs. Coloquial",
+                    "Conotativo = desvio semântico/metáfora; Coloquial = inadequação de registro/informalidade.",
+                    "Categorias mutuamente excludentes em itens de concurso.",
+                    "KB-A08-G04-014"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A08-G04-001",
+              "EXP-IP-A08-G04-053"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-INTERR-01",
-          "title": "Distinção: Pergunta Direta vs Indireta",
-          "triggerCondition": "Escolher entre ponto de interrogação (?) e ponto final (.).",
+          "entityId": "PROC-A08-G04-001",
+          "title": "Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise",
           "steps": [
-            "1. A frase é uma pergunta formulada diretamente na 1ª pessoa ao interlocutor (ex: 'Onde você mora?')? -> USE PONTO DE INTERROGAÇÃO (?).",
-            "2. A pergunta está encaixada como oração subordinada dependente de um verbo matriz (ex: 'Não sei...', 'Quero saber...', 'Perguntei...')? -> USE PONTO FINAL (.).",
-            "3. Teste da Entoação: A frase tem entoação de afirmação subordinada ('Quero saber a verdade.')? Se sim, finalize com ponto final."
+            {
+              "order": 1,
+              "action": "Localizar e isolar o segmento oracional em que opera Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise.",
+              "explanation": "Passo 1 do algoritmo de Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise.",
+              "test": "Identificar o termo regente e os elementos subordinados."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios de diferenciação e regras canônicas de Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise.",
+              "explanation": "Passo 2 do algoritmo de Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise.",
+              "test": "Executar o teste de comutação ou análise categorial."
+            },
+            {
+              "order": 3,
+              "action": "Concluir o julgamento sintático-morfológico definitivo.",
+              "explanation": "Passo 3 do algoritmo de Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise.",
+              "test": "Validar a concordância com o padrão culto."
+            }
           ],
-          "verificationCriteria": "Verificar se o período não é uma pergunta indireta indevidamente grafada com ponto de interrogação.",
-          "typicalFailureModes": [
-            "Colocar ponto de interrogação após 'Quero saber se você virá'."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A08-G04-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "[ Proposta de Ponto e Vírgula ] │ ▼ A oração subsequente é SUBORDINADA adverbial (6Cs + FTP) ou oração reduzida com valor causal/condicional? ├─► SIM ──► [ MARCAR ERRADO / PROIBIDO ] └─► NÃO │ ▼ A estrutura é uma ENUMERAÇÃO ou ORAÇÃO COORDENADA? ├─► NÃO ──► [ MARCAR ERRADO ] └─► SIM │ ▼ [ CHECAGEM DA TRAVA DE COLOCAÇÃO PRONOMINAL ] Ao retirar o conectivo, a oração após ';' inicia-se por pronome oblíquo átono (ex: '; te deixa')? ├─► SIM ──► [ MARCAR ERRADO (Erro de Próclise) ] └─► NÃO ──► [ MARCAR CERTO (Validação Concluída) ]"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A08-G04-001",
+              "EXP-IP-A08-G04-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A08-G04-002",
+          "title": "Teste da Causa e Efeito para Identificação de Subordinação Oculta",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar a estrutura suspeita",
+              "explanation": "Segmentos iniciados por particípio, gerúndio ou preposições (\"Obcecados por...\", \"Com a redução de...\").",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Aplicar a fórmula do nexo causal",
+              "explanation": "Substitua mentalmente a construção pela estrutura:",
+              "test": "Aplicar a fórmula do nexo causal: Substitua mentalmente a construção pela estrutura:"
+            },
+            {
+              "order": 3,
+              "action": "Avaliar o resultado",
+              "explanation": "Se a frase fizer sentido pleno sob essa fórmula, comprova-se a subordinação adverbial causal. Logo, o ponto e vírgula é absolutamente proibido.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da Causa e Efeito para Identificação de Subordinação Oculta."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da Causa e Efeito para Identificação de Subordinação Oculta."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste da Causa e Efeito para Identificação de Subordinação Oculta",
+          "formulas": [
+            "\\text{\"O fato de [Causa] faz com que [Efeito]\"}"
+          ],
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A08-G04-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localizar a estrutura suspeita: Segmentos iniciados por particípio, gerúndio ou preposições (\"Obcecados por...\", \"Com a redução de...\").",
+                "Aplicar a fórmula do nexo causal: Substitua mentalmente a construção pela estrutura:"
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{\"O fato de [Causa] faz com que [Efeito]\"}"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Avaliar o resultado: Se a frase fizer sentido pleno sob essa fórmula, comprova-se a subordinação adverbial causal. Logo, o ponto e vírgula é absolutamente proibido."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A08-G04-002",
+              "EXP-IP-A08-G04-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A08-G04-003",
+          "title": "Algoritmo dos Colchetes e Referente para Dois-Pontos",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Rastrear o Termo Antecedente (Referente)",
+              "explanation": "Localize a palavra ou sintagma que precede os dois-pontos.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Contém verbo de elocução (afirmou, destacou, disse) seguido de aspas? $\\rightarrow$ Citação / Discurso Direto.",
+              "explanation": "Passo 2 do algoritmo de Algoritmo dos Colchetes e Referente para Dois-Pontos.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "É um termo genérico/hiperônimo (muitos itens, vários fatores, três países)? $\\rightarrow$ Siga para o passo 3.",
+              "explanation": "Passo 3 do algoritmo de Algoritmo dos Colchetes e Referente para Dois-Pontos.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "É um conceito que será elucidado? $\\rightarrow$ Siga para o passo 4.",
+              "explanation": "Passo 4 do algoritmo de Algoritmo dos Colchetes e Referente para Dois-Pontos.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Isolar o Segmento Posterior",
+              "explanation": "Coloque entre colchetes [...] todo o bloco textual após os dois-pontos.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Teste de Enumeração",
+              "explanation": "O bloco entre colchetes desdobra o hiperônimo em uma lista coordenada de dois ou mais elementos?",
+              "test": "Teste de Enumeração: O bloco entre colchetes desdobra o hiperônimo em uma lista coordenada de dois ou mais elementos?"
+            },
+            {
+              "order": 7,
+              "action": "SIM",
+              "explanation": "Classificação = Enumeração.",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "NÃO (apenas 1 elemento ou sem hiperônimo)",
+              "explanation": "Classificação = Explicação.",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Teste de Explicação / Esclarecimento",
+              "explanation": "O bloco [...] expressa uma unidade de sentido que justifica o antecedente?",
+              "test": "Teste de Explicação / Esclarecimento: O bloco [...] expressa uma unidade de sentido que justifica o antecedente?"
+            },
+            {
+              "order": 10,
+              "action": "Admite a inserção da conjunção \"pois\" ou \"já que\"?",
+              "explanation": "Passo 10 do algoritmo de Algoritmo dos Colchetes e Referente para Dois-Pontos.",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "SIM",
+              "explanation": "Classificação = Explicação / Esclarecimento.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo dos Colchetes e Referente para Dois-Pontos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo dos Colchetes e Referente para Dois-Pontos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Algoritmo dos Colchetes e Referente para Dois-Pontos",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A08-G04-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Rastrear o Termo Antecedente (Referente): Localize a palavra ou sintagma que precede os dois-pontos."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Contém verbo de elocução (afirmou, destacou, disse) seguido de aspas? $\\rightarrow$ Citação / Discurso Direto.",
+                "É um termo genérico/hiperônimo (muitos itens, vários fatores, três países)? $\\rightarrow$ Siga para o passo 3.",
+                "É um conceito que será elucidado? $\\rightarrow$ Siga para o passo 4."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Isolar o Segmento Posterior: Coloque entre colchetes [...] todo o bloco textual após os dois-pontos.",
+                "Teste de Enumeração: O bloco entre colchetes desdobra o hiperônimo em uma lista coordenada de dois ou mais elementos?"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "SIM: Classificação = Enumeração.",
+                "NÃO (apenas 1 elemento ou sem hiperônimo): Classificação = Explicação."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Teste de Explicação / Esclarecimento: O bloco [...] expressa uma unidade de sentido que justifica o antecedente?"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Admite a inserção da conjunção \"pois\" ou \"já que\"?",
+                "SIM: Classificação = Explicação / Esclarecimento."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A08-G04-003",
+              "EXP-IP-A08-G04-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A08-G04-004",
+          "title": "Validação Sintática de Dois-Pontos: Posição Terminal vs. Intercalada",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar o segmento explicativo",
+              "explanation": "Identifique o início e o fim da explicação introduzida por dois-pontos.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verificar o encerramento do período",
+              "explanation": "Passo 2 do algoritmo de Validação Sintática de Dois-Pontos: Posição Terminal vs. Intercalada.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "O segmento fecha diretamente no ponto final (",
+              "explanation": "....)? $\\rightarrow$ Válido.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "O período continua após a explicação, exigindo fechamento com vírgula ou travessão (",
+              "explanation": "..., ou :... —)? $\\rightarrow$ Terminantemente Inválido.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Substituição Corretiva para Intercalações",
+              "explanation": "Troque a estrutura por pares simétricos: ,..., ou —... — ou (... ).",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Validação Sintática de Dois-Pontos: Posição Terminal vs. Intercalada."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Validação Sintática de Dois-Pontos: Posição Terminal vs. Intercalada."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Validação Sintática de Dois-Pontos: Posição Terminal vs. Intercalada",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A08-G04-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localizar o segmento explicativo: Identifique o início e o fim da explicação introduzida por dois-pontos.",
+                "Verificar o encerramento do período:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O segmento fecha diretamente no ponto final (:....)? $\\rightarrow$ Válido.",
+                "O período continua após a explicação, exigindo fechamento com vírgula ou travessão (:..., ou :... —)? $\\rightarrow$ Terminantemente Inválido."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Substituição Corretiva para Intercalações: Troque a estrutura por pares simétricos: ,..., ou —... — ou (... )."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A08-G04-004",
+              "EXP-IP-A08-G04-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A08-G04-005",
+          "title": "Método das Setas Contextuais para Diferenciação das Aspas",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar e isolar o segmento oracional em que opera Método das Setas Contextuais para Diferenciação das Aspas.",
+              "explanation": "Passo 1 do algoritmo de Método das Setas Contextuais para Diferenciação das Aspas.",
+              "test": "Identificar o termo regente e os elementos subordinados."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios de diferenciação e regras canônicas de Método das Setas Contextuais para Diferenciação das Aspas.",
+              "explanation": "Passo 2 do algoritmo de Método das Setas Contextuais para Diferenciação das Aspas.",
+              "test": "Executar o teste de comutação ou análise categorial."
+            },
+            {
+              "order": 3,
+              "action": "Concluir o julgamento sintático-morfológico definitivo.",
+              "explanation": "Passo 3 do algoritmo de Método das Setas Contextuais para Diferenciação das Aspas.",
+              "test": "Validar a concordância com o padrão culto."
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de Método das Setas Contextuais para Diferenciação das Aspas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de Método das Setas Contextuais para Diferenciação das Aspas."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Método das Setas Contextuais para Diferenciação das Aspas",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A08-G04-005",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "[ Palavra Aspeada Identificada ] │ ▼ O trecho é reprodução da fala/texto de outrem? ├─► SIM ──► [ CITAÇÃO DIRETA / DISCURSO DIRETO ] └─► NÃO │ ▼ É estrangeirismo, neologismo, arcaísmo ou gíria? ├─► SIM ──► [ DESVIO LEXICAL / NEOLOGISMO / ESTRANGEIRISMO ] └─► NÃO │ ▼ [ APLICAR O MÉTODO DAS SETAS NO CONTEXTO ] │ ├─► A seta liga a termo que CONTRADIZ o sentido literal? │ (Ex.: \"brilhante\" ───► \"aquela asneira\") │ └─► [ IRONIA (Diz o oposto do que se pensa) ] │ ├─► A palavra opera por transposição metafórica / relativizada? │ (Ex.: \"traduzem\" ───► registro coloquial dos réus) │ └─► [ SENTIDO FIGURADO / CONOTATIVO / RELATIVIZADO ] │ └─► Inexiste figura ou contradição, apenas realce do vocábulo? (Ex.: Diga-me \"como\" direi isso) └─► [ DESTAQUE / ÊNFASE / RESSALTE ]"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A08-G04-005",
+              "EXP-IP-A08-G04-PROC-005"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A08-G04-006",
+          "title": "Rastreamento de Autoria e Mudança de Interlocutor para Aspas",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o emissor do texto base",
+              "explanation": "Observe a assinatura/crédito ao final do texto.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Identificar o emissor do trecho entre aspas",
+              "explanation": "Verifique verbos declaratórios (afirmou, salientava, descreveu) ou conectivos de inclusão (\"também imaginou\").",
+              "test": "Identificar o emissor do trecho entre aspas: Verifique verbos declaratórios (afirmou, salientava, descreveu) ou conectivos de inclusão (\"também imaginou\")."
+            },
+            {
+              "order": 3,
+              "action": "Confrontar as autorias",
+              "explanation": "Passo 3 do algoritmo de Rastreamento de Autoria e Mudança de Interlocutor para Aspas.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se o emissor do trecho aspeado for entidade distinta do autor do texto base $\\rightarrow$ Trata-se de citação de outro autor / fala de terceiro / mudança de interlocutor.",
+              "explanation": "Passo 4 do algoritmo de Rastreamento de Autoria e Mudança de Interlocutor para Aspas.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Eliminação Vertical",
+              "explanation": "Descarte imediatamente alternativas concorrentes que afirmem \"ressaltar opinião do próprio autor\", \"exprimir ironia\" (sem sarcasmo) ou \"expressão usada fora do contexto habitual\".",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Rastreamento de Autoria e Mudança de Interlocutor para Aspas."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Rastreamento de Autoria e Mudança de Interlocutor para Aspas."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Rastreamento de Autoria e Mudança de Interlocutor para Aspas",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A08-G04-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificar o emissor do texto base: Observe a assinatura/crédito ao final do texto.",
+                "Identificar o emissor do trecho entre aspas: Verifique verbos declaratórios (afirmou, salientava, descreveu) ou conectivos de inclusão (\"também imaginou\").",
+                "Confrontar as autorias:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o emissor do trecho aspeado for entidade distinta do autor do texto base $\\rightarrow$ Trata-se de citação de outro autor / fala de terceiro / mudança de interlocutor."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Eliminação Vertical: Descarte imediatamente alternativas concorrentes que afirmem \"ressaltar opinião do próprio autor\", \"exprimir ironia\" (sem sarcasmo) ou \"expressão usada fora do contexto habitual\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A08-G04-006",
+              "EXP-IP-A08-G04-PROC-006"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-INTERR-01",
-          "conceptA": "Quem é você? (Pergunta Direta)",
-          "conceptB": "Diga-me quem é você. (Pergunta Indireta)",
-          "decisiveDifference": "A pergunta direta usa ponto de interrogação e entoação ascendente; a indireta é uma oração coordenada/subordinada declarativa ou imperativa finalizada por ponto final.",
-          "minimalPair": {
-            "sentenceA": "Quantos anos você tem? (Interrogação Direta com '?')",
-            "sentenceB": "Quero saber quantos anos você tem. (Interrogação Indireta com '.')",
-            "difference": "Interrogação Direta (?) vs Interrogação Indireta (.)."
+          "entityId": "CONTRAST-IP-A08-G04-001",
+          "title": "Tabela 8.1 — Ponto e Vírgula vs. Dois-Pontos vs. Travessão vs. Parênteses",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Começou com 'Quero saber' ou 'Perguntei'? Termine com PONTO FINAL.",
-          "pitfall": "Colocar interrogação no final de pedidos com interrogação indireta."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Tabela 8.1 — Ponto e Vírgula vs. Dois-Pontos vs. Travessão vs. Parênteses",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A08-G04-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A08-G04-002",
+              "table": {
+                "tableId": "TABLE-IP-A08-G04-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Sinal",
+                  "Função Primária",
+                  "Comportamento em Intercalação Medial",
+                  "Comportamento em Final de Período",
+                  "Reescritura Típica"
+                ],
+                "rows": [
+                  [
+                    "Ponto e Vírgula (;)",
+                    "Pausa intermediária entre orações coordenadas e itens de lista.",
+                    "Não se aplica (separa orações completas).",
+                    "Válido se anteceder oração coordenada final.",
+                    "Permuta com ponto final ou vírgula em coordenadas."
+                  ],
+                  [
+                    "Dois-Pontos (:)",
+                    "Anuncia citação, explicação ou enumeração.",
+                    "Proibido (:..., e :... — são inválidos).",
+                    "Obrigatório terminar no ponto final (:....).",
+                    "Permuta com vírgula terminal ou travessão explicativo."
+                  ],
+                  [
+                    "Travessões (—... —)",
+                    "Isola elementos explicativos conferindo ênfase.",
+                    "Válido em pares simétricos no meio do período.",
+                    "Válido como travessão simples final (... — explicação.).",
+                    "Permuta com parênteses, vírgulas ou dois-pontos."
+                  ],
+                  [
+                    "Parênteses ((... ))",
+                    "Isola comentários acessórios conferindo distanciamento.",
+                    "Válido em pares simétricos no meio do período.",
+                    "Válido isolando termo ao final do período.",
+                    "Permuta com travessões ou vírgulas explicativas."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A08-G04-001",
+              "EXP-IP-A08-G04-060"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A08-G04-002",
+          "title": "Tabela 8.2 — Explicação vs. Enumeração vs. Citação vs. Ideia Nova",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Tabela 8.2 — Explicação vs. Enumeração vs. Citação vs. Ideia Nova",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A08-G04-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A08-G04-003",
+              "table": {
+                "tableId": "TABLE-IP-A08-G04-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Categoria Textual",
+                  "Estrutura Semântica",
+                  "Relação com o Antecedente",
+                  "Marca Tipográfica / Teste"
+                ],
+                "rows": [
+                  [
+                    "Explicação / Esclarecimento",
+                    "Unidade de sentido que traduz ou justifica o antecedente.",
+                    "Mantém o mesmo escopo temático (não é ideia nova).",
+                    "Admite inserção da conjunção\"pois\"."
+                  ],
+                  [
+                    "Enumeração",
+                    "Lista coordenada de$\\ge 2$ elementos específicos.",
+                    "Desdobra as partes componentes de um hiperônimo.",
+                    "Exige termos separados por vírgula/conectivo aditivo."
+                  ],
+                  [
+                    "Citação / Discurso Direto",
+                    "Transcrição literal das palavras de terceiro.",
+                    "Introduz voz alheia (mudança de interlocutor).",
+                    "Exige aspas (\"...\") ou travessão + verbo dicendi."
+                  ],
+                  [
+                    "Ideia Nova (Progressão)",
+                    "Proposição inédita que faz a narrativa/argumento avançar.",
+                    "Expande o universo factual do texto.",
+                    "Não ocorre após dois-pontos explicativos."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A08-G04-002",
+              "EXP-IP-A08-G04-061"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A08-G04-003",
+          "title": "Tabela 8.3 — Ironia vs. Sentido Figurado vs. Destaque vs. Coloquialismo",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "semantic",
+          "conceptA": "Tabela 8.3 — Ironia vs. Sentido Figurado vs. Destaque vs. Coloquialismo",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A08-G04-003",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A08-G04-004",
+              "table": {
+                "tableId": "TABLE-IP-A08-G04-004",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Função das Aspas",
+                  "Natureza do Fenômeno",
+                  "Requisito Textual Obrigatório",
+                  "Exemplo Paradigmático"
+                ],
+                "rows": [
+                  [
+                    "Ironia",
+                    "Dizer o oposto do que se pensa.",
+                    "Pista contextual explícita de polaridade contrária.",
+                    "Você foi \"brilhante\" ao dizer aquela asneira."
+                  ],
+                  [
+                    "Sentido Figurado (Conotativo)",
+                    "Transposição metafórica / relativização semântica.",
+                    "Uso do vocábulo fora da acepção estrita do dicionário.",
+                    "Os juízes \"traduzem\" a fala dos réus."
+                  ],
+                  [
+                    "Destaque / Ênfase",
+                    "Relevo tipográfico/metalinguístico literal.",
+                    "Palavra usada em sentido denotativo real.",
+                    "Diga-me \"como\" direi isso a ela."
+                  ],
+                  [
+                    "Linguagem Coloquial (Popular)",
+                    "Inadequação de registro sociolinguístico.",
+                    "Termo informal da oralidade inserido no padrão culto.",
+                    "A \"gente\" é feliz."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A08-G04-003",
+              "EXP-IP-A08-G04-062"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-INTERR-01",
-          "title": "Combinação de Interrogação e Exclamação (?!)",
-          "sentence": "O quê?! Você teve a coragem de aceitar a proposta?!",
-          "analysis": "A combinação dos sinais '?!' ou '!?' é admitida na literatura e estilística expressiva para assinalar simultaneamente indagação atônita e surpresa/indignação extrema.",
-          "pedagogicalTakeaway": "A fusão diacrítica expressa sobreposição de espanto e questionamento em textos expressivos.",
-          "targetLO": "LO-A08-G04-01"
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-001",
+          "title": "EX-A08-G04-001 — Cebraspe / Petrobras (2022) — Questão 77",
+          "statement": "Resolução: A palavra \"Agora\" inicia oração coordenada adversativa (= porém). O ponto e vírgula pode separar orações coordenadas.\nGabarito: CERTO.",
+          "prompt": "Resolução: A palavra \"Agora\" inicia oração coordenada adversativa (= porém). O ponto e vírgula pode separar orações coordenadas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "A palavra \"Agora\" inicia oração coordenada adversativa (= porém). O ponto e vírgula pode separar orações coordenadas."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: A palavra \"Agora\" inicia oração coordenada adversativa (= porém). O ponto e vírgula pode separar orações coordenadas.\nGabarito: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-001 — Cebraspe / Petrobras (2022) — Questão 77 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-001 — Cebraspe / Petrobras (2022) — Questão 77.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-001 — Cebraspe / Petrobras (2022) — Questão 77.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: A palavra \"Agora\" inicia oração coordenada adversativa (= porém). O ponto e vírgula pode separar orações coordenadas.",
+                "Gabarito: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-001",
+              "EXP-IP-A08-G04-063"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-002",
+          "title": "EX-A08-G04-002 — Cebraspe / TCE-AC (2021) — Questão 78",
+          "statement": "Resolução: \"Obcecados por...\" é oração reduzida de particípio com valor causal (O fato de estarmos obcecados é a causa de sermos presas fáceis). O ponto e vírgula é proibido em orações subordinadas.\nGabarito: ERRADO.",
+          "prompt": "Resolução: \"Obcecados por...\" é oração reduzida de particípio com valor causal (O fato de estarmos obcecados é a causa de sermos presas fáceis). O ponto e vírgula é proibido em orações subordinadas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "\"Obcecados por...\" é oração reduzida de particípio com valor causal (O fato de estarmos obcecados é a causa de sermos presas fáceis). O ponto e vírgula é proibido em orações subordinadas."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: \"Obcecados por...\" é oração reduzida de particípio com valor causal (O fato de estarmos obcecados é a causa de sermos presas fáceis). O ponto e vírgula é proibido em orações subordinadas.\nGabarito: ERRADO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-002 — Cebraspe / TCE-AC (2021) — Questão 78 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-002 — Cebraspe / TCE-AC (2021) — Questão 78.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-002 — Cebraspe / TCE-AC (2021) — Questão 78.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: \"Obcecados por...\" é oração reduzida de particípio com valor causal (O fato de estarmos obcecados é a causa de sermos presas fáceis). O ponto e vírgula é proibido em orações subordinadas.",
+                "Gabarito: ERRADO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-002",
+              "EXP-IP-A08-G04-064"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-003",
+          "title": "EX-A08-G04-003 — Cebraspe / DPE-DF (2022) — Questão 79",
+          "statement": "Resolução: A troca gera a estrutura ; te deixa ir. O ponto e vírgula cria pausa forte, proibindo próclise no início da oração coordenada resultante (exigiria ; deixa-te ir).\nGabarito: ERRADO.",
+          "prompt": "Resolução: A troca gera a estrutura ; te deixa ir. O ponto e vírgula cria pausa forte, proibindo próclise no início da oração coordenada resultante (exigiria ; deixa-te ir).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "A troca gera a estrutura ; te deixa ir. O ponto e vírgula cria pausa forte, proibindo próclise no início da oração coordenada resultante (exigiria ; deixa-te ir)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: A troca gera a estrutura ; te deixa ir. O ponto e vírgula cria pausa forte, proibindo próclise no início da oração coordenada resultante (exigiria ; deixa-te ir).\nGabarito: ERRADO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-003 — Cebraspe / DPE-DF (2022) — Questão 79 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-003 — Cebraspe / DPE-DF (2022) — Questão 79.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-003 — Cebraspe / DPE-DF (2022) — Questão 79.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: A troca gera a estrutura ; te deixa ir. O ponto e vírgula cria pausa forte, proibindo próclise no início da oração coordenada resultante (exigiria ; deixa-te ir).",
+                "Gabarito: ERRADO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-003",
+              "EXP-IP-A08-G04-065"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-004",
+          "title": "EX-A08-G04-004 — Cebraspe / PC-DF (2021) — Questão 80",
+          "statement": "Resolução: O período seguinte detalha e elucida o conteúdo do \"problema sério\". O uso de dois-pontos para introduzir explicação é plenamente correto.\nGabarito: CERTO.",
+          "prompt": "Resolução: O período seguinte detalha e elucida o conteúdo do \"problema sério\". O uso de dois-pontos para introduzir explicação é plenamente correto.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "O período seguinte detalha e elucida o conteúdo do \"problema sério\". O uso de dois-pontos para introduzir explicação é plenamente correto."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: O período seguinte detalha e elucida o conteúdo do \"problema sério\". O uso de dois-pontos para introduzir explicação é plenamente correto.\nGabarito: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-004 — Cebraspe / PC-DF (2021) — Questão 80 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-004 — Cebraspe / PC-DF (2021) — Questão 80.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-004 — Cebraspe / PC-DF (2021) — Questão 80.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: O período seguinte detalha e elucida o conteúdo do \"problema sério\". O uso de dois-pontos para introduzir explicação é plenamente correto.",
+                "Gabarito: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-004",
+              "EXP-IP-A08-G04-066"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-005",
+          "title": "EX-A08-G04-005 — Cebraspe / Ministério da Economia (2020) — Questão 81",
+          "statement": "Resolução: \"Vejamos\" funciona como anúncio explicativo do raciocínio subsequente. A substituição por dois-pontos (Vejamos: se um bem...) é canônica.\nGabarito: CERTO.",
+          "prompt": "Resolução: \"Vejamos\" funciona como anúncio explicativo do raciocínio subsequente. A substituição por dois-pontos (Vejamos: se um bem...) é canônica.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "\"Vejamos\" funciona como anúncio explicativo do raciocínio subsequente. A substituição por dois-pontos (Vejamos: se um bem...) é canônica."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: \"Vejamos\" funciona como anúncio explicativo do raciocínio subsequente. A substituição por dois-pontos (Vejamos: se um bem...) é canônica.\nGabarito: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-005 — Cebraspe / Ministério da Economia (2020) — Questão 81 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-005 — Cebraspe / Ministério da Economia (2020) — Questão 81.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-005 — Cebraspe / Ministério da Economia (2020) — Questão 81.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: \"Vejamos\" funciona como anúncio explicativo do raciocínio subsequente. A substituição por dois-pontos (Vejamos: se um bem...) é canônica.",
+                "Gabarito: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-005",
+              "EXP-IP-A08-G04-067"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-006",
+          "title": "EX-A08-G04-006 — Cebraspe / SEFAZ-SE (2022) — Questão 82",
+          "statement": "Resolução: A oração subsequente explica o significado de \"Estado de direito\". Ponto e vírgula, dois-pontos e travessão são permutáveis antes de segmentos explicativos.\nGabarito: CERTO.",
+          "prompt": "Resolução: A oração subsequente explica o significado de \"Estado de direito\". Ponto e vírgula, dois-pontos e travessão são permutáveis antes de segmentos explicativos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "A oração subsequente explica o significado de \"Estado de direito\". Ponto e vírgula, dois-pontos e travessão são permutáveis antes de segmentos explicativos."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: A oração subsequente explica o significado de \"Estado de direito\". Ponto e vírgula, dois-pontos e travessão são permutáveis antes de segmentos explicativos.\nGabarito: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-006 — Cebraspe / SEFAZ-SE (2022) — Questão 82 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-006 — Cebraspe / SEFAZ-SE (2022) — Questão 82.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-006 — Cebraspe / SEFAZ-SE (2022) — Questão 82.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: A oração subsequente explica o significado de \"Estado de direito\". Ponto e vírgula, dois-pontos e travessão são permutáveis antes de segmentos explicativos.",
+                "Gabarito: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-006",
+              "EXP-IP-A08-G04-068"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-007",
+          "title": "EX-A08-G04-007 — Cebraspe / MME (2020) — Questão 83",
+          "statement": "Resolução: \"com a redução...\" atua como estrutura circunstancial adverbial causal. É proibido o uso de ponto e vírgula em subordinação causal.\nGabarito: ERRADO.",
+          "prompt": "Resolução: \"com a redução...\" atua como estrutura circunstancial adverbial causal. É proibido o uso de ponto e vírgula em subordinação causal.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "\"com a redução...\" atua como estrutura circunstancial adverbial causal. É proibido o uso de ponto e vírgula em subordinação causal."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: \"com a redução...\" atua como estrutura circunstancial adverbial causal. É proibido o uso de ponto e vírgula em subordinação causal.\nGabarito: ERRADO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-007 — Cebraspe / MME (2020) — Questão 83 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-007 — Cebraspe / MME (2020) — Questão 83.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-007 — Cebraspe / MME (2020) — Questão 83.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: \"com a redução...\" atua como estrutura circunstancial adverbial causal. É proibido o uso de ponto e vírgula em subordinação causal.",
+                "Gabarito: ERRADO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-007",
+              "EXP-IP-A08-G04-069"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-008",
+          "title": "EX-A08-G04-008 — Cesgranrio / Banco do Brasil (2021) — Questão 04",
+          "statement": "A) A remuneração faz parte do conjunto...; ou seja: todos os ganhos... (Explicação).\nB) ...fazer parte da remuneração: muitos trabalhadores escolhem... (Explicação/Causa).\nC) O gerente informou...: \"O valor mensal vai depender...\" (Citação/Fala).\nD) Muitos itens já fizeram papel de dinheiro: o sal (...), a cachaça (...) e o bacalhau (...). (CORRETA: o hiperônimo \"Muitos itens\" desdobra-se em 3 elementos).\nE) O tabaco também já foi usado...: no século XVIII, o estado... (Explicação).\nGabarito: Letra D.",
+          "prompt": "A) A remuneração faz parte do conjunto...; ou seja: todos os ganhos... (Explicação).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "A) A remuneração faz parte do conjunto...; ou seja",
+              "rationale": "todos os ganhos... (Explicação)."
+            },
+            {
+              "order": 2,
+              "action": "B) ...fazer parte da remuneração",
+              "rationale": "muitos trabalhadores escolhem... (Explicação/Causa)."
+            },
+            {
+              "order": 3,
+              "action": "C) O gerente informou...",
+              "rationale": "\"O valor mensal vai depender...\" (Citação/Fala)."
+            },
+            {
+              "order": 4,
+              "action": "D) Muitos itens já fizeram papel de dinheiro",
+              "rationale": "o sal (...), a cachaça (...) e o bacalhau (...). (CORRETA: o hiperônimo \"Muitos itens\" desdobra-se em 3 elementos)."
+            },
+            {
+              "order": 5,
+              "action": "E) O tabaco também já foi usado...",
+              "rationale": "no século XVIII, o estado... (Explicação)."
+            }
+          ],
+          "result": "Gabarito: Letra D.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'A) A remuneração faz parte do conjunto...; ou seja: todos os ganhos... (Explicação).\nB) ...fazer parte da remuneração: muitos trabalhadores escolhem... (Explicação/Causa).\nC) O gerente informou...: \"O valor mensal vai depender...\" (Citação/Fala).\nD) Muitos itens já fizeram papel de dinheiro: o sal (...), a cachaça (...) e o bacalhau (...). (CORRETA: o hiperônimo \"Muitos itens\" desdobra-se em 3 elementos).\nE) O tabaco também já foi usado...: no século XVIII, o estado... (Explicação).\nGabarito: Letra D.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-008 — Cesgranrio / Banco do Brasil (2021) — Questão 04 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-008 — Cesgranrio / Banco do Brasil (2021) — Questão 04.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-008 — Cesgranrio / Banco do Brasil (2021) — Questão 04.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A) A remuneração faz parte do conjunto...; ou seja: todos os ganhos... (Explicação).",
+                "B) ...fazer parte da remuneração: muitos trabalhadores escolhem... (Explicação/Causa).",
+                "C) O gerente informou...: \"O valor mensal vai depender...\" (Citação/Fala).",
+                "D) Muitos itens já fizeram papel de dinheiro: o sal (...), a cachaça (...) e o bacalhau (...). (CORRETA: o hiperônimo \"Muitos itens\" desdobra-se em 3 elementos).",
+                "E) O tabaco também já foi usado...: no século XVIII, o estado... (Explicação).",
+                "Gabarito: Letra D."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-008",
+              "EXP-IP-A08-G04-070"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-009",
+          "title": "EX-A08-G04-009 — FCC / SANASA Campinas (2019) — Questão 05",
+          "statement": "Resolução: O segmento elucida a motivação do nome \"Geada\", configurando esclarecimento (= explicação).\nGabarito: Letra C.",
+          "prompt": "Resolução: O segmento elucida a motivação do nome \"Geada\", configurando esclarecimento (= explicação).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "O segmento elucida a motivação do nome \"Geada\", configurando esclarecimento (= explicação)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra C."
+            }
+          ],
+          "result": "Gabarito: Letra C.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: O segmento elucida a motivação do nome \"Geada\", configurando esclarecimento (= explicação).\nGabarito: Letra C.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-009 — FCC / SANASA Campinas (2019) — Questão 05 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-009 — FCC / SANASA Campinas (2019) — Questão 05.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-009 — FCC / SANASA Campinas (2019) — Questão 05.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: O segmento elucida a motivação do nome \"Geada\", configurando esclarecimento (= explicação).",
+                "Gabarito: Letra C."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-009",
+              "EXP-IP-A08-G04-071"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-010",
+          "title": "EX-A08-G04-010 — Vunesp / Pref. Guarulhos (2021) — Questão 06",
+          "statement": "Resolução: No penúltimo parágrafo há aspas e verbo dicendi, configurando citação direta/transcrição. No último parágrafo, o autor explica o veredito com suas próprias palavras sem aspas, configurando esclarecimento/paráfrase autoral (e não citação direta ou ideia nova).\nGabarito: Letra A (no penúltimo introduzem citação; no último, um esclarecimento).",
+          "prompt": "Resolução: No penúltimo parágrafo há aspas e verbo dicendi, configurando citação direta/transcrição. No último parágrafo, o autor explica o veredito com suas próprias palavras sem aspas, configurando esclarecimento/paráfrase autoral (e não citação direta ou ideia nova).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "No penúltimo parágrafo há aspas e verbo dicendi, configurando citação direta/transcrição. No último parágrafo, o autor explica o veredito com suas próprias palavras sem aspas, configurando esclarecimento/paráfrase autoral (e não citação direta ou ideia nova)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra A (no penúltimo introduzem citação; no último, um esclarecimento)."
+            }
+          ],
+          "result": "Gabarito: Letra A (no penúltimo introduzem citação; no último, um esclarecimento).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: No penúltimo parágrafo há aspas e verbo dicendi, configurando citação direta/transcrição. No último parágrafo, o autor explica o veredito com suas próprias palavras sem aspas, configurando esclarecimento/paráfrase autoral (e não citação direta ou ideia nova).\nGabarito: Letra A (no penúltimo introduzem citação; no último, um esclarecimento).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-010 — Vunesp / Pref. Guarulhos (2021) — Questão 06 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-010 — Vunesp / Pref. Guarulhos (2021) — Questão 06.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-010 — Vunesp / Pref. Guarulhos (2021) — Questão 06.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-010",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: No penúltimo parágrafo há aspas e verbo dicendi, configurando citação direta/transcrição. No último parágrafo, o autor explica o veredito com suas próprias palavras sem aspas, configurando esclarecimento/paráfrase autoral (e não citação direta ou ideia nova).",
+                "Gabarito: Letra A (no penúltimo introduzem citação; no último, um esclarecimento)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-010",
+              "EXP-IP-A08-G04-072"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-011",
+          "title": "EX-A08-G04-011 — IBFC / MGS (2022) — Questão 07",
+          "statement": "Resolução: Não há verbos (elimina B). A conjunção \"e\" liga substantivos que formam uma explicação global da data, sem hiperônimo desdobrado (elimina D).\nGabarito: Letra C.",
+          "prompt": "Resolução: Não há verbos (elimina B). A conjunção \"e\" liga substantivos que formam uma explicação global da data, sem hiperônimo desdobrado (elimina D).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "Não há verbos (elimina B). A conjunção \"e\" liga substantivos que formam uma explicação global da data, sem hiperônimo desdobrado (elimina D)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra C."
+            }
+          ],
+          "result": "Gabarito: Letra C.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: Não há verbos (elimina B). A conjunção \"e\" liga substantivos que formam uma explicação global da data, sem hiperônimo desdobrado (elimina D).\nGabarito: Letra C.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-011 — IBFC / MGS (2022) — Questão 07 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-011 — IBFC / MGS (2022) — Questão 07.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-011 — IBFC / MGS (2022) — Questão 07.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-011",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Não há verbos (elimina B). A conjunção \"e\" liga substantivos que formam uma explicação global da data, sem hiperônimo desdobrado (elimina D).",
+                "Gabarito: Letra C."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-011",
+              "EXP-IP-A08-G04-073"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-012",
+          "title": "EX-A08-G04-012 — Comparativo Estrutural de Dois-Pontos",
+          "statement": "Estrutura Válida (Terminal): “Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha.” (Termina no ponto final).\nEstrutura Inválida (Intercalada): “Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha, que provocou polêmicas, ontem.” (Proibido fechar com vírgula).\nCorreção da Intercalação: “Os jogos deste ano já produziram uma nova modalidade olímpica, apagamento de tocha, que provocou polêmicas, ontem.” (ou entre travessões/parênteses).",
+          "prompt": "Estrutura Válida (Terminal): “Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha.” (Termina no ponto final).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura Válida (Terminal)",
+              "rationale": "“Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha.” (Termina no ponto final)."
+            },
+            {
+              "order": 2,
+              "action": "Estrutura Inválida (Intercalada)",
+              "rationale": "“Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha, que provocou polêmicas, ontem.” (Proibido fechar com vírgula)."
+            },
+            {
+              "order": 3,
+              "action": "Correção da Intercalação",
+              "rationale": "“Os jogos deste ano já produziram uma nova modalidade olímpica, apagamento de tocha, que provocou polêmicas, ontem.” (ou entre travessões/parênteses)."
+            }
+          ],
+          "result": "Correção da Intercalação: “Os jogos deste ano já produziram uma nova modalidade olímpica, apagamento de tocha, que provocou polêmicas, ontem.” (ou entre travessões/parênteses).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura Válida (Terminal): “Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha.” (Termina no ponto final).\nEstrutura Inválida (Intercalada): “Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha, que provocou polêmicas, ontem.” (Proibido fechar com vírgula).\nCorreção da Intercalação: “Os jogos deste ano já produziram uma nova modalidade olímpica, apagamento de tocha, que provocou polêmicas, ontem.” (ou entre travessões/parênteses).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-012 — Comparativo Estrutural de Dois-Pontos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-012 — Comparativo Estrutural de Dois-Pontos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-012 — Comparativo Estrutural de Dois-Pontos.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-012",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura Válida (Terminal): “Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha.” (Termina no ponto final).",
+                "Estrutura Inválida (Intercalada): “Os jogos deste ano já produziram uma nova modalidade olímpica: apagamento de tocha, que provocou polêmicas, ontem.” (Proibido fechar com vírgula).",
+                "Correção da Intercalação: “Os jogos deste ano já produziram uma nova modalidade olímpica, apagamento de tocha, que provocou polêmicas, ontem.” (ou entre travessões/parênteses)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-012",
+              "EXP-IP-A08-G04-074"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-013",
+          "title": "EX-A08-G04-013 — Aspas em Estrangeirismos e Neologismos",
+          "statement": "\"czar\": Vocábulo de origem russa (estrangeirismo).\n\"czaristas\": Criação morfológica vernácula por derivação sufixal sobre radical estrangeiro (neologismo).",
+          "prompt": "\"czar\": Vocábulo de origem russa (estrangeirismo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "\"czar\"",
+              "rationale": "Vocábulo de origem russa (estrangeirismo)."
+            },
+            {
+              "order": 2,
+              "action": "\"czaristas\"",
+              "rationale": "Criação morfológica vernácula por derivação sufixal sobre radical estrangeiro (neologismo)."
+            }
+          ],
+          "result": "\"czaristas\": Criação morfológica vernácula por derivação sufixal sobre radical estrangeiro (neologismo).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado '\"czar\": Vocábulo de origem russa (estrangeirismo).\n\"czaristas\": Criação morfológica vernácula por derivação sufixal sobre radical estrangeiro (neologismo).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-013 — Aspas em Estrangeirismos e Neologismos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-013 — Aspas em Estrangeirismos e Neologismos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-013 — Aspas em Estrangeirismos e Neologismos.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-013",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"czar\": Vocábulo de origem russa (estrangeirismo).",
+                "\"czaristas\": Criação morfológica vernácula por derivação sufixal sobre radical estrangeiro (neologismo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-013",
+              "EXP-IP-A08-G04-075"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-014",
+          "title": "EX-A08-G04-014 — IBFC / MGS (2021) — Questão 08",
+          "statement": "Resolução: O texto é de um articulista e a frase aspeada pertence ao governo Médici. As aspas delimitam a citação de outro autor (mudança de interlocutor).\nGabarito: Letra D (Delimita uma citação de outro autor).",
+          "prompt": "Resolução: O texto é de um articulista e a frase aspeada pertence ao governo Médici. As aspas delimitam a citação de outro autor (mudança de interlocutor).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "O texto é de um articulista e a frase aspeada pertence ao governo Médici. As aspas delimitam a citação de outro autor (mudança de interlocutor)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra D (Delimita uma citação de outro autor)."
+            }
+          ],
+          "result": "Gabarito: Letra D (Delimita uma citação de outro autor).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: O texto é de um articulista e a frase aspeada pertence ao governo Médici. As aspas delimitam a citação de outro autor (mudança de interlocutor).\nGabarito: Letra D (Delimita uma citação de outro autor).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-014 — IBFC / MGS (2021) — Questão 08 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-014 — IBFC / MGS (2021) — Questão 08.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-014 — IBFC / MGS (2021) — Questão 08.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-014",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: O texto é de um articulista e a frase aspeada pertence ao governo Médici. As aspas delimitam a citação de outro autor (mudança de interlocutor).",
+                "Gabarito: Letra D (Delimita uma citação de outro autor)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-014",
+              "EXP-IP-A08-G04-076"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-015",
+          "title": "EX-A08-G04-015 — Vunesp / Pref. Taubaté (2022) — Questão 09",
+          "statement": "Resolução: Trata-se do depoimento oral de um gari concedido em entrevista a uma reportagem. Não é citação de obra escrita, mas sim a marcação da fala de alguém (discurso direto).\nGabarito: Letra B (Marcar a fala de alguém).",
+          "prompt": "Resolução: Trata-se do depoimento oral de um gari concedido em entrevista a uma reportagem. Não é citação de obra escrita, mas sim a marcação da fala de alguém (discurso direto).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "Trata-se do depoimento oral de um gari concedido em entrevista a uma reportagem. Não é citação de obra escrita, mas sim a marcação da fala de alguém (discurso direto)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra B (Marcar a fala de alguém)."
+            }
+          ],
+          "result": "Gabarito: Letra B (Marcar a fala de alguém).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: Trata-se do depoimento oral de um gari concedido em entrevista a uma reportagem. Não é citação de obra escrita, mas sim a marcação da fala de alguém (discurso direto).\nGabarito: Letra B (Marcar a fala de alguém).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-015 — Vunesp / Pref. Taubaté (2022) — Questão 09 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-015 — Vunesp / Pref. Taubaté (2022) — Questão 09.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-015 — Vunesp / Pref. Taubaté (2022) — Questão 09.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-015",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Trata-se do depoimento oral de um gari concedido em entrevista a uma reportagem. Não é citação de obra escrita, mas sim a marcação da fala de alguém (discurso direto).",
+                "Gabarito: Letra B (Marcar a fala de alguém)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-015",
+              "EXP-IP-A08-G04-077"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-016",
+          "title": "EX-A08-G04-016 — Vunesp / PC-SP (2022) — Questão 10",
+          "statement": "Resolução: No 1º quadrinho, as aspas indicam citação de frase lida de livro; no 2º quadrinho, as aspas conferem destaque metalinguístico à palavra \"nós\".\nGabarito: Letra C.",
+          "prompt": "Resolução: No 1º quadrinho, as aspas indicam citação de frase lida de livro; no 2º quadrinho, as aspas conferem destaque metalinguístico à palavra \"nós\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "No 1º quadrinho, as aspas indicam citação de frase lida de livro; no 2º quadrinho, as aspas conferem destaque metalinguístico à palavra \"nós\"."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra C."
+            }
+          ],
+          "result": "Gabarito: Letra C.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: No 1º quadrinho, as aspas indicam citação de frase lida de livro; no 2º quadrinho, as aspas conferem destaque metalinguístico à palavra \"nós\".\nGabarito: Letra C.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-016 — Vunesp / PC-SP (2022) — Questão 10 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-016 — Vunesp / PC-SP (2022) — Questão 10.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-016 — Vunesp / PC-SP (2022) — Questão 10.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-016",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: No 1º quadrinho, as aspas indicam citação de frase lida de livro; no 2º quadrinho, as aspas conferem destaque metalinguístico à palavra \"nós\".",
+                "Gabarito: Letra C."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-016",
+              "EXP-IP-A08-G04-078"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-017",
+          "title": "EX-A08-G04-017 — FCC / SABESP — Questão 11",
+          "statement": "Resolução: O advérbio \"também\" mantém a conexão com as criações de Júlio Verne descritas antes. As aspas em \"fonotelefoto\" sinalizam conceito citado da obra de Júlio Verne.\nGabarito: Letra C (Citada da obra de Júlio Verne).",
+          "prompt": "Resolução: O advérbio \"também\" mantém a conexão com as criações de Júlio Verne descritas antes. As aspas em \"fonotelefoto\" sinalizam conceito citado da obra de Júlio Verne.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "O advérbio \"também\" mantém a conexão com as criações de Júlio Verne descritas antes. As aspas em \"fonotelefoto\" sinalizam conceito citado da obra de Júlio Verne."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra C (Citada da obra de Júlio Verne)."
+            }
+          ],
+          "result": "Gabarito: Letra C (Citada da obra de Júlio Verne).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: O advérbio \"também\" mantém a conexão com as criações de Júlio Verne descritas antes. As aspas em \"fonotelefoto\" sinalizam conceito citado da obra de Júlio Verne.\nGabarito: Letra C (Citada da obra de Júlio Verne).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-017 — FCC / SABESP — Questão 11 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-017 — FCC / SABESP — Questão 11.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-017 — FCC / SABESP — Questão 11.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-017",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: O advérbio \"também\" mantém a conexão com as criações de Júlio Verne descritas antes. As aspas em \"fonotelefoto\" sinalizam conceito citado da obra de Júlio Verne.",
+                "Gabarito: Letra C (Citada da obra de Júlio Verne)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-017",
+              "EXP-IP-A08-G04-079"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-018",
+          "title": "EX-A08-G04-018 — Vunesp / Câmara de Suzano (2022) — Questão 12",
+          "statement": "Resolução: A criança não é mercadoria passível de devolução literal. O termo ganha conotação poética e afetiva. As aspas relativizam o significado da palavra (sentido figurado).\nGabarito: Letra C (Relativiza o significado da palavra).",
+          "prompt": "Resolução: A criança não é mercadoria passível de devolução literal. O termo ganha conotação poética e afetiva. As aspas relativizam o significado da palavra (sentido figurado).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Resolução",
+              "rationale": "A criança não é mercadoria passível de devolução literal. O termo ganha conotação poética e afetiva. As aspas relativizam o significado da palavra (sentido figurado)."
+            },
+            {
+              "order": 2,
+              "action": "Gabarito",
+              "rationale": "Letra C (Relativiza o significado da palavra)."
+            }
+          ],
+          "result": "Gabarito: Letra C (Relativiza o significado da palavra).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Resolução: A criança não é mercadoria passível de devolução literal. O termo ganha conotação poética e afetiva. As aspas relativizam o significado da palavra (sentido figurado).\nGabarito: Letra C (Relativiza o significado da palavra).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-018 — Vunesp / Câmara de Suzano (2022) — Questão 12 sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-018 — Vunesp / Câmara de Suzano (2022) — Questão 12.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-018 — Vunesp / Câmara de Suzano (2022) — Questão 12.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-018",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: A criança não é mercadoria passível de devolução literal. O termo ganha conotação poética e afetiva. As aspas relativizam o significado da palavra (sentido figurado).",
+                "Gabarito: Letra C (Relativiza o significado da palavra)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-018",
+              "EXP-IP-A08-G04-080"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A08-G04-019",
+          "title": "EX-A08-G04-019 — Exemplos Paradigmáticos de Registro vs. Semântica",
+          "statement": "Caso A (Coloquial / Registro Popular): “A 'gente' é feliz.” (As aspas assinalam marca de oralidade informal; o sentido é denotativo/real).\nCaso B (Sentido Figurado / Conotativo): “Você é uma 'flor'.” (As aspas assinalam metáfora; o termo \"flor\" pertence à norma padrão culta).",
+          "prompt": "Caso A (Coloquial / Registro Popular): “A 'gente' é feliz.” (As aspas assinalam marca de oralidade informal; o sentido é denotativo/real).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Caso A (Coloquial / Registro Popular)",
+              "rationale": "“A 'gente' é feliz.” (As aspas assinalam marca de oralidade informal; o sentido é denotativo/real)."
+            },
+            {
+              "order": 2,
+              "action": "Caso B (Sentido Figurado / Conotativo)",
+              "rationale": "“Você é uma 'flor'.” (As aspas assinalam metáfora; o termo \"flor\" pertence à norma padrão culta)."
+            }
+          ],
+          "result": "Caso B (Sentido Figurado / Conotativo): “Você é uma 'flor'.” (As aspas assinalam metáfora; o termo \"flor\" pertence à norma padrão culta).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Caso A (Coloquial / Registro Popular): “A 'gente' é feliz.” (As aspas assinalam marca de oralidade informal; o sentido é denotativo/real).\nCaso B (Sentido Figurado / Conotativo): “Você é uma 'flor'.” (As aspas assinalam metáfora; o termo \"flor\" pertence à norma padrão culta).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A08-G04-019 — Exemplos Paradigmáticos de Registro vs. Semântica sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A08-G04-019 — Exemplos Paradigmáticos de Registro vs. Semântica.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A08-G04-019 — Exemplos Paradigmáticos de Registro vs. Semântica.",
+          "exampleId": "WORKED_EXAMPLE-IP-A08-G04-019",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Caso A (Coloquial / Registro Popular): “A 'gente' é feliz.” (As aspas assinalam marca de oralidade informal; o sentido é denotativo/real).",
+                "Caso B (Sentido Figurado / Conotativo): “Você é uma 'flor'.” (As aspas assinalam metáfora; o termo \"flor\" pertence à norma padrão culta)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A08-G04-019",
+              "EXP-IP-A08-G04-081"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -165,51 +2087,362 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-INTERR-01",
-          "title": "Indireta Termina com Ponto!",
-          "content": "Pergunta Indireta é mandado disfarçado de prosa: não bota gancho de interrogação, crava o PONTO FINAL na ponta!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Pontuação de interrogações indiretas.",
-          "limitations": "Se a oração matriz for interrogativa direta, usa-se '?'.",
-          "text": "Interrogações indiretas finalizam com ponto final."
+          "title": "Mantra de Fixação: Ponto e Vírgula Dois-Pontos e Aspas",
+          "content": "Mantra da Ordem Direta: Sujeito + Verbo + Complemento + Adjunto. Não se separa Sujeito do Verbo nem Verbo do Complemento por vírgula!",
+          "text": "Mantra da Ordem Direta: Sujeito + Verbo + Complemento + Adjunto. Não se separa Sujeito do Verbo nem Verbo do Complemento por vírgula!"
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-INTERR-01",
-          "title": "Ponto de Interrogação após 'Gostaria de Saber'",
-          "trigger": "Redação formal de e-mails e ofícios com 'Gostaria de saber se...' ou 'Solicito informar...'.",
-          "whyItFails": "O redator pensa na intenção de pergunta e coloca o ponto de interrogação.",
-          "correctApproach": "'Gostaria de saber se o relatório está pronto.' é uma frase declarativa que embute interrogação indireta e DEVE terminar estritamente com PONTO FINAL. O ponto de interrogação é erro gramatical na redação oficial.",
-          "bankTechnique": "Avaliar correspondências oficiais terminadas com '?' em interrogações indiretas.",
-          "counterRule": "Frases com verbos declarativos de questionamento encerram-se com ponto final."
+          "entityId": "WARN-A08-G04-001",
+          "title": "A Pegadinha da Próclise Proibida pós-Ponto e Vírgula",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha da Próclise Proibida pós-Ponto e Vírgula.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha da Próclise Proibida pós-Ponto e Vírgula.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha da Próclise Proibida pós-Ponto e Vírgula no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha da Próclise Proibida pós-Ponto e Vírgula.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha da Próclise Proibida pós-Ponto e Vírgula.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha da Próclise Proibida pós-Ponto e Vírgula para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha da Próclise Proibida pós-Ponto e Vírgula.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha da Próclise Proibida pós-Ponto e Vírgula.",
+          "trapId": "WARN-A08-G04-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Concluir precipitadamente que a troca de \"e\" por ponto e vírgula está certa apenas porque as orações são coordenadas.",
+                "Armadilha: A frase resultante pode deixar um pronome oblíquo átono iniciando a oração (ex.: ; te deixa ir), incorrendo em erro de colocação pronominal."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-001",
+              "EXP-IP-A08-G04-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A08-G04-002",
+          "title": "O Falso Mito da Mudança de Sentido por Travessões e Parênteses",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Falso Mito da Mudança de Sentido por Travessões e Parênteses.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Falso Mito da Mudança de Sentido por Travessões e Parênteses.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Falso Mito da Mudança de Sentido por Travessões e Parênteses no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Falso Mito da Mudança de Sentido por Travessões e Parênteses.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Falso Mito da Mudança de Sentido por Travessões e Parênteses.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Falso Mito da Mudança de Sentido por Travessões e Parênteses para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Falso Mito da Mudança de Sentido por Travessões e Parênteses.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Falso Mito da Mudança de Sentido por Travessões e Parênteses.",
+          "trapId": "WARN-A08-G04-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Julgar que trocar vírgulas por travessões ou parênteses em trechos explicativos invalida o item sob alegação de que \"travessão dá mais ênfase\". Para as bancas, nuances expressivas não configuram alteração do sentido gramatical."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-002",
+              "EXP-IP-A08-G04-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A08-G04-003",
+          "title": "A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\".",
+          "trapId": "WARN-A08-G04-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Assinalar que a explicação após dois-pontos introduz \"ideia nova\". Explicar é dizer o mesmo; a explicação situa-se rigorosamente dentro do campo conceitual já delimitado pelo antecedente."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-003",
+              "EXP-IP-A08-G04-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A08-G04-004",
+          "title": "A Falsa Enumeração Provocada pelo Conectivo \"E\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Enumeração Provocada pelo Conectivo \"E\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Enumeração Provocada pelo Conectivo \"E\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Enumeração Provocada pelo Conectivo \"E\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Enumeração Provocada pelo Conectivo \"E\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Enumeração Provocada pelo Conectivo \"E\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Enumeração Provocada pelo Conectivo \"E\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Enumeração Provocada pelo Conectivo \"E\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Enumeração Provocada pelo Conectivo \"E\".",
+          "trapId": "WARN-A08-G04-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Ver dois substantivos ligados por \"e\" após dois-pontos (ex.: Dia das Mães: pouca reivindicação e muito consumismo) e marcar enumeração. Se os termos não desdobrarem um hiperônimo antecedente, trata-se de uma explicação com dois núcleos."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-004",
+              "EXP-IP-A08-G04-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A08-G04-005",
+          "title": "Assertivas sobre \"Orações\" sem a Presença de Verbo",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Assertivas sobre \"Orações\" sem a Presença de Verbo.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Assertivas sobre \"Orações\" sem a Presença de Verbo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Assertivas sobre \"Orações\" sem a Presença de Verbo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Assertivas sobre \"Orações\" sem a Presença de Verbo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Assertivas sobre \"Orações\" sem a Presença de Verbo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Assertivas sobre \"Orações\" sem a Presença de Verbo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Assertivas sobre \"Orações\" sem a Presença de Verbo.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Assertivas sobre \"Orações\" sem a Presença de Verbo.",
+          "trapId": "WARN-A08-G04-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Aceitar alternativas que mencionam \"separação de orações coordenadas\" em títulos ou frases nominais desprovidas de verbos."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-005",
+              "EXP-IP-A08-G04-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A08-G04-006",
+          "title": "Erro de Fechamento de Dois-Pontos em Intercalações",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro de Fechamento de Dois-Pontos em Intercalações.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro de Fechamento de Dois-Pontos em Intercalações.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro de Fechamento de Dois-Pontos em Intercalações no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro de Fechamento de Dois-Pontos em Intercalações.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro de Fechamento de Dois-Pontos em Intercalações.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro de Fechamento de Dois-Pontos em Intercalações para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro de Fechamento de Dois-Pontos em Intercalações.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro de Fechamento de Dois-Pontos em Intercalações.",
+          "trapId": "WARN-A08-G04-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Iniciar explicação no meio do período com dois-pontos e fechá-la com vírgula ou travessão (:...,). Dois-pontos só formam par com ponto final."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-006",
+              "EXP-IP-A08-G04-TRAP-006"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A08-G04-007",
+          "title": "Falácia da \"Ironia Universal\" nas Aspas",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falácia da \"Ironia Universal\" nas Aspas.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falácia da \"Ironia Universal\" nas Aspas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falácia da \"Ironia Universal\" nas Aspas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falácia da \"Ironia Universal\" nas Aspas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falácia da \"Ironia Universal\" nas Aspas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falácia da \"Ironia Universal\" nas Aspas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falácia da \"Ironia Universal\" nas Aspas.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falácia da \"Ironia Universal\" nas Aspas.",
+          "trapId": "WARN-A08-G04-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Marcar automaticamente \"ironia\" para qualquer vocábulo aspeado. A grande maioria das ocorrências em prova expressa sentido figurado, destaque ou neologismo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-007",
+              "EXP-IP-A08-G04-TRAP-007"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A08-G04-008",
+          "title": "Confusão entre Sentido Conotativo e Registro Coloquial",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confusão entre Sentido Conotativo e Registro Coloquial.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confusão entre Sentido Conotativo e Registro Coloquial.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confusão entre Sentido Conotativo e Registro Coloquial no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confusão entre Sentido Conotativo e Registro Coloquial.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confusão entre Sentido Conotativo e Registro Coloquial.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confusão entre Sentido Conotativo e Registro Coloquial para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confusão entre Sentido Conotativo e Registro Coloquial.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confusão entre Sentido Conotativo e Registro Coloquial.",
+          "trapId": "WARN-A08-G04-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Tratar informalidade como figura de linguagem. Termos coloquiais (como \"a gente\") podem operar em sentido perfeitamente literal."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-008",
+              "EXP-IP-A08-G04-TRAP-008"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A08-G04-009",
+          "title": "Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Distinção entre Citação de Texto Escrito e Fala Oral de Entrevistado.",
+          "trapId": "WARN-A08-G04-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Risco: Marcar \"citação de outro texto\" para declarações orais de pessoas entrevistadas em matérias jornalísticas (\"fala de alguém\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A08-G04-009",
+              "EXP-IP-A08-G04-TRAP-009"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Interrogação Indireta",
-          "shortDefinition": "Formulações de questionamento veiculadas por meio de oração subordinada substantiva.",
-          "fullDefinition": "Estrutura sintática na qual uma dúvida ou indagação é integrada ao período sob a dependência de um verbo de comunicação, cognição ou volição (perguntar, inquirir, querer saber), dispensando entoação ascendente e pontuação de interrogação direta.",
-          "domain": "Sintaxe e Pragmática",
-          "commonMisconception": "Pensar que toda pergunta na língua portuguesa exige ponto de interrogação."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Regra Fundamental e Hipóteses de Emprego do Ponto e Vírgula**: Definição ou ideia central\nO ponto e vírgula (;) é um sinal de pontuação com valor de pausa intermediária entre a vírgula e o ponto final. Na norma culta e na jurisprudência das bancas de concurso, suas hipóteses legítimas de uso circunscrevem-se a duas funções: separar itens de uma enumeração dispostos em tópicos/alíneas e separar orações coordenadas (sindéticas ou assindéticas).\nExplicação consolidada\nEnumerações Estruturadas: Emprega-se para separar itens em listas, incisos legislativos ou enumerações complexas.\nOrações Coordenadas: Emprega-se para separar orações sintaticamente independentes entre si, especialmente quando as orações já contêm vírgulas internas ou estabelecem contraste acentuado (adversativas, conclusivas).\nEquivalência e Reescritura: O ponto e vírgula pode substituir o ponto final entre orações coordenadas para aproximar períodos com forte liame de sentido, ou substituir a vírgula para conferir maior clareza visual a períodos extensos.\nCritérios de reconhecimento ou aplicação\nIdentificar se a fronteira sintática ocorre entre elementos enumerados em lista ou entre orações independentes (coordenadas).\nSe a oração subsequente iniciar por conjunção coordenativa (ex.: porém, contudo, logo) ou advérbio com valor coordenativo adversativo (ex.: agora = mas), o ponto e vírgula é plenamente admitido.\nExemplos\nEnumeração: Trouxe do mercado: Frutas; Legumes; Pães.\nOração Coordenada: Dedica-se muito à empresa; não é, contudo, reconhecido.\nReescritura com valor adversativo: ...ela é mínima. Agora, dizer... $\\rightarrow$ ...ela é mínima; agora, dizer... (onde Agora equivale a porém).\nRelações\nContrasta com: (Proibição em Orações Subordinadas).",
+            "**Proibição Categórica de Ponto e Vírgula em Orações Subordinadas e Estruturas Reduzidas**: Definição ou ideia central\nÉ terminantemente proibido pela norma gramatical culta e considerado erro gravíssimo em concursos públicos utilizar o ponto e vírgula para separar uma oração subordinada de sua oração principal.\nExplicação consolidada\nO ponto e vírgula assinala uma fronteira sintática relativamente autônoma. Como a oração subordinada exerce função sintática essencial ou circunstancial em relação à principal, a separação por ponto e vírgula quebra indevidamente a subordinação sintática.\nO Mnemônico $6Cs + FTP$: A vedação atinge categoricamente todas as orações subordinadas adverbiais:\n$6Cs$: Causais, Comparativas, Concessivas, Condicionais, Conformativas, Consecutivas;\nF: Finais;\nT: Temporais;\nP: Proporcionais.\nEstruturas Reduzidas e Preposicionadas: O erro é frequentemente camuflado em orações reduzidas de particípio ou gerúndio e construções preposicionadas com valor causal implícito (ex.: Obcecados por..., com a redução no nível...).\nCritérios de reconhecimento ou aplicação\nAplicar a postura do \"farejador de subordinação\": não olhar apenas a palavra antes do sinal, mas analisar a relação lógico-semântica do segmento seguinte.\nSe houver relação de causa e efeito (\"O fato de [A] faz com que [B]\"), condição ou concessão, a troca de vírgula por ponto e vírgula está automaticamente incorreta.\nExemplos e contraexemplos\nIncorreto (Oração Reduzida Causal): Obcecados por conveniência; somos presas fáceis... (Incorreto: o fato de estarmos obcecados é a causa de sermos presas fáceis).\nIncorreto (Construção Circunstancial Causal): O cenário se repete em 2013; com a redução no nível de água... (Incorreto: a redução é a causa da repetição).\nRelações\nDepende de: TIP-A08-G04-001, TIP-A08-G04-002.",
+            "**Interação Sintática entre Ponto e Vírgula e Colocação Pronominal**: Definição ou ideia central\nA inserção de um ponto e vírgula no lugar de uma conjunção aditiva coordenativa (como \"e\") cria uma pausa forte que atua como início de período oracional, tornando proibida a próclise de pronomes oblíquos átonos imediatamente após a pontuação.\nExplicação consolidada\nNa língua portuguesa culta, não se inicia oração por pronome oblíquo átono (me, te, se, nos, vos, o, a, lhe). Quando a banca propõe trocar a conjunção \"e\" por ponto e vírgula em frases como \"Acolhe-te quando vens e te deixa ir\", a substituição gera a estrutura ...; te deixa ir. Embora a coordenação admitisse o ponto e vírgula, a frase resultante incorre em vício de colocação pronominal (exigindo ênclise: ; deixa-te ir).\nCritérios de reconhecimento ou aplicação\nVerificar se as orações são coordenadas.\nChecar a primeira palavra após o ponto e vírgula proposto: se for pronome oblíquo átono sem fator de atração anterior, o item é gramaticalmente inválido.",
+            "**Permutabilidade de Sinais de Pontuação em Estruturas Explicativas (Reescritura)**: Definição ou ideia central\nEm questões de reescritura de frases, estruturas de natureza explicativa, apositiva ou de esclarecimento admitem a substituição mútua entre vírgulas, parênteses, travessões, dois-pontos e ponto e vírgula (este último desde que entre orações coordenadas), preservando a correção gramatical e a coerência textual.\nExplicação consolidada\nMatriz de Permutabilidade Explicativa (#ANOTAAÍ):\nVírgulas $\\longleftrightarrow$ Parênteses $\\longleftrightarrow$ Travessões\nPonto Final / Vírgula $\\longrightarrow$ Dois-Pontos (quando introduz explicação)\nPonto e Vírgula $\\longleftrightarrow$ Travessão / Dois-Pontos (em coordenação explicativa)\nNuances Estilísticas vs. Sentido Gramatical: Embora travessões confiram maior ênfase expressiva e parênteses confiram caráter secundário/isolado, para as bancas de concurso (notadamente Cebraspe) essas variações estilísticas não configuram alteração do sentido gramatical original nem prejuízo à coerência.\nRelações\nExpande: , .",
+            "**Funções Discursivo-Textuais dos Dois-Pontos: Citação, Explicação e Enumeração**: Definição ou ideia central\nOs dois-pontos (:) cumprem três grandes funções discursivo-textuais em provas contemporâneas de concurso público:\nIntroduzir citação textual / discurso direto;\nIntroduzir explicação ou esclarecimento;\nIntroduzir enumeração.\nExplicação consolidada\n1. Citação / Discurso Direto: Anuncia a reprodução literal da fala ou escrita de outrem, precedida de verbos de elocução (afirmou, destacou, disse) e acompanhada de aspas ou travessão.\n2. Explicação / Esclarecimento: Introduz segmento que justifica, define, comprova ou parafraseia o termo ou oração antecedente (frequentemente funcionando como aposto explicativo).\n3. Enumeração: Apresenta uma sequência coordenada de itens que desdobram formalmente um conjunto ou hiperônimo citado previamente.\nRelações\nDesdobrado em: , , .",
+            "**Os Três Axiomas Semânticos dos Dois-Pontos**: Definição ou ideia central\nA análise textual dos dois-pontos em provas de alto nível (FGV, Cesgranrio, Vunesp, FCC, IBFC) fundamenta-se em três axiomas semânticos indispensáveis:\n\\begin{aligned}\n\\text{Axioma 1: } & \\text{EXPLICAÇÃO} \\neq \\text{ENUMERAÇÃO} \\\\\n\\text{Axioma 2: } & \\text{EXPLICAÇÃO} = \\text{ESCLARECIMENTO} \\\\\n\\text{Axioma 3: } & \\text{EXPLICAR} = \\text{JUSTIFICAR} = \\text{DIZER O MESMO} \\neq \\text{IDEIA NOVA}\n\\end{aligned}\nExplicação consolidada\nAxioma 1 (Explicação $\\neq$ Enumeração): Toda enumeração cumpre papel explicativo amplo (pois detalhar itens esclarece o todo), mas nem toda explicação é enumeração. A explicação pura esclarece de forma unívoca o antecedente. A enumeração exige obrigatoriamente o desdobramento formal de um hiperônimo em dois ou mais elementos específicos componentes.\nAxioma 2 (Explicação = Esclarecimento): As bancas utilizam os termos \"explicação\" e \"esclarecimento\" como rigorosos sinônimos. Nenhuma questão válida colocará ambos concorrendo em alternativas opostas.\nAxioma 3 (Explicação $\\neq$ Ideia Nova / Progressividade Textual): A explicação/justificativa pós-dois-pontos mantém-se estritamente circunscrita aos limites semânticos do antecedente. Ela não avança na progressão temática, não acrescenta evento novo independente e não amplia o universo temático; ela apenas reitera, elucida ou justifica o que já foi dito (\"dizer o mesmo\").",
+            "**Requisito Sintático de Oração: Presença Obrigatória de Verbo**: Definição ou ideia central\nPara que uma estrutura antes ou depois dos dois-pontos seja classificada como oração (ex.: \"oração explicativa\", \"oração adversativa\"), é requisito sintático indispensável a presença de um verbo ou locução verbal. Estruturas formadas unicamente por substantivos e adjetivos são frases nominais ou sintagmas nominais/aposto.\nExplicação consolidada\nAo analisar alternativas de concurso que afirmem que os dois-pontos estão \"separando orações coordenadas adversativas\" (como no título Dia das Mães: pouca reivindicação e muito consumismo), deve-se checar a existência de formas verbais. Na ausência de verbos, descarta-se de plano a alternativa, pois inexiste oração.",
+            "**Regra Estrutural dos Dois-Pontos: Fechamento no Ponto Final e Proibição de Intercalação Medial**: Definição ou ideia central\nOs dois-pontos possuem uma limitação sintático-estrutural estrita: eles só podem introduzir segmentos que se encerrem no ponto final (.) do período. É expressamente proibido abrir uma explicação ou citação no meio do período com dois-pontos e fechá-la com vírgula (:...,) ou travessão (:... —) para prosseguir a oração principal.\nExplicação consolidada\nPares de Pontuação: Quem faz par com os dois-pontos é exclusivamente o ponto final (:....).\nTratamento de Intercalações Mediais: Se a explicação ou elemento acessório estiver intercalado no meio da oração, deve-se empregar obrigatoriamente sinais duplos simétricos:\nDuas vírgulas: ,...,\nDois travessões: —... —\nParênteses: (... )\nReescritura Terminal (Dois-Pontos $\\longleftrightarrow$ Vírgula): Quando em posição terminal, os dois-pontos podem ser livremente substituídos por vírgula sem alteração semântica.",
+            "**Hierarquia das Aspas: Aspas Duplas versus Aspas Simples**: Definição ou ideia central\nAs aspas duplas (\" \") são o padrão tipográfico geral da língua portuguesa para citações, destaques, desvios lexicais e sentido figurado. As aspas simples (' ') possuem uso estritamente subordinado: são empregadas unicamente no interior de segmentos já delimitados por aspas duplas, evitando a repetição de aspas duplas em um segundo nível hierárquico.\nExplicação consolidada\nSe um período integral constitui uma citação direta (delimitada externamente por aspas duplas) e, dentro dessa fala citada, houver a necessidade de aspear um neologismo, termo coloquial, destaque ou estrangeirismo, esse termo interno recebe compulsoriamente aspas simples.\nExemplo\nFulano disse: \"Quero ser 'concursado'!\"\n\"...\" $\\rightarrow$ Aspas duplas externas: isolam a citação direta de Fulano.\n'...' $\\rightarrow$ Aspas simples internas: conferem destaque ao termo dentro da citação.",
+            "**Casos Gramaticais das Aspas: Citação Direta, Fala Oral, Discurso Direto e Mudança de Interlocutor**: Definição ou ideia central\nO primeiro e mais expressivo caso de uso das aspas é delimitar a voz de terceiros introduzida no texto, gerando a seguinte sinonímia técnica de prova:\n\\text{CITAÇÃO DIRETA} = \\text{FALA} = \\text{DISCURSO DIRETO} = \\text{MUDANÇA DE INTERLOCUTOR}\nExplicação consolidada\nTranscrição Literal (Citação Direta): Cópia ipsissima verba de segmento de obra ou texto de outrem, marcada compulsoriamente por aspas. Se o autor reescrever a ideia com suas próprias palavras sem aspas, trata-se de paráfrase/explicação autoral.\nMarcação de Fala Oral / Entrevista: Transcrição das palavras declaradas por um entrevistado/personagem.\nMudança de Interlocutor (Termo FGV/Vunesp): Sinaliza a alternância da voz do autor principal para uma entidade discursiva externa.\nDistinção Crítica de Suporte: Citação de outro texto exige suporte escrito prévio (artigo, livro); Marcar a fala de alguém aplica-se a declarações orais concedidas a repórteres.\nRelações\nContrasta com: (Paráfrase vs. Transcrição).",
+            "**Aspas para Desvios Lexicais: Estrangeirismos (Critério VOLP), Neologismos, Arcaísmos e Gírias**: Definição ou ideia central\nAs aspas são empregadas para assinalar elementos lexicais que não integram a norma culta vernácula contemporânea estabilizada: estrangeirismos, neologismos, arcaísmos e expressões populares/gírias.\nExplicação consolidada\nEstrangeirismos e o Critério do VOLP (ABL):\nSe o termo forasteiro já foi incorporado e oficializado no Vocabulário Ortográfico da Língua Portuguesa como palavra vernácula (ex.: czar = substantivo masculino; internet), o uso das aspas é dispensável.\nSe o termo figurar com a rubrica de língua estrangeira (ex.: delivery = inglês/estrangeira), as aspas são obrigatórias na escrita formal.\nRegra de Ouro para Redação Discursiva: Na dúvida se o vocábulo estrangeiro foi oficializado pelo VOLP, o candidato deve aspeá-lo preventivamente. O uso preventivo de aspas em termos incorporados não gera penalização, mas a omissão de aspas em estrangeirismo não oficializado acarreta perda direta de pontos.\nNeologismos: Criações vocabulares recentes (ex.: czaristas, neologismo derivado por sufixação no português).\nArcaísmos e Gírias: Termos em desuso histórico ou pertencentes ao jargão/coloquialismo que necessitam de sinalização metalinguística em textos formais.\nRelações\nDepende de: TIP-A08-G04-005.",
+            "**Aspas para Destaque / Ênfase Semântica (Sinonímia de Prova)**: Definição ou ideia central\nAs aspas podem ser empregadas com finalidade puramente metalinguística ou enfática, conferindo relevo tipográfico a uma palavra ou expressão em seu sentido denotativo estrito, sem conotação irônica, figurada ou desvio lexical.\nExplicação consolidada\nEm enunciados de concurso, consolida-se a tríade de equivalência operacional:\n\\text{DESTACAR} = \\text{ENFATIZAR} = \\text{RESSALTAR}\nO candidato não deve buscar distinções teóricas entre esses três verbos nas alternativas; a análise deve recair exclusivamente sobre o complemento que descreve o objeto destacado.\nExemplo\nDiga-me \"como\" direi isso a ela. (As aspas isolam o advérbio \"como\" unicamente para dar destaque ao núcleo da indagação).\nTirinha de Calvin: O que é \"nós\"? (Destaque metalinguístico ao vocábulo focalizado).\nRelações\nDepende de: TIP-A08-G04-007.",
+            "**Aspas para Sentido Figurado / Conotativo / Relativização Semântica versus Ironia (Método das Setas)**: Definição ou ideia central\nAs bancas utilizam as aspas para indicar o desvio semântico do vocábulo em relação à sua acepção denotativa estrita. É mandatório distinguir sentido figurado / conotativo (relativização semântica) de ironia.\n\\begin{aligned}\n\\text{Polo Conotativo (Não Literal): } & \\text{Sentido Figurado} = \\text{Sentido Conotativo} = \\text{Relativizar o Significado} = \\text{Diverso do Usual} \\\\\n\\text{Polo Denotativo (Literal): } & \\text{Sentido Real} = \\text{Sentido Denotativo} = \\text{Sentido Literal} = \\text{Sentido do Dicionário}\n\\end{aligned}\nExplicação consolidada\nSentido Diverso do Usual / Relativização Semântica: A palavra é transposta metaforicamente ou ganha significado atenuado/poético fora do dicionário (ex.: juízes que \"traduzem\" a fala dos réus para os autos $\\rightarrow$ transposição de registro sociolinguístico; neto que é \"devolvido\" à avó $\\rightarrow$ metáfora afetiva da infância). Não há ironia.\nIronia: Figura discursiva que consiste em dizer deliberadamente o contrário do que se pensa. Não se confunde com brincadeira ou zoação coloquial.\nO Método das Setas Contextuais: A ironia não pode ser presumida. Para ser validada em prova, o texto deve conter uma pista textual explícita de polaridade contrária. Ao ligar a palavra aspeada ao seu referente por uma seta, se o referente contradisser o sentido literal (ex.: \"brilhante\" $\\longrightarrow$ \"ao dizer aquela asneira\"), comprova-se a ironia. Se apenas houver transposição de sentido sem contradição, trata-se de sentido figurado.",
+            "**Distinção Semântico-Estilística: Sentido Conotativo (Figurado) versus Registro Coloquial (Popular)**: Definição ou ideia central\nO uso de aspas para marcar sentido conotativo (figurado) e o uso para marcar linguagem coloquial (popular/informal) são categorias gramaticais absolutamente independentes e mutuamente excludentes nas provas de concurso:\n\\text{SENTIDO FIGURADO (CONOTATIVO)} \\neq \\text{LINGUAGEM COLOQUIAL (POPULAR)}\nExplicação consolidada\nRegistro Coloquial (Popular): Diz respeito à adequação de registro. Sinaliza marca de oralidade, gíria ou termo informal inserido no padrão culto (ex.: \"A 'gente' é feliz\" $\\rightarrow$ \"a gente\" é termo coloquial/popular, mas seu sentido é 100% real/literal, referindo-se às pessoas que falam).\nSentido Conotativo (Figurado): Diz respeito ao significado semântico. Representa transposição metafórica (ex.: \"Você é uma 'flor'\" $\\rightarrow$ \"flor\" pertence à norma padrão culta formal, mas opera em sentido conotativo/metafórico)."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-INTERR-01",
-          "question": "Corrija a pontuação da frase: 'O delegado indagou ao suspeito onde ele estava na noite do crime?'.",
-          "keyPoints": [
-            "Erro: Uso indevido do ponto de interrogação (?) em interrogação indireta.",
-            "Correção: 'O delegado indagou ao suspeito onde ele estava na noite do crime.' (termina com PONTO FINAL)."
-          ],
-          "targetConcept": "Pontuação da Interrogação Indireta",
-          "targetLO": "LO-A08-G04-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Ponto e Vírgula Dois-Pontos e Aspas?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

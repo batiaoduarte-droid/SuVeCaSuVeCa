@@ -1,16 +1,47 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, expectNoDocumentOverflow, openApp, openTab, test } from './fixtures';
 
+const allLayoutTabs = [
+  'Apostila',
+  'Analisador',
+  'Aprender por Problemas (PBL)',
+  'Simulado',
+  'Caderno de erros',
+  'Flashcards',
+  'Cronômetro Foco',
+  'Review diário',
+  'Roteiros',
+  'Planejamento',
+  'Duelo',
+  'Questões editoriais',
+  'Estatísticas',
+  'Perfil',
+];
 const auditedTabs = ['Apostila', 'Analisador', 'Simulado', 'Cronômetro Foco', 'Roteiros', 'Questões editoriais'];
 
 test.describe('layout responsivo', () => {
-  for (const tab of auditedTabs) {
+  for (const tab of allLayoutTabs) {
     test(`${tab} não cria rolagem horizontal na página`, async ({ page }) => {
       await openApp(page);
       if (tab !== 'Apostila') await openTab(page, tab);
       await expectNoDocumentOverflow(page);
     });
   }
+
+  test('shell principal aproveita a largura disponível', async ({ page }) => {
+    await openApp(page);
+    const ratio = await page.locator('main').evaluate((element) => element.getBoundingClientRect().width / window.innerWidth);
+    expect(ratio).toBeGreaterThan(0.9);
+  });
+
+  test('unidade aprofundada preserva largura útil em tela pequena', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-320', 'Critério específico para a menor tela homologada.');
+    await openApp(page, '/?module=mod0&unit=IP-A00-G02&section=explanation');
+    const unit = page.locator('.pedagogical-unit-view');
+    await expect(unit).toBeVisible();
+    const ratio = await unit.evaluate((element) => element.getBoundingClientRect().width / window.innerWidth);
+    expect(ratio).toBeGreaterThan(0.78);
+  });
 
   test('alvos principais da navegação têm pelo menos 44px', async ({ page }) => {
     await openApp(page);
@@ -46,6 +77,17 @@ test.describe('teclado e leitores de tela', () => {
     await openApp(page);
     await openTab(page, 'Cronômetro Foco');
     await expect(page.getByRole('heading', { name: /cronômetro de foco/i })).toBeVisible();
+  });
+
+  test('Pomodoro minimiza sobre o conteúdo e restaura a mesma sessão', async ({ page }) => {
+    await openApp(page);
+    await openTab(page, 'Cronômetro Foco');
+    await page.getByRole('button', { name: /minimizar/i }).click();
+    const miniPanel = page.getByRole('region', { name: /mini-painel/i });
+    await expect(miniPanel).toBeVisible();
+    await expect(page.getByRole('heading', { name: /cronômetro de foco pomodoro/i })).toBeHidden();
+    await miniPanel.getByRole('button', { name: /expandir cronômetro/i }).click();
+    await expect(page.getByRole('heading', { name: /cronômetro de foco pomodoro/i })).toBeVisible();
   });
 
   test('questão editorial prende o foco, fecha com Escape e devolve o foco', async ({ page }) => {

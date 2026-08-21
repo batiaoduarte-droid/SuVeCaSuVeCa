@@ -1,20 +1,22 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A00-G05",
     "lessonId": "A00",
-    "title": "Acentuação Gráfica - Regras Especiais e Acordo Ortográfico",
+    "title": "Emprego do Hífen - Fundamentos",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A00-G05",
     "lessonId": "A00",
-    "title": "Acentuação Gráfica - Regras Especiais e Acordo Ortográfico",
+    "title": "Emprego do Hífen - Fundamentos",
     "learningObjectives": [
       "Construir uma base lógica, fonética e operacional para o emprego do hífen na Língua Portuguesa, superando a memorização mecânica por meio de princípios articulatórios (mantras mnemônicos), distinções prosódicas (tônico vs. átono), tratamentos consonantais específicos (hiper-, sub-, co-, mal), consolidação em um mapa mental de 5 casos essenciais e aplicação imediata em itens práticos de provas de concursos públicos."
     ],
-    "conceptCount": 2,
+    "conceptCount": 11,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A00-G05-01"
@@ -26,147 +28,1462 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "As regras especiais de acentuação contemplam os hiatos tônicos (I/U), os ditongos abertos (ÉI, ÓI, ÉU) e as mudanças consolidadas pelo Novo Acordo Ortográfico.",
-      "visualBlueprint": "Hiato I/U: acentuam-se 'I' e 'U' tônicos sozinhos na sílaba (ou com 'S'), sem 'NH' depois e sem ditongo antes em paroxítona. Ditongos abertos ÉI/ÓI: perderam o acento nas PAROXÍTONAS (ideia, jiboia), mas MANTÊM nas oxítonas/monossílabos (herói, papéis, céu).",
-      "cognitiveAnchor": "O Acordo Ortográfico NÃO aboliu o acento dos ditongos abertos em oxítonas nem dos hiatos em geral.",
-      "strategicSignificance": "Elimina as armadilhas mais exploradas em provas sobre vocábulos alterados pelo Acordo (ideia, feiura, voo, creem).",
-      "coreTension": "Generalizar a perda do acento de 'ideia' para 'herói' ou esquecer da regra de feiura (hiato precedido de ditongo em paroxítona)."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Emprego do Hífen - Fundamentos",
+      "summary": "Articulação morfossintática e semântica de Emprego do Hífen - Fundamentos com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A00-04",
-          "name": "Regras Gerais de Acentuação",
-          "reason": "Dominar as regras gerais para não confundir acento de hiato com acento de oxítona/paroxítona.",
-          "activationPrompt": "Por que 'país' tem acento e 'raiz' não tem?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Diferenciação clara entre grafema (letra escrita) e fonema (unidade sonora).",
+            "Reconhecimento das vogais como centros únicos e obrigatórios de cada sílaba."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A00-G05",
+          "title": "Mapa de Dependência: Emprego do Hífen - Fundamentos",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Emprego do Hífen - Fundamentos",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Regra do Hiato Tônico (I e U)",
-          "pedagogicalGoal": "Compreender as 4 condições cumulativas para acentuar I e U em hiato.",
+          "groupId": "GRP-IP-A00-G05-01",
+          "title": "Regra Geral da Prefixação Vocálica e a Letra H (Regra 1)",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "procedure",
-              "title": "Condições Cumulativas do Hiato",
-              "steps": [
-                "1. Ser a segunda vogal de um hiato.",
-                "2. Ser 'I' ou 'U' tônico.",
-                "3. Estar sozinho na sílaba ou seguido unicamente de 'S' (ex: sa-í-da, ba-ú, pa-ís).",
-                "4. NÃO ser seguido por 'NH' na sílaba seguinte (ex: ra-i-nha, ba-i-nha não têm acento).",
-                "5. Pelo Novo Acordo: NÃO ser paroxítona precedida de ditongo decrescente (ex: fei-u-ra, bai-u-ca sem acento; mas pi-au-í mantém porque é oxítona!)."
-              ],
-              "text": "O acento nos hiatos I e U depende do isolamento silábico e da ausência de fatores bloqueadores (NH ou ditongo antecedente em paroxítonas)."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA formação de palavras por prefixação rege-se, no caso geral do Novo Acordo Ortográfico, por dois princípios fonético-gráficos universais: a repulsão obrigatória entre vogais idênticas (\"Iguais se repelem\") e a separação obrigatória diante da consoante etimológica muda H (\"H é um problema\").\nExplicação consolidada\nPilar 1 — \"Iguais se repelem\":\nQuando o prefixo (ou falso prefixo) termina por uma vogal e a palavra-base inicia-se exatamente pela mesma vogal, ocorre repulsão gráfica obrigatória materializada pelo hífen.\nO hífen previne a fusão gráfica e fonética confusa de sons vocálicos homólogos.\nExemplos: anti-inflamatório ($i+i$), auto-observação ($o+o$), contra-arrazoado ($a+a$), micro-ondas ($o+o$), semi-interno ($i+i$).\nPilar 2 — \"H é um problema\":\nNa Língua Portuguesa, a letra H não possui valor fonético isolado no início de vocábulos, funcionando como um obstáculo articulatório à fusão com prefixos.\nQualquer prefixo que se una a palavra iniciada por H exige hífen para proteger a identidade gráfica da palavra-base.\nExemplos: bio-história, sub-horizonte, neo-helênico, super-homem, pan-helenismo.\nExemplos e contraexemplos\nCorreto: anti-inflamatório, contra-atacar, arqui-inimigo, sobre-estimar.\nIncorreto: antiinflamatório, contraatacar (violam a repulsão de iguais).\nCorreto: neo-helênico, sub-humano, ultra-hiperbólico.\nExceções ou limites\nO prefixo agregador co- constitui exceção à repulsão de vogais iguais (ex.: cooperar, coordenar), unindo-se diretamente.\nRelações\nContrasta com: (Aglutinação com vogais diferentes).\nAplica-se em: .\nEvidenciado visualmente por: VIS-A00-G05-HIFEN-FUNDAMENTOS-001, VIS-A00-G05-HIFEN-FUNDAMENTOS-003."
             }
           ]
         },
         {
-          "groupId": "GRP-02",
-          "title": "Ditongos Abertos (ÉI, ÓI, ÉU) e Novo Acordo",
-          "pedagogicalGoal": "Distinguir com clareza o comportamento dos ditongos abertos em paroxítonas versus oxítonas.",
+          "groupId": "GRP-IP-A00-G05-02",
+          "title": "Falsos Prefixos (Radicais Eruditos) e Equiparação Ortográfica",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Ditongos Abertos antes e depois do Acordo",
-              "columns": [
-                "Posição",
-                "Antes do Acordo",
-                "Hoje (Novo Acordo)",
-                "Exemplos Atuais"
-              ],
-              "rows": [
-                [
-                  "Paroxítonas em ÉI/ÓI",
-                  "Acentuadas (idéia, jibóia)",
-                  "SEM ACENTO",
-                  "ideia, jiboia, heroico, plateia, assembleia"
-                ],
-                [
-                  "Oxítonas em ÉI/ÓI/ÉU",
-                  "Acentuadas (herói, papéis)",
-                  "MANTÊM O ACENTO",
-                  "herói, papéis, constrói, troféu, chapéu"
-                ],
-                [
-                  "Monossílabos em ÉI/ÓI/ÉU",
-                  "Acentuados (céu, dói)",
-                  "MANTÊM O ACENTO",
-                  "céu, réu, dói, sóis, pés"
-                ]
-              ],
-              "text": "Apenas as paroxítonas com ditongo aberto perderam o acento; oxítonas e monossílabos permanecem acentuados."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nFalsos prefixos (pseudoprefixos) são elementos composicionais de origem grega ou latina (aero, agro, bio, eletro, foto, geo, hidro, macro, micro, mini, neo, pseudo, tele) que possuem carga semântica autônoma de radical, mas que, na sistemática do Acordo Ortográfico, submetem-se rigorosamente às mesmas regras aplicadas aos prefixos genuínos.\nExplicação consolidada\nNa morfologia teórica, prefixos autênticos (anti-, re-, des-) são morfemas puramente derivacionais presos, ao passo que falsos prefixos são radicais eruditos que formam palavras por composição.\nPara a resolução de itens de provas de concursos, essa distinção morfológica deve ser desconsiderada:\nSe terminar em vogal e o próximo iniciar na mesma vogal: hífen (micro-ondas, pseudo-occipital).\nSe o próximo elemento iniciar por H: hífen (bio-história).\nSe iniciar por vogal diferente: aglutina (aeroespacial, agroindustrial).\nSe iniciar por R ou S pós-vogal: aglutina e dobra (microssistema, biorritmo).\nRelações\nSubordina-se a: , e .\nTermo técnico: TERM-A00-G05-HIFEN-FUNDAMENTOS-002."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-03",
+          "title": "Aglutinação de Vogais Diferentes (\"Diferentes se atraem\")",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nSempre que um prefixo terminado em vogal junta-se a um segundo elemento iniciado por vogal diferente, opera a atração ortográfica direta: escreve-se tudo junto, em um único vocábulo, sem hífen (\"Diferentes se atraem\").\nExplicação consolidada\nBaseia-se no princípio da bipolaridade ortográfica: na ausência das condições excludentes de hífen (letras iguais ou letra H), o padrão natural da língua é a fusão por aglutinação.\nA transição vocálica heterogênea ($a+e$, $o+a$, $i+e$, $a+i$) não gera confusão de pronúncia, permitindo a formação fluida de um único termo.\nAplicações sistemáticas:\nanti + ético = antiético\nextra + escolar = extraescolar\naero + espacial = aeroespacial\nmicro + análise = microanálise\ninfra + estrutura = infraestrutura\nagro + industrial = agroindustrial\nExemplos e contraexemplos\nCorreto: microanálise, infraestrutura, autoestrada, autoescola.\nIncorreto: micro-análise, infra-estrutura, auto-escola (erros frequentes herdados de normas pré-acordo).\nRelações\nOposta a: (Iguais se repelem).\nAplicada em: , ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-04",
+          "title": "Dobramento das Consoantes R e S pós-Vogal (RR e SS)",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nQuando o prefixo termina por vogal e a palavra-base inicia-se pelas consoantes R ou S, o hífen é eliminado, fundem-se os elementos e dobra-se a consoante (RR ou SS) para preservar o valor fonético original da palavra-base.\nExplicação consolidada\nNecessidade Fonético-Articulatória:\nEm português, uma consoante R simples posicionada entre duas vogais assume som brando vibrante simples (/r/, como em caro, muro). Para manter a vibração múltipla e forte (/R/, como em ritmo, republicano), a consoante precisa ser duplicada para RR.\nUma consoante S simples entre duas vogais assume fonema sonoro /Z/ (casa, mesa). Para manter a fricativa surda /S/ (sala, sociável, som), exige-se a duplicação para SS.\nAplicações sistemáticas:\nbio + ritmo = biorritmo\nanti + sociável = antissociável\nante + sala = antessala\ninfra + som = infrassom\nanti + republicano = antirrepublicano\nmini + saia = minissaia\nmini + submarino = minissubmarino\nAlertas e limites\nA duplicação consonantal exige terminantemente que o prefixo termine em vogal. Não se dobram R ou S se o prefixo terminar em consoante (como ocorre em sub-região).\nRelações\nPossui alerta de erro: .\nDistingue-se de: (Prefixos terminados em B)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-05",
+          "title": "Prefixos Consonantais Especiais Terminados em R (`hiper-`, `inter-`, `super-`)",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nOs prefixos hiper-, inter- e super- constituem uma classe consonantal especial terminada em R. Empregam hífen unicamente diante da letra H ou da consoante idêntica R. Diante de quaisquer outras letras (vogais ou outras consoantes), grafam-se aglutinados sem hífen.\nExplicação consolidada\nCom H (\"H é um problema\"): Hífen obrigatório (super-homem, hiper-hedonista, inter-hemisférico).\nCom R (\"Iguais se repelem\"): Ocorre colisão das consoantes idênticas ($R+R$). Usa-se hífen para não fundir os radicais (hiper-requintado, super-revista, inter-resistente, hiper-realista).\nCom Vogal ou outras Consoantes: Aglutina-se diretamente, pois não há repetição de consoante nem presença de H (superinteressante, superproteção, interestadual).\nRelações\nSubordina-se a: ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-06",
+          "title": "Prefixos Nasais (`circun-` e `pan-`)",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nOs prefixos circun- e pan- terminam nas consoantes nasais M ou N. Exigem hífen quando o segundo elemento inicia-se por vogal, pelas consoantes nasais M ou N, ou pela letra H.\nExplicação consolidada\nPrevenção de Distorção Silábica diante de Vogal: Se aglutinados a uma palavra iniciada por vogal, a consoante nasal final formaria uma sílaba anômala com a vogal (pan + africano $\\to$ \"pa-na-fri-ca-no\"), desfigurando a pronúncia e a percepção do prefixo. O hífen impede essa alteração fonética (pan-africano, circun-escolar).\nColisão Nasal (M / N): Pelo princípio de \"Iguais se repelem\", o encontro de nasais homólogas exige hífen (circun-navegação, pan-negritude).\nPresença de H: Pelo princípio \"H é um problema\", o hífen é imperativo (pan-helenismo).\nExemplos\nCom vogal: pan-africano, circun-escolar.\nCom nasal (M/N): circun-navegação, pan-negritude.\nCom H: pan-helenismo."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-07",
+          "title": "Prefixos Semanticamente Independentes (Regra 2) e a Assimetria de \"Mal\" vs. \"Bem\"",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nPrefixos e falsos prefixos dotados de autonomia semântica ou funcional (além, aquém, bem, ex, recém, sem, grão, grã, bel, soto, sota, vice, viso) regem-se pelo mantra \"O independente se separa\", exigindo hífen de modo universal. Por sua vez, o elemento mal opera como exceção assimétrica, exigindo hífen apenas diante de vogal ou H.\nExplicação consolidada\nRegra dos Prefixos Independentes:\nTermos como além, ex, vice, recém preservam autonomia de vocábulo na língua (\"o ex sumiu\", \"estou além\", \"recém-chegado\").\nDevido a essa independência, exigem sempre hífen, independentemente da consoante ou vogal seguinte (além-mar, ex-presidente, vice-imperador, recém-casado, sem-número, grã-cruz, viso-rei).\nExceções consagradas pelo uso do prefixo bem: benfazejo e benfeitor (unem-se sem hífen, trocando o 'm' por 'n').\nA Exceção Assimétrica de MAL vs. BEM:\nEmbora mal seja o antônimo independente de bem, ele não recebe hífen universal.\nCom Hífen (Vogal ou H): Diante de vogal (para evitar a fusão silábica /les/ em ma-les-tar) e diante de H: mal-estar, mal-humorado, mal-intencionado.\nSem Hífen / Aglutinado (Demais Consoantes): Diante de consoantes diferentes de H, aglutina-se em uma só palavra: malcriado, malfeito, maldisposto, malvisto, malsucedido.\nContraste com BEM: O prefixo bem mantém hífen diante de consoantes (bem-criado, bem-feito, bem-vindo).\nRelações\nPossui procedimento de decisão: .\nPossui alerta de pegadinha: ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-08",
+          "title": "Prefixos Terminados em B e D (Regra 3: `sub-`, `ad-`, `ob-`, `ab-`)",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nOs prefixos terminados nas consoantes oclusivas B (ab-, ob-, sob-, sub-) e D (ad-) exigem hífen unicamente em três circunstâncias: diante de letras iguais ($B+B$, $D+D$), diante da consoante R ($B+R$, $D+R$) e diante da letra H ($B+H$). Nos demais casos, unem-se sem hífen.\nExplicação consolidada\nIguais se repelem ($B+B$ e $D+D$): sub-base, ad-digital.\nHífen com R ($B+R$ e $D+R$): Exigem hífen obrigatório (sub-reitor, ad-referendar, ab-reptício, ob-rogar, sub-região).\nAlerta decisivo: Nunca se dobra a letra R em derivados de sub- (forma incorreta: \"subrregião\"), pois a regra do dobramento é restrita a prefixos terminados em vogal.\nH é um problema ($B+H$): sub-humano.\nDemais casos (Aglutinação): Unem-se diretamente sem hífen (subsolo, subtenente, subcategoria, subsídio).\nRelações\nPossui alerta de erro: (Grafia de subsídio)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-09",
+          "title": "Prosódia Prefixal: Formas Tônicas (*Pré/Pró/Pós*) vs. Formas Átonas (*Pre/Pro/Pos*)",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA presença do hífen nas formações com pré/pre, pró/pro e pós/pos é condicionada pela tonicidade prosódica e acentuação gráfica do elemento prefixal: formas tônicas exigem hífen (\"O forte se separa\"), enquanto formas átonas aglutinam-se sem hífen (\"O fraco se une\").\nExplicação consolidada\nPrefixos Tônicos (Abertos e Acentuados — pré-, pró-, pós-):\nPronunciados com vogal aberta (/prÉ/, /prÓ/, /pÓs/) e acento gráfico.\nPossuem autonomia prosódica (\"o forte se basta\"), exigindo hífen.\nExemplos: pré-escolar, pré-datado, pré-história, pró-germânico, pró-ativo, pós-graduação, pós-colonialismo.\nPrefixos Átonos (Fechados e Inacentuados — pre-, pro-, pos-):\nPronunciados com vogal fechada/átona (/prê/, /prô/, /pôs/) e sem acento gráfico.\nNão possuem autonomia prosódica (\"o fraco precisa se apoiar\"), aglutinando-se diretamente sem hífen, mesmo diante de vogal igual.\nExemplos: preconceito, predefinir, predeterminar, preaquecer, preestabelecido, propor, pospor.\nRelações\nPossui procedimento de decisão: .\nPossui alerta de erro: ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-10",
+          "title": "O Caso Especial do Prefixo Agregador `co-`",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO prefixo co- carrega sentido semântico inerente de união, parceria e coparticipação. Por sua natureza agregadora, a regra geral determina a aglutinação direta sem hífen em quase todas as situações (inclusive diante de vogais idênticas), exigindo hífen unicamente diante da letra H.\nExplicação consolidada\nRegra Geral (Aglutinação Sem Hífen): O prefixo co- aglutina-se diretamente:\nDiante de vogal diferente: coautor, coedição.\nDiante de vogal idêntica 'o' (exceção à regra de vogais iguais): cooperação, coordenar, coobrigado, coocupante.\nDiante de consoantes gerais: cofundador, copadroeira, coreu.\nAplicação do Dobramento de S/R pós-vogal: Ao unir-se a palavras iniciadas por S ou R, aplica-se a regra fonética geral de duplicação: co + seno = cosseno; co + responsável = corresponsável.\nÚnica Exceção (Presença de H): Exige hífen quando o segundo elemento inicia-se por H (co-herdeiro, co-habitante).Dica associada: TIP-A00-G05-HIFEN-FUNDAMENTOS-004."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A00-G05-11",
+          "title": "A Estrutura dos Nomes Compostos e Locuções (Caso 5)",
+          "conceptRefs": [
+            "KB-A00-G05-HIFEN-FUNDAMENTOS-011"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA morfologia dos Nomes Compostos diferencia-se estruturalmente da prefixação por unir dois vocábulos autônomos com significado pleno na língua. No sistema dos 5 Casos, constitui o Caso 5: regra geral de manutenção do hífen, com supressão do hífen em locuções com conectivo e em vocábulos com perda da noção de composição.\nExplicação consolidada\nNomes Compostos por Justaposição (Regra Geral): Mantêm hífen quando formam unidade semântica sem conectivo expresso (couve-flor, guarda-chuva, arco-íris).\nLocuções (Substantivas, Adjetivas, Adverbiais, Conjuntivas): Expressões ligadas por preposição ou conectivo grafam-se separadas e sem hífen (fim de semana, ponto e vírgula, dia a dia, sala de jantar).\nPerda da Noção de Composição: Palavras cujo sentido composicional original fundiu-se integralmente na consciência dos falantes grafam-se juntas e sem hífen (paraquedas, pontapé, mandachuva, girassol).\nRelações\nCompleta o mapa de: a 010."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA formação de palavras por prefixação rege-se, no caso geral do Novo Acordo Ortográfico, por dois princípios fonético-gráficos universais: a repulsão obrigatória entre vogais idênticas (\"Iguais se repelem\") e a separação obrigatória diante da consoante etimológica muda H (\"H é um problema\").\nExplicação consolidada\nPilar 1 — \"Iguais se repelem\":\nQuando o prefixo (ou falso prefixo) termina por uma vogal e a palavra-base inicia-se exatamente pela mesma vogal, ocorre repulsão gráfica obrigatória materializada pelo hífen.\nO hífen previne a fusão gráfica e fonética confusa de sons vocálicos homólogos.\nExemplos: anti-inflamatório ($i+i$), auto-observação ($o+o$), contra-arrazoado ($a+a$), micro-ondas ($o+o$), semi-interno ($i+i$).\nPilar 2 — \"H é um problema\":\nNa Língua Portuguesa, a letra H não possui valor fonético isolado no início de vocábulos, funcionando como um obstáculo articulatório à fusão com prefixos.\nQualquer prefixo que se una a palavra iniciada por H exige hífen para proteger a identidade gráfica da palavra-base.\nExemplos: bio-história, sub-horizonte, neo-helênico, super-homem, pan-helenismo.\nExemplos e contraexemplos\nCorreto: anti-inflamatório, contra-atacar, arqui-inimigo, sobre-estimar.\nIncorreto: antiinflamatório, contraatacar (violam a repulsão de iguais).\nCorreto: neo-helênico, sub-humano, ultra-hiperbólico.\nExceções ou limites\nO prefixo agregador co- constitui exceção à repulsão de vogais iguais (ex.: cooperar, coordenar), unindo-se diretamente.\nRelações\nContrasta com: (Aglutinação com vogais diferentes).\nAplica-se em: .\nEvidenciado visualmente por: VIS-A00-G05-HIFEN-FUNDAMENTOS-001, VIS-A00-G05-HIFEN-FUNDAMENTOS-003."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nFalsos prefixos (pseudoprefixos) são elementos composicionais de origem grega ou latina (aero, agro, bio, eletro, foto, geo, hidro, macro, micro, mini, neo, pseudo, tele) que possuem carga semântica autônoma de radical, mas que, na sistemática do Acordo Ortográfico, submetem-se rigorosamente às mesmas regras aplicadas aos prefixos genuínos.\nExplicação consolidada\nNa morfologia teórica, prefixos autênticos (anti-, re-, des-) são morfemas puramente derivacionais presos, ao passo que falsos prefixos são radicais eruditos que formam palavras por composição.\nPara a resolução de itens de provas de concursos, essa distinção morfológica deve ser desconsiderada:\nSe terminar em vogal e o próximo iniciar na mesma vogal: hífen (micro-ondas, pseudo-occipital).\nSe o próximo elemento iniciar por H: hífen (bio-história).\nSe iniciar por vogal diferente: aglutina (aeroespacial, agroindustrial).\nSe iniciar por R ou S pós-vogal: aglutina e dobra (microssistema, biorritmo).\nRelações\nSubordina-se a: , e .\nTermo técnico: TERM-A00-G05-HIFEN-FUNDAMENTOS-002."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nSempre que um prefixo terminado em vogal junta-se a um segundo elemento iniciado por vogal diferente, opera a atração ortográfica direta: escreve-se tudo junto, em um único vocábulo, sem hífen (\"Diferentes se atraem\").\nExplicação consolidada\nBaseia-se no princípio da bipolaridade ortográfica: na ausência das condições excludentes de hífen (letras iguais ou letra H), o padrão natural da língua é a fusão por aglutinação.\nA transição vocálica heterogênea ($a+e$, $o+a$, $i+e$, $a+i$) não gera confusão de pronúncia, permitindo a formação fluida de um único termo.\nAplicações sistemáticas:\nanti + ético = antiético\nextra + escolar = extraescolar\naero + espacial = aeroespacial\nmicro + análise = microanálise\ninfra + estrutura = infraestrutura\nagro + industrial = agroindustrial\nExemplos e contraexemplos\nCorreto: microanálise, infraestrutura, autoestrada, autoescola.\nIncorreto: micro-análise, infra-estrutura, auto-escola (erros frequentes herdados de normas pré-acordo).\nRelações\nOposta a: (Iguais se repelem).\nAplicada em: , ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nQuando o prefixo termina por vogal e a palavra-base inicia-se pelas consoantes R ou S, o hífen é eliminado, fundem-se os elementos e dobra-se a consoante (RR ou SS) para preservar o valor fonético original da palavra-base.\nExplicação consolidada\nNecessidade Fonético-Articulatória:\nEm português, uma consoante R simples posicionada entre duas vogais assume som brando vibrante simples (/r/, como em caro, muro). Para manter a vibração múltipla e forte (/R/, como em ritmo, republicano), a consoante precisa ser duplicada para RR.\nUma consoante S simples entre duas vogais assume fonema sonoro /Z/ (casa, mesa). Para manter a fricativa surda /S/ (sala, sociável, som), exige-se a duplicação para SS.\nAplicações sistemáticas:\nbio + ritmo = biorritmo\nanti + sociável = antissociável\nante + sala = antessala\ninfra + som = infrassom\nanti + republicano = antirrepublicano\nmini + saia = minissaia\nmini + submarino = minissubmarino\nAlertas e limites\nA duplicação consonantal exige terminantemente que o prefixo termine em vogal. Não se dobram R ou S se o prefixo terminar em consoante (como ocorre em sub-região).\nRelações\nPossui alerta de erro: .\nDistingue-se de: (Prefixos terminados em B)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nOs prefixos hiper-, inter- e super- constituem uma classe consonantal especial terminada em R. Empregam hífen unicamente diante da letra H ou da consoante idêntica R. Diante de quaisquer outras letras (vogais ou outras consoantes), grafam-se aglutinados sem hífen.\nExplicação consolidada\nCom H (\"H é um problema\"): Hífen obrigatório (super-homem, hiper-hedonista, inter-hemisférico).\nCom R (\"Iguais se repelem\"): Ocorre colisão das consoantes idênticas ($R+R$). Usa-se hífen para não fundir os radicais (hiper-requintado, super-revista, inter-resistente, hiper-realista).\nCom Vogal ou outras Consoantes: Aglutina-se diretamente, pois não há repetição de consoante nem presença de H (superinteressante, superproteção, interestadual).\nRelações\nSubordina-se a: ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nOs prefixos circun- e pan- terminam nas consoantes nasais M ou N. Exigem hífen quando o segundo elemento inicia-se por vogal, pelas consoantes nasais M ou N, ou pela letra H.\nExplicação consolidada\nPrevenção de Distorção Silábica diante de Vogal: Se aglutinados a uma palavra iniciada por vogal, a consoante nasal final formaria uma sílaba anômala com a vogal (pan + africano $\\to$ \"pa-na-fri-ca-no\"), desfigurando a pronúncia e a percepção do prefixo. O hífen impede essa alteração fonética (pan-africano, circun-escolar).\nColisão Nasal (M / N): Pelo princípio de \"Iguais se repelem\", o encontro de nasais homólogas exige hífen (circun-navegação, pan-negritude).\nPresença de H: Pelo princípio \"H é um problema\", o hífen é imperativo (pan-helenismo).\nExemplos\nCom vogal: pan-africano, circun-escolar.\nCom nasal (M/N): circun-navegação, pan-negritude.\nCom H: pan-helenismo."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nPrefixos e falsos prefixos dotados de autonomia semântica ou funcional (além, aquém, bem, ex, recém, sem, grão, grã, bel, soto, sota, vice, viso) regem-se pelo mantra \"O independente se separa\", exigindo hífen de modo universal. Por sua vez, o elemento mal opera como exceção assimétrica, exigindo hífen apenas diante de vogal ou H.\nExplicação consolidada\nRegra dos Prefixos Independentes:\nTermos como além, ex, vice, recém preservam autonomia de vocábulo na língua (\"o ex sumiu\", \"estou além\", \"recém-chegado\").\nDevido a essa independência, exigem sempre hífen, independentemente da consoante ou vogal seguinte (além-mar, ex-presidente, vice-imperador, recém-casado, sem-número, grã-cruz, viso-rei).\nExceções consagradas pelo uso do prefixo bem: benfazejo e benfeitor (unem-se sem hífen, trocando o 'm' por 'n').\nA Exceção Assimétrica de MAL vs. BEM:\nEmbora mal seja o antônimo independente de bem, ele não recebe hífen universal.\nCom Hífen (Vogal ou H): Diante de vogal (para evitar a fusão silábica /les/ em ma-les-tar) e diante de H: mal-estar, mal-humorado, mal-intencionado.\nSem Hífen / Aglutinado (Demais Consoantes): Diante de consoantes diferentes de H, aglutina-se em uma só palavra: malcriado, malfeito, maldisposto, malvisto, malsucedido.\nContraste com BEM: O prefixo bem mantém hífen diante de consoantes (bem-criado, bem-feito, bem-vindo).\nRelações\nPossui procedimento de decisão: .\nPossui alerta de pegadinha: ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nOs prefixos terminados nas consoantes oclusivas B (ab-, ob-, sob-, sub-) e D (ad-) exigem hífen unicamente em três circunstâncias: diante de letras iguais ($B+B$, $D+D$), diante da consoante R ($B+R$, $D+R$) e diante da letra H ($B+H$). Nos demais casos, unem-se sem hífen.\nExplicação consolidada\nIguais se repelem ($B+B$ e $D+D$): sub-base, ad-digital.\nHífen com R ($B+R$ e $D+R$): Exigem hífen obrigatório (sub-reitor, ad-referendar, ab-reptício, ob-rogar, sub-região).\nAlerta decisivo: Nunca se dobra a letra R em derivados de sub- (forma incorreta: \"subrregião\"), pois a regra do dobramento é restrita a prefixos terminados em vogal.\nH é um problema ($B+H$): sub-humano.\nDemais casos (Aglutinação): Unem-se diretamente sem hífen (subsolo, subtenente, subcategoria, subsídio).\nRelações\nPossui alerta de erro: (Grafia de subsídio)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA presença do hífen nas formações com pré/pre, pró/pro e pós/pos é condicionada pela tonicidade prosódica e acentuação gráfica do elemento prefixal: formas tônicas exigem hífen (\"O forte se separa\"), enquanto formas átonas aglutinam-se sem hífen (\"O fraco se une\").\nExplicação consolidada\nPrefixos Tônicos (Abertos e Acentuados — pré-, pró-, pós-):\nPronunciados com vogal aberta (/prÉ/, /prÓ/, /pÓs/) e acento gráfico.\nPossuem autonomia prosódica (\"o forte se basta\"), exigindo hífen.\nExemplos: pré-escolar, pré-datado, pré-história, pró-germânico, pró-ativo, pós-graduação, pós-colonialismo.\nPrefixos Átonos (Fechados e Inacentuados — pre-, pro-, pos-):\nPronunciados com vogal fechada/átona (/prê/, /prô/, /pôs/) e sem acento gráfico.\nNão possuem autonomia prosódica (\"o fraco precisa se apoiar\"), aglutinando-se diretamente sem hífen, mesmo diante de vogal igual.\nExemplos: preconceito, predefinir, predeterminar, preaquecer, preestabelecido, propor, pospor.\nRelações\nPossui procedimento de decisão: .\nPossui alerta de erro: ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO prefixo co- carrega sentido semântico inerente de união, parceria e coparticipação. Por sua natureza agregadora, a regra geral determina a aglutinação direta sem hífen em quase todas as situações (inclusive diante de vogais idênticas), exigindo hífen unicamente diante da letra H.\nExplicação consolidada\nRegra Geral (Aglutinação Sem Hífen): O prefixo co- aglutina-se diretamente:\nDiante de vogal diferente: coautor, coedição.\nDiante de vogal idêntica 'o' (exceção à regra de vogais iguais): cooperação, coordenar, coobrigado, coocupante.\nDiante de consoantes gerais: cofundador, copadroeira, coreu.\nAplicação do Dobramento de S/R pós-vogal: Ao unir-se a palavras iniciadas por S ou R, aplica-se a regra fonética geral de duplicação: co + seno = cosseno; co + responsável = corresponsável.\nÚnica Exceção (Presença de H): Exige hífen quando o segundo elemento inicia-se por H (co-herdeiro, co-habitante).Dica associada: TIP-A00-G05-HIFEN-FUNDAMENTOS-004."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA morfologia dos Nomes Compostos diferencia-se estruturalmente da prefixação por unir dois vocábulos autônomos com significado pleno na língua. No sistema dos 5 Casos, constitui o Caso 5: regra geral de manutenção do hífen, com supressão do hífen em locuções com conectivo e em vocábulos com perda da noção de composição.\nExplicação consolidada\nNomes Compostos por Justaposição (Regra Geral): Mantêm hífen quando formam unidade semântica sem conectivo expresso (couve-flor, guarda-chuva, arco-íris).\nLocuções (Substantivas, Adjetivas, Adverbiais, Conjuntivas): Expressões ligadas por preposição ou conectivo grafam-se separadas e sem hífen (fim de semana, ponto e vírgula, dia a dia, sala de jantar).\nPerda da Noção de Composição: Palavras cujo sentido composicional original fundiu-se integralmente na consciência dos falantes grafam-se juntas e sem hífen (paraquedas, pontapé, mandachuva, girassol).\nRelações\nCompleta o mapa de: a 010."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-AC-ESP-01",
-          "title": "Fim do Acento nos Hiatos OO e EEM",
-          "statement": "Não se acentuam os hiatos 'oo' (voo, enjoo, perdoo) nem as formas verbais com 'eem' na 3ª pessoa do plural (leem, veem, creem, deem).",
-          "formalCondition": "Voo, enjoo, leem, creem, veem, deem -> Acento == False.",
-          "scope": "Universal pós-Acordo Ortográfico.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A00-G05-001",
+          "title": "Tabela-Resumo das Regras Canônicas de Hifenização",
+          "statement": "Tabela-Resumo das Regras Canônicas de Hifenização",
+          "scope": "phonetics_phonology",
+          "conditions": [
+            "Presença da estrutura-alvo de orthography no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela-Resumo das Regras Canônicas de Hifenização."
+          ],
           "exceptions": [],
-          "examples": [
-            "Eles leem o texto com atenção.",
-            "O voo atrasou."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A00-G05-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A00-G05-001",
+              "table": {
+                "tableId": "TABLE-IP-A00-G05-001",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Classificação Canônica",
+                  "Estrutura Morfológica",
+                  "Regra Operacional",
+                  "Mantras / Atalhos",
+                  "Exemplos Canônicos",
+                  "ID Detalhado"
+                ],
+                "rows": [
+                  [
+                    "Regra 1A: Vogais Iguais",
+                    "Prefixo em Vogal + Base na Mesma Vogal",
+                    "Usa Hífen (-)",
+                    "\"Iguais se repelem\"",
+                    "anti-inflamatório, micro-ondas, contra-atacar",
+                    "KB-...-001"
+                  ],
+                  [
+                    "Regra 1B: Presença de H",
+                    "Qualquer Prefixo + Base iniciada por H",
+                    "Usa Hífen (-)",
+                    "\"H é um problema\"",
+                    "bio-história, super-homem, pan-helenismo",
+                    "KB-...-001"
+                  ],
+                  [
+                    "Regra 1C: Vogais Diferentes",
+                    "Prefixo em Vogal + Base em Vogal Distinta",
+                    "Junta Sem Hífen",
+                    "\"Diferentes se atraem\"",
+                    "antiético, autoescola, infraestrutura",
+                    "KB-...-003"
+                  ],
+                  [
+                    "Regra 1D: Consoantes R/S",
+                    "Prefixo em Vogal + Base com R ou S",
+                    "Junta e Dobra (RR/SS)",
+                    "\"Dobra por fonética\"",
+                    "biorritmo, antessala, minissaia, cosseno",
+                    "KB-...-004"
+                  ],
+                  [
+                    "Caso Especial R",
+                    "PrefixosHiper-, Inter-, Super-",
+                    "Hífen com H ou R; resto junta",
+                    "\"Iguais se repelem (R+R)\"",
+                    "hiper-requintado, super-homem, superinteressante",
+                    "KB-...-005"
+                  ],
+                  [
+                    "Caso Especial Nasal",
+                    "PrefixosCircun-, Pan-",
+                    "Hífen com Vogal, M, N, H",
+                    "\"Evita deformação nasal\"",
+                    "pan-africano, circun-navegação, pan-helenismo",
+                    "KB-...-006"
+                  ],
+                  [
+                    "Regra 2: Independentes",
+                    "Além, ex, recém, sem, vice, grão...",
+                    "Sempre com Hífen (-)",
+                    "\"O independente se separa\"",
+                    "ex-presidente, vice-imperador, recém-casado",
+                    "KB-...-007"
+                  ],
+                  [
+                    "Exceção do \"MAL\"",
+                    "PrefixoMal",
+                    "Hífen SÓ com Vogal ou H",
+                    "\"Mal: só vogal ou H\"",
+                    "mal-estar, mal-humorado vs. malcriado, malfeito",
+                    "KB-...-007"
+                  ],
+                  [
+                    "Regra Prosódica: Tônicos",
+                    "Pré-, Pró-, Pós- (Acentuados)",
+                    "Usa Hífen (-)",
+                    "\"O forte se separa\"",
+                    "pré-escolar, pós-graduação, pró-germânico",
+                    "KB-...-009"
+                  ],
+                  [
+                    "Regra Prosódica: Átonos",
+                    "Pre-, Pro-, Pos- (Sem acento)",
+                    "Junta Sem Hífen",
+                    "\"O fraco se une\"",
+                    "preconceito, preestabelecido, propor, pospor",
+                    "KB-...-009"
+                  ],
+                  [
+                    "Regra 3: Prefixos em B/D",
+                    "Sub-, Ab-, Ob-, Sob-, Ad-",
+                    "Hífen com B, D, R, H",
+                    "\"R é hífen; NÃO dobra R\"",
+                    "sub-base, ad-digital, sub-reitor, subsídio",
+                    "KB-...-008"
+                  ],
+                  [
+                    "Caso Especial CO-",
+                    "PrefixoCo- (União)",
+                    "Sempre Junto (salvo H)",
+                    "\"Ideia de união = junto\"",
+                    "coautor, cooperação, cosseno, co-herdeiro",
+                    "KB-...-010"
+                  ],
+                  [
+                    "Caso 5: Nomes Compostos",
+                    "Palavras Autônomas Justapostas",
+                    "Hífen (salvo locuções/perda)",
+                    "\"Composto = hífen\"",
+                    "couve-flor vs. fim de semana, paraquedas",
+                    "KB-...-011"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A00-G05-001",
+              "EXP-IP-A00-G05-041"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-AC-ESP-01",
-          "title": "Decisão sobre Acento Diferencial",
-          "triggerCondition": "Dúvida sobre uso de acento diferencial em verbos e preposições.",
+          "entityId": "PROC-A00-G05-HIFEN-FUNDAMENTOS-001",
+          "title": "Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos",
           "steps": [
-            "1. PÔDE (pretérito perfeito) vs PODE (presente do indicativo) -> OBRIGATÓRIO.",
-            "2. PÔR (verbo) vs POR (preposição) -> OBRIGATÓRIO.",
-            "3. TÊM / VÊM (3ª pessoa plural dos verbos ter e vir) vs TEM / VEM (singular) -> OBRIGATÓRIO.",
-            "4. FÔRMA / FORMA -> FACULTATIVO.",
-            "5. Todos os demais diferenciais caíram (pára verbo, péla, pêlo, pólo -> para, pela, pelo, polo)."
+            {
+              "order": 1,
+              "action": "Localizar e isolar o segmento oracional em que opera Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
+              "explanation": "Passo 1 do algoritmo de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
+              "test": "Identificar o termo regente e os elementos subordinados."
+            },
+            {
+              "order": 2,
+              "action": "Aplicar os critérios de diferenciação e regras canônicas de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
+              "explanation": "Passo 2 do algoritmo de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
+              "test": "Executar o teste de comutação ou análise categorial."
+            },
+            {
+              "order": 3,
+              "action": "Concluir o julgamento sintático-morfológico definitivo.",
+              "explanation": "Passo 3 do algoritmo de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos.",
+              "test": "Validar a concordância com o padrão culto."
+            }
           ],
-          "verificationCriteria": "Conferir se o vocábulo é um dos 3 casos de acento diferencial obrigatório remanescentes.",
-          "typicalFailureModes": [
-            "Acentuar a forma verbal 'para' (*ele pára o carro)."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A00-G05-HIFEN-FUNDAMENTOS-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "PASSO 1: O segundo elemento começa com \"H\"? │ ┌──────────────┴──────────────┐ ▼ ▼ SIM NÃO │ │ ▼ ▼ [ USA HÍFEN (-) ] Vá para o PASSO 2 (\"H é um problema\") │ ▼ PASSO 2: O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) │ ├─► É Independente / Tônico? ──► [ USA HÍFEN (-) ] (\"O forte se basta\") ├─► É \"MAL\"? ──────────────────► Vogal/H = HÍFEN | Consoante = JUNTO ├─► É \"CO-\"? ──────────────────► SEMPRE JUNTO (salvo H; dobra S/R) ├─► É \"SUB-\" / \"AD-\"? ─────────► B, D, R = HÍFEN (não dobra R) | Resto = JUNTO └─► Prefixo regular em vogal? ─► Vá para o PASSO 3 │ ▼ PASSO 3: Teste de Colisão / Encontro entre as Letras │ ┌──────────────┼─────────────────────────────┐ ▼ ▼ ▼ LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S │ │ │ ▼ ▼ ▼ [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] (\"Iguais se repelem\") (\"Diferentes se atraem\") ( RR ou SS )"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A00-G05-HIFEN-FUNDAMENTOS-001",
+              "EXP-IP-A00-G05-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A00-G05-HIFEN-FUNDAMENTOS-002",
+          "title": "Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\"",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identificar o elemento inicial",
+              "explanation": "É o prefixo BEM ou o prefixo MAL?",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se for o prefixo BEM",
+              "explanation": "Passo 2 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Regra padrão",
+              "explanation": "Usa hífen sempre antes de vogais ou consoantes (bem-humorado, bem-vindo, bem-criado).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Atenção às 2 exceções consagradas",
+              "explanation": "benfazejo e benfeitor (grafados juntos com 'n').",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se for o prefixo MAL",
+              "explanation": "Passo 5 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Inspecione a letra seguinte",
+              "explanation": "Passo 6 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "É Vogal ou H? $\\to$ Usa Hífen (mal-estar, mal-humorado).",
+              "explanation": "Passo 7 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "É Consoante diferente de H? $\\to$ Grafa Junto Sem Hífen (malcriado, malfeito, malvisto).",
+              "explanation": "Passo 8 do algoritmo de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\".",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\"."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\"."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Algoritmo de Decisão para a Oposição \"Bem\" vs. \"Mal\"",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A00-G05-HIFEN-FUNDAMENTOS-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificar o elemento inicial: É o prefixo BEM ou o prefixo MAL?",
+                "Se for o prefixo BEM:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Regra padrão: Usa hífen sempre antes de vogais ou consoantes (bem-humorado, bem-vindo, bem-criado).",
+                "Atenção às 2 exceções consagradas: benfazejo e benfeitor (grafados juntos com 'n')."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Se for o prefixo MAL:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Inspecione a letra seguinte:",
+                "É Vogal ou H? $\\to$ Usa Hífen (mal-estar, mal-humorado).",
+                "É Consoante diferente de H? $\\to$ Grafa Junto Sem Hífen (malcriado, malfeito, malvisto)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A00-G05-HIFEN-FUNDAMENTOS-002",
+              "EXP-IP-A00-G05-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A00-G05-HIFEN-FUNDAMENTOS-003",
+          "title": "Teste Prosódico de Decisão para Pré, Pró e Pós",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Realizar a leitura oral em voz alta",
+              "explanation": "Concentrar a audição na primeira sílaba do vocábulo.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Avaliar a abertura e força da vogal",
+              "explanation": "Passo 2 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se pronunciada de forma aberta, destacada e tônica (/prÉ/, /prÓ/, /pÓs/)",
+              "explanation": "Passo 3 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Recebe acento gráfico e separa-se por hífen (\"O forte se separa\" $\\to$ pré-escola, pós-graduação).",
+              "explanation": "Passo 4 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se pronunciada de forma fechada, fraca e átona (/prê/, /prô/, /pôs/)",
+              "explanation": "Passo 5 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Não recebe acento e grafa-se junta sem hífen (\"O fraco se une\" $\\to$ preconceito, preestabelecido, propor).",
+              "explanation": "Passo 6 do algoritmo de Teste Prosódico de Decisão para Pré, Pró e Pós.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Prosódico de Decisão para Pré, Pró e Pós."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Prosódico de Decisão para Pré, Pró e Pós."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste Prosódico de Decisão para Pré, Pró e Pós",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A00-G05-HIFEN-FUNDAMENTOS-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Realizar a leitura oral em voz alta: Concentrar a audição na primeira sílaba do vocábulo.",
+                "Avaliar a abertura e força da vogal:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se pronunciada de forma aberta, destacada e tônica (/prÉ/, /prÓ/, /pÓs/):",
+                "Recebe acento gráfico e separa-se por hífen (\"O forte se separa\" $\\to$ pré-escola, pós-graduação).",
+                "Se pronunciada de forma fechada, fraca e átona (/prê/, /prô/, /pôs/):",
+                "Não recebe acento e grafa-se junta sem hífen (\"O fraco se une\" $\\to$ preconceito, preestabelecido, propor)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A00-G05-HIFEN-FUNDAMENTOS-003",
+              "EXP-IP-A00-G05-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-AC-ESP-01",
-          "conceptA": "Herói (Oxítona)",
-          "conceptB": "Heroico (Paroxítona)",
-          "decisiveDifference": "Herói mantém o acento no ditongo aberto por ser oxítona; heroico perdeu o acento por ser paroxítona.",
-          "minimalPair": {
-            "sentenceA": "O soldado foi um herói nacional.",
-            "sentenceB": "O ato heroico salvou a comunidade.",
-            "difference": "Herói tem acento; heroico não tem acento gráfico."
+          "entityId": "CONTRAST-IP-A00-G05-001",
+          "title": "1. Assimetria entre os Prefixos BEM e MAL",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Se o ditongo aberto estiver na última sílaba, acentue; se estiver na penúltima, não acentue.",
-          "pitfall": "Retirar o acento de 'herói' ou recolocar em 'heroico'."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "1. Assimetria entre os Prefixos BEM e MAL",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A00-G05-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A00-G05-002",
+              "table": {
+                "tableId": "TABLE-IP-A00-G05-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério de Comparação",
+                  "Prefixo BEM",
+                  "Prefixo MAL",
+                  "Justificativa Fonética / Ortográfica"
+                ],
+                "rows": [
+                  [
+                    "Diante de Vogal",
+                    "Usa hífen (bem-aventurado)",
+                    "Usa hífen (mal-estar)",
+                    "Evita choque articulatório e fusão silábica anômala."
+                  ],
+                  [
+                    "Diante de Consoante H",
+                    "Usa hífen (bem-humorado)",
+                    "Usa hífen (mal-humorado)",
+                    "A letra H exige isolamento (\"H é um problema\")."
+                  ],
+                  [
+                    "Diante de Outras Consoantes",
+                    "Usa hífen (bem-criado, bem-vindo)",
+                    "GRAFA JUNTO (malcriado, malfeito)",
+                    "Mal aglutina suavemente antes de consoante; Bem preserva independência."
+                  ],
+                  [
+                    "Exceções Históricas",
+                    "benfazejo, benfeitor (junto com N)",
+                    "Não possui exceções de aglutinação antes de vogal.",
+                    "Concessão do Acordo ao \"uso consagrado\"."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A00-G05-001",
+              "EXP-IP-A00-G05-045"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A00-G05-002",
+          "title": "2. Prefixos Tônicos vs. Prefixos Átonos",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "2. Prefixos Tônicos vs. Prefixos Átonos",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A00-G05-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A00-G05-003",
+              "table": {
+                "tableId": "TABLE-IP-A00-G05-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Parâmetro",
+                  "Prefixo Tônico (Pré-, Pró-, Pós-)",
+                  "Prefixo Átono (Pre-, Pro-, Pos-)"
+                ],
+                "rows": [
+                  [
+                    "Acentuação Gráfica",
+                    "Sempre acentuados graficamente.",
+                    "Nunca acentuados."
+                  ],
+                  [
+                    "Abertura Vocálica",
+                    "Vogal aberta (/prÉ/, /prÓ/, /pÓs/).",
+                    "Vogal fechada (/prê/, /prô/, /pôs/)."
+                  ],
+                  [
+                    "Comportamento Ortográfico",
+                    "SEMPRE COM HÍFEN (pré-escolar, pós-graduação).",
+                    "SEMPRE JUNTO SEM HÍFEN (preconceito, preestabelecido)."
+                  ],
+                  [
+                    "Mantra Pedagógico",
+                    "\"O forte se separa\" (tem autonomia prosódica).",
+                    "\"O fraco se une\" (precisa apoiar-se no radical)."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A00-G05-002",
+              "EXP-IP-A00-G05-046"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A00-G05-003",
+          "title": "3. Consoante R após Prefixo em Vogal vs. Prefixo em Consoante B",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "3. Consoante R após Prefixo em Vogal vs. Prefixo em Consoante B",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A00-G05-003",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A00-G05-004",
+              "table": {
+                "tableId": "TABLE-IP-A00-G05-004",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Situação Morfológica",
+                  "Comportamento Ortográfico",
+                  "Exemplo Correto",
+                  "Exemplo Incorreto (Erro de Prova)"
+                ],
+                "rows": [
+                  [
+                    "Prefixo em Vogal + R (anti, bio, auto)",
+                    "Aglutina e DOBRA o R (RR)",
+                    "biorritmo, antirreflexo",
+                    "\\*bio-ritmo, \\*bioritmo"
+                  ],
+                  [
+                    "Prefixo em Consoante B + R (sub-, ab-)",
+                    "USA HÍFEN e NÃO DOBRA O R",
+                    "sub-reitor, sub-região",
+                    "\\*subrreitor, \\*subregião"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A00-G05-003",
+              "EXP-IP-A00-G05-047"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-AC-ESP-01",
-          "title": "Feiura vs Piauí",
-          "sentence": "A feiura da cena contrastava com as belezas do Piauí.",
-          "analysis": "Fei-u-ra: paroxítona com 'u' tônico precedido de ditongo 'ei' -> SEM acento. Pi-au-í: oxítona com 'i' tônico precedido de ditongo 'au' -> COM acento (regra do hiato em oxítonas não foi abolida).",
-          "pedagogicalTakeaway": "O Acordo Ortográfico só eliminou o acento do hiato antecedido de ditongo nas PAROXÍTONAS.",
-          "targetLO": "LO-A00-G05-01"
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-001",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-001 — Exercício de Fixação: Item a) contraatacar",
+          "statement": "Proposição do Item: a) contraatacar\nJulgamento: ERRADO (E)\nGrafia Correta: contra-atacar\nJustificativa Pedagógica: O prefixo contra- termina na vogal a e o verbo atacar inicia-se pela mesma vogal a. Por se tratar de vogais idênticas, aplica-se o mantra \"Iguais se repelem\", tornando o hífen obrigatório.",
+          "prompt": "Proposição do Item: a) contraatacar",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "a) contraatacar"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO (E)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "contra-atacar"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo contra- termina na vogal a e o verbo atacar inicia-se pela mesma vogal a. Por se tratar de vogais idênticas, aplica-se o mantra \"Iguais se repelem\", tornando o hífen obrigatório."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo contra- termina na vogal a e o verbo atacar inicia-se pela mesma vogal a. Por se tratar de vogais idênticas, aplica-se o mantra \"Iguais se repelem\", tornando o hífen obrigatório.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: a) contraatacar\nJulgamento: ERRADO (E)\nGrafia Correta: contra-atacar\nJustificativa Pedagógica: O prefixo contra- termina na vogal a e o verbo atacar inicia-se pela mesma vogal a. Por se tratar de vogais idênticas, aplica-se o mantra \"Iguais se repelem\", tornando o hífen obrigatório.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-001 — Exercício de Fixação: Item a) contraatacar sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-001 — Exercício de Fixação: Item a) contraatacar.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-001 — Exercício de Fixação: Item a) contraatacar.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: a) contraatacar",
+                "Julgamento: ERRADO (E)",
+                "Grafia Correta: contra-atacar",
+                "Justificativa Pedagógica: O prefixo contra- termina na vogal a e o verbo atacar inicia-se pela mesma vogal a. Por se tratar de vogais idênticas, aplica-se o mantra \"Iguais se repelem\", tornando o hífen obrigatório."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-001",
+              "EXP-IP-A00-G05-048"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-002",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-002 — Exercício de Fixação: Item b) anti-sociável",
+          "statement": "Proposição do Item: b) anti-sociável\nJulgamento: ERRADO (E)\nGrafia Correta: antissociável\nJustificativa Pedagógica: O prefixo anti- termina em vogal (i) e a base começa com s. Pelo Acordo Ortográfico, elimina-se o hífen e dobra-se a consoante s (ss) para preservar o som surdo /S/.",
+          "prompt": "Proposição do Item: b) anti-sociável",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "b) anti-sociável"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO (E)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "antissociável"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo anti- termina em vogal (i) e a base começa com s. Pelo Acordo Ortográfico, elimina-se o hífen e dobra-se a consoante s (ss) para preservar o som surdo /S/."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo anti- termina em vogal (i) e a base começa com s. Pelo Acordo Ortográfico, elimina-se o hífen e dobra-se a consoante s (ss) para preservar o som surdo /S/.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: b) anti-sociável\nJulgamento: ERRADO (E)\nGrafia Correta: antissociável\nJustificativa Pedagógica: O prefixo anti- termina em vogal (i) e a base começa com s. Pelo Acordo Ortográfico, elimina-se o hífen e dobra-se a consoante s (ss) para preservar o som surdo /S/.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-002 — Exercício de Fixação: Item b) anti-sociável sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-002 — Exercício de Fixação: Item b) anti-sociável.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-002 — Exercício de Fixação: Item b) anti-sociável.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: b) anti-sociável",
+                "Julgamento: ERRADO (E)",
+                "Grafia Correta: antissociável",
+                "Justificativa Pedagógica: O prefixo anti- termina em vogal (i) e a base começa com s. Pelo Acordo Ortográfico, elimina-se o hífen e dobra-se a consoante s (ss) para preservar o som surdo /S/."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-002",
+              "EXP-IP-A00-G05-049"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-003",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-003 — Exercício de Fixação: Item c) viceimperador",
+          "statement": "Proposição do Item: c) viceimperador\nJulgamento: ERRADO (E)\nGrafia Correta: vice-imperador\nJustificativa Pedagógica: O prefixo vice- possui autonomia semântica (Regra 2 — \"O independente se separa\"), exigindo hífen em todas as combinações lexicais.",
+          "prompt": "Proposição do Item: c) viceimperador",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "c) viceimperador"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO (E)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "vice-imperador"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo vice- possui autonomia semântica (Regra 2 — \"O independente se separa\"), exigindo hífen em todas as combinações lexicais."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo vice- possui autonomia semântica (Regra 2 — \"O independente se separa\"), exigindo hífen em todas as combinações lexicais.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: c) viceimperador\nJulgamento: ERRADO (E)\nGrafia Correta: vice-imperador\nJustificativa Pedagógica: O prefixo vice- possui autonomia semântica (Regra 2 — \"O independente se separa\"), exigindo hífen em todas as combinações lexicais.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-003 — Exercício de Fixação: Item c) viceimperador sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-003 — Exercício de Fixação: Item c) viceimperador.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-003 — Exercício de Fixação: Item c) viceimperador.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: c) viceimperador",
+                "Julgamento: ERRADO (E)",
+                "Grafia Correta: vice-imperador",
+                "Justificativa Pedagógica: O prefixo vice- possui autonomia semântica (Regra 2 — \"O independente se separa\"), exigindo hífen em todas as combinações lexicais."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-003",
+              "EXP-IP-A00-G05-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-004",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-004 — Exercício de Fixação: Item d) subregião / subrregião",
+          "statement": "Proposição do Item: d) subregião  (impresso no slide como subrregião)\nJulgamento: ERRADO (E)\nGrafia Correta: sub-região\nJustificativa Pedagógica: O prefixo sub- termina na consoante b. Diante da consoante r, exige-se hífen. A duplicação para rr é incorreta porque o prefixo não termina em vogal.",
+          "prompt": "Proposição do Item: d) subregião  (impresso no slide como subrregião)",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "d) subregião  (impresso no slide como subrregião)"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO (E)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "sub-região"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo sub- termina na consoante b. Diante da consoante r, exige-se hífen. A duplicação para rr é incorreta porque o prefixo não termina em vogal."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo sub- termina na consoante b. Diante da consoante r, exige-se hífen. A duplicação para rr é incorreta porque o prefixo não termina em vogal.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: d) subregião  (impresso no slide como subrregião)\nJulgamento: ERRADO (E)\nGrafia Correta: sub-região\nJustificativa Pedagógica: O prefixo sub- termina na consoante b. Diante da consoante r, exige-se hífen. A duplicação para rr é incorreta porque o prefixo não termina em vogal.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-004 — Exercício de Fixação: Item d) subregião / subrregião sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-004 — Exercício de Fixação: Item d) subregião / subrregião.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-004 — Exercício de Fixação: Item d) subregião / subrregião.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: d) subregião  (impresso no slide como subrregião)",
+                "Julgamento: ERRADO (E)",
+                "Grafia Correta: sub-região",
+                "Justificativa Pedagógica: O prefixo sub- termina na consoante b. Diante da consoante r, exige-se hífen. A duplicação para rr é incorreta porque o prefixo não termina em vogal."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-004",
+              "EXP-IP-A00-G05-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-005",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-005 — Exercício de Fixação: Item e) hiper-realista",
+          "statement": "Proposição do Item: e) hiper-realista\nJulgamento: CERTO (C)\nGrafia Correta: hiper-realista\nJustificativa Pedagógica: O prefixo hiper- termina em r e a base realista começa em r. Ocorre colisão de consoantes idênticas ($R+R$), impondo-se o hífen pelo princípio de que \"Iguais se repelem\".",
+          "prompt": "Proposição do Item: e) hiper-realista",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "e) hiper-realista"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "CERTO (C)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "hiper-realista"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo hiper- termina em r e a base realista começa em r. Ocorre colisão de consoantes idênticas ($R+R$), impondo-se o hífen pelo princípio de que \"Iguais se repelem\"."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo hiper- termina em r e a base realista começa em r. Ocorre colisão de consoantes idênticas ($R+R$), impondo-se o hífen pelo princípio de que \"Iguais se repelem\".",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: e) hiper-realista\nJulgamento: CERTO (C)\nGrafia Correta: hiper-realista\nJustificativa Pedagógica: O prefixo hiper- termina em r e a base realista começa em r. Ocorre colisão de consoantes idênticas ($R+R$), impondo-se o hífen pelo princípio de que \"Iguais se repelem\".'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-005 — Exercício de Fixação: Item e) hiper-realista sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-005 — Exercício de Fixação: Item e) hiper-realista.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-005 — Exercício de Fixação: Item e) hiper-realista.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: e) hiper-realista",
+                "Julgamento: CERTO (C)",
+                "Grafia Correta: hiper-realista",
+                "Justificativa Pedagógica: O prefixo hiper- termina em r e a base realista começa em r. Ocorre colisão de consoantes idênticas ($R+R$), impondo-se o hífen pelo princípio de que \"Iguais se repelem\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-005",
+              "EXP-IP-A00-G05-052"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-006",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-006 — Exercício de Fixação: Item f) pós-colonialismo",
+          "statement": "Proposição do Item: f) pós-colonialismo\nJulgamento: CERTO (C)\nGrafia Correta: pós-colonialismo\nJustificativa Pedagógica: O prefixo pós- é tônico e acentuado graficamente (\"O forte se separa\"), mantendo obrigatoriamente o hífen.",
+          "prompt": "Proposição do Item: f) pós-colonialismo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "f) pós-colonialismo"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "CERTO (C)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "pós-colonialismo"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo pós- é tônico e acentuado graficamente (\"O forte se separa\"), mantendo obrigatoriamente o hífen."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo pós- é tônico e acentuado graficamente (\"O forte se separa\"), mantendo obrigatoriamente o hífen.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: f) pós-colonialismo\nJulgamento: CERTO (C)\nGrafia Correta: pós-colonialismo\nJustificativa Pedagógica: O prefixo pós- é tônico e acentuado graficamente (\"O forte se separa\"), mantendo obrigatoriamente o hífen.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-006 — Exercício de Fixação: Item f) pós-colonialismo sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-006 — Exercício de Fixação: Item f) pós-colonialismo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-006 — Exercício de Fixação: Item f) pós-colonialismo.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: f) pós-colonialismo",
+                "Julgamento: CERTO (C)",
+                "Grafia Correta: pós-colonialismo",
+                "Justificativa Pedagógica: O prefixo pós- é tônico e acentuado graficamente (\"O forte se separa\"), mantendo obrigatoriamente o hífen."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-006",
+              "EXP-IP-A00-G05-053"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-007",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-007 — Exercício de Fixação: Item g) co-seno",
+          "statement": "Proposição do Item: g) co-seno\nJulgamento: ERRADO (E)\nGrafia Correta: cosseno\nJustificativa Pedagógica: O prefixo co- indica união e aglutina-se sem hífen. Diante de palavra iniciada por s, a consoante deve ser dobrada (ss) pós-vogal.",
+          "prompt": "Proposição do Item: g) co-seno",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "g) co-seno"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO (E)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "cosseno"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo co- indica união e aglutina-se sem hífen. Diante de palavra iniciada por s, a consoante deve ser dobrada (ss) pós-vogal."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo co- indica união e aglutina-se sem hífen. Diante de palavra iniciada por s, a consoante deve ser dobrada (ss) pós-vogal.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: g) co-seno\nJulgamento: ERRADO (E)\nGrafia Correta: cosseno\nJustificativa Pedagógica: O prefixo co- indica união e aglutina-se sem hífen. Diante de palavra iniciada por s, a consoante deve ser dobrada (ss) pós-vogal.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-007 — Exercício de Fixação: Item g) co-seno sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-007 — Exercício de Fixação: Item g) co-seno.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-007 — Exercício de Fixação: Item g) co-seno.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: g) co-seno",
+                "Julgamento: ERRADO (E)",
+                "Grafia Correta: cosseno",
+                "Justificativa Pedagógica: O prefixo co- indica união e aglutina-se sem hífen. Diante de palavra iniciada por s, a consoante deve ser dobrada (ss) pós-vogal."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-007",
+              "EXP-IP-A00-G05-054"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-008",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-008 — Exercício de Fixação: Item h) preestabelecido",
+          "statement": "Proposição do Item: h) preestabelecido\nJulgamento: CERTO (C)\nGrafia Correta: preestabelecido\nJustificativa Pedagógica: O prefixo pre- é átono e inacentuado (\"O fraco se une\"), aglutinando-se diretamente à palavra seguinte, mesmo diante da vogal e.",
+          "prompt": "Proposição do Item: h) preestabelecido",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "h) preestabelecido"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "CERTO (C)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "preestabelecido"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo pre- é átono e inacentuado (\"O fraco se une\"), aglutinando-se diretamente à palavra seguinte, mesmo diante da vogal e."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo pre- é átono e inacentuado (\"O fraco se une\"), aglutinando-se diretamente à palavra seguinte, mesmo diante da vogal e.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: h) preestabelecido\nJulgamento: CERTO (C)\nGrafia Correta: preestabelecido\nJustificativa Pedagógica: O prefixo pre- é átono e inacentuado (\"O fraco se une\"), aglutinando-se diretamente à palavra seguinte, mesmo diante da vogal e.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-008 — Exercício de Fixação: Item h) preestabelecido sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-008 — Exercício de Fixação: Item h) preestabelecido.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-008 — Exercício de Fixação: Item h) preestabelecido.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: h) preestabelecido",
+                "Julgamento: CERTO (C)",
+                "Grafia Correta: preestabelecido",
+                "Justificativa Pedagógica: O prefixo pre- é átono e inacentuado (\"O fraco se une\"), aglutinando-se diretamente à palavra seguinte, mesmo diante da vogal e."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-008",
+              "EXP-IP-A00-G05-055"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-009",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-009 — Exercício de Fixação: Item i) micro-análise",
+          "statement": "Proposição do Item: i) micro-análise\nJulgamento: ERRADO (E)\nGrafia Correta: microanálise\nJustificativa Pedagógica: O prefixo micro- termina em o e o vocábulo análise inicia-se em a. Sendo vogais diferentes, aplica-se o mantra \"Diferentes se atraem\", grafando-se tudo junto.",
+          "prompt": "Proposição do Item: i) micro-análise",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "i) micro-análise"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO (E)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "microanálise"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo micro- termina em o e o vocábulo análise inicia-se em a. Sendo vogais diferentes, aplica-se o mantra \"Diferentes se atraem\", grafando-se tudo junto."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo micro- termina em o e o vocábulo análise inicia-se em a. Sendo vogais diferentes, aplica-se o mantra \"Diferentes se atraem\", grafando-se tudo junto.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: i) micro-análise\nJulgamento: ERRADO (E)\nGrafia Correta: microanálise\nJustificativa Pedagógica: O prefixo micro- termina em o e o vocábulo análise inicia-se em a. Sendo vogais diferentes, aplica-se o mantra \"Diferentes se atraem\", grafando-se tudo junto.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-009 — Exercício de Fixação: Item i) micro-análise sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-009 — Exercício de Fixação: Item i) micro-análise.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-009 — Exercício de Fixação: Item i) micro-análise.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: i) micro-análise",
+                "Julgamento: ERRADO (E)",
+                "Grafia Correta: microanálise",
+                "Justificativa Pedagógica: O prefixo micro- termina em o e o vocábulo análise inicia-se em a. Sendo vogais diferentes, aplica-se o mantra \"Diferentes se atraem\", grafando-se tudo junto."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-009",
+              "EXP-IP-A00-G05-056"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A00-G05-010",
+          "title": "EX-A00-G05-HIFEN-FUNDAMENTOS-010 — Exercício de Fixação: Item j) infra-estrutura",
+          "statement": "Proposição do Item: j) infra-estrutura\nJulgamento: ERRADO (E)\nGrafia Correta: infraestrutura\nJustificativa Pedagógica: O prefixo infra- termina em a e a base estrutura inicia-se em e. As vogais diferentes atraem-se, eliminando o hífen.",
+          "prompt": "Proposição do Item: j) infra-estrutura",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Proposição do Item",
+              "rationale": "j) infra-estrutura"
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "ERRADO (E)"
+            },
+            {
+              "order": 3,
+              "action": "Grafia Correta",
+              "rationale": "infraestrutura"
+            },
+            {
+              "order": 4,
+              "action": "Justificativa Pedagógica",
+              "rationale": "O prefixo infra- termina em a e a base estrutura inicia-se em e. As vogais diferentes atraem-se, eliminando o hífen."
+            }
+          ],
+          "result": "Justificativa Pedagógica: O prefixo infra- termina em a e a base estrutura inicia-se em e. As vogais diferentes atraem-se, eliminando o hífen.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Proposição do Item: j) infra-estrutura\nJulgamento: ERRADO (E)\nGrafia Correta: infraestrutura\nJustificativa Pedagógica: O prefixo infra- termina em a e a base estrutura inicia-se em e. As vogais diferentes atraem-se, eliminando o hífen.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A00-G05-HIFEN-FUNDAMENTOS-010 — Exercício de Fixação: Item j) infra-estrutura sobre o segmento analisado.",
+          "commonMistake": "Confundir contagem de letras com número de fonemas ou desconsiderar regras ortográficas de EX-A00-G05-HIFEN-FUNDAMENTOS-010 — Exercício de Fixação: Item j) infra-estrutura.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A00-G05-HIFEN-FUNDAMENTOS-010 — Exercício de Fixação: Item j) infra-estrutura.",
+          "exampleId": "WORKED_EXAMPLE-IP-A00-G05-010",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição do Item: j) infra-estrutura",
+                "Julgamento: ERRADO (E)",
+                "Grafia Correta: infraestrutura",
+                "Justificativa Pedagógica: O prefixo infra- termina em a e a base estrutura inicia-se em e. As vogais diferentes atraem-se, eliminando o hífen."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A00-G05-010",
+              "EXP-IP-A00-G05-057"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -174,52 +1491,223 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-AC-ESP-01",
-          "title": "Verbos que Dobram o E: Cre-De-Le-Ve",
-          "content": "CRE-DE-LE-VE (Crer, Dar, Ler, Ver) dobram o 'e' no plural e NÃO levam acento: creem, deem, leem, veem.",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "3ª pessoa do plural dos verbos notáveis.",
-          "limitations": "Verbos TER e VIR no plural recebem acento circunflexo (eles têm, eles vêm).",
-          "text": "Credeleve: creem, deem, leem, veem sem acento gráfico."
+          "title": "Mantra de Fixação: Emprego do Hífen - Fundamentos",
+          "content": "Mantra dos Porquês: Por que (pergunta/início), Por quê (fim de frase), Porque (resposta/pois), Porquê (substantivo com artigo).",
+          "text": "Mantra dos Porquês: Por que (pergunta/início), Por quê (fim de frase), Porque (resposta/pois), Porquê (substantivo com artigo)."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-AC-ESP-01",
-          "title": "A Confusão TEM / TÊM vs VEM / VEEM",
-          "trigger": "Conjugação dos verbos TER, VIR e VER na 3ª pessoa do plural.",
-          "whyItFails": "O candidato confunde a flexão de VIR (eles vêm - circunflexo) com a flexão de VER (eles veem - dobro do 'e' sem acento).",
-          "correctApproach": "Eles TÊM (ter), Eles VÊM (vir, chegar), Eles VEEM (ver, enxergar).",
-          "bankTechnique": "Redigir 'Eles vêm o pôr do sol' com sentido de enxergar.",
-          "counterRule": "Quem enxerga 'vê' e no plural 'veem'; quem chega 'vem' e no plural 'vêm'."
+          "entityId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-001",
+          "title": "O Erro do R ou S Simples Intervocálico",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro do R ou S Simples Intervocálico.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro do R ou S Simples Intervocálico.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro do R ou S Simples Intervocálico no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro do R ou S Simples Intervocálico.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro do R ou S Simples Intervocálico.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro do R ou S Simples Intervocálico para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro do R ou S Simples Intervocálico.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro do R ou S Simples Intervocálico.",
+          "trapId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Frequente: Aglutinar prefixo em vogal com palavras iniciadas por R ou S mantendo apenas uma consoante (bioritmo, antesala, minisubmarino).",
+                "Correção: A consoante deve ser dobrada (RR / SS) para preservar a pronúncia correta (biorritmo, antessala, minissubmarino)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A00-G05-HIFEN-FUNDAMENTOS-001",
+              "EXP-IP-A00-G05-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-002",
+          "title": "A Armadilha da Assimetria BEM vs. MAL em Provas",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha da Assimetria BEM vs. MAL em Provas.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha da Assimetria BEM vs. MAL em Provas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha da Assimetria BEM vs. MAL em Provas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha da Assimetria BEM vs. MAL em Provas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha da Assimetria BEM vs. MAL em Provas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha da Assimetria BEM vs. MAL em Provas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha da Assimetria BEM vs. MAL em Provas.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha da Assimetria BEM vs. MAL em Provas.",
+          "trapId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinha da Banca: Induzir o candidato a grafar \"mal-criado\" com hífen por analogia a bem-criado.",
+                "Correção: Com bem, usa-se hífen (bem-criado); com mal, aglutina-se antes de consoante (malcriado)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A00-G05-HIFEN-FUNDAMENTOS-002",
+              "EXP-IP-A00-G05-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-003",
+          "title": "Hifenização Indevida de \"Subsídio\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Hifenização Indevida de \"Subsídio\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Hifenização Indevida de \"Subsídio\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Hifenização Indevida de \"Subsídio\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Hifenização Indevida de \"Subsídio\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Hifenização Indevida de \"Subsídio\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Hifenização Indevida de \"Subsídio\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Hifenização Indevida de \"Subsídio\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Hifenização Indevida de \"Subsídio\".",
+          "trapId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinha da Banca: Apresentar sub-sídio com hífen ou afirmar que o S tem som de /Z/.",
+                "Correção: Grafa-se junto e sem hífen: subsídio (com som /sub-sí-dio/, som de /S/ surdo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A00-G05-HIFEN-FUNDAMENTOS-003",
+              "EXP-IP-A00-G05-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-004",
+          "title": "Falso Dobramento de R após o Prefixo SUB-",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falso Dobramento de R após o Prefixo SUB-.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falso Dobramento de R após o Prefixo SUB-.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falso Dobramento de R após o Prefixo SUB- no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falso Dobramento de R após o Prefixo SUB-.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falso Dobramento de R após o Prefixo SUB-.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falso Dobramento de R após o Prefixo SUB- para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falso Dobramento de R após o Prefixo SUB-.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falso Dobramento de R após o Prefixo SUB-.",
+          "trapId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pegadinha da Banca: Apresentar a forma subrregião alegando a regra do dobramento do R.",
+                "Correção: O prefixo sub- termina em consoante (b), exigindo hífen diante de R (sub-região) sem duplicação de letra."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A00-G05-HIFEN-FUNDAMENTOS-004",
+              "EXP-IP-A00-G05-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-005",
+          "title": "Distorção de Pronúncia em Prefixos Átonos",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Distorção de Pronúncia em Prefixos Átonos.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Distorção de Pronúncia em Prefixos Átonos.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Distorção de Pronúncia em Prefixos Átonos no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Distorção de Pronúncia em Prefixos Átonos.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Distorção de Pronúncia em Prefixos Átonos.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Distorção de Pronúncia em Prefixos Átonos para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Distorção de Pronúncia em Prefixos Átonos.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Distorção de Pronúncia em Prefixos Átonos.",
+          "trapId": "WARN-A00-G05-HIFEN-FUNDAMENTOS-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Frequente: Pronunciar regionalmente \"pré-conceito\" ou \"pré-definir\" com vogal aberta e querer colocar acento e hífen.",
+                "Correção: Pela norma-padrão, são formas átonas: preconceito, predefinir, predeterminar, preestabelecido (sem acento e sem hífen)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A00-G05-HIFEN-FUNDAMENTOS-005",
+              "EXP-IP-A00-G05-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Acento Diferencial",
-          "shortDefinition": "Sinal diacrítico usado para distinguir palavras homógrafas com significados ou funções gramaticais distintas.",
-          "fullDefinition": "Recurso gráfico mantido estritamente para pares como pôr/por e pôde/pode para evitar ambiguidade contextual imediata.",
-          "domain": "Ortografia",
-          "commonMisconception": "Supor que o acento diferencial foi 100% extinto em todos os casos."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Regra Geral da Prefixação Vocálica e a Letra H (Regra 1)**: Definição ou ideia central\nA formação de palavras por prefixação rege-se, no caso geral do Novo Acordo Ortográfico, por dois princípios fonético-gráficos universais: a repulsão obrigatória entre vogais idênticas (\"Iguais se repelem\") e a separação obrigatória diante da consoante etimológica muda H (\"H é um problema\").\nExplicação consolidada\nPilar 1 — \"Iguais se repelem\":\nQuando o prefixo (ou falso prefixo) termina por uma vogal e a palavra-base inicia-se exatamente pela mesma vogal, ocorre repulsão gráfica obrigatória materializada pelo hífen.\nO hífen previne a fusão gráfica e fonética confusa de sons vocálicos homólogos.\nExemplos: anti-inflamatório ($i+i$), auto-observação ($o+o$), contra-arrazoado ($a+a$), micro-ondas ($o+o$), semi-interno ($i+i$).\nPilar 2 — \"H é um problema\":\nNa Língua Portuguesa, a letra H não possui valor fonético isolado no início de vocábulos, funcionando como um obstáculo articulatório à fusão com prefixos.\nQualquer prefixo que se una a palavra iniciada por H exige hífen para proteger a identidade gráfica da palavra-base.\nExemplos: bio-história, sub-horizonte, neo-helênico, super-homem, pan-helenismo.\nExemplos e contraexemplos\nCorreto: anti-inflamatório, contra-atacar, arqui-inimigo, sobre-estimar.\nIncorreto: antiinflamatório, contraatacar (violam a repulsão de iguais).\nCorreto: neo-helênico, sub-humano, ultra-hiperbólico.\nExceções ou limites\nO prefixo agregador co- constitui exceção à repulsão de vogais iguais (ex.: cooperar, coordenar), unindo-se diretamente.\nRelações\nContrasta com: (Aglutinação com vogais diferentes).\nAplica-se em: .\nEvidenciado visualmente por: VIS-A00-G05-HIFEN-FUNDAMENTOS-001, VIS-A00-G05-HIFEN-FUNDAMENTOS-003.",
+            "**Falsos Prefixos (Radicais Eruditos) e Equiparação Ortográfica**: Definição ou ideia central\nFalsos prefixos (pseudoprefixos) são elementos composicionais de origem grega ou latina (aero, agro, bio, eletro, foto, geo, hidro, macro, micro, mini, neo, pseudo, tele) que possuem carga semântica autônoma de radical, mas que, na sistemática do Acordo Ortográfico, submetem-se rigorosamente às mesmas regras aplicadas aos prefixos genuínos.\nExplicação consolidada\nNa morfologia teórica, prefixos autênticos (anti-, re-, des-) são morfemas puramente derivacionais presos, ao passo que falsos prefixos são radicais eruditos que formam palavras por composição.\nPara a resolução de itens de provas de concursos, essa distinção morfológica deve ser desconsiderada:\nSe terminar em vogal e o próximo iniciar na mesma vogal: hífen (micro-ondas, pseudo-occipital).\nSe o próximo elemento iniciar por H: hífen (bio-história).\nSe iniciar por vogal diferente: aglutina (aeroespacial, agroindustrial).\nSe iniciar por R ou S pós-vogal: aglutina e dobra (microssistema, biorritmo).\nRelações\nSubordina-se a: , e .\nTermo técnico: TERM-A00-G05-HIFEN-FUNDAMENTOS-002.",
+            "**Aglutinação de Vogais Diferentes (\"Diferentes se atraem\")**: Definição ou ideia central\nSempre que um prefixo terminado em vogal junta-se a um segundo elemento iniciado por vogal diferente, opera a atração ortográfica direta: escreve-se tudo junto, em um único vocábulo, sem hífen (\"Diferentes se atraem\").\nExplicação consolidada\nBaseia-se no princípio da bipolaridade ortográfica: na ausência das condições excludentes de hífen (letras iguais ou letra H), o padrão natural da língua é a fusão por aglutinação.\nA transição vocálica heterogênea ($a+e$, $o+a$, $i+e$, $a+i$) não gera confusão de pronúncia, permitindo a formação fluida de um único termo.\nAplicações sistemáticas:\nanti + ético = antiético\nextra + escolar = extraescolar\naero + espacial = aeroespacial\nmicro + análise = microanálise\ninfra + estrutura = infraestrutura\nagro + industrial = agroindustrial\nExemplos e contraexemplos\nCorreto: microanálise, infraestrutura, autoestrada, autoescola.\nIncorreto: micro-análise, infra-estrutura, auto-escola (erros frequentes herdados de normas pré-acordo).\nRelações\nOposta a: (Iguais se repelem).\nAplicada em: , .",
+            "**Dobramento das Consoantes R e S pós-Vogal (RR e SS)**: Definição ou ideia central\nQuando o prefixo termina por vogal e a palavra-base inicia-se pelas consoantes R ou S, o hífen é eliminado, fundem-se os elementos e dobra-se a consoante (RR ou SS) para preservar o valor fonético original da palavra-base.\nExplicação consolidada\nNecessidade Fonético-Articulatória:\nEm português, uma consoante R simples posicionada entre duas vogais assume som brando vibrante simples (/r/, como em caro, muro). Para manter a vibração múltipla e forte (/R/, como em ritmo, republicano), a consoante precisa ser duplicada para RR.\nUma consoante S simples entre duas vogais assume fonema sonoro /Z/ (casa, mesa). Para manter a fricativa surda /S/ (sala, sociável, som), exige-se a duplicação para SS.\nAplicações sistemáticas:\nbio + ritmo = biorritmo\nanti + sociável = antissociável\nante + sala = antessala\ninfra + som = infrassom\nanti + republicano = antirrepublicano\nmini + saia = minissaia\nmini + submarino = minissubmarino\nAlertas e limites\nA duplicação consonantal exige terminantemente que o prefixo termine em vogal. Não se dobram R ou S se o prefixo terminar em consoante (como ocorre em sub-região).\nRelações\nPossui alerta de erro: .\nDistingue-se de: (Prefixos terminados em B).",
+            "**Prefixos Consonantais Especiais Terminados em R (`hiper-`, `inter-`, `super-`)**: Definição ou ideia central\nOs prefixos hiper-, inter- e super- constituem uma classe consonantal especial terminada em R. Empregam hífen unicamente diante da letra H ou da consoante idêntica R. Diante de quaisquer outras letras (vogais ou outras consoantes), grafam-se aglutinados sem hífen.\nExplicação consolidada\nCom H (\"H é um problema\"): Hífen obrigatório (super-homem, hiper-hedonista, inter-hemisférico).\nCom R (\"Iguais se repelem\"): Ocorre colisão das consoantes idênticas ($R+R$). Usa-se hífen para não fundir os radicais (hiper-requintado, super-revista, inter-resistente, hiper-realista).\nCom Vogal ou outras Consoantes: Aglutina-se diretamente, pois não há repetição de consoante nem presença de H (superinteressante, superproteção, interestadual).\nRelações\nSubordina-se a: .",
+            "**Prefixos Nasais (`circun-` e `pan-`)**: Definição ou ideia central\nOs prefixos circun- e pan- terminam nas consoantes nasais M ou N. Exigem hífen quando o segundo elemento inicia-se por vogal, pelas consoantes nasais M ou N, ou pela letra H.\nExplicação consolidada\nPrevenção de Distorção Silábica diante de Vogal: Se aglutinados a uma palavra iniciada por vogal, a consoante nasal final formaria uma sílaba anômala com a vogal (pan + africano $\\to$ \"pa-na-fri-ca-no\"), desfigurando a pronúncia e a percepção do prefixo. O hífen impede essa alteração fonética (pan-africano, circun-escolar).\nColisão Nasal (M / N): Pelo princípio de \"Iguais se repelem\", o encontro de nasais homólogas exige hífen (circun-navegação, pan-negritude).\nPresença de H: Pelo princípio \"H é um problema\", o hífen é imperativo (pan-helenismo).\nExemplos\nCom vogal: pan-africano, circun-escolar.\nCom nasal (M/N): circun-navegação, pan-negritude.\nCom H: pan-helenismo.",
+            "**Prefixos Semanticamente Independentes (Regra 2) e a Assimetria de \"Mal\" vs. \"Bem\"**: Definição ou ideia central\nPrefixos e falsos prefixos dotados de autonomia semântica ou funcional (além, aquém, bem, ex, recém, sem, grão, grã, bel, soto, sota, vice, viso) regem-se pelo mantra \"O independente se separa\", exigindo hífen de modo universal. Por sua vez, o elemento mal opera como exceção assimétrica, exigindo hífen apenas diante de vogal ou H.\nExplicação consolidada\nRegra dos Prefixos Independentes:\nTermos como além, ex, vice, recém preservam autonomia de vocábulo na língua (\"o ex sumiu\", \"estou além\", \"recém-chegado\").\nDevido a essa independência, exigem sempre hífen, independentemente da consoante ou vogal seguinte (além-mar, ex-presidente, vice-imperador, recém-casado, sem-número, grã-cruz, viso-rei).\nExceções consagradas pelo uso do prefixo bem: benfazejo e benfeitor (unem-se sem hífen, trocando o 'm' por 'n').\nA Exceção Assimétrica de MAL vs. BEM:\nEmbora mal seja o antônimo independente de bem, ele não recebe hífen universal.\nCom Hífen (Vogal ou H): Diante de vogal (para evitar a fusão silábica /les/ em ma-les-tar) e diante de H: mal-estar, mal-humorado, mal-intencionado.\nSem Hífen / Aglutinado (Demais Consoantes): Diante de consoantes diferentes de H, aglutina-se em uma só palavra: malcriado, malfeito, maldisposto, malvisto, malsucedido.\nContraste com BEM: O prefixo bem mantém hífen diante de consoantes (bem-criado, bem-feito, bem-vindo).\nRelações\nPossui procedimento de decisão: .\nPossui alerta de pegadinha: .",
+            "**Prefixos Terminados em B e D (Regra 3: `sub-`, `ad-`, `ob-`, `ab-`)**: Definição ou ideia central\nOs prefixos terminados nas consoantes oclusivas B (ab-, ob-, sob-, sub-) e D (ad-) exigem hífen unicamente em três circunstâncias: diante de letras iguais ($B+B$, $D+D$), diante da consoante R ($B+R$, $D+R$) e diante da letra H ($B+H$). Nos demais casos, unem-se sem hífen.\nExplicação consolidada\nIguais se repelem ($B+B$ e $D+D$): sub-base, ad-digital.\nHífen com R ($B+R$ e $D+R$): Exigem hífen obrigatório (sub-reitor, ad-referendar, ab-reptício, ob-rogar, sub-região).\nAlerta decisivo: Nunca se dobra a letra R em derivados de sub- (forma incorreta: \"subrregião\"), pois a regra do dobramento é restrita a prefixos terminados em vogal.\nH é um problema ($B+H$): sub-humano.\nDemais casos (Aglutinação): Unem-se diretamente sem hífen (subsolo, subtenente, subcategoria, subsídio).\nRelações\nPossui alerta de erro: (Grafia de subsídio).",
+            "**Prosódia Prefixal: Formas Tônicas (*Pré/Pró/Pós*) vs. Formas Átonas (*Pre/Pro/Pos*)**: Definição ou ideia central\nA presença do hífen nas formações com pré/pre, pró/pro e pós/pos é condicionada pela tonicidade prosódica e acentuação gráfica do elemento prefixal: formas tônicas exigem hífen (\"O forte se separa\"), enquanto formas átonas aglutinam-se sem hífen (\"O fraco se une\").\nExplicação consolidada\nPrefixos Tônicos (Abertos e Acentuados — pré-, pró-, pós-):\nPronunciados com vogal aberta (/prÉ/, /prÓ/, /pÓs/) e acento gráfico.\nPossuem autonomia prosódica (\"o forte se basta\"), exigindo hífen.\nExemplos: pré-escolar, pré-datado, pré-história, pró-germânico, pró-ativo, pós-graduação, pós-colonialismo.\nPrefixos Átonos (Fechados e Inacentuados — pre-, pro-, pos-):\nPronunciados com vogal fechada/átona (/prê/, /prô/, /pôs/) e sem acento gráfico.\nNão possuem autonomia prosódica (\"o fraco precisa se apoiar\"), aglutinando-se diretamente sem hífen, mesmo diante de vogal igual.\nExemplos: preconceito, predefinir, predeterminar, preaquecer, preestabelecido, propor, pospor.\nRelações\nPossui procedimento de decisão: .\nPossui alerta de erro: .",
+            "**O Caso Especial do Prefixo Agregador `co-`**: Definição ou ideia central\nO prefixo co- carrega sentido semântico inerente de união, parceria e coparticipação. Por sua natureza agregadora, a regra geral determina a aglutinação direta sem hífen em quase todas as situações (inclusive diante de vogais idênticas), exigindo hífen unicamente diante da letra H.\nExplicação consolidada\nRegra Geral (Aglutinação Sem Hífen): O prefixo co- aglutina-se diretamente:\nDiante de vogal diferente: coautor, coedição.\nDiante de vogal idêntica 'o' (exceção à regra de vogais iguais): cooperação, coordenar, coobrigado, coocupante.\nDiante de consoantes gerais: cofundador, copadroeira, coreu.\nAplicação do Dobramento de S/R pós-vogal: Ao unir-se a palavras iniciadas por S ou R, aplica-se a regra fonética geral de duplicação: co + seno = cosseno; co + responsável = corresponsável.\nÚnica Exceção (Presença de H): Exige hífen quando o segundo elemento inicia-se por H (co-herdeiro, co-habitante).Dica associada: TIP-A00-G05-HIFEN-FUNDAMENTOS-004.",
+            "**A Estrutura dos Nomes Compostos e Locuções (Caso 5)**: Definição ou ideia central\nA morfologia dos Nomes Compostos diferencia-se estruturalmente da prefixação por unir dois vocábulos autônomos com significado pleno na língua. No sistema dos 5 Casos, constitui o Caso 5: regra geral de manutenção do hífen, com supressão do hífen em locuções com conectivo e em vocábulos com perda da noção de composição.\nExplicação consolidada\nNomes Compostos por Justaposição (Regra Geral): Mantêm hífen quando formam unidade semântica sem conectivo expresso (couve-flor, guarda-chuva, arco-íris).\nLocuções (Substantivas, Adjetivas, Adverbiais, Conjuntivas): Expressões ligadas por preposição ou conectivo grafam-se separadas e sem hífen (fim de semana, ponto e vírgula, dia a dia, sala de jantar).\nPerda da Noção de Composição: Palavras cujo sentido composicional original fundiu-se integralmente na consciência dos falantes grafam-se juntas e sem hífen (paraquedas, pontapé, mandachuva, girassol).\nRelações\nCompleta o mapa de: a 010."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-AC-ESP-01",
-          "question": "Quais são os 3 casos em que o acento diferencial permanece OBRIGATÓRIO?",
-          "keyPoints": [
-            "Pôde (passado) vs Pode (presente).",
-            "Pôr (verbo) vs Por (preposição).",
-            "Têm/Vêm (plural) vs Tem/Vem (singular)."
-          ],
-          "targetConcept": "Acento Diferencial Pós-Acordo",
-          "targetLO": "LO-A00-G05-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Emprego do Hífen - Fundamentos?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

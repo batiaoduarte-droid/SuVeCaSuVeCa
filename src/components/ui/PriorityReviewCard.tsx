@@ -68,7 +68,7 @@ export const PriorityReviewCard: React.FC<PriorityReviewCardProps> = ({
             className="flex items-center justify-center gap-2 rounded-2xl bg-teal-800 px-6 py-3.5 text-sm font-black text-white hover:bg-teal-900 active:scale-95 transition cursor-pointer shadow-md"
           >
             <BookOpen className="h-4 w-4" />
-            <span>Estudar Aula Agora</span>
+            <span>Estudar tema agora</span>
             <ArrowRight className="h-4 w-4" />
           </button>
         </div>

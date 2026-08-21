@@ -1,23 +1,25 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A07-G10",
     "lessonId": "A07",
-    "title": "Orações Reduzidas de Infinitivo, Gerúndio e Particípio",
+    "title": "Palavra SE",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A07-G10",
     "lessonId": "A07",
-    "title": "Orações Reduzidas de Infinitivo, Gerúndio e Particípio",
+    "title": "Palavra SE",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Palavra SE.",
       "Aplicar regras canônicas e procedimentos decisórios de Palavra SE na resolução de questões.",
       "Analisar o papel de Palavra SE no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
-    "conceptCount": 1,
-    "ruleCount": 1,
+    "conceptCount": 10,
+    "ruleCount": 0,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A07-G10-001",
       "OBJ-IP-A07-G10-002",
@@ -30,144 +32,1126 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "As Orações Reduzidas caracterizam-se por não serem introduzidas por conjunção subordinativa nem por pronome relativo, apresentando o verbo em uma das três formas nominais (Infinitivo, Gerúndio ou Particípio). O domínio de seu desdobramento para orações desenvolvidas é indispensável na análise sintática avançada.",
-      "visualBlueprint": "Reduzida de Infinitivo: Ao terminar a prova, saiu (= Quando terminou [Temporal]) | Reduzida de Gerúndio: Estudando todos os dias, vencerá (= Se estudar [Condicional]) | Reduzida de Particípio: Terminada a reunião, foram embora (= Logo que terminou [Temporal]).",
-      "cognitiveAnchor": "Para classificar a oração reduzida, DESDOBRE-A inserindo a conjunção ou pronome relativo correspondente e conjugando o verbo.",
-      "strategicSignificance": "Tema técnico de alta frequência em provas de reescrita, substituição de orações e pontuação.",
-      "coreTension": "Confundir oração reduzida de particípio (com valor de adjetiva ou temporal) com tempo composto ou voz passiva."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Palavra SE",
+      "summary": "Articulação morfossintática e semântica de Palavra SE com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A07-10",
-          "name": "Formas Nominais e Orações Desenvolvidas",
-          "reason": "Dominar as conjunções e pronomes relativos para reconstruir a oração desenvolvida.",
-          "activationPrompt": "Como se desenvolve a oração 'Ao chegar em casa, descansou'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A07-G10",
+          "title": "Mapa de Dependência: Palavra SE",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Palavra SE",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "O Mecanismo de Desdobramento das Orações Reduzidas",
-          "pedagogicalGoal": "Aprender a converter orações reduzidas em desenvolvidas para identificar sua função exata.",
+          "groupId": "GRP-IP-A07-G10-01",
+          "title": "A análise começa por dois grandes caminhos",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "table",
-              "title": "Mapeamento das Orações Reduzidas",
-              "columns": [
-                "Forma Nominal",
-                "Oração Reduzida",
-                "Oração Desenvolvida Equivalente",
-                "Classificação Sintática"
-              ],
-              "rows": [
-                [
-                  "Infinitivo",
-                  "É preciso [estudar muito].",
-                  "É preciso [que se estude muito].",
-                  "Subordinada Substantiva Subjetiva"
-                ],
-                [
-                  "Infinitivo",
-                  "Ao [chegar à sala], sentou-se.",
-                  "Quando [chegou à sala], sentou-se.",
-                  "Subordinada Adverbial Temporal"
-                ],
-                [
-                  "Gerúndio",
-                  "[Sabendo da verdade], calou-se.",
-                  "[Como sabia da verdade], calou-se.",
-                  "Subordinada Adverbial Causal"
-                ],
-                [
-                  "Gerúndio",
-                  "Vi a menina [dançando no palco].",
-                  "Vi a menina [que dançava no palco].",
-                  "Subordinada Adjetiva Restritiva"
-                ],
-                [
-                  "Particípio",
-                  "[Feito o acordo], todos saíram.",
-                  "[Logo que se fez o acordo], todos saíram.",
-                  "Subordinada Adverbial Temporal"
-                ],
-                [
-                  "Particípio",
-                  "Li o livro [comprado ontem].",
-                  "Li o livro [que foi comprado ontem].",
-                  "Subordinada Adjetiva Restritiva"
-                ]
-              ],
-              "text": "A oração reduzida cumpre exatamente as mesmas funções sintáticas das orações desenvolvidas correspondentes."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO primeiro passo proposto para classificar a palavra “se” é perguntar se ela pertence a um de dois grandes caminhos: conjunção ou pronome.\nExplicação detalhada\nA professora apresenta esse corte como mecanismo de redução da complexidade. Em vez de recuperar imediatamente todas as classificações possíveis, o aluno deve começar por uma oposição mais ampla e só depois subdividir o ramo pertinente.\nA folha manuscrita mostra progressivamente:\n1. Perguntar se o SE é conjunção ou pronome.\nA professora afirma que “basicamente” o “se” pode trilhar “dois caminhos” e alerta que esquecer essa divisão faz o aluno perder tempo.\nO slide #ANOTAAÍ recebe o título manuscrito “PASSO A PASSO”, um quadro com SE e a primeira instrução escrita em vermelho.\nRelações\nExpandido por: \nExpandido por:"
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-02",
+          "title": "Conjunção é identificada pela relação entre orações",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nNa explicação da professora, o “se” é conjunção quando funciona como conectivo que une ou relaciona orações.\nExplicação detalhada\nA função relacional é utilizada como critério para distinguir o caminho “conjunção” do outro ramo da análise. Visualmente, a professora escreve abaixo do bloco CONJUNÇÃO as expressões “Une orações” e “Relaciona”.\nA transcrição registra: “O se é conjunção quando ele une... Relaciona orações.” Em seguida, a professora define a conjunção como “um conectivo que une orações”.\nNo fluxograma “PALAVRA ‘SE’”, o bloco A PALAVRA “SE” leva a CONJUNÇÃO, de onde partem os subtipos trabalhados.Expandido por: \nEvidenciado visualmente por: VIS-A07-V029-029-PALAVRA-SE-004"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-03",
+          "title": "O ramo das conjunções divide-se em integrante e adverbial",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nDepois de reconhecer “se” como conjunção, a análise proposta pela professora cria duas novas possibilidades: integrante ou adverbial.\nExplicação detalhada\nA integrante é vinculada às orações substantivas. A adverbial é vinculada a valor semântico circunstancial.\nNo quadro anotado, a professora circunda os dois grupos como etapas I e II e escreve “ADVERBIAL (CIRCUNSTÂNCIAS)” junto ao segundo.Expandido por: \nExpandido por:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-04",
+          "title": "Conjunção integrante: oração substantiva e teste de substituição",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO “se” integrante é apresentado como a conjunção que integra/inicia uma oração substantiva.\nExplicação detalhada\nA professora fornece um teste operacional: a oração introduzida pode ser tratada como algo equivalente a isso, disso ou nisso, conforme a estrutura sintática.\nO slide oferece o exemplo:\nNão sei se devemos partir.\nA professora associa a oração introduzida por “se” à ideia de “isso”, explicitando a relação com oração substantiva.\nSobre INTEGRANTE, são acrescentadas as anotações:\n= ISSO / DISSO / NISSO\nreferência a “integra/inicia oração substantiva”.Exemplificado por: 001Relacionado a: TIP-A07-V029-029-PALAVRA-SE-003"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-05",
+          "title": "Conjunção adverbial: identificação por circunstância",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO ramo adverbial é identificado pelo valor circunstancial.\nExplicação detalhada\nA professora usa a expressão didática “cheiro de circunstância”. Uma vez reconhecido esse valor, o aluno deve verificar qual relação semântica está presente.\nNesta aula, são trabalhadas três circunstâncias associadas ao “se”:\ncondição;\nconcessão;\ncausa.Expandido por: \nExpandido por: \nExpandido por:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-06",
+          "title": "“Se” condicional: hipótese, “caso” e subjuntivo",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO “se” condicional expressa hipótese.\nExplicação detalhada\nDois indícios são fornecidos:\npossibilidade de substituir “se” por “caso”;\npresença de verbo no subjuntivo no exemplo trabalhado.\nA professora explica que hipótese é algo que pode ou não acontecer e contrapõe esse valor a um fato já apresentado como existente.\nExemplo\nSe todos concordarem, podemos partir.\nTransformação usada:\nCaso todos concordem, podemos partir.\nO verbo concordarem é identificado como futuro do subjuntivo.\nSão acrescentadas as anotações:\nSE = CASO\nVERBO NO SUBJUNTIVO (HIPÓTESE)\nFUTURO NO SUBJUNTIVO\nO “Se” e o verbo concordarem são destacados.Exemplificado por: 002Contrasta com:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-07",
+          "title": "“Se” concessivo: “embora” e contraste",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO “se” concessivo é associado a ideias contrastantes ou opostas e pode ser testado pela substituição por “embora”.\nExemplo\nSe o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado.\nA oposição destacada é:\nde um lado: o acesso à escola melhorou;\nde outro: a qualidade do ensino está aquém do esperado.\nReescrita sugerida:\nEmbora o acesso à escola tenha melhorado...\nA professora escreve:\nSE = EMBORA\nIDEIAS CONTRASTANTES\nTrechos das duas ideias em contraste são realçados no slide.Exemplificado por:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-08",
+          "title": "“Se” causal: “já que”, fato e relação de causa e consequência",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO “se” causal é apresentado como equivalente a “já que”, associado a um fato e à relação lógica de causa e consequência.\nExplicação detalhada\nO exemplo central é:\nSe você depende desse emprego, não arrume confusão.\nA professora reformula:\nJá que você depende desse emprego, não arrume confusão.\nTambém menciona “visto que” e “uma vez que” como conjunções causais possíveis para o teste de substituição.\nOutro modelo utilizado é:\nO fato de você depender desse emprego faz com que você não arrume confusão.\nModo verbal\nNo exemplo, depende é identificado como presente do indicativo. A professora usa esse dado para sustentar a leitura de fato, contrastando-o com formas hipotéticas.\nAs anotações finais incluem:\nSE = JÁ QUE\nFATO VERBO NO INDICATIVO\n= JÁ QUE\nINDICATIVO\nfórmula manuscrita semelhante a O fato de... faz com que...Exemplificado por: 004Contrasta com:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-09",
+          "title": "Condicional versus causal: hipótese e fato",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA professora constrói um contraste direto entre condição e causa:\ncondição: hipótese, algo que pode acontecer ou não;\ncausa: fato tomado como existente no enunciado trabalhado.\nComparação\nCondicional: Se todos concordarem... concordarem futuro do subjuntivo possibilidade/hipótese.\nCausal: Se você depende desse emprego... depende presente do indicativo fato, na análise apresentada.\nA professora acrescenta que construções como se você dependesse ou se você depender conduziriam, no contraste didático proposto, para uma leitura condicional.\nRelações\nRelaciona: \nRelaciona: \nExemplificado por:"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G10-10",
+          "title": "O ramo denominado “pronome” é apenas anunciado nesta parte",
+          "conceptRefs": [
+            "KB-A07-V029-029-PALAVRA-SE-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nDepois de concluir o bloco das conjunções, a professora anuncia que seguirá para “o outro lado” da classificação.\nClassificações enumeradas\nNo enquadramento verbal da aula, quando “se” estiver no ramo denominado “pronome”, são listadas as seguintes possibilidades:\napassivador;\nreflexivo;\nrecíproco;\nparte integrante do verbo;\nindeterminador do sujeito;\nrealce.\nLimite\nO material termina imediatamente após a enumeração. Não são fornecidas, nesta fonte, definições, testes ou exemplos para esses seis casos.Expandido por: nenhuma unidade deste material; desenvolvimento é adiado."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO primeiro passo proposto para classificar a palavra “se” é perguntar se ela pertence a um de dois grandes caminhos: conjunção ou pronome.\nExplicação detalhada\nA professora apresenta esse corte como mecanismo de redução da complexidade. Em vez de recuperar imediatamente todas as classificações possíveis, o aluno deve começar por uma oposição mais ampla e só depois subdividir o ramo pertinente.\nA folha manuscrita mostra progressivamente:\n1. Perguntar se o SE é conjunção ou pronome.\nA professora afirma que “basicamente” o “se” pode trilhar “dois caminhos” e alerta que esquecer essa divisão faz o aluno perder tempo.\nO slide #ANOTAAÍ recebe o título manuscrito “PASSO A PASSO”, um quadro com SE e a primeira instrução escrita em vermelho.\nRelações\nExpandido por: \nExpandido por:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nNa explicação da professora, o “se” é conjunção quando funciona como conectivo que une ou relaciona orações.\nExplicação detalhada\nA função relacional é utilizada como critério para distinguir o caminho “conjunção” do outro ramo da análise. Visualmente, a professora escreve abaixo do bloco CONJUNÇÃO as expressões “Une orações” e “Relaciona”.\nA transcrição registra: “O se é conjunção quando ele une... Relaciona orações.” Em seguida, a professora define a conjunção como “um conectivo que une orações”.\nNo fluxograma “PALAVRA ‘SE’”, o bloco A PALAVRA “SE” leva a CONJUNÇÃO, de onde partem os subtipos trabalhados.Expandido por: \nEvidenciado visualmente por: VIS-A07-V029-029-PALAVRA-SE-004"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nDepois de reconhecer “se” como conjunção, a análise proposta pela professora cria duas novas possibilidades: integrante ou adverbial.\nExplicação detalhada\nA integrante é vinculada às orações substantivas. A adverbial é vinculada a valor semântico circunstancial.\nNo quadro anotado, a professora circunda os dois grupos como etapas I e II e escreve “ADVERBIAL (CIRCUNSTÂNCIAS)” junto ao segundo.Expandido por: \nExpandido por:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO “se” integrante é apresentado como a conjunção que integra/inicia uma oração substantiva.\nExplicação detalhada\nA professora fornece um teste operacional: a oração introduzida pode ser tratada como algo equivalente a isso, disso ou nisso, conforme a estrutura sintática.\nO slide oferece o exemplo:\nNão sei se devemos partir.\nA professora associa a oração introduzida por “se” à ideia de “isso”, explicitando a relação com oração substantiva.\nSobre INTEGRANTE, são acrescentadas as anotações:\n= ISSO / DISSO / NISSO\nreferência a “integra/inicia oração substantiva”.Exemplificado por: 001Relacionado a: TIP-A07-V029-029-PALAVRA-SE-003"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO ramo adverbial é identificado pelo valor circunstancial.\nExplicação detalhada\nA professora usa a expressão didática “cheiro de circunstância”. Uma vez reconhecido esse valor, o aluno deve verificar qual relação semântica está presente.\nNesta aula, são trabalhadas três circunstâncias associadas ao “se”:\ncondição;\nconcessão;\ncausa.Expandido por: \nExpandido por: \nExpandido por:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO “se” condicional expressa hipótese.\nExplicação detalhada\nDois indícios são fornecidos:\npossibilidade de substituir “se” por “caso”;\npresença de verbo no subjuntivo no exemplo trabalhado.\nA professora explica que hipótese é algo que pode ou não acontecer e contrapõe esse valor a um fato já apresentado como existente.\nExemplo\nSe todos concordarem, podemos partir.\nTransformação usada:\nCaso todos concordem, podemos partir.\nO verbo concordarem é identificado como futuro do subjuntivo.\nSão acrescentadas as anotações:\nSE = CASO\nVERBO NO SUBJUNTIVO (HIPÓTESE)\nFUTURO NO SUBJUNTIVO\nO “Se” e o verbo concordarem são destacados.Exemplificado por: 002Contrasta com:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO “se” concessivo é associado a ideias contrastantes ou opostas e pode ser testado pela substituição por “embora”.\nExemplo\nSe o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado.\nA oposição destacada é:\nde um lado: o acesso à escola melhorou;\nde outro: a qualidade do ensino está aquém do esperado.\nReescrita sugerida:\nEmbora o acesso à escola tenha melhorado...\nA professora escreve:\nSE = EMBORA\nIDEIAS CONTRASTANTES\nTrechos das duas ideias em contraste são realçados no slide.Exemplificado por:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO “se” causal é apresentado como equivalente a “já que”, associado a um fato e à relação lógica de causa e consequência.\nExplicação detalhada\nO exemplo central é:\nSe você depende desse emprego, não arrume confusão.\nA professora reformula:\nJá que você depende desse emprego, não arrume confusão.\nTambém menciona “visto que” e “uma vez que” como conjunções causais possíveis para o teste de substituição.\nOutro modelo utilizado é:\nO fato de você depender desse emprego faz com que você não arrume confusão.\nModo verbal\nNo exemplo, depende é identificado como presente do indicativo. A professora usa esse dado para sustentar a leitura de fato, contrastando-o com formas hipotéticas.\nAs anotações finais incluem:\nSE = JÁ QUE\nFATO VERBO NO INDICATIVO\n= JÁ QUE\nINDICATIVO\nfórmula manuscrita semelhante a O fato de... faz com que...Exemplificado por: 004Contrasta com:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA professora constrói um contraste direto entre condição e causa:\ncondição: hipótese, algo que pode acontecer ou não;\ncausa: fato tomado como existente no enunciado trabalhado.\nComparação\nCondicional: Se todos concordarem... concordarem futuro do subjuntivo possibilidade/hipótese.\nCausal: Se você depende desse emprego... depende presente do indicativo fato, na análise apresentada.\nA professora acrescenta que construções como se você dependesse ou se você depender conduziriam, no contraste didático proposto, para uma leitura condicional.\nRelações\nRelaciona: \nRelaciona: \nExemplificado por:"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nDepois de concluir o bloco das conjunções, a professora anuncia que seguirá para “o outro lado” da classificação.\nClassificações enumeradas\nNo enquadramento verbal da aula, quando “se” estiver no ramo denominado “pronome”, são listadas as seguintes possibilidades:\napassivador;\nreflexivo;\nrecíproco;\nparte integrante do verbo;\nindeterminador do sujeito;\nrealce.\nLimite\nO material termina imediatamente após a enumeração. Não são fornecidas, nesta fonte, definições, testes ou exemplos para esses seis casos.Expandido por: nenhuma unidade deste material; desenvolvimento é adiado."
         }
       ]
     },
     "rules": {
-      "items": [
-        {
-          "ruleId": "R-RED-01",
-          "title": "Critério de Classificação da Oração Reduzida",
-          "statement": "A classificação sintática de uma oração reduzida é rigorosamente IDÊNTICA à classificação da oração desenvolvida obtida pelo seu desdobramento, acrescentando-se ao final a denominação 'Reduzida de Infinitivo / Gerúndio / Particípio'.",
-          "formalCondition": "Classificação(Oração_Reduzida) == Classificação(Oração_Desenvolvida) + 'Reduzida de [Forma Nominal]'.",
-          "scope": "Universal na sintaxe clássica e normativa.",
-          "normativity": "MANDATORY",
-          "exceptions": [],
-          "examples": [
-            "Ao sair, apagou a luz -> Oração Subordinada Adverbial Temporal Reduzida de Infinitivo."
-          ]
-        }
-      ]
+      "items": []
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-RED-01",
-          "title": "Algoritmo em 3 Passos para Classificar Oração Reduzida",
-          "triggerCondition": "Classificar qualquer oração reduzida em provas.",
+          "entityId": "PROC-A07-V029-029-PALAVRA-SE-001",
+          "title": "Procedimento geral para iniciar a classificação de “se”",
           "steps": [
-            "1. Localize o verbo em forma nominal (infinitivo -r, gerúndio -ndo ou particípio -do/irregular) e confirme a ausência de conectivo subordinativo.",
-            "2. DESDOBRE a oração: insira uma conjunção integrante (que/se), conjunção adverbial (quando, como, embora, se, para que) ou pronome relativo (que/o qual) e conjuge o verbo.",
-            "3. Classifique a oração desenvolvida resultante: se virou 'quando...' -> Adverbial Temporal; se virou 'embora...' -> Adverbial Concessiva; se virou 'o qual...' -> Adjetiva; se virou 'ISSO' -> Substantiva.",
-            "4. Monte o nome final: [Classificação da Desenvolvida] + 'Reduzida de [Infinitivo / Gerúndio / Particípio]'."
+            {
+              "order": 1,
+              "action": "Perguntar se “se” está no caminho conjunção ou no caminho denominado pronome.",
+              "explanation": "Passo 1 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Se for conjunção, decidir entre",
+              "explanation": "Passo 2 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "integrante;",
+              "explanation": "Passo 3 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "adverbial.",
+              "explanation": "Passo 4 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se integrante, testar a relação com oração substantiva e a equivalência por isso/disso/nisso.",
+              "explanation": "Passo 5 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Se adverbial, identificar a circunstância",
+              "explanation": "Passo 6 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "condição;",
+              "explanation": "Passo 7 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "concessão;",
+              "explanation": "Passo 8 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "causa.",
+              "explanation": "Passo 9 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Aplicar os testes semânticos e verbais específicos.",
+              "explanation": "Passo 10 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": "Aplicar os testes semânticos e verbais específicos."
+            },
+            {
+              "order": 11,
+              "action": "Se não for conjunção, seguir para o outro bloco, apenas anunciado nesta parte da aula.",
+              "explanation": "Passo 11 do algoritmo de Procedimento geral para iniciar a classificação de “se”.",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se o sentido da oração desenvolvida é 100% fiel à oração reduzida original.",
-          "typicalFailureModes": [
-            "Tentar classificar a oração reduzida no olho sem fazer o teste do desdobramento."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Procedimento geral para iniciar a classificação de “se”."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Procedimento geral para iniciar a classificação de “se”."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Procedimento geral para iniciar a classificação de “se”",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-V029-029-PALAVRA-SE-001",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Pré-requisito"
+            },
+            {
+              "type": "paragraph",
+              "text": "Localizar a ocorrência de “se” cuja classificação é solicitada."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Perguntar se “se” está no caminho conjunção ou no caminho denominado pronome.",
+                "Se for conjunção, decidir entre:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "integrante;",
+                "adverbial."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Se integrante, testar a relação com oração substantiva e a equivalência por isso/disso/nisso.",
+                "Se adverbial, identificar a circunstância:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "condição;",
+                "concessão;",
+                "causa."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aplicar os testes semânticos e verbais específicos.",
+                "Se não for conjunção, seguir para o outro bloco, apenas anunciado nesta parte da aula."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Resultado esperado"
+            },
+            {
+              "type": "paragraph",
+              "text": "Reduzir a busca por classificação a decisões sucessivas, evitando comparar simultaneamente todos os rótulos possíveis."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-V029-029-PALAVRA-SE-001",
+              "EXP-IP-A07-G10-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-V029-029-PALAVRA-SE-002",
+          "title": "Teste da conjunção integrante",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Verificar se “se” inicia/integra oração substantiva.",
+              "explanation": "Passo 1 do algoritmo de Teste da conjunção integrante.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Tentar representar essa oração por isso, disso ou nisso.",
+              "explanation": "Passo 2 do algoritmo de Teste da conjunção integrante.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a equivalência estrutural funcionar no raciocínio apresentado, classificar como conjunção integrante.",
+              "explanation": "Passo 3 do algoritmo de Teste da conjunção integrante.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da conjunção integrante."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da conjunção integrante."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste da conjunção integrante",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-V029-029-PALAVRA-SE-002",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verificar se “se” inicia/integra oração substantiva.",
+                "Tentar representar essa oração por isso, disso ou nisso.",
+                "Se a equivalência estrutural funcionar no raciocínio apresentado, classificar como conjunção integrante."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Não sei se devemos partir. → associação da oração a isso."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-V029-029-PALAVRA-SE-002",
+              "EXP-IP-A07-G10-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-V029-029-PALAVRA-SE-003",
+          "title": "Teste da conjunção condicional",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Testar se → caso.",
+              "explanation": "Passo 1 do algoritmo de Teste da conjunção condicional.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Verificar se a oração apresenta uma hipótese.",
+              "explanation": "Passo 2 do algoritmo de Teste da conjunção condicional.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Observar o modo verbal.",
+              "explanation": "Passo 3 do algoritmo de Teste da conjunção condicional.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "No exemplo trabalhado, confirmar o subjuntivo.",
+              "explanation": "Passo 4 do algoritmo de Teste da conjunção condicional.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da conjunção condicional."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da conjunção condicional."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste da conjunção condicional",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-V029-029-PALAVRA-SE-003",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Testar se → caso.",
+                "Verificar se a oração apresenta uma hipótese.",
+                "Observar o modo verbal.",
+                "No exemplo trabalhado, confirmar o subjuntivo."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Validação"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se todos concordarem... → Caso todos concordem... → situação hipotética."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-V029-029-PALAVRA-SE-003",
+              "EXP-IP-A07-G10-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-V029-029-PALAVRA-SE-004",
+          "title": "Teste da conjunção concessiva",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Procurar duas ideias que se contrastem.",
+              "explanation": "Passo 1 do algoritmo de Teste da conjunção concessiva.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Testar a substituição de “se” por embora.",
+              "explanation": "Passo 2 do algoritmo de Teste da conjunção concessiva.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se a relação de oposição permanecer, reconhecer o valor concessivo.",
+              "explanation": "Passo 3 do algoritmo de Teste da conjunção concessiva.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da conjunção concessiva."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da conjunção concessiva."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste da conjunção concessiva",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-V029-029-PALAVRA-SE-004",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Procurar duas ideias que se contrastem.",
+                "Testar a substituição de “se” por embora.",
+                "Se a relação de oposição permanecer, reconhecer o valor concessivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-V029-029-PALAVRA-SE-004",
+              "EXP-IP-A07-G10-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-V029-029-PALAVRA-SE-005",
+          "title": "Teste da conjunção causal",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Testar se → já que.",
+              "explanation": "Passo 1 do algoritmo de Teste da conjunção causal.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Também podem ser testadas, segundo a fala, conjunções como visto que e uma vez que.",
+              "explanation": "Passo 2 do algoritmo de Teste da conjunção causal.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Verificar se o conteúdo é apresentado como fato, e não como hipótese.",
+              "explanation": "Passo 3 do algoritmo de Teste da conjunção causal.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Observar o indicativo no exemplo.",
+              "explanation": "Passo 4 do algoritmo de Teste da conjunção causal.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Testar a estrutura causal",
+              "explanation": "Passo 5 do algoritmo de Teste da conjunção causal.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da conjunção causal."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da conjunção causal."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste da conjunção causal",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-V029-029-PALAVRA-SE-005",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passos"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Testar se → já que.",
+                "Também podem ser testadas, segundo a fala, conjunções como visto que e uma vez que.",
+                "Verificar se o conteúdo é apresentado como fato, e não como hipótese.",
+                "Observar o indicativo no exemplo.",
+                "Testar a estrutura causal:"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "O fato de X faz com que Y."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-V029-029-PALAVRA-SE-005",
+              "EXP-IP-A07-G10-PROC-005"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-V029-029-PALAVRA-SE-006",
+          "title": "Desempate entre condição e causa pelo contraste hipótese × fato",
+          "steps": [
+            {
+              "order": 1,
+              "action": "o valor lógico da oração;",
+              "explanation": "Passo 1 do algoritmo de Desempate entre condição e causa pelo contraste hipótese × fato.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "o modo verbal;",
+              "explanation": "Passo 2 do algoritmo de Desempate entre condição e causa pelo contraste hipótese × fato.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "a possibilidade de substituição.",
+              "explanation": "Passo 3 do algoritmo de Desempate entre condição e causa pelo contraste hipótese × fato.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Desempate entre condição e causa pelo contraste hipótese × fato."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Desempate entre condição e causa pelo contraste hipótese × fato."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Desempate entre condição e causa pelo contraste hipótese × fato",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-V029-029-PALAVRA-SE-006",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Procedimento"
+            },
+            {
+              "type": "paragraph",
+              "text": "Compare:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "o valor lógico da oração;",
+                "o modo verbal;",
+                "a possibilidade de substituição."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Hipótese + “caso” + subjuntivo no exemplo → condicional. Fato + “já que” + indicativo no exemplo → causal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Erro evitado"
+            },
+            {
+              "type": "paragraph",
+              "text": "Classificar automaticamente todo “se” introdutor de uma oração como condicional."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-V029-029-PALAVRA-SE-006",
+              "EXP-IP-A07-G10-PROC-006"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
-      "items": [
-        {
-          "contrastId": "C-RED-01",
-          "conceptA": "Oração Reduzida (Sem conectivo)",
-          "conceptB": "Oração Desenvolvida (Com conectivo)",
-          "decisiveDifference": "A reduzida não tem conjunção nem relativo e tem verbo em forma nominal; a desenvolvida tem conjunção ou relativo explícito e verbo flexionado em tempo e modo.",
-          "minimalPair": {
-            "sentenceA": "Mesmo [estando cansado], continuou a estudar. (Reduzida de Gerúndio)",
-            "sentenceB": "Mesmo [que estivesse cansado], continuou a estudar. (Desenvolvida Concessiva)",
-            "difference": "Verbo no gerúndio sem conjunção (Reduzida) vs Conectivo 'que' com verbo no subjuntivo (Desenvolvida)."
-          },
-          "practicalHeuristic": "Verbo no infinitivo, gerúndio ou particípio sem 'que' na frente = Reduzida.",
-          "pitfall": "Achar que a oração reduzida não tem valor subordinado."
-        }
-      ]
+      "items": []
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-RED-01",
-          "title": "Reduzida de Infinitivo com Valor Concessivo",
-          "sentence": "Apesar de [não ter recursos], o hospital atendeu todos os pacientes.",
-          "analysis": "Desdobramento: 'Embora [não tivesse recursos], o hospital atendeu todos os pacientes'. Classificação: Oração Subordinada Adverbial Concessiva Reduzida de Infinitivo.",
-          "pedagogicalTakeaway": "Locuções prepositivas como 'apesar de' e 'a ponto de' introduzem orações reduzidas de infinitivo de valor concessivo e consecutivo.",
-          "targetLO": "LO-A07-G10-01"
+          "entityId": "WORKED_EXAMPLE-IP-A07-G10-001",
+          "title": "EX-A07-V029-029-PALAVRA-SE-001 — “Não sei se devemos partir”",
+          "statement": "Enunciado: Não sei se devemos partir. Classificação: integrante. Justificativa: “se” inicia uma oração substantiva; a professora associa o trecho ao teste com isso.\nConceito demonstrado: KB-A07-V029-029-PALAVRA-SE-004.",
+          "prompt": "Enunciado: Não sei se devemos partir",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado: Não sei se devemos partir",
+              "rationale": "Etapa 1 de análise para EX-A07-V029-029-PALAVRA-SE-001 — “Não sei se devemos partir”."
+            },
+            {
+              "order": 2,
+              "action": "Classificação: integrante",
+              "rationale": "Etapa 2 de análise para EX-A07-V029-029-PALAVRA-SE-001 — “Não sei se devemos partir”."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa: “se” inicia uma oração substantiva; a professora associa o trecho ao teste com isso",
+              "rationale": "Etapa 3 de análise para EX-A07-V029-029-PALAVRA-SE-001 — “Não sei se devemos partir”."
+            },
+            {
+              "order": 4,
+              "action": "Conceito demonstrado: KB-A07-V029-029-PALAVRA-SE-004.",
+              "rationale": "Etapa 4 de análise para EX-A07-V029-029-PALAVRA-SE-001 — “Não sei se devemos partir”."
+            }
+          ],
+          "result": "Conceito demonstrado: KB-A07-V029-029-PALAVRA-SE-004.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Não sei se devemos partir. Classificação: integrante. Justificativa: “se” inicia uma oração substantiva; a professora associa o trecho ao teste com isso.\nConceito demonstrado: KB-A07-V029-029-PALAVRA-SE-004.'.",
+          "decisivePoint": "Critério decisório de EX-A07-V029-029-PALAVRA-SE-001 — “Não sei se devemos partir” aplicado a \"Enunciado: Não sei se devemos partir\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-V029-029-PALAVRA-SE-001 — “Não sei se devemos partir”.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-V029-029-PALAVRA-SE-001 — “Não sei se devemos partir”.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G10-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Enunciado: Não sei se devemos partir. Classificação: integrante. Justificativa: “se” inicia uma oração substantiva; a professora associa o trecho ao teste com isso."
+            },
+            {
+              "type": "paragraph",
+              "text": "Conceito demonstrado: KB-A07-V029-029-PALAVRA-SE-004."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G10-001",
+              "EXP-IP-A07-G10-047"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G10-002",
+          "title": "EX-A07-V029-029-PALAVRA-SE-002 — “Se todos concordarem, podemos partir”",
+          "statement": "Enunciado: Se todos concordarem, podemos partir. Classificação: condicional.\nJustificativas:\nsubstituição por caso;\nsituação hipotética;\nconcordarem identificado como futuro do subjuntivo.",
+          "prompt": "Enunciado: Se todos concordarem, podemos partir. Classificação: condicional.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "substituição por caso;",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "situação hipotética;",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "concordarem identificado como futuro do subjuntivo.",
+              "rationale": null
+            }
+          ],
+          "result": "Justificativas:",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Se todos concordarem, podemos partir. Classificação: condicional.\nJustificativas:\nsubstituição por caso;\nsituação hipotética;\nconcordarem identificado como futuro do subjuntivo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-V029-029-PALAVRA-SE-002 — “Se todos concordarem, podemos partir” sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-V029-029-PALAVRA-SE-002 — “Se todos concordarem, podemos partir”.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-V029-029-PALAVRA-SE-002 — “Se todos concordarem, podemos partir”.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G10-002",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Enunciado: Se todos concordarem, podemos partir. Classificação: condicional."
+            },
+            {
+              "type": "paragraph",
+              "text": "Justificativas:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "substituição por caso;",
+                "situação hipotética;",
+                "concordarem identificado como futuro do subjuntivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G10-002",
+              "EXP-IP-A07-G10-048"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G10-003",
+          "title": "EX-A07-V029-029-PALAVRA-SE-003 — Contraste entre melhora do acesso e qualidade do ensino",
+          "statement": "Enunciado: Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado. Classificação: concessiva.\nJustificativa: contraste entre a melhora do acesso e o desempenho aquém do esperado; substituição possível por embora na análise da professora.",
+          "prompt": "Enunciado: Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado: Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado",
+              "rationale": "Etapa 1 de análise para EX-A07-V029-029-PALAVRA-SE-003 — Contraste entre melhora do acesso e qualidade do ensino."
+            },
+            {
+              "order": 2,
+              "action": "Classificação: concessiva",
+              "rationale": "Etapa 2 de análise para EX-A07-V029-029-PALAVRA-SE-003 — Contraste entre melhora do acesso e qualidade do ensino."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa: contraste entre a melhora do acesso e o desempenho aquém do esperado; substituição possível por embora na análise da professora.",
+              "rationale": "Etapa 3 de análise para EX-A07-V029-029-PALAVRA-SE-003 — Contraste entre melhora do acesso e qualidade do ensino."
+            }
+          ],
+          "result": "Justificativa: contraste entre a melhora do acesso e o desempenho aquém do esperado; substituição possível por embora na análise da professora.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado. Classificação: concessiva.\nJustificativa: contraste entre a melhora do acesso e o desempenho aquém do esperado; substituição possível por embora na análise da professora.'.",
+          "decisivePoint": "Critério decisório de EX-A07-V029-029-PALAVRA-SE-003 — Contraste entre melhora do acesso e qualidade do ensino aplicado a \"Enunciado: Se o acesso à escola melhorou\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-V029-029-PALAVRA-SE-003 — Contraste entre melhora do acesso e qualidade do ensino.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-V029-029-PALAVRA-SE-003 — Contraste entre melhora do acesso e qualidade do ensino.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G10-003",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Enunciado: Se o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado. Classificação: concessiva."
+            },
+            {
+              "type": "paragraph",
+              "text": "Justificativa: contraste entre a melhora do acesso e o desempenho aquém do esperado; substituição possível por embora na análise da professora."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G10-003",
+              "EXP-IP-A07-G10-049"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G10-004",
+          "title": "EX-A07-V029-029-PALAVRA-SE-004 — “Se você depende desse emprego, não arrume confusão”",
+          "statement": "Enunciado: Se você depende desse emprego, não arrume confusão. Classificação: causal.\nReescrita usada: Já que você depende desse emprego, não arrume confusão.\nJustificativa: a dependência é tratada como fato; depende aparece no indicativo; a relação pode ser expressa como “o fato de você depender desse emprego faz com que você não arrume confusão”.",
+          "prompt": "o fato de você depender desse emprego faz com que você não arrume confusão",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Enunciado: Se você depende desse emprego, não arrume confusão",
+              "rationale": "Etapa 1 de análise para EX-A07-V029-029-PALAVRA-SE-004 — “Se você depende desse emprego, não arrume confusão”."
+            },
+            {
+              "order": 2,
+              "action": "Classificação: causal",
+              "rationale": "Etapa 2 de análise para EX-A07-V029-029-PALAVRA-SE-004 — “Se você depende desse emprego, não arrume confusão”."
+            },
+            {
+              "order": 3,
+              "action": "Reescrita usada: Já que você depende desse emprego, não arrume confusão",
+              "rationale": "Etapa 3 de análise para EX-A07-V029-029-PALAVRA-SE-004 — “Se você depende desse emprego, não arrume confusão”."
+            },
+            {
+              "order": 4,
+              "action": "Justificativa: a dependência é tratada como fato; depende aparece no indicativo; a relação pode ser expressa como “o fato de você depender desse emprego faz com que você não arrume confusão”.",
+              "rationale": "Etapa 4 de análise para EX-A07-V029-029-PALAVRA-SE-004 — “Se você depende desse emprego, não arrume confusão”."
+            }
+          ],
+          "result": "Justificativa: a dependência é tratada como fato; depende aparece no indicativo; a relação pode ser expressa como “o fato de você depender desse emprego faz com que você não arrume confusão”.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Enunciado: Se você depende desse emprego, não arrume confusão. Classificação: causal.\nReescrita usada: Já que você depende desse emprego, não arrume confusão.\nJustificativa: a dependência é tratada como fato; depende aparece no indicativo; a relação pode ser expressa como “o fato de você depender desse emprego faz com que você não arrume confusão”.'.",
+          "decisivePoint": "Critério decisório de EX-A07-V029-029-PALAVRA-SE-004 — “Se você depende desse emprego, não arrume confusão” aplicado a \"o fato de você depender desse emprego fa\".",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-V029-029-PALAVRA-SE-004 — “Se você depende desse emprego, não arrume confusão”.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-V029-029-PALAVRA-SE-004 — “Se você depende desse emprego, não arrume confusão”.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G10-004",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Enunciado: Se você depende desse emprego, não arrume confusão. Classificação: causal."
+            },
+            {
+              "type": "paragraph",
+              "text": "Reescrita usada: Já que você depende desse emprego, não arrume confusão."
+            },
+            {
+              "type": "paragraph",
+              "text": "Justificativa: a dependência é tratada como fato; depende aparece no indicativo; a relação pode ser expressa como “o fato de você depender desse emprego faz com que você não arrume confusão”."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G10-004",
+              "EXP-IP-A07-G10-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G10-005",
+          "title": "EX-A07-V029-029-PALAVRA-SE-005 — “Se você dependesse” e “se você depender” como contraste hipotético",
+          "statement": "A professora contrapõe o factual se você depende às formulações:\nse você dependesse;\nse você depender.\nNo raciocínio apresentado, essas formas deslocariam a construção para o valor condicional, por introduzirem hipótese em vez do fato expresso por depende.",
+          "prompt": "A professora contrapõe o factual se você depende às formulações:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "se você dependesse;",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "se você depender.",
+              "rationale": null
+            }
+          ],
+          "result": "No raciocínio apresentado, essas formas deslocariam a construção para o valor condicional, por introduzirem hipótese em vez do fato expresso por depende.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'A professora contrapõe o factual se você depende às formulações:\nse você dependesse;\nse você depender.\nNo raciocínio apresentado, essas formas deslocariam a construção para o valor condicional, por introduzirem hipótese em vez do fato expresso por depende.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-V029-029-PALAVRA-SE-005 — “Se você dependesse” e “se você depender” como contraste hipotético sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-V029-029-PALAVRA-SE-005 — “Se você dependesse” e “se você depender” como contraste hipotético.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-V029-029-PALAVRA-SE-005 — “Se você dependesse” e “se você depender” como contraste hipotético.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G10-005",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A professora contrapõe o factual se você depende às formulações:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "se você dependesse;",
+                "se você depender."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "No raciocínio apresentado, essas formas deslocariam a construção para o valor condicional, por introduzirem hipótese em vez do fato expresso por depende."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G10-005",
+              "EXP-IP-A07-G10-051"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -175,51 +1159,179 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-RED-01",
-          "title": "Desdobrou, Revelou!",
-          "content": "A Oração Reduzida é uma carta fechada! Bote a CONJUNÇÃO, conjugue o verbo e veja quem ela é de verdade!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Classificação de orações reduzidas.",
-          "limitations": "Mantenha o tempo verbal alinhado à oração principal.",
-          "text": "O desdobramento da oração reduzida revela sua natureza sintática exata."
+          "title": "Mantra de Fixação: Palavra SE",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Palavra SE, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Palavra SE, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-RED-01",
-          "title": "Confundir Reduzida de Particípio com Tempo Composto",
-          "trigger": "Frases com verbos no particípio.",
-          "whyItFails": "O aluno vê o particípio e confunde uma oração reduzida independente com locução verbal / tempo composto.",
-          "correctApproach": "No tempo composto, o particípio vem colado a um verbo auxiliar ('Tinha terminado o trabalho' = 1 oração). Na oração reduzida, o particípio funciona como núcleo de oração separada com vírgula ('[Terminado o trabalho], todos saíram' = 2 orações).",
-          "bankTechnique": "Pedir a contagem de orações em períodos com reduzidas de particípio isoladas.",
-          "counterRule": "Particípio isolado com sujeito próprio constitui oração reduzida autônoma."
+          "entityId": "WARN-A07-V029-029-PALAVRA-SE-001",
+          "title": "Não tente recuperar todas as classificações de uma vez",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Não tente recuperar todas as classificações de uma vez.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Não tente recuperar todas as classificações de uma vez.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Não tente recuperar todas as classificações de uma vez no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Não tente recuperar todas as classificações de uma vez.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Não tente recuperar todas as classificações de uma vez.",
+          "correctReasoning": "Partir diretamente para todas as classificações possíveis aumenta o tempo de resolução.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Não tente recuperar todas as classificações de uma vez.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Não tente recuperar todas as classificações de uma vez.",
+          "trapId": "WARN-A07-V029-029-PALAVRA-SE-001",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Problema"
+            },
+            {
+              "type": "paragraph",
+              "text": "Partir diretamente para todas as classificações possíveis aumenta o tempo de resolução."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Forma recomendada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Começar pela pergunta binária conjunção ou pronome?."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-V029-029-PALAVRA-SE-001",
+              "EXP-IP-A07-G10-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-V029-029-PALAVRA-SE-002",
+          "title": "Condicional e causal não devem ser distinguidas apenas pela presença de “se”",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Condicional e causal não devem ser distinguidas apenas pela presença de “se”.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Condicional e causal não devem ser distinguidas apenas pela presença de “se”.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Condicional e causal não devem ser distinguidas apenas pela presença de “se” no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Condicional e causal não devem ser distinguidas apenas pela presença de “se”.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Condicional e causal não devem ser distinguidas apenas pela presença de “se”.",
+          "correctReasoning": "As duas construções usam “se”, mas exprimem relações diferentes.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Condicional e causal não devem ser distinguidas apenas pela presença de “se”.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Condicional e causal não devem ser distinguidas apenas pela presença de “se”.",
+          "trapId": "WARN-A07-V029-029-PALAVRA-SE-002",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Problema"
+            },
+            {
+              "type": "paragraph",
+              "text": "As duas construções usam “se”, mas exprimem relações diferentes."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios ensinados"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "condicional: hipótese, caso, subjuntivo no exemplo;",
+                "causal: fato, já que, indicativo no exemplo."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Consequência"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ignorar o valor semântico e o verbo pode levar à classificação errada."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-V029-029-PALAVRA-SE-002",
+              "EXP-IP-A07-G10-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-V029-029-PALAVRA-SE-003",
+          "title": "Os subtipos do ramo “pronome” não são explicados nesta fonte",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Os subtipos do ramo “pronome” não são explicados nesta fonte.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Os subtipos do ramo “pronome” não são explicados nesta fonte.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Os subtipos do ramo “pronome” não são explicados nesta fonte no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Os subtipos do ramo “pronome” não são explicados nesta fonte.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Os subtipos do ramo “pronome” não são explicados nesta fonte.",
+          "correctReasoning": "A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do verbo, indeterminador do sujeito e realce. Não é sustentado por esta fonte atribuir a cada um definições ou testes adicionais.",
+          "decisiveTest": "A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do verbo, indeterminador do sujeito e realce. Não é sustentado por esta fonte atribuir a cada um definições ou testes adicionais.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Os subtipos do ramo “pronome” não são explicados nesta fonte.",
+          "trapId": "WARN-A07-V029-029-PALAVRA-SE-003",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A aula apenas enumera apassivador, reflexivo, recíproco, parte integrante do verbo, indeterminador do sujeito e realce. Não é sustentado por esta fonte atribuir a cada um definições ou testes adicionais."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-V029-029-PALAVRA-SE-003",
+              "EXP-IP-A07-G10-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Oração Reduzida",
-          "shortDefinition": "Oração subordinada que não possui conectivo introdutório e apresenta o verbo em forma nominal.",
-          "fullDefinition": "Construção sintática sintética caracterizada pela ausência de conjunções subordinativas ou pronomes relativos e pela presença do predicado sob a forma de infinitivo (pessoal ou impessoal), gerúndio ou particípio passado.",
-          "domain": "Sintaxe do Período Composto",
-          "commonMisconception": "Pensar que toda oração precisa obrigatoriamente de conjunção para ser subordinada."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**A análise começa por dois grandes caminhos**: Definição ou ideia central\nO primeiro passo proposto para classificar a palavra “se” é perguntar se ela pertence a um de dois grandes caminhos: conjunção ou pronome.\nExplicação detalhada\nA professora apresenta esse corte como mecanismo de redução da complexidade. Em vez de recuperar imediatamente todas as classificações possíveis, o aluno deve começar por uma oposição mais ampla e só depois subdividir o ramo pertinente.\nA folha manuscrita mostra progressivamente:\n1. Perguntar se o SE é conjunção ou pronome.\nA professora afirma que “basicamente” o “se” pode trilhar “dois caminhos” e alerta que esquecer essa divisão faz o aluno perder tempo.\nO slide #ANOTAAÍ recebe o título manuscrito “PASSO A PASSO”, um quadro com SE e a primeira instrução escrita em vermelho.\nRelações\nExpandido por: \nExpandido por:",
+            "**Conjunção é identificada pela relação entre orações**: Definição ou ideia central\nNa explicação da professora, o “se” é conjunção quando funciona como conectivo que une ou relaciona orações.\nExplicação detalhada\nA função relacional é utilizada como critério para distinguir o caminho “conjunção” do outro ramo da análise. Visualmente, a professora escreve abaixo do bloco CONJUNÇÃO as expressões “Une orações” e “Relaciona”.\nA transcrição registra: “O se é conjunção quando ele une... Relaciona orações.” Em seguida, a professora define a conjunção como “um conectivo que une orações”.\nNo fluxograma “PALAVRA ‘SE’”, o bloco A PALAVRA “SE” leva a CONJUNÇÃO, de onde partem os subtipos trabalhados.Expandido por: \nEvidenciado visualmente por: VIS-A07-V029-029-PALAVRA-SE-004",
+            "**O ramo das conjunções divide-se em integrante e adverbial**: Definição ou ideia central\nDepois de reconhecer “se” como conjunção, a análise proposta pela professora cria duas novas possibilidades: integrante ou adverbial.\nExplicação detalhada\nA integrante é vinculada às orações substantivas. A adverbial é vinculada a valor semântico circunstancial.\nNo quadro anotado, a professora circunda os dois grupos como etapas I e II e escreve “ADVERBIAL (CIRCUNSTÂNCIAS)” junto ao segundo.Expandido por: \nExpandido por:",
+            "**Conjunção integrante: oração substantiva e teste de substituição**: Definição ou ideia central\nO “se” integrante é apresentado como a conjunção que integra/inicia uma oração substantiva.\nExplicação detalhada\nA professora fornece um teste operacional: a oração introduzida pode ser tratada como algo equivalente a isso, disso ou nisso, conforme a estrutura sintática.\nO slide oferece o exemplo:\nNão sei se devemos partir.\nA professora associa a oração introduzida por “se” à ideia de “isso”, explicitando a relação com oração substantiva.\nSobre INTEGRANTE, são acrescentadas as anotações:\n= ISSO / DISSO / NISSO\nreferência a “integra/inicia oração substantiva”.Exemplificado por: 001Relacionado a: TIP-A07-V029-029-PALAVRA-SE-003",
+            "**Conjunção adverbial: identificação por circunstância**: Definição ou ideia central\nO ramo adverbial é identificado pelo valor circunstancial.\nExplicação detalhada\nA professora usa a expressão didática “cheiro de circunstância”. Uma vez reconhecido esse valor, o aluno deve verificar qual relação semântica está presente.\nNesta aula, são trabalhadas três circunstâncias associadas ao “se”:\ncondição;\nconcessão;\ncausa.Expandido por: \nExpandido por: \nExpandido por:",
+            "**“Se” condicional: hipótese, “caso” e subjuntivo**: Definição ou ideia central\nO “se” condicional expressa hipótese.\nExplicação detalhada\nDois indícios são fornecidos:\npossibilidade de substituir “se” por “caso”;\npresença de verbo no subjuntivo no exemplo trabalhado.\nA professora explica que hipótese é algo que pode ou não acontecer e contrapõe esse valor a um fato já apresentado como existente.\nExemplo\nSe todos concordarem, podemos partir.\nTransformação usada:\nCaso todos concordem, podemos partir.\nO verbo concordarem é identificado como futuro do subjuntivo.\nSão acrescentadas as anotações:\nSE = CASO\nVERBO NO SUBJUNTIVO (HIPÓTESE)\nFUTURO NO SUBJUNTIVO\nO “Se” e o verbo concordarem são destacados.Exemplificado por: 002Contrasta com:",
+            "**“Se” concessivo: “embora” e contraste**: Definição ou ideia central\nO “se” concessivo é associado a ideias contrastantes ou opostas e pode ser testado pela substituição por “embora”.\nExemplo\nSe o acesso à escola melhorou, a qualidade do ensino tem se mostrado aquém do esperado.\nA oposição destacada é:\nde um lado: o acesso à escola melhorou;\nde outro: a qualidade do ensino está aquém do esperado.\nReescrita sugerida:\nEmbora o acesso à escola tenha melhorado...\nA professora escreve:\nSE = EMBORA\nIDEIAS CONTRASTANTES\nTrechos das duas ideias em contraste são realçados no slide.Exemplificado por:",
+            "**“Se” causal: “já que”, fato e relação de causa e consequência**: Definição ou ideia central\nO “se” causal é apresentado como equivalente a “já que”, associado a um fato e à relação lógica de causa e consequência.\nExplicação detalhada\nO exemplo central é:\nSe você depende desse emprego, não arrume confusão.\nA professora reformula:\nJá que você depende desse emprego, não arrume confusão.\nTambém menciona “visto que” e “uma vez que” como conjunções causais possíveis para o teste de substituição.\nOutro modelo utilizado é:\nO fato de você depender desse emprego faz com que você não arrume confusão.\nModo verbal\nNo exemplo, depende é identificado como presente do indicativo. A professora usa esse dado para sustentar a leitura de fato, contrastando-o com formas hipotéticas.\nAs anotações finais incluem:\nSE = JÁ QUE\nFATO VERBO NO INDICATIVO\n= JÁ QUE\nINDICATIVO\nfórmula manuscrita semelhante a O fato de... faz com que...Exemplificado por: 004Contrasta com:",
+            "**Condicional versus causal: hipótese e fato**: Definição ou ideia central\nA professora constrói um contraste direto entre condição e causa:\ncondição: hipótese, algo que pode acontecer ou não;\ncausa: fato tomado como existente no enunciado trabalhado.\nComparação\nCondicional: Se todos concordarem... concordarem futuro do subjuntivo possibilidade/hipótese.\nCausal: Se você depende desse emprego... depende presente do indicativo fato, na análise apresentada.\nA professora acrescenta que construções como se você dependesse ou se você depender conduziriam, no contraste didático proposto, para uma leitura condicional.\nRelações\nRelaciona: \nRelaciona: \nExemplificado por:",
+            "**O ramo denominado “pronome” é apenas anunciado nesta parte**: Definição ou ideia central\nDepois de concluir o bloco das conjunções, a professora anuncia que seguirá para “o outro lado” da classificação.\nClassificações enumeradas\nNo enquadramento verbal da aula, quando “se” estiver no ramo denominado “pronome”, são listadas as seguintes possibilidades:\napassivador;\nreflexivo;\nrecíproco;\nparte integrante do verbo;\nindeterminador do sujeito;\nrealce.\nLimite\nO material termina imediatamente após a enumeração. Não são fornecidas, nesta fonte, definições, testes ou exemplos para esses seis casos.Expandido por: nenhuma unidade deste material; desenvolvimento é adiado."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-RED-01",
-          "question": "Classifique a oração destacada e faça seu desdobramento: '[Ao soar o sinal], todos os alunos entregaram a prova'.",
-          "keyPoints": [
-            "Classificação: Oração Subordinada Adverbial TEMPORAL Reduzida de Infinitivo.",
-            "Desdobramento: 'Quando o sinal soou (ou Logo que o sinal soou), todos os alunos entregaram a prova'."
-          ],
-          "targetConcept": "Classificação e Desdobramento de Oração Reduzida",
-          "targetLO": "LO-A07-G10-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Palavra SE?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

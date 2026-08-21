@@ -1,20 +1,22 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A01-G02",
     "lessonId": "A01",
-    "title": "Adjetivos - Flexão e Adjetivos Compostos",
+    "title": "Emprego das Classes de Palavras",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A01-G02",
     "lessonId": "A01",
-    "title": "Adjetivos - Flexão e Adjetivos Compostos",
+    "title": "Emprego das Classes de Palavras",
     "learningObjectives": [
       "Reconstruir os fundamentos morfológicos e sintáticos das classes gramaticais (Substantivo, Adjetivo e Advérbio), dominar a dinâmica do sintagma nominal (anteposição adjetiva), reconhecer o processo de derivação imprópria (substantivação por determinantes) e aplicar métodos operacionais infalíveis (Técnica das Setas, Teste do \"Que é\", Teste do Intensificador \"Muito\") na resolução de itens do modelo Certo/Errado da banca CEBRASPE."
     ],
-    "conceptCount": 2,
+    "conceptCount": 6,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A01-G02-01"
@@ -26,169 +28,1866 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "O adjetivo é a classe satélite que qualifica, caracteriza, especifica ou classifica o substantivo. A sua flexão em gênero, número e grau, especialmente nos adjetivos compostos e nas locuções adjetivas de cor, é fonte frequente de armadilhas em provas.",
-      "visualBlueprint": "Adjetivo Composto Geral: Apenas o ÚLTIMO elemento varia (olhos verde-claros, questões político-sociais). Exceção Notável: surdo-mudo -> surdos-mudos. Adjetivos de Cor com Substantivo: INVARIÁVEIS (blusas verde-abacate, camisas rosa, olhos cor-de-mel).",
-      "cognitiveAnchor": "Se na composição de cor houver um substantivo (rosa, abacate, gelo, cinza), a expressão inteira torna-se invariável no plural.",
-      "strategicSignificance": "Garante precisão na concordância nominal de expressões cromáticas complexas e relações adjetivas em redações e provas.",
-      "coreTension": "Confundir adjetivo qualificativo com adjetivo de relação (este último não admite variação de grau nem anteposição ao substantivo)."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Emprego das Classes de Palavras",
+      "summary": "Articulação morfossintática e semântica de Emprego das Classes de Palavras com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A01-02",
-          "name": "Morfologia do Substantivo",
-          "reason": "Reconhecer se um elemento que compõe a cor é substantivo para definir a invariabilidade.",
-          "activationPrompt": "Em 'camisas verde-oliva', a palavra 'oliva' é adjetivo ou substantivo?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A01-G02",
+          "title": "Mapa de Dependência: Emprego das Classes de Palavras",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Emprego das Classes de Palavras",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Flexão dos Adjetivos Compostos",
-          "pedagogicalGoal": "Compreender a regra geral de flexão dos adjetivos compostos e suas exceções.",
+          "groupId": "GRP-IP-A01-G02-01",
+          "title": "Tríade Morfológica Fundamental e o Princípio da Referenciação Sintática",
+          "conceptRefs": [
+            "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "classification",
-              "title": "Regras de Plural de Adjetivos Compostos",
-              "categories": [
-                {
-                  "category": "Regra Geral (Adjetivo + Adjetivo)",
-                  "items": [
-                    "acordos econômico-financeiros",
-                    "clínicas médico-cirúrgicas",
-                    "olhos castanho-escuros"
-                  ],
-                  "description": "Apenas o último elemento flexiona em gênero e número"
-                },
-                {
-                  "category": "Exceção Consagrada",
-                  "items": [
-                    "rapazes surdos-mudos",
-                    "moças surdas-mudas"
-                  ],
-                  "description": "Ambos os elementos flexionam em gênero e número"
-                },
-                {
-                  "category": "Casos Totalmente Invariáveis",
-                  "items": [
-                    "meninos azul-marinho",
-                    "blusas azul-celeste"
-                  ],
-                  "description": "Expressões fixas consagradas pela tradição como invariáveis"
-                }
-              ],
-              "text": "Em adjetivos compostos, a marca flexional concentra-se no último elemento, ressalvadas as exceções normativas."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA morfologia da língua portuguesa organiza-se a partir de relações de dependência sintático-semântica entre núcleos e modificadores. As três classes fundamentais de identificação em prova são: Substantivo (núcleo nominal, variável, admite determinantes), Adjetivo (caracterizador, variável, aponta exclusivamente para substantivo) e Advérbio (modificador circunstancial, invariável, aponta para verbo, adjetivo ou outro advérbio).\nExplicação consolidada\nA classificação de uma palavra não deve ser feita de forma isolada, mas pelo termo ao qual ela se conecta no texto (referenciação sintática):\nSubstantivo: É o \"nome\", a entidade autônoma que nomeia seres, coisas e noções. Apresenta flexão de gênero e número. Funciona como polo de atração; a presença de um artigo (definido ou indefinido) atua como sinalizador infalível de um substantivo.\nAdjetivo: É a classe satélite que gravita em torno do substantivo, atribuindo-lhe qualidade, estado, aspecto ou restrição. Concorda em gênero e número com o substantivo determinado.\nAdvérbio: É uma classe estritamente invariável (não admite plural nem feminino) cuja função é expressar uma circunstância ao modificar um verbo, intensificar um adjetivo ou intensificar outro advérbio. O advérbio jamais modifica um substantivo.\nCritérios de reconhecimento ou aplicação\nSe a palavra puder receber artigo anteposto ou nomear uma entidade $\\rightarrow$ Substantivo.\nSe a palavra concordar com um substantivo e responder afirmativamente ao teste do \"que é\" $\\rightarrow$ Adjetivo.\nSe a palavra for invariável e estiver ligada a verbo, adjetivo ou advérbio $\\rightarrow$ Advérbio.\nExemplos e contraexemplos\nComprou um livro. $\\rightarrow$ \"um\" (artigo) determina \"livro\" (substantivo).\nComprou um livro bom. $\\rightarrow$ \"bom\" caracteriza \"livro\" (adjetivo).\nOntem comprou um livro muito bom. $\\rightarrow$ \"Ontem\" modifica o verbo \"comprou\" (advérbio de tempo); \"muito\" modifica o adjetivo \"bom\" (advérbio de intensidade).(Técnica das Setas).\nEvidenciado visualmente por: VIS-A01-G02-EMPREGO-CLASSES-PALAVRAS-001."
             }
           ]
         },
         {
-          "groupId": "GRP-02",
-          "title": "Adjetivos de Relação vs Adjetivos Qualificadores",
-          "pedagogicalGoal": "Identificar as propriedades exclusivas dos adjetivos de relação.",
+          "groupId": "GRP-IP-A01-G02-02",
+          "title": "Estrutura do Sintagma Nominal e a Anteposição Adjetiva",
+          "conceptRefs": [
+            "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Adjetivo Qualificativo vs Adjetivo de Relação",
-              "columns": [
-                "Propriedade",
-                "Adjetivo Qualificativo",
-                "Adjetivo de Relação"
-              ],
-              "rows": [
-                [
-                  "Natureza Semântica",
-                  "Expressa qualidade, juízo de valor, estado",
-                  "Expressa relação de origem, tempo, matéria, domínio técnico"
-                ],
-                [
-                  "Variação de Grau",
-                  "Admite comparativo/superlativo (muito belo, belíssimo)",
-                  "NÃO admite grau (*muito presidencial, *inflacionaríssimo)"
-                ],
-                [
-                  "Posição em relação ao nome",
-                  "Pode ser anteposto ou posposto (bela casa / casa bela)",
-                  "Obrigatoriamente POSPOSTO (crise presidencial, vaso de vidro)"
-                ],
-                [
-                  "Relação com Locução",
-                  "Não deriva necessariamente de locução",
-                  "Equivale estritamente a 'de + substantivo' (solar = do sol)"
-                ]
-              ],
-              "text": "Adjetivos de relação possuem valor objetivo e recusam gradação e anteposição."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nNo sintagma nominal em língua portuguesa, o artigo nem sempre antecede imediatamente o seu substantivo; é perfeitamente lícita a interposição de um adjetivo entre o artigo e o substantivo (anteposição adjetiva).\nExplicação consolidada\nA estrutura canônica do sintagma nominal segue o padrão Artigo + Substantivo + Adjetivo (\"O menino inteligente\"). Todavia, na ordem invertida/estilística Artigo + Adjetivo Interposto + Substantivo (\"O inteligente menino\", \"à mágica transformação\", \"a elevada participação\"), o artigo continua sintaticamente conectado ao substantivo que se encontra posposto. A banca CEBRASPE formula itens explorando a falsa crença de que \"a palavra colada ao artigo é obrigatoriamente substantivo\". Ao analisar tais estruturas, deve-se verificar que o artigo \"salta\" o adjetivo interposto para determinar o núcleo substantivo posterior.\nCritérios de reconhecimento ou aplicação\nIdentifique a locução nominal que se inicia por artigo (o, a, os, as, um, uma ou suas contrações prepositivas à, do, no).\nLocalize os dois termos que se seguem ao artigo.\nAplique o teste do \"que é\": o termo que aceitar o conector é o adjetivo; o outro termo é o substantivo núcleo ao qual o artigo se refere.\nExemplos e contraexemplos\nO menino inteligente $\\rightarrow$ Ordem direta: O (artigo) determina menino (subst.); inteligente = adjetivo.\nO inteligente menino $\\rightarrow$ Ordem invertida: O (artigo) determina menino (subst.); inteligente = adjetivo interposto.\nAssisti à mágica transformação $\\rightarrow$ a (artigo na crase) determina transformação (subst.); mágica = adjetivo anteposto (\"transformação que é mágica\").\nViabilizar a elevada participação $\\rightarrow$ a (artigo) determina participação (subst.); elevada = adjetivo anteposto.\nRelações\nPossui alerta em: .\nValidado por: .\nEvidenciado visualmente por: VIS-A01-G02-EMPREGO-CLASSES-PALAVRAS-003."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G02-03",
+          "title": "Substantivação e Derivação Imprópria por Determinantes",
+          "conceptRefs": [
+            "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA substantivação (ou derivação imprópria) é o processo morfológico contextual pelo qual qualquer palavra — originalmente pertencente à classe dos advérbios, verbos, numerais, conjunções, adjetivos ou interjeições — passa a funcionar sintaticamente como substantivo quando precedida por um determinante (Artigo, Pronome ou Numeral).\nExplicação consolidada\nA classe gramatical de um vocábulo não é estática nem puramente dicionarizada; ela depende estritamente do contexto sintático. O \"Mantra da Substantivação\" estabelece: O artigo, o pronome e o numeral têm o poder de substantivar palavras.\nQuando uma palavra de outra classe é antecedida por um determinante sem que haja outro substantivo núcleo subsequente a que esse determinante pertença, a palavra converte-se em substantivo.\nPor outro lado, se a palavra estiver exercendo sua função relacional ou sintática original (sem determinante substantivador), ela mantém sua classe primitiva.\nExemplos e contraexemplos\nAdvérbio substantivado:\nNão vou à aula. $\\rightarrow$ \"Não\" = Advérbio de negação (uso original).\nO não que ele levou doeu. $\\rightarrow$ \"O não\" = Substantivo (substantivado pelo artigo \"O\").\nO amanhã é imprevisível. $\\rightarrow$ \"O amanhã\" = Substantivo (substantivado pelo artigo \"O\").\nVerbo substantivado:\nAquele olhar é lindo. $\\rightarrow$ \"olhar\" = Substantivo (substantivado pelo pronome demonstrativo \"Aquele\").\nUm desesperar, nada por vir. $\\rightarrow$ \"desesperar\" = Substantivo (substantivado pelo artigo indefinido \"Um\").\nNumeral substantivado:\nEu seria o último dos mortais. $\\rightarrow$ \"último\" = Substantivo (substantivado pelo artigo definido \"o\").\nConjunção / Letra substantivada:\nPrecisavam daquele E que os conjugava... $\\rightarrow$ \"E\" = Substantivo (substantivado pelo pronome demonstrativo \"daquele\").\nOs operários E todos dançavam... $\\rightarrow$ \"E\" = Conjunção aditiva (sem determinante, ligando elementos).\nRelações\nDestacado em dica: TIP-A01-G02-EMPREGO-CLASSES-PALAVRAS-002.\nPossui alerta em: .\nExemplificado em: , , , ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G02-04",
+          "title": "Semântica e Sintaxe do Advérbio: Modificação Verbal, Deslocamento e Armadilhas do Sufixo \"-mente\"",
+          "conceptRefs": [
+            "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAo se associar a um verbo, o advérbio pode exprimir uma pluralidade de circunstâncias semânticas (tempo, modo, lugar, causa, negação, etc.). Essa modificação sintática subsiste mesmo que o advérbio esteja deslocado a longa distância no período. Ademais, o sufixo \"-mente\" não é indicador exclusivo de modo, sendo frequentemente empregado para formar advérbios de tempo.\nExplicação consolidada\nDiferenciação entre Modo e Tempo:\nModo: Informa a maneira ou o jeito como o processo verbal se desenvolve. Responde à pergunta \"COMO?\" ou \"De que jeito?\" (ex.: entrou rapidamente, nos leva necessariamente).\nTempo: Localiza o fato no tempo cronológico ou na frequência temporal. Responde à pergunta \"QUANDO?\" (ex.: começa amanhã, passou a morar posteriormente, circunstâncias presentemente vividas, ainda não tinham terminado).\nA Pegadinha do Sufixo \"-mente\": Candidatos desatentos costumam memorizar que todo advérbio em \"-mente\" exprime modo. Bancas como o CEBRASPE exploram palavras como posteriormente, presentemente, anteriormente e diariamente, que expressam valor semântico estrito de TEMPO.\nModificação Adverbial à Distância: O advérbio não precisa estar contíguo ao verbo. No período \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange...\", a presença de um adjunto adverbial intercalado não rompe a ligação sintático-semântica de \"Hoje\" com o verbo \"abrange\" (\"abrange quando? Hoje\" $\\rightarrow$ advérbio de tempo).\nCritérios de reconhecimento ou aplicação\nPergunte ao verbo: \"Aconteceu de que modo?\" $\\rightarrow$ Resposta com sentido de modo = Advérbio de Modo.\nPergunte ao verbo: \"Aconteceu quando?\" $\\rightarrow$ Resposta temporal = Advérbio de Tempo.\nSe o advérbio estiver no início da frase, trace a seta até a ação verbal que ele condiciona, ignorando intercalações.\nRelações\nPossui alertas em: , .\nOperacionalizado por: .\nExemplificado em: , , ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G02-05",
+          "title": "Advérbio Intensificador ao Modificar Adjetivos ou Outros Advérbios",
+          "conceptRefs": [
+            "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nSempre que um advérbio se refere a um adjetivo ou a outro advérbio, sua função semântica prioritária é a de intensificador (advérbio de intensidade), atuando na gradação da propriedade ou da circunstância.\nExplicação consolidada\nAo modificar um verbo, o advérbio transita por múltiplas circunstâncias (tempo, modo, instrumento, etc.). Contudo, ao modificar um adjetivo ou outro advérbio, o leque semântico se restringe: o advérbio atua quase que categoricamente como um intensificador.\nExemplo com o vocábulo \"bem\":\nLigado a verbo: \"Ele cantou bem\" $\\rightarrow$ Modifica o verbo cantar (Advérbio de Modo).\nLigado a adjetivo: \"É bem provável\" $\\rightarrow$ Modifica o adjetivo provável, equivalendo a \"muito provável\" (Advérbio de Intensidade).\nLigado a advérbio: \"Acorda bem cedo\" $\\rightarrow$ Modifica o advérbio cedo, equivalendo a \"muito cedo\" (Advérbio de Intensidade).\nCritérios de reconhecimento ou aplicação\nIdentifique o termo modificado pela palavra em análise.\nSe o termo receptor for um adjetivo ou outro advérbio, substitua o vocábulo sob análise por \"MUITO\".\nSe a substituição mantiver sentido pleno de gradação/reforço, ratifica-se a função de Advérbio de Intensidade (Intensificador).\nRelações\nOperacionalizado por: .\nExemplificado em: , , , ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A01-G02-06",
+          "title": "Adjetivos Especiais e Invariabilidade em Gênero (O Caso \"Monstro\")",
+          "conceptRefs": [
+            "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nDeterminados substantivos, quando empregados na função de adjetivos qualificadores/especificadores com valor superlativo (indicando grandeza ou proporção descomunal), comportam-se como adjetivos invariáveis em gênero.\nExplicação consolidada\nNa frase \"A notícia monstro nos assustou\", a palavra \"monstro\" atua como adjetivo especificador de \"notícia\" (\"a notícia que é monstro\" / de proporção gigantesca). Na norma-padrão da Língua Portuguesa, a forma flexionada \"monstra\" não existe como adjetivo. Construções como \"ideia monstra\" ou \"notícia monstra\" constituem desvios gramaticais. A concordância correta exige a forma invariável: \"notícia monstro\", \"ideia monstro\".\nCritérios de reconhecimento ou aplicação\nAo identificar a palavra \"monstro\" caracterizando um substantivo feminino, classifique-a como adjetivo invariável em gênero.\nRelações\nPossui alerta em: .\nExemplificado em: ."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA morfologia da língua portuguesa organiza-se a partir de relações de dependência sintático-semântica entre núcleos e modificadores. As três classes fundamentais de identificação em prova são: Substantivo (núcleo nominal, variável, admite determinantes), Adjetivo (caracterizador, variável, aponta exclusivamente para substantivo) e Advérbio (modificador circunstancial, invariável, aponta para verbo, adjetivo ou outro advérbio).\nExplicação consolidada\nA classificação de uma palavra não deve ser feita de forma isolada, mas pelo termo ao qual ela se conecta no texto (referenciação sintática):\nSubstantivo: É o \"nome\", a entidade autônoma que nomeia seres, coisas e noções. Apresenta flexão de gênero e número. Funciona como polo de atração; a presença de um artigo (definido ou indefinido) atua como sinalizador infalível de um substantivo.\nAdjetivo: É a classe satélite que gravita em torno do substantivo, atribuindo-lhe qualidade, estado, aspecto ou restrição. Concorda em gênero e número com o substantivo determinado.\nAdvérbio: É uma classe estritamente invariável (não admite plural nem feminino) cuja função é expressar uma circunstância ao modificar um verbo, intensificar um adjetivo ou intensificar outro advérbio. O advérbio jamais modifica um substantivo.\nCritérios de reconhecimento ou aplicação\nSe a palavra puder receber artigo anteposto ou nomear uma entidade $\\rightarrow$ Substantivo.\nSe a palavra concordar com um substantivo e responder afirmativamente ao teste do \"que é\" $\\rightarrow$ Adjetivo.\nSe a palavra for invariável e estiver ligada a verbo, adjetivo ou advérbio $\\rightarrow$ Advérbio.\nExemplos e contraexemplos\nComprou um livro. $\\rightarrow$ \"um\" (artigo) determina \"livro\" (substantivo).\nComprou um livro bom. $\\rightarrow$ \"bom\" caracteriza \"livro\" (adjetivo).\nOntem comprou um livro muito bom. $\\rightarrow$ \"Ontem\" modifica o verbo \"comprou\" (advérbio de tempo); \"muito\" modifica o adjetivo \"bom\" (advérbio de intensidade).(Técnica das Setas).\nEvidenciado visualmente por: VIS-A01-G02-EMPREGO-CLASSES-PALAVRAS-001."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nNo sintagma nominal em língua portuguesa, o artigo nem sempre antecede imediatamente o seu substantivo; é perfeitamente lícita a interposição de um adjetivo entre o artigo e o substantivo (anteposição adjetiva).\nExplicação consolidada\nA estrutura canônica do sintagma nominal segue o padrão Artigo + Substantivo + Adjetivo (\"O menino inteligente\"). Todavia, na ordem invertida/estilística Artigo + Adjetivo Interposto + Substantivo (\"O inteligente menino\", \"à mágica transformação\", \"a elevada participação\"), o artigo continua sintaticamente conectado ao substantivo que se encontra posposto. A banca CEBRASPE formula itens explorando a falsa crença de que \"a palavra colada ao artigo é obrigatoriamente substantivo\". Ao analisar tais estruturas, deve-se verificar que o artigo \"salta\" o adjetivo interposto para determinar o núcleo substantivo posterior.\nCritérios de reconhecimento ou aplicação\nIdentifique a locução nominal que se inicia por artigo (o, a, os, as, um, uma ou suas contrações prepositivas à, do, no).\nLocalize os dois termos que se seguem ao artigo.\nAplique o teste do \"que é\": o termo que aceitar o conector é o adjetivo; o outro termo é o substantivo núcleo ao qual o artigo se refere.\nExemplos e contraexemplos\nO menino inteligente $\\rightarrow$ Ordem direta: O (artigo) determina menino (subst.); inteligente = adjetivo.\nO inteligente menino $\\rightarrow$ Ordem invertida: O (artigo) determina menino (subst.); inteligente = adjetivo interposto.\nAssisti à mágica transformação $\\rightarrow$ a (artigo na crase) determina transformação (subst.); mágica = adjetivo anteposto (\"transformação que é mágica\").\nViabilizar a elevada participação $\\rightarrow$ a (artigo) determina participação (subst.); elevada = adjetivo anteposto.\nRelações\nPossui alerta em: .\nValidado por: .\nEvidenciado visualmente por: VIS-A01-G02-EMPREGO-CLASSES-PALAVRAS-003."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA substantivação (ou derivação imprópria) é o processo morfológico contextual pelo qual qualquer palavra — originalmente pertencente à classe dos advérbios, verbos, numerais, conjunções, adjetivos ou interjeições — passa a funcionar sintaticamente como substantivo quando precedida por um determinante (Artigo, Pronome ou Numeral).\nExplicação consolidada\nA classe gramatical de um vocábulo não é estática nem puramente dicionarizada; ela depende estritamente do contexto sintático. O \"Mantra da Substantivação\" estabelece: O artigo, o pronome e o numeral têm o poder de substantivar palavras.\nQuando uma palavra de outra classe é antecedida por um determinante sem que haja outro substantivo núcleo subsequente a que esse determinante pertença, a palavra converte-se em substantivo.\nPor outro lado, se a palavra estiver exercendo sua função relacional ou sintática original (sem determinante substantivador), ela mantém sua classe primitiva.\nExemplos e contraexemplos\nAdvérbio substantivado:\nNão vou à aula. $\\rightarrow$ \"Não\" = Advérbio de negação (uso original).\nO não que ele levou doeu. $\\rightarrow$ \"O não\" = Substantivo (substantivado pelo artigo \"O\").\nO amanhã é imprevisível. $\\rightarrow$ \"O amanhã\" = Substantivo (substantivado pelo artigo \"O\").\nVerbo substantivado:\nAquele olhar é lindo. $\\rightarrow$ \"olhar\" = Substantivo (substantivado pelo pronome demonstrativo \"Aquele\").\nUm desesperar, nada por vir. $\\rightarrow$ \"desesperar\" = Substantivo (substantivado pelo artigo indefinido \"Um\").\nNumeral substantivado:\nEu seria o último dos mortais. $\\rightarrow$ \"último\" = Substantivo (substantivado pelo artigo definido \"o\").\nConjunção / Letra substantivada:\nPrecisavam daquele E que os conjugava... $\\rightarrow$ \"E\" = Substantivo (substantivado pelo pronome demonstrativo \"daquele\").\nOs operários E todos dançavam... $\\rightarrow$ \"E\" = Conjunção aditiva (sem determinante, ligando elementos).\nRelações\nDestacado em dica: TIP-A01-G02-EMPREGO-CLASSES-PALAVRAS-002.\nPossui alerta em: .\nExemplificado em: , , , ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAo se associar a um verbo, o advérbio pode exprimir uma pluralidade de circunstâncias semânticas (tempo, modo, lugar, causa, negação, etc.). Essa modificação sintática subsiste mesmo que o advérbio esteja deslocado a longa distância no período. Ademais, o sufixo \"-mente\" não é indicador exclusivo de modo, sendo frequentemente empregado para formar advérbios de tempo.\nExplicação consolidada\nDiferenciação entre Modo e Tempo:\nModo: Informa a maneira ou o jeito como o processo verbal se desenvolve. Responde à pergunta \"COMO?\" ou \"De que jeito?\" (ex.: entrou rapidamente, nos leva necessariamente).\nTempo: Localiza o fato no tempo cronológico ou na frequência temporal. Responde à pergunta \"QUANDO?\" (ex.: começa amanhã, passou a morar posteriormente, circunstâncias presentemente vividas, ainda não tinham terminado).\nA Pegadinha do Sufixo \"-mente\": Candidatos desatentos costumam memorizar que todo advérbio em \"-mente\" exprime modo. Bancas como o CEBRASPE exploram palavras como posteriormente, presentemente, anteriormente e diariamente, que expressam valor semântico estrito de TEMPO.\nModificação Adverbial à Distância: O advérbio não precisa estar contíguo ao verbo. No período \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange...\", a presença de um adjunto adverbial intercalado não rompe a ligação sintático-semântica de \"Hoje\" com o verbo \"abrange\" (\"abrange quando? Hoje\" $\\rightarrow$ advérbio de tempo).\nCritérios de reconhecimento ou aplicação\nPergunte ao verbo: \"Aconteceu de que modo?\" $\\rightarrow$ Resposta com sentido de modo = Advérbio de Modo.\nPergunte ao verbo: \"Aconteceu quando?\" $\\rightarrow$ Resposta temporal = Advérbio de Tempo.\nSe o advérbio estiver no início da frase, trace a seta até a ação verbal que ele condiciona, ignorando intercalações.\nRelações\nPossui alertas em: , .\nOperacionalizado por: .\nExemplificado em: , , ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nSempre que um advérbio se refere a um adjetivo ou a outro advérbio, sua função semântica prioritária é a de intensificador (advérbio de intensidade), atuando na gradação da propriedade ou da circunstância.\nExplicação consolidada\nAo modificar um verbo, o advérbio transita por múltiplas circunstâncias (tempo, modo, instrumento, etc.). Contudo, ao modificar um adjetivo ou outro advérbio, o leque semântico se restringe: o advérbio atua quase que categoricamente como um intensificador.\nExemplo com o vocábulo \"bem\":\nLigado a verbo: \"Ele cantou bem\" $\\rightarrow$ Modifica o verbo cantar (Advérbio de Modo).\nLigado a adjetivo: \"É bem provável\" $\\rightarrow$ Modifica o adjetivo provável, equivalendo a \"muito provável\" (Advérbio de Intensidade).\nLigado a advérbio: \"Acorda bem cedo\" $\\rightarrow$ Modifica o advérbio cedo, equivalendo a \"muito cedo\" (Advérbio de Intensidade).\nCritérios de reconhecimento ou aplicação\nIdentifique o termo modificado pela palavra em análise.\nSe o termo receptor for um adjetivo ou outro advérbio, substitua o vocábulo sob análise por \"MUITO\".\nSe a substituição mantiver sentido pleno de gradação/reforço, ratifica-se a função de Advérbio de Intensidade (Intensificador).\nRelações\nOperacionalizado por: .\nExemplificado em: , , , ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nDeterminados substantivos, quando empregados na função de adjetivos qualificadores/especificadores com valor superlativo (indicando grandeza ou proporção descomunal), comportam-se como adjetivos invariáveis em gênero.\nExplicação consolidada\nNa frase \"A notícia monstro nos assustou\", a palavra \"monstro\" atua como adjetivo especificador de \"notícia\" (\"a notícia que é monstro\" / de proporção gigantesca). Na norma-padrão da Língua Portuguesa, a forma flexionada \"monstra\" não existe como adjetivo. Construções como \"ideia monstra\" ou \"notícia monstra\" constituem desvios gramaticais. A concordância correta exige a forma invariável: \"notícia monstro\", \"ideia monstro\".\nCritérios de reconhecimento ou aplicação\nAo identificar a palavra \"monstro\" caracterizando um substantivo feminino, classifique-a como adjetivo invariável em gênero.\nRelações\nPossui alerta em: .\nExemplificado em: ."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-ADJ-01",
-          "title": "Invariabilidade das Cores Substantivadas",
-          "statement": "Quando o segundo elemento de um adjetivo composto de cor (ou um adjetivo de cor simples) for originalmente um substantivo, todo o conjunto permanece invariável.",
-          "formalCondition": "Se Elemento_Cor in Substantivos -> Plural == Invariável.",
-          "scope": "Universal na norma culta.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A01-G02-001",
+          "title": "Regras canônicas",
+          "statement": "Regras canônicas",
+          "scope": "morphology",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Regras canônicas."
+          ],
           "exceptions": [],
-          "examples": [
-            "olhos verde-oliva (oliva é substantivo)",
-            "paredes amarelo-ouro (ouro é substantivo)",
-            "tecidos rosa (rosa é flor/substantivo)"
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A01-G02-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A01-G02-001",
+              "table": {
+                "tableId": "TABLE-IP-A01-G02-001",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Conceito / Regra",
+                  "Formulação Canônica",
+                  "ID Detalhado de Referência"
+                ],
+                "rows": [
+                  [
+                    "Substantivo",
+                    "Classe variável que nomeia seres, entidades, sentimentos e ações; atua como núcleo do sintagma nominal e admite ser antecedido por determinantes (artigos).",
+                    "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-001"
+                  ],
+                  [
+                    "Adjetivo",
+                    "Classe variável que se refere obrigatoriamente a um substantivo, atribuindo-lhe características, propriedades ou estados; responde ao teste do \"que é\".",
+                    "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-001"
+                  ],
+                  [
+                    "Advérbio",
+                    "Classe estritamente invariável que exprime circunstâncias ao modificar verbo, adjetivo ou outro advérbio.",
+                    "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-001"
+                  ],
+                  [
+                    "Anteposição Adjetiva",
+                    "Estrutura sintática (Artigo + Adjetivo + Substantivo) em que o artigo pula o adjetivo interposto e conecta-se ao substantivo subsequente.",
+                    "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-002"
+                  ],
+                  [
+                    "Substantivação",
+                    "Processo morfológico de mudança de classe (derivação imprópria) provocado pela anteposição de artigo, pronome ou numeral.",
+                    "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-003"
+                  ],
+                  [
+                    "Advérbio Modificador de Verbo",
+                    "Exprime circunstâncias múltiplas (Tempo = \"Quando?\", Modo = \"Como?\"), mantendo vínculo sintático mesmo se deslocado no período.",
+                    "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-004"
+                  ],
+                  [
+                    "Advérbio Intensificador",
+                    "Função obrigatória do advérbio quando modifica adjetivo ou outro advérbio, equivalendo semanticamente a \"muito\".",
+                    "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-005"
+                  ],
+                  [
+                    "Adjetivo Invariável \"Monstro\"",
+                    "Emprego adjetivo com valor de grande dimensão; invariável em gênero na norma-padrão (\"notícia monstro\").",
+                    "KB-A01-G02-EMPREGO-CLASSES-PALAVRAS-006"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A01-G02-001",
+              "EXP-IP-A01-G02-030"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-ADJ-01",
-          "title": "Algoritmo para Flexão de Cores no Plural",
-          "triggerCondition": "Questões sobre flexão de termos cromáticos complexos.",
+          "entityId": "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-001",
+          "title": "Técnica das Setas (Referenciação Sintática)",
           "steps": [
-            "1. A cor é simples ou composta?",
-            "2. Se simples e for adjetivo puro (azul, vermelho, preto), flexione normalmente (camisas azuis, sapatos pretos).",
-            "3. Se simples e for substantivo (rosa, gelo, cinza, vinho, pastel), fique INVARIÁVEL (camisas rosa, ternos cinza).",
-            "4. Se composta e terminar por adjetivo puro (verde-claro, azul-escuro), flexione o último (olhos verde-claros).",
-            "5. Se composta e terminar por substantivo (verde-oliva, amarelo-canário), fique TOTALMENTE INVARIÁVEL (saias verde-oliva)."
+            {
+              "order": 1,
+              "action": "Localizar o Vocábulo",
+              "explanation": "Destaque o termo solicitado no comando da questão.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Perguntar à Frase (\"Traçar a Seta\")",
+              "explanation": "Identifique a quem a palavra em análise se refere diretamente no texto:",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se apontar para um Substantivo $\\rightarrow$ o termo é um Adjetivo (ou determinante/artigo).",
+              "explanation": "Passo 3 do algoritmo de Técnica das Setas (Referenciação Sintática).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se apontar para um Verbo $\\rightarrow$ o termo é um Advérbio (circunstância).",
+              "explanation": "Passo 4 do algoritmo de Técnica das Setas (Referenciação Sintática).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Se apontar para um Adjetivo ou outro Advérbio $\\rightarrow$ o termo é um Advérbio de Intensidade.",
+              "explanation": "Passo 5 do algoritmo de Técnica das Setas (Referenciação Sintática).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Verificar a Existência de Determinantes Anteriores",
+              "explanation": "Se o termo for antecedido por artigo, pronome ou numeral, confirme se ocorreu substantivação ou se há um substantivo posterior determinando o sintagma.",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se 'azul-marinho' e 'azul-celeste' foram mantidos rigorosamente invariáveis.",
-          "typicalFailureModes": [
-            "Flexionar expressões como *saias verde-olivas ou *tecidos rosas."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Técnica das Setas (Referenciação Sintática)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Técnica das Setas (Referenciação Sintática)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Técnica das Setas (Referenciação Sintática)",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-001",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Identificar de forma infalível a classe morfológica de qualquer vocábulo em provas do CEBRASPE por meio do rastreamento de suas relações sintáticas no texto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a Passo Operacional"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localizar o Vocábulo: Destaque o termo solicitado no comando da questão.",
+                "Perguntar à Frase (\"Traçar a Seta\"): Identifique a quem a palavra em análise se refere diretamente no texto:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se apontar para um Substantivo $\\rightarrow$ o termo é um Adjetivo (ou determinante/artigo).",
+                "Se apontar para um Verbo $\\rightarrow$ o termo é um Advérbio (circunstância).",
+                "Se apontar para um Adjetivo ou outro Advérbio $\\rightarrow$ o termo é um Advérbio de Intensidade."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verificar a Existência de Determinantes Anteriores: Se o termo for antecedido por artigo, pronome ou numeral, confirme se ocorreu substantivação ou se há um substantivo posterior determinando o sintagma."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-001",
+              "EXP-IP-A01-G02-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-002",
+          "title": "Teste do \"Que é / Que são\" para Validação de Adjetivos",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole a expressão nominal (ex.",
+              "explanation": "O velho homem, A mágica transformação, Cidadãos notáveis).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Tente transformar a estrutura em uma oração adjetiva inserindo o conector \"QUE É\" (no singular) ou \"QUE SÃO\" (no plural).",
+              "explanation": "Passo 2 do algoritmo de Teste do \"Que é / Que são\" para Validação de Adjetivos.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Teste as combinações lógicas",
+              "explanation": "Passo 3 do algoritmo de Teste do \"Que é / Que são\" para Validação de Adjetivos.",
+              "test": "Teste as combinações lógicas:"
+            },
+            {
+              "order": 4,
+              "action": "Teste 1",
+              "explanation": "O velho [que é] homem? $\\rightarrow$ Incoerente.",
+              "test": "Teste 1: O velho [que é] homem? $\\rightarrow$ Incoerente."
+            },
+            {
+              "order": 5,
+              "action": "Teste 2",
+              "explanation": "O homem [que é] velho? $\\rightarrow$ Perfeito.",
+              "test": "Teste 2: O homem [que é] velho? $\\rightarrow$ Perfeito."
+            },
+            {
+              "order": 6,
+              "action": "O termo precedido pelo \"que é / que são\" na oração lógica é conclusivamente o ADJETIVO; o outro é o SUBSTANTIVO.",
+              "explanation": "Passo 6 do algoritmo de Teste do \"Que é / Que são\" para Validação de Adjetivos.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste do \"Que é / Que são\" para Validação de Adjetivos."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste do \"Que é / Que são\" para Validação de Adjetivos."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste do \"Que é / Que são\" para Validação de Adjetivos",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-002",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Distinguir com precisão qual termo é o substantivo e qual é o adjetivo em sintagmas nominais diretos ou invertidos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a Passo Operacional"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Isole a expressão nominal (ex.: O velho homem, A mágica transformação, Cidadãos notáveis).",
+                "Tente transformar a estrutura em uma oração adjetiva inserindo o conector \"QUE É\" (no singular) ou \"QUE SÃO\" (no plural).",
+                "Teste as combinações lógicas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Teste 1: O velho [que é] homem? $\\rightarrow$ Incoerente.",
+                "Teste 2: O homem [que é] velho? $\\rightarrow$ Perfeito."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O termo precedido pelo \"que é / que são\" na oração lógica é conclusivamente o ADJETIVO; o outro é o SUBSTANTIVO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-002",
+              "EXP-IP-A01-G02-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-003",
+          "title": "Teste da Substituição por \"MUITO\" para Advérbio Intensificador",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o termo subordinado e confirme que ele se liga a um adjetivo ou advérbio.",
+              "explanation": "Passo 1 do algoritmo de Teste da Substituição por \"MUITO\" para Advérbio Intensificador.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Substitua o termo suspeito por \"MUITO\".",
+              "explanation": "Passo 2 do algoritmo de Teste da Substituição por \"MUITO\" para Advérbio Intensificador.",
+              "test": "Substitua o termo suspeito por \"MUITO\"."
+            },
+            {
+              "order": 3,
+              "action": "Se a frase mantiver a coerência e expressar gradação semântica (\"bem provável\" $\\rightarrow$ \"muito provável\"; \"bem cedo\" $\\rightarrow$ \"muito cedo\"), ratifica-se a função de Advérbio de Intensidade.",
+              "explanation": "Passo 3 do algoritmo de Teste da Substituição por \"MUITO\" para Advérbio Intensificador.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste da Substituição por \"MUITO\" para Advérbio Intensificador."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste da Substituição por \"MUITO\" para Advérbio Intensificador."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste da Substituição por \"MUITO\" para Advérbio Intensificador",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-003",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Validar se uma palavra modificadora (como \"bem\", \"extremamente\", \"menos\") exerce função de advérbio intensificador sobre um adjetivo ou advérbio."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a Passo Operacional"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique o termo subordinado e confirme que ele se liga a um adjetivo ou advérbio.",
+                "Substitua o termo suspeito por \"MUITO\".",
+                "Se a frase mantiver a coerência e expressar gradação semântica (\"bem provável\" $\\rightarrow$ \"muito provável\"; \"bem cedo\" $\\rightarrow$ \"muito cedo\"), ratifica-se a função de Advérbio de Intensidade."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-003",
+              "EXP-IP-A01-G02-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-004",
+          "title": "Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\")",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique o advérbio que modifica o verbo (ex.",
+              "explanation": "rapidamente, necessariamente, posteriormente, presentemente).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Formule as perguntas ao verbo",
+              "explanation": "Passo 2 do algoritmo de Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\").",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Se responder a \"COMO?\" / \"DE QUE JEITO?\" $\\rightarrow$ Classifique como MODO (\"leva necessariamente\" = leva de forma necessária/obrigatória).",
+              "explanation": "Passo 3 do algoritmo de Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\").",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se responder a \"QUANDO?\" $\\rightarrow$ Classifique como TEMPO (\"passou a morar posteriormente\" = quando? no futuro; \"circunstâncias presentemente vividas\" = quando? no presente).",
+              "explanation": "Passo 4 do algoritmo de Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\").",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste Diagnóstico para Distinção Semântica: Modo (\"Como?\") vs. Tempo (\"Quando?\")",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-004",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Evitar a armadilha de classificar advérbios em \"-mente\" como modo quando expressam tempo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Passo a Passo Operacional"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique o advérbio que modifica o verbo (ex.: rapidamente, necessariamente, posteriormente, presentemente).",
+                "Formule as perguntas ao verbo:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se responder a \"COMO?\" / \"DE QUE JEITO?\" $\\rightarrow$ Classifique como MODO (\"leva necessariamente\" = leva de forma necessária/obrigatória).",
+                "Se responder a \"QUANDO?\" $\\rightarrow$ Classifique como TEMPO (\"passou a morar posteriormente\" = quando? no futuro; \"circunstâncias presentemente vividas\" = quando? no presente)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A01-G02-EMPREGO-CLASSES-PALAVRAS-004",
+              "EXP-IP-A01-G02-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-ADJ-01",
-          "conceptA": "Olhos verde-claros",
-          "conceptB": "Olhos verde-esmeralda",
-          "decisiveDifference": "Verde-claros flexiona o último porque 'claro' é adjetivo; verde-esmeralda fica invariável porque 'esmeralda' é substantivo.",
-          "minimalPair": {
-            "sentenceA": "Ela tinha lindos olhos verde-claros.",
-            "sentenceB": "Ela comprou vestidos verde-esmeralda.",
-            "difference": "Verde-claros (adjetivo+adjetivo: flexiona) vs Verde-esmeralda (adjetivo+substantivo: invariável)."
+          "entityId": "CONTRAST-IP-A01-G02-001",
+          "title": "Tabela Comparativa: Substantivo vs. Adjetivo vs. Advérbio",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Se o segundo termo puder ser tocado no mundo real como objeto/planta/mineral, é substantivo -> trava a flexão.",
-          "pitfall": "Achar que todo adjetivo composto de cor flexiona o último termo."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "morphological",
+          "conceptA": "Tabela Comparativa: Substantivo vs. Adjetivo vs. Advérbio",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A01-G02-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A01-G02-002",
+              "table": {
+                "tableId": "TABLE-IP-A01-G02-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério de Análise",
+                  "Substantivo",
+                  "Adjetivo",
+                  "Advérbio"
+                ],
+                "rows": [
+                  [
+                    "Função Semântica",
+                    "Nomeia seres, entidades, sentimentos e ações.",
+                    "Caracteriza, qualifica ou restringe o substantivo.",
+                    "Exprime circunstância (tempo, modo, lugar) ou intensidade."
+                  ],
+                  [
+                    "Flexibilidade Morfológica",
+                    "Variável (flexiona em gênero e número).",
+                    "Variável (concorda com o substantivo determinado).",
+                    "Estritamente Invariável (não admite gênero nem número)."
+                  ],
+                  [
+                    "Alvo da Seta Sintática",
+                    "Não aponta; atua como núcleo de atração.",
+                    "ApontaEXCLUSIVAMENTE para o Substantivo.",
+                    "Aponta paraVerbo, Adjetivo ou outro Advérbio."
+                  ],
+                  [
+                    "Teste de Validação",
+                    "Aceita artigo anteposto (o, a, um, uma).",
+                    "Encaixe de\"que é\" / \"que são\".",
+                    "Substituição por perguntas (Como?, Quando?) ou por \"muito\"."
+                  ],
+                  [
+                    "Exemplo Típico",
+                    "livro, pessoa, transformação.",
+                    "bom, feliz, mágica, elevada.",
+                    "ontem, rapidamente, bem, hoje."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A01-G02-001",
+              "EXP-IP-A01-G02-039"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A01-G02-002",
+          "title": "Quadro de Diferenciação: \"Bem\" como Modo vs. \"Bem\" como Intensidade",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Quadro de Diferenciação: \"Bem\" como Modo vs. \"Bem\" como Intensidade",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A01-G02-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A01-G02-003",
+              "table": {
+                "tableId": "TABLE-IP-A01-G02-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Contexto de Ocorrência",
+                  "Termo Modificado",
+                  "Classificação Morfossintática",
+                  "Significado Equivalente",
+                  "Exemplo"
+                ],
+                "rows": [
+                  [
+                    "Ligado a Verbo de Ação",
+                    "Verbo",
+                    "Advérbio deModo",
+                    "\"De maneira correta / de modo adequado\"",
+                    "\"Ele cantou bem.\""
+                  ],
+                  [
+                    "Ligado a Adjetivo",
+                    "Adjetivo",
+                    "Advérbio deIntensidade (Intensificador)",
+                    "\"Muito\"",
+                    "\"É bem provável.\""
+                  ],
+                  [
+                    "Ligado a outro Advérbio",
+                    "Advérbio",
+                    "Advérbio deIntensidade (Intensificador)",
+                    "\"Muito\"",
+                    "\"Acordou bem cedo.\""
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A01-G02-002",
+              "EXP-IP-A01-G02-040"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A01-G02-003",
+          "title": "Quadro de Contraste: Sufixo \"-mente\" em Modo vs. Tempo",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Quadro de Contraste: Sufixo \"-mente\" em Modo vs. Tempo",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A01-G02-003",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A01-G02-004",
+              "table": {
+                "tableId": "TABLE-IP-A01-G02-004",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Advérbio em \"-mente\"",
+                  "Pergunta Respondida",
+                  "Circunstância Real",
+                  "Pegadinha Típica da Banca"
+                ],
+                "rows": [
+                  [
+                    "Rapidamente",
+                    "Como? / De que jeito?",
+                    "Modo",
+                    "Classificação direta (sem armadilha)."
+                  ],
+                  [
+                    "Necessariamente",
+                    "Como? / De que modo?",
+                    "Modo",
+                    "O Cebraspe tenta equiparar a tempo."
+                  ],
+                  [
+                    "Posteriormente",
+                    "Quando? (Em momento posterior)",
+                    "Tempo",
+                    "A banca afirma falsamente que é \"modo\"."
+                  ],
+                  [
+                    "Presentemente",
+                    "Quando? (No momento presente / agora)",
+                    "Tempo",
+                    "A banca afirma falsamente que é \"modo\"."
+                  ],
+                  [
+                    "Diariamente",
+                    "Quando? / Com que frequência?",
+                    "Tempo",
+                    "A banca afirma falsamente que é \"modo\"."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A01-G02-003",
+              "EXP-IP-A01-G02-041"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-ADJ-01",
-          "title": "Flexão em Grau Superlativo Absoluto Sintético",
-          "sentence": "O clima estava paupérrimo e o exame foi dificílimo.",
-          "analysis": "Pobre -> paupérrimo (erudito) ou pobríssimo (coloquial). Difícil -> dificílimo. Amável -> amabilíssimo. Fiel -> fidelíssimo.",
-          "pedagogicalTakeaway": "Superlativos eruditos retomam o radical latino original do adjetivo.",
-          "targetLO": "LO-A01-G02-01"
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-001",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-001 — Comprou um livro bom",
+          "statement": "Análise Morfossintática:\n\"um\" = Artigo indefinido (sinalizador do núcleo).\n\"livro\" = Substantivo (núcleo nominal).\n\"bom\" = Adjetivo (aponta para livro, caracterizando-o).",
+          "prompt": "Análise Morfossintática:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Morfossintática",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"um\" = Artigo indefinido (sinalizador do núcleo).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"livro\" = Substantivo (núcleo nominal).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "\"bom\" = Adjetivo (aponta para livro, caracterizando-o).",
+              "rationale": null
+            }
+          ],
+          "result": "\"bom\" = Adjetivo (aponta para livro, caracterizando-o).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Análise Morfossintática:\n\"um\" = Artigo indefinido (sinalizador do núcleo).\n\"livro\" = Substantivo (núcleo nominal).\n\"bom\" = Adjetivo (aponta para livro, caracterizando-o).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-001 — Comprou um livro bom sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-001 — Comprou um livro bom.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-001 — Comprou um livro bom.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise Morfossintática:",
+                "\"um\" = Artigo indefinido (sinalizador do núcleo).",
+                "\"livro\" = Substantivo (núcleo nominal).",
+                "\"bom\" = Adjetivo (aponta para livro, caracterizando-o)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-001",
+              "EXP-IP-A01-G02-042"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-002",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-002 — A freira fugitiva sempre fala mal do convento",
+          "statement": "Análise Morfossintática:\n\"fugitiva\" = Adjetivo (refere-se a freira: a freira que é fugitiva).\n\"convento\" = Substantivo (precedido pela contração prepositiva do = de + o, cujo artigo o determina convento).",
+          "prompt": "Análise Morfossintática:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Morfossintática",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"fugitiva\" = Adjetivo (refere-se a freira",
+              "rationale": "a freira que é fugitiva)."
+            },
+            {
+              "order": 3,
+              "action": "\"convento\" = Substantivo (precedido pela contração prepositiva do = de + o, cujo artigo o determina convento).",
+              "rationale": null
+            }
+          ],
+          "result": "\"convento\" = Substantivo (precedido pela contração prepositiva do = de + o, cujo artigo o determina convento).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Análise Morfossintática:\n\"fugitiva\" = Adjetivo (refere-se a freira: a freira que é fugitiva).\n\"convento\" = Substantivo (precedido pela contração prepositiva do = de + o, cujo artigo o determina convento).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-002 — A freira fugitiva sempre fala mal do convento sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-002 — A freira fugitiva sempre fala mal do convento.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-002 — A freira fugitiva sempre fala mal do convento.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise Morfossintática:",
+                "\"fugitiva\" = Adjetivo (refere-se a freira: a freira que é fugitiva).",
+                "\"convento\" = Substantivo (precedido pela contração prepositiva do = de + o, cujo artigo o determina convento)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-002",
+              "EXP-IP-A01-G02-043"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-003",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-003 — A notícia monstro nos assustou",
+          "statement": "Análise Morfossintática:\n\"monstro\" = Adjetivo invariável em gênero (qualifica notícia com valor superlativo/gigantesco). A forma \"monstra\" é inexistente na norma culta.",
+          "prompt": "Análise Morfossintática:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Morfossintática",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"monstro\" = Adjetivo invariável em gênero (qualifica notícia com valor superlativo/gigantesco). A forma \"monstra\" é inexistente na norma culta.",
+              "rationale": null
+            }
+          ],
+          "result": "\"monstro\" = Adjetivo invariável em gênero (qualifica notícia com valor superlativo/gigantesco). A forma \"monstra\" é inexistente na norma culta.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Análise Morfossintática:\n\"monstro\" = Adjetivo invariável em gênero (qualifica notícia com valor superlativo/gigantesco). A forma \"monstra\" é inexistente na norma culta.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-003 — A notícia monstro nos assustou sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-003 — A notícia monstro nos assustou.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-003 — A notícia monstro nos assustou.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise Morfossintática:",
+                "\"monstro\" = Adjetivo invariável em gênero (qualifica notícia com valor superlativo/gigantesco). A forma \"monstra\" é inexistente na norma culta."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-003",
+              "EXP-IP-A01-G02-044"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-004",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-004 — Aquele dia foi menos estressante",
+          "statement": "Análise Morfossintática:\n\"estressante\" = Adjetivo (aponta para o substantivo dia).\n\"menos\" = Advérbio de intensidade (modifica o adjetivo estressante).",
+          "prompt": "Análise Morfossintática:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Morfossintática",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"estressante\" = Adjetivo (aponta para o substantivo dia).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"menos\" = Advérbio de intensidade (modifica o adjetivo estressante).",
+              "rationale": null
+            }
+          ],
+          "result": "\"menos\" = Advérbio de intensidade (modifica o adjetivo estressante).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Análise Morfossintática:\n\"estressante\" = Adjetivo (aponta para o substantivo dia).\n\"menos\" = Advérbio de intensidade (modifica o adjetivo estressante).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-004 — Aquele dia foi menos estressante sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-004 — Aquele dia foi menos estressante.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-004 — Aquele dia foi menos estressante.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise Morfossintática:",
+                "\"estressante\" = Adjetivo (aponta para o substantivo dia).",
+                "\"menos\" = Advérbio de intensidade (modifica o adjetivo estressante)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-004",
+              "EXP-IP-A01-G02-045"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-005",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-005 — O amanhã é imprevisível",
+          "statement": "Análise Morfossintática:\n\"amanhã\" = Substantivo (originalmente advérbio de tempo, substantivado pelo artigo definido \"O\" via derivação imprópria).\n\"imprevisível\" = Adjetivo (refere-se ao substantivo amanhã).",
+          "prompt": "Análise Morfossintática:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Morfossintática",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"amanhã\" = Substantivo (originalmente advérbio de tempo, substantivado pelo artigo definido \"O\" via derivação imprópria).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"imprevisível\" = Adjetivo (refere-se ao substantivo amanhã).",
+              "rationale": null
+            }
+          ],
+          "result": "\"imprevisível\" = Adjetivo (refere-se ao substantivo amanhã).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Análise Morfossintática:\n\"amanhã\" = Substantivo (originalmente advérbio de tempo, substantivado pelo artigo definido \"O\" via derivação imprópria).\n\"imprevisível\" = Adjetivo (refere-se ao substantivo amanhã).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-005 — O amanhã é imprevisível sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-005 — O amanhã é imprevisível.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-005 — O amanhã é imprevisível.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise Morfossintática:",
+                "\"amanhã\" = Substantivo (originalmente advérbio de tempo, substantivado pelo artigo definido \"O\" via derivação imprópria).",
+                "\"imprevisível\" = Adjetivo (refere-se ao substantivo amanhã)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-005",
+              "EXP-IP-A01-G02-046"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-006",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-006 — O não que ele levou / Aquele olhar",
+          "statement": "Análise Morfossintática:\n\"O não\" $\\rightarrow$ Artigo \"O\" substantiva o advérbio \"não\".\n\"Aquele olhar\" $\\rightarrow$ Pronome demonstrativo \"Aquele\" substantiva a forma verbal infinitiva \"olhar\".",
+          "prompt": "Análise Morfossintática:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Morfossintática",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"O não\" $\\rightarrow$ Artigo \"O\" substantiva o advérbio \"não\".",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "\"Aquele olhar\" $\\rightarrow$ Pronome demonstrativo \"Aquele\" substantiva a forma verbal infinitiva \"olhar\".",
+              "rationale": null
+            }
+          ],
+          "result": "\"Aquele olhar\" $\\rightarrow$ Pronome demonstrativo \"Aquele\" substantiva a forma verbal infinitiva \"olhar\".",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Análise Morfossintática:\n\"O não\" $\\rightarrow$ Artigo \"O\" substantiva o advérbio \"não\".\n\"Aquele olhar\" $\\rightarrow$ Pronome demonstrativo \"Aquele\" substantiva a forma verbal infinitiva \"olhar\".'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-006 — O não que ele levou / Aquele olhar sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-006 — O não que ele levou / Aquele olhar.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-006 — O não que ele levou / Aquele olhar.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise Morfossintática:",
+                "\"O não\" $\\rightarrow$ Artigo \"O\" substantiva o advérbio \"não\".",
+                "\"Aquele olhar\" $\\rightarrow$ Pronome demonstrativo \"Aquele\" substantiva a forma verbal infinitiva \"olhar\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-006",
+              "EXP-IP-A01-G02-047"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-007",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-007 — Ele é bem inteligente",
+          "statement": "Análise Morfossintática:\n\"bem\" = Advérbio de intensidade (intensificador), pois modifica o adjetivo \"inteligente\", equivalendo a \"muito inteligente\".",
+          "prompt": "Análise Morfossintática:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Análise Morfossintática",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "\"bem\" = Advérbio de intensidade (intensificador), pois modifica o adjetivo \"inteligente\", equivalendo a \"muito inteligente\".",
+              "rationale": null
+            }
+          ],
+          "result": "\"bem\" = Advérbio de intensidade (intensificador), pois modifica o adjetivo \"inteligente\", equivalendo a \"muito inteligente\".",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Análise Morfossintática:\n\"bem\" = Advérbio de intensidade (intensificador), pois modifica o adjetivo \"inteligente\", equivalendo a \"muito inteligente\".'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-007 — Ele é bem inteligente sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-007 — Ele é bem inteligente.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-007 — Ele é bem inteligente.",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise Morfossintática:",
+                "\"bem\" = Advérbio de intensidade (intensificador), pois modifica o adjetivo \"inteligente\", equivalendo a \"muito inteligente\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-007",
+              "EXP-IP-A01-G02-048"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-008",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-008 — Questão SEDF (Numeral Substantivado)",
+          "statement": "Órgão / Cargo: SEDF — Conhecimentos Básicos\nTexto: \"Eu seria o último dos mortais a duvidar...\"\nAssertiva: \"Na linha 5, a palavra 'último' foi empregada com valor de substantivo.\"\nResolução e Justificativa: A palavra \"último\" é precedida pelo artigo definido \"o\", operando o processo de derivação imprópria/substantivação.\nGabarito Oficial: CERTO.",
+          "prompt": "Órgão / Cargo: SEDF — Conhecimentos Básicos",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "SEDF — Conhecimentos Básicos"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Eu seria o último dos mortais a duvidar...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"Na linha 5, a palavra 'último' foi empregada com valor de substantivo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "A palavra \"último\" é precedida pelo artigo definido \"o\", operando o processo de derivação imprópria/substantivação."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: SEDF — Conhecimentos Básicos\nTexto: \"Eu seria o último dos mortais a duvidar...\"\nAssertiva: \"Na linha 5, a palavra 'último' foi empregada com valor de substantivo.\"\nResolução e Justificativa: A palavra \"último\" é precedida pelo artigo definido \"o\", operando o processo de derivação imprópria/substantivação.\nGabarito Oficial: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-008 — Questão SEDF (Numeral Substantivado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-008 — Questão SEDF (Numeral Substantivado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-008 — Questão SEDF (Numeral Substantivado).",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: SEDF — Conhecimentos Básicos",
+                "Texto: \"Eu seria o último dos mortais a duvidar...\"",
+                "Assertiva: \"Na linha 5, a palavra 'último' foi empregada com valor de substantivo.\"",
+                "Resolução e Justificativa: A palavra \"último\" é precedida pelo artigo definido \"o\", operando o processo de derivação imprópria/substantivação.",
+                "Gabarito Oficial: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-008",
+              "EXP-IP-A01-G02-049"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-009",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-009 — Questão Prefeitura de São Cristóvão (Verbo Substantivado)",
+          "statement": "Órgão / Cargo: Pref. de São Cristóvão - SE / Agente Comunitário de Saúde\nTexto: \"Um desesperar, nada por vir...\"\nAssertiva: \"No trecho 'Um desesperar, nada por vir', o vocábulo 'desesperar' está empregado como substantivo.\"\nResolução e Justificativa: O artigo indefinido \"Um\" anteposto converte o verbo \"desesperar\" em substantivo.\nGabarito Oficial: CERTO.",
+          "prompt": "Órgão / Cargo: Pref. de São Cristóvão - SE / Agente Comunitário de Saúde",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "Pref. de São Cristóvão - SE / Agente Comunitário de Saúde"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Um desesperar, nada por vir...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No trecho 'Um desesperar, nada por vir', o vocábulo 'desesperar' está empregado como substantivo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "O artigo indefinido \"Um\" anteposto converte o verbo \"desesperar\" em substantivo."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: Pref. de São Cristóvão - SE / Agente Comunitário de Saúde\nTexto: \"Um desesperar, nada por vir...\"\nAssertiva: \"No trecho 'Um desesperar, nada por vir', o vocábulo 'desesperar' está empregado como substantivo.\"\nResolução e Justificativa: O artigo indefinido \"Um\" anteposto converte o verbo \"desesperar\" em substantivo.\nGabarito Oficial: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-009 — Questão Prefeitura de São Cristóvão (Verbo Substantivado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-009 — Questão Prefeitura de São Cristóvão (Verbo Substantivado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-009 — Questão Prefeitura de São Cristóvão (Verbo Substantivado).",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: Pref. de São Cristóvão - SE / Agente Comunitário de Saúde",
+                "Texto: \"Um desesperar, nada por vir...\"",
+                "Assertiva: \"No trecho 'Um desesperar, nada por vir', o vocábulo 'desesperar' está empregado como substantivo.\"",
+                "Resolução e Justificativa: O artigo indefinido \"Um\" anteposto converte o verbo \"desesperar\" em substantivo.",
+                "Gabarito Oficial: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-009",
+              "EXP-IP-A01-G02-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-010",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-010 — Questão Prefeitura de Cachoeiro 2024 (Adjetivo Notáveis)",
+          "statement": "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo\nTexto: \"...óbitos de cidadãos notáveis.\"\nAssertiva: \"No terceiro período, a palavra 'notáveis', que caracteriza o substantivo 'cidadãos', é classificada como adjetivo.\"\nResolução e Justificativa: \"notáveis\" aponta para o substantivo \"cidadãos\" (cidadãos que são notáveis), atuando legitimamente como adjetivo.\nGabarito Oficial: CERTO.",
+          "prompt": "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"...óbitos de cidadãos notáveis.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No terceiro período, a palavra 'notáveis', que caracteriza o substantivo 'cidadãos', é classificada como adjetivo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "\"notáveis\" aponta para o substantivo \"cidadãos\" (cidadãos que são notáveis), atuando legitimamente como adjetivo."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo\nTexto: \"...óbitos de cidadãos notáveis.\"\nAssertiva: \"No terceiro período, a palavra 'notáveis', que caracteriza o substantivo 'cidadãos', é classificada como adjetivo.\"\nResolução e Justificativa: \"notáveis\" aponta para o substantivo \"cidadãos\" (cidadãos que são notáveis), atuando legitimamente como adjetivo.\nGabarito Oficial: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-010 — Questão Prefeitura de Cachoeiro 2024 (Adjetivo Notáveis) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-010 — Questão Prefeitura de Cachoeiro 2024 (Adjetivo Notáveis).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-010 — Questão Prefeitura de Cachoeiro 2024 (Adjetivo Notáveis).",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-010",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo",
+                "Texto: \"...óbitos de cidadãos notáveis.\"",
+                "Assertiva: \"No terceiro período, a palavra 'notáveis', que caracteriza o substantivo 'cidadãos', é classificada como adjetivo.\"",
+                "Resolução e Justificativa: \"notáveis\" aponta para o substantivo \"cidadãos\" (cidadãos que são notáveis), atuando legitimamente como adjetivo.",
+                "Gabarito Oficial: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-010",
+              "EXP-IP-A01-G02-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-011",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-011 — Questão TJ-CE 2023 (Adjetivo Anteposto \"Mágica\")",
+          "statement": "Órgão / Cargo: TJ-CE (2023) / Técnico Judiciário\nTexto: \"Assisti mais uma vez à mágica transformação do deserto...\"\nAssertiva: \"No segundo período do segundo parágrafo do texto CGIAl-I, a palavra 'mágica' está empregada como um substantivo.\"\nResolução e Justificativa: A estrutura apresenta crase à (a preposição + a artigo). O artigo a conecta-se a transformação (substantivo). mágica é adjetivo interposto (\"transformação que é mágica\"). O item erra ao classificar mágica como substantivo.\nGabarito Oficial: ERRADO.",
+          "prompt": "Órgão / Cargo: TJ-CE (2023) / Técnico Judiciário",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "TJ-CE (2023) / Técnico Judiciário"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Assisti mais uma vez à mágica transformação do deserto...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No segundo período do segundo parágrafo do texto CGIAl-I, a palavra 'mágica' está empregada como um substantivo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "A estrutura apresenta crase à (a preposição + a artigo). O artigo a conecta-se a transformação (substantivo). mágica é adjetivo interposto (\"transformação que é mágica\"). O item erra ao classificar mágica como substantivo."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: TJ-CE (2023) / Técnico Judiciário\nTexto: \"Assisti mais uma vez à mágica transformação do deserto...\"\nAssertiva: \"No segundo período do segundo parágrafo do texto CGIAl-I, a palavra 'mágica' está empregada como um substantivo.\"\nResolução e Justificativa: A estrutura apresenta crase à (a preposição + a artigo). O artigo a conecta-se a transformação (substantivo). mágica é adjetivo interposto (\"transformação que é mágica\"). O item erra ao classificar mágica como substantivo.\nGabarito Oficial: ERRADO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-011 — Questão TJ-CE 2023 (Adjetivo Anteposto \"Mágica\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-011 — Questão TJ-CE 2023 (Adjetivo Anteposto \"Mágica\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-011 — Questão TJ-CE 2023 (Adjetivo Anteposto \"Mágica\").",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-011",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: TJ-CE (2023) / Técnico Judiciário",
+                "Texto: \"Assisti mais uma vez à mágica transformação do deserto...\"",
+                "Assertiva: \"No segundo período do segundo parágrafo do texto CGIAl-I, a palavra 'mágica' está empregada como um substantivo.\"",
+                "Resolução e Justificativa: A estrutura apresenta crase à (a preposição + a artigo). O artigo a conecta-se a transformação (substantivo). mágica é adjetivo interposto (\"transformação que é mágica\"). O item erra ao classificar mágica como substantivo.",
+                "Gabarito Oficial: ERRADO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-011",
+              "EXP-IP-A01-G02-052"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-012",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-012 — Questão Prefeitura de Cachoeiro 2024 (Daquele E vs. Operários E Todos)",
+          "statement": "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Agente Administrativo\nTexto: \"precisavam daquele E que os conjugava...\" / \"os operários E todos que queriam proteção...\"\nAssertiva: \"Enquanto, no trecho 'precisavam daquele E...', o vocábulo 'E' se comporta como um substantivo, no trecho 'os operários E todos...', o mesmo vocábulo está empregado como conjunção aditiva.\"\nResolução e Justificativa: No primeiro trecho, o pronome daquele substantiva o vocábulo E. No segundo trecho, E atua como conjunção aditiva ligando dois sujeitos.\nGabarito Oficial: CERTO.",
+          "prompt": "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Agente Administrativo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "Pref. de Cachoeiro de Itapemirim - ES (2024) / Agente Administrativo"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"precisavam daquele E que os conjugava...\" / \"os operários E todos que queriam proteção...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"Enquanto, no trecho 'precisavam daquele E...', o vocábulo 'E' se comporta como um substantivo, no trecho 'os operários E todos...', o mesmo vocábulo está empregado como conjunção aditiva.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "No primeiro trecho, o pronome daquele substantiva o vocábulo E. No segundo trecho, E atua como conjunção aditiva ligando dois sujeitos."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Agente Administrativo\nTexto: \"precisavam daquele E que os conjugava...\" / \"os operários E todos que queriam proteção...\"\nAssertiva: \"Enquanto, no trecho 'precisavam daquele E...', o vocábulo 'E' se comporta como um substantivo, no trecho 'os operários E todos...', o mesmo vocábulo está empregado como conjunção aditiva.\"\nResolução e Justificativa: No primeiro trecho, o pronome daquele substantiva o vocábulo E. No segundo trecho, E atua como conjunção aditiva ligando dois sujeitos.\nGabarito Oficial: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-012 — Questão Prefeitura de Cachoeiro 2024 (Daquele E vs. Operários E Todos) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-012 — Questão Prefeitura de Cachoeiro 2024 (Daquele E vs. Operários E Todos).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-012 — Questão Prefeitura de Cachoeiro 2024 (Daquele E vs. Operários E Todos).",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-012",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Agente Administrativo",
+                "Texto: \"precisavam daquele E que os conjugava...\" / \"os operários E todos que queriam proteção...\"",
+                "Assertiva: \"Enquanto, no trecho 'precisavam daquele E...', o vocábulo 'E' se comporta como um substantivo, no trecho 'os operários E todos...', o mesmo vocábulo está empregado como conjunção aditiva.\"",
+                "Resolução e Justificativa: No primeiro trecho, o pronome daquele substantiva o vocábulo E. No segundo trecho, E atua como conjunção aditiva ligando dois sujeitos.",
+                "Gabarito Oficial: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-012",
+              "EXP-IP-A01-G02-053"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-013",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-013 — Questão Prefeitura de Cachoeiro 2024 (Advérbio Deslocado \"Hoje\")",
+          "statement": "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo\nTexto: \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\"\nAssertiva: \"A palavra 'Hoje' classifica-se como advérbio de tempo.\"\nResolução e Justificativa: \"Hoje\" modifica o verbo \"abrange\" indicando tempo, permanecendo advérbio apesar do adjunto de lugar intercalado.\nGabarito Oficial: CERTO.",
+          "prompt": "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"A palavra 'Hoje' classifica-se como advérbio de tempo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "\"Hoje\" modifica o verbo \"abrange\" indicando tempo, permanecendo advérbio apesar do adjunto de lugar intercalado."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo\nTexto: \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\"\nAssertiva: \"A palavra 'Hoje' classifica-se como advérbio de tempo.\"\nResolução e Justificativa: \"Hoje\" modifica o verbo \"abrange\" indicando tempo, permanecendo advérbio apesar do adjunto de lugar intercalado.\nGabarito Oficial: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-013 — Questão Prefeitura de Cachoeiro 2024 (Advérbio Deslocado \"Hoje\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-013 — Questão Prefeitura de Cachoeiro 2024 (Advérbio Deslocado \"Hoje\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-013 — Questão Prefeitura de Cachoeiro 2024 (Advérbio Deslocado \"Hoje\").",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-013",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: Pref. de Cachoeiro de Itapemirim - ES (2024) / Auxiliar Administrativo",
+                "Texto: \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\"",
+                "Assertiva: \"A palavra 'Hoje' classifica-se como advérbio de tempo.\"",
+                "Resolução e Justificativa: \"Hoje\" modifica o verbo \"abrange\" indicando tempo, permanecendo advérbio apesar do adjunto de lugar intercalado.",
+                "Gabarito Oficial: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-013",
+              "EXP-IP-A01-G02-054"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-014",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-014 — Questão Petrobras 2023 (Adjetivos \"Elevada\" e \"Menor\")",
+          "statement": "Órgão / Cargo: Petrobras (2023) / Suprimento de Bens e Serviços – Administração\nTexto: \"para viabilizar a elevada participação...\" / \"negócios de menor intensidade...\"\nAssertiva: \"Nos trechos (...), os vocábulos 'elevada' e 'menor' classificam-se gramaticalmente como adjetivos.\"\nResolução e Justificativa: \"elevada\" qualifica \"participação\" (adjetivo anteposto) e \"menor\" qualifica \"intensidade\". Ambos são adjetivos.\nGabarito Oficial: CERTO.",
+          "prompt": "Órgão / Cargo: Petrobras (2023) / Suprimento de Bens e Serviços – Administração",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "Petrobras (2023) / Suprimento de Bens e Serviços – Administração"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"para viabilizar a elevada participação...\" / \"negócios de menor intensidade...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"Nos trechos (...), os vocábulos 'elevada' e 'menor' classificam-se gramaticalmente como adjetivos.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "\"elevada\" qualifica \"participação\" (adjetivo anteposto) e \"menor\" qualifica \"intensidade\". Ambos são adjetivos."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: Petrobras (2023) / Suprimento de Bens e Serviços – Administração\nTexto: \"para viabilizar a elevada participação...\" / \"negócios de menor intensidade...\"\nAssertiva: \"Nos trechos (...), os vocábulos 'elevada' e 'menor' classificam-se gramaticalmente como adjetivos.\"\nResolução e Justificativa: \"elevada\" qualifica \"participação\" (adjetivo anteposto) e \"menor\" qualifica \"intensidade\". Ambos são adjetivos.\nGabarito Oficial: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-014 — Questão Petrobras 2023 (Adjetivos \"Elevada\" e \"Menor\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-014 — Questão Petrobras 2023 (Adjetivos \"Elevada\" e \"Menor\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-014 — Questão Petrobras 2023 (Adjetivos \"Elevada\" e \"Menor\").",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-014",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: Petrobras (2023) / Suprimento de Bens e Serviços – Administração",
+                "Texto: \"para viabilizar a elevada participação...\" / \"negócios de menor intensidade...\"",
+                "Assertiva: \"Nos trechos (...), os vocábulos 'elevada' e 'menor' classificam-se gramaticalmente como adjetivos.\"",
+                "Resolução e Justificativa: \"elevada\" qualifica \"participação\" (adjetivo anteposto) e \"menor\" qualifica \"intensidade\". Ambos são adjetivos.",
+                "Gabarito Oficial: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-014",
+              "EXP-IP-A01-G02-055"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-015",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-015 — Questão TC-DF 2023 (Papel Vital vs. Advérbio de Modo)",
+          "statement": "Órgão / Cargo: TC-DF (2023) / Auditor de Controle Externo\nTexto: \"Tributos desempenham um papel vital no financiamento...\"\nAssertiva: \"No primeiro período do segundo parágrafo, o vocábulo 'vital' classifica-se como advérbio e expressa, em relação ao termo 'papel', circunstância de modo...\"\nResolução e Justificativa: \"vital\" liga-se ao substantivo \"papel\" (\"papel que é vital\"), sendo adjetivo. A afirmação de que seria advérbio de modo é falsa.\nGabarito Oficial: ERRADO.",
+          "prompt": "Órgão / Cargo: TC-DF (2023) / Auditor de Controle Externo",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "TC-DF (2023) / Auditor de Controle Externo"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"Tributos desempenham um papel vital no financiamento...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No primeiro período do segundo parágrafo, o vocábulo 'vital' classifica-se como advérbio e expressa, em relação ao termo 'papel', circunstância de modo...\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "\"vital\" liga-se ao substantivo \"papel\" (\"papel que é vital\"), sendo adjetivo. A afirmação de que seria advérbio de modo é falsa."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: TC-DF (2023) / Auditor de Controle Externo\nTexto: \"Tributos desempenham um papel vital no financiamento...\"\nAssertiva: \"No primeiro período do segundo parágrafo, o vocábulo 'vital' classifica-se como advérbio e expressa, em relação ao termo 'papel', circunstância de modo...\"\nResolução e Justificativa: \"vital\" liga-se ao substantivo \"papel\" (\"papel que é vital\"), sendo adjetivo. A afirmação de que seria advérbio de modo é falsa.\nGabarito Oficial: ERRADO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-015 — Questão TC-DF 2023 (Papel Vital vs. Advérbio de Modo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-015 — Questão TC-DF 2023 (Papel Vital vs. Advérbio de Modo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-015 — Questão TC-DF 2023 (Papel Vital vs. Advérbio de Modo).",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-015",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: TC-DF (2023) / Auditor de Controle Externo",
+                "Texto: \"Tributos desempenham um papel vital no financiamento...\"",
+                "Assertiva: \"No primeiro período do segundo parágrafo, o vocábulo 'vital' classifica-se como advérbio e expressa, em relação ao termo 'papel', circunstância de modo...\"",
+                "Resolução e Justificativa: \"vital\" liga-se ao substantivo \"papel\" (\"papel que é vital\"), sendo adjetivo. A afirmação de que seria advérbio de modo é falsa.",
+                "Gabarito Oficial: ERRADO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-015",
+              "EXP-IP-A01-G02-056"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-016",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-016 — Questão DATAPREV 2023 (Intensificador \"Bem\")",
+          "statement": "Órgão / Cargo: DATAPREV (2023) / Analista de Processamento\nTexto: \"É bem provável que em 2023...\"\nAssertiva: \"No primeiro período do parágrafo, o vocábulo 'bem' intensifica o sentido do termo 'provável'.\"\nResolução e Justificativa: \"provável\" é adjetivo; \"bem\" atua como advérbio intensificador (= \"muito provável\").\nGabarito Oficial: CERTO.",
+          "prompt": "Órgão / Cargo: DATAPREV (2023) / Analista de Processamento",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "DATAPREV (2023) / Analista de Processamento"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"É bem provável que em 2023...\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"No primeiro período do parágrafo, o vocábulo 'bem' intensifica o sentido do termo 'provável'.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "\"provável\" é adjetivo; \"bem\" atua como advérbio intensificador (= \"muito provável\")."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "CERTO."
+            }
+          ],
+          "result": "Gabarito Oficial: CERTO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: DATAPREV (2023) / Analista de Processamento\nTexto: \"É bem provável que em 2023...\"\nAssertiva: \"No primeiro período do parágrafo, o vocábulo 'bem' intensifica o sentido do termo 'provável'.\"\nResolução e Justificativa: \"provável\" é adjetivo; \"bem\" atua como advérbio intensificador (= \"muito provável\").\nGabarito Oficial: CERTO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-016 — Questão DATAPREV 2023 (Intensificador \"Bem\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-016 — Questão DATAPREV 2023 (Intensificador \"Bem\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-016 — Questão DATAPREV 2023 (Intensificador \"Bem\").",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-016",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: DATAPREV (2023) / Analista de Processamento",
+                "Texto: \"É bem provável que em 2023...\"",
+                "Assertiva: \"No primeiro período do parágrafo, o vocábulo 'bem' intensifica o sentido do termo 'provável'.\"",
+                "Resolução e Justificativa: \"provável\" é adjetivo; \"bem\" atua como advérbio intensificador (= \"muito provável\").",
+                "Gabarito Oficial: CERTO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-016",
+              "EXP-IP-A01-G02-057"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A01-G02-017",
+          "title": "EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-017 — Questão MPE-SC 2023 (Necessariamente vs. Presentemente)",
+          "statement": "Órgão / Cargo: MPE-SC (2023) / Promotor de Justiça Substituto\nTexto: \"...nos leva necessariamente a pensar...\" / \"...circunstâncias presentemente vividas.\"\nAssertiva: \"Assim como 'necessariamente', o advérbio 'presentemente' estabelece uma relação sintática com um verbo no texto, modificando sua circunstância de modo.\"\nResolução e Justificativa: \"necessariamente\" exprime modo (leva de forma necessária), mas \"presentemente\" exprime tempo (vividas no presente / quando). A assertiva erra ao generalizar ambos como modo.\nGabarito Oficial: ERRADO.",
+          "prompt": "Órgão / Cargo: MPE-SC (2023) / Promotor de Justiça Substituto",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Órgão / Cargo",
+              "rationale": "MPE-SC (2023) / Promotor de Justiça Substituto"
+            },
+            {
+              "order": 2,
+              "action": "Texto",
+              "rationale": "\"...nos leva necessariamente a pensar...\" / \"...circunstâncias presentemente vividas.\""
+            },
+            {
+              "order": 3,
+              "action": "Assertiva",
+              "rationale": "\"Assim como 'necessariamente', o advérbio 'presentemente' estabelece uma relação sintática com um verbo no texto, modificando sua circunstância de modo.\""
+            },
+            {
+              "order": 4,
+              "action": "Resolução e Justificativa",
+              "rationale": "\"necessariamente\" exprime modo (leva de forma necessária), mas \"presentemente\" exprime tempo (vividas no presente / quando). A assertiva erra ao generalizar ambos como modo."
+            },
+            {
+              "order": 5,
+              "action": "Gabarito Oficial",
+              "rationale": "ERRADO."
+            }
+          ],
+          "result": "Gabarito Oficial: ERRADO.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Órgão / Cargo: MPE-SC (2023) / Promotor de Justiça Substituto\nTexto: \"...nos leva necessariamente a pensar...\" / \"...circunstâncias presentemente vividas.\"\nAssertiva: \"Assim como 'necessariamente', o advérbio 'presentemente' estabelece uma relação sintática com um verbo no texto, modificando sua circunstância de modo.\"\nResolução e Justificativa: \"necessariamente\" exprime modo (leva de forma necessária), mas \"presentemente\" exprime tempo (vividas no presente / quando). A assertiva erra ao generalizar ambos como modo.\nGabarito Oficial: ERRADO.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-017 — Questão MPE-SC 2023 (Necessariamente vs. Presentemente) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-017 — Questão MPE-SC 2023 (Necessariamente vs. Presentemente).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A01-G02-EMPREGO-CLASSES-PALAVRAS-017 — Questão MPE-SC 2023 (Necessariamente vs. Presentemente).",
+          "exampleId": "WORKED_EXAMPLE-IP-A01-G02-017",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Órgão / Cargo: MPE-SC (2023) / Promotor de Justiça Substituto",
+                "Texto: \"...nos leva necessariamente a pensar...\" / \"...circunstâncias presentemente vividas.\"",
+                "Assertiva: \"Assim como 'necessariamente', o advérbio 'presentemente' estabelece uma relação sintática com um verbo no texto, modificando sua circunstância de modo.\"",
+                "Resolução e Justificativa: \"necessariamente\" exprime modo (leva de forma necessária), mas \"presentemente\" exprime tempo (vividas no presente / quando). A assertiva erra ao generalizar ambos como modo.",
+                "Gabarito Oficial: ERRADO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A01-G02-017",
+              "EXP-IP-A01-G02-058"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -196,51 +1895,218 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-ADJ-01",
-          "title": "Coisas Não Mudam de Cor",
-          "content": "Se a cor tem nome de COISA (fruta, flor, mineral, comida: abacate, rosa, ouro, vinho), ELA NÃO MUDA NO PLURAL!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Invariabilidade de adjetivos e locuções cromáticas substantivadas.",
-          "limitations": "Adjetivos de cor puros flexionam normalmente (azuis, verdes, amarelos).",
-          "text": "Substantivo usado como cor torna a expressão inteiramente invariável."
+          "title": "Mantra de Fixação: Emprego das Classes de Palavras",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Emprego das Classes de Palavras, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Emprego das Classes de Palavras, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-ADJ-01",
-          "title": "A Anteposição Proibida dos Adjetivos de Relação",
-          "trigger": "Questões de reescrita que mudam a ordem entre substantivo e adjetivo.",
-          "whyItFails": "O aluno aceita 'a presidencial decisão' como equivalente a 'a decisão presidencial'.",
-          "correctApproach": "Adjetivos de relação NÃO podem ser antepostos ao substantivo sob pena de incorreção gramatical ou mudança total de sentido.",
-          "bankTechnique": "Alterar a posição de 'energia solar' para 'solar energia' em assertivas de equivalência sintática.",
-          "counterRule": "Adjetivos de relação exigem posição pós-nominal obrigatória."
+          "entityId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-001",
+          "title": "A Armadilha do Artigo Colado ao Adjetivo Anteposto",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Armadilha do Artigo Colado ao Adjetivo Anteposto.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Armadilha do Artigo Colado ao Adjetivo Anteposto.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Armadilha do Artigo Colado ao Adjetivo Anteposto no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Armadilha do Artigo Colado ao Adjetivo Anteposto.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Armadilha do Artigo Colado ao Adjetivo Anteposto.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Armadilha do Artigo Colado ao Adjetivo Anteposto para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Armadilha do Artigo Colado ao Adjetivo Anteposto.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Armadilha do Artigo Colado ao Adjetivo Anteposto.",
+          "trapId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Presumir que toda palavra que sucede um artigo é substantivo.",
+                "Como desarmar: Reconhecer a anteposição adjetiva (Artigo + Adjetivo + Substantivo). O artigo conecta-se ao substantivo posterior, mantendo o termo intermediário como adjetivo (\"à mágica transformação\", \"a elevada participação\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-001",
+              "EXP-IP-A01-G02-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-002",
+          "title": "O Erro da Classificação Dicionarizada Fora do Contexto",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro da Classificação Dicionarizada Fora do Contexto.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro da Classificação Dicionarizada Fora do Contexto.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro da Classificação Dicionarizada Fora do Contexto no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro da Classificação Dicionarizada Fora do Contexto.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro da Classificação Dicionarizada Fora do Contexto.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro da Classificação Dicionarizada Fora do Contexto para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro da Classificação Dicionarizada Fora do Contexto.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro da Classificação Dicionarizada Fora do Contexto.",
+          "trapId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Fixar classes gramaticais a priori (ex.: achar que \"não\" é sempre advérbio ou \"olhar\" é sempre verbo).",
+                "Como desarmar: Avaliar as conexões sintáticas reais no texto. Precedido de determinante, o vocábulo converte-se em substantivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-002",
+              "EXP-IP-A01-G02-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-003",
+          "title": "A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo)",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo).",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo).",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo).",
+          "trapId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Supor que toda terminação em \"-mente\" expressa circunstância de modo.",
+                "Como desarmar: Perguntar \"quando?\". Vocábulos como posteriormente, presentemente e diariamente indicam TEMPO."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-003",
+              "EXP-IP-A01-G02-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-004",
+          "title": "A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Ilusão da Adjacência Obrigatória do Advérbio ao Verbo.",
+          "trapId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Deixar de reconhecer adjuntos adverbiais antepostos ou deslocados porque estão distantes do verbo principal.",
+                "Como desarmar: A distância física no período não rompe o vínculo semântico. Em \"Hoje [...] o conceito abrange\", \"Hoje\" modifica \"abrange\"."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-004",
+              "EXP-IP-A01-G02-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-005",
+          "title": "O Mito do Feminino \"Monstra\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito do Feminino \"Monstra\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito do Feminino \"Monstra\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito do Feminino \"Monstra\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito do Feminino \"Monstra\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito do Feminino \"Monstra\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito do Feminino \"Monstra\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito do Feminino \"Monstra\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito do Feminino \"Monstra\".",
+          "trapId": "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Flexionar o adjetivo \"monstro\" diante de nomes femininos (\"ideia monstra\").",
+                "Como desarmar: Na norma culta, \"monstro\" em função adjetiva é invariável (\"notícia monstro\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A01-G02-EMPREGO-CLASSES-PALAVRAS-005",
+              "EXP-IP-A01-G02-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Adjetivo de Relação",
-          "shortDefinition": "Adjetivo derivado de substantivo que expressa uma relação objetiva sem admitir gradação.",
-          "fullDefinition": "Classe de adjetivos (ex: marítimo, governamental, financeiro, discente) caracterizados por: não admitirem superlativo (*maritimíssimo), não aceitarem anteposição (*financeiro acordo) e equivalerem precisamente a uma locução prepositiva (do mar, do governo, de finanças, dos alunos).",
-          "domain": "Morfologia e Sintaxe",
-          "commonMisconception": "Tentar intensificar adjetivo de relação com 'muito' ou 'pouco'."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Tríade Morfológica Fundamental e o Princípio da Referenciação Sintática**: Definição ou ideia central\nA morfologia da língua portuguesa organiza-se a partir de relações de dependência sintático-semântica entre núcleos e modificadores. As três classes fundamentais de identificação em prova são: Substantivo (núcleo nominal, variável, admite determinantes), Adjetivo (caracterizador, variável, aponta exclusivamente para substantivo) e Advérbio (modificador circunstancial, invariável, aponta para verbo, adjetivo ou outro advérbio).\nExplicação consolidada\nA classificação de uma palavra não deve ser feita de forma isolada, mas pelo termo ao qual ela se conecta no texto (referenciação sintática):\nSubstantivo: É o \"nome\", a entidade autônoma que nomeia seres, coisas e noções. Apresenta flexão de gênero e número. Funciona como polo de atração; a presença de um artigo (definido ou indefinido) atua como sinalizador infalível de um substantivo.\nAdjetivo: É a classe satélite que gravita em torno do substantivo, atribuindo-lhe qualidade, estado, aspecto ou restrição. Concorda em gênero e número com o substantivo determinado.\nAdvérbio: É uma classe estritamente invariável (não admite plural nem feminino) cuja função é expressar uma circunstância ao modificar um verbo, intensificar um adjetivo ou intensificar outro advérbio. O advérbio jamais modifica um substantivo.\nCritérios de reconhecimento ou aplicação\nSe a palavra puder receber artigo anteposto ou nomear uma entidade $\\rightarrow$ Substantivo.\nSe a palavra concordar com um substantivo e responder afirmativamente ao teste do \"que é\" $\\rightarrow$ Adjetivo.\nSe a palavra for invariável e estiver ligada a verbo, adjetivo ou advérbio $\\rightarrow$ Advérbio.\nExemplos e contraexemplos\nComprou um livro. $\\rightarrow$ \"um\" (artigo) determina \"livro\" (substantivo).\nComprou um livro bom. $\\rightarrow$ \"bom\" caracteriza \"livro\" (adjetivo).\nOntem comprou um livro muito bom. $\\rightarrow$ \"Ontem\" modifica o verbo \"comprou\" (advérbio de tempo); \"muito\" modifica o adjetivo \"bom\" (advérbio de intensidade).(Técnica das Setas).\nEvidenciado visualmente por: VIS-A01-G02-EMPREGO-CLASSES-PALAVRAS-001.",
+            "**Estrutura do Sintagma Nominal e a Anteposição Adjetiva**: Definição ou ideia central\nNo sintagma nominal em língua portuguesa, o artigo nem sempre antecede imediatamente o seu substantivo; é perfeitamente lícita a interposição de um adjetivo entre o artigo e o substantivo (anteposição adjetiva).\nExplicação consolidada\nA estrutura canônica do sintagma nominal segue o padrão Artigo + Substantivo + Adjetivo (\"O menino inteligente\"). Todavia, na ordem invertida/estilística Artigo + Adjetivo Interposto + Substantivo (\"O inteligente menino\", \"à mágica transformação\", \"a elevada participação\"), o artigo continua sintaticamente conectado ao substantivo que se encontra posposto. A banca CEBRASPE formula itens explorando a falsa crença de que \"a palavra colada ao artigo é obrigatoriamente substantivo\". Ao analisar tais estruturas, deve-se verificar que o artigo \"salta\" o adjetivo interposto para determinar o núcleo substantivo posterior.\nCritérios de reconhecimento ou aplicação\nIdentifique a locução nominal que se inicia por artigo (o, a, os, as, um, uma ou suas contrações prepositivas à, do, no).\nLocalize os dois termos que se seguem ao artigo.\nAplique o teste do \"que é\": o termo que aceitar o conector é o adjetivo; o outro termo é o substantivo núcleo ao qual o artigo se refere.\nExemplos e contraexemplos\nO menino inteligente $\\rightarrow$ Ordem direta: O (artigo) determina menino (subst.); inteligente = adjetivo.\nO inteligente menino $\\rightarrow$ Ordem invertida: O (artigo) determina menino (subst.); inteligente = adjetivo interposto.\nAssisti à mágica transformação $\\rightarrow$ a (artigo na crase) determina transformação (subst.); mágica = adjetivo anteposto (\"transformação que é mágica\").\nViabilizar a elevada participação $\\rightarrow$ a (artigo) determina participação (subst.); elevada = adjetivo anteposto.\nRelações\nPossui alerta em: .\nValidado por: .\nEvidenciado visualmente por: VIS-A01-G02-EMPREGO-CLASSES-PALAVRAS-003.",
+            "**Substantivação e Derivação Imprópria por Determinantes**: Definição ou ideia central\nA substantivação (ou derivação imprópria) é o processo morfológico contextual pelo qual qualquer palavra — originalmente pertencente à classe dos advérbios, verbos, numerais, conjunções, adjetivos ou interjeições — passa a funcionar sintaticamente como substantivo quando precedida por um determinante (Artigo, Pronome ou Numeral).\nExplicação consolidada\nA classe gramatical de um vocábulo não é estática nem puramente dicionarizada; ela depende estritamente do contexto sintático. O \"Mantra da Substantivação\" estabelece: O artigo, o pronome e o numeral têm o poder de substantivar palavras.\nQuando uma palavra de outra classe é antecedida por um determinante sem que haja outro substantivo núcleo subsequente a que esse determinante pertença, a palavra converte-se em substantivo.\nPor outro lado, se a palavra estiver exercendo sua função relacional ou sintática original (sem determinante substantivador), ela mantém sua classe primitiva.\nExemplos e contraexemplos\nAdvérbio substantivado:\nNão vou à aula. $\\rightarrow$ \"Não\" = Advérbio de negação (uso original).\nO não que ele levou doeu. $\\rightarrow$ \"O não\" = Substantivo (substantivado pelo artigo \"O\").\nO amanhã é imprevisível. $\\rightarrow$ \"O amanhã\" = Substantivo (substantivado pelo artigo \"O\").\nVerbo substantivado:\nAquele olhar é lindo. $\\rightarrow$ \"olhar\" = Substantivo (substantivado pelo pronome demonstrativo \"Aquele\").\nUm desesperar, nada por vir. $\\rightarrow$ \"desesperar\" = Substantivo (substantivado pelo artigo indefinido \"Um\").\nNumeral substantivado:\nEu seria o último dos mortais. $\\rightarrow$ \"último\" = Substantivo (substantivado pelo artigo definido \"o\").\nConjunção / Letra substantivada:\nPrecisavam daquele E que os conjugava... $\\rightarrow$ \"E\" = Substantivo (substantivado pelo pronome demonstrativo \"daquele\").\nOs operários E todos dançavam... $\\rightarrow$ \"E\" = Conjunção aditiva (sem determinante, ligando elementos).\nRelações\nDestacado em dica: TIP-A01-G02-EMPREGO-CLASSES-PALAVRAS-002.\nPossui alerta em: .\nExemplificado em: , , , .",
+            "**Semântica e Sintaxe do Advérbio: Modificação Verbal, Deslocamento e Armadilhas do Sufixo \"-mente\"**: Definição ou ideia central\nAo se associar a um verbo, o advérbio pode exprimir uma pluralidade de circunstâncias semânticas (tempo, modo, lugar, causa, negação, etc.). Essa modificação sintática subsiste mesmo que o advérbio esteja deslocado a longa distância no período. Ademais, o sufixo \"-mente\" não é indicador exclusivo de modo, sendo frequentemente empregado para formar advérbios de tempo.\nExplicação consolidada\nDiferenciação entre Modo e Tempo:\nModo: Informa a maneira ou o jeito como o processo verbal se desenvolve. Responde à pergunta \"COMO?\" ou \"De que jeito?\" (ex.: entrou rapidamente, nos leva necessariamente).\nTempo: Localiza o fato no tempo cronológico ou na frequência temporal. Responde à pergunta \"QUANDO?\" (ex.: começa amanhã, passou a morar posteriormente, circunstâncias presentemente vividas, ainda não tinham terminado).\nA Pegadinha do Sufixo \"-mente\": Candidatos desatentos costumam memorizar que todo advérbio em \"-mente\" exprime modo. Bancas como o CEBRASPE exploram palavras como posteriormente, presentemente, anteriormente e diariamente, que expressam valor semântico estrito de TEMPO.\nModificação Adverbial à Distância: O advérbio não precisa estar contíguo ao verbo. No período \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange...\", a presença de um adjunto adverbial intercalado não rompe a ligação sintático-semântica de \"Hoje\" com o verbo \"abrange\" (\"abrange quando? Hoje\" $\\rightarrow$ advérbio de tempo).\nCritérios de reconhecimento ou aplicação\nPergunte ao verbo: \"Aconteceu de que modo?\" $\\rightarrow$ Resposta com sentido de modo = Advérbio de Modo.\nPergunte ao verbo: \"Aconteceu quando?\" $\\rightarrow$ Resposta temporal = Advérbio de Tempo.\nSe o advérbio estiver no início da frase, trace a seta até a ação verbal que ele condiciona, ignorando intercalações.\nRelações\nPossui alertas em: , .\nOperacionalizado por: .\nExemplificado em: , , .",
+            "**Advérbio Intensificador ao Modificar Adjetivos ou Outros Advérbios**: Definição ou ideia central\nSempre que um advérbio se refere a um adjetivo ou a outro advérbio, sua função semântica prioritária é a de intensificador (advérbio de intensidade), atuando na gradação da propriedade ou da circunstância.\nExplicação consolidada\nAo modificar um verbo, o advérbio transita por múltiplas circunstâncias (tempo, modo, instrumento, etc.). Contudo, ao modificar um adjetivo ou outro advérbio, o leque semântico se restringe: o advérbio atua quase que categoricamente como um intensificador.\nExemplo com o vocábulo \"bem\":\nLigado a verbo: \"Ele cantou bem\" $\\rightarrow$ Modifica o verbo cantar (Advérbio de Modo).\nLigado a adjetivo: \"É bem provável\" $\\rightarrow$ Modifica o adjetivo provável, equivalendo a \"muito provável\" (Advérbio de Intensidade).\nLigado a advérbio: \"Acorda bem cedo\" $\\rightarrow$ Modifica o advérbio cedo, equivalendo a \"muito cedo\" (Advérbio de Intensidade).\nCritérios de reconhecimento ou aplicação\nIdentifique o termo modificado pela palavra em análise.\nSe o termo receptor for um adjetivo ou outro advérbio, substitua o vocábulo sob análise por \"MUITO\".\nSe a substituição mantiver sentido pleno de gradação/reforço, ratifica-se a função de Advérbio de Intensidade (Intensificador).\nRelações\nOperacionalizado por: .\nExemplificado em: , , , .",
+            "**Adjetivos Especiais e Invariabilidade em Gênero (O Caso \"Monstro\")**: Definição ou ideia central\nDeterminados substantivos, quando empregados na função de adjetivos qualificadores/especificadores com valor superlativo (indicando grandeza ou proporção descomunal), comportam-se como adjetivos invariáveis em gênero.\nExplicação consolidada\nNa frase \"A notícia monstro nos assustou\", a palavra \"monstro\" atua como adjetivo especificador de \"notícia\" (\"a notícia que é monstro\" / de proporção gigantesca). Na norma-padrão da Língua Portuguesa, a forma flexionada \"monstra\" não existe como adjetivo. Construções como \"ideia monstra\" ou \"notícia monstra\" constituem desvios gramaticais. A concordância correta exige a forma invariável: \"notícia monstro\", \"ideia monstro\".\nCritérios de reconhecimento ou aplicação\nAo identificar a palavra \"monstro\" caracterizando um substantivo feminino, classifique-a como adjetivo invariável em gênero.\nRelações\nPossui alerta em: .\nExemplificado em: ."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-ADJ-01",
-          "question": "Como ficam no plural as expressões 'camisa verde-escura' e 'camisa verde-oliva'?",
-          "keyPoints": [
-            "Camisas verde-escuras (escuro é adjetivo -> flexiona o último).",
-            "Camisas verde-oliva (oliva é substantivo -> conjunto fica invariável)."
-          ],
-          "targetConcept": "Flexão de Adjetivos Compostos de Cor",
-          "targetLO": "LO-A01-G02-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Emprego das Classes de Palavras?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }
@@ -784,7 +2650,19 @@
         "confidence": 0.95
       },
       "answerSha256": "3c3691ca1ea26f0f927b6d0ba4018b742015de7ed2829f2ea255635571c5f3bc",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "source_conflict",
+        "options": [],
+        "reason": "A fonte preservada contém gabaritos conflitantes; a tentativa foi bloqueada para não induzir o aluno ao erro.",
+        "detectedCommentaryKeys": [
+          "B",
+          "A",
+          "C",
+          "D"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",

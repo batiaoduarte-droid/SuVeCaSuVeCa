@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A02-G02",
     "lessonId": "A02",
     "title": "Conjunções Coordenativas",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A02-G02",
@@ -114,6 +115,103 @@
             "Ele tentou; porém, nada obteve."
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A02-G02-001",
+          "table": {
+            "tableId": "TABLE-IP-A02-G02-001",
+            "caption": "Regras canônicas",
+            "headers": [
+              "Categoria / Conector",
+              "Classificação Canônica",
+              "Sentido Principal / Sinônimos de Prova",
+              "Lista de Conectivos Típicos",
+              "ID Detalhado"
+            ],
+            "rows": [
+              [
+                "Aditivas",
+                "Coord. Aditiva",
+                "Adição, Soma, Acréscimo, Complementar",
+                "e, nem, não só... mas também, não apenas... como também",
+                "KB-A02-G02-002"
+              ],
+              [
+                "NEM (com negação)",
+                "Coord. Aditiva",
+                "Soma de fatos negativos (= e não)",
+                "...não [verbo] nem [verbo] (sem vírgula e sem \"e\")",
+                "KB-A02-G02-003"
+              ],
+              [
+                "NEM (início de frase)",
+                "Advérbio de Negação",
+                "Negação estrita (= não / = sequer)",
+                "Nem [verbo]... (sem negação prévia)",
+                "KB-A02-G02-003"
+              ],
+              [
+                "Adversativas",
+                "Coord. Adversativa",
+                "Oposição, Contraste, Contraposição, Restrição, Ressalva",
+                "mas, porém, todavia, contudo, entretanto, no entanto",
+                "KB-A02-G02-004"
+              ],
+              [
+                "Alternativas",
+                "Coord. Alternativa",
+                "Alternância temporal vs. Escolha / Exclusão",
+                "ou, ou... ou, ora... ora, já... já, quer... quer",
+                "KB-A02-G02-005"
+              ],
+              [
+                "Conclusivas",
+                "Coord. Conclusiva",
+                "Conclusão, Consequência, Efeito Lógico",
+                "logo, portanto, por conseguinte, por isso, dessa forma",
+                "KB-A02-G02-006"
+              ],
+              [
+                "Pois (Pós-verbal)",
+                "Coord. Conclusiva",
+                "Conclusão (= portanto)",
+                "[verbo], pois,... (deslocado após o verbo)",
+                "KB-A02-G02-006"
+              ],
+              [
+                "Explicativas",
+                "Coord. Explicativa",
+                "Explicação, Justificativa, Motivação",
+                "que, porque, porquanto, pois (pré-verbal)",
+                "KB-A02-G02-007"
+              ],
+              [
+                "Pois (Pré-verbal)",
+                "Coord. Explicativa",
+                "Explicação / Justificativa (= porque)",
+                "..., pois [verbo]... (início da oração)",
+                "KB-A02-G02-007"
+              ],
+              [
+                "Porquanto",
+                "Coord. Explicativa / Causal",
+                "Explicação / Causa (= porque)",
+                "porquanto (inconfundível com portanto)",
+                "KB-A02-G02-007"
+              ],
+              [
+                "Então",
+                "Advérbio / Coord. Conclusiva",
+                "Tempo ou Conclusão ($=\\text{portanto}$)",
+                "então (JAMAIS explicativo)",
+                "KB-A02-G02-008"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "resolution": {
@@ -149,6 +247,75 @@
           },
           "practicalHeuristic": "O argumento introduzido pelo 'mas' vence a discussão; o argumento introduzido pelo 'embora' perde a força.",
           "pitfall": "Trocar 'mas' por 'embora' sem ajustar o verbo para o modo subjuntivo e sem alterar a hierarquia sintática."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A02-G02-002",
+          "table": {
+            "tableId": "TABLE-IP-A02-G02-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Par de Conceitos / Conectivos",
+              "Critério Diferenciador Decisivo",
+              "Comportamento no Contexto A",
+              "Comportamento no Contexto B",
+              "Exemplo Contrastivo"
+            ],
+            "rows": [
+              [
+                "Porquanto vs. Portanto",
+                "Família Semântica e Função Lógica",
+                "Porquanto = Explicativa / Causal ($=\\text{porque}$)",
+                "Portanto = Conclusiva / Consequência ($=\\text{logo}$)",
+                "\"Estude, porquanto a prova se aproxima\" vs. \"Estudou muito; passou, portanto.\""
+              ],
+              [
+                "Pois Deslocado vs. Pois em Início",
+                "Posição sintática em relação ao verbo da oração",
+                "Pós-verbal = Conclusivo ($=\\text{portanto}$)",
+                "Pré-verbal = Explicativo ($=\\text{porque}$)",
+                "\"Não reclame, pois, do teste\" vs. \"Venha já, pois vai chover.\""
+              ],
+              [
+                "Oposição vs. Restrição / Ressalva",
+                "Existência de polaridade antagônica estrita",
+                "Oposição: Antagonismo simétrico direto[+] vs [-]",
+                "Restrição: Limitação/ressalva sem contradição simétrica",
+                "\"A violência caiu, porém há preocupações\" vs. \"É bom aluno, mas não gosta de ler.\""
+              ],
+              [
+                "Alternância vs. Exclusão",
+                "Coexistência dos fatos no tempo",
+                "Alternância: Fatos sucessivos que não se anulam",
+                "Exclusão: Fatos mutuamente excludentes",
+                "\"Ora corre, ora descansa\" vs. \"Ou entra você, ou entro eu.\""
+              ],
+              [
+                "Tanto... quanto (Adição vs. Comparação)",
+                "Soma de agentes vs. Medição de intensidade verbal",
+                "Adição: Soma dois sujeitos na ação ($=\\text{e}$)",
+                "Comparação: Mede a intensidade de uma ação comum",
+                "\"Tanto Pedro quanto Ana vieram\" vs. \"Pedro estuda tanto quanto Ana.\""
+              ],
+              [
+                "Nem (Conjunção vs. Advérbio)",
+                "Presença de negação prévia no enunciado",
+                "Conjunção Aditiva: Antecedido por negação ($=\\text{e não}$)",
+                "Advérbio: Isolado no início de frase ($=\\text{não/sequer}$)",
+                "\"Não trabalha nem estuda\" vs. \"Nem trabalha, quanto mais estuda.\""
+              ],
+              [
+                "Então (Conclusivo vs. Explicação)",
+                "Compatibilidade semântica na norma culta",
+                "Conclusivo / Temporal: Legítimo ($=\\text{portanto}$)",
+                "Explicativo:Inexistente / Proibido",
+                "\"Penso, então existo\" (Conclusão legítima; NUNCA explicação)."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },
@@ -503,7 +670,35 @@
         "confidence": 0.98
       },
       "answerSha256": "91bc014c0eacbd651f1800c9a773ffc080c395b2710eb1de57aec855b160b4f4",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Além da frequência da prática de atividades físicas, o estudo fez a associação entre a prática\ndelas e o adoecimento. Segundo o levantamento, 72% das pessoas que praticam exercícios com\nfrequência não tiveram problemas de saúde nos últimos doze meses. Porém, entre os que nunca\npraticam atividades físicas, 42% sofreram problemas de saúde em 2022.\nA correção gramatical e os sentidos do texto CG1A1 seriam preservados se a conjunção “Porém”\n(último período do segundo parágrafo) fosse substituída por",
+        "options": [
+          {
+            "label": "A",
+            "text": "Todavia."
+          },
+          {
+            "label": "B",
+            "text": "Conquanto."
+          },
+          {
+            "label": "C",
+            "text": "Porquanto."
+          },
+          {
+            "label": "D",
+            "text": "Por isso."
+          },
+          {
+            "label": "E",
+            "text": "Assim."
+          }
+        ],
+        "sourceField": "questionPayload.prompt",
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -669,7 +864,31 @@
         "confidence": 0.98
       },
       "answerSha256": "0a6582d983f956f6c8830314b41def9c93e773a86b00300aebb2648fc138500e",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "No período “Quanto mais eu gritava, mais pessoas apareciam de todos os lados.”, a ideia\nexpressa pela oração sublinhada é de:",
+        "options": [
+          {
+            "label": "A",
+            "text": "condição"
+          },
+          {
+            "label": "B",
+            "text": "consequência"
+          },
+          {
+            "label": "C",
+            "text": "finalidade"
+          },
+          {
+            "label": "D",
+            "text": "proporção"
+          }
+        ],
+        "sourceField": "questionPayload.prompt",
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",

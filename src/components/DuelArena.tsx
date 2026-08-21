@@ -445,7 +445,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({ user, onRoundComplete }) =
     : undefined;
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6 pb-16">
+    <div className="tool-content-shell space-y-6 pb-16">
       <header className="bg-slate-950 text-white rounded-2xl p-6 sm:p-8 overflow-hidden relative border border-slate-800 shadow-xs">
         <div className="absolute -right-10 -top-12 w-48 h-48 rounded-full bg-teal-400/15 blur-2xl" />
         <div className="relative flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">

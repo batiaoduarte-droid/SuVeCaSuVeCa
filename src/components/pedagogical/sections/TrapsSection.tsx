@@ -3,6 +3,7 @@ import { ShieldAlert, Copy, Check } from 'lucide-react';
 import type { ExamTrapView, ContentBlock } from '../../../types/pedagogicalView';
 import { BankTrapCard } from '../../study-visuals/BankTrapCard';
 import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
+import { semanticBlocksToPlainText } from '../../../lib/semanticBlockText';
 
 interface TrapsSectionProps {
   items?: ExamTrapView[];
@@ -16,10 +17,21 @@ export const TrapsSection: React.FC<TrapsSectionProps> = ({ items = [], suppleme
 
   const handleCopy = () => {
     const text = items
-      .map(
-        (t, i) =>
-          `${i + 1}. ${t.title}\nGatilho: ${t.trigger || ''}\nVacina: ${t.correctReasoning || t.correctiveRule || ''}`
-      )
+      .map((trap, index) => [
+        `${index + 1}. ${trap.title}`,
+        trap.presentation?.hideGenericScaffold ? semanticBlocksToPlainText(trap.blocks) : undefined,
+        !trap.presentation?.hideGenericScaffold && trap.trigger ? `Gatilho: ${trap.trigger}` : undefined,
+        !trap.presentation?.hideGenericScaffold && trap.errorPattern ? `Padrão do erro: ${trap.errorPattern}` : undefined,
+        !trap.presentation?.hideGenericScaffold && (trap.misleadingReasoning || trap.whyItFails) ? `Por que engana: ${trap.misleadingReasoning || trap.whyItFails}` : undefined,
+        !trap.presentation?.hideGenericScaffold && trap.expectedWrongConclusion ? `Erro induzido: ${trap.expectedWrongConclusion}` : undefined,
+        !trap.presentation?.hideGenericScaffold && trap.decisiveTest ? `Teste decisivo: ${trap.decisiveTest}` : undefined,
+        !trap.presentation?.hideGenericScaffold && (trap.correctReasoning || trap.correctApproach) ? `Correção: ${trap.correctReasoning || trap.correctApproach}` : undefined,
+        !trap.presentation?.hideGenericScaffold && (trap.correctiveRule || trap.counterRule) ? `Regra: ${trap.correctiveRule || trap.counterRule}` : undefined,
+        !trap.presentation?.hideGenericScaffold && (trap.bankTechnique || trap.examBoardBehavior) ? `Como a banca cobra: ${trap.bankTechnique || trap.examBoardBehavior}` : undefined,
+        !trap.presentation?.hideGenericScaffold && trap.studentCaveat ? `Atenção: ${trap.studentCaveat}` : undefined,
+        !trap.presentation?.hideGenericScaffold && trap.example ? `Exemplo: ${trap.example}` : undefined,
+        !trap.presentation?.hideGenericScaffold && trap.counterexample ? `Contraprova: ${trap.counterexample}` : undefined,
+      ].filter(Boolean).join('\n'))
       .join('\n\n');
     navigator.clipboard.writeText(text);
     setCopied(true);
@@ -29,7 +41,7 @@ export const TrapsSection: React.FC<TrapsSectionProps> = ({ items = [], suppleme
   return (
     <div className="space-y-5 select-text">
       {/* Cabeçalho da Seção */}
-      <div className="rounded-2xl border border-amber-200 bg-white p-5 sm:p-6 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-amber-200 bg-white p-3 sm:p-5 shadow-xs space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-amber-100 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-800 text-white shadow-2xs select-none">

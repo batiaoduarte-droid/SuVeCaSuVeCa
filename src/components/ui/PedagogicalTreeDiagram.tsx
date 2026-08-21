@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Network, Copy, Check, Maximize2, LayoutGrid, ListTree, Code2, Table } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
+import { Network, Copy, Check, Maximize2, LayoutGrid, ListTree, Code2, Table, GitBranch, ArrowDown, CheckCircle2, XCircle } from 'lucide-react';
 import { ModalShell } from './ModalShell';
 import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
 
@@ -22,6 +22,20 @@ interface ParsedTable {
 interface PedagogicalTreeDiagramProps {
   source: string;
 }
+
+type DiagramKind = 'table' | 'decision' | 'sequence' | 'hierarchy' | 'cards';
+type ViewMode = 'recommended' | 'cards' | 'tree' | 'flow' | 'table' | 'raw';
+
+const classifyDiagram = (raw: string, table: ParsedTable | null): DiagramKind => {
+  if (table) return 'table';
+  const normalized = raw.toLocaleUpperCase('pt-BR');
+  const hasBinaryBranches = /(?:^|\s)(?:SIM|NÃO)\s*(?::|→|->|>)/m.test(normalized);
+  const hasDecisionLanguage = /\b(?:TESTE|DECISÃO|DECISÓRIO|FLUXOGRAMA|ADMISSIBILIDADE|ELIMINAR)\b/.test(normalized);
+  if (hasBinaryBranches || hasDecisionLanguage) return 'decision';
+  if (/\b(?:ALGORITMO|PROTOCOLO|PASSO\s*\d+|INÍCIO)\b/.test(normalized)) return 'sequence';
+  if ((raw.match(/[├└┌┬│]/g)?.length || 0) >= 3) return 'hierarchy';
+  return 'cards';
+};
 
 const cleanDiagramText = (str: string): string => {
   return str
@@ -65,7 +79,7 @@ const parseMarkdownTable = (raw: string): ParsedTable | null => {
   return null;
 };
 
-const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategory[]; table: ParsedTable | null } => {
+export const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategory[]; table: ParsedTable | null; kind: DiagramKind } => {
   // Check if it is a markdown table first
   const parsedTable = parseMarkdownTable(raw);
   if (parsedTable) {
@@ -73,6 +87,7 @@ const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategor
       title: 'Quadro Estruturado da Unidade',
       categories: [],
       table: parsedTable,
+      kind: 'table',
     };
   }
 
@@ -175,7 +190,7 @@ const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategor
     const cleanAll = cleanDiagramText(raw);
     const chunks = cleanAll.split(/(?<=[.!?])\s+|;\s*/).filter(Boolean);
     categories.push({
-      title: 'Estrutura Geral',
+      title: 'Elementos do esquema',
       items: chunks.length > 0 ? chunks.map((c) => ({ label: c })) : [{ label: cleanAll }]
     });
   }
@@ -184,18 +199,33 @@ const parseTreeDiagram = (raw: string): { title: string; categories: TreeCategor
     title = 'Esquema Conceitual Estruturado';
   }
 
-  return { title, categories, table: null };
+  return { title, categories, table: null, kind: classifyDiagram(raw, null) };
 };
 
 export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ source }) => {
-  const [viewMode, setViewMode] = useState<'cards' | 'tree' | 'table' | 'raw'>('cards');
+  const [viewMode, setViewMode] = useState<ViewMode>('recommended');
   const [copied, setCopied] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const { title, categories, table } = parseTreeDiagram(source);
+  const { title, categories, table, kind } = useMemo(() => parseTreeDiagram(source), [source]);
 
-  // If parsed data is a table, default to table mode
-  const activeMode = table && viewMode === 'cards' ? 'table' : viewMode;
+  const recommendedMode: Exclude<ViewMode, 'recommended'> = kind === 'table'
+    ? 'table'
+    : kind === 'decision' || kind === 'sequence'
+      ? 'flow'
+      : kind === 'hierarchy'
+        ? 'tree'
+        : 'cards';
+  const activeMode = viewMode === 'recommended' ? recommendedMode : viewMode;
+  const subtitle = kind === 'decision'
+    ? 'Fluxo decisório com condições, caminhos e resultados preservados'
+    : kind === 'sequence'
+      ? 'Procedimento operacional organizado na ordem de execução'
+      : kind === 'hierarchy'
+        ? 'Hierarquia conceitual e relações entre os elementos'
+        : kind === 'table'
+          ? 'Quadro comparativo estruturado'
+          : 'Síntese de elementos independentes';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(source);
@@ -248,6 +278,38 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
       }
     }
 
+    if (activeMode === 'flow') {
+      return (
+        <ol className="m-0 list-none space-y-3 p-0" aria-label={kind === 'decision' ? 'Fluxo de decisão' : 'Sequência do procedimento'}>
+          {categories.map((category, categoryIndex) => (
+            <li key={`${category.title}-${categoryIndex}`} className="relative rounded-2xl border border-teal-200 bg-teal-50/50 p-3 sm:p-4">
+              <div className="flex items-start gap-3">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-teal-800 text-xs font-black text-white">{categoryIndex + 1}</span>
+                <div className="min-w-0 flex-1">
+                  <h4 className="m-0 text-sm font-black text-teal-950"><InlineRichText>{category.title}</InlineRichText></h4>
+                  <ul className="mt-3 grid list-none gap-2 p-0 sm:grid-cols-2">
+                    {category.items.map((item, itemIndex) => {
+                      const isYes = /^SIM\b/i.test(item.label);
+                      const isNo = /^NÃO\b/i.test(item.label);
+                      return (
+                        <li key={`${item.label}-${itemIndex}`} className={`flex min-h-11 items-start gap-2 rounded-xl border p-3 text-xs font-semibold leading-relaxed ${
+                          isYes ? 'border-emerald-200 bg-emerald-50 text-emerald-950' : isNo ? 'border-rose-200 bg-rose-50 text-rose-950' : 'border-slate-200 bg-white text-slate-800'
+                        }`}>
+                          {isYes ? <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" /> : isNo ? <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-700" /> : <GitBranch className="mt-0.5 h-4 w-4 shrink-0 text-teal-700" />}
+                          <span><InlineRichText>{item.label}</InlineRichText></span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+              {categoryIndex < categories.length - 1 && <ArrowDown className="absolute -bottom-4 left-5 z-10 h-5 w-5 rounded-full bg-white text-teal-700" aria-hidden="true" />}
+            </li>
+          ))}
+        </ol>
+      );
+    }
+
     if (activeMode === 'tree') {
       return (
         <div className="space-y-4">
@@ -291,7 +353,7 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
               </div>
             </div>
 
-            <div className="grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={`grid gap-3 p-3 sm:p-4 sm:grid-cols-2 ${kind === 'cards' ? 'xl:grid-cols-3' : ''}`}>
               {cat.items.map((item, idx) => (
                 <div
                   key={idx}
@@ -320,7 +382,7 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
     <>
       <div className="my-6 overflow-hidden rounded-3xl border border-teal-200/90 bg-white shadow-sm transition">
         {/* Cabeçalho com contraste blindado contra CSS cascade */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-teal-800 bg-gradient-to-r from-teal-950 via-teal-900 to-slate-950 px-5 py-4 text-white">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-teal-800 bg-gradient-to-r from-teal-950 via-teal-900 to-slate-950 px-3 py-4 text-white sm:px-5">
           <div className="flex items-center gap-3">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-800/90 text-amber-300 ring-1 ring-white/20 shadow-2xs">
               <Network className="h-5 w-5" />
@@ -328,18 +390,20 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
             <div>
               <h3 className="m-0 text-base font-black tracking-tight !text-white">{title}</h3>
               <p className="m-0 text-xs !text-teal-200 font-medium">
-                Esquema sintático, taxonômico e relações estruturadas
+                {subtitle}
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <div className="flex rounded-xl bg-teal-950/80 p-0.5 border border-teal-800/60">
+            <div className="flex rounded-xl bg-teal-950/80 p-0.5 border border-teal-800/60" role="tablist" aria-label="Visualização do esquema">
               {table ? (
                 <button
                   type="button"
                   onClick={() => setViewMode('table')}
-                  className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
+                  role="tab"
+                  aria-selected={activeMode === 'table'}
+                  className={`flex min-h-11 items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
                     activeMode === 'table' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
                   }`}
                   title="Visualização em Tabela"
@@ -349,47 +413,66 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
                 </button>
               ) : (
                 <>
+                  {(kind === 'decision' || kind === 'sequence') && (
+                    <button
+                      type="button"
+                      onClick={() => setViewMode('flow')}
+                      role="tab"
+                      aria-selected={activeMode === 'flow'}
+                      className={`flex min-h-11 items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${activeMode === 'flow' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'}`}
+                      title="Visualização recomendada em fluxo"
+                    >
+                      <GitBranch className="h-3.5 w-3.5" />
+                      <span className="hidden sm:inline">Fluxo</span>
+                    </button>
+                  )}
                   <button
                     type="button"
                     onClick={() => setViewMode('cards')}
-                    className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
+                    role="tab"
+                    aria-selected={activeMode === 'cards'}
+                    className={`flex min-h-11 items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
                       activeMode === 'cards' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
                     }`}
                     title="Visualização em Cards"
                   >
                     <LayoutGrid className="h-3.5 w-3.5" />
-                    <span className="hidden sm:inline">Cards</span>
+                    <span className="hidden sm:inline">Resumo</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => setViewMode('tree')}
-                    className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
+                    role="tab"
+                    aria-selected={activeMode === 'tree'}
+                    className={`flex min-h-11 items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
                       activeMode === 'tree' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
                     }`}
                     title="Visualização em Árvore"
                   >
                     <ListTree className="h-3.5 w-3.5" />
-                    <span className="hidden sm:inline">Árvore</span>
+                    <span className="hidden sm:inline">Estrutura</span>
                   </button>
                 </>
               )}
               <button
                 type="button"
                 onClick={() => setViewMode('raw')}
-                className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
+                role="tab"
+                aria-selected={activeMode === 'raw'}
+                className={`flex min-h-11 items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold transition cursor-pointer ${
                   activeMode === 'raw' ? 'bg-teal-700 text-white shadow-xs' : 'text-teal-200 hover:text-white'
                 }`}
                 title="Visualização em Texto"
               >
                 <Code2 className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Texto</span>
+                <span className="hidden sm:inline">Texto-fonte</span>
               </button>
             </div>
 
             <button
               type="button"
               onClick={handleCopy}
-              className="flex items-center gap-1.5 rounded-xl border border-teal-500/30 bg-teal-800/60 px-3 py-1.5 text-xs font-bold text-teal-100 transition hover:bg-teal-700 hover:text-white cursor-pointer shadow-2xs"
+              className="flex min-h-11 items-center gap-1.5 rounded-xl border border-teal-500/30 bg-teal-800/60 px-3 py-1.5 text-xs font-bold text-teal-100 transition hover:bg-teal-700 hover:text-white cursor-pointer shadow-2xs"
               title="Copiar esquema"
             >
               {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
@@ -399,7 +482,7 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
             <button
               type="button"
               onClick={() => setIsFullscreen(true)}
-              className="flex items-center gap-1 rounded-xl border border-teal-500/30 bg-teal-800/60 p-2 text-xs font-bold text-teal-100 transition hover:bg-teal-700 hover:text-white cursor-pointer shadow-2xs"
+              className="flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-xl border border-teal-500/30 bg-teal-800/60 p-2 text-xs font-bold text-teal-100 transition hover:bg-teal-700 hover:text-white cursor-pointer shadow-2xs"
               title="Expandir em tela cheia"
             >
               <Maximize2 className="h-3.5 w-3.5" />
@@ -407,7 +490,7 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
           </div>
         </div>
 
-        <div className="p-4 sm:p-6">{renderContent()}</div>
+        <div className="p-3 sm:p-6">{renderContent()}</div>
       </div>
 
       {isFullscreen && (
@@ -415,9 +498,9 @@ export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ 
           isOpen={isFullscreen}
           onClose={() => setIsFullscreen(false)}
           title={title}
-          maxWidth="max-w-5xl"
+          maxWidth="max-w-7xl"
         >
-          <div className="p-6">{renderContent()}</div>
+          <div className="p-3 sm:p-6">{renderContent()}</div>
         </ModalShell>
       )}
     </>

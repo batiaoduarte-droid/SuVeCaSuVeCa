@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-hardened",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A11-G01",
     "lessonId": "A11",
     "title": "Coesão Textual: Mecanismos Referenciais, Sequenciais, Pronomes e Reescrita",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A11-G01",
@@ -289,6 +290,61 @@
             }
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A11-G01-001",
+          "table": {
+            "tableId": "TABLE-IP-A11-G01-001",
+            "caption": "Regras canônicas",
+            "headers": [
+              "Conceito / Regra",
+              "Formulação Canônica Consolidada",
+              "Elementos Operadores / Classes",
+              "ID Detalhado"
+            ],
+            "rows": [
+              [
+                "Coesão Textual",
+                "Mecanismo formal de ligação e conexão material entre elementos, orações e partes do texto.",
+                "Conectores gramaticais e termos vicários.",
+                "KB-A11-G01-COESAO-TEXTUAL-001"
+              ],
+              [
+                "Coesão Sequencial",
+                "Encadeamento lógico e progressivo entre segmentos textuais, estruturando o fluxo de ideias.",
+                "Conjunções e preposições.",
+                "KB-A11-G01-COESAO-TEXTUAL-002"
+              ],
+              [
+                "Regra dos Conectores",
+                "Preposições com valor lógico-circunstancial em orações reduzidas atuam como autênticos conectores sequenciais.",
+                "Preposições essenciais (ex.:por, para, a).",
+                "KB-A11-G01-COESAO-TEXTUAL-003"
+              ],
+              [
+                "Coesão Referencial",
+                "Mecanismo de alusão que evita redundâncias vocabulares via anáfora (retomada) ou catáfora (antecipação).",
+                "Pronomes, numerais, advérbios e sinônimos.",
+                "KB-A11-G01-COESAO-TEXTUAL-004"
+              ],
+              [
+                "Termo Coesivo",
+                "Elemento substituto que estabelece o elo referencial (\"o termo que manda a seta\").",
+                "Pronomes pessoais, demonstrativos, relativos.",
+                "KB-A11-G01-COESAO-TEXTUAL-005"
+              ],
+              [
+                "Referente",
+                "Elemento substantivo original que recebe o elo referencial (\"o termo setado\").",
+                "Substantivos próprios, comuns ou proposições.",
+                "KB-A11-G01-COESAO-TEXTUAL-005"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "resolution": {
@@ -335,6 +391,75 @@
               "text": "Disse isto: ... (Catáfora) vs Disse aquilo e isso me alegrou (Anáfora)."
             }
           ]
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A11-G01-002",
+          "table": {
+            "tableId": "TABLE-IP-A11-G01-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Parâmetro de Comparação",
+              "Coesão Sequencial",
+              "Coesão Referencial"
+            ],
+            "rows": [
+              [
+                "Função Primária",
+                "Estabelecer a progressão temporal/lógica entre orações e parágrafos.",
+                "Evitar repetições vocabulares e manter o fio temático de entidades."
+              ],
+              [
+                "Operadores Típicos",
+                "Conjunções e Preposições.",
+                "Pronomes (pessoais, demonstrativos, etc.), numerais e advérbios."
+              ],
+              [
+                "Natureza do Vínculo",
+                "Relação lógico-semântica (causa, oposição, conclusão, etc.).",
+                "Relação indicial de identidade referencial (apontamento/substituição)."
+              ],
+              [
+                "Exemplo Típico",
+                "\"Saiu cedo, mas se atrasou.\"",
+                "\"Maria viajou; ela conheceu dez países.\""
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A11-G01-003",
+          "table": {
+            "tableId": "TABLE-IP-A11-G01-003",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Critério Diagnóstico",
+              "Termo Coesivo",
+              "Referente (Termo Setado)"
+            ],
+            "rows": [
+              [
+                "Papel Dinâmico",
+                "Elemento emissor do vetor de alusão (\"o que manda a seta\").",
+                "Elemento receptor do vetor de alusão (\"o que recebe a seta\")."
+              ],
+              [
+                "Classe Predominante",
+                "Pronomes e termos vicários.",
+                "Substantivos (próprios/comuns) ou proposições oracionais inteiras."
+              ],
+              [
+                "Posição no Exemplo de Maria",
+                "VocábuloEla.",
+                "VocábuloMaria."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

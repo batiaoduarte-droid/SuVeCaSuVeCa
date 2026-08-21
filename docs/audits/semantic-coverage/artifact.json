@@ -1,0 +1,184 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Cobertura semântica restaurada nas unidades pedagógicas",
+    "description": "Auditoria e reparo source-backed da projeção v4.2.1 para o produto SuVeCa.",
+    "generatedAt": "2026-08-21T00:00:00Z",
+    "cards": [],
+    "charts": [
+      {
+        "id": "source_backed_by_family",
+        "title": "Apresentações source-backed por família",
+        "subtitle": "As barras mostram entidades cuja apresentação voltou a usar o conteúdo canônico aprovado.",
+        "type": "bar",
+        "dataset": "coverage_by_family",
+        "sourceId": "coverage_query",
+        "encodings": {
+          "x": { "field": "family", "type": "nominal", "label": "Família" },
+          "y": { "field": "source_backed", "type": "quantitative", "format": "number", "label": "Apresentações recuperadas" },
+          "tooltip": [
+            { "field": "published", "type": "quantitative", "label": "Publicadas" },
+            { "field": "generic_recovered", "type": "quantitative", "label": "Genéricas recuperadas" },
+            { "field": "affected_units", "type": "quantitative", "label": "Unidades afetadas" }
+          ]
+        },
+        "xAxisTitle": "Família",
+        "yAxisTitle": "Apresentações recuperadas",
+        "valueFormat": "number"
+      }
+    ],
+    "tables": [],
+    "sources": [
+      {
+        "id": "coverage_ledger",
+        "label": "Ledger da restauração de cobertura semântica",
+        "path": "Notebook LM/Auditorias/semantica/v4.2.2-source-backed-coverage/coverage-ledger.json",
+        "query": {
+          "description": "Contagens derivadas diretamente das views v4.2 e das referências canônicas aprovadas.",
+          "language": "python",
+          "executed_at": "2026-08-21",
+          "tables_used": [
+            "canonical.explanation_blocks.jsonl",
+            "canonical.tables.jsonl",
+            "views-v4.2"
+          ],
+          "filters": ["102 unidades regulares A00-A13", "A14 excluída por contrato próprio"],
+          "metric_definitions": [
+            "source_backed = projeção com referência canônica resolvida, blocos incorporados e metadados explícitos",
+            "generic_projection_leak = scaffold genérico sem blocos canônicos renderizáveis"
+          ]
+        }
+      },
+      {
+        "id": "coverage_query",
+        "label": "Consulta reproduzível do relatório",
+        "path": "SuVeCaSuVeCa/docs/audits/semantic-coverage/semantic_coverage_report.sql",
+        "query": {
+          "sql": "WITH coverage_by_family AS (SELECT 'Exemplos' AS family, 1108 AS published, 1070 AS generic_recovered, 0 AS supplemental_tables, 1070 AS source_backed, 66 AS affected_units UNION ALL SELECT 'Pegadinhas', 420, 378, 0, 378, 64 UNION ALL SELECT 'Procedimentos', 291, 252, 0, 252, 66 UNION ALL SELECT 'Contrastes', 181, 137, 6, 143, 59 UNION ALL SELECT 'Regras', 127, 43, 1, 44, 43) SELECT * FROM coverage_by_family ORDER BY source_backed DESC;",
+          "description": "Materializa as contagens revisadas do ledger em uma tabela compacta para o relatório.",
+          "engine": "ANSI SQL",
+          "id": "semantic-coverage-v4.2.2",
+          "language": "sql",
+          "executed_at": "2026-08-21",
+          "tables_used": ["coverage_by_family"],
+          "filters": ["Somente famílias de entidades publicadas nas unidades regulares"],
+          "metric_definitions": [
+            "generic_recovered = projeções genéricas substituídas por conteúdo canônico",
+            "supplemental_tables = entidades específicas que ainda omitiam matrizes canônicas",
+            "source_backed = generic_recovered + supplemental_tables"
+          ]
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# Cobertura semântica restaurada nas unidades pedagógicas"
+      },
+      {
+        "id": "executive_summary",
+        "type": "markdown",
+        "sourceId": "coverage_ledger",
+        "body": "## Executive Summary\n\n- **A perda era sistêmica, não falta de conteúdo na fábrica.** A reconciliação v4.2.1 descartava `contentBlockRef` e publicava scaffolds genéricos.\n- **Foram restauradas 1.887 apresentações source-backed.** O conjunto inclui 1.880 projeções genéricas e sete tabelas adicionais cuja semântica ainda não chegava à interface.\n- **A cobertura tabular agora é completa e verificável.** As 364 tabelas canônicas estão incorporadas uma única vez nas 102 unidades regulares; 183 precisaram de backfill explícito.\n- **Os gates fecharam sem exceções.** Restaram zero projeções genéricas sem fonte, zero referências não resolvidas e zero tipos sem renderer."
+      },
+      {
+        "id": "finding_projection_loss",
+        "type": "markdown",
+        "sourceId": "coverage_ledger",
+        "body": "## O problema estava na projeção derivada\n\nA fonte canônica continha blocos aprovados para cada entidade afetada, mas a etapa de reconciliação removia a referência que ligava a entidade ao conteúdo. A correção preserva o canonical protegido, incorpora os blocos e tabelas na View Model e marca explicitamente quando o renderer deve ocultar o scaffold genérico.\n\n**Implicação:** contraste, regra, procedimento, exemplo e pegadinha voltam a ensinar com o material existente, sem conteúdo inventado no frontend."
+      },
+      {
+        "id": "coverage_chart_block",
+        "type": "chart",
+        "chartId": "source_backed_by_family"
+      },
+      {
+        "id": "coverage_table_block",
+        "type": "markdown",
+        "sourceId": "coverage_ledger",
+        "body": "### Cobertura exata por família\n\n- **Exemplos:** 1.070 de 1.108 apresentações recuperadas em 66 unidades.\n- **Pegadinhas:** 378 de 420 apresentações recuperadas em 64 unidades.\n- **Procedimentos:** 252 de 291 apresentações recuperadas em 66 unidades.\n- **Contrastes:** 137 scaffolds genéricos e seis tabelas adicionais, totalizando 143 apresentações em 59 unidades.\n- **Regras:** 43 scaffolds genéricos e uma tabela adicional, totalizando 44 apresentações em 43 unidades."
+      },
+      {
+        "id": "finding_table_lineage",
+        "type": "markdown",
+        "sourceId": "coverage_ledger",
+        "body": "## Todas as matrizes canônicas agora têm linhagem explícita\n\nA auditoria encontrou 183 tabelas canônicas sem `tableId` rastreável nas views publicadas. Elas foram roteadas à seção pedagógica correspondente — explicação, regras, contrastes, exemplos ou memorização — e incorporadas com payload responsivo.\n\n**Implicação:** o app não depende de uma descrição resumida para representar relações tabulares e pode provar, tabela por tabela, que o conteúdo da fábrica chegou ao aluno."
+      },
+      {
+        "id": "integrity_table_block",
+        "type": "markdown",
+        "sourceId": "coverage_ledger",
+        "body": "### Gates de integridade\n\n- **Tabelas canônicas:** 364 de 364 incorporadas — PASS.\n- **Projeções genéricas sem fonte:** zero — PASS.\n- **Referências não resolvidas:** zero — PASS.\n- **Tipos sem renderer:** zero — PASS."
+      },
+      {
+        "id": "recommendations",
+        "type": "markdown",
+        "body": "## Próximos passos recomendados\n\n1. Manter `enrich_semantic_presentations.py --check` como gate obrigatório após qualquer reconciliação ou compilação de views.\n2. Tratar `presentation.status = source_backed` como contrato de produto; o renderer não deve reconstruir semântica por regex.\n3. Monitorar densidade e responsividade das novas tabelas em Playwright, especialmente em 320 px, sem retirar conteúdo para resolver layout.\n4. Fazer a próxima evolução na compilação primária, para que a etapa de reparo se torne apenas um verificador idempotente."
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "body": "## Questões para a próxima revisão\n\n- A densidade adicional pede agrupamento progressivo em alguma unidade específica?\n- Os 217 itens autorais com IDs legados continuam semanticamente equivalentes às entidades canônicas que consolidam?\n- Convém promover o schema `4.2.2-source-backed-coverage` a uma versão de contrato estável após validação visual completa?"
+      },
+      {
+        "id": "caveats",
+        "type": "markdown",
+        "body": "## Caveats and assumptions\n\n- O reparo altera somente projeções derivadas e renderização; canonical, questões oficiais, gabaritos e decisões editoriais protegidas permanecem intactos.\n- A14 mantém contrato próprio e não recebeu o backfill das unidades regulares.\n- As contagens descrevem o universo publicado nas 102 unidades A00-A13; não equivalem ao corpus canônico completo de questões oficiais.\n- O gráfico resume as famílias; a tabela e o ledger são as fontes para conferência exata."
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-21T00:00:00Z",
+    "status": "ready",
+    "datasets": {
+      "coverage_by_family": [
+        { "family": "Exemplos", "published": 1108, "generic_recovered": 1070, "supplemental_tables": 0, "source_backed": 1070, "affected_units": 66 },
+        { "family": "Pegadinhas", "published": 420, "generic_recovered": 378, "supplemental_tables": 0, "source_backed": 378, "affected_units": 64 },
+        { "family": "Procedimentos", "published": 291, "generic_recovered": 252, "supplemental_tables": 0, "source_backed": 252, "affected_units": 66 },
+        { "family": "Contrastes", "published": 181, "generic_recovered": 137, "supplemental_tables": 6, "source_backed": 143, "affected_units": 59 },
+        { "family": "Regras", "published": 127, "generic_recovered": 43, "supplemental_tables": 1, "source_backed": 44, "affected_units": 43 }
+      ],
+      "integrity_gates": [
+        { "gate": "Tabelas canônicas incorporadas", "observed": 364, "expected": 364, "status": "PASS" },
+        { "gate": "Projeções genéricas sem fonte", "observed": 0, "expected": 0, "status": "PASS" },
+        { "gate": "Referências não resolvidas", "observed": 0, "expected": 0, "status": "PASS" },
+        { "gate": "Tipos sem renderer", "observed": 0, "expected": 0, "status": "PASS" }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "coverage_ledger",
+      "label": "Ledger da restauração de cobertura semântica",
+      "path": "Notebook LM/Auditorias/semantica/v4.2.2-source-backed-coverage/coverage-ledger.json",
+      "query": {
+        "description": "Contagens derivadas diretamente das views v4.2 e das referências canônicas aprovadas.",
+        "language": "python",
+        "executed_at": "2026-08-21",
+        "tables_used": ["canonical.explanation_blocks.jsonl", "canonical.tables.jsonl", "views-v4.2"],
+        "filters": ["102 unidades regulares A00-A13", "A14 excluída por contrato próprio"],
+        "metric_definitions": ["source_backed = projeção com referência canônica resolvida, blocos incorporados e metadados explícitos"]
+      }
+    },
+    {
+      "id": "coverage_query",
+      "label": "Consulta reproduzível do relatório",
+      "path": "SuVeCaSuVeCa/docs/audits/semantic-coverage/semantic_coverage_report.sql",
+      "query": {
+        "sql": "WITH coverage_by_family AS (SELECT 'Exemplos' AS family, 1108 AS published, 1070 AS generic_recovered, 0 AS supplemental_tables, 1070 AS source_backed, 66 AS affected_units UNION ALL SELECT 'Pegadinhas', 420, 378, 0, 378, 64 UNION ALL SELECT 'Procedimentos', 291, 252, 0, 252, 66 UNION ALL SELECT 'Contrastes', 181, 137, 6, 143, 59 UNION ALL SELECT 'Regras', 127, 43, 1, 44, 43) SELECT * FROM coverage_by_family ORDER BY source_backed DESC;",
+        "description": "Materializa as contagens revisadas do ledger em uma tabela compacta para o relatório.",
+        "engine": "ANSI SQL",
+        "id": "semantic-coverage-v4.2.2",
+        "language": "sql",
+        "executed_at": "2026-08-21",
+        "tables_used": ["coverage_by_family"],
+        "filters": ["Somente famílias de entidades publicadas nas unidades regulares"],
+        "metric_definitions": ["source_backed = generic_recovered + supplemental_tables"]
+      }
+    }
+  ]
+}

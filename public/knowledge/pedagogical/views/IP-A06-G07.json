@@ -1,22 +1,24 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A06-G07",
     "lessonId": "A06",
-    "title": "Termos Acessórios - Aposto e Vocábulo Independente Vocativo",
+    "title": "Adjuntos Adverbial e Adnominal",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A06-G07",
     "lessonId": "A06",
-    "title": "Termos Acessórios - Aposto e Vocábulo Independente Vocativo",
+    "title": "Adjuntos Adverbial e Adnominal",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Adjuntos Adverbial e Adnominal.",
       "Aplicar regras canônicas e procedimentos decisórios de Adjuntos Adverbial e Adnominal na resolução de questões.",
       "Analisar o papel de Adjuntos Adverbial e Adnominal no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
-    "conceptCount": 1,
+    "conceptCount": 10,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A06-G07-001",
@@ -30,140 +32,1640 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "O Aposto é o termo acessório que explica, esclarece, resume, enumera, compara ou especifica outro termo de natureza substantiva. O Vocativo é um termo sintaticamente independente (termo de chamamento/interpelação direta) que não pertence nem ao sujeito nem ao predicado e é OBRIGATORIAMENTE isolado por vírgula.",
-      "visualBlueprint": "Aposto: Explicativo (entre vírgulas: Machado, grande escritor, nasceu no Rio) | Enumerativo (após dois-pontos: Comprei tudo: livros, cadernos e canetas) | Resumitivo (pronomes tudo/nada: Amor, paz, saúde, NADA restou) | Especificativo (sem vírgula: O poeta Carlos Drummond / A cidade de São Paulo). Vocativo: Chamamento (Senhores, prestem atenção! / Venha cá, meu filho).",
-      "cognitiveAnchor": "Vocativo é chamamento e SEMPRE tem vírgula; Aposto Especificativo é nome próprio que individualiza e NUNCA tem vírgula.",
-      "strategicSignificance": "Tema com incidência massiva na pontuação de vírgulas obrigatórias e na identificação de funções sintáticas em concursos.",
-      "coreTension": "Confundir Vocativo com Sujeito ou confundir Aposto Explicativo (com vírgula) com Aposto Especificativo (sem vírgula)."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Adjuntos Adverbial e Adnominal",
+      "summary": "Articulação morfossintática e semântica de Adjuntos Adverbial e Adnominal com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A06-07",
-          "name": "Termos da Oração e Pontuação",
-          "reason": "Compreender os papéis de interpelação e explicação sintática.",
-          "activationPrompt": "Qual a diferença entre 'O presidente discursou' e 'Presidente, discurse'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A06-G07",
+          "title": "Mapa de Dependência: Adjuntos Adverbial e Adnominal",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Adjuntos Adverbial e Adnominal",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Tipologia Completa do Aposto",
-          "pedagogicalGoal": "Categorizar os 5 tipos essenciais de aposto e sua pontuação correlata.",
+          "groupId": "GRP-IP-A06-G07-01",
+          "title": "Natureza Sintática e Conexões do Adjunto Adverbial",
+          "conceptRefs": [
+            "KB-A06-G07-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "table",
-              "title": "Quadro dos Tipos de Aposto",
-              "columns": [
-                "Tipo de Aposto",
-                "Função Sintático-Semântica",
-                "Pontuação Obrigatória",
-                "Exemplo"
-              ],
-              "rows": [
-                [
-                  "Aposto Explicativo",
-                  "Esclarece a identidade de um substantivo",
-                  "ISOLADO POR VÍRGULAS, travessões ou parênteses",
-                  "Brasília, a capital do Brasil, é moderna."
-                ],
-                [
-                  "Aposto Especificativo",
-                  "Individualiza um substantivo comum de sentido genérico",
-                  "NÃO ADMITE VÍRGULA (ligado diretamente)",
-                  "O escritor Machado de Assis / A rua das Flores."
-                ],
-                [
-                  "Aposto Enumerativo",
-                  "Desdobra e lista os componentes de um todo",
-                  "Precedido de DOIS-PONTOS ou travessão",
-                  "Desejo três virtudes: honestidade, lealdade e coragem."
-                ],
-                [
-                  "Aposto Resumitivo / Recapitulativo",
-                  "Resume uma série enumerada em um pronome indefinido",
-                  "Pronomes: tudo, nada, ninguém",
-                  "Carros, casas, fazendas, TUDO foi leiloado."
-                ],
-                [
-                  "Aposto Comparativo",
-                  "Compara o termo a outro ser",
-                  "Geralmente entre vírgulas com valor metafórico",
-                  "Aquele garoto, um raio de energia, não parava."
-                ]
-              ],
-              "text": "O aposto gravita sempre em torno de um substantivo ou pronome substantive."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO adjunto adverbial é a função sintática acessória cuja finalidade exclusiva é modificar ou intensificar o sentido de três classes gramaticais: verbo (conexão predominante), adjetivo e outro advérbio.\nExplicação consolidada\nNa análise sintática descritiva, o adjunto adverbial atua como um modificador oracional dependente. Embora a tradição escolar muitas vezes restrinja a explicação ao verbo, a professora demonstra que essa ênfase é meramente estatística (na maioria dos casos práticos de prova, a seta aponta para um verbo, motivo pelo qual a palavra VERBO recebe um asterisco no esquema). Contudo, o adjunto adverbial conecta-se legitimamente a:\nVerbo: adicionando circunstâncias de tempo, lugar, modo, causa, intensidade, finalidade, etc. (Falavam muito);\nAdjetivo: atuando como intensificador ou qualificador de uma característica (Homem muito bom);\nOutro Advérbio: graduando a intensidade de outra circunstância adverbial já expressa (Saíram muito cedo).\nCritérios de reconhecimento ou aplicação\nLocalizar o vocábulo sob análise e rastrear a qual termo ele se subordina hierarquicamente.\nVerificar se a palavra receptora da subordinação pertence à tríade: Verbo, Adjetivo ou Advérbio.\nSe a palavra modificada for um substantivo, o termo jamais será adjunto adverbial (será adjunto adnominal ou predicativo).\nExemplos e contraexemplos\nEles falavam muito: \"muito\" modifica o verbo falavam $\\rightarrow$ Adjunto Adverbial de intensidade.\nAquele homem era muito bom: \"muito\" modifica o adjetivo bom $\\rightarrow$ Adjunto Adverbial de intensidade.\nOs alunos saíram muito cedo: \"cedo\" modifica o verbo saíram (Adjunto Adverbial de tempo) e \"muito\" modifica o advérbio cedo $\\rightarrow$ Adjunto Adverbial de intensidade.\nContraexemplo: Muitos homens falaram: \"muitos\" modifica o substantivo homens $\\rightarrow$ Adjunto Adnominal (Pronome Indefinido), e não adjunto adverbial.\nExceções ou limites\nO adjunto adverbial nunca se conecta diretamente a substantivos ou pronomes substantivos.\nRelações\nAplica: .\nContrasta com: .\nEvidenciado visualmente por: VIS-A06-G07-001."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-02",
+          "title": "Semântica do Adjunto Adverbial: Circunstância, Metáfora da Fofoca e Mnemônico 6C + FTP",
+          "conceptRefs": [
+            "KB-A06-G07-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO adjunto adverbial é a materialização sintática da circunstância. Didaticamente, a circunstância é definida como o \"cheiro de fofoca\" da oração: uma informação contextual acessória que enriquece a mensagem, mas que é estruturalmente dispensável para a completude sintática primária do predicado.\nExplicação consolidada\nComo termo acessório, o adjunto adverbial não é exigido pela transitividade direta ou indireta do verbo. Ele responde a perguntas periféricas sobre o evento: Quando? Onde? Como? Por que motivo? Para que fim? Com quem? Sob que condição?. Para sistematizar o vasto rol de circunstâncias adverbiais cobradas em provas e correlacioná-las à morfologia das conjunções e à sintaxe do período composto, consolida-se o mnemônico 6C + FTP:\n6C (Seis circunstâncias iniciadas pela letra C):\nCausa (morrem de exaustão);\nCondição (sem estudo, não haverá aprovação);\nConcessão (apesar da chuva, saímos);\nComparação (agia como um mestre);\nConsequência (comeu a ponto de passar mal);\nConformidade (agiu segundo as regras).\nFTP (Três circunstâncias iniciadas por F, T, P):\nFinalidade (estudou para a prova);\nTempo (sairemos amanhã / pela manhã);\nProporção (à medida que subia, cansava).\nCircunstâncias Básicas Adicionais: Além do mnemônico 6C + FTP, somam-se as circunstâncias fundamentais: Lugar (foi ao curso / no parque), Modo (com calma / rapidamente), Intensidade (falava muito), Companhia (saiu com a amiga), Dúvida (talvez venha), Negação (não veio), Afirmação (certamente virá) e Instrumento (feriu-se com a faca).\nCritérios de reconhecimento ou aplicação\nIdentificar se o termo expressa uma relação semântica circunstancial (fofoca/detalhe).\nTestar se o termo responde às perguntas-guia contextuais.\nAvaliar a dispensabilidade estrutural: a remoção do termo não deve quebrar a sintaxe básica (embora altere a completude informacional).\nRelações\nExpande: .Termo associado: TERM-A06-G07-013."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-03",
+          "title": "Morfossintaxe Adverbial: Advérbio vs. Locução Adverbial e a Falácia da Invariabilidade",
+          "conceptRefs": [
+            "KB-A06-G07-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA análise de termos circunstanciais exige a diferenciação nítida entre Morfologia (Classe Gramatical) e Sintaxe (Função Sintática). No plano morfológico, distingue-se Advérbio (vocábulo único) de Locução Adverbial (expressão com duas ou mais palavras). No plano sintático, ambas as estruturas exercem invariavelmente a mesma função: Adjunto Adverbial.\nExplicação consolidada\nOs critérios de classe e de função acumulam-se e não se anulam. Um termo pode ser simultaneamente advérbio na morfologia e adjunto adverbial na sintaxe:\nAdvérbio (Morfologia): Vocábulo único de valor circunstancial (muito, cedo, amanhã, talvez). Como classe gramatical, o advérbio é estritamente invariável (não flexiona em gênero nem número).\nLocução Adverbial (Morfologia): Conjunto de duas ou mais palavras (tipicamente preposição + substantivo/adjetivo) exercendo papel circunstancial adverbial (pela manhã, com a amiga, às vezes, para o parque).\nAdjunto Adverbial (Sintaxe): Rótulo relacional único que abarca tanto advérbios quanto locuções adverbiais.\nA Falácia da Invariabilidade: É incorreto afirmar que \"o adjunto adverbial é invariável\". O rótulo de adjunto adverbial aplica-se a locuções adverbiais que contêm, em sua composição interna, palavras perfeitamente variáveis (artigos definidos femininos, substantivos no plural, etc., como em com as amigas, às pressas, pelas manhãs). Portanto, a invariabilidade é propriedade mórfica do advérbio, e nunca critério diagnóstico da função sintática de adjunto adverbial.\nCritérios de reconhecimento ou aplicação\nContar a extensão do termo: 1 palavra circunstancial = Advérbio; 2+ palavras preposicionadas = Locução Adverbial.\nSintaticamente, classificar ambos como Adjunto Adverbial de [Circunstância].\nRejeitar macetes que tentem julgar a função sintática pela flexão interna de locuções.Citação associada: QUOTE-A06-G07-002, QUOTE-A06-G07-003."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-04",
+          "title": "Distinção Sintática entre Termo Acessório (Adjunto Adverbial) e Termo Integrante (Objeto Indireto)",
+          "conceptRefs": [
+            "KB-A06-G07-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oposição entre Adjunto Adverbial e Objeto Indireto repousa na hierarquia sintática oracional: o adjunto adverbial é um termo acessório (acompanhante circunstancial periférico), enquanto o objeto indireto (ou complemento indireto) é um termo integrante (necessário para preencher e completar a predicação de verbos transitivos indiretos).\nExplicação consolidada\nAdjunto Adverbial (Acessório): Deriva da raiz ad-junto (\"o que vem junto\"). Acompanha o verbo veiculando uma circunstância (causa, modo, lugar, tempo). Não é exigido pela regência sintática verbal, atuando como elemento facultativo da estrutura oracional.\nObjeto Indireto (Integrante / Complemento Indireto): Denomina-se integrante porque integra a predicação incompleta de um verbo transitivo indireto (VTI). É regido obrigatoriamente por preposição imposta pela sintaxe verbal (ex.: gostar de, carecer de, obedecer a, responder a).\nO Mito da Omissão Mecânica (\"Tampar com a mãozinha\"): A professora desmantela a técnica tradicional de tampar o termo para ver se \"faz falta\". Muitos adjuntos adverbiais (como circunstâncias de lugar em verbos de movimento ou causas mortais, ex.: morrer de exaustão, ir ao curso) causam forte quebra informativa quando suprimidos, levando o aluno desavisado a rotulá-los erroneamente como complementos obrigatórios (objetos indiretos). A distinção deve ser técnica e semântica, baseada no valor da preposição e no tipo de relação estabelecida.\nCritérios de reconhecimento ou aplicação\nLançar a seta do termo preposicionado para o verbo.\nAplicar o teste do \"cheiro de circunstância\": a expressão veicula ideia circunstancial evidente (tempo, modo, causa, lugar, etc.)?\nSe veicular circunstância $\\rightarrow$ Adjunto Adverbial (termo acessório).\nSe não veicular circunstância e apenas fechar o sentido transitivo do verbo exigido por regência $\\rightarrow$ Objeto Indireto (termo integrante).\nRelações\nAplica: .Termos associados: TERM-A06-G07-003, TERM-A06-G07-004."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-05",
+          "title": "Preposição Nocional vs. Preposição Gramatical e Compatibilidade Verbal dos Adjuntos",
+          "conceptRefs": [
+            "KB-A06-G07-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA natureza do vínculo preposicionado é definida pelo caráter nocional (carregado de valor semântico autônomo) ou gramatical (mero conectivo relacional de regência) da preposição. Além disso, os adjuntos adverbiais são \"fofocas\" universalmente compatíveis com qualquer classe de predicação verbal (VI, VTD, VTI, VTDI e VL).\nExplicação consolidada\nPreposição Nocional (Semântica): Possui conteúdo léxico-semântico próprio que expressa a circunstância por si mesma. Em morrem de exaustão, a preposição de veicula valor de causa (por motivo de); em com calma, a preposição com expressa modo (calmamente); em por essa porta, por indica lugar/passagem. A preposição nocional introduz adjunto adverbial.\nPreposição Gramatical (Relacional pura): É exigida mecanicamente pelo verbo transitivo indireto para conectar-se ao seu alvo/paciente, sem indicar circunstância temporal, espacial, causal ou modal. Em gostou do filme, respondi ao chefe, carecem de atenção, as preposições de e a são meros elos regenciais introdutores de objeto indireto.\nUniversalidade dos Adjuntos Adverbiais: É um mito crer que adjuntos adverbiais só ocorrem com verbos intransitivos (VI). Como informações circunstanciais adicionais, eles podem acoplar-se a:\nVerbos Intransitivos: Viajaremos pela manhã (VI + Adj. Adv. Tempo);\nVerbos Transitivos Diretos: Estudou português no curso (VTD + OD + Adj. Adv. Lugar);\nVerbos Transitivos Indiretos: Gostou do filme ontem (VTI + OI + Adj. Adv. Tempo);\nVerbos de Ligação: Estava calma em casa (VL + Pred. do Sujeito + Adj. Adv. Lugar).\nDesconstrução da Falsa Bitransitividade: Na frase Ele estudou português no curso, o verbo estudar é Transitivo Direto (VTD), português é Objeto Direto (OD) e no curso é Adjunto Adverbial de Lugar. É erro grave classificar essa estrutura como VTDI sob a premissa de que \"quem estuda, estuda algo (OD) em algum lugar (OI)\". A semântica rege a sintaxe: no curso é lugar, logo é adjunto adverbial.\nRelações\nFundamenta: .Evidenciado visualmente por: VIS-A06-G07-003."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-06",
+          "title": "Posição Sintática do Adjunto Adverbial: Ordem Direta vs. Deslocada",
+          "conceptRefs": [
+            "KB-A06-G07-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA posição canônica do adjunto adverbial na ordem direta da língua portuguesa é o final da oração (estrutura: Sujeito + Verbo + Complementos + Adjuntos Adverbiais). Quando o adjunto adverbial é posicionado no início ou no meio do período, passa a ser classificado como adjunto adverbial deslocado.\nExplicação consolidada\nA compreensão da mobilidade posicional do adjunto adverbial é tratada pela professora como um patrimônio conceitual indispensável para matérias futuras de alta complexidade em concursos públicos:\nOrdem Direta: Na estrutura natural da frase (A aluna resolveu a questão com rapidez), o adjunto modal com rapidez localiza-se ao final. Nessa posição canônica, o emprego de vírgula não é utilizado.\nAdjunto Deslocado: Quando a circunstância é antecipada (Com rapidez, a aluna resolveu a questão) ou intercalada (A aluna, com rapidez, resolveu a questão), altera-se a topologia sintática padrão, o que ativa as regras específicas de pontuação (obrigatoriedade ou facultatividade do isolamento por vírgulas conforme a extensão do termo).\nRelevância Pedagógica: O domínio do reconhecimento semântico do adjunto é pré-requisito mandatório para não errar pontuação nas provas de concurso.\nRelações\nRelacionado a: ORAL-A06-G07-001.\nAplica-se em: Pontuação e sintaxe do período."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-07",
+          "title": "Conceito, Função e Natureza Sintática do Adjunto Adnominal",
+          "conceptRefs": [
+            "KB-A06-G07-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO adjunto adnominal é o termo acessório da oração cuja função sintática exclusiva é limitar, individuar, determinar, caracterizar ou especificar a significação de um substantivo, retirando-o da generalização abstrata.\nExplicação consolidada\nEtimologia e Âncora Sintática: Adnominal provém de junto ao nome. No rigor da sintaxe descritiva adotada pela professora, \"nome\" equivale estritamente a substantivo. O adjunto adnominal sempre, incondicionalmente, liga-se a um substantivo.\nMetáfora dos Satélites: O adjunto adnominal atua como um satélite, um enfeite ou um acessório do nome. Ele orbita o substantivo sem constituir o núcleo do sintagma nominal.\nMecanismo Semântico de Delimitação: Limitar significa individualizar. O substantivo aluno abarca a totalidade genérica dos estudantes. Ao associar adjuntos adnominais (o aluno, dois alunos, aluno inteligente, aluno de inteligência), o falante restringe a referência a indivíduos específicos, quantificados ou qualificados.\nCritérios de reconhecimento ou aplicação\nIdentificar se o termo subordinado aponta diretamente para um substantivo.\nVerificar se a função do termo é determinar, especificar ou restringir esse substantivo.\nSe a palavra receptora for adjetivo, verbo ou advérbio, fica categoricamente proibida a classificação como adjunto adnominal.\nRelações\nContrasta com: (Adjunto Adverbial).\nExpande-se em: .\nTermos associados: TERM-A06-G07-002, TERM-A06-G07-010, TERM-A06-G07-011."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-08",
+          "title": "Morfossintaxe do Adjunto Adnominal: As 5 Classes Satélites",
+          "conceptRefs": [
+            "KB-A06-G07-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO adjunto adnominal é uma função sintática desempenhada exclusivamente por cinco classes/estruturas morfológicas quando subordinadas a um substantivo: Artigo, Numeral, Adjetivo, Locução Adjetiva e Pronome Adjetivo.\nExplicação consolidada\nA professora sistematiza a correspondência exaustiva entre Morfologia e Sintaxe para o adjunto adnominal no quadro \"#ANOTA AÍ\":\nArtigo (Morfologia): Artigos definidos (o, a, os, as) e indefinidos (um, uma, uns, umas) exercem função de adjunto adnominal ao determinar ou indeterminar o substantivo (O aluno, Um campo).\nNumeral (Morfologia): Numerais adjetivos que delimitam a quantidade ou ordem do substantivo (Dois alunos, Primeiro colocado).\nAdjetivo (Morfologia): Palavra única que qualifica ou caracteriza diretamente o substantivo (Aluno inteligente, Velho ranzinza, Campo minado).\nLocução Adjetiva (Morfologia): Expressão preposicionada composta por duas ou mais palavras (preposição + substantivo/adjetivo) que desempenha papel equivalente a um adjetivo (Aluno de inteligência, Coração sem amor, Invasão dos mosquitos).\nPronome Adjetivo (Morfologia): Qualquer pronome que acompanhe um substantivo modificando-o:\nPossessivo: meu aluno, minhas sugestões, suas mãos;\nDemonstrativo: aquele aluno, esta casa;\nIndefinido: algum aluno, muitas pessoas, certos dias.\nCritérios de reconhecimento ou aplicação\nLocalizar o satélite do substantivo.\nEnquadrar o satélite em uma das 5 categorias morfológicas autorizadas.\nAtenção: Preposições isoladas, conjunções, advérbios e pronomes substantivos (que substituem o nome) não atuam como adjunto adnominal.\nRelações\nAplica: .\nEvidenciado visualmente por: VIS-A06-G07-004.\nTermo associado: TERM-A06-G07-007."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-09",
+          "title": "Distribuição Sintática Irrestrita do Adjunto Adnominal",
+          "conceptRefs": [
+            "KB-A06-G07-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO adjunto adnominal não possui fixação posicional nem restrição sintática a uma função específica: ele pode ocorrer no interior de qualquer termo da oração (Sujeito, Objeto Direto, Objeto Indireto, Predicativo, Complemento Nominal, Agente da Passiva ou Adjunto Adverbial), bastando que esse termo seja encabeçado por um substantivo núcleo que receba satélites.\nExplicação consolidada\nO adjunto adnominal é um termo interno de sintagmas nominais maiores. Quando se isola um sujeito como As minhas sugestões, o sujeito engloba todo o sintagma, mas na microanálise interna, sugestões é o substantivo núcleo, enquanto As (artigo) e minhas (pronome) são adjuntos adnominais internos a esse sujeito.\nNo predicativo do sujeito um campo minado, o núcleo é campo, e os vocábulos um (artigo) e minado (adjetivo) são adjuntos adnominais internos ao predicativo.\nNo objeto direto o amigo, amigo é o núcleo e o é adjunto adnominal interno ao objeto.\nA regra de ouro é: \"Onde houver substantivo, antes ou depois do verbo, pode haver adjunto adnominal\".\nRelações\nAplica: .\nDemonstrado em: , , ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A06-G07-10",
+          "title": "Distinção Crítica entre Adjunto Adnominal e Predicativo (Acessoriedade vs. Essencialidade)",
+          "conceptRefs": [
+            "KB-A06-G07-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA linha divisória entre o Adjunto Adnominal e o Predicativo (do Sujeito ou do Objeto) fundamenta-se no caráter acessório e dispensável do primeiro versus a essencialidade semântico-predicativa do segundo para sustentar a regência e o sentido original do verbo.\nExplicação consolidada\nAdjunto Adnominal como Acessório: Por ser mero satélite restritivo do substantivo, sua supressão não quebra a predicação verbal nem transforma o sentido do verbo.\nPredicativo como Termo de Significação Necessária: O predicativo atribui uma qualidade ou estado circunstancial e participa ativamente da predicação (formando predicado nominal ou verbo-nominal).\nCaso Paradigmático (Chamou o amigo de ingrato):\nNa oração Chamou o amigo de ingrato, a expressão preposicionada de ingrato qualifica o substantivo amigo. Contudo, ela não é adjunto adnominal, mas sim Predicativo do Objeto (P.O.).\nTeste da Supressão Semântica do Verbo: Ao retirar de ingrato, a oração converte-se em Chamou o amigo. Essa eliminação altera drasticamente a semântica e a transitividade do verbo chamar:\nSentido 1 (Com Predicativo): Significa qualificar, tachar, apelidar (Chamou o amigo de ingrato = qualificou o amigo como ingrato; exige predicativo do objeto regido ou não por preposição facultativa);\nSentido 2 (Sem Predicativo): Significa convocar, dirigir a palavra (Chamou o amigo = disse \"amigo, venha cá\"; verbo transitivo direto puro).\nConclusão: como de ingrato não pode ser retirado sem mutilar o sentido pretendido e a própria estrutura predicativa do verbo, ele é termo integrante/necessário da predicação (Predicativo do Objeto), e não termo acessório (Adjunto Adnominal).\nCritérios de reconhecimento ou aplicação\nAplicar o teste da supressão do termo modificador.\nSe a retirada do termo alterar o significado lexical do verbo e o tipo de predicado $\\rightarrow$ Predicativo.\nSe a retirada mantiver a mesma predicação verbal, apenas retirando uma delimitação do nome $\\rightarrow$ Adjunto Adnominal.\nRelações\nGera o alerta: .\nDemonstrado em: .\nEvidenciado visualmente por: VIS-A06-G07-005.\nTermos associados: TERM-A06-G07-012."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO adjunto adverbial é a função sintática acessória cuja finalidade exclusiva é modificar ou intensificar o sentido de três classes gramaticais: verbo (conexão predominante), adjetivo e outro advérbio.\nExplicação consolidada\nNa análise sintática descritiva, o adjunto adverbial atua como um modificador oracional dependente. Embora a tradição escolar muitas vezes restrinja a explicação ao verbo, a professora demonstra que essa ênfase é meramente estatística (na maioria dos casos práticos de prova, a seta aponta para um verbo, motivo pelo qual a palavra VERBO recebe um asterisco no esquema). Contudo, o adjunto adverbial conecta-se legitimamente a:\nVerbo: adicionando circunstâncias de tempo, lugar, modo, causa, intensidade, finalidade, etc. (Falavam muito);\nAdjetivo: atuando como intensificador ou qualificador de uma característica (Homem muito bom);\nOutro Advérbio: graduando a intensidade de outra circunstância adverbial já expressa (Saíram muito cedo).\nCritérios de reconhecimento ou aplicação\nLocalizar o vocábulo sob análise e rastrear a qual termo ele se subordina hierarquicamente.\nVerificar se a palavra receptora da subordinação pertence à tríade: Verbo, Adjetivo ou Advérbio.\nSe a palavra modificada for um substantivo, o termo jamais será adjunto adverbial (será adjunto adnominal ou predicativo).\nExemplos e contraexemplos\nEles falavam muito: \"muito\" modifica o verbo falavam $\\rightarrow$ Adjunto Adverbial de intensidade.\nAquele homem era muito bom: \"muito\" modifica o adjetivo bom $\\rightarrow$ Adjunto Adverbial de intensidade.\nOs alunos saíram muito cedo: \"cedo\" modifica o verbo saíram (Adjunto Adverbial de tempo) e \"muito\" modifica o advérbio cedo $\\rightarrow$ Adjunto Adverbial de intensidade.\nContraexemplo: Muitos homens falaram: \"muitos\" modifica o substantivo homens $\\rightarrow$ Adjunto Adnominal (Pronome Indefinido), e não adjunto adverbial.\nExceções ou limites\nO adjunto adverbial nunca se conecta diretamente a substantivos ou pronomes substantivos.\nRelações\nAplica: .\nContrasta com: .\nEvidenciado visualmente por: VIS-A06-G07-001."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO adjunto adverbial é a materialização sintática da circunstância. Didaticamente, a circunstância é definida como o \"cheiro de fofoca\" da oração: uma informação contextual acessória que enriquece a mensagem, mas que é estruturalmente dispensável para a completude sintática primária do predicado.\nExplicação consolidada\nComo termo acessório, o adjunto adverbial não é exigido pela transitividade direta ou indireta do verbo. Ele responde a perguntas periféricas sobre o evento: Quando? Onde? Como? Por que motivo? Para que fim? Com quem? Sob que condição?. Para sistematizar o vasto rol de circunstâncias adverbiais cobradas em provas e correlacioná-las à morfologia das conjunções e à sintaxe do período composto, consolida-se o mnemônico 6C + FTP:\n6C (Seis circunstâncias iniciadas pela letra C):\nCausa (morrem de exaustão);\nCondição (sem estudo, não haverá aprovação);\nConcessão (apesar da chuva, saímos);\nComparação (agia como um mestre);\nConsequência (comeu a ponto de passar mal);\nConformidade (agiu segundo as regras).\nFTP (Três circunstâncias iniciadas por F, T, P):\nFinalidade (estudou para a prova);\nTempo (sairemos amanhã / pela manhã);\nProporção (à medida que subia, cansava).\nCircunstâncias Básicas Adicionais: Além do mnemônico 6C + FTP, somam-se as circunstâncias fundamentais: Lugar (foi ao curso / no parque), Modo (com calma / rapidamente), Intensidade (falava muito), Companhia (saiu com a amiga), Dúvida (talvez venha), Negação (não veio), Afirmação (certamente virá) e Instrumento (feriu-se com a faca).\nCritérios de reconhecimento ou aplicação\nIdentificar se o termo expressa uma relação semântica circunstancial (fofoca/detalhe).\nTestar se o termo responde às perguntas-guia contextuais.\nAvaliar a dispensabilidade estrutural: a remoção do termo não deve quebrar a sintaxe básica (embora altere a completude informacional).\nRelações\nExpande: .Termo associado: TERM-A06-G07-013."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA análise de termos circunstanciais exige a diferenciação nítida entre Morfologia (Classe Gramatical) e Sintaxe (Função Sintática). No plano morfológico, distingue-se Advérbio (vocábulo único) de Locução Adverbial (expressão com duas ou mais palavras). No plano sintático, ambas as estruturas exercem invariavelmente a mesma função: Adjunto Adverbial.\nExplicação consolidada\nOs critérios de classe e de função acumulam-se e não se anulam. Um termo pode ser simultaneamente advérbio na morfologia e adjunto adverbial na sintaxe:\nAdvérbio (Morfologia): Vocábulo único de valor circunstancial (muito, cedo, amanhã, talvez). Como classe gramatical, o advérbio é estritamente invariável (não flexiona em gênero nem número).\nLocução Adverbial (Morfologia): Conjunto de duas ou mais palavras (tipicamente preposição + substantivo/adjetivo) exercendo papel circunstancial adverbial (pela manhã, com a amiga, às vezes, para o parque).\nAdjunto Adverbial (Sintaxe): Rótulo relacional único que abarca tanto advérbios quanto locuções adverbiais.\nA Falácia da Invariabilidade: É incorreto afirmar que \"o adjunto adverbial é invariável\". O rótulo de adjunto adverbial aplica-se a locuções adverbiais que contêm, em sua composição interna, palavras perfeitamente variáveis (artigos definidos femininos, substantivos no plural, etc., como em com as amigas, às pressas, pelas manhãs). Portanto, a invariabilidade é propriedade mórfica do advérbio, e nunca critério diagnóstico da função sintática de adjunto adverbial.\nCritérios de reconhecimento ou aplicação\nContar a extensão do termo: 1 palavra circunstancial = Advérbio; 2+ palavras preposicionadas = Locução Adverbial.\nSintaticamente, classificar ambos como Adjunto Adverbial de [Circunstância].\nRejeitar macetes que tentem julgar a função sintática pela flexão interna de locuções.Citação associada: QUOTE-A06-G07-002, QUOTE-A06-G07-003."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oposição entre Adjunto Adverbial e Objeto Indireto repousa na hierarquia sintática oracional: o adjunto adverbial é um termo acessório (acompanhante circunstancial periférico), enquanto o objeto indireto (ou complemento indireto) é um termo integrante (necessário para preencher e completar a predicação de verbos transitivos indiretos).\nExplicação consolidada\nAdjunto Adverbial (Acessório): Deriva da raiz ad-junto (\"o que vem junto\"). Acompanha o verbo veiculando uma circunstância (causa, modo, lugar, tempo). Não é exigido pela regência sintática verbal, atuando como elemento facultativo da estrutura oracional.\nObjeto Indireto (Integrante / Complemento Indireto): Denomina-se integrante porque integra a predicação incompleta de um verbo transitivo indireto (VTI). É regido obrigatoriamente por preposição imposta pela sintaxe verbal (ex.: gostar de, carecer de, obedecer a, responder a).\nO Mito da Omissão Mecânica (\"Tampar com a mãozinha\"): A professora desmantela a técnica tradicional de tampar o termo para ver se \"faz falta\". Muitos adjuntos adverbiais (como circunstâncias de lugar em verbos de movimento ou causas mortais, ex.: morrer de exaustão, ir ao curso) causam forte quebra informativa quando suprimidos, levando o aluno desavisado a rotulá-los erroneamente como complementos obrigatórios (objetos indiretos). A distinção deve ser técnica e semântica, baseada no valor da preposição e no tipo de relação estabelecida.\nCritérios de reconhecimento ou aplicação\nLançar a seta do termo preposicionado para o verbo.\nAplicar o teste do \"cheiro de circunstância\": a expressão veicula ideia circunstancial evidente (tempo, modo, causa, lugar, etc.)?\nSe veicular circunstância $\\rightarrow$ Adjunto Adverbial (termo acessório).\nSe não veicular circunstância e apenas fechar o sentido transitivo do verbo exigido por regência $\\rightarrow$ Objeto Indireto (termo integrante).\nRelações\nAplica: .Termos associados: TERM-A06-G07-003, TERM-A06-G07-004."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA natureza do vínculo preposicionado é definida pelo caráter nocional (carregado de valor semântico autônomo) ou gramatical (mero conectivo relacional de regência) da preposição. Além disso, os adjuntos adverbiais são \"fofocas\" universalmente compatíveis com qualquer classe de predicação verbal (VI, VTD, VTI, VTDI e VL).\nExplicação consolidada\nPreposição Nocional (Semântica): Possui conteúdo léxico-semântico próprio que expressa a circunstância por si mesma. Em morrem de exaustão, a preposição de veicula valor de causa (por motivo de); em com calma, a preposição com expressa modo (calmamente); em por essa porta, por indica lugar/passagem. A preposição nocional introduz adjunto adverbial.\nPreposição Gramatical (Relacional pura): É exigida mecanicamente pelo verbo transitivo indireto para conectar-se ao seu alvo/paciente, sem indicar circunstância temporal, espacial, causal ou modal. Em gostou do filme, respondi ao chefe, carecem de atenção, as preposições de e a são meros elos regenciais introdutores de objeto indireto.\nUniversalidade dos Adjuntos Adverbiais: É um mito crer que adjuntos adverbiais só ocorrem com verbos intransitivos (VI). Como informações circunstanciais adicionais, eles podem acoplar-se a:\nVerbos Intransitivos: Viajaremos pela manhã (VI + Adj. Adv. Tempo);\nVerbos Transitivos Diretos: Estudou português no curso (VTD + OD + Adj. Adv. Lugar);\nVerbos Transitivos Indiretos: Gostou do filme ontem (VTI + OI + Adj. Adv. Tempo);\nVerbos de Ligação: Estava calma em casa (VL + Pred. do Sujeito + Adj. Adv. Lugar).\nDesconstrução da Falsa Bitransitividade: Na frase Ele estudou português no curso, o verbo estudar é Transitivo Direto (VTD), português é Objeto Direto (OD) e no curso é Adjunto Adverbial de Lugar. É erro grave classificar essa estrutura como VTDI sob a premissa de que \"quem estuda, estuda algo (OD) em algum lugar (OI)\". A semântica rege a sintaxe: no curso é lugar, logo é adjunto adverbial.\nRelações\nFundamenta: .Evidenciado visualmente por: VIS-A06-G07-003."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA posição canônica do adjunto adverbial na ordem direta da língua portuguesa é o final da oração (estrutura: Sujeito + Verbo + Complementos + Adjuntos Adverbiais). Quando o adjunto adverbial é posicionado no início ou no meio do período, passa a ser classificado como adjunto adverbial deslocado.\nExplicação consolidada\nA compreensão da mobilidade posicional do adjunto adverbial é tratada pela professora como um patrimônio conceitual indispensável para matérias futuras de alta complexidade em concursos públicos:\nOrdem Direta: Na estrutura natural da frase (A aluna resolveu a questão com rapidez), o adjunto modal com rapidez localiza-se ao final. Nessa posição canônica, o emprego de vírgula não é utilizado.\nAdjunto Deslocado: Quando a circunstância é antecipada (Com rapidez, a aluna resolveu a questão) ou intercalada (A aluna, com rapidez, resolveu a questão), altera-se a topologia sintática padrão, o que ativa as regras específicas de pontuação (obrigatoriedade ou facultatividade do isolamento por vírgulas conforme a extensão do termo).\nRelevância Pedagógica: O domínio do reconhecimento semântico do adjunto é pré-requisito mandatório para não errar pontuação nas provas de concurso.\nRelações\nRelacionado a: ORAL-A06-G07-001.\nAplica-se em: Pontuação e sintaxe do período."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO adjunto adnominal é o termo acessório da oração cuja função sintática exclusiva é limitar, individuar, determinar, caracterizar ou especificar a significação de um substantivo, retirando-o da generalização abstrata.\nExplicação consolidada\nEtimologia e Âncora Sintática: Adnominal provém de junto ao nome. No rigor da sintaxe descritiva adotada pela professora, \"nome\" equivale estritamente a substantivo. O adjunto adnominal sempre, incondicionalmente, liga-se a um substantivo.\nMetáfora dos Satélites: O adjunto adnominal atua como um satélite, um enfeite ou um acessório do nome. Ele orbita o substantivo sem constituir o núcleo do sintagma nominal.\nMecanismo Semântico de Delimitação: Limitar significa individualizar. O substantivo aluno abarca a totalidade genérica dos estudantes. Ao associar adjuntos adnominais (o aluno, dois alunos, aluno inteligente, aluno de inteligência), o falante restringe a referência a indivíduos específicos, quantificados ou qualificados.\nCritérios de reconhecimento ou aplicação\nIdentificar se o termo subordinado aponta diretamente para um substantivo.\nVerificar se a função do termo é determinar, especificar ou restringir esse substantivo.\nSe a palavra receptora for adjetivo, verbo ou advérbio, fica categoricamente proibida a classificação como adjunto adnominal.\nRelações\nContrasta com: (Adjunto Adverbial).\nExpande-se em: .\nTermos associados: TERM-A06-G07-002, TERM-A06-G07-010, TERM-A06-G07-011."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO adjunto adnominal é uma função sintática desempenhada exclusivamente por cinco classes/estruturas morfológicas quando subordinadas a um substantivo: Artigo, Numeral, Adjetivo, Locução Adjetiva e Pronome Adjetivo.\nExplicação consolidada\nA professora sistematiza a correspondência exaustiva entre Morfologia e Sintaxe para o adjunto adnominal no quadro \"#ANOTA AÍ\":\nArtigo (Morfologia): Artigos definidos (o, a, os, as) e indefinidos (um, uma, uns, umas) exercem função de adjunto adnominal ao determinar ou indeterminar o substantivo (O aluno, Um campo).\nNumeral (Morfologia): Numerais adjetivos que delimitam a quantidade ou ordem do substantivo (Dois alunos, Primeiro colocado).\nAdjetivo (Morfologia): Palavra única que qualifica ou caracteriza diretamente o substantivo (Aluno inteligente, Velho ranzinza, Campo minado).\nLocução Adjetiva (Morfologia): Expressão preposicionada composta por duas ou mais palavras (preposição + substantivo/adjetivo) que desempenha papel equivalente a um adjetivo (Aluno de inteligência, Coração sem amor, Invasão dos mosquitos).\nPronome Adjetivo (Morfologia): Qualquer pronome que acompanhe um substantivo modificando-o:\nPossessivo: meu aluno, minhas sugestões, suas mãos;\nDemonstrativo: aquele aluno, esta casa;\nIndefinido: algum aluno, muitas pessoas, certos dias.\nCritérios de reconhecimento ou aplicação\nLocalizar o satélite do substantivo.\nEnquadrar o satélite em uma das 5 categorias morfológicas autorizadas.\nAtenção: Preposições isoladas, conjunções, advérbios e pronomes substantivos (que substituem o nome) não atuam como adjunto adnominal.\nRelações\nAplica: .\nEvidenciado visualmente por: VIS-A06-G07-004.\nTermo associado: TERM-A06-G07-007."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO adjunto adnominal não possui fixação posicional nem restrição sintática a uma função específica: ele pode ocorrer no interior de qualquer termo da oração (Sujeito, Objeto Direto, Objeto Indireto, Predicativo, Complemento Nominal, Agente da Passiva ou Adjunto Adverbial), bastando que esse termo seja encabeçado por um substantivo núcleo que receba satélites.\nExplicação consolidada\nO adjunto adnominal é um termo interno de sintagmas nominais maiores. Quando se isola um sujeito como As minhas sugestões, o sujeito engloba todo o sintagma, mas na microanálise interna, sugestões é o substantivo núcleo, enquanto As (artigo) e minhas (pronome) são adjuntos adnominais internos a esse sujeito.\nNo predicativo do sujeito um campo minado, o núcleo é campo, e os vocábulos um (artigo) e minado (adjetivo) são adjuntos adnominais internos ao predicativo.\nNo objeto direto o amigo, amigo é o núcleo e o é adjunto adnominal interno ao objeto.\nA regra de ouro é: \"Onde houver substantivo, antes ou depois do verbo, pode haver adjunto adnominal\".\nRelações\nAplica: .\nDemonstrado em: , , ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA linha divisória entre o Adjunto Adnominal e o Predicativo (do Sujeito ou do Objeto) fundamenta-se no caráter acessório e dispensável do primeiro versus a essencialidade semântico-predicativa do segundo para sustentar a regência e o sentido original do verbo.\nExplicação consolidada\nAdjunto Adnominal como Acessório: Por ser mero satélite restritivo do substantivo, sua supressão não quebra a predicação verbal nem transforma o sentido do verbo.\nPredicativo como Termo de Significação Necessária: O predicativo atribui uma qualidade ou estado circunstancial e participa ativamente da predicação (formando predicado nominal ou verbo-nominal).\nCaso Paradigmático (Chamou o amigo de ingrato):\nNa oração Chamou o amigo de ingrato, a expressão preposicionada de ingrato qualifica o substantivo amigo. Contudo, ela não é adjunto adnominal, mas sim Predicativo do Objeto (P.O.).\nTeste da Supressão Semântica do Verbo: Ao retirar de ingrato, a oração converte-se em Chamou o amigo. Essa eliminação altera drasticamente a semântica e a transitividade do verbo chamar:\nSentido 1 (Com Predicativo): Significa qualificar, tachar, apelidar (Chamou o amigo de ingrato = qualificou o amigo como ingrato; exige predicativo do objeto regido ou não por preposição facultativa);\nSentido 2 (Sem Predicativo): Significa convocar, dirigir a palavra (Chamou o amigo = disse \"amigo, venha cá\"; verbo transitivo direto puro).\nConclusão: como de ingrato não pode ser retirado sem mutilar o sentido pretendido e a própria estrutura predicativa do verbo, ele é termo integrante/necessário da predicação (Predicativo do Objeto), e não termo acessório (Adjunto Adnominal).\nCritérios de reconhecimento ou aplicação\nAplicar o teste da supressão do termo modificador.\nSe a retirada do termo alterar o significado lexical do verbo e o tipo de predicado $\\rightarrow$ Predicativo.\nSe a retirada mantiver a mesma predicação verbal, apenas retirando uma delimitação do nome $\\rightarrow$ Adjunto Adnominal.\nRelações\nGera o alerta: .\nDemonstrado em: .\nEvidenciado visualmente por: VIS-A06-G07-005.\nTermos associados: TERM-A06-G07-012."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-VOC-01",
-          "title": "Isolamento Obrigatório do Vocativo",
-          "statement": "O Vocativo é um termo de chamamento independente e deve ser OBRIGATORIAMENTE isolado por vírgula em qualquer posição que ocupe na oração (início, meio ou fim).",
-          "formalCondition": "Vocativo in Oração -> Vírgula(Vocativo) == True (Universal).",
-          "scope": "Universal na sintaxe e pontuação da língua portuguesa.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A06-G07-001",
+          "title": "Tabela-resumo de formulações canônicas consolidadas",
+          "statement": "Tabela-resumo de formulações canônicas consolidadas",
+          "scope": "syntax",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Tabela-resumo de formulações canônicas consolidadas."
+          ],
           "exceptions": [],
-          "examples": [
-            "Amigos, vamos iniciar a reunião (Início).",
-            "Vamos, meus amigos, iniciar a reunião (Meio).",
-            "Vamos iniciar a reunião, amigos (Fim)."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A06-G07-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G07-001",
+              "table": {
+                "tableId": "TABLE-IP-A06-G07-001",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Conceito / Regra",
+                  "Âncora Sintática",
+                  "Natureza Estrutural",
+                  "Classes Morfológicas Correspondentes",
+                  "Identificador Temático"
+                ],
+                "rows": [
+                  [
+                    "Adjunto Adverbial",
+                    "Verbo (), Adjetivo ou Advérbio",
+                    "Termo Acessório (Fofoca / Circunstância)",
+                    "Advérbio (1 palavra) ou Locução Adverbial (2+ palavras)",
+                    "KB-A06-G07-001, KB-A06-G07-003"
+                  ],
+                  [
+                    "Adjunto Adnominal",
+                    "Substantivo exclusivamente",
+                    "Termo Acessório (Satélite / Enfeite do Nome)",
+                    "Artigo, Numeral, Adjetivo, Locução Adjetiva, Pronome Adjetivo",
+                    "KB-A06-G07-007, KB-A06-G07-008"
+                  ],
+                  [
+                    "Objeto Indireto",
+                    "Verbo Transitivo Indireto (VTI / VTDI)",
+                    "Termo Integrante (Complemento Verbal)",
+                    "Substantivo/Pronome regido por Preposição Gramatical",
+                    "KB-A06-G07-004, KB-A06-G07-005"
+                  ],
+                  [
+                    "Predicativo do Objeto",
+                    "Objeto Direto / Indireto (via Verbo)",
+                    "Termo Necessário da Predicação",
+                    "Adjetivo ou Expressão Adjetivada (com/sem preposição)",
+                    "KB-A06-G07-010"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A06-G07-001",
+              "EXP-IP-A06-G07-044"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-VOC-01",
-          "title": "Distinção Infalível: Vocativo vs Sujeito",
-          "triggerCondition": "Dúvida se o termo inicial é sujeito ou vocativo.",
+          "entityId": "PROC-A06-G07-001",
+          "title": "O Método dos Dois Passos da Análise Sintática (Método da Seta)",
           "steps": [
-            "1. Observe a pontuação após o termo: HÁ VÍRGULA LOGO APÓS O NOME?",
-            "2. Se HOUVER VÍRGULA e o verbo estiver no imperativo ou em 2ª/3ª pessoa de ordem/apelo (ex: 'Candidatos, façam a prova') -> Trata-se de VOCATIVO (chamamento). O sujeito do verbo é 'vocês' (oculto).",
-            "3. Se NÃO HOUVER VÍRGULA e o termo conjugar o verbo diretamente (ex: 'Os candidatos fizeram a prova') -> Trata-se de SUJEITO.",
-            "4. Lembre-se: Sujeito NUNCA é separado do verbo por vírgula simples."
+            {
+              "order": 1,
+              "action": "Identificar e classificar com exatidão a função de termos modificadores dependentes, garantindo a correspondência entre a relação sintática e a morfologia receptora",
+              "explanation": "Procedimento operacional para O Método dos Dois Passos da Análise Sintática (Método da Seta).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Início da Análise do Termo [Passo 1: Conversar com a Frase & Lançar a SETA] Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina",
+              "explanation": "Procedimento operacional para O Método dos Dois Passos da Análise Sintática (Método da Seta).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Traçar visualmente a seta do termo emissor para o vocábulo receptor",
+              "explanation": "Procedimento operacional para O Método dos Dois Passos da Análise Sintática (Método da Seta).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "[Passo 2: Identificar a Classe da Palavra Receptora] Classificar morfologicamente a palavra que recebeu a ponta da seta: Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) [Passo 3: Dupla Etiquetagem Morfossintática] Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico)",
+              "explanation": "Procedimento operacional para O Método dos Dois Passos da Análise Sintática (Método da Seta).",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se a retirada da vírgula altera a função de vocativo para sujeito.",
-          "typicalFailureModes": [
-            "Classificar 'Candidatos' como sujeito em 'Candidatos, entreguem as provas'."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de O Método dos Dois Passos da Análise Sintática (Método da Seta)."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de O Método dos Dois Passos da Análise Sintática (Método da Seta)."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para O Método dos Dois Passos da Análise Sintática (Método da Seta)",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "derived",
+          "procedureId": "PROC-A06-G07-001",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Identificar e classificar com exatidão a função de termos modificadores dependentes, garantindo a correspondência entre a relação sintática e a morfologia receptora."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Sequência operacional"
+            },
+            {
+              "type": "paragraph",
+              "text": "Início da Análise do Termo │ ▼ [Passo 1: Conversar com a Frase & Lançar a SETA] │ Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina. │ Traçar visualmente a seta do termo emissor para o vocábulo receptor. │ ▼ [Passo 2: Identificar a Classe da Palavra Receptora] │ Classificar morfologicamente a palavra que recebeu a ponta da seta: │ ├── Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL │ └── Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) │ ▼ [Passo 3: Dupla Etiquetagem Morfossintática] │ Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico). │ ▼ Fim do Procedimento"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A06-G07-001",
+              "EXP-IP-A06-G07-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A06-G07-002",
+          "title": "Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Classificar termos preposicionados associados a verbos, evitando a armadilha de rotular qualquer estrutura preposicionada como objeto indireto",
+              "explanation": "Procedimento operacional para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Termo Preposicionado Ligado a Verbo [Etapa 1] Traçar a seta do termo preposicionado até o verbo regente/referente",
+              "explanation": "Procedimento operacional para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "[Etapa 2] Confirmar que a palavra receptora é um VERBO",
+              "explanation": "Procedimento operacional para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "[Etapa 3] Teste Semântico: \"A expressão tem CHEIRO DE CIRCUNSTÂNCIA?\" SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca)",
+              "explanation": "Procedimento operacional para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto.",
+              "test": "│ ▼ [Etapa 3] Teste Semântico: \"A expressão tem CHEIRO DE CIRCUNSTÂNCIA?\" │ ├── SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) │ │ │ ▼ │ [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca)"
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "derived",
+          "procedureId": "PROC-A06-G07-002",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Classificar termos preposicionados associados a verbos, evitando a armadilha de rotular qualquer estrutura preposicionada como objeto indireto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Sequência operacional"
+            },
+            {
+              "type": "paragraph",
+              "text": "Termo Preposicionado Ligado a Verbo │ ▼ [Etapa 1] Traçar a seta do termo preposicionado até o verbo regente/referente. │ ▼ [Etapa 2] Confirmar que a palavra receptora é um VERBO. │ ▼ [Etapa 3] Teste Semântico: \"A expressão tem CHEIRO DE CIRCUNSTÂNCIA?\" │ ├── SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) │ │ │ ▼ │ [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca). │ └── NÃO (Preposição é GRAMATICAL: completa o verbo sem carga adverbial própria) │ ▼ [Etapa 4B] Classificar como OBJETO INDIRETO (Termo Integrante / Complemento Verbal)."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A06-G07-002",
+              "EXP-IP-A06-G07-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A06-G07-003",
+          "title": "Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Localizar todos os adjuntos adnominais em qualquer segmento do período com 100% de segurança",
+              "explanation": "Procedimento operacional para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Varredura do Período [Passo 1: Localizar o SUBSTANTIVO NÚCLEO] Varrer o período identificando todos os substantivos que encabeçam funções sintáticas (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.)",
+              "explanation": "Procedimento operacional para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "[Passo 2: Rastrear os TERMOS SATÉLITES] Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos",
+              "explanation": "Procedimento operacional para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "[Passo 3: Validar a Classe do Satélite] Verificar se o modificador pertence a uma das 5 classes: [Artigo Numeral Pronome Adjetivo Adjetivo Locução Adjetiva] [Passo 4: Teste de Acessoriedade] Confirmar que o termo não atua como predicativo indispensável à predicação verbal",
+              "explanation": "Procedimento operacional para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites).",
+              "test": "│ ▼ [Passo 3: Validar a Classe do Satélite] │ Verificar se o modificador pertence a uma das 5 classes: │ [Artigo | Numeral | Pronome Adjetivo | Adjetivo | Locução Adjetiva] │ ▼ [Passo 4: Teste de Acessoriedade] │ Confirmar que o termo não atua como predicativo indispensável à predicação verbal"
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Estrutura textual submetida ao roteiro de Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Diagnóstico definitivo conforme os preceitos de Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Método do Farejador de Adjuntos Adnominais (Substantivo Núcleo e Satélites)",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "derived",
+          "procedureId": "PROC-A06-G07-003",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Objetivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Localizar todos os adjuntos adnominais em qualquer segmento do período com 100% de segurança."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Sequência operacional"
+            },
+            {
+              "type": "paragraph",
+              "text": "Varredura do Período │ ▼ [Passo 1: Localizar o SUBSTANTIVO NÚCLEO] │ Varrer o período identificando todos os substantivos que encabeçam funções sintáticas │ (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.). │ ▼ [Passo 2: Rastrear os TERMOS SATÉLITES] │ Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos. │ ▼ [Passo 3: Validar a Classe do Satélite] │ Verificar se o modificador pertence a uma das 5 classes: │ [Artigo | Numeral | Pronome Adjetivo | Adjetivo | Locução Adjetiva] │ ▼ [Passo 4: Teste de Acessoriedade] │ Confirmar que o termo não atua como predicativo indispensável à predicação verbal. │ ▼ Classificação Concluída: ADJUNTO ADNOMINAL"
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A06-G07-003",
+              "EXP-IP-A06-G07-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-VOC-01",
-          "conceptA": "Aposto Explicativo (com vírgula)",
-          "conceptB": "Aposto Especificativo (sem vírgula)",
-          "decisiveDifference": "O aposto explicativo explica um termo já determinado e exige vírgulas; o aposto especificativo individualiza um substantivo comum genérico (rio, cidade, rua, poeta, presidente) e NÃO aceita vírgula.",
-          "minimalPair": {
-            "sentenceA": "Castro Alves, o poeta dos escravos, nasceu na Bahia. (Explicativo: com vírgula)",
-            "sentenceB": "O poeta Castro Alves nasceu na Bahia. (Especificativo: sem vírgula)",
-            "difference": "Explicativo (entre vírgulas) vs Especificativo (sem pontuação)."
+          "entityId": "CONTRAST-IP-A06-G07-001",
+          "title": "Tabela 1: Adjunto Adverbial vs. Objeto Indireto",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Nome próprio após substantivo comum (o professor João) = Especificativo SEM vírgula.",
-          "pitfall": "Colocar vírgula em 'O presidente, Lula, viajou' quando se pretende especificar o presidente."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 1: Adjunto Adverbial vs. Objeto Indireto",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A06-G07-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G07-002",
+              "table": {
+                "tableId": "TABLE-IP-A06-G07-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério de Comparação",
+                  "Adjunto Adverbial",
+                  "Objeto Indireto"
+                ],
+                "rows": [
+                  [
+                    "Status Sintático",
+                    "TermoAcessório (periférico / dispensável).",
+                    "TermoIntegrante (complemento obrigatório por regência)."
+                  ],
+                  [
+                    "Natureza da Preposição",
+                    "PreposiçãoNocional (carrega semântica própria de modo, causa, tempo, lugar).",
+                    "PreposiçãoGramatical (mero conector imposto pelo verbo transitivo indireto)."
+                  ],
+                  [
+                    "Critério Decisivo",
+                    "Apresenta\"cheiro de circunstância\" (fofoca oracional).",
+                    "Completa a predicação de um VTI sem constituir valor adverbial."
+                  ],
+                  [
+                    "Predicações Compatíveis",
+                    "Coexiste com qualquer verbo (VI, VTD, VTI, VTDI, VL).",
+                    "Ocorre exclusivamente com verbosVTI e VTDI."
+                  ],
+                  [
+                    "Exemplos Paradigmáticos",
+                    "Morrem de exaustão (causa) / Estudou no curso (lugar).",
+                    "Gostou do filme (OI) / Respondi ao chefe (OI)."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A06-G07-001",
+              "EXP-IP-A06-G07-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A06-G07-002",
+          "title": "Tabela 2: Adjunto Adnominal vs. Adjunto Adverbial",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 2: Adjunto Adnominal vs. Adjunto Adverbial",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A06-G07-002",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G07-003",
+              "table": {
+                "tableId": "TABLE-IP-A06-G07-003",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério de Comparação",
+                  "Adjunto Adnominal",
+                  "Adjunto Adverbial"
+                ],
+                "rows": [
+                  [
+                    "Termo Modificado (Âncora)",
+                    "Substantivo exclusivamente.",
+                    "Verbo, Adjetivo ou Advérbio."
+                  ],
+                  [
+                    "Papel Semântico",
+                    "Delimitar, individuar, determinar e restringir o substantivo.",
+                    "Expressar circunstância (tempo, lugar, modo, intensidade, etc.)."
+                  ],
+                  [
+                    "Classes Morfológicas",
+                    "Artigo, Numeral, Adjetivo, Locução Adjetiva, Pronome Adjetivo.",
+                    "Advérbio (1 palavra) ou Locução Adverbial (2+ palavras)."
+                  ],
+                  [
+                    "Metáfora Didática",
+                    "\"Satélite / Enfeite do Nome\".",
+                    "\"Fofoca da Oração\"."
+                  ],
+                  [
+                    "Exemplos Paradigmáticos",
+                    "As minhas sugestões / Coração sem amor.",
+                    "Falavam muito / Sairemos muito tarde."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A06-G07-002",
+              "EXP-IP-A06-G07-052"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "CONTRAST-IP-A06-G07-003",
+          "title": "Tabela 3: Adjunto Adnominal vs. Predicativo do Objeto",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
+          },
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "syntactic",
+          "conceptA": "Tabela 3: Adjunto Adnominal vs. Predicativo do Objeto",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A06-G07-003",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G07-004",
+              "table": {
+                "tableId": "TABLE-IP-A06-G07-004",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Critério de Comparação",
+                  "Adjunto Adnominal",
+                  "Predicativo do Objeto"
+                ],
+                "rows": [
+                  [
+                    "Natureza na Predicação",
+                    "Termoacessório dispensável.",
+                    "Termoessencial integrante da predicação verbo-nominal."
+                  ],
+                  [
+                    "Vínculo com o Verbo",
+                    "Não afeta a transitividade nem o sentido do verbo.",
+                    "Altera a acepção lexical e a predicação verbal se for suprimido."
+                  ],
+                  [
+                    "Teste da Supressão",
+                    "Sua remoção preserva a ação e o significado verbal.",
+                    "Sua remoção descaracteriza o sentido do verbo (ex.:qualificar $\\rightarrow$ convocar)."
+                  ],
+                  [
+                    "Exemplo de Contraste",
+                    "Chamou o amigo sincero (sincero = Adj. Adnominal).",
+                    "Chamou o amigo de ingrato (de ingrato = Predicativo do Objeto)."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A06-G07-003",
+              "EXP-IP-A06-G07-053"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-VOC-01",
-          "title": "Aposto Referente a uma Oração Inteira",
-          "sentence": "O acusado confessou todo o esquema de corrupção, fato que estarreceu os presentes.",
-          "analysis": "'Fato que estarreceu os presentes' funciona como Aposto Oracional (sintetiza e comenta todo o conteúdo da oração anterior).",
-          "pedagogicalTakeaway": "O aposto pode ter como referente uma proposição oracional inteira, e não apenas uma palavra isolada.",
-          "targetLO": "LO-A06-G07-01"
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-001",
+          "title": "EX-A06-G07-001 — Demonstração: Modificador de Verbo (Falavam muito)",
+          "statement": "Estrutura analisada: Falavam muito.\nAplicação do Método da Seta: muito $\\rightarrow$ aponta para falavam (Verbo).\nClassificação Morfossintática: Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade.",
+          "prompt": "Estrutura analisada: Falavam muito.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "Falavam muito."
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método da Seta",
+              "rationale": "muito $\\rightarrow$ aponta para falavam (Verbo)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação Morfossintática",
+              "rationale": "Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade."
+            }
+          ],
+          "result": "Classificação Morfossintática: Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura analisada: Falavam muito.\nAplicação do Método da Seta: muito $\\rightarrow$ aponta para falavam (Verbo).\nClassificação Morfossintática: Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-001 — Demonstração: Modificador de Verbo (Falavam muito) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-001 — Demonstração: Modificador de Verbo (Falavam muito).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-001 — Demonstração: Modificador de Verbo (Falavam muito).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura analisada: Falavam muito.",
+                "Aplicação do Método da Seta: muito $\\rightarrow$ aponta para falavam (Verbo).",
+                "Classificação Morfossintática: Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-001",
+              "EXP-IP-A06-G07-054"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-002",
+          "title": "EX-A06-G07-002 — Demonstração: Modificador de Adjetivo (Homem muito bom)",
+          "statement": "Estrutura analisada: Homem muito bom.\nAplicação do Método da Seta: Pergunta-se: \"É homem muito ou muito bom?\". A seta de muito aponta para bom (Adjetivo).\nClassificação Morfossintática: Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade (intensificador de adjetivo).",
+          "prompt": "Estrutura analisada: Homem muito bom.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "Homem muito bom."
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método da Seta",
+              "rationale": "Pergunta-se: \"É homem muito ou muito bom?\". A seta de muito aponta para bom (Adjetivo)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação Morfossintática",
+              "rationale": "Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade (intensificador de adjetivo)."
+            }
+          ],
+          "result": "Classificação Morfossintática: Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade (intensificador de adjetivo).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura analisada: Homem muito bom.\nAplicação do Método da Seta: Pergunta-se: \"É homem muito ou muito bom?\". A seta de muito aponta para bom (Adjetivo).\nClassificação Morfossintática: Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade (intensificador de adjetivo).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-002 — Demonstração: Modificador de Adjetivo (Homem muito bom) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-002 — Demonstração: Modificador de Adjetivo (Homem muito bom).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-002 — Demonstração: Modificador de Adjetivo (Homem muito bom).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura analisada: Homem muito bom.",
+                "Aplicação do Método da Seta: Pergunta-se: \"É homem muito ou muito bom?\". A seta de muito aponta para bom (Adjetivo).",
+                "Classificação Morfossintática: Morfologia: Advérbio de intensidade | Sintaxe: Adjunto Adverbial de intensidade (intensificador de adjetivo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-002",
+              "EXP-IP-A06-G07-055"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-003",
+          "title": "EX-A06-G07-003 — Demonstração: Modificador de Advérbio (Saíram muito cedo)",
+          "statement": "Estrutura analisada: Saíram muito cedo.\nAnálise dos Modificadores:\ncedo $\\rightarrow$ aponta para saíram (Verbo) $\\rightarrow$ Adjunto Adverbial de tempo (Advérbio).\nmuito $\\rightarrow$ aponta para cedo (Advérbio) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).",
+          "prompt": "Estrutura analisada: Saíram muito cedo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "Saíram muito cedo."
+            },
+            {
+              "order": 2,
+              "action": "Análise dos Modificadores",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "cedo $\\rightarrow$ aponta para saíram (Verbo) $\\rightarrow$ Adjunto Adverbial de tempo (Advérbio).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "muito $\\rightarrow$ aponta para cedo (Advérbio) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).",
+              "rationale": null
+            }
+          ],
+          "result": "muito $\\rightarrow$ aponta para cedo (Advérbio) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura analisada: Saíram muito cedo.\nAnálise dos Modificadores:\ncedo $\\rightarrow$ aponta para saíram (Verbo) $\\rightarrow$ Adjunto Adverbial de tempo (Advérbio).\nmuito $\\rightarrow$ aponta para cedo (Advérbio) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-003 — Demonstração: Modificador de Advérbio (Saíram muito cedo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-003 — Demonstração: Modificador de Advérbio (Saíram muito cedo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-003 — Demonstração: Modificador de Advérbio (Saíram muito cedo).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura analisada: Saíram muito cedo.",
+                "Análise dos Modificadores:",
+                "cedo $\\rightarrow$ aponta para saíram (Verbo) $\\rightarrow$ Adjunto Adverbial de tempo (Advérbio).",
+                "muito $\\rightarrow$ aponta para cedo (Advérbio) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-003",
+              "EXP-IP-A06-G07-056"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-004",
+          "title": "EX-A06-G07-004 — Demonstração: Multiplicidade de Locuções Adverbiais (Foi para o parque com a amiga pela manhã)",
+          "statement": "Estrutura analisada: Foi para o parque com a amiga pela manhã.\nAnálise das 3 Locuções:\npara o parque: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Lugar | Adjunto Adverbial de Lugar.\ncom a amiga: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Companhia | Adjunto Adverbial de Companhia.\npela manhã: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Tempo | Adjunto Adverbial de Tempo.",
+          "prompt": "Estrutura analisada: Foi para o parque com a amiga pela manhã.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura analisada",
+              "rationale": "Foi para o parque com a amiga pela manhã."
+            },
+            {
+              "order": 2,
+              "action": "Análise das 3 Locuções",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "para o parque",
+              "rationale": "aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Lugar | Adjunto Adverbial de Lugar."
+            },
+            {
+              "order": 4,
+              "action": "com a amiga",
+              "rationale": "aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Companhia | Adjunto Adverbial de Companhia."
+            },
+            {
+              "order": 5,
+              "action": "pela manhã",
+              "rationale": "aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Tempo | Adjunto Adverbial de Tempo."
+            }
+          ],
+          "result": "pela manhã: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Tempo | Adjunto Adverbial de Tempo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura analisada: Foi para o parque com a amiga pela manhã.\nAnálise das 3 Locuções:\npara o parque: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Lugar | Adjunto Adverbial de Lugar.\ncom a amiga: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Companhia | Adjunto Adverbial de Companhia.\npela manhã: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Tempo | Adjunto Adverbial de Tempo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-004 — Demonstração: Multiplicidade de Locuções Adverbiais (Foi para o parque com a amiga pela manhã) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-004 — Demonstração: Multiplicidade de Locuções Adverbiais (Foi para o parque com a amiga pela manhã).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-004 — Demonstração: Multiplicidade de Locuções Adverbiais (Foi para o parque com a amiga pela manhã).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura analisada: Foi para o parque com a amiga pela manhã.",
+                "Análise das 3 Locuções:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "para o parque: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Lugar | Adjunto Adverbial de Lugar.",
+                "com a amiga: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Companhia | Adjunto Adverbial de Companhia.",
+                "pela manhã: aponta para Foi (Verbo) $\\rightarrow$ Locução Adverbial de Tempo | Adjunto Adverbial de Tempo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-004",
+              "EXP-IP-A06-G07-057"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-005",
+          "title": "EX-A06-G07-005 — Exercício de Fixação: V018 (Itens a, b, c, d)",
+          "statement": "a) Aquela aluna estuda muito. $\\rightarrow$ muito aponta para estuda (V.) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).\nb) Decidimos comprar a casa amanhã. $\\rightarrow$ amanhã aponta para comprar (V.) $\\rightarrow$ Adjunto Adverbial de tempo (Advérbio).\nc) Talvez seja melhor sairmos. $\\rightarrow$ Talvez aponta para seja (V.) $\\rightarrow$ Adjunto Adverbial de dúvida (Advérbio). (Melhor é adjetivo predicativo).\nd) Sairemos muito tarde. $\\rightarrow$ tarde aponta para Sairemos (V., Adj. Adv. Tempo) e muito aponta para tarde (Adv., Adj. Adv. Intensidade).",
+          "prompt": "a) Aquela aluna estuda muito. $\\rightarrow$ muito aponta para estuda (V.) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "a) Aquela aluna estuda muito. $\\rightarrow$ muito aponta para estuda (V.) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "b) Decidimos comprar a casa amanhã. $\\rightarrow$ amanhã aponta para comprar (V.) $\\rightarrow$ Adjunto Adverbial de tempo (Advérbio).",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "c) Talvez seja melhor sairmos. $\\rightarrow$ Talvez aponta para seja (V.) $\\rightarrow$ Adjunto Adverbial de dúvida (Advérbio). (Melhor é adjetivo predicativo).",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "d) Sairemos muito tarde. $\\rightarrow$ tarde aponta para Sairemos (V., Adj. Adv. Tempo) e muito aponta para tarde (Adv., Adj. Adv. Intensidade).",
+              "rationale": null
+            }
+          ],
+          "result": "d) Sairemos muito tarde. $\\rightarrow$ tarde aponta para Sairemos (V., Adj. Adv. Tempo) e muito aponta para tarde (Adv., Adj. Adv. Intensidade).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'a) Aquela aluna estuda muito. $\\rightarrow$ muito aponta para estuda (V.) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).\nb) Decidimos comprar a casa amanhã. $\\rightarrow$ amanhã aponta para comprar (V.) $\\rightarrow$ Adjunto Adverbial de tempo (Advérbio).\nc) Talvez seja melhor sairmos. $\\rightarrow$ Talvez aponta para seja (V.) $\\rightarrow$ Adjunto Adverbial de dúvida (Advérbio). (Melhor é adjetivo predicativo).\nd) Sairemos muito tarde. $\\rightarrow$ tarde aponta para Sairemos (V., Adj. Adv. Tempo) e muito aponta para tarde (Adv., Adj. Adv. Intensidade).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-005 — Exercício de Fixação: V018 (Itens a, b, c, d) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-005 — Exercício de Fixação: V018 (Itens a, b, c, d).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-005 — Exercício de Fixação: V018 (Itens a, b, c, d).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "a) Aquela aluna estuda muito. $\\rightarrow$ muito aponta para estuda (V.) $\\rightarrow$ Adjunto Adverbial de intensidade (Advérbio).",
+                "b) Decidimos comprar a casa amanhã. $\\rightarrow$ amanhã aponta para comprar (V.) $\\rightarrow$ Adjunto Adverbial de tempo (Advérbio).",
+                "c) Talvez seja melhor sairmos. $\\rightarrow$ Talvez aponta para seja (V.) $\\rightarrow$ Adjunto Adverbial de dúvida (Advérbio). (Melhor é adjetivo predicativo).",
+                "d) Sairemos muito tarde. $\\rightarrow$ tarde aponta para Sairemos (V., Adj. Adv. Tempo) e muito aponta para tarde (Adv., Adj. Adv. Intensidade)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-005",
+              "EXP-IP-A06-G07-058"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-006",
+          "title": "EX-A06-G07-006 — Demonstração: Causa vs. Verbo Intransitivo (Algumas palavras morrem de exaustão)",
+          "statement": "Estrutura: Algumas palavras morrem [de exaustão].\nAnálise: de exaustão indica o motivo/causa (\"por causa da exaustão\"). A preposição de é nocional causal.\nClassificação: Adjunto Adverbial de causa (o verbo morrem é VI).",
+          "prompt": "Estrutura: Algumas palavras morrem [de exaustão].",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura",
+              "rationale": "Algumas palavras morrem [de exaustão]."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "de exaustão indica o motivo/causa (\"por causa da exaustão\"). A preposição de é nocional causal."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Adjunto Adverbial de causa (o verbo morrem é VI)."
+            }
+          ],
+          "result": "Classificação: Adjunto Adverbial de causa (o verbo morrem é VI).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura: Algumas palavras morrem [de exaustão].\nAnálise: de exaustão indica o motivo/causa (\"por causa da exaustão\"). A preposição de é nocional causal.\nClassificação: Adjunto Adverbial de causa (o verbo morrem é VI).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-006 — Demonstração: Causa vs. Verbo Intransitivo (Algumas palavras morrem de exaustão) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-006 — Demonstração: Causa vs. Verbo Intransitivo (Algumas palavras morrem de exaustão).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-006 — Demonstração: Causa vs. Verbo Intransitivo (Algumas palavras morrem de exaustão).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura: Algumas palavras morrem [de exaustão].",
+                "Análise: de exaustão indica o motivo/causa (\"por causa da exaustão\"). A preposição de é nocional causal.",
+                "Classificação: Adjunto Adverbial de causa (o verbo morrem é VI)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-006",
+              "EXP-IP-A06-G07-059"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-007",
+          "title": "EX-A06-G07-007 — Demonstração: Modo com Preposição Nocional (Vamos resolver o problema com calma)",
+          "statement": "Estrutura: Vamos resolver [o problema] [com calma].\nAnálise: com calma expressa o modo/jeito (calmamente).\nClassificação: Adjunto Adverbial de modo (o problema é objeto direto de resolver).",
+          "prompt": "Estrutura: Vamos resolver [o problema] [com calma].",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura",
+              "rationale": "Vamos resolver [o problema] [com calma]."
+            },
+            {
+              "order": 2,
+              "action": "Análise",
+              "rationale": "com calma expressa o modo/jeito (calmamente)."
+            },
+            {
+              "order": 3,
+              "action": "Classificação",
+              "rationale": "Adjunto Adverbial de modo (o problema é objeto direto de resolver)."
+            }
+          ],
+          "result": "Classificação: Adjunto Adverbial de modo (o problema é objeto direto de resolver).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura: Vamos resolver [o problema] [com calma].\nAnálise: com calma expressa o modo/jeito (calmamente).\nClassificação: Adjunto Adverbial de modo (o problema é objeto direto de resolver).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-007 — Demonstração: Modo com Preposição Nocional (Vamos resolver o problema com calma) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-007 — Demonstração: Modo com Preposição Nocional (Vamos resolver o problema com calma).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-007 — Demonstração: Modo com Preposição Nocional (Vamos resolver o problema com calma).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura: Vamos resolver [o problema] [com calma].",
+                "Análise: com calma expressa o modo/jeito (calmamente).",
+                "Classificação: Adjunto Adverbial de modo (o problema é objeto direto de resolver)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-007",
+              "EXP-IP-A06-G07-060"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-008",
+          "title": "EX-A06-G07-008 — Demonstração: Objeto Indireto com Preposição Gramatical (Respondi ao chefe / Suspeitamos da sua atitude)",
+          "statement": "Estrutura 1: Respondi [ao chefe]. $\\rightarrow$ Não há circunstância. ao chefe completa o verbo VTI responder $\\rightarrow$ Objeto Indireto.\nEstrutura 2: Suspeitamos [da sua atitude]. $\\rightarrow$ Sem circunstância. da sua atitude completa o verbo VTI suspeitar $\\rightarrow$ Objeto Indireto.",
+          "prompt": "Estrutura 1: Respondi [ao chefe]. $\\rightarrow$ Não há circunstância. ao chefe completa o verbo VTI responder $\\rightarrow$ Objeto Indireto.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Estrutura 1",
+              "rationale": "Respondi [ao chefe]. $\\rightarrow$ Não há circunstância. ao chefe completa o verbo VTI responder $\\rightarrow$ Objeto Indireto."
+            },
+            {
+              "order": 2,
+              "action": "Estrutura 2",
+              "rationale": "Suspeitamos [da sua atitude]. $\\rightarrow$ Sem circunstância. da sua atitude completa o verbo VTI suspeitar $\\rightarrow$ Objeto Indireto."
+            }
+          ],
+          "result": "Estrutura 2: Suspeitamos [da sua atitude]. $\\rightarrow$ Sem circunstância. da sua atitude completa o verbo VTI suspeitar $\\rightarrow$ Objeto Indireto.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Estrutura 1: Respondi [ao chefe]. $\\rightarrow$ Não há circunstância. ao chefe completa o verbo VTI responder $\\rightarrow$ Objeto Indireto.\nEstrutura 2: Suspeitamos [da sua atitude]. $\\rightarrow$ Sem circunstância. da sua atitude completa o verbo VTI suspeitar $\\rightarrow$ Objeto Indireto.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-008 — Demonstração: Objeto Indireto com Preposição Gramatical (Respondi ao chefe / Suspeitamos da sua atitude) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-008 — Demonstração: Objeto Indireto com Preposição Gramatical (Respondi ao chefe / Suspeitamos da sua atitude).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-008 — Demonstração: Objeto Indireto com Preposição Gramatical (Respondi ao chefe / Suspeitamos da sua atitude).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura 1: Respondi [ao chefe]. $\\rightarrow$ Não há circunstância. ao chefe completa o verbo VTI responder $\\rightarrow$ Objeto Indireto.",
+                "Estrutura 2: Suspeitamos [da sua atitude]. $\\rightarrow$ Sem circunstância. da sua atitude completa o verbo VTI suspeitar $\\rightarrow$ Objeto Indireto."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-008",
+              "EXP-IP-A06-G07-061"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-009",
+          "title": "EX-A06-G07-009 — Exercício de Fixação: V019 (Itens a até e)",
+          "statement": "a) Viajaremos pela manhã. $\\rightarrow$ pela manhã (tempo) $\\rightarrow$ Adjunto Adverbial de tempo.\nb) Ela gostou do filme. $\\rightarrow$ do filme (completa VTI gostar) $\\rightarrow$ Objeto Indireto.\nc) A aluna resolveu a questão com rapidez. $\\rightarrow$ com rapidez (modo) $\\rightarrow$ Adjunto Adverbial de modo.\nd) Aquelas pessoas carecem de atenção. $\\rightarrow$ de atenção (completa VTI carecer) $\\rightarrow$ Objeto Indireto.\ne) “Entre por essa porta agora...” $\\rightarrow$ por essa porta (lugar/ponto de passagem) $\\rightarrow$ Adjunto Adverbial de lugar.",
+          "prompt": "a) Viajaremos pela manhã. $\\rightarrow$ pela manhã (tempo) $\\rightarrow$ Adjunto Adverbial de tempo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "a) Viajaremos pela manhã. $\\rightarrow$ pela manhã (tempo) $\\rightarrow$ Adjunto Adverbial de tempo.",
+              "rationale": null
+            },
+            {
+              "order": 2,
+              "action": "b) Ela gostou do filme. $\\rightarrow$ do filme (completa VTI gostar) $\\rightarrow$ Objeto Indireto.",
+              "rationale": null
+            },
+            {
+              "order": 3,
+              "action": "c) A aluna resolveu a questão com rapidez. $\\rightarrow$ com rapidez (modo) $\\rightarrow$ Adjunto Adverbial de modo.",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "d) Aquelas pessoas carecem de atenção. $\\rightarrow$ de atenção (completa VTI carecer) $\\rightarrow$ Objeto Indireto.",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "e) “Entre por essa porta agora...” $\\rightarrow$ por essa porta (lugar/ponto de passagem) $\\rightarrow$ Adjunto Adverbial de lugar.",
+              "rationale": null
+            }
+          ],
+          "result": "e) “Entre por essa porta agora...” $\\rightarrow$ por essa porta (lugar/ponto de passagem) $\\rightarrow$ Adjunto Adverbial de lugar.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'a) Viajaremos pela manhã. $\\rightarrow$ pela manhã (tempo) $\\rightarrow$ Adjunto Adverbial de tempo.\nb) Ela gostou do filme. $\\rightarrow$ do filme (completa VTI gostar) $\\rightarrow$ Objeto Indireto.\nc) A aluna resolveu a questão com rapidez. $\\rightarrow$ com rapidez (modo) $\\rightarrow$ Adjunto Adverbial de modo.\nd) Aquelas pessoas carecem de atenção. $\\rightarrow$ de atenção (completa VTI carecer) $\\rightarrow$ Objeto Indireto.\ne) “Entre por essa porta agora...” $\\rightarrow$ por essa porta (lugar/ponto de passagem) $\\rightarrow$ Adjunto Adverbial de lugar.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-009 — Exercício de Fixação: V019 (Itens a até e) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-009 — Exercício de Fixação: V019 (Itens a até e).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-009 — Exercício de Fixação: V019 (Itens a até e).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "a) Viajaremos pela manhã. $\\rightarrow$ pela manhã (tempo) $\\rightarrow$ Adjunto Adverbial de tempo.",
+                "b) Ela gostou do filme. $\\rightarrow$ do filme (completa VTI gostar) $\\rightarrow$ Objeto Indireto.",
+                "c) A aluna resolveu a questão com rapidez. $\\rightarrow$ com rapidez (modo) $\\rightarrow$ Adjunto Adverbial de modo.",
+                "d) Aquelas pessoas carecem de atenção. $\\rightarrow$ de atenção (completa VTI carecer) $\\rightarrow$ Objeto Indireto.",
+                "e) “Entre por essa porta agora...” $\\rightarrow$ por essa porta (lugar/ponto de passagem) $\\rightarrow$ Adjunto Adverbial de lugar."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-009",
+              "EXP-IP-A06-G07-062"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-010",
+          "title": "EX-A06-G07-010 — Estudo de Caso #ANOTAAÍ: Foi ao curso vs. Estudou português no curso",
+          "statement": "Oração 1: Ele foi [ao curso]. $\\rightarrow$ ao curso = Adjunto Adverbial de lugar (foi = VI).\nOração 2: Ele estudou [português] [no curso].\nno curso = Adjunto Adverbial de lugar;\nportuguês = Objeto Direto (OD);\nTransitividade de estudou = Verbo Transitivo Direto (VTD) (e NUNCA VTDI).",
+          "prompt": "Oração 1: Ele foi [ao curso]. $\\rightarrow$ ao curso = Adjunto Adverbial de lugar (foi = VI).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Oração 1",
+              "rationale": "Ele foi [ao curso]. $\\rightarrow$ ao curso = Adjunto Adverbial de lugar (foi = VI)."
+            },
+            {
+              "order": 2,
+              "action": "Oração 2",
+              "rationale": "Ele estudou [português] [no curso]."
+            },
+            {
+              "order": 3,
+              "action": "no curso = Adjunto Adverbial de lugar;",
+              "rationale": null
+            },
+            {
+              "order": 4,
+              "action": "português = Objeto Direto (OD);",
+              "rationale": null
+            },
+            {
+              "order": 5,
+              "action": "Transitividade de estudou = Verbo Transitivo Direto (VTD) (e NUNCA VTDI).",
+              "rationale": null
+            }
+          ],
+          "result": "Transitividade de estudou = Verbo Transitivo Direto (VTD) (e NUNCA VTDI).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Oração 1: Ele foi [ao curso]. $\\rightarrow$ ao curso = Adjunto Adverbial de lugar (foi = VI).\nOração 2: Ele estudou [português] [no curso].\nno curso = Adjunto Adverbial de lugar;\nportuguês = Objeto Direto (OD);\nTransitividade de estudou = Verbo Transitivo Direto (VTD) (e NUNCA VTDI).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-010 — Estudo de Caso #ANOTAAÍ: Foi ao curso vs. Estudou português no curso sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-010 — Estudo de Caso #ANOTAAÍ: Foi ao curso vs. Estudou português no curso.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-010 — Estudo de Caso #ANOTAAÍ: Foi ao curso vs. Estudou português no curso.",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-010",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Oração 1: Ele foi [ao curso]. $\\rightarrow$ ao curso = Adjunto Adverbial de lugar (foi = VI).",
+                "Oração 2: Ele estudou [português] [no curso].",
+                "no curso = Adjunto Adverbial de lugar;",
+                "português = Objeto Direto (OD);",
+                "Transitividade de estudou = Verbo Transitivo Direto (VTD) (e NUNCA VTDI)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-010",
+              "EXP-IP-A06-G07-063"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-011",
+          "title": "EX-A06-G07-011 — Demonstração Teórica: Modificadores Nominais Básicos",
+          "statement": "Dois alunos: Dois (Numeral) $\\rightarrow$ Adjunto Adnominal.\nO aluno / Um aluno: O / Um (Artigo) $\\rightarrow$ Adjunto Adnominal.\nAluno inteligente: inteligente (Adjetivo) $\\rightarrow$ Adjunto Adnominal.\nAluno de inteligência: de inteligência (Locução Adjetiva) $\\rightarrow$ Adjunto Adnominal.\nMeu aluno / Aquele aluno / Algum aluno: Meu / Aquele / Algum (Pronomes Adjetivos) $\\rightarrow$ Adjuntos Adnominais.\nInvasão dos mosquitos: dos mosquitos (Locução Adjetiva) $\\rightarrow$ Adjunto Adnominal do substantivo invasão.",
+          "prompt": "Dois alunos: Dois (Numeral) $\\rightarrow$ Adjunto Adnominal.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Dois alunos",
+              "rationale": "Dois (Numeral) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 2,
+              "action": "O aluno / Um aluno",
+              "rationale": "O / Um (Artigo) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 3,
+              "action": "Aluno inteligente",
+              "rationale": "inteligente (Adjetivo) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 4,
+              "action": "Aluno de inteligência",
+              "rationale": "de inteligência (Locução Adjetiva) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 5,
+              "action": "Meu aluno / Aquele aluno / Algum aluno",
+              "rationale": "Meu / Aquele / Algum (Pronomes Adjetivos) $\\rightarrow$ Adjuntos Adnominais."
+            }
+          ],
+          "result": "Invasão dos mosquitos: dos mosquitos (Locução Adjetiva) $\\rightarrow$ Adjunto Adnominal do substantivo invasão.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Dois alunos: Dois (Numeral) $\\rightarrow$ Adjunto Adnominal.\nO aluno / Um aluno: O / Um (Artigo) $\\rightarrow$ Adjunto Adnominal.\nAluno inteligente: inteligente (Adjetivo) $\\rightarrow$ Adjunto Adnominal.\nAluno de inteligência: de inteligência (Locução Adjetiva) $\\rightarrow$ Adjunto Adnominal.\nMeu aluno / Aquele aluno / Algum aluno: Meu / Aquele / Algum (Pronomes Adjetivos) $\\rightarrow$ Adjuntos Adnominais.\nInvasão dos mosquitos: dos mosquitos (Locução Adjetiva) $\\rightarrow$ Adjunto Adnominal do substantivo invasão.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-011 — Demonstração Teórica: Modificadores Nominais Básicos sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-011 — Demonstração Teórica: Modificadores Nominais Básicos.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-011 — Demonstração Teórica: Modificadores Nominais Básicos.",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-011",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Dois alunos: Dois (Numeral) $\\rightarrow$ Adjunto Adnominal.",
+                "O aluno / Um aluno: O / Um (Artigo) $\\rightarrow$ Adjunto Adnominal.",
+                "Aluno inteligente: inteligente (Adjetivo) $\\rightarrow$ Adjunto Adnominal.",
+                "Aluno de inteligência: de inteligência (Locução Adjetiva) $\\rightarrow$ Adjunto Adnominal.",
+                "Meu aluno / Aquele aluno / Algum aluno: Meu / Aquele / Algum (Pronomes Adjetivos) $\\rightarrow$ Adjuntos Adnominais.",
+                "Invasão dos mosquitos: dos mosquitos (Locução Adjetiva) $\\rightarrow$ Adjunto Adnominal do substantivo invasão."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-011",
+              "EXP-IP-A06-G07-064"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-012",
+          "title": "EX-A06-G07-012 — Análise: Artigos e Pronomes no Sujeito (As minhas sugestões eram simples)",
+          "statement": "Sujeito: As minhas sugestões $\\rightarrow$ Núcleo: sugestões (Substantivo).\nSatélite 1: As (Artigo definido) $\\rightarrow$ Adjunto Adnominal.\nSatélite 2: minhas (Pronome possessivo) $\\rightarrow$ Adjunto Adnominal.\nPredicado Nominal: eram simples $\\rightarrow$ simples (Adjetivo) = Predicativo do Sujeito. Não admite adjunto adnominal subordinado a si.",
+          "prompt": "Sujeito: As minhas sugestões $\\rightarrow$ Núcleo: sugestões (Substantivo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Sujeito",
+              "rationale": "As minhas sugestões $\\rightarrow$ Núcleo: sugestões (Substantivo)."
+            },
+            {
+              "order": 2,
+              "action": "Satélite 1",
+              "rationale": "As (Artigo definido) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 3,
+              "action": "Satélite 2",
+              "rationale": "minhas (Pronome possessivo) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 4,
+              "action": "Predicado Nominal",
+              "rationale": "eram simples $\\rightarrow$ simples (Adjetivo) = Predicativo do Sujeito. Não admite adjunto adnominal subordinado a si."
+            }
+          ],
+          "result": "Predicado Nominal: eram simples $\\rightarrow$ simples (Adjetivo) = Predicativo do Sujeito. Não admite adjunto adnominal subordinado a si.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Sujeito: As minhas sugestões $\\rightarrow$ Núcleo: sugestões (Substantivo).\nSatélite 1: As (Artigo definido) $\\rightarrow$ Adjunto Adnominal.\nSatélite 2: minhas (Pronome possessivo) $\\rightarrow$ Adjunto Adnominal.\nPredicado Nominal: eram simples $\\rightarrow$ simples (Adjetivo) = Predicativo do Sujeito. Não admite adjunto adnominal subordinado a si.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-012 — Análise: Artigos e Pronomes no Sujeito (As minhas sugestões eram simples) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-012 — Análise: Artigos e Pronomes no Sujeito (As minhas sugestões eram simples).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-012 — Análise: Artigos e Pronomes no Sujeito (As minhas sugestões eram simples).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-012",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sujeito: As minhas sugestões $\\rightarrow$ Núcleo: sugestões (Substantivo).",
+                "Satélite 1: As (Artigo definido) $\\rightarrow$ Adjunto Adnominal.",
+                "Satélite 2: minhas (Pronome possessivo) $\\rightarrow$ Adjunto Adnominal.",
+                "Predicado Nominal: eram simples $\\rightarrow$ simples (Adjetivo) = Predicativo do Sujeito. Não admite adjunto adnominal subordinado a si."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-012",
+              "EXP-IP-A06-G07-065"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-013",
+          "title": "EX-A06-G07-013 — Análise: Locução Adjetiva e Adjuntos no Predicativo (Coração sem amor é um campo minado)",
+          "statement": "Sujeito: Coração sem amor $\\rightarrow$ Núcleo: Coração (Substantivo).\nSatélite: sem amor (Locução adjetiva) $\\rightarrow$ Adjunto Adnominal.\nPredicativo do Sujeito: um campo minado $\\rightarrow$ Núcleo: campo (Substantivo).\nSatélite 1: um (Artigo indefinido) $\\rightarrow$ Adjunto Adnominal.\nSatélite 2: minado (Adjetivo) $\\rightarrow$ Adjunto Adnominal.",
+          "prompt": "Sujeito: Coração sem amor $\\rightarrow$ Núcleo: Coração (Substantivo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Sujeito",
+              "rationale": "Coração sem amor $\\rightarrow$ Núcleo: Coração (Substantivo)."
+            },
+            {
+              "order": 2,
+              "action": "Satélite",
+              "rationale": "sem amor (Locução adjetiva) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 3,
+              "action": "Predicativo do Sujeito",
+              "rationale": "um campo minado $\\rightarrow$ Núcleo: campo (Substantivo)."
+            },
+            {
+              "order": 4,
+              "action": "Satélite 1",
+              "rationale": "um (Artigo indefinido) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 5,
+              "action": "Satélite 2",
+              "rationale": "minado (Adjetivo) $\\rightarrow$ Adjunto Adnominal."
+            }
+          ],
+          "result": "Satélite 2: minado (Adjetivo) $\\rightarrow$ Adjunto Adnominal.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Sujeito: Coração sem amor $\\rightarrow$ Núcleo: Coração (Substantivo).\nSatélite: sem amor (Locução adjetiva) $\\rightarrow$ Adjunto Adnominal.\nPredicativo do Sujeito: um campo minado $\\rightarrow$ Núcleo: campo (Substantivo).\nSatélite 1: um (Artigo indefinido) $\\rightarrow$ Adjunto Adnominal.\nSatélite 2: minado (Adjetivo) $\\rightarrow$ Adjunto Adnominal.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-013 — Análise: Locução Adjetiva e Adjuntos no Predicativo (Coração sem amor é um campo minado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-013 — Análise: Locução Adjetiva e Adjuntos no Predicativo (Coração sem amor é um campo minado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-013 — Análise: Locução Adjetiva e Adjuntos no Predicativo (Coração sem amor é um campo minado).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-013",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sujeito: Coração sem amor $\\rightarrow$ Núcleo: Coração (Substantivo).",
+                "Satélite: sem amor (Locução adjetiva) $\\rightarrow$ Adjunto Adnominal.",
+                "Predicativo do Sujeito: um campo minado $\\rightarrow$ Núcleo: campo (Substantivo).",
+                "Satélite 1: um (Artigo indefinido) $\\rightarrow$ Adjunto Adnominal.",
+                "Satélite 2: minado (Adjetivo) $\\rightarrow$ Adjunto Adnominal."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-013",
+              "EXP-IP-A06-G07-066"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-014",
+          "title": "EX-A06-G07-014 — Análise: Substantivação vs. Predicativo (O velho ranzinza arquejava cansado)",
+          "statement": "Sujeito: O velho ranzinza $\\rightarrow$ Núcleo: velho (Substantivo).\nSatélite 1: O (Artigo) $\\rightarrow$ Adjunto Adnominal.\nSatélite 2: ranzinza (Adjetivo) $\\rightarrow$ Adjunto Adnominal.\nPredicado: arquejava cansado $\\rightarrow$ cansado = Predicativo do Sujeito (estado momentâneo; não é adjunto adnominal).",
+          "prompt": "Sujeito: O velho ranzinza $\\rightarrow$ Núcleo: velho (Substantivo).",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Sujeito",
+              "rationale": "O velho ranzinza $\\rightarrow$ Núcleo: velho (Substantivo)."
+            },
+            {
+              "order": 2,
+              "action": "Satélite 1",
+              "rationale": "O (Artigo) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 3,
+              "action": "Satélite 2",
+              "rationale": "ranzinza (Adjetivo) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 4,
+              "action": "Predicado",
+              "rationale": "arquejava cansado $\\rightarrow$ cansado = Predicativo do Sujeito (estado momentâneo; não é adjunto adnominal)."
+            }
+          ],
+          "result": "Predicado: arquejava cansado $\\rightarrow$ cansado = Predicativo do Sujeito (estado momentâneo; não é adjunto adnominal).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Sujeito: O velho ranzinza $\\rightarrow$ Núcleo: velho (Substantivo).\nSatélite 1: O (Artigo) $\\rightarrow$ Adjunto Adnominal.\nSatélite 2: ranzinza (Adjetivo) $\\rightarrow$ Adjunto Adnominal.\nPredicado: arquejava cansado $\\rightarrow$ cansado = Predicativo do Sujeito (estado momentâneo; não é adjunto adnominal).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-014 — Análise: Substantivação vs. Predicativo (O velho ranzinza arquejava cansado) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-014 — Análise: Substantivação vs. Predicativo (O velho ranzinza arquejava cansado).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-014 — Análise: Substantivação vs. Predicativo (O velho ranzinza arquejava cansado).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-014",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sujeito: O velho ranzinza $\\rightarrow$ Núcleo: velho (Substantivo).",
+                "Satélite 1: O (Artigo) $\\rightarrow$ Adjunto Adnominal.",
+                "Satélite 2: ranzinza (Adjetivo) $\\rightarrow$ Adjunto Adnominal.",
+                "Predicado: arquejava cansado $\\rightarrow$ cansado = Predicativo do Sujeito (estado momentâneo; não é adjunto adnominal)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-014",
+              "EXP-IP-A06-G07-067"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-015",
+          "title": "EX-A06-G07-015 — Análise Paradigmática: Adjunto Adnominal vs. Predicativo do Objeto (Chamou o amigo de ingrato)",
+          "statement": "Objeto Direto: o amigo $\\rightarrow$ Núcleo: amigo (Substantivo); Satélite: o (Artigo) $\\rightarrow$ Adjunto Adnominal.\nTermo Qualificador: de ingrato $\\rightarrow$ Predicativo do Objeto (P.O.). Sua retirada transforma o sentido de chamar de \"qualificar\" para \"convocar\", demonstrando ser elemento integrante da predicação, e não acessório.",
+          "prompt": "Objeto Direto: o amigo $\\rightarrow$ Núcleo: amigo (Substantivo); Satélite: o (Artigo) $\\rightarrow$ Adjunto Adnominal.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Objeto Direto",
+              "rationale": "o amigo $\\rightarrow$ Núcleo: amigo (Substantivo); Satélite: o (Artigo) $\\rightarrow$ Adjunto Adnominal."
+            },
+            {
+              "order": 2,
+              "action": "Termo Qualificador",
+              "rationale": "de ingrato $\\rightarrow$ Predicativo do Objeto (P.O.). Sua retirada transforma o sentido de chamar de \"qualificar\" para \"convocar\", demonstrando ser elemento integrante da predicação, e não acessório."
+            }
+          ],
+          "result": "Termo Qualificador: de ingrato $\\rightarrow$ Predicativo do Objeto (P.O.). Sua retirada transforma o sentido de chamar de \"qualificar\" para \"convocar\", demonstrando ser elemento integrante da predicação, e não acessório.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Objeto Direto: o amigo $\\rightarrow$ Núcleo: amigo (Substantivo); Satélite: o (Artigo) $\\rightarrow$ Adjunto Adnominal.\nTermo Qualificador: de ingrato $\\rightarrow$ Predicativo do Objeto (P.O.). Sua retirada transforma o sentido de chamar de \"qualificar\" para \"convocar\", demonstrando ser elemento integrante da predicação, e não acessório.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-015 — Análise Paradigmática: Adjunto Adnominal vs. Predicativo do Objeto (Chamou o amigo de ingrato) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-015 — Análise Paradigmática: Adjunto Adnominal vs. Predicativo do Objeto (Chamou o amigo de ingrato).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-015 — Análise Paradigmática: Adjunto Adnominal vs. Predicativo do Objeto (Chamou o amigo de ingrato).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-015",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Objeto Direto: o amigo $\\rightarrow$ Núcleo: amigo (Substantivo); Satélite: o (Artigo) $\\rightarrow$ Adjunto Adnominal.",
+                "Termo Qualificador: de ingrato $\\rightarrow$ Predicativo do Objeto (P.O.). Sua retirada transforma o sentido de chamar de \"qualificar\" para \"convocar\", demonstrando ser elemento integrante da predicação, e não acessório."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-015",
+              "EXP-IP-A06-G07-068"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A06-G07-016",
+          "title": "EX-A06-G07-016 — Análise: Preposição Pura em Adjunto Adverbial (As suas mãos tremiam de medo)",
+          "statement": "Sujeito: As suas mãos $\\rightarrow$ Núcleo: mãos (Substantivo); Satélites: As (Artigo) e suas (Pronome) $\\rightarrow$ Adjuntos Adnominais.\nPredicado: tremiam de medo $\\rightarrow$ de medo = Adjunto Adverbial de causa. A palavra de é preposição pura e não exerce função de adjunto adnominal de medo.",
+          "prompt": "Sujeito: As suas mãos $\\rightarrow$ Núcleo: mãos (Substantivo); Satélites: As (Artigo) e suas (Pronome) $\\rightarrow$ Adjuntos Adnominais.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Sujeito",
+              "rationale": "As suas mãos $\\rightarrow$ Núcleo: mãos (Substantivo); Satélites: As (Artigo) e suas (Pronome) $\\rightarrow$ Adjuntos Adnominais."
+            },
+            {
+              "order": 2,
+              "action": "Predicado",
+              "rationale": "tremiam de medo $\\rightarrow$ de medo = Adjunto Adverbial de causa. A palavra de é preposição pura e não exerce função de adjunto adnominal de medo."
+            }
+          ],
+          "result": "Predicado: tremiam de medo $\\rightarrow$ de medo = Adjunto Adverbial de causa. A palavra de é preposição pura e não exerce função de adjunto adnominal de medo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Sujeito: As suas mãos $\\rightarrow$ Núcleo: mãos (Substantivo); Satélites: As (Artigo) e suas (Pronome) $\\rightarrow$ Adjuntos Adnominais.\nPredicado: tremiam de medo $\\rightarrow$ de medo = Adjunto Adverbial de causa. A palavra de é preposição pura e não exerce função de adjunto adnominal de medo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A06-G07-016 — Análise: Preposição Pura em Adjunto Adverbial (As suas mãos tremiam de medo) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A06-G07-016 — Análise: Preposição Pura em Adjunto Adverbial (As suas mãos tremiam de medo).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A06-G07-016 — Análise: Preposição Pura em Adjunto Adverbial (As suas mãos tremiam de medo).",
+          "exampleId": "WORKED_EXAMPLE-IP-A06-G07-016",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sujeito: As suas mãos $\\rightarrow$ Núcleo: mãos (Substantivo); Satélites: As (Artigo) e suas (Pronome) $\\rightarrow$ Adjuntos Adnominais.",
+                "Predicado: tremiam de medo $\\rightarrow$ de medo = Adjunto Adverbial de causa. A palavra de é preposição pura e não exerce função de adjunto adnominal de medo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A06-G07-016",
+              "EXP-IP-A06-G07-069"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -171,51 +1673,295 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-VOC-01",
-          "title": "Vocativo Grita, Vírgula Isola!",
-          "content": "Vocativo é a pessoa que você CHAMA no megafone! Chamou alguém? Bota a VÍRGULA para isolar o grito!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Pontuação mandatória do vocativo.",
-          "limitations": "Vocativo nunca se confunde com o sujeito.",
-          "text": "O vocativo é termo de chamamento que exige isolamento por vírgula obrigatória."
+          "title": "Mantra de Fixação: Adjuntos Adverbial e Adnominal",
+          "content": "Mantra do Sujeito: Ache o verbo e pergunte 'Quem/O que + verbo?'. O sujeito nunca vem preposicionado!",
+          "text": "Mantra do Sujeito: Ache o verbo e pergunte 'Quem/O que + verbo?'. O sujeito nunca vem preposicionado!"
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-VOC-01",
-          "title": "A Vírgula Indevida no Aposto Especificativo",
-          "trigger": "Substantivos comuns seguidos do nome próprio correspondente.",
-          "whyItFails": "O aluno coloca vírgula achando que todo aposto deve vir entre vírgulas (*O escritor, José Saramago, ganhou o Nobel).",
-          "correctApproach": "O aposto especificativo (que restringe o substantivo genérico: o escritor José Saramago; a cidade de Curitiba; o rio Amazonas) NUNCA PODE SER SEPARADO POR VÍRGULA.",
-          "bankTechnique": "Inserir vírgulas em apostos especificativos e perguntar se o período está gramaticalmente correto.",
-          "counterRule": "O aposto especificativo rejeita categoricamente o uso de vírgulas."
+          "entityId": "WARN-A06-G07-001",
+          "title": "A Falácia do Macete da Invariabilidade do Adjunto Adverbial",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falácia do Macete da Invariabilidade do Adjunto Adverbial.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falácia do Macete da Invariabilidade do Adjunto Adverbial.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falácia do Macete da Invariabilidade do Adjunto Adverbial no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falácia do Macete da Invariabilidade do Adjunto Adverbial.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falácia do Macete da Invariabilidade do Adjunto Adverbial.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falácia do Macete da Invariabilidade do Adjunto Adverbial para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falácia do Macete da Invariabilidade do Adjunto Adverbial.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falácia do Macete da Invariabilidade do Adjunto Adverbial.",
+          "trapId": "WARN-A06-G07-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Achar que \"o adjunto adverbial é sempre invariável\" e descartar termos circunstanciais que contenham palavras flexionadas.",
+                "Correção: O advérbio (palavra única) é invariável. O adjunto adverbial (função sintática), quando exercido por locução adverbial, pode conter termos plenamente variáveis em sua estrutura interna (às pressas, pelas manhãs, com os amigos). Invariabilidade não é teste para função sintática."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G07-001",
+              "EXP-IP-A06-G07-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G07-002",
+          "title": "O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\")",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\").",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\").",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\") no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\").",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\").",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\") para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\").",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Erro do Teste Mecânico da Omissão (\"Tampar com a Mãozinha\").",
+          "trapId": "WARN-A06-G07-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Cobrir a expressão preposicionada com a mão para verificar se a frase \"continua com sentido\".",
+                "Correção: Em frases como Morrem de exaustão ou Foi ao curso, suprimir o termo gera empobrecimento comunicativo, mas não quebra a sintaxe da predicação verbal. O critério seguro é semântico: se o termo veicula causa ou lugar, trata-se de adjunto adverbial com verbo intransitivo, e não de objeto indireto."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G07-002",
+              "EXP-IP-A06-G07-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G07-003",
+          "title": "O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\".",
+          "trapId": "WARN-A06-G07-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Classificar como objeto indireto qualquer expressão introduzida por preposição conectada a um verbo.",
+                "Correção: A preposição introduz objeto indireto somente quando for meramente gramatical/relacional imposta por regência de VTI. Se for nocional (com valor modal, causal, espacial, temporal), introduz adjunto adverbial."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G07-003",
+              "EXP-IP-A06-G07-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G07-004",
+          "title": "A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*)",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*).",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*).",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*) no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*).",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*).",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*) para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*).",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*).",
+          "trapId": "WARN-A06-G07-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Decorar a fórmula errônea \"quem estuda, estuda algo (OD) em algum lugar (OI)\", rotulando o verbo como VTDI.",
+                "Correção: Em algum lugar (no curso) é Adjunto Adverbial de Lugar. O verbo estudar é Transitivo Direto (VTD) e possui apenas um complemento verbal (português = OD)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G07-004",
+              "EXP-IP-A06-G07-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G07-005",
+          "title": "Falsa Conexão Sintática por Mera Adjacência Física",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falsa Conexão Sintática por Mera Adjacência Física.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falsa Conexão Sintática por Mera Adjacência Física.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falsa Conexão Sintática por Mera Adjacência Física no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falsa Conexão Sintática por Mera Adjacência Física.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falsa Conexão Sintática por Mera Adjacência Física.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falsa Conexão Sintática por Mera Adjacência Física para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falsa Conexão Sintática por Mera Adjacência Física.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falsa Conexão Sintática por Mera Adjacência Física.",
+          "trapId": "WARN-A06-G07-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Ligar o termo circunstancial à palavra imediatamente vizinha por mera proximidade física.",
+                "Exemplo do erro: Em Foi para o parque com a amiga, ligar com a amiga a parque.",
+                "Correção: Dialogar logicamente com a frase: a pessoa foi com a amiga (a companhia qualifica o ato verbal foi). A seta deve apontar para o verbo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G07-005",
+              "EXP-IP-A06-G07-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G07-006",
+          "title": "Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro de Vincular Adjunto Adnominal a Adjetivos, Verbos ou Advérbios.",
+          "trapId": "WARN-A06-G07-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Tentar buscar adjuntos adnominais subordinados a adjetivos que funcionam como predicativo (ex.: simples em As sugestões eram simples).",
+                "Correção: O adjunto adnominal liga-se única e exclusivamente a substantivos. Adjetivos não admitem adjuntos adnominais dependentes."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G07-006",
+              "EXP-IP-A06-G07-TRAP-006"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A06-G07-007",
+          "title": "A Pegadinha do Predicativo do Objeto com Preposição Facultativa",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em A Pegadinha do Predicativo do Objeto com Preposição Facultativa.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de A Pegadinha do Predicativo do Objeto com Preposição Facultativa.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a A Pegadinha do Predicativo do Objeto com Preposição Facultativa no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de A Pegadinha do Predicativo do Objeto com Preposição Facultativa.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de A Pegadinha do Predicativo do Objeto com Preposição Facultativa.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de A Pegadinha do Predicativo do Objeto com Preposição Facultativa para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de A Pegadinha do Predicativo do Objeto com Preposição Facultativa.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de A Pegadinha do Predicativo do Objeto com Preposição Facultativa.",
+          "trapId": "WARN-A06-G07-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Tratar a expressão preposicionada de ingrato em Chamou o amigo de ingrato como locução adjetiva e classificá-la como adjunto adnominal.",
+                "Correção: Como a remoção de de ingrato mutila o sentido lexical de chamar (transformando \"qualificar\" em \"convocar\"), o termo é Predicativo do Objeto, de presença necessária para a predicação."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A06-G07-007",
+              "EXP-IP-A06-G07-TRAP-007"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Vocativo",
-          "shortDefinition": "Termo sintaticamente independente usado para chamar, interpelar ou invocar o interlocutor.",
-          "fullDefinition": "Unidade discursiva autônoma de natureza apelativa que não mantém relação sintática de dependência com o sujeito ou o predicado da oração, devendo figurar obrigatoriamente isolada por sinais de pontuação (vírgula, ponto de exclamação).",
-          "domain": "Sintaxe e Pragmática",
-          "commonMisconception": "Pensar que o vocativo faz parte do sujeito da oração."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Natureza Sintática e Conexões do Adjunto Adverbial**: Definição ou ideia central\nO adjunto adverbial é a função sintática acessória cuja finalidade exclusiva é modificar ou intensificar o sentido de três classes gramaticais: verbo (conexão predominante), adjetivo e outro advérbio.\nExplicação consolidada\nNa análise sintática descritiva, o adjunto adverbial atua como um modificador oracional dependente. Embora a tradição escolar muitas vezes restrinja a explicação ao verbo, a professora demonstra que essa ênfase é meramente estatística (na maioria dos casos práticos de prova, a seta aponta para um verbo, motivo pelo qual a palavra VERBO recebe um asterisco no esquema). Contudo, o adjunto adverbial conecta-se legitimamente a:\nVerbo: adicionando circunstâncias de tempo, lugar, modo, causa, intensidade, finalidade, etc. (Falavam muito);\nAdjetivo: atuando como intensificador ou qualificador de uma característica (Homem muito bom);\nOutro Advérbio: graduando a intensidade de outra circunstância adverbial já expressa (Saíram muito cedo).\nCritérios de reconhecimento ou aplicação\nLocalizar o vocábulo sob análise e rastrear a qual termo ele se subordina hierarquicamente.\nVerificar se a palavra receptora da subordinação pertence à tríade: Verbo, Adjetivo ou Advérbio.\nSe a palavra modificada for um substantivo, o termo jamais será adjunto adverbial (será adjunto adnominal ou predicativo).\nExemplos e contraexemplos\nEles falavam muito: \"muito\" modifica o verbo falavam $\\rightarrow$ Adjunto Adverbial de intensidade.\nAquele homem era muito bom: \"muito\" modifica o adjetivo bom $\\rightarrow$ Adjunto Adverbial de intensidade.\nOs alunos saíram muito cedo: \"cedo\" modifica o verbo saíram (Adjunto Adverbial de tempo) e \"muito\" modifica o advérbio cedo $\\rightarrow$ Adjunto Adverbial de intensidade.\nContraexemplo: Muitos homens falaram: \"muitos\" modifica o substantivo homens $\\rightarrow$ Adjunto Adnominal (Pronome Indefinido), e não adjunto adverbial.\nExceções ou limites\nO adjunto adverbial nunca se conecta diretamente a substantivos ou pronomes substantivos.\nRelações\nAplica: .\nContrasta com: .\nEvidenciado visualmente por: VIS-A06-G07-001.",
+            "**Semântica do Adjunto Adverbial: Circunstância, Metáfora da Fofoca e Mnemônico 6C + FTP**: Definição ou ideia central\nO adjunto adverbial é a materialização sintática da circunstância. Didaticamente, a circunstância é definida como o \"cheiro de fofoca\" da oração: uma informação contextual acessória que enriquece a mensagem, mas que é estruturalmente dispensável para a completude sintática primária do predicado.\nExplicação consolidada\nComo termo acessório, o adjunto adverbial não é exigido pela transitividade direta ou indireta do verbo. Ele responde a perguntas periféricas sobre o evento: Quando? Onde? Como? Por que motivo? Para que fim? Com quem? Sob que condição?. Para sistematizar o vasto rol de circunstâncias adverbiais cobradas em provas e correlacioná-las à morfologia das conjunções e à sintaxe do período composto, consolida-se o mnemônico 6C + FTP:\n6C (Seis circunstâncias iniciadas pela letra C):\nCausa (morrem de exaustão);\nCondição (sem estudo, não haverá aprovação);\nConcessão (apesar da chuva, saímos);\nComparação (agia como um mestre);\nConsequência (comeu a ponto de passar mal);\nConformidade (agiu segundo as regras).\nFTP (Três circunstâncias iniciadas por F, T, P):\nFinalidade (estudou para a prova);\nTempo (sairemos amanhã / pela manhã);\nProporção (à medida que subia, cansava).\nCircunstâncias Básicas Adicionais: Além do mnemônico 6C + FTP, somam-se as circunstâncias fundamentais: Lugar (foi ao curso / no parque), Modo (com calma / rapidamente), Intensidade (falava muito), Companhia (saiu com a amiga), Dúvida (talvez venha), Negação (não veio), Afirmação (certamente virá) e Instrumento (feriu-se com a faca).\nCritérios de reconhecimento ou aplicação\nIdentificar se o termo expressa uma relação semântica circunstancial (fofoca/detalhe).\nTestar se o termo responde às perguntas-guia contextuais.\nAvaliar a dispensabilidade estrutural: a remoção do termo não deve quebrar a sintaxe básica (embora altere a completude informacional).\nRelações\nExpande: .Termo associado: TERM-A06-G07-013.",
+            "**Morfossintaxe Adverbial: Advérbio vs. Locução Adverbial e a Falácia da Invariabilidade**: Definição ou ideia central\nA análise de termos circunstanciais exige a diferenciação nítida entre Morfologia (Classe Gramatical) e Sintaxe (Função Sintática). No plano morfológico, distingue-se Advérbio (vocábulo único) de Locução Adverbial (expressão com duas ou mais palavras). No plano sintático, ambas as estruturas exercem invariavelmente a mesma função: Adjunto Adverbial.\nExplicação consolidada\nOs critérios de classe e de função acumulam-se e não se anulam. Um termo pode ser simultaneamente advérbio na morfologia e adjunto adverbial na sintaxe:\nAdvérbio (Morfologia): Vocábulo único de valor circunstancial (muito, cedo, amanhã, talvez). Como classe gramatical, o advérbio é estritamente invariável (não flexiona em gênero nem número).\nLocução Adverbial (Morfologia): Conjunto de duas ou mais palavras (tipicamente preposição + substantivo/adjetivo) exercendo papel circunstancial adverbial (pela manhã, com a amiga, às vezes, para o parque).\nAdjunto Adverbial (Sintaxe): Rótulo relacional único que abarca tanto advérbios quanto locuções adverbiais.\nA Falácia da Invariabilidade: É incorreto afirmar que \"o adjunto adverbial é invariável\". O rótulo de adjunto adverbial aplica-se a locuções adverbiais que contêm, em sua composição interna, palavras perfeitamente variáveis (artigos definidos femininos, substantivos no plural, etc., como em com as amigas, às pressas, pelas manhãs). Portanto, a invariabilidade é propriedade mórfica do advérbio, e nunca critério diagnóstico da função sintática de adjunto adverbial.\nCritérios de reconhecimento ou aplicação\nContar a extensão do termo: 1 palavra circunstancial = Advérbio; 2+ palavras preposicionadas = Locução Adverbial.\nSintaticamente, classificar ambos como Adjunto Adverbial de [Circunstância].\nRejeitar macetes que tentem julgar a função sintática pela flexão interna de locuções.Citação associada: QUOTE-A06-G07-002, QUOTE-A06-G07-003.",
+            "**Distinção Sintática entre Termo Acessório (Adjunto Adverbial) e Termo Integrante (Objeto Indireto)**: Definição ou ideia central\nA oposição entre Adjunto Adverbial e Objeto Indireto repousa na hierarquia sintática oracional: o adjunto adverbial é um termo acessório (acompanhante circunstancial periférico), enquanto o objeto indireto (ou complemento indireto) é um termo integrante (necessário para preencher e completar a predicação de verbos transitivos indiretos).\nExplicação consolidada\nAdjunto Adverbial (Acessório): Deriva da raiz ad-junto (\"o que vem junto\"). Acompanha o verbo veiculando uma circunstância (causa, modo, lugar, tempo). Não é exigido pela regência sintática verbal, atuando como elemento facultativo da estrutura oracional.\nObjeto Indireto (Integrante / Complemento Indireto): Denomina-se integrante porque integra a predicação incompleta de um verbo transitivo indireto (VTI). É regido obrigatoriamente por preposição imposta pela sintaxe verbal (ex.: gostar de, carecer de, obedecer a, responder a).\nO Mito da Omissão Mecânica (\"Tampar com a mãozinha\"): A professora desmantela a técnica tradicional de tampar o termo para ver se \"faz falta\". Muitos adjuntos adverbiais (como circunstâncias de lugar em verbos de movimento ou causas mortais, ex.: morrer de exaustão, ir ao curso) causam forte quebra informativa quando suprimidos, levando o aluno desavisado a rotulá-los erroneamente como complementos obrigatórios (objetos indiretos). A distinção deve ser técnica e semântica, baseada no valor da preposição e no tipo de relação estabelecida.\nCritérios de reconhecimento ou aplicação\nLançar a seta do termo preposicionado para o verbo.\nAplicar o teste do \"cheiro de circunstância\": a expressão veicula ideia circunstancial evidente (tempo, modo, causa, lugar, etc.)?\nSe veicular circunstância $\\rightarrow$ Adjunto Adverbial (termo acessório).\nSe não veicular circunstância e apenas fechar o sentido transitivo do verbo exigido por regência $\\rightarrow$ Objeto Indireto (termo integrante).\nRelações\nAplica: .Termos associados: TERM-A06-G07-003, TERM-A06-G07-004.",
+            "**Preposição Nocional vs. Preposição Gramatical e Compatibilidade Verbal dos Adjuntos**: Definição ou ideia central\nA natureza do vínculo preposicionado é definida pelo caráter nocional (carregado de valor semântico autônomo) ou gramatical (mero conectivo relacional de regência) da preposição. Além disso, os adjuntos adverbiais são \"fofocas\" universalmente compatíveis com qualquer classe de predicação verbal (VI, VTD, VTI, VTDI e VL).\nExplicação consolidada\nPreposição Nocional (Semântica): Possui conteúdo léxico-semântico próprio que expressa a circunstância por si mesma. Em morrem de exaustão, a preposição de veicula valor de causa (por motivo de); em com calma, a preposição com expressa modo (calmamente); em por essa porta, por indica lugar/passagem. A preposição nocional introduz adjunto adverbial.\nPreposição Gramatical (Relacional pura): É exigida mecanicamente pelo verbo transitivo indireto para conectar-se ao seu alvo/paciente, sem indicar circunstância temporal, espacial, causal ou modal. Em gostou do filme, respondi ao chefe, carecem de atenção, as preposições de e a são meros elos regenciais introdutores de objeto indireto.\nUniversalidade dos Adjuntos Adverbiais: É um mito crer que adjuntos adverbiais só ocorrem com verbos intransitivos (VI). Como informações circunstanciais adicionais, eles podem acoplar-se a:\nVerbos Intransitivos: Viajaremos pela manhã (VI + Adj. Adv. Tempo);\nVerbos Transitivos Diretos: Estudou português no curso (VTD + OD + Adj. Adv. Lugar);\nVerbos Transitivos Indiretos: Gostou do filme ontem (VTI + OI + Adj. Adv. Tempo);\nVerbos de Ligação: Estava calma em casa (VL + Pred. do Sujeito + Adj. Adv. Lugar).\nDesconstrução da Falsa Bitransitividade: Na frase Ele estudou português no curso, o verbo estudar é Transitivo Direto (VTD), português é Objeto Direto (OD) e no curso é Adjunto Adverbial de Lugar. É erro grave classificar essa estrutura como VTDI sob a premissa de que \"quem estuda, estuda algo (OD) em algum lugar (OI)\". A semântica rege a sintaxe: no curso é lugar, logo é adjunto adverbial.\nRelações\nFundamenta: .Evidenciado visualmente por: VIS-A06-G07-003.",
+            "**Posição Sintática do Adjunto Adverbial: Ordem Direta vs. Deslocada**: Definição ou ideia central\nA posição canônica do adjunto adverbial na ordem direta da língua portuguesa é o final da oração (estrutura: Sujeito + Verbo + Complementos + Adjuntos Adverbiais). Quando o adjunto adverbial é posicionado no início ou no meio do período, passa a ser classificado como adjunto adverbial deslocado.\nExplicação consolidada\nA compreensão da mobilidade posicional do adjunto adverbial é tratada pela professora como um patrimônio conceitual indispensável para matérias futuras de alta complexidade em concursos públicos:\nOrdem Direta: Na estrutura natural da frase (A aluna resolveu a questão com rapidez), o adjunto modal com rapidez localiza-se ao final. Nessa posição canônica, o emprego de vírgula não é utilizado.\nAdjunto Deslocado: Quando a circunstância é antecipada (Com rapidez, a aluna resolveu a questão) ou intercalada (A aluna, com rapidez, resolveu a questão), altera-se a topologia sintática padrão, o que ativa as regras específicas de pontuação (obrigatoriedade ou facultatividade do isolamento por vírgulas conforme a extensão do termo).\nRelevância Pedagógica: O domínio do reconhecimento semântico do adjunto é pré-requisito mandatório para não errar pontuação nas provas de concurso.\nRelações\nRelacionado a: ORAL-A06-G07-001.\nAplica-se em: Pontuação e sintaxe do período.",
+            "**Conceito, Função e Natureza Sintática do Adjunto Adnominal**: Definição ou ideia central\nO adjunto adnominal é o termo acessório da oração cuja função sintática exclusiva é limitar, individuar, determinar, caracterizar ou especificar a significação de um substantivo, retirando-o da generalização abstrata.\nExplicação consolidada\nEtimologia e Âncora Sintática: Adnominal provém de junto ao nome. No rigor da sintaxe descritiva adotada pela professora, \"nome\" equivale estritamente a substantivo. O adjunto adnominal sempre, incondicionalmente, liga-se a um substantivo.\nMetáfora dos Satélites: O adjunto adnominal atua como um satélite, um enfeite ou um acessório do nome. Ele orbita o substantivo sem constituir o núcleo do sintagma nominal.\nMecanismo Semântico de Delimitação: Limitar significa individualizar. O substantivo aluno abarca a totalidade genérica dos estudantes. Ao associar adjuntos adnominais (o aluno, dois alunos, aluno inteligente, aluno de inteligência), o falante restringe a referência a indivíduos específicos, quantificados ou qualificados.\nCritérios de reconhecimento ou aplicação\nIdentificar se o termo subordinado aponta diretamente para um substantivo.\nVerificar se a função do termo é determinar, especificar ou restringir esse substantivo.\nSe a palavra receptora for adjetivo, verbo ou advérbio, fica categoricamente proibida a classificação como adjunto adnominal.\nRelações\nContrasta com: (Adjunto Adverbial).\nExpande-se em: .\nTermos associados: TERM-A06-G07-002, TERM-A06-G07-010, TERM-A06-G07-011.",
+            "**Morfossintaxe do Adjunto Adnominal: As 5 Classes Satélites**: Definição ou ideia central\nO adjunto adnominal é uma função sintática desempenhada exclusivamente por cinco classes/estruturas morfológicas quando subordinadas a um substantivo: Artigo, Numeral, Adjetivo, Locução Adjetiva e Pronome Adjetivo.\nExplicação consolidada\nA professora sistematiza a correspondência exaustiva entre Morfologia e Sintaxe para o adjunto adnominal no quadro \"#ANOTA AÍ\":\nArtigo (Morfologia): Artigos definidos (o, a, os, as) e indefinidos (um, uma, uns, umas) exercem função de adjunto adnominal ao determinar ou indeterminar o substantivo (O aluno, Um campo).\nNumeral (Morfologia): Numerais adjetivos que delimitam a quantidade ou ordem do substantivo (Dois alunos, Primeiro colocado).\nAdjetivo (Morfologia): Palavra única que qualifica ou caracteriza diretamente o substantivo (Aluno inteligente, Velho ranzinza, Campo minado).\nLocução Adjetiva (Morfologia): Expressão preposicionada composta por duas ou mais palavras (preposição + substantivo/adjetivo) que desempenha papel equivalente a um adjetivo (Aluno de inteligência, Coração sem amor, Invasão dos mosquitos).\nPronome Adjetivo (Morfologia): Qualquer pronome que acompanhe um substantivo modificando-o:\nPossessivo: meu aluno, minhas sugestões, suas mãos;\nDemonstrativo: aquele aluno, esta casa;\nIndefinido: algum aluno, muitas pessoas, certos dias.\nCritérios de reconhecimento ou aplicação\nLocalizar o satélite do substantivo.\nEnquadrar o satélite em uma das 5 categorias morfológicas autorizadas.\nAtenção: Preposições isoladas, conjunções, advérbios e pronomes substantivos (que substituem o nome) não atuam como adjunto adnominal.\nRelações\nAplica: .\nEvidenciado visualmente por: VIS-A06-G07-004.\nTermo associado: TERM-A06-G07-007.",
+            "**Distribuição Sintática Irrestrita do Adjunto Adnominal**: Definição ou ideia central\nO adjunto adnominal não possui fixação posicional nem restrição sintática a uma função específica: ele pode ocorrer no interior de qualquer termo da oração (Sujeito, Objeto Direto, Objeto Indireto, Predicativo, Complemento Nominal, Agente da Passiva ou Adjunto Adverbial), bastando que esse termo seja encabeçado por um substantivo núcleo que receba satélites.\nExplicação consolidada\nO adjunto adnominal é um termo interno de sintagmas nominais maiores. Quando se isola um sujeito como As minhas sugestões, o sujeito engloba todo o sintagma, mas na microanálise interna, sugestões é o substantivo núcleo, enquanto As (artigo) e minhas (pronome) são adjuntos adnominais internos a esse sujeito.\nNo predicativo do sujeito um campo minado, o núcleo é campo, e os vocábulos um (artigo) e minado (adjetivo) são adjuntos adnominais internos ao predicativo.\nNo objeto direto o amigo, amigo é o núcleo e o é adjunto adnominal interno ao objeto.\nA regra de ouro é: \"Onde houver substantivo, antes ou depois do verbo, pode haver adjunto adnominal\".\nRelações\nAplica: .\nDemonstrado em: , , .",
+            "**Distinção Crítica entre Adjunto Adnominal e Predicativo (Acessoriedade vs. Essencialidade)**: Definição ou ideia central\nA linha divisória entre o Adjunto Adnominal e o Predicativo (do Sujeito ou do Objeto) fundamenta-se no caráter acessório e dispensável do primeiro versus a essencialidade semântico-predicativa do segundo para sustentar a regência e o sentido original do verbo.\nExplicação consolidada\nAdjunto Adnominal como Acessório: Por ser mero satélite restritivo do substantivo, sua supressão não quebra a predicação verbal nem transforma o sentido do verbo.\nPredicativo como Termo de Significação Necessária: O predicativo atribui uma qualidade ou estado circunstancial e participa ativamente da predicação (formando predicado nominal ou verbo-nominal).\nCaso Paradigmático (Chamou o amigo de ingrato):\nNa oração Chamou o amigo de ingrato, a expressão preposicionada de ingrato qualifica o substantivo amigo. Contudo, ela não é adjunto adnominal, mas sim Predicativo do Objeto (P.O.).\nTeste da Supressão Semântica do Verbo: Ao retirar de ingrato, a oração converte-se em Chamou o amigo. Essa eliminação altera drasticamente a semântica e a transitividade do verbo chamar:\nSentido 1 (Com Predicativo): Significa qualificar, tachar, apelidar (Chamou o amigo de ingrato = qualificou o amigo como ingrato; exige predicativo do objeto regido ou não por preposição facultativa);\nSentido 2 (Sem Predicativo): Significa convocar, dirigir a palavra (Chamou o amigo = disse \"amigo, venha cá\"; verbo transitivo direto puro).\nConclusão: como de ingrato não pode ser retirado sem mutilar o sentido pretendido e a própria estrutura predicativa do verbo, ele é termo integrante/necessário da predicação (Predicativo do Objeto), e não termo acessório (Adjunto Adnominal).\nCritérios de reconhecimento ou aplicação\nAplicar o teste da supressão do termo modificador.\nSe a retirada do termo alterar o significado lexical do verbo e o tipo de predicado $\\rightarrow$ Predicativo.\nSe a retirada mantiver a mesma predicação verbal, apenas retirando uma delimitação do nome $\\rightarrow$ Adjunto Adnominal.\nRelações\nGera o alerta: .\nDemonstrado em: .\nEvidenciado visualmente por: VIS-A06-G07-005.\nTermos associados: TERM-A06-G07-012."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-VOC-01",
-          "question": "Qual a diferença sintática entre: 'Os alunos responderam a chamada' e 'Alunos, respondam a chamada'?",
-          "keyPoints": [
-            "1ª frase: 'Os alunos' é o SUJEITO da oração (concorda com 'responderam' no indicativo).",
-            "2ª frase: 'Alunos' é o VOCATIVO (chamamento isolado por vírgula; o sujeito de 'respondam' é 'vocês' oculto)."
-          ],
-          "targetConcept": "Vocativo vs Sujeito",
-          "targetLO": "LO-A06-G07-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Adjuntos Adverbial e Adnominal?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

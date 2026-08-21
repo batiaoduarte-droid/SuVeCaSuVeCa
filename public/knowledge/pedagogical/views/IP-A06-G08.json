@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A06-G08",
     "lessonId": "A06",
     "title": "Predicativo do Sujeito e Predicativo do Objeto",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A06-G08",
@@ -82,6 +83,76 @@
               "text": "O predicativo expressa um estado ou atributo conferido a um termo nuclear da oração."
             }
           ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G08-001",
+              "table": {
+                "tableId": "TABLE-IP-A06-G08-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Critério de Análise",
+                  "Adjunto Adnominal",
+                  "Predicativo do Objeto"
+                ],
+                "rows": [
+                  [
+                    "Vínculo Sintático",
+                    "Intra-sintagmático (satélite direto do substantivo).",
+                    "Oracional (integrante da predicação; extensão do verbo)."
+                  ],
+                  [
+                    "Teste de Supressão",
+                    "A retirada mantém intacto o sentido da ação do verbo.",
+                    "A retirada corrompe a mensagem ou transmuta o verbo."
+                  ],
+                  [
+                    "Teste de Deslocamento",
+                    "Não admite deslocamento para antes do objeto.",
+                    "Admite perfeitamente deslocamento contíguo ao verbo."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G08-004",
+              "table": {
+                "tableId": "TABLE-IP-A06-G08-004",
+                "caption": "Explicação consolidada e Análise do Par Mínimo",
+                "headers": [
+                  "Critério de Análise",
+                  "Adjunto Adnominal",
+                  "Predicativo do Objeto"
+                ],
+                "rows": [
+                  [
+                    "Vínculo Sintático",
+                    "Intra-sintagmático (satélite direto do substantivo).",
+                    "Oracional (integrante da predicação; extensão do verbo)."
+                  ],
+                  [
+                    "Teste de Supressão",
+                    "A retirada mantém intacto o sentido da ação do verbo.",
+                    "A retirada corrompe a mensagem ou transmuta o verbo."
+                  ],
+                  [
+                    "Teste de Deslocamento",
+                    "Não admite deslocamento para antes do objeto.",
+                    "Admite perfeitamente deslocamento contíguo ao verbo."
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
         }
       ]
     },
@@ -99,6 +170,67 @@
             "O povo elegeu Carlos presidente.",
             "O juiz julgou a ação improcedente."
           ]
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A06-G08-002",
+          "table": {
+            "tableId": "TABLE-IP-A06-G08-002",
+            "caption": "Regras canônicas",
+            "headers": [
+              "Termo Sintático",
+              "Posição Estrutural",
+              "Classes Morfológicas Admitidas",
+              "Natureza Relacional",
+              "Verbos Admitidos",
+              "ID Detalhado"
+            ],
+            "rows": [
+              [
+                "Adjunto Adnominal",
+                "Junto ao substantivo (qualquer termo da oração).",
+                "Artigo, Numeral, Pronome, Adjetivo, Locução Adjetiva.",
+                "Termo Acessório (satélite nominal).",
+                "Qualquer transitividade (não dialoga com a predicação).",
+                "KB-A06-G08-002"
+              ],
+              [
+                "Predicativo do Sujeito",
+                "Obrigatoriamente no predicado.",
+                "Substantivo, Adjetivo, Pronome Reto, Numeral.",
+                "Termo Qualificador Bivalente (aponta para o sujeito).",
+                "Verbos de Ligação, Intransitivos e Transitivos.",
+                "KB-A06-G08-003"
+              ],
+              [
+                "Predicativo do Objeto (Direto)",
+                "Obrigatoriamente no predicado.",
+                "Adjetivo / Locução Adjetiva (podendo vir preposicionado), Substantivo.",
+                "Termo Integrante (Extensão Semântica do Verbo).",
+                "Verbos Transitivos Diretos (cognitivos, opinativos, de qualificação).",
+                "KB-A06-G08-005"
+              ],
+              [
+                "Predicativo do Objeto Indireto",
+                "Obrigatoriamente no predicado.",
+                "Adjetivo.",
+                "Extensão Semântica vinculada ao Objeto Indireto.",
+                "Verbos Transitivos Indiretos (ex.:gostar).",
+                "KB-A06-G08-006"
+              ],
+              [
+                "Adjunto Adverbial de Modo",
+                "No predicado ou deslocado.",
+                "Advérbio / Locução Adverbial (invariáveis).",
+                "Termo Acessório Circunstancial (modifica a ação verbal).",
+                "Verbos Nocionais de Ação.",
+                "KB-A06-G08-007"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },
@@ -134,6 +266,54 @@
           },
           "practicalHeuristic": "Substitua pelo pronome 'os': 'declarou-os culpados' (sobrou = predicativo); 'prendeu-os' (sumiu = adjunto).",
           "pitfall": "Não perceber a ambiguidade semântica de frases com adjetivos pós-nominais."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A06-G08-003",
+          "table": {
+            "tableId": "TABLE-IP-A06-G08-003",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Par em Conflito",
+              "Critério Diagnóstico Decisivo",
+              "Comportamento do Termo A",
+              "Comportamento do Termo B",
+              "Exemplo Paradigmático"
+            ],
+            "rows": [
+              [
+                "Predicativo do Sujeito vs. Adjunto Adnominal",
+                "Posição sintática estrutural",
+                "PS: Localizado no predicado; qualifica o sujeito mediado por um verbo.",
+                "AA: Localizado dentro do bloco do sujeito; acoplado diretamente ao substantivo.",
+                "A mulher chegou cansada (PS) vs. A mulher cansada chegou (AA)."
+              ],
+              [
+                "Predicativo do Sujeito vs. Adjunto Adverbial de Modo",
+                "Flexão morfológica nominal",
+                "PS: Variável em gênero e número (classe adjetiva; exprime estado).",
+                "Adv. Modo: Invariável (classe adverbial; exprime modo do verbo).",
+                "O velho viajou feliz / Os velhos viajaram felizes (PS) vs. O velho viajou rápido (Adv)."
+              ],
+              [
+                "Predicativo do Objeto vs. Adjunto Adnominal do Objeto",
+                "Extensão Semântica (Supressão e Deslocamento)",
+                "PO: Integrante do verbo; supressão altera o verbo; admite deslocamento anteposto.",
+                "AA: Acessório do nome; supressão preserva o verbo; não admite deslocamento.",
+                "Considero a carteira cara (PO) vs. Comprei a carteira cara (AA)."
+              ],
+              [
+                "Predicativo do Objeto Preposicionado vs. Objeto Indireto",
+                "Natureza morfológica e papel funcional",
+                "PO Prep: Núcleo adjetivo que qualifica o Objeto Direto existente.",
+                "OI: Núcleo substantivo que complementa a regência de um verbo transitivo indireto.",
+                "Chamaram o delegado de inquieto (PO) vs. Gosto de doces (OI)."
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

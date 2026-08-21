@@ -1,20 +1,22 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A13-G06",
     "lessonId": "A13",
-    "title": "Pressupostos, Subentendidos e Implícitos",
+    "title": "Miscelânea de Interpretação",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A13-G06",
     "lessonId": "A13",
-    "title": "Pressupostos, Subentendidos e Implícitos",
+    "title": "Miscelânea de Interpretação",
     "learningObjectives": [
       "Sistematizar e aplicar um algoritmo analítico em três passos (quadro #ANOTAAÍ) para classificar com precisão tipologias textuais (dissertativa expositiva/informativa, dissertativa argumentativa, narrativa e descritiva) e interpretar textos híbridos em itens da banca Cebraspe."
     ],
-    "conceptCount": 2,
+    "conceptCount": 4,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A13-G06-01"
@@ -26,171 +28,1161 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "A Pragmática e a Análise do Discurso estudam os significados Implícitos que não estão na superfície textual. Subdividem-se em PRESSUPOSTOS (ideias induzidas obrigatoriamente por marcadores gramaticais explícitos: verbos de mudança de estado, advérbios temporais, numerais) e SUBENTENDIDOS (ideias sugeridas nas entrelinhas que dependem de inferência e do contexto compartilhado, podendo ser negadas pelo locutor).",
-      "visualBlueprint": "Pressuposto: Marcador Gramatical Explícito na Frase (ex: 'Pedro parou de fumar' -> Marcador 'parou de' PRESSUPÕE que Pedro fumava antes) [Não pode ser negado sem contradição] | Subentendido: Pista Contextual sem marcador formal (ex: 'Está muito calor aqui dentro' -> SUBENTENDE o pedido 'abra a janela') [Pode ser negado: 'só estava comentando'].",
-      "cognitiveAnchor": "O Pressuposto tem documento gramatical assinado na frase; o Subentendido é fofoca no ar que o emissor pode desmentir.",
-      "strategicSignificance": "O tema mais sofisticado de interpretação de textos da FGV, Cespe e Fuvest.",
-      "coreTension": "Confundir Pressuposto (irrefutável pela gramática) com Subentendido (inferência contextual subjetiva)."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Miscelânea de Interpretação",
+      "summary": "Articulação morfossintática e semântica de Miscelânea de Interpretação com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A13-06",
-          "name": "Pragmática e Marcadores Discursivos",
-          "reason": "Compreender os conceitos de pressuposição e atos de fala indiretos.",
-          "activationPrompt": "O que está pressuposto na frase 'Mariana ainda continua estudando'?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A13-G06",
+          "title": "Mapa de Dependência: Miscelânea de Interpretação",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Miscelânea de Interpretação",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Pressuposto vs Subentendido",
-          "pedagogicalGoal": "Compreender as diferenças fundamentais e os marcadores gramaticais de pressuposição.",
+          "groupId": "GRP-IP-A13-G06-01",
+          "title": "O Método Estratégico de Leitura em Tipologia Textual (Passo 1 — Triagem Estrutural pelas Extremidades)",
+          "conceptRefs": [
+            "KB-A13-G06-MISCELANEA-INTERPRETACAO-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Pressuposto vs Subentendido",
-              "columns": [
-                "Propriedade",
-                "Pressuposto (Indiscutível)",
-                "Subentendido (Interpretativo)"
-              ],
-              "rows": [
-                [
-                  "Origem da Informação",
-                  "Marcador GRAMATICAL explícito no texto (verbo, advérbio)",
-                  "Contexto pragmático, entoação, conhecimento de mundo"
-                ],
-                [
-                  "Possibilidade de Negação",
-                  "NÃO pode ser negado pelo autor (é dado como verdade prévia)",
-                  "PODE ser negado pelo locutor ('não foi isso que eu quis dizer')"
-                ],
-                [
-                  "Responsabilidade do Autor",
-                  "O autor assume 100% da verdade pressuposta",
-                  "O autor transfere a responsabilidade da dedução para o ouvinte"
-                ],
-                [
-                  "Exemplo Canônico",
-                  "'João deixou de beber.' (Pressuposto: João bebia antes)",
-                  "'Você tem horas?' (Subentendido: 'Diga-me que horas são')"
-                ]
-              ],
-              "text": "O pressuposto é semanticamente ancorado no léxico; o subentendido é uma insinuação pragmática aberta."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nProcedimento analítico inicial que orienta a realização de uma leitura seletiva concentrada nas extremidades do texto (primeiro e último parágrafos), no título e na referência bibliográfica de rodapé, com a finalidade de diagnosticar a macroestrutura discursiva entre o tratamento de um tema abstrato/conceitual (dissertação) ou o relato de acontecimentos/caracterização de estados (narração/descrição).\nExplicação consolidada\nA abordagem passiva de leitura integral do texto sem direcionamento preliminar gera confusão interpretativa em provas do Cebraspe. O Passo 1 determina que o candidato execute uma triagem objetiva respondendo a duas perguntas fundamentais:\nO texto discute um tema ou assunto? Se o parágrafo inicial e o encerramento orbitam em torno de um conceito geral, problema social, inovação ou reflexão teórica, a estrutura é classificada como dissertativa.\nO texto conta uma história ou descreve uma cena? Se a abertura introduz personagens situados em coordenadas cronológicas e o encerramento conclui uma sucessão de ações reais ou fictícias, a estrutura é narrativa ou descritiva.\nA inspeção da fonte bibliográfica (periódicos científicos, jornais de economia, revistas culturais) e do título fornece confirmação imediata da tipologia global.\nCritérios de reconhecimento ou aplicação\nO primeiro parágrafo apresenta a proposição temática ou introduz o enredo com marcadores temporais.\nO último parágrafo arremata o raciocínio temático (estrutura circular dissertativa) ou conclui o desfecho das ações dos personagens.\nA fonte indica a esfera de circulação social do discurso (Época Negócios, Revista Piauí, revistas acadêmicas ou portais educacionais).\nExemplos e contraexemplos\nExemplo dissertativo: Início com \"Na era das redes sociais, algumas formas de comunicação arcaicas ainda dão resultado\" e final reafirmando que o método continua \"mais eficaz\" (Tema: comunicação arcaica).\nExemplo narrativo: Início com \"Cléber de Souza [...] acordou mais cedo que de costume. Cumpriu sua rotina matinal, se vestiu e partiu...\" (Enredo: ações cronológicas de um indivíduo).\nRelações\nExpande para: , 003Evidenciado visualmente por: VIS-A13-G06-MISCELANEA-INTERPRETACAO-001"
             }
           ]
         },
         {
-          "groupId": "GRP-02",
-          "title": "Catálogo de Marcadores Gramaticais de Pressuposição",
-          "pedagogicalGoal": "Mapear as palavras que disparam pressupostos obrigatórios.",
+          "groupId": "GRP-IP-A13-G06-02",
+          "title": "Diferenciação entre Dissertação Expositiva/Informativa e Argumentativa (Passo 2 — Intenção Autoral)",
+          "conceptRefs": [
+            "KB-A13-G06-MISCELANEA-INTERPRETACAO-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "table",
-              "title": "Gatilhos Gramaticais de Pressuposto",
-              "columns": [
-                "Classe do Marcador",
-                "Palavras Típicas",
-                "Exemplo",
-                "Informação Pressuposta"
-              ],
-              "rows": [
-                [
-                  "Verbos de Mudança de Estado",
-                  "deixar de, parar de, começar a, passar a, tornar-se",
-                  "Carlos parou de fumar.",
-                  "Carlos fumava no passado."
-                ],
-                [
-                  "Advérbios Temporais e de Foco",
-                  "ainda, já, finalmente, até, mesmo",
-                  "A encomenda ainda não chegou.",
-                  "Esperava-se que a encomenda já tivesse chegado."
-                ],
-                [
-                  "Verbos Fictivos / Cognitivos",
-                  "saber, lamentar, esquecer, perceber",
-                  "Ela lamentou ter perdido o prazo.",
-                  "Ela perdeu o prazo (fato real consolidado)."
-                ],
-                [
-                  "Adjetivos e Epítetos Valorativos",
-                  "o falecido, o atual, o novo, o antigo",
-                  "O novo diretor assumiu o cargo.",
-                  "Houve um diretor anterior que saiu."
-                ]
-              ],
-              "text": "A presença desses termos vincula incontornavelmente a interpretação da frase."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nCritério de classificação tipológica baseado na reconstrução da intenção comunicativa do autor ao estruturar um texto dissertativo, dividindo-se entre a transmissão neutra de conhecimento/novidades (dissertação expositiva/informativa) e a persuasão do leitor mediante defesa de um ponto de vista balizado por tese (dissertação argumentativa).\nExplicação consolidada\nConstatado que o texto é dissertativo pelo Passo 1, o candidato deve colocar-se na perspectiva do emissor e avaliar o propósito primordial da produção textual:\nDissertativo Expositivo / Informativo: O autor tem como objetivo expor o que sabe, conceituar fenômenos, relatar avanços tecnológicos ou divulgar novidades informativas. Não há pretensão de direcionar ideologicamente o leitor ou vencer um debate. Comentários avaliativos pontuais ou impressões subjetivas acessórias não convertem o texto informativo em argumentativo.\nDissertativo Argumentativo: O autor estrutura sua argumentação para persuadir o interlocutor da validade de uma tese central. A seleção de dados, o uso de léxico modalizador enfático e a construção da conclusão convergem explicitamente para sustentar um juízo de valor ou propor uma transformação da realidade.\nCritérios de reconhecimento ou aplicação\nExpositivo/Informativo: Predomínio de definições conceituais, dados informativos, explicação de funcionamento, tom impessoal ou jornalístico.\nArgumentativo: Presença de tese explícita, argumentos de sustentação, léxico altamente avaliativo (\"insustentável\", \"estarrecedor\", \"há muito o que fazer\"), títulos valorativos e propostas de solução.\nExemplos e contraexemplos\nExemplo Expositivo: Texto que explica a história, o conceito e a projeção de acessibilidade dos jogos e ferramentas no metaverso ().\nExemplo Argumentativo: Texto que apresenta dados estatísticos de 80 milhões de processos judiciais para demonstrar a urgência da \"desjudicialização\" ().Exemplificado por: , ,"
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A13-G06-03",
+          "title": "Prevalência Narrativa e Mesclagem com Sequências Descritivas (Passo 3 — Relação entre Ação e Caracterização)",
+          "conceptRefs": [
+            "KB-A13-G06-MISCELANEA-INTERPRETACAO-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nPrincípio de predominância tipológica segundo o qual produções textuais que associam o relato cronológico de acontecimentos e a caracterização física de seres, objetos ou cenários são categorizadas como predominantemente narrativas, operando as passagens descritivas como sequências mescladas e dependentes.\nExplicação consolidada\nNo âmbito das bancas de concurso, textos puramente descritivos (retratos verbais estáticos congelados no tempo) são raridades empíricas. Quase sempre a descrição desempenha papel subserviente dentro de uma macroestrutura narrativa:\nEspinha Dorsal Narrativa: Dinâmica temporal estruturada por verbos de ação no pretérito perfeito/imperfeito (acordou, vestiu, pagou, percorreu, visitou), organizando o encadeamento dos fatos praticados por personagens.\nAspectos Descritivos Mesclados: Pausas momentâneas na progressão dos fatos para detalhar trajes, cores, formatos e atributos físicos de pessoas e ambientes (camisa branca e gravata borboleta, camisa rosa com coqueiros, massa grossa com muçarela).\nO Cebraspe classifica rigorosamente essa construção como narração composta por sequências mescladas com outras tipologias, como a descritiva.\nCritérios de reconhecimento ou aplicação\nA presença de progressão temporal cumulativa garante a predominância da narrativa.\nA presença de sintagmas nominais adjetivados e enumeração de qualidades estáticas comprova a existência de sequências descritivas enxertadas.Exemplificado por: \nEvidenciado visualmente por: VIS-A13-G06-MISCELANEA-INTERPRETACAO-004, VIS-A13-G06-MISCELANEA-INTERPRETACAO-005"
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A13-G06-04",
+          "title": "Natureza Instrumental dos Dados Numéricos e Expositivos no Texto Dissertativo Argumentativo",
+          "conceptRefs": [
+            "KB-A13-G06-MISCELANEA-INTERPRETACAO-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nPostulado discursivo que estabelece que a inserção de elementos factuais, estatísticas, datas e números quantitativos (recursos típicos da tipologia expositiva) não retira o caráter argumentativo de um texto quando esses elementos funcionam como instrumentos de persuasão orientados para evidenciar a gravidade de um problema e validar uma tese.\nExplicação consolidada\nTextos argumentativos maduros frequentemente utilizam recursos de exposição factual como matéria-prima probatória:\nCamada Expositiva Instrumental: Fornece a base empírica e objetiva mediante números e estatísticas oficiais (ex.: 80 milhões de processos em tramitação, 203 milhões de habitantes, custo de R$ 12,3 bilhões).\nCamada Argumentativa Predominante: Molda os dados brutos por meio de adjetivos qualificadores e advérbios de valor (\"número estarrecedor\", \"situação insustentável\"), direcionando a leitura para uma conclusão valorativa necessária (urgência da desjudicialização).\nQuando o propósito comunicativo global do autor é conscientizar ou persuadir a coletividade, a exposição de dados atua estritamente como argumento de sustentação da tese.\nCritérios de reconhecimento ou aplicação\nVerificar se os dados são apresentados isoladamente para informar ou se vêm acompanhados de comentários críticos que qualificam sua magnitude.\nObservar a correlação entre os números expostos e a tese sintetizada no título da obra ou na conclusão.Exemplificado por: \nRelacionado a: TIP-A13-G06-MISCELANEA-INTERPRETACAO-003"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nProcedimento analítico inicial que orienta a realização de uma leitura seletiva concentrada nas extremidades do texto (primeiro e último parágrafos), no título e na referência bibliográfica de rodapé, com a finalidade de diagnosticar a macroestrutura discursiva entre o tratamento de um tema abstrato/conceitual (dissertação) ou o relato de acontecimentos/caracterização de estados (narração/descrição).\nExplicação consolidada\nA abordagem passiva de leitura integral do texto sem direcionamento preliminar gera confusão interpretativa em provas do Cebraspe. O Passo 1 determina que o candidato execute uma triagem objetiva respondendo a duas perguntas fundamentais:\nO texto discute um tema ou assunto? Se o parágrafo inicial e o encerramento orbitam em torno de um conceito geral, problema social, inovação ou reflexão teórica, a estrutura é classificada como dissertativa.\nO texto conta uma história ou descreve uma cena? Se a abertura introduz personagens situados em coordenadas cronológicas e o encerramento conclui uma sucessão de ações reais ou fictícias, a estrutura é narrativa ou descritiva.\nA inspeção da fonte bibliográfica (periódicos científicos, jornais de economia, revistas culturais) e do título fornece confirmação imediata da tipologia global.\nCritérios de reconhecimento ou aplicação\nO primeiro parágrafo apresenta a proposição temática ou introduz o enredo com marcadores temporais.\nO último parágrafo arremata o raciocínio temático (estrutura circular dissertativa) ou conclui o desfecho das ações dos personagens.\nA fonte indica a esfera de circulação social do discurso (Época Negócios, Revista Piauí, revistas acadêmicas ou portais educacionais).\nExemplos e contraexemplos\nExemplo dissertativo: Início com \"Na era das redes sociais, algumas formas de comunicação arcaicas ainda dão resultado\" e final reafirmando que o método continua \"mais eficaz\" (Tema: comunicação arcaica).\nExemplo narrativo: Início com \"Cléber de Souza [...] acordou mais cedo que de costume. Cumpriu sua rotina matinal, se vestiu e partiu...\" (Enredo: ações cronológicas de um indivíduo).\nRelações\nExpande para: , 003Evidenciado visualmente por: VIS-A13-G06-MISCELANEA-INTERPRETACAO-001"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nCritério de classificação tipológica baseado na reconstrução da intenção comunicativa do autor ao estruturar um texto dissertativo, dividindo-se entre a transmissão neutra de conhecimento/novidades (dissertação expositiva/informativa) e a persuasão do leitor mediante defesa de um ponto de vista balizado por tese (dissertação argumentativa).\nExplicação consolidada\nConstatado que o texto é dissertativo pelo Passo 1, o candidato deve colocar-se na perspectiva do emissor e avaliar o propósito primordial da produção textual:\nDissertativo Expositivo / Informativo: O autor tem como objetivo expor o que sabe, conceituar fenômenos, relatar avanços tecnológicos ou divulgar novidades informativas. Não há pretensão de direcionar ideologicamente o leitor ou vencer um debate. Comentários avaliativos pontuais ou impressões subjetivas acessórias não convertem o texto informativo em argumentativo.\nDissertativo Argumentativo: O autor estrutura sua argumentação para persuadir o interlocutor da validade de uma tese central. A seleção de dados, o uso de léxico modalizador enfático e a construção da conclusão convergem explicitamente para sustentar um juízo de valor ou propor uma transformação da realidade.\nCritérios de reconhecimento ou aplicação\nExpositivo/Informativo: Predomínio de definições conceituais, dados informativos, explicação de funcionamento, tom impessoal ou jornalístico.\nArgumentativo: Presença de tese explícita, argumentos de sustentação, léxico altamente avaliativo (\"insustentável\", \"estarrecedor\", \"há muito o que fazer\"), títulos valorativos e propostas de solução.\nExemplos e contraexemplos\nExemplo Expositivo: Texto que explica a história, o conceito e a projeção de acessibilidade dos jogos e ferramentas no metaverso ().\nExemplo Argumentativo: Texto que apresenta dados estatísticos de 80 milhões de processos judiciais para demonstrar a urgência da \"desjudicialização\" ().Exemplificado por: , ,"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nPrincípio de predominância tipológica segundo o qual produções textuais que associam o relato cronológico de acontecimentos e a caracterização física de seres, objetos ou cenários são categorizadas como predominantemente narrativas, operando as passagens descritivas como sequências mescladas e dependentes.\nExplicação consolidada\nNo âmbito das bancas de concurso, textos puramente descritivos (retratos verbais estáticos congelados no tempo) são raridades empíricas. Quase sempre a descrição desempenha papel subserviente dentro de uma macroestrutura narrativa:\nEspinha Dorsal Narrativa: Dinâmica temporal estruturada por verbos de ação no pretérito perfeito/imperfeito (acordou, vestiu, pagou, percorreu, visitou), organizando o encadeamento dos fatos praticados por personagens.\nAspectos Descritivos Mesclados: Pausas momentâneas na progressão dos fatos para detalhar trajes, cores, formatos e atributos físicos de pessoas e ambientes (camisa branca e gravata borboleta, camisa rosa com coqueiros, massa grossa com muçarela).\nO Cebraspe classifica rigorosamente essa construção como narração composta por sequências mescladas com outras tipologias, como a descritiva.\nCritérios de reconhecimento ou aplicação\nA presença de progressão temporal cumulativa garante a predominância da narrativa.\nA presença de sintagmas nominais adjetivados e enumeração de qualidades estáticas comprova a existência de sequências descritivas enxertadas.Exemplificado por: \nEvidenciado visualmente por: VIS-A13-G06-MISCELANEA-INTERPRETACAO-004, VIS-A13-G06-MISCELANEA-INTERPRETACAO-005"
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nPostulado discursivo que estabelece que a inserção de elementos factuais, estatísticas, datas e números quantitativos (recursos típicos da tipologia expositiva) não retira o caráter argumentativo de um texto quando esses elementos funcionam como instrumentos de persuasão orientados para evidenciar a gravidade de um problema e validar uma tese.\nExplicação consolidada\nTextos argumentativos maduros frequentemente utilizam recursos de exposição factual como matéria-prima probatória:\nCamada Expositiva Instrumental: Fornece a base empírica e objetiva mediante números e estatísticas oficiais (ex.: 80 milhões de processos em tramitação, 203 milhões de habitantes, custo de R$ 12,3 bilhões).\nCamada Argumentativa Predominante: Molda os dados brutos por meio de adjetivos qualificadores e advérbios de valor (\"número estarrecedor\", \"situação insustentável\"), direcionando a leitura para uma conclusão valorativa necessária (urgência da desjudicialização).\nQuando o propósito comunicativo global do autor é conscientizar ou persuadir a coletividade, a exposição de dados atua estritamente como argumento de sustentação da tese.\nCritérios de reconhecimento ou aplicação\nVerificar se os dados são apresentados isoladamente para informar ou se vêm acompanhados de comentários críticos que qualificam sua magnitude.\nObservar a correlação entre os números expostos e a tese sintetizada no título da obra ou na conclusão.Exemplificado por: \nRelacionado a: TIP-A13-G06-MISCELANEA-INTERPRETACAO-003"
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-PRESSUP-01",
-          "title": "Regra da Sobrevivência sob Negação e Interrogação",
-          "statement": "Um pressuposto autêntico sobrevive intacto mesmo quando a oração principal é negada ou transformada em interrogação (ex: 'João parou de fumar' / 'João NÃO parou de fumar' / 'João parou de fumar?' -> Em todas as 3 frases, permanece 100% pressuposto que João fumava).",
-          "formalCondition": "Pressuposto(Frase) == Pressuposto(Negação(Frase)) == Pressuposto(Interrogação(Frase)).",
-          "scope": "Universal na semântica formal e lógica da linguagem.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A13-G06-001",
+          "title": "Regras canônicas",
+          "statement": "Critério das Extremidades e Fonte (Canônico): A determinação inicial da tipologia textual deve ser feita pelo exame conjunto do primeiro parágrafo, último parágrafo, título e fonte bibliográfica (KB-A13-G06-MISCELANEA-INTERPRETACAO-001).\nBifurcação Dissertativa (Canônica): Textos temáticos dividem-se em Expositivos/Informativos (quando o emissor apenas expõe o que domina ou informa novidades) e Argumentativos (quando busca defender uma tese persuasiva) (KB-A13-G06-MISCELANEA-INTERPRETACAO-002).\nRegra de Dominância Narrativa (Canônica): Havendo coexistência de fatos temporais e traços caracterizadores, prevalece a macroestrutura narrativa com aspectos descritivos mesclados (KB-A13-G06-MISCELANEA-INTERPRETACAO-003).\nInstrumentalidade dos Dados (Canônica): Estatísticas e números em textos dissertativos não anulam a argumentação quando inseridos a serviço de um propósito comunicativo persuasivo (KB-A13-G06-MISCELANEA-INTERPRETACAO-004).",
+          "scope": "text_interpretation",
+          "conditions": [
+            "Critério das Extremidades e Fonte (Canônico): A determinação inicial da tipologia textual deve ser feita pelo exame conjunto do primeiro parágrafo, último parágrafo, título e fonte bibliográfica (KB-A13-G06-MISCELANEA-INTERPRETACAO-001).",
+            "Bifurcação Dissertativa (Canônica): Textos temáticos dividem-se em Expositivos/Informativos (quando o emissor apenas expõe o que domina ou informa novidades) e Argumentativos (quando busca defender uma tese persuasiva) (KB-A13-G06-MISCELANEA-INTERPRETACAO-002).",
+            "Regra de Dominância Narrativa (Canônica): Havendo coexistência de fatos temporais e traços caracterizadores, prevalece a macroestrutura narrativa com aspectos descritivos mesclados (KB-A13-G06-MISCELANEA-INTERPRETACAO-003).",
+            "Instrumentalidade dos Dados (Canônica): Estatísticas e números em textos dissertativos não anulam a argumentação quando inseridos a serviço de um propósito comunicativo persuasivo (KB-A13-G06-MISCELANEA-INTERPRETACAO-004)."
+          ],
           "exceptions": [],
-          "examples": [
-            "Você não sabe que o prazo expirou? (Permanece pressuposto que o prazo expirou)."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A13-G06-001"
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-PRESSUP-01",
-          "title": "Identificação de Pressupostos em Questões da FGV e Cespe",
-          "triggerCondition": "Julgar assertivas sobre 'ideias pressupostas pelo texto'.",
+          "entityId": "PROC-A13-G06-MISCELANEA-INTERPRETACAO-001",
+          "title": "Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos)",
           "steps": [
-            "1. Localize os GATILHOS GRAMATICAIS na frase original (ainda, já, parou de, voltou a, finalmente, conseguiu).",
-            "2. Aplique o TESTE DA NEGAÇÃO: Negue a frase inteira. A informação secundária CONTINUA SENDO VERDADEIRA? -> Se SIM: Trata-se de PRESSUPOSTO legítimo.",
-            "3. Se a informação não tiver nenhuma palavra disparadora na frase e depender de adivinhação do contexto social -> Trata-se de SUBENTENDIDO.",
-            "4. Marque como pressuposto apenas aquilo que está gramaticalmente blindado pelo texto."
+            {
+              "order": 1,
+              "action": "Passo 1 — Triagem Estrutural pelas Extremidades",
+              "explanation": "Passo 1 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Efetuar a leitura do primeiro parágrafo, do último parágrafo, do título e da referência da fonte.",
+              "explanation": "Passo 2 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Formular a pergunta diagnóstica",
+              "explanation": "O texto gravita sobre um tema/conceito abstrato ou desenvolve um enredo fático/caracterização de cena?",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Caso possua tema definido $\\rightarrow$ Direcionar para o Passo 2 (Ramo Dissertativo).",
+              "explanation": "Passo 4 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Caso possua personagens e linha temporal de ações $\\rightarrow$ Direcionar para o Passo 3 (Ramo Narrativo/Descritivo).",
+              "explanation": "Passo 5 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 6,
+              "action": "Passo 2 — Análise da Intenção Autoral (Ramo Dissertativo)",
+              "explanation": "Passo 6 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 7,
+              "action": "Assumir hipoteticamente a perspectiva do autor e interrogar",
+              "explanation": "Qual o objetivo primordial da publicação?",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Se o objetivo for conceituar, detalhar funcionamento, relatar dados técnicos ou noticiar fatos $\\rightarrow$ Classificar como Dissertativo Expositivo / Informativo.",
+              "explanation": "Passo 8 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Se o objetivo for sustentar um posicionamento crítico, conscientizar ou persuadir o leitor mediante tese e valorações $\\rightarrow$ Classificar como Dissertativo Argumentativo.",
+              "explanation": "Passo 9 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Passo 3 — Hierarquização de Ações e Detalhes (Ramo Narrativo/Descritivo)",
+              "explanation": "Passo 10 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Constatar a presença de progressão cronológica balizada por verbos de ação no pretérito.",
+              "explanation": "Passo 11 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Identificar a ocorrência de adjetivações e qualificações de cenários, trajes ou objetos.",
+              "explanation": "Passo 12 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 13,
+              "action": "Concluir pela classificação de Predominantemente Narrativo com Sequências Descritivas Mescladas.",
+              "explanation": "Passo 13 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 14,
+              "action": "Textos dissertativos mantêm amarração conceitual circular entre o primeiro e o último parágrafo.",
+              "explanation": "Passo 14 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 15,
+              "action": "Textos narrativos preservam a continuidade dos agentes e a evolução dos acontecimentos entre a abertura e o desfecho.",
+              "explanation": "Passo 15 do algoritmo de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos).",
+              "test": null
+            },
+            {
+              "order": 16,
+              "action": "Consolida",
+              "explanation": "KB-A13-G06-MISCELANEA-INTERPRETACAO-001, KB-A13-G06-MISCELANEA-INTERPRETACAO-002, KB-A13-G06-MISCELANEA-INTERPRETACAO-003",
+              "test": null
+            },
+            {
+              "order": 17,
+              "action": "Aplicado em",
+              "explanation": "EX-A13-G06-MISCELANEA-INTERPRETACAO-001, EX-A13-G06-MISCELANEA-INTERPRETACAO-002, EX-A13-G06-MISCELANEA-INTERPRETACAO-003, EX-A13-G06-MISCELANEA-INTERPRETACAO-004",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se há marcador morfossintático sustentando a inferência.",
-          "typicalFailureModes": [
-            "Classificar hipótese subjetiva sem marcador como ideia pressuposta."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo `#ANOTAAÍ` em Três Passos)",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A13-G06-MISCELANEA-INTERPRETACAO-001",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Finalidade"
+            },
+            {
+              "type": "paragraph",
+              "text": "Roteiro operacional padronizado para identificar, classificar e validar a tipologia textual e os fenômenos de hibridismo discursivo em provas de concursos públicos elaboradas pelo Cebraspe."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Sequência de passos operacionais"
+            },
+            {
+              "type": "paragraph",
+              "text": "┌───────────────────────────────────┐ │ PASSO 1: TRIAGEM DAS EXTREMIDADES │ │ (Início, Final, Título e Fonte) │ └─────────────────┬─────────────────┘ │ ┌────────────────┴────────────────┐ ▼ ▼ O texto tem tema/assunto? O texto tem história/ações? (ESTRUTURA DISSERTATIVA) (NARRATIVO / DESCRITIVO) │ │ ┌──────────────┴──────────────┐ │ ▼ ▼ ▼ PASSO 2: EXPOSITIVO PASSO 2: ARGUMENTATIVO PASSO 3: DOMINÂNCIA • Intenção: expor o • Intenção: convencer e • Ações temporais + que sabe ou informar defender tese central detalhes físicos = • Não busca persuadir • Juízos de valor e dados Predominantemente • Opiniões pontuais usados para persuasão Narrativo com aspectos não alteram o tipo • Propósito comunicativo descritivos mesclados"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 — Triagem Estrutural pelas Extremidades:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Efetuar a leitura do primeiro parágrafo, do último parágrafo, do título e da referência da fonte.",
+                "Formular a pergunta diagnóstica: O texto gravita sobre um tema/conceito abstrato ou desenvolve um enredo fático/caracterização de cena?",
+                "Caso possua tema definido $\\rightarrow$ Direcionar para o Passo 2 (Ramo Dissertativo).",
+                "Caso possua personagens e linha temporal de ações $\\rightarrow$ Direcionar para o Passo 3 (Ramo Narrativo/Descritivo)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 2 — Análise da Intenção Autoral (Ramo Dissertativo):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Assumir hipoteticamente a perspectiva do autor e interrogar: Qual o objetivo primordial da publicação?",
+                "Se o objetivo for conceituar, detalhar funcionamento, relatar dados técnicos ou noticiar fatos $\\rightarrow$ Classificar como Dissertativo Expositivo / Informativo.",
+                "Se o objetivo for sustentar um posicionamento crítico, conscientizar ou persuadir o leitor mediante tese e valorações $\\rightarrow$ Classificar como Dissertativo Argumentativo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 3 — Hierarquização de Ações e Detalhes (Ramo Narrativo/Descritivo):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Constatar a presença de progressão cronológica balizada por verbos de ação no pretérito.",
+                "Identificar a ocorrência de adjetivações e qualificações de cenários, trajes ou objetos.",
+                "Concluir pela classificação de Predominantemente Narrativo com Sequências Descritivas Mescladas."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de validação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Textos dissertativos mantêm amarração conceitual circular entre o primeiro e o último parágrafo.",
+                "Textos narrativos preservam a continuidade dos agentes e a evolução dos acontecimentos entre a abertura e o desfecho."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Relações"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Consolida: KB-A13-G06-MISCELANEA-INTERPRETACAO-001, KB-A13-G06-MISCELANEA-INTERPRETACAO-002, KB-A13-G06-MISCELANEA-INTERPRETACAO-003",
+                "Aplicado em: EX-A13-G06-MISCELANEA-INTERPRETACAO-001, EX-A13-G06-MISCELANEA-INTERPRETACAO-002, EX-A13-G06-MISCELANEA-INTERPRETACAO-003, EX-A13-G06-MISCELANEA-INTERPRETACAO-004"
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A13-G06-MISCELANEA-INTERPRETACAO-001",
+              "EXP-IP-A13-G06-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-PRESSUP-01",
-          "conceptA": "Pressuposto (Marcado na Gramática)",
-          "conceptB": "Subentendido (Insinuação nas Entrelinhas)",
-          "decisiveDifference": "O pressuposto está inscrito nas palavras do texto e não pode ser negado; o subentendido é uma dedução implícita do leitor que o emissor pode desmentir a qualquer momento.",
-          "minimalPair": {
-            "sentenceA": "O governo conseguiu finalmente controlar a inflação. (Pressuposto: antes não conseguia)",
-            "sentenceB": "Está ficando tarde e amanhã acordo cedo. (Subentendido: 'vão embora da minha casa')",
-            "difference": "Gatilho formal no texto (Pressuposto) vs Insinuação pragmática negável (Subentendido)."
+          "entityId": "CONTRAST-IP-A13-G06-001",
+          "title": "Contrastes decisivos",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Tem palavra que entrega o segredo (já, ainda, parou)? Pressuposto. É indireta? Subentendido.",
-          "pitfall": "Confundir ironia subentendida com pressuposição gramatical."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Contrastes decisivos",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A13-G06-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A13-G06-001",
+              "table": {
+                "tableId": "TABLE-IP-A13-G06-001",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Dimensão de Análise",
+                  "Dissertação Expositiva / Informativa",
+                  "Dissertação Argumentativa",
+                  "Tipologia Narrativa",
+                  "Tipologia Descritiva"
+                ],
+                "rows": [
+                  [
+                    "Foco Estrutural",
+                    "Tema / Conceito / Informação",
+                    "Tema / Tese / Ponto de vista",
+                    "Fatos / Personagens / Tempo",
+                    "Caracterização / Espaço / Estado"
+                  ],
+                  [
+                    "Intenção do Autor",
+                    "Apresentar dados, explicar novidades, expor conhecimento sem persuasão",
+                    "Persuadir, convencer o interlocutor, defender uma tese crítica",
+                    "Relatar acontecimentos reais ou fictícios em sucessão temporal",
+                    "Construir retrato verbal de seres, objetos ou ambientes"
+                  ],
+                  [
+                    "Marcadores Típicos",
+                    "Verbos no presente, definições conceituais, tom impessoal",
+                    "Léxico avaliativo (estarrecedor, insustentável), modalizadores, teses",
+                    "Verbos de ação no pretérito (acordou, vestiu, visitou, pegou)",
+                    "Adjetivos qualificadores, trajes, cores (camisa rosa, gravata)"
+                  ],
+                  [
+                    "Tratamento de Dados",
+                    "Apresentação factual pura de estatísticas e conceitos",
+                    "Dados funcionam como argumentos para alarmar/convencer",
+                    "Referências temporais pontuais no enredo",
+                    "Enumeração de atributos físicos concretos"
+                  ],
+                  [
+                    "Ocorrência em Provas",
+                    "Frequente em artigos de divulgação científica e negócios",
+                    "Frequente em artigos de opinião e editoriais jurídicos",
+                    "Frequente em crônicas biográficas e contos",
+                    "Rara de forma isolada; quase sempre mesclada à narrativa"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A13-G06-001",
+              "EXP-IP-A13-G06-027"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-PRESSUP-01",
-          "title": "Advérbio 'Ainda' como Gatilho de Pressuposição",
-          "sentence": "O projeto ainda não foi aprovado pela comissão.",
-          "analysis": "O advérbio 'ainda' introduz formalmente o pressuposto de que o projeto está em tramitação e há a expectativa concreta de que ele venha a ser aprovado futuramente.",
-          "pedagogicalTakeaway": "Advérbios aspectuais como 'ainda' e 'já' projetam linhas temporais de expectativa pressuposta.",
-          "targetLO": "LO-A13-G06-01"
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-001",
+          "title": "Enunciado e dados essenciais",
+          "statement": "Texto jornalístico abordando o caso de Harold Hackett, habitante da Ilha Príncipe Eduardo (Canadá), que lança garrafas com bilhetes ao mar desde 1996 e obteve mais de 3.100 respostas.\nItem avaliado: O texto apresenta características narrativas e dissertativas. (Certo / Errado).",
+          "prompt": "Texto jornalístico abordando o caso de Harold Hackett, habitante da Ilha Príncipe Eduardo (Canadá), que lança garrafas com bilhetes ao mar desde 1996 e obteve mais de 3.100 respostas.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item avaliado",
+              "rationale": "O texto apresenta características narrativas e dissertativas. (Certo / Errado)."
+            }
+          ],
+          "result": "Item avaliado: O texto apresenta características narrativas e dissertativas. (Certo / Errado).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Texto jornalístico abordando o caso de Harold Hackett, habitante da Ilha Príncipe Eduardo (Canadá), que lança garrafas com bilhetes ao mar desde 1996 e obteve mais de 3.100 respostas.\nItem avaliado: O texto apresenta características narrativas e dissertativas. (Certo / Errado).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados essenciais.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-001",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Texto jornalístico abordando o caso de Harold Hackett, habitante da Ilha Príncipe Eduardo (Canadá), que lança garrafas com bilhetes ao mar desde 1996 e obteve mais de 3.100 respostas."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Item avaliado: O texto apresenta características narrativas e dissertativas. (Certo / Errado)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-001",
+              "EXP-IP-A13-G06-028"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-002",
+          "title": "Desenvolvimento e raciocínio pedagógico",
+          "statement": "Aplicação do Passo 1:\nInício: \"Na era das redes sociais, algumas formas de comunicação arcaicas ainda dão resultado.\" $\\rightarrow$ Lança um tema abstrato/geral (formas de comunicação arcaicas).\nFinal: \"O canadense diz que continua adorando se comunicar dessa maneira e afirma que o método chega a ser [...] mais 'eficaz'...\" $\\rightarrow$ Reafirmação conclusiva do tema de abertura.\nDiagnóstico base: Estrutura dissertativa expositiva.\nReconhecimento da camada narrativa de suporte:\nPara ilustrar a reflexão sobre comunicação arcaica, o autor relata fatos da vida de Harold Hackett (lançamento de 4.800 garrafas, localização geográfica, recebimento de correspondências). Há personagens, marco temporal e encadeamento de ações (relato).\nJulgamento: Como o texto articula a discussão de um tema abstrato com a narrativa de acontecimentos empíricos, a afirmação de que apresenta características de ambas as tipologias é exata.",
+          "prompt": "Aplicação do Passo 1:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Aplicação do Passo 1",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Início",
+              "rationale": "\"Na era das redes sociais, algumas formas de comunicação arcaicas ainda dão resultado.\" $\\rightarrow$ Lança um tema abstrato/geral (formas de comunicação arcaicas)."
+            },
+            {
+              "order": 3,
+              "action": "Final",
+              "rationale": "\"O canadense diz que continua adorando se comunicar dessa maneira e afirma que o método chega a ser [...] mais 'eficaz'...\" $\\rightarrow$ Reafirmação conclusiva do tema de abertura."
+            },
+            {
+              "order": 4,
+              "action": "Diagnóstico base",
+              "rationale": "Estrutura dissertativa expositiva."
+            },
+            {
+              "order": 5,
+              "action": "Reconhecimento da camada narrativa de suporte",
+              "rationale": ""
+            }
+          ],
+          "result": "Julgamento: Como o texto articula a discussão de um tema abstrato com a narrativa de acontecimentos empíricos, a afirmação de que apresenta características de ambas as tipologias é exata.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Aplicação do Passo 1:\nInício: \"Na era das redes sociais, algumas formas de comunicação arcaicas ainda dão resultado.\" $\\rightarrow$ Lança um tema abstrato/geral (formas de comunicação arcaicas).\nFinal: \"O canadense diz que continua adorando se comunicar dessa maneira e afirma que o método chega a ser [...] mais 'eficaz'...\" $\\rightarrow$ Reafirmação conclusiva do tema de abertura.\nDiagnóstico base: Estrutura dissertativa expositiva.\nReconhecimento da camada narrativa de suporte:\nPara ilustrar a reflexão sobre comunicação arcaica, o autor relata fatos da vida de Harold Hackett (lançamento de 4.800 garrafas, localização geográfica, recebimento de correspondências). Há personagens, marco temporal e encadeamento de ações (relato).\nJulgamento: Como o texto articula a discussão de um tema abstrato com a narrativa de acontecimentos empíricos, a afirmação de que apresenta características de ambas as tipologias é exata.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e raciocínio pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e raciocínio pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e raciocínio pedagógico.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aplicação do Passo 1:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Início: \"Na era das redes sociais, algumas formas de comunicação arcaicas ainda dão resultado.\" $\\rightarrow$ Lança um tema abstrato/geral (formas de comunicação arcaicas).",
+                "Final: \"O canadense diz que continua adorando se comunicar dessa maneira e afirma que o método chega a ser [...] mais 'eficaz'...\" $\\rightarrow$ Reafirmação conclusiva do tema de abertura.",
+                "Diagnóstico base: Estrutura dissertativa expositiva."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Reconhecimento da camada narrativa de suporte:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Para ilustrar a reflexão sobre comunicação arcaica, o autor relata fatos da vida de Harold Hackett (lançamento de 4.800 garrafas, localização geográfica, recebimento de correspondências). Há personagens, marco temporal e encadeamento de ações (relato)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Julgamento: Como o texto articula a discussão de um tema abstrato com a narrativa de acontecimentos empíricos, a afirmação de que apresenta características de ambas as tipologias é exata."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-002",
+              "EXP-IP-A13-G06-029"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-003",
+          "title": "Gabarito e resolução",
+          "statement": "Gabarito: Certo.",
+          "prompt": "Gabarito: Certo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito: Certo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Gabarito: Certo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito e resolução.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gabarito: Certo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-003",
+              "EXP-IP-A13-G06-030"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-004",
+          "title": "Enunciado e dados essenciais",
+          "statement": "Texto biográfico/crônica narrando a trajetória de Cléber de Souza, empresário e ex-garçom em Jaraguá do Sul, que guarda o registro fotográfico de seu encontro em 2003 com o cineasta Francis Ford Coppola.\nItem avaliado: A narração é composta de sequências mescladas com outras tipologias textuais, como a descritiva. (Certo / Errado).",
+          "prompt": "Texto biográfico/crônica narrando a trajetória de Cléber de Souza, empresário e ex-garçom em Jaraguá do Sul, que guarda o registro fotográfico de seu encontro em 2003 com o cineasta Francis Ford Coppola.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item avaliado",
+              "rationale": "A narração é composta de sequências mescladas com outras tipologias textuais, como a descritiva. (Certo / Errado)."
+            }
+          ],
+          "result": "Item avaliado: A narração é composta de sequências mescladas com outras tipologias textuais, como a descritiva. (Certo / Errado).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Texto biográfico/crônica narrando a trajetória de Cléber de Souza, empresário e ex-garçom em Jaraguá do Sul, que guarda o registro fotográfico de seu encontro em 2003 com o cineasta Francis Ford Coppola.\nItem avaliado: A narração é composta de sequências mescladas com outras tipologias textuais, como a descritiva. (Certo / Errado).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados essenciais.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-004",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Texto biográfico/crônica narrando a trajetória de Cléber de Souza, empresário e ex-garçom em Jaraguá do Sul, que guarda o registro fotográfico de seu encontro em 2003 com o cineasta Francis Ford Coppola."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Item avaliado: A narração é composta de sequências mescladas com outras tipologias textuais, como a descritiva. (Certo / Errado)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-004",
+              "EXP-IP-A13-G06-031"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-005",
+          "title": "Desenvolvimento e raciocínio pedagógico",
+          "statement": "Aplicação do Passo 1 e Reconhecimento Narrativo:\nInício: \"Cléber de Souza [...] acordou mais cedo que de costume. Cumpriu sua rotina matinal, se vestiu e partiu...\" $\\rightarrow$ Introdução direta de personagem e encadeamento de ações temporais.\nFinal: \"desta vez, permaneceu por apenas um dia. Souza, ansioso por reencontrar o antigo freguês [...], pegou a fotografia e percorreu [...] os 160 quilômetros...\" $\\rightarrow$ Manutenção contínua do enredo de fatos.\nDiagnóstico base: Macroestrutura predominantemente narrativa.\nReconhecimento das sequências descritivas enxertadas:\nO fluxo narrativo é momentaneamente interrompido para qualificar os trajes dos personagens e os elementos da foto: \"camisa branca e gravata borboleta\", \"camisa rosa estampada com coqueiros\", além da caracterização de alimentos (\"massa grossa com muçarela, molho de tomate fresco...\").\nJulgamento: A narração abriga passagens descritivas subordinadas, tornando o item plenamente correto.",
+          "prompt": "Aplicação do Passo 1 e Reconhecimento Narrativo:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Aplicação do Passo 1 e Reconhecimento Narrativo",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Início",
+              "rationale": "\"Cléber de Souza [...] acordou mais cedo que de costume. Cumpriu sua rotina matinal, se vestiu e partiu...\" $\\rightarrow$ Introdução direta de personagem e encadeamento de ações temporais."
+            },
+            {
+              "order": 3,
+              "action": "Final",
+              "rationale": "\"desta vez, permaneceu por apenas um dia. Souza, ansioso por reencontrar o antigo freguês [...], pegou a fotografia e percorreu [...] os 160 quilômetros...\" $\\rightarrow$ Manutenção contínua do enredo de fatos."
+            },
+            {
+              "order": 4,
+              "action": "Diagnóstico base",
+              "rationale": "Macroestrutura predominantemente narrativa."
+            },
+            {
+              "order": 5,
+              "action": "Reconhecimento das sequências descritivas enxertadas",
+              "rationale": ""
+            }
+          ],
+          "result": "Julgamento: A narração abriga passagens descritivas subordinadas, tornando o item plenamente correto.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Aplicação do Passo 1 e Reconhecimento Narrativo:\nInício: \"Cléber de Souza [...] acordou mais cedo que de costume. Cumpriu sua rotina matinal, se vestiu e partiu...\" $\\rightarrow$ Introdução direta de personagem e encadeamento de ações temporais.\nFinal: \"desta vez, permaneceu por apenas um dia. Souza, ansioso por reencontrar o antigo freguês [...], pegou a fotografia e percorreu [...] os 160 quilômetros...\" $\\rightarrow$ Manutenção contínua do enredo de fatos.\nDiagnóstico base: Macroestrutura predominantemente narrativa.\nReconhecimento das sequências descritivas enxertadas:\nO fluxo narrativo é momentaneamente interrompido para qualificar os trajes dos personagens e os elementos da foto: \"camisa branca e gravata borboleta\", \"camisa rosa estampada com coqueiros\", além da caracterização de alimentos (\"massa grossa com muçarela, molho de tomate fresco...\").\nJulgamento: A narração abriga passagens descritivas subordinadas, tornando o item plenamente correto.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e raciocínio pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e raciocínio pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e raciocínio pedagógico.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aplicação do Passo 1 e Reconhecimento Narrativo:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Início: \"Cléber de Souza [...] acordou mais cedo que de costume. Cumpriu sua rotina matinal, se vestiu e partiu...\" $\\rightarrow$ Introdução direta de personagem e encadeamento de ações temporais.",
+                "Final: \"desta vez, permaneceu por apenas um dia. Souza, ansioso por reencontrar o antigo freguês [...], pegou a fotografia e percorreu [...] os 160 quilômetros...\" $\\rightarrow$ Manutenção contínua do enredo de fatos.",
+                "Diagnóstico base: Macroestrutura predominantemente narrativa."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Reconhecimento das sequências descritivas enxertadas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O fluxo narrativo é momentaneamente interrompido para qualificar os trajes dos personagens e os elementos da foto: \"camisa branca e gravata borboleta\", \"camisa rosa estampada com coqueiros\", além da caracterização de alimentos (\"massa grossa com muçarela, molho de tomate fresco...\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Julgamento: A narração abriga passagens descritivas subordinadas, tornando o item plenamente correto."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-005",
+              "EXP-IP-A13-G06-032"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-006",
+          "title": "Gabarito e resolução",
+          "statement": "Gabarito: Certo.",
+          "prompt": "Gabarito: Certo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito: Certo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Gabarito: Certo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito e resolução.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gabarito: Certo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-006",
+              "EXP-IP-A13-G06-033"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-007",
+          "title": "Enunciado e dados essenciais",
+          "statement": "Texto conceitual e explicativo que aborda as origens, o funcionamento tecnológico e o futuro do metaverso em ambientes virtuais e jogos eletrônicos.\nItem avaliado: A tipologia textual predominante no texto CB1A1 é descritiva, evidenciada pela apresentação das características dos jogos online dentro do metaverso. (Certo / Errado).",
+          "prompt": "Texto conceitual e explicativo que aborda as origens, o funcionamento tecnológico e o futuro do metaverso em ambientes virtuais e jogos eletrônicos.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item avaliado",
+              "rationale": "A tipologia textual predominante no texto CB1A1 é descritiva, evidenciada pela apresentação das características dos jogos online dentro do metaverso. (Certo / Errado)."
+            }
+          ],
+          "result": "Item avaliado: A tipologia textual predominante no texto CB1A1 é descritiva, evidenciada pela apresentação das características dos jogos online dentro do metaverso. (Certo / Errado).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Texto conceitual e explicativo que aborda as origens, o funcionamento tecnológico e o futuro do metaverso em ambientes virtuais e jogos eletrônicos.\nItem avaliado: A tipologia textual predominante no texto CB1A1 é descritiva, evidenciada pela apresentação das características dos jogos online dentro do metaverso. (Certo / Errado).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados essenciais.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-007",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Texto conceitual e explicativo que aborda as origens, o funcionamento tecnológico e o futuro do metaverso em ambientes virtuais e jogos eletrônicos."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Item avaliado: A tipologia textual predominante no texto CB1A1 é descritiva, evidenciada pela apresentação das características dos jogos online dentro do metaverso. (Certo / Errado)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-007",
+              "EXP-IP-A13-G06-034"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-008",
+          "title": "Desenvolvimento e raciocínio pedagógico",
+          "statement": "Aplicação do Passo 1:\nInício: \"O conceito de metaverso não é algo novo. Existem videogames online que oferecem ambientes virtuais...\" $\\rightarrow$ Introdução de um conceito abstrato/tecnológico.\nFinal: \"Em um futuro muito próximo, o metaverso será acessível às pessoas, assim como o celular.\" $\\rightarrow$ Projeção analítica do tema.\nDiagnóstico base: O texto possui tema conceitual $\\rightarrow$ Dissertativo.\nAplicação do Passo 2:\nA intenção da autora é apresentar o conceito, explicar os recursos das plataformas e informar a perspectiva de evolução da tecnologia. Trata-se de dissertação expositiva / informativa.\nRefutação da armadilha da banca:\nO examinador induz ao erro ao classificar a apresentação de propriedades de uma tecnologia como \"tipologia descritiva\". Explicar o funcionamento ou atributos de um conceito abstrato é ato de exposição conceitual, não descrição física de um objeto/cena concreta.",
+          "prompt": "Aplicação do Passo 1:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Aplicação do Passo 1",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "Início",
+              "rationale": "\"O conceito de metaverso não é algo novo. Existem videogames online que oferecem ambientes virtuais...\" $\\rightarrow$ Introdução de um conceito abstrato/tecnológico."
+            },
+            {
+              "order": 3,
+              "action": "Final",
+              "rationale": "\"Em um futuro muito próximo, o metaverso será acessível às pessoas, assim como o celular.\" $\\rightarrow$ Projeção analítica do tema."
+            },
+            {
+              "order": 4,
+              "action": "Diagnóstico base",
+              "rationale": "O texto possui tema conceitual $\\rightarrow$ Dissertativo."
+            },
+            {
+              "order": 5,
+              "action": "Aplicação do Passo 2",
+              "rationale": ""
+            }
+          ],
+          "result": "O examinador induz ao erro ao classificar a apresentação de propriedades de uma tecnologia como \"tipologia descritiva\". Explicar o funcionamento ou atributos de um conceito abstrato é ato de exposição conceitual, não descrição física de um objeto/cena concreta.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Aplicação do Passo 1:\nInício: \"O conceito de metaverso não é algo novo. Existem videogames online que oferecem ambientes virtuais...\" $\\rightarrow$ Introdução de um conceito abstrato/tecnológico.\nFinal: \"Em um futuro muito próximo, o metaverso será acessível às pessoas, assim como o celular.\" $\\rightarrow$ Projeção analítica do tema.\nDiagnóstico base: O texto possui tema conceitual $\\rightarrow$ Dissertativo.\nAplicação do Passo 2:\nA intenção da autora é apresentar o conceito, explicar os recursos das plataformas e informar a perspectiva de evolução da tecnologia. Trata-se de dissertação expositiva / informativa.\nRefutação da armadilha da banca:\nO examinador induz ao erro ao classificar a apresentação de propriedades de uma tecnologia como \"tipologia descritiva\". Explicar o funcionamento ou atributos de um conceito abstrato é ato de exposição conceitual, não descrição física de um objeto/cena concreta.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e raciocínio pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e raciocínio pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e raciocínio pedagógico.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aplicação do Passo 1:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Início: \"O conceito de metaverso não é algo novo. Existem videogames online que oferecem ambientes virtuais...\" $\\rightarrow$ Introdução de um conceito abstrato/tecnológico.",
+                "Final: \"Em um futuro muito próximo, o metaverso será acessível às pessoas, assim como o celular.\" $\\rightarrow$ Projeção analítica do tema.",
+                "Diagnóstico base: O texto possui tema conceitual $\\rightarrow$ Dissertativo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aplicação do Passo 2:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A intenção da autora é apresentar o conceito, explicar os recursos das plataformas e informar a perspectiva de evolução da tecnologia. Trata-se de dissertação expositiva / informativa."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Refutação da armadilha da banca:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O examinador induz ao erro ao classificar a apresentação de propriedades de uma tecnologia como \"tipologia descritiva\". Explicar o funcionamento ou atributos de um conceito abstrato é ato de exposição conceitual, não descrição física de um objeto/cena concreta."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-008",
+              "EXP-IP-A13-G06-035"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-009",
+          "title": "Gabarito e resolução",
+          "statement": "Gabarito: Errado.",
+          "prompt": "Gabarito: Errado.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Gabarito: Errado.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Gabarito: Errado.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito e resolução.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gabarito: Errado."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-009",
+              "EXP-IP-A13-G06-036"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-010",
+          "title": "Enunciado e dados essenciais",
+          "statement": "Artigo assinado pelo juiz federal Grégore Moreira de Moura detalhando o acervo de 80 milhões de processos judiciais no Brasil e o custo de R$ 12,3 bilhões do Judiciário, qualificando o cenário como alarmante e sustentando a necessidade de soluções desjudicializadoras.\nItem avaliado: Para atingir seu propósito comunicativo, o autor constrói o texto com base nas tipologias textuais expositiva e argumentativa. (Certo / Errado).",
+          "prompt": "Artigo assinado pelo juiz federal Grégore Moreira de Moura detalhando o acervo de 80 milhões de processos judiciais no Brasil e o custo de R$ 12,3 bilhões do Judiciário, qualificando o cenário como alarmante e sustentando a necessidade de soluções desjudicializadoras.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Item avaliado",
+              "rationale": "Para atingir seu propósito comunicativo, o autor constrói o texto com base nas tipologias textuais expositiva e argumentativa. (Certo / Errado)."
+            }
+          ],
+          "result": "Item avaliado: Para atingir seu propósito comunicativo, o autor constrói o texto com base nas tipologias textuais expositiva e argumentativa. (Certo / Errado).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Artigo assinado pelo juiz federal Grégore Moreira de Moura detalhando o acervo de 80 milhões de processos judiciais no Brasil e o custo de R$ 12,3 bilhões do Judiciário, qualificando o cenário como alarmante e sustentando a necessidade de soluções desjudicializadoras.\nItem avaliado: Para atingir seu propósito comunicativo, o autor constrói o texto com base nas tipologias textuais expositiva e argumentativa. (Certo / Errado).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Enunciado e dados essenciais sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Enunciado e dados essenciais.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Enunciado e dados essenciais.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-010",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Artigo assinado pelo juiz federal Grégore Moreira de Moura detalhando o acervo de 80 milhões de processos judiciais no Brasil e o custo de R$ 12,3 bilhões do Judiciário, qualificando o cenário como alarmante e sustentando a necessidade de soluções desjudicializadoras."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Item avaliado: Para atingir seu propósito comunicativo, o autor constrói o texto com base nas tipologias textuais expositiva e argumentativa. (Certo / Errado)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-010",
+              "EXP-IP-A13-G06-037"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-011",
+          "title": "Desenvolvimento e raciocínio pedagógico",
+          "statement": "Identificação do Propósito Comunicativo e Tese:\nO autor pretende convencer o público sobre a insustentabilidade da sobrecarga de processos no Brasil e defender a desjudicialização (tese confirmada pelo título da fonte: \"Um sonho de desjudicialização\").\nIntegração das Tipologias Mobilizadas:\nCamada Expositiva: Apresentação factual de dados estatísticos rigorosos (80 milhões de ações, 203 milhões de cidadãos, despesas de R$ 12.369.100.765, custo per capita de R$ 387,00).\nCamada Argumentativa: Qualificação enfática dos dados mediante vocabulário apreciativo (\"número é estarrecedor\", \"situação praticamente insustentável\", \"há muito o que fazer\"), orientando os números para a comprovação da tese.\nJulgamento: O autor constrói o texto conjugando a exposição de dados com a argumentação persuasiva para cumprir sua finalidade discursiva.",
+          "prompt": "Identificação do Propósito Comunicativo e Tese:",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Identificação do Propósito Comunicativo e Tese",
+              "rationale": ""
+            },
+            {
+              "order": 2,
+              "action": "O autor pretende convencer o público sobre a insustentabilidade da sobrecarga de processos no Brasil e defender a desjudicialização (tese confirmada pelo título da fonte",
+              "rationale": "\"Um sonho de desjudicialização\")."
+            },
+            {
+              "order": 3,
+              "action": "Integração das Tipologias Mobilizadas",
+              "rationale": ""
+            },
+            {
+              "order": 4,
+              "action": "Camada Expositiva",
+              "rationale": "Apresentação factual de dados estatísticos rigorosos (80 milhões de ações, 203 milhões de cidadãos, despesas de R$ 12.369.100.765, custo per capita de R$ 387,00)."
+            },
+            {
+              "order": 5,
+              "action": "Camada Argumentativa",
+              "rationale": "Qualificação enfática dos dados mediante vocabulário apreciativo (\"número é estarrecedor\", \"situação praticamente insustentável\", \"há muito o que fazer\"), orientando os números para a comprovação da tese."
+            }
+          ],
+          "result": "Julgamento: O autor constrói o texto conjugando a exposição de dados com a argumentação persuasiva para cumprir sua finalidade discursiva.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Identificação do Propósito Comunicativo e Tese:\nO autor pretende convencer o público sobre a insustentabilidade da sobrecarga de processos no Brasil e defender a desjudicialização (tese confirmada pelo título da fonte: \"Um sonho de desjudicialização\").\nIntegração das Tipologias Mobilizadas:\nCamada Expositiva: Apresentação factual de dados estatísticos rigorosos (80 milhões de ações, 203 milhões de cidadãos, despesas de R$ 12.369.100.765, custo per capita de R$ 387,00).\nCamada Argumentativa: Qualificação enfática dos dados mediante vocabulário apreciativo (\"número é estarrecedor\", \"situação praticamente insustentável\", \"há muito o que fazer\"), orientando os números para a comprovação da tese.\nJulgamento: O autor constrói o texto conjugando a exposição de dados com a argumentação persuasiva para cumprir sua finalidade discursiva.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Desenvolvimento e raciocínio pedagógico sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Desenvolvimento e raciocínio pedagógico.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Desenvolvimento e raciocínio pedagógico.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-011",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificação do Propósito Comunicativo e Tese:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O autor pretende convencer o público sobre a insustentabilidade da sobrecarga de processos no Brasil e defender a desjudicialização (tese confirmada pelo título da fonte: \"Um sonho de desjudicialização\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Integração das Tipologias Mobilizadas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Camada Expositiva: Apresentação factual de dados estatísticos rigorosos (80 milhões de ações, 203 milhões de cidadãos, despesas de R$ 12.369.100.765, custo per capita de R$ 387,00).",
+                "Camada Argumentativa: Qualificação enfática dos dados mediante vocabulário apreciativo (\"número é estarrecedor\", \"situação praticamente insustentável\", \"há muito o que fazer\"), orientando os números para a comprovação da tese."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Julgamento: O autor constrói o texto conjugando a exposição de dados com a argumentação persuasiva para cumprir sua finalidade discursiva."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-011",
+              "EXP-IP-A13-G06-038"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A13-G06-012",
+          "title": "Gabarito e resolução",
+          "statement": "Gabarito: Certo.",
+          "prompt": "Gabarito: Certo.",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Gabarito",
+              "rationale": "Certo."
+            }
+          ],
+          "result": "Gabarito: Certo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Gabarito: Certo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de Gabarito e resolução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de Gabarito e resolução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em Gabarito e resolução.",
+          "exampleId": "WORKED_EXAMPLE-IP-A13-G06-012",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gabarito: Certo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A13-G06-012",
+              "EXP-IP-A13-G06-039"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -198,52 +1190,146 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-PRESSUP-01",
-          "title": "Pressuposto Tem Carimbo, Subentendido É Indireta!",
-          "content": "PRESSUPOSTO tem o carimbo da gramática (já, ainda, parou, novo)! SUBENTENDIDO é a indireta da sogra que ela pode desmentir depois!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Distinção entre pressuposto e subentendido.",
-          "limitations": "Universal para todas as bancas de concurso.",
-          "text": "Pressupostos decorrem de marcadores linguísticos explícitos; subentendidos decorrem do contexto pragmático."
+          "title": "Mantra de Fixação: Miscelânea de Interpretação",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Miscelânea de Interpretação, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Miscelânea de Interpretação, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-PRESSUP-01",
-          "title": "A Prova da FGV: A Pegadinha da Palavra 'Conseguiu'",
-          "trigger": "Frases como 'O réu conseguiu provar sua inocência'.",
-          "whyItFails": "O aluno acha que a frase apenas informa que o réu provou a inocência.",
-          "correctApproach": "O verbo 'CONSEGUIR' pressupõe que houve grande dificuldade, esforço ou obstáculo prévio para atingir o objetivo. Sem o 'conseguiu', a frase seria neutra ('O réu provou sua inocência'). Com 'conseguiu', o esforço hercúleo torna-se dado pressuposto incontornável.",
-          "bankTechnique": "Cobrar o pressuposto de dificuldade contido no verbo 'conseguir'.",
-          "counterRule": "O verbo conseguir carrega o pressuposto de superação de resistência prévia."
+          "entityId": "WARN-A13-G06-MISCELANEA-INTERPRETACAO-001",
+          "title": "Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "correctReasoning": "Classificar um texto jornalístico/informativo como \"dissertativo argumentativo\" apenas porque o redator emitiu um comentário pontual, juízo de valor ou advérbio apreciativo no corpo da notícia (ex.: \"infelizmente\", \"o conceito não é novo\").",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Opinião ou Comentário Circunstancial com Dissertação Argumentativa.",
+          "trapId": "WARN-A13-G06-MISCELANEA-INTERPRETACAO-001",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Descrição do erro comum"
+            },
+            {
+              "type": "paragraph",
+              "text": "Classificar um texto jornalístico/informativo como \"dissertativo argumentativo\" apenas porque o redator emitiu um comentário pontual, juízo de valor ou advérbio apreciativo no corpo da notícia (ex.: \"infelizmente\", \"o conceito não é novo\")."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Causa e mecanismo de indução"
+            },
+            {
+              "type": "paragraph",
+              "text": "O candidato confunde o ato comunicativo genérico de expressar opiniões com a estrutura tipológica formal da argumentação. Opinar é comum em quase todos os gêneros textuais."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Como diagnosticar e evitar"
+            },
+            {
+              "type": "paragraph",
+              "text": "Verificar o eixo central do texto: a argumentação exige sustentação sistemática de uma tese estruturada para convencer o leitor; se o objetivo geral é apenas noticiar, explicar ou relatar novidades, o texto permanece dissertativo expositivo/informativo."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A13-G06-MISCELANEA-INTERPRETACAO-001",
+              "EXP-IP-A13-G06-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A13-G06-MISCELANEA-INTERPRETACAO-002",
+          "title": "Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "correctReasoning": "Aceitar como correto o item da banca que classifica como \"descritivo\" um texto que apenas enumera propriedades, funcionalidades ou atributos de uma ferramenta técnica, jogo online ou conceito abstrato (ex.: metaverso).",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Enumeração de Características/Conceito Abstrato com Tipologia Descritiva.",
+          "trapId": "WARN-A13-G06-MISCELANEA-INTERPRETACAO-002",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Descrição do erro comum"
+            },
+            {
+              "type": "paragraph",
+              "text": "Aceitar como correto o item da banca que classifica como \"descritivo\" um texto que apenas enumera propriedades, funcionalidades ou atributos de uma ferramenta técnica, jogo online ou conceito abstrato (ex.: metaverso)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Causa e mecanismo de indução"
+            },
+            {
+              "type": "paragraph",
+              "text": "A banca explora o duplo sentido da palavra comum \"descrever\" (no sentido leigo de relatar/listar pormenores) para induzir o candidato a marcar falsamente a tipologia textual descritiva."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Como diagnosticar e evitar"
+            },
+            {
+              "type": "paragraph",
+              "text": "A verdadeira tipologia descritiva exige o retrato sensorial e estático de objetos, pessoas ou ambientes físicos concretos no espaço. Apresentar o funcionamento, componentes ou definições de temas abstratos é estritamente dissertação expositiva."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A13-G06-MISCELANEA-INTERPRETACAO-002",
+              "EXP-IP-A13-G06-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Pressuposição Linguística",
-          "shortDefinition": "Informação implícita decorrente necessariamente do significado de uma palavra ou estrutura gramatical.",
-          "fullDefinition": "Condição prévia de verdade inscrita na estrutura semântico-sintática do enunciado que é aceita como incontestável por locutor e interlocutor para que a proposição principal tenha validade e sentido lógico pleno.",
-          "domain": "Semântica Formal e Pragmática",
-          "commonMisconception": "Pensar que pressuposto é apenas uma opinião pessoal do leitor."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**O Método Estratégico de Leitura em Tipologia Textual (Passo 1 — Triagem Estrutural pelas Extremidades)**: Definição ou ideia central\nProcedimento analítico inicial que orienta a realização de uma leitura seletiva concentrada nas extremidades do texto (primeiro e último parágrafos), no título e na referência bibliográfica de rodapé, com a finalidade de diagnosticar a macroestrutura discursiva entre o tratamento de um tema abstrato/conceitual (dissertação) ou o relato de acontecimentos/caracterização de estados (narração/descrição).\nExplicação consolidada\nA abordagem passiva de leitura integral do texto sem direcionamento preliminar gera confusão interpretativa em provas do Cebraspe. O Passo 1 determina que o candidato execute uma triagem objetiva respondendo a duas perguntas fundamentais:\nO texto discute um tema ou assunto? Se o parágrafo inicial e o encerramento orbitam em torno de um conceito geral, problema social, inovação ou reflexão teórica, a estrutura é classificada como dissertativa.\nO texto conta uma história ou descreve uma cena? Se a abertura introduz personagens situados em coordenadas cronológicas e o encerramento conclui uma sucessão de ações reais ou fictícias, a estrutura é narrativa ou descritiva.\nA inspeção da fonte bibliográfica (periódicos científicos, jornais de economia, revistas culturais) e do título fornece confirmação imediata da tipologia global.\nCritérios de reconhecimento ou aplicação\nO primeiro parágrafo apresenta a proposição temática ou introduz o enredo com marcadores temporais.\nO último parágrafo arremata o raciocínio temático (estrutura circular dissertativa) ou conclui o desfecho das ações dos personagens.\nA fonte indica a esfera de circulação social do discurso (Época Negócios, Revista Piauí, revistas acadêmicas ou portais educacionais).\nExemplos e contraexemplos\nExemplo dissertativo: Início com \"Na era das redes sociais, algumas formas de comunicação arcaicas ainda dão resultado\" e final reafirmando que o método continua \"mais eficaz\" (Tema: comunicação arcaica).\nExemplo narrativo: Início com \"Cléber de Souza [...] acordou mais cedo que de costume. Cumpriu sua rotina matinal, se vestiu e partiu...\" (Enredo: ações cronológicas de um indivíduo).\nRelações\nExpande para: , 003Evidenciado visualmente por: VIS-A13-G06-MISCELANEA-INTERPRETACAO-001",
+            "**Diferenciação entre Dissertação Expositiva/Informativa e Argumentativa (Passo 2 — Intenção Autoral)**: Definição ou ideia central\nCritério de classificação tipológica baseado na reconstrução da intenção comunicativa do autor ao estruturar um texto dissertativo, dividindo-se entre a transmissão neutra de conhecimento/novidades (dissertação expositiva/informativa) e a persuasão do leitor mediante defesa de um ponto de vista balizado por tese (dissertação argumentativa).\nExplicação consolidada\nConstatado que o texto é dissertativo pelo Passo 1, o candidato deve colocar-se na perspectiva do emissor e avaliar o propósito primordial da produção textual:\nDissertativo Expositivo / Informativo: O autor tem como objetivo expor o que sabe, conceituar fenômenos, relatar avanços tecnológicos ou divulgar novidades informativas. Não há pretensão de direcionar ideologicamente o leitor ou vencer um debate. Comentários avaliativos pontuais ou impressões subjetivas acessórias não convertem o texto informativo em argumentativo.\nDissertativo Argumentativo: O autor estrutura sua argumentação para persuadir o interlocutor da validade de uma tese central. A seleção de dados, o uso de léxico modalizador enfático e a construção da conclusão convergem explicitamente para sustentar um juízo de valor ou propor uma transformação da realidade.\nCritérios de reconhecimento ou aplicação\nExpositivo/Informativo: Predomínio de definições conceituais, dados informativos, explicação de funcionamento, tom impessoal ou jornalístico.\nArgumentativo: Presença de tese explícita, argumentos de sustentação, léxico altamente avaliativo (\"insustentável\", \"estarrecedor\", \"há muito o que fazer\"), títulos valorativos e propostas de solução.\nExemplos e contraexemplos\nExemplo Expositivo: Texto que explica a história, o conceito e a projeção de acessibilidade dos jogos e ferramentas no metaverso ().\nExemplo Argumentativo: Texto que apresenta dados estatísticos de 80 milhões de processos judiciais para demonstrar a urgência da \"desjudicialização\" ().Exemplificado por: , ,",
+            "**Prevalência Narrativa e Mesclagem com Sequências Descritivas (Passo 3 — Relação entre Ação e Caracterização)**: Definição ou ideia central\nPrincípio de predominância tipológica segundo o qual produções textuais que associam o relato cronológico de acontecimentos e a caracterização física de seres, objetos ou cenários são categorizadas como predominantemente narrativas, operando as passagens descritivas como sequências mescladas e dependentes.\nExplicação consolidada\nNo âmbito das bancas de concurso, textos puramente descritivos (retratos verbais estáticos congelados no tempo) são raridades empíricas. Quase sempre a descrição desempenha papel subserviente dentro de uma macroestrutura narrativa:\nEspinha Dorsal Narrativa: Dinâmica temporal estruturada por verbos de ação no pretérito perfeito/imperfeito (acordou, vestiu, pagou, percorreu, visitou), organizando o encadeamento dos fatos praticados por personagens.\nAspectos Descritivos Mesclados: Pausas momentâneas na progressão dos fatos para detalhar trajes, cores, formatos e atributos físicos de pessoas e ambientes (camisa branca e gravata borboleta, camisa rosa com coqueiros, massa grossa com muçarela).\nO Cebraspe classifica rigorosamente essa construção como narração composta por sequências mescladas com outras tipologias, como a descritiva.\nCritérios de reconhecimento ou aplicação\nA presença de progressão temporal cumulativa garante a predominância da narrativa.\nA presença de sintagmas nominais adjetivados e enumeração de qualidades estáticas comprova a existência de sequências descritivas enxertadas.Exemplificado por: \nEvidenciado visualmente por: VIS-A13-G06-MISCELANEA-INTERPRETACAO-004, VIS-A13-G06-MISCELANEA-INTERPRETACAO-005",
+            "**Natureza Instrumental dos Dados Numéricos e Expositivos no Texto Dissertativo Argumentativo**: Definição ou ideia central\nPostulado discursivo que estabelece que a inserção de elementos factuais, estatísticas, datas e números quantitativos (recursos típicos da tipologia expositiva) não retira o caráter argumentativo de um texto quando esses elementos funcionam como instrumentos de persuasão orientados para evidenciar a gravidade de um problema e validar uma tese.\nExplicação consolidada\nTextos argumentativos maduros frequentemente utilizam recursos de exposição factual como matéria-prima probatória:\nCamada Expositiva Instrumental: Fornece a base empírica e objetiva mediante números e estatísticas oficiais (ex.: 80 milhões de processos em tramitação, 203 milhões de habitantes, custo de R$ 12,3 bilhões).\nCamada Argumentativa Predominante: Molda os dados brutos por meio de adjetivos qualificadores e advérbios de valor (\"número estarrecedor\", \"situação insustentável\"), direcionando a leitura para uma conclusão valorativa necessária (urgência da desjudicialização).\nQuando o propósito comunicativo global do autor é conscientizar ou persuadir a coletividade, a exposição de dados atua estritamente como argumento de sustentação da tese.\nCritérios de reconhecimento ou aplicação\nVerificar se os dados são apresentados isoladamente para informar ou se vêm acompanhados de comentários críticos que qualificam sua magnitude.\nObservar a correlação entre os números expostos e a tese sintetizada no título da obra ou na conclusão.Exemplificado por: \nRelacionado a: TIP-A13-G06-MISCELANEA-INTERPRETACAO-003"
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-PRESSUP-01",
-          "question": "Identifique a informação pressuposta na frase: 'O novo delegado parou de conceder entrevistas à imprensa'.",
-          "keyPoints": [
-            "Dois pressupostos explícitos ancorados na gramática:",
-            "1º: Pelo verbo 'parou de', pressupõe-se que o delegado CONCEDIA entrevistas anteriormente no passado.",
-            "2º: Pelo adjetivo 'novo', pressupõe-se que havia um delegado ANTERIOR que ocupava o cargo."
-          ],
-          "targetConcept": "Marcadores Gramaticais de Pressuposição",
-          "targetLO": "LO-A13-G06-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Miscelânea de Interpretação?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }
@@ -360,7 +1446,18 @@
         "confidence": 0.96
       },
       "answerSha256": "3cf52d757b7618d69dc0ab77608b730b552370bce5c00bec74ae92d01ca0588d",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "source_conflict",
+        "options": [],
+        "reason": "A fonte preservada contém gabaritos conflitantes; a tentativa foi bloqueada para não induzir o aluno ao erro.",
+        "detectedCommentaryKeys": [
+          "A",
+          "D",
+          "C"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",

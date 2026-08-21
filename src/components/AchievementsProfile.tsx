@@ -95,7 +95,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
   });
 
   return (
-    <div className="max-w-5xl mx-auto space-y-8 pb-16">
+    <div className="tool-content-shell space-y-8 pb-16">
       {/* Header */}
       <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col sm:flex-row gap-5 sm:items-center sm:justify-between">
         <div className="flex items-center gap-4 min-w-0">

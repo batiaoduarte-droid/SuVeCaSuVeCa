@@ -1,22 +1,24 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A07-G08",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Adverbiais - Condicionais, Conformativas e Consecutivas",
+    "title": "Desenvolvimento das Orações Reduzidas",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
+    "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A07-G08",
     "lessonId": "A07",
-    "title": "Orações Subordinadas Adverbiais - Condicionais, Conformativas e Consecutivas",
+    "title": "Desenvolvimento das Orações Reduzidas",
     "learningObjectives": [
       "Compreender e definir os princípios normativos e conceituais de Desenvolvimento das Orações Reduzidas.",
       "Aplicar regras canônicas e procedimentos decisórios de Desenvolvimento das Orações Reduzidas na resolução de questões.",
       "Analisar o papel de Desenvolvimento das Orações Reduzidas no eixo Método central e reconhecer armadilhas e variações de bancas."
     ],
-    "conceptCount": 1,
+    "conceptCount": 10,
     "ruleCount": 1,
     "canonicalLearningObjectiveRefs": [
       "OBJ-IP-A07-G08-001",
@@ -30,127 +32,2126 @@
   },
   "sections": {
     "suveca": {
-      "macroContext": "O segundo trio de Orações Subordinadas Adverbiais contempla as Condicionais (hipótese ou requisito indispensável para a realização da matriz), Conformativas (acordo, conformidade ou modelo regulatório) e Consecutivas (resultado ou efeito decorrente de uma causa intensificada na matriz).",
-      "visualBlueprint": "Condicional: Requisito prévio (Se você estudar, passará / Caso venha, avise) | Conformativa: Modelo/Regra (Conforme determina a lei / Segundo informou a imprensa) | Consecutiva: Efeito disparado por 'tão/tanto/tamanho' + QUE (Gritou TANTO [que ficou rouco]).",
-      "cognitiveAnchor": "Consecutiva é o efeito da causa: sempre tem na matriz um intensificador (TÃO, TANTO, TAMANHO) apontando para o 'QUE'.",
-      "strategicSignificance": "Elimina confusões entre Causa e Consequência e garante correlação exata nos períodos condicionais.",
-      "coreTension": "Inverter a causa e a consequência em períodos com conectivo consecutivo 'que'."
+      "level": "intermediário",
+      "label": "Conexão SuVeCA: Desenvolvimento das Orações Reduzidas",
+      "summary": "Articulação morfossintática e semântica de Desenvolvimento das Orações Reduzidas com os núcleos do SuVeCA.",
+      "steps": [
+        "Identificar o verbo ou núcleo oracional relevante no período.",
+        "Localizar os termos dependentes e verificar suas relações sintáticas diretas.",
+        "Aplicar as regras específicas da unidade preservando a coesão e o paralelismo."
+      ],
+      "limits": [
+        "Não alterar a relação semântica fundamental ao aplicar reestruturações."
+      ],
+      "decisiveTests": [
+        "Substituição por termo canônico equivalente para testar a função sintática."
+      ],
+      "contrasts": [],
+      "examTraps": []
     },
     "prerequisites": {
-      "items": [
+      "blocks": [
         {
-          "prerequisiteId": "PR-A07-08",
-          "name": "Conjunções Subordinativas Adverbiais II",
-          "reason": "Dominar conectivos condicionais (se, caso), conformativos (conforme, segundo) e consecutivos (que antecedido de tanto/tão).",
-          "activationPrompt": "Em 'Comeu tanto que passou mal', qual foi a causa e qual a consequência?",
-          "isCritical": true
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "Reconhecimento básico das classes gramaticais e estruturas oracionais.",
+            "Identificação dos termos regentes e regidos na estrutura frasal."
+          ]
+        }
+      ],
+      "maps": [
+        {
+          "mapId": "MAP-PREREQ-IP-A07-G08",
+          "title": "Mapa de Dependência: Desenvolvimento das Orações Reduzidas",
+          "mapType": "dependency",
+          "nodes": [
+            {
+              "id": "pre_1",
+              "label": "Conhecimento Prévio",
+              "status": "required"
+            },
+            {
+              "id": "curr_1",
+              "label": "Desenvolvimento das Orações Reduzidas",
+              "status": "current_focus"
+            }
+          ],
+          "edges": [
+            {
+              "from": "pre_1",
+              "to": "curr_1",
+              "relation": "fundamento_para"
+            }
+          ]
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Estrutura das Condicionais, Conformativas e Consecutivas",
-          "pedagogicalGoal": "Compreender o funcionamento lógico e estrutural das três subclasses adverbiais.",
+          "groupId": "GRP-IP-A07-G08-01",
+          "title": "Oposição Estrutural: Oração Reduzida vs. Oração Desenvolvida",
+          "conceptRefs": [
+            "KB-A07-G08-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "table",
-              "title": "Quadro: Condicional, Conformativa e Consecutiva",
-              "columns": [
-                "Subclasse Adverbial",
-                "Relação Lógica",
-                "Conectivos e Estrutura",
-                "Exemplo Canônico"
-              ],
-              "rows": [
-                [
-                  "Condicional",
-                  "Hipótese, condição essencial",
-                  "se, caso (exige subjuntivo), desde que, contanto que, a menos que",
-                  "Se você comparecer, resolveremos o caso."
-                ],
-                [
-                  "Conformativa",
-                  "Conformidade, regra, acordo, citação de fonte",
-                  "conforme, segundo, consoante, como (= conforme)",
-                  "Fizemos o relatório conforme o regulamento prescreve."
-                ],
-                [
-                  "Consecutiva",
-                  "Efeito, resultado gerado por causa intensificada",
-                  "tão... QUE, tanto... QUE, tamanho... QUE, de modo que",
-                  "A chuva foi tão forte QUE alagou a cidade."
-                ]
-              ],
-              "text": "As orações consecutivas formam um par correlativo inseparável com os intensificadores da oração principal."
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nUma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa.\nExplicação consolidada\nNo português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:\nEstrutura Reduzida: Apresenta economia morfossintática pela ausência de conjunção ou pronome relativo. O predicado é estruturado por:\nInfinitivo: pessoal ou impessoal (terminações -ar, -er, -ir);\nGerúndio: terminação -ndo;\nParticípio: terminações regulares -do, -da ou formas irregulares.\nNota: A presença de preposição funcional introdutória (a, de, por, para, ao, sem, apesar de) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo.\nEstrutura Desenvolvida: Apresenta obrigatoriamente um conector gramatical subordinativo e desdobra o verbo nominal em uma forma verbal finita conjugada.\nCritérios de reconhecimento ou aplicação\nVerbo no infinitivo/gerúndio/particípio sem conjunção subordinativa ou pronome relativo $\\rightarrow$ Oração Reduzida.\nConectivo explícito presente (que, se, quando, embora, visto que, etc.) + verbo conjugado $\\rightarrow$ Oração Desenvolvida.\nExemplos e contraexemplos\nReduzida: \"É urgente reconhecer a necessidade...\" (sem conectivo, infinitivo).\nDesenvolvida: \"É urgente que se reconheça a necessidade...\" (com conjunção integrante \"que\" e presente do subjuntivo).\nContraexemplo (Falsa Desenvolvida): \"É urgente o reconhecimento da necessidade...\" (nominalização/sintagma nominal, não é oração desenvolvida).\nRelações\nExpande para: e .a ."
             }
           ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-02",
+          "title": "Algoritmo Analítico dos Seis Passos para Desenvolvimento",
+          "conceptRefs": [
+            "KB-A07-G08-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nO método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação.\nExplicação consolidada\nOs seis passos operacionais estruturam-se na seguinte sequência:\nPasso 1 — Contar os verbos: Identificar cada verbo individual e locução verbal. O total de unidades verbais equivale ao número exato de orações do período.\nPasso 2 — Inserir a barra delimitadora: Isolar visualmente a oração reduzida inserindo um traço vertical imediatamente antes da forma nominal ou da preposição funcional que a rege.\nPasso 3 — Diagnosticar a natureza sintática:\nSubstantiva: se a oração puder ser integralmente substituída pelo pronome demonstrativo \"ISSO\" (disso, nisso, a isso).\nAdjetiva: se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente (\"manda a seta\").\nAdverbial: se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.).\nPasso 4 — Inserir o conectivo adequado:\nSubstantiva $\\rightarrow$ Conjunção Integrante (C.I.): que (ou se).\nAdjetiva $\\rightarrow$ Pronome Relativo (P.R.): que (o qual, a qual).\nAdverbial $\\rightarrow$ Conjunção subordinativa adverbial condizente com a circunstância apurada.\nPasso 5 — Desnominalizar e conjugar o verbo: Flexionar o verbo considerando obrigatoriamente a correlação com o \"verbo amigo\" e a manutenção estrita do sujeito.\nPasso 6 — Classificar a oração reduzida: Atribuir a nomenclatura sintática oficial completa da oração original.\nRelações\nCondensado por: (Método Simplificado de 3 Passos).\nDetalhado em: (Princípios do Passo 5)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-03",
+          "title": "Algoritmo Simplificado de Três Passos para Resolução Rápida",
+          "conceptRefs": [
+            "KB-A07-G08-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nVersão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo (\"sem rodinhas\") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares.\nExplicação consolidada\nPasso 1 — Diagnóstico Categorial: Indagar se a oração é substantiva (troca por \"isso\"), adjetiva (seta no substantivo) ou adverbial (circunstância lógica).\nPasso 2 — Acoplamento do Conector: Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada (quando, embora, visto que, etc.).\nPasso 3 — Desdobramento e Flexão Verbal: Retirar a forma nominal e flexionar o verbo em modo, tempo, número e pessoa, mantendo a concordância com o sujeito da subordinada e a harmonia com o verbo da oração regente.\nRelações\nSubstitui operacionalmente: .a ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-04",
+          "title": "Princípios de Flexão Verbal: Correlação Temporal e Preservação do Sujeito",
+          "conceptRefs": [
+            "KB-A07-G08-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o \"verbo amigo\") e o eixo morfossintático-pessoal (preservação inalterada do sujeito).\nExplicação consolidada\nEixo Temporal (O \"Verbo Amigo\"):\nSe o verbo regente estiver no Presente do Indicativo, a oração desenvolvida flexiona-se no Presente (Presente do Subjuntivo ou do Indicativo). Ex.: \"É urgente que se reconheça\"; \"implica que possamos\".\nSe o verbo regente estiver no Pretérito, a oração desenvolvida alinha-se ao plano pretérito (Pretérito Imperfeito do Subjuntivo ou Pretérito Perfeito/Imperfeito do Indicativo). Ex.: \"teria vetado... visto que não se parecia\"; \"respondeu... enquanto farejava\".\nHarmonia de Pretéritos: A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).\nAtemporalidade/Verdades Permanentes: O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: \"tinha em seu acervo... no qual se incluem vários trabalhos\").\nEixo Pessoal (Preservação do Sujeito):\nSujeito Determinado: Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como \"nós\" ou \"eles\".\nSujeito Indeterminado (Infinitivo Impessoal): Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:\na) Voz Ativa com Sujeito Indeterminado: verbo na 3ª pessoa do plural (ex.: \"que reconheçam a necessidade\"; \"que cruzem fronteiras\"). b) Voz Passiva Sintética (Pronominal): VTD acompanhado da partícula apassivadora \"se\", exigindo concordância obrigatória com o sujeito paciente (ex.: \"que se reconheça a necessidade\"; \"que se critiquem as viagens\"). c) Voz Passiva Analítica: verbo auxiliar flexionado + particípio (ex.: \"que seja reconhecida\"; \"que sejam criticadas\").\nRelações\nContém alertas em: e ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-05",
+          "title": "Conectivos Concessivos: Transposição de Locuções e o Conector Coringa \"Não Obstante\"",
+          "conceptRefs": [
+            "KB-A07-G08-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nNo desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo não obstante atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida.\nExplicação consolidada\nTransposição Conectiva Obrigatória: A locução prepositiva apesar de rege verbo no infinitivo em orações reduzidas. Para desenvolvê-las, é obrigatório substituí-la por uma conjunção concessiva (embora, conquanto) ou locução conjuntiva (apesar de que), com verbo no subjuntivo. Manter apesar de com verbo flexionado (\"Apesar de é torcedor...\") constitui erro sintático; manter com infinitivo mantém a oração reduzida.\nMorfossintaxe de \"Não Obstante\":\nNa reduzida: atua como preposição acidental (\"não obstante apresentar-se...\").\nNa desenvolvida: atua diretamente como conjunção subordinativa concessiva (\"não obstante se apresente...\"), sendo equivalente a embora se apresente ou conquanto se apresente.e .\nPossui alertas em: e ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-06",
+          "title": "Sintaxe Pronominal: Próclise Subordinativa e Distinção entre PIV e PA",
+          "conceptRefs": [
+            "KB-A07-G08-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nAo desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica.\nExplicação consolidada\nAtração Proclítica: Toda conjunção subordinativa (integrante, causal, concessiva, temporal, etc.) é palavra atrativa. Ao desenvolver \"não obstante apresentar-se\", o pronome \"se\" é atraído para antes do verbo flexionado: \"embora se apresente\" (sendo incorreta a ênclise \"embora apresente-se\").\nDistinção PIV vs. PA:\nEm verbos pronominais como apresentar-se (com sentido de mostrar-se/manifestar-se), o pronome se é PIV.\nNão se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (\"embora seja apresentado\"), pois isso altera a predicação e atribui um agente externo inexistente.\nRelações\nContrasta com: (onde o 'se' apassivador permite voz passiva analítica)."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-07",
+          "title": "Semântica do Gerúndio: Causa, Concomitância, Valor Adjetivo e Consequência",
+          "conceptRefs": [
+            "KB-A07-G08-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:\nExplicação consolidada\nGerúndio Causal: Expressa a causa/motivo antecedente que fundamenta a oração principal. Identifica-se pelo critério cronológico (o que acontece em 1º lugar é a causa). Desenvolve-se por porque, visto que, já que, como.\nAtenção ao vocábulo \"assim\": Em construções como \"promovendo assim...\", a palavra \"assim\" é advérbio de modo (\"deste modo\") e não conjunção conclusiva; a oração preserva valor causal.\nGerúndio Temporal Concomitante: Expressa simultaneidade temporal durativa com a oração principal. Desenvolve-se por enquanto associado ao pretérito imperfeito (\"respondeu... enquanto farejava\").\nGerúndio com Valor Adjetivo: Ocorre quando o gerúndio modifica diretamente um substantivo antecedente (\"manda a seta\"), equivalendo a oração adjetiva introduzida por que.\nCritério Modal (Fato vs. Hipótese): Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (\"paulista trabalhando\" $\\rightarrow$ \"que trabalha\"); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (\"que trabalhe\").\nGerúndio Consecutivo e Aposto Resumitivo: Ocorre com verbos que trazem carga inerente de resultado (gerar, acarretar, implicar). Pode ser desenvolvido pela estrutura \"o que deve + infinitivo\", em que o pronome demonstrativo \"o\" opera como aposto oracional resumitivo que retoma o fato anterior.\nRelações\nContém alertas em: , e ."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-08",
+          "title": "Semântica do Particípio: Concessão por Contraste, Causa Histórica e Tempo Imediato",
+          "conceptRefs": [
+            "KB-A07-G08-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:\nExplicação consolidada\nParticípio Concessivo por Contraste: Configura-se quando o particípio estabelece uma oposição ou quebra de expectativa em relação à oração principal (ex.: antítese entre \"nascidas do povo humilde\" e \"vocação para a grandeza\"). Desenvolve-se por ainda que tenham nascido ou embora tenham nascido.\nParticípio Causal Histórico: Expressa uma causa pretérita que fundamenta um efeito contínuo no presente (\"Desenvolvida para uma chave... nossa mente tende a rotular\" $\\rightarrow$ \"Como se desenvolveu...\").\nParticípio Temporal Imediato: Expressa um evento concluído no exato instante anterior ao da oração principal. Desenvolve-se perfeitamente por conectivos de imediatismo como assim que ou logo que (\"Baixados os arquivos...\" $\\rightarrow$ \"Assim que são baixados os arquivos...\")."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-09",
+          "title": "A Fórmula Temporal Canônica \"Ao + Infinitivo\"",
+          "conceptRefs": [
+            "KB-A07-G08-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA combinação prepositiva ao + verbo no infinitivo constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de tempo (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção quando.\nExplicação consolidada\nRegra de Equivalência: ao + infinitivo desenvolve-se obrigatoriamente como quando + verbo conjugado (\"ao estabelecer\" = \"quando estabeleceu\"; \"ao delegar\" = \"quando delega\"; \"ao anoitecer\" = \"quando anoitecia\").\nBloqueio Causal: É terminantemente incorreto substituir estruturas de ao + infinitivo por locuções causais (\"por estabelecer\", \"porque estabeleceu\"), pois tal substituição desfigura a semântica temporal original."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-IP-A07-G08-10",
+          "title": "Critérios de Reescritura Avançada: Paralelismo, Crase e Deslocamento Adverbial",
+          "conceptRefs": [
+            "KB-A07-G08-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "text": "Definição ou ideia central\nA correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados.\nExplicação consolidada\nConcordância na Voz Passiva Sintética: Ao desenvolver orações reduzidas gerando construções com o pronome apassivador se, o verbo transitivo direto deve concordar estritamente com o sujeito paciente posposto (\"no qual se incluem vários trabalhos\", e nunca \"se inclui\").\nParalelismo e Regência com Crase: Se um verbo rege preposição pura sem artigo antes de substantivos coordenados (\"cheirando a cebola e alho\"), a inserção indevida do acento grave em um dos núcleos (\"cheirando à cebola e alho\") viola a regência e quebra o paralelismo sintático (preposição + artigo em um termo e preposição pura no outro).\nDeslocamento Adverbial e Mudança de Referente: O deslocamento de um adjunto adverbial dentro do período altera o verbo modificado. Se a locução \"ao mesmo tempo\" modificava \"começava\" (início simultâneo da ação) e na reescrita passa a modificar \"ficava cheirando\" (simultaneidade do cheiro), ocorre alteração semântica substancial, invalidando a reescrita (\"mudança de referente é mudança de sentido\")."
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nUma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa.\nExplicação consolidada\nNo português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:\nEstrutura Reduzida: Apresenta economia morfossintática pela ausência de conjunção ou pronome relativo. O predicado é estruturado por:\nInfinitivo: pessoal ou impessoal (terminações -ar, -er, -ir);\nGerúndio: terminação -ndo;\nParticípio: terminações regulares -do, -da ou formas irregulares.\nNota: A presença de preposição funcional introdutória (a, de, por, para, ao, sem, apesar de) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo.\nEstrutura Desenvolvida: Apresenta obrigatoriamente um conector gramatical subordinativo e desdobra o verbo nominal em uma forma verbal finita conjugada.\nCritérios de reconhecimento ou aplicação\nVerbo no infinitivo/gerúndio/particípio sem conjunção subordinativa ou pronome relativo $\\rightarrow$ Oração Reduzida.\nConectivo explícito presente (que, se, quando, embora, visto que, etc.) + verbo conjugado $\\rightarrow$ Oração Desenvolvida.\nExemplos e contraexemplos\nReduzida: \"É urgente reconhecer a necessidade...\" (sem conectivo, infinitivo).\nDesenvolvida: \"É urgente que se reconheça a necessidade...\" (com conjunção integrante \"que\" e presente do subjuntivo).\nContraexemplo (Falsa Desenvolvida): \"É urgente o reconhecimento da necessidade...\" (nominalização/sintagma nominal, não é oração desenvolvida).\nRelações\nExpande para: e .a ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nO método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação.\nExplicação consolidada\nOs seis passos operacionais estruturam-se na seguinte sequência:\nPasso 1 — Contar os verbos: Identificar cada verbo individual e locução verbal. O total de unidades verbais equivale ao número exato de orações do período.\nPasso 2 — Inserir a barra delimitadora: Isolar visualmente a oração reduzida inserindo um traço vertical imediatamente antes da forma nominal ou da preposição funcional que a rege.\nPasso 3 — Diagnosticar a natureza sintática:\nSubstantiva: se a oração puder ser integralmente substituída pelo pronome demonstrativo \"ISSO\" (disso, nisso, a isso).\nAdjetiva: se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente (\"manda a seta\").\nAdverbial: se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.).\nPasso 4 — Inserir o conectivo adequado:\nSubstantiva $\\rightarrow$ Conjunção Integrante (C.I.): que (ou se).\nAdjetiva $\\rightarrow$ Pronome Relativo (P.R.): que (o qual, a qual).\nAdverbial $\\rightarrow$ Conjunção subordinativa adverbial condizente com a circunstância apurada.\nPasso 5 — Desnominalizar e conjugar o verbo: Flexionar o verbo considerando obrigatoriamente a correlação com o \"verbo amigo\" e a manutenção estrita do sujeito.\nPasso 6 — Classificar a oração reduzida: Atribuir a nomenclatura sintática oficial completa da oração original.\nRelações\nCondensado por: (Método Simplificado de 3 Passos).\nDetalhado em: (Princípios do Passo 5)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nVersão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo (\"sem rodinhas\") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares.\nExplicação consolidada\nPasso 1 — Diagnóstico Categorial: Indagar se a oração é substantiva (troca por \"isso\"), adjetiva (seta no substantivo) ou adverbial (circunstância lógica).\nPasso 2 — Acoplamento do Conector: Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada (quando, embora, visto que, etc.).\nPasso 3 — Desdobramento e Flexão Verbal: Retirar a forma nominal e flexionar o verbo em modo, tempo, número e pessoa, mantendo a concordância com o sujeito da subordinada e a harmonia com o verbo da oração regente.\nRelações\nSubstitui operacionalmente: .a ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o \"verbo amigo\") e o eixo morfossintático-pessoal (preservação inalterada do sujeito).\nExplicação consolidada\nEixo Temporal (O \"Verbo Amigo\"):\nSe o verbo regente estiver no Presente do Indicativo, a oração desenvolvida flexiona-se no Presente (Presente do Subjuntivo ou do Indicativo). Ex.: \"É urgente que se reconheça\"; \"implica que possamos\".\nSe o verbo regente estiver no Pretérito, a oração desenvolvida alinha-se ao plano pretérito (Pretérito Imperfeito do Subjuntivo ou Pretérito Perfeito/Imperfeito do Indicativo). Ex.: \"teria vetado... visto que não se parecia\"; \"respondeu... enquanto farejava\".\nHarmonia de Pretéritos: A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).\nAtemporalidade/Verdades Permanentes: O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: \"tinha em seu acervo... no qual se incluem vários trabalhos\").\nEixo Pessoal (Preservação do Sujeito):\nSujeito Determinado: Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como \"nós\" ou \"eles\".\nSujeito Indeterminado (Infinitivo Impessoal): Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:\na) Voz Ativa com Sujeito Indeterminado: verbo na 3ª pessoa do plural (ex.: \"que reconheçam a necessidade\"; \"que cruzem fronteiras\"). b) Voz Passiva Sintética (Pronominal): VTD acompanhado da partícula apassivadora \"se\", exigindo concordância obrigatória com o sujeito paciente (ex.: \"que se reconheça a necessidade\"; \"que se critiquem as viagens\"). c) Voz Passiva Analítica: verbo auxiliar flexionado + particípio (ex.: \"que seja reconhecida\"; \"que sejam criticadas\").\nRelações\nContém alertas em: e ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nNo desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo não obstante atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida.\nExplicação consolidada\nTransposição Conectiva Obrigatória: A locução prepositiva apesar de rege verbo no infinitivo em orações reduzidas. Para desenvolvê-las, é obrigatório substituí-la por uma conjunção concessiva (embora, conquanto) ou locução conjuntiva (apesar de que), com verbo no subjuntivo. Manter apesar de com verbo flexionado (\"Apesar de é torcedor...\") constitui erro sintático; manter com infinitivo mantém a oração reduzida.\nMorfossintaxe de \"Não Obstante\":\nNa reduzida: atua como preposição acidental (\"não obstante apresentar-se...\").\nNa desenvolvida: atua diretamente como conjunção subordinativa concessiva (\"não obstante se apresente...\"), sendo equivalente a embora se apresente ou conquanto se apresente.e .\nPossui alertas em: e ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nAo desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica.\nExplicação consolidada\nAtração Proclítica: Toda conjunção subordinativa (integrante, causal, concessiva, temporal, etc.) é palavra atrativa. Ao desenvolver \"não obstante apresentar-se\", o pronome \"se\" é atraído para antes do verbo flexionado: \"embora se apresente\" (sendo incorreta a ênclise \"embora apresente-se\").\nDistinção PIV vs. PA:\nEm verbos pronominais como apresentar-se (com sentido de mostrar-se/manifestar-se), o pronome se é PIV.\nNão se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (\"embora seja apresentado\"), pois isso altera a predicação e atribui um agente externo inexistente.\nRelações\nContrasta com: (onde o 'se' apassivador permite voz passiva analítica)."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:\nExplicação consolidada\nGerúndio Causal: Expressa a causa/motivo antecedente que fundamenta a oração principal. Identifica-se pelo critério cronológico (o que acontece em 1º lugar é a causa). Desenvolve-se por porque, visto que, já que, como.\nAtenção ao vocábulo \"assim\": Em construções como \"promovendo assim...\", a palavra \"assim\" é advérbio de modo (\"deste modo\") e não conjunção conclusiva; a oração preserva valor causal.\nGerúndio Temporal Concomitante: Expressa simultaneidade temporal durativa com a oração principal. Desenvolve-se por enquanto associado ao pretérito imperfeito (\"respondeu... enquanto farejava\").\nGerúndio com Valor Adjetivo: Ocorre quando o gerúndio modifica diretamente um substantivo antecedente (\"manda a seta\"), equivalendo a oração adjetiva introduzida por que.\nCritério Modal (Fato vs. Hipótese): Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (\"paulista trabalhando\" $\\rightarrow$ \"que trabalha\"); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (\"que trabalhe\").\nGerúndio Consecutivo e Aposto Resumitivo: Ocorre com verbos que trazem carga inerente de resultado (gerar, acarretar, implicar). Pode ser desenvolvido pela estrutura \"o que deve + infinitivo\", em que o pronome demonstrativo \"o\" opera como aposto oracional resumitivo que retoma o fato anterior.\nRelações\nContém alertas em: , e ."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:\nExplicação consolidada\nParticípio Concessivo por Contraste: Configura-se quando o particípio estabelece uma oposição ou quebra de expectativa em relação à oração principal (ex.: antítese entre \"nascidas do povo humilde\" e \"vocação para a grandeza\"). Desenvolve-se por ainda que tenham nascido ou embora tenham nascido.\nParticípio Causal Histórico: Expressa uma causa pretérita que fundamenta um efeito contínuo no presente (\"Desenvolvida para uma chave... nossa mente tende a rotular\" $\\rightarrow$ \"Como se desenvolveu...\").\nParticípio Temporal Imediato: Expressa um evento concluído no exato instante anterior ao da oração principal. Desenvolve-se perfeitamente por conectivos de imediatismo como assim que ou logo que (\"Baixados os arquivos...\" $\\rightarrow$ \"Assim que são baixados os arquivos...\")."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA combinação prepositiva ao + verbo no infinitivo constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de tempo (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção quando.\nExplicação consolidada\nRegra de Equivalência: ao + infinitivo desenvolve-se obrigatoriamente como quando + verbo conjugado (\"ao estabelecer\" = \"quando estabeleceu\"; \"ao delegar\" = \"quando delega\"; \"ao anoitecer\" = \"quando anoitecia\").\nBloqueio Causal: É terminantemente incorreto substituir estruturas de ao + infinitivo por locuções causais (\"por estabelecer\", \"porque estabeleceu\"), pois tal substituição desfigura a semântica temporal original."
+        },
+        {
+          "type": "concept_definition",
+          "text": "Definição ou ideia central\nA correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados.\nExplicação consolidada\nConcordância na Voz Passiva Sintética: Ao desenvolver orações reduzidas gerando construções com o pronome apassivador se, o verbo transitivo direto deve concordar estritamente com o sujeito paciente posposto (\"no qual se incluem vários trabalhos\", e nunca \"se inclui\").\nParalelismo e Regência com Crase: Se um verbo rege preposição pura sem artigo antes de substantivos coordenados (\"cheirando a cebola e alho\"), a inserção indevida do acento grave em um dos núcleos (\"cheirando à cebola e alho\") viola a regência e quebra o paralelismo sintático (preposição + artigo em um termo e preposição pura no outro).\nDeslocamento Adverbial e Mudança de Referente: O deslocamento de um adjunto adverbial dentro do período altera o verbo modificado. Se a locução \"ao mesmo tempo\" modificava \"começava\" (início simultâneo da ação) e na reescrita passa a modificar \"ficava cheirando\" (simultaneidade do cheiro), ocorre alteração semântica substancial, invalidando a reescrita (\"mudança de referente é mudança de sentido\")."
         }
       ]
     },
     "rules": {
       "items": [
         {
-          "ruleId": "R-CONS-01",
-          "title": "A Correlação Intensiva na Oração Consecutiva",
-          "statement": "A Oração Subordinada Adverbial Consecutiva é tipicamente introduzida pela conjunção 'QUE' correlacionada a um termo de valor intensivo (tão, tanto, tamanho, tal) presente na oração principal.",
-          "formalCondition": "Matriz com {tão, tanto, tamanho, tal} + [QUE + Oração] -> Oração == Consecutiva.",
-          "scope": "Universal na sintaxe do período composto.",
-          "normativity": "MANDATORY",
+          "entityId": "RULE-IP-A07-G08-001",
+          "title": "Quadro de referências canônicas compactas",
+          "statement": "Quadro de referências canônicas compactas",
+          "scope": "syntax",
+          "conditions": [
+            "Presença da estrutura-alvo de syntax no segmento oracional analisado.",
+            "Aplicação direta dos critérios normativos canônicos de Quadro de referências canônicas compactas."
+          ],
           "exceptions": [],
-          "examples": [
-            "Estudou tanto QUE desmaiou de cansaço.",
-            "Tamanho foi o susto QUE ninguém falou nada."
-          ]
+          "modality": "mandatory",
+          "priority": 1,
+          "overrides": [],
+          "hasExceptions": false,
+          "ruleId": "RULE-IP-A07-G08-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G08-001",
+              "table": {
+                "tableId": "TABLE-IP-A07-G08-001",
+                "caption": "Regras canônicas",
+                "headers": [
+                  "Categoria",
+                  "Regra / Conceito",
+                  "Formulação Canônica",
+                  "ID Detalhado"
+                ],
+                "rows": [
+                  [
+                    "Definição",
+                    "Oração Reduzida",
+                    "Oração desprovida de conectivo formal, estruturada com verbo no infinitivo, gerúndio ou particípio.",
+                    "KB-A07-G08-001"
+                  ],
+                  [
+                    "Definição",
+                    "Oração Desenvolvida",
+                    "Oração introduzida por conjunção subordinativa ou pronome relativo, com verbo em forma finita conjugada.",
+                    "KB-A07-G08-001"
+                  ],
+                  [
+                    "Método",
+                    "Algoritmo dos 6 Passos",
+                    "Sequência analítica: Verbos$\\rightarrow$ Barra $\\rightarrow$ Natureza (ISSO/seta/circunstância) $\\rightarrow$ Conector $\\rightarrow$ Flexão $\\rightarrow$ Nome.",
+                    "KB-A07-G08-002"
+                  ],
+                  [
+                    "Método",
+                    "Algoritmo dos 3 Passos",
+                    "Sequência simplificada: Diagnóstico categorial$\\rightarrow$ Conector canônico $\\rightarrow$ Desdobramento e flexão verbal.",
+                    "KB-A07-G08-003"
+                  ],
+                  [
+                    "Regra",
+                    "Verbo Amigo (Tempo)",
+                    "A flexão verbal da desenvolvida deve correlacionar-se harmoniosamente com o tempo da oração regente.",
+                    "KB-A07-G08-004"
+                  ],
+                  [
+                    "Regra",
+                    "Sujeito Indeterminado",
+                    "Infinitivo impessoal desenvolve-se na 3ª pessoa do plural (ativa) ou em voz passiva sintética/analítica.",
+                    "KB-A07-G08-004"
+                  ],
+                  [
+                    "Regra",
+                    "Transposição Concessiva",
+                    "Locuções prepositivas (apesar de) devem ser substituídas por conjunções (embora) ou conjuntivas (apesar de que).",
+                    "KB-A07-G08-005"
+                  ],
+                  [
+                    "Regra",
+                    "Próclise Subordinativa",
+                    "Conjunções subordinativas são fatores de próclise obrigatória (\"embora se apresente\").",
+                    "KB-A07-G08-006"
+                  ],
+                  [
+                    "Distinção",
+                    "PIV vs. PA",
+                    "Verbo pronominal com PIV não admite passivação analítica (\"apresentar-se\" $\\neq$ \"ser apresentado\").",
+                    "KB-A07-G08-006"
+                  ],
+                  [
+                    "Regra",
+                    "Gerúndio Causal e \"Assim\"",
+                    "\"Assim\" adjacente a gerúndio atua como advérbio de modo (\"deste modo\"), preservando a causalidade.",
+                    "KB-A07-G08-007"
+                  ],
+                  [
+                    "Regra",
+                    "Ao + Infinitivo",
+                    "Fórmula estrutural com semântica fixa e exclusiva de tempo (quando), vedada a permuta por causa.",
+                    "KB-A07-G08-009"
+                  ],
+                  [
+                    "Regra",
+                    "Deslocamento Adverbial",
+                    "A mudança de posição de adjunto adverbial que altere o verbo de referência invalida itens de reescrita.",
+                    "KB-A07-G08-010"
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "RULE-IP-A07-G08-001",
+              "EXP-IP-A07-G08-033"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "resolution": {
       "procedures": [
         {
-          "procedureId": "PROC-ADV-2-01",
-          "title": "Distinção Infalível entre Causa e Consequência",
-          "triggerCondition": "Determinar se a oração destacada é Causal ou Consecutiva.",
+          "entityId": "PROC-A07-G08-001",
+          "title": "Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\")",
           "steps": [
-            "1. Localize a oração onde está a CONJUNÇÃO (o conector subordinativo).",
-            "2. Pergunte: O que esta oração introduz? O motivo anterior que gerou o fato (Causa) OU o resultado final gerado pelo fato (Consequência)?",
-            "3. Se a oração do conectivo for o resultado gerado após o 'tão/tanto' -> ORAÇÃO SUBORDINADA ADVERBIAL CONSECUTIVA.",
-            "4. Se a oração do conectivo for o motivo gerador inicial -> ORAÇÃO SUBORDINADA ADVERBIAL CAUSAL."
+            {
+              "order": 1,
+              "action": "Quantificar Orações",
+              "explanation": "Conte todos os verbos e locuções verbais do período. Cada locução atua como uma unidade.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inserir a Barra Delimitadora",
+              "explanation": "Posicione um traço vertical (/) imediatamente antes da forma nominal ou da preposição regente (a, de, por, para, ao, sem, apesar de).",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Diagnosticar a Natureza Sintática",
+              "explanation": "Passo 3 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Substitua a oração por ISSO $\\rightarrow$ se houver encaixe gramatical perfeito, a oração é Substantiva.",
+              "explanation": "Passo 4 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": "Substitua a oração por ISSO $\\rightarrow$ se houver encaixe gramatical perfeito, a oração é Substantiva."
+            },
+            {
+              "order": 5,
+              "action": "Verifique se a oração qualifica um termo nominal antecedente $\\rightarrow$ se qualificar, a oração é Adjetiva.",
+              "explanation": "Passo 5 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": "Verifique se a oração qualifica um termo nominal antecedente $\\rightarrow$ se qualificar, a oração é Adjetiva."
+            },
+            {
+              "order": 6,
+              "action": "Verifique se expressa circunstância (tempo, causa, etc.) $\\rightarrow$ se expressar, a oração é Adverbial.",
+              "explanation": "Passo 6 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": "Verifique se expressa circunstância (tempo, causa, etc.) $\\rightarrow$ se expressar, a oração é Adverbial."
+            },
+            {
+              "order": 7,
+              "action": "Acrescentar o Conectivo Canônico",
+              "explanation": "Passo 7 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": null
+            },
+            {
+              "order": 8,
+              "action": "Substantiva $\\rightarrow$ Conjunção Integrante (que / se).",
+              "explanation": "Passo 8 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": null
+            },
+            {
+              "order": 9,
+              "action": "Adjetiva $\\rightarrow$ Pronome Relativo (que / o qual).",
+              "explanation": "Passo 9 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": null
+            },
+            {
+              "order": 10,
+              "action": "Adverbial $\\rightarrow$ Conjunção adverbial equivalente (quando, embora, visto que, para que, etc.).",
+              "explanation": "Passo 10 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": null
+            },
+            {
+              "order": 11,
+              "action": "Conjugar o Verbo (Atenção Crítica)",
+              "explanation": "Passo 11 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": null
+            },
+            {
+              "order": 12,
+              "action": "Verifique o tempo do \"verbo amigo\" na oração regente (presente pede presente; pretérito pede pretérito).",
+              "explanation": "Passo 12 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": "Verifique o tempo do \"verbo amigo\" na oração regente (presente pede presente; pretérito pede pretérito)."
+            },
+            {
+              "order": 13,
+              "action": "Identifique o sujeito da oração reduzida. Se for sujeito determinado, mantenha-o. Se for infinitivo impessoal (sujeito indeterminado), adote a 3ª pessoa do plural ativa ou a voz passiva sintética com concordância no sujeito paciente.",
+              "explanation": "Passo 13 do algoritmo de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\").",
+              "test": null
+            },
+            {
+              "order": 14,
+              "action": "Classificar Sintaticamente",
+              "explanation": "Formule a nomenclatura gramatical completa da oração reduzida original.",
+              "test": null
+            }
           ],
-          "verificationCriteria": "Verificar se há termo intensificador na oração principal apontando para a consequência.",
-          "typicalFailureModes": [
-            "Classificar a oração introduzida por 'que' como causal."
-          ]
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Protocolo Operacional de Desenvolvimento em Seis Passos (\"Com Rodinhas\")",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G08-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Quantificar Orações: Conte todos os verbos e locuções verbais do período. Cada locução atua como uma unidade.",
+                "Inserir a Barra Delimitadora: Posicione um traço vertical (/) imediatamente antes da forma nominal ou da preposição regente (a, de, por, para, ao, sem, apesar de).",
+                "Diagnosticar a Natureza Sintática:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Substitua a oração por ISSO $\\rightarrow$ se houver encaixe gramatical perfeito, a oração é Substantiva.",
+                "Verifique se a oração qualifica um termo nominal antecedente $\\rightarrow$ se qualificar, a oração é Adjetiva.",
+                "Verifique se expressa circunstância (tempo, causa, etc.) $\\rightarrow$ se expressar, a oração é Adverbial."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Acrescentar o Conectivo Canônico:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Substantiva $\\rightarrow$ Conjunção Integrante (que / se).",
+                "Adjetiva $\\rightarrow$ Pronome Relativo (que / o qual).",
+                "Adverbial $\\rightarrow$ Conjunção adverbial equivalente (quando, embora, visto que, para que, etc.)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Conjugar o Verbo (Atenção Crítica):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verifique o tempo do \"verbo amigo\" na oração regente (presente pede presente; pretérito pede pretérito).",
+                "Identifique o sujeito da oração reduzida. Se for sujeito determinado, mantenha-o. Se for infinitivo impessoal (sujeito indeterminado), adote a 3ª pessoa do plural ativa ou a voz passiva sintética com concordância no sujeito paciente."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Classificar Sintaticamente: Formule a nomenclatura gramatical completa da oração reduzida original."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G08-001",
+              "EXP-IP-A07-G08-PROC-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G08-002",
+          "title": "Protocolo Rápido de Resolução de Provas em Três Etapas (\"Sem Rodinhas\")",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Interrogação Categorial Imediata",
+              "explanation": "Substantiva (ISSO), Adjetiva (seta no antecedente) ou Adverbial (circunstância lógica)?",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Inserção do Conector",
+              "explanation": "Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada.",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Flexão Verbal e Correlação",
+              "explanation": "Desdobrar a forma nominal conjugando o verbo em pessoa (sujeito) e tempo/modo (harmonia com o verbo amigo).",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Protocolo Rápido de Resolução de Provas em Três Etapas (\"Sem Rodinhas\")."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Protocolo Rápido de Resolução de Provas em Três Etapas (\"Sem Rodinhas\")."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Protocolo Rápido de Resolução de Provas em Três Etapas (\"Sem Rodinhas\")",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G08-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Interrogação Categorial Imediata: Substantiva (ISSO), Adjetiva (seta no antecedente) ou Adverbial (circunstância lógica)?",
+                "Inserção do Conector: Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada.",
+                "Flexão Verbal e Correlação: Desdobrar a forma nominal conjugando o verbo em pessoa (sujeito) e tempo/modo (harmonia com o verbo amigo)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G08-002",
+              "EXP-IP-A07-G08-PROC-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G08-003",
+          "title": "Teste Cronológico-Lógico do \"O Fato De... Faz Com Que...\" para Causa e Efeito",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Isole os dois núcleos oracionais sob análise.",
+              "explanation": "Passo 1 do algoritmo de Teste Cronológico-Lógico do \"O Fato De... Faz Com Que...\" para Causa e Efeito.",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Pergunte qual evento ocorre em primeiro lugar no mundo dos fatos e qual decorre como efeito.",
+              "explanation": "Passo 2 do algoritmo de Teste Cronológico-Lógico do \"O Fato De... Faz Com Que...\" para Causa e Efeito.",
+              "test": "Pergunte qual evento ocorre em primeiro lugar no mundo dos fatos e qual decorre como efeito."
+            },
+            {
+              "order": 3,
+              "action": "Monte mentalmente a estrutura de validação",
+              "explanation": "\"O fato de [Oração A] faz com que [Oração B]\".",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Se a sentença for semanticamente sólida e a [Oração A] constituir o fato gerador, a oração é classificada com segurança como Adverbial Causal, desenvolvendo-se por conjunções causais (porque, visto que, já que, como).",
+              "explanation": "Passo 4 do algoritmo de Teste Cronológico-Lógico do \"O Fato De... Faz Com Que...\" para Causa e Efeito.",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Teste Cronológico-Lógico do \"O Fato De... Faz Com Que...\" para Causa e Efeito."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Teste Cronológico-Lógico do \"O Fato De... Faz Com Que...\" para Causa e Efeito."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Teste Cronológico-Lógico do \"O Fato De... Faz Com Que...\" para Causa e Efeito",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G08-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Isole os dois núcleos oracionais sob análise.",
+                "Pergunte qual evento ocorre em primeiro lugar no mundo dos fatos e qual decorre como efeito.",
+                "Monte mentalmente a estrutura de validação: \"O fato de [Oração A] faz com que [Oração B]\".",
+                "Se a sentença for semanticamente sólida e a [Oração A] constituir o fato gerador, a oração é classificada com segurança como Adverbial Causal, desenvolvendo-se por conjunções causais (porque, visto que, já que, como)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G08-003",
+              "EXP-IP-A07-G08-PROC-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "PROC-A07-G08-004",
+          "title": "Método de Eliminação Rápida em Questões de Múltipla Escolha (Padrão FGV/CESGRANRIO)",
+          "steps": [
+            {
+              "order": 1,
+              "action": "Identifique no comando a exigência de substituição por \"oração na forma desenvolvida\".",
+              "explanation": "Passo 1 do algoritmo de Método de Eliminação Rápida em Questões de Múltipla Escolha (Padrão FGV/CESGRANRIO).",
+              "test": null
+            },
+            {
+              "order": 2,
+              "action": "Filtro de Falsas Desenvolvidas (Nominalizações)",
+              "explanation": "Elimine imediatamente opções que transformam a oração em sintagmas nominais com substantivos abstratos (ex.: \"o cruzamento de\", \"a possibilidade de\").",
+              "test": null
+            },
+            {
+              "order": 3,
+              "action": "Filtro de Formas Reduzidas",
+              "explanation": "Elimine opções que mantêm o verbo no infinitivo ou gerúndio com preposição (ex.: \"ao farejar\", \"após farejar\", \"para evitar-se\").",
+              "test": null
+            },
+            {
+              "order": 4,
+              "action": "Filtro de Correlação Temporal",
+              "explanation": "Elimine alternativas com tempos pretéritos inadequados quando a oração regente estiver no presente.",
+              "test": null
+            },
+            {
+              "order": 5,
+              "action": "Concentre a decisão na alternativa que apresente conectivo explícito + verbo conjugado no tempo e modo corretos.",
+              "explanation": "Passo 5 do algoritmo de Método de Eliminação Rápida em Questões de Múltipla Escolha (Padrão FGV/CESGRANRIO).",
+              "test": null
+            }
+          ],
+          "inputs": [
+            {
+              "name": "segmento_analisado",
+              "description": "Oração, período ou vocábulo submetido à análise de Método de Eliminação Rápida em Questões de Múltipla Escolha (Padrão FGV/CESGRANRIO)."
+            },
+            {
+              "name": "contexto_linguistico",
+              "description": "Escopo oracional e relações sintático-semânticas imediatas."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "classificacao_normativa",
+              "description": "Classificação gramatical precisa e justificada conforme o padrão de Método de Eliminação Rápida em Questões de Múltipla Escolha (Padrão FGV/CESGRANRIO)."
+            },
+            {
+              "name": "diagnostico_resolucao",
+              "description": "Julgamento objetivo para marcação ou eliminação de alternativa de concurso."
+            }
+          ],
+          "goal": "Executar o algoritmo decisório para Método de Eliminação Rápida em Questões de Múltipla Escolha (Padrão FGV/CESGRANRIO)",
+          "formulas": null,
+          "stoppingCondition": "Determinação inequívoca da estrutura e eliminação de alternativas conflitantes.",
+          "computability": "explicit",
+          "procedureId": "PROC-A07-G08-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique no comando a exigência de substituição por \"oração na forma desenvolvida\".",
+                "Filtro de Falsas Desenvolvidas (Nominalizações): Elimine imediatamente opções que transformam a oração em sintagmas nominais com substantivos abstratos (ex.: \"o cruzamento de\", \"a possibilidade de\").",
+                "Filtro de Formas Reduzidas: Elimine opções que mantêm o verbo no infinitivo ou gerúndio com preposição (ex.: \"ao farejar\", \"após farejar\", \"para evitar-se\").",
+                "Filtro de Correlação Temporal: Elimine alternativas com tempos pretéritos inadequados quando a oração regente estiver no presente.",
+                "Concentre a decisão na alternativa que apresente conectivo explícito + verbo conjugado no tempo e modo corretos."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "PROC-A07-G08-004",
+              "EXP-IP-A07-G08-PROC-004"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "contrasts": {
       "items": [
         {
-          "contrastId": "C-ADV-2-01",
-          "conceptA": "Como a chuva foi forte, a rua alagou (Causal)",
-          "conceptB": "A chuva foi tão forte que a rua alagou (Consecutiva)",
-          "decisiveDifference": "Em A, a oração subordinada 'Como a chuva foi forte' introduz a CAUSA; em B, a oração subordinada 'que a rua alagou' introduz a CONSEQUÊNCIA.",
-          "minimalPair": {
-            "sentenceA": "Visto que estudou muito, foi aprovado. (Oração Subordinada Causal)",
-            "sentenceB": "Estudou tanto que foi aprovado. (Oração Subordinada Consecutiva)",
-            "difference": "Conectivo na causa (Causal) vs Conectivo no resultado/efeito (Consecutiva)."
+          "entityId": "CONTRAST-IP-A07-G08-001",
+          "title": "Matriz comparativa de estruturas e armadilhas",
+          "statement": "",
+          "left": null,
+          "right": null,
+          "decisionCriterion": "Critério sintático-semântico e funcional de distinção em provas de concurso",
+          "sideA": {
+            "label": "Elemento A",
+            "criteria": [
+              "Critérios de identificação do primeiro elemento."
+            ]
           },
-          "practicalHeuristic": "Onde está o conectivo? Se estiver na causa, é Causal. Se estiver no efeito pós-'tanto', é Consecutiva.",
-          "pitfall": "Trocar causa por consequência ao responder à questão."
+          "sideB": {
+            "label": "Elemento B",
+            "criteria": [
+              "Critérios de identificação do segundo elemento."
+            ]
+          },
+          "contrastType": "mixed",
+          "conceptA": "Matriz comparativa de estruturas e armadilhas",
+          "conceptB": "Forma concorrente",
+          "commonConfusion": "Confundir o primeiro termo com o segundo termo por semelhança formal ou posicionamento superficial na oração.",
+          "contrastId": "CONTRAST-IP-A07-G08-001",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A07-G08-002",
+              "table": {
+                "tableId": "TABLE-IP-A07-G08-002",
+                "caption": "Contrastes decisivos",
+                "headers": [
+                  "Estrutura de Origem",
+                  "Tentativa / Forma Incorreta",
+                  "Forma Desenvolvida Correta",
+                  "Critério Decisivo de Distinção"
+                ],
+                "rows": [
+                  [
+                    "\"É urgente reconhecer a necessidade\"",
+                    "\"É urgente reconheçamos...\" (invenção de sujeito \"nós\")",
+                    "\"É urgente que se reconheça a necessidade\" / \"que reconheçam\"",
+                    "Infinitivo impessoal impõe sujeito indeterminado; deve-se usar 3ª plural ativa ou voz passiva."
+                  ],
+                  [
+                    "\"Criticar as viagens... parece...\"",
+                    "\"Que se critique as viagens...\" (verbo singular)",
+                    "\"Que se critiquem as viagens...\" / \"Que sejam criticadas...\"",
+                    "Na voz passiva sintética, \"as viagens\" é sujeito paciente no plural; concordância obrigatória no plural."
+                  ],
+                  [
+                    "\"Sua palavra foi a primeira a perder...\"",
+                    "\"Sua palavra foi a primeira isso\" (falsa substantiva)",
+                    "\"Sua palavra foi a primeira que perdeu o significado\"",
+                    "A oração qualifica o numeral antecedente \"a primeira\"; oração adjetiva restritiva com pronome relativo."
+                  ],
+                  [
+                    "\"Apesar de ser torcedor...\"",
+                    "\"Apesar de é torcedor...\" / \"Apesar de seja...\"",
+                    "\"Embora seja torcedor...\" / \"Apesar de que seja...\"",
+                    "Apesar de é locução prepositiva; o desenvolvimento exige conjunção (embora) ou locução conjuntiva."
+                  ],
+                  [
+                    "\"não obstante apresentar-se\"",
+                    "\"não obstante apresente-se\" (ênclise incorreta)",
+                    "\"não obstante se apresente\" / \"embora se apresente\"",
+                    "Conjunções subordinativas concessivas são palavras atrativas e exigem próclise pronominal."
+                  ],
+                  [
+                    "\"não obstante apresentar-se\"",
+                    "\"embora seja apresentado\" (passivação indevida)",
+                    "\"embora se apresente\" (voz ativa pronominal)",
+                    "O pronomese em apresentar-se é PIV, não PA; bloqueia conversão para passiva analítica."
+                  ],
+                  [
+                    "\"paulista, trabalhando pesado, vê...\"",
+                    "\"que trabalhe pesado\" (modo subjuntivo)",
+                    "\"que trabalha pesado\" (modo indicativo)",
+                    "A narrativa descreve uma realidade factual incontestável do personagem, exigindo o modo Indicativo."
+                  ],
+                  [
+                    "\"promovendo assim um ciclo...\"",
+                    "Desenvolvimento com conjunção consecutiva (portanto)",
+                    "\"[...] porque promove, assim, um ciclo...\"",
+                    "\"Assim\" é advérbio de modo (\"deste modo\"); a relação interoracional primária é de causalidade."
+                  ],
+                  [
+                    "\"ao estabelecer normas...\"",
+                    "Permuta por\"porque estabeleceu\" / \"por estabelecer\"",
+                    "\"quando estabeleceu normas...\"",
+                    "A construçãoao + infinitivo possui valor fixo e exclusivo de tempo; não admite permuta causal."
+                  ],
+                  [
+                    "\"no qual se inclui vários trabalhos\"",
+                    "Aceitar a frase por ler o verbo antes do sujeito",
+                    "\"no qual se incluem vários trabalhos\"",
+                    "\"Vários trabalhos\" é sujeito paciente posposto; concordância passiva obrigatória no plural."
+                  ],
+                  [
+                    "\"começava, ao mesmo tempo, a fazer...\"",
+                    "\"ficava cheirando a cebola ao mesmo tempo\"",
+                    "Manter\"ao mesmo tempo\" associado a \"começava\"",
+                    "Mover o adjunto adverbial para o fim da oração altera o verbo de referência e distorce o sentido original."
+                  ]
+                ]
+              }
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "CONTRAST-IP-A07-G08-001",
+              "EXP-IP-A07-G08-038"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
     "examples": {
       "items": [
         {
-          "exampleId": "EX-ADV-2-01",
-          "title": "Conformativa com Conector 'Como'",
-          "sentence": "O projeto seguiu rigorosamente como previra o cronograma.",
-          "analysis": "'Como' equivale perfeitamente a 'conforme' / 'segundo'. Trata-se de Oração Subordinada Adverbial Conformativa.",
-          "pedagogicalTakeaway": "O conectivo 'como' atua como conformativo quando puder ser substituído por 'conforme'.",
-          "targetLO": "LO-A07-G08-01"
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-001",
+          "title": "EX-A07-G08-001 — Exercício 1: Oração Substantiva Subjetiva com Sujeito Indeterminado",
+          "statement": "Frase original: \"É urgente reconhecer a necessidade de um trabalho mais efetivo com a palavra.\"\nAplicação do Método:\nVerbos: \"É\" (1) e \"reconhecer\" (2).\nBarra: É urgente / reconhecer a necessidade de um trabalho mais efetivo com a palavra.\nNatureza: \"É urgente ISSO\" $\\rightarrow$ Oração Subordinada Substantiva Subjetiva.\nConectivo: Conjunção Integrante (que).\nConjugação: \"É\" (presente do indicativo). \"Reconhecer\" está em infinitivo impessoal (sujeito indeterminado).\nVoz Ativa (3ª plural): \"É urgente que reconheçam a necessidade...\"\nVoz Passiva Sintética: \"É urgente que se reconheça a necessidade...\"\nVoz Passiva Analítica: \"É urgente que seja reconhecida a necessidade...\"\nClassificação da reduzida: Oração subordinada substantiva subjetiva reduzida de infinitivo.",
+          "prompt": "Frase original: \"É urgente reconhecer a necessidade de um trabalho mais efetivo com a palavra.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"É urgente reconhecer a necessidade de um trabalho mais efetivo com a palavra.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Verbos",
+              "rationale": "\"É\" (1) e \"reconhecer\" (2)."
+            },
+            {
+              "order": 4,
+              "action": "Barra",
+              "rationale": "É urgente / reconhecer a necessidade de um trabalho mais efetivo com a palavra."
+            },
+            {
+              "order": 5,
+              "action": "Natureza",
+              "rationale": "\"É urgente ISSO\" $\\rightarrow$ Oração Subordinada Substantiva Subjetiva."
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada substantiva subjetiva reduzida de infinitivo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"É urgente reconhecer a necessidade de um trabalho mais efetivo com a palavra.\"\nAplicação do Método:\nVerbos: \"É\" (1) e \"reconhecer\" (2).\nBarra: É urgente / reconhecer a necessidade de um trabalho mais efetivo com a palavra.\nNatureza: \"É urgente ISSO\" $\\rightarrow$ Oração Subordinada Substantiva Subjetiva.\nConectivo: Conjunção Integrante (que).\nConjugação: \"É\" (presente do indicativo). \"Reconhecer\" está em infinitivo impessoal (sujeito indeterminado).\nVoz Ativa (3ª plural): \"É urgente que reconheçam a necessidade...\"\nVoz Passiva Sintética: \"É urgente que se reconheça a necessidade...\"\nVoz Passiva Analítica: \"É urgente que seja reconhecida a necessidade...\"\nClassificação da reduzida: Oração subordinada substantiva subjetiva reduzida de infinitivo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-001 — Exercício 1: Oração Substantiva Subjetiva com Sujeito Indeterminado sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-001 — Exercício 1: Oração Substantiva Subjetiva com Sujeito Indeterminado.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-001 — Exercício 1: Oração Substantiva Subjetiva com Sujeito Indeterminado.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"É urgente reconhecer a necessidade de um trabalho mais efetivo com a palavra.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbos: \"É\" (1) e \"reconhecer\" (2).",
+                "Barra: É urgente / reconhecer a necessidade de um trabalho mais efetivo com a palavra.",
+                "Natureza: \"É urgente ISSO\" $\\rightarrow$ Oração Subordinada Substantiva Subjetiva.",
+                "Conectivo: Conjunção Integrante (que).",
+                "Conjugação: \"É\" (presente do indicativo). \"Reconhecer\" está em infinitivo impessoal (sujeito indeterminado)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Voz Ativa (3ª plural): \"É urgente que reconheçam a necessidade...\"",
+                "Voz Passiva Sintética: \"É urgente que se reconheça a necessidade...\"",
+                "Voz Passiva Analítica: \"É urgente que seja reconhecida a necessidade...\"",
+                "Classificação da reduzida: Oração subordinada substantiva subjetiva reduzida de infinitivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-001",
+              "EXP-IP-A07-G08-039"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-002",
+          "title": "EX-A07-G08-002 — Exercício 2: Oração Adjetiva com Referente Numeral Substantivo",
+          "statement": "Frase original: \"Sua palavra foi a primeira a perder o significado.\"\nAplicação do Método:\nBarra: Sua palavra foi a primeira / a perder o significado.\nNatureza: Refere-se a \"a primeira\" (numeral substantivo antecedente) $\\rightarrow$ Oração Subordinada Adjetiva Restritiva.\nConectivo: Pronome Relativo (que).\nConjugação: \"foi\" (pretérito perfeito). O verbo \"perder\" conjuga-se no pretérito perfeito (perdeu) ou mais-que-perfeito (perdera), com sujeito \"a primeira\" (ela) $\\rightarrow$ \"Sua palavra foi a primeira que perdeu (perdera) o significado.\"\nClassificação da reduzida: Oração subordinada adjetiva restritiva reduzida de infinitivo.",
+          "prompt": "Frase original: \"Sua palavra foi a primeira a perder o significado.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"Sua palavra foi a primeira a perder o significado.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Barra",
+              "rationale": "Sua palavra foi a primeira / a perder o significado."
+            },
+            {
+              "order": 4,
+              "action": "Natureza",
+              "rationale": "Refere-se a \"a primeira\" (numeral substantivo antecedente) $\\rightarrow$ Oração Subordinada Adjetiva Restritiva."
+            },
+            {
+              "order": 5,
+              "action": "Conectivo",
+              "rationale": "Pronome Relativo (que)."
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada adjetiva restritiva reduzida de infinitivo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"Sua palavra foi a primeira a perder o significado.\"\nAplicação do Método:\nBarra: Sua palavra foi a primeira / a perder o significado.\nNatureza: Refere-se a \"a primeira\" (numeral substantivo antecedente) $\\rightarrow$ Oração Subordinada Adjetiva Restritiva.\nConectivo: Pronome Relativo (que).\nConjugação: \"foi\" (pretérito perfeito). O verbo \"perder\" conjuga-se no pretérito perfeito (perdeu) ou mais-que-perfeito (perdera), com sujeito \"a primeira\" (ela) $\\rightarrow$ \"Sua palavra foi a primeira que perdeu (perdera) o significado.\"\nClassificação da reduzida: Oração subordinada adjetiva restritiva reduzida de infinitivo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-002 — Exercício 2: Oração Adjetiva com Referente Numeral Substantivo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-002 — Exercício 2: Oração Adjetiva com Referente Numeral Substantivo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-002 — Exercício 2: Oração Adjetiva com Referente Numeral Substantivo.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"Sua palavra foi a primeira a perder o significado.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Barra: Sua palavra foi a primeira / a perder o significado.",
+                "Natureza: Refere-se a \"a primeira\" (numeral substantivo antecedente) $\\rightarrow$ Oração Subordinada Adjetiva Restritiva.",
+                "Conectivo: Pronome Relativo (que).",
+                "Conjugação: \"foi\" (pretérito perfeito). O verbo \"perder\" conjuga-se no pretérito perfeito (perdeu) ou mais-que-perfeito (perdera), com sujeito \"a primeira\" (ela) $\\rightarrow$ \"Sua palavra foi a primeira que perdeu (perdera) o significado.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Oração subordinada adjetiva restritiva reduzida de infinitivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-002",
+              "EXP-IP-A07-G08-040"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-003",
+          "title": "EX-A07-G08-003 — Exercício 3: Oração Adverbial Causal Reduzida de Gerúndio",
+          "statement": "Frase original: \"Nada conseguindo, a mais nova fugiu.\"\nAplicação do Método:\nNatureza: O insucesso foi a causa da fuga $\\rightarrow$ Oração Subordinada Adverbial Causal.\nConectivo: Conjunções causais (já que, visto que, porque, uma vez que, como).\nConjugação: \"fugiu\" (pretérito perfeito). Verbo conjugado no pretérito mantendo sujeito \"a mais nova\" $\\rightarrow$ \"Já que nada conseguiu (conseguira), a mais nova fugiu.\"\nClassificação da reduzida: Oração subordinada adverbial causal reduzida de gerúndio.",
+          "prompt": "Frase original: \"Nada conseguindo, a mais nova fugiu.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"Nada conseguindo, a mais nova fugiu.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Natureza",
+              "rationale": "O insucesso foi a causa da fuga $\\rightarrow$ Oração Subordinada Adverbial Causal."
+            },
+            {
+              "order": 4,
+              "action": "Conectivo",
+              "rationale": "Conjunções causais (já que, visto que, porque, uma vez que, como)."
+            },
+            {
+              "order": 5,
+              "action": "Conjugação",
+              "rationale": "\"fugiu\" (pretérito perfeito). Verbo conjugado no pretérito mantendo sujeito \"a mais nova\" $\\rightarrow$ \"Já que nada conseguiu (conseguira), a mais nova fugiu.\""
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada adverbial causal reduzida de gerúndio.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"Nada conseguindo, a mais nova fugiu.\"\nAplicação do Método:\nNatureza: O insucesso foi a causa da fuga $\\rightarrow$ Oração Subordinada Adverbial Causal.\nConectivo: Conjunções causais (já que, visto que, porque, uma vez que, como).\nConjugação: \"fugiu\" (pretérito perfeito). Verbo conjugado no pretérito mantendo sujeito \"a mais nova\" $\\rightarrow$ \"Já que nada conseguiu (conseguira), a mais nova fugiu.\"\nClassificação da reduzida: Oração subordinada adverbial causal reduzida de gerúndio.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-003 — Exercício 3: Oração Adverbial Causal Reduzida de Gerúndio sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-003 — Exercício 3: Oração Adverbial Causal Reduzida de Gerúndio.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-003 — Exercício 3: Oração Adverbial Causal Reduzida de Gerúndio.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"Nada conseguindo, a mais nova fugiu.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Natureza: O insucesso foi a causa da fuga $\\rightarrow$ Oração Subordinada Adverbial Causal.",
+                "Conectivo: Conjunções causais (já que, visto que, porque, uma vez que, como).",
+                "Conjugação: \"fugiu\" (pretérito perfeito). Verbo conjugado no pretérito mantendo sujeito \"a mais nova\" $\\rightarrow$ \"Já que nada conseguiu (conseguira), a mais nova fugiu.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Oração subordinada adverbial causal reduzida de gerúndio."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-003",
+              "EXP-IP-A07-G08-041"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-004",
+          "title": "EX-A07-G08-004 — Exercício 4: Oração Adverbial Causal com Preposição \"Por\"",
+          "statement": "Frase original: \"Se dependesse de mim, teria vetado a roda por não se parecer nada com o pé.\"\nAplicação do Método:\nNatureza: A preposição \"por\" indica a causa do veto $\\rightarrow$ Oração Subordinada Adverbial Causal.\nConectivo: Conjunção causal (visto que, uma vez que, já que).\nConjugação: \"teria vetado\" (futuro do pretérito) / \"dependesse\" (imperfeito do subjuntivo). Flexão no pretérito imperfeito do indicativo mantendo sujeito elíptico \"a roda\" $\\rightarrow$ \"...uma vez que não se parecia nada com o pé.\"\nClassificação da reduzida: Oração subordinada adverbial causal reduzida de infinitivo.",
+          "prompt": "Frase original: \"Se dependesse de mim, teria vetado a roda por não se parecer nada com o pé.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"Se dependesse de mim, teria vetado a roda por não se parecer nada com o pé.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Natureza",
+              "rationale": "A preposição \"por\" indica a causa do veto $\\rightarrow$ Oração Subordinada Adverbial Causal."
+            },
+            {
+              "order": 4,
+              "action": "Conectivo",
+              "rationale": "Conjunção causal (visto que, uma vez que, já que)."
+            },
+            {
+              "order": 5,
+              "action": "Conjugação",
+              "rationale": "\"teria vetado\" (futuro do pretérito) / \"dependesse\" (imperfeito do subjuntivo). Flexão no pretérito imperfeito do indicativo mantendo sujeito elíptico \"a roda\" $\\rightarrow$ \"...uma vez que não se parecia nada com o pé.\""
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada adverbial causal reduzida de infinitivo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"Se dependesse de mim, teria vetado a roda por não se parecer nada com o pé.\"\nAplicação do Método:\nNatureza: A preposição \"por\" indica a causa do veto $\\rightarrow$ Oração Subordinada Adverbial Causal.\nConectivo: Conjunção causal (visto que, uma vez que, já que).\nConjugação: \"teria vetado\" (futuro do pretérito) / \"dependesse\" (imperfeito do subjuntivo). Flexão no pretérito imperfeito do indicativo mantendo sujeito elíptico \"a roda\" $\\rightarrow$ \"...uma vez que não se parecia nada com o pé.\"\nClassificação da reduzida: Oração subordinada adverbial causal reduzida de infinitivo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-004 — Exercício 4: Oração Adverbial Causal com Preposição \"Por\" sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-004 — Exercício 4: Oração Adverbial Causal com Preposição \"Por\".",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-004 — Exercício 4: Oração Adverbial Causal com Preposição \"Por\".",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"Se dependesse de mim, teria vetado a roda por não se parecer nada com o pé.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Natureza: A preposição \"por\" indica a causa do veto $\\rightarrow$ Oração Subordinada Adverbial Causal.",
+                "Conectivo: Conjunção causal (visto que, uma vez que, já que).",
+                "Conjugação: \"teria vetado\" (futuro do pretérito) / \"dependesse\" (imperfeito do subjuntivo). Flexão no pretérito imperfeito do indicativo mantendo sujeito elíptico \"a roda\" $\\rightarrow$ \"...uma vez que não se parecia nada com o pé.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Oração subordinada adverbial causal reduzida de infinitivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-004",
+              "EXP-IP-A07-G08-042"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-005",
+          "title": "EX-A07-G08-005 — Exercício 5: Orações Adverbiais Temporais Coordenadas (\"Ao + Infinitivo\")",
+          "statement": "Frase original: \"O liberalismo pensa estar defendendo o indivíduo ao negar a primazia do social ou ao dizer que uma sociedade é apenas um conjunto de ambições autônomas\"\nAplicação do Método:\nNatureza: Ao + Infinitivo = Circunstância Temporal.\nConectivo: Conjunção temporal quando.\nConjugação: \"pensa\" (presente do indicativo). Verbos desenvolvidos no presente com sujeito \"o liberalismo\" $\\rightarrow$ \"O liberalismo pensa estar defendendo o indivíduo quando nega a primazia do social ou quando diz que...\"\nClassificação da reduzida: Orações subordinadas adverbiais temporais reduzidas de infinitivo.",
+          "prompt": "Frase original: \"O liberalismo pensa estar defendendo o indivíduo ao negar a primazia do social ou ao dizer que uma sociedade é apenas um conjunto de ambições autônomas\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"O liberalismo pensa estar defendendo o indivíduo ao negar a primazia do social ou ao dizer que uma sociedade é apenas um conjunto de ambições autônomas\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Natureza",
+              "rationale": "Ao + Infinitivo = Circunstância Temporal."
+            },
+            {
+              "order": 4,
+              "action": "Conectivo",
+              "rationale": "Conjunção temporal quando."
+            },
+            {
+              "order": 5,
+              "action": "Conjugação",
+              "rationale": "\"pensa\" (presente do indicativo). Verbos desenvolvidos no presente com sujeito \"o liberalismo\" $\\rightarrow$ \"O liberalismo pensa estar defendendo o indivíduo quando nega a primazia do social ou quando diz que...\""
+            }
+          ],
+          "result": "Classificação da reduzida: Orações subordinadas adverbiais temporais reduzidas de infinitivo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"O liberalismo pensa estar defendendo o indivíduo ao negar a primazia do social ou ao dizer que uma sociedade é apenas um conjunto de ambições autônomas\"\nAplicação do Método:\nNatureza: Ao + Infinitivo = Circunstância Temporal.\nConectivo: Conjunção temporal quando.\nConjugação: \"pensa\" (presente do indicativo). Verbos desenvolvidos no presente com sujeito \"o liberalismo\" $\\rightarrow$ \"O liberalismo pensa estar defendendo o indivíduo quando nega a primazia do social ou quando diz que...\"\nClassificação da reduzida: Orações subordinadas adverbiais temporais reduzidas de infinitivo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-005 — Exercício 5: Orações Adverbiais Temporais Coordenadas (\"Ao + Infinitivo\") sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-005 — Exercício 5: Orações Adverbiais Temporais Coordenadas (\"Ao + Infinitivo\").",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-005 — Exercício 5: Orações Adverbiais Temporais Coordenadas (\"Ao + Infinitivo\").",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"O liberalismo pensa estar defendendo o indivíduo ao negar a primazia do social ou ao dizer que uma sociedade é apenas um conjunto de ambições autônomas\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Natureza: Ao + Infinitivo = Circunstância Temporal.",
+                "Conectivo: Conjunção temporal quando.",
+                "Conjugação: \"pensa\" (presente do indicativo). Verbos desenvolvidos no presente com sujeito \"o liberalismo\" $\\rightarrow$ \"O liberalismo pensa estar defendendo o indivíduo quando nega a primazia do social ou quando diz que...\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Orações subordinadas adverbiais temporais reduzidas de infinitivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-005",
+              "EXP-IP-A07-G08-043"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-006",
+          "title": "EX-A07-G08-006 — Exercício 6: Oração Substantiva Subjetiva Anteposta e Voz Passiva",
+          "statement": "Frase original: \"Criticar as viagens internacionais do Presidente da República ou de outros dirigentes parece despropositado.\"\nAplicação do Método:\nNatureza: \"[ISSO] parece despropositado\" $\\rightarrow$ Oração Substantiva Subjetiva.\nConectivo: Conjunção Integrante que.\nConjugação: Infinitivo impessoal e correlação com \"parece\" (presente).\nVoz Passiva Sintética (Plural obrigatório): \"Que se critiquem as viagens internacionais...\"\nVoz Passiva Analítica: \"Que sejam criticadas as viagens internacionais...\"\nClassificação da reduzida: Oração subordinada substantiva subjetiva reduzida de infinitivo.",
+          "prompt": "Frase original: \"Criticar as viagens internacionais do Presidente da República ou de outros dirigentes parece despropositado.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"Criticar as viagens internacionais do Presidente da República ou de outros dirigentes parece despropositado.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Natureza",
+              "rationale": "\"[ISSO] parece despropositado\" $\\rightarrow$ Oração Substantiva Subjetiva."
+            },
+            {
+              "order": 4,
+              "action": "Conectivo",
+              "rationale": "Conjunção Integrante que."
+            },
+            {
+              "order": 5,
+              "action": "Conjugação",
+              "rationale": "Infinitivo impessoal e correlação com \"parece\" (presente)."
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada substantiva subjetiva reduzida de infinitivo.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"Criticar as viagens internacionais do Presidente da República ou de outros dirigentes parece despropositado.\"\nAplicação do Método:\nNatureza: \"[ISSO] parece despropositado\" $\\rightarrow$ Oração Substantiva Subjetiva.\nConectivo: Conjunção Integrante que.\nConjugação: Infinitivo impessoal e correlação com \"parece\" (presente).\nVoz Passiva Sintética (Plural obrigatório): \"Que se critiquem as viagens internacionais...\"\nVoz Passiva Analítica: \"Que sejam criticadas as viagens internacionais...\"\nClassificação da reduzida: Oração subordinada substantiva subjetiva reduzida de infinitivo.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-006 — Exercício 6: Oração Substantiva Subjetiva Anteposta e Voz Passiva sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-006 — Exercício 6: Oração Substantiva Subjetiva Anteposta e Voz Passiva.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-006 — Exercício 6: Oração Substantiva Subjetiva Anteposta e Voz Passiva.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"Criticar as viagens internacionais do Presidente da República ou de outros dirigentes parece despropositado.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Natureza: \"[ISSO] parece despropositado\" $\\rightarrow$ Oração Substantiva Subjetiva.",
+                "Conectivo: Conjunção Integrante que.",
+                "Conjugação: Infinitivo impessoal e correlação com \"parece\" (presente)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Voz Passiva Sintética (Plural obrigatório): \"Que se critiquem as viagens internacionais...\"",
+                "Voz Passiva Analítica: \"Que sejam criticadas as viagens internacionais...\"",
+                "Classificação da reduzida: Oração subordinada substantiva subjetiva reduzida de infinitivo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-006",
+              "EXP-IP-A07-G08-044"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-007",
+          "title": "EX-A07-G08-007 — Exercício 7: Oração Substantiva Objetiva Direta com Pronome Oblíquo",
+          "statement": "Frase original: \"Peço-te saíres da minha vida!\"\nAplicação do Método:\nDiagnóstico: \"Peço-te [ISSO]\" $\\rightarrow$ Oração Substantiva Objetiva Direta.\nConector: Conjunção integrante \"que\".\nFlexão: \"Peço\" (presente). O pronome \"te\" marca 2ª pessoa (tu) $\\rightarrow$ \"Peço-te que saias da minha vida!\"\nClassificação da reduzida: Oração subordinada substantiva objetiva direta reduzida de infinitivo (OSSODRI).",
+          "prompt": "Frase original: \"Peço-te saíres da minha vida!\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"Peço-te saíres da minha vida!\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Diagnóstico",
+              "rationale": "\"Peço-te [ISSO]\" $\\rightarrow$ Oração Substantiva Objetiva Direta."
+            },
+            {
+              "order": 4,
+              "action": "Conector",
+              "rationale": "Conjunção integrante \"que\"."
+            },
+            {
+              "order": 5,
+              "action": "Flexão",
+              "rationale": "\"Peço\" (presente). O pronome \"te\" marca 2ª pessoa (tu) $\\rightarrow$ \"Peço-te que saias da minha vida!\""
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada substantiva objetiva direta reduzida de infinitivo (OSSODRI).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"Peço-te saíres da minha vida!\"\nAplicação do Método:\nDiagnóstico: \"Peço-te [ISSO]\" $\\rightarrow$ Oração Substantiva Objetiva Direta.\nConector: Conjunção integrante \"que\".\nFlexão: \"Peço\" (presente). O pronome \"te\" marca 2ª pessoa (tu) $\\rightarrow$ \"Peço-te que saias da minha vida!\"\nClassificação da reduzida: Oração subordinada substantiva objetiva direta reduzida de infinitivo (OSSODRI).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-007 — Exercício 7: Oração Substantiva Objetiva Direta com Pronome Oblíquo sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-007 — Exercício 7: Oração Substantiva Objetiva Direta com Pronome Oblíquo.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-007 — Exercício 7: Oração Substantiva Objetiva Direta com Pronome Oblíquo.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"Peço-te saíres da minha vida!\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diagnóstico: \"Peço-te [ISSO]\" $\\rightarrow$ Oração Substantiva Objetiva Direta.",
+                "Conector: Conjunção integrante \"que\".",
+                "Flexão: \"Peço\" (presente). O pronome \"te\" marca 2ª pessoa (tu) $\\rightarrow$ \"Peço-te que saias da minha vida!\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Oração subordinada substantiva objetiva direta reduzida de infinitivo (OSSODRI)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-007",
+              "EXP-IP-A07-G08-045"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-008",
+          "title": "EX-A07-G08-008 — Exercício 8: Oração Adverbial Reduzida de Particípio",
+          "statement": "Frase original: \"Terminada a aula, todos se retiraram.\"\nAplicação do Método:\nDiagnóstico: Circunstância temporal $\\rightarrow$ Oração Adverbial Temporal.\nDesenvolvimento: Conjunção temporal \"quando\" + pretérito perfeito $\\rightarrow$ \"Quando a aula terminou, todos se retiraram.\"\nClassificação da reduzida: Oração subordinada adverbial temporal reduzida de particípio (OSATRP).",
+          "prompt": "Frase original: \"Terminada a aula, todos se retiraram.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"Terminada a aula, todos se retiraram.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Diagnóstico",
+              "rationale": "Circunstância temporal $\\rightarrow$ Oração Adverbial Temporal."
+            },
+            {
+              "order": 4,
+              "action": "Desenvolvimento",
+              "rationale": "Conjunção temporal \"quando\" + pretérito perfeito $\\rightarrow$ \"Quando a aula terminou, todos se retiraram.\""
+            },
+            {
+              "order": 5,
+              "action": "Classificação da reduzida",
+              "rationale": "Oração subordinada adverbial temporal reduzida de particípio (OSATRP)."
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada adverbial temporal reduzida de particípio (OSATRP).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"Terminada a aula, todos se retiraram.\"\nAplicação do Método:\nDiagnóstico: Circunstância temporal $\\rightarrow$ Oração Adverbial Temporal.\nDesenvolvimento: Conjunção temporal \"quando\" + pretérito perfeito $\\rightarrow$ \"Quando a aula terminou, todos se retiraram.\"\nClassificação da reduzida: Oração subordinada adverbial temporal reduzida de particípio (OSATRP).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-008 — Exercício 8: Oração Adverbial Reduzida de Particípio sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-008 — Exercício 8: Oração Adverbial Reduzida de Particípio.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-008 — Exercício 8: Oração Adverbial Reduzida de Particípio.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"Terminada a aula, todos se retiraram.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diagnóstico: Circunstância temporal $\\rightarrow$ Oração Adverbial Temporal.",
+                "Desenvolvimento: Conjunção temporal \"quando\" + pretérito perfeito $\\rightarrow$ \"Quando a aula terminou, todos se retiraram.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Oração subordinada adverbial temporal reduzida de particípio (OSATRP)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-008",
+              "EXP-IP-A07-G08-046"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-009",
+          "title": "EX-A07-G08-009 — Exercício 9: Oração Adjetiva Reduzida de Gerúndio",
+          "statement": "Frase original: \"Há muitos alunos estudando com afinco.\"\nAplicação do Método:\nDiagnóstico: \"estudando com afinco\" restringe o substantivo \"alunos\" $\\rightarrow$ Oração Adjetiva Restritiva.\nConector e Flexão: Pronome relativo \"que\" + presente do indicativo $\\rightarrow$ \"Há muitos alunos que estudam com afinco.\"\nClassificação da reduzida: Oração subordinada adjetiva restritiva reduzida de gerúndio (OSARRG).",
+          "prompt": "Frase original: \"Há muitos alunos estudando com afinco.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"Há muitos alunos estudando com afinco.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Diagnóstico",
+              "rationale": "\"estudando com afinco\" restringe o substantivo \"alunos\" $\\rightarrow$ Oração Adjetiva Restritiva."
+            },
+            {
+              "order": 4,
+              "action": "Conector e Flexão",
+              "rationale": "Pronome relativo \"que\" + presente do indicativo $\\rightarrow$ \"Há muitos alunos que estudam com afinco.\""
+            },
+            {
+              "order": 5,
+              "action": "Classificação da reduzida",
+              "rationale": "Oração subordinada adjetiva restritiva reduzida de gerúndio (OSARRG)."
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada adjetiva restritiva reduzida de gerúndio (OSARRG).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"Há muitos alunos estudando com afinco.\"\nAplicação do Método:\nDiagnóstico: \"estudando com afinco\" restringe o substantivo \"alunos\" $\\rightarrow$ Oração Adjetiva Restritiva.\nConector e Flexão: Pronome relativo \"que\" + presente do indicativo $\\rightarrow$ \"Há muitos alunos que estudam com afinco.\"\nClassificação da reduzida: Oração subordinada adjetiva restritiva reduzida de gerúndio (OSARRG).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-009 — Exercício 9: Oração Adjetiva Reduzida de Gerúndio sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-009 — Exercício 9: Oração Adjetiva Reduzida de Gerúndio.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-009 — Exercício 9: Oração Adjetiva Reduzida de Gerúndio.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-009",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"Há muitos alunos estudando com afinco.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diagnóstico: \"estudando com afinco\" restringe o substantivo \"alunos\" $\\rightarrow$ Oração Adjetiva Restritiva.",
+                "Conector e Flexão: Pronome relativo \"que\" + presente do indicativo $\\rightarrow$ \"Há muitos alunos que estudam com afinco.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Oração subordinada adjetiva restritiva reduzida de gerúndio (OSARRG)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-009",
+              "EXP-IP-A07-G08-047"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-010",
+          "title": "EX-A07-G08-010 — Exercício 10: Oração Adverbial Concessiva e Transposição de Locução",
+          "statement": "Frase original: \"Apesar de ser torcedor fanático, não vai aos estádios.\"\nAplicação do Método:\nDiagnóstico: Circunstância concessiva $\\rightarrow$ Oração Adverbial Concessiva.\nConector e Flexão: Troca-se a locução prepositiva \"apesar de\" pela conjunção \"embora\" + presente do subjuntivo $\\rightarrow$ \"Embora seja torcedor fanático, não vai aos estádios\" (ou \"Apesar de que seja...\").\nClassificação da reduzida: Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI).",
+          "prompt": "Frase original: \"Apesar de ser torcedor fanático, não vai aos estádios.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"Apesar de ser torcedor fanático, não vai aos estádios.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Diagnóstico",
+              "rationale": "Circunstância concessiva $\\rightarrow$ Oração Adverbial Concessiva."
+            },
+            {
+              "order": 4,
+              "action": "Conector e Flexão",
+              "rationale": "Troca-se a locução prepositiva \"apesar de\" pela conjunção \"embora\" + presente do subjuntivo $\\rightarrow$ \"Embora seja torcedor fanático, não vai aos estádios\" (ou \"Apesar de que seja...\")."
+            },
+            {
+              "order": 5,
+              "action": "Classificação da reduzida",
+              "rationale": "Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI)."
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"Apesar de ser torcedor fanático, não vai aos estádios.\"\nAplicação do Método:\nDiagnóstico: Circunstância concessiva $\\rightarrow$ Oração Adverbial Concessiva.\nConector e Flexão: Troca-se a locução prepositiva \"apesar de\" pela conjunção \"embora\" + presente do subjuntivo $\\rightarrow$ \"Embora seja torcedor fanático, não vai aos estádios\" (ou \"Apesar de que seja...\").\nClassificação da reduzida: Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-010 — Exercício 10: Oração Adverbial Concessiva e Transposição de Locução sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-010 — Exercício 10: Oração Adverbial Concessiva e Transposição de Locução.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-010 — Exercício 10: Oração Adverbial Concessiva e Transposição de Locução.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-010",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"Apesar de ser torcedor fanático, não vai aos estádios.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diagnóstico: Circunstância concessiva $\\rightarrow$ Oração Adverbial Concessiva.",
+                "Conector e Flexão: Troca-se a locução prepositiva \"apesar de\" pela conjunção \"embora\" + presente do subjuntivo $\\rightarrow$ \"Embora seja torcedor fanático, não vai aos estádios\" (ou \"Apesar de que seja...\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-010",
+              "EXP-IP-A07-G08-048"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-011",
+          "title": "EX-A07-G08-011 — Exercício 11: Concessiva com \"Não Obstante\", Próclise e PIV",
+          "statement": "Frase original: \"O Estado moderno, não obstante apresentar-se como um Estado minimalista, é potencialmente um Estado maximalista.\"\nAplicação do Método:\nConector: \"não obstante\" mantido como conjunção subordinativa concessiva (ou substituído por embora/conquanto).\nPróclise: Conjunção subordinativa atrai o pronome PIV $\\rightarrow$ \"não obstante se apresente\" / \"embora se apresente\".\nClassificação da reduzida: Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI).",
+          "prompt": "Frase original: \"O Estado moderno, não obstante apresentar-se como um Estado minimalista, é potencialmente um Estado maximalista.\"",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Frase original",
+              "rationale": "\"O Estado moderno, não obstante apresentar-se como um Estado minimalista, é potencialmente um Estado maximalista.\""
+            },
+            {
+              "order": 2,
+              "action": "Aplicação do Método",
+              "rationale": ""
+            },
+            {
+              "order": 3,
+              "action": "Conector",
+              "rationale": "\"não obstante\" mantido como conjunção subordinativa concessiva (ou substituído por embora/conquanto)."
+            },
+            {
+              "order": 4,
+              "action": "Próclise",
+              "rationale": "Conjunção subordinativa atrai o pronome PIV $\\rightarrow$ \"não obstante se apresente\" / \"embora se apresente\"."
+            },
+            {
+              "order": 5,
+              "action": "Classificação da reduzida",
+              "rationale": "Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI)."
+            }
+          ],
+          "result": "Classificação da reduzida: Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI).",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Frase original: \"O Estado moderno, não obstante apresentar-se como um Estado minimalista, é potencialmente um Estado maximalista.\"\nAplicação do Método:\nConector: \"não obstante\" mantido como conjunção subordinativa concessiva (ou substituído por embora/conquanto).\nPróclise: Conjunção subordinativa atrai o pronome PIV $\\rightarrow$ \"não obstante se apresente\" / \"embora se apresente\".\nClassificação da reduzida: Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI).'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-011 — Exercício 11: Concessiva com \"Não Obstante\", Próclise e PIV sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-011 — Exercício 11: Concessiva com \"Não Obstante\", Próclise e PIV.",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-011 — Exercício 11: Concessiva com \"Não Obstante\", Próclise e PIV.",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-011",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase original: \"O Estado moderno, não obstante apresentar-se como um Estado minimalista, é potencialmente um Estado maximalista.\"",
+                "Aplicação do Método:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Conector: \"não obstante\" mantido como conjunção subordinativa concessiva (ou substituído por embora/conquanto).",
+                "Próclise: Conjunção subordinativa atrai o pronome PIV $\\rightarrow$ \"não obstante se apresente\" / \"embora se apresente\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Classificação da reduzida: Oração subordinada adverbial concessiva reduzida de infinitivo (OSACRI)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-011",
+              "EXP-IP-A07-G08-049"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-012",
+          "title": "EX-A07-G08-012 — Bateria de Concursos: Questões 51 a 55 (FGV e CESGRANRIO)",
+          "statement": "Questão 51 (FGV — COMPESA 2018): Trecho \"...cuja sina é cruzar fronteiras...\".\nResolução: \"sina é ISSO\" (substantiva). Infinitivo impessoal exige 3ª pessoa do plural do presente do subjuntivo para marcar indeterminação $\\rightarrow$ \"que cruzem fronteiras\".\nGabarito Oficial: Letra E.\nQuestão 52 (FGV — ALERJ): Trecho \"...implica poder decifrar...\".\nResolução: Descartam-se nominalizações (\"a possibilidade de\"). Verbo \"implica\" no presente exige presente do subjuntivo $\\rightarrow$ \"que possamos decifrar\".\nGabarito Oficial: Letra D.\nQuestão 53 (FGV — IBGE): Frase \"O que pode ser feito para evitar um novo racionamento?\".\nResolução: Oração final desenvolvida com \"pode\" (presente) exige presente do subjuntivo $\\rightarrow$ \"Para que se evite um novo racionamento?\".\nGabarito Oficial: Letra D.\nQuestão 54 (FGV — Pref. Salvador): Trecho \"Um paulista, trabalhando pesado... vê...\".\nResolução: Oração adjetiva referente a \"paulista\". Expressa fato real da narrativa $\\rightarrow$ modo indicativo (\"que trabalha pesado\"), descartando o subjuntivo hipotético (\"que trabalhe\").\nGabarito Oficial: Letra C.\nQuestão 55 (CESGRANRIO — Banco do Brasil): Trecho \"...coincidências envolvendo o número...\".\nResolução: Oração adjetiva ligada a \"coincidências\". Texto no passado (foi, ia) exige pretérito imperfeito do indicativo $\\rightarrow$ \"que envolviam o número\".\nGabarito Oficial: Letra B.",
+          "prompt": "Questão 51 (FGV — COMPESA 2018): Trecho \"...cuja sina é cruzar fronteiras...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Questão 51 (FGV — COMPESA 2018)",
+              "rationale": "Trecho \"...cuja sina é cruzar fronteiras...\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "\"sina é ISSO\" (substantiva). Infinitivo impessoal exige 3ª pessoa do plural do presente do subjuntivo para marcar indeterminação $\\rightarrow$ \"que cruzem fronteiras\"."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra E."
+            },
+            {
+              "order": 4,
+              "action": "Questão 52 (FGV — ALERJ)",
+              "rationale": "Trecho \"...implica poder decifrar...\"."
+            },
+            {
+              "order": 5,
+              "action": "Resolução",
+              "rationale": "Descartam-se nominalizações (\"a possibilidade de\"). Verbo \"implica\" no presente exige presente do subjuntivo $\\rightarrow$ \"que possamos decifrar\"."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra B.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Questão 51 (FGV — COMPESA 2018): Trecho \"...cuja sina é cruzar fronteiras...\".\nResolução: \"sina é ISSO\" (substantiva). Infinitivo impessoal exige 3ª pessoa do plural do presente do subjuntivo para marcar indeterminação $\\rightarrow$ \"que cruzem fronteiras\".\nGabarito Oficial: Letra E.\nQuestão 52 (FGV — ALERJ): Trecho \"...implica poder decifrar...\".\nResolução: Descartam-se nominalizações (\"a possibilidade de\"). Verbo \"implica\" no presente exige presente do subjuntivo $\\rightarrow$ \"que possamos decifrar\".\nGabarito Oficial: Letra D.\nQuestão 53 (FGV — IBGE): Frase \"O que pode ser feito para evitar um novo racionamento?\".\nResolução: Oração final desenvolvida com \"pode\" (presente) exige presente do subjuntivo $\\rightarrow$ \"Para que se evite um novo racionamento?\".\nGabarito Oficial: Letra D.\nQuestão 54 (FGV — Pref. Salvador): Trecho \"Um paulista, trabalhando pesado... vê...\".\nResolução: Oração adjetiva referente a \"paulista\". Expressa fato real da narrativa $\\rightarrow$ modo indicativo (\"que trabalha pesado\"), descartando o subjuntivo hipotético (\"que trabalhe\").\nGabarito Oficial: Letra C.\nQuestão 55 (CESGRANRIO — Banco do Brasil): Trecho \"...coincidências envolvendo o número...\".\nResolução: Oração adjetiva ligada a \"coincidências\". Texto no passado (foi, ia) exige pretérito imperfeito do indicativo $\\rightarrow$ \"que envolviam o número\".\nGabarito Oficial: Letra B.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-012 — Bateria de Concursos: Questões 51 a 55 (FGV e CESGRANRIO) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-012 — Bateria de Concursos: Questões 51 a 55 (FGV e CESGRANRIO).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-012 — Bateria de Concursos: Questões 51 a 55 (FGV e CESGRANRIO).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-012",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 51 (FGV — COMPESA 2018): Trecho \"...cuja sina é cruzar fronteiras...\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: \"sina é ISSO\" (substantiva). Infinitivo impessoal exige 3ª pessoa do plural do presente do subjuntivo para marcar indeterminação $\\rightarrow$ \"que cruzem fronteiras\".",
+                "Gabarito Oficial: Letra E."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 52 (FGV — ALERJ): Trecho \"...implica poder decifrar...\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Descartam-se nominalizações (\"a possibilidade de\"). Verbo \"implica\" no presente exige presente do subjuntivo $\\rightarrow$ \"que possamos decifrar\".",
+                "Gabarito Oficial: Letra D."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 53 (FGV — IBGE): Frase \"O que pode ser feito para evitar um novo racionamento?\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Oração final desenvolvida com \"pode\" (presente) exige presente do subjuntivo $\\rightarrow$ \"Para que se evite um novo racionamento?\".",
+                "Gabarito Oficial: Letra D."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 54 (FGV — Pref. Salvador): Trecho \"Um paulista, trabalhando pesado... vê...\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Oração adjetiva referente a \"paulista\". Expressa fato real da narrativa $\\rightarrow$ modo indicativo (\"que trabalha pesado\"), descartando o subjuntivo hipotético (\"que trabalhe\").",
+                "Gabarito Oficial: Letra C."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 55 (CESGRANRIO — Banco do Brasil): Trecho \"...coincidências envolvendo o número...\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Oração adjetiva ligada a \"coincidências\". Texto no passado (foi, ia) exige pretérito imperfeito do indicativo $\\rightarrow$ \"que envolviam o número\".",
+                "Gabarito Oficial: Letra B."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-012",
+              "EXP-IP-A07-G08-050"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-013",
+          "title": "EX-A07-G08-013 — Bateria de Concursos: Questões 56 a 59 (Instituto AOCP, FGV, FCC, VUNESP)",
+          "statement": "Questão 56 (Instituto AOCP 2020): Trecho \"...encoraja os outros a continuarem sendo generosos, promovendo assim um ciclo virtuoso...\".\nResolução: \"Promovendo\" é causa do encorajamento; \"assim\" é advérbio de modo (\"deste modo\"). Fato afirmativo exige indicativo $\\rightarrow$ \"[...] porque promove, assim, um ciclo virtuoso...\".\nGabarito Oficial: Letra A.\nQuestão 57 (FGV 2019): Trecho \"— Esterco — respondeu Oscar, farejando aborrecimento...\".\nResolução: Eliminação de formas reduzidas de infinitivo. Gerúndio expressa tempo concomitante no passado $\\rightarrow$ \"enquanto farejava aborrecimento\".\nGabarito Oficial: Letra A.\nQuestão 58 (FCC — TJ-RJ): Trecho \"Nascidas do povo mais humilde do Brasil, as Escolas afirmam a vocação [...] para a grandeza\".\nResolução: Antítese entre \"povo humilde\" e \"afirmam grandeza\" estabelece concessão $\\rightarrow$ \"Ainda que tenham nascido\".\nGabarito Oficial: Letra C.\nQuestão 59 (VUNESP 2020): Trecho \"Desenvolvida para uma chave amigo-inimigo, nossa mente tende a rotular...\".\nResolução: Causa pretérita que fundamenta a tendência presente $\\rightarrow$ \"causa e equivale a — Como se desenvolveu para uma chave amigo-inimigo...\".\nGabarito Oficial: Letra E.",
+          "prompt": "Questão 56 (Instituto AOCP 2020): Trecho \"...encoraja os outros a continuarem sendo generosos, promovendo assim um ciclo virtuoso...\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Questão 56 (Instituto AOCP 2020)",
+              "rationale": "Trecho \"...encoraja os outros a continuarem sendo generosos, promovendo assim um ciclo virtuoso...\"."
+            },
+            {
+              "order": 2,
+              "action": "Resolução",
+              "rationale": "\"Promovendo\" é causa do encorajamento; \"assim\" é advérbio de modo (\"deste modo\"). Fato afirmativo exige indicativo $\\rightarrow$ \"[...] porque promove, assim, um ciclo virtuoso...\"."
+            },
+            {
+              "order": 3,
+              "action": "Gabarito Oficial",
+              "rationale": "Letra A."
+            },
+            {
+              "order": 4,
+              "action": "Questão 57 (FGV 2019)",
+              "rationale": "Trecho \"— Esterco — respondeu Oscar, farejando aborrecimento...\"."
+            },
+            {
+              "order": 5,
+              "action": "Resolução",
+              "rationale": "Eliminação de formas reduzidas de infinitivo. Gerúndio expressa tempo concomitante no passado $\\rightarrow$ \"enquanto farejava aborrecimento\"."
+            }
+          ],
+          "result": "Gabarito Oficial: Letra E.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Questão 56 (Instituto AOCP 2020): Trecho \"...encoraja os outros a continuarem sendo generosos, promovendo assim um ciclo virtuoso...\".\nResolução: \"Promovendo\" é causa do encorajamento; \"assim\" é advérbio de modo (\"deste modo\"). Fato afirmativo exige indicativo $\\rightarrow$ \"[...] porque promove, assim, um ciclo virtuoso...\".\nGabarito Oficial: Letra A.\nQuestão 57 (FGV 2019): Trecho \"— Esterco — respondeu Oscar, farejando aborrecimento...\".\nResolução: Eliminação de formas reduzidas de infinitivo. Gerúndio expressa tempo concomitante no passado $\\rightarrow$ \"enquanto farejava aborrecimento\".\nGabarito Oficial: Letra A.\nQuestão 58 (FCC — TJ-RJ): Trecho \"Nascidas do povo mais humilde do Brasil, as Escolas afirmam a vocação [...] para a grandeza\".\nResolução: Antítese entre \"povo humilde\" e \"afirmam grandeza\" estabelece concessão $\\rightarrow$ \"Ainda que tenham nascido\".\nGabarito Oficial: Letra C.\nQuestão 59 (VUNESP 2020): Trecho \"Desenvolvida para uma chave amigo-inimigo, nossa mente tende a rotular...\".\nResolução: Causa pretérita que fundamenta a tendência presente $\\rightarrow$ \"causa e equivale a — Como se desenvolveu para uma chave amigo-inimigo...\".\nGabarito Oficial: Letra E.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-013 — Bateria de Concursos: Questões 56 a 59 (Instituto AOCP, FGV, FCC, VUNESP) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-013 — Bateria de Concursos: Questões 56 a 59 (Instituto AOCP, FGV, FCC, VUNESP).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-013 — Bateria de Concursos: Questões 56 a 59 (Instituto AOCP, FGV, FCC, VUNESP).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-013",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 56 (Instituto AOCP 2020): Trecho \"...encoraja os outros a continuarem sendo generosos, promovendo assim um ciclo virtuoso...\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: \"Promovendo\" é causa do encorajamento; \"assim\" é advérbio de modo (\"deste modo\"). Fato afirmativo exige indicativo $\\rightarrow$ \"[...] porque promove, assim, um ciclo virtuoso...\".",
+                "Gabarito Oficial: Letra A."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 57 (FGV 2019): Trecho \"— Esterco — respondeu Oscar, farejando aborrecimento...\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Eliminação de formas reduzidas de infinitivo. Gerúndio expressa tempo concomitante no passado $\\rightarrow$ \"enquanto farejava aborrecimento\".",
+                "Gabarito Oficial: Letra A."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 58 (FCC — TJ-RJ): Trecho \"Nascidas do povo mais humilde do Brasil, as Escolas afirmam a vocação [...] para a grandeza\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Antítese entre \"povo humilde\" e \"afirmam grandeza\" estabelece concessão $\\rightarrow$ \"Ainda que tenham nascido\".",
+                "Gabarito Oficial: Letra C."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 59 (VUNESP 2020): Trecho \"Desenvolvida para uma chave amigo-inimigo, nossa mente tende a rotular...\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Resolução: Causa pretérita que fundamenta a tendência presente $\\rightarrow$ \"causa e equivale a — Como se desenvolveu para uma chave amigo-inimigo...\".",
+                "Gabarito Oficial: Letra E."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-013",
+              "EXP-IP-A07-G08-051"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WORKED_EXAMPLE-IP-A07-G08-014",
+          "title": "EX-A07-G08-014 — Bateria de Concursos: Questões 60 a 67 (CESPE / Cebraspe — Miscelânea)",
+          "statement": "Questão 60 (CESPE — Diplomata): Troca de \"incluindo\" por \"no qual se inclui vários trabalhos sobre os índios\".\nJulgamento: Errado.\nJustificativa: \"Vários trabalhos\" é sujeito paciente no plural; a concordância na voz passiva sintética exige \"no qual se incluem vários trabalhos\".\nQuestão 61 (CESPE — TRT 10ª): Permuta de \"ao estabelecer\" indistintamente por \"quando estabeleceu, por estabelecer, porque estabeleceu, estabelecendo\".\nJulgamento: Errado.\nJustificativa: \"Ao + infinitivo\" expressa exclusivamente tempo, não admitindo permuta por construções causais.\nQuestão 62 (CESPE — TCE-RO): Substituição de \"Baixados os arquivos\" por \"Assim que são baixados os arquivos\".\nJulgamento: Certo.\nJustificativa: Particípio expressa tempo imediato, desenvolvido perfeitamente por \"Assim que\".\nQuestão 63 (CESPE — TST): Substituição de \"podendo optar\" por \"que pode optar\".\nJulgamento: Certo.\nJustificativa: Gerúndio qualifica o substantivo \"capital\" (adjetiva) e expressa fato permanente no presente do indicativo.\nQuestão 64 (CESPE 2021 — IBGE): Substituição de \"gerando\" por \"o que deve gerar\".\nJulgamento: Certo.\nJustificativa: Gerúndio consecutivo; o pronome \"o\" atua como aposto oracional resumitivo do fato anterior.\nQuestão 65 (CESPE — MC): Substituição de \"satisfazendo\" por \"visto que satisfazem\".\nJulgamento: Certo.\nJustificativa: Pela ordem cronológica, a satisfação das necessidades é a causa/precondição da atuação complementar.\nQuestão 66 (CESPE — SEAD-PA): Substituição de \"Ao delegar\" por \"Quando delega\".\nJulgamento: Certo.\nJustificativa: Equivalência temporal estrita de \"ao + infinitivo\".\nQuestão 67 (CESPE 2021 — PF / Escrivão): Reescrita de \"Quando anoitecia, toda aquela vizinhança começava, ao mesmo tempo, a fazer bife, e o ar ficava cheirando a cebola e alho\" por \"Ao anoitecer, toda aquela vizinhança começava a fazer bife e o ar ficava cheirando à cebola e alho ao mesmo tempo.\".\nJulgamento: Errado.\nJustificativa: A reescrita apresenta crase indevida com quebra de paralelismo (\"à cebola e alho\") e desloca \"ao mesmo tempo\", alterando o referente do verbo começava para ficava cheirando.",
+          "prompt": "Questão 60 (CESPE — Diplomata): Troca de \"incluindo\" por \"no qual se inclui vários trabalhos sobre os índios\".",
+          "analysisSteps": [
+            {
+              "order": 1,
+              "action": "Questão 60 (CESPE — Diplomata)",
+              "rationale": "Troca de \"incluindo\" por \"no qual se inclui vários trabalhos sobre os índios\"."
+            },
+            {
+              "order": 2,
+              "action": "Julgamento",
+              "rationale": "Errado."
+            },
+            {
+              "order": 3,
+              "action": "Justificativa",
+              "rationale": "\"Vários trabalhos\" é sujeito paciente no plural; a concordância na voz passiva sintética exige \"no qual se incluem vários trabalhos\"."
+            },
+            {
+              "order": 4,
+              "action": "Questão 61 (CESPE — TRT 10ª)",
+              "rationale": "Permuta de \"ao estabelecer\" indistintamente por \"quando estabeleceu, por estabelecer, porque estabeleceu, estabelecendo\"."
+            },
+            {
+              "order": 5,
+              "action": "Julgamento",
+              "rationale": "Errado."
+            }
+          ],
+          "result": "Justificativa: A reescrita apresenta crase indevida com quebra de paralelismo (\"à cebola e alho\") e desloca \"ao mesmo tempo\", alterando o referente do verbo começava para ficava cheirando.",
+          "reasoning": "Aplicação analítica e passo a passo da regra canônica ao enunciado 'Questão 60 (CESPE — Diplomata): Troca de \"incluindo\" por \"no qual se inclui vários trabalhos sobre os índios\".\nJulgamento: Errado.\nJustificativa: \"Vários trabalhos\" é sujeito paciente no plural; a concordância na voz passiva sintética exige \"no qual se incluem vários trabalhos\".\nQuestão 61 (CESPE — TRT 10ª): Permuta de \"ao estabelecer\" indistintamente por \"quando estabeleceu, por estabelecer, porque estabeleceu, estabelecendo\".\nJulgamento: Errado.\nJustificativa: \"Ao + infinitivo\" expressa exclusivamente tempo, não admitindo permuta por construções causais.\nQuestão 62 (CESPE — TCE-RO): Substituição de \"Baixados os arquivos\" por \"Assim que são baixados os arquivos\".\nJulgamento: Certo.\nJustificativa: Particípio expressa tempo imediato, desenvolvido perfeitamente por \"Assim que\".\nQuestão 63 (CESPE — TST): Substituição de \"podendo optar\" por \"que pode optar\".\nJulgamento: Certo.\nJustificativa: Gerúndio qualifica o substantivo \"capital\" (adjetiva) e expressa fato permanente no presente do indicativo.\nQuestão 64 (CESPE 2021 — IBGE): Substituição de \"gerando\" por \"o que deve gerar\".\nJulgamento: Certo.\nJustificativa: Gerúndio consecutivo; o pronome \"o\" atua como aposto oracional resumitivo do fato anterior.\nQuestão 65 (CESPE — MC): Substituição de \"satisfazendo\" por \"visto que satisfazem\".\nJulgamento: Certo.\nJustificativa: Pela ordem cronológica, a satisfação das necessidades é a causa/precondição da atuação complementar.\nQuestão 66 (CESPE — SEAD-PA): Substituição de \"Ao delegar\" por \"Quando delega\".\nJulgamento: Certo.\nJustificativa: Equivalência temporal estrita de \"ao + infinitivo\".\nQuestão 67 (CESPE 2021 — PF / Escrivão): Reescrita de \"Quando anoitecia, toda aquela vizinhança começava, ao mesmo tempo, a fazer bife, e o ar ficava cheirando a cebola e alho\" por \"Ao anoitecer, toda aquela vizinhança começava a fazer bife e o ar ficava cheirando à cebola e alho ao mesmo tempo.\".\nJulgamento: Errado.\nJustificativa: A reescrita apresenta crase indevida com quebra de paralelismo (\"à cebola e alho\") e desloca \"ao mesmo tempo\", alterando o referente do verbo começava para ficava cheirando.'.",
+          "decisivePoint": "Aplicação estrita da regra canônica de EX-A07-G08-014 — Bateria de Concursos: Questões 60 a 67 (CESPE / Cebraspe — Miscelânea) sobre o segmento analisado.",
+          "commonMistake": "Fazer leitura superficial da oração e ignorar o termo regente ou a concordância de EX-A07-G08-014 — Bateria de Concursos: Questões 60 a 67 (CESPE / Cebraspe — Miscelânea).",
+          "examTip": "Nas provas de concurso, observe se a banca tentou induzir erro com deslocamento de termos ou ambiguidade em EX-A07-G08-014 — Bateria de Concursos: Questões 60 a 67 (CESPE / Cebraspe — Miscelânea).",
+          "exampleId": "WORKED_EXAMPLE-IP-A07-G08-014",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 60 (CESPE — Diplomata): Troca de \"incluindo\" por \"no qual se inclui vários trabalhos sobre os índios\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Julgamento: Errado.",
+                "Justificativa: \"Vários trabalhos\" é sujeito paciente no plural; a concordância na voz passiva sintética exige \"no qual se incluem vários trabalhos\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 61 (CESPE — TRT 10ª): Permuta de \"ao estabelecer\" indistintamente por \"quando estabeleceu, por estabelecer, porque estabeleceu, estabelecendo\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Julgamento: Errado.",
+                "Justificativa: \"Ao + infinitivo\" expressa exclusivamente tempo, não admitindo permuta por construções causais."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 62 (CESPE — TCE-RO): Substituição de \"Baixados os arquivos\" por \"Assim que são baixados os arquivos\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Julgamento: Certo.",
+                "Justificativa: Particípio expressa tempo imediato, desenvolvido perfeitamente por \"Assim que\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 63 (CESPE — TST): Substituição de \"podendo optar\" por \"que pode optar\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Julgamento: Certo.",
+                "Justificativa: Gerúndio qualifica o substantivo \"capital\" (adjetiva) e expressa fato permanente no presente do indicativo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 64 (CESPE 2021 — IBGE): Substituição de \"gerando\" por \"o que deve gerar\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Julgamento: Certo.",
+                "Justificativa: Gerúndio consecutivo; o pronome \"o\" atua como aposto oracional resumitivo do fato anterior."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 65 (CESPE — MC): Substituição de \"satisfazendo\" por \"visto que satisfazem\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Julgamento: Certo.",
+                "Justificativa: Pela ordem cronológica, a satisfação das necessidades é a causa/precondição da atuação complementar."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 66 (CESPE — SEAD-PA): Substituição de \"Ao delegar\" por \"Quando delega\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Julgamento: Certo.",
+                "Justificativa: Equivalência temporal estrita de \"ao + infinitivo\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Questão 67 (CESPE 2021 — PF / Escrivão): Reescrita de \"Quando anoitecia, toda aquela vizinhança começava, ao mesmo tempo, a fazer bife, e o ar ficava cheirando a cebola e alho\" por \"Ao anoitecer, toda aquela vizinhança começava a fazer bife e o ar ficava cheirando à cebola e alho ao mesmo tempo.\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Julgamento: Errado.",
+                "Justificativa: A reescrita apresenta crase indevida com quebra de paralelismo (\"à cebola e alho\") e desloca \"ao mesmo tempo\", alterando o referente do verbo começava para ficava cheirando."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WORKED_EXAMPLE-IP-A07-G08-014",
+              "EXP-IP-A07-G08-052"
+            ],
+            "hideGenericScaffold": true
+          }
         }
       ]
     },
@@ -158,51 +2159,331 @@
       "blocks": [
         {
           "type": "mnemonic",
-          "mnemonicId": "MNEM-ADV-2-01",
-          "title": "Os 4T da Consequência!",
-          "content": "TÃO, TANTO, TAMANHO e TAL chamam o QUE! O QUE que vem depois é a CONSEQUÊNCIA que você vai ver!",
-          "classification": "EXAM_HEURISTIC",
-          "appliesTo": "Reconhecimento de orações consecutivas.",
-          "limitations": "Verifique a presença do conector que.",
-          "text": "Tão, tanto, tamanho e tal na matriz disparam oração subordinada consecutiva com que."
+          "title": "Mantra de Fixação: Desenvolvimento das Orações Reduzidas",
+          "content": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Desenvolvimento das Orações Reduzidas, priorize a estrutura sintática dominante.",
+          "text": "Mantra de Alta Retenção: Na dúvida entre regra e exceção em Desenvolvimento das Orações Reduzidas, priorize a estrutura sintática dominante."
         }
       ]
     },
     "traps": {
       "items": [
         {
-          "trapId": "TRAP-ADV-2-01",
-          "title": "A Confusão de Modos Verbais com 'SE' vs 'CASO'",
-          "trigger": "Substituição do conectivo condicional 'SE' por 'CASO'.",
-          "whyItFails": "O aluno troca o conector sem ajustar a desinência do verbo (*Se você vier -> *Caso você vier).",
-          "correctApproach": "'SE' rege o Futuro do Subjuntivo ('Se você VIER'); 'CASO' rege o Presente do Subjuntivo ('Caso você VENHA'). A troca de 'se' por 'caso' EXIGE a mudança da forma verbal.",
-          "bankTechnique": "Afirmar que a substituição de 'Se você estudar' por 'Caso você estudar' é gramaticalmente correta.",
-          "counterRule": "Caso exige presente do subjuntivo; se exige futuro do subjuntivo na correlação de possibilidade."
+          "entityId": "WARN-A07-G08-001",
+          "title": "Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida.",
+          "trapId": "WARN-A07-G08-001",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Comum: Em \"É urgente reconhecer a necessidade...\", afirmar que o sujeito é oracional e conjugar o verbo reconhecer de forma arbitrária (\"reconheçamos\").",
+                "Por que ocorre: O estudante confunde a função da oração inteira (que é sujeito oracional de \"é urgente\") com a estrutura interna da subordinada.",
+                "Como evitar: Investigue quem pratica a ação do próprio verbo subordinado (\"Quem reconhece?\"). No infinitivo impessoal, o sujeito é indeterminado, exigindo a 3ª pessoa do plural ou voz passiva."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G08-001",
+              "EXP-IP-A07-G08-TRAP-001"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G08-002",
+          "title": "Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas.",
+          "trapId": "WARN-A07-G08-002",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Comum: Tentar forçar o pronome \"isso\" em frases como \"Sua palavra foi a primeira a perder...\" ou \"Há muitos alunos estudando...\" (\"muitos alunos isso\").",
+                "Como evitar: O teste do \"ISSO\" só é válido quando substitui toda a oração com perfeita coerência gramatical. Se a oração qualificar termo substantivo antecedente, é adjetiva."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G08-002",
+              "EXP-IP-A07-G08-TRAP-002"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G08-003",
+          "title": "Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural.",
+          "trapId": "WARN-A07-G08-003",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Comum: Manter o verbo no singular ao desenvolver para passiva pronominal (\"que se critique as viagens\"; \"no qual se inclui vários trabalhos\").",
+                "Como evitar: Na voz passiva sintética com se apassivador, o termo paciente posposto é o sujeito gramatical. Se estiver no plural, o verbo flexiona-se obrigatoriamente no plural (\"que se critiquem as viagens\"; \"no qual se incluem vários trabalhos\")."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G08-003",
+              "EXP-IP-A07-G08-TRAP-003"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G08-004",
+          "title": "Confundir Causa com Condição ou Finalidade em Orações com \"Por\"",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Confundir Causa com Condição ou Finalidade em Orações com \"Por\".",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Confundir Causa com Condição ou Finalidade em Orações com \"Por\".",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Confundir Causa com Condição ou Finalidade em Orações com \"Por\" no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Confundir Causa com Condição ou Finalidade em Orações com \"Por\".",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Confundir Causa com Condição ou Finalidade em Orações com \"Por\".",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Confundir Causa com Condição ou Finalidade em Orações com \"Por\" para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Confundir Causa com Condição ou Finalidade em Orações com \"Por\".",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Confundir Causa com Condição ou Finalidade em Orações com \"Por\".",
+          "trapId": "WARN-A07-G08-004",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Comum: Classificar orações iniciadas por por + infinitivo (\"por não se parecer\") como condicionais ou finais.",
+                "Como evitar: Analisar a relação lógica interoracional. A preposição por combinada a forma nominal introduz tipicamente o motivo/causa geradora do fato."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G08-004",
+              "EXP-IP-A07-G08-TRAP-004"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G08-005",
+          "title": "Manutenção Indevida de Locuções Prepositivas no Desenvolvimento",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Manutenção Indevida de Locuções Prepositivas no Desenvolvimento.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Manutenção Indevida de Locuções Prepositivas no Desenvolvimento.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Manutenção Indevida de Locuções Prepositivas no Desenvolvimento no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Manutenção Indevida de Locuções Prepositivas no Desenvolvimento.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Manutenção Indevida de Locuções Prepositivas no Desenvolvimento.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Manutenção Indevida de Locuções Prepositivas no Desenvolvimento para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Manutenção Indevida de Locuções Prepositivas no Desenvolvimento.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Manutenção Indevida de Locuções Prepositivas no Desenvolvimento.",
+          "trapId": "WARN-A07-G08-005",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Comum: Tentar desenvolver uma oração concessiva mantendo a locução prepositiva apesar de (\"apesar de se apresente\").",
+                "Como evitar: Locução prepositiva rege infinitivo (reduzida). Para desenvolver, substitua-a obrigatoriamente por conjunção subordinativa (embora) ou locução conjuntiva (apesar de que)."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G08-005",
+              "EXP-IP-A07-G08-TRAP-005"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G08-006",
+          "title": "Erros de Colocação Pronominal e Passivação com PIV",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Erros de Colocação Pronominal e Passivação com PIV.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Erros de Colocação Pronominal e Passivação com PIV.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Erros de Colocação Pronominal e Passivação com PIV no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Erros de Colocação Pronominal e Passivação com PIV.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Erros de Colocação Pronominal e Passivação com PIV.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Erros de Colocação Pronominal e Passivação com PIV para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Erros de Colocação Pronominal e Passivação com PIV.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Erros de Colocação Pronominal e Passivação com PIV.",
+          "trapId": "WARN-A07-G08-006",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Comum: Aplicar ênclise após conjunção subordinativa (\"embora apresente-se\") ou converter verbo com PIV para passiva analítica (\"embora seja apresentado\").",
+                "Como evitar: Conjunções subordinativas atraem o pronome por próclise obrigatória (\"embora se apresente\"), e verbos pronominais com PIV não admitem passiva analítica."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G08-006",
+              "EXP-IP-A07-G08-TRAP-006"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G08-007",
+          "title": "Falso Conectivo Conclusivo em \"Assim\" com Gerúndio",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Falso Conectivo Conclusivo em \"Assim\" com Gerúndio.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Falso Conectivo Conclusivo em \"Assim\" com Gerúndio.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Falso Conectivo Conclusivo em \"Assim\" com Gerúndio no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Falso Conectivo Conclusivo em \"Assim\" com Gerúndio.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Falso Conectivo Conclusivo em \"Assim\" com Gerúndio.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Falso Conectivo Conclusivo em \"Assim\" com Gerúndio para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Falso Conectivo Conclusivo em \"Assim\" com Gerúndio.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Falso Conectivo Conclusivo em \"Assim\" com Gerúndio.",
+          "trapId": "WARN-A07-G08-007",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Comum: Julgar que a presença de \"assim\" torna a oração de gerúndio conclusiva/consecutiva (\"promovendo assim\").",
+                "Como evitar: Reconhecer que \"assim\" atua frequentemente como advérbio de modo (\"deste modo\"), preservando a natureza causal da oração."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G08-007",
+              "EXP-IP-A07-G08-TRAP-007"
+            ],
+            "hideGenericScaffold": true
+          }
+        },
+        {
+          "entityId": "WARN-A07-G08-008",
+          "title": "Deslocamento Adverbial com Quebra de Paralelismo em Reescritas",
+          "errorPattern": "Indução a falso raciocínio por semelhança fonética, morfológica ou aparente simetria em Deslocamento Adverbial com Quebra de Paralelismo em Reescritas.",
+          "correctiveRuleRef": null,
+          "correctiveRule": "Verificar a função sintática estrita e o termo regente/regido no contexto da oração antes de concluir a análise de Deslocamento Adverbial com Quebra de Paralelismo em Reescritas.",
+          "trigger": "Apresentação de estrutura ambígua ou atrativa referente a Deslocamento Adverbial com Quebra de Paralelismo em Reescritas no enunciado da questão.",
+          "misleadingReasoning": "Julgar a estrutura com base na intuição oral superficial sem aplicar os testes sintáticos de Deslocamento Adverbial com Quebra de Paralelismo em Reescritas.",
+          "expectedWrongConclusion": "Assinalar como correta a alternativa que explora o vício de indução de Deslocamento Adverbial com Quebra de Paralelismo em Reescritas.",
+          "correctReasoning": "Aplicar os critérios canônicos normativos de Deslocamento Adverbial com Quebra de Paralelismo em Reescritas para desarmar a armadilha.",
+          "decisiveTest": "Executar o teste de substituição ou isolamento dos termos regentes de Deslocamento Adverbial com Quebra de Paralelismo em Reescritas.",
+          "example": null,
+          "counterexample": null,
+          "examBoardBehavior": "Bancas como FGV, CEBRASPE e FCC exploram o termo deslocado ou a polissemia da estrutura para induzir erro por atração.",
+          "studentCaveat": "Não resolva a questão apenas pela sonoridade; verifique a regência e a função categorial de Deslocamento Adverbial com Quebra de Paralelismo em Reescritas.",
+          "trapId": "WARN-A07-G08-008",
+          "blocks": [
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro Comum: Validar uma reescrita focando apenas na transposição do verbo e ignorando deslocamentos de adjuntos adverbiais e crases indevidas.",
+                "Como evitar: Em itens do CESPE, audite o período termo a termo: confira regência, paralelismo sintático e confirme se o adjunto adverbial deslocado continuou modificando o mesmo verbo."
+              ]
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "WARN-A07-G08-008",
+              "EXP-IP-A07-G08-TRAP-008"
+            ],
+            "hideGenericScaffold": true
+          }
         }
-      ]
+      ],
+      "supplementaryBlocks": []
     },
     "glossary": {
-      "items": [
+      "blocks": [
         {
-          "term": "Oração Subordinada Consecutiva",
-          "shortDefinition": "Oração que expressa o efeito ou resultado decorrente de uma causa intensificada na oração principal.",
-          "fullDefinition": "Proposição adverbial encadeada pelo conector 'que' que materializa a consequência real ou lógica provocada pela intensidade de uma ação, qualidade ou quantidade manifestada na oração matriz.",
-          "domain": "Sintaxe do Período Composto",
-          "commonMisconception": "Confundir oração consecutiva com oração conclusiva (consecutiva é subordinada com intensificador; conclusiva é coordenada com portanto/logo)."
+          "type": "bullet_list",
+          "ordered": false,
+          "items": [
+            "**Oposição Estrutural: Oração Reduzida vs. Oração Desenvolvida**: Definição ou ideia central\nUma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa.\nExplicação consolidada\nNo português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:\nEstrutura Reduzida: Apresenta economia morfossintática pela ausência de conjunção ou pronome relativo. O predicado é estruturado por:\nInfinitivo: pessoal ou impessoal (terminações -ar, -er, -ir);\nGerúndio: terminação -ndo;\nParticípio: terminações regulares -do, -da ou formas irregulares.\nNota: A presença de preposição funcional introdutória (a, de, por, para, ao, sem, apesar de) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo.\nEstrutura Desenvolvida: Apresenta obrigatoriamente um conector gramatical subordinativo e desdobra o verbo nominal em uma forma verbal finita conjugada.\nCritérios de reconhecimento ou aplicação\nVerbo no infinitivo/gerúndio/particípio sem conjunção subordinativa ou pronome relativo $\\rightarrow$ Oração Reduzida.\nConectivo explícito presente (que, se, quando, embora, visto que, etc.) + verbo conjugado $\\rightarrow$ Oração Desenvolvida.\nExemplos e contraexemplos\nReduzida: \"É urgente reconhecer a necessidade...\" (sem conectivo, infinitivo).\nDesenvolvida: \"É urgente que se reconheça a necessidade...\" (com conjunção integrante \"que\" e presente do subjuntivo).\nContraexemplo (Falsa Desenvolvida): \"É urgente o reconhecimento da necessidade...\" (nominalização/sintagma nominal, não é oração desenvolvida).\nRelações\nExpande para: e .a .",
+            "**Algoritmo Analítico dos Seis Passos para Desenvolvimento**: Definição ou ideia central\nO método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação.\nExplicação consolidada\nOs seis passos operacionais estruturam-se na seguinte sequência:\nPasso 1 — Contar os verbos: Identificar cada verbo individual e locução verbal. O total de unidades verbais equivale ao número exato de orações do período.\nPasso 2 — Inserir a barra delimitadora: Isolar visualmente a oração reduzida inserindo um traço vertical imediatamente antes da forma nominal ou da preposição funcional que a rege.\nPasso 3 — Diagnosticar a natureza sintática:\nSubstantiva: se a oração puder ser integralmente substituída pelo pronome demonstrativo \"ISSO\" (disso, nisso, a isso).\nAdjetiva: se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente (\"manda a seta\").\nAdverbial: se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.).\nPasso 4 — Inserir o conectivo adequado:\nSubstantiva $\\rightarrow$ Conjunção Integrante (C.I.): que (ou se).\nAdjetiva $\\rightarrow$ Pronome Relativo (P.R.): que (o qual, a qual).\nAdverbial $\\rightarrow$ Conjunção subordinativa adverbial condizente com a circunstância apurada.\nPasso 5 — Desnominalizar e conjugar o verbo: Flexionar o verbo considerando obrigatoriamente a correlação com o \"verbo amigo\" e a manutenção estrita do sujeito.\nPasso 6 — Classificar a oração reduzida: Atribuir a nomenclatura sintática oficial completa da oração original.\nRelações\nCondensado por: (Método Simplificado de 3 Passos).\nDetalhado em: (Princípios do Passo 5).",
+            "**Algoritmo Simplificado de Três Passos para Resolução Rápida**: Definição ou ideia central\nVersão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo (\"sem rodinhas\") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares.\nExplicação consolidada\nPasso 1 — Diagnóstico Categorial: Indagar se a oração é substantiva (troca por \"isso\"), adjetiva (seta no substantivo) ou adverbial (circunstância lógica).\nPasso 2 — Acoplamento do Conector: Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada (quando, embora, visto que, etc.).\nPasso 3 — Desdobramento e Flexão Verbal: Retirar a forma nominal e flexionar o verbo em modo, tempo, número e pessoa, mantendo a concordância com o sujeito da subordinada e a harmonia com o verbo da oração regente.\nRelações\nSubstitui operacionalmente: .a .",
+            "**Princípios de Flexão Verbal: Correlação Temporal e Preservação do Sujeito**: Definição ou ideia central\nA desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o \"verbo amigo\") e o eixo morfossintático-pessoal (preservação inalterada do sujeito).\nExplicação consolidada\nEixo Temporal (O \"Verbo Amigo\"):\nSe o verbo regente estiver no Presente do Indicativo, a oração desenvolvida flexiona-se no Presente (Presente do Subjuntivo ou do Indicativo). Ex.: \"É urgente que se reconheça\"; \"implica que possamos\".\nSe o verbo regente estiver no Pretérito, a oração desenvolvida alinha-se ao plano pretérito (Pretérito Imperfeito do Subjuntivo ou Pretérito Perfeito/Imperfeito do Indicativo). Ex.: \"teria vetado... visto que não se parecia\"; \"respondeu... enquanto farejava\".\nHarmonia de Pretéritos: A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).\nAtemporalidade/Verdades Permanentes: O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: \"tinha em seu acervo... no qual se incluem vários trabalhos\").\nEixo Pessoal (Preservação do Sujeito):\nSujeito Determinado: Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como \"nós\" ou \"eles\".\nSujeito Indeterminado (Infinitivo Impessoal): Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:\na) Voz Ativa com Sujeito Indeterminado: verbo na 3ª pessoa do plural (ex.: \"que reconheçam a necessidade\"; \"que cruzem fronteiras\"). b) Voz Passiva Sintética (Pronominal): VTD acompanhado da partícula apassivadora \"se\", exigindo concordância obrigatória com o sujeito paciente (ex.: \"que se reconheça a necessidade\"; \"que se critiquem as viagens\"). c) Voz Passiva Analítica: verbo auxiliar flexionado + particípio (ex.: \"que seja reconhecida\"; \"que sejam criticadas\").\nRelações\nContém alertas em: e .",
+            "**Conectivos Concessivos: Transposição de Locuções e o Conector Coringa \"Não Obstante\"**: Definição ou ideia central\nNo desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo não obstante atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida.\nExplicação consolidada\nTransposição Conectiva Obrigatória: A locução prepositiva apesar de rege verbo no infinitivo em orações reduzidas. Para desenvolvê-las, é obrigatório substituí-la por uma conjunção concessiva (embora, conquanto) ou locução conjuntiva (apesar de que), com verbo no subjuntivo. Manter apesar de com verbo flexionado (\"Apesar de é torcedor...\") constitui erro sintático; manter com infinitivo mantém a oração reduzida.\nMorfossintaxe de \"Não Obstante\":\nNa reduzida: atua como preposição acidental (\"não obstante apresentar-se...\").\nNa desenvolvida: atua diretamente como conjunção subordinativa concessiva (\"não obstante se apresente...\"), sendo equivalente a embora se apresente ou conquanto se apresente.e .\nPossui alertas em: e .",
+            "**Sintaxe Pronominal: Próclise Subordinativa e Distinção entre PIV e PA**: Definição ou ideia central\nAo desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica.\nExplicação consolidada\nAtração Proclítica: Toda conjunção subordinativa (integrante, causal, concessiva, temporal, etc.) é palavra atrativa. Ao desenvolver \"não obstante apresentar-se\", o pronome \"se\" é atraído para antes do verbo flexionado: \"embora se apresente\" (sendo incorreta a ênclise \"embora apresente-se\").\nDistinção PIV vs. PA:\nEm verbos pronominais como apresentar-se (com sentido de mostrar-se/manifestar-se), o pronome se é PIV.\nNão se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (\"embora seja apresentado\"), pois isso altera a predicação e atribui um agente externo inexistente.\nRelações\nContrasta com: (onde o 'se' apassivador permite voz passiva analítica).",
+            "**Semântica do Gerúndio: Causa, Concomitância, Valor Adjetivo e Consequência**: Definição ou ideia central\nA oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:\nExplicação consolidada\nGerúndio Causal: Expressa a causa/motivo antecedente que fundamenta a oração principal. Identifica-se pelo critério cronológico (o que acontece em 1º lugar é a causa). Desenvolve-se por porque, visto que, já que, como.\nAtenção ao vocábulo \"assim\": Em construções como \"promovendo assim...\", a palavra \"assim\" é advérbio de modo (\"deste modo\") e não conjunção conclusiva; a oração preserva valor causal.\nGerúndio Temporal Concomitante: Expressa simultaneidade temporal durativa com a oração principal. Desenvolve-se por enquanto associado ao pretérito imperfeito (\"respondeu... enquanto farejava\").\nGerúndio com Valor Adjetivo: Ocorre quando o gerúndio modifica diretamente um substantivo antecedente (\"manda a seta\"), equivalendo a oração adjetiva introduzida por que.\nCritério Modal (Fato vs. Hipótese): Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (\"paulista trabalhando\" $\\rightarrow$ \"que trabalha\"); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (\"que trabalhe\").\nGerúndio Consecutivo e Aposto Resumitivo: Ocorre com verbos que trazem carga inerente de resultado (gerar, acarretar, implicar). Pode ser desenvolvido pela estrutura \"o que deve + infinitivo\", em que o pronome demonstrativo \"o\" opera como aposto oracional resumitivo que retoma o fato anterior.\nRelações\nContém alertas em: , e .",
+            "**Semântica do Particípio: Concessão por Contraste, Causa Histórica e Tempo Imediato**: Definição ou ideia central\nA oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:\nExplicação consolidada\nParticípio Concessivo por Contraste: Configura-se quando o particípio estabelece uma oposição ou quebra de expectativa em relação à oração principal (ex.: antítese entre \"nascidas do povo humilde\" e \"vocação para a grandeza\"). Desenvolve-se por ainda que tenham nascido ou embora tenham nascido.\nParticípio Causal Histórico: Expressa uma causa pretérita que fundamenta um efeito contínuo no presente (\"Desenvolvida para uma chave... nossa mente tende a rotular\" $\\rightarrow$ \"Como se desenvolveu...\").\nParticípio Temporal Imediato: Expressa um evento concluído no exato instante anterior ao da oração principal. Desenvolve-se perfeitamente por conectivos de imediatismo como assim que ou logo que (\"Baixados os arquivos...\" $\\rightarrow$ \"Assim que são baixados os arquivos...\").",
+            "**A Fórmula Temporal Canônica \"Ao + Infinitivo\"**: Definição ou ideia central\nA combinação prepositiva ao + verbo no infinitivo constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de tempo (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção quando.\nExplicação consolidada\nRegra de Equivalência: ao + infinitivo desenvolve-se obrigatoriamente como quando + verbo conjugado (\"ao estabelecer\" = \"quando estabeleceu\"; \"ao delegar\" = \"quando delega\"; \"ao anoitecer\" = \"quando anoitecia\").\nBloqueio Causal: É terminantemente incorreto substituir estruturas de ao + infinitivo por locuções causais (\"por estabelecer\", \"porque estabeleceu\"), pois tal substituição desfigura a semântica temporal original.",
+            "**Critérios de Reescritura Avançada: Paralelismo, Crase e Deslocamento Adverbial**: Definição ou ideia central\nA correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados.\nExplicação consolidada\nConcordância na Voz Passiva Sintética: Ao desenvolver orações reduzidas gerando construções com o pronome apassivador se, o verbo transitivo direto deve concordar estritamente com o sujeito paciente posposto (\"no qual se incluem vários trabalhos\", e nunca \"se inclui\").\nParalelismo e Regência com Crase: Se um verbo rege preposição pura sem artigo antes de substantivos coordenados (\"cheirando a cebola e alho\"), a inserção indevida do acento grave em um dos núcleos (\"cheirando à cebola e alho\") viola a regência e quebra o paralelismo sintático (preposição + artigo em um termo e preposição pura no outro).\nDeslocamento Adverbial e Mudança de Referente: O deslocamento de um adjunto adverbial dentro do período altera o verbo modificado. Se a locução \"ao mesmo tempo\" modificava \"começava\" (início simultâneo da ação) e na reescrita passa a modificar \"ficava cheirando\" (simultaneidade do cheiro), ocorre alteração semântica substancial, invalidando a reescrita (\"mudança de referente é mudança de sentido\")."
+          ]
         }
       ]
     },
     "recall": {
-      "prompts": [
+      "blocks": [
         {
-          "promptId": "REC-ADV-2-01",
-          "question": "Substitua o conectivo 'SE' por 'CASO' fazendo os ajustes necessários: 'Se o diretor mantiver a decisão, recorreremos'.",
-          "keyPoints": [
-            "Resposta: 'CASO o diretor MANTENHA a decisão, recorreremos'.",
-            "O conectivo 'caso' exige o verbo no Presente do Subjuntivo ('mantenha'), enquanto 'se' rege o Futuro do Subjuntivo ('mantiver')."
-          ],
-          "targetConcept": "Correlação Modal com Conectivos Condicionais",
-          "targetLO": "LO-A07-G08-01"
+          "type": "recall_prompt",
+          "text": " • Qual é o princípio fundamental que rege Desenvolvimento das Orações Reduzidas?\n • Quais são os principais bloqueadores ou exceções que anulam a regra geral?\n • Como aplicar o teste de substituição decisivo em uma questão de concurso?"
         }
       ]
     }

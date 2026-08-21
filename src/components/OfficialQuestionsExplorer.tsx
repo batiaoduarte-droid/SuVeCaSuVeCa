@@ -23,6 +23,7 @@ import {
 } from '../lib/officialQuestions';
 import type { QuizQuestion } from '../types/suveca';
 import { MODULES_DATA } from '../data/modulesData';
+import { getLessonName } from '../data/lessonCatalog';
 import { formatOfficialContent } from '../lib/officialContent';
 import { useModalFocus } from '../hooks/useModalFocus';
 import {
@@ -63,7 +64,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
     () =>
       MODULES_DATA.filter((module) => /^mod\d+$/.test(module.id)).map((module) => ({
         value: module.id,
-        label: `Aula ${String(module.num).padStart(2, '0')} — ${module.title}`,
+        label: getLessonName(module.id, 'full'),
       })),
     []
   );
@@ -141,7 +142,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
   };
 
   return (
-    <section className="mx-auto max-w-6xl space-y-5" aria-labelledby="editorial-questions-title">
+    <section className="tool-content-shell space-y-5" aria-labelledby="editorial-questions-title">
       <header className="rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-5 shadow-xs sm:p-7">
         <div className="flex items-start gap-3">
           <span className="rounded-xl bg-teal-700 p-2.5 text-white"><BookMarked className="h-5 w-5" /></span>
@@ -151,7 +152,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
             </h1>
             <p className="mt-1 max-w-3xl text-sm leading-6 text-slate-600">
               {buildId ? `${total} questões disponíveis nos filtros atuais. ` : 'Carregando o banco editorial da apostila. '}
-              Enunciados, alternativas, gabaritos e comentários vêm do corpus das aulas 00–13; a Aula 14 organiza a revisão cumulativa.
+              Enunciados, alternativas, gabaritos e comentários vêm do percurso curricular; a revisão geral organiza a retomada cumulativa.
             </p>
             {buildId && <p className="mt-2 font-mono text-[11px] text-teal-800">Build editorial {buildId}</p>}
             {onStartSimulado && (
@@ -187,12 +188,12 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
           />
         </label>
         <select
-          aria-label="Filtrar por aula"
+          aria-label="Filtrar por tema curricular"
           className="input-field min-h-[44px]"
           value={filters.moduleId || ''}
           onChange={(event) => updateFilter('moduleId', event.target.value)}
         >
-          <option value="">Todas as aulas</option>
+          <option value="">Todos os temas curriculares</option>
           {moduleOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
         </select>
         <input aria-label="Filtrar por tema" className="input-field min-h-[44px]" value={filters.topic || ''} onChange={(event) => updateFilter('topic', event.target.value)} placeholder="Tema" />
@@ -244,7 +245,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {item.suvecaDerived.moduleIds.map((moduleId) => (
                     <StudyBadge key={moduleId} tone="concept">
-                      {moduleId.replace('mod', 'Aula ')}
+                      {getLessonName(moduleId)}
                     </StudyBadge>
                   ))}
                   {item.editorialProjection.hasCommentary && (

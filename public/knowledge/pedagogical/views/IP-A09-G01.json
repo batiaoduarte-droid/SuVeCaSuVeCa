@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-hardened",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A09-G01",
     "lessonId": "A09",
     "title": "Concordância Verbal: Regra Geral, Sujeito Simples, Sujeito Composto e Partícula SE",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A09-G01",
@@ -330,6 +331,127 @@
             }
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A09-G01-001",
+          "table": {
+            "tableId": "TABLE-IP-A09-G01-001",
+            "caption": "Regras canônicas",
+            "headers": [
+              "Fenômeno Gramatical",
+              "Estrutura Sintática",
+              "Regra Canônica de Concordância",
+              "Unidade Detalhada"
+            ],
+            "rows": [
+              [
+                "Sujeito Simples",
+                "Núcleo único não preposicionado + Verbo",
+                "Verbo concorda em número e pessoa com o núcleo.",
+                "KB-A09-G01-001"
+              ],
+              [
+                "Locução Verbal",
+                "Verbo Auxiliar + Verbo Principal Nominal",
+                "Verbo Auxiliar flexiona; Verbo Principal permanece invariável.",
+                "KB-A09-G01-002"
+              ],
+              [
+                "Verbos Dar / Bater / Soar",
+                "Verbo + Horas vs. Instrumento + Verbo",
+                "Concorda com o instrumento (sem prep.) ou com as horas (com prep. no relógio).",
+                "KB-A09-G01-003"
+              ],
+              [
+                "Sujeito Composto Posposto",
+                "Sujeito Composto + Verbo",
+                "Flexão obrigatória noplural (Concordância Total/Lógica).",
+                "KB-A09-G01-004"
+              ],
+              [
+                "Sujeito Composto Anteposto",
+                "Verbo + Sujeito Composto",
+                "Dupla opção: Concordância Atrativa (1º núcleo) ou Total (plural).",
+                "KB-A09-G01-004"
+              ],
+              [
+                "Pessoas Gramaticais",
+                "Pronomes retos distintos no sujeito",
+                "$1ª > 2ª > 3ª$ (ex.: eu + ele = nós $\\rightarrow$ 1ª do plural).",
+                "KB-A09-G01-004"
+              ],
+              [
+                "Conectivo COM (sem vírgula)",
+                "Substantivo 1 + com + Substantivo 2",
+                "Dupla opção: Plural (aditivo) ou Singular (ênfase no 1º termo).",
+                "KB-A09-G01-006"
+              ],
+              [
+                "Conectivo COM (com vírgula)",
+                "Subst. 1, com Subst. 2, + Verbo",
+                "Termo entre vírgulas é Adjunto Adverbial$\\rightarrow$ Verbo no singular.",
+                "KB-A09-G01-006"
+              ],
+              [
+                "Conectivo OU (Exclusão)",
+                "Núcleo 1 + ou + Núcleo 2",
+                "Ação restrita a um único agente$\\rightarrow$ Verbo no singular.",
+                "KB-A09-G01-006"
+              ],
+              [
+                "Conectivo OU (Adição)",
+                "Núcleo 1 + ou + Núcleo 2",
+                "Ação cumulativa/compartilhada$\\rightarrow$ Verbo no plural.",
+                "KB-A09-G01-006"
+              ],
+              [
+                "Partícula Apassivadora (PA)",
+                "VTD / VTDI + SE + Sujeito Paciente",
+                "Voz Passiva Sintética$\\rightarrow$ Verbo concorda com o Sujeito Paciente.",
+                "KB-A09-G01-007"
+              ],
+              [
+                "Índice de Indeterminação (PIS)",
+                "VI / VTI / VL + SE",
+                "Sujeito Indeterminado$\\rightarrow$ Verbo fixo na 3ª pessoa do singular.",
+                "KB-A09-G01-007"
+              ],
+              [
+                "Locução \"Trata-se de\"",
+                "Trata-se de + Complemento",
+                "VTI + PIS $\\rightarrow$ Sempre singular (\"tratam-se de\" não existe).",
+                "KB-A09-G01-007"
+              ],
+              [
+                "Partícula de Realce (SE)",
+                "Verbo de ação espontânea / tempo",
+                "SE expletivo $\\rightarrow$ Verbo concorda com o sujeito na ordem direta.",
+                "KB-A09-G01-008"
+              ],
+              [
+                "Sujeito Oracional",
+                "[Oração Subjetiva / Infinitivo] + Verbo",
+                "Equivale ao pronome\"ISSO\" $\\rightarrow$ Verbo na 3ª pessoa do singular.",
+                "KB-A09-G01-009"
+              ],
+              [
+                "Nome Geográfico no Plural",
+                "Nome de lugar no plural",
+                "Sem artigo =singular; Com artigo = plural.",
+                "KB-A09-G01-010"
+              ],
+              [
+                "Pronome Relativo QUE",
+                "Antecedente + que + Verbo",
+                "Verbo concorda com o termo antecedente recuperado pelo pronome.",
+                "KB-A09-G01-010"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "resolution": {
@@ -379,6 +501,104 @@
               "text": "Pedro ou João casará com Maria (singular) vs Natação ou corrida fazem bem à saúde (plural)."
             }
           ]
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A09-G01-002",
+          "table": {
+            "tableId": "TABLE-IP-A09-G01-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Critério",
+              "Sujeito Composto Anteposto (Suj. Comp. + Verbo)",
+              "Sujeito Composto Posposto (Verbo + Suj. Comp.)"
+            ],
+            "rows": [
+              [
+                "Concordância Total / Lógica",
+                "Obrigatória no plural (\"Fernanda e Guilherme estavam\").",
+                "Permitida no plural (\"Estavam Fernando e Guilherme\")."
+              ],
+              [
+                "Concordância Atrativa / Parcial",
+                "Proibida na norma-padrão.",
+                "Permitida com o 1º núcleo (\"Estava Fernando e Guilherme\")."
+              ],
+              [
+                "Base Teórica",
+                "KB-A09-G01-004",
+                "KB-A09-G01-004"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A09-G01-003",
+          "table": {
+            "tableId": "TABLE-IP-A09-G01-003",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Estrutura",
+              "Função Sintática do Termo com \"COM\"",
+              "Flexão Verbal Autorizada",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "Subst. 1 com Subst. 2 (Sem vírgula)",
+                "Sujeito Composto / Termo Associado",
+                "Dupla opção: Singular enfático ou Plural aditivo.",
+                "\"O rei com a rainha chegou / chegaram.\""
+              ],
+              [
+                "Subst. 1, com Subst. 2, (Com vírgula)",
+                "Adjunto Adverbial de Companhia",
+                "Exclusivamente Singular (concorda com Subst. 1).",
+                "\"O rei, com a rainha, chegou.\""
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A09-G01-004",
+          "table": {
+            "tableId": "TABLE-IP-A09-G01-004",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Aspecto",
+              "Sujeito Indeterminado",
+              "Oração Sem Sujeito (Sujeito Inexistente)"
+            ],
+            "rows": [
+              [
+                "Existência Semântica",
+                "O agenteexiste na realidade (alguém, todo mundo).",
+                "O agentenão existe no plano real nem sintático."
+              ],
+              [
+                "Tipologia Verbal",
+                "3ª pessoa plural OU VI/VTI/VL + SE (PIS).",
+                "Verbos impessoais (haver = existir; fenômenos meteorológicos)."
+              ],
+              [
+                "Comportamento Verbal",
+                "Fixo na 3ª do plural ou 3ª do singular comSE.",
+                "Fixo na3ª pessoa do singular (Havia problemas)."
+              ],
+              [
+                "Base Teórica",
+                "KB-A09-G01-007",
+                "KB-A09-G01-001, KB-A09-G01-007"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

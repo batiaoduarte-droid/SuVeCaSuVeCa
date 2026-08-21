@@ -715,7 +715,7 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({ bl
     }
 
     case 'mnemonic': {
-      const { title, content, classification, appliesTo, limitations, text } = block;
+      const { title, content, appliesTo, limitations, text } = block;
       return (
         <div className="my-4 rounded-xl border border-amber-300 bg-amber-50/40 p-4 select-text space-y-3 shadow-2xs">
           <div className="flex items-center gap-2 border-b border-amber-200 pb-2">
@@ -723,30 +723,26 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({ bl
             <h5 className="text-xs sm:text-sm font-black text-amber-950 tracking-tight m-0">
               <InlineRichText>{title || 'Memorização Inteligente'}</InlineRichText>
             </h5>
-            {classification && (
-              <span className="ml-auto rounded-md bg-amber-100 border border-amber-200 px-2 py-0.5 text-[10px] font-bold text-amber-900 uppercase">
-                {classification}
-              </span>
-            )}
           </div>
           {(content || text) && (
             <div className="rounded-lg bg-white border border-amber-200 p-3 text-xs sm:text-sm font-bold text-amber-950 leading-relaxed text-center">
               <InlineRichText>{content || text || ''}</InlineRichText>
             </div>
           )}
-          {appliesTo && (
-            <div className="text-xs text-slate-700 font-medium pl-1">
-              <strong>Aplica-se a:</strong> <InlineRichText>{appliesTo}</InlineRichText>
-            </div>
-          )}
-          {limitations && (
-            <div className="rounded-lg bg-rose-50 border border-rose-200 p-2.5 text-xs text-rose-950 font-medium space-y-0.5">
-              <span className="font-bold text-rose-900 block text-[11px] uppercase tracking-wider">
-                Limitações da Regra Mnemônica:
-              </span>
-              <p className="m-0 leading-relaxed">
-                <InlineRichText>{limitations}</InlineRichText>
-              </p>
+          {(appliesTo || limitations) && (
+            <div className="grid gap-2.5 md:grid-cols-2">
+              {appliesTo && (
+                <div className="rounded-lg border border-amber-200 bg-white p-2.5 text-xs font-medium text-slate-800">
+                  <strong className="mb-0.5 block text-[10px] uppercase tracking-wider text-amber-900">Quando usar</strong>
+                  <InlineRichText>{appliesTo}</InlineRichText>
+                </div>
+              )}
+              {limitations && (
+                <div className="rounded-lg bg-rose-50 border border-rose-200 p-2.5 text-xs text-rose-950 font-medium space-y-0.5">
+                  <span className="font-bold text-rose-900 block text-[10px] uppercase tracking-wider">Limites</span>
+                  <p className="m-0 leading-relaxed"><InlineRichText>{limitations}</InlineRichText></p>
+                </div>
+              )}
             </div>
           )}
         </div>

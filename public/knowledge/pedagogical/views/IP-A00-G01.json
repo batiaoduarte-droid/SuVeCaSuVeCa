@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-hardened",
+  "viewSchemaVersion": "4.2.2-source-backed-coverage",
   "source": {
     "unitId": "IP-A00-G01",
     "lessonId": "A00",
     "title": "Fonética e Fonologia: Letras, Fonemas, Dígrafos e Dífonos",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
   },
   "unit": {
     "unitId": "IP-A00-G01",
@@ -326,6 +327,108 @@
               ]
             }
           ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A00-G01-001",
+              "table": {
+                "tableId": "TABLE-IP-A00-G01-001",
+                "caption": "Explicação central",
+                "headers": [
+                  "Fenômeno Fonético",
+                  "Ocorrência no Vocábulo",
+                  "Impacto Numérico nos Fonemas",
+                  "Exemplo Prático"
+                ],
+                "rows": [
+                  [
+                    "Dígrafo Consonantal",
+                    "CH, LH, NH, RR, SS, SC, SÇ, XC, GU, QU",
+                    "$-1$",
+                    "Chuva ($5L - 1 = 4F$)"
+                  ],
+                  [
+                    "Dígrafo Vocálico",
+                    "AM, EM, IM, OM, UM / AN, EN, IN, ON, UN",
+                    "$-1$",
+                    "Campo ($5L - 1 = 4F$)"
+                  ],
+                  [
+                    "Letra H Inicial Mudo",
+                    "H no início da palavra",
+                    "$-1$",
+                    "Habilidoso ($10L - 1 = 9F$)"
+                  ],
+                  [
+                    "Dífono (Letra X)",
+                    "X com som de /ks/",
+                    "$+1$",
+                    "Táxi ($4L + 1 = 5F$)"
+                  ],
+                  [
+                    "Letra Regular / X com outros sons",
+                    "Vogais, consoantes simples, X=/z/, X=/s/, X=/ʃ/",
+                    "$0$ (Neutro)",
+                    "Exílio ($6L - 0 = 6F$)"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A00-G01-005",
+              "table": {
+                "tableId": "TABLE-IP-A00-G01-005",
+                "caption": "Tabela de Relação Sintetizada (#ANOTAAÍ)",
+                "headers": [
+                  "Fenômeno Fonético",
+                  "Ocorrência no Vocábulo",
+                  "Impacto Numérico nos Fonemas",
+                  "Exemplo Prático"
+                ],
+                "rows": [
+                  [
+                    "Dígrafo Consonantal",
+                    "CH, LH, NH, RR, SS, SC, SÇ, XC, GU, QU",
+                    "$-1$",
+                    "Chuva ($5L - 1 = 4F$)"
+                  ],
+                  [
+                    "Dígrafo Vocálico",
+                    "AM, EM, IM, OM, UM / AN, EN, IN, ON, UN",
+                    "$-1$",
+                    "Campo ($5L - 1 = 4F$)"
+                  ],
+                  [
+                    "Letra H Inicial Mudo",
+                    "H no início da palavra",
+                    "$-1$",
+                    "Habilidoso ($10L - 1 = 9F$)"
+                  ],
+                  [
+                    "Dífono (Letra X)",
+                    "X com som de /ks/",
+                    "$+1$",
+                    "Táxi ($4L + 1 = 5F$)"
+                  ],
+                  [
+                    "Letra Regular / X com outros sons",
+                    "Vogais, consoantes simples, X=/z/, X=/s/, X=/ʃ/",
+                    "$0$ (Neutro)",
+                    "Exílio ($6L - 0 = 6F$)"
+                  ]
+                ]
+              },
+              "coverageOrigin": "canonical_table_backfill"
+            }
+          ]
         }
       ],
       "blocks": []
@@ -498,6 +601,107 @@
             }
           ]
         }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A00-G01-002",
+          "table": {
+            "tableId": "TABLE-IP-A00-G01-002",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Critério de Comparação",
+              "Dígrafo Consonantal",
+              "Dígrafo Vocálico",
+              "Dífono (Letra X = /ks/)",
+              "Letra Muda (H Inicial)"
+            ],
+            "rows": [
+              [
+                "Composição Gráfica",
+                "2 letras",
+                "2 letras (Vogal + M/N)",
+                "1 letra (X)",
+                "1 letra (H)"
+              ],
+              [
+                "Resultado Acústico",
+                "1 som consonantal",
+                "1 som de vogal nasal",
+                "2 sons consonantais (/k/ + /s/)",
+                "0 som (sem emissão)"
+              ],
+              [
+                "Impacto no Total ($F$)",
+                "$-1$ em relação a $L$",
+                "$-1$ em relação a $L$",
+                "$+1$ em relação a $L$",
+                "$-1$ em relação a $L$"
+              ],
+              [
+                "Exemplos Canônicos",
+                "Chave, Carro, Guerra",
+                "Tampa, Vento, Campo",
+                "Táxi, Fixo, Tórax",
+                "Hoje, Habilidoso"
+              ],
+              [
+                "Distinção Crítica",
+                "Fusão de consoantes",
+                "Nasalização vocálica",
+                "Expansão de som",
+                "Ausência de som"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        },
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A00-G01-003",
+          "table": {
+            "tableId": "TABLE-IP-A00-G01-003",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Valor Fonético",
+              "Som Emitido",
+              "Relação Grafema:Fonema",
+              "Altera a Contagem de Fonemas?",
+              "Exemplos da Aula"
+            ],
+            "rows": [
+              [
+                "Som de /s/",
+                "/s/",
+                "1 letra = 1 fonema",
+                "Não ($F = L$)",
+                "Experiência, Exceder"
+              ],
+              [
+                "Som de /z/",
+                "/z/",
+                "1 letra = 1 fonema",
+                "Não ($F = L$)",
+                "Exílio, Exemplo, Exame"
+              ],
+              [
+                "Som de /ʃ/",
+                "/ʃ/ (som de X)",
+                "1 letra = 1 fonema",
+                "Não ($F = L$)",
+                "Caixa, Mexer, Mexicano"
+              ],
+              [
+                "Som de /ks/",
+                "/ks/ (Dífono)",
+                "1 letra = 2 fonemas",
+                "SIM ($F = L + 1$)",
+                "Táxi, Complexo, Tórax, Látex"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
       ]
     },
     "examples": {
@@ -543,6 +747,107 @@
               "text": "TÁXI: 4L/5F. COMPLEXO: 8L/8F (OM=-1, X=+1)."
             }
           ]
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A00-G01-004",
+          "table": {
+            "tableId": "TABLE-IP-A00-G01-004",
+            "caption": "Exemplos resolvidos",
+            "headers": [
+              "Nº",
+              "Vocábulo Analisado",
+              "Contagem de Letras ($L$)",
+              "Elementos Especiais Mapeados",
+              "Operação de Cálculo",
+              "Total de Fonemas ($F$)",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "1",
+                "Habilidoso",
+                "10",
+                "H inicial mudo (sem emissão sonora)",
+                "$10 - 1$",
+                "9 fonemas",
+                "",
+                "",
+                ""
+              ],
+              [
+                "2",
+                "Exílio",
+                "6",
+                "X com som de /z/ (relação padrão 1:1)",
+                "$6 - 0$",
+                "6 fonemas",
+                "",
+                "",
+                ""
+              ],
+              [
+                "3",
+                "Nascimento",
+                "10",
+                "SC (Dígrafo Consonantal) + EN (Dígrafo Vocálico)",
+                "$10 - 2$",
+                "8 fonemas",
+                "",
+                "",
+                ""
+              ],
+              [
+                "4",
+                "Chuva",
+                "5",
+                "CH (Dígrafo Consonantal)",
+                "$5 - 1$",
+                "4 fonemas",
+                "",
+                "",
+                ""
+              ],
+              [
+                "5",
+                "Táxi",
+                "4",
+                "X com som de /ks/ (Dífono: 1 letra = 2 sons)",
+                "$4 + 1$",
+                "5 fonemas",
+                "",
+                "",
+                ""
+              ],
+              [
+                "6",
+                "Pássaro",
+                "7",
+                "SS (Dígrafo Consonantal)",
+                "$7 - 1$",
+                "6 fonemas",
+                "",
+                "",
+                ""
+              ],
+              [
+                "7",
+                "Guerra",
+                "6",
+                "GU (Dígrafo Consonantal) + RR (Dígrafo Consonantal)",
+                "$6 - 2$",
+                "4 fonemas",
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
         }
       ]
     },

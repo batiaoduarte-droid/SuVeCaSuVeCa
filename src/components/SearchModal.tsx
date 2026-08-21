@@ -194,10 +194,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                   <div className="min-w-0 pr-3">
                     <div className="flex items-center space-x-2">
                       <span className="text-xs font-bold text-teal-800 bg-teal-100 px-2 py-0.5 rounded-md border border-teal-200 shrink-0">
-                        {/^mod\d+$/.test(module.id) ? `Aula ${String(module.num).padStart(2, '0')}` : module.title}
-                      </span>
-                      <span className="text-sm font-bold text-slate-900 group-hover:text-teal-900 truncate">
-                        <HighlightedText text={module.title} query={query} />
+                        {module.title}
                       </span>
                     </div>
                     <p className="text-xs text-slate-600 mt-1.5 line-clamp-3 leading-relaxed">
