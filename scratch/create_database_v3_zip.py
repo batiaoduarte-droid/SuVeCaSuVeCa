@@ -16,8 +16,8 @@ import zipfile
 import json
 from pathlib import Path
 
-ROOT = Path(r"c:\Users\origi\OneDrive\Desktop\Códigos")
-CANONICAL_V2 = ROOT / "Notebook LM" / "Português" / "Integracao_Pedagogica" / "v2"
+ROOT = Path(r"c:\Users\origi\OneDrive\Desktop\Códigos\portugues")
+CANONICAL_V2 = ROOT / "Notebook LM" / "02_Portugues" / "Integracao_Pedagogica" / "v2"
 APP_DIR = ROOT / "SuVeCaSuVeCa"
 VIEWS_DIR = APP_DIR / "public" / "knowledge" / "pedagogical" / "views"
 QA_DIR = APP_DIR / "qa" / "semantic-hardening"

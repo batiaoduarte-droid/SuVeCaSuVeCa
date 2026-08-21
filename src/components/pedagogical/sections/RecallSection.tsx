@@ -62,7 +62,24 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
     const list: string[] = [];
     blocks.forEach((b) => {
       if (b.type === 'list' || b.type === 'bullet_list') {
-        b.items?.forEach((it) => list.push(it));
+        b.items?.forEach((it) => {
+          const clean = it?.trim();
+          if (clean) list.push(clean);
+        });
+      } else if (b.type === 'recall_prompt') {
+        if (b.question?.trim()) {
+          list.push(b.question.trim());
+        } else if (b.text?.trim()) {
+          const lines = b.text
+            .split(/\n+/)
+            .map((line) => line.replace(/^[\s•·▪◦\d+.)-]+/, '').trim())
+            .filter(Boolean);
+          if (lines.length > 0) {
+            lines.forEach((l) => list.push(l));
+          } else {
+            list.push(b.text.trim());
+          }
+        }
       }
     });
     return list;
@@ -73,7 +90,9 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
   const partialCount = Object.values(confidenceState).filter((c) => c === 'partial').length;
   const progressPercent = totalPrompts > 0 ? Math.round((masteredCount / totalPrompts) * 100) : 0;
 
-  const otherBlocks = blocks.filter((b) => b.type !== 'list' && b.type !== 'bullet_list');
+  const otherBlocks = blocks.filter(
+    (b) => b.type !== 'list' && b.type !== 'bullet_list' && b.type !== 'recall_prompt'
+  );
 
   if (prompts.length === 0 && checklistItems.length === 0 && otherBlocks.length === 0) {
     return null;

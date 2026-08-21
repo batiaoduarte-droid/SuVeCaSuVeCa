@@ -393,9 +393,9 @@ export interface ProcedureView {
   stoppingCondition?: string;
   typicalFailureModes?: string[];
   verificationCriteria?: string | string[];
-  inputs?: { name: string; description: string }[];
+  inputs?: Array<{ name: string; description?: string } | string>;
   steps?: { order: number; action: string; explanation?: string; test?: string }[] | string[];
-  outputs?: { name: string; description: string }[];
+  outputs?: Array<{ name: string; description?: string } | string>;
   formulas?: string[];
   computability?: string;
   blocks?: SemanticBlock[];
@@ -443,7 +443,7 @@ export interface WorkedExampleView {
   sentence?: string;
   statement?: string;
   targetLO?: string;
-  analysisSteps?: { order: number; action: string; rationale?: string }[];
+  analysisSteps?: Array<{ order?: number; action?: string; rationale?: string } | string>;
   analysis?: string;
   reasoning?: string;
   result?: string;

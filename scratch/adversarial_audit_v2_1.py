@@ -11,8 +11,8 @@ import re
 from pathlib import Path
 from collections import Counter, defaultdict
 
-ROOT = Path(r"c:\Users\origi\OneDrive\Desktop\Códigos")
-CANONICAL_V2 = ROOT / "Notebook LM" / "Português" / "Integracao_Pedagogica" / "v2" / "canonical"
+ROOT = Path(r"c:\Users\origi\OneDrive\Desktop\Códigos\portugues")
+CANONICAL_V2 = ROOT / "Notebook LM" / "02_Portugues" / "Integracao_Pedagogica" / "v2" / "canonical"
 APP_SRC = ROOT / "SuVeCaSuVeCa" / "src"
 
 def read_jsonl(path):

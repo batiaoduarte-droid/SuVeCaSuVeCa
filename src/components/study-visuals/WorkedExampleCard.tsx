@@ -24,6 +24,28 @@ export const WorkedExampleCard: React.FC<WorkedExampleCardProps> = ({
   const resolvedPrompt = example.prompt || example.sentence;
   const resolvedResult = example.result || example.pedagogicalTakeaway;
   const showStructuredScaffold = !example.presentation?.hideGenericScaffold;
+  type NormalizedExampleStep = { order: number; action: string; rationale?: string };
+
+  const normalizedSteps: NormalizedExampleStep[] = (example.analysisSteps || [])
+    .map((step, idx): NormalizedExampleStep | null => {
+      if (typeof step === 'string') {
+        const text = step.trim();
+        if (!text) return null;
+        return {
+          order: idx + 1,
+          action: text,
+          rationale: undefined,
+        };
+      }
+      const action = (step.action || '').trim();
+      if (!action) return null;
+      return {
+        order: step.order || idx + 1,
+        action,
+        rationale: step.rationale?.trim() || undefined,
+      };
+    })
+    .filter((s): s is NormalizedExampleStep => s !== null);
 
   return (
     <div
@@ -58,19 +80,19 @@ export const WorkedExampleCard: React.FC<WorkedExampleCardProps> = ({
       )}
 
       {/* Structured Analysis Steps */}
-      {showStructuredScaffold && example.analysisSteps && example.analysisSteps.length > 0 && (
+      {showStructuredScaffold && normalizedSteps.length > 0 && (
         <div className="space-y-2 pt-1">
           <span className="text-[11px] font-black uppercase tracking-wider text-slate-500 block select-none">
             Raciocínio Passo a Passo:
           </span>
           <div className="space-y-2">
-            {example.analysisSteps.map((step, idx) => (
+            {normalizedSteps.map((step) => (
               <div
-                key={step.order || idx}
+                key={step.order}
                 className="flex items-start gap-2.5 rounded-xl border border-slate-200 bg-slate-50/60 p-2.5"
               >
                 <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-emerald-700 text-[11px] font-black text-white select-none">
-                  {step.order || idx + 1}
+                  {step.order}
                 </span>
                 <div className="space-y-0.5 flex-1">
                   <p className="text-xs font-bold text-slate-900 leading-snug">

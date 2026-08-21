@@ -22,9 +22,9 @@ interface ProcedureStepperProps {
   procedure?: ProcedureView;
   title?: string;
   objective?: string;
-  steps?: ProcedureStepItem[];
-  inputs?: { name: string; description: string }[];
-  outputs?: { name: string; description: string }[];
+  steps?: Array<ProcedureStepItem | string>;
+  inputs?: Array<{ name: string; description?: string } | string>;
+  outputs?: Array<{ name: string; description?: string } | string>;
   formulas?: string[];
   className?: string;
 }
@@ -43,10 +43,33 @@ export const ProcedureStepper: React.FC<ProcedureStepperProps> = ({
 
   const resolvedTitle = title || procedure?.title || 'Roteiro de Resolução Passo a Passo';
   const resolvedObjective = objective || procedure?.objective || procedure?.goal;
-  const resolvedSteps = steps || procedure?.steps || [];
-  const resolvedInputs = inputs || procedure?.inputs || [];
-  const resolvedOutputs = outputs || procedure?.outputs || [];
-  const resolvedFormulas = formulas || procedure?.formulas || [];
+  const rawSteps = steps || procedure?.steps || [];
+  const resolvedSteps: ProcedureStepItem[] = rawSteps
+    .map((step, idx): ProcedureStepItem | null => {
+      if (typeof step === 'string') {
+        const text = step.trim();
+        if (!text) return null;
+        return {
+          order: idx + 1,
+          action: text,
+          explanation: undefined,
+          test: undefined,
+        };
+      }
+      const action = (step.action || '').trim();
+      if (!action) return null;
+      return {
+        order: step.order || idx + 1,
+        action,
+        explanation: step.explanation?.trim() || undefined,
+        test: step.test?.trim() || undefined,
+      };
+    })
+    .filter((s): s is ProcedureStepItem => s !== null);
+
+  const resolvedInputs = (inputs || procedure?.inputs || []).filter(Boolean);
+  const resolvedOutputs = (outputs || procedure?.outputs || []).filter(Boolean);
+  const resolvedFormulas = (formulas || procedure?.formulas || []).filter(Boolean);
   const triggerCondition = procedure?.triggerCondition;
   const stoppingCondition = procedure?.stoppingCondition;
   const verificationCriteria = procedure?.verificationCriteria
@@ -112,12 +135,30 @@ export const ProcedureStepper: React.FC<ProcedureStepperProps> = ({
         <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
           <span className="mb-2 block text-[10px] font-black uppercase tracking-wider text-slate-600">Entradas requeridas</span>
           <div className="grid gap-2 sm:grid-cols-2">
-            {resolvedInputs.map((input, index) => (
-              <div key={index} className="rounded-lg border border-slate-200 bg-white p-2.5 text-xs text-slate-800">
-                <strong className="block text-slate-900"><InlineRichText>{input.name}</InlineRichText></strong>
-                {input.description && <span className="mt-0.5 block leading-relaxed"><InlineRichText>{input.description}</InlineRichText></span>}
-              </div>
-            ))}
+            {resolvedInputs.map((input, index) => {
+              if (typeof input === 'string') {
+                const text = input.trim();
+                if (!text) return null;
+                return (
+                  <div key={index} className="rounded-lg border border-slate-200 bg-white p-2.5 text-xs font-medium text-slate-800">
+                    <InlineRichText>{text}</InlineRichText>
+                  </div>
+                );
+              }
+              const name = (input.name || '').trim();
+              const desc = (input.description || '').trim();
+              if (!name && !desc) return null;
+              return (
+                <div key={index} className="rounded-lg border border-slate-200 bg-white p-2.5 text-xs text-slate-800">
+                  {name && (
+                    <strong className="block text-slate-900"><InlineRichText>{name}</InlineRichText></strong>
+                  )}
+                  {desc && (
+                    <span className="mt-0.5 block leading-relaxed"><InlineRichText>{desc}</InlineRichText></span>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
@@ -229,11 +270,15 @@ export const ProcedureStepper: React.FC<ProcedureStepperProps> = ({
           <span className="text-[10px] font-black uppercase tracking-wider text-teal-800 block">
             Resultado Esperado
           </span>
-          {resolvedOutputs.map((out, idx) => (
-            <p key={idx} className="text-xs font-bold text-teal-950 leading-relaxed">
-              <InlineRichText>{out.description || out.name}</InlineRichText>
-            </p>
-          ))}
+          {resolvedOutputs.map((out, idx) => {
+            const outText = typeof out === 'string' ? out.trim() : (out.description || out.name || '').trim();
+            if (!outText) return null;
+            return (
+              <p key={idx} className="text-xs font-bold text-teal-950 leading-relaxed">
+                <InlineRichText>{outText}</InlineRichText>
+              </p>
+            );
+          })}
         </div>
       )}
     </div>

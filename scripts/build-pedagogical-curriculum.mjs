@@ -20,7 +20,7 @@ const argumentValue = (name) => {
 const configuredSource = argumentValue('--source') || process.env.SUVECA_PEDAGOGICAL_SOURCE;
 const sourceCandidates = [
   configuredSource,
-  path.resolve(ROOT, '..', 'Notebook LM', 'Português'),
+  path.resolve(ROOT, '..', 'Notebook LM', '02_Portugues'),
   path.resolve(ROOT, '..', 'Notebook LM'),
 ].filter(Boolean);
 
@@ -28,16 +28,16 @@ const resolvePortugueseRoot = () => {
   for (const candidate of sourceCandidates) {
     const resolved = path.resolve(candidate);
     if (fs.existsSync(path.join(resolved, 'Integracao_Pedagogica', 'v2', 'manifest.json'))) return resolved;
-    if (fs.existsSync(path.join(resolved, 'Português', 'Integracao_Pedagogica', 'v2', 'manifest.json'))) {
-      return path.join(resolved, 'Português');
+    if (fs.existsSync(path.join(resolved, '02_Portugues', 'Integracao_Pedagogica', 'v2', 'manifest.json'))) {
+      return path.join(resolved, '02_Portugues');
     }
     if (fs.existsSync(path.join(resolved, 'Integracao_Pedagogica', 'manifest.json'))) return resolved;
-    if (fs.existsSync(path.join(resolved, 'Português', 'Integracao_Pedagogica', 'manifest.json'))) {
-      return path.join(resolved, 'Português');
+    if (fs.existsSync(path.join(resolved, '02_Portugues', 'Integracao_Pedagogica', 'manifest.json'))) {
+      return path.join(resolved, '02_Portugues');
     }
   }
   throw new Error(
-    'Fonte editorial não encontrada. Use --source <pasta Português> ou SUVECA_PEDAGOGICAL_SOURCE.',
+    'Fonte editorial não encontrada. Use --source <pasta 02_Portugues> ou SUVECA_PEDAGOGICAL_SOURCE.',
   );
 };
 
@@ -380,7 +380,8 @@ const globalManifest = readJson(globalManifestPath);
 if (isV2) {
   assert(globalManifest.structuralStatus === 'valid', 'Integracao_Pedagogica v2 com status estrutural inválido.');
   assert(globalManifest.publicationStatus === 'publishable', 'Integracao_Pedagogica v2 não está aprovada para publicação.');
-  assert(globalManifest.counts?.units === EXPECTED_INTEGRATED_UNITS, `Esperadas ${EXPECTED_INTEGRATED_UNITS} unidades integradas na v2.`);
+  const v2UnitsCount = globalManifest.canonicalCollections?.units ?? globalManifest.counts?.units;
+  assert(v2UnitsCount === EXPECTED_INTEGRATED_UNITS, `Esperadas ${EXPECTED_INTEGRATED_UNITS} unidades integradas na v2.`);
 } else {
   assert(globalManifest.status === 'complete', 'Integracao_Pedagogica global não está completa.');
   assert(globalManifest.totals?.pending_groups === 0, 'Integracao_Pedagogica ainda possui grupos pendentes.');

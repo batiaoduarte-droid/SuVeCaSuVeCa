@@ -12,50 +12,61 @@ export interface NormalizedQuestion {
 
 const partCache = new Map<string, Record<string, NormalizedQuestion>>();
 
-export const getLessonPartNumber = (lessonCode: string): string => {
-  const num = parseInt(lessonCode.replace(/\D/g, ''), 10);
-  if (isNaN(num)) return '001';
-  // Mapeamento das 10 partes
-  const partIdx = Math.min(10, Math.max(1, Math.floor(num / 2) + 1));
-  return String(partIdx).padStart(3, '0');
+const LESSON_PARTS_MAP: Record<string, string[]> = {
+  A00: ['001'],
+  A01: ['001', '002'],
+  A02: ['002', '003'],
+  A03: ['003'],
+  A04: ['003', '004'],
+  A05: ['004'],
+  A06: ['004', '005'],
+  A07: ['005'],
+  A08: ['005', '006'],
+  A09: ['006', '007'],
+  A10: ['007', '008'],
+  A11: ['008'],
+  A12: ['008', '009'],
+  A13: ['009', '010'],
 };
 
 export const fetchNormalizedQuestionsForLesson = async (
   lessonCode: string
 ): Promise<Record<string, NormalizedQuestion>> => {
-  const partNum = getLessonPartNumber(lessonCode);
-  if (partCache.has(partNum)) {
-    return partCache.get(partNum)!;
+  const code = lessonCode.toUpperCase();
+  if (partCache.has(code)) {
+    return partCache.get(code)!;
   }
 
-  try {
-    const res = await fetch(`/knowledge/official-question-parts/official-questions.normalized.part-${partNum}.json`);
-    if (res.ok) {
-      const data = await res.json();
-      const map: Record<string, NormalizedQuestion> = {};
-      if (Array.isArray(data)) {
-        for (const item of data) {
-          if (item.originalQuestionId) {
-            map[item.originalQuestionId] = item;
-          }
-          if (item.id) {
-            map[item.id] = item;
-            // Também mapeia sufixo após os dois pontos ex: A00:aula00.q0002 -> aula00.q0002
-            const parts = item.id.split(':');
-            if (parts.length > 1) {
-              map[parts[1]] = item;
+  const parts = LESSON_PARTS_MAP[code] || ['001'];
+  const combinedMap: Record<string, NormalizedQuestion> = {};
+
+  for (const partNum of parts) {
+    try {
+      const res = await fetch(`/knowledge/official-question-parts/official-questions.normalized.part-${partNum}.json`);
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          for (const item of data) {
+            if (item.originalQuestionId) {
+              combinedMap[item.originalQuestionId] = item;
+            }
+            if (item.id) {
+              combinedMap[item.id] = item;
+              const subparts = item.id.split(':');
+              if (subparts.length > 1) {
+                combinedMap[subparts[1]] = item;
+              }
             }
           }
         }
       }
-      partCache.set(partNum, map);
-      return map;
+    } catch {
+      // Silencioso em caso de falha de rede
     }
-  } catch {
-    // Silencioso em caso de falha de rede
   }
 
-  return {};
+  partCache.set(code, combinedMap);
+  return combinedMap;
 };
 
 export const parsePBLQuestionRef = (questionRef: string): { lessonId: string; sourceId: string } | null => {

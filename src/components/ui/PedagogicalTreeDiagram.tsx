@@ -39,6 +39,9 @@ const classifyDiagram = (raw: string, table: ParsedTable | null): DiagramKind =>
 
 const cleanDiagramText = (str: string): string => {
   return str
+    .replace(/\[\s*(?:KB|WARN|PROC|TIP|TERM|ORAL|EX|OQ)-[^\]]+\]/gi, '')
+    .replace(/\(\s*(?:KB|WARN|PROC|TIP|TERM|ORAL|EX|OQ)-[^)]+\)/gi, '')
+    .replace(/\s*\b(?:KB|WARN|PROC|TIP|TERM|ORAL|EX|OQ)-[A-Za-z0-9_.-]+\b\s*(?:\([^)]*\))?/gi, '')
     .replace(/[│┌┐└┘─▼▲►◄═├└┬┴┼]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();

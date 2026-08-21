@@ -301,7 +301,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                     <Icon className="h-3.5 w-3.5" />
                   </span>
                   <span className="font-bold text-teal-700">{index + 1}.</span>
-                  <span className="font-semibold truncate">{section.title}</span>
+                  <span className="font-semibold truncate"><InlineRichText>{section.title}</InlineRichText></span>
                 </button>
               </li>
             );
@@ -328,7 +328,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                     {idx + 1}
                   </span>
                   <Icon className="h-4 w-4 text-teal-700" />
-                  <span>{sec.title}</span>
+                  <span><InlineRichText>{sec.title}</InlineRichText></span>
                 </div>
                 <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
               </summary>
@@ -338,7 +338,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                 {/* Botões de Ação Rápida no final de cada seção */}
                 <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 select-none">
                   <span className="text-[11px] font-semibold text-slate-500">
-                    Seção {idx + 1} de {presentSections.length} · {sec.title}
+                    Seção {idx + 1} de {presentSections.length} · <InlineRichText>{sec.title}</InlineRichText>
                   </span>
                   <div className="flex flex-wrap items-center gap-2">
                     <button

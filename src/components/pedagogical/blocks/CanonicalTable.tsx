@@ -6,9 +6,12 @@ interface CanonicalTableProps {
   table: CanonicalTableView;
 }
 
-const isTechnicalColumn = (header: string): boolean => {
-  if (!header || typeof header !== 'string') return false;
-  const h = header.trim().toLowerCase();
+const isInvalidColumn = (header: string, idx: number, rows: string[][]): boolean => {
+  const h = (header || '').trim().toLowerCase();
+  if (!h) {
+    const hasContentInRows = (rows || []).some((r) => Boolean(r[idx]?.trim()));
+    return !hasContentInRows;
+  }
   return (
     h.includes('id detalhado') ||
     h.includes('id de referência') ||
@@ -26,10 +29,10 @@ const isTechnicalColumn = (header: string): boolean => {
 export const CanonicalTable: React.FC<CanonicalTableProps> = ({ table }) => {
   if (!table || !table.headers || table.headers.length === 0) return null;
 
-  // Filtra colunas técnicas (como "ID Detalhado de Referência", "Identificador", etc.)
+  // Filtra colunas técnicas ou vazias residuais
   const visibleIndices = table.headers
     .map((header, idx) => ({ header, idx }))
-    .filter(({ header }) => !isTechnicalColumn(header))
+    .filter(({ header, idx }) => !isInvalidColumn(header, idx, table.rows || []))
     .map(({ idx }) => idx);
 
   const cleanHeaders = visibleIndices.map((i) => table.headers[i]);
@@ -68,7 +71,7 @@ export const CanonicalTable: React.FC<CanonicalTableProps> = ({ table }) => {
               >
                 {row.map((cell, cIdx) => (
                   <td key={cIdx} className="px-4 py-3 leading-relaxed text-slate-800 font-medium">
-                    <InlineRichText>{cell}</InlineRichText>
+                    {cell ? <InlineRichText>{cell}</InlineRichText> : <span className="text-slate-300 font-mono text-xs select-none">—</span>}
                   </td>
                 ))}
               </tr>

@@ -242,4 +242,4 @@ export const EDITORIAL_DUEL_QUESTIONS = [
     ]
   }
 ] as const;
-export const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-23090bf61625314a';
+export const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-bd540dafde969016';

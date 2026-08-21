@@ -18,9 +18,12 @@ describe('renderização das unidades regulares publicadas', () => {
       localStorage.clear();
       const view = JSON.parse(fs.readFileSync(path.join(root, file), 'utf8')) as PedagogicalUnitView;
       const rendered = render(<PedagogicalUnitRenderer view={view} />);
+      const match = rendered.container.textContent?.match(/\b(?:KB|PROC|WARN)-[A-Z0-9_-]+\b/);
+      if (match) {
+        throw new Error(`FILE ${file} CONTAINS INTERNAL ID: [${match[0]}] in context: "${rendered.container.textContent?.slice(Math.max(0, rendered.container.textContent.indexOf(match[0]) - 50), Math.min(rendered.container.textContent.length, rendered.container.textContent.indexOf(match[0]) + 100))}"`);
+      }
       expect(rendered.container.querySelector('.pedagogical-unit-view'), file).not.toBeNull();
       expect(rendered.container.textContent, file).not.toContain('[object Object]');
-      expect(rendered.container.textContent, file).not.toMatch(/\b(?:KB|PROC|WARN)-[A-Z0-9_-]+\b/);
 
       cleanup();
     }

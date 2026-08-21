@@ -3,6 +3,7 @@ import { PenTool, Copy, Check, Zap } from 'lucide-react';
 import type { ProcedureView } from '../../../types/pedagogicalView';
 import { ProcedureStepper } from '../../study-visuals/ProcedureStepper';
 import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
+import { InlineRichText } from '../blocks/InlineRichText';
 import { semanticBlocksToPlainText } from '../../../lib/semanticBlockText';
 
 interface ResolutionSectionProps {
@@ -31,8 +32,12 @@ export const ResolutionSection: React.FC<ResolutionSectionProps> = ({ procedures
       if (typeof step === 'string') return `${stepIndex + 1}. ${normalizeProcedureStepAction(step)}`;
       return `${step.order || stepIndex + 1}. ${normalizeProcedureStepAction(step.action)}${step.explanation ? ` — ${step.explanation}` : ''}${step.test ? `\nTeste: ${step.test}` : ''}`;
     });
-    const inputs = (proc.inputs || []).map((input) => `${input.name}: ${input.description}`).join('\n');
-    const outputs = (proc.outputs || []).map((output) => `${output.name}: ${output.description}`).join('\n');
+    const inputs = (proc.inputs || [])
+      .map((input) => (typeof input === 'string' ? input : `${input.name}${input.description ? `: ${input.description}` : ''}`))
+      .join('\n');
+    const outputs = (proc.outputs || [])
+      .map((output) => (typeof output === 'string' ? output : `${output.name}${output.description ? `: ${output.description}` : ''}`))
+      .join('\n');
     const text = [
       proc.title || `Roteiro ${idx + 1}`,
       proc.objective || proc.goal,
@@ -101,7 +106,7 @@ export const ResolutionSection: React.FC<ResolutionSectionProps> = ({ procedures
                 <div className="rounded-xl border border-sky-200 bg-white p-4 space-y-2">
                   {sourceBackedOnly && (
                     <h4 className="border-b border-sky-100 pb-3 text-sm sm:text-base font-black text-sky-950">
-                      {proc.title}
+                      <InlineRichText>{proc.title}</InlineRichText>
                     </h4>
                   )}
                   {proc.blocks.map((block, bIdx) => (

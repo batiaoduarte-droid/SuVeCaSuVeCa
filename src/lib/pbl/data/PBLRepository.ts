@@ -279,14 +279,18 @@ export class PBLRepository implements IPBLRepository {
 
     const payload = (question.questionPayload || question) as Record<string, unknown>;
     const answerPayload = (question.answerPayload || {}) as Record<string, unknown>;
-    const prompt = formatOfficialContent(payload.prompt);
+    const rawPrompt = formatOfficialContent(payload.prompt);
+    const rawSupportText = formatOfficialContent(payload.support_text || payload.supportText);
+    const prompt = (rawPrompt.length < 15 && rawSupportText)
+      ? `${rawSupportText} ${rawPrompt}`
+      : rawPrompt;
     const correctAnswer = String(answerPayload.answer || question.officialAnswer || '');
     if (!prompt || !correctAnswer) return null;
     const rawOptions = Array.isArray(payload.options) ? payload.options : [];
     const presentation: PBLQuestionPresentation = {
       questionRef: questionId,
       questionType: rawOptions.length ? 'multiple_choice' : 'true_false',
-      supportText: formatOfficialContent(payload.support_text || payload.supportText) || undefined,
+      supportText: rawSupportText || undefined,
       prompt,
       options: rawOptions.map((option, index) => {
         const item = option as Record<string, unknown>;

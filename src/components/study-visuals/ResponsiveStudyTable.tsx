@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LayoutGrid, Table as TableIcon } from 'lucide-react';
 import type { CanonicalTableView } from '../../types/pedagogicalView';
-import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
+import { InlineRichText, sanitizePedagogicalText } from '../pedagogical/blocks/InlineRichText';
 
 interface ResponsiveStudyTableProps {
   table: CanonicalTableView;
@@ -9,17 +9,25 @@ interface ResponsiveStudyTableProps {
   defaultMode?: 'auto' | 'table' | 'cards';
 }
 
-const isValidHeader = (header: string): boolean => {
-  if (!header || typeof header !== 'string') return false;
-  const normalized = header.toLowerCase().trim();
-  if (!normalized) return false;
-  return !(
-    normalized.includes('id detalhado') ||
-    normalized.includes('id de referência') ||
-    normalized.includes('referência técnica') ||
-    normalized === 'id' ||
-    normalized === 'ref' ||
-    normalized.includes('identificador')
+const isTechnicalOrEmptyHeader = (header: string): boolean => {
+  if (!header || typeof header !== 'string') return true;
+  const h = header.toLowerCase().trim();
+  if (!h) return true;
+  return (
+    h.includes('id detalhado') ||
+    h.includes('id de referência') ||
+    h.includes('referência técnica') ||
+    h === 'referência' ||
+    h === 'referencia' ||
+    h === 'id' ||
+    h === 'ref' ||
+    h.includes('identificador') ||
+    h.includes('ref id') ||
+    h.includes('kb id') ||
+    h.includes('rule id') ||
+    h.includes('guid') ||
+    h === 'código' ||
+    h === 'codigo'
   );
 };
 
@@ -34,10 +42,18 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
     return null;
   }
 
-  // Identifica colunas válidas (oculta colunas puramente técnicas e vazias)
+  // Identifica colunas válidas (oculta colunas puramente técnicas e vazias após sanitização)
   const validColumnIndices = table.headers
     .map((header, idx) => ({ header, idx }))
-    .filter(({ header }) => isValidHeader(header))
+    .filter(({ header, idx }) => {
+      const isTech = isTechnicalOrEmptyHeader(header);
+      const hasContent = (table.rows || []).some((r) => {
+        const val = r[idx];
+        return Boolean(sanitizePedagogicalText(val || '').trim());
+      });
+      if (isTech) return hasContent;
+      return Boolean((header || '').trim()) || hasContent;
+    })
     .map(({ idx }) => idx);
 
   if (validColumnIndices.length === 0) return null;
@@ -112,14 +128,17 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
                   rIdx % 2 === 1 ? 'bg-slate-50/60' : 'bg-white'
                 }`}
               >
-                {row.map((cell, cIdx) => (
-                  <td
-                    key={cIdx}
-                    className="px-4 py-3 font-medium text-slate-800 leading-relaxed"
-                  >
-                    <InlineRichText>{cell}</InlineRichText>
-                  </td>
-                ))}
+                {row.map((cell, cIdx) => {
+                  const cleanCell = sanitizePedagogicalText(cell);
+                  return (
+                    <td
+                      key={cIdx}
+                      className="px-4 py-3 font-medium text-slate-800 leading-relaxed"
+                    >
+                      {cleanCell ? <InlineRichText>{cleanCell}</InlineRichText> : <span className="text-slate-300 font-mono text-xs select-none">—</span>}
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>

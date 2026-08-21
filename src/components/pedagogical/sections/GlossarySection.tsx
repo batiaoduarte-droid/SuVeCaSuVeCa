@@ -23,7 +23,7 @@ export const GlossarySection: React.FC<GlossarySectionProps> = ({ items = [], bl
 
   if (!hasItems) {
     for (const b of blocks) {
-      if (b.type === 'list' && b.items) {
+      if ((b.type === 'list' || b.type === 'bullet_list') && b.items) {
         for (const raw of b.items) {
           const clean = raw.replace(/^[—–-]\s*/, '').trim();
           const colonIdx = clean.indexOf(':');
@@ -31,6 +31,11 @@ export const GlossarySection: React.FC<GlossarySectionProps> = ({ items = [], bl
           const def = colonIdx > -1 ? clean.slice(colonIdx + 1).trim() : '';
           extractedListItems.push({ term, def });
         }
+      } else if (b.type === 'concept_definition') {
+        extractedListItems.push({
+          term: b.term || 'Conceito',
+          def: b.definition || b.text || '',
+        });
       } else {
         otherBlocks.push(b);
       }

@@ -1207,7 +1207,7 @@ export const SUVECA_METHOD = {
   },
   "editorialConnectionSource": {
     "schemaVersion": "1.0.0",
-    "sourceDigest": "1bb1af130fbe26418a6ba3fb28e4b1a387b97508b1377e76f7a809dad4e7e6ce",
+    "sourceDigest": "94b2e04f2858268546e4b9f1378193ada5f57960c6d84f4a75771ab399c576b2",
     "policy": "A taxonomia humana do método prevalece sobre a classificação gerada. O Gemini fornece detalhamento e evidência; conflitos, riscos e experiências do app são filtrados antes da publicação.",
     "totals": {
       "approvedAppExperiences": {

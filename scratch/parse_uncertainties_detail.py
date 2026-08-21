@@ -2,8 +2,8 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(r"c:\Users\origi\OneDrive\Desktop\Códigos")
-CANONICAL_V2 = ROOT / "Notebook LM" / "Português" / "Integracao_Pedagogica" / "v2" / "canonical"
+ROOT = Path(r"c:\Users\origi\OneDrive\Desktop\Códigos\portugues")
+CANONICAL_V2 = ROOT / "Notebook LM" / "02_Portugues" / "Integracao_Pedagogica" / "v2" / "canonical"
 OUTPUT_FILE = ROOT / "relatorio_incertezas_editoriais_normativas.md"
 
 def read_jsonl(path):

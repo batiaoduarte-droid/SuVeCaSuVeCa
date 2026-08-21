@@ -12,11 +12,22 @@ interface FormulaBlockProps {
 export const FormulaBlock: React.FC<FormulaBlockProps> = ({ text, className = '' }) => {
   if (!text) return null;
 
-  const sanitized = text
-    .replace(/º/g, '^{\\circ}')
-    .replace(/ª/g, '^{a}')
-    .replace(/§/g, '\\S ')
-    .replace(/°/g, '^{\\circ}');
+  let sanitized = text
+    .replace(/\\text\{([^}]+)\}/g, (_tm, tContent) => {
+      const cleanT = tContent
+        .replace(/\^\{?a\}?/g, 'ª')
+        .replace(/\^\{?o\}?/g, 'º')
+        .replace(/\^\{?\\\\circ\}?/g, 'º')
+        .replace(/\^\{\\circ\}/g, 'º')
+        .replace(/\\"/g, '"')
+        .replace(/"/g, '“');
+      return `\\text{${cleanT}}`;
+    })
+    .replace(/§/g, '\\S ');
+
+  if (sanitized.includes('&') && !sanitized.includes('\\begin{')) {
+    sanitized = `\\begin{aligned} ${sanitized} \\end{aligned}`;
+  }
 
   const rawMath = sanitized.trim().startsWith('$$') ? sanitized : `$$\n${sanitized}\n$$`;
 

@@ -21,7 +21,10 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], su
         if (e.presentation?.hideGenericScaffold) {
           return `${i + 1}. ${e.title}\n${semanticBlocksToPlainText(e.blocks)}`;
         }
-        const analysis = e.analysisSteps?.map((step) => `${step.order}. ${step.action}${step.rationale ? ` — ${step.rationale}` : ''}`).join('\n') || e.analysis || '';
+        const analysis = e.analysisSteps?.map((step, sIdx) => {
+          if (typeof step === 'string') return `${sIdx + 1}. ${step}`;
+          return `${step.order ?? sIdx + 1}. ${step.action || ''}${step.rationale ? ` — ${step.rationale}` : ''}`;
+        }).join('\n') || e.analysis || '';
         return `${i + 1}. ${e.title}\nFrase: ${e.prompt || e.sentence || ''}\nAnálise: ${analysis}\nConclusão: ${e.result || e.pedagogicalTakeaway || ''}`;
       })
       .concat(semanticBlocksToPlainText(supplementaryBlocks))

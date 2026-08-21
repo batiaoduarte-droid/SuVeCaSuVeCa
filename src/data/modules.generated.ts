@@ -1080,7 +1080,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -1911,7 +1911,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -2735,7 +2735,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -4009,7 +4009,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -5440,7 +5440,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -7321,7 +7321,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -8602,7 +8602,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -10183,7 +10183,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -11164,7 +11164,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -12445,7 +12445,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -13576,7 +13576,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -14107,7 +14107,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -15217,7 +15217,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -16348,7 +16348,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "integracao-pedagogica-1.1",
       "reviewedAt": "2026-08-17",
@@ -18264,7 +18264,7 @@ export const MODULES_DATA = [
       ]
     },
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "corpus-a14-expert-curated",
       "reviewedAt": "2026-08-17",
@@ -18371,7 +18371,7 @@ export const MODULES_DATA = [
         "commentary": "Em Com-pra-va, palavra paroxítona, temos encontro consonantal PR e dígrafo vocálico em OM. O dígrafo tem duas letras e representa só um fonema. Por isso, a palavra tem 8 letras e só 7 fonemas. Gabarito letra C. Dígrafo Nasal X Ditongo Nasal O dígrafo é a união de duas letras que formam um único som (UM SOM). Ocorre com M ou N após uma vogal antes de outra sílaba, em que o M ou N apenas nasaliza a vogal, funcionando exatamente como um til: ẽ - ENtre - O EN representa um único som, o som da vogal nasal ẽ ĩ - IMpor - O IM representa um único som, o som da vogal nasal ĩ ã - AMplo - O AM representa um único som, o som da vogal nasal ã O ditongo tem dois sons vocálicos, de uma vogal (+forte) e uma semivogal (+fraco) Então, o ditongo nasal tem DOIS SONS de vogal. Ocorre no final da palavra: ChegAM: chegÃU Portanto: Dígrafo, um som nasal (UM SOM): ã - AMplo X Ditongo, DOIS SONS: ChegAM: chegÃU DÍGRAFO NASAL DITONGO NASAL Duas letras que representam som vocálico nasal Duas letras (am / em) que representam dois sons, portanto dois fonemas. Ocorrem no final das palavras AM Ampola Falam Batem Cantam Alguém Cem Ninguém Ontem EM Emprego IM Limpeza OM Ombro UM Jejum AN Canto EN Venda IN Mingau ON Ontem UN Mundo",
         "origin": "official",
         "officialQuestionId": "A00:aula00.q0007",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod0",
         "conceptIds": [
           "pt.phonology.ditongo",
@@ -18396,7 +18396,7 @@ export const MODULES_DATA = [
         "commentary": "O diminutivo, aqui formado pelo sufixo “-inha”, pode ter valor afetivo, subjetivo, carinhoso. Esse uso é\nperfeitamente coerente com a linguagem familiar e cheia de afeto usada pela avó para falar com seu neto\nnuma carta. Questão correta.\n\n\n\n\n\nSINTAGMA: Expressão composta por uma ou mais palavras que funciona como uma unidade sintática\nindivisível, em que existe um núcleo. As palavras não podem ser separadas, são ligadas sintaticamente.\nPodemos ter sintagmas nominais, verbais, adjetivais. O sintagma relevante de fato é o \"nominal\".\n\n\n\n\n\n\n\n\nSINTAGMA NOMINAL: Expressão composta por um núcleo nominal, isto é, estrutura em que a palavra\nprincipal é um nome, normalmente um substantivo. Os exemplos mais clássicos são um núcleo substantivo,\nseguido de determinantes (artigo, pronome, numeral, adjetivo ou locução adjetiva)\n\nEx: [O homem previdente] cuida do futuro.\n\nEx: [Certas pessoas] nunca aprendem.\n\nEx: [Os meus dois amigos mineiros de longa data] chegaram hoje.\n\n\nPapel Sintático do Substantivo\n\nA partir de agora, veremos como a “classe” da palavra e “função sintática” se comunicam. Veremos,\ninclusive, que são indissociáveis.\nPara isso, será necessário fazer referência a algumas funções sintáticas. Se você por acaso não recordar\nem absoluto dessas funções, não se preocupe: aprofundaremos esse ponto em “Sintaxe”. Vejamos...\n\n\nPara identificar o substantivo, devemos saber: quando tivermos uma função sintática nominal (centrada\nem um nome), como sujeito, objeto, adjunto adnominal e complemento nominal, o substantivo será\nnormalmente o núcleo dessa função, o elemento central e principal, e será modificado por termos\n“satélites” (orbitam, ficam “em volta”), como artigos, numerais, adjetivos e pronomes.\nMuito gramatiquês junto?! Vamos ver isso num exemplo:\n\n\n\nOs seus cinco patinhos amarelos nadam na lagoa\nSujeito Adj. Adv.\n\n\nVejamos as classes de cada uma das palavras do exemplo acima:\nOs: artigo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero (masculino) e\nnúmero (plural).\nSeus: pronome possessivo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero\n(masculino) e número (plural).\nCinco: numeral adjetivo, variável, também se refere ao substantivo \"patinhos\".\nPatinhos: substantivo, núcleo da função sintática \"sujeito\" e é responsável pela concordância das\nclasses que se referem a ele.\nAmarelos: adjetivo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero\n(masculino) e número (plural).\nNadam: verbo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em terceira pessoa\n(eles) e número (plural).\nNa lagoa: locução adverbial de lugar. Exprime circunstância e equivale a um advérbio (classe), que é\ninvariável e tem função sintática de adjunto adverbial de lugar.\n\n\n\n\n\n\n\nVejamos agora um segundo exemplo\n\n\n“O1 meu2 violão3 novo4 quebrou”.\n\n\nQual termo dá nome ao objeto? A resposta deverá ser: Violão.\nSe eu perguntar: “o que quebrou?”, a resposta será O1 meu2 violão3 novo4. Dessa expressão inteira, a\npalavra central é “violão”, que é especificada por termos acessórios (o, meu, novo). Por isso, “violão” é\no núcleo do sujeito.\n\n\n\n\n\nO substantivo é classe nominal variável e ocupa sempre o núcleo de qualquer função sintática\nnominal.\n\nNa expressão: “tenho medo de bruxas”, o complemento nominal “de bruxas” tem como núcleo\no substantivo “bruxas” e completa o sentido vago da palavra “medo”.\n\nSe o substantivo é “núcleo”, há classes que são “satélites” e “orbitam” em volta dele e concordam\ncom ele.\nEssas classes que se referem ao substantivo são o artigo, o numeral, o adjetivo e o pronome\n(veremos essas classes adiante).\n\n\nEntão, já podemos perceber que o “substantivo” é o núcleo dos termos sintáticos sublinhados nos\nexemplos abaixo:\n1As meninas ricas do Leblon compraram 2muitos vestidos.\nO muro 3de concreto é resistente.\nEles têm consciência 4de meus defeitos.\n\n\nEm 1, “meninas” é o núcleo do sujeito, que está sublinhado.\nEm 2, “vestidos” é núcleo do objeto de “compraram”, complemento desse verbo (\"Quem compra,\ncompra alguma coisa\". Nesse caso, compra “muitos vestidos”).\nEm 3, o termo “de concreto” qualifica o substantivo “muro” e está “junto” a ele. Então, temos uma\nfunção chamada “adjunto adnominal” e seu núcleo é justamente o substantivo “concreto”.\nEm 4, o termo “de meus defeitos” complementa o nome “consciência”, porque \"quem tem consciência\ntem consciência de alguma coisa\". No caso, consciência “de meus defeitos”. Observe novamente como o\nnúcleo é um substantivo.\n\n\n\n\n\n\n\n\n\nPor outro lado, algumas classes de palavras também podem vir classificadas como “substantivas” (função ou\npapel de substantivo), se puderem substituir um nome, ou seja, se puderem vir no lugar de um substantivo,\ncomo “núcleo”.\n\nVejamos o exemplo abaixo\n\nMinhas mãos estão limpas, lave as suas [mãos].\n\n\nNote que \"suas\" é pronome possessivo substantivo, pois substitui o substantivo “mãos”, que está\nimplícito.\n\n\nTranquilo?! Não se preocupe, aprofundaremos tais funções futuramente. Mas já fica registrada a relação\nbásica entre a classe e a função sintática.\n\n\n\n\n\n\n\n\n\nADJETIVO\n\nO adjetivo é a classe variável que se refere ao substantivo ou termo de valor substantivo (como\npronomes), para atribuir a ele alguma qualificação, condição ou estado, restringindo ou\nespecificando seu sentido.\n\nEx: homem mau, mulher simples, céu azul, casa arruinada.\n\n\nÉ classe variável, que “orbita” em torno do substantivo e concorda com ele em gênero e número.\n\n\n\n\nEx: homens maus, mulheres simples, céus azuis, casas arruinadas.\n\n\nO adjetivo pode também ser substantivado:\n\n“Céu azul” => “O azul do céu”.\n\n\nÉ comum também substituir o adjetivo por “locução” ou “oração” adjetiva:\n\nEx: “Cidadão inglês”x “Cidadão da Inglaterra” x “Cidadão que é nativo da Inglaterra”.\n\n\nClassificação dos adjetivos\n\n\n\nCLASSIFICAÇÃO DEFINIÇÃO EXEMPLOS\n\nSIMPLES Possui apenas um radical. Estilo literário.\n\nCOMPOSTO Possui mais de um radical. Estilo lítero-musical.\n\nForma original, não derivado de outra\nPRIMITIVO Homem bom. palavra.\n\nDERIVADO É formado a partir de outra palavra. Ele é bondoso.\n\nIndica característica inerente e geral do Homem mortal.\nEXPLICATIVO ser.\n\nIndica característica que não é própria\nRESTRITIVO Homem valente. do ser.\n\nGENTÍLICO Relativos a povos e raças. israelita\n\nRelativos a cidades, estados, países e\nPÁTRIO israelense continentes.\n\n\n\n\n\n\n\n\n\nVejamos alguns exemplos de adjetivos pátrios, atenção à formação.\n\nVou destacar as terminações típicas dos adjetivos que indicam origem.\n\n/ês/: português, inglês, francês, camaronês, norueguês\n\n/ano/: goiano, americano, africano, angolano, mexicano\n\n/ense/: estadunidense, fluminense, amazonense\n\n/ão/, /eiro/: afegão, alemão, catalão, brasileiro, mineiro\n\n/ol/, /eta/, /ita/: espanhol, mongol, lisboeta, vietnamita\n\n/ino/, /eu/: argentino londrino, europeu, judeu\n\n/tico/: asiático\n\n/enho/: panamenho, costa-riquenho, porto-riquenho\n\n\nCuidado: esses adjetivos são grafados com letras minúsculas.\n\n\nComo apresentado na tabela, os adjetivos chamados de “uniformes” têm uma só forma para\nmasculino ou feminino e normalmente são os terminados em /a/, /e/, /ar/, /or/, /s/, /z/ ou /m/:\n\nEx: hipócrita, homicida, asteca, agrícola, cosmopolita\n\nárabe, breve, doce, constante, pedinte, cearense\n\nsuperior, exemplar, ímpar\n\nsimples, reles\n\nfeliz, feroz\n\nruim, comum\n\n\nFlexão dos adjetivos compostos\n\nNo plural dos adjetivos compostos, como luso-americanos, afro-brasileiras, obras político-sociais,\na primeira parte do composto é reduzida e somente o segundo item da composição vai para o\nplural.\n\nEssa é a regra para o plural dos adjetivos compostos em geral. Contudo, vejamos algumas\nexceções que são recorrentes em sua prova:\n\n\nAdjetivo composto formado por “adjetivo + substantivo”\n\nSe houver um substantivo na composição do adjetivo composto (adjetivo + substantivo),\nnenhuma das partes vai variar:\n\nEx: amarelo-ouro => camisa amarelo-ouro; camisas amarelo-ouro\n\nverde-oliva => parede verde-oliva; paredes verde-oliva\n\nvermelho-sangue => caneta vermelho-sangue; canetas vermelho-sangue\n\n\n\n\n\n\n\nAdjetivos compostos invariáveis\n\nAlguns adjetivos, no entanto, são sempre invariáveis. Vejamos:\n\nazul-marinho => camisa azul-marinho; camisas azul-marinho\n\nazul-celeste => parede azul-celeste; paredes azul-celeste\n\nfurta-cor => calça furta-cor; calças furta-cor\n\nultravioleta => raio ultravioleta; raios ultravioleta\n\nsem-terra => povo sem-terra; povos sem-terra\n\nverde-musgo => almofada verde-musgo; almofadas verde-musgo\n\ncor-de-rosa => jaqueta cor-de-rosa; jaquetas cor-de-rosa\n\n\n\n\n\nzero-quilômetro => caminhonete zero-quilômetro; caminhonetes zero-quilômetro\n\n\nValor objetivo (fato) x Valor subjetivo (opinião)\n\nOs adjetivos podem ter valor subjetivo, quando expressam opinião; ou podem ter valor objetivo,\nquando atestam qualidade que é fato e não depende de interpretação.\n\nOs adjetivos opinativos, por serem marca de expressão de uma opinião, são acessórios, podem\nser retirados, sem prejuízo gramatical.\n\nVeja:\n\nAdjetivos opinativos X Adjetivos objetivos\n\ncarro bonito carro preto\n\nturista animado turista japonês\n\n\nOs adjetivos chamados “de relação” são objetivos e, por isso, não aceitam variação de grau e\nnão podem ser deslocados livremente, posicionando-se normalmente após o substantivo.\n\nSão derivados de substantivos e estabelecem com o substantivo uma relação de tempo, espaço,\nmatéria, finalidade, propriedade, procedência etc.\n\nTais adjetivos indicam uma categorização “técnica”, “objetiva” e tornam mais preciso o conceito\nexpresso pelo substantivo, restringindo seu significado.\n\nO gramático Celso Cunha dá os seguintes exemplos:\n\nNota mensal => nota relativa ao mês\n\nMovimento estudantil => movimento feito por estudantes\n\nCasa paterna => casa onde habitam os pais\n\nVinho português => vinho proveniente de Portugal\n\n\n\n\n\n\n\n\n\n\nObserve que não podemos escrever “português vinho” nem “vinho muito português”. Ser\n“português” é uma categorização objetiva do vinho, não expressa opinião.\n\n\nEssas características vão nos ajudar em questões sobre a inversão da ordem “substantivo +\nadjetivo”, estudada adiante.",
         "origin": "official",
         "officialQuestionId": "A01:aula01.q0005",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod1",
         "conceptIds": [
           "pt.grammar.substantivo",
@@ -18421,7 +18421,7 @@ export const MODULES_DATA = [
         "commentary": "Questão diretíssima. “Portanto” é o conectivo conclusivo mais conhecido. Questão correta.",
         "origin": "official",
         "officialQuestionId": "A02:aula02.q.conjunction.commented.075",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod2",
         "conceptIds": [
           "pt.grammar.conjuncao",
@@ -18449,7 +18449,7 @@ export const MODULES_DATA = [
         "commentary": "Exatamente. As palavras negativas (não, nunca, jamais, nem…) obrigam a próclise, isto é, o pronome oblíquo átono deve ficar antes do verbo. Gabarito: questão correta.",
         "origin": "official",
         "officialQuestionId": "A03:aula03.q0145",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod3",
         "conceptIds": [
           "pt.grammar.proclise",
@@ -18503,7 +18503,7 @@ export const MODULES_DATA = [
         "commentary": "\"Esquece\" está no presente do indicativo. \"Teve\" está no pretérito perfeito do indicativo. \"Fizessem\" está no pretérito imperfeito do subjuntivo. \"Perderam\" está no pretérito perfeito do indicativo. \"Seria\" está no futuro do pretérito. Gabarito letra B.",
         "origin": "official",
         "officialQuestionId": "A04:aula04.q0098",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod4",
         "conceptIds": [
           "pt.grammar.tempo_verbal",
@@ -18528,7 +18528,7 @@ export const MODULES_DATA = [
         "commentary": "“Teremos conquistado” é forma de futuro do presente composto e indica que ação estará\nconcluída no momento futuro sugerido.\nTrazendo para um exemplo mais simples, compare:\nÀs 21h, jantarei (começarei a comer).\nÀs 21h, terei jantado (já terei terminado de comer).\nEntão, “teremos conquistados” indica que a ação de conquistar já estará completa,\nperfeitamente concluída. “Conquistaremos” não tem esse sentido, apenas indica a ação como\nalgo que ocorrerá no futuro, sem esse valor de ação “já concluída” naquele momento.\nQuestão incorreta.",
         "origin": "official",
         "officialQuestionId": "A05:aula05.q0030",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod5",
         "conceptIds": [
           "pt.grammar.correlacao_verbal",
@@ -18554,7 +18554,7 @@ export const MODULES_DATA = [
         "commentary": "Dica simples para reconhecer o sujeito indeterminado: você não sabe quem ele é! Então, se você consegue determinar o sujeito no contexto, ele não pode ser indeterminado. Lendo o texto, é evidente que “acusados” não cometeram os crimes; então, o sujeito é apenas oculto, pois não está expresso na oração, mas pode ser determinado pelo contexto. Questão incorreta.",
         "origin": "official",
         "officialQuestionId": "A06:aula06.q0059.commented",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod6",
         "conceptIds": [
           "pt.grammar.sujeito",
@@ -18579,7 +18579,7 @@ export const MODULES_DATA = [
         "commentary": "“como” é conjunção comparativa: a galinha não contava consigo da mesma forma que o galo crê na sua crista. Questão incorreta.",
         "origin": "official",
         "officialQuestionId": "A07:aula07.q0061",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod7",
         "conceptIds": [
           "pt.grammar.palavra_como",
@@ -18625,7 +18625,7 @@ export const MODULES_DATA = [
         "commentary": "Vejamos:\n\na) A vírgula separa uma oração adverbial causal antecipada.\n\nb) As vírgulas são obrigatórias e separam a expressão explicativa “por exemplo”.\n\nc) A vírgula separa expressão adverbial conformativa que está antecipada no período.\n\nd) A vírgula isola o aposto explicativo de “Staphylococcus aureus”. Qual é a temível bactéria? A “Staphylococcus aureus”. Gabarito letra D.",
         "origin": "official",
         "officialQuestionId": "A08:aula08.q.inline.030",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod8",
         "conceptIds": [
           "pt.punctuation.virgula",
@@ -18650,7 +18650,7 @@ export const MODULES_DATA = [
         "commentary": "Quem/o que parou? Parou “o futebol ininterrupto que jogávamos com bola de borracha\nna porta da fábrica em frente”. Todo esse “monstro” é o sujeito, mas seu núcleo é\napenas “futebol”, por isso o verbo fica no singular.\n\nQuestão incorreta.",
         "origin": "official",
         "officialQuestionId": "A09:aula09.q.commented_simples.057",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod9",
         "conceptIds": [
           "pt.grammar.concordancia_com_o_sujeito_simples",
@@ -18675,7 +18675,7 @@ export const MODULES_DATA = [
         "commentary": "O verbo reduzir, no caso, é VTDI: Reduzir uma coisa (OD) a outra coisa (OI). Ex.:vou reduzir você a\npó! Assim sendo, sabemos que o pronome oblíquo “o” faz o papel de objeto direto. Portanto,\nnão poderia ser substituído por “lhe”, que só pode ser objeto indireto. Questão incorreta.\n9. Chegar\nEx.: O Natal chegou cedo! (VI)\nO verbo chegar funciona como o verbo ir, é intransitivo. Contudo, por seu sentido de\ndeslocamento, vem acompanhado com uma circunstância de lugar (adjunto adverbial de tempo).\nA FCC, porém, já considerou esse verbo como transitivo indireto, regido pela preposição “a”,\nembasada na obra de Celso Pedro Luft. Veremos essa questão logo abaixo. Então, pode ser\ntambém transitivo indireto, regendo a preposição “a”.\nEx.: Sua paciência chegou ao extremo.\nEx.: A produtividade pode chegar a limites improváveis.\nSaliento que o verbo chegar deve utilizar a preposição “a”, não “em”. Embora soe comum na\ncoloquialidade, estaria errada a expressão “chegou em Brasília”.\n10.Caber\nO verbo caber pede preposição “a”, no sentido de que algo deve ser feito por alguém.\nGeralmente traz um sujeito oracional, representando uma ação.\nEx.: Cabe a nós aproveitar nosso tempo. (VTI: “a”; competir, ser de direito)\nO verbo caber também pode ser intransitivo.\nEx.: No seu caso, não cabe recurso. (VI; convir, ter admissibilidade, cabimento)\n11.Constar\n“Constar” pode ter várias regências; seu sentido geralmente envolve composição ou\nconhecimento.\nEx.: O Código Civil consta de mais de 2045 artigos. (VTI: “de”; conter, consistir em; ser\nconstituído de)\nEx.: “Consta nos autos, consta no mundo”... (VTI: “de” ou “em”; estar incluído; estar\ncontido em)\nEx.: Não constava a ele que tinha outro filho. (VTI: “a”; saber, ter ciência)\nEx.: Consta a mim que o papa ficou preocupado com a crise. (VTI: “a”; ser do\nconhecimento de; ser sabido; ter ciência; geralmente traz sujeito oracional: aquilo que\nconsta tem formato de uma oração)\n12.Referir-se\nEsse verbo é pronominal e tem preposição “a”. A banca gosta de sugerir a troca por um\nsinônimo. Cai bastante!\nEx.: O texto refere-se ao atentado de 11 de setembro. (VTI, “a”; mencionar, aludir a algo)\nPense também no verbo “aludir”, que pede preposição “a”, e em seu sinônimo “mencionar”,\nque não pede.\nEx.: Mencionei a questão/Aludi à questão. (há preposição, por isso há crase)\n13.Contribuir\nEx.: Não vou mais contribuir para a Igreja. (VTI: “para”; ajudar; doar)\nEx.: Não vou mais contribuir com dinheiro. (VTI: “com”; ajudar, doar)\n14.Obedecer e Desobedecer\n(VTI: “a”; (não) seguir ordens, acatar; VTI especial, que aceita voz passiva)\nEx: O brasileiro obedece a leis absurdas.\nEx: O servidor não deve obedecer a ordens ilegais.\nEx: Ele obedecia ao pai e à mãe.\nEx.: Desobedeci ao patrão e à patroa.\nEx.: O decreto foi obedecido pelos cidadãos.\nOBS: Alguns verbos transitivos indiretos admitem voz passiva (obedecer, atender, pagar, perdoar,\napelar, abusar)\nAs leis não são obedecidas.\nOs alunos foram atendidos.\nOs funcionários foram pagos/perdoados pelo patrão.\n15.Lembrar e esquecer\nMUITA ATENÇÃO AQUI!!\nEsses verbos podem ser usados como pronominais, ou seja, com um pronome “colado” nele.\nNesse caso, opera-se em par: OU é VTI pronominal e traz as duas partes –SE + DE ou é só VTD.\nÉ tudo (pronome + preposição) ou nada.\nEx.: Lembrei/Esqueci a fórmula. (VTD; na forma não pronominal)\nEx.: Lembrei-me/Esqueci-me da fórmula. (VTI, na forma pronominal)\nPara esses verbos, opera-se em pares, ou usa pronome + preposição, ou se omitem os dois.\nEsses verbos acima são muito importantes e mostram a lógica dos verbos\npronominais! Ou trazem pronome + preposição ou nada!!",
         "origin": "official",
         "officialQuestionId": "A10:aula10.q0011",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod10",
         "conceptIds": [
           "pt.grammar.regencia_verbal",
@@ -18700,7 +18700,7 @@ export const MODULES_DATA = [
         "commentary": "Interpretando o início do último parágrafo, compreendemos que desde o início da democracia\nateniense já estavam claras as relações dessa democracia com a argumentação e a retórica. O\npronome SUAS retoma “democracia ateniense”.\n“suas” é pronome possessivo e sugere a pergunta: “relação de quem”? “relação do que com a\nargumentação”?\nAqui temos a relação “da democracia ateniense” com a retórica e a argumentação.\nDesde os alvores da democracia ateniense, são sobejamente conhecidas as suas relações com a\nargumentação e a retórica... Questão correta.",
         "origin": "official",
         "officialQuestionId": "A11:aula11.qc.coesao.037",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod11",
         "conceptIds": [
           "pt.text.coesao_textual",
@@ -18752,7 +18752,7 @@ export const MODULES_DATA = [
         "commentary": "a) Bastava lembrar-se do famoso “livre-arbítrio”, que é a livre escolha de fazer o que se tem\nvontade. Assim, “arbítrio” e “vontade” são utilizados como sinônimos. Questão correta.\nb) “Inusitado” é incomum, não usual, que causa surpresa. “Corriqueiro” significa comum,\nordinário, usual, trivial. Essas palavras são antônimas. Questão incorreta.\nc) “Comezinha” é sinônimo de usual, corriqueiro. Tem então sentido oposto a “extraordinário”.\nd) “aterrador” é aterrorizante; “atenuador” é aquilo que suaviza algo. Questão incorreta.\ne) Na terminologia técnica da filosofia, “dilema” até tem o sentido de uma decisão entre\npremissas contraditórias. Mas, no texto, “dilema” foi utilizado com sentido de “decisão a ser\ntomada”, “escolha”, “problema”, “dicotomia”. Questão incorreta. Gabarito Letra A.",
         "origin": "official",
         "officialQuestionId": "A12:aula12.q0076",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod12",
         "conceptIds": [
           "pt.semantics.antonimo",
@@ -18780,7 +18780,7 @@ export const MODULES_DATA = [
         "commentary": "Não se pode afirmar isso. Apenas foi dito que o nome é hispânico. Garcia é um nome hispânico e\nnem todo Garcia é espanhol. Questão incorreta.",
         "origin": "official",
         "officialQuestionId": "A13:aula13.q0171",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod13",
         "conceptIds": [
           "pt.text.do_texto",
@@ -18808,7 +18808,7 @@ export const MODULES_DATA = [
         "commentary": "Nesse caso, temos “ainda” com mero valor enfático, como em: chegou ainda agora (acabou de chegar),\nestudou mais ainda (mais e mais). Questão incorreta.\n\n\n\n\n\n\n\n\n\n\nEvite usar “o mesmo” retomando pessoas/objetos, como se fosse “ele”, em construções como:\nEx: O suspeito chegou ao local. O mesmo fugiu dos policiais sem que os mesmos\npudessem perceber. (troque por “ele” e “eles”)\nContudo, é correto usar “o mesmo”, invariável, quando significa “a mesma coisa/o mesmo fato”.\nEx: Todos têm dificuldade com essa matéria, o mesmo ocorrerá com você. (a mesma coisa\nocorrerá com você, isso também ocorrerá com você)\n\n\n\n\n\n\n\n\nUSO DE “O MESMO”\n\nA expressão \"o mesmo\" é muitas vezes usada para evitar repetições excessivas em textos formais,\nespecialmente em contextos burocráticos ou administrativos. No entanto, “o mesmo” não é pronome\npessoal e não deve ser usado como tal. Esse uso É INADEQUADO:\n\nEx: \"O aluno entregou o trabalho. O mesmo será corrigido em breve.\"\n\nEx: \"O funcionário foi notificado sobre sua conduta. O mesmo deverá comparecer à reunião para\nesclarecimentos.\"\n\nNos dois casos acima, bastaria usar o pronome pessoal “ele”:\n\nEx: \"O aluno entregou o trabalho. ELE será corrigido em breve.\"\n\nEx: \"O funcionário foi notificado sobre sua conduta. ELE deverá comparecer à reunião para esclarecimentos.\"\n\nPorém, o uso de “o mesmo” para substituir um segmento anterior é correto quando retoma um evento\nocorrido/processo mencionado antes, com sentido de “a mesma coisa/o mesmo fato”.\n\nVárias pessoas foram assaltadas; o mesmo aconteceu comigo. (certo).\n\nVárias pessoas foram assaltadas; o mesmo fato/ a mesma coisa [ser assaltado] aconteceu comigo. (certo).",
         "origin": "official",
         "officialQuestionId": "A01:aula01.q0030",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod1",
         "conceptIds": [
           "pt.grammar.palavras_especiais",
@@ -18833,7 +18833,7 @@ export const MODULES_DATA = [
         "commentary": "“Não” é palavra negativa e atrai o pronome, então temos caso de próclise obrigatória. Gabarito: questão correta.",
         "origin": "official",
         "officialQuestionId": "A03:aula03.q0149",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod3",
         "conceptIds": [
           "pt.grammar.proclise",
@@ -18884,7 +18884,7 @@ export const MODULES_DATA = [
         "commentary": "\"como\" indica causa:\nJá que/porque/visto que a ideia não pegou na tropa, Barbier adaptou o método para a leitura\nde cegos\nA causa da adaptação foi a ideia não ter funcionado bem na tropa.\nOBS: Acrescento que a Cesgranrio já cobrou em prova uma variação da oração causal com o\nverbo no pretérito imperfeito do subjuntivo:\nComo chovesse muito pela manhã, resolvi sair à tarde.\nLeia esse \"chovesse\" como \"chovia\". É estranho e formal, mas está correto.\nGabarito: B",
         "origin": "official",
         "officialQuestionId": "A05:aula05.q0003",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod5",
         "conceptIds": [
           "pt.grammar.correlacao_verbal",
@@ -18930,7 +18930,7 @@ export const MODULES_DATA = [
         "commentary": "No excerto “(...) Jean M. Twenge, professora de psicologia na Universidade Estadual de San Diego, alertou sobre o risco de uma crise mental iminente afetando crianças e adolescentes. (...)”, as vírgulas foram empregadas para isolar um APOSTO EXPLICATIVO, referente a Jean M. Twenge.\n\nAs demais opções são teóricas, corretas e autoexplicativas. Gabarito letra D.",
         "origin": "official",
         "officialQuestionId": "A08:aula08.q.inline.029",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod8",
         "conceptIds": [
           "pt.punctuation.virgula",
@@ -18955,7 +18955,7 @@ export const MODULES_DATA = [
         "commentary": "Considerando o termo a que se liga a expressão “tendem a”, o emprego do acento grave\nindicativo da crase seria inadequado em termos de correção gramatical. Questão incorreta.",
         "origin": "official",
         "officialQuestionId": "A10:aula10.q0065",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod10",
         "conceptIds": [
           "pt.grammar.crase",
@@ -19009,7 +19009,7 @@ export const MODULES_DATA = [
         "commentary": "O vocábulo prender foi usado de forma ambígua, para criar humor: pode ser lido, de forma\nfigurada, como \"capturar a atenção\" do leitor; ou pode ser lido literalmente como prender de\nforma física, como aconteceu ao personagem.\nGabarito letra D.",
         "origin": "official",
         "officialQuestionId": "A12:aula12.q0015",
-        "questionSetVersion": "editorial-simulado-23090bf61625314a",
+        "questionSetVersion": "editorial-simulado-bd540dafde969016",
         "moduleId": "mod12",
         "conceptIds": [
           "pt.semantics.ambiguidade",
@@ -19032,7 +19032,7 @@ export const MODULES_DATA = [
       }
     ],
     "knowledge": {
-      "buildId": "23090bf61625314a",
+      "buildId": "bd540dafde969016",
       "editorialStatus": "approved_ai_reviewed",
       "reviewVersion": "corpus-apostila-questions",
       "reviewedAt": "2026-08-17",

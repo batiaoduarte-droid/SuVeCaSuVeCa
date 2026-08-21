@@ -67,6 +67,27 @@ const mapCalloutKindToTone = (kind?: string): StudyTone => {
  * Desktop: Tabela estruturada limpa
  * Mobile (< 640px): Cards empilhados por linha/critério
  */
+const isTechnicalOrEmptyHeader = (header: string): boolean => {
+  const h = (header || '').trim().toLowerCase();
+  if (!h) return true;
+  return (
+    h.includes('id detalhado') ||
+    h.includes('id de referência') ||
+    h.includes('identificador') ||
+    h.includes('referência técnica') ||
+    h === 'referência' ||
+    h === 'referencia' ||
+    h === 'ref' ||
+    h.includes('ref id') ||
+    h.includes('kb id') ||
+    h.includes('rule id') ||
+    h.includes('guid') ||
+    h === 'id' ||
+    h === 'código' ||
+    h === 'codigo'
+  );
+};
+
 export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock }> = ({ block }) => {
   const { title, columns = [], rows = [] } = block;
 
@@ -81,11 +102,31 @@ export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock
     return null;
   }
 
+  // Filtra colunas válidas (que possuem cabeçalho e conteúdo não vazio nas linhas após sanitização)
+  const validColIndices = columns
+    .map((col, idx) => ({ col, idx }))
+    .filter(({ col, idx }) => {
+      const colText = (col || '').trim();
+      const isTech = isTechnicalOrEmptyHeader(colText);
+      const hasContent = (rows || []).some((r) => {
+        const val = Array.isArray(r) ? r[idx] : (r as Record<string, string>)[col];
+        return Boolean(sanitizePedagogicalText(val || '').trim());
+      });
+      if (isTech) return hasContent;
+      return Boolean(colText) || hasContent;
+    })
+    .map(({ idx }) => idx);
+
+  const cleanColumns = validColIndices.length > 0
+    ? validColIndices.map((i) => columns[i])
+    : columns;
+
   const normalizedRows: Array<Record<string, string>> = rows.map((r) => {
     if (Array.isArray(r)) {
       const obj: Record<string, string> = {};
-      columns.forEach((col, idx) => {
-        obj[col] = r[idx] || '';
+      cleanColumns.forEach((col, idx) => {
+        const originalIdx = validColIndices[idx] ?? idx;
+        obj[col] = r[originalIdx] || '';
       });
       return obj;
     }
@@ -108,7 +149,7 @@ export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock
         <table className="min-w-full divide-y divide-slate-200 text-xs text-left">
           <thead className="bg-slate-50">
             <tr>
-              {columns.map((col, idx) => (
+              {cleanColumns.map((col, idx) => (
                 <th
                   key={idx}
                   scope="col"
@@ -122,9 +163,9 @@ export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock
           <tbody className="divide-y divide-slate-100 bg-white">
             {normalizedRows.map((row, rIdx) => (
               <tr key={rIdx} className={rIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                {columns.map((col, cIdx) => (
+                {cleanColumns.map((col, cIdx) => (
                   <td key={cIdx} className="px-3.5 py-2.5 text-slate-700 leading-relaxed font-medium align-top">
-                    <InlineRichText>{row[col] || ''}</InlineRichText>
+                    {row[col] ? <InlineRichText>{row[col]}</InlineRichText> : <span className="text-slate-300 font-mono text-xs select-none">—</span>}
                   </td>
                 ))}
               </tr>
@@ -140,7 +181,7 @@ export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock
             key={rIdx}
             className="rounded-xl border border-slate-200 bg-white p-3.5 shadow-2xs space-y-2"
           >
-            {columns.map((col, cIdx) => {
+            {cleanColumns.map((col, cIdx) => {
               const val = row[col] || '';
               if (!val) return null;
               return (
@@ -178,9 +219,30 @@ export const ResponsiveAstTable: React.FC<{ block: TableBlock }> = ({ block }) =
     return null;
   }
 
+  // Filtra colunas válidas (que possuem cabeçalho e conteúdo não vazio nas linhas após sanitização)
+  const validColIndices = columns
+    .map((col, idx) => ({ col, idx }))
+    .filter(({ col, idx }) => {
+      const colText = (col || '').trim();
+      const isTech = isTechnicalOrEmptyHeader(colText);
+      const hasContent = (rows || []).some((r) => {
+        const val = Array.isArray(r) ? r[idx] : (r as Record<string, string>)[col];
+        return Boolean(sanitizePedagogicalText(val || '').trim());
+      });
+      if (isTech) return hasContent;
+      return Boolean(colText) || hasContent;
+    })
+    .map(({ idx }) => idx);
+
+  const cleanColumns = validColIndices.length > 0
+    ? validColIndices.map((i) => columns[i])
+    : columns;
+
   const normalizedRows: string[][] = (rows || []).map((r) => {
-    if (Array.isArray(r)) return r;
-    return (columns || []).map((col) => (r as Record<string, string>)[col] || '');
+    if (Array.isArray(r)) {
+      return (validColIndices.length > 0 ? validColIndices : columns.map((_, i) => i)).map((i) => r[i] || '');
+    }
+    return cleanColumns.map((col) => (r as Record<string, string>)[col] || '');
   });
 
   return (
@@ -204,7 +266,7 @@ export const ResponsiveAstTable: React.FC<{ block: TableBlock }> = ({ block }) =
         <table className="min-w-full divide-y divide-slate-200 text-xs text-left">
           <thead className="bg-slate-50">
             <tr>
-              {(columns || []).map((col, idx) => (
+              {cleanColumns.map((col, idx) => (
                 <th
                   key={idx}
                   scope="col"
@@ -220,7 +282,7 @@ export const ResponsiveAstTable: React.FC<{ block: TableBlock }> = ({ block }) =
               <tr key={rIdx} className={rIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
                 {row.map((cell, cIdx) => (
                   <td key={cIdx} className="px-3.5 py-2.5 text-slate-700 leading-relaxed font-medium align-top">
-                    <InlineRichText>{cell}</InlineRichText>
+                    {cell ? <InlineRichText>{cell}</InlineRichText> : <span className="text-slate-300 font-mono text-xs select-none">—</span>}
                   </td>
                 ))}
               </tr>
@@ -236,7 +298,7 @@ export const ResponsiveAstTable: React.FC<{ block: TableBlock }> = ({ block }) =
             key={rIdx}
             className="rounded-xl border border-slate-200 bg-white p-3.5 shadow-2xs space-y-2"
           >
-            {(columns || []).map((col, cIdx) => {
+            {cleanColumns.map((col, cIdx) => {
               const val = row[cIdx] || '';
               if (!val) return null;
               return (

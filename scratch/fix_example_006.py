@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-CANONICAL_DIR = Path(r"c:\Users\origi\OneDrive\Desktop\Códigos\Notebook LM\Português\Integracao_Pedagogica\v2\canonical")
+CANONICAL_DIR = Path(r"c:\Users\origi\OneDrive\Desktop\Códigos\portugues\Notebook LM\02_Portugues\Integracao_Pedagogica\v2\canonical")
 examples = [json.loads(l) for l in open(CANONICAL_DIR / "examples.jsonl", encoding="utf-8") if l.strip()]
 
 for ex in examples:
