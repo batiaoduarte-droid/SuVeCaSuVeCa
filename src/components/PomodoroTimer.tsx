@@ -23,11 +23,12 @@ import {
   Flame,
 } from 'lucide-react';
 import { MODULES_DATA } from '../data/modulesData';
-import type { PomodoroSession } from '../types/suveca';
+import type { CadernoErroItem, PomodoroSession } from '../types/suveca';
 import type { User } from '../lib/firebase';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { StudyBadge, StudySurface } from './study-visuals';
+import { generateChallengeRound, type ChallengeQuestion } from '../lib/learnerIntelligence';
 
 export type PomodoroMode = 'foco' | 'pausa_curta' | 'pausa_longa';
 
@@ -39,6 +40,13 @@ interface PomodoroTimerProps {
   isPageActive?: boolean;
   onMinimize?: () => void;
   onExpandTab?: () => void;
+  errors?: CadernoErroItem[];
+  onAddError?: (
+    conteudo: string,
+    erroCometido: string,
+    regraDecisiva: string,
+    metadata?: Partial<CadernoErroItem>
+  ) => void;
 }
 
 const DEFAULT_DURATIONS: Record<PomodoroMode, number> = {
@@ -133,6 +141,8 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
   isPageActive = true,
   onMinimize,
   onExpandTab,
+  errors = [],
+  onAddError,
 }) => {
   const [mode, setMode] = useState<PomodoroMode>('foco');
   const [durations, setDurations] = useState<Record<PomodoroMode, number>>(DEFAULT_DURATIONS);
@@ -155,6 +165,10 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
     completedMinutes: number;
   } | null>(null);
   const [completionNote, setCompletionNote] = useState<string>('');
+  const [flashCheckQuestion, setFlashCheckQuestion] = useState<ChallengeQuestion | null>(null);
+  const [flashCheckAnswered, setFlashCheckAnswered] = useState<string | null>(null);
+  const [isFlashCheckCorrect, setIsFlashCheckCorrect] = useState<boolean | null>(null);
+  const [addedErrorId, setAddedErrorId] = useState<string | null>(null);
 
   // History state
   const currentUserId = user?.uid || null;
@@ -244,6 +258,11 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
 
     if (mode === 'foco') {
       setIsMinimized(false);
+      const round = generateChallengeRound(errors || []);
+      setFlashCheckQuestion(round[0] || null);
+      setFlashCheckAnswered(null);
+      setIsFlashCheckCorrect(null);
+      setAddedErrorId(null);
       setPendingCompletion({
         completedMode: mode,
         completedTopic: currentTopic,
@@ -251,7 +270,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
         completedMinutes: durations.foco,
       });
     }
-  }, [durations, mode, currentTopic, useCustomTopic, selectedTopicModuleId, soundEnabled]);
+  }, [durations, mode, currentTopic, useCustomTopic, selectedTopicModuleId, soundEnabled, errors]);
 
   // Interval Tick
   useEffect(() => {
@@ -803,6 +822,101 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
                 <X className="h-5 w-5" />
               </button>
             </div>
+
+            {/* Flash Check de Fixação (30s) */}
+            {flashCheckQuestion && (
+              <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-3.5 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                    Flash Check Pós-Pomodoro (+15 XP)
+                  </span>
+                  <span className="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">
+                    Fixação Imediata
+                  </span>
+                </div>
+
+                <p className="text-xs font-semibold text-slate-800 leading-snug">
+                  {flashCheckQuestion.prompt}
+                </p>
+
+                {!flashCheckAnswered ? (
+                  <div className="grid grid-cols-2 gap-2 pt-1">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFlashCheckAnswered('C');
+                        const correct = flashCheckQuestion.correctAnswer === 'C';
+                        setIsFlashCheckCorrect(correct);
+                      }}
+                      className="py-2 px-3 rounded-lg border border-slate-300 bg-white text-xs font-bold text-slate-800 hover:bg-slate-50 transition cursor-pointer"
+                    >
+                      Certo
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFlashCheckAnswered('E');
+                        const correct = flashCheckQuestion.correctAnswer === 'E';
+                        setIsFlashCheckCorrect(correct);
+                      }}
+                      className="py-2 px-3 rounded-lg border border-slate-300 bg-white text-xs font-bold text-slate-800 hover:bg-slate-50 transition cursor-pointer"
+                    >
+                      Errado
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-2 pt-1 text-xs">
+                    <div
+                      className={`p-2.5 rounded-lg border font-bold flex items-center gap-2 ${
+                        isFlashCheckCorrect
+                          ? 'bg-emerald-50 border-emerald-300 text-emerald-950'
+                          : 'bg-rose-50 border-rose-300 text-rose-950'
+                      }`}
+                    >
+                      {isFlashCheckCorrect ? (
+                        <>
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                          <span>Excelente! +15 XP Bônus de Foco Ativo adicionado.</span>
+                        </>
+                      ) : (
+                        <>
+                          <X className="w-4 h-4 text-rose-600 shrink-0" />
+                          <span>A resposta correta era: {flashCheckQuestion.correctAnswer === 'C' ? 'Certo' : 'Errado'}.</span>
+                        </>
+                      )}
+                    </div>
+
+                    <div className="p-2.5 rounded-lg bg-white border border-slate-200 text-slate-700 leading-relaxed text-[11px]">
+                      <strong>Regra Decisiva SuVeCA:</strong> {flashCheckQuestion.decisiveRule || flashCheckQuestion.whyCorrect}
+                    </div>
+
+                    {!isFlashCheckCorrect && onAddError && !addedErrorId && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          onAddError(
+                            flashCheckQuestion.targetWeakness || 'Flash Check Pomodoro',
+                            `Deslize no Flash Check Pomodoro: ${flashCheckQuestion.prompt}`,
+                            flashCheckQuestion.decisiveRule || 'Método SuVeCA',
+                            {
+                              questionText: flashCheckQuestion.prompt,
+                              correctAnswer: flashCheckQuestion.correctAnswer,
+                              regraDecisiva: flashCheckQuestion.decisiveRule,
+                              novoExemplo: flashCheckQuestion.mentalTest,
+                            }
+                          );
+                          setAddedErrorId(flashCheckQuestion.id);
+                        }}
+                        className="button-secondary w-full py-1.5 text-[11px] font-bold text-teal-800 border-teal-200 bg-teal-50/50 hover:bg-teal-100 cursor-pointer"
+                      >
+                        + Adicionar ao Caderno de Erros
+                      </button>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
 
             <div className="space-y-2">
               <label className="block text-xs font-semibold text-slate-700 flex items-center gap-1">

@@ -14,6 +14,7 @@ import { GlossaryGrid, type GlossaryItem } from './GlossaryGrid';
 import { SuvecaConnectionViewer } from './SuvecaConnectionViewer';
 import { CanonicalRulesViewer } from './CanonicalRulesViewer';
 import { ExamTrapsViewer } from './ExamTrapsViewer';
+import { highlightSuvecaInReactNodes } from './SuvecaBrandHighlight';
 
 interface MarkdownContentProps {
   content: string;
@@ -215,6 +216,18 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
         },
         code: ({ children, className: codeClassName }) => (
           <code className={`font-mono text-xs text-teal-800 ${codeClassName || ''}`}>{children}</code>
+        ),
+        h1: ({ children }) => (
+          <h1 className="text-xl font-bold text-slate-950 mt-4 mb-2">{highlightSuvecaInReactNodes(children)}</h1>
+        ),
+        h2: ({ children }) => (
+          <h2 className="text-lg font-bold text-slate-950 mt-4 mb-2">{highlightSuvecaInReactNodes(children)}</h2>
+        ),
+        h3: ({ children }) => (
+          <h3 className="text-base font-bold text-slate-950 mt-3 mb-1.5">{highlightSuvecaInReactNodes(children)}</h3>
+        ),
+        h4: ({ children }) => (
+          <h4 className="text-sm font-bold text-slate-950 mt-2 mb-1">{highlightSuvecaInReactNodes(children)}</h4>
         ),
         blockquote: ({ children }) => {
           const text = parseTextContent(children);

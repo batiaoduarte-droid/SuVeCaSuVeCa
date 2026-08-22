@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ChecklistItem } from '../types/suveca';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { CadernoErroItem, ChecklistItem } from '../types/suveca';
 import {
   CalendarCheck,
   CheckCircle2,
@@ -10,11 +10,25 @@ import {
   Workflow,
   RefreshCcw,
   NotebookPen,
+  Globe,
+  Flame,
+  AlertTriangle,
+  Sparkles,
+  ArrowRight,
+  ShieldAlert,
 } from 'lucide-react';
 import { ProgressBar } from './ui/ProgressBar';
 import { MODULES_DATA } from '../data/modulesData';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import { getLessonName } from '../data/lessonCatalog';
+import { computeModuleDomain360 } from '../lib/learnerIntelligence';
+
+interface StudyPlannerProps {
+  errors?: CadernoErroItem[];
+  readSectionIds?: string[];
+  modulePractice?: Record<string, { answered: number; correct: number }>;
+  onOpenModule?: (moduleId: string) => void;
+}
 
 const CHECKLIST_STORAGE_KEY = `suveca_checklist_editorial_${PEDAGOGICAL_KNOWLEDGE_BUILD.buildId}`;
 const INITIAL_CHECKLIST: ChecklistItem[] = MODULES_DATA
@@ -40,11 +54,21 @@ const SESSION_CHECKLIST = [
   'Programei uma recuperação por flashcard ou roteiro.',
 ] as const;
 
-export const StudyPlanner: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'checklist' | 'weeks' | 'cycle'>('checklist');
+export const StudyPlanner: React.FC<StudyPlannerProps> = ({
+  errors = [],
+  readSectionIds = [],
+  modulePractice = {},
+  onOpenModule,
+}) => {
+  const [activeTab, setActiveTab] = useState<'domain360' | 'checklist' | 'weeks' | 'cycle'>('domain360');
   const [checklist, setChecklist] = useState<ChecklistItem[]>(INITIAL_CHECKLIST);
   const tabListRef = useRef<HTMLDivElement>(null);
   const [tabScroll, setTabScroll] = useState({ left: false, right: true });
+
+  const domain360Data = useMemo(
+    () => computeModuleDomain360(MODULES_DATA, errors, readSectionIds, modulePractice),
+    [errors, readSectionIds, modulePractice]
+  );
 
   const updateTabScroll = useCallback(() => {
     const element = tabListRef.current;
@@ -105,10 +129,10 @@ export const StudyPlanner: React.FC = () => {
         </div>
 
         <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-          Trilha de 8 Semanas & Checklist do Edital
+          Planejamento & Domínio 360° do Edital
         </h1>
         <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
-          Monitore o seu progresso em cada tópico cobrado pelos editais de concursos e siga o cronograma tático de preparação discursiva e objetiva.
+          Monitore seu domínio real em cada módulo (Teoria + Prática + Blindagem de Erros) e acompanhe a trilha estratégica de aprovação.
         </p>
 
         {/* Progress Bar */}
@@ -119,6 +143,20 @@ export const StudyPlanner: React.FC = () => {
       <div className="relative flex items-center rounded-2xl border border-slate-200 bg-slate-100 p-1.5 text-xs font-medium">
         <button type="button" onClick={() => scrollTabs(-1)} disabled={!tabScroll.left} className="mr-1 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs disabled:opacity-30" aria-label="Ver abas anteriores"><ChevronLeft className="h-4 w-4" /></button>
         <div ref={tabListRef} onScroll={updateTabScroll} className="flex min-w-0 flex-1 items-center space-x-2 overflow-x-auto scroll-smooth" role="tablist" aria-label="Seções do planejamento">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'domain360'}
+          onClick={() => setActiveTab('domain360')}
+          className={`px-4 py-2.5 rounded-xl font-bold transition whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+            activeTab === 'domain360'
+              ? 'bg-white text-slate-900 shadow-2xs font-extrabold'
+              : 'text-slate-600 hover:text-slate-900'
+          }`}
+        >
+          <Globe className="w-3.5 h-3.5 text-teal-700" />
+          <span>Domínio 360° do Edital</span>
+        </button>
         <button
           type="button"
           role="tab"
@@ -161,6 +199,121 @@ export const StudyPlanner: React.FC = () => {
         </div>
         <button type="button" onClick={() => scrollTabs(1)} disabled={!tabScroll.right} className="ml-1 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs disabled:opacity-30" aria-label="Ver próximas abas"><ChevronRight className="h-4 w-4" /></button>
       </div>
+
+      {activeTab === 'domain360' && (
+        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6 animate-in fade-in duration-200">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+            <div>
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-teal-700" />
+                <span>Matriz de Domínio 360° por Módulo Curricular</span>
+              </h2>
+              <p className="text-xs text-slate-500 mt-1">
+                Score composto ponderado: 40% Leitura Teórica + 40% Resolução de Questões + 20% Blindagem contra Erros do Caderno.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {domain360Data.map((item) => {
+              let statusBadge = (
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">
+                  Não Iniciado
+                </span>
+              );
+
+              if (item.status === 'alerta_erros') {
+                statusBadge = (
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-rose-50 text-rose-800 border border-rose-200 flex items-center gap-1">
+                    <ShieldAlert className="w-3 h-3 text-rose-600" />
+                    {item.pendingErrorsCount} {item.pendingErrorsCount === 1 ? 'erro pendente' : 'erros pendentes'}
+                  </span>
+                );
+              } else if (item.status === 'dominado') {
+                statusBadge = (
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                    Dominado
+                  </span>
+                );
+              } else if (item.status === 'em_desenvolvimento') {
+                statusBadge = (
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200">
+                    Em Progresso
+                  </span>
+                );
+              } else if (item.status === 'inicial') {
+                statusBadge = (
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200">
+                    Iniciado
+                  </span>
+                );
+              }
+
+              return (
+                <div
+                  key={item.moduleId}
+                  className="rounded-xl border border-slate-200 bg-slate-50/60 p-4 space-y-3 flex flex-col justify-between hover:border-teal-300 transition"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[11px] font-extrabold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200">
+                        {getLessonName(item.moduleNum, 'short')}
+                      </span>
+                      {statusBadge}
+                    </div>
+
+                    <h3 className="text-xs sm:text-sm font-bold text-slate-900 line-clamp-1">
+                      {item.title}
+                    </h3>
+
+                    {/* Barra de Score Geral 360 */}
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-[11px]">
+                        <span className="text-slate-500 font-semibold">Índice de Domínio 360°</span>
+                        <span className="font-mono font-black text-slate-900">{item.overallScore}%</span>
+                      </div>
+                      <ProgressBar
+                        value={item.overallScore}
+                        showPercent={false}
+                        size="sm"
+                        color={item.overallScore >= 80 ? 'emerald' : item.overallScore >= 45 ? 'amber' : 'teal'}
+                      />
+                    </div>
+
+                    {/* Micro-métricas */}
+                    <div className="grid grid-cols-3 gap-1.5 pt-1 text-center text-[10px]">
+                      <div className="bg-white border border-slate-200 rounded-lg p-1.5">
+                        <div className="text-slate-400 font-bold">Teoria</div>
+                        <div className="font-bold text-slate-800">{item.theoryReadCount}/{item.theoryTotalCount}</div>
+                      </div>
+                      <div className="bg-white border border-slate-200 rounded-lg p-1.5">
+                        <div className="text-slate-400 font-bold">Prática</div>
+                        <div className="font-bold text-slate-800">{item.practiceCorrectCount}/{item.practiceTotalCount}</div>
+                      </div>
+                      <div className="bg-white border border-slate-200 rounded-lg p-1.5">
+                        <div className="text-slate-400 font-bold">Erros</div>
+                        <div className="font-bold text-slate-800">{item.pendingErrorsCount > 0 ? `${item.pendingErrorsCount} pend.` : 'Zerado'}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {onOpenModule && (
+                    <button
+                      type="button"
+                      onClick={() => onOpenModule(item.moduleId)}
+                      className="button-secondary w-full py-2 text-xs font-bold inline-flex items-center justify-center gap-1 cursor-pointer mt-2"
+                    >
+                      <span>Abrir Aula na Apostila</span>
+                      <ArrowRight className="w-3 h-3 text-teal-700" />
+                    </button>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {activeTab === 'checklist' && (
         <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">

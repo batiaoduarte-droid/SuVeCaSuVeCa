@@ -21,6 +21,9 @@ import {
   BookMarked,
   Brain,
   Timer,
+  Flame,
+  Zap,
+  CheckCircle2,
 } from 'lucide-react';
 import type { User } from '../lib/firebase';
 import { useModalFocus } from '../hooks/useModalFocus';
@@ -51,6 +54,10 @@ interface NavbarProps {
   onSignIn?: () => void;
   onSignOut?: () => void;
   isSyncing?: boolean;
+  studyStreak?: number;
+  hasStudiedToday?: boolean;
+  longestStudyStreak?: number;
+  onOpenChallenge?: () => void;
 }
 
 interface NavItem {
@@ -71,9 +78,16 @@ export const Navbar: React.FC<NavbarProps> = ({
   onSignIn,
   onSignOut,
   isSyncing,
+  studyStreak = 0,
+  hasStudiedToday = false,
+  longestStudyStreak = 0,
+  onOpenChallenge,
 }) => {
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
   const [isDesktopMoreOpen, setIsDesktopMoreOpen] = useState(false);
+  const [isStreakOpen, setIsStreakOpen] = useState(false);
+  const streakButtonRef = useRef<HTMLButtonElement>(null);
+  const streakPopoverRef = useRef<HTMLDivElement>(null);
   const mobileDrawerCloseRef = useRef<HTMLButtonElement>(null);
   const desktopMoreButtonRef = useRef<HTMLButtonElement>(null);
   const desktopMoreMenuRef = useRef<HTMLDivElement>(null);
@@ -103,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'agenda', label: 'Review diário', icon: CalendarDays, group: 'Revisar' },
     { id: 'decision', label: 'Roteiros', icon: GitMerge, group: 'Estudar' },
     { id: 'planner', label: 'Planejamento', icon: CalendarCheck, group: 'Acompanhar' },
-    { id: 'duel', label: 'Duelo', icon: Swords, group: 'Praticar' },
+    { id: 'duel', label: 'Modo Desafio', icon: Swords, group: 'Praticar' },
     { id: 'questions', label: 'Questões editoriais', icon: BookMarked, group: 'Praticar' },
     { id: 'stats', label: 'Estatísticas', icon: BarChart3, group: 'Acompanhar' },
     { id: 'profile', label: 'Perfil', icon: UserIcon, group: 'Acompanhar' },
@@ -116,6 +130,29 @@ export const Navbar: React.FC<NavbarProps> = ({
   const desktopMoreTabs = allTabs.filter((item) => !desktopPrimaryIds.has(item.id));
   const isDesktopMoreActive = desktopMoreTabs.some((item) => item.id === activeTab);
   const navigationGroups = ['Estudar', 'Praticar', 'Revisar', 'Acompanhar'] as const;
+
+  // Fecha o popover do Streak ao clicar fora ou pressionar Escape
+  useEffect(() => {
+    if (!isStreakOpen) return undefined;
+    const closeOnPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (!streakPopoverRef.current?.contains(target) && !streakButtonRef.current?.contains(target)) {
+        setIsStreakOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsStreakOpen(false);
+        streakButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', closeOnPointerDown);
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('pointerdown', closeOnPointerDown);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [isStreakOpen]);
 
   useEffect(() => {
     if (!isDesktopMoreOpen) return undefined;
@@ -186,8 +223,123 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             </button>
 
-            {/* Right side: Search & User Profile */}
-            <div className="flex items-center space-x-3">
+            {/* Right side: Streak Counter, Search & User Profile */}
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              {/* Visual Daily Study Streak Counter Badge */}
+              <div className="relative">
+                <button
+                  ref={streakButtonRef}
+                  type="button"
+                  onClick={() => setIsStreakOpen((open) => !open)}
+                  aria-expanded={isStreakOpen}
+                  aria-haspopup="dialog"
+                  aria-label={`Sequência de estudo: ${studyStreak} ${studyStreak === 1 ? 'dia consecutivo' : 'dias consecutivos'}. ${hasStudiedToday ? 'Atividade de hoje concluída' : 'Atividade de hoje pendente'}`}
+                  className={`min-h-[44px] px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1 ${
+                    hasStudiedToday
+                      ? 'border-amber-300 bg-gradient-to-r from-amber-50 to-orange-50 text-amber-950 shadow-2xs hover:border-amber-400 hover:shadow-xs'
+                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-amber-300 hover:bg-amber-50/60'
+                  }`}
+                  title={hasStudiedToday ? 'Sequência de hoje mantida!' : 'Atividade de estudo pendente para hoje'}
+                >
+                  <Flame
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      hasStudiedToday
+                        ? 'text-orange-500 fill-amber-400 drop-shadow-xs scale-110'
+                        : 'text-amber-500/70 animate-pulse'
+                    }`}
+                  />
+                  <span className="font-extrabold font-mono text-sm tracking-tight">{studyStreak}</span>
+                  <span className="hidden min-[480px]:inline font-semibold text-[11px] text-amber-900/90">
+                    {studyStreak === 1 ? 'dia' : 'dias'}
+                  </span>
+                </button>
+
+                {/* Study Streak Breakdown Popover */}
+                {isStreakOpen && (
+                  <div
+                    ref={streakPopoverRef}
+                    role="dialog"
+                    aria-label="Detalhes da sequência diária de estudos"
+                    className="absolute right-0 top-full mt-2 w-72 sm:w-80 rounded-2xl border border-amber-200 bg-white p-4 shadow-xl z-50 animate-in fade-in zoom-in-95 duration-150"
+                  >
+                    <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                      <div className="flex items-center gap-2">
+                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-100 text-amber-800">
+                          <Flame className="h-4 w-4 text-orange-600 fill-amber-400" />
+                        </div>
+                        <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                          Sequência de Estudos
+                        </h3>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setIsStreakOpen(false)}
+                        className="rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
+                        aria-label="Fechar painel de sequência"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+
+                    <div className="mt-3 space-y-3">
+                      {/* Status de Hoje */}
+                      <div
+                        className={`rounded-xl border p-3 text-xs leading-relaxed ${
+                          hasStudiedToday
+                            ? 'border-emerald-200 bg-emerald-50 text-emerald-950'
+                            : 'border-amber-200 bg-amber-50 text-amber-950'
+                        }`}
+                      >
+                        <div className="flex items-start gap-2">
+                          {hasStudiedToday ? (
+                            <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-700 mt-0.5" />
+                          ) : (
+                            <Zap className="h-4 w-4 shrink-0 text-amber-600 mt-0.5 animate-bounce" />
+                          )}
+                          <div>
+                            <strong className="block font-bold">
+                              {hasStudiedToday ? 'Meta de Hoje Concluída!' : 'Atividade Pendente Hoje'}
+                            </strong>
+                            <p className="mt-0.5 text-[11px] opacity-90">
+                              {hasStudiedToday
+                                ? 'Sua chama do hábito está acesa. Continue assim para a aprovação!'
+                                : 'Resolva 1 rodada do Modo Desafio (3 questões) ou estude a apostila para manter seu streak.'}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Estatísticas Rápidas */}
+                      <div className="grid grid-cols-2 gap-2 text-center text-xs">
+                        <div className="rounded-xl border border-slate-200 bg-slate-50 p-2.5">
+                          <div className="text-[10px] uppercase font-bold text-slate-500">Atual</div>
+                          <div className="text-lg font-black text-amber-900">{studyStreak} dias</div>
+                        </div>
+                        <div className="rounded-xl border border-slate-200 bg-slate-50 p-2.5">
+                          <div className="text-[10px] uppercase font-bold text-slate-500">Recorde</div>
+                          <div className="text-lg font-black text-slate-900">{longestStudyStreak} dias</div>
+                        </div>
+                      </div>
+
+                      {/* Ação Rápida */}
+                      {onOpenChallenge && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setIsStreakOpen(false);
+                            onOpenChallenge();
+                          }}
+                          className="button-primary w-full py-2.5 text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
+                        >
+                          <Swords className="h-3.5 w-3.5" />
+                          <span>Iniciar Modo Desafio (45s)</span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+
               {/* Search Button */}
               <button
                 type="button"

@@ -4,14 +4,16 @@ import { MODULES_DATA } from './data/modulesData';
 import { CadernoErroItem, QuizQuestion } from './types/suveca';
 import { Navbar, TabType } from './components/Navbar';
 import { DailyTipCard } from './components/DailyTipCard';
-import { DailyMotivationCard } from './components/DailyMotivationCard';
 import { DailyReviewReminder } from './components/DailyReviewReminder';
 import { ContinueLearningCard } from './components/ContinueLearningCard';
 import { fetchOfficialQuestionSample, officialDetailToQuizQuestion } from './lib/officialQuestions';
 import { MobileFAB } from './components/ui/MobileFAB';
+import { SuvecaMethodBanner } from './components/SuvecaMethodBanner';
+import { WeeklyGoalCard } from './components/WeeklyGoalCard';
 import { OnboardingTour, hasCompletedOnboarding } from './components/OnboardingTour';
 import { useLearningMetrics } from './hooks/useLearningMetrics';
 import { useAchievements } from './hooks/useAchievements';
+import { getActiveStudyStreak, studyDayKey } from './lib/achievements';
 import {
   auth,
   googleProvider,
@@ -154,7 +156,7 @@ export default function App() {
   const initialStudyLocation = useRef(readStudyLocation()).current;
   const [activeTab, setActiveTab] = useState<TabType>('modules');
   const lastNonPomodoroTab = useRef<TabType>('modules');
-  const [selectedModuleId, setSelectedModuleId] = useState<string>(initialStudyLocation.moduleId || 'mod0');
+  const [selectedModuleId, setSelectedModuleId] = useState<string>(initialStudyLocation.moduleId || 'mod-intro');
   const [openUnitId, setOpenUnitId] = useState<string | null>(initialStudyLocation.unitId);
   const [openUnitSectionId, setOpenUnitSectionId] = useState<string | null>(initialStudyLocation.sectionId);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
@@ -190,7 +192,7 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const location = readStudyLocation();
-      setSelectedModuleId(location.moduleId || 'mod0');
+      setSelectedModuleId(location.moduleId || 'mod-intro');
       setOpenUnitId(location.unitId);
       setOpenUnitSectionId(location.sectionId);
       setActiveTab('modules');
@@ -445,6 +447,8 @@ export default function App() {
       : summary,
     { answered: 0, correct: 0 }
   );
+  const activeStudyStreak = getActiveStudyStreak(achievementProgress);
+  const hasStudiedToday = achievementProgress.lastStudyDate === studyDayKey();
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)] font-sans flex flex-col relative overflow-x-hidden">
@@ -466,6 +470,10 @@ export default function App() {
           onSignIn={handleSignIn}
           onSignOut={handleSignOut}
           isSyncing={isSyncing}
+          studyStreak={activeStudyStreak}
+          hasStudiedToday={hasStudiedToday}
+          longestStudyStreak={achievementProgress.longestStudyStreak}
+          onOpenChallenge={() => setActiveTab('duel')}
         />
       )}
 
@@ -487,47 +495,36 @@ export default function App() {
               <div className="space-y-6">
                 {!isImmersiveFocus && (
                   <>
-                    {selectedCurriculumModule?.suvecaMethod && (
-                      <section className="rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-950 to-teal-800 p-5 text-white shadow-sm sm:p-6" aria-labelledby="suveca-home-title">
-                        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-                          <div className="max-w-4xl space-y-2">
-                            <span className="inline-flex rounded-full border border-teal-300/40 bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-teal-50">
-                              Mapa de análise do aplicativo
-                            </span>
-                            <h1 id="suveca-home-title" className="text-xl font-extrabold leading-tight sm:text-2xl">
-                              SuVeCA = {selectedCurriculumModule.suvecaMethod.equation}
-                            </h1>
-                            <p className="text-sm font-medium leading-relaxed text-teal-50">
-                              {selectedCurriculumModule.suvecaMethod.definition}
-                            </p>
-                            <p className="text-xs leading-relaxed text-teal-100">
-                              <strong>{selectedCurriculumModule.suvecaMethod.label} neste tema:</strong>{' '}
-                              {selectedCurriculumModule.suvecaMethod.summary}
-                            </p>
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => setActiveTab('analyzer')}
-                            className="min-h-[44px] shrink-0 rounded-xl border border-white/30 bg-white px-4 py-2.5 text-sm font-bold text-teal-950 transition hover:bg-teal-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                          >
-                            Aplicar no analisador
-                          </button>
-                        </div>
-                      </section>
+                    {selectedCurriculumModule && (
+                      <SuvecaMethodBanner
+                        module={selectedCurriculumModule}
+                        onOpenAnalyzer={() => setActiveTab('analyzer')}
+                      />
                     )}
-                    <ContinueLearningCard
-                      module={selectedCurriculumModule}
-                      pendingErrors={cadernoErrors.filter((error) => error.status !== 'dominado')}
-                      onContinueModule={() => markModuleVisited(selectedModuleId)}
-                      onReview={() => setActiveTab('agenda')}
-                    />
+                    {/* Linha 1 do Dashboard: Continue de onde parou + Meta Semanal de Estudo */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
+                      <ContinueLearningCard
+                        module={selectedCurriculumModule}
+                        pendingErrors={cadernoErrors.filter((error) => error.status !== 'dominado')}
+                        onContinueModule={() => markModuleVisited(selectedModuleId)}
+                        onReview={() => setActiveTab('agenda')}
+                      />
+                      <WeeklyGoalCard
+                        readSectionIdsCount={metrics.readSectionIds.length}
+                        practiceAnsweredCount={
+                          Object.keys(metrics.modulePractices || {}).length * 4 +
+                          (metrics.readSectionIds.length > 0 ? 4 : 0)
+                        }
+                        userId={user?.uid}
+                      />
+                    </div>
+                    {/* Linha 2 do Dashboard: Dica do Dia */}
                     <DailyTipCard
                       onOpenModule={(id) => {
                         handleSelectModule(id);
                         setActiveTab('modules');
                       }}
                     />
-                    <DailyMotivationCard />
                   </>
                 )}
                 <ModuleViewer
@@ -578,8 +575,22 @@ export default function App() {
               <div className="space-y-3">
                 {officialSimuladoQuestions && (
                   <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-teal-200 bg-teal-50 p-3 text-sm text-teal-900">
-                    <span><strong>{officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'Prática editorial' : 'Prática autoral de apoio'}:</strong> {officialSimuladoQuestions.length} questões {officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'selecionadas do percurso curricular publicado' : 'identificadas claramente como autorais'}.</span>
-                    <button type="button" className="button-secondary min-h-[44px]" onClick={() => setOfficialSimuladoQuestions(null)}>Voltar ao simulado editorial</button>
+                    <span>
+                      {officialSimuladoQuestions.some((q) => q.id.startsWith('recov_')) ? (
+                        <>
+                          <strong className="text-teal-950">🎯 Simulado de Recuperação do Caderno de Erros:</strong>{' '}
+                          {officialSimuladoQuestions.length} questões direcionadas para reverter seus deslizes recentes.
+                        </>
+                      ) : (
+                        <>
+                          <strong>{officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'Prática editorial' : 'Prática autoral de apoio'}:</strong>{' '}
+                          {officialSimuladoQuestions.length} questões {officialSimuladoQuestions.every((question) => question.origin === 'official') ? 'selecionadas do percurso curricular publicado' : 'identificadas claramente como autorais'}.
+                        </>
+                      )}
+                    </span>
+                    <button type="button" className="button-secondary min-h-[44px]" onClick={() => setOfficialSimuladoQuestions(null)}>
+                      Voltar ao simulado editorial
+                    </button>
                   </div>
                 )}
                 <SimuladoEngine
@@ -602,6 +613,10 @@ export default function App() {
                 onUpdateErrorStatus={handleUpdateErrorStatus}
                 onDeleteError={handleDeleteError}
                 userId={user?.uid}
+                onStartRecoverySimulado={(questions) => {
+                  setOfficialSimuladoQuestions(questions);
+                  setActiveTab('simulado');
+                }}
               />
             )}
 
@@ -623,10 +638,26 @@ export default function App() {
 
             {activeTab === 'decision' && <DecisionTreeViewer />}
 
-            {activeTab === 'planner' && <StudyPlanner />}
+            {activeTab === 'planner' && (
+              <StudyPlanner
+                errors={cadernoErrors}
+                readSectionIds={metrics.readSectionIds}
+                onOpenModule={(moduleId) => {
+                  setSelectedModuleId(moduleId);
+                  setActiveTab('modules');
+                }}
+              />
+            )}
 
             {activeTab === 'duel' && (
-              <DuelArena user={user} onRoundComplete={recordStudyActivity} />
+              <DuelArena
+                user={user}
+                errors={cadernoErrors}
+                onAddError={handleAddErrorDirect}
+                onAnswerResult={recordAnswer}
+                onRoundComplete={recordStudyActivity}
+                onNavigateToTab={(tab) => setActiveTab(tab as TabType)}
+              />
             )}
 
             {activeTab === 'questions' && (
@@ -680,6 +711,8 @@ export default function App() {
           <PomodoroTimer
             selectedModuleId={selectedModuleId}
             user={user}
+            errors={cadernoErrors}
+            onAddError={handleAddErrorDirect}
             onAskTutor={handleOpenTutorWithContext}
             onCompleteSession={() => recordStudyActivity()}
             isPageActive={activeTab === 'pomodoro'}

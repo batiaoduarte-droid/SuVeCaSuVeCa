@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { CadernoErroItem } from '../types/suveca';
+import { CadernoErroItem, QuizQuestion } from '../types/suveca';
 import { FlashcardPractice } from './FlashcardPractice';
 import { useModalFocus } from '../hooks/useModalFocus';
 import {
@@ -15,6 +15,7 @@ import {
   X,
   Printer,
   RotateCcw,
+  GraduationCap,
 } from 'lucide-react';
 import {
   GoldenRuleCard,
@@ -22,6 +23,7 @@ import {
   StudyBadge,
   StudySurface,
 } from './study-visuals';
+import { generateRecoverySimulado } from '../lib/learnerIntelligence';
 
 interface CadernoDeErrosProps {
   errors: CadernoErroItem[];
@@ -33,6 +35,7 @@ interface CadernoDeErrosProps {
   ) => void;
   onDeleteError: (id: string) => void;
   userId?: string;
+  onStartRecoverySimulado?: (questions: QuizQuestion[]) => void;
 }
 
 const escapeHtml = (value: string) =>
@@ -53,6 +56,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
   onUpdateErrorStatus,
   onDeleteError,
   userId,
+  onStartRecoverySimulado,
 }) => {
   const [activeFilter, setActiveFilter] = useState<string>('todos');
   const [activeView, setActiveView] = useState<'errors' | 'flashcards'>('errors');
@@ -173,6 +177,20 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
         </div>
 
         <div className="flex flex-wrap gap-2 shrink-0">
+          {onStartRecoverySimulado && (
+            <button
+              type="button"
+              onClick={() => {
+                const recoveryQuestions = generateRecoverySimulado(errors, 5);
+                onStartRecoverySimulado(recoveryQuestions);
+              }}
+              className="button-secondary px-4 py-3 text-xs sm:text-sm font-bold inline-flex items-center gap-1.5 cursor-pointer text-teal-900 border-teal-300 bg-teal-50/70 hover:bg-teal-100"
+              title="Gerar simulado com foco em recuperar as regras erradas"
+            >
+              <GraduationCap className="w-4 h-4 text-teal-700" />
+              <span>Simulado de Recuperação ({errors.filter((e) => e.status !== 'dominado').length || errors.length})</span>
+            </button>
+          )}
           <button
             type="button"
             onClick={handleExportPdf}

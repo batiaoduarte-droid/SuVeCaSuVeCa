@@ -96,6 +96,8 @@ export const sanitizePedagogicalText = (text: string): string => {
   return sanitized.trim();
 };
 
+import { highlightSuvecaInReactNodes } from '../../ui/SuvecaBrandHighlight';
+
 export const InlineRichText: React.FC<InlineRichTextProps> = ({ children, className = '' }) => {
   if (!children) return null;
   const processedText = sanitizePedagogicalText(children);
@@ -124,10 +126,10 @@ export const InlineRichText: React.FC<InlineRichTextProps> = ({ children, classN
           li: ({ children: itemChildren }) => <span className="inline"> • {itemChildren}</span>,
           hr: () => <span aria-hidden="true"> — </span>,
           blockquote: ({ children: quoteChildren }) => <span className="italic"> {quoteChildren}</span>,
-          h1: ({ children: headingChildren }) => <strong>{headingChildren}</strong>,
-          h2: ({ children: headingChildren }) => <strong>{headingChildren}</strong>,
-          h3: ({ children: headingChildren }) => <strong>{headingChildren}</strong>,
-          h4: ({ children: headingChildren }) => <strong>{headingChildren}</strong>,
+          h1: ({ children: headingChildren }) => <strong>{highlightSuvecaInReactNodes(headingChildren)}</strong>,
+          h2: ({ children: headingChildren }) => <strong>{highlightSuvecaInReactNodes(headingChildren)}</strong>,
+          h3: ({ children: headingChildren }) => <strong>{highlightSuvecaInReactNodes(headingChildren)}</strong>,
+          h4: ({ children: headingChildren }) => <strong>{highlightSuvecaInReactNodes(headingChildren)}</strong>,
         }}
       >
         {processedText}

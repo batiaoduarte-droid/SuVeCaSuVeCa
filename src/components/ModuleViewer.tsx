@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useRef, useState } from 'react';
+import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { CadernoErroItem, ModuleData, ModuleSection, SuvecaMethodConnection } from '../types/suveca';
 import { db, type User } from '../lib/firebase';
@@ -17,6 +17,7 @@ import {
   sanitizeRichNoteHtml,
 } from './RichNoteEditor';
 import { FlashcardPractice } from './FlashcardPractice';
+import { DailyMotivationCard } from './DailyMotivationCard';
 import { useModalFocus } from '../hooks/useModalFocus';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import { getLessonName } from '../data/lessonCatalog';
@@ -41,7 +42,12 @@ import {
   ShieldCheck,
   LoaderCircle,
   Workflow,
+  Target,
+  Sparkles,
+  Flame,
+  Trophy,
 } from 'lucide-react';
+import { SuvecaWordHighlight } from './ui/SuvecaBrandHighlight';
 
 interface ModuleViewerProps {
   modules: ModuleData[];
@@ -327,7 +333,28 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     'idle' | 'loading' | 'saving' | 'saved' | 'error' | 'local'
   >('idle');
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState<boolean>(false);
+  const [isModuleMenuOpen, setIsModuleMenuOpen] = useState<boolean>(false);
+  const moduleMenuRef = useRef<HTMLDivElement>(null);
   const [loadedNotesOwnerId, setLoadedNotesOwnerId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!isModuleMenuOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (moduleMenuRef.current && !moduleMenuRef.current.contains(e.target as Node)) {
+        setIsModuleMenuOpen(false);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsModuleMenuOpen(false);
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isModuleMenuOpen]);
+
   const activeModuleIdRef = useRef(moduleData.id);
   const saveTimersRef = useRef<Record<string, number>>({});
   const mobileDrawerCloseRef = useRef<HTMLButtonElement>(null);
@@ -504,144 +531,149 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const isExpandedStudy = isFocusMode || Boolean(openUnitId);
 
   return (
-    <div
-      className={`pb-16 items-start ${
-        isExpandedStudy ? 'block' : 'grid grid-cols-1 gap-6 lg:grid-cols-[15rem_minmax(0,1fr)]'
-      }`}
-    >
-      {/* Mobile Module Selector Trigger Bar */}
-      <div className={isExpandedStudy ? 'hidden' : 'lg:hidden'}>
-        <button
-          type="button"
-          onClick={() => setIsMobileDrawerOpen(true)}
-          className="w-full min-h-[52px] bg-white border border-slate-200 rounded-xl p-3.5 flex items-center justify-between shadow-2xs text-left"
-          aria-label="Abrir menu de aulas"
-          aria-expanded={isMobileDrawerOpen}
-          aria-controls="module-mobile-drawer"
-          aria-haspopup="dialog"
+    <div className="w-full space-y-6 pb-16">
+      {/* Barra Superior de Navegação do Módulo (Full Width, Dropdown & Next/Prev) */}
+      {!isFocusMode && (
+        <nav
+          className="bg-white border border-slate-200/90 rounded-2xl p-2.5 sm:p-3.5 shadow-2xs flex items-center justify-between gap-2.5 relative"
+          aria-label="Navegação da Apostila"
         >
-          <div className="flex items-center space-x-3 min-w-0">
-            <span className="text-xs font-bold bg-teal-50 text-teal-800 px-2.5 py-1 rounded-md border border-teal-200 shrink-0">Tema atual</span>
-            <span className="text-sm font-bold text-slate-900 truncate">
-              {moduleData.title}
-            </span>
-          </div>
-          <List className="w-5 h-5 text-teal-700 shrink-0 ml-2" />
-        </button>
-      </div>
+          {/* Botão Módulo Anterior */}
+          {prevModule ? (
+            <button
+              type="button"
+              onClick={() => onSelectModule(prevModule.id)}
+              className="button-ghost min-h-[42px] px-2.5 sm:px-3.5 text-xs sm:text-sm font-bold text-slate-700 hover:text-teal-900 shrink-0 gap-1.5"
+              title={`Módulo Anterior: ${prevModule.title}`}
+            >
+              <ChevronLeft className="w-4 h-4 text-teal-700 shrink-0" />
+              <span className="hidden sm:inline">Anterior:</span>
+              <span className="font-extrabold text-teal-900 truncate max-w-[110px] md:max-w-[170px]">
+                {prevModule.id === 'mod-intro' ? 'Intro' : `M${prevModule.num}`}
+              </span>
+            </button>
+          ) : (
+            <div className="w-8 sm:w-20" aria-hidden="true" />
+          )}
 
-      {/* Mobile Sidebar Drawer */}
-      {!isExpandedStudy && isMobileDrawerOpen && (
-        <div
-          className="lg:hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex flex-col justify-end"
-          onClick={() => setIsMobileDrawerOpen(false)}
-        >
-          <div
-            ref={mobileDrawerRef}
-            id="module-mobile-drawer"
-            className="bg-white rounded-t-2xl max-h-[85vh] flex flex-col border-t border-slate-200 shadow-2xl animate-in slide-in-from-bottom duration-200 pb-[calc(1rem+env(safe-area-inset-bottom,0px))]"
-            onClick={(e) => e.stopPropagation()}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="module-mobile-drawer-title"
-            tabIndex={-1}
-          >
-            <div className="p-4 border-b border-slate-200 flex items-center justify-between">
-              <h3 id="module-mobile-drawer-title" className="font-bold text-slate-900 text-base">Sumário da Apostila</h3>
-              <button
-                ref={mobileDrawerCloseRef}
-                type="button"
-                onClick={() => setIsMobileDrawerOpen(false)}
-                className="text-slate-400 hover:text-slate-700 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg"
-                aria-label="Fechar sumário"
+          {/* Seletor Central com Dropdown de Todos os Módulos */}
+          <div className="relative flex-1 max-w-xl mx-auto" ref={moduleMenuRef}>
+            <button
+              type="button"
+              onClick={() => setIsModuleMenuOpen((prev) => !prev)}
+              className="w-full min-h-[42px] bg-slate-50/90 hover:bg-teal-50/70 border border-slate-200/90 hover:border-teal-300 rounded-xl px-3 sm:px-4 py-2 flex items-center justify-between gap-2 transition cursor-pointer shadow-2xs group"
+              aria-expanded={isModuleMenuOpen}
+              aria-haspopup="dialog"
+              aria-label="Selecionar módulo do sumário"
+            >
+              <div className="flex items-center gap-2 min-w-0">
+                <BookOpen className="w-4 h-4 text-teal-700 shrink-0 group-hover:scale-110 transition-transform" />
+                {moduleData.id === 'mod-intro' && (
+                  <span className="inline-flex items-center gap-1 rounded-md border border-amber-300 bg-amber-100 px-1.5 py-0.5 text-[10px] font-black text-amber-900 shrink-0">
+                    <Sparkles className="h-3 w-3 text-amber-600" />
+                    Intro
+                  </span>
+                )}
+                {moduleData.id === 'simulado' && (
+                  <span className="inline-flex items-center gap-1 rounded-md border border-purple-300 bg-purple-100 px-1.5 py-0.5 text-[10px] font-black text-purple-900 shrink-0">
+                    Simulado
+                  </span>
+                )}
+                <span className="text-xs sm:text-sm font-black text-slate-900 truncate">
+                  {moduleData.title}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 shrink-0 text-slate-500 group-hover:text-teal-700">
+                <span className="hidden md:inline text-[11px] font-semibold text-slate-600 bg-white border border-slate-200/80 px-2 py-0.5 rounded-md">
+                  {coreModuleCount} grupos{hasSimulado ? ' + simulado' : ''}
+                </span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isModuleMenuOpen ? 'rotate-180 text-teal-700' : ''}`} />
+              </div>
+            </button>
+
+            {/* Dropdown Popover de Todos os Módulos */}
+            {isModuleMenuOpen && (
+              <div
+                className="absolute top-full left-0 right-0 mt-2 z-40 bg-white rounded-2xl border border-slate-200 shadow-xl p-3 max-h-[70vh] overflow-y-auto space-y-1.5 animate-in fade-in zoom-in-95 duration-150"
+                role="dialog"
+                aria-label="Sumário completo de módulos"
               >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="overflow-y-auto p-4 space-y-2 flex-1">
-              {modules.map((m) => {
-                const isSelected = m.id === moduleData.id;
-                return (
-                  <button
-                    key={m.id}
-                    type="button"
-                    onClick={() => {
-                      onSelectModule(m.id);
-                      setIsMobileDrawerOpen(false);
-                    }}
-                    className={`w-full text-left p-3 rounded-xl border text-xs transition flex items-center justify-between ${
-                      isSelected
-                        ? 'bg-teal-50 text-teal-900 border-teal-200 font-bold'
-                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
-                    }`}
-                  >
-                    <div className="flex items-center space-x-2.5 min-w-0">
-                      <span className="truncate">{m.title}</span>
-                    </div>
-                    {isSelected && <CheckCircle className="w-4 h-4 text-teal-700 shrink-0" />}
-                  </button>
-                );
-              })}
-            </div>
+                <div className="flex items-center justify-between px-2 py-1.5 border-b border-slate-100 mb-1">
+                  <span className="text-xs font-black uppercase tracking-wider text-slate-700">
+                    Sumário da Apostila ({modules.length} temas)
+                  </span>
+                  <span className="text-[11px] text-slate-500 font-medium">
+                    Escolha uma aula para navegar
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
+                  {modules.map((m) => {
+                    const isSelected = m.id === moduleData.id;
+                    return (
+                      <button
+                        key={m.id}
+                        type="button"
+                        onClick={() => {
+                          onSelectModule(m.id);
+                          setIsModuleMenuOpen(false);
+                        }}
+                        className={`w-full text-left p-2.5 rounded-xl text-xs transition flex items-center justify-between group cursor-pointer ${
+                          isSelected
+                            ? 'bg-teal-50 text-teal-950 font-black border border-teal-300 shadow-2xs'
+                            : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-transparent'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-2 min-w-0">
+                          {m.id === 'mod-intro' ? (
+                            <span className="inline-flex items-center gap-1 rounded-md border border-amber-300 bg-amber-100 px-1.5 py-0.5 text-[10px] font-black text-amber-900 shrink-0">
+                              <Sparkles className="h-3 w-3 text-amber-600" />
+                              Intro
+                            </span>
+                          ) : m.id === 'simulado' ? (
+                            <span className="inline-flex items-center gap-1 rounded-md border border-purple-300 bg-purple-100 px-1.5 py-0.5 text-[10px] font-black text-purple-900 shrink-0">
+                              Simulado
+                            </span>
+                          ) : (
+                            <span className="text-[11px] font-bold text-teal-800 bg-teal-50 border border-teal-100 px-1.5 py-0.5 rounded shrink-0">
+                              M{m.num}
+                            </span>
+                          )}
+                          <span className="truncate">{m.title}</span>
+                        </div>
+                        {isSelected && <CheckCircle className="w-4 h-4 text-teal-700 shrink-0 ml-1" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
-        </div>
+
+          {/* Botão Próximo Módulo */}
+          {nextModule ? (
+            <button
+              type="button"
+              onClick={() => onSelectModule(nextModule.id)}
+              className="button-primary min-h-[42px] px-2.5 sm:px-3.5 text-xs sm:text-sm font-bold shrink-0 gap-1.5"
+              title={`Próximo Módulo: ${nextModule.title}`}
+            >
+              <span className="hidden sm:inline">Próximo:</span>
+              <span className="truncate max-w-[110px] md:max-w-[170px]">
+                {nextModule.id === 'simulado' ? 'Simulado' : `M${nextModule.num}`}
+              </span>
+              <ChevronRight className="w-4 h-4 shrink-0" />
+            </button>
+          ) : (
+            <div className="w-8 sm:w-20" aria-hidden="true" />
+          )}
+        </nav>
       )}
 
-      {/* Desktop Sticky Sidebar (280px equivalent: 3 cols out of 12) */}
-      <aside
-        className={
-          isExpandedStudy
-            ? 'hidden'
-            : 'hidden lg:block sticky top-20 max-h-[calc(100vh-120px)] overflow-y-auto pr-1'
-        }
-      >
-        <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-2xs space-y-3">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-            <div className="flex items-center space-x-2">
-              <BookOpen className="w-4 h-4 text-teal-700" />
-              <h2 className="font-bold text-slate-900 text-sm">Sumário da Apostila</h2>
-            </div>
-            <span className="text-[11px] font-medium text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full">
-              {coreModuleCount} grupos{hasSimulado ? ' + simulado' : ''}
-            </span>
-          </div>
-
-          <div className="space-y-1">
-            {modules.map((m) => {
-              const isSelected = m.id === moduleData.id;
-              return (
-                <button
-                  key={m.id}
-                  onClick={() => onSelectModule(m.id)}
-                  className={`w-full text-left p-2.5 rounded-xl text-xs transition flex items-center justify-between group cursor-pointer ${
-                    isSelected
-                      ? 'bg-teal-50/90 text-teal-900 font-bold border-l-4 border-teal-700 shadow-2xs pl-3'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 border-l-4 border-transparent'
-                  }`}
-                >
-                  <div className="flex items-center space-x-2.5 min-w-0">
-                    <span className="truncate">{m.title}</span>
-                  </div>
-                  <ChevronRight
-                    className={`w-3.5 h-3.5 shrink-0 transition ${
-                      isSelected
-                        ? 'text-teal-700 opacity-100'
-                        : 'text-slate-300 opacity-0 group-hover:opacity-100'
-                    }`}
-                  />
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </aside>
-
-      {/* Main Content Area (9 cols out of 12) */}
+      {/* Main Content Area (Full Width, No Left Gap) */}
       <article
         key={moduleData.id}
-        className={`col-span-1 min-w-0 space-y-8 module-content-enter ${
-          isExpandedStudy ? 'mx-auto w-full max-w-7xl' : ''
-        }`}
+        className="w-full min-w-0 space-y-8 module-content-enter"
       >
         {isFocusMode && (
           <div className="sticky top-3 z-30 flex items-center justify-between gap-3 rounded-xl border border-teal-200 bg-white/95 px-4 py-3 shadow-sm backdrop-blur">
@@ -657,10 +689,17 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
         {/* Module Header Card */}
         <header className={isFocusMode ? 'hidden' : 'bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4'}>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full flex items-center gap-1.5">
-              <BookOpen className="w-3.5 h-3.5 text-teal-700" />
-              Percurso {currentIndex + 1} de {coreModuleCount}
-            </span>
+            {moduleData.id === 'mod-intro' ? (
+              <span className="text-xs font-bold text-amber-900 bg-amber-50 border border-amber-300 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                Módulo 00-Intro · Comece por aqui
+              </span>
+            ) : (
+              <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full flex items-center gap-1.5">
+                <BookOpen className="w-3.5 h-3.5 text-teal-700" />
+                Percurso {currentIndex + 1} de {coreModuleCount}
+              </span>
+            )}
 
             <div className="flex items-center space-x-2 text-xs text-slate-500 font-medium">
               <Clock className="w-3.5 h-3.5 text-slate-400" />
@@ -670,7 +709,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
           <div className="space-y-2">
             <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              {moduleData.title}
+              <SuvecaWordHighlight text={moduleData.title} />
             </h1>
             <p className="text-sm font-semibold text-teal-800">
               {moduleData.subtitle}
@@ -681,7 +720,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             {moduleData.description}
           </p>
 
-          {moduleData.suvecaMethod && (
+          {moduleData.suvecaMethod && ['central', 'strong', 'review'].includes(moduleData.suvecaMethod.level) && (
             <section className="rounded-2xl border border-teal-200 bg-teal-50/70 p-4 sm:p-5" aria-labelledby={`suveca-method-${moduleData.id}`}>
               <div className="flex items-start gap-3">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-teal-200 bg-white text-teal-800">
@@ -692,9 +731,11 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                     {moduleData.suvecaMethod.label}
                   </span>
                   <h2 id={`suveca-method-${moduleData.id}`} className="break-words text-base font-extrabold text-teal-950 sm:text-lg">
-                    Conexão SuVeCA com esta aula
+                    <SuvecaWordHighlight text="Conexão SuVeCA com esta aula" />
                   </h2>
-                  <p className="text-sm font-bold text-teal-900">Mapa: {moduleData.suvecaMethod.equation}</p>
+                  <p className="text-sm font-bold text-teal-900">
+                    Mapa: <SuvecaWordHighlight text={moduleData.suvecaMethod.equation} />
+                  </p>
                   <p className="text-sm font-medium leading-relaxed text-teal-950">
                     {moduleData.suvecaMethod.definition}
                   </p>
@@ -791,7 +832,9 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           aria-label={`Unidades pedagógicas de ${moduleData.title}`}
         >
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-            <h2 className="m-0 text-base font-black text-teal-950">Escolha uma unidade para aprofundar</h2>
+            <h2 className="m-0 text-base font-black text-teal-950">
+              {moduleData.id === 'mod-intro' ? 'Fundamentos do Método (6 tópicos essenciais)' : 'Escolha uma unidade para aprofundar'}
+            </h2>
             <span className="text-xs font-semibold text-teal-800">{moduleData.sections.length} unidades</span>
           </div>
           <ol className="m-0 grid list-none gap-2 p-0 md:grid-cols-2 xl:grid-cols-3">
@@ -805,7 +848,8 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                     onClick={() => {
                       if (unitId) onOpenUnitChange?.(unitId, null);
                       window.requestAnimationFrame(() => {
-                        if (unitId) document.getElementById(`module-unit-${unitId}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        const targetId = unitId ? `module-unit-${unitId}` : `intro-section-${index}`;
+                        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       });
                     }}
                     aria-current={isCurrent ? 'location' : undefined}
@@ -836,7 +880,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
             return (
             <section
-              id={integrationUnitIdForSection(section) ? `module-unit-${integrationUnitIdForSection(section)}` : undefined}
+              id={integrationUnitIdForSection(section) ? `module-unit-${integrationUnitIdForSection(section)}` : `intro-section-${idx}`}
               key={`${section.lessonId || moduleData.id}:${section.groupId || idx}:${section.contentUrl || section.title}`}
               className="min-w-0 overflow-hidden surface p-2.5 sm:p-6 space-y-5"
             >
@@ -853,7 +897,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                       </span>
                     )}
                   </div>
-                  {section.suvecaMethod && (
+                  {section.suvecaMethod && ['central', 'strong', 'review'].includes(section.suvecaMethod.level) && (
                     <span
                       className={`inline-flex max-w-full rounded-full border px-2.5 py-1 text-[11px] font-bold leading-tight ${SUVECA_LEVEL_STYLES[section.suvecaMethod.level]}`}
                       title={section.suvecaMethod.summary}
@@ -958,29 +1002,42 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
               {/* Key Table if exists */}
               {section.keyTable && (
-                <div className="overflow-x-auto rounded-2xl border border-slate-200">
-                  <table className="w-full text-left text-xs sm:text-sm text-slate-800">
-                    <thead className="bg-slate-100 text-slate-900 font-bold border-b border-slate-200">
-                      <tr>
-                        {section.keyTable.headers.map((h, i) => (
-                          <th key={i} className="p-3.5">
-                            {h.trim() || `Coluna ${i + 1}`}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-100 bg-white">
-                      {section.keyTable.rows.map((row, rIdx) => (
-                        <tr key={rIdx} className={rIdx % 2 === 1 ? 'bg-slate-50/50' : ''}>
-                          {row.map((cell, cIdx) => (
-                            <td key={cIdx} className="p-3.5 font-medium">
-                              {cell}
-                            </td>
+                <div className="overflow-hidden rounded-2xl border border-teal-200/80 bg-white shadow-2xs">
+                  <div className="border-b border-teal-100 bg-linear-to-r from-teal-950 via-teal-900 to-emerald-950 px-4 py-3 text-white">
+                    <span className="text-xs font-black uppercase tracking-wider text-teal-200">
+                      Quadro Comparativo de Síntese
+                    </span>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs sm:text-sm text-slate-800">
+                      <thead className="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+                        <tr>
+                          {section.keyTable.headers.map((h, i) => (
+                            <th key={i} className="p-3.5">
+                              {h.trim() || `Coluna ${i + 1}`}
+                            </th>
                           ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100 bg-white">
+                        {section.keyTable.rows.map((row, rIdx) => (
+                          <tr key={rIdx} className={rIdx % 2 === 1 ? 'bg-slate-50/40' : ''}>
+                            {row.map((cell, cIdx) => (
+                              <td key={cIdx} className="p-3.5 font-medium leading-relaxed">
+                                {cIdx === 0 ? (
+                                  <strong className="text-teal-950 font-bold">{cell}</strong>
+                                ) : cIdx === 1 ? (
+                                  <span className="text-emerald-950">{cell}</span>
+                                ) : (
+                                  <span className="text-slate-600">{cell}</span>
+                                )}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               )}
 
@@ -1250,6 +1307,11 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               })}
             </div>
           </section>
+        )}
+
+        {/* Frase Inspiracional ao Final da Aula */}
+        {!isFocusMode && (
+          <DailyMotivationCard />
         )}
 
         {/* Prev / Next Navigation */}

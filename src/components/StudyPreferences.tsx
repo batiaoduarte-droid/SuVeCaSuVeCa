@@ -440,6 +440,45 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
     }
   };
 
+  const handleLocalBrowserTestNotification = async () => {
+    if (typeof window === 'undefined' || !('Notification' in window)) {
+      setMessage({
+        text: 'Notificações não são suportadas neste navegador.',
+        type: 'error',
+      });
+      return;
+    }
+    if (Notification.permission !== 'granted') {
+      const perm = await Notification.requestPermission();
+      if (perm !== 'granted') {
+        setMessage({
+          text: 'Permissão para notificações locais foi negada nas configurações do navegador.',
+          type: 'error',
+        });
+        return;
+      }
+    }
+    const title = '🔔 Lembrete do Caderno de Erros SuVeCA';
+    const body = pendingErrorCount > 0
+      ? `Você possui ${pendingErrorCount} regra(s) pendente(s) de revisão hoje!`
+      : 'Hora de revisar suas regras decisivas com o método SuVeCA!';
+    try {
+      new Notification(title, {
+        body,
+        icon: '/favicon.ico',
+      });
+      setMessage({
+        text: 'Notificação local enviada com sucesso para o seu navegador!',
+        type: 'success',
+      });
+    } catch {
+      setMessage({
+        text: 'Não foi possível disparar a notificação local.',
+        type: 'error',
+      });
+    }
+  };
+
   const toggleDay = (dayId: string) => {
     const currentDays = prefs.daysOfWeek;
     let nextDays: string[];
@@ -568,6 +607,16 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={() => void handleLocalBrowserTestNotification()}
+              className="button-secondary text-xs px-3 py-2"
+              title="Dispara uma notificação nativa para este navegador"
+            >
+              <Bell className="w-3.5 h-3.5 text-teal-700" />
+              Notificação Local
+            </button>
+
             {isPushActiveOnDevice && (
               <button
                 type="button"

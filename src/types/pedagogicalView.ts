@@ -633,6 +633,7 @@ export interface PedagogicalUnitView {
     variant?: string;
     canonicalTopicId?: string;
     learningObjectives: string[];
+    methodologyLevel?: string;
   };
   sections: PedagogicalUnitSections;
   officialQuestions?: OfficialQuestionView[];

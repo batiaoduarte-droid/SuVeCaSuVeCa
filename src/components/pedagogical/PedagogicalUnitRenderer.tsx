@@ -31,6 +31,8 @@ import { GlossarySection } from './sections/GlossarySection';
 import { RecallSection } from './sections/RecallSection';
 import { OfficialQuestionsSection } from './sections/OfficialQuestionsSection';
 import { InlineRichText } from './blocks/InlineRichText';
+import { SuvecaWordHighlight } from '../ui/SuvecaBrandHighlight';
+import { SUVECA_METHOD } from '../../data/suvecaMethod.generated';
 
 interface PedagogicalUnitRendererProps {
   view: PedagogicalUnitView;
@@ -61,12 +63,31 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
   const presentSections: SectionDescriptor[] = useMemo(() => {
     const list: SectionDescriptor[] = [];
 
-    if (sections.suveca) {
+    // Deriva a chave canônica da unidade pedagógica (ex.: 'A00/G01')
+    const unitMatch = (unit.unitId || '').match(/IP-([A-Z0-9]+)-(G\d+)/);
+    const unitKey = unitMatch
+      ? `${unitMatch[1]}/${unitMatch[2]}`
+      : unit.lessonId && unit.groupId
+        ? `${unit.lessonId}/${unit.groupId}`
+        : null;
+    const groupConn = unitKey
+      ? (SUVECA_METHOD.groupConnections as Record<string, { level?: string }>)[unitKey]
+      : null;
+
+    const effectiveLevel =
+      unit.methodologyLevel ||
+      groupConn?.level ||
+      sections.suveca?.level ||
+      '';
+
+    const hasRealSuvecaConnection = ['central', 'strong', 'review'].includes(effectiveLevel);
+
+    if (sections.suveca && hasRealSuvecaConnection) {
       list.push({
         id: 'suveca',
         title: 'Conexão com o método SuVeCA',
         icon: Workflow,
-        render: () => <SuvecaSection view={sections.suveca} />,
+        render: () => <SuvecaSection view={sections.suveca!} />,
       });
     }
 
@@ -251,7 +272,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
           <span className="text-slate-600">{unit.variant}</span>
         </div>
         <h1 className="m-0 text-2xl sm:text-3xl font-black tracking-tight text-teal-950">
-          <InlineRichText>{unit.title}</InlineRichText>
+          <SuvecaWordHighlight text={unit.title} />
         </h1>
       </div>
 
@@ -301,7 +322,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                     <Icon className="h-3.5 w-3.5" />
                   </span>
                   <span className="font-bold text-teal-700">{index + 1}.</span>
-                  <span className="font-semibold truncate"><InlineRichText>{section.title}</InlineRichText></span>
+                  <span className="font-semibold truncate"><SuvecaWordHighlight text={section.title} /></span>
                 </button>
               </li>
             );
@@ -328,7 +349,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                     {idx + 1}
                   </span>
                   <Icon className="h-4 w-4 text-teal-700" />
-                  <span><InlineRichText>{sec.title}</InlineRichText></span>
+                  <span><SuvecaWordHighlight text={sec.title} /></span>
                 </div>
                 <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
               </summary>

@@ -52,7 +52,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
         aria-label={ariaLabel || label || `Progresso: ${Math.round(percentage)}%`}
       >
         <div
-          className={`h-full transition-all duration-300 ease-out ${barColorClasses}`}
+          className={`h-full transition-all duration-700 ease-out relative overflow-hidden ${barColorClasses}`}
           style={{ width: `${percentage}%` }}
         />
       </div>

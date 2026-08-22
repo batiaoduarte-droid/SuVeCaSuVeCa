@@ -107,19 +107,61 @@ const sampleUnitView: PedagogicalUnitView = {
   ],
 };
 
+const sampleSyntacticUnitView: PedagogicalUnitView = {
+  viewSchemaVersion: '1.0.0',
+  source: {
+    unitId: 'IP-A05-G01',
+    canonicalSchemaVersion: '2.0.0',
+    buildId: 'v2-test',
+    generatedAt: '2026-08-18T18:00:00Z',
+  },
+  unit: {
+    unitId: 'IP-A05-G01',
+    lessonId: 'A05',
+    groupId: 'G01',
+    title: 'Transitividade Verbal e Valência',
+    variant: 'standard',
+    canonicalTopicId: 'transitividade',
+    methodologyLevel: 'central',
+    learningObjectives: ['Classificar verbos quanto à predicação'],
+  },
+  sections: {
+    suveca: {
+      level: 'central',
+      label: 'Análise de Valência na Oração',
+      summary: 'A transitividade define os blocos Ve e C na SuVeCA.',
+      steps: ['Localize o verbo', 'Identifique os complementos'],
+      limits: ['A transitividade depende do contexto'],
+      decisiveTests: ['Quem entrega, entrega algo a alguém'],
+    },
+  },
+};
+
 describe('PedagogicalUnitRenderer (View Model V1)', () => {
   beforeEach(() => localStorage.clear());
 
-  it('renderiza título, objetivos, sumário dinâmico e seções tipadas', () => {
+  it('omite a seção SuVeCA em unidades com nível outside_core e inicia pelas regras/prerequisitos', () => {
     render(<PedagogicalUnitRenderer view={sampleUnitView} />);
 
     expect(screen.getByRole('heading', { level: 1, name: /fonética e fonologia estrutural/i })).toBeInTheDocument();
     expect(screen.getByText(/distinguir fonemas e grafemas/i)).toBeInTheDocument();
     expect(screen.getByRole('navigation', { name: /sumário da unidade/i })).toBeInTheDocument();
 
-    // Seção SuVeCA
-    expect(screen.getByText(/camada fonética própria/i)).toBeInTheDocument();
-    expect(screen.getByText(/identifique o número de grafemas/i)).toBeInTheDocument();
+    // A seção SuVeCA sintática NÃO deve ser renderizada em unidades outside_core
+    expect(screen.queryByText(/camada fonética própria/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/conexão com o método suveca/i)).not.toBeInTheDocument();
+
+    // As demais seções continuam normalmente
+    expect(screen.getByText(/regra do dígrafo consonantal/i)).toBeInTheDocument();
+  });
+
+  it('renderiza a seção SuVeCA em unidades com nível central ou strong', () => {
+    render(<PedagogicalUnitRenderer view={sampleSyntacticUnitView} />);
+
+    expect(screen.getByRole('heading', { level: 1, name: /transitividade verbal e valência/i })).toBeInTheDocument();
+    expect(screen.getAllByText((_content, element) => element?.textContent?.includes('Conexão com o método SuVeCA') ?? false).length).toBeGreaterThan(0);
+    expect(screen.getByText(/análise de valência na oração/i)).toBeInTheDocument();
+    expect(screen.getByText(/localize o verbo/i)).toBeInTheDocument();
   });
 
   it('permite interagir com checklist de recuperação ativa e atualizar progresso', async () => {

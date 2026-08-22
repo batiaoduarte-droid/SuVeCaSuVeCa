@@ -19,12 +19,23 @@ import {
   ClipboardCheck,
   Target,
   TrendingUp,
+  Brain,
+  ShieldAlert,
+  Compass,
+  AlertTriangle,
+  Flame,
+  Zap,
+  Sparkles,
 } from 'lucide-react';
 import type { CadernoErroItem } from '../types/suveca';
 import { ProgressBar } from './ui/ProgressBar';
 import { MODULES_DATA } from '../data/modulesData';
 import { getPriorityModuleRecommendation } from '../lib/priorityModuleRecommender';
 import { PriorityReviewCard } from './ui/PriorityReviewCard';
+import {
+  computeMetacognitiveMatrix,
+  computeExamBoardStats,
+} from '../lib/learnerIntelligence';
 
 export interface LearningAttempt {
   id: string;
@@ -216,6 +227,16 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
     [errors]
   );
 
+  const metacognitiveSummary = useMemo(
+    () => computeMetacognitiveMatrix(allAnswered + practiceAnswered, allCorrect + practiceCorrect, errors),
+    [allAnswered, allCorrect, errors, practiceAnswered, practiceCorrect]
+  );
+
+  const examBoardStats = useMemo(
+    () => computeExamBoardStats(errors, allAnswered + practiceAnswered, allCorrect + practiceCorrect),
+    [allAnswered, allCorrect, errors, practiceAnswered, practiceCorrect]
+  );
+
   return (
     <div className="space-y-6 pb-16 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 duration-300">
       <header className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8">
@@ -372,6 +393,184 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
             Ainda não há respostas registradas. As barras serão preenchidas após o primeiro simulado concluído.
           </p>
         )}
+      </section>
+
+      {/* ---------------------------------------------------------------------- */}
+      {/* SEÇÃO 1: MATRIZ 2×2 METACOGNITIVA (Confiança × Acurácia)               */}
+      {/* ---------------------------------------------------------------------- */}
+      <section className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-7 shadow-xs space-y-5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-2.5 py-0.5 rounded-md">
+              <Brain className="w-3.5 h-3.5 text-teal-700" />
+              <span>Diagnóstico Metacognitivo Single-User</span>
+            </div>
+            <h2 className="text-lg sm:text-xl font-extrabold text-slate-900">
+              Matriz 2×2: Calibração de Confiança vs Acurácia
+            </h2>
+            <p className="text-xs text-slate-500 max-w-2xl leading-relaxed">
+              Mede a precisão da sua autoavaliação. Identificar onde você erra achando que acertou (Ilusão de Competência) é a chave para não perder pontos no modelo Cebraspe.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-1.5 text-center">
+              <span className="text-[10px] uppercase font-bold text-emerald-800 block">Calibração</span>
+              <span className="text-base font-black text-emerald-950">{metacognitiveSummary.calibrationScore}%</span>
+            </div>
+            <div className="bg-rose-50 border border-rose-200 rounded-xl px-3 py-1.5 text-center">
+              <span className="text-[10px] uppercase font-bold text-rose-800 block">Taxa de Ilusão</span>
+              <span className="text-base font-black text-rose-950">{metacognitiveSummary.illusionRate}%</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Grade 2x2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Q1: Domínio Confiante */}
+          <div className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50/60 to-white p-4 sm:p-5 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md">
+                Q1 · Domínio Confiante
+              </span>
+              <span className="text-xs font-extrabold text-emerald-900">
+                {metacognitiveSummary.quadrants.q1_mastery.percentage}% ({metacognitiveSummary.quadrants.q1_mastery.count} itens)
+              </span>
+            </div>
+            <h3 className="text-sm font-bold text-slate-900">Alta Certeza + Acerto Real</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              {metacognitiveSummary.quadrants.q1_mastery.pedagogicalAdvice}
+            </p>
+          </div>
+
+          {/* Q2: Acerto Frágil */}
+          <div className="rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50/60 to-white p-4 sm:p-5 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-black uppercase tracking-wider text-amber-800 bg-amber-100/80 px-2 py-0.5 rounded-md">
+                Q2 · Acerto Frágil / Chute
+              </span>
+              <span className="text-xs font-extrabold text-amber-900">
+                {metacognitiveSummary.quadrants.q2_fragile.percentage}% ({metacognitiveSummary.quadrants.q2_fragile.count} itens)
+              </span>
+            </div>
+            <h3 className="text-sm font-bold text-slate-900">Baixa Certeza + Acerto Real</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              {metacognitiveSummary.quadrants.q2_fragile.pedagogicalAdvice}
+            </p>
+          </div>
+
+          {/* Q3: Dúvida Consciente */}
+          <div className="rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50/60 to-white p-4 sm:p-5 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-black uppercase tracking-wider text-blue-800 bg-blue-100/80 px-2 py-0.5 rounded-md">
+                Q3 · Dúvida Consciente
+              </span>
+              <span className="text-xs font-extrabold text-blue-900">
+                {metacognitiveSummary.quadrants.q3_conscious_doubt.percentage}% ({metacognitiveSummary.quadrants.q3_conscious_doubt.count} itens)
+              </span>
+            </div>
+            <h3 className="text-sm font-bold text-slate-900">Baixa Certeza + Erro</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              {metacognitiveSummary.quadrants.q3_conscious_doubt.pedagogicalAdvice}
+            </p>
+          </div>
+
+          {/* Q4: Ilusão de Competência */}
+          <div className="rounded-2xl border border-rose-300 bg-gradient-to-br from-rose-50/80 to-white p-4 sm:p-5 space-y-2 ring-1 ring-rose-200">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-black uppercase tracking-wider text-rose-900 bg-rose-100 px-2 py-0.5 rounded-md flex items-center gap-1">
+                <AlertTriangle className="w-3 h-3 text-rose-700" />
+                Q4 · Ilusão de Competência
+              </span>
+              <span className="text-xs font-extrabold text-rose-900">
+                {metacognitiveSummary.quadrants.q4_illusion.percentage}% ({metacognitiveSummary.quadrants.q4_illusion.count} itens)
+              </span>
+            </div>
+            <h3 className="text-sm font-bold text-slate-900">Alta Certeza + Erro (Armadilha)</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              {metacognitiveSummary.quadrants.q4_illusion.pedagogicalAdvice}
+            </p>
+          </div>
+        </div>
+
+        {/* Diagnóstico Geral */}
+        <div className="rounded-xl border border-teal-200 bg-teal-50/50 p-4 text-xs text-teal-950 flex items-start gap-2.5">
+          <Sparkles className="w-4 h-4 text-teal-700 shrink-0 mt-0.5" />
+          <div>
+            <strong className="block font-bold text-teal-900 mb-0.5">Recomendação Estratégica:</strong>
+            <p className="leading-relaxed">{metacognitiveSummary.diagnosticMessage}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------------- */}
+      {/* SEÇÃO 2: RADAR DE BANCAS & ARMADILHAS FREQUENTES                       */}
+      {/* ---------------------------------------------------------------------- */}
+      <section className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-7 shadow-xs space-y-6">
+        <div className="space-y-1 border-b border-slate-100 pb-4">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-md">
+            <ShieldAlert className="w-3.5 h-3.5 text-amber-700" />
+            <span>Radar de Vulnerabilidade por Banca</span>
+          </div>
+          <h2 className="text-lg sm:text-xl font-extrabold text-slate-900">
+            Desempenho por Banca & Top Armadilhas
+          </h2>
+          <p className="text-xs text-slate-500 max-w-2xl leading-relaxed">
+            Descubra em qual banca examinadora seu rendimento é mais vulnerável e quais armadilhas gramaticais costumam induzir ao erro.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Desempenho por Banca */}
+          <div className="space-y-4">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-500">
+              Taxa de Acurácia por Banca Examinadora
+            </h3>
+            <div className="space-y-3">
+              {examBoardStats.boards.map((b) => (
+                <div key={b.board} className="rounded-xl border border-slate-200 bg-slate-50/60 p-3.5 space-y-2">
+                  <div className="flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="font-extrabold text-slate-900">{b.board}</span>
+                      {b.errorCount > 0 && (
+                        <span className="text-[10px] font-bold text-rose-700 bg-rose-50 border border-rose-200 px-1.5 py-0.2 rounded">
+                          {b.errorCount} {b.errorCount === 1 ? 'erro' : 'erros'}
+                        </span>
+                      )}
+                    </div>
+                    <span className="font-mono font-bold text-teal-800">{b.accuracy}%</span>
+                  </div>
+                  <ProgressBar value={b.accuracy} showPercent={false} size="sm" color={b.accuracy >= 75 ? 'emerald' : b.accuracy >= 50 ? 'amber' : 'teal'} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Top Armadilhas de Prova */}
+          <div className="space-y-4">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-500">
+              Top 3 Armadilhas Mapeadas no Seu Histórico
+            </h3>
+            <div className="space-y-3">
+              {examBoardStats.topOverallTraps.map((trap, idx) => (
+                <div key={trap.rule} className="rounded-xl border border-amber-200 bg-amber-50/40 p-3.5 space-y-1.5">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-extrabold text-amber-950 flex items-center gap-1.5">
+                      <Flame className="w-3.5 h-3.5 text-orange-600 fill-amber-400" />
+                      #{idx + 1} {trap.rule}
+                    </span>
+                    <span className="text-[10px] font-bold text-amber-900 bg-amber-100 px-2 py-0.5 rounded">
+                      {trap.bank}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-relaxed font-medium">
+                    <strong>Vacina SuVeCA:</strong> {trap.recommendation}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

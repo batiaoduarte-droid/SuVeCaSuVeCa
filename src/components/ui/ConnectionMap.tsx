@@ -10,6 +10,11 @@ import { PunctuationCommaVisualGuide } from './PunctuationCommaVisualGuide';
 import { QueSeFunctionsVisualGuide } from './QueSeFunctionsVisualGuide';
 import { PedagogicalFlowchart } from './PedagogicalFlowchart';
 import { PedagogicalTreeDiagram } from './PedagogicalTreeDiagram';
+import { SuvecaTrainMetaphorVisualGuide } from './SuvecaTrainMetaphorVisualGuide';
+import { SuvecaAlgorithmVisualGuide } from './SuvecaAlgorithmVisualGuide';
+import { SuvecaPatternsVisualGuide } from './SuvecaPatternsVisualGuide';
+import { SuvecaCurriculumMapVisualGuide } from './SuvecaCurriculumMapVisualGuide';
+import { SuvecaColorCodeVisualGuide } from './SuvecaColorCodeVisualGuide';
 import { MarkdownContent } from './MarkdownContent';
 
 interface ConnectionMapProps {
@@ -22,6 +27,23 @@ export const looksLikeConnectionMap = (source: string): boolean => {
   // Se for estritamente uma tabela Markdown (linhas iniciando com | e tendo divisores |--), não é ConnectionMap
   if (/^\s*\|.*\|\s*$/m.test(source) && /\|(?:\s*[-:]+\s*\|)+/.test(source) && !source.includes('├──') && !source.includes('└──')) {
     return false;
+  }
+
+  // SuVeCA Specialized Guides
+  if (source.includes('METÁFORA DO TREM') || source.includes('Metáfora do Trem') || source.includes('Peças dos vagões') || (source.includes('Sintagmas') && source.includes('Vagões organizados'))) {
+    return true;
+  }
+  if (source.includes('flowchart TD') || source.includes('Algoritmo dos 8 Passos') || source.includes('ALGORITMO DOS 8 PASSOS') || (source.includes('OR["1. OR') && source.includes('VE["2. VE'))) {
+    return true;
+  }
+  if (source.includes('5 Padrões Estruturais') || source.includes('PADRÕES ESTRUTURAIS') || source.includes('Padrão 1: Ordem Direta') || (source.includes('A + Ve + Su') && source.includes('Ordem Inversa'))) {
+    return true;
+  }
+  if (source.includes('Camada 1: Forma e Ortografia') || source.includes('7 Camadas da Língua') || source.includes('MAPA DAS 15 AULAS') || source.includes('OUTSIDE_SUVECA_CORE')) {
+    return true;
+  }
+  if (source.includes('CÓDIGO CROMÁTICO') || source.includes('CÓDIGO VISUAL DOS BLOCOS') || (source.includes('Ontem à noite (🟣') && source.includes('auditores da Receita (🔵'))) {
+    return true;
   }
 
   if (source.includes('EMPREGO DOS PORQUÊS') || (source.includes('PORQUÊ') && source.includes('POR QUÊ'))) {
@@ -72,7 +94,32 @@ export const ConnectionMap: React.FC<ConnectionMapProps> = ({ source }) => {
     );
   }
 
-  // 1. Specialized Guide: Os 4 Porquês
+  // 1. Specialized Guide: Metáfora do Trem (5 Escalas)
+  if (source.includes('METÁFORA DO TREM') || source.includes('Metáfora do Trem') || source.includes('Peças dos vagões') || (source.includes('Sintagmas') && source.includes('Vagões organizados'))) {
+    return <SuvecaTrainMetaphorVisualGuide />;
+  }
+
+  // 2. Specialized Guide: Algoritmo dos 8 Passos
+  if (source.includes('flowchart TD') || source.includes('Algoritmo dos 8 Passos') || source.includes('ALGORITMO DOS 8 PASSOS') || (source.includes('OR["1. OR') && source.includes('VE["2. VE'))) {
+    return <SuvecaAlgorithmVisualGuide />;
+  }
+
+  // 3. Specialized Guide: Os 5 Padrões Estruturais
+  if (source.includes('5 Padrões Estruturais') || source.includes('PADRÕES ESTRUTURAIS') || source.includes('Padrão 1: Ordem Direta') || (source.includes('A + Ve + Su') && source.includes('Ordem Inversa'))) {
+    return <SuvecaPatternsVisualGuide />;
+  }
+
+  // 4. Specialized Guide: As 7 Camadas e o Mapa das 15 Aulas
+  if (source.includes('Camada 1: Forma e Ortografia') || source.includes('7 Camadas da Língua') || source.includes('MAPA DAS 15 AULAS') || source.includes('OUTSIDE_SUVECA_CORE')) {
+    return <SuvecaCurriculumMapVisualGuide />;
+  }
+
+  // 5. Specialized Guide: Código Cromático Tático
+  if (source.includes('CÓDIGO CROMÁTICO') || source.includes('CÓDIGO VISUAL DOS BLOCOS') || (source.includes('Ontem à noite (🟣') && source.includes('auditores da Receita (🔵'))) {
+    return <SuvecaColorCodeVisualGuide />;
+  }
+
+  // 6. Specialized Guide: Os 4 Porquês
   if (source.includes('EMPREGO DOS PORQUÊS') || (source.includes('PORQUÊ') && source.includes('PORQUE') && source.includes('POR QUÊ'))) {
     return <PorquesVisualGuide />;
   }

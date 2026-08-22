@@ -50,12 +50,20 @@ export const getLessonName = (
   value?: string | number | null,
   variant: 'short' | 'full' = 'short',
 ): string => {
+  if (typeof value === 'string' && (value.toLowerCase() === 'mod-intro' || value.toLowerCase() === 'intro')) {
+    return variant === 'full'
+      ? 'Fundamentos do Método SuVeCA: O Sistema de Orientação da Oração'
+      : 'Fundamentos SuVeCA';
+  }
   const entry = getLessonEntry(value);
   if (entry) return variant === 'full' ? entry.fullTitle : entry.shortTitle;
   return typeof value === 'string' && value.trim() ? value.trim() : 'Conteúdo de Língua Portuguesa';
 };
 
 export const getLessonSearchLabel = (value?: string | number | null): string => {
+  if (typeof value === 'string' && (value.toLowerCase() === 'mod-intro' || value.toLowerCase() === 'intro')) {
+    return 'Fundamentos SuVeCA Método Oração Sintaxe INTRO mod-intro';
+  }
   const entry = getLessonEntry(value);
   return entry ? `${entry.shortTitle} ${entry.fullTitle} ${entry.lessonId}` : getLessonName(value);
 };

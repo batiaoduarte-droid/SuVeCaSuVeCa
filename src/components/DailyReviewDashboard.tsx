@@ -8,6 +8,10 @@ import {
   Clock,
   Sparkles,
   Target,
+  Activity,
+  TrendingUp,
+  ShieldCheck,
+  AlertCircle,
 } from 'lucide-react';
 import type { CadernoErroItem, ErrorFlashcard } from '../types/suveca';
 import { db } from '../lib/firebase';
@@ -15,6 +19,7 @@ import { ProgressBar } from './ui/ProgressBar';
 import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import { StudyBadge, StudySurface } from './study-visuals';
+import { computeRetentionCurveEstimate } from '../lib/learnerIntelligence';
 
 const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
 const AGENDA_STORAGE_PREFIX = 'suveca_daily_review_agenda';
@@ -384,6 +389,16 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
   );
   const goalPercent = Math.min(100, Math.round((completedToday / progress.goal) * 100));
 
+  const retentionEstimate = useMemo(
+    () =>
+      computeRetentionCurveEstimate(
+        errors,
+        completedToday,
+        cards.filter((c) => (c.masteryScore || 0) >= 80).length
+      ),
+    [errors, completedToday, cards]
+  );
+
   const setGoal = useCallback((goal: number) => {
     setProgress((current) => ({
       ...normalizeProgress(current),
@@ -453,6 +468,56 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
           </div>
         </div>
       </header>
+
+      {/* Previsão da Curva de Retenção & Estabilidade SM-2 */}
+      <section className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center">
+              <TrendingUp className="w-4 h-4 text-teal-700" />
+            </div>
+            <div>
+              <h2 className="text-sm sm:text-base font-bold text-slate-900">
+                Previsão da Curva de Retenção & Estabilidade da Memória (SM-2 / Ebbinghaus)
+              </h2>
+              <p className="text-xs text-slate-500">
+                Projeção matemática do esquecimento e retenção ativa nas revisões espaçadas.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200">
+              Índice de Retenção: <strong className="text-teal-900 font-black">{retentionEstimate.estimatedRetentionRate}%</strong>
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {retentionEstimate.projectedDecay.map((proj) => (
+            <div
+              key={proj.dayOffset}
+              className="rounded-xl border border-slate-200 bg-slate-50/70 p-3 text-center space-y-1"
+            >
+              <div className="text-[11px] font-bold text-slate-600">{proj.label}</div>
+              <div className="text-lg font-black text-slate-900 font-mono">
+                {proj.retentionPct}%
+              </div>
+              <div className="text-[10px] text-slate-400 font-medium">
+                Alvo: {proj.optimalReviewDate}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl bg-teal-50/70 border border-teal-200 p-3.5 flex items-start gap-2.5 text-xs text-teal-950">
+          <ShieldCheck className="w-4 h-4 text-teal-700 shrink-0 mt-0.5" />
+          <div>
+            <span className="font-bold">Estratégia Pedagógica de Consolidação: </span>
+            <span>{retentionEstimate.tacticalAdvice}</span>
+          </div>
+        </div>
+      </section>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-label="Resumo das revisões">
         <article className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
