@@ -29,6 +29,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json({ limit: "32kb" }));
+app.use(express.static(path.join(process.cwd(), "public")));
 
 const APPROVED_GEMINI_MODELS = new Set(["gemini-3.1-flash-lite", "gemini-2.5-flash"]);
 const resolveModel = (value: unknown) =>

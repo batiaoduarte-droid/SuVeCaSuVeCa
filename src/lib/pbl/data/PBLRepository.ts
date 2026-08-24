@@ -59,6 +59,29 @@ export class PBLRepository implements IPBLRepository {
 
   constructor(private basePath: string = '/knowledge/pbl') {}
 
+  private async safeFetchJson<T>(url: string): Promise<T | null> {
+    try {
+      const res = await fetch(url, {
+        headers: { Accept: 'application/json' },
+      });
+      if (!res.ok) return null;
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('text/html')) {
+        console.warn(`[PBLRepository] Esperava JSON de ${url}, mas recebeu HTML.`);
+        return null;
+      }
+      const text = await res.text();
+      if (!text || text.trim().startsWith('<')) {
+        console.warn(`[PBLRepository] Resposta de ${url} não é um JSON válido.`);
+        return null;
+      }
+      return JSON.parse(text) as T;
+    } catch (err) {
+      console.warn(`[PBLRepository] Erro ao carregar ${url}:`, err);
+      return null;
+    }
+  }
+
   public isReady(): boolean {
     return this.initialized;
   }
@@ -68,16 +91,14 @@ export class PBLRepository implements IPBLRepository {
 
     try {
       // 1. Fetch competencies
-      const compsRes = await fetch(`${this.basePath}/pbl_competency_map.json`);
-      if (compsRes.ok) {
-        const compsData: PBLCompetency[] = await compsRes.json();
+      const compsData = await this.safeFetchJson<PBLCompetency[]>(`${this.basePath}/pbl_competency_map.json`);
+      if (compsData && Array.isArray(compsData)) {
         compsData.forEach((c) => this.competencies.set(c.competencyId, c));
       }
 
       // 2. Fetch cases
-      const casesRes = await fetch(`${this.basePath}/pbl_cases.json`);
-      if (casesRes.ok) {
-        const casesData: PBLCase[] = await casesRes.json();
+      const casesData = await this.safeFetchJson<PBLCase[]>(`${this.basePath}/pbl_cases.json`);
+      if (casesData && Array.isArray(casesData)) {
         casesData.forEach((cs) => {
           this.cases.set(cs.caseId, cs);
           this.caseByCompetency.set(cs.competencyRef, cs);
@@ -85,9 +106,8 @@ export class PBLRepository implements IPBLRepository {
       }
 
       // 3. Fetch transfer sets
-      const xfersRes = await fetch(`${this.basePath}/pbl_transfer_sets.json`);
-      if (xfersRes.ok) {
-        const xfersData: PBLTransferSet[] = await xfersRes.json();
+      const xfersData = await this.safeFetchJson<PBLTransferSet[]>(`${this.basePath}/pbl_transfer_sets.json`);
+      if (xfersData && Array.isArray(xfersData)) {
         xfersData.forEach((x) => {
           this.transferSets.set(x.transferSetId, x);
           this.transferByCompetency.set(x.competencyRef, x);
@@ -95,9 +115,8 @@ export class PBLRepository implements IPBLRepository {
       }
 
       // 4. Fetch diagnostic paths
-      const diagsRes = await fetch(`${this.basePath}/pbl_diagnostic_paths.json`);
-      if (diagsRes.ok) {
-        const diagsData: PBLDiagnosticPath[] = await diagsRes.json();
+      const diagsData = await this.safeFetchJson<PBLDiagnosticPath[]>(`${this.basePath}/pbl_diagnostic_paths.json`);
+      if (diagsData && Array.isArray(diagsData)) {
         diagsData.forEach((d) => {
           this.diagnosticPaths.set(d.pathId, d);
           this.diagnosticByCompetency.set(d.competencyRef, d);
@@ -105,30 +124,27 @@ export class PBLRepository implements IPBLRepository {
       }
 
       // 5. Fetch cumulative review sessions
-      const sessRes = await fetch(`${this.basePath}/pbl_cumulative_review_sessions.json`);
-      if (sessRes.ok) {
-        const sessData: PBLCumulativeSession[] = await sessRes.json();
+      const sessData = await this.safeFetchJson<PBLCumulativeSession[]>(`${this.basePath}/pbl_cumulative_review_sessions.json`);
+      if (sessData && Array.isArray(sessData)) {
         sessData.forEach((s) => this.cumulativeSessions.set(s.sessionId, s));
       }
 
       // 6. Fetch Question Links
-      const qclRes = await fetch(`${this.basePath}/question_competency_links.json`);
-      if (qclRes.ok) {
-        const qclData: Record<string, QuestionCompetencyLink> = await qclRes.json();
+      const qclData = await this.safeFetchJson<Record<string, QuestionCompetencyLink>>(`${this.basePath}/question_competency_links.json`);
+      if (qclData && typeof qclData === 'object') {
         Object.entries(qclData).forEach(([qid, link]) => this.questionLinksMap.set(qid, link));
       }
 
       // 7. Fetch Question Pedagogy Index
-      const qpRes = await fetch(`${this.basePath}/question_pedagogy_index.json`);
-      if (qpRes.ok) {
-        const qpData: Record<string, QuestionPedagogy> = await qpRes.json();
+      const qpData = await this.safeFetchJson<Record<string, QuestionPedagogy>>(`${this.basePath}/question_pedagogy_index.json`);
+      if (qpData && typeof qpData === 'object') {
         Object.entries(qpData).forEach(([qid, qp]) => this.questionPedagogyMap.set(qid, qp));
       }
 
       // 8. Fetch Manifest
-      const manRes = await fetch(`${this.basePath}/pbl_manifest.json`);
-      if (manRes.ok) {
-        this.manifest = await manRes.json();
+      const manData = await this.safeFetchJson<PBLManifest>(`${this.basePath}/pbl_manifest.json`);
+      if (manData) {
+        this.manifest = manData;
       }
 
       this.initialized = true;
@@ -262,13 +278,11 @@ export class PBLRepository implements IPBLRepository {
       officialQuestions?: Array<Record<string, unknown>>;
     } | undefined;
     if (!view) {
-      try {
-        const response = await fetch(`/knowledge/pedagogical/views/${link.unitId}.json`);
-        if (!response.ok) return null;
-        view = await response.json();
-      } catch {
-        return null;
-      }
+      const fetchedView = await this.safeFetchJson<{
+        officialQuestions?: Array<Record<string, unknown>>;
+      }>(`/knowledge/pedagogical/views/${link.unitId}.json`);
+      if (!fetchedView) return null;
+      view = fetchedView;
       this.unitViewCache.set(link.unitId, view);
     }
 
