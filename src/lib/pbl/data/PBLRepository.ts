@@ -147,6 +147,32 @@ export class PBLRepository implements IPBLRepository {
         this.manifest = manData;
       }
 
+      // 9. Síntese de fallback para questionLinksMap a partir dos cases e competências
+      if (this.questionLinksMap.size === 0 && this.cases.size > 0) {
+        this.cases.forEach((cs) => {
+          if (cs.anchorQuestionRef && cs.unitRef) {
+            this.questionLinksMap.set(cs.anchorQuestionRef, {
+              schemaVersion: '3.0.0',
+              linkId: `LINK-${cs.caseId}`,
+              officialQuestionRef: cs.anchorQuestionRef,
+              competencyId: cs.competencyRef,
+              unitId: cs.unitRef,
+              lessonId: cs.unitRef.replace(/^IP-/, '').split('-')[0] || '',
+              prerequisiteRefs: cs.prerequisiteRefs || [],
+              pblSuitabilityScores: {
+                anchor: 1,
+                diagnostic: 0.8,
+                transfer: 0.8,
+                validation: 0.8,
+                primaryRole: 'anchor',
+              },
+              assignedPBLRole: 'anchor',
+              diagnosticPotential: 1,
+            });
+          }
+        });
+      }
+
       this.initialized = true;
     } catch (err) {
       console.error('[PBLRepository] Error initializing PBL Repository:', err);

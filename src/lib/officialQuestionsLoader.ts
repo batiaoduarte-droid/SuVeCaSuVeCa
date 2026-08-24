@@ -42,26 +42,31 @@ export const fetchNormalizedQuestionsForLesson = async (
 
   for (const partNum of parts) {
     try {
-      const res = await fetch(`/knowledge/official-question-parts/official-questions.normalized.part-${partNum}.json`);
-      if (res.ok) {
-        const data = await res.json();
-        if (Array.isArray(data)) {
-          for (const item of data) {
-            if (item.originalQuestionId) {
-              combinedMap[item.originalQuestionId] = item;
-            }
-            if (item.id) {
-              combinedMap[item.id] = item;
-              const subparts = item.id.split(':');
-              if (subparts.length > 1) {
-                combinedMap[subparts[1]] = item;
-              }
+      const res = await fetch(`/knowledge/official-question-parts/official-questions.normalized.part-${partNum}.json`, {
+        headers: { Accept: 'application/json' },
+      });
+      if (!res.ok) continue;
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('text/html')) continue;
+      const text = await res.text();
+      if (!text || text.trim().startsWith('<')) continue;
+      const data = JSON.parse(text);
+      if (Array.isArray(data)) {
+        for (const item of data) {
+          if (item.originalQuestionId) {
+            combinedMap[item.originalQuestionId] = item;
+          }
+          if (item.id) {
+            combinedMap[item.id] = item;
+            const subparts = item.id.split(':');
+            if (subparts.length > 1) {
+              combinedMap[subparts[1]] = item;
             }
           }
         }
       }
     } catch {
-      // Silencioso em caso de falha de rede
+      // Silencioso em caso de falha de rede ou parsing
     }
   }
 
