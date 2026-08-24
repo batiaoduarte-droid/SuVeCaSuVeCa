@@ -383,7 +383,9 @@ export async function getOfficialQuestion(questionId: string) {
     questionId: id,
     provenance: {
       kind: 'editorial_question' as const,
-      payloadPolicy: 'source_preserved' as const,
+      payloadPolicy: raw.originKind === 'online_platform_capture'
+        ? 'source_backed_projection' as const
+        : 'source_preserved' as const,
       buildId: store.buildId,
       questionSetVersion: store.questionSetVersion,
       editorialHashSha256: index.editorialHashSha256,

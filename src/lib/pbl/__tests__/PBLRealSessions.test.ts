@@ -68,7 +68,7 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
     });
 
     engine = new PBLEngine(repo);
-  });
+  }, 60_000);
 
   const targetLessons = ['A00', 'A02', 'A06', 'A08', 'A09', 'A10', 'A11', 'A13'];
   for (const lessonId of targetLessons) {

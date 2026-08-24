@@ -45,8 +45,16 @@ if (!errors.length) {
   check(xfers.length === 190, `Transfer sets count expected 190, found ${xfers.length}`);
   check(diags.length === 190, `Diagnostic paths count expected 190, found ${diags.length}`);
   check(sessions.length === 13, `Cumulative review sessions count expected 13, found ${sessions.length}`);
-  check(Object.keys(qcl).length === 2588, `Question competency links count expected 2588, found ${Object.keys(qcl).length}`);
-  check(Object.keys(qp).length === 2588, `Question pedagogy index count expected 2588, found ${Object.keys(qp).length}`);
+  const expectedQuestionLinks = manifest.totalOfficialQuestionsCovered;
+  const expectedQuestionPedagogy = manifest.totalQuestionPedagogy;
+  check(
+    Object.keys(qcl).length === expectedQuestionLinks,
+    `Question competency links count expected ${expectedQuestionLinks}, found ${Object.keys(qcl).length}`,
+  );
+  check(
+    Object.keys(qp).length === expectedQuestionPedagogy,
+    `Question pedagogy index count expected ${expectedQuestionPedagogy}, found ${Object.keys(qp).length}`,
+  );
 
   const compIds = new Set(comps.map((c) => c.competencyId));
   check(cases.every((c) => compIds.has(c.competencyRef)), 'Case references non-existent competency');
@@ -103,6 +111,8 @@ if (!errors.length) {
     gradedCases: gradedCases.length,
     blockedUngradedCases: ungradedCases.length,
     transferSetsWithPresentation: transferSetsWithPresentation.length,
+    questionLinks: Object.keys(qcl).length,
+    questionPedagogy: Object.keys(qp).length,
   };
 }
 
@@ -118,8 +128,8 @@ if (errors.length > 0) {
     transferSets: 190,
     diagnosticPaths: 190,
     cumulativeSessions: 13,
-    questionLinks: 2588,
-    questionPedagogy: 2588,
+    questionLinks: globalThis.pblAuditMetrics.questionLinks,
+    questionPedagogy: globalThis.pblAuditMetrics.questionPedagogy,
     referentialIntegrity: '100% PERFECT',
     answerContract: globalThis.pblAuditMetrics,
   }, null, 2));

@@ -625,11 +625,13 @@ const sourceFiles = [
 const sourceDigest = sha256(sourceFiles.map((file) => `${relative(file)}:${sha256File(file)}`).join('\n'));
 const buildId = sha256(`${SCHEMA_VERSION}:${COMPILER_VERSION}:${sourceDigest}`).slice(0, 16);
 
-if (fs.existsSync(PUBLIC_ROOT)) {
-  const resolvedPublic = path.resolve(PUBLIC_ROOT);
-  const expectedPublic = path.resolve(ROOT, 'public', 'knowledge', 'pedagogical');
-  assert(resolvedPublic === expectedPublic && resolvedPublic.startsWith(path.resolve(ROOT) + path.sep), 'Destino público inseguro.');
-  fs.rmSync(resolvedPublic, { recursive: true, force: true });
+// Este builder é proprietário de `pedagogical/units`, mas não de
+// `pedagogical/views`, publicada separadamente pelo pipeline de Views v4.2.
+if (fs.existsSync(UNIT_OUTPUT_ROOT)) {
+  const resolvedUnits = path.resolve(UNIT_OUTPUT_ROOT);
+  const expectedUnits = path.resolve(ROOT, 'public', 'knowledge', 'pedagogical', 'units');
+  assert(resolvedUnits === expectedUnits && resolvedUnits.startsWith(path.resolve(ROOT) + path.sep), 'Destino público inseguro.');
+  fs.rmSync(resolvedUnits, { recursive: true, force: true });
 }
 fs.mkdirSync(UNIT_OUTPUT_ROOT, { recursive: true });
 
@@ -1168,6 +1170,154 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
   return { raw, normalized, index };
 }).sort((left, right) => left.normalized.id.localeCompare(right.normalized.id, 'en'));
 
+const apostilaEditorialQuestionCount = editorialQuestionRecords.length;
+const apostilaEditorialQuestionIds = new Set(editorialQuestionRecords.map((record) => record.normalized.id));
+const configuredQuestionOverlay = argumentValue('--question-overlay') || process.env.SUVECA_QUESTION_OVERLAY;
+const questionOverlayPath = path.resolve(
+  configuredQuestionOverlay
+    || path.join(PORTUGUESE_ROOT, 'Integracao_Pedagogica', 'question_bank_v1', 'compiled', 'product_questions.online.jsonl'),
+);
+const questionOverlayManifestPath = path.join(path.dirname(questionOverlayPath), 'manifest.json');
+let approvedOnlineQuestions = [];
+if (fs.existsSync(questionOverlayPath) || fs.existsSync(questionOverlayManifestPath)) {
+  assert(
+    fs.existsSync(questionOverlayPath) && fs.existsSync(questionOverlayManifestPath),
+    'Overlay online incompleto: dados e manifest devem existir juntos.',
+  );
+  const overlayManifest = readJson(questionOverlayManifestPath);
+  if (overlayManifest.publicationMode === 'approved' && overlayManifest.publicationStatus === 'publishable') {
+    approvedOnlineQuestions = readJsonl(questionOverlayPath);
+    assert(
+      overlayManifest.approval?.approvedRecords === approvedOnlineQuestions.length,
+      'Overlay online aprovado sem correspondência integral no registro de aprovações.',
+    );
+    assert(
+      overlayManifest.approval?.policyRefs?.includes('QAPOL-AGENT-APPROVAL-2026-08-24'),
+      'Overlay online não referencia a política de aprovação por agente autorizada.',
+    );
+  }
+}
+
+const existingEditorialQuestionIds = new Set(editorialQuestionRecords.map((record) => record.normalized.id));
+for (const question of approvedOnlineQuestions) {
+  assert(question?.id && !existingEditorialQuestionIds.has(question.id), `ID de questão online duplicado: ${question?.id}.`);
+  assert(question.rawOfficialQuestion?.originKind === 'online_platform_capture', `${question.id}: payload online sem origem válida.`);
+  assert(question.correctAnswer, `${question.id}: questão online aprovada sem gabarito.`);
+  const lessonIds = [...new Set(question.lessonIds || [question.primaryLessonId])].sort();
+  const moduleIds = [...new Set(question.moduleIds || lessonIds.map((lessonId) => `mod${Number(lessonId.slice(1))}`))].sort();
+  const options = (question.options || []).map((option, index) => ({
+    letter: String(option.label || String.fromCharCode(65 + index)).toUpperCase(),
+    label: String(option.label || String.fromCharCode(65 + index)).toLowerCase(),
+    text: String(option.text || ''),
+    ...(option.html ? { html: option.html } : {}),
+  }));
+  const sourceOfficialQuestion = question.rawOfficialQuestion || {};
+  const sourcePayload = sourceOfficialQuestion.questionPayload || {};
+  const sourceSolution = sourcePayload.solution || {};
+  const raw = {
+    id: question.id,
+    primaryLessonId: question.primaryLessonId,
+    lessonIds,
+    originKind: 'online_platform_capture',
+    questionEntityRef: question.questionEntityRef,
+    sourceOccurrenceRefs: question.sourceOccurrenceRefs || [],
+    officialQuestion: {
+      schemaVersion: sourceOfficialQuestion.schemaVersion,
+      officialQuestionId: sourceOfficialQuestion.officialQuestionId,
+      lessonId: sourceOfficialQuestion.lessonId,
+      sourceQuestionId: sourceOfficialQuestion.sourceQuestionId,
+      questionPayloadProjection: {
+        id: sourcePayload.id,
+        statement: sourcePayload.statement,
+        statement_html: sourcePayload.statement_html,
+        statement_json: sourcePayload.statement_json,
+        support_text: sourcePayload.support_text,
+        support_text_html: sourcePayload.support_text_html,
+        support_text_json: sourcePayload.support_text_json,
+        has_support_text: sourcePayload.has_support_text,
+        topics: sourcePayload.topics || [],
+        difficulty: sourcePayload.difficulty,
+        answer_type: sourcePayload.answer_type,
+        alternatives: sourcePayload.alternatives || [],
+        correct_answer: sourcePayload.correct_answer,
+        correct_answer_source: sourcePayload.correct_answer_source || [],
+        solution: {
+          key: sourceSolution.key,
+          complete: sourceSolution.complete,
+          brief: sourceSolution.brief,
+        },
+      },
+      answerPayloadProjection: {
+        providerQuestionId: sourceOfficialQuestion.answerPayload?.providerQuestionId,
+        answer: sourceOfficialQuestion.answerPayload?.answer,
+      },
+      sourceQuestionSha256: sourceOfficialQuestion.questionSha256,
+      sourceAnswerSha256: sourceOfficialQuestion.answerSha256,
+      projectionPolicy: 'source_backed_deployment_projection',
+      questionEntityRef: sourceOfficialQuestion.questionEntityRef,
+      sourceOccurrenceRef: sourceOfficialQuestion.sourceOccurrenceRef,
+      originKind: sourceOfficialQuestion.originKind,
+      provider: sourceOfficialQuestion.provider,
+    },
+  };
+  const normalized = {
+    id: question.id,
+    primaryLessonId: question.primaryLessonId,
+    lessonIds,
+    moduleIds,
+    originalQuestionId: question.rawOfficialQuestion.sourceQuestionId,
+    questionType: question.questionType,
+    supportText: question.supportText || '',
+    prompt: question.prompt,
+    options,
+    correctAnswer: question.correctAnswer,
+    commentary: question.commentary || '',
+    commentaryOrigin: question.commentaryOrigin || 'online_source_solution',
+    bank: question.bank || 'Estratégia Questões',
+    organization: null,
+    position: null,
+    year: Number.isFinite(question.year) ? question.year : null,
+    sourceLabel: 'Estratégia Questões — captura online',
+    conceptIds: question.conceptIds || [],
+    ruleIds: question.ruleIds || [],
+    learningObjectiveIds: question.learningObjectiveIds || [],
+    sourceRefs: question.sourceOccurrenceRefs || [],
+    sourceOrigins: question.sourceOrigins || ['online_platform_capture'],
+    mediaRefs: question.mediaRefs || [],
+    questionEntityRef: question.questionEntityRef,
+    source: {
+      kind: 'online_platform_capture',
+      provider: 'estrategia_questoes',
+      sourceOccurrenceRefs: question.sourceOccurrenceRefs || [],
+    },
+    extractionConfidence: 1,
+    answerConfidence: 1,
+  };
+  const index = {
+    questionId: question.id,
+    editorialHashSha256: sha256(JSON.stringify(raw)),
+    editorialProjection: {
+      primaryLessonId: question.primaryLessonId,
+      lessonIds,
+      difficulty: 'UNSPECIFIED',
+      answerType: question.questionType,
+      correctAnswer: question.correctAnswer,
+      topicNames: lessonIds.map((lessonId) => lessonTitles.get(lessonId) || lessonId),
+      banks: normalized.bank ? [normalized.bank] : [],
+      organizations: [],
+      years: normalized.year === null ? [] : [normalized.year],
+      hasCommentary: Boolean(normalized.commentary),
+      extractionConfidence: 1,
+      answerConfidence: 1,
+      originKind: 'online_platform_capture',
+    },
+    suvecaDerived: { moduleIds, conceptIds: normalized.conceptIds },
+  };
+  existingEditorialQuestionIds.add(question.id);
+  editorialQuestionRecords.push({ raw, normalized, index });
+}
+editorialQuestionRecords.sort((left, right) => left.normalized.id.localeCompare(right.normalized.id, 'en'));
+
 assert(editorialQuestionRecords.length >= 1000, `Banco editorial insuficiente: ${editorialQuestionRecords.length}.`);
 const editorialQuestionCountByLesson = Object.fromEntries(
   Array.from({ length: 14 }, (_, index) => {
@@ -1182,6 +1332,10 @@ const editorialSimuladoVersion = `editorial-simulado-${buildId}`;
 const candidatesByLesson = new Map(EXPECTED_INTEGRATED_LESSONS.map((number) => {
   const lessonId = `A${number}`;
   const candidates = editorialQuestionRecords
+    // Simulado, duelo e suas chaves persistidas mantêm o universo histórico da
+    // apostila. O overlay online amplia o explorador e a prática por aula sem
+    // trocar silenciosamente as 20 questões editoriais já publicadas.
+    .filter((record) => apostilaEditorialQuestionIds.has(record.normalized.id))
     .filter((record) => record.normalized.lessonIds.includes(lessonId))
     .sort((left, right) => {
       const leftLength = left.normalized.supportText.length + left.normalized.prompt.length;
@@ -1404,6 +1558,7 @@ const curriculumArtifact = {
     decisionProcedures: procedures.length,
     simuladoQuestions: simuladoQuestions.length,
     editorialQuestions: editorialQuestionRecords.length,
+    approvedOnlineQuestions: approvedOnlineQuestions.length,
     editorialQuestionEligibleOccurrences: eligibleOccurrences.length,
     editorialQuestionQuarantined: quarantinedQuestionIds.size,
     duelQuestions: duelQuestions.length,
@@ -1493,14 +1648,21 @@ const editorialQuestionQuality = {
     pairedSourceOccurrences: corpusQuestionOccurrences.filter((occurrence) => occurrence.answer).length,
     eligibleOccurrences: eligibleOccurrences.length,
     uniquePublishedQuestions: editorialQuestionRecords.length,
-    deduplicatedEligibleOccurrences: eligibleOccurrences.length - editorialQuestionRecords.length,
+    apostilaPublishedQuestions: apostilaEditorialQuestionCount,
+    approvedOnlineQuestions: approvedOnlineQuestions.length,
+    deduplicatedEligibleOccurrences: eligibleOccurrences.length - apostilaEditorialQuestionCount,
     quarantinedOccurrences: quarantinedQuestionIds.size,
   },
   perLesson: editorialQuestionCountByLesson,
   quarantine: [...quarantinedQuestionIds].map(([sourceKey, reason]) => ({ sourceKey, reason })),
 };
 const editorialQuestionSummary = {
-  source: 'corpus_apostila_A00_A13',
+  source: approvedOnlineQuestions.length
+    ? 'corpus_apostila_A00_A13_plus_approved_online_overlay'
+    : 'corpus_apostila_A00_A13',
+  sourceOrigins: approvedOnlineQuestions.length
+    ? ['apostila_embedded', 'online_platform_capture']
+    : ['apostila_embedded'],
   buildId,
   questionSetVersion: editorialCorpusVersion,
   total: editorialQuestionRecords.length,

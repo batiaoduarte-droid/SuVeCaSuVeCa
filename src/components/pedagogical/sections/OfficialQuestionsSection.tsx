@@ -60,6 +60,10 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
             || enrichedMap[`${lessonId}:${sourceQuestionId}`];
 
           let prompt = presentation?.stem || normalized?.prompt || payload.prompt || q.prompt || '';
+          const supportText = normalized?.supportText || payload.support_text;
+          if (supportText && !prompt.includes(supportText)) {
+            prompt = `${supportText}\n\n${prompt}`;
+          }
           if (prompt.includes('Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-')) {
             if ((q.options || payload.options || []).length > 0) {
               prompt = 'Assinale a alternativa correta referente aos conceitos gramaticais e fonéticos estudados:';

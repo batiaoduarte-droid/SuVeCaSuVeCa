@@ -2,6 +2,7 @@ export interface NormalizedQuestion {
   id: string;
   originalQuestionId: string;
   prompt: string;
+  supportText?: string;
   questionType?: string;
   options?: Array<{ letter: string; text: string }>;
   correctAnswer?: string;
@@ -11,6 +12,7 @@ export interface NormalizedQuestion {
 }
 
 const partCache = new Map<string, Record<string, NormalizedQuestion>>();
+const lessonShardCache = new Map<string, string[]>();
 
 const LESSON_PARTS_MAP: Record<string, string[]> = {
   A00: ['001'],
@@ -29,6 +31,35 @@ const LESSON_PARTS_MAP: Record<string, string[]> = {
   A13: ['009', '010'],
 };
 
+const resolveNormalizedShardFiles = async (lessonCode: string): Promise<string[]> => {
+  if (lessonShardCache.has(lessonCode)) return lessonShardCache.get(lessonCode)!;
+  try {
+    const response = await fetch('/knowledge/official-questions.manifest.json', {
+      headers: { Accept: 'application/json' },
+    });
+    if (response.ok) {
+      const manifest = await response.json() as {
+        shards?: Array<{ questionIds?: string[]; normalized?: { file?: string } }>;
+      };
+      const prefix = `${lessonCode}:`;
+      const files = (manifest.shards || [])
+        .filter((shard) => (shard.questionIds || []).some((id) => id.startsWith(prefix)))
+        .map((shard) => shard.normalized?.file)
+        .filter((file): file is string => Boolean(file));
+      if (files.length > 0) {
+        lessonShardCache.set(lessonCode, files);
+        return files;
+      }
+    }
+  } catch {
+    // O fallback abaixo preserva compatibilidade com manifests legados.
+  }
+  const fallback = (LESSON_PARTS_MAP[lessonCode] || ['001'])
+    .map((part) => `official-question-parts/official-questions.normalized.part-${part}.json`);
+  lessonShardCache.set(lessonCode, fallback);
+  return fallback;
+};
+
 export const fetchNormalizedQuestionsForLesson = async (
   lessonCode: string
 ): Promise<Record<string, NormalizedQuestion>> => {
@@ -37,12 +68,12 @@ export const fetchNormalizedQuestionsForLesson = async (
     return partCache.get(code)!;
   }
 
-  const parts = LESSON_PARTS_MAP[code] || ['001'];
+  const shardFiles = await resolveNormalizedShardFiles(code);
   const combinedMap: Record<string, NormalizedQuestion> = {};
 
-  for (const partNum of parts) {
+  for (const shardFile of shardFiles) {
     try {
-      const res = await fetch(`/knowledge/official-question-parts/official-questions.normalized.part-${partNum}.json`, {
+      const res = await fetch(`/knowledge/${shardFile}`, {
         headers: { Accept: 'application/json' },
       });
       if (!res.ok) continue;

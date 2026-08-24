@@ -551,6 +551,7 @@ export interface OfficialQuestionView {
     exam_board?: string;
     organization?: string;
     year?: number;
+    support_text?: string;
     prompt?: string;
     options?: Array<{ label?: string; letter?: string; text?: string }>;
   };
