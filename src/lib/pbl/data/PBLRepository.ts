@@ -28,6 +28,7 @@ export interface IPBLRepository {
   getQuestionPedagogy(questionId: string): Promise<QuestionPedagogy | null>;
   getQuestionCompetencyLink(questionId: string): Promise<QuestionCompetencyLink | null>;
   getQuestionPresentation(questionId: string): Promise<PBLQuestionPresentation | null>;
+  getRulePresentation(unitId: string, ruleRef: string): Promise<PBLRulePresentation | null>;
 
   getDiagnosticPath(id: string): Promise<PBLDiagnosticPath | null>;
   getDiagnosticPathForCompetency(competencyId: string): Promise<PBLDiagnosticPath | null>;
@@ -41,6 +42,31 @@ export interface IPBLRepository {
   getManifest(): Promise<PBLManifest | null>;
 }
 
+export interface PBLRulePresentation {
+  ruleRef: string;
+  title: string;
+  statement: string;
+}
+
+interface PedagogicalUnitView {
+  officialQuestions?: Array<Record<string, unknown>>;
+  sections?: {
+    rules?: {
+      items?: Array<{
+        entityId?: string;
+        title?: string;
+        statement?: string;
+      }>;
+    };
+  };
+}
+
+const normalizedRuleRef = (value: string) => String(value || '')
+  .trim()
+  .toUpperCase()
+  .replace(/^RULF-/, 'RULE-')
+  .replace(/-(\d+)$/, (_match, digits) => `-${Number(digits)}`);
+
 export class PBLRepository implements IPBLRepository {
   private competencies: Map<string, PBLCompetency> = new Map();
   private cases: Map<string, PBLCase> = new Map();
@@ -53,7 +79,7 @@ export class PBLRepository implements IPBLRepository {
   private questionPedagogyMap: Map<string, QuestionPedagogy> = new Map();
   private questionLinksMap: Map<string, QuestionCompetencyLink> = new Map();
   private questionPresentations: Map<string, PBLQuestionPresentation> = new Map();
-  private unitViewCache: Map<string, unknown> = new Map();
+  private unitViewCache: Map<string, PedagogicalUnitView> = new Map();
   private manifest: PBLManifest | null = null;
   private initialized = false;
 
@@ -303,6 +329,38 @@ export class PBLRepository implements IPBLRepository {
     return this.questionLinksMap.get(questionId) || null;
   }
 
+  private async getUnitView(unitId: string): Promise<PedagogicalUnitView | null> {
+    const cached = this.unitViewCache.get(unitId);
+    if (cached) return cached;
+    const view = await this.safeFetchJson<PedagogicalUnitView>(
+      `/knowledge/pedagogical/views/${unitId}.json`
+    );
+    if (view) this.unitViewCache.set(unitId, view);
+    return view;
+  }
+
+  public async getRulePresentation(
+    unitId: string,
+    ruleRef: string
+  ): Promise<PBLRulePresentation | null> {
+    if (!unitId || !ruleRef) return null;
+    const view = await this.getUnitView(unitId);
+    const rules = view?.sections?.rules?.items || [];
+    const requestedRef = normalizedRuleRef(ruleRef);
+    const requestedOrdinal = Number.parseInt(/-(\d+)$/.exec(requestedRef)?.[1] || '', 10);
+    const matchedRule = rules.find((rule) => normalizedRuleRef(rule.entityId || '') === requestedRef)
+      || (Number.isFinite(requestedOrdinal) && requestedOrdinal > 0
+        ? rules[requestedOrdinal - 1]
+        : undefined);
+    const statement = formatOfficialContent(matchedRule?.statement);
+    if (!matchedRule || !statement) return null;
+    return {
+      ruleRef: matchedRule.entityId || ruleRef,
+      title: formatOfficialContent(matchedRule.title) || 'Critério decisivo',
+      statement,
+    };
+  }
+
   public async getQuestionPresentation(questionId: string): Promise<PBLQuestionPresentation | null> {
     const cached = this.questionPresentations.get(questionId);
     if (cached) return cached;
@@ -335,17 +393,8 @@ export class PBLRepository implements IPBLRepository {
 
     const link = this.questionLinksMap.get(questionId);
     if (!link?.unitId) return null;
-    let view = this.unitViewCache.get(link.unitId) as {
-      officialQuestions?: Array<Record<string, unknown>>;
-    } | undefined;
-    if (!view) {
-      const fetchedView = await this.safeFetchJson<{
-        officialQuestions?: Array<Record<string, unknown>>;
-      }>(`/knowledge/pedagogical/views/${link.unitId}.json`);
-      if (!fetchedView) return null;
-      view = fetchedView;
-      this.unitViewCache.set(link.unitId, view);
-    }
+    const view = await this.getUnitView(link.unitId);
+    if (!view) return null;
 
     const question = view.officialQuestions?.find((candidate) =>
       candidate.officialQuestionId === questionId || candidate.questionId === questionId

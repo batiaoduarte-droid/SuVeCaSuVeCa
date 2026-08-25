@@ -86,9 +86,12 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await chooseCurrentPublishedCorrectAnswer(page);
     await submitWithHighConfidence(page, /validar transferência/i);
 
-    await expect(page.getByRole('heading', { name: /feche o ciclo/i })).toBeVisible();
-    await page.getByLabel(/que critério você aplicará/i).fill('Primeiro identificarei o fenômeno e aplicarei o teste decisivo antes de comparar as alternativas.');
-    await page.getByRole('button', { name: /registrar reflexão/i }).click();
+    await expect(page.getByRole('heading', { name: /transforme o resultado em uma decisão/i })).toBeVisible();
+    await expect(page.getByText(/critério para a próxima questão/i)).toBeVisible();
+    await expect(page.getByText(/^(?:RULE|RULF)-/i)).toHaveCount(0);
+    await page.getByText('Consigo explicar', { exact: true }).click();
+    await page.getByLabel(/na próxima questão, primeiro vou/i).fill('Primeiro identificarei o fenômeno e aplicarei o teste decisivo antes de comparar as alternativas.');
+    await page.getByRole('button', { name: /salvar decisão e ver próximos passos/i }).click();
 
     await expect(page.getByText(/sessão finalizada/i)).toBeVisible();
     await expect(page.getByText(/domínio demonstrado em transferência/i)).toBeVisible();
@@ -102,6 +105,25 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     });
     expect(savedPBLItem).toMatchObject({ origin: 'pbl', moduleRef: 'IP-A00-G01', questionId: 'OQ-A00-aula00.q0068' });
     expect(savedPBLItem.nextReviewAt).toBeTruthy();
+  });
+
+  test('reflexão de domínio mostra a regra pedagógica em vez do identificador interno', async ({ page }) => {
+    await openApp(page);
+    await openTab(page, 'Aprender por Problemas (PBL)');
+    await page.getByRole('button', { name: /iniciar sessão recomendada/i }).click();
+
+    await chooseAnswer(page, 'Errado');
+    await submitWithHighConfidence(page, /confirmar hipótese/i);
+    await page.getByRole('button', { name: /avançar para transferência/i }).click();
+
+    await chooseCurrentPublishedCorrectAnswer(page);
+    await submitWithHighConfidence(page, /validar transferência/i);
+    await chooseCurrentPublishedCorrectAnswer(page);
+    await submitWithHighConfidence(page, /validar transferência/i);
+
+    await expect(page.getByText(/critério para a próxima questão/i)).toBeVisible();
+    await expect(page.getByText(/número de fonemas.*número de letras/i)).toBeVisible();
+    await expect(page.getByText(/^(?:RULE|RULF)-/i)).toHaveCount(0);
   });
 
   test('pausa e retoma uma sessão ativa', async ({ page }) => {

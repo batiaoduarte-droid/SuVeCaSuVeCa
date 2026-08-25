@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { PBLRepository } from '../data/PBLRepository';
 import type { PBLCompetency, PBLCase, PBLTransferSet, PBLDiagnosticPath } from '../../../types/pbl';
 
@@ -73,6 +73,10 @@ describe('PBLRepository', () => {
     });
   });
 
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
   it('should initialize and retrieve competency by ID', async () => {
     const comp = await repo.getCompetency('COMP-A10-G05-01');
     expect(comp).toBeDefined();
@@ -91,5 +95,36 @@ describe('PBLRepository', () => {
     expect(pCase).toBeDefined();
     expect(pCase?.caseId).toBe('PBL-CASE-A10-G05-01');
     expect(pCase?.anchorQuestionRef).toBe('OQ-A10-aula10.q0010');
+  });
+
+  it('resolve a referência técnica para uma regra compreensível', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      headers: { get: () => 'application/json' },
+      text: async () => JSON.stringify({
+        sections: {
+          rules: {
+            items: [{
+              entityId: 'RULE-IP-A10-G05-01',
+              title: 'Teste do topônimo',
+              statement: 'Use o teste: vou a, volto da; vou a, volto de.',
+            }],
+          },
+        },
+      }),
+    });
+    vi.stubGlobal('fetch', fetchMock);
+
+    const rule = await repo.getRulePresentation('IP-A10-G05', 'RULF-IP-A10-G05-001');
+
+    expect(rule).toEqual({
+      ruleRef: 'RULE-IP-A10-G05-01',
+      title: 'Teste do topônimo',
+      statement: 'Use o teste: vou a, volto da; vou a, volto de.',
+    });
+    expect(fetchMock).toHaveBeenCalledWith(
+      '/knowledge/pedagogical/views/IP-A10-G05.json',
+      expect.any(Object)
+    );
   });
 });

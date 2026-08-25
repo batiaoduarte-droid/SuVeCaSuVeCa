@@ -930,6 +930,12 @@ const cleanEditorialQuestionText = (value) => String(value || '')
   .replace(/[ \t]{2,}/g, ' ')
   .trim();
 
+const cleanEditorialQuestionPrompt = (value) => cleanEditorialQuestionText(value)
+  // OCR residue found after the command terminator in A00:aula00.q0002.
+  // Restrict the repair to this malformed ending so legitimate occurrences of
+  // "an" in support texts or alternatives are left untouched.
+  .replace(/(é\s*:)\s*an$/i, '$1');
+
 const supportSourcePattern = /^(?:fonte|refer[êe]ncia|adaptado de|dispon[ií]vel em|acesso em)\b/i;
 const supportHeadingPattern = /^(?:texto|poema|crônica|artigo|notícia|fragmento|excerto)(?:\s+[A-Z0-9.-]+)?$/i;
 const structureEditorialSupportText = (supportText, command) => {
@@ -1080,7 +1086,7 @@ const normalizeEligibleQuestion = (occurrence) => {
   const { lessonId, question, answer } = occurrence;
   const sourceKey = occurrenceKey(occurrence);
   if (quarantinedQuestionIds.has(sourceKey)) return null;
-  const cleanedPrompt = cleanEditorialQuestionText(question?.prompt);
+  const cleanedPrompt = cleanEditorialQuestionPrompt(question?.prompt);
   const cleanedSupportText = cleanEditorialQuestionText(question?.support_text);
   const cleanedCommentary = cleanEditorialQuestionText(answer?.commentary);
   if (!question?.question_id || cleanedPrompt.length < 10) return null;

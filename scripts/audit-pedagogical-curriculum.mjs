@@ -224,6 +224,10 @@ if (!errors.length) {
   check(JSON.stringify(questionIndex.items.map((item) => item.questionId)) === JSON.stringify(questionIds), 'Ordem/IDs do índice editorial divergem.');
   check(simulado.questions.every((question) => questionIds.includes(question.officialQuestionId)), 'Simulado referencia questão ausente do banco editorial.');
   check(normalizedQuestions.every((question) => question.prompt?.trim().length >= 10), 'Banco editorial contém enunciado inválido.');
+  check(
+    normalizedQuestions.every((question) => !/(é\s*:)\s*an$/i.test(question.prompt)),
+    'Banco editorial contém sufixo residual de OCR no enunciado.',
+  );
   check(normalizedQuestions.every((question) => question.commentary?.trim()), 'Banco editorial contém comentário vazio.');
   check(normalizedQuestions.every((question) => question.extractionConfidence >= 0.9 && question.answerConfidence >= 0.9), 'Banco editorial viola a confiança mínima de 0,9.');
   check(normalizedQuestions.every((question) => ['CERTO_ERRADO', 'MULTIPLA_ESCOLHA'].includes(question.questionType)), 'Banco editorial contém tipo não suportado.');

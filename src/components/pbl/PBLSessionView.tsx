@@ -12,6 +12,7 @@ import { pblEngine } from '../../lib/pbl/engine/PBLEngine';
 import { PBLSessionRepository } from '../../lib/pbl/persistence/PBLSessionRepository';
 import { pblSessionManager } from '../../lib/pbl/session/PBLSessionManager';
 import { formatPBLAnswer } from '../../lib/pbl/answerAdapter';
+import type { PBLRulePresentation } from '../../lib/pbl/data/PBLRepository';
 import { PBLProblemCard } from './PBLProblemCard';
 import { PBLConfidenceSelector } from './PBLConfidenceSelector';
 import { PBLDiagnosticView } from './PBLDiagnosticView';
@@ -46,6 +47,12 @@ const phaseLabels: Record<PBLSession['phase'], string> = {
   completed: 'Resumo',
 };
 
+const learnerFacingRule = (value: string | null | undefined) => {
+  const text = String(value || '').trim();
+  if (text.length < 12) return '';
+  return /^(?:RULE|RULF|PROC|WARN|MISC|KB|OBJ|COMP)-[A-Z0-9-]+$/i.test(text) ? '' : text;
+};
+
 export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   initialSession,
   onExit,
@@ -65,6 +72,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   });
   const [currentCase, setCurrentCase] = useState<PBLCase | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<PBLQuestionPresentation | null>(null);
+  const [currentRule, setCurrentRule] = useState<PBLRulePresentation | null>(null);
   const [competencyTitles, setCompetencyTitles] = useState<Record<string, string>>({});
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [confidence, setConfidence] = useState<PBLConfidenceLevel | null>(null);
@@ -110,7 +118,14 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     let active = true;
     void (async () => {
       const pblCase = await pblEngine.caseSelector.selectAnchorCase(session.currentCompetencyRef);
-      if (active) setCurrentCase(pblCase);
+      if (!active) return;
+      setCurrentCase(pblCase);
+      setCurrentRule(null);
+      const ruleRef = pblCase?.primaryDecisiveRuleRef
+        || pblCase?.solutionStrategy.formulasOrRulesApplied?.[0];
+      if (!pblCase || !ruleRef) return;
+      const presentation = await pblEngine.repo.getRulePresentation(pblCase.unitRef, ruleRef);
+      if (active) setCurrentRule(presentation);
     })();
     return () => { active = false; };
   }, [session.currentCaseRef, session.currentCompetencyRef]);
@@ -258,12 +273,18 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     await persist(nextSession);
   };
 
-  const suggestedReflectionRule =
-    session.lastInterventionPayload?.ruleStatement
-    || session.lastDiagnosticResult?.intervention.microLesson
-    || currentCase?.solutionStrategy.formulasOrRulesApplied?.[0]
-    || currentCase?.cognitiveDiagnostic.correctiveGuidance
+  const suggestedReflectionRule = [
+    session.lastInterventionPayload?.ruleStatement,
+    currentRule?.statement,
+    session.lastDiagnosticResult?.intervention.microLesson,
+    ...(currentCase?.solutionStrategy.formulasOrRulesApplied || []),
+    currentCase?.cognitiveDiagnostic.correctiveGuidance,
+    ...(currentCase?.solutionStrategy.stepByStepAlgorithm || []),
+  ].map(learnerFacingRule).find(Boolean)
     || `Antes de responder, identifique o critério decisivo de ${competencyTitles[session.currentCompetencyRef] || 'esta competência'} e aplique-o ao enunciado.`;
+  const suggestedReflectionRuleTitle = learnerFacingRule(session.lastInterventionPayload?.ruleTitle)
+    || currentRule?.title
+    || 'Orientação prática';
   const reflectionWordCount = reflection.trim().split(/\s+/).filter(Boolean).length;
   const reflectionIsValid = Boolean(
     reflectionDecision
@@ -433,8 +454,10 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
               <p className="mt-1 text-xs text-slate-600">Use essa evidência para decidir se a regra já está clara ou precisa de revisão.</p>
             </div>
             <div className="rounded-xl border border-indigo-100 bg-indigo-50 p-4">
-              <p className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-indigo-700"><Lightbulb className="h-3.5 w-3.5" /> Regra em foco</p>
-              <p className="mt-2 text-xs leading-relaxed text-indigo-950">{suggestedReflectionRule}</p>
+              <p className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-indigo-700"><Lightbulb className="h-3.5 w-3.5" /> Critério para a próxima questão</p>
+              <p className="mt-2 text-xs font-bold text-indigo-950">{suggestedReflectionRuleTitle}</p>
+              <p className="mt-1 text-xs leading-relaxed text-indigo-950">{suggestedReflectionRule}</p>
+              <p className="mt-2 text-[11px] leading-relaxed text-indigo-800">Esta é a orientação que você poderá reaplicar ao encontrar uma questão semelhante.</p>
             </div>
           </div>
 
@@ -443,7 +466,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
             <div className="mt-2 grid gap-2 sm:grid-cols-3">
               {([
                 ['own_rule', 'Consigo explicar', 'Vou registrar o critério com minhas palavras.'],
-                ['suggested_rule', 'Usar a regra sugerida', 'A regra acima representa o que devo aplicar.'],
+                ['suggested_rule', 'Usar este critério', 'A orientação acima representa o que devo aplicar.'],
                 ['needs_review', 'Ainda não sei', 'Quero encaminhar este ponto para revisão.'],
               ] as const).map(([value, title, description]) => (
                 <label key={value} className={`cursor-pointer rounded-xl border p-3 ${reflectionDecision === value ? 'border-indigo-500 bg-indigo-50 ring-2 ring-indigo-100' : 'border-slate-200 bg-white'}`}>

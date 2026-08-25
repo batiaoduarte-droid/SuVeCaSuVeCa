@@ -449,6 +449,48 @@ export default function App() {
   const activeStudyStreak = getActiveStudyStreak(achievementProgress);
   const hasStudiedToday = achievementProgress.lastStudyDate === studyDayKey();
 
+  const handleContinueLearning = () => {
+    if (!selectedCurriculumModule) return;
+
+    const moduleId = selectedCurriculumModule.id;
+    const currentUnitBelongsToModule = moduleIdForUnit(openUnitId) === moduleId;
+    const firstUnreadSectionIndex = selectedCurriculumModule.sections.findIndex(
+      (_section, index) => !metrics.readSectionIds.includes(`${moduleId}:section-${index}`)
+    );
+    const resumeSectionIndex = firstUnreadSectionIndex >= 0
+      ? firstUnreadSectionIndex
+      : Math.max(0, selectedCurriculumModule.sections.length - 1);
+    const resumeUnitId = currentUnitBelongsToModule
+      ? openUnitId
+      : unitIdForSection(selectedCurriculumModule.sections[resumeSectionIndex]);
+    const resumeSectionId = currentUnitBelongsToModule ? openUnitSectionId : null;
+    const locationChanged = moduleId !== selectedModuleId
+      || resumeUnitId !== openUnitId
+      || resumeSectionId !== openUnitSectionId;
+
+    setSelectedModuleId(moduleId);
+    setOpenUnitId(resumeUnitId);
+    setOpenUnitSectionId(resumeSectionId);
+    setIsImmersiveFocus(true);
+    writeStudyLocation(
+      { moduleId, unitId: resumeUnitId, sectionId: resumeSectionId },
+      locationChanged ? 'push' : 'replace'
+    );
+    localStorage.setItem(lastModuleStorageKey(user?.uid), moduleId);
+    markModuleVisited(moduleId);
+
+    window.requestAnimationFrame(() => {
+      if (resumeUnitId) {
+        document.getElementById(`module-unit-${resumeUnitId}`)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        return;
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  };
+
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--text)] font-sans flex flex-col relative overflow-x-hidden">
       {/* Editorial Navigation */}
@@ -505,7 +547,7 @@ export default function App() {
                       <ContinueLearningCard
                         module={selectedCurriculumModule}
                         pendingErrors={cadernoErrors.filter((error) => error.status !== 'dominado')}
-                        onContinueModule={() => markModuleVisited(selectedModuleId)}
+                        onContinueModule={handleContinueLearning}
                         onReview={() => setActiveTab('agenda')}
                       />
                       <WeeklyGoalCard
