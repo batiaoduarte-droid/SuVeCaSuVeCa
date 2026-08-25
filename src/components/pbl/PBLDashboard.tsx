@@ -53,9 +53,10 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
         PBLSessionRepository.getLatestActiveSession(userId),
       ]);
       setCompetencies(comps);
-      const cases = await Promise.all(comps.map((competency) => pblRepository.getCaseForCompetency(competency.competencyId)));
       setUnavailableCompetencyIds(new Set(
-        comps.filter((_, index) => !cases[index]?.officialAnswer).map((competency) => competency.competencyId)
+        comps
+          .filter((competency) => competency.practiceCoverage?.status !== 'ready')
+          .map((competency) => competency.competencyId)
       ));
       setCumulativeSessions(cumulative);
       setUserMastery(mastery);
@@ -98,7 +99,9 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
       setActiveSession(session);
     } catch (error) {
       console.error('[PBLDashboard] Error starting session:', error);
-      setErrorMessage('Não foi possível iniciar a sessão. Nenhum progresso foi perdido.');
+      setErrorMessage(error instanceof Error
+        ? error.message
+        : 'Não foi possível iniciar a sessão. Nenhum progresso foi perdido.');
     } finally {
       setLoading(false);
     }
@@ -188,6 +191,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
             const mastery = userMastery[competency.competencyId];
             const score = mastery ? Math.round(mastery.score * 100) : 0;
             const unavailable = unavailableCompetencyIds.has(competency.competencyId);
+            const coverage = competency.practiceCoverage;
             const presentation = presentCompetencyTitle(competency.title);
             return (
               <article key={competency.competencyId} className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-xs">
@@ -195,9 +199,10 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
                   <span className="inline-flex rounded-md bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-700">{getLessonName(competency.lessonId)}</span>
                   <h3 className="mt-2 text-sm font-extrabold leading-snug text-slate-950">{presentation.title}</h3>
                   <span className="mt-1 inline-flex rounded-full border border-indigo-100 bg-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-800">{presentation.kind}</span>
+                  {coverage && <span className={`ml-1 mt-1 inline-flex rounded-full border px-2 py-0.5 text-[10px] font-bold ${coverage.status === 'ready' && coverage.strength !== 'minimum' ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : coverage.status === 'blocked' ? 'border-rose-200 bg-rose-50 text-rose-800' : 'border-amber-200 bg-amber-50 text-amber-800'}`}>{coverage.distinctQuestions} questões distintas · {coverage.strength === 'minimum' ? 'rotação mínima' : coverage.strength === 'adequate' ? 'rotação adequada' : 'rotação robusta'}</span>}
                   <p className="mt-2 line-clamp-3 text-[11px] leading-relaxed text-slate-600">{competency.description}</p>
                 </div>
-                <div className="mt-4 border-t border-slate-100 pt-3"><div className="flex justify-between text-[11px] text-slate-600"><span>Domínio atual</span><strong className="text-indigo-700">{score}%</strong></div><div className="mt-1 h-1.5 rounded-full bg-slate-100"><div className="h-full rounded-full bg-indigo-600" style={{ width: `${score}%` }} /></div><button type="button" disabled={loading || unavailable} onClick={() => handleStartSession({ mode: 'guided', targetCompetencyId: competency.competencyId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 text-xs font-bold text-indigo-800 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"><Clock3 className="h-3.5 w-3.5" /> {unavailable ? 'Aguardando gabarito oficial' : 'Praticar por 3–5 min'}</button></div>
+                <div className="mt-4 border-t border-slate-100 pt-3"><div className="flex justify-between text-[11px] text-slate-600"><span>Domínio atual</span><strong className="text-indigo-700">{score}%</strong></div><div className="mt-1 h-1.5 rounded-full bg-slate-100"><div className="h-full rounded-full bg-indigo-600" style={{ width: `${score}%` }} /></div><button type="button" disabled={loading || unavailable} onClick={() => handleStartSession({ mode: 'guided', targetCompetencyId: competency.competencyId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 text-xs font-bold text-indigo-800 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"><Clock3 className="h-3.5 w-3.5" /> {unavailable ? (coverage?.reason || 'Cobertura insuficiente para esta prática') : 'Praticar por 3–5 min'}</button></div>
               </article>
             );
           })}

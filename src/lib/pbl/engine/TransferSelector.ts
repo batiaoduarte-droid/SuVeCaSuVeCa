@@ -1,11 +1,10 @@
 import type {
-  PBLTransferSet,
   PBLTransferItem,
   ConfidenceEvaluation,
   CompetencyMastery,
 } from '../../../types/pbl';
 import type { IPBLRepository } from '../data/PBLRepository';
-import { QuestionPoolSelector } from './QuestionPoolSelector';
+import { buildQuestionFingerprint, QuestionPoolSelector } from './QuestionPoolSelector';
 
 export class TransferSelector {
   private questionPoolSelector: QuestionPoolSelector;
@@ -47,13 +46,27 @@ export class TransferSelector {
     if (!xferSet || xferSet.items.length === 0) return null;
 
     const excluded = new Set(excludedQuestionRefs);
-    let items = xferSet.items.filter((item) => !excluded.has(item.officialQuestionRef));
-    if (requirePresentation) {
-      const available = await Promise.all(
-        items.map(async (item) => ({ item, presentation: await this.repo.getQuestionPresentation(item.officialQuestionRef) }))
-      );
-      items = available.filter(({ presentation }) => Boolean(presentation)).map(({ item }) => item);
-    }
+    const excludedFingerprints = await this.questionPoolSelector.getPromptFingerprints(excludedQuestionRefs);
+    const available = await Promise.all(
+      xferSet.items
+        .filter((item) => !excluded.has(item.officialQuestionRef))
+        .map(async (item) => ({
+          item,
+          eligible: await this.questionPoolSelector.isQuestionEligibleForCompetency(
+            competencyId,
+            item.officialQuestionRef
+          ),
+          presentation: await this.repo.getQuestionPresentation(item.officialQuestionRef),
+        }))
+    );
+    let items = available
+      .filter(({ eligible, presentation }) =>
+        eligible
+        && (!requirePresentation || Boolean(presentation))
+        && Boolean(presentation)
+        && !excludedFingerprints.has(buildQuestionFingerprint(presentation!))
+      )
+      .map(({ item }) => item);
     if (!items.length) return null;
     const masteryScore = mastery?.score ?? 0;
 

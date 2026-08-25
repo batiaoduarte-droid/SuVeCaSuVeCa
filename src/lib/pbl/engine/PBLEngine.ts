@@ -4,6 +4,7 @@ import type {
   DiagnosticResult,
   InterventionPayload,
   NextActionDecision,
+  PBLReflectionDecision,
 } from '../../../types/pbl';
 import { IPBLRepository, pblRepository } from '../data/PBLRepository';
 import { SessionPlanner, SessionPlanRequest } from './SessionPlanner';
@@ -15,6 +16,12 @@ import { TransferSelector } from './TransferSelector';
 import { MasteryUpdater } from './MasteryUpdater';
 import { NextActionPolicy } from './NextActionPolicy';
 import { QuestionPoolSelector } from './QuestionPoolSelector';
+
+export interface PBLReflectionSubmission {
+  decision: PBLReflectionDecision;
+  note: string;
+  suggestedRule: string;
+}
 
 export class PBLEngine {
   public sessionPlanner: SessionPlanner;
@@ -92,19 +99,36 @@ export class PBLEngine {
     return session;
   }
 
-  public completeReflection(session: PBLSession, reflection: string): PBLSession {
+  public completeReflection(session: PBLSession, reflection: PBLReflectionSubmission): PBLSession {
     const action = session.pendingNextAction;
     if (!action || (action.type !== 'advance_competency' && action.type !== 'complete_session')) {
       return session;
     }
+    const note = reflection.decision === 'needs_review'
+      ? 'Ainda não consigo formular a regra; encaminhar para revisão.'
+      : reflection.decision === 'suggested_rule'
+        ? reflection.suggestedRule.trim()
+        : reflection.note.trim();
     session.reflectionNotes = {
       ...(session.reflectionNotes || {}),
-      [session.currentCompetencyRef]: reflection.trim(),
+      [session.currentCompetencyRef]: note,
+    };
+    session.reflectionEntries = {
+      ...(session.reflectionEntries || {}),
+      [session.currentCompetencyRef]: {
+        decision: reflection.decision,
+        note,
+        suggestedRule: reflection.suggestedRule.trim(),
+        createdAt: new Date().toISOString(),
+      },
     };
     session.competencyOutcomes = {
       ...(session.competencyOutcomes || {}),
-      [session.currentCompetencyRef]: action.outcome || 'needs_review',
+      [session.currentCompetencyRef]: reflection.decision === 'needs_review'
+        ? 'needs_review'
+        : action.outcome || 'needs_review',
     };
+    if (session.reflectionDrafts) delete session.reflectionDrafts[session.currentCompetencyRef];
     this.applyTerminalAction(session, action);
     session.updatedAt = new Date().toISOString();
     return session;
@@ -189,7 +213,10 @@ export class PBLEngine {
     if (nextAction.transferItem) session.currentTransferItem = nextAction.transferItem;
 
     if (attempt.stage === 'transfer') {
-      if (nextAction.type === 'request_transfer') {
+      if (!attempt.isCorrect || attempt.evaluation === 'fragile_correct') {
+        if (nextAction.type === 'request_transfer') session.currentTransferItemIndex += 1;
+        session.phase = 'diagnostic';
+      } else if (nextAction.type === 'request_transfer') {
         session.currentTransferItemIndex += 1;
         session.phase = 'transfer';
       } else {

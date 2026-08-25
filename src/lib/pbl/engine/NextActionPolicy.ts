@@ -150,7 +150,9 @@ export class NextActionPolicy {
           targetQuestionRef: xferItem.officialQuestionRef,
           transferItem: xferItem,
           reason: 'Continuando progressão de transferência.',
-          feedbackMessage: 'Ótimo avanço! Próximo item de transferência.',
+            feedbackMessage: isCorrect
+              ? 'Ótimo avanço! Próximo item de transferência.'
+              : 'Este item revelou um ponto de atenção. Veja o diagnóstico antes de tentar outro contexto.',
         };
       }
     }
@@ -171,12 +173,24 @@ export class NextActionPolicy {
         onlineOnly: true,
         seed: session.sessionId,
       });
+      const anchor = onlineAnchor || await this.questionPoolSelector.selectQuestion(nextCompId, 'anchor', {
+        seed: session.sessionId,
+      });
+
+      if (!anchor) {
+        return {
+          type: 'complete_session',
+          outcome: 'needs_review',
+          reason: 'A cobertura publicada da próxima competência mudou durante a sessão.',
+          feedbackMessage: 'A sessão foi encerrada com segurança; nenhuma questão sem vínculo aprovado foi exibida.',
+        };
+      }
 
       return {
         type: 'advance_competency',
         targetCompetencyRef: nextCompId,
         targetCaseRef: nextCase?.caseId,
-        targetQuestionRef: onlineAnchor?.questionRef || nextCase?.anchorQuestionRef,
+        targetQuestionRef: anchor.questionRef,
         outcome,
         reason: outcome === 'mastered'
           ? 'A transferência confirmou o domínio desta competência.'

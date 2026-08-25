@@ -11,22 +11,26 @@ export class PBLSessionRepository {
       ...session,
       competencyOutcomes: session.competencyOutcomes || {},
       reflectionNotes: session.reflectionNotes || {},
+      reflectionEntries: session.reflectionEntries || {},
+      reflectionDrafts: session.reflectionDrafts || {},
       savedErrorQuestionRefs: session.savedErrorQuestionRefs || [],
     };
   }
 
-  public static async saveSession(session: PBLSession): Promise<{ syncedRemotely: boolean }> {
+  public static saveSessionLocally(session: PBLSession): void {
     const key = `${LOCAL_STORAGE_KEY_PREFIX}${session.sessionId}`;
+    localStorage.setItem(key, JSON.stringify(session));
+
+    const masteryKey = `${LOCAL_STORAGE_MASTERY_PREFIX}${session.userId}`;
+    const existingMasteryStr = localStorage.getItem(masteryKey);
+    const existingMastery = existingMasteryStr ? JSON.parse(existingMasteryStr) : {};
+    const mergedMastery = { ...existingMastery, ...session.masterySnapshot };
+    localStorage.setItem(masteryKey, JSON.stringify(mergedMastery));
+  }
+
+  public static async saveSession(session: PBLSession): Promise<{ syncedRemotely: boolean }> {
     try {
-      localStorage.setItem(key, JSON.stringify(session));
-
-      // 2. Also save masteries in LocalStorage
-      const masteryKey = `${LOCAL_STORAGE_MASTERY_PREFIX}${session.userId}`;
-      const existingMasteryStr = localStorage.getItem(masteryKey);
-      const existingMastery = existingMasteryStr ? JSON.parse(existingMasteryStr) : {};
-      const mergedMastery = { ...existingMastery, ...session.masterySnapshot };
-      localStorage.setItem(masteryKey, JSON.stringify(mergedMastery));
-
+      this.saveSessionLocally(session);
     } catch (err) {
       console.error('[PBLSessionRepository] Local storage error:', err);
       throw new Error('Não foi possível salvar a sessão neste dispositivo.');

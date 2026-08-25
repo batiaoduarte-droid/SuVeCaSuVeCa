@@ -15,9 +15,16 @@ export class DiagnosticResolver {
   public async resolveDiagnostic(attempt: PBLAttempt): Promise<DiagnosticResult> {
     const { competencyRef, questionRef, userAnswer, evaluation, isCorrect } = attempt;
 
-    const qp = await this.repo.getQuestionPedagogy(questionRef);
-    const diagPath = await this.repo.getDiagnosticPathForCompetency(competencyRef);
-    const comp = await this.repo.getCompetency(competencyRef);
+    const [qp, diagPath, comp, link] = await Promise.all([
+      this.repo.getQuestionPedagogy(questionRef),
+      this.repo.getDiagnosticPathForCompetency(competencyRef),
+      this.repo.getCompetency(competencyRef),
+      this.repo.getQuestionCompetencyLink(questionRef),
+    ]);
+    const assignment = link?.competencyAssignments?.find((candidate) =>
+      candidate.competencyId === competencyRef && candidate.semanticStatus === 'approved'
+    );
+    const isSecondaryAssignment = assignment?.relation === 'secondary';
 
     // 1. Identify distractor or assertion error
     let matchedDistractor = qp?.distractorAnalysis.find(
@@ -31,16 +38,20 @@ export class DiagnosticResolver {
     const trapRefs: string[] = [];
     const misconceptionRefs: string[] = [];
 
-    if (matchedDistractor?.triggeredTrapRef) {
+    if (!isSecondaryAssignment && matchedDistractor?.triggeredTrapRef) {
       trapRefs.push(matchedDistractor.triggeredTrapRef);
-    } else if (qp?.examTrapRefs && qp.examTrapRefs.length > 0) {
+    } else if (!isSecondaryAssignment && qp?.examTrapRefs && qp.examTrapRefs.length > 0) {
       trapRefs.push(qp.examTrapRefs[0]);
+    } else if (comp?.examTrapRefs?.length) {
+      trapRefs.push(comp.examTrapRefs[0]);
     }
 
-    if (matchedDistractor?.likelyMisconceptionRef) {
+    if (!isSecondaryAssignment && matchedDistractor?.likelyMisconceptionRef) {
       misconceptionRefs.push(matchedDistractor.likelyMisconceptionRef);
-    } else if (qp?.misconceptionRefs && qp.misconceptionRefs.length > 0) {
+    } else if (!isSecondaryAssignment && qp?.misconceptionRefs && qp.misconceptionRefs.length > 0) {
       misconceptionRefs.push(qp.misconceptionRefs[0]);
+    } else if (comp?.misconceptionRefs?.length) {
+      misconceptionRefs.push(comp.misconceptionRefs[0]);
     }
 
     // 2. Check diagnostic path node
@@ -72,8 +83,14 @@ export class DiagnosticResolver {
           seed: attempt.sessionId,
         })
       : null;
+    const targetProbeIsEligible = targetProbeNode?.questionRef
+      ? await this.questionPoolSelector.isQuestionEligibleForCompetency(
+          competencyRef,
+          targetProbeNode.questionRef
+        )
+      : false;
     const candidateProbeRef = shouldProbe
-      ? onlineProbe?.questionRef || targetProbeNode?.questionRef
+      ? onlineProbe?.questionRef || (targetProbeIsEligible ? targetProbeNode?.questionRef : undefined)
       : undefined;
     const probePresentation = candidateProbeRef
       ? await this.repo.getQuestionPresentation(candidateProbeRef)
@@ -97,9 +114,9 @@ export class DiagnosticResolver {
       trapSummary: matchedDistractor?.refutation,
       intervention: {
         microLesson,
-        ruleRefs: qp?.decisiveRuleRefs || comp?.ruleRefs || [],
-        procedureRefs: qp?.procedureRefs || comp?.procedureRefs || [],
-        contrastRefs: qp?.contrastRefs || comp?.contrastRefs || [],
+        ruleRefs: isSecondaryAssignment ? comp?.ruleRefs || [] : qp?.decisiveRuleRefs || comp?.ruleRefs || [],
+        procedureRefs: isSecondaryAssignment ? comp?.procedureRefs || [] : qp?.procedureRefs || comp?.procedureRefs || [],
+        contrastRefs: isSecondaryAssignment ? comp?.contrastRefs || [] : qp?.contrastRefs || comp?.contrastRefs || [],
         refutationText: matchedDistractor?.refutation,
       },
     };

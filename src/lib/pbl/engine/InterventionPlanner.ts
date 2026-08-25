@@ -13,10 +13,21 @@ export class InterventionPlanner {
     diagResult: DiagnosticResult,
     pblCase: PBLCase
   ): Promise<InterventionPayload> {
-    const comp = await this.repo.getCompetency(diagResult.competencyRef);
-    const qp = await this.repo.getQuestionPedagogy(diagResult.questionRef);
+    const [comp, qp, link, presentation] = await Promise.all([
+      this.repo.getCompetency(diagResult.competencyRef),
+      this.repo.getQuestionPedagogy(diagResult.questionRef),
+      this.repo.getQuestionCompetencyLink(diagResult.questionRef),
+      this.repo.getQuestionPresentation(diagResult.questionRef),
+    ]);
+    const assignment = link?.competencyAssignments?.find((candidate) =>
+      candidate.competencyId === diagResult.competencyRef
+      && candidate.semanticStatus === 'approved'
+    );
+    const isSecondaryAssignment = assignment?.relation === 'secondary';
 
-    const procSteps = qp?.solutionStrategy.map((s) => s.action) || [
+    const procSteps = (!isSecondaryAssignment && qp?.solutionStrategy.length
+      ? qp.solutionStrategy.map((step) => step.action)
+      : pblCase.solutionStrategy.stepByStepAlgorithm) || [
       '1. Identificar o termo nuclear da oração.',
       '2. Aplicar o teste canônico de verificação.',
       '3. Descartar atratores e validar o gabarito.',
@@ -41,9 +52,12 @@ export class InterventionPlanner {
       contrastingPoleA: contrast?.poleA || 'Construção correta conforme a norma culta',
       contrastingPoleB: contrast?.poleB || 'Atrator de banca indutor de erro',
       workedExample: {
-        stem: pblCase.questionStem,
-        stepByStep: pblCase.solutionStrategy.stepByStepAlgorithm.map(formatPBLPedagogicalText),
-        resolution: `Gabarito oficial: ${formatPBLAnswer(pblCase.officialAnswer, pblCase.options.length > 0)}. Justificativa: aplicação estrita dos critérios gramaticais.`,
+        stem: presentation?.prompt || pblCase.questionStem,
+        stepByStep: procSteps.map(formatPBLPedagogicalText),
+        resolution: `Gabarito oficial: ${formatPBLAnswer(
+          presentation?.correctAnswer || pblCase.officialAnswer,
+          Boolean(presentation?.options.length || pblCase.options.length)
+        )}. Justificativa: aplicação estrita dos critérios gramaticais.`,
       },
     };
   }

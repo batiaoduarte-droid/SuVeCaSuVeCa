@@ -11,7 +11,7 @@ export const loadPublishedQuestionPresentations = (): Record<string, PBLQuestion
       const qRef = oq.officialQuestionId;
       const qPayload = oq.questionPayload || {};
       const aPayload = oq.answerPayload || {};
-      const rawPrompt = qPayload.prompt || '';
+      const rawPrompt = qPayload.prompt || qPayload.statement || '';
       const rawSupportText = qPayload.support_text || '';
       const prompt = (rawPrompt.length < 15 && rawSupportText)
         ? `${rawSupportText} ${rawPrompt}`
@@ -38,6 +38,14 @@ export const loadPublishedQuestionPresentations = (): Record<string, PBLQuestion
         result[`OQ-${oq.sourceQuestionId}`] = pres;
       }
     }
+  }
+
+  const authoredFile = path.resolve('public/knowledge/pbl/pbl_authored_questions.json');
+  if (fs.existsSync(authoredFile)) {
+    Object.assign(
+      result,
+      JSON.parse(fs.readFileSync(authoredFile, 'utf8')) as Record<string, PBLQuestionPresentation>
+    );
   }
 
   const partsDir = path.resolve('public/knowledge/official-question-parts');

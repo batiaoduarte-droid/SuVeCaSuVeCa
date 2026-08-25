@@ -56,13 +56,18 @@ export const PBLSessionSummary: React.FC<PBLSessionSummaryProps> = ({
           {masteries.map((mastery) => {
             const outcome = outcomes[mastery.competencyId] || 'needs_review';
             const reflection = session.reflectionNotes?.[mastery.competencyId];
+            const reflectionEntry = session.reflectionEntries?.[mastery.competencyId];
             return (
               <div key={mastery.competencyId} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
                   <strong className="text-slate-900">{competencyTitles[mastery.competencyId] || 'Competência praticada'}</strong>
                   <span className={`rounded-full px-2.5 py-1 font-bold ${outcome === 'mastered' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-900'}`}>{outcome === 'mastered' ? 'Domínio demonstrado' : 'Revisão recomendada'}</span>
                 </div>
-                {reflection && <p className="mt-3 text-xs text-slate-700"><strong>Sua regra de decisão:</strong> {reflection}</p>}
+                {reflection && (
+                  <p className="mt-3 text-xs text-slate-700">
+                    <strong>{reflectionEntry?.decision === 'needs_review' ? 'Decisão registrada:' : 'Regra de decisão:'}</strong> {reflection}
+                  </p>
+                )}
                 <p className="mt-3 inline-flex items-center gap-1 text-[11px] text-slate-600"><Calendar className="h-3.5 w-3.5" /> Próxima revisão: {formatReviewDate(mastery.nextReviewRecommendedAt)}</p>
               </div>
             );

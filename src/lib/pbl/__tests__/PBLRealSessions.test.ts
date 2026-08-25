@@ -158,9 +158,9 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
     });
   }
 
-  it('should make every graded anchor answerable and explicitly block the single ungraded source', async () => {
+  it('should make all 190 rebuilt anchors answerable', async () => {
     const ungraded = realCases.filter((pblCase) => !pblCase.officialAnswer);
-    expect(ungraded.map((pblCase) => pblCase.caseId)).toEqual(['PBL-CASE-A04-G02-01']);
+    expect(ungraded).toEqual([]);
 
     const evaluator = new AttemptEvaluator();
     for (const pblCase of realCases.filter((candidate) => Boolean(candidate.officialAnswer))) {
@@ -180,9 +180,10 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
       }).isCorrect).toBe(true);
     }
 
-    await expect(engine.startSession({
-      userId: 'test', mode: 'guided', targetCompetencyId: ungraded[0].competencyRef,
-    })).rejects.toThrow(/gabarito oficial/i);
+    const rebuiltSession = await engine.startSession({
+      userId: 'test', mode: 'guided', targetCompetencyId: 'COMP-A04-G02-01',
+    });
+    expect(rebuiltSession.currentQuestionRef).toBeTruthy();
   });
 
   it('should have at least one real published transfer question for all 190 competencies', () => {
@@ -284,6 +285,73 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
       'validation',
       { onlineOnly: true, seed: 'audit' }
     )).toBeDefined();
+  });
+
+  it('should block the hybrid q0020 from Fonética e Fonologia and expose audited coverage', async () => {
+    const selector = new QuestionPoolSelector(repo);
+    expect(await selector.isQuestionEligibleForCompetency(
+      'COMP-A00-G01-01',
+      'OQ-A00-aula00.q0020'
+    )).toBe(false);
+
+    const phonetics = await repo.getCompetency('COMP-A00-G01-01');
+    expect(phonetics?.practiceCoverage?.status).toBe('ready');
+    expect(phonetics?.practiceCoverage?.eligibleQuestions).toBe(7);
+    expect(phonetics?.transferCandidateRefs).toEqual([
+      'OQ-A00-aula00.q0001',
+      'OQ-A00-aula00.q0002',
+      'OQ-A00-aula00.q0065',
+      'OQ-A00-aula00.q0066',
+      'OQ-A00-aula00.q0067',
+    ]);
+  });
+
+  it('should reproduce full runtime readiness after traceable authored remediation', async () => {
+    const selector = new QuestionPoolSelector(repo);
+    const competencies = await repo.getAllCompetencies();
+    expect(competencies).toHaveLength(190);
+    const g03Ids = ['COMP-A04-G03-01', 'COMP-A04-G03-02', 'COMP-A04-G03-03'];
+    const g08Ids = [
+      'COMP-A04-G08-01',
+      'COMP-A04-G08-02',
+      'COMP-A04-G08-03',
+    ];
+
+    for (const competency of competencies) {
+      const readiness = await selector.evaluatePracticeReadiness(
+        competency.competencyId,
+        `full-audit:${competency.competencyId}`
+      );
+      expect(competency.practiceCoverage?.status, competency.competencyId).toBe('ready');
+      expect(readiness.ready, `${competency.competencyId}: ${readiness.reason || ''}`).toBe(true);
+      expect(readiness.transferQuestionRefs).toHaveLength(2);
+    }
+
+    expect(competencies.filter((item) => item.practiceCoverage?.status === 'ready')).toHaveLength(190);
+    for (const competencyId of g03Ids) {
+      const competency = competencies.find((item) => item.competencyId === competencyId)!;
+      expect(competency.practiceCoverage?.distinctQuestions).toBe(43);
+      expect(competency.eligibleQuestionRefs.filter((ref) => ref.startsWith('PBLQ-A04-G03-'))).toHaveLength(40);
+    }
+    for (const competencyId of g08Ids) {
+      const competency = competencies.find((item) => item.competencyId === competencyId)!;
+      expect(competency.practiceCoverage?.distinctQuestions).toBe(43);
+      expect(competency.eligibleQuestionRefs.filter((ref) => ref.startsWith('PBLQ-A04-G08-'))).toHaveLength(41);
+    }
+    const remediatedSession = await engine.startSession({
+      userId: 'remediated_gap_user',
+      mode: 'guided',
+      targetCompetencyId: 'COMP-A04-G03-01',
+    });
+    expect(remediatedSession.currentQuestionRef).toMatch(/^PBLQ-A04-G03-/);
+  }, 60_000);
+
+  it('should consume the reviewed editorial link for verbs in -ear', async () => {
+    const selector = new QuestionPoolSelector(repo);
+    expect(await selector.isQuestionEligibleForCompetency(
+      'COMP-A04-G08-01',
+      'OQ-A04-aula04.q0101'
+    )).toBe(true);
   });
 
   it('should run a cumulative spiral review session for A14 (A14-S01)', async () => {

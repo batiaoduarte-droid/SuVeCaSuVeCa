@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { PBLEngine } from '../engine/PBLEngine';
 import { PBLRepository } from '../data/PBLRepository';
-import type { PBLCompetency, PBLCase, PBLTransferSet, PBLDiagnosticPath, QuestionPedagogy, PBLQuestionPresentation } from '../../../types/pbl';
+import type { PBLCompetency, PBLCase, PBLTransferSet, PBLDiagnosticPath, QuestionCompetencyLink, QuestionPedagogy, PBLQuestionPresentation } from '../../../types/pbl';
 
 describe('PBLEngine Full Flow Integration', () => {
   let engine: PBLEngine;
@@ -27,7 +27,7 @@ describe('PBLEngine Full Flow Integration', () => {
     eligibleQuestionRefs: ['OQ-A10-aula10.q0010'],
     anchorCandidateRefs: ['OQ-A10-aula10.q0010'],
     diagnosticCandidateRefs: ['OQ-A10-aula10.q0010'],
-    transferCandidateRefs: ['OQ-A10-aula10.q0012'],
+    transferCandidateRefs: ['OQ-A10-aula10.q0012', 'OQ-A10-aula10.q0013'],
     validationCandidateRefs: ['OQ-A10-aula10.q0015'],
     questionCount: 4,
   };
@@ -133,7 +133,16 @@ describe('PBLEngine Full Flow Integration', () => {
         difficulty: 'medio',
         cognitiveDelta: 'Variação para FGV com outro nome de lugar determinado.',
         expectedObstacle: 'Reconhecer a especificação.',
-      }
+      },
+      {
+        itemOrder: 2,
+        officialQuestionRef: 'OQ-A10-aula10.q0013',
+        transferType: 'far_transfer',
+        examBoard: 'CEBRASPE',
+        difficulty: 'medio',
+        cognitiveDelta: 'Novo topônimo em formulação distinta.',
+        expectedObstacle: 'Aplicar o teste sem depender do exemplo anterior.',
+      },
     ],
     masteryCriteria: {
       minPassingScore: 0.75,
@@ -148,6 +157,63 @@ describe('PBLEngine Full Flow Integration', () => {
     options: [],
     correctAnswer: 'correct',
     examBoard: 'FGV',
+  };
+
+  const mockAnchorQuestion: PBLQuestionPresentation = {
+    questionRef: 'OQ-A10-aula10.q0010',
+    questionType: 'true_false',
+    prompt: mockCase.questionStem,
+    options: [],
+    correctAnswer: 'Certo',
+  };
+
+  const mockSecondTransferQuestion: PBLQuestionPresentation = {
+    questionRef: 'OQ-A10-aula10.q0013',
+    questionType: 'true_false',
+    prompt: 'Em “Voltei à Roma dos césares”, a especificação do topônimo admite o acento grave.',
+    options: [],
+    correctAnswer: 'Certo',
+    examBoard: 'CEBRASPE',
+  };
+
+  const mockLink = (questionRef: string, role: 'anchor' | 'transfer'): QuestionCompetencyLink => {
+    const roleScores = {
+      anchor: role === 'anchor' ? 0.95 : 0.7,
+      diagnostic: 0.7,
+      transfer: role === 'transfer' ? 0.95 : 0.7,
+      validation: 0.7,
+    };
+    return {
+      schemaVersion: '3.0.0',
+      linkId: `LINK-${questionRef}`,
+      officialQuestionRef: questionRef,
+      competencyId: mockComp.competencyId,
+      unitId: mockComp.unitId,
+      lessonId: mockComp.lessonId,
+      prerequisiteRefs: [],
+      pblSuitabilityScores: { ...roleScores, primaryRole: role },
+      assignedPBLRole: role,
+      diagnosticPotential: 0.8,
+      semanticReview: {
+        status: 'approved',
+        reviewedAt: '2026-08-25T00:00:00-03:00',
+        reason: 'Fixture editorial aprovada.',
+      },
+      competencyAssignments: [{
+        assignmentId: `${questionRef}::${mockComp.competencyId}`,
+        competencyId: mockComp.competencyId,
+        unitId: mockComp.unitId,
+        lessonId: mockComp.lessonId,
+        relation: 'primary',
+        semanticStatus: 'approved',
+        allowedRoles: ['anchor', 'diagnostic', 'transfer', 'validation'],
+        roleScores,
+        evidenceRefs: ['TEST_FIXTURE'],
+        reviewMethod: 'editorial',
+        reviewedAt: '2026-08-25T00:00:00-03:00',
+        reason: 'Fixture editorial aprovada.',
+      }],
+    };
   };
 
   const mockDiag: PBLDiagnosticPath = {
@@ -186,7 +252,16 @@ describe('PBLEngine Full Flow Integration', () => {
       transferSets: [mockXfer],
       diagnosticPaths: [mockDiag],
       questionPedagogyMap: { 'OQ-A10-aula10.q0010': mockQP },
-      questionPresentations: { [mockTransferQuestion.questionRef]: mockTransferQuestion },
+      questionLinksMap: {
+        [mockAnchorQuestion.questionRef]: mockLink(mockAnchorQuestion.questionRef, 'anchor'),
+        [mockTransferQuestion.questionRef]: mockLink(mockTransferQuestion.questionRef, 'transfer'),
+        [mockSecondTransferQuestion.questionRef]: mockLink(mockSecondTransferQuestion.questionRef, 'transfer'),
+      },
+      questionPresentations: {
+        [mockAnchorQuestion.questionRef]: mockAnchorQuestion,
+        [mockTransferQuestion.questionRef]: mockTransferQuestion,
+        [mockSecondTransferQuestion.questionRef]: mockSecondTransferQuestion,
+      },
     });
     engine = new PBLEngine(repo);
   });
@@ -258,5 +333,63 @@ describe('PBLEngine Full Flow Integration', () => {
     expect(result.session.phase).toBe('diagnostic');
     expect(result.attempt.detectedMisconceptionRefs).toContain('MISC-CRASE-01');
     expect(result.session.sessionStats.misconceptionsCaught).toBe(1);
+  });
+
+  it('should show diagnostic feedback after a transfer error before advancing', async () => {
+    const session = await engine.startSession({
+      userId: 'test_user',
+      mode: 'guided',
+      targetLessonId: 'A10',
+    });
+    const initial = await engine.submitAttempt(session, {
+      sessionId: session.sessionId,
+      questionRef: mockAnchorQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'Certo',
+      correctAnswer: 'Certo',
+      confidence: 'high',
+      stage: 'initial',
+      responseTimeMs: 1000,
+    });
+    const transferSession = engine.continueAfterDiagnostic(initial.session);
+    const transfer = await engine.submitAttempt(transferSession, {
+      sessionId: session.sessionId,
+      questionRef: mockTransferQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'Errado',
+      correctAnswer: 'Certo',
+      confidence: 'high',
+      stage: 'transfer',
+      transferType: 'near_transfer',
+      responseTimeMs: 1000,
+    });
+
+    expect(transfer.session.phase).toBe('diagnostic');
+    expect(transfer.nextAction.feedbackMessage).toMatch(/ponto de atenção/i);
+    expect(engine.continueAfterDiagnostic(transfer.session).phase).toBe('transfer');
+  });
+
+  it('should accept “Ainda não sei” and route the competency to review', async () => {
+    const session = await engine.startSession({
+      userId: 'test_user',
+      mode: 'guided',
+      targetLessonId: 'A10',
+    });
+    session.phase = 'reflection';
+    session.pendingNextAction = {
+      type: 'complete_session',
+      outcome: 'mastered',
+      reason: 'Transferência concluída.',
+    };
+
+    const completed = engine.completeReflection(session, {
+      decision: 'needs_review',
+      note: '',
+      suggestedRule: 'Aplicar o teste do topônimo antes de decidir pela crase.',
+    });
+
+    expect(completed.status).toBe('completed');
+    expect(completed.competencyOutcomes?.[mockComp.competencyId]).toBe('needs_review');
+    expect(completed.reflectionEntries?.[mockComp.competencyId].decision).toBe('needs_review');
   });
 });

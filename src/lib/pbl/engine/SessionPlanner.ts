@@ -44,11 +44,11 @@ export class SessionPlanner {
     } else if (mode === 'cumulative' && cumulativeSessionId) {
       const cumSess = await this.repo.getCumulativeSession(cumulativeSessionId);
       if (cumSess) {
-        targetCompetencyRefs = cumSess.integratedCompetencyRefs.slice(0, maxCompetencies);
+        targetCompetencyRefs = [...cumSess.integratedCompetencyRefs];
       }
     } else if (targetUnitId) {
       const comps = await this.repo.getCompetenciesForUnit(targetUnitId);
-      targetCompetencyRefs = comps.map((c) => c.competencyId).slice(0, maxCompetencies);
+      targetCompetencyRefs = comps.map((c) => c.competencyId);
     } else if (targetLessonId) {
       const comps = await this.repo.getCompetenciesForLesson(targetLessonId);
       // Prioritize competencies with lowest mastery
@@ -58,8 +58,7 @@ export class SessionPlanner {
           const scoreB = currentMasteryMap[b.competencyId]?.score ?? 0;
           return scoreA - scoreB;
         })
-        .map((c) => c.competencyId)
-        .slice(0, maxCompetencies);
+        .map((c) => c.competencyId);
     } else {
       // Diagnostic / Recommendation mode: select lowest mastered overall
       const allComps = await this.repo.getAllCompetencies();
@@ -75,43 +74,59 @@ export class SessionPlanner {
           return scoreA - scoreB;
         });
       targetCompetencyRefs = ranked
-        .map((c) => c.competencyId)
-        .slice(0, maxCompetencies);
+        .map((c) => c.competencyId);
     }
 
     const answerableTargets: string[] = [];
+    const initialAnchorByCompetency = new Map<string, string>();
+    let targetBlockReason = '';
     for (const competencyId of targetCompetencyRefs) {
-      const pblCase = await this.repo.getCaseForCompetency(competencyId);
-      if (typeof pblCase?.officialAnswer === 'string' && pblCase.officialAnswer.trim()) {
+      const readiness = await this.questionPoolSelector.evaluatePracticeReadiness(
+        competencyId,
+        `${userId}:${mode}`
+      );
+      if (readiness.ready && readiness.anchor) {
         answerableTargets.push(competencyId);
+        initialAnchorByCompetency.set(competencyId, readiness.anchor.questionRef);
+        if (!targetCompetencyId && answerableTargets.length >= maxCompetencies) break;
+      } else if (targetCompetencyId === competencyId) {
+        targetBlockReason = readiness.reason || 'A questão-âncora ainda não possui gabarito oficial publicável.';
       }
     }
-    targetCompetencyRefs = answerableTargets;
+    targetCompetencyRefs = answerableTargets.slice(0, maxCompetencies);
 
     if (targetCompetencyId && targetCompetencyRefs.length === 0) {
-      throw new Error('Esta competência ainda não possui gabarito oficial publicável para uma sessão PBL.');
+      throw new Error(`Esta competência ainda não está pronta para uma sessão PBL: ${targetBlockReason}`);
+    }
+
+    if ((targetLessonId || targetUnitId || cumulativeSessionId) && targetCompetencyRefs.length === 0) {
+      throw new Error('Não há competências com cobertura semântica suficiente neste recorte. Escolha outro tema ou aguarde novas questões.');
     }
 
     if (targetCompetencyRefs.length === 0) {
       const allCompetencies = await this.repo.getAllCompetencies();
       for (const competency of allCompetencies) {
-        const pblCase = await this.repo.getCaseForCompetency(competency.competencyId);
-        if (typeof pblCase?.officialAnswer === 'string' && pblCase.officialAnswer.trim()) {
+        const readiness = await this.questionPoolSelector.evaluatePracticeReadiness(
+          competency.competencyId,
+          `${userId}:${mode}:fallback`
+        );
+        if (readiness.ready && readiness.anchor) {
           targetCompetencyRefs.push(competency.competencyId);
+          initialAnchorByCompetency.set(competency.competencyId, readiness.anchor.questionRef);
           break;
         }
       }
+    }
+
+    if (targetCompetencyRefs.length === 0) {
+      throw new Error('Nenhuma competência possui a cobertura mínima para iniciar uma sessão PBL agora.');
     }
 
     const sessionId = `pbl_sess_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
     const firstCompId = targetCompetencyRefs[0];
     const initialCase = await this.repo.getCaseForCompetency(firstCompId);
     const initialCaseId = initialCase?.caseId || `PBL-CASE-${firstCompId.replace('COMP-', '')}`;
-    const onlineAnchor = await this.questionPoolSelector.selectQuestion(firstCompId, 'anchor', {
-      onlineOnly: true,
-      seed: sessionId,
-    });
-    const initialQuestionId = onlineAnchor?.questionRef || initialCase?.anchorQuestionRef || '';
+    const initialQuestionId = initialAnchorByCompetency.get(firstCompId) || '';
     const now = new Date().toISOString();
 
     const session: PBLSession = {
@@ -132,6 +147,8 @@ export class SessionPlanner {
       masterySnapshot: { ...currentMasteryMap },
       competencyOutcomes: {},
       reflectionNotes: {},
+      reflectionEntries: {},
+      reflectionDrafts: {},
       savedErrorQuestionRefs: [],
       sessionStats: {
         initialAccuracy: 0,

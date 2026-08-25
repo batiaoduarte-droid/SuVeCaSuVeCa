@@ -5,6 +5,7 @@ import type {
   PBLCase,
   PBLConfidenceLevel,
   PBLQuestionPresentation,
+  PBLReflectionDecision,
   PBLSession,
 } from '../../types/pbl';
 import { pblEngine } from '../../lib/pbl/engine/PBLEngine';
@@ -17,7 +18,7 @@ import { PBLDiagnosticView } from './PBLDiagnosticView';
 import { PBLInterventionView } from './PBLInterventionView';
 import { PBLTransferView } from './PBLTransferView';
 import { PBLSessionSummary } from './PBLSessionSummary';
-import { ArrowLeft, PauseCircle, Timer, Trash2 } from 'lucide-react';
+import { ArrowLeft, BookOpenCheck, CheckCircle2, Lightbulb, PauseCircle, Timer, Trash2 } from 'lucide-react';
 
 interface PBLSessionViewProps {
   onAddErrorToNotebook?: (
@@ -58,6 +59,8 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     ...initialSession,
     competencyOutcomes: initialSession.competencyOutcomes || {},
     reflectionNotes: initialSession.reflectionNotes || {},
+    reflectionEntries: initialSession.reflectionEntries || {},
+    reflectionDrafts: initialSession.reflectionDrafts || {},
     savedErrorQuestionRefs: initialSession.savedErrorQuestionRefs || [],
   });
   const [currentCase, setCurrentCase] = useState<PBLCase | null>(null);
@@ -67,6 +70,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const [confidence, setConfidence] = useState<PBLConfidenceLevel | null>(null);
   const [reasoning, setReasoning] = useState('');
   const [reflection, setReflection] = useState('');
+  const [reflectionDecision, setReflectionDecision] = useState<PBLReflectionDecision | ''>('');
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [showExitConfirmation, setShowExitConfirmation] = useState(false);
@@ -75,6 +79,32 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   useEffect(() => {
     pblSessionManager.setSession(session);
   }, [session]);
+
+  useEffect(() => {
+    if (session.phase !== 'reflection') return;
+    const draft = session.reflectionDrafts?.[session.currentCompetencyRef];
+    setReflection(draft?.note || '');
+    setReflectionDecision(draft?.decision || '');
+  }, [session.phase, session.currentCompetencyRef]);
+
+  useEffect(() => {
+    if (session.phase !== 'reflection') return;
+    const timer = window.setTimeout(() => {
+      PBLSessionRepository.saveSessionLocally({
+        ...session,
+        reflectionDrafts: {
+          ...(session.reflectionDrafts || {}),
+          [session.currentCompetencyRef]: {
+            decision: reflectionDecision || undefined,
+            note: reflection,
+            suggestedRule: session.reflectionDrafts?.[session.currentCompetencyRef]?.suggestedRule || '',
+            updatedAt: new Date().toISOString(),
+          },
+        },
+      });
+    }, 500);
+    return () => window.clearTimeout(timer);
+  }, [reflection, reflectionDecision, session.phase, session.currentCompetencyRef]);
 
   useEffect(() => {
     let active = true;
@@ -228,16 +258,49 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     await persist(nextSession);
   };
 
+  const suggestedReflectionRule =
+    session.lastInterventionPayload?.ruleStatement
+    || session.lastDiagnosticResult?.intervention.microLesson
+    || currentCase?.solutionStrategy.formulasOrRulesApplied?.[0]
+    || currentCase?.cognitiveDiagnostic.correctiveGuidance
+    || `Antes de responder, identifique o critério decisivo de ${competencyTitles[session.currentCompetencyRef] || 'esta competência'} e aplique-o ao enunciado.`;
+  const reflectionWordCount = reflection.trim().split(/\s+/).filter(Boolean).length;
+  const reflectionIsValid = Boolean(
+    reflectionDecision
+    && (reflectionDecision !== 'own_rule' || reflectionWordCount >= 4)
+  );
+
   const handleCompleteReflection = async () => {
-    if (reflection.trim().length < 8) return;
-    const nextSession = { ...pblEngine.completeReflection(session, reflection) };
+    if (!reflectionDecision || !reflectionIsValid) return;
+    const nextSession = {
+      ...pblEngine.completeReflection(session, {
+        decision: reflectionDecision,
+        note: reflection,
+        suggestedRule: suggestedReflectionRule,
+      }),
+    };
     setSession(nextSession);
     setReflection('');
+    setReflectionDecision('');
     await persist(nextSession);
   };
 
   const handlePauseAndExit = async () => {
-    await persist(session);
+    const nextSession = session.phase === 'reflection'
+      ? {
+          ...session,
+          reflectionDrafts: {
+            ...(session.reflectionDrafts || {}),
+            [session.currentCompetencyRef]: {
+              decision: reflectionDecision || undefined,
+              note: reflection,
+              suggestedRule: suggestedReflectionRule,
+              updatedAt: new Date().toISOString(),
+            },
+          },
+        }
+      : session;
+    await persist(nextSession);
     onExit();
   };
 
@@ -247,6 +310,11 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   };
 
   const lastAttempt = session.attempts[session.attempts.length - 1];
+  const currentCompetencyAttempts = session.attempts.filter(
+    (attempt) => attempt.competencyRef === session.currentCompetencyRef
+  );
+  const transferAttempts = currentCompetencyAttempts.filter((attempt) => attempt.stage === 'transfer');
+  const transferCorrect = transferAttempts.filter((attempt) => attempt.isCorrect).length;
   const elapsedMinutes = Math.max(1, Math.ceil(session.sessionStats.totalTimeMs / 60000));
 
   return (
@@ -346,11 +414,63 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
 
       {session.phase === 'reflection' && (
         <div className="rounded-2xl border border-indigo-200 bg-white p-6 shadow-sm">
-          <h2 className="text-base font-bold text-slate-900">Feche o ciclo com uma regra de decisão</h2>
-          <p className="mt-2 text-xs leading-relaxed text-slate-700">{session.pendingNextAction?.feedbackMessage}</p>
-          <label htmlFor="pbl-reflection" className="mt-5 block text-xs font-bold text-slate-800">Que critério você aplicará primeiro na próxima questão semelhante?</label>
-          <textarea id="pbl-reflection" value={reflection} onChange={(event) => setReflection(event.target.value)} rows={4} className="mt-2 w-full rounded-xl border border-slate-300 p-3 text-sm text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100" placeholder="Escreva com suas palavras o teste ou contraste decisivo." />
-          <div className="mt-4 flex justify-end"><button type="button" onClick={handleCompleteReflection} disabled={reflection.trim().length < 8 || loading} className="rounded-xl bg-indigo-600 px-6 py-3 text-xs font-bold text-white disabled:cursor-not-allowed disabled:opacity-50">Registrar reflexão e continuar</button></div>
+          <div className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-indigo-600" />
+            <div>
+              <h2 className="text-base font-bold text-slate-900">Transforme o resultado em uma decisão para a próxima questão</h2>
+              <p className="mt-1 text-xs leading-relaxed text-slate-700">{session.pendingNextAction?.feedbackMessage}</p>
+            </div>
+          </div>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">O que o ciclo mostrou</p>
+              <p className="mt-2 text-sm font-bold text-slate-900">
+                {transferAttempts.length
+                  ? `${transferCorrect} de ${transferAttempts.length} itens de transferência corretos`
+                  : `${currentCompetencyAttempts.filter((attempt) => attempt.isCorrect).length} de ${currentCompetencyAttempts.length} respostas corretas`}
+              </p>
+              <p className="mt-1 text-xs text-slate-600">Use essa evidência para decidir se a regra já está clara ou precisa de revisão.</p>
+            </div>
+            <div className="rounded-xl border border-indigo-100 bg-indigo-50 p-4">
+              <p className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-indigo-700"><Lightbulb className="h-3.5 w-3.5" /> Regra em foco</p>
+              <p className="mt-2 text-xs leading-relaxed text-indigo-950">{suggestedReflectionRule}</p>
+            </div>
+          </div>
+
+          <fieldset className="mt-5">
+            <legend className="text-xs font-bold text-slate-800">Como você quer fechar esta competência?</legend>
+            <div className="mt-2 grid gap-2 sm:grid-cols-3">
+              {([
+                ['own_rule', 'Consigo explicar', 'Vou registrar o critério com minhas palavras.'],
+                ['suggested_rule', 'Usar a regra sugerida', 'A regra acima representa o que devo aplicar.'],
+                ['needs_review', 'Ainda não sei', 'Quero encaminhar este ponto para revisão.'],
+              ] as const).map(([value, title, description]) => (
+                <label key={value} className={`cursor-pointer rounded-xl border p-3 ${reflectionDecision === value ? 'border-indigo-500 bg-indigo-50 ring-2 ring-indigo-100' : 'border-slate-200 bg-white'}`}>
+                  <input type="radio" name="pbl-reflection-decision" value={value} checked={reflectionDecision === value} onChange={() => setReflectionDecision(value)} className="sr-only" />
+                  <span className="block text-xs font-bold text-slate-900">{title}</span>
+                  <span className="mt-1 block text-[11px] leading-relaxed text-slate-600">{description}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          {reflectionDecision === 'own_rule' && (
+            <div className="mt-5">
+              <label htmlFor="pbl-reflection" className="block text-xs font-bold text-slate-800">Complete: “Na próxima questão, primeiro vou…”</label>
+              <textarea id="pbl-reflection" value={reflection} onChange={(event) => setReflection(event.target.value)} rows={3} className="mt-2 w-full rounded-xl border border-slate-300 p-3 text-sm text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100" placeholder="Ex.: identificar as letras que representam um único som e só então contar letras e fonemas." />
+              <p className={`mt-1 text-[11px] ${reflection && reflectionWordCount < 4 ? 'text-amber-700' : 'text-slate-500'}`}>Registre ao menos quatro palavras que expressem uma ação ou teste verificável.</p>
+            </div>
+          )}
+
+          {reflectionDecision === 'needs_review' && (
+            <div className="mt-4 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs text-amber-950">
+              <BookOpenCheck className="mt-0.5 h-4 w-4 shrink-0" />
+              <p>Esta escolha é válida: a competência será marcada para revisão e aparecerá assim no resumo.</p>
+            </div>
+          )}
+
+          <div className="mt-5 flex justify-end"><button type="button" onClick={handleCompleteReflection} disabled={!reflectionIsValid || loading} className="rounded-xl bg-indigo-600 px-6 py-3 text-xs font-bold text-white disabled:cursor-not-allowed disabled:opacity-50">Salvar decisão e ver próximos passos</button></div>
         </div>
       )}
 

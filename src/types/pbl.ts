@@ -27,6 +27,61 @@ export interface PBLCompetency {
   transferCandidateRefs: string[];
   validationCandidateRefs: string[];
   questionCount: number;
+  practiceCoverage?: {
+    status: 'ready' | 'limited' | 'blocked';
+    strength: 'minimum' | 'adequate' | 'robust';
+    eligibleQuestions: number;
+    distinctQuestions: number;
+    primaryQuestions: number;
+    secondaryQuestions: number;
+    directQuestions: number;
+    supportingQuestions: number;
+    missingQuestionsForPractice: number;
+    anchorCandidates: number;
+    transferCandidates: number;
+    validationCandidates: number;
+    gapType: 'none' | 'content';
+    reason?: string;
+    auditedAt: string;
+  };
+}
+
+export type PBLSemanticReviewStatus = 'approved' | 'blocked' | 'pending';
+
+export type PBLQuestionRole = 'anchor' | 'diagnostic' | 'transfer' | 'validation';
+
+export type PBLAssignmentReviewMethod =
+  | 'editorial'
+  | 'source_taxonomy'
+  | 'canonical_topic'
+  | 'reviewed_topic_family';
+
+export interface PBLSemanticReview {
+  status: PBLSemanticReviewStatus;
+  reviewedAt: string;
+  reason: string;
+  evidenceRefs?: string[];
+}
+
+/**
+ * Atomic, fail-closed authorization for using one official question in one
+ * competency. Physical/source ownership remains in QuestionCompetencyLink;
+ * this assignment records every approved or rejected semantic destination.
+ */
+export interface QuestionCompetencyAssignment {
+  assignmentId: string;
+  competencyId: string;
+  unitId: string;
+  lessonId: string;
+  relation: 'primary' | 'secondary';
+  alignment?: 'direct' | 'supporting';
+  semanticStatus: PBLSemanticReviewStatus;
+  allowedRoles: PBLQuestionRole[];
+  roleScores: Record<PBLQuestionRole, number>;
+  evidenceRefs: string[];
+  reviewMethod: PBLAssignmentReviewMethod;
+  reviewedAt: string;
+  reason: string;
 }
 
 export interface QuestionDistractor {
@@ -97,6 +152,7 @@ export interface QuestionCompetencyLink {
   competencyId: string;
   unitId: string;
   lessonId: string;
+  sourceKind?: 'official' | 'authored_pbl';
   primaryLearningObjectiveRef?: string | null;
   primaryDecisiveRuleRef?: string | null;
   primaryProcedureRef?: string | null;
@@ -112,6 +168,8 @@ export interface QuestionCompetencyLink {
   };
   assignedPBLRole: string;
   diagnosticPotential: number;
+  semanticReview?: PBLSemanticReview;
+  competencyAssignments?: QuestionCompetencyAssignment[];
 }
 
 export interface PBLCase {
@@ -197,6 +255,8 @@ export interface PBLQuestionPresentation {
   examBoard?: string;
   organization?: string;
   year?: number;
+  sourceKind?: 'official' | 'authored_pbl';
+  authorLabel?: string;
 }
 
 export interface PBLTransferSet {
@@ -272,6 +332,8 @@ export interface PBLManifest {
   manifestId: string;
   generatedAt: string;
   totalOfficialQuestionsCovered: number;
+  totalAuthoredQuestions?: number;
+  totalQuestionLinks?: number;
   totalQuestionPedagogy: number;
   totalCompetencies: number;
   totalPBLCases: number;
@@ -422,6 +484,22 @@ export interface NextActionDecision {
 
 export type PBLCompetencyOutcome = 'mastered' | 'needs_review';
 
+export type PBLReflectionDecision = 'own_rule' | 'suggested_rule' | 'needs_review';
+
+export interface PBLReflectionEntry {
+  decision: PBLReflectionDecision;
+  note: string;
+  suggestedRule: string;
+  createdAt: string;
+}
+
+export interface PBLReflectionDraft {
+  decision?: PBLReflectionDecision;
+  note: string;
+  suggestedRule: string;
+  updatedAt: string;
+}
+
 export interface PBLSession {
   sessionId: string;
   userId: string;
@@ -443,6 +521,8 @@ export interface PBLSession {
   masterySnapshot: Record<string, CompetencyMastery>;
   competencyOutcomes?: Record<string, PBLCompetencyOutcome>;
   reflectionNotes?: Record<string, string>;
+  reflectionEntries?: Record<string, PBLReflectionEntry>;
+  reflectionDrafts?: Record<string, PBLReflectionDraft>;
   savedErrorQuestionRefs?: string[];
   lastFeedbackMessage?: string;
   lastDiagnosticResult?: DiagnosticResult;

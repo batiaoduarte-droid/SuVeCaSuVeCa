@@ -141,23 +141,37 @@ export class PBLRepository implements IPBLRepository {
         Object.entries(qpData).forEach(([qid, qp]) => this.questionPedagogyMap.set(qid, qp));
       }
 
-      // 8. Fetch Manifest
+      // 8. Fetch explicitly authored PBL question presentations. They live in
+      // a separate file so they can never be mistaken for captured official
+      // questions while still participating in the same semantic runtime.
+      const authoredData = await this.safeFetchJson<Record<string, PBLQuestionPresentation>>(
+        `${this.basePath}/pbl_authored_questions.json`
+      );
+      if (authoredData && typeof authoredData === 'object') {
+        Object.entries(authoredData).forEach(([qid, presentation]) =>
+          this.questionPresentations.set(qid, presentation)
+        );
+      }
+
+      // 9. Fetch Manifest
       const manData = await this.safeFetchJson<PBLManifest>(`${this.basePath}/pbl_manifest.json`);
       if (manData) {
         this.manifest = manData;
       }
 
-      // 9. Síntese de fallback para questionLinksMap a partir dos cases e competências
+      // 10. Síntese de fallback para questionLinksMap a partir dos cases e competências
       if (this.questionLinksMap.size === 0 && this.cases.size > 0) {
         this.cases.forEach((cs) => {
           if (cs.anchorQuestionRef && cs.unitRef) {
+            const lessonId = cs.unitRef.replace(/^IP-/, '').split('-')[0] || '';
+            const reviewedAt = cs.editorialStatus?.reviewedAt || new Date(0).toISOString();
             this.questionLinksMap.set(cs.anchorQuestionRef, {
               schemaVersion: '3.0.0',
               linkId: `LINK-${cs.caseId}`,
               officialQuestionRef: cs.anchorQuestionRef,
               competencyId: cs.competencyRef,
               unitId: cs.unitRef,
-              lessonId: cs.unitRef.replace(/^IP-/, '').split('-')[0] || '',
+              lessonId,
               prerequisiteRefs: cs.prerequisiteRefs || [],
               pblSuitabilityScores: {
                 anchor: 1,
@@ -168,6 +182,26 @@ export class PBLRepository implements IPBLRepository {
               },
               assignedPBLRole: 'anchor',
               diagnosticPotential: 1,
+              semanticReview: {
+                status: 'approved',
+                reviewedAt,
+                reason: 'Vínculo reconstruído a partir de um caso PBL editorial publicado.',
+                evidenceRefs: [`CASE:${cs.caseId}`],
+              },
+              competencyAssignments: [{
+                assignmentId: `${cs.anchorQuestionRef}::${cs.competencyRef}`,
+                competencyId: cs.competencyRef,
+                unitId: cs.unitRef,
+                lessonId,
+                relation: 'primary',
+                semanticStatus: 'approved',
+                allowedRoles: ['anchor'],
+                roleScores: { anchor: 1, diagnostic: 0, transfer: 0, validation: 0 },
+                evidenceRefs: [`CASE:${cs.caseId}`],
+                reviewMethod: 'editorial',
+                reviewedAt,
+                reason: 'Âncora explicitamente vinculada pelo caso PBL editorial.',
+              }],
             });
           }
         });
@@ -320,14 +354,18 @@ export class PBLRepository implements IPBLRepository {
 
     const payload = (question.questionPayload || question) as Record<string, unknown>;
     const answerPayload = (question.answerPayload || {}) as Record<string, unknown>;
-    const rawPrompt = formatOfficialContent(payload.prompt);
+    const rawPrompt = formatOfficialContent(payload.prompt || payload.statement);
     const rawSupportText = formatOfficialContent(payload.support_text || payload.supportText);
     const prompt = (rawPrompt.length < 15 && rawSupportText)
       ? `${rawSupportText} ${rawPrompt}`
       : rawPrompt;
     const correctAnswer = String(answerPayload.answer || question.officialAnswer || '');
     if (!prompt || !correctAnswer) return null;
-    const rawOptions = Array.isArray(payload.options) ? payload.options : [];
+    const rawOptions = Array.isArray(payload.options)
+      ? payload.options
+      : Array.isArray(payload.alternatives)
+        ? payload.alternatives
+        : [];
     const presentation: PBLQuestionPresentation = {
       questionRef: questionId,
       questionType: rawOptions.length ? 'multiple_choice' : 'true_false',
