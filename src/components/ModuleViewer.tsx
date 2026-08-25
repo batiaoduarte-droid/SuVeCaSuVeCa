@@ -530,6 +530,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const coreModuleCount = modules.filter((module) => /^mod\d+$/.test(module.id)).length;
   const hasSimulado = modules.some((module) => module.id === 'simulado');
   const isExpandedStudy = isFocusMode || Boolean(openUnitId);
+  const isIntroModule = moduleData.id === 'mod-intro';
 
   return (
     <div className={`module-viewer w-full space-y-6 pb-16 ${isExpandedStudy ? 'module-viewer--reading' : ''}`}>
@@ -687,20 +688,15 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             </button>
           </div>
         )}
-        {/* Module Header Card */}
+        {/* O módulo introdutório concentra sua apresentação no primeiro guia
+            interativo. Os demais módulos preservam o cabeçalho curricular completo. */}
+        {!isIntroModule && (
         <header className={isFocusMode ? 'hidden' : 'module-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4'}>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            {moduleData.id === 'mod-intro' ? (
-              <span className="text-xs font-bold text-amber-900 bg-amber-50 border border-amber-300 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-2xs">
-                <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                Módulo 00-Intro · Comece por aqui
-              </span>
-            ) : (
-              <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full flex items-center gap-1.5">
-                <BookOpen className="w-3.5 h-3.5 text-teal-700" />
-                Percurso {currentIndex + 1} de {coreModuleCount}
-              </span>
-            )}
+            <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full flex items-center gap-1.5">
+              <BookOpen className="w-3.5 h-3.5 text-teal-700" />
+              Percurso {currentIndex + 1} de {coreModuleCount}
+            </span>
 
             <div className="flex items-center space-x-2 text-xs text-slate-500 font-medium">
               <Clock className="w-3.5 h-3.5 text-slate-400" />
@@ -844,16 +840,26 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             </button>
           </div>
         </header>
+        )}
 
         <nav
           className="rounded-2xl border border-teal-200 bg-teal-50/60 p-4 sm:p-5"
           aria-label={`Unidades pedagógicas de ${moduleData.title}`}
         >
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-            <h2 className="m-0 text-base font-black text-teal-950">
-              {moduleData.id === 'mod-intro' ? 'Fundamentos do Método (6 tópicos essenciais)' : 'Escolha uma unidade para aprofundar'}
-            </h2>
-            <span className="text-xs font-semibold text-teal-800">{moduleData.sections.length} unidades</span>
+            {isIntroModule ? (
+              <p className="m-0 text-base font-black text-teal-950">Percurso introdutório</p>
+            ) : (
+              <h2 className="m-0 text-base font-black text-teal-950">Escolha uma unidade para aprofundar</h2>
+            )}
+            <div className="flex flex-wrap items-center justify-end gap-2">
+              <span className="text-xs font-semibold text-teal-800">{moduleData.sections.length} unidades</span>
+              {isIntroModule && !isFocusMode && (
+                <button type="button" onClick={onToggleFocusMode} className="button-secondary min-h-10 px-3 text-xs">
+                  <Maximize2 className="h-3.5 w-3.5 text-teal-700" /> Modo foco
+                </button>
+              )}
+            </div>
           </div>
           <ol className="m-0 grid list-none gap-2 p-0 md:grid-cols-2 xl:grid-cols-3">
             {moduleData.sections.map((section, index) => {
@@ -895,13 +901,17 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             const noteIsEmpty = isRichNoteEmpty(sectionNotes[noteKey]);
             const noteEditorIsOpen = Boolean(openNoteEditors[idx]);
             const notePanelId = `section-note-editor-${moduleData.id}-${idx}`;
+            const isIntroOverview = isIntroModule && idx === 0;
 
             return (
             <section
               id={integrationUnitIdForSection(section) ? `module-unit-${integrationUnitIdForSection(section)}` : `intro-section-${idx}`}
               key={`${section.lessonId || moduleData.id}:${section.groupId || idx}:${section.contentUrl || section.title}`}
-              className={`module-unit-shell min-w-0 overflow-hidden surface p-2.5 sm:p-6 space-y-5 ${integrationUnitIdForSection(section) === openUnitId ? 'module-unit-shell--open' : ''}`}
+              className={`module-unit-shell min-w-0 overflow-hidden space-y-5 ${
+                isIntroOverview ? 'p-0' : 'surface p-2.5 sm:p-6'
+              } ${integrationUnitIdForSection(section) === openUnitId ? 'module-unit-shell--open' : ''}`}
             >
+              {!isIntroOverview && (
               <div className="border-b border-slate-100 pb-3 flex items-start justify-between gap-3">
                 <div className="min-w-0 space-y-2">
                   <div className="flex flex-wrap items-center gap-2">
@@ -928,9 +938,10 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                   <span className="hidden sm:inline">Unidade </span>{idx + 1}/{moduleData.sections.length}
                 </span>
               </div>
+              )}
 
               {/* Editorial Markdown Body */}
-              <div className="text-slate-800 text-base leading-relaxed reading-content">
+              <div className={`text-slate-800 text-base leading-relaxed ${isIntroOverview ? '' : 'reading-content'}`}>
                 <MarkdownContent content={section.contentMarkdown} />
               </div>
 

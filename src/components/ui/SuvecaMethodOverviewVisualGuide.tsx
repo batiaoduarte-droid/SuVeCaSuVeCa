@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Compass, ShieldAlert, Workflow } from 'lucide-react';
+import { CheckCircle2, Clock3, Compass, ShieldAlert, Sparkles, Workflow } from 'lucide-react';
 import { SUVECA_METHOD } from '../../lib/suvecaMethod';
 import { SuvecaEquationBlocks } from '../study-visuals/SuvecaEquationBlocks';
 import { SUVECA_BLOCK_COLORS } from '../study-visuals/studyVisualTokens';
@@ -37,23 +37,33 @@ export const SuvecaMethodOverviewVisualGuide: React.FC = () => {
   };
 
   return (
-    <section aria-label="Visão geral do Método SuVeCA" className="my-6 overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-xs">
+    <section aria-label="Visão geral do Método SuVeCA" className="overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-xs">
       <header className="bg-gradient-to-r from-teal-950 via-teal-900 to-emerald-950 px-5 py-5 text-white sm:px-6">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300/50 bg-amber-300/10 px-3 py-1 text-[10px] font-black uppercase tracking-wide !text-amber-200">
+            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+            Módulo 00-Intro · Comece por aqui
+          </span>
+          <span className="inline-flex items-center gap-1.5 text-[11px] font-bold !text-teal-100">
+            <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
+            Unidade 1/6 · percurso de 25 min
+          </span>
+        </div>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="flex items-start gap-3">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-amber-300">
               <Compass className="h-5 w-5" aria-hidden="true" />
             </span>
             <div>
-              <p className="m-0 max-w-none text-[10px] font-black uppercase tracking-[0.16em] !text-teal-200">Fundamento do curso</p>
-              <h3 className="!mt-1 !mb-0 !text-lg font-black !text-white sm:!text-xl">O que é o Método SuVeCA?</h3>
+              <p className="m-0 max-w-none text-[10px] font-black uppercase tracking-[0.16em] !text-teal-200">Sistema de orientação cognitiva e tática</p>
+              <h1 className="!mt-1 !mb-0 !text-xl font-black !text-white sm:!text-2xl">O que é o Método SuVeCA (e o que NÃO é)</h1>
               <p className="!mt-1 !mb-0 max-w-3xl text-xs font-medium leading-relaxed !text-teal-100 sm:text-sm">
                 {SUVECA_METHOD.definition}
               </p>
             </div>
           </div>
           <span className="shrink-0 whitespace-nowrap rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-bold !text-teal-50">
-            Orientação cognitiva e tática
+            Mapa relacional, não molde linear
           </span>
         </div>
       </header>

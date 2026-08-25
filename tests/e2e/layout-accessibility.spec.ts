@@ -124,7 +124,13 @@ test.describe('teclado e leitores de tela', () => {
     await openApp(page, '/?module=mod-intro');
     const overview = page.getByRole('region', { name: 'Visão geral do Método SuVeCA' });
     await expect(overview).toBeVisible();
-    await expect(overview.getByRole('heading', { name: 'O que é o Método SuVeCA?' })).toHaveCSS('color', 'rgb(255, 255, 255)');
+    const unifiedTitle = overview.getByRole('heading', { level: 1, name: 'O que é o Método SuVeCA (e o que NÃO é)' });
+    await expect(unifiedTitle).toHaveCount(1);
+    await expect(unifiedTitle).toHaveCSS('color', 'rgb(255, 255, 255)');
+    await expect(page.getByRole('heading', { name: 'Fundamentos do Método SuVeCA', exact: true })).toHaveCount(0);
+    await expect(page.getByRole('heading', { name: 'Conexão SuVeCA com esta aula' })).toHaveCount(0);
+    await expect(overview.getByText('Módulo 00-Intro · Comece por aqui')).toBeVisible();
+    await expect(overview.getByText('Unidade 1/6 · percurso de 25 min')).toBeVisible();
     const contrastAudit = await new AxeBuilder({ page })
       .include('section[aria-label="Visão geral do Método SuVeCA"]')
       .withRules(['color-contrast'])
