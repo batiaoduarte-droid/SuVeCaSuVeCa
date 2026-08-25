@@ -35,11 +35,11 @@ export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [], 
               <ArrowLeftRight className="h-5 w-5" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col items-start gap-1.5 sm:flex-row sm:items-center sm:gap-2">
                 <h3 className="text-base font-black tracking-tight text-slate-900">
                   Contrastes de Prova
                 </h3>
-                <span className="rounded-full bg-slate-100 text-slate-800 px-2 py-0.5 text-xs font-black select-none border border-slate-200">
+                <span className="inline-flex shrink-0 whitespace-nowrap rounded-full bg-slate-100 text-slate-800 px-2 py-0.5 text-xs font-black leading-5 select-none border border-slate-200">
                   {items.length} {items.length === 1 ? 'contraste' : 'contrastes'}
                 </span>
               </div>

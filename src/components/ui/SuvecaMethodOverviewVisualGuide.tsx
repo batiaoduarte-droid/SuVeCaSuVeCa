@@ -45,14 +45,14 @@ export const SuvecaMethodOverviewVisualGuide: React.FC = () => {
               <Compass className="h-5 w-5" aria-hidden="true" />
             </span>
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.16em] text-teal-200">Fundamento do curso</p>
-              <h3 className="mt-1 text-lg font-black text-white sm:text-xl">O que é o Método SuVeCA?</h3>
-              <p className="mt-1 max-w-3xl text-xs font-medium leading-relaxed text-teal-100 sm:text-sm">
+              <p className="m-0 max-w-none text-[10px] font-black uppercase tracking-[0.16em] !text-teal-200">Fundamento do curso</p>
+              <h3 className="!mt-1 !mb-0 !text-lg font-black !text-white sm:!text-xl">O que é o Método SuVeCA?</h3>
+              <p className="!mt-1 !mb-0 max-w-3xl text-xs font-medium leading-relaxed !text-teal-100 sm:text-sm">
                 {SUVECA_METHOD.definition}
               </p>
             </div>
           </div>
-          <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-bold text-teal-50">
+          <span className="shrink-0 whitespace-nowrap rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-bold !text-teal-50">
             Orientação cognitiva e tática
           </span>
         </div>

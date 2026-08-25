@@ -144,6 +144,18 @@ describe('SemanticBlockRenderer - Unit Tests for v4.2 AST Blocks', () => {
     expect(screen.getByText(/Total de Fonemas/i)).toBeInTheDocument();
   });
 
+  it('quebra a equação de fonemas de forma semântica sem depender de rolagem horizontal', () => {
+    const block: FormulaBlock = {
+      type: 'formula',
+      expression: '\\text{Fonemas} = \\text{Letras} - (\\text{Dígrafos} + \\text{H inicial}) + \\text{Dífonos}',
+    };
+    const { container } = render(<SemanticBlockRenderer block={block} />);
+
+    expect(screen.getByRole('math', { name: /Fonemas igual a Letras/i })).toBeInTheDocument();
+    expect(container.querySelector('[data-responsive-formula="phoneme-count"]')).toBeInTheDocument();
+    expect(container.querySelector('.katex-display')).not.toBeInTheDocument();
+  });
+
   it('renderiza procedure com passos operacionais ordenados', () => {
     const block: ProcedureBlock = {
       type: 'procedure',

@@ -108,11 +108,11 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
               <CheckSquare className="h-5 w-5" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col items-start gap-1.5 sm:flex-row sm:items-center sm:gap-2">
                 <h3 className="text-base font-black tracking-tight text-teal-950 m-0">
                   Síntese para Recuperação Ativa
                 </h3>
-                <span className="rounded-full bg-teal-100 text-teal-900 px-2 py-0.5 text-xs font-black select-none">
+                <span className="inline-flex shrink-0 whitespace-nowrap rounded-full bg-teal-100 text-teal-900 px-2 py-0.5 text-xs font-black leading-5 select-none">
                   {totalPrompts} {totalPrompts === 1 ? 'item' : 'itens'}
                 </span>
               </div>

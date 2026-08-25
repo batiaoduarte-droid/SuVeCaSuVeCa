@@ -122,11 +122,51 @@ test.describe('teclado e leitores de tela', () => {
 
   test('módulo introdutório concentra o conteúdo nos guias interativos sem detalhamento duplicado', async ({ page }) => {
     await openApp(page, '/?module=mod-intro');
-    await expect(page.getByRole('region', { name: 'Visão geral do Método SuVeCA' })).toBeVisible();
+    const overview = page.getByRole('region', { name: 'Visão geral do Método SuVeCA' });
+    await expect(overview).toBeVisible();
+    await expect(overview.getByRole('heading', { name: 'O que é o Método SuVeCA?' })).toHaveCSS('color', 'rgb(255, 255, 255)');
+    const contrastAudit = await new AxeBuilder({ page })
+      .include('section[aria-label="Visão geral do Método SuVeCA"]')
+      .withRules(['color-contrast'])
+      .analyze();
+    expect(contrastAudit.violations).toEqual([]);
     await expect(page.getByRole('list', { name: /Sujeito mais Verbo mais Complemento/i }).first()).toBeVisible();
     await expect(page.getByText('Detalhamento dos 8 Passos')).toHaveCount(0);
     await expect(page.getByText('As 5 Escalas Detalhadas')).toHaveCount(0);
     await expect(page.getByText('Guia Rápido por Aula')).toHaveCount(0);
+  });
+
+  test('contadores pedagógicos não quebram palavra por palavra no mobile', async ({ page }, testInfo) => {
+    test.skip(!testInfo.project.name.startsWith('mobile-'), 'Critério específico para telas estreitas.');
+
+    for (const sample of [
+      { section: 'traps', label: '3 armadilhas' },
+      { section: 'mnemonics', label: '1 mnemônico' },
+    ]) {
+      await openApp(page, `/?module=mod0&unit=IP-A00-G01&section=${sample.section}`);
+      const badge = page.getByText(sample.label, { exact: true });
+      await expect(badge).toBeVisible();
+      const geometry = await badge.evaluate((element) => {
+        const rect = element.getBoundingClientRect();
+        return {
+          height: rect.height,
+          whiteSpace: getComputedStyle(element).whiteSpace,
+          fitsContent: element.scrollWidth <= element.clientWidth,
+        };
+      });
+      expect(geometry.whiteSpace).toBe('nowrap');
+      expect(geometry.height).toBeLessThan(32);
+      expect(geometry.fitsContent).toBe(true);
+      await expectNoDocumentOverflow(page);
+    }
+  });
+
+  test('equação de fonemas recompõe as parcelas sem scroll lateral', async ({ page }) => {
+    await openApp(page, '/?module=mod0&unit=IP-A00-G01&section=explanation');
+    const formula = page.locator('[data-responsive-formula="phoneme-count"]');
+    await expect(formula).toBeVisible();
+    expect(await formula.evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(true);
+    await expectNoDocumentOverflow(page);
   });
 
   test('Pomodoro minimiza sobre o conteúdo e restaura a mesma sessão', async ({ page }) => {
