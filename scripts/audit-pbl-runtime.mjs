@@ -107,12 +107,46 @@ if (!errors.length) {
     `Transfer sets without a published question presentation: ${xfers.length - transferSetsWithPresentation.length}`
   );
 
+  const runtimePoolFields = {
+    anchor: 'anchorCandidateRefs',
+    diagnostic: 'diagnosticCandidateRefs',
+    transfer: 'transferCandidateRefs',
+    validation: 'validationCandidateRefs',
+  };
+  const runtimePools = Object.fromEntries(Object.entries(runtimePoolFields).map(([role, field]) => {
+    const refs = comps.flatMap((competency) => competency[field] || [])
+      .filter((questionRef) => questionRef.includes('-estrategia.'));
+    const uniqueRefs = new Set(refs);
+    const competenciesWithCandidates = comps.filter((competency) =>
+      (competency[field] || []).some((questionRef) => questionRef.includes('-estrategia.'))
+    ).length;
+    const publishedCandidates = [...uniqueRefs].filter((questionRef) => publishedQuestionRefs.has(questionRef));
+    check(
+      publishedCandidates.length === uniqueRefs.size,
+      `Online ${role} pool has unpublished questions: ${uniqueRefs.size - publishedCandidates.length}`
+    );
+    check(
+      [...uniqueRefs].every((questionRef) => qcl[questionRef] && qp[questionRef]),
+      `Online ${role} pool has questions without link or pedagogy`
+    );
+    return [role, {
+      questions: uniqueRefs.size,
+      competencies: competenciesWithCandidates,
+      published: publishedCandidates.length,
+    }];
+  }));
+  check(runtimePools.anchor.questions > 0, 'Online anchor runtime pool is empty');
+  check(runtimePools.diagnostic.questions > 0, 'Online diagnostic runtime pool is empty');
+  check(runtimePools.transfer.questions > 0, 'Online transfer runtime pool is empty');
+  check(runtimePools.validation.questions > 0, 'Online validation runtime pool is empty');
+
   globalThis.pblAuditMetrics = {
     gradedCases: gradedCases.length,
     blockedUngradedCases: ungradedCases.length,
     transferSetsWithPresentation: transferSetsWithPresentation.length,
     questionLinks: Object.keys(qcl).length,
     questionPedagogy: Object.keys(qp).length,
+    runtimePools,
   };
 }
 

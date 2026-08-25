@@ -1,8 +1,38 @@
 import AxeBuilder from '@axe-core/playwright';
+import fs from 'node:fs';
+import path from 'node:path';
 import { expect, expectNoDocumentOverflow, openApp, openTab, test } from './fixtures';
+
+interface PublishedQuestionAnswer {
+  id: string;
+  correctAnswer: string;
+  options?: unknown[];
+}
+
+const publishedQuestionAnswers = new Map(
+  (JSON.parse(fs.readFileSync(
+    path.resolve('public/knowledge/official-questions.normalized.json'),
+    'utf8'
+  )) as PublishedQuestionAnswer[]).map((question) => [
+    `OQ-${question.id.replace(':', '-')}`,
+    question,
+  ])
+);
 
 const chooseAnswer = async (page: Parameters<typeof openApp>[0], answer: string) => {
   await page.getByRole('button', { name: new RegExp(`^${answer}(?:\\s|$)`, 'i') }).first().click();
+};
+
+const chooseCurrentPublishedCorrectAnswer = async (page: Parameters<typeof openApp>[0]) => {
+  const questionRef = await page.locator('[data-pbl-question-ref]').getAttribute('data-pbl-question-ref');
+  const published = questionRef ? publishedQuestionAnswers.get(questionRef) : undefined;
+  expect(published, `Questão publicada não encontrada: ${questionRef}`).toBeDefined();
+  const answer = published!.options?.length
+    ? published!.correctAnswer
+    : ['C', 'CERTO', 'CORRETO', 'CORRECT', 'TRUE'].includes(published!.correctAnswer.toUpperCase())
+      ? 'Certo'
+      : 'Errado';
+  await chooseAnswer(page, answer);
 };
 
 const submitWithHighConfidence = async (page: Parameters<typeof openApp>[0], submitName: RegExp) => {
@@ -45,15 +75,15 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await page.getByRole('button', { name: /aplicar em uma nova questão/i }).click();
 
     await expect(page.getByText(/nova aplicação após a intervenção/i)).toBeVisible();
-    await chooseAnswer(page, 'D');
+    await chooseCurrentPublishedCorrectAnswer(page);
     await submitWithHighConfidence(page, /confirmar nova aplicação/i);
     await expect(page.getByText(/resposta correta/i)).toBeVisible();
     await page.getByRole('button', { name: /avançar para transferência/i }).click();
 
     await expect(page.getByText(/transferência/i).first()).toBeVisible();
-    await chooseAnswer(page, 'D');
+    await chooseCurrentPublishedCorrectAnswer(page);
     await submitWithHighConfidence(page, /validar transferência/i);
-    await chooseAnswer(page, 'D');
+    await chooseCurrentPublishedCorrectAnswer(page);
     await submitWithHighConfidence(page, /validar transferência/i);
 
     await expect(page.getByRole('heading', { name: /feche o ciclo/i })).toBeVisible();

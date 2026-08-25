@@ -3,9 +3,14 @@ import type {
   PBLAttempt,
 } from '../../../types/pbl';
 import type { IPBLRepository } from '../data/PBLRepository';
+import { QuestionPoolSelector } from './QuestionPoolSelector';
 
 export class DiagnosticResolver {
-  constructor(private repo: IPBLRepository) {}
+  private questionPoolSelector: QuestionPoolSelector;
+
+  constructor(private repo: IPBLRepository) {
+    this.questionPoolSelector = new QuestionPoolSelector(repo);
+  }
 
   public async resolveDiagnostic(attempt: PBLAttempt): Promise<DiagnosticResult> {
     const { competencyRef, questionRef, userAnswer, evaluation, isCorrect } = attempt;
@@ -59,8 +64,16 @@ export class DiagnosticResolver {
     const targetProbeNode = firstNode?.onIncorrect.targetNodeId
       ? diagPath?.nodes.find((node) => node.nodeId === firstNode.onIncorrect.targetNodeId)
       : diagPath?.nodes.find((node) => node.questionRef !== questionRef);
-    const candidateProbeRef = !isCorrect && diagnosticConfidence < 0.60
-      ? targetProbeNode?.questionRef
+    const shouldProbe = !isCorrect && (diagnosticConfidence < 0.60 || evaluation === 'error');
+    const onlineProbe = shouldProbe
+      ? await this.questionPoolSelector.selectQuestion(competencyRef, 'diagnostic', {
+          excludedQuestionRefs: [questionRef],
+          onlineOnly: true,
+          seed: attempt.sessionId,
+        })
+      : null;
+    const candidateProbeRef = shouldProbe
+      ? onlineProbe?.questionRef || targetProbeNode?.questionRef
       : undefined;
     const probePresentation = candidateProbeRef
       ? await this.repo.getQuestionPresentation(candidateProbeRef)

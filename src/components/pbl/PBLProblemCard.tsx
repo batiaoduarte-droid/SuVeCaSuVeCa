@@ -1,9 +1,10 @@
 import React from 'react';
-import type { PBLCase } from '../../types/pbl';
+import type { PBLCase, PBLQuestionPresentation } from '../../types/pbl';
 import { Sparkles } from 'lucide-react';
 
 interface PBLProblemCardProps {
   pblCase: PBLCase;
+  question?: PBLQuestionPresentation | null;
   selectedAnswer: string;
   onSelectAnswer: (answer: string) => void;
   disabled?: boolean;
@@ -11,11 +12,18 @@ interface PBLProblemCardProps {
 
 export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
   pblCase,
+  question,
   selectedAnswer,
   onSelectAnswer,
   disabled = false,
 }) => {
-  const isMultipleChoice = Boolean(pblCase.options?.length);
+  const isMultipleChoice = question
+    ? question.questionType === 'multiple_choice'
+    : Boolean(pblCase.options?.length);
+  const options = question?.options || pblCase.options;
+  const questionStem = question
+    ? [question.supportText, question.prompt].filter(Boolean).join('\n\n')
+    : pblCase.questionStem;
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -27,19 +35,20 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
         </div>
         <div className="text-xs font-medium text-slate-600">
           {pblCase.title}
+          {question?.examBoard ? ` · ${question.examBoard}${question.year ? ` ${question.year}` : ''}` : ''}
         </div>
       </div>
 
       {/* Question Stem */}
       <div className="text-sm leading-relaxed font-medium text-slate-900">
-        {pblCase.questionStem || 'Analise os termos e a estrutura normativa da assertiva abaixo.'}
+        {questionStem || 'Analise os termos e a estrutura normativa da assertiva abaixo.'}
       </div>
 
       {/* Answer Choices / Judgment */}
       <div className="mt-6" role="group" aria-label="Alternativas da questão">
         {isMultipleChoice ? (
           <div className="space-y-3">
-            {pblCase.options.map((opt) => {
+            {options.map((opt) => {
               const isSelected = selectedAnswer === opt.label;
               return (
                 <button

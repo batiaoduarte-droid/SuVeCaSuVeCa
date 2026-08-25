@@ -5,9 +5,14 @@ import type {
   CompetencyMastery,
 } from '../../../types/pbl';
 import type { IPBLRepository } from '../data/PBLRepository';
+import { QuestionPoolSelector } from './QuestionPoolSelector';
 
 export class TransferSelector {
-  constructor(private repo: IPBLRepository) {}
+  private questionPoolSelector: QuestionPoolSelector;
+
+  constructor(private repo: IPBLRepository) {
+    this.questionPoolSelector = new QuestionPoolSelector(repo);
+  }
 
   public async selectNextTransferItem(
     competencyId: string,
@@ -15,8 +20,29 @@ export class TransferSelector {
     currentTransferIndex: number,
     mastery?: CompetencyMastery,
     excludedQuestionRefs: string[] = [],
-    requirePresentation = false
+    requirePresentation = false,
+    seed = ''
   ): Promise<PBLTransferItem | null> {
+    const onlineCandidate = await this.questionPoolSelector.selectQuestion(competencyId, 'transfer', {
+      excludedQuestionRefs,
+      onlineOnly: true,
+      seed: `${seed}:${currentTransferIndex}:${excludedQuestionRefs.join(',')}`,
+    });
+    if (onlineCandidate) {
+      const transferType = lastEvaluation === 'error' || lastEvaluation === 'high_confidence_error'
+        ? 'isomorphic'
+        : lastEvaluation === 'fragile_correct'
+          ? 'near_transfer'
+          : (mastery?.score ?? 0) >= 0.75
+            ? 'far_transfer'
+            : 'near_transfer';
+      return this.questionPoolSelector.toTransferItem(
+        onlineCandidate,
+        transferType,
+        currentTransferIndex + 1
+      );
+    }
+
     const xferSet = await this.repo.getTransferSetForCompetency(competencyId);
     if (!xferSet || xferSet.items.length === 0) return null;
 

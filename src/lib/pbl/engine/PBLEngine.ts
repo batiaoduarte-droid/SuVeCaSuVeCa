@@ -14,6 +14,7 @@ import { InterventionPlanner } from './InterventionPlanner';
 import { TransferSelector } from './TransferSelector';
 import { MasteryUpdater } from './MasteryUpdater';
 import { NextActionPolicy } from './NextActionPolicy';
+import { QuestionPoolSelector } from './QuestionPoolSelector';
 
 export class PBLEngine {
   public sessionPlanner: SessionPlanner;
@@ -46,14 +47,27 @@ export class PBLEngine {
       .filter((attempt) => attempt.competencyRef === session.currentCompetencyRef)
       .map((attempt) => attempt.questionRef);
     const lastAttempt = session.attempts[session.attempts.length - 1];
-    const item = await this.transferSelector.selectNextTransferItem(
+    const poolSelector = new QuestionPoolSelector(this.repo);
+    const validationCandidate = await poolSelector.selectQuestion(
       session.currentCompetencyRef,
-      lastAttempt?.evaluation || 'error',
-      0,
-      session.masterySnapshot[session.currentCompetencyRef],
-      attemptedQuestionRefs,
-      true
+      'validation',
+      {
+        excludedQuestionRefs: attemptedQuestionRefs,
+        onlineOnly: true,
+        seed: session.sessionId,
+      }
     );
+    const item = validationCandidate
+      ? poolSelector.toTransferItem(validationCandidate, 'isomorphic', 1)
+      : await this.transferSelector.selectNextTransferItem(
+          session.currentCompetencyRef,
+          lastAttempt?.evaluation || 'error',
+          0,
+          session.masterySnapshot[session.currentCompetencyRef],
+          attemptedQuestionRefs,
+          true,
+          session.sessionId
+        );
     if (!item) throw new Error('Não há questão isomórfica publicada para a nova tentativa.');
     session.currentTransferItem = item;
     session.currentQuestionRef = item.officialQuestionRef;

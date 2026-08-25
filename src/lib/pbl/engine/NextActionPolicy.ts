@@ -5,12 +5,15 @@ import type {
 } from '../../../types/pbl';
 import type { IPBLRepository } from '../data/PBLRepository';
 import { TransferSelector } from './TransferSelector';
+import { QuestionPoolSelector } from './QuestionPoolSelector';
 
 export class NextActionPolicy {
   private transferSelector: TransferSelector;
+  private questionPoolSelector: QuestionPoolSelector;
 
   constructor(private repo: IPBLRepository) {
     this.transferSelector = new TransferSelector(repo);
+    this.questionPoolSelector = new QuestionPoolSelector(repo);
   }
 
   public async decideNextAction(
@@ -33,7 +36,8 @@ export class NextActionPolicy {
           0,
           currentMastery,
           attemptedQuestionRefs,
-          true
+          true,
+          session.sessionId
         );
 
         if (xferItem) {
@@ -84,7 +88,8 @@ export class NextActionPolicy {
           0,
           currentMastery,
           attemptedQuestionRefs,
-          true
+          true,
+          session.sessionId
         );
 
         if (xferItem) {
@@ -132,7 +137,8 @@ export class NextActionPolicy {
         0,
         currentMastery,
         attemptedQuestionRefs,
-        true
+        true,
+        session.sessionId
       );
 
       if (!xferItem || transferAttempts.length >= 3) {
@@ -161,12 +167,16 @@ export class NextActionPolicy {
     if (nextCompIdx < session.targetCompetencyRefs.length) {
       const nextCompId = session.targetCompetencyRefs[nextCompIdx];
       const nextCase = await this.repo.getCaseForCompetency(nextCompId);
+      const onlineAnchor = await this.questionPoolSelector.selectQuestion(nextCompId, 'anchor', {
+        onlineOnly: true,
+        seed: session.sessionId,
+      });
 
       return {
         type: 'advance_competency',
         targetCompetencyRef: nextCompId,
         targetCaseRef: nextCase?.caseId,
-        targetQuestionRef: nextCase?.anchorQuestionRef,
+        targetQuestionRef: onlineAnchor?.questionRef || nextCase?.anchorQuestionRef,
         outcome,
         reason: outcome === 'mastered'
           ? 'A transferência confirmou o domínio desta competência.'

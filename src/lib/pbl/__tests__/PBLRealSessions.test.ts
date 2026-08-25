@@ -6,6 +6,7 @@ import { PBLRepository } from '../data/PBLRepository';
 import { AttemptEvaluator } from '../engine/AttemptEvaluator';
 import { DiagnosticResolver } from '../engine/DiagnosticResolver';
 import { TransferSelector } from '../engine/TransferSelector';
+import { QuestionPoolSelector } from '../engine/QuestionPoolSelector';
 import { RuleBasedMasteryModel, BKTMasteryModel } from '../engine/MasteryUpdater';
 import type { CompetencyMastery } from '../../../types/pbl';
 import type {
@@ -191,6 +192,98 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
         transferSet.competencyRef
       ).toBe(true);
     }
+  });
+
+  it('should consume online candidates in all four runtime PBL roles', async () => {
+    const competencies = await repo.getAllCompetencies();
+    const gradedCompetencies = new Set(
+      realCases.filter((pblCase) => Boolean(pblCase.officialAnswer)).map((pblCase) => pblCase.competencyRef)
+    );
+    const findOnlineCompetency = (
+      field: 'anchorCandidateRefs' | 'diagnosticCandidateRefs' | 'transferCandidateRefs' | 'validationCandidateRefs'
+    ) => competencies.find((competency) =>
+      gradedCompetencies.has(competency.competencyId)
+      && competency[field].some((questionRef) => questionRef.includes('-estrategia.'))
+    );
+
+    const anchorCompetency = findOnlineCompetency('anchorCandidateRefs');
+    expect(anchorCompetency).toBeDefined();
+    const anchorSession = await engine.startSession({
+      userId: 'online_anchor_user',
+      mode: 'guided',
+      targetCompetencyId: anchorCompetency!.competencyId,
+    });
+    expect(anchorSession.currentQuestionRef).toContain('-estrategia.');
+    expect(await repo.getQuestionPresentation(anchorSession.currentQuestionRef)).toBeDefined();
+
+    const diagnosticCompetency = findOnlineCompetency('diagnosticCandidateRefs');
+    expect(diagnosticCompetency).toBeDefined();
+    const diagnosticCase = await repo.getCaseForCompetency(diagnosticCompetency!.competencyId);
+    expect(diagnosticCase).toBeDefined();
+    const diagnostic = await new DiagnosticResolver(repo).resolveDiagnostic({
+      attemptId: 'att_online_diagnostic',
+      sessionId: 'sess_online_diagnostic',
+      questionRef: diagnosticCase!.anchorQuestionRef,
+      competencyRef: diagnosticCompetency!.competencyId,
+      stage: 'initial',
+      userAnswer: '__WRONG__',
+      correctAnswer: diagnosticCase!.officialAnswer,
+      isCorrect: false,
+      confidence: 'low',
+      evaluation: 'error',
+      responseTimeMs: 1000,
+      detectedTrapRefs: [],
+      detectedMisconceptionRefs: [],
+      interventionRefs: [],
+      createdAt: new Date().toISOString(),
+    });
+    expect(diagnostic.probeQuestionRef).toContain('-estrategia.');
+
+    const transferCompetency = findOnlineCompetency('transferCandidateRefs');
+    expect(transferCompetency).toBeDefined();
+    const transfer = await new TransferSelector(repo).selectNextTransferItem(
+      transferCompetency!.competencyId,
+      'strong_correct',
+      0,
+      undefined,
+      [],
+      true
+    );
+    expect(transfer?.officialQuestionRef).toContain('-estrategia.');
+
+    const validationCompetency = findOnlineCompetency('validationCandidateRefs');
+    expect(validationCompetency).toBeDefined();
+    const validationSession = await engine.startSession({
+      userId: 'online_validation_user',
+      mode: 'guided',
+      targetCompetencyId: validationCompetency!.competencyId,
+    });
+    validationSession.attempts.push({
+      attemptId: 'att_before_validation',
+      sessionId: validationSession.sessionId,
+      questionRef: validationSession.currentQuestionRef,
+      competencyRef: validationCompetency!.competencyId,
+      stage: 'initial',
+      userAnswer: '__WRONG__',
+      correctAnswer: '__CORRECT__',
+      isCorrect: false,
+      confidence: 'high',
+      evaluation: 'high_confidence_error',
+      responseTimeMs: 1000,
+      detectedTrapRefs: [],
+      detectedMisconceptionRefs: [],
+      interventionRefs: [],
+      createdAt: new Date().toISOString(),
+    });
+    const validationSessionPrepared = await engine.prepareReattempt(validationSession);
+    expect(validationSessionPrepared.currentQuestionRef).toContain('-estrategia.');
+
+    const poolSelector = new QuestionPoolSelector(repo);
+    expect(await poolSelector.selectQuestion(
+      validationCompetency!.competencyId,
+      'validation',
+      { onlineOnly: true, seed: 'audit' }
+    )).toBeDefined();
   });
 
   it('should run a cumulative spiral review session for A14 (A14-S01)', async () => {

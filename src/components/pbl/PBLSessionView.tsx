@@ -98,7 +98,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
 
   useEffect(() => {
     let active = true;
-    const needsPublishedQuestion = ['hypothesis', 'reattempt', 'transfer'].includes(session.phase);
+    const needsPublishedQuestion = ['problem', 'hypothesis', 'reattempt', 'transfer'].includes(session.phase);
     if (!needsPublishedQuestion) {
       setCurrentQuestion(null);
       return () => { active = false; };
@@ -108,7 +108,9 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
       const presentation = await pblEngine.repo.getQuestionPresentation(session.currentQuestionRef);
       if (!active) return;
       setCurrentQuestion(presentation);
-      if (!presentation) setErrorMessage('Esta questão não possui apresentação publicada. A sessão foi preservada para retomada.');
+      if (!presentation && session.phase !== 'problem') {
+        setErrorMessage('Esta questão não possui apresentação publicada. A sessão foi preservada para retomada.');
+      }
     })();
     return () => { active = false; };
   }, [session.phase, session.currentQuestionRef]);
@@ -276,9 +278,27 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
 
       {session.phase === 'problem' && currentCase && (
         <div>
-          <PBLProblemCard pblCase={currentCase} selectedAnswer={selectedAnswer} onSelectAnswer={setSelectedAnswer} disabled={loading} />
+          <PBLProblemCard
+            pblCase={currentCase}
+            question={currentQuestion}
+            selectedAnswer={selectedAnswer}
+            onSelectAnswer={setSelectedAnswer}
+            disabled={loading}
+          />
           {selectedAnswer && (
-            <PBLConfidenceSelector confidence={confidence} onSelectConfidence={setConfidence} reasoning={reasoning} onChangeReasoning={setReasoning} onSubmit={() => submitAttempt('initial', currentCase.anchorQuestionRef, currentCase.officialAnswer, currentCase.options.length ? 'multiple_choice' : 'true_false')} disabled={loading} />
+            <PBLConfidenceSelector
+              confidence={confidence}
+              onSelectConfidence={setConfidence}
+              reasoning={reasoning}
+              onChangeReasoning={setReasoning}
+              onSubmit={() => submitAttempt(
+                'initial',
+                currentQuestion?.questionRef || currentCase.anchorQuestionRef,
+                currentQuestion?.correctAnswer || currentCase.officialAnswer,
+                currentQuestion?.questionType || (currentCase.options.length ? 'multiple_choice' : 'true_false')
+              )}
+              disabled={loading}
+            />
           )}
         </div>
       )}

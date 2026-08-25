@@ -4,6 +4,7 @@ import type {
   CompetencyMastery,
 } from '../../../types/pbl';
 import type { IPBLRepository } from '../data/PBLRepository';
+import { QuestionPoolSelector } from './QuestionPoolSelector';
 
 export interface SessionPlanRequest {
   userId: string;
@@ -17,7 +18,11 @@ export interface SessionPlanRequest {
 }
 
 export class SessionPlanner {
-  constructor(private repo: IPBLRepository) {}
+  private questionPoolSelector: QuestionPoolSelector;
+
+  constructor(private repo: IPBLRepository) {
+    this.questionPoolSelector = new QuestionPoolSelector(repo);
+  }
 
   public async createSession(request: SessionPlanRequest): Promise<PBLSession> {
     const {
@@ -98,12 +103,15 @@ export class SessionPlanner {
       }
     }
 
+    const sessionId = `pbl_sess_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
     const firstCompId = targetCompetencyRefs[0];
     const initialCase = await this.repo.getCaseForCompetency(firstCompId);
     const initialCaseId = initialCase?.caseId || `PBL-CASE-${firstCompId.replace('COMP-', '')}`;
-    const initialQuestionId = initialCase?.anchorQuestionRef || '';
-
-    const sessionId = `pbl_sess_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+    const onlineAnchor = await this.questionPoolSelector.selectQuestion(firstCompId, 'anchor', {
+      onlineOnly: true,
+      seed: sessionId,
+    });
+    const initialQuestionId = onlineAnchor?.questionRef || initialCase?.anchorQuestionRef || '';
     const now = new Date().toISOString();
 
     const session: PBLSession = {

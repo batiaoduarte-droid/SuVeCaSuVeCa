@@ -45,7 +45,10 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
       ];
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <div
+      className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+      data-pbl-question-ref={question.questionRef}
+    >
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-xs font-bold text-indigo-800">
           {kind === 'probe' ? <SearchCheck className="h-3.5 w-3.5" /> : <Layers className="h-3.5 w-3.5" />}
