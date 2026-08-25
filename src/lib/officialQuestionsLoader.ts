@@ -1,8 +1,11 @@
+import type { QuestionPresentation } from '../types/questionPresentation';
+
 export interface NormalizedQuestion {
   id: string;
   originalQuestionId: string;
   prompt: string;
   supportText?: string;
+  presentation?: QuestionPresentation;
   questionType?: string;
   options?: Array<{ letter: string; text: string }>;
   correctAnswer?: string;

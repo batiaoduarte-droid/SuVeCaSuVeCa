@@ -284,6 +284,7 @@ export class PBLRepository implements IPBLRepository {
         questionRef: questionId,
         questionType: normalized.options?.length ? 'multiple_choice' : 'true_false',
         supportText: formatOfficialContent(normalized.supportText) || undefined,
+        presentation: normalized.presentation,
         prompt: formatOfficialContent(normalized.prompt),
         options: (normalized.options || []).map((option) => ({
           label: option.letter.toUpperCase(),

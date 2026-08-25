@@ -27,6 +27,8 @@ import { MODULES_DATA } from '../data/modulesData';
 import { getLessonName } from '../data/lessonCatalog';
 import { formatOfficialContent } from '../lib/officialContent';
 import { useModalFocus } from '../hooks/useModalFocus';
+import type { QuestionPresentation } from '../types/questionPresentation';
+import { QuestionPresentationContent } from './QuestionPresentationContent';
 import {
   GoldenRuleCard,
   StudyBadge,
@@ -39,6 +41,7 @@ interface EditorialNormalizedQuestion {
   primaryLessonId?: string;
   questionType?: 'CERTO_ERRADO' | 'MULTIPLA_ESCOLHA';
   supportText?: string;
+  presentation?: QuestionPresentation;
   prompt?: string;
   options?: Array<{ letter?: string; label?: string; text?: string }>;
   correctAnswer?: string;
@@ -324,8 +327,11 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
                     {normalized.year && <span className="rounded-lg bg-slate-100 px-2.5 py-1 font-semibold text-slate-800">{normalized.year}</span>}
                     <span className="rounded-lg bg-teal-50 border border-teal-200 px-2.5 py-1 font-semibold text-teal-900">{normalized.primaryLessonId || detail.editorialProjection.primaryLessonId}</span>
                   </div>
-                  {normalized.supportText && <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 whitespace-pre-wrap text-sm leading-relaxed text-slate-700 italic border-l-4 border-l-teal-700">"{formatOfficialContent(normalized.supportText)}"</div>}
-                  <p className="whitespace-pre-wrap text-sm sm:text-base leading-relaxed text-slate-900 font-medium">{formatOfficialContent(normalized.prompt)}</p>
+                  <QuestionPresentationContent
+                    presentation={normalized.presentation}
+                    supportText={formatOfficialContent(normalized.supportText)}
+                    prompt={formatOfficialContent(normalized.prompt)}
+                  />
                   {isTrueFalse ? (
                     <div className="grid grid-cols-2 gap-3">
                       {['C', 'E'].map((answer) => {

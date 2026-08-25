@@ -189,6 +189,7 @@ export interface PBLQuestionPresentation {
   questionRef: string;
   questionType: 'multiple_choice' | 'true_false';
   supportText?: string;
+  presentation?: QuestionPresentation;
   prompt: string;
   options: Array<{ label: string; text: string }>;
   correctAnswer: string;
@@ -488,3 +489,4 @@ export interface MasteryEvidence {
 export interface MasteryModel {
   update(previous: CompetencyMastery, evidence: MasteryEvidence): CompetencyMastery;
 }
+import type { QuestionPresentation } from './questionPresentation';

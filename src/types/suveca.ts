@@ -1,3 +1,5 @@
+import type { QuestionPresentation } from './questionPresentation';
+
 export type QuestionType = 'CERTO_ERRADO' | 'MULTIPLA_ESCOLHA';
 
 export interface QuizOption {
@@ -11,6 +13,7 @@ export interface QuizQuestion {
   bank?: string;
   topic?: string;
   supportText?: string;
+  presentation?: QuestionPresentation;
   questionText: string;
   options?: QuizOption[];
   correctAnswer: string; // 'C', 'E', or 'A', 'B', 'C', 'D', 'E'

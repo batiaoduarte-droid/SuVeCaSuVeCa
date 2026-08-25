@@ -25,6 +25,7 @@ import {
   StudyBadge,
   StudyCallout,
   StudySurface,
+  SuvecaPatternExplorer,
 } from './study-visuals';
 
 const PRESET_SENTENCES = [
@@ -86,6 +87,13 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
     setCurrentAnalysis(null);
     setSelectedBlock(null);
     setErrorMsg(null);
+  };
+
+  const handleSelectPatternExample = (sentence: string) => {
+    handleSelectPreset(sentence);
+    window.requestAnimationFrame(() => {
+      document.getElementById('suveca-analyzer-input')?.focus();
+    });
   };
 
   const handleAnalyzeWithAI = async () => {
@@ -170,29 +178,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
         </header>
       )}
 
-      <section className="rounded-2xl border border-teal-200 bg-teal-50/70 p-5 sm:p-6 select-text" aria-labelledby="suveca-map-title">
-        <div className="flex items-start gap-3">
-          <Layers className="mt-0.5 h-5 w-5 shrink-0 text-teal-800" aria-hidden="true" />
-          <div className="min-w-0 space-y-2">
-            <h2 id="suveca-map-title" className="text-base font-extrabold text-teal-950 sm:text-lg">
-              SuVeCA = {SUVECA_METHOD.equation}
-            </h2>
-            <p className="text-sm font-medium leading-relaxed text-teal-950">
-              {SUVECA_METHOD.definition}
-            </p>
-            <p className="hidden text-xs leading-relaxed text-slate-600 sm:block">
-              A análise mantém os blocos na ordem real da frase e reconstrói os vínculos entre eles. Um bloco pode estar posposto, implícito ou ausente.
-            </p>
-            <div className="hidden flex-wrap gap-2 pt-1 sm:flex" aria-label="Exemplos de padrões SuVeCA">
-              {SUVECA_METHOD.patterns.slice(0, 5).map((pattern) => (
-                <span key={pattern.name} className="rounded-lg border border-teal-200 bg-white px-2.5 py-1 text-[11px] font-bold text-teal-900" title={pattern.example}>
-                  {pattern.surface}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <SuvecaPatternExplorer onUseExample={handleSelectPatternExample} />
 
       {/* Input Box & Presets */}
       <section className={`bg-white rounded-2xl border border-slate-200 shadow-xs space-y-5 ${isFocusMode ? 'p-5 sm:p-8 lg:p-10' : 'p-6 sm:p-8'}`}>
@@ -203,6 +189,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
           <div className="flex flex-col sm:flex-row gap-3">
             <div className="relative flex-1">
               <textarea
+                id="suveca-analyzer-input"
                 value={inputText}
                 onChange={(e) => {
                   setInputText(e.target.value);

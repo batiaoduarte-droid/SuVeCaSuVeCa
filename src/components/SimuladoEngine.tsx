@@ -31,6 +31,7 @@ import {
   StudySurface,
   StudyCallout,
 } from './study-visuals';
+import { QuestionPresentationContent } from './QuestionPresentationContent';
 
 const DEFAULT_EXAM_DURATION_SECONDS = 40 * 60;
 const PAUSED_SIMULADO_STORAGE_PREFIX = 'suveca_simulado_pausado';
@@ -770,15 +771,11 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                 </span>
               </div>
 
-              {currentQ.supportText && (
-                <div className="bg-slate-50 p-4 rounded-xl text-xs sm:text-sm italic text-slate-700 border-l-3 border-teal-700 shadow-2xs">
-                  "{currentQ.supportText}"
-                </div>
-              )}
-
-              <p className="text-sm sm:text-base font-semibold text-slate-900 leading-relaxed">
-                {currentQ.questionText}
-              </p>
+              <QuestionPresentationContent
+                presentation={currentQ.presentation}
+                supportText={currentQ.supportText}
+                prompt={currentQ.questionText}
+              />
 
               {/* Options */}
               {currentQ.type === 'CERTO_ERRADO' ? (

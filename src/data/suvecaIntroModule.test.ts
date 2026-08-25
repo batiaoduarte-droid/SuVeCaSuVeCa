@@ -11,7 +11,7 @@ describe('SUVECA_INTRO_MODULE', () => {
     expect(SUVECA_INTRO_MODULE.questions).toHaveLength(5);
   });
 
-  it('contém todas as 6 seções didáticas estruturadas com conteúdo substantivo', () => {
+  it('contém as 6 seções didáticas projetadas uma vez em guias interativos', () => {
     const titles = SUVECA_INTRO_MODULE.sections.map((s) => s.title);
     expect(titles[0]).toContain('1. O que é o Método SuVeCA');
     expect(titles[1]).toContain('2. A Metáfora do Trem');
@@ -21,7 +21,11 @@ describe('SUVECA_INTRO_MODULE', () => {
     expect(titles[5]).toContain('6. As 7 Camadas');
 
     for (const section of SUVECA_INTRO_MODULE.sections) {
-      expect(section.contentMarkdown.length).toBeGreaterThan(200);
+      expect(section.contentMarkdown).toMatch(/^```text\n.+\n```$/);
+      expect(section.contentMarkdown).not.toContain('Detalhamento dos 8 Passos');
+      expect(section.contentMarkdown).not.toContain('As 5 Escalas Detalhadas');
+      expect(section.highlightBox).toBeUndefined();
+      expect(section.keyTable).toBeUndefined();
       expect(section.summary?.length).toBeGreaterThan(20);
     }
   });

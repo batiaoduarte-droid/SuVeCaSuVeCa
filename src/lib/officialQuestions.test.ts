@@ -69,4 +69,35 @@ describe('officialDetailToQuizQuestion', () => {
     ]);
     expect(question.correctAnswer).toBe('B');
   });
+
+  it('preserves the structured support text and its media display policy', () => {
+    const presentation = {
+      schemaVersion: '1.0.0' as const,
+      supportBlocks: [
+        { type: 'heading' as const, text: 'Texto I' },
+        { type: 'paragraph' as const, text: 'Primeiro parágrafo do texto de apoio.' },
+        { type: 'source' as const, text: 'Fonte: publicação original.' },
+      ],
+      command: 'Assinale a alternativa correta.',
+      mediaKind: 'text_scan' as const,
+      displayMode: 'text_primary' as const,
+      media: [{
+        mediaRef: 'QMED-1',
+        url: 'https://example.test/texto.png',
+        role: 'text_page' as const,
+        altText: 'Digitalização original do texto de apoio',
+      }],
+    };
+    const question = officialDetailToQuizQuestion(detail({
+      questionType: 'MULTIPLA_ESCOLHA',
+      prompt: presentation.command,
+      presentation,
+      options: [{ letter: 'A', text: 'Alternativa.' }],
+      correctAnswer: 'A',
+      commentary: 'Comentário.',
+    }));
+
+    expect(question.presentation).toEqual(presentation);
+    expect(question.questionText).toBe('Assinale a alternativa correta.');
+  });
 });

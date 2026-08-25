@@ -15,6 +15,7 @@ import { SuvecaAlgorithmVisualGuide } from './SuvecaAlgorithmVisualGuide';
 import { SuvecaPatternsVisualGuide } from './SuvecaPatternsVisualGuide';
 import { SuvecaCurriculumMapVisualGuide } from './SuvecaCurriculumMapVisualGuide';
 import { SuvecaColorCodeVisualGuide } from './SuvecaColorCodeVisualGuide';
+import { SuvecaMethodOverviewVisualGuide } from './SuvecaMethodOverviewVisualGuide';
 import { MarkdownContent } from './MarkdownContent';
 
 interface ConnectionMapProps {
@@ -30,6 +31,9 @@ export const looksLikeConnectionMap = (source: string): boolean => {
   }
 
   // SuVeCA Specialized Guides
+  if (source.includes('SUVECA_METHOD_OVERVIEW')) {
+    return true;
+  }
   if (source.includes('METÁFORA DO TREM') || source.includes('Metáfora do Trem') || source.includes('Peças dos vagões') || (source.includes('Sintagmas') && source.includes('Vagões organizados'))) {
     return true;
   }
@@ -92,6 +96,11 @@ export const ConnectionMap: React.FC<ConnectionMapProps> = ({ source }) => {
         <MarkdownContent content={source} />
       </div>
     );
+  }
+
+  // 0. Specialized Guide: definição e equação do Método SuVeCA
+  if (source.includes('SUVECA_METHOD_OVERVIEW')) {
+    return <SuvecaMethodOverviewVisualGuide />;
   }
 
   // 1. Specialized Guide: Metáfora do Trem (5 Escalas)

@@ -930,6 +930,50 @@ const cleanEditorialQuestionText = (value) => String(value || '')
   .replace(/[ \t]{2,}/g, ' ')
   .trim();
 
+const supportSourcePattern = /^(?:fonte|refer[êe]ncia|adaptado de|dispon[ií]vel em|acesso em)\b/i;
+const supportHeadingPattern = /^(?:texto|poema|crônica|artigo|notícia|fragmento|excerto)(?:\s+[A-Z0-9.-]+)?$/i;
+const structureEditorialSupportText = (supportText, command) => {
+  const text = cleanEditorialQuestionText(supportText);
+  if (!text) return undefined;
+  const blocks = [];
+  let paragraph = [];
+  const flush = () => {
+    if (!paragraph.length) return;
+    const value = paragraph.join(' ').replace(/\s+/g, ' ').trim();
+    if (value) blocks.push({
+      type: blocks.length === 0 && value.length <= 140 && !/[.!?;:]$/.test(value) ? 'heading' : 'paragraph',
+      text: value,
+    });
+    paragraph = [];
+  };
+  for (const rawLine of text.split('\n')) {
+    const line = rawLine.trim();
+    if (!line) {
+      flush();
+      continue;
+    }
+    if ((blocks.length === 0 && paragraph.length === 0 && supportHeadingPattern.test(line)) || supportSourcePattern.test(line)) {
+      flush();
+      blocks.push({ type: supportSourcePattern.test(line) ? 'source' : 'heading', text: line });
+      continue;
+    }
+    if (paragraph.length && paragraph.at(-1).endsWith('-') && /^[a-zà-ÿ]/.test(line)) {
+      paragraph[paragraph.length - 1] = `${paragraph.at(-1).slice(0, -1)}${line}`;
+    } else {
+      paragraph.push(line);
+    }
+  }
+  flush();
+  return {
+    schemaVersion: '1.0.0',
+    supportBlocks: blocks,
+    command,
+    mediaKind: 'none',
+    displayMode: 'text_only',
+    media: [],
+  };
+};
+
 const normalizeQuestionText = (value) => cleanEditorialQuestionText(value)
   .normalize('NFD')
   .replace(/[\u0300-\u036f]/g, '')
@@ -1118,6 +1162,9 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
     questionType: primary.questionType,
     supportText: primary.cleanedSupportText,
     prompt: primary.cleanedPrompt,
+    ...(primary.cleanedSupportText ? {
+      presentation: structureEditorialSupportText(primary.cleanedSupportText, primary.cleanedPrompt),
+    } : {}),
     options: primary.options,
     correctAnswer: primary.correctAnswer,
     commentary: primary.cleanedCommentary,
@@ -1269,6 +1316,7 @@ for (const question of approvedOnlineQuestions) {
     questionType: question.questionType,
     supportText: question.supportText || '',
     prompt: question.prompt,
+    ...(question.presentation ? { presentation: question.presentation } : {}),
     options,
     correctAnswer: question.correctAnswer,
     commentary: question.commentary || '',

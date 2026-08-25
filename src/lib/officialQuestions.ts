@@ -1,4 +1,5 @@
 import type { QuizQuestion } from '../types/suveca';
+import type { QuestionPresentation } from '../types/questionPresentation';
 import { formatOfficialContent } from './officialContent';
 
 export interface OfficialQuestionIndexItem {
@@ -103,6 +104,7 @@ export function officialDetailToQuizQuestion(detail: OfficialQuestionDetail): Qu
     primaryLessonId?: string;
     questionType?: 'CERTO_ERRADO' | 'MULTIPLA_ESCOLHA';
     supportText?: string;
+    presentation?: QuestionPresentation;
     prompt?: string;
     options?: Array<{ letter?: string; label?: string; text?: string }>;
     correctAnswer?: string;
@@ -119,6 +121,7 @@ export function officialDetailToQuizQuestion(detail: OfficialQuestionDetail): Qu
     bank: formatOfficialContent(normalized.bank || normalized.sourceLabel || 'Fonte editorial da apostila'),
     topic: detail.editorialProjection.topicNames[0] || normalized.primaryLessonId || 'Língua Portuguesa',
     supportText: formatOfficialContent(normalized.supportText) || undefined,
+    presentation: normalized.presentation,
     questionText: formatOfficialContent(normalized.prompt),
     options: multipleChoice
       ? (normalized.options || []).map((option, index) => ({

@@ -93,6 +93,42 @@ test.describe('teclado e leitores de tela', () => {
     await expect(page.getByRole('heading', { name: /cronômetro de foco/i })).toBeVisible();
   });
 
+  test('variações SuVeCA são navegáveis e enviam o exemplo ao analisador', async ({ page }) => {
+    await openApp(page);
+    await openTab(page, 'Analisador');
+
+    const explorer = page.getByRole('region', { name: /5 padrões estruturais da SuVeCA/i });
+    await expect(explorer).toBeVisible();
+    const inversePattern = explorer.getByRole('tab', { name: /Padrão 2 Ordem inversa/i });
+    await inversePattern.click();
+    await expect(inversePattern).toHaveAttribute('aria-selected', 'true');
+    await expect(explorer.getByRole('heading', { name: /2\. Ordem inversa/i })).toBeVisible();
+
+    await explorer.getByRole('button', { name: /usar este exemplo/i }).click();
+    const input = page.locator('#suveca-analyzer-input');
+    await expect(input).toHaveValue('Ontem chegaram os fiscais.');
+    await expect(input).toBeFocused();
+  });
+
+  test('perfil apresenta os cinco pilares de domínio sem depender de barras verticais', async ({ page }) => {
+    await openApp(page);
+    await openTab(page, 'Perfil');
+    const balance = page.getByRole('region', { name: 'Equilíbrio de Domínio Sintático' });
+    await expect(balance).toBeVisible();
+    await expect(balance.getByRole('progressbar')).toHaveCount(5);
+    await expect(balance.locator('svg.recharts-surface')).toHaveCount(0);
+    await expect(balance.getByText(/pilares ativos/i)).toBeVisible();
+  });
+
+  test('módulo introdutório concentra o conteúdo nos guias interativos sem detalhamento duplicado', async ({ page }) => {
+    await openApp(page, '/?module=mod-intro');
+    await expect(page.getByRole('region', { name: 'Visão geral do Método SuVeCA' })).toBeVisible();
+    await expect(page.getByRole('list', { name: /Sujeito mais Verbo mais Complemento/i }).first()).toBeVisible();
+    await expect(page.getByText('Detalhamento dos 8 Passos')).toHaveCount(0);
+    await expect(page.getByText('As 5 Escalas Detalhadas')).toHaveCount(0);
+    await expect(page.getByText('Guia Rápido por Aula')).toHaveCount(0);
+  });
+
   test('Pomodoro minimiza sobre o conteúdo e restaura a mesma sessão', async ({ page }) => {
     await openApp(page);
     await openTab(page, 'Cronômetro Foco');
@@ -133,6 +169,41 @@ test.describe('teclado e leitores de tela', () => {
     await verifyButton.click();
     await expect(dialog.getByText(/Comentário Pedagógico/i)).toBeVisible();
     await expect(dialog.getByRole('button', { name: 'Tentar novamente' })).toBeVisible();
+  });
+
+  test('texto de apoio é exibido em blocos e preserva a digitalização original', async ({ page }) => {
+    await openApp(page);
+    await openTab(page, 'Questões editoriais');
+    await page.getByLabel('Buscar no banco editorial').fill('Educação prisional');
+    const searchResponse = page.waitForResponse((response) => {
+      const url = new URL(response.url());
+      return url.pathname === '/api/knowledge/questions'
+        && url.searchParams.get('query') === 'Educação prisional'
+        && response.ok();
+    });
+    await page.getByRole('button', { name: 'Aplicar busca' }).click();
+    await searchResponse;
+    await expect(page.getByText(/questões encontradas/)).not.toContainText('3485');
+    const opener = page.getByRole('button', { name: 'Estudar questão' }).first();
+    await expect(opener).toBeVisible();
+    await opener.click();
+
+    const dialog = page.getByRole('dialog', { name: /questão editorial/i });
+    await expect(dialog.getByText('Texto de apoio', { exact: true })).toBeVisible();
+    await expect(dialog.getByRole('region', { name: 'Comando da questão' })).toBeVisible();
+    await expect(dialog.getByText('Consultar digitalização original')).toBeVisible();
+    await expectNoDocumentOverflow(page);
+  });
+
+  test('mídia visual permanece primária e usa a projeção de maior resolução', async ({ request }) => {
+    const response = await request.get('/api/knowledge/questions/A00%3Aestrategia.4000720108');
+    expect(response.ok()).toBe(true);
+    const detail = await response.json();
+    expect(detail.editorial.normalized.presentation).toMatchObject({
+      mediaKind: 'visual_essential',
+      displayMode: 'image_primary',
+    });
+    expect(detail.editorial.normalized.presentation.media[0].url).toContain('-800.');
   });
 
   test('atalho de busca abre modal e Escape devolve o foco', async ({ page }) => {

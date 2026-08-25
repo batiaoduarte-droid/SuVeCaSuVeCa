@@ -14,16 +14,8 @@ import {
   ArrowUpRight,
   Award,
   Flame,
+  NotebookPen,
 } from 'lucide-react';
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Cell,
-} from 'recharts';
 import {
   MASTERY_LEVELS,
   type MasteryProgressResult,
@@ -44,23 +36,13 @@ const levelIconMap: Record<string, React.ComponentType<{ className?: string }>> 
   Crown,
 };
 
-const CustomBarTooltip = ({ active, payload }: any) => {
-  if (active && payload && payload.length) {
-    const data = payload[0].payload;
-    return (
-      <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-md text-xs">
-        <div className="font-extrabold text-slate-900">{data.category}</div>
-        <div className="mt-1 text-slate-600">
-          <strong className="text-teal-800">{data.xp} XP</strong> gerados
-        </div>
-        <div className="text-[11px] text-slate-500">
-          {data.count} {data.unit}
-        </div>
-      </div>
-    );
-  }
-  return null;
-};
+const DOMAIN_PRESENTATION = [
+  { icon: SearchCheck, action: 'Resolver questões', tab: 'questions', tone: 'bg-teal-50 text-teal-800 border-teal-200' },
+  { icon: Compass, action: 'Continuar aula', tab: 'modules', tone: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
+  { icon: NotebookPen, action: 'Criar anotação', tab: 'modules', tone: 'bg-sky-50 text-sky-800 border-sky-200' },
+  { icon: Shield, action: 'Revisar erros', tab: 'errors', tone: 'bg-amber-50 text-amber-800 border-amber-200' },
+  { icon: Award, action: 'Ver conquistas', tab: '', tone: 'bg-violet-50 text-violet-800 border-violet-200' },
+] as const;
 
 export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
   mastery,
@@ -78,6 +60,19 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
 
   const [showAllLevels, setShowAllLevels] = useState(false);
   const CurrentIcon = levelIconMap[currentLevel.iconName] || Trophy;
+  const totalDomainXp = breakdown.reduce((total, item) => total + item.xp, 0);
+  const maxDomainXp = Math.max(1, ...breakdown.map((item) => item.xp));
+  const activeDomainCount = breakdown.filter((item) => item.xp > 0).length;
+  const leadingDomainIndex = breakdown.reduce(
+    (bestIndex, item, index, items) => item.xp > items[bestIndex].xp ? index : bestIndex,
+    0
+  );
+  const nextDomainIndex = breakdown.reduce(
+    (lowestIndex, item, index, items) => item.xp < items[lowestIndex].xp ? index : lowestIndex,
+    0
+  );
+  const nextDomain = breakdown[nextDomainIndex];
+  const nextDomainPresentation = DOMAIN_PRESENTATION[nextDomainIndex];
 
   return (
     <div className="space-y-6">
@@ -149,64 +144,118 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
 
       {/* Grid: Gráfico de Domínio Sintático + Missões de XP */}
       <div className="grid gap-6 lg:grid-cols-12">
-        {/* Gráfico de Barras Interativo (Recharts) */}
+        {/* Distribuição de XP por pilar, legível também quando há valores zerados */}
         <section
           aria-label="Equilíbrio de Domínio Sintático"
-          className="lg:col-span-7 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs flex flex-col justify-between"
+          className="lg:col-span-7 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs"
         >
-          <div>
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3 mb-4">
-              <div>
-                <h3 className="m-0 text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
-                  <Zap className="h-4.5 w-4.5 text-teal-700" />
-                  Equilíbrio de Domínio Sintático
-                </h3>
-                <p className="m-0 text-xs text-slate-500 font-medium mt-0.5">
-                  Distribuição do seu XP por pilares de aprendizagem
-                </p>
-              </div>
+          <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 pb-4">
+            <div>
+              <h3 className="m-0 text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
+                <Zap className="h-4.5 w-4.5 text-teal-700" />
+                Equilíbrio de Domínio Sintático
+              </h3>
+              <p className="m-0 text-xs text-slate-500 font-medium mt-0.5">
+                Compare seus pilares e descubra onde concentrar a próxima sessão.
+              </p>
             </div>
-
-            <div className="h-64 w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  data={breakdown}
-                  margin={{ top: 10, right: 10, left: -20, bottom: 20 }}
-                >
-                  <XAxis
-                    dataKey="category"
-                    tick={{ fontSize: 11, fill: '#475569', fontWeight: 600 }}
-                    interval={0}
-                    angle={-15}
-                    textAnchor="end"
-                  />
-                  <YAxis
-                    tick={{ fontSize: 10, fill: '#94a3b8' }}
-                    allowDecimals={false}
-                  />
-                  <Tooltip content={<CustomBarTooltip />} />
-                  <Bar dataKey="xp" radius={[6, 6, 0, 0]}>
-                    {breakdown.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.fill} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
+            <div className="flex gap-2" aria-label="Resumo dos pilares">
+              <div className="rounded-lg border border-teal-200 bg-teal-50 px-3 py-2 text-right">
+                <strong className="block text-sm font-black text-teal-950">{totalDomainXp.toLocaleString('pt-BR')} XP</strong>
+                <span className="text-[9px] font-black uppercase tracking-wider text-teal-700">distribuídos</span>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-right">
+                <strong className="block text-sm font-black text-slate-900">{activeDomainCount}/5</strong>
+                <span className="text-[9px] font-black uppercase tracking-wider text-slate-500">pilares ativos</span>
+              </div>
             </div>
           </div>
 
-          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2 pt-3 border-t border-slate-100 text-[11px]">
-            {breakdown.map((item) => (
-              <div key={item.category} className="flex items-center gap-1.5">
-                <span
-                  className="h-2.5 w-2.5 rounded-full shrink-0"
-                  style={{ backgroundColor: item.fill }}
-                />
-                <span className="text-slate-600 truncate font-medium">
-                  {item.category}: <strong className="text-slate-900">{item.xp} XP</strong>
-                </span>
+          <div className="mt-4" aria-label="Distribuição proporcional do XP">
+            {totalDomainXp > 0 ? (
+              <div className="flex h-3 w-full overflow-hidden rounded-full bg-slate-100" role="img" aria-label={`XP distribuído em ${activeDomainCount} de 5 pilares`}>
+                {breakdown.map((item) => item.xp > 0 && (
+                  <span
+                    key={item.category}
+                    title={`${item.category}: ${item.xp} XP`}
+                    style={{ width: `${(item.xp / totalDomainXp) * 100}%`, backgroundColor: item.fill }}
+                  />
+                ))}
               </div>
-            ))}
+            ) : (
+              <div className="flex min-h-12 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50 px-4 text-center text-xs font-semibold text-slate-600">
+                Seu mapa de domínio aparecerá assim que você concluir a primeira atividade.
+              </div>
+            )}
+          </div>
+
+          <div className="mt-4 space-y-2.5" role="list" aria-label="XP por pilar de aprendizagem">
+            {breakdown.map((item, index) => {
+              const presentation = DOMAIN_PRESENTATION[index];
+              const Icon = presentation.icon;
+              const relativePercent = item.xp > 0 ? Math.max(5, Math.round((item.xp / maxDomainXp) * 100)) : 0;
+              const sharePercent = totalDomainXp > 0 ? Math.round((item.xp / totalDomainXp) * 100) : 0;
+
+              return (
+                <div key={item.category} role="listitem" className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                  <div className="flex items-center gap-3">
+                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border ${presentation.tone}`}>
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                        <div className="min-w-0">
+                          <span className="text-xs font-black text-slate-900">{item.category}</span>
+                          <span className="ml-2 text-[10px] font-medium text-slate-500">
+                            {item.count} {item.unit}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {index === leadingDomainIndex && item.xp > 0 && (
+                            <span className="rounded-full bg-teal-100 px-2 py-0.5 text-[9px] font-black uppercase text-teal-800">
+                              Principal
+                            </span>
+                          )}
+                          <strong className="text-xs font-black text-slate-900">{item.xp} XP</strong>
+                          <span className="w-8 text-right text-[10px] font-bold text-slate-500">{sharePercent}%</span>
+                        </div>
+                      </div>
+                      <div
+                        role="progressbar"
+                        aria-label={`XP em ${item.category}`}
+                        aria-valuemin={0}
+                        aria-valuemax={maxDomainXp}
+                        aria-valuenow={item.xp}
+                        className="mt-2 h-2 overflow-hidden rounded-full bg-slate-200"
+                      >
+                        <div
+                          className="h-full rounded-full transition-all duration-500"
+                          style={{ width: `${relativePercent}%`, backgroundColor: item.fill }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 flex flex-col gap-3 rounded-xl border border-teal-200 bg-teal-50/60 p-3.5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0">
+              <span className="text-[10px] font-black uppercase tracking-wider text-teal-700">Próximo pilar recomendado</span>
+              <p className="mt-0.5 text-xs font-bold text-teal-950">
+                Fortaleça {nextDomain.category.toLowerCase()} · atualmente com {nextDomain.xp} XP
+              </p>
+            </div>
+            {onNavigateToTab && nextDomainPresentation.tab && (
+              <button
+                type="button"
+                onClick={() => onNavigateToTab(nextDomainPresentation.tab)}
+                className="inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-teal-800 px-3 py-2 text-xs font-black text-white transition hover:bg-teal-900"
+              >
+                {nextDomainPresentation.action} <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+              </button>
+            )}
           </div>
         </section>
 

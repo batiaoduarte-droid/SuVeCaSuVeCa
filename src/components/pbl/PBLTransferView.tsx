@@ -1,6 +1,7 @@
 import React from 'react';
 import type { PBLQuestionPresentation, PBLTransferItem } from '../../types/pbl';
 import { Layers, SearchCheck } from 'lucide-react';
+import { QuestionPresentationContent } from '../QuestionPresentationContent';
 
 interface PBLTransferViewProps {
   transferItem?: PBLTransferItem;
@@ -71,14 +72,7 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
         </div>
       )}
 
-      <div className="space-y-4">
-        {question.supportText && (
-          <div className="whitespace-pre-line rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs leading-relaxed text-slate-700">
-            {question.supportText}
-          </div>
-        )}
-        <p className="whitespace-pre-line text-sm font-medium leading-relaxed text-slate-900">{question.prompt}</p>
-      </div>
+      <QuestionPresentationContent presentation={question.presentation} supportText={question.supportText} prompt={question.prompt} />
 
       <div className="mt-6 space-y-3" role="group" aria-label="Alternativas da questão">
         {options.map((option) => {

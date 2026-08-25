@@ -1,6 +1,7 @@
 import React from 'react';
 import type { PBLCase, PBLQuestionPresentation } from '../../types/pbl';
 import { Sparkles } from 'lucide-react';
+import { QuestionPresentationContent } from '../QuestionPresentationContent';
 
 interface PBLProblemCardProps {
   pblCase: PBLCase;
@@ -21,9 +22,6 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
     ? question.questionType === 'multiple_choice'
     : Boolean(pblCase.options?.length);
   const options = question?.options || pblCase.options;
-  const questionStem = question
-    ? [question.supportText, question.prompt].filter(Boolean).join('\n\n')
-    : pblCase.questionStem;
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -40,9 +38,13 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
       </div>
 
       {/* Question Stem */}
-      <div className="text-sm leading-relaxed font-medium text-slate-900">
-        {questionStem || 'Analise os termos e a estrutura normativa da assertiva abaixo.'}
-      </div>
+      {question ? (
+        <QuestionPresentationContent presentation={question.presentation} supportText={question.supportText} prompt={question.prompt} />
+      ) : (
+        <div className="text-sm font-medium leading-relaxed text-slate-900">
+          {pblCase.questionStem || 'Analise os termos e a estrutura normativa da assertiva abaixo.'}
+        </div>
+      )}
 
       {/* Answer Choices / Judgment */}
       <div className="mt-6" role="group" aria-label="Alternativas da questão">

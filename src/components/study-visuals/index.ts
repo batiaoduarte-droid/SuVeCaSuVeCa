@@ -5,6 +5,8 @@ export * from './StudyCallout';
 export * from './StudySectionHeader';
 export * from './ResponsiveStudyTable';
 export * from './SuvecaSentenceMap';
+export * from './SuvecaPatternExplorer';
+export * from './SuvecaEquationBlocks';
 export * from './ConceptTree';
 export * from './ProcedureStepper';
 export * from './DecisionFlow';

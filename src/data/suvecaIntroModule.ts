@@ -341,6 +341,28 @@ Revisão Geral Espiral (A14) ─────────────────
   },
 ];
 
+// A fonte editorial acima permanece completa para autoria e revisão. No produto, cada
+// unidade introdutória usa um único guia interativo; isso evita repetir o mesmo conteúdo
+// em Markdown, callouts, tabelas e cards logo abaixo da visualização principal.
+const INTRO_VISUAL_GUIDE_MARKERS = [
+  'SUVECA_METHOD_OVERVIEW',
+  'Metáfora do Trem: 5 Escalas da Língua',
+  'CÓDIGO CROMÁTICO TÁTICO E DESMEMBRAMENTO VISUAL',
+  'Algoritmo dos 8 Passos SuVeCA',
+  '5 Padrões Estruturais de Prova',
+  '7 Camadas da Língua e Mapa das 15 Aulas',
+] as const;
+
+const INTRO_PRESENTATION_SECTIONS: ModuleSection[] = INTRO_SECTIONS.map((section, index) => ({
+  ...section,
+  contentMarkdown: `\`\`\`text\n${INTRO_VISUAL_GUIDE_MARKERS[index]}\n\`\`\``,
+  highlightBox: undefined,
+  keyTable: undefined,
+  limitsAndExceptions: undefined,
+  contrasts: undefined,
+  examTraps: undefined,
+}));
+
 export const SUVECA_INTRO_MODULE: ModuleData = {
   id: 'mod-intro',
   num: '00-Intro',
@@ -348,7 +370,7 @@ export const SUVECA_INTRO_MODULE: ModuleData = {
   subtitle: 'O mapa relacional da língua portuguesa e o sistema de orientação do curso · 6 unidades fundamentais',
   description: 'Aprenda o modelo mental, a metáfora do trem, o código de cores sintáticas e o algoritmo decisório de 8 passos para gabaritar questões de concurso público.',
   estimatedMinutes: 25,
-  sections: INTRO_SECTIONS,
+  sections: INTRO_PRESENTATION_SECTIONS,
   questions: INTRO_QUESTIONS,
   suvecaMethod: {
     methodId: SUVECA_METHOD.methodId,

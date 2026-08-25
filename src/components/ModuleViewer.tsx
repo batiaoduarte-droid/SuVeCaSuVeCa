@@ -48,6 +48,7 @@ import {
   Trophy,
 } from 'lucide-react';
 import { SuvecaWordHighlight } from './ui/SuvecaBrandHighlight';
+import { SuvecaEquationBlocks } from './study-visuals';
 
 interface ModuleViewerProps {
   modules: ModuleData[];
@@ -721,43 +722,60 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           </p>
 
           {moduleData.suvecaMethod && ['central', 'strong', 'review'].includes(moduleData.suvecaMethod.level) && (
-            <section className="rounded-2xl border border-teal-200 bg-teal-50/70 p-4 sm:p-5" aria-labelledby={`suveca-method-${moduleData.id}`}>
-              <div className="flex items-start gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-teal-200 bg-white text-teal-800">
-                  <Workflow className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div className="min-w-0 space-y-2">
-                  <span className="inline-flex rounded-full border border-teal-200 bg-white px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-teal-800">
-                    {moduleData.suvecaMethod.label}
+            <section className="overflow-hidden rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50/80 via-white to-sky-50/50" aria-labelledby={`suveca-method-${moduleData.id}`}>
+              <div className="flex flex-wrap items-start justify-between gap-3 border-b border-teal-100 px-4 py-4 sm:px-5">
+                <div className="flex min-w-0 items-start gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-900 text-amber-300 shadow-sm">
+                    <Workflow className="h-5 w-5" aria-hidden="true" />
                   </span>
-                  <h2 id={`suveca-method-${moduleData.id}`} className="break-words text-base font-extrabold text-teal-950 sm:text-lg">
-                    <SuvecaWordHighlight text="Conexão SuVeCA com esta aula" />
-                  </h2>
-                  <p className="text-sm font-bold text-teal-900">
-                    Mapa: <SuvecaWordHighlight text={moduleData.suvecaMethod.equation} />
-                  </p>
-                  <p className="text-sm font-medium leading-relaxed text-teal-950">
-                    {moduleData.suvecaMethod.definition}
-                  </p>
-                  <p className="text-sm leading-relaxed text-slate-700">
-                    <strong>Nesta aula:</strong> {moduleData.suvecaMethod.summary}
-                  </p>
+                  <div className="min-w-0">
+                    <span className="inline-flex rounded-full border border-teal-200 bg-white px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-teal-800">
+                      {moduleData.suvecaMethod.label}
+                    </span>
+                    <h2 id={`suveca-method-${moduleData.id}`} className="mt-1.5 break-words text-base font-extrabold text-teal-950 sm:text-lg">
+                      <SuvecaWordHighlight text="Conexão SuVeCA com esta aula" />
+                    </h2>
+                  </div>
+                </div>
+                <span className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-teal-800">
+                  Mapa funcional
+                </span>
+              </div>
+
+              <div className="space-y-4 p-4 sm:p-5">
+                <SuvecaEquationBlocks compact />
+                <p className="text-[11px] font-semibold leading-relaxed text-slate-500">
+                  Os blocos representam funções e relações; podem aparecer em outra ordem, implícitos ou ausentes.
+                </p>
+                <div className="grid gap-3 md:grid-cols-2">
+                  <div className="rounded-xl border border-teal-200 bg-white p-3.5">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-teal-700">Como ler o mapa</span>
+                    <p className="mt-1 text-xs font-medium leading-relaxed text-teal-950 sm:text-sm">
+                      {moduleData.suvecaMethod.definition}
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-sky-200 bg-sky-50/60 p-3.5">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-sky-700">Aplicação nesta aula</span>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-700 sm:text-sm">
+                      {moduleData.suvecaMethod.summary}
+                    </p>
+                  </div>
                 </div>
               </div>
               <details className="group mt-4 border-t border-teal-200/80 pt-3 text-sm text-slate-700">
-                <summary className="flex min-h-[44px] cursor-pointer list-none items-center gap-2 font-bold text-teal-900 marker:hidden">
+                <summary className="flex min-h-[44px] cursor-pointer list-none items-center gap-2 px-4 font-bold text-teal-900 marker:hidden sm:px-5">
                   <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true" />
                   Como aplicar o mapa neste tema
                 </summary>
-                <ol className="mt-2 space-y-2 pl-5 leading-relaxed marker:font-bold marker:text-teal-800">
+                <ol className="mt-2 space-y-2 px-5 pb-1 pl-10 leading-relaxed marker:font-bold marker:text-teal-800">
                   {moduleData.suvecaMethod.steps.map((step) => <li key={step}>{step}</li>)}
                 </ol>
                 {moduleData.suvecaMethod.limits.map((limit) => (
-                  <p key={limit} className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-950">
+                  <p key={limit} className="mx-5 mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-950">
                     <strong>Limite:</strong> {limit}
                   </p>
                 ))}
-                <p className="mt-3 text-xs leading-relaxed text-slate-500">
+                <p className="mx-5 mb-4 mt-3 text-xs leading-relaxed text-slate-500">
                   {moduleData.suvecaMethod.authorityNote}
                 </p>
               </details>

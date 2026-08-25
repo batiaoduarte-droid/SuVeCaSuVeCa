@@ -194,6 +194,11 @@ const GOLDEN_TESTS = [
   },
 ];
 
+const ALGORITHM_BOUNDARIES = [
+  'Em ortografia pura, aplique primeiro a regra própria do tema; use o algoritmo apenas quando a decisão depender da função sintática.',
+  'Não pule para o teste de prova antes de delimitar as orações e localizar seus núcleos verbais.',
+] as const;
+
 export const SuvecaAlgorithmVisualGuide: React.FC = () => {
   const [activeStepNum, setActiveStepNum] = useState<number>(1);
   const activeStep = ALGORITHM_STEPS.find((s) => s.num === activeStepNum) || ALGORITHM_STEPS[0];
@@ -329,6 +334,16 @@ export const SuvecaAlgorithmVisualGuide: React.FC = () => {
             ))}
           </div>
         </div>
+
+        <aside className="rounded-xl border border-amber-200 bg-amber-50/70 p-4" aria-label="Limites do algoritmo">
+          <div className="flex items-center gap-2 text-amber-900">
+            <ShieldAlert className="h-4 w-4" aria-hidden="true" />
+            <h4 className="text-xs font-black uppercase tracking-wider">Quando o algoritmo começa — e quando não começa</h4>
+          </div>
+          <ul className="mt-2 grid gap-2 text-xs font-medium leading-relaxed text-amber-950 sm:grid-cols-2">
+            {ALGORITHM_BOUNDARIES.map((boundary) => <li key={boundary} className="flex gap-2"><span aria-hidden="true">•</span><span>{boundary}</span></li>)}
+          </ul>
+        </aside>
       </div>
     </div>
   );
