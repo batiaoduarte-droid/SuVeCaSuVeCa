@@ -409,7 +409,7 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
 
   return (
     <div className="tool-content-shell space-y-6 pb-16">
-      <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
+      <header className="tool-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full">

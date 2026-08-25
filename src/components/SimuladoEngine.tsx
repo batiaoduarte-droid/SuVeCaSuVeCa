@@ -476,7 +476,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
   return (
     <div className="tool-content-shell space-y-8 pb-16">
       {/* Top Mode Header */}
-      <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <header className="tool-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="inline-flex items-center space-x-2 bg-teal-50 text-teal-800 border border-teal-200 text-xs px-3 py-1 rounded-full font-semibold">
             <GraduationCap className="w-3.5 h-3.5 text-teal-700" />
@@ -491,7 +491,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
         </div>
 
         {/* Tab Controls */}
-        <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-semibold shrink-0">
+        <div className="tool-segmented-tabs flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-semibold shrink-0">
           <button
             onClick={() => setActiveTab('simulado')}
             className={`px-4 py-2 rounded-lg transition cursor-pointer ${
@@ -500,7 +500,8 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            {isOfficialQuestionSet ? 'Simulado editorial' : 'Simulado autoral'} ({questions.length} Questões)
+            <span className="sm:hidden">Simulado ({questions.length})</span>
+            <span className="hidden sm:inline">{isOfficialQuestionSet ? 'Simulado editorial' : 'Simulado autoral'} ({questions.length} Questões)</span>
           </button>
           <button
             onClick={() => setActiveTab('generator')}
@@ -511,7 +512,8 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
             }`}
           >
             <Sparkles className="w-3.5 h-3.5 text-teal-700" />
-            <span>Gerador IA de Questões</span>
+            <span className="sm:hidden">Gerador IA</span>
+            <span className="hidden sm:inline">Gerador IA de Questões</span>
           </button>
         </div>
       </header>
@@ -545,7 +547,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
 
           {/* Mobile Sticky Bar for Exam Mode */}
           {!isSubmitted && (
-            <div className="lg:hidden sticky top-0 z-30 bg-white border-b border-slate-200 px-4 py-2.5 shadow-2xs flex items-center justify-between -mx-4 sm:-mx-6 mb-4">
+            <div className="lg:hidden sticky top-16 z-30 bg-white border-b border-slate-200 px-4 py-2.5 shadow-2xs flex items-center justify-between -mx-4 sm:-mx-6 mb-4">
               <div className="flex items-center space-x-2 text-xs font-bold text-slate-800">
                 <span className="bg-teal-100 text-teal-800 border border-teal-200 px-2 py-0.5 rounded-md font-bold">
                   Q{currentQIndex + 1}/{questions.length}
@@ -574,8 +576,8 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
           )}
 
           {/* Status Bar: Timer + Progress */}
-          <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm font-medium">
+          <div className="simulado-status bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-4">
+            <div className="simulado-status-summary flex flex-wrap items-center gap-3 text-xs sm:text-sm font-medium">
               {isTimerEnabled ? (
                 <div className={`flex items-center space-x-2 px-3 py-1.5 rounded-xl border ${
                   isTimerRunning
@@ -712,7 +714,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
           )}
 
           {/* Question Navigator Grid */}
-          <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-2xs space-y-2">
+          <div className="hidden bg-white rounded-2xl p-4 border border-slate-200 shadow-2xs space-y-2 lg:block">
             <span className="text-xs font-bold text-slate-700 block">
               Cartão de Respostas / Acesso Rápido:
             </span>
@@ -757,7 +759,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
           {currentQ && (
             <div
               key={currentQ.id}
-              className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6 question-content-enter"
+              className="bg-white rounded-2xl p-4 sm:p-8 border border-slate-200 shadow-xs space-y-5 sm:space-y-6 question-content-enter"
             >
               <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                 <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full">

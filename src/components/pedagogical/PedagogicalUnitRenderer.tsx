@@ -308,7 +308,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
           </button>
         </div>
 
-        <ol className="m-0 grid list-none gap-2 p-0 sm:grid-cols-2">
+        <ol className="pedagogical-toc-list m-0 grid list-none gap-2 p-0 sm:grid-cols-2">
           {presentSections.map((section, index) => {
             const Icon = section.icon;
             return (
@@ -341,23 +341,23 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
               id={`${unit.unitId}-${sec.id}`}
               open={isOpen}
               onToggle={(e) => toggleSection(sec.id, e.currentTarget.open)}
-              className="group scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs transition"
+              className="pedagogical-section group scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs transition"
             >
               <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-slate-50/80 px-4 py-3.5 text-sm sm:text-base font-bold text-slate-950 hover:bg-slate-100 sm:px-5 transition select-none">
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-teal-800 text-xs font-black text-white shadow-2xs">
                     {idx + 1}
                   </span>
-                  <Icon className="h-4 w-4 text-teal-700" />
+                  <Icon className="hidden h-4 w-4 text-teal-700 sm:block" />
                   <span><SuvecaWordHighlight text={sec.title} /></span>
                 </div>
                 <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
               </summary>
-              <div className="border-t border-slate-200 p-3 sm:p-5 reading-content">
+              <div className="pedagogical-section-body border-t border-slate-200 p-3 sm:p-5 reading-content">
                 {sec.render()}
 
                 {/* Botões de Ação Rápida no final de cada seção */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 select-none">
+                <div className="pedagogical-section-actions mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 select-none">
                   <span className="text-[11px] font-semibold text-slate-500">
                     Seção {idx + 1} de {presentSections.length} · <InlineRichText>{sec.title}</InlineRichText>
                   </span>

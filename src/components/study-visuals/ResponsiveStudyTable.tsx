@@ -36,7 +36,9 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
   className = '',
   defaultMode = 'auto',
 }) => {
-  const [mobileView, setMobileView] = useState<'table' | 'cards'>('cards');
+  const [mobileView, setMobileView] = useState<'table' | 'cards'>(
+    defaultMode === 'table' ? 'table' : 'cards'
+  );
 
   if (!table || !table.headers || table.headers.length === 0) {
     return null;
@@ -76,6 +78,8 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
             <button
               type="button"
               onClick={() => setMobileView('cards')}
+              aria-label="Visualizar dados em cards"
+              aria-pressed={mobileView === 'cards'}
               className={`min-h-11 min-w-11 p-2 rounded-lg text-xs transition ${
                 mobileView === 'cards'
                   ? 'bg-white text-teal-900 shadow-2xs font-bold'
@@ -88,6 +92,8 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
             <button
               type="button"
               onClick={() => setMobileView('table')}
+              aria-label="Visualizar dados em tabela"
+              aria-pressed={mobileView === 'table'}
               className={`min-h-11 min-w-11 p-2 rounded-lg text-xs transition ${
                 mobileView === 'table'
                   ? 'bg-white text-teal-900 shadow-2xs font-bold'

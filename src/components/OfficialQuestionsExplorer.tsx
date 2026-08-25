@@ -10,6 +10,7 @@ import {
   RefreshCw,
   Search,
   ShieldCheck,
+  SlidersHorizontal,
   X,
 } from 'lucide-react';
 import {
@@ -59,6 +60,9 @@ const answerLabel = (answer?: string) => {
   return normalized;
 };
 
+const learnerTopicName = (topics: string[]) =>
+  topics.find((topic) => !/^aula\s*\d+/i.test(topic.trim())) || topics[0] || 'Língua Portuguesa';
+
 export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestionsExplorerProps) {
   const moduleOptions = useMemo(
     () =>
@@ -79,11 +83,16 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
   const [detail, setDetail] = useState<OfficialQuestionDetail | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
   const [isBuildingSample, setIsBuildingSample] = useState(false);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
+  const [detailAnswer, setDetailAnswer] = useState('');
+  const [isDetailRevealed, setIsDetailRevealed] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const isDetailOpen = Boolean(detail || isLoadingDetail);
   const closeDetail = useCallback(() => {
     setDetail(null);
     setIsLoadingDetail(false);
+    setDetailAnswer('');
+    setIsDetailRevealed(false);
   }, []);
   const detailDialogRef = useModalFocus(isDetailOpen, closeDetail, closeButtonRef);
 
@@ -115,9 +124,14 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
     setFilters((current) => ({ ...current, [key]: value || undefined }));
   };
 
+  const activeFilterCount = [filters.moduleId, filters.topic, filters.bank, filters.year]
+    .filter(Boolean).length;
+
   const openQuestion = async (questionId: string) => {
     setIsLoadingDetail(true);
     setError('');
+    setDetailAnswer('');
+    setIsDetailRevealed(false);
     try {
       setDetail(await fetchOfficialQuestion(questionId));
     } catch (loadError) {
@@ -143,7 +157,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
 
   return (
     <section className="tool-content-shell space-y-5" aria-labelledby="editorial-questions-title">
-      <header className="rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-5 shadow-xs sm:p-7">
+      <header className="tool-page-header rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 to-white p-5 shadow-xs sm:p-7">
         <div className="flex items-start gap-3">
           <span className="rounded-xl bg-teal-700 p-2.5 text-white"><BookMarked className="h-5 w-5" /></span>
           <div>
@@ -171,36 +185,49 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
       </header>
 
       <form
-        className="grid gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-xs sm:grid-cols-2 lg:grid-cols-6"
+        className="rounded-2xl border border-slate-200 bg-white p-3 shadow-xs sm:p-4"
         onSubmit={(event) => {
           event.preventDefault();
           updateFilter('query', draftQuery);
         }}
       >
-        <label className="relative sm:col-span-2 lg:col-span-2">
-          <span className="sr-only">Buscar no banco editorial</span>
-          <Search className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-slate-400" />
-          <input
-            value={draftQuery}
-            onChange={(event) => setDraftQuery(event.target.value)}
-            className="input-field min-h-[44px] w-full pl-9"
-            placeholder="Buscar no enunciado, comentário ou tema"
-          />
-        </label>
-        <select
-          aria-label="Filtrar por tema curricular"
-          className="input-field min-h-[44px]"
-          value={filters.moduleId || ''}
-          onChange={(event) => updateFilter('moduleId', event.target.value)}
-        >
-          <option value="">Todos os temas curriculares</option>
-          {moduleOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
-        </select>
-        <input aria-label="Filtrar por tema" className="input-field min-h-[44px]" value={filters.topic || ''} onChange={(event) => updateFilter('topic', event.target.value)} placeholder="Tema" />
-        <input aria-label="Filtrar por banca ou fonte" className="input-field min-h-[44px]" value={filters.bank || ''} onChange={(event) => updateFilter('bank', event.target.value)} placeholder="Banca ou fonte" />
         <div className="flex gap-2">
-          <input aria-label="Filtrar por ano" className="input-field min-h-[44px] min-w-0 flex-1" inputMode="numeric" value={filters.year || ''} onChange={(event) => updateFilter('year', event.target.value)} placeholder="Ano" />
+          <label className="relative min-w-0 flex-1">
+            <span className="sr-only">Buscar no banco editorial</span>
+            <Search className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-slate-400" />
+            <input
+              value={draftQuery}
+              onChange={(event) => setDraftQuery(event.target.value)}
+              className="input-field min-h-[44px] w-full pl-9"
+              placeholder="Buscar nas questões"
+            />
+          </label>
           <button type="submit" className="button-primary min-h-[44px] min-w-[44px] px-3" aria-label="Aplicar busca"><Search className="h-4 w-4" /></button>
+          <button
+            type="button"
+            onClick={() => setShowMobileFilters((current) => !current)}
+            className="button-secondary relative min-h-[44px] min-w-[44px] px-3 sm:hidden"
+            aria-expanded={showMobileFilters}
+            aria-controls="editorial-advanced-filters"
+            aria-label={`Filtros avançados${activeFilterCount ? `, ${activeFilterCount} ativos` : ''}`}
+          >
+            <SlidersHorizontal className="h-4 w-4" />
+            {activeFilterCount > 0 && <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-teal-800 px-1 text-[10px] font-black text-white">{activeFilterCount}</span>}
+          </button>
+        </div>
+        <div id="editorial-advanced-filters" className={`${showMobileFilters ? 'grid' : 'hidden'} mt-3 gap-3 sm:grid sm:grid-cols-2 lg:grid-cols-4`}>
+          <select
+            aria-label="Filtrar por tema curricular"
+            className="input-field min-h-[44px]"
+            value={filters.moduleId || ''}
+            onChange={(event) => updateFilter('moduleId', event.target.value)}
+          >
+            <option value="">Todos os temas curriculares</option>
+            {moduleOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+          </select>
+          <input aria-label="Filtrar por tema" className="input-field min-h-[44px]" value={filters.topic || ''} onChange={(event) => updateFilter('topic', event.target.value)} placeholder="Tema" />
+          <input aria-label="Filtrar por banca ou fonte" className="input-field min-h-[44px]" value={filters.bank || ''} onChange={(event) => updateFilter('bank', event.target.value)} placeholder="Banca ou fonte" />
+          <input aria-label="Filtrar por ano" className="input-field min-h-[44px]" inputMode="numeric" value={filters.year || ''} onChange={(event) => updateFilter('year', event.target.value)} placeholder="Ano" />
         </div>
       </form>
 
@@ -232,7 +259,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
                     <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-800">
                       {item.editorialProjection.banks[0] || 'Concurso Público'}
                     </span>
-                    <h2 className="mt-1 font-bold text-slate-900 line-clamp-1">{item.editorialProjection.topicNames[0] || 'Língua Portuguesa'}</h2>
+                    <h2 className="mt-1 font-bold text-slate-900 line-clamp-2">{learnerTopicName(item.editorialProjection.topicNames)}</h2>
                   </div>
                   <StudyBadge tone={item.editorialProjection.answerType === 'CERTO_ERRADO' ? 'contrast' : 'concept'}>
                     {item.editorialProjection.answerType === 'CERTO_ERRADO' ? 'CERTO/ERRADO' : 'MÚLTIPLA ESCOLHA'}
@@ -288,7 +315,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
                         <StudyBadge tone="contrast">Questão Oficial</StudyBadge>
                         <span className="flex items-center gap-1 text-xs text-slate-600 font-medium"><ShieldCheck className="h-3.5 w-3.5 text-teal-700" /> Conteúdo preservado</span>
                       </div>
-                      <h3 className="text-base font-extrabold text-slate-900 mt-1">{detail.editorialProjection.topicNames[0] || 'Língua Portuguesa'}</h3>
+                      <h3 className="text-base font-extrabold text-slate-900 mt-1">{learnerTopicName(detail.editorialProjection.topicNames)}</h3>
                     </div>
                     <button ref={closeButtonRef} type="button" onClick={closeDetail} className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl hover:bg-slate-100 transition" aria-label="Fechar questão"><X className="h-5 w-5" /></button>
                   </div>
@@ -301,33 +328,68 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
                   <p className="whitespace-pre-wrap text-sm sm:text-base leading-relaxed text-slate-900 font-medium">{formatOfficialContent(normalized.prompt)}</p>
                   {isTrueFalse ? (
                     <div className="grid grid-cols-2 gap-3">
-                      {['C', 'E'].map((answer) => (
-                        <div key={answer} className={`rounded-xl border p-3.5 text-center text-sm font-bold ${correctAnswer === answer ? 'border-emerald-300 bg-emerald-50 text-emerald-950 ring-2 ring-emerald-500' : 'border-slate-200 text-slate-600'}`}>
-                          {correctAnswer === answer && <CheckCircle2 className="mr-1.5 inline h-4 w-4 text-emerald-700" />}{answer === 'C' ? 'Certo (Gabarito)' : 'Errado (Gabarito)'}
-                        </div>
-                      ))}
+                      {['C', 'E'].map((answer) => {
+                        const isSelected = detailAnswer === answer;
+                        const isCorrect = correctAnswer === answer;
+                        const stateClass = isDetailRevealed && isCorrect
+                          ? 'border-emerald-400 bg-emerald-50 text-emerald-950 ring-2 ring-emerald-500'
+                          : isDetailRevealed && isSelected
+                            ? 'border-rose-400 bg-rose-50 text-rose-950 ring-2 ring-rose-500'
+                            : isSelected
+                              ? 'border-teal-500 bg-teal-50 text-teal-950 ring-2 ring-teal-500'
+                              : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50';
+                        return (
+                          <button key={answer} type="button" disabled={isDetailRevealed} onClick={() => setDetailAnswer(answer)} aria-pressed={isSelected} className={`min-h-12 rounded-xl border p-3.5 text-center text-sm font-bold transition ${stateClass}`}>
+                            {isDetailRevealed && isCorrect && <CheckCircle2 className="mr-1.5 inline h-4 w-4 text-emerald-700" />}{answer === 'C' ? 'Certo' : 'Errado'}
+                          </button>
+                        );
+                      })}
                     </div>
                   ) : (
                     <ol className="space-y-2">
                       {(normalized.options || []).map((option, index) => {
                         const letter = String(option.letter || option.label || String.fromCharCode(65 + index)).toUpperCase();
                         const isCorrect = correctAnswer === letter;
+                        const isSelected = detailAnswer === letter;
+                        const stateClass = isDetailRevealed && isCorrect
+                          ? 'border-emerald-400 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-500'
+                          : isDetailRevealed && isSelected
+                            ? 'border-rose-400 bg-rose-50 text-rose-950 ring-2 ring-rose-500'
+                            : isSelected
+                              ? 'border-teal-500 bg-teal-50 text-teal-950 ring-2 ring-teal-500'
+                              : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50';
                         return (
-                          <li key={`${letter}-${index}`} className={`rounded-xl border p-3.5 text-sm leading-relaxed ${isCorrect ? 'border-emerald-300 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-500' : 'border-slate-200 text-slate-700'}`}>
-                            <strong>{letter}.</strong> {formatOfficialContent(option.text)}
+                          <li key={`${letter}-${index}`}>
+                            <button type="button" disabled={isDetailRevealed} onClick={() => setDetailAnswer(letter)} aria-pressed={isSelected} className={`min-h-12 w-full rounded-xl border p-3.5 text-left text-sm leading-relaxed transition ${stateClass}`}>
+                              {isDetailRevealed && isCorrect && <CheckCircle2 className="mr-1.5 inline h-4 w-4 text-emerald-700" />}<strong>{letter}.</strong> {formatOfficialContent(option.text)}
+                            </button>
                           </li>
                         );
                       })}
                     </ol>
                   )}
-                  <GoldenRuleCard
-                    rule={{
-                      entityId: `off-q-${normalized.primaryLessonId || '1'}`,
-                      title: `Comentário Pedagógico · Gabarito ${answerLabel(correctAnswer)}`,
-                      statement: formatOfficialContent(normalized.commentary) || 'Comentário não disponível na fonte editorial.',
-                      blocks: [],
-                    }}
-                  />
+                  {!isDetailRevealed ? (
+                    <button type="button" disabled={!detailAnswer} onClick={() => setIsDetailRevealed(true)} className="button-primary min-h-11 w-full disabled:cursor-not-allowed disabled:opacity-50">
+                      Verificar resposta
+                    </button>
+                  ) : (
+                    <>
+                      <div role="status" className={`rounded-xl border p-3 text-sm font-bold ${detailAnswer === correctAnswer ? 'border-emerald-300 bg-emerald-50 text-emerald-950' : 'border-rose-300 bg-rose-50 text-rose-950'}`}>
+                        {detailAnswer === correctAnswer ? 'Resposta correta.' : `Resposta incorreta. Gabarito: ${answerLabel(correctAnswer)}.`}
+                      </div>
+                      <GoldenRuleCard
+                        rule={{
+                          entityId: `off-q-${normalized.primaryLessonId || '1'}`,
+                          title: `Comentário Pedagógico · Gabarito ${answerLabel(correctAnswer)}`,
+                          statement: formatOfficialContent(normalized.commentary) || 'Comentário não disponível na fonte editorial.',
+                          blocks: [],
+                        }}
+                      />
+                      <button type="button" onClick={() => { setDetailAnswer(''); setIsDetailRevealed(false); }} className="button-secondary min-h-11 w-full">
+                        Tentar novamente
+                      </button>
+                    </>
+                  )}
                 </>
               );
             })()}

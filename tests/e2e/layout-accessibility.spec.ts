@@ -12,12 +12,18 @@ const allLayoutTabs = [
   'Review diário',
   'Roteiros',
   'Planejamento',
-  'Duelo',
+  'Modo Desafio',
   'Questões editoriais',
   'Estatísticas',
   'Perfil',
 ];
 const auditedTabs = ['Apostila', 'Analisador', 'Simulado', 'Cronômetro Foco', 'Roteiros', 'Questões editoriais'];
+const representativePedagogicalUnits = [
+  { moduleId: 'mod0', unitId: 'IP-A00-G01', sectionId: 'explanation', profile: 'todos os blocos centrais' },
+  { moduleId: 'mod0', unitId: 'IP-A00-G06', sectionId: 'explanation', profile: 'callouts e conteúdo legado' },
+  { moduleId: 'mod10', unitId: 'IP-A10-G06', sectionId: 'explanation', profile: 'matrizes e comparações' },
+  { moduleId: 'mod14', unitId: 'IP-A14-S01', sectionId: 'synthesis', profile: 'revisão cumulativa A14' },
+] as const;
 
 test.describe('layout responsivo', () => {
   for (const tab of allLayoutTabs) {
@@ -40,8 +46,16 @@ test.describe('layout responsivo', () => {
     const unit = page.locator('.pedagogical-unit-view');
     await expect(unit).toBeVisible();
     const ratio = await unit.evaluate((element) => element.getBoundingClientRect().width / window.innerWidth);
-    expect(ratio).toBeGreaterThan(0.78);
+    expect(ratio).toBeGreaterThan(0.92);
   });
+
+  for (const sample of representativePedagogicalUnits) {
+    test(`unidade representativa (${sample.profile}) respeita o viewport`, async ({ page }) => {
+      await openApp(page, `/?module=${sample.moduleId}&unit=${sample.unitId}&section=${sample.sectionId}`);
+      await expect(page.locator('.pedagogical-unit-view, .cumulative-review-view')).toBeVisible();
+      await expectNoDocumentOverflow(page);
+    });
+  }
 
   test('alvos principais da navegação têm pelo menos 44px', async ({ page }) => {
     await openApp(page);
@@ -102,6 +116,23 @@ test.describe('teclado e leitores de tela', () => {
     await page.keyboard.press('Escape');
     await expect(dialog).toBeHidden();
     await expect(opener).toBeFocused();
+  });
+
+  test('questão editorial mantém o gabarito oculto até a tentativa', async ({ page }) => {
+    await openApp(page);
+    await openTab(page, 'Questões editoriais');
+    await page.getByRole('button', { name: 'Estudar questão' }).first().click();
+    const dialog = page.getByRole('dialog', { name: /questão editorial/i });
+    const verifyButton = dialog.getByRole('button', { name: 'Verificar resposta' });
+    await expect(verifyButton).toBeDisabled();
+    await expect(dialog.getByText(/Comentário Pedagógico/i)).toHaveCount(0);
+
+    const answerButtons = dialog.locator('ol button, .grid.grid-cols-2 button');
+    await answerButtons.first().click();
+    await expect(verifyButton).toBeEnabled();
+    await verifyButton.click();
+    await expect(dialog.getByText(/Comentário Pedagógico/i)).toBeVisible();
+    await expect(dialog.getByRole('button', { name: 'Tentar novamente' })).toBeVisible();
   });
 
   test('atalho de busca abre modal e Escape devolve o foco', async ({ page }) => {

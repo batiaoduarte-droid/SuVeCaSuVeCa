@@ -220,7 +220,7 @@ export const PedagogicalDeepDive: React.FC<{
   if (!viewUrl && !section.contentUrl) return null;
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-teal-200 bg-teal-50/40">
+    <div className="pedagogical-deep-dive overflow-hidden rounded-2xl border border-teal-200 bg-teal-50/40">
       <button
         type="button"
         onClick={() => {
@@ -242,7 +242,7 @@ export const PedagogicalDeepDive: React.FC<{
         </span>
       </button>
       {isOpen && (
-        <div id={panelId} className="border-t border-teal-200 bg-white p-2 sm:p-4 lg:p-6">
+        <div id={panelId} className="pedagogical-deep-dive-panel border-t border-teal-200 bg-white p-2 sm:p-4 lg:p-6">
           {state === 'loading' && (
             <div className="flex min-h-28 items-center justify-center gap-2 text-sm font-semibold text-teal-800" role="status">
               <LoaderCircle className="h-4 w-4 animate-spin" /> Carregando aprofundamento…
@@ -531,7 +531,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const isExpandedStudy = isFocusMode || Boolean(openUnitId);
 
   return (
-    <div className="w-full space-y-6 pb-16">
+    <div className={`module-viewer w-full space-y-6 pb-16 ${isExpandedStudy ? 'module-viewer--reading' : ''}`}>
       {/* Barra Superior de Navegação do Módulo (Full Width, Dropdown & Next/Prev) */}
       {!isFocusMode && (
         <nav
@@ -548,7 +548,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             >
               <ChevronLeft className="w-4 h-4 text-teal-700 shrink-0" />
               <span className="hidden sm:inline">Anterior:</span>
-              <span className="font-extrabold text-teal-900 truncate max-w-[110px] md:max-w-[170px]">
+              <span className="hidden min-[420px]:inline font-extrabold text-teal-900 truncate max-w-[110px] md:max-w-[170px]">
                 {prevModule.id === 'mod-intro' ? 'Intro' : `M${prevModule.num}`}
               </span>
             </button>
@@ -659,7 +659,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               title={`Próximo Módulo: ${nextModule.title}`}
             >
               <span className="hidden sm:inline">Próximo:</span>
-              <span className="truncate max-w-[110px] md:max-w-[170px]">
+              <span className="hidden min-[420px]:inline truncate max-w-[110px] md:max-w-[170px]">
                 {nextModule.id === 'simulado' ? 'Simulado' : `M${nextModule.num}`}
               </span>
               <ChevronRight className="w-4 h-4 shrink-0" />
@@ -687,7 +687,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           </div>
         )}
         {/* Module Header Card */}
-        <header className={isFocusMode ? 'hidden' : 'bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4'}>
+        <header className={isFocusMode ? 'hidden' : 'module-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4'}>
           <div className="flex flex-wrap items-center justify-between gap-3">
             {moduleData.id === 'mod-intro' ? (
               <span className="text-xs font-bold text-amber-900 bg-amber-50 border border-amber-300 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-2xs">
@@ -882,7 +882,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             <section
               id={integrationUnitIdForSection(section) ? `module-unit-${integrationUnitIdForSection(section)}` : `intro-section-${idx}`}
               key={`${section.lessonId || moduleData.id}:${section.groupId || idx}:${section.contentUrl || section.title}`}
-              className="min-w-0 overflow-hidden surface p-2.5 sm:p-6 space-y-5"
+              className={`module-unit-shell min-w-0 overflow-hidden surface p-2.5 sm:p-6 space-y-5 ${integrationUnitIdForSection(section) === openUnitId ? 'module-unit-shell--open' : ''}`}
             >
               <div className="border-b border-slate-100 pb-3 flex items-start justify-between gap-3">
                 <div className="min-w-0 space-y-2">
@@ -907,7 +907,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                   )}
                 </div>
                 <span className="shrink-0 pt-1 text-xs font-semibold text-slate-700" aria-label={`Unidade ${idx + 1} de ${moduleData.sections.length}`}>
-                  Unidade {idx + 1} de {moduleData.sections.length}
+                  <span className="hidden sm:inline">Unidade </span>{idx + 1}/{moduleData.sections.length}
                 </span>
               </div>
 

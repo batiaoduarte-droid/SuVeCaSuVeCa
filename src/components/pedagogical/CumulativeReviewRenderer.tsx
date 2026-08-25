@@ -106,7 +106,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
         <h2 className="m-0 mb-3 flex items-center gap-2 text-base font-bold text-teal-950">
           <ListTree className="h-5 w-5 text-teal-700" /> Roteiro de Revisão (6 Dimensões)
         </h2>
-        <ol className="m-0 grid list-none gap-2 p-0 text-xs font-semibold text-teal-950 sm:grid-cols-2 sm:text-sm">
+        <ol className="pedagogical-toc-list m-0 grid list-none gap-2 p-0 text-xs font-semibold text-teal-950 sm:grid-cols-2 sm:text-sm">
           {[
             ['suveca', 'Conexão com o método SuVeCA'],
             ['concepts', 'Mapa de conceitos prioritários'],
@@ -129,13 +129,13 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
         id={`${unit.unitId}-suveca`}
         open={openSections.has('suveca')}
         onToggle={(e) => toggleSection('suveca', e.currentTarget.open)}
-        className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
+        className="pedagogical-section group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
       >
         <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-slate-50/80 px-4 py-3.5 text-sm sm:text-base font-bold text-slate-950 hover:bg-slate-100 sm:px-5 transition">
           <span><span className="mr-2 text-teal-700">1.</span>Conexão com o método SuVeCA</span>
           <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
         </summary>
-        <div className="border-t border-slate-200 p-4 sm:p-6">
+        <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6">
           <SuvecaSection view={sections.suveca} />
         </div>
       </details>
@@ -146,13 +146,13 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           id={`${unit.unitId}-concepts`}
           open={openSections.has('concepts')}
           onToggle={(e) => toggleSection('concepts', e.currentTarget.open)}
-          className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
+          className="pedagogical-section group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
         >
           <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-slate-50/80 px-4 py-3.5 text-sm sm:text-base font-bold text-slate-950 hover:bg-slate-100 sm:px-5 transition">
             <span><span className="mr-2 text-teal-700">2.</span>Mapa de Conceitos ({sections.conceptMap.items.length} tópicos)</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
-          <div className="border-t border-slate-200 p-4 sm:p-6">
+          <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6">
             <div className="flex flex-wrap gap-2">
               {(showAllConcepts ? sections.conceptMap.items : sections.conceptMap.items.slice(0, 24)).map((item, idx) => (
                 <span
@@ -178,13 +178,13 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           id={`${unit.unitId}-rules`}
           open={openSections.has('rules')}
           onToggle={(e) => toggleSection('rules', e.currentTarget.open)}
-          className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
+          className="pedagogical-section group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
         >
           <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-slate-50/80 px-4 py-3.5 text-sm sm:text-base font-bold text-slate-950 hover:bg-slate-100 sm:px-5 transition">
             <span><span className="mr-2 text-teal-700">3.</span>Regras Priorizadas de Prova ({sections.prioritizedRules.items.length})</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
-          <div className="border-t border-slate-200 p-4 sm:p-6">
+          <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6">
             <div className="space-y-2.5">
               {(showAllRules ? sections.prioritizedRules.items : sections.prioritizedRules.items.slice(0, 12)).map((rule, idx) => (
                 <div
@@ -213,13 +213,13 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           id={`${unit.unitId}-synthesis`}
           open={openSections.has('synthesis')}
           onToggle={(e) => toggleSection('synthesis', e.currentTarget.open)}
-          className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
+          className="pedagogical-section group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
         >
           <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-slate-50/80 px-4 py-3.5 text-sm sm:text-base font-bold text-slate-950 hover:bg-slate-100 sm:px-5 transition">
             <span><span className="mr-2 text-teal-700">4.</span>Síntese Estruturada</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
-          <div className="border-t border-slate-200 p-4 sm:p-6 space-y-3">
+          <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6 space-y-3">
             {sections.structuredSynthesis.blocks.map((block, idx) => (
               <ContentBlockRenderer key={idx} block={block} />
             ))}
@@ -233,13 +233,13 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           id={`${unit.unitId}-recovery`}
           open={openSections.has('recovery')}
           onToggle={(e) => toggleSection('recovery', e.currentTarget.open)}
-          className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
+          className="pedagogical-section group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs"
         >
           <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-slate-50/80 px-4 py-3.5 text-sm sm:text-base font-bold text-slate-950 hover:bg-slate-100 sm:px-5 transition">
             <span><span className="mr-2 text-teal-700">5.</span>Exemplos para Recuperação</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
-          <div className="border-t border-slate-200 p-4 sm:p-6 space-y-3">
+          <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6 space-y-3">
             {sections.recoveryExamples.blocks.map((block, idx) => (
               <ContentBlockRenderer key={idx} block={block} />
             ))}
@@ -253,13 +253,13 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           id={`${unit.unitId}-protocol`}
           open={openSections.has('protocol')}
           onToggle={(e) => toggleSection('protocol', e.currentTarget.open)}
-          className="group overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-2xs"
+          className="pedagogical-section group overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-2xs"
         >
           <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 bg-teal-50/80 px-4 py-3.5 text-sm sm:text-base font-bold text-teal-950 hover:bg-teal-100 sm:px-5 transition">
             <span><span className="mr-2 text-teal-700">6.</span>Protocolo de Revisão Ativa ({completedProtocol}/{protocolItems.length})</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
-          <div className="border-t border-teal-200 p-4 sm:p-6 space-y-4">
+          <div className="pedagogical-section-body border-t border-teal-200 p-4 sm:p-6 space-y-4">
             <div
               className="h-2 w-full overflow-hidden rounded-full bg-slate-100"
               role="progressbar"

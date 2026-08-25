@@ -144,7 +144,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
           </button>
         </div>
       ) : (
-        <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-3">
+        <header className="tool-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-3">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div className="space-y-3">
               <div className="inline-flex items-center space-x-2 bg-teal-50 text-teal-800 border border-teal-200 text-xs px-3 py-1 rounded-full font-semibold">
@@ -180,10 +180,10 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
             <p className="text-sm font-medium leading-relaxed text-teal-950">
               {SUVECA_METHOD.definition}
             </p>
-            <p className="text-xs leading-relaxed text-slate-600">
+            <p className="hidden text-xs leading-relaxed text-slate-600 sm:block">
               A análise mantém os blocos na ordem real da frase e reconstrói os vínculos entre eles. Um bloco pode estar posposto, implícito ou ausente.
             </p>
-            <div className="flex flex-wrap gap-2 pt-1" aria-label="Exemplos de padrões SuVeCA">
+            <div className="hidden flex-wrap gap-2 pt-1 sm:flex" aria-label="Exemplos de padrões SuVeCA">
               {SUVECA_METHOD.patterns.slice(0, 5).map((pattern) => (
                 <span key={pattern.name} className="rounded-lg border border-teal-200 bg-white px-2.5 py-1 text-[11px] font-bold text-teal-900" title={pattern.example}>
                   {pattern.surface}

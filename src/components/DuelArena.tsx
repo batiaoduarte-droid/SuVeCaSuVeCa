@@ -461,7 +461,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({
   return (
     <div className="tool-content-shell space-y-6 pb-16">
       {/* Header com Abas de Modo */}
-      <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-5">
+      <header className="tool-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
@@ -478,7 +478,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex bg-slate-100 p-1.5 rounded-xl border border-slate-200 text-xs font-semibold">
+        <div className="tool-segmented-tabs flex bg-slate-100 p-1.5 rounded-xl border border-slate-200 text-xs font-semibold">
           <button
             type="button"
             onClick={() => setActiveModeTab('challenge')}

@@ -155,7 +155,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       parseLegacyCadernoCards(localStorage.getItem(legacyFlashcardsStorageKey(resolvedUserId)))
     );
   });
-  const [mode, setMode] = useState<'caderno' | 'suveca'>('caderno');
+  const [mode, setMode] = useState<'caderno' | 'suveca'>(errors.length ? 'caderno' : 'suveca');
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [isAnswerVisible, setIsAnswerVisible] = useState(false);
   const [isHintVisible, setIsHintVisible] = useState(false);
@@ -535,8 +535,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   };
 
   return (
-    <div className="space-y-6">
-      <section className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs space-y-4">
+    <div className="tool-content-shell space-y-6">
+      <section className="tool-page-header bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 rounded-xl bg-violet-50 border border-violet-200 text-violet-800 flex items-center justify-center shrink-0">

@@ -133,7 +133,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   }
 
   return (
-    <div className="tool-content-shell space-y-8">
+    <div className="pbl-dashboard tool-content-shell space-y-8">
       {errorMessage && <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm font-semibold text-rose-900">{errorMessage}</div>}
 
       {resumableSession && (
@@ -143,7 +143,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
         </div>
       )}
 
-      <div className="relative overflow-hidden rounded-3xl border border-indigo-100 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-950 p-8 text-white shadow-xl">
+      <div className="tool-page-hero relative overflow-hidden rounded-3xl border border-indigo-100 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-950 p-8 text-white shadow-xl">
         <div className="relative z-10 max-w-3xl">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-500/30 px-3 py-1 text-xs font-bold text-indigo-100"><Sparkles className="h-3.5 w-3.5 text-amber-300" /> Aprendizagem Baseada em Problemas</span>
           <h1 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">Aprenda Português resolvendo problemas reais</h1>

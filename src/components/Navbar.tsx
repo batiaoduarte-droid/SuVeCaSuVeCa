@@ -63,6 +63,7 @@ interface NavbarProps {
 interface NavItem {
   id: TabType;
   label: string;
+  mobileLabel?: string;
   icon: React.ElementType;
   isIa?: boolean;
   countBadge?: number;
@@ -100,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const primaryTabs: NavItem[] = [
     { id: 'modules', label: 'Apostila', icon: BookOpen },
     { id: 'analyzer', label: 'Analisador', icon: Cpu, isIa: true },
-    { id: 'pbl', label: 'Aprender por Problemas (PBL)', icon: Sparkles, isIa: true },
+    { id: 'pbl', label: 'Aprender por Problemas (PBL)', mobileLabel: 'PBL', icon: Sparkles, isIa: true },
     { id: 'simulado', label: 'Simulado', icon: GraduationCap },
   ];
 
@@ -213,11 +214,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <span className="font-extrabold text-lg text-[var(--text-strong)] tracking-tight">
                     SuVeCA
                   </span>
-                  <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 px-2 py-0.5 rounded-md border border-teal-200">
+                  <span className="hidden text-[11px] font-semibold text-teal-800 bg-teal-50 px-2 py-0.5 rounded-md border border-teal-200 sm:inline">
                     Concursos
                   </span>
                 </div>
-                <p className="text-xs text-[var(--text-muted)] font-medium">
+                <p className="hidden text-xs text-[var(--text-muted)] font-medium sm:block">
                   Português para concursos
                 </p>
               </div>
@@ -526,7 +527,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               <Icon className={`w-5 h-5 ${isActive ? 'text-teal-700' : 'text-slate-400'}`} />
-              <span className="text-[11px] mt-1 font-medium">{item.label}</span>
+              {item.mobileLabel ? <span className="sr-only">{item.label}</span> : null}
+              <span aria-hidden={item.mobileLabel ? true : undefined} className="text-[11px] mt-1 font-medium">{item.mobileLabel || item.label}</span>
             </button>
           );
         })}

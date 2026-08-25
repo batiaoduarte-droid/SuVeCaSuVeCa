@@ -61,7 +61,7 @@ export const WeeklyGoalCard: React.FC<WeeklyGoalCardProps> = ({
               <span className="text-[11px] font-extrabold uppercase tracking-wide text-teal-800">
                 Progresso Semanal
               </span>
-              <h2 id="weekly-goal-title" className="text-base font-extrabold text-slate-900 truncate">
+              <h2 id="weekly-goal-title" className="text-sm font-extrabold leading-tight text-slate-900 sm:text-base">
                 Meta Semanal de Estudo
               </h2>
             </div>

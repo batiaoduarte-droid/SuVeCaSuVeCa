@@ -117,7 +117,7 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
   return (
     <div className="tool-content-shell space-y-8 pb-16">
       {/* Header Banner */}
-      <header className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
+      <header className="tool-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div className="inline-flex items-center space-x-2 bg-teal-50 text-teal-800 border border-teal-200 text-xs px-3 py-1 rounded-full font-semibold">
             <CalendarCheck className="w-3.5 h-3.5 text-teal-700" />
@@ -140,7 +140,7 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
       </header>
 
       {/* Tabs */}
-      <div className="relative flex items-center rounded-2xl border border-slate-200 bg-slate-100 p-1.5 text-xs font-medium">
+      <div className="tool-scroll-tabs relative flex items-center rounded-2xl border border-slate-200 bg-slate-100 p-1.5 text-xs font-medium">
         <button type="button" onClick={() => scrollTabs(-1)} disabled={!tabScroll.left} className="mr-1 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-xs disabled:opacity-30" aria-label="Ver abas anteriores"><ChevronLeft className="h-4 w-4" /></button>
         <div ref={tabListRef} onScroll={updateTabScroll} className="flex min-w-0 flex-1 items-center space-x-2 overflow-x-auto scroll-smooth" role="tablist" aria-label="Seções do planejamento">
         <button

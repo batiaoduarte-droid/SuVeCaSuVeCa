@@ -175,7 +175,7 @@ export const DecisionTreeViewer: React.FC = () => {
 
   return (
     <div className="tool-content-shell space-y-6 pb-16">
-      <header className="space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8">
+      <header className="tool-page-header space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8">
         <div className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800">
           <GitMerge className="h-3.5 w-3.5 text-teal-700" aria-hidden="true" />
           <span>Roteiros editoriais de decisão</span>

@@ -7,7 +7,6 @@ import { DailyTipCard } from './components/DailyTipCard';
 import { DailyReviewReminder } from './components/DailyReviewReminder';
 import { ContinueLearningCard } from './components/ContinueLearningCard';
 import { fetchOfficialQuestionSample, officialDetailToQuizQuestion } from './lib/officialQuestions';
-import { MobileFAB } from './components/ui/MobileFAB';
 import { SuvecaMethodBanner } from './components/SuvecaMethodBanner';
 import { WeeklyGoalCard } from './components/WeeklyGoalCard';
 import { OnboardingTour, hasCompletedOnboarding } from './components/OnboardingTour';
@@ -512,7 +511,7 @@ export default function App() {
                       <WeeklyGoalCard
                         readSectionIdsCount={metrics.readSectionIds.length}
                         practiceAnsweredCount={
-                          Object.keys(metrics.modulePractices || {}).length * 4 +
+                          Object.keys(metrics.modulePractice || {}).length * 4 +
                           (metrics.readSectionIds.length > 0 ? 4 : 0)
                         }
                         userId={user?.uid}
@@ -721,19 +720,6 @@ export default function App() {
           />
         </Suspense>
       </main>
-
-      {/* Floating Action Button (FAB) - Mobile Only */}
-      {!isImmersiveFocus && (
-        <MobileFAB
-          onOpenAnalisador={() => setActiveTab('analyzer')}
-          onOpenTutor={() => {
-            setTutorContext('');
-            setIsTutorOpen(true);
-          }}
-          onOpenCadernoErros={() => setActiveTab('errors')}
-          errorCount={cadernoErrors.filter((e) => e.status !== 'dominado').length}
-        />
-      )}
 
       {/* Clean Editorial Footer */}
       {!isImmersiveFocus && <footer className="border-t border-[var(--border)] bg-[var(--surface)] py-6 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] lg:pb-6 px-4 sm:px-8 text-xs text-[var(--text-muted)] text-center sm:flex sm:items-center sm:justify-between gap-4 mt-12">

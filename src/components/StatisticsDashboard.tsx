@@ -238,8 +238,8 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
   );
 
   return (
-    <div className="space-y-6 pb-16 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 duration-300">
-      <header className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8">
+    <div className="tool-content-shell space-y-6 pb-16 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 duration-300">
+      <header className="tool-page-header rounded-2xl border border-slate-200 bg-white p-6 shadow-xs sm:p-8">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-center">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800">

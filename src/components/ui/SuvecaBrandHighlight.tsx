@@ -123,13 +123,12 @@ export const highlightSuvecaInReactNodes = (node: ReactNode): ReactNode => {
     ));
   }
 
-  if (isValidElement(node) && node.props && node.props.children) {
+  if (isValidElement<{ children?: ReactNode }>(node) && node.props.children) {
     // Não substitui se for tag especial como code, pre ou math
     if (['code', 'pre', 'script', 'style'].includes(String(node.type))) {
       return node;
     }
     return React.cloneElement(node, {
-      ...node.props,
       children: highlightSuvecaInReactNodes(node.props.children),
     });
   }
