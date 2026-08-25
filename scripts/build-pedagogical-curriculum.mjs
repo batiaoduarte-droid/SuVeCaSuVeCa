@@ -1430,7 +1430,7 @@ for (const unit of units) {
     }))
     .filter((candidate) => candidate.front.length >= 18 && candidate.back.length >= 80 && !genericBack.test(candidate.back))
     .sort((a, b) => (candidatePriority[a.type] ?? 9) - (candidatePriority[b.type] ?? 9) || b.back.length - a.back.length)
-    .slice(0, 2);
+    .slice(0, 6);
   if (!candidates.length) {
     const fallbackBack = cleanLearnerMarkdown(
       (unit.learning_objectives || []).join(' ')

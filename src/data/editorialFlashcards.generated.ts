@@ -33,6 +33,22 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a00-g01-mnemonics-and-tips-007",
+    "source": "suveca",
+    "topic": "Fonética e Fonologia",
+    "front": "Como aplicar O Mantra do Dígrafo (\"A cada dígrafo, menos 1 som!\")?",
+    "back": "Em provas de concurso, evite pronunciar a palavra pausadamente e contar nos dedos para não ser induzido ao erro por vícios de fala. Utilize a fórmula memorizada:",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Em provas de concurso, evite pronunciar a palavra pausadamente e contar nos dedos para não ser induzido ao erro por vícios de fala. Utilize a fórmula memorizada:",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G01"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a00-g02-knowledge-009",
     "source": "suveca",
     "topic": "Estudo da Sílaba - Teoria",
@@ -81,6 +97,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a00-g03-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Estudo da Sílaba - Questões",
+    "front": "Qual erro deve ser evitado em Invenção de \"Vogal Fantasma\" na Divisão de Consoantes Mudas?",
+    "back": "Problema: Separar a consoante muda em sílaba autônoma (*co-la-pso*, *ad-vo-ga-do*). Forma Correta: Não existe sílaba sem vogal. A consoante muda deve ficar na sílaba anterior: co-lap-so, at-mos-fe-ra.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Separar a consoante muda em sílaba autônoma (*co-la-pso*, *ad-vo-ga-do*). Forma Correta: Não existe sílaba sem vogal. A consoante muda deve ficar na sílaba anterior: co-lap-so, at-mos-fe-ra.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G03"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g03-misconceptions-and-traps-013",
+    "source": "suveca",
+    "topic": "Estudo da Sílaba - Questões",
+    "front": "Qual erro deve ser evitado em Falsa Hipercorreção na Pronúncia de \"Gratuito\", \"Fortuito\" e \"Circuito\"?",
+    "back": "Problema: A fala coloquial tende a forçar um hiato acentuado (*gra-tu-í-to*, *for-tu-í-to*). Forma Correta: São palavras paroxítonas com ditongo decrescente (ui), sem acento gráfico.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: A fala coloquial tende a forçar um hiato acentuado (*gra-tu-í-to*, *for-tu-í-to*). Forma Correta: São palavras paroxítonas com ditongo decrescente (ui), sem acento gráfico.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G03"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g03-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Estudo da Sílaba - Questões",
+    "front": "Qual erro deve ser evitado em Pegadinha do Grupo QU/GU Fonado?",
+    "back": "Problema: Memorizar que qu é sempre dígrafo. Forma Correta: Em vocábulos como *quantidade*, *quase*, *aquático*, a letra 'u' é audível ($/w/$), não formando dígrafo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Memorizar que qu é sempre dígrafo. Forma Correta: Em vocábulos como *quantidade*, *quase*, *aquático*, a letra 'u' é audível ($/w/$), não formando dígrafo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G03"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g03-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Estudo da Sílaba - Questões",
+    "front": "Qual erro deve ser evitado em Proibição de Separação em Monossílabos com Consoante Inicial?",
+    "back": "Problema: Tentar separar a consoante inicial 'p' em *pneu* (p-neu). Forma Correta: A palavra *pneu* é um monossílabo indivisível (pneu).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Tentar separar a consoante inicial 'p' em *pneu* (p-neu). Forma Correta: A palavra *pneu* é um monossílabo indivisível (pneu).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G03"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a00-g04-misconceptions-and-traps-017",
     "source": "suveca",
     "topic": "Acentuação Gráfica",
@@ -104,6 +184,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro Comum: Julgar que *café* e *fé*, ou *até* e *pé*, seguem a mesma regra porque terminam na letra \"E\". Esclarecimento: Oxítonas têm 2 ou mais sílabas (Regra 1); monossílabos têm apenas 1 sílaba (Regra 4). Além disso, monossílabos tônicos não se acentuam com a terminação *-EM* (*trem, sem*).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro Comum: Julgar que *café* e *fé*, ou *até* e *pé*, seguem a mesma regra porque terminam na letra \"E\". Esclarecimento: Oxítonas têm 2 ou mais sílabas (Regra 1); monossílabos têm apenas 1 sílaba (Regra 4). Além disso, monossílabos tônicos não se acentuam com a terminação *-EM* (*trem, sem*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G04"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g04-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Acentuação Gráfica",
+    "front": "Qual erro deve ser evitado em A Falsa Regra do Hiato em \"Varíola\" (1ª Vogal do Hiato)?",
+    "back": "Pegadinha da Banca: A banca afirma que *varíola* e *saída* acentuam-se pela mesma regra por conterem a letra \"I\" em hiato. Correção: A regra do hiato exige que o \"I\" seja a 2ª vogal. Em *varíola* (va-rí-o-la), o \"I\" é a 1ª vogal e o acento decorre de ser proparoxítona.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha da Banca: A banca afirma que *varíola* e *saída* acentuam-se pela mesma regra por conterem a letra \"I\" em hiato. Correção: A regra do hiato exige que o \"I\" seja a 2ª vogal. Em *varíola* (va-rí-o-la), o \"I\" é a 1ª vogal e o acento decorre de ser proparoxítona.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G04"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g04-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Acentuação Gráfica",
+    "front": "Qual erro deve ser evitado em Impedimentos à Acentuação do Hiato (Consoante Z e Dígrafo NH)?",
+    "back": "O \"I\" ou \"U\" tônico não recebe acento se vier acompanhado de qualquer consoante que não seja \"S\" na mesma sílaba (*ju-iz*, *ru-im*) ou se for seguido imediatamente pelo dígrafo nasal *NH* (*ra-i-nha*, *ba-i-nha*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O \"I\" ou \"U\" tônico não recebe acento se vier acompanhado de qualquer consoante que não seja \"S\" na mesma sílaba (*ju-iz*, *ru-im*) ou se for seguido imediatamente pelo dígrafo nasal *NH* (*ra-i-nha*, *ba-i-nha*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G04"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g04-mnemonics-and-tips-013",
+    "source": "suveca",
+    "topic": "Acentuação Gráfica",
+    "front": "Como aplicar O Mantra do Núcleo Silábico Vocálico?",
+    "back": "Mantra: *\"A base da sílaba é a vogal. Sem vogal, não há sílaba.\"* Consoantes soltas no meio do vocábulo (*afta, etnia*) são empurradas para a sílaba anterior (af-ta, et-ni-a). Palavras iniciadas por consoantes mudas (*pneu, psicologia*) mantêm a consoante colada na vogal seguinte.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Mantra: *\"A base da sílaba é a vogal. Sem vogal, não há sílaba.\"* Consoantes soltas no meio do vocábulo (*afta, etnia*) são empurradas para a sílaba anterior (af-ta, et-ni-a). Palavras iniciadas por consoantes mudas (*pneu, psicologia*) mantêm a consoante colada na vogal seguinte.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G04"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g04-mnemonics-and-tips-014",
+    "source": "suveca",
+    "topic": "Acentuação Gráfica",
+    "front": "Como aplicar O Macete do \"Corte o Pronome\" na Ênclise?",
+    "back": "Viu verbo com pronome preso por hífen (*encontrá-lo*, *amá-la*, *dizê-lo*)? Passe um traço sobre o pronome enclítico e classifique exclusivamente o verbo que restou.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Viu verbo com pronome preso por hífen (*encontrá-lo*, *amá-la*, *dizê-lo*)? Passe um traço sobre o pronome enclítico e classifique exclusivamente o verbo que restou.",
     "sourceRefs": [
       "EDITORIAL:IP-A00-G04"
     ],
@@ -145,6 +289,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a00-g05-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Emprego do Hífen - Fundamentos",
+    "front": "Qual erro deve ser evitado em A Armadilha da Assimetria BEM vs. MAL em Provas?",
+    "back": "Pegadinha da Banca: Induzir o candidato a grafar \"mal-criado\" com hífen por analogia a *bem-criado*. Correção: Com *bem*, usa-se hífen (*bem-criado*); com *mal*, aglutina-se antes de consoante (*malcriado*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha da Banca: Induzir o candidato a grafar \"mal-criado\" com hífen por analogia a *bem-criado*. Correção: Com *bem*, usa-se hífen (*bem-criado*); com *mal*, aglutina-se antes de consoante (*malcriado*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G05"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g05-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Emprego do Hífen - Fundamentos",
+    "front": "Qual erro deve ser evitado em Falso Dobramento de R após o Prefixo SUB-?",
+    "back": "Pegadinha da Banca: Apresentar a forma *subrregião* alegando a regra do dobramento do R. Correção: O prefixo *sub-* termina em consoante (b), exigindo hífen diante de R (sub-região) sem duplicação de letra.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha da Banca: Apresentar a forma *subrregião* alegando a regra do dobramento do R. Correção: O prefixo *sub-* termina em consoante (b), exigindo hífen diante de R (sub-região) sem duplicação de letra.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G05"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g05-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Emprego do Hífen - Fundamentos",
+    "front": "Qual erro deve ser evitado em Hifenização Indevida de \"Subsídio\"?",
+    "back": "Pegadinha da Banca: Apresentar *sub-sídio* com hífen ou afirmar que o S tem som de /Z/. Correção: Grafa-se junto e sem hífen: subsídio (com som /sub-sí-dio/, som de /S/ surdo).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha da Banca: Apresentar *sub-sídio* com hífen ou afirmar que o S tem som de /Z/. Correção: Grafa-se junto e sem hífen: subsídio (com som /sub-sí-dio/, som de /S/ surdo).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G05"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g05-mnemonics-and-tips-012",
+    "source": "suveca",
+    "topic": "Emprego do Hífen - Fundamentos",
+    "front": "Como aplicar O Sistema de Mantras Ortográficos?",
+    "back": "\"Iguais se repelem\": Letras idênticas no ponto de contato geram repulsão com hífen (a-a, e-e, i-i, o-o, r-r). \"Diferentes se atraem\": Vogais distintas unem-se em um só vocábulo sem hífen (o-a, a-e, i-o). \"H é um problema\": A letra H sempre exige hífen com qualquer prefixo (super-homem, bio-história). \"Se não separa, casa\": Se o encontro não preencher os requisitos de separação por hífen, a regra padrão é juntar tudo.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "\"Iguais se repelem\": Letras idênticas no ponto de contato geram repulsão com hífen (a-a, e-e, i-i, o-o, r-r). \"Diferentes se atraem\": Vogais distintas unem-se em um só vocábulo sem hífen (o-a, a-e, i-o). \"H é um problema\": A letra H sempre exige hífen com qualquer prefixo (super-homem, bio-história). \"Se não separa, casa\": Se o encontro não preencher os requisitos de separação por hífen, a regra padrão é juntar tudo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G05"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a00-g06-misconceptions-and-traps-012",
     "source": "suveca",
     "topic": "Emprego do Hífen - Questões",
@@ -168,6 +376,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Achar que mal-humorado segue a mesma regra ortográfica que bem-estar. Explicação: Ambas estão certas, mas bem-estar decorre da regra incondicional do BEM (sempre com hífen), enquanto mal-humorado decorre da regra condicional do MAL (hífen apenas com vogal ou H).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Achar que mal-humorado segue a mesma regra ortográfica que bem-estar. Explicação: Ambas estão certas, mas bem-estar decorre da regra incondicional do BEM (sempre com hífen), enquanto mal-humorado decorre da regra condicional do MAL (hífen apenas com vogal ou H).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G06"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g06-misconceptions-and-traps-011",
+    "source": "suveca",
+    "topic": "Emprego do Hífen - Questões",
+    "front": "Qual erro deve ser evitado em Pegadinha do Duplo \"O\" no Prefixo \"co-\"?",
+    "back": "O Erro: Tentar aplicar a regra prefixal de \"iguais se repelem\" ao prefixo co-, julgando que *co-obrigação* ou *co-ordenação* deveriam ter hífen. Forma Correta: coobrigação, coordenação, cooperação. co- é exceção à repulsão de iguais e aglutina sempre.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Tentar aplicar a regra prefixal de \"iguais se repelem\" ao prefixo co-, julgando que *co-obrigação* ou *co-ordenação* deveriam ter hífen. Forma Correta: coobrigação, coordenação, cooperação. co- é exceção à repulsão de iguais e aglutina sempre.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G06"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g06-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Emprego do Hífen - Questões",
+    "front": "Qual erro deve ser evitado em Incoerência nos Adjetivos Étnicos?",
+    "back": "O Erro: Deduzir que se *afro-brasileiro* usa hífen, *afrodescendente* também deveria usar. Forma Correta: afro-brasileiro (Regra Geral I - hífen) vs. afrodescendente (Categoria III-A - aglutinada sem hífen pelo VOLP).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Deduzir que se *afro-brasileiro* usa hífen, *afrodescendente* também deveria usar. Forma Correta: afro-brasileiro (Regra Geral I - hífen) vs. afrodescendente (Categoria III-A - aglutinada sem hífen pelo VOLP).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G06"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g06-misconceptions-and-traps-013",
+    "source": "suveca",
+    "topic": "Emprego do Hífen - Questões",
+    "front": "Qual erro deve ser evitado em Dobramento Indevido em Prefixo Consonantal?",
+    "back": "O Erro: Grafar *hipersensibilidade* com dois 's' (hiperssensibilidade). Forma Correta: hipersensibilidade. Prefixos terminados em consoante não autorizam dobra de letras.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Grafar *hipersensibilidade* com dois 's' (hiperssensibilidade). Forma Correta: hipersensibilidade. Prefixos terminados em consoante não autorizam dobra de letras.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G06"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g06-mnemonics-and-tips-010",
+    "source": "suveca",
+    "topic": "Emprego do Hífen - Questões",
+    "front": "Como aplicar Lógica de Preservação Textual do Cebraspe?",
+    "back": "A banca nunca contraria a ortografia do autor no texto-suporte. Se a palavra está sem hífen no texto (*coexistem*, *antidireito*), itens que propõem inserir hífen (*Co-existem*, *anti-direito*) são invariavelmente ERRADOS (ou CERTOS se a banca afirmar que a troca causará erro ortográfico).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "A banca nunca contraria a ortografia do autor no texto-suporte. Se a palavra está sem hífen no texto (*coexistem*, *antidireito*), itens que propõem inserir hífen (*Co-existem*, *anti-direito*) são invariavelmente ERRADOS (ou CERTOS se a banca afirmar que a troca causará erro ortográfico).",
     "sourceRefs": [
       "EDITORIAL:IP-A00-G06"
     ],
@@ -209,6 +481,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a00-g07-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Emprego dos Porquês",
+    "front": "Qual erro deve ser evitado em A Armadilha da Oração Causal Invertida Iniciando Frase com Ponto de Interrogação?",
+    "back": "O Erro: Ver uma frase iniciada por \"Por que\" e terminada por ? e julgar compulsoriamente como forma separada. A Pegadinha: Em orações causais invertidas (*\"Porque eles parecem ter desempenho pior, seus cérebros são pequenos?\"*), o conector é uma conjunção causal subordinada anteposta ($=$ *pois*). Deve ser grafado Porque (junto e sem acento).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Ver uma frase iniciada por \"Por que\" e terminada por ? e julgar compulsoriamente como forma separada. A Pegadinha: Em orações causais invertidas (*\"Porque eles parecem ter desempenho pior, seus cérebros são pequenos?\"*), o conector é uma conjunção causal subordinada anteposta ($=$ *pois*). Deve ser grafado Porque (junto e sem acento).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G07"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g07-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Emprego dos Porquês",
+    "front": "Qual erro deve ser evitado em A Falsa Pausa Criada por Vírgula de Intercalação Adverbial?",
+    "back": "O Erro: Acentuar o termo (*\"por quê,\"*) ao encontrar uma vírgula imediatamente após o conector em início de pergunta. A Pegadinha: A vírgula pertence ao adjunto adverbial intercalado (*\"Por que, na máquina de escrever, as letras...\"*). Como a oração interrogativa está apenas iniciando, o conector permanece átono e sem acento (*por que*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Acentuar o termo (*\"por quê,\"*) ao encontrar uma vírgula imediatamente após o conector em início de pergunta. A Pegadinha: A vírgula pertence ao adjunto adverbial intercalado (*\"Por que, na máquina de escrever, as letras...\"*). Como a oração interrogativa está apenas iniciando, o conector permanece átono e sem acento (*por que*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G07"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g07-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Emprego dos Porquês",
+    "front": "Qual erro deve ser evitado em A Troca Indevida de Conjunção pelo Substantivo Isolado \"Motivo\"?",
+    "back": "O Erro: Bancas (como a AOCP) afirmam que a conjunção *porque* pode ser substituída diretamente pela palavra isolada \"motivo\". A Pegadinha: A conjunção *porque* equivale a *pois/já que*. A palavra \"motivo\" é um substantivo que só equivale ao conector se estiver inserida na locução preposicionada *\"por qual motivo\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Bancas (como a AOCP) afirmam que a conjunção *porque* pode ser substituída diretamente pela palavra isolada \"motivo\". A Pegadinha: A conjunção *porque* equivale a *pois/já que*. A palavra \"motivo\" é um substantivo que só equivale ao conector se estiver inserida na locução preposicionada *\"por qual motivo\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G07"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a00-g07-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Emprego dos Porquês",
+    "front": "Qual erro deve ser evitado em O Mito do \"Por Quê\" Acentuado Exclusivamente no Final de Período?",
+    "back": "O Erro: Procurar o *por quê* circunflexo apenas como última palavra colada ao ponto final. A Pegadinha: O monossílabo torna-se tônico sempre que estiver imediatamente antes de uma pausa discursiva (vírgula, ponto e vírgula, travessão ou pausa oral implícita). Exemplo: *\"Não sabia por quê, mas estava confiante.\"*",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Procurar o *por quê* circunflexo apenas como última palavra colada ao ponto final. A Pegadinha: O monossílabo torna-se tônico sempre que estiver imediatamente antes de uma pausa discursiva (vírgula, ponto e vírgula, travessão ou pausa oral implícita). Exemplo: *\"Não sabia por quê, mas estava confiante.\"*",
+    "sourceRefs": [
+      "EDITORIAL:IP-A00-G07"
+    ],
+    "moduleId": "mod0",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a01-g01-misconceptions-and-traps-016",
     "source": "suveca",
     "topic": "Classes Variáveis e Invariáveis",
@@ -232,6 +568,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro: Considerar a frase *\"Ela chegou todo feliz\"* incorreta por erro de concordância. Correção: Por ser originariamente um advérbio modificador de adjetivo, a forma invariável *\"todo feliz\"* é perfeitamente legítima perante a norma culta.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro: Considerar a frase *\"Ela chegou todo feliz\"* incorreta por erro de concordância. Correção: Por ser originariamente um advérbio modificador de adjetivo, a forma invariável *\"todo feliz\"* é perfeitamente legítima perante a norma culta.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G01"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g01-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Classes Variáveis e Invariáveis",
+    "front": "Qual erro deve ser evitado em Invariabilidade Absoluta da Locução \"A sós\"?",
+    "back": "Erro: Tentar variar a locução *\"a sós\"* em função do gênero dos referentes. Correção: Diz-se *\"Ele está a sós\"*, *\"Ela está a sós\"*, *\"Eles estão a sós\"*, *\"Elas estão a sós\"*. Trata-se de locução adjetiva invariável.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Tentar variar a locução *\"a sós\"* em função do gênero dos referentes. Correção: Diz-se *\"Ele está a sós\"*, *\"Ela está a sós\"*, *\"Eles estão a sós\"*, *\"Elas estão a sós\"*. Trata-se de locução adjetiva invariável.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G01"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g01-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Classes Variáveis e Invariáveis",
+    "front": "Qual erro deve ser evitado em Erro de Supor que Conjunção Exige Duas Orações?",
+    "back": "Erro: Contar duas orações na frase *\"José e João chegaram\"* pela presença do conectivo *e*. Correção: Conjunções coordenativas podem ligar termos de mesma função dentro de uma única oração (sujeito composto).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Contar duas orações na frase *\"José e João chegaram\"* pela presença do conectivo *e*. Correção: Conjunções coordenativas podem ligar termos de mesma função dentro de uma única oração (sujeito composto).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G01"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g01-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Classes Variáveis e Invariáveis",
+    "front": "Qual erro deve ser evitado em Erro de Pluralizar o Substantivo Interno da Locução Adjetiva?",
+    "back": "Erro: Flexionar a locução ao passar a oração para o plural (*\"Homens de inteligências\"*). Correção: Locuções são sintagmas fixos. A forma correta é *\"Homens de inteligência\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Flexionar a locução ao passar a oração para o plural (*\"Homens de inteligências\"*). Correção: Locuções são sintagmas fixos. A forma correta é *\"Homens de inteligência\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G01"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g01-mnemonics-and-tips-013",
+    "source": "suveca",
+    "topic": "Classes Variáveis e Invariáveis",
+    "front": "Como aplicar O Macete do \"Fim da Locução Conectiva\"?",
+    "back": "Para classificar expressões conectivas sem decorar listas exaustivas: Terminou na conjunção QUE $\\rightarrow$ Locução Conjuntiva (*visto que, à medida que, a fim de que*). Terminou em preposição (DE, A, EM, COM) $\\rightarrow$ Locução Prepositiva (*a fim de, por causa de, em vez de*).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Para classificar expressões conectivas sem decorar listas exaustivas: Terminou na conjunção QUE $\\rightarrow$ Locução Conjuntiva (*visto que, à medida que, a fim de que*). Terminou em preposição (DE, A, EM, COM) $\\rightarrow$ Locução Prepositiva (*a fim de, por causa de, em vez de*).",
     "sourceRefs": [
       "EDITORIAL:IP-A01-G01"
     ],
@@ -273,6 +673,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a01-g02-misconceptions-and-traps-011",
+    "source": "suveca",
+    "topic": "Emprego das Classes de Palavras",
+    "front": "Qual erro deve ser evitado em O Erro da Classificação Dicionarizada Fora do Contexto?",
+    "back": "Erro comum: Fixar classes gramaticais a priori (ex.: achar que *\"não\"* é sempre advérbio ou *\"olhar\"* é sempre verbo). Como desarmar: Avaliar as conexões sintáticas reais no texto. Precedido de determinante, o vocábulo converte-se em substantivo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Fixar classes gramaticais a priori (ex.: achar que *\"não\"* é sempre advérbio ou *\"olhar\"* é sempre verbo). Como desarmar: Avaliar as conexões sintáticas reais no texto. Precedido de determinante, o vocábulo converte-se em substantivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G02"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g02-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Emprego das Classes de Palavras",
+    "front": "Qual erro deve ser evitado em A Pegadinha dos Advérbios em \"-mente\" (Tempo vs. Modo)?",
+    "back": "Erro comum: Supor que toda terminação em \"-mente\" expressa circunstância de modo. Como desarmar: Perguntar \"quando?\". Vocábulos como *posteriormente*, *presentemente* e *diariamente* indicam TEMPO.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Supor que toda terminação em \"-mente\" expressa circunstância de modo. Como desarmar: Perguntar \"quando?\". Vocábulos como *posteriormente*, *presentemente* e *diariamente* indicam TEMPO.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G02"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g02-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Emprego das Classes de Palavras",
+    "front": "Qual erro deve ser evitado em O Mito do Feminino \"Monstra\"?",
+    "back": "Erro comum: Flexionar o adjetivo *\"monstro\"* diante de nomes femininos (*\"ideia monstra\"*). Como desarmar: Na norma culta, *\"monstro\"* em função adjetiva é invariável (*\"notícia monstro\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Flexionar o adjetivo *\"monstro\"* diante de nomes femininos (*\"ideia monstra\"*). Como desarmar: Na norma culta, *\"monstro\"* em função adjetiva é invariável (*\"notícia monstro\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G02"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g02-mnemonics-and-tips-007",
+    "source": "suveca",
+    "topic": "Emprego das Classes de Palavras",
+    "front": "Como aplicar O Artigo como Rastreador e a Regra das Setas Orientadas?",
+    "back": "Descrição: Encontrou um artigo? Saiba que existe obrigatoriamente um substantivo núcleo naquele sintagma nominal. Lembre-se da direção das setas: Seta do Adjetivo: Aponta sempre e exclusivamente para o Substantivo. Seta do Advérbio: Aponta para o Verbo, para o Adjetivo ou para Outro Advérbio. Nunca para o Substantivo!",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Descrição: Encontrou um artigo? Saiba que existe obrigatoriamente um substantivo núcleo naquele sintagma nominal. Lembre-se da direção das setas: Seta do Adjetivo: Aponta sempre e exclusivamente para o Substantivo. Seta do Advérbio: Aponta para o Verbo, para o Adjetivo ou para Outro Advérbio. Nunca para o Substantivo!",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G02"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a01-g03-misconceptions-and-traps-017",
     "source": "suveca",
     "topic": "Advérbios",
@@ -296,6 +760,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro do Aluno: Decorar que *bem* é antônimo de *mal* e, por isso, seria eternamente advérbio de modo. A Pegadinha da Banca: As bancas colocam o vocábulo *bem* antes de adjetivos (*bem provável*, *bem alto*) ou de outros advérbios (*bem cedo*, *bem longe*). A Regra: Ao se ligar a adjetivo ou advérbio, *bem* perde o valor de modo e torna-se categoricamente advérbio de intensidade.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro do Aluno: Decorar que *bem* é antônimo de *mal* e, por isso, seria eternamente advérbio de modo. A Pegadinha da Banca: As bancas colocam o vocábulo *bem* antes de adjetivos (*bem provável*, *bem alto*) ou de outros advérbios (*bem cedo*, *bem longe*). A Regra: Ao se ligar a adjetivo ou advérbio, *bem* perde o valor de modo e torna-se categoricamente advérbio de intensidade.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G03"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g03-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Advérbios",
+    "front": "Qual erro deve ser evitado em Falsa Exigência de Adjacência Física do Advérbio?",
+    "back": "O Erro do Aluno: Julgar que um advérbio no início da frase não pode se referir a um verbo situado linhas depois. A Correção: Adjuntos adverbiais possuem mobilidade sintática natural e continuam modificando o verbo mesmo quando separados por orações ou termos intercalados longos.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro do Aluno: Julgar que um advérbio no início da frase não pode se referir a um verbo situado linhas depois. A Correção: Adjuntos adverbiais possuem mobilidade sintática natural e continuam modificando o verbo mesmo quando separados por orações ou termos intercalados longos.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G03"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g03-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Advérbios",
+    "front": "Qual erro deve ser evitado em Erro de Predicação: Classificar o Verbo 'Estar' como Verbo de Ligação em \"Ela está bem\"?",
+    "back": "O Erro do Aluno: Supor que o verbo *estar* é intrinsecamente e sempre verbo de ligação. A Correção: Verbo de ligação exige predicativo (adjetivo). Como *bem* é advérbio invariável (adjunto adverbial), o verbo *estar* torna-se verbo intransitivo (V.I.).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro do Aluno: Supor que o verbo *estar* é intrinsecamente e sempre verbo de ligação. A Correção: Verbo de ligação exige predicativo (adjetivo). Como *bem* é advérbio invariável (adjunto adverbial), o verbo *estar* torna-se verbo intransitivo (V.I.).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G03"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g03-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Advérbios",
+    "front": "Qual erro deve ser evitado em O Mito de que a Terminação '-mente' Garante Advérbio de Modo?",
+    "back": "O Erro do Aluno: Julgar apressadamente que qualquer termo com sufixo *-mente* indica o \"modo\". A Correção: *Raramente*, *diariamente* e *anualmente* expressam tempo/frequência; *certamente* expressa afirmação.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro do Aluno: Julgar apressadamente que qualquer termo com sufixo *-mente* indica o \"modo\". A Correção: *Raramente*, *diariamente* e *anualmente* expressam tempo/frequência; *certamente* expressa afirmação.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G03"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g03-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Advérbios",
+    "front": "Como aplicar Mantra Cebraspe: \"O Que Vem Depois, Salva!\"?",
+    "back": "Em coordenações sintáticas de palavras aparentemente adjetivas seguidas por advérbios em *-mente* (\"clara e singelamente\", \"direta e formalmente\"), nunca julgue a primeira palavra isolada. Olhe a palavra seguinte: a presença do sufixo *-mente* no segundo termo revela que o primeiro termo é também um advérbio com terminação suprimida por estilo.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Em coordenações sintáticas de palavras aparentemente adjetivas seguidas por advérbios em *-mente* (\"clara e singelamente\", \"direta e formalmente\"), nunca julgue a primeira palavra isolada. Olhe a palavra seguinte: a presença do sufixo *-mente* no segundo termo revela que o primeiro termo é também um advérbio com terminação suprimida por estilo.",
     "sourceRefs": [
       "EDITORIAL:IP-A01-G03"
     ],
@@ -337,6 +865,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a01-g04-misconceptions-and-traps-008",
+    "source": "suveca",
+    "topic": "Artigos",
+    "front": "Qual erro deve ser evitado em A Armadilha da Contiguidade Imediata (Artigo Distante)?",
+    "back": "Erro Comum: Julgar que o artigo deve estar colado ao substantivo e desclassificá-lo quando surge um adjetivo intermediário. Forma Correta: O artigo subordina-se ao substantivo núcleo mesmo separado por modificadores intercalados (*\"O lindo menino\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Julgar que o artigo deve estar colado ao substantivo e desclassificá-lo quando surge um adjetivo intermediário. Forma Correta: O artigo subordina-se ao substantivo núcleo mesmo separado por modificadores intercalados (*\"O lindo menino\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G04"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g04-misconceptions-and-traps-010",
+    "source": "suveca",
+    "topic": "Artigos",
+    "front": "Qual erro deve ser evitado em Confusão entre Preposição \"A\" e Artigo \"A\" por Presença de Substantivo Feminino?",
+    "back": "Erro Comum: Supor que todo \"a\" que antecede palavra feminina é artigo. Forma Correta: Verifique a regência do termo anterior. Se for conector exigido por verbo/adjetivo sem determinação específica, trata-se de preposição pura.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Supor que todo \"a\" que antecede palavra feminina é artigo. Forma Correta: Verifique a regência do termo anterior. Se for conector exigido por verbo/adjetivo sem determinação específica, trata-se de preposição pura.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G04"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g04-mnemonics-and-tips-007",
+    "source": "suveca",
+    "topic": "Artigos",
+    "front": "Como aplicar O Macete do \"A\" Singular Diante de Substantivo Plural?",
+    "back": "Se encontrar a letra \"a\" no singular imediatamente antes de uma palavra ou expressão no plural (*aberto a várias alternativas*, *favorável a mudanças*), esse \"a\" é 100% Preposição Pura. Artigos femininos diante de substantivos plurais seriam obrigatoriamente grafados como *as* ou fundidos em crase (*às*).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Se encontrar a letra \"a\" no singular imediatamente antes de uma palavra ou expressão no plural (*aberto a várias alternativas*, *favorável a mudanças*), esse \"a\" é 100% Preposição Pura. Artigos femininos diante de substantivos plurais seriam obrigatoriamente grafados como *as* ou fundidos em crase (*às*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G04"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g04-mnemonics-and-tips-005",
+    "source": "suveca",
+    "topic": "Artigos",
+    "front": "Como aplicar O Macete da Seta Morfossintática em Direção ao Substantivo?",
+    "back": "Ao analisar qualquer questão de prova sobre a morfologia do artigo, trace mentalmente uma seta a partir da palavra. Se a seta alcançar um substantivo (mesmo que haja adjetivos no meio ou que o substantivo esteja subentendido na frase), a palavra é obrigatoriamente um artigo.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Ao analisar qualquer questão de prova sobre a morfologia do artigo, trace mentalmente uma seta a partir da palavra. Se a seta alcançar um substantivo (mesmo que haja adjetivos no meio ou que o substantivo esteja subentendido na frase), a palavra é obrigatoriamente um artigo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G04"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a01-g05-misconceptions-and-traps-018",
     "source": "suveca",
     "topic": "Numerais e Interjeições",
@@ -369,6 +961,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a01-g05-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Numerais e Interjeições",
+    "front": "Qual erro deve ser evitado em Pegadinha de Inferência Extratextual em *Um/Uma*?",
+    "back": "Erro do Candidato: Argumentar que *\"Faria uma viagem\"* é numeral porque *\"poderiam ser duas viagens\"*. Como Evitar: A gramática de concurso não trabalha com suposições fora do texto. Sem palavra de restrição (*somente*, *apenas*), o termo é estritamente Artigo Indefinido.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro do Candidato: Argumentar que *\"Faria uma viagem\"* é numeral porque *\"poderiam ser duas viagens\"*. Como Evitar: A gramática de concurso não trabalha com suposições fora do texto. Sem palavra de restrição (*somente*, *apenas*), o termo é estritamente Artigo Indefinido.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G05"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g05-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Numerais e Interjeições",
+    "front": "Qual erro deve ser evitado em Confundir Locuções Verbais Exclamativas com Interjeições?",
+    "back": "Erro do Candidato: Achar que expressões verbais compostas como *\"Tenho dito!\"* viram interjeições devido ao ponto de exclamação. Como Evitar: Trata-se de uma locução verbal (Pretérito Perfeito Composto: *ter + dito*), mantendo natureza puramente verbal.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro do Candidato: Achar que expressões verbais compostas como *\"Tenho dito!\"* viram interjeições devido ao ponto de exclamação. Como Evitar: Trata-se de uma locução verbal (Pretérito Perfeito Composto: *ter + dito*), mantendo natureza puramente verbal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G05"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g05-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Numerais e Interjeições",
+    "front": "Qual erro deve ser evitado em Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada?",
+    "back": "Erro do Candidato: Olhar a palavra *Segundo* e marcá-la imediatamente como numeral ordinal por lembrar de 1º, 2º, 3º. Como Evitar: Sempre verificar se o termo introduz citação ou fonte de informação (*\"Segundo o diretor...\"* = conector conformativo).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro do Candidato: Olhar a palavra *Segundo* e marcá-la imediatamente como numeral ordinal por lembrar de 1º, 2º, 3º. Como Evitar: Sempre verificar se o termo introduz citação ou fonte de informação (*\"Segundo o diretor...\"* = conector conformativo).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G05"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a01-g05-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Numerais e Interjeições",
+    "front": "Qual erro deve ser evitado em Confundir Verbo no Modo Imperativo com Interjeição?",
+    "back": "Erro do Candidato: Classificar qualquer palavra inicial exclamativa (*\"Corra!\"*) como interjeição. Como Evitar: *Corra* é verbo conjugado no modo imperativo. Interjeições não possuem conjugação verbal de pessoa.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro do Candidato: Classificar qualquer palavra inicial exclamativa (*\"Corra!\"*) como interjeição. Como Evitar: *Corra* é verbo conjugado no modo imperativo. Interjeições não possuem conjugação verbal de pessoa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A01-G05"
+    ],
+    "moduleId": "mod1",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a02-g01-misconceptions-and-traps-015",
     "source": "suveca",
     "topic": "Preposições",
@@ -392,6 +1048,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Candidatos classificam a palavra após como \"advérbio de tempo\" devido ao sentido temporal que a expressão carrega. Por que ocorre: Confusão entre a classe da palavra isolada e a função da locução como um todo. Como evitar: Se a banca sublinhar apenas após $\\rightarrow$ Preposição essencial (com valor semântico de tempo). Se a banca sublinhar após o jantar $\\rightarrow$ Locução adverbial de tempo.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Candidatos classificam a palavra após como \"advérbio de tempo\" devido ao sentido temporal que a expressão carrega. Por que ocorre: Confusão entre a classe da palavra isolada e a função da locução como um todo. Como evitar: Se a banca sublinhar apenas após $\\rightarrow$ Preposição essencial (com valor semântico de tempo). Se a banca sublinhar após o jantar $\\rightarrow$ Locução adverbial de tempo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G01"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g01-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Preposições",
+    "front": "Qual erro deve ser evitado em Falso Valor Temporal por Advérbio Adjacente (\"Para Sempre Permitirem\")?",
+    "back": "O Erro: Considerar que a preposição \"para\" indica tempo no trecho *\"não apenas para sempre permitirem...\"* pela atração visual da palavra *sempre*. Como desarmar: Leia a oração inteira subordinada pelo conector. O vocábulo *sempre* é apenas um advérbio que modifica *permitirem*. A preposição \"para\" liga a oração com sentido de finalidade (*\"a fim de permitirem perpetuamente\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Considerar que a preposição \"para\" indica tempo no trecho *\"não apenas para sempre permitirem...\"* pela atração visual da palavra *sempre*. Como desarmar: Leia a oração inteira subordinada pelo conector. O vocábulo *sempre* é apenas um advérbio que modifica *permitirem*. A preposição \"para\" liga a oração com sentido de finalidade (*\"a fim de permitirem perpetuamente\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G01"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g01-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Preposições",
+    "front": "Qual erro deve ser evitado em Leitura Automatizada da Preposição \"PARA\" (Lugar vs. Finalidade)?",
+    "back": "O Erro: Decorar que \"para\" sempre exprime finalidade e errar questões em que expressa lugar (*\"saíram para o trabalho\"*). Como detectar e evitar: Examine se o termo após *para* é um verbo no infinitivo (*trabalhar* = finalidade) ou um substantivo que designa ponto espacial de destino (*o trabalho* = lugar/direção).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Decorar que \"para\" sempre exprime finalidade e errar questões em que expressa lugar (*\"saíram para o trabalho\"*). Como detectar e evitar: Examine se o termo após *para* é um verbo no infinitivo (*trabalhar* = finalidade) ou um substantivo que designa ponto espacial de destino (*o trabalho* = lugar/direção).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G01"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g01-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Preposições",
+    "front": "Qual erro deve ser evitado em Perda de Tempo com Classificação Sintática Exaustiva?",
+    "back": "O Erro: Ficar desmembrando períodos compostos e classificando orações em questões do Cebraspe que pedem apenas a \"circunstância de finalidade\". Como evitar: Realize diretamente o teste de substituição do conector (*para* $\\rightarrow$ *a fim de*) e confirme a relação lógica contextual.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Ficar desmembrando períodos compostos e classificando orações em questões do Cebraspe que pedem apenas a \"circunstância de finalidade\". Como evitar: Realize diretamente o teste de substituição do conector (*para* $\\rightarrow$ *a fim de*) e confirme a relação lógica contextual.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G01"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g01-mnemonics-and-tips-010",
+    "source": "suveca",
+    "topic": "Preposições",
+    "front": "Como aplicar O Macete do \"Termo Posterior Salva\"?",
+    "back": "Ao resolver questões sobre o valor nocional de uma preposição, nunca analise o conector isoladamente. A preposição é um elemento neutro que herda o traço semântico do termo regido (o que vem imediatamente depois dela). É o vocábulo posterior que define se o sentido é tempo (*manhã*), lugar (*trabalho*), matéria (*madeira*), destinatário (*namorada*) ou conformidade (*político*).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Ao resolver questões sobre o valor nocional de uma preposição, nunca analise o conector isoladamente. A preposição é um elemento neutro que herda o traço semântico do termo regido (o que vem imediatamente depois dela). É o vocábulo posterior que define se o sentido é tempo (*manhã*), lugar (*trabalho*), matéria (*madeira*), destinatário (*namorada*) ou conformidade (*político*).",
     "sourceRefs": [
       "EDITORIAL:IP-A02-G01"
     ],
@@ -449,6 +1169,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a02-g03-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Conjunções Subordinativas e Desde Que",
+    "front": "Qual erro deve ser evitado em Pegadinha de Atribuir Sentido Semântico a Conjunções Integrantes?",
+    "back": "Erro: Considerar correto o item que afirma que o se em *\"Não sei se ele vem\"* expressa \"hipótese\", \"condição\" ou \"dúvida\". Correção: *\"Não sei [se ele vem]\"* = *\"Não sei [ISSO]\"*. O conector é Conjunção Integrante e não carrega valor semântico circunstancial.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Considerar correto o item que afirma que o se em *\"Não sei se ele vem\"* expressa \"hipótese\", \"condição\" ou \"dúvida\". Correção: *\"Não sei [se ele vem]\"* = *\"Não sei [ISSO]\"*. O conector é Conjunção Integrante e não carrega valor semântico circunstancial.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G03"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g03-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Conjunções Subordinativas e Desde Que",
+    "front": "Qual erro deve ser evitado em Proposta de Substituição de Conectivo Causal por Condicional Falso?",
+    "back": "Erro: Aceitar a troca de *uma vez que* (com sentido de *porque*) por *contanto que* (estritamente condicional). Correção: *Contanto que* só substitui *uma vez que* se esta estiver empregada com valor hipotético/condicional.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Aceitar a troca de *uma vez que* (com sentido de *porque*) por *contanto que* (estritamente condicional). Correção: *Contanto que* só substitui *uma vez que* se esta estiver empregada com valor hipotético/condicional.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G03"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g03-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Conjunções Subordinativas e Desde Que",
+    "front": "Qual erro deve ser evitado em Confusão Paronímica Fatal: Porquanto vs Conquanto?",
+    "back": "Erro: Tratar *porquanto* e *conquanto* como termos permutáveis. Correção: *Porquanto* é Causal (= *porque*). *Conquanto* é Concessiva (= *embora*). A troca entre elas inverte a lógica do período.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Tratar *porquanto* e *conquanto* como termos permutáveis. Correção: *Porquanto* é Causal (= *porque*). *Conquanto* é Concessiva (= *embora*). A troca entre elas inverte a lógica do período.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G03"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g03-mnemonics-and-tips-018",
+    "source": "suveca",
+    "topic": "Conjunções Subordinativas e Desde Que",
+    "front": "Como aplicar A Regra Resolutiva \"O Verbo Salva\" para \"Desde Que\"?",
+    "back": "Em itens sobre *desde que*, inspecione o verbo da oração: Verbo no Subjuntivo (*possuam*, *pertencesse*, *sejam*) $\\rightarrow$ Condição (= *caso*, *contanto que*). Verbo no Indicativo (*entramos*, *foi*, *mudei*) $\\rightarrow$ Tempo (= *desde quando*).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Em itens sobre *desde que*, inspecione o verbo da oração: Verbo no Subjuntivo (*possuam*, *pertencesse*, *sejam*) $\\rightarrow$ Condição (= *caso*, *contanto que*). Verbo no Indicativo (*entramos*, *foi*, *mudei*) $\\rightarrow$ Tempo (= *desde quando*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G03"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a02-g04-misconceptions-and-traps-015",
     "source": "suveca",
     "topic": "Valores de E e Pois",
@@ -472,6 +1256,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro Comum: O candidato decora que \"pois entre vírgulas é conclusivo\", vê a estrutura ..., pois, [adjunto], [verbo]... e marca que a oração é conclusiva. A Pegadinha: O *pois* continua antes do verbo; a segunda vírgula serve apenas para abrir a intercalação adverbial. O *pois* é explicativo ou causal ($=$ *porque*). Como Evitar: Não olhe apenas para as vírgulas! Localize o verbo da oração. Se o verbo estiver à direita do *pois*, o conector está no início e nunca será conclusivo.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro Comum: O candidato decora que \"pois entre vírgulas é conclusivo\", vê a estrutura ..., pois, [adjunto], [verbo]... e marca que a oração é conclusiva. A Pegadinha: O *pois* continua antes do verbo; a segunda vírgula serve apenas para abrir a intercalação adverbial. O *pois* é explicativo ou causal ($=$ *porque*). Como Evitar: Não olhe apenas para as vírgulas! Localize o verbo da oração. Se o verbo estiver à direita do *pois*, o conector está no início e nunca será conclusivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G04"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g04-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Valores de E e Pois",
+    "front": "Qual erro deve ser evitado em Julgar Oposição por Simples Contraste de Adjetivos Positivos/Negativos?",
+    "back": "O Erro Comum: Julgar que a presença de um termo com conotação positiva e outro com conotação negativa (ex.: *inteligente* e *preguiçoso*) torna a conjunção \"E\" automaticamente adversativa. Como Evitar: Adversidade exige incompatibilidade lógica ou quebra de expectativa. Atributos humanos coexistentes somam-se no sujeito, configurando ADIÇÃO.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro Comum: Julgar que a presença de um termo com conotação positiva e outro com conotação negativa (ex.: *inteligente* e *preguiçoso*) torna a conjunção \"E\" automaticamente adversativa. Como Evitar: Adversidade exige incompatibilidade lógica ou quebra de expectativa. Atributos humanos coexistentes somam-se no sujeito, configurando ADIÇÃO.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G04"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g04-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Valores de E e Pois",
+    "front": "Qual erro deve ser evitado em Perda de Tempo com Discussões Desnecessárias de Causa vs. Explicação?",
+    "back": "O Risco: Perder minutos analisando se um *pois* inicial é causa ou explicação quando o item do Cebraspe afirmou categoricamente que ele era \"conclusivo\". Como Evitar: Se o *pois* está antes do verbo, ele jamais será conclusivo. Marque ERRADO imediatamente sem se preocupar em classificar entre causa e explicação.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Risco: Perder minutos analisando se um *pois* inicial é causa ou explicação quando o item do Cebraspe afirmou categoricamente que ele era \"conclusivo\". Como Evitar: Se o *pois* está antes do verbo, ele jamais será conclusivo. Marque ERRADO imediatamente sem se preocupar em classificar entre causa e explicação.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G04"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g04-mnemonics-and-tips-014",
+    "source": "suveca",
+    "topic": "Valores de E e Pois",
+    "front": "Como aplicar A Regra da Troca \"Seis por Meia Dúzia\"?",
+    "back": "Em questões de reescrita que proponham trocar pois (no início da oração) por porquanto, já que, porque, visto que, uma vez que, lembre-se de que a banca está apenas trocando *\"seis por meia dúzia\"*. Todos pertencem à mesma família de conectores causais/explicativos; a substituição é sempre válida e mantém a correção gramatical.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Em questões de reescrita que proponham trocar pois (no início da oração) por porquanto, já que, porque, visto que, uma vez que, lembre-se de que a banca está apenas trocando *\"seis por meia dúzia\"*. Todos pertencem à mesma família de conectores causais/explicativos; a substituição é sempre válida e mantém a correção gramatical.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A02-G04"
+    ],
+    "moduleId": "mod2",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a02-g04-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Valores de E e Pois",
+    "front": "Como aplicar O Atalho do esquemas #ANOTAAÍ para a Conjunção \"E\"?",
+    "back": "Se a questão de concurso pedir a opção em que a conjunção \"E\" tem sentido diferente dos demais, não perca tempo relendo todas as opções aditivas com calma excessiva: procure direto a alternativa que contenha um \"E\" com sentido de PORÉM (adversativo) ou de POR ISSO / LOGO (conclusivo/consecutivo).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Se a questão de concurso pedir a opção em que a conjunção \"E\" tem sentido diferente dos demais, não perca tempo relendo todas as opções aditivas com calma excessiva: procure direto a alternativa que contenha um \"E\" com sentido de PORÉM (adversativo) ou de POR ISSO / LOGO (conclusivo/consecutivo).",
     "sourceRefs": [
       "EDITORIAL:IP-A02-G04"
     ],
@@ -529,6 +1377,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a03-g01-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Pronomes Pessoais",
+    "front": "Qual erro deve ser evitado em Bloqueio da Alteração Fonética por Próclise Obrigatória?",
+    "back": "Diante de palavras atrativas (como o advérbio de negação *não*), a próclise é obrigatória e impede a ocorrência de ênclise e suas alterações fonéticas (*\"não te satisfez\"* $\\rightarrow$ ao substituir por *o*, resulta em *\"não o satisfez\"*, sendo proibida a forma *\"não satisfez-lo\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Diante de palavras atrativas (como o advérbio de negação *não*), a próclise é obrigatória e impede a ocorrência de ênclise e suas alterações fonéticas (*\"não te satisfez\"* $\\rightarrow$ ao substituir por *o*, resulta em *\"não o satisfez\"*, sendo proibida a forma *\"não satisfez-lo\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G01"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g01-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Pronomes Pessoais",
+    "front": "Qual erro deve ser evitado em A Armadilha da Ênclise Automática ser Complemento Verbal?",
+    "back": "Nem todo pronome ligado ao verbo por hífen é objeto verbal. Se o pronome estabelecer relação de posse com um substantivo vizinho, ele é sintaticamente um Adjunto Adnominal (*\"Apareceram-lhe em casa amigos\"* $\\rightarrow$ lhe = Adjunto Adnominal de *casa*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Nem todo pronome ligado ao verbo por hífen é objeto verbal. Se o pronome estabelecer relação de posse com um substantivo vizinho, ele é sintaticamente um Adjunto Adnominal (*\"Apareceram-lhe em casa amigos\"* $\\rightarrow$ lhe = Adjunto Adnominal de *casa*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G01"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g01-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Pronomes Pessoais",
+    "front": "Qual erro deve ser evitado em Erro Histórico de Digitação na Tabela Canônica dos Tônicos?",
+    "back": "No esquemas original projetado no início do curso, a 2ª pessoa do singular tônica continha a grafia incorreta *te, contigo*. A abordagem didática corrigiu ao vivo: a forma tônica correta é ti, contigo (o vocábulo *te* é exclusivamente átono).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "No esquemas original projetado no início do curso, a 2ª pessoa do singular tônica continha a grafia incorreta *te, contigo*. A abordagem didática corrigiu ao vivo: a forma tônica correta é ti, contigo (o vocábulo *te* é exclusivamente átono).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G01"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g01-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Pronomes Pessoais",
+    "front": "Qual erro deve ser evitado em Não Aplicar Alterações Fonéticas ao Pronome \"LHE\"?",
+    "back": "A supressão de *r, s, z* e o surgimento de *l* ou *n* ocorrem exclusivamente com os pronomes O, A, OS, AS. Com o pronome *lhe*, a terminação verbal mantém-se intacta (*obedecer + lhe = obedecer-lhe*, e nunca *obedecê-lhe*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A supressão de *r, s, z* e o surgimento de *l* ou *n* ocorrem exclusivamente com os pronomes O, A, OS, AS. Com o pronome *lhe*, a terminação verbal mantém-se intacta (*obedecer + lhe = obedecer-lhe*, e nunca *obedecê-lhe*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G01"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a03-g02-misconceptions-and-traps-015",
     "source": "suveca",
     "topic": "Pronomes Pessoais - Questões",
@@ -552,6 +1464,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Aceitar alternativas de reescrita que empregam \"o mesmo\" ou \"a mesma\" para retomar substantivos simples (ex.: \"Comprometem a educação... pretendem praticar a mesma\"). Mecanismo: Crença errônea de que \"o mesmo\" confere formalidade ao texto. Regra Rígida: \"O mesmo\" NUNCA substitui substantivo isolado. Seu uso limita-se à função resumitiva de orações ou fatos complexos.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Aceitar alternativas de reescrita que empregam \"o mesmo\" ou \"a mesma\" para retomar substantivos simples (ex.: \"Comprometem a educação... pretendem praticar a mesma\"). Mecanismo: Crença errônea de que \"o mesmo\" confere formalidade ao texto. Regra Rígida: \"O mesmo\" NUNCA substitui substantivo isolado. Seu uso limita-se à função resumitiva de orações ou fatos complexos.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G02"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g02-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Pronomes Pessoais - Questões",
+    "front": "Qual erro deve ser evitado em Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários?",
+    "back": "O Erro: Empregar *lhe* para verbos regidos por preposições como *de, em, com* (ex.: \"comprar-lhe\" para *comprar em Osasco*) ou para verbos regidos por *a* que recusam o *lhe* por eufonia (ex.: \"assisti-lhe\" para *assisti ao filme*). Como Evitar: Substitua obrigatoriamente pela forma tônica preposicionada (*comprar nele*, *assisti a ele*, *cheguei a ele*, *viso a ele*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Empregar *lhe* para verbos regidos por preposições como *de, em, com* (ex.: \"comprar-lhe\" para *comprar em Osasco*) ou para verbos regidos por *a* que recusam o *lhe* por eufonia (ex.: \"assisti-lhe\" para *assisti ao filme*). Como Evitar: Substitua obrigatoriamente pela forma tônica preposicionada (*comprar nele*, *assisti a ele*, *cheguei a ele*, *viso a ele*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G02"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g02-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Pronomes Pessoais - Questões",
+    "front": "Qual erro deve ser evitado em Leitura Parcial e Precipitada de Sintagmas Possessivos?",
+    "back": "O Erro: Classificar o pronome *me* como Objeto Direto em \"incendiar-me a fantasia\" por truncar a leitura no pronome (*incendiar a mim*). Como Evitar: Leia o sintagma nominal completo até o final. Se houver um substantivo possuído (*fantasia*), o substantivo compõe o verdadeiro objeto e o pronome exerce a função de Adjunto Adnominal possessivo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Classificar o pronome *me* como Objeto Direto em \"incendiar-me a fantasia\" por truncar a leitura no pronome (*incendiar a mim*). Como Evitar: Leia o sintagma nominal completo até o final. Se houver um substantivo possuído (*fantasia*), o substantivo compõe o verdadeiro objeto e o pronome exerce a função de Adjunto Adnominal possessivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G02"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g02-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Pronomes Pessoais - Questões",
+    "front": "Qual erro deve ser evitado em Ilusão da Alteração Fonética na Próclise?",
+    "back": "O Erro: Aplicar terminação nasal (*N*) ou corte consoante (*L*) ao pronome quando há palavra atrativa impondo a próclise (ex.: transformar \"os que temem a morte\" em \"que temem-na\" ou \"que no temem\"). Regra Rígida: Alteração fonética morfofonológica ocorre exclusivamente na ênclise. Em próclise, o pronome permanece puro (*que a temem*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Aplicar terminação nasal (*N*) ou corte consoante (*L*) ao pronome quando há palavra atrativa impondo a próclise (ex.: transformar \"os que temem a morte\" em \"que temem-na\" ou \"que no temem\"). Regra Rígida: Alteração fonética morfofonológica ocorre exclusivamente na ênclise. Em próclise, o pronome permanece puro (*que a temem*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G02"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g02-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Pronomes Pessoais - Questões",
+    "front": "Qual erro deve ser evitado em Confusão de Verbo Conjugado no Presente Nasal com Infinitivo?",
+    "back": "O Erro: Aceitar a substituição de \"têm costumes\" por \"tê-los\". Mecanismo: Lembrar da regra de corte de R no infinitivo (*ter + os = tê-los*) e aplicá-la inadvertidamente sobre a forma flexionada no presente (*têm*). Como Evitar: Observe a terminação da forma verbal original. Se for nasal conjugada no presente, o resultado é têm-nos.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Aceitar a substituição de \"têm costumes\" por \"tê-los\". Mecanismo: Lembrar da regra de corte de R no infinitivo (*ter + os = tê-los*) e aplicá-la inadvertidamente sobre a forma flexionada no presente (*têm*). Como Evitar: Observe a terminação da forma verbal original. Se for nasal conjugada no presente, o resultado é têm-nos.",
     "sourceRefs": [
       "EDITORIAL:IP-A03-G02"
     ],
@@ -593,6 +1569,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a03-g03-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Possessivos Indefinidos e Interrogativos",
+    "front": "Qual erro deve ser evitado em Supressão de Artigo em Locuções Preposicionadas?",
+    "back": "Erro do Candidato: Considerar que a retirada do artigo em *da manhã* $\\rightarrow$ *de manhã* é mera variação estilística. Forma Correta: A supressão redireciona a ligação sintática do substantivo (*jornais*) para o verbo (*leio*), transformando locução adjetiva em locução adverbial.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro do Candidato: Considerar que a retirada do artigo em *da manhã* $\\rightarrow$ *de manhã* é mera variação estilística. Forma Correta: A supressão redireciona a ligação sintática do substantivo (*jornais*) para o verbo (*leio*), transformando locução adjetiva em locução adverbial.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G03"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g03-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Possessivos Indefinidos e Interrogativos",
+    "front": "Qual erro deve ser evitado em Confusão entre \"Paciência\" (Substantivo) e \"Paciente\" (Adjetivo)?",
+    "back": "Pegadinha: Comparar *\"Tenha mais paciência\"* com *\"Seja mais paciente\"*. Desarme: Em *\"mais paciência\"*, *mais* liga-se a substantivo $\\rightarrow$ Pronome Indefinido. Em *\"mais paciente\"*, *mais* liga-se a adjetivo $\\rightarrow$ Advérbio de Intensidade.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha: Comparar *\"Tenha mais paciência\"* com *\"Seja mais paciente\"*. Desarme: Em *\"mais paciência\"*, *mais* liga-se a substantivo $\\rightarrow$ Pronome Indefinido. Em *\"mais paciente\"*, *mais* liga-se a adjetivo $\\rightarrow$ Advérbio de Intensidade.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G03"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g03-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Possessivos Indefinidos e Interrogativos",
+    "front": "Qual erro deve ser evitado em O Invariável \"Menos\" como Pronome Indefinido Adjetivo?",
+    "back": "Erro do Candidato: Achar que, por ser invariável, *menos* é sempre advérbio. Forma Correta: Em *\"Tenho menos disposição\"*, a palavra *menos* aponta para o substantivo *disposição*. Logo, é Pronome Indefinido Adjetivo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro do Candidato: Achar que, por ser invariável, *menos* é sempre advérbio. Forma Correta: Em *\"Tenho menos disposição\"*, a palavra *menos* aponta para o substantivo *disposição*. Logo, é Pronome Indefinido Adjetivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G03"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g03-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Possessivos Indefinidos e Interrogativos",
+    "front": "Qual erro deve ser evitado em Aplicação Mecânica da Regra de \"Todo\" sem Artigo no CESPE?",
+    "back": "Erro do Candidato: Julgar errado o valor de totalidade em *\"todo mundo\"* por falta de artigo. Forma Correta: No mundo real e no contexto do texto, \"todo mundo\" representa o conjunto total das pessoas (totalidade).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro do Candidato: Julgar errado o valor de totalidade em *\"todo mundo\"* por falta de artigo. Forma Correta: No mundo real e no contexto do texto, \"todo mundo\" representa o conjunto total das pessoas (totalidade).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G03"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a03-g04-misconceptions-and-traps-021",
     "source": "suveca",
     "topic": "Demonstrativos e Relativos",
@@ -616,6 +1656,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro Grave: Achar que em lista tríplice (*João, Pedro e Paulo*), *este* retoma Paulo, *aquele* retoma João e *esse* retoma Pedro. Regra: *Esse* isolado no singular é terminantemente proibido para o meio. Deve-se usar numerais ordinais (*\"o segundo\"*).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro Grave: Achar que em lista tríplice (*João, Pedro e Paulo*), *este* retoma Paulo, *aquele* retoma João e *esse* retoma Pedro. Regra: *Esse* isolado no singular é terminantemente proibido para o meio. Deve-se usar numerais ordinais (*\"o segundo\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G04"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g04-misconceptions-and-traps-027",
+    "source": "suveca",
+    "topic": "Demonstrativos e Relativos",
+    "front": "Qual erro deve ser evitado em Armadilha da Proximidade Imediata e Falsos Antecedentes Intercalados?",
+    "back": "Risco: Eleger o substantivo imediatamente colado ao relativo em orações intercaladas. Exemplo: Em *\"Programa [...], criado como alternativa ao vestibular, em que candidatos...\"*, o relativo salta *vestibular* e retoma o substantivo matriz *Programa*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Risco: Eleger o substantivo imediatamente colado ao relativo em orações intercaladas. Exemplo: Em *\"Programa [...], criado como alternativa ao vestibular, em que candidatos...\"*, o relativo salta *vestibular* e retoma o substantivo matriz *Programa*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G04"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g04-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Demonstrativos e Relativos",
+    "front": "Qual erro deve ser evitado em O Cisma entre Bancas: Prova Objetiva vs Redação Discursiva?",
+    "back": "Divergência: Em prova objetiva, o Cebraspe aceita *este* anafórico de termo único. Na redação discursiva/redação, a mesma banca penaliza o uso de *este* anafórico, exigindo estritamente *esse/isso* (*diante disso*, *isso posto*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Divergência: Em prova objetiva, o Cebraspe aceita *este* anafórico de termo único. Na redação discursiva/redação, a mesma banca penaliza o uso de *este* anafórico, exigindo estritamente *esse/isso* (*diante disso*, *isso posto*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G04"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g04-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Demonstrativos e Relativos",
+    "front": "Qual erro deve ser evitado em A Pegadinha do Substantivo Próximo sem Retomada (Falso Relativo Consecutivo)?",
+    "back": "Risco: Julgar que toda palavra *que* após substantivo é pronome relativo. Caso Crítico: Em *\"...insistiu tanto com Teresa que...\"*, a palavra *que* é conjunção adverbial consecutiva ligada a *tanto*, e não pronome relativo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Risco: Julgar que toda palavra *que* após substantivo é pronome relativo. Caso Crítico: Em *\"...insistiu tanto com Teresa que...\"*, a palavra *que* é conjunção adverbial consecutiva ligada a *tanto*, e não pronome relativo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G04"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g04-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Demonstrativos e Relativos",
+    "front": "Qual erro deve ser evitado em A Pegadinha do \"Um Dia Destes\" vs \"Um Dia Desses\"?",
+    "back": "Risco: Usar *\"um dia desses\"* para o futuro na norma culta. Forma Correta: Para o futuro, empregar exclusivamente *\"Um dia destes eu viajo\"*; para o passado, *\"Um dia desses eu estive lá\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Risco: Usar *\"um dia desses\"* para o futuro na norma culta. Forma Correta: Para o futuro, empregar exclusivamente *\"Um dia destes eu viajo\"*; para o passado, *\"Um dia desses eu estive lá\"*.",
     "sourceRefs": [
       "EDITORIAL:IP-A03-G04"
     ],
@@ -657,6 +1761,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a03-g05-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Emprego dos Pronomes Relativos",
+    "front": "Qual erro deve ser evitado em A Pegadinha Semântica da Troca de QUANDO por NO QUAL no CESPE?",
+    "back": "O Erro: Marcar como \"Certo\" itens do CESPE que afirmam que a troca de *quando* por *no qual* mantém o sentido original. Como Evitar: Embora a correção gramatical se mantenha, o conectivo *no qual* introduz ambiguidade entre tempo e espaço físico, destruindo a especificidade temporal unívoca de *quando*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Marcar como \"Certo\" itens do CESPE que afirmam que a troca de *quando* por *no qual* mantém o sentido original. Como Evitar: Embora a correção gramatical se mantenha, o conectivo *no qual* introduz ambiguidade entre tempo e espaço físico, destruindo a especificidade temporal unívoca de *quando*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G05"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g05-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Emprego dos Pronomes Relativos",
+    "front": "Qual erro deve ser evitado em Quebra de Coesão Anafórica ao Substituir Expressões por CUJO no CESPE?",
+    "back": "O Erro: Propor a substituição de *\"metade delas\"* por *\"cuja metade\"* sem verificar o substantivo imediatamente anterior. Como Evitar: O pronome relativo atrai para si o termo imediatamente antecedente. Se esse termo for *ano* e a intenção original era retomar *pessoas*, a coesão anafórica é corrompida.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Propor a substituição de *\"metade delas\"* por *\"cuja metade\"* sem verificar o substantivo imediatamente anterior. Como Evitar: O pronome relativo atrai para si o termo imediatamente antecedente. Se esse termo for *ano* e a intenção original era retomar *pessoas*, a coesão anafórica é corrompida.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G05"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g05-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Emprego dos Pronomes Relativos",
+    "front": "Qual erro deve ser evitado em Proibição Categórica do Pronome QUEM Sem Preposição?",
+    "back": "O Erro: Achar que, por ser pessoa, pode-se usar *quem* como sujeito ou objeto direto (ex.: *\"O médico quem atendeu...\"* ou *\"O autor quem vi\"*). Como Evitar: Lembre-se do 2º requisito do *quem*: presença obrigatória de preposição. Sem preposição, use *que* ou *o qual*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Achar que, por ser pessoa, pode-se usar *quem* como sujeito ou objeto direto (ex.: *\"O médico quem atendeu...\"* ou *\"O autor quem vi\"*). Como Evitar: Lembre-se do 2º requisito do *quem*: presença obrigatória de preposição. Sem preposição, use *que* ou *o qual*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G05"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g05-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Emprego dos Pronomes Relativos",
+    "front": "Qual erro deve ser evitado em Uso Indevido de ONDE para Conceitos Abstratos e Tempo?",
+    "back": "O Erro: Utilizar *onde* para concordar com palavras como *situação, reunião, processo, lei, sentido amplo, hipótese, ano, época*. Como Evitar: *Onde* só aceita lugar físico no qual se pode entrar ou pisar. Para todo o resto, utilize em que ou no qual / na qual.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Utilizar *onde* para concordar com palavras como *situação, reunião, processo, lei, sentido amplo, hipótese, ano, época*. Como Evitar: *Onde* só aceita lugar físico no qual se pode entrar ou pisar. Para todo o resto, utilize em que ou no qual / na qual.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G05"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a03-g06-misconceptions-and-traps-019",
     "source": "suveca",
     "topic": "Pronomes Relativos - Regência e Reescrita",
@@ -680,6 +1848,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Pegadinha de Banca: Oferecer a opção a qual sem crase em frases onde o verbo da oração adjetiva rege a preposição a (como *ir a*). Análise: A forma a qual sem acento grave contém apenas o artigo feminino. Se o verbo exigir a preposição a, a fusão a (prep) + a (art) obriga o uso do acento grave (à qual). A omissão da crase invalida a opção.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Pegadinha de Banca: Oferecer a opção a qual sem crase em frases onde o verbo da oração adjetiva rege a preposição a (como *ir a*). Análise: A forma a qual sem acento grave contém apenas o artigo feminino. Se o verbo exigir a preposição a, a fusão a (prep) + a (art) obriga o uso do acento grave (à qual). A omissão da crase invalida a opção.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G06"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g06-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Pronomes Relativos - Regência e Reescrita",
+    "front": "Qual erro deve ser evitado em Obrigatoriedade de Preposição com o Pronome \"Quem\" (Objeto Direto Preposicionado)?",
+    "back": "Erro Comum: Empregar quem sem preposição quando o verbo for Transitivo Direto (*\"A pessoa quem conheci\"*). Regra Inviolável: O relativo quem exige sempre preposição antecedente. Com verbos transitivos diretos, a inserção da preposição a cria obrigatoriamente um Objeto Direto Preposicionado (*\"A pessoa a quem conheci\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Empregar quem sem preposição quando o verbo for Transitivo Direto (*\"A pessoa quem conheci\"*). Regra Inviolável: O relativo quem exige sempre preposição antecedente. Com verbos transitivos diretos, a inserção da preposição a cria obrigatoriamente um Objeto Direto Preposicionado (*\"A pessoa a quem conheci\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G06"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g06-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Pronomes Relativos - Regência e Reescrita",
+    "front": "Qual erro deve ser evitado em Confundir \"Manutenção de Correção Gramatical\" com \"Preservação de Sentido\"?",
+    "back": "Pegadinha do CESPE: Em itens que afirmam que a troca do relativo preserva *tanto o sentido quanto a correção gramatical*, atente para verbos de dupla regência (*entender de* vs. *entender*). A gramática permanece correta, mas o sentido é alterado. O item deve ser julgado como ERRADO.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha do CESPE: Em itens que afirmam que a troca do relativo preserva *tanto o sentido quanto a correção gramatical*, atente para verbos de dupla regência (*entender de* vs. *entender*). A gramática permanece correta, mas o sentido é alterado. O item deve ser julgado como ERRADO.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G06"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g06-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Pronomes Relativos - Regência e Reescrita",
+    "front": "Qual erro deve ser evitado em Insubstituibilidade e Proibição de Artigo com o Pronome \"Cujo\"?",
+    "back": "Erro Comum: Aceitar a substituição de cujo por que ou o qual, ou grafar artigo após cujo (*\"a empresa cuja a diretoria...\"*). Regra Inviolável: Cujo não aceita substituição por nenhum outro pronome relativo e jamais admite artigo posterior (*cujo o*, *cuja a* são erros graves).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Aceitar a substituição de cujo por que ou o qual, ou grafar artigo após cujo (*\"a empresa cuja a diretoria...\"*). Regra Inviolável: Cujo não aceita substituição por nenhum outro pronome relativo e jamais admite artigo posterior (*cujo o*, *cuja a* são erros graves).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G06"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g06-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Pronomes Relativos - Regência e Reescrita",
+    "front": "Qual erro deve ser evitado em Uso Indevido de \"Onde\" e \"Aonde\" para Antecedentes Abstratos?",
+    "back": "Erro Comum: Empregar *onde* ou *aonde* para retomar substantivos abstratos (como *empresas*, *leis*, *situações*, *palavras*). Correção: *Onde/aonde* são restritos a lugares físicos concretos. Para conceitos abstratos, use *em que*, *no qual*, *a que*, *de que*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Empregar *onde* ou *aonde* para retomar substantivos abstratos (como *empresas*, *leis*, *situações*, *palavras*). Correção: *Onde/aonde* são restritos a lugares físicos concretos. Para conceitos abstratos, use *em que*, *no qual*, *a que*, *de que*.",
     "sourceRefs": [
       "EDITORIAL:IP-A03-G06"
     ],
@@ -721,6 +1953,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a03-g07-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Colocação dos Pronomes Átonos",
+    "front": "Qual erro deve ser evitado em Confusão com Pronomes Oblíquos Tônicos?",
+    "back": "Problema: Tentar aplicar regras de próclise/ênclise ao pronome *mim* em *\"Entregou a mim\"*. Impacto em Prova: Desperdício de tempo. Pronomes tônicos não são regidos por colocação pronominal.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Tentar aplicar regras de próclise/ênclise ao pronome *mim* em *\"Entregou a mim\"*. Impacto em Prova: Desperdício de tempo. Pronomes tônicos não são regidos por colocação pronominal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G07"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g07-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Colocação dos Pronomes Átonos",
+    "front": "Qual erro deve ser evitado em Falso Macete: \"Pronome Reto Obriga Próclise\"?",
+    "back": "Problema: Supor que pronomes retos (*Ele, Nós*) exigem próclise obrigatória. Impacto em Prova: Pronomes retos são variáveis e facultam a colocação (*\"Ele me chamou\"* / *\"Ele chamou-me\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Supor que pronomes retos (*Ele, Nós*) exigem próclise obrigatória. Impacto em Prova: Pronomes retos são variáveis e facultam a colocação (*\"Ele me chamou\"* / *\"Ele chamou-me\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G07"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g07-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Colocação dos Pronomes Átonos",
+    "front": "Qual erro deve ser evitado em Rejeição da Aposínclise por Estranheza Sonora?",
+    "back": "Problema: Julgar errada a frase *\"O livro que lhe não dei\"* pelo estranhamento ao ouvido brasileiro. Impacto em Prova: Perder pontos no Cebraspe. A aposínclise é formalmente correta.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Julgar errada a frase *\"O livro que lhe não dei\"* pelo estranhamento ao ouvido brasileiro. Impacto em Prova: Perder pontos no Cebraspe. A aposínclise é formalmente correta.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G07"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g07-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Colocação dos Pronomes Átonos",
+    "front": "Qual erro deve ser evitado em Armadilha da Mesóclise Falsa com Negação?",
+    "back": "Problema: Achar que por estar no futuro a frase *\"Não realizar-se-á o evento\"* está correta. Impacto em Prova: A negação anula a mesóclise. O correto é *\"Não se realizará\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Achar que por estar no futuro a frase *\"Não realizar-se-á o evento\"* está correta. Impacto em Prova: A negação anula a mesóclise. O correto é *\"Não se realizará\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G07"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a03-g08-misconceptions-and-traps-021",
     "source": "suveca",
     "topic": "Colocação Pronominal - Questões",
@@ -744,6 +2040,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro Comum: Achar que, por ser verbo no futuro, a mesóclise é sempre permitida. Forma Incorreta: Como não poder-se-ia casar / Não dar-lhe-ei o livro. Forma Correta: Como não se poderia casar / Não lhe darei o livro. Explicação: A palavra atrativa anula e proíbe a mesóclise.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro Comum: Achar que, por ser verbo no futuro, a mesóclise é sempre permitida. Forma Incorreta: Como não poder-se-ia casar / Não dar-lhe-ei o livro. Forma Correta: Como não se poderia casar / Não lhe darei o livro. Explicação: A palavra atrativa anula e proíbe a mesóclise.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G08"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g08-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Colocação Pronominal - Questões",
+    "front": "Qual erro deve ser evitado em Erro de Confundir Futuro do Subjuntivo com Infinitivo?",
+    "back": "Erro Comum: Ver a terminação -r em verbo regular e achar que a ênclise é permitida. Forma Incorreta: Assim que eu encontrar-la. Forma Correta: Assim que eu a encontrar (*assim que eu fizer* = Futuro do Subjuntivo $\\rightarrow$ Próclise obrigatória).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Ver a terminação -r em verbo regular e achar que a ênclise é permitida. Forma Incorreta: Assim que eu encontrar-la. Forma Correta: Assim que eu a encontrar (*assim que eu fizer* = Futuro do Subjuntivo $\\rightarrow$ Próclise obrigatória).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G08"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g08-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Colocação Pronominal - Questões",
+    "front": "Qual erro deve ser evitado em Pegadinha da Palavra Invariável Pós-Verbal?",
+    "back": "Erro Comum: Achar que qualquer termo invariável na frase atrai o pronome, mesmo estando depois do verbo. Explicação: A palavra invariável só exerce atração se estiver anteposta ao verbo. Em Ele a encontrou em casa, o em pós-verbal não atrai.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Achar que qualquer termo invariável na frase atrai o pronome, mesmo estando depois do verbo. Explicação: A palavra invariável só exerce atração se estiver anteposta ao verbo. Em Ele a encontrou em casa, o em pós-verbal não atrai.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G08"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g08-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Colocação Pronominal - Questões",
+    "front": "Qual erro deve ser evitado em O Erro Absoluto da Ênclise no Futuro?",
+    "back": "Erro Comum: Usar ênclise em verbos no futuro do presente ou pretérito. Forma Incorreta: João dará-lhe / Daria-te meu apoio / não poderia-se. Explicação: A ênclise ao futuro constitui proibição absoluta na língua portuguesa.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Usar ênclise em verbos no futuro do presente ou pretérito. Forma Incorreta: João dará-lhe / Daria-te meu apoio / não poderia-se. Explicação: A ênclise ao futuro constitui proibição absoluta na língua portuguesa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A03-G08"
+    ],
+    "moduleId": "mod3",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a03-g08-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Colocação Pronominal - Questões",
+    "front": "Qual erro deve ser evitado em Pegadinha da Apossínclese como \"Incorreta\"?",
+    "back": "Erro Comum: Julgar como erro a frase João me não chamou por soar estranha. Explicação: Para o Cebraspe, a apossínclese é padrão culto válido.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Julgar como erro a frase João me não chamou por soar estranha. Explicação: Para o Cebraspe, a apossínclese é padrão culto válido.",
     "sourceRefs": [
       "EDITORIAL:IP-A03-G08"
     ],
@@ -785,6 +2145,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a04-g01-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Tempos e Modos Verbais",
+    "front": "Qual erro deve ser evitado em Homonímia entre Imperativo Afirmativo (Você) e Presente do Subjuntivo?",
+    "back": "A Pegadinha: Como a 3ª pessoa do Imperativo Afirmativo deriva integralmente do Presente do Subjuntivo, a forma verbal é idêntica (*acorde, faça, venha*). Como Evitar: Avalie a estrutura oracional: Oração independente com tom de conselho/ordem ➔ Imperativo (*\"Acorde cedo!\"*). Oração subordinada dependente de verbo de desejo/hipótese ➔ Subjuntivo (*\"Desejo que você acorde cedo\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A Pegadinha: Como a 3ª pessoa do Imperativo Afirmativo deriva integralmente do Presente do Subjuntivo, a forma verbal é idêntica (*acorde, faça, venha*). Como Evitar: Avalie a estrutura oracional: Oração independente com tom de conselho/ordem ➔ Imperativo (*\"Acorde cedo!\"*). Oração subordinada dependente de verbo de desejo/hipótese ➔ Subjuntivo (*\"Desejo que você acorde cedo\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G01"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g01-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Tempos e Modos Verbais",
+    "front": "Qual erro deve ser evitado em Falsa Indução de Imperativo por Conjunção Concessiva ou Advérbio de Dúvida?",
+    "back": "A Pegadinha: O Cebraspe coloca uma forma homônima precedida por *Embora* (*\"Embora ela levante...\"*) ou *Talvez* (*\"Talvez você encontre...\"*) e afirma que o verbo está no modo imperativo. Como Evitar: Lembre-se de que conjunções subordinativas e advérbios de dúvida jamais admitem o modo Imperativo. Eles exigem compulsoriamente a classificação no Modo Subjuntivo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A Pegadinha: O Cebraspe coloca uma forma homônima precedida por *Embora* (*\"Embora ela levante...\"*) ou *Talvez* (*\"Talvez você encontre...\"*) e afirma que o verbo está no modo imperativo. Como Evitar: Lembre-se de que conjunções subordinativas e advérbios de dúvida jamais admitem o modo Imperativo. Eles exigem compulsoriamente a classificação no Modo Subjuntivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G01"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g01-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Tempos e Modos Verbais",
+    "front": "Qual erro deve ser evitado em A Falsa Exclusividade da Conjunção \"SE\" com o Imperfeito do Subjuntivo?",
+    "back": "A Pegadinha: Acreditar que a conjunção *se* só pode ser acompanhada de verbos em -sse (Pretérito Imperfeito). Como Evitar: Lembre-se de que a conjunção *se* é ambivalente: *Se ele viesse* ➔ Pretérito Imperfeito do Subjuntivo. *Se ele vier* ➔ Futuro do Subjuntivo. Ambas são estruturas gramaticalmente perfeitas.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A Pegadinha: Acreditar que a conjunção *se* só pode ser acompanhada de verbos em -sse (Pretérito Imperfeito). Como Evitar: Lembre-se de que a conjunção *se* é ambivalente: *Se ele viesse* ➔ Pretérito Imperfeito do Subjuntivo. *Se ele vier* ➔ Futuro do Subjuntivo. Ambas são estruturas gramaticalmente perfeitas.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G01"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g01-mnemonics-and-tips-008",
+    "source": "suveca",
+    "topic": "Tempos e Modos Verbais",
+    "front": "Como aplicar Mnemônico Integrado das Palavras Mágicas para o Rascunho da Prova?",
+    "back": "Monte este esquema sintético no rascunho antes de iniciar a resolução de questões de verbos: INDICATIVO: Presente (HOJE) | Pretérito Perfeito (ONTEM) | Pretérito Imperfeito (ANTIGAMENTE) | Pretérito Mais-que-perfeito (OUTRORA / -RA) | Futuro do Presente (AMANHÃ) | Futuro do Pretérito (-RIA / Se eu fosse você). SUBJUNTIVO: Presente (QUE) | Pretérito Imperfeito (SE / -SSE) | Futuro (QUANDO / SE). INFINITIVO PESSOAL: Preposição PARA (*Para eu amar, para tu amares...*).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Monte este esquema sintético no rascunho antes de iniciar a resolução de questões de verbos: INDICATIVO: Presente (HOJE) | Pretérito Perfeito (ONTEM) | Pretérito Imperfeito (ANTIGAMENTE) | Pretérito Mais-que-perfeito (OUTRORA / -RA) | Futuro do Presente (AMANHÃ) | Futuro do Pretérito (-RIA / Se eu fosse você). SUBJUNTIVO: Presente (QUE) | Pretérito Imperfeito (SE / -SSE) | Futuro (QUANDO / SE). INFINITIVO PESSOAL: Preposição PARA (*Para eu amar, para tu amares...*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G01"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a04-g02-misconceptions-and-traps-016",
     "source": "suveca",
     "topic": "Semântica dos Tempos e Modos Verbais",
@@ -808,6 +2232,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O erro: Em textos memorialistas que relatam o início da juventude, marcar como correta a assertiva que diz que verbos no Pretérito Imperfeito (*jantava, almoçava, vivia*) denotam o \"início de determinadas ações\". A regra: O Pretérito Imperfeito NUNCA expressa início de ação (aspecto inchoativo); expressa continuidade, repetição e hábito. O item é invariavelmente ERRADO.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O erro: Em textos memorialistas que relatam o início da juventude, marcar como correta a assertiva que diz que verbos no Pretérito Imperfeito (*jantava, almoçava, vivia*) denotam o \"início de determinadas ações\". A regra: O Pretérito Imperfeito NUNCA expressa início de ação (aspecto inchoativo); expressa continuidade, repetição e hábito. O item é invariavelmente ERRADO.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G02"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g02-misconceptions-and-traps-011",
+    "source": "suveca",
+    "topic": "Semântica dos Tempos e Modos Verbais",
+    "front": "Qual erro deve ser evitado em A Armadilha do Presente Restrito ao Momento da Fala?",
+    "back": "O erro: Supor que toda forma no Presente do Indicativo expressa fato rigorosamente simultâneo à fala ou ação contínua iniciada no passado. Como neutralizar: Exija marcas contextuais explícitas (*desde*, *há anos*) para classificar como durativo vindo do passado, e verifique se o verbo não expressa apenas verdade geral atemporal ou passado histórico narrativo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O erro: Supor que toda forma no Presente do Indicativo expressa fato rigorosamente simultâneo à fala ou ação contínua iniciada no passado. Como neutralizar: Exija marcas contextuais explícitas (*desde*, *há anos*) para classificar como durativo vindo do passado, e verifique se o verbo não expressa apenas verdade geral atemporal ou passado histórico narrativo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G02"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g02-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Semântica dos Tempos e Modos Verbais",
+    "front": "Qual erro deve ser evitado em Confundir Futuro do Pretérito com Fato Consumado ou Ação Iminente?",
+    "back": "O erro: Assinalar que formas em -ria (*seria*, *reajustariam*) denotam fatos que \"se deram/consumaram no passado\" ou ações que \"estavam prestes a acontecer no passado\". A regra: O Futuro do Pretérito expressa hipótese, projeção ou incerteza teórica, afastando tanto a certeza do fato consumado quanto o aspecto iminente/prestes a ocorrer.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O erro: Assinalar que formas em -ria (*seria*, *reajustariam*) denotam fatos que \"se deram/consumaram no passado\" ou ações que \"estavam prestes a acontecer no passado\". A regra: O Futuro do Pretérito expressa hipótese, projeção ou incerteza teórica, afastando tanto a certeza do fato consumado quanto o aspecto iminente/prestes a ocorrer.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G02"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g02-misconceptions-and-traps-013",
+    "source": "suveca",
+    "topic": "Semântica dos Tempos e Modos Verbais",
+    "front": "Qual erro deve ser evitado em Confundir Anterioridade Cronológica com Ordem Gráfica no Texto?",
+    "back": "O erro: Julgar que o Pretérito Mais-que-Perfeito precisa aparecer fisicamente impresso antes do Pretérito Perfeito no parágrafo para indicar anterioridade. A regra: A anterioridade do Mais-que-Perfeito é da vida/história real dos fatos (cronologia fática), totalmente independente da ordem sintática visual na folha de prova.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O erro: Julgar que o Pretérito Mais-que-Perfeito precisa aparecer fisicamente impresso antes do Pretérito Perfeito no parágrafo para indicar anterioridade. A regra: A anterioridade do Mais-que-Perfeito é da vida/história real dos fatos (cronologia fática), totalmente independente da ordem sintática visual na folha de prova.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G02"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g02-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Semântica dos Tempos e Modos Verbais",
+    "front": "Qual erro deve ser evitado em Confundir Polidez com Dúvida no Futuro do Pretérito?",
+    "back": "O erro: Interpretar perguntas de cortesia social (*\"Aceitaria um café?\"*) como expressão de dúvida ou incerteza real do falante. A regra: O Futuro do Pretérito atua aqui puramente como atenuador pragmático de polidez, sem expressar hesitação epistemológica.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O erro: Interpretar perguntas de cortesia social (*\"Aceitaria um café?\"*) como expressão de dúvida ou incerteza real do falante. A regra: O Futuro do Pretérito atua aqui puramente como atenuador pragmático de polidez, sem expressar hesitação epistemológica.",
     "sourceRefs": [
       "EDITORIAL:IP-A04-G02"
     ],
@@ -849,6 +2337,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a04-g03-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Desinências Verbais",
+    "front": "Qual erro deve ser evitado em O Mito da \"4ª Conjugação\" no Verbo Pôr?",
+    "back": "Erro Comum: Classificar o verbo *pôr* em uma pretensa \"4ª conjugação\" por terminar em -or. Realidade: A Língua Portuguesa só possui 3 conjugações. O verbo *pôr* descende do latim *ponere* / arcaico *poer*, integrando legitimamente a 2ª conjugação (006 ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Classificar o verbo *pôr* em uma pretensa \"4ª conjugação\" por terminar em -or. Realidade: A Língua Portuguesa só possui 3 conjugações. O verbo *pôr* descende do latim *ponere* / arcaico *poer*, integrando legitimamente a 2ª conjugação (006 ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G03"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g03-misconceptions-and-traps-026",
+    "source": "suveca",
+    "topic": "Desinências Verbais",
+    "front": "Qual erro deve ser evitado em Homonímia da Terminação *-aram* Descontextualizada?",
+    "back": "Pegadinha: Afirmar categoricamente que uma forma isolada em *-aram* (como *puxaram*) pertence com exclusividade ao Pretérito Perfeito. Realidade: Sem contexto, ela pode pertencer tanto ao Pretérito Perfeito quanto ao Pretérito Mais-Que-Perfeito (010 ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha: Afirmar categoricamente que uma forma isolada em *-aram* (como *puxaram*) pertence com exclusividade ao Pretérito Perfeito. Realidade: Sem contexto, ela pode pertencer tanto ao Pretérito Perfeito quanto ao Pretérito Mais-Que-Perfeito (010 ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G03"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g03-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Desinências Verbais",
+    "front": "Qual erro deve ser evitado em Ausência de DMT no Presente do Indicativo?",
+    "back": "Pegadinha: Afirmar que a vogal de formas como *falas* ou *contamos* seria uma DMT. Realidade: No Presente do Indicativo não existe DMT ($\\text{DMT} = \\emptyset$). A vogal visível é a Vogal Temática (006, 009 ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha: Afirmar que a vogal de formas como *falas* ou *contamos* seria uma DMT. Realidade: No Presente do Indicativo não existe DMT ($\\text{DMT} = \\emptyset$). A vogal visível é a Vogal Temática (006, 009 ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G03"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g03-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Desinências Verbais",
+    "front": "Qual erro deve ser evitado em Imprecisão Tradicional da Banca FUNDATEC?",
+    "back": "Alerta: A banca FUNDATEC aceita a formulação escolar tradicional de que a terminação -ar em bloco é uma \"desinência de infinitivo\". Não anule mentalmente a opção da banca por rigor científico modernista (010 ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Alerta: A banca FUNDATEC aceita a formulação escolar tradicional de que a terminação -ar em bloco é uma \"desinência de infinitivo\". Não anule mentalmente a opção da banca por rigor científico modernista (010 ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G03"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a04-g04-misconceptions-and-traps-014",
     "source": "suveca",
     "topic": "Formas Nominais do Verbo",
@@ -872,6 +2424,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "A Pegadinha: A banca apresenta um texto com a palavra vindo qualificando um substantivo ou indicando procedência/origem (ex.: *\"Produto vindo do exterior...\"*) e afirma que se trata de *gerúndio com ação contínua*. O Fato: O particípio de *VIR* é irregular e homógrafo ao gerúndio (vindo). No contexto de estado/origem, trata-se de particípio, tornando a assertiva da banca incorreta.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "A Pegadinha: A banca apresenta um texto com a palavra vindo qualificando um substantivo ou indicando procedência/origem (ex.: *\"Produto vindo do exterior...\"*) e afirma que se trata de *gerúndio com ação contínua*. O Fato: O particípio de *VIR* é irregular e homógrafo ao gerúndio (vindo). No contexto de estado/origem, trata-se de particípio, tornando a assertiva da banca incorreta.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G04"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g04-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Formas Nominais do Verbo",
+    "front": "Qual erro deve ser evitado em O Vício Redacional do Gerúndio Posterior?",
+    "back": "O Erro: Conectar duas ações sucessivas no tempo por meio de gerúndio (ex.: *\"O policial sacou a arma, efetuando o disparo em seguida\"*). Por que é penalizado: O gerúndio exige simultaneidade ou aspecto durativo contínuo. Se a ação ocorre *depois*, viola-se a coesão temporal. Como Evitar: Use oração coordenada aditiva: *\"O policial sacou a arma e efetuou o disparo...\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Conectar duas ações sucessivas no tempo por meio de gerúndio (ex.: *\"O policial sacou a arma, efetuando o disparo em seguida\"*). Por que é penalizado: O gerúndio exige simultaneidade ou aspecto durativo contínuo. Se a ação ocorre *depois*, viola-se a coesão temporal. Como Evitar: Use oração coordenada aditiva: *\"O policial sacou a arma e efetuou o disparo...\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G04"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g04-mnemonics-and-tips-010",
+    "source": "suveca",
+    "topic": "Formas Nominais do Verbo",
+    "front": "Como aplicar Mnemônica do \"Vale Tudo\": O Grupo das Finanças Diárias?",
+    "back": "O Macete: Para memorizar os quatro únicos verbos que admitem particípio regular ou irregular com qualquer auxiliar na norma culta, associe ao ciclo do dinheiro: PAGAR PEGAR GASTAR GANHAR Com esses 4 verbos, a norma padrão autoriza *\"tinha pago\"* ou *\"tinha pagado\"*, *\"tinha gasto\"* ou *\"tinha gastado\"*, *\"tinha ganho\"* ou *\"tinha ganhado\"*, *\"tinha pego\"* ou *\"tinha pegado\"*.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "O Macete: Para memorizar os quatro únicos verbos que admitem particípio regular ou irregular com qualquer auxiliar na norma culta, associe ao ciclo do dinheiro: PAGAR PEGAR GASTAR GANHAR Com esses 4 verbos, a norma padrão autoriza *\"tinha pago\"* ou *\"tinha pagado\"*, *\"tinha gasto\"* ou *\"tinha gastado\"*, *\"tinha ganho\"* ou *\"tinha ganhado\"*, *\"tinha pego\"* ou *\"tinha pegado\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G04"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g04-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Formas Nominais do Verbo",
+    "front": "Como aplicar Macete da Preposição \"PARA\" para Conjugar o Infinitivo Pessoal?",
+    "back": "O Macete: Para conjugar instantaneamente o Infinitivo Pessoal de qualquer verbo sem confundir com outros tempos, anteponha mentalmente a preposição PARA: *para eu estudar, para tu estudares, para ele estudar, para nós estudarmos, para vós estudardes, para eles estudarem*.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "O Macete: Para conjugar instantaneamente o Infinitivo Pessoal de qualquer verbo sem confundir com outros tempos, anteponha mentalmente a preposição PARA: *para eu estudar, para tu estudares, para ele estudar, para nós estudarmos, para vós estudardes, para eles estudarem*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G04"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g04-mnemonics-and-tips-012",
+    "source": "suveca",
+    "topic": "Formas Nominais do Verbo",
+    "front": "Como aplicar Macete \"FAZER / FIZER\" e \"DIZER / DISSER\"?",
+    "back": "O Macete: Diante de uma forma verbal regular que gere dúvida entre Infinitivo Pessoal e Futuro do Subjuntivo: Substitua por FAZER / DIZER $\\rightarrow$ Deu certo? Infinitivo. Substitua por FIZER / DISSER $\\rightarrow$ Deu certo? Futuro do Subjuntivo.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "O Macete: Diante de uma forma verbal regular que gere dúvida entre Infinitivo Pessoal e Futuro do Subjuntivo: Substitua por FAZER / DIZER $\\rightarrow$ Deu certo? Infinitivo. Substitua por FIZER / DISSER $\\rightarrow$ Deu certo? Futuro do Subjuntivo.",
     "sourceRefs": [
       "EDITORIAL:IP-A04-G04"
     ],
@@ -913,6 +2529,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a04-g05-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Verbos Irregulares - Líderes e Bons Amigos",
+    "front": "Qual erro deve ser evitado em Hipercorreção Deformativa em Futuros de Verbos Longos?",
+    "back": "Erro Frequente: Ao conjugar o Futuro do Presente de *contrapor*, inventar a forma esdrúxula *\"contrapoparemos\"*. Correção Gramatical: Líder *poremos* $\\rightarrow$ Prefixo *contra-* $\\rightarrow$ contraporemos.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Frequente: Ao conjugar o Futuro do Presente de *contrapor*, inventar a forma esdrúxula *\"contrapoparemos\"*. Correção Gramatical: Líder *poremos* $\\rightarrow$ Prefixo *contra-* $\\rightarrow$ contraporemos.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G05"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g05-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Verbos Irregulares - Líderes e Bons Amigos",
+    "front": "Qual erro deve ser evitado em Confusão de Raiz entre os Líderes VER e VIR no Subjuntivo?",
+    "back": "Armadilha: Escrever *\"Se eles anteviessem\"* para o verbo *antever*. Regra: *Antever* deriva de *VER* (raiz *vis-* $\\rightarrow$ *antevissem*). Derivados de *VIR* utilizam a raiz *vies-* (*interviessem*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Escrever *\"Se eles anteviessem\"* para o verbo *antever*. Regra: *Antever* deriva de *VER* (raiz *vis-* $\\rightarrow$ *antevissem*). Derivados de *VIR* utilizam a raiz *vies-* (*interviessem*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G05"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g05-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Verbos Irregulares - Líderes e Bons Amigos",
+    "front": "Qual erro deve ser evitado em Inexistência Normativa das Formas \"Vido\" e \"Intervido\"?",
+    "back": "Na norma culta da Língua Portuguesa, não existem as palavras *\"vido\"* ou *\"intervido\"*. O particípio do verbo *vir* e de seus derivados é irregular e homógrafo ao gerúndio: vindo, intervindo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Na norma culta da Língua Portuguesa, não existem as palavras *\"vido\"* ou *\"intervido\"*. O particípio do verbo *vir* e de seus derivados é irregular e homógrafo ao gerúndio: vindo, intervindo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G05"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g05-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Verbos Irregulares - Líderes e Bons Amigos",
+    "front": "Qual erro deve ser evitado em Falsa Concordância com o Pronome \"Te\" no Verbo CONVIR?",
+    "back": "Armadilha: Flexionar o verbo na 2ª pessoa (*\"se te convieres\"*). Regra: O pronome *te* é Objeto Indireto. O verbo deve ficar na 3ª pessoa do singular (*\"se te convier\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Flexionar o verbo na 2ª pessoa (*\"se te convieres\"*). Regra: O pronome *te* é Objeto Indireto. O verbo deve ficar na 3ª pessoa do singular (*\"se te convier\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G05"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a04-g06-misconceptions-and-traps-017",
     "source": "suveca",
     "topic": "Verbos Irregulares - Questões",
@@ -936,6 +2616,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: O candidato confia na sonoridade coloquial e aceita formas falsas como *\"interviu\"*, *\"obteram\"*, *\"sobreporam\"*, *\"conviu\"*, *\"proporam\"*. Como Evitar: A intuição auditiva falha em verbos derivados. A aplicação mecânica do algoritmo dos 4 passos é o único critério seguro de acerto.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: O candidato confia na sonoridade coloquial e aceita formas falsas como *\"interviu\"*, *\"obteram\"*, *\"sobreporam\"*, *\"conviu\"*, *\"proporam\"*. Como Evitar: A intuição auditiva falha em verbos derivados. A aplicação mecânica do algoritmo dos 4 passos é o único critério seguro de acerto.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G06"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g06-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Verbos Irregulares - Questões",
+    "front": "Qual erro deve ser evitado em O Erro Clássico do Verbo PREVER no Futuro do Subjuntivo?",
+    "back": "Problema: Dizer e aceitar em prova *\"quando o diretor prever o problema\"*. Correção: Como *VER* faz *vir*, o derivado *PREVER* faz previr (*\"quando o diretor previr o problema\"*). A forma *prever* é infinitivo e está errada no futuro do subjuntivo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Dizer e aceitar em prova *\"quando o diretor prever o problema\"*. Correção: Como *VER* faz *vir*, o derivado *PREVER* faz previr (*\"quando o diretor previr o problema\"*). A forma *prever* é infinitivo e está errada no futuro do subjuntivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G06"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g06-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Verbos Irregulares - Questões",
+    "front": "Qual erro deve ser evitado em Confusão entre VIREM (do Verbo VER) e VIEREM (do Verbo VIR)?",
+    "back": "Problema: A banca emprega *virem* em frases que indicam deslocamento/chegada. Regra: *Virem* vem de *VER* (*quando eles virem o edital*). Para *VIR*, a forma correta é vierem (*quando eles vierem à cidade*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: A banca emprega *virem* em frases que indicam deslocamento/chegada. Regra: *Virem* vem de *VER* (*quando eles virem o edital*). Para *VIR*, a forma correta é vierem (*quando eles vierem à cidade*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G06"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g06-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Verbos Irregulares - Questões",
+    "front": "Qual erro deve ser evitado em Proibição de Futuro do Subjuntivo após Preposição Simples?",
+    "back": "Problema: Estruturas do tipo *\"depois de vierem as encomendas\"*. Regra: Preposição simples exige Infinitivo Pessoal flexionado (*depois de virem as encomendas*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Estruturas do tipo *\"depois de vierem as encomendas\"*. Regra: Preposição simples exige Infinitivo Pessoal flexionado (*depois de virem as encomendas*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G06"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g06-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Verbos Irregulares - Questões",
+    "front": "Qual erro deve ser evitado em Falso Amigo: PROVER vs. PROVAR?",
+    "back": "Problema: Supor que *prover* faz *provo*. Correção: *Provar* $\\rightarrow$ *eu provo*. *Prover* $\\rightarrow$ eu provejo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Supor que *prover* faz *provo*. Correção: *Provar* $\\rightarrow$ *eu provo*. *Prover* $\\rightarrow$ eu provejo.",
     "sourceRefs": [
       "EDITORIAL:IP-A04-G06"
     ],
@@ -977,6 +2721,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a04-g07-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Falsos Amigos e Difícil Conjugação",
+    "front": "Qual erro deve ser evitado em Rejeição Intuitiva do Particípio CRIDO (Pegadinha FGV)?",
+    "back": "Erro: O candidato achar que o particípio de *crer* é \"creito\", \"credo\" ou que a forma *crido* é incorreta. Correção: O particípio de *crer* é estritamente crido (*\"Provérbio crido\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: O candidato achar que o particípio de *crer* é \"creito\", \"credo\" ou que a forma *crido* é incorreta. Correção: O particípio de *crer* é estritamente crido (*\"Provérbio crido\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G07"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g07-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Falsos Amigos e Difícil Conjugação",
+    "front": "Qual erro deve ser evitado em Construção Agramatical com 1ª Pessoa de Aprazer?",
+    "back": "Erro: Aceitar alternativas de provas com *\"eu aprazo\"* ou *\"eu me aprazo\"*. Correção: *APRAZER* é defectivo e só possui 3ª pessoa (*apraz / aprazem; aprouve / aprouveram*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Aceitar alternativas de provas com *\"eu aprazo\"* ou *\"eu me aprazo\"*. Correção: *APRAZER* é defectivo e só possui 3ª pessoa (*apraz / aprazem; aprouve / aprouveram*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G07"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g07-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Falsos Amigos e Difícil Conjugação",
+    "front": "Qual erro deve ser evitado em A Armadilha do Pretérito de Caber (\"Caberam\" vs. \"Couberam\")?",
+    "back": "Erro: Aplicar terminação regular ao verbo *caber* no passado (*\"caberam\"*). Correção: O radical sofre alteração obrigatória para coub-: coube / couberam.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Aplicar terminação regular ao verbo *caber* no passado (*\"caberam\"*). Correção: O radical sofre alteração obrigatória para coub-: coube / couberam.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G07"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g07-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Falsos Amigos e Difícil Conjugação",
+    "front": "Qual erro deve ser evitado em Confusão de 2ª Pessoa do Plural no Verbo IR (*Ides* vs. *Vades*)?",
+    "back": "Erro: Inverter as formas de 2ª pessoa do plural entre o Indicativo e o Subjuntivo. Correção: Modo Indicativo = vós ides; Modo Subjuntivo = que vós vades.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Inverter as formas de 2ª pessoa do plural entre o Indicativo e o Subjuntivo. Correção: Modo Indicativo = vós ides; Modo Subjuntivo = que vós vades.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G07"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a04-g08-misconceptions-and-traps-014",
     "source": "suveca",
     "topic": "Verbos em EAR e IAR e Defectivos",
@@ -1000,6 +2808,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Achar que *precaver-se* deriva de *ver*, gerando formas inexistentes como *\"quando ele se precavir\"*, *\"eu me precavejo\"*, *\"que ele se precavenha\"*. Forma Correta: O líder é BEBER (*quando ele se precaver*). Na 1ª pessoa do singular do presente e no modo subjuntivo presente, o verbo é defectivo e não possui flexão.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Achar que *precaver-se* deriva de *ver*, gerando formas inexistentes como *\"quando ele se precavir\"*, *\"eu me precavejo\"*, *\"que ele se precavenha\"*. Forma Correta: O líder é BEBER (*quando ele se precaver*). Na 1ª pessoa do singular do presente e no modo subjuntivo presente, o verbo é defectivo e não possui flexão.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G08"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g08-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Verbos em EAR e IAR e Defectivos",
+    "front": "Qual erro deve ser evitado em Invenção de Formas Inexistentes no Verbo Reaver?",
+    "back": "O Erro: Inventar formas no Presente do Indicativo (*\"eu reavejo\"*, *\"ele reave\"*) ou tentar conjugar o Presente do Subjuntivo (*\"que ele reaveja\"*). Forma Correta: No Presente do Indicativo só existem nós reavemos e vós reaveis. O Presente do Subjuntivo é totalmente inexistente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Inventar formas no Presente do Indicativo (*\"eu reavejo\"*, *\"ele reave\"*) ou tentar conjugar o Presente do Subjuntivo (*\"que ele reaveja\"*). Forma Correta: No Presente do Indicativo só existem nós reavemos e vós reaveis. O Presente do Subjuntivo é totalmente inexistente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G08"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g08-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Verbos em EAR e IAR e Defectivos",
+    "front": "Qual erro deve ser evitado em Ditongação Indevida em Verbos Regulares em -IAR?",
+    "back": "O Erro: Tratar verbos regulares em -IAR como se pertencessem a -EAR ou MARIO (*\"eu me maqueio\"*, *\"a empresa premeia\"*, *\"para que copeiem\"*). Forma Correta: Eu me maquio, a empresa premia, para que copiem (seguindo rigorosamente o verbo *CRIAR*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Tratar verbos regulares em -IAR como se pertencessem a -EAR ou MARIO (*\"eu me maqueio\"*, *\"a empresa premeia\"*, *\"para que copeiem\"*). Forma Correta: Eu me maquio, a empresa premia, para que copiem (seguindo rigorosamente o verbo *CRIAR*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G08"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g08-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Verbos em EAR e IAR e Defectivos",
+    "front": "Qual erro deve ser evitado em Ditongação Indevida no Pretérito e no Futuro?",
+    "back": "O Erro: Estender a ditongação dos verbos em -EAR para tempos passados ou futuros (*\"ontem eu seiei\"*, *\"amanhã eu seiarei\"*). Forma Correta: Eu ceei, eu cearei, ele passeou. A ditongação restringe-se estritamente aos tempos do presente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Estender a ditongação dos verbos em -EAR para tempos passados ou futuros (*\"ontem eu seiei\"*, *\"amanhã eu seiarei\"*). Forma Correta: Eu ceei, eu cearei, ele passeou. A ditongação restringe-se estritamente aos tempos do presente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G08"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g08-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Verbos em EAR e IAR e Defectivos",
+    "front": "Qual erro deve ser evitado em Confusão Paronímica entre Arrear e Arriar?",
+    "back": "O Erro: Trocar as grafias e sentidos: usar \"arriar o cavalo\" (em vez de *arrear* = pôr arreios) ou \"a bandeira arreia\" (em vez de *arria* = desce). Forma Correta: Cavalo se arreia; bandeira/carga se arria.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Trocar as grafias e sentidos: usar \"arriar o cavalo\" (em vez de *arrear* = pôr arreios) ou \"a bandeira arreia\" (em vez de *arria* = desce). Forma Correta: Cavalo se arreia; bandeira/carga se arria.",
     "sourceRefs": [
       "EDITORIAL:IP-A04-G08"
     ],
@@ -1041,6 +2913,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a04-g09-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Correlação de Tempos Verbais",
+    "front": "Qual erro deve ser evitado em Confundir Equivalência de Modo com Equivalência de Tempo?",
+    "back": "O Erro: Achar que se o primeiro verbo está no Indicativo, o segundo também deve estar no Indicativo. Como Detectar: Frases legítimas que unem Presente do Indicativo a Presente do Subjuntivo (ex.: *Acredito que ele venha*). Como Evitar: Lembre-se de que a simetria exigida é temporal (Presente com Presente; Pretérito com Pretérito); os modos podem variar livremente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Achar que se o primeiro verbo está no Indicativo, o segundo também deve estar no Indicativo. Como Detectar: Frases legítimas que unem Presente do Indicativo a Presente do Subjuntivo (ex.: *Acredito que ele venha*). Como Evitar: Lembre-se de que a simetria exigida é temporal (Presente com Presente; Pretérito com Pretérito); os modos podem variar livremente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G09"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g09-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Correlação de Tempos Verbais",
+    "front": "Qual erro deve ser evitado em A Pegadinha de Comando no CEBRASPE: \"Correlação\" vs. \"Sentido\"?",
+    "back": "O Erro: Julgar um item como ERRADO porque a troca de Subjuntivo por Indicativo alterou o valor semântico (hipótese para fato). Como Evitar: Leia com extrema atenção o comando. Se a questão perguntar se a alteração mantém a correlação dos tempos verbais (harmonia sintática), o item é CERTO caso ambos permaneçam no mesmo eixo temporal (ex.: Presente com Presente).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Julgar um item como ERRADO porque a troca de Subjuntivo por Indicativo alterou o valor semântico (hipótese para fato). Como Evitar: Leia com extrema atenção o comando. Se a questão perguntar se a alteração mantém a correlação dos tempos verbais (harmonia sintática), o item é CERTO caso ambos permaneçam no mesmo eixo temporal (ex.: Presente com Presente).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G09"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g09-mnemonics-and-tips-012",
+    "source": "suveca",
+    "topic": "Correlação de Tempos Verbais",
+    "front": "Como aplicar Mnemônico da Amizade Exclusiva do Futuro do Pretérito?",
+    "back": "Guarde esta relação de lealdade: O Futuro do Pretérito só tem um amigo: o Pretérito! Encontrou terminação -ria (*seria*, *estaria*, *faria*)? O verbo associado na oração dependente deve trazer a desinência -sse (*estudasse*, *fosse*, *tivesse*). Se houver verbo no Presente ou Futuro do Presente ao lado dele em construções condicionais diretas, descarte a alternativa.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Guarde esta relação de lealdade: O Futuro do Pretérito só tem um amigo: o Pretérito! Encontrou terminação -ria (*seria*, *estaria*, *faria*)? O verbo associado na oração dependente deve trazer a desinência -sse (*estudasse*, *fosse*, *tivesse*). Se houver verbo no Presente ou Futuro do Presente ao lado dele em construções condicionais diretas, descarte a alternativa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G09"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a04-g09-mnemonics-and-tips-013",
+    "source": "suveca",
+    "topic": "Correlação de Tempos Verbais",
+    "front": "Como aplicar Tatuagem do Concessivo?",
+    "back": "Memorize: Conjunção Concessiva (*mesmo que*, *embora*, *ainda que*) = Verbo OBRIGATORIAMENTE no Subjuntivo! Em questões de preenchimento de lacunas, qualquer forma do Indicativo (*sou*, *serei*, *era*) após *mesmo que* deve ser descartada de imediato.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Memorize: Conjunção Concessiva (*mesmo que*, *embora*, *ainda que*) = Verbo OBRIGATORIAMENTE no Subjuntivo! Em questões de preenchimento de lacunas, qualquer forma do Indicativo (*sou*, *serei*, *era*) após *mesmo que* deve ser descartada de imediato.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A04-G09"
+    ],
+    "moduleId": "mod4",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a05-g01-misconceptions-and-traps-028",
     "source": "suveca",
     "topic": "Transitividade Verbal - Fundamentos",
@@ -1064,6 +3000,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro: Marcar sujeito indeterminado para verbo na 3ª plural quando o referente nominal foi citado na oração anterior. Correção: Se há referente identificável no texto (*\"Os deputados votaram. Rejeitaram o texto.\"*), o sujeito de *rejeitaram* é Sujeito Oculto Anafórico/Elíptico.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro: Marcar sujeito indeterminado para verbo na 3ª plural quando o referente nominal foi citado na oração anterior. Correção: Se há referente identificável no texto (*\"Os deputados votaram. Rejeitaram o texto.\"*), o sujeito de *rejeitaram* é Sujeito Oculto Anafórico/Elíptico.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G01"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g01-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Transitividade Verbal - Fundamentos",
+    "front": "Qual erro deve ser evitado em O Erro do Teste de \"Tampar o Verbo\"?",
+    "back": "Erro: Tampar o pós-verbo em frases como *\"Fomos ao clube\"* e concluir que o verbo é VTI porque *\"Fomos...\"* parece incompleto. Correção: Nunca tampe o verbo. A classificação decorre da análise do termo que vem depois: se o termo for adjunto adverbial, o verbo é intransitivo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Tampar o pós-verbo em frases como *\"Fomos ao clube\"* e concluir que o verbo é VTI porque *\"Fomos...\"* parece incompleto. Correção: Nunca tampe o verbo. A classificação decorre da análise do termo que vem depois: se o termo for adjunto adverbial, o verbo é intransitivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G01"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g01-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Transitividade Verbal - Fundamentos",
+    "front": "Qual erro deve ser evitado em Confundir Adjunto Adverbial de Lugar com Estado/Predicativo?",
+    "back": "Erro: Considerar que expressões como *\"em casa\"* ou *\"no hospital\"* indicam o \"estado\" em que a pessoa se encontra. Correção: Na sintaxe normativa, lugar não é estado. Expressão locativa é Adjunto Adverbial de Lugar; o verbo *estar* associado a ela é Verbo Intransitivo (VI).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Considerar que expressões como *\"em casa\"* ou *\"no hospital\"* indicam o \"estado\" em que a pessoa se encontra. Correção: Na sintaxe normativa, lugar não é estado. Expressão locativa é Adjunto Adverbial de Lugar; o verbo *estar* associado a ela é Verbo Intransitivo (VI).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G01"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g01-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Transitividade Verbal - Fundamentos",
+    "front": "Qual erro deve ser evitado em Confundir Ação com Movimento Físico (Pegadinha FGV)?",
+    "back": "Erro: Considerar que verbos como *dormir*, *descansar*, *permanecer* (em repouso) são de \"estado\" porque a pessoa está imóvel. Correção: *Dormir* é processo fisiológico e verbo nocional de ação. Verbos de estado (ligação) ligam sujeito ao predicativo (*\"Ele estava calmo\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Considerar que verbos como *dormir*, *descansar*, *permanecer* (em repouso) são de \"estado\" porque a pessoa está imóvel. Correção: *Dormir* é processo fisiológico e verbo nocional de ação. Verbos de estado (ligação) ligam sujeito ao predicativo (*\"Ele estava calmo\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G01"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g01-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Transitividade Verbal - Fundamentos",
+    "front": "Qual erro deve ser evitado em Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto)?",
+    "back": "Erro: Classificar *perfurar* em *\"Perfuravam a rocha com suas picaretas\"* como VTDI. Correção: A preposição *com* introduz a ferramenta utilizada $\\rightarrow$ Adjunto Adverbial de Instrumento. O verbo possui apenas um objeto (*a rocha* - OD), permanecendo estritamente VTD.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Classificar *perfurar* em *\"Perfuravam a rocha com suas picaretas\"* como VTDI. Correção: A preposição *com* introduz a ferramenta utilizada $\\rightarrow$ Adjunto Adverbial de Instrumento. O verbo possui apenas um objeto (*a rocha* - OD), permanecendo estritamente VTD.",
     "sourceRefs": [
       "EDITORIAL:IP-A05-G01"
     ],
@@ -1105,6 +3105,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a05-g02-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Transitividade Verbal - Questões",
+    "front": "Qual erro deve ser evitado em O Pronome \"LHE\" com Sentido Possessivo?",
+    "back": "Problema: Assumir que o pronome *lhe* é sempre Objeto Indireto. Exceção: Na frase *\"...basta olhar-lhe para a cara\"*, *-lhe* equivale a *a cara dele* (posse sobre substantivo), exercendo função de Adjunto Adnominal.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Assumir que o pronome *lhe* é sempre Objeto Indireto. Exceção: Na frase *\"...basta olhar-lhe para a cara\"*, *-lhe* equivale a *a cara dele* (posse sobre substantivo), exercendo função de Adjunto Adnominal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G02"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g02-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Transitividade Verbal - Questões",
+    "front": "Qual erro deve ser evitado em O Vício da Pergunta \"É o quê?\"?",
+    "back": "Problema: Fazer a pergunta *\"é o quê?\"* ou *\"era o quê?\"* ao verbo *ser* e marcar o termo como Objeto Direto. Forma Correta: O verbo *ser* não aceita objeto direto; seu termo atributivo é Predicativo do Sujeito.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Fazer a pergunta *\"é o quê?\"* ou *\"era o quê?\"* ao verbo *ser* e marcar o termo como Objeto Direto. Forma Correta: O verbo *ser* não aceita objeto direto; seu termo atributivo é Predicativo do Sujeito.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G02"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g02-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Transitividade Verbal - Questões",
+    "front": "Qual erro deve ser evitado em Predicativo do Objeto do Verbo Chamar com Preposição \"DE\"?",
+    "back": "Problema: Classificar *de Dri* ou *de a ordem...* como Objeto Indireto após o verbo *chamar*. Forma Correta: Trata-se de Predicativo do Objeto, pois qualifica o objeto direto com uma denominação ou título.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Classificar *de Dri* ou *de a ordem...* como Objeto Indireto após o verbo *chamar*. Forma Correta: Trata-se de Predicativo do Objeto, pois qualifica o objeto direto com uma denominação ou título.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G02"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g02-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Transitividade Verbal - Questões",
+    "front": "Qual erro deve ser evitado em Confusão entre Verbo Haver e Verbo Existir?",
+    "back": "Problema: Achar que o termo ligado a *existir* é Objeto Direto. Forma Correta: *Haver* (existencial) é V.T.D. e não tem sujeito (rege O.D.). *Existir* é V.I. e tem sujeito (o elemento que existe).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Achar que o termo ligado a *existir* é Objeto Direto. Forma Correta: *Haver* (existencial) é V.T.D. e não tem sujeito (rege O.D.). *Existir* é V.I. e tem sujeito (o elemento que existe).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G02"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a05-g03-misconceptions-and-traps-020",
     "source": "suveca",
     "topic": "Complementos e Objetos Pleonásticos",
@@ -1128,6 +3192,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro: *\"Eu lhe vi\"*, *\"Eu lhe cumprimentei\"*, *\"Vou lhe usar\"*. Correção: *Ver*, *cumprimentar* e *usar* são VTD (*\"ver o menino\"*). O pronome *lhe* é exclusivo de OI. O correto é *\"Eu o vi\"*, *\"Eu o cumprimentei\"*, *\"Vou usá-la\"*.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro: *\"Eu lhe vi\"*, *\"Eu lhe cumprimentei\"*, *\"Vou lhe usar\"*. Correção: *Ver*, *cumprimentar* e *usar* são VTD (*\"ver o menino\"*). O pronome *lhe* é exclusivo de OI. O correto é *\"Eu o vi\"*, *\"Eu o cumprimentei\"*, *\"Vou usá-la\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G03"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g03-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Complementos e Objetos Pleonásticos",
+    "front": "Qual erro deve ser evitado em A Armadilha Fonética do \"A Alguém\"?",
+    "back": "Problema: O falante tende a dizer *\"cumprimentei a alguém\"*, inserindo preposição onde o verbo não pede. Correção: Use substantivos masculinos concretos (*\"cumprimentei A abordagem didática\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: O falante tende a dizer *\"cumprimentei a alguém\"*, inserindo preposição onde o verbo não pede. Correção: Use substantivos masculinos concretos (*\"cumprimentei A abordagem didática\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G03"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g03-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Complementos e Objetos Pleonásticos",
+    "front": "Qual erro deve ser evitado em A Pegadinha dos Verbos Distintos (FCC)?",
+    "back": "Problema: Achar que há pleonasmo em *\"Comprei esta casa; vendi-a\"*. Correção: *Esta casa* é objeto de *Comprei*, e *a* é objeto de *vendi*. Como pertencem a verbos diferentes, não há pleonasmo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Achar que há pleonasmo em *\"Comprei esta casa; vendi-a\"*. Correção: *Esta casa* é objeto de *Comprei*, e *a* é objeto de *vendi*. Como pertencem a verbos diferentes, não há pleonasmo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G03"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g03-misconceptions-and-traps-026",
+    "source": "suveca",
+    "topic": "Complementos e Objetos Pleonásticos",
+    "front": "Qual erro deve ser evitado em A Armadilha da Voz Passiva Sintática com Pronome \"SE\"?",
+    "back": "Problema: Achar que *nada* é OD em *\"Hoje não se vê nada\"*. Correção: *se* é partícula apassivadora e *nada* é Sujeito Paciente (*\"nada é visto\"*). Não há objeto direto.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Achar que *nada* é OD em *\"Hoje não se vê nada\"*. Correção: *se* é partícula apassivadora e *nada* é Sujeito Paciente (*\"nada é visto\"*). Não há objeto direto.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G03"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g03-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Complementos e Objetos Pleonásticos",
+    "front": "Qual erro deve ser evitado em Proibição de Pleonasmos em Redações de Concursos?",
+    "back": "Problema: Usar objetos pleonásticos em provas discursivas. Consequência: As bancas descontam pontos por redundância/vício de linguagem. Mantenha a ordem direta estrita.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Usar objetos pleonásticos em provas discursivas. Consequência: As bancas descontam pontos por redundância/vício de linguagem. Mantenha a ordem direta estrita.",
     "sourceRefs": [
       "EDITORIAL:IP-A05-G03"
     ],
@@ -1169,6 +3297,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a05-g04-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Vozes Verbais - Fundamentos",
+    "front": "Qual erro deve ser evitado em Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados?",
+    "back": "Problema: Achar que orações como *\"A comunidade científica recebeu o projeto\"* ou *\"A cozinha era antiga\"* pertencem à voz passiva por denotarem recepção ou sujeitos estáticos. Forma Correta: Ambas pertencem à Voz Ativa, pois não apresentam nenhuma das duas estruturas morfológicas de voz passiva.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Achar que orações como *\"A comunidade científica recebeu o projeto\"* ou *\"A cozinha era antiga\"* pertencem à voz passiva por denotarem recepção ou sujeitos estáticos. Forma Correta: Ambas pertencem à Voz Ativa, pois não apresentam nenhuma das duas estruturas morfológicas de voz passiva.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G04"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g04-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Vozes Verbais - Fundamentos",
+    "front": "Qual erro deve ser evitado em Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética?",
+    "back": "Problema: Identificar o verbo como VTD e rotular o termo que vem após o *se* como \"objeto direto\" (*\"Vendem-se terrenos\"* $\\rightarrow$ achar que *terrenos* é OD). Forma Correta: Aplique o Mantra da Voz Passiva: Não existe objeto direto na voz passiva. O termo é sujeito paciente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Identificar o verbo como VTD e rotular o termo que vem após o *se* como \"objeto direto\" (*\"Vendem-se terrenos\"* $\\rightarrow$ achar que *terrenos* é OD). Forma Correta: Aplique o Mantra da Voz Passiva: Não existe objeto direto na voz passiva. O termo é sujeito paciente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G04"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g04-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Vozes Verbais - Fundamentos",
+    "front": "Qual erro deve ser evitado em Erro Frequente de Concordância Verbal (\"Aluga-se casas\")?",
+    "back": "Problema: A influência da linguagem coloquial de placas de rua induz o candidato a aceitar o verbo no singular com sujeito plural. Forma Correta: Como o termo é sujeito paciente, a concordância é obrigatória: \"Alugam-se casas\" (*casas são alugadas*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: A influência da linguagem coloquial de placas de rua induz o candidato a aceitar o verbo no singular com sujeito plural. Forma Correta: Como o termo é sujeito paciente, a concordância é obrigatória: \"Alugam-se casas\" (*casas são alugadas*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G04"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g04-mnemonics-and-tips-013",
+    "source": "suveca",
+    "topic": "Vozes Verbais - Fundamentos",
+    "front": "Como aplicar Teste Rápido da Transposição Analítica Mental?",
+    "back": "Descrição: Diante de qualquer construção com *SE*, converta a frase mentalmente na fórmula [Termo + SER + Particípio]. Se fizer sentido sintático e semântico (*\"Vende-se terreno\"* $\\rightarrow$ *\"Terreno é vendido\"*), a estrutura é passiva sintética, o *SE* é partícula apassivadora e o termo é sujeito paciente.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Descrição: Diante de qualquer construção com *SE*, converta a frase mentalmente na fórmula [Termo + SER + Particípio]. Se fizer sentido sintático e semântico (*\"Vende-se terreno\"* $\\rightarrow$ *\"Terreno é vendido\"*), a estrutura é passiva sintética, o *SE* é partícula apassivadora e o termo é sujeito paciente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G04"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a05-g05-misconceptions-and-traps-019",
     "source": "suveca",
     "topic": "Vozes Verbais - Questões",
@@ -1192,6 +3384,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: Em orações que se iniciam por verbo (ex.: *\"Resulta disso tudo uma espécie de código\"*), fazer a pergunta genérica *\"o quê?\"* e classificar o substantivo pós-verbal como objeto direto. Consequência: Tratar verbos intransitivos ou transitivos indiretos como se fossem VTDs e achar erroneamente que admitem passiva. Como Evitar: Sempre faça a pergunta do sujeito em primeiro lugar (*O que é que resulta?*). Coloque a frase na ordem direta antes de classificar a predicação verbal.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: Em orações que se iniciam por verbo (ex.: *\"Resulta disso tudo uma espécie de código\"*), fazer a pergunta genérica *\"o quê?\"* e classificar o substantivo pós-verbal como objeto direto. Consequência: Tratar verbos intransitivos ou transitivos indiretos como se fossem VTDs e achar erroneamente que admitem passiva. Como Evitar: Sempre faça a pergunta do sujeito em primeiro lugar (*O que é que resulta?*). Coloque a frase na ordem direta antes de classificar a predicação verbal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G05"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g05-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Vozes Verbais - Questões",
+    "front": "Qual erro deve ser evitado em Transposição Passiva Isolada sem Análise do Parágrafo (CESPE)?",
+    "back": "Problema: Validar a conversão da voz ativa para a passiva analítica apenas analisando a oração principal isoladamente, sem verificar os termos periféricos do parágrafo no texto original. Consequência: Não perceber que a troca de sujeito transfere indevidamente a referência lógica de orações reduzidas intercaladas, destruindo a coerência argumentativa do texto. Como Evitar: Leia sempre o período completo com a modificação proposta no contexto textual amplo da prova do CESPE.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Validar a conversão da voz ativa para a passiva analítica apenas analisando a oração principal isoladamente, sem verificar os termos periféricos do parágrafo no texto original. Consequência: Não perceber que a troca de sujeito transfere indevidamente a referência lógica de orações reduzidas intercaladas, destruindo a coerência argumentativa do texto. Como Evitar: Leia sempre o período completo com a modificação proposta no contexto textual amplo da prova do CESPE.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G05"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g05-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Vozes Verbais - Questões",
+    "front": "Qual erro deve ser evitado em Confundir Agente Indeterminado com Sujeito Indeterminado?",
+    "back": "Problema: O candidato analisa uma oração passiva analítica ou sintética sem agente explícito (ex.: *\"São excluídos os registros\"*, *\"fala-se ucraniano\"*) e julga que se trata de \"sujeito indeterminado\" ou \"oração sem sujeito\". Consequência: Erro grave em itens de julgamento do CESPE/CEBRASPE. Como Evitar: Lembre-se de que na voz passiva o sujeito sintático está presente e determinado (o paciente). O que está indeterminado/omitido é unicamente o Agente da Passiva.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: O candidato analisa uma oração passiva analítica ou sintética sem agente explícito (ex.: *\"São excluídos os registros\"*, *\"fala-se ucraniano\"*) e julga que se trata de \"sujeito indeterminado\" ou \"oração sem sujeito\". Consequência: Erro grave em itens de julgamento do CESPE/CEBRASPE. Como Evitar: Lembre-se de que na voz passiva o sujeito sintático está presente e determinado (o paciente). O que está indeterminado/omitido é unicamente o Agente da Passiva.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G05"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g05-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Vozes Verbais - Questões",
+    "front": "Qual erro deve ser evitado em A Exceção Absoluta do Verbo \"Haver\" Existencial?",
+    "back": "Problema: Localizar o verbo *haver* em orações como *\"Havia motivos suficientes\"*, classificá-lo corretamente como VTD com O.D. (*motivos suficientes*) e concluir que ele admite transposição passiva. Consequência: Erro certo em questões da FCC e de bancas congêneres. Como Evitar: Fixe a exceção: o verbo *haver* no sentido de existir é VTD, mas nunca admite transposição para a passiva analítica por restrição semântica e ausência de agente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Localizar o verbo *haver* em orações como *\"Havia motivos suficientes\"*, classificá-lo corretamente como VTD com O.D. (*motivos suficientes*) e concluir que ele admite transposição passiva. Consequência: Erro certo em questões da FCC e de bancas congêneres. Como Evitar: Fixe a exceção: o verbo *haver* no sentido de existir é VTD, mas nunca admite transposição para a passiva analítica por restrição semântica e ausência de agente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G05"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g05-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Vozes Verbais - Questões",
+    "front": "Qual erro deve ser evitado em Intercalação Adverbial na Passiva Analítica?",
+    "back": "Problema: Deixar de reconhecer a locução passiva analítica quando a banca insere adjuntos adverbiais longos entre o auxiliar e o particípio (ex.: *\"O prêmio foi duas vezes concedido\"*). Consequência: Analisar apenas o verbo *foi* isolado e confundi-lo com verbo de ligação. Como Evitar: Ao encontrar qualquer forma do verbo *ser*, examine os termos posteriores na oração para identificar se há particípio conectado ao sujeito paciente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Deixar de reconhecer a locução passiva analítica quando a banca insere adjuntos adverbiais longos entre o auxiliar e o particípio (ex.: *\"O prêmio foi duas vezes concedido\"*). Consequência: Analisar apenas o verbo *foi* isolado e confundi-lo com verbo de ligação. Como Evitar: Ao encontrar qualquer forma do verbo *ser*, examine os termos posteriores na oração para identificar se há particípio conectado ao sujeito paciente.",
     "sourceRefs": [
       "EDITORIAL:IP-A05-G05"
     ],
@@ -1233,6 +3489,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a05-g06-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Fundamentos",
+    "front": "Qual erro deve ser evitado em Troca Indevida do Tempo Verbal do Auxiliar?",
+    "back": "Problema: Substituir verbos no infinitivo por presente do indicativo (*buscar* $\\rightarrow$ *são buscados*), ou pretérito imperfeito por pretérito perfeito (*davam* $\\rightarrow$ *foram dados*). Consequência: Erro imediato de correlação e tempo verbal. Forma Correta: O verbo SER espelha o tempo primitivo exato da oração ativa.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Substituir verbos no infinitivo por presente do indicativo (*buscar* $\\rightarrow$ *são buscados*), ou pretérito imperfeito por pretérito perfeito (*davam* $\\rightarrow$ *foram dados*). Consequência: Erro imediato de correlação e tempo verbal. Forma Correta: O verbo SER espelha o tempo primitivo exato da oração ativa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G06"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g06-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Fundamentos",
+    "front": "Qual erro deve ser evitado em Eliminação de Verbos Auxiliares em Locuções Preexistentes?",
+    "back": "Problema: Em frases como *havia transferido*, o candidato elimina o verbo *haver* e escreve apenas *foram transferidos*. Consequência: Perda do tempo pretérito mais-que-perfeito e quebra da regra da soma verbal. Forma Correta: A passiva de 2 verbos passa obrigatoriamente a ter 3 verbos (*haviam sido transferidos*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Em frases como *havia transferido*, o candidato elimina o verbo *haver* e escreve apenas *foram transferidos*. Consequência: Perda do tempo pretérito mais-que-perfeito e quebra da regra da soma verbal. Forma Correta: A passiva de 2 verbos passa obrigatoriamente a ter 3 verbos (*haviam sido transferidos*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G06"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g06-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Fundamentos",
+    "front": "Qual erro deve ser evitado em O Erro da Análise Sintática Exaustiva e Desnecessária?",
+    "back": "Problema: O candidato tenta classificar todas as orações subordinadas, adjuntos adverbiais e apostos antes de fazer a transposição. Consequência: Perda de tempo, cansaço mental e erros por distração nos núcleos. Forma Correta: Focar exclusivamente no trio nuclear: OD, Sujeito e Tempo Verbal da Ativa.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: O candidato tenta classificar todas as orações subordinadas, adjuntos adverbiais e apostos antes de fazer a transposição. Consequência: Perda de tempo, cansaço mental e erros por distração nos núcleos. Forma Correta: Focar exclusivamente no trio nuclear: OD, Sujeito e Tempo Verbal da Ativa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G06"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g06-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Fundamentos",
+    "front": "Qual erro deve ser evitado em Confundir Verbo Haver Impessoal com Verbo Haver Auxiliar?",
+    "back": "Problema: Achar que o verbo *haver* nunca flexiona no plural na locução passiva. Consequência: Escrever *\"tarefas e recursos havia sido transferidos\"*. Forma Correta: Como auxiliar de tempo composto, o verbo *haver* é pessoal e deve ir para o plural (*haviam sido transferidos*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Achar que o verbo *haver* nunca flexiona no plural na locução passiva. Consequência: Escrever *\"tarefas e recursos havia sido transferidos\"*. Forma Correta: Como auxiliar de tempo composto, o verbo *haver* é pessoal e deve ir para o plural (*haviam sido transferidos*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G06"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a05-g07-misconceptions-and-traps-015",
     "source": "suveca",
     "topic": "Reescritura de Vozes - Partes 02 e 03",
@@ -1256,6 +3576,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: Em estruturas passivas em ordem indireta (*\"Foi sancionada a Lei...\"*, *\"Foi observada a criação...\"*), achar que o substantivo posposto é objeto direto da passiva. Forma Correta: O substantivo posposto comanda a concordância do verbo *ser* (*Foi sancionada a lei* / *Foram sancionadas as leis*) e é o sujeito paciente, que se tornará objeto direto somente na voz ativa (*Sancionaram a lei*).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: Em estruturas passivas em ordem indireta (*\"Foi sancionada a Lei...\"*, *\"Foi observada a criação...\"*), achar que o substantivo posposto é objeto direto da passiva. Forma Correta: O substantivo posposto comanda a concordância do verbo *ser* (*Foi sancionada a lei* / *Foram sancionadas as leis*) e é o sujeito paciente, que se tornará objeto direto somente na voz ativa (*Sancionaram a lei*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G07"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g07-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Partes 02 e 03",
+    "front": "Qual erro deve ser evitado em Proibição Terminante de Ênclise ao Particípio?",
+    "back": "Problema: Empregar pronome oblíquo enclítico a verbo no particípio (ex.: *\\*ter assustado-me*, *\\*havia remodelado-o*). Forma Correta: A norma culta veda categoricamente a ênclise ao particípio. Emprega-se a próclise ou ênclise ao auxiliar (*me ter assustado* / *ter-me assustado*) ou próclise ao principal sem hífen (*ter me assustado*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Empregar pronome oblíquo enclítico a verbo no particípio (ex.: *\\*ter assustado-me*, *\\*havia remodelado-o*). Forma Correta: A norma culta veda categoricamente a ênclise ao particípio. Emprega-se a próclise ou ênclise ao auxiliar (*me ter assustado* / *ter-me assustado*) ou próclise ao principal sem hífen (*ter me assustado*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G07"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g07-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Partes 02 e 03",
+    "front": "Qual erro deve ser evitado em Manutenção Incorreta de Pronome Reto como Objeto Direto?",
+    "back": "Problema: Manter pronomes retos na função de complemento (ex.: redigir *\\*para não olharem ele* em vez de *para não o olharem*). Forma Correta: Pronomes pessoais do caso reto não exercem função de objeto direto na norma-padrão; devem ser obrigatoriamente convertidos nos pronomes oblíquos átonos correspondentes (*o, a, os, as, me, te*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Manter pronomes retos na função de complemento (ex.: redigir *\\*para não olharem ele* em vez de *para não o olharem*). Forma Correta: Pronomes pessoais do caso reto não exercem função de objeto direto na norma-padrão; devem ser obrigatoriamente convertidos nos pronomes oblíquos átonos correspondentes (*o, a, os, as, me, te*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G07"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g07-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Partes 02 e 03",
+    "front": "Qual erro deve ser evitado em Hiperflexão do Verbo Principal em Locuções Verbais?",
+    "back": "Problema: Flexionar indevidamente o verbo principal junto com o auxiliar (ex.: redigir *\\*deverão concluírem* ou *\\*podem contarem*). Forma Correta: Em qualquer locução verbal ativa, apenas o verbo auxiliar flexiona; o verbo principal permanece na sua forma nominal invariável (*deverão concluir*, *podem contar*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Flexionar indevidamente o verbo principal junto com o auxiliar (ex.: redigir *\\*deverão concluírem* ou *\\*podem contarem*). Forma Correta: Em qualquer locução verbal ativa, apenas o verbo auxiliar flexiona; o verbo principal permanece na sua forma nominal invariável (*deverão concluir*, *podem contar*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G07"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g07-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Partes 02 e 03",
+    "front": "Qual erro deve ser evitado em Assinalar Passiva Sintética (com \"SE\") quando se Pede Voz Ativa?",
+    "back": "Problema: Marcar opções atraentes com o pronome apassivador *se* (*sancionou-se a lei*, *ocupou-se a França*) quando o enunciado exige voz ativa. Forma Correta: A partícula *se* com VTD caracteriza voz passiva sintética. A voz ativa exige sujeito agente expresso ou sujeito indeterminado na 3ª do plural sem *se*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Marcar opções atraentes com o pronome apassivador *se* (*sancionou-se a lei*, *ocupou-se a França*) quando o enunciado exige voz ativa. Forma Correta: A partícula *se* com VTD caracteriza voz passiva sintética. A voz ativa exige sujeito agente expresso ou sujeito indeterminado na 3ª do plural sem *se*.",
     "sourceRefs": [
       "EDITORIAL:IP-A05-G07"
     ],
@@ -1297,6 +3681,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a05-g08-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Partes 04 a 07",
+    "front": "Qual erro deve ser evitado em A Armadilha do \"Robô\": VTD + SE não é Automaticamente Passiva?",
+    "back": "Erro comum: Decorar mecanicamente $\\text{VTD} + \\text{SE} = \\text{PA}$ e errar frases com sentido reflexivo (*Ele cortou-se*) ou verbos pronominais acidentais (*A vida cultural desenvolvia-se*) (027:, 028: ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Decorar mecanicamente $\\text{VTD} + \\text{SE} = \\text{PA}$ e errar frases com sentido reflexivo (*Ele cortou-se*) ou verbos pronominais acidentais (*A vida cultural desenvolvia-se*) (027:, 028: ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G08"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g08-misconceptions-and-traps-029",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Partes 04 a 07",
+    "front": "Qual erro deve ser evitado em Erro na Transposição do Tempo Verbal do Verbo *SER*?",
+    "back": "Erro comum: Alterar o tempo verbal na analítica (ex.: transpor o pretérito imperfeito *considerava-se* para o presente *é considerado* ou pretérito perfeito *foi considerado*) (029:, 030: ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Alterar o tempo verbal na analítica (ex.: transpor o pretérito imperfeito *considerava-se* para o presente *é considerado* ou pretérito perfeito *foi considerado*) (029:, 030: ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G08"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g08-misconceptions-and-traps-030",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Partes 04 a 07",
+    "front": "Qual erro deve ser evitado em Omissão do Verbo Auxiliar em Orações Reduzidas de Particípio?",
+    "back": "Erro comum: Não identificar a voz passiva analítica em orações reduzidas com auxiliar elíptico (*estudo realizado por pesquisadores* $= \\text{estudo que foi realizado}$) (030: ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Não identificar a voz passiva analítica em orações reduzidas com auxiliar elíptico (*estudo realizado por pesquisadores* $= \\text{estudo que foi realizado}$) (030: ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G08"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g08-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Partes 04 a 07",
+    "front": "Qual erro deve ser evitado em Mito da Exclusividade da Ênclise na Passiva Sintética?",
+    "back": "Erro comum: Julgar que a passiva sintética só existe com ênclise (*Vende-se*), desconsiderando casos legítimos em próclise (*quando se mencionam*, *se desfazem*) (026: ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Julgar que a passiva sintética só existe com ênclise (*Vende-se*), desconsiderando casos legítimos em próclise (*quando se mencionam*, *se desfazem*) (026: ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G08"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a05-g09-misconceptions-and-traps-015",
     "source": "suveca",
     "topic": "Reescritura de Vozes - Parte 08",
@@ -1320,6 +3768,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "A conversão literal da passiva analítica na ordem direta (*\"A urna foi adotada\"* $\\rightarrow$ *\"A urna se adotou\"*) faz com que o *se* seja lido primariamente como pronome reflexivo, quebrando o sentido original do texto.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "A conversão literal da passiva analítica na ordem direta (*\"A urna foi adotada\"* $\\rightarrow$ *\"A urna se adotou\"*) faz com que o *se* seja lido primariamente como pronome reflexivo, quebrando o sentido original do texto.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G09"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g09-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Parte 08",
+    "front": "Qual erro deve ser evitado em Confundir Tempo Composto Ativo com Passiva Analítica?",
+    "back": "Estruturas como tem movido ou têm podido são locuções ativas com os auxiliares *ter/haver*. Para configurar voz passiva analítica, o auxiliar deve ser compulsoriamente o verbo SER seguido de particípio com valor paciente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Estruturas como tem movido ou têm podido são locuções ativas com os auxiliares *ter/haver*. Para configurar voz passiva analítica, o auxiliar deve ser compulsoriamente o verbo SER seguido de particípio com valor paciente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G09"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g09-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Parte 08",
+    "front": "Qual erro deve ser evitado em Agente da Passiva Remanescente na Voz Passiva Sintética?",
+    "back": "A voz passiva sintética rejeita o agente da passiva expresso preposicionado (*\"pelo sociólogo\"*). A presença do agente transforma a oração sintética em construção anômala e incoerente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A voz passiva sintética rejeita o agente da passiva expresso preposicionado (*\"pelo sociólogo\"*). A presença do agente transforma a oração sintética em construção anômala e incoerente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G09"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g09-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Parte 08",
+    "front": "Qual erro deve ser evitado em Confundir Pretérito Imperfeito com Pretérito Perfeito em Formas Plurais?",
+    "back": "Bancas exploram a troca de *proibiam-se* (pretérito imperfeito, derivado de *eram proibidos*) por *proibiram-se* (pretérito perfeito, derivado de *foram proibidos*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Bancas exploram a troca de *proibiam-se* (pretérito imperfeito, derivado de *eram proibidos*) por *proibiram-se* (pretérito perfeito, derivado de *foram proibidos*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G09"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g09-mnemonics-and-tips-013",
+    "source": "suveca",
+    "topic": "Reescritura de Vozes - Parte 08",
+    "front": "Como aplicar Separação Estanque: \"Correção Gramatical\" versus \"Sentido / Coerência\"?",
+    "back": "Julgamento de Correção Gramatical: avalie exclusivamente flexão, concordância, regência e ortografia. Julgamento de Sentido / Coerência: leia a frase contextualizada para detectar se o pronome *se* criou ambiguidade de voz reflexiva ou conflitou com um agente da passiva expresso.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Julgamento de Correção Gramatical: avalie exclusivamente flexão, concordância, regência e ortografia. Julgamento de Sentido / Coerência: leia a frase contextualizada para detectar se o pronome *se* criou ambiguidade de voz reflexiva ou conflitou com um agente da passiva expresso.",
     "sourceRefs": [
       "EDITORIAL:IP-A05-G09"
     ],
@@ -1361,6 +3873,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a05-g10-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Verbos Impessoais e Auxiliares",
+    "front": "Qual erro deve ser evitado em Hipercorreção Coloquial com \"Fazer\" Temporal?",
+    "back": "Problema: Flexionar o verbo *fazer* para concordar com expressão de tempo plural (*\"Fazem cinco meses que viajei\"*). Consequência: Erro grave de concordância verbal que anula itens em provas objetivas e acarreta severa perda de pontos em provas discursivas. Forma correta: *Faz cinco meses que viajei*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Flexionar o verbo *fazer* para concordar com expressão de tempo plural (*\"Fazem cinco meses que viajei\"*). Consequência: Erro grave de concordância verbal que anula itens em provas objetivas e acarreta severa perda de pontos em provas discursivas. Forma correta: *Faz cinco meses que viajei*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G10"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g10-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Verbos Impessoais e Auxiliares",
+    "front": "Qual erro deve ser evitado em Falha dos Macetes da Internet em Cadeias com 3 ou mais Verbos?",
+    "back": "Problema: Aplicar o macete de \"mudar o sujeito de número para ver qual verbo varia\" em locuções como *deixaram de ser valorizadas*, classificando erroneamente o infinitivo intermediário *ser* como principal. Forma correta: O verbo principal é exclusivamente o último da cadeia (*valorizadas*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Aplicar o macete de \"mudar o sujeito de número para ver qual verbo varia\" em locuções como *deixaram de ser valorizadas*, classificando erroneamente o infinitivo intermediário *ser* como principal. Forma correta: O verbo principal é exclusivamente o último da cadeia (*valorizadas*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G10"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g10-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Verbos Impessoais e Auxiliares",
+    "front": "Qual erro deve ser evitado em Alteração Semântica em Reescrituras com \"Haver\"?",
+    "back": "Problema: Aceitar a troca de *Houve manifestações* por *Existiram manifestações* em questões que avaliam a preservação do sentido original. Forma correta: Eventos *ocorrem* ou *acontecem*; entidades *existem*. Trocar um pelo outro descaracteriza a nuance semântica de ocorrência.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Aceitar a troca de *Houve manifestações* por *Existiram manifestações* em questões que avaliam a preservação do sentido original. Forma correta: Eventos *ocorrem* ou *acontecem*; entidades *existem*. Trocar um pelo outro descaracteriza a nuance semântica de ocorrência.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G10"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g10-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Verbos Impessoais e Auxiliares",
+    "front": "Qual erro deve ser evitado em Ilusão de Sujeito Anteposto com \"Haver\" Impessoal?",
+    "back": "Problema: Flexionar *haver* no plural pelo fato de o termo substantivo estar antecipado no início da oração (*\"Muitos problemas haviam...\"*). Forma correta: O termo anteposto continua sendo objeto direto. O verbo permanece no singular: *Muitos problemas havia naquela família*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Flexionar *haver* no plural pelo fato de o termo substantivo estar antecipado no início da oração (*\"Muitos problemas haviam...\"*). Forma correta: O termo anteposto continua sendo objeto direto. O verbo permanece no singular: *Muitos problemas havia naquela família*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G10"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a05-g11-misconceptions-and-traps-019",
     "source": "suveca",
     "topic": "Verbos Impessoais e Auxiliares - Questões",
@@ -1384,6 +3960,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: Classificar estruturas como *muito consumidor havia acreditado* ou *uma comunidade haveria de fracassar* como impessoais. Forma correta: Quando atua como auxiliar acompanhado de particípio ou infinitivo, o verbo *haver* é pessoal e deve flexionar para concordar com o sujeito da oração (*Eles haviam acreditado*).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: Classificar estruturas como *muito consumidor havia acreditado* ou *uma comunidade haveria de fracassar* como impessoais. Forma correta: Quando atua como auxiliar acompanhado de particípio ou infinitivo, o verbo *haver* é pessoal e deve flexionar para concordar com o sujeito da oração (*Eles haviam acreditado*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G11"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g11-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Verbos Impessoais e Auxiliares - Questões",
+    "front": "Qual erro deve ser evitado em Confundir Sujeito Oracional com Impessoalidade do Verbo \"Ser\"?",
+    "back": "Problema: Afirmar que o verbo *ser* em *É um orgulho poder contar com você* é impessoal como em *É tarde*. Forma correta: Quando acompanhado de oração no infinitivo ou introduzida por *que*, o verbo *ser* é pessoal com sujeito oracional. Ele só é impessoal na indicação de horas, datas ou tempo cronológico sem sujeito.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Afirmar que o verbo *ser* em *É um orgulho poder contar com você* é impessoal como em *É tarde*. Forma correta: Quando acompanhado de oração no infinitivo ou introduzida por *que*, o verbo *ser* é pessoal com sujeito oracional. Ele só é impessoal na indicação de horas, datas ou tempo cronológico sem sujeito.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G11"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g11-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Verbos Impessoais e Auxiliares - Questões",
+    "front": "Qual erro deve ser evitado em Confundir Sujeito Indeterminado com Oração Sem Sujeito?",
+    "back": "Problema: Julgar que verbos na 3ª pessoa do plural sem sujeito explícito (*Perguntaram ao candidato*) caracterizam oração sem sujeito. Forma correta: Na 3ª pessoa do plural sem referente, o verbo é pessoal com sujeito indeterminado (o agente existe). Oração sem sujeito ocorre estritamente com verbos impessoais.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Julgar que verbos na 3ª pessoa do plural sem sujeito explícito (*Perguntaram ao candidato*) caracterizam oração sem sujeito. Forma correta: Na 3ª pessoa do plural sem referente, o verbo é pessoal com sujeito indeterminado (o agente existe). Oração sem sujeito ocorre estritamente com verbos impessoais.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G11"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g11-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Verbos Impessoais e Auxiliares - Questões",
+    "front": "Qual erro deve ser evitado em Verbo Meteorológico com Sujeito Sintático Explícito?",
+    "back": "Problema: Memorizar que verbos de fenômenos climáticos (*chover*, *escurecer*, *amanhecer*) são sempre impessoais. Consequência: Errar ao julgar frases como *A tarde escurece* ou *Vinha amanhecendo o dia*. Forma correta: Havendo termo sintático explícito funcionando como sujeito, o verbo é pessoal.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Memorizar que verbos de fenômenos climáticos (*chover*, *escurecer*, *amanhecer*) são sempre impessoais. Consequência: Errar ao julgar frases como *A tarde escurece* ou *Vinha amanhecendo o dia*. Forma correta: Havendo termo sintático explícito funcionando como sujeito, o verbo é pessoal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G11"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g11-mnemonics-and-tips-012",
+    "source": "suveca",
+    "topic": "Verbos Impessoais e Auxiliares - Questões",
+    "front": "Como aplicar O Mantra da Locução Verbal (\"O Auxiliar Carrega Tudo\")?",
+    "back": "Verbo Auxiliar: Carrega tudo nas costas (flexões de tempo, modo, número e pessoa). Verbo Principal: Manda na sintaxe (determina predicação e sentido), mantendo-se estritamente na forma nominal. Qualquer assertiva que atribua flexão de tempo/modo/número/pessoa ao verbo principal está errada.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Verbo Auxiliar: Carrega tudo nas costas (flexões de tempo, modo, número e pessoa). Verbo Principal: Manda na sintaxe (determina predicação e sentido), mantendo-se estritamente na forma nominal. Qualquer assertiva que atribua flexão de tempo/modo/número/pessoa ao verbo principal está errada.",
     "sourceRefs": [
       "EDITORIAL:IP-A05-G11"
     ],
@@ -1425,6 +4065,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a05-g12-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Verbos Pronominais",
+    "front": "Qual erro deve ser evitado em Classificação Errónea de Verbos Pronominais como Realce?",
+    "back": "Armadilha: Tentar suprimir pronomes de verbos acidentalmente pronominais (*transformar-se*, *sentir-se*, *render-se*) alegando que são de \"realce\" (042 — ). Correção: A supressão nesses verbos desconfigura a regência e o sentido contextualmente pretendido; portanto, são PIV. A partícula expletiva é restrita a casos em que a perda é puramente estilística (*ir-se*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Tentar suprimir pronomes de verbos acidentalmente pronominais (*transformar-se*, *sentir-se*, *render-se*) alegando que são de \"realce\" (042 — ). Correção: A supressão nesses verbos desconfigura a regência e o sentido contextualmente pretendido; portanto, são PIV. A partícula expletiva é restrita a casos em que a perda é puramente estilística (*ir-se*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G12"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g12-misconceptions-and-traps-013",
+    "source": "suveca",
+    "topic": "Verbos Pronominais",
+    "front": "Qual erro deve ser evitado em Confundir Processo Psicológico / Mental com Ação Reflexiva?",
+    "back": "Armadilha: Julgar que verbos como *concentrar-se*, *lembrar-se* e *esquecer-se* são reflexivos sob a justificativa psicológica de que o sujeito \"concentra a si mesmo\" (041 — ). Critério Rígido: A mente e os sentimentos não são objetos físicos receptores de força transitiva. Ninguém \"concentra o menino\"; portanto, o pronome é estritamente PIV.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Julgar que verbos como *concentrar-se*, *lembrar-se* e *esquecer-se* são reflexivos sob a justificativa psicológica de que o sujeito \"concentra a si mesmo\" (041 — ). Critério Rígido: A mente e os sentimentos não são objetos físicos receptores de força transitiva. Ninguém \"concentra o menino\"; portanto, o pronome é estritamente PIV.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G12"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g12-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Verbos Pronominais",
+    "front": "Qual erro deve ser evitado em Omissão Coloquial de Pronomes Integrantes em Redes Sociais?",
+    "back": "Armadilha: Normalizar construções informais que omitem o pronome em verbos essencialmente pronominais (*\"apaixonei\"*, *\"arrependi\"*, *\"queixei\"*). Correção Culta: Em concursos, esses verbos exigem obrigatoriamente a PIV correspondente (*\"Eu me apaixonei\"*, *\"Ela se arrependeu\"*, *\"Nós nos queixamos\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Normalizar construções informais que omitem o pronome em verbos essencialmente pronominais (*\"apaixonei\"*, *\"arrependi\"*, *\"queixei\"*). Correção Culta: Em concursos, esses verbos exigem obrigatoriamente a PIV correspondente (*\"Eu me apaixonei\"*, *\"Ela se arrependeu\"*, *\"Nós nos queixamos\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G12"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a05-g12-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Verbos Pronominais",
+    "front": "Qual erro deve ser evitado em Regência Alternada de Lembrar / Esquecer?",
+    "back": "Erro Frequente: Misturar a regência não pronominal com a pronominal: *Incorreto:* *\"Esqueci do caderno\"* (sem pronome, com preposição) ou *\"Esqueci-me o caderno\"* (com pronome, sem preposição). *Correto 1 (VTD simples):* *\"Esqueci o caderno.\"* *Correto 2 (VTI pronominal):* *\"Esqueci-me do caderno.\"*",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Frequente: Misturar a regência não pronominal com a pronominal: *Incorreto:* *\"Esqueci do caderno\"* (sem pronome, com preposição) ou *\"Esqueci-me o caderno\"* (com pronome, sem preposição). *Correto 1 (VTD simples):* *\"Esqueci o caderno.\"* *Correto 2 (VTI pronominal):* *\"Esqueci-me do caderno.\"*",
+    "sourceRefs": [
+      "EDITORIAL:IP-A05-G12"
+    ],
+    "moduleId": "mod5",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a06-g01-misconceptions-and-traps-027",
     "source": "suveca",
     "topic": "Análise Sintática - Conceitos Iniciais",
@@ -1448,6 +4152,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: A banca apresenta orações na ordem inversa (*\"Inúmeros são os benefícios...\"*) e afirma que o verbo concorda com o predicativo inicial. Forma Correta: O sujeito posposto (*\"benefícios\"*) é o termo regente que dita a flexão do verbo de ligação e do predicativo antecipado.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: A banca apresenta orações na ordem inversa (*\"Inúmeros são os benefícios...\"*) e afirma que o verbo concorda com o predicativo inicial. Forma Correta: O sujeito posposto (*\"benefícios\"*) é o termo regente que dita a flexão do verbo de ligação e do predicativo antecipado.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G01"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g01-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Análise Sintática - Conceitos Iniciais",
+    "front": "Qual erro deve ser evitado em Confundir Sujeito Sintático com Referente Semântico em Orações Consecutivas?",
+    "back": "Problema: Afirmar que o sujeito expresso na primeira oração é sintaticamente o sujeito do verbo da segunda oração separada por ponto/vírgula. Forma Correta: Sintaticamente, o sujeito da segunda oração é oculto. O termo da primeira oração é apenas o seu referente semântico.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Afirmar que o sujeito expresso na primeira oração é sintaticamente o sujeito do verbo da segunda oração separada por ponto/vírgula. Forma Correta: Sintaticamente, o sujeito da segunda oração é oculto. O termo da primeira oração é apenas o seu referente semântico.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G01"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g01-misconceptions-and-traps-032",
+    "source": "suveca",
+    "topic": "Análise Sintática - Conceitos Iniciais",
+    "front": "Qual erro deve ser evitado em Confundir Relevância Temática com Núcleo Sintático?",
+    "back": "Problema: Indicar o tema do texto (*\"inteligência artificial\"*) como núcleo do sujeito em detrimento do substantivo regente (*\"expressão\"*). Forma correta: O tema é conteúdo discursivo do modificador/aposto; o núcleo sintático é a palavra determinada regente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Indicar o tema do texto (*\"inteligência artificial\"*) como núcleo do sujeito em detrimento do substantivo regente (*\"expressão\"*). Forma correta: O tema é conteúdo discursivo do modificador/aposto; o núcleo sintático é a palavra determinada regente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G01"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g01-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Análise Sintática - Conceitos Iniciais",
+    "front": "Qual erro deve ser evitado em O Mito Escolar de que \"Não se Pode Iniciar Frase com Preposição\"?",
+    "back": "Problema: Julgar frases iniciadas por preposição (*\"No Brasil...\", \"À tarde...\"*) como gramaticalmente incorretas. Forma Correta: Iniciar frases com preposição que encabeça adjunto adverbial antecipado é padrão culto de ordem inversa, legítimo e expressivo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Julgar frases iniciadas por preposição (*\"No Brasil...\", \"À tarde...\"*) como gramaticalmente incorretas. Forma Correta: Iniciar frases com preposição que encabeça adjunto adverbial antecipado é padrão culto de ordem inversa, legítimo e expressivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G01"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g01-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Análise Sintática - Conceitos Iniciais",
+    "front": "Qual erro deve ser evitado em O Erro de Tratar Frase e Oração como Sinônimos na Contagem de Períodos?",
+    "back": "Problema: Candidatos contam frases nominais (títulos, interjeições, onomatopeias) como orações em provas que exigem contagem de períodos. Forma Correta: Frase é qualquer enunciado com sentido; oração exige verbo ou locução verbal. Sem verbo, não há oração.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Candidatos contam frases nominais (títulos, interjeições, onomatopeias) como orações em provas que exigem contagem de períodos. Forma Correta: Frase é qualquer enunciado com sentido; oração exige verbo ou locução verbal. Sem verbo, não há oração.",
     "sourceRefs": [
       "EDITORIAL:IP-A06-G01"
     ],
@@ -1489,6 +4257,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a06-g02-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Tipos de Sujeito",
+    "front": "Qual erro deve ser evitado em Pluralização Viciosa dos Verbos \"Fazer\" e \"Haver\" Impessoais?",
+    "back": "Erro comum: Flexionar os verbos impessoais no plural pelo contágio com o adjunto temporal ou complemento (*\"Fazem duas horas\"*, *\"Houveram problemas\"*). Fundamento corretivo: Verbos impessoais não possuem sujeito que determine sua flexão. Devem permanecer compulsoriamente na 3ª pessoa do singular (*\"Faz duas horas\"*, *\"Houve problemas\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Flexionar os verbos impessoais no plural pelo contágio com o adjunto temporal ou complemento (*\"Fazem duas horas\"*, *\"Houveram problemas\"*). Fundamento corretivo: Verbos impessoais não possuem sujeito que determine sua flexão. Devem permanecer compulsoriamente na 3ª pessoa do singular (*\"Faz duas horas\"*, *\"Houve problemas\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G02"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g02-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Tipos de Sujeito",
+    "front": "Qual erro deve ser evitado em Falsa Exigência de Conjunção Integrante no Sujeito Oracional?",
+    "back": "Erro comum: Procurar unicamente a conjunção *que/se* para diagnosticar sujeito oracional, errando itens com orações reduzidas de infinitivo. Fundamento corretivo: O sujeito oracional reduzido (*\"Estudar para concursos exige foco\"*) prescinde de conectivo; o critério determinante é a presença do verbo no bloco do sujeito.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Procurar unicamente a conjunção *que/se* para diagnosticar sujeito oracional, errando itens com orações reduzidas de infinitivo. Fundamento corretivo: O sujeito oracional reduzido (*\"Estudar para concursos exige foco\"*) prescinde de conectivo; o critério determinante é a presença do verbo no bloco do sujeito.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G02"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g02-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Tipos de Sujeito",
+    "front": "Qual erro deve ser evitado em Atribuição de Sujeito Paciente a Termos Preposicionados?",
+    "back": "Erro comum: Tentar classificar o pronome *se* como apassivador em estruturas com verbos transitivos indiretos. Fundamento corretivo: O sujeito paciente não pode ser preposicionado. Havendo preposição obrigatória (*trata-se de*, *precisa-se de*), o *se* opera compulsoriamente como Índice de Indeterminação do Sujeito.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Tentar classificar o pronome *se* como apassivador em estruturas com verbos transitivos indiretos. Fundamento corretivo: O sujeito paciente não pode ser preposicionado. Havendo preposição obrigatória (*trata-se de*, *precisa-se de*), o *se* opera compulsoriamente como Índice de Indeterminação do Sujeito.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G02"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g02-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Tipos de Sujeito",
+    "front": "Qual erro deve ser evitado em Confusão entre Pronome Indefinido e Sujeito Indeterminado?",
+    "back": "Erro comum: Classificar orações com *Alguém, Ninguém, Tudo, Nada* como sujeito indeterminado sob a alegação de desconhecimento da pessoa real. Fundamento corretivo: O sujeito é Simples com núcleo explícito. A indefinição é uma propriedade morfológica da classe do pronome, não uma classificação sintática do termo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Classificar orações com *Alguém, Ninguém, Tudo, Nada* como sujeito indeterminado sob a alegação de desconhecimento da pessoa real. Fundamento corretivo: O sujeito é Simples com núcleo explícito. A indefinição é uma propriedade morfológica da classe do pronome, não uma classificação sintática do termo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G02"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a06-g03-misconceptions-and-traps-027",
     "source": "suveca",
     "topic": "Predicação Verbal e Tipos de Predicado",
@@ -1512,6 +4344,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Assinalar como correta assertiva que afirma que a permuta de um verbo de ligação por outro preserva integralmente o sentido do texto . Como Evitar: Cada verbo de ligação expressa um matiz aspectual próprio: estado permanente (*ser*) $\\neq$ estado passageiro (*estar*) $\\neq$ mudança de estado (*tornar-se/virar/cair*) $\\neq$ continuidade de estado (*permanecer*). A troca altera o sentido aspectual.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Assinalar como correta assertiva que afirma que a permuta de um verbo de ligação por outro preserva integralmente o sentido do texto . Como Evitar: Cada verbo de ligação expressa um matiz aspectual próprio: estado permanente (*ser*) $\\neq$ estado passageiro (*estar*) $\\neq$ mudança de estado (*tornar-se/virar/cair*) $\\neq$ continuidade de estado (*permanecer*). A troca altera o sentido aspectual.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G03"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g03-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Predicação Verbal e Tipos de Predicado",
+    "front": "Qual erro deve ser evitado em Confundir Incompletude Semântica com Incompletude Sintática?",
+    "back": "O Erro: Julgar que verbos de deslocamento (*ir, voltar, chegar, morar*) são transitivos indiretos porque \"quem vai, vai a algum lugar\" . Como Evitar: Lugar é circunstância (adjunto adverbial). O verbo de deslocamento encerra a ação em si mesmo; o termo locativo é acessório dispensável. O verbo classifica-se estritamente como Intransitivo (VI).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Julgar que verbos de deslocamento (*ir, voltar, chegar, morar*) são transitivos indiretos porque \"quem vai, vai a algum lugar\" . Como Evitar: Lugar é circunstância (adjunto adverbial). O verbo de deslocamento encerra a ação em si mesmo; o termo locativo é acessório dispensável. O verbo classifica-se estritamente como Intransitivo (VI).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G03"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g03-misconceptions-and-traps-026",
+    "source": "suveca",
+    "topic": "Predicação Verbal e Tipos de Predicado",
+    "front": "Qual erro deve ser evitado em A Falsa Correlação \"Predicativo = Verbo de Ligação\"?",
+    "back": "O Erro: Concluir que a presença de um adjetivo na oração transforma o verbo automaticamente em Verbo de Ligação . Como Evitar: Para ser VL, o verbo deve indicar estado. Se o verbo expressar ação física ou movimento (*chegar, ligar, correr*), ele permanece nocional (VI ou VTD), e a presença do predicativo forma um Predicado Verbo-Nominal.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Concluir que a presença de um adjetivo na oração transforma o verbo automaticamente em Verbo de Ligação . Como Evitar: Para ser VL, o verbo deve indicar estado. Se o verbo expressar ação física ou movimento (*chegar, ligar, correr*), ele permanece nocional (VI ou VTD), e a presença do predicativo forma um Predicado Verbo-Nominal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G03"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g03-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Predicação Verbal e Tipos de Predicado",
+    "front": "Qual erro deve ser evitado em A Nomenclatura \"Termo Essencial\" para o Sujeito [conteúdo integrado]?",
+    "back": "Pegadinha: Achar que, por ser chamado de \"essencial\", o sujeito precisa constar em toda e qualquer oração. Correção: O sujeito é formalmente rotulado como essencial pela tradição, mas no plano funcional ele é facultativo na língua (pode inexistir em orações sem sujeito com verbos impessoais como *haver* e verbos meteorológicos).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha: Achar que, por ser chamado de \"essencial\", o sujeito precisa constar em toda e qualquer oração. Correção: O sujeito é formalmente rotulado como essencial pela tradição, mas no plano funcional ele é facultativo na língua (pode inexistir em orações sem sujeito com verbos impessoais como *haver* e verbos meteorológicos).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G03"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g03-misconceptions-and-traps-029",
+    "source": "suveca",
+    "topic": "Predicação Verbal e Tipos de Predicado",
+    "front": "Qual erro deve ser evitado em A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [conteúdo integrado]?",
+    "back": "Pegadinha: A FGV afirma que a substituição de um verbo de ligação por outro preserva integralmente o aspecto e sentido original. Correção: Cada verbo de ligação expressa um matiz aspectual único: *ser* (permanente), *estar* (passageiro), *cair/virar* (mudança de estado). Trocá-los altera o sentido semântico do texto.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha: A FGV afirma que a substituição de um verbo de ligação por outro preserva integralmente o aspecto e sentido original. Correção: Cada verbo de ligação expressa um matiz aspectual único: *ser* (permanente), *estar* (passageiro), *cair/virar* (mudança de estado). Trocá-los altera o sentido semântico do texto.",
     "sourceRefs": [
       "EDITORIAL:IP-A06-G03"
     ],
@@ -1553,6 +4449,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a06-g04-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Objetos e Transitividade Verbal",
+    "front": "Qual erro deve ser evitado em O Emprego Indevido de *Lhe* com Verbos Transitivos Diretos (\"Lhe Eufônico\")?",
+    "back": "Problema: Substituir complementos de VTDs (como *respeitar, amar, visitar, convidar*) pelo pronome *lhe* (ex.: *\\*\"Respeitou-lhe\"*, *\\*\"Não lhe amo\"*). Consequência: Erro grave de regência verbal explorado em pegadinhas de bancas. Forma Correta: *Lhe* substitui apenas termos com preposição (Objetos Indiretos). Para VTD, use exclusivamente as formas de *o, a, os, as* (*\"Respeitou-o\"*, *\"Não o amo\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Substituir complementos de VTDs (como *respeitar, amar, visitar, convidar*) pelo pronome *lhe* (ex.: *\\*\"Respeitou-lhe\"*, *\\*\"Não lhe amo\"*). Consequência: Erro grave de regência verbal explorado em pegadinhas de bancas. Forma Correta: *Lhe* substitui apenas termos com preposição (Objetos Indiretos). Para VTD, use exclusivamente as formas de *o, a, os, as* (*\"Respeitou-o\"*, *\"Não o amo\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G04"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g04-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Objetos e Transitividade Verbal",
+    "front": "Qual erro deve ser evitado em Erro Crítico: Duplicação de Complementos da Mesma Natureza em VTDI?",
+    "back": "Problema: Construir orações atribuindo dois pronomes ou dois termos preposicionados ao mesmo verbo bitransitivo: *\\*\"Ofereceu-lhe ao primeiro colocado.\"* (Erro: 2 OIs). *\\*\"Ofereceu-o uma medalha.\"* (Erro: 2 ODs). Forma Correta: Balancear obrigatoriamente um termo sem preposição e outro com preposição: *\"Ofereceu-lhe* (OI) *uma medalha* (OD)\" ou *\"Ofereceu-a* (OD) *ao primeiro colocado* (OI)\".",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Construir orações atribuindo dois pronomes ou dois termos preposicionados ao mesmo verbo bitransitivo: *\\*\"Ofereceu-lhe ao primeiro colocado.\"* (Erro: 2 OIs). *\\*\"Ofereceu-o uma medalha.\"* (Erro: 2 ODs). Forma Correta: Balancear obrigatoriamente um termo sem preposição e outro com preposição: *\"Ofereceu-lhe* (OI) *uma medalha* (OD)\" ou *\"Ofereceu-a* (OD) *ao primeiro colocado* (OI)\".",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G04"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g04-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Objetos e Transitividade Verbal",
+    "front": "Qual erro deve ser evitado em Armadilha de Concurso: Falha de Concordância na Troca de *Haver* por *Existir*?",
+    "back": "Pegadinha de Banca (especialmente Cebraspe): Afirmar que a substituição de *\"Havia muitos problemas\"* por *\\*\"Existia muitos problemas\"* preserva a correção gramatical e o sentido. Análise do Erro: O sentido é preservado, mas a frase torna-se gramaticalmente incorreta porque o verbo *existir* é pessoal e deve concordar obrigatoriamente com o sujeito plural: *\"Existiam muitos problemas\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha de Banca (especialmente Cebraspe): Afirmar que a substituição de *\"Havia muitos problemas\"* por *\\*\"Existia muitos problemas\"* preserva a correção gramatical e o sentido. Análise do Erro: O sentido é preservado, mas a frase torna-se gramaticalmente incorreta porque o verbo *existir* é pessoal e deve concordar obrigatoriamente com o sujeito plural: *\"Existiam muitos problemas\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G04"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g04-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Objetos e Transitividade Verbal",
+    "front": "Qual erro deve ser evitado em O Pronome Proclítico não é Sujeito?",
+    "back": "Erro Comum: Julgar que o pronome oblíquo antes do verbo (ex.: em *\"Alguém o chamou\"*) é o sujeito da oração por estar em posição pré-verbal. Forma Correta: Interrogar o sujeito primeiro (*Quem chamou? Alguém*). O pronome *o* encontra-se antes do verbo estritamente pela atração de próclise exercida pelo pronome indefinido *alguém*, mantendo sua função de Objeto Direto.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Julgar que o pronome oblíquo antes do verbo (ex.: em *\"Alguém o chamou\"*) é o sujeito da oração por estar em posição pré-verbal. Forma Correta: Interrogar o sujeito primeiro (*Quem chamou? Alguém*). O pronome *o* encontra-se antes do verbo estritamente pela atração de próclise exercida pelo pronome indefinido *alguém*, mantendo sua função de Objeto Direto.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G04"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a06-g05-misconceptions-and-traps-013",
     "source": "suveca",
     "topic": "Complemento Nominal e Agente da Passiva",
@@ -1576,6 +4536,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro Comum: Em *Passou aos filhos a herança recebida dos pais*, supor que *dos pais* seja agente da passiva introduzido pela preposição *de*. A Realidade Sintática: Ao passar para a ativa, constata-se que os pais não receberam a herança (eles a deixaram). O particípio *recebida* funciona como adjetivo de *herança*, e *dos pais* é Complemento Nominal que completa o sentido desse particípio adjetivado.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro Comum: Em *Passou aos filhos a herança recebida dos pais*, supor que *dos pais* seja agente da passiva introduzido pela preposição *de*. A Realidade Sintática: Ao passar para a ativa, constata-se que os pais não receberam a herança (eles a deixaram). O particípio *recebida* funciona como adjetivo de *herança*, e *dos pais* é Complemento Nominal que completa o sentido desse particípio adjetivado.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G05"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g05-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Complemento Nominal e Agente da Passiva",
+    "front": "Qual erro deve ser evitado em O Erro de Classificar o Termo Isolado sem Olhar o Regente?",
+    "back": "O Problema: Analisar o sintagma preposicionado (ex.: *de ajuda*) isoladamente. Sintaticamente, expressões morfologicamente idênticas desempenham funções opostas dependendo do antecedente (*necessita [verbo] de ajuda* = OI vs. *necessidade [nome] de ajuda* = CN). Como Evitar: Jamais classifique um termo sem antes traçar a seta e definir a classe gramatical do seu referente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Problema: Analisar o sintagma preposicionado (ex.: *de ajuda*) isoladamente. Sintaticamente, expressões morfologicamente idênticas desempenham funções opostas dependendo do antecedente (*necessita [verbo] de ajuda* = OI vs. *necessidade [nome] de ajuda* = CN). Como Evitar: Jamais classifique um termo sem antes traçar a seta e definir a classe gramatical do seu referente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G05"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g05-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Complemento Nominal e Agente da Passiva",
+    "front": "Qual erro deve ser evitado em O Erro de Lançar Seta a Partir do Agente da Passiva?",
+    "back": "O Problema: Tentar ligar o Agente da Passiva ao particípio ou ao sujeito paciente por meio de setas de subordinação. A Realidade Sintática: O Agente da Passiva não é um complemento nem um adjunto de outro termo; ele atua diretamente como praticante da ação verbal na oração passiva. Na matriz de setas, ele recebe um traço —.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Problema: Tentar ligar o Agente da Passiva ao particípio ou ao sujeito paciente por meio de setas de subordinação. A Realidade Sintática: O Agente da Passiva não é um complemento nem um adjunto de outro termo; ele atua diretamente como praticante da ação verbal na oração passiva. Na matriz de setas, ele recebe um traço —.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G05"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g05-mnemonics-and-tips-009",
+    "source": "suveca",
+    "topic": "Complemento Nominal e Agente da Passiva",
+    "front": "Como aplicar O Teste do Artigo para Substantivo e do \"Que é\" para Adjetivo?",
+    "back": "Para Substantivo: Substantivo é aquilo que se *tem* ou que admite artigo definidor anteposto (*o amor*, *a necessidade*, *a crença*, *a leitura*). Se o regente aceita artigo, ele é substantivo e seu complemento será Complemento Nominal. Para Adjetivo: Adjetivo é aquilo que se *é* ou que qualifica. Admite o encaixe imediato da expressão \"que é / que está\" (*remédio [que é] prejudicial*, *homem [que é] rico*, *aluno [que está] agradecido*). O termo que o completa é Complemento Nominal.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Para Substantivo: Substantivo é aquilo que se *tem* ou que admite artigo definidor anteposto (*o amor*, *a necessidade*, *a crença*, *a leitura*). Se o regente aceita artigo, ele é substantivo e seu complemento será Complemento Nominal. Para Adjetivo: Adjetivo é aquilo que se *é* ou que qualifica. Admite o encaixe imediato da expressão \"que é / que está\" (*remédio [que é] prejudicial*, *homem [que é] rico*, *aluno [que está] agradecido*). O termo que o completa é Complemento Nominal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G05"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g05-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Complemento Nominal e Agente da Passiva",
+    "front": "Como aplicar Teste da Substituição Masculina (\"ao\") para Validar Crase e Regência?",
+    "back": "Em construções preposicionadas com crase (ex.: *não resistiu à prova*), substitua o substantivo feminino por um correspondente masculino (ex.: *ao teste* ou *ao exame*). O aparecimento da combinação ao comprova a presença da preposição regida pelo verbo ou nome anterior.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Em construções preposicionadas com crase (ex.: *não resistiu à prova*), substitua o substantivo feminino por um correspondente masculino (ex.: *ao teste* ou *ao exame*). O aparecimento da combinação ao comprova a presença da preposição regida pelo verbo ou nome anterior.",
     "sourceRefs": [
       "EDITORIAL:IP-A06-G05"
     ],
@@ -1617,6 +4641,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a06-g06-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Vocativo e Aposto",
+    "front": "Qual erro deve ser evitado em Exceção Absoluta: Aposto Especificativo Proíbe Pontuação?",
+    "back": "Armadilha: Inserir vírgula antes do aposto especificativo (*\"A cidade, de São Paulo, cresceu\"*). Correção: O aposto especificativo é a única exceção da língua portuguesa que não admite sinal de pontuação isolador. A colocação de vírgula gera erro gramatical.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Inserir vírgula antes do aposto especificativo (*\"A cidade, de São Paulo, cresceu\"*). Correção: O aposto especificativo é a única exceção da língua portuguesa que não admite sinal de pontuação isolador. A colocação de vírgula gera erro gramatical.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G06"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g06-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Vocativo e Aposto",
+    "front": "Qual erro deve ser evitado em Armadilha do Adjetivo Entre Vírgulas (Predicativo vs. Aposto)?",
+    "back": "Armadilha: Classificar qualquer termo explicativo entre vírgulas como aposto. Correção: O aposto exige núcleo substantivo/pronominal. Adjetivos isolados entre vírgulas (*\"Os alunos, atentos, anotavam tudo\"*) são predicativos do sujeito deslocados.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Classificar qualquer termo explicativo entre vírgulas como aposto. Correção: O aposto exige núcleo substantivo/pronominal. Adjetivos isolados entre vírgulas (*\"Os alunos, atentos, anotavam tudo\"*) são predicativos do sujeito deslocados.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G06"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g06-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Vocativo e Aposto",
+    "front": "Qual erro deve ser evitado em Erro Grave: Tratar Vocativo como Sujeito do Imperativo?",
+    "back": "Armadilha: Julgar que em *\"Alunos, façam a prova.\"*, a palavra *\"Alunos\"* é o sujeito do verbo *façam*. Correção: A vírgula impede que o termo seja sujeito. *\"Alunos\"* é vocativo; o sujeito de *façam* é oculto/elíptico (*vocês*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Julgar que em *\"Alunos, façam a prova.\"*, a palavra *\"Alunos\"* é o sujeito do verbo *façam*. Correção: A vírgula impede que o termo seja sujeito. *\"Alunos\"* é vocativo; o sujeito de *façam* é oculto/elíptico (*vocês*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G06"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g06-mnemonics-and-tips-015",
+    "source": "suveca",
+    "topic": "Vocativo e Aposto",
+    "front": "Como aplicar O Teste do Nome Próprio para Aposto Especificativo?",
+    "back": "Dica operacional: Diante de substantivo comum seguido de expressão preposicionada ou justaposta sem vírgula, faça a pergunta direta ao elemento genérico: *\"Qual é o seu nome?\"*. Se a resposta for o termo em exame $\\rightarrow$ Aposto especificativo (*Mês de maio* $\\rightarrow$ Nome: Maio). Se a resposta indicar caracterização temática, relação ou posse $\\rightarrow$ Adjunto adnominal (*Mês das noivas* $\\rightarrow$ \"Noivas\" não é nome de mês).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Dica operacional: Diante de substantivo comum seguido de expressão preposicionada ou justaposta sem vírgula, faça a pergunta direta ao elemento genérico: *\"Qual é o seu nome?\"*. Se a resposta for o termo em exame $\\rightarrow$ Aposto especificativo (*Mês de maio* $\\rightarrow$ Nome: Maio). Se a resposta indicar caracterização temática, relação ou posse $\\rightarrow$ Adjunto adnominal (*Mês das noivas* $\\rightarrow$ \"Noivas\" não é nome de mês).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G06"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a06-g07-misconceptions-and-traps-014",
     "source": "suveca",
     "topic": "Adjuntos Adverbial e Adnominal",
@@ -1640,6 +4728,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro comum: Cobrir a expressão preposicionada com a mão para verificar se a frase \"continua com sentido\". Correção: Em frases como *Morrem de exaustão* ou *Foi ao curso*, suprimir o termo gera empobrecimento comunicativo, mas não quebra a sintaxe da predicação verbal. O critério seguro é semântico: se o termo veicula causa ou lugar, trata-se de adjunto adverbial com verbo intransitivo, e não de objeto indireto.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro comum: Cobrir a expressão preposicionada com a mão para verificar se a frase \"continua com sentido\". Correção: Em frases como *Morrem de exaustão* ou *Foi ao curso*, suprimir o termo gera empobrecimento comunicativo, mas não quebra a sintaxe da predicação verbal. O critério seguro é semântico: se o termo veicula causa ou lugar, trata-se de adjunto adverbial com verbo intransitivo, e não de objeto indireto.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G07"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g07-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Adjuntos Adverbial e Adnominal",
+    "front": "Qual erro deve ser evitado em A Pegadinha do Predicativo do Objeto com Preposição Facultativa?",
+    "back": "Erro comum: Tratar a expressão preposicionada *de ingrato* em *Chamou o amigo de ingrato* como locução adjetiva e classificá-la como adjunto adnominal. Correção: Como a remoção de *de ingrato* mutila o sentido lexical de *chamar* (transformando \"qualificar\" em \"convocar\"), o termo é Predicativo do Objeto, de presença necessária para a predicação.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Tratar a expressão preposicionada *de ingrato* em *Chamou o amigo de ingrato* como locução adjetiva e classificá-la como adjunto adnominal. Correção: Como a remoção de *de ingrato* mutila o sentido lexical de *chamar* (transformando \"qualificar\" em \"convocar\"), o termo é Predicativo do Objeto, de presença necessária para a predicação.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G07"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g07-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Adjuntos Adverbial e Adnominal",
+    "front": "Qual erro deve ser evitado em Falsa Conexão Sintática por Mera Adjacência Física?",
+    "back": "Erro comum: Ligar o termo circunstancial à palavra imediatamente vizinha por mera proximidade física. Exemplo do erro: Em *Foi para o parque com a amiga*, ligar *com a amiga* a *parque*. Correção: Dialogar logicamente com a frase: a pessoa *foi com a amiga* (a companhia qualifica o ato verbal *foi*). A seta deve apontar para o verbo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Ligar o termo circunstancial à palavra imediatamente vizinha por mera proximidade física. Exemplo do erro: Em *Foi para o parque com a amiga*, ligar *com a amiga* a *parque*. Correção: Dialogar logicamente com a frase: a pessoa *foi com a amiga* (a companhia qualifica o ato verbal *foi*). A seta deve apontar para o verbo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G07"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g07-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Adjuntos Adverbial e Adnominal",
+    "front": "Qual erro deve ser evitado em O Mito de que \"Tudo Preposicionado Ligado ao Verbo é Objeto Indireto\"?",
+    "back": "Erro comum: Classificar como objeto indireto qualquer expressão introduzida por preposição conectada a um verbo. Correção: A preposição introduz objeto indireto somente quando for meramente gramatical/relacional imposta por regência de VTI. Se for nocional (com valor modal, causal, espacial, temporal), introduz adjunto adverbial.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Classificar como objeto indireto qualquer expressão introduzida por preposição conectada a um verbo. Correção: A preposição introduz objeto indireto somente quando for meramente gramatical/relacional imposta por regência de VTI. Se for nocional (com valor modal, causal, espacial, temporal), introduz adjunto adverbial.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G07"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g07-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Adjuntos Adverbial e Adnominal",
+    "front": "Qual erro deve ser evitado em A Falsa Bitransitividade em Estruturas com Adjunto de Lugar (*Estudar algo em algum lugar ≠ VTDI*)?",
+    "back": "Erro comum: Decorar a fórmula errônea *\"quem estuda, estuda algo (OD) em algum lugar (OI)\"*, rotulando o verbo como VTDI. Correção: *Em algum lugar* (*no curso*) é Adjunto Adverbial de Lugar. O verbo *estudar* é Transitivo Direto (VTD) e possui apenas um complemento verbal (*português* = OD).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Decorar a fórmula errônea *\"quem estuda, estuda algo (OD) em algum lugar (OI)\"*, rotulando o verbo como VTDI. Correção: *Em algum lugar* (*no curso*) é Adjunto Adverbial de Lugar. O verbo *estudar* é Transitivo Direto (VTD) e possui apenas um complemento verbal (*português* = OD).",
     "sourceRefs": [
       "EDITORIAL:IP-A06-G07"
     ],
@@ -1681,6 +4833,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a06-g08-misconceptions-and-traps-013",
+    "source": "suveca",
+    "topic": "Predicativos versus Adjunto Adnominal",
+    "front": "Qual erro deve ser evitado em O Mito da Restrição do Predicativo ao Adjetivo?",
+    "back": "Erro comum: Assumir que predicativo precisa ser adjetivo, gerando confusão em frases com substantivos (*O mar virou sertão*) ou pronomes retos (*Tu não és eu*), tratando o pronome predicativo erroneamente como sujeito invertido. Correção: Substantivos, pronomes retos e numerais funcionam regularmente como predicativo do sujeito.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Assumir que predicativo precisa ser adjetivo, gerando confusão em frases com substantivos (*O mar virou sertão*) ou pronomes retos (*Tu não és eu*), tratando o pronome predicativo erroneamente como sujeito invertido. Correção: Substantivos, pronomes retos e numerais funcionam regularmente como predicativo do sujeito.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G08"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g08-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Predicativos versus Adjunto Adnominal",
+    "front": "Qual erro deve ser evitado em O Erro Gramatical da Expressão \"Somos em Cinco\"?",
+    "back": "Erro comum: Utilizar a fórmula coloquial *\"Lá em casa nós somos em cinco\"* ou *\"Éramos em dez\"*. Correção: O numeral *cinco* atua como predicativo do sujeito intermediado pelo verbo de ligação *somos*. O predicativo direto não aceita preposição espúria. A norma culta padrão exige: *\"Lá em casa nós somos cinco\"* / *\"Éramos dez\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Utilizar a fórmula coloquial *\"Lá em casa nós somos em cinco\"* ou *\"Éramos em dez\"*. Correção: O numeral *cinco* atua como predicativo do sujeito intermediado pelo verbo de ligação *somos*. O predicativo direto não aceita preposição espúria. A norma culta padrão exige: *\"Lá em casa nós somos cinco\"* / *\"Éramos dez\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G08"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g08-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Predicativos versus Adjunto Adnominal",
+    "front": "Qual erro deve ser evitado em Falsa Identificação de Objeto Indireto no Predicativo Preposicionado?",
+    "back": "Erro comum: Em sentenças como *Chamaram o delegado de inquieto*, classificar o verbo como VTDI e *de inquieto* como Objeto Indireto. Correção: *De inquieto* é adjetivo qualificador do objeto direto *delegado*. Trata-se de Predicativo do Objeto Direto Preposicionado.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Em sentenças como *Chamaram o delegado de inquieto*, classificar o verbo como VTDI e *de inquieto* como Objeto Indireto. Correção: *De inquieto* é adjetivo qualificador do objeto direto *delegado*. Trata-se de Predicativo do Objeto Direto Preposicionado.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G08"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a06-g08-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Predicativos versus Adjunto Adnominal",
+    "front": "Qual erro deve ser evitado em A Armadilha da Pergunta Interrogativa \"Como?\"?",
+    "back": "Erro comum: Perguntar mecanicamente \"como?\" ao verbo e classificar qualquer resposta como adjunto adverbial de modo. Correção: A pergunta \"como?\" identifica tanto modo quanto estado. A diferenciação é estritamente morfológica (invariabilidade vs. flexão).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Perguntar mecanicamente \"como?\" ao verbo e classificar qualquer resposta como adjunto adverbial de modo. Correção: A pergunta \"como?\" identifica tanto modo quanto estado. A diferenciação é estritamente morfológica (invariabilidade vs. flexão).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A06-G08"
+    ],
+    "moduleId": "mod6",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a07-g01-misconceptions-and-traps-017",
     "source": "suveca",
     "topic": "Período Composto - Fundamentos",
@@ -1704,6 +4920,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Descrição do erro: Tentar cobrir uma oração para julgar se ela \"faz sentido sozinha\". Por que ocorre: Ensino tradicional antigo baseado em critérios semânticos intuitivos. Como evitar: Aplicar análise estrutural estrita: a independência sintática é formal (ausência de função sintática de termo), e não temática. Oração coordenada adversativa depende contextualmente da anterior, mas é formalmente coordenada.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Descrição do erro: Tentar cobrir uma oração para julgar se ela \"faz sentido sozinha\". Por que ocorre: Ensino tradicional antigo baseado em critérios semânticos intuitivos. Como evitar: Aplicar análise estrutural estrita: a independência sintática é formal (ausência de função sintática de termo), e não temática. Oração coordenada adversativa depende contextualmente da anterior, mas é formalmente coordenada.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G01"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g01-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Período Composto - Fundamentos",
+    "front": "Qual erro deve ser evitado em Confusão entre Conjunção Integrante e Pronome Relativo?",
+    "back": "Problema: A palavra *que* pode introduzir oração substantiva ou oração adjetiva. Forma correta: Se *que* puder ser substituído por *o qual / a qual* $\\rightarrow$ Pronome Relativo (Oração Subordinada Adjetiva). Se toda a oração iniciada pelo *que* puder ser substituída por *isso* $\\rightarrow$ Conjunção Integrante (Oração Subordinada Substantiva).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: A palavra *que* pode introduzir oração substantiva ou oração adjetiva. Forma correta: Se *que* puder ser substituído por *o qual / a qual* $\\rightarrow$ Pronome Relativo (Oração Subordinada Adjetiva). Se toda a oração iniciada pelo *que* puder ser substituída por *isso* $\\rightarrow$ Conjunção Integrante (Oração Subordinada Substantiva).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G01"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g01-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Período Composto - Fundamentos",
+    "front": "Qual erro deve ser evitado em Ilusão de Complexidade por Extensão Textual?",
+    "back": "Descrição do erro: Supor que parágrafos com 4 ou 5 linhas são automaticamente períodos compostos. Como evitar: Isolar unicamente os núcleos verbais. Períodos longos repletos de termos coordenados ou enumerações nominais são períodos simples se houver apenas 1 verbo/locução verbal.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Descrição do erro: Supor que parágrafos com 4 ou 5 linhas são automaticamente períodos compostos. Como evitar: Isolar unicamente os núcleos verbais. Períodos longos repletos de termos coordenados ou enumerações nominais são períodos simples se houver apenas 1 verbo/locução verbal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G01"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g01-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Período Composto - Fundamentos",
+    "front": "Qual erro deve ser evitado em Locuções Verbais com Preposição Intermediária?",
+    "back": "Descrição do erro: Contar dois verbos separados em estruturas como *não se resume a colocar* devido à presença da preposição *a*. Como evitar: Reconhecer que *resumir a + infinitivo* constitui uma única locução verbal predicativa (1 oração).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Descrição do erro: Contar dois verbos separados em estruturas como *não se resume a colocar* devido à presença da preposição *a*. Como evitar: Reconhecer que *resumir a + infinitivo* constitui uma única locução verbal predicativa (1 oração).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G01"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g01-mnemonics-and-tips-009",
+    "source": "suveca",
+    "topic": "Período Composto - Fundamentos",
+    "front": "Como aplicar Formas Verbais Substantivadas não Contam como Oração?",
+    "back": "Aplicação: Ao contar orações, verifique sempre se o infinitivo terminado em *-ar, -er, -ir* vem precedido por artigo definido/indefinido ou pronome (*o amanhecer*, *o jantar*, *o falar doce*). O artigo substantiva o termo por derivação imprópria. Não conte esse termo como oração.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Aplicação: Ao contar orações, verifique sempre se o infinitivo terminado em *-ar, -er, -ir* vem precedido por artigo definido/indefinido ou pronome (*o amanhecer*, *o jantar*, *o falar doce*). O artigo substantiva o termo por derivação imprópria. Não conte esse termo como oração.",
     "sourceRefs": [
       "EDITORIAL:IP-A07-G01"
     ],
@@ -1745,6 +5025,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a07-g02-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Orações Coordenadas Sindéticas",
+    "front": "Qual erro deve ser evitado em Posição do \"POIS\" e a Inversão Conclusiva/Explicativa?",
+    "back": "Problema: Classificar o conectivo *pois* como explicativo quando ele estiver intercalado no meio da oração. Análise Correta: Se o *pois* estiver posposto ao verbo e isolado entre vírgulas (*podemos, pois, comemorar*), ele equivale a *portanto* e é conclusivo. Se estiver anteposto ao verbo no início da oração (*pois comemorou muito*), equivale a *porque* e é explicativo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Classificar o conectivo *pois* como explicativo quando ele estiver intercalado no meio da oração. Análise Correta: Se o *pois* estiver posposto ao verbo e isolado entre vírgulas (*podemos, pois, comemorar*), ele equivale a *portanto* e é conclusivo. Se estiver anteposto ao verbo no início da oração (*pois comemorou muito*), equivale a *porque* e é explicativo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G02"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g02-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Orações Coordenadas Sindéticas",
+    "front": "Qual erro deve ser evitado em Incompatibilidade Terminológica: Coordenada Concessiva?",
+    "back": "Problema: Assertivas de bancas que misturam categorias da coordenação com a subordinação (ex.: *\"o vocábulo 'mas' introduz oração coordenada concessiva\"*). Análise Correta: O conectivo *mas* é estritamente coordenativo adversativo. Concessão (*embora*) pertence ao domínio exclusivo da subordinação adverbial. O item é nulo/falso em sua própria redação conceitual.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Assertivas de bancas que misturam categorias da coordenação com a subordinação (ex.: *\"o vocábulo 'mas' introduz oração coordenada concessiva\"*). Análise Correta: O conectivo *mas* é estritamente coordenativo adversativo. Concessão (*embora*) pertence ao domínio exclusivo da subordinação adverbial. O item é nulo/falso em sua própria redação conceitual.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G02"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g02-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Orações Coordenadas Sindéticas",
+    "front": "Qual erro deve ser evitado em O Pleonasmo Vicioso \"E NEM\" no Registro Culto?",
+    "back": "Problema: Emprego de *\"e nem\"* em redações discursivas ou validação da estrutura em itens de correção gramatical (*\"Não comeu e nem bebeu\"*). Regra Culta: *Nem* já contém a conjunção *e* (*nem = e não*). O uso concomitante configura pleonasmo redundante condenado pela norma-padrão. Forma Correta: *\"Não comeu nem bebeu\"* ou *\"Não comeu e não bebeu\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Emprego de *\"e nem\"* em redações discursivas ou validação da estrutura em itens de correção gramatical (*\"Não comeu e nem bebeu\"*). Regra Culta: *Nem* já contém a conjunção *e* (*nem = e não*). O uso concomitante configura pleonasmo redundante condenado pela norma-padrão. Forma Correta: *\"Não comeu nem bebeu\"* ou *\"Não comeu e não bebeu\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G02"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g02-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Orações Coordenadas Sindéticas",
+    "front": "Qual erro deve ser evitado em A Falsa Dupla Sindética em \"Nem... Nem...\"?",
+    "back": "Problema: Supor que a repetição do vocábulo *nem* (*\"Nem trabalha, nem estuda\"*) gera duas orações coordenadas sindéticas. Análise Correta: O primeiro *nem* opera como advérbio de negação modificador (a 1ª oração é assindética). Apenas o segundo *nem* opera como conjunção coordenativa aditiva (a 2ª oração é sindética aditiva).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Supor que a repetição do vocábulo *nem* (*\"Nem trabalha, nem estuda\"*) gera duas orações coordenadas sindéticas. Análise Correta: O primeiro *nem* opera como advérbio de negação modificador (a 1ª oração é assindética). Apenas o segundo *nem* opera como conjunção coordenativa aditiva (a 2ª oração é sindética aditiva).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G02"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a07-g03-misconceptions-and-traps-022",
     "source": "suveca",
     "topic": "Subordinadas Substantivas e Adjetivas",
@@ -1768,6 +5112,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Pegadinha: A banca afirma que a preposição de um objeto indireto nominal simples pode ser suprimida, ou que a preposição de uma oração completiva nominal é facultativa. Regra Corrigida: A preposição é facultativa unicamente no Objeto Indireto Oracional. No objeto indireto simples (*\"Necessito de ajuda\"*) e em todas as completivas nominais (*\"Certeza de que...\"*), a preposição é estritamente obrigatória.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Pegadinha: A banca afirma que a preposição de um objeto indireto nominal simples pode ser suprimida, ou que a preposição de uma oração completiva nominal é facultativa. Regra Corrigida: A preposição é facultativa unicamente no Objeto Indireto Oracional. No objeto indireto simples (*\"Necessito de ajuda\"*) e em todas as completivas nominais (*\"Certeza de que...\"*), a preposição é estritamente obrigatória.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G03"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g03-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Subordinadas Substantivas e Adjetivas",
+    "front": "Qual erro deve ser evitado em Conectivo \"É Que\" Fragmentado e Inversão em Pares Ordenados (FGV)?",
+    "back": "Pegadinhas: 1. A banca destaca apenas o *que* em locuções de realce como *\"Quando é que vou poder...\"* para induzir a busca de referente. (Solução: teste de supressão de *é que*). 2. A banca exige sequência \"respectivamente Pronome Relativo e Conjunção Integrante\" e insere a ordem inversa na alternativa A. (Solução: checagem rigorosa do comando ordenador).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinhas: 1. A banca destaca apenas o *que* em locuções de realce como *\"Quando é que vou poder...\"* para induzir a busca de referente. (Solução: teste de supressão de *é que*). 2. A banca exige sequência \"respectivamente Pronome Relativo e Conjunção Integrante\" e insere a ordem inversa na alternativa A. (Solução: checagem rigorosa do comando ordenador).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G03"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g03-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Subordinadas Substantivas e Adjetivas",
+    "front": "Qual erro deve ser evitado em Confusão entre Oração Adjetiva Explicativa e Oração Substantiva Apositiva?",
+    "back": "Pegadinha: Supor que toda oração entre vírgulas ou com valor explicativo seja aposto. Regra Corrigida: Se for encabeçada por pronome relativo (*o qual*), é Oração Adjetiva Explicativa (com função sintática de Adjunto Adnominal). Se for encabeçada por conjunção integrante (*isso*), é Oração Substantiva Apositiva (com função de Aposto).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha: Supor que toda oração entre vírgulas ou com valor explicativo seja aposto. Regra Corrigida: Se for encabeçada por pronome relativo (*o qual*), é Oração Adjetiva Explicativa (com função sintática de Adjunto Adnominal). Se for encabeçada por conjunção integrante (*isso*), é Oração Substantiva Apositiva (com função de Aposto).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G03"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g03-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Subordinadas Substantivas e Adjetivas",
+    "front": "Qual erro deve ser evitado em A Armadilha Terminológica da \"Oração Completiva\" no Cebraspe?",
+    "back": "Pegadinha: O candidato lê que determinada oração é \"completiva\" e julga o item errado por entender que o termo se restringe a \"completiva nominal\", quando a oração analisada é objeto direto. Regra Corrigida: Para o Cebraspe, \"completiva\" é gênero que abrange completivas verbais (OD/OI oracionais) e completivas nominais.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha: O candidato lê que determinada oração é \"completiva\" e julga o item errado por entender que o termo se restringe a \"completiva nominal\", quando a oração analisada é objeto direto. Regra Corrigida: Para o Cebraspe, \"completiva\" é gênero que abrange completivas verbais (OD/OI oracionais) e completivas nominais.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G03"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g03-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Subordinadas Substantivas e Adjetivas",
+    "front": "Qual erro deve ser evitado em Falsa Alteração Sintática na Mudança de Pontuação de Adjetivas?",
+    "back": "Pegadinha: O item afirma que a colocação ou retirada de vírgulas em uma oração adjetiva altera a sua função sintática. Regra Corrigida: A função sintática permanece rigorosamente a mesma (Adjunto Adnominal). A mudança ocorre exclusivamente na semântica (de restrição para explicação ou vice-versa).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha: O item afirma que a colocação ou retirada de vírgulas em uma oração adjetiva altera a sua função sintática. Regra Corrigida: A função sintática permanece rigorosamente a mesma (Adjunto Adnominal). A mudança ocorre exclusivamente na semântica (de restrição para explicação ou vice-versa).",
     "sourceRefs": [
       "EDITORIAL:IP-A07-G03"
     ],
@@ -1809,6 +5217,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a07-g04-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Orações Subordinadas Adverbiais",
+    "front": "Qual erro deve ser evitado em A Carga de Negação no Conectivo Concessivo \"Sem que\"?",
+    "back": "Arquivo de origem: 014 -....md  Problema: O candidato considera que trocar *embora* por *sem que* preserva integralmente o sentido por pertencerem ao campo concessivo. Como Evitar: Lembre-se de que *sem que* embute negação/privação. *\"Embora eu discorde\"* (eu discordo) $\\neq$ *\"Sem que eu discorde\"* (eu não discordo).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Arquivo de origem: 014 -....md  Problema: O candidato considera que trocar *embora* por *sem que* preserva integralmente o sentido por pertencerem ao campo concessivo. Como Evitar: Lembre-se de que *sem que* embute negação/privação. *\"Embora eu discorde\"* (eu discordo) $\\neq$ *\"Sem que eu discorde\"* (eu não discordo).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G04"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g04-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Orações Subordinadas Adverbiais",
+    "front": "Qual erro deve ser evitado em Pegadinha de Contagem de Orações em Comparativas com Elipse?",
+    "back": "Arquivo de origem: 011 -....md  Problema: O candidato conta apenas os verbos explícitos e erra o número de orações em períodos com comparativas. Como Evitar: Em *\"Ele é inteligente como o pai\"*, existem duas orações, pois a oração comparativa possui o verbo elíptico (*\"como o pai [é]\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Arquivo de origem: 011 -....md  Problema: O candidato conta apenas os verbos explícitos e erra o número de orações em períodos com comparativas. Como Evitar: Em *\"Ele é inteligente como o pai\"*, existem duas orações, pois a oração comparativa possui o verbo elíptico (*\"como o pai [é]\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G04"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g04-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Orações Subordinadas Adverbiais",
+    "front": "Como aplicar O Mecanismo dos \"4 T's\" nas Consecutivas?",
+    "back": "Arquivo de origem: 012 -....md , 013 -....md  Para reconhecer orações consecutivas em segundos: procure na oração anterior um intensificador iniciado por T (TÃO, TANTO, TAMANHO, TAL). Havendo esse termo antes da conjunção *que*, a oração é infalivelmente consecutiva.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Arquivo de origem: 012 -....md , 013 -....md  Para reconhecer orações consecutivas em segundos: procure na oração anterior um intensificador iniciado por T (TÃO, TANTO, TAMANHO, TAL). Havendo esse termo antes da conjunção *que*, a oração é infalivelmente consecutiva.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G04"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g04-mnemonics-and-tips-009",
+    "source": "suveca",
+    "topic": "Orações Subordinadas Adverbiais",
+    "front": "Como aplicar O Mnemônico \"6C + FTP\" para Memorização Exaustiva?",
+    "back": "Arquivo de origem: 011 -....md  Para não esquecer nenhuma das 9 subclasses: lembre-se de que são 6 que começam com a letra C (*Causal, Consecutiva, Concessiva, Condicional, Comparativa, Conformativa*) mais as letras FTP (*Final, Temporal, Proporcional*).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Arquivo de origem: 011 -....md  Para não esquecer nenhuma das 9 subclasses: lembre-se de que são 6 que começam com a letra C (*Causal, Consecutiva, Concessiva, Condicional, Comparativa, Conformativa*) mais as letras FTP (*Final, Temporal, Proporcional*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G04"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a07-g05-misconceptions-and-traps-014",
     "source": "suveca",
     "topic": "Orações Reduzidas - Fundamentos",
@@ -1832,6 +5304,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro Comum: Posicionar a barra divisória após o primeiro verbo (*Vi / a menina chorando na praça*) e tentar substituir o bloco restante por \"isto\" (*Vi isto*), classificando a oração erradamente como substantiva objetiva direta. Mecanismo do Erro: Transferência indevida do objeto direto da oração principal para o interior da oração subordinada. Regra de Correção: O termo \"a menina\" é o objeto direto da oração principal (*Vi a menina*). A oração subordinada inicia-se estritamente no gerúndio: [Vi a menina] / [chorando na praça].",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro Comum: Posicionar a barra divisória após o primeiro verbo (*Vi / a menina chorando na praça*) e tentar substituir o bloco restante por \"isto\" (*Vi isto*), classificando a oração erradamente como substantiva objetiva direta. Mecanismo do Erro: Transferência indevida do objeto direto da oração principal para o interior da oração subordinada. Regra de Correção: O termo \"a menina\" é o objeto direto da oração principal (*Vi a menina*). A oração subordinada inicia-se estritamente no gerúndio: [Vi a menina] / [chorando na praça].",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G05"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g05-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Orações Reduzidas - Fundamentos",
+    "front": "Qual erro deve ser evitado em Presença de Preposição não Converte Oração Reduzida em Desenvolvida?",
+    "back": "Erro Comum: Imaginar que a ocorrência de preposições (como *ao*, *para*, *por*, *sem*, *de*) antes de verbos no infinitivo configuraria oração desenvolvida ou conectivo oracional conjuntivo. Regra de Correção: Preposição não é conjunção subordinativa oracional. Se a oração não tiver conjunção/pronome relativo e o verbo estiver no infinitivo, gerúndio ou particípio, trata-se de oração estritamente reduzida.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Imaginar que a ocorrência de preposições (como *ao*, *para*, *por*, *sem*, *de*) antes de verbos no infinitivo configuraria oração desenvolvida ou conectivo oracional conjuntivo. Regra de Correção: Preposição não é conjunção subordinativa oracional. Se a oração não tiver conjunção/pronome relativo e o verbo estiver no infinitivo, gerúndio ou particípio, trata-se de oração estritamente reduzida.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G05"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g05-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Orações Reduzidas - Fundamentos",
+    "front": "Qual erro deve ser evitado em Atenção aos Particípios Irregulares Terminados em \"-to\" e \"-so\"?",
+    "back": "Erro Comum: Não reconhecer orações reduzidas de particípio quando o verbo apresenta forma irregular não terminada em -ado ou -ido. Regra de Correção: Memorizar as formas nominais irregulares terminadas em -to ou -so (como *feito*, *dito*, *escrito*, *posto*, *eleito*, *coberto*). Frases como *Feito o anúncio, calaram-se* estruturam orações subordinadas adverbiais temporais reduzidas de particípio.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Não reconhecer orações reduzidas de particípio quando o verbo apresenta forma irregular não terminada em -ado ou -ido. Regra de Correção: Memorizar as formas nominais irregulares terminadas em -to ou -so (como *feito*, *dito*, *escrito*, *posto*, *eleito*, *coberto*). Frases como *Feito o anúncio, calaram-se* estruturam orações subordinadas adverbiais temporais reduzidas de particípio.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G05"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g05-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Orações Reduzidas - Fundamentos",
+    "front": "Qual erro deve ser evitado em Confusão entre Oração Adjetiva de Gerúndio e Predicativo do Objeto?",
+    "back": "Erro Comum: Tentar classificar a forma nominal \"chorando\" em *Vi a menina chorando na praça* como predicativo do objeto direto (\"a menina\"). Regra de Correção: No âmbito da sintaxe do período composto adotada nas provas de concursos, a estrutura é analisada como oração subordinada adjetiva restritiva reduzida de gerúndio, equivalente à desenvolvida *Vi a menina que chorava na praça*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Tentar classificar a forma nominal \"chorando\" em *Vi a menina chorando na praça* como predicativo do objeto direto (\"a menina\"). Regra de Correção: No âmbito da sintaxe do período composto adotada nas provas de concursos, a estrutura é analisada como oração subordinada adjetiva restritiva reduzida de gerúndio, equivalente à desenvolvida *Vi a menina que chorava na praça*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G05"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g05-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Orações Reduzidas - Fundamentos",
+    "front": "Como aplicar Macete Universal do \"ISSO\" para Substantivas Reduzidas?",
+    "back": "Ao analisar uma oração reduzida de infinitivo, substitua todo o bloco oracional por \"ISSO\" (ou contrações preposicionadas *disso*, *nisso*, *a isso*). Se a frase fizer sentido gramatical perfeito (ex.: *Convém estudar* $\\rightarrow$ *Convém ISSO* $\\rightarrow$ *ISSO convém*), a oração é categoricamente subordinada substantiva. Em seguida, identifique a função sintática que a palavra \"ISSO\" assume na oração principal.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Ao analisar uma oração reduzida de infinitivo, substitua todo o bloco oracional por \"ISSO\" (ou contrações preposicionadas *disso*, *nisso*, *a isso*). Se a frase fizer sentido gramatical perfeito (ex.: *Convém estudar* $\\rightarrow$ *Convém ISSO* $\\rightarrow$ *ISSO convém*), a oração é categoricamente subordinada substantiva. Em seguida, identifique a função sintática que a palavra \"ISSO\" assume na oração principal.",
     "sourceRefs": [
       "EDITORIAL:IP-A07-G05"
     ],
@@ -1889,6 +5425,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a07-g07-misconceptions-and-traps-013",
+    "source": "suveca",
+    "topic": "Orações Reduzidas - Revisão e Reescrita",
+    "front": "Qual erro deve ser evitado em Pegadinha do Aposto versus Oração Adjetiva Explicativa?",
+    "back": "O Erro: O CESPE costuma classificar orações adjetivas explicativas reduzidas de particípio (como *\"percebidos cumulativamente\"*) como sendo \"aposto explicativo\". Como Evitar: Lembre-se de que o aposto tem base substantiva; particípios e adjetivos possuem base qualificadora/caracterizadora, constituindo orações subordinadas adjetivas.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: O CESPE costuma classificar orações adjetivas explicativas reduzidas de particípio (como *\"percebidos cumulativamente\"*) como sendo \"aposto explicativo\". Como Evitar: Lembre-se de que o aposto tem base substantiva; particípios e adjetivos possuem base qualificadora/caracterizadora, constituindo orações subordinadas adjetivas.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G07"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g07-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Orações Reduzidas - Revisão e Reescrita",
+    "front": "Qual erro deve ser evitado em Falsa Generalização da Preposição \"Por\"?",
+    "back": "O Erro: Memorizar que por + infinitivo sempre exprime causa. A Exceção: Diante de verbos que indicam esforço, empenho ou luta (*esforçar-se por*, *lutar por*), a preposição *por* equivale a *para* (finalidade). A análise semântica contextual prevalece sobre tabelas mecânicas.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Memorizar que por + infinitivo sempre exprime causa. A Exceção: Diante de verbos que indicam esforço, empenho ou luta (*esforçar-se por*, *lutar por*), a preposição *por* equivale a *para* (finalidade). A análise semântica contextual prevalece sobre tabelas mecânicas.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G07"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g07-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Orações Reduzidas - Revisão e Reescrita",
+    "front": "Qual erro deve ser evitado em Erro na Classificação de Locuções Verbais Reduzidas?",
+    "back": "O Erro: Em estruturas como *\"tendo alcançado\"*, olhar para o último verbo (*alcançado*) e classificar a oração como reduzida de particípio. A Regra: Quem dá o nome à forma nominal da oração reduzida é o verbo auxiliar (no caso, *tendo* = reduzida de gerúndio).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Em estruturas como *\"tendo alcançado\"*, olhar para o último verbo (*alcançado*) e classificar a oração como reduzida de particípio. A Regra: Quem dá o nome à forma nominal da oração reduzida é o verbo auxiliar (no caso, *tendo* = reduzida de gerúndio).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G07"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g07-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Orações Reduzidas - Revisão e Reescrita",
+    "front": "Qual erro deve ser evitado em Armadilha da Vírgula na Ordem Direta?",
+    "back": "O Erro: Considerar incorreta uma oração adverbial posposta ao final do período sem vírgula. A Regra: A oração subordinada adverbial posposta à oração principal está na ordem direta; nessa posição, a pontuação por vírgula é facultativa.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Considerar incorreta uma oração adverbial posposta ao final do período sem vírgula. A Regra: A oração subordinada adverbial posposta à oração principal está na ordem direta; nessa posição, a pontuação por vírgula é facultativa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G07"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a07-g08-misconceptions-and-traps-012",
     "source": "suveca",
     "topic": "Desenvolvimento das Orações Reduzidas",
@@ -1912,6 +5512,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro Comum: Manter o verbo no singular ao desenvolver para passiva pronominal (*\"que se critique as viagens\"*; *\"no qual se inclui vários trabalhos\"*). Como evitar: Na voz passiva sintética com *se* apassivador, o termo paciente posposto é o sujeito gramatical. Se estiver no plural, o verbo flexiona-se obrigatoriamente no plural (*\"que se critiquem as viagens\"*; *\"no qual se incluem vários trabalhos\"*).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro Comum: Manter o verbo no singular ao desenvolver para passiva pronominal (*\"que se critique as viagens\"*; *\"no qual se inclui vários trabalhos\"*). Como evitar: Na voz passiva sintética com *se* apassivador, o termo paciente posposto é o sujeito gramatical. Se estiver no plural, o verbo flexiona-se obrigatoriamente no plural (*\"que se critiquem as viagens\"*; *\"no qual se incluem vários trabalhos\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G08"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g08-misconceptions-and-traps-013",
+    "source": "suveca",
+    "topic": "Desenvolvimento das Orações Reduzidas",
+    "front": "Qual erro deve ser evitado em Vício de Aplicação Indevida do Macete do \"ISSO\" em Orações Adjetivas?",
+    "back": "Erro Comum: Tentar forçar o pronome \"isso\" em frases como *\"Sua palavra foi a primeira a perder...\"* ou *\"Há muitos alunos estudando...\"* (*\"muitos alunos isso\"*). Como evitar: O teste do \"ISSO\" só é válido quando substitui toda a oração com perfeita coerência gramatical. Se a oração qualificar termo substantivo antecedente, é adjetiva.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Tentar forçar o pronome \"isso\" em frases como *\"Sua palavra foi a primeira a perder...\"* ou *\"Há muitos alunos estudando...\"* (*\"muitos alunos isso\"*). Como evitar: O teste do \"ISSO\" só é válido quando substitui toda a oração com perfeita coerência gramatical. Se a oração qualificar termo substantivo antecedente, é adjetiva.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G08"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g08-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Desenvolvimento das Orações Reduzidas",
+    "front": "Qual erro deve ser evitado em Erros de Colocação Pronominal e Passivação com PIV?",
+    "back": "Erro Comum: Aplicar ênclise após conjunção subordinativa (*\"embora apresente-se\"*) ou converter verbo com PIV para passiva analítica (*\"embora seja apresentado\"*). Como evitar: Conjunções subordinativas atraem o pronome por próclise obrigatória (*\"embora se apresente\"*), e verbos pronominais com PIV não admitem passiva analítica.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Aplicar ênclise após conjunção subordinativa (*\"embora apresente-se\"*) ou converter verbo com PIV para passiva analítica (*\"embora seja apresentado\"*). Como evitar: Conjunções subordinativas atraem o pronome por próclise obrigatória (*\"embora se apresente\"*), e verbos pronominais com PIV não admitem passiva analítica.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G08"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g08-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Desenvolvimento das Orações Reduzidas",
+    "front": "Qual erro deve ser evitado em Deslocamento Adverbial com Quebra de Paralelismo em Reescritas?",
+    "back": "Erro Comum: Validar uma reescrita focando apenas na transposição do verbo e ignorando deslocamentos de adjuntos adverbiais e crases indevidas. Como evitar: Em itens do CESPE, audite o período termo a termo: confira regência, paralelismo sintático e confirme se o adjunto adverbial deslocado continuou modificando o mesmo verbo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Validar uma reescrita focando apenas na transposição do verbo e ignorando deslocamentos de adjuntos adverbiais e crases indevidas. Como evitar: Em itens do CESPE, audite o período termo a termo: confira regência, paralelismo sintático e confirme se o adjunto adverbial deslocado continuou modificando o mesmo verbo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G08"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g08-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Desenvolvimento das Orações Reduzidas",
+    "front": "Qual erro deve ser evitado em Manutenção Indevida de Locuções Prepositivas no Desenvolvimento?",
+    "back": "Erro Comum: Tentar desenvolver uma oração concessiva mantendo a locução prepositiva *apesar de* (*\"apesar de se apresente\"*). Como evitar: Locução prepositiva rege infinitivo (reduzida). Para desenvolver, substitua-a obrigatoriamente por conjunção subordinativa (*embora*) ou locução conjuntiva (*apesar de que*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Tentar desenvolver uma oração concessiva mantendo a locução prepositiva *apesar de* (*\"apesar de se apresente\"*). Como evitar: Locução prepositiva rege infinitivo (reduzida). Para desenvolver, substitua-a obrigatoriamente por conjunção subordinativa (*embora*) ou locução conjuntiva (*apesar de que*).",
     "sourceRefs": [
       "EDITORIAL:IP-A07-G08"
     ],
@@ -1985,6 +5649,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a07-g10-mnemonics-and-tips-013",
+    "source": "suveca",
+    "topic": "Palavra SE",
+    "front": "Como aplicar Teste “isso / disso / nisso”?",
+    "back": "Use a equivalência isso/disso/nisso como lembrete operacional para reconhecer a oração substantiva introduzida pela conjunção integrante.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Use a equivalência isso/disso/nisso como lembrete operacional para reconhecer a oração substantiva introduzida pela conjunção integrante.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G10"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g10-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Palavra SE",
+    "front": "Como aplicar Mantenha o passo a passo em folha separada?",
+    "back": "A abordagem didática recomenda uma folha independente para permitir consulta simultânea durante a resolução de exercícios e questões.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "A abordagem didática recomenda uma folha independente para permitir consulta simultânea durante a resolução de exercícios e questões.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G10"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g10-mnemonics-and-tips-015",
+    "source": "suveca",
+    "topic": "Palavra SE",
+    "front": "Como aplicar Concessiva: tente “embora”?",
+    "back": "Se “se” puder assumir o sentido de embora e houver ideias contrastantes, a classificação trabalhada é concessiva.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Se “se” puder assumir o sentido de embora e houver ideias contrastantes, a classificação trabalhada é concessiva.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G10"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a07-g10-mnemonics-and-tips-016",
+    "source": "suveca",
+    "topic": "Palavra SE",
+    "front": "Como aplicar Causal: “já que” como teste rápido?",
+    "back": "A abordagem didática enfatiza já que como substituição especialmente útil para reconhecer a causal.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "A abordagem didática enfatiza já que como substituição especialmente útil para reconhecer a causal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A07-G10"
+    ],
+    "moduleId": "mod7",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a08-g01-misconceptions-and-traps-007",
     "source": "suveca",
     "topic": "Sinais de Pontuação - Visão Geral",
@@ -2008,6 +5736,22 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O candidato tende a achar natural empregar dois-pontos logo após uma forma verbal quando ela anuncia uma série de itens (ex.: *\"Comprei no mercado: arroz, feijão e carne.\"*).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O candidato tende a achar natural empregar dois-pontos logo após uma forma verbal quando ela anuncia uma série de itens (ex.: *\"Comprei no mercado: arroz, feijão e carne.\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G01"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g01-mnemonics-and-tips-005",
+    "source": "suveca",
+    "topic": "Sinais de Pontuação - Visão Geral",
+    "front": "Como aplicar Critério da Igualdade Semântica do Aposto ($A = B$)?",
+    "back": "Para verificar rapidamente se uma estrutura intercalada entre vírgulas em uma prova é um aposto ou uma enumeração, utilize o modelo matemático da igualdade semântica: Se o Termo B colocado entre vírgulas representa uma redefinição ou equivalência absoluta do Termo A ($A = B$), a estrutura é um Aposto Explicativo. Se o Termo B for apenas mais um elemento agregado a uma lista de itens somados pelo conectivo aditivo *e* ($A + B + C$), a estrutura é uma Enumeração.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Para verificar rapidamente se uma estrutura intercalada entre vírgulas em uma prova é um aposto ou uma enumeração, utilize o modelo matemático da igualdade semântica: Se o Termo B colocado entre vírgulas representa uma redefinição ou equivalência absoluta do Termo A ($A = B$), a estrutura é um Aposto Explicativo. Se o Termo B for apenas mais um elemento agregado a uma lista de itens somados pelo conectivo aditivo *e* ($A + B + C$), a estrutura é uma Enumeração.",
     "sourceRefs": [
       "EDITORIAL:IP-A08-G01"
     ],
@@ -2049,6 +5793,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a08-g02-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Uso da Vírgula - Fundamentos",
+    "front": "Qual erro deve ser evitado em O Erro do \"Par de Meias\" em Intercalações?",
+    "back": "O Erro: Retirar apenas uma das vírgulas que isolam um adjunto, oração ou conjunção intercalada (*ex.: \"O projeto quando cheguei, acabou\" / \"Isso significa que no ano de 2022, usamos...\"*). Consequência: Anulação imediata da correção gramatical do período por quebra de paridade sintática.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Retirar apenas uma das vírgulas que isolam um adjunto, oração ou conjunção intercalada (*ex.: \"O projeto quando cheguei, acabou\" / \"Isso significa que no ano de 2022, usamos...\"*). Consequência: Anulação imediata da correção gramatical do período por quebra de paridade sintática.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G02"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g02-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Uso da Vírgula - Fundamentos",
+    "front": "Qual erro deve ser evitado em Contar Palavras em Orações Adverbiais (Risco de Truncamento)?",
+    "back": "O Erro: Tratar *\"Quando cheguei\"* como elemento curto facultativo por ter 2 palavras. Esclarecimento: Contagem de palavras aplica-se apenas a adjuntos sem verbo. Tendo verbo, a oração antecipada exige vírgula obrigatória incondicional.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Tratar *\"Quando cheguei\"* como elemento curto facultativo por ter 2 palavras. Esclarecimento: Contagem de palavras aplica-se apenas a adjuntos sem verbo. Tendo verbo, a oração antecipada exige vírgula obrigatória incondicional.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G02"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g02-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Uso da Vírgula - Fundamentos",
+    "front": "Qual erro deve ser evitado em Separação Indevida de Sujeito e Predicado com a Conjunção \"E\"?",
+    "back": "O Erro: Inserir vírgula antes do \"E\" quando o sujeito das duas orações coordenadas for idêntico (*ex.: *\"O aluno estudou muito, e passou\" $\\rightarrow$ INCORRETO). Forma Correta: Em sujeitos iguais, a vírgula é estritamente proibida.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Inserir vírgula antes do \"E\" quando o sujeito das duas orações coordenadas for idêntico (*ex.: *\"O aluno estudou muito, e passou\" $\\rightarrow$ INCORRETO). Forma Correta: Em sujeitos iguais, a vírgula é estritamente proibida.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G02"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g02-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Uso da Vírgula - Fundamentos",
+    "front": "Qual erro deve ser evitado em Penalização Máxima em Redações Discursivas?",
+    "back": "A omissão de vírgula em adjuntos longos e orações adverbiais antecipadas/intercaladas é a falha isolada mais penalizada pelas bancas examinadoras em provas discursivas.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A omissão de vírgula em adjuntos longos e orações adverbiais antecipadas/intercaladas é a falha isolada mais penalizada pelas bancas examinadoras em provas discursivas.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G02"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a08-g03-misconceptions-and-traps-014",
     "source": "suveca",
     "topic": "Uso da Vírgula - Aprofundamento",
@@ -2072,6 +5880,22 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Nunca empregue vírgula antes da conjunção \"e\" na redação discursiva. Como a vírgula é facultativa com sujeitos diferentes e proibida com sujeitos iguais, a omissão zera o risco de penalização pela banca examinadora.",
     "hint": "Recupere o critério decisivo antes de consultar a resposta.",
     "explanation": "Nunca empregue vírgula antes da conjunção \"e\" na redação discursiva. Como a vírgula é facultativa com sujeitos diferentes e proibida com sujeitos iguais, a omissão zera o risco de penalização pela banca examinadora.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G03"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g03-mnemonics-and-tips-012",
+    "source": "suveca",
+    "topic": "Uso da Vírgula - Aprofundamento",
+    "front": "Como aplicar O Mnemônico dos 5 Dedos da Vírgula do \"E\":?",
+    "back": "*Proibida (2 casos):* Enumeração \\| Sujeitos Iguais. *Facultativa (2 casos):* Sujeitos Diferentes \\| Valor Adversativo/Conclusivo. *Obrigatória (1 caso):* Polissíndeto.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "*Proibida (2 casos):* Enumeração \\| Sujeitos Iguais. *Facultativa (2 casos):* Sujeitos Diferentes \\| Valor Adversativo/Conclusivo. *Obrigatória (1 caso):* Polissíndeto.",
     "sourceRefs": [
       "EDITORIAL:IP-A08-G03"
     ],
@@ -2113,6 +5937,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a08-g04-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Ponto e Vírgula Dois-Pontos e Aspas",
+    "front": "Qual erro deve ser evitado em O Falso Mito da Mudança de Sentido por Travessões e Parênteses?",
+    "back": "Risco: Julgar que trocar vírgulas por travessões ou parênteses em trechos explicativos invalida o item sob alegação de que \"travessão dá mais ênfase\". Para as bancas, nuances expressivas não configuram alteração do sentido gramatical.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Risco: Julgar que trocar vírgulas por travessões ou parênteses em trechos explicativos invalida o item sob alegação de que \"travessão dá mais ênfase\". Para as bancas, nuances expressivas não configuram alteração do sentido gramatical.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G04"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g04-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Ponto e Vírgula Dois-Pontos e Aspas",
+    "front": "Qual erro deve ser evitado em A Armadilha da \"Ideia Nova\" e da \"Ampliação Temática\"?",
+    "back": "Risco: Assinalar que a explicação após dois-pontos introduz \"ideia nova\". Explicar é *dizer o mesmo*; a explicação situa-se rigorosamente dentro do campo conceitual já delimitado pelo antecedente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Risco: Assinalar que a explicação após dois-pontos introduz \"ideia nova\". Explicar é *dizer o mesmo*; a explicação situa-se rigorosamente dentro do campo conceitual já delimitado pelo antecedente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G04"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g04-misconceptions-and-traps-028",
+    "source": "suveca",
+    "topic": "Ponto e Vírgula Dois-Pontos e Aspas",
+    "front": "Qual erro deve ser evitado em Falácia da \"Ironia Universal\" nas Aspas?",
+    "back": "Risco: Marcar automaticamente \"ironia\" para qualquer vocábulo aspeado. A grande maioria das ocorrências em prova expressa sentido figurado, destaque ou neologismo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Risco: Marcar automaticamente \"ironia\" para qualquer vocábulo aspeado. A grande maioria das ocorrências em prova expressa sentido figurado, destaque ou neologismo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G04"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g04-misconceptions-and-traps-027",
+    "source": "suveca",
+    "topic": "Ponto e Vírgula Dois-Pontos e Aspas",
+    "front": "Qual erro deve ser evitado em Erro de Fechamento de Dois-Pontos em Intercalações?",
+    "back": "Risco: Iniciar explicação no meio do período com dois-pontos e fechá-la com vírgula ou travessão (:...,). Dois-pontos só formam par com ponto final.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Risco: Iniciar explicação no meio do período com dois-pontos e fechá-la com vírgula ou travessão (:...,). Dois-pontos só formam par com ponto final.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G04"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a08-g05-misconceptions-and-traps-013",
     "source": "suveca",
     "topic": "Travessão e Parênteses",
@@ -2136,6 +6024,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro comum: Considerar incorreta qualquer sequência contendo travessão e vírgula contíguos (—... —,). Correção definitiva: O erro reside na assimetria (— termo,). Quando a vírgula decorre de um elemento sintático externo obrigatório (como uma oração subordinada adverbial antecipada: *Se chegar meu pai — meu melhor amigo —, avise!*), a sequência —, é correta e obrigatória.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro comum: Considerar incorreta qualquer sequência contendo travessão e vírgula contíguos (—... —,). Correção definitiva: O erro reside na assimetria (— termo,). Quando a vírgula decorre de um elemento sintático externo obrigatório (como uma oração subordinada adverbial antecipada: *Se chegar meu pai — meu melhor amigo —, avise!*), a sequência —, é correta e obrigatória.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G05"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g05-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Travessão e Parênteses",
+    "front": "Qual erro deve ser evitado em Confundir Exemplificação/Hiponímia com Sinônimo Lexical?",
+    "back": "Erro comum: Assinalar que um exemplo específico colocado entre parênteses (*doença de Chagas*) é um \"sinônimo\" do termo antecedente (*barbeiro* ou *doenças*). Correção definitiva: O exemplo particulariza uma espécie dentro de um gênero; a função textual é de acréscimo de informação nova / exemplificação, e não de sinonímia.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Assinalar que um exemplo específico colocado entre parênteses (*doença de Chagas*) é um \"sinônimo\" do termo antecedente (*barbeiro* ou *doenças*). Correção definitiva: O exemplo particulariza uma espécie dentro de um gênero; a função textual é de acréscimo de informação nova / exemplificação, e não de sinonímia.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G05"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g05-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Travessão e Parênteses",
+    "front": "Qual erro deve ser evitado em Segmentação Viciosa de Termos Integrantes por Parênteses?",
+    "back": "Erro comum: Inserir parênteses em orações subordinadas substantivas, objetos diretos ou indiretos. Correção definitiva: Parênteses só podem isolar termos acessórios. Aplique o *Teste da Retirada*: se a oração principal perder seu complemento verbal obrigatório, a pontuação é inválida.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Inserir parênteses em orações subordinadas substantivas, objetos diretos ou indiretos. Correção definitiva: Parênteses só podem isolar termos acessórios. Aplique o *Teste da Retirada*: se a oração principal perder seu complemento verbal obrigatório, a pontuação é inválida.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G05"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g05-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Travessão e Parênteses",
+    "front": "Qual erro deve ser evitado em Confundir Crítica Severa com Ironia?",
+    "back": "Erro comum: Classificar como irônico qualquer texto que faça denúncia social ou desabafo crítico. Correção definitiva: Para haver ironia no rigor das bancas, é indispensável haver inversão semântica (afirmar textualmente o oposto do que se pensa). Crítica direta factual não é ironia.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Classificar como irônico qualquer texto que faça denúncia social ou desabafo crítico. Correção definitiva: Para haver ironia no rigor das bancas, é indispensável haver inversão semântica (afirmar textualmente o oposto do que se pensa). Crítica direta factual não é ironia.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G05"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g05-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Travessão e Parênteses",
+    "front": "Como aplicar Macete \"Setas Salvam\" para Questões de Função Textual?",
+    "back": "Ao analisar pontuação em textos densos, não tente classificar o sinal isoladamente. Desenhe ou aponte mentalmente setas conectando o termo pontuado ao seu referente real. Se a seta apontar para um conceito genérico (hiperônimo), trata-se de exemplificação/acréscimo; se apontar para o enunciador com verbo em 1ª pessoa, trata-se de comentário do autor.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Ao analisar pontuação em textos densos, não tente classificar o sinal isoladamente. Desenhe ou aponte mentalmente setas conectando o termo pontuado ao seu referente real. Se a seta apontar para um conceito genérico (hiperônimo), trata-se de exemplificação/acréscimo; se apontar para o enunciador com verbo em 1ª pessoa, trata-se de comentário do autor.",
     "sourceRefs": [
       "EDITORIAL:IP-A08-G05"
     ],
@@ -2177,6 +6129,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a08-g06-misconceptions-and-traps-026",
+    "source": "suveca",
+    "topic": "Pontuação - Revisão e Reescrita",
+    "front": "Qual erro deve ser evitado em Ponto e Vírgula NÃO Decorre de Intercalação?",
+    "back": "O ponto e vírgula organiza enumerações complexas ou separa orações coordenadas. A intercalação interna a um segmento é isolada por vírgulas. A tese de que o ponto e vírgula \"decorre de intercalação\" é invariavelmente falsa.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O ponto e vírgula organiza enumerações complexas ou separa orações coordenadas. A intercalação interna a um segmento é isolada por vírgulas. A tese de que o ponto e vírgula \"decorre de intercalação\" é invariavelmente falsa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G06"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g06-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Pontuação - Revisão e Reescrita",
+    "front": "Qual erro deve ser evitado em Omissão Unilateral em Vírgulas Casadas?",
+    "back": "Bancas examinadoras costumam inserir a vírgula de fechamento de uma oração adverbial intercalada, mas omitir a vírgula de abertura (ex.: ...portanto como pegou o bonde andando, optou...), gerando incorreção sintática.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Bancas examinadoras costumam inserir a vírgula de fechamento de uma oração adverbial intercalada, mas omitir a vírgula de abertura (ex.: ...portanto como pegou o bonde andando, optou...), gerando incorreção sintática.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G06"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g06-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Pontuação - Revisão e Reescrita",
+    "front": "Qual erro deve ser evitado em Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva?",
+    "back": "Inserir vírgulas ou travessões em uma oração adjetiva que contextualmente é restritiva altera o sentido original do texto, transformando uma delimitação de subconjunto em uma generalização totalizadora.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Inserir vírgulas ou travessões em uma oração adjetiva que contextualmente é restritiva altera o sentido original do texto, transformando uma delimitação de subconjunto em uma generalização totalizadora.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G06"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a08-g06-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Pontuação - Revisão e Reescrita",
+    "front": "Qual erro deve ser evitado em A Armadilha da Conjunção \"e\" Fechando Listagens?",
+    "back": "A presença da conjunção aditiva \"e\" antes do último item de uma listagem após dois-pontos encerra o conjunto como enumeração exaustiva, anulando assertivas que classifiquem o rol como \"exemplos\".",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A presença da conjunção aditiva \"e\" antes do último item de uma listagem após dois-pontos encerra o conjunto como enumeração exaustiva, anulando assertivas que classifiquem o rol como \"exemplos\".",
+    "sourceRefs": [
+      "EDITORIAL:IP-A08-G06"
+    ],
+    "moduleId": "mod8",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a09-g01-misconceptions-and-traps-015",
     "source": "suveca",
     "topic": "Concordância Verbal - Fundamentos",
@@ -2200,6 +6216,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: Assumir que toda presença do conectivo *e* gera sujeito composto. Erro comum: Na frase *\"A falta de investimentos e de criação de obras reforça\"*, flexionar no plural. Correção: Há apenas um núcleo substantivo (*falta*). Os elementos com *e* são apenas adjuntos adnominais coordenados. O verbo deve ficar no singular (*reforça*).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: Assumir que toda presença do conectivo *e* gera sujeito composto. Erro comum: Na frase *\"A falta de investimentos e de criação de obras reforça\"*, flexionar no plural. Correção: Há apenas um núcleo substantivo (*falta*). Os elementos com *e* são apenas adjuntos adnominais coordenados. O verbo deve ficar no singular (*reforça*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G01"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g01-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Fundamentos",
+    "front": "Qual erro deve ser evitado em Pluralização Indevida de Verbos com PIS Diante de Objeto Indireto Plural?",
+    "back": "Problema: Concordar verbos VTI + SE com o substantivo plural do objeto indireto. Erros comuns de prova: *\"Obedeceram-se às ordens\"*, *\"Necessitam-se de leis\"*, *\"Assistem-se a filmes\"*. Correção: Com SE = PIS, o verbo é obrigatoriamente singular: *Obedeceu-se às ordens*, *Necessita-se de leis*, *Assiste-se a filmes*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Concordar verbos VTI + SE com o substantivo plural do objeto indireto. Erros comuns de prova: *\"Obedeceram-se às ordens\"*, *\"Necessitam-se de leis\"*, *\"Assistem-se a filmes\"*. Correção: Com SE = PIS, o verbo é obrigatoriamente singular: *Obedeceu-se às ordens*, *Necessita-se de leis*, *Assiste-se a filmes*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G01"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g01-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Fundamentos",
+    "front": "Qual erro deve ser evitado em Termo Preposicionado ou Craseado Tratado como Sujeito Paciente?",
+    "back": "Problema: Tentar concordar o verbo na voz passiva sintética com termo preposicionado. Exemplo: *\"Deu-se às poesias o nome de Primeiros Cantos\"*. Correção: O termo *\"às poesias\"* é objeto indireto preposicionado. O sujeito paciente é *\"o nome...\"* (singular), exigindo verbo no singular: *Deu-se*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Tentar concordar o verbo na voz passiva sintética com termo preposicionado. Exemplo: *\"Deu-se às poesias o nome de Primeiros Cantos\"*. Correção: O termo *\"às poesias\"* é objeto indireto preposicionado. O sujeito paciente é *\"o nome...\"* (singular), exigindo verbo no singular: *Deu-se*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G01"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g01-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Fundamentos",
+    "front": "Qual erro deve ser evitado em Preposição Impedindo o Vocábulo \"Relógio\" de ser Sujeito?",
+    "back": "Problema: Julgar que *\"no relógio\"* é sujeito do verbo dar/bater/soar. Erro comum: Grafar *\"Deu cinco horas no relógio\"*. Correção: A contração *em + o = no* transforma o vocábulo em adjunto adverbial de lugar. O sujeito passa a ser *cinco horas*, exigindo: *Deram cinco horas no relógio*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Julgar que *\"no relógio\"* é sujeito do verbo dar/bater/soar. Erro comum: Grafar *\"Deu cinco horas no relógio\"*. Correção: A contração *em + o = no* transforma o vocábulo em adjunto adverbial de lugar. O sujeito passa a ser *cinco horas*, exigindo: *Deram cinco horas no relógio*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G01"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g01-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Fundamentos",
+    "front": "Qual erro deve ser evitado em Atração Indevida de Plural em Sujeito Oracional Intercalado?",
+    "back": "Problema: Na frase *\"As inquietações que coube a ela registrar...\"*, flexionar o verbo *caber* no plural (*couberam*). Correção: O sujeito de *caber* é a oração infinitiva *registrar as inquietações* (*\"Isso coube a ela\"*). Sujeito oracional impõe verbo no singular.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Na frase *\"As inquietações que coube a ela registrar...\"*, flexionar o verbo *caber* no plural (*couberam*). Correção: O sujeito de *caber* é a oração infinitiva *registrar as inquietações* (*\"Isso coube a ela\"*). Sujeito oracional impõe verbo no singular.",
     "sourceRefs": [
       "EDITORIAL:IP-A09-G01"
     ],
@@ -2241,6 +6321,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a09-g02-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Aprofundamento",
+    "front": "Qual erro deve ser evitado em O Erro Popular de Escrever \"Haviam\" ou \"Fazem\"?",
+    "back": "O Erro: Escrever ou aceitar formas como \\\"Haviam muitas pessoas\"*, \\\"Fazem dez meses\"*, \\\"Houveram problemas\"*. Por que ocorre: No cotidiano informal, o falante transfere a concordância de *existir* para o verbo *haver* e pluraliza *fazer* pelo valor numérico. Como evitar: *Haver* (= existir) e *fazer* (tempo) são estritamente impessoais. Os substantivos associados são objetos diretos ou adjuntos. A flexão correta é sempre no singular: *Havia muitas pessoas*, *Faz dez meses*, *Houve problemas*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Escrever ou aceitar formas como \\\"Haviam muitas pessoas\"*, \\\"Fazem dez meses\"*, \\\"Houveram problemas\"*. Por que ocorre: No cotidiano informal, o falante transfere a concordância de *existir* para o verbo *haver* e pluraliza *fazer* pelo valor numérico. Como evitar: *Haver* (= existir) e *fazer* (tempo) são estritamente impessoais. Os substantivos associados são objetos diretos ou adjuntos. A flexão correta é sempre no singular: *Havia muitas pessoas*, *Faz dez meses*, *Houve problemas*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G02"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g02-misconceptions-and-traps-027",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Tratar o Pronome \"Lhes\" como Sujeito da Oração?",
+    "back": "O Erro: Flexionar o verbo no plural para concordar com o pronome *lhes* (ex.: aceitar \\\"o que lhes devem ser necessário\"*). Por que ocorre: O candidato associa o plural morfológico de *lhes* à concordância verbal. Como evitar: O pronome *lhes* é oblíquo preposicionado (*a eles*), atuando como objeto indireto ou complemento nominal. O sujeito deve ser buscado no pronome relativo: *o que lhes deve ser necessário*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Flexionar o verbo no plural para concordar com o pronome *lhes* (ex.: aceitar \\\"o que lhes devem ser necessário\"*). Por que ocorre: O candidato associa o plural morfológico de *lhes* à concordância verbal. Como evitar: O pronome *lhes* é oblíquo preposicionado (*a eles*), atuando como objeto indireto ou complemento nominal. O sujeito deve ser buscado no pronome relativo: *o que lhes deve ser necessário*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G02"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g02-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Pluralizar o Auxiliar em Locuções com HAVER Existencial?",
+    "back": "O Erro: Escrever \\\"Devem haver soluções\"*, \\\"Podem haver dúvidas\"*, \\\"Vão fazer dois anos\"*. Por que ocorre: O candidato flexiona o verbo auxiliar concordando com o termo substantivo posposto (*soluções*, *dúvidas*). Como evitar: O auxiliar absorve a impessoalidade do verbo principal. O correto é: *Deve haver soluções*, *Pode haver dúvidas*, *Vai fazer dois anos*. (Contraste: *Devem existir soluções*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Escrever \\\"Devem haver soluções\"*, \\\"Podem haver dúvidas\"*, \\\"Vão fazer dois anos\"*. Por que ocorre: O candidato flexiona o verbo auxiliar concordando com o termo substantivo posposto (*soluções*, *dúvidas*). Como evitar: O auxiliar absorve a impessoalidade do verbo principal. O correto é: *Deve haver soluções*, *Pode haver dúvidas*, *Vai fazer dois anos*. (Contraste: *Devem existir soluções*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G02"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g02-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Desconsiderar a Pessoalidade de Verbos Meteorológicos no Sentido Figurado?",
+    "back": "O Erro: Achar que verbos como *chover* nunca podem ir para o plural em nenhuma hipótese. Por que ocorre: Memorização mecânica da regra de fenômenos da natureza sem checagem do contexto semântico. Como evitar: Empregado figurativamente, o verbo é plenamente pessoal e concorda com o sujeito: *Choveram críticas ao projeto*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Achar que verbos como *chover* nunca podem ir para o plural em nenhuma hipótese. Por que ocorre: Memorização mecânica da regra de fenômenos da natureza sem checagem do contexto semântico. Como evitar: Empregado figurativamente, o verbo é plenamente pessoal e concorda com o sujeito: *Choveram críticas ao projeto*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G02"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a09-g03-misconceptions-and-traps-017",
     "source": "suveca",
     "topic": "Concordância Verbal - Questões",
@@ -2264,6 +6408,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Achar que a concordância atrativa (com o núcleo mais próximo) é sempre facultativa. Regra Rígida: Se o sujeito composto estiver anteposto ao verbo, a concordância é exclusivamente total no plural (*O olhar, o contraste e a luta obrigam*). A concordância atrativa só é admitida se o sujeito composto estiver posposto (*Chegou/chegaram o pai e a mãe*).",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Achar que a concordância atrativa (com o núcleo mais próximo) é sempre facultativa. Regra Rígida: Se o sujeito composto estiver anteposto ao verbo, a concordância é exclusivamente total no plural (*O olhar, o contraste e a luta obrigam*). A concordância atrativa só é admitida se o sujeito composto estiver posposto (*Chegou/chegaram o pai e a mãe*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G03"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g03-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Questões",
+    "front": "Qual erro deve ser evitado em A Falsa Coordenação do \"E\" em Termos Modificadores?",
+    "back": "O Erro: Assumir que qualquer frase longa com a conjunção *e* possui sujeito composto. Forma Correta: O \"e\" dentro de adjuntos ou complementos apenas expande o núcleo do sujeito simples (*Os gastos com a lei e a ordem crescem* $\\rightarrow$ núcleo *gastos*; *O privilégio de fazer X e Y indica* $\\rightarrow$ núcleo *privilégio*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Assumir que qualquer frase longa com a conjunção *e* possui sujeito composto. Forma Correta: O \"e\" dentro de adjuntos ou complementos apenas expande o núcleo do sujeito simples (*Os gastos com a lei e a ordem crescem* $\\rightarrow$ núcleo *gastos*; *O privilégio de fazer X e Y indica* $\\rightarrow$ núcleo *privilégio*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G03"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g03-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Questões",
+    "front": "Qual erro deve ser evitado em Contaminação de Plural em Locuções com Haver Impessoal?",
+    "back": "O Erro: Flexionar o verbo auxiliar diante de substantivo plural em locuções com *haver* existencial (*\"Devem haver motivos\"*, *\"Podem haver problemas\"*). Forma Correta: O verbo auxiliar herda a impessoalidade: Deve haver motivos, Pode haver problemas. (Diferente de *existir*: Devem existir motivos).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Flexionar o verbo auxiliar diante de substantivo plural em locuções com *haver* existencial (*\"Devem haver motivos\"*, *\"Podem haver problemas\"*). Forma Correta: O verbo auxiliar herda a impessoalidade: Deve haver motivos, Pode haver problemas. (Diferente de *existir*: Devem existir motivos).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G03"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g03-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Questões",
+    "front": "Qual erro deve ser evitado em Pluralização Diante de Aposto Resumitivo?",
+    "back": "O Erro: Tentar somar os núcleos antecedentes ao aposto resumitivo (*\"O dinheiro, as posses, a saúde, tudo se perderam\"*). Forma Correta: Diante de *tudo*, *nada*, *ninguém* ou *tudo isso*, o verbo obrigatoriamente fica no singular: tudo se perdeu, tudo isso representa.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Tentar somar os núcleos antecedentes ao aposto resumitivo (*\"O dinheiro, as posses, a saúde, tudo se perderam\"*). Forma Correta: Diante de *tudo*, *nada*, *ninguém* ou *tudo isso*, o verbo obrigatoriamente fica no singular: tudo se perdeu, tudo isso representa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G03"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g03-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Questões",
+    "front": "Qual erro deve ser evitado em Pluralização Incorreta da Expressão \"Tratar-se de\"?",
+    "back": "O Erro: Escrever ou aceitar em prova a forma tratam-se de quando o complemento for plural (*\"Tratam-se de problemas graves\"*). Forma Correta: O verbo *tratar-se de* com *SE* indeterminador é absolutamente invariável no singular: Trata-se de problemas graves.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Escrever ou aceitar em prova a forma tratam-se de quando o complemento for plural (*\"Tratam-se de problemas graves\"*). Forma Correta: O verbo *tratar-se de* com *SE* indeterminador é absolutamente invariável no singular: Trata-se de problemas graves.",
     "sourceRefs": [
       "EDITORIAL:IP-A09-G03"
     ],
@@ -2305,6 +6513,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a09-g04-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Casos Especiais",
+    "front": "Qual erro deve ser evitado em A Armadilha do 1,99% (Lógica do Português vs. Matemática)?",
+    "back": "Problema: Flexionar o verbo no plural diante de 1,99% do eleitorado por representar milhares de eleitores. Forma correta: A concordância gramatical com numerais decimais olha apenas a parte inteira antes da vírgula: até 1,99 o verbo fica no singular (*1,99% do eleitorado anulou*). Plural apenas a partir de 2,00%.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Flexionar o verbo no plural diante de 1,99% do eleitorado por representar milhares de eleitores. Forma correta: A concordância gramatical com numerais decimais olha apenas a parte inteira antes da vírgula: até 1,99 o verbo fica no singular (*1,99% do eleitorado anulou*). Plural apenas a partir de 2,00%.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G04"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g04-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Casos Especiais",
+    "front": "Qual erro deve ser evitado em Pergunta de Sujeito vs. Pergunta de Concordância com \"Que\"?",
+    "back": "Problema: Confundir a indicação do sujeito formal com a justificativa de flexão. Forma correta: Se a banca perguntar *qual é o sujeito*, responda o pronome relativo que (sujeito sintático); se perguntar *com quem o verbo concorda*, responda o antecedente substantivo (sujeito semântico).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Confundir a indicação do sujeito formal com a justificativa de flexão. Forma correta: Se a banca perguntar *qual é o sujeito*, responda o pronome relativo que (sujeito sintático); se perguntar *com quem o verbo concorda*, responda o antecedente substantivo (sujeito semântico).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G04"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g04-misconceptions-and-traps-026",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Casos Especiais",
+    "front": "Qual erro deve ser evitado em Confundir Objeto Direto com Sujeito Posposto do Infinitivo?",
+    "back": "Problema: Na frase *Originalidade é a arte de esconder suas fontes*, considerar *suas fontes* como sujeito posposto e flexionar *esconderem*. Forma correta: *Quem esconde, esconde algo*: *suas fontes* é Objeto Direto; o infinitivo é impessoal (\"qualquer um\") e fica no singular.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Na frase *Originalidade é a arte de esconder suas fontes*, considerar *suas fontes* como sujeito posposto e flexionar *esconderem*. Forma correta: *Quem esconde, esconde algo*: *suas fontes* é Objeto Direto; o infinitivo é impessoal (\"qualquer um\") e fica no singular.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G04"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g04-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Concordância Verbal - Casos Especiais",
+    "front": "Qual erro deve ser evitado em Tratar o Objeto Direto de \"Haver\" como Sujeito?",
+    "back": "Problema: Tratar muitos problemas em *Houve muitos problemas* como sujeito e conjugar *Houveram*. Forma correta: O verbo haver existencial é VTD impessoal; o termo posposto é Objeto Direto. O verbo fica travado na 3ª pessoa do singular (*Havia dúvidas*, *Houve problemas*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Tratar muitos problemas em *Houve muitos problemas* como sujeito e conjugar *Houveram*. Forma correta: O verbo haver existencial é VTD impessoal; o termo posposto é Objeto Direto. O verbo fica travado na 3ª pessoa do singular (*Havia dúvidas*, *Houve problemas*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G04"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a09-g05-misconceptions-and-traps-013",
     "source": "suveca",
     "topic": "Concordância Nominal - Parte 01",
@@ -2328,6 +6600,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Confiar no \"ouvido\" em concordância nominal é uma armadilha em provas de alto nível. Formas perfeitamente corretas pela norma culta (como *desconhecido clima e terra* ou *sala e quarto espaçoso*) soam estranhas ao ouvido coloquial, ao passo que erros crassos de concordância lógica parecem intuitivamente aceitáveis.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Confiar no \"ouvido\" em concordância nominal é uma armadilha em provas de alto nível. Formas perfeitamente corretas pela norma culta (como *desconhecido clima e terra* ou *sala e quarto espaçoso*) soam estranhas ao ouvido coloquial, ao passo que erros crassos de concordância lógica parecem intuitivamente aceitáveis.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G05"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g05-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 01",
+    "front": "Qual erro deve ser evitado em Deslocamento do Modificador para o Meio do Sintagma (AOCP / FCC)?",
+    "back": "Em questões de reescrita, o deslocamento do adjetivo para o meio da enumeração (*\"roupas masculinas e calçados\"*) mantém a correção gramatical da concordância com *roupas*, mas restringe o sentido, deixando *calçados* indeterminado. Se o comando exigir manutenção de sentido, a opção deve ser eliminada.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Em questões de reescrita, o deslocamento do adjetivo para o meio da enumeração (*\"roupas masculinas e calçados\"*) mantém a correção gramatical da concordância com *roupas*, mas restringe o sentido, deixando *calçados* indeterminado. Se o comando exigir manutenção de sentido, a opção deve ser eliminada.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G05"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g05-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 01",
+    "front": "Qual erro deve ser evitado em A Ilusão da Restrição Semântica na Concordância Atrativa Posposta?",
+    "back": "Erro Comum: Supor que em *\"cabelos e barba branca\"*, apenas a barba é branca e os cabelos possuem outra coloração. Verdade Gramatical: A extensão semântica continua integral (ambos são brancos). Bancas como Cebraspe e FGV consideram incorreto afirmar que essa troca gera alteração de sentido.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Supor que em *\"cabelos e barba branca\"*, apenas a barba é branca e os cabelos possuem outra coloração. Verdade Gramatical: A extensão semântica continua integral (ambos são brancos). Bancas como Cebraspe e FGV consideram incorreto afirmar que essa troca gera alteração de sentido.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G05"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g05-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 01",
+    "front": "Qual erro deve ser evitado em A Armadilha do Piloto Automático na Referenciação Semântica (FGV)?",
+    "back": "O candidato decora que adjetivo posposto \"sempre aceita plural\" e valida sentenças como *\"qualidade e preço baixos\"* ou *\"leite e pão torrados\"*. A FGV anula a concordância total caso a relação gere contradição ou absurdo pragmático no texto.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O candidato decora que adjetivo posposto \"sempre aceita plural\" e valida sentenças como *\"qualidade e preço baixos\"* ou *\"leite e pão torrados\"*. A FGV anula a concordância total caso a relação gere contradição ou absurdo pragmático no texto.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G05"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g05-mnemonics-and-tips-009",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 01",
+    "front": "Como aplicar A Visão Curta do Adjetivo Anteposto: \"Não Soma\"?",
+    "back": "Memorize a regra espacial: Adjetivo DEPOIS (Posposto): Tem visão panorâmica (pode fazer a soma total no plural ou olhar apenas para o vizinho). Adjetivo ANTES (Anteposto): Tem visão curta (só enxerga o primeiro substantivo imediatamente colado a ele). Nunca faça concordância total no plural na anteposição.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Memorize a regra espacial: Adjetivo DEPOIS (Posposto): Tem visão panorâmica (pode fazer a soma total no plural ou olhar apenas para o vizinho). Adjetivo ANTES (Anteposto): Tem visão curta (só enxerga o primeiro substantivo imediatamente colado a ele). Nunca faça concordância total no plural na anteposição.",
     "sourceRefs": [
       "EDITORIAL:IP-A09-G05"
     ],
@@ -2369,6 +6705,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a09-g06-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 02",
+    "front": "Qual erro deve ser evitado em Confundir Sentido Original com Coerência Textual (Cebraspe)?",
+    "back": "Armadilha: Julgar um item do Cebraspe como ERRADO porque a reescrita mudou o sentido, quando a banca perguntou apenas se *mantinha a correção gramatical e a coerência*. Correção: Coerência é lógica interna. Uma frase pode mudar de sentido em relação ao original e continuar perfeitamente lógica e correta.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Julgar um item do Cebraspe como ERRADO porque a reescrita mudou o sentido, quando a banca perguntou apenas se *mantinha a correção gramatical e a coerência*. Correção: Coerência é lógica interna. Uma frase pode mudar de sentido em relação ao original e continuar perfeitamente lógica e correta.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G06"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g06-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 02",
+    "front": "Qual erro deve ser evitado em Tentativa Indevida de Flexão do Particípio em Tempos Compostos?",
+    "back": "Erro comum: Flexionar o particípio com o objeto direto em tempos compostos (*A mulher tinha pintada a parede* / *Eles tinham pintadas as paredes*). Correção: Em tempos compostos com *ter/haver*, o particípio é absolutamente invariável (*tinha pintado* / *tinham pintado*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Flexionar o particípio com o objeto direto em tempos compostos (*A mulher tinha pintada a parede* / *Eles tinham pintadas as paredes*). Correção: Em tempos compostos com *ter/haver*, o particípio é absolutamente invariável (*tinha pintado* / *tinham pintado*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G06"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g06-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 02",
+    "front": "Qual erro deve ser evitado em A Conjunção \"E\" Dentro de Termos Preposicionados?",
+    "back": "Armadilha: Achar que toda ocorrência do conectivo \"e\" gera sujeito composto. Correção: Em *A retirada do lixo [das casas e praias] era feita*, o \"e\" une palavras dentro do adjunto preposicionado; o sujeito continua simples (*A retirada* $\\rightarrow$ singular).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: Achar que toda ocorrência do conectivo \"e\" gera sujeito composto. Correção: Em *A retirada do lixo [das casas e praias] era feita*, o \"e\" une palavras dentro do adjunto preposicionado; o sujeito continua simples (*A retirada* $\\rightarrow$ singular).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G06"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g06-mnemonics-and-tips-017",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 02",
+    "front": "Como aplicar Mapeamento Rápido dos Três Compartimentos do CEBRASPE?",
+    "back": "Comando: Sublinhe no comando do item as palavras-chave: Contém *\"mantém o sentido\"*? $\\rightarrow$ Se mudou a seta sintática e não for partitivo, marque ERRADO. Contém apenas *\"mantém a correção e a coerência\"*? $\\rightarrow$ A mudança de seta é permitida se a frase for lógica e gramaticalmente válida (CERTO).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Comando: Sublinhe no comando do item as palavras-chave: Contém *\"mantém o sentido\"*? $\\rightarrow$ Se mudou a seta sintática e não for partitivo, marque ERRADO. Contém apenas *\"mantém a correção e a coerência\"*? $\\rightarrow$ A mudança de seta é permitida se a frase for lógica e gramaticalmente válida (CERTO).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G06"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a09-g07-misconceptions-and-traps-016",
     "source": "suveca",
     "topic": "Concordância Nominal - Parte 03",
@@ -2392,6 +6792,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro: Achar que determinante é apenas artigo e concluir que *É proibido entrada de pessoas estranhas* está correto. Correção: A locução adjetiva restritiva *de pessoas estranhas* determina o substantivo *entrada*, tornando obrigatória a flexão: *É proibida entrada de pessoas estranhas*.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro: Achar que determinante é apenas artigo e concluir que *É proibido entrada de pessoas estranhas* está correto. Correção: A locução adjetiva restritiva *de pessoas estranhas* determina o substantivo *entrada*, tornando obrigatória a flexão: *É proibida entrada de pessoas estranhas*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G07"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g07-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 03",
+    "front": "Qual erro deve ser evitado em Confusão de Particípio Passivo com Particípio em Tempos Compostos Ativos?",
+    "back": "Erro: Achar que o particípio nunca flexiona em locuções verbais. Distinção: Em tempos compostos ativos com *ter/haver*, o particípio é invariável (*Tinham reconhecido os direitos*). Na voz passiva analítica com *ser*, o particípio é variável (*Direitos foram reconhecidos*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Achar que o particípio nunca flexiona em locuções verbais. Distinção: Em tempos compostos ativos com *ter/haver*, o particípio é invariável (*Tinham reconhecido os direitos*). Na voz passiva analítica com *ser*, o particípio é variável (*Direitos foram reconhecidos*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G07"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g07-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 03",
+    "front": "Qual erro deve ser evitado em Descuido com a Retomada Anafórica de \"Como Tal\"?",
+    "back": "Erro: Usar a expressão *como tal* no singular quando o termo antecedente for plural (*Eles eram bagunceiros e foram punidos como tal*). Correção: A concordância anafórica exige a forma plural: *punidos como tais*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Usar a expressão *como tal* no singular quando o termo antecedente for plural (*Eles eram bagunceiros e foram punidos como tal*). Correção: A concordância anafórica exige a forma plural: *punidos como tais*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G07"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g07-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 03",
+    "front": "Qual erro deve ser evitado em O Erro de Congelar a Locução \"Tal Qual\"?",
+    "back": "Erro: Supor que sujeito plural exige *tais quais* automaticamente (*Os filhos são tais quais a mãe*). Correção: *Os filhos são tais qual a mãe*, pois *qual* responde unicamente ao singular de *a mãe*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Supor que sujeito plural exige *tais quais* automaticamente (*Os filhos são tais quais a mãe*). Correção: *Os filhos são tais qual a mãe*, pois *qual* responde unicamente ao singular de *a mãe*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A09-G07"
+    ],
+    "moduleId": "mod9",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a09-g07-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Concordância Nominal - Parte 03",
+    "front": "Qual erro deve ser evitado em Proibição de Pluralizar o Vocábulo \"Vista\" em \"Haja Vista\"?",
+    "back": "Erro: Pluralizar a palavra *vista*, gerando construções como *haja vistas* ou *hajam vistas*. Correção: A palavra *vista* é absolutamente invariável. Admitem-se apenas haja vista e hajam vista.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Pluralizar a palavra *vista*, gerando construções como *haja vistas* ou *hajam vistas*. Correção: A palavra *vista* é absolutamente invariável. Admitem-se apenas haja vista e hajam vista.",
     "sourceRefs": [
       "EDITORIAL:IP-A09-G07"
     ],
@@ -2465,6 +6929,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a10-g02-misconceptions-and-traps-026",
+    "source": "suveca",
+    "topic": "Regência Verbal - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Confundir a Polissemia de Agradar?",
+    "back": "Problema: Empregar *agradar os clientes* quando o sentido for \"ser agradável / satisfazer\". Norma Padrão: *Agradar* com sentido de satisfação é VTI (*agradar aos clientes*). VTD é restrito ao sentido físico de fazer carinho (*agradar o cão*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Empregar *agradar os clientes* quando o sentido for \"ser agradável / satisfazer\". Norma Padrão: *Agradar* com sentido de satisfação é VTI (*agradar aos clientes*). VTD é restrito ao sentido físico de fazer carinho (*agradar o cão*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G02"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g02-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Regência Verbal - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Uso Vicioso de \"Implicar em\"?",
+    "back": "Problema: Dizer ou aceitar em prova *a crise implicará em demissões*. Norma Padrão: *Implicar* (acarretar) é exclusivamente VTD (*implicará demissões*). *Implicar em* só existe no sentido pronominal de envolver-se (*implicou-se em fraudes*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Dizer ou aceitar em prova *a crise implicará em demissões*. Norma Padrão: *Implicar* (acarretar) é exclusivamente VTD (*implicará demissões*). *Implicar em* só existe no sentido pronominal de envolver-se (*implicou-se em fraudes*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G02"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g02-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Regência Verbal - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Assistir no Sentido de Prestar Socorro em Provas Tradicionais?",
+    "back": "Problema: Considerar *assistir ao paciente* como a forma padrão para assistência médica/jurídica. Norma Padrão de Concursos: As bancas tradicionais exigem VTD (*assistir o paciente*, *assistiu o motorista*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Considerar *assistir ao paciente* como a forma padrão para assistência médica/jurídica. Norma Padrão de Concursos: As bancas tradicionais exigem VTD (*assistir o paciente*, *assistiu o motorista*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G02"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g02-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Regência Verbal - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Expressões Comerciais e Forenses Incorretas (\"A Domicílio\" e \"Sito à Rua\")?",
+    "back": "Problema: Anúncios de \"entrega a domicílio\" ou petições com \"imóvel sito à rua X\". Norma Padrão para Concursos: O padrão culto exige a preposição em (*entrega em domicílio*; *imóvel situado/sito na rua X*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Anúncios de \"entrega a domicílio\" ou petições com \"imóvel sito à rua X\". Norma Padrão para Concursos: O padrão culto exige a preposição em (*entrega em domicílio*; *imóvel situado/sito na rua X*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G02"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a10-g03-misconceptions-and-traps-013",
     "source": "suveca",
     "topic": "Regência e Pronomes Relativos",
@@ -2488,6 +7016,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Grafar acento grave na sequência *à quem* em orações adjetivas preposicionadas (ex.: *pessoas à quem emprestamos*). Mecanismo da Falha: Confundir a preposição a exigida pelo verbo transitivo indireto com a ocorrência de crase. Detecção e Correção: O pronome relativo *quem* repele artigo feminino, inviabilizando a crase -> forma correta: *a quem*.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Grafar acento grave na sequência *à quem* em orações adjetivas preposicionadas (ex.: *pessoas à quem emprestamos*). Mecanismo da Falha: Confundir a preposição a exigida pelo verbo transitivo indireto com a ocorrência de crase. Detecção e Correção: O pronome relativo *quem* repele artigo feminino, inviabilizando a crase -> forma correta: *a quem*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G03"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g03-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Regência e Pronomes Relativos",
+    "front": "Qual erro deve ser evitado em Emprego Indevido de \"Onde\" para Referentes Abstratos?",
+    "back": "O Erro: Utilizar *onde* ou *aonde* para retomar palavras conceituais como *violência*, *verdade*, *situação*, *sociedade*, *quadros*. Mecanismo da Falha: Vício de oralidade que converte *onde* em hiperconectivo universal. Detecção e Correção: Se o termo antecedente não for um espaço físico cartografável/arquitetônico, use *em que*, *no qual*, *de que*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Utilizar *onde* ou *aonde* para retomar palavras conceituais como *violência*, *verdade*, *situação*, *sociedade*, *quadros*. Mecanismo da Falha: Vício de oralidade que converte *onde* em hiperconectivo universal. Detecção e Correção: Se o termo antecedente não for um espaço físico cartografável/arquitetônico, use *em que*, *no qual*, *de que*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G03"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g03-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Regência e Pronomes Relativos",
+    "front": "Qual erro deve ser evitado em Falsa Equivalência entre Regência Verbal e Nominal de Cognatos?",
+    "back": "O Erro: Supor que *ter simpatia* rege com porque o verbo *simpatizar* rege com (produzindo *com cujas ideias temos simpatia*). Mecanismo da Falha: Generalização indevida da transitividade verbal para o substantivo cognato. Detecção e Correção: *Simpatizar COM* (verbo) vs. *Simpatia POR* (substantivo) -> forma correta: *por cujas ideias temos simpatia*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Supor que *ter simpatia* rege com porque o verbo *simpatizar* rege com (produzindo *com cujas ideias temos simpatia*). Mecanismo da Falha: Generalização indevida da transitividade verbal para o substantivo cognato. Detecção e Correção: *Simpatizar COM* (verbo) vs. *Simpatia POR* (substantivo) -> forma correta: *por cujas ideias temos simpatia*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G03"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g03-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Regência e Pronomes Relativos",
+    "front": "Qual erro deve ser evitado em Violação Estrutural do Pronome Relativo \"Cujo\"?",
+    "back": "O Erro: Inserir artigo após *cujo* (*cuja a*), usar *cujo* antes de verbos (*em cujo se reproduz*) ou antes de pronomes (*de cuja ninguém*). Mecanismo da Falha: Tratar *cujo* como pronome relativo comum equivalente a *que* ou *o qual*. Detecção e Correção: *Cujo* exige conexão exclusiva entre substantivo possuidor e substantivo possuído.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Inserir artigo após *cujo* (*cuja a*), usar *cujo* antes de verbos (*em cujo se reproduz*) ou antes de pronomes (*de cuja ninguém*). Mecanismo da Falha: Tratar *cujo* como pronome relativo comum equivalente a *que* ou *o qual*. Detecção e Correção: *Cujo* exige conexão exclusiva entre substantivo possuidor e substantivo possuído.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G03"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g03-mnemonics-and-tips-010",
+    "source": "suveca",
+    "topic": "Regência e Pronomes Relativos",
+    "front": "Como aplicar O Teste do \"Menino\" para Transitividade Verbal Imediata?",
+    "back": "Classificação: Macete operacional de prova. Aplicação prática: Em caso de dúvida sobre a transitividade de um verbo simples em prova, substitua o complemento pela expressão *\"o menino\"*: Se soar *\"o menino\"* -> verbo é VTD (não leva preposição antes do relativo). Ex.: *considerar -> considera o menino*. Se soar *\"ao menino\"* -> verbo rege preposição a. Ex.: *obedecer -> obedece ao menino*. Se soar *\"do menino\"* -> verbo rege preposição de. Ex.: *gostar -> gosta do menino*.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Classificação: Macete operacional de prova. Aplicação prática: Em caso de dúvida sobre a transitividade de um verbo simples em prova, substitua o complemento pela expressão *\"o menino\"*: Se soar *\"o menino\"* -> verbo é VTD (não leva preposição antes do relativo). Ex.: *considerar -> considera o menino*. Se soar *\"ao menino\"* -> verbo rege preposição a. Ex.: *obedecer -> obedece ao menino*. Se soar *\"do menino\"* -> verbo rege preposição de. Ex.: *gostar -> gosta do menino*.",
     "sourceRefs": [
       "EDITORIAL:IP-A10-G03"
     ],
@@ -2529,6 +7121,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a10-g04-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Regência e Pronomes Pessoais",
+    "front": "Qual erro deve ser evitado em Preconceito de Gênero com o Pronome LHE / LHES?",
+    "back": "Problema: Achar que, por \"ordens\" ser feminino plural, o pronome substitutivo com *obedecer* deva ser *as* (*\"as obedeci\"*). Correção: *Obedecer* é VTI. O pronome lhes não tem feminino e atua perfeitamente no feminino plural: *lhes obedeci* (ou *obedeci a elas*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Achar que, por \"ordens\" ser feminino plural, o pronome substitutivo com *obedecer* deva ser *as* (*\"as obedeci\"*). Correção: *Obedecer* é VTI. O pronome lhes não tem feminino e atua perfeitamente no feminino plural: *lhes obedeci* (ou *obedeci a elas*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G04"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g04-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Regência e Pronomes Pessoais",
+    "front": "Qual erro deve ser evitado em O Erro Clássico de \"Implicar em\" no Sentido de Acarretar?",
+    "back": "Problema: Redigir *\\*\"A medida implicará em demissões\"*. Correção: No sentido de acarretar, *implicar* é VTD $\\implies$ *A medida implicará demissões*. A preposição *em* só é legítima na forma pronominal reflexiva (*implicar-se em* = envolver-se).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Redigir *\\*\"A medida implicará em demissões\"*. Correção: No sentido de acarretar, *implicar* é VTD $\\implies$ *A medida implicará demissões*. A preposição *em* só é legítima na forma pronominal reflexiva (*implicar-se em* = envolver-se).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G04"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g04-misconceptions-and-traps-027",
+    "source": "suveca",
+    "topic": "Regência e Pronomes Pessoais",
+    "front": "Qual erro deve ser evitado em Pegadinha de \"Preservação de Sentido\" em Verbos de Dupla Regência?",
+    "back": "Problema: Assinalar como correta a troca de regência em verbos como *entender*. Correção: Trocar *coisas das quais não entende* por *coisas que não entende* mantém a correção sintática, mas altera o sentido semântico original.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Assinalar como correta a troca de regência em verbos como *entender*. Correção: Trocar *coisas das quais não entende* por *coisas que não entende* mantém a correção sintática, mas altera o sentido semântico original.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G04"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g04-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Regência e Pronomes Pessoais",
+    "front": "Qual erro deve ser evitado em Alomorfia Indevida em Estruturas Proclíticas?",
+    "back": "Problema: Aplicar acomodações enclíticas em contexto de próclise (*\"não no viram\"*, *\"não encontrei-las\"*). Correção: Com palavra atrativa (*não*), o pronome retorna à forma base: *não o viram*, *não as encontrei*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Aplicar acomodações enclíticas em contexto de próclise (*\"não no viram\"*, *\"não encontrei-las\"*). Correção: Com palavra atrativa (*não*), o pronome retorna à forma base: *não o viram*, *não as encontrei*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G04"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a10-g05-misconceptions-and-traps-014",
     "source": "suveca",
     "topic": "Regência Nominal",
@@ -2552,6 +7208,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Armadilha: A banca afirma: *\"A substituição de X por Y, embora mantivesse o sentido, prejudicaria a correção gramatical\"*. Como Evitar: Em casos de dupla regência legítima (*relacionada com / a*, *intenção de / em*), a correção não é prejudicada. A assertiva deve ser julgada como Errada.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Armadilha: A banca afirma: *\"A substituição de X por Y, embora mantivesse o sentido, prejudicaria a correção gramatical\"*. Como Evitar: Em casos de dupla regência legítima (*relacionada com / a*, *intenção de / em*), a correção não é prejudicada. A assertiva deve ser julgada como Errada.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G05"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g05-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Regência Nominal",
+    "front": "Qual erro deve ser evitado em Quebra de Paralelismo em Correlações Fixas?",
+    "back": "Erro: *Ele atende de segunda à sexta.* Regra: A correlação exige simetria absoluta: ou usa apenas preposição (*de segunda a sexta* - sem crase) ou usa preposição + artigo (*da segunda à sexta* - com crase).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: *Ele atende de segunda à sexta.* Regra: A correlação exige simetria absoluta: ou usa apenas preposição (*de segunda a sexta* - sem crase) ou usa preposição + artigo (*da segunda à sexta* - com crase).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G05"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g05-misconceptions-and-traps-011",
+    "source": "suveca",
+    "topic": "Regência Nominal",
+    "front": "Qual erro deve ser evitado em O Erro de Reprovar a Preposição Culta por Desconhecimento?",
+    "back": "Erro: O candidato habituado a *acostumado com* julga errada a frase que traz *acostumado a*. Como Evitar: Lembrar que a norma-padrão consagra múltiplas regências para adjetivos e substantivos comuns.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: O candidato habituado a *acostumado com* julga errada a frase que traz *acostumado a*. Como Evitar: Lembrar que a norma-padrão consagra múltiplas regências para adjetivos e substantivos comuns.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G05"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g05-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Regência Nominal",
+    "front": "Qual erro deve ser evitado em Omissão de Preposição diante de Orações Subordinadas?",
+    "back": "Erro: Considerar correto *\"tenho certeza que...\"* ou *\"não há dúvida que...\"*. Como Evitar: Exigir a presença da preposição *de* (*certeza de que*, *dúvida de que*, *sensação de que*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Considerar correto *\"tenho certeza que...\"* ou *\"não há dúvida que...\"*. Como Evitar: Exigir a presença da preposição *de* (*certeza de que*, *dúvida de que*, *sensação de que*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G05"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g05-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Regência Nominal",
+    "front": "Qual erro deve ser evitado em Confusão Semântica entre \"Sob\" e \"Sobre\"?",
+    "back": "Erro: Empregar *impacto sob a sociedade*. Regra: O impacto incide *sobre* (por cima/ação direta). *Sob* indica subordinação ou posição física inferior (*sob a mesa*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Empregar *impacto sob a sociedade*. Regra: O impacto incide *sobre* (por cima/ação direta). *Sob* indica subordinação ou posição física inferior (*sob a mesa*).",
     "sourceRefs": [
       "EDITORIAL:IP-A10-G05"
     ],
@@ -2593,6 +7313,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a10-g06-misconceptions-and-traps-031",
+    "source": "suveca",
+    "topic": "Crase - Fundamentos",
+    "front": "Qual erro deve ser evitado em Confundir Sentido com Coerência Textual?",
+    "back": "Problema: O candidato julga que, por ter havido mudança de sentido (de específico para geral), a coerência textual também foi quebrada. Consequência: Erro em questões de reescritura de bancas exigentes (como Cebraspe). Forma correta de pensar: Coerência é harmonia lógica. Uma frase continua perfeitamente coerente ao se referir a uma categoria em geral (a festas), mesmo que antes se referisse a eventos determinados (às festas).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: O candidato julga que, por ter havido mudança de sentido (de específico para geral), a coerência textual também foi quebrada. Consequência: Erro em questões de reescritura de bancas exigentes (como Cebraspe). Forma correta de pensar: Coerência é harmonia lógica. Uma frase continua perfeitamente coerente ao se referir a uma categoria em geral (a festas), mesmo que antes se referisse a eventos determinados (às festas).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G06"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g06-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Crase - Fundamentos",
+    "front": "Qual erro deve ser evitado em Tentativa Indevida de Usar Crase antes de \"Quem\" e \"Cujo\"?",
+    "back": "Erro Comum: Colocar acento grave em a quem ou a cuja porque o verbo da oração exige preposição a (ex.: *A autora à quem me referi*). Consequência: Erro imediato de sintaxe em provas objetivas e redações. Correção: Os pronomes relativos *quem* e *cujo(a)* não aceitam artigo em hipótese alguma. O a que os antecede é estritamente preposição pura ($1 \\text{ só 'A'}$); logo, a crase é terminantemente proibida.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Colocar acento grave em a quem ou a cuja porque o verbo da oração exige preposição a (ex.: *A autora à quem me referi*). Consequência: Erro imediato de sintaxe em provas objetivas e redações. Correção: Os pronomes relativos *quem* e *cujo(a)* não aceitam artigo em hipótese alguma. O a que os antecede é estritamente preposição pura ($1 \\text{ só 'A'}$); logo, a crase é terminantemente proibida.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G06"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g06-misconceptions-and-traps-030",
+    "source": "suveca",
+    "topic": "Crase - Fundamentos",
+    "front": "Qual erro deve ser evitado em O Risco de Pular a Checagem da Regência?",
+    "back": "Problema O candidato observa que a palavra seguinte é feminina e aceita artigo (ex.: *a terra*, *a empresa*) e imediatamente coloca crase, esquecendo-se de verificar se o verbo ou nome anterior é transitivo direto (não pede preposição). Se a regência pedir preposição nula, haverá apenas artigo simples, sem crase (ex.: *O juiz comprou a terra* -> *comprou o menino* -> sem preposição -> sem crase).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema O candidato observa que a palavra seguinte é feminina e aceita artigo (ex.: *a terra*, *a empresa*) e imediatamente coloca crase, esquecendo-se de verificar se o verbo ou nome anterior é transitivo direto (não pede preposição). Se a regência pedir preposição nula, haverá apenas artigo simples, sem crase (ex.: *O juiz comprou a terra* -> *comprou o menino* -> sem preposição -> sem crase).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G06"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g06-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Crase - Fundamentos",
+    "front": "Qual erro deve ser evitado em O Mito de que Palavras Masculinas Nunca Admitem Crase?",
+    "back": "Erro Comum: Julgar errada a crase em *àquele* ou *àquilo* sob o pretexto de que são palavras masculinas ou neutras. Consequência: Erro grave em questões de nível médio e avançado. Correção: Os pronomes *aquele*, *aquela* e *aquilo* admitem acento grave em sua vogal inicial porque a fusão ocorre com a letra A do próprio pronome demonstrativo, independentemente de seu gênero gramatical.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Julgar errada a crase em *àquele* ou *àquilo* sob o pretexto de que são palavras masculinas ou neutras. Consequência: Erro grave em questões de nível médio e avançado. Correção: Os pronomes *aquele*, *aquela* e *aquilo* admitem acento grave em sua vogal inicial porque a fusão ocorre com a letra A do próprio pronome demonstrativo, independentemente de seu gênero gramatical.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G06"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a10-g07-misconceptions-and-traps-027",
     "source": "suveca",
     "topic": "Crase - Aprofundamento e Questões",
@@ -2616,6 +7400,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro comum: O aluno pensa: *\"Posso escrever 'submete-se a regras' ou 'submete-se às regras', logo a crase é facultativa e eu posso tirar o acento de 'às' mantendo 'as'.\"* Consequência: Marcar como \"Errado\" quando a banca diz que o acento em às é obrigatório. Forma correta: Se a palavra escrita for as (no plural), o acento é estritamente obrigatório (às), pois as sem acento é apenas artigo e causaria erro de regência. A alternância facultativa só existe entre às (prep + art) e a (prep pura no singular), jamais entre às e as.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro comum: O aluno pensa: *\"Posso escrever 'submete-se a regras' ou 'submete-se às regras', logo a crase é facultativa e eu posso tirar o acento de 'às' mantendo 'as'.\"* Consequência: Marcar como \"Errado\" quando a banca diz que o acento em às é obrigatório. Forma correta: Se a palavra escrita for as (no plural), o acento é estritamente obrigatório (às), pois as sem acento é apenas artigo e causaria erro de regência. A alternância facultativa só existe entre às (prep + art) e a (prep pura no singular), jamais entre às e as.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G07"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g07-misconceptions-and-traps-030",
+    "source": "suveca",
+    "topic": "Crase - Aprofundamento e Questões",
+    "front": "Qual erro deve ser evitado em Pegadinha de Justificativa Sintática: Misturar VTD com Locução?",
+    "back": "Descrição do Erro: O candidato vê um verbo antes de uma palavra com crase e assume precipitadamente que a crase decorre da regência desse verbo. Consequência: Marcar como certa a questão do INSS (*ver à porta*), errando a justificativa. Prevenção: Sempre verifique a predicação do verbo. Se o verbo for VTD, o objeto direto não terá preposição; o termo com crase será um adjunto adverbial (locução feminina), e a justificativa será a regra da locução, não a regência do verbo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Descrição do Erro: O candidato vê um verbo antes de uma palavra com crase e assume precipitadamente que a crase decorre da regência desse verbo. Consequência: Marcar como certa a questão do INSS (*ver à porta*), errando a justificativa. Prevenção: Sempre verifique a predicação do verbo. Se o verbo for VTD, o objeto direto não terá preposição; o termo com crase será um adjunto adverbial (locução feminina), e a justificativa será a regra da locução, não a regência do verbo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G07"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g07-misconceptions-and-traps-031",
+    "source": "suveca",
+    "topic": "Crase - Aprofundamento e Questões",
+    "front": "Qual erro deve ser evitado em A Falsa Facultatividade em Locuções Adverbiais Femininas?",
+    "back": "Descrição do Erro: Achar que locuções adverbiais de tempo (*à hora de*) ou expressões idiomáticas (*à tona*) possuem acento facultativo. Consequência: Assinalar como \"Certo\" assertivas que afirmam que a retirada do acento manteria a correção gramatical. Prevenção: Lembre-se de que crase facultativa ocorre apenas em 3 casos clássicos (nomes próprios femininos, pronomes possessivos femininos singulares e após a preposição *até*). Locuções femininas têm acento obrigatório.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Descrição do Erro: Achar que locuções adverbiais de tempo (*à hora de*) ou expressões idiomáticas (*à tona*) possuem acento facultativo. Consequência: Assinalar como \"Certo\" assertivas que afirmam que a retirada do acento manteria a correção gramatical. Prevenção: Lembre-se de que crase facultativa ocorre apenas em 3 casos clássicos (nomes próprios femininos, pronomes possessivos femininos singulares e após a preposição *até*). Locuções femininas têm acento obrigatório.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G07"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g07-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Crase - Aprofundamento e Questões",
+    "front": "Qual erro deve ser evitado em Tentar Aplicar Regência em Locuções Femininas?",
+    "back": "Erro Comum: O candidato busca uma preposição regida pelo verbo antes de locuções como *à noite*, *às pressas* ou *à míngua*. Ao perceber que o verbo é intransitivo (ex.: *Chegou...*, *Saiu...*, *Vivera...*), conclui erroneamente que não há crase por falta de preposição. Consequência: Erro grave na resolução de questões de concursos. Forma Correta: Compreender que locuções femininas recebem crase pela Regra 2 (estrutural/locutiva), e não pela Regra 1 (regência).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: O candidato busca uma preposição regida pelo verbo antes de locuções como *à noite*, *às pressas* ou *à míngua*. Ao perceber que o verbo é intransitivo (ex.: *Chegou...*, *Saiu...*, *Vivera...*), conclui erroneamente que não há crase por falta de preposição. Consequência: Erro grave na resolução de questões de concursos. Forma Correta: Compreender que locuções femininas recebem crase pela Regra 2 (estrutural/locutiva), e não pela Regra 1 (regência).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A10-G07"
+    ],
+    "moduleId": "mod10",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a10-g07-misconceptions-and-traps-026",
+    "source": "suveca",
+    "topic": "Crase - Aprofundamento e Questões",
+    "front": "Qual erro deve ser evitado em O Falso Mito de que \"Uma\" Nunca Aceita Crase?",
+    "back": "Pegadinha de Prova: O item apresenta *Chegou à uma hora em ponto*. O candidato lembra do macete tradicional *\"antes de 'uma' não há crase porque é artigo indefinido\"* e julga o item como incorreto. Correção da Professora: 1. No contexto de horário determinado, *uma* não é artigo indefinido, mas numeral cardinal. 2. A expressão *à uma hora* é uma locução adverbial de tempo feminina (núcleo: *hora*). A crase é obrigatória.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha de Prova: O item apresenta *Chegou à uma hora em ponto*. O candidato lembra do macete tradicional *\"antes de 'uma' não há crase porque é artigo indefinido\"* e julga o item como incorreto. Correção da Professora: 1. No contexto de horário determinado, *uma* não é artigo indefinido, mas numeral cardinal. 2. A expressão *à uma hora* é uma locução adverbial de tempo feminina (núcleo: *hora*). A crase é obrigatória.",
     "sourceRefs": [
       "EDITORIAL:IP-A10-G07"
     ],
@@ -2673,6 +7521,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a11-g02-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Coesão Sequencial",
+    "front": "Qual erro deve ser evitado em Julgamento Intuitivo pelo Som (\"Pelo Ouvido\") e Uso Abusivo do Coringa \"E\"?",
+    "back": "Erro: Tentar resolver questões lendo a frase com a conjunção proposta para ver se \"soa bonito\", ou tentar usar a conjunção \"e\" para resolver todas as conexões. Como evitar: Substituir a intuição auditiva pelo Método dos 3 Passos e selecionar conectivos especializados vocacionados para cada relação semântica.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Tentar resolver questões lendo a frase com a conjunção proposta para ver se \"soa bonito\", ou tentar usar a conjunção \"e\" para resolver todas as conexões. Como evitar: Substituir a intuição auditiva pelo Método dos 3 Passos e selecionar conectivos especializados vocacionados para cada relação semântica.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A11-G02"
+    ],
+    "moduleId": "mod11",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a11-g02-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Coesão Sequencial",
+    "front": "Qual erro deve ser evitado em Confundir Exemplificação (Geral para o Específico) com Conclusão?",
+    "back": "Erro: Aceitar a conjunção *portanto* na transição de uma afirmação genérica para um caso pontual. Como evitar: Se o período 1 expressa uma regra ampla e o período 2 cita uma entidade/caso que ilustra essa regra, a relação é de exemplificação (*por exemplo*), rejeitando conectivos conclusivos.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Aceitar a conjunção *portanto* na transição de uma afirmação genérica para um caso pontual. Como evitar: Se o período 1 expressa uma regra ampla e o período 2 cita uma entidade/caso que ilustra essa regra, a relação é de exemplificação (*por exemplo*), rejeitando conectivos conclusivos.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A11-G02"
+    ],
+    "moduleId": "mod11",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a11-g02-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Coesão Sequencial",
+    "front": "Qual erro deve ser evitado em Confundir Reafirmação/Justificativa com Oposição?",
+    "back": "Erro: Inserir a conjunção adversativa *mas* entre dois períodos que expressam a mesma ideia por meio de paráfrases ou justificativas complementares. Como evitar: Exigir contradição lógica real (+ vs -). Se a segunda frase apenas reforça ou explica a primeira, a adversativa é proibida.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Inserir a conjunção adversativa *mas* entre dois períodos que expressam a mesma ideia por meio de paráfrases ou justificativas complementares. Como evitar: Exigir contradição lógica real (+ vs -). Se a segunda frase apenas reforça ou explica a primeira, a adversativa é proibida.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A11-G02"
+    ],
+    "moduleId": "mod11",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a11-g02-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Coesão Sequencial",
+    "front": "Qual erro deve ser evitado em Perda da Coordenação Motora e Inversão Causal?",
+    "back": "Erro: Inserir conectivo causal antes da consequência ou conectivo conclusivo antes da causa (ex.: *\"Choveu muito, visto que alagou a rua\"*). Como evitar: Aplicar rigorosamente a linha do tempo: 1º Causa $\\rightarrow$ 2º Consequência. A conjunção causal só pode anteceder o 1º evento.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Inserir conectivo causal antes da consequência ou conectivo conclusivo antes da causa (ex.: *\"Choveu muito, visto que alagou a rua\"*). Como evitar: Aplicar rigorosamente a linha do tempo: 1º Causa $\\rightarrow$ 2º Consequência. A conjunção causal só pode anteceder o 1º evento.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A11-G02"
+    ],
+    "moduleId": "mod11",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a11-g03-misconceptions-and-traps-017",
     "source": "suveca",
     "topic": "Coesão Referencial",
@@ -2696,6 +7608,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: Julgar assertiva errada alegando que sua (singular) não pode retomar habitações (plural). Fundamento Correto: O possessivo concorda com a coisa possuída posposta (articulação), podendo perfeitamente referir-se a possuidor plural.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: Julgar assertiva errada alegando que sua (singular) não pode retomar habitações (plural). Fundamento Correto: O possessivo concorda com a coisa possuída posposta (articulação), podendo perfeitamente referir-se a possuidor plural.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A11-G03"
+    ],
+    "moduleId": "mod11",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a11-g03-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Coesão Referencial",
+    "front": "Qual erro deve ser evitado em Inversão Conceitual entre Coesivo e Referente?",
+    "back": "Problema: Trocar os papéis funcionais, chamando o pronome de referente e o substantivo de elemento coesivo. Correção Gramatical: O pronome é o coesivo (emissor da seta); o substantivo recuperado é o referente (receptor da seta).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Trocar os papéis funcionais, chamando o pronome de referente e o substantivo de elemento coesivo. Correção Gramatical: O pronome é o coesivo (emissor da seta); o substantivo recuperado é o referente (receptor da seta).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A11-G03"
+    ],
+    "moduleId": "mod11",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a11-g03-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Coesão Referencial",
+    "front": "Qual erro deve ser evitado em Generalização Indevida da Retomada Integral com Pronome \"Isso\"?",
+    "back": "Problema: Supor que o pronome demonstrativo isso sempre retoma \"todo o período anterior\". Armadilha de Banca: Em muitos casos ele sintetiza apenas um sintagma nominal específico (uma última liberação da Anvisa).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Supor que o pronome demonstrativo isso sempre retoma \"todo o período anterior\". Armadilha de Banca: Em muitos casos ele sintetiza apenas um sintagma nominal específico (uma última liberação da Anvisa).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A11-G03"
+    ],
+    "moduleId": "mod11",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a11-g03-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Coesão Referencial",
+    "front": "Qual erro deve ser evitado em O Erro do \"Atualmente\" e \"Nos Dias Atuais\" em Redações?",
+    "back": "Problema: Iniciar parágrafos dissertativos com marcadores temporais dêiticos soltos sem delimitação conceitual autônoma no texto. Prevenção: Contextualizar o tema expressamente dentro do próprio parágrafo.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Iniciar parágrafos dissertativos com marcadores temporais dêiticos soltos sem delimitação conceitual autônoma no texto. Prevenção: Contextualizar o tema expressamente dentro do próprio parágrafo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A11-G03"
+    ],
+    "moduleId": "mod11",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a11-g03-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Coesão Referencial",
+    "front": "Qual erro deve ser evitado em A Dêixis Viciosa em Estudos de Caso (\"O caso em tela\")?",
+    "back": "Problema: Iniciar respostas discursivas com \"No caso em tela\" ou \"O caso acima\". Correção Técnica: A folha de respostas é autônoma; o caso deve ser sintetizado com palavras próprias antes de ser retomado.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Iniciar respostas discursivas com \"No caso em tela\" ou \"O caso acima\". Correção Técnica: A folha de respostas é autônoma; o caso deve ser sintetizado com palavras próprias antes de ser retomado.",
     "sourceRefs": [
       "EDITORIAL:IP-A11-G03"
     ],
@@ -2737,6 +7713,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a12-g01-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Sentido Próprio e Figurado",
+    "front": "Qual erro deve ser evitado em Tratar Expressões Temporais Literais com o Verbo \"Gastar\" como Figuradas?",
+    "back": "Erro Comum: Supor que o verbo *gastar* só tem sentido próprio ao tratar de dinheiro (*gastar reais*), considerando que *gastar tempo / gastar uma hora* seria conotação. Forma Correta: O consumo de tempo é acepção denotativa primária registrada em todos os dicionários (despender duração). Trata-se de sentido próprio.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Supor que o verbo *gastar* só tem sentido próprio ao tratar de dinheiro (*gastar reais*), considerando que *gastar tempo / gastar uma hora* seria conotação. Forma Correta: O consumo de tempo é acepção denotativa primária registrada em todos os dicionários (despender duração). Trata-se de sentido próprio.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G01"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g01-misconceptions-and-traps-013",
+    "source": "suveca",
+    "topic": "Sentido Próprio e Figurado",
+    "front": "Qual erro deve ser evitado em Confundir \"Sentido Lógico\" com Coerência Argumentativa / Lógica Formal?",
+    "back": "Erro Comum: O candidato desconhece a convenção vocabular da FGV e pensa que \"sentido lógico\" se refere a silogismos, raciocínio lógico-matemático ou coerência textual. Forma Correta: Em Língua Portuguesa para concursos, \"sentido lógico\" é sinônimo exato de sentido próprio / denotativo / dicionarizado / literal.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: O candidato desconhece a convenção vocabular da FGV e pensa que \"sentido lógico\" se refere a silogismos, raciocínio lógico-matemático ou coerência textual. Forma Correta: Em Língua Portuguesa para concursos, \"sentido lógico\" é sinônimo exato de sentido próprio / denotativo / dicionarizado / literal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G01"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g01-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Sentido Próprio e Figurado",
+    "front": "Qual erro deve ser evitado em Pegadinha de Alternativas Mistas com \"Metade Certa e Metade Errada\" (VUNESP)?",
+    "back": "Armadilha: A banca classifica corretamente o sentido como próprio, mas coloca uma paráfrase falsa (*observar pássaros = fotografar*); ou traz uma boa paráfrase, mas erra na classificação teórica. Forma Correta: Exija verdade absoluta em ambos os segmentos da alternativa antes de assinalar o gabarito.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Armadilha: A banca classifica corretamente o sentido como próprio, mas coloca uma paráfrase falsa (*observar pássaros = fotografar*); ou traz uma boa paráfrase, mas erra na classificação teórica. Forma Correta: Exija verdade absoluta em ambos os segmentos da alternativa antes de assinalar o gabarito.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G01"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g01-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Sentido Próprio e Figurado",
+    "front": "Qual erro deve ser evitado em O Erro de Fazer Análise Sintática em Questões Semânticas?",
+    "back": "Erro Comum: Tentar descobrir se um termo é adjunto adnominal, complemento ou predicativo para decidir se ele é denotativo ou conotativo. Forma Correta: A sintaxe formal é indiferente à semântica. Utilize a seta apenas para mapear a relação de sentido e compatibilidade material com o referente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro Comum: Tentar descobrir se um termo é adjunto adnominal, complemento ou predicativo para decidir se ele é denotativo ou conotativo. Forma Correta: A sintaxe formal é indiferente à semântica. Utilize a seta apenas para mapear a relação de sentido e compatibilidade material com o referente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G01"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a12-g02-misconceptions-and-traps-017",
     "source": "suveca",
     "topic": "Sinônimos e Antônimos",
@@ -2760,6 +7800,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Aceitar uma reescrita da FCC porque uma palavra principal foi bem traduzida, sem perceber que um modificador modalizador essencial foi suprimido. A Correção: A omissão de qualificadores nucleares (como suprimir *consensual* de *resposta clara e consensual*) invalida a paráfrase por perda de conteúdo informacional (redução indevida). []",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Aceitar uma reescrita da FCC porque uma palavra principal foi bem traduzida, sem perceber que um modificador modalizador essencial foi suprimido. A Correção: A omissão de qualificadores nucleares (como suprimir *consensual* de *resposta clara e consensual*) invalida a paráfrase por perda de conteúdo informacional (redução indevida). []",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G02"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g02-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Sinônimos e Antônimos",
+    "front": "Qual erro deve ser evitado em A Ilusão dos Sinônimos Perfeitos na FGV?",
+    "back": "O Erro: Buscar igualdade matemática absoluta em itens de sinonímia da FGV. A Realidade: A FGV parte da premissa teórica de que sinônimos absolutos não existem na língua real, formulando questões sobre \"palavras que melhor poderiam substituir\". Busque equivalência semântica contextual e proximidade de registro, e não identidade absoluta. []",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Buscar igualdade matemática absoluta em itens de sinonímia da FGV. A Realidade: A FGV parte da premissa teórica de que sinônimos absolutos não existem na língua real, formulando questões sobre \"palavras que melhor poderiam substituir\". Busque equivalência semântica contextual e proximidade de registro, e não identidade absoluta. []",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G02"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g02-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Sinônimos e Antônimos",
+    "front": "Qual erro deve ser evitado em Confusão entre Oposição Adversativa e Antonímia Lexical?",
+    "back": "O Erro: Marcar frases com a conjunção \"mas\" como exemplos de estruturação por antônimos. A Correção: A adversidade sintática liga ideias contrapostas no discurso, mas não cria antônimos no vocabulário. A estruturação por antônimos exige polos conceituais opostos nos próprios substantivos/adjetivos (*maré mansa* vs. *grande onda*). []",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Marcar frases com a conjunção \"mas\" como exemplos de estruturação por antônimos. A Correção: A adversidade sintática liga ideias contrapostas no discurso, mas não cria antônimos no vocabulário. A estruturação por antônimos exige polos conceituais opostos nos próprios substantivos/adjetivos (*maré mansa* vs. *grande onda*). []",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G02"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g02-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Sinônimos e Antônimos",
+    "front": "Qual erro deve ser evitado em O Erro de Restringir Antonímia à Contradição Pura?",
+    "back": "O Erro: Descartar pares contrários graduais (*leve/pesado*) ou correlativos (*professor/aluno*) achando que antônimo só pode ser oposição binária estrita (*vivo/morto*). A Correção: A antonímia engloba três classes legítimas: contrários, contraditórios e correlativos. []",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Descartar pares contrários graduais (*leve/pesado*) ou correlativos (*professor/aluno*) achando que antônimo só pode ser oposição binária estrita (*vivo/morto*). A Correção: A antonímia engloba três classes legítimas: contrários, contraditórios e correlativos. []",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G02"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g02-mnemonics-and-tips-014",
+    "source": "suveca",
+    "topic": "Sinônimos e Antônimos",
+    "front": "Como aplicar O Descarte de Conjunções em Questões de Antônimos?",
+    "back": "Se o enunciado exigir \"frase estruturada em antônimos\", desconfie imediatamente de frases com conectivos adversativos (*mas*, *porém*). O conectivo adversativo introduz quebra de expectativa discursiva, o que não garante a presença de um par de palavras antônimas lexicais. []",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Se o enunciado exigir \"frase estruturada em antônimos\", desconfie imediatamente de frases com conectivos adversativos (*mas*, *porém*). O conectivo adversativo introduz quebra de expectativa discursiva, o que não garante a presença de um par de palavras antônimas lexicais. []",
     "sourceRefs": [
       "EDITORIAL:IP-A12-G02"
     ],
@@ -2801,6 +7905,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a12-g03-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Hiperonímia e Hiponímia",
+    "front": "Qual erro deve ser evitado em Confundir Adjetivação Sintagmática com Coesão Lexical (CEBRASPE)?",
+    "back": "Erro: Aceitar que em *\"conforto admirável\"* há coesão lexical por hiperonímia. Forma correta: Modificador dentro do mesmo sintagma nominal é apenas qualificação adjetiva sintagmática; coesão lexical exige substituição anafórica de termos (011, ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Aceitar que em *\"conforto admirável\"* há coesão lexical por hiperonímia. Forma correta: Modificador dentro do mesmo sintagma nominal é apenas qualificação adjetiva sintagmática; coesão lexical exige substituição anafórica de termos (011, ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G03"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g03-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Hiperonímia e Hiponímia",
+    "front": "Qual erro deve ser evitado em Confundir Sinonímia Contextual com Hiperonímia/Hiponímia?",
+    "back": "Erro: Classificar termos equivalentes no cotexto (*telas/quadros*, *livro/obra*) como hiperônimos/hipônimos. Como evitar: Se ambos operam no mesmo patamar referencial sem que um seja \"tipo do outro\", a relação é de sinonímia contextual (007, ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Classificar termos equivalentes no cotexto (*telas/quadros*, *livro/obra*) como hiperônimos/hipônimos. Como evitar: Se ambos operam no mesmo patamar referencial sem que um seja \"tipo do outro\", a relação é de sinonímia contextual (007, ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G03"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g03-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Hiperonímia e Hiponímia",
+    "front": "Qual erro deve ser evitado em Limitar o Sentido de Palavras a Usos Culturais/Festivos (Jantar vs. Ceia)?",
+    "back": "Erro: Supor que *ceia* é espécie de jantar reservada exclusivamente ao Natal. Forma correta: Dicionários formais (Michaelis, Aulete) definem *ceia* como a última refeição do dia, sendo sinônimo denotativo pleno de *jantar* (008,; 009, ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Supor que *ceia* é espécie de jantar reservada exclusivamente ao Natal. Forma correta: Dicionários formais (Michaelis, Aulete) definem *ceia* como a última refeição do dia, sendo sinônimo denotativo pleno de *jantar* (008,; 009, ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G03"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g03-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Hiperonímia e Hiponímia",
+    "front": "Qual erro deve ser evitado em Confundir Campo Semântico com Hiponímia/Sinonímia?",
+    "back": "Erro: Classificar *aeroporto/pista*, *médico/hospital* ou *alunos/crianças* como hipônimos. Forma correta: Compartilham o mesmo universo de ideias (anáfora associativa), mas não mantêm relação hierárquica de gênero/espécie (007,; 010, ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Classificar *aeroporto/pista*, *médico/hospital* ou *alunos/crianças* como hipônimos. Forma correta: Compartilham o mesmo universo de ideias (anáfora associativa), mas não mantêm relação hierárquica de gênero/espécie (007,; 010, ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G03"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a12-g04-misconceptions-and-traps-022",
     "source": "suveca",
     "topic": "Polissemia",
@@ -2824,6 +7992,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Pegadinha da FGV: Apresentar palavras famosas por terem múltiplos sentidos (*amanhã*, *proximidade*, *manga*), mas com cotexto fechado que neutraliza as outras acepções. A frase estará isenta de polissemia contextual.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Pegadinha da FGV: Apresentar palavras famosas por terem múltiplos sentidos (*amanhã*, *proximidade*, *manga*), mas com cotexto fechado que neutraliza as outras acepções. A frase estará isenta de polissemia contextual.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G04"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g04-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Polissemia",
+    "front": "Qual erro deve ser evitado em Confundir Homófonos Heterógrafos com Polissemia?",
+    "back": "Erro: Achar que *conserto*/*concerto*, *sela*/*cela* ou *cesta*/*sexta* são polissêmicos. Forma correta: Se a letra muda, são homônimos homófonos heterógrafos. A polissemia exige rigorosa unidade gráfica.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Achar que *conserto*/*concerto*, *sela*/*cela* ou *cesta*/*sexta* são polissêmicos. Forma correta: Se a letra muda, são homônimos homófonos heterógrafos. A polissemia exige rigorosa unidade gráfica.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G04"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g04-misconceptions-and-traps-026",
+    "source": "suveca",
+    "topic": "Polissemia",
+    "front": "Qual erro deve ser evitado em Confundir Personificação/Metáfora Simples com Polissemia?",
+    "back": "Pegadinha da FGV: Na frase *(Banco)* *\"Nossa fé nunca nos abandona\"*, o candidato tenta forçar polissemia com \"fé pública\". Trata-se apenas de personificação da fé, sem multiplicidade de sentidos ativada.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pegadinha da FGV: Na frase *(Banco)* *\"Nossa fé nunca nos abandona\"*, o candidato tenta forçar polissemia com \"fé pública\". Trata-se apenas de personificação da fé, sem multiplicidade de sentidos ativada.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G04"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g04-misconceptions-and-traps-024",
+    "source": "suveca",
+    "topic": "Polissemia",
+    "front": "Qual erro deve ser evitado em O Risco do Contexto Neutro em Redações Discursivas?",
+    "back": "Erro: Construir frases com termos polissêmicos acompanhados de adjuntos genéricos (*\"aqui ao lado\"*, *\"bom\"*, *\"perto\"*), gerando duplo sentido inadvertido e perda de pontos na prova discursiva.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Construir frases com termos polissêmicos acompanhados de adjuntos genéricos (*\"aqui ao lado\"*, *\"bom\"*, *\"perto\"*), gerando duplo sentido inadvertido e perda de pontos na prova discursiva.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G04"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g04-misconceptions-and-traps-028",
+    "source": "suveca",
+    "topic": "Polissemia",
+    "front": "Qual erro deve ser evitado em Visão Estreita de \"Proximidade\" Apenas como Espaço Físico?",
+    "back": "Erro: Julgar que \"proximidade\" só indica distância física. Na língua culta e na FGV, \"proximidade\" aplica-se plenamente ao tempo (iminência em *proximidade das eleições* e *estar para sair*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Julgar que \"proximidade\" só indica distância física. Na língua culta e na FGV, \"proximidade\" aplica-se plenamente ao tempo (iminência em *proximidade das eleições* e *estar para sair*).",
     "sourceRefs": [
       "EDITORIAL:IP-A12-G04"
     ],
@@ -2865,6 +8097,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a12-g05-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Ambiguidade Homônimos e Parônimos",
+    "front": "Qual erro deve ser evitado em Confusão entre Homófonos e Parônimos por Proximidade Fonética?",
+    "back": "Pares como *acerca de* e *cerca de*, ou *eminente* e *iminente*, não possuem som rigorosamente igual. Apresentam fonética e morfologia apenas semelhantes, devendo ser categorizados estritamente como parônimos.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Pares como *acerca de* e *cerca de*, ou *eminente* e *iminente*, não possuem som rigorosamente igual. Apresentam fonética e morfologia apenas semelhantes, devendo ser categorizados estritamente como parônimos.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G05"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g05-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Ambiguidade Homônimos e Parônimos",
+    "front": "Qual erro deve ser evitado em A Inexistência de Sinonímia Universal e Absoluta?",
+    "back": "Não rejeite alternativas de substituição vocabular por pequenas nuances de estilo; a sinonímia avaliada em bancas de concurso opera por equivalência contextual e manutenção do sentido global.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Não rejeite alternativas de substituição vocabular por pequenas nuances de estilo; a sinonímia avaliada em bancas de concurso opera por equivalência contextual e manutenção do sentido global.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G05"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g05-misconceptions-and-traps-018",
+    "source": "suveca",
+    "topic": "Ambiguidade Homônimos e Parônimos",
+    "front": "Qual erro deve ser evitado em A Falsa Premissa de que Toda Polissemia Gera Ambiguidade?",
+    "back": "A simples presença de uma palavra polissêmica não torna a frase ambígua. A ambiguidade só se concretiza se os demais termos da oração falharem em restringir o sentido pretendido.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A simples presença de uma palavra polissêmica não torna a frase ambígua. A ambiguidade só se concretiza se os demais termos da oração falharem em restringir o sentido pretendido.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G05"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g05-misconceptions-and-traps-023",
+    "source": "suveca",
+    "topic": "Ambiguidade Homônimos e Parônimos",
+    "front": "Qual erro deve ser evitado em Confusão Fonética e Hipercorreção em Acender vs. Ascender?",
+    "back": "O dígrafo *sc* antes de *e* ou *i* soa como /s/. *Acender* e *ascender* são rigorosamente homófonos. A distinção é puramente gráfica e semântica (atear fogo vs. elevar-se).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O dígrafo *sc* antes de *e* ou *i* soa como /s/. *Acender* e *ascender* são rigorosamente homófonos. A distinção é puramente gráfica e semântica (atear fogo vs. elevar-se).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G05"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a12-g06-misconceptions-and-traps-021",
     "source": "suveca",
     "topic": "Figuras de Linguagem - Fundamentos",
@@ -2888,6 +8184,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro comum: Justificar *\"A rapaziada chegaram\"* ou *\"O grupo reagiram\"* como figura de linguagem estilística. Correção: A silepse de número só é aceita se o verbo estiver afastado em oração posterior. Verbo contíguo colado ao sujeito coletivo é erro gramatical puro de concordância .",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro comum: Justificar *\"A rapaziada chegaram\"* ou *\"O grupo reagiram\"* como figura de linguagem estilística. Correção: A silepse de número só é aceita se o verbo estiver afastado em oração posterior. Verbo contíguo colado ao sujeito coletivo é erro gramatical puro de concordância .",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G06"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g06-misconceptions-and-traps-025",
+    "source": "suveca",
+    "topic": "Figuras de Linguagem - Fundamentos",
+    "front": "Qual erro deve ser evitado em Redundância Viciosa em Provas Discursivas?",
+    "back": "Erro comum: Empregar expressões como *\"principal protagonista\"*, *\"fatos reais\"*, *\"hábitos recorrentes exercidos todos os dias\"* em redações. Correção: Tais estruturas constituem pleonasmos viciosos e acarretam perda severa de pontos em concisão e precisão vocabular .",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Empregar expressões como *\"principal protagonista\"*, *\"fatos reais\"*, *\"hábitos recorrentes exercidos todos os dias\"* em redações. Correção: Tais estruturas constituem pleonasmos viciosos e acarretam perda severa de pontos em concisão e precisão vocabular .",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G06"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g06-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Figuras de Linguagem - Fundamentos",
+    "front": "Qual erro deve ser evitado em A Armadilha de Achar que Todo Oposto Gera Paradoxo?",
+    "back": "Erro comum: Marcar paradoxo sempre que houver palavras contrárias na frase. Correção: *Todo paradoxo tem antítese, mas nem toda antítese é paradoxo*. Se não houver anulação mútua no mesmo referente (*\"uma sentença curta de longa experiência\"*), há apenas antítese .",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Marcar paradoxo sempre que houver palavras contrárias na frase. Correção: *Todo paradoxo tem antítese, mas nem toda antítese é paradoxo*. Se não houver anulação mútua no mesmo referente (*\"uma sentença curta de longa experiência\"*), há apenas antítese .",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G06"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g06-misconceptions-and-traps-028",
+    "source": "suveca",
+    "topic": "Figuras de Linguagem - Fundamentos",
+    "front": "Qual erro deve ser evitado em Pegadinha da Exclusividade de Figuras?",
+    "back": "Erro comum: Anular uma assertiva sobre sinestesia porque o verso também apresenta personificação. Correção: Figuras de linguagem coexistem pacificamente em textos poéticos. O item é válido a menos que haja termo restritor absoluto (*\"há somente...\"*) .",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Anular uma assertiva sobre sinestesia porque o verso também apresenta personificação. Correção: Figuras de linguagem coexistem pacificamente em textos poéticos. O item é válido a menos que haja termo restritor absoluto (*\"há somente...\"*) .",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G06"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g06-misconceptions-and-traps-027",
+    "source": "suveca",
+    "topic": "Figuras de Linguagem - Fundamentos",
+    "front": "Qual erro deve ser evitado em Silepse de Pessoa versus Sujeito com Aposto?",
+    "back": "Erro comum: Marcar silepse em *\"Nós, os concurseiros, estudamos\"*. Correção: O sujeito é o pronome *Nós* manifesto. A silepse exige que o pronome *Nós* esteja ausente e o sujeito seja exclusivamente de 3ª pessoa (*\"Os concurseiros estudamos\"*) .",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro comum: Marcar silepse em *\"Nós, os concurseiros, estudamos\"*. Correção: O sujeito é o pronome *Nós* manifesto. A silepse exige que o pronome *Nós* esteja ausente e o sujeito seja exclusivamente de 3ª pessoa (*\"Os concurseiros estudamos\"*) .",
     "sourceRefs": [
       "EDITORIAL:IP-A12-G06"
     ],
@@ -2929,6 +8289,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a12-g07-misconceptions-and-traps-020",
+    "source": "suveca",
+    "topic": "Figuras de Linguagem - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Distinção entre Estrutura Consecutiva (\"Tão... Que\") e Comparativa?",
+    "back": "Tão + Adjetivo + QUE = Causa e Consequência (Oração Adverbial Consecutiva). Tão + Adjetivo + QUANTO / COMO = Comparação de Igualdade. *Erro Comum:* Candidatos leem *\"a fome era tão grande que comi três pratos\"* e julgam apressadamente ser comparação ou hipérbole.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Tão + Adjetivo + QUE = Causa e Consequência (Oração Adverbial Consecutiva). Tão + Adjetivo + QUANTO / COMO = Comparação de Igualdade. *Erro Comum:* Candidatos leem *\"a fome era tão grande que comi três pratos\"* e julgam apressadamente ser comparação ou hipérbole.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G07"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g07-misconceptions-and-traps-021",
+    "source": "suveca",
+    "topic": "Figuras de Linguagem - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Conjunção Concessiva (\"Embora\") NÃO Instala Paradoxo?",
+    "back": "A presença de conectivos concessivos (*embora, apesar de, conquanto*) marca uma quebra de expectativa entre fatos do mundo real, mas não gera contradição lógica insuperável. O paradoxo exige a colisão conceitual excludente (*\"ferida que dói sem ser sentida\"*).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "A presença de conectivos concessivos (*embora, apesar de, conquanto*) marca uma quebra de expectativa entre fatos do mundo real, mas não gera contradição lógica insuperável. O paradoxo exige a colisão conceitual excludente (*\"ferida que dói sem ser sentida\"*).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G07"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g07-misconceptions-and-traps-022",
+    "source": "suveca",
+    "topic": "Figuras de Linguagem - Aprofundamento",
+    "front": "Qual erro deve ser evitado em Ironia NÃO é Crítica Sincera nem Humor Cotidiano?",
+    "back": "Para haver a figura de linguagem ironia, o falante precisa emitir formalmente o inverso semântico do que pensa. Desabafos sinceros, críticas políticas diretas ou anedotas humorísticas constituem discurso literal, e não figura de ironia.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Para haver a figura de linguagem ironia, o falante precisa emitir formalmente o inverso semântico do que pensa. Desabafos sinceros, críticas políticas diretas ou anedotas humorísticas constituem discurso literal, e não figura de ironia.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G07"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a12-g07-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Figuras de Linguagem - Aprofundamento",
+    "front": "Qual erro deve ser evitado em A Pegadinha dos Verbos de Comparação?",
+    "back": "Não procure apenas conjunções como *como* ou *tal qual*. Verbos de similitude como *parecer*, *assemelhar-se* ou *lembrar* (*\"Ela parece o irmão\"*) estruturam comparações explícitas formais, e não metáforas.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Não procure apenas conjunções como *como* ou *tal qual*. Verbos de similitude como *parecer*, *assemelhar-se* ou *lembrar* (*\"Ela parece o irmão\"*) estruturam comparações explícitas formais, e não metáforas.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A12-G07"
+    ],
+    "moduleId": "mod12",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a13-g01-misconceptions-and-traps-018",
     "source": "suveca",
     "topic": "Recorrência",
@@ -2952,6 +8376,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: Candidatos que se emocionam com temas sociais ou ativam preconceitos ideológicos/filosóficos contra autores citados (Platão, Tomás de Aquino, etc.). Consequência: Julgar assertivas com base em concordância ideológica moral ou discordância pessoal, ignorando a literalidade do texto. Forma correta: Tratar o texto como objeto estritamente formal e fechado, avaliando apenas o arranjo sintático e semântico dos fatos expressos.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: Candidatos que se emocionam com temas sociais ou ativam preconceitos ideológicos/filosóficos contra autores citados (Platão, Tomás de Aquino, etc.). Consequência: Julgar assertivas com base em concordância ideológica moral ou discordância pessoal, ignorando a literalidade do texto. Forma correta: Tratar o texto como objeto estritamente formal e fechado, avaliando apenas o arranjo sintático e semântico dos fatos expressos.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G01"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g01-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Recorrência",
+    "front": "Qual erro deve ser evitado em Embaralhamento de Referentes após Conjunção Adversativa?",
+    "back": "Problema: A banca cria assertiva com período composto por adversativa e transfere a predicação do autor antigo (antes do *mas*) para o autor moderno (depois do *mas*). Consequência: O candidato lembra que ambos os nomes estavam no texto e valida a assertiva errada. Forma correta: Utilizar a Técnica das Setas para isolar estritamente o que pertence ao polo A e o que pertence ao polo B.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: A banca cria assertiva com período composto por adversativa e transfere a predicação do autor antigo (antes do *mas*) para o autor moderno (depois do *mas*). Consequência: O candidato lembra que ambos os nomes estavam no texto e valida a assertiva errada. Forma correta: Utilizar a Técnica das Setas para isolar estritamente o que pertence ao polo A e o que pertence ao polo B.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G01"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g01-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Recorrência",
+    "front": "Qual erro deve ser evitado em Falsa Incorreção por Singular Genérico vs. Plural?",
+    "back": "Problema: Marcar um item como ERRADO apenas porque no texto original a expressão está no singular (*\"o rito\"*) e na assertiva foi vertida para o plural (*\"os ritos\"*). Consequência: Perda de item legítimo de paráfrase no Cebraspe. Forma correta: Checar se o singular do texto designa a espécie/totalidade abstrata da categoria. Em caso afirmativo, o plural é paráfrase válida.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Marcar um item como ERRADO apenas porque no texto original a expressão está no singular (*\"o rito\"*) e na assertiva foi vertida para o plural (*\"os ritos\"*). Consequência: Perda de item legítimo de paráfrase no Cebraspe. Forma correta: Checar se o singular do texto designa a espécie/totalidade abstrata da categoria. Em caso afirmativo, o plural é paráfrase válida.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G01"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g01-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Recorrência",
+    "front": "Qual erro deve ser evitado em Armadilha da Paráfrase com Sinônimos Parciais?",
+    "back": "Problema: Assertivas em que 95% das palavras são sinônimos perfeitos do texto, mas contendo um único vocábulo que inverte a polaridade (ex.: *\"negativamente\"*). Consequência: O candidato lê com pressa, reconhece a familiaridade e erra a questão. Forma correta: Validação exaustiva bloco a bloco; uma única palavra contrária invalida a assertiva integralmente.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Assertivas em que 95% das palavras são sinônimos perfeitos do texto, mas contendo um único vocábulo que inverte a polaridade (ex.: *\"negativamente\"*). Consequência: O candidato lê com pressa, reconhece a familiaridade e erra a questão. Forma correta: Validação exaustiva bloco a bloco; uma única palavra contrária invalida a assertiva integralmente.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G01"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g01-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Recorrência",
+    "front": "Qual erro deve ser evitado em Confundir Marcador Temporal com Hierarquia de Importância?",
+    "back": "Problema: Converter expressões de ordem temporal (*\"de início\"*, *\"primeiramente\"*) em expressões de prioridade ou relevância axiológica (*\"priorizar\"*, *\"mais importante\"*). Consequência: Erro grave por extrapolação semântica. Forma correta: Manter a cronologia no plano do tempo e exigir declaração explícita do autor para reconhecer hierarquia de valor.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Converter expressões de ordem temporal (*\"de início\"*, *\"primeiramente\"*) em expressões de prioridade ou relevância axiológica (*\"priorizar\"*, *\"mais importante\"*). Consequência: Erro grave por extrapolação semântica. Forma correta: Manter a cronologia no plano do tempo e exigir declaração explícita do autor para reconhecer hierarquia de valor.",
     "sourceRefs": [
       "EDITORIAL:IP-A13-G01"
     ],
@@ -2993,6 +8481,54 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a13-g02-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Inferência",
+    "front": "Qual erro deve ser evitado em O Erro de Exigir Literalidade em Itens de Inferência?",
+    "back": "O candidato compreende a dedução lógica apresentada na assertiva, mas julga o item como ERRADO sob o protesto: *\"Mas essa frase exata não está escrita no texto!\"*.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O candidato compreende a dedução lógica apresentada na assertiva, mas julga o item como ERRADO sob o protesto: *\"Mas essa frase exata não está escrita no texto!\"*.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G02"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g02-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Inferência",
+    "front": "Como aplicar Rastreamento Sintático e Vetorização via \"Setas Salvam\"?",
+    "back": "1. Em períodos subordinados na assertiva, trace setas físicas apontando de pronomes relativos (*\"que\"*), adjuntos e orações para os substantivos que eles qualificam. 2. Risque os blocos conceituais validados e concentre o julgamento exclusivamente sobre o verbo ou nexo relacional que conecta os blocos. A checagem da direção da seta no texto revelará se a vinculação é verdadeira ou fraudulenta.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "1. Em períodos subordinados na assertiva, trace setas físicas apontando de pronomes relativos (*\"que\"*), adjuntos e orações para os substantivos que eles qualificam. 2. Risque os blocos conceituais validados e concentre o julgamento exclusivamente sobre o verbo ou nexo relacional que conecta os blocos. A checagem da direção da seta no texto revelará se a vinculação é verdadeira ou fraudulenta.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G02"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g02-mnemonics-and-tips-010",
+    "source": "suveca",
+    "topic": "Inferência",
+    "front": "Como aplicar Priorização dos Parágrafos Finais em Enunciados Globais?",
+    "back": "Em questões iniciadas por *\"Entende-se do texto que...\"* ou *\"Conclui-se do texto que...\"*, direcione a primeira leitura analítica para o fechamento do texto (último e penúltimo parágrafo). A síntese do raciocínio argumentativo e a tese final do autor costumam estar concentradas no desfecho da dissertação.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Em questões iniciadas por *\"Entende-se do texto que...\"* ou *\"Conclui-se do texto que...\"*, direcione a primeira leitura analítica para o fechamento do texto (último e penúltimo parágrafo). A síntese do raciocínio argumentativo e a tese final do autor costumam estar concentradas no desfecho da dissertação.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G02"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a13-g03-misconceptions-and-traps-012",
     "source": "suveca",
     "topic": "Narração e Descrição",
@@ -3016,6 +8552,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "O Erro: Achar que descrições só ocorrem em romances bucólicos antigos do tipo *\"A casa era grande e tinha janelas azuis\"*. A Pegadinha das Bancas: Apresentar trechos de textos institucionais ou jurídicos que caracterizam objetivos e competências no Presente do Indicativo. A Conduta Correta: Reconhecer que o detalhamento de finalidades institucionais via substantivos e adjetivos configura passagem descritiva.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "O Erro: Achar que descrições só ocorrem em romances bucólicos antigos do tipo *\"A casa era grande e tinha janelas azuis\"*. A Pegadinha das Bancas: Apresentar trechos de textos institucionais ou jurídicos que caracterizam objetivos e competências no Presente do Indicativo. A Conduta Correta: Reconhecer que o detalhamento de finalidades institucionais via substantivos e adjetivos configura passagem descritiva.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G03"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g03-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Narração e Descrição",
+    "front": "Qual erro deve ser evitado em A Armadilha da \"Última Linha\" em Textos Literários?",
+    "back": "O Erro: Ler apenas as duas últimas frases do fragmento de prova e encontrar um adjetivo ou detalhe visual (ex.: *\"traços finos e delicados\"*), concluindo precipitadamente que o texto inteiro é descritivo. A Conduta Correta: Inspecionar o parágrafo como um todo. A última pincelada descritiva frequentemente encerra um longo processo de ações narrativas.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Ler apenas as duas últimas frases do fragmento de prova e encontrar um adjetivo ou detalhe visual (ex.: *\"traços finos e delicados\"*), concluindo precipitadamente que o texto inteiro é descritivo. A Conduta Correta: Inspecionar o parágrafo como um todo. A última pincelada descritiva frequentemente encerra um longo processo de ações narrativas.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G03"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g03-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Narração e Descrição",
+    "front": "Qual erro deve ser evitado em Confundir Presente Histórico Estilístico com Fenômeno Sintático?",
+    "back": "O Erro: Associar o encadeamento de verbos no presente histórico a questões sintáticas de elipse, sujeito indeterminado ou oculto. A Conduta Correta: Tratar o presente histórico estritamente como um recurso estilístico-discursivo de dinamização e aproximação temporal.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Associar o encadeamento de verbos no presente histórico a questões sintáticas de elipse, sujeito indeterminado ou oculto. A Conduta Correta: Tratar o presente histórico estritamente como um recurso estilístico-discursivo de dinamização e aproximação temporal.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G03"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g03-mnemonics-and-tips-011",
+    "source": "suveca",
+    "topic": "Narração e Descrição",
+    "front": "Como aplicar Diagnóstico de Formulações no Cebraspe (Excludente vs. Cumulativa)?",
+    "back": "Regra Prática: Observe a redação do item Cebraspe: *Excludente:* \"O texto é predominantemente descritivo.\" $\\rightarrow$ Questione se há história. Havendo história, marque Errado. *Cumulativa:* \"O texto desenvolve-se em sequências predominantemente descritivas e narrativas.\" $\\rightarrow$ A banca valida a presença mista; marque Certo.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Regra Prática: Observe a redação do item Cebraspe: *Excludente:* \"O texto é predominantemente descritivo.\" $\\rightarrow$ Questione se há história. Havendo história, marque Errado. *Cumulativa:* \"O texto desenvolve-se em sequências predominantemente descritivas e narrativas.\" $\\rightarrow$ A banca valida a presença mista; marque Certo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G03"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g03-mnemonics-and-tips-008",
+    "source": "suveca",
+    "topic": "Narração e Descrição",
+    "front": "Como aplicar O Macete do \"Congelamento de Imagem\" vs. \"Filme\"?",
+    "back": "Regra Prática: Ao ler o fragmento da prova, visualize mentalmente a cena: Se todos os elementos, ações e personagens couberem estaticamente em uma única fotografia, o trecho é descritivo. Se for necessário um filme (material) com sucessão de quadros para mostrar o desenrolar das ações e transformações de estado, o trecho é narrativo.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Regra Prática: Ao ler o fragmento da prova, visualize mentalmente a cena: Se todos os elementos, ações e personagens couberem estaticamente em uma única fotografia, o trecho é descritivo. Se for necessário um filme (material) com sucessão de quadros para mostrar o desenrolar das ações e transformações de estado, o trecho é narrativo.",
     "sourceRefs": [
       "EDITORIAL:IP-A13-G03"
     ],
@@ -3057,6 +8657,70 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a13-g04-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Narração e Dissertação Expositiva",
+    "front": "Qual erro deve ser evitado em Desconsiderar o Hibridismo Tipológico?",
+    "back": "O Erro: Classificar o texto inteiro como narrativo porque encontrou um parágrafo que narra um exemplo, ou classificar um parágrafo narrativo como dissertativo porque o texto global é um artigo científico. Como Evitar: Verificar se a banca avalia a macroestrutura global ou uma sequência discursiva delimitada (conteúdo integrado, ).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "O Erro: Classificar o texto inteiro como narrativo porque encontrou um parágrafo que narra um exemplo, ou classificar um parágrafo narrativo como dissertativo porque o texto global é um artigo científico. Como Evitar: Verificar se a banca avalia a macroestrutura global ou uma sequência discursiva delimitada (conteúdo integrado, ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G04"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g04-mnemonics-and-tips-008",
+    "source": "suveca",
+    "topic": "Narração e Dissertação Expositiva",
+    "front": "Como aplicar O Teste Mental do \"Era uma vez...\"?",
+    "back": "Aplicação prática: Diante de um texto com verbos no pretérito, pergunte-se se o texto poderia começar naturalmente com *\"Era uma vez...\"*. Se a estrutura comportar personagens e peripécias particulares, trata-se de narração. Se a inserção de *\"era uma vez\"* for incoerente diante da exposição temática, trata-se de dissertação (conteúdo integrado, ).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Aplicação prática: Diante de um texto com verbos no pretérito, pergunte-se se o texto poderia começar naturalmente com *\"Era uma vez...\"*. Se a estrutura comportar personagens e peripécias particulares, trata-se de narração. Se a inserção de *\"era uma vez\"* for incoerente diante da exposição temática, trata-se de dissertação (conteúdo integrado, ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G04"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g04-mnemonics-and-tips-007",
+    "source": "suveca",
+    "topic": "Narração e Dissertação Expositiva",
+    "front": "Como aplicar O Termômetro do \"Texto com Tema\"?",
+    "back": "Regra mnemônica: *\"Texto que tem tema é dissertativo.\"* Aplicação prática: Se o parágrafo puder ser sintetizado por um título temático institucional, científico ou legal (ex.: *A regulamentação dos contratos digitais* ou *Os efeitos do sono na cognição*), a tipologia é dissertativa, mesmo repleta de datas e fatos passados (conteúdo integrado, ).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Regra mnemônica: *\"Texto que tem tema é dissertativo.\"* Aplicação prática: Se o parágrafo puder ser sintetizado por um título temático institucional, científico ou legal (ex.: *A regulamentação dos contratos digitais* ou *Os efeitos do sono na cognição*), a tipologia é dissertativa, mesmo repleta de datas e fatos passados (conteúdo integrado, ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G04"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g04-mnemonics-and-tips-009",
+    "source": "suveca",
+    "topic": "Narração e Dissertação Expositiva",
+    "front": "Como aplicar Diagnóstico do Presente Histórico?",
+    "back": "Aplicação prática: Não elimine a hipótese de texto narrativo ao encontrar verbos flexionados no presente do indicativo (*chega, abre, liga, bloqueia*). Se houver progressão sucessiva de fatos (*antes e depois*), trata-se de presente histórico/narrativo conferindo dinamismo ao relato (conteúdo integrado, ).",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Aplicação prática: Não elimine a hipótese de texto narrativo ao encontrar verbos flexionados no presente do indicativo (*chega, abre, liga, bloqueia*). Se houver progressão sucessiva de fatos (*antes e depois*), trata-se de presente histórico/narrativo conferindo dinamismo ao relato (conteúdo integrado, ).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G04"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a13-g05-misconceptions-and-traps-011",
     "source": "suveca",
     "topic": "Dissertação Expositiva e Argumentativa",
@@ -3080,6 +8744,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Problema: Interpretar vocábulos humanistas (como *\"justiça social\"*, *\"fraternidade\"*, *\"combate às desigualdades\"*) em textos jurídicos como militância ideológica ou tese opinativa do autor. Por que ocorre: Impacto emocional das palavras axiológicas sobre o candidato. Como evitar: Reconhecer que esses termos expressam preceitos positivados na Constituição e na doutrina jurídica consolidada, constituindo fatos da ordem legal, o que caracteriza dissertação expositiva.",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Problema: Interpretar vocábulos humanistas (como *\"justiça social\"*, *\"fraternidade\"*, *\"combate às desigualdades\"*) em textos jurídicos como militância ideológica ou tese opinativa do autor. Por que ocorre: Impacto emocional das palavras axiológicas sobre o candidato. Como evitar: Reconhecer que esses termos expressam preceitos positivados na Constituição e na doutrina jurídica consolidada, constituindo fatos da ordem legal, o que caracteriza dissertação expositiva.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G05"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g05-misconceptions-and-traps-012",
+    "source": "suveca",
+    "topic": "Dissertação Expositiva e Argumentativa",
+    "front": "Qual erro deve ser evitado em Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo?",
+    "back": "Problema: Classificar um texto teórico como argumentativo apenas por localizar um adjetivo valorativo ou advérbio modalizador (ex.: *\"extremamente importante\"*, *\"notável\"*). Por que ocorre: Confundir a avaliação didática pontual do expositor sobre a relevância de uma matéria com a defesa de uma tese controversa. Como evitar: Verificar se o modalizador sustenta um projeto de convencimento global ou se é mera ênfase explicativa de um professor/doutrinador.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Classificar um texto teórico como argumentativo apenas por localizar um adjetivo valorativo ou advérbio modalizador (ex.: *\"extremamente importante\"*, *\"notável\"*). Por que ocorre: Confundir a avaliação didática pontual do expositor sobre a relevância de uma matéria com a defesa de uma tese controversa. Como evitar: Verificar se o modalizador sustenta um projeto de convencimento global ou se é mera ênfase explicativa de um professor/doutrinador.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G05"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g05-misconceptions-and-traps-014",
+    "source": "suveca",
+    "topic": "Dissertação Expositiva e Argumentativa",
+    "front": "Qual erro deve ser evitado em Confundir a Opinião do Leitor com a Intenção do Autor?",
+    "back": "Problema: Julgar o gênero textual com base no fato de o candidato concordar ou discordar pessoalmente das afirmações contidas no texto. Como evitar: Praticar a alteridade crítica absoluta: investigar unicamente as marcas linguísticas e o projeto discursivo deixado pelo autor no papel.",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Problema: Julgar o gênero textual com base no fato de o candidato concordar ou discordar pessoalmente das afirmações contidas no texto. Como evitar: Praticar a alteridade crítica absoluta: investigar unicamente as marcas linguísticas e o projeto discursivo deixado pelo autor no papel.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G05"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g05-mnemonics-and-tips-009",
+    "source": "suveca",
+    "topic": "Dissertação Expositiva e Argumentativa",
+    "front": "Como aplicar O Macete do \"Final Matador\"?",
+    "back": "Descrição: Em textos longos ou complexos do Cebraspe em que o meio do texto parece mesclar conceitos e dados, leia imediatamente o último parágrafo. O fecho conclusivo em textos argumentativos funciona invariavelmente como arremate persuasivo para cravar a tese. Se o fecho apenas encerrar a explicação conceitual, o texto é expositivo.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Descrição: Em textos longos ou complexos do Cebraspe em que o meio do texto parece mesclar conceitos e dados, leia imediatamente o último parágrafo. O fecho conclusivo em textos argumentativos funciona invariavelmente como arremate persuasivo para cravar a tese. Se o fecho apenas encerrar a explicação conceitual, o texto é expositivo.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G05"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g05-mnemonics-and-tips-008",
+    "source": "suveca",
+    "topic": "Dissertação Expositiva e Argumentativa",
+    "front": "Como aplicar A Pergunta-Guia de Ouro da Intenção Autoral?",
+    "back": "Descrição: Diante de qualquer texto dissertativo em prova, nunca se pergunte *\"o que eu acho sobre isso?\"*, mas sim: \"O que o autor veio fazer aqui? Ele veio me explicar o que sabe ou veio me convencer da opinião dele?\" Esta pergunta dissipa dúvidas de classificação em segundos.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Descrição: Diante de qualquer texto dissertativo em prova, nunca se pergunte *\"o que eu acho sobre isso?\"*, mas sim: \"O que o autor veio fazer aqui? Ele veio me explicar o que sabe ou veio me convencer da opinião dele?\" Esta pergunta dissipa dúvidas de classificação em segundos.",
     "sourceRefs": [
       "EDITORIAL:IP-A13-G05"
     ],
@@ -3121,6 +8849,54 @@ export const EDITORIAL_FLASHCARDS = [
     "incorrectCount": 0
   },
   {
+    "id": "editorial-flash-ip-a13-g06-mnemonics-and-tips-007",
+    "source": "suveca",
+    "topic": "Miscelânea de Interpretação",
+    "front": "Como aplicar Técnica de Julgamento para Itens do Cebraspe sem Menção Expressa a \"Predominância\"?",
+    "back": "Regra prática: Quando a questão do Cebraspe afirmar que o texto \"apresenta características das tipologias X e Y\" ou \"é construído com base nas tipologias X e Y\", sem empregar o vocábulo \"predominantemente\", avalie apenas se ambas as tipologias estão materialmente representadas no texto. Justificativa pedagógica: O Cebraspe adota uma postura pragmática que reconhece o hibridismo natural dos textos autênticos. Havendo traços de exposição e argumentação (ou de narração e descrição), o item costuma ser gabaritado como Certo. Se a questão exigir a \"predominância\", aí sim deve-se isolar a intenção comunicativa máxima.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Regra prática: Quando a questão do Cebraspe afirmar que o texto \"apresenta características das tipologias X e Y\" ou \"é construído com base nas tipologias X e Y\", sem empregar o vocábulo \"predominantemente\", avalie apenas se ambas as tipologias estão materialmente representadas no texto. Justificativa pedagógica: O Cebraspe adota uma postura pragmática que reconhece o hibridismo natural dos textos autênticos. Havendo traços de exposição e argumentação (ou de narração e descrição), o item costuma ser gabaritado como Certo. Se a questão exigir a \"predominância\", aí sim deve-se isolar a intenção comunicativa máxima.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G06"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g06-mnemonics-and-tips-005",
+    "source": "suveca",
+    "topic": "Miscelânea de Interpretação",
+    "front": "Como aplicar O Recurso da Fonte Bibliográfica e Título como Chave Tipológica Preliminar?",
+    "back": "Regra prática: Jamais inicie a leitura do corpo textual de uma questão de tipologia sem antes inspecionar o título original e os dados da fonte de publicação no rodapé. Justificativa pedagógica: O suporte textual e o título frequentemente antecipam a intenção do autor: Veículos como *Época Negócios* ou portais educativos apontam para textos dissertativos expositivos/informativos. Títulos com juízo crítico explícito (ex.: *\"Um sonho de desjudicialização\"*) sinalizam textos dissertativos argumentativos. Veículos culturais e crônicas (ex.: *Revista Piauí*) sinalizam tipologia predominantemente narrativa.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Regra prática: Jamais inicie a leitura do corpo textual de uma questão de tipologia sem antes inspecionar o título original e os dados da fonte de publicação no rodapé. Justificativa pedagógica: O suporte textual e o título frequentemente antecipam a intenção do autor: Veículos como *Época Negócios* ou portais educativos apontam para textos dissertativos expositivos/informativos. Títulos com juízo crítico explícito (ex.: *\"Um sonho de desjudicialização\"*) sinalizam textos dissertativos argumentativos. Veículos culturais e crônicas (ex.: *Revista Piauí*) sinalizam tipologia predominantemente narrativa.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G06"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g06-mnemonics-and-tips-006",
+    "source": "suveca",
+    "topic": "Miscelânea de Interpretação",
+    "front": "Como aplicar O Princípio da Retomada Circular do Tema Dissertativo?",
+    "back": "Regra prática: Para confirmar com absoluta certeza que um texto é dissertativo, trace uma linha lógica entre a primeira frase do parágrafo inicial e a última frase do parágrafo final. Justificativa pedagógica: Ao contrário do texto narrativo (que progride em linha temporal até um desfecho fático), o texto dissertativo constrói uma estrutura circular: o tema ou a tese apresentada na introdução é sistematicamente retomada, confirmada ou sintetizada no encerramento.",
+    "hint": "Recupere o critério decisivo antes de consultar a resposta.",
+    "explanation": "Regra prática: Para confirmar com absoluta certeza que um texto é dissertativo, trace uma linha lógica entre a primeira frase do parágrafo inicial e a última frase do parágrafo final. Justificativa pedagógica: Ao contrário do texto narrativo (que progride em linha temporal até um desfecho fático), o texto dissertativo constrói uma estrutura circular: o tema ou a tese apresentada na introdução é sistematicamente retomada, confirmada ou sintetizada no encerramento.",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G06"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
     "id": "editorial-flash-ip-a13-g07-misconceptions-and-traps-014",
     "source": "suveca",
     "topic": "Funções da Linguagem",
@@ -3144,6 +8920,70 @@ export const EDITORIAL_FLASHCARDS = [
     "back": "Erro: Marcar que a função metalinguística predomina em um artigo ou ensaio pedagógico apenas porque o texto cita a palavra \"língua\" ou debate variações linguísticas. Como evitar: Se o texto for um estudo expositivo/acadêmico, sua macrofunção é transmitir conhecimento teórico (referencial/denotativa), sendo a metalinguagem um elemento presente, mas secundário .",
     "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
     "explanation": "Erro: Marcar que a função metalinguística predomina em um artigo ou ensaio pedagógico apenas porque o texto cita a palavra \"língua\" ou debate variações linguísticas. Como evitar: Se o texto for um estudo expositivo/acadêmico, sua macrofunção é transmitir conhecimento teórico (referencial/denotativa), sendo a metalinguagem um elemento presente, mas secundário .",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G07"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g07-misconceptions-and-traps-017",
+    "source": "suveca",
+    "topic": "Funções da Linguagem",
+    "front": "Qual erro deve ser evitado em Restringir Função Poética ao Gênero Poema em Versos?",
+    "back": "Erro: Julgar incorreto um item que aponta função poética em artigos de opinião, crônicas em prosa ou slogans. Como evitar: Lembrar que a função poética se define pelo cuidado com a forma, arranjo estético e uso de figuras conotativas/metáforas, independentemente de estar estruturada em estrofes ou parágrafos corridos (015, 016).",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Julgar incorreto um item que aponta função poética em artigos de opinião, crônicas em prosa ou slogans. Como evitar: Lembrar que a função poética se define pelo cuidado com a forma, arranjo estético e uso de figuras conotativas/metáforas, independentemente de estar estruturada em estrofes ou parágrafos corridos (015, 016).",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G07"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g07-misconceptions-and-traps-015",
+    "source": "suveca",
+    "topic": "Funções da Linguagem",
+    "front": "Qual erro deve ser evitado em Erro de Interpretação Literal em Fórmulas Fáticas?",
+    "back": "Erro: Classificar fórmulas de cortesia (*\"Consultório da Dra. Ana, boa tarde\"* ou *\"Como vai você?\"*) como função referencial descritiva. Como evitar: Reconhecer que saudações e protocolos sociais operam para abrir e validar o canal comunicativo (fática), e não para descrever o período do dia ou relatar a saúde do falante .",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Classificar fórmulas de cortesia (*\"Consultório da Dra. Ana, boa tarde\"* ou *\"Como vai você?\"*) como função referencial descritiva. Como evitar: Reconhecer que saudações e protocolos sociais operam para abrir e validar o canal comunicativo (fática), e não para descrever o período do dia ou relatar a saúde do falante .",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G07"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g07-misconceptions-and-traps-016",
+    "source": "suveca",
+    "topic": "Funções da Linguagem",
+    "front": "Qual erro deve ser evitado em Restringir Função Emotiva a Afetos Confessionais?",
+    "back": "Erro: Achar que função emotiva exige poesia romântica, confissões amorosas ou choros íntimos. Como evitar: Entender que opiniões, posicionamentos críticos, artigos de opinião e teses em redações dissertativas são expressões de subjetividade do emissor e enquadram-se como função emotiva/expressiva .",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Achar que função emotiva exige poesia romântica, confissões amorosas ou choros íntimos. Como evitar: Entender que opiniões, posicionamentos críticos, artigos de opinião e teses em redações dissertativas são expressões de subjetividade do emissor e enquadram-se como função emotiva/expressiva .",
+    "sourceRefs": [
+      "EDITORIAL:IP-A13-G07"
+    ],
+    "moduleId": "mod13",
+    "createdAt": "2026-08-17T00:00:00.000Z",
+    "correctCount": 0,
+    "incorrectCount": 0
+  },
+  {
+    "id": "editorial-flash-ip-a13-g07-misconceptions-and-traps-019",
+    "source": "suveca",
+    "topic": "Funções da Linguagem",
+    "front": "Qual erro deve ser evitado em Confundir Recursos Poéticos Secundários com Predomínio Poético em Cartazes?",
+    "back": "Erro: Marcar que um cartaz contra a dengue tem predomínio poético porque utilizou personificação do mosquito (*\"Não dê chance ao mosquito\"*). Como evitar: Identificar que o recurso expressivo é mero chamariz visual, enquanto o núcleo orientador da peça é conativo (ordenar a limpeza das calhas) .",
+    "hint": "Nomeie primeiro o erro; depois reconstrua a regra corretiva.",
+    "explanation": "Erro: Marcar que um cartaz contra a dengue tem predomínio poético porque utilizou personificação do mosquito (*\"Não dê chance ao mosquito\"*). Como evitar: Identificar que o recurso expressivo é mero chamariz visual, enquanto o núcleo orientador da peça é conativo (ordenar a limpeza das calhas) .",
     "sourceRefs": [
       "EDITORIAL:IP-A13-G07"
     ],
