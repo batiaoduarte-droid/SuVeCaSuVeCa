@@ -20,6 +20,15 @@ export interface PBLCompetency {
   contrastRefs: string[];
   examTrapRefs: string[];
   misconceptionRefs: string[];
+  causalErrorMechanisms?: PBLErrorMechanism[];
+  causalDiagnosticCoverage?: {
+    reviewedQuestionRefs: string[];
+    causalOptionMappings: number;
+    canonicalMisconceptions: number;
+    mechanismOnlyMappings: number;
+    policy: 'single_response_is_hypothesis';
+    reviewedAt: string;
+  };
   prerequisiteCompetencyRefs: string[];
   eligibleQuestionRefs: string[];
   anchorCandidateRefs: string[];
@@ -39,8 +48,10 @@ export interface PBLCompetency {
     missingQuestionsForPractice: number;
     anchorCandidates: number;
     transferCandidates: number;
+    auditedTransferCandidates?: number;
+    unverifiedTransferCandidates?: number;
     validationCandidates: number;
-    gapType: 'none' | 'content';
+    gapType: 'none' | 'content' | 'semantic_validation';
     reason?: string;
     auditedAt: string;
   };
@@ -86,14 +97,35 @@ export interface QuestionCompetencyAssignment {
 
 export interface QuestionDistractor {
   label: string;
-  optionText: string;
-  isCorrect: boolean;
+  optionText?: string;
+  isCorrect?: boolean;
+  /**
+   * Dialeto editorial usado por parte do banco online. O runtime deve
+   * normalizá-lo como feedback genérico, nunca como misconception comprovada.
+   */
+  analysis?: string;
   criterionOrRuleRef?: string | null;
   errorPattern?: string;
   triggeredTrapRef?: string | null;
   likelyMisconceptionRef?: string | null;
-  refutation: string;
+  refutation?: string;
+  causalStatus?: 'causal_candidate' | 'feedback_only';
+  errorMechanism?: PBLErrorMechanism | null;
+  mappingConfidence?: number;
+  mappingEvidence?: string;
 }
+
+export type PBLErrorMechanism =
+  | 'rule_overgeneralization'
+  | 'rule_omission'
+  | 'condition_ignored'
+  | 'category_confusion'
+  | 'polarity_inversion'
+  | 'surface_attractor'
+  | 'invalid_inference'
+  | 'incomplete_analysis'
+  | 'calculation_or_counting_error'
+  | 'reading_misinterpretation';
 
 export interface SolutionStrategyStep {
   stepNumber: number;
@@ -120,7 +152,7 @@ export interface QuestionPedagogy {
   examTrapRefs: string[];
   misconceptionRefs: string[];
   prerequisiteRefs: string[];
-  difficulty: 'facil' | 'medio' | 'dificil';
+  difficulty: 'muito_facil' | 'facil' | 'medio' | 'dificil';
   cognitiveDemand: string;
   solutionStrategy: SolutionStrategyStep[];
   distractorAnalysis: QuestionDistractor[];
@@ -129,6 +161,7 @@ export interface QuestionPedagogy {
     diagnosable: boolean;
     likelyTrapRefs: string[];
     likelyMisconceptionRefs: string[];
+    errorMechanisms?: PBLErrorMechanism[];
     diagnosticDiscriminator: string;
   };
   pblSuitability: {
@@ -142,6 +175,18 @@ export interface QuestionPedagogy {
     sourceQuestionRef: string;
     semanticOrigin: string;
     enrichedAt: string;
+    causalMappingOrigin?: string;
+    causalMappingReviewedAt?: string;
+  };
+  causalDiagnosticReview?: {
+    status: 'dual_pass_reviewed' | 'not_reviewed';
+    method: string | null;
+    model?: string;
+    reviewedAt: string | null;
+    sourceQuestionSha256?: string;
+    reviewSummary?: string;
+    unitRefs?: string[];
+    targetLearningObjectiveRefs?: string[];
   };
 }
 
@@ -197,6 +242,8 @@ export interface PBLCase {
   cognitiveDiagnostic: {
     primaryExamTrapRef?: string | null;
     associatedMisconceptionRef?: string | null;
+    candidateMisconceptionRefs?: string[];
+    candidateErrorMechanisms?: PBLErrorMechanism[];
     triggerCondition: string;
     errorPattern: string;
     correctiveGuidance: string;
@@ -205,8 +252,13 @@ export interface PBLCase {
       text: string;
       isCorrect: boolean;
       misconceptionTriggered?: string | null;
+      triggeredTrapRef?: string | null;
+      causalStatus?: 'causal_candidate' | 'feedback_only';
+      errorMechanism?: PBLErrorMechanism | null;
+      mappingConfidence?: number;
       refutation: string;
     }>;
+    causalReviewStatus?: 'dual_pass_reviewed' | 'not_reviewed';
   };
   contrastingScaffold?: {
     contrastRef: string;
@@ -238,9 +290,22 @@ export interface PBLTransferItem {
   transferType: TransferType;
   examBoard: string;
   year?: number;
-  difficulty: 'facil' | 'medio' | 'dificil';
+  difficulty: 'muito_facil' | 'facil' | 'medio' | 'dificil';
   cognitiveDelta: string;
   expectedObstacle: string;
+  /** Informa quão defensável é o rótulo de transferência deste item. */
+  validationStatus?: 'audited' | 'inferred' | 'unverified';
+  changedDimensions?: string[];
+  anchorQuestionRef?: string;
+  sharedCore?: string;
+  structuralDifference?: string;
+  transferConfidence?: number;
+  transferReview?: {
+    status?: string;
+    method?: string;
+    model?: string;
+    reviewedAt?: string;
+  };
 }
 
 export interface PBLQuestionPresentation {
@@ -273,6 +338,13 @@ export interface PBLTransferSet {
   masteryCriteria: {
     minPassingScore: number;
     consecutiveCorrectRequired: number;
+  };
+  itemLevelAudit?: {
+    status: 'fully_audited' | 'partially_audited';
+    auditedItems: number;
+    unverifiedItems: number;
+    source: string;
+    auditedAt: string;
   };
 }
 
@@ -371,6 +443,7 @@ export type PBLSessionPhase =
 
 export type PBLAttemptStage = 'initial' | 'reattempt' | 'transfer' | 'probe';
 export type PBLConfidenceLevel = 'guess' | 'low' | 'medium' | 'high';
+export type PBLAssistanceLevel = 'none' | 'diagnostic' | 'partial' | 'full';
 
 export type ConfidenceEvaluation =
   | 'strong_correct'
@@ -391,14 +464,40 @@ export interface PBLAttempt {
   evaluation: ConfidenceEvaluation;
   reasoning?: string;
   responseTimeMs: number;
+  assistanceLevel?: PBLAssistanceLevel;
+  isDelayedRetrieval?: boolean;
+  elapsedSinceLastPracticeMs?: number;
   detectedTrapRefs: string[];
   detectedMisconceptionRefs: string[];
   interventionRefs: string[];
   transferType?: TransferType;
+  transferValidationStatus?: 'audited' | 'inferred' | 'unverified';
   createdAt: string;
 }
 
+/** Contrato comum entre a experiência PBL, métricas e conquistas. */
+export interface PBLAttemptTelemetryPayload {
+  attemptId: string;
+  createdAt: string;
+  questionId: string;
+  isCorrect: boolean;
+  userAnswer: string;
+  correctAnswer: string;
+  moduleId?: string;
+  competencyId: string;
+  sessionId: string;
+  stage: PBLAttemptStage;
+  confidence: PBLConfidenceLevel;
+  responseTimeMs: number;
+  assistanceLevel?: PBLAssistanceLevel;
+}
+
 export type MasteryLevel = 'novice' | 'developing' | 'competent' | 'mastered' | 'expert';
+export type PBLLearningState =
+  | 'acquiring'
+  | 'immediate_transfer_confirmed'
+  | 'retention_confirmed'
+  | 'needs_review';
 
 export interface CompetencyMastery {
   competencyId: string;
@@ -406,6 +505,7 @@ export interface CompetencyMastery {
   lessonId: string;
   score: number; // 0.0 to 1.0
   level: MasteryLevel;
+  learningState?: PBLLearningState;
   bktParams?: {
     pKnown: number;
     pTransit: number;
@@ -419,14 +519,37 @@ export interface CompetencyMastery {
   resolvedMisconceptions: string[];
   lastPracticedAt: string;
   nextReviewRecommendedAt: string;
+  immediateTransferConfirmedAt?: string;
+  retentionConfirmedAt?: string;
+  lastUnassistedSuccessAt?: string;
+  successfulDelayedRetrievals?: number;
+  reviewIntervalDays?: number;
 }
+
+export type PBLDiagnosisKind =
+  | 'slip'
+  | 'unknown'
+  | 'mapped_error_hypothesis'
+  | 'confirmed_error_pattern'
+  | 'mapped_misconception'
+  | 'prerequisite_deficit';
 
 export interface DiagnosticResult {
   competencyRef: string;
   questionRef: string;
   evaluation: ConfidenceEvaluation;
+  diagnosisKind: PBLDiagnosisKind;
+  diagnosticEvidence?: {
+    source: 'distractor_mapping' | 'diagnostic_path' | 'option_analysis' | 'none';
+    matchedOptionLabel?: string;
+    pathNodeId?: string;
+    errorMechanism?: PBLErrorMechanism | null;
+    mappingConfidence?: number;
+    confirmedByQuestionRef?: string;
+  };
   trapRefs: string[];
   misconceptionRefs: string[];
+  candidateMisconceptionRefs?: string[];
   prerequisiteCompetencyRef?: string | null;
   diagnosticConfidence: number; // 0.0 to 1.0
   needsProbe: boolean;
@@ -482,7 +605,12 @@ export interface NextActionDecision {
   feedbackMessage?: string;
 }
 
-export type PBLCompetencyOutcome = 'mastered' | 'needs_review';
+/** `mastered` é mantido apenas para hidratar sessões v1 já persistidas. */
+export type PBLCompetencyOutcome =
+  | 'transfer_confirmed'
+  | 'retention_confirmed'
+  | 'needs_review'
+  | 'mastered';
 
 export type PBLReflectionDecision = 'own_rule' | 'suggested_rule' | 'needs_review';
 
@@ -490,6 +618,8 @@ export interface PBLReflectionEntry {
   decision: PBLReflectionDecision;
   note: string;
   suggestedRule: string;
+  assistanceUsed?: boolean;
+  revealedSuggestedRule?: boolean;
   createdAt: string;
 }
 
@@ -497,6 +627,8 @@ export interface PBLReflectionDraft {
   decision?: PBLReflectionDecision;
   note: string;
   suggestedRule: string;
+  assistanceUsed?: boolean;
+  revealedSuggestedRule?: boolean;
   updatedAt: string;
 }
 
@@ -524,6 +656,10 @@ export interface PBLSession {
   reflectionEntries?: Record<string, PBLReflectionEntry>;
   reflectionDrafts?: Record<string, PBLReflectionDraft>;
   savedErrorQuestionRefs?: string[];
+  interventionAssistance?: Record<string, PBLAssistanceLevel>;
+  wallTimeMs?: number;
+  sessionBudgetMs?: number;
+  phaseTimings?: Partial<Record<PBLSessionPhase, number>>;
   lastFeedbackMessage?: string;
   lastDiagnosticResult?: DiagnosticResult;
   lastInterventionPayload?: InterventionPayload;
@@ -563,7 +699,12 @@ export interface MasteryEvidence {
   confidence: PBLConfidenceLevel;
   stage: PBLAttemptStage;
   transferType?: TransferType;
+  transferValidationStatus?: 'audited' | 'inferred' | 'unverified';
   hasMisconception: boolean;
+  assistanceLevel?: PBLAssistanceLevel;
+  isDelayedRetrieval?: boolean;
+  elapsedSinceLastPracticeMs?: number;
+  diagnosisKind?: PBLDiagnosisKind;
 }
 
 export interface MasteryModel {

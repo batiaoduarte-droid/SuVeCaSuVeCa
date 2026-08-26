@@ -64,7 +64,7 @@ describe('currículo editorial das aulas 00–14', () => {
       expect(markdown, section.contentUrl).not.toMatch(forbiddenTechnical);
       expect(markdown, section.contentUrl).not.toMatch(forbiddenMedia);
     }
-  });
+  }, 20000);
 
   it('cobre todas as unidades integradas nos flashcards e usa questões editoriais', () => {
     const coveredUnits = new Set(

@@ -26,6 +26,8 @@ export const PBLDiagnosticView: React.FC<PBLDiagnosticViewProps> = ({
     ? 'Avançar para transferência'
     : nextAction?.type === 'request_probe'
       ? 'Responder sondagem curta'
+      : nextAction?.type === 'branch_to_prerequisite'
+        ? 'Reforçar o pré-requisito'
       : nextAction?.type === 'advance_competency' || nextAction?.type === 'complete_session'
         ? 'Registrar reflexão e concluir'
         : 'Ver intervenção e procedimento';
@@ -52,16 +54,21 @@ export const PBLDiagnosticView: React.FC<PBLDiagnosticViewProps> = ({
             <strong className="text-slate-900">Seu critério:</strong> “{attempt.reasoning}”
           </div>
         )}
-        {!isCorrect && diagnostic?.diagnosticSummary && (
+        {diagnostic?.diagnosticSummary && (
           <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 p-3.5 text-xs text-amber-950">
             <Brain className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-            <div><strong>Hipótese diagnóstica:</strong><p className="mt-1 leading-relaxed">{diagnostic.diagnosticSummary}</p></div>
+            <div><strong>{diagnostic.diagnosisKind === 'mapped_misconception' ? 'Misconception confirmada em nova sondagem:' : diagnostic.diagnosisKind === 'confirmed_error_pattern' ? 'Mecanismo de erro confirmado:' : diagnostic.diagnosisKind === 'mapped_error_hypothesis' ? 'Hipótese de erro a confirmar:' : diagnostic.diagnosisKind === 'prerequisite_deficit' ? 'Pré-requisito sondado:' : isCorrect ? 'Calibração:' : 'Causa ainda não confirmada:'}</strong><p className="mt-1 leading-relaxed">{diagnostic.diagnosticSummary}</p></div>
           </div>
         )}
         {diagnostic?.needsProbe && (
           <div className="flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-3.5 text-xs text-blue-950">
             <SearchCheck className="mt-0.5 h-4 w-4 shrink-0 text-blue-700" />
             <div><strong>Diagnóstico ainda incerto.</strong><p className="mt-1">Uma questão curta ajudará a distinguir a causa do erro antes da explicação.</p></div>
+          </div>
+        )}
+        {nextAction?.feedbackMessage && (
+          <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3.5 text-xs leading-relaxed text-indigo-950">
+            <strong>Próximo passo:</strong> {nextAction.feedbackMessage}
           </div>
         )}
         {!isCorrect && diagnostic?.trapRefs.length ? (

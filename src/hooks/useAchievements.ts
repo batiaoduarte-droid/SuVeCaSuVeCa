@@ -157,6 +157,12 @@ export const useAchievements = (
 
   const recordAnswer = useCallback(
     (isCorrect: boolean) => {
+      // Defesa em runtime para integrações legadas: um objeto é truthy e
+      // anteriormente podia transformar qualquer erro PBL em acerto de streak.
+      if (typeof isCorrect !== 'boolean') {
+        console.warn('[useAchievements] Resultado ignorado: esperava booleano.');
+        return;
+      }
       applyProgress((current) => recordAnswerResult(current, isCorrect));
     },
     [applyProgress]

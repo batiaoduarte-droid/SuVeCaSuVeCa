@@ -129,4 +129,46 @@ describe('QuestionPoolSelector atomic semantic contract', () => {
     const withOptions = { ...first, options: [{ label: 'A', text: 'Alternativa exclusiva.' }] };
     expect(buildQuestionFingerprint(first)).not.toBe(buildQuestionFingerprint(withOptions));
   });
+
+  it('prefers direct alignment for an anchor over a higher-scored supporting assignment', async () => {
+    const directCompetency: PBLCompetency = {
+      ...targetCompetency,
+      learningObjectiveRefs: ['LO-TARGET'],
+      eligibleQuestionRefs: ['Q1', 'Q2'],
+      anchorCandidateRefs: ['Q1', 'Q2'],
+      diagnosticCandidateRefs: ['Q1', 'Q2'],
+      transferCandidateRefs: ['Q1', 'Q2'],
+      validationCandidateRefs: ['Q1', 'Q2'],
+    };
+    const supporting = {
+      ...assignment('Q1'),
+      alignment: 'supporting' as const,
+      roleScores: { ...roleScores, anchor: 0.99 },
+    };
+    const direct = {
+      ...assignment('Q2'),
+      relation: 'primary' as const,
+      alignment: 'direct' as const,
+      roleScores: { ...roleScores, anchor: 0.7 },
+    };
+    const repo = new PBLRepository();
+    repo.loadDirectly({
+      competencies: [directCompetency],
+      questionLinksMap: {
+        Q1: link('Q1', [supporting]),
+        Q2: link('Q2', [direct]),
+      },
+      questionPresentations: {
+        Q1: presentation('Q1', 'Contexto de apoio.'),
+        Q2: presentation('Q2', 'Contexto diretamente alinhado.'),
+      },
+    });
+
+    const selected = await new QuestionPoolSelector(repo).selectQuestion(
+      directCompetency.competencyId,
+      'anchor'
+    );
+    expect(selected?.questionRef).toBe('Q2');
+    expect(selected?.alignment).toBe('direct');
+  });
 });

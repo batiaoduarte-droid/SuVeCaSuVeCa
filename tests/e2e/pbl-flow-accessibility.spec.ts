@@ -35,6 +35,25 @@ const chooseCurrentPublishedCorrectAnswer = async (page: Parameters<typeof openA
   await chooseAnswer(page, answer);
 };
 
+const chooseCurrentPublishedWrongAnswer = async (page: Parameters<typeof openApp>[0]) => {
+  const questionRef = await page.locator('[data-pbl-question-ref]').getAttribute('data-pbl-question-ref');
+  const published = questionRef ? publishedQuestionAnswers.get(questionRef) : undefined;
+  expect(published, `Questão publicada não encontrada: ${questionRef}`).toBeDefined();
+  const correctAnswer = published!.options?.length
+    ? published!.correctAnswer
+    : ['C', 'CERTO', 'CORRETO', 'CORRECT', 'TRUE'].includes(published!.correctAnswer.toUpperCase())
+      ? 'Certo'
+      : 'Errado';
+  let wrongAnswer = 'A';
+  if (published!.options?.length) {
+    const letters = ['A', 'B', 'C', 'D', 'E'];
+    wrongAnswer = letters.find((l) => l !== correctAnswer) || 'B';
+  } else {
+    wrongAnswer = correctAnswer === 'Certo' ? 'Errado' : 'Certo';
+  }
+  await chooseAnswer(page, wrongAnswer);
+};
+
 const submitWithHighConfidence = async (page: Parameters<typeof openApp>[0], submitName: RegExp) => {
   await page.getByRole('button', { name: /muito seguro/i }).click();
   await page.getByRole('button', { name: submitName }).click();
@@ -67,12 +86,23 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await expect(page.getByText(/não corresponde ao gabarito/i)).toBeVisible();
     await expect(page.getByText(/gabarito:\s*incorrect/i)).toHaveCount(0);
     await page.getByRole('button', { name: /salvar no caderno de erros/i }).click();
-    await expect(page.getByRole('button', { name: /salvo no caderno/i })).toBeDisabled();
+    const probeButton = page.getByRole('button', { name: /responder sondagem curta/i });
+    if (await probeButton.isVisible()) {
+      await probeButton.click();
+      await chooseCurrentPublishedWrongAnswer(page);
+      await submitWithHighConfidence(page, /confirmar/i);
+    }
     await page.getByRole('button', { name: /ver intervenção/i }).click();
 
-    await expect(page.getByText(/microaula de intervenção/i)).toBeVisible();
+    await expect(page.getByText('Pista decisiva', { exact: true })).toBeVisible();
     await expect(page.getByText(/^Regra Decisiva:\s*RULE-/i)).toHaveCount(0);
-    await page.getByRole('button', { name: /aplicar em uma nova questão/i }).click();
+    await expect(page.getByText(/procedimento de resolução/i)).toHaveCount(0);
+    await page.getByRole('button', { name: /ver procedimento e contraste/i }).click();
+    await expect(page.getByText(/procedimento de resolução/i)).toBeVisible();
+    await expect(page.getByText('Exemplo resolvido', { exact: true })).toHaveCount(0);
+    await page.getByRole('button', { name: /ver exemplo resolvido/i }).click();
+    await expect(page.getByText('Exemplo resolvido', { exact: true })).toBeVisible();
+    await page.getByRole('button', { name: /aplicar sem apoio visível/i }).click();
 
     await expect(page.getByText(/nova aplicação após a intervenção/i)).toBeVisible();
     await chooseCurrentPublishedCorrectAnswer(page);
@@ -87,16 +117,18 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await submitWithHighConfidence(page, /validar transferência/i);
 
     await expect(page.getByRole('heading', { name: /transforme o resultado em uma decisão/i })).toBeVisible();
-    await expect(page.getByText(/critério para a próxima questão/i)).toBeVisible();
+    await expect(page.getByText(/orientação para comparação/i)).toHaveCount(0);
     await expect(page.getByText(/^(?:RULE|RULF)-/i)).toHaveCount(0);
-    await page.getByText('Consigo explicar', { exact: true }).click();
     await page.getByLabel(/na próxima questão, primeiro vou/i).fill('Primeiro identificarei o fenômeno e aplicarei o teste decisivo antes de comparar as alternativas.');
+    await page.getByRole('button', { name: /comparar com a orientação/i }).click();
+    await expect(page.getByText(/orientação para comparação/i)).toBeVisible();
+    await page.getByText('Manter minha regra', { exact: true }).click();
     await page.getByRole('button', { name: /salvar decisão e ver próximos passos/i }).click();
 
     await expect(page.getByText(/sessão finalizada/i)).toBeVisible();
-    await expect(page.getByText(/domínio demonstrado em transferência/i)).toBeVisible();
+    await expect(page.getByText(/transferência imediata confirmada/i).first()).toBeVisible();
     await expect(page.getByRole('button', { name: /abrir caderno de erros/i })).toBeVisible();
-    await expect(page.getByRole('button', { name: /ir para revisão/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /voltar à fila de revisão/i })).toBeVisible();
 
     const savedPBLItem = await page.evaluate(() => {
       const raw = localStorage.getItem('suveca_caderno_erros_guest');
@@ -107,7 +139,7 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     expect(savedPBLItem.nextReviewAt).toBeTruthy();
   });
 
-  test('reflexão de domínio mostra a regra pedagógica em vez do identificador interno', async ({ page }) => {
+  test('reflexão exige recuperação antes de mostrar a regra pedagógica', async ({ page }) => {
     await openApp(page);
     await openTab(page, 'Aprender por Problemas (PBL)');
     await page.getByRole('button', { name: /iniciar sessão recomendada/i }).click();
@@ -121,7 +153,10 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await chooseCurrentPublishedCorrectAnswer(page);
     await submitWithHighConfidence(page, /validar transferência/i);
 
-    await expect(page.getByText(/critério para a próxima questão/i)).toBeVisible();
+    await expect(page.getByText(/orientação para comparação/i)).toHaveCount(0);
+    await page.getByLabel(/na próxima questão, primeiro vou/i).fill('Primeiro compararei letras e fonemas usando o critério recuperado sem consultar a explicação.');
+    await page.getByRole('button', { name: /comparar com a orientação/i }).click();
+    await expect(page.getByText(/orientação para comparação/i)).toBeVisible();
     await expect(page.getByText(/número de fonemas.*número de letras/i)).toBeVisible();
     await expect(page.getByText(/^(?:RULE|RULF)-/i)).toHaveCount(0);
   });

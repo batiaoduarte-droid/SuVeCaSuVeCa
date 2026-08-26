@@ -113,8 +113,10 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
       expect(step1.attempt.isCorrect).toBe(false);
       expect(step1.attempt.evaluation).toBe('high_confidence_error');
       expect(step1.diagnostic).toBeDefined();
-      expect(step1.intervention).toBeDefined();
-      expect(step1.nextAction.type).toBe('trigger_intervention');
+      if (step1.nextAction.type === 'trigger_intervention') {
+        expect(step1.intervention).toBeDefined();
+      }
+      expect(['trigger_intervention', 'request_probe']).toContain(step1.nextAction.type);
       expect(step1.session.phase).toBe('diagnostic');
 
       const reattemptSession = await engine.prepareReattempt(step1.session);
@@ -157,6 +159,73 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
       }
     });
   }
+
+  it('branches from a proven prerequisite deficit and then keeps the original competency queued', async () => {
+    const targetCompetencyId = 'COMP-A00-G03-02';
+    const prerequisiteCompetencyId = 'COMP-A00-G03-01';
+    const session = await engine.startSession({
+      userId: 'prerequisite_user',
+      mode: 'guided',
+      targetCompetencyId,
+      maxCompetencies: 1,
+    });
+    const anchorCase = await repo.getCaseForCompetency(targetCompetencyId);
+    expect(anchorCase).toBeDefined();
+    const multipleChoice = Boolean(anchorCase!.options.length);
+    const correctAnswer = answerChoiceFor(anchorCase!.officialAnswer, multipleChoice);
+    const wrongAnswer = multipleChoice
+      ? anchorCase!.options.find((option) =>
+          normalizePBLAnswer(option.label, 'multiple_choice')
+          !== normalizePBLAnswer(anchorCase!.officialAnswer, 'multiple_choice')
+        )?.label || '__WRONG__'
+      : correctAnswer === 'Certo' ? 'Errado' : 'Certo';
+
+    const initialResult = await engine.submitAttempt(session, {
+      sessionId: session.sessionId,
+      questionRef: anchorCase!.anchorQuestionRef,
+      competencyRef: targetCompetencyId,
+      userAnswer: wrongAnswer,
+      correctAnswer: anchorCase!.officialAnswer,
+      answerMode: multipleChoice ? 'multiple_choice' : 'true_false',
+      confidence: 'high',
+      stage: 'initial',
+      responseTimeMs: 1_000,
+    });
+
+    const diagPath = await repo.getDiagnosticPathForCompetency(targetCompetencyId);
+    const prereqNode = diagPath?.nodes.find((n) => n.evaluatedPrerequisiteRef === prerequisiteCompetencyId);
+    expect(prereqNode).toBeDefined();
+    const probeQuestion = await repo.getQuestionPresentation(prereqNode!.questionRef);
+    const probeWrong = probeQuestion?.questionType === 'multiple_choice'
+      ? probeQuestion.options.find((o) => o.label !== probeQuestion.correctAnswer)?.label || 'B'
+      : probeQuestion?.correctAnswer === 'Certo' ? 'Errado' : 'Certo';
+    const result = await engine.submitAttempt(initialResult.session, {
+      sessionId: session.sessionId,
+      questionRef: prereqNode!.questionRef,
+      competencyRef: targetCompetencyId,
+      userAnswer: probeWrong,
+      correctAnswer: probeQuestion?.correctAnswer || 'Certo',
+      answerMode: probeQuestion?.questionType || 'true_false',
+      confidence: 'high',
+      stage: 'probe',
+      responseTimeMs: 1_000,
+    });
+
+    expect(result.diagnostic).toMatchObject({
+      diagnosisKind: 'prerequisite_deficit',
+      prerequisiteCompetencyRef: prerequisiteCompetencyId,
+    });
+    expect(result.nextAction).toMatchObject({
+      type: 'branch_to_prerequisite',
+      targetCompetencyRef: prerequisiteCompetencyId,
+    });
+    const branched = engine.continueAfterDiagnostic(result.session);
+    expect(branched.currentCompetencyRef).toBe(prerequisiteCompetencyId);
+    expect(branched.targetCompetencyRefs).toEqual([
+      prerequisiteCompetencyId,
+      targetCompetencyId,
+    ]);
+  });
 
   it('should make all 190 rebuilt anchors answerable', async () => {
     const ungraded = realCases.filter((pblCase) => !pblCase.officialAnswer);
@@ -219,26 +288,12 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
 
     const diagnosticCompetency = findOnlineCompetency('diagnosticCandidateRefs');
     expect(diagnosticCompetency).toBeDefined();
-    const diagnosticCase = await repo.getCaseForCompetency(diagnosticCompetency!.competencyId);
-    expect(diagnosticCase).toBeDefined();
-    const diagnostic = await new DiagnosticResolver(repo).resolveDiagnostic({
-      attemptId: 'att_online_diagnostic',
-      sessionId: 'sess_online_diagnostic',
-      questionRef: diagnosticCase!.anchorQuestionRef,
-      competencyRef: diagnosticCompetency!.competencyId,
-      stage: 'initial',
-      userAnswer: '__WRONG__',
-      correctAnswer: diagnosticCase!.officialAnswer,
-      isCorrect: false,
-      confidence: 'low',
-      evaluation: 'error',
-      responseTimeMs: 1000,
-      detectedTrapRefs: [],
-      detectedMisconceptionRefs: [],
-      interventionRefs: [],
-      createdAt: new Date().toISOString(),
-    });
-    expect(diagnostic.probeQuestionRef).toContain('-estrategia.');
+    const diagnosticCandidate = await new QuestionPoolSelector(repo).selectQuestion(
+      diagnosticCompetency!.competencyId,
+      'diagnostic',
+      { onlineOnly: true, seed: 'online-role-proof' }
+    );
+    expect(diagnosticCandidate?.questionRef).toContain('-estrategia.');
 
     const transferCompetency = findOnlineCompetency('transferCandidateRefs');
     expect(transferCompetency).toBeDefined();
@@ -372,6 +427,115 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
     expect(cumSess?.spiralProgressionLevel).toBe(1);
   });
 
+  it('should rotate cumulative coverage and mix older with recent competencies across all A14 sessions', async () => {
+    const cumulativeSessions = await repo.getCumulativeSessions();
+    const selectedPairs: string[] = [];
+
+    expect(cumulativeSessions).toHaveLength(13);
+    for (const cumulativeSession of cumulativeSessions) {
+      const session = await engine.startSession({
+        userId: 'spiral_rotation_user',
+        mode: 'cumulative',
+        cumulativeSessionId: cumulativeSession.sessionId,
+        maxCompetencies: 2,
+      });
+
+      expect(session.targetCompetencyRefs).toHaveLength(2);
+      expect(session.targetCompetencyRefs.every((id) =>
+        cumulativeSession.integratedCompetencyRefs.includes(id)
+      )).toBe(true);
+      selectedPairs.push([...session.targetCompetencyRefs].sort().join('|'));
+
+      const repeatedSession = await engine.startSession({
+        userId: 'spiral_rotation_user',
+        mode: 'cumulative',
+        cumulativeSessionId: cumulativeSession.sessionId,
+        maxCompetencies: 2,
+      });
+      expect(repeatedSession.targetCompetencyRefs).toEqual(session.targetCompetencyRefs);
+
+      const selectedCompetencies = await Promise.all(
+        session.targetCompetencyRefs.map((id) => repo.getCompetency(id))
+      );
+      const latestLesson = cumulativeSession.coveredCurricularLessons.at(-1);
+      if (cumulativeSession.coveredCurricularLessons.length > 1 && latestLesson) {
+        expect(selectedCompetencies.some((competency) => competency?.lessonId === latestLesson)).toBe(true);
+        expect(selectedCompetencies.some((competency) => competency?.lessonId !== latestLesson)).toBe(true);
+
+        const crossLessonFocus = new Set(
+          (await Promise.all(
+            cumulativeSession.crossLessonTransferSetRefs.map((id) => repo.getTransferSet(id))
+          ))
+            .map((transferSet) => transferSet?.competencyRef)
+            .filter((id): id is string => Boolean(id))
+        );
+        expect(session.targetCompetencyRefs.some((id) => crossLessonFocus.has(id))).toBe(true);
+      }
+    }
+
+    expect(new Set(selectedPairs).size).toBe(cumulativeSessions.length);
+  }, 60_000);
+
+  it('should prioritize overdue competencies inside the old and recent cumulative slots', async () => {
+    const cumulativeSession = await repo.getCumulativeSession('PBL-SESS-A14-S04');
+    expect(cumulativeSession).toBeDefined();
+    const latestLesson = cumulativeSession!.coveredCurricularLessons.at(-1)!;
+    const recentTarget = (await Promise.all(
+      cumulativeSession!.integratedCompetencyRefs.map((id) => repo.getCompetency(id))
+    )).find((competency) => competency?.lessonId === latestLesson)!;
+    const oldTarget = await repo.getCompetency('COMP-A00-G03-02');
+    expect(oldTarget).toBeDefined();
+
+    const futureReview = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+    const overdueReview = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+    const masteryMap: Record<string, CompetencyMastery> = {};
+    for (const competencyId of cumulativeSession!.integratedCompetencyRefs) {
+      const competency = await repo.getCompetency(competencyId);
+      if (!competency) continue;
+      masteryMap[competencyId] = {
+        competencyId,
+        unitId: competency.unitId,
+        lessonId: competency.lessonId,
+        score: 0.82,
+        level: 'mastered',
+        totalAttempts: 6,
+        correctAttempts: 5,
+        transferSuccessCount: 2,
+        activeMisconceptions: [],
+        resolvedMisconceptions: [],
+        lastPracticedAt: new Date().toISOString(),
+        nextReviewRecommendedAt: futureReview,
+      };
+    }
+    masteryMap[oldTarget!.competencyId] = {
+      ...masteryMap[oldTarget!.competencyId],
+      score: 0.35,
+      level: 'developing',
+      activeMisconceptions: ['MIS-OVERDUE-OLD'],
+      nextReviewRecommendedAt: overdueReview,
+    };
+    masteryMap[recentTarget.competencyId] = {
+      ...masteryMap[recentTarget.competencyId],
+      score: 0.42,
+      level: 'developing',
+      activeMisconceptions: ['MIS-OVERDUE-RECENT'],
+      nextReviewRecommendedAt: overdueReview,
+    };
+
+    const session = await engine.startSession({
+      userId: 'overdue_review_user',
+      mode: 'cumulative',
+      cumulativeSessionId: cumulativeSession!.sessionId,
+      currentMasteryMap: masteryMap,
+      maxCompetencies: 2,
+    });
+
+    expect(new Set(session.targetCompetencyRefs)).toEqual(new Set([
+      oldTarget!.competencyId,
+      recentTarget.competencyId,
+    ]));
+  }, 60_000);
+
   describe('AttemptEvaluator 4-Quadrant Policies', () => {
     it('should classify strong_correct (Correct + High/Medium Confidence)', () => {
       expect(AttemptEvaluator.evaluateConfidence(true, 'high')).toBe('strong_correct');
@@ -394,7 +558,7 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
   });
 
   describe('DiagnosticResolver Confidence Thresholds', () => {
-    it('should output high diagnostic confidence (>= 0.85) on high_confidence_error', async () => {
+    it('should not infer a misconception from confidence alone', async () => {
       const resolver = new DiagnosticResolver(repo);
       const attempt = {
         attemptId: 'att_test',
@@ -415,25 +579,29 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
       };
 
       const result = await resolver.resolveDiagnostic(attempt);
-      expect(result.diagnosticConfidence).toBeGreaterThanOrEqual(0.85);
-      expect(result.needsProbe).toBe(false);
-      expect(result.misconceptionRefs.length).toBeGreaterThan(0);
+      expect(result.diagnosisKind).toBe('unknown');
+      expect(result.diagnosticConfidence).toBeLessThanOrEqual(0.55);
+      expect(result.needsProbe).toBe(true);
+      expect(result.misconceptionRefs).toEqual([]);
     });
   });
 
   describe('TransferSelector Tiers', () => {
     it('should select isomorphic/near transfer after error', async () => {
       const selector = new TransferSelector(repo);
-      const item = await selector.selectNextTransferItem('COMP-A10-G01-01', 'error', 0);
+      const item = await selector.selectNextTransferItem('COMP-A00-G03-01', 'error', 0);
       expect(item).toBeDefined();
       expect(['isomorphic', 'near_transfer']).toContain(item?.transferType);
+      expect(item?.validationStatus).toBe('audited');
+      expect(item?.changedDimensions.length).toBeGreaterThan(0);
     });
 
     it('should select near or boundary transfer after strong correct', async () => {
       const selector = new TransferSelector(repo);
-      const item = await selector.selectNextTransferItem('COMP-A10-G01-01', 'strong_correct', 0);
+      const item = await selector.selectNextTransferItem('COMP-A00-G03-01', 'strong_correct', 0);
       expect(item).toBeDefined();
       expect(['isomorphic', 'near_transfer', 'boundary_case']).toContain(item?.transferType);
+      expect(item?.validationStatus).toBe('audited');
     });
   });
 

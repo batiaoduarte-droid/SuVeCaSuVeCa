@@ -55,6 +55,27 @@ describe('PBLSessionRepository Persistence', () => {
     expect(retrieved).toBeDefined();
     expect(retrieved?.sessionId).toBe('sess_pers_001');
     expect(retrieved?.masterySnapshot['COMP-A10-G01-01'].score).toBe(0.65);
+    expect(retrieved?.masterySnapshot['COMP-A10-G01-01'].learningState).toBe('acquiring');
+  });
+
+  it('does not infer transfer or retention from a legacy score label alone', async () => {
+    const legacyMastery = mockSession.masterySnapshot['COMP-A10-G01-01'];
+    await PBLSessionRepository.saveSession({
+      ...mockSession,
+      masterySnapshot: {
+        'COMP-A10-G01-01': {
+          ...legacyMastery,
+          score: 0.95,
+          level: 'expert',
+          learningState: undefined,
+          immediateTransferConfirmedAt: undefined,
+          retentionConfirmedAt: undefined,
+        },
+      },
+    });
+
+    const retrieved = await PBLSessionRepository.getSession(mockSession.sessionId, 'guest');
+    expect(retrieved?.masterySnapshot['COMP-A10-G01-01'].learningState).toBe('acquiring');
   });
 
   it('should retrieve user mastery correctly', async () => {

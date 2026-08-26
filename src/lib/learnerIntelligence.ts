@@ -384,25 +384,50 @@ export interface MetacognitiveMatrixSummary {
 export function computeMetacognitiveMatrix(
   practiceAnswered: number,
   practiceCorrect: number,
-  errors: CadernoErroItem[]
+  errors: CadernoErroItem[],
+  observedAttempts: Array<{
+    isCorrect: boolean;
+    confidence: 'guess' | 'low' | 'medium' | 'high';
+  }> = []
 ): MetacognitiveMatrixSummary {
   const totalQuestions = Math.max(practiceAnswered, errors.length > 0 ? errors.length * 2 : 10);
   const correctCount = practiceCorrect > 0 ? practiceCorrect : Math.max(0, totalQuestions - errors.length);
   const incorrectCount = Math.max(0, totalQuestions - correctCount);
 
-  // Erros com status dia0/dia1 tendem a vir de ilusão de competência (pegadinhas de banca)
-  const illusionErrors = errors.filter((e) => e.status === 'dia0' || e.status === 'dia1').length;
-  const consciousErrors = Math.max(0, incorrectCount - illusionErrors);
-
-  // Acertos: 75% domínio consolidado, 25% acerto frágil/eliminação (estimativa bayesiana inicial)
-  const masteryCorrect = Math.round(correctCount * 0.75);
-  const fragileCorrect = Math.max(0, correctCount - masteryCorrect);
+  const hasObservedCalibration = observedAttempts.length > 0;
+  const isHighConfidence = (confidence: 'guess' | 'low' | 'medium' | 'high') =>
+    confidence === 'medium' || confidence === 'high';
+  // Quando o PBL fornece confiança observada, usa-se o quadrante real. A
+  // estimativa legada permanece apenas para históricos sem esse sinal.
+  const observedMasteryCorrect = observedAttempts.filter(
+    (attempt) => attempt.isCorrect && isHighConfidence(attempt.confidence)
+  ).length;
+  const observedFragileCorrect = observedAttempts.filter(
+    (attempt) => attempt.isCorrect && !isHighConfidence(attempt.confidence)
+  ).length;
+  const observedConsciousErrors = observedAttempts.filter(
+    (attempt) => !attempt.isCorrect && !isHighConfidence(attempt.confidence)
+  ).length;
+  const observedIllusionErrors = observedAttempts.filter(
+    (attempt) => !attempt.isCorrect && isHighConfidence(attempt.confidence)
+  ).length;
+  const estimatedIllusionErrors = errors.filter((e) => e.status === 'dia0' || e.status === 'dia1').length;
+  const illusionErrors = hasObservedCalibration ? observedIllusionErrors : estimatedIllusionErrors;
+  const consciousErrors = hasObservedCalibration
+    ? observedConsciousErrors
+    : Math.max(0, incorrectCount - estimatedIllusionErrors);
+  const masteryCorrect = hasObservedCalibration
+    ? observedMasteryCorrect
+    : Math.round(correctCount * 0.75);
+  const fragileCorrect = hasObservedCalibration
+    ? observedFragileCorrect
+    : Math.max(0, correctCount - masteryCorrect);
 
   const total = Math.max(1, masteryCorrect + fragileCorrect + consciousErrors + illusionErrors);
 
   const q1: MetacognitiveQuadrantData = {
     id: 'q1_mastery',
-    name: 'Domínio Confiante',
+    name: 'Acerto Confiante',
     shortLabel: 'Q1',
     tagline: 'Alta Certeza + Acerto',
     confidence: 'Alta',
@@ -411,7 +436,7 @@ export function computeMetacognitiveMatrix(
     percentage: Math.round((masteryCorrect / total) * 100),
     color: 'emerald',
     riskLevel: 'baixo',
-    pedagogicalAdvice: 'Conteúdo consolidado na memória de longo prazo. Manter espaçamento amplo de revisão.',
+    pedagogicalAdvice: 'A resposta foi correta e confiante. Confirme retenção em recuperação futura antes de ampliar o espaçamento.',
   };
 
   const q2: MetacognitiveQuadrantData = {
@@ -444,7 +469,7 @@ export function computeMetacognitiveMatrix(
 
   const q4: MetacognitiveQuadrantData = {
     id: 'q4_illusion',
-    name: 'Ilusão de Competência (Armadilha)',
+    name: 'Erro de Alta Confiança',
     shortLabel: 'Q4',
     tagline: 'Alta Certeza + Erro',
     confidence: 'Alta',
@@ -453,7 +478,7 @@ export function computeMetacognitiveMatrix(
     percentage: Math.round((illusionErrors / total) * 100),
     color: 'rose',
     riskLevel: 'critico',
-    pedagogicalAdvice: 'Caiu na pegadinha da banca com convicção de acerto. No Cebraspe, anula outra questão certa!',
+    pedagogicalAdvice: 'A convicção estava desalinhada ao resultado. Investigue a regra e só atribua armadilha quando houver mapeamento específico.',
   };
 
   const calibrationScore = Math.round(((masteryCorrect + consciousErrors) / total) * 100);
@@ -866,5 +891,3 @@ export function computeRetentionCurveEstimate(
     tacticalAdvice,
   };
 }
-
-

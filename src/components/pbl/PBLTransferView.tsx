@@ -20,7 +20,7 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
   question,
   kind = 'transfer',
   itemIndex = 0,
-  totalItems = 3,
+  totalItems = 4,
   selectedAnswer,
   onSelectAnswer,
   disabled = false,
@@ -33,11 +33,14 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
     far_transfer: 'Transferência distante',
     inverted_transfer: 'Transferência invertida',
   };
+  const hasAuditedTransferType = transferItem?.validationStatus === 'audited';
   const heading = kind === 'probe'
     ? 'Sondagem diagnóstica'
     : kind === 'reattempt'
       ? 'Nova aplicação após a intervenção'
-      : typeLabels[transferItem?.transferType || ''] || 'Transferência cognitiva';
+      : hasAuditedTransferType
+        ? typeLabels[transferItem?.transferType || ''] || 'Transferência auditada'
+        : 'Nova aplicação em outro item';
   const options = question.options.length
     ? question.options
     : [
@@ -66,9 +69,14 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
         </div>
       )}
 
-      {transferItem?.cognitiveDelta && kind === 'transfer' && (
+      {transferItem?.cognitiveDelta && kind === 'transfer' && hasAuditedTransferType && (
         <div className="mb-4 rounded-xl border border-indigo-100 bg-indigo-50/50 p-3 text-xs text-indigo-950">
           <strong>O que mudou:</strong> {transferItem.cognitiveDelta}
+        </div>
+      )}
+      {transferItem && kind === 'transfer' && !hasAuditedTransferType && (
+        <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
+          Esta questão verifica nova aplicação. A distância estrutural do item ainda não é usada como evidência de transferência distante.
         </div>
       )}
 

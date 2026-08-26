@@ -6,14 +6,51 @@ const LOCAL_STORAGE_KEY_PREFIX = 'suveca_pbl_session_';
 const LOCAL_STORAGE_MASTERY_PREFIX = 'suveca_pbl_mastery_';
 
 export class PBLSessionRepository {
+  private static hydrateMastery(mastery: CompetencyMastery): CompetencyMastery {
+    const inferredState = mastery.retentionConfirmedAt
+      ? 'retention_confirmed'
+      : mastery.immediateTransferConfirmedAt
+        ? 'immediate_transfer_confirmed'
+        : mastery.activeMisconceptions?.length
+          ? 'needs_review'
+          : 'acquiring';
+    return {
+      ...mastery,
+      learningState: mastery.learningState || inferredState,
+      activeMisconceptions: mastery.activeMisconceptions || [],
+      resolvedMisconceptions: mastery.resolvedMisconceptions || [],
+      successfulDelayedRetrievals: mastery.successfulDelayedRetrievals || 0,
+      reviewIntervalDays: Math.max(1, mastery.reviewIntervalDays || 1),
+    };
+  }
+
   private static hydrateSession(session: PBLSession): PBLSession {
+    const competencyOutcomes = Object.fromEntries(
+      Object.entries(session.competencyOutcomes || {}).map(([competencyId, outcome]) => [
+        competencyId,
+        outcome === 'mastered' ? 'transfer_confirmed' : outcome,
+      ])
+    ) as NonNullable<PBLSession['competencyOutcomes']>;
     return {
       ...session,
-      competencyOutcomes: session.competencyOutcomes || {},
+      competencyOutcomes,
       reflectionNotes: session.reflectionNotes || {},
       reflectionEntries: session.reflectionEntries || {},
       reflectionDrafts: session.reflectionDrafts || {},
       savedErrorQuestionRefs: session.savedErrorQuestionRefs || [],
+      interventionAssistance: session.interventionAssistance || {},
+      wallTimeMs: Math.max(0, session.wallTimeMs ?? session.sessionStats.totalTimeMs ?? 0),
+      sessionBudgetMs: Math.max(
+        5 * 60_000,
+        session.sessionBudgetMs ?? (session.mode === 'cumulative' ? 18 * 60_000 : 12 * 60_000)
+      ),
+      phaseTimings: session.phaseTimings || {},
+      masterySnapshot: Object.fromEntries(
+        Object.entries(session.masterySnapshot || {}).map(([competencyId, mastery]) => [
+          competencyId,
+          this.hydrateMastery(mastery),
+        ])
+      ),
     };
   }
 
@@ -113,14 +150,22 @@ export class PBLSessionRepository {
     try {
       const masteryKey = `${LOCAL_STORAGE_MASTERY_PREFIX}${userId}`;
       const local = localStorage.getItem(masteryKey);
-      if (local) return JSON.parse(local);
+      if (local) {
+        const parsed = JSON.parse(local) as Record<string, CompetencyMastery>;
+        return Object.fromEntries(
+          Object.entries(parsed).map(([competencyId, mastery]) => [
+            competencyId,
+            this.hydrateMastery(mastery),
+          ])
+        );
+      }
 
       if (userId && userId !== 'guest' && db) {
         const masteryCol = collection(db, 'users', userId, 'pblMastery');
         const snaps = await getDocs(masteryCol);
         const result: Record<string, CompetencyMastery> = {};
         snaps.forEach((d) => {
-          result[d.id] = d.data() as CompetencyMastery;
+          result[d.id] = this.hydrateMastery(d.data() as CompetencyMastery);
         });
         return result;
       }

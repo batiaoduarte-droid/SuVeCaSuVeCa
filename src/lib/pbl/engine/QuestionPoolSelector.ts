@@ -1,5 +1,6 @@
 import type {
   PBLCompetency,
+  PBLErrorMechanism,
   PBLQuestionRole,
   PBLQuestionPresentation,
   PBLTransferItem,
@@ -19,6 +20,7 @@ export interface PBLQuestionPoolCandidate {
   link?: QuestionCompetencyLink | null;
   assignment?: QuestionCompetencyAssignment | null;
   pedagogy?: QuestionPedagogy | null;
+  alignment: 'direct' | 'coarse' | 'supporting';
 }
 
 export interface PBLPracticeReadiness {
@@ -33,6 +35,8 @@ interface SelectQuestionOptions {
   excludedPromptFingerprints?: string[];
   onlineOnly?: boolean;
   seed?: string;
+  targetMisconceptionRefs?: string[];
+  targetErrorMechanisms?: Array<PBLErrorMechanism | null | undefined>;
 }
 
 const roleField = {
@@ -210,6 +214,30 @@ export class QuestionPoolSelector {
         : Number.isFinite(pedagogyScore)
           ? Number(pedagogyScore)
           : 0;
+      const hasDirectLearningObjective = Boolean(
+        pedagogy?.targetLearningObjectiveRefs?.some((objectiveRef) =>
+          competency.learningObjectiveRefs.includes(objectiveRef)
+        )
+      );
+      const alignment = hasDirectLearningObjective || (
+        assignment?.relation === 'primary' && assignment.alignment === 'direct'
+      )
+        ? 'direct' as const
+        : assignment?.alignment === 'supporting' || assignment?.relation === 'secondary'
+          ? 'supporting' as const
+          : 'coarse' as const;
+      const targetMisconceptions = new Set(options.targetMisconceptionRefs || []);
+      const targetMechanisms = new Set(
+        (options.targetErrorMechanisms || []).filter((value): value is PBLErrorMechanism => Boolean(value))
+      );
+      const causalTargetMatch = (pedagogy?.distractorAnalysis || []).some((distractor) =>
+        distractor.causalStatus === 'causal_candidate'
+        && (
+          (distractor.likelyMisconceptionRef
+            && targetMisconceptions.has(distractor.likelyMisconceptionRef))
+          || (distractor.errorMechanism && targetMechanisms.has(distractor.errorMechanism))
+        )
+      );
       return {
         questionRef,
         role,
@@ -218,31 +246,46 @@ export class QuestionPoolSelector {
         link,
         assignment,
         pedagogy,
+        alignment,
+        causalTargetMatch,
       };
     }));
 
     const semanticallyEligible = ranked.filter(({ assignment }) => Boolean(assignment));
     if (!semanticallyEligible.length) return null;
+    const targetingRequested = Boolean(
+      options.targetMisconceptionRefs?.length || options.targetErrorMechanisms?.filter(Boolean).length
+    );
+    const targetedCandidates = semanticallyEligible.filter(({ causalTargetMatch }) => causalTargetMatch);
+    if (targetingRequested && !targetedCandidates.length) return null;
+    const candidateUniverse = targetingRequested ? targetedCandidates : semanticallyEligible;
 
-    semanticallyEligible.sort((left, right) => {
+    const directCandidates = candidateUniverse.filter(({ alignment }) => alignment === 'direct');
+    const roleAligned = (role === 'anchor' || role === 'validation') && directCandidates.length
+      ? directCandidates
+      : candidateUniverse;
+
+    roleAligned.sort((left, right) => {
+      const alignmentRank = { direct: 2, coarse: 1, supporting: 0 } as const;
       const assignedLeft = left.link?.assignedPBLRole === role ? 1 : 0;
       const assignedRight = right.link?.assignedPBLRole === role ? 1 : 0;
-      return assignedRight - assignedLeft
+      return alignmentRank[right.alignment] - alignmentRank[left.alignment]
+        || assignedRight - assignedLeft
         || right.score - left.score
         || left.questionRef.localeCompare(right.questionRef);
     });
 
-    const bestScore = semanticallyEligible[0]?.score ?? 0;
+    const bestScore = roleAligned[0]?.score ?? 0;
     const qualityFloor = Math.max(0.65, bestScore - 0.1);
-    const preferred = semanticallyEligible.filter((candidate) => candidate.score >= qualityFloor);
-    const eligible = preferred.length ? preferred : semanticallyEligible;
+    const preferred = roleAligned.filter((candidate) => candidate.score >= qualityFloor);
+    const eligible = preferred.length ? preferred : roleAligned;
     const offset = options.seed && eligible.length > 1
       ? stableHash(`${competencyId}:${role}:${options.seed}`) % eligible.length
       : 0;
     const ordered = [
       ...eligible.slice(offset),
       ...eligible.slice(0, offset),
-      ...semanticallyEligible.filter((candidate) => !eligible.includes(candidate)),
+      ...roleAligned.filter((candidate) => !eligible.includes(candidate)),
     ];
 
     const excludedFingerprints = new Set(options.excludedPromptFingerprints || []);
@@ -274,6 +317,8 @@ export class QuestionPoolSelector {
         || 'Aplicação da competência em uma nova questão oficial.',
       expectedObstacle: candidate.pedagogy?.errorDiagnosticPotential?.diagnosticDiscriminator
         || 'Distinguir o critério decisivo antes de responder.',
+      validationStatus: 'unverified',
+      changedDimensions: [],
     };
   }
 }

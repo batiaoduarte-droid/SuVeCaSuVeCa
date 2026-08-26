@@ -1,4 +1,5 @@
 import type {
+  PBLAssistanceLevel,
   PBLConfidenceLevel,
   ConfidenceEvaluation,
   PBLAttemptStage,
@@ -17,6 +18,9 @@ export interface EvaluateAttemptParams {
   stage: PBLAttemptStage;
   reasoning?: string;
   responseTimeMs: number;
+  assistanceLevel?: PBLAssistanceLevel;
+  isDelayedRetrieval?: boolean;
+  elapsedSinceLastPracticeMs?: number;
   detectedTrapRefs?: string[];
   detectedMisconceptionRefs?: string[];
   transferType?: import('../../../types/pbl').TransferType;
@@ -58,6 +62,9 @@ export class AttemptEvaluator {
       evaluation,
       reasoning: params.reasoning,
       responseTimeMs: params.responseTimeMs,
+      assistanceLevel: params.assistanceLevel || 'none',
+      isDelayedRetrieval: params.isDelayedRetrieval,
+      elapsedSinceLastPracticeMs: params.elapsedSinceLastPracticeMs,
       detectedTrapRefs: params.detectedTrapRefs || [],
       detectedMisconceptionRefs: params.detectedMisconceptionRefs || [],
       interventionRefs: [],

@@ -598,10 +598,27 @@ export default function App() {
               <PBLDashboard
                 userId={user?.uid || 'guest'}
                 onAddErrorToNotebook={handleAddErrorDirect}
-                onRecordAttempt={recordAnswer}
+                onRecordAttempt={(attempt) => {
+                  recordAnswer(attempt.isCorrect);
+                  addAttempt({
+                    id: attempt.attemptId,
+                    createdAt: attempt.createdAt,
+                    completedAt: attempt.createdAt,
+                    correct: attempt.isCorrect ? 1 : 0,
+                    total: 1,
+                    correctCount: attempt.isCorrect ? 1 : 0,
+                    totalQuestions: 1,
+                    percentage: attempt.isCorrect ? 100 : 0,
+                    source: 'pbl',
+                    isCorrect: attempt.isCorrect,
+                    confidence: attempt.confidence,
+                    stage: attempt.stage,
+                    assistanceLevel: attempt.assistanceLevel,
+                    competencyId: attempt.competencyId,
+                  });
+                }}
                 onCompleteSession={() => recordStudyActivity()}
                 onOpenNotebook={() => setActiveTab('errors')}
-                onOpenReview={() => setActiveTab('agenda')}
               />
             )}
 

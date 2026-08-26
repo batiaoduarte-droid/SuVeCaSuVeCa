@@ -1,21 +1,27 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import type { CadernoErroItem } from '../../types/suveca';
-import type { PBLCompetency, PBLCumulativeSession, PBLSession, PBLSessionMode } from '../../types/pbl';
+import type {
+  PBLAttemptTelemetryPayload,
+  PBLCompetency,
+  PBLCumulativeSession,
+  CompetencyMastery,
+  PBLSession,
+  PBLSessionMode,
+} from '../../types/pbl';
 import { pblRepository } from '../../lib/pbl/data/PBLRepository';
 import { pblEngine } from '../../lib/pbl/engine/PBLEngine';
 import { PBLSessionRepository } from '../../lib/pbl/persistence/PBLSessionRepository';
 import { PBLSessionView } from './PBLSessionView';
-import { ArrowRight, Brain, ChevronLeft, ChevronRight, Clock3, Play, RotateCw, Search, Sparkles } from 'lucide-react';
+import { ArrowRight, Brain, CalendarClock, ChevronLeft, ChevronRight, Clock3, Play, RotateCw, Search, Sparkles } from 'lucide-react';
 import { formatLessonRange, getLessonName, getLessonSearchLabel } from '../../data/lessonCatalog';
 import { presentCompetencyTitle, stripContextualPrefix } from '../../lib/learnerFacingLabels';
 
 interface PBLDashboardProps {
   userId?: string;
   onAddErrorToNotebook?: (conteudo: string, erroCometido: string, regraDecisiva: string, metadata?: Partial<CadernoErroItem>) => void;
-  onRecordAttempt?: (attempt: unknown) => void;
+  onRecordAttempt?: (attempt: PBLAttemptTelemetryPayload) => void;
   onCompleteSession?: () => void;
   onOpenNotebook?: () => void;
-  onOpenReview?: () => void;
 }
 
 const PAGE_SIZE = 12;
@@ -26,11 +32,10 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   onRecordAttempt,
   onCompleteSession,
   onOpenNotebook,
-  onOpenReview,
 }) => {
   const [competencies, setCompetencies] = useState<PBLCompetency[]>([]);
   const [cumulativeSessions, setCumulativeSessions] = useState<PBLCumulativeSession[]>([]);
-  const [userMastery, setUserMastery] = useState<Record<string, any>>({});
+  const [userMastery, setUserMastery] = useState<Record<string, CompetencyMastery>>({});
   const [activeSession, setActiveSession] = useState<PBLSession | null>(null);
   const [resumableSession, setResumableSession] = useState<PBLSession | null>(null);
   const [loading, setLoading] = useState(true);
@@ -116,6 +121,34 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   }, [competencies, query, selectedLesson]);
   const totalPages = Math.max(1, Math.ceil(filteredCompetencies.length / PAGE_SIZE));
   const visibleCompetencies = filteredCompetencies.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const dueCompetencies = useMemo(() => {
+    const now = Date.now();
+    const competencyById = new Map(competencies.map((competency) => [competency.competencyId, competency]));
+    return Object.values(userMastery)
+      .filter((mastery) => mastery.totalAttempts > 0)
+      .filter((mastery) => {
+        const dueAt = Date.parse(mastery.nextReviewRecommendedAt || '');
+        return Number.isFinite(dueAt) && dueAt <= now;
+      })
+      .filter((mastery) => competencyById.get(mastery.competencyId)?.practiceCoverage?.status === 'ready')
+      .sort((left, right) =>
+        Date.parse(left.nextReviewRecommendedAt) - Date.parse(right.nextReviewRecommendedAt)
+        || left.score - right.score
+      );
+  }, [competencies, userMastery]);
+  const scheduledReviews = useMemo(() => {
+    const competencyById = new Map(competencies.map((competency) => [competency.competencyId, competency]));
+    return Object.values(userMastery)
+      .filter((mastery) => mastery.totalAttempts > 0 && competencyById.has(mastery.competencyId))
+      .filter((mastery) => Number.isFinite(Date.parse(mastery.nextReviewRecommendedAt || '')))
+      .sort((left, right) => Date.parse(left.nextReviewRecommendedAt) - Date.parse(right.nextReviewRecommendedAt))
+      .slice(0, 5)
+      .map((mastery) => ({ mastery, competency: competencyById.get(mastery.competencyId)! }));
+  }, [competencies, userMastery]);
+  const formatReviewDate = (value: string): string => new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: 'short',
+  }).format(new Date(value));
 
   if (activeSession) {
     return (
@@ -126,7 +159,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
         onRecordAttempt={onRecordAttempt}
         onCompleteSession={onCompleteSession}
         onOpenNotebook={onOpenNotebook}
-        onOpenReview={onOpenReview}
+        onOpenReview={() => { setActiveSession(null); void loadDashboardData(); }}
       />
     );
   }
@@ -150,17 +183,45 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
         <div className="relative z-10 max-w-3xl">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-500/30 px-3 py-1 text-xs font-bold text-indigo-100"><Sparkles className="h-3.5 w-3.5 text-amber-300" /> Aprendizagem Baseada em Problemas</span>
           <h1 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">Aprenda Português resolvendo problemas reais</h1>
-          <p className="mt-2 text-sm leading-relaxed text-indigo-100">Sessões curtas com uma competência, diagnóstico, intervenção e transferência. Duração estimada: 3–5 minutos.</p>
+          <p className="mt-2 text-sm leading-relaxed text-indigo-100">Sessões curtas com uma competência, diagnóstico, intervenção e transferência. O tempo real inclui leitura, microestudo e reflexão e é medido durante a sessão.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <button type="button" disabled={loading} onClick={() => handleStartSession({ mode: 'guided' })} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-amber-400 px-6 text-xs font-extrabold text-indigo-950 shadow-md hover:bg-amber-300 disabled:opacity-50"><Play className="h-4 w-4 fill-indigo-950" /> Iniciar sessão recomendada</button>
             <button type="button" disabled={loading} onClick={() => handleStartSession({ mode: 'diagnostic' })} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-white/10 px-5 text-xs font-bold text-white hover:bg-white/20 disabled:opacity-50"><Brain className="h-4 w-4" /> Diagnóstico de competência ainda não praticada</button>
+            {dueCompetencies[0] && (
+              <button type="button" disabled={loading} onClick={() => handleStartSession({ mode: 'review', targetCompetencyId: dueCompetencies[0].competencyId })} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-amber-300/70 bg-amber-300/15 px-5 text-xs font-bold text-amber-100 hover:bg-amber-300/25 disabled:opacity-50"><CalendarClock className="h-4 w-4" /> Revisar agora · {dueCompetencies.length} vencida{dueCompetencies.length === 1 ? '' : 's'}</button>
+            )}
           </div>
         </div>
       </div>
 
+      {scheduledReviews.length > 0 && (
+        <section className="rounded-2xl border border-indigo-200 bg-indigo-50/60 p-6 shadow-sm" aria-labelledby="pbl-review-queue-title">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 id="pbl-review-queue-title" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-indigo-950"><CalendarClock className="h-4 w-4" /> Fila de recuperação espaçada</h2>
+              <p className="mt-1 text-xs text-indigo-900">Retenção só é confirmada após uma recuperação futura, sem apoio.</p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-bold text-indigo-800">{dueCompetencies.length} vencida{dueCompetencies.length === 1 ? '' : 's'}</span>
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {scheduledReviews.map(({ mastery, competency }) => {
+              const due = Date.parse(mastery.nextReviewRecommendedAt) <= Date.now();
+              const title = presentCompetencyTitle(competency.title).title;
+              return (
+                <article key={mastery.competencyId} className="rounded-xl border border-indigo-100 bg-white p-4">
+                  <p className="text-xs font-bold text-slate-950">{title}</p>
+                  <p className={`mt-1 text-[11px] font-semibold ${due ? 'text-rose-700' : 'text-slate-600'}`}>{due ? 'Revisão vencida' : `Agendada para ${formatReviewDate(mastery.nextReviewRecommendedAt)}`}</p>
+                  <button type="button" disabled={loading || !due} onClick={() => handleStartSession({ mode: 'review', targetCompetencyId: mastery.competencyId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-3 text-xs font-bold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-600"><RotateCw className="h-3.5 w-3.5" /> {due ? 'Recuperar sem apoio' : 'Aguardar intervalo'}</button>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" aria-labelledby="cumulative-title">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <div><h2 id="cumulative-title" className="text-sm font-bold uppercase tracking-wider text-slate-800">Revisões espirais cumulativas</h2><p className="text-xs text-slate-600">Duas competências por sessão · cerca de 6–10 minutos.</p></div>
+          <div><h2 id="cumulative-title" className="text-sm font-bold uppercase tracking-wider text-slate-800">Revisões espirais cumulativas</h2><p className="text-xs text-slate-600">Duas competências intercaladas; a duração varia conforme a necessidade de apoio.</p></div>
           <span className="rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-bold text-indigo-700">{cumulativeSessions.length} sessões</span>
         </div>
         <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -190,6 +251,13 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
           {visibleCompetencies.map((competency) => {
             const mastery = userMastery[competency.competencyId];
             const score = mastery ? Math.round(mastery.score * 100) : 0;
+            const evidenceState = mastery?.learningState === 'retention_confirmed'
+              ? 'Retenção confirmada'
+              : mastery?.learningState === 'immediate_transfer_confirmed'
+                ? 'Transferência imediata confirmada'
+                : mastery?.learningState === 'needs_review'
+                  ? 'Revisão necessária'
+                  : 'Em aquisição';
             const unavailable = unavailableCompetencyIds.has(competency.competencyId);
             const coverage = competency.practiceCoverage;
             const presentation = presentCompetencyTitle(competency.title);
@@ -202,7 +270,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
                   {coverage && <span className={`ml-1 mt-1 inline-flex rounded-full border px-2 py-0.5 text-[10px] font-bold ${coverage.status === 'ready' && coverage.strength !== 'minimum' ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : coverage.status === 'blocked' ? 'border-rose-200 bg-rose-50 text-rose-800' : 'border-amber-200 bg-amber-50 text-amber-800'}`}>{coverage.distinctQuestions} questões distintas · {coverage.strength === 'minimum' ? 'rotação mínima' : coverage.strength === 'adequate' ? 'rotação adequada' : 'rotação robusta'}</span>}
                   <p className="mt-2 line-clamp-3 text-[11px] leading-relaxed text-slate-600">{competency.description}</p>
                 </div>
-                <div className="mt-4 border-t border-slate-100 pt-3"><div className="flex justify-between text-[11px] text-slate-600"><span>Domínio atual</span><strong className="text-indigo-700">{score}%</strong></div><div className="mt-1 h-1.5 rounded-full bg-slate-100"><div className="h-full rounded-full bg-indigo-600" style={{ width: `${score}%` }} /></div><button type="button" disabled={loading || unavailable} onClick={() => handleStartSession({ mode: 'guided', targetCompetencyId: competency.competencyId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 text-xs font-bold text-indigo-800 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"><Clock3 className="h-3.5 w-3.5" /> {unavailable ? (coverage?.reason || 'Cobertura insuficiente para esta prática') : 'Praticar por 3–5 min'}</button></div>
+                <div className="mt-4 border-t border-slate-100 pt-3"><div className="flex justify-between text-[11px] text-slate-600"><span>{evidenceState}</span><strong className="text-indigo-700">{score}%</strong></div><div className="mt-1 h-1.5 rounded-full bg-slate-100"><div className="h-full rounded-full bg-indigo-600" style={{ width: `${score}%` }} /></div><button type="button" disabled={loading || unavailable} onClick={() => handleStartSession({ mode: 'guided', targetCompetencyId: competency.competencyId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 text-xs font-bold text-indigo-800 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"><Clock3 className="h-3.5 w-3.5" /> {unavailable ? (coverage?.reason || 'Cobertura insuficiente para esta prática') : 'Iniciar prática'}</button></div>
               </article>
             );
           })}

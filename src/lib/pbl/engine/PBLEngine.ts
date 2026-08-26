@@ -5,6 +5,7 @@ import type {
   InterventionPayload,
   NextActionDecision,
   PBLReflectionDecision,
+  PBLCompetencyOutcome,
 } from '../../../types/pbl';
 import { IPBLRepository, pblRepository } from '../data/PBLRepository';
 import { SessionPlanner, SessionPlanRequest } from './SessionPlanner';
@@ -21,6 +22,8 @@ export interface PBLReflectionSubmission {
   decision: PBLReflectionDecision;
   note: string;
   suggestedRule: string;
+  assistanceUsed?: boolean;
+  revealedSuggestedRule?: boolean;
 }
 
 export class PBLEngine {
@@ -92,6 +95,26 @@ export class PBLEngine {
     if (action.type === 'request_probe') session.phase = 'hypothesis';
     else if (action.type === 'trigger_intervention') session.phase = 'intervention';
     else if (action.type === 'request_transfer') session.phase = 'transfer';
+    else if (action.type === 'branch_to_prerequisite' && action.targetCompetencyRef) {
+      const existingIndex = session.targetCompetencyRefs.indexOf(action.targetCompetencyRef);
+      if (existingIndex >= 0) {
+        session.targetCompetencyRefs.splice(existingIndex, 1);
+        if (existingIndex < session.currentCompetencyIndex) {
+          session.currentCompetencyIndex -= 1;
+        }
+      }
+      session.targetCompetencyRefs.splice(session.currentCompetencyIndex, 0, action.targetCompetencyRef);
+      session.currentCompetencyRef = action.targetCompetencyRef;
+      session.currentCaseRef = action.targetCaseRef || session.currentCaseRef;
+      session.currentQuestionRef = action.targetQuestionRef || session.currentQuestionRef;
+      session.currentTransferItemIndex = 0;
+      session.currentTransferItem = undefined;
+      session.pendingNextAction = undefined;
+      session.lastFeedbackMessage = 'Reforço de pré-requisito antes de retomar o problema principal.';
+      session.lastDiagnosticResult = undefined;
+      session.lastInterventionPayload = undefined;
+      session.phase = 'problem';
+    }
     else if (action.type === 'advance_competency' || action.type === 'complete_session') {
       session.phase = 'reflection';
     }
@@ -122,12 +145,42 @@ export class PBLEngine {
         createdAt: new Date().toISOString(),
       },
     };
+    const finalOutcome: PBLCompetencyOutcome = reflection.decision === 'needs_review'
+      ? 'needs_review'
+      : action.outcome === 'mastered'
+        ? 'transfer_confirmed'
+        : action.outcome || 'needs_review';
     session.competencyOutcomes = {
       ...(session.competencyOutcomes || {}),
-      [session.currentCompetencyRef]: reflection.decision === 'needs_review'
-        ? 'needs_review'
-        : action.outcome || 'needs_review',
+      [session.currentCompetencyRef]: finalOutcome,
     };
+    session.reflectionEntries[session.currentCompetencyRef] = {
+      ...session.reflectionEntries[session.currentCompetencyRef],
+      assistanceUsed: reflection.assistanceUsed,
+      revealedSuggestedRule: reflection.revealedSuggestedRule,
+    };
+    const currentMastery = session.masterySnapshot[session.currentCompetencyRef];
+    if (currentMastery) {
+      let finalizedMastery = this.masteryUpdater.applyOutcome(currentMastery, finalOutcome);
+      if (finalOutcome !== 'needs_review') {
+        const confirmedRefs = new Set(
+          session.attempts
+            .filter((attempt) => attempt.competencyRef === session.currentCompetencyRef)
+            .flatMap((attempt) => attempt.detectedMisconceptionRefs)
+        );
+        finalizedMastery = {
+          ...finalizedMastery,
+          activeMisconceptions: finalizedMastery.activeMisconceptions.filter(
+            (misconceptionRef) => !confirmedRefs.has(misconceptionRef)
+          ),
+          resolvedMisconceptions: Array.from(new Set([
+            ...finalizedMastery.resolvedMisconceptions,
+            ...confirmedRefs,
+          ])),
+        };
+      }
+      session.masterySnapshot[session.currentCompetencyRef] = finalizedMastery;
+    }
     if (session.reflectionDrafts) delete session.reflectionDrafts[session.currentCompetencyRef];
     this.applyTerminalAction(session, action);
     session.updatedAt = new Date().toISOString();
@@ -144,12 +197,42 @@ export class PBLEngine {
     intervention?: InterventionPayload;
     nextAction: NextActionDecision;
   }> {
-    const attempt = this.attemptEvaluator.evaluate(attemptParams);
+    const priorMastery = session.masterySnapshot[attemptParams.competencyRef];
+    const priorPracticeAt = priorMastery?.lastPracticedAt
+      ? Date.parse(priorMastery.lastPracticedAt)
+      : Number.NaN;
+    const elapsedSinceLastPracticeMs = Number.isFinite(priorPracticeAt)
+      ? Math.max(0, Date.now() - priorPracticeAt)
+      : undefined;
+    const qualifiesAsDelayedRetrieval =
+      session.mode === 'review'
+      && attemptParams.stage === 'initial'
+      && (elapsedSinceLastPracticeMs || 0) >= 20 * 60 * 60 * 1000
+      && attemptParams.isDelayedRetrieval !== false;
+    const attempt = this.attemptEvaluator.evaluate({
+      ...attemptParams,
+      assistanceLevel: attemptParams.assistanceLevel
+        || session.interventionAssistance?.[attemptParams.competencyRef]
+        || 'none',
+      // O runtime não aceita um sinal positivo autorrelatado como prova de
+      // espaçamento: a janela precisa ser sustentada pelo timestamp persistido.
+      isDelayedRetrieval: qualifiesAsDelayedRetrieval,
+      elapsedSinceLastPracticeMs,
+    });
+    if (attempt.stage === 'transfer') {
+      attempt.transferValidationStatus = session.currentTransferItem?.validationStatus || 'unverified';
+    }
+    if (attempt.assistanceLevel !== 'none' && session.lastInterventionPayload) {
+      attempt.interventionRefs = [session.lastInterventionPayload.interventionId];
+    }
     let diagnostic: DiagnosticResult | undefined;
     let intervention: InterventionPayload | undefined;
 
     if (!attempt.isCorrect || attempt.evaluation === 'fragile_correct') {
-      diagnostic = await this.diagnosticResolver.resolveDiagnostic(attempt);
+      const previousDiagnostic = attempt.stage === 'probe'
+        ? session.lastDiagnosticResult
+        : undefined;
+      diagnostic = await this.diagnosticResolver.resolveDiagnostic(attempt, previousDiagnostic);
       if (attempt.stage === 'probe') {
         diagnostic.needsProbe = false;
         diagnostic.probeQuestionRef = undefined;
@@ -157,17 +240,28 @@ export class PBLEngine {
       attempt.detectedTrapRefs = [...diagnostic.trapRefs];
       attempt.detectedMisconceptionRefs = [...diagnostic.misconceptionRefs];
       session.lastDiagnosticResult = diagnostic;
-      const pblCase = await this.caseSelector.selectAnchorCase(attempt.competencyRef);
-      if (pblCase) {
-        intervention = await this.interventionPlanner.planIntervention(diagnostic, pblCase);
-        session.lastInterventionPayload = intervention;
+      // Não revelar a explicação antes da sondagem que deve testar a
+      // hipótese; isso contaminaria a confirmação com assistência.
+      if (!diagnostic.needsProbe) {
+        const pblCase = await this.caseSelector.selectAnchorCase(attempt.competencyRef);
+        if (pblCase) {
+          intervention = await this.interventionPlanner.planIntervention(diagnostic, pblCase);
+          session.lastInterventionPayload = intervention;
+        }
+      } else {
+        session.lastInterventionPayload = undefined;
       }
     } else if (attempt.stage === 'probe' && session.lastDiagnosticResult) {
       session.lastDiagnosticResult = {
         ...session.lastDiagnosticResult,
+        diagnosisKind: 'slip',
         needsProbe: false,
         probeQuestionRef: undefined,
-        diagnosticConfidence: Math.max(0.8, session.lastDiagnosticResult.diagnosticConfidence),
+        misconceptionRefs: [],
+        candidateMisconceptionRefs: [],
+        trapRefs: [],
+        diagnosticConfidence: 0.40,
+        diagnosticSummary: 'A sondagem independente não reproduziu o mecanismo; a hipótese inicial foi descartada.',
       };
     }
 
@@ -184,27 +278,71 @@ export class PBLEngine {
           confidence: attempt.confidence,
           stage: attempt.stage,
           transferType: attempt.transferType,
+          transferValidationStatus: attempt.transferValidationStatus,
           hasMisconception: attempt.detectedMisconceptionRefs.length > 0,
+          assistanceLevel: attempt.assistanceLevel,
+          isDelayedRetrieval: attempt.isDelayedRetrieval,
+          elapsedSinceLastPracticeMs: attempt.elapsedSinceLastPracticeMs,
+          diagnosisKind: diagnostic?.diagnosisKind,
         },
         comp?.unitId,
         comp?.lessonId
       );
-      updatedMastery.activeMisconceptions = Array.from(new Set([
-        ...(updatedMastery.activeMisconceptions || []),
-        ...attempt.detectedMisconceptionRefs,
-      ]));
+      if (diagnostic?.diagnosisKind === 'mapped_misconception') {
+        updatedMastery.activeMisconceptions = Array.from(new Set([
+          ...(updatedMastery.activeMisconceptions || []),
+          ...attempt.detectedMisconceptionRefs,
+        ]));
+      }
       session.masterySnapshot[attempt.competencyRef] = updatedMastery;
     }
 
     let nextAction = await this.nextActionPolicy.decideNextAction(session, attempt);
-    if (attempt.stage === 'initial' && diagnostic?.needsProbe && diagnostic.probeQuestionRef) {
+    if (
+      attempt.stage === 'initial'
+      && diagnostic?.needsProbe
+      && diagnostic.probeQuestionRef
+      && nextAction.type !== 'advance_competency'
+      && nextAction.type !== 'complete_session'
+    ) {
       nextAction = {
         type: 'request_probe',
         targetCompetencyRef: attempt.competencyRef,
         targetQuestionRef: diagnostic.probeQuestionRef,
-        reason: 'O primeiro erro não permitiu identificar a causa com segurança.',
-        feedbackMessage: 'Antes da explicação, responda a uma questão curta de sondagem.',
+        reason: diagnostic.diagnosisKind === 'mapped_error_hypothesis'
+          ? 'A alternativa sugere um mecanismo causal, mas uma resposta isolada não o confirma.'
+          : 'O primeiro erro não permitiu identificar a causa com segurança.',
+        feedbackMessage: 'Antes da explicação, responda sem ajuda a uma questão curta que discrimina a hipótese.',
       };
+    }
+    if (
+      (attempt.stage === 'initial' || attempt.stage === 'probe')
+      && !attempt.isCorrect
+      && diagnostic?.diagnosisKind === 'prerequisite_deficit'
+      && diagnostic.prerequisiteCompetencyRef
+      && nextAction.type !== 'advance_competency'
+      && nextAction.type !== 'complete_session'
+      && !session.attempts.some((candidate) =>
+        candidate.competencyRef === diagnostic?.prerequisiteCompetencyRef
+      )
+    ) {
+      const prerequisiteRef = diagnostic.prerequisiteCompetencyRef;
+      const [prerequisiteCase, prerequisiteAnchor] = await Promise.all([
+        this.repo.getCaseForCompetency(prerequisiteRef),
+        new QuestionPoolSelector(this.repo).selectQuestion(prerequisiteRef, 'anchor', {
+          seed: `${session.sessionId}:prerequisite`,
+        }),
+      ]);
+      if (prerequisiteCase && prerequisiteAnchor) {
+        nextAction = {
+          type: 'branch_to_prerequisite',
+          targetCompetencyRef: prerequisiteRef,
+          targetCaseRef: prerequisiteCase.caseId,
+          targetQuestionRef: prerequisiteAnchor.questionRef,
+          reason: 'A sondagem confirmou um déficit de pré-requisito necessário.',
+          feedbackMessage: 'Antes de retomar o problema, vamos recuperar o pré-requisito decisivo.',
+        };
+      }
     }
 
     session.pendingNextAction = nextAction;
@@ -224,6 +362,13 @@ export class PBLEngine {
       }
     } else {
       session.phase = 'diagnostic';
+    }
+
+    if (attempt.stage === 'reattempt') {
+      session.interventionAssistance = {
+        ...(session.interventionAssistance || {}),
+        [attempt.competencyRef]: 'none',
+      };
     }
 
     this.recalculateStats(session, attempt.responseTimeMs);

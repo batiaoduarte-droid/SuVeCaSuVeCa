@@ -134,6 +134,21 @@ describe('learnerIntelligence', () => {
     expect(matrix.calibrationScore).toBeGreaterThan(0);
   });
 
+  it('prefers observed PBL confidence over heuristic quadrant estimates', () => {
+    const matrix = computeMetacognitiveMatrix(40, 35, [], [
+      { isCorrect: true, confidence: 'high' },
+      { isCorrect: true, confidence: 'guess' },
+      { isCorrect: false, confidence: 'low' },
+      { isCorrect: false, confidence: 'high' },
+    ]);
+
+    expect(matrix.totalAnalyzed).toBe(4);
+    expect(matrix.quadrants.q1_mastery.count).toBe(1);
+    expect(matrix.quadrants.q2_fragile.count).toBe(1);
+    expect(matrix.quadrants.q3_conscious_doubt.count).toBe(1);
+    expect(matrix.quadrants.q4_illusion.count).toBe(1);
+  });
+
   it('computes exam board vulnerability analysis', () => {
     const mockErrors: CadernoErroItem[] = [
       {
@@ -243,4 +258,3 @@ describe('learnerIntelligence', () => {
     expect(estimate.tacticalAdvice.length).toBeGreaterThan(10);
   });
 });
-

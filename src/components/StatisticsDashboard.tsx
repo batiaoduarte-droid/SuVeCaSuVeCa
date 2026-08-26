@@ -50,6 +50,12 @@ export interface LearningAttempt {
   byTopic?: unknown;
   answerMap?: Record<string, string>;
   questionSetVersion?: string;
+  source?: 'simulado' | 'pbl';
+  isCorrect?: boolean;
+  confidence?: 'guess' | 'low' | 'medium' | 'high';
+  stage?: 'initial' | 'reattempt' | 'transfer' | 'probe';
+  assistanceLevel?: 'none' | 'diagnostic' | 'partial' | 'full';
+  competencyId?: string;
 }
 
 interface StatisticsDashboardProps {
@@ -118,6 +124,74 @@ const getAttemptTotal = (attempt: LearningAttempt) =>
 const getAttemptCorrect = (attempt: LearningAttempt) =>
   toNumber(attempt.correct ?? attempt.correctCount);
 
+export interface LearningEvidenceSummary {
+  attemptAnswered: number;
+  attemptCorrect: number;
+  totalAnswered: number;
+  totalCorrect: number;
+  simuladoAnswered: number;
+  simuladoCorrect: number;
+  simuladoAttempts: LearningAttempt[];
+  observedPblAttempts: Array<{
+    isCorrect: boolean;
+    confidence: 'guess' | 'low' | 'medium' | 'high';
+  }>;
+}
+
+/**
+ * Consolida fontes mutuamente exclusivas: `attempts` registra simulados e
+ * itens PBL; `modulePractice` registra somente exercícios dentro das aulas.
+ * O mesmo item PBL nunca deve ser enviado também a `modulePractice`.
+ */
+export const summarizeLearningEvidence = (
+  attempts: LearningAttempt[],
+  modulePracticeAnswered: number,
+  modulePracticeCorrect: number
+): LearningEvidenceSummary => {
+  const uniqueAttempts = [...new Map(
+    attempts.filter((attempt) => Boolean(attempt.id)).map((attempt) => [attempt.id, attempt])
+  ).values()];
+  const attemptAnswered = uniqueAttempts.reduce(
+    (sum, attempt) => sum + getAttemptTotal(attempt),
+    0
+  );
+  const attemptCorrect = uniqueAttempts.reduce(
+    (sum, attempt) => sum + getAttemptCorrect(attempt),
+    0
+  );
+  const safePracticeAnswered = Math.max(0, toNumber(modulePracticeAnswered));
+  const safePracticeCorrect = Math.min(
+    safePracticeAnswered,
+    Math.max(0, toNumber(modulePracticeCorrect))
+  );
+  const simuladoAttempts = uniqueAttempts.filter((attempt) => attempt.source !== 'pbl');
+  const simuladoAnswered = simuladoAttempts.reduce(
+    (sum, attempt) => sum + getAttemptTotal(attempt),
+    0
+  );
+  const simuladoCorrect = simuladoAttempts.reduce(
+    (sum, attempt) => sum + getAttemptCorrect(attempt),
+    0
+  );
+
+  return {
+    attemptAnswered,
+    attemptCorrect,
+    totalAnswered: attemptAnswered + safePracticeAnswered,
+    totalCorrect: attemptCorrect + safePracticeCorrect,
+    simuladoAnswered,
+    simuladoCorrect,
+    simuladoAttempts,
+    observedPblAttempts: uniqueAttempts.flatMap((attempt) => (
+      attempt.source === 'pbl'
+      && typeof attempt.isCorrect === 'boolean'
+      && attempt.confidence
+        ? [{ isCorrect: attempt.isCorrect, confidence: attempt.confidence }]
+        : []
+    )),
+  };
+};
+
 const displayDate = (date?: string) => {
   if (!date) return 'Simulado';
   const parsed = new Date(date);
@@ -139,6 +213,10 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
   onOpenSimulado,
   onOpenModule,
 }) => {
+  const learningEvidence = useMemo(
+    () => summarizeLearningEvidence(attempts, practiceAnswered, practiceCorrect),
+    [attempts, practiceAnswered, practiceCorrect]
+  );
   const topicData = useMemo<TopicSummary[]>(() => {
     const totals = new Map<string, { correct: number; total: number }>();
 
@@ -164,7 +242,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
 
   const attemptHistory = useMemo(
     () =>
-      [...attempts]
+      [...learningEvidence.simuladoAttempts]
         .sort(
           (first, second) =>
             new Date(first.completedAt || first.createdAt || 0).getTime() -
@@ -179,11 +257,11 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
           accuracy,
         };
         }),
-    [attempts]
+    [learningEvidence.simuladoAttempts]
   );
 
-  const allAnswered = attempts.reduce((sum, attempt) => sum + getAttemptTotal(attempt), 0);
-  const allCorrect = attempts.reduce((sum, attempt) => sum + getAttemptCorrect(attempt), 0);
+  const allAnswered = learningEvidence.totalAnswered;
+  const allCorrect = learningEvidence.totalCorrect;
   const overallAccuracy = percent(allCorrect, allAnswered);
   const masteredErrors = errors.filter((error) => error.status === 'dominado').length;
   const reviewedErrors = errors.filter((error) => Boolean(error.lastReviewedAt)).length;
@@ -197,8 +275,8 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
       },
       {
         stage: 'Aplicar',
-        progress: Math.min(100, percent(allAnswered + practiceAnswered, 40)),
-        detail: `${allAnswered + practiceAnswered} questões · ${practiceCorrect} acertos nas aulas`,
+        progress: Math.min(100, percent(allAnswered, 40)),
+        detail: `${allAnswered} questões · ${allCorrect} acertos observados`,
       },
       {
         stage: 'Registrar',
@@ -216,10 +294,10 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
         detail: errors.length ? `${masteredErrors}/${errors.length} regras dominadas` : 'Sem regras dominadas',
       },
     ],
-    [allAnswered, errors.length, masteredErrors, practiceAnswered, practiceCorrect, readSections, reviewedErrors, totalModules, totalSections, visitedModules]
+    [allAnswered, allCorrect, errors.length, masteredErrors, readSections, reviewedErrors, totalModules, totalSections, visitedModules]
   );
 
-  const needsPractice = attempts.length === 0;
+  const needsPractice = learningEvidence.simuladoAttempts.length === 0;
   const greetingName = userName?.split(' ')[0] || 'você';
 
   const priorityRecommendation = useMemo(
@@ -228,13 +306,23 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
   );
 
   const metacognitiveSummary = useMemo(
-    () => computeMetacognitiveMatrix(allAnswered + practiceAnswered, allCorrect + practiceCorrect, errors),
-    [allAnswered, allCorrect, errors, practiceAnswered, practiceCorrect]
+    () => computeMetacognitiveMatrix(
+      allAnswered,
+      allCorrect,
+      errors,
+      learningEvidence.observedPblAttempts
+    ),
+    [allAnswered, allCorrect, errors, learningEvidence.observedPblAttempts]
   );
+  const hasObservedPblCalibration = learningEvidence.observedPblAttempts.length > 0;
 
   const examBoardStats = useMemo(
-    () => computeExamBoardStats(errors, allAnswered + practiceAnswered, allCorrect + practiceCorrect),
-    [allAnswered, allCorrect, errors, practiceAnswered, practiceCorrect]
+    () => computeExamBoardStats(
+      errors,
+      learningEvidence.simuladoAnswered,
+      learningEvidence.simuladoCorrect
+    ),
+    [errors, learningEvidence.simuladoAnswered, learningEvidence.simuladoCorrect]
   );
 
   return (
@@ -249,7 +337,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
               Estatísticas de {greetingName}
             </h1>
             <p className="max-w-2xl text-sm leading-relaxed text-slate-600">
-              Acompanhe o ciclo SuVeCA e identifique os tópicos que merecem a próxima revisão ativa.
+              Acompanhe aulas, PBL, simulados e revisões para identificar o próximo passo de estudo.
             </p>
           </div>
           {onOpenSimulado && (
@@ -271,14 +359,14 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
         <MetricCard
           label="Taxa geral de acertos"
           value={allAnswered ? `${overallAccuracy}%` : '—'}
-          hint={allAnswered ? `${allCorrect} de ${allAnswered} questões` : 'Faça um simulado para medir'}
+          hint={allAnswered ? `${allCorrect} de ${allAnswered} questões observadas` : 'Responda questões para formar a medida'}
           icon={Target}
           color="teal"
         />
         <MetricCard
           label="Simulados concluídos"
-          value={String(attempts.length)}
-          hint={attempts.length ? 'Histórico salvo automaticamente' : 'Seu primeiro resultado aparecerá aqui'}
+          value={String(learningEvidence.simuladoAttempts.length)}
+          hint={learningEvidence.simuladoAttempts.length ? 'Histórico salvo automaticamente' : 'Seu primeiro resultado aparecerá aqui'}
           icon={TrendingUp}
           color="blue"
         />
@@ -303,7 +391,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
           <div className="mb-5">
             <h2 className="font-bold text-slate-900">Ciclo de aprendizagem SuVeCA</h2>
             <p className="mt-1 text-xs leading-relaxed text-slate-500">
-              Indicadores calculados a partir das aulas exploradas, simulados e revisões do Caderno.
+              Indicadores calculados a partir das aulas, sessões PBL, simulados e revisões do Caderno.
             </p>
           </div>
           <div className="space-y-4">
@@ -403,13 +491,15 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-2.5 py-0.5 rounded-md">
               <Brain className="w-3.5 h-3.5 text-teal-700" />
-              <span>Diagnóstico Metacognitivo Single-User</span>
+              <span>{hasObservedPblCalibration ? 'Evidência observada no PBL' : 'Estimativa sem confiança histórica'}</span>
             </div>
             <h2 className="text-lg sm:text-xl font-extrabold text-slate-900">
               Matriz 2×2: Calibração de Confiança vs Acurácia
             </h2>
             <p className="text-xs text-slate-500 max-w-2xl leading-relaxed">
-              Mede a precisão da sua autoavaliação. Identificar onde você erra achando que acertou (Ilusão de Competência) é a chave para não perder pontos no modelo Cebraspe.
+              {hasObservedPblCalibration
+                ? `Baseada em ${metacognitiveSummary.totalAnalyzed} resposta${metacognitiveSummary.totalAnalyzed === 1 ? '' : 's'} PBL com confiança registrada; acerto confiante ainda não equivale a retenção.`
+                : 'Sem respostas com confiança registrada, os quadrantes abaixo são apenas uma estimativa e não evidência de calibração.'}
             </p>
           </div>
 
@@ -431,7 +521,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
           <div className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50/60 to-white p-4 sm:p-5 space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md">
-                Q1 · Domínio Confiante
+                Q1 · Acerto Confiante
               </span>
               <span className="text-xs font-extrabold text-emerald-900">
                 {metacognitiveSummary.quadrants.q1_mastery.percentage}% ({metacognitiveSummary.quadrants.q1_mastery.count} itens)
@@ -475,18 +565,18 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
             </p>
           </div>
 
-          {/* Q4: Ilusão de Competência */}
+          {/* Q4: erro de alta confiança */}
           <div className="rounded-2xl border border-rose-300 bg-gradient-to-br from-rose-50/80 to-white p-4 sm:p-5 space-y-2 ring-1 ring-rose-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-black uppercase tracking-wider text-rose-900 bg-rose-100 px-2 py-0.5 rounded-md flex items-center gap-1">
                 <AlertTriangle className="w-3 h-3 text-rose-700" />
-                Q4 · Ilusão de Competência
+                Q4 · Erro de Alta Confiança
               </span>
               <span className="text-xs font-extrabold text-rose-900">
                 {metacognitiveSummary.quadrants.q4_illusion.percentage}% ({metacognitiveSummary.quadrants.q4_illusion.count} itens)
               </span>
             </div>
-            <h3 className="text-sm font-bold text-slate-900">Alta Certeza + Erro (Armadilha)</h3>
+            <h3 className="text-sm font-bold text-slate-900">Alta Certeza + Erro Real</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               {metacognitiveSummary.quadrants.q4_illusion.pedagogicalAdvice}
             </p>

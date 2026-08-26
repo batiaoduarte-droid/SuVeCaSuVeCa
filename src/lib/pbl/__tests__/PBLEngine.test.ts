@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { PBLEngine } from '../engine/PBLEngine';
 import { PBLRepository } from '../data/PBLRepository';
-import type { PBLCompetency, PBLCase, PBLTransferSet, PBLDiagnosticPath, QuestionCompetencyLink, QuestionPedagogy, PBLQuestionPresentation } from '../../../types/pbl';
+import type { CompetencyMastery, PBLCompetency, PBLCase, PBLTransferSet, PBLDiagnosticPath, QuestionCompetencyLink, QuestionPedagogy, PBLQuestionPresentation } from '../../../types/pbl';
 
 describe('PBLEngine Full Flow Integration', () => {
   let engine: PBLEngine;
@@ -86,17 +86,35 @@ describe('PBLEngine Full Flow Integration', () => {
     prerequisiteRefs: [],
     difficulty: 'medio',
     cognitiveDemand: 'analise_estrutural',
+    causalDiagnosticReview: {
+      status: 'dual_pass_reviewed',
+      method: 'gemini_closed_context_dual_pass',
+      reviewedAt: '2026-08-26T00:00:00-03:00',
+      unitRefs: ['IP-A10-G05'],
+    },
     solutionStrategy: [
       { stepNumber: 1, action: 'Localizar topônimo', rationale: 'Isolar termo' },
       { stepNumber: 2, action: 'Aplicar teste Vou a/Volto da', rationale: 'Critério canônico' }
     ],
     distractorAnalysis: [
       {
-        label: 'Julgamento',
-        optionText: 'Assertiva',
+        label: 'Certo',
+        optionText: 'Certo',
         isCorrect: true,
         criterionOrRuleRef: 'RULE-IP-A10-G05-001',
         refutation: 'Item correto pois Roma está especificada por "dos césares".'
+      },
+      {
+        label: 'Errado',
+        optionText: 'Errado',
+        isCorrect: false,
+        causalStatus: 'causal_candidate',
+        errorMechanism: 'polarity_inversion',
+        mappingConfidence: 0.85,
+        likelyMisconceptionRef: 'MISC-CRASE-01',
+        triggeredTrapRef: 'WARN-IP-A10-G05-001',
+        criterionOrRuleRef: 'RULE-IP-A10-G05-001',
+        refutation: 'O item está correto, logo marcar Errado é um erro de julgamento de regra.'
       }
     ],
     errorDiagnosticPotential: {
@@ -133,6 +151,7 @@ describe('PBLEngine Full Flow Integration', () => {
         difficulty: 'medio',
         cognitiveDelta: 'Variação para FGV com outro nome de lugar determinado.',
         expectedObstacle: 'Reconhecer a especificação.',
+        validationStatus: 'audited',
       },
       {
         itemOrder: 2,
@@ -142,6 +161,7 @@ describe('PBLEngine Full Flow Integration', () => {
         difficulty: 'medio',
         cognitiveDelta: 'Novo topônimo em formulação distinta.',
         expectedObstacle: 'Aplicar o teste sem depender do exemplo anterior.',
+        validationStatus: 'audited',
       },
     ],
     masteryCriteria: {
@@ -266,6 +286,24 @@ describe('PBLEngine Full Flow Integration', () => {
     engine = new PBLEngine(repo);
   });
 
+  const delayedMastery = (): CompetencyMastery => ({
+    competencyId: mockComp.competencyId,
+    unitId: mockComp.unitId,
+    lessonId: mockComp.lessonId,
+    score: 0.6,
+    level: 'competent',
+    learningState: 'immediate_transfer_confirmed',
+    totalAttempts: 3,
+    correctAttempts: 3,
+    transferSuccessCount: 1,
+    activeMisconceptions: [],
+    resolvedMisconceptions: [],
+    lastPracticedAt: new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString(),
+    nextReviewRecommendedAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+    reviewIntervalDays: 2,
+    successfulDelayedRetrievals: 0,
+  });
+
   it('should start a session and plan target competencies', async () => {
     const session = await engine.startSession({
       userId: 'test_user',
@@ -327,12 +365,11 @@ describe('PBLEngine Full Flow Integration', () => {
     expect(result.attempt.isCorrect).toBe(false);
     expect(result.attempt.evaluation).toBe('high_confidence_error');
     expect(result.diagnostic).toBeDefined();
-    expect(result.diagnostic?.misconceptionRefs).toContain('MISC-CRASE-01');
+    expect(result.diagnostic?.diagnosisKind).toBe('mapped_error_hypothesis');
+    expect(result.diagnostic?.candidateMisconceptionRefs).toContain('MISC-CRASE-01');
     expect(result.intervention).toBeDefined();
     expect(result.intervention?.procedureSteps.length).toBeGreaterThan(0);
     expect(result.session.phase).toBe('diagnostic');
-    expect(result.attempt.detectedMisconceptionRefs).toContain('MISC-CRASE-01');
-    expect(result.session.sessionStats.misconceptionsCaught).toBe(1);
   });
 
   it('should show diagnostic feedback after a transfer error before advancing', async () => {
@@ -365,8 +402,151 @@ describe('PBLEngine Full Flow Integration', () => {
     });
 
     expect(transfer.session.phase).toBe('diagnostic');
-    expect(transfer.nextAction.feedbackMessage).toMatch(/ponto de atenção/i);
-    expect(engine.continueAfterDiagnostic(transfer.session).phase).toBe('transfer');
+    expect(transfer.nextAction.feedbackMessage).toMatch(/retome o critério/i);
+    expect(engine.continueAfterDiagnostic(transfer.session).phase).toBe('intervention');
+  });
+
+  it('does not confirm transfer from a low-confidence correct answer', async () => {
+    const session = await engine.startSession({
+      userId: 'test_user',
+      mode: 'guided',
+      targetLessonId: 'A10',
+    });
+    const initial = await engine.submitAttempt(session, {
+      sessionId: session.sessionId,
+      questionRef: mockAnchorQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'Certo',
+      correctAnswer: 'Certo',
+      confidence: 'high',
+      stage: 'initial',
+      responseTimeMs: 1_000,
+    });
+    const transfer = await engine.submitAttempt(engine.continueAfterDiagnostic(initial.session), {
+      sessionId: session.sessionId,
+      questionRef: mockTransferQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'correct',
+      correctAnswer: 'correct',
+      confidence: 'low',
+      stage: 'transfer',
+      transferType: 'near_transfer',
+      responseTimeMs: 1_000,
+    });
+
+    expect(transfer.attempt.evaluation).toBe('fragile_correct');
+    expect(transfer.nextAction.type).not.toBe('complete_session');
+    expect(transfer.nextAction.outcome).not.toBe('transfer_confirmed');
+  });
+
+  it('does not confirm retention when delayed retrieval used assistance', async () => {
+    const mastery = delayedMastery();
+    const session = await engine.startSession({
+      userId: 'test_user',
+      mode: 'review',
+      targetCompetencyId: mockComp.competencyId,
+      currentMasteryMap: { [mockComp.competencyId]: mastery },
+    });
+    const initial = await engine.submitAttempt(session, {
+      sessionId: session.sessionId,
+      questionRef: mockAnchorQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'Certo',
+      correctAnswer: 'Certo',
+      confidence: 'high',
+      stage: 'initial',
+      assistanceLevel: 'full',
+      responseTimeMs: 1_000,
+    });
+    const transfer = await engine.submitAttempt(engine.continueAfterDiagnostic(initial.session), {
+      sessionId: session.sessionId,
+      questionRef: mockTransferQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'correct',
+      correctAnswer: 'correct',
+      confidence: 'high',
+      stage: 'transfer',
+      transferType: 'near_transfer',
+      responseTimeMs: 1_000,
+    });
+
+    expect(initial.attempt.isDelayedRetrieval).toBe(true);
+    expect(initial.attempt.assistanceLevel).toBe('full');
+    expect(transfer.nextAction.outcome).not.toBe('retention_confirmed');
+    expect(transfer.nextAction.type).not.toBe('complete_session');
+  });
+
+  it('confirms retention only after delayed unassisted retrieval and transfer', async () => {
+    const mastery = delayedMastery();
+    const session = await engine.startSession({
+      userId: 'test_user',
+      mode: 'review',
+      targetCompetencyId: mockComp.competencyId,
+      currentMasteryMap: { [mockComp.competencyId]: mastery },
+    });
+    const initial = await engine.submitAttempt(session, {
+      sessionId: session.sessionId,
+      questionRef: mockAnchorQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'Certo',
+      correctAnswer: 'Certo',
+      confidence: 'high',
+      stage: 'initial',
+      responseTimeMs: 1_000,
+    });
+    const transfer = await engine.submitAttempt(engine.continueAfterDiagnostic(initial.session), {
+      sessionId: session.sessionId,
+      questionRef: mockTransferQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'correct',
+      correctAnswer: 'correct',
+      confidence: 'high',
+      stage: 'transfer',
+      transferType: 'near_transfer',
+      responseTimeMs: 1_000,
+    });
+
+    expect(initial.attempt.isDelayedRetrieval).toBe(true);
+    expect(transfer.nextAction).toMatchObject({
+      type: 'complete_session',
+      outcome: 'retention_confirmed',
+    });
+    const completed = engine.completeReflection(transfer.session, {
+      decision: 'own_rule',
+      note: 'Primeiro aplicarei o teste decisivo ao novo contexto.',
+      suggestedRule: 'Aplicar o teste do topônimo antes de decidir pela crase.',
+      revealedSuggestedRule: true,
+    });
+    expect(completed.masterySnapshot[mockComp.competencyId].learningState).toBe('retention_confirmed');
+    expect(completed.masterySnapshot[mockComp.competencyId].retentionConfirmedAt).toBeDefined();
+  });
+
+  it('stops at a safe point when the session budget is reached', async () => {
+    const session = await engine.startSession({
+      userId: 'test_user',
+      mode: 'guided',
+      targetLessonId: 'A10',
+    });
+    session.targetCompetencyRefs = [mockComp.competencyId, 'COMP-FUTURE'];
+    session.wallTimeMs = session.sessionBudgetMs;
+    const result = await engine.submitAttempt(session, {
+      sessionId: session.sessionId,
+      questionRef: mockAnchorQuestion.questionRef,
+      competencyRef: mockComp.competencyId,
+      userAnswer: 'Certo',
+      correctAnswer: 'Certo',
+      confidence: 'high',
+      stage: 'initial',
+      responseTimeMs: 1_000,
+    });
+
+    expect(result.nextAction).toMatchObject({
+      type: 'complete_session',
+      outcome: 'needs_review',
+    });
+    expect(result.nextAction.reason).toMatch(/limite adaptativo/i);
+    expect(result.nextAction.type).not.toBe('advance_competency');
+    expect(engine.continueAfterDiagnostic(result.session).phase).toBe('reflection');
   });
 
   it('should accept “Ainda não sei” and route the competency to review', async () => {
