@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A03-G07",
     "lessonId": "A03",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A03-G07",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A03-G07-001"
+          }
         }
       ]
     },
@@ -94,8 +99,84 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA colocação pronominal estuda exclusivamente o posicionamento dos pronomes pessoais oblíquos átonos (o, a, os, as, lhe, lhes, me, te, se, nos, vos) em relação à forma verbal. Na língua portuguesa padrão, existem exatamente três posições possíveis: próclise, ênclise e mesóclise.\nExplicação consolidada\nPróclise: O pronome é colocado antes do verbo. Configura a posição obrigatória sempre que houver palavra atrativa antecedente não neutralizada por exceção.\nExemplo: \"Não me chamou para a reunião.\"\nÊnclise: O pronome é colocado depois do verbo, unido a este obrigatoriamente por meio de hífen. É a posição padrão da norma culta na ausência de elementos atrativos, sendo vedada em início absoluto de oração, com verbos no futuro ou com particípios.\nExemplo: \"Chamou-me para a reunião.\"\nMesóclise: O pronome é intercalado no meio do verbo, entre o radical e a desinência modo-temporal, exigindo dois hífens. É de uso exclusivo para verbos conjugados nos tempos futuros quando não houver palavra atrativa:\nFuturo do Presente: chamarei $\\rightarrow$ chamar-me-ei;\nFuturo do Pretérito: chamaria $\\rightarrow$ chamar-me-ia.\nExemplo: \"Chamar-me-iam se houvesse vaga.\"\nLimites do Escopo\nAs regras de colocação pronominal não se aplicam aos pronomes pessoais oblíquos tônicos (mim, ti, ele, ela, si, nós, vós, eles, elas) regidos por preposição (ex.: \"Entregou a mim o documento\"). Tais pronomes possuem mobilidade sintática regida pela sintaxe de regência e complementos, e não por regras de próclise/ênclise/mesóclise.Evidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A colocação pronominal estuda exclusivamente o posicionamento dos pronomes pessoais oblíquos átonos (o, a, os, as, lhe, lhes, me, te, se, nos, vos) em relação à forma verbal. Na língua portuguesa padrão, existem exatamente três posições possíveis: próclise, ênclise e mesóclise."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Próclise: O pronome é colocado antes do verbo. Configura a posição obrigatória sempre que houver palavra atrativa antecedente não neutralizada por exceção."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Não me chamou para a reunião.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Ênclise: O pronome é colocado depois do verbo, unido a este obrigatoriamente por meio de hífen. É a posição padrão da norma culta na ausência de elementos atrativos, sendo vedada em início absoluto de oração, com verbos no futuro ou com particípios."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Chamou-me para a reunião.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Mesóclise: O pronome é intercalado no meio do verbo, entre o radical e a desinência modo-temporal, exigindo dois hífens. É de uso exclusivo para verbos conjugados nos tempos futuros quando não houver palavra atrativa:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Futuro do Presente: chamarei $\\rightarrow$ chamar-me-ei;",
+                "Futuro do Pretérito: chamaria $\\rightarrow$ chamar-me-ia.",
+                "Exemplo: \"Chamar-me-iam se houvesse vaga.\""
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Limites do Escopo"
+            },
+            {
+              "type": "paragraph",
+              "text": "As regras de colocação pronominal não se aplicam aos pronomes pessoais oblíquos tônicos (mim, ti, ele, ela, si, nós, vós, eles, elas) regidos por preposição (ex.: \"Entregou a mim o documento\"). Tais pronomes possuem mobilidade sintática regida pela sintaxe de regência e complementos, e não por regras de próclise/ênclise/mesóclise."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-006",
+                  "targetTitle": "Confusão com Pronomes Oblíquos Tônicos",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +189,118 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA análise de qualquer construção pronominal na norma culta inicia-se pela checagem de três vedações categóricas. Se a estrutura violar qualquer um desses três preceitos, ela é nula e incorreta, independentemente de estilo ou contexto.\nExplicação consolidada das Proibições\nProibição 1 — Início de Oração: É expressamente proibido iniciar período ou oração absoluta com pronome oblíquo átono.\nIncorreto: \"Me empresta um livro.\" / \"Se trata de uma questão ética.\"\nCorreto: \"Empresta-me um livro.\" / \"Trata-se de uma questão ética.\"\nProibição 2 — Ênclise a Verbo no Futuro: É proibido anexar pronome por ênclise a verbos conjugados no Futuro do Presente ou no Futuro do Pretérito.\nIncorreto: \"Emprestarei-te a quantia.\" / \"Trataria-se do processo.\"\nCorreto: \"Emprestar-te-ei a quantia.\" / \"Tratar-se-ia do processo.\" (Aplica-se mesóclise quando não houver atrator).\nProibição 3 — Ênclise a Verbo no Particípio: É proibido realizar ênclise diretamente em forma nominal de particípio, seja regular (terminação -do, como emprestado, falado, equipado) ou irregular (visto, ganho, feito).\nIncorreto: \"Tinha emprestado-lhe o carro.\" / \"Havia equipado-se para a viagem.\"\nCorreto: \"Tinha-lhe emprestado o carro.\" / \"Tinha lhe emprestado o carro.\" / \"Havia se equipado.\"Alertas associados: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A análise de qualquer construção pronominal na norma culta inicia-se pela checagem de três vedações categóricas. Se a estrutura violar qualquer um desses três preceitos, ela é nula e incorreta, independentemente de estilo ou contexto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada das Proibições"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Proibição 1 — Início de Oração: É expressamente proibido iniciar período ou oração absoluta com pronome oblíquo átono."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Incorreto: \"Me empresta um livro.\" / \"Se trata de uma questão ética.\"",
+                "Correto: \"Empresta-me um livro.\" / \"Trata-se de uma questão ética.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Proibição 2 — Ênclise a Verbo no Futuro: É proibido anexar pronome por ênclise a verbos conjugados no Futuro do Presente ou no Futuro do Pretérito."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Incorreto: \"Emprestarei-te a quantia.\" / \"Trataria-se do processo.\"",
+                "Correto: \"Emprestar-te-ei a quantia.\" / \"Tratar-se-ia do processo.\" (Aplica-se mesóclise quando não houver atrator)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Proibição 3 — Ênclise a Verbo no Particípio: É proibido realizar ênclise diretamente em forma nominal de particípio, seja regular (terminação -do, como emprestado, falado, equipado) ou irregular (visto, ganho, feito)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Incorreto: \"Tinha emprestado-lhe o carro.\" / \"Havia equipado-se para a viagem.\"",
+                "Correto: \"Tinha-lhe emprestado o carro.\" / \"Tinha lhe emprestado o carro.\" / \"Havia se equipado.\""
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A03-G07-COLOCACAO-PRONOMES-ATONOS-001",
+                  "targetTitle": "Algoritmo Geral de Resolução de Colocação Pronominal",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-002",
+                  "targetTitle": "Exercício 2: Mesóclise Obrigatória",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-006",
+                  "targetTitle": "Questão 25: CESPE / PG-DF (2021) — Início de Oração",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-007",
+                  "targetTitle": "Questão 26: CESPE / TCE-PB (2022) — Início de Oração",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-008",
+                  "targetTitle": "Questão 27: CESPE / DPE-DF (2022) — Ênclise ao Particípio",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-001",
+                  "targetTitle": "Vício Coloquial de Início de Período",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-002",
+                  "targetTitle": "Armadilha da Mesóclise Falsa com Negação",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +313,70 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA Regra Geral de Atração estabelece que qualquer palavra invariável posicionada antes do verbo atua como palavra atrativa, exigindo obrigatoriamente a PRÓCLISE.\nExplicação consolidada\nFundamentação Sintática da Invariabilidade: Palavra invariável é aquela que não sofre flexão de gênero (masculino/feminino) nem de número (singular/plural). A força atrativa decorre da natureza morfológica da invariabilidade, e não de sentidos semânticos místicos (como \"palavra negativa\"). Palavras invariáveis afirmativas (sim, sempre, já) atraem com o mesmo rigor sintático que palavras de sentido negativo (não, nunca, jamais).\nClasses Morfológicas Invariáveis que Atraem\nAdvérbios e Expressões Adverbiais: não, nunca, jamais, sempre, já, talvez, aqui, ali, bem, mal (ex.: \"Não me responda\" / \"Sempre te disse a verdade\").\nConjunções Subordinativas: que, se, embora, quando, porque, conforme, caso, desde que (ex.: \"Embora o visse...\" / \"Quando me chamaram...\").\nPreposições: em, de, por, para, com (ex.: \"Em se tratando de...\").\nPronomes Interrogativos: quem, que, qual, quanto, como (ex.: \"Quem me chamou?\").\nClasses Variáveis que Excepcionalmente Atraem\nExistem duas classes de palavras que, mesmo admitindo flexão em gênero e número, atuam canonicamente como fatores obrigatórios de próclise:\nPronomes Indefinidos: Tanto os estritamente invariáveis (nada, tudo, ninguém, alguém) quanto os flexionáveis/variáveis (alguns, muitos, poucos, todos, várias). Exemplo: \"Ninguém me chamou\" / \"Muitos o aplaudiram\".\nPronomes Relativos: Tanto os invariáveis (que, quem, onde) quanto os variáveis (o qual, a qual, os quais, cujo, cuja, cujos). Exemplo: \"A lei que se aplica...\" / \"Os servidores aos quais me referi...\".\nRelações\nExceções em: \nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-003\nDica de aplicação: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Regra Geral de Atração estabelece que qualquer palavra invariável posicionada antes do verbo atua como palavra atrativa, exigindo obrigatoriamente a PRÓCLISE."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Fundamentação Sintática da Invariabilidade: Palavra invariável é aquela que não sofre flexão de gênero (masculino/feminino) nem de número (singular/plural). A força atrativa decorre da natureza morfológica da invariabilidade, e não de sentidos semânticos místicos (como \"palavra negativa\"). Palavras invariáveis afirmativas (sim, sempre, já) atraem com o mesmo rigor sintático que palavras de sentido negativo (não, nunca, jamais)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Classes Morfológicas Invariáveis que Atraem"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Advérbios e Expressões Adverbiais: não, nunca, jamais, sempre, já, talvez, aqui, ali, bem, mal (ex.: \"Não me responda\" / \"Sempre te disse a verdade\").",
+                "Conjunções Subordinativas: que, se, embora, quando, porque, conforme, caso, desde que (ex.: \"Embora o visse...\" / \"Quando me chamaram...\").",
+                "Preposições: em, de, por, para, com (ex.: \"Em se tratando de...\").",
+                "Pronomes Interrogativos: quem, que, qual, quanto, como (ex.: \"Quem me chamou?\")."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Classes Variáveis que Excepcionalmente Atraem"
+            },
+            {
+              "type": "paragraph",
+              "text": "Existem duas classes de palavras que, mesmo admitindo flexão em gênero e número, atuam canonicamente como fatores obrigatórios de próclise:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pronomes Indefinidos: Tanto os estritamente invariáveis (nada, tudo, ninguém, alguém) quanto os flexionáveis/variáveis (alguns, muitos, poucos, todos, várias). Exemplo: \"Ninguém me chamou\" / \"Muitos o aplaudiram\".",
+                "Pronomes Relativos: Tanto os invariáveis (que, quem, onde) quanto os variáveis (o qual, a qual, os quais, cujo, cuja, cujos). Exemplo: \"A lei que se aplica...\" / \"Os servidores aos quais me referi...\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A03-G07-COLOCACAO-PRONOMES-ATONOS-004",
+                  "targetTitle": "As Duas Exceções Canônicas da Atração",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +389,86 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA norma culta estabelece duas situações em que a presença de uma palavra invariável antes do verbo não torna a próclise estritamente obrigatória, conferindo ao redator a faculdade de empregar próclise ou ênclise.\nExplicação consolidada das Exceções\nExceção 1 — Verbo no Infinitivo:\nMantra Pedagógico: \"O infinitivo é todo-poderoso: sempre aceita ênclise!\"\nEstando o verbo na forma nominal do infinitivo (-ar, -er, -ir), a presença de palavra atrativa (advérbio, negação ou preposição) não anula a ênclise.\nExemplo: \"Para me responder\" (Próclise — Correto) OU \"Para responder-me\" (Ênclise — Correto).\nExemplo com negação: \"Tendemos a não os notar\" (Próclise — Correto) OU \"Tendemos a não notá-los\" (Ênclise — Correto).\nContraste com Gerúndio: O gerúndio precedido de preposição \"em\" exige próclise obrigatória (\"Em se tratando de\" = Correto; \"Em tratando-se\" = Incorreto). Apenas o infinitivo detém essa imunidade universal à atração.\nExceção 2 — Conjunções Coordenativas:\nAs conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas e explicativas, como e, mas, porém, contudo, todavia, logo, portanto, pois), embora sejam vocábulos invariáveis, não exercem atração obrigatória.\nExemplo com aditiva: \"Chegou e se deitou\" (Próclise — Correto) OU \"Chegou e deitou-se\" (Ênclise — Correto).\nExemplo com conclusiva: \"Acordou tarde, logo se atrasou\" (Próclise — Correto) OU \"logo atrasou-se\" (Ênclise — Correto).\nRelações\nAlerta crítico: \nDica de prova: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-002\nExemplificado em: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A norma culta estabelece duas situações em que a presença de uma palavra invariável antes do verbo não torna a próclise estritamente obrigatória, conferindo ao redator a faculdade de empregar próclise ou ênclise."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada das Exceções"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Exceção 1 — Verbo no Infinitivo:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mantra Pedagógico: \"O infinitivo é todo-poderoso: sempre aceita ênclise!\"",
+                "Estando o verbo na forma nominal do infinitivo (-ar, -er, -ir), a presença de palavra atrativa (advérbio, negação ou preposição) não anula a ênclise.",
+                "Exemplo: \"Para me responder\" (Próclise — Correto) OU \"Para responder-me\" (Ênclise — Correto).",
+                "Exemplo com negação: \"Tendemos a não os notar\" (Próclise — Correto) OU \"Tendemos a não notá-los\" (Ênclise — Correto).",
+                "Contraste com Gerúndio: O gerúndio precedido de preposição \"em\" exige próclise obrigatória (\"Em se tratando de\" = Correto; \"Em tratando-se\" = Incorreto). Apenas o infinitivo detém essa imunidade universal à atração."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Exceção 2 — Conjunções Coordenativas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "As conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas e explicativas, como e, mas, porém, contudo, todavia, logo, portanto, pois), embora sejam vocábulos invariáveis, não exercem atração obrigatória.",
+                "Exemplo com aditiva: \"Chegou e se deitou\" (Próclise — Correto) OU \"Chegou e deitou-se\" (Ênclise — Correto).",
+                "Exemplo com conclusiva: \"Acordou tarde, logo se atrasou\" (Próclise — Correto) OU \"logo atrasou-se\" (Ênclise — Correto)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-004",
+                  "targetTitle": "Confusão entre Conjunção Coordenativa e Subordinativa",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-003",
+                  "targetTitle": "Exercício 3: Exceção do Infinitivo",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-012",
+                  "targetTitle": "Questão 30: CESPE / Pref. Camaçari (2024) — Pronome Relativo",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-013",
+                  "targetTitle": "Questões 31/32: CESPE / ITAIPU (2024) — Conjunção Coordenativa",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +481,64 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Mantra da Colocação Pronominal — \"O que não é proibido está correto\" — define que, quando uma oração não incorre em nenhuma das 3 proibições e não apresenta palavra atrativa obrigatória, a colocação pronominal torna-se plenamente facultativa (admite próclise ou ênclise).\nExplicação consolidada\nElementos que NÃO são palavras atrativas obrigatórias:\nSubstantivos e Nomes Próprios: Ex.: \"A torcida o aplaudiu\" OU \"A torcida aplaudiu-o\"; \"Octaviano se valeu\" OU \"Octaviano valeu-se\".\nPronomes Pessoais do Caso Reto (eu, tu, ele, nós, vós, eles): São palavras variáveis. Não exercem atração obrigatória, facultando o emprego da próclise ou da ênclise. Ex.: \"Ele me contou\" OU \"Ele contou-me\".Possui alerta em:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Mantra da Colocação Pronominal — \"O que não é proibido está correto\" — define que, quando uma oração não incorre em nenhuma das 3 proibições e não apresenta palavra atrativa obrigatória, a colocação pronominal torna-se plenamente facultativa (admite próclise ou ênclise)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Elementos que NÃO são palavras atrativas obrigatórias:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Substantivos e Nomes Próprios: Ex.: \"A torcida o aplaudiu\" OU \"A torcida aplaudiu-o\"; \"Octaviano se valeu\" OU \"Octaviano valeu-se\".",
+                "Pronomes Pessoais do Caso Reto (eu, tu, ele, nós, vós, eles): São palavras variáveis. Não exercem atração obrigatória, facultando o emprego da próclise ou da ênclise. Ex.: \"Ele me contou\" OU \"Ele contou-me\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-005",
+                  "targetTitle": "Exercício 5: Mantra da Facultatividade",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-014",
+                  "targetTitle": "Questão 33: CESPE / CTI (2024) — Infinitivo com Negação",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-016",
+                  "targetTitle": "Questão 36: CESPE / Pref. Cachoeiro (2024) — Pronome Reto",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-003",
+                  "targetTitle": "Falso Macete: \"Pronome Reto Obriga Próclise\"",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +551,55 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA presença de uma palavra atrativa anula a preferência do futuro pela mesóclise e torna a próclise estritamente obrigatória. A regra de atração sobrepõe-se à formação mesoclítica.\nExplicação consolidada\nSem atrativo, o verbo no futuro exige mesóclise se não houver sujeito anteposto para facultar a próclise: \"Dar-lhe-ei o presente.\"\nHavendo qualquer palavra atrativa (como a negação não ou advérbio jamais), a mesóclise passa a ser um erro sintático, sendo mandatória a próclise.\nConstrução Correta: \"Não lhe darei o presente.\" / \"Jamais se fará o acordo.\"\nConstrução Incorreta: \"Não dar-lhe-ei o presente.\" / \"Jamais far-se-á o acordo.\"\nRelações\nPossui alerta em: \nExemplificado em: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença de uma palavra atrativa anula a preferência do futuro pela mesóclise e torna a próclise estritamente obrigatória. A regra de atração sobrepõe-se à formação mesoclítica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sem atrativo, o verbo no futuro exige mesóclise se não houver sujeito anteposto para facultar a próclise: \"Dar-lhe-ei o presente.\"",
+                "Havendo qualquer palavra atrativa (como a negação não ou advérbio jamais), a mesóclise passa a ser um erro sintático, sendo mandatória a próclise.",
+                "Construção Correta: \"Não lhe darei o presente.\" / \"Jamais se fará o acordo.\"",
+                "Construção Incorreta: \"Não dar-lhe-ei o presente.\" / \"Jamais far-se-á o acordo.\""
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-002",
+                  "targetTitle": "Armadilha da Mesóclise Falsa com Negação",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-001",
+                  "targetTitle": "Exercício 1: Atração por Palavra Invariável",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-009",
+                  "targetTitle": "Questão 28: CESPE / MPE-TO (2024) — Justificativa da Atração",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +612,50 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nEm verbos regulares (como enviar, amar, estudar), as desinências do Infinitivo Pessoal (para eu enviar, tu enviares...) e do Futuro do Subjuntivo (quando eu enviar, tu enviares...) são idênticas. Enquanto o infinitivo aceita ênclise mesmo com atrativo (Exceção), o futuro do subjuntivo obedece à regra geral e proíbe a ênclise na presença de palavra atrativa.\nExplicação consolidada\nPara desarmar pegadinhas em provas, utiliza-se o teste de substituição pelo verbo irregular FAZER / FIZER:\nSe no contexto contextual couber a forma FAZER, o verbo original é INFINITIVO $\\rightarrow$ Próclise e Ênclise são permitidas.\nSe no contexto contextual couber a forma FIZER, o verbo original é FUTURO DO SUBJUNTIVO $\\rightarrow$ A próclise é estritamente OBRIGATÓRIA diante de atrativo (a ênclise é um erro grave).\nRelações\nProcedimento operacional: \nExemplificado em: \nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-005"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em verbos regulares (como enviar, amar, estudar), as desinências do Infinitivo Pessoal (para eu enviar, tu enviares...) e do Futuro do Subjuntivo (quando eu enviar, tu enviares...) são idênticas. Enquanto o infinitivo aceita ênclise mesmo com atrativo (Exceção), o futuro do subjuntivo obedece à regra geral e proíbe a ênclise na presença de palavra atrativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para desarmar pegadinhas em provas, utiliza-se o teste de substituição pelo verbo irregular FAZER / FIZER:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se no contexto contextual couber a forma FAZER, o verbo original é INFINITIVO $\\rightarrow$ Próclise e Ênclise são permitidas.",
+                "Se no contexto contextual couber a forma FIZER, o verbo original é FUTURO DO SUBJUNTIVO $\\rightarrow$ A próclise é estritamente OBRIGATÓRIA diante de atrativo (a ênclise é um erro grave)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A03-G07-COLOCACAO-PRONOMES-ATONOS-002",
+                  "targetTitle": "Teste Diagnóstico Verbal \"Fazer / Fizer\"",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-010",
+                  "targetTitle": "Aplicação do Teste Fazer/Fizer (Sacada 2)",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +668,71 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA colocação do pronome após vírgula depende da natureza sintática da pontuação: se a vírgula assinala início de oração, a próclise é proibida; se a vírgula fecha um termo intercalado (vírgula casada), a próclise é plenamente permitida.\nExplicação consolidada\nVírgula de Início de Oração (Coordenação Assindética):\nA vírgula separa orações independentes. O verbo seguinte inicia a nova oração.\nIncorreto: \"João acordou, me chamou.\"\nCorreto: \"João acordou, chamou-me.\"\nVírgula de Intercalação / Termo Deslocado (Vírgula Casada):\nO elemento entre vírgulas é um adjunto adverbial ou oração subordinada intercalada. A oração começou antes da primeira vírgula.\nO pronome não está iniciando oração; a colocação é facultativa.\nCorreto (Próclise): \"João, pela manhã, me acordou.\" / \"Estes, muitas vezes, se situam em regiões remotas.\"\nCorreto (Ênclise): \"João, pela manhã, acordou-me.\" / \"Estes, muitas vezes, situam-se...\"\nRelações\nConhecimento oral expandido: ORAL-A03-G07-COLOCACAO-PRONOMES-ATONOS-002\nExemplificado em: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A colocação do pronome após vírgula depende da natureza sintática da pontuação: se a vírgula assinala início de oração, a próclise é proibida; se a vírgula fecha um termo intercalado (vírgula casada), a próclise é plenamente permitida."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Vírgula de Início de Oração (Coordenação Assindética):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A vírgula separa orações independentes. O verbo seguinte inicia a nova oração.",
+                "Incorreto: \"João acordou, me chamou.\"",
+                "Correto: \"João acordou, chamou-me.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Vírgula de Intercalação / Termo Deslocado (Vírgula Casada):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O elemento entre vírgulas é um adjunto adverbial ou oração subordinada intercalada. A oração começou antes da primeira vírgula.",
+                "O pronome não está iniciando oração; a colocação é facultativa.",
+                "Correto (Próclise): \"João, pela manhã, me acordou.\" / \"Estes, muitas vezes, se situam em regiões remotas.\"",
+                "Correto (Ênclise): \"João, pela manhã, acordou-me.\" / \"Estes, muitas vezes, situam-se...\""
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-011",
+                  "targetTitle": "Questão 29: CESPE / INPI (2024) — Locução Verbal",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A03-G07-015",
+                  "targetTitle": "Questão 35: CESPE / Petrobras (2024) — Intercalação",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +745,91 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNas locuções verbais (Verbo Auxiliar + Verbo Principal no Gerúndio ou Infinitivo), a regra geral é \"VALE TUDO\" (todas as posições são aceitas), RESSALVADAS APENAS DUAS PROIBIÇÕES ESTRITAS.\nAs Duas Únicas Proibições em Locuções Verbais\nProibição A — Ênclise ao Particípio: É proibido prender pronome por hífen a verbo principal no particípio (ex.: \"Tinha falado-me\" = INCORRETO).\nProibição B — Ênclise ao Verbo Auxiliar com Hífen na Presença de Palavra Atrativa: Com atrator antecedente, o pronome não pode ser hifenizado ao auxiliar (ex.: \"João não está-me escutando\" = INCORRETO).\nMatriz Completa de Posições Sintáticas\nCenário 1: SEM Palavra Atrativa (\"João... escutando\")\nJoão me está escutando. $\\rightarrow$ CORRETO (Próclise ao auxiliar)\nJoão está-me escutando. $\\rightarrow$ CORRETO (Ênclise ao auxiliar com hífen)\nJoão está me escutando. $\\rightarrow$ CORRETO (Próclise ao principal sem hífen)\nJoão está escutando-me. $\\rightarrow$ CORRETO (Ênclise ao principal com hífen)\n(Status: 4 de 4 configurações são válidas).\nCenário 2: COM Palavra Atrativa (\"João não... escutando\")\nJoão não me está escutando. $\\rightarrow$ CORRETO (Próclise ao auxiliar atraída pelo \"não\")\nJoão não está-me escutando. $\\rightarrow$ INCORRETO (X) (Violação da atração sobre o auxiliar)\nJoão não está me escutando. $\\rightarrow$ CORRETO (Próclise ao principal sem hífen)\nJoão não está escutando-me. $\\rightarrow$ CORRETO (Ênclise ao principal no gerúndio/infinitivo)\n(Status: 3 de 4 configurações são válidas).\nAplicação Combinada com Infinitivo\nEm \"Não posso negar-te ajuda\", a estrutura é plenamente correta porque o verbo principal negar está no infinitivo (exceção soberana à atração). Apenas a forma \"Não posso-te negar\" seria incorreta pelo hífen no auxiliar.\nRelações\nProcedimento analítico: \nDica operacional: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-003\nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-006"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nas locuções verbais (Verbo Auxiliar + Verbo Principal no Gerúndio ou Infinitivo), a regra geral é \"VALE TUDO\" (todas as posições são aceitas), RESSALVADAS APENAS DUAS PROIBIÇÕES ESTRITAS."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "As Duas Únicas Proibições em Locuções Verbais"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Proibição A — Ênclise ao Particípio: É proibido prender pronome por hífen a verbo principal no particípio (ex.: \"Tinha falado-me\" = INCORRETO).",
+                "Proibição B — Ênclise ao Verbo Auxiliar com Hífen na Presença de Palavra Atrativa: Com atrator antecedente, o pronome não pode ser hifenizado ao auxiliar (ex.: \"João não está-me escutando\" = INCORRETO)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Matriz Completa de Posições Sintáticas"
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "Cenário 1: SEM Palavra Atrativa (\"João... escutando\")"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "João me está escutando. $\\rightarrow$ CORRETO (Próclise ao auxiliar)",
+                "João está-me escutando. $\\rightarrow$ CORRETO (Ênclise ao auxiliar com hífen)",
+                "João está me escutando. $\\rightarrow$ CORRETO (Próclise ao principal sem hífen)",
+                "João está escutando-me. $\\rightarrow$ CORRETO (Ênclise ao principal com hífen)"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "(Status: 4 de 4 configurações são válidas)."
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "Cenário 2: COM Palavra Atrativa (\"João não... escutando\")"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "João não me está escutando. $\\rightarrow$ CORRETO (Próclise ao auxiliar atraída pelo \"não\")",
+                "João não está-me escutando. $\\rightarrow$ INCORRETO (X) (Violação da atração sobre o auxiliar)",
+                "João não está me escutando. $\\rightarrow$ CORRETO (Próclise ao principal sem hífen)",
+                "João não está escutando-me. $\\rightarrow$ CORRETO (Ênclise ao principal no gerúndio/infinitivo)"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "(Status: 3 de 4 configurações são válidas)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Aplicação Combinada com Infinitivo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em \"Não posso negar-te ajuda\", a estrutura é plenamente correta porque o verbo principal negar está no infinitivo (exceção soberana à atração). Apenas a forma \"Não posso-te negar\" seria incorreta pelo hífen no auxiliar."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A03-G07-COLOCACAO-PRONOMES-ATONOS-003",
+                  "targetTitle": "Roteiro de Análise para Locuções Verbais",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -220,8 +842,65 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA força atrativa da conjunção subordinativa ou pronome relativo atua sobre o verbo da oração subordinada mesmo havendo elemento intermediário (sujeito explícito). Além disso, a aposínclise (pronome intercalado entre duas palavras atrativas) é uma construção formalmente válida perante a norma culta e a banca Cebraspe.\nExplicação consolidada\nAtração a Distância:\nNa oração desenvolvida: \"Disse que o menino se assustou.\"\nO vocábulo que (invariável/atrativo) exige a próclise do pronome se, mesmo com o sujeito o menino intercalado.\nA construção \"Disse que o menino assustou-se\" é considerada incorreta pelo padrão Cebraspe.\nO Fenômeno da Aposínclise:\nOcorre quando há duas palavras atrativas sucessivas antes do verbo (ex.: que + não / ninguém + não).\nO pronome pode ocupar a próclise padrão ou posicionar-se no meio das duas palavras atrativas:\nPróclise Padrão: \"O livro que não lhe ofereci.\" / \"Ninguém não me chamou.\"\nAposínclise: \"O livro que lhe não ofereci.\" / \"Ninguém me não chamou.\"\nAmbas as modalidades são gramaticalmente corretas.\nRelações\nPossui alerta em: \nGlossário associado: TERM-A03-G07-COLOCACAO-PRONOMES-ATONOS-005\nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-007"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A força atrativa da conjunção subordinativa ou pronome relativo atua sobre o verbo da oração subordinada mesmo havendo elemento intermediário (sujeito explícito). Além disso, a aposínclise (pronome intercalado entre duas palavras atrativas) é uma construção formalmente válida perante a norma culta e a banca Cebraspe."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Atração a Distância:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Na oração desenvolvida: \"Disse que o menino se assustou.\"",
+                "O vocábulo que (invariável/atrativo) exige a próclise do pronome se, mesmo com o sujeito o menino intercalado.",
+                "A construção \"Disse que o menino assustou-se\" é considerada incorreta pelo padrão Cebraspe."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O Fenômeno da Aposínclise:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ocorre quando há duas palavras atrativas sucessivas antes do verbo (ex.: que + não / ninguém + não).",
+                "O pronome pode ocupar a próclise padrão ou posicionar-se no meio das duas palavras atrativas:",
+                "Próclise Padrão: \"O livro que não lhe ofereci.\" / \"Ninguém não me chamou.\"",
+                "Aposínclise: \"O livro que lhe não ofereci.\" / \"Ninguém me não chamou.\"",
+                "Ambas as modalidades são gramaticalmente corretas."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-005",
+                  "targetTitle": "Rejeição da Aposínclise por Estranheza Sonora",
+                  "targetUnitId": "IP-A03-G07",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -234,56 +913,73 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA teoria integral de colocação pronominal resume-se operacionalmente a um conjunto fechado de 10 elementos cognitivos:\n======================================================================================== SISTEMA DOS 10 ELEMENTOS DE COLOCAÇÃO PRONOMINAL ======================================================================================== I. 3 PROIBIÇÕES ABSOLUTAS:\nProibido próclise em início de oração.\nProibida ênclise a verbo no futuro (presente ou pretérito).\nProibida ênclise a verbo no particípio.\nII. 1 REGRA GERAL DE ATRAÇÃO:\nPalavra invariável antes do verbo exige PRÓCLISE (junto com pronomes relativos\ne indefinidos).\nIII. 2 EXCEÇÕES DA ATRAÇÃO:\nVerbo no infinitivo (sempre aceita ênclise).\nConjunções coordenativas (facultam próclise ou ênclise).\nIV. 4 SACADAS FINAIS AVANÇADAS:\nFuturo com palavra atrativa = Próclise obrigatória (anula a mesóclise).\nInfinitivo vs. Futuro do Subjuntivo = Teste pelo macete \"FAZER\" / \"FIZER\".\nApós vírgula = Início de oração (Proibido) vs. Intercalação/Vírgula casada (Permitido).\nLocuções Verbais & Aposínclise = \"Vale tudo\" (salvo particípio e auxiliar hifenizado\ncom atrativo) + Aposínclise válida. ========================================================================================"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A teoria integral de colocação pronominal resume-se operacionalmente a um conjunto fechado de 10 elementos cognitivos:"
+            },
+            {
+              "type": "paragraph",
+              "text": "======================================================================================== SISTEMA DOS 10 ELEMENTOS DE COLOCAÇÃO PRONOMINAL ======================================================================================== I. 3 PROIBIÇÕES ABSOLUTAS:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Proibido próclise em início de oração.",
+                "Proibida ênclise a verbo no futuro (presente ou pretérito).",
+                "Proibida ênclise a verbo no particípio."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "II. 1 REGRA GERAL DE ATRAÇÃO:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Palavra invariável antes do verbo exige PRÓCLISE (junto com pronomes relativos"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "e indefinidos)."
+            },
+            {
+              "type": "paragraph",
+              "text": "III. 2 EXCEÇÕES DA ATRAÇÃO:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo no infinitivo (sempre aceita ênclise).",
+                "Conjunções coordenativas (facultam próclise ou ênclise)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "IV. 4 SACADAS FINAIS AVANÇADAS:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Futuro com palavra atrativa = Próclise obrigatória (anula a mesóclise).",
+                "Infinitivo vs. Futuro do Subjuntivo = Teste pelo macete \"FAZER\" / \"FIZER\".",
+                "Após vírgula = Início de oração (Proibido) vs. Intercalação/Vírgula casada (Permitido).",
+                "Locuções Verbais & Aposínclise = \"Vale tudo\" (salvo particípio e auxiliar hifenizado"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "com atrativo) + Aposínclise válida. ========================================================================================"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA colocação pronominal estuda exclusivamente o posicionamento dos pronomes pessoais oblíquos átonos (o, a, os, as, lhe, lhes, me, te, se, nos, vos) em relação à forma verbal. Na língua portuguesa padrão, existem exatamente três posições possíveis: próclise, ênclise e mesóclise.\nExplicação consolidada\nPróclise: O pronome é colocado antes do verbo. Configura a posição obrigatória sempre que houver palavra atrativa antecedente não neutralizada por exceção.\nExemplo: \"Não me chamou para a reunião.\"\nÊnclise: O pronome é colocado depois do verbo, unido a este obrigatoriamente por meio de hífen. É a posição padrão da norma culta na ausência de elementos atrativos, sendo vedada em início absoluto de oração, com verbos no futuro ou com particípios.\nExemplo: \"Chamou-me para a reunião.\"\nMesóclise: O pronome é intercalado no meio do verbo, entre o radical e a desinência modo-temporal, exigindo dois hífens. É de uso exclusivo para verbos conjugados nos tempos futuros quando não houver palavra atrativa:\nFuturo do Presente: chamarei $\\rightarrow$ chamar-me-ei;\nFuturo do Pretérito: chamaria $\\rightarrow$ chamar-me-ia.\nExemplo: \"Chamar-me-iam se houvesse vaga.\"\nLimites do Escopo\nAs regras de colocação pronominal não se aplicam aos pronomes pessoais oblíquos tônicos (mim, ti, ele, ela, si, nós, vós, eles, elas) regidos por preposição (ex.: \"Entregou a mim o documento\"). Tais pronomes possuem mobilidade sintática regida pela sintaxe de regência e complementos, e não por regras de próclise/ênclise/mesóclise.Evidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA análise de qualquer construção pronominal na norma culta inicia-se pela checagem de três vedações categóricas. Se a estrutura violar qualquer um desses três preceitos, ela é nula e incorreta, independentemente de estilo ou contexto.\nExplicação consolidada das Proibições\nProibição 1 — Início de Oração: É expressamente proibido iniciar período ou oração absoluta com pronome oblíquo átono.\nIncorreto: \"Me empresta um livro.\" / \"Se trata de uma questão ética.\"\nCorreto: \"Empresta-me um livro.\" / \"Trata-se de uma questão ética.\"\nProibição 2 — Ênclise a Verbo no Futuro: É proibido anexar pronome por ênclise a verbos conjugados no Futuro do Presente ou no Futuro do Pretérito.\nIncorreto: \"Emprestarei-te a quantia.\" / \"Trataria-se do processo.\"\nCorreto: \"Emprestar-te-ei a quantia.\" / \"Tratar-se-ia do processo.\" (Aplica-se mesóclise quando não houver atrator).\nProibição 3 — Ênclise a Verbo no Particípio: É proibido realizar ênclise diretamente em forma nominal de particípio, seja regular (terminação -do, como emprestado, falado, equipado) ou irregular (visto, ganho, feito).\nIncorreto: \"Tinha emprestado-lhe o carro.\" / \"Havia equipado-se para a viagem.\"\nCorreto: \"Tinha-lhe emprestado o carro.\" / \"Tinha lhe emprestado o carro.\" / \"Havia se equipado.\"Alertas associados: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA Regra Geral de Atração estabelece que qualquer palavra invariável posicionada antes do verbo atua como palavra atrativa, exigindo obrigatoriamente a PRÓCLISE.\nExplicação consolidada\nFundamentação Sintática da Invariabilidade: Palavra invariável é aquela que não sofre flexão de gênero (masculino/feminino) nem de número (singular/plural). A força atrativa decorre da natureza morfológica da invariabilidade, e não de sentidos semânticos místicos (como \"palavra negativa\"). Palavras invariáveis afirmativas (sim, sempre, já) atraem com o mesmo rigor sintático que palavras de sentido negativo (não, nunca, jamais).\nClasses Morfológicas Invariáveis que Atraem\nAdvérbios e Expressões Adverbiais: não, nunca, jamais, sempre, já, talvez, aqui, ali, bem, mal (ex.: \"Não me responda\" / \"Sempre te disse a verdade\").\nConjunções Subordinativas: que, se, embora, quando, porque, conforme, caso, desde que (ex.: \"Embora o visse...\" / \"Quando me chamaram...\").\nPreposições: em, de, por, para, com (ex.: \"Em se tratando de...\").\nPronomes Interrogativos: quem, que, qual, quanto, como (ex.: \"Quem me chamou?\").\nClasses Variáveis que Excepcionalmente Atraem\nExistem duas classes de palavras que, mesmo admitindo flexão em gênero e número, atuam canonicamente como fatores obrigatórios de próclise:\nPronomes Indefinidos: Tanto os estritamente invariáveis (nada, tudo, ninguém, alguém) quanto os flexionáveis/variáveis (alguns, muitos, poucos, todos, várias). Exemplo: \"Ninguém me chamou\" / \"Muitos o aplaudiram\".\nPronomes Relativos: Tanto os invariáveis (que, quem, onde) quanto os variáveis (o qual, a qual, os quais, cujo, cuja, cujos). Exemplo: \"A lei que se aplica...\" / \"Os servidores aos quais me referi...\".\nRelações\nExceções em: \nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-003\nDica de aplicação: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA norma culta estabelece duas situações em que a presença de uma palavra invariável antes do verbo não torna a próclise estritamente obrigatória, conferindo ao redator a faculdade de empregar próclise ou ênclise.\nExplicação consolidada das Exceções\nExceção 1 — Verbo no Infinitivo:\nMantra Pedagógico: \"O infinitivo é todo-poderoso: sempre aceita ênclise!\"\nEstando o verbo na forma nominal do infinitivo (-ar, -er, -ir), a presença de palavra atrativa (advérbio, negação ou preposição) não anula a ênclise.\nExemplo: \"Para me responder\" (Próclise — Correto) OU \"Para responder-me\" (Ênclise — Correto).\nExemplo com negação: \"Tendemos a não os notar\" (Próclise — Correto) OU \"Tendemos a não notá-los\" (Ênclise — Correto).\nContraste com Gerúndio: O gerúndio precedido de preposição \"em\" exige próclise obrigatória (\"Em se tratando de\" = Correto; \"Em tratando-se\" = Incorreto). Apenas o infinitivo detém essa imunidade universal à atração.\nExceção 2 — Conjunções Coordenativas:\nAs conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas e explicativas, como e, mas, porém, contudo, todavia, logo, portanto, pois), embora sejam vocábulos invariáveis, não exercem atração obrigatória.\nExemplo com aditiva: \"Chegou e se deitou\" (Próclise — Correto) OU \"Chegou e deitou-se\" (Ênclise — Correto).\nExemplo com conclusiva: \"Acordou tarde, logo se atrasou\" (Próclise — Correto) OU \"logo atrasou-se\" (Ênclise — Correto).\nRelações\nAlerta crítico: \nDica de prova: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-002\nExemplificado em: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Mantra da Colocação Pronominal — \"O que não é proibido está correto\" — define que, quando uma oração não incorre em nenhuma das 3 proibições e não apresenta palavra atrativa obrigatória, a colocação pronominal torna-se plenamente facultativa (admite próclise ou ênclise).\nExplicação consolidada\nElementos que NÃO são palavras atrativas obrigatórias:\nSubstantivos e Nomes Próprios: Ex.: \"A torcida o aplaudiu\" OU \"A torcida aplaudiu-o\"; \"Octaviano se valeu\" OU \"Octaviano valeu-se\".\nPronomes Pessoais do Caso Reto (eu, tu, ele, nós, vós, eles): São palavras variáveis. Não exercem atração obrigatória, facultando o emprego da próclise ou da ênclise. Ex.: \"Ele me contou\" OU \"Ele contou-me\".Possui alerta em:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA presença de uma palavra atrativa anula a preferência do futuro pela mesóclise e torna a próclise estritamente obrigatória. A regra de atração sobrepõe-se à formação mesoclítica.\nExplicação consolidada\nSem atrativo, o verbo no futuro exige mesóclise se não houver sujeito anteposto para facultar a próclise: \"Dar-lhe-ei o presente.\"\nHavendo qualquer palavra atrativa (como a negação não ou advérbio jamais), a mesóclise passa a ser um erro sintático, sendo mandatória a próclise.\nConstrução Correta: \"Não lhe darei o presente.\" / \"Jamais se fará o acordo.\"\nConstrução Incorreta: \"Não dar-lhe-ei o presente.\" / \"Jamais far-se-á o acordo.\"\nRelações\nPossui alerta em: \nExemplificado em: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nEm verbos regulares (como enviar, amar, estudar), as desinências do Infinitivo Pessoal (para eu enviar, tu enviares...) e do Futuro do Subjuntivo (quando eu enviar, tu enviares...) são idênticas. Enquanto o infinitivo aceita ênclise mesmo com atrativo (Exceção), o futuro do subjuntivo obedece à regra geral e proíbe a ênclise na presença de palavra atrativa.\nExplicação consolidada\nPara desarmar pegadinhas em provas, utiliza-se o teste de substituição pelo verbo irregular FAZER / FIZER:\nSe no contexto contextual couber a forma FAZER, o verbo original é INFINITIVO $\\rightarrow$ Próclise e Ênclise são permitidas.\nSe no contexto contextual couber a forma FIZER, o verbo original é FUTURO DO SUBJUNTIVO $\\rightarrow$ A próclise é estritamente OBRIGATÓRIA diante de atrativo (a ênclise é um erro grave).\nRelações\nProcedimento operacional: \nExemplificado em: \nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-005"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA colocação do pronome após vírgula depende da natureza sintática da pontuação: se a vírgula assinala início de oração, a próclise é proibida; se a vírgula fecha um termo intercalado (vírgula casada), a próclise é plenamente permitida.\nExplicação consolidada\nVírgula de Início de Oração (Coordenação Assindética):\nA vírgula separa orações independentes. O verbo seguinte inicia a nova oração.\nIncorreto: \"João acordou, me chamou.\"\nCorreto: \"João acordou, chamou-me.\"\nVírgula de Intercalação / Termo Deslocado (Vírgula Casada):\nO elemento entre vírgulas é um adjunto adverbial ou oração subordinada intercalada. A oração começou antes da primeira vírgula.\nO pronome não está iniciando oração; a colocação é facultativa.\nCorreto (Próclise): \"João, pela manhã, me acordou.\" / \"Estes, muitas vezes, se situam em regiões remotas.\"\nCorreto (Ênclise): \"João, pela manhã, acordou-me.\" / \"Estes, muitas vezes, situam-se...\"\nRelações\nConhecimento oral expandido: ORAL-A03-G07-COLOCACAO-PRONOMES-ATONOS-002\nExemplificado em: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNas locuções verbais (Verbo Auxiliar + Verbo Principal no Gerúndio ou Infinitivo), a regra geral é \"VALE TUDO\" (todas as posições são aceitas), RESSALVADAS APENAS DUAS PROIBIÇÕES ESTRITAS.\nAs Duas Únicas Proibições em Locuções Verbais\nProibição A — Ênclise ao Particípio: É proibido prender pronome por hífen a verbo principal no particípio (ex.: \"Tinha falado-me\" = INCORRETO).\nProibição B — Ênclise ao Verbo Auxiliar com Hífen na Presença de Palavra Atrativa: Com atrator antecedente, o pronome não pode ser hifenizado ao auxiliar (ex.: \"João não está-me escutando\" = INCORRETO).\nMatriz Completa de Posições Sintáticas\nCenário 1: SEM Palavra Atrativa (\"João... escutando\")\nJoão me está escutando. $\\rightarrow$ CORRETO (Próclise ao auxiliar)\nJoão está-me escutando. $\\rightarrow$ CORRETO (Ênclise ao auxiliar com hífen)\nJoão está me escutando. $\\rightarrow$ CORRETO (Próclise ao principal sem hífen)\nJoão está escutando-me. $\\rightarrow$ CORRETO (Ênclise ao principal com hífen)\n(Status: 4 de 4 configurações são válidas).\nCenário 2: COM Palavra Atrativa (\"João não... escutando\")\nJoão não me está escutando. $\\rightarrow$ CORRETO (Próclise ao auxiliar atraída pelo \"não\")\nJoão não está-me escutando. $\\rightarrow$ INCORRETO (X) (Violação da atração sobre o auxiliar)\nJoão não está me escutando. $\\rightarrow$ CORRETO (Próclise ao principal sem hífen)\nJoão não está escutando-me. $\\rightarrow$ CORRETO (Ênclise ao principal no gerúndio/infinitivo)\n(Status: 3 de 4 configurações são válidas).\nAplicação Combinada com Infinitivo\nEm \"Não posso negar-te ajuda\", a estrutura é plenamente correta porque o verbo principal negar está no infinitivo (exceção soberana à atração). Apenas a forma \"Não posso-te negar\" seria incorreta pelo hífen no auxiliar.\nRelações\nProcedimento analítico: \nDica operacional: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-003\nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-006"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA força atrativa da conjunção subordinativa ou pronome relativo atua sobre o verbo da oração subordinada mesmo havendo elemento intermediário (sujeito explícito). Além disso, a aposínclise (pronome intercalado entre duas palavras atrativas) é uma construção formalmente válida perante a norma culta e a banca Cebraspe.\nExplicação consolidada\nAtração a Distância:\nNa oração desenvolvida: \"Disse que o menino se assustou.\"\nO vocábulo que (invariável/atrativo) exige a próclise do pronome se, mesmo com o sujeito o menino intercalado.\nA construção \"Disse que o menino assustou-se\" é considerada incorreta pelo padrão Cebraspe.\nO Fenômeno da Aposínclise:\nOcorre quando há duas palavras atrativas sucessivas antes do verbo (ex.: que + não / ninguém + não).\nO pronome pode ocupar a próclise padrão ou posicionar-se no meio das duas palavras atrativas:\nPróclise Padrão: \"O livro que não lhe ofereci.\" / \"Ninguém não me chamou.\"\nAposínclise: \"O livro que lhe não ofereci.\" / \"Ninguém me não chamou.\"\nAmbas as modalidades são gramaticalmente corretas.\nRelações\nPossui alerta em: \nGlossário associado: TERM-A03-G07-COLOCACAO-PRONOMES-ATONOS-005\nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-007"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA teoria integral de colocação pronominal resume-se operacionalmente a um conjunto fechado de 10 elementos cognitivos:\n======================================================================================== SISTEMA DOS 10 ELEMENTOS DE COLOCAÇÃO PRONOMINAL ======================================================================================== I. 3 PROIBIÇÕES ABSOLUTAS:\nProibido próclise em início de oração.\nProibida ênclise a verbo no futuro (presente ou pretérito).\nProibida ênclise a verbo no particípio.\nII. 1 REGRA GERAL DE ATRAÇÃO:\nPalavra invariável antes do verbo exige PRÓCLISE (junto com pronomes relativos\ne indefinidos).\nIII. 2 EXCEÇÕES DA ATRAÇÃO:\nVerbo no infinitivo (sempre aceita ênclise).\nConjunções coordenativas (facultam próclise ou ênclise).\nIV. 4 SACADAS FINAIS AVANÇADAS:\nFuturo com palavra atrativa = Próclise obrigatória (anula a mesóclise).\nInfinitivo vs. Futuro do Subjuntivo = Teste pelo macete \"FAZER\" / \"FIZER\".\nApós vírgula = Início de oração (Proibido) vs. Intercalação/Vírgula casada (Permitido).\nLocuções Verbais & Aposínclise = \"Vale tudo\" (salvo particípio e auxiliar hifenizado\ncom atrativo) + Aposínclise válida. ========================================================================================"
         }
       ]
     },
@@ -383,7 +1079,9 @@
               "RULE-IP-A03-G07-001",
               "EXP-IP-A03-G07-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -468,7 +1166,9 @@
               "PROC-A03-G07-COLOCACAO-PRONOMES-ATONOS-001",
               "EXP-IP-A03-G07-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -583,7 +1283,9 @@
               "PROC-A03-G07-COLOCACAO-PRONOMES-ATONOS-002",
               "EXP-IP-A03-G07-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -698,7 +1400,9 @@
               "PROC-A03-G07-COLOCACAO-PRONOMES-ATONOS-003",
               "EXP-IP-A03-G07-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -846,7 +1550,9 @@
               "CONTRAST-IP-A03-G07-001",
               "EXP-IP-A03-G07-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -899,7 +1605,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-001",
               "EXP-IP-A03-G07-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -948,7 +1656,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-002",
               "EXP-IP-A03-G07-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -997,7 +1707,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-003",
               "EXP-IP-A03-G07-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1046,7 +1758,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-004",
               "EXP-IP-A03-G07-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1095,7 +1809,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-005",
               "EXP-IP-A03-G07-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1144,7 +1860,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-006",
               "EXP-IP-A03-G07-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1193,7 +1911,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-007",
               "EXP-IP-A03-G07-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1242,7 +1962,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-008",
               "EXP-IP-A03-G07-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1291,7 +2013,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-009",
               "EXP-IP-A03-G07-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1334,7 +2058,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-010",
               "EXP-IP-A03-G07-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1383,7 +2109,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-011",
               "EXP-IP-A03-G07-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1432,7 +2160,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-012",
               "EXP-IP-A03-G07-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1481,7 +2211,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-013",
               "EXP-IP-A03-G07-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1530,7 +2262,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-014",
               "EXP-IP-A03-G07-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1579,7 +2313,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-015",
               "EXP-IP-A03-G07-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1628,7 +2364,9 @@
               "WORKED_EXAMPLE-IP-A03-G07-016",
               "EXP-IP-A03-G07-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1678,7 +2416,9 @@
               "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-001",
               "EXP-IP-A03-G07-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1714,7 +2454,9 @@
               "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-002",
               "EXP-IP-A03-G07-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1750,7 +2492,9 @@
               "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-003",
               "EXP-IP-A03-G07-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1786,7 +2530,9 @@
               "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-004",
               "EXP-IP-A03-G07-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1822,7 +2568,9 @@
               "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-005",
               "EXP-IP-A03-G07-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1858,30 +2606,117 @@
               "WARN-A03-G07-COLOCACAO-PRONOMES-ATONOS-006",
               "EXP-IP-A03-G07-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Escopo Pronominal e as Três Posições Sintáticas**: Definição ou ideia central\nA colocação pronominal estuda exclusivamente o posicionamento dos pronomes pessoais oblíquos átonos (o, a, os, as, lhe, lhes, me, te, se, nos, vos) em relação à forma verbal. Na língua portuguesa padrão, existem exatamente três posições possíveis: próclise, ênclise e mesóclise.\nExplicação consolidada\nPróclise: O pronome é colocado antes do verbo. Configura a posição obrigatória sempre que houver palavra atrativa antecedente não neutralizada por exceção.\nExemplo: \"Não me chamou para a reunião.\"\nÊnclise: O pronome é colocado depois do verbo, unido a este obrigatoriamente por meio de hífen. É a posição padrão da norma culta na ausência de elementos atrativos, sendo vedada em início absoluto de oração, com verbos no futuro ou com particípios.\nExemplo: \"Chamou-me para a reunião.\"\nMesóclise: O pronome é intercalado no meio do verbo, entre o radical e a desinência modo-temporal, exigindo dois hífens. É de uso exclusivo para verbos conjugados nos tempos futuros quando não houver palavra atrativa:\nFuturo do Presente: chamarei $\\rightarrow$ chamar-me-ei;\nFuturo do Pretérito: chamaria $\\rightarrow$ chamar-me-ia.\nExemplo: \"Chamar-me-iam se houvesse vaga.\"\nLimites do Escopo\nAs regras de colocação pronominal não se aplicam aos pronomes pessoais oblíquos tônicos (mim, ti, ele, ela, si, nós, vós, eles, elas) regidos por preposição (ex.: \"Entregou a mim o documento\"). Tais pronomes possuem mobilidade sintática regida pela sintaxe de regência e complementos, e não por regras de próclise/ênclise/mesóclise.Evidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-001",
-            "**As Três Proibições Absolutas da Colocação Pronominal**: Definição ou ideia central\nA análise de qualquer construção pronominal na norma culta inicia-se pela checagem de três vedações categóricas. Se a estrutura violar qualquer um desses três preceitos, ela é nula e incorreta, independentemente de estilo ou contexto.\nExplicação consolidada das Proibições\nProibição 1 — Início de Oração: É expressamente proibido iniciar período ou oração absoluta com pronome oblíquo átono.\nIncorreto: \"Me empresta um livro.\" / \"Se trata de uma questão ética.\"\nCorreto: \"Empresta-me um livro.\" / \"Trata-se de uma questão ética.\"\nProibição 2 — Ênclise a Verbo no Futuro: É proibido anexar pronome por ênclise a verbos conjugados no Futuro do Presente ou no Futuro do Pretérito.\nIncorreto: \"Emprestarei-te a quantia.\" / \"Trataria-se do processo.\"\nCorreto: \"Emprestar-te-ei a quantia.\" / \"Tratar-se-ia do processo.\" (Aplica-se mesóclise quando não houver atrator).\nProibição 3 — Ênclise a Verbo no Particípio: É proibido realizar ênclise diretamente em forma nominal de particípio, seja regular (terminação -do, como emprestado, falado, equipado) ou irregular (visto, ganho, feito).\nIncorreto: \"Tinha emprestado-lhe o carro.\" / \"Havia equipado-se para a viagem.\"\nCorreto: \"Tinha-lhe emprestado o carro.\" / \"Tinha lhe emprestado o carro.\" / \"Havia se equipado.\"Alertas associados: ,",
-            "**Regra Geral de Atração Pronominal (Palavra Invariável)**: Definição ou ideia central\nA Regra Geral de Atração estabelece que qualquer palavra invariável posicionada antes do verbo atua como palavra atrativa, exigindo obrigatoriamente a PRÓCLISE.\nExplicação consolidada\nFundamentação Sintática da Invariabilidade: Palavra invariável é aquela que não sofre flexão de gênero (masculino/feminino) nem de número (singular/plural). A força atrativa decorre da natureza morfológica da invariabilidade, e não de sentidos semânticos místicos (como \"palavra negativa\"). Palavras invariáveis afirmativas (sim, sempre, já) atraem com o mesmo rigor sintático que palavras de sentido negativo (não, nunca, jamais).\nClasses Morfológicas Invariáveis que Atraem\nAdvérbios e Expressões Adverbiais: não, nunca, jamais, sempre, já, talvez, aqui, ali, bem, mal (ex.: \"Não me responda\" / \"Sempre te disse a verdade\").\nConjunções Subordinativas: que, se, embora, quando, porque, conforme, caso, desde que (ex.: \"Embora o visse...\" / \"Quando me chamaram...\").\nPreposições: em, de, por, para, com (ex.: \"Em se tratando de...\").\nPronomes Interrogativos: quem, que, qual, quanto, como (ex.: \"Quem me chamou?\").\nClasses Variáveis que Excepcionalmente Atraem\nExistem duas classes de palavras que, mesmo admitindo flexão em gênero e número, atuam canonicamente como fatores obrigatórios de próclise:\nPronomes Indefinidos: Tanto os estritamente invariáveis (nada, tudo, ninguém, alguém) quanto os flexionáveis/variáveis (alguns, muitos, poucos, todos, várias). Exemplo: \"Ninguém me chamou\" / \"Muitos o aplaudiram\".\nPronomes Relativos: Tanto os invariáveis (que, quem, onde) quanto os variáveis (o qual, a qual, os quais, cujo, cuja, cujos). Exemplo: \"A lei que se aplica...\" / \"Os servidores aos quais me referi...\".\nRelações\nExceções em: \nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-003\nDica de aplicação: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-001",
-            "**As Duas Exceções Canônicas da Atração**: Definição ou ideia central\nA norma culta estabelece duas situações em que a presença de uma palavra invariável antes do verbo não torna a próclise estritamente obrigatória, conferindo ao redator a faculdade de empregar próclise ou ênclise.\nExplicação consolidada das Exceções\nExceção 1 — Verbo no Infinitivo:\nMantra Pedagógico: \"O infinitivo é todo-poderoso: sempre aceita ênclise!\"\nEstando o verbo na forma nominal do infinitivo (-ar, -er, -ir), a presença de palavra atrativa (advérbio, negação ou preposição) não anula a ênclise.\nExemplo: \"Para me responder\" (Próclise — Correto) OU \"Para responder-me\" (Ênclise — Correto).\nExemplo com negação: \"Tendemos a não os notar\" (Próclise — Correto) OU \"Tendemos a não notá-los\" (Ênclise — Correto).\nContraste com Gerúndio: O gerúndio precedido de preposição \"em\" exige próclise obrigatória (\"Em se tratando de\" = Correto; \"Em tratando-se\" = Incorreto). Apenas o infinitivo detém essa imunidade universal à atração.\nExceção 2 — Conjunções Coordenativas:\nAs conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas e explicativas, como e, mas, porém, contudo, todavia, logo, portanto, pois), embora sejam vocábulos invariáveis, não exercem atração obrigatória.\nExemplo com aditiva: \"Chegou e se deitou\" (Próclise — Correto) OU \"Chegou e deitou-se\" (Ênclise — Correto).\nExemplo com conclusiva: \"Acordou tarde, logo se atrasou\" (Próclise — Correto) OU \"logo atrasou-se\" (Ênclise — Correto).\nRelações\nAlerta crítico: \nDica de prova: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-002\nExemplificado em: , ,",
-            "**O Mantra da Facultatividade (\"O que não é proibido está correto\")**: Definição ou ideia central\nO Mantra da Colocação Pronominal — \"O que não é proibido está correto\" — define que, quando uma oração não incorre em nenhuma das 3 proibições e não apresenta palavra atrativa obrigatória, a colocação pronominal torna-se plenamente facultativa (admite próclise ou ênclise).\nExplicação consolidada\nElementos que NÃO são palavras atrativas obrigatórias:\nSubstantivos e Nomes Próprios: Ex.: \"A torcida o aplaudiu\" OU \"A torcida aplaudiu-o\"; \"Octaviano se valeu\" OU \"Octaviano valeu-se\".\nPronomes Pessoais do Caso Reto (eu, tu, ele, nós, vós, eles): São palavras variáveis. Não exercem atração obrigatória, facultando o emprego da próclise ou da ênclise. Ex.: \"Ele me contou\" OU \"Ele contou-me\".Possui alerta em:",
-            "**Sacada 1: Colocação Pronominal no Futuro com Palavra Atrativa**: Definição ou ideia central\nA presença de uma palavra atrativa anula a preferência do futuro pela mesóclise e torna a próclise estritamente obrigatória. A regra de atração sobrepõe-se à formação mesoclítica.\nExplicação consolidada\nSem atrativo, o verbo no futuro exige mesóclise se não houver sujeito anteposto para facultar a próclise: \"Dar-lhe-ei o presente.\"\nHavendo qualquer palavra atrativa (como a negação não ou advérbio jamais), a mesóclise passa a ser um erro sintático, sendo mandatória a próclise.\nConstrução Correta: \"Não lhe darei o presente.\" / \"Jamais se fará o acordo.\"\nConstrução Incorreta: \"Não dar-lhe-ei o presente.\" / \"Jamais far-se-á o acordo.\"\nRelações\nPossui alerta em: \nExemplificado em: ,",
-            "**Sacada 2: Diferenciação entre Infinitivo e Futuro do Subjuntivo em Verbos Regulares**: Definição ou ideia central\nEm verbos regulares (como enviar, amar, estudar), as desinências do Infinitivo Pessoal (para eu enviar, tu enviares...) e do Futuro do Subjuntivo (quando eu enviar, tu enviares...) são idênticas. Enquanto o infinitivo aceita ênclise mesmo com atrativo (Exceção), o futuro do subjuntivo obedece à regra geral e proíbe a ênclise na presença de palavra atrativa.\nExplicação consolidada\nPara desarmar pegadinhas em provas, utiliza-se o teste de substituição pelo verbo irregular FAZER / FIZER:\nSe no contexto contextual couber a forma FAZER, o verbo original é INFINITIVO $\\rightarrow$ Próclise e Ênclise são permitidas.\nSe no contexto contextual couber a forma FIZER, o verbo original é FUTURO DO SUBJUNTIVO $\\rightarrow$ A próclise é estritamente OBRIGATÓRIA diante de atrativo (a ênclise é um erro grave).\nRelações\nProcedimento operacional: \nExemplificado em: \nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-005",
-            "**Sacada 3: Colocação Pronominal após Vírgula (Início de Oração vs. Intercalação)**: Definição ou ideia central\nA colocação do pronome após vírgula depende da natureza sintática da pontuação: se a vírgula assinala início de oração, a próclise é proibida; se a vírgula fecha um termo intercalado (vírgula casada), a próclise é plenamente permitida.\nExplicação consolidada\nVírgula de Início de Oração (Coordenação Assindética):\nA vírgula separa orações independentes. O verbo seguinte inicia a nova oração.\nIncorreto: \"João acordou, me chamou.\"\nCorreto: \"João acordou, chamou-me.\"\nVírgula de Intercalação / Termo Deslocado (Vírgula Casada):\nO elemento entre vírgulas é um adjunto adverbial ou oração subordinada intercalada. A oração começou antes da primeira vírgula.\nO pronome não está iniciando oração; a colocação é facultativa.\nCorreto (Próclise): \"João, pela manhã, me acordou.\" / \"Estes, muitas vezes, se situam em regiões remotas.\"\nCorreto (Ênclise): \"João, pela manhã, acordou-me.\" / \"Estes, muitas vezes, situam-se...\"\nRelações\nConhecimento oral expandido: ORAL-A03-G07-COLOCACAO-PRONOMES-ATONOS-002\nExemplificado em: ,",
-            "**Sacada 4: Colocação Pronominal em Locuções Verbais (Mantra do \"Vale Tudo\")**: Definição ou ideia central\nNas locuções verbais (Verbo Auxiliar + Verbo Principal no Gerúndio ou Infinitivo), a regra geral é \"VALE TUDO\" (todas as posições são aceitas), RESSALVADAS APENAS DUAS PROIBIÇÕES ESTRITAS.\nAs Duas Únicas Proibições em Locuções Verbais\nProibição A — Ênclise ao Particípio: É proibido prender pronome por hífen a verbo principal no particípio (ex.: \"Tinha falado-me\" = INCORRETO).\nProibição B — Ênclise ao Verbo Auxiliar com Hífen na Presença de Palavra Atrativa: Com atrator antecedente, o pronome não pode ser hifenizado ao auxiliar (ex.: \"João não está-me escutando\" = INCORRETO).\nMatriz Completa de Posições Sintáticas\nCenário 1: SEM Palavra Atrativa (\"João... escutando\")\nJoão me está escutando. $\\rightarrow$ CORRETO (Próclise ao auxiliar)\nJoão está-me escutando. $\\rightarrow$ CORRETO (Ênclise ao auxiliar com hífen)\nJoão está me escutando. $\\rightarrow$ CORRETO (Próclise ao principal sem hífen)\nJoão está escutando-me. $\\rightarrow$ CORRETO (Ênclise ao principal com hífen)\n(Status: 4 de 4 configurações são válidas).\nCenário 2: COM Palavra Atrativa (\"João não... escutando\")\nJoão não me está escutando. $\\rightarrow$ CORRETO (Próclise ao auxiliar atraída pelo \"não\")\nJoão não está-me escutando. $\\rightarrow$ INCORRETO (X) (Violação da atração sobre o auxiliar)\nJoão não está me escutando. $\\rightarrow$ CORRETO (Próclise ao principal sem hífen)\nJoão não está escutando-me. $\\rightarrow$ CORRETO (Ênclise ao principal no gerúndio/infinitivo)\n(Status: 3 de 4 configurações são válidas).\nAplicação Combinada com Infinitivo\nEm \"Não posso negar-te ajuda\", a estrutura é plenamente correta porque o verbo principal negar está no infinitivo (exceção soberana à atração). Apenas a forma \"Não posso-te negar\" seria incorreta pelo hífen no auxiliar.\nRelações\nProcedimento analítico: \nDica operacional: TIP-A03-G07-COLOCACAO-PRONOMES-ATONOS-003\nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-006",
-            "**Sacada 5: Atração a Distância e Fenômeno da Aposínclise no Cebraspe**: Definição ou ideia central\nA força atrativa da conjunção subordinativa ou pronome relativo atua sobre o verbo da oração subordinada mesmo havendo elemento intermediário (sujeito explícito). Além disso, a aposínclise (pronome intercalado entre duas palavras atrativas) é uma construção formalmente válida perante a norma culta e a banca Cebraspe.\nExplicação consolidada\nAtração a Distância:\nNa oração desenvolvida: \"Disse que o menino se assustou.\"\nO vocábulo que (invariável/atrativo) exige a próclise do pronome se, mesmo com o sujeito o menino intercalado.\nA construção \"Disse que o menino assustou-se\" é considerada incorreta pelo padrão Cebraspe.\nO Fenômeno da Aposínclise:\nOcorre quando há duas palavras atrativas sucessivas antes do verbo (ex.: que + não / ninguém + não).\nO pronome pode ocupar a próclise padrão ou posicionar-se no meio das duas palavras atrativas:\nPróclise Padrão: \"O livro que não lhe ofereci.\" / \"Ninguém não me chamou.\"\nAposínclise: \"O livro que lhe não ofereci.\" / \"Ninguém me não chamou.\"\nAmbas as modalidades são gramaticalmente corretas.\nRelações\nPossui alerta em: \nGlossário associado: TERM-A03-G07-COLOCACAO-PRONOMES-ATONOS-005\nEvidenciado por: VIS-A03-G07-COLOCACAO-PRONOMES-ATONOS-007",
-            "**Arcabouço Sistematizado Completo (O Sistema dos 10 Elementos)**: Definição ou ideia central\nA teoria integral de colocação pronominal resume-se operacionalmente a um conjunto fechado de 10 elementos cognitivos:\n======================================================================================== SISTEMA DOS 10 ELEMENTOS DE COLOCAÇÃO PRONOMINAL ======================================================================================== I. 3 PROIBIÇÕES ABSOLUTAS:\nProibido próclise em início de oração.\nProibida ênclise a verbo no futuro (presente ou pretérito).\nProibida ênclise a verbo no particípio.\nII. 1 REGRA GERAL DE ATRAÇÃO:\nPalavra invariável antes do verbo exige PRÓCLISE (junto com pronomes relativos\ne indefinidos).\nIII. 2 EXCEÇÕES DA ATRAÇÃO:\nVerbo no infinitivo (sempre aceita ênclise).\nConjunções coordenativas (facultam próclise ou ênclise).\nIV. 4 SACADAS FINAIS AVANÇADAS:\nFuturo com palavra atrativa = Próclise obrigatória (anula a mesóclise).\nInfinitivo vs. Futuro do Subjuntivo = Teste pelo macete \"FAZER\" / \"FIZER\".\nApós vírgula = Início de oração (Proibido) vs. Intercalação/Vírgula casada (Permitido).\nLocuções Verbais & Aposínclise = \"Vale tudo\" (salvo particípio e auxiliar hifenizado\ncom atrativo) + Aposínclise válida. ========================================================================================"
-          ]
+          "term": "Escopo Pronominal e as Três Posições Sintáticas",
+          "shortDefinition": "A colocação pronominal estuda exclusivamente o posicionamento dos pronomes pessoais oblíquos átonos (o, a, os, as, lhe, lhes, me, te, se, nos, vos) em relação à forma verbal. Na língua portuguesa padrão, existem exatamente três posições possíveis: próclise, ênclise e mesóclise.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-01"
+          }
+        },
+        {
+          "term": "As Três Proibições Absolutas da Colocação Pronominal",
+          "shortDefinition": "A análise de qualquer construção pronominal na norma culta inicia-se pela checagem de três vedações categóricas. Se a estrutura violar qualquer um desses três preceitos, ela é nula e incorreta, independentemente de estilo ou contexto.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-02"
+          }
+        },
+        {
+          "term": "Regra Geral de Atração Pronominal (Palavra Invariável)",
+          "shortDefinition": "A Regra Geral de Atração estabelece que qualquer palavra invariável posicionada antes do verbo atua como palavra atrativa, exigindo obrigatoriamente a PRÓCLISE.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-03"
+          }
+        },
+        {
+          "term": "As Duas Exceções Canônicas da Atração",
+          "shortDefinition": "A norma culta estabelece duas situações em que a presença de uma palavra invariável antes do verbo não torna a próclise estritamente obrigatória, conferindo ao redator a faculdade de empregar próclise ou ênclise.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-04"
+          }
+        },
+        {
+          "term": "O Mantra da Facultatividade (\"O que não é proibido está correto\")",
+          "shortDefinition": "O Mantra da Colocação Pronominal — \"O que não é proibido está correto\" — define que, quando uma oração não incorre em nenhuma das 3 proibições e não apresenta palavra atrativa obrigatória, a colocação pronominal torna-se plenamente facultativa (admite próclise ou ênclise).",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-05"
+          },
+          "operationalUse": "Elementos que NÃO são palavras atrativas obrigatórias:"
+        },
+        {
+          "term": "Sacada 1: Colocação Pronominal no Futuro com Palavra Atrativa",
+          "shortDefinition": "A presença de uma palavra atrativa anula a preferência do futuro pela mesóclise e torna a próclise estritamente obrigatória. A regra de atração sobrepõe-se à formação mesoclítica.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-06"
+          }
+        },
+        {
+          "term": "Sacada 2: Diferenciação entre Infinitivo e Futuro do Subjuntivo em Verbos Regulares",
+          "shortDefinition": "Em verbos regulares (como enviar, amar, estudar), as desinências do Infinitivo Pessoal (para eu enviar, tu enviares...) e do Futuro do Subjuntivo (quando eu enviar, tu enviares...) são idênticas. Enquanto o infinitivo aceita ênclise mesmo com atrativo (Exceção), o futuro do subjuntivo obedece à regra geral e proíbe a ênclise na presença de palavra atrativa.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-07"
+          },
+          "operationalUse": "Para desarmar pegadinhas em provas, utiliza-se o teste de substituição pelo verbo irregular FAZER / FIZER:"
+        },
+        {
+          "term": "Sacada 3: Colocação Pronominal após Vírgula (Início de Oração vs. Intercalação)",
+          "shortDefinition": "A colocação do pronome após vírgula depende da natureza sintática da pontuação: se a vírgula assinala início de oração, a próclise é proibida; se a vírgula fecha um termo intercalado (vírgula casada), a próclise é plenamente permitida.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-08"
+          }
+        },
+        {
+          "term": "Sacada 4: Colocação Pronominal em Locuções Verbais (Mantra do \"Vale Tudo\")",
+          "shortDefinition": "Nas locuções verbais (Verbo Auxiliar + Verbo Principal no Gerúndio ou Infinitivo), a regra geral é \"VALE TUDO\" (todas as posições são aceitas), RESSALVADAS APENAS DUAS PROIBIÇÕES ESTRITAS.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-09"
+          },
+          "operationalUse": "Em \"Não posso negar-te ajuda\", a estrutura é plenamente correta porque o verbo principal negar está no infinitivo (exceção soberana à atração)."
+        },
+        {
+          "term": "Sacada 5: Atração a Distância e Fenômeno da Aposínclise no Cebraspe",
+          "shortDefinition": "A força atrativa da conjunção subordinativa ou pronome relativo atua sobre o verbo da oração subordinada mesmo havendo elemento intermediário (sujeito explícito). Além disso, a aposínclise (pronome intercalado entre duas palavras atrativas) é uma construção formalmente válida perante a norma culta e a banca Cebraspe.",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-10"
+          }
+        },
+        {
+          "term": "Arcabouço Sistematizado Completo (O Sistema dos 10 Elementos)",
+          "shortDefinition": "A teoria integral de colocação pronominal resume-se operacionalmente a um conjunto fechado de 10 elementos cognitivos:",
+          "detailTarget": {
+            "unitId": "IP-A03-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G07-11"
+          }
         }
       ]
     },
@@ -2000,7 +2835,10 @@
         "confidence": 0.99
       },
       "answerSha256": "a0901b73af22a49068c221fc92a34d2a80522a8bd4afb4d1e9597d59fc2e364d",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A03-aula03.q0102"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2168,59 +3006,10 @@
         "confidence": 0.99
       },
       "answerSha256": "4a03578e0f85a1dfcb83db102da5773185ae364d68d15d9df2a29ef0cf37c14d",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A03-aula03.q0102",
-      "lessonId": "A03",
-      "sourceQuestionId": "aula03.q0102",
-      "questionPayload": {
-        "question_id": "aula03.q0102",
-        "question_number_in_source": 3,
-        "occurrence_type": "exercise_list",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "TRF-6ª REGIÃO",
-        "position": null,
-        "year": 2025,
-        "source_label": "CEBRASPE / TRF-6ª REGIÃO / 2025",
-        "support_text": null,
-        "prompt": "No trecho “O direito se constitui em esfera especial e profissional”, a colocação enclítica do pronome “se” prejudicaria a correção gramatical do texto",
-        "options": [],
-        "full_text_original": "No trecho “O direito se constitui em esfera especial e profissional”, a colocação enclítica do\npronome “se” prejudicaria a correção gramatical do texto",
-        "tests_concept_ids": [],
-        "tests_rule_ids": [
-          "rule.pt.pronome.adjetivo_substantivo.001"
-        ],
-        "source": {
-          "document_id": "aula03_complete",
-          "page_ids": [
-            "aula03_complete.p0085"
-          ],
-          "section_id": "aula03.sec07"
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.97,
-        "duplicate_of": "aula03.q0040"
-      },
-      "questionSha256": "7d00a25ed85dd4a26ee4580a12cada85c2e032165d2365c9280b1676e64b55a4",
-      "answerPayload": {
-        "answer_id": "aula03.q0102.answer",
-        "question_id": "aula03.q0102",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula03_complete",
-          "page_ids": [
-            "aula03_complete.p0085"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "f9c7b0e6233b264116a015eaabae830ddbae1abadaeae4bad51817011a66d048",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A03-aula03.q0108"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2274,60 +3063,6 @@
         "confidence": 0.99
       },
       "answerSha256": "e4bce1f7eef3ed3f372b58328f785fc90e3923820240798464a3c7e0cc9e0b31",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A03-aula03.q0108",
-      "lessonId": "A03",
-      "sourceQuestionId": "aula03.q0108",
-      "questionPayload": {
-        "question_id": "aula03.q0108",
-        "question_number_in_source": 9,
-        "occurrence_type": "exercise_list",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "PETROBRÁS",
-        "position": null,
-        "year": 2024,
-        "source_label": "(CEBRASPE / PETROBRÁS / 2024)",
-        "support_text": null,
-        "prompt": "Em \" Contudo, não se deve esquecer que aí estão as maiores reservas petrolíferas do mundo\", a próclise do pronome “se” justifica-se pela presença do vocábulo “não”.",
-        "options": [],
-        "full_text_original": "Em \" Contudo, não se deve esquecer que aí estão as maiores reservas petrolíferas do mundo\", a\npróclise do pronome “se” justifica-se pela presença do vocábulo “não”.",
-        "tests_concept_ids": [
-          "pt.grammar.proclise"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.pronome.adjetivo_substantivo.001"
-        ],
-        "source": {
-          "document_id": "aula03_complete",
-          "page_ids": [
-            "aula03_complete.p0086"
-          ],
-          "section_id": "aula03.sec07"
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.97,
-        "duplicate_of": "aula03.q0046"
-      },
-      "questionSha256": "d85d26a10275a555aec7e7219ab80cae8b019c82b57f1b6a7a3a37544fa6e742",
-      "answerPayload": {
-        "answer_id": "aula03.q0108.answer",
-        "question_id": "aula03.q0108",
-        "answer": "correct",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula03_complete",
-          "page_ids": [
-            "aula03_complete.p0086"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "e92860f13b447f82420aaf15ed77700bc4c8f2b441c9755a3ee167b53d54a1a3",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

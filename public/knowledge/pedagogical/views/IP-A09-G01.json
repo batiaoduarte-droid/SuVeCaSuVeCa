@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A09-G01",
     "lessonId": "A09",
     "title": "Concordância Verbal: Regra Geral, Sujeito Simples, Sujeito Composto e Partícula SE",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A09-G01",
@@ -92,7 +93,11 @@
               "to": "node_concordancia_esp",
               "relation": "aprofundamento"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A09-G01-001"
+          }
         }
       ]
     },
@@ -256,8 +261,7 @@
             }
           ]
         }
-      ],
-      "blocks": []
+      ]
     },
     "rules": {
       "items": [
@@ -662,17 +666,26 @@
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Concordância Verbal**: Mecanismo de alinhamento morfológico de número e pessoa entre o verbo e o núcleo do sujeito.",
-            "**Núcleo do Sujeito**: Termo substantivo central que rege soberanamente a flexão do verbo.",
-            "**Atração Espúria**: Erro induzido pela presença de palavras no plural intercaladas entre o núcleo singular e o verbo.",
-            "**Concordância Gramatical**: Flexão que leva em consideração a soma lógica e formal de todos os núcleos no plural.",
-            "**Concordância Atrativa**: Flexão autorizada em que o verbo se ajusta exclusivamente ao núcleo mais próximo."
-          ]
+          "term": "Concordância Verbal",
+          "shortDefinition": "Mecanismo de alinhamento morfológico de número e pessoa entre o verbo e o núcleo do sujeito."
+        },
+        {
+          "term": "Núcleo do Sujeito",
+          "shortDefinition": "Termo substantivo central que rege soberanamente a flexão do verbo."
+        },
+        {
+          "term": "Atração Espúria",
+          "shortDefinition": "Erro induzido pela presença de palavras no plural intercaladas entre o núcleo singular e o verbo."
+        },
+        {
+          "term": "Concordância Gramatical",
+          "shortDefinition": "Flexão que leva em consideração a soma lógica e formal de todos os núcleos no plural."
+        },
+        {
+          "term": "Concordância Atrativa",
+          "shortDefinition": "Flexão autorizada em que o verbo se ajusta exclusivamente ao núcleo mais próximo."
         }
       ]
     },

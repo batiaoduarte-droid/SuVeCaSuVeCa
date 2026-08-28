@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A09-G06",
     "lessonId": "A09",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A09-G06",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A09-G06-001"
+          }
         }
       ]
     },
@@ -98,8 +103,64 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA concordância nominal é estruturada pedagogicamente pela professora em dois grandes blocos: a Parte 1, orientada pela função sintática exercida pelo adjetivo (adjunto adnominal, predicativo do sujeito e predicativo do objeto), e a Parte 2, que reúne vocábulos isolados e regras particulares da norma culta (anexo, quite, mesmo, próprio, menos, bastante, leso, só, meio).\nExplicação consolidada\nA divisão reflete diretamente a tipologia de cobrança das bancas examinadoras:\nParte 1 (Sintática / Referenciação): Exige raciocínio sintático estruturado, isolamento de núcleos substantivos e traçado de setas de concordância. É o foco predominante de bancas de alto nível conceitual (Fundação Getulio Vargas - FGV, Cebraspe/CESPE e Fundação Carlos Chagas - FCC).\nParte 2 (Casos Especiais / Morfológica): Foca no comportamento morfológico de vocábulos específicos (diferenciação entre classes invariáveis como advérbios e variáveis como adjetivos/pronomes), sendo o modelo predileto de bancas municipais e de menor porte.\nRelações\nFundamenta: , , , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A concordância nominal é estruturada pedagogicamente pela professora em dois grandes blocos: a Parte 1, orientada pela função sintática exercida pelo adjetivo (adjunto adnominal, predicativo do sujeito e predicativo do objeto), e a Parte 2, que reúne vocábulos isolados e regras particulares da norma culta (anexo, quite, mesmo, próprio, menos, bastante, leso, só, meio)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A divisão reflete diretamente a tipologia de cobrança das bancas examinadoras:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Parte 1 (Sintática / Referenciação): Exige raciocínio sintático estruturado, isolamento de núcleos substantivos e traçado de setas de concordância. É o foco predominante de bancas de alto nível conceitual (Fundação Getulio Vargas - FGV, Cebraspe/CESPE e Fundação Carlos Chagas - FCC).",
+                "Parte 2 (Casos Especiais / Morfológica): Foca no comportamento morfológico de vocábulos específicos (diferenciação entre classes invariáveis como advérbios e variáveis como adjetivos/pronomes), sendo o modelo predileto de bancas municipais e de menor porte."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-002",
+                  "targetTitle": "Concordância do Adjetivo como Predicativo do Sujeito Composto",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-003",
+                  "targetTitle": "Concordância do Adjetivo como Predicativo do Objeto Composto e Equivalência Semântica",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-004",
+                  "targetTitle": "Matriz Sinótica das Três Funções Sintáticas do Adjetivo (#ANOTAAÍ)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-007",
+                  "targetTitle": "Metodologia das Setas Sintáticas e Bloqueio Preposicional do Núcleo",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +173,105 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA flexão do adjetivo na função de predicativo do sujeito composto varia de acordo com a sua posição sintática em relação aos núcleos do sujeito:\nPosposto ao sujeito composto (Ordem Direta): Concorda obrigatoriamente com a totalidade dos núcleos no plural (Concordância Total).\nAnteposto ao sujeito composto (Ordem Inversa): O adjetivo \"segue o verbo\" de ligação.\nExplicação consolidada\nPosição Posposta: $[Sujeito\\ Composto] + [Verbo\\ de\\ Ligação] + [Predicativo]$.\nExige compulsoriamente a soma dos gêneros no plural:\nFeminino + Feminino $\\rightarrow$ Feminino Plural (A fotografia e a montagem são assinadas).\nMasculino + Feminino / Masculino + Masculino $\\rightarrow$ Masculino Plural (A neve e o jardim eram brancos).\nA concordância atrativa com o núcleo vizinho é proibida nessa configuração direta.\nPosição Anteposta: $[Verbo\\ de\\ Ligação] + [Predicativo] + [Sujeito\\ Composto]$.\nO predicativo subordina-se à flexão escolhida para o verbo:\nSe o verbo concordar no plural com todos os núcleos $\\rightarrow$ O predicativo flexiona no plural (Concordância Total): Eram brancos a neve e o jardim.\nSe o verbo concordar no singular por atração com o primeiro núcleo $\\rightarrow$ O predicativo flexiona em gênero e número estritamente com o primeiro núcleo (Concordância Atrativa): Era branca a neve e o jardim.\nExemplos e contraexemplos\nA neve (F) e o jardim (M) eram brancos (M.Pl.). (Correto - C.T. posposto)\nA neve e o jardim eram branco. (Incorreto - atração proibida na posição posposta)\nEram brancos a neve e o jardim. (Correto - verbo no plural impõe C.T.)\nEra branca a neve e o jardim. (Correto - verbo no singular impõe C.A. com neve)\nEra branco a neve e o jardim. (Incorreto - desarmonia com o primeiro núcleo feminino)\nRelações\nContrasta com: (Predicativo do Objeto).\nConsolidado em: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A flexão do adjetivo na função de predicativo do sujeito composto varia de acordo com a sua posição sintática em relação aos núcleos do sujeito:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Posposto ao sujeito composto (Ordem Direta): Concorda obrigatoriamente com a totalidade dos núcleos no plural (Concordância Total).",
+                "Anteposto ao sujeito composto (Ordem Inversa): O adjetivo \"segue o verbo\" de ligação."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Posição Posposta: $[Sujeito\\ Composto] + [Verbo\\ de\\ Ligação] + [Predicativo]$.",
+                "Exige compulsoriamente a soma dos gêneros no plural:",
+                "Feminino + Feminino $\\rightarrow$ Feminino Plural (A fotografia e a montagem são assinadas).",
+                "Masculino + Feminino / Masculino + Masculino $\\rightarrow$ Masculino Plural (A neve e o jardim eram brancos).",
+                "A concordância atrativa com o núcleo vizinho é proibida nessa configuração direta.",
+                "Posição Anteposta: $[Verbo\\ de\\ Ligação] + [Predicativo] + [Sujeito\\ Composto]$.",
+                "O predicativo subordina-se à flexão escolhida para o verbo:",
+                "Se o verbo concordar no plural com todos os núcleos $\\rightarrow$ O predicativo flexiona no plural (Concordância Total): Eram brancos a neve e o jardim.",
+                "Se o verbo concordar no singular por atração com o primeiro núcleo $\\rightarrow$ O predicativo flexiona em gênero e número estritamente com o primeiro núcleo (Concordância Atrativa): Era branca a neve e o jardim."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A neve (F) e o jardim (M) eram brancos (M.Pl.). (Correto - C.T. posposto)",
+                "A neve e o jardim eram branco. (Incorreto - atração proibida na posição posposta)",
+                "Eram brancos a neve e o jardim. (Correto - verbo no plural impõe C.T.)",
+                "Era branca a neve e o jardim. (Correto - verbo no singular impõe C.A. com neve)",
+                "Era branco a neve e o jardim. (Incorreto - desarmonia com o primeiro núcleo feminino)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A09-G06-003",
+                  "targetTitle": "Concordância do Adjetivo como Predicativo do Objeto Composto e Equivalência Semântica",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-004",
+                  "targetTitle": "Matriz Sinótica das Três Funções Sintáticas do Adjetivo (#ANOTAAÍ)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-001",
+                  "targetTitle": "Frase 12: Predicativo do Sujeito Posposto (Teoria)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-002",
+                  "targetTitle": "Frase 13: Predicativo do Sujeito Anteposto com Verbo no Plural (Teoria)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-003",
+                  "targetTitle": "Frase 14: Predicativo do Sujeito Anteposto com Verbo no Singular (Teoria)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-007",
+                  "targetTitle": "Questão 06: VUNESP - Pref. Guarulhos (2019)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +284,84 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nQuando o adjetivo desempenha a função de predicativo do objeto composto, a concordância é livremente facultativa entre Total (com todos os núcleos no plural) e Atrativa (com o núcleo mais próximo), tanto na posição posposta quanto na posição anteposta ao objeto, mantendo-se rigorosamente a mesma extensão semântica.\nExplicação consolidada\nO predicativo do objeto define-se por dois critérios fundamentais:\nReferenciação semântica ao objeto: A seta sintática aponta para o objeto direto ou indireto, expressando um estado, atributo ou condição resultante ou concomitante ao processo verbal.\nIndispensabilidade contextual (Termo Integrante): Se for retirado da oração, a estrutura sintático-semântica é desfigurada (o verbo altera seu significado de constatação de estado para mera localização de objeto).\nRegras de flexão:\nPosposto ao Objeto: Encontrei a janela (F) e o portão (M) [abertos (C.T. M.Pl.) / aberto (C.A. M.Sg. com 'portão')].\nAnteposto ao Objeto: Encontrei [abertos (C.T. M.Pl.) / aberta (C.A. F.Sg. com 'janela')] a janela (F) e o portão (M).\nIdentidade Semântica: A opção pela concordância atrativa não restringe a qualificação apenas ao substantivo vizinho. Em encontrei aberta a janela e o portão, afirma-se categoricamente que ambos os elementos estavam abertos.\nRelações\nConsolidado em: .\nProcedimento associado: (Teste de Retirada)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando o adjetivo desempenha a função de predicativo do objeto composto, a concordância é livremente facultativa entre Total (com todos os núcleos no plural) e Atrativa (com o núcleo mais próximo), tanto na posição posposta quanto na posição anteposta ao objeto, mantendo-se rigorosamente a mesma extensão semântica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O predicativo do objeto define-se por dois critérios fundamentais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Referenciação semântica ao objeto: A seta sintática aponta para o objeto direto ou indireto, expressando um estado, atributo ou condição resultante ou concomitante ao processo verbal.",
+                "Indispensabilidade contextual (Termo Integrante): Se for retirado da oração, a estrutura sintático-semântica é desfigurada (o verbo altera seu significado de constatação de estado para mera localização de objeto)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Regras de flexão:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Posposto ao Objeto: Encontrei a janela (F) e o portão (M) [abertos (C.T. M.Pl.) / aberto (C.A. M.Sg. com 'portão')].",
+                "Anteposto ao Objeto: Encontrei [abertos (C.T. M.Pl.) / aberta (C.A. F.Sg. com 'janela')] a janela (F) e o portão (M).",
+                "Identidade Semântica: A opção pela concordância atrativa não restringe a qualificação apenas ao substantivo vizinho. Em encontrei aberta a janela e o portão, afirma-se categoricamente que ambos os elementos estavam abertos."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-004",
+                  "targetTitle": "Matriz Sinótica das Três Funções Sintáticas do Adjetivo (#ANOTAAÍ)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A09-G06-002",
+                  "targetTitle": "Teste de Retirada para Identificação do Predicativo do Objeto",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-004",
+                  "targetTitle": "Frase 15: Predicativo do Objeto Posposto (Teoria)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-005",
+                  "targetTitle": "Frase 16: Predicativo do Objeto Anteposto (Teoria)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A09-G06-002",
+                  "targetTitle": "Falsa Alegação de Mudança de Sentido no Predicativo do Objeto",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +374,82 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO adjetivo na língua portuguesa só pode exercer três funções sintáticas na oração: Adjunto Adnominal, Predicativo do Sujeito ou Predicativo do Objeto. A flexão associada a múltiplos substantivos depende estritamente do cruzamento da função sintática com a posição do adjetivo.\nQuadro Comparativo Canônico\nRegras Operacionais Síntese\nAdjunto Adnominal anteposto é a única estrutura estritamente restrita à concordância atrativa.\nPredicativo do Sujeito posposto é a única estrutura estritamente restrita à concordância total.\nSoma de gêneros na Concordância Total: Substantivo Masculino + Substantivo Feminino = Adjetivo no Masculino Plural ($M + F \\rightarrow M.Pl.$).\nRelações\nSistematiza: , .\nApoiado em: VIS-A09-G06-001."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O adjetivo na língua portuguesa só pode exercer três funções sintáticas na oração: Adjunto Adnominal, Predicativo do Sujeito ou Predicativo do Objeto. A flexão associada a múltiplos substantivos depende estritamente do cruzamento da função sintática com a posição do adjetivo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Quadro Comparativo Canônico"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A09-G06-005",
+              "table": {
+                "tableId": "TABLE-IP-A09-G06-005",
+                "caption": "Quadro Comparativo Canônico",
+                "headers": [
+                  "Função Sintática do Adjetivo",
+                  "Adjetivo Posposto aos Substantivos",
+                  "Adjetivo Anteposto aos Substantivos"
+                ],
+                "rows": [
+                  [
+                    "1. Adjunto Adnominal",
+                    "C.T. (Concordância Total) ou C.A. (Concordância Atrativa)",
+                    "Apenas C.A. (Concordância Atrativa com o 1º núcleo)"
+                  ],
+                  [
+                    "2. Predicativo do Sujeito",
+                    "Apenas C.T. (Concordância Total no Plural)",
+                    "Segue o Verbo (C.T. se verbo no plural; C.A. se verbo no singular)"
+                  ],
+                  [
+                    "3. Predicativo do Objeto",
+                    "C.T. (Concordância Total) ou C.A. (Concordância Atrativa)",
+                    "C.T. (Concordância Total) ou C.A. (Concordância Atrativa)"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regras Operacionais Síntese"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Adjunto Adnominal anteposto é a única estrutura estritamente restrita à concordância atrativa.",
+                "Predicativo do Sujeito posposto é a única estrutura estritamente restrita à concordância total.",
+                "Soma de gêneros na Concordância Total: Substantivo Masculino + Substantivo Feminino = Adjetivo no Masculino Plural ($M + F \\rightarrow M.Pl.$)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-002",
+                  "targetTitle": "Concordância do Adjetivo como Predicativo do Sujeito Composto",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-003",
+                  "targetTitle": "Concordância do Adjetivo como Predicativo do Objeto Composto e Equivalência Semântica",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +462,81 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA flexão do particípio em locuções verbais subordina-se à estrutura da voz verbal e aos verbos auxiliares empregados:\nRegra Geral (Tempos Compostos da Voz Ativa — Auxiliares ter / haver): O particípio é o verbo principal e permanece absolutamente invariável (terminação fixa em -o), enquanto o verbo auxiliar assume as flexões de tempo, modo, número e pessoa.\nExceção (Voz Passiva Analítica — Auxiliares ser / estar / ficar): O particípio adquire valor adjetivo e concorda compulsoriamente em gênero e número com o sujeito paciente.\nTempo Composto Ativo: [Sujeito] + [Auxiliar Ter/Haver flexionado] + [PARTICÍPIO INVARIÁVEL em -o] + [Objeto] Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar Ser/Estar flexionado] + [PARTICÍPIO CONCORDANDO em Gên/Núm]\nExemplos e contraexemplos\nA mulher tinha pintado a parede. / As mulheres tinham pintado as paredes. (Correto - invariável)\nA mulher tinha pintada a parede. (Incorreto - tentativa indevida de concordância com o objeto)\nAs paredes deviam ser pintadas. (Correto - voz passiva concorda com paredes)\nPlantas (F) e frutos (M) foram elogiados (M.Pl.). (Correto - voz passiva com sujeitos mistos)\nRelações\nExpandido por: (Particípios Abundantes)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A flexão do particípio em locuções verbais subordina-se à estrutura da voz verbal e aos verbos auxiliares empregados:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra Geral (Tempos Compostos da Voz Ativa — Auxiliares ter / haver): O particípio é o verbo principal e permanece absolutamente invariável (terminação fixa em -o), enquanto o verbo auxiliar assume as flexões de tempo, modo, número e pessoa.",
+                "Exceção (Voz Passiva Analítica — Auxiliares ser / estar / ficar): O particípio adquire valor adjetivo e concorda compulsoriamente em gênero e número com o sujeito paciente."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Tempo Composto Ativo: [Sujeito] + [Auxiliar Ter/Haver flexionado] + [PARTICÍPIO INVARIÁVEL em -o] + [Objeto] Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar Ser/Estar flexionado] + [PARTICÍPIO CONCORDANDO em Gên/Núm]"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A mulher tinha pintado a parede. / As mulheres tinham pintado as paredes. (Correto - invariável)",
+                "A mulher tinha pintada a parede. (Incorreto - tentativa indevida de concordância com o objeto)",
+                "As paredes deviam ser pintadas. (Correto - voz passiva concorda com paredes)",
+                "Plantas (F) e frutos (M) foram elogiados (M.Pl.). (Correto - voz passiva com sujeitos mistos)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofundado por",
+                  "targetRef": "KB-A09-G06-006",
+                  "targetTitle": "Particípios Abundantes / Duplos: Formas Regulares (-do) vs. Irregulares (Incluso, Ganho, Pago)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A09-G06-003",
+                  "targetTitle": "Tentativa Indevida de Flexão do Particípio em Tempos Compostos",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-006",
+                  "targetTitle": "Demonstração da Flexão de Particípios em Locuções (Teoria)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-008",
+                  "targetTitle": "Questão 07: CESGRANRIO - Liquigás (2018)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-009",
+                  "targetTitle": "Questão 08: CESGRANRIO - Banco do Brasil (2021)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +549,54 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nVerbos abundantes possuem duas formas legítimas de particípio com empregos sintáticos complementares:\nForma Regular (Terminada em -do — ex.: incluído, ganhado, pagado, gastado): Empregada exclusivamente com os verbos auxiliares TER e HAVER na voz ativa (invariável).\nForma Irregular / Curta (ex.: incluso, ganho, pago, gasto): Empregada com os verbos auxiliares SER e ESTAR (na voz passiva analítica), com verbos de movimento/estado (seguir, ir) ou em função adjetiva autônoma (adjunto adnominal ou predicativo), exigindo concordância nominal plena em gênero e número com o substantivo modificado.\nEsquema Operacional\nAuxiliares TER / HAVER $\\rightarrow$ Particípio Regular em -DO (O diretor tinha incluído o documento).\nAuxiliares SER / ESTAR / OUTROS / SEM AUXILIAR $\\rightarrow$ Particípio Irregular Curto (Segue incluso o documento / Seguem inclusas as cartas).\nRelações\nComplementa: .\nDica mnemônica: TIP-A09-G06-003."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Verbos abundantes possuem duas formas legítimas de particípio com empregos sintáticos complementares:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Forma Regular (Terminada em -do — ex.: incluído, ganhado, pagado, gastado): Empregada exclusivamente com os verbos auxiliares TER e HAVER na voz ativa (invariável).",
+                "Forma Irregular / Curta (ex.: incluso, ganho, pago, gasto): Empregada com os verbos auxiliares SER e ESTAR (na voz passiva analítica), com verbos de movimento/estado (seguir, ir) ou em função adjetiva autônoma (adjunto adnominal ou predicativo), exigindo concordância nominal plena em gênero e número com o substantivo modificado."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Esquema Operacional"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Auxiliares TER / HAVER $\\rightarrow$ Particípio Regular em -DO (O diretor tinha incluído o documento).",
+                "Auxiliares SER / ESTAR / OUTROS / SEM AUXILIAR $\\rightarrow$ Particípio Irregular Curto (Segue incluso o documento / Seguem inclusas as cartas)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-005",
+                  "targetTitle": "Concordância do Particípio em Locuções Verbais (Tempo Composto vs. Voz Passiva Analítica)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-012",
+                  "targetTitle": "Questão 11: VUNESP - Pref. Guarulhos (2021)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -182,8 +609,62 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA resolução prática de concordância nominal opera pelo rastreamento mecânico do referente (\"método das setas\") associado ao isolamento rigoroso dos substantivos-núcleo (\"farejador de núcleos\"), fundamentado no princípio de que núcleos sintáticos não admitem preposição.\nCritérios de Aplicação\nLocalizar o qualificador: Isolar o adjetivo, particípio ou pronome adjetivo.\nEliminar termos preposicionados subordinados: Termos iniciados por preposição (de, com, em, por) são adjuntos adnominais ou complementos, jamais núcleos.\nDesarmar falsos sujeitos compostos: A presença da conjunção aditiva \"e\" dentro de um adjunto preposicionado não torna o sujeito composto (A retirada [do lixo das casas e praias] era feita... $\\rightarrow$ Núcleo: retirada [Singular]).\nExpressões com numerais/partitivos: Em As 560 toneladas de lixo eram retiradas, o núcleo é toneladas (F.Pl.), impondo a flexão eram retiradas.\nRelações\nProcedimento consolidado: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A resolução prática de concordância nominal opera pelo rastreamento mecânico do referente (\"método das setas\") associado ao isolamento rigoroso dos substantivos-núcleo (\"farejador de núcleos\"), fundamentado no princípio de que núcleos sintáticos não admitem preposição."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de Aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localizar o qualificador: Isolar o adjetivo, particípio ou pronome adjetivo.",
+                "Eliminar termos preposicionados subordinados: Termos iniciados por preposição (de, com, em, por) são adjuntos adnominais ou complementos, jamais núcleos.",
+                "Desarmar falsos sujeitos compostos: A presença da conjunção aditiva \"e\" dentro de um adjunto preposicionado não torna o sujeito composto (A retirada [do lixo das casas e praias] era feita... $\\rightarrow$ Núcleo: retirada [Singular]).",
+                "Expressões com numerais/partitivos: Em As 560 toneladas de lixo eram retiradas, o núcleo é toneladas (F.Pl.), impondo a flexão eram retiradas."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A09-G06-001",
+                  "targetTitle": "Protocolo de Resolução por Setas Sintáticas e Isolamento de Núcleos",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A09-G06-004",
+                  "targetTitle": "A Conjunção \"E\" Dentro de Termos Preposicionados",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-011",
+                  "targetTitle": "Questão 10: VUNESP - Pref. Taubaté (2022)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-018",
+                  "targetTitle": "Questão 17: CESPE - FUB",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -196,8 +677,46 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA concordância nominal é uma relação estritamente unidirecional: os adjetivos (e palavras determinantes satélites) adaptam suas terminações para espelhar os traços de gênero e número do substantivo regente. Substantivos não concordam com outros substantivos nem com adjetivos; adjetivos não concordam com adjetivos.\nExplicação consolidada\nDesconstrução de pegadinhas conceituais de bancas (ex.: Instituto AOCP): Assertivas que afirmam que \"os substantivos X e Y concordam com o sujeito Z\" ou que \"o substantivo X concorda com o adjetivo Y\" são formalmente nulas e falsas perante a teoria gramatical. Substantivos têm gênero intrínseco e número determinado pelo discurso; são centros reitores.\nProibição de atração entre adjetivos (ex.: Cespe / TCU): Em \"crescimento populacional e econômico, aliado...\", o adjetivo aliado não pode ir para o plural (aliados) sob a alegação de concordar com os adjetivos adjacentes populacional e econômico."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A concordância nominal é uma relação estritamente unidirecional: os adjetivos (e palavras determinantes satélites) adaptam suas terminações para espelhar os traços de gênero e número do substantivo regente. Substantivos não concordam com outros substantivos nem com adjetivos; adjetivos não concordam com adjetivos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Desconstrução de pegadinhas conceituais de bancas (ex.: Instituto AOCP): Assertivas que afirmam que \"os substantivos X e Y concordam com o sujeito Z\" ou que \"o substantivo X concorda com o adjetivo Y\" são formalmente nulas e falsas perante a teoria gramatical. Substantivos têm gênero intrínseco e número determinado pelo discurso; são centros reitores.",
+                "Proibição de atração entre adjetivos (ex.: Cespe / TCU): Em \"crescimento populacional e econômico, aliado...\", o adjetivo aliado não pode ir para o plural (aliados) sob a alegação de concordar com os adjetivos adjacentes populacional e econômico."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-014",
+                  "targetTitle": "Questão 13: Instituto AOCP - Pref. João Pessoa (2021)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-021",
+                  "targetTitle": "Questão 20: CESPE - TCU",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -210,8 +729,57 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nEm sintagmas nominais complexos do tipo $[Substantivo\\ 1] + de + [Substantivo\\ 2] + [Adjetivo]$, o adjetivo pode qualificar o primeiro ou o segundo substantivo, configurando construções legítimas com sentidos distintos. Afirmar que o adjetivo deveria estar em outra flexão é incorreto, pois o termo poderia flexionar-se de outra forma acarretando mudança de referente e alteração de sentido.\n[empresas] de [conteúdo] [independentes] --> Seta em \"empresas\" (Plural) = Sentido A (Correto) [empresas] de [conteúdo] [independente] --> Seta em \"conteúdo\" (Singular) = Sentido B (Correto)\nCritério Decisivo da FGV e Cebraspe\nDeveria: Implica correção de erro gramatical obrigatório. Se a frase original já é gramaticalmente perfeita, a proposição com deveria é FALSA.\nPoderia: Denota facultatividade / possibilidade estrutural. Se ambas as concordâncias forem gramaticais, a assertiva com poderia é VERDADEIRA, desde que ressalve a alteração do sentido original.\nRelações\nConecta-se a: .\nProcedimento associado: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em sintagmas nominais complexos do tipo $[Substantivo\\ 1] + de + [Substantivo\\ 2] + [Adjetivo]$, o adjetivo pode qualificar o primeiro ou o segundo substantivo, configurando construções legítimas com sentidos distintos. Afirmar que o adjetivo deveria estar em outra flexão é incorreto, pois o termo poderia flexionar-se de outra forma acarretando mudança de referente e alteração de sentido."
+            },
+            {
+              "type": "paragraph",
+              "text": "[empresas] de [conteúdo] [independentes] --> Seta em \"empresas\" (Plural) = Sentido A (Correto) [empresas] de [conteúdo] [independente] --> Seta em \"conteúdo\" (Singular) = Sentido B (Correto)"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critério Decisivo da FGV e Cebraspe"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Deveria: Implica correção de erro gramatical obrigatório. Se a frase original já é gramaticalmente perfeita, a proposição com deveria é FALSA.",
+                "Poderia: Denota facultatividade / possibilidade estrutural. Se ambas as concordâncias forem gramaticais, a assertiva com poderia é VERDADEIRA, desde que ressalve a alteração do sentido original."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-010",
+                  "targetTitle": "A Tríade de Comandos no CEBRASPE: Correção Gramatical vs. Sentido Original vs. Coerência Textual",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A09-G06-003",
+                  "targetTitle": "Protocolo de Julgamento de Itens \"Deveria\" vs. \"Poderia\" (Padrão FGV / Cebraspe)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-015",
+                  "targetTitle": "Questão 14: FGV - IBGE",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -224,8 +792,84 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNos itens de reescrita e concordância da banca CEBRASPE/CESPE, os comandos operam sob três compartimentos conceituais rigorosamente autônomos:\nCorreção Gramatical: Conformidade formal estrita com as regras da norma-padrão culta da língua portuguesa.\nSentido Original: Preservação integral das ideias, mensagens, relações semânticas e dados informativos originais do texto.\nCoerência Textual: Preservação da lógica interna, ausência de contradições e inteligibilidade textual no contexto.\nAxioma Pedagógico (#ANOTAAÍ)\n\"Pode mudar o sentido e não gerar erro gramatical ou perda de coerência.\"\nSe uma reescrita altera o substantivo qualificado pelo adjetivo, gerando uma nova frase lógica e gramaticalmente correta, o item que afirma \"preserva a correção e a coerência\" é CORRETO; se o mesmo item afirmar que \"preserva a correção e o sentido original\", será ERRADO.\nRelações\nBase para: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nos itens de reescrita e concordância da banca CEBRASPE/CESPE, os comandos operam sob três compartimentos conceituais rigorosamente autônomos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Correção Gramatical: Conformidade formal estrita com as regras da norma-padrão culta da língua portuguesa.",
+                "Sentido Original: Preservação integral das ideias, mensagens, relações semânticas e dados informativos originais do texto.",
+                "Coerência Textual: Preservação da lógica interna, ausência de contradições e inteligibilidade textual no contexto."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Axioma Pedagógico (#ANOTAAÍ)"
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Pode mudar o sentido e não gerar erro gramatical ou perda de coerência.\""
+            },
+            {
+              "type": "paragraph",
+              "text": "Se uma reescrita altera o substantivo qualificado pelo adjetivo, gerando uma nova frase lógica e gramaticalmente correta, o item que afirma \"preserva a correção e a coerência\" é CORRETO; se o mesmo item afirmar que \"preserva a correção e o sentido original\", será ERRADO."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A09-G06-011",
+                  "targetTitle": "O Princípio da Mudança de Referente e a Exceção Canônica dos Coletivos Partitivos",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-020",
+                  "targetTitle": "Questão 19: CESPE - DPU",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-023",
+                  "targetTitle": "Questão 22: CESPE - STF",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-024",
+                  "targetTitle": "Questão 23: CESPE - TCU",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-026",
+                  "targetTitle": "Questão 25: CEBRASPE - ICMBio (2022)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-028",
+                  "targetTitle": "Questão 27: CESPE - SEGESP-AL",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -238,8 +882,67 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nRegra Geral: Em concordância nominal e verbal, Mudança de Referente (Seta Sintática) = Mudança de Sentido. Alterar o termo determinado altera o significado original da oração.\nExceção Canônica: Em estruturas formadas por Coletivo Partitivo (a maioria de, grande parte de, metade de) ou Quantificadores Numéricos (milhões de, bilhões de) seguidos de especificador no plural:\nAlternar a concordância entre o núcleo partitivo e o substantivo especificador muda a seta sintática, mas NÃO altera o sentido original, pois ambos apontam para o mesmo universo factual.\nRegra Geral (Muda sentido): \"ferramentas de pedra primitivas\" (ferramentas primitivas) ≠ \"ferramentas de pedra primitiva\" (pedra primitiva)\nExceção Partitiva (Mantém sentido): \"4,5 bilhões de pessoas [...] desprovidas\" (pessoas) = \"4,5 bilhões de pessoas [...] desprovidos\" (bilhões)\nRelações\nExceção aplicada em: (Cebraspe / DPE-DF).\nRegra geral aplicada em: , , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Regra Geral: Em concordância nominal e verbal, Mudança de Referente (Seta Sintática) = Mudança de Sentido. Alterar o termo determinado altera o significado original da oração.",
+                "Exceção Canônica: Em estruturas formadas por Coletivo Partitivo (a maioria de, grande parte de, metade de) ou Quantificadores Numéricos (milhões de, bilhões de) seguidos de especificador no plural:",
+                "Alternar a concordância entre o núcleo partitivo e o substantivo especificador muda a seta sintática, mas NÃO altera o sentido original, pois ambos apontam para o mesmo universo factual."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Regra Geral (Muda sentido): \"ferramentas de pedra primitivas\" (ferramentas primitivas) ≠ \"ferramentas de pedra primitiva\" (pedra primitiva)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Exceção Partitiva (Mantém sentido): \"4,5 bilhões de pessoas [...] desprovidas\" (pessoas) = \"4,5 bilhões de pessoas [...] desprovidos\" (bilhões)"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-027",
+                  "targetTitle": "Questão 26: CEBRASPE - DPE-DF (2022)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-020",
+                  "targetTitle": "Questão 19: CESPE - DPU",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-024",
+                  "targetTitle": "Questão 23: CESPE - TCU",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A09-G06-025",
+                  "targetTitle": "Questão 24: CESPE - Petrobras (2022)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A09-G06-005",
+                  "targetTitle": "Confundir Sentido Original com Coerência Textual (Cebraspe)",
+                  "targetUnitId": "IP-A09-G06",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -279,85 +982,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A09-G06-005",
-              "table": {
-                "tableId": "TABLE-IP-A09-G06-005",
-                "caption": "Quadro Comparativo Canônico",
-                "headers": [
-                  "Função Sintática do Adjetivo",
-                  "Adjetivo Posposto aos Substantivos",
-                  "Adjetivo Anteposto aos Substantivos"
-                ],
-                "rows": [
-                  [
-                    "1. Adjunto Adnominal",
-                    "C.T. (Concordância Total) ou C.A. (Concordância Atrativa)",
-                    "Apenas C.A. (Concordância Atrativa com o 1º núcleo)"
-                  ],
-                  [
-                    "2. Predicativo do Sujeito",
-                    "Apenas C.T. (Concordância Total no Plural)",
-                    "Segue o Verbo (C.T. se verbo no plural; C.A. se verbo no singular)"
-                  ],
-                  [
-                    "3. Predicativo do Objeto",
-                    "C.T. (Concordância Total) ou C.A. (Concordância Atrativa)",
-                    "C.T. (Concordância Total) ou C.A. (Concordância Atrativa)"
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA concordância nominal é estruturada pedagogicamente pela professora em dois grandes blocos: a Parte 1, orientada pela função sintática exercida pelo adjetivo (adjunto adnominal, predicativo do sujeito e predicativo do objeto), e a Parte 2, que reúne vocábulos isolados e regras particulares da norma culta (anexo, quite, mesmo, próprio, menos, bastante, leso, só, meio).\nExplicação consolidada\nA divisão reflete diretamente a tipologia de cobrança das bancas examinadoras:\nParte 1 (Sintática / Referenciação): Exige raciocínio sintático estruturado, isolamento de núcleos substantivos e traçado de setas de concordância. É o foco predominante de bancas de alto nível conceitual (Fundação Getulio Vargas - FGV, Cebraspe/CESPE e Fundação Carlos Chagas - FCC).\nParte 2 (Casos Especiais / Morfológica): Foca no comportamento morfológico de vocábulos específicos (diferenciação entre classes invariáveis como advérbios e variáveis como adjetivos/pronomes), sendo o modelo predileto de bancas municipais e de menor porte.\nRelações\nFundamenta: , , , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA flexão do adjetivo na função de predicativo do sujeito composto varia de acordo com a sua posição sintática em relação aos núcleos do sujeito:\nPosposto ao sujeito composto (Ordem Direta): Concorda obrigatoriamente com a totalidade dos núcleos no plural (Concordância Total).\nAnteposto ao sujeito composto (Ordem Inversa): O adjetivo \"segue o verbo\" de ligação.\nExplicação consolidada\nPosição Posposta: $[Sujeito\\ Composto] + [Verbo\\ de\\ Ligação] + [Predicativo]$.\nExige compulsoriamente a soma dos gêneros no plural:\nFeminino + Feminino $\\rightarrow$ Feminino Plural (A fotografia e a montagem são assinadas).\nMasculino + Feminino / Masculino + Masculino $\\rightarrow$ Masculino Plural (A neve e o jardim eram brancos).\nA concordância atrativa com o núcleo vizinho é proibida nessa configuração direta.\nPosição Anteposta: $[Verbo\\ de\\ Ligação] + [Predicativo] + [Sujeito\\ Composto]$.\nO predicativo subordina-se à flexão escolhida para o verbo:\nSe o verbo concordar no plural com todos os núcleos $\\rightarrow$ O predicativo flexiona no plural (Concordância Total): Eram brancos a neve e o jardim.\nSe o verbo concordar no singular por atração com o primeiro núcleo $\\rightarrow$ O predicativo flexiona em gênero e número estritamente com o primeiro núcleo (Concordância Atrativa): Era branca a neve e o jardim.\nExemplos e contraexemplos\nA neve (F) e o jardim (M) eram brancos (M.Pl.). (Correto - C.T. posposto)\nA neve e o jardim eram branco. (Incorreto - atração proibida na posição posposta)\nEram brancos a neve e o jardim. (Correto - verbo no plural impõe C.T.)\nEra branca a neve e o jardim. (Correto - verbo no singular impõe C.A. com neve)\nEra branco a neve e o jardim. (Incorreto - desarmonia com o primeiro núcleo feminino)\nRelações\nContrasta com: (Predicativo do Objeto).\nConsolidado em: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nQuando o adjetivo desempenha a função de predicativo do objeto composto, a concordância é livremente facultativa entre Total (com todos os núcleos no plural) e Atrativa (com o núcleo mais próximo), tanto na posição posposta quanto na posição anteposta ao objeto, mantendo-se rigorosamente a mesma extensão semântica.\nExplicação consolidada\nO predicativo do objeto define-se por dois critérios fundamentais:\nReferenciação semântica ao objeto: A seta sintática aponta para o objeto direto ou indireto, expressando um estado, atributo ou condição resultante ou concomitante ao processo verbal.\nIndispensabilidade contextual (Termo Integrante): Se for retirado da oração, a estrutura sintático-semântica é desfigurada (o verbo altera seu significado de constatação de estado para mera localização de objeto).\nRegras de flexão:\nPosposto ao Objeto: Encontrei a janela (F) e o portão (M) [abertos (C.T. M.Pl.) / aberto (C.A. M.Sg. com 'portão')].\nAnteposto ao Objeto: Encontrei [abertos (C.T. M.Pl.) / aberta (C.A. F.Sg. com 'janela')] a janela (F) e o portão (M).\nIdentidade Semântica: A opção pela concordância atrativa não restringe a qualificação apenas ao substantivo vizinho. Em encontrei aberta a janela e o portão, afirma-se categoricamente que ambos os elementos estavam abertos.\nRelações\nConsolidado em: .\nProcedimento associado: (Teste de Retirada)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO adjetivo na língua portuguesa só pode exercer três funções sintáticas na oração: Adjunto Adnominal, Predicativo do Sujeito ou Predicativo do Objeto. A flexão associada a múltiplos substantivos depende estritamente do cruzamento da função sintática com a posição do adjetivo.\nQuadro Comparativo Canônico\nRegras Operacionais Síntese\nAdjunto Adnominal anteposto é a única estrutura estritamente restrita à concordância atrativa.\nPredicativo do Sujeito posposto é a única estrutura estritamente restrita à concordância total.\nSoma de gêneros na Concordância Total: Substantivo Masculino + Substantivo Feminino = Adjetivo no Masculino Plural ($M + F \\rightarrow M.Pl.$).\nRelações\nSistematiza: , .\nApoiado em: VIS-A09-G06-001."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA flexão do particípio em locuções verbais subordina-se à estrutura da voz verbal e aos verbos auxiliares empregados:\nRegra Geral (Tempos Compostos da Voz Ativa — Auxiliares ter / haver): O particípio é o verbo principal e permanece absolutamente invariável (terminação fixa em -o), enquanto o verbo auxiliar assume as flexões de tempo, modo, número e pessoa.\nExceção (Voz Passiva Analítica — Auxiliares ser / estar / ficar): O particípio adquire valor adjetivo e concorda compulsoriamente em gênero e número com o sujeito paciente.\nTempo Composto Ativo: [Sujeito] + [Auxiliar Ter/Haver flexionado] + [PARTICÍPIO INVARIÁVEL em -o] + [Objeto] Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar Ser/Estar flexionado] + [PARTICÍPIO CONCORDANDO em Gên/Núm]\nExemplos e contraexemplos\nA mulher tinha pintado a parede. / As mulheres tinham pintado as paredes. (Correto - invariável)\nA mulher tinha pintada a parede. (Incorreto - tentativa indevida de concordância com o objeto)\nAs paredes deviam ser pintadas. (Correto - voz passiva concorda com paredes)\nPlantas (F) e frutos (M) foram elogiados (M.Pl.). (Correto - voz passiva com sujeitos mistos)\nRelações\nExpandido por: (Particípios Abundantes)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nVerbos abundantes possuem duas formas legítimas de particípio com empregos sintáticos complementares:\nForma Regular (Terminada em -do — ex.: incluído, ganhado, pagado, gastado): Empregada exclusivamente com os verbos auxiliares TER e HAVER na voz ativa (invariável).\nForma Irregular / Curta (ex.: incluso, ganho, pago, gasto): Empregada com os verbos auxiliares SER e ESTAR (na voz passiva analítica), com verbos de movimento/estado (seguir, ir) ou em função adjetiva autônoma (adjunto adnominal ou predicativo), exigindo concordância nominal plena em gênero e número com o substantivo modificado.\nEsquema Operacional\nAuxiliares TER / HAVER $\\rightarrow$ Particípio Regular em -DO (O diretor tinha incluído o documento).\nAuxiliares SER / ESTAR / OUTROS / SEM AUXILIAR $\\rightarrow$ Particípio Irregular Curto (Segue incluso o documento / Seguem inclusas as cartas).\nRelações\nComplementa: .\nDica mnemônica: TIP-A09-G06-003."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA resolução prática de concordância nominal opera pelo rastreamento mecânico do referente (\"método das setas\") associado ao isolamento rigoroso dos substantivos-núcleo (\"farejador de núcleos\"), fundamentado no princípio de que núcleos sintáticos não admitem preposição.\nCritérios de Aplicação\nLocalizar o qualificador: Isolar o adjetivo, particípio ou pronome adjetivo.\nEliminar termos preposicionados subordinados: Termos iniciados por preposição (de, com, em, por) são adjuntos adnominais ou complementos, jamais núcleos.\nDesarmar falsos sujeitos compostos: A presença da conjunção aditiva \"e\" dentro de um adjunto preposicionado não torna o sujeito composto (A retirada [do lixo das casas e praias] era feita... $\\rightarrow$ Núcleo: retirada [Singular]).\nExpressões com numerais/partitivos: Em As 560 toneladas de lixo eram retiradas, o núcleo é toneladas (F.Pl.), impondo a flexão eram retiradas.\nRelações\nProcedimento consolidado: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA concordância nominal é uma relação estritamente unidirecional: os adjetivos (e palavras determinantes satélites) adaptam suas terminações para espelhar os traços de gênero e número do substantivo regente. Substantivos não concordam com outros substantivos nem com adjetivos; adjetivos não concordam com adjetivos.\nExplicação consolidada\nDesconstrução de pegadinhas conceituais de bancas (ex.: Instituto AOCP): Assertivas que afirmam que \"os substantivos X e Y concordam com o sujeito Z\" ou que \"o substantivo X concorda com o adjetivo Y\" são formalmente nulas e falsas perante a teoria gramatical. Substantivos têm gênero intrínseco e número determinado pelo discurso; são centros reitores.\nProibição de atração entre adjetivos (ex.: Cespe / TCU): Em \"crescimento populacional e econômico, aliado...\", o adjetivo aliado não pode ir para o plural (aliados) sob a alegação de concordar com os adjetivos adjacentes populacional e econômico."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nEm sintagmas nominais complexos do tipo $[Substantivo\\ 1] + de + [Substantivo\\ 2] + [Adjetivo]$, o adjetivo pode qualificar o primeiro ou o segundo substantivo, configurando construções legítimas com sentidos distintos. Afirmar que o adjetivo deveria estar em outra flexão é incorreto, pois o termo poderia flexionar-se de outra forma acarretando mudança de referente e alteração de sentido.\n[empresas] de [conteúdo] [independentes] --> Seta em \"empresas\" (Plural) = Sentido A (Correto) [empresas] de [conteúdo] [independente] --> Seta em \"conteúdo\" (Singular) = Sentido B (Correto)\nCritério Decisivo da FGV e Cebraspe\nDeveria: Implica correção de erro gramatical obrigatório. Se a frase original já é gramaticalmente perfeita, a proposição com deveria é FALSA.\nPoderia: Denota facultatividade / possibilidade estrutural. Se ambas as concordâncias forem gramaticais, a assertiva com poderia é VERDADEIRA, desde que ressalve a alteração do sentido original.\nRelações\nConecta-se a: .\nProcedimento associado: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNos itens de reescrita e concordância da banca CEBRASPE/CESPE, os comandos operam sob três compartimentos conceituais rigorosamente autônomos:\nCorreção Gramatical: Conformidade formal estrita com as regras da norma-padrão culta da língua portuguesa.\nSentido Original: Preservação integral das ideias, mensagens, relações semânticas e dados informativos originais do texto.\nCoerência Textual: Preservação da lógica interna, ausência de contradições e inteligibilidade textual no contexto.\nAxioma Pedagógico (#ANOTAAÍ)\n\"Pode mudar o sentido e não gerar erro gramatical ou perda de coerência.\"\nSe uma reescrita altera o substantivo qualificado pelo adjetivo, gerando uma nova frase lógica e gramaticalmente correta, o item que afirma \"preserva a correção e a coerência\" é CORRETO; se o mesmo item afirmar que \"preserva a correção e o sentido original\", será ERRADO.\nRelações\nBase para: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nRegra Geral: Em concordância nominal e verbal, Mudança de Referente (Seta Sintática) = Mudança de Sentido. Alterar o termo determinado altera o significado original da oração.\nExceção Canônica: Em estruturas formadas por Coletivo Partitivo (a maioria de, grande parte de, metade de) ou Quantificadores Numéricos (milhões de, bilhões de) seguidos de especificador no plural:\nAlternar a concordância entre o núcleo partitivo e o substantivo especificador muda a seta sintática, mas NÃO altera o sentido original, pois ambos apontam para o mesmo universo factual.\nRegra Geral (Muda sentido): \"ferramentas de pedra primitivas\" (ferramentas primitivas) ≠ \"ferramentas de pedra primitiva\" (pedra primitiva)\nExceção Partitiva (Mantém sentido): \"4,5 bilhões de pessoas [...] desprovidas\" (pessoas) = \"4,5 bilhões de pessoas [...] desprovidos\" (bilhões)\nRelações\nExceção aplicada em: (Cebraspe / DPE-DF).\nRegra geral aplicada em: , , ."
         }
       ]
     },
@@ -524,7 +1150,9 @@
               "PROC-A09-G06-001",
               "EXP-IP-A09-G06-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -617,7 +1245,9 @@
               "PROC-A09-G06-002",
               "EXP-IP-A09-G06-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -710,7 +1340,9 @@
               "PROC-A09-G06-003",
               "EXP-IP-A09-G06-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -796,7 +1428,9 @@
               "PROC-A09-G06-004",
               "EXP-IP-A09-G06-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -869,7 +1503,9 @@
               "PROC-A09-G06-005",
               "EXP-IP-A09-G06-PROC-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -947,7 +1583,9 @@
               "CONTRAST-IP-A09-G06-001",
               "EXP-IP-A09-G06-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1023,7 +1661,9 @@
               "CONTRAST-IP-A09-G06-002",
               "EXP-IP-A09-G06-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1093,7 +1733,9 @@
               "CONTRAST-IP-A09-G06-003",
               "EXP-IP-A09-G06-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1152,7 +1794,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-001",
               "EXP-IP-A09-G06-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1207,7 +1851,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-002",
               "EXP-IP-A09-G06-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1262,7 +1908,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-003",
               "EXP-IP-A09-G06-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1317,7 +1965,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-004",
               "EXP-IP-A09-G06-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1372,7 +2022,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-005",
               "EXP-IP-A09-G06-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1427,7 +2079,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-006",
               "EXP-IP-A09-G06-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1476,7 +2130,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-007",
               "EXP-IP-A09-G06-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1539,7 +2195,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-008",
               "EXP-IP-A09-G06-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1594,7 +2252,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-009",
               "EXP-IP-A09-G06-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1655,7 +2315,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-010",
               "EXP-IP-A09-G06-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1718,7 +2380,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-011",
               "EXP-IP-A09-G06-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1781,7 +2445,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-012",
               "EXP-IP-A09-G06-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1844,7 +2510,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-013",
               "EXP-IP-A09-G06-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1893,7 +2561,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-014",
               "EXP-IP-A09-G06-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1942,7 +2612,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-015",
               "EXP-IP-A09-G06-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1997,7 +2669,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-016",
               "EXP-IP-A09-G06-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2052,7 +2726,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-017",
               "EXP-IP-A09-G06-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2107,7 +2783,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-018",
               "EXP-IP-A09-G06-064"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2162,7 +2840,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-019",
               "EXP-IP-A09-G06-065"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2217,7 +2897,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-020",
               "EXP-IP-A09-G06-066"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2272,7 +2954,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-021",
               "EXP-IP-A09-G06-067"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2327,7 +3011,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-022",
               "EXP-IP-A09-G06-068"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2382,7 +3068,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-023",
               "EXP-IP-A09-G06-069"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2437,7 +3125,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-024",
               "EXP-IP-A09-G06-070"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2492,7 +3182,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-025",
               "EXP-IP-A09-G06-071"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2547,7 +3239,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-026",
               "EXP-IP-A09-G06-072"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2602,7 +3296,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-027",
               "EXP-IP-A09-G06-073"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2657,7 +3353,9 @@
               "WORKED_EXAMPLE-IP-A09-G06-028",
               "EXP-IP-A09-G06-074"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2707,7 +3405,9 @@
               "WARN-A09-G06-001",
               "EXP-IP-A09-G06-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2743,7 +3443,9 @@
               "WARN-A09-G06-002",
               "EXP-IP-A09-G06-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2779,7 +3481,9 @@
               "WARN-A09-G06-003",
               "EXP-IP-A09-G06-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2815,7 +3519,9 @@
               "WARN-A09-G06-004",
               "EXP-IP-A09-G06-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2851,30 +3557,116 @@
               "WARN-A09-G06-005",
               "EXP-IP-A09-G06-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Estrutura Metodológica da Concordância Nominal: Parte 1 (Sintática) vs. Parte 2 (Casos Especiais)**: Definição ou ideia central\nA concordância nominal é estruturada pedagogicamente pela professora em dois grandes blocos: a Parte 1, orientada pela função sintática exercida pelo adjetivo (adjunto adnominal, predicativo do sujeito e predicativo do objeto), e a Parte 2, que reúne vocábulos isolados e regras particulares da norma culta (anexo, quite, mesmo, próprio, menos, bastante, leso, só, meio).\nExplicação consolidada\nA divisão reflete diretamente a tipologia de cobrança das bancas examinadoras:\nParte 1 (Sintática / Referenciação): Exige raciocínio sintático estruturado, isolamento de núcleos substantivos e traçado de setas de concordância. É o foco predominante de bancas de alto nível conceitual (Fundação Getulio Vargas - FGV, Cebraspe/CESPE e Fundação Carlos Chagas - FCC).\nParte 2 (Casos Especiais / Morfológica): Foca no comportamento morfológico de vocábulos específicos (diferenciação entre classes invariáveis como advérbios e variáveis como adjetivos/pronomes), sendo o modelo predileto de bancas municipais e de menor porte.\nRelações\nFundamenta: , , , .",
-            "**Concordância do Adjetivo como Predicativo do Sujeito Composto**: Definição ou ideia central\nA flexão do adjetivo na função de predicativo do sujeito composto varia de acordo com a sua posição sintática em relação aos núcleos do sujeito:\nPosposto ao sujeito composto (Ordem Direta): Concorda obrigatoriamente com a totalidade dos núcleos no plural (Concordância Total).\nAnteposto ao sujeito composto (Ordem Inversa): O adjetivo \"segue o verbo\" de ligação.\nExplicação consolidada\nPosição Posposta: $[Sujeito\\ Composto] + [Verbo\\ de\\ Ligação] + [Predicativo]$.\nExige compulsoriamente a soma dos gêneros no plural:\nFeminino + Feminino $\\rightarrow$ Feminino Plural (A fotografia e a montagem são assinadas).\nMasculino + Feminino / Masculino + Masculino $\\rightarrow$ Masculino Plural (A neve e o jardim eram brancos).\nA concordância atrativa com o núcleo vizinho é proibida nessa configuração direta.\nPosição Anteposta: $[Verbo\\ de\\ Ligação] + [Predicativo] + [Sujeito\\ Composto]$.\nO predicativo subordina-se à flexão escolhida para o verbo:\nSe o verbo concordar no plural com todos os núcleos $\\rightarrow$ O predicativo flexiona no plural (Concordância Total): Eram brancos a neve e o jardim.\nSe o verbo concordar no singular por atração com o primeiro núcleo $\\rightarrow$ O predicativo flexiona em gênero e número estritamente com o primeiro núcleo (Concordância Atrativa): Era branca a neve e o jardim.\nExemplos e contraexemplos\nA neve (F) e o jardim (M) eram brancos (M.Pl.). (Correto - C.T. posposto)\nA neve e o jardim eram branco. (Incorreto - atração proibida na posição posposta)\nEram brancos a neve e o jardim. (Correto - verbo no plural impõe C.T.)\nEra branca a neve e o jardim. (Correto - verbo no singular impõe C.A. com neve)\nEra branco a neve e o jardim. (Incorreto - desarmonia com o primeiro núcleo feminino)\nRelações\nContrasta com: (Predicativo do Objeto).\nConsolidado em: .",
-            "**Concordância do Adjetivo como Predicativo do Objeto Composto e Equivalência Semântica**: Definição ou ideia central\nQuando o adjetivo desempenha a função de predicativo do objeto composto, a concordância é livremente facultativa entre Total (com todos os núcleos no plural) e Atrativa (com o núcleo mais próximo), tanto na posição posposta quanto na posição anteposta ao objeto, mantendo-se rigorosamente a mesma extensão semântica.\nExplicação consolidada\nO predicativo do objeto define-se por dois critérios fundamentais:\nReferenciação semântica ao objeto: A seta sintática aponta para o objeto direto ou indireto, expressando um estado, atributo ou condição resultante ou concomitante ao processo verbal.\nIndispensabilidade contextual (Termo Integrante): Se for retirado da oração, a estrutura sintático-semântica é desfigurada (o verbo altera seu significado de constatação de estado para mera localização de objeto).\nRegras de flexão:\nPosposto ao Objeto: Encontrei a janela (F) e o portão (M) [abertos (C.T. M.Pl.) / aberto (C.A. M.Sg. com 'portão')].\nAnteposto ao Objeto: Encontrei [abertos (C.T. M.Pl.) / aberta (C.A. F.Sg. com 'janela')] a janela (F) e o portão (M).\nIdentidade Semântica: A opção pela concordância atrativa não restringe a qualificação apenas ao substantivo vizinho. Em encontrei aberta a janela e o portão, afirma-se categoricamente que ambos os elementos estavam abertos.\nRelações\nConsolidado em: .\nProcedimento associado: (Teste de Retirada).",
-            "**Matriz Sinótica das Três Funções Sintáticas do Adjetivo (#ANOTAAÍ)**: Definição ou ideia central\nO adjetivo na língua portuguesa só pode exercer três funções sintáticas na oração: Adjunto Adnominal, Predicativo do Sujeito ou Predicativo do Objeto. A flexão associada a múltiplos substantivos depende estritamente do cruzamento da função sintática com a posição do adjetivo.\nQuadro Comparativo Canônico\nRegras Operacionais Síntese\nAdjunto Adnominal anteposto é a única estrutura estritamente restrita à concordância atrativa.\nPredicativo do Sujeito posposto é a única estrutura estritamente restrita à concordância total.\nSoma de gêneros na Concordância Total: Substantivo Masculino + Substantivo Feminino = Adjetivo no Masculino Plural ($M + F \\rightarrow M.Pl.$).\nRelações\nSistematiza: , .\nApoiado em: VIS-A09-G06-001.",
-            "**Concordância do Particípio em Locuções Verbais (Tempo Composto vs. Voz Passiva Analítica)**: Definição ou ideia central\nA flexão do particípio em locuções verbais subordina-se à estrutura da voz verbal e aos verbos auxiliares empregados:\nRegra Geral (Tempos Compostos da Voz Ativa — Auxiliares ter / haver): O particípio é o verbo principal e permanece absolutamente invariável (terminação fixa em -o), enquanto o verbo auxiliar assume as flexões de tempo, modo, número e pessoa.\nExceção (Voz Passiva Analítica — Auxiliares ser / estar / ficar): O particípio adquire valor adjetivo e concorda compulsoriamente em gênero e número com o sujeito paciente.\nTempo Composto Ativo: [Sujeito] + [Auxiliar Ter/Haver flexionado] + [PARTICÍPIO INVARIÁVEL em -o] + [Objeto] Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar Ser/Estar flexionado] + [PARTICÍPIO CONCORDANDO em Gên/Núm]\nExemplos e contraexemplos\nA mulher tinha pintado a parede. / As mulheres tinham pintado as paredes. (Correto - invariável)\nA mulher tinha pintada a parede. (Incorreto - tentativa indevida de concordância com o objeto)\nAs paredes deviam ser pintadas. (Correto - voz passiva concorda com paredes)\nPlantas (F) e frutos (M) foram elogiados (M.Pl.). (Correto - voz passiva com sujeitos mistos)\nRelações\nExpandido por: (Particípios Abundantes).",
-            "**Particípios Abundantes / Duplos: Formas Regulares (-do) vs. Irregulares (Incluso, Ganho, Pago)**: Definição ou ideia central\nVerbos abundantes possuem duas formas legítimas de particípio com empregos sintáticos complementares:\nForma Regular (Terminada em -do — ex.: incluído, ganhado, pagado, gastado): Empregada exclusivamente com os verbos auxiliares TER e HAVER na voz ativa (invariável).\nForma Irregular / Curta (ex.: incluso, ganho, pago, gasto): Empregada com os verbos auxiliares SER e ESTAR (na voz passiva analítica), com verbos de movimento/estado (seguir, ir) ou em função adjetiva autônoma (adjunto adnominal ou predicativo), exigindo concordância nominal plena em gênero e número com o substantivo modificado.\nEsquema Operacional\nAuxiliares TER / HAVER $\\rightarrow$ Particípio Regular em -DO (O diretor tinha incluído o documento).\nAuxiliares SER / ESTAR / OUTROS / SEM AUXILIAR $\\rightarrow$ Particípio Irregular Curto (Segue incluso o documento / Seguem inclusas as cartas).\nRelações\nComplementa: .\nDica mnemônica: TIP-A09-G06-003.",
-            "**Metodologia das Setas Sintáticas e Bloqueio Preposicional do Núcleo**: Definição ou ideia central\nA resolução prática de concordância nominal opera pelo rastreamento mecânico do referente (\"método das setas\") associado ao isolamento rigoroso dos substantivos-núcleo (\"farejador de núcleos\"), fundamentado no princípio de que núcleos sintáticos não admitem preposição.\nCritérios de Aplicação\nLocalizar o qualificador: Isolar o adjetivo, particípio ou pronome adjetivo.\nEliminar termos preposicionados subordinados: Termos iniciados por preposição (de, com, em, por) são adjuntos adnominais ou complementos, jamais núcleos.\nDesarmar falsos sujeitos compostos: A presença da conjunção aditiva \"e\" dentro de um adjunto preposicionado não torna o sujeito composto (A retirada [do lixo das casas e praias] era feita... $\\rightarrow$ Núcleo: retirada [Singular]).\nExpressões com numerais/partitivos: Em As 560 toneladas de lixo eram retiradas, o núcleo é toneladas (F.Pl.), impondo a flexão eram retiradas.\nRelações\nProcedimento consolidado: .",
-            "**Unidirecionalidade da Concordância Nominal (Substantivo vs. Adjetivo)**: Definição ou ideia central\nA concordância nominal é uma relação estritamente unidirecional: os adjetivos (e palavras determinantes satélites) adaptam suas terminações para espelhar os traços de gênero e número do substantivo regente. Substantivos não concordam com outros substantivos nem com adjetivos; adjetivos não concordam com adjetivos.\nExplicação consolidada\nDesconstrução de pegadinhas conceituais de bancas (ex.: Instituto AOCP): Assertivas que afirmam que \"os substantivos X e Y concordam com o sujeito Z\" ou que \"o substantivo X concorda com o adjetivo Y\" são formalmente nulas e falsas perante a teoria gramatical. Substantivos têm gênero intrínseco e número determinado pelo discurso; são centros reitores.\nProibição de atração entre adjetivos (ex.: Cespe / TCU): Em \"crescimento populacional e econômico, aliado...\", o adjetivo aliado não pode ir para o plural (aliados) sob a alegação de concordar com os adjetivos adjacentes populacional e econômico.",
-            "**Ambiguidade Estrutural em Sintagmas Preposicionados: \"Deveria\" vs. \"Poderia\" na FGV**: Definição ou ideia central\nEm sintagmas nominais complexos do tipo $[Substantivo\\ 1] + de + [Substantivo\\ 2] + [Adjetivo]$, o adjetivo pode qualificar o primeiro ou o segundo substantivo, configurando construções legítimas com sentidos distintos. Afirmar que o adjetivo deveria estar em outra flexão é incorreto, pois o termo poderia flexionar-se de outra forma acarretando mudança de referente e alteração de sentido.\n[empresas] de [conteúdo] [independentes] --> Seta em \"empresas\" (Plural) = Sentido A (Correto) [empresas] de [conteúdo] [independente] --> Seta em \"conteúdo\" (Singular) = Sentido B (Correto)\nCritério Decisivo da FGV e Cebraspe\nDeveria: Implica correção de erro gramatical obrigatório. Se a frase original já é gramaticalmente perfeita, a proposição com deveria é FALSA.\nPoderia: Denota facultatividade / possibilidade estrutural. Se ambas as concordâncias forem gramaticais, a assertiva com poderia é VERDADEIRA, desde que ressalve a alteração do sentido original.\nRelações\nConecta-se a: .\nProcedimento associado: .",
-            "**A Tríade de Comandos no CEBRASPE: Correção Gramatical vs. Sentido Original vs. Coerência Textual**: Definição ou ideia central\nNos itens de reescrita e concordância da banca CEBRASPE/CESPE, os comandos operam sob três compartimentos conceituais rigorosamente autônomos:\nCorreção Gramatical: Conformidade formal estrita com as regras da norma-padrão culta da língua portuguesa.\nSentido Original: Preservação integral das ideias, mensagens, relações semânticas e dados informativos originais do texto.\nCoerência Textual: Preservação da lógica interna, ausência de contradições e inteligibilidade textual no contexto.\nAxioma Pedagógico (#ANOTAAÍ)\n\"Pode mudar o sentido e não gerar erro gramatical ou perda de coerência.\"\nSe uma reescrita altera o substantivo qualificado pelo adjetivo, gerando uma nova frase lógica e gramaticalmente correta, o item que afirma \"preserva a correção e a coerência\" é CORRETO; se o mesmo item afirmar que \"preserva a correção e o sentido original\", será ERRADO.\nRelações\nBase para: .",
-            "**O Princípio da Mudança de Referente e a Exceção Canônica dos Coletivos Partitivos**: Definição ou ideia central\nRegra Geral: Em concordância nominal e verbal, Mudança de Referente (Seta Sintática) = Mudança de Sentido. Alterar o termo determinado altera o significado original da oração.\nExceção Canônica: Em estruturas formadas por Coletivo Partitivo (a maioria de, grande parte de, metade de) ou Quantificadores Numéricos (milhões de, bilhões de) seguidos de especificador no plural:\nAlternar a concordância entre o núcleo partitivo e o substantivo especificador muda a seta sintática, mas NÃO altera o sentido original, pois ambos apontam para o mesmo universo factual.\nRegra Geral (Muda sentido): \"ferramentas de pedra primitivas\" (ferramentas primitivas) ≠ \"ferramentas de pedra primitiva\" (pedra primitiva)\nExceção Partitiva (Mantém sentido): \"4,5 bilhões de pessoas [...] desprovidas\" (pessoas) = \"4,5 bilhões de pessoas [...] desprovidos\" (bilhões)\nRelações\nExceção aplicada em: (Cebraspe / DPE-DF).\nRegra geral aplicada em: , , ."
-          ]
+          "term": "Estrutura Metodológica da Concordância Nominal: Parte 1 (Sintática) vs. Parte 2 (Casos Especiais)",
+          "shortDefinition": "A concordância nominal é estruturada pedagogicamente pela professora em dois grandes blocos: a Parte 1, orientada pela função sintática exercida pelo adjetivo (adjunto adnominal, predicativo do sujeito e predicativo do objeto), e a Parte 2, que reúne vocábulos isolados e regras particulares da norma culta (anexo, quite, mesmo, próprio, menos, bastante, leso, só, meio).",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-01"
+          },
+          "operationalUse": "A divisão reflete diretamente a tipologia de cobrança das bancas examinadoras:"
+        },
+        {
+          "term": "Concordância do Adjetivo como Predicativo do Sujeito Composto",
+          "shortDefinition": "A flexão do adjetivo na função de predicativo do sujeito composto varia de acordo com a sua posição sintática em relação aos núcleos do sujeito:",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-02"
+          }
+        },
+        {
+          "term": "Concordância do Adjetivo como Predicativo do Objeto Composto e Equivalência Semântica",
+          "shortDefinition": "Quando o adjetivo desempenha a função de predicativo do objeto composto, a concordância é livremente facultativa entre Total (com todos os núcleos no plural) e Atrativa (com o núcleo mais próximo), tanto na posição posposta quanto na posição anteposta ao objeto, mantendo-se rigorosamente a mesma extensão semântica.",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-03"
+          },
+          "operationalUse": "O predicativo do objeto define-se por dois critérios fundamentais:"
+        },
+        {
+          "term": "Matriz Sinótica das Três Funções Sintáticas do Adjetivo (#ANOTAAÍ)",
+          "shortDefinition": "O adjetivo na língua portuguesa só pode exercer três funções sintáticas na oração: Adjunto Adnominal, Predicativo do Sujeito ou Predicativo do Objeto. A flexão associada a múltiplos substantivos depende estritamente do cruzamento da função sintática com a posição do adjetivo.",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-04"
+          }
+        },
+        {
+          "term": "Concordância do Particípio em Locuções Verbais (Tempo Composto vs. Voz Passiva Analítica)",
+          "shortDefinition": "A flexão do particípio em locuções verbais subordina-se à estrutura da voz verbal e aos verbos auxiliares empregados:",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-05"
+          }
+        },
+        {
+          "term": "Particípios Abundantes / Duplos: Formas Regulares (-do) vs. Irregulares (Incluso, Ganho, Pago)",
+          "shortDefinition": "Verbos abundantes possuem duas formas legítimas de particípio com empregos sintáticos complementares:",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-06"
+          }
+        },
+        {
+          "term": "Metodologia das Setas Sintáticas e Bloqueio Preposicional do Núcleo",
+          "shortDefinition": "A resolução prática de concordância nominal opera pelo rastreamento mecânico do referente (\"método das setas\") associado ao isolamento rigoroso dos substantivos-núcleo (\"farejador de núcleos\"), fundamentado no princípio de que núcleos sintáticos não admitem preposição.",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-07"
+          }
+        },
+        {
+          "term": "Unidirecionalidade da Concordância Nominal (Substantivo vs. Adjetivo)",
+          "shortDefinition": "A concordância nominal é uma relação estritamente unidirecional: os adjetivos (e palavras determinantes satélites) adaptam suas terminações para espelhar os traços de gênero e número do substantivo regente. Substantivos não concordam com outros substantivos nem com adjetivos; adjetivos não concordam com adjetivos.",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-08"
+          }
+        },
+        {
+          "term": "Ambiguidade Estrutural em Sintagmas Preposicionados: \"Deveria\" vs. \"Poderia\" na FGV",
+          "shortDefinition": "Em sintagmas nominais complexos do tipo $[Substantivo\\ 1] + de + [Substantivo\\ 2] + [Adjetivo]$, o adjetivo pode qualificar o primeiro ou o segundo substantivo, configurando construções legítimas com sentidos distintos. Afirmar que o adjetivo deveria estar em outra flexão é incorreto, pois o termo poderia flexionar-se de outra forma acarretando mudança de referente e alteração de sentido.",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-09"
+          }
+        },
+        {
+          "term": "A Tríade de Comandos no CEBRASPE: Correção Gramatical vs. Sentido Original vs. Coerência Textual",
+          "shortDefinition": "Nos itens de reescrita e concordância da banca CEBRASPE/CESPE, os comandos operam sob três compartimentos conceituais rigorosamente autônomos:",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-10"
+          }
+        },
+        {
+          "term": "O Princípio da Mudança de Referente e a Exceção Canônica dos Coletivos Partitivos",
+          "shortDefinition": "Regra Geral (Muda sentido): \"ferramentas de pedra primitivas\" (ferramentas primitivas) ≠ \"ferramentas de pedra primitiva\" (pedra primitiva)",
+          "detailTarget": {
+            "unitId": "IP-A09-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A09-G06-11"
+          }
         }
       ]
     },

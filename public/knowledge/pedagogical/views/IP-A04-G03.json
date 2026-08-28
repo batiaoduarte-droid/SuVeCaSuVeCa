@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A04-G03",
     "lessonId": "A04",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A04-G03",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A04-G03-001"
+          }
         }
       ]
     },
@@ -98,8 +103,60 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs verbos na Língua Portuguesa distribuem-se estritamente em três conjugações, definidas pela vogal temática presente no infinitivo impessoal. Não existe uma 4ª conjugação no idioma.\nExplicação consolidada\n1ª Conjugação: Verbos com Vogal Temática A (amar, cantar, falar).\n2ª Conjugação: Verbos com Vogal Temática E (beber, vender).\n3ª Conjugação: Verbos com Vogal Temática I (partir, digerir).\nSituação do Verbo Pôr: O verbo pôr (e seus derivados: repor, compor, dispor, propor) pertence à 2ª conjugação. Historicamente, sua forma no latim (ponere) evoluiu para poer no português arcaico. Com a supressão fonética do e intervocálico na evolução para o português moderno (pôr), o verbo manteve seu enquadramento morfológico na 2ª conjugação, preservando o vocalismo temático e em formas flexionadas (ex.: pões, põe, púsesse, pusera).\nCritérios de reconhecimento ou aplicação\nEncontrando formas terminadas em -or, reconduza-as ao infinitivo pôr e classifique-as obrigatoriamente na 2ª conjugação.\nRelações\nExpande em: 002Evidenciado por: VIS-A04-G03-DESINENCIAS-VERBAIS-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os verbos na Língua Portuguesa distribuem-se estritamente em três conjugações, definidas pela vogal temática presente no infinitivo impessoal. Não existe uma 4ª conjugação no idioma."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "1ª Conjugação: Verbos com Vogal Temática A (amar, cantar, falar).",
+                "2ª Conjugação: Verbos com Vogal Temática E (beber, vender).",
+                "3ª Conjugação: Verbos com Vogal Temática I (partir, digerir).",
+                "Situação do Verbo Pôr: O verbo pôr (e seus derivados: repor, compor, dispor, propor) pertence à 2ª conjugação. Historicamente, sua forma no latim (ponere) evoluiu para poer no português arcaico. Com a supressão fonética do e intervocálico na evolução para o português moderno (pôr), o verbo manteve seu enquadramento morfológico na 2ª conjugação, preservando o vocalismo temático e em formas flexionadas (ex.: pões, põe, púsesse, pusera)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Encontrando formas terminadas em -or, reconduza-as ao infinitivo pôr e classifique-as obrigatoriamente na 2ª conjugação."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A04-G03-DESINENCIAS-VERBAIS-002",
+                  "targetTitle": "Radical, Vogal Temática (VT) e Formação do Tema Verbal",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A04-G03-DESINENCIAS-VERBAIS-001",
+                  "targetTitle": "O Mito da \"4ª Conjugação\" no Verbo Pôr",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +169,64 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA estrutura básica da palavra verbal apoia-se em três elementos fundamentais:\nRadical: Elemento irredutível que comporta a carga semântica lexical básica.\nVogal Temática (VT): Morfema que se acopla ao radical para preparar a base verbal e indicar a conjugação.\nTema Verbal: Estrutura formada pela união do Radical com a Vogal Temática:\n\\text{Tema} = \\text{Radical} + \\text{Vogal Temática}\nExplicação consolidada\nPara determinar o radical e a vogal temática com segurança, a forma flexionada deve ser remetida ao seu Infinitivo Impessoal:\nA desinência de infinitivo -r é retirada; a vogal remanescente na extremidade é a Vogal Temática (a, e ou i); a porção anterior é o Radical.\nEm verbos regulares: falar $\\rightarrow$ Radical fal-, VT a, Tema fala-.\nEm verbos irregulares no tema do perfeito: em pusera, o radical de perfeito é pus-, a VT da 2ª conjugação é e, compondo o tema puse-.Exemplificado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A estrutura básica da palavra verbal apoia-se em três elementos fundamentais:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Radical: Elemento irredutível que comporta a carga semântica lexical básica.",
+                "Vogal Temática (VT): Morfema que se acopla ao radical para preparar a base verbal e indicar a conjugação.",
+                "Tema Verbal: Estrutura formada pela união do Radical com a Vogal Temática:"
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Tema} = \\text{Radical} + \\text{Vogal Temática}"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para determinar o radical e a vogal temática com segurança, a forma flexionada deve ser remetida ao seu Infinitivo Impessoal:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A desinência de infinitivo -r é retirada; a vogal remanescente na extremidade é a Vogal Temática (a, e ou i); a porção anterior é o Radical.",
+                "Em verbos regulares: falar $\\rightarrow$ Radical fal-, VT a, Tema fala-.",
+                "Em verbos irregulares no tema do perfeito: em pusera, o radical de perfeito é pus-, a VT da 2ª conjugação é e, compondo o tema puse-."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A04-G03-DESINENCIAS-VERBAIS-002",
+                  "targetTitle": "Método do Infinitivo Impessoal para Identificação da Vogal Temática",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A04-G03-009",
+                  "targetTitle": "Questão 03: FGV - SEDUC-AM (pusera)",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +239,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA Desinência Modo-Temporal (DMT) é o morfema flexional responsável por indicar simultaneamente o modo (indicativo, subjuntivo, imperativo) e o tempo (presente, pretérito, futuro) da forma verbal. Didaticamente, é conceituada como a \"muleta do tempo\".\nExplicação consolidada\nPropriedade Identificadora: A DMT caracteriza-se por ser a marca mórfica comum que se repete ao longo das diversas pessoas gramaticais daquele tempo verbal específico.\nEnquanto a DNP se altera a cada mudança de sujeito, a DMT permanece fixa, \"impregnando\" todo o paradigma conjugacional.\nExemplo: Em falávamos, falavas, falavam, o segmento -va- é a marca recorrente do Pretérito Imperfeito do Indicativo.\nRelações\nContrasta com: (DNP)\nAplica-se em:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Desinência Modo-Temporal (DMT) é o morfema flexional responsável por indicar simultaneamente o modo (indicativo, subjuntivo, imperativo) e o tempo (presente, pretérito, futuro) da forma verbal. Didaticamente, é conceituada como a \"muleta do tempo\"."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Propriedade Identificadora: A DMT caracteriza-se por ser a marca mórfica comum que se repete ao longo das diversas pessoas gramaticais daquele tempo verbal específico.",
+                "Enquanto a DNP se altera a cada mudança de sujeito, a DMT permanece fixa, \"impregnando\" todo o paradigma conjugacional.",
+                "Exemplo: Em falávamos, falavas, falavam, o segmento -va- é a marca recorrente do Pretérito Imperfeito do Indicativo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A04-G03-DESINENCIAS-VERBAIS-004",
+                  "targetTitle": "Desinência Número-Pessoal (DNP) e Paradigmas Flexionais",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A04-G03-DESINENCIAS-VERBAIS-001",
+                  "targetTitle": "Algoritmo dos 3 Passos para Decomposição Mórfica Verbal",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +292,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA Desinência Número-Pessoal (DNP) é o morfema flexional sufixal posicionado no final da estrutura verbal responsável por individualizar a pessoa gramatical (1ª, 2ª ou 3ª) e o número (singular ou plural).\nExplicação consolidada\nDiferente da DMT, a DNP é o morfema particular que varia de pessoa para pessoa:\n1ª Pessoa Singular (Eu): -o (no Presente do Indicativo: fal-o), -i (no Futuro do Presente: falare-i) ou Ø (morfema zero nos Pretéritos e Subjuntivo: falava-Ø, fale-Ø).\n2ª Pessoa Singular (Tu): -s (fala-s, falava-s, fale-s).\n3ª Pessoa Singular (Ele/Ela): Ø (morfema zero em praticamente todos os tempos: fala-Ø, falava-Ø, fale-Ø).\n1ª Pessoa Plural (Nós): -mos (fala-mos, faláva-mos, fale-mos).\n2ª Pessoa Plural (Vós): -is ou -des (fala-is, faláve-is, fale-is, insistir-des).\n3ª Pessoa Plural (Eles/Elas): -m (fala-m, falava-m, fale-m) ou -ão (falar-ão).Dica associada: TIP-A04-G03-DESINENCIAS-VERBAIS-004 (O -is como âncora do vós)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Desinência Número-Pessoal (DNP) é o morfema flexional sufixal posicionado no final da estrutura verbal responsável por individualizar a pessoa gramatical (1ª, 2ª ou 3ª) e o número (singular ou plural)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Diferente da DMT, a DNP é o morfema particular que varia de pessoa para pessoa:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "1ª Pessoa Singular (Eu): -o (no Presente do Indicativo: fal-o), -i (no Futuro do Presente: falare-i) ou Ø (morfema zero nos Pretéritos e Subjuntivo: falava-Ø, fale-Ø).",
+                "2ª Pessoa Singular (Tu): -s (fala-s, falava-s, fale-s).",
+                "3ª Pessoa Singular (Ele/Ela): Ø (morfema zero em praticamente todos os tempos: fala-Ø, falava-Ø, fale-Ø).",
+                "1ª Pessoa Plural (Nós): -mos (fala-mos, faláva-mos, fale-mos).",
+                "2ª Pessoa Plural (Vós): -is ou -des (fala-is, faláve-is, fale-is, insistir-des).",
+                "3ª Pessoa Plural (Eles/Elas): -m (fala-m, falava-m, fale-m) ou -ão (falar-ão)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A04-G03-DESINENCIAS-VERBAIS-003",
+                  "targetTitle": "Desinência Modo-Temporal (DMT) e o Conceito de \"Muleta do Tempo\"",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +345,57 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAlomorfia é a ocorrência de variantes formais de um mesmo morfema condicionadas pelo ambiente fonético ou estrutural da conjugação, sem que haja alteração na sua função gramatical primária.\nExplicação consolidada\nAs fontes registram dois casos canônicos de alomorfia analisados no quadro:\nAlomorfia de Vogal Temática: No verbo partir (3ª conjugação, VT padrão i), as formas do Presente do Indicativo partes, parte e partem exibem a vogal e. O elemento e é classificado como alomorfe da vogal temática i.\nAlomorfia de Desinência Modo-Temporal: No Pretérito Imperfeito do Indicativo de 1ª conjugação (falar), a DMT padrão é -va-. Na 2ª pessoa do plural (faláveis), a DMT assume a forma -ve-. O segmento -ve- é um alomorfe da DMT -va-.\nRelações\nExpande: e \nExemplificado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Alomorfia é a ocorrência de variantes formais de um mesmo morfema condicionadas pelo ambiente fonético ou estrutural da conjugação, sem que haja alteração na sua função gramatical primária."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "As fontes registram dois casos canônicos de alomorfia analisados no quadro:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Alomorfia de Vogal Temática: No verbo partir (3ª conjugação, VT padrão i), as formas do Presente do Indicativo partes, parte e partem exibem a vogal e. O elemento e é classificado como alomorfe da vogal temática i.",
+                "Alomorfia de Desinência Modo-Temporal: No Pretérito Imperfeito do Indicativo de 1ª conjugação (falar), a DMT padrão é -va-. Na 2ª pessoa do plural (faláveis), a DMT assume a forma -ve-. O segmento -ve- é um alomorfe da DMT -va-."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A04-G03-DESINENCIAS-VERBAIS-002",
+                  "targetTitle": "Radical, Vogal Temática (VT) e Formação do Tema Verbal",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A04-G03-DESINENCIAS-VERBAIS-003",
+                  "targetTitle": "Desinência Modo-Temporal (DMT) e o Conceito de \"Muleta do Tempo\"",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A04-G03-002",
+                  "targetTitle": "Decomposição de Falávamos e Partes",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +408,32 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Método dos 3 Passos é um procedimento analítico estruturado para segmentar e classificar os constituintes morfológicos de qualquer verbo flexionado, substituindo a memorização aleatória pelo raciocínio lógico.\nExplicação consolidada\nALGORITMO DOS 3 PASSOS 1º PASSO: ACHAR A VOGAL TEMÁTICA • \"Jogar\" o verbo para o Infinitivo Impessoal. • Identificar a vogal antes do \"-r\" (A = 1ª, E = 2ª, I = 3ª). • Isolar o Radical e obter a base do Tema (Radical + VT). 2º PASSO: ACHAR A DESINÊNCIA MODO-TEMPORAL (DMT) • Conjugar mentalmente o tempo verbal com o apoio de marcadores. • Isolar a desinência COMUM que se repete em todas as pessoas. 3º PASSO: ACHAR A DESINÊNCIA NÚMERO-PESSOAL (DNP) • Observar a terminação específica da pessoa solicitada. • Isolar a desinência PARTICULAR que varia de pessoa para pessoa.\nRelações\nImplementado em: \nAplicado em: Todas as unidades EX deste grupo."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Método dos 3 Passos é um procedimento analítico estruturado para segmentar e classificar os constituintes morfológicos de qualquer verbo flexionado, substituindo a memorização aleatória pelo raciocínio lógico."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Explicação consolidada",
+              "text": "ALGORITMO DOS 3 PASSOS │ 1º PASSO: ACHAR A VOGAL TEMÁTICA ▼ • \"Jogar\" o verbo para o Infinitivo Impessoal. • Identificar a vogal antes do \"-r\" (A = 1ª, E = 2ª, I = 3ª). • Isolar o Radical e obter a base do Tema (Radical + VT). │ 2º PASSO: ACHAR A DESINÊNCIA MODO-TEMPORAL (DMT) ▼ • Conjugar mentalmente o tempo verbal com o apoio de marcadores. • Isolar a desinência COMUM que se repete em todas as pessoas. │ 3º PASSO: ACHAR A DESINÊNCIA NÚMERO-PESSOAL (DNP) ▼ • Observar a terminação específica da pessoa solicitada. • Isolar a desinência PARTICULAR que varia de pessoa para pessoa."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A04-G03-DESINENCIAS-VERBAIS-001",
+                  "targetTitle": "Algoritmo dos 3 Passos para Decomposição Mórfica Verbal",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -182,8 +446,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Presente do Indicativo é estruturalmente marcado pela inexistência de Desinência Modo-Temporal (DMT = $\\emptyset$) em todas as pessoas gramaticais e conjugações.\nExplicação consolidada\nNo Presente do Indicativo, a noção de tempo presente e modo indicativo decorre diretamente da junção do Radical/Tema com as DNPs, sem a intermediação de um sufixo temporal comum.\nNa 1ª pessoa do singular (falo, vendo, parto, entrego), a Vogal Temática é absorvida pela DNP -o, resultando em $\\text{VT} = \\emptyset$ e $\\text{DMT} = \\emptyset$.\nNas demais pessoas (contamos = CONT + A + $\\emptyset$ + MOS), há Radical, VT e DNP, mas a DMT permanece zero ($\\emptyset$).Exemplificado por: (Questão FUNRIO - contamos)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Presente do Indicativo é estruturalmente marcado pela inexistência de Desinência Modo-Temporal (DMT = $\\emptyset$) em todas as pessoas gramaticais e conjugações."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "No Presente do Indicativo, a noção de tempo presente e modo indicativo decorre diretamente da junção do Radical/Tema com as DNPs, sem a intermediação de um sufixo temporal comum.",
+                "Na 1ª pessoa do singular (falo, vendo, parto, entrego), a Vogal Temática é absorvida pela DNP -o, resultando em $\\text{VT} = \\emptyset$ e $\\text{DMT} = \\emptyset$.",
+                "Nas demais pessoas (contamos = CONT + A + $\\emptyset$ + MOS), há Radical, VT e DNP, mas a DMT permanece zero ($\\emptyset$)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A04-G03-DESINENCIAS-VERBAIS-002",
+                  "targetTitle": "Ausência de DMT no Presente do Indicativo",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A04-G03-006",
+                  "targetTitle": "Questão 03: FUNRIO - IF-PA (contamos)",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -196,8 +499,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo Presente do Subjuntivo, ocorre uma inversão sistemática do vocalismo: as vogais temáticas originais são suprimidas ($\\text{VT} = \\emptyset$) e substituídas pelas vogais características do modo subjuntivo, que atuam morfologicamente como Desinência Modo-Temporal (DMT).\nExplicação consolidada\nVerbos de 1ª Conjugação (VT de origem A): Assumem a DMT -e- (amem = AM + $\\emptyset$ + E + m; reciclemos = RECICL + $\\emptyset$ + E + MOS).\nVerbos de 2ª e 3ª Conjugações (VT de origem E/I): Assumem a DMT -a- (vendam = VEND + $\\emptyset$ + A + m; possam = POSS + $\\emptyset$ + A + m, verbo poder).\nArmadilha: A vogal a em possam ou a vogal e em amem não são vogais temáticas, mas sim DMTs do Presente do Subjuntivo.Exemplificado por: (Questão FUNDATEC - possam)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No Presente do Subjuntivo, ocorre uma inversão sistemática do vocalismo: as vogais temáticas originais são suprimidas ($\\text{VT} = \\emptyset$) e substituídas pelas vogais características do modo subjuntivo, que atuam morfologicamente como Desinência Modo-Temporal (DMT)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbos de 1ª Conjugação (VT de origem A): Assumem a DMT -e- (amem = AM + $\\emptyset$ + E + m; reciclemos = RECICL + $\\emptyset$ + E + MOS).",
+                "Verbos de 2ª e 3ª Conjugações (VT de origem E/I): Assumem a DMT -a- (vendam = VEND + $\\emptyset$ + A + m; possam = POSS + $\\emptyset$ + A + m, verbo poder).",
+                "Armadilha: A vogal a em possam ou a vogal e em amem não são vogais temáticas, mas sim DMTs do Presente do Subjuntivo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A04-G03-DESINENCIAS-VERBAIS-003",
+                  "targetTitle": "A Armadilha da Troca Vocálica no Presente do Subjuntivo",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A04-G03-007",
+                  "targetTitle": "Questão 01: FUNDATEC - Pref. Vacaria/RS (dedicarmos, ajudará, possam)",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -210,8 +552,42 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo Pretérito Imperfeito do Indicativo das 2ª e 3ª conjugações (vender, partir, dormir, rir), a corrente doutrinária predominante em concursos públicos (liderada por Evanildo Bechara) estabelece que o bloco -ia- / -ie- constitui integralmente a Desinência Modo-Temporal, ficando a vogal temática ausente/absorvida.\nExplicação consolidada\n1ª Conjugação: DMT = -va- (com alomorfe -ve- em vós). Ex.: chorava (CHOR + A + VA + $\\emptyset$).\n2ª e 3ª Conjugações (Padrão Bechara): DMT = -ia- (com alomorfe -ie- em vós).\ndormíeis $\\rightarrow$ Radical DORM- + VT $\\emptyset$ + DMT -ÍE- + DNP -IS.\nriam $\\rightarrow$ Radical R- + VT $\\emptyset$ + DMT -IA- + DNP -M.\nA professora ressalta que essa abordagem é a convenção cobrada por bancas de alto nível (FGV, Cebraspe, FCC, Vunesp, FUNRIO).Incerteza associada: UNCERTAIN-A04-G03-DESINENCIAS-VERBAIS-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No Pretérito Imperfeito do Indicativo das 2ª e 3ª conjugações (vender, partir, dormir, rir), a corrente doutrinária predominante em concursos públicos (liderada por Evanildo Bechara) estabelece que o bloco -ia- / -ie- constitui integralmente a Desinência Modo-Temporal, ficando a vogal temática ausente/absorvida."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "1ª Conjugação: DMT = -va- (com alomorfe -ve- em vós). Ex.: chorava (CHOR + A + VA + $\\emptyset$).",
+                "2ª e 3ª Conjugações (Padrão Bechara): DMT = -ia- (com alomorfe -ie- em vós).",
+                "dormíeis $\\rightarrow$ Radical DORM- + VT $\\emptyset$ + DMT -ÍE- + DNP -IS.",
+                "riam $\\rightarrow$ Radical R- + VT $\\emptyset$ + DMT -IA- + DNP -M.",
+                "A professora ressalta que essa abordagem é a convenção cobrada por bancas de alto nível (FGV, Cebraspe, FCC, Vunesp, FUNRIO)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A04-G03-DESINENCIAS-VERBAIS-004",
+                  "targetTitle": "Divergência Gramatical no Pretérito Imperfeito (2ª/3ª Conjugações)",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -224,8 +600,48 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Pretérito Imperfeito do Subjuntivo e o Futuro do Presente do Indicativo preservam com clareza a estrutura clássica de 4 elementos, mantendo a Vogal Temática primitiva da conjugação.\nExplicação consolidada\nPretérito Imperfeito do Subjuntivo: DMT universal -sse- em todas as conjugações.\ncorrêssemos $\\rightarrow$ CORR (Radical) + E (VT) + SSE (DMT) + MOS (DNP).\nformulásseis $\\rightarrow$ FORMUL (Radical) + A (VT) + SSE (DMT) + IS (DNP).\nFuturo do Presente do Indicativo: DMT -re- / -ra- (ou -rá-).\ncorrerás $\\rightarrow$ CORR (Radical) + E (VT) + RA (DMT) + S (DNP).\najudará $\\rightarrow$ AJUD (Radical) + A (VT) + RÁ (DMT) + $\\emptyset$ (DNP)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Pretérito Imperfeito do Subjuntivo e o Futuro do Presente do Indicativo preservam com clareza a estrutura clássica de 4 elementos, mantendo a Vogal Temática primitiva da conjugação."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pretérito Imperfeito do Subjuntivo: DMT universal -sse- em todas as conjugações."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "corrêssemos $\\rightarrow$ CORR (Radical) + E (VT) + SSE (DMT) + MOS (DNP).",
+                "formulásseis $\\rightarrow$ FORMUL (Radical) + A (VT) + SSE (DMT) + IS (DNP)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Futuro do Presente do Indicativo: DMT -re- / -ra- (ou -rá-)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "correrás $\\rightarrow$ CORR (Radical) + E (VT) + RA (DMT) + S (DNP).",
+                "ajudará $\\rightarrow$ AJUD (Radical) + A (VT) + RÁ (DMT) + $\\emptyset$ (DNP)."
+              ]
             }
           ]
         },
@@ -238,8 +654,48 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Infinitivo Pessoal é a forma nominal flexionada que indica a pessoa gramatical do agente da oração reduzida. Estruturalmente, compõe-se de Radical + Vogal Temática + DMT de Infinitivo (-r-) + DNPs (-Ø, -es, -Ø, -mos, -des, -rem). A banca FUNDATEC aceita historicamente a rotulação escolar de que a terminação -ar em bloco é uma \"desinência de infinitivo\".\nExplicação consolidada\nNa forma dedicarmos (\"para nós dedicarmos\"):\nAnálise Rigorosa (Padrão Acadêmico/CESPE/FGV): dedic- (Radical), -a- (Vogal Temática de 1ª conj.), -r- (DMT de Infinitivo) e -mos (DNP de 1ª pessoa do plural).\nAnálise da Banca FUNDATEC: Aceita dedic (Radical), ar (desinência de infinitivo) e mos (DNP de 1ª pessoa do plural).\nA professora orienta o estudante a reconhecer essa peculiaridade da FUNDATEC para não anular mentalmente itens corretos sob a ótica dessa organizadora.Procedimento associado: (Macete do \"PARA\")"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Infinitivo Pessoal é a forma nominal flexionada que indica a pessoa gramatical do agente da oração reduzida. Estruturalmente, compõe-se de Radical + Vogal Temática + DMT de Infinitivo (-r-) + DNPs (-Ø, -es, -Ø, -mos, -des, -rem). A banca FUNDATEC aceita historicamente a rotulação escolar de que a terminação -ar em bloco é uma \"desinência de infinitivo\"."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Na forma dedicarmos (\"para nós dedicarmos\"):",
+                "Análise Rigorosa (Padrão Acadêmico/CESPE/FGV): dedic- (Radical), -a- (Vogal Temática de 1ª conj.), -r- (DMT de Infinitivo) e -mos (DNP de 1ª pessoa do plural).",
+                "Análise da Banca FUNDATEC: Aceita dedic (Radical), ar (desinência de infinitivo) e mos (DNP de 1ª pessoa do plural).",
+                "A professora orienta o estudante a reconhecer essa peculiaridade da FUNDATEC para não anular mentalmente itens corretos sob a ótica dessa organizadora."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A04-G03-DESINENCIAS-VERBAIS-005",
+                  "targetTitle": "Imprecisão Tradicional da Banca FUNDATEC",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A04-G03-DESINENCIAS-VERBAIS-004",
+                  "targetTitle": "Macete da Preposição \"PARA\" para o Infinitivo Pessoal",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -252,8 +708,57 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA terminação verbal -aram na 3ª pessoa do plural dos verbos de 1ª conjugação é morfologicamente homônima entre dois tempos do Modo Indicativo quando analisada isoladamente de uma frase contextualizadora.\nExplicação consolidada\nNa análise da forma puxaram (Questão Quadrix):\nPretérito Perfeito do Indicativo: Fato pontual consumado no passado (\"Ontem eles puxaram\").\nPretérito Mais-Que-Perfeito do Indicativo: Fato passado anterior a outro passado (\"Outrora eles puxaram\" = haviam puxado). Paradigma: puxara, puxaras, puxara, puxáramos, puxáreis, puxaram.\nAmbas as formas possuem pronúncia e grafia idênticas. Sem contexto textual que imponha a correlação verbal, a forma isolada pode pertencer legitimamente a qualquer um dos dois tempos.Exemplificado por: (Questão Quadrix)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A terminação verbal -aram na 3ª pessoa do plural dos verbos de 1ª conjugação é morfologicamente homônima entre dois tempos do Modo Indicativo quando analisada isoladamente de uma frase contextualizadora."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na análise da forma puxaram (Questão Quadrix):"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pretérito Perfeito do Indicativo: Fato pontual consumado no passado (\"Ontem eles puxaram\").",
+                "Pretérito Mais-Que-Perfeito do Indicativo: Fato passado anterior a outro passado (\"Outrora eles puxaram\" = haviam puxado). Paradigma: puxara, puxaras, puxara, puxáramos, puxáreis, puxaram."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ambas as formas possuem pronúncia e grafia idênticas. Sem contexto textual que imponha a correlação verbal, a forma isolada pode pertencer legitimamente a qualquer um dos dois tempos."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A04-G03-DESINENCIAS-VERBAIS-007",
+                  "targetTitle": "Homonímia da Terminação *-aram* Descontextualizada",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A04-G03-008",
+                  "targetTitle": "Questão 02: Quadrix - DATAPREV (puxaram)",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -266,8 +771,61 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nEm formas derivadas do tema do perfeito de verbos anômalos ou irregulares (como o verbo pôr), a fusão do radical variante com a vogal temática constitui o Tema Verbal.\nExplicação consolidada\nNa questão da FGV sobre a forma pusera (Pretérito Mais-Que-Perfeito do Indicativo):\npus- = Radical do pretérito perfeito do verbo pôr.\n-e- = Vogal Temática da 2ª conjugação (poer).\npuse- = Tema Verbal ($\\text{Tema} = \\text{Radical} + \\text{VT}$).\n-ra = DMT do Pretérito Mais-Que-Perfeito.\nØ = DNP de 3ª pessoa do singular.\nO segmento puse- classifica-se estritamente como Tema.e \nExemplificado por: (Questão FGV)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em formas derivadas do tema do perfeito de verbos anômalos ou irregulares (como o verbo pôr), a fusão do radical variante com a vogal temática constitui o Tema Verbal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na questão da FGV sobre a forma pusera (Pretérito Mais-Que-Perfeito do Indicativo):"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "pus- = Radical do pretérito perfeito do verbo pôr.",
+                "-e- = Vogal Temática da 2ª conjugação (poer).",
+                "puse- = Tema Verbal ($\\text{Tema} = \\text{Radical} + \\text{VT}$).",
+                "-ra = DMT do Pretérito Mais-Que-Perfeito.",
+                "Ø = DNP de 3ª pessoa do singular.",
+                "O segmento puse- classifica-se estritamente como Tema."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A04-G03-DESINENCIAS-VERBAIS-001",
+                  "targetTitle": "As Três Conjugações Verbais e a Filiação Etimológica do Verbo Pôr",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A04-G03-DESINENCIAS-VERBAIS-002",
+                  "targetTitle": "Radical, Vogal Temática (VT) e Formação do Tema Verbal",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A04-G03-009",
+                  "targetTitle": "Questão 03: FGV - SEDUC-AM (pusera)",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -280,68 +838,55 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo Pretérito Imperfeito do Indicativo dos verbos de 1ª conjugação, a Desinência Modo-Temporal é exclusivamente o morfema -va-. O fonema nasal final -m atua de forma autônoma como Desinência Número-Pessoal de 3ª pessoa do plural.\nExplicação consolidada\nNa análise do item do CESPE/CEBRASPE sobre zombavam:\nzomb- = Radical.\n-a- = Morfema Temático (Vogal Temática de 1ª conjugação).\n-va- = Morfema Modo-Temporal (DMT).\n-m = Morfema Número-Pessoal (DNP).\nO CESPE afirmou que -vam seria o \"morfema modo-temporal\". Como a banca fundiu a DMT (-va-) com a DNP (-m), o item é taxativamente ERRADO.Exemplificado por: (Questão CESPE)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No Pretérito Imperfeito do Indicativo dos verbos de 1ª conjugação, a Desinência Modo-Temporal é exclusivamente o morfema -va-. O fonema nasal final -m atua de forma autônoma como Desinência Número-Pessoal de 3ª pessoa do plural."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na análise do item do CESPE/CEBRASPE sobre zombavam:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "zomb- = Radical.",
+                "-a- = Morfema Temático (Vogal Temática de 1ª conjugação).",
+                "-va- = Morfema Modo-Temporal (DMT).",
+                "-m = Morfema Número-Pessoal (DNP).",
+                "O CESPE afirmou que -vam seria o \"morfema modo-temporal\". Como a banca fundiu a DMT (-va-) com a DNP (-m), o item é taxativamente ERRADO."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A04-G03-DESINENCIAS-VERBAIS-006",
+                  "targetTitle": "Fusão Indevida de DMT e DNP em Provas do CESPE",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A04-G03-010",
+                  "targetTitle": "Questão 04: CESPE/CEBRASPE - SEDUC-AM (zombavam)",
+                  "targetUnitId": "IP-A04-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs verbos na Língua Portuguesa distribuem-se estritamente em três conjugações, definidas pela vogal temática presente no infinitivo impessoal. Não existe uma 4ª conjugação no idioma.\nExplicação consolidada\n1ª Conjugação: Verbos com Vogal Temática A (amar, cantar, falar).\n2ª Conjugação: Verbos com Vogal Temática E (beber, vender).\n3ª Conjugação: Verbos com Vogal Temática I (partir, digerir).\nSituação do Verbo Pôr: O verbo pôr (e seus derivados: repor, compor, dispor, propor) pertence à 2ª conjugação. Historicamente, sua forma no latim (ponere) evoluiu para poer no português arcaico. Com a supressão fonética do e intervocálico na evolução para o português moderno (pôr), o verbo manteve seu enquadramento morfológico na 2ª conjugação, preservando o vocalismo temático e em formas flexionadas (ex.: pões, põe, púsesse, pusera).\nCritérios de reconhecimento ou aplicação\nEncontrando formas terminadas em -or, reconduza-as ao infinitivo pôr e classifique-as obrigatoriamente na 2ª conjugação.\nRelações\nExpande em: 002Evidenciado por: VIS-A04-G03-DESINENCIAS-VERBAIS-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA estrutura básica da palavra verbal apoia-se em três elementos fundamentais:\nRadical: Elemento irredutível que comporta a carga semântica lexical básica.\nVogal Temática (VT): Morfema que se acopla ao radical para preparar a base verbal e indicar a conjugação.\nTema Verbal: Estrutura formada pela união do Radical com a Vogal Temática:\n\\text{Tema} = \\text{Radical} + \\text{Vogal Temática}\nExplicação consolidada\nPara determinar o radical e a vogal temática com segurança, a forma flexionada deve ser remetida ao seu Infinitivo Impessoal:\nA desinência de infinitivo -r é retirada; a vogal remanescente na extremidade é a Vogal Temática (a, e ou i); a porção anterior é o Radical.\nEm verbos regulares: falar $\\rightarrow$ Radical fal-, VT a, Tema fala-.\nEm verbos irregulares no tema do perfeito: em pusera, o radical de perfeito é pus-, a VT da 2ª conjugação é e, compondo o tema puse-.Exemplificado por:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA Desinência Modo-Temporal (DMT) é o morfema flexional responsável por indicar simultaneamente o modo (indicativo, subjuntivo, imperativo) e o tempo (presente, pretérito, futuro) da forma verbal. Didaticamente, é conceituada como a \"muleta do tempo\".\nExplicação consolidada\nPropriedade Identificadora: A DMT caracteriza-se por ser a marca mórfica comum que se repete ao longo das diversas pessoas gramaticais daquele tempo verbal específico.\nEnquanto a DNP se altera a cada mudança de sujeito, a DMT permanece fixa, \"impregnando\" todo o paradigma conjugacional.\nExemplo: Em falávamos, falavas, falavam, o segmento -va- é a marca recorrente do Pretérito Imperfeito do Indicativo.\nRelações\nContrasta com: (DNP)\nAplica-se em:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA Desinência Número-Pessoal (DNP) é o morfema flexional sufixal posicionado no final da estrutura verbal responsável por individualizar a pessoa gramatical (1ª, 2ª ou 3ª) e o número (singular ou plural).\nExplicação consolidada\nDiferente da DMT, a DNP é o morfema particular que varia de pessoa para pessoa:\n1ª Pessoa Singular (Eu): -o (no Presente do Indicativo: fal-o), -i (no Futuro do Presente: falare-i) ou Ø (morfema zero nos Pretéritos e Subjuntivo: falava-Ø, fale-Ø).\n2ª Pessoa Singular (Tu): -s (fala-s, falava-s, fale-s).\n3ª Pessoa Singular (Ele/Ela): Ø (morfema zero em praticamente todos os tempos: fala-Ø, falava-Ø, fale-Ø).\n1ª Pessoa Plural (Nós): -mos (fala-mos, faláva-mos, fale-mos).\n2ª Pessoa Plural (Vós): -is ou -des (fala-is, faláve-is, fale-is, insistir-des).\n3ª Pessoa Plural (Eles/Elas): -m (fala-m, falava-m, fale-m) ou -ão (falar-ão).Dica associada: TIP-A04-G03-DESINENCIAS-VERBAIS-004 (O -is como âncora do vós)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAlomorfia é a ocorrência de variantes formais de um mesmo morfema condicionadas pelo ambiente fonético ou estrutural da conjugação, sem que haja alteração na sua função gramatical primária.\nExplicação consolidada\nAs fontes registram dois casos canônicos de alomorfia analisados no quadro:\nAlomorfia de Vogal Temática: No verbo partir (3ª conjugação, VT padrão i), as formas do Presente do Indicativo partes, parte e partem exibem a vogal e. O elemento e é classificado como alomorfe da vogal temática i.\nAlomorfia de Desinência Modo-Temporal: No Pretérito Imperfeito do Indicativo de 1ª conjugação (falar), a DMT padrão é -va-. Na 2ª pessoa do plural (faláveis), a DMT assume a forma -ve-. O segmento -ve- é um alomorfe da DMT -va-.\nRelações\nExpande: e \nExemplificado por:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Método dos 3 Passos é um procedimento analítico estruturado para segmentar e classificar os constituintes morfológicos de qualquer verbo flexionado, substituindo a memorização aleatória pelo raciocínio lógico.\nExplicação consolidada\nALGORITMO DOS 3 PASSOS 1º PASSO: ACHAR A VOGAL TEMÁTICA • \"Jogar\" o verbo para o Infinitivo Impessoal. • Identificar a vogal antes do \"-r\" (A = 1ª, E = 2ª, I = 3ª). • Isolar o Radical e obter a base do Tema (Radical + VT). 2º PASSO: ACHAR A DESINÊNCIA MODO-TEMPORAL (DMT) • Conjugar mentalmente o tempo verbal com o apoio de marcadores. • Isolar a desinência COMUM que se repete em todas as pessoas. 3º PASSO: ACHAR A DESINÊNCIA NÚMERO-PESSOAL (DNP) • Observar a terminação específica da pessoa solicitada. • Isolar a desinência PARTICULAR que varia de pessoa para pessoa.\nRelações\nImplementado em: \nAplicado em: Todas as unidades EX deste grupo."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Presente do Indicativo é estruturalmente marcado pela inexistência de Desinência Modo-Temporal (DMT = $\\emptyset$) em todas as pessoas gramaticais e conjugações.\nExplicação consolidada\nNo Presente do Indicativo, a noção de tempo presente e modo indicativo decorre diretamente da junção do Radical/Tema com as DNPs, sem a intermediação de um sufixo temporal comum.\nNa 1ª pessoa do singular (falo, vendo, parto, entrego), a Vogal Temática é absorvida pela DNP -o, resultando em $\\text{VT} = \\emptyset$ e $\\text{DMT} = \\emptyset$.\nNas demais pessoas (contamos = CONT + A + $\\emptyset$ + MOS), há Radical, VT e DNP, mas a DMT permanece zero ($\\emptyset$).Exemplificado por: (Questão FUNRIO - contamos)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo Presente do Subjuntivo, ocorre uma inversão sistemática do vocalismo: as vogais temáticas originais são suprimidas ($\\text{VT} = \\emptyset$) e substituídas pelas vogais características do modo subjuntivo, que atuam morfologicamente como Desinência Modo-Temporal (DMT).\nExplicação consolidada\nVerbos de 1ª Conjugação (VT de origem A): Assumem a DMT -e- (amem = AM + $\\emptyset$ + E + m; reciclemos = RECICL + $\\emptyset$ + E + MOS).\nVerbos de 2ª e 3ª Conjugações (VT de origem E/I): Assumem a DMT -a- (vendam = VEND + $\\emptyset$ + A + m; possam = POSS + $\\emptyset$ + A + m, verbo poder).\nArmadilha: A vogal a em possam ou a vogal e em amem não são vogais temáticas, mas sim DMTs do Presente do Subjuntivo.Exemplificado por: (Questão FUNDATEC - possam)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo Pretérito Imperfeito do Indicativo das 2ª e 3ª conjugações (vender, partir, dormir, rir), a corrente doutrinária predominante em concursos públicos (liderada por Evanildo Bechara) estabelece que o bloco -ia- / -ie- constitui integralmente a Desinência Modo-Temporal, ficando a vogal temática ausente/absorvida.\nExplicação consolidada\n1ª Conjugação: DMT = -va- (com alomorfe -ve- em vós). Ex.: chorava (CHOR + A + VA + $\\emptyset$).\n2ª e 3ª Conjugações (Padrão Bechara): DMT = -ia- (com alomorfe -ie- em vós).\ndormíeis $\\rightarrow$ Radical DORM- + VT $\\emptyset$ + DMT -ÍE- + DNP -IS.\nriam $\\rightarrow$ Radical R- + VT $\\emptyset$ + DMT -IA- + DNP -M.\nA professora ressalta que essa abordagem é a convenção cobrada por bancas de alto nível (FGV, Cebraspe, FCC, Vunesp, FUNRIO).Incerteza associada: UNCERTAIN-A04-G03-DESINENCIAS-VERBAIS-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Pretérito Imperfeito do Subjuntivo e o Futuro do Presente do Indicativo preservam com clareza a estrutura clássica de 4 elementos, mantendo a Vogal Temática primitiva da conjugação.\nExplicação consolidada\nPretérito Imperfeito do Subjuntivo: DMT universal -sse- em todas as conjugações.\ncorrêssemos $\\rightarrow$ CORR (Radical) + E (VT) + SSE (DMT) + MOS (DNP).\nformulásseis $\\rightarrow$ FORMUL (Radical) + A (VT) + SSE (DMT) + IS (DNP).\nFuturo do Presente do Indicativo: DMT -re- / -ra- (ou -rá-).\ncorrerás $\\rightarrow$ CORR (Radical) + E (VT) + RA (DMT) + S (DNP).\najudará $\\rightarrow$ AJUD (Radical) + A (VT) + RÁ (DMT) + $\\emptyset$ (DNP)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Infinitivo Pessoal é a forma nominal flexionada que indica a pessoa gramatical do agente da oração reduzida. Estruturalmente, compõe-se de Radical + Vogal Temática + DMT de Infinitivo (-r-) + DNPs (-Ø, -es, -Ø, -mos, -des, -rem). A banca FUNDATEC aceita historicamente a rotulação escolar de que a terminação -ar em bloco é uma \"desinência de infinitivo\".\nExplicação consolidada\nNa forma dedicarmos (\"para nós dedicarmos\"):\nAnálise Rigorosa (Padrão Acadêmico/CESPE/FGV): dedic- (Radical), -a- (Vogal Temática de 1ª conj.), -r- (DMT de Infinitivo) e -mos (DNP de 1ª pessoa do plural).\nAnálise da Banca FUNDATEC: Aceita dedic (Radical), ar (desinência de infinitivo) e mos (DNP de 1ª pessoa do plural).\nA professora orienta o estudante a reconhecer essa peculiaridade da FUNDATEC para não anular mentalmente itens corretos sob a ótica dessa organizadora.Procedimento associado: (Macete do \"PARA\")"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA terminação verbal -aram na 3ª pessoa do plural dos verbos de 1ª conjugação é morfologicamente homônima entre dois tempos do Modo Indicativo quando analisada isoladamente de uma frase contextualizadora.\nExplicação consolidada\nNa análise da forma puxaram (Questão Quadrix):\nPretérito Perfeito do Indicativo: Fato pontual consumado no passado (\"Ontem eles puxaram\").\nPretérito Mais-Que-Perfeito do Indicativo: Fato passado anterior a outro passado (\"Outrora eles puxaram\" = haviam puxado). Paradigma: puxara, puxaras, puxara, puxáramos, puxáreis, puxaram.\nAmbas as formas possuem pronúncia e grafia idênticas. Sem contexto textual que imponha a correlação verbal, a forma isolada pode pertencer legitimamente a qualquer um dos dois tempos.Exemplificado por: (Questão Quadrix)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nEm formas derivadas do tema do perfeito de verbos anômalos ou irregulares (como o verbo pôr), a fusão do radical variante com a vogal temática constitui o Tema Verbal.\nExplicação consolidada\nNa questão da FGV sobre a forma pusera (Pretérito Mais-Que-Perfeito do Indicativo):\npus- = Radical do pretérito perfeito do verbo pôr.\n-e- = Vogal Temática da 2ª conjugação (poer).\npuse- = Tema Verbal ($\\text{Tema} = \\text{Radical} + \\text{VT}$).\n-ra = DMT do Pretérito Mais-Que-Perfeito.\nØ = DNP de 3ª pessoa do singular.\nO segmento puse- classifica-se estritamente como Tema.e \nExemplificado por: (Questão FGV)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo Pretérito Imperfeito do Indicativo dos verbos de 1ª conjugação, a Desinência Modo-Temporal é exclusivamente o morfema -va-. O fonema nasal final -m atua de forma autônoma como Desinência Número-Pessoal de 3ª pessoa do plural.\nExplicação consolidada\nNa análise do item do CESPE/CEBRASPE sobre zombavam:\nzomb- = Radical.\n-a- = Morfema Temático (Vogal Temática de 1ª conjugação).\n-va- = Morfema Modo-Temporal (DMT).\n-m = Morfema Número-Pessoal (DNP).\nO CESPE afirmou que -vam seria o \"morfema modo-temporal\". Como a banca fundiu a DMT (-va-) com a DNP (-m), o item é taxativamente ERRADO.Exemplificado por: (Questão CESPE)"
         }
       ]
     },
@@ -442,7 +987,9 @@
               "PROC-A04-G03-DESINENCIAS-VERBAIS-001",
               "EXP-IP-A04-G03-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -538,7 +1085,9 @@
               "PROC-A04-G03-DESINENCIAS-VERBAIS-002",
               "EXP-IP-A04-G03-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -649,7 +1198,9 @@
               "PROC-A04-G03-DESINENCIAS-VERBAIS-003",
               "EXP-IP-A04-G03-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -753,7 +1304,9 @@
               "PROC-A04-G03-DESINENCIAS-VERBAIS-004",
               "EXP-IP-A04-G03-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -815,7 +1368,9 @@
               "PROC-A04-G03-DESINENCIAS-VERBAIS-005",
               "EXP-IP-A04-G03-PROC-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -907,7 +1462,9 @@
               "CONTRAST-IP-A04-G03-001",
               "EXP-IP-A04-G03-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -974,7 +1531,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-001",
               "EXP-IP-A04-G03-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1023,7 +1582,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-002",
               "EXP-IP-A04-G03-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1143,7 +1704,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-003",
               "EXP-IP-A04-G03-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1192,7 +1755,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-004",
               "EXP-IP-A04-G03-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1256,7 +1821,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-005",
               "EXP-IP-A04-G03-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1320,7 +1887,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-006",
               "EXP-IP-A04-G03-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1381,7 +1950,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-007",
               "EXP-IP-A04-G03-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1430,7 +2001,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-008",
               "EXP-IP-A04-G03-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1479,7 +2052,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-009",
               "EXP-IP-A04-G03-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1528,7 +2103,9 @@
               "WORKED_EXAMPLE-IP-A04-G03-010",
               "EXP-IP-A04-G03-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1578,7 +2155,9 @@
               "WARN-A04-G03-DESINENCIAS-VERBAIS-001",
               "EXP-IP-A04-G03-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1614,7 +2193,9 @@
               "WARN-A04-G03-DESINENCIAS-VERBAIS-002",
               "EXP-IP-A04-G03-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1650,7 +2231,9 @@
               "WARN-A04-G03-DESINENCIAS-VERBAIS-003",
               "EXP-IP-A04-G03-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1686,7 +2269,9 @@
               "WARN-A04-G03-DESINENCIAS-VERBAIS-004",
               "EXP-IP-A04-G03-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1721,7 +2306,9 @@
               "WARN-A04-G03-DESINENCIAS-VERBAIS-005",
               "EXP-IP-A04-G03-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1757,7 +2344,9 @@
               "WARN-A04-G03-DESINENCIAS-VERBAIS-006",
               "EXP-IP-A04-G03-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1793,33 +2382,147 @@
               "WARN-A04-G03-DESINENCIAS-VERBAIS-007",
               "EXP-IP-A04-G03-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**As Três Conjugações Verbais e a Filiação Etimológica do Verbo Pôr**: Definição ou ideia central\nOs verbos na Língua Portuguesa distribuem-se estritamente em três conjugações, definidas pela vogal temática presente no infinitivo impessoal. Não existe uma 4ª conjugação no idioma.\nExplicação consolidada\n1ª Conjugação: Verbos com Vogal Temática A (amar, cantar, falar).\n2ª Conjugação: Verbos com Vogal Temática E (beber, vender).\n3ª Conjugação: Verbos com Vogal Temática I (partir, digerir).\nSituação do Verbo Pôr: O verbo pôr (e seus derivados: repor, compor, dispor, propor) pertence à 2ª conjugação. Historicamente, sua forma no latim (ponere) evoluiu para poer no português arcaico. Com a supressão fonética do e intervocálico na evolução para o português moderno (pôr), o verbo manteve seu enquadramento morfológico na 2ª conjugação, preservando o vocalismo temático e em formas flexionadas (ex.: pões, põe, púsesse, pusera).\nCritérios de reconhecimento ou aplicação\nEncontrando formas terminadas em -or, reconduza-as ao infinitivo pôr e classifique-as obrigatoriamente na 2ª conjugação.\nRelações\nExpande em: 002Evidenciado por: VIS-A04-G03-DESINENCIAS-VERBAIS-001",
-            "**Radical, Vogal Temática (VT) e Formação do Tema Verbal**: Definição ou ideia central\nA estrutura básica da palavra verbal apoia-se em três elementos fundamentais:\nRadical: Elemento irredutível que comporta a carga semântica lexical básica.\nVogal Temática (VT): Morfema que se acopla ao radical para preparar a base verbal e indicar a conjugação.\nTema Verbal: Estrutura formada pela união do Radical com a Vogal Temática:\n\\text{Tema} = \\text{Radical} + \\text{Vogal Temática}\nExplicação consolidada\nPara determinar o radical e a vogal temática com segurança, a forma flexionada deve ser remetida ao seu Infinitivo Impessoal:\nA desinência de infinitivo -r é retirada; a vogal remanescente na extremidade é a Vogal Temática (a, e ou i); a porção anterior é o Radical.\nEm verbos regulares: falar $\\rightarrow$ Radical fal-, VT a, Tema fala-.\nEm verbos irregulares no tema do perfeito: em pusera, o radical de perfeito é pus-, a VT da 2ª conjugação é e, compondo o tema puse-.Exemplificado por:",
-            "**Desinência Modo-Temporal (DMT) e o Conceito de \"Muleta do Tempo\"**: Definição ou ideia central\nA Desinência Modo-Temporal (DMT) é o morfema flexional responsável por indicar simultaneamente o modo (indicativo, subjuntivo, imperativo) e o tempo (presente, pretérito, futuro) da forma verbal. Didaticamente, é conceituada como a \"muleta do tempo\".\nExplicação consolidada\nPropriedade Identificadora: A DMT caracteriza-se por ser a marca mórfica comum que se repete ao longo das diversas pessoas gramaticais daquele tempo verbal específico.\nEnquanto a DNP se altera a cada mudança de sujeito, a DMT permanece fixa, \"impregnando\" todo o paradigma conjugacional.\nExemplo: Em falávamos, falavas, falavam, o segmento -va- é a marca recorrente do Pretérito Imperfeito do Indicativo.\nRelações\nContrasta com: (DNP)\nAplica-se em:",
-            "**Desinência Número-Pessoal (DNP) e Paradigmas Flexionais**: Definição ou ideia central\nA Desinência Número-Pessoal (DNP) é o morfema flexional sufixal posicionado no final da estrutura verbal responsável por individualizar a pessoa gramatical (1ª, 2ª ou 3ª) e o número (singular ou plural).\nExplicação consolidada\nDiferente da DMT, a DNP é o morfema particular que varia de pessoa para pessoa:\n1ª Pessoa Singular (Eu): -o (no Presente do Indicativo: fal-o), -i (no Futuro do Presente: falare-i) ou Ø (morfema zero nos Pretéritos e Subjuntivo: falava-Ø, fale-Ø).\n2ª Pessoa Singular (Tu): -s (fala-s, falava-s, fale-s).\n3ª Pessoa Singular (Ele/Ela): Ø (morfema zero em praticamente todos os tempos: fala-Ø, falava-Ø, fale-Ø).\n1ª Pessoa Plural (Nós): -mos (fala-mos, faláva-mos, fale-mos).\n2ª Pessoa Plural (Vós): -is ou -des (fala-is, faláve-is, fale-is, insistir-des).\n3ª Pessoa Plural (Eles/Elas): -m (fala-m, falava-m, fale-m) ou -ão (falar-ão).Dica associada: TIP-A04-G03-DESINENCIAS-VERBAIS-004 (O -is como âncora do vós)",
-            "**Fenômeno da Alomorfia Morfológica em Verbos**: Definição ou ideia central\nAlomorfia é a ocorrência de variantes formais de um mesmo morfema condicionadas pelo ambiente fonético ou estrutural da conjugação, sem que haja alteração na sua função gramatical primária.\nExplicação consolidada\nAs fontes registram dois casos canônicos de alomorfia analisados no quadro:\nAlomorfia de Vogal Temática: No verbo partir (3ª conjugação, VT padrão i), as formas do Presente do Indicativo partes, parte e partem exibem a vogal e. O elemento e é classificado como alomorfe da vogal temática i.\nAlomorfia de Desinência Modo-Temporal: No Pretérito Imperfeito do Indicativo de 1ª conjugação (falar), a DMT padrão é -va-. Na 2ª pessoa do plural (faláveis), a DMT assume a forma -ve-. O segmento -ve- é um alomorfe da DMT -va-.\nRelações\nExpande: e \nExemplificado por:",
-            "**O Método dos 3 Passos para Decomposição Mórfica Verbal**: Definição ou ideia central\nO Método dos 3 Passos é um procedimento analítico estruturado para segmentar e classificar os constituintes morfológicos de qualquer verbo flexionado, substituindo a memorização aleatória pelo raciocínio lógico.\nExplicação consolidada\nALGORITMO DOS 3 PASSOS 1º PASSO: ACHAR A VOGAL TEMÁTICA • \"Jogar\" o verbo para o Infinitivo Impessoal. • Identificar a vogal antes do \"-r\" (A = 1ª, E = 2ª, I = 3ª). • Isolar o Radical e obter a base do Tema (Radical + VT). 2º PASSO: ACHAR A DESINÊNCIA MODO-TEMPORAL (DMT) • Conjugar mentalmente o tempo verbal com o apoio de marcadores. • Isolar a desinência COMUM que se repete em todas as pessoas. 3º PASSO: ACHAR A DESINÊNCIA NÚMERO-PESSOAL (DNP) • Observar a terminação específica da pessoa solicitada. • Isolar a desinência PARTICULAR que varia de pessoa para pessoa.\nRelações\nImplementado em: \nAplicado em: Todas as unidades EX deste grupo.",
-            "**Comportamento Mórfico do Presente do Indicativo (Ausência de DMT)**: Definição ou ideia central\nO Presente do Indicativo é estruturalmente marcado pela inexistência de Desinência Modo-Temporal (DMT = $\\emptyset$) em todas as pessoas gramaticais e conjugações.\nExplicação consolidada\nNo Presente do Indicativo, a noção de tempo presente e modo indicativo decorre diretamente da junção do Radical/Tema com as DNPs, sem a intermediação de um sufixo temporal comum.\nNa 1ª pessoa do singular (falo, vendo, parto, entrego), a Vogal Temática é absorvida pela DNP -o, resultando em $\\text{VT} = \\emptyset$ e $\\text{DMT} = \\emptyset$.\nNas demais pessoas (contamos = CONT + A + $\\emptyset$ + MOS), há Radical, VT e DNP, mas a DMT permanece zero ($\\emptyset$).Exemplificado por: (Questão FUNRIO - contamos)",
-            "**Comportamento Mórfico do Presente do Subjuntivo (Troca Vocálica e VT Zero)**: Definição ou ideia central\nNo Presente do Subjuntivo, ocorre uma inversão sistemática do vocalismo: as vogais temáticas originais são suprimidas ($\\text{VT} = \\emptyset$) e substituídas pelas vogais características do modo subjuntivo, que atuam morfologicamente como Desinência Modo-Temporal (DMT).\nExplicação consolidada\nVerbos de 1ª Conjugação (VT de origem A): Assumem a DMT -e- (amem = AM + $\\emptyset$ + E + m; reciclemos = RECICL + $\\emptyset$ + E + MOS).\nVerbos de 2ª e 3ª Conjugações (VT de origem E/I): Assumem a DMT -a- (vendam = VEND + $\\emptyset$ + A + m; possam = POSS + $\\emptyset$ + A + m, verbo poder).\nArmadilha: A vogal a em possam ou a vogal e em amem não são vogais temáticas, mas sim DMTs do Presente do Subjuntivo.Exemplificado por: (Questão FUNDATEC - possam)",
-            "**Pretérito Imperfeito do Indicativo e a Doutrina de Evanildo Bechara**: Definição ou ideia central\nNo Pretérito Imperfeito do Indicativo das 2ª e 3ª conjugações (vender, partir, dormir, rir), a corrente doutrinária predominante em concursos públicos (liderada por Evanildo Bechara) estabelece que o bloco -ia- / -ie- constitui integralmente a Desinência Modo-Temporal, ficando a vogal temática ausente/absorvida.\nExplicação consolidada\n1ª Conjugação: DMT = -va- (com alomorfe -ve- em vós). Ex.: chorava (CHOR + A + VA + $\\emptyset$).\n2ª e 3ª Conjugações (Padrão Bechara): DMT = -ia- (com alomorfe -ie- em vós).\ndormíeis $\\rightarrow$ Radical DORM- + VT $\\emptyset$ + DMT -ÍE- + DNP -IS.\nriam $\\rightarrow$ Radical R- + VT $\\emptyset$ + DMT -IA- + DNP -M.\nA professora ressalta que essa abordagem é a convenção cobrada por bancas de alto nível (FGV, Cebraspe, FCC, Vunesp, FUNRIO).Incerteza associada: UNCERTAIN-A04-G03-DESINENCIAS-VERBAIS-001",
-            "**Pretérito Imperfeito do Subjuntivo e Futuro do Presente do Indicativo**: Definição ou ideia central\nO Pretérito Imperfeito do Subjuntivo e o Futuro do Presente do Indicativo preservam com clareza a estrutura clássica de 4 elementos, mantendo a Vogal Temática primitiva da conjugação.\nExplicação consolidada\nPretérito Imperfeito do Subjuntivo: DMT universal -sse- em todas as conjugações.\ncorrêssemos $\\rightarrow$ CORR (Radical) + E (VT) + SSE (DMT) + MOS (DNP).\nformulásseis $\\rightarrow$ FORMUL (Radical) + A (VT) + SSE (DMT) + IS (DNP).\nFuturo do Presente do Indicativo: DMT -re- / -ra- (ou -rá-).\ncorrerás $\\rightarrow$ CORR (Radical) + E (VT) + RA (DMT) + S (DNP).\najudará $\\rightarrow$ AJUD (Radical) + A (VT) + RÁ (DMT) + $\\emptyset$ (DNP).",
-            "**Estrutura Mórfica do Infinitivo Pessoal e a Abordagem Tradicional da FUNDATEC**: Definição ou ideia central\nO Infinitivo Pessoal é a forma nominal flexionada que indica a pessoa gramatical do agente da oração reduzida. Estruturalmente, compõe-se de Radical + Vogal Temática + DMT de Infinitivo (-r-) + DNPs (-Ø, -es, -Ø, -mos, -des, -rem). A banca FUNDATEC aceita historicamente a rotulação escolar de que a terminação -ar em bloco é uma \"desinência de infinitivo\".\nExplicação consolidada\nNa forma dedicarmos (\"para nós dedicarmos\"):\nAnálise Rigorosa (Padrão Acadêmico/CESPE/FGV): dedic- (Radical), -a- (Vogal Temática de 1ª conj.), -r- (DMT de Infinitivo) e -mos (DNP de 1ª pessoa do plural).\nAnálise da Banca FUNDATEC: Aceita dedic (Radical), ar (desinência de infinitivo) e mos (DNP de 1ª pessoa do plural).\nA professora orienta o estudante a reconhecer essa peculiaridade da FUNDATEC para não anular mentalmente itens corretos sob a ótica dessa organizadora.Procedimento associado: (Macete do \"PARA\")",
-            "**Homonímia Temporal Descontextualizada na Terminação *-aram***: Definição ou ideia central\nA terminação verbal -aram na 3ª pessoa do plural dos verbos de 1ª conjugação é morfologicamente homônima entre dois tempos do Modo Indicativo quando analisada isoladamente de uma frase contextualizadora.\nExplicação consolidada\nNa análise da forma puxaram (Questão Quadrix):\nPretérito Perfeito do Indicativo: Fato pontual consumado no passado (\"Ontem eles puxaram\").\nPretérito Mais-Que-Perfeito do Indicativo: Fato passado anterior a outro passado (\"Outrora eles puxaram\" = haviam puxado). Paradigma: puxara, puxaras, puxara, puxáramos, puxáreis, puxaram.\nAmbas as formas possuem pronúncia e grafia idênticas. Sem contexto textual que imponha a correlação verbal, a forma isolada pode pertencer legitimamente a qualquer um dos dois tempos.Exemplificado por: (Questão Quadrix)",
-            "**Tema Verbal em Formas Irregulares do Perfeito (*pusera*)**: Definição ou ideia central\nEm formas derivadas do tema do perfeito de verbos anômalos ou irregulares (como o verbo pôr), a fusão do radical variante com a vogal temática constitui o Tema Verbal.\nExplicação consolidada\nNa questão da FGV sobre a forma pusera (Pretérito Mais-Que-Perfeito do Indicativo):\npus- = Radical do pretérito perfeito do verbo pôr.\n-e- = Vogal Temática da 2ª conjugação (poer).\npuse- = Tema Verbal ($\\text{Tema} = \\text{Radical} + \\text{VT}$).\n-ra = DMT do Pretérito Mais-Que-Perfeito.\nØ = DNP de 3ª pessoa do singular.\nO segmento puse- classifica-se estritamente como Tema.e \nExemplificado por: (Questão FGV)",
-            "**Distinção Rigorosa entre DMT e DNP no Pretérito Imperfeito (*zombavam*)**: Definição ou ideia central\nNo Pretérito Imperfeito do Indicativo dos verbos de 1ª conjugação, a Desinência Modo-Temporal é exclusivamente o morfema -va-. O fonema nasal final -m atua de forma autônoma como Desinência Número-Pessoal de 3ª pessoa do plural.\nExplicação consolidada\nNa análise do item do CESPE/CEBRASPE sobre zombavam:\nzomb- = Radical.\n-a- = Morfema Temático (Vogal Temática de 1ª conjugação).\n-va- = Morfema Modo-Temporal (DMT).\n-m = Morfema Número-Pessoal (DNP).\nO CESPE afirmou que -vam seria o \"morfema modo-temporal\". Como a banca fundiu a DMT (-va-) com a DNP (-m), o item é taxativamente ERRADO.Exemplificado por: (Questão CESPE)"
-          ]
+          "term": "As Três Conjugações Verbais e a Filiação Etimológica do Verbo Pôr",
+          "shortDefinition": "Os verbos na Língua Portuguesa distribuem-se estritamente em três conjugações, definidas pela vogal temática presente no infinitivo impessoal. Não existe uma 4ª conjugação no idioma.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-01"
+          }
+        },
+        {
+          "term": "Radical, Vogal Temática (VT) e Formação do Tema Verbal",
+          "shortDefinition": "A estrutura básica da palavra verbal apoia-se em três elementos fundamentais:",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-02"
+          },
+          "operationalUse": "Para determinar o radical e a vogal temática com segurança, a forma flexionada deve ser remetida ao seu Infinitivo Impessoal:"
+        },
+        {
+          "term": "Desinência Modo-Temporal (DMT) e o Conceito de \"Muleta do Tempo\"",
+          "shortDefinition": "A Desinência Modo-Temporal (DMT) é o morfema flexional responsável por indicar simultaneamente o modo (indicativo, subjuntivo, imperativo) e o tempo (presente, pretérito, futuro) da forma verbal. Didaticamente, é conceituada como a \"muleta do tempo\".",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-03"
+          }
+        },
+        {
+          "term": "Desinência Número-Pessoal (DNP) e Paradigmas Flexionais",
+          "shortDefinition": "A Desinência Número-Pessoal (DNP) é o morfema flexional sufixal posicionado no final da estrutura verbal responsável por individualizar a pessoa gramatical (1ª, 2ª ou 3ª) e o número (singular ou plural).",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-04"
+          },
+          "operationalUse": "Diferente da DMT, a DNP é o morfema particular que varia de pessoa para pessoa:"
+        },
+        {
+          "term": "Fenômeno da Alomorfia Morfológica em Verbos",
+          "shortDefinition": "Alomorfia é a ocorrência de variantes formais de um mesmo morfema condicionadas pelo ambiente fonético ou estrutural da conjugação, sem que haja alteração na sua função gramatical primária.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-05"
+          },
+          "operationalUse": "As fontes registram dois casos canônicos de alomorfia analisados no quadro:"
+        },
+        {
+          "term": "O Método dos 3 Passos para Decomposição Mórfica Verbal",
+          "shortDefinition": "O Método dos 3 Passos é um procedimento analítico estruturado para segmentar e classificar os constituintes morfológicos de qualquer verbo flexionado, substituindo a memorização aleatória pelo raciocínio lógico.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-06"
+          }
+        },
+        {
+          "term": "Comportamento Mórfico do Presente do Indicativo (Ausência de DMT)",
+          "shortDefinition": "O Presente do Indicativo é estruturalmente marcado pela inexistência de Desinência Modo-Temporal (DMT = $\\emptyset$) em todas as pessoas gramaticais e conjugações.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-07"
+          }
+        },
+        {
+          "term": "Comportamento Mórfico do Presente do Subjuntivo (Troca Vocálica e VT Zero)",
+          "shortDefinition": "No Presente do Subjuntivo, ocorre uma inversão sistemática do vocalismo: as vogais temáticas originais são suprimidas ($\\text{VT} = \\emptyset$) e substituídas pelas vogais características do modo subjuntivo, que atuam morfologicamente como Desinência Modo-Temporal (DMT).",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-08"
+          }
+        },
+        {
+          "term": "Pretérito Imperfeito do Indicativo e a Doutrina de Evanildo Bechara",
+          "shortDefinition": "No Pretérito Imperfeito do Indicativo das 2ª e 3ª conjugações (vender, partir, dormir, rir), a corrente doutrinária predominante em concursos públicos (liderada por Evanildo Bechara) estabelece que o bloco -ia- / -ie- constitui integralmente a Desinência Modo-Temporal, ficando a vogal temática ausente/absorvida.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-09"
+          }
+        },
+        {
+          "term": "Pretérito Imperfeito do Subjuntivo e Futuro do Presente do Indicativo",
+          "shortDefinition": "O Pretérito Imperfeito do Subjuntivo e o Futuro do Presente do Indicativo preservam com clareza a estrutura clássica de 4 elementos, mantendo a Vogal Temática primitiva da conjugação.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-10"
+          }
+        },
+        {
+          "term": "Estrutura Mórfica do Infinitivo Pessoal e a Abordagem Tradicional da FUNDATEC",
+          "shortDefinition": "O Infinitivo Pessoal é a forma nominal flexionada que indica a pessoa gramatical do agente da oração reduzida. Estruturalmente, compõe-se de Radical + Vogal Temática + DMT de Infinitivo (-r-) + DNPs (-Ø, -es, -Ø, -mos, -des, -rem). A banca FUNDATEC aceita historicamente a rotulação escolar de que a terminação -ar em bloco é uma \"desinência de infinitivo\".",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-11"
+          }
+        },
+        {
+          "term": "Homonímia Temporal Descontextualizada na Terminação *-aram*",
+          "shortDefinition": "A terminação verbal -aram na 3ª pessoa do plural dos verbos de 1ª conjugação é morfologicamente homônima entre dois tempos do Modo Indicativo quando analisada isoladamente de uma frase contextualizadora.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-12"
+          },
+          "operationalUse": "Na análise da forma puxaram (Questão Quadrix):"
+        },
+        {
+          "term": "Tema Verbal em Formas Irregulares do Perfeito (*pusera*)",
+          "shortDefinition": "Em formas derivadas do tema do perfeito de verbos anômalos ou irregulares (como o verbo pôr), a fusão do radical variante com a vogal temática constitui o Tema Verbal.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-13"
+          },
+          "operationalUse": "Na questão da FGV sobre a forma pusera (Pretérito Mais-Que-Perfeito do Indicativo):"
+        },
+        {
+          "term": "Distinção Rigorosa entre DMT e DNP no Pretérito Imperfeito (*zombavam*)",
+          "shortDefinition": "No Pretérito Imperfeito do Indicativo dos verbos de 1ª conjugação, a Desinência Modo-Temporal é exclusivamente o morfema -va-. O fonema nasal final -m atua de forma autônoma como Desinência Número-Pessoal de 3ª pessoa do plural.",
+          "detailTarget": {
+            "unitId": "IP-A04-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A04-G03-14"
+          },
+          "operationalUse": "Na análise do item do CESPE/CEBRASPE sobre zombavam:"
         }
       ]
     },
@@ -1963,7 +2666,35 @@
         "confidence": 0.9
       },
       "answerSha256": "651f600002caabd91946c7ebd537974fc9a404041d33a42a0800bd1008b683fe",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Considere o enunciado a seguir, recortado do texto apresentado:\n\n“A Jules Rimet foi criada em 1928, e o troféu era entregue para a seleção campeã da Copa. A\ncada quatro anos, a relíquia tinha uma nova casa. Mas o primeiro país que conquistasse o\ntricampeonato ficaria com o prêmio definitivamente. Pelé, Jairzinho, Tostão, Carlos Alberto Torres\ne companhia conquistaram o tri em 1970, no México”.\n\nSobre as formas verbais destacadas no trecho acima, é correto afirmar que",
+        "options": [
+          {
+            "label": "a",
+            "text": "“ficaria” indica a realização de ação no futuro de forma incondicional."
+          },
+          {
+            "label": "b",
+            "text": "“tinha” e “era entregue” indicam um fato não concluído, dando ideia de continuidade."
+          },
+          {
+            "label": "c",
+            "text": "“conquistaram” e “conquistasse” indicam certeza de que a ação foi totalmente concluída no passado."
+          },
+          {
+            "label": "d",
+            "text": "“foi criada” e “era entregue” indicam ações concluídas no passado."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     }
   ]
 }

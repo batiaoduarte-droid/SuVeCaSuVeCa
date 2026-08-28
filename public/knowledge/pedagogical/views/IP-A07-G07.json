@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A07-G07",
     "lessonId": "A07",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A07-G07",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A07-G07-001"
+          }
         }
       ]
     },
@@ -98,8 +103,80 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA oração subordinada reduzida é uma estrutura oracional que não é introduzida por conectivos subordinativos típicos (conjunções integrantes, conjunções subordinativas adverbiais ou pronomes relativos) e cujo núcleo verbal se apresenta obrigatoriamente sob uma forma nominal: infinitivo (pessoal ou impessoal), gerúndio ou particípio (regular ou irregular).\nExplicação consolidada\nUma oração subordinada pode se manifestar de forma desenvolvida (com conectivo explícito e verbo conjugado em tempo e modo finitos do indicativo ou subjuntivo) ou de forma reduzida. A denominação \"reduzida\" decorre da perda do conectivo subordinativo e da contração da flexão verbal em forma nominal.\nA ausência de conectivo não impede a presença de preposições funcionais, as quais podem ser exigidas pela regência de verbos ou nomes da oração principal (ex.: gosto de sair) ou para marcar valores circunstanciais adverbiais (ex.: ao sair, a fim de sair, por sair).\nAs formas nominais do verbo desdobram-se em:\nInfinitivo: Terminações em -ar, -er, -ir; pode ser impessoal (forma não flexionada) ou pessoal (flexionado com desinências número-pessoais, como em por serem).\nGerúndio: Terminação invariável em -ndo (fazendo, estabelecendo).\nParticípio: Terminações regulares em -do (falado, vencido) ou formas irregulares em -to / -so (dito, feito, escrito, preso).\nCritérios de reconhecimento\nVerificar se a oração possui verbo em infinitivo, gerúndio ou particípio.\nConfirmar a ausência de conjunção subordinativa ou pronome relativo no início da oração dependente.\nVerificar se a oração pode ser desdobrada (desenvolvida) em uma forma finita iniciada por conectivo.\nRelações\nExpande-se em: , .\nContrasta com: (Locução Verbal).\nTermos associados: TERM-A07-G07-001, TERM-A07-G07-002."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A oração subordinada reduzida é uma estrutura oracional que não é introduzida por conectivos subordinativos típicos (conjunções integrantes, conjunções subordinativas adverbiais ou pronomes relativos) e cujo núcleo verbal se apresenta obrigatoriamente sob uma forma nominal: infinitivo (pessoal ou impessoal), gerúndio ou particípio (regular ou irregular)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Uma oração subordinada pode se manifestar de forma desenvolvida (com conectivo explícito e verbo conjugado em tempo e modo finitos do indicativo ou subjuntivo) ou de forma reduzida. A denominação \"reduzida\" decorre da perda do conectivo subordinativo e da contração da flexão verbal em forma nominal."
+            },
+            {
+              "type": "paragraph",
+              "text": "A ausência de conectivo não impede a presença de preposições funcionais, as quais podem ser exigidas pela regência de verbos ou nomes da oração principal (ex.: gosto de sair) ou para marcar valores circunstanciais adverbiais (ex.: ao sair, a fim de sair, por sair)."
+            },
+            {
+              "type": "paragraph",
+              "text": "As formas nominais do verbo desdobram-se em:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Infinitivo: Terminações em -ar, -er, -ir; pode ser impessoal (forma não flexionada) ou pessoal (flexionado com desinências número-pessoais, como em por serem).",
+                "Gerúndio: Terminação invariável em -ndo (fazendo, estabelecendo).",
+                "Particípio: Terminações regulares em -do (falado, vencido) ou formas irregulares em -to / -so (dito, feito, escrito, preso)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verificar se a oração possui verbo em infinitivo, gerúndio ou particípio.",
+                "Confirmar a ausência de conjunção subordinativa ou pronome relativo no início da oração dependente.",
+                "Verificar se a oração pode ser desdobrada (desenvolvida) em uma forma finita iniciada por conectivo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A07-G07-002",
+                  "targetTitle": "Matriz Funcional das Orações Reduzidas de Infinitivo",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A07-G07-003",
+                  "targetTitle": "Restrições Sintáticas das Orações Reduzidas de Gerúndio e Particípio",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A07-G07-008",
+                  "targetTitle": "Distinção Estrutural Definitiva: Oração Subordinada Reduzida versus Locução Verbal",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +189,129 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAs orações reduzidas de infinitivo possuem flexibilidade morfossintática total, sendo as únicas capazes de desempenhar todas as três grandes funções sintáticas do período composto: substantivas (todas as 6 subclasses), adjetivas (restritivas ou explicativas) e adverbiais (todas as circunstâncias).\nExplicação consolidada\nA classificação das orações reduzidas de infinitivo distribui-se em três eixos:\nSubstantivas (identificadas pela substituição por \"isso\" / \"disso\" / \"nisso\"):\nSubjetiva: Exerce a função de sujeito da oração principal (Não convém proceder assim $\\rightarrow$ Isso não convém).\nObjetiva Direta: Funciona como objeto direto de verbo transitivo direto (Acreditei ter lido isso $\\rightarrow$ Acreditei isso).\nObjetiva Indireta: Funciona como objeto indireto com preposição regida por verbo transitivo indireto ou transitivo direto e indireto (Impossibilitam alguém de se registrar $\\rightarrow$ Impossibilitam alguém disso).\nPredicativa: Atua como predicativo do sujeito após verbo de ligação (Seu sonho era morar em São Paulo $\\rightarrow$ Seu sonho era isso).\nCompletiva Nominal: Completa o sentido de um substantivo abstrato, adjetivo ou advérbio cognato com preposição (Tinha ânsia de retornar à sua pátria $\\rightarrow$ Tinha ânsia disso).\nApositiva: Esclarece termo nominal antecedente, delimitada por dois-pontos, travessão ou vírgula (Fez-lhe uma proposta: viajar pelo interior).\nAdjetivas (ligadas a substantivo, equivalentes a \"que + verbo\"):\nModificam diretamente um substantivo sem mediação substantiva (Não era homem de inventar coisas $\\rightarrow$ homem que inventava coisas).\nAdverbiais (expressam circunstâncias semânticas):\nTemporal: ao + infinitivo (Ao despedir-se, chorava muito $\\rightarrow$ Quando se despediu).\nFinal: para / a fim de / por + infinitivo (Chegou mais cedo para colaborar).\nConcessiva: apesar de + infinitivo (Apesar de ser jovem, conquistou posições invejáveis).\nCondicional: a + infinitivo (A ser eu rei, não faria outra coisa $\\rightarrow$ Se eu fosse rei).\nCausal: por + infinitivo (Não veio por estar doente $\\rightarrow$ porque estava doente).\nConsecutiva: a ponto de + infinitivo (Impressionou-o a ponto de tirar-lhe o sono).Procedimento: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As orações reduzidas de infinitivo possuem flexibilidade morfossintática total, sendo as únicas capazes de desempenhar todas as três grandes funções sintáticas do período composto: substantivas (todas as 6 subclasses), adjetivas (restritivas ou explicativas) e adverbiais (todas as circunstâncias)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A classificação das orações reduzidas de infinitivo distribui-se em três eixos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Substantivas (identificadas pela substituição por \"isso\" / \"disso\" / \"nisso\"):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Subjetiva: Exerce a função de sujeito da oração principal (Não convém proceder assim $\\rightarrow$ Isso não convém).",
+                "Objetiva Direta: Funciona como objeto direto de verbo transitivo direto (Acreditei ter lido isso $\\rightarrow$ Acreditei isso).",
+                "Objetiva Indireta: Funciona como objeto indireto com preposição regida por verbo transitivo indireto ou transitivo direto e indireto (Impossibilitam alguém de se registrar $\\rightarrow$ Impossibilitam alguém disso).",
+                "Predicativa: Atua como predicativo do sujeito após verbo de ligação (Seu sonho era morar em São Paulo $\\rightarrow$ Seu sonho era isso).",
+                "Completiva Nominal: Completa o sentido de um substantivo abstrato, adjetivo ou advérbio cognato com preposição (Tinha ânsia de retornar à sua pátria $\\rightarrow$ Tinha ânsia disso).",
+                "Apositiva: Esclarece termo nominal antecedente, delimitada por dois-pontos, travessão ou vírgula (Fez-lhe uma proposta: viajar pelo interior)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Adjetivas (ligadas a substantivo, equivalentes a \"que + verbo\"):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Modificam diretamente um substantivo sem mediação substantiva (Não era homem de inventar coisas $\\rightarrow$ homem que inventava coisas)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Adverbiais (expressam circunstâncias semânticas):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Temporal: ao + infinitivo (Ao despedir-se, chorava muito $\\rightarrow$ Quando se despediu).",
+                "Final: para / a fim de / por + infinitivo (Chegou mais cedo para colaborar).",
+                "Concessiva: apesar de + infinitivo (Apesar de ser jovem, conquistou posições invejáveis).",
+                "Condicional: a + infinitivo (A ser eu rei, não faria outra coisa $\\rightarrow$ Se eu fosse rei).",
+                "Causal: por + infinitivo (Não veio por estar doente $\\rightarrow$ porque estava doente).",
+                "Consecutiva: a ponto de + infinitivo (Impressionou-o a ponto de tirar-lhe o sono)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-003",
+                  "targetTitle": "Questão 36: CESPE / TRE-RS (Infinitivo Substantivo Objetiva Indireta vs. Adjetiva)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-006",
+                  "targetTitle": "Questão 39: CESPE / PGE-PE (Infinitivo Final com \"Para\")",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-007",
+                  "targetTitle": "Questão 40: CESPE / FUNPRESP-JUD (Preposição \"Por\" com Valor Final)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-009",
+                  "targetTitle": "Questão 42: CESPE / TJ-PA (Estrutura \"Ao + Infinitivo\": Tempo vs. Modo)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-012",
+                  "targetTitle": "Questão 45: CESPE / SEFAZ-RS (Infinitivo Flexionado: Causa vs. Explicação)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-014",
+                  "targetTitle": "Questão 47: CESPE / MPU (Reescrita: Adição $\\rightarrow$ Tempo e Pontuação)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A07-G07-001",
+                  "targetTitle": "Algoritmo de Identificação de Reduzidas Substantivas (Teste do \"Isso\")",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +324,99 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nDiferentemente do infinitivo, as orações reduzidas de gerúndio e de particípio nunca exercem funções substantivas; limitam-se rigorosamente às funções adjetivas ou adverbiais.\nExplicação consolidada\nOrações Reduzidas de Gerúndio:\nAdjetivas: Posicionam-se junto a um substantivo antecedente, admitindo substituição por \"pronome relativo + verbo conjugado\" (Passaram os guardas conduzindo os presos $\\rightarrow$ guardas que conduziam os presos).\nAdverbiais: Expressam circunstâncias adverbiais de tempo (Chegando lá, avise-me), causa (Estando adoentado, não saí), consequência (O tom participa da despretensão, despertando simpatia), condição (Estudando, você aprenderá), concessão (Mesmo correndo, não o alcançou) ou conformidade (Seguindo o velho hábito, iam juntos).\nOrações Reduzidas de Particípio:\nAdjetivas: Ligam-se a um substantivo com semântica passiva, substituíveis por \"que + verbo passivo\" (Esta é a notícia divulgada na imprensa $\\rightarrow$ notícia que foi divulgada).\nAdverbiais: Expressam circunstâncias circunstanciais de tempo (Terminada a aula, retirou-se), condição (Reconhecido seu direito, teriam agido diferente), concessão (Mesmo oprimidos, não cederemos) ou causa (Surpreendidos pela chuva, correram).\nRelações\nContrasta com: (Infinitivo pleno)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Diferentemente do infinitivo, as orações reduzidas de gerúndio e de particípio nunca exercem funções substantivas; limitam-se rigorosamente às funções adjetivas ou adverbiais."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Orações Reduzidas de Gerúndio:",
+                "Adjetivas: Posicionam-se junto a um substantivo antecedente, admitindo substituição por \"pronome relativo + verbo conjugado\" (Passaram os guardas conduzindo os presos $\\rightarrow$ guardas que conduziam os presos).",
+                "Adverbiais: Expressam circunstâncias adverbiais de tempo (Chegando lá, avise-me), causa (Estando adoentado, não saí), consequência (O tom participa da despretensão, despertando simpatia), condição (Estudando, você aprenderá), concessão (Mesmo correndo, não o alcançou) ou conformidade (Seguindo o velho hábito, iam juntos).",
+                "Orações Reduzidas de Particípio:",
+                "Adjetivas: Ligam-se a um substantivo com semântica passiva, substituíveis por \"que + verbo passivo\" (Esta é a notícia divulgada na imprensa $\\rightarrow$ notícia que foi divulgada).",
+                "Adverbiais: Expressam circunstâncias circunstanciais de tempo (Terminada a aula, retirou-se), condição (Reconhecido seu direito, teriam agido diferente), concessão (Mesmo oprimidos, não cederemos) ou causa (Surpreendidos pela chuva, correram)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A07-G07-002",
+                  "targetTitle": "Matriz Funcional das Orações Reduzidas de Infinitivo",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-001",
+                  "targetTitle": "Questão 34: CESPE / DETRAN-DF (Particípio Adjetivo Explicativo)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-002",
+                  "targetTitle": "Questão 35: CESPE / Instituto Rio Branco (Gerúndio Adjetivo Restritivo)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-004",
+                  "targetTitle": "Questão 37: CESPE / Câmara dos Deputados (Particípio Adjetivo vs. Aposto)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-005",
+                  "targetTitle": "Questão 38: CESPE / Banco do Brasil (Locução de Gerúndio Causal)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-008",
+                  "targetTitle": "Questão 41: CESPE / TRF 1ª Região (Particípio Adverbial Condicional)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-011",
+                  "targetTitle": "Questão 44: CESPE / PRF (Gerúndio Causal)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-013",
+                  "targetTitle": "Questão 46: CESPE / STM (Gerúndio Consecutivo vs. Finalidade e Recurso)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-015",
+                  "targetTitle": "Questão 48: CESPE / FUB (Gerúndio Consecutivo vs. Tempo)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +429,70 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nQuando uma oração subordinada reduzida é constituída por uma locução verbal (verbo auxiliar + verbo principal), a classificação morfológica da oração reduzida (de infinitivo, gerúndio ou particípio) é determinada exclusivamente pela forma nominal do verbo auxiliar.\nExplicação consolidada\nNa arquitetura das locuções verbais, há uma rígida divisão funcional entre os verbos:\nO verbo principal (último verbo da cadeia) detém o conteúdo semântico essencial e determina a regência e os complementos oracionais.\nO verbo auxiliar (primeiro verbo da cadeia) assume as flexões gramaticais (tempo, modo, número, pessoa ou forma nominal) e estabelece a conexão morfossintática com a oração principal.\nAssim, em uma locução como \"tendo alcançado\", o verbo auxiliar tendo está no gerúndio e o principal alcançado está no particípio. A oração subordinada deve ser classificada como reduzida de gerúndio, e nunca de particípio. Se a estrutura fosse \"ao ter alcançado\", seria reduzida de infinitivo.\nMnemônico pedagógico herdado\n\"O principal manda; o auxiliar obedece e carrega tudo nas costas.\"(Questão 38), (Questão 50).\nAlerta associado: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando uma oração subordinada reduzida é constituída por uma locução verbal (verbo auxiliar + verbo principal), a classificação morfológica da oração reduzida (de infinitivo, gerúndio ou particípio) é determinada exclusivamente pela forma nominal do verbo auxiliar."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na arquitetura das locuções verbais, há uma rígida divisão funcional entre os verbos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O verbo principal (último verbo da cadeia) detém o conteúdo semântico essencial e determina a regência e os complementos oracionais.",
+                "O verbo auxiliar (primeiro verbo da cadeia) assume as flexões gramaticais (tempo, modo, número, pessoa ou forma nominal) e estabelece a conexão morfossintática com a oração principal."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Assim, em uma locução como \"tendo alcançado\", o verbo auxiliar tendo está no gerúndio e o principal alcançado está no particípio. A oração subordinada deve ser classificada como reduzida de gerúndio, e nunca de particípio. Se a estrutura fosse \"ao ter alcançado\", seria reduzida de infinitivo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Mnemônico pedagógico herdado"
+            },
+            {
+              "type": "paragraph",
+              "text": "\"O principal manda; o auxiliar obedece e carrega tudo nas costas.\""
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-005",
+                  "targetTitle": "Questão 38: CESPE / Banco do Brasil (Locução de Gerúndio Causal)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-017",
+                  "targetTitle": "Questão 50: CESPE / TRE-MS (Coordenação de Finais Reduzidas vs. Locução)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G07-003",
+                  "targetTitle": "Erro na Classificação de Locuções Verbais Reduzidas",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +505,108 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA identificação precisa das relações de causa e consequência em orações reduzidas fundamenta-se na ordem cronológica real dos fatos no mundo extralinguístico: o evento anterior no tempo é a causa (motivo gerador), enquanto o evento posterior é o efeito ou consequência.\nExplicação consolidada\nPara desvencilhar-se de ambiguidades em provas do CESPE/Cebraspe, o candidato deve aplicar dois passos diagnósticos integrados:\nLinha do Tempo (Cronologia dos Fatos):\n1º evento no tempo real $\\rightarrow$ Causa (o motivo que impulsiona a ação).\n2º evento no tempo real $\\rightarrow$ Efeito / Consequência (o resultado produzido).\nMolde Semântico: Inserir os segmentos na fórmula mental:\n\\text{\"O fato de [Ação 1] fez com que [Ação 2]\"}\nA oração que ocupa o espaço de [Ação 1] é a oração causal.\nA oração que ocupa o espaço de [Ação 2] é a consequência (ou oração principal).\nEssa relação independe da ordem sintática em que as orações aparecem no período (a causa pode vir anteposta ou posposta à consequência).\nRelações\nProcedimento: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A identificação precisa das relações de causa e consequência em orações reduzidas fundamenta-se na ordem cronológica real dos fatos no mundo extralinguístico: o evento anterior no tempo é a causa (motivo gerador), enquanto o evento posterior é o efeito ou consequência."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para desvencilhar-se de ambiguidades em provas do CESPE/Cebraspe, o candidato deve aplicar dois passos diagnósticos integrados:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Linha do Tempo (Cronologia dos Fatos):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "1º evento no tempo real $\\rightarrow$ Causa (o motivo que impulsiona a ação).",
+                "2º evento no tempo real $\\rightarrow$ Efeito / Consequência (o resultado produzido)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Molde Semântico: Inserir os segmentos na fórmula mental:"
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{\"O fato de [Ação 1] fez com que [Ação 2]\"}"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A oração que ocupa o espaço de [Ação 1] é a oração causal.",
+                "A oração que ocupa o espaço de [Ação 2] é a consequência (ou oração principal)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Essa relação independe da ordem sintática em que as orações aparecem no período (a causa pode vir anteposta ou posposta à consequência)."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A07-G07-002",
+                  "targetTitle": "Algoritmo Cronológico-Semântico de Causa e Consequência",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-005",
+                  "targetTitle": "Questão 38: CESPE / Banco do Brasil (Locução de Gerúndio Causal)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-010",
+                  "targetTitle": "Questão 43: CESPE / MME (Oração Causal com \"Como\" e Cronologia)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-011",
+                  "targetTitle": "Questão 44: CESPE / PRF (Gerúndio Causal)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-012",
+                  "targetTitle": "Questão 45: CESPE / SEFAZ-RS (Infinitivo Flexionado: Causa vs. Explicação)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-015",
+                  "targetTitle": "Questão 48: CESPE / FUB (Gerúndio Consecutivo vs. Tempo)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +619,58 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nDevido à ausência de conectivos subordinativos específicos, as orações reduzidas — notadamente as de gerúndio e particípio — apresentam elevada plasticidade semântica, podendo acumular simultaneamente leituras de causa, consequência, finalidade, condição e tempo.\nExplicação consolidada\nEssa maleabilidade contextual gera frequentes polêmicas em bancas examinadoras:\nTensão Consequência versus Finalidade: Uma oração de gerúndio posposta pode sugerir tanto o objetivo pretendido quanto a consequência fática direta da ação anterior (como no caso da Questão 46 do STM, onde o gabarito preliminar \"finalidade\" foi alterado pós-recurso para \"consequência\").\nTensão Consequência versus Tempo: Em orações que descrevem ações concomitantes, a banca pode tentar impingir falso valor temporal a estruturas que são estritamente consecutivas (como na Questão 48 da FUB).\nImpacto em Provas Discursivas: A professora recomenda enfaticamente evitar o uso recorrente de orações reduzidas em redações e provas discursivas, priorizando orações desenvolvidas com conjunções explícitas (a fim de que, de modo que, porque, quando) para eliminar ambiguidades que possam acarretar descontos de clareza textual.Oralidade associada: ORAL-A07-G07-002, ORAL-A07-G07-003."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Devido à ausência de conectivos subordinativos específicos, as orações reduzidas — notadamente as de gerúndio e particípio — apresentam elevada plasticidade semântica, podendo acumular simultaneamente leituras de causa, consequência, finalidade, condição e tempo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Essa maleabilidade contextual gera frequentes polêmicas em bancas examinadoras:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Tensão Consequência versus Finalidade: Uma oração de gerúndio posposta pode sugerir tanto o objetivo pretendido quanto a consequência fática direta da ação anterior (como no caso da Questão 46 do STM, onde o gabarito preliminar \"finalidade\" foi alterado pós-recurso para \"consequência\").",
+                "Tensão Consequência versus Tempo: Em orações que descrevem ações concomitantes, a banca pode tentar impingir falso valor temporal a estruturas que são estritamente consecutivas (como na Questão 48 da FUB).",
+                "Impacto em Provas Discursivas: A professora recomenda enfaticamente evitar o uso recorrente de orações reduzidas em redações e provas discursivas, priorizando orações desenvolvidas com conjunções explícitas (a fim de que, de modo que, porque, quando) para eliminar ambiguidades que possam acarretar descontos de clareza textual."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-008",
+                  "targetTitle": "Questão 41: CESPE / TRF 1ª Região (Particípio Adverbial Condicional)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-013",
+                  "targetTitle": "Questão 46: CESPE / STM (Gerúndio Consecutivo vs. Finalidade e Recurso)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-015",
+                  "targetTitle": "Questão 48: CESPE / FUB (Gerúndio Consecutivo vs. Tempo)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -182,8 +683,57 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA combinação prepositiva \"ao + infinitivo\" possui valor semântico fixo de tempo (simultaneidade ou tempo imediato). Quando posicionada após a oração principal (final do período / ordem direta), o emprego da vírgula delimitadora é estritamente facultativo.\nExplicação consolidada\nEm questões de reescrita e julgamento de itens:\nImpacto Semântico: Substituir uma conjunção aditiva (e suprimir) pela estrutura ao suprimir preserva a correção gramatical, mas altera o sentido original, convertendo adição/soma em tempo/simultaneidade.\nRegra de Pontuação na Ordem Direta: No período composto, a ordem canônica é Oração Principal + Oração Subordinada Adverbial. Nessa configuração posposta, o isolamento por vírgula é optativo. A ausência de vírgula não viola a norma-padrão.Alerta: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A combinação prepositiva \"ao + infinitivo\" possui valor semântico fixo de tempo (simultaneidade ou tempo imediato). Quando posicionada após a oração principal (final do período / ordem direta), o emprego da vírgula delimitadora é estritamente facultativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em questões de reescrita e julgamento de itens:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Impacto Semântico: Substituir uma conjunção aditiva (e suprimir) pela estrutura ao suprimir preserva a correção gramatical, mas altera o sentido original, convertendo adição/soma em tempo/simultaneidade.",
+                "Regra de Pontuação na Ordem Direta: No período composto, a ordem canônica é Oração Principal + Oração Subordinada Adverbial. Nessa configuração posposta, o isolamento por vírgula é optativo. A ausência de vírgula não viola a norma-padrão."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-009",
+                  "targetTitle": "Questão 42: CESPE / TJ-PA (Estrutura \"Ao + Infinitivo\": Tempo vs. Modo)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-014",
+                  "targetTitle": "Questão 47: CESPE / MPU (Reescrita: Adição $\\rightarrow$ Tempo e Pontuação)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G07-005",
+                  "targetTitle": "Armadilha da Vírgula na Ordem Direta",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -196,44 +746,70 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA distinção sintática entre Locução Verbal (período simples / 1 oração) e Oração Subordinada Reduzida (período composto / 2 ou mais orações) não se baseia na identidade de sujeitos, mas sim na capacidade de desenvolvimento sintático por meio de conjunção integrante (\"que\") e flexão verbal finita.\nExplicação consolidada\nMuitos estudantes erram questões de concurso ao assumir que verbos contíguos com o mesmo sujeito formam automaticamente locução verbal. Trata-se de uma premissa falsa: uma oração principal e sua subordinada reduzida podem perfeitamente compartilhar o mesmo sujeito.\nO critério técnico discriminatório é:\nLocução Verbal (Período Simples): Os verbos atuam como uma unidade sintático-semântica indissolúvel (auxiliar + principal). Forma uma única oração. É impossível desenvolver com \"que\" (\"A menina deve sair\" $\\rightarrow$ \"A menina deve que saia\" é agramatical/inválido).\nOração Reduzida (Período Composto): Há dois núcleos oracionais autônomos subordinados. É plenamente possível desenvolver com \"que\" (\"O professor finge entender o assunto\" $\\rightarrow$ \"O professor finge [que entende o assunto]\").\nRelações\nProcedimento: .Alerta: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A distinção sintática entre Locução Verbal (período simples / 1 oração) e Oração Subordinada Reduzida (período composto / 2 ou mais orações) não se baseia na identidade de sujeitos, mas sim na capacidade de desenvolvimento sintático por meio de conjunção integrante (\"que\") e flexão verbal finita."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Muitos estudantes erram questões de concurso ao assumir que verbos contíguos com o mesmo sujeito formam automaticamente locução verbal. Trata-se de uma premissa falsa: uma oração principal e sua subordinada reduzida podem perfeitamente compartilhar o mesmo sujeito."
+            },
+            {
+              "type": "paragraph",
+              "text": "O critério técnico discriminatório é:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Locução Verbal (Período Simples): Os verbos atuam como uma unidade sintático-semântica indissolúvel (auxiliar + principal). Forma uma única oração. É impossível desenvolver com \"que\" (\"A menina deve sair\" $\\rightarrow$ \"A menina deve que saia\" é agramatical/inválido).",
+                "Oração Reduzida (Período Composto): Há dois núcleos oracionais autônomos subordinados. É plenamente possível desenvolver com \"que\" (\"O professor finge entender o assunto\" $\\rightarrow$ \"O professor finge [que entende o assunto]\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A07-G07-003",
+                  "targetTitle": "Teste Discriminatório Estrutural entre Oração Reduzida e Locução Verbal",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-016",
+                  "targetTitle": "Questão 49: CESPE / DPU (Locução Verbal vs. Oração Reduzida)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G07-017",
+                  "targetTitle": "Questão 50: CESPE / TRE-MS (Coordenação de Finais Reduzidas vs. Locução)",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G07-006",
+                  "targetTitle": "Aplicação Indevida do Teste do \"Isso\" em Locuções Verbais",
+                  "targetUnitId": "IP-A07-G07",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA oração subordinada reduzida é uma estrutura oracional que não é introduzida por conectivos subordinativos típicos (conjunções integrantes, conjunções subordinativas adverbiais ou pronomes relativos) e cujo núcleo verbal se apresenta obrigatoriamente sob uma forma nominal: infinitivo (pessoal ou impessoal), gerúndio ou particípio (regular ou irregular).\nExplicação consolidada\nUma oração subordinada pode se manifestar de forma desenvolvida (com conectivo explícito e verbo conjugado em tempo e modo finitos do indicativo ou subjuntivo) ou de forma reduzida. A denominação \"reduzida\" decorre da perda do conectivo subordinativo e da contração da flexão verbal em forma nominal.\nA ausência de conectivo não impede a presença de preposições funcionais, as quais podem ser exigidas pela regência de verbos ou nomes da oração principal (ex.: gosto de sair) ou para marcar valores circunstanciais adverbiais (ex.: ao sair, a fim de sair, por sair).\nAs formas nominais do verbo desdobram-se em:\nInfinitivo: Terminações em -ar, -er, -ir; pode ser impessoal (forma não flexionada) ou pessoal (flexionado com desinências número-pessoais, como em por serem).\nGerúndio: Terminação invariável em -ndo (fazendo, estabelecendo).\nParticípio: Terminações regulares em -do (falado, vencido) ou formas irregulares em -to / -so (dito, feito, escrito, preso).\nCritérios de reconhecimento\nVerificar se a oração possui verbo em infinitivo, gerúndio ou particípio.\nConfirmar a ausência de conjunção subordinativa ou pronome relativo no início da oração dependente.\nVerificar se a oração pode ser desdobrada (desenvolvida) em uma forma finita iniciada por conectivo.\nRelações\nExpande-se em: , .\nContrasta com: (Locução Verbal).\nTermos associados: TERM-A07-G07-001, TERM-A07-G07-002."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAs orações reduzidas de infinitivo possuem flexibilidade morfossintática total, sendo as únicas capazes de desempenhar todas as três grandes funções sintáticas do período composto: substantivas (todas as 6 subclasses), adjetivas (restritivas ou explicativas) e adverbiais (todas as circunstâncias).\nExplicação consolidada\nA classificação das orações reduzidas de infinitivo distribui-se em três eixos:\nSubstantivas (identificadas pela substituição por \"isso\" / \"disso\" / \"nisso\"):\nSubjetiva: Exerce a função de sujeito da oração principal (Não convém proceder assim $\\rightarrow$ Isso não convém).\nObjetiva Direta: Funciona como objeto direto de verbo transitivo direto (Acreditei ter lido isso $\\rightarrow$ Acreditei isso).\nObjetiva Indireta: Funciona como objeto indireto com preposição regida por verbo transitivo indireto ou transitivo direto e indireto (Impossibilitam alguém de se registrar $\\rightarrow$ Impossibilitam alguém disso).\nPredicativa: Atua como predicativo do sujeito após verbo de ligação (Seu sonho era morar em São Paulo $\\rightarrow$ Seu sonho era isso).\nCompletiva Nominal: Completa o sentido de um substantivo abstrato, adjetivo ou advérbio cognato com preposição (Tinha ânsia de retornar à sua pátria $\\rightarrow$ Tinha ânsia disso).\nApositiva: Esclarece termo nominal antecedente, delimitada por dois-pontos, travessão ou vírgula (Fez-lhe uma proposta: viajar pelo interior).\nAdjetivas (ligadas a substantivo, equivalentes a \"que + verbo\"):\nModificam diretamente um substantivo sem mediação substantiva (Não era homem de inventar coisas $\\rightarrow$ homem que inventava coisas).\nAdverbiais (expressam circunstâncias semânticas):\nTemporal: ao + infinitivo (Ao despedir-se, chorava muito $\\rightarrow$ Quando se despediu).\nFinal: para / a fim de / por + infinitivo (Chegou mais cedo para colaborar).\nConcessiva: apesar de + infinitivo (Apesar de ser jovem, conquistou posições invejáveis).\nCondicional: a + infinitivo (A ser eu rei, não faria outra coisa $\\rightarrow$ Se eu fosse rei).\nCausal: por + infinitivo (Não veio por estar doente $\\rightarrow$ porque estava doente).\nConsecutiva: a ponto de + infinitivo (Impressionou-o a ponto de tirar-lhe o sono).Procedimento: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nDiferentemente do infinitivo, as orações reduzidas de gerúndio e de particípio nunca exercem funções substantivas; limitam-se rigorosamente às funções adjetivas ou adverbiais.\nExplicação consolidada\nOrações Reduzidas de Gerúndio:\nAdjetivas: Posicionam-se junto a um substantivo antecedente, admitindo substituição por \"pronome relativo + verbo conjugado\" (Passaram os guardas conduzindo os presos $\\rightarrow$ guardas que conduziam os presos).\nAdverbiais: Expressam circunstâncias adverbiais de tempo (Chegando lá, avise-me), causa (Estando adoentado, não saí), consequência (O tom participa da despretensão, despertando simpatia), condição (Estudando, você aprenderá), concessão (Mesmo correndo, não o alcançou) ou conformidade (Seguindo o velho hábito, iam juntos).\nOrações Reduzidas de Particípio:\nAdjetivas: Ligam-se a um substantivo com semântica passiva, substituíveis por \"que + verbo passivo\" (Esta é a notícia divulgada na imprensa $\\rightarrow$ notícia que foi divulgada).\nAdverbiais: Expressam circunstâncias circunstanciais de tempo (Terminada a aula, retirou-se), condição (Reconhecido seu direito, teriam agido diferente), concessão (Mesmo oprimidos, não cederemos) ou causa (Surpreendidos pela chuva, correram).\nRelações\nContrasta com: (Infinitivo pleno)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nQuando uma oração subordinada reduzida é constituída por uma locução verbal (verbo auxiliar + verbo principal), a classificação morfológica da oração reduzida (de infinitivo, gerúndio ou particípio) é determinada exclusivamente pela forma nominal do verbo auxiliar.\nExplicação consolidada\nNa arquitetura das locuções verbais, há uma rígida divisão funcional entre os verbos:\nO verbo principal (último verbo da cadeia) detém o conteúdo semântico essencial e determina a regência e os complementos oracionais.\nO verbo auxiliar (primeiro verbo da cadeia) assume as flexões gramaticais (tempo, modo, número, pessoa ou forma nominal) e estabelece a conexão morfossintática com a oração principal.\nAssim, em uma locução como \"tendo alcançado\", o verbo auxiliar tendo está no gerúndio e o principal alcançado está no particípio. A oração subordinada deve ser classificada como reduzida de gerúndio, e nunca de particípio. Se a estrutura fosse \"ao ter alcançado\", seria reduzida de infinitivo.\nMnemônico pedagógico herdado\n\"O principal manda; o auxiliar obedece e carrega tudo nas costas.\"(Questão 38), (Questão 50).\nAlerta associado: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA identificação precisa das relações de causa e consequência em orações reduzidas fundamenta-se na ordem cronológica real dos fatos no mundo extralinguístico: o evento anterior no tempo é a causa (motivo gerador), enquanto o evento posterior é o efeito ou consequência.\nExplicação consolidada\nPara desvencilhar-se de ambiguidades em provas do CESPE/Cebraspe, o candidato deve aplicar dois passos diagnósticos integrados:\nLinha do Tempo (Cronologia dos Fatos):\n1º evento no tempo real $\\rightarrow$ Causa (o motivo que impulsiona a ação).\n2º evento no tempo real $\\rightarrow$ Efeito / Consequência (o resultado produzido).\nMolde Semântico: Inserir os segmentos na fórmula mental:\n\\text{\"O fato de [Ação 1] fez com que [Ação 2]\"}\nA oração que ocupa o espaço de [Ação 1] é a oração causal.\nA oração que ocupa o espaço de [Ação 2] é a consequência (ou oração principal).\nEssa relação independe da ordem sintática em que as orações aparecem no período (a causa pode vir anteposta ou posposta à consequência).\nRelações\nProcedimento: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nDevido à ausência de conectivos subordinativos específicos, as orações reduzidas — notadamente as de gerúndio e particípio — apresentam elevada plasticidade semântica, podendo acumular simultaneamente leituras de causa, consequência, finalidade, condição e tempo.\nExplicação consolidada\nEssa maleabilidade contextual gera frequentes polêmicas em bancas examinadoras:\nTensão Consequência versus Finalidade: Uma oração de gerúndio posposta pode sugerir tanto o objetivo pretendido quanto a consequência fática direta da ação anterior (como no caso da Questão 46 do STM, onde o gabarito preliminar \"finalidade\" foi alterado pós-recurso para \"consequência\").\nTensão Consequência versus Tempo: Em orações que descrevem ações concomitantes, a banca pode tentar impingir falso valor temporal a estruturas que são estritamente consecutivas (como na Questão 48 da FUB).\nImpacto em Provas Discursivas: A professora recomenda enfaticamente evitar o uso recorrente de orações reduzidas em redações e provas discursivas, priorizando orações desenvolvidas com conjunções explícitas (a fim de que, de modo que, porque, quando) para eliminar ambiguidades que possam acarretar descontos de clareza textual.Oralidade associada: ORAL-A07-G07-002, ORAL-A07-G07-003."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA combinação prepositiva \"ao + infinitivo\" possui valor semântico fixo de tempo (simultaneidade ou tempo imediato). Quando posicionada após a oração principal (final do período / ordem direta), o emprego da vírgula delimitadora é estritamente facultativo.\nExplicação consolidada\nEm questões de reescrita e julgamento de itens:\nImpacto Semântico: Substituir uma conjunção aditiva (e suprimir) pela estrutura ao suprimir preserva a correção gramatical, mas altera o sentido original, convertendo adição/soma em tempo/simultaneidade.\nRegra de Pontuação na Ordem Direta: No período composto, a ordem canônica é Oração Principal + Oração Subordinada Adverbial. Nessa configuração posposta, o isolamento por vírgula é optativo. A ausência de vírgula não viola a norma-padrão.Alerta: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA distinção sintática entre Locução Verbal (período simples / 1 oração) e Oração Subordinada Reduzida (período composto / 2 ou mais orações) não se baseia na identidade de sujeitos, mas sim na capacidade de desenvolvimento sintático por meio de conjunção integrante (\"que\") e flexão verbal finita.\nExplicação consolidada\nMuitos estudantes erram questões de concurso ao assumir que verbos contíguos com o mesmo sujeito formam automaticamente locução verbal. Trata-se de uma premissa falsa: uma oração principal e sua subordinada reduzida podem perfeitamente compartilhar o mesmo sujeito.\nO critério técnico discriminatório é:\nLocução Verbal (Período Simples): Os verbos atuam como uma unidade sintático-semântica indissolúvel (auxiliar + principal). Forma uma única oração. É impossível desenvolver com \"que\" (\"A menina deve sair\" $\\rightarrow$ \"A menina deve que saia\" é agramatical/inválido).\nOração Reduzida (Período Composto): Há dois núcleos oracionais autônomos subordinados. É plenamente possível desenvolver com \"que\" (\"O professor finge entender o assunto\" $\\rightarrow$ \"O professor finge [que entende o assunto]\").\nRelações\nProcedimento: .Alerta: ."
         }
       ]
     },
@@ -318,7 +894,9 @@
               "RULE-IP-A07-G07-001",
               "EXP-IP-A07-G07-030"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -451,7 +1029,9 @@
               "PROC-A07-G07-001",
               "EXP-IP-A07-G07-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -565,7 +1145,9 @@
               "PROC-A07-G07-002",
               "EXP-IP-A07-G07-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -666,7 +1248,9 @@
               "PROC-A07-G07-003",
               "EXP-IP-A07-G07-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -766,7 +1350,9 @@
               "PROC-A07-G07-004",
               "EXP-IP-A07-G07-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -846,7 +1432,9 @@
               "CONTRAST-IP-A07-G07-001",
               "EXP-IP-A07-G07-035"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -912,7 +1500,9 @@
               "CONTRAST-IP-A07-G07-002",
               "EXP-IP-A07-G07-036"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -978,7 +1568,9 @@
               "CONTRAST-IP-A07-G07-003",
               "EXP-IP-A07-G07-037"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1031,7 +1623,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-001",
               "EXP-IP-A07-G07-038"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1080,7 +1674,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-002",
               "EXP-IP-A07-G07-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1129,7 +1725,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-003",
               "EXP-IP-A07-G07-040"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1178,7 +1776,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-004",
               "EXP-IP-A07-G07-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1227,7 +1827,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-005",
               "EXP-IP-A07-G07-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1276,7 +1878,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-006",
               "EXP-IP-A07-G07-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1325,7 +1929,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-007",
               "EXP-IP-A07-G07-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1374,7 +1980,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-008",
               "EXP-IP-A07-G07-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1423,7 +2031,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-009",
               "EXP-IP-A07-G07-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1472,7 +2082,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-010",
               "EXP-IP-A07-G07-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1521,7 +2133,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-011",
               "EXP-IP-A07-G07-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1570,7 +2184,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-012",
               "EXP-IP-A07-G07-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1619,7 +2235,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-013",
               "EXP-IP-A07-G07-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1668,7 +2286,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-014",
               "EXP-IP-A07-G07-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1717,7 +2337,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-015",
               "EXP-IP-A07-G07-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1766,7 +2388,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-016",
               "EXP-IP-A07-G07-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1815,7 +2439,9 @@
               "WORKED_EXAMPLE-IP-A07-G07-017",
               "EXP-IP-A07-G07-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1865,7 +2491,9 @@
               "WARN-A07-G07-001",
               "EXP-IP-A07-G07-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1901,7 +2529,9 @@
               "WARN-A07-G07-002",
               "EXP-IP-A07-G07-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1937,7 +2567,9 @@
               "WARN-A07-G07-003",
               "EXP-IP-A07-G07-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1973,7 +2605,9 @@
               "WARN-A07-G07-004",
               "EXP-IP-A07-G07-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2009,7 +2643,9 @@
               "WARN-A07-G07-005",
               "EXP-IP-A07-G07-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2045,27 +2681,94 @@
               "WARN-A07-G07-006",
               "EXP-IP-A07-G07-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Conceito, Natureza e Critérios Constitutivos das Orações Reduzidas**: Definição ou ideia central\nA oração subordinada reduzida é uma estrutura oracional que não é introduzida por conectivos subordinativos típicos (conjunções integrantes, conjunções subordinativas adverbiais ou pronomes relativos) e cujo núcleo verbal se apresenta obrigatoriamente sob uma forma nominal: infinitivo (pessoal ou impessoal), gerúndio ou particípio (regular ou irregular).\nExplicação consolidada\nUma oração subordinada pode se manifestar de forma desenvolvida (com conectivo explícito e verbo conjugado em tempo e modo finitos do indicativo ou subjuntivo) ou de forma reduzida. A denominação \"reduzida\" decorre da perda do conectivo subordinativo e da contração da flexão verbal em forma nominal.\nA ausência de conectivo não impede a presença de preposições funcionais, as quais podem ser exigidas pela regência de verbos ou nomes da oração principal (ex.: gosto de sair) ou para marcar valores circunstanciais adverbiais (ex.: ao sair, a fim de sair, por sair).\nAs formas nominais do verbo desdobram-se em:\nInfinitivo: Terminações em -ar, -er, -ir; pode ser impessoal (forma não flexionada) ou pessoal (flexionado com desinências número-pessoais, como em por serem).\nGerúndio: Terminação invariável em -ndo (fazendo, estabelecendo).\nParticípio: Terminações regulares em -do (falado, vencido) ou formas irregulares em -to / -so (dito, feito, escrito, preso).\nCritérios de reconhecimento\nVerificar se a oração possui verbo em infinitivo, gerúndio ou particípio.\nConfirmar a ausência de conjunção subordinativa ou pronome relativo no início da oração dependente.\nVerificar se a oração pode ser desdobrada (desenvolvida) em uma forma finita iniciada por conectivo.\nRelações\nExpande-se em: , .\nContrasta com: (Locução Verbal).\nTermos associados: TERM-A07-G07-001, TERM-A07-G07-002.",
-            "**Matriz Funcional das Orações Reduzidas de Infinitivo**: Definição ou ideia central\nAs orações reduzidas de infinitivo possuem flexibilidade morfossintática total, sendo as únicas capazes de desempenhar todas as três grandes funções sintáticas do período composto: substantivas (todas as 6 subclasses), adjetivas (restritivas ou explicativas) e adverbiais (todas as circunstâncias).\nExplicação consolidada\nA classificação das orações reduzidas de infinitivo distribui-se em três eixos:\nSubstantivas (identificadas pela substituição por \"isso\" / \"disso\" / \"nisso\"):\nSubjetiva: Exerce a função de sujeito da oração principal (Não convém proceder assim $\\rightarrow$ Isso não convém).\nObjetiva Direta: Funciona como objeto direto de verbo transitivo direto (Acreditei ter lido isso $\\rightarrow$ Acreditei isso).\nObjetiva Indireta: Funciona como objeto indireto com preposição regida por verbo transitivo indireto ou transitivo direto e indireto (Impossibilitam alguém de se registrar $\\rightarrow$ Impossibilitam alguém disso).\nPredicativa: Atua como predicativo do sujeito após verbo de ligação (Seu sonho era morar em São Paulo $\\rightarrow$ Seu sonho era isso).\nCompletiva Nominal: Completa o sentido de um substantivo abstrato, adjetivo ou advérbio cognato com preposição (Tinha ânsia de retornar à sua pátria $\\rightarrow$ Tinha ânsia disso).\nApositiva: Esclarece termo nominal antecedente, delimitada por dois-pontos, travessão ou vírgula (Fez-lhe uma proposta: viajar pelo interior).\nAdjetivas (ligadas a substantivo, equivalentes a \"que + verbo\"):\nModificam diretamente um substantivo sem mediação substantiva (Não era homem de inventar coisas $\\rightarrow$ homem que inventava coisas).\nAdverbiais (expressam circunstâncias semânticas):\nTemporal: ao + infinitivo (Ao despedir-se, chorava muito $\\rightarrow$ Quando se despediu).\nFinal: para / a fim de / por + infinitivo (Chegou mais cedo para colaborar).\nConcessiva: apesar de + infinitivo (Apesar de ser jovem, conquistou posições invejáveis).\nCondicional: a + infinitivo (A ser eu rei, não faria outra coisa $\\rightarrow$ Se eu fosse rei).\nCausal: por + infinitivo (Não veio por estar doente $\\rightarrow$ porque estava doente).\nConsecutiva: a ponto de + infinitivo (Impressionou-o a ponto de tirar-lhe o sono).Procedimento: .",
-            "**Restrições Sintáticas das Orações Reduzidas de Gerúndio e Particípio**: Definição ou ideia central\nDiferentemente do infinitivo, as orações reduzidas de gerúndio e de particípio nunca exercem funções substantivas; limitam-se rigorosamente às funções adjetivas ou adverbiais.\nExplicação consolidada\nOrações Reduzidas de Gerúndio:\nAdjetivas: Posicionam-se junto a um substantivo antecedente, admitindo substituição por \"pronome relativo + verbo conjugado\" (Passaram os guardas conduzindo os presos $\\rightarrow$ guardas que conduziam os presos).\nAdverbiais: Expressam circunstâncias adverbiais de tempo (Chegando lá, avise-me), causa (Estando adoentado, não saí), consequência (O tom participa da despretensão, despertando simpatia), condição (Estudando, você aprenderá), concessão (Mesmo correndo, não o alcançou) ou conformidade (Seguindo o velho hábito, iam juntos).\nOrações Reduzidas de Particípio:\nAdjetivas: Ligam-se a um substantivo com semântica passiva, substituíveis por \"que + verbo passivo\" (Esta é a notícia divulgada na imprensa $\\rightarrow$ notícia que foi divulgada).\nAdverbiais: Expressam circunstâncias circunstanciais de tempo (Terminada a aula, retirou-se), condição (Reconhecido seu direito, teriam agido diferente), concessão (Mesmo oprimidos, não cederemos) ou causa (Surpreendidos pela chuva, correram).\nRelações\nContrasta com: (Infinitivo pleno).",
-            "**Dinâmica de Locuções Verbais em Orações Reduzidas e o Papel do Verbo Auxiliar**: Definição ou ideia central\nQuando uma oração subordinada reduzida é constituída por uma locução verbal (verbo auxiliar + verbo principal), a classificação morfológica da oração reduzida (de infinitivo, gerúndio ou particípio) é determinada exclusivamente pela forma nominal do verbo auxiliar.\nExplicação consolidada\nNa arquitetura das locuções verbais, há uma rígida divisão funcional entre os verbos:\nO verbo principal (último verbo da cadeia) detém o conteúdo semântico essencial e determina a regência e os complementos oracionais.\nO verbo auxiliar (primeiro verbo da cadeia) assume as flexões gramaticais (tempo, modo, número, pessoa ou forma nominal) e estabelece a conexão morfossintática com a oração principal.\nAssim, em uma locução como \"tendo alcançado\", o verbo auxiliar tendo está no gerúndio e o principal alcançado está no particípio. A oração subordinada deve ser classificada como reduzida de gerúndio, e nunca de particípio. Se a estrutura fosse \"ao ter alcançado\", seria reduzida de infinitivo.\nMnemônico pedagógico herdado\n\"O principal manda; o auxiliar obedece e carrega tudo nas costas.\"(Questão 38), (Questão 50).\nAlerta associado: .",
-            "**Critério Temporal-Cronológico para Discriminação de Causa e Efeito**: Definição ou ideia central\nA identificação precisa das relações de causa e consequência em orações reduzidas fundamenta-se na ordem cronológica real dos fatos no mundo extralinguístico: o evento anterior no tempo é a causa (motivo gerador), enquanto o evento posterior é o efeito ou consequência.\nExplicação consolidada\nPara desvencilhar-se de ambiguidades em provas do CESPE/Cebraspe, o candidato deve aplicar dois passos diagnósticos integrados:\nLinha do Tempo (Cronologia dos Fatos):\n1º evento no tempo real $\\rightarrow$ Causa (o motivo que impulsiona a ação).\n2º evento no tempo real $\\rightarrow$ Efeito / Consequência (o resultado produzido).\nMolde Semântico: Inserir os segmentos na fórmula mental:\n\\text{\"O fato de [Ação 1] fez com que [Ação 2]\"}\nA oração que ocupa o espaço de [Ação 1] é a oração causal.\nA oração que ocupa o espaço de [Ação 2] é a consequência (ou oração principal).\nEssa relação independe da ordem sintática em que as orações aparecem no período (a causa pode vir anteposta ou posposta à consequência).\nRelações\nProcedimento: .",
-            "**Polissemia, Ambiguidade do Gerúndio e Cautela em Provas Discursivas**: Definição ou ideia central\nDevido à ausência de conectivos subordinativos específicos, as orações reduzidas — notadamente as de gerúndio e particípio — apresentam elevada plasticidade semântica, podendo acumular simultaneamente leituras de causa, consequência, finalidade, condição e tempo.\nExplicação consolidada\nEssa maleabilidade contextual gera frequentes polêmicas em bancas examinadoras:\nTensão Consequência versus Finalidade: Uma oração de gerúndio posposta pode sugerir tanto o objetivo pretendido quanto a consequência fática direta da ação anterior (como no caso da Questão 46 do STM, onde o gabarito preliminar \"finalidade\" foi alterado pós-recurso para \"consequência\").\nTensão Consequência versus Tempo: Em orações que descrevem ações concomitantes, a banca pode tentar impingir falso valor temporal a estruturas que são estritamente consecutivas (como na Questão 48 da FUB).\nImpacto em Provas Discursivas: A professora recomenda enfaticamente evitar o uso recorrente de orações reduzidas em redações e provas discursivas, priorizando orações desenvolvidas com conjunções explícitas (a fim de que, de modo que, porque, quando) para eliminar ambiguidades que possam acarretar descontos de clareza textual.Oralidade associada: ORAL-A07-G07-002, ORAL-A07-G07-003.",
-            "**Semântica Temporal de \"Ao + Infinitivo\" e Pontuação na Ordem Direta**: Definição ou ideia central\nA combinação prepositiva \"ao + infinitivo\" possui valor semântico fixo de tempo (simultaneidade ou tempo imediato). Quando posicionada após a oração principal (final do período / ordem direta), o emprego da vírgula delimitadora é estritamente facultativo.\nExplicação consolidada\nEm questões de reescrita e julgamento de itens:\nImpacto Semântico: Substituir uma conjunção aditiva (e suprimir) pela estrutura ao suprimir preserva a correção gramatical, mas altera o sentido original, convertendo adição/soma em tempo/simultaneidade.\nRegra de Pontuação na Ordem Direta: No período composto, a ordem canônica é Oração Principal + Oração Subordinada Adverbial. Nessa configuração posposta, o isolamento por vírgula é optativo. A ausência de vírgula não viola a norma-padrão.Alerta: .",
-            "**Distinção Estrutural Definitiva: Oração Subordinada Reduzida versus Locução Verbal**: Definição ou ideia central\nA distinção sintática entre Locução Verbal (período simples / 1 oração) e Oração Subordinada Reduzida (período composto / 2 ou mais orações) não se baseia na identidade de sujeitos, mas sim na capacidade de desenvolvimento sintático por meio de conjunção integrante (\"que\") e flexão verbal finita.\nExplicação consolidada\nMuitos estudantes erram questões de concurso ao assumir que verbos contíguos com o mesmo sujeito formam automaticamente locução verbal. Trata-se de uma premissa falsa: uma oração principal e sua subordinada reduzida podem perfeitamente compartilhar o mesmo sujeito.\nO critério técnico discriminatório é:\nLocução Verbal (Período Simples): Os verbos atuam como uma unidade sintático-semântica indissolúvel (auxiliar + principal). Forma uma única oração. É impossível desenvolver com \"que\" (\"A menina deve sair\" $\\rightarrow$ \"A menina deve que saia\" é agramatical/inválido).\nOração Reduzida (Período Composto): Há dois núcleos oracionais autônomos subordinados. É plenamente possível desenvolver com \"que\" (\"O professor finge entender o assunto\" $\\rightarrow$ \"O professor finge [que entende o assunto]\").\nRelações\nProcedimento: .Alerta: ."
-          ]
+          "term": "Conceito, Natureza e Critérios Constitutivos das Orações Reduzidas",
+          "shortDefinition": "A oração subordinada reduzida é uma estrutura oracional que não é introduzida por conectivos subordinativos típicos (conjunções integrantes, conjunções subordinativas adverbiais ou pronomes relativos) e cujo núcleo verbal se apresenta obrigatoriamente sob uma forma nominal: infinitivo (pessoal ou impessoal), gerúndio ou particípio (regular ou irregular).",
+          "detailTarget": {
+            "unitId": "IP-A07-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G07-01"
+          },
+          "operationalUse": "Uma oração subordinada pode se manifestar de forma desenvolvida (com conectivo explícito e verbo conjugado em tempo e modo finitos do indicativo ou subjuntivo) ou de forma reduzida."
+        },
+        {
+          "term": "Matriz Funcional das Orações Reduzidas de Infinitivo",
+          "shortDefinition": "As orações reduzidas de infinitivo possuem flexibilidade morfossintática total, sendo as únicas capazes de desempenhar todas as três grandes funções sintáticas do período composto: substantivas (todas as 6 subclasses), adjetivas (restritivas ou explicativas) e adverbiais (todas as circunstâncias).",
+          "detailTarget": {
+            "unitId": "IP-A07-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G07-02"
+          },
+          "operationalUse": "A classificação das orações reduzidas de infinitivo distribui-se em três eixos:"
+        },
+        {
+          "term": "Restrições Sintáticas das Orações Reduzidas de Gerúndio e Particípio",
+          "shortDefinition": "Diferentemente do infinitivo, as orações reduzidas de gerúndio e de particípio nunca exercem funções substantivas; limitam-se rigorosamente às funções adjetivas ou adverbiais.",
+          "detailTarget": {
+            "unitId": "IP-A07-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G07-03"
+          }
+        },
+        {
+          "term": "Dinâmica de Locuções Verbais em Orações Reduzidas e o Papel do Verbo Auxiliar",
+          "shortDefinition": "Quando uma oração subordinada reduzida é constituída por uma locução verbal (verbo auxiliar + verbo principal), a classificação morfológica da oração reduzida (de infinitivo, gerúndio ou particípio) é determinada exclusivamente pela forma nominal do verbo auxiliar.",
+          "detailTarget": {
+            "unitId": "IP-A07-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G07-04"
+          },
+          "operationalUse": "Na arquitetura das locuções verbais, há uma rígida divisão funcional entre os verbos:"
+        },
+        {
+          "term": "Critério Temporal-Cronológico para Discriminação de Causa e Efeito",
+          "shortDefinition": "A identificação precisa das relações de causa e consequência em orações reduzidas fundamenta-se na ordem cronológica real dos fatos no mundo extralinguístico: o evento anterior no tempo é a causa (motivo gerador), enquanto o evento posterior é o efeito ou consequência.",
+          "detailTarget": {
+            "unitId": "IP-A07-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G07-05"
+          },
+          "operationalUse": "Para desvencilhar-se de ambiguidades em provas do CESPE/Cebraspe, o candidato deve aplicar dois passos diagnósticos integrados:"
+        },
+        {
+          "term": "Polissemia, Ambiguidade do Gerúndio e Cautela em Provas Discursivas",
+          "shortDefinition": "Devido à ausência de conectivos subordinativos específicos, as orações reduzidas — notadamente as de gerúndio e particípio — apresentam elevada plasticidade semântica, podendo acumular simultaneamente leituras de causa, consequência, finalidade, condição e tempo.",
+          "detailTarget": {
+            "unitId": "IP-A07-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G07-06"
+          },
+          "operationalUse": "Essa maleabilidade contextual gera frequentes polêmicas em bancas examinadoras:"
+        },
+        {
+          "term": "Semântica Temporal de \"Ao + Infinitivo\" e Pontuação na Ordem Direta",
+          "shortDefinition": "A combinação prepositiva \"ao + infinitivo\" possui valor semântico fixo de tempo (simultaneidade ou tempo imediato). Quando posicionada após a oração principal (final do período / ordem direta), o emprego da vírgula delimitadora é estritamente facultativo.",
+          "detailTarget": {
+            "unitId": "IP-A07-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G07-07"
+          },
+          "operationalUse": "Em questões de reescrita e julgamento de itens:"
+        },
+        {
+          "term": "Distinção Estrutural Definitiva: Oração Subordinada Reduzida versus Locução Verbal",
+          "shortDefinition": "A distinção sintática entre Locução Verbal (período simples / 1 oração) e Oração Subordinada Reduzida (período composto / 2 ou mais orações) não se baseia na identidade de sujeitos, mas sim na capacidade de desenvolvimento sintático por meio de conjunção integrante (\"que\") e flexão verbal finita.",
+          "detailTarget": {
+            "unitId": "IP-A07-G07",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G07-08"
+          },
+          "operationalUse": "Muitos estudantes erram questões de concurso ao assumir que verbos contíguos com o mesmo sujeito formam automaticamente locução verbal."
         }
       ]
     },
@@ -2125,7 +2828,10 @@
         "confidence": 0.98
       },
       "answerSha256": "caf695214a7b235b3bff291b2783ebfc22d16f95d29ead3cfdebe540ea1d0d79",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A07-aula07.q0065"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2173,7 +2879,10 @@
         "confidence": 0.98
       },
       "answerSha256": "527a56e47c21a872968ef64a404b70718a57fd41b7bc556c7a92655d6687630c",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A07-aula07.q0077"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2223,153 +2932,10 @@
         "confidence": 0.98
       },
       "answerSha256": "f0ab422a60bef27a4472237ca86c341406a20f00e5c0d861dddad9c8fb2ec349",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A07-aula07.q0065",
-      "lessonId": "A07",
-      "sourceQuestionId": "aula07.q0065",
-      "questionPayload": {
-        "question_id": "aula07.q0065",
-        "question_number_in_section": 1,
-        "question_type": "true_false_or_judgment",
-        "exam_board": "CEBRASPE",
-        "organization": "INOVERSASUL",
-        "position": null,
-        "year": 2025,
-        "support_text": null,
-        "prompt": "(CEBRASPE / INOVERSASUL / 2025) É importante não confundir a língua com o discurso. No último período do segundo parágrafo, a oração “não confundir a língua com o discurso” classifica-se como subordinada substantiva objetiva direta reduzida de infinitivo.",
-        "options": [],
-        "tests_concept_ids": [],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0086"
-          ],
-          "section_id": "aula07.sec22"
-        },
-        "annotation_state": "outside_annotated_scope",
-        "occurrence_type": "list",
-        "duplicate_of": "aula07.q0003",
-        "extraction_confidence": 0.96
-      },
-      "questionSha256": "76359815bc084c44d80774f4458db62fb4ba57c67e88a96063d1fbd1b4ee7037",
-      "answerPayload": {
-        "answer_id": "aula07.q0065.answer",
-        "question_id": "aula07.q0065",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0086"
-          ]
-        },
-        "confidence": 0.98
-      },
-      "answerSha256": "148f9256683993219b2bcd70da4ce0a2bb2ab4c0c613d6d11031e2a077f8fc53",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A07-aula07.q0077",
-      "lessonId": "A07",
-      "sourceQuestionId": "aula07.q0077",
-      "questionPayload": {
-        "question_id": "aula07.q0077",
-        "question_number_in_section": 11,
-        "question_type": "true_false_or_judgment",
-        "exam_board": "CEBRASPE",
-        "organization": "IHBDF",
-        "position": "CARGOS DE NÍVEL MÉDIO TÉC.",
-        "year": 2018,
-        "support_text": null,
-        "prompt": "(CEBRASPE / IHBDF / CARGOS DE NÍVEL MÉDIO TÉC. / 2018) Servir a Deus significava, para ela, cuidar dos enfermos, e especialmente dos enfermos hospitalizados. Naquela época, os hospitais curavam tão pouco e eram tão perigosos (por causa da sujeira, do risco de infecção) que os ricos preferiam tratar-se em casa. O trecho “que os ricos preferiam tratar-se em casa” expressa uma consequência do que se afirma nas duas orações imediatamente anteriores, no mesmo período.",
-        "options": [],
-        "tests_concept_ids": [],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0095"
-          ],
-          "section_id": "aula07.sec24"
-        },
-        "annotation_state": "outside_annotated_scope",
-        "occurrence_type": "list",
-        "duplicate_of": "aula07.q0022",
-        "extraction_confidence": 0.96
-      },
-      "questionSha256": "4c0ea64119abc12466374b43745c2c8cbb5342b3cd596049a29c35bd4e644953",
-      "answerPayload": {
-        "answer_id": "aula07.q0077.answer",
-        "question_id": "aula07.q0077",
-        "answer": "correct",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0095"
-          ]
-        },
-        "confidence": 0.98
-      },
-      "answerSha256": "6b57a6755038ab3474d4200350392085a2aa85dbe0d4c04078a4cac8fd2c7344",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A07-aula07.q0113",
-      "lessonId": "A07",
-      "sourceQuestionId": "aula07.q0113",
-      "questionPayload": {
-        "question_id": "aula07.q0113",
-        "question_number_in_section": 5,
-        "question_type": "true_false_or_judgment",
-        "exam_board": "CEBRASPE",
-        "organization": "MP-CE",
-        "position": null,
-        "year": 2020,
-        "support_text": null,
-        "prompt": "(CEBRASPE / MP-CE / 2020) No trecho “Nem ela própria contava consigo, como o galo crê na sua crista” (2º parágrafo), existe uma relação de oposição entre as orações que compõem o período.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.palavra_como"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0112"
-          ],
-          "section_id": "aula07.sec29"
-        },
-        "annotation_state": "outside_annotated_scope",
-        "occurrence_type": "list",
-        "duplicate_of": "aula07.q0061",
-        "extraction_confidence": 0.96
-      },
-      "questionSha256": "11ec5e386b2b52f7c5b63eaea16ff549966ff99e1fac47a88c2227e2a700a976",
-      "answerPayload": {
-        "answer_id": "aula07.q0113.answer",
-        "question_id": "aula07.q0113",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0112"
-          ]
-        },
-        "confidence": 0.98
-      },
-      "answerSha256": "c963c3d076026d5a7f1aa8869162540f2aa01f1644ee71b0b9ec20b6ec72837e",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A07-aula07.q0113"
+      ]
     }
   ]
 }

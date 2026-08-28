@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A13-G07",
     "lessonId": "A13",
     "title": "Interpretação e Compreensão: As Seis Funções da Linguagem e a Intenção Discursiva",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A13-G07",
@@ -92,174 +93,869 @@
               "to": "node_interpretacao",
               "relation": "compreensao_global"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A13-G07-001"
+          }
         }
       ]
     },
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-A13-G07-01",
-          "title": "1. O Circuito da Comunicação de Jakobson e a Matriz das Seis Funções",
+          "groupId": "GRP-A13-G07-CANONICAL-01",
+          "title": "O Princípio da Finalidade Comunicativa e o \"Mantra\" Analítico",
           "conceptRefs": [
-            "KB-A13-G07-FUNCOES-DA-LINGUAGEM-001"
+            "KB-A13-G07-FUNCOES-LINGUAGEM-001"
           ],
-          "semanticKind": "taxonomy",
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Cada ato de comunicação humana estrutura-se em torno de seis polos constitutivos. A ênfase conferida pelo enunciador a um desses polos determina a **Função da Linguagem** correspondente:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
             },
             {
-              "type": "table",
-              "text": "| Polo Focado | Função da Linguagem | Objetivo Discursivo | Recursos Linguísticos Típicos |\n| :--- | :--- | :--- | :--- |\n| **Contexto / Referente** | **Referencial / Denotativa** | Informar a realidade com neutralidade | 3ª pessoa, verbos no indicativo, denotação, dados objetivos |\n| **Emissor (Locutor)** | **Emotiva / Expressiva** | Expressar sentimentos e opiniões | 1ª pessoa (eu/nós), interjeições, adjetivação valorativa, exclamações |\n| **Receptor (Interlocutor)** | **Conativa / Apelativa** | Persuadir, convencer, induzir ação | 2ª pessoa (você/tu), verbos no imperativo, vocativos, perguntas retóricas |\n| **Mensagem (Forma)** | **Poética** | Trabalhar a estética e o ritmo da forma | Metáforas, aliterações, rimas, trocadilhos, quebra de expectativa |\n| **Canal (Contato)** | **Fática** | Iniciar, testar ou manter o canal aberto | Saudações ('olá', 'alô'), marcadores de checagem ('né?', 'veja bem') |\n| **Código (Língua)** | **Metalinguística** | Explicar o próprio código linguístico | Definições gramaticais, dicionários, textos que discutem o ato de escrever |",
-              "columns": [
-                "Polo Focado",
-                "Função da Linguagem",
-                "Objetivo Discursivo",
-                "Recursos Típicos"
-              ],
-              "rows": [
-                [
-                  "Contexto / Referente",
-                  "Referencial / Denotativa",
-                  "Informar a realidade com neutralidade",
-                  "3ª pessoa, verbos no indicativo, dados objetivos"
-                ],
-                [
-                  "Emissor (Locutor)",
-                  "Emotiva / Expressiva",
-                  "Expressar sentimentos e opiniões",
-                  "1ª pessoa (eu/nós), interjeições, adjetivação valorativa"
-                ],
-                [
-                  "Receptor (Interlocutor)",
-                  "Conativa / Apelativa",
-                  "Persuadir, convencer, induzir ação",
-                  "2ª pessoa (você/tu), imperativo, vocativos, perguntas retóricas"
-                ],
-                [
-                  "Mensagem (Forma)",
-                  "Poética",
-                  "Trabalhar a estética e o ritmo da forma",
-                  "Metáforas, aliterações, rimas, jogos verbais"
-                ],
-                [
-                  "Canal (Contato)",
-                  "Fática",
-                  "Iniciar, testar ou manter o canal aberto",
-                  "Saudações ('olá', 'alô'), marcadores de checagem ('né?')"
-                ],
-                [
-                  "Código (Língua)",
-                  "Metalinguística",
-                  "Explicar o próprio código linguístico",
-                  "Definições gramaticais, dicionários, metadiscurso"
-                ]
+              "type": "paragraph",
+              "text": "A função da linguagem corresponde à finalidade discursiva, meta ou intenção comunicativa com a qual um texto é produzido pelo enunciador. O estudo das funções não consiste na memorização mecânica de regras gramaticais descontextualizadas nem na vinculação estática a suportes físicos, mas na investigação pragmática da razão pela qual a mensagem foi emitida."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora estabelece que toda linguagem se materializa em texto, e todo texto cumpre uma função no ato interativo. Para solucionar com segurança itens de concurso das bancas contemporâneas (como FGV e Cebraspe), o analista deve aplicar o questionamento-guia (\"mantra\" analítico):"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Por que o enunciador disse isso?",
+                "Com que finalidade ele produziu essa mensagem?",
+                "Qual é a intenção discursiva dominante no contexto de circulação?"
               ]
-            }
-          ]
-        },
-        {
-          "groupId": "GRP-A13-G07-02",
-          "title": "2. O Princípio da Predominância Discursiva em Textos Híbridos",
-          "conceptRefs": [
-            "KB-A13-G07-FUNCOES-DA-LINGUAGEM-002"
-          ],
-          "semanticKind": "rule_boundary",
-          "blocks": [
+            },
             {
-              "type": "rule_boundary",
-              "text": "**A Lei da Hibridização Textual**:\nEm situações reais de prova, os textos raramente manifestam uma única função de forma pura. Um anúncio publicitário, por exemplo, pode trazer dados informativos (função referencial) e rimas poéticas (função poética), mas sua **função predominante** é inquestionavelmente a **Conativa/Apelativa**, pois toda a sua estrutura está submetida ao objetivo de vender um produto ou convencer o leitor."
-            }
-          ]
-        },
-        {
-          "groupId": "GRP-A13-G07-03",
-          "title": "3. Análise Detalhada das Funções Cognitivas: Referencial vs Emotiva",
-          "conceptRefs": [
-            "KB-A13-G07-FUNCOES-DA-LINGUAGEM-003",
-            "KB-A13-G07-FUNCOES-DA-LINGUAGEM-006"
-          ],
-          "semanticKind": "contrast",
-          "blocks": [
+              "type": "paragraph",
+              "text": "A análise não pode ser generalizada pelo suporte material: uma fotografia ou imagem não tem função pré-fixada. Uma foto no hospital enviada ao empregador possui função referencial (informar a ausência), enquanto a foto de um prato apetitoso enviada a um amigo possui função apelativa (persuadi-lo a comparecer ao restaurante)."
+            },
             {
-              "type": "comparison_matrix",
-              "text": "| Critério | Função Referencial (Denotativa) | Função Emotiva (Expressiva) |\n| :--- | :--- | :--- |\n| **Foco Central** | O Fato, a Informação, o Referente | O Sujeito Emissor, o Sentimento, a Impressão Pessoal |\n| **Pessoa Gramatical** | **3ª pessoa** (impessoalidade: *constata-se, ocorreu*) | **1ª pessoa** (subjetividade: *sinto, acredito, penso*) |\n| **Léxico Empregado** | Vocabulário técnico, preciso, unívoco, literal | Adjetivos qualificadores, interjeições, sinais de exclamação |\n| **Gêneros Canônicos** | Notícias jornalísticas, laudos periciais, relatórios de auditoria, artigos científicos | Crônicas reflexivas, poemas líricos, memoriais, cartas abertas |",
-              "columns": [
-                "Critério",
-                "Função Referencial (Denotativa)",
-                "Função Emotiva (Expressiva)"
-              ],
-              "rows": [
-                [
-                  "Foco Central",
-                  "O Fato, a Informação, o Referente",
-                  "O Emissor, o Sentimento, a Impressão Pessoal"
-                ],
-                [
-                  "Pessoa Gramatical",
-                  "3ª pessoa (impessoalidade: constata-se, ocorreu)",
-                  "1ª pessoa (subjetividade: sinto, penso)"
-                ],
-                [
-                  "Léxico Empregado",
-                  "Vocabulário técnico, preciso, unívoco, literal",
-                  "Adjetivos valorativos, interjeições, exclamações"
-                ],
-                [
-                  "Gêneros Canônicos",
-                  "Notícias jornalísticas, laudos periciais, relatórios",
-                  "Crônicas reflexivas, poemas líricos, memoriais"
-                ]
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Isolar o contexto pragmático e a relação entre emissor e receptor.",
+                "Formular a pergunta-guia antes de buscar marcas morfológicas isoladas.",
+                "Identificar qual polo do circuito comunicativo (emissor, receptor, referente, mensagem, canal ou código) catalisa o propósito macro da mensagem."
               ]
-            }
-          ]
-        },
-        {
-          "groupId": "GRP-A13-G07-04",
-          "title": "4. Função Conativa / Apelativa Além do Imperativo",
-          "conceptRefs": [
-            "KB-A13-G07-FUNCOES-DA-LINGUAGEM-004"
-          ],
-          "semanticKind": "rule_boundary",
-          "blocks": [
+            },
             {
-              "type": "concept_explanation",
-              "text": "As bancas de concurso contemporâneas superaram a visão ingênua de que a **Função Conativa** exige necessariamente verbos no imperativo (*Compre! Faça!*). Ela se manifesta com frequência por meio de:\n- **Estratégias de Envolvimento**: Uso do pronome de tratamento 'você' ou 'o cidadão' (*O seu futuro depende de escolhas conscientes*);\n- **Perguntas Retóricas Indutoras**: *Até quando vamos tolerar a corrupção?*;\n- **Condicionais e Sugestões**: *Se você deseja estabilidade, a carreira pública é o caminho*."
-            }
-          ]
-        },
-        {
-          "groupId": "GRP-A13-G07-05",
-          "title": "5. A Metalinguagem e a Função Poética na Prosa Contemporânea",
-          "conceptRefs": [
-            "KB-A13-G07-FUNCOES-DA-LINGUAGEM-007",
-            "KB-A13-G07-FUNCOES-DA-LINGUAGEM-008"
-          ],
-          "semanticKind": "classification",
-          "blocks": [
-            {
-              "type": "classification",
-              "text": "- **Função Metalinguística**: Ocorre sempre que o emissor utiliza a linguagem para refletir sobre a própria linguagem. Ocorre em verbetes de dicionário, tratados de gramática, livros didáticos e em passagens onde o autor debate a escolha de uma palavra (*'Dizer que fulano é honesto não basta; a honestidade aqui deve ser entendida como...'*).\n- **Função Poética**: Caracteriza-se pelo trabalho estético artesanal com a mensagem (sonoridade, jogos de palavras, figuras de estilo, metáforas). Ocorre tanto na poesia quanto em prosas literárias requintadas e slogans publicitários (*'Beba Coca-Cola. Desfrute a emoção'*).",
-              "categories": [
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
                 {
-                  "category": "Função Metalinguística (Foco no Código)",
-                  "items": [
-                    "Verbetes de dicionário",
-                    "Gramáticas",
-                    "Poemas sobre o ato de escrever poesia"
-                  ],
-                  "description": "A linguagem é utilizada para explicar e definir o próprio sistema linguístico."
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G07-FUNCOES-LINGUAGEM-001",
+                  "targetTitle": "Protocolo Geral de Reconhecimento pelo \"Mantra\" Analítico",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "resolution"
                 },
                 {
-                  "category": "Função Poética (Foco na Mensagem)",
-                  "items": [
-                    "Poesia lírica",
-                    "Slogans publicitários rítmicos",
-                    "Prosa artística com metáforas"
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G07-FUNCOES-LINGUAGEM-002",
+                  "targetTitle": "Protocolo para Determinação da Predominância em Textos Híbridos",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-002",
+                  "targetTitle": "O Critério de Predominância Discursiva em Textos Híbridos",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-003",
+                  "targetTitle": "Função Referencial ou Denotativa (Foco no Referente)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-004",
+                  "targetTitle": "Função Apelativa ou Conativa (Foco no Receptor e Independência do Imperativo)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-005",
+                  "targetTitle": "Função Fática e o Suporte/Canal de Comunicação",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-006",
+                  "targetTitle": "Função Emotiva ou Expressiva (Subjetividade, Opinião e Modalizadores)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-007",
+                  "targetTitle": "Função Poética (Foco na Mensagem, Forma e Recursos Conotativos)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-008",
+                  "targetTitle": "Função Metalinguística (O Código pelo Código: Tradição e Multimodalidade)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A13-G07-CANONICAL-02",
+          "title": "O Critério de Predominância Discursiva em Textos Híbridos",
+          "conceptRefs": [
+            "KB-A13-G07-FUNCOES-LINGUAGEM-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em situações comunicativas reais, os textos raramente manifestam uma única função de forma isolada. A expressão \"função predominante\" empregada pelas bancas examinadoras reconhece a coexistência de múltiplas funções acessórias, exigindo do candidato a identificação da função que orienta o objetivo discursivo estrutural do gênero textual."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença de traços secundários não descaracteriza a função dominante:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Um manual de instruções possui função apelativa/conativa dominante (orientar o comportamento do usuário), mas emprega fartamente a função referencial (especificações técnicas, voltagem, lista de componentes).",
+                "Um artigo de notícias sobre crimes cibernéticos contém termos opinativos pontuais (traço de função emotiva), mas sua macroestrutura é regida pela função referencial/denotativa.",
+                "Um livro pedagógico sobre variação linguística aborda conceitos de linguagem (metalinguagem) e expressa posições dos autores (emotiva), mas sua função predominante é a referencial/denotativa, pois seu propósito é a exposição didático-científica."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Distinguir se a questão da banca indaga se determinada função está apenas presente (fato constatável por marcas locais) ou se ela predomina (fato que depende da finalidade do gênero).",
+                "Não realizar contagem aritmética de frases; analisar a subordinação funcional."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-001",
+                  "targetTitle": "O Princípio da Finalidade Comunicativa e o \"Mantra\" Analítico",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-009",
+                  "targetTitle": "Coocorrências Canônicas e Matriz de Predominância Textual",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G07-005",
+                  "targetTitle": "Bateria de Questões Cebraspe I (material de origem)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G07-006",
+                  "targetTitle": "Bateria de Questões Cebraspe II (material de origem)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A13-G07-CANONICAL-03",
+          "title": "Função Referencial ou Denotativa (Foco no Referente)",
+          "conceptRefs": [
+            "KB-A13-G07-FUNCOES-LINGUAGEM-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função referencial (ou denotativa / informativa) centra-se no referente (assunto, contexto, dados da realidade exterior). Seu objetivo primordial é informar, relatar fatos, transmitir conhecimentos científicos ou comunicar ordenamentos normativos de forma transparente e objetiva."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A dupla nomenclatura justifica-se conceitualmente:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Referencial: Foco naquilo que é exterior ao ato de fala imediato — o referente factual explícito.",
+                "Denotativa: Emprego da linguagem em seu sentido real, objetivo, unívoco e dicionarizado, evitando conotações e ambiguidades."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Domínio de aplicação e predominância:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Textos jornalísticos, notícias, reportagens factuais;",
+                "Biografias, dados históricos e cronológicos;",
+                "Artigos didáticos, científicos e ensaios pedagógicos;",
+                "Textos normativos e legislativos (Leis, Decretos, Projetos de Lei): Embora estabeleçam comandos de conduta, a finalidade institucional de um texto legal é informar/comunicar publicamente as regras do Estado. Por isso, em leis e projetos de lei, a função predominante é a referencial/denotativa, e não a apelativa."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos registrados"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Biografia: \"O poeta mineiro Carlos Drummond de Andrade nasceu em 1902 e faleceu em 1987.\" (013)",
+                "Fato contemporâneo: \"Paulo e Mariana estão estudando Cinema em Cuba.\" (013)",
+                "Notícia/Relatório institucional: Texto sobre segurança cibernética no CNJ (014)",
+                "Texto normativo: Projeto de Lei nº 246/2024 sobre celulares em escolas (014)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-004",
+                  "targetTitle": "Função Apelativa ou Conativa (Foco no Receptor e Independência do Imperativo)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-006",
+                  "targetTitle": "Função Emotiva ou Expressiva (Subjetividade, Opinião e Modalizadores)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-007",
+                  "targetTitle": "Função Poética (Foco na Mensagem, Forma e Recursos Conotativos)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-008",
+                  "targetTitle": "Função Metalinguística (O Código pelo Código: Tradição e Multimodalidade)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A13-G07-CANONICAL-04",
+          "title": "Função Apelativa ou Conativa (Foco no Receptor e Independência do Imperativo)",
+          "conceptRefs": [
+            "KB-A13-G07-FUNCOES-LINGUAGEM-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função apelativa (ou conativa) tem como foco o receptor / interlocutor, visando persuadi-lo, orientá-lo, ordenar condutas, aconselhá-lo ou coagi-lo a adotar determinado comportamento. Fundamenta a tipologia de textos injuntivos / instrucionais."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A manifestação da função conativa desdobra-se em aspectos semânticos e morfológicos essenciais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Correspondência Tipológica: Vincula-se aos textos injuntivos e prescritivos (manuais, receitas, editais, discursos de propaganda e campanhas institucionais de conscientização).",
+                "Marcas Gramaticais Prototípicas: Emprego de verbos no modo imperativo (faça, ligue, não ultrapasse, conheça, limpe), vocativos e pronomes de segunda pessoa / tratamento direto.",
+                "Desvinculação Morfológica do Modo Imperativo (Tendência Cebraspe / FGV): A função apelativa não exige obrigatoriamente verbos no modo imperativo. As bancas contemporâneas cobram construções apelativas formuladas em:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Presente do Indicativo deôntico/coercitivo: \"Fica proibido o uso de celulares...\";",
+                "Modo Infinitivo com valor prescritivo: \"Não falar de boca cheia!\" ou \"Não ultrapassar a faixa\";",
+                "Construções impessoais ou passivas de comando."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Regra prática de prova: Se houver imperativo direcionado a comandar/orientar o leitor, a função é sempre conativa; todavia, a ausência de imperativo não descarta a função conativa se a intenção pragmática for orientar/obrigar o receptor."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos registrados"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Publicidade comercial: \"Ligue agora e saiba mais sobre nossos produtos!\" (013)",
+                "Campanha de trânsito: \"AO CONTRÁRIO DA BEBIDA, A VIDA NÃO PERMITE PEDIR MAIS UMA. SE BEBER, NÃO DIRIJA!\" (014)",
+                "Peça informativa-educativa: \"Conheça o perfil dos participantes...\" (016)",
+                "Cartaz de utilidade pública: \"NÃO DÊ CHANCE AO MOSQUITO. Limpe as calhas...\" (016)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A13-G07-FUNCOES-LINGUAGEM-001",
+                  "targetTitle": "O Mito da Dependência Exclusiva do Modo Imperativo",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A13-G07-FUNCOES-LINGUAGEM-006",
+                  "targetTitle": "Confundir Recursos Poéticos Secundários com Predomínio Poético em Cartazes",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G07-FUNCOES-LINGUAGEM-003",
+                  "targetTitle": "Diagnóstico Diferencial entre Injunção Normativa (Referencial) e Injunção Direta (Apelativa)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A13-G07-CANONICAL-05",
+          "title": "Função Fática e o Suporte/Canal de Comunicação",
+          "conceptRefs": [
+            "KB-A13-G07-FUNCOES-LINGUAGEM-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função fática centra-se no canal de transmissão (o meio físico, virtual ou o contato interpessoal), tendo como finalidade exclusiva estabelecer, testar a eficácia, prolongar, manter ou encerrar a conexão comunicativa entre emissor e receptor."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função fática opera sobre a viabilidade material e social do ato comunicativo:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Definição Técnica de Canal: É o veículo, meio ou sistema mediador que transfere a mensagem no espaço e no tempo (ondas sonoras da voz, sinal de rádio, rede de internet, fibra óptica, linha telefônica, papel impresso).",
+                "Quatro Atuações Discursivas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Inaugurar / Abrir o contato: Saudações e fórmulas rituais (\"Olá\", \"Bom dia\", \"- Consultório da Dra. Ana, boa tarde\");",
+                "Testar a integridade do canal: Verificação de recepção e áudio (\"Alô?\", \"Está me ouvindo direitinho?\", \"Certo?\", \"Entendeu?\");",
+                "Manter / Prolongar a sintonia: Marcadores conversacionais contínuos (\"Pois é\", \"Sei\", \"Uhum\", \"Veja bem\");",
+                "Finalizar / Interromper a comunicação: Fórmulas de despedida e confirmação (\"Tchau\", \"Até logo\", \"Câmbio\", \"Demorou\" no sentido de combinado/fechado)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Alerta de prova e erro comum"
+            },
+            {
+              "type": "paragraph",
+              "text": "Interpretar saudações rituais como enunciados referenciais informativos. Quando uma recepcionista atende dizendo \"Consultório da Dra. Ana, boa tarde\", ela não está descrevendo o clima meteorológico da tarde (referencial), mas operando um protocolo fático de abertura de canal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos registrados"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Atendimento formal: \"- Consultório da Dra. Ana, boa tarde.\" (013)",
+                "Teste de áudio: \"Oi! Você está me ouvindo direitinho?\" (013)",
+                "Expressão de encerramento/concordância: \"Demorou\" (013)",
+                "Definição técnica em concurso: Item sobre canal no jornalismo (TRT 21ª Região) (014)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A13-G07-FUNCOES-LINGUAGEM-002",
+                  "targetTitle": "Erro de Interpretação Literal em Fórmulas Fáticas",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A13-G07-CANONICAL-06",
+          "title": "Função Emotiva ou Expressiva (Subjetividade, Opinião e Modalizadores)",
+          "conceptRefs": [
+            "KB-A13-G07-FUNCOES-LINGUAGEM-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função emotiva (ou expressiva) centra-se no emissor / destinador, manifestando seu estado interior, emoções, sentimentos, julgamentos valorativos, opiniões e teses críticas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A doutrina pedagógica apresentada pela professora expande a visão restritiva de que a função emotiva existiria apenas em confissões sentimentais íntimas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dimensão Emocional: Expressão de afetos, dores, alegrias e saudades em primeira pessoa.",
+                "Dimensão Crítico-Opinativa e Dissertativa: Em redações dissertativo-argumentativas, editoriais e cartas de opinião, o autor utiliza dados factuais como suporte, mas a macroestrutura do texto é regida pela função emotiva/expressiva, pois a finalidade central é sustentar a sua tese (subjetividade).",
+                "O Papel dos Modalizadores: Advérbios e locuções modalizadoras (infelizmente, felizmente, lamentavelmente, com certeza, obviamente) são as marcas gramaticais decisivas que transformam uma oração puramente factual/referencial em uma declaração emotiva:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Hoje está chovendo.\" $\\rightarrow$ Função Referencial / Denotativa (constatação neutra).",
+                "\"Infelizmente, hoje está chovendo.\" $\\rightarrow$ Função Emotiva / Expressiva (juízo de valor do emissor)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Marcas Formais Identificadoras: Verbos e pronomes de 1ª pessoa (eu, meu, nós, nosso, sinto, acredito), interjeições e adjetivos avaliativos subjetivos."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos registrados"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Versos memorialistas: Casimiro de Abreu (\"Oh! que saudades que tenho / Da aurora da minha vida...\") (015)",
+                "Artigo opinativo sobre Niemeyer: Vinicius de Moraes (\"Poucos depoimentos eu tenho lido mais emocionantes...\") (016)",
+                "Carta ao leitor: Braz Chediak (\"Não fui, e não sou, um escrevedor de cartas... meus sentimentos...\") (016)",
+                "Queixa pessoal: \"Eu estou extremamente cansada do calor sufocante.\" (015)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A13-G07-FUNCOES-LINGUAGEM-003",
+                  "targetTitle": "Restringir Função Emotiva a Afetos Confessionais",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A13-G07-CANONICAL-07",
+          "title": "Função Poética (Foco na Mensagem, Forma e Recursos Conotativos)",
+          "conceptRefs": [
+            "KB-A13-G07-FUNCOES-LINGUAGEM-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função poética centra-se na própria mensagem, caracterizando-se pela preocupação estética com a forma de dizer, o \"burilar\", o embelezamento textual, o ritmo, a sonoridade e o emprego de figuras de linguagem (metáforas, antíteses, trocadilhos e jogos conotativos)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Dois preceitos fundamentais regem a cobrança da função poética:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Não restrição ao gênero lírico / poema: A função poética não ocorre exclusivamente em poesias estruturadas em estrofes e rimas. Ela manifesta-se em qualquer texto — crônicas, artigos de opinião em prosa, slogans publicitários, provérbios e títulos — no qual haja apuro estético e seleção lexical figurada.",
+                "Predominância Absoluta em Obras Poéticas: Quando o texto-base de uma questão for formalmente um poema (como em obras de Drummond ou Bilac), a função predominante é sempre a poética, mesmo que o eu lírico expresse dores, angústias ou saudades. A função emotiva é secundária e subordinada ao trabalho formal artístico.",
+                "Incompatibilidade Metáfora vs. Denotação: Expressões metafóricas e idiomáticas (\"ao pé da letra\", \"colcha de retalhos\") operam em sentido figurado/conotativo, constituindo recursos da função poética, sendo terminantemente incorreto classificá-las como função denotativa."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos registrados"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Versos clássicos: Olavo Bilac (\"Pois só quem ama pode ter ouvido / Capaz de ouvir e de entender estrelas.\") (015)",
+                "Construção metafórica/antitética: \"Se o coração bater forte e arder, no fogo o gelo vai queimar.\" (015)",
+                "Prosa estilizada: Vinicius de Moraes chamando a modéstia de \"forma infame de vaidade\" (016)",
+                "Expressões figuradas em ensaio: Mario Quintana com \"ao pé da letra\" e \"colcha de retalhos\" (016)",
+                "Poema lírico: Drummond com \"O amor bate na aorta\" (016)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A13-G07-FUNCOES-LINGUAGEM-004",
+                  "targetTitle": "Restringir Função Poética ao Gênero Poema em Versos",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-003",
+                  "targetTitle": "Função Referencial ou Denotativa (Foco no Referente)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A13-G07-CANONICAL-08",
+          "title": "Função Metalinguística (O Código pelo Código: Tradição e Multimodalidade)",
+          "conceptRefs": [
+            "KB-A13-G07-FUNCOES-LINGUAGEM-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função metalinguística centra-se no código, ocorrendo quando o próprio sistema de signos (a língua portuguesa, o desenho, o recurso audiovisual) é utilizado para descrever, conceituar, analisar ou explicar o funcionamento desse mesmo sistema."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A manifestação metalinguística atua em duas frentes de prova:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Padrão Tradicional (Linguístico / Lexical):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbetes de dicionário, tratados gramaticais e glossários técnicos;",
+                "Definições conceituais diretas do tipo \"Uma mensagem é uma comunicação escrita ou oral\";",
+                "Crônicas e reflexões literárias que dissecam o impacto semântico de uma palavra (ex.: Verissimo analisando o vocábulo \"Operação\");",
+                "Artigos sobre bilinguismo e variações da linguagem utilizando o português para tratar de línguas."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Padrão Contemporâneo e Multimodal (Tendência FGV):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A metalinguagem ocorre quando qualquer suporte semiótico volta-se sobre si mesmo:",
+                "Um material no TikTok ensinando o usuário a gravar e editar materiais no próprio TikTok;",
+                "Uma unidade didática ministrada por um professor com o objetivo de capacitar docentes sobre a didática de ministrar aulas;",
+                "Um filme cujo enredo retrata os bastidores e o processo de gravação de um filme."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critério de predomínio em textos pedagógicos"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se um texto pedagógico debate a variação linguística na escola, há presença de metalinguagem; todavia, a função predominante do texto continua sendo a referencial/denotativa, a menos que o texto consista em uma definição/verbete formal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos registrados"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Definição formal: \"Uma mensagem é uma comunicação escrita ou oral.\" (015)",
+                "Crônica lexical: Luis Fernando Verissimo dissecando a palavra \"Operação\" (015)",
+                "Metalinguagem digital: Tutoriais audiovisuais em redes sociais (015)",
+                "Debate teórico: Texto acadêmico sobre conceitos de Saussure e Bakhtin (016)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A13-G07-FUNCOES-LINGUAGEM-005",
+                  "targetTitle": "Confundir Tema sobre Linguagem com Predomínio Metalinguístico",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A13-G07-CANONICAL-09",
+          "title": "Coocorrências Canônicas e Matriz de Predominância Textual",
+          "conceptRefs": [
+            "KB-A13-G07-FUNCOES-LINGUAGEM-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A correta resolução de itens de concurso exige confrontar a coocorrência de marcas textuais com a macrofinalidade do gênero textual. A tabela abaixo sistematiza os arranjos híbridos mais frequentes nas provas de concurso:"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A13-G07-004",
+              "table": {
+                "tableId": "TABLE-IP-A13-G07-004",
+                "caption": "Definição ou ideia central",
+                "headers": [
+                  "Gênero / Contexto Textual",
+                  "Funções Concorrentes Presentes",
+                  "Função PREDOMINANTE",
+                  "Justificativa Pedagógica de Prova"
+                ],
+                "rows": [
+                  [
+                    "Leis, Decretos e Projetos de Lei",
+                    "Denotativa (dados/normas) + Conativa (força coercitiva)",
+                    "Referencial / Denotativa",
+                    "O propósito institucional macro do texto legal é comunicar publicamente as normas do Estado de forma técnica e transparente."
                   ],
-                  "description": "Trabalho artesanal com a forma, sonoridade, ritmo e expressividade conotativa."
+                  [
+                    "Poemas e Poesias em Verso",
+                    "Poética (forma/ritmo) + Emotiva (sentimentos do eu lírico)",
+                    "Poética",
+                    "A razão de ser do gênero poético é o trabalho estético com a linguagem, que subordina a expressão dos afetos."
+                  ],
+                  [
+                    "Manuais de Instrução e Receitas",
+                    "Conativa (comandos/ordens) + Referencial (peças/dados)",
+                    "Apelativa / Conativa",
+                    "A meta-guia do gênero é direcionar a conduta e os passos operacionais do usuário/leitor."
+                  ],
+                  [
+                    "Cartazes de Campanhas de Saúde / Trânsito",
+                    "Conativa (imperativos) + Poética (personificação/metáforas)",
+                    "Apelativa / Conativa",
+                    "O uso de figuras estilísticas é mero chamariz visual; o objetivo imperativo é ordenar condutas preventivas da população."
+                  ],
+                  [
+                    "Artigos e Ensaios Pedagógicos / Didáticos",
+                    "Referencial (dados) + Metalinguística (língua) + Emotiva (tese)",
+                    "Referencial / Denotativa",
+                    "A finalidade dominante é expor conhecimentos teóricos e metodológicos estruturados."
+                  ],
+                  [
+                    "Crônicas e Artigos Memorialísticos / Opinião",
+                    "Emotiva (1ª pessoa/opinião) + Poética (metáforas/estilo)",
+                    "Emotiva + Poética (Coocorrência Paritária)",
+                    "O autor funde a defesa de impressões subjetivas a uma intensa lapidação formal conotativa."
+                  ],
+                  [
+                    "Textos Expositivos de Teoria Linguística",
+                    "Referencial (historiografia) + Metalinguística (conceitos)",
+                    "Referencial + Metalinguística (Coocorrência Paritária)",
+                    "O texto é simultaneamente informativo sobre a ciência linguística e centrado no código como objeto."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Aplicar o método da pergunta-guia (PROC-A13-G07-FUNCOES-LINGUAGEM-001).",
+                "Identificar a fonte e o gênero no rodapé do texto da prova (TIP-A13-G07-FUNCOES-LINGUAGEM-003)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-002",
+                  "targetTitle": "O Critério de Predominância Discursiva em Textos Híbridos",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G07-FUNCOES-LINGUAGEM-008",
+                  "targetTitle": "Função Metalinguística (O Código pelo Código: Tradição e Multimodalidade)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G07-005",
+                  "targetTitle": "Bateria de Questões Cebraspe I (material de origem)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G07-006",
+                  "targetTitle": "Bateria de Questões Cebraspe II (material de origem)",
+                  "targetUnitId": "IP-A13-G07",
+                  "targetSection": "examples"
                 }
               ]
             }
@@ -329,70 +1025,10 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A13-G07-004",
-              "table": {
-                "tableId": "TABLE-IP-A13-G07-004",
-                "caption": "Definição ou ideia central",
-                "headers": [
-                  "Gênero / Contexto Textual",
-                  "Funções Concorrentes Presentes",
-                  "Função PREDOMINANTE",
-                  "Justificativa Pedagógica de Prova"
-                ],
-                "rows": [
-                  [
-                    "Leis, Decretos e Projetos de Lei",
-                    "Denotativa (dados/normas) + Conativa (força coercitiva)",
-                    "Referencial / Denotativa",
-                    "O propósito institucional macro do texto legal é comunicar publicamente as normas do Estado de forma técnica e transparente."
-                  ],
-                  [
-                    "Poemas e Poesias em Verso",
-                    "Poética (forma/ritmo) + Emotiva (sentimentos do eu lírico)",
-                    "Poética",
-                    "A razão de ser do gênero poético é o trabalho estético com a linguagem, que subordina a expressão dos afetos."
-                  ],
-                  [
-                    "Manuais de Instrução e Receitas",
-                    "Conativa (comandos/ordens) + Referencial (peças/dados)",
-                    "Apelativa / Conativa",
-                    "A meta-guia do gênero é direcionar a conduta e os passos operacionais do usuário/leitor."
-                  ],
-                  [
-                    "Cartazes de Campanhas de Saúde / Trânsito",
-                    "Conativa (imperativos) + Poética (personificação/metáforas)",
-                    "Apelativa / Conativa",
-                    "O uso de figuras estilísticas é mero chamariz visual; o objetivo imperativo é ordenar condutas preventivas da população."
-                  ],
-                  [
-                    "Artigos e Ensaios Pedagógicos / Didáticos",
-                    "Referencial (dados) + Metalinguística (língua) + Emotiva (tese)",
-                    "Referencial / Denotativa",
-                    "A finalidade dominante é expor conhecimentos teóricos e metodológicos estruturados."
-                  ],
-                  [
-                    "Crônicas e Artigos Memorialísticos / Opinião",
-                    "Emotiva (1ª pessoa/opinião) + Poética (metáforas/estilo)",
-                    "Emotiva + Poética (Coocorrência Paritária)",
-                    "O autor funde a defesa de impressões subjetivas a uma intensa lapidação formal conotativa."
-                  ],
-                  [
-                    "Textos Expositivos de Teoria Linguística",
-                    "Referencial (historiografia) + Metalinguística (conceitos)",
-                    "Referencial + Metalinguística (Coocorrência Paritária)",
-                    "O texto é simultaneamente informativo sobre a ciência linguística e centrado no código como objeto."
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
         }
-      ],
-      "blocks": []
+      ]
     },
     "rules": {
       "items": [
@@ -700,18 +1336,95 @@
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Função Referencial**: Linguagem informativa, neutra e denotativa centrada no contexto fático.",
-            "**Função Emotiva (Expressiva)**: Linguagem subjetiva centrada nos sentimentos e opiniões do emissor em 1ª pessoa.",
-            "**Função Conativa (Apelativa)**: Linguagem persuasiva centrada no interlocutor com objetivo de influenciar seu comportamento.",
-            "**Função Fática**: Enunciados voltados para abrir, manter, testar ou fechar o canal de comunicação.",
-            "**Função Poética**: Trabalho criativo centrado na forma, no ritmo, na sonoridade e na conotação da mensagem.",
-            "**Função Metalinguística**: O uso da própria linguagem para descrever, explicar ou analisar o sistema linguístico."
-          ]
+          "term": "O Princípio da Finalidade Comunicativa e o \"Mantra\" Analítico",
+          "shortDefinition": "A função da linguagem corresponde à finalidade discursiva, meta ou intenção comunicativa com a qual um texto é produzido pelo enunciador. O estudo das funções não consiste na memorização mecânica de regras gramaticais descontextualizadas nem na vinculação estática a suportes físicos, mas na investigação pragmática da razão pela qual a mensagem foi emitida.",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-01"
+          },
+          "operationalUse": "A professora estabelece que toda linguagem se materializa em texto, e todo texto cumpre uma função no ato interativo."
+        },
+        {
+          "term": "O Critério de Predominância Discursiva em Textos Híbridos",
+          "shortDefinition": "Em situações comunicativas reais, os textos raramente manifestam uma única função de forma isolada. A expressão \"função predominante\" empregada pelas bancas examinadoras reconhece a coexistência de múltiplas funções acessórias, exigindo do candidato a identificação da função que orienta o objetivo discursivo estrutural do gênero textual.",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-02"
+          },
+          "operationalUse": "A presença de traços secundários não descaracteriza a função dominante:"
+        },
+        {
+          "term": "Função Referencial ou Denotativa (Foco no Referente)",
+          "shortDefinition": "A função referencial (ou denotativa / informativa) centra-se no referente (assunto, contexto, dados da realidade exterior). Seu objetivo primordial é informar, relatar fatos, transmitir conhecimentos científicos ou comunicar ordenamentos normativos de forma transparente e objetiva.",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-03"
+          },
+          "operationalUse": "A dupla nomenclatura justifica-se conceitualmente:"
+        },
+        {
+          "term": "Função Apelativa ou Conativa (Foco no Receptor e Independência do Imperativo)",
+          "shortDefinition": "A função apelativa (ou conativa) tem como foco o receptor / interlocutor, visando persuadi-lo, orientá-lo, ordenar condutas, aconselhá-lo ou coagi-lo a adotar determinado comportamento. Fundamenta a tipologia de textos injuntivos / instrucionais.",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-04"
+          },
+          "operationalUse": "A manifestação da função conativa desdobra-se em aspectos semânticos e morfológicos essenciais:"
+        },
+        {
+          "term": "Função Fática e o Suporte/Canal de Comunicação",
+          "shortDefinition": "A função fática centra-se no canal de transmissão (o meio físico, virtual ou o contato interpessoal), tendo como finalidade exclusiva estabelecer, testar a eficácia, prolongar, manter ou encerrar a conexão comunicativa entre emissor e receptor.",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-05"
+          },
+          "operationalUse": "A função fática opera sobre a viabilidade material e social do ato comunicativo:"
+        },
+        {
+          "term": "Função Emotiva ou Expressiva (Subjetividade, Opinião e Modalizadores)",
+          "shortDefinition": "A função emotiva (ou expressiva) centra-se no emissor / destinador, manifestando seu estado interior, emoções, sentimentos, julgamentos valorativos, opiniões e teses críticas.",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-06"
+          },
+          "operationalUse": "A doutrina pedagógica apresentada pela professora expande a visão restritiva de que a função emotiva existiria apenas em confissões sentimentais íntimas:"
+        },
+        {
+          "term": "Função Poética (Foco na Mensagem, Forma e Recursos Conotativos)",
+          "shortDefinition": "A função poética centra-se na própria mensagem, caracterizando-se pela preocupação estética com a forma de dizer, o \"burilar\", o embelezamento textual, o ritmo, a sonoridade e o emprego de figuras de linguagem (metáforas, antíteses, trocadilhos e jogos conotativos).",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-07"
+          },
+          "operationalUse": "Dois preceitos fundamentais regem a cobrança da função poética:"
+        },
+        {
+          "term": "Função Metalinguística (O Código pelo Código: Tradição e Multimodalidade)",
+          "shortDefinition": "A função metalinguística centra-se no código, ocorrendo quando o próprio sistema de signos (a língua portuguesa, o desenho, o recurso audiovisual) é utilizado para descrever, conceituar, analisar ou explicar o funcionamento desse mesmo sistema.",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-08"
+          },
+          "operationalUse": "A manifestação metalinguística atua em duas frentes de prova:"
+        },
+        {
+          "term": "Coocorrências Canônicas e Matriz de Predominância Textual",
+          "shortDefinition": "A correta resolução de itens de concurso exige confrontar a coocorrência de marcas textuais com a macrofinalidade do gênero textual. A tabela abaixo sistematiza os arranjos híbridos mais frequentes nas provas de concurso:",
+          "detailTarget": {
+            "unitId": "IP-A13-G07",
+            "section": "explanation",
+            "groupId": "GRP-A13-G07-CANONICAL-09"
+          }
         }
       ]
     },

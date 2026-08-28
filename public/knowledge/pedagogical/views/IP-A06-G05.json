@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A06-G05",
     "lessonId": "A06",
     "title": "Complemento Nominal vs Adjunto Adnominal",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A06-G05",
@@ -47,36 +48,338 @@
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "O Fluxograma Decisório: CN vs AA",
-          "pedagogicalGoal": "Dominar o algoritmo de resolução em 4 etapas para qualquer caso de CN vs AA.",
+          "groupId": "GRP-A06-G05-CANONICAL-01",
+          "title": "Termos Integrantes da Oração e a Sintaxe de Complementação",
+          "conceptRefs": [
+            "KB-A06-G05-CN-AGENTE-PASSIVA-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "procedure",
-              "title": "Fluxograma Decisório em 4 Níveis",
-              "steps": [
-                "1. A qual classe pertence a palavra à qual o termo preposicionado está ligado?",
-                "2. Se estiver ligado a ADJETIVO ou ADVÉRBIO -> Marque imediatamente COMPLEMENTO NOMINAL (ex: 'favorável à decisão', 'longe da cidade').",
-                "3. Se estiver ligado a SUBSTANTIVO CONCRETO -> Marque imediatamente ADJUNTO ADNOMINAL (ex: 'copo de vidro', 'casa de Maria', 'livro do professor').",
-                "4. Se estiver ligado a SUBSTANTIVO ABSTRATO com preposição DIFERENTE de 'de' (a, em, por, para) -> Marque COMPLEMENTO NOMINAL (ex: 'amor à pátria', 'obediência às leis').",
-                "5. Se estiver ligado a SUBSTANTIVO ABSTRATO com preposição 'DE' -> FAÇA O TESTE AGENTE vs PACIENTE:\n   - Se o termo PRATICA a ação (Agente / Posse) -> ADJUNTO ADNOMINAL (ex: 'A crítica do jornalista' = o jornalista criticou);\n   - Se o termo RECEBE a ação (Paciente / Alvo) -> COMPLEMENTO NOMINAL (ex: 'A crítica do filme' = o filme foi criticado)."
-              ],
-              "text": "O fluxograma resolve 100% dos confrontos sintáticos entre Complemento Nominal e Adjunto Adnominal."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os termos integrantes da oração são estruturas sintáticas obrigatórias destinadas a integrar e preencher lacunas de sentido de verbos e nomes transitivos, ou a indicar o praticante da ação verbal na voz passiva analítica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na organização sintática da oração, os termos dividem-se em essenciais (sujeito e predicado), integrantes e acessórios. Os termos integrantes compreendem:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Complementos Verbais: Objeto Direto (OD) e Objeto Indireto (OI), que completam o sentido de verbos transitivos.",
+                "Complemento Nominal (CN): Termo preposicionado que completa o sentido de nomes (substantivos, adjetivos e advérbios).",
+                "Agente da Passiva (AP): Termo preposicionado que expressa o ser executor da ação na voz passiva analítica."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A função nuclear dos termos integrantes é satisfazer exigências sintático-semânticas estruturais: verbos e nomes que demandam complemento tornam-se agramaticais ou semanticamente truncados sem a presença de seus respectivos termos integrantes."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G05-CN-AGENTE-PASSIVA-002",
+                  "targetTitle": "Complemento Nominal: Conceito, Tríade de Nomes e Exigência Preposicional",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G05-CN-AGENTE-PASSIVA-003",
+                  "targetTitle": "Agente da Passiva: Conceito, Voz Passiva Analítica e Regência",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G05-CN-AGENTE-PASSIVA-004",
+                  "targetTitle": "Matriz Morfossintática Comparativa: OD, OI, CN e Agente da Passiva",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
         {
-          "groupId": "canonical-table-coverage",
-          "title": "Quadros canônicos complementares",
-          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
-          "semanticKind": "canonical_table_coverage",
+          "groupId": "GRP-A06-G05-CANONICAL-02",
+          "title": "Complemento Nominal: Conceito, Tríade de Nomes e Exigência Preposicional",
+          "conceptRefs": [
+            "KB-A06-G05-CN-AGENTE-PASSIVA-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Complemento Nominal (CN) é o termo sintático obrigatoriamente preposicionado que completa o sentido de um nome contido na oração, abrangendo sob o rótulo de \"nome\" a tríade: substantivo, adjetivo ou advérbio."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Definição Operacional de Nome: Para a sintaxe de complementação, \"nome\" define-se operacionalmente por exclusão: é tudo aquilo que não é verbo (substantivos, adjetivos e advérbios).",
+                "Obrigatoriedade da Preposição: Não existe Complemento Nominal desprovido de preposição. O conectivo pode ser puro (de, a, em, com, contra) ou contraído com artigos (da, à, ao, no, etc.).",
+                "Natureza do Núcleo do CN: Na morfologia, o núcleo do Complemento Nominal é sempre um substantivo ou uma palavra/pronome com valor substantivo.",
+                "Tríade de Classes Regentes (Destino da Seta):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Substantivo (Geralmente Abstrato com Valor Passivo/Alvo):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: O povo tinha necessidade de alimentos. (de alimentos completa o substantivo necessidade).",
+                "Exemplo: Tinha grande amor à humanidade. (à humanidade completa o substantivo amor).",
+                "Exemplo: A leitura de livros amplia conhecimentos. (de livros completa o substantivo leitura)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Adjetivo:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: Este remédio é prejudicial à saúde. (à saúde completa o adjetivo prejudicial).",
+                "Exemplo: Estava agradecido a eles. (a eles completa o adjetivo agradecido).",
+                "Exemplo: Ele é rico em virtudes. (em virtudes completa o adjetivo rico)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Advérbio:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: Agiu contrariamente ao esperado. (ao esperado completa o advérbio contrariamente)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localizar o sintagma preposicionado.",
+                "Traçar a seta para o elemento antecedente imediato que exige a complementação.",
+                "Comprovar que o elemento regente é substantivo, adjetivo ou advérbio."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Limites e restrições"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Complemento Nominal jamais completa verbos. Se o termo preposicionado completar um verbo, tratar-se-á de Objeto Indireto ou Adjunto Adverbial."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G05-CN-AGENTE-PASSIVA-005",
+                  "targetTitle": "Distinção Morfossintática: Complemento Nominal vs. Objeto Indireto",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G05-001",
+                  "targetTitle": "Tríade Canônica de Exemplos de Complemento Nominal",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G05-004",
+                  "targetTitle": "Bloco de Exercícios 1: Diferenciação entre CN (A) e OI (B)",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G05-CN-AGENTE-PASSIVA-001",
+                  "targetTitle": "O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A06-G05-CANONICAL-03",
+          "title": "Agente da Passiva: Conceito, Voz Passiva Analítica e Regência",
+          "conceptRefs": [
+            "KB-A06-G05-CN-AGENTE-PASSIVA-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Agente da Passiva (AP) é o termo integrante da oração que indica quem ou o que pratica a ação verbal expressa por uma locução verbal na voz passiva analítica (verbo auxiliar ser + particípio)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ambiente Sintático Estrito: O Agente da Passiva ocorre tipicamente na voz passiva analítica. A fórmula composicional básica exige a presença do verbo auxiliar ser (ou análogo) conjugado seguido do particípio do verbo principal (ex.: foi cercado, foi comemorada, foram lavadas).",
+                "Preposições Introdutórias:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Preposição \"por\" e variantes contratas (padrão majoritário): pelo, pela, pelos, pelas.",
+                "Preposição \"de\" (variante clássica e menos frequente): admitida gramaticalmente, como em O castelo foi cercado de inimigos."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Comportamento Sintático no Método das Setas (Autonomia Sintática): O Agente da Passiva não aponta seta para ninguém (representado na matriz sintática por um traço —). Ele não subordina nem completa um núcleo nominal ou verbal; atua como o sujeito semântico/agente que pratica a ação sofrida pelo sujeito paciente.",
+                "Núcleo Morfológico: É constituído por substantivo ou pronome substantivo."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Constatar a locução passiva (ser + particípio).",
+                "Identificar a preposição introdutória (por/de).",
+                "Aplicar o Teste de Transposição Ativa (PROC-A06-G05-CN-AGENTE-PASSIVA-002): o termo preposicionado deve se transformar perfeitamente no sujeito agente da oração correspondente na voz ativa."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G05-CN-AGENTE-PASSIVA-006",
+                  "targetTitle": "Distinção Crítica: Agente da Passiva vs. Adjunto Adverbial de Causa",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G05-CN-AGENTE-PASSIVA-007",
+                  "targetTitle": "Agente da Passiva com Preposição \"De\" e Particípio Reduzido (Armadilha FGV/Cebraspe)",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G05-002",
+                  "targetTitle": "Exemplos Canônicos de Agente da Passiva com Preposições \"Por\" e \"De\"",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G05-005",
+                  "targetTitle": "Bloco de Exercícios 2: Identificação Mista (CN, AP e OI)",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A06-G05-CANONICAL-04",
+          "title": "Matriz Morfossintática Comparativa: OD, OI, CN e Agente da Passiva",
+          "conceptRefs": [
+            "KB-A06-G05-CN-AGENTE-PASSIVA-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A análise sintática rigorosa exige a dissociação metodológica entre a função sintática (o papel relacional exercido pelo termo na oração) e a classe morfológica (a natureza intrínseca da palavra que funciona como núcleo)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A matriz morfossintática \"#ANOTAAÍ\" integra os quatro termos integrantes preposicionados e não preposicionados, parametrizando-os por conceito, referente (direção da seta), obrigatoriedade de preposição e classe morfológica do núcleo:"
+            },
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A06-G05-001",
+              "tableId": "TABLE-IP-A06-G05-003",
               "table": {
-                "tableId": "TABLE-IP-A06-G05-001",
-                "caption": "Explicação central",
+                "tableId": "TABLE-IP-A06-G05-003",
+                "caption": "Explicação consolidada",
                 "headers": [
                   "Termo Sintático",
                   "Papel Sintático",
@@ -119,15 +422,325 @@
                     "João foi elogiado pela professora."
                   ]
                 ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
+              }
             },
             {
+              "type": "heading",
+              "level": 3,
+              "text": "Insight morfossintático fundamental"
+            },
+            {
+              "type": "paragraph",
+              "text": "Todos os quatro termos (OD, OI, CN e AP) possuem núcleos morfológicos idênticos: substantivos ou pronomes substantivos. Portanto, a morfologia interna do termo não determina sua função sintática; a função é definida exclusivamente pela relação de dependência com o termo regente exterior (ou pela presença de voz passiva analítica)."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G05-CN-AGENTE-PASSIVA-001",
+                  "targetTitle": "O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A06-G05-CANONICAL-05",
+          "title": "Distinção Morfossintática: Complemento Nominal vs. Objeto Indireto",
+          "conceptRefs": [
+            "KB-A06-G05-CN-AGENTE-PASSIVA-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Embora o Objeto Indireto e o Complemento Nominal sejam ambos termos integrantes preposicionados com núcleos substantivos, distinguem-se categoricamente pela classe morfológica do termo regente para o qual apontam a seta sintática."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ponto de Convergência (Semelhanças):",
+                "Ambos desempenham função de complementação.",
+                "Ambos exigem preposição obrigatória.",
+                "Ambos possuem núcleo morfológico substantivo.",
+                "Ponto de Divergência (Diferença Decisiva):",
+                "Objeto Indireto (OI): Aponta seta para um verbo (VTI ou VTDI). Exemplo: O aluno necessita [verbo VTI] de ajuda [OI].",
+                "Complemento Nominal (CN): Aponta seta para um nome (substantivo, adjetivo ou advérbio). Exemplo: O aluno tem necessidade [substantivo] de ajuda [CN]."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "O Teste do Artigo para Validação do Regente"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando houver dúvida se a palavra regente é um verbo conjugado ou um substantivo abstrato cognato, aplica-se a anteposição do artigo definido:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ele necessita $\\rightarrow$ flexão verbal $\\rightarrow$ termo regido é Objeto Indireto.",
+                "A necessidade $\\rightarrow$ aceita artigo definidor $\\rightarrow$ é substantivo $\\rightarrow$ termo regido é Complemento Nominal."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G05-003",
+                  "targetTitle": "Pares Mínimos de Contraste Lexical: OI vs. CN",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G05-004",
+                  "targetTitle": "Bloco de Exercícios 1: Diferenciação entre CN (A) e OI (B)",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G05-CN-AGENTE-PASSIVA-003",
+                  "targetTitle": "O Erro de Classificar o Termo Isolado sem Olhar o Regente",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A06-G05-CANONICAL-06",
+          "title": "Distinção Crítica: Agente da Passiva vs. Adjunto Adverbial de Causa",
+          "conceptRefs": [
+            "KB-A06-G05-CN-AGENTE-PASSIVA-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A ocorrência da preposição por (ou contrações pelo/pela) acoplada a uma locução passiva com particípio não é garantia suficiente de Agente da Passiva; se o termo expressar o motivo/causa e falhar no teste de transposição ativa, tratar-se-á de um Adjunto Adverbial de Causa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "As bancas organizadoras exploram a homonímia estrutural para induzir o candidato ao erro. A diferenciação é dirimida pelo teste semântico de transposição:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Caso Autêntico de Agente da Passiva:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Oração Passiva: O trem foi filmado [pela TV].",
+                "Teste da Voz Ativa: A TV filmou o trem.",
+                "Diagnóstico: A expressão a TV atua plenamente como sujeito agente animado/institucional da oração ativa $\\rightarrow$ Agente da Passiva."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Caso de Falso Agente da Passiva (Adjunto Adverbial de Causa):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Oração Passiva: O menino foi elogiado [pela inteligência].",
+                "Teste da Voz Ativa: A inteligência elogiou o menino? (Inadmissível semântica e logicamente; a inteligência não é o ser que elogia, mas sim o motivo pelo qual ele foi elogiado por alguém).",
+                "Diagnóstico: A expressão indica a causa da ação passiva $\\rightarrow$ Adjunto Adverbial de Causa."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G05-CN-AGENTE-PASSIVA-001",
+                  "targetTitle": "A Pegadinha do \"Pelo/Pela\" sem Agente da Passiva",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G05-CN-AGENTE-PASSIVA-002",
+                  "targetTitle": "Teste de Transposição para Voz Ativa (Validação do Agente da Passiva)",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A06-G05-CANONICAL-07",
+          "title": "Agente da Passiva com Preposição \"De\" e Particípio Reduzido (Armadilha FGV/Cebraspe)",
+          "conceptRefs": [
+            "KB-A06-G05-CN-AGENTE-PASSIVA-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Agente da Passiva pode ocorrer introduzido pela preposição de em orações com particípios reduzidos (com verbo auxiliar elíptico/implícito), sendo validado exclusivamente pelo critério de transformar-se no sujeito agente da ação verbal na voz ativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura com Auxiliar Implícito (Padrão FGV):",
+                "Frase analisada: O menino cercado [de curiosos] estava vivo.",
+                "Decomposição sintática: cercado é uma oração reduzida de particípio (= que estava cercado / que fora cercado).",
+                "Teste da ativa: Curiosos cercaram o menino.",
+                "Validação: de curiosos é o praticante direto da ação de cercar $\\rightarrow$ Agente da Passiva regido pela preposição de.",
+                "Contraste Crítico com Particípio Adjetivado:",
+                "Frase analisada: Passou aos filhos a herança recebida [dos pais].",
+                "Dúvida recorrente: dos pais seria agente da passiva de recebida?",
+                "Teste da ativa: Os pais receberam a herança?",
+                "Validação: Não! Os pais não receberam a herança; eles a deixaram/transmitiram. Quem recebeu foram os filhos. A palavra recebida funciona meramente como adjetivo qualificador de herança, e dos pais indica o ponto de referência/origem que completa o adjetivo $\\rightarrow$ Complemento Nominal."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G05-CN-AGENTE-PASSIVA-002",
+                  "targetTitle": "Falso Agente da Passiva em Particípios Adjetivados",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G05-006",
+                  "targetTitle": "Estudo de Caso Avançado FGV: Particípio com Auxiliar Implícito",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A06-G05-CANONICAL-08",
+          "title": "O Método Operacional dos Três Passos da Análise Sintática",
+          "conceptRefs": [
+            "KB-A06-G05-CN-AGENTE-PASSIVA-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Metodologia analítica estruturada em três passos lógicos e sequenciais fundamentados na referenciação por setas, projetada para eliminar o erro de classificação sintática em questões de concursos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O algoritmo dos 3 passos sistematiza o raciocínio sintático:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 (Referenciação / Traçado da Seta): Ler o enunciado, \"conversar com a oração\" e identificar a qual termo a expressão analisada se conecta semanticamente, desenhando a seta em direção ao referente.",
+                "Passo 2 (Morfologia do Referente): Identificar a classe gramatical da palavra que recebeu a seta (verbo ou nome: substantivo, adjetivo, advérbio). Se a expressão não apontar seta para ninguém e indicar o executor em voz passiva analítica, constata-se a estrutura autônoma do agente.",
+                "Passo 3 (Consulta à Tabela Sintática): Enquadrar a função a partir da combinação Destino da Seta + Obrigatoriedade de Preposição:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Seta para Verbo sem preposição obrigatória $\\rightarrow$ OD.",
+                "Seta para Verbo com preposição obrigatória $\\rightarrow$ OI.",
+                "Seta para Nome com preposição obrigatória $\\rightarrow$ CN.",
+                "Sem seta + Voz Passiva Analítica + preposição (por/de) $\\rightarrow$ Agente da Passiva."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G05-CN-AGENTE-PASSIVA-001",
+                  "targetTitle": "O Algoritmo Operacional dos 3 Passos da Análise Sintática por Setas",
+                  "targetUnitId": "IP-A06-G05",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A06-G05-003",
+              "tableId": "TABLE-IP-A06-G05-001",
               "table": {
-                "tableId": "TABLE-IP-A06-G05-003",
-                "caption": "Explicação consolidada",
+                "tableId": "TABLE-IP-A06-G05-001",
+                "caption": "Explicação central",
                 "headers": [
                   "Termo Sintático",
                   "Papel Sintático",
@@ -315,11 +928,80 @@
     "glossary": {
       "items": [
         {
-          "term": "Complemento Nominal",
-          "shortDefinition": "Termo integrante preposicionado que completa o sentido de substantivos abstratos, adjetivos ou advérbios.",
-          "fullDefinition": "Função sintática obrigatoriamente regida por preposição que atua como alvo/paciente de um substantivo deverbal ou como completador de sentido de predicativos e advérbios relacionais, sem o qual o nome regente permaneceria semanticamente incompleto.",
-          "domain": "Sintaxe da Oração",
-          "commonMisconception": "Pensar que complemento nominal só se liga a substantivos."
+          "term": "Termos Integrantes da Oração e a Sintaxe de Complementação",
+          "shortDefinition": "Os termos integrantes da oração são estruturas sintáticas obrigatórias destinadas a integrar e preencher lacunas de sentido de verbos e nomes transitivos, ou a indicar o praticante da ação verbal na voz passiva analítica.",
+          "detailTarget": {
+            "unitId": "IP-A06-G05",
+            "section": "explanation",
+            "groupId": "GRP-A06-G05-CANONICAL-01"
+          },
+          "operationalUse": "Na organização sintática da oração, os termos dividem-se em essenciais (sujeito e predicado), integrantes e acessórios."
+        },
+        {
+          "term": "Complemento Nominal: Conceito, Tríade de Nomes e Exigência Preposicional",
+          "shortDefinition": "O Complemento Nominal (CN) é o termo sintático obrigatoriamente preposicionado que completa o sentido de um nome contido na oração, abrangendo sob o rótulo de \"nome\" a tríade: substantivo, adjetivo ou advérbio.",
+          "detailTarget": {
+            "unitId": "IP-A06-G05",
+            "section": "explanation",
+            "groupId": "GRP-A06-G05-CANONICAL-02"
+          }
+        },
+        {
+          "term": "Agente da Passiva: Conceito, Voz Passiva Analítica e Regência",
+          "shortDefinition": "O Agente da Passiva (AP) é o termo integrante da oração que indica quem ou o que pratica a ação verbal expressa por uma locução verbal na voz passiva analítica (verbo auxiliar ser + particípio).",
+          "detailTarget": {
+            "unitId": "IP-A06-G05",
+            "section": "explanation",
+            "groupId": "GRP-A06-G05-CANONICAL-03"
+          }
+        },
+        {
+          "term": "Matriz Morfossintática Comparativa: OD, OI, CN e Agente da Passiva",
+          "shortDefinition": "A análise sintática rigorosa exige a dissociação metodológica entre a função sintática (o papel relacional exercido pelo termo na oração) e a classe morfológica (a natureza intrínseca da palavra que funciona como núcleo).",
+          "detailTarget": {
+            "unitId": "IP-A06-G05",
+            "section": "explanation",
+            "groupId": "GRP-A06-G05-CANONICAL-04"
+          },
+          "operationalUse": "A matriz morfossintática \"#ANOTAAÍ\" integra os quatro termos integrantes preposicionados e não preposicionados, parametrizando-os por conceito, referente (direção da seta), obrigatoriedade de preposição e classe morfológica do núcleo:"
+        },
+        {
+          "term": "Distinção Morfossintática: Complemento Nominal vs. Objeto Indireto",
+          "shortDefinition": "Embora o Objeto Indireto e o Complemento Nominal sejam ambos termos integrantes preposicionados com núcleos substantivos, distinguem-se categoricamente pela classe morfológica do termo regente para o qual apontam a seta sintática.",
+          "detailTarget": {
+            "unitId": "IP-A06-G05",
+            "section": "explanation",
+            "groupId": "GRP-A06-G05-CANONICAL-05"
+          }
+        },
+        {
+          "term": "Distinção Crítica: Agente da Passiva vs. Adjunto Adverbial de Causa",
+          "shortDefinition": "A ocorrência da preposição por (ou contrações pelo/pela) acoplada a uma locução passiva com particípio não é garantia suficiente de Agente da Passiva; se o termo expressar o motivo/causa e falhar no teste de transposição ativa, tratar-se-á de um Adjunto Adverbial de Causa.",
+          "detailTarget": {
+            "unitId": "IP-A06-G05",
+            "section": "explanation",
+            "groupId": "GRP-A06-G05-CANONICAL-06"
+          },
+          "operationalUse": "As bancas organizadoras exploram a homonímia estrutural para induzir o candidato ao erro."
+        },
+        {
+          "term": "Agente da Passiva com Preposição \"De\" e Particípio Reduzido (Armadilha FGV/Cebraspe)",
+          "shortDefinition": "O Agente da Passiva pode ocorrer introduzido pela preposição de em orações com particípios reduzidos (com verbo auxiliar elíptico/implícito), sendo validado exclusivamente pelo critério de transformar-se no sujeito agente da ação verbal na voz ativa.",
+          "detailTarget": {
+            "unitId": "IP-A06-G05",
+            "section": "explanation",
+            "groupId": "GRP-A06-G05-CANONICAL-07"
+          }
+        },
+        {
+          "term": "O Método Operacional dos Três Passos da Análise Sintática",
+          "shortDefinition": "Metodologia analítica estruturada em três passos lógicos e sequenciais fundamentados na referenciação por setas, projetada para eliminar o erro de classificação sintática em questões de concursos.",
+          "detailTarget": {
+            "unitId": "IP-A06-G05",
+            "section": "explanation",
+            "groupId": "GRP-A06-G05-CANONICAL-08"
+          },
+          "operationalUse": "O algoritmo dos 3 passos sistematiza o raciocínio sintático:"
         }
       ]
     },
@@ -411,7 +1093,39 @@
         "confidence": 0.9
       },
       "answerSha256": "ae1bde039ea20428562027fb246290fdbcff843a94a44703b6bfde555141f431",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "No texto, o sujeito da locução “podem ser limitados”, que está oculto, é indicado pelo termo",
+        "options": [
+          {
+            "label": "A",
+            "text": "“todas as pessoas” (l.2)."
+          },
+          {
+            "label": "B",
+            "text": "“inalienáveis” (l.2)."
+          },
+          {
+            "label": "C",
+            "text": "“ninguém” (l.2)."
+          },
+          {
+            "label": "D",
+            "text": "“seus direitos humanos” (l.3)."
+          },
+          {
+            "label": "E",
+            "text": "“Os direitos humanos” (l.1)."
+          }
+        ],
+        "answer": "E",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -623,61 +1337,10 @@
         "confidence": 0.98
       },
       "answerSha256": "4d1d19d50a2f0e8aa65892c097f0952f62d60e1ccbea0e8083fc4603392e51de",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A06-aula06.q0013.list",
-      "lessonId": "A06",
-      "sourceQuestionId": "aula06.q0013.list",
-      "questionPayload": {
-        "question_id": "aula06.q0013.list",
-        "question_group_id": "aula06.q0013",
-        "occurrence": "list",
-        "duplicate_of": "aula06.q0013.commented",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "TRF-6ª REGIÃO",
-        "position": null,
-        "year": 2025,
-        "source_label": "CEBRASPE / TRF-6ª REGIÃO / 2025",
-        "support_text": "a justiça foi percebida como um poder alheio àquilo que se chamou comumente política a política permite acesso aos lugares de poder por meio de eleições",
-        "prompt": "O termo “àquilo” (segundo parágrafo) e o segmento “aos lugares de poder” (segundo período do terceiro parágrafo) complementam, respectivamente, o sentido de um adjetivo e de um substantivo, por isso desempenham, nas orações em que se inserem, a função sintática de complemento nominal.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.complemento_nominal",
-          "pt.grammar.periodo"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.aula06.0044",
-          "rule.pt.aula06.0039"
-        ],
-        "source": {
-          "document_id": "aula06_complete",
-          "page_ids": [
-            "aula06_complete.p0075"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.95
-      },
-      "questionSha256": "43d0b3138fbfa319784d69d416449526213debf7b15cc3de98620a53a27366a7",
-      "answerPayload": {
-        "answer_id": "aula06.q0013.list.answer",
-        "question_id": "aula06.q0013.list",
-        "answer": "correct",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula06_complete",
-          "page_ids": [
-            "aula06_complete.p0090"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "f4af32c08402f889d587afaaa33f538b1769eecf7a7e75a429d8fe17d93fb8f9",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A06-aula06.q0013.list"
+      ]
     },
     {
       "schemaVersion": "2.0.0",

@@ -2,6 +2,8 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { normalizePedagogicalMarkdown } from './lib/pedagogical-markdown.mjs';
+import { separateInlineOptionsFromCommand } from './lib/official-question-presentation.mjs';
+import { projectQuestionSupportBlocks } from './lib/question-support-presentation.mjs';
 
 const ROOT = process.cwd();
 const SCHEMA_VERSION = '4.2.0';
@@ -989,9 +991,10 @@ const structureEditorialSupportText = (supportText, command) => {
     }
   }
   flush();
+  const supportProjection = projectQuestionSupportBlocks(blocks);
   return {
     schemaVersion: '1.0.0',
-    supportBlocks: blocks,
+    supportBlocks: supportProjection.blocks,
     command,
     mediaKind: 'none',
     displayMode: 'text_only',
@@ -1134,10 +1137,10 @@ const normalizeEligibleQuestion = (occurrence) => {
   const { lessonId, question, answer } = occurrence;
   const sourceKey = occurrenceKey(occurrence);
   if (quarantinedQuestionIds.has(sourceKey)) return null;
-  const cleanedPrompt = cleanEditorialQuestionPrompt(question?.prompt);
+  const sourcePrompt = cleanEditorialQuestionPrompt(question?.prompt);
   const cleanedSupportText = cleanEditorialQuestionText(question?.support_text);
   const cleanedCommentary = cleanEditorialQuestionText(answer?.commentary);
-  if (!question?.question_id || cleanedPrompt.length < 10) return null;
+  if (!question?.question_id || sourcePrompt.length < 10) return null;
   if (!question.source || !answer?.source || answer.question_id !== question.question_id) return null;
   if (!Number.isFinite(question.extraction_confidence) || question.extraction_confidence < 0.9) return null;
   if (!Number.isFinite(answer.confidence) || answer.confidence < 0.9) return null;
@@ -1150,6 +1153,8 @@ const normalizeEligibleQuestion = (occurrence) => {
       label: String(option.label || '').trim(),
        text: cleanEditorialQuestionText(option.text),
     }));
+  const promptProjection = separateInlineOptionsFromCommand(sourcePrompt, options);
+  const cleanedPrompt = promptProjection.command;
   const multipleChoiceAnswer = answerLetter(answer.answer);
   let questionType;
   let correctAnswer;
@@ -1172,6 +1177,7 @@ const normalizeEligibleQuestion = (occurrence) => {
     correctAnswer,
     options: normalizedOptions,
     cleanedPrompt,
+    inlineOptionsSeparated: promptProjection.duplicatedInlineOptions,
     cleanedSupportText,
     cleanedCommentary,
   };
@@ -1213,9 +1219,17 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
     || supportEntityByPrompt.get(normalizeQuestionText(primary.cleanedPrompt));
   const presentationEntity = parallelEntity || legacyEntity;
   const recoveredSupportText = primary.cleanedSupportText || cleanEditorialQuestionText(presentationEntity?.supportText);
+  const structuredSupportPresentation = structureEditorialSupportText(recoveredSupportText, primary.cleanedPrompt);
+  const publishedSupportText = structuredSupportPresentation
+    ? structuredSupportPresentation.supportBlocks.map((block) => block.richText || block.text).filter(Boolean).join('\n\n')
+    : recoveredSupportText;
   const explicitContextReference = /\b(?:texto\s+(?:[A-Z]{1,4}\d[A-Z]?\d?|anterior)|parágrafo\s+\d+|linha\s+\d+)/i.test(primary.cleanedPrompt);
   const explicitVisualReference = /\b(?:destacad[ao]s?|sublinhad[ao]s?|grif[ao]d[ao]s?|negrito)\b/i.test(primary.cleanedPrompt);
-  const sourcePromptRichText = inlineHtmlToMarkdown(presentationEntity?.promptHtml);
+  const sourcePromptRichTextCandidate = inlineHtmlToMarkdown(presentationEntity?.promptHtml);
+  const sourcePromptRichTextProjection = separateInlineOptionsFromCommand(sourcePromptRichTextCandidate, primary.options);
+  const sourcePromptRichText = primary.inlineOptionsSeparated
+    ? (sourcePromptRichTextProjection.duplicatedInlineOptions ? sourcePromptRichTextProjection.command : undefined)
+    : sourcePromptRichTextCandidate;
   const promptRichText = officialQuestionRef === 'OQ-A00-aula00.q0006'
     ? 'A respeito das palavras destacadas no excerto “Faz parte do **processo** de **amadurecimento**”, assinale a alternativa correta.'
     : sourcePromptRichText;
@@ -1226,9 +1240,9 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
     .filter(Boolean)
     .join('\n');
   const hasSourceBackedEmphasis = /(?:\*\*[^*]+\*\*|\*[^*]+\*)/.test(visualRichText);
-  const presentation = (recoveredSupportText || promptRichText || Object.keys(optionRichText).length || explicitContextReference || explicitVisualReference)
+  const presentation = (recoveredSupportText || promptRichText || Object.keys(optionRichText).length || explicitContextReference || explicitVisualReference || primary.inlineOptionsSeparated)
     ? {
-        ...(structureEditorialSupportText(recoveredSupportText, primary.cleanedPrompt) || {
+        ...(structuredSupportPresentation || {
           schemaVersion: '1.0.0',
           supportBlocks: [],
           command: primary.cleanedPrompt,
@@ -1251,6 +1265,7 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
           sourceOfficialQuestionRef: officialQuestionRef,
           recoveredParallelSupport: Boolean(!primary.cleanedSupportText && presentationEntity?.supportText),
           pdfTypographicRepair: officialQuestionRef === 'OQ-A00-aula00.q0006',
+          inlineOptionsSeparated: primary.inlineOptionsSeparated,
         },
       }
     : undefined;
@@ -1261,7 +1276,7 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
     moduleIds,
     originalQuestionId: primary.question.question_id,
     questionType: primary.questionType,
-    supportText: recoveredSupportText,
+    supportText: publishedSupportText,
     prompt: primary.cleanedPrompt,
     ...(presentation ? { presentation } : {}),
     options: primary.options,

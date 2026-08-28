@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A10-G06",
     "lessonId": "A10",
     "title": "Regência e Crase: O Fenômeno Fonético, Casos Obrigatórios, Proibitivos e Facultativos",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A10-G06",
@@ -102,7 +103,11 @@
               "to": "node_crase_esp",
               "relation": "expansao"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A10-G06-001"
+          }
         }
       ]
     },
@@ -265,8 +270,7 @@
             }
           ]
         }
-      ],
-      "blocks": []
+      ]
     },
     "rules": {
       "items": [
@@ -513,16 +517,22 @@
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Crase**: Fenômeno fonético de fusão da preposição 'a' com o artigo feminino 'a(s)' ou com o 'a' inicial de pronomes demonstrativos.",
-            "**Acento Grave (`)**: Sinal diacrítico empregado na escrita exclusivamente para registrar a ocorrência da crase.",
-            "**Topônimo**: Nome próprio geográfico de lugar (cidade, estado, país).",
-            "**Crase Facultativa**: Situação sintática em que a inserção ou omissão do acento grave é gramaticalmente indiferente (nome feminino, possessivo singular, após até)."
-          ]
+          "term": "Crase",
+          "shortDefinition": "Fenômeno fonético de fusão da preposição 'a' com o artigo feminino 'a(s)' ou com o 'a' inicial de pronomes demonstrativos."
+        },
+        {
+          "term": "Acento Grave (`)",
+          "shortDefinition": "Sinal diacrítico empregado na escrita exclusivamente para registrar a ocorrência da crase."
+        },
+        {
+          "term": "Topônimo",
+          "shortDefinition": "Nome próprio geográfico de lugar (cidade, estado, país)."
+        },
+        {
+          "term": "Crase Facultativa",
+          "shortDefinition": "Situação sintática em que a inserção ou omissão do acento grave é gramaticalmente indiferente (nome feminino, possessivo singular, após até)."
         }
       ]
     },

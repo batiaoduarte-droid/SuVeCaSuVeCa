@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A13-G04",
     "lessonId": "A13",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A13-G04",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A13-G04-001"
+          }
         }
       ]
     },
@@ -98,8 +103,81 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nTextos narrativos e textos dissertativos expositivos (especialmente aqueles que tratam de registros históricos, marcos legais ou divulgação de dados científicos) compartilham traços morfossintáticos e temporais idênticos em sua superfície linguística.\nExplicação consolidada\nA confusão tipológica em concursos decorre do fato de que ambos os tipos textuais podem exibir simultaneamente:\nPredomínio de verbos no Pretérito Perfeito do Indicativo: Emprego de formas verbais que expressam fatos pontuais concluídos no passado (ex.: morreu, serviram, desapareceram na narração; criou, representou, foi relacionada, mostraram na dissertação expositiva).\nSucessão Cronológica de Ações: Organização dos eventos em uma linha temporal encadeada por relações de anterioridade e posterioridade (antes e depois).\nMarcadores Temporais e Cronológicos: Presença de adjuntos adverbiais de tempo, datas e anos específicos (ex.: em 2016, em 11 de fevereiro, nos primeiros meses da guerra).\nA análise meramente gramatical ou de superfície morfológica é estritamente insuficiente para definir a tipologia textual. A presença de verbos no passado e de datas não converte automaticamente um texto informativo em narrativa.\nCritérios de reconhecimento ou aplicação\nAo identificar verbos no pretérito perfeito e datas, o analista deve suspender o julgamento automático e proceder à investigação do propósito comunicativo macro do texto."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Textos narrativos e textos dissertativos expositivos (especialmente aqueles que tratam de registros históricos, marcos legais ou divulgação de dados científicos) compartilham traços morfossintáticos e temporais idênticos em sua superfície linguística."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A confusão tipológica em concursos decorre do fato de que ambos os tipos textuais podem exibir simultaneamente:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Predomínio de verbos no Pretérito Perfeito do Indicativo: Emprego de formas verbais que expressam fatos pontuais concluídos no passado (ex.: morreu, serviram, desapareceram na narração; criou, representou, foi relacionada, mostraram na dissertação expositiva).",
+                "Sucessão Cronológica de Ações: Organização dos eventos em uma linha temporal encadeada por relações de anterioridade e posterioridade (antes e depois).",
+                "Marcadores Temporais e Cronológicos: Presença de adjuntos adverbiais de tempo, datas e anos específicos (ex.: em 2016, em 11 de fevereiro, nos primeiros meses da guerra)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A análise meramente gramatical ou de superfície morfológica é estritamente insuficiente para definir a tipologia textual. A presença de verbos no passado e de datas não converte automaticamente um texto informativo em narrativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ao identificar verbos no pretérito perfeito e datas, o analista deve suspender o julgamento automático e proceder à investigação do propósito comunicativo macro do texto."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-002",
+                  "targetTitle": "O Critério da Intenção do Autor e a Presença de Tema",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-003",
+                  "targetTitle": "Estrutura e Propriedades do Texto Narrativo",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-004",
+                  "targetTitle": "Modalidades da Dissertação Expositiva: Exposição Pura vs. Expositivo-Informativo",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G04-NARRA-DISS-EXP-001",
+                  "targetTitle": "A Pegadinha do Pretérito Perfeito em Textos Científicos e Históricos",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +190,64 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO critério determinante e absoluto para desautorizar a ambiguidade formal entre narração e dissertação expositiva reside na intenção comunicativa do autor e na identificação de um tema central orientador.\nExplicação consolidada\nPara determinar a tipologia predominante diante de textos com traços morfológicos ambíguos:\nIntenção Narrativa (Contar História): O autor tem o objetivo primordial de relatar acontecimentos vivenciados por personagens específicos situados no tempo e no espaço, compondo um enredo/trama com início, meio e desfecho (ex.: o drama existencial de uma família durante a guerra).\nIntenção Dissertativa Expositiva (Expor Tema): O autor tem o objetivo primordial de expor, conceituar, explicar, contextualizar ou esclarecer dados e conhecimentos acerca de um tema central (ex.: a criação de um marco comemorativo pela ONU, o funcionamento de contratos inteligentes ou descobertas científicas sobre o sono).\nO Princípio da Vinculação ao Tema: \"Texto que tem tema é dissertativo.\" O tema atua como um núcleo semântico reiterado ao longo do texto (funcionando didaticamente como um \"mantra\"). A presença de eventos pretéritos em textos expositivos serve apenas como suporte contextual para informar o leitor a respeito do tema, e não para desenvolver personagens.\nCritérios de reconhecimento ou aplicação\nIndagar: O autor veio relatar uma história de personagens ou veio transmitir informações sobre um assunto/tema?\nAplicar o teste mental do \"era uma vez\": se o texto não aceita a lógica de uma fábula/crônica pessoal, mas sim a de um informe temático, trata-se de dissertação.Citação associada: QUOTE-A13-G04-NARRA-DISS-EXP-001."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O critério determinante e absoluto para desautorizar a ambiguidade formal entre narração e dissertação expositiva reside na intenção comunicativa do autor e na identificação de um tema central orientador."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para determinar a tipologia predominante diante de textos com traços morfológicos ambíguos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Intenção Narrativa (Contar História): O autor tem o objetivo primordial de relatar acontecimentos vivenciados por personagens específicos situados no tempo e no espaço, compondo um enredo/trama com início, meio e desfecho (ex.: o drama existencial de uma família durante a guerra).",
+                "Intenção Dissertativa Expositiva (Expor Tema): O autor tem o objetivo primordial de expor, conceituar, explicar, contextualizar ou esclarecer dados e conhecimentos acerca de um tema central (ex.: a criação de um marco comemorativo pela ONU, o funcionamento de contratos inteligentes ou descobertas científicas sobre o sono).",
+                "O Princípio da Vinculação ao Tema: \"Texto que tem tema é dissertativo.\" O tema atua como um núcleo semântico reiterado ao longo do texto (funcionando didaticamente como um \"mantra\"). A presença de eventos pretéritos em textos expositivos serve apenas como suporte contextual para informar o leitor a respeito do tema, e não para desenvolver personagens."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Indagar: O autor veio relatar uma história de personagens ou veio transmitir informações sobre um assunto/tema?",
+                "Aplicar o teste mental do \"era uma vez\": se o texto não aceita a lógica de uma fábula/crônica pessoal, mas sim a de um informe temático, trata-se de dissertação."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-001",
+                  "targetTitle": "Semelhanças Formais entre Narração e Dissertação Expositiva",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G04-NARRA-DISS-EXP-001",
+                  "targetTitle": "Método Unificado para Diagnóstico Tipológico em Concursos",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +260,52 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA narração é a tipologia discursiva estruturada sobre uma sucessão cronológica de transformações de estado, envolvendo ações praticadas por personagens ou agentes concretos no tempo e no espaço.\nExplicação consolidada\nPropriedades essenciais do texto narrativo:\nEixo Temporal Dinâmico: Encadeamento de ações em linha sucessiva de anterioridade e posterioridade (antes e depois).\nTempo Verbal Canônico (Pretérito Perfeito): Utilização preferencial de verbos no pretérito perfeito do indicativo para indicar ações pontuais concluídas no passado (acordou, vestiu, partiu, pagou, criou).\nRecurso do Presente Histórico (ou Narrativo): Possibilidade de flexionar os verbos no tempo presente do indicativo com o valor funcional de passado (introduz a chave, a porta não abre, o funcionário chega). Esse recurso confere dinamicidade, vivacidade e atualidade ao relato sem retirar dele o estatuto de narrativa cronológica.\nFoco Discursivo: Relatar os desdobramentos de fatos particulares vivenciados por indivíduos (reais ou fictícios).Exemplificado por: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A narração é a tipologia discursiva estruturada sobre uma sucessão cronológica de transformações de estado, envolvendo ações praticadas por personagens ou agentes concretos no tempo e no espaço."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Propriedades essenciais do texto narrativo:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Eixo Temporal Dinâmico: Encadeamento de ações em linha sucessiva de anterioridade e posterioridade (antes e depois).",
+                "Tempo Verbal Canônico (Pretérito Perfeito): Utilização preferencial de verbos no pretérito perfeito do indicativo para indicar ações pontuais concluídas no passado (acordou, vestiu, partiu, pagou, criou).",
+                "Recurso do Presente Histórico (ou Narrativo): Possibilidade de flexionar os verbos no tempo presente do indicativo com o valor funcional de passado (introduz a chave, a porta não abre, o funcionário chega). Esse recurso confere dinamicidade, vivacidade e atualidade ao relato sem retirar dele o estatuto de narrativa cronológica.",
+                "Foco Discursivo: Relatar os desdobramentos de fatos particulares vivenciados por indivíduos (reais ou fictícios)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-001",
+                  "targetTitle": "Semelhanças Formais entre Narração e Dissertação Expositiva",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-006",
+                  "targetTitle": "Hibridismo e Heterogeneidade Tipológica",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +318,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA dissertação expositiva tem por finalidade apresentar, discutir, conceituar e esclarecer dados e conhecimentos sobre um determinado assunto, de forma impessoal e sem intenção persuasiva autoral, subdividindo-se em puramente expositiva e expositivo-informativa.\nExplicação consolidada\nDissertação Expositiva Pura: Apresenta conceitos, teorias, noções gerais ou definições estruturadas sobre um assunto, sem juízos de valor subjetivos do autor.\nDissertação Expositivo-Informativa (ou Texto Informativo): Além de expor fatos sem persuasão autoral, caracteriza-se pela apresentação de dados recentes, novidades, pesquisas científicas e informações inéditas que provocam no leitor a sensação de aquisição de conhecimento novo (\"não sabia disso\").\nEquivalência Terminológica em Concursos: A banca Cebraspe frequentemente utiliza a expressão simplificada \"texto informativo\" para designar a dissertação expositivo-informativa. Todo texto informativo é, por definição tipológica, um texto dissertativo expositivo.Exemplificado por: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A dissertação expositiva tem por finalidade apresentar, discutir, conceituar e esclarecer dados e conhecimentos sobre um determinado assunto, de forma impessoal e sem intenção persuasiva autoral, subdividindo-se em puramente expositiva e expositivo-informativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dissertação Expositiva Pura: Apresenta conceitos, teorias, noções gerais ou definições estruturadas sobre um assunto, sem juízos de valor subjetivos do autor.",
+                "Dissertação Expositivo-Informativa (ou Texto Informativo): Além de expor fatos sem persuasão autoral, caracteriza-se pela apresentação de dados recentes, novidades, pesquisas científicas e informações inéditas que provocam no leitor a sensação de aquisição de conhecimento novo (\"não sabia disso\").",
+                "Equivalência Terminológica em Concursos: A banca Cebraspe frequentemente utiliza a expressão simplificada \"texto informativo\" para designar a dissertação expositivo-informativa. Todo texto informativo é, por definição tipológica, um texto dissertativo expositivo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-002",
+                  "targetTitle": "O Critério da Intenção do Autor e a Presença de Tema",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-005",
+                  "targetTitle": "O Estatuto Discursivo da Opinião de Terceiros no Texto Expositivo",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +371,40 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA citação ou relato de opiniões, teses e declarações de terceiros (pesquisadores, especialistas ou fontes) no interior de um texto constitui, para o autor do texto, a apresentação de um fato, preservando a natureza expositiva/informativa e impedindo sua classificação como dissertação argumentativa.\nExplicação consolidada\nTexto Dissertativo Argumentativo: O próprio autor formula juízos de valor, assume uma tese subjetiva e constrói argumentos para persuadir o interlocutor a aderir ao seu ponto de vista.\nTexto Dissertativo Expositivo com Citação de Terceiros: Quando o autor afirma \"segundo a pesquisadora X, o fenômeno ocorre por tal razão\" ou \"disse a cientista\", ele não está assumindo a tese como seu juízo de valor subjetivo; ele está expondo o fato histórico/jornalístico de que a referida autoridade emitiu aquela declaração.\nRegra Operacional: A presença de pontos de vista citados não transforma a exposição em argumentação autoral.\nRelações\nContrasta com: Dissertação Argumentativa.Citação associada: QUOTE-A13-G04-NARRA-DISS-EXP-003."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A citação ou relato de opiniões, teses e declarações de terceiros (pesquisadores, especialistas ou fontes) no interior de um texto constitui, para o autor do texto, a apresentação de um fato, preservando a natureza expositiva/informativa e impedindo sua classificação como dissertação argumentativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Texto Dissertativo Argumentativo: O próprio autor formula juízos de valor, assume uma tese subjetiva e constrói argumentos para persuadir o interlocutor a aderir ao seu ponto de vista.",
+                "Texto Dissertativo Expositivo com Citação de Terceiros: Quando o autor afirma \"segundo a pesquisadora X, o fenômeno ocorre por tal razão\" ou \"disse a cientista\", ele não está assumindo a tese como seu juízo de valor subjetivo; ele está expondo o fato histórico/jornalístico de que a referida autoridade emitiu aquela declaração.",
+                "Regra Operacional: A presença de pontos de vista citados não transforma a exposição em argumentação autoral."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G04-NARRA-DISS-EXP-002",
+                  "targetTitle": "Confundir Citação de Especialistas com Dissertação Argumentativa",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -168,36 +417,49 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs tipos textuais não ocorrem necessariamente em estado de pureza isolada; textos concretos exibem hibridismo tipológico, no qual uma macroestrutura dissertativa predominante articula-se com microestruturas narrativas subordinadas com função exemplificativa ou ilustrativa.\nExplicação consolidada\nMacroestrutura (Predomínio Global): O texto como unidade comunicativa global é estruturado para explicar um tema técnico ou conceitual (ex.: definição, histórico e infraestrutura de smart contracts), caracterizando-se como dissertativo expositivo.\nMicroestrutura (Parágrafo/Sequência Específica): Para tornar palpável a explicação teórica, o autor introduz uma narrativa hipotética ou factual de personagens (ex.: a história de Alice comprando um automóvel por contrato inteligente, com sucessão de ações: introduz chave, porta bloqueia, funcionário recolhe). Esse parágrafo específico é essencialmente narrativo.\nRegra de Julgamento em Provas: O candidato deve atentar rigorosamente para o escopo delimitado pelo comando da questão — distinguindo se a banca avalia o texto em sua totalidade (predomínio dissertativo) ou um segmento isolado (sequência narrativa)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os tipos textuais não ocorrem necessariamente em estado de pureza isolada; textos concretos exibem hibridismo tipológico, no qual uma macroestrutura dissertativa predominante articula-se com microestruturas narrativas subordinadas com função exemplificativa ou ilustrativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Macroestrutura (Predomínio Global): O texto como unidade comunicativa global é estruturado para explicar um tema técnico ou conceitual (ex.: definição, histórico e infraestrutura de smart contracts), caracterizando-se como dissertativo expositivo.",
+                "Microestrutura (Parágrafo/Sequência Específica): Para tornar palpável a explicação teórica, o autor introduz uma narrativa hipotética ou factual de personagens (ex.: a história de Alice comprando um automóvel por contrato inteligente, com sucessão de ações: introduz chave, porta bloqueia, funcionário recolhe). Esse parágrafo específico é essencialmente narrativo.",
+                "Regra de Julgamento em Provas: O candidato deve atentar rigorosamente para o escopo delimitado pelo comando da questão — distinguindo se a banca avalia o texto em sua totalidade (predomínio dissertativo) ou um segmento isolado (sequência narrativa)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-003",
+                  "targetTitle": "Estrutura e Propriedades do Texto Narrativo",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G04-NARRA-DISS-EXP-004",
+                  "targetTitle": "Modalidades da Dissertação Expositiva: Exposição Pura vs. Expositivo-Informativo",
+                  "targetUnitId": "IP-A13-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nTextos narrativos e textos dissertativos expositivos (especialmente aqueles que tratam de registros históricos, marcos legais ou divulgação de dados científicos) compartilham traços morfossintáticos e temporais idênticos em sua superfície linguística.\nExplicação consolidada\nA confusão tipológica em concursos decorre do fato de que ambos os tipos textuais podem exibir simultaneamente:\nPredomínio de verbos no Pretérito Perfeito do Indicativo: Emprego de formas verbais que expressam fatos pontuais concluídos no passado (ex.: morreu, serviram, desapareceram na narração; criou, representou, foi relacionada, mostraram na dissertação expositiva).\nSucessão Cronológica de Ações: Organização dos eventos em uma linha temporal encadeada por relações de anterioridade e posterioridade (antes e depois).\nMarcadores Temporais e Cronológicos: Presença de adjuntos adverbiais de tempo, datas e anos específicos (ex.: em 2016, em 11 de fevereiro, nos primeiros meses da guerra).\nA análise meramente gramatical ou de superfície morfológica é estritamente insuficiente para definir a tipologia textual. A presença de verbos no passado e de datas não converte automaticamente um texto informativo em narrativa.\nCritérios de reconhecimento ou aplicação\nAo identificar verbos no pretérito perfeito e datas, o analista deve suspender o julgamento automático e proceder à investigação do propósito comunicativo macro do texto."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO critério determinante e absoluto para desautorizar a ambiguidade formal entre narração e dissertação expositiva reside na intenção comunicativa do autor e na identificação de um tema central orientador.\nExplicação consolidada\nPara determinar a tipologia predominante diante de textos com traços morfológicos ambíguos:\nIntenção Narrativa (Contar História): O autor tem o objetivo primordial de relatar acontecimentos vivenciados por personagens específicos situados no tempo e no espaço, compondo um enredo/trama com início, meio e desfecho (ex.: o drama existencial de uma família durante a guerra).\nIntenção Dissertativa Expositiva (Expor Tema): O autor tem o objetivo primordial de expor, conceituar, explicar, contextualizar ou esclarecer dados e conhecimentos acerca de um tema central (ex.: a criação de um marco comemorativo pela ONU, o funcionamento de contratos inteligentes ou descobertas científicas sobre o sono).\nO Princípio da Vinculação ao Tema: \"Texto que tem tema é dissertativo.\" O tema atua como um núcleo semântico reiterado ao longo do texto (funcionando didaticamente como um \"mantra\"). A presença de eventos pretéritos em textos expositivos serve apenas como suporte contextual para informar o leitor a respeito do tema, e não para desenvolver personagens.\nCritérios de reconhecimento ou aplicação\nIndagar: O autor veio relatar uma história de personagens ou veio transmitir informações sobre um assunto/tema?\nAplicar o teste mental do \"era uma vez\": se o texto não aceita a lógica de uma fábula/crônica pessoal, mas sim a de um informe temático, trata-se de dissertação.Citação associada: QUOTE-A13-G04-NARRA-DISS-EXP-001."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA narração é a tipologia discursiva estruturada sobre uma sucessão cronológica de transformações de estado, envolvendo ações praticadas por personagens ou agentes concretos no tempo e no espaço.\nExplicação consolidada\nPropriedades essenciais do texto narrativo:\nEixo Temporal Dinâmico: Encadeamento de ações em linha sucessiva de anterioridade e posterioridade (antes e depois).\nTempo Verbal Canônico (Pretérito Perfeito): Utilização preferencial de verbos no pretérito perfeito do indicativo para indicar ações pontuais concluídas no passado (acordou, vestiu, partiu, pagou, criou).\nRecurso do Presente Histórico (ou Narrativo): Possibilidade de flexionar os verbos no tempo presente do indicativo com o valor funcional de passado (introduz a chave, a porta não abre, o funcionário chega). Esse recurso confere dinamicidade, vivacidade e atualidade ao relato sem retirar dele o estatuto de narrativa cronológica.\nFoco Discursivo: Relatar os desdobramentos de fatos particulares vivenciados por indivíduos (reais ou fictícios).Exemplificado por: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA dissertação expositiva tem por finalidade apresentar, discutir, conceituar e esclarecer dados e conhecimentos sobre um determinado assunto, de forma impessoal e sem intenção persuasiva autoral, subdividindo-se em puramente expositiva e expositivo-informativa.\nExplicação consolidada\nDissertação Expositiva Pura: Apresenta conceitos, teorias, noções gerais ou definições estruturadas sobre um assunto, sem juízos de valor subjetivos do autor.\nDissertação Expositivo-Informativa (ou Texto Informativo): Além de expor fatos sem persuasão autoral, caracteriza-se pela apresentação de dados recentes, novidades, pesquisas científicas e informações inéditas que provocam no leitor a sensação de aquisição de conhecimento novo (\"não sabia disso\").\nEquivalência Terminológica em Concursos: A banca Cebraspe frequentemente utiliza a expressão simplificada \"texto informativo\" para designar a dissertação expositivo-informativa. Todo texto informativo é, por definição tipológica, um texto dissertativo expositivo.Exemplificado por: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA citação ou relato de opiniões, teses e declarações de terceiros (pesquisadores, especialistas ou fontes) no interior de um texto constitui, para o autor do texto, a apresentação de um fato, preservando a natureza expositiva/informativa e impedindo sua classificação como dissertação argumentativa.\nExplicação consolidada\nTexto Dissertativo Argumentativo: O próprio autor formula juízos de valor, assume uma tese subjetiva e constrói argumentos para persuadir o interlocutor a aderir ao seu ponto de vista.\nTexto Dissertativo Expositivo com Citação de Terceiros: Quando o autor afirma \"segundo a pesquisadora X, o fenômeno ocorre por tal razão\" ou \"disse a cientista\", ele não está assumindo a tese como seu juízo de valor subjetivo; ele está expondo o fato histórico/jornalístico de que a referida autoridade emitiu aquela declaração.\nRegra Operacional: A presença de pontos de vista citados não transforma a exposição em argumentação autoral.\nRelações\nContrasta com: Dissertação Argumentativa.Citação associada: QUOTE-A13-G04-NARRA-DISS-EXP-003."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs tipos textuais não ocorrem necessariamente em estado de pureza isolada; textos concretos exibem hibridismo tipológico, no qual uma macroestrutura dissertativa predominante articula-se com microestruturas narrativas subordinadas com função exemplificativa ou ilustrativa.\nExplicação consolidada\nMacroestrutura (Predomínio Global): O texto como unidade comunicativa global é estruturado para explicar um tema técnico ou conceitual (ex.: definição, histórico e infraestrutura de smart contracts), caracterizando-se como dissertativo expositivo.\nMicroestrutura (Parágrafo/Sequência Específica): Para tornar palpável a explicação teórica, o autor introduz uma narrativa hipotética ou factual de personagens (ex.: a história de Alice comprando um automóvel por contrato inteligente, com sucessão de ações: introduz chave, porta bloqueia, funcionário recolhe). Esse parágrafo específico é essencialmente narrativo.\nRegra de Julgamento em Provas: O candidato deve atentar rigorosamente para o escopo delimitado pelo comando da questão — distinguindo se a banca avalia o texto em sua totalidade (predomínio dissertativo) ou um segmento isolado (sequência narrativa)."
         }
       ]
     },
@@ -385,7 +647,9 @@
               "PROC-A13-G04-NARRA-DISS-EXP-001",
               "EXP-IP-A13-G04-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -477,7 +741,9 @@
               "CONTRAST-IP-A13-G04-001",
               "EXP-IP-A13-G04-027"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -525,7 +791,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-001",
               "EXP-IP-A13-G04-028"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -580,7 +848,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-002",
               "EXP-IP-A13-G04-029"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -619,7 +889,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-003",
               "EXP-IP-A13-G04-030"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -680,7 +952,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-004",
               "EXP-IP-A13-G04-031"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -729,7 +1003,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-005",
               "EXP-IP-A13-G04-032"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -770,7 +1046,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-006",
               "EXP-IP-A13-G04-033"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -819,7 +1097,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-007",
               "EXP-IP-A13-G04-034"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -860,7 +1140,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-008",
               "EXP-IP-A13-G04-035"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -909,7 +1191,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-009",
               "EXP-IP-A13-G04-036"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -950,7 +1234,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-010",
               "EXP-IP-A13-G04-037"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -999,7 +1285,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-011",
               "EXP-IP-A13-G04-038"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1040,7 +1328,9 @@
               "WORKED_EXAMPLE-IP-A13-G04-012",
               "EXP-IP-A13-G04-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1091,7 +1381,9 @@
               "WARN-A13-G04-NARRA-DISS-EXP-001",
               "EXP-IP-A13-G04-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1127,7 +1419,9 @@
               "WARN-A13-G04-NARRA-DISS-EXP-002",
               "EXP-IP-A13-G04-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1163,25 +1457,72 @@
               "WARN-A13-G04-NARRA-DISS-EXP-003",
               "EXP-IP-A13-G04-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Semelhanças Formais entre Narração e Dissertação Expositiva**: Definição ou ideia central\nTextos narrativos e textos dissertativos expositivos (especialmente aqueles que tratam de registros históricos, marcos legais ou divulgação de dados científicos) compartilham traços morfossintáticos e temporais idênticos em sua superfície linguística.\nExplicação consolidada\nA confusão tipológica em concursos decorre do fato de que ambos os tipos textuais podem exibir simultaneamente:\nPredomínio de verbos no Pretérito Perfeito do Indicativo: Emprego de formas verbais que expressam fatos pontuais concluídos no passado (ex.: morreu, serviram, desapareceram na narração; criou, representou, foi relacionada, mostraram na dissertação expositiva).\nSucessão Cronológica de Ações: Organização dos eventos em uma linha temporal encadeada por relações de anterioridade e posterioridade (antes e depois).\nMarcadores Temporais e Cronológicos: Presença de adjuntos adverbiais de tempo, datas e anos específicos (ex.: em 2016, em 11 de fevereiro, nos primeiros meses da guerra).\nA análise meramente gramatical ou de superfície morfológica é estritamente insuficiente para definir a tipologia textual. A presença de verbos no passado e de datas não converte automaticamente um texto informativo em narrativa.\nCritérios de reconhecimento ou aplicação\nAo identificar verbos no pretérito perfeito e datas, o analista deve suspender o julgamento automático e proceder à investigação do propósito comunicativo macro do texto.",
-            "**O Critério da Intenção do Autor e a Presença de Tema**: Definição ou ideia central\nO critério determinante e absoluto para desautorizar a ambiguidade formal entre narração e dissertação expositiva reside na intenção comunicativa do autor e na identificação de um tema central orientador.\nExplicação consolidada\nPara determinar a tipologia predominante diante de textos com traços morfológicos ambíguos:\nIntenção Narrativa (Contar História): O autor tem o objetivo primordial de relatar acontecimentos vivenciados por personagens específicos situados no tempo e no espaço, compondo um enredo/trama com início, meio e desfecho (ex.: o drama existencial de uma família durante a guerra).\nIntenção Dissertativa Expositiva (Expor Tema): O autor tem o objetivo primordial de expor, conceituar, explicar, contextualizar ou esclarecer dados e conhecimentos acerca de um tema central (ex.: a criação de um marco comemorativo pela ONU, o funcionamento de contratos inteligentes ou descobertas científicas sobre o sono).\nO Princípio da Vinculação ao Tema: \"Texto que tem tema é dissertativo.\" O tema atua como um núcleo semântico reiterado ao longo do texto (funcionando didaticamente como um \"mantra\"). A presença de eventos pretéritos em textos expositivos serve apenas como suporte contextual para informar o leitor a respeito do tema, e não para desenvolver personagens.\nCritérios de reconhecimento ou aplicação\nIndagar: O autor veio relatar uma história de personagens ou veio transmitir informações sobre um assunto/tema?\nAplicar o teste mental do \"era uma vez\": se o texto não aceita a lógica de uma fábula/crônica pessoal, mas sim a de um informe temático, trata-se de dissertação.Citação associada: QUOTE-A13-G04-NARRA-DISS-EXP-001.",
-            "**Estrutura e Propriedades do Texto Narrativo**: Definição ou ideia central\nA narração é a tipologia discursiva estruturada sobre uma sucessão cronológica de transformações de estado, envolvendo ações praticadas por personagens ou agentes concretos no tempo e no espaço.\nExplicação consolidada\nPropriedades essenciais do texto narrativo:\nEixo Temporal Dinâmico: Encadeamento de ações em linha sucessiva de anterioridade e posterioridade (antes e depois).\nTempo Verbal Canônico (Pretérito Perfeito): Utilização preferencial de verbos no pretérito perfeito do indicativo para indicar ações pontuais concluídas no passado (acordou, vestiu, partiu, pagou, criou).\nRecurso do Presente Histórico (ou Narrativo): Possibilidade de flexionar os verbos no tempo presente do indicativo com o valor funcional de passado (introduz a chave, a porta não abre, o funcionário chega). Esse recurso confere dinamicidade, vivacidade e atualidade ao relato sem retirar dele o estatuto de narrativa cronológica.\nFoco Discursivo: Relatar os desdobramentos de fatos particulares vivenciados por indivíduos (reais ou fictícios).Exemplificado por: , .",
-            "**Modalidades da Dissertação Expositiva: Exposição Pura vs. Expositivo-Informativo**: Definição ou ideia central\nA dissertação expositiva tem por finalidade apresentar, discutir, conceituar e esclarecer dados e conhecimentos sobre um determinado assunto, de forma impessoal e sem intenção persuasiva autoral, subdividindo-se em puramente expositiva e expositivo-informativa.\nExplicação consolidada\nDissertação Expositiva Pura: Apresenta conceitos, teorias, noções gerais ou definições estruturadas sobre um assunto, sem juízos de valor subjetivos do autor.\nDissertação Expositivo-Informativa (ou Texto Informativo): Além de expor fatos sem persuasão autoral, caracteriza-se pela apresentação de dados recentes, novidades, pesquisas científicas e informações inéditas que provocam no leitor a sensação de aquisição de conhecimento novo (\"não sabia disso\").\nEquivalência Terminológica em Concursos: A banca Cebraspe frequentemente utiliza a expressão simplificada \"texto informativo\" para designar a dissertação expositivo-informativa. Todo texto informativo é, por definição tipológica, um texto dissertativo expositivo.Exemplificado por: , .",
-            "**O Estatuto Discursivo da Opinião de Terceiros no Texto Expositivo**: Definição ou ideia central\nA citação ou relato de opiniões, teses e declarações de terceiros (pesquisadores, especialistas ou fontes) no interior de um texto constitui, para o autor do texto, a apresentação de um fato, preservando a natureza expositiva/informativa e impedindo sua classificação como dissertação argumentativa.\nExplicação consolidada\nTexto Dissertativo Argumentativo: O próprio autor formula juízos de valor, assume uma tese subjetiva e constrói argumentos para persuadir o interlocutor a aderir ao seu ponto de vista.\nTexto Dissertativo Expositivo com Citação de Terceiros: Quando o autor afirma \"segundo a pesquisadora X, o fenômeno ocorre por tal razão\" ou \"disse a cientista\", ele não está assumindo a tese como seu juízo de valor subjetivo; ele está expondo o fato histórico/jornalístico de que a referida autoridade emitiu aquela declaração.\nRegra Operacional: A presença de pontos de vista citados não transforma a exposição em argumentação autoral.\nRelações\nContrasta com: Dissertação Argumentativa.Citação associada: QUOTE-A13-G04-NARRA-DISS-EXP-003.",
-            "**Hibridismo e Heterogeneidade Tipológica**: Definição ou ideia central\nOs tipos textuais não ocorrem necessariamente em estado de pureza isolada; textos concretos exibem hibridismo tipológico, no qual uma macroestrutura dissertativa predominante articula-se com microestruturas narrativas subordinadas com função exemplificativa ou ilustrativa.\nExplicação consolidada\nMacroestrutura (Predomínio Global): O texto como unidade comunicativa global é estruturado para explicar um tema técnico ou conceitual (ex.: definição, histórico e infraestrutura de smart contracts), caracterizando-se como dissertativo expositivo.\nMicroestrutura (Parágrafo/Sequência Específica): Para tornar palpável a explicação teórica, o autor introduz uma narrativa hipotética ou factual de personagens (ex.: a história de Alice comprando um automóvel por contrato inteligente, com sucessão de ações: introduz chave, porta bloqueia, funcionário recolhe). Esse parágrafo específico é essencialmente narrativo.\nRegra de Julgamento em Provas: O candidato deve atentar rigorosamente para o escopo delimitado pelo comando da questão — distinguindo se a banca avalia o texto em sua totalidade (predomínio dissertativo) ou um segmento isolado (sequência narrativa)."
-          ]
+          "term": "Semelhanças Formais entre Narração e Dissertação Expositiva",
+          "shortDefinition": "Textos narrativos e textos dissertativos expositivos (especialmente aqueles que tratam de registros históricos, marcos legais ou divulgação de dados científicos) compartilham traços morfossintáticos e temporais idênticos em sua superfície linguística.",
+          "detailTarget": {
+            "unitId": "IP-A13-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G04-01"
+          },
+          "operationalUse": "A confusão tipológica em concursos decorre do fato de que ambos os tipos textuais podem exibir simultaneamente:"
+        },
+        {
+          "term": "O Critério da Intenção do Autor e a Presença de Tema",
+          "shortDefinition": "O critério determinante e absoluto para desautorizar a ambiguidade formal entre narração e dissertação expositiva reside na intenção comunicativa do autor e na identificação de um tema central orientador.",
+          "detailTarget": {
+            "unitId": "IP-A13-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G04-02"
+          },
+          "operationalUse": "Para determinar a tipologia predominante diante de textos com traços morfológicos ambíguos:"
+        },
+        {
+          "term": "Estrutura e Propriedades do Texto Narrativo",
+          "shortDefinition": "A narração é a tipologia discursiva estruturada sobre uma sucessão cronológica de transformações de estado, envolvendo ações praticadas por personagens ou agentes concretos no tempo e no espaço.",
+          "detailTarget": {
+            "unitId": "IP-A13-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G04-03"
+          },
+          "operationalUse": "Propriedades essenciais do texto narrativo:"
+        },
+        {
+          "term": "Modalidades da Dissertação Expositiva: Exposição Pura vs. Expositivo-Informativo",
+          "shortDefinition": "A dissertação expositiva tem por finalidade apresentar, discutir, conceituar e esclarecer dados e conhecimentos sobre um determinado assunto, de forma impessoal e sem intenção persuasiva autoral, subdividindo-se em puramente expositiva e expositivo-informativa.",
+          "detailTarget": {
+            "unitId": "IP-A13-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G04-04"
+          }
+        },
+        {
+          "term": "O Estatuto Discursivo da Opinião de Terceiros no Texto Expositivo",
+          "shortDefinition": "A citação ou relato de opiniões, teses e declarações de terceiros (pesquisadores, especialistas ou fontes) no interior de um texto constitui, para o autor do texto, a apresentação de um fato, preservando a natureza expositiva/informativa e impedindo sua classificação como dissertação argumentativa.",
+          "detailTarget": {
+            "unitId": "IP-A13-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G04-05"
+          }
+        },
+        {
+          "term": "Hibridismo e Heterogeneidade Tipológica",
+          "shortDefinition": "Os tipos textuais não ocorrem necessariamente em estado de pureza isolada; textos concretos exibem hibridismo tipológico, no qual uma macroestrutura dissertativa predominante articula-se com microestruturas narrativas subordinadas com função exemplificativa ou ilustrativa.",
+          "detailTarget": {
+            "unitId": "IP-A13-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G04-06"
+          }
         }
       ]
     },
@@ -1346,7 +1687,10 @@
         "confidence": 0.96
       },
       "answerSha256": "15c4f1dc436f77597cae21bed4983d0197e2bea799ab43b4d5b2674eaa40b9ae",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A13-aula13.q0071"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -1425,55 +1769,6 @@
         "sourceField": "questionPayload.prompt",
         "sourcePayloadPreserved": true
       }
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A13-aula13.q0071",
-      "lessonId": "A13",
-      "sourceQuestionId": "aula13.q0071",
-      "questionPayload": {
-        "question_id": "aula13.q0071",
-        "question_number_in_section": 16,
-        "question_type": "open_or_other",
-        "exam_board": "CEBRASPE",
-        "organization": "ABIN",
-        "position": null,
-        "year": 2018,
-        "support_text": "Texto CB3A1AAA\nA atividade de inteligência é o exercício de ações especializadas para a obtenção e análise\nde dados, produção de conhecimentos e proteção de conhecimentos para o país. Inteligência e\ncontrainteligência são os dois ramos dessa atividade. A inteligência compreende ações de\nobtenção de dados associadas à análise para a compreensão desses dados. A análise transforma\nos dados em cenário compreensível para o entendimento do passado, do presente e para a\nperspectiva de como tende a se configurar o futuro. Cabe à inteligência tratar fundamentalmente\nda produção de conhecimentos com o objetivo específico de auxiliar o usuário a tomar decisões\nde maneira mais fundamentada. A contrainteligência tem como atribuições a produção de\nconhecimentos e a realização de ações voltadas à proteção de dados, conhecimentos,\ninfraestruturas críticas — comunicações, transportes, tecnologias de informação — e outros ativos\nsensíveis e sigilosos de interesse do Estado e da sociedade. O trabalho desenvolvido pela\ncontrainteligência tem foco na defesa contra ameaças como a espionagem, a sabotagem, o\nvazamento de informações e o terrorismo, patrocinadas por instituições, grupos ou governos\nestrangeiros.\nInternet: <www.abin.gov.br> (com adaptações).",
-        "prompt": "No  texto, predomina a tipologia  textual expositiva, dado o seu objetivo comunicativo de\ntransmitir ao leitor um conjunto de informações relativas às atividades desenvolvidas sob o rótulo\nde inteligência.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.text.o_texto"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0123",
-            "aula13_complete.p0124"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "duplicate_of": "aula13.q0043"
-      },
-      "questionSha256": "5467cd6b8909347a332104d49a25fd54e0e5c386c3e813289902bc8dc57103ec",
-      "answerPayload": {
-        "answer_id": "aula13.q0071.answer",
-        "question_id": "aula13.q0071",
-        "answer": "correct",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0127"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "145395e63530bac69ccc208ab1fb8eb3bab16a918be435d052a475d3dae190fc",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {
       "schemaVersion": "1.0.0",

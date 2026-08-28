@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A10-G05",
     "lessonId": "A10",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A10-G05",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A10-G05-001"
+          }
         }
       ]
     },
@@ -98,8 +103,81 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA regência nominal é a relação sintática de subordinação estabelecida entre um nome regente (substantivo, adjetivo ou advérbio) e o seu respectivo termo regido (complemento nominal), caracterizada pela presença obrigatoriamente intermediada por uma preposição fixada pelo uso culto da língua.\nExplicação consolidada\nAo contrário da regência verbal — que admite complementação direta não preposicionada (objeto direto) ou indireta preposicionada (objeto indireto) —, a regência nominal não admite ligação direta sem preposição na norma-padrão. Sempre que um termo completa o sentido de um substantivo abstrato, de um adjetivo ou de um advérbio de base relacional, essa ligação é feita por uma preposição simples ou contraída com artigo. Trata-se de um fato linguístico eminentemente convencional (\"é porque é\"), decorrente da evolução histórica e da consagração do uso pelos autores cultos, não se submetendo a regras de dedução lógica de causa e efeito.\nCritérios de reconhecimento ou aplicação\nIdentificar o termo nuclear subordinador na oração.\nConfirmar se o núcleo é um nome (não verbo).\nVerificar se o termo subsequente completa a significação desse nome.\nExigir a presença da preposição correspondente estabelecida pela norma culta.\nExemplos e contraexemplos\nCorreto: Tem certeza da vitória. (O substantivo \"certeza\" exige a preposição \"de\").\nCorreto: Ele é apto a estudar. (O adjetivo \"apto\" exige a preposição \"a\").\nCorreto: Mora longe da família. (O advérbio \"longe\" exige a preposição \"de\").\nIncorreto: Tem certeza a vitória. (Ausência agramatical de preposição).\nExceções ou limites\nNão há regência nominal direta sem preposição na norma-padrão. Casos de aparente ausência decorrem de elipses coloquiais condenadas formalmente em provas de concurso.\nRelações\nExpande: TERM-A10-G05-001, TERM-A10-G05-002\nAplica-se em:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A regência nominal é a relação sintática de subordinação estabelecida entre um nome regente (substantivo, adjetivo ou advérbio) e o seu respectivo termo regido (complemento nominal), caracterizada pela presença obrigatoriamente intermediada por uma preposição fixada pelo uso culto da língua."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao contrário da regência verbal — que admite complementação direta não preposicionada (objeto direto) ou indireta preposicionada (objeto indireto) —, a regência nominal não admite ligação direta sem preposição na norma-padrão. Sempre que um termo completa o sentido de um substantivo abstrato, de um adjetivo ou de um advérbio de base relacional, essa ligação é feita por uma preposição simples ou contraída com artigo. Trata-se de um fato linguístico eminentemente convencional (\"é porque é\"), decorrente da evolução histórica e da consagração do uso pelos autores cultos, não se submetendo a regras de dedução lógica de causa e efeito."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificar o termo nuclear subordinador na oração.",
+                "Confirmar se o núcleo é um nome (não verbo).",
+                "Verificar se o termo subsequente completa a significação desse nome.",
+                "Exigir a presença da preposição correspondente estabelecida pela norma culta."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Correto: Tem certeza da vitória. (O substantivo \"certeza\" exige a preposição \"de\").",
+                "Correto: Ele é apto a estudar. (O adjetivo \"apto\" exige a preposição \"a\").",
+                "Correto: Mora longe da família. (O advérbio \"longe\" exige a preposição \"de\").",
+                "Incorreto: Tem certeza a vitória. (Ausência agramatical de preposição)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exceções ou limites"
+            },
+            {
+              "type": "paragraph",
+              "text": "Não há regência nominal direta sem preposição na norma-padrão. Casos de aparente ausência decorrem de elipses coloquiais condenadas formalmente em provas de concurso."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A10-G05-001",
+                  "targetTitle": "Roteiro Geral do \"Farejador de Regência\"",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G05-001",
+                  "targetTitle": "O Erro de Reprovar a Preposição Culta por Desconhecimento",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +190,64 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo âmbito da regência, a categoria gramatical \"nome\" é definida operacionalmente por oposição aos verbos (\"nome é o que não é verbo\"), compreendendo estritamente três classes morfológicas: substantivos, adjetivos e advérbios.\nExplicação consolidada\nCada uma das três classes desempenha o papel de termo regente projetando exigências prepositivas específicas:\nSubstantivo: Nomeia seres, ações, sentimentos ou conceitos abstratos (certeza de, necessidade de, ampliação de, dúvida de, aversão a/por, desejo de/por, orgulho de/por, combate a, intenção de/em).\nTeste Diagnóstico do Artigo: Para certificar com rapidez se uma palavra atua como substantivo, verifica-se a possibilidade de antepor-lhe mentalmente um artigo definido ou indefinido (a certeza, a necessidade, a ampliação, a dúvida). Se admitir o artigo, o termo é um substantivo.\nAdjetivo: Expressa característica, qualidade ou estado atribuído a um substantivo (apto a, responsável por, furioso com, propenso a/para, imune a/de, contrário a, capaz de, ávido por/de, sensível a, inútil para/a, desejoso de, curioso por/para/de, avesso a/em, receoso de/em, passível de, suscetível a, sujeito a, eficaz em, restrito a, inconsciente de, necessário a, relacionado com/a).\nAdvérbio: Modifica verbo, adjetivo ou outro advérbio, exprimindo circunstância; quando possui base nominal ou temporal/espacial relacional, comanda complemento preposicionado (longe de, perto de, depois de).Gera procedimento: \nDica prática: TIP-A10-G05-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No âmbito da regência, a categoria gramatical \"nome\" é definida operacionalmente por oposição aos verbos (\"nome é o que não é verbo\"), compreendendo estritamente três classes morfológicas: substantivos, adjetivos e advérbios."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Cada uma das três classes desempenha o papel de termo regente projetando exigências prepositivas específicas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Substantivo: Nomeia seres, ações, sentimentos ou conceitos abstratos (certeza de, necessidade de, ampliação de, dúvida de, aversão a/por, desejo de/por, orgulho de/por, combate a, intenção de/em)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Teste Diagnóstico do Artigo: Para certificar com rapidez se uma palavra atua como substantivo, verifica-se a possibilidade de antepor-lhe mentalmente um artigo definido ou indefinido (a certeza, a necessidade, a ampliação, a dúvida). Se admitir o artigo, o termo é um substantivo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Adjetivo: Expressa característica, qualidade ou estado atribuído a um substantivo (apto a, responsável por, furioso com, propenso a/para, imune a/de, contrário a, capaz de, ávido por/de, sensível a, inútil para/a, desejoso de, curioso por/para/de, avesso a/em, receoso de/em, passível de, suscetível a, sujeito a, eficaz em, restrito a, inconsciente de, necessário a, relacionado com/a).",
+                "Advérbio: Modifica verbo, adjetivo ou outro advérbio, exprimindo circunstância; quando possui base nominal ou temporal/espacial relacional, comanda complemento preposicionado (longe de, perto de, depois de)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-G05-001",
+                  "targetTitle": "Conceito, Natureza e Estrutura da Regência Nominal",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A10-G05-002",
+                  "targetTitle": "Teste Diagnóstico do Artigo para Reconhecimento de Substantivo",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +260,58 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nQuando o complemento de um substantivo ou adjetivo se estrutura sob a forma de oração subordinada substantiva completiva nominal introduzida pela conjunção integrante que, a preposição regida pelo nome não pode ser omitida na norma-padrão.\nExplicação consolidada\nNa modalidade oral coloquial, os falantes frequentemente suprimem a preposição de antes de orações iniciadas por que (ex.: \"tenho certeza que...\", \"não há dúvida que...\", \"a sensação que estamos...\"). Em provas de concurso público (como explorado por Instituto AOCP, FCC e CEBRASPE), a supressão dessa preposição é classificada rigorosamente como erro de regência nominal. Nomes como dúvida, certeza, necessidade e sensação exigem a construção com a preposição expressa: de que.\nExemplos e contraexemplos\nIncorreto (vício coloquial): Não há dúvida que o progresso trará benefícios.\nCorreto (norma culta): Não há dúvida de que o progresso trará benefícios.\nIncorreto: É difícil ignorar a sensação estamos sendo vigiados.\nCorreto: É difícil ignorar a sensação de que estamos sendo vigiados.\nCorreto: Não houve a necessidade de que outros clientes fossem contatados.\nRelações\nExpande: 001Termos associados: TERM-A10-G05-003"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando o complemento de um substantivo ou adjetivo se estrutura sob a forma de oração subordinada substantiva completiva nominal introduzida pela conjunção integrante que, a preposição regida pelo nome não pode ser omitida na norma-padrão."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na modalidade oral coloquial, os falantes frequentemente suprimem a preposição de antes de orações iniciadas por que (ex.: \"tenho certeza que...\", \"não há dúvida que...\", \"a sensação que estamos...\"). Em provas de concurso público (como explorado por Instituto AOCP, FCC e CEBRASPE), a supressão dessa preposição é classificada rigorosamente como erro de regência nominal. Nomes como dúvida, certeza, necessidade e sensação exigem a construção com a preposição expressa: de que."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Incorreto (vício coloquial): Não há dúvida que o progresso trará benefícios.",
+                "Correto (norma culta): Não há dúvida de que o progresso trará benefícios.",
+                "Incorreto: É difícil ignorar a sensação estamos sendo vigiados.",
+                "Correto: É difícil ignorar a sensação de que estamos sendo vigiados.",
+                "Correto: Não houve a necessidade de que outros clientes fossem contatados."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A10-G05-001",
+                  "targetTitle": "Conceito, Natureza e Estrutura da Regência Nominal",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G05-002",
+                  "targetTitle": "Omissão de Preposição diante de Orações Subordinadas",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +324,153 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA dupla ou múltipla regência nominal ocorre quando um mesmo nome admite ser complementado por duas ou mais preposições distintas consagradas pela norma culta, mantendo a plena correção gramatical e, em regra geral, sem acarretar modificação de sentido.\nExplicação consolidada\nDiferentemente da regência verbal — na qual a alteração de preposição frequentemente altera a transitividade e muda o significado do verbo (ex.: assistir o filme vs. assistir ao filme) —, na regência nominal a variação prepositiva é tratada pelos gramáticos de modo uniforme e flexível. As bancas examinadoras cobram o conhecimento das preposições alternativas para verificar se o candidato reconhece construções cultas legítimas além daquela consagrada na linguagem informal.\nInventário de Regências Múltiplas Consolidadas no GrupoAplica-se em: \nTermos associados: TERM-A10-G05-004"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A dupla ou múltipla regência nominal ocorre quando um mesmo nome admite ser complementado por duas ou mais preposições distintas consagradas pela norma culta, mantendo a plena correção gramatical e, em regra geral, sem acarretar modificação de sentido."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Diferentemente da regência verbal — na qual a alteração de preposição frequentemente altera a transitividade e muda o significado do verbo (ex.: assistir o filme vs. assistir ao filme) —, na regência nominal a variação prepositiva é tratada pelos gramáticos de modo uniforme e flexível. As bancas examinadoras cobram o conhecimento das preposições alternativas para verificar se o candidato reconhece construções cultas legítimas além daquela consagrada na linguagem informal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Inventário de Regências Múltiplas Consolidadas no Grupo"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A10-G05-004",
+              "table": {
+                "tableId": "TABLE-IP-A10-G05-004",
+                "caption": "Inventário de Regências Múltiplas Consolidadas no Grupo",
+                "headers": [
+                  "Nome Regente",
+                  "Classe Morfológica",
+                  "Preposições Autorizadas",
+                  "Exemplos Validados"
+                ],
+                "rows": [
+                  [
+                    "Acostumado",
+                    "Adjetivo",
+                    "a / com",
+                    "acostumado a acordar cedo / acostumado com a rotina"
+                  ],
+                  [
+                    "Adaptado",
+                    "Adjetivo",
+                    "a / de / para",
+                    "adaptado ao clima / adaptado do original / adaptado para crianças"
+                  ],
+                  [
+                    "Capacidade",
+                    "Substantivo",
+                    "de / para",
+                    "capacidade de liderança / capacidade para o trabalho"
+                  ],
+                  [
+                    "Querido",
+                    "Adjetivo",
+                    "de / por",
+                    "querido de todos / querido por seus colegas"
+                  ],
+                  [
+                    "Satisfeito",
+                    "Adjetivo",
+                    "com / de / em / por",
+                    "satisfeito com o salário / satisfeito de/em/por vencer"
+                  ],
+                  [
+                    "Aversão",
+                    "Substantivo",
+                    "a / por (rejeita de)",
+                    "aversão a pessoas superficiais / aversão por injustiças"
+                  ],
+                  [
+                    "Propenso",
+                    "Adjetivo",
+                    "a / para",
+                    "propenso a maus hábitos / propenso para o vício"
+                  ],
+                  [
+                    "Imune",
+                    "Adjetivo",
+                    "a / de",
+                    "imune a crises / imune de impostos"
+                  ],
+                  [
+                    "Ávido",
+                    "Adjetivo",
+                    "por / de",
+                    "ávidos por condições / ávidos de poder"
+                  ],
+                  [
+                    "Curioso",
+                    "Adjetivo",
+                    "por / para / de",
+                    "curioso por/para/de conhecer a verdade"
+                  ],
+                  [
+                    "Desejo / Orgulho",
+                    "Substantivo",
+                    "de / por",
+                    "desejo de/por vencer / orgulho de/por seu ofício"
+                  ],
+                  [
+                    "Avesso / Receoso",
+                    "Adjetivo",
+                    "a ou de / em",
+                    "avesso à/em rotina / receoso de/em errar"
+                  ],
+                  [
+                    "Inútil",
+                    "Adjetivo",
+                    "para / a",
+                    "inútil para a reutilização / inútil à reutilização"
+                  ],
+                  [
+                    "Relacionado(a)",
+                    "Adjetivo",
+                    "com / a",
+                    "relacionada com a disciplina / relacionada à disciplina"
+                  ],
+                  [
+                    "Intenção",
+                    "Substantivo",
+                    "de / em",
+                    "intenção de difamar / intenção em difamar"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G05-003",
+                  "targetTitle": "Pegadinha de Falsa Concessão do CEBRASPE",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A10-G05-004",
+                  "targetTitle": "Protocolo de Avaliação de Dupla Regência e Crase",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +483,103 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA presença ou ausência de artigo definido acoplado à preposição exigida pelo nome não altera a regência sintática, mas determina se o termo regido possui sentido genérico (sem artigo) ou sentido específico/determinado (com artigo). Quando a preposição exigida for a e o termo regido for feminino determinado pelo artigo a, a fusão resulta obrigatoriamente no acento grave indicativo de crase (a + a = à).\nExplicação consolidada\nPreposição Diante de Substantivos no Plural (Generalização vs. Determinação):\nPreposição Simples no Singular (a + substantivo plural): Expressa sentido genérico. Ex.: ter aversão a pessoas superficiais (refere-se a quaisquer pessoas; não há artigo, logo não há crase).\nPreposição Aglutinada com Artigo Plural (às + substantivo plural): Expressa sentido determinado/específico. Ex.: ter aversão às pessoas superficiais (a prep. + as art. = crase obrigatória, especificando o grupo de indivíduos).\nPreposição Diante de Pronomes Possessivos Femininos:\nO artigo antes de pronome possessivo adjetivo é facultativo. Logo, diante de nossas reservas, é correto empregar a preposição simples (ampliação de nossas reservas) ou a preposição contraída com artigo (ampliação das nossas reservas, em que das = de + as).\nFormação de Crase por Regência Nominal em Substituições:\nAo trocar uma locução como \"para a pobreza\" pela regência do adjetivo sensível (que exige a), deve-se preservar o artigo existente na frase original: sensível a + a pobreza = sensível à pobreza.\nAo estruturar combate a + a pobreza, tem-se obrigatoriamente combate à pobreza.\nCombinação Prepositiva Masculina:\nAdjetivo que exige a diante de substantivo masculino determinado: necessários a + o bom andamento = necessários ao bom andamento.Exemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença ou ausência de artigo definido acoplado à preposição exigida pelo nome não altera a regência sintática, mas determina se o termo regido possui sentido genérico (sem artigo) ou sentido específico/determinado (com artigo). Quando a preposição exigida for a e o termo regido for feminino determinado pelo artigo a, a fusão resulta obrigatoriamente no acento grave indicativo de crase (a + a = à)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Preposição Diante de Substantivos no Plural (Generalização vs. Determinação):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Preposição Simples no Singular (a + substantivo plural): Expressa sentido genérico. Ex.: ter aversão a pessoas superficiais (refere-se a quaisquer pessoas; não há artigo, logo não há crase).",
+                "Preposição Aglutinada com Artigo Plural (às + substantivo plural): Expressa sentido determinado/específico. Ex.: ter aversão às pessoas superficiais (a prep. + as art. = crase obrigatória, especificando o grupo de indivíduos)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Preposição Diante de Pronomes Possessivos Femininos:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O artigo antes de pronome possessivo adjetivo é facultativo. Logo, diante de nossas reservas, é correto empregar a preposição simples (ampliação de nossas reservas) ou a preposição contraída com artigo (ampliação das nossas reservas, em que das = de + as)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Formação de Crase por Regência Nominal em Substituições:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ao trocar uma locução como \"para a pobreza\" pela regência do adjetivo sensível (que exige a), deve-se preservar o artigo existente na frase original: sensível a + a pobreza = sensível à pobreza.",
+                "Ao estruturar combate a + a pobreza, tem-se obrigatoriamente combate à pobreza."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Combinação Prepositiva Masculina:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Adjetivo que exige a diante de substantivo masculino determinado: necessários a + o bom andamento = necessários ao bom andamento."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G05-004",
+                  "targetTitle": "Confusão entre Preposição Pura e Crase Diante de Plural",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G05-002",
+                  "targetTitle": "Questão 01: Objetiva Concursos (2021) — Pref. de Horizontina/RS",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G05-005",
+                  "targetTitle": "Questão 04: Vunesp (2019) — Pref. de Marília/SP — Arquiteto",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +592,77 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA validação de regência em períodos longos exige postura analítica ativa (\"farejador de preposições\"), subordinando a seleção preposicional ao contexto conceitual do enunciado e aplicando testes sintáticos de reordenação direta quando houver pronomes relativos.\nExplicação consolidada\nDependência do Contexto Semântico-Conceitual: A regência não ocorre no vácuo. O termo comum, por exemplo, admite a preposição em em sentido geral circunstancial (isso é comum em festas), mas no contexto técnico de flexão gramatical de substantivos rege estritamente as preposições a ou de (substantivo comum a/de dois gêneros), sendo agramatical usar comum em nesse domínio.\nPronomes Relativos Preposicionados: Quando o período traz orações subordinadas adjetivas com pronomes relativos (do qual, ao qual, em que), deve-se transpor a oração para a ordem direta, substituindo o pronome pelo seu antecedente. Se o verbo ou nome subordinador não pedir preposição, o pronome relativo deve ser puro.\nExemplo analisado: \"...no grupo [...] do qual não pediu para integrar.\"\nOrdem direta: Não pediu para integrar [o grupo].\nDiagnóstico: O verbo integrar é VTD (não rege preposição). Logo, a forma correta é o qual não pediu para integrar (sem de).\nPrecisão Semântica das Preposições: Distinguir pares parônimos:\nSobre: Repercussão, incidência ou tema (impacto sobre o público).\nSob: Posição inferior física, tutela ou subordinação (sob a ponte, sob vigilância).\nRelações\nGera procedimento: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A validação de regência em períodos longos exige postura analítica ativa (\"farejador de preposições\"), subordinando a seleção preposicional ao contexto conceitual do enunciado e aplicando testes sintáticos de reordenação direta quando houver pronomes relativos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dependência do Contexto Semântico-Conceitual: A regência não ocorre no vácuo. O termo comum, por exemplo, admite a preposição em em sentido geral circunstancial (isso é comum em festas), mas no contexto técnico de flexão gramatical de substantivos rege estritamente as preposições a ou de (substantivo comum a/de dois gêneros), sendo agramatical usar comum em nesse domínio.",
+                "Pronomes Relativos Preposicionados: Quando o período traz orações subordinadas adjetivas com pronomes relativos (do qual, ao qual, em que), deve-se transpor a oração para a ordem direta, substituindo o pronome pelo seu antecedente. Se o verbo ou nome subordinador não pedir preposição, o pronome relativo deve ser puro."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo analisado: \"...no grupo [...] do qual não pediu para integrar.\"",
+                "Ordem direta: Não pediu para integrar [o grupo].",
+                "Diagnóstico: O verbo integrar é VTD (não rege preposição). Logo, a forma correta é o qual não pediu para integrar (sem de)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Precisão Semântica das Preposições: Distinguir pares parônimos:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sobre: Repercussão, incidência ou tema (impacto sobre o público).",
+                "Sob: Posição inferior física, tutela ou subordinação (sob a ponte, sob vigilância)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A10-G05-001",
+                  "targetTitle": "Roteiro Geral do \"Farejador de Regência\"",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A10-G05-003",
+                  "targetTitle": "Validação de Regência com Pronomes Relativos (Método da Ordem Direta)",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G05-005",
+                  "targetTitle": "Confusão Semântica entre \"Sob\" e \"Sobre\"",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -182,8 +675,77 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO paralelismo sintático consiste na simetria estrutural na coordenação de termos. Na tradição gramatical e em bancas como a FGV, a quebra de simetria para conferir ênfase é um recurso estilístico plenamente legítimo; já no CEBRASPE/CESPE, a quebra costuma ser tratada como vício formal de redação. O único caso em que a quebra de paralelismo configura erro gramatical absoluto em qualquer banca é nas correlações prepositivas fixas (de... a... vs. da... à...).\nExplicação consolidada\nRegência do Verbo Preferir (VTDI) e Inversão de Complementos:\nEstrutura padrão: preferir [Objeto Direto sem prep.] a [Objeto Indireto com prep. a].\nA FGV e os gramáticos aceitam a inversão da ordem dos complementos no último membro coordenado para criar destaque expressivo, isolando o termo antecipado por vírgula: \"...preferir o lazer ao descanso, o amor ao interesse e [à aventura] (OI antecipado), [a tranquilidade] (OD).\"\nConfronto de Bancas:\nFGV: Prioriza a correção estrita da regência e da pontuação, tolerando assimetrias de ordem como escolhas estilísticas do autor.\nCEBRASPE: Exige paralelismo rígido em itens de reescrita, penalizando assimetrias como desvios sintáticos.\nO Erro Normativo Inconteste nas Correlações:\nIncorreto (quebra de paralelismo gramatical): Ele estuda de terça à quinta-feira. (Mistura indevida de preposição pura de com preposição + artigo à).\nCorreto (simetria pura): Ele estuda de terça a quinta-feira. (Apenas preposições, sem crase).\nCorreto (simetria com artigo): Ele estuda da terça à quinta-feira. (Preposições + artigos, com crase).\nRelações\nContrasta: Postura FGV versus Postura CEBRASPETermos associados: TERM-A10-G05-005"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O paralelismo sintático consiste na simetria estrutural na coordenação de termos. Na tradição gramatical e em bancas como a FGV, a quebra de simetria para conferir ênfase é um recurso estilístico plenamente legítimo; já no CEBRASPE/CESPE, a quebra costuma ser tratada como vício formal de redação. O único caso em que a quebra de paralelismo configura erro gramatical absoluto em qualquer banca é nas correlações prepositivas fixas (de... a... vs. da... à...)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regência do Verbo Preferir (VTDI) e Inversão de Complementos:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura padrão: preferir [Objeto Direto sem prep.] a [Objeto Indireto com prep. a].",
+                "A FGV e os gramáticos aceitam a inversão da ordem dos complementos no último membro coordenado para criar destaque expressivo, isolando o termo antecipado por vírgula: \"...preferir o lazer ao descanso, o amor ao interesse e [à aventura] (OI antecipado), [a tranquilidade] (OD).\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Confronto de Bancas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "FGV: Prioriza a correção estrita da regência e da pontuação, tolerando assimetrias de ordem como escolhas estilísticas do autor.",
+                "CEBRASPE: Exige paralelismo rígido em itens de reescrita, penalizando assimetrias como desvios sintáticos."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O Erro Normativo Inconteste nas Correlações:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Incorreto (quebra de paralelismo gramatical): Ele estuda de terça à quinta-feira. (Mistura indevida de preposição pura de com preposição + artigo à).",
+                "Correto (simetria pura): Ele estuda de terça a quinta-feira. (Apenas preposições, sem crase).",
+                "Correto (simetria com artigo): Ele estuda da terça à quinta-feira. (Preposições + artigos, com crase)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G05-006",
+                  "targetTitle": "Quebra de Paralelismo em Correlações Fixas",
+                  "targetUnitId": "IP-A10-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -299,145 +861,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A10-G05-004",
-              "table": {
-                "tableId": "TABLE-IP-A10-G05-004",
-                "caption": "Inventário de Regências Múltiplas Consolidadas no Grupo",
-                "headers": [
-                  "Nome Regente",
-                  "Classe Morfológica",
-                  "Preposições Autorizadas",
-                  "Exemplos Validados"
-                ],
-                "rows": [
-                  [
-                    "Acostumado",
-                    "Adjetivo",
-                    "a / com",
-                    "acostumado a acordar cedo / acostumado com a rotina"
-                  ],
-                  [
-                    "Adaptado",
-                    "Adjetivo",
-                    "a / de / para",
-                    "adaptado ao clima / adaptado do original / adaptado para crianças"
-                  ],
-                  [
-                    "Capacidade",
-                    "Substantivo",
-                    "de / para",
-                    "capacidade de liderança / capacidade para o trabalho"
-                  ],
-                  [
-                    "Querido",
-                    "Adjetivo",
-                    "de / por",
-                    "querido de todos / querido por seus colegas"
-                  ],
-                  [
-                    "Satisfeito",
-                    "Adjetivo",
-                    "com / de / em / por",
-                    "satisfeito com o salário / satisfeito de/em/por vencer"
-                  ],
-                  [
-                    "Aversão",
-                    "Substantivo",
-                    "a / por (rejeita de)",
-                    "aversão a pessoas superficiais / aversão por injustiças"
-                  ],
-                  [
-                    "Propenso",
-                    "Adjetivo",
-                    "a / para",
-                    "propenso a maus hábitos / propenso para o vício"
-                  ],
-                  [
-                    "Imune",
-                    "Adjetivo",
-                    "a / de",
-                    "imune a crises / imune de impostos"
-                  ],
-                  [
-                    "Ávido",
-                    "Adjetivo",
-                    "por / de",
-                    "ávidos por condições / ávidos de poder"
-                  ],
-                  [
-                    "Curioso",
-                    "Adjetivo",
-                    "por / para / de",
-                    "curioso por/para/de conhecer a verdade"
-                  ],
-                  [
-                    "Desejo / Orgulho",
-                    "Substantivo",
-                    "de / por",
-                    "desejo de/por vencer / orgulho de/por seu ofício"
-                  ],
-                  [
-                    "Avesso / Receoso",
-                    "Adjetivo",
-                    "a ou de / em",
-                    "avesso à/em rotina / receoso de/em errar"
-                  ],
-                  [
-                    "Inútil",
-                    "Adjetivo",
-                    "para / a",
-                    "inútil para a reutilização / inútil à reutilização"
-                  ],
-                  [
-                    "Relacionado(a)",
-                    "Adjetivo",
-                    "com / a",
-                    "relacionada com a disciplina / relacionada à disciplina"
-                  ],
-                  [
-                    "Intenção",
-                    "Substantivo",
-                    "de / em",
-                    "intenção de difamar / intenção em difamar"
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA regência nominal é a relação sintática de subordinação estabelecida entre um nome regente (substantivo, adjetivo ou advérbio) e o seu respectivo termo regido (complemento nominal), caracterizada pela presença obrigatoriamente intermediada por uma preposição fixada pelo uso culto da língua.\nExplicação consolidada\nAo contrário da regência verbal — que admite complementação direta não preposicionada (objeto direto) ou indireta preposicionada (objeto indireto) —, a regência nominal não admite ligação direta sem preposição na norma-padrão. Sempre que um termo completa o sentido de um substantivo abstrato, de um adjetivo ou de um advérbio de base relacional, essa ligação é feita por uma preposição simples ou contraída com artigo. Trata-se de um fato linguístico eminentemente convencional (\"é porque é\"), decorrente da evolução histórica e da consagração do uso pelos autores cultos, não se submetendo a regras de dedução lógica de causa e efeito.\nCritérios de reconhecimento ou aplicação\nIdentificar o termo nuclear subordinador na oração.\nConfirmar se o núcleo é um nome (não verbo).\nVerificar se o termo subsequente completa a significação desse nome.\nExigir a presença da preposição correspondente estabelecida pela norma culta.\nExemplos e contraexemplos\nCorreto: Tem certeza da vitória. (O substantivo \"certeza\" exige a preposição \"de\").\nCorreto: Ele é apto a estudar. (O adjetivo \"apto\" exige a preposição \"a\").\nCorreto: Mora longe da família. (O advérbio \"longe\" exige a preposição \"de\").\nIncorreto: Tem certeza a vitória. (Ausência agramatical de preposição).\nExceções ou limites\nNão há regência nominal direta sem preposição na norma-padrão. Casos de aparente ausência decorrem de elipses coloquiais condenadas formalmente em provas de concurso.\nRelações\nExpande: TERM-A10-G05-001, TERM-A10-G05-002\nAplica-se em:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo âmbito da regência, a categoria gramatical \"nome\" é definida operacionalmente por oposição aos verbos (\"nome é o que não é verbo\"), compreendendo estritamente três classes morfológicas: substantivos, adjetivos e advérbios.\nExplicação consolidada\nCada uma das três classes desempenha o papel de termo regente projetando exigências prepositivas específicas:\nSubstantivo: Nomeia seres, ações, sentimentos ou conceitos abstratos (certeza de, necessidade de, ampliação de, dúvida de, aversão a/por, desejo de/por, orgulho de/por, combate a, intenção de/em).\nTeste Diagnóstico do Artigo: Para certificar com rapidez se uma palavra atua como substantivo, verifica-se a possibilidade de antepor-lhe mentalmente um artigo definido ou indefinido (a certeza, a necessidade, a ampliação, a dúvida). Se admitir o artigo, o termo é um substantivo.\nAdjetivo: Expressa característica, qualidade ou estado atribuído a um substantivo (apto a, responsável por, furioso com, propenso a/para, imune a/de, contrário a, capaz de, ávido por/de, sensível a, inútil para/a, desejoso de, curioso por/para/de, avesso a/em, receoso de/em, passível de, suscetível a, sujeito a, eficaz em, restrito a, inconsciente de, necessário a, relacionado com/a).\nAdvérbio: Modifica verbo, adjetivo ou outro advérbio, exprimindo circunstância; quando possui base nominal ou temporal/espacial relacional, comanda complemento preposicionado (longe de, perto de, depois de).Gera procedimento: \nDica prática: TIP-A10-G05-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nQuando o complemento de um substantivo ou adjetivo se estrutura sob a forma de oração subordinada substantiva completiva nominal introduzida pela conjunção integrante que, a preposição regida pelo nome não pode ser omitida na norma-padrão.\nExplicação consolidada\nNa modalidade oral coloquial, os falantes frequentemente suprimem a preposição de antes de orações iniciadas por que (ex.: \"tenho certeza que...\", \"não há dúvida que...\", \"a sensação que estamos...\"). Em provas de concurso público (como explorado por Instituto AOCP, FCC e CEBRASPE), a supressão dessa preposição é classificada rigorosamente como erro de regência nominal. Nomes como dúvida, certeza, necessidade e sensação exigem a construção com a preposição expressa: de que.\nExemplos e contraexemplos\nIncorreto (vício coloquial): Não há dúvida que o progresso trará benefícios.\nCorreto (norma culta): Não há dúvida de que o progresso trará benefícios.\nIncorreto: É difícil ignorar a sensação estamos sendo vigiados.\nCorreto: É difícil ignorar a sensação de que estamos sendo vigiados.\nCorreto: Não houve a necessidade de que outros clientes fossem contatados.\nRelações\nExpande: 001Termos associados: TERM-A10-G05-003"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA dupla ou múltipla regência nominal ocorre quando um mesmo nome admite ser complementado por duas ou mais preposições distintas consagradas pela norma culta, mantendo a plena correção gramatical e, em regra geral, sem acarretar modificação de sentido.\nExplicação consolidada\nDiferentemente da regência verbal — na qual a alteração de preposição frequentemente altera a transitividade e muda o significado do verbo (ex.: assistir o filme vs. assistir ao filme) —, na regência nominal a variação prepositiva é tratada pelos gramáticos de modo uniforme e flexível. As bancas examinadoras cobram o conhecimento das preposições alternativas para verificar se o candidato reconhece construções cultas legítimas além daquela consagrada na linguagem informal.\nInventário de Regências Múltiplas Consolidadas no GrupoAplica-se em: \nTermos associados: TERM-A10-G05-004"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA presença ou ausência de artigo definido acoplado à preposição exigida pelo nome não altera a regência sintática, mas determina se o termo regido possui sentido genérico (sem artigo) ou sentido específico/determinado (com artigo). Quando a preposição exigida for a e o termo regido for feminino determinado pelo artigo a, a fusão resulta obrigatoriamente no acento grave indicativo de crase (a + a = à).\nExplicação consolidada\nPreposição Diante de Substantivos no Plural (Generalização vs. Determinação):\nPreposição Simples no Singular (a + substantivo plural): Expressa sentido genérico. Ex.: ter aversão a pessoas superficiais (refere-se a quaisquer pessoas; não há artigo, logo não há crase).\nPreposição Aglutinada com Artigo Plural (às + substantivo plural): Expressa sentido determinado/específico. Ex.: ter aversão às pessoas superficiais (a prep. + as art. = crase obrigatória, especificando o grupo de indivíduos).\nPreposição Diante de Pronomes Possessivos Femininos:\nO artigo antes de pronome possessivo adjetivo é facultativo. Logo, diante de nossas reservas, é correto empregar a preposição simples (ampliação de nossas reservas) ou a preposição contraída com artigo (ampliação das nossas reservas, em que das = de + as).\nFormação de Crase por Regência Nominal em Substituições:\nAo trocar uma locução como \"para a pobreza\" pela regência do adjetivo sensível (que exige a), deve-se preservar o artigo existente na frase original: sensível a + a pobreza = sensível à pobreza.\nAo estruturar combate a + a pobreza, tem-se obrigatoriamente combate à pobreza.\nCombinação Prepositiva Masculina:\nAdjetivo que exige a diante de substantivo masculino determinado: necessários a + o bom andamento = necessários ao bom andamento.Exemplificado por: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA validação de regência em períodos longos exige postura analítica ativa (\"farejador de preposições\"), subordinando a seleção preposicional ao contexto conceitual do enunciado e aplicando testes sintáticos de reordenação direta quando houver pronomes relativos.\nExplicação consolidada\nDependência do Contexto Semântico-Conceitual: A regência não ocorre no vácuo. O termo comum, por exemplo, admite a preposição em em sentido geral circunstancial (isso é comum em festas), mas no contexto técnico de flexão gramatical de substantivos rege estritamente as preposições a ou de (substantivo comum a/de dois gêneros), sendo agramatical usar comum em nesse domínio.\nPronomes Relativos Preposicionados: Quando o período traz orações subordinadas adjetivas com pronomes relativos (do qual, ao qual, em que), deve-se transpor a oração para a ordem direta, substituindo o pronome pelo seu antecedente. Se o verbo ou nome subordinador não pedir preposição, o pronome relativo deve ser puro.\nExemplo analisado: \"...no grupo [...] do qual não pediu para integrar.\"\nOrdem direta: Não pediu para integrar [o grupo].\nDiagnóstico: O verbo integrar é VTD (não rege preposição). Logo, a forma correta é o qual não pediu para integrar (sem de).\nPrecisão Semântica das Preposições: Distinguir pares parônimos:\nSobre: Repercussão, incidência ou tema (impacto sobre o público).\nSob: Posição inferior física, tutela ou subordinação (sob a ponte, sob vigilância).\nRelações\nGera procedimento: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO paralelismo sintático consiste na simetria estrutural na coordenação de termos. Na tradição gramatical e em bancas como a FGV, a quebra de simetria para conferir ênfase é um recurso estilístico plenamente legítimo; já no CEBRASPE/CESPE, a quebra costuma ser tratada como vício formal de redação. O único caso em que a quebra de paralelismo configura erro gramatical absoluto em qualquer banca é nas correlações prepositivas fixas (de... a... vs. da... à...).\nExplicação consolidada\nRegência do Verbo Preferir (VTDI) e Inversão de Complementos:\nEstrutura padrão: preferir [Objeto Direto sem prep.] a [Objeto Indireto com prep. a].\nA FGV e os gramáticos aceitam a inversão da ordem dos complementos no último membro coordenado para criar destaque expressivo, isolando o termo antecipado por vírgula: \"...preferir o lazer ao descanso, o amor ao interesse e [à aventura] (OI antecipado), [a tranquilidade] (OD).\"\nConfronto de Bancas:\nFGV: Prioriza a correção estrita da regência e da pontuação, tolerando assimetrias de ordem como escolhas estilísticas do autor.\nCEBRASPE: Exige paralelismo rígido em itens de reescrita, penalizando assimetrias como desvios sintáticos.\nO Erro Normativo Inconteste nas Correlações:\nIncorreto (quebra de paralelismo gramatical): Ele estuda de terça à quinta-feira. (Mistura indevida de preposição pura de com preposição + artigo à).\nCorreto (simetria pura): Ele estuda de terça a quinta-feira. (Apenas preposições, sem crase).\nCorreto (simetria com artigo): Ele estuda da terça à quinta-feira. (Preposições + artigos, com crase).\nRelações\nContrasta: Postura FGV versus Postura CEBRASPETermos associados: TERM-A10-G05-005"
         }
       ]
     },
@@ -525,7 +950,9 @@
               "RULE-IP-A10-G05-001",
               "EXP-IP-A10-G05-030"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -652,7 +1079,9 @@
               "PROC-A10-G05-001",
               "EXP-IP-A10-G05-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -735,7 +1164,9 @@
               "PROC-A10-G05-002",
               "EXP-IP-A10-G05-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -845,7 +1276,9 @@
               "PROC-A10-G05-003",
               "EXP-IP-A10-G05-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -935,7 +1368,9 @@
               "PROC-A10-G05-004",
               "EXP-IP-A10-G05-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1021,7 +1456,9 @@
               "CONTRAST-IP-A10-G05-001",
               "EXP-IP-A10-G05-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1090,7 +1527,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-001",
               "EXP-IP-A10-G05-040"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1151,7 +1590,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-002",
               "EXP-IP-A10-G05-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1214,7 +1655,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-003",
               "EXP-IP-A10-G05-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1263,7 +1706,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-004",
               "EXP-IP-A10-G05-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1312,7 +1757,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-005",
               "EXP-IP-A10-G05-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1361,7 +1808,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-006",
               "EXP-IP-A10-G05-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1410,7 +1859,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-007",
               "EXP-IP-A10-G05-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1473,7 +1924,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-008",
               "EXP-IP-A10-G05-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1522,7 +1975,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-009",
               "EXP-IP-A10-G05-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1585,7 +2040,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-010",
               "EXP-IP-A10-G05-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1646,7 +2103,9 @@
               "WORKED_EXAMPLE-IP-A10-G05-011",
               "EXP-IP-A10-G05-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1696,7 +2155,9 @@
               "WARN-A10-G05-001",
               "EXP-IP-A10-G05-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1732,7 +2193,9 @@
               "WARN-A10-G05-002",
               "EXP-IP-A10-G05-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1768,7 +2231,9 @@
               "WARN-A10-G05-003",
               "EXP-IP-A10-G05-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1804,7 +2269,9 @@
               "WARN-A10-G05-004",
               "EXP-IP-A10-G05-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1840,7 +2307,9 @@
               "WARN-A10-G05-005",
               "EXP-IP-A10-G05-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1876,26 +2345,82 @@
               "WARN-A10-G05-006",
               "EXP-IP-A10-G05-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Conceito, Natureza e Estrutura da Regência Nominal**: Definição ou ideia central\nA regência nominal é a relação sintática de subordinação estabelecida entre um nome regente (substantivo, adjetivo ou advérbio) e o seu respectivo termo regido (complemento nominal), caracterizada pela presença obrigatoriamente intermediada por uma preposição fixada pelo uso culto da língua.\nExplicação consolidada\nAo contrário da regência verbal — que admite complementação direta não preposicionada (objeto direto) ou indireta preposicionada (objeto indireto) —, a regência nominal não admite ligação direta sem preposição na norma-padrão. Sempre que um termo completa o sentido de um substantivo abstrato, de um adjetivo ou de um advérbio de base relacional, essa ligação é feita por uma preposição simples ou contraída com artigo. Trata-se de um fato linguístico eminentemente convencional (\"é porque é\"), decorrente da evolução histórica e da consagração do uso pelos autores cultos, não se submetendo a regras de dedução lógica de causa e efeito.\nCritérios de reconhecimento ou aplicação\nIdentificar o termo nuclear subordinador na oração.\nConfirmar se o núcleo é um nome (não verbo).\nVerificar se o termo subsequente completa a significação desse nome.\nExigir a presença da preposição correspondente estabelecida pela norma culta.\nExemplos e contraexemplos\nCorreto: Tem certeza da vitória. (O substantivo \"certeza\" exige a preposição \"de\").\nCorreto: Ele é apto a estudar. (O adjetivo \"apto\" exige a preposição \"a\").\nCorreto: Mora longe da família. (O advérbio \"longe\" exige a preposição \"de\").\nIncorreto: Tem certeza a vitória. (Ausência agramatical de preposição).\nExceções ou limites\nNão há regência nominal direta sem preposição na norma-padrão. Casos de aparente ausência decorrem de elipses coloquiais condenadas formalmente em provas de concurso.\nRelações\nExpande: TERM-A10-G05-001, TERM-A10-G05-002\nAplica-se em:",
-            "**Classes Morfológicas dos Nomes Regentes e Teste Diagnóstico do Artigo**: Definição ou ideia central\nNo âmbito da regência, a categoria gramatical \"nome\" é definida operacionalmente por oposição aos verbos (\"nome é o que não é verbo\"), compreendendo estritamente três classes morfológicas: substantivos, adjetivos e advérbios.\nExplicação consolidada\nCada uma das três classes desempenha o papel de termo regente projetando exigências prepositivas específicas:\nSubstantivo: Nomeia seres, ações, sentimentos ou conceitos abstratos (certeza de, necessidade de, ampliação de, dúvida de, aversão a/por, desejo de/por, orgulho de/por, combate a, intenção de/em).\nTeste Diagnóstico do Artigo: Para certificar com rapidez se uma palavra atua como substantivo, verifica-se a possibilidade de antepor-lhe mentalmente um artigo definido ou indefinido (a certeza, a necessidade, a ampliação, a dúvida). Se admitir o artigo, o termo é um substantivo.\nAdjetivo: Expressa característica, qualidade ou estado atribuído a um substantivo (apto a, responsável por, furioso com, propenso a/para, imune a/de, contrário a, capaz de, ávido por/de, sensível a, inútil para/a, desejoso de, curioso por/para/de, avesso a/em, receoso de/em, passível de, suscetível a, sujeito a, eficaz em, restrito a, inconsciente de, necessário a, relacionado com/a).\nAdvérbio: Modifica verbo, adjetivo ou outro advérbio, exprimindo circunstância; quando possui base nominal ou temporal/espacial relacional, comanda complemento preposicionado (longe de, perto de, depois de).Gera procedimento: \nDica prática: TIP-A10-G05-001",
-            "**Omissão Indevida de Preposição em Orações Completivas Nominais**: Definição ou ideia central\nQuando o complemento de um substantivo ou adjetivo se estrutura sob a forma de oração subordinada substantiva completiva nominal introduzida pela conjunção integrante que, a preposição regida pelo nome não pode ser omitida na norma-padrão.\nExplicação consolidada\nNa modalidade oral coloquial, os falantes frequentemente suprimem a preposição de antes de orações iniciadas por que (ex.: \"tenho certeza que...\", \"não há dúvida que...\", \"a sensação que estamos...\"). Em provas de concurso público (como explorado por Instituto AOCP, FCC e CEBRASPE), a supressão dessa preposição é classificada rigorosamente como erro de regência nominal. Nomes como dúvida, certeza, necessidade e sensação exigem a construção com a preposição expressa: de que.\nExemplos e contraexemplos\nIncorreto (vício coloquial): Não há dúvida que o progresso trará benefícios.\nCorreto (norma culta): Não há dúvida de que o progresso trará benefícios.\nIncorreto: É difícil ignorar a sensação estamos sendo vigiados.\nCorreto: É difícil ignorar a sensação de que estamos sendo vigiados.\nCorreto: Não houve a necessidade de que outros clientes fossem contatados.\nRelações\nExpande: 001Termos associados: TERM-A10-G05-003",
-            "**Pluralidade e Dupla Regência Nominal sem Alteração de Sentido**: Definição ou ideia central\nA dupla ou múltipla regência nominal ocorre quando um mesmo nome admite ser complementado por duas ou mais preposições distintas consagradas pela norma culta, mantendo a plena correção gramatical e, em regra geral, sem acarretar modificação de sentido.\nExplicação consolidada\nDiferentemente da regência verbal — na qual a alteração de preposição frequentemente altera a transitividade e muda o significado do verbo (ex.: assistir o filme vs. assistir ao filme) —, na regência nominal a variação prepositiva é tratada pelos gramáticos de modo uniforme e flexível. As bancas examinadoras cobram o conhecimento das preposições alternativas para verificar se o candidato reconhece construções cultas legítimas além daquela consagrada na linguagem informal.\nInventário de Regências Múltiplas Consolidadas no GrupoAplica-se em: \nTermos associados: TERM-A10-G05-004",
-            "**Intersecção entre Regência Nominal, Determinação Semântica e Crase**: Definição ou ideia central\nA presença ou ausência de artigo definido acoplado à preposição exigida pelo nome não altera a regência sintática, mas determina se o termo regido possui sentido genérico (sem artigo) ou sentido específico/determinado (com artigo). Quando a preposição exigida for a e o termo regido for feminino determinado pelo artigo a, a fusão resulta obrigatoriamente no acento grave indicativo de crase (a + a = à).\nExplicação consolidada\nPreposição Diante de Substantivos no Plural (Generalização vs. Determinação):\nPreposição Simples no Singular (a + substantivo plural): Expressa sentido genérico. Ex.: ter aversão a pessoas superficiais (refere-se a quaisquer pessoas; não há artigo, logo não há crase).\nPreposição Aglutinada com Artigo Plural (às + substantivo plural): Expressa sentido determinado/específico. Ex.: ter aversão às pessoas superficiais (a prep. + as art. = crase obrigatória, especificando o grupo de indivíduos).\nPreposição Diante de Pronomes Possessivos Femininos:\nO artigo antes de pronome possessivo adjetivo é facultativo. Logo, diante de nossas reservas, é correto empregar a preposição simples (ampliação de nossas reservas) ou a preposição contraída com artigo (ampliação das nossas reservas, em que das = de + as).\nFormação de Crase por Regência Nominal em Substituições:\nAo trocar uma locução como \"para a pobreza\" pela regência do adjetivo sensível (que exige a), deve-se preservar o artigo existente na frase original: sensível a + a pobreza = sensível à pobreza.\nAo estruturar combate a + a pobreza, tem-se obrigatoriamente combate à pobreza.\nCombinação Prepositiva Masculina:\nAdjetivo que exige a diante de substantivo masculino determinado: necessários a + o bom andamento = necessários ao bom andamento.Exemplificado por: ,",
-            "**Regência Nominal em Períodos Complexos, Pronomes Relativos e Contexto**: Definição ou ideia central\nA validação de regência em períodos longos exige postura analítica ativa (\"farejador de preposições\"), subordinando a seleção preposicional ao contexto conceitual do enunciado e aplicando testes sintáticos de reordenação direta quando houver pronomes relativos.\nExplicação consolidada\nDependência do Contexto Semântico-Conceitual: A regência não ocorre no vácuo. O termo comum, por exemplo, admite a preposição em em sentido geral circunstancial (isso é comum em festas), mas no contexto técnico de flexão gramatical de substantivos rege estritamente as preposições a ou de (substantivo comum a/de dois gêneros), sendo agramatical usar comum em nesse domínio.\nPronomes Relativos Preposicionados: Quando o período traz orações subordinadas adjetivas com pronomes relativos (do qual, ao qual, em que), deve-se transpor a oração para a ordem direta, substituindo o pronome pelo seu antecedente. Se o verbo ou nome subordinador não pedir preposição, o pronome relativo deve ser puro.\nExemplo analisado: \"...no grupo [...] do qual não pediu para integrar.\"\nOrdem direta: Não pediu para integrar [o grupo].\nDiagnóstico: O verbo integrar é VTD (não rege preposição). Logo, a forma correta é o qual não pediu para integrar (sem de).\nPrecisão Semântica das Preposições: Distinguir pares parônimos:\nSobre: Repercussão, incidência ou tema (impacto sobre o público).\nSob: Posição inferior física, tutela ou subordinação (sob a ponte, sob vigilância).\nRelações\nGera procedimento: ,",
-            "**Paralelismo Sintático nas Bancas: Escolha de Estilo vs. Erro Gramatical**: Definição ou ideia central\nO paralelismo sintático consiste na simetria estrutural na coordenação de termos. Na tradição gramatical e em bancas como a FGV, a quebra de simetria para conferir ênfase é um recurso estilístico plenamente legítimo; já no CEBRASPE/CESPE, a quebra costuma ser tratada como vício formal de redação. O único caso em que a quebra de paralelismo configura erro gramatical absoluto em qualquer banca é nas correlações prepositivas fixas (de... a... vs. da... à...).\nExplicação consolidada\nRegência do Verbo Preferir (VTDI) e Inversão de Complementos:\nEstrutura padrão: preferir [Objeto Direto sem prep.] a [Objeto Indireto com prep. a].\nA FGV e os gramáticos aceitam a inversão da ordem dos complementos no último membro coordenado para criar destaque expressivo, isolando o termo antecipado por vírgula: \"...preferir o lazer ao descanso, o amor ao interesse e [à aventura] (OI antecipado), [a tranquilidade] (OD).\"\nConfronto de Bancas:\nFGV: Prioriza a correção estrita da regência e da pontuação, tolerando assimetrias de ordem como escolhas estilísticas do autor.\nCEBRASPE: Exige paralelismo rígido em itens de reescrita, penalizando assimetrias como desvios sintáticos.\nO Erro Normativo Inconteste nas Correlações:\nIncorreto (quebra de paralelismo gramatical): Ele estuda de terça à quinta-feira. (Mistura indevida de preposição pura de com preposição + artigo à).\nCorreto (simetria pura): Ele estuda de terça a quinta-feira. (Apenas preposições, sem crase).\nCorreto (simetria com artigo): Ele estuda da terça à quinta-feira. (Preposições + artigos, com crase).\nRelações\nContrasta: Postura FGV versus Postura CEBRASPETermos associados: TERM-A10-G05-005"
-          ]
+          "term": "Conceito, Natureza e Estrutura da Regência Nominal",
+          "shortDefinition": "A regência nominal é a relação sintática de subordinação estabelecida entre um nome regente (substantivo, adjetivo ou advérbio) e o seu respectivo termo regido (complemento nominal), caracterizada pela presença obrigatoriamente intermediada por uma preposição fixada pelo uso culto da língua.",
+          "detailTarget": {
+            "unitId": "IP-A10-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G05-01"
+          },
+          "operationalUse": "Ao contrário da regência verbal — que admite complementação direta não preposicionada (objeto direto) ou indireta preposicionada (objeto indireto) —, a regência nominal não admite ligação direta sem preposição na norma-padrão."
+        },
+        {
+          "term": "Classes Morfológicas dos Nomes Regentes e Teste Diagnóstico do Artigo",
+          "shortDefinition": "No âmbito da regência, a categoria gramatical \"nome\" é definida operacionalmente por oposição aos verbos (\"nome é o que não é verbo\"), compreendendo estritamente três classes morfológicas: substantivos, adjetivos e advérbios.",
+          "detailTarget": {
+            "unitId": "IP-A10-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G05-02"
+          },
+          "operationalUse": "Cada uma das três classes desempenha o papel de termo regente projetando exigências prepositivas específicas:"
+        },
+        {
+          "term": "Omissão Indevida de Preposição em Orações Completivas Nominais",
+          "shortDefinition": "Quando o complemento de um substantivo ou adjetivo se estrutura sob a forma de oração subordinada substantiva completiva nominal introduzida pela conjunção integrante que, a preposição regida pelo nome não pode ser omitida na norma-padrão.",
+          "detailTarget": {
+            "unitId": "IP-A10-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G05-03"
+          },
+          "operationalUse": "Na modalidade oral coloquial, os falantes frequentemente suprimem a preposição de antes de orações iniciadas por que (ex.: \"tenho certeza que...\", \"não há dúvida que...\", \"a sensação que estamos...\")."
+        },
+        {
+          "term": "Pluralidade e Dupla Regência Nominal sem Alteração de Sentido",
+          "shortDefinition": "A dupla ou múltipla regência nominal ocorre quando um mesmo nome admite ser complementado por duas ou mais preposições distintas consagradas pela norma culta, mantendo a plena correção gramatical e, em regra geral, sem acarretar modificação de sentido.",
+          "detailTarget": {
+            "unitId": "IP-A10-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G05-04"
+          },
+          "operationalUse": "Diferentemente da regência verbal — na qual a alteração de preposição frequentemente altera a transitividade e muda o significado do verbo (ex.: assistir o filme vs. assistir ao filme) —, na regência nominal a variação prepositiva é tratada pelos gramáticos de modo uniforme e flexível."
+        },
+        {
+          "term": "Intersecção entre Regência Nominal, Determinação Semântica e Crase",
+          "shortDefinition": "A presença ou ausência de artigo definido acoplado à preposição exigida pelo nome não altera a regência sintática, mas determina se o termo regido possui sentido genérico (sem artigo) ou sentido específico/determinado (com artigo). Quando a preposição exigida for a e o termo regido for feminino determinado pelo artigo a, a fusão resulta obrigatoriamente no acento grave indicativo de crase (a + a = à).",
+          "detailTarget": {
+            "unitId": "IP-A10-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G05-05"
+          }
+        },
+        {
+          "term": "Regência Nominal em Períodos Complexos, Pronomes Relativos e Contexto",
+          "shortDefinition": "A validação de regência em períodos longos exige postura analítica ativa (\"farejador de preposições\"), subordinando a seleção preposicional ao contexto conceitual do enunciado e aplicando testes sintáticos de reordenação direta quando houver pronomes relativos.",
+          "detailTarget": {
+            "unitId": "IP-A10-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G05-06"
+          }
+        },
+        {
+          "term": "Paralelismo Sintático nas Bancas: Escolha de Estilo vs. Erro Gramatical",
+          "shortDefinition": "O paralelismo sintático consiste na simetria estrutural na coordenação de termos. Na tradição gramatical e em bancas como a FGV, a quebra de simetria para conferir ênfase é um recurso estilístico plenamente legítimo; já no CEBRASPE/CESPE, a quebra costuma ser tratada como vício formal de redação. O único caso em que a quebra de paralelismo configura erro gramatical absoluto em qualquer banca é nas correlações prepositivas fixas (de... a... vs. da... à...).",
+          "detailTarget": {
+            "unitId": "IP-A10-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G05-07"
+          }
         }
       ]
     },
@@ -2085,7 +2610,10 @@
         "confidence": 0.97
       },
       "answerSha256": "1db4491ca75ad9f12e3dc13f55d4ece3ffde4fc3cfe3da76162c54ed1392ccb9",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A10-aula10.q0172"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2144,7 +2672,10 @@
         "confidence": 0.97
       },
       "answerSha256": "194873dc68cc6d4608784623f990df8207fa4eadfc1cc9c2ea9c40b0aee9fba7",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A10-aula10.q0175"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2203,7 +2734,10 @@
         "confidence": 0.97
       },
       "answerSha256": "91410967df0a2b3bdf723ade1e6ac616523792daef09c609f633d90060cba16c",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A10-aula10.q0177"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2264,245 +2798,10 @@
         "confidence": 0.97
       },
       "answerSha256": "b8fabc241577cc52bb267aab4801752dfff3a206a67b2b329d77b3705ad3baaf",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A10-aula10.q0172",
-      "lessonId": "A10",
-      "sourceQuestionId": "aula10.q0172",
-      "questionPayload": {
-        "question_id": "aula10.q0172",
-        "occurrence_section": "list_regencia_nominal",
-        "section_question_number": 1,
-        "question_type": "other",
-        "exam_board": "CEBRASPE",
-        "organization": "PETROBRAS",
-        "position": null,
-        "year": 2023,
-        "support_text": "Questionado se haverá redução no preço da gasolina, Jean Paul Prates disse que as equipes\nestão avaliando o mercado sobre possíveis oscilações no preço do combustível. \"A gente está\navaliando a referência internacional e o mercado brasileiro. Essa é a nossa política agora. O\nmercado nacional é composto pelo que é produzido aqui com o produto importado. Sempre que\na gente puder ter o preço mais barato para vender para o nosso cliente, para o nosso\nconsumidor brasileiro, a gente vai fazer isso\", concluiu.",
-        "prompt": "Estariam mantidos os sentidos e a correção gramatical do texto se o termo 'pelo', em 'O\nmercado nacional é composto pelo que é produzido aqui' (penúltimo parágrafo), fosse\nsubstituído por daquilo.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.regencia_nominal"
-        ],
-        "tests_rule_ids": [
-          "rule.aula10.0108",
-          "rule.aula10.0110",
-          "rule.aula10.0113",
-          "rule.aula10.0114",
-          "rule.aula10.0115",
-          "rule.aula10.0117",
-          "rule.aula10.0118"
-        ],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0092"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "attribution_raw": "CEBRASPE / PETROBRAS / 2023",
-        "duplicate_of": "aula10.q0079",
-        "conceptual_question_id": "aula10.q0079"
-      },
-      "questionSha256": "02d86830d3bca30bfa451ed546e066ea8412374c4b07c8048f4616b3672df7e3",
-      "answerPayload": {
-        "answer_id": "aula10.q0172.answer",
-        "question_id": "aula10.q0172",
-        "answer": "correct",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0094"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "af48159d6d672f88b6cbcfabb96ac93ed90e28c5582dc8d1f1dbed219966dc97",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A10-aula10.q0175",
-      "lessonId": "A10",
-      "sourceQuestionId": "aula10.q0175",
-      "questionPayload": {
-        "question_id": "aula10.q0175",
-        "occurrence_section": "list_regencia_nominal",
-        "section_question_number": 4,
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "MPU",
-        "position": "ANALISTA",
-        "year": 2018,
-        "support_text": "A necessidade de uma teoria da justiça está relacionada com a disciplina de argumentar\nracionalmente sobre um assunto.",
-        "prompt": "A substituição de “relacionada com a disciplina” por relacionada à disciplina, embora mantivesse\no sentido do texto, prejudicaria sua correção gramatical.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.regencia_nominal"
-        ],
-        "tests_rule_ids": [
-          "rule.aula10.0108",
-          "rule.aula10.0110",
-          "rule.aula10.0113",
-          "rule.aula10.0114",
-          "rule.aula10.0115",
-          "rule.aula10.0117",
-          "rule.aula10.0118"
-        ],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0093"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "attribution_raw": "CEBRASPE / MPU / ANALISTA / 2018",
-        "duplicate_of": "aula10.q0027",
-        "conceptual_question_id": "aula10.q0027"
-      },
-      "questionSha256": "f272ba790afdbb07dee454cc02f34b83cd9fd45372a011bd1ee020ce008a8b5c",
-      "answerPayload": {
-        "answer_id": "aula10.q0175.answer",
-        "question_id": "aula10.q0175",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0094"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "c3ce641bd37952e9093de4c58de2e8f593a37326fe62057375a741904b93f373",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A10-aula10.q0177",
-      "lessonId": "A10",
-      "sourceQuestionId": "aula10.q0177",
-      "questionPayload": {
-        "question_id": "aula10.q0177",
-        "occurrence_section": "list_regencia_nominal",
-        "section_question_number": 6,
-        "question_type": "other",
-        "exam_board": "CEBRASPE",
-        "organization": "PF–Escrivão – 2018",
-        "position": null,
-        "year": 2018,
-        "support_text": null,
-        "prompt": "A supressão da preposição “de” empregada logo após “ferocidade”, no trecho “acostumando\nos espectadores a uma ferocidade de que todos queriam vê-los afastados”, manteria a correção\ngramatical do texto.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.regencia_nominal"
-        ],
-        "tests_rule_ids": [
-          "rule.aula10.0108",
-          "rule.aula10.0110",
-          "rule.aula10.0113",
-          "rule.aula10.0114",
-          "rule.aula10.0115",
-          "rule.aula10.0117",
-          "rule.aula10.0118"
-        ],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0093"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "attribution_raw": "CEBRASPE / PF–Escrivão – 2018",
-        "duplicate_of": "aula10.q0019",
-        "conceptual_question_id": "aula10.q0019"
-      },
-      "questionSha256": "0d7cc2dabdcd39ef90b58627649f1277f74d16490a95b05315f066789f7437a1",
-      "answerPayload": {
-        "answer_id": "aula10.q0177.answer",
-        "question_id": "aula10.q0177",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0094"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "d5f21c05b4c3e492345a6b9f2542c3284d11dce972a2cdb4ed6229e150432024",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A10-aula10.q0179",
-      "lessonId": "A10",
-      "sourceQuestionId": "aula10.q0179",
-      "questionPayload": {
-        "question_id": "aula10.q0179",
-        "occurrence_section": "list_regencia_nominal",
-        "section_question_number": 8,
-        "question_type": "other",
-        "exam_board": "CEBRASPE",
-        "organization": "UNB",
-        "position": "TRE TO",
-        "year": 2017,
-        "support_text": null,
-        "prompt": "No trecho “em uma época anterior à dos dinossauros”, o emprego do sinal indicativo de crase\ndecorre da regência do adjetivo “anterior” e presença do artigo feminino antes do termo elíptico\n“época”.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.crase",
-          "pt.grammar.regencia"
-        ],
-        "tests_rule_ids": [
-          "rule.aula10.0004",
-          "rule.aula10.0006",
-          "rule.aula10.0007",
-          "rule.aula10.0008",
-          "rule.aula10.0009",
-          "rule.aula10.0011",
-          "rule.aula10.0015",
-          "rule.aula10.0022"
-        ],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0093"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "attribution_raw": "CEBRASPE / UNB / TRE TO / 2017",
-        "duplicate_of": "aula10.q0023",
-        "conceptual_question_id": "aula10.q0023"
-      },
-      "questionSha256": "11be5446bb8d1de337cb250596398935ff8870825c4ad9bbf064bc6204b1d264",
-      "answerPayload": {
-        "answer_id": "aula10.q0179.answer",
-        "question_id": "aula10.q0179",
-        "answer": "correct",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0094"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "3d4775444e19d6259d63f27f0150b554e1264e84de7f7acef812eb730b315f6b",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A10-aula10.q0179"
+      ]
     },
     {
       "schemaVersion": "1.0.0",

@@ -85,7 +85,7 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], su
             <WorkedExampleCard
               key={example.exampleId || eIdx}
               example={example}
-              renderBlock={(b) => <ContentBlockRenderer block={b} />}
+            renderBlock={(b) => <ContentBlockRenderer block={b} allowLegacyDiagramInference={false} />}
             />
           ))}
         </div>

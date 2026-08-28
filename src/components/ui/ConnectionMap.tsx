@@ -20,6 +20,7 @@ import { MarkdownContent } from './MarkdownContent';
 
 interface ConnectionMapProps {
   source: string;
+  title?: string;
 }
 
 export const looksLikeConnectionMap = (source: string): boolean => {
@@ -86,7 +87,7 @@ export const looksLikeConnectionMap = (source: string): boolean => {
   return treeBranchMatches >= 2;
 };
 
-export const ConnectionMap: React.FC<ConnectionMapProps> = ({ source }) => {
+export const ConnectionMap: React.FC<ConnectionMapProps> = ({ source, title }) => {
   if (!source) return null;
 
   // Se for detectado como tabela markdown pura, renderiza via MarkdownContent
@@ -179,5 +180,5 @@ export const ConnectionMap: React.FC<ConnectionMapProps> = ({ source }) => {
   }
 
   // 11. Árvores Sintáticas e Taxonomias Estruturadas
-  return <PedagogicalTreeDiagram source={source} />;
+  return <PedagogicalTreeDiagram source={source} title={title} />;
 };

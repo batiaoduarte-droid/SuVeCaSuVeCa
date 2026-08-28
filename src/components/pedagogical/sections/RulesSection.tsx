@@ -88,7 +88,7 @@ export const RulesSection: React.FC<RulesSectionProps> = ({ items, supplementary
             <GoldenRuleCard
               key={rule.entityId || idx}
               rule={rule}
-              renderBlock={(b) => <ContentBlockRenderer block={b} />}
+              renderBlock={(b) => <ContentBlockRenderer block={b} allowLegacyDiagramInference={false} />}
             />
           ))}
         </div>

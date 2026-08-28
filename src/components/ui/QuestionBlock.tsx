@@ -4,6 +4,7 @@ import { AlertTriangle, BadgeCheck, Building2, CalendarDays, CircleHelp, Check, 
 export interface QuestionBlockModel {
   title: string;
   prompt?: string;
+  promptContent?: React.ReactNode;
   options: Array<{ letter: string; text: string }>;
   solution?: string;
   answer?: string;
@@ -21,6 +22,7 @@ interface QuestionBlockProps extends QuestionBlockModel {
 export const QuestionBlock: React.FC<QuestionBlockProps> = ({
   title,
   prompt,
+  promptContent,
   options,
   solution,
   answer,
@@ -108,14 +110,18 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
 
       <div className="space-y-4 px-4 py-5 sm:px-5">
         {/* Enunciado da questão */}
-        {prompt && (
+        {(promptContent || prompt) && (
           <section aria-label={`Enunciado de ${title}`}>
-            <h4 className="mb-2 text-[11px] font-black uppercase tracking-wider text-teal-900">
-              Enunciado
-            </h4>
-            <div className="text-xs sm:text-sm leading-relaxed text-slate-800 font-medium">
-              {renderMarkdown(prompt)}
-            </div>
+            {promptContent || (
+              <>
+                <h4 className="mb-2 text-[11px] font-black uppercase tracking-wider text-teal-900">
+                  Enunciado
+                </h4>
+                <div className="text-xs sm:text-sm leading-relaxed text-slate-800 font-medium">
+                  {renderMarkdown(prompt || '')}
+                </div>
+              </>
+            )}
           </section>
         )}
 

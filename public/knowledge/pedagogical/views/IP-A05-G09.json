@@ -1,11 +1,12 @@
 {
-  "viewSchemaVersion": "4.2.0-semantic-authoring",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A05-G09",
     "lessonId": "A05",
     "title": "Conversão de Voz Ativa e Passiva",
     "canonicalSource": "canonical-v2.1-consolidated",
-    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring"
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A05-G09",
@@ -215,7 +216,6 @@
         {
           "term": "Voz Passiva Analítica",
           "shortDefinition": "Estrutura passiva formada por verbo auxiliar de ligação (geralmente ser) e particípio.",
-          "fullDefinition": "Construção perifrástica na qual o sujeito gramatical sofre a ação verbal expressa pelo particípio do verbo principal, enquanto o praticante da ação figura como agente da passiva preposicionado.",
           "domain": "Sintaxe da Oração",
           "commonMisconception": "Pensar que o particípio na voz passiva analítica é invariável (ele flexiona obrigatoriamente em gênero e número com o sujeito paciente)."
         }
@@ -356,7 +356,39 @@
         "confidence": 0.97
       },
       "answerSha256": "c6a75fb0667f0a530e1635a647d8b535d93f0eea9a881131f77706750f8a8e98",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Transpondo-se para a voz ativa a frase Eficazes sistemas de irrigação teriam sido utilizados pelos\nantigos em suas culturas de cereais, a forma verbal resultante deverá ser",
+        "options": [
+          {
+            "label": "A",
+            "text": "seriam utilizados."
+          },
+          {
+            "label": "B",
+            "text": "teriam utilizado."
+          },
+          {
+            "label": "C",
+            "text": "foram utilizados."
+          },
+          {
+            "label": "D",
+            "text": "utilizaram-se."
+          },
+          {
+            "label": "E",
+            "text": "haveriam de utilizar."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -428,7 +460,39 @@
         "confidence": 0.97
       },
       "answerSha256": "c64ced88f802398f5ce05b3326de9c354a394b0cc85b3bb8e6cc8baace3dc5d8",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "“Empresas de cobrança usam técnicas abusivas” (1º parágrafo).\nTranspondo a frase acima para a voz passiva, a forma verbal resultante será:",
+        "options": [
+          {
+            "label": "A",
+            "text": "é usado."
+          },
+          {
+            "label": "B",
+            "text": "foi usado."
+          },
+          {
+            "label": "C",
+            "text": "são usados."
+          },
+          {
+            "label": "D",
+            "text": "foram usadas."
+          },
+          {
+            "label": "E",
+            "text": "são usadas."
+          }
+        ],
+        "answer": "E",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -543,56 +607,10 @@
         "confidence": 0.99
       },
       "answerSha256": "43b46a0e5f590758f45349aa93a34df4e82606ff68ac01299bc8820b219683c5",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A05-aula05.q0057",
-      "lessonId": "A05",
-      "sourceQuestionId": "aula05.q0057",
-      "questionPayload": {
-        "question_id": "aula05.q0057",
-        "question_type": "true_false_or_judgment",
-        "exam_board": "CEBRASPE",
-        "organization": "INPI",
-        "position": null,
-        "year": 2024,
-        "support_text": null,
-        "prompt": "Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente,\ncom prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore.\nNo segundo período do primeiro parágrafo, o segmento “a primeira patente” funciona como\ncomplemento direto da locução verbal “foi concedida”.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.voz_passiva"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.voz_passiva.conversao.001"
-        ],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0038"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "duplicate_of": "aula05.q0035",
-        "extraction_confidence": 0.985
-      },
-      "questionSha256": "5c6898f77d5b7cacb5b201eb845a856e6688988b59914d4b100f25178f221143",
-      "answerPayload": {
-        "answer_id": "aula05.q0057.answer",
-        "question_id": "aula05.q0057",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0042"
-          ]
-        },
-        "confidence": 0.995
-      },
-      "answerSha256": "7ae07c6a56a5f45e200a91c76c0a26a78c465608c6de92ce406e43d13aab3234",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A05-aula05.q0057"
+      ]
     }
   ]
 }

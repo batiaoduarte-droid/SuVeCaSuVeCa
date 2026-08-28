@@ -88,7 +88,7 @@ export const TrapsSection: React.FC<TrapsSectionProps> = ({ items = [], suppleme
             <BankTrapCard
               key={trap.trapId || idx}
               trap={trap}
-              renderBlock={(b) => <ContentBlockRenderer block={b} />}
+              renderBlock={(b) => <ContentBlockRenderer block={b} allowLegacyDiagramInference={false} />}
             />
           ))}
         </div>

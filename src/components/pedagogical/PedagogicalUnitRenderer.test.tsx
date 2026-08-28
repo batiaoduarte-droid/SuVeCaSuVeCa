@@ -188,4 +188,19 @@ describe('PedagogicalUnitRenderer (View Model V1)', () => {
     expect(screen.getByText('2024')).toBeInTheDocument();
     expect(screen.getByText(/assinale a opção com dígrafo/i)).toBeInTheDocument();
   });
+
+  it('abre somente a seção 1 por padrão e comunica uma retomada explícita', () => {
+    const { container, rerender } = render(<PedagogicalUnitRenderer view={sampleUnitView} />);
+    const defaultSections = Array.from(container.querySelectorAll('details.pedagogical-section'));
+
+    expect(defaultSections.length).toBeGreaterThan(1);
+    expect(defaultSections[0]).toHaveAttribute('open');
+    expect(defaultSections[1]).not.toHaveAttribute('open');
+    expect(screen.queryByText(/^Retomada:/i)).not.toBeInTheDocument();
+
+    rerender(<PedagogicalUnitRenderer view={sampleUnitView} activeSectionId="resolution" />);
+
+    expect(screen.getByText(/^Retomada:/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /começar pela seção 1/i })).toBeInTheDocument();
+  });
 });

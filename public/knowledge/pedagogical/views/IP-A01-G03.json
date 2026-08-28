@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A01-G03",
     "lessonId": "A01",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A01-G03",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A01-G03-001"
+          }
         }
       ]
     },
@@ -98,8 +103,61 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA semântica dos advérbios estuda o sentido, o contexto e o valor circunstancial que palavras ou locuções adverbiais projetam sobre as ações, estados ou características que modificam na oração.\nExplicação consolidada\nAo analisar uma questão que cobra o \"valor semântico\", o candidato deve formular perguntas-chave ao termo modificado para identificar a circunstância correspondente:\nLugar: Responde a Onde? (ex.: \"Chorei no cinema\").\nTempo: Responde a Quando? ou indica frequência (ex.: \"Saí à noite\").\nModo: Responde a Como? ou traduz o Jeito de realização do fato verbal (ex.: \"Saiu apressadamente\"). A equivalência didática é: $\\text{Modo} = \\text{Jeito}$.\nIntensidade: Expressa gradação de força, quantidade ou intensidade (ex.: \"Estudamos muito\").\nAfirmação: Confirma e reforça a predicação (ex.: \"Certamente serei aprovado\").\nNegação: Invalida ou nega a predicação (ex.: \"Eu nunca quis uma festa\").Possui dica: TIP-A01-G03-ADVERBIOS-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A semântica dos advérbios estuda o sentido, o contexto e o valor circunstancial que palavras ou locuções adverbiais projetam sobre as ações, estados ou características que modificam na oração."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao analisar uma questão que cobra o \"valor semântico\", o candidato deve formular perguntas-chave ao termo modificado para identificar a circunstância correspondente:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Lugar: Responde a Onde? (ex.: \"Chorei no cinema\").",
+                "Tempo: Responde a Quando? ou indica frequência (ex.: \"Saí à noite\").",
+                "Modo: Responde a Como? ou traduz o Jeito de realização do fato verbal (ex.: \"Saiu apressadamente\"). A equivalência didática é: $\\text{Modo} = \\text{Jeito}$.",
+                "Intensidade: Expressa gradação de força, quantidade ou intensidade (ex.: \"Estudamos muito\").",
+                "Afirmação: Confirma e reforça a predicação (ex.: \"Certamente serei aprovado\").",
+                "Negação: Invalida ou nega a predicação (ex.: \"Eu nunca quis uma festa\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-001",
+                  "targetTitle": "Locução Adverbial de Tempo",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-003",
+                  "targetTitle": "Advérbio de Modo Típico",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-004",
+                  "targetTitle": "Advérbio de Lugar",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +170,79 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou regra consolidada\nA classe morfológica do termo a que o advérbio se refere determina rigorosamente o leque de suas possibilidades semânticas:\nAdvérbio modificando ADJETIVO ou outro ADVÉRBIO: Assume categoricamente valor de INTENSIDADE (desempenha a função de intensificador). Não pode assumir circunstância de modo, tempo ou lugar.\nAdvérbio modificando VERBO (ou Locução Verbal): Pode expressar QUALQUER CIRCUNSTÂNCIA (Modo, Tempo, Lugar, Intensidade, Afirmação, Negação, Causa, etc.).\nEsquema Estrutural de Modificação\n\\text{Advérbio} \\longrightarrow \\begin{cases} \\text{Adjetivo} & \\implies \\mathbf{INTENSIDADE} \\text{ (Intensificador)} \\\\ \\text{Outro Advérbio} & \\implies \\mathbf{INTENSIDADE} \\text{ (Intensificador)} \\\\ \\text{Verbo / Locução} & \\implies \\mathbf{MODO, TEMPO, LUGAR, INTENSIDADE\\dots} \\end{cases}\nExemplos e contraexemplos\n\"Ela canta bem.\" $\\rightarrow$ bem modifica o verbo canta $\\implies$ Advérbio de Modo (canta de que jeito?).\n\"Ela acordou bem cedo.\" $\\rightarrow$ cedo modifica o verbo acordou (tempo); bem modifica o advérbio cedo $\\implies$ Advérbio de Intensidade (intensifica o tempo).\n\"É bem provável.\" $\\rightarrow$ bem modifica o adjetivo provável $\\implies$ Advérbio de Intensidade (intensificador).\n\"Recursos bem diferentes.\" $\\rightarrow$ bem modifica o adjetivo diferentes $\\implies$ Advérbio de Intensidade (= muito diferentes).Termo associado: TERM-A01-G03-ADVERBIOS-002"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou regra consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A classe morfológica do termo a que o advérbio se refere determina rigorosamente o leque de suas possibilidades semânticas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Advérbio modificando ADJETIVO ou outro ADVÉRBIO: Assume categoricamente valor de INTENSIDADE (desempenha a função de intensificador). Não pode assumir circunstância de modo, tempo ou lugar.",
+                "Advérbio modificando VERBO (ou Locução Verbal): Pode expressar QUALQUER CIRCUNSTÂNCIA (Modo, Tempo, Lugar, Intensidade, Afirmação, Negação, Causa, etc.)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Esquema Estrutural de Modificação"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Advérbio} \\longrightarrow \\begin{cases} \\text{Adjetivo} & \\implies \\mathbf{INTENSIDADE} \\text{ (Intensificador)} \\\\ \\text{Outro Advérbio} & \\implies \\mathbf{INTENSIDADE} \\text{ (Intensificador)} \\\\ \\text{Verbo / Locução} & \\implies \\mathbf{MODO, TEMPO, LUGAR, INTENSIDADE\\dots} \\end{cases}"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Ela canta bem.\" $\\rightarrow$ bem modifica o verbo canta $\\implies$ Advérbio de Modo (canta de que jeito?).",
+                "\"Ela acordou bem cedo.\" $\\rightarrow$ cedo modifica o verbo acordou (tempo); bem modifica o advérbio cedo $\\implies$ Advérbio de Intensidade (intensifica o tempo).",
+                "\"É bem provável.\" $\\rightarrow$ bem modifica o adjetivo provável $\\implies$ Advérbio de Intensidade (intensificador).",
+                "\"Recursos bem diferentes.\" $\\rightarrow$ bem modifica o adjetivo diferentes $\\implies$ Advérbio de Intensidade (= muito diferentes)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-002",
+                  "targetTitle": "Advérbio Intensificador de Advérbio",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-007",
+                  "targetTitle": "Cebraspe 2023 / Dataprev — O Vocábulo 'Bem' Intensificador",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-011",
+                  "targetTitle": "Cebraspe 2021 / SEDUC-AL — 'Bem' Modificando Adjetivo ('Bem Diferentes')",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G03-ADVERBIOS-001",
+                  "targetTitle": "A Pegadinha da \"Decoreba Sem-Vergonha\": Achar que 'Bem' é Sempre Modo",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +255,34 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs vocábulos nunca e jamais possuem natureza semântica híbrida/ambivalente na Língua Portuguesa, acumulando simultaneamente valor circunstancial de negação e de tempo.\nExplicação consolidada\nNa frase \"Eu nunca quis uma festa\":\nSentido de Negação: Invalida o fato verbal (equivale a \"não quis\").\nSentido de Tempo: Circunscreve a negação a um intervalo temporal absoluto (equivale a \"em tempo algum\").\nAmbas as classificações são reconhecidas pelas bancas examinadoras conforme o foco exigido no comando da questão."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os vocábulos nunca e jamais possuem natureza semântica híbrida/ambivalente na Língua Portuguesa, acumulando simultaneamente valor circunstancial de negação e de tempo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na frase \"Eu nunca quis uma festa\":"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sentido de Negação: Invalida o fato verbal (equivale a \"não quis\").",
+                "Sentido de Tempo: Circunscreve a negação a um intervalo temporal absoluto (equivale a \"em tempo algum\")."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Ambas as classificações são reconhecidas pelas bancas examinadoras conforme o foco exigido no comando da questão."
             }
           ]
         },
@@ -140,8 +295,56 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou distinção crítica\nA presença do sufixo sufixador adverbial -mente não garante que o advérbio expresse circunstância de modo. O valor semântico deriva da base adjetiva e da relação lógica com o verbo.\nCritérios de reconhecimento\nModo (Jeito): Apressadamente (de pressa), rapidamente (de rápido), silenciosamente (de silencioso).\nTempo / Frequência: Raramente (de raro = poucas vezes no tempo), diariamente, anualmente, frequentemente.\nAfirmação: Certamente (de certo), realmente.\nAplicação em Frase de Fixação\nNo excerto \"...raramente soltavam palavras curtas\", a palavra raramente não expressa o modo como soltavam palavras, mas sim a frequência temporal com que o evento ocorria. Trata-se de advérbio de TEMPO."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou distinção crítica"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença do sufixo sufixador adverbial -mente não garante que o advérbio expresse circunstância de modo. O valor semântico deriva da base adjetiva e da relação lógica com o verbo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Modo (Jeito): Apressadamente (de pressa), rapidamente (de rápido), silenciosamente (de silencioso).",
+                "Tempo / Frequência: Raramente (de raro = poucas vezes no tempo), diariamente, anualmente, frequentemente.",
+                "Afirmação: Certamente (de certo), realmente."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Aplicação em Frase de Fixação"
+            },
+            {
+              "type": "paragraph",
+              "text": "No excerto \"...raramente soltavam palavras curtas\", a palavra raramente não expressa o modo como soltavam palavras, mas sim a frequência temporal com que o evento ocorria. Trata-se de advérbio de TEMPO."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-005",
+                  "targetTitle": "Advérbio em '-mente' com Sentido Temporal/Frequência",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G03-ADVERBIOS-002",
+                  "targetTitle": "O Mito de que a Terminação '-mente' Garante Advérbio de Modo",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +357,82 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou regra consolidada\nO advérbio é uma classe morfológica invariável e, na sintaxe oracional, desempenha exclusivamente o papel de adjunto adverbial (nunca predicativo do sujeito).\nAnálise Comparativa Estrutural\nFundamentação Teórica\nUm verbo de estado como estar só é classificado como Verbo de Ligação se houver na oração um termo que expresse atributo do sujeito (Predicativo). Como a palavra bem é advérbio invariável, funciona como adjunto adverbial; consequentemente, o verbo estar opera como verbo intransitivo.\nRelações\nPossui procedimento:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou regra consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O advérbio é uma classe morfológica invariável e, na sintaxe oracional, desempenha exclusivamente o papel de adjunto adverbial (nunca predicativo do sujeito)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Análise Comparativa Estrutural"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A01-G03-004",
+              "table": {
+                "tableId": "TABLE-IP-A01-G03-004",
+                "caption": "Análise Comparativa Estrutural",
+                "headers": [
+                  "Dimensão de Análise",
+                  "Estrutura A: \"Ela está bem.\"",
+                  "Estrutura B: \"Ela está feliz.\""
+                ],
+                "rows": [
+                  [
+                    "Teste do Plural",
+                    "\"Elas estãobem.\" (Termo invariável)",
+                    "\"Elas estãofelizes.\" (Termo flexiona em número)"
+                  ],
+                  [
+                    "Classe Morfológica",
+                    "Advérbio de Modo",
+                    "Adjetivo"
+                  ],
+                  [
+                    "Predicação Verbal",
+                    "Verbo Intransitivo (V.I.)",
+                    "Verbo de Ligação (V.L.)"
+                  ],
+                  [
+                    "Função Sintática do Termo",
+                    "Adjunto Adverbial de Modo",
+                    "Predicativo do Sujeito"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Fundamentação Teórica"
+            },
+            {
+              "type": "paragraph",
+              "text": "Um verbo de estado como estar só é classificado como Verbo de Ligação se houver na oração um termo que expresse atributo do sujeito (Predicativo). Como a palavra bem é advérbio invariável, funciona como adjunto adverbial; consequentemente, o verbo estar opera como verbo intransitivo."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A01-G03-ADVERBIOS-002",
+                  "targetTitle": "Teste do Plural para Distinção Morfossintática (Invariabilidade)",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G03-ADVERBIOS-003",
+                  "targetTitle": "Erro de Predicação: Classificar o Verbo 'Estar' como Verbo de Ligação em \"Ela está bem\"",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +445,41 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou regra consolidada\nNa norma culta da Língua Portuguesa, ao coordenar dois ou mais advérbios derivados em -mente, é padrão eufônico expressar o sufixo apenas no último elemento, deixando-o subentendido/implícito nos elementos anteriores.\nAplicação e Análise Prática\nTexto analisado: \"...a questão do paraíso terrestre explica-se clara e singelamente pelo vegetarismo.\"\nForma desdobrada: \"...explica-se claramente e singelamente...\"\nClassificação: O vocábulo clara atua contextualmente como advérbio de modo modificador do verbo explica-se, e não como adjetivo qualificador do substantivo questão.\nMantra Didático: \"O que vem depois, salva!\" — Ao analisar termo aparentemente adjetivo coordenado a advérbio em -mente, examine o termo subsequente para reconhecer a elipse do sufixo.Possui dica: TIP-A01-G03-ADVERBIOS-002"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou regra consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na norma culta da Língua Portuguesa, ao coordenar dois ou mais advérbios derivados em -mente, é padrão eufônico expressar o sufixo apenas no último elemento, deixando-o subentendido/implícito nos elementos anteriores."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Aplicação e Análise Prática"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Texto analisado: \"...a questão do paraíso terrestre explica-se clara e singelamente pelo vegetarismo.\"",
+                "Forma desdobrada: \"...explica-se claramente e singelamente...\"",
+                "Classificação: O vocábulo clara atua contextualmente como advérbio de modo modificador do verbo explica-se, e não como adjetivo qualificador do substantivo questão.",
+                "Mantra Didático: \"O que vem depois, salva!\" — Ao analisar termo aparentemente adjetivo coordenado a advérbio em -mente, examine o termo subsequente para reconhecer a elipse do sufixo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-008",
+                  "targetTitle": "Cebraspe 2024 / Instituto Rio Branco — Coordenação 'Clara e Singelamente'",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -182,8 +492,51 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO advérbio possui ampla mobilidade posicional na frase. A distância física entre o advérbio deslocado e o seu verbo referente não anula nem enfraquece a relação sintático-semântica existente entre eles.\nExplicação consolidada\nNo período \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\":\nO vocábulo Hoje surge na cabeça do parágrafo, isolado por vírgulas e distante fisicamente do verbo abrange.\nO teste do referente comprova a ligação: abrange quando? $\\rightarrow$ Hoje.\nConclusão: Trata-se de advérbio de tempo modificador de verbo distante."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O advérbio possui ampla mobilidade posicional na frase. A distância física entre o advérbio deslocado e o seu verbo referente não anula nem enfraquece a relação sintático-semântica existente entre eles."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No período \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\":"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O vocábulo Hoje surge na cabeça do parágrafo, isolado por vírgulas e distante fisicamente do verbo abrange.",
+                "O teste do referente comprova a ligação: abrange quando? $\\rightarrow$ Hoje.",
+                "Conclusão: Trata-se de advérbio de tempo modificador de verbo distante."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-006",
+                  "targetTitle": "Cebraspe 2024 / Pref. Cachoeiro de Itapemirim — Advérbio Deslocado \"Hoje\"",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G03-ADVERBIOS-005",
+                  "targetTitle": "Falsa Exigência de Adjacência Física do Advérbio",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -196,8 +549,62 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou distinção crítica\nAdjetivo: Termo que se liga exclusivamente a Substantivo para caracterizá-lo. Adjetivo nunca expressa circunstâncias de modo, tempo ou lugar.\nAdvérbio: Termo que se liga a Verbo, Adjetivo ou outro Advérbio para expressar circunstâncias ou intensidade.\nAplicação Prática no Item Cebraspe (TC-DF)\nNa oração \"Tributos desempenham um papel vital...\":\nvital conecta-se a papel (substantivo).\nLogo, vital é adjetivo.\nPor ser adjetivo, é categoricamente impossível que expresse \"circunstância de modo\".Possui procedimento:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou distinção crítica"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Adjetivo: Termo que se liga exclusivamente a Substantivo para caracterizá-lo. Adjetivo nunca expressa circunstâncias de modo, tempo ou lugar.",
+                "Advérbio: Termo que se liga a Verbo, Adjetivo ou outro Advérbio para expressar circunstâncias ou intensidade."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Aplicação Prática no Item Cebraspe (TC-DF)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na oração \"Tributos desempenham um papel vital...\":"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "vital conecta-se a papel (substantivo).",
+                "Logo, vital é adjetivo.",
+                "Por ser adjetivo, é categoricamente impossível que expresse \"circunstância de modo\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-010",
+                  "targetTitle": "Cebraspe 2023 / TC-DF — Distinção Adjetivo vs Advérbio e Sedução Semântica",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A01-G03-ADVERBIOS-001",
+                  "targetTitle": "Técnica da Seta de Referência Sintática",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G03-ADVERBIOS-004",
+                  "targetTitle": "A Armadilha da \"Sedução Semântica\" no Final das Assertivas do Cebraspe",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -210,8 +617,57 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA banca Cebraspe utiliza de modo recorrente a locução verbal \"intensifica o sentido de...\" como fórmula técnica padrão para afirmar que determinado vocábulo é um advérbio de intensidade associado a um adjetivo ou advérbio.\nCritério de Validação\nAo deparar-se com a assertiva \"o vocábulo X intensifica o sentido de Y\", a validação requer dois passos:\nConfirmar se o termo modificado $Y$ é um adjetivo ou advérbio.\nRealizar o teste de substituição de $X$ pelo advérbio muito.Possui procedimento: \nPossui dica: TIP-A01-G03-ADVERBIOS-004"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A banca Cebraspe utiliza de modo recorrente a locução verbal \"intensifica o sentido de...\" como fórmula técnica padrão para afirmar que determinado vocábulo é um advérbio de intensidade associado a um adjetivo ou advérbio."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critério de Validação"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao deparar-se com a assertiva \"o vocábulo X intensifica o sentido de Y\", a validação requer dois passos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Confirmar se o termo modificado $Y$ é um adjetivo ou advérbio.",
+                "Realizar o teste de substituição de $X$ pelo advérbio muito."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-007",
+                  "targetTitle": "Cebraspe 2023 / Dataprev — O Vocábulo 'Bem' Intensificador",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G03-011",
+                  "targetTitle": "Cebraspe 2021 / SEDUC-AL — 'Bem' Modificando Adjetivo ('Bem Diferentes')",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A01-G03-ADVERBIOS-004",
+                  "targetTitle": "Decodificação do Comando \"Intensifica\" e Teste de Troca por \"Muito\"",
+                  "targetUnitId": "IP-A01-G03",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -256,82 +712,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A01-G03-004",
-              "table": {
-                "tableId": "TABLE-IP-A01-G03-004",
-                "caption": "Análise Comparativa Estrutural",
-                "headers": [
-                  "Dimensão de Análise",
-                  "Estrutura A: \"Ela está bem.\"",
-                  "Estrutura B: \"Ela está feliz.\""
-                ],
-                "rows": [
-                  [
-                    "Teste do Plural",
-                    "\"Elas estãobem.\" (Termo invariável)",
-                    "\"Elas estãofelizes.\" (Termo flexiona em número)"
-                  ],
-                  [
-                    "Classe Morfológica",
-                    "Advérbio de Modo",
-                    "Adjetivo"
-                  ],
-                  [
-                    "Predicação Verbal",
-                    "Verbo Intransitivo (V.I.)",
-                    "Verbo de Ligação (V.L.)"
-                  ],
-                  [
-                    "Função Sintática do Termo",
-                    "Adjunto Adverbial de Modo",
-                    "Predicativo do Sujeito"
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA semântica dos advérbios estuda o sentido, o contexto e o valor circunstancial que palavras ou locuções adverbiais projetam sobre as ações, estados ou características que modificam na oração.\nExplicação consolidada\nAo analisar uma questão que cobra o \"valor semântico\", o candidato deve formular perguntas-chave ao termo modificado para identificar a circunstância correspondente:\nLugar: Responde a Onde? (ex.: \"Chorei no cinema\").\nTempo: Responde a Quando? ou indica frequência (ex.: \"Saí à noite\").\nModo: Responde a Como? ou traduz o Jeito de realização do fato verbal (ex.: \"Saiu apressadamente\"). A equivalência didática é: $\\text{Modo} = \\text{Jeito}$.\nIntensidade: Expressa gradação de força, quantidade ou intensidade (ex.: \"Estudamos muito\").\nAfirmação: Confirma e reforça a predicação (ex.: \"Certamente serei aprovado\").\nNegação: Invalida ou nega a predicação (ex.: \"Eu nunca quis uma festa\").Possui dica: TIP-A01-G03-ADVERBIOS-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou regra consolidada\nA classe morfológica do termo a que o advérbio se refere determina rigorosamente o leque de suas possibilidades semânticas:\nAdvérbio modificando ADJETIVO ou outro ADVÉRBIO: Assume categoricamente valor de INTENSIDADE (desempenha a função de intensificador). Não pode assumir circunstância de modo, tempo ou lugar.\nAdvérbio modificando VERBO (ou Locução Verbal): Pode expressar QUALQUER CIRCUNSTÂNCIA (Modo, Tempo, Lugar, Intensidade, Afirmação, Negação, Causa, etc.).\nEsquema Estrutural de Modificação\n\\text{Advérbio} \\longrightarrow \\begin{cases} \\text{Adjetivo} & \\implies \\mathbf{INTENSIDADE} \\text{ (Intensificador)} \\\\ \\text{Outro Advérbio} & \\implies \\mathbf{INTENSIDADE} \\text{ (Intensificador)} \\\\ \\text{Verbo / Locução} & \\implies \\mathbf{MODO, TEMPO, LUGAR, INTENSIDADE\\dots} \\end{cases}\nExemplos e contraexemplos\n\"Ela canta bem.\" $\\rightarrow$ bem modifica o verbo canta $\\implies$ Advérbio de Modo (canta de que jeito?).\n\"Ela acordou bem cedo.\" $\\rightarrow$ cedo modifica o verbo acordou (tempo); bem modifica o advérbio cedo $\\implies$ Advérbio de Intensidade (intensifica o tempo).\n\"É bem provável.\" $\\rightarrow$ bem modifica o adjetivo provável $\\implies$ Advérbio de Intensidade (intensificador).\n\"Recursos bem diferentes.\" $\\rightarrow$ bem modifica o adjetivo diferentes $\\implies$ Advérbio de Intensidade (= muito diferentes).Termo associado: TERM-A01-G03-ADVERBIOS-002"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs vocábulos nunca e jamais possuem natureza semântica híbrida/ambivalente na Língua Portuguesa, acumulando simultaneamente valor circunstancial de negação e de tempo.\nExplicação consolidada\nNa frase \"Eu nunca quis uma festa\":\nSentido de Negação: Invalida o fato verbal (equivale a \"não quis\").\nSentido de Tempo: Circunscreve a negação a um intervalo temporal absoluto (equivale a \"em tempo algum\").\nAmbas as classificações são reconhecidas pelas bancas examinadoras conforme o foco exigido no comando da questão."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou distinção crítica\nA presença do sufixo sufixador adverbial -mente não garante que o advérbio expresse circunstância de modo. O valor semântico deriva da base adjetiva e da relação lógica com o verbo.\nCritérios de reconhecimento\nModo (Jeito): Apressadamente (de pressa), rapidamente (de rápido), silenciosamente (de silencioso).\nTempo / Frequência: Raramente (de raro = poucas vezes no tempo), diariamente, anualmente, frequentemente.\nAfirmação: Certamente (de certo), realmente.\nAplicação em Frase de Fixação\nNo excerto \"...raramente soltavam palavras curtas\", a palavra raramente não expressa o modo como soltavam palavras, mas sim a frequência temporal com que o evento ocorria. Trata-se de advérbio de TEMPO."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou regra consolidada\nO advérbio é uma classe morfológica invariável e, na sintaxe oracional, desempenha exclusivamente o papel de adjunto adverbial (nunca predicativo do sujeito).\nAnálise Comparativa Estrutural\nFundamentação Teórica\nUm verbo de estado como estar só é classificado como Verbo de Ligação se houver na oração um termo que expresse atributo do sujeito (Predicativo). Como a palavra bem é advérbio invariável, funciona como adjunto adverbial; consequentemente, o verbo estar opera como verbo intransitivo.\nRelações\nPossui procedimento:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou regra consolidada\nNa norma culta da Língua Portuguesa, ao coordenar dois ou mais advérbios derivados em -mente, é padrão eufônico expressar o sufixo apenas no último elemento, deixando-o subentendido/implícito nos elementos anteriores.\nAplicação e Análise Prática\nTexto analisado: \"...a questão do paraíso terrestre explica-se clara e singelamente pelo vegetarismo.\"\nForma desdobrada: \"...explica-se claramente e singelamente...\"\nClassificação: O vocábulo clara atua contextualmente como advérbio de modo modificador do verbo explica-se, e não como adjetivo qualificador do substantivo questão.\nMantra Didático: \"O que vem depois, salva!\" — Ao analisar termo aparentemente adjetivo coordenado a advérbio em -mente, examine o termo subsequente para reconhecer a elipse do sufixo.Possui dica: TIP-A01-G03-ADVERBIOS-002"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO advérbio possui ampla mobilidade posicional na frase. A distância física entre o advérbio deslocado e o seu verbo referente não anula nem enfraquece a relação sintático-semântica existente entre eles.\nExplicação consolidada\nNo período \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\":\nO vocábulo Hoje surge na cabeça do parágrafo, isolado por vírgulas e distante fisicamente do verbo abrange.\nO teste do referente comprova a ligação: abrange quando? $\\rightarrow$ Hoje.\nConclusão: Trata-se de advérbio de tempo modificador de verbo distante."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou distinção crítica\nAdjetivo: Termo que se liga exclusivamente a Substantivo para caracterizá-lo. Adjetivo nunca expressa circunstâncias de modo, tempo ou lugar.\nAdvérbio: Termo que se liga a Verbo, Adjetivo ou outro Advérbio para expressar circunstâncias ou intensidade.\nAplicação Prática no Item Cebraspe (TC-DF)\nNa oração \"Tributos desempenham um papel vital...\":\nvital conecta-se a papel (substantivo).\nLogo, vital é adjetivo.\nPor ser adjetivo, é categoricamente impossível que expresse \"circunstância de modo\".Possui procedimento:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA banca Cebraspe utiliza de modo recorrente a locução verbal \"intensifica o sentido de...\" como fórmula técnica padrão para afirmar que determinado vocábulo é um advérbio de intensidade associado a um adjetivo ou advérbio.\nCritério de Validação\nAo deparar-se com a assertiva \"o vocábulo X intensifica o sentido de Y\", a validação requer dois passos:\nConfirmar se o termo modificado $Y$ é um adjetivo ou advérbio.\nRealizar o teste de substituição de $X$ pelo advérbio muito.Possui procedimento: \nPossui dica: TIP-A01-G03-ADVERBIOS-004"
         }
       ]
     },
@@ -425,7 +807,9 @@
               "RULE-IP-A01-G03-001",
               "EXP-IP-A01-G03-034"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -572,7 +956,9 @@
               "PROC-A01-G03-ADVERBIOS-001",
               "EXP-IP-A01-G03-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -688,7 +1074,9 @@
               "PROC-A01-G03-ADVERBIOS-002",
               "EXP-IP-A01-G03-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -824,7 +1212,9 @@
               "PROC-A01-G03-ADVERBIOS-003",
               "EXP-IP-A01-G03-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -960,7 +1350,9 @@
               "PROC-A01-G03-ADVERBIOS-004",
               "EXP-IP-A01-G03-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1046,7 +1438,9 @@
               "CONTRAST-IP-A01-G03-001",
               "EXP-IP-A01-G03-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1099,7 +1493,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-001",
               "EXP-IP-A01-G03-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1160,7 +1556,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-002",
               "EXP-IP-A01-G03-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1209,7 +1607,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-003",
               "EXP-IP-A01-G03-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1258,7 +1658,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-004",
               "EXP-IP-A01-G03-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1307,7 +1709,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-005",
               "EXP-IP-A01-G03-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1373,7 +1777,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-006",
               "EXP-IP-A01-G03-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1428,7 +1834,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-007",
               "EXP-IP-A01-G03-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1483,7 +1891,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-008",
               "EXP-IP-A01-G03-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1538,7 +1948,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-009",
               "EXP-IP-A01-G03-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1593,7 +2005,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-010",
               "EXP-IP-A01-G03-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1648,7 +2062,9 @@
               "WORKED_EXAMPLE-IP-A01-G03-011",
               "EXP-IP-A01-G03-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1699,7 +2115,9 @@
               "WARN-A01-G03-ADVERBIOS-001",
               "EXP-IP-A01-G03-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1735,7 +2153,9 @@
               "WARN-A01-G03-ADVERBIOS-002",
               "EXP-IP-A01-G03-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1771,7 +2191,9 @@
               "WARN-A01-G03-ADVERBIOS-003",
               "EXP-IP-A01-G03-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1808,7 +2230,9 @@
               "WARN-A01-G03-ADVERBIOS-004",
               "EXP-IP-A01-G03-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1844,28 +2268,100 @@
               "WARN-A01-G03-ADVERBIOS-005",
               "EXP-IP-A01-G03-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Conceito de Semântica Adverbial e Perguntas Diagnósticas**: Definição ou ideia central\nA semântica dos advérbios estuda o sentido, o contexto e o valor circunstancial que palavras ou locuções adverbiais projetam sobre as ações, estados ou características que modificam na oração.\nExplicação consolidada\nAo analisar uma questão que cobra o \"valor semântico\", o candidato deve formular perguntas-chave ao termo modificado para identificar a circunstância correspondente:\nLugar: Responde a Onde? (ex.: \"Chorei no cinema\").\nTempo: Responde a Quando? ou indica frequência (ex.: \"Saí à noite\").\nModo: Responde a Como? ou traduz o Jeito de realização do fato verbal (ex.: \"Saiu apressadamente\"). A equivalência didática é: $\\text{Modo} = \\text{Jeito}$.\nIntensidade: Expressa gradação de força, quantidade ou intensidade (ex.: \"Estudamos muito\").\nAfirmação: Confirma e reforça a predicação (ex.: \"Certamente serei aprovado\").\nNegação: Invalida ou nega a predicação (ex.: \"Eu nunca quis uma festa\").Possui dica: TIP-A01-G03-ADVERBIOS-001",
-            "**Regra Fundamental do Termo Modificado (O Papel de Intensificador)**: Definição ou regra consolidada\nA classe morfológica do termo a que o advérbio se refere determina rigorosamente o leque de suas possibilidades semânticas:\nAdvérbio modificando ADJETIVO ou outro ADVÉRBIO: Assume categoricamente valor de INTENSIDADE (desempenha a função de intensificador). Não pode assumir circunstância de modo, tempo ou lugar.\nAdvérbio modificando VERBO (ou Locução Verbal): Pode expressar QUALQUER CIRCUNSTÂNCIA (Modo, Tempo, Lugar, Intensidade, Afirmação, Negação, Causa, etc.).\nEsquema Estrutural de Modificação\n\\text{Advérbio} \\longrightarrow \\begin{cases} \\text{Adjetivo} & \\implies \\mathbf{INTENSIDADE} \\text{ (Intensificador)} \\\\ \\text{Outro Advérbio} & \\implies \\mathbf{INTENSIDADE} \\text{ (Intensificador)} \\\\ \\text{Verbo / Locução} & \\implies \\mathbf{MODO, TEMPO, LUGAR, INTENSIDADE\\dots} \\end{cases}\nExemplos e contraexemplos\n\"Ela canta bem.\" $\\rightarrow$ bem modifica o verbo canta $\\implies$ Advérbio de Modo (canta de que jeito?).\n\"Ela acordou bem cedo.\" $\\rightarrow$ cedo modifica o verbo acordou (tempo); bem modifica o advérbio cedo $\\implies$ Advérbio de Intensidade (intensifica o tempo).\n\"É bem provável.\" $\\rightarrow$ bem modifica o adjetivo provável $\\implies$ Advérbio de Intensidade (intensificador).\n\"Recursos bem diferentes.\" $\\rightarrow$ bem modifica o adjetivo diferentes $\\implies$ Advérbio de Intensidade (= muito diferentes).Termo associado: TERM-A01-G03-ADVERBIOS-002",
-            "**Ambivalência Semântica dos Advérbios 'Nunca' e 'Jamais'**: Definição ou ideia central\nOs vocábulos nunca e jamais possuem natureza semântica híbrida/ambivalente na Língua Portuguesa, acumulando simultaneamente valor circunstancial de negação e de tempo.\nExplicação consolidada\nNa frase \"Eu nunca quis uma festa\":\nSentido de Negação: Invalida o fato verbal (equivale a \"não quis\").\nSentido de Tempo: Circunscreve a negação a um intervalo temporal absoluto (equivale a \"em tempo algum\").\nAmbas as classificações são reconhecidas pelas bancas examinadoras conforme o foco exigido no comando da questão.",
-            "**Desmistificação do Sufixo '-mente' (Modo vs Tempo/Frequência)**: Definição ou distinção crítica\nA presença do sufixo sufixador adverbial -mente não garante que o advérbio expresse circunstância de modo. O valor semântico deriva da base adjetiva e da relação lógica com o verbo.\nCritérios de reconhecimento\nModo (Jeito): Apressadamente (de pressa), rapidamente (de rápido), silenciosamente (de silencioso).\nTempo / Frequência: Raramente (de raro = poucas vezes no tempo), diariamente, anualmente, frequentemente.\nAfirmação: Certamente (de certo), realmente.\nAplicação em Frase de Fixação\nNo excerto \"...raramente soltavam palavras curtas\", a palavra raramente não expressa o modo como soltavam palavras, mas sim a frequência temporal com que o evento ocorria. Trata-se de advérbio de TEMPO.",
-            "**Morfossintaxe e Invariabilidade: A Estrutura de 'Ela está bem'**: Definição ou regra consolidada\nO advérbio é uma classe morfológica invariável e, na sintaxe oracional, desempenha exclusivamente o papel de adjunto adverbial (nunca predicativo do sujeito).\nAnálise Comparativa Estrutural\nFundamentação Teórica\nUm verbo de estado como estar só é classificado como Verbo de Ligação se houver na oração um termo que expresse atributo do sujeito (Predicativo). Como a palavra bem é advérbio invariável, funciona como adjunto adverbial; consequentemente, o verbo estar opera como verbo intransitivo.\nRelações\nPossui procedimento:",
-            "**Omissão do Sufixo '-mente' em Advérbios Coordenados**: Definição ou regra consolidada\nNa norma culta da Língua Portuguesa, ao coordenar dois ou mais advérbios derivados em -mente, é padrão eufônico expressar o sufixo apenas no último elemento, deixando-o subentendido/implícito nos elementos anteriores.\nAplicação e Análise Prática\nTexto analisado: \"...a questão do paraíso terrestre explica-se clara e singelamente pelo vegetarismo.\"\nForma desdobrada: \"...explica-se claramente e singelamente...\"\nClassificação: O vocábulo clara atua contextualmente como advérbio de modo modificador do verbo explica-se, e não como adjetivo qualificador do substantivo questão.\nMantra Didático: \"O que vem depois, salva!\" — Ao analisar termo aparentemente adjetivo coordenado a advérbio em -mente, examine o termo subsequente para reconhecer a elipse do sufixo.Possui dica: TIP-A01-G03-ADVERBIOS-002",
-            "**Mobilidade Sintática e o Adjunto Adverbial Deslocado**: Definição ou ideia central\nO advérbio possui ampla mobilidade posicional na frase. A distância física entre o advérbio deslocado e o seu verbo referente não anula nem enfraquece a relação sintático-semântica existente entre eles.\nExplicação consolidada\nNo período \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\":\nO vocábulo Hoje surge na cabeça do parágrafo, isolado por vírgulas e distante fisicamente do verbo abrange.\nO teste do referente comprova a ligação: abrange quando? $\\rightarrow$ Hoje.\nConclusão: Trata-se de advérbio de tempo modificador de verbo distante.",
-            "**Distinção Categórica entre Adjetivo e Advérbio (O Teste do Referente)**: Definição ou distinção crítica\nAdjetivo: Termo que se liga exclusivamente a Substantivo para caracterizá-lo. Adjetivo nunca expressa circunstâncias de modo, tempo ou lugar.\nAdvérbio: Termo que se liga a Verbo, Adjetivo ou outro Advérbio para expressar circunstâncias ou intensidade.\nAplicação Prática no Item Cebraspe (TC-DF)\nNa oração \"Tributos desempenham um papel vital...\":\nvital conecta-se a papel (substantivo).\nLogo, vital é adjetivo.\nPor ser adjetivo, é categoricamente impossível que expresse \"circunstância de modo\".Possui procedimento:",
-            "**Padrão Terminológico da Banca Cebraspe para Intensificação**: Definição ou ideia central\nA banca Cebraspe utiliza de modo recorrente a locução verbal \"intensifica o sentido de...\" como fórmula técnica padrão para afirmar que determinado vocábulo é um advérbio de intensidade associado a um adjetivo ou advérbio.\nCritério de Validação\nAo deparar-se com a assertiva \"o vocábulo X intensifica o sentido de Y\", a validação requer dois passos:\nConfirmar se o termo modificado $Y$ é um adjetivo ou advérbio.\nRealizar o teste de substituição de $X$ pelo advérbio muito.Possui procedimento: \nPossui dica: TIP-A01-G03-ADVERBIOS-004"
-          ]
+          "term": "Conceito de Semântica Adverbial e Perguntas Diagnósticas",
+          "shortDefinition": "A semântica dos advérbios estuda o sentido, o contexto e o valor circunstancial que palavras ou locuções adverbiais projetam sobre as ações, estados ou características que modificam na oração.",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-01"
+          },
+          "operationalUse": "Ao analisar uma questão que cobra o \"valor semântico\", o candidato deve formular perguntas-chave ao termo modificado para identificar a circunstância correspondente:"
+        },
+        {
+          "term": "Regra Fundamental do Termo Modificado (O Papel de Intensificador)",
+          "shortDefinition": "A classe morfológica do termo a que o advérbio se refere determina rigorosamente o leque de suas possibilidades semânticas:",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-02"
+          }
+        },
+        {
+          "term": "Ambivalência Semântica dos Advérbios 'Nunca' e 'Jamais'",
+          "shortDefinition": "Os vocábulos nunca e jamais possuem natureza semântica híbrida/ambivalente na Língua Portuguesa, acumulando simultaneamente valor circunstancial de negação e de tempo.",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-03"
+          },
+          "operationalUse": "Na frase \"Eu nunca quis uma festa\":"
+        },
+        {
+          "term": "Desmistificação do Sufixo '-mente' (Modo vs Tempo/Frequência)",
+          "shortDefinition": "A presença do sufixo sufixador adverbial -mente não garante que o advérbio expresse circunstância de modo. O valor semântico deriva da base adjetiva e da relação lógica com o verbo.",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-04"
+          },
+          "operationalUse": "No excerto \"...raramente soltavam palavras curtas\", a palavra raramente não expressa o modo como soltavam palavras, mas sim a frequência temporal com que o evento ocorria."
+        },
+        {
+          "term": "Morfossintaxe e Invariabilidade: A Estrutura de 'Ela está bem'",
+          "shortDefinition": "O advérbio é uma classe morfológica invariável e, na sintaxe oracional, desempenha exclusivamente o papel de adjunto adverbial (nunca predicativo do sujeito).",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-05"
+          }
+        },
+        {
+          "term": "Omissão do Sufixo '-mente' em Advérbios Coordenados",
+          "shortDefinition": "Na norma culta da Língua Portuguesa, ao coordenar dois ou mais advérbios derivados em -mente, é padrão eufônico expressar o sufixo apenas no último elemento, deixando-o subentendido/implícito nos elementos anteriores.",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-06"
+          }
+        },
+        {
+          "term": "Mobilidade Sintática e o Adjunto Adverbial Deslocado",
+          "shortDefinition": "O advérbio possui ampla mobilidade posicional na frase. A distância física entre o advérbio deslocado e o seu verbo referente não anula nem enfraquece a relação sintático-semântica existente entre eles.",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-07"
+          },
+          "operationalUse": "No período \"Hoje, em boa parte das sociedades modernas, o conceito de povo abrange todos os adultos...\":"
+        },
+        {
+          "term": "Distinção Categórica entre Adjetivo e Advérbio (O Teste do Referente)",
+          "shortDefinition": "Na oração \"Tributos desempenham um papel vital...\":",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-08"
+          }
+        },
+        {
+          "term": "Padrão Terminológico da Banca Cebraspe para Intensificação",
+          "shortDefinition": "A banca Cebraspe utiliza de modo recorrente a locução verbal \"intensifica o sentido de...\" como fórmula técnica padrão para afirmar que determinado vocábulo é um advérbio de intensidade associado a um adjetivo ou advérbio.",
+          "detailTarget": {
+            "unitId": "IP-A01-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G03-09"
+          }
         }
       ]
     },
@@ -2057,7 +2553,27 @@
         "confidence": 0.99
       },
       "answerSha256": "f022870b8dc1cd3463910ab689bef1fccea78e573dfc03a67cd0e8f53d756995",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "O emprego do adjunto adverbial “Consequentemente”, no último período do terceiro parágrafo,\nindica uma relação de causa e efeito entre as ideias apresentadas.",
+        "options": [
+          {
+            "label": "C",
+            "text": "Certo"
+          },
+          {
+            "label": "E",
+            "text": "Errado"
+          }
+        ],
+        "answer": "C",
+        "sourceField": "questionPayload.prompt",
+        "cleaningRules": [
+          "move_apostille_footer_to_provenance"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",

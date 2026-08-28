@@ -205,10 +205,14 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
 
   const [openSections, setOpenSections] = useState<Set<string>>(
     () => new Set([
-      ...presentSections.slice(0, 2).map((s) => s.id),
+      ...presentSections.slice(0, 1).map((s) => s.id),
       ...(activeSectionId ? [activeSectionId] : []),
     ])
   );
+
+  const resumedSection = activeSectionId && activeSectionId !== presentSections[0]?.id
+    ? presentSections.find((section) => section.id === activeSectionId)
+    : undefined;
 
   useEffect(() => {
     if (!activeSectionId || !presentSections.some((section) => section.id === activeSectionId)) return;
@@ -313,6 +317,19 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
       )}
 
       {/* Sumário Dinâmico */}
+      {resumedSection && (
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-sky-200 bg-sky-50 px-4 py-3 text-xs text-sky-950" role="status">
+          <span><strong>Retomada:</strong> abrimos a seção “{resumedSection.title}” indicada no seu percurso.</span>
+          <button
+            type="button"
+            onClick={() => openFromToc(presentSections[0].id)}
+            className="min-h-10 rounded-lg border border-sky-300 bg-white px-3 py-2 font-bold text-sky-900 hover:bg-sky-100"
+          >
+            Começar pela seção 1
+          </button>
+        </div>
+      )}
+
       <nav className="rounded-2xl border border-teal-200 bg-teal-50/50 p-3 sm:p-5 shadow-2xs" aria-label={`Sumário da unidade ${unit.title}`}>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <h2 className="m-0 flex items-center gap-2 text-base font-bold text-teal-950">

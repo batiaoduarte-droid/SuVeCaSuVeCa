@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A01-G01",
     "lessonId": "A01",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A01-G01",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A01-G01-001"
+          }
         }
       ]
     },
@@ -94,8 +99,70 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nUma classe gramatical é considerada variável quando suas palavras admitem flexão, sofrendo alterações morfológicas para expressar gênero (masculino e feminino) e número (singular e plural). As classes invariáveis possuem forma fixa e cristalizada, não admitindo flexão sob nenhuma circunstância de concordância básica.\nExplicação consolidada\nA morfologia da Língua Portuguesa organiza suas dez classes de palavras em dois conjuntos fundamentais:\nClasses Variáveis (6): Substantivo, Artigo, Adjetivo, Pronome, Numeral e Verbo. (O verbo apresenta ainda flexões próprias de tempo, modo, número, pessoa e voz).\nClasses Invariáveis (4): Advérbio, Conjunção, Preposição e Interjeição.\nCritérios de reconhecimento\nSe o vocábulo aceita alteração mórfica de singular/plural ($S \\rightarrow Pl$) ou masculino/feminino ($Masc \\rightarrow Fem$) ao alterar-se o contexto frasal $\\rightarrow$ Palavra de Classe Variável.\nSe o vocábulo mantém rigorosamente a mesma forma gráfica e fonética, independentemente de os termos vizinhos estarem no plural ou feminino $\\rightarrow$ Palavra de Classe Invariável.\nRelações\nContrasta com: (Classes Invariáveis e Locuções).\nExpandido em: a ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Uma classe gramatical é considerada variável quando suas palavras admitem flexão, sofrendo alterações morfológicas para expressar gênero (masculino e feminino) e número (singular e plural). As classes invariáveis possuem forma fixa e cristalizada, não admitindo flexão sob nenhuma circunstância de concordância básica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A morfologia da Língua Portuguesa organiza suas dez classes de palavras em dois conjuntos fundamentais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Classes Variáveis (6): Substantivo, Artigo, Adjetivo, Pronome, Numeral e Verbo. (O verbo apresenta ainda flexões próprias de tempo, modo, número, pessoa e voz).",
+                "Classes Invariáveis (4): Advérbio, Conjunção, Preposição e Interjeição."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o vocábulo aceita alteração mórfica de singular/plural ($S \\rightarrow Pl$) ou masculino/feminino ($Masc \\rightarrow Fem$) ao alterar-se o contexto frasal $\\rightarrow$ Palavra de Classe Variável.",
+                "Se o vocábulo mantém rigorosamente a mesma forma gráfica e fonética, independentemente de os termos vizinhos estarem no plural ou feminino $\\rightarrow$ Palavra de Classe Invariável."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-007",
+                  "targetTitle": "Advérbio, Locução Adverbial e a Exceção do Advérbio \"Todo/Toda\"",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002",
+                  "targetTitle": "O Substantivo e o Teste Diagnóstico do Artigo Antecedente",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-006",
+                  "targetTitle": "O Verbo como Classe de Maior Flexibilidade Morfológica",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +175,63 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO substantivo é a classe variável que funciona como nome, responsável por nomear seres concretos, abstrações, ações, estados e qualidades. No contexto de provas de concurso, sua marca diagnóstica distintiva é a capacidade gramatical de aceitar a anteposição de um artigo.\nExplicação consolidada\nPara determinar se uma palavra em análise atua como substantivo:\nAvalia-se se ela desempenha o papel semântico de nomear algo.\nAplica-se o teste prático de antecipar um artigo (o, a, os, as, um, uma). Mesmo que a frase original não traga o artigo expresso, a admissibilidade natural do determinante comprova a natureza substantiva do vocábulo.\nExemplos e contraexemplos\nAplicação: Na oração \"Ele tem competência\", a palavra competência é substantivo porque admite o determinante: \"Ele tem a competência\".\nAplicação contextual: Na oração \"Vive na zona rural\", a palavra isolada zona é substantivo antecedido da contração na (em + artigo a).Possui alerta em: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O substantivo é a classe variável que funciona como nome, responsável por nomear seres concretos, abstrações, ações, estados e qualidades. No contexto de provas de concurso, sua marca diagnóstica distintiva é a capacidade gramatical de aceitar a anteposição de um artigo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para determinar se uma palavra em análise atua como substantivo:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Avalia-se se ela desempenha o papel semântico de nomear algo.",
+                "Aplica-se o teste prático de antecipar um artigo (o, a, os, as, um, uma). Mesmo que a frase original não traga o artigo expresso, a admissibilidade natural do determinante comprova a natureza substantiva do vocábulo."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Aplicação: Na oração \"Ele tem competência\", a palavra competência é substantivo porque admite o determinante: \"Ele tem a competência\".",
+                "Aplicação contextual: Na oração \"Vive na zona rural\", a palavra isolada zona é substantivo antecedido da contração na (em + artigo a)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001",
+                  "targetTitle": "Teste do Artigo para Identificação de Substantivos",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001",
+                  "targetTitle": "Pegadinha do Escopo do Sublinhado (Núcleo vs. Locução)",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +244,62 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO adjetivo é uma palavra simples variável que se refere diretamente ao substantivo, concordando com ele em gênero e número. A locução adjetiva é uma expressão (formada por duas ou mais palavras, usualmente preposição + substantivo) que exerce papel adjetivo, mas que, por ser uma unidade sintagmática fixa, não varia no plural nem no feminino.\nExplicação consolidada\nAdjetivo Simples: Flexiona-se harmoniosamente com o substantivo. Exemplo: \"homem inteligente\" $\\rightarrow$ \"homens inteligentes\".\nParticípio com Valor Adjetivo: Particípios verbais aplicados diretamente à qualificação de substantivos operam funcionalmente como adjetivos variáveis. Exemplo: \"pagamentos realizados\".\nLocução Adjetiva: Como princípio transversal da morfologia, as locuções são expressões cristalizadas e, em regra geral, permanecem invariáveis. Exemplo: \"homem de inteligência\" $\\rightarrow$ \"homens de inteligência\" (a flexão \"homens de inteligências\" é incorreta).\nLocução Cristalizada Excepcional: A locução \"a sós\" qualifica termos nominais (\"As duas estão a sós\"), sendo classificada como locução adjetiva estritamente invariável.\nRelações\nExemplificado por: e .\nPossui alerta em: e ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O adjetivo é uma palavra simples variável que se refere diretamente ao substantivo, concordando com ele em gênero e número. A locução adjetiva é uma expressão (formada por duas ou mais palavras, usualmente preposição + substantivo) que exerce papel adjetivo, mas que, por ser uma unidade sintagmática fixa, não varia no plural nem no feminino."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Adjetivo Simples: Flexiona-se harmoniosamente com o substantivo. Exemplo: \"homem inteligente\" $\\rightarrow$ \"homens inteligentes\".",
+                "Particípio com Valor Adjetivo: Particípios verbais aplicados diretamente à qualificação de substantivos operam funcionalmente como adjetivos variáveis. Exemplo: \"pagamentos realizados\".",
+                "Locução Adjetiva: Como princípio transversal da morfologia, as locuções são expressões cristalizadas e, em regra geral, permanecem invariáveis. Exemplo: \"homem de inteligência\" $\\rightarrow$ \"homens de inteligência\" (a flexão \"homens de inteligências\" é incorreta).",
+                "Locução Cristalizada Excepcional: A locução \"a sós\" qualifica termos nominais (\"As duas estão a sós\"), sendo classificada como locução adjetiva estritamente invariável."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G01-001",
+                  "targetTitle": "Contraste de Flexão no Plural: Adjetivo vs. Locução Adjetiva",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G01-004",
+                  "targetTitle": "Bateria Consolidada de Exercícios de Fixação (8 Itens)",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002",
+                  "targetTitle": "Erro de Pluralizar o Substantivo Interno da Locução Adjetiva",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004",
+                  "targetTitle": "Invariabilidade Absoluta da Locução \"A sós\"",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +312,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO pronome é a classe que se relaciona diretamente com o substantivo, dividindo-se funcionalmente em pronome substantivo (quando substitui o nome e assume sozinho a função sintática) e pronome adjetivo (quando acompanha o substantivo, determinando-o ou modificando-o).\nExplicação consolidada\nDo ponto de vista textual e sintático, independentemente da subclasse formal (pessoal, possessivo, demonstrativo, indefinido, etc.), todo pronome assume um dos dois papéis:\nPronome Substantivo: Fica isolado, ocupando o lugar do nome na estrutura sintática (ex.: \"Alguém chegou\").\nPronome Adjetivo: Posiciona-se adjacente a um substantivo explícito, apontando uma relação de dependência direta para ele (ex.: \"Meu aluno chegou\").\nNota de Flexão: Embora o pronome integre as classes variáveis, existem pronomes indefinidos/pessoais específicos intrinsecamente invariáveis (ex.: alguém, ninguém, tudo, mais em certos contextos).Dica associada: TIP-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O pronome é a classe que se relaciona diretamente com o substantivo, dividindo-se funcionalmente em pronome substantivo (quando substitui o nome e assume sozinho a função sintática) e pronome adjetivo (quando acompanha o substantivo, determinando-o ou modificando-o)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Do ponto de vista textual e sintático, independentemente da subclasse formal (pessoal, possessivo, demonstrativo, indefinido, etc.), todo pronome assume um dos dois papéis:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pronome Substantivo: Fica isolado, ocupando o lugar do nome na estrutura sintática (ex.: \"Alguém chegou\").",
+                "Pronome Adjetivo: Posiciona-se adjacente a um substantivo explícito, apontando uma relação de dependência direta para ele (ex.: \"Meu aluno chegou\")."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Nota de Flexão: Embora o pronome integre as classes variáveis, existem pronomes indefinidos/pessoais específicos intrinsecamente invariáveis (ex.: alguém, ninguém, tudo, mais em certos contextos)."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002",
+                  "targetTitle": "Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +365,39 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO numeral é a classe variável que quantifica seres, indica ordenação, multiplicação ou divisão. À semelhança do pronome, pode atuar no discurso como numeral substantivo (quando substitui o nome) ou numeral adjetivo (quando acompanha o substantivo).\nExplicação consolidada\nNumeral Substantivo: Desempenha o papel de núcleo do sintagma nominal isoladamente. Exemplo: \"Os dois chegaram\" (o numeral cardinal dois atua como sujeito substantivado). O vocábulo milhão (\"R$ 1,25 milhão\") quantifica atuando com feição substantiva e varia em número (milhões).\nNumeral Adjetivo: Acompanha e quantifica diretamente um substantivo textual expresso. Exemplo: \"Os dois meninos chegaram\" (dois aponta para meninos)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O numeral é a classe variável que quantifica seres, indica ordenação, multiplicação ou divisão. À semelhança do pronome, pode atuar no discurso como numeral substantivo (quando substitui o nome) ou numeral adjetivo (quando acompanha o substantivo)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Numeral Substantivo: Desempenha o papel de núcleo do sintagma nominal isoladamente. Exemplo: \"Os dois chegaram\" (o numeral cardinal dois atua como sujeito substantivado). O vocábulo milhão (\"R$ 1,25 milhão\") quantifica atuando com feição substantiva e varia em número (milhões).",
+                "Numeral Adjetivo: Acompanha e quantifica diretamente um substantivo textual expresso. Exemplo: \"Os dois meninos chegaram\" (dois aponta para meninos)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002",
+                  "targetTitle": "Teste da \"Seta\" para Diferenciação de Funções Substantivas e Adjetivas",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +410,22 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO verbo é a classe gramatical variável responsável por exprimir ação, estado, mudança de estado ou fenômenos naturais. Destaca-se como a classe morfológica mais flexível e complexa da Língua Portuguesa, admitindo variações de número, pessoa, tempo, modo e voz.\nExplicação consolidada\nNo estudo inicial das classes variáveis, o verbo constitui o elemento indispensável da oração. Nas questões de identificação de flexibilidade, as formas verbais (ex.: \"fez\", \"estudou\") são classificadas invariavelmente como variáveis."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O verbo é a classe gramatical variável responsável por exprimir ação, estado, mudança de estado ou fenômenos naturais. Destaca-se como a classe morfológica mais flexível e complexa da Língua Portuguesa, admitindo variações de número, pessoa, tempo, modo e voz."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No estudo inicial das classes variáveis, o verbo constitui o elemento indispensável da oração. Nas questões de identificação de flexibilidade, as formas verbais (ex.: \"fez\", \"estudou\") são classificadas invariavelmente como variáveis."
             }
           ]
         },
@@ -178,8 +438,70 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO advérbio é uma classe invariável cuja função sintático-semântica é modificar um verbo, um adjetivo ou outro advérbio, expressando uma circunstância (modo, tempo, lugar, intensidade, afirmação, negação, exclusão). A locução adverbial é a expressão pluriverbal correspondente. Como exceção expressiva, o advérbio de intensidade \"todo\" aceita concordância de gênero com adjetivo feminino.\nExplicação consolidada\nAlvo de Modificação: O advérbio jamais modifica substantivos.\nAdvérbio simples: \"Ele estudou rapidamente.\" / \"Eles não se davam bem.\" (modo).\nLocução adverbial: \"Ele estudou à toa.\" / \"Vive na zona rural.\" (lugar).\nAdvérbio \"Mais\" Antecedido de Negação: Em construções como \"não mais\" ou \"nunca mais\" (\"A gente não deseja mais viver\"), o vocábulo mais modifica o verbo e expressa circunstância de tempo (cessação temporal: \"de agora em diante\"), sendo invariável.\nAdvérbio \"Menos\": Ao modificar adjetivos (\"menos condenável\"), expressa intensidade e permanece estritamente invariável (a forma \"menas\" é inexistente no padrão culto).\nA Exceção de \"Todo/Toda\": Ao intensificar adjetivo, o advérbio todo admite duas construções cultas equivalentes:\n\"Ela chegou toda feliz.\" (advérbio variável por atração estilística).\n\"Ela chegou todo feliz.\" (advérbio mantido rigorosamente invariável).\nRelações\nPossui exceção em: .\nPossui alerta em: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O advérbio é uma classe invariável cuja função sintático-semântica é modificar um verbo, um adjetivo ou outro advérbio, expressando uma circunstância (modo, tempo, lugar, intensidade, afirmação, negação, exclusão). A locução adverbial é a expressão pluriverbal correspondente. Como exceção expressiva, o advérbio de intensidade \"todo\" aceita concordância de gênero com adjetivo feminino."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Alvo de Modificação: O advérbio jamais modifica substantivos."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Advérbio simples: \"Ele estudou rapidamente.\" / \"Eles não se davam bem.\" (modo).",
+                "Locução adverbial: \"Ele estudou à toa.\" / \"Vive na zona rural.\" (lugar)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Advérbio \"Mais\" Antecedido de Negação: Em construções como \"não mais\" ou \"nunca mais\" (\"A gente não deseja mais viver\"), o vocábulo mais modifica o verbo e expressa circunstância de tempo (cessação temporal: \"de agora em diante\"), sendo invariável.",
+                "Advérbio \"Menos\": Ao modificar adjetivos (\"menos condenável\"), expressa intensidade e permanece estritamente invariável (a forma \"menas\" é inexistente no padrão culto).",
+                "A Exceção de \"Todo/Toda\": Ao intensificar adjetivo, o advérbio todo admite duas construções cultas equivalentes:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Ela chegou toda feliz.\" (advérbio variável por atração estilística).",
+                "\"Ela chegou todo feliz.\" (advérbio mantido rigorosamente invariável)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G01-003",
+                  "targetTitle": "Aplicação da Exceção do Advérbio \"Todo\"",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003",
+                  "targetTitle": "Pegadinha da Invariabilidade Culta do Advérbio \"Todo\"",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +514,61 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nConjunções e Preposições são classes invariáveis que atuam como conectores discursivos. Ambas possuem a capacidade de ligar orações ou termos; a distinção entre suas respectivas locuções assenta-se no vocábulo final da expressão.\nExplicação consolidada\nCapacidades Conectivas:\nConjunção: Liga orações (\"Ele chegou e dormiu\") ou termos de mesma função na oração (\"José e João chegaram\").\nPreposição: Liga termos nominais (\"Blusa de Maria\") ou orações (\"Estudo para ter uma vida melhor\").\nDiferenciação Estrutural de Locuções:\nLocução Conjuntiva: Expressão que termina obrigatoriamente por conjunção (geralmente que). Ex.: a fim de que, assim que, já que, à medida que.\nLocução Prepositiva: Expressão que termina obrigatoriamente por preposição. Ex.: a fim de, graças a, por causa de, em vez de.Dica associada: TIP-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Conjunções e Preposições são classes invariáveis que atuam como conectores discursivos. Ambas possuem a capacidade de ligar orações ou termos; a distinção entre suas respectivas locuções assenta-se no vocábulo final da expressão."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Capacidades Conectivas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Conjunção: Liga orações (\"Ele chegou e dormiu\") ou termos de mesma função na oração (\"José e João chegaram\").",
+                "Preposição: Liga termos nominais (\"Blusa de Maria\") ou orações (\"Estudo para ter uma vida melhor\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diferenciação Estrutural de Locuções:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Locução Conjuntiva: Expressão que termina obrigatoriamente por conjunção (geralmente que). Ex.: a fim de que, assim que, já que, à medida que.",
+                "Locução Prepositiva: Expressão que termina obrigatoriamente por preposição. Ex.: a fim de, graças a, por causa de, em vez de."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003",
+                  "targetTitle": "Regra do Vocábulo Final para Locuções Conectivas",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +581,22 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA interjeição é a classe gramatical invariável composta por palavras ou expressões que exteriorizam de forma direta e instantânea estados emocionais, reações psíquicas, sensações e sentimentos do emissor (como dor, espanto, alívio, medo).\nExplicação consolidada\nCompletando as dez classes morfológicas, as interjeições não sofrem flexão de gênero nem de número. Exemplos herdados: \"Ai!\" / \"Ui!\" (dor), \"Meu Deus!\" / \"Nossa!\" (espanto/medo)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A interjeição é a classe gramatical invariável composta por palavras ou expressões que exteriorizam de forma direta e instantânea estados emocionais, reações psíquicas, sensações e sentimentos do emissor (como dor, espanto, alívio, medo)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Completando as dez classes morfológicas, as interjeições não sofrem flexão de gênero nem de número. Exemplos herdados: \"Ai!\" / \"Ui!\" (dor), \"Meu Deus!\" / \"Nossa!\" (espanto/medo)."
             }
           ]
         },
@@ -220,8 +609,66 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Método das Setas é o protocolo analítico que determina a classe e a flexibilidade de uma palavra exclusivamente pelas relações de dependência sintática estabelecidas no interior da frase, substituindo a memorização ineficaz de listas isoladas.\nExplicação consolidada\nPara classificar qualquer vocábulo:\nTraça-se uma seta da palavra analisada para o termo ao qual ela se refere.\nAplica-se a regra de interconexão morfológica:\nAponta para Substantivo $\\rightarrow$ Adjetivo, Artigo, Pronome ou Numeral (Natureza Nominal / Geralmente Variável).\nAponta para Verbo, Adjetivo ou outro Advérbio $\\rightarrow$ Advérbio (Classe estritamente Invariável).\nAtua ligando dois termos ou duas orações $\\rightarrow$ Preposição ou Conjunção (Conectivo / Invariável).Fundamenta: e ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Método das Setas é o protocolo analítico que determina a classe e a flexibilidade de uma palavra exclusivamente pelas relações de dependência sintática estabelecidas no interior da frase, substituindo a memorização ineficaz de listas isoladas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para classificar qualquer vocábulo:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Traça-se uma seta da palavra analisada para o termo ao qual ela se refere.",
+                "Aplica-se a regra de interconexão morfológica:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Aponta para Substantivo $\\rightarrow$ Adjetivo, Artigo, Pronome ou Numeral (Natureza Nominal / Geralmente Variável).",
+                "Aponta para Verbo, Adjetivo ou outro Advérbio $\\rightarrow$ Advérbio (Classe estritamente Invariável).",
+                "Atua ligando dois termos ou duas orações $\\rightarrow$ Preposição ou Conjunção (Conectivo / Invariável)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004",
+                  "targetTitle": "Protocolo do Método das Setas para Classificação Morfossintática",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-011",
+                  "targetTitle": "Diferenciação Morfossintática entre \"Demais\" e \"De mais\"",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-012",
+                  "targetTitle": "Polissemia e Emprego Contextual de \"Claro\", \"Só\" e \"A sós\"",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -234,8 +681,46 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA sequência grafada em uma única palavra \"demais\" funciona como advérbio de intensidade (invariável). Já a estrutura separada \"de mais\" é formada pela preposição de seguida do pronome indefinido mais, o qual modifica substantivo.\nExplicação consolidada\n\"Demais\" (junto): Liga-se ao verbo para intensificá-lo.\nExemplo: \"Ele gosta demais de você.\" (seta de demais para o verbo gosta $\\rightarrow$ Advérbio de intensidade / Invariável).\n\"De mais\" (separado): Ocorre quando a regência exige a preposição de e o vocábulo mais quantifica um substantivo.\nExemplo: \"Eu preciso [de] [mais] café.\" (de = preposição; mais manda seta para o substantivo café $\\rightarrow$ Pronome indefinido)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A sequência grafada em uma única palavra \"demais\" funciona como advérbio de intensidade (invariável). Já a estrutura separada \"de mais\" é formada pela preposição de seguida do pronome indefinido mais, o qual modifica substantivo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "\"Demais\" (junto): Liga-se ao verbo para intensificá-lo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Ele gosta demais de você.\" (seta de demais para o verbo gosta $\\rightarrow$ Advérbio de intensidade / Invariável)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "\"De mais\" (separado): Ocorre quando a regência exige a preposição de e o vocábulo mais quantifica um substantivo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Eu preciso [de] [mais] café.\" (de = preposição; mais manda seta para o substantivo café $\\rightarrow$ Pronome indefinido)."
+              ]
             }
           ]
         },
@@ -248,60 +733,84 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nPalavras como claro e só alternam sua classe e variabilidade conforme o termo a que se referem na oração, enquanto a locução a sós permanece estritamente invariável.\nExplicação consolidada\nA palavra \"Claro\":\n\"Dia claro\" $\\rightarrow$ refere-se ao substantivo dia $\\rightarrow$ Adjetivo (Variável).\n\"Claro que sairemos hoje\" / \"— Claro que estou indo\" $\\rightarrow$ refere-se à locução verbal/oração com sentido de \"com certeza / de fato\" $\\rightarrow$ Advérbio de afirmação/obviedade (Invariável).\nA palavra \"Só\":\nEquivalente a \"sozinho(a)\" (\"Ângela fez o trabalho só\") $\\rightarrow$ refere-se ao substantivo $\\rightarrow$ Adjetivo (Variável: elas fizeram sós).\nEquivalente a \"somente / apenas\" (\"Maria só arrumou a horta\") $\\rightarrow$ refere-se ao verbo $\\rightarrow$ Advérbio de exclusão (Invariável).\nA locução \"A sós\":\nModifica pronome ou numeral (\"As duas estão a sós\") $\\rightarrow$ Locução Adjetiva Invariável.e ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Palavras como claro e só alternam sua classe e variabilidade conforme o termo a que se referem na oração, enquanto a locução a sós permanece estritamente invariável."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "A palavra \"Claro\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Dia claro\" $\\rightarrow$ refere-se ao substantivo dia $\\rightarrow$ Adjetivo (Variável).",
+                "\"Claro que sairemos hoje\" / \"— Claro que estou indo\" $\\rightarrow$ refere-se à locução verbal/oração com sentido de \"com certeza / de fato\" $\\rightarrow$ Advérbio de afirmação/obviedade (Invariável)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "A palavra \"Só\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Equivalente a \"sozinho(a)\" (\"Ângela fez o trabalho só\") $\\rightarrow$ refere-se ao substantivo $\\rightarrow$ Adjetivo (Variável: elas fizeram sós).",
+                "Equivalente a \"somente / apenas\" (\"Maria só arrumou a horta\") $\\rightarrow$ refere-se ao verbo $\\rightarrow$ Advérbio de exclusão (Invariável)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "A locução \"A sós\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Modifica pronome ou numeral (\"As duas estão a sós\") $\\rightarrow$ Locução Adjetiva Invariável."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G01-005",
+                  "targetTitle": "Questão de Concurso 01 — INSTITUTO AOCP / Câmara de Maringá-PR",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A01-G01-007",
+                  "targetTitle": "Questão de Concurso 03 — IESES / Prefeitura de São José-SC",
+                  "targetUnitId": "IP-A01-G01",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nUma classe gramatical é considerada variável quando suas palavras admitem flexão, sofrendo alterações morfológicas para expressar gênero (masculino e feminino) e número (singular e plural). As classes invariáveis possuem forma fixa e cristalizada, não admitindo flexão sob nenhuma circunstância de concordância básica.\nExplicação consolidada\nA morfologia da Língua Portuguesa organiza suas dez classes de palavras em dois conjuntos fundamentais:\nClasses Variáveis (6): Substantivo, Artigo, Adjetivo, Pronome, Numeral e Verbo. (O verbo apresenta ainda flexões próprias de tempo, modo, número, pessoa e voz).\nClasses Invariáveis (4): Advérbio, Conjunção, Preposição e Interjeição.\nCritérios de reconhecimento\nSe o vocábulo aceita alteração mórfica de singular/plural ($S \\rightarrow Pl$) ou masculino/feminino ($Masc \\rightarrow Fem$) ao alterar-se o contexto frasal $\\rightarrow$ Palavra de Classe Variável.\nSe o vocábulo mantém rigorosamente a mesma forma gráfica e fonética, independentemente de os termos vizinhos estarem no plural ou feminino $\\rightarrow$ Palavra de Classe Invariável.\nRelações\nContrasta com: (Classes Invariáveis e Locuções).\nExpandido em: a ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO substantivo é a classe variável que funciona como nome, responsável por nomear seres concretos, abstrações, ações, estados e qualidades. No contexto de provas de concurso, sua marca diagnóstica distintiva é a capacidade gramatical de aceitar a anteposição de um artigo.\nExplicação consolidada\nPara determinar se uma palavra em análise atua como substantivo:\nAvalia-se se ela desempenha o papel semântico de nomear algo.\nAplica-se o teste prático de antecipar um artigo (o, a, os, as, um, uma). Mesmo que a frase original não traga o artigo expresso, a admissibilidade natural do determinante comprova a natureza substantiva do vocábulo.\nExemplos e contraexemplos\nAplicação: Na oração \"Ele tem competência\", a palavra competência é substantivo porque admite o determinante: \"Ele tem a competência\".\nAplicação contextual: Na oração \"Vive na zona rural\", a palavra isolada zona é substantivo antecedido da contração na (em + artigo a).Possui alerta em: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO adjetivo é uma palavra simples variável que se refere diretamente ao substantivo, concordando com ele em gênero e número. A locução adjetiva é uma expressão (formada por duas ou mais palavras, usualmente preposição + substantivo) que exerce papel adjetivo, mas que, por ser uma unidade sintagmática fixa, não varia no plural nem no feminino.\nExplicação consolidada\nAdjetivo Simples: Flexiona-se harmoniosamente com o substantivo. Exemplo: \"homem inteligente\" $\\rightarrow$ \"homens inteligentes\".\nParticípio com Valor Adjetivo: Particípios verbais aplicados diretamente à qualificação de substantivos operam funcionalmente como adjetivos variáveis. Exemplo: \"pagamentos realizados\".\nLocução Adjetiva: Como princípio transversal da morfologia, as locuções são expressões cristalizadas e, em regra geral, permanecem invariáveis. Exemplo: \"homem de inteligência\" $\\rightarrow$ \"homens de inteligência\" (a flexão \"homens de inteligências\" é incorreta).\nLocução Cristalizada Excepcional: A locução \"a sós\" qualifica termos nominais (\"As duas estão a sós\"), sendo classificada como locução adjetiva estritamente invariável.\nRelações\nExemplificado por: e .\nPossui alerta em: e ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO pronome é a classe que se relaciona diretamente com o substantivo, dividindo-se funcionalmente em pronome substantivo (quando substitui o nome e assume sozinho a função sintática) e pronome adjetivo (quando acompanha o substantivo, determinando-o ou modificando-o).\nExplicação consolidada\nDo ponto de vista textual e sintático, independentemente da subclasse formal (pessoal, possessivo, demonstrativo, indefinido, etc.), todo pronome assume um dos dois papéis:\nPronome Substantivo: Fica isolado, ocupando o lugar do nome na estrutura sintática (ex.: \"Alguém chegou\").\nPronome Adjetivo: Posiciona-se adjacente a um substantivo explícito, apontando uma relação de dependência direta para ele (ex.: \"Meu aluno chegou\").\nNota de Flexão: Embora o pronome integre as classes variáveis, existem pronomes indefinidos/pessoais específicos intrinsecamente invariáveis (ex.: alguém, ninguém, tudo, mais em certos contextos).Dica associada: TIP-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO numeral é a classe variável que quantifica seres, indica ordenação, multiplicação ou divisão. À semelhança do pronome, pode atuar no discurso como numeral substantivo (quando substitui o nome) ou numeral adjetivo (quando acompanha o substantivo).\nExplicação consolidada\nNumeral Substantivo: Desempenha o papel de núcleo do sintagma nominal isoladamente. Exemplo: \"Os dois chegaram\" (o numeral cardinal dois atua como sujeito substantivado). O vocábulo milhão (\"R$ 1,25 milhão\") quantifica atuando com feição substantiva e varia em número (milhões).\nNumeral Adjetivo: Acompanha e quantifica diretamente um substantivo textual expresso. Exemplo: \"Os dois meninos chegaram\" (dois aponta para meninos)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO verbo é a classe gramatical variável responsável por exprimir ação, estado, mudança de estado ou fenômenos naturais. Destaca-se como a classe morfológica mais flexível e complexa da Língua Portuguesa, admitindo variações de número, pessoa, tempo, modo e voz.\nExplicação consolidada\nNo estudo inicial das classes variáveis, o verbo constitui o elemento indispensável da oração. Nas questões de identificação de flexibilidade, as formas verbais (ex.: \"fez\", \"estudou\") são classificadas invariavelmente como variáveis."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO advérbio é uma classe invariável cuja função sintático-semântica é modificar um verbo, um adjetivo ou outro advérbio, expressando uma circunstância (modo, tempo, lugar, intensidade, afirmação, negação, exclusão). A locução adverbial é a expressão pluriverbal correspondente. Como exceção expressiva, o advérbio de intensidade \"todo\" aceita concordância de gênero com adjetivo feminino.\nExplicação consolidada\nAlvo de Modificação: O advérbio jamais modifica substantivos.\nAdvérbio simples: \"Ele estudou rapidamente.\" / \"Eles não se davam bem.\" (modo).\nLocução adverbial: \"Ele estudou à toa.\" / \"Vive na zona rural.\" (lugar).\nAdvérbio \"Mais\" Antecedido de Negação: Em construções como \"não mais\" ou \"nunca mais\" (\"A gente não deseja mais viver\"), o vocábulo mais modifica o verbo e expressa circunstância de tempo (cessação temporal: \"de agora em diante\"), sendo invariável.\nAdvérbio \"Menos\": Ao modificar adjetivos (\"menos condenável\"), expressa intensidade e permanece estritamente invariável (a forma \"menas\" é inexistente no padrão culto).\nA Exceção de \"Todo/Toda\": Ao intensificar adjetivo, o advérbio todo admite duas construções cultas equivalentes:\n\"Ela chegou toda feliz.\" (advérbio variável por atração estilística).\n\"Ela chegou todo feliz.\" (advérbio mantido rigorosamente invariável).\nRelações\nPossui exceção em: .\nPossui alerta em: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nConjunções e Preposições são classes invariáveis que atuam como conectores discursivos. Ambas possuem a capacidade de ligar orações ou termos; a distinção entre suas respectivas locuções assenta-se no vocábulo final da expressão.\nExplicação consolidada\nCapacidades Conectivas:\nConjunção: Liga orações (\"Ele chegou e dormiu\") ou termos de mesma função na oração (\"José e João chegaram\").\nPreposição: Liga termos nominais (\"Blusa de Maria\") ou orações (\"Estudo para ter uma vida melhor\").\nDiferenciação Estrutural de Locuções:\nLocução Conjuntiva: Expressão que termina obrigatoriamente por conjunção (geralmente que). Ex.: a fim de que, assim que, já que, à medida que.\nLocução Prepositiva: Expressão que termina obrigatoriamente por preposição. Ex.: a fim de, graças a, por causa de, em vez de.Dica associada: TIP-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA interjeição é a classe gramatical invariável composta por palavras ou expressões que exteriorizam de forma direta e instantânea estados emocionais, reações psíquicas, sensações e sentimentos do emissor (como dor, espanto, alívio, medo).\nExplicação consolidada\nCompletando as dez classes morfológicas, as interjeições não sofrem flexão de gênero nem de número. Exemplos herdados: \"Ai!\" / \"Ui!\" (dor), \"Meu Deus!\" / \"Nossa!\" (espanto/medo)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Método das Setas é o protocolo analítico que determina a classe e a flexibilidade de uma palavra exclusivamente pelas relações de dependência sintática estabelecidas no interior da frase, substituindo a memorização ineficaz de listas isoladas.\nExplicação consolidada\nPara classificar qualquer vocábulo:\nTraça-se uma seta da palavra analisada para o termo ao qual ela se refere.\nAplica-se a regra de interconexão morfológica:\nAponta para Substantivo $\\rightarrow$ Adjetivo, Artigo, Pronome ou Numeral (Natureza Nominal / Geralmente Variável).\nAponta para Verbo, Adjetivo ou outro Advérbio $\\rightarrow$ Advérbio (Classe estritamente Invariável).\nAtua ligando dois termos ou duas orações $\\rightarrow$ Preposição ou Conjunção (Conectivo / Invariável).Fundamenta: e ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA sequência grafada em uma única palavra \"demais\" funciona como advérbio de intensidade (invariável). Já a estrutura separada \"de mais\" é formada pela preposição de seguida do pronome indefinido mais, o qual modifica substantivo.\nExplicação consolidada\n\"Demais\" (junto): Liga-se ao verbo para intensificá-lo.\nExemplo: \"Ele gosta demais de você.\" (seta de demais para o verbo gosta $\\rightarrow$ Advérbio de intensidade / Invariável).\n\"De mais\" (separado): Ocorre quando a regência exige a preposição de e o vocábulo mais quantifica um substantivo.\nExemplo: \"Eu preciso [de] [mais] café.\" (de = preposição; mais manda seta para o substantivo café $\\rightarrow$ Pronome indefinido)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nPalavras como claro e só alternam sua classe e variabilidade conforme o termo a que se referem na oração, enquanto a locução a sós permanece estritamente invariável.\nExplicação consolidada\nA palavra \"Claro\":\n\"Dia claro\" $\\rightarrow$ refere-se ao substantivo dia $\\rightarrow$ Adjetivo (Variável).\n\"Claro que sairemos hoje\" / \"— Claro que estou indo\" $\\rightarrow$ refere-se à locução verbal/oração com sentido de \"com certeza / de fato\" $\\rightarrow$ Advérbio de afirmação/obviedade (Invariável).\nA palavra \"Só\":\nEquivalente a \"sozinho(a)\" (\"Ângela fez o trabalho só\") $\\rightarrow$ refere-se ao substantivo $\\rightarrow$ Adjetivo (Variável: elas fizeram sós).\nEquivalente a \"somente / apenas\" (\"Maria só arrumou a horta\") $\\rightarrow$ refere-se ao verbo $\\rightarrow$ Advérbio de exclusão (Invariável).\nA locução \"A sós\":\nModifica pronome ou numeral (\"As duas estão a sós\") $\\rightarrow$ Locução Adjetiva Invariável.e ."
         }
       ]
     },
@@ -422,7 +931,9 @@
               "RULE-IP-A01-G01-001",
               "EXP-IP-A01-G01-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -512,7 +1023,9 @@
               "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001",
               "EXP-IP-A01-G01-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -594,7 +1107,9 @@
               "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002",
               "EXP-IP-A01-G01-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -676,7 +1191,9 @@
               "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003",
               "EXP-IP-A01-G01-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -785,7 +1302,9 @@
               "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004",
               "EXP-IP-A01-G01-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -854,7 +1373,9 @@
               "PROC-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-005",
               "EXP-IP-A01-G01-PROC-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -939,7 +1460,9 @@
               "CONTRAST-IP-A01-G01-001",
               "EXP-IP-A01-G01-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1015,7 +1538,9 @@
               "CONTRAST-IP-A01-G01-002",
               "EXP-IP-A01-G01-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1115,7 +1640,9 @@
               "CONTRAST-IP-A01-G01-003",
               "EXP-IP-A01-G01-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1162,7 +1689,9 @@
               "WORKED_EXAMPLE-IP-A01-G01-001",
               "EXP-IP-A01-G01-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1247,7 +1776,9 @@
               "WORKED_EXAMPLE-IP-A01-G01-002",
               "EXP-IP-A01-G01-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1290,7 +1821,9 @@
               "WORKED_EXAMPLE-IP-A01-G01-003",
               "EXP-IP-A01-G01-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1403,7 +1936,9 @@
               "WORKED_EXAMPLE-IP-A01-G01-004",
               "EXP-IP-A01-G01-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1469,7 +2004,9 @@
               "WORKED_EXAMPLE-IP-A01-G01-005",
               "EXP-IP-A01-G01-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1533,7 +2070,9 @@
               "WORKED_EXAMPLE-IP-A01-G01-006",
               "EXP-IP-A01-G01-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1611,7 +2150,9 @@
               "WORKED_EXAMPLE-IP-A01-G01-007",
               "EXP-IP-A01-G01-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1661,7 +2202,9 @@
               "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001",
               "EXP-IP-A01-G01-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1697,7 +2240,9 @@
               "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002",
               "EXP-IP-A01-G01-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1733,7 +2278,9 @@
               "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-003",
               "EXP-IP-A01-G01-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1769,7 +2316,9 @@
               "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-004",
               "EXP-IP-A01-G01-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1805,31 +2354,129 @@
               "WARN-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-005",
               "EXP-IP-A01-G01-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Conceito Fundamental de Variação Morfológica e Flexão**: Definição ou ideia central\nUma classe gramatical é considerada variável quando suas palavras admitem flexão, sofrendo alterações morfológicas para expressar gênero (masculino e feminino) e número (singular e plural). As classes invariáveis possuem forma fixa e cristalizada, não admitindo flexão sob nenhuma circunstância de concordância básica.\nExplicação consolidada\nA morfologia da Língua Portuguesa organiza suas dez classes de palavras em dois conjuntos fundamentais:\nClasses Variáveis (6): Substantivo, Artigo, Adjetivo, Pronome, Numeral e Verbo. (O verbo apresenta ainda flexões próprias de tempo, modo, número, pessoa e voz).\nClasses Invariáveis (4): Advérbio, Conjunção, Preposição e Interjeição.\nCritérios de reconhecimento\nSe o vocábulo aceita alteração mórfica de singular/plural ($S \\rightarrow Pl$) ou masculino/feminino ($Masc \\rightarrow Fem$) ao alterar-se o contexto frasal $\\rightarrow$ Palavra de Classe Variável.\nSe o vocábulo mantém rigorosamente a mesma forma gráfica e fonética, independentemente de os termos vizinhos estarem no plural ou feminino $\\rightarrow$ Palavra de Classe Invariável.\nRelações\nContrasta com: (Classes Invariáveis e Locuções).\nExpandido em: a .",
-            "**O Substantivo e o Teste Diagnóstico do Artigo Antecedente**: Definição ou ideia central\nO substantivo é a classe variável que funciona como nome, responsável por nomear seres concretos, abstrações, ações, estados e qualidades. No contexto de provas de concurso, sua marca diagnóstica distintiva é a capacidade gramatical de aceitar a anteposição de um artigo.\nExplicação consolidada\nPara determinar se uma palavra em análise atua como substantivo:\nAvalia-se se ela desempenha o papel semântico de nomear algo.\nAplica-se o teste prático de antecipar um artigo (o, a, os, as, um, uma). Mesmo que a frase original não traga o artigo expresso, a admissibilidade natural do determinante comprova a natureza substantiva do vocábulo.\nExemplos e contraexemplos\nAplicação: Na oração \"Ele tem competência\", a palavra competência é substantivo porque admite o determinante: \"Ele tem a competência\".\nAplicação contextual: Na oração \"Vive na zona rural\", a palavra isolada zona é substantivo antecedido da contração na (em + artigo a).Possui alerta em: .",
-            "**Adjetivo versus Locução Adjetiva e o Princípio de Invariabilidade**: Definição ou ideia central\nO adjetivo é uma palavra simples variável que se refere diretamente ao substantivo, concordando com ele em gênero e número. A locução adjetiva é uma expressão (formada por duas ou mais palavras, usualmente preposição + substantivo) que exerce papel adjetivo, mas que, por ser uma unidade sintagmática fixa, não varia no plural nem no feminino.\nExplicação consolidada\nAdjetivo Simples: Flexiona-se harmoniosamente com o substantivo. Exemplo: \"homem inteligente\" $\\rightarrow$ \"homens inteligentes\".\nParticípio com Valor Adjetivo: Particípios verbais aplicados diretamente à qualificação de substantivos operam funcionalmente como adjetivos variáveis. Exemplo: \"pagamentos realizados\".\nLocução Adjetiva: Como princípio transversal da morfologia, as locuções são expressões cristalizadas e, em regra geral, permanecem invariáveis. Exemplo: \"homem de inteligência\" $\\rightarrow$ \"homens de inteligência\" (a flexão \"homens de inteligências\" é incorreta).\nLocução Cristalizada Excepcional: A locução \"a sós\" qualifica termos nominais (\"As duas estão a sós\"), sendo classificada como locução adjetiva estritamente invariável.\nRelações\nExemplificado por: e .\nPossui alerta em: e .",
-            "**Pronome: Distinção entre Funções Substantivas e Adjetivas**: Definição ou ideia central\nO pronome é a classe que se relaciona diretamente com o substantivo, dividindo-se funcionalmente em pronome substantivo (quando substitui o nome e assume sozinho a função sintática) e pronome adjetivo (quando acompanha o substantivo, determinando-o ou modificando-o).\nExplicação consolidada\nDo ponto de vista textual e sintático, independentemente da subclasse formal (pessoal, possessivo, demonstrativo, indefinido, etc.), todo pronome assume um dos dois papéis:\nPronome Substantivo: Fica isolado, ocupando o lugar do nome na estrutura sintática (ex.: \"Alguém chegou\").\nPronome Adjetivo: Posiciona-se adjacente a um substantivo explícito, apontando uma relação de dependência direta para ele (ex.: \"Meu aluno chegou\").\nNota de Flexão: Embora o pronome integre as classes variáveis, existem pronomes indefinidos/pessoais específicos intrinsecamente invariáveis (ex.: alguém, ninguém, tudo, mais em certos contextos).Dica associada: TIP-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-002.",
-            "**Numeral: Funções Substantivas e Adjetivas**: Definição ou ideia central\nO numeral é a classe variável que quantifica seres, indica ordenação, multiplicação ou divisão. À semelhança do pronome, pode atuar no discurso como numeral substantivo (quando substitui o nome) ou numeral adjetivo (quando acompanha o substantivo).\nExplicação consolidada\nNumeral Substantivo: Desempenha o papel de núcleo do sintagma nominal isoladamente. Exemplo: \"Os dois chegaram\" (o numeral cardinal dois atua como sujeito substantivado). O vocábulo milhão (\"R$ 1,25 milhão\") quantifica atuando com feição substantiva e varia em número (milhões).\nNumeral Adjetivo: Acompanha e quantifica diretamente um substantivo textual expresso. Exemplo: \"Os dois meninos chegaram\" (dois aponta para meninos).",
-            "**O Verbo como Classe de Maior Flexibilidade Morfológica**: Definição ou ideia central\nO verbo é a classe gramatical variável responsável por exprimir ação, estado, mudança de estado ou fenômenos naturais. Destaca-se como a classe morfológica mais flexível e complexa da Língua Portuguesa, admitindo variações de número, pessoa, tempo, modo e voz.\nExplicação consolidada\nNo estudo inicial das classes variáveis, o verbo constitui o elemento indispensável da oração. Nas questões de identificação de flexibilidade, as formas verbais (ex.: \"fez\", \"estudou\") são classificadas invariavelmente como variáveis.",
-            "**Advérbio, Locução Adverbial e a Exceção do Advérbio \"Todo/Toda\"**: Definição ou ideia central\nO advérbio é uma classe invariável cuja função sintático-semântica é modificar um verbo, um adjetivo ou outro advérbio, expressando uma circunstância (modo, tempo, lugar, intensidade, afirmação, negação, exclusão). A locução adverbial é a expressão pluriverbal correspondente. Como exceção expressiva, o advérbio de intensidade \"todo\" aceita concordância de gênero com adjetivo feminino.\nExplicação consolidada\nAlvo de Modificação: O advérbio jamais modifica substantivos.\nAdvérbio simples: \"Ele estudou rapidamente.\" / \"Eles não se davam bem.\" (modo).\nLocução adverbial: \"Ele estudou à toa.\" / \"Vive na zona rural.\" (lugar).\nAdvérbio \"Mais\" Antecedido de Negação: Em construções como \"não mais\" ou \"nunca mais\" (\"A gente não deseja mais viver\"), o vocábulo mais modifica o verbo e expressa circunstância de tempo (cessação temporal: \"de agora em diante\"), sendo invariável.\nAdvérbio \"Menos\": Ao modificar adjetivos (\"menos condenável\"), expressa intensidade e permanece estritamente invariável (a forma \"menas\" é inexistente no padrão culto).\nA Exceção de \"Todo/Toda\": Ao intensificar adjetivo, o advérbio todo admite duas construções cultas equivalentes:\n\"Ela chegou toda feliz.\" (advérbio variável por atração estilística).\n\"Ela chegou todo feliz.\" (advérbio mantido rigorosamente invariável).\nRelações\nPossui exceção em: .\nPossui alerta em: .",
-            "**Conectores Conformativos e Estruturais: Conjunções e Preposições**: Definição ou ideia central\nConjunções e Preposições são classes invariáveis que atuam como conectores discursivos. Ambas possuem a capacidade de ligar orações ou termos; a distinção entre suas respectivas locuções assenta-se no vocábulo final da expressão.\nExplicação consolidada\nCapacidades Conectivas:\nConjunção: Liga orações (\"Ele chegou e dormiu\") ou termos de mesma função na oração (\"José e João chegaram\").\nPreposição: Liga termos nominais (\"Blusa de Maria\") ou orações (\"Estudo para ter uma vida melhor\").\nDiferenciação Estrutural de Locuções:\nLocução Conjuntiva: Expressão que termina obrigatoriamente por conjunção (geralmente que). Ex.: a fim de que, assim que, já que, à medida que.\nLocução Prepositiva: Expressão que termina obrigatoriamente por preposição. Ex.: a fim de, graças a, por causa de, em vez de.Dica associada: TIP-A01-G01-CLASSES-VARIAVEIS-E-INVARIAVEIS-001.",
-            "**Interjeições e o Encerramento das Classes Invariáveis**: Definição ou ideia central\nA interjeição é a classe gramatical invariável composta por palavras ou expressões que exteriorizam de forma direta e instantânea estados emocionais, reações psíquicas, sensações e sentimentos do emissor (como dor, espanto, alívio, medo).\nExplicação consolidada\nCompletando as dez classes morfológicas, as interjeições não sofrem flexão de gênero nem de número. Exemplos herdados: \"Ai!\" / \"Ui!\" (dor), \"Meu Deus!\" / \"Nossa!\" (espanto/medo).",
-            "**O Método das Setas para Análise Contextual Morfossintática**: Definição ou ideia central\nO Método das Setas é o protocolo analítico que determina a classe e a flexibilidade de uma palavra exclusivamente pelas relações de dependência sintática estabelecidas no interior da frase, substituindo a memorização ineficaz de listas isoladas.\nExplicação consolidada\nPara classificar qualquer vocábulo:\nTraça-se uma seta da palavra analisada para o termo ao qual ela se refere.\nAplica-se a regra de interconexão morfológica:\nAponta para Substantivo $\\rightarrow$ Adjetivo, Artigo, Pronome ou Numeral (Natureza Nominal / Geralmente Variável).\nAponta para Verbo, Adjetivo ou outro Advérbio $\\rightarrow$ Advérbio (Classe estritamente Invariável).\nAtua ligando dois termos ou duas orações $\\rightarrow$ Preposição ou Conjunção (Conectivo / Invariável).Fundamenta: e .",
-            "**Diferenciação Morfossintática entre \"Demais\" e \"De mais\"**: Definição ou ideia central\nA sequência grafada em uma única palavra \"demais\" funciona como advérbio de intensidade (invariável). Já a estrutura separada \"de mais\" é formada pela preposição de seguida do pronome indefinido mais, o qual modifica substantivo.\nExplicação consolidada\n\"Demais\" (junto): Liga-se ao verbo para intensificá-lo.\nExemplo: \"Ele gosta demais de você.\" (seta de demais para o verbo gosta $\\rightarrow$ Advérbio de intensidade / Invariável).\n\"De mais\" (separado): Ocorre quando a regência exige a preposição de e o vocábulo mais quantifica um substantivo.\nExemplo: \"Eu preciso [de] [mais] café.\" (de = preposição; mais manda seta para o substantivo café $\\rightarrow$ Pronome indefinido).",
-            "**Polissemia e Emprego Contextual de \"Claro\", \"Só\" e \"A sós\"**: Definição ou ideia central\nPalavras como claro e só alternam sua classe e variabilidade conforme o termo a que se referem na oração, enquanto a locução a sós permanece estritamente invariável.\nExplicação consolidada\nA palavra \"Claro\":\n\"Dia claro\" $\\rightarrow$ refere-se ao substantivo dia $\\rightarrow$ Adjetivo (Variável).\n\"Claro que sairemos hoje\" / \"— Claro que estou indo\" $\\rightarrow$ refere-se à locução verbal/oração com sentido de \"com certeza / de fato\" $\\rightarrow$ Advérbio de afirmação/obviedade (Invariável).\nA palavra \"Só\":\nEquivalente a \"sozinho(a)\" (\"Ângela fez o trabalho só\") $\\rightarrow$ refere-se ao substantivo $\\rightarrow$ Adjetivo (Variável: elas fizeram sós).\nEquivalente a \"somente / apenas\" (\"Maria só arrumou a horta\") $\\rightarrow$ refere-se ao verbo $\\rightarrow$ Advérbio de exclusão (Invariável).\nA locução \"A sós\":\nModifica pronome ou numeral (\"As duas estão a sós\") $\\rightarrow$ Locução Adjetiva Invariável.e ."
-          ]
+          "term": "Conceito Fundamental de Variação Morfológica e Flexão",
+          "shortDefinition": "Uma classe gramatical é considerada variável quando suas palavras admitem flexão, sofrendo alterações morfológicas para expressar gênero (masculino e feminino) e número (singular e plural). As classes invariáveis possuem forma fixa e cristalizada, não admitindo flexão sob nenhuma circunstância de concordância básica.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-01"
+          },
+          "operationalUse": "A morfologia da Língua Portuguesa organiza suas dez classes de palavras em dois conjuntos fundamentais:"
+        },
+        {
+          "term": "O Substantivo e o Teste Diagnóstico do Artigo Antecedente",
+          "shortDefinition": "O substantivo é a classe variável que funciona como nome, responsável por nomear seres concretos, abstrações, ações, estados e qualidades. No contexto de provas de concurso, sua marca diagnóstica distintiva é a capacidade gramatical de aceitar a anteposição de um artigo.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-02"
+          },
+          "operationalUse": "Para determinar se uma palavra em análise atua como substantivo:"
+        },
+        {
+          "term": "Adjetivo versus Locução Adjetiva e o Princípio de Invariabilidade",
+          "shortDefinition": "O adjetivo é uma palavra simples variável que se refere diretamente ao substantivo, concordando com ele em gênero e número. A locução adjetiva é uma expressão (formada por duas ou mais palavras, usualmente preposição + substantivo) que exerce papel adjetivo, mas que, por ser uma unidade sintagmática fixa, não varia no plural nem no feminino.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-03"
+          }
+        },
+        {
+          "term": "Pronome: Distinção entre Funções Substantivas e Adjetivas",
+          "shortDefinition": "O pronome é a classe que se relaciona diretamente com o substantivo, dividindo-se funcionalmente em pronome substantivo (quando substitui o nome e assume sozinho a função sintática) e pronome adjetivo (quando acompanha o substantivo, determinando-o ou modificando-o).",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-04"
+          },
+          "operationalUse": "Do ponto de vista textual e sintático, independentemente da subclasse formal (pessoal, possessivo, demonstrativo, indefinido, etc.), todo pronome assume um dos dois papéis:"
+        },
+        {
+          "term": "Numeral: Funções Substantivas e Adjetivas",
+          "shortDefinition": "O numeral é a classe variável que quantifica seres, indica ordenação, multiplicação ou divisão. À semelhança do pronome, pode atuar no discurso como numeral substantivo (quando substitui o nome) ou numeral adjetivo (quando acompanha o substantivo).",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-05"
+          }
+        },
+        {
+          "term": "O Verbo como Classe de Maior Flexibilidade Morfológica",
+          "shortDefinition": "O verbo é a classe gramatical variável responsável por exprimir ação, estado, mudança de estado ou fenômenos naturais. Destaca-se como a classe morfológica mais flexível e complexa da Língua Portuguesa, admitindo variações de número, pessoa, tempo, modo e voz.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-06"
+          },
+          "operationalUse": "No estudo inicial das classes variáveis, o verbo constitui o elemento indispensável da oração."
+        },
+        {
+          "term": "Advérbio, Locução Adverbial e a Exceção do Advérbio \"Todo/Toda\"",
+          "shortDefinition": "O advérbio é uma classe invariável cuja função sintático-semântica é modificar um verbo, um adjetivo ou outro advérbio, expressando uma circunstância (modo, tempo, lugar, intensidade, afirmação, negação, exclusão). A locução adverbial é a expressão pluriverbal correspondente. Como exceção expressiva, o advérbio de intensidade \"todo\" aceita concordância de gênero com adjetivo feminino.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-07"
+          }
+        },
+        {
+          "term": "Conectores Conformativos e Estruturais: Conjunções e Preposições",
+          "shortDefinition": "Conjunções e Preposições são classes invariáveis que atuam como conectores discursivos. Ambas possuem a capacidade de ligar orações ou termos; a distinção entre suas respectivas locuções assenta-se no vocábulo final da expressão.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-08"
+          }
+        },
+        {
+          "term": "Interjeições e o Encerramento das Classes Invariáveis",
+          "shortDefinition": "A interjeição é a classe gramatical invariável composta por palavras ou expressões que exteriorizam de forma direta e instantânea estados emocionais, reações psíquicas, sensações e sentimentos do emissor (como dor, espanto, alívio, medo).",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-09"
+          },
+          "operationalUse": "Completando as dez classes morfológicas, as interjeições não sofrem flexão de gênero nem de número."
+        },
+        {
+          "term": "O Método das Setas para Análise Contextual Morfossintática",
+          "shortDefinition": "O Método das Setas é o protocolo analítico que determina a classe e a flexibilidade de uma palavra exclusivamente pelas relações de dependência sintática estabelecidas no interior da frase, substituindo a memorização ineficaz de listas isoladas.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-10"
+          },
+          "operationalUse": "Para classificar qualquer vocábulo:"
+        },
+        {
+          "term": "Diferenciação Morfossintática entre \"Demais\" e \"De mais\"",
+          "shortDefinition": "A sequência grafada em uma única palavra \"demais\" funciona como advérbio de intensidade (invariável). Já a estrutura separada \"de mais\" é formada pela preposição de seguida do pronome indefinido mais, o qual modifica substantivo.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-11"
+          }
+        },
+        {
+          "term": "Polissemia e Emprego Contextual de \"Claro\", \"Só\" e \"A sós\"",
+          "shortDefinition": "Palavras como claro e só alternam sua classe e variabilidade conforme o termo a que se referem na oração, enquanto a locução a sós permanece estritamente invariável.",
+          "detailTarget": {
+            "unitId": "IP-A01-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G01-12"
+          }
         }
       ]
     },
@@ -2153,7 +2800,35 @@
         "confidence": 0.99
       },
       "answerSha256": "6029c8a925a0cbb3af8618af1cdbd440515c149142b36f84db7a15acefdde3f4",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "o termo quantum classifica-se\ngramaticalmente como",
+        "options": [
+          {
+            "label": "A",
+            "text": "adjetivo, empregado com valor semântico valorativo."
+          },
+          {
+            "label": "B",
+            "text": "substantivo, empregado com sentido quantitativo."
+          },
+          {
+            "label": "C",
+            "text": "pronome, empregado com valor semântico de intensidade."
+          },
+          {
+            "label": "D",
+            "text": "advérbio, empregado com sentido de proporcionalidade."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -2386,7 +3061,27 @@
         "confidence": 0.99
       },
       "answerSha256": "2bec534007fd78c65b64ced33111fa276897efb5e6bae5578f1cbeaf16ca72f2",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "os sentidos e a\ncorreção gramatical do período.",
+        "options": [
+          {
+            "label": "C",
+            "text": "Certo"
+          },
+          {
+            "label": "E",
+            "text": "Errado"
+          }
+        ],
+        "answer": "E",
+        "sourceField": "questionPayload.prompt",
+        "cleaningRules": [
+          "move_apostille_footer_to_provenance"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "1.0.0",

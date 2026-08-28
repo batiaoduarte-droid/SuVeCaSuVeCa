@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A03-G02",
     "lessonId": "A03",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A03-G02",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A03-G02-001"
+          }
         }
       ]
     },
@@ -94,8 +99,76 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA seleção entre os pronomes oblíquos átonos de terceira pessoa (o, a, os, as vs. lhe, lhes) é rigidamente determinada pela regência do verbo ao qual se associam sintaticamente no contexto da oração.\nExplicação consolidada\nPronomes de Objeto Direto (o, a, os, as): São empregados com exclusividade para substituir complementos de verbos transitivos diretos (VTD) construídos sem preposição.\nPronomes de Objeto Indireto (lhe, lhes): São empregados para substituir complementos de verbos transitivos indiretos (VTI) ou transitivos diretos e indiretos (VTDI) regidos estritamente pelas preposições \"a\" ou \"para\".\nMapeamento Prático de Regência (Noun Test): Substitui-se hipoteticamente o complemento pela expressão masculina singular \"o menino\" (sem preposição) ou \"ao menino\" (com preposição a):\nExigiu o menino $\\rightarrow$ verbo pede Objeto Direto $\\rightarrow$ usa-se o, a, os, as.\nExigiu ao menino $\\rightarrow$ verbo pede Objeto Indireto $\\rightarrow$ usa-se lhe, lhes.\nExemplos e contraexemplos\nEstimo o menino $\\rightarrow$ Estimo-o (VTD).\nAtentei ao menino $\\rightarrow$ Atentei-lhe (VTI com prep. a).\nContraexemplo incorreto: \"Estimo-lhe\" (uso indevido de lhe para VTD) ou \"Atentei-o\" (omissão indevida da regência preposicionada).Possui limites em: (restrições eufônicas do lhe)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A seleção entre os pronomes oblíquos átonos de terceira pessoa (o, a, os, as vs. lhe, lhes) é rigidamente determinada pela regência do verbo ao qual se associam sintaticamente no contexto da oração."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pronomes de Objeto Direto (o, a, os, as): São empregados com exclusividade para substituir complementos de verbos transitivos diretos (VTD) construídos sem preposição.",
+                "Pronomes de Objeto Indireto (lhe, lhes): São empregados para substituir complementos de verbos transitivos indiretos (VTI) ou transitivos diretos e indiretos (VTDI) regidos estritamente pelas preposições \"a\" ou \"para\".",
+                "Mapeamento Prático de Regência (Noun Test): Substitui-se hipoteticamente o complemento pela expressão masculina singular \"o menino\" (sem preposição) ou \"ao menino\" (com preposição a):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exigiu o menino $\\rightarrow$ verbo pede Objeto Direto $\\rightarrow$ usa-se o, a, os, as.",
+                "Exigiu ao menino $\\rightarrow$ verbo pede Objeto Indireto $\\rightarrow$ usa-se lhe, lhes."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estimo o menino $\\rightarrow$ Estimo-o (VTD).",
+                "Atentei ao menino $\\rightarrow$ Atentei-lhe (VTI com prep. a).",
+                "Contraexemplo incorreto: \"Estimo-lhe\" (uso indevido de lhe para VTD) ou \"Atentei-o\" (omissão indevida da regência preposicionada)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A03-G02-001",
+                  "targetTitle": "Método do Substantivo Masculino Singular (\"Noun Test\") para Regência Verbal",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A03-G02-007",
+                  "targetTitle": "Restrições Preposicionais do Pronome \"Lhe\" e Verbos Eufonicamente Refratários",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G02-004",
+                  "targetTitle": "Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +181,48 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs pronomes oblíquos átonos de 1ª e 2ª pessoas do singular e plural, somados ao reflexivo de 3ª pessoa (me, te, se, nós, vós), são denominados pronomes coringas por não possuírem flexão morfológica distinta para o caso direto e indireto.\nExplicação consolidada\nDiferentemente do subsistema de 3ª pessoa (que divide categoricamente o de lhe), os pronomes coringas podem assumir tanto a função sintática de Objeto Direto quanto a de Objeto Indireto. A determinação da sua função sintática exata em uma dada frase decorre exclusivamente da regência do verbo ao qual se acoplam.\nExemplos e contraexemplos\nRespeitou-nos: \"Respeitar\" é VTD (respeita o menino) $\\rightarrow$ o pronome nos exerce a função de Objeto Direto.\nObedeceu-nos: \"Obedecer\" é VTI (obedece ao menino) $\\rightarrow$ o pronome nos exerce a função de Objeto Indireto.\nRelações\nContrasta com: (3ª pessoa possui formas segregadas o vs lhe)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os pronomes oblíquos átonos de 1ª e 2ª pessoas do singular e plural, somados ao reflexivo de 3ª pessoa (me, te, se, nós, vós), são denominados pronomes coringas por não possuírem flexão morfológica distinta para o caso direto e indireto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Diferentemente do subsistema de 3ª pessoa (que divide categoricamente o de lhe), os pronomes coringas podem assumir tanto a função sintática de Objeto Direto quanto a de Objeto Indireto. A determinação da sua função sintática exata em uma dada frase decorre exclusivamente da regência do verbo ao qual se acoplam."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Respeitou-nos: \"Respeitar\" é VTD (respeita o menino) $\\rightarrow$ o pronome nos exerce a função de Objeto Direto.",
+                "Obedeceu-nos: \"Obedecer\" é VTI (obedece ao menino) $\\rightarrow$ o pronome nos exerce a função de Objeto Indireto."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A03-G02-001",
+                  "targetTitle": "Regência Verbal e a Oposição Canônica entre Objeto Direto (`o/a/os/as`) e Indireto (`lhe/lhes`)",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +235,85 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs pronomes oblíquos átonos adquirem valor possessivo quando denotam uma relação de posse vinculada a um substantivo (o elemento possuído), desempenhando na análise sintática a função de Adjunto Adnominal.\nExplicação consolidada\nPronomes que admitem valor possessivo: O pronome lhe / lhes e todos os pronomes coringas (me, te, se, nós, vós).\nPronomes que NUNCA admitem valor possessivo: Os pronomes o, a, os, as (e suas variantes lo/la/no/na) jamais funcionam com valor possessivo.\nPares Semânticos da Relação:\nPossuidor: Representado pela pessoa gramatical do pronome oblíquo (me = 1ª pessoa / eu / meu; lhe = 3ª pessoa / ele / seu / dele).\nElemento Possuído: O substantivo ao qual o pronome se subordina semanticamente.\nTeste Decisivo de Equivalência: Se o pronome puder ser substituído por um pronome possessivo correspondente (meu, teu, seu, sua, dele, dela, nosso), o valor é possessivo (Adjunto Adnominal). Se a substituição exigir a fórmula preposicionada pura (a ele, a eles, a mim), trata-se de complemento verbal/nominal (Objeto Indireto), não de posse.\nExemplos e contraexemplos\nBeijou-lhe a mão $\\rightarrow$ Beijou a sua mão / a mão dele (lhe = Adjunto Adnominal possessivo).\nAcariciou-nos a pele $\\rightarrow$ Acariciou a nossa pele (nos = Adjunto Adnominal possessivo).\nO que lhe está na agenda $\\rightarrow$ O que está na sua agenda / na agenda dele (lhe = Adjunto Adnominal possessivo).\nIncendiar-me a fantasia $\\rightarrow$ Incendiar a minha fantasia (me = possuidor da fantasia / Adjunto Adnominal).\nContraexemplo (Complemento Verbal Puro): \"Tudo o que lhe resta\" $\\rightarrow$ Resta a ele (lhe = Objeto Indireto, sem posse).\nRelações\nExpande: , \nDiferenciado em: (distinção entre OD isolado e posse)\nExemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os pronomes oblíquos átonos adquirem valor possessivo quando denotam uma relação de posse vinculada a um substantivo (o elemento possuído), desempenhando na análise sintática a função de Adjunto Adnominal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pronomes que admitem valor possessivo: O pronome lhe / lhes e todos os pronomes coringas (me, te, se, nós, vós).",
+                "Pronomes que NUNCA admitem valor possessivo: Os pronomes o, a, os, as (e suas variantes lo/la/no/na) jamais funcionam com valor possessivo.",
+                "Pares Semânticos da Relação:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Possuidor: Representado pela pessoa gramatical do pronome oblíquo (me = 1ª pessoa / eu / meu; lhe = 3ª pessoa / ele / seu / dele).",
+                "Elemento Possuído: O substantivo ao qual o pronome se subordina semanticamente."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Teste Decisivo de Equivalência: Se o pronome puder ser substituído por um pronome possessivo correspondente (meu, teu, seu, sua, dele, dela, nosso), o valor é possessivo (Adjunto Adnominal). Se a substituição exigir a fórmula preposicionada pura (a ele, a eles, a mim), trata-se de complemento verbal/nominal (Objeto Indireto), não de posse."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Beijou-lhe a mão $\\rightarrow$ Beijou a sua mão / a mão dele (lhe = Adjunto Adnominal possessivo).",
+                "Acariciou-nos a pele $\\rightarrow$ Acariciou a nossa pele (nos = Adjunto Adnominal possessivo).",
+                "O que lhe está na agenda $\\rightarrow$ O que está na sua agenda / na agenda dele (lhe = Adjunto Adnominal possessivo).",
+                "Incendiar-me a fantasia $\\rightarrow$ Incendiar a minha fantasia (me = possuidor da fantasia / Adjunto Adnominal).",
+                "Contraexemplo (Complemento Verbal Puro): \"Tudo o que lhe resta\" $\\rightarrow$ Resta a ele (lhe = Objeto Indireto, sem posse)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A03-G02-001",
+                  "targetTitle": "Regência Verbal e a Oposição Canônica entre Objeto Direto (`o/a/os/as`) e Indireto (`lhe/lhes`)",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A03-G02-002",
+                  "targetTitle": "Pronomes Coringas (`me, te, se, nós, vós`) e Dupla Transitividade Sintática",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A03-G02-009",
+                  "targetTitle": "Distinção Estrutural entre Objeto Direto Isolado e Pronome Possessivo em Sintagma Nominal",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +326,54 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAs formas de 3ª pessoa ele, ela, eles, elas (e as formas plurais nós, vós) possuem dupla natureza funcional na gramática normativa: atuam como pronomes retos ou como pronomes oblíquos tônicos a depender da presença de preposição e da função sintática.\nExplicação consolidada\nPronomes Retos: Exercem com exclusividade a função de sujeito da oração e aparecem sem preposição exigida por regência verbal (Ele chegou).\nPronomes Oblíquos Tônicos: Exercem função de complemento verbal ou nominal e são obrigatoriamente precedidos de preposição (Obedeceu a ele, Gostou dele, Falou sobre nós).\nProibição Absoluta na Norma Culta: É vedado o emprego de formas retas (ele/ela) como objetos diretos desprovidos de preposição. Construções como \"eu vi ele\", \"chamei ela\" ou \"concentravam elas\" violam frontalmente o padrão culto.\nExemplos e contraexemplos\nCorreto como Sujeito: Ele entregou o relatório.\nCorreto como Oblíquo Tônico Preposicionado: O diretor referiu-se a ele; Gostamos dele.\nIncorreto (Reto como Objeto Direto): \"O policial perseguiu ele\" (Forma culta: O policial perseguiu-o / o perseguiu)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As formas de 3ª pessoa ele, ela, eles, elas (e as formas plurais nós, vós) possuem dupla natureza funcional na gramática normativa: atuam como pronomes retos ou como pronomes oblíquos tônicos a depender da presença de preposição e da função sintática."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pronomes Retos: Exercem com exclusividade a função de sujeito da oração e aparecem sem preposição exigida por regência verbal (Ele chegou).",
+                "Pronomes Oblíquos Tônicos: Exercem função de complemento verbal ou nominal e são obrigatoriamente precedidos de preposição (Obedeceu a ele, Gostou dele, Falou sobre nós).",
+                "Proibição Absoluta na Norma Culta: É vedado o emprego de formas retas (ele/ela) como objetos diretos desprovidos de preposição. Construções como \"eu vi ele\", \"chamei ela\" ou \"concentravam elas\" violam frontalmente o padrão culto."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Correto como Sujeito: Ele entregou o relatório.",
+                "Correto como Oblíquo Tônico Preposicionado: O diretor referiu-se a ele; Gostamos dele.",
+                "Incorreto (Reto como Objeto Direto): \"O policial perseguiu ele\" (Forma culta: O policial perseguiu-o / o perseguiu)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G02-001",
+                  "targetTitle": "Emprego do Pronome Reto sem Preposição como Complemento Verbal",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +386,62 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO vocábulo \"mesmo\" (e flexões) classifica-se como pronome demonstrativo dotado de função resumitiva, sendo estritamente proibido seu emprego como pronome anafórico para substituir substantivos isolados ou palavras únicas.\nExplicação consolidada\nErro Clássico de Concurso e Redação: Substituir um substantivo simples por \"o mesmo / a mesma\" (ex.: \"Comprometem a educação... pretendem comprometer a mesma\", ou a placa comum \"Antes de entrar no elevador, verifique se o mesmo se encontra parado\").\nFunção Resumitiva Legítima: O pronome demonstrativo \"o mesmo\" só pode ser utilizado para sintetizar e retomar uma expressão complexa, uma oração inteira ou um fato completo (equivalendo a isso ou aquilo).\nRegra de Substituição:\nRetomada de substantivo simples $\\rightarrow$ utilize pronome pessoal (ele, ela, o, a, seu, sua).\nRetomada de fato/oração anterior $\\rightarrow$ autoriza-se o uso de \"o mesmo\".\nExemplos e contraexemplos\nIncorreto: Ele chamou o elevador. O mesmo estava desligado.\nCorreção Culta: Ele chamou o elevador. Ele estava desligado.\nCorreto (Função Resumitiva de Oração): Meu filho estuda muito; minha filha não faz o mesmo (onde \"o mesmo\" resume a oração inteira \"estudar muito\")."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O vocábulo \"mesmo\" (e flexões) classifica-se como pronome demonstrativo dotado de função resumitiva, sendo estritamente proibido seu emprego como pronome anafórico para substituir substantivos isolados ou palavras únicas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Erro Clássico de Concurso e Redação: Substituir um substantivo simples por \"o mesmo / a mesma\" (ex.: \"Comprometem a educação... pretendem comprometer a mesma\", ou a placa comum \"Antes de entrar no elevador, verifique se o mesmo se encontra parado\").",
+                "Função Resumitiva Legítima: O pronome demonstrativo \"o mesmo\" só pode ser utilizado para sintetizar e retomar uma expressão complexa, uma oração inteira ou um fato completo (equivalendo a isso ou aquilo).",
+                "Regra de Substituição:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Retomada de substantivo simples $\\rightarrow$ utilize pronome pessoal (ele, ela, o, a, seu, sua).",
+                "Retomada de fato/oração anterior $\\rightarrow$ autoriza-se o uso de \"o mesmo\"."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Incorreto: Ele chamou o elevador. O mesmo estava desligado.",
+                "Correção Culta: Ele chamou o elevador. Ele estava desligado.",
+                "Correto (Função Resumitiva de Oração): Meu filho estuda muito; minha filha não faz o mesmo (onde \"o mesmo\" resume a oração inteira \"estudar muito\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G02-002",
+                  "targetTitle": "A Armadilha de \"O Mesmo\" como Pronome Pessoal Anafórico",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +454,86 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAs modificações morfofonológicas dos pronomes oblíquos de objeto direto o, a, os, as (transformando-se em lo, la, los, las ou no, na, nos, nas) constituem regras eufônicas aplicáveis com exclusividade às estruturas em ÊNCLISE.\nExplicação consolidada\nRegra das Consoantes R, S, Z (Formas LO, LA, LOS, LAS):\nVerbos terminados nas consoantes R, S ou Z seguidos de ênclise de o, a, os, as:\nA consoante final (R, S ou Z) é suprimida.\nO pronome assume a forma lateral lo, la, los, las.\nAplica-se a infinitivos (fazer + o $\\rightarrow$ fazê-lo), formas conjugadas (fiz + o $\\rightarrow$ fi-lo; quis + o $\\rightarrow$ qui-lo) e palavras especiais (eis + a $\\rightarrow$ ei-la).\nRegra das Terminações Nasais (Formas NO, NA, NOS, NAS):\nVerbos terminados em som nasal (-m, ~, -ão, -õe) seguidos de ênclise de o, a, os, as:\nA terminação do verbo permanece inalterada.\nO pronome ganha a consoante nasal no, na, nos, nas (leem + o $\\rightarrow$ leem-no; distribuem + a $\\rightarrow$ distribuem-na).\nProibição Categórica na Próclise:\nHavendo palavra atrativa (advérbio, pronome relativo, conjunção subordinativa), o pronome vem antes do verbo em sua forma pura (o, a, os, as).\nÉ agramatical transportar a alteração fonética para a próclise (ex.: \"os que temem a morte\" $\\rightarrow$ próclise: os que a temem; são incorretas as formas que temem-na ou que no temem)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As modificações morfofonológicas dos pronomes oblíquos de objeto direto o, a, os, as (transformando-se em lo, la, los, las ou no, na, nos, nas) constituem regras eufônicas aplicáveis com exclusividade às estruturas em ÊNCLISE."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra das Consoantes R, S, Z (Formas LO, LA, LOS, LAS):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbos terminados nas consoantes R, S ou Z seguidos de ênclise de o, a, os, as:",
+                "A consoante final (R, S ou Z) é suprimida.",
+                "O pronome assume a forma lateral lo, la, los, las.",
+                "Aplica-se a infinitivos (fazer + o $\\rightarrow$ fazê-lo), formas conjugadas (fiz + o $\\rightarrow$ fi-lo; quis + o $\\rightarrow$ qui-lo) e palavras especiais (eis + a $\\rightarrow$ ei-la)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra das Terminações Nasais (Formas NO, NA, NOS, NAS):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbos terminados em som nasal (-m, ~, -ão, -õe) seguidos de ênclise de o, a, os, as:",
+                "A terminação do verbo permanece inalterada.",
+                "O pronome ganha a consoante nasal no, na, nos, nas (leem + o $\\rightarrow$ leem-no; distribuem + a $\\rightarrow$ distribuem-na)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Proibição Categórica na Próclise:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Havendo palavra atrativa (advérbio, pronome relativo, conjunção subordinativa), o pronome vem antes do verbo em sua forma pura (o, a, os, as).",
+                "É agramatical transportar a alteração fonética para a próclise (ex.: \"os que temem a morte\" $\\rightarrow$ próclise: os que a temem; são incorretas as formas que temem-na ou que no temem)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A03-G02-002",
+                  "targetTitle": "Algoritmo Geral de Substituição Pronominal e Morfofonética em Reescritas",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G02-003",
+                  "targetTitle": "Ilusão da Alteração Fonética na Próclise",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +546,74 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO pronome oblíquo lhe / lhes não substitui indistintamente qualquer termo preposicionado, submetendo-se a vedações estritas quanto à preposição regente e a limitações eufônicas consagradas pela tradição gramatical.\nExplicação consolidada\nRestrição por Tipo de Preposição:\nO pronome lhe é compatível apenas com complementos regidos por \"a\" ou \"para\".\nVerbos regidos por outras preposições (\"de\", \"em\", \"com\", etc.) rejeitam terminantemente o pronome lhe. Nessas construções, exige-se o pronome oblíquo tônico preposicionado (dele, nele, com ele).\nExemplo: Comprar em Osasco $\\rightarrow$ Comprar nele (jamais \"comprar-lhe\").\nExemplo: Gostar de Maria $\\rightarrow$ Gostar dela (jamais \"gostar-lhe\").\nVerbos Eufonicamente Refratários ao \"Lhe\":\nDeterminados verbos transitivos indiretos regidos pela preposição \"a\" recusam o pronome lhe por razões de eufonia e convenção culta.\nRol dos verbos refratários: assistir (no sentido de ver), visar (no sentido de almejar), aspirar (no sentido de desejar), chegar, ir, vir.\nPara esses verbos, emprega-se obrigatoriamente a forma tônica preposicionada:\nAssisti ao filme $\\rightarrow$ Assisti a ele (Incorreto: Assisti-lhe).\nViso ao cargo $\\rightarrow$ Viso a ele (Incorreto: Viso-lhe).\nCheguei ao polo comercial $\\rightarrow$ Cheguei a ele (Incorreto: Cheguei-lhe / Chegá-lo).\nRelações\nLimita:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O pronome oblíquo lhe / lhes não substitui indistintamente qualquer termo preposicionado, submetendo-se a vedações estritas quanto à preposição regente e a limitações eufônicas consagradas pela tradição gramatical."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Restrição por Tipo de Preposição:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O pronome lhe é compatível apenas com complementos regidos por \"a\" ou \"para\".",
+                "Verbos regidos por outras preposições (\"de\", \"em\", \"com\", etc.) rejeitam terminantemente o pronome lhe. Nessas construções, exige-se o pronome oblíquo tônico preposicionado (dele, nele, com ele).",
+                "Exemplo: Comprar em Osasco $\\rightarrow$ Comprar nele (jamais \"comprar-lhe\").",
+                "Exemplo: Gostar de Maria $\\rightarrow$ Gostar dela (jamais \"gostar-lhe\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbos Eufonicamente Refratários ao \"Lhe\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Determinados verbos transitivos indiretos regidos pela preposição \"a\" recusam o pronome lhe por razões de eufonia e convenção culta.",
+                "Rol dos verbos refratários: assistir (no sentido de ver), visar (no sentido de almejar), aspirar (no sentido de desejar), chegar, ir, vir.",
+                "Para esses verbos, emprega-se obrigatoriamente a forma tônica preposicionada:",
+                "Assisti ao filme $\\rightarrow$ Assisti a ele (Incorreto: Assisti-lhe).",
+                "Viso ao cargo $\\rightarrow$ Viso a ele (Incorreto: Viso-lhe).",
+                "Cheguei ao polo comercial $\\rightarrow$ Cheguei a ele (Incorreto: Cheguei-lhe / Chegá-lo)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A03-G02-001",
+                  "targetTitle": "Regência Verbal e a Oposição Canônica entre Objeto Direto (`o/a/os/as`) e Indireto (`lhe/lhes`)",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G02-004",
+                  "targetTitle": "Uso do LHE com Preposições Diversas ou Verbos Eufonicamente Refratários",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +626,68 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNa sintaxe da língua portuguesa culta, uma oração regida por um Verbo Transitivo Direto e Indireto (VTDI) comporta exatamente um Objeto Direto (não preposicionado) e um Objeto Indireto (preposicionado), sendo terminantemente proibida a coexistência de dois objetos homogêneos (OD + OD ou OI + OI).\nExplicação consolidada\nInadmissibilidade de Dois Objetos Diretos (OD + OD):\nSe o verbo já possui um Objeto Direto expresso por substantivo sem preposição (ex.: \"dar ordens\", \"renderam obras\"), qualquer complemento pronominal novo referente à pessoa destinatária deve obrigatoriamente ser Objeto Indireto (lhe, a ele).\nInserir um pronome oblíquo direto (lo, no, o, a) cria a estrutura agramatical OD + OD (dá-lo ordens, renderam-no obras), que invalida a reescrita.\nInadmissibilidade de Dois Objetos Indiretos (OI + OI):\nNa estrutura \"reduziu-o a artigos\", a expressão \"a artigos\" funciona como Objeto Indireto preposicionado. O pronome \"o\" é o Objeto Direto.\nSe o pronome \"o\" for substituído por \"lhe\" (forma exclusiva de OI), a frase passará a conter dois Objetos Indiretos (\"reduziu-lhe [OI] a artigos [OI]\"), violando a regência verbal."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na sintaxe da língua portuguesa culta, uma oração regida por um Verbo Transitivo Direto e Indireto (VTDI) comporta exatamente um Objeto Direto (não preposicionado) e um Objeto Indireto (preposicionado), sendo terminantemente proibida a coexistência de dois objetos homogêneos (OD + OD ou OI + OI)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Inadmissibilidade de Dois Objetos Diretos (OD + OD):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o verbo já possui um Objeto Direto expresso por substantivo sem preposição (ex.: \"dar ordens\", \"renderam obras\"), qualquer complemento pronominal novo referente à pessoa destinatária deve obrigatoriamente ser Objeto Indireto (lhe, a ele).",
+                "Inserir um pronome oblíquo direto (lo, no, o, a) cria a estrutura agramatical OD + OD (dá-lo ordens, renderam-no obras), que invalida a reescrita."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Inadmissibilidade de Dois Objetos Indiretos (OI + OI):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Na estrutura \"reduziu-o a artigos\", a expressão \"a artigos\" funciona como Objeto Indireto preposicionado. O pronome \"o\" é o Objeto Direto.",
+                "Se o pronome \"o\" for substituído por \"lhe\" (forma exclusiva de OI), a frase passará a conter dois Objetos Indiretos (\"reduziu-lhe [OI] a artigos [OI]\"), violando a regência verbal."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A03-G02-004",
+                  "targetTitle": "Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI)",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G02-007",
+                  "targetTitle": "Duplicação Indevida de Objetos Homogêneos (OD + OD / OI + OI)",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +700,46 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA função sintática de um pronome oblíquo depende da extensão total do sintagma que integra. Um pronome coringa como me pode funcionar como Objeto Direto quando completa o verbo sozinho, ou como Adjunto Adnominal possessivo quando compõe um sintagma nominal cujo núcleo substantivo atua como o verdadeiro objeto.\nExplicação consolidada\nEstrutura Isolada (\"incendiar-me\"): O verbo incendiar incide diretamente sobre a pessoa do discurso (incendiar a mim / o menino). Aqui, o pronome me atua como Objeto Direto.\nEstrutura com Núcleo Substantivo (\"incendiar-me a fantasia\"): O fogo/efeito da ação não queima a pessoa física, mas atinge \"a fantasia\" (o elemento possuído). O Objeto Direto integral da oração é o sintagma nominal [a minha fantasia], dentro do qual o pronome me atua exclusivamente como Adjunto Adnominal com valor possessivo (= \"minha\").\nRelações\nExpande:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função sintática de um pronome oblíquo depende da extensão total do sintagma que integra. Um pronome coringa como me pode funcionar como Objeto Direto quando completa o verbo sozinho, ou como Adjunto Adnominal possessivo quando compõe um sintagma nominal cujo núcleo substantivo atua como o verdadeiro objeto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura Isolada (\"incendiar-me\"): O verbo incendiar incide diretamente sobre a pessoa do discurso (incendiar a mim / o menino). Aqui, o pronome me atua como Objeto Direto.",
+                "Estrutura com Núcleo Substantivo (\"incendiar-me a fantasia\"): O fogo/efeito da ação não queima a pessoa física, mas atinge \"a fantasia\" (o elemento possuído). O Objeto Direto integral da oração é o sintagma nominal [a minha fantasia], dentro do qual o pronome me atua exclusivamente como Adjunto Adnominal com valor possessivo (= \"minha\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A03-G02-003",
+                  "targetTitle": "Pronomes Oblíquos com Valor Possessivo (Função de Adjunto Adnominal)",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G02-006",
+                  "targetTitle": "Leitura Parcial e Precipitada de Sintagmas Possessivos",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -220,52 +752,49 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA correta acoplagem enclítica exige preservar o tempo, o modo e a terminação fonética da forma verbal conjugada no texto original, não sendo permitido confundir formas verbais flexionadas no presente nasal com o infinitivo impessoal.\nExplicação consolidada\nForma Conjugada no Presente (\"têm\"): Termina na consoante nasal m. Pela regra geral de ênclise nasal, têm + os $\\rightarrow$ têm-nos (adiciona-se n-).\nForma no Infinitivo (\"ter\"): Termina na consoante líquida r. Pela regra geral do corte consoante, ter + os $\\rightarrow$ tê-los (suprime-se o r e adiciona-se l-).\nPegadinha de Concurso: A substituição da forma conjugada \"têm costumes\" pela forma \"tê-los\" é incorreta, pois altera indevidamente o tempo/modo da conjugação verbal original."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A correta acoplagem enclítica exige preservar o tempo, o modo e a terminação fonética da forma verbal conjugada no texto original, não sendo permitido confundir formas verbais flexionadas no presente nasal com o infinitivo impessoal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Forma Conjugada no Presente (\"têm\"): Termina na consoante nasal m. Pela regra geral de ênclise nasal, têm + os $\\rightarrow$ têm-nos (adiciona-se n-).",
+                "Forma no Infinitivo (\"ter\"): Termina na consoante líquida r. Pela regra geral do corte consoante, ter + os $\\rightarrow$ tê-los (suprime-se o r e adiciona-se l-).",
+                "Pegadinha de Concurso: A substituição da forma conjugada \"têm costumes\" pela forma \"tê-los\" é incorreta, pois altera indevidamente o tempo/modo da conjugação verbal original."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A03-G02-006",
+                  "targetTitle": "Morfologia e Alterações Fonéticas na Ênclise (`lo/la` e `no/na`) vs. Proibição na Próclise",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A03-G02-005",
+                  "targetTitle": "Confusão de Verbo Conjugado no Presente Nasal com Infinitivo",
+                  "targetUnitId": "IP-A03-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA seleção entre os pronomes oblíquos átonos de terceira pessoa (o, a, os, as vs. lhe, lhes) é rigidamente determinada pela regência do verbo ao qual se associam sintaticamente no contexto da oração.\nExplicação consolidada\nPronomes de Objeto Direto (o, a, os, as): São empregados com exclusividade para substituir complementos de verbos transitivos diretos (VTD) construídos sem preposição.\nPronomes de Objeto Indireto (lhe, lhes): São empregados para substituir complementos de verbos transitivos indiretos (VTI) ou transitivos diretos e indiretos (VTDI) regidos estritamente pelas preposições \"a\" ou \"para\".\nMapeamento Prático de Regência (Noun Test): Substitui-se hipoteticamente o complemento pela expressão masculina singular \"o menino\" (sem preposição) ou \"ao menino\" (com preposição a):\nExigiu o menino $\\rightarrow$ verbo pede Objeto Direto $\\rightarrow$ usa-se o, a, os, as.\nExigiu ao menino $\\rightarrow$ verbo pede Objeto Indireto $\\rightarrow$ usa-se lhe, lhes.\nExemplos e contraexemplos\nEstimo o menino $\\rightarrow$ Estimo-o (VTD).\nAtentei ao menino $\\rightarrow$ Atentei-lhe (VTI com prep. a).\nContraexemplo incorreto: \"Estimo-lhe\" (uso indevido de lhe para VTD) ou \"Atentei-o\" (omissão indevida da regência preposicionada).Possui limites em: (restrições eufônicas do lhe)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs pronomes oblíquos átonos de 1ª e 2ª pessoas do singular e plural, somados ao reflexivo de 3ª pessoa (me, te, se, nós, vós), são denominados pronomes coringas por não possuírem flexão morfológica distinta para o caso direto e indireto.\nExplicação consolidada\nDiferentemente do subsistema de 3ª pessoa (que divide categoricamente o de lhe), os pronomes coringas podem assumir tanto a função sintática de Objeto Direto quanto a de Objeto Indireto. A determinação da sua função sintática exata em uma dada frase decorre exclusivamente da regência do verbo ao qual se acoplam.\nExemplos e contraexemplos\nRespeitou-nos: \"Respeitar\" é VTD (respeita o menino) $\\rightarrow$ o pronome nos exerce a função de Objeto Direto.\nObedeceu-nos: \"Obedecer\" é VTI (obedece ao menino) $\\rightarrow$ o pronome nos exerce a função de Objeto Indireto.\nRelações\nContrasta com: (3ª pessoa possui formas segregadas o vs lhe)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs pronomes oblíquos átonos adquirem valor possessivo quando denotam uma relação de posse vinculada a um substantivo (o elemento possuído), desempenhando na análise sintática a função de Adjunto Adnominal.\nExplicação consolidada\nPronomes que admitem valor possessivo: O pronome lhe / lhes e todos os pronomes coringas (me, te, se, nós, vós).\nPronomes que NUNCA admitem valor possessivo: Os pronomes o, a, os, as (e suas variantes lo/la/no/na) jamais funcionam com valor possessivo.\nPares Semânticos da Relação:\nPossuidor: Representado pela pessoa gramatical do pronome oblíquo (me = 1ª pessoa / eu / meu; lhe = 3ª pessoa / ele / seu / dele).\nElemento Possuído: O substantivo ao qual o pronome se subordina semanticamente.\nTeste Decisivo de Equivalência: Se o pronome puder ser substituído por um pronome possessivo correspondente (meu, teu, seu, sua, dele, dela, nosso), o valor é possessivo (Adjunto Adnominal). Se a substituição exigir a fórmula preposicionada pura (a ele, a eles, a mim), trata-se de complemento verbal/nominal (Objeto Indireto), não de posse.\nExemplos e contraexemplos\nBeijou-lhe a mão $\\rightarrow$ Beijou a sua mão / a mão dele (lhe = Adjunto Adnominal possessivo).\nAcariciou-nos a pele $\\rightarrow$ Acariciou a nossa pele (nos = Adjunto Adnominal possessivo).\nO que lhe está na agenda $\\rightarrow$ O que está na sua agenda / na agenda dele (lhe = Adjunto Adnominal possessivo).\nIncendiar-me a fantasia $\\rightarrow$ Incendiar a minha fantasia (me = possuidor da fantasia / Adjunto Adnominal).\nContraexemplo (Complemento Verbal Puro): \"Tudo o que lhe resta\" $\\rightarrow$ Resta a ele (lhe = Objeto Indireto, sem posse).\nRelações\nExpande: , \nDiferenciado em: (distinção entre OD isolado e posse)\nExemplificado por: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAs formas de 3ª pessoa ele, ela, eles, elas (e as formas plurais nós, vós) possuem dupla natureza funcional na gramática normativa: atuam como pronomes retos ou como pronomes oblíquos tônicos a depender da presença de preposição e da função sintática.\nExplicação consolidada\nPronomes Retos: Exercem com exclusividade a função de sujeito da oração e aparecem sem preposição exigida por regência verbal (Ele chegou).\nPronomes Oblíquos Tônicos: Exercem função de complemento verbal ou nominal e são obrigatoriamente precedidos de preposição (Obedeceu a ele, Gostou dele, Falou sobre nós).\nProibição Absoluta na Norma Culta: É vedado o emprego de formas retas (ele/ela) como objetos diretos desprovidos de preposição. Construções como \"eu vi ele\", \"chamei ela\" ou \"concentravam elas\" violam frontalmente o padrão culto.\nExemplos e contraexemplos\nCorreto como Sujeito: Ele entregou o relatório.\nCorreto como Oblíquo Tônico Preposicionado: O diretor referiu-se a ele; Gostamos dele.\nIncorreto (Reto como Objeto Direto): \"O policial perseguiu ele\" (Forma culta: O policial perseguiu-o / o perseguiu)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO vocábulo \"mesmo\" (e flexões) classifica-se como pronome demonstrativo dotado de função resumitiva, sendo estritamente proibido seu emprego como pronome anafórico para substituir substantivos isolados ou palavras únicas.\nExplicação consolidada\nErro Clássico de Concurso e Redação: Substituir um substantivo simples por \"o mesmo / a mesma\" (ex.: \"Comprometem a educação... pretendem comprometer a mesma\", ou a placa comum \"Antes de entrar no elevador, verifique se o mesmo se encontra parado\").\nFunção Resumitiva Legítima: O pronome demonstrativo \"o mesmo\" só pode ser utilizado para sintetizar e retomar uma expressão complexa, uma oração inteira ou um fato completo (equivalendo a isso ou aquilo).\nRegra de Substituição:\nRetomada de substantivo simples $\\rightarrow$ utilize pronome pessoal (ele, ela, o, a, seu, sua).\nRetomada de fato/oração anterior $\\rightarrow$ autoriza-se o uso de \"o mesmo\".\nExemplos e contraexemplos\nIncorreto: Ele chamou o elevador. O mesmo estava desligado.\nCorreção Culta: Ele chamou o elevador. Ele estava desligado.\nCorreto (Função Resumitiva de Oração): Meu filho estuda muito; minha filha não faz o mesmo (onde \"o mesmo\" resume a oração inteira \"estudar muito\")."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAs modificações morfofonológicas dos pronomes oblíquos de objeto direto o, a, os, as (transformando-se em lo, la, los, las ou no, na, nos, nas) constituem regras eufônicas aplicáveis com exclusividade às estruturas em ÊNCLISE.\nExplicação consolidada\nRegra das Consoantes R, S, Z (Formas LO, LA, LOS, LAS):\nVerbos terminados nas consoantes R, S ou Z seguidos de ênclise de o, a, os, as:\nA consoante final (R, S ou Z) é suprimida.\nO pronome assume a forma lateral lo, la, los, las.\nAplica-se a infinitivos (fazer + o $\\rightarrow$ fazê-lo), formas conjugadas (fiz + o $\\rightarrow$ fi-lo; quis + o $\\rightarrow$ qui-lo) e palavras especiais (eis + a $\\rightarrow$ ei-la).\nRegra das Terminações Nasais (Formas NO, NA, NOS, NAS):\nVerbos terminados em som nasal (-m, ~, -ão, -õe) seguidos de ênclise de o, a, os, as:\nA terminação do verbo permanece inalterada.\nO pronome ganha a consoante nasal no, na, nos, nas (leem + o $\\rightarrow$ leem-no; distribuem + a $\\rightarrow$ distribuem-na).\nProibição Categórica na Próclise:\nHavendo palavra atrativa (advérbio, pronome relativo, conjunção subordinativa), o pronome vem antes do verbo em sua forma pura (o, a, os, as).\nÉ agramatical transportar a alteração fonética para a próclise (ex.: \"os que temem a morte\" $\\rightarrow$ próclise: os que a temem; são incorretas as formas que temem-na ou que no temem)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO pronome oblíquo lhe / lhes não substitui indistintamente qualquer termo preposicionado, submetendo-se a vedações estritas quanto à preposição regente e a limitações eufônicas consagradas pela tradição gramatical.\nExplicação consolidada\nRestrição por Tipo de Preposição:\nO pronome lhe é compatível apenas com complementos regidos por \"a\" ou \"para\".\nVerbos regidos por outras preposições (\"de\", \"em\", \"com\", etc.) rejeitam terminantemente o pronome lhe. Nessas construções, exige-se o pronome oblíquo tônico preposicionado (dele, nele, com ele).\nExemplo: Comprar em Osasco $\\rightarrow$ Comprar nele (jamais \"comprar-lhe\").\nExemplo: Gostar de Maria $\\rightarrow$ Gostar dela (jamais \"gostar-lhe\").\nVerbos Eufonicamente Refratários ao \"Lhe\":\nDeterminados verbos transitivos indiretos regidos pela preposição \"a\" recusam o pronome lhe por razões de eufonia e convenção culta.\nRol dos verbos refratários: assistir (no sentido de ver), visar (no sentido de almejar), aspirar (no sentido de desejar), chegar, ir, vir.\nPara esses verbos, emprega-se obrigatoriamente a forma tônica preposicionada:\nAssisti ao filme $\\rightarrow$ Assisti a ele (Incorreto: Assisti-lhe).\nViso ao cargo $\\rightarrow$ Viso a ele (Incorreto: Viso-lhe).\nCheguei ao polo comercial $\\rightarrow$ Cheguei a ele (Incorreto: Cheguei-lhe / Chegá-lo).\nRelações\nLimita:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNa sintaxe da língua portuguesa culta, uma oração regida por um Verbo Transitivo Direto e Indireto (VTDI) comporta exatamente um Objeto Direto (não preposicionado) e um Objeto Indireto (preposicionado), sendo terminantemente proibida a coexistência de dois objetos homogêneos (OD + OD ou OI + OI).\nExplicação consolidada\nInadmissibilidade de Dois Objetos Diretos (OD + OD):\nSe o verbo já possui um Objeto Direto expresso por substantivo sem preposição (ex.: \"dar ordens\", \"renderam obras\"), qualquer complemento pronominal novo referente à pessoa destinatária deve obrigatoriamente ser Objeto Indireto (lhe, a ele).\nInserir um pronome oblíquo direto (lo, no, o, a) cria a estrutura agramatical OD + OD (dá-lo ordens, renderam-no obras), que invalida a reescrita.\nInadmissibilidade de Dois Objetos Indiretos (OI + OI):\nNa estrutura \"reduziu-o a artigos\", a expressão \"a artigos\" funciona como Objeto Indireto preposicionado. O pronome \"o\" é o Objeto Direto.\nSe o pronome \"o\" for substituído por \"lhe\" (forma exclusiva de OI), a frase passará a conter dois Objetos Indiretos (\"reduziu-lhe [OI] a artigos [OI]\"), violando a regência verbal."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA função sintática de um pronome oblíquo depende da extensão total do sintagma que integra. Um pronome coringa como me pode funcionar como Objeto Direto quando completa o verbo sozinho, ou como Adjunto Adnominal possessivo quando compõe um sintagma nominal cujo núcleo substantivo atua como o verdadeiro objeto.\nExplicação consolidada\nEstrutura Isolada (\"incendiar-me\"): O verbo incendiar incide diretamente sobre a pessoa do discurso (incendiar a mim / o menino). Aqui, o pronome me atua como Objeto Direto.\nEstrutura com Núcleo Substantivo (\"incendiar-me a fantasia\"): O fogo/efeito da ação não queima a pessoa física, mas atinge \"a fantasia\" (o elemento possuído). O Objeto Direto integral da oração é o sintagma nominal [a minha fantasia], dentro do qual o pronome me atua exclusivamente como Adjunto Adnominal com valor possessivo (= \"minha\").\nRelações\nExpande:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA correta acoplagem enclítica exige preservar o tempo, o modo e a terminação fonética da forma verbal conjugada no texto original, não sendo permitido confundir formas verbais flexionadas no presente nasal com o infinitivo impessoal.\nExplicação consolidada\nForma Conjugada no Presente (\"têm\"): Termina na consoante nasal m. Pela regra geral de ênclise nasal, têm + os $\\rightarrow$ têm-nos (adiciona-se n-).\nForma no Infinitivo (\"ter\"): Termina na consoante líquida r. Pela regra geral do corte consoante, ter + os $\\rightarrow$ tê-los (suprime-se o r e adiciona-se l-).\nPegadinha de Concurso: A substituição da forma conjugada \"têm costumes\" pela forma \"tê-los\" é incorreta, pois altera indevidamente o tempo/modo da conjugação verbal original."
         }
       ]
     },
@@ -365,7 +894,9 @@
               "RULE-IP-A03-G02-001",
               "EXP-IP-A03-G02-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -472,7 +1003,9 @@
               "PROC-A03-G02-001",
               "EXP-IP-A03-G02-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -648,7 +1181,9 @@
               "PROC-A03-G02-002",
               "EXP-IP-A03-G02-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -751,7 +1286,9 @@
               "PROC-A03-G02-003",
               "EXP-IP-A03-G02-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -827,7 +1364,9 @@
               "PROC-A03-G02-004",
               "EXP-IP-A03-G02-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -933,7 +1472,9 @@
               "CONTRAST-IP-A03-G02-001",
               "EXP-IP-A03-G02-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -976,7 +1517,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-001",
               "EXP-IP-A03-G02-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1031,7 +1574,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-002",
               "EXP-IP-A03-G02-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1075,7 +1620,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-003",
               "EXP-IP-A03-G02-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1114,7 +1661,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-004",
               "EXP-IP-A03-G02-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1163,7 +1712,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-005",
               "EXP-IP-A03-G02-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1207,7 +1758,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-006",
               "EXP-IP-A03-G02-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1256,7 +1809,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-007",
               "EXP-IP-A03-G02-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1311,7 +1866,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-008",
               "EXP-IP-A03-G02-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1355,7 +1912,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-009",
               "EXP-IP-A03-G02-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1406,7 +1965,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-010",
               "EXP-IP-A03-G02-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1449,7 +2010,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-011",
               "EXP-IP-A03-G02-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1493,7 +2056,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-012",
               "EXP-IP-A03-G02-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1532,7 +2097,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-013",
               "EXP-IP-A03-G02-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1593,7 +2160,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-014",
               "EXP-IP-A03-G02-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1637,7 +2206,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-015",
               "EXP-IP-A03-G02-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1686,7 +2257,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-016",
               "EXP-IP-A03-G02-064"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1735,7 +2308,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-017",
               "EXP-IP-A03-G02-065"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1779,7 +2354,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-018",
               "EXP-IP-A03-G02-066"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1828,7 +2405,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-019",
               "EXP-IP-A03-G02-067"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1889,7 +2468,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-020",
               "EXP-IP-A03-G02-068"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1933,7 +2514,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-021",
               "EXP-IP-A03-G02-069"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1972,7 +2555,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-022",
               "EXP-IP-A03-G02-070"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2021,7 +2606,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-023",
               "EXP-IP-A03-G02-071"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2065,7 +2652,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-024",
               "EXP-IP-A03-G02-072"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2104,7 +2693,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-025",
               "EXP-IP-A03-G02-073"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2153,7 +2744,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-026",
               "EXP-IP-A03-G02-074"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2197,7 +2790,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-027",
               "EXP-IP-A03-G02-075"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2236,7 +2831,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-028",
               "EXP-IP-A03-G02-076"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2291,7 +2888,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-029",
               "EXP-IP-A03-G02-077"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2335,7 +2934,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-030",
               "EXP-IP-A03-G02-078"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2379,7 +2980,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-031",
               "EXP-IP-A03-G02-079"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2428,7 +3031,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-032",
               "EXP-IP-A03-G02-080"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2472,7 +3077,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-033",
               "EXP-IP-A03-G02-081"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2511,7 +3118,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-034",
               "EXP-IP-A03-G02-082"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2560,7 +3169,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-035",
               "EXP-IP-A03-G02-083"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2604,7 +3215,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-036",
               "EXP-IP-A03-G02-084"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2643,7 +3256,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-037",
               "EXP-IP-A03-G02-085"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2698,7 +3313,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-038",
               "EXP-IP-A03-G02-086"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2742,7 +3359,9 @@
               "WORKED_EXAMPLE-IP-A03-G02-039",
               "EXP-IP-A03-G02-087"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2793,7 +3412,9 @@
               "WARN-A03-G02-001",
               "EXP-IP-A03-G02-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2830,7 +3451,9 @@
               "WARN-A03-G02-002",
               "EXP-IP-A03-G02-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2866,7 +3489,9 @@
               "WARN-A03-G02-003",
               "EXP-IP-A03-G02-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2902,7 +3527,9 @@
               "WARN-A03-G02-004",
               "EXP-IP-A03-G02-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2939,7 +3566,9 @@
               "WARN-A03-G02-005",
               "EXP-IP-A03-G02-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2975,7 +3604,9 @@
               "WARN-A03-G02-006",
               "EXP-IP-A03-G02-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3012,29 +3643,106 @@
               "WARN-A03-G02-007",
               "EXP-IP-A03-G02-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Regência Verbal e a Oposição Canônica entre Objeto Direto (`o/a/os/as`) e Indireto (`lhe/lhes`)**: Definição ou ideia central\nA seleção entre os pronomes oblíquos átonos de terceira pessoa (o, a, os, as vs. lhe, lhes) é rigidamente determinada pela regência do verbo ao qual se associam sintaticamente no contexto da oração.\nExplicação consolidada\nPronomes de Objeto Direto (o, a, os, as): São empregados com exclusividade para substituir complementos de verbos transitivos diretos (VTD) construídos sem preposição.\nPronomes de Objeto Indireto (lhe, lhes): São empregados para substituir complementos de verbos transitivos indiretos (VTI) ou transitivos diretos e indiretos (VTDI) regidos estritamente pelas preposições \"a\" ou \"para\".\nMapeamento Prático de Regência (Noun Test): Substitui-se hipoteticamente o complemento pela expressão masculina singular \"o menino\" (sem preposição) ou \"ao menino\" (com preposição a):\nExigiu o menino $\\rightarrow$ verbo pede Objeto Direto $\\rightarrow$ usa-se o, a, os, as.\nExigiu ao menino $\\rightarrow$ verbo pede Objeto Indireto $\\rightarrow$ usa-se lhe, lhes.\nExemplos e contraexemplos\nEstimo o menino $\\rightarrow$ Estimo-o (VTD).\nAtentei ao menino $\\rightarrow$ Atentei-lhe (VTI com prep. a).\nContraexemplo incorreto: \"Estimo-lhe\" (uso indevido de lhe para VTD) ou \"Atentei-o\" (omissão indevida da regência preposicionada).Possui limites em: (restrições eufônicas do lhe)",
-            "**Pronomes Coringas (`me, te, se, nós, vós`) e Dupla Transitividade Sintática**: Definição ou ideia central\nOs pronomes oblíquos átonos de 1ª e 2ª pessoas do singular e plural, somados ao reflexivo de 3ª pessoa (me, te, se, nós, vós), são denominados pronomes coringas por não possuírem flexão morfológica distinta para o caso direto e indireto.\nExplicação consolidada\nDiferentemente do subsistema de 3ª pessoa (que divide categoricamente o de lhe), os pronomes coringas podem assumir tanto a função sintática de Objeto Direto quanto a de Objeto Indireto. A determinação da sua função sintática exata em uma dada frase decorre exclusivamente da regência do verbo ao qual se acoplam.\nExemplos e contraexemplos\nRespeitou-nos: \"Respeitar\" é VTD (respeita o menino) $\\rightarrow$ o pronome nos exerce a função de Objeto Direto.\nObedeceu-nos: \"Obedecer\" é VTI (obedece ao menino) $\\rightarrow$ o pronome nos exerce a função de Objeto Indireto.\nRelações\nContrasta com: (3ª pessoa possui formas segregadas o vs lhe)",
-            "**Pronomes Oblíquos com Valor Possessivo (Função de Adjunto Adnominal)**: Definição ou ideia central\nOs pronomes oblíquos átonos adquirem valor possessivo quando denotam uma relação de posse vinculada a um substantivo (o elemento possuído), desempenhando na análise sintática a função de Adjunto Adnominal.\nExplicação consolidada\nPronomes que admitem valor possessivo: O pronome lhe / lhes e todos os pronomes coringas (me, te, se, nós, vós).\nPronomes que NUNCA admitem valor possessivo: Os pronomes o, a, os, as (e suas variantes lo/la/no/na) jamais funcionam com valor possessivo.\nPares Semânticos da Relação:\nPossuidor: Representado pela pessoa gramatical do pronome oblíquo (me = 1ª pessoa / eu / meu; lhe = 3ª pessoa / ele / seu / dele).\nElemento Possuído: O substantivo ao qual o pronome se subordina semanticamente.\nTeste Decisivo de Equivalência: Se o pronome puder ser substituído por um pronome possessivo correspondente (meu, teu, seu, sua, dele, dela, nosso), o valor é possessivo (Adjunto Adnominal). Se a substituição exigir a fórmula preposicionada pura (a ele, a eles, a mim), trata-se de complemento verbal/nominal (Objeto Indireto), não de posse.\nExemplos e contraexemplos\nBeijou-lhe a mão $\\rightarrow$ Beijou a sua mão / a mão dele (lhe = Adjunto Adnominal possessivo).\nAcariciou-nos a pele $\\rightarrow$ Acariciou a nossa pele (nos = Adjunto Adnominal possessivo).\nO que lhe está na agenda $\\rightarrow$ O que está na sua agenda / na agenda dele (lhe = Adjunto Adnominal possessivo).\nIncendiar-me a fantasia $\\rightarrow$ Incendiar a minha fantasia (me = possuidor da fantasia / Adjunto Adnominal).\nContraexemplo (Complemento Verbal Puro): \"Tudo o que lhe resta\" $\\rightarrow$ Resta a ele (lhe = Objeto Indireto, sem posse).\nRelações\nExpande: , \nDiferenciado em: (distinção entre OD isolado e posse)\nExemplificado por: ,",
-            "**Pronomes Pessoais Retos e Oblíquos Tônicos Preposicionados (`ele/ela/eles/elas`)**: Definição ou ideia central\nAs formas de 3ª pessoa ele, ela, eles, elas (e as formas plurais nós, vós) possuem dupla natureza funcional na gramática normativa: atuam como pronomes retos ou como pronomes oblíquos tônicos a depender da presença de preposição e da função sintática.\nExplicação consolidada\nPronomes Retos: Exercem com exclusividade a função de sujeito da oração e aparecem sem preposição exigida por regência verbal (Ele chegou).\nPronomes Oblíquos Tônicos: Exercem função de complemento verbal ou nominal e são obrigatoriamente precedidos de preposição (Obedeceu a ele, Gostou dele, Falou sobre nós).\nProibição Absoluta na Norma Culta: É vedado o emprego de formas retas (ele/ela) como objetos diretos desprovidos de preposição. Construções como \"eu vi ele\", \"chamei ela\" ou \"concentravam elas\" violam frontalmente o padrão culto.\nExemplos e contraexemplos\nCorreto como Sujeito: Ele entregou o relatório.\nCorreto como Oblíquo Tônico Preposicionado: O diretor referiu-se a ele; Gostamos dele.\nIncorreto (Reto como Objeto Direto): \"O policial perseguiu ele\" (Forma culta: O policial perseguiu-o / o perseguiu).",
-            "**Emprego do Demonstrativo \"Mesmo\" com Função Resumitiva e Vedação à Retomada Substantiva**: Definição ou ideia central\nO vocábulo \"mesmo\" (e flexões) classifica-se como pronome demonstrativo dotado de função resumitiva, sendo estritamente proibido seu emprego como pronome anafórico para substituir substantivos isolados ou palavras únicas.\nExplicação consolidada\nErro Clássico de Concurso e Redação: Substituir um substantivo simples por \"o mesmo / a mesma\" (ex.: \"Comprometem a educação... pretendem comprometer a mesma\", ou a placa comum \"Antes de entrar no elevador, verifique se o mesmo se encontra parado\").\nFunção Resumitiva Legítima: O pronome demonstrativo \"o mesmo\" só pode ser utilizado para sintetizar e retomar uma expressão complexa, uma oração inteira ou um fato completo (equivalendo a isso ou aquilo).\nRegra de Substituição:\nRetomada de substantivo simples $\\rightarrow$ utilize pronome pessoal (ele, ela, o, a, seu, sua).\nRetomada de fato/oração anterior $\\rightarrow$ autoriza-se o uso de \"o mesmo\".\nExemplos e contraexemplos\nIncorreto: Ele chamou o elevador. O mesmo estava desligado.\nCorreção Culta: Ele chamou o elevador. Ele estava desligado.\nCorreto (Função Resumitiva de Oração): Meu filho estuda muito; minha filha não faz o mesmo (onde \"o mesmo\" resume a oração inteira \"estudar muito\").",
-            "**Morfologia e Alterações Fonéticas na Ênclise (`lo/la` e `no/na`) vs. Proibição na Próclise**: Definição ou ideia central\nAs modificações morfofonológicas dos pronomes oblíquos de objeto direto o, a, os, as (transformando-se em lo, la, los, las ou no, na, nos, nas) constituem regras eufônicas aplicáveis com exclusividade às estruturas em ÊNCLISE.\nExplicação consolidada\nRegra das Consoantes R, S, Z (Formas LO, LA, LOS, LAS):\nVerbos terminados nas consoantes R, S ou Z seguidos de ênclise de o, a, os, as:\nA consoante final (R, S ou Z) é suprimida.\nO pronome assume a forma lateral lo, la, los, las.\nAplica-se a infinitivos (fazer + o $\\rightarrow$ fazê-lo), formas conjugadas (fiz + o $\\rightarrow$ fi-lo; quis + o $\\rightarrow$ qui-lo) e palavras especiais (eis + a $\\rightarrow$ ei-la).\nRegra das Terminações Nasais (Formas NO, NA, NOS, NAS):\nVerbos terminados em som nasal (-m, ~, -ão, -õe) seguidos de ênclise de o, a, os, as:\nA terminação do verbo permanece inalterada.\nO pronome ganha a consoante nasal no, na, nos, nas (leem + o $\\rightarrow$ leem-no; distribuem + a $\\rightarrow$ distribuem-na).\nProibição Categórica na Próclise:\nHavendo palavra atrativa (advérbio, pronome relativo, conjunção subordinativa), o pronome vem antes do verbo em sua forma pura (o, a, os, as).\nÉ agramatical transportar a alteração fonética para a próclise (ex.: \"os que temem a morte\" $\\rightarrow$ próclise: os que a temem; são incorretas as formas que temem-na ou que no temem).",
-            "**Restrições Preposicionais do Pronome \"Lhe\" e Verbos Eufonicamente Refratários**: Definição ou ideia central\nO pronome oblíquo lhe / lhes não substitui indistintamente qualquer termo preposicionado, submetendo-se a vedações estritas quanto à preposição regente e a limitações eufônicas consagradas pela tradição gramatical.\nExplicação consolidada\nRestrição por Tipo de Preposição:\nO pronome lhe é compatível apenas com complementos regidos por \"a\" ou \"para\".\nVerbos regidos por outras preposições (\"de\", \"em\", \"com\", etc.) rejeitam terminantemente o pronome lhe. Nessas construções, exige-se o pronome oblíquo tônico preposicionado (dele, nele, com ele).\nExemplo: Comprar em Osasco $\\rightarrow$ Comprar nele (jamais \"comprar-lhe\").\nExemplo: Gostar de Maria $\\rightarrow$ Gostar dela (jamais \"gostar-lhe\").\nVerbos Eufonicamente Refratários ao \"Lhe\":\nDeterminados verbos transitivos indiretos regidos pela preposição \"a\" recusam o pronome lhe por razões de eufonia e convenção culta.\nRol dos verbos refratários: assistir (no sentido de ver), visar (no sentido de almejar), aspirar (no sentido de desejar), chegar, ir, vir.\nPara esses verbos, emprega-se obrigatoriamente a forma tônica preposicionada:\nAssisti ao filme $\\rightarrow$ Assisti a ele (Incorreto: Assisti-lhe).\nViso ao cargo $\\rightarrow$ Viso a ele (Incorreto: Viso-lhe).\nCheguei ao polo comercial $\\rightarrow$ Cheguei a ele (Incorreto: Cheguei-lhe / Chegá-lo).\nRelações\nLimita:",
-            "**Princípio da Inadmissibilidade de Duplicidade de Objetos Homogêneos (Regra OD + OI em VTDI)**: Definição ou ideia central\nNa sintaxe da língua portuguesa culta, uma oração regida por um Verbo Transitivo Direto e Indireto (VTDI) comporta exatamente um Objeto Direto (não preposicionado) e um Objeto Indireto (preposicionado), sendo terminantemente proibida a coexistência de dois objetos homogêneos (OD + OD ou OI + OI).\nExplicação consolidada\nInadmissibilidade de Dois Objetos Diretos (OD + OD):\nSe o verbo já possui um Objeto Direto expresso por substantivo sem preposição (ex.: \"dar ordens\", \"renderam obras\"), qualquer complemento pronominal novo referente à pessoa destinatária deve obrigatoriamente ser Objeto Indireto (lhe, a ele).\nInserir um pronome oblíquo direto (lo, no, o, a) cria a estrutura agramatical OD + OD (dá-lo ordens, renderam-no obras), que invalida a reescrita.\nInadmissibilidade de Dois Objetos Indiretos (OI + OI):\nNa estrutura \"reduziu-o a artigos\", a expressão \"a artigos\" funciona como Objeto Indireto preposicionado. O pronome \"o\" é o Objeto Direto.\nSe o pronome \"o\" for substituído por \"lhe\" (forma exclusiva de OI), a frase passará a conter dois Objetos Indiretos (\"reduziu-lhe [OI] a artigos [OI]\"), violando a regência verbal.",
-            "**Distinção Estrutural entre Objeto Direto Isolado e Pronome Possessivo em Sintagma Nominal**: Definição ou ideia central\nA função sintática de um pronome oblíquo depende da extensão total do sintagma que integra. Um pronome coringa como me pode funcionar como Objeto Direto quando completa o verbo sozinho, ou como Adjunto Adnominal possessivo quando compõe um sintagma nominal cujo núcleo substantivo atua como o verdadeiro objeto.\nExplicação consolidada\nEstrutura Isolada (\"incendiar-me\"): O verbo incendiar incide diretamente sobre a pessoa do discurso (incendiar a mim / o menino). Aqui, o pronome me atua como Objeto Direto.\nEstrutura com Núcleo Substantivo (\"incendiar-me a fantasia\"): O fogo/efeito da ação não queima a pessoa física, mas atinge \"a fantasia\" (o elemento possuído). O Objeto Direto integral da oração é o sintagma nominal [a minha fantasia], dentro do qual o pronome me atua exclusivamente como Adjunto Adnominal com valor possessivo (= \"minha\").\nRelações\nExpande:",
-            "**Morfofonética de Verbos no Presente Terminados em Som Nasal vs. Infinitivo (`têm-nos` vs `tê-los`)**: Definição ou ideia central\nA correta acoplagem enclítica exige preservar o tempo, o modo e a terminação fonética da forma verbal conjugada no texto original, não sendo permitido confundir formas verbais flexionadas no presente nasal com o infinitivo impessoal.\nExplicação consolidada\nForma Conjugada no Presente (\"têm\"): Termina na consoante nasal m. Pela regra geral de ênclise nasal, têm + os $\\rightarrow$ têm-nos (adiciona-se n-).\nForma no Infinitivo (\"ter\"): Termina na consoante líquida r. Pela regra geral do corte consoante, ter + os $\\rightarrow$ tê-los (suprime-se o r e adiciona-se l-).\nPegadinha de Concurso: A substituição da forma conjugada \"têm costumes\" pela forma \"tê-los\" é incorreta, pois altera indevidamente o tempo/modo da conjugação verbal original."
-          ]
+          "term": "Regência Verbal e a Oposição Canônica entre Objeto Direto (`o/a/os/as`) e Indireto (`lhe/lhes`)",
+          "shortDefinition": "A seleção entre os pronomes oblíquos átonos de terceira pessoa (o, a, os, as vs. lhe, lhes) é rigidamente determinada pela regência do verbo ao qual se associam sintaticamente no contexto da oração.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-01"
+          }
+        },
+        {
+          "term": "Pronomes Coringas (`me, te, se, nós, vós`) e Dupla Transitividade Sintática",
+          "shortDefinition": "Os pronomes oblíquos átonos de 1ª e 2ª pessoas do singular e plural, somados ao reflexivo de 3ª pessoa (me, te, se, nós, vós), são denominados pronomes coringas por não possuírem flexão morfológica distinta para o caso direto e indireto.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-02"
+          },
+          "operationalUse": "Diferentemente do subsistema de 3ª pessoa (que divide categoricamente o de lhe), os pronomes coringas podem assumir tanto a função sintática de Objeto Direto quanto a de Objeto Indireto."
+        },
+        {
+          "term": "Pronomes Oblíquos com Valor Possessivo (Função de Adjunto Adnominal)",
+          "shortDefinition": "Os pronomes oblíquos átonos adquirem valor possessivo quando denotam uma relação de posse vinculada a um substantivo (o elemento possuído), desempenhando na análise sintática a função de Adjunto Adnominal.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-03"
+          }
+        },
+        {
+          "term": "Pronomes Pessoais Retos e Oblíquos Tônicos Preposicionados (`ele/ela/eles/elas`)",
+          "shortDefinition": "As formas de 3ª pessoa ele, ela, eles, elas (e as formas plurais nós, vós) possuem dupla natureza funcional na gramática normativa: atuam como pronomes retos ou como pronomes oblíquos tônicos a depender da presença de preposição e da função sintática.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-04"
+          }
+        },
+        {
+          "term": "Emprego do Demonstrativo \"Mesmo\" com Função Resumitiva e Vedação à Retomada Substantiva",
+          "shortDefinition": "O vocábulo \"mesmo\" (e flexões) classifica-se como pronome demonstrativo dotado de função resumitiva, sendo estritamente proibido seu emprego como pronome anafórico para substituir substantivos isolados ou palavras únicas.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-05"
+          }
+        },
+        {
+          "term": "Morfologia e Alterações Fonéticas na Ênclise (`lo/la` e `no/na`) vs. Proibição na Próclise",
+          "shortDefinition": "As modificações morfofonológicas dos pronomes oblíquos de objeto direto o, a, os, as (transformando-se em lo, la, los, las ou no, na, nos, nas) constituem regras eufônicas aplicáveis com exclusividade às estruturas em ÊNCLISE.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-06"
+          }
+        },
+        {
+          "term": "Restrições Preposicionais do Pronome \"Lhe\" e Verbos Eufonicamente Refratários",
+          "shortDefinition": "O pronome oblíquo lhe / lhes não substitui indistintamente qualquer termo preposicionado, submetendo-se a vedações estritas quanto à preposição regente e a limitações eufônicas consagradas pela tradição gramatical.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-07"
+          }
+        },
+        {
+          "term": "Princípio da Inadmissibilidade de Duplicidade de Objetos Homogêneos (Regra OD + OI em VTDI)",
+          "shortDefinition": "Na sintaxe da língua portuguesa culta, uma oração regida por um Verbo Transitivo Direto e Indireto (VTDI) comporta exatamente um Objeto Direto (não preposicionado) e um Objeto Indireto (preposicionado), sendo terminantemente proibida a coexistência de dois objetos homogêneos (OD + OD ou OI + OI).",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-08"
+          }
+        },
+        {
+          "term": "Distinção Estrutural entre Objeto Direto Isolado e Pronome Possessivo em Sintagma Nominal",
+          "shortDefinition": "A função sintática de um pronome oblíquo depende da extensão total do sintagma que integra. Um pronome coringa como me pode funcionar como Objeto Direto quando completa o verbo sozinho, ou como Adjunto Adnominal possessivo quando compõe um sintagma nominal cujo núcleo substantivo atua como o verdadeiro objeto.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-09"
+          }
+        },
+        {
+          "term": "Morfofonética de Verbos no Presente Terminados em Som Nasal vs. Infinitivo (`têm-nos` vs `tê-los`)",
+          "shortDefinition": "A correta acoplagem enclítica exige preservar o tempo, o modo e a terminação fonética da forma verbal conjugada no texto original, não sendo permitido confundir formas verbais flexionadas no presente nasal com o infinitivo impessoal.",
+          "detailTarget": {
+            "unitId": "IP-A03-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A03-G02-10"
+          }
         }
       ]
     },

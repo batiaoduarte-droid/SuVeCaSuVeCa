@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A12-G05",
     "lessonId": "A12",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A12-G05",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A12-G05-001"
+          }
         }
       ]
     },
@@ -94,8 +99,69 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAmbiguidade (ou anfibologia) é a duplicidade de sentidos que uma palavra, locução ou estrutura sintática manifesta, gerando indeterminação interpretativa sobre a real intenção comunicativa do emissor.\nExplicação consolidada\nMecanismo cognitivo e assimetria perceptiva: Diante de um enunciado ambíguo, os sentidos concorrentes não se apresentam com igual força. Há invariavelmente um primeiro sentido (mais evidente, imediato e convencional) e um segundo sentido (subjacente, gramaticalmente autorizado pela estrutura, porém menos óbvio).\nA postura interpretativa em provas: O erro em questões de concurso não decorre de incapacidade intelectual, mas da \"ingenuidade leitora\", na qual o candidato se satisfaz com o sentido imediato sem inspecionar os vínculos sintáticos paralelos.\nIntencionalidade:\nAcidental (Vício de linguagem): Falha de redação que compromete a clareza textual em peças dissertativas e documentos oficiais.\nIntencional (Recurso expressivo): Emprego deliberado em trocadilhos, humor, charges e publicidade (ex.: \"Na vida tudo é passageiro\").\nExemplos\nA mãe bateu na filha porque estava bêbada: O estado de embriaguez vincula-se sintaticamente tanto ao sujeito da oração principal (mãe) quanto ao objeto (filha).\nJoão foi atrás do táxi correndo: A ação expressa pelo gerúndio pode ser de João (a pé) ou do táxi (em trânsito veloz).\nRelações\nExpande: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ambiguidade (ou anfibologia) é a duplicidade de sentidos que uma palavra, locução ou estrutura sintática manifesta, gerando indeterminação interpretativa sobre a real intenção comunicativa do emissor."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mecanismo cognitivo e assimetria perceptiva: Diante de um enunciado ambíguo, os sentidos concorrentes não se apresentam com igual força. Há invariavelmente um primeiro sentido (mais evidente, imediato e convencional) e um segundo sentido (subjacente, gramaticalmente autorizado pela estrutura, porém menos óbvio).",
+                "A postura interpretativa em provas: O erro em questões de concurso não decorre de incapacidade intelectual, mas da \"ingenuidade leitora\", na qual o candidato se satisfaz com o sentido imediato sem inspecionar os vínculos sintáticos paralelos.",
+                "Intencionalidade:",
+                "Acidental (Vício de linguagem): Falha de redação que compromete a clareza textual em peças dissertativas e documentos oficiais.",
+                "Intencional (Recurso expressivo): Emprego deliberado em trocadilhos, humor, charges e publicidade (ex.: \"Na vida tudo é passageiro\")."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A mãe bateu na filha porque estava bêbada: O estado de embriaguez vincula-se sintaticamente tanto ao sujeito da oração principal (mãe) quanto ao objeto (filha).",
+                "João foi atrás do táxi correndo: A ação expressa pelo gerúndio pode ser de João (a pé) ou do táxi (em trânsito veloz)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A12-G05-002",
+                  "targetTitle": "Ambiguidade Lexical vs. Polissemia e o Papel do Contexto",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A12-G05-003",
+                  "targetTitle": "Ambiguidade Estrutural: Os Cinco Padrões Sintáticos em Concursos",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-001",
+                  "targetTitle": "A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +174,79 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA ambiguidade lexical decorre da duplicidade de significados inerente a uma palavra polissêmica ou homônima quando inserida em um contexto que não fornece restrições semânticas suficientes para fixar uma acepção única.\nExplicação consolidada\nA polissemia é uma propriedade dicionarizada do léxico (a palavra possui múltiplos significados em potencial), enquanto a ambiguidade é um defeito de estruturação contextual. A ocorrência de polissemia divide-se operacionalmente em dois cenários:\nPolissemia que CAUSA ambiguidade: Quando o cotexto permanece aberto e ambivalente.\nExemplo: \"O cachorro do meu vizinho causa problemas sempre.\" (Cachorro pode ser o animal doméstico ou uma ofensa moral dirigida ao vizinho).\nExemplo: \"A mala foi encontrada perto do banco.\" (Banco pode ser a agência financeira ou o assento de praça).\nPolissemia que NÃO causa ambiguidade: Quando os vocábulos circundantes restringem estritamente a interpretação a um único sentido.\nExemplo: \"O cachorro latiu a noite inteira.\" (O predicador verbal latir seleciona exclusivamente o traço semântico animal, desfazendo a ambiguidade).\nExemplo: \"Fui ao banco sacar dinheiro.\" (Sacar dinheiro delimita a instituição bancária).Contrasta com:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A ambiguidade lexical decorre da duplicidade de significados inerente a uma palavra polissêmica ou homônima quando inserida em um contexto que não fornece restrições semânticas suficientes para fixar uma acepção única."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A polissemia é uma propriedade dicionarizada do léxico (a palavra possui múltiplos significados em potencial), enquanto a ambiguidade é um defeito de estruturação contextual. A ocorrência de polissemia divide-se operacionalmente em dois cenários:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Polissemia que CAUSA ambiguidade: Quando o cotexto permanece aberto e ambivalente."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"O cachorro do meu vizinho causa problemas sempre.\" (Cachorro pode ser o animal doméstico ou uma ofensa moral dirigida ao vizinho).",
+                "Exemplo: \"A mala foi encontrada perto do banco.\" (Banco pode ser a agência financeira ou o assento de praça)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Polissemia que NÃO causa ambiguidade: Quando os vocábulos circundantes restringem estritamente a interpretação a um único sentido."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"O cachorro latiu a noite inteira.\" (O predicador verbal latir seleciona exclusivamente o traço semântico animal, desfazendo a ambiguidade).",
+                "Exemplo: \"Fui ao banco sacar dinheiro.\" (Sacar dinheiro delimita a instituição bancária)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A12-G05-001",
+                  "targetTitle": "Conceito, Natureza e Psicologia da Ambiguidade",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G05-003",
+                  "targetTitle": "Ambiguidade Estrutural: Os Cinco Padrões Sintáticos em Concursos",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-002",
+                  "targetTitle": "A Falsa Premissa de que Toda Polissemia Gera Ambiguidade",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +259,135 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA ambiguidade estrutural (ou sintática) ocorre quando a posição, a ordenação dos termos ou a indefinição de vínculos sintático-funcionais permite mais de uma estrutura arbórea de análise na oração.\nOs Cinco Mecanismos Sintáticos Detalhados\n1. Mau uso da coordenação (Conectivo \"e\")\nOcorre quando a conjunção aditiva \"e\" liga sujeitos que podem estar associados em soma independente contra terceiros ou em ação recíproca/conflituosa entre si.\nExemplo: \"Botafogo e Vasco jogam neste domingo.\" (Podem jogar um contra o outro ou cada clube disputar partida distinta contra outros adversários).\nExemplo: \"João e Maria se casaram.\" (Casaram-se entre si ou cada qual casou-se com seu respectivo parceiro).\n2. Mau uso das formas nominais (Gerúndio e Particípio)\nOcorre quando uma oração reduzida de gerúndio ou particípio pode ter seu sujeito implícito vinculado a mais de um termo nominal antecedente.\nGerúndio: \"A garota viu o vizinho correndo.\" (Correndo pode vincular-se a garota ou a vizinho).\nParticípio: \"Júlio conversou com Paulo sentado no muro.\" (A forma sentado concorda em gênero e número masculinos singulares com ambos os sujeitos).\n3. Mau uso / má colocação de pronomes (Relativo \"que\" e Possessivo \"seu\")\nPronome Relativo (\"que\"): Gera duplo antecedente (\"Peguei emprestada a roupa da minha amiga que é muito bonita\") ou oscilação funcional entre pronome relativo e conjunção integrante (\"Falei com a chefe que estava com vertigem\" -> a qual estava vs. falei isso).\nPronome Possessivo (\"seu/sua\"): Gera ambiguidade quando existem dois referentes de 3ª pessoa explícitos no próprio texto (\"O professor de Maria terminou a aula fazendo apontamentos no seu caderno\" -> caderno de Maria ou do professor?).\n4. Má colocação dos termos (Adjetivo vs. Advérbio / Escopo Modificador)\nOcorre quando um modificador pode acoplar-se a classes gramaticais distintas ou a núcleos verbais diferentes.\nDuplo papel categorial: \"Comprou o carro rápido.\" (Rápido como adjetivo qualifica carro; como advérbio de modo modifica comprou).\nAdvérbio entre verbos: \"Chamar os bombeiros já ficou na moda.\" (Já pode modificar chamar ou ficou na moda).\n5. Indefinição entre Agente e Paciente (Preposição \"de\")\nOcorre quando um sintagma preposicionado por \"de\" liga-se a um substantivo abstrato derivado de verbo de ação:\nSentido Ativo (Agente): O termo preposicionado pratica a ação -> Sintaticamente é Adjunto Adnominal (AA).\nSentido Passivo (Paciente): O termo preposicionado sofre a ação -> Sintaticamente é Complemento Nominal (CN).\nExemplo: \"A criação da instituição demorou mais do que se esperava.\" (A instituição criou algo = AA vs. a instituição foi criada por terceiros = CN).\nExemplo: \"A lembrança de meu pai alegrou-me.\" (Meu pai lembrou-se de algo = AA vs. eu me lembrei do meu pai = CN)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A ambiguidade estrutural (ou sintática) ocorre quando a posição, a ordenação dos termos ou a indefinição de vínculos sintático-funcionais permite mais de uma estrutura arbórea de análise na oração."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Os Cinco Mecanismos Sintáticos Detalhados"
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "1. Mau uso da coordenação (Conectivo \"e\")"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ocorre quando a conjunção aditiva \"e\" liga sujeitos que podem estar associados em soma independente contra terceiros ou em ação recíproca/conflituosa entre si."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Botafogo e Vasco jogam neste domingo.\" (Podem jogar um contra o outro ou cada clube disputar partida distinta contra outros adversários).",
+                "Exemplo: \"João e Maria se casaram.\" (Casaram-se entre si ou cada qual casou-se com seu respectivo parceiro)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "2. Mau uso das formas nominais (Gerúndio e Particípio)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ocorre quando uma oração reduzida de gerúndio ou particípio pode ter seu sujeito implícito vinculado a mais de um termo nominal antecedente."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gerúndio: \"A garota viu o vizinho correndo.\" (Correndo pode vincular-se a garota ou a vizinho).",
+                "Particípio: \"Júlio conversou com Paulo sentado no muro.\" (A forma sentado concorda em gênero e número masculinos singulares com ambos os sujeitos)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "3. Mau uso / má colocação de pronomes (Relativo \"que\" e Possessivo \"seu\")"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pronome Relativo (\"que\"): Gera duplo antecedente (\"Peguei emprestada a roupa da minha amiga que é muito bonita\") ou oscilação funcional entre pronome relativo e conjunção integrante (\"Falei com a chefe que estava com vertigem\" -> a qual estava vs. falei isso).",
+                "Pronome Possessivo (\"seu/sua\"): Gera ambiguidade quando existem dois referentes de 3ª pessoa explícitos no próprio texto (\"O professor de Maria terminou a aula fazendo apontamentos no seu caderno\" -> caderno de Maria ou do professor?)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "4. Má colocação dos termos (Adjetivo vs. Advérbio / Escopo Modificador)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ocorre quando um modificador pode acoplar-se a classes gramaticais distintas ou a núcleos verbais diferentes."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Duplo papel categorial: \"Comprou o carro rápido.\" (Rápido como adjetivo qualifica carro; como advérbio de modo modifica comprou).",
+                "Advérbio entre verbos: \"Chamar os bombeiros já ficou na moda.\" (Já pode modificar chamar ou ficou na moda)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "5. Indefinição entre Agente e Paciente (Preposição \"de\")"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ocorre quando um sintagma preposicionado por \"de\" liga-se a um substantivo abstrato derivado de verbo de ação:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sentido Ativo (Agente): O termo preposicionado pratica a ação -> Sintaticamente é Adjunto Adnominal (AA).",
+                "Sentido Passivo (Paciente): O termo preposicionado sofre a ação -> Sintaticamente é Complemento Nominal (CN).",
+                "Exemplo: \"A criação da instituição demorou mais do que se esperava.\" (A instituição criou algo = AA vs. a instituição foi criada por terceiros = CN).",
+                "Exemplo: \"A lembrança de meu pai alegrou-me.\" (Meu pai lembrou-se de algo = AA vs. eu me lembrei do meu pai = CN)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G05-001",
+                  "targetTitle": "Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G05-001",
+                  "targetTitle": "Exemplos de Ambiguidade Estrutural nas Demonstrações Orais",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G05-002",
+                  "targetTitle": "Bateria de Fixação de Ambiguidade (8 Frases Codificadas)",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-001",
+                  "targetTitle": "A Falsa Ambiguidade do Pronome Possessivo \"Seu\" e a Proibição de Extrapolação",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +400,46 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nEsquema mnemônico-operacional criado para guiar a análise imediata de qualquer enunciado ambíguo em provas de concursos, reduzindo a tipologia a três vias lógicas de inspeção.\nEstrutura Operacional das Três Vias\n 1. VIA DA PALAVRA (Ambiguidade Lexical) Polissemia pura sem ancoragem contextual (ex.: banco, cachorro) MÉTODO DAS TRÊS VIAS ┼ 2. VIA DOS CONECTIVOS ESPECÍFICOS Preposição \"DE\": Agente (AA) vs. Paciente (CN) Conjunção \"E\": Soma Aditiva vs. Ação Recíproca/Oposição 3. VIA DAS SETAS (Referenciação e Posição) Formas Nominais: Gerúndio (-ndo) e Particípio (-do) Pronomes: Relativo (\"que\") e Possessivo (\"seu\") Modificadores Flutuantes: Adjetivo vs. Advérbio (\"rápido\", \"já\")\nRelações\nConsolida: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Esquema mnemônico-operacional criado para guiar a análise imediata de qualquer enunciado ambíguo em provas de concursos, reduzindo a tipologia a três vias lógicas de inspeção."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Estrutura Operacional das Três Vias",
+              "text": "┌── 1. VIA DA PALAVRA (Ambiguidade Lexical) │ └─ Polissemia pura sem ancoragem contextual (ex.: banco, cachorro) │ MÉTODO DAS TRÊS VIAS ───┼── 2. VIA DOS CONECTIVOS ESPECÍFICOS │ ├── Preposição \"DE\": Agente (AA) vs. Paciente (CN) │ └── Conjunção \"E\": Soma Aditiva vs. Ação Recíproca/Oposição │ └── 3. VIA DAS SETAS (Referenciação e Posição) ├── Formas Nominais: Gerúndio (-ndo) e Particípio (-do) ├── Pronomes: Relativo (\"que\") e Possessivo (\"seu\") └── Modificadores Flutuantes: Adjetivo vs. Advérbio (\"rápido\", \"já\")"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G05-002",
+                  "targetTitle": "Ambiguidade Lexical vs. Polissemia e o Papel do Contexto",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G05-003",
+                  "targetTitle": "Ambiguidade Estrutural: Os Cinco Padrões Sintáticos em Concursos",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G05-001",
+                  "targetTitle": "Protocolo de Diagnóstico e Classificação de Ambiguidade pelo Método das 3 Vias",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +452,49 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Regra canônica\nDiferentemente da sinonímia (em que os vocábulos compartilham campo semântico idêntico ou muito próximo), os homônimos e os parônimos caracterizam-se pela obrigatoriedade de significados completamente distintos.\nExplicação consolidada\nA coincidência ou proximidade entre homônimos e parônimos restringe-se com exclusividade aos planos fonético (fonia/som) e ortográfico (grafia/escrita). No plano semântico, nunca há interseção. A confusão em provas decorre exclusivamente do fato de as palavras soarem iguais ou parecidas, mas remeterem a realidades conceituais independentes.\nRelações\nFundamenta: , \nContrasta com:"
+              "type": "heading",
+              "level": 3,
+              "text": "Regra canônica"
+            },
+            {
+              "type": "paragraph",
+              "text": "Diferentemente da sinonímia (em que os vocábulos compartilham campo semântico idêntico ou muito próximo), os homônimos e os parônimos caracterizam-se pela obrigatoriedade de significados completamente distintos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A coincidência ou proximidade entre homônimos e parônimos restringe-se com exclusividade aos planos fonético (fonia/som) e ortográfico (grafia/escrita). No plano semântico, nunca há interseção. A confusão em provas decorre exclusivamente do fato de as palavras soarem iguais ou parecidas, mas remeterem a realidades conceituais independentes."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G05-006",
+                  "targetTitle": "Homonímia: Homônimos Perfeitos, Homófonos e Homógrafos",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G05-007",
+                  "targetTitle": "Paronímia: O Critério da Semelhança Formal e Fonética",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G05-008",
+                  "targetTitle": "Sinonímia, Antonímia e a Relatividade do Sentido Contextual",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +507,79 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA homonímia (homo = igual) ocorre quando dois ou mais vocábulos distintos possuem identidade absoluta em pelo menos um de seus aspectos formais materiais (som ou grafia), com significados totalmente diferentes.\nTaxonomia Completa\nRelações\nContrasta com:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A homonímia (homo = igual) ocorre quando dois ou mais vocábulos distintos possuem identidade absoluta em pelo menos um de seus aspectos formais materiais (som ou grafia), com significados totalmente diferentes."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Taxonomia Completa"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A12-G05-006",
+              "table": {
+                "tableId": "TABLE-IP-A12-G05-006",
+                "caption": "Taxonomia Completa",
+                "headers": [
+                  "Categoria",
+                  "Critério Formal",
+                  "Relação de Som / Grafia",
+                  "Exemplos Canônicos das Fontes"
+                ],
+                "rows": [
+                  [
+                    "Homônimos Perfeitos",
+                    "Coincidência total",
+                    "Som = e Grafia =",
+                    "•morro (monte) / morro (verbo morrer)• manga (fruta) / manga (vestuário)• passarão (verbo passar) / passarão (pássaro grande)• canto (canção) / canto (ângulo da parede)"
+                  ],
+                  [
+                    "Homônimos Homófonos (Imperfeitos)",
+                    "Coincidência apenas fonética",
+                    "Som = e Grafia ≠",
+                    "•sessão (tempo) / seção (setor) / cessão (ceder)• paço (palácio) / passo (andar/verbo)• acender (atear fogo) / ascender (subir)• haja (verbo haver) / aja (verbo agir)• calda (doce) / cauda (rabo)• serrou (serrote) / cerrou (fechou)• conserto (reparo) / concerto (música)"
+                  ],
+                  [
+                    "Homônimos Homógrafos (Imperfeitos)",
+                    "Coincidência apenas gráfica",
+                    "Grafia = e Som ≠",
+                    "•sede (/ê/ domicílio/prédio) / sede (/é/ vontade de beber)• colher (/ê/ talher) / colher (/é/ verbo apanhar)• almoço (/ô/ refeição) / almoço (/ó/ verbo)"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G05-007",
+                  "targetTitle": "Paronímia: O Critério da Semelhança Formal e Fonética",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-005",
+                  "targetTitle": "Confusão entre Homófonos e Parônimos por Proximidade Fonética",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-007",
+                  "targetTitle": "Confusão Fonética e Hipercorreção em Acender vs. Ascender",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +592,58 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA paronímia (paro = parecido) é a relação entre palavras que apresentam apenas semelhança quanto à grafia e à pronúncia, sem que haja identidade total em nenhum desses planos, associada a significados inteiramente distintos.\nCritério de delimitação rigorosa\nRejeita-se conceitualmente qualquer definição imprecisa que atribua \"mesma escrita\" aos parônimos. Se a escrita fosse idêntica, seriam homógrafos. Em parônimos, nada é 100% igual: ocorrem alternâncias vocálicas (/e/ vs. /i/, /o/ vs. /u/), consonantais (/c/ vs. /t/, /r/ vs. /l/) ou acréscimos estruturais de sílabas.\nRepertório de Pares Parônimos Essenciais\n• eminente (ilustre, elevado, notável) vs. iminente (prestes a ocorrer, pendente) • despercebido (não notado, invisível) vs. desapercebido (desprevenido, desprovido) • auferir (obter, colher lucros/vantagens) vs. aferir (medir, calibrar, conferir) • diferir (distinguir, divergir, adiar) vs. deferir (aprovar, conceder, despachar favoravelmente) • preito (homenagem, reverência, tributo) vs. pleito (eleição, disputa, contenda judicial) • tráfico (comércio ilegal, mercancia) vs. tráfego (trânsito, circulação de veículos) • emigrar (sair da pátria de origem) vs. imigrar (entrar em país estrangeiro) • expirar (soltar o ar, findar prazo) vs. inspirar (puxar o ar, incutir/despertar ideias) • conjuntura (situação atual, contexto) vs. conjectura (suposição, divagação, hipótese) • acidente (imprevisto grave/destrutivo) vs. incidente (imprevisto leve/sem danos) • descrição (ato de descrever, detalhar) vs. discrição (reserva, prudência, recato) • acerca de (a respeito de, sobre) vs. cerca de (aproximadamente)\nRelações\nContrasta com:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A paronímia (paro = parecido) é a relação entre palavras que apresentam apenas semelhança quanto à grafia e à pronúncia, sem que haja identidade total em nenhum desses planos, associada a significados inteiramente distintos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critério de delimitação rigorosa"
+            },
+            {
+              "type": "paragraph",
+              "text": "Rejeita-se conceitualmente qualquer definição imprecisa que atribua \"mesma escrita\" aos parônimos. Se a escrita fosse idêntica, seriam homógrafos. Em parônimos, nada é 100% igual: ocorrem alternâncias vocálicas (/e/ vs. /i/, /o/ vs. /u/), consonantais (/c/ vs. /t/, /r/ vs. /l/) ou acréscimos estruturais de sílabas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Repertório de Pares Parônimos Essenciais"
+            },
+            {
+              "type": "paragraph",
+              "text": "• eminente (ilustre, elevado, notável) vs. iminente (prestes a ocorrer, pendente) • despercebido (não notado, invisível) vs. desapercebido (desprevenido, desprovido) • auferir (obter, colher lucros/vantagens) vs. aferir (medir, calibrar, conferir) • diferir (distinguir, divergir, adiar) vs. deferir (aprovar, conceder, despachar favoravelmente) • preito (homenagem, reverência, tributo) vs. pleito (eleição, disputa, contenda judicial) • tráfico (comércio ilegal, mercancia) vs. tráfego (trânsito, circulação de veículos) • emigrar (sair da pátria de origem) vs. imigrar (entrar em país estrangeiro) • expirar (soltar o ar, findar prazo) vs. inspirar (puxar o ar, incutir/despertar ideias) • conjuntura (situação atual, contexto) vs. conjectura (suposição, divagação, hipótese) • acidente (imprevisto grave/destrutivo) vs. incidente (imprevisto leve/sem danos) • descrição (ato de descrever, detalhar) vs. discrição (reserva, prudência, recato) • acerca de (a respeito de, sobre) vs. cerca de (aproximadamente)"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G05-006",
+                  "targetTitle": "Homonímia: Homônimos Perfeitos, Homófonos e Homógrafos",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-004",
+                  "targetTitle": "Confusão entre Despercebido e Desapercebido",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-008",
+                  "targetTitle": "Distinção Crítica entre Acidente e Incidente na FGV",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +656,46 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nSinonímia: Relação entre palavras distintas que compartilham significados semelhantes ou equivalentes em determinado contexto (ex.: belo / bonito).\nAntonímia: Relação entre vocábulos que expressam ideias e significados contrários ou opostos em um mesmo eixo nocional (ex.: belo / feio).\nA regra da sinonímia relativa em concursos\nA identidade semântica absoluta entre palavras é fenômeno raríssimo na língua. Nas provas, o candidato deve operar com o conceito de equivalência contextual funcional: não se deve exigir 100% de coincidência semântica abstrata, mas sim verificar se a substituição vocabular preserva o sentido nuclear do período sem violar o registro ou a coerência.\nRelações\nContrasta com:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sinonímia: Relação entre palavras distintas que compartilham significados semelhantes ou equivalentes em determinado contexto (ex.: belo / bonito).",
+                "Antonímia: Relação entre vocábulos que expressam ideias e significados contrários ou opostos em um mesmo eixo nocional (ex.: belo / feio)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "A regra da sinonímia relativa em concursos"
+            },
+            {
+              "type": "paragraph",
+              "text": "A identidade semântica absoluta entre palavras é fenômeno raríssimo na língua. Nas provas, o candidato deve operar com o conceito de equivalência contextual funcional: não se deve exigir 100% de coincidência semântica abstrata, mas sim verificar se a substituição vocabular preserva o sentido nuclear do período sem violar o registro ou a coerência."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G05-005",
+                  "targetTitle": "Princípio da Distinção Semântica Obrigatória em Homônimos e Parônimos",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-006",
+                  "targetTitle": "A Inexistência de Sinonímia Universal e Absoluta",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +708,67 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nRelação semântica hierárquica e assimétrica de inclusão lógica baseada no princípio categorial de \"tipo de...\":\nHiperônimo (hiper = grande/geral): Vocábulo de sentido amplo e genérico que engloba outros termos específicos (ex.: animal, fruta, veículo).\nHipônimo (hipo = menor/específico): Vocábulo de sentido restrito e particular subordinado à categoria maior (ex.: boi, cavalo, maçã, carro).\nDinâmica da Coesão Textual Anafórica\nRetomada por Hiperônimo (Específico $\\rightarrow$ Geral): Emprega-se para retomar anadiplodicamente um termo específico já apresentado, evitando repetição vocabular.\nEstrutura: Apresenta o boi $\\rightarrow$ retoma com o animal.\nRetomada por Hipônimo (Geral $\\rightarrow$ Específico): Emprega-se quando o texto estabelece uma classe geral e, na sequência, especifica um membro daquela classe.\nEstrutura: Apresenta os animais $\\rightarrow$ especifica o cavalo."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Relação semântica hierárquica e assimétrica de inclusão lógica baseada no princípio categorial de \"tipo de...\":"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Hiperônimo (hiper = grande/geral): Vocábulo de sentido amplo e genérico que engloba outros termos específicos (ex.: animal, fruta, veículo).",
+                "Hipônimo (hipo = menor/específico): Vocábulo de sentido restrito e particular subordinado à categoria maior (ex.: boi, cavalo, maçã, carro)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Dinâmica da Coesão Textual Anafórica"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Retomada por Hiperônimo (Específico $\\rightarrow$ Geral): Emprega-se para retomar anadiplodicamente um termo específico já apresentado, evitando repetição vocabular."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura: Apresenta o boi $\\rightarrow$ retoma com o animal."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Retomada por Hipônimo (Geral $\\rightarrow$ Específico): Emprega-se quando o texto estabelece uma classe geral e, na sequência, especifica um membro daquela classe."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura: Apresenta os animais $\\rightarrow$ especifica o cavalo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G05-003",
+                  "targetTitle": "Identificação do Sentido Coesivo de Hiperônimos e Hipônimos",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -220,8 +781,76 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA homonímia perfeita pode manifestar-se por processos de derivação imprópria (conversão de classe gramatical) ou por alternância de gênero com mudança de significado sem qualquer modificação morfológica ou fonética.\nManifestações Canônicas\nDerivação Imprópria: A forma lexical e fonética permanece inalterada, mas a função gramatical oscila:\nOs feridos no confronto: Substantivo determinado por artigo.\nEles ficaram feridos: Adjetivo na função de predicativo do sujeito.\nDiagnóstico: Mantêm relação de homônimos perfeitos.\nAlternância de Gênero Gramatical (O Moral vs. A Moral):\nO moral (masculino): Ânimo, estado de espírito, disposição psicológica (\"O time entrou com o moral alto\").\nA moral (feminino): Conjunto de princípios éticos de conduta ou a lição conclusiva de uma narrativa (\"A moral da história\", \"conduta contrária à moral\").Exemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A homonímia perfeita pode manifestar-se por processos de derivação imprópria (conversão de classe gramatical) ou por alternância de gênero com mudança de significado sem qualquer modificação morfológica ou fonética."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Manifestações Canônicas"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Derivação Imprópria: A forma lexical e fonética permanece inalterada, mas a função gramatical oscila:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Os feridos no confronto: Substantivo determinado por artigo.",
+                "Eles ficaram feridos: Adjetivo na função de predicativo do sujeito.",
+                "Diagnóstico: Mantêm relação de homônimos perfeitos."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Alternância de Gênero Gramatical (O Moral vs. A Moral):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O moral (masculino): Ânimo, estado de espírito, disposição psicológica (\"O time entrou com o moral alto\").",
+                "A moral (feminino): Conjunto de princípios éticos de conduta ou a lição conclusiva de uma narrativa (\"A moral da história\", \"conduta contrária à moral\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G05-009",
+                  "targetTitle": "Troca Indevida de Gênero Gramatical em \"O Moral\" vs. \"A Moral\"",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G05-010",
+                  "targetTitle": "Questão 27 (FGV - 2023 - Pref. São José dos Campos - SP)",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G05-011",
+                  "targetTitle": "Questão 28 (FGV - 2023 - SMF-RJ - Fiscal de Rendas)",
+                  "targetUnitId": "IP-A12-G05",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -265,85 +894,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A12-G05-006",
-              "table": {
-                "tableId": "TABLE-IP-A12-G05-006",
-                "caption": "Taxonomia Completa",
-                "headers": [
-                  "Categoria",
-                  "Critério Formal",
-                  "Relação de Som / Grafia",
-                  "Exemplos Canônicos das Fontes"
-                ],
-                "rows": [
-                  [
-                    "Homônimos Perfeitos",
-                    "Coincidência total",
-                    "Som = e Grafia =",
-                    "•morro (monte) / morro (verbo morrer)• manga (fruta) / manga (vestuário)• passarão (verbo passar) / passarão (pássaro grande)• canto (canção) / canto (ângulo da parede)"
-                  ],
-                  [
-                    "Homônimos Homófonos (Imperfeitos)",
-                    "Coincidência apenas fonética",
-                    "Som = e Grafia ≠",
-                    "•sessão (tempo) / seção (setor) / cessão (ceder)• paço (palácio) / passo (andar/verbo)• acender (atear fogo) / ascender (subir)• haja (verbo haver) / aja (verbo agir)• calda (doce) / cauda (rabo)• serrou (serrote) / cerrou (fechou)• conserto (reparo) / concerto (música)"
-                  ],
-                  [
-                    "Homônimos Homógrafos (Imperfeitos)",
-                    "Coincidência apenas gráfica",
-                    "Grafia = e Som ≠",
-                    "•sede (/ê/ domicílio/prédio) / sede (/é/ vontade de beber)• colher (/ê/ talher) / colher (/é/ verbo apanhar)• almoço (/ô/ refeição) / almoço (/ó/ verbo)"
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAmbiguidade (ou anfibologia) é a duplicidade de sentidos que uma palavra, locução ou estrutura sintática manifesta, gerando indeterminação interpretativa sobre a real intenção comunicativa do emissor.\nExplicação consolidada\nMecanismo cognitivo e assimetria perceptiva: Diante de um enunciado ambíguo, os sentidos concorrentes não se apresentam com igual força. Há invariavelmente um primeiro sentido (mais evidente, imediato e convencional) e um segundo sentido (subjacente, gramaticalmente autorizado pela estrutura, porém menos óbvio).\nA postura interpretativa em provas: O erro em questões de concurso não decorre de incapacidade intelectual, mas da \"ingenuidade leitora\", na qual o candidato se satisfaz com o sentido imediato sem inspecionar os vínculos sintáticos paralelos.\nIntencionalidade:\nAcidental (Vício de linguagem): Falha de redação que compromete a clareza textual em peças dissertativas e documentos oficiais.\nIntencional (Recurso expressivo): Emprego deliberado em trocadilhos, humor, charges e publicidade (ex.: \"Na vida tudo é passageiro\").\nExemplos\nA mãe bateu na filha porque estava bêbada: O estado de embriaguez vincula-se sintaticamente tanto ao sujeito da oração principal (mãe) quanto ao objeto (filha).\nJoão foi atrás do táxi correndo: A ação expressa pelo gerúndio pode ser de João (a pé) ou do táxi (em trânsito veloz).\nRelações\nExpande: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA ambiguidade lexical decorre da duplicidade de significados inerente a uma palavra polissêmica ou homônima quando inserida em um contexto que não fornece restrições semânticas suficientes para fixar uma acepção única.\nExplicação consolidada\nA polissemia é uma propriedade dicionarizada do léxico (a palavra possui múltiplos significados em potencial), enquanto a ambiguidade é um defeito de estruturação contextual. A ocorrência de polissemia divide-se operacionalmente em dois cenários:\nPolissemia que CAUSA ambiguidade: Quando o cotexto permanece aberto e ambivalente.\nExemplo: \"O cachorro do meu vizinho causa problemas sempre.\" (Cachorro pode ser o animal doméstico ou uma ofensa moral dirigida ao vizinho).\nExemplo: \"A mala foi encontrada perto do banco.\" (Banco pode ser a agência financeira ou o assento de praça).\nPolissemia que NÃO causa ambiguidade: Quando os vocábulos circundantes restringem estritamente a interpretação a um único sentido.\nExemplo: \"O cachorro latiu a noite inteira.\" (O predicador verbal latir seleciona exclusivamente o traço semântico animal, desfazendo a ambiguidade).\nExemplo: \"Fui ao banco sacar dinheiro.\" (Sacar dinheiro delimita a instituição bancária).Contrasta com:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA ambiguidade estrutural (ou sintática) ocorre quando a posição, a ordenação dos termos ou a indefinição de vínculos sintático-funcionais permite mais de uma estrutura arbórea de análise na oração.\nOs Cinco Mecanismos Sintáticos Detalhados\n1. Mau uso da coordenação (Conectivo \"e\")\nOcorre quando a conjunção aditiva \"e\" liga sujeitos que podem estar associados em soma independente contra terceiros ou em ação recíproca/conflituosa entre si.\nExemplo: \"Botafogo e Vasco jogam neste domingo.\" (Podem jogar um contra o outro ou cada clube disputar partida distinta contra outros adversários).\nExemplo: \"João e Maria se casaram.\" (Casaram-se entre si ou cada qual casou-se com seu respectivo parceiro).\n2. Mau uso das formas nominais (Gerúndio e Particípio)\nOcorre quando uma oração reduzida de gerúndio ou particípio pode ter seu sujeito implícito vinculado a mais de um termo nominal antecedente.\nGerúndio: \"A garota viu o vizinho correndo.\" (Correndo pode vincular-se a garota ou a vizinho).\nParticípio: \"Júlio conversou com Paulo sentado no muro.\" (A forma sentado concorda em gênero e número masculinos singulares com ambos os sujeitos).\n3. Mau uso / má colocação de pronomes (Relativo \"que\" e Possessivo \"seu\")\nPronome Relativo (\"que\"): Gera duplo antecedente (\"Peguei emprestada a roupa da minha amiga que é muito bonita\") ou oscilação funcional entre pronome relativo e conjunção integrante (\"Falei com a chefe que estava com vertigem\" -> a qual estava vs. falei isso).\nPronome Possessivo (\"seu/sua\"): Gera ambiguidade quando existem dois referentes de 3ª pessoa explícitos no próprio texto (\"O professor de Maria terminou a aula fazendo apontamentos no seu caderno\" -> caderno de Maria ou do professor?).\n4. Má colocação dos termos (Adjetivo vs. Advérbio / Escopo Modificador)\nOcorre quando um modificador pode acoplar-se a classes gramaticais distintas ou a núcleos verbais diferentes.\nDuplo papel categorial: \"Comprou o carro rápido.\" (Rápido como adjetivo qualifica carro; como advérbio de modo modifica comprou).\nAdvérbio entre verbos: \"Chamar os bombeiros já ficou na moda.\" (Já pode modificar chamar ou ficou na moda).\n5. Indefinição entre Agente e Paciente (Preposição \"de\")\nOcorre quando um sintagma preposicionado por \"de\" liga-se a um substantivo abstrato derivado de verbo de ação:\nSentido Ativo (Agente): O termo preposicionado pratica a ação -> Sintaticamente é Adjunto Adnominal (AA).\nSentido Passivo (Paciente): O termo preposicionado sofre a ação -> Sintaticamente é Complemento Nominal (CN).\nExemplo: \"A criação da instituição demorou mais do que se esperava.\" (A instituição criou algo = AA vs. a instituição foi criada por terceiros = CN).\nExemplo: \"A lembrança de meu pai alegrou-me.\" (Meu pai lembrou-se de algo = AA vs. eu me lembrei do meu pai = CN)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nEsquema mnemônico-operacional criado para guiar a análise imediata de qualquer enunciado ambíguo em provas de concursos, reduzindo a tipologia a três vias lógicas de inspeção.\nEstrutura Operacional das Três Vias\n 1. VIA DA PALAVRA (Ambiguidade Lexical) Polissemia pura sem ancoragem contextual (ex.: banco, cachorro) MÉTODO DAS TRÊS VIAS ┼ 2. VIA DOS CONECTIVOS ESPECÍFICOS Preposição \"DE\": Agente (AA) vs. Paciente (CN) Conjunção \"E\": Soma Aditiva vs. Ação Recíproca/Oposição 3. VIA DAS SETAS (Referenciação e Posição) Formas Nominais: Gerúndio (-ndo) e Particípio (-do) Pronomes: Relativo (\"que\") e Possessivo (\"seu\") Modificadores Flutuantes: Adjetivo vs. Advérbio (\"rápido\", \"já\")\nRelações\nConsolida: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Regra canônica\nDiferentemente da sinonímia (em que os vocábulos compartilham campo semântico idêntico ou muito próximo), os homônimos e os parônimos caracterizam-se pela obrigatoriedade de significados completamente distintos.\nExplicação consolidada\nA coincidência ou proximidade entre homônimos e parônimos restringe-se com exclusividade aos planos fonético (fonia/som) e ortográfico (grafia/escrita). No plano semântico, nunca há interseção. A confusão em provas decorre exclusivamente do fato de as palavras soarem iguais ou parecidas, mas remeterem a realidades conceituais independentes.\nRelações\nFundamenta: , \nContrasta com:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA homonímia (homo = igual) ocorre quando dois ou mais vocábulos distintos possuem identidade absoluta em pelo menos um de seus aspectos formais materiais (som ou grafia), com significados totalmente diferentes.\nTaxonomia Completa\nRelações\nContrasta com:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA paronímia (paro = parecido) é a relação entre palavras que apresentam apenas semelhança quanto à grafia e à pronúncia, sem que haja identidade total em nenhum desses planos, associada a significados inteiramente distintos.\nCritério de delimitação rigorosa\nRejeita-se conceitualmente qualquer definição imprecisa que atribua \"mesma escrita\" aos parônimos. Se a escrita fosse idêntica, seriam homógrafos. Em parônimos, nada é 100% igual: ocorrem alternâncias vocálicas (/e/ vs. /i/, /o/ vs. /u/), consonantais (/c/ vs. /t/, /r/ vs. /l/) ou acréscimos estruturais de sílabas.\nRepertório de Pares Parônimos Essenciais\n• eminente (ilustre, elevado, notável) vs. iminente (prestes a ocorrer, pendente) • despercebido (não notado, invisível) vs. desapercebido (desprevenido, desprovido) • auferir (obter, colher lucros/vantagens) vs. aferir (medir, calibrar, conferir) • diferir (distinguir, divergir, adiar) vs. deferir (aprovar, conceder, despachar favoravelmente) • preito (homenagem, reverência, tributo) vs. pleito (eleição, disputa, contenda judicial) • tráfico (comércio ilegal, mercancia) vs. tráfego (trânsito, circulação de veículos) • emigrar (sair da pátria de origem) vs. imigrar (entrar em país estrangeiro) • expirar (soltar o ar, findar prazo) vs. inspirar (puxar o ar, incutir/despertar ideias) • conjuntura (situação atual, contexto) vs. conjectura (suposição, divagação, hipótese) • acidente (imprevisto grave/destrutivo) vs. incidente (imprevisto leve/sem danos) • descrição (ato de descrever, detalhar) vs. discrição (reserva, prudência, recato) • acerca de (a respeito de, sobre) vs. cerca de (aproximadamente)\nRelações\nContrasta com:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nSinonímia: Relação entre palavras distintas que compartilham significados semelhantes ou equivalentes em determinado contexto (ex.: belo / bonito).\nAntonímia: Relação entre vocábulos que expressam ideias e significados contrários ou opostos em um mesmo eixo nocional (ex.: belo / feio).\nA regra da sinonímia relativa em concursos\nA identidade semântica absoluta entre palavras é fenômeno raríssimo na língua. Nas provas, o candidato deve operar com o conceito de equivalência contextual funcional: não se deve exigir 100% de coincidência semântica abstrata, mas sim verificar se a substituição vocabular preserva o sentido nuclear do período sem violar o registro ou a coerência.\nRelações\nContrasta com:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nRelação semântica hierárquica e assimétrica de inclusão lógica baseada no princípio categorial de \"tipo de...\":\nHiperônimo (hiper = grande/geral): Vocábulo de sentido amplo e genérico que engloba outros termos específicos (ex.: animal, fruta, veículo).\nHipônimo (hipo = menor/específico): Vocábulo de sentido restrito e particular subordinado à categoria maior (ex.: boi, cavalo, maçã, carro).\nDinâmica da Coesão Textual Anafórica\nRetomada por Hiperônimo (Específico $\\rightarrow$ Geral): Emprega-se para retomar anadiplodicamente um termo específico já apresentado, evitando repetição vocabular.\nEstrutura: Apresenta o boi $\\rightarrow$ retoma com o animal.\nRetomada por Hipônimo (Geral $\\rightarrow$ Específico): Emprega-se quando o texto estabelece uma classe geral e, na sequência, especifica um membro daquela classe.\nEstrutura: Apresenta os animais $\\rightarrow$ especifica o cavalo."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA homonímia perfeita pode manifestar-se por processos de derivação imprópria (conversão de classe gramatical) ou por alternância de gênero com mudança de significado sem qualquer modificação morfológica ou fonética.\nManifestações Canônicas\nDerivação Imprópria: A forma lexical e fonética permanece inalterada, mas a função gramatical oscila:\nOs feridos no confronto: Substantivo determinado por artigo.\nEles ficaram feridos: Adjetivo na função de predicativo do sujeito.\nDiagnóstico: Mantêm relação de homônimos perfeitos.\nAlternância de Gênero Gramatical (O Moral vs. A Moral):\nO moral (masculino): Ânimo, estado de espírito, disposição psicológica (\"O time entrou com o moral alto\").\nA moral (feminino): Conjunto de princípios éticos de conduta ou a lição conclusiva de uma narrativa (\"A moral da história\", \"conduta contrária à moral\").Exemplificado por: ,"
         }
       ]
     },
@@ -464,7 +1016,9 @@
               "RULE-IP-A12-G05-001",
               "EXP-IP-A12-G05-040"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -548,7 +1102,9 @@
               "PROC-A12-G05-001",
               "EXP-IP-A12-G05-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -729,7 +1285,9 @@
               "PROC-A12-G05-002",
               "EXP-IP-A12-G05-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -818,7 +1376,9 @@
               "PROC-A12-G05-003",
               "EXP-IP-A12-G05-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -898,7 +1458,9 @@
               "PROC-A12-G05-004",
               "EXP-IP-A12-G05-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -973,7 +1535,9 @@
               "CONTRAST-IP-A12-G05-001",
               "EXP-IP-A12-G05-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1127,7 +1691,9 @@
               "CONTRAST-IP-A12-G05-002",
               "EXP-IP-A12-G05-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1192,7 +1758,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-001",
               "EXP-IP-A12-G05-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1319,7 +1887,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-002",
               "EXP-IP-A12-G05-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1385,7 +1955,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-003",
               "EXP-IP-A12-G05-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1463,7 +2035,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-004",
               "EXP-IP-A12-G05-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1542,7 +2116,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-005",
               "EXP-IP-A12-G05-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1618,7 +2194,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-006",
               "EXP-IP-A12-G05-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1696,7 +2274,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-007",
               "EXP-IP-A12-G05-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1774,7 +2354,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-008",
               "EXP-IP-A12-G05-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1853,7 +2435,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-009",
               "EXP-IP-A12-G05-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1933,7 +2517,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-010",
               "EXP-IP-A12-G05-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2011,7 +2597,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-011",
               "EXP-IP-A12-G05-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2089,7 +2677,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-012",
               "EXP-IP-A12-G05-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2152,7 +2742,9 @@
               "WORKED_EXAMPLE-IP-A12-G05-013",
               "EXP-IP-A12-G05-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2217,7 +2809,9 @@
               "WARN-A12-G05-001",
               "EXP-IP-A12-G05-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2249,7 +2843,9 @@
               "WARN-A12-G05-002",
               "EXP-IP-A12-G05-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2281,7 +2877,9 @@
               "WARN-A12-G05-003",
               "EXP-IP-A12-G05-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2317,7 +2915,9 @@
               "WARN-A12-G05-004",
               "EXP-IP-A12-G05-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2349,7 +2949,9 @@
               "WARN-A12-G05-005",
               "EXP-IP-A12-G05-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2381,7 +2983,9 @@
               "WARN-A12-G05-006",
               "EXP-IP-A12-G05-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2413,7 +3017,9 @@
               "WARN-A12-G05-007",
               "EXP-IP-A12-G05-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2449,7 +3055,9 @@
               "WARN-A12-G05-008",
               "EXP-IP-A12-G05-TRAP-008"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2481,29 +3089,108 @@
               "WARN-A12-G05-009",
               "EXP-IP-A12-G05-TRAP-009"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Conceito, Natureza e Psicologia da Ambiguidade**: Definição ou ideia central\nAmbiguidade (ou anfibologia) é a duplicidade de sentidos que uma palavra, locução ou estrutura sintática manifesta, gerando indeterminação interpretativa sobre a real intenção comunicativa do emissor.\nExplicação consolidada\nMecanismo cognitivo e assimetria perceptiva: Diante de um enunciado ambíguo, os sentidos concorrentes não se apresentam com igual força. Há invariavelmente um primeiro sentido (mais evidente, imediato e convencional) e um segundo sentido (subjacente, gramaticalmente autorizado pela estrutura, porém menos óbvio).\nA postura interpretativa em provas: O erro em questões de concurso não decorre de incapacidade intelectual, mas da \"ingenuidade leitora\", na qual o candidato se satisfaz com o sentido imediato sem inspecionar os vínculos sintáticos paralelos.\nIntencionalidade:\nAcidental (Vício de linguagem): Falha de redação que compromete a clareza textual em peças dissertativas e documentos oficiais.\nIntencional (Recurso expressivo): Emprego deliberado em trocadilhos, humor, charges e publicidade (ex.: \"Na vida tudo é passageiro\").\nExemplos\nA mãe bateu na filha porque estava bêbada: O estado de embriaguez vincula-se sintaticamente tanto ao sujeito da oração principal (mãe) quanto ao objeto (filha).\nJoão foi atrás do táxi correndo: A ação expressa pelo gerúndio pode ser de João (a pé) ou do táxi (em trânsito veloz).\nRelações\nExpande: ,",
-            "**Ambiguidade Lexical vs. Polissemia e o Papel do Contexto**: Definição ou ideia central\nA ambiguidade lexical decorre da duplicidade de significados inerente a uma palavra polissêmica ou homônima quando inserida em um contexto que não fornece restrições semânticas suficientes para fixar uma acepção única.\nExplicação consolidada\nA polissemia é uma propriedade dicionarizada do léxico (a palavra possui múltiplos significados em potencial), enquanto a ambiguidade é um defeito de estruturação contextual. A ocorrência de polissemia divide-se operacionalmente em dois cenários:\nPolissemia que CAUSA ambiguidade: Quando o cotexto permanece aberto e ambivalente.\nExemplo: \"O cachorro do meu vizinho causa problemas sempre.\" (Cachorro pode ser o animal doméstico ou uma ofensa moral dirigida ao vizinho).\nExemplo: \"A mala foi encontrada perto do banco.\" (Banco pode ser a agência financeira ou o assento de praça).\nPolissemia que NÃO causa ambiguidade: Quando os vocábulos circundantes restringem estritamente a interpretação a um único sentido.\nExemplo: \"O cachorro latiu a noite inteira.\" (O predicador verbal latir seleciona exclusivamente o traço semântico animal, desfazendo a ambiguidade).\nExemplo: \"Fui ao banco sacar dinheiro.\" (Sacar dinheiro delimita a instituição bancária).Contrasta com:",
-            "**Ambiguidade Estrutural: Os Cinco Padrões Sintáticos em Concursos**: Definição ou ideia central\nA ambiguidade estrutural (ou sintática) ocorre quando a posição, a ordenação dos termos ou a indefinição de vínculos sintático-funcionais permite mais de uma estrutura arbórea de análise na oração.\nOs Cinco Mecanismos Sintáticos Detalhados\n1. Mau uso da coordenação (Conectivo \"e\")\nOcorre quando a conjunção aditiva \"e\" liga sujeitos que podem estar associados em soma independente contra terceiros ou em ação recíproca/conflituosa entre si.\nExemplo: \"Botafogo e Vasco jogam neste domingo.\" (Podem jogar um contra o outro ou cada clube disputar partida distinta contra outros adversários).\nExemplo: \"João e Maria se casaram.\" (Casaram-se entre si ou cada qual casou-se com seu respectivo parceiro).\n2. Mau uso das formas nominais (Gerúndio e Particípio)\nOcorre quando uma oração reduzida de gerúndio ou particípio pode ter seu sujeito implícito vinculado a mais de um termo nominal antecedente.\nGerúndio: \"A garota viu o vizinho correndo.\" (Correndo pode vincular-se a garota ou a vizinho).\nParticípio: \"Júlio conversou com Paulo sentado no muro.\" (A forma sentado concorda em gênero e número masculinos singulares com ambos os sujeitos).\n3. Mau uso / má colocação de pronomes (Relativo \"que\" e Possessivo \"seu\")\nPronome Relativo (\"que\"): Gera duplo antecedente (\"Peguei emprestada a roupa da minha amiga que é muito bonita\") ou oscilação funcional entre pronome relativo e conjunção integrante (\"Falei com a chefe que estava com vertigem\" -> a qual estava vs. falei isso).\nPronome Possessivo (\"seu/sua\"): Gera ambiguidade quando existem dois referentes de 3ª pessoa explícitos no próprio texto (\"O professor de Maria terminou a aula fazendo apontamentos no seu caderno\" -> caderno de Maria ou do professor?).\n4. Má colocação dos termos (Adjetivo vs. Advérbio / Escopo Modificador)\nOcorre quando um modificador pode acoplar-se a classes gramaticais distintas ou a núcleos verbais diferentes.\nDuplo papel categorial: \"Comprou o carro rápido.\" (Rápido como adjetivo qualifica carro; como advérbio de modo modifica comprou).\nAdvérbio entre verbos: \"Chamar os bombeiros já ficou na moda.\" (Já pode modificar chamar ou ficou na moda).\n5. Indefinição entre Agente e Paciente (Preposição \"de\")\nOcorre quando um sintagma preposicionado por \"de\" liga-se a um substantivo abstrato derivado de verbo de ação:\nSentido Ativo (Agente): O termo preposicionado pratica a ação -> Sintaticamente é Adjunto Adnominal (AA).\nSentido Passivo (Paciente): O termo preposicionado sofre a ação -> Sintaticamente é Complemento Nominal (CN).\nExemplo: \"A criação da instituição demorou mais do que se esperava.\" (A instituição criou algo = AA vs. a instituição foi criada por terceiros = CN).\nExemplo: \"A lembrança de meu pai alegrou-me.\" (Meu pai lembrou-se de algo = AA vs. eu me lembrei do meu pai = CN).",
-            "**O Método das 3 Vias para Desambiguação em Provas**: Definição ou ideia central\nEsquema mnemônico-operacional criado para guiar a análise imediata de qualquer enunciado ambíguo em provas de concursos, reduzindo a tipologia a três vias lógicas de inspeção.\nEstrutura Operacional das Três Vias\n 1. VIA DA PALAVRA (Ambiguidade Lexical) Polissemia pura sem ancoragem contextual (ex.: banco, cachorro) MÉTODO DAS TRÊS VIAS ┼ 2. VIA DOS CONECTIVOS ESPECÍFICOS Preposição \"DE\": Agente (AA) vs. Paciente (CN) Conjunção \"E\": Soma Aditiva vs. Ação Recíproca/Oposição 3. VIA DAS SETAS (Referenciação e Posição) Formas Nominais: Gerúndio (-ndo) e Particípio (-do) Pronomes: Relativo (\"que\") e Possessivo (\"seu\") Modificadores Flutuantes: Adjetivo vs. Advérbio (\"rápido\", \"já\")\nRelações\nConsolida: ,",
-            "**Princípio da Distinção Semântica Obrigatória em Homônimos e Parônimos**: Regra canônica\nDiferentemente da sinonímia (em que os vocábulos compartilham campo semântico idêntico ou muito próximo), os homônimos e os parônimos caracterizam-se pela obrigatoriedade de significados completamente distintos.\nExplicação consolidada\nA coincidência ou proximidade entre homônimos e parônimos restringe-se com exclusividade aos planos fonético (fonia/som) e ortográfico (grafia/escrita). No plano semântico, nunca há interseção. A confusão em provas decorre exclusivamente do fato de as palavras soarem iguais ou parecidas, mas remeterem a realidades conceituais independentes.\nRelações\nFundamenta: , \nContrasta com:",
-            "**Homonímia: Homônimos Perfeitos, Homófonos e Homógrafos**: Definição ou ideia central\nA homonímia (homo = igual) ocorre quando dois ou mais vocábulos distintos possuem identidade absoluta em pelo menos um de seus aspectos formais materiais (som ou grafia), com significados totalmente diferentes.\nTaxonomia Completa\nRelações\nContrasta com:",
-            "**Paronímia: O Critério da Semelhança Formal e Fonética**: Definição ou ideia central\nA paronímia (paro = parecido) é a relação entre palavras que apresentam apenas semelhança quanto à grafia e à pronúncia, sem que haja identidade total em nenhum desses planos, associada a significados inteiramente distintos.\nCritério de delimitação rigorosa\nRejeita-se conceitualmente qualquer definição imprecisa que atribua \"mesma escrita\" aos parônimos. Se a escrita fosse idêntica, seriam homógrafos. Em parônimos, nada é 100% igual: ocorrem alternâncias vocálicas (/e/ vs. /i/, /o/ vs. /u/), consonantais (/c/ vs. /t/, /r/ vs. /l/) ou acréscimos estruturais de sílabas.\nRepertório de Pares Parônimos Essenciais\n• eminente (ilustre, elevado, notável) vs. iminente (prestes a ocorrer, pendente) • despercebido (não notado, invisível) vs. desapercebido (desprevenido, desprovido) • auferir (obter, colher lucros/vantagens) vs. aferir (medir, calibrar, conferir) • diferir (distinguir, divergir, adiar) vs. deferir (aprovar, conceder, despachar favoravelmente) • preito (homenagem, reverência, tributo) vs. pleito (eleição, disputa, contenda judicial) • tráfico (comércio ilegal, mercancia) vs. tráfego (trânsito, circulação de veículos) • emigrar (sair da pátria de origem) vs. imigrar (entrar em país estrangeiro) • expirar (soltar o ar, findar prazo) vs. inspirar (puxar o ar, incutir/despertar ideias) • conjuntura (situação atual, contexto) vs. conjectura (suposição, divagação, hipótese) • acidente (imprevisto grave/destrutivo) vs. incidente (imprevisto leve/sem danos) • descrição (ato de descrever, detalhar) vs. discrição (reserva, prudência, recato) • acerca de (a respeito de, sobre) vs. cerca de (aproximadamente)\nRelações\nContrasta com:",
-            "**Sinonímia, Antonímia e a Relatividade do Sentido Contextual**: Definição ou ideia central\nSinonímia: Relação entre palavras distintas que compartilham significados semelhantes ou equivalentes em determinado contexto (ex.: belo / bonito).\nAntonímia: Relação entre vocábulos que expressam ideias e significados contrários ou opostos em um mesmo eixo nocional (ex.: belo / feio).\nA regra da sinonímia relativa em concursos\nA identidade semântica absoluta entre palavras é fenômeno raríssimo na língua. Nas provas, o candidato deve operar com o conceito de equivalência contextual funcional: não se deve exigir 100% de coincidência semântica abstrata, mas sim verificar se a substituição vocabular preserva o sentido nuclear do período sem violar o registro ou a coerência.\nRelações\nContrasta com:",
-            "**Hiperonímia e Hiponímia na Coesão Textual e Reescrita**: Definição ou ideia central\nRelação semântica hierárquica e assimétrica de inclusão lógica baseada no princípio categorial de \"tipo de...\":\nHiperônimo (hiper = grande/geral): Vocábulo de sentido amplo e genérico que engloba outros termos específicos (ex.: animal, fruta, veículo).\nHipônimo (hipo = menor/específico): Vocábulo de sentido restrito e particular subordinado à categoria maior (ex.: boi, cavalo, maçã, carro).\nDinâmica da Coesão Textual Anafórica\nRetomada por Hiperônimo (Específico $\\rightarrow$ Geral): Emprega-se para retomar anadiplodicamente um termo específico já apresentado, evitando repetição vocabular.\nEstrutura: Apresenta o boi $\\rightarrow$ retoma com o animal.\nRetomada por Hipônimo (Geral $\\rightarrow$ Específico): Emprega-se quando o texto estabelece uma classe geral e, na sequência, especifica um membro daquela classe.\nEstrutura: Apresenta os animais $\\rightarrow$ especifica o cavalo.",
-            "**Homonímia Perfeita sob Derivação Imprópria e Mudança de Gênero Gramatical**: Definição ou ideia central\nA homonímia perfeita pode manifestar-se por processos de derivação imprópria (conversão de classe gramatical) ou por alternância de gênero com mudança de significado sem qualquer modificação morfológica ou fonética.\nManifestações Canônicas\nDerivação Imprópria: A forma lexical e fonética permanece inalterada, mas a função gramatical oscila:\nOs feridos no confronto: Substantivo determinado por artigo.\nEles ficaram feridos: Adjetivo na função de predicativo do sujeito.\nDiagnóstico: Mantêm relação de homônimos perfeitos.\nAlternância de Gênero Gramatical (O Moral vs. A Moral):\nO moral (masculino): Ânimo, estado de espírito, disposição psicológica (\"O time entrou com o moral alto\").\nA moral (feminino): Conjunto de princípios éticos de conduta ou a lição conclusiva de uma narrativa (\"A moral da história\", \"conduta contrária à moral\").Exemplificado por: ,"
-          ]
+          "term": "Conceito, Natureza e Psicologia da Ambiguidade",
+          "shortDefinition": "Ambiguidade (ou anfibologia) é a duplicidade de sentidos que uma palavra, locução ou estrutura sintática manifesta, gerando indeterminação interpretativa sobre a real intenção comunicativa do emissor.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-01"
+          }
+        },
+        {
+          "term": "Ambiguidade Lexical vs. Polissemia e o Papel do Contexto",
+          "shortDefinition": "A ambiguidade lexical decorre da duplicidade de significados inerente a uma palavra polissêmica ou homônima quando inserida em um contexto que não fornece restrições semânticas suficientes para fixar uma acepção única.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-02"
+          },
+          "operationalUse": "A polissemia é uma propriedade dicionarizada do léxico (a palavra possui múltiplos significados em potencial), enquanto a ambiguidade é um defeito de estruturação contextual."
+        },
+        {
+          "term": "Ambiguidade Estrutural: Os Cinco Padrões Sintáticos em Concursos",
+          "shortDefinition": "A ambiguidade estrutural (ou sintática) ocorre quando a posição, a ordenação dos termos ou a indefinição de vínculos sintático-funcionais permite mais de uma estrutura arbórea de análise na oração.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-03"
+          },
+          "operationalUse": "Ocorre quando a conjunção aditiva \"e\" liga sujeitos que podem estar associados em soma independente contra terceiros ou em ação recíproca/conflituosa entre si."
+        },
+        {
+          "term": "O Método das 3 Vias para Desambiguação em Provas",
+          "shortDefinition": "Esquema mnemônico-operacional criado para guiar a análise imediata de qualquer enunciado ambíguo em provas de concursos, reduzindo a tipologia a três vias lógicas de inspeção.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-04"
+          }
+        },
+        {
+          "term": "Princípio da Distinção Semântica Obrigatória em Homônimos e Parônimos",
+          "shortDefinition": "Diferentemente da sinonímia (em que os vocábulos compartilham campo semântico idêntico ou muito próximo), os homônimos e os parônimos caracterizam-se pela obrigatoriedade de significados completamente distintos.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-05"
+          },
+          "operationalUse": "A coincidência ou proximidade entre homônimos e parônimos restringe-se com exclusividade aos planos fonético (fonia/som) e ortográfico (grafia/escrita)."
+        },
+        {
+          "term": "Homonímia: Homônimos Perfeitos, Homófonos e Homógrafos",
+          "shortDefinition": "A homonímia (homo = igual) ocorre quando dois ou mais vocábulos distintos possuem identidade absoluta em pelo menos um de seus aspectos formais materiais (som ou grafia), com significados totalmente diferentes.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-06"
+          }
+        },
+        {
+          "term": "Paronímia: O Critério da Semelhança Formal e Fonética",
+          "shortDefinition": "A paronímia (paro = parecido) é a relação entre palavras que apresentam apenas semelhança quanto à grafia e à pronúncia, sem que haja identidade total em nenhum desses planos, associada a significados inteiramente distintos.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-07"
+          }
+        },
+        {
+          "term": "Sinonímia, Antonímia e a Relatividade do Sentido Contextual",
+          "shortDefinition": "A identidade semântica absoluta entre palavras é fenômeno raríssimo na língua. Nas provas, o candidato deve operar com o conceito de equivalência contextual funcional: não se deve exigir 100% de coincidência semântica abstrata, mas sim verificar se a substituição vocabular preserva o sentido nuclear do período sem violar o registro ou a coerência.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-08"
+          }
+        },
+        {
+          "term": "Hiperonímia e Hiponímia na Coesão Textual e Reescrita",
+          "shortDefinition": "Relação semântica hierárquica e assimétrica de inclusão lógica baseada no princípio categorial de \"tipo de...\":",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-09"
+          }
+        },
+        {
+          "term": "Homonímia Perfeita sob Derivação Imprópria e Mudança de Gênero Gramatical",
+          "shortDefinition": "A homonímia perfeita pode manifestar-se por processos de derivação imprópria (conversão de classe gramatical) ou por alternância de gênero com mudança de significado sem qualquer modificação morfológica ou fonética.",
+          "detailTarget": {
+            "unitId": "IP-A12-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G05-10"
+          }
         }
       ]
     },
@@ -2802,7 +3489,39 @@
         "confidence": 0.98
       },
       "answerSha256": "41c5801ddcbd492c69120e3f2526f7b7e32744479917a32f3d3b501c40986125",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "A frase abaixo em que ocorre ambiguidade é:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ninguém mais os encontrou de novo;"
+          },
+          {
+            "label": "B",
+            "text": "O cargo de oficial de justiça é importante;"
+          },
+          {
+            "label": "C",
+            "text": "A nomeação do Ministro foi surpreendente;"
+          },
+          {
+            "label": "D",
+            "text": "Tudo foi organizado para o julgamento;"
+          },
+          {
+            "label": "E",
+            "text": "As folhas do caderno despencaram."
+          }
+        ],
+        "answer": "C",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -2856,7 +3575,10 @@
         "confidence": 0.98
       },
       "answerSha256": "e96d4aa2800aaa8db26e6af0ced597ab1dc20ce236f28fc9363db2e482240829",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A12-aula12.q0116"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -3080,60 +3802,6 @@
         "confidence": 0.98
       },
       "answerSha256": "19b91fcc2c2990632355c76b2b9fe006c733ce2ad09197d23950dd08f12b5422",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A12-aula12.q0116",
-      "lessonId": "A12",
-      "sourceQuestionId": "aula12.q0116",
-      "questionPayload": {
-        "question_id": "aula12.q0116",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "TELEBRAS",
-        "position": null,
-        "year": 2022,
-        "source_label": "(CEBRASPE / TELEBRAS / 2022)",
-        "support_text": null,
-        "prompt": "Em ‘As pessoas conscientes que seguem as insinuações alheias tendem a permanecer indecisas\nno lugar’ (segundo parágrafo), a palavra ‘alheias’ tem o mesmo sentido de ambíguas.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.semantics.sinonimo",
-          "pt.semantics.antonimo",
-          "pt.semantics.ambiguidade"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0081"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.96,
-        "occurrence_type": "question_list",
-        "section_id": "aula12.sec16",
-        "number_in_section": 26,
-        "duplicate_of": "aula12.q0046",
-        "question_family_id": "aula12.qfam0046"
-      },
-      "questionSha256": "4467966fb85087a54c6774a61a77dcf93aa1987b57134d4dbed10799a8c86dbe",
-      "answerPayload": {
-        "answer_id": "aula12.q0116.answer",
-        "question_id": "aula12.q0116",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0090"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "bbd036817d94c31fa15e4e9a2821561d92faa7dbbd9852ab69f7b65d9e067a74",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

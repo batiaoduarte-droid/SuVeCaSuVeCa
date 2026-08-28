@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A00-G03",
     "lessonId": "A00",
     "title": "Divisão Silábica e Translineação",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A00-G03",
@@ -51,55 +52,306 @@
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Regras Fundamentais de Divisão Silábica",
-          "pedagogicalGoal": "Dominar as regras normativas de partição silábica de dígrafos, encontros consonantais e prefixos.",
+          "groupId": "GRP-A00-G03-CANONICAL-01",
+          "title": "Encontros Vocálicos: Hiato, Ditongo Crescente, Ditongo Decrescente e Ortoepia",
+          "conceptRefs": [
+            "KB-A00-G03-ESTUDO-DA-SILABA-QUESTOES-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "classification",
-              "title": "Separam-se vs Não se Separam",
-              "categories": [
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os encontros vocálicos estruturam-se a partir da capacidade de cada som vocálico atuar como núcleo silábico (Vogal) ou apoio fonético átono (Semivogal):"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Hiato ($V - V$): Encontro de duas vogais plenas que, por terem força fonética autônoma, pertencem obrigatoriamente a sílabas distintas.",
+                "Ditongo Crescente ($SV + V$): Encontro na mesma sílaba de uma semivogal (som mais fraco) que transita para uma vogal (núcleo silábico mais forte).",
+                "Ditongo Decrescente ($V + SV$): Encontro na mesma sílaba de uma vogal que transita para uma semivogal.",
+                "Tritongo ($SV + V + SV$): Sequência inseparável de semivogal + vogal + semivogal na mesma sílaba."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Hiatos:",
+                "ma-te-ri-al (i - a em sílabas diferentes).",
+                "po-e-si-a (po-e = hiato $o-e$; si-a = hiato $i-a$).",
+                "ri-o (ri - o = hiato $i-o$).",
+                "e-co-no-mi-a (mi - a = a vogal tônica i separa-se da vogal a).",
+                "Ditongos Crescentes:",
+                "in-di-ví-duo (duo = $SV + V$).",
+                "qua-dro (qua = $SV + V$).",
+                "e-mer-gên-cia (cia = $SV + V$).",
+                "cui-da-do (cui = na pronúncia culta padrão, o u é semivogal átona e o i é vogal tônica/núcleo silábico, configurando transição ascendente $SV \\to V$).",
+                "ma-lí-cia (cia = $SV + V$).",
+                "Ditongos Decrescentes:",
+                "gra-tui-to (gra-tui-to = a sequência ui forma ditongo decrescente $V + SV$; não leva acento gráfico).",
+                "au-men-tar (au = $V + SV$).",
+                "bei-ra (bei = a vogal e une-se à semivogal i).",
+                "pre-con-cei-to (cei = $V + SV$).",
+                "ve-lei-ros (lei = $V + SV$).",
+                "dois (dois = $V + SV$).",
+                "co-ne-xão (xão = foneticamente $/w\\tilde{a}w/$, ditongo nasal decrescente)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento e ortoepia"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ortoepia de \"Gratuito\": A pronúncia coloquial gra-tu-í-to (com hiato) é um erro de prosódia. Se houvesse hiato com 'i' tônico, a palavra exigiria acento gráfico (gratuíto), inexistente no sistema ortográfico oficial.",
+                "Ortoepia e Fonética de \"Cuidado\": Na emissão acústica padrão da sílaba cui-, a voz projeta-se com menor intensidade no u e atinge o ápice de intensidade na vogal i ($SV \\to V$), classificando-se como ditongo crescente."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
                 {
-                  "category": "Separam-se Sempre",
-                  "items": [
-                    "rr (car-ro)",
-                    "ss (pas-so)",
-                    "sc (nas-cer)",
-                    "sç (des-ço)",
-                    "xc (ex-ce-to)",
-                    "Hiatos (ca-a-tin-ga, sa-í-da)"
-                  ],
-                  "description": "Elementos que não podem coabitar a mesma sílaba"
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-001",
+                  "targetTitle": "Questão 01: Ocorrência de Hiato (FUNDATEC 2023)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
                 },
                 {
-                  "category": "Nunca se Separam",
-                  "items": [
-                    "ch (cha-ve)",
-                    "lh (fi-lho)",
-                    "nh (ba-nho)",
-                    "qu/gu (quei-jo)",
-                    "Ditongos (noi-te)",
-                    "Tritongos (I-gua-çu)"
-                  ],
-                  "description": "Unidades fonéticas coesas"
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-002",
+                  "targetTitle": "Questão 06: Identificação de Ditongo Crescente (FAU)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-003",
+                  "targetTitle": "Questão 10: Ditongos Decrescentes vs. Hiatos (CEBRASPE)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-004",
+                  "targetTitle": "Questão 17: Correlação de Encontros Vocálicos (IDECAN 2024)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-015",
+                  "targetTitle": "Questão 21: Julgamento de Dígrafo, Ditongo e EC Disjunto (IDECAN 2023)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A00-G03-ESTUDO-DA-SILABA-QUESTOES-001",
+                  "targetTitle": "Falsa Hipercorreção na Pronúncia de \"Gratuito\", \"Fortuito\" e \"Circuito\"",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "traps"
                 }
-              ],
-              "text": "A separação silábica segue a estrutura fonética e morfológica da língua."
+              ]
             }
           ]
         },
         {
-          "groupId": "canonical-table-coverage",
-          "title": "Quadros canônicos complementares",
-          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
-          "semanticKind": "canonical_table_coverage",
+          "groupId": "GRP-A00-G03-CANONICAL-02",
+          "title": "Dígrafos Consonantais e Vocálicos: Tipologia, Reconhecimento e Separação",
+          "conceptRefs": [
+            "KB-A00-G03-ESTUDO-DA-SILABA-QUESTOES-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Dígrafo (ou digrama) é o grupo de duas letras que representa graficamente um único fonema (2 letras = 1 som)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Classificação canônica"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dígrafos Consonantais:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Inseparáveis: ch (acha = $/ʃ/$), lh (mulher, olhavam = $/ʎ/$), nh (caminhando, bainha, tinha = $/ɲ/$), e os grupos qu/gu quando seguidos de e/i com u mudo (esqueleto, porque = $/k/$).",
+                "Separáveis: rr (ter-ra, bar-ra-da), ss (pos-sí-vel, pes-so-as, pas-sa-gem, an-das-se), sc (cres-ci-men-to, des-ces-se), sç (nas-ço), xc (ex-ce-lên-cia)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dígrafos Vocálicos:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ocorrem quando uma vogal é seguida das consoantes nasais m ou n na mesma sílaba em final de sílaba interior ou absoluta:",
+                "an/am: ca-mi-nhan-do (an), quan-ti-da-de (an), som-bras (om).",
+                "en/em: pas-sa-gem (em), cres-ci-men-to (en), exaus-ti-va-men-te (en).",
+                "in/im: tringulo (in), lim-po (im).",
+                "on/om: pon-tes (on), con-di-ções (on), con-te-ú-dos (on).",
+                "un/um: fun-do (un), je-jum (um)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Limites e ressalvas"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A consoante m ou n só forma dígrafo vocálico se estiver travando a sílaba. Se estiver seguida de vogal na sílaba seguinte (va-men-te), a letra m atua como consoante autônoma e não forma dígrafo vocálico com a vogal anterior.",
+                "Questão do \"H\" inicial: O H mudo de início de palavra (horas, hormonal) não produz som (-1 fonema), mas diante de questões de concurso com alternativas contendo dígrafos clássicos indiscutíveis (nh, lh, ch, an), prefere-se a opção com dígrafos estritos."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-006",
+                  "targetTitle": "Questão 03: Dígrafos em \"Caminhando\" (FUNDATEC)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-009",
+                  "targetTitle": "Questão 08: Conjunto Exclusivo de Dígrafos (Consuplan 2023)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-011",
+                  "targetTitle": "Questão 11: Dígrafos Vocálicos e Consonantais (CEBRASPE 2023)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-013",
+                  "targetTitle": "Questão 13: Ortografia do Dígrafo \"SC\" (CESGRANRIO)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-015",
+                  "targetTitle": "Questão 21: Julgamento de Dígrafo, Ditongo e EC Disjunto (IDECAN 2023)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A00-G03-CANONICAL-03",
+          "title": "Distinção entre Dígrafo e Encontro Consonantal (Perfeito e Disjunto)",
+          "conceptRefs": [
+            "KB-A00-G03-ESTUDO-DA-SILABA-QUESTOES-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A diferença fundamental entre dígrafo e encontro consonantal reside na contagem de realizações acústicas (fonemas):"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Dígrafo: 2 letras = 1 único fonema consonantal ou vocálico.",
+                "Encontro Consonantal: 2 ou mais letras consoantes em sequência imediata = 2 ou mais fonemas consonantais plenamente audíveis e articulados."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Tipos de encontros consonantais"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Encontro Consonantal Próprio / Perfeito (Tautossilábico): Ocorre na mesma sílaba, tipicamente formado por consoante oclusiva/fricativa + l ou r."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "ci-clo (cl), ce-le-bra-do (br), ou-tu-bro (br), qua-dro (dr), pra-to (pr)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Encontro Consonantal Impróprio / Disjunto / Imperfeito (Heterossilábico): Ocorre em sílabas vizinhas, quando as duas consoantes articuladas se separam na divisão silábica."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "hor-mo-nal (r - m), bar-cos (r - c), rit-mo (t - m), ob-je-to (b - j)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Tabela comparativa de fixação"
+            },
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A00-G03-001",
+              "tableId": "TABLE-IP-A00-G03-004",
               "table": {
-                "tableId": "TABLE-IP-A00-G03-001",
-                "caption": "Explicação central",
+                "tableId": "TABLE-IP-A00-G03-004",
+                "caption": "Tabela comparativa de fixação",
                 "headers": [
                   "Palavra",
                   "Encontro Grafêmico",
@@ -138,15 +390,580 @@
                     "om = vogal nasal $/õ/$; br = duas consoantes audíveis."
                   ]
                 ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
+              }
             },
             {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-007",
+                  "targetTitle": "Questão 04: Dígrafo vs. Encontro Consonantal (FAU 2023)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-015",
+                  "targetTitle": "Questão 21: Julgamento de Dígrafo, Ditongo e EC Disjunto (IDECAN 2023)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A00-G03-CANONICAL-04",
+          "title": "Relação Letras vs. Fonemas: Impacto de Dígrafos, Grupos QU/GU e Dífonos",
+          "conceptRefs": [
+            "KB-A00-G03-ESTUDO-DA-SILABA-QUESTOES-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A contagem de fonemas de qualquer vocábulo calcula-se por meio do balanço entre o número total de grafemas (letras escritas), a quantidade de dígrafos (que subtraem fonemas) e a quantidade de dífonos (que adicionam fonemas)."
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Nº de Fonemas} = \\text{Nº de Letras} - \\text{Nº de Dígrafos} + \\text{Nº de Dífonos (X = /ks/)}"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Diagnóstico exaustivo dos grupos analisados nas fontes"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Comportamento do \"H\" inicial:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "horas: 5 letras, 0 dífonos, \"H\" mudo (-1 som) $\\to$ 4 fonemas (/o/, /r/, /a/, /s/)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dígrafos consonantais tradicionais:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "possível: 8 letras, 1 dígrafo (ss) $\\to$ 7 fonemas."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Grupo QU áfono (Dígrafo):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "esqueleto: 9 letras, 1 dígrafo (qu antes de 'e') $\\to$ 8 fonemas.",
+                "porque: 6 letras, 1 dígrafo (qu) $\\to$ 5 fonemas.",
+                "aqui: 4 letras, 1 dígrafo (qu) $\\to$ 3 fonemas."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Grupo QU fonado (NÃO é dígrafo):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "quantidade: 10 letras. O grupo qu é fonado ($/kw/$), contando 2 letras e 2 fonemas. Possui 1 dígrafo vocálico (an). Total: $10 - 1 = \\mathbf{9\\text{ fonemas}}$."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Letra \"X\" como fonema simples (/z/):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "exaustivamente: 14 letras. O 'X' intervocálico equivale a 1 som (/z/). Possui 1 dígrafo vocálico (en em men-te). Total: $14 - 1 = \\mathbf{13\\text{ fonemas}}$."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Letra \"X\" como dífono (/ks/):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "conexão: 7 letras. O 'X' representa 2 sons (/k/ + /s/). Não possui dígrafos. Possui o ditongo nasal \"ão\". Total: $7 + 1 = \\mathbf{8\\text{ fonemas}}$."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dígrafo vocálico:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "conteúdos: 9 letras (c-o-n-t-e-ú-d-o-s), 1 dígrafo vocálico (on). Total: $9 - 1 = \\mathbf{8\\text{ fonemas}}$."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A00-G03-ESTUDO-DA-SILABA-QUESTOES-001",
+                  "targetTitle": "Algoritmo Universal de Contagem de Fonemas e Letras",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A00-G03-ESTUDO-DA-SILABA-QUESTOES-002",
+                  "targetTitle": "Procedimento Diagnóstico para o Grupo QU / GU",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A00-G03-ESTUDO-DA-SILABA-QUESTOES-003",
+                  "targetTitle": "Pegadinha do Grupo QU/GU Fonado",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A00-G03-ESTUDO-DA-SILABA-QUESTOES-005",
+                  "targetTitle": "Erros Materiais de Contagem Cometidos pelas Bancas",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A00-G03-CANONICAL-05",
+          "title": "Polifonia do Grafema \"X\", o Dífono /ks/ e a Ortoepia de \"Sintaxe\"",
+          "conceptRefs": [
+            "KB-A00-G03-ESTUDO-DA-SILABA-QUESTOES-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A letra \"x\" é o grafema de maior polifonia na Língua Portuguesa, assumindo quatro valores fonéticos distintos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dífono /ks/ (1 grafema = 2 fonemas): sexualidade, intoxicação, conexão, anexo, tóxico, complexo.",
+                "Fonema fricativo alveolar surdo /s/ ou /ss/ (1 grafema = 1 fonema): expirar, êxtase, sintaxe, trouxe, máximo.",
+                "Fonema fricativo palatal surdo /ʃ/ (som de 'ch') (1 grafema = 1 fonema): pixo, lixo, xadrez, enxame.",
+                "Fonema fricativo alveolar sonoro /z/ (1 grafema = 1 fonema): exame, exaustivamente, exemplo, êxito."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "A pegadinha clássica de concurso em \"Sintaxe\""
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Erro comum: Muitos candidatos articulam coloquialmente a palavra como \"sin-ta-kse\" (atribuindo dífono /ks/).",
+                "Norma culta oficial: Os dicionários prescritivos e o padrão culto determinam que a pronúncia correta de sintaxe é com som de dois \"s\" (/sin'tasi/), exatamente igual ao som de máximo e auxílio.",
+                "Consequência em prova: Em questões que solicitam palavras com a mesma sonoridade de sexualidade (/ks/), sintaxe deve ser categoricamente rejeitada, sendo intoxicação a correspondência perfeita."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-020",
+                  "targetTitle": "Questão 16: Sonoridade do \"X\" em \"Sexualidade\" (IDECAN 2024)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A00-G03-CANONICAL-06",
+          "title": "Regras Canônicas de Divisão Silábica: Consoantes Mudas, Dígrafos e Monossílabos",
+          "conceptRefs": [
+            "KB-A00-G03-ESTUDO-DA-SILABA-QUESTOES-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A estrutura silábica do português baseia-se no princípio de que não existe sílaba sem vogal. A divisão silábica segue normas ortográficas estritas:"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Princípios fundamentais"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra das Consoantes Mudas no Meio do Vocábulo: Consoantes desprovidas de vogal imediata e que não formam grupo consonantal perfeito com l ou r unem-se obrigatoriamente à sílaba anterior."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "at-mos-fe-ra (o 't' mudo liga-se ao 'a').",
+                "co-lap-so (o 'p' mudo liga-se ao 'la'; o particionamento co-la-pso é incorreto).",
+                "et-ni-a (o 't' liga-se ao 'e', formando trissílabo et-ni-a).",
+                "felds-pa-to (as consoantes mudas 'lds' aderem à primeira vogal, formando felds-pa-to — trissílabo).",
+                "ad-vo-ga-do (ad-vo-ga-do — polissílabo).",
+                "sep-se (sep-se — dissílabo)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra das Consoantes Mudas no Início do Vocábulo (Monossílabos Indivisíveis):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Quando a palavra se inicia por consoante muda não seguida de vogal (pneu, gnomo, psicose), a consoante inicial permanece ligada à sílaba subsequente.",
+                "A palavra pneu é um monossílabo indivisível (pneu = 1 sílaba). É terminantemente proibido registrar p-neu ou pi-neu."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra dos Dígrafos Separáveis:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "As letras constituintes de rr, ss, sc, sç e xc ficam em sílabas distintas: ter-ra, bar-ra-da, pes-so-as, an-das-se, cres-ci-men-to, ex-ce-lên-cia."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra dos Encontros Consonantais com 'S' (st, sp, sc):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A consoante 's' permanece travando a sílaba anterior: ci-en-tis-ta (e jamais ci-en-ti-sta)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Prefixos Terminados em Consoante Seguidos de Vogal:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A consoante final do prefixo liga-se à vogal da sílaba seguinte: su-per-fí-cie (o prefixo super- diante de vogal gera su-per... e nunca sup-er...)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A00-G03-ESTUDO-DA-SILABA-QUESTOES-003",
+                  "targetTitle": "Algoritmo de Divisão Silábica para Consoantes Mudas e Encontros Impróprios",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A00-G03-ESTUDO-DA-SILABA-QUESTOES-004",
+                  "targetTitle": "Invenção de \"Vogal Fantasma\" na Divisão de Consoantes Mudas",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A00-G03-ESTUDO-DA-SILABA-QUESTOES-006",
+                  "targetTitle": "Proibição de Separação em Monossílabos com Consoante Inicial",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A00-G03-CANONICAL-07",
+          "title": "Classificação e Acentuação de Paroxítonas: Ditongo Crescente vs. Final em \"L\" e a Proparoxítona Eventual",
+          "conceptRefs": [
+            "KB-A00-G03-ESTUDO-DA-SILABA-QUESTOES-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A correta identificação da terminação de uma palavra paroxítona é o critério decisivo para aplicação das regras de acentuação gráfica e divisão silábica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Distinções essenciais"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Paroxítonas Terminadas em Ditongo Crescente:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Vocábulos como sé-rio, gló-ria, tri-bu-tá-ria, ma-lí-cia, su-per-fí-cie são acentuados por terminarem em ditongo oral crescente ($SV + V$)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Paroxítonas Terminadas em Consoante \"L\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Vocábulos como de-se-já-vel, res-pon-sá-vel, fá-cil são acentuados pela regra das paroxítonas terminadas em consoante L (grupo L, N, R, X, PS).",
+                "Pegadinha da fala: Embora no português brasileiro o \"L\" pós-vocálico seja articulado foneticamente como semivogal /w/ (desejáveu), para a morfologia e ortografia ele permanece como consoante, não formando ditongo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "A Questão da Proparoxítona Aparente / Eventual:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Palavras com terminação -ia, -ie, -io admitem duas leituras teóricas:",
+                "Divisão Clássica / Preferencial: ma-lí-cia, su-per-fí-cie (Paroxítona terminada em ditongo crescente — padrão adotado na imensa maioria dos concursos).",
+                "Divisão Secundária / Eventual: ma-lí-ci-a, su-per-fí-ci-e (Proparoxítona aparente, com hiato final).",
+                "Em provas objetivas, a divisão clássica (paroxítona em ditongo) prevalece sempre como a resposta preferencial e mais segura."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-016",
+                  "targetTitle": "Questão 07: Paroxítona em Ditongo vs. Paroxítona em \"L\" (Consuplan)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-017",
+                  "targetTitle": "Questão 14: Divisão Silábica Oficial (CESGRANRIO)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-019",
+                  "targetTitle": "Questão 19: Separação de \"Andasse\" e \"Malícia\" (IDECAN 2023)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A00-G03-ESTUDO-DA-SILABA-QUESTOES-002",
+                  "targetTitle": "Vocalização do \"L\" Final vs. Norma Culta Ortográfica",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A00-G03-CANONICAL-08",
+          "title": "Análise Semântico-Argumentativa e Aspectual em Provas Multidisciplinares (FCC)",
+          "conceptRefs": [
+            "KB-A00-G03-ESTUDO-DA-SILABA-QUESTOES-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas de alto nível (como a FCC) integram a divisão silábica formal a análises textuais refinadas envolvendo operadores argumentativos e aspecto verbal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Conceitos teóricos integrados"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Operador Argumentativo \"Até mesmo\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Atua como operador de inclusão de um elemento extremo ou improvável. Ao introduzir o fato menos provável (\"destruindo a democracia... até mesmo na Tchecoslováquia\"), o enunciado confere a esse elemento a condição de argumento mais forte da tese apresentada."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Valores do Operador \"Também\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Valor Aditivo / Coesivo: Equivale a \"além disso\", \"ademais\". Soma novos agentes ou informações (\"Na verdade, também eles tinham modelos...\"). É insuprimível sem alteração de sentido.",
+                "Valor Enfático / Expletivo (Partícula de Realce): Confere ênfase expressiva e pode ser suprimido sem alterar o sentido ou a estrutura gramatical (\"Essa história [também] já é demais!\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diferenças de Aspecto Verbal:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gerúndio (acabou destruindo): Expressa aspecto durativo/contínuo (processo que se estende no tempo).",
+                "Pretérito Mais-Que-Perfeito (destruíra): Expressa anterioridade pontual em relação a outro fato passado.",
+                "Pretérito Perfeito (entrou em colapso): Expressa uma ação pontual e acabada no tempo, incompatível com a ideia de processo lento/gradual sugerida por advérbios como paulatinamente."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A00-G03-021",
+                  "targetTitle": "Questão 15: Análise Textual, Divisão Silábica e Argumentação (FCC)",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A00-G03-ESTUDO-DA-SILABA-QUESTOES-004",
+                  "targetTitle": "Estratégia de Identificação de Operadores Argumentativos (\"Até Mesmo\" e \"Também\")",
+                  "targetUnitId": "IP-A00-G03",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A00-G03-004",
+              "tableId": "TABLE-IP-A00-G03-001",
               "table": {
-                "tableId": "TABLE-IP-A00-G03-004",
-                "caption": "Tabela comparativa de fixação",
+                "tableId": "TABLE-IP-A00-G03-001",
+                "caption": "Explicação central",
                 "headers": [
                   "Palavra",
                   "Encontro Grafêmico",
@@ -439,11 +1256,76 @@
     "glossary": {
       "items": [
         {
-          "term": "Translineação",
-          "shortDefinition": "Partição de uma palavra no final de uma linha para continuação na linha seguinte.",
-          "fullDefinition": "Convenção tipográfica e ortográfica que rege a divisão de vocábulos na mudança de linha, baseada na partição silábica.",
-          "domain": "Ortografia e Tipografia",
-          "commonMisconception": "Achar que se pode cortar a palavra em qualquer ponto sem respeitar as sílabas."
+          "term": "Encontros Vocálicos: Hiato, Ditongo Crescente, Ditongo Decrescente e Ortoepia",
+          "shortDefinition": "Os encontros vocálicos estruturam-se a partir da capacidade de cada som vocálico atuar como núcleo silábico (Vogal) ou apoio fonético átono (Semivogal):",
+          "detailTarget": {
+            "unitId": "IP-A00-G03",
+            "section": "explanation",
+            "groupId": "GRP-A00-G03-CANONICAL-01"
+          }
+        },
+        {
+          "term": "Dígrafos Consonantais e Vocálicos: Tipologia, Reconhecimento e Separação",
+          "shortDefinition": "Dígrafo (ou digrama) é o grupo de duas letras que representa graficamente um único fonema (2 letras = 1 som).",
+          "detailTarget": {
+            "unitId": "IP-A00-G03",
+            "section": "explanation",
+            "groupId": "GRP-A00-G03-CANONICAL-02"
+          }
+        },
+        {
+          "term": "Distinção entre Dígrafo e Encontro Consonantal (Perfeito e Disjunto)",
+          "shortDefinition": "A diferença fundamental entre dígrafo e encontro consonantal reside na contagem de realizações acústicas (fonemas):",
+          "detailTarget": {
+            "unitId": "IP-A00-G03",
+            "section": "explanation",
+            "groupId": "GRP-A00-G03-CANONICAL-03"
+          }
+        },
+        {
+          "term": "Relação Letras vs. Fonemas: Impacto de Dígrafos, Grupos QU/GU e Dífonos",
+          "shortDefinition": "A contagem de fonemas de qualquer vocábulo calcula-se por meio do balanço entre o número total de grafemas (letras escritas), a quantidade de dígrafos (que subtraem fonemas) e a quantidade de dífonos (que adicionam fonemas).",
+          "detailTarget": {
+            "unitId": "IP-A00-G03",
+            "section": "explanation",
+            "groupId": "GRP-A00-G03-CANONICAL-04"
+          }
+        },
+        {
+          "term": "Polifonia do Grafema \"X\", o Dífono /ks/ e a Ortoepia de \"Sintaxe\"",
+          "shortDefinition": "A letra \"x\" é o grafema de maior polifonia na Língua Portuguesa, assumindo quatro valores fonéticos distintos:",
+          "detailTarget": {
+            "unitId": "IP-A00-G03",
+            "section": "explanation",
+            "groupId": "GRP-A00-G03-CANONICAL-05"
+          }
+        },
+        {
+          "term": "Regras Canônicas de Divisão Silábica: Consoantes Mudas, Dígrafos e Monossílabos",
+          "shortDefinition": "A estrutura silábica do português baseia-se no princípio de que não existe sílaba sem vogal. A divisão silábica segue normas ortográficas estritas:",
+          "detailTarget": {
+            "unitId": "IP-A00-G03",
+            "section": "explanation",
+            "groupId": "GRP-A00-G03-CANONICAL-06"
+          }
+        },
+        {
+          "term": "Classificação e Acentuação de Paroxítonas: Ditongo Crescente vs. Final em \"L\" e a Proparoxítona Eventual",
+          "shortDefinition": "A correta identificação da terminação de uma palavra paroxítona é o critério decisivo para aplicação das regras de acentuação gráfica e divisão silábica.",
+          "detailTarget": {
+            "unitId": "IP-A00-G03",
+            "section": "explanation",
+            "groupId": "GRP-A00-G03-CANONICAL-07"
+          }
+        },
+        {
+          "term": "Análise Semântico-Argumentativa e Aspectual em Provas Multidisciplinares (FCC)",
+          "shortDefinition": "Bancas de alto nível (como a FCC) integram a divisão silábica formal a análises textuais refinadas envolvendo operadores argumentativos e aspecto verbal.",
+          "detailTarget": {
+            "unitId": "IP-A00-G03",
+            "section": "explanation",
+            "groupId": "GRP-A00-G03-CANONICAL-08"
+          }
         }
       ]
     },
@@ -665,7 +1547,10 @@
         "confidence": 0.98
       },
       "answerSha256": "0926d1e76da41988e4b855d002c98a64a37d4c5ffe9c0d7b50cfe03b9e26257b",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A00-aula00.q0180"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -743,81 +1628,6 @@
         "confidence": 0.98
       },
       "answerSha256": "7733e834513d42829ac6ca8f8c243f098f9b8890dc61e47288358b0288960a82",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A00-aula00.q0180",
-      "lessonId": "A00",
-      "sourceQuestionId": "aula00.q0180",
-      "questionPayload": {
-        "question_id": "aula00.q0180",
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "SEED-PR",
-        "position": null,
-        "year": 2021,
-        "support_text": null,
-        "prompt": "Os vocábulos “países” e “línguas”, presentes no texto 15A2-I, possuem a mesma classificação quanto à tonicidade, porém um difere do outro quanto à regra empregada para a utilização do acento agudo. Assinale a opção que indica a correta classificação desses vocábulos quanto à tonicidade e que explica corretamente as regras de acentuação aplicadas a eles.",
-        "options": [
-          {
-            "label": "a",
-            "text": "Ambos os vocábulos são paroxítonos, contudo “línguas” é acentuado porque sua última sílaba contém um ditongo crescente átono, ao passo que “países” é acentuado porque sua sílaba tônica forma um hiato com a vogal da sílaba anterior."
-          },
-          {
-            "label": "b",
-            "text": "Ambos os vocábulos são proparoxítonos, contudo “línguas” é acentuado porque sua última sílaba contém um ditongo decrescente átono, ao passo que “países” é acentuado porque sua última sílaba termina com “s”."
-          },
-          {
-            "label": "c",
-            "text": "Ambos os vocábulos são paroxítonos, contudo “línguas” é acentuado porque sua última sílaba termina com “s”, ao passo que “países” é acentuado porque sua sílaba tônica forma um hiato com a vogal da sílaba anterior."
-          },
-          {
-            "label": "d",
-            "text": "Ambos os vocábulos são oxítonos, contudo “línguas” é acentuado porque tem três sílabas, ao passo que “países” é acentuado porque sua sílaba tônica contém um ditongo crescente."
-          },
-          {
-            "label": "e",
-            "text": "Ambos os vocábulos são proparoxítonos, contudo “línguas” é acentuado porque tem duas sílabas, ao passo que “países” é acentuado porque tem três sílabas."
-          }
-        ],
-        "tests_concept_ids": [
-          "pt.orthography.acento_grafico"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.orthography.0005",
-          "rule.pt.orthography.0009"
-        ],
-        "source": {
-          "document_id": "aula00_complete",
-          "page_ids": [
-            "aula00_complete.p0109",
-            "aula00_complete.p0110"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.96,
-        "section_id": "aula00.sec26",
-        "occurrence_kind": "question_list",
-        "local_number": 19,
-        "duplicate_of": "aula00.q0089"
-      },
-      "questionSha256": "0124c0f097492a04e98557b1926ff09203fa14af4197c18cb09cd7c744acf981",
-      "answerPayload": {
-        "answer_id": "aula00.q0180.answer",
-        "question_id": "aula00.q0180",
-        "answer": "A",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula00_complete",
-          "page_ids": [
-            "aula00_complete.p0113"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "f2330364324cfb3b4031b53c665e0d67488053af753e9184f5e1330fb4fd6721",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

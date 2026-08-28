@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A06-G03",
     "lessonId": "A06",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A06-G03",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A06-G03-001"
+          }
         }
       ]
     },
@@ -94,8 +99,58 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA análise sintática oracional em Língua Portuguesa estrutura-se em três blocos modulares: Termos Essenciais (Sujeito e Predicado), Termos Integrantes (Complementos Verbais, Complemento Nominal e Agente da Passiva) e Termos Acessórios (Adjuntos Adnominais, Adjuntos Adverbiais e Aposto). O eixo organizador absoluto de toda a sintaxe é o verbo (\"verbo é tudo\").\nExplicação consolidada\nA sintaxe não opera por acúmulo desordenado de termos isolados. O verbo é o elemento nuclear e instaurador da oração:\nCondição de Oração: Não existe oração sem verbo. Se houver comunicação sem verbo (como a transcrição de um riso \"kkk\" ou interjeições), tem-se uma frase nominal/mensagem, mas não uma oração sintaticamente analisável.\nDependência Hierárquica: Todos os termos da oração articulam-se direta ou indiretamente ao redor do verbo. A correta identificação do sujeito, da regência, dos complementos e dos adjuntos decorre obrigatoriamente de interrogações estruturadas feitas à forma verbal.\nFundamento Epistêmico: Conforme lição do gramático Evanildo Bechara rememorada pela professora, o domínio da análise sintática e da estrutura do verbo é o pré-requisito nuclear para toda a gramática normativa (concordância, regência, crase e pontuação).\nRelações\nBase estrutural para: , .\nOrigina procedimento: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A análise sintática oracional em Língua Portuguesa estrutura-se em três blocos modulares: Termos Essenciais (Sujeito e Predicado), Termos Integrantes (Complementos Verbais, Complemento Nominal e Agente da Passiva) e Termos Acessórios (Adjuntos Adnominais, Adjuntos Adverbiais e Aposto). O eixo organizador absoluto de toda a sintaxe é o verbo (\"verbo é tudo\")."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A sintaxe não opera por acúmulo desordenado de termos isolados. O verbo é o elemento nuclear e instaurador da oração:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Condição de Oração: Não existe oração sem verbo. Se houver comunicação sem verbo (como a transcrição de um riso \"kkk\" ou interjeições), tem-se uma frase nominal/mensagem, mas não uma oração sintaticamente analisável.",
+                "Dependência Hierárquica: Todos os termos da oração articulam-se direta ou indiretamente ao redor do verbo. A correta identificação do sujeito, da regência, dos complementos e dos adjuntos decorre obrigatoriamente de interrogações estruturadas feitas à forma verbal.",
+                "Fundamento Epistêmico: Conforme lição do gramático Evanildo Bechara rememorada pela professora, o domínio da análise sintática e da estrutura do verbo é o pré-requisito nuclear para toda a gramática normativa (concordância, regência, crase e pontuação)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-002",
+                  "targetTitle": "Delimitação Operacional do Sujeito, Núcleo e Predicado",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-004",
+                  "targetTitle": "Macrodivisão Verbal: Verbos Nocionais (Ação) vs. Verbos Relacionais (Estado)",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G03-001",
+                  "targetTitle": "Algoritmo Integrado de Análise Sintática Oracional",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +163,60 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nEnquanto a gramática tradicional define o sujeito como o tópico sobre o qual se faz uma declaração, a prática de concursos exige um método operacional unificado: localizar o verbo e interrogá-lo pela fórmula Quem é que / O que é que + VERBO?. O predicado define-se algebricamente como \"tudo menos o sujeito\" ($\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$).\nExplicação consolidada\nSujeito: Bloco oracional obtido como resposta direta à pergunta interrogativa feita ao verbo.\nNúcleo do Sujeito: É o substantivo ou pronome substantivo principal que sustenta o sujeito semanticamente, desprovido de preposição obrigatória. Termos que circundam o núcleo funcionam como determinantes periféricos (adjuntos adnominais ou complementos nominais).\nPredicado: Todo o restante da estrutura da frase a partir do verbo, englobando seus complementos, adjuntos adverbiais e predicativos.\n[ Uma comitiva de empresários ] [ chegou ontem a São Paulo. ] NÚCLEO PREDICADO (sem prep.) (Tudo menos o sujeito) ┘ SUJEITO"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Enquanto a gramática tradicional define o sujeito como o tópico sobre o qual se faz uma declaração, a prática de concursos exige um método operacional unificado: localizar o verbo e interrogá-lo pela fórmula Quem é que / O que é que + VERBO?. O predicado define-se algebricamente como \"tudo menos o sujeito\" ($\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sujeito: Bloco oracional obtido como resposta direta à pergunta interrogativa feita ao verbo.",
+                "Núcleo do Sujeito: É o substantivo ou pronome substantivo principal que sustenta o sujeito semanticamente, desprovido de preposição obrigatória. Termos que circundam o núcleo funcionam como determinantes periféricos (adjuntos adnominais ou complementos nominais).",
+                "Predicado: Todo o restante da estrutura da frase a partir do verbo, englobando seus complementos, adjuntos adverbiais e predicativos."
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Delimitação Operacional do Sujeito, Núcleo e Predicado",
+              "text": "[ Uma comitiva de empresários ] [ chegou ontem a São Paulo. ] │ │ │ │ │ ▼ │ ▼ │ NÚCLEO │ PREDICADO │ (sem prep.) │ (Tudo menos o sujeito) └────────────────────┘ SUJEITO"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-009",
+                  "targetTitle": "\"Ela saiu.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G03-001",
+                  "targetTitle": "Algoritmo Integrado de Análise Sintática Oracional",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G03-001",
+                  "targetTitle": "A Nomenclatura \"Termo Essencial\" para o Sujeito [material de origem]",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +229,74 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA nomenclatura formal \"Termo Essencial\" é conceitualmente assimétrica: o sujeito pode inexistir na oração (sujeito inexistente / oração sem sujeito), ao passo que o predicado é rigorosamente obrigatório em 100% das orações, pois decorre da presença compulsória do verbo.\nExplicação consolidada\nA taxonomia do sujeito divide-se primariamente entre sua existência ou não no plano da frase:\nSujeito Existente:\nSimples: um único núcleo (\"A comitiva chegou\").\nComposto: dois ou mais núcleos (\"O diretor e o gerente chegaram\").\nOracional: expresso sob a forma de uma oração subordinada substantiva subjetiva (\"É necessário que você venha\").\nIndeterminado: o sujeito existe na realidade, mas o enunciador não pode ou não quer identificá-lo (\"Guardaram a minha bolsa\" / verbo na 3ª pessoa do plural sem antecedente).\nOculto (Elíptico / Desinencial): o sujeito existe e é identificável pela terminação verbal ou pelo contexto (\"Chegamos cedo\" $\\rightarrow$ nós).\nSujeito Inexistente (Oração Sem Sujeito): Orações construídas com verbos impessoais (como haver significando existir/ocorrer, fazer indicando tempo decorrido ou verbos de fenômenos da natureza). Nessas frases, a oração coincide integralmente com o predicado (\"Havia crianças no parque\").\nRelações\nContrasta com: .\nExemplificado por: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A nomenclatura formal \"Termo Essencial\" é conceitualmente assimétrica: o sujeito pode inexistir na oração (sujeito inexistente / oração sem sujeito), ao passo que o predicado é rigorosamente obrigatório em 100% das orações, pois decorre da presença compulsória do verbo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A taxonomia do sujeito divide-se primariamente entre sua existência ou não no plano da frase:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sujeito Existente:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Simples: um único núcleo (\"A comitiva chegou\").",
+                "Composto: dois ou mais núcleos (\"O diretor e o gerente chegaram\").",
+                "Oracional: expresso sob a forma de uma oração subordinada substantiva subjetiva (\"É necessário que você venha\").",
+                "Indeterminado: o sujeito existe na realidade, mas o enunciador não pode ou não quer identificá-lo (\"Guardaram a minha bolsa\" / verbo na 3ª pessoa do plural sem antecedente).",
+                "Oculto (Elíptico / Desinencial): o sujeito existe e é identificável pela terminação verbal ou pelo contexto (\"Chegamos cedo\" $\\rightarrow$ nós)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sujeito Inexistente (Oração Sem Sujeito): Orações construídas com verbos impessoais (como haver significando existir/ocorrer, fazer indicando tempo decorrido ou verbos de fenômenos da natureza). Nessas frases, a oração coincide integralmente com o predicado (\"Havia crianças no parque\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G03-002",
+                  "targetTitle": "Delimitação Operacional do Sujeito, Núcleo e Predicado",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-010",
+                  "targetTitle": "\"Ela chegou desesperada.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-011",
+                  "targetTitle": "\"O menino foi ao clube.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +309,94 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA predicação verbal não se classifica a partir de 5 tipos soltos e desconexos, mas sob dois grandes troncos primários funcionais:\nVerbos de Ação / Movimento / Fenômeno (Nocionais / Plenos / Significativos);\nVerbos de Estado (Relacionais / Não Nocionais / De Ligação).\nVERBOS ┴ \nDE AÇÃO / MOVIMENTO / FENÔMENO 2. DE ESTADO\n(Nocionais) (Relacionais) ┴ ┬ VERBO DE LIGAÇÃO V.I. V.T.D. V.T.I. (V.L.) ┬ ┴ ┘ V.T.D.I.\nExplicação consolidada\nVerbos Nocionais: Detêm significado léxico pleno. Expressam processos, atividades, acontecimentos dinâmicos ou fenômenos físicos. Constituem o núcleo verbal da declaração.\nVerbos Relacionais (de Ligação): Não expressam ação ou dinamicidade; funcionam como uma cópula/ponte conectiva entre o sujeito e um atributo que expressa o estado ou qualidade momentânea/permanente deste sujeito.\nRelações\nEspinha dorsal para: , , , , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A predicação verbal não se classifica a partir de 5 tipos soltos e desconexos, mas sob dois grandes troncos primários funcionais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbos de Ação / Movimento / Fenômeno (Nocionais / Plenos / Significativos);",
+                "Verbos de Estado (Relacionais / Não Nocionais / De Ligação)."
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Macrodivisão Verbal: Verbos Nocionais (Ação) vs. Verbos Relacionais (Estado)",
+              "text": "VERBOS │ ┌──────────────────┴──────────────────┐ ▼ ▼"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "DE AÇÃO / MOVIMENTO / FENÔMENO 2. DE ESTADO"
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Macrodivisão Verbal: Verbos Nocionais (Ação) vs. Verbos Relacionais (Estado)",
+              "text": "(Nocionais) (Relacionais) │ │ ┌────────┴────────┬─────────┐ ▼ ▼ ▼ ▼ VERBO DE LIGAÇÃO V.I. V.T.D. V.T.I. (V.L.) │ │ │ └────────┬────────┴─────────┘ ▼ V.T.D.I."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbos Nocionais: Detêm significado léxico pleno. Expressam processos, atividades, acontecimentos dinâmicos ou fenômenos físicos. Constituem o núcleo verbal da declaração.",
+                "Verbos Relacionais (de Ligação): Não expressam ação ou dinamicidade; funcionam como uma cópula/ponte conectiva entre o sujeito e um atributo que expressa o estado ou qualidade momentânea/permanente deste sujeito."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-005",
+                  "targetTitle": "Verbo Intransitivo e o Princípio da Dispensabilidade do Adjunto Adverbial",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-006",
+                  "targetTitle": "Sistema de Transitividade Verbal: VTD, VTI e VTDI",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-008",
+                  "targetTitle": "Critério Bivalente e Relativização das Listas de Verbos de Ligação",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-009",
+                  "targetTitle": "Predicativo do Sujeito: Critérios Semânticos, Vetoriais e Morfossintáticos",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-010",
+                  "targetTitle": "Critério Bivalente Obrigatório do Verbo de Ligação (Mantra da Vida)",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +409,75 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Verbo Intransitivo (VI) expressa sentido nocional completo e não exige complementos verbais (objetos). Ele pode vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de qualificadores do sujeito (Predicativos do Sujeito).\nCritérios de Reconhecimento do Adjunto Adverbial\nInvariabilidade Essencial: Representado por advérbios ou locuções adverbiais (embora locuções possam ter núcleos nominais flexionáveis como \"aos clubes\", a função oracional é invariável).\nSeta Sintática no Verbo: Aponta e modifica o verbo oracional.\nSemântica Circunstancial (\"Cheiro de Circunstância\"): Responde a perguntas como onde? quando? como? por quê?.\nPrincípio da Dispensabilidade Sintática (\"A Fofoca da Oração\"): O adjunto adverbial pode ser suprimido da oração sem quebrar a integridade sintática e a transitividade do verbo.\n[O menino] foi [ao clube]. Sujeito (V.I.) Adj. Adverbial de Lugar (Circunstância) ┘ (Seta aponta para o verbo)\nNo exemplo \"O menino foi ao clube\", o termo \"ao clube\" indica lugar (onde?). Sua supressão deixa a frase estruturalmente fechada (\"O menino foi\"), provando que \"ao clube\" não é objeto indireto, mas adjunto adverbial dispensável, mantendo o verbo como Intransitivo (VI).\nRelações\nPossui alertas: , .\nExemplificado por: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Verbo Intransitivo (VI) expressa sentido nocional completo e não exige complementos verbais (objetos). Ele pode vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de qualificadores do sujeito (Predicativos do Sujeito)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de Reconhecimento do Adjunto Adverbial"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Invariabilidade Essencial: Representado por advérbios ou locuções adverbiais (embora locuções possam ter núcleos nominais flexionáveis como \"aos clubes\", a função oracional é invariável).",
+                "Seta Sintática no Verbo: Aponta e modifica o verbo oracional.",
+                "Semântica Circunstancial (\"Cheiro de Circunstância\"): Responde a perguntas como onde? quando? como? por quê?.",
+                "Princípio da Dispensabilidade Sintática (\"A Fofoca da Oração\"): O adjunto adverbial pode ser suprimido da oração sem quebrar a integridade sintática e a transitividade do verbo."
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Verbo Intransitivo e o Princípio da Dispensabilidade do Adjunto Adverbial",
+              "text": "[O menino] foi [ao clube]. │ │ │ Sujeito (V.I.) Adj. Adverbial de Lugar (Circunstância) ▲ │ └─────────────┘ (Seta aponta para o verbo)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "No exemplo \"O menino foi ao clube\", o termo \"ao clube\" indica lugar (onde?). Sua supressão deixa a frase estruturalmente fechada (\"O menino foi\"), provando que \"ao clube\" não é objeto indireto, mas adjunto adverbial dispensável, mantendo o verbo como Intransitivo (VI)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A06-G03-002",
+                  "targetTitle": "Confundir Incompletude Semântica com Incompletude Sintática",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A06-G03-003",
+                  "targetTitle": "Confundir Termo Preposicionado com Crase de Lugar com Objeto Indireto",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-012",
+                  "targetTitle": "\"A menina chegou satisfeita.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-015",
+                  "targetTitle": "\"Deu o lugar ao velhinho.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +490,67 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs Verbos Transitivos são verbos nocionais de predicação incompleta que demandam termos integrantes (objetos) para integralizar seu significado.\nVERBOS TRANSITIVOS ┼ TRANSITIVO DIRETO TRANSITIVO INDIRETO TRANSITIVO DIRETO E (V.T.D.) (V.T.I.) INDIRETO (V.T.D.I.) (ou Bitransitivo) Complemento SEM Complemento COM preposição preposição Exige 2 complementos: (Objeto Direto) (Objeto Indireto) 1 SEM prep. (O.D.)\n1 COM prep. (O.I.)\nRegras e Diferenciações\nVerbo Transitivo Direto (VTD): Conecta-se diretamente ao complemento sem preposição regencial obrigatória. Complemento = Objeto Direto (OD) (\"Comprei jornais variados\").\nVerbo Transitivo Indireto (VTI): Conecta-se ao complemento mediante preposição gramatical obrigatória exigida pelo verbo (sem valor circunstancial de lugar/tempo). Complemento = Objeto Indireto (OI) (\"Visamos a um cargo elevado\").\nVerbo Transitivo Direto e Indireto (VTDI ou Bitransitivo): Rege simultaneamente dois complementos: um não preposicionado (OD) e outro preposicionado (OI) (\"Ofereceram o cargo ao deputado\").\nRelações\nExemplificado por: , , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os Verbos Transitivos são verbos nocionais de predicação incompleta que demandam termos integrantes (objetos) para integralizar seu significado."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Sistema de Transitividade Verbal: VTD, VTI e VTDI",
+              "text": "VERBOS TRANSITIVOS │ ┌────────────────────────┼────────────────────────┐ ▼ ▼ ▼ TRANSITIVO DIRETO TRANSITIVO INDIRETO TRANSITIVO DIRETO E (V.T.D.) (V.T.I.) INDIRETO (V.T.D.I.) │ │ (ou Bitransitivo) ▼ ▼ │ Complemento SEM Complemento COM ▼ preposição preposição Exige 2 complementos: (Objeto Direto) (Objeto Indireto) 1 SEM prep. (O.D.)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "1 COM prep. (O.I.)"
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regras e Diferenciações"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Transitivo Direto (VTD): Conecta-se diretamente ao complemento sem preposição regencial obrigatória. Complemento = Objeto Direto (OD) (\"Comprei jornais variados\").",
+                "Verbo Transitivo Indireto (VTI): Conecta-se ao complemento mediante preposição gramatical obrigatória exigida pelo verbo (sem valor circunstancial de lugar/tempo). Complemento = Objeto Indireto (OI) (\"Visamos a um cargo elevado\").",
+                "Verbo Transitivo Direto e Indireto (VTDI ou Bitransitivo): Rege simultaneamente dois complementos: um não preposicionado (OD) e outro preposicionado (OI) (\"Ofereceram o cargo ao deputado\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-013",
+                  "targetTitle": "\"Comprei jornais variados.\" / \"Cantou músicas populares.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-014",
+                  "targetTitle": "\"Estes documentos pertencem ao cliente.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-016",
+                  "targetTitle": "\"Ela caiu doente.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +563,91 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Predicativo é o termo atributivo do predicado que expressa estado, qualidade ou condição transitória/permanente atribuída ao sujeito ou ao objeto.\nAs Três Propriedades de Reconhecimento do Predicativo\nDirecionamento Sintático (Método das Setas):\nSe qualifica o sujeito $\\rightarrow$ Seta no Sujeito (Predicativo do Sujeito);\nSe qualifica o objeto direto/indireto $\\rightarrow$ Seta no Objeto (Predicativo do Objeto).\nSemântica de Estado/Qualidade: Não indica ação ou circunstância adverbial; descreve uma propriedade ou estado.\nMorfologia Predominantemente Adjetiva: Manifesta-se como adjetivo (ou substantivo/locução adjetiva com função atributiva) que concorda morfossintaticamente em gênero e número com o termo a que se refere (\"A menina chegou satisfeita\" / \"As meninas chegaram satisfeitas\").\nUniversalidade do Predicativo\nO predicativo não é exclusivo dos verbos de ligação. Ele pode aparecer acoplado a qualquer verbo de ação (intransitivo ou transitivo), atuando como segundo núcleo do predicado."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Predicativo é o termo atributivo do predicado que expressa estado, qualidade ou condição transitória/permanente atribuída ao sujeito ou ao objeto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "As Três Propriedades de Reconhecimento do Predicativo"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Direcionamento Sintático (Método das Setas):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se qualifica o sujeito $\\rightarrow$ Seta no Sujeito (Predicativo do Sujeito);",
+                "Se qualifica o objeto direto/indireto $\\rightarrow$ Seta no Objeto (Predicativo do Objeto)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Semântica de Estado/Qualidade: Não indica ação ou circunstância adverbial; descreve uma propriedade ou estado.",
+                "Morfologia Predominantemente Adjetiva: Manifesta-se como adjetivo (ou substantivo/locução adjetiva com função atributiva) que concorda morfossintaticamente em gênero e número com o termo a que se refere (\"A menina chegou satisfeita\" / \"As meninas chegaram satisfeitas\")."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Universalidade do Predicativo"
+            },
+            {
+              "type": "paragraph",
+              "text": "O predicativo não é exclusivo dos verbos de ligação. Ele pode aparecer acoplado a qualquer verbo de ação (intransitivo ou transitivo), atuando como segundo núcleo do predicado."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-008",
+                  "targetTitle": "Critério Bivalente e Relativização das Listas de Verbos de Ligação",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-009",
+                  "targetTitle": "Predicativo do Sujeito: Critérios Semânticos, Vetoriais e Morfossintáticos",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-011",
+                  "targetTitle": "Relativização das Listas Escolares e Polifuncionalidade Verbal (Casos \"Cair\" e \"Andar\")",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G03-004",
+                  "targetTitle": "A Falsa Correlação \"Predicativo = Verbo de Ligação\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G03-005",
+                  "targetTitle": "Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV)",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +660,116 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Verbo de Ligação (VL) não expressa ação. Sua função exclusiva é conectar o sujeito ao seu predicativo. Para que qualquer verbo seja classificado como de ligação, é obrigatório o cumprimento simultâneo de duas condições cumulativas (Critério Bivalente / \"Mantra da Vida\"):\n\\text{Verbo de Ligação} \\iff \\begin{cases} 1.\\; \\text{Indicar ESTADO / MUDANÇA DE ESTADO (Semântica)} \\\\ 2.\\; \\text{Vir acompanhado de PREDICATIVO DO SUJEITO (Sintaxe)} \\end{cases}\nDesconstrução e Relativização das Listas Memorizadas\nListas escolares (ser, estar, parecer, permanecer, ficar, continuar, andar, tornar-se, virar, viver) não garantem classificação fixa:\nVerbo da lista sem predicativo: Deixa de ser de ligação e vira intransitivo nocional (\"O aluno está em casa\" $\\rightarrow$ estar indica localização acompanhado de adjunto adverbial de lugar = VI).\nVerbo de ação com semântica de estado e predicativo: Torna-se verbo de ligação (\"Ela caiu doente\" $\\rightarrow$ caiu equivale a ficou + doente é predicativo do sujeito = VL).\n\"Ela caiu doente.\"\n\"doente\" = Predicativo do Sujeito (Estado).\n\"cair\" = equivale a \"ficou\" (mudança de estado).\nClassificação: VERBO DE LIGAÇÃO (V.L.).\n\"Ela caiu na rua.\"\n\"na rua\" = Adjunto Adverbial de Lugar (Circunstância).\n\"cair\" = tombo físico real (Ação). Não há predicativo.\nClassificação: VERBO INTRANSITIVO (V.I.).\nMatizes Semânticos dos Verbos de Ligação (Padrão FGV)\nEstado Permanente: ser, viver (\"Ele é calmo\").\nEstado Transitório / Passageiro: estar, andar (\"Estou doente\", \"Ela anda preocupada\").\nContinuidade de Estado: permanecer, continuar (\"As listas permaneciam abertas\").\nMudança de Estado: ficar, tornar-se, virar, cair (\"Ficou feliz\", \"Virou fera\", \"Caiu doente\").\nEstado Aparente: parecer (\"Parece cansado\").\nRelações\nAplica: .\nOrigina procedimento: .\nPossui alertas: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Verbo de Ligação (VL) não expressa ação. Sua função exclusiva é conectar o sujeito ao seu predicativo. Para que qualquer verbo seja classificado como de ligação, é obrigatório o cumprimento simultâneo de duas condições cumulativas (Critério Bivalente / \"Mantra da Vida\"):"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Verbo de Ligação} \\iff \\begin{cases} 1.\\; \\text{Indicar ESTADO / MUDANÇA DE ESTADO (Semântica)} \\\\ 2.\\; \\text{Vir acompanhado de PREDICATIVO DO SUJEITO (Sintaxe)} \\end{cases}"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Desconstrução e Relativização das Listas Memorizadas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Listas escolares (ser, estar, parecer, permanecer, ficar, continuar, andar, tornar-se, virar, viver) não garantem classificação fixa:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbo da lista sem predicativo: Deixa de ser de ligação e vira intransitivo nocional (\"O aluno está em casa\" $\\rightarrow$ estar indica localização acompanhado de adjunto adverbial de lugar = VI).",
+                "Verbo de ação com semântica de estado e predicativo: Torna-se verbo de ligação (\"Ela caiu doente\" $\\rightarrow$ caiu equivale a ficou + doente é predicativo do sujeito = VL)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "\"Ela caiu doente.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"doente\" = Predicativo do Sujeito (Estado).",
+                "\"cair\" = equivale a \"ficou\" (mudança de estado).",
+                "Classificação: VERBO DE LIGAÇÃO (V.L.)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "\"Ela caiu na rua.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"na rua\" = Adjunto Adverbial de Lugar (Circunstância).",
+                "\"cair\" = tombo físico real (Ação). Não há predicativo.",
+                "Classificação: VERBO INTRANSITIVO (V.I.)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Matizes Semânticos dos Verbos de Ligação (Padrão FGV)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estado Permanente: ser, viver (\"Ele é calmo\").",
+                "Estado Transitório / Passageiro: estar, andar (\"Estou doente\", \"Ela anda preocupada\").",
+                "Continuidade de Estado: permanecer, continuar (\"As listas permaneciam abertas\").",
+                "Mudança de Estado: ficar, tornar-se, virar, cair (\"Ficou feliz\", \"Virou fera\", \"Caiu doente\").",
+                "Estado Aparente: parecer (\"Parece cansado\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-007",
+                  "targetTitle": "Caracterização do Predicativo do Sujeito e do Objeto",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G03-003",
+                  "targetTitle": "Teste de Substituição por \"Estar/Ser\" para Verbos de Ligação Contextuais",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A06-G03-004",
+                  "targetTitle": "A Falsa Correlação \"Predicativo = Verbo de Ligação\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A06-G03-006",
+                  "targetTitle": "A Pegadinha da Troca Indistinta de Verbos de Ligação",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +782,61 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Predicativo do Sujeito (P.S.) é o termo do predicado que expressa uma propriedade, condição momentânea, estado transitório ou atributo essencial do sujeito, estabelecendo com ele concordância nominal.\nAs Três Regras de Identificação (Observação 4)\nRelação Vetorial (Seta no Sujeito): o termo não modifica o verbo; sua seta sintática aponta obrigatoriamente para o núcleo do sujeito.\nSemântica de Estado: exprime estado (permanente, transitório, aparente, mutativo ou continuado).\nMorfologia Adjetiva e Concordância: manifesta-se predominantemente como adjetivo (ou locução adjetiva / substantivo predicativo), flexionando-se em gênero e número para concordar com o sujeito (\"Ela chegou apressada\" $\\rightarrow$ \"Elas chegaram apressadas\").Maciço mnemônico: TIP-A06-G03-004"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Predicativo do Sujeito (P.S.) é o termo do predicado que expressa uma propriedade, condição momentânea, estado transitório ou atributo essencial do sujeito, estabelecendo com ele concordância nominal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "As Três Regras de Identificação (Observação 4)"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Relação Vetorial (Seta no Sujeito): o termo não modifica o verbo; sua seta sintática aponta obrigatoriamente para o núcleo do sujeito.",
+                "Semântica de Estado: exprime estado (permanente, transitório, aparente, mutativo ou continuado).",
+                "Morfologia Adjetiva e Concordância: manifesta-se predominantemente como adjetivo (ou locução adjetiva / substantivo predicativo), flexionando-se em gênero e número para concordar com o sujeito (\"Ela chegou apressada\" $\\rightarrow$ \"Elas chegaram apressadas\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-006",
+                  "targetTitle": "Sistema de Transitividade Verbal: VTD, VTI e VTDI",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-010",
+                  "targetTitle": "Critério Bivalente Obrigatório do Verbo de Ligação (Mantra da Vida)",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-012",
+                  "targetTitle": "Predicado Coincidente com a Integralidade da Frase",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-014",
+                  "targetTitle": "Predicado Verbo-Nominal e a Duplicidade de Núcleos",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -220,8 +849,50 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Verbo de Ligação (V.L.) é desprovido de função nocional (não indica ação nem processo). Sua finalidade exclusiva é atuar como cópula sintática entre o sujeito e a sua característica (Predicativo do Sujeito).\nO Critério Bivalente Cumulativo\nPara que qualquer verbo seja classificado como de ligação, exige-se o cumprimento obrigatório e concomitante de duas condições:\n\\text{Verbo de Ligação} \\iff \\begin{cases} 1.\\; \\text{Indicar ESTADO / MUDANÇA DE ESTADO (Condição Semântica)} \\\\ 2.\\; \\text{Vir acompanhado de PREDICATIVO DO SUJEITO (Condição Sintática)} \\end{cases}\nSe faltar o predicativo do sujeito ou se o verbo indicar ação/movimento, o verbo JAMAIS será de ligação.Falas marcantes: QUOTE-A06-G03-003, QUOTE-A06-G03-005"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Verbo de Ligação (V.L.) é desprovido de função nocional (não indica ação nem processo). Sua finalidade exclusiva é atuar como cópula sintática entre o sujeito e a sua característica (Predicativo do Sujeito)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "O Critério Bivalente Cumulativo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para que qualquer verbo seja classificado como de ligação, exige-se o cumprimento obrigatório e concomitante de duas condições:"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Verbo de Ligação} \\iff \\begin{cases} 1.\\; \\text{Indicar ESTADO / MUDANÇA DE ESTADO (Condição Semântica)} \\\\ 2.\\; \\text{Vir acompanhado de PREDICATIVO DO SUJEITO (Condição Sintática)} \\end{cases}"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se faltar o predicativo do sujeito ou se o verbo indicar ação/movimento, o verbo JAMAIS será de ligação."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G03-009",
+                  "targetTitle": "Predicativo do Sujeito: Critérios Semânticos, Vetoriais e Morfossintáticos",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G03-005",
+                  "targetTitle": "Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV)",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -234,8 +905,120 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAs tradicionais listas mnemônicas de verbos de ligação (ser, estar, ficar, parecer, permanecer, andar, tornar-se, viver, continuar, virar) não são estáticas nem definitivas. A predicação depende estritamente das relações sintáticas estabelecidas no predicado concreto.\nAnálise Comparativa dos Estudos de Caso (Padrão FGV)\nESTUDO DO VERBO \"CAIR\":\n\"Ela caiu doente.\"\n\"doente\" = Predicativo do Sujeito. \"Cair\" equivale a \"ficou\" (mudança de estado).\nClassificação: VERBO DE LIGAÇÃO (V.L.) -> Predicado Nominal.\n\"Ela caiu na rua.\"\n\"na rua\" = Adjunto Adverbial de Lugar. \"Cair\" = tombo físico real (ação).\nClassificação: VERBO INTRANSITIVO (V.I.) -> Predicado Verbal.\nESTUDO DO VERBO \"ANDAR\":\n\"Ele andava preocupado.\"\n\"preocupado\" = Predicativo do Sujeito. \"Andar\" equivale a \"estava\" (estado passageiro).\nClassificação: VERBO DE LIGAÇÃO (V.L.) -> Predicado Nominal.\n\"Ele andava no parque.\"\n\"no parque\" = Adjunto Adverbial de Lugar. \"Andar\" = locomoção física (ação).\nClassificação: VERBO INTRANSITIVO (V.I.) -> Predicado Verbal.\nMatizes Semânticos dos Estados Verbais\nPermanente: ser, viver (\"Ele é calmo\", \"Vivia triste\");\nTransitório / Passageiro: estar, andar (\"Estou cansado\", \"Anda preocupado\");\nMudança de Estado / Mutativo: ficar, tornar-se, virar, cair (\"Ficou rico\", \"Caiu doente\");\nContinuidade de Estado: permanecer, continuar (\"Permaneceu calada\");\nAparente: parecer (\"Parece cansado\").\nRelações\nAplica: \nExemplificado por: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As tradicionais listas mnemônicas de verbos de ligação (ser, estar, ficar, parecer, permanecer, andar, tornar-se, viver, continuar, virar) não são estáticas nem definitivas. A predicação depende estritamente das relações sintáticas estabelecidas no predicado concreto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Análise Comparativa dos Estudos de Caso (Padrão FGV)"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "ESTUDO DO VERBO \"CAIR\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Ela caiu doente.\"",
+                "\"doente\" = Predicativo do Sujeito. \"Cair\" equivale a \"ficou\" (mudança de estado).",
+                "Classificação: VERBO DE LIGAÇÃO (V.L.) -> Predicado Nominal.",
+                "\"Ela caiu na rua.\"",
+                "\"na rua\" = Adjunto Adverbial de Lugar. \"Cair\" = tombo físico real (ação).",
+                "Classificação: VERBO INTRANSITIVO (V.I.) -> Predicado Verbal."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "ESTUDO DO VERBO \"ANDAR\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Ele andava preocupado.\"",
+                "\"preocupado\" = Predicativo do Sujeito. \"Andar\" equivale a \"estava\" (estado passageiro).",
+                "Classificação: VERBO DE LIGAÇÃO (V.L.) -> Predicado Nominal.",
+                "\"Ele andava no parque.\"",
+                "\"no parque\" = Adjunto Adverbial de Lugar. \"Andar\" = locomoção física (ação).",
+                "Classificação: VERBO INTRANSITIVO (V.I.) -> Predicado Verbal."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Matizes Semânticos dos Estados Verbais"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Permanente: ser, viver (\"Ele é calmo\", \"Vivia triste\");",
+                "Transitório / Passageiro: estar, andar (\"Estou cansado\", \"Anda preocupado\");",
+                "Mudança de Estado / Mutativo: ficar, tornar-se, virar, cair (\"Ficou rico\", \"Caiu doente\");",
+                "Continuidade de Estado: permanecer, continuar (\"Permaneceu calada\");",
+                "Aparente: parecer (\"Parece cansado\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-010",
+                  "targetTitle": "Critério Bivalente Obrigatório do Verbo de Ligação (Mantra da Vida)",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-016",
+                  "targetTitle": "\"Ela caiu doente.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-017",
+                  "targetTitle": "\"Ela caiu na rua.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-034",
+                  "targetTitle": "Sentença 5: \"Ele andava preocupado.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G03-006",
+                  "targetTitle": "A Pegadinha da Troca Indistinta de Verbos de Ligação",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G03-007",
+                  "targetTitle": "A Pegadinha da Troca Indistinta de Verbos de Ligação (Padrão FGV) [material de origem]",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -248,8 +1031,50 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNas orações em que o sujeito não se encontra graficamente expresso — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por se tratar de oração sem sujeito —, 100% da extensão da frase escrita pertence ao predicado.\nExplicação consolidada\nComo a regra algébrica estipula que $\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$, se o sujeito não ocupa espaço material visível na frase, nenhum vocábulo é subtraído:\nNa frase \"Acho sua atitude imperdoável\", o sujeito é o pronome elíptico de 1ª pessoa (Eu). Logo, o predicado abrange a oração inteira: [Acho sua atitude imperdoável].\nNa frase \"Havia crianças no parque\", a oração é sem sujeito (verbo impessoal). Toda a sentença é predicado.\nRelações\nAplica: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nas orações em que o sujeito não se encontra graficamente expresso — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por se tratar de oração sem sujeito —, 100% da extensão da frase escrita pertence ao predicado."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Como a regra algébrica estipula que $\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$, se o sujeito não ocupa espaço material visível na frase, nenhum vocábulo é subtraído:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Na frase \"Acho sua atitude imperdoável\", o sujeito é o pronome elíptico de 1ª pessoa (Eu). Logo, o predicado abrange a oração inteira: [Acho sua atitude imperdoável].",
+                "Na frase \"Havia crianças no parque\", a oração é sem sujeito (verbo impessoal). Toda a sentença é predicado."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-002",
+                  "targetTitle": "Delimitação Operacional do Sujeito, Núcleo e Predicado",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G03-003",
+                  "targetTitle": "Essencialidade Relativa do Sujeito vs. Obrigatoriedade Absoluta do Predicado",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -262,8 +1087,72 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Predicado Verbal (P.V.) é a estrutura predicativa cujo núcleo é obrigatoriamente um verbo significativo/nocional de ação, movimento ou fenômeno, caracterizando-se pela ausência categórica de predicativos.\n\\text{Predicado Verbal} = \\text{Verbo de Ação (VI / VTD / VTI / VTDI)} \\; [\\text{sem Predicativo}]\nExplicação detalhada\nO predicado verbal concentra sua força informativa no dinamismo do próprio verbo.\nPode conter complementos verbais (objeto direto / indireto) e adjuntos adverbiais, mas é estruturalmente incompatível com atributos qualificadores do sujeito ou do objeto.\nExemplos: \"Os alunos entraram em sala\" (entraram = VI / núcleo; em sala = adjunto adverbial); \"Tu pisavas nos astros\" (pisavas = VI / núcleo; nos astros = adjunto adverbial).\nRelações\nContrasta com: , \nExemplificado por: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Predicado Verbal (P.V.) é a estrutura predicativa cujo núcleo é obrigatoriamente um verbo significativo/nocional de ação, movimento ou fenômeno, caracterizando-se pela ausência categórica de predicativos."
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Predicado Verbal} = \\text{Verbo de Ação (VI / VTD / VTI / VTDI)} \\; [\\text{sem Predicativo}]"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O predicado verbal concentra sua força informativa no dinamismo do próprio verbo.",
+                "Pode conter complementos verbais (objeto direto / indireto) e adjuntos adverbiais, mas é estruturalmente incompatível com atributos qualificadores do sujeito ou do objeto.",
+                "Exemplos: \"Os alunos entraram em sala\" (entraram = VI / núcleo; em sala = adjunto adverbial); \"Tu pisavas nos astros\" (pisavas = VI / núcleo; nos astros = adjunto adverbial)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G03-012",
+                  "targetTitle": "Predicado Coincidente com a Integralidade da Frase",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G03-014",
+                  "targetTitle": "Predicado Verbo-Nominal e a Duplicidade de Núcleos",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-030",
+                  "targetTitle": "Sentença 1: \"Tu pisavas nos astros.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-033",
+                  "targetTitle": "Sentença 4: \"Os jovens trabalhavam no laboratório.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-036",
+                  "targetTitle": "Sentença 7: \"As crianças corriam pelo gramado.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -276,8 +1165,114 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Predicado Verbo-Nominal (P.V.N.) é a estrutura híbrida que possui simultaneamente dois núcleos significativos: um núcleo verbal (verbo de ação) e um núcleo nominal (predicativo, que pode qualificar o sujeito ou o objeto).\n\\text{Predicado Verbo-Nominal} = \\text{Verbo de Ação (Núcleo 1)} + \\text{Predicativo (Núcleo 2)}\nAs Duas Conformações do Predicado Verbo-Nominal\nCom Predicativo do Sujeito: $\\text{Verbo de Ação} + \\text{Predicativo do Sujeito}$.\nExemplo: \"Os alunos entraram em sala [eufóricos]\" $\\rightarrow$ Núcleo verbal: entraram; Núcleo nominal: eufóricos (estado dos alunos no momento da entrada).\nExemplo: \"Chegamos [ofegantes] à porta da cantina\" $\\rightarrow$ Núcleo verbal: chegamos; Núcleo nominal: ofegantes.\nCom Predicativo do Objeto: $\\text{Verbo de Ação Transitivo} + \\text{Objeto} + \\text{Predicativo do Objeto}$.\nExemplo: \"Consideraram [absurda] [a decisão do chefe]\" $\\rightarrow$ Núcleo verbal: consideraram; Objeto: a decisão do chefe; Predicativo do Objeto: absurda.\nExemplo: \"Acho [sua atitude] [imperdoável]\" $\\rightarrow$ Núcleo verbal: acho; Objeto: sua atitude; Predicativo do Objeto: imperdoável.\nRelações\nExpande: , \nExemplificado por: , , , , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Predicado Verbo-Nominal (P.V.N.) é a estrutura híbrida que possui simultaneamente dois núcleos significativos: um núcleo verbal (verbo de ação) e um núcleo nominal (predicativo, que pode qualificar o sujeito ou o objeto)."
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Predicado Verbo-Nominal} = \\text{Verbo de Ação (Núcleo 1)} + \\text{Predicativo (Núcleo 2)}"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "As Duas Conformações do Predicado Verbo-Nominal"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Com Predicativo do Sujeito: $\\text{Verbo de Ação} + \\text{Predicativo do Sujeito}$."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Os alunos entraram em sala [eufóricos]\" $\\rightarrow$ Núcleo verbal: entraram; Núcleo nominal: eufóricos (estado dos alunos no momento da entrada).",
+                "Exemplo: \"Chegamos [ofegantes] à porta da cantina\" $\\rightarrow$ Núcleo verbal: chegamos; Núcleo nominal: ofegantes."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Com Predicativo do Objeto: $\\text{Verbo de Ação Transitivo} + \\text{Objeto} + \\text{Predicativo do Objeto}$."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Consideraram [absurda] [a decisão do chefe]\" $\\rightarrow$ Núcleo verbal: consideraram; Objeto: a decisão do chefe; Predicativo do Objeto: absurda.",
+                "Exemplo: \"Acho [sua atitude] [imperdoável]\" $\\rightarrow$ Núcleo verbal: acho; Objeto: sua atitude; Predicativo do Objeto: imperdoável."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A06-G03-012",
+                  "targetTitle": "Predicado Coincidente com a Integralidade da Frase",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A06-G03-013",
+                  "targetTitle": "Predicado Verbal e o Núcleo no Verbo Nocional",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-018",
+                  "targetTitle": "Frase 1: \"Ela ligou o ferro silenciosa.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-020",
+                  "targetTitle": "Frase 3: \"Chegamos ofegantes à porta da cantina.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-025",
+                  "targetTitle": "Frase 8: \"Consideraram absurda a decisão do chefe.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-032",
+                  "targetTitle": "Sentença 3: \"Tu pisavas nos astros distraída.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-035",
+                  "targetTitle": "Sentença 6: \"O jogador correu para a bola afoito.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-037",
+                  "targetTitle": "Sentença 8: \"Acho sua atitude imperdoável.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -290,8 +1285,34 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO predicativo não é exclusividade de orações com verbos de ligação. O predicativo pode acoplar-se livremente a qualquer classe de verbo da língua portuguesa:\nAcoplado a Verbo de Ligação $\\implies$ Predicado Nominal;\nAcoplado a Verbo de Ação (VI, VTD, VTI, VTDI) $\\implies$ Predicado Verbo-Nominal.Falas marcantes: QUOTE-A06-G03-007"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O predicativo não é exclusividade de orações com verbos de ligação. O predicativo pode acoplar-se livremente a qualquer classe de verbo da língua portuguesa:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Acoplado a Verbo de Ligação $\\implies$ Predicado Nominal;",
+                "Acoplado a Verbo de Ação (VI, VTD, VTI, VTDI) $\\implies$ Predicado Verbo-Nominal."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G03-005",
+                  "targetTitle": "Polifuncionalidade Semântica de \"Andar\", \"Cair\" e \"Viver\" (Pegadinha FGV)",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -304,76 +1325,39 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNas orações em que o sujeito não se encontra materialmente expresso na cadeia linear escrita — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por tratar-se de oração sem sujeito —, a totalidade dos vocábulos visíveis da frase constitui formalmente o predicado.\n\\text{Se o Sujeito não está explícito} \\implies \\text{Predicado} = \\text{Frase Inteira}\nRelações\nExpande: \nExemplificado por: \nOralidade associada: ORAL-A06-G03-005"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nas orações em que o sujeito não se encontra materialmente expresso na cadeia linear escrita — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por tratar-se de oração sem sujeito —, a totalidade dos vocábulos visíveis da frase constitui formalmente o predicado."
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Se o Sujeito não está explícito} \\implies \\text{Predicado} = \\text{Frase Inteira}"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A06-G03-003",
+                  "targetTitle": "Essencialidade Relativa do Sujeito vs. Obrigatoriedade Absoluta do Predicado",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G03-037",
+                  "targetTitle": "Sentença 8: \"Acho sua atitude imperdoável.\"",
+                  "targetUnitId": "IP-A06-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA análise sintática oracional em Língua Portuguesa estrutura-se em três blocos modulares: Termos Essenciais (Sujeito e Predicado), Termos Integrantes (Complementos Verbais, Complemento Nominal e Agente da Passiva) e Termos Acessórios (Adjuntos Adnominais, Adjuntos Adverbiais e Aposto). O eixo organizador absoluto de toda a sintaxe é o verbo (\"verbo é tudo\").\nExplicação consolidada\nA sintaxe não opera por acúmulo desordenado de termos isolados. O verbo é o elemento nuclear e instaurador da oração:\nCondição de Oração: Não existe oração sem verbo. Se houver comunicação sem verbo (como a transcrição de um riso \"kkk\" ou interjeições), tem-se uma frase nominal/mensagem, mas não uma oração sintaticamente analisável.\nDependência Hierárquica: Todos os termos da oração articulam-se direta ou indiretamente ao redor do verbo. A correta identificação do sujeito, da regência, dos complementos e dos adjuntos decorre obrigatoriamente de interrogações estruturadas feitas à forma verbal.\nFundamento Epistêmico: Conforme lição do gramático Evanildo Bechara rememorada pela professora, o domínio da análise sintática e da estrutura do verbo é o pré-requisito nuclear para toda a gramática normativa (concordância, regência, crase e pontuação).\nRelações\nBase estrutural para: , .\nOrigina procedimento: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nEnquanto a gramática tradicional define o sujeito como o tópico sobre o qual se faz uma declaração, a prática de concursos exige um método operacional unificado: localizar o verbo e interrogá-lo pela fórmula Quem é que / O que é que + VERBO?. O predicado define-se algebricamente como \"tudo menos o sujeito\" ($\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$).\nExplicação consolidada\nSujeito: Bloco oracional obtido como resposta direta à pergunta interrogativa feita ao verbo.\nNúcleo do Sujeito: É o substantivo ou pronome substantivo principal que sustenta o sujeito semanticamente, desprovido de preposição obrigatória. Termos que circundam o núcleo funcionam como determinantes periféricos (adjuntos adnominais ou complementos nominais).\nPredicado: Todo o restante da estrutura da frase a partir do verbo, englobando seus complementos, adjuntos adverbiais e predicativos.\n[ Uma comitiva de empresários ] [ chegou ontem a São Paulo. ] NÚCLEO PREDICADO (sem prep.) (Tudo menos o sujeito) ┘ SUJEITO"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA nomenclatura formal \"Termo Essencial\" é conceitualmente assimétrica: o sujeito pode inexistir na oração (sujeito inexistente / oração sem sujeito), ao passo que o predicado é rigorosamente obrigatório em 100% das orações, pois decorre da presença compulsória do verbo.\nExplicação consolidada\nA taxonomia do sujeito divide-se primariamente entre sua existência ou não no plano da frase:\nSujeito Existente:\nSimples: um único núcleo (\"A comitiva chegou\").\nComposto: dois ou mais núcleos (\"O diretor e o gerente chegaram\").\nOracional: expresso sob a forma de uma oração subordinada substantiva subjetiva (\"É necessário que você venha\").\nIndeterminado: o sujeito existe na realidade, mas o enunciador não pode ou não quer identificá-lo (\"Guardaram a minha bolsa\" / verbo na 3ª pessoa do plural sem antecedente).\nOculto (Elíptico / Desinencial): o sujeito existe e é identificável pela terminação verbal ou pelo contexto (\"Chegamos cedo\" $\\rightarrow$ nós).\nSujeito Inexistente (Oração Sem Sujeito): Orações construídas com verbos impessoais (como haver significando existir/ocorrer, fazer indicando tempo decorrido ou verbos de fenômenos da natureza). Nessas frases, a oração coincide integralmente com o predicado (\"Havia crianças no parque\").\nRelações\nContrasta com: .\nExemplificado por: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA predicação verbal não se classifica a partir de 5 tipos soltos e desconexos, mas sob dois grandes troncos primários funcionais:\nVerbos de Ação / Movimento / Fenômeno (Nocionais / Plenos / Significativos);\nVerbos de Estado (Relacionais / Não Nocionais / De Ligação).\nVERBOS ┴ \nDE AÇÃO / MOVIMENTO / FENÔMENO 2. DE ESTADO\n(Nocionais) (Relacionais) ┴ ┬ VERBO DE LIGAÇÃO V.I. V.T.D. V.T.I. (V.L.) ┬ ┴ ┘ V.T.D.I.\nExplicação consolidada\nVerbos Nocionais: Detêm significado léxico pleno. Expressam processos, atividades, acontecimentos dinâmicos ou fenômenos físicos. Constituem o núcleo verbal da declaração.\nVerbos Relacionais (de Ligação): Não expressam ação ou dinamicidade; funcionam como uma cópula/ponte conectiva entre o sujeito e um atributo que expressa o estado ou qualidade momentânea/permanente deste sujeito.\nRelações\nEspinha dorsal para: , , , , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Verbo Intransitivo (VI) expressa sentido nocional completo e não exige complementos verbais (objetos). Ele pode vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de qualificadores do sujeito (Predicativos do Sujeito).\nCritérios de Reconhecimento do Adjunto Adverbial\nInvariabilidade Essencial: Representado por advérbios ou locuções adverbiais (embora locuções possam ter núcleos nominais flexionáveis como \"aos clubes\", a função oracional é invariável).\nSeta Sintática no Verbo: Aponta e modifica o verbo oracional.\nSemântica Circunstancial (\"Cheiro de Circunstância\"): Responde a perguntas como onde? quando? como? por quê?.\nPrincípio da Dispensabilidade Sintática (\"A Fofoca da Oração\"): O adjunto adverbial pode ser suprimido da oração sem quebrar a integridade sintática e a transitividade do verbo.\n[O menino] foi [ao clube]. Sujeito (V.I.) Adj. Adverbial de Lugar (Circunstância) ┘ (Seta aponta para o verbo)\nNo exemplo \"O menino foi ao clube\", o termo \"ao clube\" indica lugar (onde?). Sua supressão deixa a frase estruturalmente fechada (\"O menino foi\"), provando que \"ao clube\" não é objeto indireto, mas adjunto adverbial dispensável, mantendo o verbo como Intransitivo (VI).\nRelações\nPossui alertas: , .\nExemplificado por: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs Verbos Transitivos são verbos nocionais de predicação incompleta que demandam termos integrantes (objetos) para integralizar seu significado.\nVERBOS TRANSITIVOS ┼ TRANSITIVO DIRETO TRANSITIVO INDIRETO TRANSITIVO DIRETO E (V.T.D.) (V.T.I.) INDIRETO (V.T.D.I.) (ou Bitransitivo) Complemento SEM Complemento COM preposição preposição Exige 2 complementos: (Objeto Direto) (Objeto Indireto) 1 SEM prep. (O.D.)\n1 COM prep. (O.I.)\nRegras e Diferenciações\nVerbo Transitivo Direto (VTD): Conecta-se diretamente ao complemento sem preposição regencial obrigatória. Complemento = Objeto Direto (OD) (\"Comprei jornais variados\").\nVerbo Transitivo Indireto (VTI): Conecta-se ao complemento mediante preposição gramatical obrigatória exigida pelo verbo (sem valor circunstancial de lugar/tempo). Complemento = Objeto Indireto (OI) (\"Visamos a um cargo elevado\").\nVerbo Transitivo Direto e Indireto (VTDI ou Bitransitivo): Rege simultaneamente dois complementos: um não preposicionado (OD) e outro preposicionado (OI) (\"Ofereceram o cargo ao deputado\").\nRelações\nExemplificado por: , , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Predicativo é o termo atributivo do predicado que expressa estado, qualidade ou condição transitória/permanente atribuída ao sujeito ou ao objeto.\nAs Três Propriedades de Reconhecimento do Predicativo\nDirecionamento Sintático (Método das Setas):\nSe qualifica o sujeito $\\rightarrow$ Seta no Sujeito (Predicativo do Sujeito);\nSe qualifica o objeto direto/indireto $\\rightarrow$ Seta no Objeto (Predicativo do Objeto).\nSemântica de Estado/Qualidade: Não indica ação ou circunstância adverbial; descreve uma propriedade ou estado.\nMorfologia Predominantemente Adjetiva: Manifesta-se como adjetivo (ou substantivo/locução adjetiva com função atributiva) que concorda morfossintaticamente em gênero e número com o termo a que se refere (\"A menina chegou satisfeita\" / \"As meninas chegaram satisfeitas\").\nUniversalidade do Predicativo\nO predicativo não é exclusivo dos verbos de ligação. Ele pode aparecer acoplado a qualquer verbo de ação (intransitivo ou transitivo), atuando como segundo núcleo do predicado."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Verbo de Ligação (VL) não expressa ação. Sua função exclusiva é conectar o sujeito ao seu predicativo. Para que qualquer verbo seja classificado como de ligação, é obrigatório o cumprimento simultâneo de duas condições cumulativas (Critério Bivalente / \"Mantra da Vida\"):\n\\text{Verbo de Ligação} \\iff \\begin{cases} 1.\\; \\text{Indicar ESTADO / MUDANÇA DE ESTADO (Semântica)} \\\\ 2.\\; \\text{Vir acompanhado de PREDICATIVO DO SUJEITO (Sintaxe)} \\end{cases}\nDesconstrução e Relativização das Listas Memorizadas\nListas escolares (ser, estar, parecer, permanecer, ficar, continuar, andar, tornar-se, virar, viver) não garantem classificação fixa:\nVerbo da lista sem predicativo: Deixa de ser de ligação e vira intransitivo nocional (\"O aluno está em casa\" $\\rightarrow$ estar indica localização acompanhado de adjunto adverbial de lugar = VI).\nVerbo de ação com semântica de estado e predicativo: Torna-se verbo de ligação (\"Ela caiu doente\" $\\rightarrow$ caiu equivale a ficou + doente é predicativo do sujeito = VL).\n\"Ela caiu doente.\"\n\"doente\" = Predicativo do Sujeito (Estado).\n\"cair\" = equivale a \"ficou\" (mudança de estado).\nClassificação: VERBO DE LIGAÇÃO (V.L.).\n\"Ela caiu na rua.\"\n\"na rua\" = Adjunto Adverbial de Lugar (Circunstância).\n\"cair\" = tombo físico real (Ação). Não há predicativo.\nClassificação: VERBO INTRANSITIVO (V.I.).\nMatizes Semânticos dos Verbos de Ligação (Padrão FGV)\nEstado Permanente: ser, viver (\"Ele é calmo\").\nEstado Transitório / Passageiro: estar, andar (\"Estou doente\", \"Ela anda preocupada\").\nContinuidade de Estado: permanecer, continuar (\"As listas permaneciam abertas\").\nMudança de Estado: ficar, tornar-se, virar, cair (\"Ficou feliz\", \"Virou fera\", \"Caiu doente\").\nEstado Aparente: parecer (\"Parece cansado\").\nRelações\nAplica: .\nOrigina procedimento: .\nPossui alertas: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Predicativo do Sujeito (P.S.) é o termo do predicado que expressa uma propriedade, condição momentânea, estado transitório ou atributo essencial do sujeito, estabelecendo com ele concordância nominal.\nAs Três Regras de Identificação (Observação 4)\nRelação Vetorial (Seta no Sujeito): o termo não modifica o verbo; sua seta sintática aponta obrigatoriamente para o núcleo do sujeito.\nSemântica de Estado: exprime estado (permanente, transitório, aparente, mutativo ou continuado).\nMorfologia Adjetiva e Concordância: manifesta-se predominantemente como adjetivo (ou locução adjetiva / substantivo predicativo), flexionando-se em gênero e número para concordar com o sujeito (\"Ela chegou apressada\" $\\rightarrow$ \"Elas chegaram apressadas\").Maciço mnemônico: TIP-A06-G03-004"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Verbo de Ligação (V.L.) é desprovido de função nocional (não indica ação nem processo). Sua finalidade exclusiva é atuar como cópula sintática entre o sujeito e a sua característica (Predicativo do Sujeito).\nO Critério Bivalente Cumulativo\nPara que qualquer verbo seja classificado como de ligação, exige-se o cumprimento obrigatório e concomitante de duas condições:\n\\text{Verbo de Ligação} \\iff \\begin{cases} 1.\\; \\text{Indicar ESTADO / MUDANÇA DE ESTADO (Condição Semântica)} \\\\ 2.\\; \\text{Vir acompanhado de PREDICATIVO DO SUJEITO (Condição Sintática)} \\end{cases}\nSe faltar o predicativo do sujeito ou se o verbo indicar ação/movimento, o verbo JAMAIS será de ligação.Falas marcantes: QUOTE-A06-G03-003, QUOTE-A06-G03-005"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAs tradicionais listas mnemônicas de verbos de ligação (ser, estar, ficar, parecer, permanecer, andar, tornar-se, viver, continuar, virar) não são estáticas nem definitivas. A predicação depende estritamente das relações sintáticas estabelecidas no predicado concreto.\nAnálise Comparativa dos Estudos de Caso (Padrão FGV)\nESTUDO DO VERBO \"CAIR\":\n\"Ela caiu doente.\"\n\"doente\" = Predicativo do Sujeito. \"Cair\" equivale a \"ficou\" (mudança de estado).\nClassificação: VERBO DE LIGAÇÃO (V.L.) -> Predicado Nominal.\n\"Ela caiu na rua.\"\n\"na rua\" = Adjunto Adverbial de Lugar. \"Cair\" = tombo físico real (ação).\nClassificação: VERBO INTRANSITIVO (V.I.) -> Predicado Verbal.\nESTUDO DO VERBO \"ANDAR\":\n\"Ele andava preocupado.\"\n\"preocupado\" = Predicativo do Sujeito. \"Andar\" equivale a \"estava\" (estado passageiro).\nClassificação: VERBO DE LIGAÇÃO (V.L.) -> Predicado Nominal.\n\"Ele andava no parque.\"\n\"no parque\" = Adjunto Adverbial de Lugar. \"Andar\" = locomoção física (ação).\nClassificação: VERBO INTRANSITIVO (V.I.) -> Predicado Verbal.\nMatizes Semânticos dos Estados Verbais\nPermanente: ser, viver (\"Ele é calmo\", \"Vivia triste\");\nTransitório / Passageiro: estar, andar (\"Estou cansado\", \"Anda preocupado\");\nMudança de Estado / Mutativo: ficar, tornar-se, virar, cair (\"Ficou rico\", \"Caiu doente\");\nContinuidade de Estado: permanecer, continuar (\"Permaneceu calada\");\nAparente: parecer (\"Parece cansado\").\nRelações\nAplica: \nExemplificado por: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNas orações em que o sujeito não se encontra graficamente expresso — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por se tratar de oração sem sujeito —, 100% da extensão da frase escrita pertence ao predicado.\nExplicação consolidada\nComo a regra algébrica estipula que $\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$, se o sujeito não ocupa espaço material visível na frase, nenhum vocábulo é subtraído:\nNa frase \"Acho sua atitude imperdoável\", o sujeito é o pronome elíptico de 1ª pessoa (Eu). Logo, o predicado abrange a oração inteira: [Acho sua atitude imperdoável].\nNa frase \"Havia crianças no parque\", a oração é sem sujeito (verbo impessoal). Toda a sentença é predicado.\nRelações\nAplica: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Predicado Verbal (P.V.) é a estrutura predicativa cujo núcleo é obrigatoriamente um verbo significativo/nocional de ação, movimento ou fenômeno, caracterizando-se pela ausência categórica de predicativos.\n\\text{Predicado Verbal} = \\text{Verbo de Ação (VI / VTD / VTI / VTDI)} \\; [\\text{sem Predicativo}]\nExplicação detalhada\nO predicado verbal concentra sua força informativa no dinamismo do próprio verbo.\nPode conter complementos verbais (objeto direto / indireto) e adjuntos adverbiais, mas é estruturalmente incompatível com atributos qualificadores do sujeito ou do objeto.\nExemplos: \"Os alunos entraram em sala\" (entraram = VI / núcleo; em sala = adjunto adverbial); \"Tu pisavas nos astros\" (pisavas = VI / núcleo; nos astros = adjunto adverbial).\nRelações\nContrasta com: , \nExemplificado por: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Predicado Verbo-Nominal (P.V.N.) é a estrutura híbrida que possui simultaneamente dois núcleos significativos: um núcleo verbal (verbo de ação) e um núcleo nominal (predicativo, que pode qualificar o sujeito ou o objeto).\n\\text{Predicado Verbo-Nominal} = \\text{Verbo de Ação (Núcleo 1)} + \\text{Predicativo (Núcleo 2)}\nAs Duas Conformações do Predicado Verbo-Nominal\nCom Predicativo do Sujeito: $\\text{Verbo de Ação} + \\text{Predicativo do Sujeito}$.\nExemplo: \"Os alunos entraram em sala [eufóricos]\" $\\rightarrow$ Núcleo verbal: entraram; Núcleo nominal: eufóricos (estado dos alunos no momento da entrada).\nExemplo: \"Chegamos [ofegantes] à porta da cantina\" $\\rightarrow$ Núcleo verbal: chegamos; Núcleo nominal: ofegantes.\nCom Predicativo do Objeto: $\\text{Verbo de Ação Transitivo} + \\text{Objeto} + \\text{Predicativo do Objeto}$.\nExemplo: \"Consideraram [absurda] [a decisão do chefe]\" $\\rightarrow$ Núcleo verbal: consideraram; Objeto: a decisão do chefe; Predicativo do Objeto: absurda.\nExemplo: \"Acho [sua atitude] [imperdoável]\" $\\rightarrow$ Núcleo verbal: acho; Objeto: sua atitude; Predicativo do Objeto: imperdoável.\nRelações\nExpande: , \nExemplificado por: , , , , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO predicativo não é exclusividade de orações com verbos de ligação. O predicativo pode acoplar-se livremente a qualquer classe de verbo da língua portuguesa:\nAcoplado a Verbo de Ligação $\\implies$ Predicado Nominal;\nAcoplado a Verbo de Ação (VI, VTD, VTI, VTDI) $\\implies$ Predicado Verbo-Nominal.Falas marcantes: QUOTE-A06-G03-007"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNas orações em que o sujeito não se encontra materialmente expresso na cadeia linear escrita — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por tratar-se de oração sem sujeito —, a totalidade dos vocábulos visíveis da frase constitui formalmente o predicado.\n\\text{Se o Sujeito não está explícito} \\implies \\text{Predicado} = \\text{Frase Inteira}\nRelações\nExpande: \nExemplificado por: \nOralidade associada: ORAL-A06-G03-005"
         }
       ]
     },
@@ -479,7 +1463,9 @@
               "RULE-IP-A06-G03-001",
               "EXP-IP-A06-G03-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -703,7 +1689,9 @@
               "PROC-A06-G03-001",
               "EXP-IP-A06-G03-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -813,7 +1801,9 @@
               "PROC-A06-G03-002",
               "EXP-IP-A06-G03-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -929,7 +1919,9 @@
               "PROC-A06-G03-003",
               "EXP-IP-A06-G03-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1032,7 +2024,9 @@
               "PROC-A06-G03-004",
               "EXP-IP-A06-G03-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1094,7 +2088,9 @@
               "PROC-A06-G03-005",
               "EXP-IP-A06-G03-PROC-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1169,7 +2165,9 @@
               "CONTRAST-IP-A06-G03-001",
               "EXP-IP-A06-G03-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1240,7 +2238,9 @@
               "CONTRAST-IP-A06-G03-002",
               "EXP-IP-A06-G03-064"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1292,7 +2292,9 @@
               "CONTRAST-IP-A06-G03-003",
               "EXP-IP-A06-G03-065"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1366,7 +2368,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-001",
               "EXP-IP-A06-G03-066"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1409,7 +2413,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-002",
               "EXP-IP-A06-G03-067"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1476,7 +2482,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-003",
               "EXP-IP-A06-G03-068"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1525,7 +2533,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-004",
               "EXP-IP-A06-G03-069"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1592,7 +2602,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-005",
               "EXP-IP-A06-G03-070"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1653,7 +2665,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-006",
               "EXP-IP-A06-G03-071"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1721,7 +2735,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-007",
               "EXP-IP-A06-G03-072"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1802,7 +2818,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-008",
               "EXP-IP-A06-G03-073"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1839,7 +2857,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-009",
               "EXP-IP-A06-G03-074"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1876,7 +2896,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-010",
               "EXP-IP-A06-G03-075"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1913,7 +2935,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-011",
               "EXP-IP-A06-G03-076"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1950,7 +2974,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-012",
               "EXP-IP-A06-G03-077"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1987,7 +3013,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-013",
               "EXP-IP-A06-G03-078"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2024,7 +3052,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-014",
               "EXP-IP-A06-G03-079"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2061,7 +3091,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-015",
               "EXP-IP-A06-G03-080"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2098,7 +3130,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-016",
               "EXP-IP-A06-G03-081"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2135,7 +3169,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-017",
               "EXP-IP-A06-G03-082"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2172,7 +3208,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-018",
               "EXP-IP-A06-G03-083"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2209,7 +3247,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-019",
               "EXP-IP-A06-G03-084"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2246,7 +3286,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-020",
               "EXP-IP-A06-G03-085"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2283,7 +3325,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-021",
               "EXP-IP-A06-G03-086"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2320,7 +3364,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-022",
               "EXP-IP-A06-G03-087"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2357,7 +3403,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-023",
               "EXP-IP-A06-G03-088"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2394,7 +3442,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-024",
               "EXP-IP-A06-G03-089"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2431,7 +3481,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-025",
               "EXP-IP-A06-G03-090"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2468,7 +3520,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-026",
               "EXP-IP-A06-G03-091"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2505,7 +3559,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-027",
               "EXP-IP-A06-G03-092"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2542,7 +3598,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-028",
               "EXP-IP-A06-G03-093"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2579,7 +3637,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-029",
               "EXP-IP-A06-G03-094"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2616,7 +3676,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-030",
               "EXP-IP-A06-G03-095"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2653,7 +3715,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-031",
               "EXP-IP-A06-G03-096"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2690,7 +3754,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-032",
               "EXP-IP-A06-G03-097"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2727,7 +3793,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-033",
               "EXP-IP-A06-G03-098"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2764,7 +3832,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-034",
               "EXP-IP-A06-G03-099"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2801,7 +3871,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-035",
               "EXP-IP-A06-G03-100"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2838,7 +3910,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-036",
               "EXP-IP-A06-G03-101"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2875,7 +3949,9 @@
               "WORKED_EXAMPLE-IP-A06-G03-037",
               "EXP-IP-A06-G03-102"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2925,7 +4001,9 @@
               "WARN-A06-G03-001",
               "EXP-IP-A06-G03-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2961,7 +4039,9 @@
               "WARN-A06-G03-002",
               "EXP-IP-A06-G03-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2997,7 +4077,9 @@
               "WARN-A06-G03-003",
               "EXP-IP-A06-G03-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3033,7 +4115,9 @@
               "WARN-A06-G03-004",
               "EXP-IP-A06-G03-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3073,7 +4157,9 @@
               "WARN-A06-G03-005",
               "EXP-IP-A06-G03-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3109,7 +4195,9 @@
               "WARN-A06-G03-006",
               "EXP-IP-A06-G03-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3145,7 +4233,9 @@
               "WARN-A06-G03-007",
               "EXP-IP-A06-G03-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3181,35 +4271,162 @@
               "WARN-A06-G03-008",
               "EXP-IP-A06-G03-TRAP-008"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**A Arquitetura Tripartida da Sintaxe e a Centralidade do Verbo**: Definição ou ideia central\nA análise sintática oracional em Língua Portuguesa estrutura-se em três blocos modulares: Termos Essenciais (Sujeito e Predicado), Termos Integrantes (Complementos Verbais, Complemento Nominal e Agente da Passiva) e Termos Acessórios (Adjuntos Adnominais, Adjuntos Adverbiais e Aposto). O eixo organizador absoluto de toda a sintaxe é o verbo (\"verbo é tudo\").\nExplicação consolidada\nA sintaxe não opera por acúmulo desordenado de termos isolados. O verbo é o elemento nuclear e instaurador da oração:\nCondição de Oração: Não existe oração sem verbo. Se houver comunicação sem verbo (como a transcrição de um riso \"kkk\" ou interjeições), tem-se uma frase nominal/mensagem, mas não uma oração sintaticamente analisável.\nDependência Hierárquica: Todos os termos da oração articulam-se direta ou indiretamente ao redor do verbo. A correta identificação do sujeito, da regência, dos complementos e dos adjuntos decorre obrigatoriamente de interrogações estruturadas feitas à forma verbal.\nFundamento Epistêmico: Conforme lição do gramático Evanildo Bechara rememorada pela professora, o domínio da análise sintática e da estrutura do verbo é o pré-requisito nuclear para toda a gramática normativa (concordância, regência, crase e pontuação).\nRelações\nBase estrutural para: , .\nOrigina procedimento: .",
-            "**Delimitação Operacional do Sujeito, Núcleo e Predicado**: Definição ou ideia central\nEnquanto a gramática tradicional define o sujeito como o tópico sobre o qual se faz uma declaração, a prática de concursos exige um método operacional unificado: localizar o verbo e interrogá-lo pela fórmula Quem é que / O que é que + VERBO?. O predicado define-se algebricamente como \"tudo menos o sujeito\" ($\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$).\nExplicação consolidada\nSujeito: Bloco oracional obtido como resposta direta à pergunta interrogativa feita ao verbo.\nNúcleo do Sujeito: É o substantivo ou pronome substantivo principal que sustenta o sujeito semanticamente, desprovido de preposição obrigatória. Termos que circundam o núcleo funcionam como determinantes periféricos (adjuntos adnominais ou complementos nominais).\nPredicado: Todo o restante da estrutura da frase a partir do verbo, englobando seus complementos, adjuntos adverbiais e predicativos.\n[ Uma comitiva de empresários ] [ chegou ontem a São Paulo. ] NÚCLEO PREDICADO (sem prep.) (Tudo menos o sujeito) ┘ SUJEITO",
-            "**Essencialidade Relativa do Sujeito vs. Obrigatoriedade Absoluta do Predicado**: Definição ou ideia central\nA nomenclatura formal \"Termo Essencial\" é conceitualmente assimétrica: o sujeito pode inexistir na oração (sujeito inexistente / oração sem sujeito), ao passo que o predicado é rigorosamente obrigatório em 100% das orações, pois decorre da presença compulsória do verbo.\nExplicação consolidada\nA taxonomia do sujeito divide-se primariamente entre sua existência ou não no plano da frase:\nSujeito Existente:\nSimples: um único núcleo (\"A comitiva chegou\").\nComposto: dois ou mais núcleos (\"O diretor e o gerente chegaram\").\nOracional: expresso sob a forma de uma oração subordinada substantiva subjetiva (\"É necessário que você venha\").\nIndeterminado: o sujeito existe na realidade, mas o enunciador não pode ou não quer identificá-lo (\"Guardaram a minha bolsa\" / verbo na 3ª pessoa do plural sem antecedente).\nOculto (Elíptico / Desinencial): o sujeito existe e é identificável pela terminação verbal ou pelo contexto (\"Chegamos cedo\" $\\rightarrow$ nós).\nSujeito Inexistente (Oração Sem Sujeito): Orações construídas com verbos impessoais (como haver significando existir/ocorrer, fazer indicando tempo decorrido ou verbos de fenômenos da natureza). Nessas frases, a oração coincide integralmente com o predicado (\"Havia crianças no parque\").\nRelações\nContrasta com: .\nExemplificado por: , .",
-            "**Macrodivisão Verbal: Verbos Nocionais (Ação) vs. Verbos Relacionais (Estado)**: Definição ou ideia central\nA predicação verbal não se classifica a partir de 5 tipos soltos e desconexos, mas sob dois grandes troncos primários funcionais:\nVerbos de Ação / Movimento / Fenômeno (Nocionais / Plenos / Significativos);\nVerbos de Estado (Relacionais / Não Nocionais / De Ligação).\nVERBOS ┴ \nDE AÇÃO / MOVIMENTO / FENÔMENO 2. DE ESTADO\n(Nocionais) (Relacionais) ┴ ┬ VERBO DE LIGAÇÃO V.I. V.T.D. V.T.I. (V.L.) ┬ ┴ ┘ V.T.D.I.\nExplicação consolidada\nVerbos Nocionais: Detêm significado léxico pleno. Expressam processos, atividades, acontecimentos dinâmicos ou fenômenos físicos. Constituem o núcleo verbal da declaração.\nVerbos Relacionais (de Ligação): Não expressam ação ou dinamicidade; funcionam como uma cópula/ponte conectiva entre o sujeito e um atributo que expressa o estado ou qualidade momentânea/permanente deste sujeito.\nRelações\nEspinha dorsal para: , , , , .",
-            "**Verbo Intransitivo e o Princípio da Dispensabilidade do Adjunto Adverbial**: Definição ou ideia central\nO Verbo Intransitivo (VI) expressa sentido nocional completo e não exige complementos verbais (objetos). Ele pode vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de qualificadores do sujeito (Predicativos do Sujeito).\nCritérios de Reconhecimento do Adjunto Adverbial\nInvariabilidade Essencial: Representado por advérbios ou locuções adverbiais (embora locuções possam ter núcleos nominais flexionáveis como \"aos clubes\", a função oracional é invariável).\nSeta Sintática no Verbo: Aponta e modifica o verbo oracional.\nSemântica Circunstancial (\"Cheiro de Circunstância\"): Responde a perguntas como onde? quando? como? por quê?.\nPrincípio da Dispensabilidade Sintática (\"A Fofoca da Oração\"): O adjunto adverbial pode ser suprimido da oração sem quebrar a integridade sintática e a transitividade do verbo.\n[O menino] foi [ao clube]. Sujeito (V.I.) Adj. Adverbial de Lugar (Circunstância) ┘ (Seta aponta para o verbo)\nNo exemplo \"O menino foi ao clube\", o termo \"ao clube\" indica lugar (onde?). Sua supressão deixa a frase estruturalmente fechada (\"O menino foi\"), provando que \"ao clube\" não é objeto indireto, mas adjunto adverbial dispensável, mantendo o verbo como Intransitivo (VI).\nRelações\nPossui alertas: , .\nExemplificado por: , .",
-            "**Sistema de Transitividade Verbal: VTD, VTI e VTDI**: Definição ou ideia central\nOs Verbos Transitivos são verbos nocionais de predicação incompleta que demandam termos integrantes (objetos) para integralizar seu significado.\nVERBOS TRANSITIVOS ┼ TRANSITIVO DIRETO TRANSITIVO INDIRETO TRANSITIVO DIRETO E (V.T.D.) (V.T.I.) INDIRETO (V.T.D.I.) (ou Bitransitivo) Complemento SEM Complemento COM preposição preposição Exige 2 complementos: (Objeto Direto) (Objeto Indireto) 1 SEM prep. (O.D.)\n1 COM prep. (O.I.)\nRegras e Diferenciações\nVerbo Transitivo Direto (VTD): Conecta-se diretamente ao complemento sem preposição regencial obrigatória. Complemento = Objeto Direto (OD) (\"Comprei jornais variados\").\nVerbo Transitivo Indireto (VTI): Conecta-se ao complemento mediante preposição gramatical obrigatória exigida pelo verbo (sem valor circunstancial de lugar/tempo). Complemento = Objeto Indireto (OI) (\"Visamos a um cargo elevado\").\nVerbo Transitivo Direto e Indireto (VTDI ou Bitransitivo): Rege simultaneamente dois complementos: um não preposicionado (OD) e outro preposicionado (OI) (\"Ofereceram o cargo ao deputado\").\nRelações\nExemplificado por: , , .",
-            "**Caracterização do Predicativo do Sujeito e do Objeto**: Definição ou ideia central\nO Predicativo é o termo atributivo do predicado que expressa estado, qualidade ou condição transitória/permanente atribuída ao sujeito ou ao objeto.\nAs Três Propriedades de Reconhecimento do Predicativo\nDirecionamento Sintático (Método das Setas):\nSe qualifica o sujeito $\\rightarrow$ Seta no Sujeito (Predicativo do Sujeito);\nSe qualifica o objeto direto/indireto $\\rightarrow$ Seta no Objeto (Predicativo do Objeto).\nSemântica de Estado/Qualidade: Não indica ação ou circunstância adverbial; descreve uma propriedade ou estado.\nMorfologia Predominantemente Adjetiva: Manifesta-se como adjetivo (ou substantivo/locução adjetiva com função atributiva) que concorda morfossintaticamente em gênero e número com o termo a que se refere (\"A menina chegou satisfeita\" / \"As meninas chegaram satisfeitas\").\nUniversalidade do Predicativo\nO predicativo não é exclusivo dos verbos de ligação. Ele pode aparecer acoplado a qualquer verbo de ação (intransitivo ou transitivo), atuando como segundo núcleo do predicado.",
-            "**Critério Bivalente e Relativização das Listas de Verbos de Ligação**: Definição ou ideia central\nO Verbo de Ligação (VL) não expressa ação. Sua função exclusiva é conectar o sujeito ao seu predicativo. Para que qualquer verbo seja classificado como de ligação, é obrigatório o cumprimento simultâneo de duas condições cumulativas (Critério Bivalente / \"Mantra da Vida\"):\n\\text{Verbo de Ligação} \\iff \\begin{cases} 1.\\; \\text{Indicar ESTADO / MUDANÇA DE ESTADO (Semântica)} \\\\ 2.\\; \\text{Vir acompanhado de PREDICATIVO DO SUJEITO (Sintaxe)} \\end{cases}\nDesconstrução e Relativização das Listas Memorizadas\nListas escolares (ser, estar, parecer, permanecer, ficar, continuar, andar, tornar-se, virar, viver) não garantem classificação fixa:\nVerbo da lista sem predicativo: Deixa de ser de ligação e vira intransitivo nocional (\"O aluno está em casa\" $\\rightarrow$ estar indica localização acompanhado de adjunto adverbial de lugar = VI).\nVerbo de ação com semântica de estado e predicativo: Torna-se verbo de ligação (\"Ela caiu doente\" $\\rightarrow$ caiu equivale a ficou + doente é predicativo do sujeito = VL).\n\"Ela caiu doente.\"\n\"doente\" = Predicativo do Sujeito (Estado).\n\"cair\" = equivale a \"ficou\" (mudança de estado).\nClassificação: VERBO DE LIGAÇÃO (V.L.).\n\"Ela caiu na rua.\"\n\"na rua\" = Adjunto Adverbial de Lugar (Circunstância).\n\"cair\" = tombo físico real (Ação). Não há predicativo.\nClassificação: VERBO INTRANSITIVO (V.I.).\nMatizes Semânticos dos Verbos de Ligação (Padrão FGV)\nEstado Permanente: ser, viver (\"Ele é calmo\").\nEstado Transitório / Passageiro: estar, andar (\"Estou doente\", \"Ela anda preocupada\").\nContinuidade de Estado: permanecer, continuar (\"As listas permaneciam abertas\").\nMudança de Estado: ficar, tornar-se, virar, cair (\"Ficou feliz\", \"Virou fera\", \"Caiu doente\").\nEstado Aparente: parecer (\"Parece cansado\").\nRelações\nAplica: .\nOrigina procedimento: .\nPossui alertas: , .",
-            "**Predicativo do Sujeito: Critérios Semânticos, Vetoriais e Morfossintáticos**: Definição ou ideia central\nO Predicativo do Sujeito (P.S.) é o termo do predicado que expressa uma propriedade, condição momentânea, estado transitório ou atributo essencial do sujeito, estabelecendo com ele concordância nominal.\nAs Três Regras de Identificação (Observação 4)\nRelação Vetorial (Seta no Sujeito): o termo não modifica o verbo; sua seta sintática aponta obrigatoriamente para o núcleo do sujeito.\nSemântica de Estado: exprime estado (permanente, transitório, aparente, mutativo ou continuado).\nMorfologia Adjetiva e Concordância: manifesta-se predominantemente como adjetivo (ou locução adjetiva / substantivo predicativo), flexionando-se em gênero e número para concordar com o sujeito (\"Ela chegou apressada\" $\\rightarrow$ \"Elas chegaram apressadas\").Maciço mnemônico: TIP-A06-G03-004",
-            "**Critério Bivalente Obrigatório do Verbo de Ligação (Mantra da Vida)**: Definição ou ideia central\nO Verbo de Ligação (V.L.) é desprovido de função nocional (não indica ação nem processo). Sua finalidade exclusiva é atuar como cópula sintática entre o sujeito e a sua característica (Predicativo do Sujeito).\nO Critério Bivalente Cumulativo\nPara que qualquer verbo seja classificado como de ligação, exige-se o cumprimento obrigatório e concomitante de duas condições:\n\\text{Verbo de Ligação} \\iff \\begin{cases} 1.\\; \\text{Indicar ESTADO / MUDANÇA DE ESTADO (Condição Semântica)} \\\\ 2.\\; \\text{Vir acompanhado de PREDICATIVO DO SUJEITO (Condição Sintática)} \\end{cases}\nSe faltar o predicativo do sujeito ou se o verbo indicar ação/movimento, o verbo JAMAIS será de ligação.Falas marcantes: QUOTE-A06-G03-003, QUOTE-A06-G03-005",
-            "**Relativização das Listas Escolares e Polifuncionalidade Verbal (Casos \"Cair\" e \"Andar\")**: Definição ou ideia central\nAs tradicionais listas mnemônicas de verbos de ligação (ser, estar, ficar, parecer, permanecer, andar, tornar-se, viver, continuar, virar) não são estáticas nem definitivas. A predicação depende estritamente das relações sintáticas estabelecidas no predicado concreto.\nAnálise Comparativa dos Estudos de Caso (Padrão FGV)\nESTUDO DO VERBO \"CAIR\":\n\"Ela caiu doente.\"\n\"doente\" = Predicativo do Sujeito. \"Cair\" equivale a \"ficou\" (mudança de estado).\nClassificação: VERBO DE LIGAÇÃO (V.L.) -> Predicado Nominal.\n\"Ela caiu na rua.\"\n\"na rua\" = Adjunto Adverbial de Lugar. \"Cair\" = tombo físico real (ação).\nClassificação: VERBO INTRANSITIVO (V.I.) -> Predicado Verbal.\nESTUDO DO VERBO \"ANDAR\":\n\"Ele andava preocupado.\"\n\"preocupado\" = Predicativo do Sujeito. \"Andar\" equivale a \"estava\" (estado passageiro).\nClassificação: VERBO DE LIGAÇÃO (V.L.) -> Predicado Nominal.\n\"Ele andava no parque.\"\n\"no parque\" = Adjunto Adverbial de Lugar. \"Andar\" = locomoção física (ação).\nClassificação: VERBO INTRANSITIVO (V.I.) -> Predicado Verbal.\nMatizes Semânticos dos Estados Verbais\nPermanente: ser, viver (\"Ele é calmo\", \"Vivia triste\");\nTransitório / Passageiro: estar, andar (\"Estou cansado\", \"Anda preocupado\");\nMudança de Estado / Mutativo: ficar, tornar-se, virar, cair (\"Ficou rico\", \"Caiu doente\");\nContinuidade de Estado: permanecer, continuar (\"Permaneceu calada\");\nAparente: parecer (\"Parece cansado\").\nRelações\nAplica: \nExemplificado por: , ,",
-            "**Predicado Coincidente com a Integralidade da Frase**: Definição ou ideia central\nNas orações em que o sujeito não se encontra graficamente expresso — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por se tratar de oração sem sujeito —, 100% da extensão da frase escrita pertence ao predicado.\nExplicação consolidada\nComo a regra algébrica estipula que $\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$, se o sujeito não ocupa espaço material visível na frase, nenhum vocábulo é subtraído:\nNa frase \"Acho sua atitude imperdoável\", o sujeito é o pronome elíptico de 1ª pessoa (Eu). Logo, o predicado abrange a oração inteira: [Acho sua atitude imperdoável].\nNa frase \"Havia crianças no parque\", a oração é sem sujeito (verbo impessoal). Toda a sentença é predicado.\nRelações\nAplica: , .",
-            "**Predicado Verbal e o Núcleo no Verbo Nocional**: Definição ou ideia central\nO Predicado Verbal (P.V.) é a estrutura predicativa cujo núcleo é obrigatoriamente um verbo significativo/nocional de ação, movimento ou fenômeno, caracterizando-se pela ausência categórica de predicativos.\n\\text{Predicado Verbal} = \\text{Verbo de Ação (VI / VTD / VTI / VTDI)} \\; [\\text{sem Predicativo}]\nExplicação detalhada\nO predicado verbal concentra sua força informativa no dinamismo do próprio verbo.\nPode conter complementos verbais (objeto direto / indireto) e adjuntos adverbiais, mas é estruturalmente incompatível com atributos qualificadores do sujeito ou do objeto.\nExemplos: \"Os alunos entraram em sala\" (entraram = VI / núcleo; em sala = adjunto adverbial); \"Tu pisavas nos astros\" (pisavas = VI / núcleo; nos astros = adjunto adverbial).\nRelações\nContrasta com: , \nExemplificado por: , ,",
-            "**Predicado Verbo-Nominal e a Duplicidade de Núcleos**: Definição ou ideia central\nO Predicado Verbo-Nominal (P.V.N.) é a estrutura híbrida que possui simultaneamente dois núcleos significativos: um núcleo verbal (verbo de ação) e um núcleo nominal (predicativo, que pode qualificar o sujeito ou o objeto).\n\\text{Predicado Verbo-Nominal} = \\text{Verbo de Ação (Núcleo 1)} + \\text{Predicativo (Núcleo 2)}\nAs Duas Conformações do Predicado Verbo-Nominal\nCom Predicativo do Sujeito: $\\text{Verbo de Ação} + \\text{Predicativo do Sujeito}$.\nExemplo: \"Os alunos entraram em sala [eufóricos]\" $\\rightarrow$ Núcleo verbal: entraram; Núcleo nominal: eufóricos (estado dos alunos no momento da entrada).\nExemplo: \"Chegamos [ofegantes] à porta da cantina\" $\\rightarrow$ Núcleo verbal: chegamos; Núcleo nominal: ofegantes.\nCom Predicativo do Objeto: $\\text{Verbo de Ação Transitivo} + \\text{Objeto} + \\text{Predicativo do Objeto}$.\nExemplo: \"Consideraram [absurda] [a decisão do chefe]\" $\\rightarrow$ Núcleo verbal: consideraram; Objeto: a decisão do chefe; Predicativo do Objeto: absurda.\nExemplo: \"Acho [sua atitude] [imperdoável]\" $\\rightarrow$ Núcleo verbal: acho; Objeto: sua atitude; Predicativo do Objeto: imperdoável.\nRelações\nExpande: , \nExemplificado por: , , , , ,",
-            "**Ocorrência Universal do Predicativo com Qualquer Verbo de Ação**: Definição ou ideia central\nO predicativo não é exclusividade de orações com verbos de ligação. O predicativo pode acoplar-se livremente a qualquer classe de verbo da língua portuguesa:\nAcoplado a Verbo de Ligação $\\implies$ Predicado Nominal;\nAcoplado a Verbo de Ação (VI, VTD, VTI, VTDI) $\\implies$ Predicado Verbo-Nominal.Falas marcantes: QUOTE-A06-G03-007",
-            "**Predicado Coincidente com a Integralidade da Oração**: Definição ou ideia central\nNas orações em que o sujeito não se encontra materialmente expresso na cadeia linear escrita — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por tratar-se de oração sem sujeito —, a totalidade dos vocábulos visíveis da frase constitui formalmente o predicado.\n\\text{Se o Sujeito não está explícito} \\implies \\text{Predicado} = \\text{Frase Inteira}\nRelações\nExpande: \nExemplificado por: \nOralidade associada: ORAL-A06-G03-005"
-          ]
+          "term": "A Arquitetura Tripartida da Sintaxe e a Centralidade do Verbo",
+          "shortDefinition": "A análise sintática oracional em Língua Portuguesa estrutura-se em três blocos modulares: Termos Essenciais (Sujeito e Predicado), Termos Integrantes (Complementos Verbais, Complemento Nominal e Agente da Passiva) e Termos Acessórios (Adjuntos Adnominais, Adjuntos Adverbiais e Aposto). O eixo organizador absoluto de toda a sintaxe é o verbo (\"verbo é tudo\").",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-01"
+          },
+          "operationalUse": "A sintaxe não opera por acúmulo desordenado de termos isolados."
+        },
+        {
+          "term": "Delimitação Operacional do Sujeito, Núcleo e Predicado",
+          "shortDefinition": "Enquanto a gramática tradicional define o sujeito como o tópico sobre o qual se faz uma declaração, a prática de concursos exige um método operacional unificado: localizar o verbo e interrogá-lo pela fórmula Quem é que / O que é que + VERBO?. O predicado define-se algebricamente como \"tudo menos o sujeito\" ($\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$).",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-02"
+          }
+        },
+        {
+          "term": "Essencialidade Relativa do Sujeito vs. Obrigatoriedade Absoluta do Predicado",
+          "shortDefinition": "A nomenclatura formal \"Termo Essencial\" é conceitualmente assimétrica: o sujeito pode inexistir na oração (sujeito inexistente / oração sem sujeito), ao passo que o predicado é rigorosamente obrigatório em 100% das orações, pois decorre da presença compulsória do verbo.",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-03"
+          },
+          "operationalUse": "A taxonomia do sujeito divide-se primariamente entre sua existência ou não no plano da frase:"
+        },
+        {
+          "term": "Macrodivisão Verbal: Verbos Nocionais (Ação) vs. Verbos Relacionais (Estado)",
+          "shortDefinition": "A predicação verbal não se classifica a partir de 5 tipos soltos e desconexos, mas sob dois grandes troncos primários funcionais:",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-04"
+          }
+        },
+        {
+          "term": "Verbo Intransitivo e o Princípio da Dispensabilidade do Adjunto Adverbial",
+          "shortDefinition": "O Verbo Intransitivo (VI) expressa sentido nocional completo e não exige complementos verbais (objetos). Ele pode vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de qualificadores do sujeito (Predicativos do Sujeito).",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-05"
+          }
+        },
+        {
+          "term": "Sistema de Transitividade Verbal: VTD, VTI e VTDI",
+          "shortDefinition": "Os Verbos Transitivos são verbos nocionais de predicação incompleta que demandam termos integrantes (objetos) para integralizar seu significado.",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-06"
+          }
+        },
+        {
+          "term": "Caracterização do Predicativo do Sujeito e do Objeto",
+          "shortDefinition": "O Predicativo é o termo atributivo do predicado que expressa estado, qualidade ou condição transitória/permanente atribuída ao sujeito ou ao objeto.",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-07"
+          }
+        },
+        {
+          "term": "Critério Bivalente e Relativização das Listas de Verbos de Ligação",
+          "shortDefinition": "O Verbo de Ligação (VL) não expressa ação. Sua função exclusiva é conectar o sujeito ao seu predicativo. Para que qualquer verbo seja classificado como de ligação, é obrigatório o cumprimento simultâneo de duas condições cumulativas (Critério Bivalente / \"Mantra da Vida\"):",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-08"
+          }
+        },
+        {
+          "term": "Predicativo do Sujeito: Critérios Semânticos, Vetoriais e Morfossintáticos",
+          "shortDefinition": "O Predicativo do Sujeito (P.S.) é o termo do predicado que expressa uma propriedade, condição momentânea, estado transitório ou atributo essencial do sujeito, estabelecendo com ele concordância nominal.",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-09"
+          }
+        },
+        {
+          "term": "Critério Bivalente Obrigatório do Verbo de Ligação (Mantra da Vida)",
+          "shortDefinition": "O Verbo de Ligação (V.L.) é desprovido de função nocional (não indica ação nem processo). Sua finalidade exclusiva é atuar como cópula sintática entre o sujeito e a sua característica (Predicativo do Sujeito).",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-10"
+          }
+        },
+        {
+          "term": "Relativização das Listas Escolares e Polifuncionalidade Verbal (Casos \"Cair\" e \"Andar\")",
+          "shortDefinition": "As tradicionais listas mnemônicas de verbos de ligação (ser, estar, ficar, parecer, permanecer, andar, tornar-se, viver, continuar, virar) não são estáticas nem definitivas. A predicação depende estritamente das relações sintáticas estabelecidas no predicado concreto.",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-11"
+          }
+        },
+        {
+          "term": "Predicado Coincidente com a Integralidade da Frase",
+          "shortDefinition": "Nas orações em que o sujeito não se encontra graficamente expresso — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por se tratar de oração sem sujeito —, 100% da extensão da frase escrita pertence ao predicado.",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-12"
+          },
+          "operationalUse": "Como a regra algébrica estipula que $\\text{Predicado} = \\text{Oração} - \\text{Sujeito}$, se o sujeito não ocupa espaço material visível na frase, nenhum vocábulo é subtraído:"
+        },
+        {
+          "term": "Predicado Verbal e o Núcleo no Verbo Nocional",
+          "shortDefinition": "O Predicado Verbal (P.V.) é a estrutura predicativa cujo núcleo é obrigatoriamente um verbo significativo/nocional de ação, movimento ou fenômeno, caracterizando-se pela ausência categórica de predicativos.",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-13"
+          }
+        },
+        {
+          "term": "Predicado Verbo-Nominal e a Duplicidade de Núcleos",
+          "shortDefinition": "O Predicado Verbo-Nominal (P.V.N.) é a estrutura híbrida que possui simultaneamente dois núcleos significativos: um núcleo verbal (verbo de ação) e um núcleo nominal (predicativo, que pode qualificar o sujeito ou o objeto).",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-14"
+          }
+        },
+        {
+          "term": "Ocorrência Universal do Predicativo com Qualquer Verbo de Ação",
+          "shortDefinition": "O predicativo não é exclusividade de orações com verbos de ligação. O predicativo pode acoplar-se livremente a qualquer classe de verbo da língua portuguesa:",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-15"
+          }
+        },
+        {
+          "term": "Predicado Coincidente com a Integralidade da Oração",
+          "shortDefinition": "Nas orações em que o sujeito não se encontra materialmente expresso na cadeia linear escrita — seja por ser oculto/elíptico/desinencial (\"sujeito Gasparzinho\"), indeterminado ou por tratar-se de oração sem sujeito —, a totalidade dos vocábulos visíveis da frase constitui formalmente o predicado.",
+          "detailTarget": {
+            "unitId": "IP-A06-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G03-16"
+          }
         }
       ]
     },
@@ -3328,7 +4545,11 @@
         "confidence": 0.9
       },
       "answerSha256": "e1a37a05db1211c83069d302d012b6513709aa124fec91d9e245c7d19aa2322c",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A06-aula06.q0057.commented",
+        "OQ-A06-aula06.q0057.list"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -3647,108 +4868,6 @@
         "confidence": 0.99
       },
       "answerSha256": "c0a05aa47bf9902c0455dc204c6386385856c2182f82d11b77aa36e63376a898",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A06-aula06.q0057.commented",
-      "lessonId": "A06",
-      "sourceQuestionId": "aula06.q0057.commented",
-      "questionPayload": {
-        "question_id": "aula06.q0057.commented",
-        "question_group_id": "aula06.q0057",
-        "occurrence": "commented",
-        "duplicate_of": "aula06.q0057.list",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "STM",
-        "position": "ANALISTA",
-        "year": 2018,
-        "source_label": "CEBRASPE / STM / ANALISTA / 2018",
-        "support_text": "Porém, esta suprema máxima não pode ser utilizada como desculpa universal que a todos nos absolveria de juízos coxos e opiniões mancas.",
-        "prompt": "O termo “a todos” exerce a função de complemento indireto da forma verbal “absolveria”.",
-        "options": [],
-        "tests_concept_ids": [],
-        "tests_rule_ids": [
-          "rule.pt.aula06.0028",
-          "rule.pt.aula06.0007"
-        ],
-        "source": {
-          "document_id": "aula06_complete",
-          "page_ids": [
-            "aula06_complete.p0067"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94
-      },
-      "questionSha256": "6dceaea884e9381e700718e3848577ade79f682f698ee24d82b7494b178515cc",
-      "answerPayload": {
-        "answer_id": "aula06.q0057.commented.answer",
-        "question_id": "aula06.q0057.commented",
-        "answer": "incorrect",
-        "commentary": "O verbo “absolver” não pede preposição; logo, não pede objeto INDIRETO. A preposição que está ali configura um objeto direto preposicionado. Com o pronome indefinido “todos” como objeto direto, acrescentamos a preposição, constituindo um objeto direto preposicionado. A propósito, isso também ocorre com os pronomes “quem” e “ninguém”. Questão incorreta.",
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula06_complete",
-          "page_ids": [
-            "aula06_complete.p0067"
-          ]
-        },
-        "confidence": 0.98
-      },
-      "answerSha256": "7450700a5d737c13f9b061bd56c4fa28eded4b853200359bfd4e9fad7d36dc98",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A06-aula06.q0057.list",
-      "lessonId": "A06",
-      "sourceQuestionId": "aula06.q0057.list",
-      "questionPayload": {
-        "question_id": "aula06.q0057.list",
-        "question_group_id": "aula06.q0057",
-        "occurrence": "list",
-        "duplicate_of": "aula06.q0057.commented",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "STM",
-        "position": "ANALISTA",
-        "year": 2018,
-        "source_label": "CEBRASPE / STM / ANALISTA / 2018",
-        "support_text": "Porém, esta suprema máxima não pode ser utilizada como desculpa universal que a todos nos absolveria de juízos coxos e opiniões mancas.",
-        "prompt": "O termo “a todos” exerce a função de complemento indireto da forma verbal “absolveria”.",
-        "options": [],
-        "tests_concept_ids": [],
-        "tests_rule_ids": [
-          "rule.pt.aula06.0028",
-          "rule.pt.aula06.0007"
-        ],
-        "source": {
-          "document_id": "aula06_complete",
-          "page_ids": [
-            "aula06_complete.p0087"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.95
-      },
-      "questionSha256": "62bf47b79fcf7e412791d556c6e621deb3bfc55cbc71bca602e9d9d6afe927fc",
-      "answerPayload": {
-        "answer_id": "aula06.q0057.list.answer",
-        "question_id": "aula06.q0057.list",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula06_complete",
-          "page_ids": [
-            "aula06_complete.p0090"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "07416cd5bad5550f56a4bb860d48e0c150118a744e0baa506ad7e24028744da4",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     }
   ]

@@ -7,7 +7,6 @@ import { DailyTipCard } from './components/DailyTipCard';
 import { DailyReviewReminder } from './components/DailyReviewReminder';
 import { ContinueLearningCard } from './components/ContinueLearningCard';
 import { fetchOfficialQuestionSample, officialDetailToQuizQuestion, type OfficialQuestionFilters } from './lib/officialQuestions';
-import { SuvecaMethodBanner } from './components/SuvecaMethodBanner';
 import { WeeklyGoalCard } from './components/WeeklyGoalCard';
 import { OnboardingTour, hasCompletedOnboarding } from './components/OnboardingTour';
 import { useLearningMetrics } from './hooks/useLearningMetrics';
@@ -580,12 +579,6 @@ export default function App() {
               <div className="space-y-6">
                 {!isImmersiveFocus && !openUnitId && (
                   <>
-                    {selectedCurriculumModule && (
-                      <SuvecaMethodBanner
-                        module={selectedCurriculumModule}
-                        onOpenAnalyzer={() => setActiveTab('analyzer')}
-                      />
-                    )}
                     {/* Linha 1 do Dashboard: Continue de onde parou + Meta Semanal de Estudo */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
                       <ContinueLearningCard
@@ -639,6 +632,7 @@ export default function App() {
                   onOpenMacroChange={handleOpenMacroChange}
                   onPracticeCompetency={handlePracticeCompetency}
                   routeIssue={studyRouteIssue}
+                  onOpenAnalyzer={() => setActiveTab('analyzer')}
                 />
               </div>
             )}

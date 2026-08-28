@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A02-G01",
     "lessonId": "A02",
     "title": "Classes de Palavras: Preposições, Conexões Sintáticas e Valores Semânticos",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A02-G01",
@@ -103,7 +104,11 @@
               "to": "node_regencia",
               "relation": "aplicacao_sintatica"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A02-G01-001"
+          }
         }
       ]
     },
@@ -118,28 +123,69 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "**Preposição** é a palavra invariável que liga dois termos entre si, estabelecendo uma relação de dependência sintática em que o segundo termo (termo regido) subordina-se, complementa ou explica o primeiro (termo regente)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
             },
             {
-              "type": "comparison_matrix",
-              "text": "| Conector | Unidades que Conecta | Relação Sintática Estabelecida |\n| :--- | :--- | :--- |\n| **Preposição** | Liga **Termo a Termo** (*café com leite*, *gosta de música*) | Relação de Subordinação entre Palavras |\n| **Conjunção** | Liga **Oração a Oração** (*Estudei porque queria passar*) | Relação de Coordenação ou Subordinação Oracional |",
-              "columns": [
-                "Conector",
-                "Unidades Conectadas",
-                "Relação Sintática Estabelecida"
-              ],
-              "rows": [
-                [
-                  "Preposição",
-                  "Termo a Termo (café com leite, necessita de ajuda)",
-                  "Subordinação entre termos"
-                ],
-                [
-                  "Conjunção",
-                  "Oração a Oração (Estudou porque queria passar)",
-                  "Coordenação ou subordinação oracional"
-                ]
+              "type": "paragraph",
+              "text": "A preposição é uma classe gramatical de palavras invariáveis cuja função primordial é atuar como conectivo ou conector, estabelecendo vínculo sintático e semântico entre dois termos no interior de uma mesma oração ou entre duas orações em um período composto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Sintaticamente, o conector une um elemento determinado (termo principal) a um elemento determinante (termo dependente):"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Conexão no nível dos termos (palavras isoladas): A preposição liga vocábulos nominais subordinando o segundo ao primeiro. Exemplo: em \"Casa de José\", a preposição de liga o substantivo \"Casa\" ao substantivo \"José\".",
+                "Conexão no nível das orações: A preposição liga uma oração principal a uma oração subordinada. Exemplo: em \"Correu para chegar a tempo\", a preposição para conecta a oração \"Correu\" à oração subordinada \"chegar a tempo\"."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A faculdade de ligar tanto palavras isoladas quanto orações inteiras não é prerrogativa exclusiva da preposição, sendo uma propriedade funcional perfeitamente compartilhada com a classe das conjunções:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Conjunção ligando termos: \"João e José\" (conjunção aditiva ligando dois núcleos nominais).",
+                "Conjunção ligando orações: \"Acordou e saiu\" (conjunção aditiva ligando duas orações coordenadas)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e Contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Preposição ligando termos: Mesa de madeira, Café com leite.",
+                "Preposição ligando orações: Estudou para passar, Saiu sem falar nada.",
+                "Conjunção ligando termos: Mesa e cadeira, Você ou eu.",
+                "Conjunção ligando orações: Estudou, mas não passou, Disse que viria."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A02-G01-PREPOSICOES-002",
+                  "targetTitle": "Preposições Essenciais e Distinção Morfológica em Concursos",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "explanation"
+                }
               ]
             }
           ]
@@ -153,42 +199,100 @@
           "semanticKind": "taxonomy",
           "blocks": [
             {
-              "type": "classification",
-              "text": "As preposições classificam-se quanto à sua origem funcional em:\n\n1. **Preposições Essenciais (18 termos)**: Palavras que nasceram e funcionam primariamente apenas como preposições na língua:\n   - *A, ANTE, APÓS, ATÉ, COM, CONTRA, DE, DESDE, EM, ENTRE, PARA, PER, PERANTE, POR, SEM, SOB, SOBRE, TRÁS*.\n\n2. **Preposições Acidentais**: Palavras de outras classes gramaticais (adjetivos, verbos, conjunções) que, por derivação imprópria em determinados contextos, atuam como preposições:\n   - *Conforme, Segundo, Consoante* (conforme as regras);\n   - *Mediante, Durante* (durante o evento, mediante comprovação);\n   - *Exceto, Salvo, Fora, Menos* (todos foram, exceto Pedro);\n   - *Visto* (visto a gravidade do problema).",
-              "categories": [
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As preposições essenciais constituem o rol fechado de 18 vocábulos da Língua Portuguesa que desempenham nativa e precipuamente a função de preposição. A memorização estrita dessa lista constitui um mecanismo operacional indispensável para não incorrer em erros de classificação morfológica nas bancas examinadoras."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O rol normativo das 18 preposições essenciais é composto por:"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{\\{a, ante, até, após, com, contra, de, desde, em, entre, para, per, perante, por, sem, sob, sobre, trás\\}}"
+            },
+            {
+              "type": "paragraph",
+              "text": "A memorização da lista resolve dois conflitos morfológicos frequentes em provas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Preposição isolada vs. Advérbio / Locução Adverbial (Caso Cesgranrio):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Na frase \"Sairei após o jantar\", a banca frequentemente sublinha apenas o vocábulo após e induz o candidato a assinalar \"advérbio de tempo\" em virtude da carga semântica temporal.",
+                "Critério decifrador: Se a palavra sublinhada constar na lista das essenciais, sua classe morfológica isolada é preposição (com valor semântico de tempo). Para ser classificada como locução adverbial de tempo, a banca deve obrigatoriamente sublinhar o conjunto sintático inteiro (após o jantar)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Preposição vs. Conjunção Coordenativa (Caso FGV):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Na comparação entre \"Comerei pipoca e guaraná\" e \"Comerei pipoca com guaraná\":",
+                "O vocábulo e figura na lista das conjunções (conjunção coordenativa aditiva).",
+                "O vocábulo com figura na lista das preposições essenciais (preposição que introduz adjunto adnominal com valor semântico de companhia)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de Reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verifique a delimitação gráfica do sublinhado na questão de prova.",
+                "Sublinhado restrito ao conector essencial $\\rightarrow$ Classificação morfológica: Preposição.",
+                "Sublinhado abrangendo conector + substantivo circunstancial $\\rightarrow$ Classificação sintática/locucional: Locução Adverbial."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
                 {
-                  "category": "Preposições Essenciais (18 termos canônicos)",
-                  "items": [
-                    "A",
-                    "ANTE",
-                    "APÓS",
-                    "ATÉ",
-                    "COM",
-                    "CONTRA",
-                    "DE",
-                    "DESDE",
-                    "EM",
-                    "ENTRE",
-                    "PARA",
-                    "PER",
-                    "PERANTE",
-                    "POR",
-                    "SEM",
-                    "SOB",
-                    "SOBRE",
-                    "TRÁS"
-                  ],
-                  "description": "Vocábulos cuja função primária exclusiva na língua é subordinar termos."
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A02-G01-PREPOSICOES-001",
+                  "targetTitle": "Pegadinha do Sublinhado Parcial vs. Total (\"Após\" vs. \"Após o jantar\")",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "traps"
                 },
                 {
-                  "category": "Preposições Acidentais (Derivação Imprópria)",
-                  "items": [
-                    "Conforme, Segundo, Consoante",
-                    "Mediante, Durante",
-                    "Exceto, Salvo, Fora, Menos",
-                    "Visto"
-                  ],
-                  "description": "Palavras de outras classes gramaticais que assumem valor de preposição no contexto."
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A02-G01-001",
+                  "targetTitle": "Estudo de Caso Cesgranrio: \"Sairei após o jantar\"",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A02-G01-002",
+                  "targetTitle": "Estudo de Caso FGV: \"Pipoca e guaraná\" vs. \"Pipoca com guaraná\"",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "examples"
                 }
               ]
             }
@@ -203,8 +307,86 @@
           "semanticKind": "contrast",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Esta é a distinção mais frequente e sofisticada em concursos de alto nível (FGV, Cebraspe):\n\n- **Preposição Relacional (Gramatical / Vazia)**: É aquela exigida compulsoriamente pela regência de um verbo ou de um nome. Ela não possui carga semântica própria, funcionando como mero 'conector sintático obrigatório'. Introduz Objetos Indiretos e Complementos Nominais.\n  - Ex: *Necessito DE auxílio.* (O 'de' não indica causa nem posse; é mera exigência do verbo necessitar).\n  - Ex: *Tenho fé EM Deus.* (O 'em' é imposição do substantivo abstrato fé).\n\n- **Preposição Nocional (Semântica / Plena)**: É aquela que não é exigida compulsoriamente por regência, mas foi inserida livremente pelo emissor para carregar uma **noção semântica circunstancial** (causa, tempo, modo, instrumento, posse, matéria, companhia). Introduz Adjuntos Adverbiais e Adjuntos Adnominais.\n  - Ex: *Morreu DE desidratação.* (Preposição 'de' com valor semântico de Causa).\n  - Ex: *Feriu-se COM a tesoura.* (Preposição 'com' com valor semântico de Instrumento)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A preposição desempenha dois papéis estruturais e funcionais mutuamente excludentes na oração:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Valor Relacional (Gramatical / Obrigatório): Presença imposta pelas regras de regência verbal ou nominal; atua como mero ligame sintático destituído de valor semântico próprio.",
+                "Valor Nocional (Semântico / Não Obrigatório): Presença não exigida pela regência; introduz circunstâncias conceituais, sentidos e noções interpretativas na oração."
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Explicação Consolidada",
+              "text": "DICOTOMIA DA PREPOSIÇÃO │ ┌─────────────────────────────┴─────────────────────────────┐ ▼ ▼ VALOR RELACIONAL (GRAMATICAL) VALOR NOCIONAL (SEMÂNTICO) • Obrigatória por Regência Verbal/Nominal • Não obrigatória por Regência • Carga Semântica: NULA • Carga Semântica: PLENA (introduz noções) • Inicia Termos Integrantes Regidos: • Inicia Termos Acessórios / Não Regidos:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Objeto Indireto (OI) - Adjunto Adverbial (tempo, lugar, causa...)",
+                "Complemento Nominal (CN) - Adjunto Adnominal (posse, matéria...)",
+                "Agente da Passiva (agente)"
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "1. Preposição Relacional (Gramatical)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Aparece na frase estritamente para satisfazer a transitividade de um verbo transitivo indireto (VTI) ou a complementação de um substantivo/adjetivo/advérbio transitivo:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Regência Verbal: \"Precisava de apoio.\" (O verbo precisar exige a preposição de; \"de apoio\" é Objeto Indireto).",
+                "Regência Verbal: \"Assistiu a vários jogos.\" (O verbo assistir no sentido de ver exige a preposição a).",
+                "Regência Nominal: \"Tinha medo de escuro.\" (O substantivo medo rege a preposição de; \"de escuro\" é Complemento Nominal).",
+                "Propriedade Crítica: Se a questão de concurso indagar qual é o valor semântico de de em \"precisava de apoio\", a resposta é nenhum, pois seu papel é puramente gramatical/relacional."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "2. Preposição Nocional (Semântica)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ocorre quando o conector é inserido para atribuir um traço semântico contextual independente da exigência sintática de termos anteriores:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Porta de madeira: Preposição de veicula noção de Matéria.",
+                "Carro do João: Preposição de veicula noção de Posse.",
+                "Bolo de milho: Preposição de veicula noção de Conteúdo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A02-G01-PREPOSICOES-006",
+                  "targetTitle": "Mapeamento Sintático das Preposições Nocionais",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -218,81 +400,213 @@
           "semanticKind": "taxonomy",
           "blocks": [
             {
-              "type": "table",
-              "text": "| Preposição | Valor Semântico | Exemplo Autêntico | Teste de Comutação Unívoca |\n| :--- | :--- | :--- | :--- |\n| **DE** | **Causa** | *Tremia de frio.* | *em virtude do frio* |\n| **DE** | **Matéria** | *Mesa de mogno.* | *feita de mogno* |\n| **DE** | **Posse** | *Carro de Mariana.* | *pertencente a Mariana* |\n| **DE** | **Origem** | *Veio de Lisboa.* | *procedente de Lisboa* |\n| **DE** | **Assunto** | *Falavam de política.* | *a respeito de política* |\n| **COM** | **Instrumento** | *Cortou com a faca.* | *por meio da faca* |\n| **COM** | **Companhia** | *Saiu com os amigos.* | *junto com os amigos* |\n| **COM** | **Modo** | *Recebeu-os com afeto.* | *afetuosamente* |\n| **PARA** | **Finalidade** | *Estudou para vencer.* | *a fim de vencer* |\n| **PARA** | **Destino / Direção** | *Viajou para o Sul.* | *em direção ao Sul* |\n| **POR** | **Causa / Motivo** | *Foi punido por negligência.* | *por motivo de negligência* |\n| **POR** | **Agente da Passiva** | *A obra foi lida por todos.* | (termo executor na voz passiva) |",
-              "columns": [
-                "Preposição",
-                "Valor Semântico",
-                "Exemplo Autêntico",
-                "Teste de Comutação Unívoca"
-              ],
-              "rows": [
-                [
-                  "DE",
-                  "Causa",
-                  "Tremia de frio.",
-                  "em virtude do frio"
-                ],
-                [
-                  "DE",
-                  "Matéria",
-                  "Mesa de mogno.",
-                  "feita de mogno"
-                ],
-                [
-                  "DE",
-                  "Posse",
-                  "Carro de Mariana.",
-                  "pertencente a Mariana"
-                ],
-                [
-                  "DE",
-                  "Origem",
-                  "Veio de Lisboa.",
-                  "procedente de Lisboa"
-                ],
-                [
-                  "DE",
-                  "Assunto",
-                  "Falavam de política.",
-                  "a respeito de política"
-                ],
-                [
-                  "COM",
-                  "Instrumento",
-                  "Cortou com a faca.",
-                  "por meio da faca"
-                ],
-                [
-                  "COM",
-                  "Companhia",
-                  "Saiu com os amigos.",
-                  "junto com os amigos"
-                ],
-                [
-                  "COM",
-                  "Modo",
-                  "Recebeu-os com afeto.",
-                  "afetuosamente"
-                ],
-                [
-                  "PARA",
-                  "Finalidade",
-                  "Estudou para vencer.",
-                  "a fim de vencer"
-                ],
-                [
-                  "PARA",
-                  "Destino / Direção",
-                  "Viajou para o Sul.",
-                  "em direção ao Sul"
-                ],
-                [
-                  "POR",
-                  "Causa / Motivo",
-                  "Foi punido por negligência.",
-                  "por motivo de negligência"
-                ]
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As preposições dotadas de valor nocional correlacionam-se rigidamente na sintaxe a funções que não representam complementos oracionais obrigatórios, introduzindo termos com as funções sintáticas de Adjunto Adverbial, Adjunto Adnominal e Agente da Passiva."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora esquematizou o mapeamento da relação entre valor semântico e função sintática:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Adjunto Adverbial (Preposição Nocional):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"Estuda pela [por + a] manhã.\"",
+                "Análise Sintática: \"pela manhã\" exerce função de Adjunto Adverbial de Tempo.",
+                "Análise Semântica: A preposição por carrega a noção de tempo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Adjunto Adnominal (Preposição Nocional):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"Comi pipoca com guaraná.\"",
+                "Análise Sintática: \"com guaraná\" é Adjunto Adnominal (modificador caracterizador do substantivo \"pipoca\").",
+                "Análise Semântica: A preposição com veicula a noção de companhia (a pipoca acompanhada de guaraná)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Agente da Passiva (Preposição Nocional):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase: \"Foi elogiado pelo [por + o] professor.\"",
+                "Análise Sintática: \"pelo professor\" atua como Agente da Passiva.",
+                "Análise Semântica: A preposição por expressa a noção de agente (o executor da ação na voz passiva analítica)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Síntese de Valência Sintática"
+            },
+            {
+              "type": "formula",
+              "text": "\\begin{cases}\n\\text{\\textbf{Preposição Relacional (Obrigatória)}} & \\longrightarrow \\text{Objeto Indireto / Complemento Nominal} \\\\\n\\text{\\textbf{Preposição Nocional (Não Obrigatória)}} & \\longrightarrow \\text{Adjunto Adverbial / Adjunto Adnominal / Agente da Passiva}\n\\end{cases}"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A02-G01-PREPOSICOES-005",
+                  "targetTitle": "Dicotomia Estrutural: Preposição Relacional (Gramatical) vs. Preposição Nocional (Semântica)",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A02-G01-PREPOSICOES-002",
+                  "targetTitle": "Algoritmo do \"Termo Posterior Salva\" para Identificação do Valor Nocional",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "resolution"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A preposição \"PARA\" é uma das mais cobradas em concursos públicos por possuir expressiva polissemia nocional, assumindo cinco valores semânticos principais a depender da natureza semântica do termo regido que a sucede."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os cinco valores semânticos fundamentais assumidos pela preposição \"PARA\" compreendem:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "FINALIDADE: Expressa objetivo, propósito, meta ou intuito. Equivale a \"a fim de\", \"com o objetivo de\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Estudava para passar no concurso.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "DIREÇÃO / LUGAR: Indica orientação espacial, vetor de deslocamento ou ponto de destino físico."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Não olhe para cima.\" / \"Saíram cedo para o trabalho.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "DESTINATÁRIO: Indica o ser recipiente, o beneficiário ou recebedor de um objeto/ação."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Trouxe flores para a namorada.\" / \"Enviarei um presente para minha amiga.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "CONFORMIDADE: Expressa concordância com uma opinião, ponto de vista ou consonância de pensamento. Equivale a \"conforme\", \"segundo\", \"de acordo com\"."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Para o político, a nova lei será boa.\" / \"Para os colaboradores, as normas são sólidas.\""
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "TEMPO: Indica limite temporal, prazo final ou momento determinado no tempo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"Deixamos a decisão para o final do ano.\" / \"A reunião foi adiada para a próxima segunda.\" / \"Prazo de adequação para só depois de 2025.\""
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A02-G01-003",
+                  "targetTitle": "Bloco de Fixação: Valores Semânticos da Preposição \"PARA\"",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A02-G01-004",
+                  "targetTitle": "Questão de Concurso: Instituto AOCP (EBSERH - Pedagogo)",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A02-G01-005",
+                  "targetTitle": "Questão de Concurso: Instituto AOCP (EBSERH - Enfermeiro)",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "examples"
+                }
               ]
             }
           ]
@@ -306,13 +620,76 @@
           "semanticKind": "rule_boundary",
           "blocks": [
             {
-              "type": "rule_boundary",
-              "text": "**Locução Prepositiva** é a reunião de duas ou mais palavras com valor de preposição, terminando sempre em preposição essencial (*ao lado de, a fim de, por causa de, em virtude de, apesar de*).\n\n**Regra de Transformação para Locução Conjuntiva**:\nAo substituir a preposição final por 'QUE', forma-se locução conjuntiva subordinativa que exige o verbo no **MODO SUBJUNTIVO**:\n- *A fim de estudar* (Prepositiva + Infinitivo) $\\longrightarrow$ *A fim de que **estude*** (Conjuntiva + Presente do Subjuntivo).\n- *Apesar de chover* (Prepositiva + Infinitivo) $\\longrightarrow$ *Apesar de que **chova*** (Conjuntiva Concessiva + Subjuntivo; ou *Embora chova*)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Uma locução é um agrupamento de duas ou mais palavras que desempenha a função de uma classe gramatical única. A locução prepositiva termina obrigatoriamente em preposição e rege oração reduzida no infinitivo. A locução conjuntiva termina pelo vocábulo conetivo \"que\" e rege oração desenvolvida com verbo conjugado."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A correlação morfológica entre as locuções acarreta repercussões sintáticas automáticas no predicado subordinado:"
+            },
+            {
+              "type": "paragraph",
+              "text": "|:------------------------------ |:------------------------------------ |:------------------------------------- |:------------------------------ |:-------------------------------------------------------------- |"
+            },
+            {
+              "type": "paragraph",
+              "text": "| Locução Prepositiva | Preposição essencial (de, a...) | Verbo no Infinitivo | Oração Reduzida de Infinitivo | Chegou cedo a fim de conversar com a irmã. |"
+            },
+            {
+              "type": "paragraph",
+              "text": "| Locução Conjuntiva | Conjunção integrante\"que\" | Verbo Conjugado (Subjuntivo) | Oração Desenvolvida | Chegou cedo a fim de que conversasse com a irmã. |"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regra de Ouro da Reescrita em Concursos"
+            },
+            {
+              "type": "paragraph",
+              "text": "A substituição de uma locução prepositiva por uma locução conjuntiva equivalente (ou de uma preposição isolada por uma locução conjuntiva de mesmo sentido):"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Mantém integralmente o sentido semântico e a coerência textual.",
+                "Exige alteração sintática obrigatória na forma verbal acoplada:"
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Preposição / Locução Prepositiva} + \\text{Infinitivo} \\quad\\equiv\\quad \\text{Locução Conjuntiva} + \\text{Verbo no Subjuntivo}"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se a reescrita mantiver a locução conjuntiva preservando o verbo no infinitivo (ou usar locução prepositiva com verbo conjugado), a frase apresentará erro sintático de estruturação gramatical."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A02-G01-PREPOSICOES-001",
+                  "targetTitle": "Procedimento de Validação Sintático-Semântica em Reescrita de Locuções",
+                  "targetUnitId": "IP-A02-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         }
-      ],
-      "blocks": []
+      ]
     },
     "rules": {
       "items": [
@@ -748,18 +1125,65 @@
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Preposição Essencial**: Vocábulo invariável cuja função primária e exclusiva na língua é subordinar termos (18 palavras canônicas).",
-            "**Preposição Acidental**: Palavra de outra classe que funciona circunstancialmente como preposição em determinados contextos (conforme, segundo, mediante, durante).",
-            "**Preposição Relacional**: Conector obrigatório desprovido de carga semântica própria, imposto pela regência do termo anterior (objeto indireto, complemento nominal).",
-            "**Preposição Nocional**: Conector autônomo portador de carga semântica circunstancial (adjunto adverbial, adjunto adnominal).",
-            "**Locução Prepositiva**: Expressão pluriverbal terminada em preposição simples que desempenha o papel de uma preposição (a fim de, por causa de, em vez de).",
-            "**Polissemia Preposicional**: Propriedade pela qual uma mesma preposição adquire múltiplos sentidos dependendo da relação contextual entre regente e regido."
-          ]
+          "term": "Conceito de Preposição como Conector e Paralelismo com as Conjunções",
+          "shortDefinition": "A preposição é uma classe gramatical de palavras invariáveis cuja função primordial é atuar como conectivo ou conector, estabelecendo vínculo sintático e semântico entre dois termos no interior de uma mesma oração ou entre duas orações em um período composto.",
+          "detailTarget": {
+            "unitId": "IP-A02-G01",
+            "section": "explanation",
+            "groupId": "GRP-A02-G01-01"
+          },
+          "operationalUse": "Sintaticamente, o conector une um elemento determinado (termo principal) a um elemento determinante (termo dependente):"
+        },
+        {
+          "term": "Preposições Essenciais e Distinção Morfológica em Concursos",
+          "shortDefinition": "As preposições essenciais constituem o rol fechado de 18 vocábulos da Língua Portuguesa que desempenham nativa e precipuamente a função de preposição. A memorização estrita dessa lista constitui um mecanismo operacional indispensável para não incorrer em erros de classificação morfológica nas bancas examinadoras.",
+          "detailTarget": {
+            "unitId": "IP-A02-G01",
+            "section": "explanation",
+            "groupId": "GRP-A02-G01-02"
+          },
+          "operationalUse": "O rol normativo das 18 preposições essenciais é composto por:"
+        },
+        {
+          "term": "Dicotomia Estrutural: Preposição Relacional (Gramatical) vs. Preposição Nocional (Semântica)",
+          "shortDefinition": "A preposição desempenha dois papéis estruturais e funcionais mutuamente excludentes na oração:",
+          "detailTarget": {
+            "unitId": "IP-A02-G01",
+            "section": "explanation",
+            "groupId": "GRP-A02-G01-03"
+          }
+        },
+        {
+          "term": "Mapeamento Sintático das Preposições Nocionais",
+          "shortDefinition": "As preposições dotadas de valor nocional correlacionam-se rigidamente na sintaxe a funções que não representam complementos oracionais obrigatórios, introduzindo termos com as funções sintáticas de Adjunto Adverbial, Adjunto Adnominal e Agente da Passiva.",
+          "detailTarget": {
+            "unitId": "IP-A02-G01",
+            "section": "explanation",
+            "groupId": "GRP-A02-G01-04"
+          },
+          "operationalUse": "A professora esquematizou o mapeamento da relação entre valor semântico e função sintática:"
+        },
+        {
+          "term": "Polissemia da Preposição \"PARA\"",
+          "shortDefinition": "A preposição \"PARA\" é uma das mais cobradas em concursos públicos por possuir expressiva polissemia nocional, assumindo cinco valores semânticos principais a depender da natureza semântica do termo regido que a sucede.",
+          "detailTarget": {
+            "unitId": "IP-A02-G01",
+            "section": "explanation",
+            "groupId": "GRP-A02-G01-04"
+          },
+          "operationalUse": "Os cinco valores semânticos fundamentais assumidos pela preposição \"PARA\" compreendem:"
+        },
+        {
+          "term": "Locuções Prepositivas vs. Locuções Conjuntivas e Regra de Ouro da Reescrita",
+          "shortDefinition": "Uma locução é um agrupamento de duas ou mais palavras que desempenha a função de uma classe gramatical única. A locução prepositiva termina obrigatoriamente em preposição e rege oração reduzida no infinitivo. A locução conjuntiva termina pelo vocábulo conetivo \"que\" e rege oração desenvolvida com verbo conjugado.",
+          "detailTarget": {
+            "unitId": "IP-A02-G01",
+            "section": "explanation",
+            "groupId": "GRP-A02-G01-05"
+          },
+          "operationalUse": "A correlação morfológica entre as locuções acarreta repercussões sintáticas automáticas no predicado subordinado:"
         }
       ]
     },
@@ -773,115 +1197,6 @@
     }
   },
   "officialQuestions": [
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A02-aula02.q.practice.004",
-      "lessonId": "A02",
-      "sourceQuestionId": "aula02.q.practice.004",
-      "questionPayload": {
-        "question_id": "aula02.q.practice.004",
-        "occurrence_number": 4,
-        "question_group": "aula02.q.preposition.008",
-        "question_type": "true_false",
-        "exam_board": "PGE-PE",
-        "organization": "PGE-PE",
-        "position": null,
-        "year": 2019,
-        "source_header": "(PGE-PE / 2019)",
-        "support_text": null,
-        "prompt": "Ninguém poderia ficar impassível diante de uma mudança dessa envergadura. Por isso a\nsensação mais difundida é a desorientação.\nSeria mantida a correção gramatical do texto se o trecho “diante de uma mudança” fosse\nalterado para ante a uma mudança.",
-        "options": [],
-        "commentary": "Após as preposições “ante” e “perante”, preposições indicativas de lugar, não se usa preposição\n“a”. A redação seria apenas: ante/perante uma mudança.\nGabarito: questão incorreta.",
-        "tests_concept_ids": [],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula02_complete",
-          "page_ids": [
-            "aula02_complete.p0010"
-          ]
-        },
-        "annotation_state": "within_annotated_scope_unmarked",
-        "extraction_confidence": 0.95,
-        "occurrence_kind": "practice",
-        "topic": "mixed",
-        "duplicate_of": "aula02.q.preposition.commented.008"
-      },
-      "questionSha256": "4f8323897fbeb4ecfdd3266fc0786ccff9518634e6228ac4f8d9e18289cd435b",
-      "answerPayload": {
-        "answer_id": "aula02.q.practice.004.answer",
-        "question_id": "aula02.q.practice.004",
-        "answer": "incorrect",
-        "commentary": "Após as preposições “ante” e “perante”, preposições indicativas de lugar, não se usa preposição\n“a”. A redação seria apenas: ante/perante uma mudança.\nGabarito: questão incorreta.",
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula02_complete",
-          "page_ids": [
-            "aula02_complete.p0010"
-          ]
-        },
-        "confidence": 0.98
-      },
-      "answerSha256": "7265e9aa015628ad4a6d07256245a6b8995e4116f46e97fa2ec307b7b8d315b3",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A02-aula02.q.preposition.commented.001",
-      "lessonId": "A02",
-      "sourceQuestionId": "aula02.q.preposition.commented.001",
-      "questionPayload": {
-        "question_id": "aula02.q.preposition.commented.001",
-        "occurrence_number": 1,
-        "question_group": "aula02.q.preposition.001",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "PC-AL",
-        "position": null,
-        "year": 2023,
-        "source_header": "(CEBRASPE / PC-AL / 2023)",
-        "support_text": null,
-        "prompt": "O Supremo Tribunal Federal, por sua vez, aduziu a interpretação de que meio ambiente\necologicamente equilibrado inscrito na Carta Cidadã faz parte do rol de cláusulas pétreas, mas,\npor não estar contido no parágrafo 4.° do artigo 60, é tido como uma cláusula pétrea\nheterotópica, pela sua posição topográfica em outro capítulo. Diante disso, consagra-se que toda\natividade passível de gerar impacto no meio ambiente deverá ser bem discutida, de modo a\nevitar quaisquer interferências negativas ao equilíbrio ambiental. Além disso, inúmeros princípios\nforam pulverizados nas legislações esparsas que dão supedâneo ao compromisso inarredável de\num meio ambiente livre e continuo em sua função.\nA correção gramatical do texto seria prejudicada caso o segmento \"no meio ambiente\" fosse\nsubstituído por sobre o meio ambiente.",
-        "options": [],
-        "commentary": "Nesse contexto, não há erro gramatical e as duas preposições mantêm a ideia de que o meio\nambiente é o alvo dos impactos; logo, a troca é possível: impacto no meio ambiente / impacto\nsobre o meio ambiente\nNuma perspectiva mais sintática, podemos dizer que a regência de \"impacto\" aceita as duas\npreposições.\nQuestão incorreta.",
-        "tests_concept_ids": [
-          "pt.grammar.preposicao"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.preposicao.invariavel",
-          "rule.pt.preposicao.pronomes",
-          "rule.pt.preposicao.ante_perante",
-          "rule.pt.substituicao.prep_conj"
-        ],
-        "source": {
-          "document_id": "aula02_complete",
-          "page_ids": [
-            "aula02_complete.p0042"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.98,
-        "occurrence_kind": "commented",
-        "topic": "preposition",
-        "duplicate_of": null
-      },
-      "questionSha256": "7c58e0c2c9d36bafd656da16d57fd0c423da1b1ecabf3d856774c8f01991d609",
-      "answerPayload": {
-        "answer_id": "aula02.q.preposition.commented.001.answer",
-        "question_id": "aula02.q.preposition.commented.001",
-        "answer": "incorrect",
-        "commentary": "Nesse contexto, não há erro gramatical e as duas preposições mantêm a ideia de que o meio\nambiente é o alvo dos impactos; logo, a troca é possível: impacto no meio ambiente / impacto\nsobre o meio ambiente\nNuma perspectiva mais sintática, podemos dizer que a regência de \"impacto\" aceita as duas\npreposições.\nQuestão incorreta.",
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula02_complete",
-          "page_ids": [
-            "aula02_complete.p0042"
-          ]
-        },
-        "confidence": 0.98
-      },
-      "answerSha256": "1049cf95bd7008d017a45771036c8747f4192ededcc21ea6340d3b8e9b6803fe",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
     {
       "schemaVersion": "2.0.0",
       "officialQuestionId": "OQ-A02-aula02.q.preposition.commented.008",
@@ -940,6 +1255,67 @@
         "confidence": 0.98
       },
       "answerSha256": "d742dfa72018df96dff0103ff120bf29fd0c1e6d8f15373af5a0aaa00c75d7be",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A02-aula02.q.practice.004"
+      ]
+    },
+    {
+      "schemaVersion": "2.0.0",
+      "officialQuestionId": "OQ-A02-aula02.q.preposition.commented.001",
+      "lessonId": "A02",
+      "sourceQuestionId": "aula02.q.preposition.commented.001",
+      "questionPayload": {
+        "question_id": "aula02.q.preposition.commented.001",
+        "occurrence_number": 1,
+        "question_group": "aula02.q.preposition.001",
+        "question_type": "true_false",
+        "exam_board": "CEBRASPE",
+        "organization": "PC-AL",
+        "position": null,
+        "year": 2023,
+        "source_header": "(CEBRASPE / PC-AL / 2023)",
+        "support_text": null,
+        "prompt": "O Supremo Tribunal Federal, por sua vez, aduziu a interpretação de que meio ambiente\necologicamente equilibrado inscrito na Carta Cidadã faz parte do rol de cláusulas pétreas, mas,\npor não estar contido no parágrafo 4.° do artigo 60, é tido como uma cláusula pétrea\nheterotópica, pela sua posição topográfica em outro capítulo. Diante disso, consagra-se que toda\natividade passível de gerar impacto no meio ambiente deverá ser bem discutida, de modo a\nevitar quaisquer interferências negativas ao equilíbrio ambiental. Além disso, inúmeros princípios\nforam pulverizados nas legislações esparsas que dão supedâneo ao compromisso inarredável de\num meio ambiente livre e continuo em sua função.\nA correção gramatical do texto seria prejudicada caso o segmento \"no meio ambiente\" fosse\nsubstituído por sobre o meio ambiente.",
+        "options": [],
+        "commentary": "Nesse contexto, não há erro gramatical e as duas preposições mantêm a ideia de que o meio\nambiente é o alvo dos impactos; logo, a troca é possível: impacto no meio ambiente / impacto\nsobre o meio ambiente\nNuma perspectiva mais sintática, podemos dizer que a regência de \"impacto\" aceita as duas\npreposições.\nQuestão incorreta.",
+        "tests_concept_ids": [
+          "pt.grammar.preposicao"
+        ],
+        "tests_rule_ids": [
+          "rule.pt.preposicao.invariavel",
+          "rule.pt.preposicao.pronomes",
+          "rule.pt.preposicao.ante_perante",
+          "rule.pt.substituicao.prep_conj"
+        ],
+        "source": {
+          "document_id": "aula02_complete",
+          "page_ids": [
+            "aula02_complete.p0042"
+          ]
+        },
+        "annotation_state": "outside_annotated_scope",
+        "extraction_confidence": 0.98,
+        "occurrence_kind": "commented",
+        "topic": "preposition",
+        "duplicate_of": null
+      },
+      "questionSha256": "7c58e0c2c9d36bafd656da16d57fd0c423da1b1ecabf3d856774c8f01991d609",
+      "answerPayload": {
+        "answer_id": "aula02.q.preposition.commented.001.answer",
+        "question_id": "aula02.q.preposition.commented.001",
+        "answer": "incorrect",
+        "commentary": "Nesse contexto, não há erro gramatical e as duas preposições mantêm a ideia de que o meio\nambiente é o alvo dos impactos; logo, a troca é possível: impacto no meio ambiente / impacto\nsobre o meio ambiente\nNuma perspectiva mais sintática, podemos dizer que a regência de \"impacto\" aceita as duas\npreposições.\nQuestão incorreta.",
+        "justification_unit_ids": [],
+        "source": {
+          "document_id": "aula02_complete",
+          "page_ids": [
+            "aula02_complete.p0042"
+          ]
+        },
+        "confidence": 0.98
+      },
+      "answerSha256": "1049cf95bd7008d017a45771036c8747f4192ededcc21ea6340d3b8e9b6803fe",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

@@ -75,7 +75,7 @@ export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [], 
             <ContrastBoard
               key={contrast.contrastId || cIdx}
               contrast={contrast}
-              renderBlock={(b) => <ContentBlockRenderer block={b} />}
+              renderBlock={(b) => <ContentBlockRenderer block={b} allowLegacyDiagramInference={false} />}
             />
           ))}
         </div>

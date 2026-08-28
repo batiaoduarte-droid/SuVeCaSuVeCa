@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A13-G01",
     "lessonId": "A13",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A13-G01",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A13-G01-001"
+          }
         }
       ]
     },
@@ -98,8 +103,79 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA resolução de questões de compreensão textual em certames públicos é uma disciplina analítica estritamente técnica, baseada em critérios científicos de equivalência e rastreabilidade linguística, desvinculada de impressões afetivas, simpatias ideológicas ou do mero hábito de leitura subjetiva.\nExplicação consolidada\nO candidato que aborda o texto da prova de forma puramente intuitiva ou emocional corre o risco de projetar opiniões e repertório de mundo sobre as linhas do autor (\"viajar no texto\").\nBancas organizadoras de alto rigor técnico — destacando-se o Cebraspe, cuja precisão microscópica supera até a de instituições como a FGV — estruturam itens com base em sistemas fechados de relações lógicas. Exige-se neutralidade afetiva: autores citados (mesmo figuras consagradas como Platão, Tomás de Aquino ou Descartes) são objetos linguísticos cujas proposições devem ser avaliadas exclusivamente pela sintaxe e semântica dispostas no fragmento.\nCritérios de reconhecimento ou aplicação\nO texto de prova deve ser encarado como um conjunto delimitado de dados explícitos.\nQualquer juízo de valor ético, político ou empírico que não esteja textualmente ancorado deve ser desconsiderado na avaliação do item.\nExemplos e contraexemplos\nExemplo pedagógico (ENEM/Caetano Veloso): Polêmica pública em que o autor declarou discordar da interpretação atribuída à sua canção, evidenciando o perigo de leituras subjetivas desprovidas de âncora textual estrita.\nExemplo pedagógico (Texto da autora em concurso): Questão de concurso que utilizou trecho da gramática da professora Adriana Figueiredo; enquanto candidatos recorreram alegando interpretação indevida da banca, a autora atestou a exatidão técnica da banca ao avaliar o dado estritamente expresso.\nRelações\nFundamenta: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A resolução de questões de compreensão textual em certames públicos é uma disciplina analítica estritamente técnica, baseada em critérios científicos de equivalência e rastreabilidade linguística, desvinculada de impressões afetivas, simpatias ideológicas ou do mero hábito de leitura subjetiva."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O candidato que aborda o texto da prova de forma puramente intuitiva ou emocional corre o risco de projetar opiniões e repertório de mundo sobre as linhas do autor (\"viajar no texto\")."
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas organizadoras de alto rigor técnico — destacando-se o Cebraspe, cuja precisão microscópica supera até a de instituições como a FGV — estruturam itens com base em sistemas fechados de relações lógicas. Exige-se neutralidade afetiva: autores citados (mesmo figuras consagradas como Platão, Tomás de Aquino ou Descartes) são objetos linguísticos cujas proposições devem ser avaliadas exclusivamente pela sintaxe e semântica dispostas no fragmento."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O texto de prova deve ser encarado como um conjunto delimitado de dados explícitos.",
+                "Qualquer juízo de valor ético, político ou empírico que não esteja textualmente ancorado deve ser desconsiderado na avaliação do item."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo pedagógico (ENEM/Caetano Veloso): Polêmica pública em que o autor declarou discordar da interpretação atribuída à sua canção, evidenciando o perigo de leituras subjetivas desprovidas de âncora textual estrita.",
+                "Exemplo pedagógico (Texto da autora em concurso): Questão de concurso que utilizou trecho da gramática da professora Adriana Figueiredo; enquanto candidatos recorreram alegando interpretação indevida da banca, a autora atestou a exatidão técnica da banca ao avaliar o dado estritamente expresso."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G01-RECORRENCIA-002",
+                  "targetTitle": "O Conceito de Recorrência e Foco no Plano Explícito",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G01-RECORRENCIA-001",
+                  "targetTitle": "Protocolo de Resolução de Recorrência e Fatiamento de Assertivas",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G01-RECORRENCIA-001",
+                  "targetTitle": "O Risco da Leitura Afetiva e Ideológica",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +188,92 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA recorrência é a modalidade de compreensão textual que demanda a recuperação e validação de informações que estão expressamente declaradas (explícitas) no texto-base, exigindo o reconhecimento de paráfrases e reescrituras fidedignas, sem recurso a deduções ou inferências não literais.\nExplicação consolidada\nA compreensão por recorrência opera sob uma identidade formal sistematizada pela professora Adriana Figueiredo:\n\\text{Compreensão Textual} = \\text{Recorrência} = \\text{Paráfrases} = \\text{Equivalências} = \\text{Reescrituras} = \\text{Explícitos do Texto}\nDiferencia-se categoricamente da interpretação textual por inferência:\nNa inferência/dedução, a informação não está expressa com todas as letras, sendo autorizada por pressupostos lógicos e pistas contextuais.\nNa recorrência, o dado precisa estar diretamente comprovável na superfície textual por meio de sinonímia, reestruturação sintática ou correspondência categorial.\nCritérios de reconhecimento ou aplicação\nFórmulas canônicas de comando no Cebraspe e outras bancas: \"De acordo com as ideias do texto...\", \"Conforme o texto...\", \"Segundo o texto...\", \"O texto esclarece que...\".\nAo identificar essas fórmulas, o candidato deve inibir o raciocínio dedutivo abdutivo e ativar a varredura microscópica por equivalência direta.\nRelações\nExpande: .\nSubordina: , , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A recorrência é a modalidade de compreensão textual que demanda a recuperação e validação de informações que estão expressamente declaradas (explícitas) no texto-base, exigindo o reconhecimento de paráfrases e reescrituras fidedignas, sem recurso a deduções ou inferências não literais."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A compreensão por recorrência opera sob uma identidade formal sistematizada pela professora Adriana Figueiredo:"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Compreensão Textual} = \\text{Recorrência} = \\text{Paráfrases} = \\text{Equivalências} = \\text{Reescrituras} = \\text{Explícitos do Texto}"
+            },
+            {
+              "type": "paragraph",
+              "text": "Diferencia-se categoricamente da interpretação textual por inferência:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Na inferência/dedução, a informação não está expressa com todas as letras, sendo autorizada por pressupostos lógicos e pistas contextuais.",
+                "Na recorrência, o dado precisa estar diretamente comprovável na superfície textual por meio de sinonímia, reestruturação sintática ou correspondência categorial."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Fórmulas canônicas de comando no Cebraspe e outras bancas: \"De acordo com as ideias do texto...\", \"Conforme o texto...\", \"Segundo o texto...\", \"O texto esclarece que...\".",
+                "Ao identificar essas fórmulas, o candidato deve inibir o raciocínio dedutivo abdutivo e ativar a varredura microscópica por equivalência direta."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A13-G01-RECORRENCIA-001",
+                  "targetTitle": "Natureza Técnica da Compreensão de Textos em Concursos",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G01-RECORRENCIA-003",
+                  "targetTitle": "Mecanismos de Paráfrase Legítima: Equivalência Semântica, Singular Genérico e Simultaneidade Temporal",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G01-RECORRENCIA-004",
+                  "targetTitle": "Tipologia dos Vícios em Paráfrase I: Erro por Contradição e Polarização Semântica",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G01-RECORRENCIA-005",
+                  "targetTitle": "Tipologia dos Vícios em Paráfrase II: Erro por Extrapolação, Falso \"Se... Então\" e \"Verdade do Texto\" vs. \"Verdade da Vida\"",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G01-RECORRENCIA-001",
+                  "targetTitle": "Protocolo de Resolução de Recorrência e Fatiamento de Assertivas",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +286,71 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA paráfrase legítima é a reescritura de um trecho textual que preserva rigorosamente seu conteúdo proposicional, utilizando recursos lexicais e gramaticais distintos. Não se confunde com cópia literal nem com extrapolação, admitindo variações formais canônicas reconhecidas pelas bancas examinadoras.\nExplicação consolidada\nA paráfrase legítima manifesta-se por meio de três mecanismos principais:\nSinonímia Vocabular e Reestruturação Sintática Direta: Substituição de vocábulos por equivalentes de mesmo campo semântico (ex.: \"crucial\" $\\leftrightarrow$ \"fundamental\"; \"papel transformador da educação\" $\\leftrightarrow$ \"integrar a educação nessas transformações\").\nSingular Genérico (ou Categórico) $\\leftrightarrow$ Plural: O emprego de um substantivo no singular com artigo definido para representar toda a espécie ou categoria (ex.: \"O uso do rito\", \"O rito consiste\") equivale semanticamente ao substantivo no plural (ex.: \"Os ritos\"). O candidato não deve classificar a assertiva como errada por simples divergência numérica gramatical quando o sentido for genérico.\nEquivalência Temporal de Simultaneidade: Construções que denotam marcos históricos paralelos (ex.: \"O uso do rito é paralelo ao aparecimento da humanidade\") expressam simultaneidade cronológica originária, sendo perfeitamente equivalentes à locução comparativo-temporal \"tão antigos quanto a humanidade\".\nExemplos\nCaso 1 (Educação): Texto: \"relação que, apesar de fundamental, não é tão expressiva na atualidade\" $\\rightarrow$ Paráfrase: \"apesar de crucial, o papel transformador da educação não tem sido aproveitado\" (Validado em ).\nCaso 2 (Ritos/Sebrae 2024): Texto: \"O uso do rito é paralelo ao aparecimento da humanidade\" $\\rightarrow$ Paráfrase: \"os ritos são tão antigos quanto a humanidade\" (Validado em ).\nRelações\nContrasta com: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A paráfrase legítima é a reescritura de um trecho textual que preserva rigorosamente seu conteúdo proposicional, utilizando recursos lexicais e gramaticais distintos. Não se confunde com cópia literal nem com extrapolação, admitindo variações formais canônicas reconhecidas pelas bancas examinadoras."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A paráfrase legítima manifesta-se por meio de três mecanismos principais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sinonímia Vocabular e Reestruturação Sintática Direta: Substituição de vocábulos por equivalentes de mesmo campo semântico (ex.: \"crucial\" $\\leftrightarrow$ \"fundamental\"; \"papel transformador da educação\" $\\leftrightarrow$ \"integrar a educação nessas transformações\").",
+                "Singular Genérico (ou Categórico) $\\leftrightarrow$ Plural: O emprego de um substantivo no singular com artigo definido para representar toda a espécie ou categoria (ex.: \"O uso do rito\", \"O rito consiste\") equivale semanticamente ao substantivo no plural (ex.: \"Os ritos\"). O candidato não deve classificar a assertiva como errada por simples divergência numérica gramatical quando o sentido for genérico.",
+                "Equivalência Temporal de Simultaneidade: Construções que denotam marcos históricos paralelos (ex.: \"O uso do rito é paralelo ao aparecimento da humanidade\") expressam simultaneidade cronológica originária, sendo perfeitamente equivalentes à locução comparativo-temporal \"tão antigos quanto a humanidade\"."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Caso 1 (Educação): Texto: \"relação que, apesar de fundamental, não é tão expressiva na atualidade\" $\\rightarrow$ Paráfrase: \"apesar de crucial, o papel transformador da educação não tem sido aproveitado\" (Validado em EX-A13-G01-RECORRENCIA-001).",
+                "Caso 2 (Ritos/Sebrae 2024): Texto: \"O uso do rito é paralelo ao aparecimento da humanidade\" $\\rightarrow$ Paráfrase: \"os ritos são tão antigos quanto a humanidade\" (Validado em EX-A13-G01-RECORRENCIA-004)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G01-RECORRENCIA-004",
+                  "targetTitle": "Tipologia dos Vícios em Paráfrase I: Erro por Contradição e Polarização Semântica",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G01-RECORRENCIA-005",
+                  "targetTitle": "Tipologia dos Vícios em Paráfrase II: Erro por Extrapolação, Falso \"Se... Então\" e \"Verdade do Texto\" vs. \"Verdade da Vida\"",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G01-RECORRENCIA-002",
+                  "targetTitle": "Falsa Incorreção por Singular Genérico vs. Plural",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +363,50 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO erro por contradição ocorre quando a assertiva proposta pela banca inverte ou nega o sentido expresso no texto original, alterando a polaridade axiológica ou lógica da mensagem mediante a inserção de um termo destoante em meio a vocábulos sinônimos.\nMECANISMO DA CONTRADIÇÃO: Texto Original: [Elemento A (+)] [Resultado Positivo (+)] Assertiva Proposta: [Elemento A (+)] [Resultado Negativo (-)] < INVERSÃO DE POLARIDADE\nExplicação consolidada\nEm assertivas capciosas, as bancas constroem períodos em que a grande maioria dos termos constitui paráfrase fiel do texto-base, inserindo pontualmente um advérbio, adjetivo ou verbo de sentido oposto (ex.: \"negativamente\" em vez de favoravelmente).\nTécnica da Polarização Semântica: Consiste em mapear o texto atribuindo cargas positivas [+] (crescimento, benefício, sucesso) e cargas negativas [-] (crise, queda, obstáculo). Se o texto indica que a venda de um produto caminhou \"na contramão\" de uma economia que \"não anda bem\" (oposição ao negativo [-]), a venda obteve desempenho positivo [+]. A assertiva que afirma que os preços impactaram \"negativamente\" a comercialização comete vício categórico de contradição.Técnica correlata: TIP-A13-G01-RECORRENCIA-002."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O erro por contradição ocorre quando a assertiva proposta pela banca inverte ou nega o sentido expresso no texto original, alterando a polaridade axiológica ou lógica da mensagem mediante a inserção de um termo destoante em meio a vocábulos sinônimos."
+            },
+            {
+              "type": "paragraph",
+              "text": "MECANISMO DA CONTRADIÇÃO: Texto Original: [Elemento A (+)] ──► [Resultado Positivo (+)] Assertiva Proposta: [Elemento A (+)] ──► [Resultado Negativo (-)] <── INVERSÃO DE POLARIDADE"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Em assertivas capciosas, as bancas constroem períodos em que a grande maioria dos termos constitui paráfrase fiel do texto-base, inserindo pontualmente um advérbio, adjetivo ou verbo de sentido oposto (ex.: \"negativamente\" em vez de favoravelmente).",
+                "Técnica da Polarização Semântica: Consiste em mapear o texto atribuindo cargas positivas [+] (crescimento, benefício, sucesso) e cargas negativas [-] (crise, queda, obstáculo). Se o texto indica que a venda de um produto caminhou \"na contramão\" de uma economia que \"não anda bem\" (oposição ao negativo [-]), a venda obteve desempenho positivo [+]. A assertiva que afirma que os preços impactaram \"negativamente\" a comercialização comete vício categórico de contradição."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G01-002",
+                  "targetTitle": "Análise de Paráfrase Incorreta por Contradição (Venda de Alimentos)",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G01-RECORRENCIA-003",
+                  "targetTitle": "Armadilha da Paráfrase com Sinônimos Parciais",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +419,79 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA extrapolação textual ocorre quando a assertiva introduz dados quantitativos, qualificadores, relações de causalidade, juízos de prioridade ou noções de mundo real que não possuem âncora textual explícita no fragmento de apoio.\nMANIFESTAÇÕES DA EXTRAPOLAÇÃO: 1. Falso \"Se... Então\": Dedução psicológica livre não explicitada pelo autor. 2. Eixo Temporal vs. Eixo Axiológico: Converter ordem cronológica (\"de início\") em prioridade (\"priorizar\"). 3. Inserção de Termos Ausentes: Adicionar verbos ou adjetivos inexistentes (ex.: \"difundida\"). 4. \"Verdade da Vida\" vs. \"Verdade do Texto\": Validar assertiva com base em fatos empíricos externos não expressos.\nExplicação consolidada\nA extrapolação manifesta-se pedagogicamente sob quatro vertentes críticas:\nO Mecanismo Espontâneo do \"Se... Então\": O candidato tende a realizar deduções cotidianas não autorizadas. Conforme analogia da rotina matinal (\"de início faço orações, passo pelo café e acordo meu filho\"), iniciar temporalmente por uma ação não significa considerá-la a mais importante.\nTempo versus Importância: Marcadores temporais (de início, primeiramente, a princípio) pertencem exclusivamente ao eixo cronológico; verbos ou locuções de valor (priorizar, elemento mais importante, foco essencial) pertencem ao eixo da hierarquia axiológica. A transposição entre esses eixos sem suporte explícito é erro de extrapolação.\nAcréscimo Vocabular Indevido: Inserção de ações secundárias não relatadas (ex.: afirmar que Descartes \"difundiu\" uma teoria quando o texto diz apenas que ele a \"estabeleceu\").\n\"Verdade do Texto\" versus \"Verdade da Vida\": A armadilha mais sutil em concursos. Ocorre quando uma assertiva formula uma verdade social, empírica ou histórica evidente no cotidiano (ex.: \"a maior parte das escolas públicas brasileiras não possui infraestrutura básica\"), mas o texto traz apenas um projeto de lei determinando equipar escolas. Em questões de recorrência (\"De acordo com o texto\"), o que não está textualmente grafado inexiste como fato comprobatório.Possui alertas: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A extrapolação textual ocorre quando a assertiva introduz dados quantitativos, qualificadores, relações de causalidade, juízos de prioridade ou noções de mundo real que não possuem âncora textual explícita no fragmento de apoio."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Tipologia dos Vícios em Paráfrase II: Erro por Extrapolação, Falso \"Se... Então\" e \"Verdade do Texto\" vs. \"Verdade da Vida\"",
+              "text": "MANIFESTAÇÕES DA EXTRAPOLAÇÃO: ├── 1. Falso \"Se... Então\": Dedução psicológica livre não explicitada pelo autor. ├── 2. Eixo Temporal vs. Eixo Axiológico: Converter ordem cronológica (\"de início\") em prioridade (\"priorizar\"). ├── 3. Inserção de Termos Ausentes: Adicionar verbos ou adjetivos inexistentes (ex.: \"difundida\"). └── 4. \"Verdade da Vida\" vs. \"Verdade do Texto\": Validar assertiva com base em fatos empíricos externos não expressos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A extrapolação manifesta-se pedagogicamente sob quatro vertentes críticas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O Mecanismo Espontâneo do \"Se... Então\": O candidato tende a realizar deduções cotidianas não autorizadas. Conforme analogia da rotina matinal (\"de início faço orações, passo pelo café e acordo meu filho\"), iniciar temporalmente por uma ação não significa considerá-la a mais importante.",
+                "Tempo versus Importância: Marcadores temporais (de início, primeiramente, a princípio) pertencem exclusivamente ao eixo cronológico; verbos ou locuções de valor (priorizar, elemento mais importante, foco essencial) pertencem ao eixo da hierarquia axiológica. A transposição entre esses eixos sem suporte explícito é erro de extrapolação.",
+                "Acréscimo Vocabular Indevido: Inserção de ações secundárias não relatadas (ex.: afirmar que Descartes \"difundiu\" uma teoria quando o texto diz apenas que ele a \"estabeleceu\").",
+                "\"Verdade do Texto\" versus \"Verdade da Vida\": A armadilha mais sutil em concursos. Ocorre quando uma assertiva formula uma verdade social, empírica ou histórica evidente no cotidiano (ex.: \"a maior parte das escolas públicas brasileiras não possui infraestrutura básica\"), mas o texto traz apenas um projeto de lei determinando equipar escolas. Em questões de recorrência (\"De acordo com o texto\"), o que não está textualmente grafado inexiste como fato comprobatório."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G01-003",
+                  "targetTitle": "Análise de Paráfrase Incorreta por Extrapolação (Pilares da Segurança)",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G01-005",
+                  "targetTitle": "Questão Cebraspe 2: TCE-AC 2024 (Dualismo Cartesiano e Conjunção Adversativa)",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G01-006",
+                  "targetTitle": "Questão Cebraspe 3: FNDE 2024 (Projeto de Lei e Infraestrutura Escolar)",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A13-G01-RECORRENCIA-004",
+                  "targetTitle": "Confundir Marcador Temporal com Hierarquia de Importância",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A13-G01-RECORRENCIA-006",
+                  "targetTitle": "A Armadilha Fatal da \"Verdade da Vida\"",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +504,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA Técnica das Setas (\"Setas Salvam\") é um método de leitura analítica ativa que consiste no traçado gráfico e sistemático de vetores direcionais ligando pronomes relativos, demonstrativos, possessivos, elipses (sujeitos ocultos) e orações adjetivas aos seus exatos núcleos substantivos antecedentes.\nExplicação consolidada\nEm períodos sintaticamente densos, a banca comumente afasta o sujeito de seu predicado ou insere orações intercaladas para mascarar o verdadeiro agente da oração.\nAo identificar uma elipse verbal (ex.: \"[Ele] É caracterizado por...\") ou um pronome relativo/possessivo (ex.: \"cujo sentido\", \"sua comercialização\"), o candidato deve desenhar a seta até a palavra nuclear de referência.\nO procedimento impede que qualificadores sejam atribuídos a substantivos incorretos e assegura que a cadeia de coesão referencial seja mantida intacta durante a fragmentação da assertiva.\nRelações\nCompõe: , .\nDica prática: TIP-A13-G01-RECORRENCIA-001."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Técnica das Setas (\"Setas Salvam\") é um método de leitura analítica ativa que consiste no traçado gráfico e sistemático de vetores direcionais ligando pronomes relativos, demonstrativos, possessivos, elipses (sujeitos ocultos) e orações adjetivas aos seus exatos núcleos substantivos antecedentes."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Em períodos sintaticamente densos, a banca comumente afasta o sujeito de seu predicado ou insere orações intercaladas para mascarar o verdadeiro agente da oração.",
+                "Ao identificar uma elipse verbal (ex.: \"[Ele] É caracterizado por...\") ou um pronome relativo/possessivo (ex.: \"cujo sentido\", \"sua comercialização\"), o candidato deve desenhar a seta até a palavra nuclear de referência.",
+                "O procedimento impede que qualificadores sejam atribuídos a substantivos incorretos e assegura que a cadeia de coesão referencial seja mantida intacta durante a fragmentação da assertiva."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G01-RECORRENCIA-001",
+                  "targetTitle": "Protocolo de Resolução de Recorrência e Fatiamento de Assertivas",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G01-RECORRENCIA-002",
+                  "targetTitle": "Procedimento de Leitura Ativa \"Um Olho no Peixe, Outro no Gato\"",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -182,40 +557,49 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA conjunção adversativa (Mas, Porém, Contudo, Todavia, No entanto) atua como um divisor de águas argumentativo e inversor de foco: ela introduz a tese principal que o autor pretende enfatizar no presente discursivo, delimitando historicamente o que veio antes sem que as características de um polo sejam transferidas para o outro.\nExplicação consolidada\nMecânica Argumentativa: A oração que antecede o Mas estabelece o panorama histórico, contextual ou concessivo; a oração subsequente introduz a proposição nuclear valorizada pelo enunciador.\nA Metáfora do Término: Semelhante à frase de rompimento amoroso (\"Você é maravilhosa, MAS não podemos continuar\"), a informação anterior é verdadeira, mas o peso decisivo recai sobre o segmento posterior.\nArmadilha em Concursos (Embaralhamento de Referentes): A banca redige assertivas unindo elementos de antes e de depois do conectivo adversativo (ex.: atribuir ao filósofo moderno a teorização antiga descrita antes do conector adversativo).\nRelações\nDemonstrado em: .\nDica mnemônica: TIP-A13-G01-RECORRENCIA-005."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A conjunção adversativa (Mas, Porém, Contudo, Todavia, No entanto) atua como um divisor de águas argumentativo e inversor de foco: ela introduz a tese principal que o autor pretende enfatizar no presente discursivo, delimitando historicamente o que veio antes sem que as características de um polo sejam transferidas para o outro."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mecânica Argumentativa: A oração que antecede o Mas estabelece o panorama histórico, contextual ou concessivo; a oração subsequente introduz a proposição nuclear valorizada pelo enunciador.",
+                "A Metáfora do Término: Semelhante à frase de rompimento amoroso (\"Você é maravilhosa, MAS não podemos continuar\"), a informação anterior é verdadeira, mas o peso decisivo recai sobre o segmento posterior.",
+                "Armadilha em Concursos (Embaralhamento de Referentes): A banca redige assertivas unindo elementos de antes e de depois do conectivo adversativo (ex.: atribuir ao filósofo moderno a teorização antiga descrita antes do conector adversativo)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A13-G01-005",
+                  "targetTitle": "Questão Cebraspe 2: TCE-AC 2024 (Dualismo Cartesiano e Conjunção Adversativa)",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G01-RECORRENCIA-005",
+                  "targetTitle": "Embaralhamento de Referentes após Conjunção Adversativa",
+                  "targetUnitId": "IP-A13-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA resolução de questões de compreensão textual em certames públicos é uma disciplina analítica estritamente técnica, baseada em critérios científicos de equivalência e rastreabilidade linguística, desvinculada de impressões afetivas, simpatias ideológicas ou do mero hábito de leitura subjetiva.\nExplicação consolidada\nO candidato que aborda o texto da prova de forma puramente intuitiva ou emocional corre o risco de projetar opiniões e repertório de mundo sobre as linhas do autor (\"viajar no texto\").\nBancas organizadoras de alto rigor técnico — destacando-se o Cebraspe, cuja precisão microscópica supera até a de instituições como a FGV — estruturam itens com base em sistemas fechados de relações lógicas. Exige-se neutralidade afetiva: autores citados (mesmo figuras consagradas como Platão, Tomás de Aquino ou Descartes) são objetos linguísticos cujas proposições devem ser avaliadas exclusivamente pela sintaxe e semântica dispostas no fragmento.\nCritérios de reconhecimento ou aplicação\nO texto de prova deve ser encarado como um conjunto delimitado de dados explícitos.\nQualquer juízo de valor ético, político ou empírico que não esteja textualmente ancorado deve ser desconsiderado na avaliação do item.\nExemplos e contraexemplos\nExemplo pedagógico (ENEM/Caetano Veloso): Polêmica pública em que o autor declarou discordar da interpretação atribuída à sua canção, evidenciando o perigo de leituras subjetivas desprovidas de âncora textual estrita.\nExemplo pedagógico (Texto da autora em concurso): Questão de concurso que utilizou trecho da gramática da professora Adriana Figueiredo; enquanto candidatos recorreram alegando interpretação indevida da banca, a autora atestou a exatidão técnica da banca ao avaliar o dado estritamente expresso.\nRelações\nFundamenta: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA recorrência é a modalidade de compreensão textual que demanda a recuperação e validação de informações que estão expressamente declaradas (explícitas) no texto-base, exigindo o reconhecimento de paráfrases e reescrituras fidedignas, sem recurso a deduções ou inferências não literais.\nExplicação consolidada\nA compreensão por recorrência opera sob uma identidade formal sistematizada pela professora Adriana Figueiredo:\n\\text{Compreensão Textual} = \\text{Recorrência} = \\text{Paráfrases} = \\text{Equivalências} = \\text{Reescrituras} = \\text{Explícitos do Texto}\nDiferencia-se categoricamente da interpretação textual por inferência:\nNa inferência/dedução, a informação não está expressa com todas as letras, sendo autorizada por pressupostos lógicos e pistas contextuais.\nNa recorrência, o dado precisa estar diretamente comprovável na superfície textual por meio de sinonímia, reestruturação sintática ou correspondência categorial.\nCritérios de reconhecimento ou aplicação\nFórmulas canônicas de comando no Cebraspe e outras bancas: \"De acordo com as ideias do texto...\", \"Conforme o texto...\", \"Segundo o texto...\", \"O texto esclarece que...\".\nAo identificar essas fórmulas, o candidato deve inibir o raciocínio dedutivo abdutivo e ativar a varredura microscópica por equivalência direta.\nRelações\nExpande: .\nSubordina: , , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA paráfrase legítima é a reescritura de um trecho textual que preserva rigorosamente seu conteúdo proposicional, utilizando recursos lexicais e gramaticais distintos. Não se confunde com cópia literal nem com extrapolação, admitindo variações formais canônicas reconhecidas pelas bancas examinadoras.\nExplicação consolidada\nA paráfrase legítima manifesta-se por meio de três mecanismos principais:\nSinonímia Vocabular e Reestruturação Sintática Direta: Substituição de vocábulos por equivalentes de mesmo campo semântico (ex.: \"crucial\" $\\leftrightarrow$ \"fundamental\"; \"papel transformador da educação\" $\\leftrightarrow$ \"integrar a educação nessas transformações\").\nSingular Genérico (ou Categórico) $\\leftrightarrow$ Plural: O emprego de um substantivo no singular com artigo definido para representar toda a espécie ou categoria (ex.: \"O uso do rito\", \"O rito consiste\") equivale semanticamente ao substantivo no plural (ex.: \"Os ritos\"). O candidato não deve classificar a assertiva como errada por simples divergência numérica gramatical quando o sentido for genérico.\nEquivalência Temporal de Simultaneidade: Construções que denotam marcos históricos paralelos (ex.: \"O uso do rito é paralelo ao aparecimento da humanidade\") expressam simultaneidade cronológica originária, sendo perfeitamente equivalentes à locução comparativo-temporal \"tão antigos quanto a humanidade\".\nExemplos\nCaso 1 (Educação): Texto: \"relação que, apesar de fundamental, não é tão expressiva na atualidade\" $\\rightarrow$ Paráfrase: \"apesar de crucial, o papel transformador da educação não tem sido aproveitado\" (Validado em ).\nCaso 2 (Ritos/Sebrae 2024): Texto: \"O uso do rito é paralelo ao aparecimento da humanidade\" $\\rightarrow$ Paráfrase: \"os ritos são tão antigos quanto a humanidade\" (Validado em ).\nRelações\nContrasta com: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO erro por contradição ocorre quando a assertiva proposta pela banca inverte ou nega o sentido expresso no texto original, alterando a polaridade axiológica ou lógica da mensagem mediante a inserção de um termo destoante em meio a vocábulos sinônimos.\nMECANISMO DA CONTRADIÇÃO: Texto Original: [Elemento A (+)] [Resultado Positivo (+)] Assertiva Proposta: [Elemento A (+)] [Resultado Negativo (-)] < INVERSÃO DE POLARIDADE\nExplicação consolidada\nEm assertivas capciosas, as bancas constroem períodos em que a grande maioria dos termos constitui paráfrase fiel do texto-base, inserindo pontualmente um advérbio, adjetivo ou verbo de sentido oposto (ex.: \"negativamente\" em vez de favoravelmente).\nTécnica da Polarização Semântica: Consiste em mapear o texto atribuindo cargas positivas [+] (crescimento, benefício, sucesso) e cargas negativas [-] (crise, queda, obstáculo). Se o texto indica que a venda de um produto caminhou \"na contramão\" de uma economia que \"não anda bem\" (oposição ao negativo [-]), a venda obteve desempenho positivo [+]. A assertiva que afirma que os preços impactaram \"negativamente\" a comercialização comete vício categórico de contradição.Técnica correlata: TIP-A13-G01-RECORRENCIA-002."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA extrapolação textual ocorre quando a assertiva introduz dados quantitativos, qualificadores, relações de causalidade, juízos de prioridade ou noções de mundo real que não possuem âncora textual explícita no fragmento de apoio.\nMANIFESTAÇÕES DA EXTRAPOLAÇÃO: 1. Falso \"Se... Então\": Dedução psicológica livre não explicitada pelo autor. 2. Eixo Temporal vs. Eixo Axiológico: Converter ordem cronológica (\"de início\") em prioridade (\"priorizar\"). 3. Inserção de Termos Ausentes: Adicionar verbos ou adjetivos inexistentes (ex.: \"difundida\"). 4. \"Verdade da Vida\" vs. \"Verdade do Texto\": Validar assertiva com base em fatos empíricos externos não expressos.\nExplicação consolidada\nA extrapolação manifesta-se pedagogicamente sob quatro vertentes críticas:\nO Mecanismo Espontâneo do \"Se... Então\": O candidato tende a realizar deduções cotidianas não autorizadas. Conforme analogia da rotina matinal (\"de início faço orações, passo pelo café e acordo meu filho\"), iniciar temporalmente por uma ação não significa considerá-la a mais importante.\nTempo versus Importância: Marcadores temporais (de início, primeiramente, a princípio) pertencem exclusivamente ao eixo cronológico; verbos ou locuções de valor (priorizar, elemento mais importante, foco essencial) pertencem ao eixo da hierarquia axiológica. A transposição entre esses eixos sem suporte explícito é erro de extrapolação.\nAcréscimo Vocabular Indevido: Inserção de ações secundárias não relatadas (ex.: afirmar que Descartes \"difundiu\" uma teoria quando o texto diz apenas que ele a \"estabeleceu\").\n\"Verdade do Texto\" versus \"Verdade da Vida\": A armadilha mais sutil em concursos. Ocorre quando uma assertiva formula uma verdade social, empírica ou histórica evidente no cotidiano (ex.: \"a maior parte das escolas públicas brasileiras não possui infraestrutura básica\"), mas o texto traz apenas um projeto de lei determinando equipar escolas. Em questões de recorrência (\"De acordo com o texto\"), o que não está textualmente grafado inexiste como fato comprobatório.Possui alertas: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA Técnica das Setas (\"Setas Salvam\") é um método de leitura analítica ativa que consiste no traçado gráfico e sistemático de vetores direcionais ligando pronomes relativos, demonstrativos, possessivos, elipses (sujeitos ocultos) e orações adjetivas aos seus exatos núcleos substantivos antecedentes.\nExplicação consolidada\nEm períodos sintaticamente densos, a banca comumente afasta o sujeito de seu predicado ou insere orações intercaladas para mascarar o verdadeiro agente da oração.\nAo identificar uma elipse verbal (ex.: \"[Ele] É caracterizado por...\") ou um pronome relativo/possessivo (ex.: \"cujo sentido\", \"sua comercialização\"), o candidato deve desenhar a seta até a palavra nuclear de referência.\nO procedimento impede que qualificadores sejam atribuídos a substantivos incorretos e assegura que a cadeia de coesão referencial seja mantida intacta durante a fragmentação da assertiva.\nRelações\nCompõe: , .\nDica prática: TIP-A13-G01-RECORRENCIA-001."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA conjunção adversativa (Mas, Porém, Contudo, Todavia, No entanto) atua como um divisor de águas argumentativo e inversor de foco: ela introduz a tese principal que o autor pretende enfatizar no presente discursivo, delimitando historicamente o que veio antes sem que as características de um polo sejam transferidas para o outro.\nExplicação consolidada\nMecânica Argumentativa: A oração que antecede o Mas estabelece o panorama histórico, contextual ou concessivo; a oração subsequente introduz a proposição nuclear valorizada pelo enunciador.\nA Metáfora do Término: Semelhante à frase de rompimento amoroso (\"Você é maravilhosa, MAS não podemos continuar\"), a informação anterior é verdadeira, mas o peso decisivo recai sobre o segmento posterior.\nArmadilha em Concursos (Embaralhamento de Referentes): A banca redige assertivas unindo elementos de antes e de depois do conectivo adversativo (ex.: atribuir ao filósofo moderno a teorização antiga descrita antes do conector adversativo).\nRelações\nDemonstrado em: .\nDica mnemônica: TIP-A13-G01-RECORRENCIA-005."
         }
       ]
     },
@@ -253,7 +637,9 @@
               "RULE-IP-A13-G01-001",
               "EXP-IP-A13-G01-029"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -296,7 +682,9 @@
               "RULE-IP-A13-G01-002",
               "EXP-IP-A13-G01-030"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -376,7 +764,9 @@
               "PROC-A13-G01-RECORRENCIA-001",
               "EXP-IP-A13-G01-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -445,7 +835,9 @@
               "PROC-A13-G01-RECORRENCIA-002",
               "EXP-IP-A13-G01-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -521,7 +913,9 @@
               "PROC-A13-G01-RECORRENCIA-003",
               "EXP-IP-A13-G01-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -596,7 +990,9 @@
               "CONTRAST-IP-A13-G01-001",
               "EXP-IP-A13-G01-035"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -667,7 +1063,9 @@
               "CONTRAST-IP-A13-G01-002",
               "EXP-IP-A13-G01-036"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -731,7 +1129,9 @@
               "CONTRAST-IP-A13-G01-003",
               "EXP-IP-A13-G01-037"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -798,7 +1198,9 @@
               "WORKED_EXAMPLE-IP-A13-G01-001",
               "EXP-IP-A13-G01-038"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -861,7 +1263,9 @@
               "WORKED_EXAMPLE-IP-A13-G01-002",
               "EXP-IP-A13-G01-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -924,7 +1328,9 @@
               "WORKED_EXAMPLE-IP-A13-G01-003",
               "EXP-IP-A13-G01-040"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -989,7 +1395,9 @@
               "WORKED_EXAMPLE-IP-A13-G01-004",
               "EXP-IP-A13-G01-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1054,7 +1462,9 @@
               "WORKED_EXAMPLE-IP-A13-G01-005",
               "EXP-IP-A13-G01-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1119,7 +1529,9 @@
               "WORKED_EXAMPLE-IP-A13-G01-006",
               "EXP-IP-A13-G01-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1170,7 +1582,9 @@
               "WARN-A13-G01-RECORRENCIA-001",
               "EXP-IP-A13-G01-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1207,7 +1621,9 @@
               "WARN-A13-G01-RECORRENCIA-002",
               "EXP-IP-A13-G01-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1244,7 +1660,9 @@
               "WARN-A13-G01-RECORRENCIA-003",
               "EXP-IP-A13-G01-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1281,7 +1699,9 @@
               "WARN-A13-G01-RECORRENCIA-004",
               "EXP-IP-A13-G01-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1318,7 +1738,9 @@
               "WARN-A13-G01-RECORRENCIA-005",
               "EXP-IP-A13-G01-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1355,26 +1777,82 @@
               "WARN-A13-G01-RECORRENCIA-006",
               "EXP-IP-A13-G01-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Natureza Técnica da Compreensão de Textos em Concursos**: Definição ou ideia central\nA resolução de questões de compreensão textual em certames públicos é uma disciplina analítica estritamente técnica, baseada em critérios científicos de equivalência e rastreabilidade linguística, desvinculada de impressões afetivas, simpatias ideológicas ou do mero hábito de leitura subjetiva.\nExplicação consolidada\nO candidato que aborda o texto da prova de forma puramente intuitiva ou emocional corre o risco de projetar opiniões e repertório de mundo sobre as linhas do autor (\"viajar no texto\").\nBancas organizadoras de alto rigor técnico — destacando-se o Cebraspe, cuja precisão microscópica supera até a de instituições como a FGV — estruturam itens com base em sistemas fechados de relações lógicas. Exige-se neutralidade afetiva: autores citados (mesmo figuras consagradas como Platão, Tomás de Aquino ou Descartes) são objetos linguísticos cujas proposições devem ser avaliadas exclusivamente pela sintaxe e semântica dispostas no fragmento.\nCritérios de reconhecimento ou aplicação\nO texto de prova deve ser encarado como um conjunto delimitado de dados explícitos.\nQualquer juízo de valor ético, político ou empírico que não esteja textualmente ancorado deve ser desconsiderado na avaliação do item.\nExemplos e contraexemplos\nExemplo pedagógico (ENEM/Caetano Veloso): Polêmica pública em que o autor declarou discordar da interpretação atribuída à sua canção, evidenciando o perigo de leituras subjetivas desprovidas de âncora textual estrita.\nExemplo pedagógico (Texto da autora em concurso): Questão de concurso que utilizou trecho da gramática da professora Adriana Figueiredo; enquanto candidatos recorreram alegando interpretação indevida da banca, a autora atestou a exatidão técnica da banca ao avaliar o dado estritamente expresso.\nRelações\nFundamenta: , .",
-            "**O Conceito de Recorrência e Foco no Plano Explícito**: Definição ou ideia central\nA recorrência é a modalidade de compreensão textual que demanda a recuperação e validação de informações que estão expressamente declaradas (explícitas) no texto-base, exigindo o reconhecimento de paráfrases e reescrituras fidedignas, sem recurso a deduções ou inferências não literais.\nExplicação consolidada\nA compreensão por recorrência opera sob uma identidade formal sistematizada pela professora Adriana Figueiredo:\n\\text{Compreensão Textual} = \\text{Recorrência} = \\text{Paráfrases} = \\text{Equivalências} = \\text{Reescrituras} = \\text{Explícitos do Texto}\nDiferencia-se categoricamente da interpretação textual por inferência:\nNa inferência/dedução, a informação não está expressa com todas as letras, sendo autorizada por pressupostos lógicos e pistas contextuais.\nNa recorrência, o dado precisa estar diretamente comprovável na superfície textual por meio de sinonímia, reestruturação sintática ou correspondência categorial.\nCritérios de reconhecimento ou aplicação\nFórmulas canônicas de comando no Cebraspe e outras bancas: \"De acordo com as ideias do texto...\", \"Conforme o texto...\", \"Segundo o texto...\", \"O texto esclarece que...\".\nAo identificar essas fórmulas, o candidato deve inibir o raciocínio dedutivo abdutivo e ativar a varredura microscópica por equivalência direta.\nRelações\nExpande: .\nSubordina: , , .",
-            "**Mecanismos de Paráfrase Legítima: Equivalência Semântica, Singular Genérico e Simultaneidade Temporal**: Definição ou ideia central\nA paráfrase legítima é a reescritura de um trecho textual que preserva rigorosamente seu conteúdo proposicional, utilizando recursos lexicais e gramaticais distintos. Não se confunde com cópia literal nem com extrapolação, admitindo variações formais canônicas reconhecidas pelas bancas examinadoras.\nExplicação consolidada\nA paráfrase legítima manifesta-se por meio de três mecanismos principais:\nSinonímia Vocabular e Reestruturação Sintática Direta: Substituição de vocábulos por equivalentes de mesmo campo semântico (ex.: \"crucial\" $\\leftrightarrow$ \"fundamental\"; \"papel transformador da educação\" $\\leftrightarrow$ \"integrar a educação nessas transformações\").\nSingular Genérico (ou Categórico) $\\leftrightarrow$ Plural: O emprego de um substantivo no singular com artigo definido para representar toda a espécie ou categoria (ex.: \"O uso do rito\", \"O rito consiste\") equivale semanticamente ao substantivo no plural (ex.: \"Os ritos\"). O candidato não deve classificar a assertiva como errada por simples divergência numérica gramatical quando o sentido for genérico.\nEquivalência Temporal de Simultaneidade: Construções que denotam marcos históricos paralelos (ex.: \"O uso do rito é paralelo ao aparecimento da humanidade\") expressam simultaneidade cronológica originária, sendo perfeitamente equivalentes à locução comparativo-temporal \"tão antigos quanto a humanidade\".\nExemplos\nCaso 1 (Educação): Texto: \"relação que, apesar de fundamental, não é tão expressiva na atualidade\" $\\rightarrow$ Paráfrase: \"apesar de crucial, o papel transformador da educação não tem sido aproveitado\" (Validado em ).\nCaso 2 (Ritos/Sebrae 2024): Texto: \"O uso do rito é paralelo ao aparecimento da humanidade\" $\\rightarrow$ Paráfrase: \"os ritos são tão antigos quanto a humanidade\" (Validado em ).\nRelações\nContrasta com: , .",
-            "**Tipologia dos Vícios em Paráfrase I: Erro por Contradição e Polarização Semântica**: Definição ou ideia central\nO erro por contradição ocorre quando a assertiva proposta pela banca inverte ou nega o sentido expresso no texto original, alterando a polaridade axiológica ou lógica da mensagem mediante a inserção de um termo destoante em meio a vocábulos sinônimos.\nMECANISMO DA CONTRADIÇÃO: Texto Original: [Elemento A (+)] [Resultado Positivo (+)] Assertiva Proposta: [Elemento A (+)] [Resultado Negativo (-)] < INVERSÃO DE POLARIDADE\nExplicação consolidada\nEm assertivas capciosas, as bancas constroem períodos em que a grande maioria dos termos constitui paráfrase fiel do texto-base, inserindo pontualmente um advérbio, adjetivo ou verbo de sentido oposto (ex.: \"negativamente\" em vez de favoravelmente).\nTécnica da Polarização Semântica: Consiste em mapear o texto atribuindo cargas positivas [+] (crescimento, benefício, sucesso) e cargas negativas [-] (crise, queda, obstáculo). Se o texto indica que a venda de um produto caminhou \"na contramão\" de uma economia que \"não anda bem\" (oposição ao negativo [-]), a venda obteve desempenho positivo [+]. A assertiva que afirma que os preços impactaram \"negativamente\" a comercialização comete vício categórico de contradição.Técnica correlata: TIP-A13-G01-RECORRENCIA-002.",
-            "**Tipologia dos Vícios em Paráfrase II: Erro por Extrapolação, Falso \"Se... Então\" e \"Verdade do Texto\" vs. \"Verdade da Vida\"**: Definição ou ideia central\nA extrapolação textual ocorre quando a assertiva introduz dados quantitativos, qualificadores, relações de causalidade, juízos de prioridade ou noções de mundo real que não possuem âncora textual explícita no fragmento de apoio.\nMANIFESTAÇÕES DA EXTRAPOLAÇÃO: 1. Falso \"Se... Então\": Dedução psicológica livre não explicitada pelo autor. 2. Eixo Temporal vs. Eixo Axiológico: Converter ordem cronológica (\"de início\") em prioridade (\"priorizar\"). 3. Inserção de Termos Ausentes: Adicionar verbos ou adjetivos inexistentes (ex.: \"difundida\"). 4. \"Verdade da Vida\" vs. \"Verdade do Texto\": Validar assertiva com base em fatos empíricos externos não expressos.\nExplicação consolidada\nA extrapolação manifesta-se pedagogicamente sob quatro vertentes críticas:\nO Mecanismo Espontâneo do \"Se... Então\": O candidato tende a realizar deduções cotidianas não autorizadas. Conforme analogia da rotina matinal (\"de início faço orações, passo pelo café e acordo meu filho\"), iniciar temporalmente por uma ação não significa considerá-la a mais importante.\nTempo versus Importância: Marcadores temporais (de início, primeiramente, a princípio) pertencem exclusivamente ao eixo cronológico; verbos ou locuções de valor (priorizar, elemento mais importante, foco essencial) pertencem ao eixo da hierarquia axiológica. A transposição entre esses eixos sem suporte explícito é erro de extrapolação.\nAcréscimo Vocabular Indevido: Inserção de ações secundárias não relatadas (ex.: afirmar que Descartes \"difundiu\" uma teoria quando o texto diz apenas que ele a \"estabeleceu\").\n\"Verdade do Texto\" versus \"Verdade da Vida\": A armadilha mais sutil em concursos. Ocorre quando uma assertiva formula uma verdade social, empírica ou histórica evidente no cotidiano (ex.: \"a maior parte das escolas públicas brasileiras não possui infraestrutura básica\"), mas o texto traz apenas um projeto de lei determinando equipar escolas. Em questões de recorrência (\"De acordo com o texto\"), o que não está textualmente grafado inexiste como fato comprobatório.Possui alertas: , .",
-            "**Rastreamento Sintático-Coesivo e a Técnica das Setas**: Definição ou ideia central\nA Técnica das Setas (\"Setas Salvam\") é um método de leitura analítica ativa que consiste no traçado gráfico e sistemático de vetores direcionais ligando pronomes relativos, demonstrativos, possessivos, elipses (sujeitos ocultos) e orações adjetivas aos seus exatos núcleos substantivos antecedentes.\nExplicação consolidada\nEm períodos sintaticamente densos, a banca comumente afasta o sujeito de seu predicado ou insere orações intercaladas para mascarar o verdadeiro agente da oração.\nAo identificar uma elipse verbal (ex.: \"[Ele] É caracterizado por...\") ou um pronome relativo/possessivo (ex.: \"cujo sentido\", \"sua comercialização\"), o candidato deve desenhar a seta até a palavra nuclear de referência.\nO procedimento impede que qualificadores sejam atribuídos a substantivos incorretos e assegura que a cadeia de coesão referencial seja mantida intacta durante a fragmentação da assertiva.\nRelações\nCompõe: , .\nDica prática: TIP-A13-G01-RECORRENCIA-001.",
-            "**O Papel Argumentativo das Conjunções Adversativas em Textos Dissertativos/Filosóficos**: Definição ou ideia central\nA conjunção adversativa (Mas, Porém, Contudo, Todavia, No entanto) atua como um divisor de águas argumentativo e inversor de foco: ela introduz a tese principal que o autor pretende enfatizar no presente discursivo, delimitando historicamente o que veio antes sem que as características de um polo sejam transferidas para o outro.\nExplicação consolidada\nMecânica Argumentativa: A oração que antecede o Mas estabelece o panorama histórico, contextual ou concessivo; a oração subsequente introduz a proposição nuclear valorizada pelo enunciador.\nA Metáfora do Término: Semelhante à frase de rompimento amoroso (\"Você é maravilhosa, MAS não podemos continuar\"), a informação anterior é verdadeira, mas o peso decisivo recai sobre o segmento posterior.\nArmadilha em Concursos (Embaralhamento de Referentes): A banca redige assertivas unindo elementos de antes e de depois do conectivo adversativo (ex.: atribuir ao filósofo moderno a teorização antiga descrita antes do conector adversativo).\nRelações\nDemonstrado em: .\nDica mnemônica: TIP-A13-G01-RECORRENCIA-005."
-          ]
+          "term": "Natureza Técnica da Compreensão de Textos em Concursos",
+          "shortDefinition": "A resolução de questões de compreensão textual em certames públicos é uma disciplina analítica estritamente técnica, baseada em critérios científicos de equivalência e rastreabilidade linguística, desvinculada de impressões afetivas, simpatias ideológicas ou do mero hábito de leitura subjetiva.",
+          "detailTarget": {
+            "unitId": "IP-A13-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G01-01"
+          },
+          "operationalUse": "O candidato que aborda o texto da prova de forma puramente intuitiva ou emocional corre o risco de projetar opiniões e repertório de mundo sobre as linhas do autor (\"viajar no texto\")."
+        },
+        {
+          "term": "O Conceito de Recorrência e Foco no Plano Explícito",
+          "shortDefinition": "A recorrência é a modalidade de compreensão textual que demanda a recuperação e validação de informações que estão expressamente declaradas (explícitas) no texto-base, exigindo o reconhecimento de paráfrases e reescrituras fidedignas, sem recurso a deduções ou inferências não literais.",
+          "detailTarget": {
+            "unitId": "IP-A13-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G01-02"
+          },
+          "operationalUse": "A compreensão por recorrência opera sob uma identidade formal sistematizada pela professora Adriana Figueiredo:"
+        },
+        {
+          "term": "Mecanismos de Paráfrase Legítima: Equivalência Semântica, Singular Genérico e Simultaneidade Temporal",
+          "shortDefinition": "A paráfrase legítima é a reescritura de um trecho textual que preserva rigorosamente seu conteúdo proposicional, utilizando recursos lexicais e gramaticais distintos. Não se confunde com cópia literal nem com extrapolação, admitindo variações formais canônicas reconhecidas pelas bancas examinadoras.",
+          "detailTarget": {
+            "unitId": "IP-A13-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G01-03"
+          },
+          "operationalUse": "A paráfrase legítima manifesta-se por meio de três mecanismos principais:"
+        },
+        {
+          "term": "Tipologia dos Vícios em Paráfrase I: Erro por Contradição e Polarização Semântica",
+          "shortDefinition": "O erro por contradição ocorre quando a assertiva proposta pela banca inverte ou nega o sentido expresso no texto original, alterando a polaridade axiológica ou lógica da mensagem mediante a inserção de um termo destoante em meio a vocábulos sinônimos.",
+          "detailTarget": {
+            "unitId": "IP-A13-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G01-04"
+          }
+        },
+        {
+          "term": "Tipologia dos Vícios em Paráfrase II: Erro por Extrapolação, Falso \"Se... Então\" e \"Verdade do Texto\" vs. \"Verdade da Vida\"",
+          "shortDefinition": "A extrapolação textual ocorre quando a assertiva introduz dados quantitativos, qualificadores, relações de causalidade, juízos de prioridade ou noções de mundo real que não possuem âncora textual explícita no fragmento de apoio.",
+          "detailTarget": {
+            "unitId": "IP-A13-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G01-05"
+          },
+          "operationalUse": "A extrapolação manifesta-se pedagogicamente sob quatro vertentes críticas:"
+        },
+        {
+          "term": "Rastreamento Sintático-Coesivo e a Técnica das Setas",
+          "shortDefinition": "A Técnica das Setas (\"Setas Salvam\") é um método de leitura analítica ativa que consiste no traçado gráfico e sistemático de vetores direcionais ligando pronomes relativos, demonstrativos, possessivos, elipses (sujeitos ocultos) e orações adjetivas aos seus exatos núcleos substantivos antecedentes.",
+          "detailTarget": {
+            "unitId": "IP-A13-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G01-06"
+          }
+        },
+        {
+          "term": "O Papel Argumentativo das Conjunções Adversativas em Textos Dissertativos/Filosóficos",
+          "shortDefinition": "A conjunção adversativa (Mas, Porém, Contudo, Todavia, No entanto) atua como um divisor de águas argumentativo e inversor de foco: ela introduz a tese principal que o autor pretende enfatizar no presente discursivo, delimitando historicamente o que veio antes sem que as características de um polo sejam transferidas para o outro.",
+          "detailTarget": {
+            "unitId": "IP-A13-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G01-07"
+          }
         }
       ]
     },
@@ -1506,7 +1984,35 @@
         "confidence": 0.96
       },
       "answerSha256": "e89d14fd9d95a46bbb3a06955e21c6a7261ed98f18307a7720bd8bb9e86ceef7",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente",
+        "options": [
+          {
+            "label": "A",
+            "text": "descritivo."
+          },
+          {
+            "label": "B",
+            "text": "injuntivo."
+          },
+          {
+            "label": "C",
+            "text": "expositivo.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ==2920c1=="
+          },
+          {
+            "label": "D",
+            "text": "dissertativo."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -1574,23 +2080,13 @@
         "confidence": 0.96
       },
       "answerSha256": "3f5c0b9b26941d3219f1f484123d77b6033239eda3562a0de0a2fec10cc5e7e3",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A13-aula13.q0058",
-      "lessonId": "A13",
-      "sourceQuestionId": "aula13.q0058",
-      "questionPayload": {
-        "question_id": "aula13.q0058",
-        "question_number_in_section": 3,
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "APEX BRASIL",
-        "position": null,
-        "year": 2022,
-        "support_text": "Utilize o passo a passo sugerido neste guia e seja bem-sucedido em seu comércio\neletrônico!",
-        "prompt": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente\nA) descritivo.\nB) injuntivo.\nC) expositivo.\nD) dissertativo.",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A13-aula13.q0058"
+      ],
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Quanto à tipologia textual, o último parágrafo do texto CB2A1-I é predominantemente",
         "options": [
           {
             "label": "A",
@@ -1609,38 +2105,13 @@
             "text": "dissertativo."
           }
         ],
-        "tests_concept_ids": [
-          "pt.text.do_texto",
-          "pt.text.o_texto"
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
         ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0113"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "duplicate_of": "aula13.q0030"
-      },
-      "questionSha256": "7d3055d0fdf3debf62837345837992c3c231f3012c5b7cd12c111bf09860c7b4",
-      "answerPayload": {
-        "answer_id": "aula13.q0058.answer",
-        "question_id": "aula13.q0058",
-        "answer": "letter_B",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0127"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "ea90404fa9c6bd06d3caa2c4522e55e58a2d8d35d06b65f02f8c72aaa6b56f02",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -1788,57 +2259,10 @@
         "confidence": 0.96
       },
       "answerSha256": "3f9178d6ac46785d6d2a5c3b6a8aa99cc7dda0120053a29dc8cbb53317f1fff2",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A13-aula13.q0331",
-      "lessonId": "A13",
-      "sourceQuestionId": "aula13.q0331",
-      "questionPayload": {
-        "question_id": "aula13.q0331",
-        "question_number_in_section": 110,
-        "question_type": "open_or_other",
-        "exam_board": "CEBRASPE",
-        "organization": "MPU",
-        "position": null,
-        "year": 2018,
-        "support_text": null,
-        "prompt": "Utilize o texto da questão anterior\nA cultura é um fator que limita a concepção de mundo dos diferentes povos, levando-os a uma\nvisão estreita das dimensões da vida humana.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.text.o_texto",
-          "pt.text.a_visao"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0287"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "duplicate_of": "aula13.q0185"
-      },
-      "questionSha256": "9066c0c1ae5fc4d8c802fb3dc7fea1f218c81bf7be097fe0e3cadc2e41855fa2",
-      "answerPayload": {
-        "answer_id": "aula13.q0331.answer",
-        "question_id": "aula13.q0331",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0306",
-            "aula13_complete.p0307"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "52d9dee7b40614b2c6104fecc1716186d16b795f02ce7b41d35db282d5260295",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A13-aula13.q0331"
+      ]
     },
     {
       "schemaVersion": "1.0.0",

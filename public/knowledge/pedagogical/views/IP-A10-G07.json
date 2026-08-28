@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A10-G07",
     "lessonId": "A10",
     "title": "Crase Diante de Pronomes Demonstrativos e Relativos",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A10-G07",
@@ -47,81 +48,652 @@
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Crase com Aquele, Aquela e Aquilo",
-          "pedagogicalGoal": "Compreender como a preposição 'A' se funde com a letra inicial dos demonstrativos.",
+          "groupId": "GRP-A10-G07-CANONICAL-01",
+          "title": "A Regra do \"A\" Singular vs. \"Às\" Plural diante de Palavras Femininas no Plural",
+          "conceptRefs": [
+            "KB-A10-V022-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "formula",
-              "title": "Equação da Crase Demonstrativa",
-              "expression": "Preposição 'A' (do verbo regente) + Letra 'A' de Aquele/Aquela/Aquilo = ÀQUELE / ÀQUELA / ÀQUILO",
-              "variables": [
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando um termo regente exige a preposição a e o termo regido é um substantivo feminino no plural, existem apenas duas construções gramaticalmente válidas na norma culta:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "às + substantivo plural: fusão da preposição a com o artigo definido feminino plural as (crase obrigatória; referente determinado/específico).",
+                "a + substantivo plural: emprego exclusivo da preposição a no singular, sem artigo definido (sem crase; referente em sentido genérico)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A banca Cebraspe explora sistematicamente duas armadilhas conceituais sobre esse ponto:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Armadilha 1 — Perguntar se o acento em às é obrigatório: O candidato desavisado pensa que, como é possível dizer a regras, a crase seria facultativa. No entanto, se o texto original traz a forma plural às, a simples remoção do acento grave resultaria em as (somente artigo). Deixar apenas o artigo em uma estrutura cuja regência exige preposição configura erro gramatical de regência. Portanto, no vocábulo às, o acento é obrigatório (ou se usa às com crase, ou se troca por a no singular sem crase; nunca as sem acento).",
+                "Armadilha 2 — Sugerir a colocação de crase no a singular diante de plural (à regras, à novas, à exposições): Essa construção é um erro gramatical grave. O \"a\" no singular antes de palavra no plural é puramente preposição; não havendo artigo feminino singular que se funda com a preposição, o acento grave é terminantemente proibido (\"nem a pau\", como enfatiza a professora)."
+              ]
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Quando a banca pergunta se é obrigatório, ela está perguntando, em outras palavras, se ele poderia sair ou não. Ele poderia sair? Não... se eu retirar o acento vai ficar só o artigo... só o artigo pode? Não pode!... Antes do plural, ou eu uso esse 'às' com acento, ou só o 'a' preposição.\""
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "No slide da Questão 1, a professora puxa uma seta de às e escreve: as (só o artigo) NÃO PODE!.",
+                "No slide da Questão 3, a professora escreve à e coloca um \"X\" vermelho em cima, anotando acima às (prep + art) e a (prep)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
                 {
-                  "symbol": "Preposição A",
-                  "name": "Exigência Regencial",
-                  "meaning": "Verbo ou nome que rege 'A' (referir-se a, obedecer a, chegar a)"
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A10-V022-002",
+                  "targetTitle": "Substituição de \"A\" por \"Às\" diante de Plural: Correção Gramatical vs. Alteração Semântica",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
                 },
                 {
-                  "symbol": "Aquele/Aquela/Aquilo",
-                  "name": "Pronome Demonstrativo",
-                  "meaning": "Iniciado pela vogal 'A'"
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A10-V022-001",
+                  "targetTitle": "Confundir Existência de Duas Formas Corretas com Crase Facultativa no \"Às\"",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-001",
+                  "targetTitle": "Questão 1: Petrobras 2024 (Obrigatoriedade de Crase em \"Às\")",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-002",
+                  "targetTitle": "Questão 2: MPE-TO 2024 (Crase Obrigatória com Complemento Nominal)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-003",
+                  "targetTitle": "Questão 3: MEC 2023 (Proibição de Crase em \"A\" Singular antes de Plural)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-004",
+                  "targetTitle": "Questão 4: Pref. Joinville 2024 (Falsa Facultatividade de Crase)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
                 }
-              ],
-              "explanation": "A fusão dá-se diretamente na vogal inicial do pronome, independentemente de ser masculino (àquele) ou neutro (àquilo).",
-              "text": "O acento grave marca a presença da preposição fundida com a primeira letra do demonstrativo."
+              ]
             }
           ]
         },
         {
-          "groupId": "GRP-02",
-          "title": "Crase na Indicação de Horas Determinadas",
-          "pedagogicalGoal": "Distinguir quando a indicação horária exige ou rejeita o acento grave.",
+          "groupId": "GRP-A10-G07-CANONICAL-02",
+          "title": "Substituição de \"A\" por \"Às\" diante de Plural: Correção Gramatical vs. Alteração Semântica",
+          "conceptRefs": [
+            "KB-A10-V022-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Crase com Horas",
-              "columns": [
-                "Estrutura Horária",
-                "Status da Crase",
-                "Justificativa",
-                "Exemplo"
-              ],
-              "rows": [
-                [
-                  "Horas Determinadas Simples",
-                  "OBRIGATÓRIA",
-                  "Fusão de preposição 'a' + artigo 'as/a'",
-                  "A reunião começará ÀS 14h / À 1h."
-                ],
-                [
-                  "Após preposição 'DESDE / APÓS / ENTRE / PARA'",
-                  "PROIBIDA",
-                  "A preposição já está presente; não há preposição 'a'",
-                  "Estou aqui DESDE AS duas horas / O evento é PARA AS 15h."
-                ],
-                [
-                  "Horas Indeterminadas / Duração",
-                  "PROIBIDA",
-                  "Sentido de contagem de tempo / quantidade",
-                  "Viajamos durante três horas / Daqui a duas horas."
-                ]
-              ],
-              "text": "A presença de outra preposição anterior (desde, após, para) impede a crase com horas."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A troca do vocábulo a (preposição singular) por às (preposição + artigo plural) diante de substantivo feminino plural preserva integralmente a correção gramatical, mas acarreta alteração de sentido (passagem do sentido genérico/indeterminado para o sentido determinado/específico)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao avaliar enunciados que propõem a substituição de a [substantivo plural] por às [substantivo plural]:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O termo regente já solicita a preposição a (ex.: com relação a).",
+                "Diante de substantivos plurais (ex.: centenas), a presença do artigo definido feminino plural é facultativa sintaticamente:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sem artigo: usa-se apenas a preposição a -> com relação a centenas.",
+                "Com artigo: usa-se preposição + artigo às -> com relação às centenas."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Se o comando da questão indaga unicamente se a substituição \"manteria a correção gramatical do texto\", o item é CERTO, pois ambas as estruturas respeitam a norma culta.",
+                "Caso a questão afirmasse que o sentido original seria preservado, o item seria ERRADO, pois o artigo restringe e especifica o conjunto."
+              ]
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"A banca pergunta se essa substituição manteria a correção gramatical do texto. Vejam, se tanto faz, se as duas são corretas, então tá certo, manteria... O sentido muda? Muda, eu vou de um sentido geral, sem artigo... e com artigo... Mas reparem que a banca tem o cuidado de falar só em correção gramatical. Ela não entra na seara do sentido...\""
+            },
+            {
+              "type": "paragraph",
+              "text": "No slide da Questão 5, a professora esquematiza:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "com relação a -> regência: pede preposição A",
+                "centenas -> feminino plural -> artigo facultativo",
+                "a centenas = só preposição (sem artigo)",
+                "às centenas = preposição + artigo"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-V022-001",
+                  "targetTitle": "A Regra do \"A\" Singular vs. \"Às\" Plural diante de Palavras Femininas no Plural",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-005",
+                  "targetTitle": "Questão 5: Min. Economia 2020 (Substituição de \"A\" por \"Às\")",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V022-002",
+                  "targetTitle": "Omissão de Preposição em Supressão de Termos",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
         {
-          "groupId": "canonical-table-coverage",
-          "title": "Quadros canônicos complementares",
-          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
-          "semanticKind": "canonical_table_coverage",
+          "groupId": "GRP-A10-G07-CANONICAL-03",
+          "title": "Supressão de Termos Intervenientes e Fusão de Regência Nominal em \"Às\"",
+          "conceptRefs": [
+            "KB-A10-V022-003"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A supressão de uma expressão intermediária (como um pronome indefinido com preposição, ex.: a todas) faz com que o termo regente estabeleça sua relação de regência diretamente com o termo subsequente, exigindo a fusão obrigatória com o artigo definido que já o acompanha."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No trecho original analisado: $$\\text{\"Esse comando é subjacente [a todas] [as relações da República]\"}$$"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O adjetivo subjacente rege complemento nominal introduzido pela preposição a (subjacente a).",
+                "O complemento imediato no texto original é a locução a todas. O artigo as subsequente acompanha o substantivo relações.",
+                "Ao suprimir a todas, o adjetivo subjacente passa a reger diretamente o substantivo relações:"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "$$\\text{subjacente} + \\text{a (preposição)} + \\text{as (artigo de relações)} \\longrightarrow \\text{subjacente às relações}$$"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A presença do acento grave no vocábulo as torna-se estritamente obrigatória. A grafia subjacente as relações acarretaria erro de regência nominal por omissão da preposição obrigatória."
+              ]
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Esse 'a todas', que era complemento de subjacente, saiu. Saindo, agora o complemento de subjacente é 'as relações'. Ora, subjacente exige complemento nominal, exige preposição... Mas o 'as' de relações, a banca pergunta se deveria ser necessariamente obrigatório. Então, sim, item certo.\""
+            },
+            {
+              "type": "paragraph",
+              "text": "No slide da Questão 6, a professora risca a expressão a todas no texto e faz a derivação manuscrita na parte inferior da tela: SUBJACENTE ÀS RELAÇÕES. Ela desenha setas indicando A (PREP.) advinda de subjacente e AS (ART.) pertencente a relações."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-V022-001",
+                  "targetTitle": "A Regra do \"A\" Singular vs. \"Às\" Plural diante de Palavras Femininas no Plural",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-006",
+                  "targetTitle": "Questão 6: PC-AL 2023 (Supressão de Termo e Crase Obrigatória)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-04",
+          "title": "O Sistema Dual de Regras da Crase na Língua Portuguesa",
+          "conceptRefs": [
+            "KB-A10-V023-001"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Todo o emprego do acento indicativo de crase na norma-padrão da Língua Portuguesa reduz-se a exatamente duas regras fundamentais: a regra do Fenômeno Fonético (FF) e a regra das Locuções Femininas (LF)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O ensino tradicional fragmentou a crase em dezenas de casos particulares, listas de proibições e \"macetes\" mnemônicos que geram insegurança. A estruturação moderna e simplificada divide o conteúdo em:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra 1 (Fenômeno Fonético - FF): fusão fonológica de duas vogais idênticas ($a + a = à$), ocorrendo quando um termo antecedente exige a preposição A e o termo consequente aceita o artigo feminino A(s) ou inicia-se pelos pronomes Aquele(s), Aquela(s), Aquilo, A qual / As quais, ou pelo pronome demonstrativo A.",
+                "Regra 2 (Locução Feminina - LF): aposição do acento grave fixo em locuções adverbiais, prepositivas, conjuntivas e adjetivas formadas por núcleo substantivo feminino, independentemente de regência verbal ou nominal anterior."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora relata que muitos alunos sentem dificuldade porque tentam aplicar a lógica da Regra 1 (procurar preposição exigida por verbo ou nome) dentro de contextos que pertencem exclusivamente à Regra 2 (estruturas fixas de base feminina)."
+            },
+            {
+              "type": "paragraph",
+              "text": "Abertura da aula com slide intitulado \"LOCUÇÃO FEMININA\" (VIS-A10-V023-001) e anotação esquemática manuscrita no canto superior esquerdo:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "DUAS REGRAS",
+                "FF (Fenômeno Fonético)",
+                "LF (Locução Feminina)",
+                "Símbolo de diferença: (FF) != (LF)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A10-V023-002",
+                  "targetTitle": "Diferenciação Estrutural: Fenômeno Fonético versus Locução Feminina",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A10-V023-001",
+                  "targetTitle": "Algoritmo de Resolução de Crase em Expressões e Locuções",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-05",
+          "title": "Diferenciação Estrutural: Fenômeno Fonético versus Locução Feminina",
+          "conceptRefs": [
+            "KB-A10-V023-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A crase por Locução Feminina não decorre da exigência de preposição por um termo regente antecedente, mas sim da natureza pluriverbal e do gênero feminino do substantivo-núcleo da própria expressão."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para não confundir as regras:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "No Fenômeno Fonético: Testa-se a transitividade/regência do termo anterior (se pede preposição A) e a admissão de artigo pelo termo posterior.",
+                "Nas Locuções Femininas: O verbo ou nome anterior pode ser intransitivo, transitivo direto ou inexistente no início da oração. Não se busca preposição no termo anterior. O acento grave é colocado porque o bloco sintático inteiro atua como uma unidade funcional feminina."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Exemplo 1: \"Chego à noite.\""
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise de Regência: O verbo \"chegar\" (no sentido de chegar a algum momento) não rege preposição A para tempo; \"quem chega, chega\" (verbo intransitivo).",
+                "Não há fusão de \"preposição do verbo + artigo de noite\".",
+                "Trata-se de uma Locução Adverbial de Tempo Feminina (núcleo: \"noite\"). Logo, recebe acento grave obrigatório."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Exemplo 2: \"À medida que a vida passa, ficamos mais maduros.\""
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A oração inicia com a expressão; não há termo antecedente pedindo preposição.",
+                "Trata-se de uma Locução Conjuntiva Proporcional Feminina (núcleo: \"medida\"). Logo, recebe acento grave obrigatório."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Exemplo 3: \"Vive às custas dos amigos.\""
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Quem vive, vive (verbo intransitivo).",
+                "Trata-se de uma Locução Prepositiva Feminina (núcleo: \"custas\"). Logo, recebe acento grave obrigatório."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora enfatiza textualmente: \"Na regra das locuções femininas, não foi um 'A' preposição que se encontrou com o 'A' artigo... Não é regência!\""
+            },
+            {
+              "type": "paragraph",
+              "text": "No slide VIS-A10-V023-002, a professora puxa setas sobre os exemplos:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Marca V.I. (Verbo Intransitivo) acima de Chego e escreve que à noite é uma expressão feminina de tempo.",
+                "Circula À medida que e às custas dos.",
+                "Registra manuscrito: \"Como não confundir a regra de CRASE do FF com a regra da LF? Na regra do acento das locuções femininas, não foi um 'A' (PREP.) que se encontrou com o 'A' (ART.)\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-V023-001",
+                  "targetTitle": "O Sistema Dual de Regras da Crase na Língua Portuguesa",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V023-001",
+                  "targetTitle": "Tentar Aplicar Regência em Locuções Femininas",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-007",
+                  "targetTitle": "Análise de Locução Adverbial Temporal",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-008",
+                  "targetTitle": "Análise de Locução Conjuntiva Proporcional",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-009",
+                  "targetTitle": "Análise de Locução Prepositiva Feminina",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-06",
+          "title": "Conceito e Tipologia das Locuções Femininas",
+          "conceptRefs": [
+            "KB-A10-V023-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Uma locução é um conjunto de duas ou mais palavras que desempenham papel sintático e semântico de uma única classe gramatical. A locução feminina é aquela cujo núcleo semântico/estrutural é uma palavra feminina (substantivo feminino)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Classificação das Locuções Femininas que Recebem Crase"
+            },
+            {
+              "type": "paragraph",
+              "text": "Existem 4 categorias morfossintáticas de locuções femininas no português:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locuções Adverbiais Femininas: expressam circunstâncias (tempo, modo, lugar)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Tempo: à noite, à tarde, às dez horas, às vezes, àquela noite.",
+                "Modo: às pressas, às escondidas, à vontade, à francesa, à milanesa.",
+                "Lugar: à direita, à esquerda."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locuções Adjetivas Femininas: qualificam um substantivo antecedente."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: encontro às avessas (às avessas qualifica o substantivo encontro)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locuções Conjuntivas Femininas: conectam orações e terminam com a conjunção que."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplos: à medida que, à proporção que."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locuções Prepositivas Femininas: desempenham papel de preposição composta e terminam com a preposição de (ou a/com)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplos: às custas de, à força de, à beira de, à semelhança de, à procura de, à espera de."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Na tela em branco (VIS-A10-V023-003), a professora constrói o quadro com #ANOTAAÍ:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "LOC. ADVERBIAIS $\\rightarrow$ Viajo à tarde",
+                "LOC. ADJETIVAS $\\rightarrow$ Encontro às avessas (puxa seta ligando às avessas a encontro, anotando substantivo)",
+                "LOC. CONJUNTIVAS $\\rightarrow$ À medida que (À medida que cresce...)",
+                "LOC. PREPOSITIVAS $\\rightarrow$ À força de (À força do ódio, escreveu a carta)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A10-V023-002",
+                  "targetTitle": "Diferenciação Estrutural: Fenômeno Fonético versus Locução Feminina",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-010",
+                  "targetTitle": "Análise de Locução Adverbial Temporal: À tarde",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-011",
+                  "targetTitle": "Análise de Locução Adjetiva Feminina: Às avessas",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-012",
+                  "targetTitle": "Análise de Locução Prepositiva Feminina: À força de",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-07",
+          "title": "O Acento Grave como Acento Diferencial e Desfazedor de Ambiguidade",
+          "conceptRefs": [
+            "KB-A10-V023-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nas locuções femininas, o acento grave atua como um acento diferencial, cuja função primária é distinguir a estrutura adverbial/locutiva de uma função sintática substantiva comum (como objeto direto ou sujeito), eliminando ambiguidades semânticas e sintáticas na língua escrita."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Demonstração dos Contrastes Semânticos"
+            },
             {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A10-G07-001",
+              "tableId": "TABLE-IP-A10-G07-003",
               "table": {
-                "tableId": "TABLE-IP-A10-G07-001",
-                "caption": "Explicação central",
+                "tableId": "TABLE-IP-A10-G07-003",
+                "caption": "Demonstração dos Contrastes Semânticos",
                 "headers": [
                   "Estrutura com Acento Grave (Locução Feminina)",
                   "Estrutura sem Acento Grave (Objeto Direto / Substantivo)",
@@ -144,15 +716,1279 @@
                     "Com crase: locução adverbial de modo de pagamento. Sem crase: objeto direto literal (adquiriu o sentido da visão/olhos em um banco de órgãos)."
                   ]
                 ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
+              }
             },
             {
+              "type": "paragraph",
+              "text": "A professora explica: \"O acento das locuções femininas é chamado de diferencial... Ele marca, distingue a locução feminina do que não seria uma locução... Por que o acento é obrigatório? Por causa das ambiguidades da vida!\""
+            },
+            {
+              "type": "paragraph",
+              "text": "Anotação manuscrita na tela VIS-A10-V023-003:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O acento das locuções femininas é chamado de diferencial (DISTINGUE A LF / DESFAZ AMBIGUIDADES).",
+                "Quadro contrastivo:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Comeu à francesa (Loc. Fem. / Adv. Modo) vs. Comeu a francesa (OD).",
+                "O astrônomo estuda 'à noite' vs. O astrônomo estuda 'a noite' (OD)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-V023-003",
+                  "targetTitle": "Conceito e Tipologia das Locuções Femininas",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V023-002",
+                  "targetTitle": "O Falso Mito de que \"Uma\" Nunca Aceita Crase",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-013",
+                  "targetTitle": "Questão Recente de Prova: Pronome Demonstrativo em Locução Temporal",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-014",
+                  "targetTitle": "Desambiguação Sintático-Semântica: Francesa e Noite",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-08",
+          "title": "Controvérsias Gramaticais e Posição das Bancas de Concursos",
+          "conceptRefs": [
+            "KB-A10-V023-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Determinadas expressões locutivas femininas apresentam divergência teórica na doutrina gramatical (\"jurisprudência gramatical\"), exigindo que o concurseiro conheça o posicionamento predominante das bancas examinadoras."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Casos Controvertidos e Orientação de Prova"
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "1. Expressão \"Ensino a distância\""
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Divergência Teórica: Embora distância seja substantivo feminino, parte dos gramáticos sustenta que a expressão ocorre em sentido genérico/indeterminado (sem artigo a), devendo grafar-se sem crase (ensino a distância). Outros admitem o acento grave por considerá-la locução adverbial feminina (ensino à distância).",
+                "Posição de Concurso (Regra Prática): As bancas examinadoras adotam majoritariamente a forma SEM CRASE (ensino a distância) quando a palavra distância não vem especificada/determinada.",
+                "Exceção de Determinação: Se a distância for determinada numericamente, o acento torna-se obrigatório: Ficou à distância de 100 metros."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "2. Locuções Femininas de Instrumento (Escreveu a mão / à mão, feita a máquina)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Divergência Teórica: A tradição normativa aplica crase em locuções femininas em geral (escreveu à mão). Entretanto, gramáticos contemporâneos e certas bancas (como IDECAN) entendem que não há preposição genuína nem ambiguidade em adjuntos de instrumento, prescrevendo a grafia sem crase (escreveu a mão).",
+                "Posição de Concurso (Regra Tática): A professora orienta que o candidato, diante de uma locução de instrumento sem crase, avalie as demais alternativas da questão: se houver outro erro gramatical flagrante e indiscutível, a locução de instrumento sem crase não será considerada o gabarito."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Anotação no slide VIS-A10-V023-003:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "2) Controvérsias gramaticais:",
+                "ENSINO A DISTÂNCIA (SEM CRASE)",
+                "Escreveu a mão (loc. femininas de instrumento - sem crase)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V023-003",
+                  "targetTitle": "Preposição Prévia Impedindo Crase em Horas",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-09",
+          "title": "Crase em Nomes de Pratos e Preparações Culinárias",
+          "conceptRefs": [
+            "KB-A10-V023-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O emprego da crase em nomes de comidas e pratos segue estritamente o gênero gramatical do núcleo da expressão de modo, dispensando a teoria fantasiosa de que sempre existe a elipse de \"à moda de\" para palavras femininas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regras de Aplicação Culinária"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Prato com Núcleo Feminino: Ocorre crase obrigatória pela Regra 2 (Locução Feminina). A palavra-núcleo é feminina por natureza, não dependendo de nenhuma elipse."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplos: Bife à parmegiana (núcleo: parmegiana, palavra feminina); Frango à milanesa (núcleo: milanesa, palavra feminina)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Prato com Núcleo Masculino: Por regra geral, NÃO OCORRE CRASE diante de palavras masculinas. A crase somente será admitida se a expressão à moda de estiver comprovadamente implícita (homenagem ou estilo específico criado por uma figura histórica/personalidade)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Com \"à moda de\" implícito (COM crase): Bife à Osvaldo Aranha (à moda do diplomata Osvaldo Aranha).",
+                "Sem \"à moda de\" implícito (SEM crase): Bife a cavalo (o cavalo não inventou estilo culinário; prato com ovo montado); Frango a passarinho (passarinho é substantivo masculino e não lançou moda)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora desmistifica: \"Ah, não é 'à moda de'? Não, claro que não! Não tem nada de 'moda de' aqui... Quando o núcleo é feminino, você usa crase porque é locução feminina... Em expressões masculinas de comida, só use se houver 'moda de' implícito!\""
+            },
+            {
+              "type": "paragraph",
+              "text": "Anotação no slide VIS-A10-V023-003:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "NOME DE COMIDA / DE PRATO:",
+                "USO CRASE -> LOCUÇÃO FEMININA (núcleo feminino): bife à parmegiana; à milanesa",
+                "Em expressões masculinas: só use se houver \"MODA DE\" implícito: bife à Osvaldo Aranha vs. bife a cavalo"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-V023-003",
+                  "targetTitle": "Conceito e Tipologia das Locuções Femininas",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V023-004",
+                  "targetTitle": "Generalização Indevida de \"À Moda De\" em Pratos Masculinos",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-015",
+                  "targetTitle": "Culinária com Núcleo Feminino",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-016",
+                  "targetTitle": "Culinária com Núcleo Masculino: Osvaldo Aranha versus Cavalo",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-10",
+          "title": "Estrutura Mestra do Estudo de Crase (Os 5 Eixos)",
+          "conceptRefs": [
+            "KB-A10-V024-001"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O domínio completo do emprego do acento indicativo de crase para concursos públicos é organizado em uma estrutura lógica e finita composta por 5 tópicos nucleares: duas regras gerais, três casos facultativos, as regras para termos no plural, os casos proibitivos e o paralelismo sintático."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora compara o aprendizado de crase a uma \"matemática simples\", demonstrando que o conteúdo pode ser totalmente mapeado nos seguintes tópicos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "2 Regras Gerais: Compreendem o Fenômeno Fonético (FF) e as Locuções Femininas (LF).",
+                "3 Casos de Crase Facultativa: Três situações consagradas em que a presença da crase depende da inserção opcional de artigo ou preposição.",
+                "Crase no Plural: Regras de presença ou ausência do acento grave diante de palavras plurais (distinção entre a no singular diante de plural e às no plural).",
+                "Crase Proibida: O rol taxativo de situações em que não pode ocorrer o acento grave (por ausência de artigo, presença de palavras masculinas, verbos, etc.).",
+                "Crase e Paralelismo: A manutenção da simetria gramatical na regência e no uso de determinantes em sequências coordenadas ou correlações."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora introduz afirmando que se trata de uma matemática simples e elenca pausadamente cada um dos 5 pontos enquanto os escreve na tela digital."
+            },
+            {
+              "type": "paragraph",
+              "text": "Construção manuscrita progressiva em tinta vermelha no quadro digital branco (VIS-A10-V024-001), contendo o título central \"Crase\" e os 5 tópicos ordenados."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A10-V024-002",
+                  "targetTitle": "Desdobramento Estrutural do Fenômeno Fonético",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A10-V024-003",
+                  "targetTitle": "Papel Metodológico da Teoria na Resolução de Provas",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A10-V024-001",
+                  "targetTitle": "Roteiro de Inspeção Mental para Análise de Crase",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-11",
+          "title": "Desdobramento Estrutural do Fenômeno Fonético",
+          "conceptRefs": [
+            "KB-A10-V024-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Fenômeno Fonético (FF) da crase consiste na fusão da preposição obrigatória A (exigida por um termo regente verbal ou nominal) com quatro classes possíveis de termos regidos iniciados pela vogal A."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No quadro esquemático, o Fenômeno Fonético é decomposto na fórmula A + [... ], desdobrando-se nas seguintes possibilidades de união:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Preposição A + Artigo definido feminino A: Caso prototípico diante de substantivos femininos determinados.",
+                "Preposição A + Pronomes Relativos A QUAL / AS QUAIS: Crase condicionada à regência do verbo da oração adjetiva que exige a preposição a.",
+                "Preposição A + Pronomes Demonstrativos AQUILO / AQUELE(S) / AQUELA(S): O acento indicativo de crase incide sobre a vogal inicial A- do próprio pronome demonstrativo (àquilo, àquele, àquela).",
+                "Preposição A + Pronome Demonstrativo A (equivalente a \"aquela\"): Ocorre tipicamente antes do conectivo QUE ou da preposição DE (ex.: \"Sua atitude é igual à de seu irmão\" / \"Esta caneta é superior à que comprei\")."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora enumera detalhadamente cada uma das 4 vertentes: \"o encontro da preposição A com o A artigo, A de a qual / as quais, o A de aquilo / aquele / aquela e o A pronome demonstrativo antes de que e de\"."
+            },
+            {
+              "type": "paragraph",
+              "text": "No quadro digital, ao lado de FF, a professora abre uma chave e escreve: A + { A (ARTIGO) | A QUAL / AS QUAIS | AQUILO / AQUELE(A) | A (PRON. DEMONS.) ANTES DE QUE / DE }."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-V024-001",
+                  "targetTitle": "Estrutura Mestra do Estudo de Crase (Os 5 Eixos)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-12",
+          "title": "Papel Metodológico da Teoria na Resolução de Provas",
+          "conceptRefs": [
+            "KB-A10-V024-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A resolução de questões e o estudo da teoria desempenham funções complementares e não excludentes: a prática desenvolve a habilidade de resolver provas, mas é a teoria estruturada mentalmente que fornece a segurança conceitual para evitar erros sistemáticos e eliminar a dependência da sorte."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora enfatiza a relação pedagógica entre teoria e questões:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A prática pela prática é insuficiente: Resolver questões sem uma teoria organizada na mente gera um conhecimento \"nebuloso\", fazendo com que o candidato \"bata na trave\" ou dependa de acertos casuais.",
+                "A teoria como alicerce organizador: A teoria não ensina o mecanismo operacional da prova por si só, mas fornece os critérios decisórios rápidos necessários para o candidato analisar cada alternativa com clareza conceitual e convicção."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"Sem teoria não se faz prova. Não esqueça isso, tá bom? [...] Não é estudando a teoria que você vai aprender a fazer prova. Você vai aprender a resolver questões resolvendo questões. Mas se não tiver uma teoria assim, organizada na mente, não consegue.\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A10-V024-001",
+                  "targetTitle": "A Ilusão do Aprendizado Exclusivo por Questões",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-13",
+          "title": "Dualidade das Justificativas de Crase: Fenômeno Fonético vs. Locução Feminina",
+          "conceptRefs": [
+            "KB-A10-V025-001"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O acento grave indicativo de crase na Língua Portuguesa fundamenta-se estritamente em duas regras mestras:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Fenômeno Fonético (FF): Fusão de duas vogais idênticas (preposição a exigida por termo regente + artigo a(s) ou pronome demonstrativo/relativo iniciado por a).",
+                "Locução Feminina (LF): Uso convencional fixo e obrigatório em locuções adverbiais, prepositivas ou conjuntivas cujo núcleo seja um substantivo feminino."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando bancas como o CEBRASPE indagam se o emprego do sinal indicativo de crase é \"obrigatório\" ou pedem a sua justificativa gramatical, o candidato deve identificar imediatamente a qual das duas famílias o caso pertence:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se houver termo regente (verbo ou nome) exigindo a preposição a, trata-se de Fenômeno Fonético.",
+                "Se a expressão for um bloco adverbial, prepositivo ou conjuntivo com núcleo feminino sem que haja preposição sendo regida por verbo externo, trata-se de Locução Feminina."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Ambas as modalidades geram acento obrigatório (salvo os casos clássicos de crase facultativa: diante de pronome possessivo feminino singular, nome próprio feminino e após a preposição até)."
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Existem duas regras que justificam o acento: ou é fenômeno, ou é locução. Então quando a banca pergunta se é obrigatório, ela quer saber se é uma dessas duas regras...\"."
+            },
+            {
+              "type": "paragraph",
+              "text": "Anotação esquemática manuscrita no slide:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "DUAS REGRAS",
+                "FF (Fenômeno Fonético)",
+                "LF (Locução Feminina)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A10-V025-002",
+                  "targetTitle": "Crase por Fenômeno Fonético Contextual: Regência de \"Deixar\" e Distinção de \"Em\" vs. \"A\"",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A10-V025-003",
+                  "targetTitle": "Crase Obrigatória em Locuções de Núcleo Feminino (Lugar, Tempo e Modo)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A10-V025-004",
+                  "targetTitle": "Distinção entre Regência Verbal e Locução Adverbial em Questões de Justificativa",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-018",
+                  "targetTitle": "Questão 1: Crase por Regência Contextual (à porta do apartamento)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-019",
+                  "targetTitle": "Questão 2: Locução Adverbial Feminina de Lugar (à direita)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-020",
+                  "targetTitle": "Questão 3: Pegadinha de Justificativa — VTD vs. Locução (ver à porta)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-14",
+          "title": "Crase por Fenômeno Fonético Contextual: Regência de \"Deixar\" e Distinção de \"Em\" vs. \"A\"",
+          "conceptRefs": [
+            "KB-A10-V025-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A regência verbal é contextual. No enunciado \"deixar o pão à porta do apartamento\", o verbo deixar funciona como transitivo direto e indireto circunstancial (deixar algo a algum lugar), exigindo a preposição a para marcar proximidade, fundindo-se com o artigo feminino de \"a porta\"."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Análise Sintática e Semântica:",
+                "No uso coloquial, é frequente o emprego de \"deixar na porta\" (em + a).",
+                "Gramáticos e autores normativos apontam que a preposição em expressa rigorosamente a ideia de \"dentro de\" (interioridade): deixar o pão na caixa, na bolsa.",
+                "Como não se coloca o pão \"dentro da porta\", a regência culta emprega a preposição a para indicar proximidade / junto a: deixar o pão a + a porta = deixar o pão à porta.",
+                "Estrutura da Crase:",
+                "Termo regente: verbo deixar (exige preposição a indicando adjacência/proximidade).",
+                "Termo regido: substantivo feminino porta (antecedido pelo artigo definido feminino a).",
+                "Fusão: a (prep) + a (art) = à.",
+                "Ocorrência: Fenômeno Fonético, de emprego obrigatório."
+              ]
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Regência é contexto, meus senhores... O 'em' traria uma ideia de lugar dentro de... e quando você deixa à porta, é porque você está próximo à porta, você não está dentro da porta... Por isso ele usou a preposição 'a' aí.\"."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sublinhado no verbo deixar;",
+                "Traçado de seta conectando deixar ao segmento à porta;",
+                "Anotação a (preposição acima do verbo) + a (artigo acima do substantivo porta)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-V025-001",
+                  "targetTitle": "Dualidade das Justificativas de Crase: Fenômeno Fonético vs. Locução Feminina",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-018",
+                  "targetTitle": "Questão 1: Crase por Regência Contextual (à porta do apartamento)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-15",
+          "title": "Crase Obrigatória em Locuções de Núcleo Feminino (Lugar, Tempo e Modo)",
+          "conceptRefs": [
+            "KB-A10-V025-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O acento indicativo de crase é obrigatório em locuções adverbiais, prepositivas e conjuntivas constituídas por palavra de gênero feminino, independentemente de haver verbo regendo preposição."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Classificação das locuções femininas abordadas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locuções Adverbiais de Lugar/Direção:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "à direita, à esquerda, à porta (quando usada como adjunto adverbial de lugar puro).",
+                "Exemplo da aula: \"Vire à direita\" (locução feminina com crase fixa obrigatória)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locuções Adverbiais de Tempo:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "à hora da passagem do ano, às duas horas, à tarde, à noite.",
+                "Possuem acento obrigatório. A banca tenta induzir que seriam facultativas, o que torna a assertiva falsa."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locuções / Expressões Cristalizadas de Modo ou Estado:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "à tona (em evidência, à superfície), à toa, às pressas, à medida que, à proporção que.",
+                "Exigem acento grave obrigatoriamente."
+              ]
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"À direita... isso aqui é uma locução feminina. De núcleo feminino. É obrigatório? É, porque é uma locução. O acento das locuções é obrigatório.\". \"A hora da passagem do ano... é uma locução feminina de tempo... Se é uma locução feminina, então o acento é obrigatório... Então o item está errado.\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A10-V025-001",
+                  "targetTitle": "Dualidade das Justificativas de Crase: Fenômeno Fonético vs. Locução Feminina",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-019",
+                  "targetTitle": "Questão 2: Locução Adverbial Feminina de Lugar (à direita)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-021",
+                  "targetTitle": "Questão 4: Locução Temporal Feminina vs. Facultatividade (à hora de)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-022",
+                  "targetTitle": "Questão 5: Expressão Feminina Cristalizada (à tona)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V025-002",
+                  "targetTitle": "A Falsa Facultatividade em Locuções Adverbiais Femininas",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-16",
+          "title": "Distinção entre Regência Verbal e Locução Adverbial em Questões de Justificativa",
+          "conceptRefs": [
+            "KB-A10-V025-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença de um acento grave após um verbo não significa automaticamente que a crase decorre da regência desse verbo. O verbo pode ser transitivo direto e o termo com crase constituir um adjunto adverbial em forma de locução feminina."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Caso Emblemático (INSS 2022): \"Tem quem deteste ver à porta a cara do mascate\".",
+                "Verbo: ver é Transitivo Direto (VTD) — quem vê, vê algo.",
+                "Objeto Direto: a cara do mascate.",
+                "Termo intercalado com crase: à porta (adjunto adverbial de lugar).",
+                "Justificativa do acento: Trata-se de uma locução adverbial feminina (locução feminina).",
+                "Erro da banca: O CEBRASPE afirmou que a crase se justificava pela regência do verbo ver combinada com o gênero feminino de porta. Como o verbo ver não rege preposição a, a justificativa é incorreta e o item é ERRADO."
+              ]
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Aqui não é o fenômeno fonético, porque não é quem vê, vê a. O verbo ver aí não está pedindo esse complemento... quem vê, vê a cara do mascate... Só que quando eu olho 'à porta', 'à porta' é locução feminina... O que a banca fez aqui é perguntar se a crase ocorria pelo fenômeno fonético... Só que a crase não ocorre pelo fenômeno. Ocorre pela locução.\"."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Destaque no verbo ver;",
+                "Destaque em a cara do mascate como objeto direto;",
+                "Delimitação de à porta e associação com a sigla LF (Locução Feminina)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A10-V025-002",
+                  "targetTitle": "Crase por Fenômeno Fonético Contextual: Regência de \"Deixar\" e Distinção de \"Em\" vs. \"A\"",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-020",
+                  "targetTitle": "Questão 3: Pegadinha de Justificativa — VTD vs. Locução (ver à porta)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V025-001",
+                  "targetTitle": "Pegadinha de Justificativa Sintática: Misturar VTD com Locução",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-17",
+          "title": "Proibição de Crase em Locuções com Núcleo Masculino: O Caso de \"A Granel\"",
+          "conceptRefs": [
+            "KB-A10-V025-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A regra que impõe crase fixa em locuções adverbiais/modais exige obrigatoriamente que o núcleo substantivo seja feminino. Se o substantivo for masculino, a locução é grafada apenas com a preposição simples a, sendo proibido o uso do acento grave."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Comparativo:",
+                "à toa -> núcleo feminino (a toa) -> tem crase obrigatória.",
+                "à tona -> núcleo feminino (a tona) -> tem crase obrigatória.",
+                "a granel -> núcleo masculino (o granel) -> NÃO tem crase.",
+                "Outros exemplos masculinos: a pé, a prazo, a cavalo, a bordo.",
+                "Impacto no julgamento do item (PG-DF 2021):",
+                "O comando afirmava que a correção gramatical do texto seria prejudicada caso se inserisse acento indicativo de crase em \"a granel\".",
+                "Como a inserção da crase violaria a norma culta (crase diante de palavra masculina em locução), haveria de fato prejuízo gramatical.",
+                "Portanto, a afirmativa da banca é CERTA."
+              ]
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Para vir com crase, tem que ser feminina... Se ele tivesse dito 'sonha-se à toa', teria crase. Mas 'a granel' tem?... 'À toa' tem crase? Tem, porque o núcleo é feminino. 'Granel' é feminino? Não, é masculino. Só tem acento se for feminino. A banca quer saber se a correção seria prejudicada; se eu colocar o acento vai ficar prejudicado mesmo, o item está certo.\"."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Anotação de à toa com crase (LF);",
+                "Anotação de a granel cortando o acento grave (≠ à);",
+                "Marcação do gênero masculino da palavra granel."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A10-V025-003",
+                  "targetTitle": "Crase Obrigatória em Locuções de Núcleo Feminino (Lugar, Tempo e Modo)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G07-023",
+                  "targetTitle": "Questão 6: Locução com Núcleo Masculino (a granel)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-18",
+          "title": "Crase Facultativa diante de Nome Próprio Feminino",
+          "conceptRefs": [
+            "KB-A10-V026-CRASE-001"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O uso do acento indicativo de crase é facultativo diante de nomes próprios femininos de pessoas familiares/comuns porque o artigo definido feminino (a) diante de antropônimos é de uso opcional na norma culta da Língua Portuguesa, enquanto a preposição a decorre da regência do termo regente."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para que ocorra a crase, é necessária a fusão de duas vogais idênticas: a preposição a (exigida por um verbo transitivo indireto ou nome que rege preposição) e o artigo definido a (aceito pelo termo regido feminino)."
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Termo regente: Exige a preposição a obrigatoriamente (ex.: referir-se a, obedecer a, pedir a).",
+                "Termo regido (nome próprio feminino comum): Aceita facultativamente o artigo definido a. Pode-se dizer \"Ana chegou\" (sem artigo) ou \"A Ana chegou\" (com artigo).",
+                "Resultado:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Com artigo: Preposição a + Artigo a = à (com crase).",
+                "Sem artigo: Preposição a + Zero artigo = a (sem crase)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora reforça: \"A crase é facultativa porque o artigo é facultativo antes de nome próprio feminino.\""
+            },
+            {
+              "type": "paragraph",
+              "text": "No slide anotado:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "1) Antes de nome próprio feminino",
+                "Por quê? -> O artigo é facultativo",
+                "Exemplo: Obedeceu a/à Joana."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Referi-me a Ana. / Referi-me à Ana.",
+                "Obedeceu a Joana. / Obedeceu à Joana.",
+                "Pedi um favor a Juliana. / Pedi um favor à Juliana."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exceções ou limites"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nomes Próprios de Personagens Históricos ou Figuras Ilustres: Não admitem artigo definido na norma culta (ninguém diz \"A Joana d'Arc lutou\" ou \"O Pedro Álvares Cabral descobriu\"). Por não haver artigo, há apenas a preposição exigida pela regência, tornando o acento grave proibido:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Referiu-se a Joana D'Arc. (Crase proibida)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A10-V026-CRASE-002",
+                  "targetTitle": "Crase Facultativa diante de Pronome Possessivo Feminino Singular Adjetivo",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A10-V026-CRASE-003",
+                  "targetTitle": "Crase Facultativa após a Preposição \"Até\"",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V026-CRASE-001",
+                  "targetTitle": "Nomes Próprios Femininos de Figuras Históricas ou Notáveis",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-19",
+          "title": "Crase Facultativa diante de Pronome Possessivo Feminino Singular Adjetivo",
+          "conceptRefs": [
+            "KB-A10-V026-CRASE-002"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A crase é facultativa antes de pronome possessivo feminino singular (minha, tua, sua, nossa, vossa), desde que ele funcione como pronome adjetivo (isto é, acompanhando um substantivo expresso), pois o artigo definido que o antecede é facultativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diante de pronomes possessivos no singular que modificam diretamente um substantivo feminino, a presença do artigo definido é opcional: pode-se dizer \"Minha tia chegou\" ou \"A minha tia chegou\".",
+                "Havendo um termo regente que exija a preposição a, a junção da preposição obrigatória com o artigo facultativo torna o acento grave opcional:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Preposição 'a' + Artigo 'a' + minha tia = à minha tia",
+                "Preposição 'a' + [sem artigo] + minha tia = a minha tia"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Condições estritas para a facultatividade:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O pronome possessivo deve estar no singular.",
+                "O pronome possessivo deve ser adjetivo (substantivo feminino explícito logo após)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"A crase é facultativa não porque a preposição é facultativa [...] é que o artigo é facultativo nessa situação de pronome possessivo feminino singular seguido de substantivo.\""
+            },
+            {
+              "type": "paragraph",
+              "text": "No slide anotado:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "2) Antes de pron. possessivo fem. sing. + substantivo",
+                "Por quê? -> O artigo é facultativo",
+                "Exemplo: Obedeceu a/à sua irmã."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Referi-me a/à minha tia.",
+                "Obedeceu a/à sua irmã.",
+                "O que ele dizia era agradável a/à nossa fantasia."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exceções ou limites"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pronome Possessivo Substantivo (Elipse do Substantivo): Se o substantivo for omitido (elipse) e o pronome possessivo assumir função substantiva, a presença do artigo passa a ser obrigatória para marcar a elipse. Logo, a crase torna-se obrigatória:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Referiu-se à minha tia [facultativa], não à sua [obrigatória, pois substitui 'sua tia']."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pronome Possessivo no Plural: Se o pronome estiver no plural (minhas, suas) e o termo regente exigir preposição a:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se for mantido apenas o a no singular diante do plural (a suas tias), ele é apenas preposição pura: Crase Proibida.",
+                "Se for utilizado o as no plural (às suas tias), haverá fusão obrigatória de preposição a + artigo plural as: Crase Obrigatória."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V026-CRASE-002",
+                  "targetTitle": "Pronome Possessivo Substantivo (Elipse)",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V026-CRASE-003",
+                  "targetTitle": "\"A\" no Singular Diante de Pronome Possessivo no Plural",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A10-G07-CANONICAL-20",
+          "title": "Crase Facultativa após a Preposição \"Até\"",
+          "conceptRefs": [
+            "KB-A10-V026-CRASE-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A crase é facultativa após a preposição até diante de palavras femininas que admitam artigo definido, porque a própria preposição 'a' é facultativa após até, e não o artigo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Mecanismo sintático: A preposição até é a única preposição na Língua Portuguesa que admite o acoplamento de outra preposição (a) imediatamente após ela para indicar direção.",
+                "Diante de uma palavra feminina determinada que receba artigo a (ex.: a porta, a praça, a divisa):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Opção 1 (Sem preposição 'a'): Até (preposição) + a (artigo da palavra feminina) = até a porta (sem crase, pois há apenas 1 'a', que é artigo).",
+                "Opção 2 (Com preposição 'a'): Até (preposição) + a (preposição facultativa) + a (artigo da palavra feminina) = até à porta (com crase, decorrente da fusão preposição a + artigo a)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Diferença Semântica:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Até puro indica noção estrita de limite (marco final).",
+                "Até a / até à adiciona uma sutil ênfase de direção/movimento em direção a, sem alterar substancialmente o sentido geral da oração."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"A preposição até tem crase facultativa. Por quê? Por causa da preposição 'a', que é facultativa [...] A preposição 'até' é a única que aceita outra preposição depois dela.\""
+            },
+            {
+              "type": "paragraph",
+              "text": "No slide anotado:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "3) Caminhou até a/à praça.",
+                "Por quê? -> A preposição 'A' é facultativa.",
+                "Esquema no quadro: Foi até a porta (prep. até + artigo 'a') vs Foi até à porta (prep. até + prep. 'a' + artigo 'a')."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Caminhou até a praça. / Caminhou até à praça.",
+                "A área ocupada vai até a divisa do estado. / A área ocupada vai até à divisa do estado.",
+                "Foi até a porta. / Foi até à porta."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exceções ou limites"
+            },
+            {
+              "type": "paragraph",
+              "text": "Outras Preposições Repelem a Preposição 'a': Nenhuma outra preposição (desde, após, ante, com, contra, de, para, sob, sobre) aceita a preposição a após si. Diante de artigo feminino plural ou singular após essas preposições, a crase é terminantemente proibida:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Desde as duas horas. (Correto, sem crase).",
+                "Após as duas horas. (Correto, sem crase).",
+                "Ante a ausência do réu. (Correto, sem crase)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-V026-CRASE-004",
+                  "targetTitle": "Crase após Preposições Diferentes de \"Até\"",
+                  "targetUnitId": "IP-A10-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A10-G07-003",
+              "tableId": "TABLE-IP-A10-G07-001",
               "table": {
-                "tableId": "TABLE-IP-A10-G07-003",
-                "caption": "Demonstração dos Contrastes Semânticos",
+                "tableId": "TABLE-IP-A10-G07-001",
+                "caption": "Explicação central",
                 "headers": [
                   "Estrutura com Acento Grave (Locução Feminina)",
                   "Estrutura sem Acento Grave (Objeto Direto / Substantivo)",
@@ -355,11 +2191,198 @@
     "glossary": {
       "items": [
         {
-          "term": "Crase Demonstrativa",
-          "shortDefinition": "Fusão da preposição 'a' com a vogal inicial dos pronomes aquele, aquela, aquilo ou com o pronome 'a'.",
-          "fullDefinition": "Modalidade de crase operada quando um termo regente exige a preposição 'a' diante de um pronome demonstrativo que se inicia pela vogal 'a', assinalando-se a crase diretamente na primeira letra do próprio pronome.",
-          "domain": "Sintaxe e Ortografia",
-          "commonMisconception": "Pensar que o pronome 'aquele' não pode levar acento grave."
+          "term": "A Regra do \"A\" Singular vs. \"Às\" Plural diante de Palavras Femininas no Plural",
+          "shortDefinition": "Quando um termo regente exige a preposição a e o termo regido é um substantivo feminino no plural, existem apenas duas construções gramaticalmente válidas na norma culta:",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-01"
+          },
+          "operationalUse": "A banca Cebraspe explora sistematicamente duas armadilhas conceituais sobre esse ponto:"
+        },
+        {
+          "term": "Substituição de \"A\" por \"Às\" diante de Plural: Correção Gramatical vs. Alteração Semântica",
+          "shortDefinition": "A troca do vocábulo a (preposição singular) por às (preposição + artigo plural) diante de substantivo feminino plural preserva integralmente a correção gramatical, mas acarreta alteração de sentido (passagem do sentido genérico/indeterminado para o sentido determinado/específico).",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-02"
+          },
+          "operationalUse": "Ao avaliar enunciados que propõem a substituição de a [substantivo plural] por às [substantivo plural]:"
+        },
+        {
+          "term": "Supressão de Termos Intervenientes e Fusão de Regência Nominal em \"Às\"",
+          "shortDefinition": "A supressão de uma expressão intermediária (como um pronome indefinido com preposição, ex.: a todas) faz com que o termo regente estabeleça sua relação de regência diretamente com o termo subsequente, exigindo a fusão obrigatória com o artigo definido que já o acompanha.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-03"
+          },
+          "operationalUse": "No trecho original analisado: $$\\text{\"Esse comando é subjacente [a todas] [as relações da República]\"}$$"
+        },
+        {
+          "term": "O Sistema Dual de Regras da Crase na Língua Portuguesa",
+          "shortDefinition": "Todo o emprego do acento indicativo de crase na norma-padrão da Língua Portuguesa reduz-se a exatamente duas regras fundamentais: a regra do Fenômeno Fonético (FF) e a regra das Locuções Femininas (LF).",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-04"
+          },
+          "operationalUse": "O ensino tradicional fragmentou a crase em dezenas de casos particulares, listas de proibições e \"macetes\" mnemônicos que geram insegurança."
+        },
+        {
+          "term": "Diferenciação Estrutural: Fenômeno Fonético versus Locução Feminina",
+          "shortDefinition": "A crase por Locução Feminina não decorre da exigência de preposição por um termo regente antecedente, mas sim da natureza pluriverbal e do gênero feminino do substantivo-núcleo da própria expressão.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-05"
+          },
+          "operationalUse": "Para não confundir as regras:"
+        },
+        {
+          "term": "Conceito e Tipologia das Locuções Femininas",
+          "shortDefinition": "Uma locução é um conjunto de duas ou mais palavras que desempenham papel sintático e semântico de uma única classe gramatical. A locução feminina é aquela cujo núcleo semântico/estrutural é uma palavra feminina (substantivo feminino).",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-06"
+          }
+        },
+        {
+          "term": "O Acento Grave como Acento Diferencial e Desfazedor de Ambiguidade",
+          "shortDefinition": "Nas locuções femininas, o acento grave atua como um acento diferencial, cuja função primária é distinguir a estrutura adverbial/locutiva de uma função sintática substantiva comum (como objeto direto ou sujeito), eliminando ambiguidades semânticas e sintáticas na língua escrita.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-07"
+          }
+        },
+        {
+          "term": "Controvérsias Gramaticais e Posição das Bancas de Concursos",
+          "shortDefinition": "Determinadas expressões locutivas femininas apresentam divergência teórica na doutrina gramatical (\"jurisprudência gramatical\"), exigindo que o concurseiro conheça o posicionamento predominante das bancas examinadoras.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-08"
+          }
+        },
+        {
+          "term": "Crase em Nomes de Pratos e Preparações Culinárias",
+          "shortDefinition": "O emprego da crase em nomes de comidas e pratos segue estritamente o gênero gramatical do núcleo da expressão de modo, dispensando a teoria fantasiosa de que sempre existe a elipse de \"à moda de\" para palavras femininas.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-09"
+          },
+          "operationalUse": "A professora desmistifica: \"Ah, não é 'à moda de'?"
+        },
+        {
+          "term": "Estrutura Mestra do Estudo de Crase (Os 5 Eixos)",
+          "shortDefinition": "O domínio completo do emprego do acento indicativo de crase para concursos públicos é organizado em uma estrutura lógica e finita composta por 5 tópicos nucleares: duas regras gerais, três casos facultativos, as regras para termos no plural, os casos proibitivos e o paralelismo sintático.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-10"
+          },
+          "operationalUse": "A professora compara o aprendizado de crase a uma \"matemática simples\", demonstrando que o conteúdo pode ser totalmente mapeado nos seguintes tópicos:"
+        },
+        {
+          "term": "Desdobramento Estrutural do Fenômeno Fonético",
+          "shortDefinition": "O Fenômeno Fonético (FF) da crase consiste na fusão da preposição obrigatória A (exigida por um termo regente verbal ou nominal) com quatro classes possíveis de termos regidos iniciados pela vogal A.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-11"
+          },
+          "operationalUse": "No quadro esquemático, o Fenômeno Fonético é decomposto na fórmula A + [... ], desdobrando-se nas seguintes possibilidades de união:"
+        },
+        {
+          "term": "Papel Metodológico da Teoria na Resolução de Provas",
+          "shortDefinition": "A resolução de questões e o estudo da teoria desempenham funções complementares e não excludentes: a prática desenvolve a habilidade de resolver provas, mas é a teoria estruturada mentalmente que fornece a segurança conceitual para evitar erros sistemáticos e eliminar a dependência da sorte.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-12"
+          },
+          "operationalUse": "A professora enfatiza a relação pedagógica entre teoria e questões:"
+        },
+        {
+          "term": "Dualidade das Justificativas de Crase: Fenômeno Fonético vs. Locução Feminina",
+          "shortDefinition": "O acento grave indicativo de crase na Língua Portuguesa fundamenta-se estritamente em duas regras mestras:",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-13"
+          },
+          "operationalUse": "Quando bancas como o CEBRASPE indagam se o emprego do sinal indicativo de crase é \"obrigatório\" ou pedem a sua justificativa gramatical, o candidato deve identificar imediatamente a qual das duas famílias o caso pertence:"
+        },
+        {
+          "term": "Crase por Fenômeno Fonético Contextual: Regência de \"Deixar\" e Distinção de \"Em\" vs. \"A\"",
+          "shortDefinition": "A regência verbal é contextual. No enunciado \"deixar o pão à porta do apartamento\", o verbo deixar funciona como transitivo direto e indireto circunstancial (deixar algo a algum lugar), exigindo a preposição a para marcar proximidade, fundindo-se com o artigo feminino de \"a porta\".",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-14"
+          }
+        },
+        {
+          "term": "Crase Obrigatória em Locuções de Núcleo Feminino (Lugar, Tempo e Modo)",
+          "shortDefinition": "O acento indicativo de crase é obrigatório em locuções adverbiais, prepositivas e conjuntivas constituídas por palavra de gênero feminino, independentemente de haver verbo regendo preposição.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-15"
+          },
+          "operationalUse": "Classificação das locuções femininas abordadas:"
+        },
+        {
+          "term": "Distinção entre Regência Verbal e Locução Adverbial em Questões de Justificativa",
+          "shortDefinition": "A presença de um acento grave após um verbo não significa automaticamente que a crase decorre da regência desse verbo. O verbo pode ser transitivo direto e o termo com crase constituir um adjunto adverbial em forma de locução feminina.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-16"
+          }
+        },
+        {
+          "term": "Proibição de Crase em Locuções com Núcleo Masculino: O Caso de \"A Granel\"",
+          "shortDefinition": "A regra que impõe crase fixa em locuções adverbiais/modais exige obrigatoriamente que o núcleo substantivo seja feminino. Se o substantivo for masculino, a locução é grafada apenas com a preposição simples a, sendo proibido o uso do acento grave.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-17"
+          }
+        },
+        {
+          "term": "Crase Facultativa diante de Nome Próprio Feminino",
+          "shortDefinition": "O uso do acento indicativo de crase é facultativo diante de nomes próprios femininos de pessoas familiares/comuns porque o artigo definido feminino (a) diante de antropônimos é de uso opcional na norma culta da Língua Portuguesa, enquanto a preposição a decorre da regência do termo regente.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-18"
+          },
+          "operationalUse": "Para que ocorra a crase, é necessária a fusão de duas vogais idênticas: a preposição a (exigida por um verbo transitivo indireto ou nome que rege preposição) e o artigo definido a (aceito pelo termo regido feminino)."
+        },
+        {
+          "term": "Crase Facultativa diante de Pronome Possessivo Feminino Singular Adjetivo",
+          "shortDefinition": "A crase é facultativa antes de pronome possessivo feminino singular (minha, tua, sua, nossa, vossa), desde que ele funcione como pronome adjetivo (isto é, acompanhando um substantivo expresso), pois o artigo definido que o antecede é facultativo.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-19"
+          },
+          "operationalUse": "\"A crase é facultativa não porque a preposição é facultativa [...] é que o artigo é facultativo nessa situação de pronome possessivo feminino singular seguido de substantivo.\""
+        },
+        {
+          "term": "Crase Facultativa após a Preposição \"Até\"",
+          "shortDefinition": "A crase é facultativa após a preposição até diante de palavras femininas que admitam artigo definido, porque a própria preposição 'a' é facultativa após até, e não o artigo.",
+          "detailTarget": {
+            "unitId": "IP-A10-G07",
+            "section": "explanation",
+            "groupId": "GRP-A10-G07-CANONICAL-20"
+          },
+          "operationalUse": "\"A preposição até tem crase facultativa."
         }
       ]
     },

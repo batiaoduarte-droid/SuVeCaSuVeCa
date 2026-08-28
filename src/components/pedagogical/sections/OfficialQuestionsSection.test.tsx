@@ -99,4 +99,81 @@ describe('OfficialQuestionsSection', () => {
     rerender(<OfficialQuestionsSection questions={makeQuestions(6, 'A01')} lessonId="A01" />);
     expect(firstSignal?.aborted).toBe(true);
   });
+
+  it('omite da sequência praticável uma questão com fonte incompleta', () => {
+    const questions = makeQuestions(2);
+    questions[0].questionPresentation = {
+      status: 'source_incomplete',
+      options: [],
+      reason: 'Destaque tipográfico ausente.',
+      sourcePayloadPreserved: true,
+    };
+    const { container } = render(
+      <OfficialQuestionsSection questions={questions} lessonId="A00" />,
+    );
+
+    expect(container.querySelectorAll('.question-block')).toHaveLength(1);
+    expect(screen.getByText(/1 questão foi omitida da prática/i)).toBeVisible();
+    expect(screen.getByText(/Questões Oficiais de Prova \(1\)/i)).toBeVisible();
+  });
+
+  it('separa texto de apoio e comando usando a apresentação estruturada', async () => {
+    const questions = makeQuestions(1);
+    vi.mocked(fetchNormalizedQuestionsByRefs).mockResolvedValueOnce({
+      [questions[0].officialQuestionId!]: {
+        id: 'A00:aula.q0001',
+        primaryLessonId: 'A00',
+        lessonIds: ['A00'],
+        moduleIds: ['mod0'],
+        originalQuestionId: 'aula.q0001',
+        questionType: 'MULTIPLA_ESCOLHA',
+        supportText: 'Texto-base legado.',
+        prompt: 'Comando legado.',
+        options: [
+          { letter: 'A', label: 'A', text: 'Alternativa A' },
+          { letter: 'B', label: 'B', text: 'Alternativa B' },
+        ],
+        correctAnswer: 'A',
+        presentation: {
+          schemaVersion: '1.0.0',
+          supportBlocks: [{ type: 'paragraph', text: 'Texto de apoio estruturado.' }],
+          command: 'Comando separado.',
+          mediaKind: 'none',
+          displayMode: 'text_only',
+          media: [],
+          contextStatus: 'not_required',
+          formattingStatus: 'not_required',
+          provenance: { kind: 'source_backed_question_presentation' },
+        },
+      },
+    } as any);
+
+    render(<OfficialQuestionsSection questions={questions} lessonId="A00" />);
+    expect(await screen.findByText('Texto de apoio estruturado.')).toBeVisible();
+    expect(screen.getByText('Comando separado.')).toBeVisible();
+    expect(screen.getByText('Texto de apoio')).toBeVisible();
+  });
+
+  it('não repete no comando as alternativas projetadas como opções', () => {
+    const questions = makeQuestions(1);
+    questions[0].prompt = 'Assinale a forma correta:\na) Alternativa A\nb) Alternativa B';
+    questions[0].questionPresentation = {
+      status: 'ready',
+      stem: 'Assinale a forma correta:',
+      options: [
+        { label: 'A', text: 'Alternativa A' },
+        { label: 'B', text: 'Alternativa B' },
+      ],
+      answer: 'A',
+      sourceField: 'questionPayload.prompt+options',
+      sourcePayloadPreserved: true,
+    };
+
+    render(<OfficialQuestionsSection questions={questions} lessonId="A00" />);
+
+    expect(screen.getByText('Assinale a forma correta:')).toBeVisible();
+    expect(screen.queryByText(/Assinale a forma correta:\s*a\)/i)).not.toBeInTheDocument();
+    expect(screen.getByText('Alternativa A')).toBeVisible();
+    expect(screen.getByText('Alternativa B')).toBeVisible();
+  });
 });

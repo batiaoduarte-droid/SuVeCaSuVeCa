@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import { hasDuplicatedInlineOptions } from './lib/official-question-presentation.mjs';
 
 const ROOT = path.resolve(process.cwd());
 const VIEWS_DIR = path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'views');
@@ -83,6 +84,7 @@ const KNOWN_BLOCK_TYPES = new Set([
   'callout',
   'code',
   'diagram',
+  'entity_relations',
 ]);
 
 const canonicalTableIds = new Set();
@@ -103,6 +105,28 @@ const checkBlock = (block, unitId) => {
     canonicalTableIds.add(block.tableId);
     if (block.coverageOrigin === 'canonical_table_backfill') canonicalTableBackfills += 1;
   }
+  if (block.type === 'entity_relations') {
+    assert(Array.isArray(block.relations) && block.relations.length > 0, `${unitId}: relações tipadas vazias`);
+    for (const relation of block.relations) {
+      assert(relation.relation && relation.targetRef && relation.targetTitle, `${unitId}: relação tipada incompleta`);
+      assert(!/^(?:KB|PROC|RULE|WARN|EX|TIP|ORAL)-/i.test(relation.targetTitle), `${unitId}: ID técnico exposto como título de relação`);
+      resolvedEntityRelations += 1;
+    }
+  }
+  if (block.type === 'diagram') {
+    assert(block.title?.trim(), `${unitId}: diagrama sem título semântico explícito`);
+    assert(
+      !['Esquema Estruturado da Unidade', 'Quadro Estruturado da Unidade'].includes(block.title),
+      `${unitId}: diagrama mantém título genérico '${block.title}'`
+    );
+  }
+  const visibleText = [block.text, block.definition, block.statement, ...(block.items || [])]
+    .filter((value) => typeof value === 'string')
+    .join('\n');
+  assert(
+    !/(?:Exemplificado por|Gera procedimento|Expande|Diferencia-se de|Relacionado a):\s*(?:,\s*)*\.?\s*$/im.test(visibleText),
+    `${unitId}: resíduo de relação vazia em bloco '${block.type}'`
+  );
 };
 
 let checkedBlocks = 0;
@@ -114,8 +138,13 @@ let checkedTraps = 0;
 let checkedProcedures = 0;
 let recoveredQuestionPresentations = 0;
 let blockedQuestionConflicts = 0;
+let duplicatedInlineOptions = 0;
 let sourceBackedPresentations = 0;
 let genericProjectionLeaks = 0;
+let structuredExplanationGroups = 0;
+let operationalGlossaryItems = 0;
+let resolvedEntityRelations = 0;
+let mapsWithLineage = 0;
 
 const normalizeToken = (value = '') => (value || '')
   .normalize('NFD')
@@ -180,10 +209,17 @@ const assertSourceBackedProjection = (family, item, unitId) => {
     && item.blocks.length > 0;
   if (sourceBacked) {
     assert(valid, `${unitId}: apresentação source-backed inválida em '${entityId}'`);
+    assert(
+      ['structured_first', 'source_first', 'hybrid', 'source_only'].includes(presentation.renderStrategy),
+      `${unitId}: estratégia de renderização ausente em '${entityId}'`
+    );
+    assert(['none', 'explicit'].includes(presentation.diagramIntent), `${unitId}: intenção de diagrama ausente em '${entityId}'`);
     sourceBackedPresentations += 1;
   }
   if (!generic) return;
-  const genericCovered = valid && presentation.hideGenericScaffold === true;
+  const genericCovered = valid
+    && presentation.hideGenericScaffold === true
+    && ['source_only', 'hybrid'].includes(presentation.renderStrategy);
   if (!genericCovered) genericProjectionLeaks += 1;
   assert(genericCovered, `${unitId}: projeção genérica '${entityId}' sem apresentação canônica completa`);
 };
@@ -214,8 +250,8 @@ for (const file of viewFiles) {
     assert(view.unit.title === reconciliation.canonicalTitle, `${unitId}: título diverge da reconciliação canônica`);
     assert(view.source?.title === reconciliation.canonicalTitle, `${unitId}: source.title diverge da reconciliação canônica`);
     assert(
-      view.viewSchemaVersion === '4.2.2-source-backed-coverage',
-      `${unitId}: schema reconciliado com cobertura source-backed ausente`
+      view.viewSchemaVersion === '4.2.3-structured-sections',
+      `${unitId}: schema reconciliado com projeção estruturada ausente`
     );
   }
 
@@ -235,11 +271,43 @@ for (const file of viewFiles) {
   }
 
   // Validação de unidades padrão (A00-A13)
+  assert(
+    view.viewSchemaVersion === '4.2.3-structured-sections',
+    `${unitId}: projeção estruturada v4.2.3 ausente`
+  );
   assert(view.source?.canonicalSource || view.source?.canonicalSchemaVersion, `${unitId}: canonicalSource ausente`);
 
   for (const secKey of ALLOWED_SECTIONS) {
     const sec = view.sections[secKey];
     if (!sec) continue;
+
+    if (secKey === 'explanation') {
+      assert(!sec.blocks?.length, `${unitId}: explicação duplicada em blocks e groups`);
+      assert(Array.isArray(sec.groups) && sec.groups.length > 0, `${unitId}: explicação sem grupos estruturados`);
+      structuredExplanationGroups += sec.groups.length;
+    }
+
+    if (secKey === 'glossary') {
+      assert(!sec.blocks?.length, `${unitId}: glossário ainda usa fallback de blocos`);
+      assert(Array.isArray(sec.items) && sec.items.length > 0, `${unitId}: glossário operacional vazio`);
+      for (const item of sec.items) {
+        assert(item.term?.trim() && item.shortDefinition?.trim(), `${unitId}: item de glossário incompleto`);
+        assert(item.shortDefinition.length <= 500, `${unitId}: definição de glossário excessivamente longa para '${item.term}'`);
+        assert(!item.fullDefinition, `${unitId}: glossário duplica a explicação integral em '${item.term}'`);
+        assert(!/\b(?:KB|PROC|RULE|WARN|EX|TIP|ORAL)-[A-Z0-9_.-]+\b/i.test(item.shortDefinition), `${unitId}: ID técnico no glossário '${item.term}'`);
+        operationalGlossaryItems += 1;
+      }
+    }
+
+    if (secKey === 'prerequisites' && sec.maps) {
+      for (const map of sec.maps) {
+        assert(
+          map.lineage?.kind === 'derived_prerequisite_projection' && map.lineage?.canonicalMapRef,
+          `${unitId}: mapa de pré-requisito sem linhagem canônica`
+        );
+        mapsWithLineage += 1;
+      }
+    }
 
     if (sec.blocks) {
       for (const b of sec.blocks) {
@@ -291,6 +359,10 @@ for (const file of viewFiles) {
     if (sec.procedures) {
       for (const proc of sec.procedures) {
         assertSourceBackedProjection('procedures', proc, unitId);
+        if (proc.presentation?.status === 'source_backed') {
+          assert(proc.presentation.renderStrategy === 'hybrid', `${unitId}: procedimento '${proc.title}' não usa representação atômica híbrida`);
+          assert(proc.presentation.diagramIntent === 'none', `${unitId}: procedimento '${proc.title}' ainda solicita inferência de diagrama`);
+        }
         assert(Array.isArray(proc.steps) && proc.steps.length > 0, `${unitId}: procedimento '${proc.title}' sem passos`);
         for (const step of proc.steps) {
           assert(
@@ -341,16 +413,24 @@ for (const file of viewFiles) {
           assertValidOptions(presentation.options, presentation.answer || answer, unitId, qId);
           recoveredQuestionPresentations += 1;
         } else {
-          assert(presentation.status === 'source_conflict', `${unitId}: status de reparo inesperado em '${qId}'`);
-          assert(presentation.options.length === 0 && presentation.reason, `${unitId}: conflito '${qId}' sem bloqueio explicado`);
+          assert(['source_conflict', 'source_incomplete'].includes(presentation.status), `${unitId}: status de reparo inesperado em '${qId}'`);
+          assert(presentation.options.length === 0 && presentation.reason, `${unitId}: indisponibilidade '${qId}' sem bloqueio explicado`);
           unavailableQuestions += 1;
-          blockedQuestionConflicts += 1;
+          if (presentation.status === 'source_conflict') blockedQuestionConflicts += 1;
         }
       } else if (options.length < 2) {
         if (isBinaryQuestion(type, answer, prompt)) projectedBinaryQuestions += 1;
         else assert.fail(`${unitId}: questão incompleta '${qId}' sem projeção segura`);
       } else {
         assertValidOptions(options, answer, unitId, qId);
+      }
+      const learnerPrompt = presentation?.status === 'ready' ? presentation.stem : prompt;
+      const learnerOptions = presentation?.status === 'ready' ? presentation.options : options;
+      if (presentation?.status === 'ready' || !presentation) {
+        assert(
+          !hasDuplicatedInlineOptions(learnerPrompt, learnerOptions),
+          `${unitId}: questão '${qId}' repete alternativas no comando learner-facing`,
+        );
       }
       checkedQuestions += 1;
     }
@@ -389,6 +469,7 @@ console.log(JSON.stringify({
   unavailableQuestions,
   recoveredQuestionPresentations,
   blockedQuestionConflicts,
+  duplicatedInlineOptions,
   examplesAudited: checkedExamples,
   trapsAudited: checkedTraps,
   proceduresAudited: checkedProcedures,
@@ -397,6 +478,10 @@ console.log(JSON.stringify({
   genericProjectionLeaks,
   canonicalTablesEmbedded: canonicalTableIds.size,
   canonicalTableBackfills,
+  structuredExplanationGroups,
+  operationalGlossaryItems,
+  resolvedEntityRelations,
+  mapsWithLineage,
   unresolvedRefs: manifest.unresolvedRefs,
   unknownBlockTypes: manifest.unknownBlockTypes,
 }, null, 2));

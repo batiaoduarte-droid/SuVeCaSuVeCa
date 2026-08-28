@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A08-G03",
     "lessonId": "A08",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A08-G03",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A08-G03-001"
+          }
         }
       ]
     },
@@ -94,8 +99,109 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA Oração Subordinada Adjetiva é aquela que desempenha função sintática equivalente à de um adjetivo, referindo-se diretamente a um substantivo (ou termo substantivado) antecedente situado na oração principal.\nExplicação consolidada\nPara comprovar que uma oração é adjetiva, aplica-se o \"teste da seta\": verifica-se se toda a estrutura oracional qualifica, restringe ou explica um substantivo que a precede. As orações adjetivas manifestam-se sob três configurações sintáticas:\nDesenvolvida Explícita: Apresenta conectivo relativo explícito (que, o qual, a qual, cujo, onde). O pronome relativo substitui o antecedente e estabelece a conexão sintática.\nDesenvolvida Implícita: O pronome relativo ou o verbo de ligação encontra-se elidido/subentendido no contexto comunicativo (ex.: \"João, [que está] feliz com a sua prova, comemorou\").\nReduzida: Não apresenta pronome relativo e traz o verbo principal flexionado em uma forma nominal:\nGerúndio (-ndo);\nInfinitivo (-ar, -er, -ir);\nParticípio (-do, -to).\nA validação de uma oração reduzida adjetiva é realizada pela \"prova real\": descompacta-se a estrutura substituindo a forma nominal por Pronome Relativo + Verbo Flexionado (ex.: \"aluno dedicando-se\" = \"aluno que se dedica\").\nCritérios de reconhecimento\nA oração precisa apontar para um substantivo antecedente (diferenciando-se das orações substantivas, que se acoplam a verbos transitivos ou nomes exigindo complementação e admitem substituição por \"isso\").\nA forma reduzida deve preservar carga e regência verbais (admitindo complementos verbais ou adjuntos adverbiais).\nExemplos e contraexemplos\nDesenvolvida Explícita: O aluno [que é dedicado] atinge seu objetivo.\nDesenvolvida com Pronome Implícito: O aluno [dedicado] atinge seu objetivo. / João, [feliz com o resultado], sorriu.\nReduzida de Gerúndio: O aluno [dedicando-se aos estudos] atinge seu objetivo. (= que se dedica)\nReduzida de Particípio: A iniciativa, [inserida no programa], reflete avanços. (= que está inserida)\nContraexemplo (Oração Substantiva): Quero [que você estude]. (Quero isso -> Oração Subordinada Substantiva Objetiva Direta; não se refere a substantivo antecedente qualificando-o).\nExceções ou limites\nNão confundir adjetivo simples ou sintagma adjetival com oração reduzida de particípio. A oração reduzida retém transitividade e dinâmica oracional verbal.\nRelações\nFundamenta: , \nOperacionalizado por: \nTerminologia associada: TERM-A08-G03-001, TERM-A08-G03-002, TERM-A08-G03-003"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Oração Subordinada Adjetiva é aquela que desempenha função sintática equivalente à de um adjetivo, referindo-se diretamente a um substantivo (ou termo substantivado) antecedente situado na oração principal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para comprovar que uma oração é adjetiva, aplica-se o \"teste da seta\": verifica-se se toda a estrutura oracional qualifica, restringe ou explica um substantivo que a precede. As orações adjetivas manifestam-se sob três configurações sintáticas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Desenvolvida Explícita: Apresenta conectivo relativo explícito (que, o qual, a qual, cujo, onde). O pronome relativo substitui o antecedente e estabelece a conexão sintática.",
+                "Desenvolvida Implícita: O pronome relativo ou o verbo de ligação encontra-se elidido/subentendido no contexto comunicativo (ex.: \"João, [que está] feliz com a sua prova, comemorou\").",
+                "Reduzida: Não apresenta pronome relativo e traz o verbo principal flexionado em uma forma nominal:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gerúndio (-ndo);",
+                "Infinitivo (-ar, -er, -ir);",
+                "Particípio (-do, -to)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A validação de uma oração reduzida adjetiva é realizada pela \"prova real\": descompacta-se a estrutura substituindo a forma nominal por Pronome Relativo + Verbo Flexionado (ex.: \"aluno dedicando-se\" = \"aluno que se dedica\")."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A oração precisa apontar para um substantivo antecedente (diferenciando-se das orações substantivas, que se acoplam a verbos transitivos ou nomes exigindo complementação e admitem substituição por \"isso\").",
+                "A forma reduzida deve preservar carga e regência verbais (admitindo complementos verbais ou adjuntos adverbiais)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Desenvolvida Explícita: O aluno [que é dedicado] atinge seu objetivo.",
+                "Desenvolvida com Pronome Implícito: O aluno [dedicado] atinge seu objetivo. / João, [feliz com o resultado], sorriu.",
+                "Reduzida de Gerúndio: O aluno [dedicando-se aos estudos] atinge seu objetivo. (= que se dedica)",
+                "Reduzida de Particípio: A iniciativa, [inserida no programa], reflete avanços. (= que está inserida)",
+                "Contraexemplo (Oração Substantiva): Quero [que você estude]. (Quero isso -> Oração Subordinada Substantiva Objetiva Direta; não se refere a substantivo antecedente qualificando-o)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exceções ou limites"
+            },
+            {
+              "type": "paragraph",
+              "text": "Não confundir adjetivo simples ou sintagma adjetival com oração reduzida de particípio. A oração reduzida retém transitividade e dinâmica oracional verbal."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A08-G03-002",
+                  "targetTitle": "Semântica da Pontuação em Orações Adjetivas: \"Somente\" vs. \"Só Há Um\"",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A08-G03-003",
+                  "targetTitle": "Tipologia de Questões em Orações Adjetivas: Dupla Leitura (80%) vs. Leitura Única (20%)",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G03-001",
+                  "targetTitle": "Passo a Passo para Identificar e Estruturar a Oração Adjetiva",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +214,60 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA presença ou ausência de vírgulas nas orações subordinadas adjetivas é consequência gráfica de uma escolha semântica preexistente, e não sua causa formal. A distinção entre restritiva e explicativa assenta-se na pressuposição sobre o número de referentes no universo do discurso.\nExplicação consolidada\nOração Subordinada Adjetiva Restritiva (SEM VÍRGULAS):\nChave Semântica: \"SOMENTE\".\nPressuposto Contextual: O conjunto de referência possui MAIS DE UM elemento. A oração é empregada para circunscrever/restringir a declaração a um subconjunto específico, excluindo os demais elementos do mesmo grupo.\nOração Subordinada Adjetiva Explicativa (COM VÍRGULAS / ISOLADA):\nChave Semântica: \"SÓ HÁ UM\" (no contexto) ou TOTALIDADE DA ESPÉCIE.\nPressuposto Contextual: O antecedente abrange um elemento único ou a universalidade da categoria referida. A oração não restringe; apenas acrescenta uma informação explicativa, esclarecedora ou acessória aplicável a todos os elementos.\nCritérios de reconhecimento\nO candidato deve avaliar o referente aplicando o teste:\nNo contexto comunicativo, existem outros elementos daquele grupo aos quais a oração não se aplica? Se SIM -> Oração Restritiva (sem vírgulas).\nO elemento é único no contexto ou a propriedade é universal para todos os indivíduos? Se SIM -> Oração Explicativa (entre vírgulas).\nExemplos e contraexemplos\nRestritiva: O aluno que terminou a prova pode sair. (Significado: existem múltiplos alunos; somente aqueles que terminaram a prova têm permissão para sair).\nExplicativa: O aluno, que terminou a prova, pode sair. (Significado: há apenas um aluno naquele contexto comunicativo; explica-se que ele concluiu a avaliação e declara-se que ele pode sair).\nRelações\nContrasta: Restrição vs. Explicação\nMnemônico associado: TIP-A08-G03-001\nCitado em: QUOTE-A08-G03-001, QUOTE-A08-G03-002"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença ou ausência de vírgulas nas orações subordinadas adjetivas é consequência gráfica de uma escolha semântica preexistente, e não sua causa formal. A distinção entre restritiva e explicativa assenta-se na pressuposição sobre o número de referentes no universo do discurso."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Oração Subordinada Adjetiva Restritiva (SEM VÍRGULAS):",
+                "Chave Semântica: \"SOMENTE\".",
+                "Pressuposto Contextual: O conjunto de referência possui MAIS DE UM elemento. A oração é empregada para circunscrever/restringir a declaração a um subconjunto específico, excluindo os demais elementos do mesmo grupo.",
+                "Oração Subordinada Adjetiva Explicativa (COM VÍRGULAS / ISOLADA):",
+                "Chave Semântica: \"SÓ HÁ UM\" (no contexto) ou TOTALIDADE DA ESPÉCIE.",
+                "Pressuposto Contextual: O antecedente abrange um elemento único ou a universalidade da categoria referida. A oração não restringe; apenas acrescenta uma informação explicativa, esclarecedora ou acessória aplicável a todos os elementos."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "paragraph",
+              "text": "O candidato deve avaliar o referente aplicando o teste:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "No contexto comunicativo, existem outros elementos daquele grupo aos quais a oração não se aplica? Se SIM -> Oração Restritiva (sem vírgulas).",
+                "O elemento é único no contexto ou a propriedade é universal para todos os indivíduos? Se SIM -> Oração Explicativa (entre vírgulas)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Restritiva: O aluno que terminou a prova pode sair. (Significado: existem múltiplos alunos; somente aqueles que terminaram a prova têm permissão para sair).",
+                "Explicativa: O aluno, que terminou a prova, pode sair. (Significado: há apenas um aluno naquele contexto comunicativo; explica-se que ele concluiu a avaliação e declara-se que ele pode sair)."
+              ]
             }
           ]
         },
@@ -122,8 +280,97 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAs questões de concurso sobre a pontuação das orações adjetivas dividem-se em dois modelos: o modelo padrão de Dupla Leitura (cerca de 80% das provas), em que as vírgulas são facultativas e sua alteração preserva a correção gramatical, e o modelo avançado de Leitura Única Obrigatória (cerca de 20% das provas de alto nível, como Cebraspe e FGV), em que o contexto ou a lógica de mundo impõem uma única pontuação possível.\nExplicação consolidada\nCenário 1 — Frases de Dupla Leitura (Vírgulas Facultativas / Opcionais — ~80% dos casos):\nO substantivo antecedente admite perfeitamente a existência de subgrupos ou a consideração do grupo como um todo.\nEfeito da Inserção/Supressão de Vírgulas: MANTÉM a correção gramatical e a coerência global, mas ALTERA o sentido / relações sintáticas.\nExemplo: \"Os meninos que estão fantasiados receberão prêmios\" (sem vírgulas = restritiva / somente os fantasiados) vs. \"Os meninos, que estão fantasiados, receberão prêmios\" (com vírgulas = explicativa / todos os meninos estão fantasiados).\nCenário 2 — Frases de Leitura Única Obrigatória (~20% dos casos — Alto Nível):\nA relação contextual ou o conhecimento enciclopédico não admitem multiplicidade ou restrição. A pontuação é fixa.\nCaso 2A: Só Pode Ser Explicativa (Exige Vírgulas):\nOcorre quando o antecedente é um ser único no universo, nome próprio, ou quando a propriedade adjetiva é universal para toda a espécie biológica/categoria.\nEfeito de retirar as vírgulas: Cria uma restrição absurda/impossível no mundo real -> GERA ERRO GRAMATICAL / INCOERÊNCIA.\nExemplos: \"O homem, que é mortal, tem alma imortal\" (não existem homens imortais); \"O Tejo, que é rio famoso, passa em Lisboa\" (só há um rio Tejo); \"A galinha, que põe ovos, merece respeito\" (pôr ovos é inerente à espécie); \"Sua mãe, que lhe pede não mentir nunca...\" (cada indivíduo tem apenas uma mãe no contexto).\nCaso 2B: Só Pode Ser Restritiva (Proíbe Vírgulas):\nOcorre quando o texto prévio já estabeleceu categoricamente a existência de múltiplos elementos e a necessidade de distingui-los.\nEfeito de inserir vírgulas: Afirma falsamente que há apenas um elemento, contradizendo o contexto fático imediato -> GERA ERRO GRAMATICAL / INCOERÊNCIA.\nExemplos: \"Tenho dois irmãos. O irmão que é primogênito chegou\" (o texto declarou ter 2 irmãos; pontuar entre vírgulas diria que só existe 1 irmão); \"Tenho três processos. O processo que é contra a União será julgado\".\nRelações\nAplicações práticas: , , , , \nAlertas críticos: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As questões de concurso sobre a pontuação das orações adjetivas dividem-se em dois modelos: o modelo padrão de Dupla Leitura (cerca de 80% das provas), em que as vírgulas são facultativas e sua alteração preserva a correção gramatical, e o modelo avançado de Leitura Única Obrigatória (cerca de 20% das provas de alto nível, como Cebraspe e FGV), em que o contexto ou a lógica de mundo impõem uma única pontuação possível."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Cenário 1 — Frases de Dupla Leitura (Vírgulas Facultativas / Opcionais — ~80% dos casos):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O substantivo antecedente admite perfeitamente a existência de subgrupos ou a consideração do grupo como um todo.",
+                "Efeito da Inserção/Supressão de Vírgulas: MANTÉM a correção gramatical e a coerência global, mas ALTERA o sentido / relações sintáticas.",
+                "Exemplo: \"Os meninos que estão fantasiados receberão prêmios\" (sem vírgulas = restritiva / somente os fantasiados) vs. \"Os meninos, que estão fantasiados, receberão prêmios\" (com vírgulas = explicativa / todos os meninos estão fantasiados)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Cenário 2 — Frases de Leitura Única Obrigatória (~20% dos casos — Alto Nível):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A relação contextual ou o conhecimento enciclopédico não admitem multiplicidade ou restrição. A pontuação é fixa.",
+                "Caso 2A: Só Pode Ser Explicativa (Exige Vírgulas):",
+                "Ocorre quando o antecedente é um ser único no universo, nome próprio, ou quando a propriedade adjetiva é universal para toda a espécie biológica/categoria.",
+                "Efeito de retirar as vírgulas: Cria uma restrição absurda/impossível no mundo real -> GERA ERRO GRAMATICAL / INCOERÊNCIA.",
+                "Exemplos: \"O homem, que é mortal, tem alma imortal\" (não existem homens imortais); \"O Tejo, que é rio famoso, passa em Lisboa\" (só há um rio Tejo); \"A galinha, que põe ovos, merece respeito\" (pôr ovos é inerente à espécie); \"Sua mãe, que lhe pede não mentir nunca...\" (cada indivíduo tem apenas uma mãe no contexto).",
+                "Caso 2B: Só Pode Ser Restritiva (Proíbe Vírgulas):",
+                "Ocorre quando o texto prévio já estabeleceu categoricamente a existência de múltiplos elementos e a necessidade de distingui-los.",
+                "Efeito de inserir vírgulas: Afirma falsamente que há apenas um elemento, contradizendo o contexto fático imediato -> GERA ERRO GRAMATICAL / INCOERÊNCIA.",
+                "Exemplos: \"Tenho dois irmãos. O irmão que é primogênito chegou\" (o texto declarou ter 2 irmãos; pontuar entre vírgulas diria que só existe 1 irmão); \"Tenho três processos. O processo que é contra a União será julgado\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-002",
+                  "targetTitle": "Cenário de Dupla Leitura: \"Os Meninos Fantasiados\"",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-003",
+                  "targetTitle": "Leitura Única Explicativa: \"A Galinha que Põe Ovos\" (FGV / Cebraspe)",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-004",
+                  "targetTitle": "Leitura Única Restritiva: Contexto com Quantidade Prévia Fixada",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-005",
+                  "targetTitle": "Questão Cebraspe: ANTT (2024) — Adjetiva Reduzida em Referente Múltiplo",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-006",
+                  "targetTitle": "Questão Cebraspe: SERPRO (2023) — Adjetiva em Referente Único (\"Mãe\")",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +383,60 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nExpressões de caráter explicativo, retificativo, conclusivo ou exemplificativo — tais como \"ou seja\", \"isto é\", \"ou melhor\", \"por exemplo\", \"a saber\" — devem vir obrigatoriamente isoladas por vírgulas (ou outro sinal de pontuação equivalente). Sua supressão constitui infração gramatical.\nExplicação consolidada\nHá uma distinção semântica intrínseca entre os dois tipos de expressão:\nExplicar: Consiste em manter/reiterar a declaração antecedente, apresentando-a sob outra formulação ou esclarecendo seu alcance sem substituir o conteúdo (\"A corrupção era identificada com vícios, ou seja, tudo aquilo que causa caos social\").\nRetificar: Consiste em corrigir, emendar ou substituir uma informação inexata ou incompleta anteriormente proferida (\"Chegamos às dez horas, ou melhor, às dez e meia\").\nIndependentemente de a expressão atuar como explicação ou retificação, a norma culta impõe seu isolamento por pontuação. Portanto, itens de concurso que sugerem a supressão dessas vírgulas sob a alegação de \"manter a correção gramatical\" estão incorretos.\nExemplos e contraexemplos\nCorreto: A corrupção gerava desordem, ou seja, provocava instabilidade social.\nIncorreto: A corrupção gerava desordem ou seja provocava instabilidade social. (Supressão das vírgulas gera erro gramatical).Glossário: TERM-A08-G03-004"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Expressões de caráter explicativo, retificativo, conclusivo ou exemplificativo — tais como \"ou seja\", \"isto é\", \"ou melhor\", \"por exemplo\", \"a saber\" — devem vir obrigatoriamente isoladas por vírgulas (ou outro sinal de pontuação equivalente). Sua supressão constitui infração gramatical."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Há uma distinção semântica intrínseca entre os dois tipos de expressão:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Explicar: Consiste em manter/reiterar a declaração antecedente, apresentando-a sob outra formulação ou esclarecendo seu alcance sem substituir o conteúdo (\"A corrupção era identificada com vícios, ou seja, tudo aquilo que causa caos social\").",
+                "Retificar: Consiste em corrigir, emendar ou substituir uma informação inexata ou incompleta anteriormente proferida (\"Chegamos às dez horas, ou melhor, às dez e meia\")."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Independentemente de a expressão atuar como explicação ou retificação, a norma culta impõe seu isolamento por pontuação. Portanto, itens de concurso que sugerem a supressão dessas vírgulas sob a alegação de \"manter a correção gramatical\" estão incorretos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Correto: A corrupção gerava desordem, ou seja, provocava instabilidade social.",
+                "Incorreto: A corrupção gerava desordem ou seja provocava instabilidade social. (Supressão das vírgulas gera erro gramatical)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-007",
+                  "targetTitle": "Questão Cebraspe: TCE-RJ — Expressão Explicativa \"Ou Seja\"",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +449,61 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA vírgula vicária (ou vírgula de elipse) é aquela obrigatoriamente empregada para marcar a omissão de uma forma verbal já expressa anteriormente no período (zeugma/elipse verbal). Ela possui função anafórica (\"aponta\" de volta para o verbo elidido) e não se confunde com o aposto explicativo.\nExplicação consolidada\nMecanismo da Vírgula Vicária:\nA palavra \"vicária\" vincula-se etimologicamente à ideia de substituição (aquele que ocupa o lugar de outrem).\nA vírgula substitui a forma verbal omitida para evitar repetições estilisticamente deselegantes e assegurar a articulação sintática.\nExemplo 1: \"O preconceito é uma opinião; a discriminação, [é] um comportamento...\" (A vírgula substitui a forma verbal \"é\").\nExemplo 2: \"...na proporção em que seus temas forem captados e suas tarefas, [forem] resolvidas.\" (A vírgula substitui \"forem\").\nDistinção Crítica: Vírgula Vicária versus Aposto Explicativo:\nO Aposto Explicativo é uma função sintática desempenhada exclusivamente por um substantivo (ou pronome/termo substantivado) que se junta a outro substantivo para explicá-lo (\"Machado de Assis, grande escritor brasileiro, fundou a Academia\" -> escritor é substantivo).\nNa Vírgula Vicária, o termo posposto à vírgula atua como adjetivo, particípio ou predicativo vinculado ao verbo elidido (\"tarefas, resolvidas\" -> resolvidas é particípio/adjetivo concordando com tarefas). Por não ser substantivo, é gramaticalmente impossível classificar esse segmento como aposto.\nCritérios de reconhecimento\nMantra de identificação: \"Aposto é caso de substantivo!\". Se o termo delimitado pela vírgula for particípio ou adjetivo atrelado a uma ação implícita, trata-se de vírgula vicária por elipse verbal.\nRelações\nAlerta essencial: \nMnemônico associado: TIP-A08-G03-003\nExercícios de aplicação: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A vírgula vicária (ou vírgula de elipse) é aquela obrigatoriamente empregada para marcar a omissão de uma forma verbal já expressa anteriormente no período (zeugma/elipse verbal). Ela possui função anafórica (\"aponta\" de volta para o verbo elidido) e não se confunde com o aposto explicativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mecanismo da Vírgula Vicária:",
+                "A palavra \"vicária\" vincula-se etimologicamente à ideia de substituição (aquele que ocupa o lugar de outrem).",
+                "A vírgula substitui a forma verbal omitida para evitar repetições estilisticamente deselegantes e assegurar a articulação sintática.",
+                "Exemplo 1: \"O preconceito é uma opinião; a discriminação, [é] um comportamento...\" (A vírgula substitui a forma verbal \"é\").",
+                "Exemplo 2: \"...na proporção em que seus temas forem captados e suas tarefas, [forem] resolvidas.\" (A vírgula substitui \"forem\").",
+                "Distinção Crítica: Vírgula Vicária versus Aposto Explicativo:",
+                "O Aposto Explicativo é uma função sintática desempenhada exclusivamente por um substantivo (ou pronome/termo substantivado) que se junta a outro substantivo para explicá-lo (\"Machado de Assis, grande escritor brasileiro, fundou a Academia\" -> escritor é substantivo).",
+                "Na Vírgula Vicária, o termo posposto à vírgula atua como adjetivo, particípio ou predicativo vinculado ao verbo elidido (\"tarefas, resolvidas\" -> resolvidas é particípio/adjetivo concordando com tarefas). Por não ser substantivo, é gramaticalmente impossível classificar esse segmento como aposto."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "paragraph",
+              "text": "Mantra de identificação: \"Aposto é caso de substantivo!\". Se o termo delimitado pela vírgula for particípio ou adjetivo atrelado a uma ação implícita, trata-se de vírgula vicária por elipse verbal."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-008",
+                  "targetTitle": "Questão Cebraspe: Pref. Mossoró (2024) — Vírgula Vicária de Elipse",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-009",
+                  "targetTitle": "Questão Cebraspe: MEC (2023) — Vírgula Vicária vs. Falso Aposto",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +516,89 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nÉ terminantemente proibido o emprego de vírgula que interrompa os nexos sintáticos essenciais do esquema canônico Sujeito — Verbo — Complemento (SVC). Não se separa por vírgula o sujeito de seu predicado verbal, nem o verbo transitivo de seus complementos diretos ou indiretos.\nExplicação consolidada\nA vedação manifesta-se em três cenários frequentes de armadilhas de concurso:\nSujeito Composto em Enumeração: As vírgulas separam os núcleos coordenados entre si, mas é proibido inserir vírgula após o último núcleo imediatamente antes do verbo (\"As discussões, os relatórios, as publicações apontaram...\" -> colocar vírgula após publicações quebra a ligação com apontaram).\nSujeito Complexo / Extenso / Oracional: A extensão física ou a presença de orações adjetivas internas não autoriza o uso de vírgula entre o fim do bloco do sujeito e o verbo (\"[O precursor do que viria a ser um jornal] foi o romano...\" -> vedada vírgula após jornal).\nVerbo Transitivo e Complemento Oracional: É proibido inserir vírgula entre o verbo transitivo e sua Oração Subordinada Substantiva Objetiva Direta introduzida por que (\"...saibam [que essa é a única emergência]...\" -> saibam isso; vedada vírgula após saibam).\nCritérios de reconhecimento\nExecuta-se o teste de integridade sintática:\nAcha-se o verbo principal e pergunta-se Quem? para isolar o bloco total do sujeito. Não pode haver vírgula solta entre o sujeito e o verbo.\nPergunta-se O quê? ao verbo. Se a oração seguinte puder ser substituída por \"isso\", trata-se de objeto direto oracional, sendo vedada a vírgula separadora.\nExemplos e contraexemplos\nIncorreto (Enumeração): Os alunos, os professores, os coordenadores, participaram. (Vírgula proibida após coordenadores).\nIncorreto (Sujeito Extenso): A necessidade de reformas estruturais urgentes no país, foi debatida. (Vírgula proibida após país).\nIncorreto (Objeto Oracional): O diretor afirmou, que todos seriam promovidos. (Vírgula proibida após afirmou).\nRelações\nDica associada: TIP-A08-G03-005\nPegadinha associada: \nExemplos de prova: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "É terminantemente proibido o emprego de vírgula que interrompa os nexos sintáticos essenciais do esquema canônico Sujeito — Verbo — Complemento (SVC). Não se separa por vírgula o sujeito de seu predicado verbal, nem o verbo transitivo de seus complementos diretos ou indiretos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A vedação manifesta-se em três cenários frequentes de armadilhas de concurso:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sujeito Composto em Enumeração: As vírgulas separam os núcleos coordenados entre si, mas é proibido inserir vírgula após o último núcleo imediatamente antes do verbo (\"As discussões, os relatórios, as publicações apontaram...\" -> colocar vírgula após publicações quebra a ligação com apontaram).",
+                "Sujeito Complexo / Extenso / Oracional: A extensão física ou a presença de orações adjetivas internas não autoriza o uso de vírgula entre o fim do bloco do sujeito e o verbo (\"[O precursor do que viria a ser um jornal] foi o romano...\" -> vedada vírgula após jornal).",
+                "Verbo Transitivo e Complemento Oracional: É proibido inserir vírgula entre o verbo transitivo e sua Oração Subordinada Substantiva Objetiva Direta introduzida por que (\"...saibam [que essa é a única emergência]...\" -> saibam isso; vedada vírgula após saibam)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "paragraph",
+              "text": "Executa-se o teste de integridade sintática:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Acha-se o verbo principal e pergunta-se Quem? para isolar o bloco total do sujeito. Não pode haver vírgula solta entre o sujeito e o verbo.",
+                "Pergunta-se O quê? ao verbo. Se a oração seguinte puder ser substituída por \"isso\", trata-se de objeto direto oracional, sendo vedada a vírgula separadora."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Incorreto (Enumeração): Os alunos, os professores, os coordenadores, participaram. (Vírgula proibida após coordenadores).",
+                "Incorreto (Sujeito Extenso): A necessidade de reformas estruturais urgentes no país, foi debatida. (Vírgula proibida após país).",
+                "Incorreto (Objeto Oracional): O diretor afirmou, que todos seriam promovidos. (Vírgula proibida após afirmou)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-011",
+                  "targetTitle": "Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Sujeito Composto e SVC",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-015",
+                  "targetTitle": "Questão Cebraspe: Pref. Cachoeiro (2024 / Procurador) — Verbo e Objeto Oracional",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-016",
+                  "targetTitle": "Questão Cebraspe: Pref. Cachoeiro (2024 / Aux. Adm.) — Sujeito Extenso e Verbo",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +611,65 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA pontuação das orações subordinadas adverbiais depende exclusivamente de sua posição no período composto: na ordem direta (ao final), a vírgula é facultativa; na ordem deslocada (antecipada ou intercalada), a vírgula é obrigatória (independentemente da extensão da oração).\nExplicação consolidada\nOrdem Direta ([Oração Principal] + [Oração Adverbial]):\nA oração subordinada posiciona-se ao término do período.\nO emprego da vírgula antes do conectivo subordinativo é facultativo.\nExemplo: \"...potencial para ajudar alunos e professores, caso seja integrada à prática\" (Oração adverbial condicional no final -> vírgula facultativa).\nOrdem Deslocada / Inversa ([Oração Adverbial Antecipada], [Oração Principal] ou intercalada):\nA oração adverbial antecede a principal ou surge encaixada no seu interior.\nPor possuir estrutura oracional completa (com verbo próprio), a vírgula de isolamento é estritamente obrigatória.\nExemplo: \"[Embora alguém possa imaginar cérebros artificiais], hoje toda a ação...\" (Oração concessiva antecipada -> vírgula obrigatória).\nMnemônico Circunstancial \"6C + FTP\":\nAgrupa as 9 circunstâncias e conjunções adverbiais:\n6 C's: Causal (porque, visto que), Condicional (se, caso), Comparativa (como, tal qual), Conformativa (conforme, segundo), Concessiva (embora, ainda que), Consecutiva (tanto que, de modo que).\nF-T-P: Final (a fim de que, para que), Temporal (quando, enquanto, logo que), Proporcional (à proporção que, à medida que).\nRelações\nMnemônico: TIP-A08-G03-004\nExemplos práticos: , \nGlossário: TERM-A08-G03-005"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A pontuação das orações subordinadas adverbiais depende exclusivamente de sua posição no período composto: na ordem direta (ao final), a vírgula é facultativa; na ordem deslocada (antecipada ou intercalada), a vírgula é obrigatória (independentemente da extensão da oração)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ordem Direta ([Oração Principal] + [Oração Adverbial]):",
+                "A oração subordinada posiciona-se ao término do período.",
+                "O emprego da vírgula antes do conectivo subordinativo é facultativo.",
+                "Exemplo: \"...potencial para ajudar alunos e professores, caso seja integrada à prática\" (Oração adverbial condicional no final -> vírgula facultativa).",
+                "Ordem Deslocada / Inversa ([Oração Adverbial Antecipada], [Oração Principal] ou intercalada):",
+                "A oração adverbial antecede a principal ou surge encaixada no seu interior.",
+                "Por possuir estrutura oracional completa (com verbo próprio), a vírgula de isolamento é estritamente obrigatória.",
+                "Exemplo: \"[Embora alguém possa imaginar cérebros artificiais], hoje toda a ação...\" (Oração concessiva antecipada -> vírgula obrigatória).",
+                "Mnemônico Circunstancial \"6C + FTP\":"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Agrupa as 9 circunstâncias e conjunções adverbiais:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "6 C's: Causal (porque, visto que), Condicional (se, caso), Comparativa (como, tal qual), Conformativa (conforme, segundo), Concessiva (embora, ainda que), Consecutiva (tanto que, de modo que).",
+                "F-T-P: Final (a fim de que, para que), Temporal (quando, enquanto, logo que), Proporcional (à proporção que, à medida que)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-010",
+                  "targetTitle": "Questão Cebraspe: Pref. Cachoeiro (2024 / Professor) — Adverbial Condicional Final",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-012",
+                  "targetTitle": "Questão Cebraspe: Pref. Cachoeiro (2024 / Enfermeiro) — Concessiva Deslocada",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +682,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO aposto explicativo admite isolamento indiferente por vírgulas, travessões ou parênteses. Quando o fechamento de um aposto coincide com o término de outra estrutura que também requer pontuação (como uma oração adverbial antecipada), emprega-se uma única vírgula, a qual acumula as duas funções sintáticas (fenômeno da vírgula de dupla função / sobrecarregada).\nExplicação consolidada\nMecânica da Vírgula de Dupla Função:\nNo período: \"Quando o suporte vai para o papel — suportes que criam possibilidade —, a própria elaboração...\"\nO trecho entre travessões é aposto explicativo (núcleo substantivo suportes).\nO período abre com oração adverbial temporal antecipada (Quando...), que exige vírgula após seu término.\nAo substituir os travessões por vírgulas, não se duplicam símbolos (,,); a vírgula posposta cumpre simultaneamente o papel de fechar o aposto e fechar a oração adverbial antecipada.\nAlternância de Sinais e Nuances Estilísticas no Cebraspe:\nTravessões: conferem destaque visual / ênfase expressiva.\nParênteses: conferem atenuação / rebaixamento de ênfase.\nVírgulas: possuem neutralidade estilística.\nJurisprudência de Prova: O Cebraspe julga que variações no grau de ênfase não alteram a coerência nem prejudicam o sentido essencial. Propostas de troca entre esses sinais mantêm a correção gramatical e a coerência textual.\nRelações\nAlerta associado: \nDica de prova: TIP-A08-G03-006\nAplicação: \nGlossário: TERM-A08-G03-006"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O aposto explicativo admite isolamento indiferente por vírgulas, travessões ou parênteses. Quando o fechamento de um aposto coincide com o término de outra estrutura que também requer pontuação (como uma oração adverbial antecipada), emprega-se uma única vírgula, a qual acumula as duas funções sintáticas (fenômeno da vírgula de dupla função / sobrecarregada)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mecânica da Vírgula de Dupla Função:",
+                "No período: \"Quando o suporte vai para o papel — suportes que criam possibilidade —, a própria elaboração...\"",
+                "O trecho entre travessões é aposto explicativo (núcleo substantivo suportes).",
+                "O período abre com oração adverbial temporal antecipada (Quando...), que exige vírgula após seu término.",
+                "Ao substituir os travessões por vírgulas, não se duplicam símbolos (,,); a vírgula posposta cumpre simultaneamente o papel de fechar o aposto e fechar a oração adverbial antecipada.",
+                "Alternância de Sinais e Nuances Estilísticas no Cebraspe:",
+                "Travessões: conferem destaque visual / ênfase expressiva.",
+                "Parênteses: conferem atenuação / rebaixamento de ênfase.",
+                "Vírgulas: possuem neutralidade estilística.",
+                "Jurisprudência de Prova: O Cebraspe julga que variações no grau de ênfase não alteram a coerência nem prejudicam o sentido essencial. Propostas de troca entre esses sinais mantêm a correção gramatical e a coerência textual."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-013",
+                  "targetTitle": "Questão Cebraspe: MPE-GO (2024 / Analista) — Aposto e Vírgula de Dupla Função",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +735,46 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO adjunto adverbial antecipado ou intercalado (deslocado) submete-se ao critério de extensão textual: se for de curta extensão, a vírgula é facultativa; se for de longa extensão, a vírgula é obrigatória.\nExplicação consolidada\nA jurisprudência pacificada em concursos públicos (notadamente pelo Cebraspe) adota o critério quantitativo objetivo de contagem de palavras:\nCurta Extensão (até 2 palavras): Vírgula FACULTATIVA.\nExemplo: \"Em Alagoas, os crimes caíram...\" (Em + Alagoas = 2 palavras -> vírgula facultativa; suprimi-la não causa prejuízo gramatical).\nExemplo: \"Ontem à noite, ele chegou\" / \"Ontem à noite ele chegou\".\nLonga Extensão (3 ou mais palavras): Vírgula OBRIGATÓRIA.\nExemplo: \"No primeiro dia do mês, realizou-se a prova\" (6 palavras -> vírgula obrigatória).\nRelações\nAlerta de prova: \nExemplo aplicado:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O adjunto adverbial antecipado ou intercalado (deslocado) submete-se ao critério de extensão textual: se for de curta extensão, a vírgula é facultativa; se for de longa extensão, a vírgula é obrigatória."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A jurisprudência pacificada em concursos públicos (notadamente pelo Cebraspe) adota o critério quantitativo objetivo de contagem de palavras:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Curta Extensão (até 2 palavras): Vírgula FACULTATIVA.",
+                "Exemplo: \"Em Alagoas, os crimes caíram...\" (Em + Alagoas = 2 palavras -> vírgula facultativa; suprimi-la não causa prejuízo gramatical).",
+                "Exemplo: \"Ontem à noite, ele chegou\" / \"Ontem à noite ele chegou\".",
+                "Longa Extensão (3 ou mais palavras): Vírgula OBRIGATÓRIA.",
+                "Exemplo: \"No primeiro dia do mês, realizou-se a prova\" (6 palavras -> vírgula obrigatória)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-014",
+                  "targetTitle": "Questão Cebraspe: Pref. Cachoeiro (2024 / Guarda) — Adjunto Curto Deslocado",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -220,8 +787,53 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO emprego da vírgula antes da conjunção aditiva \"e\" organiza-se em cinco situações sintáticas rigorosas: duas proibições, duas facultatividades e apenas um caso de obrigatoriedade.\nExplicação consolidada\nCaso 1 — Enumeração simples de termos: PROIBIDA.Exemplo: Comprou arroz, feijão e carne. (Vedada vírgula antes do último \"e\").\nCaso 2 — Orações coordenadas aditivas com o MESMO sujeito: PROIBIDA.Exemplo: O candidato estudou muito e foi aprovado. (Sujeito único: o candidato; vírgula proibida).\nCaso 3 — Orações coordenadas aditivas com SUJEITOS DIFERENTES: FACULTATIVA.Exemplo: O professor ministrou a aula, e os alunos tomaram notas. (Sujeito 1: o professor; Sujeito 2: os alunos. A vírgula é facultativa estilisticamente para evitar ambiguidade; nunca é obrigatória).\nCaso 4 — Conjunção \"e\" com valor ADVERSATIVO (= mas) ou CONCLUSIVO (= portanto): FACULTATIVA (mesmo com sujeitos idênticos).Exemplo: Estudou dia e noite, e não conseguiu a vaga. (= mas não conseguiu; vírgula facultativa).\nCaso 5 — Polissíndeto (repetição estilística e enfática do conectivo): OBRIGATÓRIA.\nExemplo: E chora, e grita, e corre, e desespera-se. (Vírgula obrigatória antes de cada \"e\" repetido).\nRelações\nDica mnemônica: TIP-A08-G03-007\nRecomendação de redação discursiva: TIP-A08-G03-008\nAlerta crítico: \nAplicação: \nGlossário: TERM-A08-G03-007"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O emprego da vírgula antes da conjunção aditiva \"e\" organiza-se em cinco situações sintáticas rigorosas: duas proibições, duas facultatividades e apenas um caso de obrigatoriedade."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Caso 1 — Enumeração simples de termos: PROIBIDA.Exemplo: Comprou arroz, feijão e carne. (Vedada vírgula antes do último \"e\").",
+                "Caso 2 — Orações coordenadas aditivas com o MESMO sujeito: PROIBIDA.Exemplo: O candidato estudou muito e foi aprovado. (Sujeito único: o candidato; vírgula proibida).",
+                "Caso 3 — Orações coordenadas aditivas com SUJEITOS DIFERENTES: FACULTATIVA.Exemplo: O professor ministrou a aula, e os alunos tomaram notas. (Sujeito 1: o professor; Sujeito 2: os alunos. A vírgula é facultativa estilisticamente para evitar ambiguidade; nunca é obrigatória).",
+                "Caso 4 — Conjunção \"e\" com valor ADVERSATIVO (= mas) ou CONCLUSIVO (= portanto): FACULTATIVA (mesmo com sujeitos idênticos).Exemplo: Estudou dia e noite, e não conseguiu a vaga. (= mas não conseguiu; vírgula facultativa).",
+                "Caso 5 — Polissíndeto (repetição estilística e enfática do conectivo): OBRIGATÓRIA."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Exemplo: E chora, e grita, e corre, e desespera-se. (Vírgula obrigatória antes de cada \"e\" repetido)."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A08-G03-008",
+                  "targetTitle": "Mito da Vírgula Obrigatória Antes de \"E\" com Sujeitos Distintos:",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G03-017",
+                  "targetTitle": "Questão Cebraspe: CAU-BR (2024 / Assistente TI) — Conjunção \"E\" com Sujeitos Distintos",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -234,56 +846,79 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA resolução de itens do Cebraspe que indagam se a supressão de uma vírgula preexistente manteria a correção gramatical exige o enquadramento imediato da estrutura em um dos quatro casos canônicos de Vírgula Facultativa.\nExplicação consolidada\nQuando a questão pergunta se a vírgula \"pode ser suprimida sem prejuízo\", ela está perguntando se aquela vírgula é facultativa. Os quatro casos consolidados são:\nTermos e Orações Adverbiais na Ordem Direta: Posicionados ao final do período (após a oração principal ou verbo).Ex: Ligue-me amanhã. / Ligue-me, amanhã. | Avisem-me caso haja mudanças. / Avisem-me, caso haja mudanças.\nAdjunto Adverbial Curto Deslocado: Expressão circunstancial não oracional composta por até 2 palavras no início ou meio da oração.Ex: Pela manhã, ele saiu. / Pela manhã ele saiu.\nConjunção \"E\" entre Sujeitos Diferentes ou com Valor Adversativo/Conclusivo:Ex: A chuva cessou, e o sol reapareceu. / A chuva cessou e o sol reapareceu.\nOrações Adjetivas Explicativas em Contexto de Dupla Leitura:\nCasos em que o antecedente admite multiplicidade fática. A retirada da vírgula transforma a oração em restritiva: preserva a correção gramatical e a coerência, alterando apenas o sentido.\nRelações\nConsolida: , , , \nProtocolo operacional:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A resolução de itens do Cebraspe que indagam se a supressão de uma vírgula preexistente manteria a correção gramatical exige o enquadramento imediato da estrutura em um dos quatro casos canônicos de Vírgula Facultativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando a questão pergunta se a vírgula \"pode ser suprimida sem prejuízo\", ela está perguntando se aquela vírgula é facultativa. Os quatro casos consolidados são:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Termos e Orações Adverbiais na Ordem Direta: Posicionados ao final do período (após a oração principal ou verbo).Ex: Ligue-me amanhã. / Ligue-me, amanhã. | Avisem-me caso haja mudanças. / Avisem-me, caso haja mudanças.",
+                "Adjunto Adverbial Curto Deslocado: Expressão circunstancial não oracional composta por até 2 palavras no início ou meio da oração.Ex: Pela manhã, ele saiu. / Pela manhã ele saiu.",
+                "Conjunção \"E\" entre Sujeitos Diferentes ou com Valor Adversativo/Conclusivo:Ex: A chuva cessou, e o sol reapareceu. / A chuva cessou e o sol reapareceu.",
+                "Orações Adjetivas Explicativas em Contexto de Dupla Leitura:"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Casos em que o antecedente admite multiplicidade fática. A retirada da vírgula transforma a oração em restritiva: preserva a correção gramatical e a coerência, alterando apenas o sentido."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A08-G03-003",
+                  "targetTitle": "Tipologia de Questões em Orações Adjetivas: Dupla Leitura (80%) vs. Leitura Única (20%)",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A08-G03-007",
+                  "targetTitle": "Pontuação das Orações Subordinadas Adverbiais e Mnemônico 6C + FTP",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A08-G03-009",
+                  "targetTitle": "Pontuação do Adjunto Adverbial Deslocado: Critério Numérico de Extensão",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A08-G03-010",
+                  "targetTitle": "Casuística Completa do Uso da Vírgula Antes da Conjunção Aditiva \"E\"",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G03-005",
+                  "targetTitle": "Protocolo Master para Questões de \"Supressão de Vírgula\" no Cebraspe",
+                  "targetUnitId": "IP-A08-G03",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA Oração Subordinada Adjetiva é aquela que desempenha função sintática equivalente à de um adjetivo, referindo-se diretamente a um substantivo (ou termo substantivado) antecedente situado na oração principal.\nExplicação consolidada\nPara comprovar que uma oração é adjetiva, aplica-se o \"teste da seta\": verifica-se se toda a estrutura oracional qualifica, restringe ou explica um substantivo que a precede. As orações adjetivas manifestam-se sob três configurações sintáticas:\nDesenvolvida Explícita: Apresenta conectivo relativo explícito (que, o qual, a qual, cujo, onde). O pronome relativo substitui o antecedente e estabelece a conexão sintática.\nDesenvolvida Implícita: O pronome relativo ou o verbo de ligação encontra-se elidido/subentendido no contexto comunicativo (ex.: \"João, [que está] feliz com a sua prova, comemorou\").\nReduzida: Não apresenta pronome relativo e traz o verbo principal flexionado em uma forma nominal:\nGerúndio (-ndo);\nInfinitivo (-ar, -er, -ir);\nParticípio (-do, -to).\nA validação de uma oração reduzida adjetiva é realizada pela \"prova real\": descompacta-se a estrutura substituindo a forma nominal por Pronome Relativo + Verbo Flexionado (ex.: \"aluno dedicando-se\" = \"aluno que se dedica\").\nCritérios de reconhecimento\nA oração precisa apontar para um substantivo antecedente (diferenciando-se das orações substantivas, que se acoplam a verbos transitivos ou nomes exigindo complementação e admitem substituição por \"isso\").\nA forma reduzida deve preservar carga e regência verbais (admitindo complementos verbais ou adjuntos adverbiais).\nExemplos e contraexemplos\nDesenvolvida Explícita: O aluno [que é dedicado] atinge seu objetivo.\nDesenvolvida com Pronome Implícito: O aluno [dedicado] atinge seu objetivo. / João, [feliz com o resultado], sorriu.\nReduzida de Gerúndio: O aluno [dedicando-se aos estudos] atinge seu objetivo. (= que se dedica)\nReduzida de Particípio: A iniciativa, [inserida no programa], reflete avanços. (= que está inserida)\nContraexemplo (Oração Substantiva): Quero [que você estude]. (Quero isso -> Oração Subordinada Substantiva Objetiva Direta; não se refere a substantivo antecedente qualificando-o).\nExceções ou limites\nNão confundir adjetivo simples ou sintagma adjetival com oração reduzida de particípio. A oração reduzida retém transitividade e dinâmica oracional verbal.\nRelações\nFundamenta: , \nOperacionalizado por: \nTerminologia associada: TERM-A08-G03-001, TERM-A08-G03-002, TERM-A08-G03-003"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA presença ou ausência de vírgulas nas orações subordinadas adjetivas é consequência gráfica de uma escolha semântica preexistente, e não sua causa formal. A distinção entre restritiva e explicativa assenta-se na pressuposição sobre o número de referentes no universo do discurso.\nExplicação consolidada\nOração Subordinada Adjetiva Restritiva (SEM VÍRGULAS):\nChave Semântica: \"SOMENTE\".\nPressuposto Contextual: O conjunto de referência possui MAIS DE UM elemento. A oração é empregada para circunscrever/restringir a declaração a um subconjunto específico, excluindo os demais elementos do mesmo grupo.\nOração Subordinada Adjetiva Explicativa (COM VÍRGULAS / ISOLADA):\nChave Semântica: \"SÓ HÁ UM\" (no contexto) ou TOTALIDADE DA ESPÉCIE.\nPressuposto Contextual: O antecedente abrange um elemento único ou a universalidade da categoria referida. A oração não restringe; apenas acrescenta uma informação explicativa, esclarecedora ou acessória aplicável a todos os elementos.\nCritérios de reconhecimento\nO candidato deve avaliar o referente aplicando o teste:\nNo contexto comunicativo, existem outros elementos daquele grupo aos quais a oração não se aplica? Se SIM -> Oração Restritiva (sem vírgulas).\nO elemento é único no contexto ou a propriedade é universal para todos os indivíduos? Se SIM -> Oração Explicativa (entre vírgulas).\nExemplos e contraexemplos\nRestritiva: O aluno que terminou a prova pode sair. (Significado: existem múltiplos alunos; somente aqueles que terminaram a prova têm permissão para sair).\nExplicativa: O aluno, que terminou a prova, pode sair. (Significado: há apenas um aluno naquele contexto comunicativo; explica-se que ele concluiu a avaliação e declara-se que ele pode sair).\nRelações\nContrasta: Restrição vs. Explicação\nMnemônico associado: TIP-A08-G03-001\nCitado em: QUOTE-A08-G03-001, QUOTE-A08-G03-002"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAs questões de concurso sobre a pontuação das orações adjetivas dividem-se em dois modelos: o modelo padrão de Dupla Leitura (cerca de 80% das provas), em que as vírgulas são facultativas e sua alteração preserva a correção gramatical, e o modelo avançado de Leitura Única Obrigatória (cerca de 20% das provas de alto nível, como Cebraspe e FGV), em que o contexto ou a lógica de mundo impõem uma única pontuação possível.\nExplicação consolidada\nCenário 1 — Frases de Dupla Leitura (Vírgulas Facultativas / Opcionais — ~80% dos casos):\nO substantivo antecedente admite perfeitamente a existência de subgrupos ou a consideração do grupo como um todo.\nEfeito da Inserção/Supressão de Vírgulas: MANTÉM a correção gramatical e a coerência global, mas ALTERA o sentido / relações sintáticas.\nExemplo: \"Os meninos que estão fantasiados receberão prêmios\" (sem vírgulas = restritiva / somente os fantasiados) vs. \"Os meninos, que estão fantasiados, receberão prêmios\" (com vírgulas = explicativa / todos os meninos estão fantasiados).\nCenário 2 — Frases de Leitura Única Obrigatória (~20% dos casos — Alto Nível):\nA relação contextual ou o conhecimento enciclopédico não admitem multiplicidade ou restrição. A pontuação é fixa.\nCaso 2A: Só Pode Ser Explicativa (Exige Vírgulas):\nOcorre quando o antecedente é um ser único no universo, nome próprio, ou quando a propriedade adjetiva é universal para toda a espécie biológica/categoria.\nEfeito de retirar as vírgulas: Cria uma restrição absurda/impossível no mundo real -> GERA ERRO GRAMATICAL / INCOERÊNCIA.\nExemplos: \"O homem, que é mortal, tem alma imortal\" (não existem homens imortais); \"O Tejo, que é rio famoso, passa em Lisboa\" (só há um rio Tejo); \"A galinha, que põe ovos, merece respeito\" (pôr ovos é inerente à espécie); \"Sua mãe, que lhe pede não mentir nunca...\" (cada indivíduo tem apenas uma mãe no contexto).\nCaso 2B: Só Pode Ser Restritiva (Proíbe Vírgulas):\nOcorre quando o texto prévio já estabeleceu categoricamente a existência de múltiplos elementos e a necessidade de distingui-los.\nEfeito de inserir vírgulas: Afirma falsamente que há apenas um elemento, contradizendo o contexto fático imediato -> GERA ERRO GRAMATICAL / INCOERÊNCIA.\nExemplos: \"Tenho dois irmãos. O irmão que é primogênito chegou\" (o texto declarou ter 2 irmãos; pontuar entre vírgulas diria que só existe 1 irmão); \"Tenho três processos. O processo que é contra a União será julgado\".\nRelações\nAplicações práticas: , , , , \nAlertas críticos: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nExpressões de caráter explicativo, retificativo, conclusivo ou exemplificativo — tais como \"ou seja\", \"isto é\", \"ou melhor\", \"por exemplo\", \"a saber\" — devem vir obrigatoriamente isoladas por vírgulas (ou outro sinal de pontuação equivalente). Sua supressão constitui infração gramatical.\nExplicação consolidada\nHá uma distinção semântica intrínseca entre os dois tipos de expressão:\nExplicar: Consiste em manter/reiterar a declaração antecedente, apresentando-a sob outra formulação ou esclarecendo seu alcance sem substituir o conteúdo (\"A corrupção era identificada com vícios, ou seja, tudo aquilo que causa caos social\").\nRetificar: Consiste em corrigir, emendar ou substituir uma informação inexata ou incompleta anteriormente proferida (\"Chegamos às dez horas, ou melhor, às dez e meia\").\nIndependentemente de a expressão atuar como explicação ou retificação, a norma culta impõe seu isolamento por pontuação. Portanto, itens de concurso que sugerem a supressão dessas vírgulas sob a alegação de \"manter a correção gramatical\" estão incorretos.\nExemplos e contraexemplos\nCorreto: A corrupção gerava desordem, ou seja, provocava instabilidade social.\nIncorreto: A corrupção gerava desordem ou seja provocava instabilidade social. (Supressão das vírgulas gera erro gramatical).Glossário: TERM-A08-G03-004"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA vírgula vicária (ou vírgula de elipse) é aquela obrigatoriamente empregada para marcar a omissão de uma forma verbal já expressa anteriormente no período (zeugma/elipse verbal). Ela possui função anafórica (\"aponta\" de volta para o verbo elidido) e não se confunde com o aposto explicativo.\nExplicação consolidada\nMecanismo da Vírgula Vicária:\nA palavra \"vicária\" vincula-se etimologicamente à ideia de substituição (aquele que ocupa o lugar de outrem).\nA vírgula substitui a forma verbal omitida para evitar repetições estilisticamente deselegantes e assegurar a articulação sintática.\nExemplo 1: \"O preconceito é uma opinião; a discriminação, [é] um comportamento...\" (A vírgula substitui a forma verbal \"é\").\nExemplo 2: \"...na proporção em que seus temas forem captados e suas tarefas, [forem] resolvidas.\" (A vírgula substitui \"forem\").\nDistinção Crítica: Vírgula Vicária versus Aposto Explicativo:\nO Aposto Explicativo é uma função sintática desempenhada exclusivamente por um substantivo (ou pronome/termo substantivado) que se junta a outro substantivo para explicá-lo (\"Machado de Assis, grande escritor brasileiro, fundou a Academia\" -> escritor é substantivo).\nNa Vírgula Vicária, o termo posposto à vírgula atua como adjetivo, particípio ou predicativo vinculado ao verbo elidido (\"tarefas, resolvidas\" -> resolvidas é particípio/adjetivo concordando com tarefas). Por não ser substantivo, é gramaticalmente impossível classificar esse segmento como aposto.\nCritérios de reconhecimento\nMantra de identificação: \"Aposto é caso de substantivo!\". Se o termo delimitado pela vírgula for particípio ou adjetivo atrelado a uma ação implícita, trata-se de vírgula vicária por elipse verbal.\nRelações\nAlerta essencial: \nMnemônico associado: TIP-A08-G03-003\nExercícios de aplicação: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nÉ terminantemente proibido o emprego de vírgula que interrompa os nexos sintáticos essenciais do esquema canônico Sujeito — Verbo — Complemento (SVC). Não se separa por vírgula o sujeito de seu predicado verbal, nem o verbo transitivo de seus complementos diretos ou indiretos.\nExplicação consolidada\nA vedação manifesta-se em três cenários frequentes de armadilhas de concurso:\nSujeito Composto em Enumeração: As vírgulas separam os núcleos coordenados entre si, mas é proibido inserir vírgula após o último núcleo imediatamente antes do verbo (\"As discussões, os relatórios, as publicações apontaram...\" -> colocar vírgula após publicações quebra a ligação com apontaram).\nSujeito Complexo / Extenso / Oracional: A extensão física ou a presença de orações adjetivas internas não autoriza o uso de vírgula entre o fim do bloco do sujeito e o verbo (\"[O precursor do que viria a ser um jornal] foi o romano...\" -> vedada vírgula após jornal).\nVerbo Transitivo e Complemento Oracional: É proibido inserir vírgula entre o verbo transitivo e sua Oração Subordinada Substantiva Objetiva Direta introduzida por que (\"...saibam [que essa é a única emergência]...\" -> saibam isso; vedada vírgula após saibam).\nCritérios de reconhecimento\nExecuta-se o teste de integridade sintática:\nAcha-se o verbo principal e pergunta-se Quem? para isolar o bloco total do sujeito. Não pode haver vírgula solta entre o sujeito e o verbo.\nPergunta-se O quê? ao verbo. Se a oração seguinte puder ser substituída por \"isso\", trata-se de objeto direto oracional, sendo vedada a vírgula separadora.\nExemplos e contraexemplos\nIncorreto (Enumeração): Os alunos, os professores, os coordenadores, participaram. (Vírgula proibida após coordenadores).\nIncorreto (Sujeito Extenso): A necessidade de reformas estruturais urgentes no país, foi debatida. (Vírgula proibida após país).\nIncorreto (Objeto Oracional): O diretor afirmou, que todos seriam promovidos. (Vírgula proibida após afirmou).\nRelações\nDica associada: TIP-A08-G03-005\nPegadinha associada: \nExemplos de prova: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA pontuação das orações subordinadas adverbiais depende exclusivamente de sua posição no período composto: na ordem direta (ao final), a vírgula é facultativa; na ordem deslocada (antecipada ou intercalada), a vírgula é obrigatória (independentemente da extensão da oração).\nExplicação consolidada\nOrdem Direta ([Oração Principal] + [Oração Adverbial]):\nA oração subordinada posiciona-se ao término do período.\nO emprego da vírgula antes do conectivo subordinativo é facultativo.\nExemplo: \"...potencial para ajudar alunos e professores, caso seja integrada à prática\" (Oração adverbial condicional no final -> vírgula facultativa).\nOrdem Deslocada / Inversa ([Oração Adverbial Antecipada], [Oração Principal] ou intercalada):\nA oração adverbial antecede a principal ou surge encaixada no seu interior.\nPor possuir estrutura oracional completa (com verbo próprio), a vírgula de isolamento é estritamente obrigatória.\nExemplo: \"[Embora alguém possa imaginar cérebros artificiais], hoje toda a ação...\" (Oração concessiva antecipada -> vírgula obrigatória).\nMnemônico Circunstancial \"6C + FTP\":\nAgrupa as 9 circunstâncias e conjunções adverbiais:\n6 C's: Causal (porque, visto que), Condicional (se, caso), Comparativa (como, tal qual), Conformativa (conforme, segundo), Concessiva (embora, ainda que), Consecutiva (tanto que, de modo que).\nF-T-P: Final (a fim de que, para que), Temporal (quando, enquanto, logo que), Proporcional (à proporção que, à medida que).\nRelações\nMnemônico: TIP-A08-G03-004\nExemplos práticos: , \nGlossário: TERM-A08-G03-005"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO aposto explicativo admite isolamento indiferente por vírgulas, travessões ou parênteses. Quando o fechamento de um aposto coincide com o término de outra estrutura que também requer pontuação (como uma oração adverbial antecipada), emprega-se uma única vírgula, a qual acumula as duas funções sintáticas (fenômeno da vírgula de dupla função / sobrecarregada).\nExplicação consolidada\nMecânica da Vírgula de Dupla Função:\nNo período: \"Quando o suporte vai para o papel — suportes que criam possibilidade —, a própria elaboração...\"\nO trecho entre travessões é aposto explicativo (núcleo substantivo suportes).\nO período abre com oração adverbial temporal antecipada (Quando...), que exige vírgula após seu término.\nAo substituir os travessões por vírgulas, não se duplicam símbolos (,,); a vírgula posposta cumpre simultaneamente o papel de fechar o aposto e fechar a oração adverbial antecipada.\nAlternância de Sinais e Nuances Estilísticas no Cebraspe:\nTravessões: conferem destaque visual / ênfase expressiva.\nParênteses: conferem atenuação / rebaixamento de ênfase.\nVírgulas: possuem neutralidade estilística.\nJurisprudência de Prova: O Cebraspe julga que variações no grau de ênfase não alteram a coerência nem prejudicam o sentido essencial. Propostas de troca entre esses sinais mantêm a correção gramatical e a coerência textual.\nRelações\nAlerta associado: \nDica de prova: TIP-A08-G03-006\nAplicação: \nGlossário: TERM-A08-G03-006"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO adjunto adverbial antecipado ou intercalado (deslocado) submete-se ao critério de extensão textual: se for de curta extensão, a vírgula é facultativa; se for de longa extensão, a vírgula é obrigatória.\nExplicação consolidada\nA jurisprudência pacificada em concursos públicos (notadamente pelo Cebraspe) adota o critério quantitativo objetivo de contagem de palavras:\nCurta Extensão (até 2 palavras): Vírgula FACULTATIVA.\nExemplo: \"Em Alagoas, os crimes caíram...\" (Em + Alagoas = 2 palavras -> vírgula facultativa; suprimi-la não causa prejuízo gramatical).\nExemplo: \"Ontem à noite, ele chegou\" / \"Ontem à noite ele chegou\".\nLonga Extensão (3 ou mais palavras): Vírgula OBRIGATÓRIA.\nExemplo: \"No primeiro dia do mês, realizou-se a prova\" (6 palavras -> vírgula obrigatória).\nRelações\nAlerta de prova: \nExemplo aplicado:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO emprego da vírgula antes da conjunção aditiva \"e\" organiza-se em cinco situações sintáticas rigorosas: duas proibições, duas facultatividades e apenas um caso de obrigatoriedade.\nExplicação consolidada\nCaso 1 — Enumeração simples de termos: PROIBIDA.Exemplo: Comprou arroz, feijão e carne. (Vedada vírgula antes do último \"e\").\nCaso 2 — Orações coordenadas aditivas com o MESMO sujeito: PROIBIDA.Exemplo: O candidato estudou muito e foi aprovado. (Sujeito único: o candidato; vírgula proibida).\nCaso 3 — Orações coordenadas aditivas com SUJEITOS DIFERENTES: FACULTATIVA.Exemplo: O professor ministrou a aula, e os alunos tomaram notas. (Sujeito 1: o professor; Sujeito 2: os alunos. A vírgula é facultativa estilisticamente para evitar ambiguidade; nunca é obrigatória).\nCaso 4 — Conjunção \"e\" com valor ADVERSATIVO (= mas) ou CONCLUSIVO (= portanto): FACULTATIVA (mesmo com sujeitos idênticos).Exemplo: Estudou dia e noite, e não conseguiu a vaga. (= mas não conseguiu; vírgula facultativa).\nCaso 5 — Polissíndeto (repetição estilística e enfática do conectivo): OBRIGATÓRIA.\nExemplo: E chora, e grita, e corre, e desespera-se. (Vírgula obrigatória antes de cada \"e\" repetido).\nRelações\nDica mnemônica: TIP-A08-G03-007\nRecomendação de redação discursiva: TIP-A08-G03-008\nAlerta crítico: \nAplicação: \nGlossário: TERM-A08-G03-007"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA resolução de itens do Cebraspe que indagam se a supressão de uma vírgula preexistente manteria a correção gramatical exige o enquadramento imediato da estrutura em um dos quatro casos canônicos de Vírgula Facultativa.\nExplicação consolidada\nQuando a questão pergunta se a vírgula \"pode ser suprimida sem prejuízo\", ela está perguntando se aquela vírgula é facultativa. Os quatro casos consolidados são:\nTermos e Orações Adverbiais na Ordem Direta: Posicionados ao final do período (após a oração principal ou verbo).Ex: Ligue-me amanhã. / Ligue-me, amanhã. | Avisem-me caso haja mudanças. / Avisem-me, caso haja mudanças.\nAdjunto Adverbial Curto Deslocado: Expressão circunstancial não oracional composta por até 2 palavras no início ou meio da oração.Ex: Pela manhã, ele saiu. / Pela manhã ele saiu.\nConjunção \"E\" entre Sujeitos Diferentes ou com Valor Adversativo/Conclusivo:Ex: A chuva cessou, e o sol reapareceu. / A chuva cessou e o sol reapareceu.\nOrações Adjetivas Explicativas em Contexto de Dupla Leitura:\nCasos em que o antecedente admite multiplicidade fática. A retirada da vírgula transforma a oração em restritiva: preserva a correção gramatical e a coerência, alterando apenas o sentido.\nRelações\nConsolida: , , , \nProtocolo operacional:"
         }
       ]
     },
@@ -435,7 +1070,9 @@
               "RULE-IP-A08-G03-001",
               "EXP-IP-A08-G03-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -548,7 +1185,9 @@
               "PROC-A08-G03-001",
               "EXP-IP-A08-G03-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -604,7 +1243,9 @@
               "PROC-A08-G03-002",
               "EXP-IP-A08-G03-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -700,7 +1341,9 @@
               "PROC-A08-G03-003",
               "EXP-IP-A08-G03-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -841,7 +1484,9 @@
               "PROC-A08-G03-004",
               "EXP-IP-A08-G03-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -925,7 +1570,9 @@
               "PROC-A08-G03-005",
               "EXP-IP-A08-G03-PROC-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1010,7 +1657,9 @@
               "CONTRAST-IP-A08-G03-001",
               "EXP-IP-A08-G03-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1081,7 +1730,9 @@
               "CONTRAST-IP-A08-G03-002",
               "EXP-IP-A08-G03-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1157,7 +1808,9 @@
               "CONTRAST-IP-A08-G03-003",
               "EXP-IP-A08-G03-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1223,7 +1876,9 @@
               "CONTRAST-IP-A08-G03-004",
               "EXP-IP-A08-G03-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1299,7 +1954,9 @@
               "CONTRAST-IP-A08-G03-005",
               "EXP-IP-A08-G03-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1352,7 +2009,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-001",
               "EXP-IP-A08-G03-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1401,7 +2060,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-002",
               "EXP-IP-A08-G03-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1456,7 +2117,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-003",
               "EXP-IP-A08-G03-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1511,7 +2174,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-004",
               "EXP-IP-A08-G03-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1566,7 +2231,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-005",
               "EXP-IP-A08-G03-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1621,7 +2288,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-006",
               "EXP-IP-A08-G03-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1676,7 +2345,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-007",
               "EXP-IP-A08-G03-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1731,7 +2402,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-008",
               "EXP-IP-A08-G03-064"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1786,7 +2459,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-009",
               "EXP-IP-A08-G03-065"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1841,7 +2516,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-010",
               "EXP-IP-A08-G03-066"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1896,7 +2573,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-011",
               "EXP-IP-A08-G03-067"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1951,7 +2630,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-012",
               "EXP-IP-A08-G03-068"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2006,7 +2687,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-013",
               "EXP-IP-A08-G03-069"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2061,7 +2744,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-014",
               "EXP-IP-A08-G03-070"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2116,7 +2801,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-015",
               "EXP-IP-A08-G03-071"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2171,7 +2858,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-016",
               "EXP-IP-A08-G03-072"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2226,7 +2915,9 @@
               "WORKED_EXAMPLE-IP-A08-G03-017",
               "EXP-IP-A08-G03-073"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2272,30 +2963,121 @@
               "WARN-A08-G03-008",
               "EXP-IP-A08-G03-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Identificação e Estruturas Sintáticas da Oração Subordinada Adjetiva**: Definição ou ideia central\nA Oração Subordinada Adjetiva é aquela que desempenha função sintática equivalente à de um adjetivo, referindo-se diretamente a um substantivo (ou termo substantivado) antecedente situado na oração principal.\nExplicação consolidada\nPara comprovar que uma oração é adjetiva, aplica-se o \"teste da seta\": verifica-se se toda a estrutura oracional qualifica, restringe ou explica um substantivo que a precede. As orações adjetivas manifestam-se sob três configurações sintáticas:\nDesenvolvida Explícita: Apresenta conectivo relativo explícito (que, o qual, a qual, cujo, onde). O pronome relativo substitui o antecedente e estabelece a conexão sintática.\nDesenvolvida Implícita: O pronome relativo ou o verbo de ligação encontra-se elidido/subentendido no contexto comunicativo (ex.: \"João, [que está] feliz com a sua prova, comemorou\").\nReduzida: Não apresenta pronome relativo e traz o verbo principal flexionado em uma forma nominal:\nGerúndio (-ndo);\nInfinitivo (-ar, -er, -ir);\nParticípio (-do, -to).\nA validação de uma oração reduzida adjetiva é realizada pela \"prova real\": descompacta-se a estrutura substituindo a forma nominal por Pronome Relativo + Verbo Flexionado (ex.: \"aluno dedicando-se\" = \"aluno que se dedica\").\nCritérios de reconhecimento\nA oração precisa apontar para um substantivo antecedente (diferenciando-se das orações substantivas, que se acoplam a verbos transitivos ou nomes exigindo complementação e admitem substituição por \"isso\").\nA forma reduzida deve preservar carga e regência verbais (admitindo complementos verbais ou adjuntos adverbiais).\nExemplos e contraexemplos\nDesenvolvida Explícita: O aluno [que é dedicado] atinge seu objetivo.\nDesenvolvida com Pronome Implícito: O aluno [dedicado] atinge seu objetivo. / João, [feliz com o resultado], sorriu.\nReduzida de Gerúndio: O aluno [dedicando-se aos estudos] atinge seu objetivo. (= que se dedica)\nReduzida de Particípio: A iniciativa, [inserida no programa], reflete avanços. (= que está inserida)\nContraexemplo (Oração Substantiva): Quero [que você estude]. (Quero isso -> Oração Subordinada Substantiva Objetiva Direta; não se refere a substantivo antecedente qualificando-o).\nExceções ou limites\nNão confundir adjetivo simples ou sintagma adjetival com oração reduzida de particípio. A oração reduzida retém transitividade e dinâmica oracional verbal.\nRelações\nFundamenta: , \nOperacionalizado por: \nTerminologia associada: TERM-A08-G03-001, TERM-A08-G03-002, TERM-A08-G03-003",
-            "**Semântica da Pontuação em Orações Adjetivas: \"Somente\" vs. \"Só Há Um\"**: Definição ou ideia central\nA presença ou ausência de vírgulas nas orações subordinadas adjetivas é consequência gráfica de uma escolha semântica preexistente, e não sua causa formal. A distinção entre restritiva e explicativa assenta-se na pressuposição sobre o número de referentes no universo do discurso.\nExplicação consolidada\nOração Subordinada Adjetiva Restritiva (SEM VÍRGULAS):\nChave Semântica: \"SOMENTE\".\nPressuposto Contextual: O conjunto de referência possui MAIS DE UM elemento. A oração é empregada para circunscrever/restringir a declaração a um subconjunto específico, excluindo os demais elementos do mesmo grupo.\nOração Subordinada Adjetiva Explicativa (COM VÍRGULAS / ISOLADA):\nChave Semântica: \"SÓ HÁ UM\" (no contexto) ou TOTALIDADE DA ESPÉCIE.\nPressuposto Contextual: O antecedente abrange um elemento único ou a universalidade da categoria referida. A oração não restringe; apenas acrescenta uma informação explicativa, esclarecedora ou acessória aplicável a todos os elementos.\nCritérios de reconhecimento\nO candidato deve avaliar o referente aplicando o teste:\nNo contexto comunicativo, existem outros elementos daquele grupo aos quais a oração não se aplica? Se SIM -> Oração Restritiva (sem vírgulas).\nO elemento é único no contexto ou a propriedade é universal para todos os indivíduos? Se SIM -> Oração Explicativa (entre vírgulas).\nExemplos e contraexemplos\nRestritiva: O aluno que terminou a prova pode sair. (Significado: existem múltiplos alunos; somente aqueles que terminaram a prova têm permissão para sair).\nExplicativa: O aluno, que terminou a prova, pode sair. (Significado: há apenas um aluno naquele contexto comunicativo; explica-se que ele concluiu a avaliação e declara-se que ele pode sair).\nRelações\nContrasta: Restrição vs. Explicação\nMnemônico associado: TIP-A08-G03-001\nCitado em: QUOTE-A08-G03-001, QUOTE-A08-G03-002",
-            "**Tipologia de Questões em Orações Adjetivas: Dupla Leitura (80%) vs. Leitura Única (20%)**: Definição ou ideia central\nAs questões de concurso sobre a pontuação das orações adjetivas dividem-se em dois modelos: o modelo padrão de Dupla Leitura (cerca de 80% das provas), em que as vírgulas são facultativas e sua alteração preserva a correção gramatical, e o modelo avançado de Leitura Única Obrigatória (cerca de 20% das provas de alto nível, como Cebraspe e FGV), em que o contexto ou a lógica de mundo impõem uma única pontuação possível.\nExplicação consolidada\nCenário 1 — Frases de Dupla Leitura (Vírgulas Facultativas / Opcionais — ~80% dos casos):\nO substantivo antecedente admite perfeitamente a existência de subgrupos ou a consideração do grupo como um todo.\nEfeito da Inserção/Supressão de Vírgulas: MANTÉM a correção gramatical e a coerência global, mas ALTERA o sentido / relações sintáticas.\nExemplo: \"Os meninos que estão fantasiados receberão prêmios\" (sem vírgulas = restritiva / somente os fantasiados) vs. \"Os meninos, que estão fantasiados, receberão prêmios\" (com vírgulas = explicativa / todos os meninos estão fantasiados).\nCenário 2 — Frases de Leitura Única Obrigatória (~20% dos casos — Alto Nível):\nA relação contextual ou o conhecimento enciclopédico não admitem multiplicidade ou restrição. A pontuação é fixa.\nCaso 2A: Só Pode Ser Explicativa (Exige Vírgulas):\nOcorre quando o antecedente é um ser único no universo, nome próprio, ou quando a propriedade adjetiva é universal para toda a espécie biológica/categoria.\nEfeito de retirar as vírgulas: Cria uma restrição absurda/impossível no mundo real -> GERA ERRO GRAMATICAL / INCOERÊNCIA.\nExemplos: \"O homem, que é mortal, tem alma imortal\" (não existem homens imortais); \"O Tejo, que é rio famoso, passa em Lisboa\" (só há um rio Tejo); \"A galinha, que põe ovos, merece respeito\" (pôr ovos é inerente à espécie); \"Sua mãe, que lhe pede não mentir nunca...\" (cada indivíduo tem apenas uma mãe no contexto).\nCaso 2B: Só Pode Ser Restritiva (Proíbe Vírgulas):\nOcorre quando o texto prévio já estabeleceu categoricamente a existência de múltiplos elementos e a necessidade de distingui-los.\nEfeito de inserir vírgulas: Afirma falsamente que há apenas um elemento, contradizendo o contexto fático imediato -> GERA ERRO GRAMATICAL / INCOERÊNCIA.\nExemplos: \"Tenho dois irmãos. O irmão que é primogênito chegou\" (o texto declarou ter 2 irmãos; pontuar entre vírgulas diria que só existe 1 irmão); \"Tenho três processos. O processo que é contra a União será julgado\".\nRelações\nAplicações práticas: , , , , \nAlertas críticos: ,",
-            "**Pontuação de Expressões Explicativas e Retificativas**: Definição ou ideia central\nExpressões de caráter explicativo, retificativo, conclusivo ou exemplificativo — tais como \"ou seja\", \"isto é\", \"ou melhor\", \"por exemplo\", \"a saber\" — devem vir obrigatoriamente isoladas por vírgulas (ou outro sinal de pontuação equivalente). Sua supressão constitui infração gramatical.\nExplicação consolidada\nHá uma distinção semântica intrínseca entre os dois tipos de expressão:\nExplicar: Consiste em manter/reiterar a declaração antecedente, apresentando-a sob outra formulação ou esclarecendo seu alcance sem substituir o conteúdo (\"A corrupção era identificada com vícios, ou seja, tudo aquilo que causa caos social\").\nRetificar: Consiste em corrigir, emendar ou substituir uma informação inexata ou incompleta anteriormente proferida (\"Chegamos às dez horas, ou melhor, às dez e meia\").\nIndependentemente de a expressão atuar como explicação ou retificação, a norma culta impõe seu isolamento por pontuação. Portanto, itens de concurso que sugerem a supressão dessas vírgulas sob a alegação de \"manter a correção gramatical\" estão incorretos.\nExemplos e contraexemplos\nCorreto: A corrupção gerava desordem, ou seja, provocava instabilidade social.\nIncorreto: A corrupção gerava desordem ou seja provocava instabilidade social. (Supressão das vírgulas gera erro gramatical).Glossário: TERM-A08-G03-004",
-            "**Vírgula Vicária (Elipse Verbal) vs. Aposto Explicativo**: Definição ou ideia central\nA vírgula vicária (ou vírgula de elipse) é aquela obrigatoriamente empregada para marcar a omissão de uma forma verbal já expressa anteriormente no período (zeugma/elipse verbal). Ela possui função anafórica (\"aponta\" de volta para o verbo elidido) e não se confunde com o aposto explicativo.\nExplicação consolidada\nMecanismo da Vírgula Vicária:\nA palavra \"vicária\" vincula-se etimologicamente à ideia de substituição (aquele que ocupa o lugar de outrem).\nA vírgula substitui a forma verbal omitida para evitar repetições estilisticamente deselegantes e assegurar a articulação sintática.\nExemplo 1: \"O preconceito é uma opinião; a discriminação, [é] um comportamento...\" (A vírgula substitui a forma verbal \"é\").\nExemplo 2: \"...na proporção em que seus temas forem captados e suas tarefas, [forem] resolvidas.\" (A vírgula substitui \"forem\").\nDistinção Crítica: Vírgula Vicária versus Aposto Explicativo:\nO Aposto Explicativo é uma função sintática desempenhada exclusivamente por um substantivo (ou pronome/termo substantivado) que se junta a outro substantivo para explicá-lo (\"Machado de Assis, grande escritor brasileiro, fundou a Academia\" -> escritor é substantivo).\nNa Vírgula Vicária, o termo posposto à vírgula atua como adjetivo, particípio ou predicativo vinculado ao verbo elidido (\"tarefas, resolvidas\" -> resolvidas é particípio/adjetivo concordando com tarefas). Por não ser substantivo, é gramaticalmente impossível classificar esse segmento como aposto.\nCritérios de reconhecimento\nMantra de identificação: \"Aposto é caso de substantivo!\". Se o termo delimitado pela vírgula for particípio ou adjetivo atrelado a uma ação implícita, trata-se de vírgula vicária por elipse verbal.\nRelações\nAlerta essencial: \nMnemônico associado: TIP-A08-G03-003\nExercícios de aplicação: ,",
-            "**Proibição de Quebra da Ordem Canônica SVC (Sujeito-Verbo-Complemento)**: Definição ou ideia central\nÉ terminantemente proibido o emprego de vírgula que interrompa os nexos sintáticos essenciais do esquema canônico Sujeito — Verbo — Complemento (SVC). Não se separa por vírgula o sujeito de seu predicado verbal, nem o verbo transitivo de seus complementos diretos ou indiretos.\nExplicação consolidada\nA vedação manifesta-se em três cenários frequentes de armadilhas de concurso:\nSujeito Composto em Enumeração: As vírgulas separam os núcleos coordenados entre si, mas é proibido inserir vírgula após o último núcleo imediatamente antes do verbo (\"As discussões, os relatórios, as publicações apontaram...\" -> colocar vírgula após publicações quebra a ligação com apontaram).\nSujeito Complexo / Extenso / Oracional: A extensão física ou a presença de orações adjetivas internas não autoriza o uso de vírgula entre o fim do bloco do sujeito e o verbo (\"[O precursor do que viria a ser um jornal] foi o romano...\" -> vedada vírgula após jornal).\nVerbo Transitivo e Complemento Oracional: É proibido inserir vírgula entre o verbo transitivo e sua Oração Subordinada Substantiva Objetiva Direta introduzida por que (\"...saibam [que essa é a única emergência]...\" -> saibam isso; vedada vírgula após saibam).\nCritérios de reconhecimento\nExecuta-se o teste de integridade sintática:\nAcha-se o verbo principal e pergunta-se Quem? para isolar o bloco total do sujeito. Não pode haver vírgula solta entre o sujeito e o verbo.\nPergunta-se O quê? ao verbo. Se a oração seguinte puder ser substituída por \"isso\", trata-se de objeto direto oracional, sendo vedada a vírgula separadora.\nExemplos e contraexemplos\nIncorreto (Enumeração): Os alunos, os professores, os coordenadores, participaram. (Vírgula proibida após coordenadores).\nIncorreto (Sujeito Extenso): A necessidade de reformas estruturais urgentes no país, foi debatida. (Vírgula proibida após país).\nIncorreto (Objeto Oracional): O diretor afirmou, que todos seriam promovidos. (Vírgula proibida após afirmou).\nRelações\nDica associada: TIP-A08-G03-005\nPegadinha associada: \nExemplos de prova: , ,",
-            "**Pontuação das Orações Subordinadas Adverbiais e Mnemônico 6C + FTP**: Definição ou ideia central\nA pontuação das orações subordinadas adverbiais depende exclusivamente de sua posição no período composto: na ordem direta (ao final), a vírgula é facultativa; na ordem deslocada (antecipada ou intercalada), a vírgula é obrigatória (independentemente da extensão da oração).\nExplicação consolidada\nOrdem Direta ([Oração Principal] + [Oração Adverbial]):\nA oração subordinada posiciona-se ao término do período.\nO emprego da vírgula antes do conectivo subordinativo é facultativo.\nExemplo: \"...potencial para ajudar alunos e professores, caso seja integrada à prática\" (Oração adverbial condicional no final -> vírgula facultativa).\nOrdem Deslocada / Inversa ([Oração Adverbial Antecipada], [Oração Principal] ou intercalada):\nA oração adverbial antecede a principal ou surge encaixada no seu interior.\nPor possuir estrutura oracional completa (com verbo próprio), a vírgula de isolamento é estritamente obrigatória.\nExemplo: \"[Embora alguém possa imaginar cérebros artificiais], hoje toda a ação...\" (Oração concessiva antecipada -> vírgula obrigatória).\nMnemônico Circunstancial \"6C + FTP\":\nAgrupa as 9 circunstâncias e conjunções adverbiais:\n6 C's: Causal (porque, visto que), Condicional (se, caso), Comparativa (como, tal qual), Conformativa (conforme, segundo), Concessiva (embora, ainda que), Consecutiva (tanto que, de modo que).\nF-T-P: Final (a fim de que, para que), Temporal (quando, enquanto, logo que), Proporcional (à proporção que, à medida que).\nRelações\nMnemônico: TIP-A08-G03-004\nExemplos práticos: , \nGlossário: TERM-A08-G03-005",
-            "**Pontuação do Aposto Explicativo, Vírgula de Dupla Função e Alternância de Sinais**: Definição ou ideia central\nO aposto explicativo admite isolamento indiferente por vírgulas, travessões ou parênteses. Quando o fechamento de um aposto coincide com o término de outra estrutura que também requer pontuação (como uma oração adverbial antecipada), emprega-se uma única vírgula, a qual acumula as duas funções sintáticas (fenômeno da vírgula de dupla função / sobrecarregada).\nExplicação consolidada\nMecânica da Vírgula de Dupla Função:\nNo período: \"Quando o suporte vai para o papel — suportes que criam possibilidade —, a própria elaboração...\"\nO trecho entre travessões é aposto explicativo (núcleo substantivo suportes).\nO período abre com oração adverbial temporal antecipada (Quando...), que exige vírgula após seu término.\nAo substituir os travessões por vírgulas, não se duplicam símbolos (,,); a vírgula posposta cumpre simultaneamente o papel de fechar o aposto e fechar a oração adverbial antecipada.\nAlternância de Sinais e Nuances Estilísticas no Cebraspe:\nTravessões: conferem destaque visual / ênfase expressiva.\nParênteses: conferem atenuação / rebaixamento de ênfase.\nVírgulas: possuem neutralidade estilística.\nJurisprudência de Prova: O Cebraspe julga que variações no grau de ênfase não alteram a coerência nem prejudicam o sentido essencial. Propostas de troca entre esses sinais mantêm a correção gramatical e a coerência textual.\nRelações\nAlerta associado: \nDica de prova: TIP-A08-G03-006\nAplicação: \nGlossário: TERM-A08-G03-006",
-            "**Pontuação do Adjunto Adverbial Deslocado: Critério Numérico de Extensão**: Definição ou ideia central\nO adjunto adverbial antecipado ou intercalado (deslocado) submete-se ao critério de extensão textual: se for de curta extensão, a vírgula é facultativa; se for de longa extensão, a vírgula é obrigatória.\nExplicação consolidada\nA jurisprudência pacificada em concursos públicos (notadamente pelo Cebraspe) adota o critério quantitativo objetivo de contagem de palavras:\nCurta Extensão (até 2 palavras): Vírgula FACULTATIVA.\nExemplo: \"Em Alagoas, os crimes caíram...\" (Em + Alagoas = 2 palavras -> vírgula facultativa; suprimi-la não causa prejuízo gramatical).\nExemplo: \"Ontem à noite, ele chegou\" / \"Ontem à noite ele chegou\".\nLonga Extensão (3 ou mais palavras): Vírgula OBRIGATÓRIA.\nExemplo: \"No primeiro dia do mês, realizou-se a prova\" (6 palavras -> vírgula obrigatória).\nRelações\nAlerta de prova: \nExemplo aplicado:",
-            "**Casuística Completa do Uso da Vírgula Antes da Conjunção Aditiva \"E\"**: Definição ou ideia central\nO emprego da vírgula antes da conjunção aditiva \"e\" organiza-se em cinco situações sintáticas rigorosas: duas proibições, duas facultatividades e apenas um caso de obrigatoriedade.\nExplicação consolidada\nCaso 1 — Enumeração simples de termos: PROIBIDA.Exemplo: Comprou arroz, feijão e carne. (Vedada vírgula antes do último \"e\").\nCaso 2 — Orações coordenadas aditivas com o MESMO sujeito: PROIBIDA.Exemplo: O candidato estudou muito e foi aprovado. (Sujeito único: o candidato; vírgula proibida).\nCaso 3 — Orações coordenadas aditivas com SUJEITOS DIFERENTES: FACULTATIVA.Exemplo: O professor ministrou a aula, e os alunos tomaram notas. (Sujeito 1: o professor; Sujeito 2: os alunos. A vírgula é facultativa estilisticamente para evitar ambiguidade; nunca é obrigatória).\nCaso 4 — Conjunção \"e\" com valor ADVERSATIVO (= mas) ou CONCLUSIVO (= portanto): FACULTATIVA (mesmo com sujeitos idênticos).Exemplo: Estudou dia e noite, e não conseguiu a vaga. (= mas não conseguiu; vírgula facultativa).\nCaso 5 — Polissíndeto (repetição estilística e enfática do conectivo): OBRIGATÓRIA.\nExemplo: E chora, e grita, e corre, e desespera-se. (Vírgula obrigatória antes de cada \"e\" repetido).\nRelações\nDica mnemônica: TIP-A08-G03-007\nRecomendação de redação discursiva: TIP-A08-G03-008\nAlerta crítico: \nAplicação: \nGlossário: TERM-A08-G03-007",
-            "**Matriz Consolidada de Vírgula Facultativa e Resolução de Questões de Supressão**: Definição ou ideia central\nA resolução de itens do Cebraspe que indagam se a supressão de uma vírgula preexistente manteria a correção gramatical exige o enquadramento imediato da estrutura em um dos quatro casos canônicos de Vírgula Facultativa.\nExplicação consolidada\nQuando a questão pergunta se a vírgula \"pode ser suprimida sem prejuízo\", ela está perguntando se aquela vírgula é facultativa. Os quatro casos consolidados são:\nTermos e Orações Adverbiais na Ordem Direta: Posicionados ao final do período (após a oração principal ou verbo).Ex: Ligue-me amanhã. / Ligue-me, amanhã. | Avisem-me caso haja mudanças. / Avisem-me, caso haja mudanças.\nAdjunto Adverbial Curto Deslocado: Expressão circunstancial não oracional composta por até 2 palavras no início ou meio da oração.Ex: Pela manhã, ele saiu. / Pela manhã ele saiu.\nConjunção \"E\" entre Sujeitos Diferentes ou com Valor Adversativo/Conclusivo:Ex: A chuva cessou, e o sol reapareceu. / A chuva cessou e o sol reapareceu.\nOrações Adjetivas Explicativas em Contexto de Dupla Leitura:\nCasos em que o antecedente admite multiplicidade fática. A retirada da vírgula transforma a oração em restritiva: preserva a correção gramatical e a coerência, alterando apenas o sentido.\nRelações\nConsolida: , , , \nProtocolo operacional:"
-          ]
+          "term": "Identificação e Estruturas Sintáticas da Oração Subordinada Adjetiva",
+          "shortDefinition": "A Oração Subordinada Adjetiva é aquela que desempenha função sintática equivalente à de um adjetivo, referindo-se diretamente a um substantivo (ou termo substantivado) antecedente situado na oração principal.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-01"
+          },
+          "operationalUse": "Para comprovar que uma oração é adjetiva, aplica-se o \"teste da seta\": verifica-se se toda a estrutura oracional qualifica, restringe ou explica um substantivo que a precede."
+        },
+        {
+          "term": "Semântica da Pontuação em Orações Adjetivas: \"Somente\" vs. \"Só Há Um\"",
+          "shortDefinition": "A presença ou ausência de vírgulas nas orações subordinadas adjetivas é consequência gráfica de uma escolha semântica preexistente, e não sua causa formal. A distinção entre restritiva e explicativa assenta-se na pressuposição sobre o número de referentes no universo do discurso.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-02"
+          }
+        },
+        {
+          "term": "Tipologia de Questões em Orações Adjetivas: Dupla Leitura (80%) vs. Leitura Única (20%)",
+          "shortDefinition": "As questões de concurso sobre a pontuação das orações adjetivas dividem-se em dois modelos: o modelo padrão de Dupla Leitura (cerca de 80% das provas), em que as vírgulas são facultativas e sua alteração preserva a correção gramatical, e o modelo avançado de Leitura Única Obrigatória (cerca de 20% das provas de alto nível, como Cebraspe e FGV), em que o contexto ou a lógica de mundo impõem uma única pontuação possível.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-03"
+          }
+        },
+        {
+          "term": "Pontuação de Expressões Explicativas e Retificativas",
+          "shortDefinition": "Expressões de caráter explicativo, retificativo, conclusivo ou exemplificativo — tais como \"ou seja\", \"isto é\", \"ou melhor\", \"por exemplo\", \"a saber\" — devem vir obrigatoriamente isoladas por vírgulas (ou outro sinal de pontuação equivalente). Sua supressão constitui infração gramatical.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-04"
+          },
+          "operationalUse": "Há uma distinção semântica intrínseca entre os dois tipos de expressão:"
+        },
+        {
+          "term": "Vírgula Vicária (Elipse Verbal) vs. Aposto Explicativo",
+          "shortDefinition": "A vírgula vicária (ou vírgula de elipse) é aquela obrigatoriamente empregada para marcar a omissão de uma forma verbal já expressa anteriormente no período (zeugma/elipse verbal). Ela possui função anafórica (\"aponta\" de volta para o verbo elidido) e não se confunde com o aposto explicativo.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-05"
+          }
+        },
+        {
+          "term": "Proibição de Quebra da Ordem Canônica SVC (Sujeito-Verbo-Complemento)",
+          "shortDefinition": "É terminantemente proibido o emprego de vírgula que interrompa os nexos sintáticos essenciais do esquema canônico Sujeito — Verbo — Complemento (SVC). Não se separa por vírgula o sujeito de seu predicado verbal, nem o verbo transitivo de seus complementos diretos ou indiretos.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-06"
+          },
+          "operationalUse": "A vedação manifesta-se em três cenários frequentes de armadilhas de concurso:"
+        },
+        {
+          "term": "Pontuação das Orações Subordinadas Adverbiais e Mnemônico 6C + FTP",
+          "shortDefinition": "A pontuação das orações subordinadas adverbiais depende exclusivamente de sua posição no período composto: na ordem direta (ao final), a vírgula é facultativa; na ordem deslocada (antecipada ou intercalada), a vírgula é obrigatória (independentemente da extensão da oração).",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-07"
+          },
+          "operationalUse": "Agrupa as 9 circunstâncias e conjunções adverbiais:"
+        },
+        {
+          "term": "Pontuação do Aposto Explicativo, Vírgula de Dupla Função e Alternância de Sinais",
+          "shortDefinition": "O aposto explicativo admite isolamento indiferente por vírgulas, travessões ou parênteses. Quando o fechamento de um aposto coincide com o término de outra estrutura que também requer pontuação (como uma oração adverbial antecipada), emprega-se uma única vírgula, a qual acumula as duas funções sintáticas (fenômeno da vírgula de dupla função / sobrecarregada).",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-08"
+          }
+        },
+        {
+          "term": "Pontuação do Adjunto Adverbial Deslocado: Critério Numérico de Extensão",
+          "shortDefinition": "O adjunto adverbial antecipado ou intercalado (deslocado) submete-se ao critério de extensão textual: se for de curta extensão, a vírgula é facultativa; se for de longa extensão, a vírgula é obrigatória.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-09"
+          },
+          "operationalUse": "A jurisprudência pacificada em concursos públicos (notadamente pelo Cebraspe) adota o critério quantitativo objetivo de contagem de palavras:"
+        },
+        {
+          "term": "Casuística Completa do Uso da Vírgula Antes da Conjunção Aditiva \"E\"",
+          "shortDefinition": "O emprego da vírgula antes da conjunção aditiva \"e\" organiza-se em cinco situações sintáticas rigorosas: duas proibições, duas facultatividades e apenas um caso de obrigatoriedade.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-10"
+          },
+          "operationalUse": "Exemplo: E chora, e grita, e corre, e desespera-se. (Vírgula obrigatória antes de cada \"e\" repetido)."
+        },
+        {
+          "term": "Matriz Consolidada de Vírgula Facultativa e Resolução de Questões de Supressão",
+          "shortDefinition": "A resolução de itens do Cebraspe que indagam se a supressão de uma vírgula preexistente manteria a correção gramatical exige o enquadramento imediato da estrutura em um dos quatro casos canônicos de Vírgula Facultativa.",
+          "detailTarget": {
+            "unitId": "IP-A08-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A08-G03-11"
+          },
+          "operationalUse": "Quando a questão pergunta se a vírgula \"pode ser suprimida sem prejuízo\", ela está perguntando se aquela vírgula é facultativa."
         }
       ]
     },

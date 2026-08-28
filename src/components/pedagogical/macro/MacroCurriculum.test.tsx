@@ -5,6 +5,7 @@ import type { PedagogicalMacroIndexEntry } from '../../../types/pedagogicalMacro
 import {
   evaluateMacroTransition,
   MacroChapterNavigator,
+  MacroMasterySummary,
   selectActionableAdaptiveRequirements,
 } from './MacroCurriculum';
 
@@ -67,6 +68,32 @@ const retained: CompetencyMastery = {
 };
 
 describe('macro curriculum transitions', () => {
+  it('resume a prática em linguagem direta e oculta estados zerados', () => {
+    const onPracticeCompetency = vi.fn();
+    render(
+      <MacroMasterySummary
+        entry={entry}
+        masteryByCompetency={{
+          'COMP-A03-G04-01': {
+            ...retained,
+            learningState: 'needs_review',
+            level: 'developing',
+            score: 0.4,
+          },
+        }}
+        loading={false}
+        onPracticeCompetency={onPracticeCompetency}
+      />,
+    );
+
+    expect(screen.getByText('ainda não praticadas').parentElement).toHaveTextContent('2');
+    expect(screen.getByText('para revisar').parentElement).toHaveTextContent('1');
+    expect(screen.queryByText(/transferência imediata/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/retenção confirmada/i)).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /revisar agora/i }));
+    expect(onPracticeCompetency).toHaveBeenCalledWith('COMP-A03-G04-01');
+  });
+
   it('usa evidência PBL, e não leitura, para o checkpoint', () => {
     const withoutEvidence = evaluateMacroTransition(
       entry,

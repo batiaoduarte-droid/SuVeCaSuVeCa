@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A07-G08",
     "lessonId": "A07",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A07-G08",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A07-G08-001"
+          }
         }
       ]
     },
@@ -98,8 +103,100 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nUma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa.\nExplicação consolidada\nNo português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:\nEstrutura Reduzida: Apresenta economia morfossintática pela ausência de conjunção ou pronome relativo. O predicado é estruturado por:\nInfinitivo: pessoal ou impessoal (terminações -ar, -er, -ir);\nGerúndio: terminação -ndo;\nParticípio: terminações regulares -do, -da ou formas irregulares.\nNota: A presença de preposição funcional introdutória (a, de, por, para, ao, sem, apesar de) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo.\nEstrutura Desenvolvida: Apresenta obrigatoriamente um conector gramatical subordinativo e desdobra o verbo nominal em uma forma verbal finita conjugada.\nCritérios de reconhecimento ou aplicação\nVerbo no infinitivo/gerúndio/particípio sem conjunção subordinativa ou pronome relativo $\\rightarrow$ Oração Reduzida.\nConectivo explícito presente (que, se, quando, embora, visto que, etc.) + verbo conjugado $\\rightarrow$ Oração Desenvolvida.\nExemplos e contraexemplos\nReduzida: \"É urgente reconhecer a necessidade...\" (sem conectivo, infinitivo).\nDesenvolvida: \"É urgente que se reconheça a necessidade...\" (com conjunção integrante \"que\" e presente do subjuntivo).\nContraexemplo (Falsa Desenvolvida): \"É urgente o reconhecimento da necessidade...\" (nominalização/sintagma nominal, não é oração desenvolvida).\nRelações\nExpande para: e .a ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Uma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Estrutura Reduzida: Apresenta economia morfossintática pela ausência de conjunção ou pronome relativo. O predicado é estruturado por:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Infinitivo: pessoal ou impessoal (terminações -ar, -er, -ir);",
+                "Gerúndio: terminação -ndo;",
+                "Particípio: terminações regulares -do, -da ou formas irregulares.",
+                "Nota: A presença de preposição funcional introdutória (a, de, por, para, ao, sem, apesar de) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Estrutura Desenvolvida: Apresenta obrigatoriamente um conector gramatical subordinativo e desdobra o verbo nominal em uma forma verbal finita conjugada."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbo no infinitivo/gerúndio/particípio sem conjunção subordinativa ou pronome relativo $\\rightarrow$ Oração Reduzida.",
+                "Conectivo explícito presente (que, se, quando, embora, visto que, etc.) + verbo conjugado $\\rightarrow$ Oração Desenvolvida."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Reduzida: \"É urgente reconhecer a necessidade...\" (sem conectivo, infinitivo).",
+                "Desenvolvida: \"É urgente que se reconheça a necessidade...\" (com conjunção integrante \"que\" e presente do subjuntivo).",
+                "Contraexemplo (Falsa Desenvolvida): \"É urgente o reconhecimento da necessidade...\" (nominalização/sintagma nominal, não é oração desenvolvida)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A07-G08-002",
+                  "targetTitle": "Algoritmo Analítico dos Seis Passos para Desenvolvimento",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A07-G08-003",
+                  "targetTitle": "Algoritmo Simplificado de Três Passos para Resolução Rápida",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G08-001",
+                  "targetTitle": "Exercício 1: Oração Substantiva Subjetiva com Sujeito Indeterminado",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +209,84 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação.\nExplicação consolidada\nOs seis passos operacionais estruturam-se na seguinte sequência:\nPasso 1 — Contar os verbos: Identificar cada verbo individual e locução verbal. O total de unidades verbais equivale ao número exato de orações do período.\nPasso 2 — Inserir a barra delimitadora: Isolar visualmente a oração reduzida inserindo um traço vertical imediatamente antes da forma nominal ou da preposição funcional que a rege.\nPasso 3 — Diagnosticar a natureza sintática:\nSubstantiva: se a oração puder ser integralmente substituída pelo pronome demonstrativo \"ISSO\" (disso, nisso, a isso).\nAdjetiva: se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente (\"manda a seta\").\nAdverbial: se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.).\nPasso 4 — Inserir o conectivo adequado:\nSubstantiva $\\rightarrow$ Conjunção Integrante (C.I.): que (ou se).\nAdjetiva $\\rightarrow$ Pronome Relativo (P.R.): que (o qual, a qual).\nAdverbial $\\rightarrow$ Conjunção subordinativa adverbial condizente com a circunstância apurada.\nPasso 5 — Desnominalizar e conjugar o verbo: Flexionar o verbo considerando obrigatoriamente a correlação com o \"verbo amigo\" e a manutenção estrita do sujeito.\nPasso 6 — Classificar a oração reduzida: Atribuir a nomenclatura sintática oficial completa da oração original.\nRelações\nCondensado por: (Método Simplificado de 3 Passos).\nDetalhado em: (Princípios do Passo 5)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os seis passos operacionais estruturam-se na seguinte sequência:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 — Contar os verbos: Identificar cada verbo individual e locução verbal. O total de unidades verbais equivale ao número exato de orações do período.",
+                "Passo 2 — Inserir a barra delimitadora: Isolar visualmente a oração reduzida inserindo um traço vertical imediatamente antes da forma nominal ou da preposição funcional que a rege.",
+                "Passo 3 — Diagnosticar a natureza sintática:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Substantiva: se a oração puder ser integralmente substituída pelo pronome demonstrativo \"ISSO\" (disso, nisso, a isso).",
+                "Adjetiva: se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente (\"manda a seta\").",
+                "Adverbial: se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 4 — Inserir o conectivo adequado:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Substantiva $\\rightarrow$ Conjunção Integrante (C.I.): que (ou se).",
+                "Adjetiva $\\rightarrow$ Pronome Relativo (P.R.): que (o qual, a qual).",
+                "Adverbial $\\rightarrow$ Conjunção subordinativa adverbial condizente com a circunstância apurada."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 5 — Desnominalizar e conjugar o verbo: Flexionar o verbo considerando obrigatoriamente a correlação com o \"verbo amigo\" e a manutenção estrita do sujeito.",
+                "Passo 6 — Classificar a oração reduzida: Atribuir a nomenclatura sintática oficial completa da oração original."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A07-G08-003",
+                  "targetTitle": "Algoritmo Simplificado de Três Passos para Resolução Rápida",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A07-G08-004",
+                  "targetTitle": "Princípios de Flexão Verbal: Correlação Temporal e Preservação do Sujeito",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +299,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nVersão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo (\"sem rodinhas\") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares.\nExplicação consolidada\nPasso 1 — Diagnóstico Categorial: Indagar se a oração é substantiva (troca por \"isso\"), adjetiva (seta no substantivo) ou adverbial (circunstância lógica).\nPasso 2 — Acoplamento do Conector: Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada (quando, embora, visto que, etc.).\nPasso 3 — Desdobramento e Flexão Verbal: Retirar a forma nominal e flexionar o verbo em modo, tempo, número e pessoa, mantendo a concordância com o sujeito da subordinada e a harmonia com o verbo da oração regente.\nRelações\nSubstitui operacionalmente: .a ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Versão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo (\"sem rodinhas\") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 — Diagnóstico Categorial: Indagar se a oração é substantiva (troca por \"isso\"), adjetiva (seta no substantivo) ou adverbial (circunstância lógica).",
+                "Passo 2 — Acoplamento do Conector: Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada (quando, embora, visto que, etc.).",
+                "Passo 3 — Desdobramento e Flexão Verbal: Retirar a forma nominal e flexionar o verbo em modo, tempo, número e pessoa, mantendo a concordância com o sujeito da subordinada e a harmonia com o verbo da oração regente."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A07-G08-002",
+                  "targetTitle": "Algoritmo Analítico dos Seis Passos para Desenvolvimento",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G08-007",
+                  "targetTitle": "Exercício 7: Oração Substantiva Objetiva Direta com Pronome Oblíquo",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +352,74 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o \"verbo amigo\") e o eixo morfossintático-pessoal (preservação inalterada do sujeito).\nExplicação consolidada\nEixo Temporal (O \"Verbo Amigo\"):\nSe o verbo regente estiver no Presente do Indicativo, a oração desenvolvida flexiona-se no Presente (Presente do Subjuntivo ou do Indicativo). Ex.: \"É urgente que se reconheça\"; \"implica que possamos\".\nSe o verbo regente estiver no Pretérito, a oração desenvolvida alinha-se ao plano pretérito (Pretérito Imperfeito do Subjuntivo ou Pretérito Perfeito/Imperfeito do Indicativo). Ex.: \"teria vetado... visto que não se parecia\"; \"respondeu... enquanto farejava\".\nHarmonia de Pretéritos: A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).\nAtemporalidade/Verdades Permanentes: O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: \"tinha em seu acervo... no qual se incluem vários trabalhos\").\nEixo Pessoal (Preservação do Sujeito):\nSujeito Determinado: Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como \"nós\" ou \"eles\".\nSujeito Indeterminado (Infinitivo Impessoal): Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:\na) Voz Ativa com Sujeito Indeterminado: verbo na 3ª pessoa do plural (ex.: \"que reconheçam a necessidade\"; \"que cruzem fronteiras\"). b) Voz Passiva Sintética (Pronominal): VTD acompanhado da partícula apassivadora \"se\", exigindo concordância obrigatória com o sujeito paciente (ex.: \"que se reconheça a necessidade\"; \"que se critiquem as viagens\"). c) Voz Passiva Analítica: verbo auxiliar flexionado + particípio (ex.: \"que seja reconhecida\"; \"que sejam criticadas\").\nRelações\nContém alertas em: e ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o \"verbo amigo\") e o eixo morfossintático-pessoal (preservação inalterada do sujeito)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Eixo Temporal (O \"Verbo Amigo\"):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o verbo regente estiver no Presente do Indicativo, a oração desenvolvida flexiona-se no Presente (Presente do Subjuntivo ou do Indicativo). Ex.: \"É urgente que se reconheça\"; \"implica que possamos\".",
+                "Se o verbo regente estiver no Pretérito, a oração desenvolvida alinha-se ao plano pretérito (Pretérito Imperfeito do Subjuntivo ou Pretérito Perfeito/Imperfeito do Indicativo). Ex.: \"teria vetado... visto que não se parecia\"; \"respondeu... enquanto farejava\".",
+                "Harmonia de Pretéritos: A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).",
+                "Atemporalidade/Verdades Permanentes: O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: \"tinha em seu acervo... no qual se incluem vários trabalhos\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Eixo Pessoal (Preservação do Sujeito):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sujeito Determinado: Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como \"nós\" ou \"eles\".",
+                "Sujeito Indeterminado (Infinitivo Impessoal): Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "a) Voz Ativa com Sujeito Indeterminado: verbo na 3ª pessoa do plural (ex.: \"que reconheçam a necessidade\"; \"que cruzem fronteiras\"). b) Voz Passiva Sintética (Pronominal): VTD acompanhado da partícula apassivadora \"se\", exigindo concordância obrigatória com o sujeito paciente (ex.: \"que se reconheça a necessidade\"; \"que se critiquem as viagens\"). c) Voz Passiva Analítica: verbo auxiliar flexionado + particípio (ex.: \"que seja reconhecida\"; \"que sejam criticadas\")."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G08-001",
+                  "targetTitle": "Confundir Sujeito da Oração Principal com Sujeito da Oração Reduzida",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G08-003",
+                  "targetTitle": "Erro de Concordância na Voz Passiva Sintética com Sujeito no Plural",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +432,62 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo não obstante atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida.\nExplicação consolidada\nTransposição Conectiva Obrigatória: A locução prepositiva apesar de rege verbo no infinitivo em orações reduzidas. Para desenvolvê-las, é obrigatório substituí-la por uma conjunção concessiva (embora, conquanto) ou locução conjuntiva (apesar de que), com verbo no subjuntivo. Manter apesar de com verbo flexionado (\"Apesar de é torcedor...\") constitui erro sintático; manter com infinitivo mantém a oração reduzida.\nMorfossintaxe de \"Não Obstante\":\nNa reduzida: atua como preposição acidental (\"não obstante apresentar-se...\").\nNa desenvolvida: atua diretamente como conjunção subordinativa concessiva (\"não obstante se apresente...\"), sendo equivalente a embora se apresente ou conquanto se apresente.e .\nPossui alertas em: e ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo não obstante atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Transposição Conectiva Obrigatória: A locução prepositiva apesar de rege verbo no infinitivo em orações reduzidas. Para desenvolvê-las, é obrigatório substituí-la por uma conjunção concessiva (embora, conquanto) ou locução conjuntiva (apesar de que), com verbo no subjuntivo. Manter apesar de com verbo flexionado (\"Apesar de é torcedor...\") constitui erro sintático; manter com infinitivo mantém a oração reduzida.",
+                "Morfossintaxe de \"Não Obstante\":",
+                "Na reduzida: atua como preposição acidental (\"não obstante apresentar-se...\").",
+                "Na desenvolvida: atua diretamente como conjunção subordinativa concessiva (\"não obstante se apresente...\"), sendo equivalente a embora se apresente ou conquanto se apresente."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G08-010",
+                  "targetTitle": "Exercício 10: Oração Adverbial Concessiva e Transposição de Locução",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A07-G08-011",
+                  "targetTitle": "Exercício 11: Concessiva com \"Não Obstante\", Próclise e PIV",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G08-005",
+                  "targetTitle": "Manutenção Indevida de Locuções Prepositivas no Desenvolvimento",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G08-006",
+                  "targetTitle": "Erros de Colocação Pronominal e Passivação com PIV",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +500,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAo desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica.\nExplicação consolidada\nAtração Proclítica: Toda conjunção subordinativa (integrante, causal, concessiva, temporal, etc.) é palavra atrativa. Ao desenvolver \"não obstante apresentar-se\", o pronome \"se\" é atraído para antes do verbo flexionado: \"embora se apresente\" (sendo incorreta a ênclise \"embora apresente-se\").\nDistinção PIV vs. PA:\nEm verbos pronominais como apresentar-se (com sentido de mostrar-se/manifestar-se), o pronome se é PIV.\nNão se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (\"embora seja apresentado\"), pois isso altera a predicação e atribui um agente externo inexistente.\nRelações\nContrasta com: (onde o 'se' apassivador permite voz passiva analítica)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Atração Proclítica: Toda conjunção subordinativa (integrante, causal, concessiva, temporal, etc.) é palavra atrativa. Ao desenvolver \"não obstante apresentar-se\", o pronome \"se\" é atraído para antes do verbo flexionado: \"embora se apresente\" (sendo incorreta a ênclise \"embora apresente-se\").",
+                "Distinção PIV vs. PA:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Em verbos pronominais como apresentar-se (com sentido de mostrar-se/manifestar-se), o pronome se é PIV.",
+                "Não se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (\"embora seja apresentado\"), pois isso altera a predicação e atribui um agente externo inexistente."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A07-G08-004",
+                  "targetTitle": "Princípios de Flexão Verbal: Correlação Temporal e Preservação do Sujeito",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -182,8 +553,81 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:\nExplicação consolidada\nGerúndio Causal: Expressa a causa/motivo antecedente que fundamenta a oração principal. Identifica-se pelo critério cronológico (o que acontece em 1º lugar é a causa). Desenvolve-se por porque, visto que, já que, como.\nAtenção ao vocábulo \"assim\": Em construções como \"promovendo assim...\", a palavra \"assim\" é advérbio de modo (\"deste modo\") e não conjunção conclusiva; a oração preserva valor causal.\nGerúndio Temporal Concomitante: Expressa simultaneidade temporal durativa com a oração principal. Desenvolve-se por enquanto associado ao pretérito imperfeito (\"respondeu... enquanto farejava\").\nGerúndio com Valor Adjetivo: Ocorre quando o gerúndio modifica diretamente um substantivo antecedente (\"manda a seta\"), equivalendo a oração adjetiva introduzida por que.\nCritério Modal (Fato vs. Hipótese): Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (\"paulista trabalhando\" $\\rightarrow$ \"que trabalha\"); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (\"que trabalhe\").\nGerúndio Consecutivo e Aposto Resumitivo: Ocorre com verbos que trazem carga inerente de resultado (gerar, acarretar, implicar). Pode ser desenvolvido pela estrutura \"o que deve + infinitivo\", em que o pronome demonstrativo \"o\" opera como aposto oracional resumitivo que retoma o fato anterior.\nRelações\nContém alertas em: , e ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Gerúndio Causal: Expressa a causa/motivo antecedente que fundamenta a oração principal. Identifica-se pelo critério cronológico (o que acontece em 1º lugar é a causa). Desenvolve-se por porque, visto que, já que, como."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Atenção ao vocábulo \"assim\": Em construções como \"promovendo assim...\", a palavra \"assim\" é advérbio de modo (\"deste modo\") e não conjunção conclusiva; a oração preserva valor causal."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Gerúndio Temporal Concomitante: Expressa simultaneidade temporal durativa com a oração principal. Desenvolve-se por enquanto associado ao pretérito imperfeito (\"respondeu... enquanto farejava\").",
+                "Gerúndio com Valor Adjetivo: Ocorre quando o gerúndio modifica diretamente um substantivo antecedente (\"manda a seta\"), equivalendo a oração adjetiva introduzida por que."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Critério Modal (Fato vs. Hipótese): Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (\"paulista trabalhando\" $\\rightarrow$ \"que trabalha\"); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (\"que trabalhe\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Gerúndio Consecutivo e Aposto Resumitivo: Ocorre com verbos que trazem carga inerente de resultado (gerar, acarretar, implicar). Pode ser desenvolvido pela estrutura \"o que deve + infinitivo\", em que o pronome demonstrativo \"o\" opera como aposto oracional resumitivo que retoma o fato anterior."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G08-004",
+                  "targetTitle": "Confundir Causa com Condição ou Finalidade em Orações com \"Por\"",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G08-007",
+                  "targetTitle": "Falso Conectivo Conclusivo em \"Assim\" com Gerúndio",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A07-G08-008",
+                  "targetTitle": "Deslocamento Adverbial com Quebra de Paralelismo em Reescritas",
+                  "targetUnitId": "IP-A07-G08",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -196,8 +640,27 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:\nExplicação consolidada\nParticípio Concessivo por Contraste: Configura-se quando o particípio estabelece uma oposição ou quebra de expectativa em relação à oração principal (ex.: antítese entre \"nascidas do povo humilde\" e \"vocação para a grandeza\"). Desenvolve-se por ainda que tenham nascido ou embora tenham nascido.\nParticípio Causal Histórico: Expressa uma causa pretérita que fundamenta um efeito contínuo no presente (\"Desenvolvida para uma chave... nossa mente tende a rotular\" $\\rightarrow$ \"Como se desenvolveu...\").\nParticípio Temporal Imediato: Expressa um evento concluído no exato instante anterior ao da oração principal. Desenvolve-se perfeitamente por conectivos de imediatismo como assim que ou logo que (\"Baixados os arquivos...\" $\\rightarrow$ \"Assim que são baixados os arquivos...\")."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Particípio Concessivo por Contraste: Configura-se quando o particípio estabelece uma oposição ou quebra de expectativa em relação à oração principal (ex.: antítese entre \"nascidas do povo humilde\" e \"vocação para a grandeza\"). Desenvolve-se por ainda que tenham nascido ou embora tenham nascido.",
+                "Particípio Causal Histórico: Expressa uma causa pretérita que fundamenta um efeito contínuo no presente (\"Desenvolvida para uma chave... nossa mente tende a rotular\" $\\rightarrow$ \"Como se desenvolveu...\").",
+                "Particípio Temporal Imediato: Expressa um evento concluído no exato instante anterior ao da oração principal. Desenvolve-se perfeitamente por conectivos de imediatismo como assim que ou logo que (\"Baixados os arquivos...\" $\\rightarrow$ \"Assim que são baixados os arquivos...\")."
+              ]
             }
           ]
         },
@@ -210,8 +673,26 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA combinação prepositiva ao + verbo no infinitivo constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de tempo (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção quando.\nExplicação consolidada\nRegra de Equivalência: ao + infinitivo desenvolve-se obrigatoriamente como quando + verbo conjugado (\"ao estabelecer\" = \"quando estabeleceu\"; \"ao delegar\" = \"quando delega\"; \"ao anoitecer\" = \"quando anoitecia\").\nBloqueio Causal: É terminantemente incorreto substituir estruturas de ao + infinitivo por locuções causais (\"por estabelecer\", \"porque estabeleceu\"), pois tal substituição desfigura a semântica temporal original."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A combinação prepositiva ao + verbo no infinitivo constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de tempo (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção quando."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Regra de Equivalência: ao + infinitivo desenvolve-se obrigatoriamente como quando + verbo conjugado (\"ao estabelecer\" = \"quando estabeleceu\"; \"ao delegar\" = \"quando delega\"; \"ao anoitecer\" = \"quando anoitecia\").",
+                "Bloqueio Causal: É terminantemente incorreto substituir estruturas de ao + infinitivo por locuções causais (\"por estabelecer\", \"porque estabeleceu\"), pois tal substituição desfigura a semântica temporal original."
+              ]
             }
           ]
         },
@@ -224,52 +705,29 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados.\nExplicação consolidada\nConcordância na Voz Passiva Sintética: Ao desenvolver orações reduzidas gerando construções com o pronome apassivador se, o verbo transitivo direto deve concordar estritamente com o sujeito paciente posposto (\"no qual se incluem vários trabalhos\", e nunca \"se inclui\").\nParalelismo e Regência com Crase: Se um verbo rege preposição pura sem artigo antes de substantivos coordenados (\"cheirando a cebola e alho\"), a inserção indevida do acento grave em um dos núcleos (\"cheirando à cebola e alho\") viola a regência e quebra o paralelismo sintático (preposição + artigo em um termo e preposição pura no outro).\nDeslocamento Adverbial e Mudança de Referente: O deslocamento de um adjunto adverbial dentro do período altera o verbo modificado. Se a locução \"ao mesmo tempo\" modificava \"começava\" (início simultâneo da ação) e na reescrita passa a modificar \"ficava cheirando\" (simultaneidade do cheiro), ocorre alteração semântica substancial, invalidando a reescrita (\"mudança de referente é mudança de sentido\")."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Concordância na Voz Passiva Sintética: Ao desenvolver orações reduzidas gerando construções com o pronome apassivador se, o verbo transitivo direto deve concordar estritamente com o sujeito paciente posposto (\"no qual se incluem vários trabalhos\", e nunca \"se inclui\").",
+                "Paralelismo e Regência com Crase: Se um verbo rege preposição pura sem artigo antes de substantivos coordenados (\"cheirando a cebola e alho\"), a inserção indevida do acento grave em um dos núcleos (\"cheirando à cebola e alho\") viola a regência e quebra o paralelismo sintático (preposição + artigo em um termo e preposição pura no outro).",
+                "Deslocamento Adverbial e Mudança de Referente: O deslocamento de um adjunto adverbial dentro do período altera o verbo modificado. Se a locução \"ao mesmo tempo\" modificava \"começava\" (início simultâneo da ação) e na reescrita passa a modificar \"ficava cheirando\" (simultaneidade do cheiro), ocorre alteração semântica substancial, invalidando a reescrita (\"mudança de referente é mudança de sentido\")."
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nUma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa.\nExplicação consolidada\nNo português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:\nEstrutura Reduzida: Apresenta economia morfossintática pela ausência de conjunção ou pronome relativo. O predicado é estruturado por:\nInfinitivo: pessoal ou impessoal (terminações -ar, -er, -ir);\nGerúndio: terminação -ndo;\nParticípio: terminações regulares -do, -da ou formas irregulares.\nNota: A presença de preposição funcional introdutória (a, de, por, para, ao, sem, apesar de) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo.\nEstrutura Desenvolvida: Apresenta obrigatoriamente um conector gramatical subordinativo e desdobra o verbo nominal em uma forma verbal finita conjugada.\nCritérios de reconhecimento ou aplicação\nVerbo no infinitivo/gerúndio/particípio sem conjunção subordinativa ou pronome relativo $\\rightarrow$ Oração Reduzida.\nConectivo explícito presente (que, se, quando, embora, visto que, etc.) + verbo conjugado $\\rightarrow$ Oração Desenvolvida.\nExemplos e contraexemplos\nReduzida: \"É urgente reconhecer a necessidade...\" (sem conectivo, infinitivo).\nDesenvolvida: \"É urgente que se reconheça a necessidade...\" (com conjunção integrante \"que\" e presente do subjuntivo).\nContraexemplo (Falsa Desenvolvida): \"É urgente o reconhecimento da necessidade...\" (nominalização/sintagma nominal, não é oração desenvolvida).\nRelações\nExpande para: e .a ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação.\nExplicação consolidada\nOs seis passos operacionais estruturam-se na seguinte sequência:\nPasso 1 — Contar os verbos: Identificar cada verbo individual e locução verbal. O total de unidades verbais equivale ao número exato de orações do período.\nPasso 2 — Inserir a barra delimitadora: Isolar visualmente a oração reduzida inserindo um traço vertical imediatamente antes da forma nominal ou da preposição funcional que a rege.\nPasso 3 — Diagnosticar a natureza sintática:\nSubstantiva: se a oração puder ser integralmente substituída pelo pronome demonstrativo \"ISSO\" (disso, nisso, a isso).\nAdjetiva: se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente (\"manda a seta\").\nAdverbial: se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.).\nPasso 4 — Inserir o conectivo adequado:\nSubstantiva $\\rightarrow$ Conjunção Integrante (C.I.): que (ou se).\nAdjetiva $\\rightarrow$ Pronome Relativo (P.R.): que (o qual, a qual).\nAdverbial $\\rightarrow$ Conjunção subordinativa adverbial condizente com a circunstância apurada.\nPasso 5 — Desnominalizar e conjugar o verbo: Flexionar o verbo considerando obrigatoriamente a correlação com o \"verbo amigo\" e a manutenção estrita do sujeito.\nPasso 6 — Classificar a oração reduzida: Atribuir a nomenclatura sintática oficial completa da oração original.\nRelações\nCondensado por: (Método Simplificado de 3 Passos).\nDetalhado em: (Princípios do Passo 5)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nVersão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo (\"sem rodinhas\") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares.\nExplicação consolidada\nPasso 1 — Diagnóstico Categorial: Indagar se a oração é substantiva (troca por \"isso\"), adjetiva (seta no substantivo) ou adverbial (circunstância lógica).\nPasso 2 — Acoplamento do Conector: Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada (quando, embora, visto que, etc.).\nPasso 3 — Desdobramento e Flexão Verbal: Retirar a forma nominal e flexionar o verbo em modo, tempo, número e pessoa, mantendo a concordância com o sujeito da subordinada e a harmonia com o verbo da oração regente.\nRelações\nSubstitui operacionalmente: .a ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o \"verbo amigo\") e o eixo morfossintático-pessoal (preservação inalterada do sujeito).\nExplicação consolidada\nEixo Temporal (O \"Verbo Amigo\"):\nSe o verbo regente estiver no Presente do Indicativo, a oração desenvolvida flexiona-se no Presente (Presente do Subjuntivo ou do Indicativo). Ex.: \"É urgente que se reconheça\"; \"implica que possamos\".\nSe o verbo regente estiver no Pretérito, a oração desenvolvida alinha-se ao plano pretérito (Pretérito Imperfeito do Subjuntivo ou Pretérito Perfeito/Imperfeito do Indicativo). Ex.: \"teria vetado... visto que não se parecia\"; \"respondeu... enquanto farejava\".\nHarmonia de Pretéritos: A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).\nAtemporalidade/Verdades Permanentes: O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: \"tinha em seu acervo... no qual se incluem vários trabalhos\").\nEixo Pessoal (Preservação do Sujeito):\nSujeito Determinado: Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como \"nós\" ou \"eles\".\nSujeito Indeterminado (Infinitivo Impessoal): Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:\na) Voz Ativa com Sujeito Indeterminado: verbo na 3ª pessoa do plural (ex.: \"que reconheçam a necessidade\"; \"que cruzem fronteiras\"). b) Voz Passiva Sintética (Pronominal): VTD acompanhado da partícula apassivadora \"se\", exigindo concordância obrigatória com o sujeito paciente (ex.: \"que se reconheça a necessidade\"; \"que se critiquem as viagens\"). c) Voz Passiva Analítica: verbo auxiliar flexionado + particípio (ex.: \"que seja reconhecida\"; \"que sejam criticadas\").\nRelações\nContém alertas em: e ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo não obstante atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida.\nExplicação consolidada\nTransposição Conectiva Obrigatória: A locução prepositiva apesar de rege verbo no infinitivo em orações reduzidas. Para desenvolvê-las, é obrigatório substituí-la por uma conjunção concessiva (embora, conquanto) ou locução conjuntiva (apesar de que), com verbo no subjuntivo. Manter apesar de com verbo flexionado (\"Apesar de é torcedor...\") constitui erro sintático; manter com infinitivo mantém a oração reduzida.\nMorfossintaxe de \"Não Obstante\":\nNa reduzida: atua como preposição acidental (\"não obstante apresentar-se...\").\nNa desenvolvida: atua diretamente como conjunção subordinativa concessiva (\"não obstante se apresente...\"), sendo equivalente a embora se apresente ou conquanto se apresente.e .\nPossui alertas em: e ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAo desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica.\nExplicação consolidada\nAtração Proclítica: Toda conjunção subordinativa (integrante, causal, concessiva, temporal, etc.) é palavra atrativa. Ao desenvolver \"não obstante apresentar-se\", o pronome \"se\" é atraído para antes do verbo flexionado: \"embora se apresente\" (sendo incorreta a ênclise \"embora apresente-se\").\nDistinção PIV vs. PA:\nEm verbos pronominais como apresentar-se (com sentido de mostrar-se/manifestar-se), o pronome se é PIV.\nNão se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (\"embora seja apresentado\"), pois isso altera a predicação e atribui um agente externo inexistente.\nRelações\nContrasta com: (onde o 'se' apassivador permite voz passiva analítica)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:\nExplicação consolidada\nGerúndio Causal: Expressa a causa/motivo antecedente que fundamenta a oração principal. Identifica-se pelo critério cronológico (o que acontece em 1º lugar é a causa). Desenvolve-se por porque, visto que, já que, como.\nAtenção ao vocábulo \"assim\": Em construções como \"promovendo assim...\", a palavra \"assim\" é advérbio de modo (\"deste modo\") e não conjunção conclusiva; a oração preserva valor causal.\nGerúndio Temporal Concomitante: Expressa simultaneidade temporal durativa com a oração principal. Desenvolve-se por enquanto associado ao pretérito imperfeito (\"respondeu... enquanto farejava\").\nGerúndio com Valor Adjetivo: Ocorre quando o gerúndio modifica diretamente um substantivo antecedente (\"manda a seta\"), equivalendo a oração adjetiva introduzida por que.\nCritério Modal (Fato vs. Hipótese): Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (\"paulista trabalhando\" $\\rightarrow$ \"que trabalha\"); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (\"que trabalhe\").\nGerúndio Consecutivo e Aposto Resumitivo: Ocorre com verbos que trazem carga inerente de resultado (gerar, acarretar, implicar). Pode ser desenvolvido pela estrutura \"o que deve + infinitivo\", em que o pronome demonstrativo \"o\" opera como aposto oracional resumitivo que retoma o fato anterior.\nRelações\nContém alertas em: , e ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:\nExplicação consolidada\nParticípio Concessivo por Contraste: Configura-se quando o particípio estabelece uma oposição ou quebra de expectativa em relação à oração principal (ex.: antítese entre \"nascidas do povo humilde\" e \"vocação para a grandeza\"). Desenvolve-se por ainda que tenham nascido ou embora tenham nascido.\nParticípio Causal Histórico: Expressa uma causa pretérita que fundamenta um efeito contínuo no presente (\"Desenvolvida para uma chave... nossa mente tende a rotular\" $\\rightarrow$ \"Como se desenvolveu...\").\nParticípio Temporal Imediato: Expressa um evento concluído no exato instante anterior ao da oração principal. Desenvolve-se perfeitamente por conectivos de imediatismo como assim que ou logo que (\"Baixados os arquivos...\" $\\rightarrow$ \"Assim que são baixados os arquivos...\")."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA combinação prepositiva ao + verbo no infinitivo constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de tempo (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção quando.\nExplicação consolidada\nRegra de Equivalência: ao + infinitivo desenvolve-se obrigatoriamente como quando + verbo conjugado (\"ao estabelecer\" = \"quando estabeleceu\"; \"ao delegar\" = \"quando delega\"; \"ao anoitecer\" = \"quando anoitecia\").\nBloqueio Causal: É terminantemente incorreto substituir estruturas de ao + infinitivo por locuções causais (\"por estabelecer\", \"porque estabeleceu\"), pois tal substituição desfigura a semântica temporal original."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados.\nExplicação consolidada\nConcordância na Voz Passiva Sintética: Ao desenvolver orações reduzidas gerando construções com o pronome apassivador se, o verbo transitivo direto deve concordar estritamente com o sujeito paciente posposto (\"no qual se incluem vários trabalhos\", e nunca \"se inclui\").\nParalelismo e Regência com Crase: Se um verbo rege preposição pura sem artigo antes de substantivos coordenados (\"cheirando a cebola e alho\"), a inserção indevida do acento grave em um dos núcleos (\"cheirando à cebola e alho\") viola a regência e quebra o paralelismo sintático (preposição + artigo em um termo e preposição pura no outro).\nDeslocamento Adverbial e Mudança de Referente: O deslocamento de um adjunto adverbial dentro do período altera o verbo modificado. Se a locução \"ao mesmo tempo\" modificava \"começava\" (início simultâneo da ação) e na reescrita passa a modificar \"ficava cheirando\" (simultaneidade do cheiro), ocorre alteração semântica substancial, invalidando a reescrita (\"mudança de referente é mudança de sentido\")."
         }
       ]
     },
@@ -387,7 +845,9 @@
               "RULE-IP-A07-G08-001",
               "EXP-IP-A07-G08-033"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -573,7 +1033,9 @@
               "PROC-A07-G08-001",
               "EXP-IP-A07-G08-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -642,7 +1104,9 @@
               "PROC-A07-G08-002",
               "EXP-IP-A07-G08-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -718,7 +1182,9 @@
               "PROC-A07-G08-003",
               "EXP-IP-A07-G08-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -801,7 +1267,9 @@
               "PROC-A07-G08-004",
               "EXP-IP-A07-G08-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -923,7 +1391,9 @@
               "CONTRAST-IP-A07-G08-001",
               "EXP-IP-A07-G08-038"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1006,7 +1476,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-001",
               "EXP-IP-A07-G08-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1081,7 +1553,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-002",
               "EXP-IP-A07-G08-040"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1155,7 +1629,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-003",
               "EXP-IP-A07-G08-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1229,7 +1705,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-004",
               "EXP-IP-A07-G08-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1303,7 +1781,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-005",
               "EXP-IP-A07-G08-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1379,7 +1859,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-006",
               "EXP-IP-A07-G08-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1453,7 +1935,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-007",
               "EXP-IP-A07-G08-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1526,7 +2010,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-008",
               "EXP-IP-A07-G08-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1599,7 +2085,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-009",
               "EXP-IP-A07-G08-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1672,7 +2160,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-010",
               "EXP-IP-A07-G08-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1745,7 +2235,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-011",
               "EXP-IP-A07-G08-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1870,7 +2362,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-012",
               "EXP-IP-A07-G08-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1980,7 +2474,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-013",
               "EXP-IP-A07-G08-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2150,7 +2646,9 @@
               "WORKED_EXAMPLE-IP-A07-G08-014",
               "EXP-IP-A07-G08-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2201,7 +2699,9 @@
               "WARN-A07-G08-001",
               "EXP-IP-A07-G08-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2237,7 +2737,9 @@
               "WARN-A07-G08-002",
               "EXP-IP-A07-G08-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2273,7 +2775,9 @@
               "WARN-A07-G08-003",
               "EXP-IP-A07-G08-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2309,7 +2813,9 @@
               "WARN-A07-G08-004",
               "EXP-IP-A07-G08-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2345,7 +2851,9 @@
               "WARN-A07-G08-005",
               "EXP-IP-A07-G08-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2381,7 +2889,9 @@
               "WARN-A07-G08-006",
               "EXP-IP-A07-G08-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2417,7 +2927,9 @@
               "WARN-A07-G08-007",
               "EXP-IP-A07-G08-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2453,29 +2965,108 @@
               "WARN-A07-G08-008",
               "EXP-IP-A07-G08-TRAP-008"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Oposição Estrutural: Oração Reduzida vs. Oração Desenvolvida**: Definição ou ideia central\nUma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa.\nExplicação consolidada\nNo português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:\nEstrutura Reduzida: Apresenta economia morfossintática pela ausência de conjunção ou pronome relativo. O predicado é estruturado por:\nInfinitivo: pessoal ou impessoal (terminações -ar, -er, -ir);\nGerúndio: terminação -ndo;\nParticípio: terminações regulares -do, -da ou formas irregulares.\nNota: A presença de preposição funcional introdutória (a, de, por, para, ao, sem, apesar de) não descaracteriza a oração reduzida, pois preposição não atua como conjunção integrante nem pronome relativo.\nEstrutura Desenvolvida: Apresenta obrigatoriamente um conector gramatical subordinativo e desdobra o verbo nominal em uma forma verbal finita conjugada.\nCritérios de reconhecimento ou aplicação\nVerbo no infinitivo/gerúndio/particípio sem conjunção subordinativa ou pronome relativo $\\rightarrow$ Oração Reduzida.\nConectivo explícito presente (que, se, quando, embora, visto que, etc.) + verbo conjugado $\\rightarrow$ Oração Desenvolvida.\nExemplos e contraexemplos\nReduzida: \"É urgente reconhecer a necessidade...\" (sem conectivo, infinitivo).\nDesenvolvida: \"É urgente que se reconheça a necessidade...\" (com conjunção integrante \"que\" e presente do subjuntivo).\nContraexemplo (Falsa Desenvolvida): \"É urgente o reconhecimento da necessidade...\" (nominalização/sintagma nominal, não é oração desenvolvida).\nRelações\nExpande para: e .a .",
-            "**Algoritmo Analítico dos Seis Passos para Desenvolvimento**: Definição ou ideia central\nO método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação.\nExplicação consolidada\nOs seis passos operacionais estruturam-se na seguinte sequência:\nPasso 1 — Contar os verbos: Identificar cada verbo individual e locução verbal. O total de unidades verbais equivale ao número exato de orações do período.\nPasso 2 — Inserir a barra delimitadora: Isolar visualmente a oração reduzida inserindo um traço vertical imediatamente antes da forma nominal ou da preposição funcional que a rege.\nPasso 3 — Diagnosticar a natureza sintática:\nSubstantiva: se a oração puder ser integralmente substituída pelo pronome demonstrativo \"ISSO\" (disso, nisso, a isso).\nAdjetiva: se a oração exercer função modificadora ligada a um substantivo ou pronome/numeral substantivo antecedente (\"manda a seta\").\nAdverbial: se a oração manifestar valor circunstancial (tempo, causa, concessão, condição, finalidade, etc.).\nPasso 4 — Inserir o conectivo adequado:\nSubstantiva $\\rightarrow$ Conjunção Integrante (C.I.): que (ou se).\nAdjetiva $\\rightarrow$ Pronome Relativo (P.R.): que (o qual, a qual).\nAdverbial $\\rightarrow$ Conjunção subordinativa adverbial condizente com a circunstância apurada.\nPasso 5 — Desnominalizar e conjugar o verbo: Flexionar o verbo considerando obrigatoriamente a correlação com o \"verbo amigo\" e a manutenção estrita do sujeito.\nPasso 6 — Classificar a oração reduzida: Atribuir a nomenclatura sintática oficial completa da oração original.\nRelações\nCondensado por: (Método Simplificado de 3 Passos).\nDetalhado em: (Princípios do Passo 5).",
-            "**Algoritmo Simplificado de Três Passos para Resolução Rápida**: Definição ou ideia central\nVersão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo (\"sem rodinhas\") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares.\nExplicação consolidada\nPasso 1 — Diagnóstico Categorial: Indagar se a oração é substantiva (troca por \"isso\"), adjetiva (seta no substantivo) ou adverbial (circunstância lógica).\nPasso 2 — Acoplamento do Conector: Inserir C.I. (que), P.R. (que) ou conjunção subordinativa adverbial adequada (quando, embora, visto que, etc.).\nPasso 3 — Desdobramento e Flexão Verbal: Retirar a forma nominal e flexionar o verbo em modo, tempo, número e pessoa, mantendo a concordância com o sujeito da subordinada e a harmonia com o verbo da oração regente.\nRelações\nSubstitui operacionalmente: .a .",
-            "**Princípios de Flexão Verbal: Correlação Temporal e Preservação do Sujeito**: Definição ou ideia central\nA desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o \"verbo amigo\") e o eixo morfossintático-pessoal (preservação inalterada do sujeito).\nExplicação consolidada\nEixo Temporal (O \"Verbo Amigo\"):\nSe o verbo regente estiver no Presente do Indicativo, a oração desenvolvida flexiona-se no Presente (Presente do Subjuntivo ou do Indicativo). Ex.: \"É urgente que se reconheça\"; \"implica que possamos\".\nSe o verbo regente estiver no Pretérito, a oração desenvolvida alinha-se ao plano pretérito (Pretérito Imperfeito do Subjuntivo ou Pretérito Perfeito/Imperfeito do Indicativo). Ex.: \"teria vetado... visto que não se parecia\"; \"respondeu... enquanto farejava\".\nHarmonia de Pretéritos: A correlação no passado não exige tempos rigorosamente idênticos, mas sim pertinência à mesma esfera histórica pretérita (ex.: Pretérito Perfeito coexiste com Pretérito Imperfeito expressando simultaneidade durativa).\nAtemporalidade/Verdades Permanentes: O presente do indicativo pode coexistir com verbo pretérito quando a oração subordinada expressa acervo duradouro, verdade permanente ou fato factual contínuo (ex.: \"tinha em seu acervo... no qual se incluem vários trabalhos\").\nEixo Pessoal (Preservação do Sujeito):\nSujeito Determinado: Identificado no contexto (expresso, desinencial ou elíptico), deve ser mantido rigorosamente na mesma pessoa gramatical. É proibido inventar sujeitos como \"nós\" ou \"eles\".\nSujeito Indeterminado (Infinitivo Impessoal): Quando o infinitivo não possui sujeito determinado contextualmente, o desenvolvimento formal admite:\na) Voz Ativa com Sujeito Indeterminado: verbo na 3ª pessoa do plural (ex.: \"que reconheçam a necessidade\"; \"que cruzem fronteiras\"). b) Voz Passiva Sintética (Pronominal): VTD acompanhado da partícula apassivadora \"se\", exigindo concordância obrigatória com o sujeito paciente (ex.: \"que se reconheça a necessidade\"; \"que se critiquem as viagens\"). c) Voz Passiva Analítica: verbo auxiliar flexionado + particípio (ex.: \"que seja reconhecida\"; \"que sejam criticadas\").\nRelações\nContém alertas em: e .",
-            "**Conectivos Concessivos: Transposição de Locuções e o Conector Coringa \"Não Obstante\"**: Definição ou ideia central\nNo desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo não obstante atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida.\nExplicação consolidada\nTransposição Conectiva Obrigatória: A locução prepositiva apesar de rege verbo no infinitivo em orações reduzidas. Para desenvolvê-las, é obrigatório substituí-la por uma conjunção concessiva (embora, conquanto) ou locução conjuntiva (apesar de que), com verbo no subjuntivo. Manter apesar de com verbo flexionado (\"Apesar de é torcedor...\") constitui erro sintático; manter com infinitivo mantém a oração reduzida.\nMorfossintaxe de \"Não Obstante\":\nNa reduzida: atua como preposição acidental (\"não obstante apresentar-se...\").\nNa desenvolvida: atua diretamente como conjunção subordinativa concessiva (\"não obstante se apresente...\"), sendo equivalente a embora se apresente ou conquanto se apresente.e .\nPossui alertas em: e .",
-            "**Sintaxe Pronominal: Próclise Subordinativa e Distinção entre PIV e PA**: Definição ou ideia central\nAo desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica.\nExplicação consolidada\nAtração Proclítica: Toda conjunção subordinativa (integrante, causal, concessiva, temporal, etc.) é palavra atrativa. Ao desenvolver \"não obstante apresentar-se\", o pronome \"se\" é atraído para antes do verbo flexionado: \"embora se apresente\" (sendo incorreta a ênclise \"embora apresente-se\").\nDistinção PIV vs. PA:\nEm verbos pronominais como apresentar-se (com sentido de mostrar-se/manifestar-se), o pronome se é PIV.\nNão se trata de Partícula Apassivadora (PA). Logo, é incorreto desenvolver a oração convertendo-a para passiva analítica (\"embora seja apresentado\"), pois isso altera a predicação e atribui um agente externo inexistente.\nRelações\nContrasta com: (onde o 'se' apassivador permite voz passiva analítica).",
-            "**Semântica do Gerúndio: Causa, Concomitância, Valor Adjetivo e Consequência**: Definição ou ideia central\nA oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:\nExplicação consolidada\nGerúndio Causal: Expressa a causa/motivo antecedente que fundamenta a oração principal. Identifica-se pelo critério cronológico (o que acontece em 1º lugar é a causa). Desenvolve-se por porque, visto que, já que, como.\nAtenção ao vocábulo \"assim\": Em construções como \"promovendo assim...\", a palavra \"assim\" é advérbio de modo (\"deste modo\") e não conjunção conclusiva; a oração preserva valor causal.\nGerúndio Temporal Concomitante: Expressa simultaneidade temporal durativa com a oração principal. Desenvolve-se por enquanto associado ao pretérito imperfeito (\"respondeu... enquanto farejava\").\nGerúndio com Valor Adjetivo: Ocorre quando o gerúndio modifica diretamente um substantivo antecedente (\"manda a seta\"), equivalendo a oração adjetiva introduzida por que.\nCritério Modal (Fato vs. Hipótese): Se a oração qualifica um fato consumado da narrativa, emprega-se o modo Indicativo (\"paulista trabalhando\" $\\rightarrow$ \"que trabalha\"); se expressar hipótese/finalidade incerta, adota-se o Subjuntivo (\"que trabalhe\").\nGerúndio Consecutivo e Aposto Resumitivo: Ocorre com verbos que trazem carga inerente de resultado (gerar, acarretar, implicar). Pode ser desenvolvido pela estrutura \"o que deve + infinitivo\", em que o pronome demonstrativo \"o\" opera como aposto oracional resumitivo que retoma o fato anterior.\nRelações\nContém alertas em: , e .",
-            "**Semântica do Particípio: Concessão por Contraste, Causa Histórica e Tempo Imediato**: Definição ou ideia central\nA oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:\nExplicação consolidada\nParticípio Concessivo por Contraste: Configura-se quando o particípio estabelece uma oposição ou quebra de expectativa em relação à oração principal (ex.: antítese entre \"nascidas do povo humilde\" e \"vocação para a grandeza\"). Desenvolve-se por ainda que tenham nascido ou embora tenham nascido.\nParticípio Causal Histórico: Expressa uma causa pretérita que fundamenta um efeito contínuo no presente (\"Desenvolvida para uma chave... nossa mente tende a rotular\" $\\rightarrow$ \"Como se desenvolveu...\").\nParticípio Temporal Imediato: Expressa um evento concluído no exato instante anterior ao da oração principal. Desenvolve-se perfeitamente por conectivos de imediatismo como assim que ou logo que (\"Baixados os arquivos...\" $\\rightarrow$ \"Assim que são baixados os arquivos...\").",
-            "**A Fórmula Temporal Canônica \"Ao + Infinitivo\"**: Definição ou ideia central\nA combinação prepositiva ao + verbo no infinitivo constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de tempo (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção quando.\nExplicação consolidada\nRegra de Equivalência: ao + infinitivo desenvolve-se obrigatoriamente como quando + verbo conjugado (\"ao estabelecer\" = \"quando estabeleceu\"; \"ao delegar\" = \"quando delega\"; \"ao anoitecer\" = \"quando anoitecia\").\nBloqueio Causal: É terminantemente incorreto substituir estruturas de ao + infinitivo por locuções causais (\"por estabelecer\", \"porque estabeleceu\"), pois tal substituição desfigura a semântica temporal original.",
-            "**Critérios de Reescritura Avançada: Paralelismo, Crase e Deslocamento Adverbial**: Definição ou ideia central\nA correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados.\nExplicação consolidada\nConcordância na Voz Passiva Sintética: Ao desenvolver orações reduzidas gerando construções com o pronome apassivador se, o verbo transitivo direto deve concordar estritamente com o sujeito paciente posposto (\"no qual se incluem vários trabalhos\", e nunca \"se inclui\").\nParalelismo e Regência com Crase: Se um verbo rege preposição pura sem artigo antes de substantivos coordenados (\"cheirando a cebola e alho\"), a inserção indevida do acento grave em um dos núcleos (\"cheirando à cebola e alho\") viola a regência e quebra o paralelismo sintático (preposição + artigo em um termo e preposição pura no outro).\nDeslocamento Adverbial e Mudança de Referente: O deslocamento de um adjunto adverbial dentro do período altera o verbo modificado. Se a locução \"ao mesmo tempo\" modificava \"começava\" (início simultâneo da ação) e na reescrita passa a modificar \"ficava cheirando\" (simultaneidade do cheiro), ocorre alteração semântica substancial, invalidando a reescrita (\"mudança de referente é mudança de sentido\")."
-          ]
+          "term": "Oposição Estrutural: Oração Reduzida vs. Oração Desenvolvida",
+          "shortDefinition": "Uma oração subordinada reduzida articula-se em torno de um verbo em forma nominal (infinitivo, gerúndio ou particípio) sem o intermédio de conectivos gramaticais explícitos (conjunções subordinativas ou pronomes relativos). Uma oração subordinada desenvolvida caracteriza-se pela presença mandatória de um conectivo formal e por um verbo plenamente flexionado em tempo, modo, número e pessoa.",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-01"
+          },
+          "operationalUse": "No português padrão, o período composto subordinado expressa relações sintáticas sob dois arranjos fundamentais:"
+        },
+        {
+          "term": "Algoritmo Analítico dos Seis Passos para Desenvolvimento",
+          "shortDefinition": "O método analítico dos seis passos constitui um procedimento estruturado para guiar alunos na transposição segura de uma oração subordinada reduzida para a sua forma desenvolvida, garantindo precisão de limites frasais, seleção exata de conectivos e respeito às regras de concordância e correlação.",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-02"
+          },
+          "operationalUse": "Os seis passos operacionais estruturam-se na seguinte sequência:"
+        },
+        {
+          "term": "Algoritmo Simplificado de Três Passos para Resolução Rápida",
+          "shortDefinition": "Versão condensada do método de desenvolvimento projetada para conferir agilidade ao estudante autônomo (\"sem rodinhas\") na resolução de provas de concursos, sintetizando o processo em três decisões nucleares.",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-03"
+          }
+        },
+        {
+          "term": "Princípios de Flexão Verbal: Correlação Temporal e Preservação do Sujeito",
+          "shortDefinition": "A desnominalização verbal no desenvolvimento de orações subordinadas é governada obrigatoriamente por dois eixos simultâneos: o eixo semântico-temporal (correlação com o \"verbo amigo\") e o eixo morfossintático-pessoal (preservação inalterada do sujeito).",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-04"
+          },
+          "operationalUse": "a) Voz Ativa com Sujeito Indeterminado: verbo na 3ª pessoa do plural (ex.: \"que reconheçam a necessidade\"; \"que cruzem fronteiras\"). b) Voz Passiva Sintética (Pronominal): VTD acompanhado da partícula apassivadora \"se\", exigindo concordância obrigatória com o sujeito paciente (ex.: \"que se reconheça a necessidade\"; \"que se critiquem as viagens\"). c) Voz Passiva Analítica: verbo auxiliar flexionado + particípio (ex.: \"que seja reconhecida\"; \"que sejam criticadas\")."
+        },
+        {
+          "term": "Conectivos Concessivos: Transposição de Locuções e o Conector Coringa \"Não Obstante\"",
+          "shortDefinition": "No desenvolvimento de orações concessivas reduzidas, é mandatório substituir locuções prepositivas por conjunções ou locuções conjuntivas. O conectivo não obstante atua como vocábulo multifuncional coringa, operando como preposição acidental na forma reduzida e como conjunção subordinativa na forma desenvolvida.",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-05"
+          }
+        },
+        {
+          "term": "Sintaxe Pronominal: Próclise Subordinativa e Distinção entre PIV e PA",
+          "shortDefinition": "Ao desenvolver orações reduzidas que contêm pronomes oblíquos, a inserção da conjunção subordinativa impõe próclise pronominal mandatória. Além disso, pronomes que integram a estrutura de verbos pronominais (Parte Integrante do Verbo — PIV) bloqueiam a conversão para a voz passiva analítica.",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-06"
+          }
+        },
+        {
+          "term": "Semântica do Gerúndio: Causa, Concomitância, Valor Adjetivo e Consequência",
+          "shortDefinition": "A oração reduzida de gerúndio assume múltiplos valores semânticos e sintáticos que devem ser distinguidos com base na cronologia dos fatos, na regência sintática e na presença de vocábulos acompanhantes:",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-07"
+          }
+        },
+        {
+          "term": "Semântica do Particípio: Concessão por Contraste, Causa Histórica e Tempo Imediato",
+          "shortDefinition": "A oração reduzida de particípio articula valores adverbiais identificáveis pelo contexto léxico e temporal do período:",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-08"
+          }
+        },
+        {
+          "term": "A Fórmula Temporal Canônica \"Ao + Infinitivo\"",
+          "shortDefinition": "A combinação prepositiva ao + verbo no infinitivo constitui uma estrutura gramatical com valor semântico fixo, invariável e exclusivo de tempo (oração subordinada adverbial temporal reduzida de infinitivo), equivalente canônica da conjunção quando.",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-09"
+          }
+        },
+        {
+          "term": "Critérios de Reescritura Avançada: Paralelismo, Crase e Deslocamento Adverbial",
+          "shortDefinition": "A correção de um item de reescritura que envolve orações desenvolvidas depende não apenas da conversão oracional em si, mas da preservação integral da regência, do paralelismo sintático, da concordância verbal e da estabilidade referencial de adjuntos adverbiais deslocados.",
+          "detailTarget": {
+            "unitId": "IP-A07-G08",
+            "section": "explanation",
+            "groupId": "GRP-IP-A07-G08-10"
+          }
         }
       ]
     },
@@ -2748,7 +3339,42 @@
         "confidence": 0.98
       },
       "answerSha256": "9aee00d59efc78dd144c28699c255cdeaf90d8301b9a0b1623930feca1c1bc70",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A07-aula07.q0075"
+      ],
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "(CEBRASPE / IHBDF–Cargos de Nível Médio Téc. – 2018) Assim, é comum que pais com baixa escolaridade lutem para que os filhos tenham acesso a um ensino de qualidade, sem reivindicar para si mesmos o direito que lhes foi violado. A oração “para que os filhos tenham acesso a um ensino de qualidade” expressa circunstância de",
+        "options": [
+          {
+            "label": "A",
+            "text": "finalidade."
+          },
+          {
+            "label": "B",
+            "text": "causa."
+          },
+          {
+            "label": "C",
+            "text": "modo."
+          },
+          {
+            "label": "D",
+            "text": "proporção."
+          },
+          {
+            "label": "E",
+            "text": "concessão."
+          }
+        ],
+        "answer": "A",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -2865,7 +3491,42 @@
         "confidence": 0.98
       },
       "answerSha256": "00d0fea23ab527ff7a80c22423d416c97ae6cab32d2a4a85d3c24ef14e32f105",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A07-aula07.q0079"
+      ],
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "(CEBRASPE / IHBDF / 2018) A pedagoga acrescenta que a maioria dos alunos é composta por adultos, que, diferentemente das crianças, têm maior capacidade de concentração ao estudar em casa. Apesar das exigências, o método de ensino permite que o aluno organize seu próprio horário de estudos e concilie a graduação com um emprego. No texto, a oração “ao estudar em casa” tem sentido equivalente ao da oração",
+        "options": [
+          {
+            "label": "A",
+            "text": "ao passo que estudam em casa."
+          },
+          {
+            "label": "B",
+            "text": "ainda que estudem em casa."
+          },
+          {
+            "label": "C",
+            "text": "quando estudam em casa."
+          },
+          {
+            "label": "D",
+            "text": "porque estudam em casa."
+          },
+          {
+            "label": "E",
+            "text": "por estudarem em casa."
+          }
+        ],
+        "answer": "C",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -2915,144 +3576,6 @@
         "confidence": 0.98
       },
       "answerSha256": "26d81910321987bb4d7b0db3c9253b243cc446f30cae24627215e7934b75b1b1",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A07-aula07.q0075",
-      "lessonId": "A07",
-      "sourceQuestionId": "aula07.q0075",
-      "questionPayload": {
-        "question_id": "aula07.q0075",
-        "question_number_in_section": 9,
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "IHBDF–Cargos de Nível Médio Téc. – 2018",
-        "position": null,
-        "year": 2018,
-        "support_text": null,
-        "prompt": "(CEBRASPE / IHBDF–Cargos de Nível Médio Téc. – 2018) Assim, é comum que pais com baixa escolaridade lutem para que os filhos tenham acesso a um ensino de qualidade, sem reivindicar para si mesmos o direito que lhes foi violado. A oração “para que os filhos tenham acesso a um ensino de qualidade” expressa circunstância de A) finalidade. B) causa. C) modo. D) proporção. E) concessão.",
-        "options": [
-          {
-            "label": "A",
-            "text": "finalidade."
-          },
-          {
-            "label": "B",
-            "text": "causa."
-          },
-          {
-            "label": "C",
-            "text": "modo."
-          },
-          {
-            "label": "D",
-            "text": "proporção."
-          },
-          {
-            "label": "E",
-            "text": "concessão."
-          }
-        ],
-        "tests_concept_ids": [],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0095"
-          ],
-          "section_id": "aula07.sec24"
-        },
-        "annotation_state": "outside_annotated_scope",
-        "occurrence_type": "list",
-        "duplicate_of": "aula07.q0020",
-        "extraction_confidence": 0.96
-      },
-      "questionSha256": "dbba721c4dab42a04f20c266e41496d89ab83a48be4c8ff1d73a3223fe97f026",
-      "answerPayload": {
-        "answer_id": "aula07.q0075.answer",
-        "question_id": "aula07.q0075",
-        "answer": "letter_A",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0095"
-          ]
-        },
-        "confidence": 0.98
-      },
-      "answerSha256": "c53d258dbce9d0ecbe938dcd50246f09fef981e2ce9f050828c9ef0c4282321c",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A07-aula07.q0079",
-      "lessonId": "A07",
-      "sourceQuestionId": "aula07.q0079",
-      "questionPayload": {
-        "question_id": "aula07.q0079",
-        "question_number_in_section": 13,
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "IHBDF",
-        "position": null,
-        "year": 2018,
-        "support_text": null,
-        "prompt": "(CEBRASPE / IHBDF / 2018) A pedagoga acrescenta que a maioria dos alunos é composta por adultos, que, diferentemente das crianças, têm maior capacidade de concentração ao estudar em casa. Apesar das exigências, o método de ensino permite que o aluno organize seu próprio horário de estudos e concilie a graduação com um emprego. No texto, a oração “ao estudar em casa” tem sentido equivalente ao da oração A) ao passo que estudam em casa. B) ainda que estudem em casa. C) quando estudam em casa. D) porque estudam em casa. E) por estudarem em casa.",
-        "options": [
-          {
-            "label": "A",
-            "text": "ao passo que estudam em casa."
-          },
-          {
-            "label": "B",
-            "text": "ainda que estudem em casa."
-          },
-          {
-            "label": "C",
-            "text": "quando estudam em casa."
-          },
-          {
-            "label": "D",
-            "text": "porque estudam em casa."
-          },
-          {
-            "label": "E",
-            "text": "por estudarem em casa."
-          }
-        ],
-        "tests_concept_ids": [],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0095"
-          ],
-          "section_id": "aula07.sec24"
-        },
-        "annotation_state": "outside_annotated_scope",
-        "occurrence_type": "list",
-        "duplicate_of": "aula07.q0024",
-        "extraction_confidence": 0.96
-      },
-      "questionSha256": "543db03922673778dc484531fc429099a6bef6f999aef44649fae7f8781021c9",
-      "answerPayload": {
-        "answer_id": "aula07.q0079.answer",
-        "question_id": "aula07.q0079",
-        "answer": "letter_C",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula07_complete",
-          "page_ids": [
-            "aula07_complete.p0095"
-          ]
-        },
-        "confidence": 0.98
-      },
-      "answerSha256": "ca261fa59fdd976f75744a3b77b468cc93816f021a3f00f30fd188b25ec620c9",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

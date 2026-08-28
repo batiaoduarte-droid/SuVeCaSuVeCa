@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { hasDuplicatedInlineOptions } from './lib/official-question-presentation.mjs';
+import { hasQuestionSupportEditorialLeak } from './lib/question-support-presentation.mjs';
 
 const root = process.cwd();
 const normalizedPath = path.join(root, 'public', 'knowledge', 'official-questions.normalized.json');
@@ -20,6 +22,8 @@ if (!Array.isArray(normalized)) {
 }
 
 const byOfficialRef = new Map();
+const duplicatedInlineOptions = [];
+const supportEditorialLeaks = [];
 for (const question of normalized) {
   const officialRef = question?.presentation?.provenance?.sourceOfficialQuestionRef;
   if (typeof officialRef === 'string' && officialRef) byOfficialRef.set(officialRef, question);
@@ -30,6 +34,22 @@ for (const question of normalized) {
     const [lessonId, ...sourceParts] = question.id.split(':');
     byOfficialRef.set(`OQ-${lessonId}-${sourceParts.join(':')}`, question);
   }
+  const learnerCommand = question?.presentation?.commandRichText
+    || question?.presentation?.command
+    || question?.prompt;
+  if (hasDuplicatedInlineOptions(learnerCommand, question?.options)) {
+    duplicatedInlineOptions.push(question.id || '(sem id)');
+  }
+  if (hasQuestionSupportEditorialLeak(question?.presentation?.supportBlocks)) {
+    supportEditorialLeaks.push(question.id || '(sem id)');
+  }
+}
+
+if (duplicatedInlineOptions.length) {
+  fail(`${duplicatedInlineOptions.length} questões repetem alternativas no comando: ${duplicatedInlineOptions.slice(0, 10).join(', ')}`);
+}
+if (supportEditorialLeaks.length) {
+  fail(`${supportEditorialLeaks.length} textos de apoio contêm resíduos editoriais: ${supportEditorialLeaks.slice(0, 10).join(', ')}`);
 }
 
 const viewOccurrences = [];
@@ -117,4 +137,6 @@ console.log(JSON.stringify({
   failClosedVisualRefs: visual.filter((item) => !item.sourceBacked).length,
   highlightedRegression: 'OQ-A00-aula00.q0006',
   recoveredSupportRegression: 'OQ-A00-aula00.q0077',
+  duplicatedInlineOptions: duplicatedInlineOptions.length,
+  supportEditorialLeaks: supportEditorialLeaks.length,
 }, null, 2));

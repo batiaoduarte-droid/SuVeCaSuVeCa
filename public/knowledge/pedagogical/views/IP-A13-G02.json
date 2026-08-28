@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A13-G02",
     "lessonId": "A13",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A13-G02",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A13-G02-001"
+          }
         }
       ]
     },
@@ -98,8 +103,55 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA introdução de parâmetros objetivos, formais e linguísticos para a cobrança de inferência em concursos públicos brasileiros teve origem metodológica no Núcleo de Computação Eletrônica da Universidade Federal do Rio de Janeiro (NCE/UFRJ), corpo docente que posteriormente estruturou a matriz de Língua Portuguesa da Fundação Getulio Vargas (FGV).\nExplicação consolidada\nHistoricamente, as avaliações de interpretação de textos em vestibulares e concursos tradicionais operavam sob viés acentuadamente subjetivo e impressionista, baseando-se em especulações extracientíficas sobre o pensamento psicológico do autor (\"o que o autor quis dizer\"). O modelo inaugurado pelo NCE/UFRJ e consolidado pela FGV rompeu com esse subjetivismo ao transformar a interpretação textual em um procedimento dedutivo formal, fundamentado em pistas gramaticais, semântica lexical, pressuposições linguísticas e relações lógicas internas ao texto.\nCritérios de aplicação\nEliminar qualquer tentativa de adivinhação psicológica das intenções do autor.\nTratar o texto como um sistema formal autônomo, cujas conclusões válidas devem ser demonstráveis por operadores linguísticos presentes na superfície textual.\nRelações\nExpande: , \nEvidenciado por: TERM-A13-G02-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A introdução de parâmetros objetivos, formais e linguísticos para a cobrança de inferência em concursos públicos brasileiros teve origem metodológica no Núcleo de Computação Eletrônica da Universidade Federal do Rio de Janeiro (NCE/UFRJ), corpo docente que posteriormente estruturou a matriz de Língua Portuguesa da Fundação Getulio Vargas (FGV)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Historicamente, as avaliações de interpretação de textos em vestibulares e concursos tradicionais operavam sob viés acentuadamente subjetivo e impressionista, baseando-se em especulações extracientíficas sobre o pensamento psicológico do autor (\"o que o autor quis dizer\"). O modelo inaugurado pelo NCE/UFRJ e consolidado pela FGV rompeu com esse subjetivismo ao transformar a interpretação textual em um procedimento dedutivo formal, fundamentado em pistas gramaticais, semântica lexical, pressuposições linguísticas e relações lógicas internas ao texto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Eliminar qualquer tentativa de adivinhação psicológica das intenções do autor.",
+                "Tratar o texto como um sistema formal autônomo, cujas conclusões válidas devem ser demonstráveis por operadores linguísticos presentes na superfície textual."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A13-G02-002",
+                  "targetTitle": "Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A13-G02-003",
+                  "targetTitle": "Teoria das Pistas Textuais e Mecanismo da Pressuposição Semântica",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +164,103 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA análise textual divide-se categoricamente em dois níveis cognitivos e operacionais distintos: a Compreensão Textual (Recorrência), restrita aos dados explícitos e resolvida por paráfrases diretas, e a Interpretação Textual (Inferência), que opera sobre dados implícitos por meio de deduções lógicas e pressuposições autorizadas por pistas textuais.\n OPERAÇÕES COGNITIVAS DE LEITURA ┬ ┤ COMPREENSÃO (RECORRÊNCIA) INTERPRETAÇÃO (INFERÊNCIA) ┼ ┤ • Objeto: Superfície EXPLÍCITA • Objeto: Estrutura IMPLÍCITA • Operação: Localização e Paráfrase • Operação: Dedução e Pressuposição • Relação: Equivalência sintática • Relação: Consequência lógica • Frequência estatística: ~75% (3/4) • Frequência estatística: ~25% (1/4) • Regra: \"Está escrito com outras • Regra: \"Não está escrito, mas é palavras\" autorizado por pistas do texto\" ┴ ┘\nExplicação consolidada\nCompreensão Textual (Recorrência = Explícito):\nLida unicamente com informações grafadas no texto.\nAs assertivas corretas representam reescrituras fiéis, sinônimos contextuais ou equivalências sintático-semânticas.\nCorresponde a aproximadamente 75% das questões de texto em concursos públicos (média de 3 em cada 4 itens).\nInterpretação Textual (Inferência = Implícito):\nLida com proposições que não estão literalmente grafadas, mas que decorrem logicamente das premissas textuais.\nExige autorização expressa no enunciado (\"infere-se\", \"deduz-se\", \"depreende-se\", \"conclui-se\", \"entende-se\").\nSe o enunciado não contiver comando de inferência, o candidato deve restringir-se à compreensão/recorrência.\nCorresponde a aproximadamente 25% das questões de texto (média de 1 em cada 4 itens).\nAlertas e erros comuns\nO Erro Invertido: O candidato destreinado tenta deduzir nas 3 questões de compreensão (onde deveria apenas buscar paráfrases) e exige literalidade na única questão de inferência (onde deveria validar o implícito autorizado).Expande: , 004Dica associada: TIP-A13-G02-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A análise textual divide-se categoricamente em dois níveis cognitivos e operacionais distintos: a Compreensão Textual (Recorrência), restrita aos dados explícitos e resolvida por paráfrases diretas, e a Interpretação Textual (Inferência), que opera sobre dados implícitos por meio de deduções lógicas e pressuposições autorizadas por pistas textuais."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)",
+              "text": "┌─────────────────────────────────────────────────────────────────────────────┐ │ OPERAÇÕES COGNITIVAS DE LEITURA │ ├──────────────────────────────────────┬──────────────────────────────────────┤ │ COMPREENSÃO (RECORRÊNCIA) │ INTERPRETAÇÃO (INFERÊNCIA) │ ├──────────────────────────────────────┼──────────────────────────────────────┤ │ • Objeto: Superfície EXPLÍCITA │ • Objeto: Estrutura IMPLÍCITA │ │ • Operação: Localização e Paráfrase │ • Operação: Dedução e Pressuposição │ │ • Relação: Equivalência sintática │ • Relação: Consequência lógica │ │ • Frequência estatística: ~75% (3/4) │ • Frequência estatística: ~25% (1/4) │ │ • Regra: \"Está escrito com outras │ • Regra: \"Não está escrito, mas é │ │ palavras\" │ autorizado por pistas do texto\" │ └──────────────────────────────────────┴──────────────────────────────────────┘"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Compreensão Textual (Recorrência = Explícito):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Lida unicamente com informações grafadas no texto.",
+                "As assertivas corretas representam reescrituras fiéis, sinônimos contextuais ou equivalências sintático-semânticas.",
+                "Corresponde a aproximadamente 75% das questões de texto em concursos públicos (média de 3 em cada 4 itens)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Interpretação Textual (Inferência = Implícito):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Lida com proposições que não estão literalmente grafadas, mas que decorrem logicamente das premissas textuais.",
+                "Exige autorização expressa no enunciado (\"infere-se\", \"deduz-se\", \"depreende-se\", \"conclui-se\", \"entende-se\").",
+                "Se o enunciado não contiver comando de inferência, o candidato deve restringir-se à compreensão/recorrência.",
+                "Corresponde a aproximadamente 25% das questões de texto (média de 1 em cada 4 itens)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Alertas e erros comuns"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Erro Invertido: O candidato destreinado tenta deduzir nas 3 questões de compreensão (onde deveria apenas buscar paráfrases) e exige literalidade na única questão de inferência (onde deveria validar o implícito autorizado)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G02-001",
+                  "targetTitle": "Matriz Histórica e Epistemológica da Inferência Técnica (NCE/UFRJ e FGV)",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A13-G02-003",
+                  "targetTitle": "Teoria das Pistas Textuais e Mecanismo da Pressuposição Semântica",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A13-G02-004",
+                  "targetTitle": "Tipologia de Comandos de Enunciado nas Bancas Examinadoras",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G02-001",
+                  "targetTitle": "O Erro de Exigir Literalidade em Itens de Inferência",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +273,71 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA inferência válida não constitui suposição livre, intuição ou hipótese subjetiva; ela é uma dedução necessária ou formalmente autorizada, construída a partir de pressupostos semânticos gerados por pistas textuais (marcas gramaticais e lexicais explícitas).\nExplicação consolidada\nAfirmar que uma inferência decorre \"a partir do texto\" significa que sua fundamentação repousa em marcadores linguísticos formais:\nPistas Textuais: classes gramaticais operadoras de sentido, tais como:\nVerbos aspectuais ou de mudança de estado (ex.: deixar de, passar a, tornar-se);\nAdvérbios temporais, modais e aspectuais (ex.: já, ainda, não mais, historicamente);\nAdjetivos e modificadores valorativos;\nQuantificadores lógicos (ex.: maioria, alguns, parte de);\nConectivos e operadores argumentativos.\nMecanismo da Pressuposição: informação implícita que se torna logicamente incontestável em razão da presença de uma pista textual.\nAxioma da Não Literalidade: A inferência nunca estará expressa literalmente na superfície do texto. Rejeitar um item sob a justificativa de que \"isso não está escrito\" revela incompreensão da natureza da inferência textual. Se estivesse escrito, seria recorrência.\nExemplos comparativos\nExemplo Propedêutico: \"Ana não quer mais ser professora.\"\nPista textual: operador adverbial \"mais\" (marca de cessação de estado).\nPressuposto incontestável: \"Ana já quis ser professora no passado\".\nAnalogia Cotidiana: Na enunciação \"Eu não bebo mais\", o interlocutor deduz com certeza absoluta que o falante ingeria bebidas alcoólicas anteriormente, em virtude do operador de cessação \"não... mais\".Exemplificado por: , , \nContrasta com:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A inferência válida não constitui suposição livre, intuição ou hipótese subjetiva; ela é uma dedução necessária ou formalmente autorizada, construída a partir de pressupostos semânticos gerados por pistas textuais (marcas gramaticais e lexicais explícitas)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Afirmar que uma inferência decorre \"a partir do texto\" significa que sua fundamentação repousa em marcadores linguísticos formais:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pistas Textuais: classes gramaticais operadoras de sentido, tais como:",
+                "Verbos aspectuais ou de mudança de estado (ex.: deixar de, passar a, tornar-se);",
+                "Advérbios temporais, modais e aspectuais (ex.: já, ainda, não mais, historicamente);",
+                "Adjetivos e modificadores valorativos;",
+                "Quantificadores lógicos (ex.: maioria, alguns, parte de);",
+                "Conectivos e operadores argumentativos.",
+                "Mecanismo da Pressuposição: informação implícita que se torna logicamente incontestável em razão da presença de uma pista textual.",
+                "Axioma da Não Literalidade: A inferência nunca estará expressa literalmente na superfície do texto. Rejeitar um item sob a justificativa de que \"isso não está escrito\" revela incompreensão da natureza da inferência textual. Se estivesse escrito, seria recorrência."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos comparativos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo Propedêutico: \"Ana não quer mais ser professora.\"",
+                "Pista textual: operador adverbial \"mais\" (marca de cessação de estado).",
+                "Pressuposto incontestável: \"Ana já quis ser professora no passado\".",
+                "Analogia Cotidiana: Na enunciação \"Eu não bebo mais\", o interlocutor deduz com certeza absoluta que o falante ingeria bebidas alcoólicas anteriormente, em virtude do operador de cessação \"não... mais\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G02-002",
+                  "targetTitle": "Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G02-006",
+                  "targetTitle": "Extrapolação Textual por Insuficiência de Evidências e Conhecimento de Mundo",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +350,55 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs enunciados de provas de concurso público determinam o regime cognitivo de resolução aplicável à questão (compreensão vs. inferência) por meio de fórmulas canônicas e verbos de comando específicos.\nClassificação detalhada dos comandos\n TIPOLOGIA DE ENUNCIADOS ┬ ┤ ┼ ┤ Compreensão (Recorrência) • \"O texto afirma/diz que...\" • \"De acordo com o texto,...\" • \"Segundo o autor da passagem,...\" • \"Conforme explicitado no parágrafo X,...\" ┼ ┤ Inferência Clássica • \"Infere-se do texto que...\" • \"Deduz-se das ideias do fragmento que...\" • \"Depreende-se do texto que...\" • \"Conclui-se da leitura do parágrafo X que...\" ┼ ┤ Inferência Moderna • \"Entende-se do texto que...\" (Global / Síntese) • \"É possível subentender do raciocínio que...\" ┴ ┘\nComportamento Operacional do Enunciado Moderno\nO comando \"Entende-se do texto que...\" (amplamente difundido pela banca FGV e consolidado no Cebraspe) convida o candidato a uma leitura de síntese global, exigindo dedução autorizada a partir do encadeamento das ideias textuais. Em textos dissertativos, a ancoragem desse comando concentra-se predominantemente nos parágrafos finais (conclusão do autor).Dica associada: TIP-A13-G02-003"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os enunciados de provas de concurso público determinam o regime cognitivo de resolução aplicável à questão (compreensão vs. inferência) por meio de fórmulas canônicas e verbos de comando específicos."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Classificação detalhada dos comandos",
+              "text": "┌─────────────────────────────────────────────────────────────────────────────┐ │ TIPOLOGIA DE ENUNCIADOS │ ├───────────────────────────┬─────────────────────────────────────────────────┤ ├───────────────────────────┼─────────────────────────────────────────────────┤ │ Compreensão (Recorrência) │ • \"O texto afirma/diz que...\" │ │ │ • \"De acordo com o texto,...\" │ │ │ • \"Segundo o autor da passagem,...\" │ │ │ • \"Conforme explicitado no parágrafo X,...\" │ ├───────────────────────────┼─────────────────────────────────────────────────┤ │ Inferência Clássica │ • \"Infere-se do texto que...\" │ │ │ • \"Deduz-se das ideias do fragmento que...\" │ │ │ • \"Depreende-se do texto que...\" │ │ │ • \"Conclui-se da leitura do parágrafo X que...\" │ ├───────────────────────────┼─────────────────────────────────────────────────┤ │ Inferência Moderna │ • \"Entende-se do texto que...\" │ │ (Global / Síntese) │ • \"É possível subentender do raciocínio que...\" │ └───────────────────────────┴─────────────────────────────────────────────────┘"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Comportamento Operacional do Enunciado Moderno"
+            },
+            {
+              "type": "paragraph",
+              "text": "O comando \"Entende-se do texto que...\" (amplamente difundido pela banca FGV e consolidado no Cebraspe) convida o candidato a uma leitura de síntese global, exigindo dedução autorizada a partir do encadeamento das ideias textuais. Em textos dissertativos, a ancoragem desse comando concentra-se predominantemente nos parágrafos finais (conclusão do autor)."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G02-002",
+                  "targetTitle": "Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G02-001",
+                  "targetTitle": "Protocolo Geral de Quatro Passos para Inferência Textual",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G02-002",
+                  "targetTitle": "Estratégia de Leitura Focada para Enunciados Globais (\"Entende-se / Conclui-se\")",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +411,64 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA validação de uma inferência opera segundo o modelo condicional do raciocínio lógico formal: \"Se o texto diz $X$, então posso deduzir $Y$\", em que $X$ representa a premissa textual explícita (pista) e $Y$ representa a conclusão implícita necessária ou probabilisticamente certa.\nExplicação consolidada\nMecânica do Teste Condicional:\nLocalizar no fragmento textual a premissa explícita ($X$).\nTestar se a proposição da assertiva ($Y$) decorre logicamente como implicação direta de $X$.\nSe $X$ for condição suficiente para garantir $Y \\rightarrow$ Inferência Válida (Item CERTO).\nSe $X$ for insuficiente para garantir $Y$ (sendo $Y$ mera suposição ou dependente de dados externos) $\\rightarrow$ Extrapolação (Item ERRADO).\nLógica dos Operadores Quantificadores (ex.: \"Maioria\"):\nO quantificador \"a maioria\" define que uma parcela quantitativamente superior a 50% de um universo partilha de certa característica.\nConsequência lógica imediata: o termo \"maioria\" exclui a totalidade (nem todos partilham daquela condição, existindo uma minoria distinta).\nSe um fenômeno atinge toda a população de uma localidade e a \"maioria\" dessa localidade é do grupo $A$, infere-se obrigatoriamente que indivíduos que não pertencem ao grupo $A$ também são afetados."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A validação de uma inferência opera segundo o modelo condicional do raciocínio lógico formal: \"Se o texto diz $X$, então posso deduzir $Y$\", em que $X$ representa a premissa textual explícita (pista) e $Y$ representa a conclusão implícita necessária ou probabilisticamente certa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mecânica do Teste Condicional:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localizar no fragmento textual a premissa explícita ($X$).",
+                "Testar se a proposição da assertiva ($Y$) decorre logicamente como implicação direta de $X$.",
+                "Se $X$ for condição suficiente para garantir $Y \\rightarrow$ Inferência Válida (Item CERTO).",
+                "Se $X$ for insuficiente para garantir $Y$ (sendo $Y$ mera suposição ou dependente de dados externos) $\\rightarrow$ Extrapolação (Item ERRADO)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Lógica dos Operadores Quantificadores (ex.: \"Maioria\"):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O quantificador \"a maioria\" define que uma parcela quantitativamente superior a 50% de um universo partilha de certa característica.",
+                "Consequência lógica imediata: o termo \"maioria\" exclui a totalidade (nem todos partilham daquela condição, existindo uma minoria distinta).",
+                "Se um fenômeno atinge toda a população de uma localidade e a \"maioria\" dessa localidade é do grupo $A$, infere-se obrigatoriamente que indivíduos que não pertencem ao grupo $A$ também são afetados."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G02-003",
+                  "targetTitle": "Teoria das Pistas Textuais e Mecanismo da Pressuposição Semântica",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +481,70 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA Extrapolação Textual é o erro de interpretação consistente em validar uma assertiva que introduz causas, consequências, dados históricos ou julgamentos de valor que ultrapassam os limites informacionais do texto-base, decorrente da insuficiência de pistas linguísticas autorizadoras.\nExplicação consolidada\nEstrutura da Pegadinha Contemporânea: As bancas examinadoras raramente constroem itens com erros grosseiros em toda a frase. Em regra, formulam assertivas com 90% a 95% de correspondência fidedigna com o texto, inserindo uma única palavra ou nexo causal residual desprovido de suporte textual.\nA Armadilha do Conhecimento de Mundo / Repertório Acadêmico:\nO examinador introduz fatos verídicos no mundo exterior (notícias, teses sociológicas, dados históricos consolidados).\nO candidato especialista ou atento à atualidade reconhece a veracidade da afirmação no plano real e valida o item, esquecendo que o universo de validação da prova de Língua Portuguesa é estritamente autônomo e fechado nos limites do fragmento apresentado.\nInformação verdadeira no mundo real, se desprovida de pista no texto, invalida a assertiva por extrapolação.\nCritérios de reconhecimento\nIdentificar se o item afirma relações de causa/efeito (\"a razão de\", \"decorre do fato de\").\nIdentificar se o item atribui autoria ou iniciativa (\"foram as responsáveis por propor\").\nVerificar se o texto-base contém operador explícito que fundamente essa causalidade ou autoria. Na ausência de pista $\\rightarrow$ classificar como Extrapolação.\nRelações\nContrasta com: , \nExemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Extrapolação Textual é o erro de interpretação consistente em validar uma assertiva que introduz causas, consequências, dados históricos ou julgamentos de valor que ultrapassam os limites informacionais do texto-base, decorrente da insuficiência de pistas linguísticas autorizadoras."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura da Pegadinha Contemporânea: As bancas examinadoras raramente constroem itens com erros grosseiros em toda a frase. Em regra, formulam assertivas com 90% a 95% de correspondência fidedigna com o texto, inserindo uma única palavra ou nexo causal residual desprovido de suporte textual.",
+                "A Armadilha do Conhecimento de Mundo / Repertório Acadêmico:",
+                "O examinador introduz fatos verídicos no mundo exterior (notícias, teses sociológicas, dados históricos consolidados).",
+                "O candidato especialista ou atento à atualidade reconhece a veracidade da afirmação no plano real e valida o item, esquecendo que o universo de validação da prova de Língua Portuguesa é estritamente autônomo e fechado nos limites do fragmento apresentado.",
+                "Informação verdadeira no mundo real, se desprovida de pista no texto, invalida a assertiva por extrapolação."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificar se o item afirma relações de causa/efeito (\"a razão de\", \"decorre do fato de\").",
+                "Identificar se o item atribui autoria ou iniciativa (\"foram as responsáveis por propor\").",
+                "Verificar se o texto-base contém operador explícito que fundamente essa causalidade ou autoria. Na ausência de pista $\\rightarrow$ classificar como Extrapolação."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G02-003",
+                  "targetTitle": "Teoria das Pistas Textuais e Mecanismo da Pressuposição Semântica",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G02-005",
+                  "targetTitle": "Estrutura Lógica Condicional da Inferência e Operadores Quantificadores",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G02-002",
+                  "targetTitle": "A Armadilha da Extrapolação por Conhecimento Enciclopédico de Mundo",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -182,40 +557,68 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO descompasso sintático-relacional ocorre quando uma assertiva de prova reúne múltiplos termos e conceitos verídicos, extraídos do texto por paráfrases perfeitas, mas forja entre eles uma conexão predicativa, causal ou teleológica que inverte ou altera as relações lógicas sustentadas pelo autor.\nExplicação consolidada\nMorfologia da Armadilha:\nO candidato decompõe a assertiva e encontra o Bloco 1 no texto (paráfrase válida), encontra o Bloco 2 (paráfrase válida) e encontra o Bloco 4 (paráfrase válida).\nEm razão do reconhecimento de tantos elementos verdadeiros, o leitor tende a assumir a correção global do item por complacência.\nNo entanto, a banca adultera o Bloco 3 (\"O que sobrou\"): o verbo de ligação, o pronome ou o nexo relacional vincula o sujeito ao predicado incorreto.\nInversão de Vetores (Ponto de Partida vs. Ponto de Chegada):\nEm textos dissertativos complexos, determinados conceitos representam o ponto de partida (o cenário fático consolidado, o ecossistema existente).\nOutros conceitos representam o ponto de chegada (a ação exigida, o foco a ser redefinido para lidar com a nova realidade).\nA assertiva falha ao predicar o cenário existente como se fosse o objeto da ação a ser redefinida, gerando contradição relacional."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O descompasso sintático-relacional ocorre quando uma assertiva de prova reúne múltiplos termos e conceitos verídicos, extraídos do texto por paráfrases perfeitas, mas forja entre eles uma conexão predicativa, causal ou teleológica que inverte ou altera as relações lógicas sustentadas pelo autor."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Morfologia da Armadilha:",
+                "O candidato decompõe a assertiva e encontra o Bloco 1 no texto (paráfrase válida), encontra o Bloco 2 (paráfrase válida) e encontra o Bloco 4 (paráfrase válida).",
+                "Em razão do reconhecimento de tantos elementos verdadeiros, o leitor tende a assumir a correção global do item por complacência.",
+                "No entanto, a banca adultera o Bloco 3 (\"O que sobrou\"): o verbo de ligação, o pronome ou o nexo relacional vincula o sujeito ao predicado incorreto.",
+                "Inversão de Vetores (Ponto de Partida vs. Ponto de Chegada):",
+                "Em textos dissertativos complexos, determinados conceitos representam o ponto de partida (o cenário fático consolidado, o ecossistema existente).",
+                "Outros conceitos representam o ponto de chegada (a ação exigida, o foco a ser redefinido para lidar com a nova realidade).",
+                "A assertiva falha ao predicar o cenário existente como se fosse o objeto da ação a ser redefinida, gerando contradição relacional."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G02-002",
+                  "targetTitle": "Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G02-006",
+                  "targetTitle": "Extrapolação Textual por Insuficiência de Evidências e Conhecimento de Mundo",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G02-004",
+                  "targetTitle": "Técnica das \"Setas Salvam\" e Teste do Resíduo Relacional",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G02-003",
+                  "targetTitle": "O Golpe da \"Assertiva 90% Verdadeira\" com Descompasso Relacional",
+                  "targetUnitId": "IP-A13-G02",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA introdução de parâmetros objetivos, formais e linguísticos para a cobrança de inferência em concursos públicos brasileiros teve origem metodológica no Núcleo de Computação Eletrônica da Universidade Federal do Rio de Janeiro (NCE/UFRJ), corpo docente que posteriormente estruturou a matriz de Língua Portuguesa da Fundação Getulio Vargas (FGV).\nExplicação consolidada\nHistoricamente, as avaliações de interpretação de textos em vestibulares e concursos tradicionais operavam sob viés acentuadamente subjetivo e impressionista, baseando-se em especulações extracientíficas sobre o pensamento psicológico do autor (\"o que o autor quis dizer\"). O modelo inaugurado pelo NCE/UFRJ e consolidado pela FGV rompeu com esse subjetivismo ao transformar a interpretação textual em um procedimento dedutivo formal, fundamentado em pistas gramaticais, semântica lexical, pressuposições linguísticas e relações lógicas internas ao texto.\nCritérios de aplicação\nEliminar qualquer tentativa de adivinhação psicológica das intenções do autor.\nTratar o texto como um sistema formal autônomo, cujas conclusões válidas devem ser demonstráveis por operadores linguísticos presentes na superfície textual.\nRelações\nExpande: , \nEvidenciado por: TERM-A13-G02-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA análise textual divide-se categoricamente em dois níveis cognitivos e operacionais distintos: a Compreensão Textual (Recorrência), restrita aos dados explícitos e resolvida por paráfrases diretas, e a Interpretação Textual (Inferência), que opera sobre dados implícitos por meio de deduções lógicas e pressuposições autorizadas por pistas textuais.\n OPERAÇÕES COGNITIVAS DE LEITURA ┬ ┤ COMPREENSÃO (RECORRÊNCIA) INTERPRETAÇÃO (INFERÊNCIA) ┼ ┤ • Objeto: Superfície EXPLÍCITA • Objeto: Estrutura IMPLÍCITA • Operação: Localização e Paráfrase • Operação: Dedução e Pressuposição • Relação: Equivalência sintática • Relação: Consequência lógica • Frequência estatística: ~75% (3/4) • Frequência estatística: ~25% (1/4) • Regra: \"Está escrito com outras • Regra: \"Não está escrito, mas é palavras\" autorizado por pistas do texto\" ┴ ┘\nExplicação consolidada\nCompreensão Textual (Recorrência = Explícito):\nLida unicamente com informações grafadas no texto.\nAs assertivas corretas representam reescrituras fiéis, sinônimos contextuais ou equivalências sintático-semânticas.\nCorresponde a aproximadamente 75% das questões de texto em concursos públicos (média de 3 em cada 4 itens).\nInterpretação Textual (Inferência = Implícito):\nLida com proposições que não estão literalmente grafadas, mas que decorrem logicamente das premissas textuais.\nExige autorização expressa no enunciado (\"infere-se\", \"deduz-se\", \"depreende-se\", \"conclui-se\", \"entende-se\").\nSe o enunciado não contiver comando de inferência, o candidato deve restringir-se à compreensão/recorrência.\nCorresponde a aproximadamente 25% das questões de texto (média de 1 em cada 4 itens).\nAlertas e erros comuns\nO Erro Invertido: O candidato destreinado tenta deduzir nas 3 questões de compreensão (onde deveria apenas buscar paráfrases) e exige literalidade na única questão de inferência (onde deveria validar o implícito autorizado).Expande: , 004Dica associada: TIP-A13-G02-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA inferência válida não constitui suposição livre, intuição ou hipótese subjetiva; ela é uma dedução necessária ou formalmente autorizada, construída a partir de pressupostos semânticos gerados por pistas textuais (marcas gramaticais e lexicais explícitas).\nExplicação consolidada\nAfirmar que uma inferência decorre \"a partir do texto\" significa que sua fundamentação repousa em marcadores linguísticos formais:\nPistas Textuais: classes gramaticais operadoras de sentido, tais como:\nVerbos aspectuais ou de mudança de estado (ex.: deixar de, passar a, tornar-se);\nAdvérbios temporais, modais e aspectuais (ex.: já, ainda, não mais, historicamente);\nAdjetivos e modificadores valorativos;\nQuantificadores lógicos (ex.: maioria, alguns, parte de);\nConectivos e operadores argumentativos.\nMecanismo da Pressuposição: informação implícita que se torna logicamente incontestável em razão da presença de uma pista textual.\nAxioma da Não Literalidade: A inferência nunca estará expressa literalmente na superfície do texto. Rejeitar um item sob a justificativa de que \"isso não está escrito\" revela incompreensão da natureza da inferência textual. Se estivesse escrito, seria recorrência.\nExemplos comparativos\nExemplo Propedêutico: \"Ana não quer mais ser professora.\"\nPista textual: operador adverbial \"mais\" (marca de cessação de estado).\nPressuposto incontestável: \"Ana já quis ser professora no passado\".\nAnalogia Cotidiana: Na enunciação \"Eu não bebo mais\", o interlocutor deduz com certeza absoluta que o falante ingeria bebidas alcoólicas anteriormente, em virtude do operador de cessação \"não... mais\".Exemplificado por: , , \nContrasta com:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs enunciados de provas de concurso público determinam o regime cognitivo de resolução aplicável à questão (compreensão vs. inferência) por meio de fórmulas canônicas e verbos de comando específicos.\nClassificação detalhada dos comandos\n TIPOLOGIA DE ENUNCIADOS ┬ ┤ ┼ ┤ Compreensão (Recorrência) • \"O texto afirma/diz que...\" • \"De acordo com o texto,...\" • \"Segundo o autor da passagem,...\" • \"Conforme explicitado no parágrafo X,...\" ┼ ┤ Inferência Clássica • \"Infere-se do texto que...\" • \"Deduz-se das ideias do fragmento que...\" • \"Depreende-se do texto que...\" • \"Conclui-se da leitura do parágrafo X que...\" ┼ ┤ Inferência Moderna • \"Entende-se do texto que...\" (Global / Síntese) • \"É possível subentender do raciocínio que...\" ┴ ┘\nComportamento Operacional do Enunciado Moderno\nO comando \"Entende-se do texto que...\" (amplamente difundido pela banca FGV e consolidado no Cebraspe) convida o candidato a uma leitura de síntese global, exigindo dedução autorizada a partir do encadeamento das ideias textuais. Em textos dissertativos, a ancoragem desse comando concentra-se predominantemente nos parágrafos finais (conclusão do autor).Dica associada: TIP-A13-G02-003"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA validação de uma inferência opera segundo o modelo condicional do raciocínio lógico formal: \"Se o texto diz $X$, então posso deduzir $Y$\", em que $X$ representa a premissa textual explícita (pista) e $Y$ representa a conclusão implícita necessária ou probabilisticamente certa.\nExplicação consolidada\nMecânica do Teste Condicional:\nLocalizar no fragmento textual a premissa explícita ($X$).\nTestar se a proposição da assertiva ($Y$) decorre logicamente como implicação direta de $X$.\nSe $X$ for condição suficiente para garantir $Y \\rightarrow$ Inferência Válida (Item CERTO).\nSe $X$ for insuficiente para garantir $Y$ (sendo $Y$ mera suposição ou dependente de dados externos) $\\rightarrow$ Extrapolação (Item ERRADO).\nLógica dos Operadores Quantificadores (ex.: \"Maioria\"):\nO quantificador \"a maioria\" define que uma parcela quantitativamente superior a 50% de um universo partilha de certa característica.\nConsequência lógica imediata: o termo \"maioria\" exclui a totalidade (nem todos partilham daquela condição, existindo uma minoria distinta).\nSe um fenômeno atinge toda a população de uma localidade e a \"maioria\" dessa localidade é do grupo $A$, infere-se obrigatoriamente que indivíduos que não pertencem ao grupo $A$ também são afetados."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA Extrapolação Textual é o erro de interpretação consistente em validar uma assertiva que introduz causas, consequências, dados históricos ou julgamentos de valor que ultrapassam os limites informacionais do texto-base, decorrente da insuficiência de pistas linguísticas autorizadoras.\nExplicação consolidada\nEstrutura da Pegadinha Contemporânea: As bancas examinadoras raramente constroem itens com erros grosseiros em toda a frase. Em regra, formulam assertivas com 90% a 95% de correspondência fidedigna com o texto, inserindo uma única palavra ou nexo causal residual desprovido de suporte textual.\nA Armadilha do Conhecimento de Mundo / Repertório Acadêmico:\nO examinador introduz fatos verídicos no mundo exterior (notícias, teses sociológicas, dados históricos consolidados).\nO candidato especialista ou atento à atualidade reconhece a veracidade da afirmação no plano real e valida o item, esquecendo que o universo de validação da prova de Língua Portuguesa é estritamente autônomo e fechado nos limites do fragmento apresentado.\nInformação verdadeira no mundo real, se desprovida de pista no texto, invalida a assertiva por extrapolação.\nCritérios de reconhecimento\nIdentificar se o item afirma relações de causa/efeito (\"a razão de\", \"decorre do fato de\").\nIdentificar se o item atribui autoria ou iniciativa (\"foram as responsáveis por propor\").\nVerificar se o texto-base contém operador explícito que fundamente essa causalidade ou autoria. Na ausência de pista $\\rightarrow$ classificar como Extrapolação.\nRelações\nContrasta com: , \nExemplificado por: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO descompasso sintático-relacional ocorre quando uma assertiva de prova reúne múltiplos termos e conceitos verídicos, extraídos do texto por paráfrases perfeitas, mas forja entre eles uma conexão predicativa, causal ou teleológica que inverte ou altera as relações lógicas sustentadas pelo autor.\nExplicação consolidada\nMorfologia da Armadilha:\nO candidato decompõe a assertiva e encontra o Bloco 1 no texto (paráfrase válida), encontra o Bloco 2 (paráfrase válida) e encontra o Bloco 4 (paráfrase válida).\nEm razão do reconhecimento de tantos elementos verdadeiros, o leitor tende a assumir a correção global do item por complacência.\nNo entanto, a banca adultera o Bloco 3 (\"O que sobrou\"): o verbo de ligação, o pronome ou o nexo relacional vincula o sujeito ao predicado incorreto.\nInversão de Vetores (Ponto de Partida vs. Ponto de Chegada):\nEm textos dissertativos complexos, determinados conceitos representam o ponto de partida (o cenário fático consolidado, o ecossistema existente).\nOutros conceitos representam o ponto de chegada (a ação exigida, o foco a ser redefinido para lidar com a nova realidade).\nA assertiva falha ao predicar o cenário existente como se fosse o objeto da ação a ser redefinida, gerando contradição relacional."
         }
       ]
     },
@@ -309,7 +712,9 @@
               "RULE-IP-A13-G02-001",
               "EXP-IP-A13-G02-030"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -522,7 +927,9 @@
               "PROC-A13-G02-001",
               "EXP-IP-A13-G02-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -612,7 +1019,9 @@
               "PROC-A13-G02-002",
               "EXP-IP-A13-G02-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -728,7 +1137,9 @@
               "PROC-A13-G02-003",
               "EXP-IP-A13-G02-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -804,7 +1215,9 @@
               "PROC-A13-G02-004",
               "EXP-IP-A13-G02-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -854,7 +1267,9 @@
               "CONTRAST-IP-A13-G02-001",
               "EXP-IP-A13-G02-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -899,7 +1314,9 @@
               "CONTRAST-IP-A13-G02-002",
               "EXP-IP-A13-G02-040"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -944,7 +1361,9 @@
               "CONTRAST-IP-A13-G02-003",
               "EXP-IP-A13-G02-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -989,7 +1408,9 @@
               "CONTRAST-IP-A13-G02-004",
               "EXP-IP-A13-G02-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1036,7 +1457,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-001",
               "EXP-IP-A13-G02-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1091,7 +1514,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-002",
               "EXP-IP-A13-G02-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1134,7 +1559,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-003",
               "EXP-IP-A13-G02-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1177,7 +1604,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-004",
               "EXP-IP-A13-G02-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1277,7 +1706,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-005",
               "EXP-IP-A13-G02-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1320,7 +1751,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-006",
               "EXP-IP-A13-G02-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1363,7 +1796,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-007",
               "EXP-IP-A13-G02-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1457,7 +1892,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-008",
               "EXP-IP-A13-G02-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1500,7 +1937,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-009",
               "EXP-IP-A13-G02-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1549,7 +1988,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-010",
               "EXP-IP-A13-G02-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1604,7 +2045,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-011",
               "EXP-IP-A13-G02-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1647,7 +2090,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-012",
               "EXP-IP-A13-G02-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1696,7 +2141,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-013",
               "EXP-IP-A13-G02-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1751,7 +2198,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-014",
               "EXP-IP-A13-G02-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1794,7 +2243,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-015",
               "EXP-IP-A13-G02-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1843,7 +2294,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-016",
               "EXP-IP-A13-G02-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1925,7 +2378,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-017",
               "EXP-IP-A13-G02-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1968,7 +2423,9 @@
               "WORKED_EXAMPLE-IP-A13-G02-018",
               "EXP-IP-A13-G02-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2032,7 +2489,9 @@
               "WARN-A13-G02-001",
               "EXP-IP-A13-G02-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2082,7 +2541,9 @@
               "WARN-A13-G02-002",
               "EXP-IP-A13-G02-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2132,26 +2593,80 @@
               "WARN-A13-G02-003",
               "EXP-IP-A13-G02-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Matriz Histórica e Epistemológica da Inferência Técnica (NCE/UFRJ e FGV)**: Definição ou ideia central\nA introdução de parâmetros objetivos, formais e linguísticos para a cobrança de inferência em concursos públicos brasileiros teve origem metodológica no Núcleo de Computação Eletrônica da Universidade Federal do Rio de Janeiro (NCE/UFRJ), corpo docente que posteriormente estruturou a matriz de Língua Portuguesa da Fundação Getulio Vargas (FGV).\nExplicação consolidada\nHistoricamente, as avaliações de interpretação de textos em vestibulares e concursos tradicionais operavam sob viés acentuadamente subjetivo e impressionista, baseando-se em especulações extracientíficas sobre o pensamento psicológico do autor (\"o que o autor quis dizer\"). O modelo inaugurado pelo NCE/UFRJ e consolidado pela FGV rompeu com esse subjetivismo ao transformar a interpretação textual em um procedimento dedutivo formal, fundamentado em pistas gramaticais, semântica lexical, pressuposições linguísticas e relações lógicas internas ao texto.\nCritérios de aplicação\nEliminar qualquer tentativa de adivinhação psicológica das intenções do autor.\nTratar o texto como um sistema formal autônomo, cujas conclusões válidas devem ser demonstráveis por operadores linguísticos presentes na superfície textual.\nRelações\nExpande: , \nEvidenciado por: TERM-A13-G02-001",
-            "**Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)**: Definição ou ideia central\nA análise textual divide-se categoricamente em dois níveis cognitivos e operacionais distintos: a Compreensão Textual (Recorrência), restrita aos dados explícitos e resolvida por paráfrases diretas, e a Interpretação Textual (Inferência), que opera sobre dados implícitos por meio de deduções lógicas e pressuposições autorizadas por pistas textuais.\n OPERAÇÕES COGNITIVAS DE LEITURA ┬ ┤ COMPREENSÃO (RECORRÊNCIA) INTERPRETAÇÃO (INFERÊNCIA) ┼ ┤ • Objeto: Superfície EXPLÍCITA • Objeto: Estrutura IMPLÍCITA • Operação: Localização e Paráfrase • Operação: Dedução e Pressuposição • Relação: Equivalência sintática • Relação: Consequência lógica • Frequência estatística: ~75% (3/4) • Frequência estatística: ~25% (1/4) • Regra: \"Está escrito com outras • Regra: \"Não está escrito, mas é palavras\" autorizado por pistas do texto\" ┴ ┘\nExplicação consolidada\nCompreensão Textual (Recorrência = Explícito):\nLida unicamente com informações grafadas no texto.\nAs assertivas corretas representam reescrituras fiéis, sinônimos contextuais ou equivalências sintático-semânticas.\nCorresponde a aproximadamente 75% das questões de texto em concursos públicos (média de 3 em cada 4 itens).\nInterpretação Textual (Inferência = Implícito):\nLida com proposições que não estão literalmente grafadas, mas que decorrem logicamente das premissas textuais.\nExige autorização expressa no enunciado (\"infere-se\", \"deduz-se\", \"depreende-se\", \"conclui-se\", \"entende-se\").\nSe o enunciado não contiver comando de inferência, o candidato deve restringir-se à compreensão/recorrência.\nCorresponde a aproximadamente 25% das questões de texto (média de 1 em cada 4 itens).\nAlertas e erros comuns\nO Erro Invertido: O candidato destreinado tenta deduzir nas 3 questões de compreensão (onde deveria apenas buscar paráfrases) e exige literalidade na única questão de inferência (onde deveria validar o implícito autorizado).Expande: , 004Dica associada: TIP-A13-G02-001",
-            "**Teoria das Pistas Textuais e Mecanismo da Pressuposição Semântica**: Definição ou ideia central\nA inferência válida não constitui suposição livre, intuição ou hipótese subjetiva; ela é uma dedução necessária ou formalmente autorizada, construída a partir de pressupostos semânticos gerados por pistas textuais (marcas gramaticais e lexicais explícitas).\nExplicação consolidada\nAfirmar que uma inferência decorre \"a partir do texto\" significa que sua fundamentação repousa em marcadores linguísticos formais:\nPistas Textuais: classes gramaticais operadoras de sentido, tais como:\nVerbos aspectuais ou de mudança de estado (ex.: deixar de, passar a, tornar-se);\nAdvérbios temporais, modais e aspectuais (ex.: já, ainda, não mais, historicamente);\nAdjetivos e modificadores valorativos;\nQuantificadores lógicos (ex.: maioria, alguns, parte de);\nConectivos e operadores argumentativos.\nMecanismo da Pressuposição: informação implícita que se torna logicamente incontestável em razão da presença de uma pista textual.\nAxioma da Não Literalidade: A inferência nunca estará expressa literalmente na superfície do texto. Rejeitar um item sob a justificativa de que \"isso não está escrito\" revela incompreensão da natureza da inferência textual. Se estivesse escrito, seria recorrência.\nExemplos comparativos\nExemplo Propedêutico: \"Ana não quer mais ser professora.\"\nPista textual: operador adverbial \"mais\" (marca de cessação de estado).\nPressuposto incontestável: \"Ana já quis ser professora no passado\".\nAnalogia Cotidiana: Na enunciação \"Eu não bebo mais\", o interlocutor deduz com certeza absoluta que o falante ingeria bebidas alcoólicas anteriormente, em virtude do operador de cessação \"não... mais\".Exemplificado por: , , \nContrasta com:",
-            "**Tipologia de Comandos de Enunciado nas Bancas Examinadoras**: Definição ou ideia central\nOs enunciados de provas de concurso público determinam o regime cognitivo de resolução aplicável à questão (compreensão vs. inferência) por meio de fórmulas canônicas e verbos de comando específicos.\nClassificação detalhada dos comandos\n TIPOLOGIA DE ENUNCIADOS ┬ ┤ ┼ ┤ Compreensão (Recorrência) • \"O texto afirma/diz que...\" • \"De acordo com o texto,...\" • \"Segundo o autor da passagem,...\" • \"Conforme explicitado no parágrafo X,...\" ┼ ┤ Inferência Clássica • \"Infere-se do texto que...\" • \"Deduz-se das ideias do fragmento que...\" • \"Depreende-se do texto que...\" • \"Conclui-se da leitura do parágrafo X que...\" ┼ ┤ Inferência Moderna • \"Entende-se do texto que...\" (Global / Síntese) • \"É possível subentender do raciocínio que...\" ┴ ┘\nComportamento Operacional do Enunciado Moderno\nO comando \"Entende-se do texto que...\" (amplamente difundido pela banca FGV e consolidado no Cebraspe) convida o candidato a uma leitura de síntese global, exigindo dedução autorizada a partir do encadeamento das ideias textuais. Em textos dissertativos, a ancoragem desse comando concentra-se predominantemente nos parágrafos finais (conclusão do autor).Dica associada: TIP-A13-G02-003",
-            "**Estrutura Lógica Condicional da Inferência e Operadores Quantificadores**: Definição ou ideia central\nA validação de uma inferência opera segundo o modelo condicional do raciocínio lógico formal: \"Se o texto diz $X$, então posso deduzir $Y$\", em que $X$ representa a premissa textual explícita (pista) e $Y$ representa a conclusão implícita necessária ou probabilisticamente certa.\nExplicação consolidada\nMecânica do Teste Condicional:\nLocalizar no fragmento textual a premissa explícita ($X$).\nTestar se a proposição da assertiva ($Y$) decorre logicamente como implicação direta de $X$.\nSe $X$ for condição suficiente para garantir $Y \\rightarrow$ Inferência Válida (Item CERTO).\nSe $X$ for insuficiente para garantir $Y$ (sendo $Y$ mera suposição ou dependente de dados externos) $\\rightarrow$ Extrapolação (Item ERRADO).\nLógica dos Operadores Quantificadores (ex.: \"Maioria\"):\nO quantificador \"a maioria\" define que uma parcela quantitativamente superior a 50% de um universo partilha de certa característica.\nConsequência lógica imediata: o termo \"maioria\" exclui a totalidade (nem todos partilham daquela condição, existindo uma minoria distinta).\nSe um fenômeno atinge toda a população de uma localidade e a \"maioria\" dessa localidade é do grupo $A$, infere-se obrigatoriamente que indivíduos que não pertencem ao grupo $A$ também são afetados.",
-            "**Extrapolação Textual por Insuficiência de Evidências e Conhecimento de Mundo**: Definição ou ideia central\nA Extrapolação Textual é o erro de interpretação consistente em validar uma assertiva que introduz causas, consequências, dados históricos ou julgamentos de valor que ultrapassam os limites informacionais do texto-base, decorrente da insuficiência de pistas linguísticas autorizadoras.\nExplicação consolidada\nEstrutura da Pegadinha Contemporânea: As bancas examinadoras raramente constroem itens com erros grosseiros em toda a frase. Em regra, formulam assertivas com 90% a 95% de correspondência fidedigna com o texto, inserindo uma única palavra ou nexo causal residual desprovido de suporte textual.\nA Armadilha do Conhecimento de Mundo / Repertório Acadêmico:\nO examinador introduz fatos verídicos no mundo exterior (notícias, teses sociológicas, dados históricos consolidados).\nO candidato especialista ou atento à atualidade reconhece a veracidade da afirmação no plano real e valida o item, esquecendo que o universo de validação da prova de Língua Portuguesa é estritamente autônomo e fechado nos limites do fragmento apresentado.\nInformação verdadeira no mundo real, se desprovida de pista no texto, invalida a assertiva por extrapolação.\nCritérios de reconhecimento\nIdentificar se o item afirma relações de causa/efeito (\"a razão de\", \"decorre do fato de\").\nIdentificar se o item atribui autoria ou iniciativa (\"foram as responsáveis por propor\").\nVerificar se o texto-base contém operador explícito que fundamente essa causalidade ou autoria. Na ausência de pista $\\rightarrow$ classificar como Extrapolação.\nRelações\nContrasta com: , \nExemplificado por: ,",
-            "**Descompasso Sintático-Relacional em Assertivas com Paráfrases Múltiplas**: Definição ou ideia central\nO descompasso sintático-relacional ocorre quando uma assertiva de prova reúne múltiplos termos e conceitos verídicos, extraídos do texto por paráfrases perfeitas, mas forja entre eles uma conexão predicativa, causal ou teleológica que inverte ou altera as relações lógicas sustentadas pelo autor.\nExplicação consolidada\nMorfologia da Armadilha:\nO candidato decompõe a assertiva e encontra o Bloco 1 no texto (paráfrase válida), encontra o Bloco 2 (paráfrase válida) e encontra o Bloco 4 (paráfrase válida).\nEm razão do reconhecimento de tantos elementos verdadeiros, o leitor tende a assumir a correção global do item por complacência.\nNo entanto, a banca adultera o Bloco 3 (\"O que sobrou\"): o verbo de ligação, o pronome ou o nexo relacional vincula o sujeito ao predicado incorreto.\nInversão de Vetores (Ponto de Partida vs. Ponto de Chegada):\nEm textos dissertativos complexos, determinados conceitos representam o ponto de partida (o cenário fático consolidado, o ecossistema existente).\nOutros conceitos representam o ponto de chegada (a ação exigida, o foco a ser redefinido para lidar com a nova realidade).\nA assertiva falha ao predicar o cenário existente como se fosse o objeto da ação a ser redefinida, gerando contradição relacional."
-          ]
+          "term": "Matriz Histórica e Epistemológica da Inferência Técnica (NCE/UFRJ e FGV)",
+          "shortDefinition": "A introdução de parâmetros objetivos, formais e linguísticos para a cobrança de inferência em concursos públicos brasileiros teve origem metodológica no Núcleo de Computação Eletrônica da Universidade Federal do Rio de Janeiro (NCE/UFRJ), corpo docente que posteriormente estruturou a matriz de Língua Portuguesa da Fundação Getulio Vargas (FGV).",
+          "detailTarget": {
+            "unitId": "IP-A13-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G02-01"
+          },
+          "operationalUse": "Historicamente, as avaliações de interpretação de textos em vestibulares e concursos tradicionais operavam sob viés acentuadamente subjetivo e impressionista, baseando-se em especulações extracientíficas sobre o pensamento psicológico do autor (\"o que o autor quis dizer\")."
+        },
+        {
+          "term": "Distinção Estrutural entre Compreensão (Recorrência) e Interpretação (Inferência)",
+          "shortDefinition": "A análise textual divide-se categoricamente em dois níveis cognitivos e operacionais distintos: a Compreensão Textual (Recorrência), restrita aos dados explícitos e resolvida por paráfrases diretas, e a Interpretação Textual (Inferência), que opera sobre dados implícitos por meio de deduções lógicas e pressuposições autorizadas por pistas textuais.",
+          "detailTarget": {
+            "unitId": "IP-A13-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G02-02"
+          }
+        },
+        {
+          "term": "Teoria das Pistas Textuais e Mecanismo da Pressuposição Semântica",
+          "shortDefinition": "A inferência válida não constitui suposição livre, intuição ou hipótese subjetiva; ela é uma dedução necessária ou formalmente autorizada, construída a partir de pressupostos semânticos gerados por pistas textuais (marcas gramaticais e lexicais explícitas).",
+          "detailTarget": {
+            "unitId": "IP-A13-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G02-03"
+          },
+          "operationalUse": "Afirmar que uma inferência decorre \"a partir do texto\" significa que sua fundamentação repousa em marcadores linguísticos formais:"
+        },
+        {
+          "term": "Tipologia de Comandos de Enunciado nas Bancas Examinadoras",
+          "shortDefinition": "Os enunciados de provas de concurso público determinam o regime cognitivo de resolução aplicável à questão (compreensão vs. inferência) por meio de fórmulas canônicas e verbos de comando específicos.",
+          "detailTarget": {
+            "unitId": "IP-A13-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G02-04"
+          }
+        },
+        {
+          "term": "Estrutura Lógica Condicional da Inferência e Operadores Quantificadores",
+          "shortDefinition": "A validação de uma inferência opera segundo o modelo condicional do raciocínio lógico formal: \"Se o texto diz $X$, então posso deduzir $Y$\", em que $X$ representa a premissa textual explícita (pista) e $Y$ representa a conclusão implícita necessária ou probabilisticamente certa.",
+          "detailTarget": {
+            "unitId": "IP-A13-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G02-05"
+          }
+        },
+        {
+          "term": "Extrapolação Textual por Insuficiência de Evidências e Conhecimento de Mundo",
+          "shortDefinition": "A Extrapolação Textual é o erro de interpretação consistente em validar uma assertiva que introduz causas, consequências, dados históricos ou julgamentos de valor que ultrapassam os limites informacionais do texto-base, decorrente da insuficiência de pistas linguísticas autorizadoras.",
+          "detailTarget": {
+            "unitId": "IP-A13-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G02-06"
+          }
+        },
+        {
+          "term": "Descompasso Sintático-Relacional em Assertivas com Paráfrases Múltiplas",
+          "shortDefinition": "O descompasso sintático-relacional ocorre quando uma assertiva de prova reúne múltiplos termos e conceitos verídicos, extraídos do texto por paráfrases perfeitas, mas forja entre eles uma conexão predicativa, causal ou teleológica que inverte ou altera as relações lógicas sustentadas pelo autor.",
+          "detailTarget": {
+            "unitId": "IP-A13-G02",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G02-07"
+          }
         }
       ]
     },
@@ -2729,7 +3244,39 @@
         "confidence": 0.96
       },
       "answerSha256": "657fafad2b9b8993e80a925797dfdfaf53b1e1e9066eae16c4ecbc16537e63cc",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Utilize o texto da questão anterior\nInfere-se do texto 1A1-I que os impostos no antigo Egito eram",
+        "options": [
+          {
+            "label": "A",
+            "text": "cobrados pelos escribas."
+          },
+          {
+            "label": "B",
+            "text": "pagos anualmente."
+          },
+          {
+            "label": "C",
+            "text": "aplicados a nativos e estrangeiros."
+          },
+          {
+            "label": "D",
+            "text": "estipulados pelos faraós."
+          },
+          {
+            "label": "E",
+            "text": "revertidos em benfeitorias."
+          }
+        ],
+        "answer": "C",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "1.0.0",

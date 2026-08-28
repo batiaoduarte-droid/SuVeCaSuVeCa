@@ -22,7 +22,9 @@ export const ResolutionSection: React.FC<ResolutionSectionProps> = ({ procedures
   if (!procedures || procedures.length === 0) return null;
 
   const handleCopy = (proc: ProcedureView, idx: number) => {
-    if (proc.presentation?.hideGenericScaffold) {
+    const strategy = proc.presentation?.renderStrategy
+      || (proc.presentation?.hideGenericScaffold ? 'source_only' : 'structured_first');
+    if (strategy === 'source_only') {
       navigator.clipboard.writeText([proc.title, semanticBlocksToPlainText(proc.blocks)].filter(Boolean).join('\n\n'));
       setCopiedIndex(idx);
       setTimeout(() => setCopiedIndex(null), 2000);
@@ -86,10 +88,13 @@ export const ResolutionSection: React.FC<ResolutionSectionProps> = ({ procedures
               }
               return { ...s, action: normalizeProcedureStepAction(s.action) };
             });
-            const sourceBackedOnly = proc.presentation?.hideGenericScaffold && proc.blocks?.length;
+            const strategy = proc.presentation?.renderStrategy
+              || (proc.presentation?.hideGenericScaffold ? 'source_only' : 'structured_first');
+            const showStructured = strategy !== 'source_only';
+            const groupSourceDetails = showStructured && Boolean(proc.blocks?.length);
             return (
               <div key={proc.procedureId || pIdx} className="space-y-3">
-                {!sourceBackedOnly && (
+                {showStructured && (
                   <ProcedureStepper
                     procedure={proc}
                     title={proc.title}
@@ -102,18 +107,30 @@ export const ResolutionSection: React.FC<ResolutionSectionProps> = ({ procedures
                 )}
 
               {/* Blocos secundários se houver */}
-              {proc.blocks && proc.blocks.length > 0 && (
+              {proc.blocks && proc.blocks.length > 0 && (groupSourceDetails ? (
+                <details className="group overflow-hidden rounded-xl border border-sky-200 bg-white">
+                  <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-xs font-bold text-sky-950 hover:bg-sky-50">
+                    <span>Detalhamento e exemplos do protocolo</span>
+                    <span className="text-sky-700 transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+                  </summary>
+                  <div className="space-y-2 border-t border-sky-100 p-4">
+                    {proc.blocks.map((block, bIdx) => (
+                      <ContentBlockRenderer key={bIdx} block={block} allowLegacyDiagramInference={false} />
+                    ))}
+                  </div>
+                </details>
+              ) : (
                 <div className="rounded-xl border border-sky-200 bg-white p-4 space-y-2">
-                  {sourceBackedOnly && (
+                  {!showStructured && (
                     <h4 className="border-b border-sky-100 pb-3 text-sm sm:text-base font-black text-sky-950">
                       <InlineRichText>{proc.title}</InlineRichText>
                     </h4>
                   )}
                   {proc.blocks.map((block, bIdx) => (
-                    <ContentBlockRenderer key={bIdx} block={block} />
+                    <ContentBlockRenderer key={bIdx} block={block} allowLegacyDiagramInference={false} />
                   ))}
                 </div>
-              )}
+              ))}
             </div>
             );
           })}

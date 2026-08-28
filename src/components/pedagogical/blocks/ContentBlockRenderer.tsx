@@ -4,8 +4,12 @@ import { SemanticBlockRenderer } from './SemanticBlockRenderer';
 
 interface ContentBlockRendererProps {
   block: SemanticBlock;
+  allowLegacyDiagramInference?: boolean;
 }
 
-export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({ block }) => {
-  return <SemanticBlockRenderer block={block} />;
+export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({
+  block,
+  allowLegacyDiagramInference = true,
+}) => {
+  return <SemanticBlockRenderer block={block} allowLegacyDiagramInference={allowLegacyDiagramInference} />;
 };

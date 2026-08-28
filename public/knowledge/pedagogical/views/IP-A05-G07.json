@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A05-G07",
     "lessonId": "A05",
     "title": "Vozes Verbais - Ativa e Passiva",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A05-G07",
@@ -51,61 +52,227 @@
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "As Duas Formas da Voz Passiva",
-          "pedagogicalGoal": "Distinguir a Voz Passiva Analítica da Voz Passiva Sintética (Pronominal).",
+          "groupId": "GRP-A05-G07-CANONICAL-01",
+          "title": "O Mecanismo Fundamental de Transposição da Passiva Analítica para a Ativa",
+          "conceptRefs": [
+            "KB-A05-G07-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Voz Passiva Analítica vs Sintética",
-              "columns": [
-                "Característica",
-                "Voz Passiva Analítica",
-                "Voz Passiva Sintética (Pronominal)"
-              ],
-              "rows": [
-                [
-                  "Estrutura",
-                  "Sujeito Paciente + Verbo Auxiliar (ser/estar) + Particípio + (Agente da Passiva)",
-                  "Verbo na 3ª pessoa (sing/plur) + SE (partícula apassivadora) + Sujeito Paciente"
-                ],
-                [
-                  "Exemplo Singular",
-                  "A casa foi vendida pelo corretor.",
-                  "Vendeu-se a casa."
-                ],
-                [
-                  "Exemplo Plural",
-                  "As casas foram vendidas pelo corretor.",
-                  "Venderam-se as casas."
-                ],
-                [
-                  "Presença do Agente",
-                  "Geralmente explícito (preposicionado por 'por' ou 'de')",
-                  "Geralmente oculto / não explicitado"
-                ],
-                [
-                  "Concordância Obrigatória",
-                  "O auxiliar e o particípio concordam com o sujeito paciente",
-                  "O verbo concorda obrigatoriamente em número com o sujeito paciente"
-                ]
-              ],
-              "text": "Ambas as formas possuem Sujeito Paciente explícito, com o qual o verbo concorda obrigatoriamente."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição e Conceito Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A transposição da voz passiva analítica para a voz ativa é a transformação sintática em que se desfaz a estrutura perifrástica passiva. Essa operação fundamenta-se em três pilares:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O agente da passiva converte-se no sujeito agente da voz ativa (com a supressão da preposição por/pelo);",
+                "O sujeito paciente é rebaixado à função de objeto direto da voz ativa;",
+                "O verbo auxiliar ser é compulsoriamente eliminado, descarregando toda a sua carga morfossintática (tempo, modo ou forma nominal) sobre o verbo imediatamente posterior (\"o verbo ser vingativo\")."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "A Metáfora do \"Verbo Ser Vingativo\""
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao contrário da voz ativa para a passiva analítica (em que se introduz o auxiliar ser), na passagem da passiva analítica para a ativa o verbo ser sai de cena. Ele é metaforicamente definido pela professora como \"escorpiano e vingativo\": ao ser expulso da oração, transfere compulsoriamente seu tempo e modo para o particípio principal, que é conjugado na forma verbal correspondente."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "O Mecanismo Fundamental de Transposição da Passiva Analítica para a Ativa",
+              "text": "Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar SER (Tempo T)] + [Particípio] + [por + Agente da Passiva] │ │ │ │ │ (vira OD) │ (eliminado) │ (assume Tempo T) │ (vira Sujeito) ▼ ▼ ▼ ▼ Voz Ativa: [Agente da Passiva] + [Verbo Principal Conjugado no Tempo T] + [Sujeito Paciente]"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G07-001",
+                  "targetTitle": "Protocolo Mestre de Transposição da Passiva Analítica para a Ativa",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-001",
+                  "targetTitle": "Exercício de Fixação 1: Passiva Simples com Agente Expresso (V022)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-002",
+                  "targetTitle": "Exercício de Fixação 2: Passiva Simples com Artigo Indefinido (V022)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-003",
+                  "targetTitle": "Exercício de Fixação 3: Passiva com Adjunto Adverbial Intercalado (V022)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
         {
-          "groupId": "canonical-table-coverage",
-          "title": "Quadros canônicos complementares",
-          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
-          "semanticKind": "canonical_table_coverage",
+          "groupId": "GRP-A05-G07-CANONICAL-02",
+          "title": "O Método das Cinco Instruções Operacionais",
+          "conceptRefs": [
+            "KB-A05-G07-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "As Cinco Instruções Passo a Passo",
+              "text": "MÉTODO DAS 5 INSTRUÇÕES │ ┌──────────────────────────────────────┼──────────────────────────────────────┐ ▼ ▼ ▼ INSTRUÇÃO 1: INSTRUÇÃO 2: INSTRUÇÃO 3: \"Chamar o feito à ordem\" Agente ➔ Sujeito Ativo Eliminação do \"SER\" • Identificar Agente da Passiva • Deslocar para início da oração • Riscar o verbo \"ser\" • Identificar Tempo do Verbo \"Ser\" • Eliminar a preposição \"por/de\" • Desenhar seta para verbo seguinte • Identificar Sujeito Paciente • Preservar artigos e modificadores • Transferir carga temporal/modo │ │ └──────────────────────────────────────┬──────────────────────────────────────┘ │ ┌──────────────────────────────────────┴──────────────────────────────────────┐ ▼ ▼ INSTRUÇÃO 4: INSTRUÇÃO 5: Sujeito Paciente ➔ Objeto Direto Agente Indeterminado ➔ Sujeito Indeterminado • Termo paciente vira complemento do verbo • Se agente não for expresso (\"por quem? não sei\"): • Pronomes retos (ele/eu) viram oblíquos (o/me) - O verbo ativo flexiona na 3ª pessoa do plural • Respeitar regras de próclise com palavras atrativas - Não inserir pronome substantivo expresso"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G07-001",
+                  "targetTitle": "Protocolo Mestre de Transposição da Passiva Analítica para a Ativa",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A05-G07-CANONICAL-03",
+          "title": "Transposição com Agente da Passiva Indeterminado",
+          "conceptRefs": [
+            "KB-A05-G07-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição e Implicações Sintáticas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na língua portuguesa, o agente da passiva é um termo sintático acessório; por isso, orações passivas analíticas frequentemente omitem quem praticou a ação verbal. Ao converter uma oração passiva analítica sem agente expresso para a voz ativa:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "A ausência de agente inviabiliza a criação de um sujeito determinado substantivo;",
+                "A gramática normativa impõe a indeterminação do sujeito, materializada pela flexão do verbo (ou do primeiro verbo auxiliar) na 3ª pessoa do plural;",
+                "É vedado o acréscimo de termos como \"eles\", \"as pessoas\" ou \"alguém\" caso o texto original não forneça essa ancoragem."
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Transposição com Agente da Passiva Indeterminado",
+              "text": "Passiva Analítica sem Agente: \"As palavras precisavam ser interpretadas [por quem? Não diz]\" │ ▼ (Transposição para a Ativa) Voz Ativa com Sujeito Indet.: \"[Eles] Precisavam interpretar as palavras.\" └── Auxiliar flexionado na 3ª pessoa do plural"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G07-001",
+                  "targetTitle": "Confundir a Causa da Concordância na 3ª Pessoa do Plural",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G07-003",
+                  "targetTitle": "Confundir Sujeito Paciente Posposto com Objeto Direto",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-004",
+                  "targetTitle": "Exercício de Fixação 4: Locução Tripla com Gerúndio e Agente Indeterminado (V022)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-005",
+                  "targetTitle": "Exercício de Fixação 5: Locução com Infinitivo e Agente Indeterminado (V022)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-007",
+                  "targetTitle": "Exercício de Fixação 7: Locução Tripla com Sujeito Posposto (V023)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-008",
+                  "targetTitle": "Exercício de Fixação 8: Locução Tripla no Futuro (V023)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-009",
+                  "targetTitle": "Exercício de Fixação 9: Locução Tripla com Ajuste Singular $\\rightarrow$ Plural (V023)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A05-G07-CANONICAL-04",
+          "title": "A Regra Aritmética de Contagem de Verbos ($N \\rightarrow N-1$)",
+          "conceptRefs": [
+            "KB-A05-G07-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "A Equação da Transposição Verbal"
+            },
+            {
+              "type": "paragraph",
+              "text": "A transposição da voz passiva analítica para a voz ativa obedece a uma constante matemática estrita quanto à quantidade de formas verbais:"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Nº de Formas Verbais na Ativa} = \\text{Nº de Formas Verbais na Passiva Analítica} - 1"
+            },
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A05-G07-001",
+              "tableId": "TABLE-IP-A05-G07-003",
               "table": {
-                "tableId": "TABLE-IP-A05-G07-001",
-                "caption": "Explicação central",
+                "tableId": "TABLE-IP-A05-G07-003",
+                "caption": "A Equação da Transposição Verbal",
                 "headers": [
                   "Estrutura na Passiva Analítica",
                   "Qtd. Verbos",
@@ -150,15 +317,359 @@
                     "2"
                   ]
                 ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
+              }
             },
             {
+              "type": "heading",
+              "level": 3,
+              "text": "Aplicação Estratégica em Provas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se a oração passiva contém 3 verbos (auxiliar temporal/modal + auxiliar ser + particípio principal), a opção correta na voz ativa terá obrigatoriamente 2 verbos. Alternativas que reduzem a estrutura para 1 verbo único (ex.: remodelou em vez de havia remodelado) cometem erro grave de tempo/aspecto verbal e devem ser sumariamente descartadas."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A05-G07-CANONICAL-05",
+          "title": "Locuções de Três Verbos: Dinâmica entre Auxiliar e Principal",
+          "conceptRefs": [
+            "KB-A05-G07-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Repartição de Funções Gramaticais na Locução Ativa"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao transpor uma locução passiva de 3 verbos com agente indeterminado para a voz ativa:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O Verbo Auxiliar (o \"trabalhador\"): Mantém-se na locução e absorve toda a responsabilidade de concordância, flexionando-se na 3ª pessoa do plural para registrar o sujeito indeterminado (estão, deveriam, deverão, podem, continuam, tivessem).",
+                "O Verbo Principal (o \"chefe\"): Recebe a forma nominal que pertencia ao verbo ser eliminado (infinitivo, gerúndio ou particípio invariável) e permanece estritamente invariável, sem assumir desinências de pessoa ou número."
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Locuções de Três Verbos: Dinâmica entre Auxiliar e Principal",
+              "text": "Passiva: \"As negociações deverão ser concluídas...\" │ │ │ ▼ ▼ (sai) ▼ (vira infinitivo puro) Ativa: \"[Eles] deverão [ X ] concluir as negociações.\" └── 3ª pessoa plural └── Invariável (NÃO flexiona)"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G07-002",
+                  "targetTitle": "Hiperflexão do Verbo Principal em Locuções Verbais",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-008",
+                  "targetTitle": "Exercício de Fixação 8: Locução Tripla no Futuro (V023)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-009",
+                  "targetTitle": "Exercício de Fixação 9: Locução Tripla com Ajuste Singular $\\rightarrow$ Plural (V023)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A05-G07-CANONICAL-06",
+          "title": "Sujeito Paciente Oculto/Elíptico, Pronomes Oblíquos e Próclise",
+          "conceptRefs": [
+            "KB-A05-G07-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Mecânica de Conversão Primitiva $\\rightarrow$ Pronome Oblíquo"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em estruturas passivas sem sujeito expresso evidente:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dedução do Sujeito Elíptico: Recupera-se o referente a partir do contexto morfossintático:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pelo gênero/número do particípio: \"Para não ser olhado...\" $\\rightarrow$ particípio masculino singular revela sujeito ele.",
+                "Por pronomes possessivos ou oração principal: \"Se não for atendido em minha reivindicação...\" $\\rightarrow$ minha revela sujeito eu; \"Não me lembro de ter sido assustado...\" $\\rightarrow$ me revela sujeito eu."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Conversão em Complemento Verbal: O pronome reto sujeito (eu, ele) converte-se no pronome oblíquo átono correspondente como objeto direto (me, o).",
+                "Colocação Pronominal Mandatória:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Diante de palavras atrativas (palavras negativas não, conjunções subordinativas se, para que), a próclise é obrigatória: para não o olharem, se não me atenderem.",
+                "Em locuções verbais ativas, o pronome pode acoplar-se ao auxiliar (me ter assustado / ter-me assustado), mas é terminantemente proibida a ênclise ao particípio (\\*ter assustado-me)."
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Sujeito Paciente Oculto/Elíptico, Pronomes Oblíquos e Próclise",
+              "text": "Passiva: \"Se [eu] não for atendido em minha reivindicação...\" │ │ │ │ │ (vira \"me\") │ (atrai) │ (sai) ▼ (assume futuro do subjuntivo 3ª pl.) ▼ ▼ ▼ [atenderem] Ativa: \"Se não + me atenderem em minha reivindicação...\""
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G07-004",
+                  "targetTitle": "Manutenção Incorreta de Pronome Reto como Objeto Direto",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G07-005",
+                  "targetTitle": "Proibição Terminante de Ênclise ao Particípio",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-006",
+                  "targetTitle": "Exercício de Fixação 6: Sujeito Oculto, Infinitivo Flexionado e Próclise (V022/V023)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A05-G07-CANONICAL-07",
+          "title": "Infinitivo Pessoal Flexionado na Voz Ativa",
+          "conceptRefs": [
+            "KB-A05-G07-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "A Flexão do Infinitivo com Sujeito Indeterminado"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na oração reduzida passiva \"Para não ser olhado com medo...\", o verbo ser encontra-se na forma nominal de infinitivo impessoal (ser). Ao transpor para a ativa:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Não há verbo auxiliar para absorver a flexão de 3ª pessoa do plural imposta pelo agente indeterminado;",
+                "O verbo principal olhar (que herdou a forma de infinitivo de ser) precisa manifestar a indeterminação do sujeito;",
+                "Em língua portuguesa, o infinitivo admite flexão desinencial (infinitivo pessoal), assumindo a terminação -em: \"Para não o olharem com medo...\".",
+                "A professora sintetiza mnemocamente: \"O infinitivo tem sentimentos, ele se conjuga\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A05-G07-003",
+                  "targetTitle": "Transposição com Agente da Passiva Indeterminado",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A05-G07-006",
+                  "targetTitle": "Sujeito Paciente Oculto/Elíptico, Pronomes Oblíquos e Próclise",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G07-006",
+                  "targetTitle": "Exercício de Fixação 6: Sujeito Oculto, Infinitivo Flexionado e Próclise (V022/V023)",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A05-G07-CANONICAL-08",
+          "title": "A Armadilha da \"Fuga da Realidade com o Pronome SE\"",
+          "conceptRefs": [
+            "KB-A05-G07-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Desconstrução do Vício Psicológico em Provas"
+            },
+            {
+              "type": "paragraph",
+              "text": "As bancas examinadoras (especialmente FGV, FCC e VUNESP) exploram a inclinação estilística natural do candidato, que tende a considerar elegantes e fluídas as construções sintéticas com o pronome se."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Erro Conceitual: Frases com verbo transitivo direto acompanhado de pronome apassivador se pertencem à voz passiva sintética (ex.: ocupou-se a França, fez-se o levantamento, sancionou-se a lei, criaram-se charges).",
+                "A Regra de Ouro: Se o comando da questão solicita expressamente a conversão para a voz ativa, qualquer alternativa estruturada com partícula apassivadora se configura fuga ao comando e deve ser eliminada de imediato."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Comando: \"Transponha para a VOZ ATIVA...\" Frase Passiva: \"A França foi ocupada pelos alemães.\""
+            },
+            {
+              "type": "paragraph",
+              "text": "[ Alternativa C: \"Ocupou-se a França\" ] ➔ ERRO! Voz Passiva Sintética (Fuga com \"SE\") [ Alternativa B: \"Os alemães ocuparam a França\" ] ➔ CORRETO! Voz Ativa"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G07-006",
+                  "targetTitle": "Assinalar Passiva Sintética (com \"SE\") quando se Pede Voz Ativa",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A05-G07-CANONICAL-09",
+          "title": "Preservação do Referente e Escopo de Modificadores Adverbiais",
+          "conceptRefs": [
+            "KB-A05-G07-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "O Escopo Sintático de Palavras Denotativas e Advérbios"
+            },
+            {
+              "type": "paragraph",
+              "text": "Durante a reescritura de vozes verbais, a movimentação de advérbios ou palavras denotativas de inclusão/exclusão (como também, somente, apenas) exige vigilância estrita sobre seu escopo modificador:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se na oração original passiva \"Também foram feitas ciclovias e campanhas...\", o vocábulo também incide sobre o predicado verbal (foram feitas), na voz ativa ele deve obrigatoriamente continuar modificando a ação verbal (\"Também fizeram ciclovias e campanhas...\").",
+                "Se a banca deslocar o termo para o interior do objeto (\"Fizeram ciclovias e também campanhas...\"), o também passará a incidir restritivamente apenas sobre o segundo substantivo, provocando alteração substancial de sentido e invalidando a reescrita."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G07-007",
+                  "targetTitle": "Deslocamento Indevido de Advérbio com Alteração de Referente",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A05-G07-CANONICAL-10",
+          "title": "O Verbo \"Haver\" como Auxiliar de Tempo Composto",
+          "conceptRefs": [
+            "KB-A05-G07-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Distinção entre Haver Impessoal e Haver Auxiliar"
+            },
+            {
+              "type": "paragraph",
+              "text": "A regra gramatical de que o verbo haver não admite transposição de vozes aplica-se unicamente quando ele atua como verbo principal impessoal (com sentido de existir, acontecer ou tempo decorrido). Quando haver funciona como verbo auxiliar de tempo composto (ex.: havia sido remodelada $\\rightarrow$ havia remodelado):"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ele é mero marcador de tempo e aspecto (pretérito mais-que-perfeito composto);",
+                "Quem comanda a transitividade sintática e a legitimidade da passivação é o verbo principal (remodelar, que é Transitivo Direto);",
+                "A transposição ocorre normalmente, preservando o auxiliar haver na voz ativa."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G07-008",
+                  "targetTitle": "Confundir Verbo \"Haver\" Impessoal com Auxiliar de Tempo Composto",
+                  "targetUnitId": "IP-A05-G07",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A05-G07-003",
+              "tableId": "TABLE-IP-A05-G07-001",
               "table": {
-                "tableId": "TABLE-IP-A05-G07-003",
-                "caption": "A Equação da Transposição Verbal",
+                "tableId": "TABLE-IP-A05-G07-001",
+                "caption": "Explicação central",
                 "headers": [
                   "Estrutura na Passiva Analítica",
                   "Qtd. Verbos",
@@ -449,11 +960,86 @@
     "glossary": {
       "items": [
         {
-          "term": "Agente da Passiva",
-          "shortDefinition": "Termo da oração que pratica a ação sofrida pelo sujeito paciente na voz passiva analítica.",
-          "fullDefinition": "Função sintática preposicionada (introduzida por 'por' ou 'de') que corresponde ao sujeito agente da voz ativa quando a sentença é transposta para a voz passiva analítica (ex: O texto foi redigido pelo aluno).",
-          "domain": "Sintaxe da Oração",
-          "commonMisconception": "Confundir agente da passiva com adjunto adverbial de causa ou meio."
+          "term": "O Mecanismo Fundamental de Transposição da Passiva Analítica para a Ativa",
+          "shortDefinition": "A transposição da voz passiva analítica para a voz ativa é a transformação sintática em que se desfaz a estrutura perifrástica passiva. Essa operação fundamenta-se em três pilares:",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-01"
+          }
+        },
+        {
+          "term": "Transposição com Agente da Passiva Indeterminado",
+          "shortDefinition": "Na língua portuguesa, o agente da passiva é um termo sintático acessório; por isso, orações passivas analíticas frequentemente omitem quem praticou a ação verbal. Ao converter uma oração passiva analítica sem agente expresso para a voz ativa:",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-03"
+          }
+        },
+        {
+          "term": "A Regra Aritmética de Contagem de Verbos ($N \\rightarrow N-1$)",
+          "shortDefinition": "A transposição da voz passiva analítica para a voz ativa obedece a uma constante matemática estrita quanto à quantidade de formas verbais:",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-04"
+          },
+          "operationalUse": "Se a oração passiva contém 3 verbos (auxiliar temporal/modal + auxiliar ser + particípio principal), a opção correta na voz ativa terá obrigatoriamente 2 verbos."
+        },
+        {
+          "term": "Locuções de Três Verbos: Dinâmica entre Auxiliar e Principal",
+          "shortDefinition": "Ao transpor uma locução passiva de 3 verbos com agente indeterminado para a voz ativa:",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-05"
+          }
+        },
+        {
+          "term": "Sujeito Paciente Oculto/Elíptico, Pronomes Oblíquos e Próclise",
+          "shortDefinition": "Em estruturas passivas sem sujeito expresso evidente:",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-06"
+          }
+        },
+        {
+          "term": "Infinitivo Pessoal Flexionado na Voz Ativa",
+          "shortDefinition": "Na oração reduzida passiva \"Para não ser olhado com medo...\", o verbo ser encontra-se na forma nominal de infinitivo impessoal (ser). Ao transpor para a ativa:",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-07"
+          }
+        },
+        {
+          "term": "A Armadilha da \"Fuga da Realidade com o Pronome SE\"",
+          "shortDefinition": "As bancas examinadoras (especialmente FGV, FCC e VUNESP) exploram a inclinação estilística natural do candidato, que tende a considerar elegantes e fluídas as construções sintéticas com o pronome se.",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-08"
+          }
+        },
+        {
+          "term": "Preservação do Referente e Escopo de Modificadores Adverbiais",
+          "shortDefinition": "Durante a reescritura de vozes verbais, a movimentação de advérbios ou palavras denotativas de inclusão/exclusão (como também, somente, apenas) exige vigilância estrita sobre seu escopo modificador:",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-09"
+          }
+        },
+        {
+          "term": "O Verbo \"Haver\" como Auxiliar de Tempo Composto",
+          "shortDefinition": "A regra gramatical de que o verbo haver não admite transposição de vozes aplica-se unicamente quando ele atua como verbo principal impessoal (com sentido de existir, acontecer ou tempo decorrido). Quando haver funciona como verbo auxiliar de tempo composto (ex.: havia sido remodelada $\\rightarrow$ havia remodelado):",
+          "detailTarget": {
+            "unitId": "IP-A05-G07",
+            "section": "explanation",
+            "groupId": "GRP-A05-G07-CANONICAL-10"
+          }
         }
       ]
     },
@@ -592,7 +1178,39 @@
         "confidence": 0.97
       },
       "answerSha256": "c6a75fb0667f0a530e1635a647d8b535d93f0eea9a881131f77706750f8a8e98",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Transpondo-se para a voz ativa a frase Eficazes sistemas de irrigação teriam sido utilizados pelos\nantigos em suas culturas de cereais, a forma verbal resultante deverá ser",
+        "options": [
+          {
+            "label": "A",
+            "text": "seriam utilizados."
+          },
+          {
+            "label": "B",
+            "text": "teriam utilizado."
+          },
+          {
+            "label": "C",
+            "text": "foram utilizados."
+          },
+          {
+            "label": "D",
+            "text": "utilizaram-se."
+          },
+          {
+            "label": "E",
+            "text": "haveriam de utilizar."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -758,56 +1376,10 @@
         "confidence": 0.99
       },
       "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A05-aula05.q0058",
-      "lessonId": "A05",
-      "sourceQuestionId": "aula05.q0058",
-      "questionPayload": {
-        "question_id": "aula05.q0058",
-        "question_type": "true_false_or_judgment",
-        "exam_board": "CEBRASPE",
-        "organization": "CAPES",
-        "position": null,
-        "year": 2024,
-        "support_text": null,
-        "prompt": "A vida em sociedade trouxe para os seres humanos um aprendizado extremamente\nimportante: não se poderiam resolver todas as questões pela força, era preciso usar a palavra\npara persuadir os outros a fazer alguma coisa. Por isso, o aparecimento da argumentação está\nligado à vida em sociedade e, principalmente, ao surgimento das primeiras democracias.\nAo empregar o vocábulo “se” em “não se poderiam resolver todas as questões pela força”\n(primeiro período do texto), o autor, ao mesmo tempo, indetermina o sujeito gramatical da\noração e omite o agente responsável pela ação expressa pelo verbo “resolver”.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.voz_passiva"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.voz_passiva.conversao.001"
-        ],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0038"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "duplicate_of": "aula05.q0036",
-        "extraction_confidence": 0.985
-      },
-      "questionSha256": "b6386363bcef45ba827f7f171b2e95a5b364ebe856ee913c5b0d5dcc8e984ff1",
-      "answerPayload": {
-        "answer_id": "aula05.q0058.answer",
-        "question_id": "aula05.q0058",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0042"
-          ]
-        },
-        "confidence": 0.995
-      },
-      "answerSha256": "bd0c2d9008946cfd5a6762af10d74d6fec23c906fafc32df852fb04e71d1feff",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A05-aula05.q0058"
+      ]
     }
   ]
 }

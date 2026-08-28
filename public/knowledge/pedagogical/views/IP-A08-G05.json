@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A08-G05",
     "lessonId": "A08",
     "title": "Travessão, Parênteses e Aspas",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A08-G05",
@@ -51,55 +52,405 @@
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Intercambialidade de Vírgulas, Travessões e Parênteses",
-          "pedagogicalGoal": "Compreender quando e como os sinais de isolamento podem ser substituídos mutuamente.",
+          "groupId": "GRP-A08-G05-CANONICAL-01",
+          "title": "Posicionamento do Ponto Final em Relação às Aspas de Fechamento",
+          "conceptRefs": [
+            "KB-A08-G05-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Sinais de Isolamento Sintático",
-              "columns": [
-                "Sinal de Isolamento",
-                "Efeito Discursivo",
-                "Grau de Relevância",
-                "Exemplo Canônico"
-              ],
-              "rows": [
-                [
-                  "Dupla Vírgula (, ... ,)",
-                  "Isolamento neutro e padrão de termos intercalados",
-                  "Relevância equilibrada no fluxo sintático",
-                  "O projeto, aprovado ontem, entrará em vigor."
-                ],
-                [
-                  "Duplo Travessão (— ... —)",
-                  "Isolamento enfático (confere destaque visual e estilístico)",
-                  "Alta relevância / ênfase discursiva",
-                  "O projeto — aprovado ontem — entrará em vigor."
-                ],
-                [
-                  "Parênteses (( ... ))",
-                  "Isolamento acessório (nota explicativa lateral)",
-                  "Menor relevância / comentário secundário",
-                  "O projeto (aprovado ontem) entrará em vigor."
-                ]
-              ],
-              "text": "A troca entre vírgulas, travessões e parênteses mantém a correção gramatical, alterando apenas a modulação enfática."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A colocação do ponto final em relação às aspas de fechamento decorre estritamente do escopo sintático da citação: se a citação corresponde à frase inteira, o ponto final localiza-se dentro das aspas; se a citação for apenas um fragmento ou termo de uma oração maior iniciada pelo autor, o ponto final posiciona-se fora (depois) das aspas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Citação Integral (Frase Completa Citada): O fragmento citado abre no início do período e fecha no término da declaração. Como o ponto final pertence originalmente ao enunciado do autor citado, ele deve ficar resguardado no interior das aspas."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura: “Texto citado em sua totalidade.”"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Citação Parcial (Fração da Frase do Autor): O período é aberto pelo autor do texto (geralmente por meio de expressões como Segundo Fulano, ou verbos dicendi) e as aspas contêm apenas um termo ou oração subordinada. O ponto final encerra a frase construída pelo enunciador principal; logo, deve ser posicionado após o fechamento das aspas."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura: Segundo Fulano, “texto citado”."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o início das aspas coincide com a letra maiúscula de abertura do período $\\rightarrow$ Ponto DENTRO (\".....\").",
+                "Se as aspas abrem no meio da oração após termos introdutórios $\\rightarrow$ Ponto FORA (\"....\".)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo 1 (Citação integral): \"Estudo é patrimônio.\"",
+                "Exemplo 2 (Citação parcial): Segundo AF, \"estudo é patrimônio\"."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exceções ou limites"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se a citação direta contiver ponto de exclamação ou interrogação original inerente à expressividade da fala citada, o sinal de pontuação expressivo permanece dentro das aspas, cabendo avaliar a sintaxe do período global quanto à pontuação externa."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A08-G05-002",
+                  "targetTitle": "Distinção entre Citação Direta (Transcrição) e Citação Indireta (Paráfrase)",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
         {
-          "groupId": "canonical-table-coverage",
-          "title": "Quadros canônicos complementares",
-          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
-          "semanticKind": "canonical_table_coverage",
+          "groupId": "GRP-A08-G05-CANONICAL-02",
+          "title": "Distinção entre Citação Direta (Transcrição) e Citação Indireta (Paráfrase)",
+          "conceptRefs": [
+            "KB-A08-G05-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A citação direta corresponde à transcrição literal da fala de outrem (cópia exata, discurso direto, exigindo uso de aspas ou travessão de fala). A citação indireta consiste em uma paráfrase (reescritura em que o autor reproduz com suas próprias palavras o pensamento alheio, dispensando o emprego de aspas)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Citação Direta: Representa o discurso direto formal. Ocorre mudança de interlocutor e fidelidade textual absoluta (cópia). Em bancas de concurso, os termos citação direta, fala, discurso direto, fala da personagem e transcrição de fala são rigorosamente equivalentes.",
+                "Citação Indireta: O enunciador reescreve a ideia original utilizando sua própria sintaxe e léxico. Não há transcrição nem cópia literal; portanto, não admite aspas nem travessão."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Citação Direta (Transcrição): O ministro declarou: \"Combateremos a inflação com rigor.\"",
+                "Citação Indireta (Paráfrase): O ministro declarou que a inflação seria combatida rigorosamente."
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G05-CANONICAL-03",
+          "title": "O Travessão, Funções Básicas e Modulação de Expressividade na Reescritura",
+          "conceptRefs": [
+            "KB-A08-G05-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O travessão (—) desempenha duas funções estruturais principais: (1) marcar o discurso direto (mudança de interlocutor) e (2) isolar termos explicativos/enfáticos (duplo travessão). Em questões de reescritura, o duplo travessão pode ser comutado por dupla vírgula ou por parênteses, preservando a correção gramatical e o sentido proposicional, alterando exclusivamente o grau de expressividade e ênfase."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Função no Diálogo: Introduz falas de personagens ou separa a fala do narrador (inquit).",
+                "Função na Intercalação: Isola apostos, explicações e esclarecimentos, atribuindo-lhes destaque visual e ênfase máxima.",
+                "Comutação Gráfica:",
+                "—... — (Travessões): Enfatizam, destacam, põem em relevo.",
+                "(... ) (Parênteses): Diminuem a ênfase, recolhem a informação a segundo plano (desênfase).",
+                ",..., (Vírgulas): Mantêm uma postura neutra, sem realce nem atenuação excessiva.",
+                "Critério Jurisprudencial de Bancas: A alteração de ênfase não é considerada alteração de sentido semântico/proposicional em provas de reescritura."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Original: Machado de Assis — grande romancista brasileiro — também escreveu contos.",
+                "Reescrita com vírgulas: Machado de Assis, grande romancista brasileiro, também escreveu contos.",
+                "Reescrita com parênteses: Machado de Assis (grande romancista brasileiro) também escreveu contos."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G05-001",
+                  "targetTitle": "A Falsa Premissa \"Mudou a Ênfase, Mudou o Sentido\"",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Aprofundado por",
+                  "targetRef": "KB-A08-G05-004",
+                  "targetTitle": "Regras de Pontuação com Travessão: Assimetria Proibida vs. Cumulação Sintática Legítima (`—... —,`)",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "explanation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G05-CANONICAL-04",
+          "title": "Regras de Pontuação com Travessão: Assimetria Proibida vs. Cumulação Sintática Legítima (`—... —,`)",
+          "conceptRefs": [
+            "KB-A08-G05-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "É gramaticalmente proibido abrir uma intercalação com travessão e encerrá-la apenas com vírgula (— termo,). No entanto, é plenamente legítimo e obrigatório empregar a sequência travessão de fechamento seguido de vírgula (— termo —,) quando o travessão fecha o termo explicativo e a vírgula subsequente é exigida pela sintaxe da oração principal (como no isolamento de orações subordinadas adverbiais deslocadas)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra de Simetria Básica: Todo segmento intercalado aberto por travessão deve ser fechado por travessão. A combinação híbrida assimétrica (—..., ou —... )) constitui erro de pontuação.",
+                "Cumulação por Autonomia Sintática: Quando um aposto ou esclarecimento entre travessões está inserido dentro de uma oração subordinada adverbial antecipada (condicional, temporal, causal), ocorrem duas obrigações pontuais no mesmo ponto da cadeia frasal:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O segundo travessão fecha a intercalação interna.",
+                "A vírgula subsequente delimita o encerramento da oração subordinada adverbial deslocada antes da oração principal."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Não ocorre duplicidade viciosa: cada sinal atende a um comando sintático distinto e autônomo."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Uso Correto Acumulado: Se chegar meu pai — meu melhor amigo —, avise! (O 2º travessão fecha a intercalação; a vírgula é exigida pela conjunção subordinativa condicional Se).",
+                "Erro de Assimetria: Se chegar meu pai — meu melhor amigo, avise! (Abriu com travessão e tentou fechar com vírgula)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G05-002",
+                  "targetTitle": "O Mito de que \"Vírgula Após Travessão é Sempre Erro\"",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G05-CANONICAL-05",
+          "title": "Natureza Sintático-Discursiva dos Parênteses: Isolamento de Comentários Acessórios",
+          "conceptRefs": [
+            "KB-A08-G05-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os parênteses têm a função sintática e textual precípua de isolar comentários acessórios (ideias secundárias, não essenciais à estrutura nuclear da oração). Do ponto de vista estritamente gramatical, a supressão do trecho parentético preserva a integridade oracional e a coerência do período principal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Caráter Acessório (\"Enfeite\" / Não essencial): O conteúdo parentético abriga explicações, exemplificações, alternativas, comentários paralelos ou desdobramentos circunstanciais.",
+                "Teste da Retirada: Para verificar se o uso dos parênteses é gramaticalmente válido, suprime-se mentalmente o segmento delimitado. Se a oração principal remanescente mantiver sujeito, verbo e complementos obrigatórios devidamente articulados, os parênteses são legítimos.",
+                "Proibição de Segmentação: Não se podem isolar termos integrantes (objeto direto, indireto, predicado verbal ou conectivos subordinativos indispensáveis)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Uso Correto (Acessório): \"Nos diários mais simples, cromos coloridos de cestinhos floridos (ou crianças abraçadas a um cachorro).\" $\\rightarrow$ A frase mantém sentido pleno sem o trecho.",
+                "Uso Incorreto (Isolando objeto direto): \"...não tinha (mais sentido) pensar...\" $\\rightarrow$ Sem o trecho, a frase truncada vira \"não tinha pensar\".",
+                "Uso Incorreto (Isolando objeto indireto): \"...cadernos que pertencera (à minha avó Belmira).\" $\\rightarrow$ Viola a regência do verbo transitivo indireto pertencer."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G05-001",
+                  "targetTitle": "Procedimento do \"Teste da Retirada\" para Validação Sintática de Parênteses",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G05-003",
+                  "targetTitle": "Segmentação Viciosa de Termos Integrantes por Parênteses",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G05-CANONICAL-06",
+          "title": "Matriz de Tipologia Discursivo-Textual: Explicação, Enumeração, Exemplificação e Comentário",
+          "conceptRefs": [
+            "KB-A08-G05-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas examinadoras modernas (FGV, CESGRANRIO, FCC e VUNESP) cobram a distinção sistemática entre as funções do segmento isolado por travessões ou parênteses: explicação (abstrata, reformulação sem ideia nova), enumeração (listagem exaustiva de todos os componentes), exemplificação (amostra concreta não exaustiva) e comentário do autor (oração intercalada opinativa / ideia nova)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Explicação = Esclarecimento = Aposto: Opera no plano abstrato/conceitual. Não introduz ideia nova substantiva; limita-se a reformular, esclarecer ou justificar o termo antecedente.",
+                "Explicação ≠ Enumeração: A enumeração exige a partição e desdobramento obrigatório em dois ou mais elementos constitutivos.",
+                "Enumeração ≠ Exemplificação: A enumeração lista a totalidade dos elementos do conjunto (exaustão). A exemplificação cita amostras representativas de uma categoria mais ampla (relação de hiponímia, presença comum de \"etc.\" ou conectivos exemplificativos).",
+                "Explicação (Abstrato) ≠ Exemplo (Concreto): Explicar é abstrair e definir; exemplificar é concretizar a ideia por meio de estudos de caso, fatos empíricos ou plataformas específicas (Facebook, Twitter).",
+                "Comentário do Autor: Inserção de oração intercalada com verbo ou marcas de 1ª pessoa (minha, abandonei) que expressa juízo de valor, reflexão ou experiência empírica do enunciador, introduzindo uma ponderação nova que não se limita a explicar termo antecedente."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A08-G05-001",
+              "tableId": "TABLE-IP-A08-G05-006",
               "table": {
-                "tableId": "TABLE-IP-A08-G05-001",
-                "caption": "Explicação central",
+                "tableId": "TABLE-IP-A08-G05-006",
+                "caption": "Critérios de reconhecimento",
                 "headers": [
                   "Categoria",
                   "Plano de Linguagem",
@@ -132,15 +483,215 @@
                     "Sim (Ponderação e juízo de valor do enunciador)"
                   ]
                 ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
+              }
             },
             {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Explicação: A inflação — aumento generalizado de preços — corrói o salário.",
+                "Enumeração: As estações do ano — primavera, verão, outono e inverno — sucedem-se.",
+                "Exemplificação: Mídias sociais — Facebook, Twitter etc. — moldam a opinião pública.",
+                "Comentário do autor: Nossa cabeça espia — se não naufragamos de vez —, assediada por pensamentos."
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G05-CANONICAL-07",
+          "title": "Dicotomia Funcional do Conteúdo Parentético: Explicação (\"Diz o Mesmo\") vs. Ampliação (\"Diz Além\")",
+          "conceptRefs": [
+            "KB-A08-G05-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O conteúdo abrigado entre parênteses cumpre, sob a ótica de provas da FGV e Cebraspe, uma bipartição funcional exaustiva: Explicação (esclarecimento/sinonímia do termo antecedente — \"dizer o mesmo\") ou Ampliação (acréscimo de dado novo, comentário aditivo ou expansão temporal — \"dizer além\")."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Explicação (Esclarecimento): O fragmento entre parênteses mantém o mesmo núcleo proposicional do termo antecedente, atuando por definição, sinonímia ou especificação.",
+                "Ampliação (Acréscimo de Nova Ideia / Informação Nova): O fragmento ultrapassa o termo anterior, adicionando informações não verbalizadas previamente, agregando novas dimensões temporais (ex.: pretérito na oração e presente entre parênteses) ou articulando dados inéditos introduzidos por conector aditivo (e)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pergunte ao texto: O trecho parentético está apenas esclarecendo o termo anterior? $\\rightarrow$ Explicação (\"diz o mesmo\").",
+                "Pergunte ao texto: O trecho parentético traz um dado inédito ou soma uma nova perspectiva temporal/factual? $\\rightarrow$ Ampliação (\"diz além\")."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Explicação (\"Diz o mesmo\"): \"Minha queda por causas difíceis (o socialismo, o Botafogo)...\" $\\rightarrow$ Especifica e exemplifica as causas.",
+                "Ampliação (\"Diz além\"): \"...fato que atraiu (e ainda atrai) milhões de pessoas para as cidades...\" $\\rightarrow$ O verbo principal está no passado (atraiu) e os parênteses somam a continuidade no presente (e ainda atrai)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G05-003",
+                  "targetTitle": "Teste Prático do \"Diz o Mesmo\" vs. \"Diz Além\" (Dicotomia FGV)",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "resolution"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G05-CANONICAL-08",
+          "title": "Função Resumitiva e Recapitulativa da Pontuação",
+          "conceptRefs": [
+            "KB-A08-G05-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A função resumitiva (rigorosamente sinônima de função recapitulativa) ocorre quando um sinal de pontuação ou pronome anafórico sintetiza uma série de termos enumerados anteriormente, condensando a informação (\"dizendo menos\")."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Emprega-se comumente com pronomes indefinidos de síntese (tudo, nada, ninguém, isso) sucedendo um travessão.",
+                "Em provas com questões de múltipla escolha (como na VUNESP), alternativas que tragam \"função resumitiva\" e \"função recapitulativa\" referindo-se ao mesmo fenômeno anulam-se mutuamente."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Dinheiro, fama, prestígio — nada disso lhe trazia felicidade. (O pronome nada após o travessão exerce função resumitiva/recapitulativa)."
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G05-CANONICAL-09",
+          "title": "Semântica dos Operadores de Banca: Retificação, Ratificação, \"Ainda\" e Ironia Estrita",
+          "conceptRefs": [
+            "KB-A08-G05-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O domínio das questões de pontuação em bancas sofisticadas (FGV e CESGRANRIO) exige precisão semântica nos termos do enunciado e distratores:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Retificação: Correção formal de um erro prévio (ex.: \"ou melhor\", \"digo\").",
+                "Ratificação / Confirmação: Reiteração / validação de algo já dito (\"dizer o mesmo\").",
+                "Polisssemia de \"Ainda\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Intensificação (Grau): Associado a comparativos (\"Amo ainda mais\" = muito mais).",
+                "Tempo / Continuidade Aspectual: Marcador de persistência no presente (\"Ainda estou aqui\" / \"e ainda atrai\" = agora, até hoje)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Ironia (Conceito Estrito): Figura de linguagem cuja definição técnica exige dizer rigorosamente o oposto do que se pensa. Não se confunde com crítica social direta, desabafo, zombaria ou inconformismo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A08-G05-004",
+                  "targetTitle": "Confundir Exemplificação/Hiponímia com Sinônimo Lexical",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A08-G05-005",
+                  "targetTitle": "Confundir Crítica Severa com Ironia",
+                  "targetUnitId": "IP-A08-G05",
+                  "targetSection": "traps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A08-G05-006",
+              "tableId": "TABLE-IP-A08-G05-001",
               "table": {
-                "tableId": "TABLE-IP-A08-G05-006",
-                "caption": "Critérios de reconhecimento",
+                "tableId": "TABLE-IP-A08-G05-001",
+                "caption": "Explicação central",
                 "headers": [
                   "Categoria",
                   "Plano de Linguagem",
@@ -471,11 +1022,85 @@
     "glossary": {
       "items": [
         {
-          "term": "Travessão",
-          "shortDefinition": "Sinal de pontuação horizontal maior que o hífen usado para indicar mudança de interlocutor ou isolar termos.",
-          "fullDefinition": "Sinal gráfico tipográfico (—) empregado para marcar o início da fala no discurso direto ou para isolar segmentos oracionais (apostos, explicações, comentários do autor) com destaque enfático superior ao da vírgula.",
-          "domain": "Pontuação e Tipografia",
-          "commonMisconception": "Confundir travessão (—) com hífen (-) ou meia-risca (–)."
+          "term": "Posicionamento do Ponto Final em Relação às Aspas de Fechamento",
+          "shortDefinition": "A colocação do ponto final em relação às aspas de fechamento decorre estritamente do escopo sintático da citação: se a citação corresponde à frase inteira, o ponto final localiza-se dentro das aspas; se a citação for apenas um fragmento ou termo de uma oração maior iniciada pelo autor, o ponto final posiciona-se fora (depois) das aspas.",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-01"
+          }
+        },
+        {
+          "term": "Distinção entre Citação Direta (Transcrição) e Citação Indireta (Paráfrase)",
+          "shortDefinition": "A citação direta corresponde à transcrição literal da fala de outrem (cópia exata, discurso direto, exigindo uso de aspas ou travessão de fala). A citação indireta consiste em uma paráfrase (reescritura em que o autor reproduz com suas próprias palavras o pensamento alheio, dispensando o emprego de aspas).",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-02"
+          }
+        },
+        {
+          "term": "O Travessão, Funções Básicas e Modulação de Expressividade na Reescritura",
+          "shortDefinition": "O travessão (—) desempenha duas funções estruturais principais: (1) marcar o discurso direto (mudança de interlocutor) e (2) isolar termos explicativos/enfáticos (duplo travessão). Em questões de reescritura, o duplo travessão pode ser comutado por dupla vírgula ou por parênteses, preservando a correção gramatical e o sentido proposicional, alterando exclusivamente o grau de expressividade e ênfase.",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-03"
+          }
+        },
+        {
+          "term": "Regras de Pontuação com Travessão: Assimetria Proibida vs. Cumulação Sintática Legítima (`—... —,`)",
+          "shortDefinition": "É gramaticalmente proibido abrir uma intercalação com travessão e encerrá-la apenas com vírgula (— termo,). No entanto, é plenamente legítimo e obrigatório empregar a sequência travessão de fechamento seguido de vírgula (— termo —,) quando o travessão fecha o termo explicativo e a vírgula subsequente é exigida pela sintaxe da oração principal (como no isolamento de orações subordinadas adverbiais deslocadas).",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-04"
+          }
+        },
+        {
+          "term": "Natureza Sintático-Discursiva dos Parênteses: Isolamento de Comentários Acessórios",
+          "shortDefinition": "Os parênteses têm a função sintática e textual precípua de isolar comentários acessórios (ideias secundárias, não essenciais à estrutura nuclear da oração). Do ponto de vista estritamente gramatical, a supressão do trecho parentético preserva a integridade oracional e a coerência do período principal.",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-05"
+          }
+        },
+        {
+          "term": "Matriz de Tipologia Discursivo-Textual: Explicação, Enumeração, Exemplificação e Comentário",
+          "shortDefinition": "Bancas examinadoras modernas (FGV, CESGRANRIO, FCC e VUNESP) cobram a distinção sistemática entre as funções do segmento isolado por travessões ou parênteses: explicação (abstrata, reformulação sem ideia nova), enumeração (listagem exaustiva de todos os componentes), exemplificação (amostra concreta não exaustiva) e comentário do autor (oração intercalada opinativa / ideia nova).",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-06"
+          }
+        },
+        {
+          "term": "Dicotomia Funcional do Conteúdo Parentético: Explicação (\"Diz o Mesmo\") vs. Ampliação (\"Diz Além\")",
+          "shortDefinition": "O conteúdo abrigado entre parênteses cumpre, sob a ótica de provas da FGV e Cebraspe, uma bipartição funcional exaustiva: Explicação (esclarecimento/sinonímia do termo antecedente — \"dizer o mesmo\") ou Ampliação (acréscimo de dado novo, comentário aditivo ou expansão temporal — \"dizer além\").",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-07"
+          }
+        },
+        {
+          "term": "Função Resumitiva e Recapitulativa da Pontuação",
+          "shortDefinition": "A função resumitiva (rigorosamente sinônima de função recapitulativa) ocorre quando um sinal de pontuação ou pronome anafórico sintetiza uma série de termos enumerados anteriormente, condensando a informação (\"dizendo menos\").",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-08"
+          }
+        },
+        {
+          "term": "Semântica dos Operadores de Banca: Retificação, Ratificação, \"Ainda\" e Ironia Estrita",
+          "shortDefinition": "O domínio das questões de pontuação em bancas sofisticadas (FGV e CESGRANRIO) exige precisão semântica nos termos do enunciado e distratores:",
+          "detailTarget": {
+            "unitId": "IP-A08-G05",
+            "section": "explanation",
+            "groupId": "GRP-A08-G05-CANONICAL-09"
+          }
         }
       ]
     },
@@ -575,7 +1200,10 @@
         "confidence": 0.99
       },
       "answerSha256": "6ccf43433751c54db35406b24203c40916bfe1e7ea28fb106ebd007b6f3d7152",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A08-aula08.q.list.parenteses.002"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -965,7 +1593,10 @@
         "confidence": 0.99
       },
       "answerSha256": "e42f974ba976d972fc9d93aa3b0fa2400b0d4ab749d6b82888e76375a16dc04d",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A08-aula08.q.list.travessao.007"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -1042,159 +1673,6 @@
         "confidence": 0.98
       },
       "answerSha256": "704cf57321057358d7dddacbbfea0e8259b229beff7663e7bb372693cab4dd99",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A08-aula08.q.list.parenteses.002",
-      "lessonId": "A08",
-      "sourceQuestionId": "aula08.q.list.parenteses.002",
-      "questionPayload": {
-        "question_id": "aula08.q.list.parenteses.002",
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "AGER - MATO GROSSO",
-        "position": null,
-        "year": 2023,
-        "support_text": "O mundo vegetal não é um silêncio absoluto, só quebrado pela ação do vento nas folhas ou de abelhas zumbindo próximas. Plantas com “sede” ou “feridas” podem murchar e empalidecer, mas agora sabemos que elas também emitem sons quando passam por situações de estresse.\n\nNessas ocasiões, elas podem produzir muitos estalos em staccato (notas muito curtas), aos quais as criaturas próximas podem responder. É o que aponta um novo estudo. “Quando essas plantas estão em boa forma, elas emitem menos de um som por hora, mas quando estressadas emitem muito mais, às vezes de 30 a 50 por hora”, afirma o professor Lilach Hadany, biólogo evolucionista da Universidade de Tel Aviv.",
-        "prompt": "No primeiro período do segundo parágrafo do texto CB2A1, os parênteses são utilizados para delimitar",
-        "options": [
-          {
-            "label": "A",
-            "text": "uma explicação."
-          },
-          {
-            "label": "B",
-            "text": "um exemplo."
-          },
-          {
-            "label": "C",
-            "text": "uma digressão."
-          },
-          {
-            "label": "D",
-            "text": "um fato novo."
-          },
-          {
-            "label": "E",
-            "text": "um comentário crítico."
-          }
-        ],
-        "tests_concept_ids": [
-          "pt.punctuation.parenteses"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.dois_pontos.explicacao.028",
-          "rule.pt.parenteses.esclarecimento.038"
-        ],
-        "source": {
-          "document_id": "aula08_complete",
-          "page_ids": [
-            "aula08_complete.p0158"
-          ]
-        },
-        "occurrence_type": "list",
-        "topic": "parenteses",
-        "question_number_in_section": 2,
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.98,
-        "raw_occurrence_text": "O mundo vegetal não é um silêncio absoluto, só quebrado pela ação do vento nas folhas ou de\nabelhas zumbindo próximas. Plantas com “sede” ou “feridas” podem murchar e empalidecer,\nmas agora sabemos que elas também emitem sons quando passam por situações de estresse.\n\nNessas ocasiões, elas podem produzir muitos estalos em staccato (notas muito curtas), aos\nquais as criaturas próximas podem responder. É o que aponta um novo estudo. “Quando essas\nplantas estão em boa forma, elas emitem menos de um som por hora, mas quando estressadas\nemitem muito mais, às vezes de 30 a 50 por hora”, afirma o professor Lilach Hadany, biólogo\nevolucionista da Universidade de Tel Aviv.\n\nNo primeiro período do segundo parágrafo do texto CB2A1, os parênteses são utilizados para\ndelimitar\n\nA) uma explicação.\n\nB) um exemplo.\n\nC) uma digressão.\n\nD) um fato novo.\n\nE) um comentário crítico.",
-        "duplicate_group_id": "aula08.qgroup.parenteses.002",
-        "duplicate_of": "aula08.q.commented.parenteses.002"
-      },
-      "questionSha256": "e05fc82e72374b8315c0238e555d6e796cf24fa98b6a23636dd6f569e7f9413d",
-      "answerPayload": {
-        "answer_id": "aula08.q.list.parenteses.002.answer",
-        "question_id": "aula08.q.list.parenteses.002",
-        "answer": "option_A",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula08_complete",
-          "page_ids": [
-            "aula08_complete.p0160"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "2eefd1ef6d507ef2cb6d85af9da0e79e10d1e8903b4c53fb476e9b6ce99c1afd",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A08-aula08.q.list.travessao.007",
-      "lessonId": "A08",
-      "sourceQuestionId": "aula08.q.list.travessao.007",
-      "questionPayload": {
-        "question_id": "aula08.q.list.travessao.007",
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "SEED-PR",
-        "position": null,
-        "year": 2021,
-        "support_text": "De acordo com Li Li Min, neurologista da Faculdade de Ciências Médicas da Universidade de Campinas, o cérebro tem redes que exercem diferentes funções: algumas que fazem a pessoa enxergar, outras que nos ajudam a nos organizar, lidar com dificuldades, elaborar estratégias. Em situações de estresse — quando nosso organismo acha que estamos sob ameaça, de alguma maneira, ou sob pressão intensa —, “alguns circuitos particulares no cérebro são ativados, que são os de sobrevivência. O corpo fica de prontidão, alerta para enfrentar qualquer situação. Só que esse é um estado que você precisa ativar e desativar”, indica.",
-        "prompt": "No segundo parágrafo do texto CB1A1-I (transcrito acima), os travessões foram empregados para",
-        "options": [
-          {
-            "label": "A",
-            "text": "isolar um trecho no contexto."
-          },
-          {
-            "label": "B",
-            "text": "indicar uma citação."
-          },
-          {
-            "label": "C",
-            "text": "encerrar uma declaração."
-          },
-          {
-            "label": "D",
-            "text": "introduzir uma enumeração."
-          },
-          {
-            "label": "E",
-            "text": "indicar a interrupção de uma ideia."
-          }
-        ],
-        "tests_concept_ids": [
-          "pt.punctuation.travessao"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.virgula.enumeracao.007",
-          "rule.pt.aspas.citacao.032",
-          "rule.pt.travessao.intercalacao.036"
-        ],
-        "source": {
-          "document_id": "aula08_complete",
-          "page_ids": [
-            "aula08_complete.p0156"
-          ]
-        },
-        "occurrence_type": "list",
-        "topic": "travessao",
-        "question_number_in_section": 7,
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.98,
-        "raw_occurrence_text": "De acordo com Li Li Min, neurologista da Faculdade de Ciências Médicas da Universidade de \nCampinas, o cérebro tem redes que exercem diferentes funções: algumas que fazem a pessoa \nenxergar, outras que nos ajudam a nos organizar, lidar com dificuldades, elaborar estratégias. Em \nsituações de estresse — quando nosso organismo acha que estamos sob ameaça, de alguma \nmaneira, ou sob pressão intensa —, “alguns circuitos particulares no cérebro são ativados, que \nsão os de sobrevivência. O corpo fica de prontidão, alerta para enfrentar qualquer situação. Só \nque esse é um estado que você precisa ativar e desativar”, indica.\n\nNo segundo parágrafo do texto CB1A1-I (transcrito acima), os travessões foram empregados para\n\nA) isolar um trecho no contexto.\n\nB) indicar uma citação.\n\nC) encerrar uma declaração.\n\nD) introduzir uma enumeração.\n\nE) indicar a interrupção de uma ideia.",
-        "duplicate_group_id": "aula08.qgroup.travessao.007",
-        "duplicate_of": "aula08.q.commented.travessao.007"
-      },
-      "questionSha256": "8b3ce15cded1e2f3aeb965264a0eec0028c1f72478c10a7894110323c7b74b77",
-      "answerPayload": {
-        "answer_id": "aula08.q.list.travessao.007.answer",
-        "question_id": "aula08.q.list.travessao.007",
-        "answer": "option_A",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula08_complete",
-          "page_ids": [
-            "aula08_complete.p0157"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "65efb78a8d243f61461797feedb99406bc1a2c9b569b3df2928f76de74b610dd",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

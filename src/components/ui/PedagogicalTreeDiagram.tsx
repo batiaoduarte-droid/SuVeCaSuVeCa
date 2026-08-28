@@ -21,6 +21,7 @@ interface ParsedTable {
 
 interface PedagogicalTreeDiagramProps {
   source: string;
+  title?: string;
 }
 
 type DiagramKind = 'table' | 'decision' | 'sequence' | 'hierarchy' | 'cards';
@@ -205,12 +206,15 @@ export const parseTreeDiagram = (raw: string): { title: string; categories: Tree
   return { title, categories, table: null, kind: classifyDiagram(raw, null) };
 };
 
-export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ source }) => {
+export const PedagogicalTreeDiagram: React.FC<PedagogicalTreeDiagramProps> = ({ source, title: titleOverride }) => {
   const [viewMode, setViewMode] = useState<ViewMode>('recommended');
   const [copied, setCopied] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const { title, categories, table, kind } = useMemo(() => parseTreeDiagram(source), [source]);
+  const { title, categories, table, kind } = useMemo(() => {
+    const parsed = parseTreeDiagram(source);
+    return titleOverride ? { ...parsed, title: titleOverride } : parsed;
+  }, [source, titleOverride]);
 
   const recommendedMode: Exclude<ViewMode, 'recommended'> = kind === 'table'
     ? 'table'

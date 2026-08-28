@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A05-G11",
     "lessonId": "A05",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A05-G11",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A05-G11-001"
+          }
         }
       ]
     },
@@ -94,8 +99,79 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nVerbos impessoais são aqueles que não possuem sujeito gramatical associado (configurando oração sem sujeito) e não se flexionam para concordar com pessoas do discurso, permanecendo compulsoriamente na 3ª pessoa do singular (defectivos quanto à conjugação).\nExplicação detalhada\nO verbo impessoal não admite sujeito agente, paciente nem experienciador. Quando denota fenômeno natural em sentido denotativo (ventou muito, choveu intensamente), a oração se estrutura sintaticamente sem sujeito. Difere-se fundamentalmente de:\nOração com sujeito elíptico/oculto: A pessoa existe no contexto discursivo e pode ser identificada pela desinência ou pelo período (Foi temeridade ter saído [ele/ela]).\nOração com verbo intransitivo ou transitivo dotado de sujeito expresso: O verbo possui um núcleo substantivo que pratica ou sofre a ação (O prédio veio a ruir, A bailarina queixou-se).\nA professora Adriana Figueiredo estabelece a definição de partida: \"Verbo impessoal é aquele que não tem pessoa, é aquele que não tem sujeito\" (037 - ).\nNo slide da Questão 01, a professora sublinha Ventou na alternativa A, registrando a ausência de sujeito, e classifica sistematicamente as demais opções: suj. elíptico em B, suj. simples em C (o prédio) e suj. simples em D (a bailarina), sintetizando: V. Pessoais (têm sujeito).Exemplificado por: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Verbos impessoais são aqueles que não possuem sujeito gramatical associado (configurando oração sem sujeito) e não se flexionam para concordar com pessoas do discurso, permanecendo compulsoriamente na 3ª pessoa do singular (defectivos quanto à conjugação)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O verbo impessoal não admite sujeito agente, paciente nem experienciador. Quando denota fenômeno natural em sentido denotativo (ventou muito, choveu intensamente), a oração se estrutura sintaticamente sem sujeito. Difere-se fundamentalmente de:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Oração com sujeito elíptico/oculto: A pessoa existe no contexto discursivo e pode ser identificada pela desinência ou pelo período (Foi temeridade ter saído [ele/ela]).",
+                "Oração com verbo intransitivo ou transitivo dotado de sujeito expresso: O verbo possui um núcleo substantivo que pratica ou sofre a ação (O prédio veio a ruir, A bailarina queixou-se)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora Adriana Figueiredo estabelece a definição de partida: \"Verbo impessoal é aquele que não tem pessoa, é aquele que não tem sujeito\" (037 - )."
+            },
+            {
+              "type": "paragraph",
+              "text": "No slide da Questão 01, a professora sublinha Ventou na alternativa A, registrando a ausência de sujeito, e classifica sistematicamente as demais opções: suj. elíptico em B, suj. simples em C (o prédio) e suj. simples em D (a bailarina), sintetizando: V. Pessoais (têm sujeito)."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-G11-002",
+                  "targetTitle": "Verbo \"Haver\" Impessoal: Sentido Existencial e Tempo Decorrido",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-G11-003",
+                  "targetTitle": "Verbo \"Fazer\" e Locução com \"Passar de\" Impessoais",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-G11-004",
+                  "targetTitle": "Verbos de Fenômenos Naturais Usados em Sentido Pessoal",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G11-001",
+                  "targetTitle": "Roteiro Sistemático para Identificação de Impessoalidade Verbal",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-001",
+                  "targetTitle": "Questão 01: Identificação de Verbo Impessoal (CONSESP)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +184,111 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO verbo haver é impessoal em duas circunstâncias fundamentais da norma-padrão:\nQuando empregado com o sentido de existir, ocorrer ou acontecer.\nQuando empregado para indicar tempo decorrido ou transcorrido.\nEm ambas as situações, não admite sujeito sintático, atua como verbo transitivo direto (cujo termo seguinte é objeto direto) e permanece invariável na 3ª pessoa do singular.\nExplicação detalhada\nHaver Existencial (Haver = Existir): Estruturas como Não havia nada ali, Há dúvidas, Espero que não haja empecilhos, Não haverá convívio, há uma crise configuram orações sem sujeito. Os termos substantivos (nada, dúvidas, empecilhos, convívio, uma crise) são sintaticamente objetos diretos.\nContraste com o verbo Existir: O verbo existir é pessoal; o termo a ele associado é sujeito e exige concordância obrigatória (Existiam empecilhos, Existem muitas aves).\nHaver Temporal (Tempo Decorrido): Estruturas como Há dias que Armandinho tirou a foto, Houve época, há três anos, Há dez anos denotam passagem cronológica de tempo. O verbo atua como verbo principal pleno simples e não admite flexão de plural.\nDistinção Semântica Interna: Embora ambos sejam impessoais, haver existencial e haver temporal não possuem o mesmo sentido: o primeiro equivale a existir; o segundo equivale a fazer (tempo).\n\"Esse aqui é o haver com o sentido de existir. O verbo haver com o sentido de existir é impessoal. Não tem pessoa, não tem sujeito\".\n\"No entanto, possui atualmente menos funcionários que há três anos (tempo decorrido) — não há concurso (existir) desde 2009\".\nAnotações na tela: H = HAVER; SENTIDO = EXISTIR, = existir, tempo decorrido.\nRelações\nContrasta com: (Haver como auxiliar pessoal).Exemplificado por: , , , , , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O verbo haver é impessoal em duas circunstâncias fundamentais da norma-padrão:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Quando empregado com o sentido de existir, ocorrer ou acontecer.",
+                "Quando empregado para indicar tempo decorrido ou transcorrido."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Em ambas as situações, não admite sujeito sintático, atua como verbo transitivo direto (cujo termo seguinte é objeto direto) e permanece invariável na 3ª pessoa do singular."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Haver Existencial (Haver = Existir): Estruturas como Não havia nada ali, Há dúvidas, Espero que não haja empecilhos, Não haverá convívio, há uma crise configuram orações sem sujeito. Os termos substantivos (nada, dúvidas, empecilhos, convívio, uma crise) são sintaticamente objetos diretos.",
+                "Contraste com o verbo Existir: O verbo existir é pessoal; o termo a ele associado é sujeito e exige concordância obrigatória (Existiam empecilhos, Existem muitas aves).",
+                "Haver Temporal (Tempo Decorrido): Estruturas como Há dias que Armandinho tirou a foto, Houve época, há três anos, Há dez anos denotam passagem cronológica de tempo. O verbo atua como verbo principal pleno simples e não admite flexão de plural.",
+                "Distinção Semântica Interna: Embora ambos sejam impessoais, haver existencial e haver temporal não possuem o mesmo sentido: o primeiro equivale a existir; o segundo equivale a fazer (tempo)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Esse aqui é o haver com o sentido de existir. O verbo haver com o sentido de existir é impessoal. Não tem pessoa, não tem sujeito\".",
+                "\"No entanto, possui atualmente menos funcionários que há três anos (tempo decorrido) — não há concurso (existir) desde 2009\".",
+                "Anotações na tela: H = HAVER; SENTIDO = EXISTIR, = existir, tempo decorrido."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A05-G11-007",
+                  "targetTitle": "O Verbo \"Haver\" como Auxiliar em Locuções Verbais Pessoais",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G11-003",
+                  "targetTitle": "Confundir \"Haver\" Auxiliar com \"Haver\" Impessoal",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-002",
+                  "targetTitle": "Questão 02: Impessoalidade em Locução vs. Sujeito Expresso (PCRJ)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-003",
+                  "targetTitle": "Questão 03: Haver/Fazer Temporal vs. Sujeito Indeterminado (FUNRIO)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-010",
+                  "targetTitle": "Questão 10: Julgamento de Itens sobre \"Haver\" (Cesgranrio)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-011",
+                  "targetTitle": "Questão 11: Contraste entre \"Há\" Temporal e \"Há\" Existencial (IBGP)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-015",
+                  "targetTitle": "Questão 15: Verbo \"Haver\" Temporal como Verbo Pleno Simples (CESPE)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-016",
+                  "targetTitle": "Questão 16: Verbo \"Haver\" Existencial Invariável (CESPE)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +301,83 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO verbo fazer e a locução com o verbo passar seguido da preposição de são impessoais quando denotam tempo transcorrido, fenômenos meteorológicos/temperatura ou horas decorridas, permanecendo rigorosamente no singular.\nExplicação detalhada\nVerbo Fazer indicando Tempo Decorrido: Estruturas como Faz tempo que não vemos um!, Faz algum tempo, Fazia dias, Fez uma década. É erro gramatical crasso flexionar o verbo no plural (fazem dois anos).\nVerbo Fazer indicando Fenômeno Meteorológico / Clima: Estruturas como Fez muito frio no dia da inauguração, Faz calor, Está fazendo muito frio.\nVerbo Passar (de) indicando Horas Decorridas: Na estrutura Já passava das quatro horas quando ela chegou, o verbo passar seguido de de expressa decurso temporal e atua como impessoal (invariável na 3ª pessoa do singular).\n\"Toda vez que o haver e o fazer indicarem tempo decorrido, eles são impessoais, lembra? Faz duas horas, e não fazem duas horas\".\nAnotações na tela da professora: V. FAZER = TEMPO DECORRIDO, FAZER = tempo meteorológico, PASSAR = tempo decorrido.Exemplificado por: , , , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O verbo fazer e a locução com o verbo passar seguido da preposição de são impessoais quando denotam tempo transcorrido, fenômenos meteorológicos/temperatura ou horas decorridas, permanecendo rigorosamente no singular."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Fazer indicando Tempo Decorrido: Estruturas como Faz tempo que não vemos um!, Faz algum tempo, Fazia dias, Fez uma década. É erro gramatical crasso flexionar o verbo no plural (fazem dois anos).",
+                "Verbo Fazer indicando Fenômeno Meteorológico / Clima: Estruturas como Fez muito frio no dia da inauguração, Faz calor, Está fazendo muito frio.",
+                "Verbo Passar (de) indicando Horas Decorridas: Na estrutura Já passava das quatro horas quando ela chegou, o verbo passar seguido de de expressa decurso temporal e atua como impessoal (invariável na 3ª pessoa do singular)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Toda vez que o haver e o fazer indicarem tempo decorrido, eles são impessoais, lembra? Faz duas horas, e não fazem duas horas\".",
+                "Anotações na tela da professora: V. FAZER = TEMPO DECORRIDO, FAZER = tempo meteorológico, PASSAR = tempo decorrido."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-G11-001",
+                  "targetTitle": "Conceito e Caracterização Morfossintática de Verbos Impessoais",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-G11-008",
+                  "targetTitle": "Transmissão de Impessoalidade em Locuções Verbais",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-002",
+                  "targetTitle": "Questão 02: Impessoalidade em Locução vs. Sujeito Expresso (PCRJ)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-003",
+                  "targetTitle": "Questão 03: Haver/Fazer Temporal vs. Sujeito Indeterminado (FUNRIO)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-007",
+                  "targetTitle": "Questão 07: \"Haver\" Auxiliar vs. Verbos Impessoais (Cesgranrio)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-008",
+                  "targetTitle": "Questão 08: Tempo Composto com Sujeito Oculto (Cesgranrio)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +390,67 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nVerbos que tipicamente designam fenômenos meteorológicos tornam-se verbos pessoais quando a oração apresenta um sujeito gramatical expresso ou quando são utilizados em sentido figurado/metafórico.\nExplicação detalhada\nPresença de Sujeito Sintático Expresso:\nSubitamente a tarde escurece no inverno: O verbo escurecer possui sujeito simples expresso (A tarde). Logo, é verbo pessoal. Se a frase fosse redigida apenas como Escurece no inverno, seria impessoal.\nVinha amanhecendo o dia com a cantoria dos pássaros: A locução verbal Vinha amanhecendo possui sujeito simples posposto expresso (o dia). Trata-se de locução pessoal.\nEmprego em Sentido Figurado / Translato:\nArmandinho amanheceu pensativo: O verbo amanhecer expressa mudança de estado ou despertar do sujeito simples Armandinho, configurando verbo pessoal intransitivo/de ligação com predicativo do sujeito.\n\"A tarde escurece no inverno... Só que aqui, o escurece tem sujeito, que é a tarde. É a tarde que escurece. Então o escurecer aqui, ele é um verbo pessoal\".Diferencia-se de: .\nExemplificado por: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Verbos que tipicamente designam fenômenos meteorológicos tornam-se verbos pessoais quando a oração apresenta um sujeito gramatical expresso ou quando são utilizados em sentido figurado/metafórico."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Presença de Sujeito Sintático Expresso:",
+                "Subitamente a tarde escurece no inverno: O verbo escurecer possui sujeito simples expresso (A tarde). Logo, é verbo pessoal. Se a frase fosse redigida apenas como Escurece no inverno, seria impessoal.",
+                "Vinha amanhecendo o dia com a cantoria dos pássaros: A locução verbal Vinha amanhecendo possui sujeito simples posposto expresso (o dia). Trata-se de locução pessoal.",
+                "Emprego em Sentido Figurado / Translato:",
+                "Armandinho amanheceu pensativo: O verbo amanhecer expressa mudança de estado ou despertar do sujeito simples Armandinho, configurando verbo pessoal intransitivo/de ligação com predicativo do sujeito."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"A tarde escurece no inverno... Só que aqui, o escurece tem sujeito, que é a tarde. É a tarde que escurece. Então o escurecer aqui, ele é um verbo pessoal\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G11-001",
+                  "targetTitle": "Verbo Meteorológico com Sujeito Sintático Explícito",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Diferencia-se de",
+                  "targetRef": "KB-A05-G11-001",
+                  "targetTitle": "Conceito e Caracterização Morfossintática de Verbos Impessoais",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-002",
+                  "targetTitle": "Questão 02: Impessoalidade em Locução vs. Sujeito Expresso (PCRJ)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-003",
+                  "targetTitle": "Questão 03: Haver/Fazer Temporal vs. Sujeito Indeterminado (FUNRIO)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +463,46 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo sujeito indeterminado, existe um agente real executando a ação verbal no plano extralinguístico, porém não identificado ou omitido deliberadamente na estrutura oracional. No verbo impessoal, inexiste qualquer entidade que atue como sujeito (oração sem sujeito).\nExplicação detalhada\nNa oração Perguntaram a Armandinho sobre a foto, o verbo está flexionado na 3ª pessoa do plural sem antecedente no texto. Alguém realizou a ação de perguntar (eles, elas, pessoas); portanto, o verbo é pessoal e possui sujeito, sintaticamente classificado como indeterminado. É erro clássico de prova confundi-lo com oração sem sujeito (Há dias que..., Faz frio).\n\"Não confunda sujeito indeterminado com oração sem sujeito. Existe um sujeito. Podem ser eles, elas... Alguém perguntou\".Exemplificado por: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No sujeito indeterminado, existe um agente real executando a ação verbal no plano extralinguístico, porém não identificado ou omitido deliberadamente na estrutura oracional. No verbo impessoal, inexiste qualquer entidade que atue como sujeito (oração sem sujeito)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na oração Perguntaram a Armandinho sobre a foto, o verbo está flexionado na 3ª pessoa do plural sem antecedente no texto. Alguém realizou a ação de perguntar (eles, elas, pessoas); portanto, o verbo é pessoal e possui sujeito, sintaticamente classificado como indeterminado. É erro clássico de prova confundi-lo com oração sem sujeito (Há dias que..., Faz frio)."
+            },
+            {
+              "type": "paragraph",
+              "text": "\"Não confunda sujeito indeterminado com oração sem sujeito. Existe um sujeito. Podem ser eles, elas... Alguém perguntou\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G11-002",
+                  "targetTitle": "Confundir Sujeito Indeterminado com Oração Sem Sujeito",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-003",
+                  "targetTitle": "Questão 03: Haver/Fazer Temporal vs. Sujeito Indeterminado (FUNRIO)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +515,98 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nUma locução verbal é a associação de dois ou mais verbos que desempenham a função sintática de um único predicado verbal. Em qualquer locução verbal:\nO último verbo é invariavelmente o verbo principal, expresso sob forma nominal (infinitivo, gerúndio ou particípio), sendo o responsável pela carga semântica nuclear e pela regência/predicação.\nTodos os verbos antecedentes são verbos auxiliares, encarregados de carregar a totalidade das desinências de flexão gramatical (tempo, modo, número e pessoa).\nExplicação detalhada (\"O Mantra da Professora\")\nO Verbo Auxiliar \"carrega tudo nas costas\": É ele quem expressa o tempo (presente, pretérito, futuro), o modo (indicativo, subjuntivo, imperativo), o número (singular, plural) e a pessoa gramatical (1ª, 2ª, 3ª).\nO Verbo Principal \"manda na sintaxe\": Não recebe flexão de tempo/modo/número/pessoa (permanece invariável em forma nominal no particípio, gerúndio ou infinitivo), determinando se a locução terá ou não sujeito e que complementos exigirá.\nExemplos de estrutura:\nNão vai dar: \"vai\" = Auxiliar (3ª pessoa do singular, presente do indicativo); \"dar\" = Principal no infinitivo.\nÉ liderado: \"é\" = Auxiliar da voz passiva analítica (presente do indicativo); \"liderado\" = Principal no particípio.\nEstá associado: \"está\" = Auxiliar (presente do indicativo); \"associado\" = Principal no particípio.\nDeveria estudar: \"deveria\" = Auxiliar (futuro do pretérito); \"estudar\" = Principal no infinitivo.\n\"O auxiliar carrega tudo nas costas... Ele é que carrega a flexão de tempo, de modo... Nunca é o principal. O principal manda, o auxiliar obedece. O último é o principal, os demais é que são auxiliares\" (039: e ).\nRelações\nPossui dica: TIP-A05-G11-001, TIP-A05-G11-003."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Uma locução verbal é a associação de dois ou mais verbos que desempenham a função sintática de um único predicado verbal. Em qualquer locução verbal:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O último verbo é invariavelmente o verbo principal, expresso sob forma nominal (infinitivo, gerúndio ou particípio), sendo o responsável pela carga semântica nuclear e pela regência/predicação.",
+                "Todos os verbos antecedentes são verbos auxiliares, encarregados de carregar a totalidade das desinências de flexão gramatical (tempo, modo, número e pessoa)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada (\"O Mantra da Professora\")"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Verbo Auxiliar \"carrega tudo nas costas\": É ele quem expressa o tempo (presente, pretérito, futuro), o modo (indicativo, subjuntivo, imperativo), o número (singular, plural) e a pessoa gramatical (1ª, 2ª, 3ª).",
+                "O Verbo Principal \"manda na sintaxe\": Não recebe flexão de tempo/modo/número/pessoa (permanece invariável em forma nominal no particípio, gerúndio ou infinitivo), determinando se a locução terá ou não sujeito e que complementos exigirá.",
+                "Exemplos de estrutura:",
+                "Não vai dar: \"vai\" = Auxiliar (3ª pessoa do singular, presente do indicativo); \"dar\" = Principal no infinitivo.",
+                "É liderado: \"é\" = Auxiliar da voz passiva analítica (presente do indicativo); \"liderado\" = Principal no particípio.",
+                "Está associado: \"está\" = Auxiliar (presente do indicativo); \"associado\" = Principal no particípio.",
+                "Deveria estudar: \"deveria\" = Auxiliar (futuro do pretérito); \"estudar\" = Principal no infinitivo."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"O auxiliar carrega tudo nas costas... Ele é que carrega a flexão de tempo, de modo... Nunca é o principal. O principal manda, o auxiliar obedece. O último é o principal, os demais é que são auxiliares\" (039: e )."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G11-004",
+                  "targetTitle": "Atribuir Flexão Temporal ou Modal ao Verbo Principal",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G11-003",
+                  "targetTitle": "Identificação de Locução Verbal com Hipérbato / Distanciamento Sintático",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-004",
+                  "targetTitle": "Questão 04: Identificação de Verbo Auxiliar em Locução (FUNDATEC)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-006",
+                  "targetTitle": "Questão 06: Funções Morfossintáticas na Locução Verbal (FAFIFA)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-012",
+                  "targetTitle": "Questão 12: Distribuição de Flexões na Locução Verbal (CESPE)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-013",
+                  "targetTitle": "Questão 13: Verbo Auxiliar na Voz Passiva Analítica (Quadrix)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-014",
+                  "targetTitle": "Questão 14: Papel do Particípio em Locução Verbal (Quadrix)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +619,85 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nQuando o verbo haver figura na posição de verbo auxiliar de uma locução verbal (em tempos compostos acompanhando particípio ou em locuções modais com infinitivo), ele perde o caráter impessoal clássico e atua como verbo pessoal, subordinando-se à predicação do verbo principal e concordando em número e pessoa com o sujeito da oração.\nExplicação detalhada\nComo verbo auxiliar, haver \"não manda em nada\"; ele apenas expressa tempo, modo, número e pessoa para o verbo principal.\nSe o verbo principal for pessoal (possuir sujeito), a locução inteira será pessoal, e o verbo haver deverá concordar com esse sujeito:\n...em que muito consumidor havia acreditado: Locução verbal de tempo composto (havia auxiliar + acreditado principal). Sujeito simples expresso: muito consumidor. Forma verbal pessoal.\nEmbora houvesse acertado a hora, ele chegou atrasado: Tempo composto do subjuntivo. Sujeito elíptico/oculto: ele. Forma verbal pessoal.\nUma comunidade [...] haveria de fracassar: Locução modal de sentido futuro do pretérito (haveria auxiliar + de + fracassar principal). Sujeito simples: Uma comunidade. Forma verbal pessoal.\n\"O auxiliar obedece, ele não é impessoal, ele é pessoal. Qual é o sujeito dele? O sujeito dele é esse aqui: muito consumidor\".\nNo slide da Questão 07, anota-se: v. aux. obedece! sobre \"havia\", v. prin. manda! sobre \"acreditado\", e demarca-se o sujeito muito consumidor. No slide da Questão 08, anota-se suj. oculto = ele para a forma houvesse.\nRelações\nContrasta com: (Haver impessoal pleno)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando o verbo haver figura na posição de verbo auxiliar de uma locução verbal (em tempos compostos acompanhando particípio ou em locuções modais com infinitivo), ele perde o caráter impessoal clássico e atua como verbo pessoal, subordinando-se à predicação do verbo principal e concordando em número e pessoa com o sujeito da oração."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Como verbo auxiliar, haver \"não manda em nada\"; ele apenas expressa tempo, modo, número e pessoa para o verbo principal.",
+                "Se o verbo principal for pessoal (possuir sujeito), a locução inteira será pessoal, e o verbo haver deverá concordar com esse sujeito:",
+                "...em que muito consumidor havia acreditado: Locução verbal de tempo composto (havia auxiliar + acreditado principal). Sujeito simples expresso: muito consumidor. Forma verbal pessoal.",
+                "Embora houvesse acertado a hora, ele chegou atrasado: Tempo composto do subjuntivo. Sujeito elíptico/oculto: ele. Forma verbal pessoal.",
+                "Uma comunidade [...] haveria de fracassar: Locução modal de sentido futuro do pretérito (haveria auxiliar + de + fracassar principal). Sujeito simples: Uma comunidade. Forma verbal pessoal."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"O auxiliar obedece, ele não é impessoal, ele é pessoal. Qual é o sujeito dele? O sujeito dele é esse aqui: muito consumidor\"."
+            },
+            {
+              "type": "paragraph",
+              "text": "No slide da Questão 07, anota-se: v. aux. obedece! sobre \"havia\", v. prin. manda! sobre \"acreditado\", e demarca-se o sujeito muito consumidor. No slide da Questão 08, anota-se suj. oculto = ele para a forma houvesse."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A05-G11-002",
+                  "targetTitle": "Verbo \"Haver\" Impessoal: Sentido Existencial e Tempo Decorrido",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G11-003",
+                  "targetTitle": "Confundir \"Haver\" Auxiliar com \"Haver\" Impessoal",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G11-002",
+                  "targetTitle": "Teste de Diagnóstico do Verbo \"Haver\" (Auxiliar Pessoal vs. Principal Impessoal)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-007",
+                  "targetTitle": "Questão 07: \"Haver\" Auxiliar vs. Verbos Impessoais (Cesgranrio)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-008",
+                  "targetTitle": "Questão 08: Tempo Composto com Sujeito Oculto (Cesgranrio)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-009",
+                  "targetTitle": "Questão 09: Perífrase Verbal Modal com Sujeito Explícito (Cesgranrio)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +710,71 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nQuando um verbo impessoal (haver com sentido de existir/tempo, ou fazer indicando tempo/clima) ocupa a posição de verbo principal de uma locução verbal, ele transmite integralmente a sua impessoalidade ao verbo auxiliar antecedente, obrigando toda a locução a permanecer na 3ª pessoa do singular (sem sujeito).\nExplicação detalhada\nNa locução De manhã cedo está fazendo muito frio: O verbo fazer é o principal (está no gerúndio) e expressa clima/fenômeno meteorológico (impessoal). Ele contamina o verbo auxiliar estar, tornando a locução inteira impessoal (sem sujeito).\nNa locução Deve haver problemas: O verbo haver é o principal (está no infinitivo com sentido de existir). Ele transmite sua impessoalidade para o auxiliar dever, impedindo a flexão de plural (Devem haver problemas constitui erro gramatical).\n\"O verbo haver, quando impessoal, transmite sua impessoalidade a auxiliares. [...] O principal manda, o auxiliar obedece. Você aprendeu isso comigo, que o auxiliar, ele carrega a impessoalidade, a pessoalidade do principal\".Exemplificado por: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando um verbo impessoal (haver com sentido de existir/tempo, ou fazer indicando tempo/clima) ocupa a posição de verbo principal de uma locução verbal, ele transmite integralmente a sua impessoalidade ao verbo auxiliar antecedente, obrigando toda a locução a permanecer na 3ª pessoa do singular (sem sujeito)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Na locução De manhã cedo está fazendo muito frio: O verbo fazer é o principal (está no gerúndio) e expressa clima/fenômeno meteorológico (impessoal). Ele contamina o verbo auxiliar estar, tornando a locução inteira impessoal (sem sujeito).",
+                "Na locução Deve haver problemas: O verbo haver é o principal (está no infinitivo com sentido de existir). Ele transmite sua impessoalidade para o auxiliar dever, impedindo a flexão de plural (Devem haver problemas constitui erro gramatical)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"O verbo haver, quando impessoal, transmite sua impessoalidade a auxiliares. [...] O principal manda, o auxiliar obedece. Você aprendeu isso comigo, que o auxiliar, ele carrega a impessoalidade, a pessoalidade do principal\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A05-G11-002",
+                  "targetTitle": "Verbo \"Haver\" Impessoal: Sentido Existencial e Tempo Decorrido",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A05-G11-003",
+                  "targetTitle": "Verbo \"Fazer\" e Locução com \"Passar de\" Impessoais",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A05-G11-006",
+                  "targetTitle": "Morfossintaxe da Locução Verbal: Papel do Verbo Auxiliar vs. Verbo Principal",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-002",
+                  "targetTitle": "Questão 02: Impessoalidade em Locução vs. Sujeito Expresso (PCRJ)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-010",
+                  "targetTitle": "Questão 10: Julgamento de Itens sobre \"Haver\" (Cesgranrio)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +787,68 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs elementos que integram uma locução verbal (verbo auxiliar e verbo principal) não precisam estar dispostos em contiguidade imediata na oração; eles podem ser separados por amplas intercalações sintáticas (sujeitos expandidos, orações adjetivas, apostos e adjuntos adverbiais).\nExplicação detalhada\nNa estrutura cobrada pela Fundação Carlos Chagas (FCC):\n\"Possa o espírito que motivou Alfred Nobel a criar sua notável instituição, o espírito de fé e confiança, de generosidade e fraternidade entre os homens, prevalecer na mente daqueles...\"\nVerbo Auxiliar: Possa (presente do subjuntivo no início do período).\nVerbo Principal: prevalecer (infinitivo no meio/fim do período).\nTermos Intercalados: O sujeito e todos os seus modificadores adjetivos e apositivos.\nOrdem Direta Recomposta: \"O espírito [...] possa prevalecer...\".\n\"Entre o auxiliar e o principal pode haver elementos. Nesse caso aí foi elemento pra caramba. Olha como houve um distanciamento do auxiliar e seu respectivo principal. A locução verbal é 'possa prevalecer'\".\nRelações\nExpande: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os elementos que integram uma locução verbal (verbo auxiliar e verbo principal) não precisam estar dispostos em contiguidade imediata na oração; eles podem ser separados por amplas intercalações sintáticas (sujeitos expandidos, orações adjetivas, apostos e adjuntos adverbiais)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na estrutura cobrada pela Fundação Carlos Chagas (FCC):"
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Possa o espírito que motivou Alfred Nobel a criar sua notável instituição, o espírito de fé e confiança, de generosidade e fraternidade entre os homens, prevalecer na mente daqueles...\""
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbo Auxiliar: Possa (presente do subjuntivo no início do período).",
+                "Verbo Principal: prevalecer (infinitivo no meio/fim do período).",
+                "Termos Intercalados: O sujeito e todos os seus modificadores adjetivos e apositivos.",
+                "Ordem Direta Recomposta: \"O espírito [...] possa prevalecer...\"."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"Entre o auxiliar e o principal pode haver elementos. Nesse caso aí foi elemento pra caramba. Olha como houve um distanciamento do auxiliar e seu respectivo principal. A locução verbal é 'possa prevalecer'\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A05-G11-006",
+                  "targetTitle": "Morfossintaxe da Locução Verbal: Papel do Verbo Auxiliar vs. Verbo Principal",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G11-003",
+                  "targetTitle": "Identificação de Locução Verbal com Hipérbato / Distanciamento Sintático",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-005",
+                  "targetTitle": "Questão 05: Locução Verbal com Distanciamento Extremo / Hipérbato (FCC)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -220,8 +861,87 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA forma verbal \"é\" do verbo ser pode atuar como verbo pessoal dotado de sujeito oracional (oração subordinada substantiva subjetiva) ou como verbo impessoal em referências temporais e cronológicas sem sujeito.\nExplicação detalhada\nVerbo Ser Pessoal com Sujeito Oracional (\"É um orgulho poder contar com você\"):\nPergunta de sujeito: \"O que é um orgulho?\" $\\rightarrow$ Resposta: \"Poder contar com você\".\nA oração reduzida de infinitivo atua como sujeito oracional.\nPor possuir sujeito sintático, o verbo é pessoal. Ele fica na 3ª pessoa do singular porque orações subjetivas impõem concordância no singular.\nVerbo Ser Impessoal Temporal (\"É tarde\"):\nO verbo expressa tempo cronológico. Não há sujeito sintático na oração.\nTrata-se de oração sem sujeito (verbo impessoal).\nConclusão: As justificativas gramaticais para a 3ª pessoa do singular são distintas, tornando falso qualquer item de concurso que as equipare.\n\"Poder contar com você é um orgulho. Isso aqui é o tal do sujeito oracional... ele tem sujeito, esse verbo aqui é pessoal... Já esse 'é' aqui é diferente: quando você diz 'é tarde', aí ele é impessoal...\"."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A forma verbal \"é\" do verbo ser pode atuar como verbo pessoal dotado de sujeito oracional (oração subordinada substantiva subjetiva) ou como verbo impessoal em referências temporais e cronológicas sem sujeito."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Ser Pessoal com Sujeito Oracional (\"É um orgulho poder contar com você\"):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pergunta de sujeito: \"O que é um orgulho?\" $\\rightarrow$ Resposta: \"Poder contar com você\".",
+                "A oração reduzida de infinitivo atua como sujeito oracional.",
+                "Por possuir sujeito sintático, o verbo é pessoal. Ele fica na 3ª pessoa do singular porque orações subjetivas impõem concordância no singular."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Ser Impessoal Temporal (\"É tarde\"):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O verbo expressa tempo cronológico. Não há sujeito sintático na oração.",
+                "Trata-se de oração sem sujeito (verbo impessoal)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Conclusão: As justificativas gramaticais para a 3ª pessoa do singular são distintas, tornando falso qualquer item de concurso que as equipare."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"Poder contar com você é um orgulho. Isso aqui é o tal do sujeito oracional... ele tem sujeito, esse verbo aqui é pessoal... Já esse 'é' aqui é diferente: quando você diz 'é tarde', aí ele é impessoal...\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G11-005",
+                  "targetTitle": "Confundir Sujeito Oracional com Impessoalidade do Verbo \"Ser\"",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G11-004",
+                  "targetTitle": "Teste de Diferenciação entre Sujeito Oracional e Verbo Impessoal (\"Ser\")",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G11-017",
+                  "targetTitle": "Questão 17: Sujeito Oracional vs. Verbo \"Ser\" Impessoal (CESPE)",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -234,56 +954,53 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO domínio com alto rendimento em Língua Portuguesa para concursos públicos depende da construção prévia de uma base teórica gramatical sólida e da realização de revisões tópicas orientadas por pontos do edital, não sendo suficiente limitar o estudo à resolução mecânica de provas anteriores da banca organizadora.\nExplicação detalhada\nA postura da \"massa\": Candidatos que resolvem provas inteiras de forma aleatória sem fundamentação teórica prévia. Esse comportamento consolida lacunas de aprendizado e gera estagnação de nota.\nA estratégia da \"elite\": Construir base gramatical normativa sequencial; revisar ativamente resolvendo baterias de questões agrupadas por assunto (ex.: verbos impessoais); treinar provas completas da banca organizadora apenas na reta final pós-edital.\nAprovado Perito PCERJ (Química) — 1º Lugar: Apresentava defasagem severa em Português; pausou o estudo de matérias específicas ao saber que a banca seria FGV, assistiu a todo o curso teórico básico de Português e transformou o ponto fraco na maior pontuação da prova.\nAprovados em Petrobras e TJ-RJ: Alunos com diferentes rotinas (estudo contínuo por 7 anos com pausas ou formação escolar prévia) que atingiram a aprovação ao estruturar revisões por tópicos.\n\"Se você ficar resolvendo só prova da banca, o que acontece? Você vai ficar igual à massa. A massa toda resolve prova. A elite é a que consegue resolver batendo os pontos do edital\".\nRelações\nPossui dica: TIP-A05-G11-004.\nGera procedimento: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O domínio com alto rendimento em Língua Portuguesa para concursos públicos depende da construção prévia de uma base teórica gramatical sólida e da realização de revisões tópicas orientadas por pontos do edital, não sendo suficiente limitar o estudo à resolução mecânica de provas anteriores da banca organizadora."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A postura da \"massa\": Candidatos que resolvem provas inteiras de forma aleatória sem fundamentação teórica prévia. Esse comportamento consolida lacunas de aprendizado e gera estagnação de nota.",
+                "A estratégia da \"elite\": Construir base gramatical normativa sequencial; revisar ativamente resolvendo baterias de questões agrupadas por assunto (ex.: verbos impessoais); treinar provas completas da banca organizadora apenas na reta final pós-edital."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aprovado Perito PCERJ (Química) — 1º Lugar: Apresentava defasagem severa em Português; pausou o estudo de matérias específicas ao saber que a banca seria FGV, assistiu a todo o curso teórico básico de Português e transformou o ponto fraco na maior pontuação da prova.",
+                "Aprovados em Petrobras e TJ-RJ: Alunos com diferentes rotinas (estudo contínuo por 7 anos com pausas ou formação escolar prévia) que atingiram a aprovação ao estruturar revisões por tópicos."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "\"Se você ficar resolvendo só prova da banca, o que acontece? Você vai ficar igual à massa. A massa toda resolve prova. A elite é a que consegue resolver batendo os pontos do edital\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A05-G11-005",
+                  "targetTitle": "Metodologia dos Três Círculos de Estudo para Português em Concursos",
+                  "targetUnitId": "IP-A05-G11",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nVerbos impessoais são aqueles que não possuem sujeito gramatical associado (configurando oração sem sujeito) e não se flexionam para concordar com pessoas do discurso, permanecendo compulsoriamente na 3ª pessoa do singular (defectivos quanto à conjugação).\nExplicação detalhada\nO verbo impessoal não admite sujeito agente, paciente nem experienciador. Quando denota fenômeno natural em sentido denotativo (ventou muito, choveu intensamente), a oração se estrutura sintaticamente sem sujeito. Difere-se fundamentalmente de:\nOração com sujeito elíptico/oculto: A pessoa existe no contexto discursivo e pode ser identificada pela desinência ou pelo período (Foi temeridade ter saído [ele/ela]).\nOração com verbo intransitivo ou transitivo dotado de sujeito expresso: O verbo possui um núcleo substantivo que pratica ou sofre a ação (O prédio veio a ruir, A bailarina queixou-se).\nA professora Adriana Figueiredo estabelece a definição de partida: \"Verbo impessoal é aquele que não tem pessoa, é aquele que não tem sujeito\" (037 - ).\nNo slide da Questão 01, a professora sublinha Ventou na alternativa A, registrando a ausência de sujeito, e classifica sistematicamente as demais opções: suj. elíptico em B, suj. simples em C (o prédio) e suj. simples em D (a bailarina), sintetizando: V. Pessoais (têm sujeito).Exemplificado por: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO verbo haver é impessoal em duas circunstâncias fundamentais da norma-padrão:\nQuando empregado com o sentido de existir, ocorrer ou acontecer.\nQuando empregado para indicar tempo decorrido ou transcorrido.\nEm ambas as situações, não admite sujeito sintático, atua como verbo transitivo direto (cujo termo seguinte é objeto direto) e permanece invariável na 3ª pessoa do singular.\nExplicação detalhada\nHaver Existencial (Haver = Existir): Estruturas como Não havia nada ali, Há dúvidas, Espero que não haja empecilhos, Não haverá convívio, há uma crise configuram orações sem sujeito. Os termos substantivos (nada, dúvidas, empecilhos, convívio, uma crise) são sintaticamente objetos diretos.\nContraste com o verbo Existir: O verbo existir é pessoal; o termo a ele associado é sujeito e exige concordância obrigatória (Existiam empecilhos, Existem muitas aves).\nHaver Temporal (Tempo Decorrido): Estruturas como Há dias que Armandinho tirou a foto, Houve época, há três anos, Há dez anos denotam passagem cronológica de tempo. O verbo atua como verbo principal pleno simples e não admite flexão de plural.\nDistinção Semântica Interna: Embora ambos sejam impessoais, haver existencial e haver temporal não possuem o mesmo sentido: o primeiro equivale a existir; o segundo equivale a fazer (tempo).\n\"Esse aqui é o haver com o sentido de existir. O verbo haver com o sentido de existir é impessoal. Não tem pessoa, não tem sujeito\".\n\"No entanto, possui atualmente menos funcionários que há três anos (tempo decorrido) — não há concurso (existir) desde 2009\".\nAnotações na tela: H = HAVER; SENTIDO = EXISTIR, = existir, tempo decorrido.\nRelações\nContrasta com: (Haver como auxiliar pessoal).Exemplificado por: , , , , , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO verbo fazer e a locução com o verbo passar seguido da preposição de são impessoais quando denotam tempo transcorrido, fenômenos meteorológicos/temperatura ou horas decorridas, permanecendo rigorosamente no singular.\nExplicação detalhada\nVerbo Fazer indicando Tempo Decorrido: Estruturas como Faz tempo que não vemos um!, Faz algum tempo, Fazia dias, Fez uma década. É erro gramatical crasso flexionar o verbo no plural (fazem dois anos).\nVerbo Fazer indicando Fenômeno Meteorológico / Clima: Estruturas como Fez muito frio no dia da inauguração, Faz calor, Está fazendo muito frio.\nVerbo Passar (de) indicando Horas Decorridas: Na estrutura Já passava das quatro horas quando ela chegou, o verbo passar seguido de de expressa decurso temporal e atua como impessoal (invariável na 3ª pessoa do singular).\n\"Toda vez que o haver e o fazer indicarem tempo decorrido, eles são impessoais, lembra? Faz duas horas, e não fazem duas horas\".\nAnotações na tela da professora: V. FAZER = TEMPO DECORRIDO, FAZER = tempo meteorológico, PASSAR = tempo decorrido.Exemplificado por: , , , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nVerbos que tipicamente designam fenômenos meteorológicos tornam-se verbos pessoais quando a oração apresenta um sujeito gramatical expresso ou quando são utilizados em sentido figurado/metafórico.\nExplicação detalhada\nPresença de Sujeito Sintático Expresso:\nSubitamente a tarde escurece no inverno: O verbo escurecer possui sujeito simples expresso (A tarde). Logo, é verbo pessoal. Se a frase fosse redigida apenas como Escurece no inverno, seria impessoal.\nVinha amanhecendo o dia com a cantoria dos pássaros: A locução verbal Vinha amanhecendo possui sujeito simples posposto expresso (o dia). Trata-se de locução pessoal.\nEmprego em Sentido Figurado / Translato:\nArmandinho amanheceu pensativo: O verbo amanhecer expressa mudança de estado ou despertar do sujeito simples Armandinho, configurando verbo pessoal intransitivo/de ligação com predicativo do sujeito.\n\"A tarde escurece no inverno... Só que aqui, o escurece tem sujeito, que é a tarde. É a tarde que escurece. Então o escurecer aqui, ele é um verbo pessoal\".Diferencia-se de: .\nExemplificado por: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo sujeito indeterminado, existe um agente real executando a ação verbal no plano extralinguístico, porém não identificado ou omitido deliberadamente na estrutura oracional. No verbo impessoal, inexiste qualquer entidade que atue como sujeito (oração sem sujeito).\nExplicação detalhada\nNa oração Perguntaram a Armandinho sobre a foto, o verbo está flexionado na 3ª pessoa do plural sem antecedente no texto. Alguém realizou a ação de perguntar (eles, elas, pessoas); portanto, o verbo é pessoal e possui sujeito, sintaticamente classificado como indeterminado. É erro clássico de prova confundi-lo com oração sem sujeito (Há dias que..., Faz frio).\n\"Não confunda sujeito indeterminado com oração sem sujeito. Existe um sujeito. Podem ser eles, elas... Alguém perguntou\".Exemplificado por: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nUma locução verbal é a associação de dois ou mais verbos que desempenham a função sintática de um único predicado verbal. Em qualquer locução verbal:\nO último verbo é invariavelmente o verbo principal, expresso sob forma nominal (infinitivo, gerúndio ou particípio), sendo o responsável pela carga semântica nuclear e pela regência/predicação.\nTodos os verbos antecedentes são verbos auxiliares, encarregados de carregar a totalidade das desinências de flexão gramatical (tempo, modo, número e pessoa).\nExplicação detalhada (\"O Mantra da Professora\")\nO Verbo Auxiliar \"carrega tudo nas costas\": É ele quem expressa o tempo (presente, pretérito, futuro), o modo (indicativo, subjuntivo, imperativo), o número (singular, plural) e a pessoa gramatical (1ª, 2ª, 3ª).\nO Verbo Principal \"manda na sintaxe\": Não recebe flexão de tempo/modo/número/pessoa (permanece invariável em forma nominal no particípio, gerúndio ou infinitivo), determinando se a locução terá ou não sujeito e que complementos exigirá.\nExemplos de estrutura:\nNão vai dar: \"vai\" = Auxiliar (3ª pessoa do singular, presente do indicativo); \"dar\" = Principal no infinitivo.\nÉ liderado: \"é\" = Auxiliar da voz passiva analítica (presente do indicativo); \"liderado\" = Principal no particípio.\nEstá associado: \"está\" = Auxiliar (presente do indicativo); \"associado\" = Principal no particípio.\nDeveria estudar: \"deveria\" = Auxiliar (futuro do pretérito); \"estudar\" = Principal no infinitivo.\n\"O auxiliar carrega tudo nas costas... Ele é que carrega a flexão de tempo, de modo... Nunca é o principal. O principal manda, o auxiliar obedece. O último é o principal, os demais é que são auxiliares\" (039: e ).\nRelações\nPossui dica: TIP-A05-G11-001, TIP-A05-G11-003."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nQuando o verbo haver figura na posição de verbo auxiliar de uma locução verbal (em tempos compostos acompanhando particípio ou em locuções modais com infinitivo), ele perde o caráter impessoal clássico e atua como verbo pessoal, subordinando-se à predicação do verbo principal e concordando em número e pessoa com o sujeito da oração.\nExplicação detalhada\nComo verbo auxiliar, haver \"não manda em nada\"; ele apenas expressa tempo, modo, número e pessoa para o verbo principal.\nSe o verbo principal for pessoal (possuir sujeito), a locução inteira será pessoal, e o verbo haver deverá concordar com esse sujeito:\n...em que muito consumidor havia acreditado: Locução verbal de tempo composto (havia auxiliar + acreditado principal). Sujeito simples expresso: muito consumidor. Forma verbal pessoal.\nEmbora houvesse acertado a hora, ele chegou atrasado: Tempo composto do subjuntivo. Sujeito elíptico/oculto: ele. Forma verbal pessoal.\nUma comunidade [...] haveria de fracassar: Locução modal de sentido futuro do pretérito (haveria auxiliar + de + fracassar principal). Sujeito simples: Uma comunidade. Forma verbal pessoal.\n\"O auxiliar obedece, ele não é impessoal, ele é pessoal. Qual é o sujeito dele? O sujeito dele é esse aqui: muito consumidor\".\nNo slide da Questão 07, anota-se: v. aux. obedece! sobre \"havia\", v. prin. manda! sobre \"acreditado\", e demarca-se o sujeito muito consumidor. No slide da Questão 08, anota-se suj. oculto = ele para a forma houvesse.\nRelações\nContrasta com: (Haver impessoal pleno)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nQuando um verbo impessoal (haver com sentido de existir/tempo, ou fazer indicando tempo/clima) ocupa a posição de verbo principal de uma locução verbal, ele transmite integralmente a sua impessoalidade ao verbo auxiliar antecedente, obrigando toda a locução a permanecer na 3ª pessoa do singular (sem sujeito).\nExplicação detalhada\nNa locução De manhã cedo está fazendo muito frio: O verbo fazer é o principal (está no gerúndio) e expressa clima/fenômeno meteorológico (impessoal). Ele contamina o verbo auxiliar estar, tornando a locução inteira impessoal (sem sujeito).\nNa locução Deve haver problemas: O verbo haver é o principal (está no infinitivo com sentido de existir). Ele transmite sua impessoalidade para o auxiliar dever, impedindo a flexão de plural (Devem haver problemas constitui erro gramatical).\n\"O verbo haver, quando impessoal, transmite sua impessoalidade a auxiliares. [...] O principal manda, o auxiliar obedece. Você aprendeu isso comigo, que o auxiliar, ele carrega a impessoalidade, a pessoalidade do principal\".Exemplificado por: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs elementos que integram uma locução verbal (verbo auxiliar e verbo principal) não precisam estar dispostos em contiguidade imediata na oração; eles podem ser separados por amplas intercalações sintáticas (sujeitos expandidos, orações adjetivas, apostos e adjuntos adverbiais).\nExplicação detalhada\nNa estrutura cobrada pela Fundação Carlos Chagas (FCC):\n\"Possa o espírito que motivou Alfred Nobel a criar sua notável instituição, o espírito de fé e confiança, de generosidade e fraternidade entre os homens, prevalecer na mente daqueles...\"\nVerbo Auxiliar: Possa (presente do subjuntivo no início do período).\nVerbo Principal: prevalecer (infinitivo no meio/fim do período).\nTermos Intercalados: O sujeito e todos os seus modificadores adjetivos e apositivos.\nOrdem Direta Recomposta: \"O espírito [...] possa prevalecer...\".\n\"Entre o auxiliar e o principal pode haver elementos. Nesse caso aí foi elemento pra caramba. Olha como houve um distanciamento do auxiliar e seu respectivo principal. A locução verbal é 'possa prevalecer'\".\nRelações\nExpande: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA forma verbal \"é\" do verbo ser pode atuar como verbo pessoal dotado de sujeito oracional (oração subordinada substantiva subjetiva) ou como verbo impessoal em referências temporais e cronológicas sem sujeito.\nExplicação detalhada\nVerbo Ser Pessoal com Sujeito Oracional (\"É um orgulho poder contar com você\"):\nPergunta de sujeito: \"O que é um orgulho?\" $\\rightarrow$ Resposta: \"Poder contar com você\".\nA oração reduzida de infinitivo atua como sujeito oracional.\nPor possuir sujeito sintático, o verbo é pessoal. Ele fica na 3ª pessoa do singular porque orações subjetivas impõem concordância no singular.\nVerbo Ser Impessoal Temporal (\"É tarde\"):\nO verbo expressa tempo cronológico. Não há sujeito sintático na oração.\nTrata-se de oração sem sujeito (verbo impessoal).\nConclusão: As justificativas gramaticais para a 3ª pessoa do singular são distintas, tornando falso qualquer item de concurso que as equipare.\n\"Poder contar com você é um orgulho. Isso aqui é o tal do sujeito oracional... ele tem sujeito, esse verbo aqui é pessoal... Já esse 'é' aqui é diferente: quando você diz 'é tarde', aí ele é impessoal...\"."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO domínio com alto rendimento em Língua Portuguesa para concursos públicos depende da construção prévia de uma base teórica gramatical sólida e da realização de revisões tópicas orientadas por pontos do edital, não sendo suficiente limitar o estudo à resolução mecânica de provas anteriores da banca organizadora.\nExplicação detalhada\nA postura da \"massa\": Candidatos que resolvem provas inteiras de forma aleatória sem fundamentação teórica prévia. Esse comportamento consolida lacunas de aprendizado e gera estagnação de nota.\nA estratégia da \"elite\": Construir base gramatical normativa sequencial; revisar ativamente resolvendo baterias de questões agrupadas por assunto (ex.: verbos impessoais); treinar provas completas da banca organizadora apenas na reta final pós-edital.\nAprovado Perito PCERJ (Química) — 1º Lugar: Apresentava defasagem severa em Português; pausou o estudo de matérias específicas ao saber que a banca seria FGV, assistiu a todo o curso teórico básico de Português e transformou o ponto fraco na maior pontuação da prova.\nAprovados em Petrobras e TJ-RJ: Alunos com diferentes rotinas (estudo contínuo por 7 anos com pausas ou formação escolar prévia) que atingiram a aprovação ao estruturar revisões por tópicos.\n\"Se você ficar resolvendo só prova da banca, o que acontece? Você vai ficar igual à massa. A massa toda resolve prova. A elite é a que consegue resolver batendo os pontos do edital\".\nRelações\nPossui dica: TIP-A05-G11-004.\nGera procedimento: ."
         }
       ]
     },
@@ -470,7 +1187,9 @@
               "PROC-A05-G11-001",
               "EXP-IP-A05-G11-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -616,7 +1335,9 @@
               "PROC-A05-G11-002",
               "EXP-IP-A05-G11-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -704,7 +1425,9 @@
               "PROC-A05-G11-003",
               "EXP-IP-A05-G11-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -817,7 +1540,9 @@
               "PROC-A05-G11-004",
               "EXP-IP-A05-G11-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -891,7 +1616,9 @@
               "PROC-A05-G11-005",
               "EXP-IP-A05-G11-PROC-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -962,7 +1689,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-001",
               "EXP-IP-A05-G11-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1026,7 +1755,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-002",
               "EXP-IP-A05-G11-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1090,7 +1821,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-003",
               "EXP-IP-A05-G11-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1155,7 +1888,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-004",
               "EXP-IP-A05-G11-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1216,7 +1951,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-005",
               "EXP-IP-A05-G11-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1280,7 +2017,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-006",
               "EXP-IP-A05-G11-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1345,7 +2084,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-007",
               "EXP-IP-A05-G11-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1410,7 +2151,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-008",
               "EXP-IP-A05-G11-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1475,7 +2218,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-009",
               "EXP-IP-A05-G11-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1538,7 +2283,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-010",
               "EXP-IP-A05-G11-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1603,7 +2350,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-011",
               "EXP-IP-A05-G11-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1667,7 +2416,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-012",
               "EXP-IP-A05-G11-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1728,7 +2479,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-013",
               "EXP-IP-A05-G11-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1789,7 +2542,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-014",
               "EXP-IP-A05-G11-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1850,7 +2605,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-015",
               "EXP-IP-A05-G11-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1911,7 +2668,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-016",
               "EXP-IP-A05-G11-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1972,7 +2731,9 @@
               "WORKED_EXAMPLE-IP-A05-G11-017",
               "EXP-IP-A05-G11-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2023,7 +2784,9 @@
               "WARN-A05-G11-001",
               "EXP-IP-A05-G11-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2059,7 +2822,9 @@
               "WARN-A05-G11-002",
               "EXP-IP-A05-G11-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2095,7 +2860,9 @@
               "WARN-A05-G11-003",
               "EXP-IP-A05-G11-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2131,7 +2898,9 @@
               "WARN-A05-G11-004",
               "EXP-IP-A05-G11-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2167,30 +2936,123 @@
               "WARN-A05-G11-005",
               "EXP-IP-A05-G11-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Conceito e Caracterização Morfossintática de Verbos Impessoais**: Definição ou ideia central\nVerbos impessoais são aqueles que não possuem sujeito gramatical associado (configurando oração sem sujeito) e não se flexionam para concordar com pessoas do discurso, permanecendo compulsoriamente na 3ª pessoa do singular (defectivos quanto à conjugação).\nExplicação detalhada\nO verbo impessoal não admite sujeito agente, paciente nem experienciador. Quando denota fenômeno natural em sentido denotativo (ventou muito, choveu intensamente), a oração se estrutura sintaticamente sem sujeito. Difere-se fundamentalmente de:\nOração com sujeito elíptico/oculto: A pessoa existe no contexto discursivo e pode ser identificada pela desinência ou pelo período (Foi temeridade ter saído [ele/ela]).\nOração com verbo intransitivo ou transitivo dotado de sujeito expresso: O verbo possui um núcleo substantivo que pratica ou sofre a ação (O prédio veio a ruir, A bailarina queixou-se).\nA professora Adriana Figueiredo estabelece a definição de partida: \"Verbo impessoal é aquele que não tem pessoa, é aquele que não tem sujeito\" (037 - ).\nNo slide da Questão 01, a professora sublinha Ventou na alternativa A, registrando a ausência de sujeito, e classifica sistematicamente as demais opções: suj. elíptico em B, suj. simples em C (o prédio) e suj. simples em D (a bailarina), sintetizando: V. Pessoais (têm sujeito).Exemplificado por: .",
-            "**Verbo \"Haver\" Impessoal: Sentido Existencial e Tempo Decorrido**: Definição ou ideia central\nO verbo haver é impessoal em duas circunstâncias fundamentais da norma-padrão:\nQuando empregado com o sentido de existir, ocorrer ou acontecer.\nQuando empregado para indicar tempo decorrido ou transcorrido.\nEm ambas as situações, não admite sujeito sintático, atua como verbo transitivo direto (cujo termo seguinte é objeto direto) e permanece invariável na 3ª pessoa do singular.\nExplicação detalhada\nHaver Existencial (Haver = Existir): Estruturas como Não havia nada ali, Há dúvidas, Espero que não haja empecilhos, Não haverá convívio, há uma crise configuram orações sem sujeito. Os termos substantivos (nada, dúvidas, empecilhos, convívio, uma crise) são sintaticamente objetos diretos.\nContraste com o verbo Existir: O verbo existir é pessoal; o termo a ele associado é sujeito e exige concordância obrigatória (Existiam empecilhos, Existem muitas aves).\nHaver Temporal (Tempo Decorrido): Estruturas como Há dias que Armandinho tirou a foto, Houve época, há três anos, Há dez anos denotam passagem cronológica de tempo. O verbo atua como verbo principal pleno simples e não admite flexão de plural.\nDistinção Semântica Interna: Embora ambos sejam impessoais, haver existencial e haver temporal não possuem o mesmo sentido: o primeiro equivale a existir; o segundo equivale a fazer (tempo).\n\"Esse aqui é o haver com o sentido de existir. O verbo haver com o sentido de existir é impessoal. Não tem pessoa, não tem sujeito\".\n\"No entanto, possui atualmente menos funcionários que há três anos (tempo decorrido) — não há concurso (existir) desde 2009\".\nAnotações na tela: H = HAVER; SENTIDO = EXISTIR, = existir, tempo decorrido.\nRelações\nContrasta com: (Haver como auxiliar pessoal).Exemplificado por: , , , , , .",
-            "**Verbo \"Fazer\" e Locução com \"Passar de\" Impessoais**: Definição ou ideia central\nO verbo fazer e a locução com o verbo passar seguido da preposição de são impessoais quando denotam tempo transcorrido, fenômenos meteorológicos/temperatura ou horas decorridas, permanecendo rigorosamente no singular.\nExplicação detalhada\nVerbo Fazer indicando Tempo Decorrido: Estruturas como Faz tempo que não vemos um!, Faz algum tempo, Fazia dias, Fez uma década. É erro gramatical crasso flexionar o verbo no plural (fazem dois anos).\nVerbo Fazer indicando Fenômeno Meteorológico / Clima: Estruturas como Fez muito frio no dia da inauguração, Faz calor, Está fazendo muito frio.\nVerbo Passar (de) indicando Horas Decorridas: Na estrutura Já passava das quatro horas quando ela chegou, o verbo passar seguido de de expressa decurso temporal e atua como impessoal (invariável na 3ª pessoa do singular).\n\"Toda vez que o haver e o fazer indicarem tempo decorrido, eles são impessoais, lembra? Faz duas horas, e não fazem duas horas\".\nAnotações na tela da professora: V. FAZER = TEMPO DECORRIDO, FAZER = tempo meteorológico, PASSAR = tempo decorrido.Exemplificado por: , , , .",
-            "**Verbos de Fenômenos Naturais Usados em Sentido Pessoal**: Definição ou ideia central\nVerbos que tipicamente designam fenômenos meteorológicos tornam-se verbos pessoais quando a oração apresenta um sujeito gramatical expresso ou quando são utilizados em sentido figurado/metafórico.\nExplicação detalhada\nPresença de Sujeito Sintático Expresso:\nSubitamente a tarde escurece no inverno: O verbo escurecer possui sujeito simples expresso (A tarde). Logo, é verbo pessoal. Se a frase fosse redigida apenas como Escurece no inverno, seria impessoal.\nVinha amanhecendo o dia com a cantoria dos pássaros: A locução verbal Vinha amanhecendo possui sujeito simples posposto expresso (o dia). Trata-se de locução pessoal.\nEmprego em Sentido Figurado / Translato:\nArmandinho amanheceu pensativo: O verbo amanhecer expressa mudança de estado ou despertar do sujeito simples Armandinho, configurando verbo pessoal intransitivo/de ligação com predicativo do sujeito.\n\"A tarde escurece no inverno... Só que aqui, o escurece tem sujeito, que é a tarde. É a tarde que escurece. Então o escurecer aqui, ele é um verbo pessoal\".Diferencia-se de: .\nExemplificado por: , .",
-            "**Sujeito Indeterminado vs. Verbo Impessoal (Oração Sem Sujeito)**: Definição ou ideia central\nNo sujeito indeterminado, existe um agente real executando a ação verbal no plano extralinguístico, porém não identificado ou omitido deliberadamente na estrutura oracional. No verbo impessoal, inexiste qualquer entidade que atue como sujeito (oração sem sujeito).\nExplicação detalhada\nNa oração Perguntaram a Armandinho sobre a foto, o verbo está flexionado na 3ª pessoa do plural sem antecedente no texto. Alguém realizou a ação de perguntar (eles, elas, pessoas); portanto, o verbo é pessoal e possui sujeito, sintaticamente classificado como indeterminado. É erro clássico de prova confundi-lo com oração sem sujeito (Há dias que..., Faz frio).\n\"Não confunda sujeito indeterminado com oração sem sujeito. Existe um sujeito. Podem ser eles, elas... Alguém perguntou\".Exemplificado por: .",
-            "**Morfossintaxe da Locução Verbal: Papel do Verbo Auxiliar vs. Verbo Principal**: Definição ou ideia central\nUma locução verbal é a associação de dois ou mais verbos que desempenham a função sintática de um único predicado verbal. Em qualquer locução verbal:\nO último verbo é invariavelmente o verbo principal, expresso sob forma nominal (infinitivo, gerúndio ou particípio), sendo o responsável pela carga semântica nuclear e pela regência/predicação.\nTodos os verbos antecedentes são verbos auxiliares, encarregados de carregar a totalidade das desinências de flexão gramatical (tempo, modo, número e pessoa).\nExplicação detalhada (\"O Mantra da Professora\")\nO Verbo Auxiliar \"carrega tudo nas costas\": É ele quem expressa o tempo (presente, pretérito, futuro), o modo (indicativo, subjuntivo, imperativo), o número (singular, plural) e a pessoa gramatical (1ª, 2ª, 3ª).\nO Verbo Principal \"manda na sintaxe\": Não recebe flexão de tempo/modo/número/pessoa (permanece invariável em forma nominal no particípio, gerúndio ou infinitivo), determinando se a locução terá ou não sujeito e que complementos exigirá.\nExemplos de estrutura:\nNão vai dar: \"vai\" = Auxiliar (3ª pessoa do singular, presente do indicativo); \"dar\" = Principal no infinitivo.\nÉ liderado: \"é\" = Auxiliar da voz passiva analítica (presente do indicativo); \"liderado\" = Principal no particípio.\nEstá associado: \"está\" = Auxiliar (presente do indicativo); \"associado\" = Principal no particípio.\nDeveria estudar: \"deveria\" = Auxiliar (futuro do pretérito); \"estudar\" = Principal no infinitivo.\n\"O auxiliar carrega tudo nas costas... Ele é que carrega a flexão de tempo, de modo... Nunca é o principal. O principal manda, o auxiliar obedece. O último é o principal, os demais é que são auxiliares\" (039: e ).\nRelações\nPossui dica: TIP-A05-G11-001, TIP-A05-G11-003.",
-            "**O Verbo \"Haver\" como Auxiliar em Locuções Verbais Pessoais**: Definição ou ideia central\nQuando o verbo haver figura na posição de verbo auxiliar de uma locução verbal (em tempos compostos acompanhando particípio ou em locuções modais com infinitivo), ele perde o caráter impessoal clássico e atua como verbo pessoal, subordinando-se à predicação do verbo principal e concordando em número e pessoa com o sujeito da oração.\nExplicação detalhada\nComo verbo auxiliar, haver \"não manda em nada\"; ele apenas expressa tempo, modo, número e pessoa para o verbo principal.\nSe o verbo principal for pessoal (possuir sujeito), a locução inteira será pessoal, e o verbo haver deverá concordar com esse sujeito:\n...em que muito consumidor havia acreditado: Locução verbal de tempo composto (havia auxiliar + acreditado principal). Sujeito simples expresso: muito consumidor. Forma verbal pessoal.\nEmbora houvesse acertado a hora, ele chegou atrasado: Tempo composto do subjuntivo. Sujeito elíptico/oculto: ele. Forma verbal pessoal.\nUma comunidade [...] haveria de fracassar: Locução modal de sentido futuro do pretérito (haveria auxiliar + de + fracassar principal). Sujeito simples: Uma comunidade. Forma verbal pessoal.\n\"O auxiliar obedece, ele não é impessoal, ele é pessoal. Qual é o sujeito dele? O sujeito dele é esse aqui: muito consumidor\".\nNo slide da Questão 07, anota-se: v. aux. obedece! sobre \"havia\", v. prin. manda! sobre \"acreditado\", e demarca-se o sujeito muito consumidor. No slide da Questão 08, anota-se suj. oculto = ele para a forma houvesse.\nRelações\nContrasta com: (Haver impessoal pleno).",
-            "**Transmissão de Impessoalidade em Locuções Verbais**: Definição ou ideia central\nQuando um verbo impessoal (haver com sentido de existir/tempo, ou fazer indicando tempo/clima) ocupa a posição de verbo principal de uma locução verbal, ele transmite integralmente a sua impessoalidade ao verbo auxiliar antecedente, obrigando toda a locução a permanecer na 3ª pessoa do singular (sem sujeito).\nExplicação detalhada\nNa locução De manhã cedo está fazendo muito frio: O verbo fazer é o principal (está no gerúndio) e expressa clima/fenômeno meteorológico (impessoal). Ele contamina o verbo auxiliar estar, tornando a locução inteira impessoal (sem sujeito).\nNa locução Deve haver problemas: O verbo haver é o principal (está no infinitivo com sentido de existir). Ele transmite sua impessoalidade para o auxiliar dever, impedindo a flexão de plural (Devem haver problemas constitui erro gramatical).\n\"O verbo haver, quando impessoal, transmite sua impessoalidade a auxiliares. [...] O principal manda, o auxiliar obedece. Você aprendeu isso comigo, que o auxiliar, ele carrega a impessoalidade, a pessoalidade do principal\".Exemplificado por: , .",
-            "**Locuções Verbais com Hipérbato e Intercalação Extensa de Termos**: Definição ou ideia central\nOs elementos que integram uma locução verbal (verbo auxiliar e verbo principal) não precisam estar dispostos em contiguidade imediata na oração; eles podem ser separados por amplas intercalações sintáticas (sujeitos expandidos, orações adjetivas, apostos e adjuntos adverbiais).\nExplicação detalhada\nNa estrutura cobrada pela Fundação Carlos Chagas (FCC):\n\"Possa o espírito que motivou Alfred Nobel a criar sua notável instituição, o espírito de fé e confiança, de generosidade e fraternidade entre os homens, prevalecer na mente daqueles...\"\nVerbo Auxiliar: Possa (presente do subjuntivo no início do período).\nVerbo Principal: prevalecer (infinitivo no meio/fim do período).\nTermos Intercalados: O sujeito e todos os seus modificadores adjetivos e apositivos.\nOrdem Direta Recomposta: \"O espírito [...] possa prevalecer...\".\n\"Entre o auxiliar e o principal pode haver elementos. Nesse caso aí foi elemento pra caramba. Olha como houve um distanciamento do auxiliar e seu respectivo principal. A locução verbal é 'possa prevalecer'\".\nRelações\nExpande: .",
-            "**Predicação do Verbo \"Ser\": Sujeito Oracional vs. Impessoalidade Temporal**: Definição ou ideia central\nA forma verbal \"é\" do verbo ser pode atuar como verbo pessoal dotado de sujeito oracional (oração subordinada substantiva subjetiva) ou como verbo impessoal em referências temporais e cronológicas sem sujeito.\nExplicação detalhada\nVerbo Ser Pessoal com Sujeito Oracional (\"É um orgulho poder contar com você\"):\nPergunta de sujeito: \"O que é um orgulho?\" $\\rightarrow$ Resposta: \"Poder contar com você\".\nA oração reduzida de infinitivo atua como sujeito oracional.\nPor possuir sujeito sintático, o verbo é pessoal. Ele fica na 3ª pessoa do singular porque orações subjetivas impõem concordância no singular.\nVerbo Ser Impessoal Temporal (\"É tarde\"):\nO verbo expressa tempo cronológico. Não há sujeito sintático na oração.\nTrata-se de oração sem sujeito (verbo impessoal).\nConclusão: As justificativas gramaticais para a 3ª pessoa do singular são distintas, tornando falso qualquer item de concurso que as equipare.\n\"Poder contar com você é um orgulho. Isso aqui é o tal do sujeito oracional... ele tem sujeito, esse verbo aqui é pessoal... Já esse 'é' aqui é diferente: quando você diz 'é tarde', aí ele é impessoal...\".",
-            "**Metodologia de Estudo e Preparação em Língua Portuguesa para Concursos**: Definição ou ideia central\nO domínio com alto rendimento em Língua Portuguesa para concursos públicos depende da construção prévia de uma base teórica gramatical sólida e da realização de revisões tópicas orientadas por pontos do edital, não sendo suficiente limitar o estudo à resolução mecânica de provas anteriores da banca organizadora.\nExplicação detalhada\nA postura da \"massa\": Candidatos que resolvem provas inteiras de forma aleatória sem fundamentação teórica prévia. Esse comportamento consolida lacunas de aprendizado e gera estagnação de nota.\nA estratégia da \"elite\": Construir base gramatical normativa sequencial; revisar ativamente resolvendo baterias de questões agrupadas por assunto (ex.: verbos impessoais); treinar provas completas da banca organizadora apenas na reta final pós-edital.\nAprovado Perito PCERJ (Química) — 1º Lugar: Apresentava defasagem severa em Português; pausou o estudo de matérias específicas ao saber que a banca seria FGV, assistiu a todo o curso teórico básico de Português e transformou o ponto fraco na maior pontuação da prova.\nAprovados em Petrobras e TJ-RJ: Alunos com diferentes rotinas (estudo contínuo por 7 anos com pausas ou formação escolar prévia) que atingiram a aprovação ao estruturar revisões por tópicos.\n\"Se você ficar resolvendo só prova da banca, o que acontece? Você vai ficar igual à massa. A massa toda resolve prova. A elite é a que consegue resolver batendo os pontos do edital\".\nRelações\nPossui dica: TIP-A05-G11-004.\nGera procedimento: ."
-          ]
+          "term": "Conceito e Caracterização Morfossintática de Verbos Impessoais",
+          "shortDefinition": "Verbos impessoais são aqueles que não possuem sujeito gramatical associado (configurando oração sem sujeito) e não se flexionam para concordar com pessoas do discurso, permanecendo compulsoriamente na 3ª pessoa do singular (defectivos quanto à conjugação).",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-01"
+          },
+          "operationalUse": "O verbo impessoal não admite sujeito agente, paciente nem experienciador."
+        },
+        {
+          "term": "Verbo \"Haver\" Impessoal: Sentido Existencial e Tempo Decorrido",
+          "shortDefinition": "O verbo haver é impessoal em duas circunstâncias fundamentais da norma-padrão:",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-02"
+          }
+        },
+        {
+          "term": "Verbo \"Fazer\" e Locução com \"Passar de\" Impessoais",
+          "shortDefinition": "O verbo fazer e a locução com o verbo passar seguido da preposição de são impessoais quando denotam tempo transcorrido, fenômenos meteorológicos/temperatura ou horas decorridas, permanecendo rigorosamente no singular.",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-03"
+          }
+        },
+        {
+          "term": "Verbos de Fenômenos Naturais Usados em Sentido Pessoal",
+          "shortDefinition": "Verbos que tipicamente designam fenômenos meteorológicos tornam-se verbos pessoais quando a oração apresenta um sujeito gramatical expresso ou quando são utilizados em sentido figurado/metafórico.",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-04"
+          },
+          "operationalUse": "\"A tarde escurece no inverno..."
+        },
+        {
+          "term": "Sujeito Indeterminado vs. Verbo Impessoal (Oração Sem Sujeito)",
+          "shortDefinition": "No sujeito indeterminado, existe um agente real executando a ação verbal no plano extralinguístico, porém não identificado ou omitido deliberadamente na estrutura oracional. No verbo impessoal, inexiste qualquer entidade que atue como sujeito (oração sem sujeito).",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-05"
+          },
+          "operationalUse": "Na oração Perguntaram a Armandinho sobre a foto, o verbo está flexionado na 3ª pessoa do plural sem antecedente no texto."
+        },
+        {
+          "term": "Morfossintaxe da Locução Verbal: Papel do Verbo Auxiliar vs. Verbo Principal",
+          "shortDefinition": "Uma locução verbal é a associação de dois ou mais verbos que desempenham a função sintática de um único predicado verbal. Em qualquer locução verbal:",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-06"
+          },
+          "operationalUse": "\"O auxiliar carrega tudo nas costas..."
+        },
+        {
+          "term": "O Verbo \"Haver\" como Auxiliar em Locuções Verbais Pessoais",
+          "shortDefinition": "Quando o verbo haver figura na posição de verbo auxiliar de uma locução verbal (em tempos compostos acompanhando particípio ou em locuções modais com infinitivo), ele perde o caráter impessoal clássico e atua como verbo pessoal, subordinando-se à predicação do verbo principal e concordando em número e pessoa com o sujeito da oração.",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-07"
+          },
+          "operationalUse": "\"O auxiliar obedece, ele não é impessoal, ele é pessoal."
+        },
+        {
+          "term": "Transmissão de Impessoalidade em Locuções Verbais",
+          "shortDefinition": "Quando um verbo impessoal (haver com sentido de existir/tempo, ou fazer indicando tempo/clima) ocupa a posição de verbo principal de uma locução verbal, ele transmite integralmente a sua impessoalidade ao verbo auxiliar antecedente, obrigando toda a locução a permanecer na 3ª pessoa do singular (sem sujeito).",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-08"
+          },
+          "operationalUse": "\"O verbo haver, quando impessoal, transmite sua impessoalidade a auxiliares. [...] O principal manda, o auxiliar obedece."
+        },
+        {
+          "term": "Locuções Verbais com Hipérbato e Intercalação Extensa de Termos",
+          "shortDefinition": "Os elementos que integram uma locução verbal (verbo auxiliar e verbo principal) não precisam estar dispostos em contiguidade imediata na oração; eles podem ser separados por amplas intercalações sintáticas (sujeitos expandidos, orações adjetivas, apostos e adjuntos adverbiais).",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-09"
+          },
+          "operationalUse": "Na estrutura cobrada pela Fundação Carlos Chagas (FCC):"
+        },
+        {
+          "term": "Predicação do Verbo \"Ser\": Sujeito Oracional vs. Impessoalidade Temporal",
+          "shortDefinition": "A forma verbal \"é\" do verbo ser pode atuar como verbo pessoal dotado de sujeito oracional (oração subordinada substantiva subjetiva) ou como verbo impessoal em referências temporais e cronológicas sem sujeito.",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-10"
+          },
+          "operationalUse": "\"Poder contar com você é um orgulho."
+        },
+        {
+          "term": "Metodologia de Estudo e Preparação em Língua Portuguesa para Concursos",
+          "shortDefinition": "O domínio com alto rendimento em Língua Portuguesa para concursos públicos depende da construção prévia de uma base teórica gramatical sólida e da realização de revisões tópicas orientadas por pontos do edital, não sendo suficiente limitar o estudo à resolução mecânica de provas anteriores da banca organizadora.",
+          "detailTarget": {
+            "unitId": "IP-A05-G11",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G11-11"
+          },
+          "operationalUse": "\"Se você ficar resolvendo só prova da banca, o que acontece?"
         }
       ]
     },
@@ -2368,7 +3230,10 @@
         "confidence": 0.99
       },
       "answerSha256": "43b46a0e5f590758f45349aa93a34df4e82606ff68ac01299bc8820b219683c5",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A05-aula05.q0057"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2419,105 +3284,10 @@
         "confidence": 0.99
       },
       "answerSha256": "17b173b948a60b85c5192d9f11428a47c0d03928a4b28a405ed31eb6bcc6a9e6",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A05-aula05.q0057",
-      "lessonId": "A05",
-      "sourceQuestionId": "aula05.q0057",
-      "questionPayload": {
-        "question_id": "aula05.q0057",
-        "question_type": "true_false_or_judgment",
-        "exam_board": "CEBRASPE",
-        "organization": "INPI",
-        "position": null,
-        "year": 2024,
-        "support_text": null,
-        "prompt": "Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente,\ncom prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore.\nNo segundo período do primeiro parágrafo, o segmento “a primeira patente” funciona como\ncomplemento direto da locução verbal “foi concedida”.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.voz_passiva"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.voz_passiva.conversao.001"
-        ],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0038"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "duplicate_of": "aula05.q0035",
-        "extraction_confidence": 0.985
-      },
-      "questionSha256": "5c6898f77d5b7cacb5b201eb845a856e6688988b59914d4b100f25178f221143",
-      "answerPayload": {
-        "answer_id": "aula05.q0057.answer",
-        "question_id": "aula05.q0057",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0042"
-          ]
-        },
-        "confidence": 0.995
-      },
-      "answerSha256": "7ae07c6a56a5f45e200a91c76c0a26a78c465608c6de92ce406e43d13aab3234",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A05-aula05.q0058",
-      "lessonId": "A05",
-      "sourceQuestionId": "aula05.q0058",
-      "questionPayload": {
-        "question_id": "aula05.q0058",
-        "question_type": "true_false_or_judgment",
-        "exam_board": "CEBRASPE",
-        "organization": "CAPES",
-        "position": null,
-        "year": 2024,
-        "support_text": null,
-        "prompt": "A vida em sociedade trouxe para os seres humanos um aprendizado extremamente\nimportante: não se poderiam resolver todas as questões pela força, era preciso usar a palavra\npara persuadir os outros a fazer alguma coisa. Por isso, o aparecimento da argumentação está\nligado à vida em sociedade e, principalmente, ao surgimento das primeiras democracias.\nAo empregar o vocábulo “se” em “não se poderiam resolver todas as questões pela força”\n(primeiro período do texto), o autor, ao mesmo tempo, indetermina o sujeito gramatical da\noração e omite o agente responsável pela ação expressa pelo verbo “resolver”.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.voz_passiva"
-        ],
-        "tests_rule_ids": [
-          "rule.pt.voz_passiva.conversao.001"
-        ],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0038"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "duplicate_of": "aula05.q0036",
-        "extraction_confidence": 0.985
-      },
-      "questionSha256": "b6386363bcef45ba827f7f171b2e95a5b364ebe856ee913c5b0d5dcc8e984ff1",
-      "answerPayload": {
-        "answer_id": "aula05.q0058.answer",
-        "question_id": "aula05.q0058",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0042"
-          ]
-        },
-        "confidence": 0.995
-      },
-      "answerSha256": "bd0c2d9008946cfd5a6762af10d74d6fec23c906fafc32df852fb04e71d1feff",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A05-aula05.q0058"
+      ]
     }
   ]
 }

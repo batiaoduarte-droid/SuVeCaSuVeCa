@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A10-G03",
     "lessonId": "A10",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A10-G03",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A10-G03-001"
+          }
         }
       ]
     },
@@ -94,8 +99,102 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA regência sintática associada a pronomes relativos inverte a ordem linear tradicional da língua portuguesa: a preposição exigida pelo termo regente (verbo ou nome) é anteposta ao pronome relativo, situando-se à esquerda dele, embora seja governada por um regente posicionado à direita, no interior da oração adjetiva.\nExplicação consolidada\nNa sintaxe oracional canônica (ordem direta), a dependência caminha da esquerda para a direita: o termo regente antecede a preposição e esta introduz o termo regido (ex.: deparamos [regente] com [preposição] uma realidade [regido]).\nContudo, quando uma oração subordinada adjetiva é introduzida por pronome relativo (que, quem, cujo, o qual, onde), o pronome assume a função sintática do complemento oracional. Caso o verbo ou nome da oração subordinada exija preposição, essa preposição é obrigatoriamente deslocada para a posição imediatamente anterior ao pronome relativo.\nAssim, a leitura sintática ocorre de modo retrógrado:\nO vestido [a que] me refiro. -> O verbo referir-se (posicionado no final) exige a preposição a, que é projetada para antes do pronome relativo que.\nA amiga [com quem] conversei. -> O verbo conversar (posicionado após o pronome) exige a preposição com, projetada para antes do relativo quem.\nCritérios de reconhecimento ou aplicação\nIdentificar o pronome relativo que inicia a oração adjetiva.\nReconhecer que o substantivo antecedente (ex.: vestido, amiga) não rege a preposição.\nBuscar o verbo ou nome situado após o pronome relativo e verificar sua exigência de complemento preposicionado.\nExemplos e contraexemplos\nCorreto: \"Estes são os princípios a que me atenho.\" (Quem se atém, atém-se a).\nIncorreto (omissão de preposição): \"Estes são os princípios que me atenho.\"\nIncorreto (preposição errada por intuição): \"Estes são os princípios em que me atenho.\"\nExceções ou limites\nA preposição nunca é regida pelo antecedente. Quando o verbo posposto for transitivo direto (VTD), nenhum conectivo preposicional pode anteceder o pronome relativo.\nRelações\nFundamenta: \nExemplificado por: a"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A regência sintática associada a pronomes relativos inverte a ordem linear tradicional da língua portuguesa: a preposição exigida pelo termo regente (verbo ou nome) é anteposta ao pronome relativo, situando-se à esquerda dele, embora seja governada por um regente posicionado à direita, no interior da oração adjetiva."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na sintaxe oracional canônica (ordem direta), a dependência caminha da esquerda para a direita: o termo regente antecede a preposição e esta introduz o termo regido (ex.: deparamos [regente] com [preposição] uma realidade [regido])."
+            },
+            {
+              "type": "paragraph",
+              "text": "Contudo, quando uma oração subordinada adjetiva é introduzida por pronome relativo (que, quem, cujo, o qual, onde), o pronome assume a função sintática do complemento oracional. Caso o verbo ou nome da oração subordinada exija preposição, essa preposição é obrigatoriamente deslocada para a posição imediatamente anterior ao pronome relativo."
+            },
+            {
+              "type": "paragraph",
+              "text": "Assim, a leitura sintática ocorre de modo retrógrado:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O vestido [a que] me refiro. -> O verbo referir-se (posicionado no final) exige a preposição a, que é projetada para antes do pronome relativo que.",
+                "A amiga [com quem] conversei. -> O verbo conversar (posicionado após o pronome) exige a preposição com, projetada para antes do relativo quem."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificar o pronome relativo que inicia a oração adjetiva.",
+                "Reconhecer que o substantivo antecedente (ex.: vestido, amiga) não rege a preposição.",
+                "Buscar o verbo ou nome situado após o pronome relativo e verificar sua exigência de complemento preposicionado."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Correto: \"Estes são os princípios a que me atenho.\" (Quem se atém, atém-se a).",
+                "Incorreto (omissão de preposição): \"Estes são os princípios que me atenho.\"",
+                "Incorreto (preposição errada por intuição): \"Estes são os princípios em que me atenho.\""
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exceções ou limites"
+            },
+            {
+              "type": "paragraph",
+              "text": "A preposição nunca é regida pelo antecedente. Quando o verbo posposto for transitivo direto (VTD), nenhum conectivo preposicional pode anteceder o pronome relativo."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001",
+                  "targetTitle": "Algoritmo Operacional dos Três Passos para Orações Adjetivas",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-001",
+                  "targetTitle": "Exercício de Fixação: Verbo Esquecer (VTD)",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-015",
+                  "targetTitle": "Questão 35: FGV — IMBEL",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +207,66 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Método dos Três Passos é um procedimento analítico padronizado que substitui a intuição auditiva pela reconstrução sintática da oração adjetiva, permitindo determinar com exatidão matemática a necessidade e a escolha da preposição diante do pronome relativo.\nExplicação consolidada\nPara neutralizar o vício de \"adivinhar\" preposições isoladas, o método desmembra a análise em três etapas sucessivas:\nPasso 1 (Identificação do Regente Posterior): Dirigir a atenção imediatamente para o verbo ou nome que sucede o pronome relativo (no interior da oração adjetiva). Em caso de locução verbal, focar no verbo principal (o último).\nPasso 2 (Transposição para a Ordem Direta): Isolar a oração adjetiva e estruturá-la no formato canônico: Sujeito + Verbo/Locução + Complemento.\nPasso 3 (Recomposição com o Antecedente e Encaixe do Conectivo — Etapa Chave): Localizar o termo antecedente (o substantivo ou pronome que o relativo substitui) e inseri-lo na posição de complemento da oração adjetiva. A preposição exigida para conectar o verbo/nome ao antecedente é exatamente aquela que deve ser transportada para a frente do pronome relativo.\nCritérios de reconhecimento ou aplicação\ntext [Oração Principal: Antecedente] + [Prep? + Pronome Relativo] + [Sujeito] + [Verbo Regente] Passo 3: Encaixe ┘ (Ordem Direta: Sujeito + Verbo + Prep + Antecedente)\nExemplos\nEstrutura sob teste: A maioria dos problemas lidamos são fáceis.\nPasso 1: Regente posterior = lidamos.\nPasso 2: Ordem direta = Nós lidamos...\nPasso 3: Recomposição com o antecedente (problemas) = Nós lidamos com os problemas.\nResultado: A preposição é com. Como o pronome é os quais, obtém-se com os quais.\nRelações\nFormalizado em: \nApoiado pela metáfora: ORAL-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Método dos Três Passos é um procedimento analítico padronizado que substitui a intuição auditiva pela reconstrução sintática da oração adjetiva, permitindo determinar com exatidão matemática a necessidade e a escolha da preposição diante do pronome relativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para neutralizar o vício de \"adivinhar\" preposições isoladas, o método desmembra a análise em três etapas sucessivas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passo 1 (Identificação do Regente Posterior): Dirigir a atenção imediatamente para o verbo ou nome que sucede o pronome relativo (no interior da oração adjetiva). Em caso de locução verbal, focar no verbo principal (o último).",
+                "Passo 2 (Transposição para a Ordem Direta): Isolar a oração adjetiva e estruturá-la no formato canônico: Sujeito + Verbo/Locução + Complemento.",
+                "Passo 3 (Recomposição com o Antecedente e Encaixe do Conectivo — Etapa Chave): Localizar o termo antecedente (o substantivo ou pronome que o relativo substitui) e inseri-lo na posição de complemento da oração adjetiva. A preposição exigida para conectar o verbo/nome ao antecedente é exatamente aquela que deve ser transportada para a frente do pronome relativo."
+              ]
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Critérios de reconhecimento ou aplicação",
+              "text": "text [Oração Principal: Antecedente] + [Prep? + Pronome Relativo] + [Sujeito] + [Verbo Regente] ▲ │ │ │ └──────── Passo 3: Encaixe ◄────────┘ (Ordem Direta: Sujeito + Verbo + Prep + Antecedente)"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura sob teste: A maioria dos problemas [  ] lidamos são fáceis.",
+                "Passo 1: Regente posterior = lidamos.",
+                "Passo 2: Ordem direta = Nós lidamos...",
+                "Passo 3: Recomposição com o antecedente (problemas) = Nós lidamos com os problemas.",
+                "Resultado: A preposição é com. Como o pronome é os quais, obtém-se com os quais."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001",
+                  "targetTitle": "Algoritmo Operacional dos Três Passos para Orações Adjetivas",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +279,68 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs verbos esquecer e lembrar possuem dupla possibilidade sintática: quando não pronominais, são Transitivos Diretos (VTD) e repelem preposição diante do pronome relativo; quando pronominais (esquecer-se, lembrar-se), tornam-se Transitivos Indiretos (VTI) e regem obrigatoriamente a preposição de antes do pronome relativo.\nExplicação consolidada\nConstrução Não Pronominal (VTD — Sem Preposição):\nO verbo atua desacompanhado de pronome reflexivo/oblíquo (esquecer algo, lembrar algo).\nAo aplicar o Método dos Três Passos, o complemento liga-se ao verbo diretamente.\nFrase: Há fatos [que] nunca esquecemos. -> Nós nunca esquecemos os fatos (VTD -> pronome relativo puro que).\nConstrução Pronominal (VTI — Preposição \"de\"):\nO verbo vem acompanhado de pronome reflexivo integrante (esquecer-se de, lembrar-se de).\nAo aplicar o Método dos Três Passos, surge a preposição de.\nFrase: Aludiram a incidentes [de que] já ninguém se lembrava. -> Ninguém já se lembrava dos incidentes (de + incidentes) -> forma obrigatória de que.\nAlertas e erros comuns\nA linguagem coloquial frequentemente contamina a norma culta gerando construções híbridas incorretas: esquecer de algo (sem pronome mas com preposição) ou esquecer-se algo (com pronome mas sem preposição). Ambas são repudiadas em concursos.Exemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os verbos esquecer e lembrar possuem dupla possibilidade sintática: quando não pronominais, são Transitivos Diretos (VTD) e repelem preposição diante do pronome relativo; quando pronominais (esquecer-se, lembrar-se), tornam-se Transitivos Indiretos (VTI) e regem obrigatoriamente a preposição de antes do pronome relativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Construção Não Pronominal (VTD — Sem Preposição):",
+                "O verbo atua desacompanhado de pronome reflexivo/oblíquo (esquecer algo, lembrar algo).",
+                "Ao aplicar o Método dos Três Passos, o complemento liga-se ao verbo diretamente.",
+                "Frase: Há fatos [que] nunca esquecemos. -> Nós nunca esquecemos os fatos (VTD -> pronome relativo puro que).",
+                "Construção Pronominal (VTI — Preposição \"de\"):",
+                "O verbo vem acompanhado de pronome reflexivo integrante (esquecer-se de, lembrar-se de).",
+                "Ao aplicar o Método dos Três Passos, surge a preposição de.",
+                "Frase: Aludiram a incidentes [de que] já ninguém se lembrava. -> Ninguém já se lembrava dos incidentes (de + incidentes) -> forma obrigatória de que."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Alertas e erros comuns"
+            },
+            {
+              "type": "paragraph",
+              "text": "A linguagem coloquial frequentemente contamina a norma culta gerando construções híbridas incorretas: esquecer de algo (sem pronome mas com preposição) ou esquecer-se algo (com pronome mas sem preposição). Ambas são repudiadas em concursos."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001",
+                  "targetTitle": "Confusão entre Esquecer (VTD) e Esquecer-se de (VTI)",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-001",
+                  "targetTitle": "Exercício de Fixação: Verbo Esquecer (VTD)",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-002",
+                  "targetTitle": "Exercício de Fixação: Verbo Lembrar-se (VTI)",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +353,97 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO pronome relativo cujo (e suas flexões cuja, cujos, cujas) estabelece relação estrita de posse entre dois substantivos (substantivo antecedente = possuidor; substantivo consequente = coisa possuída), concorda com a coisa possuída, não aceita artigo posterior e só recebe preposição se o termo regente situado após o relativo a exigir.\nExplicação consolidada\nA utilização correta do pronome cujo exige a observância de cinco preceitos fundamentais:\nRelação Genitiva de Posse: Conecta obrigatoriamente substantivo a substantivo (capítulos do livro, figura da mulher, ideias de Lya Luft, tradução da frase).\nConcordância e Referência: Refere-se ao possuidor (antecedente), mas flexiona-se em gênero e número com a coisa possuída (termo posterior).\nProibição Absoluta de Artigo: É erro gramatical grave colocar artigo definido imediatamente após cujo (cujo o, cuja a, cujos os, cujas as).\nOrigem da Preposição: Cujo não possui preposição intrínseca. A presença de conectivo (a cujo, de cujo, em cujo, por cujo) depende unicamente da regência do verbo ou nome posposto:\nSe o regente for VTD: O livro cujos capítulos estudei... (Estudei os capítulos -> sem preposição).\nSe o regente exigir preposição a: A mulher a cuja figura nos referimos... (Referir-se à figura -> a cuja).\nSe o regente exigir preposição em: A mulher em cuja figura havia um ar de dama... (Havia na figura -> em cuja).\nSe o regente nominal exigir preposição por: A autora por cujas ideias temos simpatia... (Simpatia pelas ideias -> por cujas).\nProibição diante de Verbos e Pronomes: Cujo não pode preceder diretamente verbos (em cujo se reproduz — incorreto) nem pronomes (de cuja ninguém escapa — incorreto), pois isso descaracteriza a relação substantivo-substantivo.Utiliza o macete: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-002\nExemplificado em: , , , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O pronome relativo cujo (e suas flexões cuja, cujos, cujas) estabelece relação estrita de posse entre dois substantivos (substantivo antecedente = possuidor; substantivo consequente = coisa possuída), concorda com a coisa possuída, não aceita artigo posterior e só recebe preposição se o termo regente situado após o relativo a exigir."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A utilização correta do pronome cujo exige a observância de cinco preceitos fundamentais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Relação Genitiva de Posse: Conecta obrigatoriamente substantivo a substantivo (capítulos do livro, figura da mulher, ideias de Lya Luft, tradução da frase).",
+                "Concordância e Referência: Refere-se ao possuidor (antecedente), mas flexiona-se em gênero e número com a coisa possuída (termo posterior).",
+                "Proibição Absoluta de Artigo: É erro gramatical grave colocar artigo definido imediatamente após cujo (cujo o, cuja a, cujos os, cujas as).",
+                "Origem da Preposição: Cujo não possui preposição intrínseca. A presença de conectivo (a cujo, de cujo, em cujo, por cujo) depende unicamente da regência do verbo ou nome posposto:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o regente for VTD: O livro cujos capítulos estudei... (Estudei os capítulos -> sem preposição).",
+                "Se o regente exigir preposição a: A mulher a cuja figura nos referimos... (Referir-se à figura -> a cuja).",
+                "Se o regente exigir preposição em: A mulher em cuja figura havia um ar de dama... (Havia na figura -> em cuja).",
+                "Se o regente nominal exigir preposição por: A autora por cujas ideias temos simpatia... (Simpatia pelas ideias -> por cujas)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Proibição diante de Verbos e Pronomes: Cujo não pode preceder diretamente verbos (em cujo se reproduz — incorreto) nem pronomes (de cuja ninguém escapa — incorreto), pois isso descaracteriza a relação substantivo-substantivo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-002",
+                  "targetTitle": "Violação Estrutural do Pronome Relativo \"Cujo\"",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-007",
+                  "targetTitle": "Exercício de Fixação: Cujo com Referir-se a",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-008",
+                  "targetTitle": "Exercício de Fixação: Cujo com Haver Existencial / Locativo",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-009",
+                  "targetTitle": "Questão 29: CESGRANRIO — Banco da Amazônia",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-013",
+                  "targetTitle": "Questão 33: FCC — DETRAN-SP",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-014",
+                  "targetTitle": "Questão 34: FCC — Prefeitura de Manaus",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +456,111 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs pronomes relativos onde, aonde e donde (ou de onde) destinam-se exclusivamente à retomada de substantivos que designem lugar físico e concreto. A diferenciação sintática entre eles decorre estritamente da regência preposicional exigida pelo verbo da oração subordinada.\nExplicação consolidada\nA matriz de aplicação dos pronomes locativos organiza-se da seguinte forma:\nRestrição Crítica: Proibição para Referentes Abstratos\nÉ vedado o emprego de onde ou aonde para retomar conceitos abstratos, termos conceituais, psicológicos, temporais ou circunstanciais (como violência, verdade, galeria de quadros, sociedade, situação). Nessas construções, deve-se utilizar em que, no qual, de que, pelo qual, etc.\nIncorreto: A violência é uma situação aonde muitos sucumbem.\nCorreto: A violência é uma situação em que / na qual muitos sucumbem.Exemplificado em: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os pronomes relativos onde, aonde e donde (ou de onde) destinam-se exclusivamente à retomada de substantivos que designem lugar físico e concreto. A diferenciação sintática entre eles decorre estritamente da regência preposicional exigida pelo verbo da oração subordinada."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A matriz de aplicação dos pronomes locativos organiza-se da seguinte forma:"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A10-G03-004",
+              "table": {
+                "tableId": "TABLE-IP-A10-G03-004",
+                "caption": "Explicação consolidada",
+                "headers": [
+                  "Pronome Relativo",
+                  "Equivalência Sintática",
+                  "Preposição Exigida",
+                  "Valor Semântico do Verbo",
+                  "Exemplo Canônico"
+                ],
+                "rows": [
+                  [
+                    "ONDE",
+                    "em que / no qual",
+                    "EM",
+                    "Posicionamento, estado, permanência, estaticidade.",
+                    "É a cidade onde moro. (Quem mora, mora em)."
+                  ],
+                  [
+                    "AONDE",
+                    "a que / ao qual",
+                    "A",
+                    "Movimento em direção a, destino, deslocamento a um ponto.",
+                    "É a cidade aonde vou. (Quem vai, vai a)."
+                  ],
+                  [
+                    "DONDE (ou DE ONDE)",
+                    "de que / do qual",
+                    "DE",
+                    "Origem, procedência, ponto de partida.",
+                    "É a cidade donde venho. (Quem vem, vem de)."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Restrição Crítica: Proibição para Referentes Abstratos"
+            },
+            {
+              "type": "paragraph",
+              "text": "É vedado o emprego de onde ou aonde para retomar conceitos abstratos, termos conceituais, psicológicos, temporais ou circunstanciais (como violência, verdade, galeria de quadros, sociedade, situação). Nessas construções, deve-se utilizar em que, no qual, de que, pelo qual, etc."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Incorreto: A violência é uma situação aonde muitos sucumbem.",
+                "Correto: A violência é uma situação em que / na qual muitos sucumbem."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-003",
+                  "targetTitle": "Emprego Indevido de \"Onde\" para Referentes Abstratos",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-013",
+                  "targetTitle": "Questão 33: FCC — DETRAN-SP",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-014",
+                  "targetTitle": "Questão 34: FCC — Prefeitura de Manaus",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-015",
+                  "targetTitle": "Questão 35: FGV — IMBEL",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +573,71 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA regência de uma forma verbal não se transfere automaticamente para o seu substantivo cognato. O verbo simpatizar rege a preposição com, ao passo que o substantivo simpatia rege a preposição por (ou para com).\nExplicação consolidada\nA transposição de classe gramatical frequentemente altera a preposição regida:\nForma Verbal: Simpatizar + preposição com\nOrdem direta: Simpatizamos com as ideias de Lya Luft.\nCom pronome relativo: As ideias com que simpatizamos...\nNota: O verbo simpatizar não admite uso pronominal (simpatizar-se com é rechaçado pela norma culta).\nForma Nominal (Substantivo): Simpatia + preposição por\nOrdem direta: Temos simpatia pelas ideias de Lya Luft.\nCom pronome possessivo cuja: Lya Luft, por cujas ideias temos simpatia, é uma grande escritora.\nErro frequente em provas\nBancas exploram a semelhança morfosemântica induzindo o candidato a marcar com cujas ideias temos simpatia. Como o regente imediato do complemento é o substantivo simpatia, a única forma correta é por cujas ideias.Exemplificado em: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A regência de uma forma verbal não se transfere automaticamente para o seu substantivo cognato. O verbo simpatizar rege a preposição com, ao passo que o substantivo simpatia rege a preposição por (ou para com)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A transposição de classe gramatical frequentemente altera a preposição regida:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Forma Verbal: Simpatizar + preposição com",
+                "Ordem direta: Simpatizamos com as ideias de Lya Luft.",
+                "Com pronome relativo: As ideias com que simpatizamos...",
+                "Nota: O verbo simpatizar não admite uso pronominal (simpatizar-se com é rechaçado pela norma culta).",
+                "Forma Nominal (Substantivo): Simpatia + preposição por",
+                "Ordem direta: Temos simpatia pelas ideias de Lya Luft.",
+                "Com pronome possessivo cuja: Lya Luft, por cujas ideias temos simpatia, é uma grande escritora."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Erro frequente em provas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas exploram a semelhança morfosemântica induzindo o candidato a marcar com cujas ideias temos simpatia. Como o regente imediato do complemento é o substantivo simpatia, a única forma correta é por cujas ideias."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-004",
+                  "targetTitle": "Falsa Equivalência entre Regência Verbal e Nominal de Cognatos",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-003",
+                  "targetTitle": "Exercício de Fixação: Verbo Simpatizar",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-009",
+                  "targetTitle": "Questão 29: CESGRANRIO — Banco da Amazônia",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +650,73 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nEm orações subordinadas adjetivas cujo predicado é composto por locução verbal (verbo auxiliar + verbo principal no infinitivo, gerúndio ou particípio), a exigência e a seleção da preposição anteposta ao pronome relativo são governadas exclusivamente pelo verbo principal (o último verbo da locução).\nExplicação consolidada\nAo aplicar o Método dos Três Passos diante de locuções verbais:\nDesconsiderar a transitividade dos verbos auxiliares (como podem, devemos, aspira a).\nIdentificar a regência do último verbo (verbo principal):\nLocução com VTI: ...graves riscos podemos incorrer. -> Verbo principal: incorrer (rege em: incorrer em riscos). Forma correta: ...graves riscos nos quais podemos incorrer.\nLocução com Verbo de Ligação: ...a pessoa cada um aspira a ser. -> Verbo principal: ser (não rege preposição). Forma correta: ...a pessoa que cada um aspira a ser.\nLocução com VTI modalizador: ...os problemas devemos falar. -> Verbo principal: falar (rege de: falar dos problemas). Forma correta: ...os problemas de que devemos falar.\nRelações\nFormalizado em: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-003\nExemplificado em: , , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em orações subordinadas adjetivas cujo predicado é composto por locução verbal (verbo auxiliar + verbo principal no infinitivo, gerúndio ou particípio), a exigência e a seleção da preposição anteposta ao pronome relativo são governadas exclusivamente pelo verbo principal (o último verbo da locução)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao aplicar o Método dos Três Passos diante de locuções verbais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Desconsiderar a transitividade dos verbos auxiliares (como podem, devemos, aspira a).",
+                "Identificar a regência do último verbo (verbo principal):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Locução com VTI: ...graves riscos [  ] podemos incorrer. -> Verbo principal: incorrer (rege em: incorrer em riscos). Forma correta: ...graves riscos nos quais podemos incorrer.",
+                "Locução com Verbo de Ligação: ...a pessoa [  ] cada um aspira a ser. -> Verbo principal: ser (não rege preposição). Forma correta: ...a pessoa que cada um aspira a ser.",
+                "Locução com VTI modalizador: ...os problemas [  ] devemos falar. -> Verbo principal: falar (rege de: falar dos problemas). Forma correta: ...os problemas de que devemos falar."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-005",
+                  "targetTitle": "Exercício de Fixação: Sentença FCC (Pensar em)",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-011",
+                  "targetTitle": "Questão 31: VUNESP — Assistente Administrativo",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-014",
+                  "targetTitle": "Questão 34: FCC — Prefeitura de Manaus",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-015",
+                  "targetTitle": "Questão 35: FGV — IMBEL",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +729,80 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs pronomes oblíquos átonos o, a, os, as funcionam exclusivamente como objeto direto (complemento de verbos transitivos diretos sem preposição). Os pronomes lhe, lhes exercem a função de objeto indireto (complemento de verbos transitivos indiretos que regem a preposição a).\nExplicação consolidada\nA escolha correta dos pronomes oblíquos em períodos compostos complexos depende da análise da transitividade verbal:\nVerbo Transitivo Direto (VTD): Exige o, a, os, as (ou -lo, -la, -no, -na).\nExemplo: perverter os ideais -> VTD -> quando não os perverte (e nunca lhes perverte).\nExemplo: considerar o menino -> VTD -> quem o considera (e nunca lhe considera).\nVerbo Transitivo Indireto com Preposição \"A\" (VTI com \"a\"): Admite lhe, lhes.\nExemplo: obedecer ao regulamento -> obedecer-lhe.\nExemplo: competir às pessoas -> competir-lhes / pessoas a quem compete.\nVerbos Transitivos Indiretos com outras preposições (de, em, com, por) ou VTIs que rejeitam \"lhe\":\nNão admitem lhe nem o/a. Exigem formas tônicas preposicionadas (a ele, de nós, com ele, a eles).\nExemplo: resistir aos impulsos -> VTI resistir a -> exige a forma resistir a eles (e nunca resisti-los).\nRelações\nMacete associado: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001 (O Teste do Menino)\nExemplificado em:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os pronomes oblíquos átonos o, a, os, as funcionam exclusivamente como objeto direto (complemento de verbos transitivos diretos sem preposição). Os pronomes lhe, lhes exercem a função de objeto indireto (complemento de verbos transitivos indiretos que regem a preposição a)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A escolha correta dos pronomes oblíquos em períodos compostos complexos depende da análise da transitividade verbal:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Transitivo Direto (VTD): Exige o, a, os, as (ou -lo, -la, -no, -na)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: perverter os ideais -> VTD -> quando não os perverte (e nunca lhes perverte).",
+                "Exemplo: considerar o menino -> VTD -> quem o considera (e nunca lhe considera)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Transitivo Indireto com Preposição \"A\" (VTI com \"a\"): Admite lhe, lhes."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: obedecer ao regulamento -> obedecer-lhe.",
+                "Exemplo: competir às pessoas -> competir-lhes / pessoas a quem compete."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbos Transitivos Indiretos com outras preposições (de, em, com, por) ou VTIs que rejeitam \"lhe\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Não admitem lhe nem o/a. Exigem formas tônicas preposicionadas (a ele, de nós, com ele, a eles).",
+                "Exemplo: resistir aos impulsos -> VTI resistir a -> exige a forma resistir a eles (e nunca resisti-los)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A10-G03-014",
+                  "targetTitle": "Questão 34: FCC — Prefeitura de Manaus",
+                  "targetUnitId": "IP-A10-G03",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +815,205 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
+              "type": "heading",
+              "level": 3,
               "text": "Sistematização dos Verbos e Padrões Preposicionais Analisados"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A10-G03-005",
+              "table": {
+                "tableId": "TABLE-IP-A10-G03-005",
+                "caption": "Sistematização dos Verbos e Padrões Preposicionais Analisados",
+                "headers": [
+                  "Verbo",
+                  "Transitividade Canônica",
+                  "Preposição Regida",
+                  "Aplicação em Oração Adjetiva"
+                ],
+                "rows": [
+                  [
+                    "Alertar",
+                    "VTI / VTDI",
+                    "para, de, sobre",
+                    "Momentos para os quais / dos quais nos podiam alertar"
+                  ],
+                  [
+                    "Aspirar (almejar)",
+                    "VTI",
+                    "a",
+                    "Cargo a que aspiras / Poder a que muitos aspiram"
+                  ],
+                  [
+                    "Avisar",
+                    "VTI / VTDI",
+                    "de, sobre",
+                    "Momentos dos quais nos podiam avisar"
+                  ],
+                  [
+                    "Caber (conter-se)",
+                    "VTI",
+                    "em",
+                    "Sentimento em que não cabe exagero"
+                  ],
+                  [
+                    "Competir",
+                    "VTI",
+                    "a",
+                    "Pessoas a quem compete zelar"
+                  ],
+                  [
+                    "Conspirar",
+                    "VTI",
+                    "contra",
+                    "Nada que conspire contra sua força"
+                  ],
+                  [
+                    "Contar",
+                    "VTI",
+                    "com",
+                    "Amiga com que / com a qual conto"
+                  ],
+                  [
+                    "Cumprir",
+                    "VTD",
+                    "Sem preposição",
+                    "Promessas que não cumprimos"
+                  ],
+                  [
+                    "Deparar-se",
+                    "VTI Pronominal",
+                    "com",
+                    "Situação com que se deparou"
+                  ],
+                  [
+                    "Duvidar",
+                    "VTI",
+                    "de",
+                    "Verdade de que / da qual ninguém duvida"
+                  ],
+                  [
+                    "Escapar",
+                    "VTI",
+                    "de",
+                    "Violência de que / da qual ninguém escapa"
+                  ],
+                  [
+                    "Esquecer (não pron.)",
+                    "VTD",
+                    "Sem preposição",
+                    "Fatos que nunca esquecemos"
+                  ],
+                  [
+                    "Esquecer-se (pron.)",
+                    "VTI",
+                    "de",
+                    "Fatos de que nunca nos esquecemos"
+                  ],
+                  [
+                    "Exprimir-se",
+                    "VTI Pronominal",
+                    "com",
+                    "Ênfase com que ele se exprime"
+                  ],
+                  [
+                    "Falar (discorrer)",
+                    "VTI",
+                    "de, sobre",
+                    "Tratamento de que falou / Problemas de que devemos falar"
+                  ],
+                  [
+                    "Incorrer",
+                    "VTI",
+                    "em",
+                    "Riscos nos quais podemos incorrer"
+                  ],
+                  [
+                    "Justificar",
+                    "VTD",
+                    "Sem preposição",
+                    "Novidades que justifiquem seu preço"
+                  ],
+                  [
+                    "Lembrar (não pron.)",
+                    "VTD",
+                    "Sem preposição",
+                    "Incidentes que ninguém lembrava"
+                  ],
+                  [
+                    "Lembrar-se (pron.)",
+                    "VTI",
+                    "de",
+                    "Incidentes de que ninguém se lembrava"
+                  ],
+                  [
+                    "Lidar",
+                    "VTI",
+                    "com",
+                    "Problemas com os quais lidamos"
+                  ],
+                  [
+                    "Necessitar",
+                    "VTI",
+                    "de",
+                    "Aparelhos de que elas não necessitam"
+                  ],
+                  [
+                    "Pensar",
+                    "VTI",
+                    "em",
+                    "Inimigo no qual prefere nem pensar"
+                  ],
+                  [
+                    "Perverter",
+                    "VTD",
+                    "Sem preposição",
+                    "Ideais quando não os perverte"
+                  ],
+                  [
+                    "Possuir",
+                    "VTD",
+                    "Sem preposição",
+                    "Produto que ninguém possui"
+                  ],
+                  [
+                    "Realizar",
+                    "VTD",
+                    "Sem preposição",
+                    "Estudo que o pesquisador realizou"
+                  ],
+                  [
+                    "Referir-se",
+                    "VTI Pronominal",
+                    "a",
+                    "Vestido a que me refiro / Lançamentos a que se refere"
+                  ],
+                  [
+                    "Resistir",
+                    "VTI",
+                    "a",
+                    "Impulsos aos quais devemos resistir a eles"
+                  ],
+                  [
+                    "Simpatizar",
+                    "VTI",
+                    "com",
+                    "Ideias com que todos simpatizamos"
+                  ],
+                  [
+                    "Vincular-se",
+                    "VTI Pronominal",
+                    "a",
+                    "Projeto a que / ao qual se vincularão mulheres"
+                  ],
+                  [
+                    "Zelar",
+                    "VTI",
+                    "por",
+                    "Princípios pelos quais compete zelar"
+                  ]
+                ]
+              }
             }
           ]
         },
@@ -452,282 +1258,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A10-G03-004",
-              "table": {
-                "tableId": "TABLE-IP-A10-G03-004",
-                "caption": "Explicação consolidada",
-                "headers": [
-                  "Pronome Relativo",
-                  "Equivalência Sintática",
-                  "Preposição Exigida",
-                  "Valor Semântico do Verbo",
-                  "Exemplo Canônico"
-                ],
-                "rows": [
-                  [
-                    "ONDE",
-                    "em que / no qual",
-                    "EM",
-                    "Posicionamento, estado, permanência, estaticidade.",
-                    "É a cidade onde moro. (Quem mora, mora em)."
-                  ],
-                  [
-                    "AONDE",
-                    "a que / ao qual",
-                    "A",
-                    "Movimento em direção a, destino, deslocamento a um ponto.",
-                    "É a cidade aonde vou. (Quem vai, vai a)."
-                  ],
-                  [
-                    "DONDE (ou DE ONDE)",
-                    "de que / do qual",
-                    "DE",
-                    "Origem, procedência, ponto de partida.",
-                    "É a cidade donde venho. (Quem vem, vem de)."
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A10-G03-005",
-              "table": {
-                "tableId": "TABLE-IP-A10-G03-005",
-                "caption": "Sistematização dos Verbos e Padrões Preposicionais Analisados",
-                "headers": [
-                  "Verbo",
-                  "Transitividade Canônica",
-                  "Preposição Regida",
-                  "Aplicação em Oração Adjetiva"
-                ],
-                "rows": [
-                  [
-                    "Alertar",
-                    "VTI / VTDI",
-                    "para, de, sobre",
-                    "Momentos para os quais / dos quais nos podiam alertar"
-                  ],
-                  [
-                    "Aspirar (almejar)",
-                    "VTI",
-                    "a",
-                    "Cargo a que aspiras / Poder a que muitos aspiram"
-                  ],
-                  [
-                    "Avisar",
-                    "VTI / VTDI",
-                    "de, sobre",
-                    "Momentos dos quais nos podiam avisar"
-                  ],
-                  [
-                    "Caber (conter-se)",
-                    "VTI",
-                    "em",
-                    "Sentimento em que não cabe exagero"
-                  ],
-                  [
-                    "Competir",
-                    "VTI",
-                    "a",
-                    "Pessoas a quem compete zelar"
-                  ],
-                  [
-                    "Conspirar",
-                    "VTI",
-                    "contra",
-                    "Nada que conspire contra sua força"
-                  ],
-                  [
-                    "Contar",
-                    "VTI",
-                    "com",
-                    "Amiga com que / com a qual conto"
-                  ],
-                  [
-                    "Cumprir",
-                    "VTD",
-                    "Sem preposição",
-                    "Promessas que não cumprimos"
-                  ],
-                  [
-                    "Deparar-se",
-                    "VTI Pronominal",
-                    "com",
-                    "Situação com que se deparou"
-                  ],
-                  [
-                    "Duvidar",
-                    "VTI",
-                    "de",
-                    "Verdade de que / da qual ninguém duvida"
-                  ],
-                  [
-                    "Escapar",
-                    "VTI",
-                    "de",
-                    "Violência de que / da qual ninguém escapa"
-                  ],
-                  [
-                    "Esquecer (não pron.)",
-                    "VTD",
-                    "Sem preposição",
-                    "Fatos que nunca esquecemos"
-                  ],
-                  [
-                    "Esquecer-se (pron.)",
-                    "VTI",
-                    "de",
-                    "Fatos de que nunca nos esquecemos"
-                  ],
-                  [
-                    "Exprimir-se",
-                    "VTI Pronominal",
-                    "com",
-                    "Ênfase com que ele se exprime"
-                  ],
-                  [
-                    "Falar (discorrer)",
-                    "VTI",
-                    "de, sobre",
-                    "Tratamento de que falou / Problemas de que devemos falar"
-                  ],
-                  [
-                    "Incorrer",
-                    "VTI",
-                    "em",
-                    "Riscos nos quais podemos incorrer"
-                  ],
-                  [
-                    "Justificar",
-                    "VTD",
-                    "Sem preposição",
-                    "Novidades que justifiquem seu preço"
-                  ],
-                  [
-                    "Lembrar (não pron.)",
-                    "VTD",
-                    "Sem preposição",
-                    "Incidentes que ninguém lembrava"
-                  ],
-                  [
-                    "Lembrar-se (pron.)",
-                    "VTI",
-                    "de",
-                    "Incidentes de que ninguém se lembrava"
-                  ],
-                  [
-                    "Lidar",
-                    "VTI",
-                    "com",
-                    "Problemas com os quais lidamos"
-                  ],
-                  [
-                    "Necessitar",
-                    "VTI",
-                    "de",
-                    "Aparelhos de que elas não necessitam"
-                  ],
-                  [
-                    "Pensar",
-                    "VTI",
-                    "em",
-                    "Inimigo no qual prefere nem pensar"
-                  ],
-                  [
-                    "Perverter",
-                    "VTD",
-                    "Sem preposição",
-                    "Ideais quando não os perverte"
-                  ],
-                  [
-                    "Possuir",
-                    "VTD",
-                    "Sem preposição",
-                    "Produto que ninguém possui"
-                  ],
-                  [
-                    "Realizar",
-                    "VTD",
-                    "Sem preposição",
-                    "Estudo que o pesquisador realizou"
-                  ],
-                  [
-                    "Referir-se",
-                    "VTI Pronominal",
-                    "a",
-                    "Vestido a que me refiro / Lançamentos a que se refere"
-                  ],
-                  [
-                    "Resistir",
-                    "VTI",
-                    "a",
-                    "Impulsos aos quais devemos resistir a eles"
-                  ],
-                  [
-                    "Simpatizar",
-                    "VTI",
-                    "com",
-                    "Ideias com que todos simpatizamos"
-                  ],
-                  [
-                    "Vincular-se",
-                    "VTI Pronominal",
-                    "a",
-                    "Projeto a que / ao qual se vincularão mulheres"
-                  ],
-                  [
-                    "Zelar",
-                    "VTI",
-                    "por",
-                    "Princípios pelos quais compete zelar"
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA regência sintática associada a pronomes relativos inverte a ordem linear tradicional da língua portuguesa: a preposição exigida pelo termo regente (verbo ou nome) é anteposta ao pronome relativo, situando-se à esquerda dele, embora seja governada por um regente posicionado à direita, no interior da oração adjetiva.\nExplicação consolidada\nNa sintaxe oracional canônica (ordem direta), a dependência caminha da esquerda para a direita: o termo regente antecede a preposição e esta introduz o termo regido (ex.: deparamos [regente] com [preposição] uma realidade [regido]).\nContudo, quando uma oração subordinada adjetiva é introduzida por pronome relativo (que, quem, cujo, o qual, onde), o pronome assume a função sintática do complemento oracional. Caso o verbo ou nome da oração subordinada exija preposição, essa preposição é obrigatoriamente deslocada para a posição imediatamente anterior ao pronome relativo.\nAssim, a leitura sintática ocorre de modo retrógrado:\nO vestido [a que] me refiro. -> O verbo referir-se (posicionado no final) exige a preposição a, que é projetada para antes do pronome relativo que.\nA amiga [com quem] conversei. -> O verbo conversar (posicionado após o pronome) exige a preposição com, projetada para antes do relativo quem.\nCritérios de reconhecimento ou aplicação\nIdentificar o pronome relativo que inicia a oração adjetiva.\nReconhecer que o substantivo antecedente (ex.: vestido, amiga) não rege a preposição.\nBuscar o verbo ou nome situado após o pronome relativo e verificar sua exigência de complemento preposicionado.\nExemplos e contraexemplos\nCorreto: \"Estes são os princípios a que me atenho.\" (Quem se atém, atém-se a).\nIncorreto (omissão de preposição): \"Estes são os princípios que me atenho.\"\nIncorreto (preposição errada por intuição): \"Estes são os princípios em que me atenho.\"\nExceções ou limites\nA preposição nunca é regida pelo antecedente. Quando o verbo posposto for transitivo direto (VTD), nenhum conectivo preposicional pode anteceder o pronome relativo.\nRelações\nFundamenta: \nExemplificado por: a"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Método dos Três Passos é um procedimento analítico padronizado que substitui a intuição auditiva pela reconstrução sintática da oração adjetiva, permitindo determinar com exatidão matemática a necessidade e a escolha da preposição diante do pronome relativo.\nExplicação consolidada\nPara neutralizar o vício de \"adivinhar\" preposições isoladas, o método desmembra a análise em três etapas sucessivas:\nPasso 1 (Identificação do Regente Posterior): Dirigir a atenção imediatamente para o verbo ou nome que sucede o pronome relativo (no interior da oração adjetiva). Em caso de locução verbal, focar no verbo principal (o último).\nPasso 2 (Transposição para a Ordem Direta): Isolar a oração adjetiva e estruturá-la no formato canônico: Sujeito + Verbo/Locução + Complemento.\nPasso 3 (Recomposição com o Antecedente e Encaixe do Conectivo — Etapa Chave): Localizar o termo antecedente (o substantivo ou pronome que o relativo substitui) e inseri-lo na posição de complemento da oração adjetiva. A preposição exigida para conectar o verbo/nome ao antecedente é exatamente aquela que deve ser transportada para a frente do pronome relativo.\nCritérios de reconhecimento ou aplicação\ntext [Oração Principal: Antecedente] + [Prep? + Pronome Relativo] + [Sujeito] + [Verbo Regente] Passo 3: Encaixe ┘ (Ordem Direta: Sujeito + Verbo + Prep + Antecedente)\nExemplos\nEstrutura sob teste: A maioria dos problemas lidamos são fáceis.\nPasso 1: Regente posterior = lidamos.\nPasso 2: Ordem direta = Nós lidamos...\nPasso 3: Recomposição com o antecedente (problemas) = Nós lidamos com os problemas.\nResultado: A preposição é com. Como o pronome é os quais, obtém-se com os quais.\nRelações\nFormalizado em: \nApoiado pela metáfora: ORAL-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs verbos esquecer e lembrar possuem dupla possibilidade sintática: quando não pronominais, são Transitivos Diretos (VTD) e repelem preposição diante do pronome relativo; quando pronominais (esquecer-se, lembrar-se), tornam-se Transitivos Indiretos (VTI) e regem obrigatoriamente a preposição de antes do pronome relativo.\nExplicação consolidada\nConstrução Não Pronominal (VTD — Sem Preposição):\nO verbo atua desacompanhado de pronome reflexivo/oblíquo (esquecer algo, lembrar algo).\nAo aplicar o Método dos Três Passos, o complemento liga-se ao verbo diretamente.\nFrase: Há fatos [que] nunca esquecemos. -> Nós nunca esquecemos os fatos (VTD -> pronome relativo puro que).\nConstrução Pronominal (VTI — Preposição \"de\"):\nO verbo vem acompanhado de pronome reflexivo integrante (esquecer-se de, lembrar-se de).\nAo aplicar o Método dos Três Passos, surge a preposição de.\nFrase: Aludiram a incidentes [de que] já ninguém se lembrava. -> Ninguém já se lembrava dos incidentes (de + incidentes) -> forma obrigatória de que.\nAlertas e erros comuns\nA linguagem coloquial frequentemente contamina a norma culta gerando construções híbridas incorretas: esquecer de algo (sem pronome mas com preposição) ou esquecer-se algo (com pronome mas sem preposição). Ambas são repudiadas em concursos.Exemplificado por: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO pronome relativo cujo (e suas flexões cuja, cujos, cujas) estabelece relação estrita de posse entre dois substantivos (substantivo antecedente = possuidor; substantivo consequente = coisa possuída), concorda com a coisa possuída, não aceita artigo posterior e só recebe preposição se o termo regente situado após o relativo a exigir.\nExplicação consolidada\nA utilização correta do pronome cujo exige a observância de cinco preceitos fundamentais:\nRelação Genitiva de Posse: Conecta obrigatoriamente substantivo a substantivo (capítulos do livro, figura da mulher, ideias de Lya Luft, tradução da frase).\nConcordância e Referência: Refere-se ao possuidor (antecedente), mas flexiona-se em gênero e número com a coisa possuída (termo posterior).\nProibição Absoluta de Artigo: É erro gramatical grave colocar artigo definido imediatamente após cujo (cujo o, cuja a, cujos os, cujas as).\nOrigem da Preposição: Cujo não possui preposição intrínseca. A presença de conectivo (a cujo, de cujo, em cujo, por cujo) depende unicamente da regência do verbo ou nome posposto:\nSe o regente for VTD: O livro cujos capítulos estudei... (Estudei os capítulos -> sem preposição).\nSe o regente exigir preposição a: A mulher a cuja figura nos referimos... (Referir-se à figura -> a cuja).\nSe o regente exigir preposição em: A mulher em cuja figura havia um ar de dama... (Havia na figura -> em cuja).\nSe o regente nominal exigir preposição por: A autora por cujas ideias temos simpatia... (Simpatia pelas ideias -> por cujas).\nProibição diante de Verbos e Pronomes: Cujo não pode preceder diretamente verbos (em cujo se reproduz — incorreto) nem pronomes (de cuja ninguém escapa — incorreto), pois isso descaracteriza a relação substantivo-substantivo.Utiliza o macete: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-002\nExemplificado em: , , , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs pronomes relativos onde, aonde e donde (ou de onde) destinam-se exclusivamente à retomada de substantivos que designem lugar físico e concreto. A diferenciação sintática entre eles decorre estritamente da regência preposicional exigida pelo verbo da oração subordinada.\nExplicação consolidada\nA matriz de aplicação dos pronomes locativos organiza-se da seguinte forma:\nRestrição Crítica: Proibição para Referentes Abstratos\nÉ vedado o emprego de onde ou aonde para retomar conceitos abstratos, termos conceituais, psicológicos, temporais ou circunstanciais (como violência, verdade, galeria de quadros, sociedade, situação). Nessas construções, deve-se utilizar em que, no qual, de que, pelo qual, etc.\nIncorreto: A violência é uma situação aonde muitos sucumbem.\nCorreto: A violência é uma situação em que / na qual muitos sucumbem.Exemplificado em: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA regência de uma forma verbal não se transfere automaticamente para o seu substantivo cognato. O verbo simpatizar rege a preposição com, ao passo que o substantivo simpatia rege a preposição por (ou para com).\nExplicação consolidada\nA transposição de classe gramatical frequentemente altera a preposição regida:\nForma Verbal: Simpatizar + preposição com\nOrdem direta: Simpatizamos com as ideias de Lya Luft.\nCom pronome relativo: As ideias com que simpatizamos...\nNota: O verbo simpatizar não admite uso pronominal (simpatizar-se com é rechaçado pela norma culta).\nForma Nominal (Substantivo): Simpatia + preposição por\nOrdem direta: Temos simpatia pelas ideias de Lya Luft.\nCom pronome possessivo cuja: Lya Luft, por cujas ideias temos simpatia, é uma grande escritora.\nErro frequente em provas\nBancas exploram a semelhança morfosemântica induzindo o candidato a marcar com cujas ideias temos simpatia. Como o regente imediato do complemento é o substantivo simpatia, a única forma correta é por cujas ideias.Exemplificado em: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nEm orações subordinadas adjetivas cujo predicado é composto por locução verbal (verbo auxiliar + verbo principal no infinitivo, gerúndio ou particípio), a exigência e a seleção da preposição anteposta ao pronome relativo são governadas exclusivamente pelo verbo principal (o último verbo da locução).\nExplicação consolidada\nAo aplicar o Método dos Três Passos diante de locuções verbais:\nDesconsiderar a transitividade dos verbos auxiliares (como podem, devemos, aspira a).\nIdentificar a regência do último verbo (verbo principal):\nLocução com VTI: ...graves riscos podemos incorrer. -> Verbo principal: incorrer (rege em: incorrer em riscos). Forma correta: ...graves riscos nos quais podemos incorrer.\nLocução com Verbo de Ligação: ...a pessoa cada um aspira a ser. -> Verbo principal: ser (não rege preposição). Forma correta: ...a pessoa que cada um aspira a ser.\nLocução com VTI modalizador: ...os problemas devemos falar. -> Verbo principal: falar (rege de: falar dos problemas). Forma correta: ...os problemas de que devemos falar.\nRelações\nFormalizado em: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-003\nExemplificado em: , , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs pronomes oblíquos átonos o, a, os, as funcionam exclusivamente como objeto direto (complemento de verbos transitivos diretos sem preposição). Os pronomes lhe, lhes exercem a função de objeto indireto (complemento de verbos transitivos indiretos que regem a preposição a).\nExplicação consolidada\nA escolha correta dos pronomes oblíquos em períodos compostos complexos depende da análise da transitividade verbal:\nVerbo Transitivo Direto (VTD): Exige o, a, os, as (ou -lo, -la, -no, -na).\nExemplo: perverter os ideais -> VTD -> quando não os perverte (e nunca lhes perverte).\nExemplo: considerar o menino -> VTD -> quem o considera (e nunca lhe considera).\nVerbo Transitivo Indireto com Preposição \"A\" (VTI com \"a\"): Admite lhe, lhes.\nExemplo: obedecer ao regulamento -> obedecer-lhe.\nExemplo: competir às pessoas -> competir-lhes / pessoas a quem compete.\nVerbos Transitivos Indiretos com outras preposições (de, em, com, por) ou VTIs que rejeitam \"lhe\":\nNão admitem lhe nem o/a. Exigem formas tônicas preposicionadas (a ele, de nós, com ele, a eles).\nExemplo: resistir aos impulsos -> VTI resistir a -> exige a forma resistir a eles (e nunca resisti-los).\nRelações\nMacete associado: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001 (O Teste do Menino)\nExemplificado em:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Sistematização dos Verbos e Padrões Preposicionais Analisados"
         }
       ]
     },
@@ -909,7 +1441,9 @@
               "PROC-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001",
               "EXP-IP-A10-G03-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1039,7 +1573,9 @@
               "PROC-A10-G03-REGENCIA-PRONOMES-RELATIVOS-002",
               "EXP-IP-A10-G03-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1137,7 +1673,9 @@
               "CONTRAST-IP-A10-G03-001",
               "EXP-IP-A10-G03-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1216,7 +1754,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-001",
               "EXP-IP-A10-G03-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1291,7 +1831,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-002",
               "EXP-IP-A10-G03-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1366,7 +1908,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-003",
               "EXP-IP-A10-G03-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1441,7 +1985,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-004",
               "EXP-IP-A10-G03-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1516,7 +2062,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-005",
               "EXP-IP-A10-G03-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1591,7 +2139,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-006",
               "EXP-IP-A10-G03-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1666,7 +2216,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-007",
               "EXP-IP-A10-G03-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1741,7 +2293,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-008",
               "EXP-IP-A10-G03-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1810,7 +2364,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-009",
               "EXP-IP-A10-G03-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1874,7 +2430,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-010",
               "EXP-IP-A10-G03-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1929,7 +2487,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-011",
               "EXP-IP-A10-G03-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1984,7 +2544,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-012",
               "EXP-IP-A10-G03-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2053,7 +2615,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-013",
               "EXP-IP-A10-G03-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2122,7 +2686,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-014",
               "EXP-IP-A10-G03-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2191,7 +2757,9 @@
               "WORKED_EXAMPLE-IP-A10-G03-015",
               "EXP-IP-A10-G03-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2242,7 +2810,9 @@
               "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001",
               "EXP-IP-A10-G03-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2279,7 +2849,9 @@
               "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-002",
               "EXP-IP-A10-G03-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2316,7 +2888,9 @@
               "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-003",
               "EXP-IP-A10-G03-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2353,7 +2927,9 @@
               "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-004",
               "EXP-IP-A10-G03-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2390,28 +2966,94 @@
               "WARN-A10-G03-REGENCIA-PRONOMES-RELATIVOS-005",
               "EXP-IP-A10-G03-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Princípio da Inversão Sintática em Orações Subordinadas Adjetivas**: Definição ou ideia central\nA regência sintática associada a pronomes relativos inverte a ordem linear tradicional da língua portuguesa: a preposição exigida pelo termo regente (verbo ou nome) é anteposta ao pronome relativo, situando-se à esquerda dele, embora seja governada por um regente posicionado à direita, no interior da oração adjetiva.\nExplicação consolidada\nNa sintaxe oracional canônica (ordem direta), a dependência caminha da esquerda para a direita: o termo regente antecede a preposição e esta introduz o termo regido (ex.: deparamos [regente] com [preposição] uma realidade [regido]).\nContudo, quando uma oração subordinada adjetiva é introduzida por pronome relativo (que, quem, cujo, o qual, onde), o pronome assume a função sintática do complemento oracional. Caso o verbo ou nome da oração subordinada exija preposição, essa preposição é obrigatoriamente deslocada para a posição imediatamente anterior ao pronome relativo.\nAssim, a leitura sintática ocorre de modo retrógrado:\nO vestido [a que] me refiro. -> O verbo referir-se (posicionado no final) exige a preposição a, que é projetada para antes do pronome relativo que.\nA amiga [com quem] conversei. -> O verbo conversar (posicionado após o pronome) exige a preposição com, projetada para antes do relativo quem.\nCritérios de reconhecimento ou aplicação\nIdentificar o pronome relativo que inicia a oração adjetiva.\nReconhecer que o substantivo antecedente (ex.: vestido, amiga) não rege a preposição.\nBuscar o verbo ou nome situado após o pronome relativo e verificar sua exigência de complemento preposicionado.\nExemplos e contraexemplos\nCorreto: \"Estes são os princípios a que me atenho.\" (Quem se atém, atém-se a).\nIncorreto (omissão de preposição): \"Estes são os princípios que me atenho.\"\nIncorreto (preposição errada por intuição): \"Estes são os princípios em que me atenho.\"\nExceções ou limites\nA preposição nunca é regida pelo antecedente. Quando o verbo posposto for transitivo direto (VTD), nenhum conectivo preposicional pode anteceder o pronome relativo.\nRelações\nFundamenta: \nExemplificado por: a",
-            "**Algoritmo Universal dos Três Passos**: Definição ou ideia central\nO Método dos Três Passos é um procedimento analítico padronizado que substitui a intuição auditiva pela reconstrução sintática da oração adjetiva, permitindo determinar com exatidão matemática a necessidade e a escolha da preposição diante do pronome relativo.\nExplicação consolidada\nPara neutralizar o vício de \"adivinhar\" preposições isoladas, o método desmembra a análise em três etapas sucessivas:\nPasso 1 (Identificação do Regente Posterior): Dirigir a atenção imediatamente para o verbo ou nome que sucede o pronome relativo (no interior da oração adjetiva). Em caso de locução verbal, focar no verbo principal (o último).\nPasso 2 (Transposição para a Ordem Direta): Isolar a oração adjetiva e estruturá-la no formato canônico: Sujeito + Verbo/Locução + Complemento.\nPasso 3 (Recomposição com o Antecedente e Encaixe do Conectivo — Etapa Chave): Localizar o termo antecedente (o substantivo ou pronome que o relativo substitui) e inseri-lo na posição de complemento da oração adjetiva. A preposição exigida para conectar o verbo/nome ao antecedente é exatamente aquela que deve ser transportada para a frente do pronome relativo.\nCritérios de reconhecimento ou aplicação\ntext [Oração Principal: Antecedente] + [Prep? + Pronome Relativo] + [Sujeito] + [Verbo Regente] Passo 3: Encaixe ┘ (Ordem Direta: Sujeito + Verbo + Prep + Antecedente)\nExemplos\nEstrutura sob teste: A maioria dos problemas lidamos são fáceis.\nPasso 1: Regente posterior = lidamos.\nPasso 2: Ordem direta = Nós lidamos...\nPasso 3: Recomposição com o antecedente (problemas) = Nós lidamos com os problemas.\nResultado: A preposição é com. Como o pronome é os quais, obtém-se com os quais.\nRelações\nFormalizado em: \nApoiado pela metáfora: ORAL-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001",
-            "**Regência Diferencial dos Verbos de Memória (Esquecer / Lembrar)**: Definição ou ideia central\nOs verbos esquecer e lembrar possuem dupla possibilidade sintática: quando não pronominais, são Transitivos Diretos (VTD) e repelem preposição diante do pronome relativo; quando pronominais (esquecer-se, lembrar-se), tornam-se Transitivos Indiretos (VTI) e regem obrigatoriamente a preposição de antes do pronome relativo.\nExplicação consolidada\nConstrução Não Pronominal (VTD — Sem Preposição):\nO verbo atua desacompanhado de pronome reflexivo/oblíquo (esquecer algo, lembrar algo).\nAo aplicar o Método dos Três Passos, o complemento liga-se ao verbo diretamente.\nFrase: Há fatos [que] nunca esquecemos. -> Nós nunca esquecemos os fatos (VTD -> pronome relativo puro que).\nConstrução Pronominal (VTI — Preposição \"de\"):\nO verbo vem acompanhado de pronome reflexivo integrante (esquecer-se de, lembrar-se de).\nAo aplicar o Método dos Três Passos, surge a preposição de.\nFrase: Aludiram a incidentes [de que] já ninguém se lembrava. -> Ninguém já se lembrava dos incidentes (de + incidentes) -> forma obrigatória de que.\nAlertas e erros comuns\nA linguagem coloquial frequentemente contamina a norma culta gerando construções híbridas incorretas: esquecer de algo (sem pronome mas com preposição) ou esquecer-se algo (com pronome mas sem preposição). Ambas são repudiadas em concursos.Exemplificado por: ,",
-            "**Morfossintaxe e Regência do Pronome Relativo Possessivo \"Cujo\"**: Definição ou ideia central\nO pronome relativo cujo (e suas flexões cuja, cujos, cujas) estabelece relação estrita de posse entre dois substantivos (substantivo antecedente = possuidor; substantivo consequente = coisa possuída), concorda com a coisa possuída, não aceita artigo posterior e só recebe preposição se o termo regente situado após o relativo a exigir.\nExplicação consolidada\nA utilização correta do pronome cujo exige a observância de cinco preceitos fundamentais:\nRelação Genitiva de Posse: Conecta obrigatoriamente substantivo a substantivo (capítulos do livro, figura da mulher, ideias de Lya Luft, tradução da frase).\nConcordância e Referência: Refere-se ao possuidor (antecedente), mas flexiona-se em gênero e número com a coisa possuída (termo posterior).\nProibição Absoluta de Artigo: É erro gramatical grave colocar artigo definido imediatamente após cujo (cujo o, cuja a, cujos os, cujas as).\nOrigem da Preposição: Cujo não possui preposição intrínseca. A presença de conectivo (a cujo, de cujo, em cujo, por cujo) depende unicamente da regência do verbo ou nome posposto:\nSe o regente for VTD: O livro cujos capítulos estudei... (Estudei os capítulos -> sem preposição).\nSe o regente exigir preposição a: A mulher a cuja figura nos referimos... (Referir-se à figura -> a cuja).\nSe o regente exigir preposição em: A mulher em cuja figura havia um ar de dama... (Havia na figura -> em cuja).\nSe o regente nominal exigir preposição por: A autora por cujas ideias temos simpatia... (Simpatia pelas ideias -> por cujas).\nProibição diante de Verbos e Pronomes: Cujo não pode preceder diretamente verbos (em cujo se reproduz — incorreto) nem pronomes (de cuja ninguém escapa — incorreto), pois isso descaracteriza a relação substantivo-substantivo.Utiliza o macete: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-002\nExemplificado em: , , , ,",
-            "**Regência e Restrições Semânticas dos Pronomes Relativos Locativos (Onde, Aonde, Donde)**: Definição ou ideia central\nOs pronomes relativos onde, aonde e donde (ou de onde) destinam-se exclusivamente à retomada de substantivos que designem lugar físico e concreto. A diferenciação sintática entre eles decorre estritamente da regência preposicional exigida pelo verbo da oração subordinada.\nExplicação consolidada\nA matriz de aplicação dos pronomes locativos organiza-se da seguinte forma:\nRestrição Crítica: Proibição para Referentes Abstratos\nÉ vedado o emprego de onde ou aonde para retomar conceitos abstratos, termos conceituais, psicológicos, temporais ou circunstanciais (como violência, verdade, galeria de quadros, sociedade, situação). Nessas construções, deve-se utilizar em que, no qual, de que, pelo qual, etc.\nIncorreto: A violência é uma situação aonde muitos sucumbem.\nCorreto: A violência é uma situação em que / na qual muitos sucumbem.Exemplificado em: , ,",
-            "**Distinção de Regência entre Termos Cognatos (Simpatizar com vs. Simpatia por)**: Definição ou ideia central\nA regência de uma forma verbal não se transfere automaticamente para o seu substantivo cognato. O verbo simpatizar rege a preposição com, ao passo que o substantivo simpatia rege a preposição por (ou para com).\nExplicação consolidada\nA transposição de classe gramatical frequentemente altera a preposição regida:\nForma Verbal: Simpatizar + preposição com\nOrdem direta: Simpatizamos com as ideias de Lya Luft.\nCom pronome relativo: As ideias com que simpatizamos...\nNota: O verbo simpatizar não admite uso pronominal (simpatizar-se com é rechaçado pela norma culta).\nForma Nominal (Substantivo): Simpatia + preposição por\nOrdem direta: Temos simpatia pelas ideias de Lya Luft.\nCom pronome possessivo cuja: Lya Luft, por cujas ideias temos simpatia, é uma grande escritora.\nErro frequente em provas\nBancas exploram a semelhança morfosemântica induzindo o candidato a marcar com cujas ideias temos simpatia. Como o regente imediato do complemento é o substantivo simpatia, a única forma correta é por cujas ideias.Exemplificado em: ,",
-            "**Regência em Locuções Verbais (Regra do Verbo Principal)**: Definição ou ideia central\nEm orações subordinadas adjetivas cujo predicado é composto por locução verbal (verbo auxiliar + verbo principal no infinitivo, gerúndio ou particípio), a exigência e a seleção da preposição anteposta ao pronome relativo são governadas exclusivamente pelo verbo principal (o último verbo da locução).\nExplicação consolidada\nAo aplicar o Método dos Três Passos diante de locuções verbais:\nDesconsiderar a transitividade dos verbos auxiliares (como podem, devemos, aspira a).\nIdentificar a regência do último verbo (verbo principal):\nLocução com VTI: ...graves riscos podemos incorrer. -> Verbo principal: incorrer (rege em: incorrer em riscos). Forma correta: ...graves riscos nos quais podemos incorrer.\nLocução com Verbo de Ligação: ...a pessoa cada um aspira a ser. -> Verbo principal: ser (não rege preposição). Forma correta: ...a pessoa que cada um aspira a ser.\nLocução com VTI modalizador: ...os problemas devemos falar. -> Verbo principal: falar (rege de: falar dos problemas). Forma correta: ...os problemas de que devemos falar.\nRelações\nFormalizado em: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-003\nExemplificado em: , , ,",
-            "**Regência Verbal e Emprego dos Pronomes Oblíquos Átonos (O/A vs. Lhe)**: Definição ou ideia central\nOs pronomes oblíquos átonos o, a, os, as funcionam exclusivamente como objeto direto (complemento de verbos transitivos diretos sem preposição). Os pronomes lhe, lhes exercem a função de objeto indireto (complemento de verbos transitivos indiretos que regem a preposição a).\nExplicação consolidada\nA escolha correta dos pronomes oblíquos em períodos compostos complexos depende da análise da transitividade verbal:\nVerbo Transitivo Direto (VTD): Exige o, a, os, as (ou -lo, -la, -no, -na).\nExemplo: perverter os ideais -> VTD -> quando não os perverte (e nunca lhes perverte).\nExemplo: considerar o menino -> VTD -> quem o considera (e nunca lhe considera).\nVerbo Transitivo Indireto com Preposição \"A\" (VTI com \"a\"): Admite lhe, lhes.\nExemplo: obedecer ao regulamento -> obedecer-lhe.\nExemplo: competir às pessoas -> competir-lhes / pessoas a quem compete.\nVerbos Transitivos Indiretos com outras preposições (de, em, com, por) ou VTIs que rejeitam \"lhe\":\nNão admitem lhe nem o/a. Exigem formas tônicas preposicionadas (a ele, de nós, com ele, a eles).\nExemplo: resistir aos impulsos -> VTI resistir a -> exige a forma resistir a eles (e nunca resisti-los).\nRelações\nMacete associado: TIP-A10-G03-REGENCIA-PRONOMES-RELATIVOS-001 (O Teste do Menino)\nExemplificado em:",
-            "**Catálogo Canônico de Regências Verbais do Grupo**: Sistematização dos Verbos e Padrões Preposicionais Analisados"
-          ]
+          "term": "Princípio da Inversão Sintática em Orações Subordinadas Adjetivas",
+          "shortDefinition": "A regência sintática associada a pronomes relativos inverte a ordem linear tradicional da língua portuguesa: a preposição exigida pelo termo regente (verbo ou nome) é anteposta ao pronome relativo, situando-se à esquerda dele, embora seja governada por um regente posicionado à direita, no interior da oração adjetiva.",
+          "detailTarget": {
+            "unitId": "IP-A10-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G03-01"
+          },
+          "operationalUse": "Na sintaxe oracional canônica (ordem direta), a dependência caminha da esquerda para a direita: o termo regente antecede a preposição e esta introduz o termo regido (ex.: deparamos [regente] com [preposição] uma realidade [regido])."
+        },
+        {
+          "term": "Algoritmo Universal dos Três Passos",
+          "shortDefinition": "O Método dos Três Passos é um procedimento analítico padronizado que substitui a intuição auditiva pela reconstrução sintática da oração adjetiva, permitindo determinar com exatidão matemática a necessidade e a escolha da preposição diante do pronome relativo.",
+          "detailTarget": {
+            "unitId": "IP-A10-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G03-02"
+          },
+          "operationalUse": "Para neutralizar o vício de \"adivinhar\" preposições isoladas, o método desmembra a análise em três etapas sucessivas:"
+        },
+        {
+          "term": "Regência Diferencial dos Verbos de Memória (Esquecer / Lembrar)",
+          "shortDefinition": "Os verbos esquecer e lembrar possuem dupla possibilidade sintática: quando não pronominais, são Transitivos Diretos (VTD) e repelem preposição diante do pronome relativo; quando pronominais (esquecer-se, lembrar-se), tornam-se Transitivos Indiretos (VTI) e regem obrigatoriamente a preposição de antes do pronome relativo.",
+          "detailTarget": {
+            "unitId": "IP-A10-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G03-03"
+          }
+        },
+        {
+          "term": "Morfossintaxe e Regência do Pronome Relativo Possessivo \"Cujo\"",
+          "shortDefinition": "O pronome relativo cujo (e suas flexões cuja, cujos, cujas) estabelece relação estrita de posse entre dois substantivos (substantivo antecedente = possuidor; substantivo consequente = coisa possuída), concorda com a coisa possuída, não aceita artigo posterior e só recebe preposição se o termo regente situado após o relativo a exigir.",
+          "detailTarget": {
+            "unitId": "IP-A10-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G03-04"
+          },
+          "operationalUse": "A utilização correta do pronome cujo exige a observância de cinco preceitos fundamentais:"
+        },
+        {
+          "term": "Regência e Restrições Semânticas dos Pronomes Relativos Locativos (Onde, Aonde, Donde)",
+          "shortDefinition": "Os pronomes relativos onde, aonde e donde (ou de onde) destinam-se exclusivamente à retomada de substantivos que designem lugar físico e concreto. A diferenciação sintática entre eles decorre estritamente da regência preposicional exigida pelo verbo da oração subordinada.",
+          "detailTarget": {
+            "unitId": "IP-A10-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G03-05"
+          },
+          "operationalUse": "A matriz de aplicação dos pronomes locativos organiza-se da seguinte forma:"
+        },
+        {
+          "term": "Distinção de Regência entre Termos Cognatos (Simpatizar com vs. Simpatia por)",
+          "shortDefinition": "A regência de uma forma verbal não se transfere automaticamente para o seu substantivo cognato. O verbo simpatizar rege a preposição com, ao passo que o substantivo simpatia rege a preposição por (ou para com).",
+          "detailTarget": {
+            "unitId": "IP-A10-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G03-06"
+          },
+          "operationalUse": "A transposição de classe gramatical frequentemente altera a preposição regida:"
+        },
+        {
+          "term": "Regência em Locuções Verbais (Regra do Verbo Principal)",
+          "shortDefinition": "Em orações subordinadas adjetivas cujo predicado é composto por locução verbal (verbo auxiliar + verbo principal no infinitivo, gerúndio ou particípio), a exigência e a seleção da preposição anteposta ao pronome relativo são governadas exclusivamente pelo verbo principal (o último verbo da locução).",
+          "detailTarget": {
+            "unitId": "IP-A10-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G03-07"
+          },
+          "operationalUse": "Ao aplicar o Método dos Três Passos diante de locuções verbais:"
+        },
+        {
+          "term": "Regência Verbal e Emprego dos Pronomes Oblíquos Átonos (O/A vs. Lhe)",
+          "shortDefinition": "Os pronomes oblíquos átonos o, a, os, as funcionam exclusivamente como objeto direto (complemento de verbos transitivos diretos sem preposição). Os pronomes lhe, lhes exercem a função de objeto indireto (complemento de verbos transitivos indiretos que regem a preposição a).",
+          "detailTarget": {
+            "unitId": "IP-A10-G03",
+            "section": "explanation",
+            "groupId": "GRP-IP-A10-G03-08"
+          },
+          "operationalUse": "A escolha correta dos pronomes oblíquos em períodos compostos complexos depende da análise da transitividade verbal:"
         }
       ]
     },

@@ -221,7 +221,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           </summary>
           <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6 space-y-3">
             {sections.structuredSynthesis.blocks.map((block, idx) => (
-              <ContentBlockRenderer key={idx} block={block} />
+              <ContentBlockRenderer key={idx} block={block} allowLegacyDiagramInference={false} />
             ))}
           </div>
         </details>

@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A08-G02",
     "lessonId": "A08",
     "title": "Pontuação: Emprego da Vírgula, Ordem Direta, Deslocamentos e Conectivos",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A08-G02",
@@ -102,7 +103,11 @@
               "to": "node_pontuacao_avancada",
               "relation": "aprofundamento"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A08-G02-001"
+          }
         }
       ]
     },
@@ -260,8 +265,7 @@
             }
           ]
         }
-      ],
-      "blocks": []
+      ]
     },
     "rules": {
       "items": [
@@ -517,17 +521,26 @@
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Ordem Direta Canônica**: Estrutura sintática sequencial padrão formada por Sujeito + Verbo + Complementos + Adjuntos.",
-            "**Antecipação**: Deslocamento de termo acessório ou oração subordinada para a posição inicial do período.",
-            "**Intercalação**: Inserção de termo explicativo ou circunstancial no meio de um sintagma, exigindo isolamento por vírgulas duplas.",
-            "**Adjunto Adverbial de Longa Extensão**: Estrutura adverbial composta por 3 ou mais palavras cuja antecipação torna a vírgula obrigatória.",
-            "**Polissíndeto**: Figura de sintaxe caracterizada pela repetição enfática e reiterada de conjunções coordenadas."
-          ]
+          "term": "Ordem Direta Canônica",
+          "shortDefinition": "Estrutura sintática sequencial padrão formada por Sujeito + Verbo + Complementos + Adjuntos."
+        },
+        {
+          "term": "Antecipação",
+          "shortDefinition": "Deslocamento de termo acessório ou oração subordinada para a posição inicial do período."
+        },
+        {
+          "term": "Intercalação",
+          "shortDefinition": "Inserção de termo explicativo ou circunstancial no meio de um sintagma, exigindo isolamento por vírgulas duplas."
+        },
+        {
+          "term": "Adjunto Adverbial de Longa Extensão",
+          "shortDefinition": "Estrutura adverbial composta por 3 ou mais palavras cuja antecipação torna a vírgula obrigatória."
+        },
+        {
+          "term": "Polissíndeto",
+          "shortDefinition": "Figura de sintaxe caracterizada pela repetição enfática e reiterada de conjunções coordenadas."
         }
       ]
     },

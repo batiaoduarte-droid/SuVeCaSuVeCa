@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { HelpCircle } from 'lucide-react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { AlertTriangle, HelpCircle } from 'lucide-react';
 import type { OfficialQuestionView } from '../../../types/pedagogicalView';
 import { QuestionBlock } from '../../ui/QuestionBlock';
 import { InlineRichText } from '../blocks/InlineRichText';
+import { QuestionPresentationContent } from '../../QuestionPresentationContent';
 import {
   fetchNormalizedQuestionsByRefs,
   type NormalizedQuestion,
@@ -47,10 +48,17 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
   const [page, setPage] = useState(0);
   const questionListRef = useRef<HTMLDivElement>(null);
   const encounteredRefs = useRef(new Set<string>());
+  const practiceQuestions = useMemo(
+    () => questions.filter((question) => !['source_incomplete', 'source_conflict'].includes(
+      question.questionPresentation?.status || '',
+    )),
+    [questions],
+  );
+  const excludedQuestions = questions.length - practiceQuestions.length;
   const questionSetKey = questions.map(questionReference).join('\u001f');
-  const pageCount = Math.max(1, Math.ceil(questions.length / QUESTIONS_PAGE_SIZE));
+  const pageCount = Math.max(1, Math.ceil(practiceQuestions.length / QUESTIONS_PAGE_SIZE));
   const pageStart = page * QUESTIONS_PAGE_SIZE;
-  const visibleQuestions = questions.slice(pageStart, pageStart + QUESTIONS_PAGE_SIZE);
+  const visibleQuestions = practiceQuestions.slice(pageStart, pageStart + QUESTIONS_PAGE_SIZE);
   const visibleRefs = visibleQuestions.map(questionReference).filter(Boolean);
   const visibleRefsKey = visibleRefs.join('\u001f');
 
@@ -115,9 +123,21 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
       <div className="flex items-center gap-2 border-b border-teal-100/80 pb-3">
         <HelpCircle className="h-5 w-5 text-teal-700" />
         <h3 className="m-0 text-base font-black text-slate-900">
-          Questões Oficiais de Prova ({questions.length})
+          Questões Oficiais de Prova ({practiceQuestions.length})
         </h3>
       </div>
+
+      {excludedQuestions > 0 && (
+        <div className="flex items-start gap-2.5 rounded-xl border border-amber-300 bg-amber-50 p-3.5 text-xs leading-relaxed text-amber-950" role="status">
+          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" aria-hidden="true" />
+          <div>
+            <strong className="block font-black">
+              {excludedQuestions} {excludedQuestions === 1 ? 'questão foi omitida' : 'questões foram omitidas'} da prática
+            </strong>
+            A fonte publicada não permite uma tentativa segura. A sequência continua com as questões verificáveis da unidade.
+          </div>
+        </div>
+      )}
 
       <div ref={questionListRef} className="space-y-6">
         {visibleQuestions.map((q, idx) => {
@@ -196,7 +216,13 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
               title={`Questão ${pageStart + idx + 1}: ${organization || board || 'Concurso Público'}`}
               board={board}
               year={year}
-              prompt={supportRichText ? `**Texto de apoio:** ${supportRichText}\n\n**Comando:** ${commandRichText}` : commandRichText}
+              promptContent={(
+                <QuestionPresentationContent
+                  presentation={normalized?.presentation}
+                  supportText={supportRichText}
+                  prompt={commandRichText}
+                />
+              )}
               options={options}
               solution={solution}
               answer={answer}
@@ -217,9 +243,10 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
           );
         })}
       </div>
+      {practiceQuestions.length > 0 && (
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
         <p className="m-0 text-xs font-semibold text-slate-700" aria-live="polite">
-          Página {page + 1} de {pageCount}. Exibindo {pageStart + 1}–{pageStart + visibleQuestions.length} de {questions.length} questões.
+          Página {page + 1} de {pageCount}. Exibindo {pageStart + 1}–{pageStart + visibleQuestions.length} de {practiceQuestions.length} questões.
         </p>
         <div className="flex flex-wrap gap-2">
           <button
@@ -240,6 +267,7 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
           </button>
         </div>
       </div>
+      )}
       {onPracticeMore && (
         <button type="button" onClick={onPracticeMore} className="min-h-11 rounded-xl border border-teal-300 bg-teal-50 px-4 py-2 text-sm font-bold text-teal-900 hover:bg-teal-100">
           Continuar praticando este tema

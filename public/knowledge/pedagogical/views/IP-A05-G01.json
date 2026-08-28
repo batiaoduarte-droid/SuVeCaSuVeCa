@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A05-G01",
     "lessonId": "A05",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A05-G01",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A05-G01-001"
+          }
         }
       ]
     },
@@ -94,8 +99,55 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA análise sintática da oração inicia-se obrigatoriamente pela localização e análise do verbo, rompendo com a abordagem morfológica estanque de classes isoladas de palavras. O verbo opera como o núcleo estruturador e relacional de toda a sintaxe oracional.\nExplicação consolidada\nNa metodologia desenvolvida nas aulas, a predicação verbal é tratada como a \"aula zero\" da sintaxe. O verbo não possui função sintática de termo (não é sujeito, objeto ou adjunto), mas é o articulador de todas as funções sintáticas. O candidato deve \"viver cada verbo a seu momento\", abstendo-se de tentar interpretar a oração globalmente de maneira intuitiva. Toda a investigação sintática (identificação de sujeito, complementos e adjuntos) emana das relações estabelecidas a partir do verbo flexionado.\nCritérios de reconhecimento ou aplicação\nLocalize o verbo flexionado no enunciado antes de classificar qualquer substantivo ou pronome.\nNão classifique palavras por intuição semântica abstrata; determine suas funções exclusivamente em relação ao verbo identificado.(Passo a Passo em 5 Etapas)\nExpande:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A análise sintática da oração inicia-se obrigatoriamente pela localização e análise do verbo, rompendo com a abordagem morfológica estanque de classes isoladas de palavras. O verbo opera como o núcleo estruturador e relacional de toda a sintaxe oracional."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na metodologia desenvolvida nas aulas, a predicação verbal é tratada como a \"aula zero\" da sintaxe. O verbo não possui função sintática de termo (não é sujeito, objeto ou adjunto), mas é o articulador de todas as funções sintáticas. O candidato deve \"viver cada verbo a seu momento\", abstendo-se de tentar interpretar a oração globalmente de maneira intuitiva. Toda a investigação sintática (identificação de sujeito, complementos e adjuntos) emana das relações estabelecidas a partir do verbo flexionado."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Localize o verbo flexionado no enunciado antes de classificar qualquer substantivo ou pronome.",
+                "Não classifique palavras por intuição semântica abstrata; determine suas funções exclusivamente em relação ao verbo identificado."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-001",
+                  "targetTitle": "O Passo a Passo Canônico da Análise Sintática em 5 Etapas",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A05-G01-TRANSITIVIDADE-VERBAL-002",
+                  "targetTitle": "Divisão Macro: Verbos Nocionais (Ação) vs. Relacionais (Ligação/Estado)",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +160,55 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo nível macro da predicação verbal, os verbos da Língua Portuguesa dividem-se em dois grandes grupos: Verbos Nocionais (Significativos / de Ação) e Verbos Relacionais (de Ligação / de Estado).\nExplicação consolidada\nVerbos Nocionais (de Ação / Significativos): Possuem conteúdo semântico pleno e autônomo. Expressam processos, ações ou acontecimentos. Subdividem-se sintaticamente em Intransitivos (VI), Transitivos Diretos (VTD), Transitivos Indiretos (VTI) e Transitivos Diretos e Indiretos (VTDI).\nAção com movimento físico: Ex.: \"Ele corria no parque.\"\nAção estática / sem movimento: Processos fisiológicos ou estados dinâmicos sem deslocamento externo. Ex.: \"Ele dormia profundamente.\" (Verbo nocional de ação, pegadinha clássica da FGV).\nVerbos Relacionais (de Ligação / Sem Noção Própria): Não expressam ação ou processo. Sua única função sintática é intermediar a relação entre o sujeito e uma característica/condição atribuída a ele (o Predicativo do Sujeito), expressando um estado (permanente, passageiro, aparente, continuativo ou mutatório).\nCritérios de reconhecimento ou aplicação\nMantra 1: \"Se o verbo não indicar estado, será de ação.\"\nSe o verbo trouxer conteúdo processual próprio, mesmo sem movimento corporal, ele é Nocional.\nSe o verbo atuar apenas como ponte entre Sujeito e Predicativo, ele é Relacional.(Ação sem movimento)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-001 (Mantra 1)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No nível macro da predicação verbal, os verbos da Língua Portuguesa dividem-se em dois grandes grupos: Verbos Nocionais (Significativos / de Ação) e Verbos Relacionais (de Ligação / de Estado)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbos Nocionais (de Ação / Significativos): Possuem conteúdo semântico pleno e autônomo. Expressam processos, ações ou acontecimentos. Subdividem-se sintaticamente em Intransitivos (VI), Transitivos Diretos (VTD), Transitivos Indiretos (VTI) e Transitivos Diretos e Indiretos (VTDI).",
+                "Ação com movimento físico: Ex.: \"Ele corria no parque.\"",
+                "Ação estática / sem movimento: Processos fisiológicos ou estados dinâmicos sem deslocamento externo. Ex.: \"Ele dormia profundamente.\" (Verbo nocional de ação, pegadinha clássica da FGV).",
+                "Verbos Relacionais (de Ligação / Sem Noção Própria): Não expressam ação ou processo. Sua única função sintática é intermediar a relação entre o sujeito e uma característica/condição atribuída a ele (o Predicativo do Sujeito), expressando um estado (permanente, passageiro, aparente, continuativo ou mutatório)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mantra 1: \"Se o verbo não indicar estado, será de ação.\"",
+                "Se o verbo trouxer conteúdo processual próprio, mesmo sem movimento corporal, ele é Nocional.",
+                "Se o verbo atuar apenas como ponte entre Sujeito e Predicativo, ele é Relacional."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-001",
+                  "targetTitle": "Confundir Ação com Movimento Físico (Pegadinha FGV)",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +221,85 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nVerbo intransitivo é aquele que não exige complemento verbal integrante (Objeto Direto ou Indireto) para satisfazer sua estrutura sintática. Ele encerra em si a predicação verbal, podendo vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de termos nominais atributivos (Predicativo do Sujeito).\nExplicação consolidada\nA tradição escolar difundiu o erro conceitual de que o verbo intransitivo \"precisa ter sentido completo e ficar bonito sozinho na frase\". As KBs desconstroem essa ilusão:\nCompletude Sintática vs. Semântica: Sintaticamente, o VI é autossuficiente porque dispensa objetos. Semanticamente, a curiosidade comunicativa humana (denominada metaforicamente por Evanildo Bechara como a \"pergunta do fofoqueiro\": onde? quando? como? por quê?) frequentemente demanda detalhes adverbiais circunstanciais.\nAcessoriedade do Adjunto Adverbial: Termos que expressam circunstância são adjuntos adverbiais (acessórios) e podem ser suprimidos sem quebrar a gramaticalidade nuclear da oração.\nMantra 4: \"Nem sempre o V.I. fica bonito sozinho.\" (Ex.: Em \"Paulo está no hospital\" ou \"Fomos ao clube\", retirar a expressão de lugar soa incompleto ao ouvido, mas sintaticamente o verbo permanece intransitivo porque o termo posposto é um Adjunto Adverbial de Lugar).\nCritérios de reconhecimento ou aplicação\nNunca tampe o verbo para ver se ele \"faz sentido sozinho\".\nIdentifique os termos pós-verbais: se todos forem Adjuntos Adverbiais circunstanciais, o verbo nocional é Intransitivo (VI).(Abandono do teste de tampar)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-003 (Mantra 3), TIP-A05-G01-TRANSITIVIDADE-VERBAL-004 (Mantra 4)\nExemplificado por: , , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Verbo intransitivo é aquele que não exige complemento verbal integrante (Objeto Direto ou Indireto) para satisfazer sua estrutura sintática. Ele encerra em si a predicação verbal, podendo vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de termos nominais atributivos (Predicativo do Sujeito)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A tradição escolar difundiu o erro conceitual de que o verbo intransitivo \"precisa ter sentido completo e ficar bonito sozinho na frase\". As KBs desconstroem essa ilusão:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Completude Sintática vs. Semântica: Sintaticamente, o VI é autossuficiente porque dispensa objetos. Semanticamente, a curiosidade comunicativa humana (denominada metaforicamente por Evanildo Bechara como a \"pergunta do fofoqueiro\": onde? quando? como? por quê?) frequentemente demanda detalhes adverbiais circunstanciais.",
+                "Acessoriedade do Adjunto Adverbial: Termos que expressam circunstância são adjuntos adverbiais (acessórios) e podem ser suprimidos sem quebrar a gramaticalidade nuclear da oração.",
+                "Mantra 4: \"Nem sempre o V.I. fica bonito sozinho.\" (Ex.: Em \"Paulo está no hospital\" ou \"Fomos ao clube\", retirar a expressão de lugar soa incompleto ao ouvido, mas sintaticamente o verbo permanece intransitivo porque o termo posposto é um Adjunto Adverbial de Lugar)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Nunca tampe o verbo para ver se ele \"faz sentido sozinho\".",
+                "Identifique os termos pós-verbais: se todos forem Adjuntos Adverbiais circunstanciais, o verbo nocional é Intransitivo (VI)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-002",
+                  "targetTitle": "O Erro do Teste de \"Tampar o Verbo\"",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G01-004",
+                  "targetTitle": "Exercício de Fixação — Frase 2",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G01-005",
+                  "targetTitle": "Exercício de Fixação — Frases 3 e 4 (Contraste com \"Estar\")",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G01-012",
+                  "targetTitle": "Exercício de Fixação — Frase 12",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G01-015",
+                  "targetTitle": "Exercício de Fixação — Frase 15",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +312,61 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nVerbos transitivos são verbos nocionais que \"transitam\", exigindo um ou dois complementos integrantes (Objetos) para satisfazer sua regência obrigatória.\nExplicação consolidada\nTransitivo Direto (VTD): Exige complemento ligado diretamente ao verbo, sem preposição obrigatória (Objeto Direto - OD). Artigos definidos/indefinidos associados ao núcleo do OD não configuram preposição. Ex.: \"Falei a verdade\" (Falei = VTD; a verdade = OD, onde a é artigo).\nTransitivo Indireto (VTI): Exige complemento mediado por preposição obrigatória regida pelo verbo (Objeto Indireto - OI), que não denote mera circunstância adverbial. Ex.: \"Aspiramos ao sucesso\" (Aspiramos = VTI; ao sucesso = OI).\nTransitivo Direto e Indireto / Bitransitivo (VTDI): Exige simultaneamente dois complementos: um direto (não preposicionado) e um indireto (preposicionado). Ex.: \"Comunicou o fato às autoridades\" (o fato = OD; às autoridades = OI); \"Contou-me um amigo uma história exemplar\" (uma história exemplar = OD; me = OI).\nCritérios de reconhecimento ou aplicação\nMantra 2: \"A classificação depende do que vem depois do verbo.\"\nMantra 5: \"Complemento é o que não é adjunto.\"\nExclua primeiro os adjuntos adverbiais; os termos restantes ligados ao verbo sem preposição são OD e com preposição são OI.(Colchetes e Setas)(Confundir instrumento com OI)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Verbos transitivos são verbos nocionais que \"transitam\", exigindo um ou dois complementos integrantes (Objetos) para satisfazer sua regência obrigatória."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Transitivo Direto (VTD): Exige complemento ligado diretamente ao verbo, sem preposição obrigatória (Objeto Direto - OD). Artigos definidos/indefinidos associados ao núcleo do OD não configuram preposição. Ex.: \"Falei a verdade\" (Falei = VTD; a verdade = OD, onde a é artigo).",
+                "Transitivo Indireto (VTI): Exige complemento mediado por preposição obrigatória regida pelo verbo (Objeto Indireto - OI), que não denote mera circunstância adverbial. Ex.: \"Aspiramos ao sucesso\" (Aspiramos = VTI; ao sucesso = OI).",
+                "Transitivo Direto e Indireto / Bitransitivo (VTDI): Exige simultaneamente dois complementos: um direto (não preposicionado) e um indireto (preposicionado). Ex.: \"Comunicou o fato às autoridades\" (o fato = OD; às autoridades = OI); \"Contou-me um amigo uma história exemplar\" (uma história exemplar = OD; me = OI)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mantra 2: \"A classificação depende do que vem depois do verbo.\"",
+                "Mantra 5: \"Complemento é o que não é adjunto.\"",
+                "Exclua primeiro os adjuntos adverbiais; os termos restantes ligados ao verbo sem preposição são OD e com preposição são OI."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-002",
+                  "targetTitle": "Técnica de Isolamento por Colchetes e Traçado de Setas Sintáticas",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-005",
+                  "targetTitle": "Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto)",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +379,66 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Verbo de Ligação (VL) é um verbo relacional que atua exclusivamente como elo sintático entre o Sujeito e o seu Predicativo, veiculando uma nuance semântica de estado.\nExplicação consolidada\nO verbo de ligação é pedagogicamente apelidado de \"verbo sem noção\" ou \"verbo coitado\" por não possuir conteúdo nocional próprio de ação. Contudo, em bancas exigentes (notadamente a FGV), explora-se a tipologia do estado veiculado:\nEstado Permanente: Característica contínua, inerente ou definidora. Ex.: \"Eu sou feliz\" (verbo ser); \"Aquela estrela no peito é uma predestinação\".\nEstado Passageiro / Momentâneo: Condição temporária ou circunstancial. Ex.: \"Ela está agitada\"; \"Paulo está adoentado\" (verbo estar).\nEstado Continuativo / Permanente: Manutenção contínua de condição. Ex.: \"Permaneciam abertas as listas\"; \"Uma das janelas vivia aberta\" (vivia = permanecia/estava continuamente).\nEstado Aparente: Impressão perceptiva subjetiva. Ex.: \"Ela parece triste\" (verbo parecer).\nMudança de Estado (Mutatório): Transição de uma condição para outra. Ex.: \"José caiu doente\" (caiu = ficou / tornou-se doente).\nCritérios de reconhecimento ou aplicação\nA tradicional lista escolar (ser, estar, ficar, parecer, permanecer, andar, viver, continuar, tornar-se, virar) deve ser relativizada: ela indica verbos com potencial para serem de ligação, mas a confirmação depende da presença real de predicativo no contexto.\nVerbos atípicos como cair ou viver atuam como VL quando equivalem a ficar ou permanecer.\nRelações\nPossui procedimento: (Teste de Substituição por ficar)(A armadilha da lista decorada)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Verbo de Ligação (VL) é um verbo relacional que atua exclusivamente como elo sintático entre o Sujeito e o seu Predicativo, veiculando uma nuance semântica de estado."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O verbo de ligação é pedagogicamente apelidado de \"verbo sem noção\" ou \"verbo coitado\" por não possuir conteúdo nocional próprio de ação. Contudo, em bancas exigentes (notadamente a FGV), explora-se a tipologia do estado veiculado:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Estado Permanente: Característica contínua, inerente ou definidora. Ex.: \"Eu sou feliz\" (verbo ser); \"Aquela estrela no peito é uma predestinação\".",
+                "Estado Passageiro / Momentâneo: Condição temporária ou circunstancial. Ex.: \"Ela está agitada\"; \"Paulo está adoentado\" (verbo estar).",
+                "Estado Continuativo / Permanente: Manutenção contínua de condição. Ex.: \"Permaneciam abertas as listas\"; \"Uma das janelas vivia aberta\" (vivia = permanecia/estava continuamente).",
+                "Estado Aparente: Impressão perceptiva subjetiva. Ex.: \"Ela parece triste\" (verbo parecer).",
+                "Mudança de Estado (Mutatório): Transição de uma condição para outra. Ex.: \"José caiu doente\" (caiu = ficou / tornou-se doente)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A tradicional lista escolar (ser, estar, ficar, parecer, permanecer, andar, viver, continuar, tornar-se, virar) deve ser relativizada: ela indica verbos com potencial para serem de ligação, mas a confirmação depende da presença real de predicativo no contexto.",
+                "Verbos atípicos como cair ou viver atuam como VL quando equivalem a ficar ou permanecer."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-005",
+                  "targetTitle": "Teste de Substituição por \"Ficar / Tornar-se\" para Verbos de Mudança de Estado",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-003",
+                  "targetTitle": "A Armadilha da Lista Decorada de Verbos de Ligação",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +451,57 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Mantra 6 estabelece o critério absoluto de validação do verbo de ligação: um verbo só é classificado como de estado/ligação se houver obrigatoriamente um Predicativo do Sujeito presente na oração.\nExplicação consolidada\nA relação entre Verbo de Ligação, Estado e Predicativo do Sujeito é uma equivalência lógica estrita:\n\\text{Verbo de Ligação (VL)} \\iff \\text{Indicação de Estado} \\iff \\text{Presença de Predicativo do Sujeito}\nSe um verbo constante da lista memorizada surgir sem predicativo (por exemplo, acompanhado apenas de Adjunto Adverbial de Lugar ou Tempo), ele perde o caráter relacional e se converte em verbo nocional (de ação/existência), classificando-se como Verbo Intransitivo (VI).\nDesambiguação Canônica\n\"Eu estou feliz.\" $\\rightarrow$ feliz = Predicativo do Sujeito $\\rightarrow$ estou = Verbo de Ligação (VL).\n\"Eu estou em casa.\" $\\rightarrow$ em casa = Adjunto Adverbial de Lugar $\\rightarrow$ estou = Verbo Intransitivo (VI).\n\"As discussões continuaram pela noite.\" $\\rightarrow$ pela noite = Adjunto Adverbial de Tempo $\\rightarrow$ continuaram = Verbo Intransitivo (VI).\nRelações\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-006 (Mantra 6)(Confundir lugar com estado)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Mantra 6 estabelece o critério absoluto de validação do verbo de ligação: um verbo só é classificado como de estado/ligação se houver obrigatoriamente um Predicativo do Sujeito presente na oração."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A relação entre Verbo de Ligação, Estado e Predicativo do Sujeito é uma equivalência lógica estrita:"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Verbo de Ligação (VL)} \\iff \\text{Indicação de Estado} \\iff \\text{Presença de Predicativo do Sujeito}"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se um verbo constante da lista memorizada surgir sem predicativo (por exemplo, acompanhado apenas de Adjunto Adverbial de Lugar ou Tempo), ele perde o caráter relacional e se converte em verbo nocional (de ação/existência), classificando-se como Verbo Intransitivo (VI)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Desambiguação Canônica"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Eu estou feliz.\" $\\rightarrow$ feliz = Predicativo do Sujeito $\\rightarrow$ estou = Verbo de Ligação (VL).",
+                "\"Eu estou em casa.\" $\\rightarrow$ em casa = Adjunto Adverbial de Lugar $\\rightarrow$ estou = Verbo Intransitivo (VI).",
+                "\"As discussões continuaram pela noite.\" $\\rightarrow$ pela noite = Adjunto Adverbial de Tempo $\\rightarrow$ continuaram = Verbo Intransitivo (VI)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-004",
+                  "targetTitle": "Confundir Adjunto Adverbial de Lugar com Estado/Predicativo",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +514,54 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Mantra 7 corrige o equívoco de associar o Predicativo do Sujeito unicamente aos Verbos de Ligação: \"O Predicativo do Sujeito pode vir acompanhado de QUALQUER verbo (seja de ação ou de ligação).\"\nExplicação consolidada\nQuando um Predicativo do Sujeito surge associado a um verbo de ação (nocional), ocorrem simultaneamente dois núcleos informativos no predicado: um núcleo verbal (o processo/ação) e um núcleo nominal (o estado do sujeito durante o processo), constituindo a estrutura de Predicado Verbo-Nominal. O verbo mantém integralmente a sua transitividade nocional (VI, VTD, VTI ou VTDI).\n[ VERBO DE AÇÃO (Nocional) ] + [ PREDICATIVO DO SUJEITO ] = [ PREDICADO VERBO-NOMINAL ]\nExemplos da Aula\n\"Ela ligou o ferro silenciosa.\" $\\rightarrow$ ligou = VTD (o ferro = OD); silenciosa = Predicativo do Sujeito.\n\"Impecável, transitava o marido pelo tempo.\" $\\rightarrow$ transitava = VI (pelo tempo = Adj. Adv.); impecável = Predicativo do Sujeito.\n\"Um congressista compareceu à sessão preocupado.\" $\\rightarrow$ compareceu = VI (à sessão = Adj. Adv.); preocupado = Predicativo do Sujeito.\n\"Chegamos alegres.\" $\\rightarrow$ Chegamos = VI (ação de chegar); alegres = Predicativo do Sujeito.\nRelações\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-007 (Mantra 7)(Achar que predicativo exige VL)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Mantra 7 corrige o equívoco de associar o Predicativo do Sujeito unicamente aos Verbos de Ligação: \"O Predicativo do Sujeito pode vir acompanhado de QUALQUER verbo (seja de ação ou de ligação).\""
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando um Predicativo do Sujeito surge associado a um verbo de ação (nocional), ocorrem simultaneamente dois núcleos informativos no predicado: um núcleo verbal (o processo/ação) e um núcleo nominal (o estado do sujeito durante o processo), constituindo a estrutura de Predicado Verbo-Nominal. O verbo mantém integralmente a sua transitividade nocional (VI, VTD, VTI ou VTDI)."
+            },
+            {
+              "type": "paragraph",
+              "text": "[ VERBO DE AÇÃO (Nocional) ] + [ PREDICATIVO DO SUJEITO ] = [ PREDICADO VERBO-NOMINAL ]"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos da Aula"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "\"Ela ligou o ferro silenciosa.\" $\\rightarrow$ ligou = VTD (o ferro = OD); silenciosa = Predicativo do Sujeito.",
+                "\"Impecável, transitava o marido pelo tempo.\" $\\rightarrow$ transitava = VI (pelo tempo = Adj. Adv.); impecável = Predicativo do Sujeito.",
+                "\"Um congressista compareceu à sessão preocupado.\" $\\rightarrow$ compareceu = VI (à sessão = Adj. Adv.); preocupado = Predicativo do Sujeito.",
+                "\"Chegamos alegres.\" $\\rightarrow$ Chegamos = VI (ação de chegar); alegres = Predicativo do Sujeito."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-006",
+                  "targetTitle": "Falsa Regra de que Predicativo do Sujeito Exige Verbo de Ligação",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +574,91 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA confusão entre Estado e Modo induz à classificação equivocada de um Predicativo do Sujeito como Adjunto Adverbial de Modo. A distinção é solucionada morfossintaticamente pelo teste de flexão do Mantra 9.\nQuadro Diagnóstico Comparativo\nCritérios de reconhecimento ou aplicação\nMantra 9: \"Na dúvida, tente flexionar (feminino/plural): caso se flexione, será ADJETIVO (Predicativo), e não ADVÉRBIO! Não confunda MODO (= jeito) com ESTADO.\"\nAplique o teste do \"E Estava\": se mantiver o sentido da oração, trata-se de Predicativo do Sujeito.\nRelações\nPossui procedimento: (Teste do \"E Estava\"), (Teste de Flexão)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-009 (Mantra 9)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A confusão entre Estado e Modo induz à classificação equivocada de um Predicativo do Sujeito como Adjunto Adverbial de Modo. A distinção é solucionada morfossintaticamente pelo teste de flexão do Mantra 9."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Quadro Diagnóstico Comparativo"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A05-G01-008",
+              "table": {
+                "tableId": "TABLE-IP-A05-G01-008",
+                "caption": "Quadro Diagnóstico Comparativo",
+                "headers": [
+                  "Propriedade",
+                  "ESTADO (Predicativo do Sujeito)",
+                  "MODO (Adjunto Adverbial de Modo)"
+                ],
+                "rows": [
+                  [
+                    "Conceito Semântico",
+                    "Qualidade, atributo ou condição do sujeito.",
+                    "Jeito, modo ou maneira como a ação verbal ocorre."
+                  ],
+                  [
+                    "Classe Gramatical",
+                    "Adjetivo ou Substantivo.",
+                    "Advérbio ou Locução Adverbial."
+                  ],
+                  [
+                    "Comportamento Mofológico",
+                    "Variável (concorda em gênero e número com o sujeito).",
+                    "Invariável (não sofre flexão de gênero/número)."
+                  ],
+                  [
+                    "Teste de Inserção",
+                    "Aceita o encaixe perfeitamente coerente de\"e estava\".",
+                    "Não aceita encaixe atributivo; admite sufixo-mente."
+                  ],
+                  [
+                    "Exemplo Típico",
+                    "\"Ela ligou o ferro silenciosa\" (Eles ligaram... silenciosos).",
+                    "\"Ela ligou o ferro silenciosamente\" (invariável)."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mantra 9: \"Na dúvida, tente flexionar (feminino/plural): caso se flexione, será ADJETIVO (Predicativo), e não ADVÉRBIO! Não confunda MODO (= jeito) com ESTADO.\"",
+                "Aplique o teste do \"E Estava\": se mantiver o sentido da oração, trata-se de Predicativo do Sujeito."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-003",
+                  "targetTitle": "Teste do \"E Estava\" para Diagnóstico de Predicativo do Sujeito",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-004",
+                  "targetTitle": "Teste de Flexão de Gênero e Número para Distinguir Estado (Adjetivo) de Modo (Advérbio)",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +671,48 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nEm uma locução verbal, a predicação e a transitividade pertencem exclusivamente ao Verbo Principal (o último verbo da locução). O Verbo Auxiliar não possui predicação própria, atuando apenas no suporte flexional gramatical.\nExplicação consolidada\nMantra 8: \"Na locução verbal, quem manda (tem a predicação) é o V. PRINCIPAL (o último). O auxiliar não tem predicação, só obedece (se flexiona).\"\nEstrutura da Locução: Formada por [Verbo Auxiliar flexionado] + [Verbo Principal em forma nominal: infinitivo, gerúndio ou particípio].\nIntercalação Sintática: Adjuntos adverbiais frequentemente surgem intercalados entre o auxiliar e o principal (ex.: \"Surgiu, [pela esquina], assobiando\"). A intercalação não desfaz a locução verbal.\nClassificação em Questões: Se a banca exigir a classificação isolada do verbo auxiliar, rotula-se como Verbo Auxiliar de Locução Verbal (Código 6). A predicação do conjunto é extraída do verbo principal (assobiando = VI).\nRelações\nPossui procedimento: (Análise de Locuções Verbais)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-008 (Mantra 8)\nExemplificado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em uma locução verbal, a predicação e a transitividade pertencem exclusivamente ao Verbo Principal (o último verbo da locução). O Verbo Auxiliar não possui predicação própria, atuando apenas no suporte flexional gramatical."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mantra 8: \"Na locução verbal, quem manda (tem a predicação) é o V. PRINCIPAL (o último). O auxiliar não tem predicação, só obedece (se flexiona).\"",
+                "Estrutura da Locução: Formada por [Verbo Auxiliar flexionado] + [Verbo Principal em forma nominal: infinitivo, gerúndio ou particípio].",
+                "Intercalação Sintática: Adjuntos adverbiais frequentemente surgem intercalados entre o auxiliar e o principal (ex.: \"Surgiu, [pela esquina], assobiando\"). A intercalação não desfaz a locução verbal.",
+                "Classificação em Questões: Se a banca exigir a classificação isolada do verbo auxiliar, rotula-se como Verbo Auxiliar de Locução Verbal (Código 6). A predicação do conjunto é extraída do verbo principal (assobiando = VI)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A05-G01-TRANSITIVIDADE-VERBAL-006",
+                  "targetTitle": "Procedimento de Análise de Locuções Verbais e Intercalações",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G01-010",
+                  "targetTitle": "Exercício de Fixação — Frase 10 (Locução Intercalada)",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -220,8 +725,51 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA presença de uma preposição após o verbo não configura automaticamente um Objeto Indireto. Se o sintagma preposicionado exprime circunstância (lugar, tempo, modo, instrumento, etc.), ele é um Adjunto Adverbial e não afeta a transitividade do verbo como complemento.\nExplicação consolidada\nMuitos erros em provas decorrem de perguntas automatizadas e descontextualizadas feitas ao verbo (ex.: \"quem perfura, perfura algo com algo\" $\\rightarrow$ falso VTDI; \"quem mora, mora em algo\" $\\rightarrow$ falso VTI; \"quem está, está em algum lugar\" $\\rightarrow$ falso VTI).\nRegra de Prioridade Analítica: Ao analisar o termo pós-verbal preposicionado, pergunte primeiro se ele possui valor circunstancial (6C + FTP, lugar, instrumento, companhia).\nSe possuir valor circunstancial $\\rightarrow$ É Adjunto Adverbial (termo acessório, não integrante).\nSe for complemento integrante abstrato exigido pela regência sem valor circunstancial $\\rightarrow$ É Objeto Indireto (\"Gosto de música\", \"Aspiramos ao cargo\").(Instrumento vs. OI), (Pegadinha do \"está em\")\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-002 (6C + FTP), TIP-A05-G01-TRANSITIVIDADE-VERBAL-005 (Mantra 5)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença de uma preposição após o verbo não configura automaticamente um Objeto Indireto. Se o sintagma preposicionado exprime circunstância (lugar, tempo, modo, instrumento, etc.), ele é um Adjunto Adverbial e não afeta a transitividade do verbo como complemento."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Muitos erros em provas decorrem de perguntas automatizadas e descontextualizadas feitas ao verbo (ex.: \"quem perfura, perfura algo com algo\" $\\rightarrow$ falso VTDI; \"quem mora, mora em algo\" $\\rightarrow$ falso VTI; \"quem está, está em algum lugar\" $\\rightarrow$ falso VTI)."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Regra de Prioridade Analítica: Ao analisar o termo pós-verbal preposicionado, pergunte primeiro se ele possui valor circunstancial (6C + FTP, lugar, instrumento, companhia).",
+                "Se possuir valor circunstancial $\\rightarrow$ É Adjunto Adverbial (termo acessório, não integrante).",
+                "Se for complemento integrante abstrato exigido pela regência sem valor circunstancial $\\rightarrow$ É Objeto Indireto (\"Gosto de música\", \"Aspiramos ao cargo\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-005",
+                  "targetTitle": "Pegadinha do \"Perfurar algo com algo\" (Instrumento vs. Objeto Indireto)",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-007",
+                  "targetTitle": "Pegadinha da Pergunta Decorada (\"Quem está, está em...\")",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -234,8 +782,48 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo sujeito oculto (elíptico/subentendido), o termo executor existe e é perfeitamente identificável (pela terminação verbal ou pelo contexto textual prévio). No sujeito indeterminado, o termo executor existe, mas o enunciador não pode ou não deseja identificá-lo gramaticalmente.\nQuadro Estrutural Canônico de Sujeitos\n ┬ ┼ ┤ Verbo na 1ª ou 2ª pessoa (Singular ou Plural) SUJEITO OCULTO DESINENCIAL (eu, tu, nós, vós) Verbo na 3ª pessoa do singular isolado SUJEITO OCULTO CONTEXTUAL (busca referente no texto) Verbo na 3ª pessoa do plural COM referente textual prévio SUJEITO OCULTO ANAFÓRICO / ELÍPTICO Verbo na 3ª pessoa do plural SEM referente textual prévio SUJEITO INDETERMINADO (\"Chegaram cedo\") Verbo na 3ª pessoa do singular + 'SE' (P.I.S. / I.I.S.) SUJEITO INDETERMINADO (\"Precisa-se de apoio\") ┴ ┘\nArmadilha Anafórica das Bancas (FGV e Cebraspe)\nNa sequência \"Os pais viajaram. Chegaram cedo.\", o sujeito do verbo chegaram NÃO é indeterminado. Trata-se de Sujeito Oculto Anafórico, pois o referente nominal (\"Os pais\") foi explicitado na oração imediatamente anterior.(3ª pessoa plural com referente anafórico)\nExemplificado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No sujeito oculto (elíptico/subentendido), o termo executor existe e é perfeitamente identificável (pela terminação verbal ou pelo contexto textual prévio). No sujeito indeterminado, o termo executor existe, mas o enunciador não pode ou não deseja identificá-lo gramaticalmente."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Quadro Estrutural Canônico de Sujeitos",
+              "text": "┌─────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────┐ ├─────────────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────┤ │ Verbo na 1ª ou 2ª pessoa (Singular ou Plural) │ SUJEITO OCULTO DESINENCIAL (eu, tu, nós, vós) │ │ Verbo na 3ª pessoa do singular isolado │ SUJEITO OCULTO CONTEXTUAL (busca referente no texto) │ │ Verbo na 3ª pessoa do plural COM referente textual prévio │ SUJEITO OCULTO ANAFÓRICO / ELÍPTICO │ │ Verbo na 3ª pessoa do plural SEM referente textual prévio │ SUJEITO INDETERMINADO (\"Chegaram cedo\") │ │ Verbo na 3ª pessoa do singular + 'SE' (P.I.S. / I.I.S.) │ SUJEITO INDETERMINADO (\"Precisa-se de apoio\") │ └─────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────┘"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Armadilha Anafórica das Bancas (FGV e Cebraspe)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na sequência \"Os pais viajaram. Chegaram cedo.\", o sujeito do verbo chegaram NÃO é indeterminado. Trata-se de Sujeito Oculto Anafórico, pois o referente nominal (\"Os pais\") foi explicitado na oração imediatamente anterior."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G01-TRANSITIVIDADE-VERBAL-008",
+                  "targetTitle": "Armadilha da 3ª Pessoa do Plural com Referente Textual",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G01-006",
+                  "targetTitle": "Exercício de Fixação — Frase 5",
+                  "targetUnitId": "IP-A05-G01",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -285,95 +873,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A05-G01-008",
-              "table": {
-                "tableId": "TABLE-IP-A05-G01-008",
-                "caption": "Quadro Diagnóstico Comparativo",
-                "headers": [
-                  "Propriedade",
-                  "ESTADO (Predicativo do Sujeito)",
-                  "MODO (Adjunto Adverbial de Modo)"
-                ],
-                "rows": [
-                  [
-                    "Conceito Semântico",
-                    "Qualidade, atributo ou condição do sujeito.",
-                    "Jeito, modo ou maneira como a ação verbal ocorre."
-                  ],
-                  [
-                    "Classe Gramatical",
-                    "Adjetivo ou Substantivo.",
-                    "Advérbio ou Locução Adverbial."
-                  ],
-                  [
-                    "Comportamento Mofológico",
-                    "Variável (concorda em gênero e número com o sujeito).",
-                    "Invariável (não sofre flexão de gênero/número)."
-                  ],
-                  [
-                    "Teste de Inserção",
-                    "Aceita o encaixe perfeitamente coerente de\"e estava\".",
-                    "Não aceita encaixe atributivo; admite sufixo-mente."
-                  ],
-                  [
-                    "Exemplo Típico",
-                    "\"Ela ligou o ferro silenciosa\" (Eles ligaram... silenciosos).",
-                    "\"Ela ligou o ferro silenciosamente\" (invariável)."
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA análise sintática da oração inicia-se obrigatoriamente pela localização e análise do verbo, rompendo com a abordagem morfológica estanque de classes isoladas de palavras. O verbo opera como o núcleo estruturador e relacional de toda a sintaxe oracional.\nExplicação consolidada\nNa metodologia desenvolvida nas aulas, a predicação verbal é tratada como a \"aula zero\" da sintaxe. O verbo não possui função sintática de termo (não é sujeito, objeto ou adjunto), mas é o articulador de todas as funções sintáticas. O candidato deve \"viver cada verbo a seu momento\", abstendo-se de tentar interpretar a oração globalmente de maneira intuitiva. Toda a investigação sintática (identificação de sujeito, complementos e adjuntos) emana das relações estabelecidas a partir do verbo flexionado.\nCritérios de reconhecimento ou aplicação\nLocalize o verbo flexionado no enunciado antes de classificar qualquer substantivo ou pronome.\nNão classifique palavras por intuição semântica abstrata; determine suas funções exclusivamente em relação ao verbo identificado.(Passo a Passo em 5 Etapas)\nExpande:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo nível macro da predicação verbal, os verbos da Língua Portuguesa dividem-se em dois grandes grupos: Verbos Nocionais (Significativos / de Ação) e Verbos Relacionais (de Ligação / de Estado).\nExplicação consolidada\nVerbos Nocionais (de Ação / Significativos): Possuem conteúdo semântico pleno e autônomo. Expressam processos, ações ou acontecimentos. Subdividem-se sintaticamente em Intransitivos (VI), Transitivos Diretos (VTD), Transitivos Indiretos (VTI) e Transitivos Diretos e Indiretos (VTDI).\nAção com movimento físico: Ex.: \"Ele corria no parque.\"\nAção estática / sem movimento: Processos fisiológicos ou estados dinâmicos sem deslocamento externo. Ex.: \"Ele dormia profundamente.\" (Verbo nocional de ação, pegadinha clássica da FGV).\nVerbos Relacionais (de Ligação / Sem Noção Própria): Não expressam ação ou processo. Sua única função sintática é intermediar a relação entre o sujeito e uma característica/condição atribuída a ele (o Predicativo do Sujeito), expressando um estado (permanente, passageiro, aparente, continuativo ou mutatório).\nCritérios de reconhecimento ou aplicação\nMantra 1: \"Se o verbo não indicar estado, será de ação.\"\nSe o verbo trouxer conteúdo processual próprio, mesmo sem movimento corporal, ele é Nocional.\nSe o verbo atuar apenas como ponte entre Sujeito e Predicativo, ele é Relacional.(Ação sem movimento)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-001 (Mantra 1)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nVerbo intransitivo é aquele que não exige complemento verbal integrante (Objeto Direto ou Indireto) para satisfazer sua estrutura sintática. Ele encerra em si a predicação verbal, podendo vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de termos nominais atributivos (Predicativo do Sujeito).\nExplicação consolidada\nA tradição escolar difundiu o erro conceitual de que o verbo intransitivo \"precisa ter sentido completo e ficar bonito sozinho na frase\". As KBs desconstroem essa ilusão:\nCompletude Sintática vs. Semântica: Sintaticamente, o VI é autossuficiente porque dispensa objetos. Semanticamente, a curiosidade comunicativa humana (denominada metaforicamente por Evanildo Bechara como a \"pergunta do fofoqueiro\": onde? quando? como? por quê?) frequentemente demanda detalhes adverbiais circunstanciais.\nAcessoriedade do Adjunto Adverbial: Termos que expressam circunstância são adjuntos adverbiais (acessórios) e podem ser suprimidos sem quebrar a gramaticalidade nuclear da oração.\nMantra 4: \"Nem sempre o V.I. fica bonito sozinho.\" (Ex.: Em \"Paulo está no hospital\" ou \"Fomos ao clube\", retirar a expressão de lugar soa incompleto ao ouvido, mas sintaticamente o verbo permanece intransitivo porque o termo posposto é um Adjunto Adverbial de Lugar).\nCritérios de reconhecimento ou aplicação\nNunca tampe o verbo para ver se ele \"faz sentido sozinho\".\nIdentifique os termos pós-verbais: se todos forem Adjuntos Adverbiais circunstanciais, o verbo nocional é Intransitivo (VI).(Abandono do teste de tampar)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-003 (Mantra 3), TIP-A05-G01-TRANSITIVIDADE-VERBAL-004 (Mantra 4)\nExemplificado por: , , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nVerbos transitivos são verbos nocionais que \"transitam\", exigindo um ou dois complementos integrantes (Objetos) para satisfazer sua regência obrigatória.\nExplicação consolidada\nTransitivo Direto (VTD): Exige complemento ligado diretamente ao verbo, sem preposição obrigatória (Objeto Direto - OD). Artigos definidos/indefinidos associados ao núcleo do OD não configuram preposição. Ex.: \"Falei a verdade\" (Falei = VTD; a verdade = OD, onde a é artigo).\nTransitivo Indireto (VTI): Exige complemento mediado por preposição obrigatória regida pelo verbo (Objeto Indireto - OI), que não denote mera circunstância adverbial. Ex.: \"Aspiramos ao sucesso\" (Aspiramos = VTI; ao sucesso = OI).\nTransitivo Direto e Indireto / Bitransitivo (VTDI): Exige simultaneamente dois complementos: um direto (não preposicionado) e um indireto (preposicionado). Ex.: \"Comunicou o fato às autoridades\" (o fato = OD; às autoridades = OI); \"Contou-me um amigo uma história exemplar\" (uma história exemplar = OD; me = OI).\nCritérios de reconhecimento ou aplicação\nMantra 2: \"A classificação depende do que vem depois do verbo.\"\nMantra 5: \"Complemento é o que não é adjunto.\"\nExclua primeiro os adjuntos adverbiais; os termos restantes ligados ao verbo sem preposição são OD e com preposição são OI.(Colchetes e Setas)(Confundir instrumento com OI)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Verbo de Ligação (VL) é um verbo relacional que atua exclusivamente como elo sintático entre o Sujeito e o seu Predicativo, veiculando uma nuance semântica de estado.\nExplicação consolidada\nO verbo de ligação é pedagogicamente apelidado de \"verbo sem noção\" ou \"verbo coitado\" por não possuir conteúdo nocional próprio de ação. Contudo, em bancas exigentes (notadamente a FGV), explora-se a tipologia do estado veiculado:\nEstado Permanente: Característica contínua, inerente ou definidora. Ex.: \"Eu sou feliz\" (verbo ser); \"Aquela estrela no peito é uma predestinação\".\nEstado Passageiro / Momentâneo: Condição temporária ou circunstancial. Ex.: \"Ela está agitada\"; \"Paulo está adoentado\" (verbo estar).\nEstado Continuativo / Permanente: Manutenção contínua de condição. Ex.: \"Permaneciam abertas as listas\"; \"Uma das janelas vivia aberta\" (vivia = permanecia/estava continuamente).\nEstado Aparente: Impressão perceptiva subjetiva. Ex.: \"Ela parece triste\" (verbo parecer).\nMudança de Estado (Mutatório): Transição de uma condição para outra. Ex.: \"José caiu doente\" (caiu = ficou / tornou-se doente).\nCritérios de reconhecimento ou aplicação\nA tradicional lista escolar (ser, estar, ficar, parecer, permanecer, andar, viver, continuar, tornar-se, virar) deve ser relativizada: ela indica verbos com potencial para serem de ligação, mas a confirmação depende da presença real de predicativo no contexto.\nVerbos atípicos como cair ou viver atuam como VL quando equivalem a ficar ou permanecer.\nRelações\nPossui procedimento: (Teste de Substituição por ficar)(A armadilha da lista decorada)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Mantra 6 estabelece o critério absoluto de validação do verbo de ligação: um verbo só é classificado como de estado/ligação se houver obrigatoriamente um Predicativo do Sujeito presente na oração.\nExplicação consolidada\nA relação entre Verbo de Ligação, Estado e Predicativo do Sujeito é uma equivalência lógica estrita:\n\\text{Verbo de Ligação (VL)} \\iff \\text{Indicação de Estado} \\iff \\text{Presença de Predicativo do Sujeito}\nSe um verbo constante da lista memorizada surgir sem predicativo (por exemplo, acompanhado apenas de Adjunto Adverbial de Lugar ou Tempo), ele perde o caráter relacional e se converte em verbo nocional (de ação/existência), classificando-se como Verbo Intransitivo (VI).\nDesambiguação Canônica\n\"Eu estou feliz.\" $\\rightarrow$ feliz = Predicativo do Sujeito $\\rightarrow$ estou = Verbo de Ligação (VL).\n\"Eu estou em casa.\" $\\rightarrow$ em casa = Adjunto Adverbial de Lugar $\\rightarrow$ estou = Verbo Intransitivo (VI).\n\"As discussões continuaram pela noite.\" $\\rightarrow$ pela noite = Adjunto Adverbial de Tempo $\\rightarrow$ continuaram = Verbo Intransitivo (VI).\nRelações\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-006 (Mantra 6)(Confundir lugar com estado)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Mantra 7 corrige o equívoco de associar o Predicativo do Sujeito unicamente aos Verbos de Ligação: \"O Predicativo do Sujeito pode vir acompanhado de QUALQUER verbo (seja de ação ou de ligação).\"\nExplicação consolidada\nQuando um Predicativo do Sujeito surge associado a um verbo de ação (nocional), ocorrem simultaneamente dois núcleos informativos no predicado: um núcleo verbal (o processo/ação) e um núcleo nominal (o estado do sujeito durante o processo), constituindo a estrutura de Predicado Verbo-Nominal. O verbo mantém integralmente a sua transitividade nocional (VI, VTD, VTI ou VTDI).\n[ VERBO DE AÇÃO (Nocional) ] + [ PREDICATIVO DO SUJEITO ] = [ PREDICADO VERBO-NOMINAL ]\nExemplos da Aula\n\"Ela ligou o ferro silenciosa.\" $\\rightarrow$ ligou = VTD (o ferro = OD); silenciosa = Predicativo do Sujeito.\n\"Impecável, transitava o marido pelo tempo.\" $\\rightarrow$ transitava = VI (pelo tempo = Adj. Adv.); impecável = Predicativo do Sujeito.\n\"Um congressista compareceu à sessão preocupado.\" $\\rightarrow$ compareceu = VI (à sessão = Adj. Adv.); preocupado = Predicativo do Sujeito.\n\"Chegamos alegres.\" $\\rightarrow$ Chegamos = VI (ação de chegar); alegres = Predicativo do Sujeito.\nRelações\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-007 (Mantra 7)(Achar que predicativo exige VL)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA confusão entre Estado e Modo induz à classificação equivocada de um Predicativo do Sujeito como Adjunto Adverbial de Modo. A distinção é solucionada morfossintaticamente pelo teste de flexão do Mantra 9.\nQuadro Diagnóstico Comparativo\nCritérios de reconhecimento ou aplicação\nMantra 9: \"Na dúvida, tente flexionar (feminino/plural): caso se flexione, será ADJETIVO (Predicativo), e não ADVÉRBIO! Não confunda MODO (= jeito) com ESTADO.\"\nAplique o teste do \"E Estava\": se mantiver o sentido da oração, trata-se de Predicativo do Sujeito.\nRelações\nPossui procedimento: (Teste do \"E Estava\"), (Teste de Flexão)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-009 (Mantra 9)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nEm uma locução verbal, a predicação e a transitividade pertencem exclusivamente ao Verbo Principal (o último verbo da locução). O Verbo Auxiliar não possui predicação própria, atuando apenas no suporte flexional gramatical.\nExplicação consolidada\nMantra 8: \"Na locução verbal, quem manda (tem a predicação) é o V. PRINCIPAL (o último). O auxiliar não tem predicação, só obedece (se flexiona).\"\nEstrutura da Locução: Formada por [Verbo Auxiliar flexionado] + [Verbo Principal em forma nominal: infinitivo, gerúndio ou particípio].\nIntercalação Sintática: Adjuntos adverbiais frequentemente surgem intercalados entre o auxiliar e o principal (ex.: \"Surgiu, [pela esquina], assobiando\"). A intercalação não desfaz a locução verbal.\nClassificação em Questões: Se a banca exigir a classificação isolada do verbo auxiliar, rotula-se como Verbo Auxiliar de Locução Verbal (Código 6). A predicação do conjunto é extraída do verbo principal (assobiando = VI).\nRelações\nPossui procedimento: (Análise de Locuções Verbais)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-008 (Mantra 8)\nExemplificado por:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA presença de uma preposição após o verbo não configura automaticamente um Objeto Indireto. Se o sintagma preposicionado exprime circunstância (lugar, tempo, modo, instrumento, etc.), ele é um Adjunto Adverbial e não afeta a transitividade do verbo como complemento.\nExplicação consolidada\nMuitos erros em provas decorrem de perguntas automatizadas e descontextualizadas feitas ao verbo (ex.: \"quem perfura, perfura algo com algo\" $\\rightarrow$ falso VTDI; \"quem mora, mora em algo\" $\\rightarrow$ falso VTI; \"quem está, está em algum lugar\" $\\rightarrow$ falso VTI).\nRegra de Prioridade Analítica: Ao analisar o termo pós-verbal preposicionado, pergunte primeiro se ele possui valor circunstancial (6C + FTP, lugar, instrumento, companhia).\nSe possuir valor circunstancial $\\rightarrow$ É Adjunto Adverbial (termo acessório, não integrante).\nSe for complemento integrante abstrato exigido pela regência sem valor circunstancial $\\rightarrow$ É Objeto Indireto (\"Gosto de música\", \"Aspiramos ao cargo\").(Instrumento vs. OI), (Pegadinha do \"está em\")\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-002 (6C + FTP), TIP-A05-G01-TRANSITIVIDADE-VERBAL-005 (Mantra 5)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo sujeito oculto (elíptico/subentendido), o termo executor existe e é perfeitamente identificável (pela terminação verbal ou pelo contexto textual prévio). No sujeito indeterminado, o termo executor existe, mas o enunciador não pode ou não deseja identificá-lo gramaticalmente.\nQuadro Estrutural Canônico de Sujeitos\n ┬ ┼ ┤ Verbo na 1ª ou 2ª pessoa (Singular ou Plural) SUJEITO OCULTO DESINENCIAL (eu, tu, nós, vós) Verbo na 3ª pessoa do singular isolado SUJEITO OCULTO CONTEXTUAL (busca referente no texto) Verbo na 3ª pessoa do plural COM referente textual prévio SUJEITO OCULTO ANAFÓRICO / ELÍPTICO Verbo na 3ª pessoa do plural SEM referente textual prévio SUJEITO INDETERMINADO (\"Chegaram cedo\") Verbo na 3ª pessoa do singular + 'SE' (P.I.S. / I.I.S.) SUJEITO INDETERMINADO (\"Precisa-se de apoio\") ┴ ┘\nArmadilha Anafórica das Bancas (FGV e Cebraspe)\nNa sequência \"Os pais viajaram. Chegaram cedo.\", o sujeito do verbo chegaram NÃO é indeterminado. Trata-se de Sujeito Oculto Anafórico, pois o referente nominal (\"Os pais\") foi explicitado na oração imediatamente anterior.(3ª pessoa plural com referente anafórico)\nExemplificado por:"
         }
       ]
     },
@@ -455,7 +956,9 @@
               "RULE-IP-A05-G01-001",
               "EXP-IP-A05-G01-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -594,7 +1097,9 @@
               "PROC-A05-G01-TRANSITIVIDADE-VERBAL-001",
               "EXP-IP-A05-G01-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -702,7 +1207,9 @@
               "PROC-A05-G01-TRANSITIVIDADE-VERBAL-002",
               "EXP-IP-A05-G01-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -776,7 +1283,9 @@
               "PROC-A05-G01-TRANSITIVIDADE-VERBAL-003",
               "EXP-IP-A05-G01-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -863,7 +1372,9 @@
               "PROC-A05-G01-TRANSITIVIDADE-VERBAL-004",
               "EXP-IP-A05-G01-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -930,7 +1441,9 @@
               "PROC-A05-G01-TRANSITIVIDADE-VERBAL-005",
               "EXP-IP-A05-G01-PROC-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1004,7 +1517,9 @@
               "PROC-A05-G01-TRANSITIVIDADE-VERBAL-006",
               "EXP-IP-A05-G01-PROC-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1117,7 +1632,9 @@
               "CONTRAST-IP-A05-G01-001",
               "EXP-IP-A05-G01-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1188,7 +1705,9 @@
               "CONTRAST-IP-A05-G01-002",
               "EXP-IP-A05-G01-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1262,7 +1781,9 @@
               "CONTRAST-IP-A05-G01-003",
               "EXP-IP-A05-G01-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1344,7 +1865,9 @@
               "CONTRAST-IP-A05-G01-004",
               "EXP-IP-A05-G01-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1408,7 +1931,9 @@
               "CONTRAST-IP-A05-G01-005",
               "EXP-IP-A05-G01-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1486,7 +2011,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-001",
               "EXP-IP-A05-G01-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1560,7 +2087,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-002",
               "EXP-IP-A05-G01-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1636,7 +2165,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-003",
               "EXP-IP-A05-G01-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1710,7 +2241,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-004",
               "EXP-IP-A05-G01-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1772,7 +2305,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-005",
               "EXP-IP-A05-G01-064"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1846,7 +2381,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-006",
               "EXP-IP-A05-G01-065"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1920,7 +2457,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-007",
               "EXP-IP-A05-G01-066"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1994,7 +2533,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-008",
               "EXP-IP-A05-G01-067"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2056,7 +2597,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-009",
               "EXP-IP-A05-G01-068"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2130,7 +2673,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-010",
               "EXP-IP-A05-G01-069"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2205,7 +2750,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-011",
               "EXP-IP-A05-G01-070"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2279,7 +2826,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-012",
               "EXP-IP-A05-G01-071"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2352,7 +2901,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-013",
               "EXP-IP-A05-G01-072"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2426,7 +2977,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-014",
               "EXP-IP-A05-G01-073"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2499,7 +3052,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-015",
               "EXP-IP-A05-G01-074"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2572,7 +3127,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-016",
               "EXP-IP-A05-G01-075"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2645,7 +3202,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-017",
               "EXP-IP-A05-G01-076"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2719,7 +3278,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-018",
               "EXP-IP-A05-G01-077"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2793,7 +3354,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-019",
               "EXP-IP-A05-G01-078"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2867,7 +3430,9 @@
               "WORKED_EXAMPLE-IP-A05-G01-020",
               "EXP-IP-A05-G01-079"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2917,7 +3482,9 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-001",
               "EXP-IP-A05-G01-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2953,7 +3520,9 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-002",
               "EXP-IP-A05-G01-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2989,7 +3558,9 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-003",
               "EXP-IP-A05-G01-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3025,7 +3596,9 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-004",
               "EXP-IP-A05-G01-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3061,7 +3634,9 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-005",
               "EXP-IP-A05-G01-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3097,7 +3672,9 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-006",
               "EXP-IP-A05-G01-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3133,7 +3710,9 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-007",
               "EXP-IP-A05-G01-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3169,7 +3748,9 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-008",
               "EXP-IP-A05-G01-TRAP-008"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -3206,30 +3787,120 @@
               "WARN-A05-G01-TRANSITIVIDADE-VERBAL-009",
               "EXP-IP-A05-G01-TRAP-009"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Centralidade do Verbo e Quebra do Paradigma Morfossintático**: Definição ou ideia central\nA análise sintática da oração inicia-se obrigatoriamente pela localização e análise do verbo, rompendo com a abordagem morfológica estanque de classes isoladas de palavras. O verbo opera como o núcleo estruturador e relacional de toda a sintaxe oracional.\nExplicação consolidada\nNa metodologia desenvolvida nas aulas, a predicação verbal é tratada como a \"aula zero\" da sintaxe. O verbo não possui função sintática de termo (não é sujeito, objeto ou adjunto), mas é o articulador de todas as funções sintáticas. O candidato deve \"viver cada verbo a seu momento\", abstendo-se de tentar interpretar a oração globalmente de maneira intuitiva. Toda a investigação sintática (identificação de sujeito, complementos e adjuntos) emana das relações estabelecidas a partir do verbo flexionado.\nCritérios de reconhecimento ou aplicação\nLocalize o verbo flexionado no enunciado antes de classificar qualquer substantivo ou pronome.\nNão classifique palavras por intuição semântica abstrata; determine suas funções exclusivamente em relação ao verbo identificado.(Passo a Passo em 5 Etapas)\nExpande:",
-            "**Divisão Macro: Verbos Nocionais (Ação) vs. Relacionais (Ligação/Estado)**: Definição ou ideia central\nNo nível macro da predicação verbal, os verbos da Língua Portuguesa dividem-se em dois grandes grupos: Verbos Nocionais (Significativos / de Ação) e Verbos Relacionais (de Ligação / de Estado).\nExplicação consolidada\nVerbos Nocionais (de Ação / Significativos): Possuem conteúdo semântico pleno e autônomo. Expressam processos, ações ou acontecimentos. Subdividem-se sintaticamente em Intransitivos (VI), Transitivos Diretos (VTD), Transitivos Indiretos (VTI) e Transitivos Diretos e Indiretos (VTDI).\nAção com movimento físico: Ex.: \"Ele corria no parque.\"\nAção estática / sem movimento: Processos fisiológicos ou estados dinâmicos sem deslocamento externo. Ex.: \"Ele dormia profundamente.\" (Verbo nocional de ação, pegadinha clássica da FGV).\nVerbos Relacionais (de Ligação / Sem Noção Própria): Não expressam ação ou processo. Sua única função sintática é intermediar a relação entre o sujeito e uma característica/condição atribuída a ele (o Predicativo do Sujeito), expressando um estado (permanente, passageiro, aparente, continuativo ou mutatório).\nCritérios de reconhecimento ou aplicação\nMantra 1: \"Se o verbo não indicar estado, será de ação.\"\nSe o verbo trouxer conteúdo processual próprio, mesmo sem movimento corporal, ele é Nocional.\nSe o verbo atuar apenas como ponte entre Sujeito e Predicativo, ele é Relacional.(Ação sem movimento)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-001 (Mantra 1)",
-            "**Verbo Intransitivo (VI), Autonomia Sintática e Natureza dos Adjuntos Adverbiais**: Definição ou ideia central\nVerbo intransitivo é aquele que não exige complemento verbal integrante (Objeto Direto ou Indireto) para satisfazer sua estrutura sintática. Ele encerra em si a predicação verbal, podendo vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de termos nominais atributivos (Predicativo do Sujeito).\nExplicação consolidada\nA tradição escolar difundiu o erro conceitual de que o verbo intransitivo \"precisa ter sentido completo e ficar bonito sozinho na frase\". As KBs desconstroem essa ilusão:\nCompletude Sintática vs. Semântica: Sintaticamente, o VI é autossuficiente porque dispensa objetos. Semanticamente, a curiosidade comunicativa humana (denominada metaforicamente por Evanildo Bechara como a \"pergunta do fofoqueiro\": onde? quando? como? por quê?) frequentemente demanda detalhes adverbiais circunstanciais.\nAcessoriedade do Adjunto Adverbial: Termos que expressam circunstância são adjuntos adverbiais (acessórios) e podem ser suprimidos sem quebrar a gramaticalidade nuclear da oração.\nMantra 4: \"Nem sempre o V.I. fica bonito sozinho.\" (Ex.: Em \"Paulo está no hospital\" ou \"Fomos ao clube\", retirar a expressão de lugar soa incompleto ao ouvido, mas sintaticamente o verbo permanece intransitivo porque o termo posposto é um Adjunto Adverbial de Lugar).\nCritérios de reconhecimento ou aplicação\nNunca tampe o verbo para ver se ele \"faz sentido sozinho\".\nIdentifique os termos pós-verbais: se todos forem Adjuntos Adverbiais circunstanciais, o verbo nocional é Intransitivo (VI).(Abandono do teste de tampar)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-003 (Mantra 3), TIP-A05-G01-TRANSITIVIDADE-VERBAL-004 (Mantra 4)\nExemplificado por: , , ,",
-            "**Verbos Transitivos: Direto (VTD), Indireto (VTI) e Bitransitivo (VTDI)**: Definição ou ideia central\nVerbos transitivos são verbos nocionais que \"transitam\", exigindo um ou dois complementos integrantes (Objetos) para satisfazer sua regência obrigatória.\nExplicação consolidada\nTransitivo Direto (VTD): Exige complemento ligado diretamente ao verbo, sem preposição obrigatória (Objeto Direto - OD). Artigos definidos/indefinidos associados ao núcleo do OD não configuram preposição. Ex.: \"Falei a verdade\" (Falei = VTD; a verdade = OD, onde a é artigo).\nTransitivo Indireto (VTI): Exige complemento mediado por preposição obrigatória regida pelo verbo (Objeto Indireto - OI), que não denote mera circunstância adverbial. Ex.: \"Aspiramos ao sucesso\" (Aspiramos = VTI; ao sucesso = OI).\nTransitivo Direto e Indireto / Bitransitivo (VTDI): Exige simultaneamente dois complementos: um direto (não preposicionado) e um indireto (preposicionado). Ex.: \"Comunicou o fato às autoridades\" (o fato = OD; às autoridades = OI); \"Contou-me um amigo uma história exemplar\" (uma história exemplar = OD; me = OI).\nCritérios de reconhecimento ou aplicação\nMantra 2: \"A classificação depende do que vem depois do verbo.\"\nMantra 5: \"Complemento é o que não é adjunto.\"\nExclua primeiro os adjuntos adverbiais; os termos restantes ligados ao verbo sem preposição são OD e com preposição são OI.(Colchetes e Setas)(Confundir instrumento com OI)",
-            "**Verbo de Ligação (VL) e a Semântica dos Estados**: Definição ou ideia central\nO Verbo de Ligação (VL) é um verbo relacional que atua exclusivamente como elo sintático entre o Sujeito e o seu Predicativo, veiculando uma nuance semântica de estado.\nExplicação consolidada\nO verbo de ligação é pedagogicamente apelidado de \"verbo sem noção\" ou \"verbo coitado\" por não possuir conteúdo nocional próprio de ação. Contudo, em bancas exigentes (notadamente a FGV), explora-se a tipologia do estado veiculado:\nEstado Permanente: Característica contínua, inerente ou definidora. Ex.: \"Eu sou feliz\" (verbo ser); \"Aquela estrela no peito é uma predestinação\".\nEstado Passageiro / Momentâneo: Condição temporária ou circunstancial. Ex.: \"Ela está agitada\"; \"Paulo está adoentado\" (verbo estar).\nEstado Continuativo / Permanente: Manutenção contínua de condição. Ex.: \"Permaneciam abertas as listas\"; \"Uma das janelas vivia aberta\" (vivia = permanecia/estava continuamente).\nEstado Aparente: Impressão perceptiva subjetiva. Ex.: \"Ela parece triste\" (verbo parecer).\nMudança de Estado (Mutatório): Transição de uma condição para outra. Ex.: \"José caiu doente\" (caiu = ficou / tornou-se doente).\nCritérios de reconhecimento ou aplicação\nA tradicional lista escolar (ser, estar, ficar, parecer, permanecer, andar, viver, continuar, tornar-se, virar) deve ser relativizada: ela indica verbos com potencial para serem de ligação, mas a confirmação depende da presença real de predicativo no contexto.\nVerbos atípicos como cair ou viver atuam como VL quando equivalem a ficar ou permanecer.\nRelações\nPossui procedimento: (Teste de Substituição por ficar)(A armadilha da lista decorada)",
-            "**Predicativo do Sujeito e a Validação do Verbo de Ligação (Mantra 6)**: Definição ou ideia central\nO Mantra 6 estabelece o critério absoluto de validação do verbo de ligação: um verbo só é classificado como de estado/ligação se houver obrigatoriamente um Predicativo do Sujeito presente na oração.\nExplicação consolidada\nA relação entre Verbo de Ligação, Estado e Predicativo do Sujeito é uma equivalência lógica estrita:\n\\text{Verbo de Ligação (VL)} \\iff \\text{Indicação de Estado} \\iff \\text{Presença de Predicativo do Sujeito}\nSe um verbo constante da lista memorizada surgir sem predicativo (por exemplo, acompanhado apenas de Adjunto Adverbial de Lugar ou Tempo), ele perde o caráter relacional e se converte em verbo nocional (de ação/existência), classificando-se como Verbo Intransitivo (VI).\nDesambiguação Canônica\n\"Eu estou feliz.\" $\\rightarrow$ feliz = Predicativo do Sujeito $\\rightarrow$ estou = Verbo de Ligação (VL).\n\"Eu estou em casa.\" $\\rightarrow$ em casa = Adjunto Adverbial de Lugar $\\rightarrow$ estou = Verbo Intransitivo (VI).\n\"As discussões continuaram pela noite.\" $\\rightarrow$ pela noite = Adjunto Adverbial de Tempo $\\rightarrow$ continuaram = Verbo Intransitivo (VI).\nRelações\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-006 (Mantra 6)(Confundir lugar com estado)",
-            "**Coexistência de Predicativo do Sujeito com Verbos de Ação e o Predicado Verbo-Nominal (Mantra 7)**: Definição ou ideia central\nO Mantra 7 corrige o equívoco de associar o Predicativo do Sujeito unicamente aos Verbos de Ligação: \"O Predicativo do Sujeito pode vir acompanhado de QUALQUER verbo (seja de ação ou de ligação).\"\nExplicação consolidada\nQuando um Predicativo do Sujeito surge associado a um verbo de ação (nocional), ocorrem simultaneamente dois núcleos informativos no predicado: um núcleo verbal (o processo/ação) e um núcleo nominal (o estado do sujeito durante o processo), constituindo a estrutura de Predicado Verbo-Nominal. O verbo mantém integralmente a sua transitividade nocional (VI, VTD, VTI ou VTDI).\n[ VERBO DE AÇÃO (Nocional) ] + [ PREDICATIVO DO SUJEITO ] = [ PREDICADO VERBO-NOMINAL ]\nExemplos da Aula\n\"Ela ligou o ferro silenciosa.\" $\\rightarrow$ ligou = VTD (o ferro = OD); silenciosa = Predicativo do Sujeito.\n\"Impecável, transitava o marido pelo tempo.\" $\\rightarrow$ transitava = VI (pelo tempo = Adj. Adv.); impecável = Predicativo do Sujeito.\n\"Um congressista compareceu à sessão preocupado.\" $\\rightarrow$ compareceu = VI (à sessão = Adj. Adv.); preocupado = Predicativo do Sujeito.\n\"Chegamos alegres.\" $\\rightarrow$ Chegamos = VI (ação de chegar); alegres = Predicativo do Sujeito.\nRelações\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-007 (Mantra 7)(Achar que predicativo exige VL)",
-            "**Distinção Semântico-Morfossintática entre Estado e Modo (Mantra 9)**: Definição ou ideia central\nA confusão entre Estado e Modo induz à classificação equivocada de um Predicativo do Sujeito como Adjunto Adverbial de Modo. A distinção é solucionada morfossintaticamente pelo teste de flexão do Mantra 9.\nQuadro Diagnóstico Comparativo\nCritérios de reconhecimento ou aplicação\nMantra 9: \"Na dúvida, tente flexionar (feminino/plural): caso se flexione, será ADJETIVO (Predicativo), e não ADVÉRBIO! Não confunda MODO (= jeito) com ESTADO.\"\nAplique o teste do \"E Estava\": se mantiver o sentido da oração, trata-se de Predicativo do Sujeito.\nRelações\nPossui procedimento: (Teste do \"E Estava\"), (Teste de Flexão)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-009 (Mantra 9)",
-            "**Predicação e Transitividade em Locuções Verbais (Mantra 8 e Verbo Auxiliar)**: Definição ou ideia central\nEm uma locução verbal, a predicação e a transitividade pertencem exclusivamente ao Verbo Principal (o último verbo da locução). O Verbo Auxiliar não possui predicação própria, atuando apenas no suporte flexional gramatical.\nExplicação consolidada\nMantra 8: \"Na locução verbal, quem manda (tem a predicação) é o V. PRINCIPAL (o último). O auxiliar não tem predicação, só obedece (se flexiona).\"\nEstrutura da Locução: Formada por [Verbo Auxiliar flexionado] + [Verbo Principal em forma nominal: infinitivo, gerúndio ou particípio].\nIntercalação Sintática: Adjuntos adverbiais frequentemente surgem intercalados entre o auxiliar e o principal (ex.: \"Surgiu, [pela esquina], assobiando\"). A intercalação não desfaz a locução verbal.\nClassificação em Questões: Se a banca exigir a classificação isolada do verbo auxiliar, rotula-se como Verbo Auxiliar de Locução Verbal (Código 6). A predicação do conjunto é extraída do verbo principal (assobiando = VI).\nRelações\nPossui procedimento: (Análise de Locuções Verbais)\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-008 (Mantra 8)\nExemplificado por:",
-            "**Distinção entre Adjunto Adverbial (Circunstância) e Objeto Indireto (Complemento)**: Definição ou ideia central\nA presença de uma preposição após o verbo não configura automaticamente um Objeto Indireto. Se o sintagma preposicionado exprime circunstância (lugar, tempo, modo, instrumento, etc.), ele é um Adjunto Adverbial e não afeta a transitividade do verbo como complemento.\nExplicação consolidada\nMuitos erros em provas decorrem de perguntas automatizadas e descontextualizadas feitas ao verbo (ex.: \"quem perfura, perfura algo com algo\" $\\rightarrow$ falso VTDI; \"quem mora, mora em algo\" $\\rightarrow$ falso VTI; \"quem está, está em algum lugar\" $\\rightarrow$ falso VTI).\nRegra de Prioridade Analítica: Ao analisar o termo pós-verbal preposicionado, pergunte primeiro se ele possui valor circunstancial (6C + FTP, lugar, instrumento, companhia).\nSe possuir valor circunstancial $\\rightarrow$ É Adjunto Adverbial (termo acessório, não integrante).\nSe for complemento integrante abstrato exigido pela regência sem valor circunstancial $\\rightarrow$ É Objeto Indireto (\"Gosto de música\", \"Aspiramos ao cargo\").(Instrumento vs. OI), (Pegadinha do \"está em\")\nSintetizado por: TIP-A05-G01-TRANSITIVIDADE-VERBAL-002 (6C + FTP), TIP-A05-G01-TRANSITIVIDADE-VERBAL-005 (Mantra 5)",
-            "**Tipologia do Sujeito: Sujeito Oculto (Desinencial vs. Contextual) vs. Sujeito Indeterminado**: Definição ou ideia central\nNo sujeito oculto (elíptico/subentendido), o termo executor existe e é perfeitamente identificável (pela terminação verbal ou pelo contexto textual prévio). No sujeito indeterminado, o termo executor existe, mas o enunciador não pode ou não deseja identificá-lo gramaticalmente.\nQuadro Estrutural Canônico de Sujeitos\n ┬ ┼ ┤ Verbo na 1ª ou 2ª pessoa (Singular ou Plural) SUJEITO OCULTO DESINENCIAL (eu, tu, nós, vós) Verbo na 3ª pessoa do singular isolado SUJEITO OCULTO CONTEXTUAL (busca referente no texto) Verbo na 3ª pessoa do plural COM referente textual prévio SUJEITO OCULTO ANAFÓRICO / ELÍPTICO Verbo na 3ª pessoa do plural SEM referente textual prévio SUJEITO INDETERMINADO (\"Chegaram cedo\") Verbo na 3ª pessoa do singular + 'SE' (P.I.S. / I.I.S.) SUJEITO INDETERMINADO (\"Precisa-se de apoio\") ┴ ┘\nArmadilha Anafórica das Bancas (FGV e Cebraspe)\nNa sequência \"Os pais viajaram. Chegaram cedo.\", o sujeito do verbo chegaram NÃO é indeterminado. Trata-se de Sujeito Oculto Anafórico, pois o referente nominal (\"Os pais\") foi explicitado na oração imediatamente anterior.(3ª pessoa plural com referente anafórico)\nExemplificado por:"
-          ]
+          "term": "Centralidade do Verbo e Quebra do Paradigma Morfossintático",
+          "shortDefinition": "A análise sintática da oração inicia-se obrigatoriamente pela localização e análise do verbo, rompendo com a abordagem morfológica estanque de classes isoladas de palavras. O verbo opera como o núcleo estruturador e relacional de toda a sintaxe oracional.",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-01"
+          },
+          "operationalUse": "Na metodologia desenvolvida nas aulas, a predicação verbal é tratada como a \"aula zero\" da sintaxe."
+        },
+        {
+          "term": "Divisão Macro: Verbos Nocionais (Ação) vs. Relacionais (Ligação/Estado)",
+          "shortDefinition": "No nível macro da predicação verbal, os verbos da Língua Portuguesa dividem-se em dois grandes grupos: Verbos Nocionais (Significativos / de Ação) e Verbos Relacionais (de Ligação / de Estado).",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-02"
+          }
+        },
+        {
+          "term": "Verbo Intransitivo (VI), Autonomia Sintática e Natureza dos Adjuntos Adverbiais",
+          "shortDefinition": "Verbo intransitivo é aquele que não exige complemento verbal integrante (Objeto Direto ou Indireto) para satisfazer sua estrutura sintática. Ele encerra em si a predicação verbal, podendo vir acompanhado de termos acessórios circunstanciais (Adjuntos Adverbiais) ou de termos nominais atributivos (Predicativo do Sujeito).",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-03"
+          },
+          "operationalUse": "A tradição escolar difundiu o erro conceitual de que o verbo intransitivo \"precisa ter sentido completo e ficar bonito sozinho na frase\"."
+        },
+        {
+          "term": "Verbos Transitivos: Direto (VTD), Indireto (VTI) e Bitransitivo (VTDI)",
+          "shortDefinition": "Verbos transitivos são verbos nocionais que \"transitam\", exigindo um ou dois complementos integrantes (Objetos) para satisfazer sua regência obrigatória.",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-04"
+          }
+        },
+        {
+          "term": "Verbo de Ligação (VL) e a Semântica dos Estados",
+          "shortDefinition": "O Verbo de Ligação (VL) é um verbo relacional que atua exclusivamente como elo sintático entre o Sujeito e o seu Predicativo, veiculando uma nuance semântica de estado.",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-05"
+          },
+          "operationalUse": "O verbo de ligação é pedagogicamente apelidado de \"verbo sem noção\" ou \"verbo coitado\" por não possuir conteúdo nocional próprio de ação."
+        },
+        {
+          "term": "Predicativo do Sujeito e a Validação do Verbo de Ligação (Mantra 6)",
+          "shortDefinition": "O Mantra 6 estabelece o critério absoluto de validação do verbo de ligação: um verbo só é classificado como de estado/ligação se houver obrigatoriamente um Predicativo do Sujeito presente na oração.",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-06"
+          },
+          "operationalUse": "A relação entre Verbo de Ligação, Estado e Predicativo do Sujeito é uma equivalência lógica estrita:"
+        },
+        {
+          "term": "Coexistência de Predicativo do Sujeito com Verbos de Ação e o Predicado Verbo-Nominal (Mantra 7)",
+          "shortDefinition": "O Mantra 7 corrige o equívoco de associar o Predicativo do Sujeito unicamente aos Verbos de Ligação: \"O Predicativo do Sujeito pode vir acompanhado de QUALQUER verbo (seja de ação ou de ligação).\"",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-07"
+          },
+          "operationalUse": "Quando um Predicativo do Sujeito surge associado a um verbo de ação (nocional), ocorrem simultaneamente dois núcleos informativos no predicado: um núcleo verbal (o processo/ação) e um núcleo nominal (o estado do sujeito durante o processo), constituindo a estrutura de Predicado Verbo-Nominal."
+        },
+        {
+          "term": "Distinção Semântico-Morfossintática entre Estado e Modo (Mantra 9)",
+          "shortDefinition": "A confusão entre Estado e Modo induz à classificação equivocada de um Predicativo do Sujeito como Adjunto Adverbial de Modo. A distinção é solucionada morfossintaticamente pelo teste de flexão do Mantra 9.",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-08"
+          }
+        },
+        {
+          "term": "Predicação e Transitividade em Locuções Verbais (Mantra 8 e Verbo Auxiliar)",
+          "shortDefinition": "Em uma locução verbal, a predicação e a transitividade pertencem exclusivamente ao Verbo Principal (o último verbo da locução). O Verbo Auxiliar não possui predicação própria, atuando apenas no suporte flexional gramatical.",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-09"
+          }
+        },
+        {
+          "term": "Distinção entre Adjunto Adverbial (Circunstância) e Objeto Indireto (Complemento)",
+          "shortDefinition": "A presença de uma preposição após o verbo não configura automaticamente um Objeto Indireto. Se o sintagma preposicionado exprime circunstância (lugar, tempo, modo, instrumento, etc.), ele é um Adjunto Adverbial e não afeta a transitividade do verbo como complemento.",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-10"
+          },
+          "operationalUse": "Muitos erros em provas decorrem de perguntas automatizadas e descontextualizadas feitas ao verbo (ex.: \"quem perfura, perfura algo com algo\" $\\rightarrow$ falso VTDI; \"quem mora, mora em algo\" $\\rightarrow$ falso VTI; \"quem está, está em algum lugar\" $\\rightarrow$ falso VTI)."
+        },
+        {
+          "term": "Tipologia do Sujeito: Sujeito Oculto (Desinencial vs. Contextual) vs. Sujeito Indeterminado",
+          "shortDefinition": "No sujeito oculto (elíptico/subentendido), o termo executor existe e é perfeitamente identificável (pela terminação verbal ou pelo contexto textual prévio). No sujeito indeterminado, o termo executor existe, mas o enunciador não pode ou não deseja identificá-lo gramaticalmente.",
+          "detailTarget": {
+            "unitId": "IP-A05-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G01-11"
+          }
         }
       ]
     },
@@ -3311,7 +3982,13 @@
         "confidence": 0.97
       },
       "answerSha256": "76c7c12fc440466a7b5d55fdd03b0eff53e25296d429380099c86bb7cf7d7b2c",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "source_incomplete",
+        "options": [],
+        "reason": "Esta ocorrência foi retirada da sequência praticável porque o comando depende de um destaque tipográfico ausente na fonte. Continue pelas demais questões da unidade.",
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -3383,7 +4060,39 @@
         "confidence": 0.97
       },
       "answerSha256": "e12fa0dfd30bc4d9f35fa526379759897c262d56a5fc88fa025a614af6520ade",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "É inteiramente adequada a correlação entre os tempos e os modos verbais na seguinte\nconstrução:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Não fosse a curiosidade científica, aquele pequeno microscópio não terá entrado na história\npela façanha que propiciara."
+          },
+          {
+            "label": "B",
+            "text": "Caso não tivesse ocorrido o uso do modesto microscópio, a descoberta dos micro-organismos\nhaveria de esperar mais algum tempo."
+          },
+          {
+            "label": "C",
+            "text": "Fora providencial o uso daquele pequeno microscópio para que se venha a descobrir a\nexistência de micro-organismos."
+          },
+          {
+            "label": "D",
+            "text": "Teria sido adiada a revelação dos micro-organismos no caso de aquele cientista não vier a\nutilizar seu microscópio doméstico."
+          },
+          {
+            "label": "E",
+            "text": "Ninguém imaginará que um microscópio tão limitado pudesse ter sido responsável pelo\nachado que então se dera."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -3455,7 +4164,39 @@
         "confidence": 0.97
       },
       "answerSha256": "5d7d9a5c3be03560841b24d49857a8b27a442aa67fc23ecd34e24230f2fdc47a",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "A flexão das formas verbais e a articulação entre seus tempos e modos estão plenamente\nadequadas na frase:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Quem caminhasse pelas grandes cidades virá a constatar que elas contessem muitas surpresas."
+          },
+          {
+            "label": "B",
+            "text": "Numa época em que a velocidade se impuser de forma ainda mais drástica, valerá a pena\nbuscar alternativas."
+          },
+          {
+            "label": "C",
+            "text": "Se ninguém vir a buscar caminhos alternativos, nenhuma possibilidade real de libertação seria\nexplorada."
+          },
+          {
+            "label": "D",
+            "text": "Nosso estilo de vida levará-nos a impasses urbanos que dificilmente encontrariam alguma\nforma de solução."
+          },
+          {
+            "label": "E",
+            "text": "A convicção do poeta acena para a criação nossa de caminhos próprios, da qual advisse um\nnovo prazer de viver."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -3525,7 +4266,39 @@
         "confidence": 0.97
       },
       "answerSha256": "c6a75fb0667f0a530e1635a647d8b535d93f0eea9a881131f77706750f8a8e98",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Transpondo-se para a voz ativa a frase Eficazes sistemas de irrigação teriam sido utilizados pelos\nantigos em suas culturas de cereais, a forma verbal resultante deverá ser",
+        "options": [
+          {
+            "label": "A",
+            "text": "seriam utilizados."
+          },
+          {
+            "label": "B",
+            "text": "teriam utilizado."
+          },
+          {
+            "label": "C",
+            "text": "foram utilizados."
+          },
+          {
+            "label": "D",
+            "text": "utilizaram-se."
+          },
+          {
+            "label": "E",
+            "text": "haveriam de utilizar."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -3597,7 +4370,39 @@
         "confidence": 0.97
       },
       "answerSha256": "c64ced88f802398f5ce05b3326de9c354a394b0cc85b3bb8e6cc8baace3dc5d8",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "“Empresas de cobrança usam técnicas abusivas” (1º parágrafo).\nTranspondo a frase acima para a voz passiva, a forma verbal resultante será:",
+        "options": [
+          {
+            "label": "A",
+            "text": "é usado."
+          },
+          {
+            "label": "B",
+            "text": "foi usado."
+          },
+          {
+            "label": "C",
+            "text": "são usados."
+          },
+          {
+            "label": "D",
+            "text": "foram usadas."
+          },
+          {
+            "label": "E",
+            "text": "são usadas."
+          }
+        ],
+        "answer": "E",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -3669,7 +4474,39 @@
         "confidence": 0.97
       },
       "answerSha256": "8b2173ef877aae970c730ce8835e77ed764ec56ccf21a1e8960eecb1259f7aee",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Ao transpor para a voz passiva a oração permitem a assinatura de contratos e o pagamento de\nimpostos, a forma verbal correspondente será",
+        "options": [
+          {
+            "label": "A",
+            "text": "são permitidas."
+          },
+          {
+            "label": "B",
+            "text": "será permitida."
+          },
+          {
+            "label": "C",
+            "text": "são permitidos."
+          },
+          {
+            "label": "D",
+            "text": "é permitido."
+          },
+          {
+            "label": "E",
+            "text": "serão permitidos."
+          }
+        ],
+        "answer": "C",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -3739,7 +4576,39 @@
         "confidence": 0.97
       },
       "answerSha256": "663957aabc89938c6c5c0d4bd385d41a46d1ff4a86fb30ae6bfac0512ab9f2c0",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Essas visitas dos turistas “em busca de distrações” desnaturam o significado real desses museus e\nmonumentos.\nTranspondo-se a frase acima para a voz passiva, a forma verbal resultante será:",
+        "options": [
+          {
+            "label": "A",
+            "text": "desnaturam-se."
+          },
+          {
+            "label": "B",
+            "text": "é desnaturado."
+          },
+          {
+            "label": "C",
+            "text": "são desnaturadas."
+          },
+          {
+            "label": "D",
+            "text": "foi desnaturada."
+          },
+          {
+            "label": "E",
+            "text": "tenham desnaturado."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -3877,7 +4746,39 @@
         "confidence": 0.97
       },
       "answerSha256": "23e03c1192371aaa126dd01833766905fde03847c377587572da782f4024fe9b",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "A frase que NÃO admite transposição para a voz passiva encontra-se em:",
+        "options": [
+          {
+            "label": "A",
+            "text": "... o acesso das obras a um status estético que as exalta."
+          },
+          {
+            "label": "B",
+            "text": "... elas protestam contra os fatos da realidade, os poderes..."
+          },
+          {
+            "label": "C",
+            "text": "Muitas obras antigas celebram vitórias militares e conquistas..."
+          },
+          {
+            "label": "D",
+            "text": "O museu, por retirar as obras de sua origem..."
+          },
+          {
+            "label": "E",
+            "text": "... a crítica mais comum contra o museu apresenta-o..."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -3947,7 +4848,39 @@
         "confidence": 0.995
       },
       "answerSha256": "e090cf577584333b4b8316fdaf2af7a5ad419522c84ab9470bff419c8ede1727",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "...Esta [a discussão democrática do orçamento] tem sido uma prática, sobretudo no nível do\npoder local, que tem ajudado na construção de uma democracia participativa.\nA correção gramatical, a coerência e o sentido do texto CG2A1AAA seriam mantidos caso a\nforma verbal “tem ajudado” fosse substituída por",
+        "options": [
+          {
+            "label": "A",
+            "text": "vem ajudando."
+          },
+          {
+            "label": "B",
+            "text": "ajudou."
+          },
+          {
+            "label": "C",
+            "text": "ajudaria."
+          },
+          {
+            "label": "D",
+            "text": "vinha ajudando."
+          },
+          {
+            "label": "E",
+            "text": "pode ajudar."
+          }
+        ],
+        "answer": "A",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "1.0.0",

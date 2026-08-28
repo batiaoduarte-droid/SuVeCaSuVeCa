@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A05-G04",
     "lessonId": "A05",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A05-G04",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A05-G04-001"
+          }
         }
       ]
     },
@@ -98,8 +103,87 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA preparação estratégica para questões de vozes verbais em concursos públicos exige reconhecer previamente a tipologia da pergunta elaborada pela banca examinadora, evitando desperdício de tempo com transpolações desnecessárias.\nExplicação Detalhada\nAs bancas organizadoras dividem suas cobranças em três modelos fundamentais:\nModelo 1 — Identificação da Voz Verbal: A questão apresenta uma oração e exige que o candidato reconheça se o verbo está na Voz Ativa, Voz Passiva Analítica, Voz Passiva Sintética (Pronominal) ou Voz Reflexiva.\nModelo 2 — Possibilidade de Mudança de Voz Verbal: A questão avalia se uma frase na voz ativa admite ou não transposição para a passiva. O candidato deve apenas inspecionar a transitividade do verbo (busca de VTD ou VTDI), dispensando a execução da transposição de todas as alternativas.\nModelo 3 — Reescritura de Vozes Verbais: Exige a conversão sintática efetiva entre as vozes. É estruturado em blocos de complexidade:\nBloco 3.1: Voz Ativa $\\rightarrow$ Voz Passiva Analítica.\nBloco 3.2: Voz Passiva Analítica $\\rightarrow$ Voz Ativa (desde locuções simples de 2 verbos até estruturas complexas com 4 ou 5 verbos).\nBloco 3.3: Voz Passiva Sintética $\\rightarrow$ Voz Ativa / Passiva Analítica.\n\"Na primeira parte do material... você vai aprender a identificar as vozes do verbo... Depois vem a segunda parte... que é o segundo modelo de questão... em que as bancas só querem saber se a frase... admite a transposição para a passiva... O terceiro modelo de questão são as questões de reescritura...\" (013: )\nAnotação manuscrita na tela inicial:\nIdentificação da Voz Verbal\nPossibilidade de mudança de Voz Verbal\nReescritura de Vozes Verbais\nV. ATIVA V.P. Analítica\nVoz P. Analítica V. ATIVA\nVoz Passiva Sintética V. ATIVA / V.P. AnalíticaEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A preparação estratégica para questões de vozes verbais em concursos públicos exige reconhecer previamente a tipologia da pergunta elaborada pela banca examinadora, evitando desperdício de tempo com transpolações desnecessárias."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "As bancas organizadoras dividem suas cobranças em três modelos fundamentais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Modelo 1 — Identificação da Voz Verbal: A questão apresenta uma oração e exige que o candidato reconheça se o verbo está na Voz Ativa, Voz Passiva Analítica, Voz Passiva Sintética (Pronominal) ou Voz Reflexiva.",
+                "Modelo 2 — Possibilidade de Mudança de Voz Verbal: A questão avalia se uma frase na voz ativa admite ou não transposição para a passiva. O candidato deve apenas inspecionar a transitividade do verbo (busca de VTD ou VTDI), dispensando a execução da transposição de todas as alternativas.",
+                "Modelo 3 — Reescritura de Vozes Verbais: Exige a conversão sintática efetiva entre as vozes. É estruturado em blocos de complexidade:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Bloco 3.1: Voz Ativa $\\rightarrow$ Voz Passiva Analítica.",
+                "Bloco 3.2: Voz Passiva Analítica $\\rightarrow$ Voz Ativa (desde locuções simples de 2 verbos até estruturas complexas com 4 ou 5 verbos).",
+                "Bloco 3.3: Voz Passiva Sintética $\\rightarrow$ Voz Ativa / Passiva Analítica."
+              ]
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Na primeira parte do material... você vai aprender a identificar as vozes do verbo... Depois vem a segunda parte... que é o segundo modelo de questão... em que as bancas só querem saber se a frase... admite a transposição para a passiva... O terceiro modelo de questão são as questões de reescritura...\" (013: )"
+            },
+            {
+              "type": "paragraph",
+              "text": "Anotação manuscrita na tela inicial:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificação da Voz Verbal",
+                "Possibilidade de mudança de Voz Verbal",
+                "Reescritura de Vozes Verbais"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "V. ATIVA → V.P. Analítica",
+                "Voz P. Analítica → V. ATIVA",
+                "Voz Passiva Sintética → V. ATIVA / V.P. Analítica"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
+                  "targetTitle": "Conceito de Voz Verbal e Classificação Geral Tripartite",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001",
+                  "targetTitle": "Procedimento de Identificação da Voz Verbal a Partir do Sujeito",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +196,71 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nVoz verbal é o mecanismo flexional e sintático que indica a relação funcional que se estabelece entre o verbo e o seu sujeito gramatical, revelando se o sujeito pratica, sofre ou pratica e sofre a ação verbal.\nExplicação Detalhada\nNas provas de concursos, adota-se rigorosamente a divisão tripartite:\nVoz Ativa: Sujeito Agente (executa a ação).\nVoz Passiva: Sujeito Paciente (recebe a ação). Subdivide-se em Analítica e Sintética.\nVoz Reflexiva: Sujeito Agente e Paciente (executa e recebe a ação simultaneamente).\nMenções a uma suposta \"voz recíproca\" são academicamente isoladas e sem aplicação nas provas de vozes verbais. A reciprocidade é abordada exclusivamente na morfossintaxe do pronome SE (pronome recíproco).\n\"Voz verbal é a relação que ocorre entre sujeito e verbo... São três as vozes do verbo: ativa, passiva e reflexiva. Há autores que gostam de falar de uma quarta voz aí, que seria a voz recíproca. Só que... isso não tem aplicabilidade nas provas...\" (013: )\nSlide 1 exibe: \"Voz verbal é a relação que ocorre entre sujeito e verbo. São três as vozes do verbo — Ativa, Passiva e Reflexiva.\" (com seta interligando \"sujeito\" e \"verbo\").Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Voz verbal é o mecanismo flexional e sintático que indica a relação funcional que se estabelece entre o verbo e o seu sujeito gramatical, revelando se o sujeito pratica, sofre ou pratica e sofre a ação verbal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nas provas de concursos, adota-se rigorosamente a divisão tripartite:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Voz Ativa: Sujeito Agente (executa a ação).",
+                "Voz Passiva: Sujeito Paciente (recebe a ação). Subdivide-se em Analítica e Sintética.",
+                "Voz Reflexiva: Sujeito Agente e Paciente (executa e recebe a ação simultaneamente)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Menções a uma suposta \"voz recíproca\" são academicamente isoladas e sem aplicação nas provas de vozes verbais. A reciprocidade é abordada exclusivamente na morfossintaxe do pronome SE (pronome recíproco)."
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"Voz verbal é a relação que ocorre entre sujeito e verbo... São três as vozes do verbo: ativa, passiva e reflexiva. Há autores que gostam de falar de uma quarta voz aí, que seria a voz recíproca. Só que... isso não tem aplicabilidade nas provas...\" (013: )"
+            },
+            {
+              "type": "paragraph",
+              "text": "Slide 1 exibe: \"Voz verbal é a relação que ocorre entre sujeito e verbo. São três as vozes do verbo — Ativa, Passiva e Reflexiva.\" (com seta interligando \"sujeito\" e \"verbo\")."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003",
+                  "targetTitle": "Voz Ativa e Sujeito Agente",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
+                  "targetTitle": "Voz Passiva Analítica e Estrutura da Locução Verbal",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-008",
+                  "targetTitle": "Voz Reflexiva e a Coincidência de Referente entre Sujeito e Complemento (Padrão CEBRASPE)",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +273,67 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA Voz Ativa configura-se quando o sujeito gramatical da oração é o executor ou agente da ação verbal expressa pelo verbo.\nExplicação Detalhada\nPara identificar a voz ativa:\nEncontra-se o verbo principal.\nPergunta-se pelo sujeito: \"Quem é que [verbo]?\".\nVerificando-se que o sujeito sintático executa ativamente a predicação, confirma-se a voz ativa.\nA voz ativa abrange orações com verbos transitivos diretos, transitivos indiretos, intransitivos e até orações com predicado nominal/verbos de ligação (desde que não possuam locução passiva).\nExemplos\n\"Todos compreenderam a questão.\" (Verbo: compreenderam; Sujeito Agente: Todos).Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Voz Ativa configura-se quando o sujeito gramatical da oração é o executor ou agente da ação verbal expressa pelo verbo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para identificar a voz ativa:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Encontra-se o verbo principal.",
+                "Pergunta-se pelo sujeito: \"Quem é que [verbo]?\".",
+                "Verificando-se que o sujeito sintático executa ativamente a predicação, confirma-se a voz ativa."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A voz ativa abrange orações com verbos transitivos diretos, transitivos indiretos, intransitivos e até orações com predicado nominal/verbos de ligação (desde que não possuam locução passiva)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Todos compreenderam a questão.\" (Verbo: compreenderam; Sujeito Agente: Todos)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
+                  "targetTitle": "Conceito de Voz Verbal e Classificação Geral Tripartite",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G04-001",
+                  "targetTitle": "Exemplos Estruturais Fundamentais (material de origem)",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +346,51 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA Voz Passiva Analítica é a estrutura passiva expandida em que o sujeito é paciente (sofre a ação) e a ação verbal é expressa por uma locução verbal composta por Verbo Auxiliar (prioritariamente SER) + Verbo Principal no Particípio.\nExplicação Detalhada\nMnemônico: \"Analítica Aumenta\". Ganha complexidade e volume verbal pelo acréscimo do verbo auxiliar.\nFórmula:\n\\text{Verbo Auxiliar (SER / estar / ficar)} + \\text{Verbo Principal no Particípio}\nAuxiliar Canônico na FGV: A Fundação Getulio Vargas adota postura restritiva, reconhecendo estritamente o verbo SER como o auxiliar de passiva analítica nas suas provas.\nConcordância do Particípio: O particípio flexiona-se obrigatoriamente em gênero e número para concordar com o sujeito paciente (\"A questão foi compreendida\" / \"Os alertas foram dados\").TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001, ORAL-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Voz Passiva Analítica é a estrutura passiva expandida em que o sujeito é paciente (sofre a ação) e a ação verbal é expressa por uma locução verbal composta por Verbo Auxiliar (prioritariamente SER) + Verbo Principal no Particípio."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mnemônico: \"Analítica Aumenta\". Ganha complexidade e volume verbal pelo acréscimo do verbo auxiliar.",
+                "Fórmula:"
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Verbo Auxiliar (SER / estar / ficar)} + \\text{Verbo Principal no Particípio}"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Auxiliar Canônico na FGV: A Fundação Getulio Vargas adota postura restritiva, reconhecendo estritamente o verbo SER como o auxiliar de passiva analítica nas suas provas.",
+                "Concordância do Particípio: O particípio flexiona-se obrigatoriamente em gênero e número para concordar com o sujeito paciente (\"A questão foi compreendida\" / \"Os alertas foram dados\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005",
+                  "targetTitle": "Agente da Passiva: Preposições, Indeterminação e Pegadinha do Cebraspe",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +403,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nO Agente da Passiva é o termo sintático que executa a ação sofrida pelo sujeito paciente na voz passiva analítica. É regido pela preposição por (ou contrações pelo/pela/pelos/pelas) e, excepcionalmente, pela preposição de. O agente sempre existe no plano semântico-lógico, podendo estar explícito ou implícito na oração.\nExplicação Detalhada\nAgente Determinado (Explícito): Mencionado diretamente na oração (ex.: \"por todos\" em \"A questão foi compreendida por todos\").\nAgente Indeterminado (Implícito / Oculto): Não é citado textualmente na frase, mas existe na lógica factual (ex.: \"O alerta foi dado\" $\\rightarrow$ alguém deu o alerta).\nPegadinha Clássica do Cebraspe: O examinador afirma que em orações sem agente expresso \"não existe agente da passiva\". A assertiva é ERRADA, pois o agente da passiva existe conceitualmente, encontrando-se apenas indeterminado/oculto.Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Agente da Passiva é o termo sintático que executa a ação sofrida pelo sujeito paciente na voz passiva analítica. É regido pela preposição por (ou contrações pelo/pela/pelos/pelas) e, excepcionalmente, pela preposição de. O agente sempre existe no plano semântico-lógico, podendo estar explícito ou implícito na oração."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Agente Determinado (Explícito): Mencionado diretamente na oração (ex.: \"por todos\" em \"A questão foi compreendida por todos\").",
+                "Agente Indeterminado (Implícito / Oculto): Não é citado textualmente na frase, mas existe na lógica factual (ex.: \"O alerta foi dado\" $\\rightarrow$ alguém deu o alerta).",
+                "Pegadinha Clássica do Cebraspe: O examinador afirma que em orações sem agente expresso \"não existe agente da passiva\". A assertiva é ERRADA, pois o agente da passiva existe conceitualmente, encontrando-se apenas indeterminado/oculto."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
+                  "targetTitle": "Voz Passiva Analítica e Estrutura da Locução Verbal",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001",
+                  "targetTitle": "Pegadinha do Cebraspe: Inexistência do Agente da Passiva",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +456,69 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA Voz Passiva Sintética (ou Pronominal) é a estrutura passiva econômica formada obrigatoriamente por um Verbo Transitivo Direto (VTD) ou Verbo Transitivo Direto e Indireto (VTDI) associado ao pronome SE exercendo a função de Partícula Apassivadora (CPA / PA).\nExplicação Detalhada\nMnemônico: \"Sintética Diminui / Economiza\".\nFatores de Economia Sintática:\nNão apresenta o verbo auxiliar SER.\nNão costuma mencionar o agente da passiva.\nAs Duas Verificações Obrigatórias:\nChecagem da Transitividade: O verbo com o SE é VTD ou VTDI? Se for VTI, VI ou VL, não forma passiva sintética.\nTeste de Transposição Analítica: A frase equivale semanticamente e admite conversão direta para a passiva analítica com o verbo SER (\"Vende-se terreno\" $\\rightarrow$ \"Terreno é vendido\")?Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Voz Passiva Sintética (ou Pronominal) é a estrutura passiva econômica formada obrigatoriamente por um Verbo Transitivo Direto (VTD) ou Verbo Transitivo Direto e Indireto (VTDI) associado ao pronome SE exercendo a função de Partícula Apassivadora (CPA / PA)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mnemônico: \"Sintética Diminui / Economiza\".",
+                "Fatores de Economia Sintática:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Não apresenta o verbo auxiliar SER.",
+                "Não costuma mencionar o agente da passiva."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "As Duas Verificações Obrigatórias:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Checagem da Transitividade: O verbo com o SE é VTD ou VTDI? Se for VTI, VI ou VL, não forma passiva sintética.",
+                "Teste de Transposição Analítica: A frase equivale semanticamente e admite conversão direta para a passiva analítica com o verbo SER (\"Vende-se terreno\" $\\rightarrow$ \"Terreno é vendido\")?"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-007",
+                  "targetTitle": "O Mantra da Voz Passiva e a Concordância Verbal Obrigatória",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
+                  "targetTitle": "Método das Duas Verificações para Validar a Passiva Sintética",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -182,8 +531,92 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nNa voz passiva, o termo que exercia a função de objeto direto na voz ativa é transformado em sujeito paciente. Portanto, não existe objeto direto dentro de uma oração na voz passiva.\nExplicação Detalhada\nO Mantra:\n\\text{MANTRA: Na Voz Passiva NÃO existe Objeto Direto, e sim Sujeito Paciente!}\nConsequência Direta na Concordância Verbal:\nComo o termo não preposicionado após o verbo + SE é o sujeito paciente, o verbo deve concordar obrigatoriamente em número e pessoa com esse termo.\nSingular: \"Vende-se terreno.\" (terreno = sujeito paciente singular $\\rightarrow$ vende no singular).\nPlural: \"Vendem-se terrenos.\" (terrenos = sujeito paciente plural $\\rightarrow$ vendem no plural).\nErro popular de placas: \"Aluga-se casas\" (Incorreto na norma culta) $\\rightarrow$ Correto: \"Alugam-se casas\" (casas são alugadas).\nComportamento do Objeto Indireto em Verbos VTDI:\nO objeto indireto preposicionado não sofre alteração na transposição passiva sintética, mantendo sua regência.\nExemplo: \"Deu-se às poesias o nome de Primeiros Cantos.\"\nDeu: VTDI\nse: Partícula Apassivadora\nàs poesias: Objeto Indireto\no nome de Primeiros Cantos: Sujeito Paciente singular.QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na voz passiva, o termo que exercia a função de objeto direto na voz ativa é transformado em sujeito paciente. Portanto, não existe objeto direto dentro de uma oração na voz passiva."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O Mantra:"
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{MANTRA: Na Voz Passiva NÃO existe Objeto Direto, e sim Sujeito Paciente!}"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Consequência Direta na Concordância Verbal:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Como o termo não preposicionado após o verbo + SE é o sujeito paciente, o verbo deve concordar obrigatoriamente em número e pessoa com esse termo.",
+                "Singular: \"Vende-se terreno.\" (terreno = sujeito paciente singular $\\rightarrow$ vende no singular).",
+                "Plural: \"Vendem-se terrenos.\" (terrenos = sujeito paciente plural $\\rightarrow$ vendem no plural).",
+                "Erro popular de placas: \"Aluga-se casas\" (Incorreto na norma culta) $\\rightarrow$ Correto: \"Alugam-se casas\" (casas são alugadas)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Comportamento do Objeto Indireto em Verbos VTDI:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O objeto indireto preposicionado não sofre alteração na transposição passiva sintética, mantendo sua regência.",
+                "Exemplo: \"Deu-se às poesias o nome de Primeiros Cantos.\"",
+                "Deu: VTDI",
+                "se: Partícula Apassivadora",
+                "às poesias: Objeto Indireto",
+                "o nome de Primeiros Cantos: Sujeito Paciente singular."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-006",
+                  "targetTitle": "Voz Passiva Sintética (Pronominal) e Critérios de Identificação",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
+                  "targetTitle": "Confusão entre Objeto Direto e Sujeito Paciente na Passiva Sintética",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003",
+                  "targetTitle": "Erro Frequente de Concordância Verbal (\"Aluga-se casas\")",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -196,8 +629,57 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA Voz Reflexiva ocorre quando o sujeito sintático pratica e recebe simultaneamente a ação expressa pelo verbo. A banca Cebraspe conceitua textualmente essa voz afirmando que sujeito e complemento possuem o mesmo referente.\nExplicação Detalhada\nNa análise da sentença \"Ele se cortou\":\nSujeito que pratica a ação: Ele.\nComplemento que sofre a ação: se (pronome reflexivo referindo-se a Ele).\nO agente e o paciente coincidem na mesma pessoa do discurso (mesmeidade de referente).\nExemplos\n\"Ele se cortou.\" (Cortou a si mesmo).\n\"Arrumou-se para o jantar.\" (Arrumou a si mesmo/a).TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003, QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A Voz Reflexiva ocorre quando o sujeito sintático pratica e recebe simultaneamente a ação expressa pelo verbo. A banca Cebraspe conceitua textualmente essa voz afirmando que sujeito e complemento possuem o mesmo referente."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na análise da sentença \"Ele se cortou\":"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Sujeito que pratica a ação: Ele.",
+                "Complemento que sofre a ação: se (pronome reflexivo referindo-se a Ele).",
+                "O agente e o paciente coincidem na mesma pessoa do discurso (mesmeidade de referente)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Ele se cortou.\" (Cortou a si mesmo).",
+                "\"Arrumou-se para o jantar.\" (Arrumou a si mesmo/a)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
+                  "targetTitle": "Conceito de Voz Verbal e Classificação Geral Tripartite",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -210,8 +692,68 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA classificação de uma oração na voz passiva obedece estritamente à presença de uma das duas únicas estruturas sintáticas passivas consagradas. Sentimentos semânticos de passividade, inércia ou recepção não tornam a frase passiva se ela estiver estruturada em voz ativa.\nExplicação Detalhada\nAs duas únicas estruturas formais de voz passiva são:\nPassiva Analítica: Verbo Auxiliar (SER/estar/ficar) + Particípio.\nPassiva Sintética: VTD/VTDI + Pronome Apassivador (SE).\nCaso uma frase não contenha nenhuma dessas duas marcas sintáticas, ela é categorizada como Voz Ativa.\nO Caso do Verbo \"Receber\": Na frase \"A comunidade científica recebeu o projeto com ceticismo\", o verbo receber induz o candidato a pensar em passividade semântica. No entanto, sintaticamente, A comunidade científica é sujeito agente em oração de Voz Ativa.QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-006"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A classificação de uma oração na voz passiva obedece estritamente à presença de uma das duas únicas estruturas sintáticas passivas consagradas. Sentimentos semânticos de passividade, inércia ou recepção não tornam a frase passiva se ela estiver estruturada em voz ativa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "As duas únicas estruturas formais de voz passiva são:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Passiva Analítica: Verbo Auxiliar (SER/estar/ficar) + Particípio.",
+                "Passiva Sintética: VTD/VTDI + Pronome Apassivador (SE)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Caso uma frase não contenha nenhuma dessas duas marcas sintáticas, ela é categorizada como Voz Ativa."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O Caso do Verbo \"Receber\": Na frase \"A comunidade científica recebeu o projeto com ceticismo\", o verbo receber induz o candidato a pensar em passividade semântica. No entanto, sintaticamente, A comunidade científica é sujeito agente em oração de Voz Ativa."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
+                  "targetTitle": "Voz Passiva Analítica e Estrutura da Locução Verbal",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-006",
+                  "targetTitle": "Voz Passiva Sintética (Pronominal) e Critérios de Identificação",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
+                  "targetTitle": "Armadilha Semântica do Verbo \"Receber\" e Sujeitos Inanimados",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -224,8 +766,45 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nO Agente da Passiva exige regência preposicional por por (pelo/pela) ou de. Expressões iniciadas por via (= por meio de) desempenham função sintática de Adjunto Adverbial de Meio, deixando o agente da passiva indeterminado.\nExplicação Detalhada\nAnálise de \"Os resultados foram divulgados via TV\":\nOs resultados: Sujeito Paciente.\nforam divulgados: Locução verbal de voz passiva analítica.\nvia TV: Equivale semanticamente a \"por meio da TV\". Sintaticamente, trata-se de Adjunto Adverbial de Meio. O agente da passiva (quem fez a divulgação) não foi explicitado, permanecendo indeterminado.\nContraste: Se a frase fosse \"Os resultados foram divulgados pela TV\", o termo \"pela TV\" (preposição por + a) atuaria como Agente da Passiva.TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004, (Frase 5)\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-007, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-006"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Agente da Passiva exige regência preposicional por por (pelo/pela) ou de. Expressões iniciadas por via (= por meio de) desempenham função sintática de Adjunto Adverbial de Meio, deixando o agente da passiva indeterminado."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Análise de \"Os resultados foram divulgados via TV\":"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Os resultados: Sujeito Paciente.",
+                "foram divulgados: Locução verbal de voz passiva analítica.",
+                "via TV: Equivale semanticamente a \"por meio da TV\". Sintaticamente, trata-se de Adjunto Adverbial de Meio. O agente da passiva (quem fez a divulgação) não foi explicitado, permanecendo indeterminado.",
+                "Contraste: Se a frase fosse \"Os resultados foram divulgados pela TV\", o termo \"pela TV\" (preposição por + a) atuaria como Agente da Passiva."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005",
+                  "targetTitle": "Agente da Passiva: Preposições, Indeterminação e Pegadinha do Cebraspe",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -238,56 +817,69 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA presença isolada do verbo SER ou de outros verbos de ligação acompanhados de adjetivo predicativo caracteriza Voz Ativa. Para configurar Voz Passiva Analítica, o verbo SER deve ser obrigatoriamente auxiliar de um particípio.\nExplicação Detalhada\nVerbo de Ligação + Adjetivo = Voz Ativa:\n\"A Bíblia é uma coleção de lendas...\" $\\rightarrow$ Verbo é atua como verbo de ligação isolado ligando o sujeito ao predicativo. Voz Ativa.\n\"A cozinha era antiga e escura.\" $\\rightarrow$ antiga e escura são adjetivos. Sujeito gramatical inanimado em oração de Voz Ativa.\nVerbo de Ligação + Particípio = Voz Passiva Analítica:\n\"A cozinha era reformada aos poucos.\" $\\rightarrow$ reformada é particípio do verbo reformar. Locução passiva analítica (era reformada).Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-007, VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-008"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença isolada do verbo SER ou de outros verbos de ligação acompanhados de adjetivo predicativo caracteriza Voz Ativa. Para configurar Voz Passiva Analítica, o verbo SER deve ser obrigatoriamente auxiliar de um particípio."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo de Ligação + Adjetivo = Voz Ativa:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"A Bíblia é uma coleção de lendas...\" $\\rightarrow$ Verbo é atua como verbo de ligação isolado ligando o sujeito ao predicativo. Voz Ativa.",
+                "\"A cozinha era antiga e escura.\" $\\rightarrow$ antiga e escura são adjetivos. Sujeito gramatical inanimado em oração de Voz Ativa."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo de Ligação + Particípio = Voz Passiva Analítica:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"A cozinha era reformada aos poucos.\" $\\rightarrow$ reformada é particípio do verbo reformar. Locução passiva analítica (era reformada)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
+                  "targetTitle": "Voz Passiva Analítica e Estrutura da Locução Verbal",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005",
+                  "targetTitle": "O Falso Amigo do Verbo \"SER\" Isolado",
+                  "targetUnitId": "IP-A05-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA preparação estratégica para questões de vozes verbais em concursos públicos exige reconhecer previamente a tipologia da pergunta elaborada pela banca examinadora, evitando desperdício de tempo com transpolações desnecessárias.\nExplicação Detalhada\nAs bancas organizadoras dividem suas cobranças em três modelos fundamentais:\nModelo 1 — Identificação da Voz Verbal: A questão apresenta uma oração e exige que o candidato reconheça se o verbo está na Voz Ativa, Voz Passiva Analítica, Voz Passiva Sintética (Pronominal) ou Voz Reflexiva.\nModelo 2 — Possibilidade de Mudança de Voz Verbal: A questão avalia se uma frase na voz ativa admite ou não transposição para a passiva. O candidato deve apenas inspecionar a transitividade do verbo (busca de VTD ou VTDI), dispensando a execução da transposição de todas as alternativas.\nModelo 3 — Reescritura de Vozes Verbais: Exige a conversão sintática efetiva entre as vozes. É estruturado em blocos de complexidade:\nBloco 3.1: Voz Ativa $\\rightarrow$ Voz Passiva Analítica.\nBloco 3.2: Voz Passiva Analítica $\\rightarrow$ Voz Ativa (desde locuções simples de 2 verbos até estruturas complexas com 4 ou 5 verbos).\nBloco 3.3: Voz Passiva Sintética $\\rightarrow$ Voz Ativa / Passiva Analítica.\n\"Na primeira parte do material... você vai aprender a identificar as vozes do verbo... Depois vem a segunda parte... que é o segundo modelo de questão... em que as bancas só querem saber se a frase... admite a transposição para a passiva... O terceiro modelo de questão são as questões de reescritura...\" (013: )\nAnotação manuscrita na tela inicial:\nIdentificação da Voz Verbal\nPossibilidade de mudança de Voz Verbal\nReescritura de Vozes Verbais\nV. ATIVA V.P. Analítica\nVoz P. Analítica V. ATIVA\nVoz Passiva Sintética V. ATIVA / V.P. AnalíticaEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nVoz verbal é o mecanismo flexional e sintático que indica a relação funcional que se estabelece entre o verbo e o seu sujeito gramatical, revelando se o sujeito pratica, sofre ou pratica e sofre a ação verbal.\nExplicação Detalhada\nNas provas de concursos, adota-se rigorosamente a divisão tripartite:\nVoz Ativa: Sujeito Agente (executa a ação).\nVoz Passiva: Sujeito Paciente (recebe a ação). Subdivide-se em Analítica e Sintética.\nVoz Reflexiva: Sujeito Agente e Paciente (executa e recebe a ação simultaneamente).\nMenções a uma suposta \"voz recíproca\" são academicamente isoladas e sem aplicação nas provas de vozes verbais. A reciprocidade é abordada exclusivamente na morfossintaxe do pronome SE (pronome recíproco).\n\"Voz verbal é a relação que ocorre entre sujeito e verbo... São três as vozes do verbo: ativa, passiva e reflexiva. Há autores que gostam de falar de uma quarta voz aí, que seria a voz recíproca. Só que... isso não tem aplicabilidade nas provas...\" (013: )\nSlide 1 exibe: \"Voz verbal é a relação que ocorre entre sujeito e verbo. São três as vozes do verbo — Ativa, Passiva e Reflexiva.\" (com seta interligando \"sujeito\" e \"verbo\").Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA Voz Ativa configura-se quando o sujeito gramatical da oração é o executor ou agente da ação verbal expressa pelo verbo.\nExplicação Detalhada\nPara identificar a voz ativa:\nEncontra-se o verbo principal.\nPergunta-se pelo sujeito: \"Quem é que [verbo]?\".\nVerificando-se que o sujeito sintático executa ativamente a predicação, confirma-se a voz ativa.\nA voz ativa abrange orações com verbos transitivos diretos, transitivos indiretos, intransitivos e até orações com predicado nominal/verbos de ligação (desde que não possuam locução passiva).\nExemplos\n\"Todos compreenderam a questão.\" (Verbo: compreenderam; Sujeito Agente: Todos).Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA Voz Passiva Analítica é a estrutura passiva expandida em que o sujeito é paciente (sofre a ação) e a ação verbal é expressa por uma locução verbal composta por Verbo Auxiliar (prioritariamente SER) + Verbo Principal no Particípio.\nExplicação Detalhada\nMnemônico: \"Analítica Aumenta\". Ganha complexidade e volume verbal pelo acréscimo do verbo auxiliar.\nFórmula:\n\\text{Verbo Auxiliar (SER / estar / ficar)} + \\text{Verbo Principal no Particípio}\nAuxiliar Canônico na FGV: A Fundação Getulio Vargas adota postura restritiva, reconhecendo estritamente o verbo SER como o auxiliar de passiva analítica nas suas provas.\nConcordância do Particípio: O particípio flexiona-se obrigatoriamente em gênero e número para concordar com o sujeito paciente (\"A questão foi compreendida\" / \"Os alertas foram dados\").TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001, ORAL-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nO Agente da Passiva é o termo sintático que executa a ação sofrida pelo sujeito paciente na voz passiva analítica. É regido pela preposição por (ou contrações pelo/pela/pelos/pelas) e, excepcionalmente, pela preposição de. O agente sempre existe no plano semântico-lógico, podendo estar explícito ou implícito na oração.\nExplicação Detalhada\nAgente Determinado (Explícito): Mencionado diretamente na oração (ex.: \"por todos\" em \"A questão foi compreendida por todos\").\nAgente Indeterminado (Implícito / Oculto): Não é citado textualmente na frase, mas existe na lógica factual (ex.: \"O alerta foi dado\" $\\rightarrow$ alguém deu o alerta).\nPegadinha Clássica do Cebraspe: O examinador afirma que em orações sem agente expresso \"não existe agente da passiva\". A assertiva é ERRADA, pois o agente da passiva existe conceitualmente, encontrando-se apenas indeterminado/oculto.Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA Voz Passiva Sintética (ou Pronominal) é a estrutura passiva econômica formada obrigatoriamente por um Verbo Transitivo Direto (VTD) ou Verbo Transitivo Direto e Indireto (VTDI) associado ao pronome SE exercendo a função de Partícula Apassivadora (CPA / PA).\nExplicação Detalhada\nMnemônico: \"Sintética Diminui / Economiza\".\nFatores de Economia Sintática:\nNão apresenta o verbo auxiliar SER.\nNão costuma mencionar o agente da passiva.\nAs Duas Verificações Obrigatórias:\nChecagem da Transitividade: O verbo com o SE é VTD ou VTDI? Se for VTI, VI ou VL, não forma passiva sintética.\nTeste de Transposição Analítica: A frase equivale semanticamente e admite conversão direta para a passiva analítica com o verbo SER (\"Vende-se terreno\" $\\rightarrow$ \"Terreno é vendido\")?Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nNa voz passiva, o termo que exercia a função de objeto direto na voz ativa é transformado em sujeito paciente. Portanto, não existe objeto direto dentro de uma oração na voz passiva.\nExplicação Detalhada\nO Mantra:\n\\text{MANTRA: Na Voz Passiva NÃO existe Objeto Direto, e sim Sujeito Paciente!}\nConsequência Direta na Concordância Verbal:\nComo o termo não preposicionado após o verbo + SE é o sujeito paciente, o verbo deve concordar obrigatoriamente em número e pessoa com esse termo.\nSingular: \"Vende-se terreno.\" (terreno = sujeito paciente singular $\\rightarrow$ vende no singular).\nPlural: \"Vendem-se terrenos.\" (terrenos = sujeito paciente plural $\\rightarrow$ vendem no plural).\nErro popular de placas: \"Aluga-se casas\" (Incorreto na norma culta) $\\rightarrow$ Correto: \"Alugam-se casas\" (casas são alugadas).\nComportamento do Objeto Indireto em Verbos VTDI:\nO objeto indireto preposicionado não sofre alteração na transposição passiva sintética, mantendo sua regência.\nExemplo: \"Deu-se às poesias o nome de Primeiros Cantos.\"\nDeu: VTDI\nse: Partícula Apassivadora\nàs poesias: Objeto Indireto\no nome de Primeiros Cantos: Sujeito Paciente singular.QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA Voz Reflexiva ocorre quando o sujeito sintático pratica e recebe simultaneamente a ação expressa pelo verbo. A banca Cebraspe conceitua textualmente essa voz afirmando que sujeito e complemento possuem o mesmo referente.\nExplicação Detalhada\nNa análise da sentença \"Ele se cortou\":\nSujeito que pratica a ação: Ele.\nComplemento que sofre a ação: se (pronome reflexivo referindo-se a Ele).\nO agente e o paciente coincidem na mesma pessoa do discurso (mesmeidade de referente).\nExemplos\n\"Ele se cortou.\" (Cortou a si mesmo).\n\"Arrumou-se para o jantar.\" (Arrumou a si mesmo/a).TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003, QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA classificação de uma oração na voz passiva obedece estritamente à presença de uma das duas únicas estruturas sintáticas passivas consagradas. Sentimentos semânticos de passividade, inércia ou recepção não tornam a frase passiva se ela estiver estruturada em voz ativa.\nExplicação Detalhada\nAs duas únicas estruturas formais de voz passiva são:\nPassiva Analítica: Verbo Auxiliar (SER/estar/ficar) + Particípio.\nPassiva Sintética: VTD/VTDI + Pronome Apassivador (SE).\nCaso uma frase não contenha nenhuma dessas duas marcas sintáticas, ela é categorizada como Voz Ativa.\nO Caso do Verbo \"Receber\": Na frase \"A comunidade científica recebeu o projeto com ceticismo\", o verbo receber induz o candidato a pensar em passividade semântica. No entanto, sintaticamente, A comunidade científica é sujeito agente em oração de Voz Ativa.QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-006"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nO Agente da Passiva exige regência preposicional por por (pelo/pela) ou de. Expressões iniciadas por via (= por meio de) desempenham função sintática de Adjunto Adverbial de Meio, deixando o agente da passiva indeterminado.\nExplicação Detalhada\nAnálise de \"Os resultados foram divulgados via TV\":\nOs resultados: Sujeito Paciente.\nforam divulgados: Locução verbal de voz passiva analítica.\nvia TV: Equivale semanticamente a \"por meio da TV\". Sintaticamente, trata-se de Adjunto Adverbial de Meio. O agente da passiva (quem fez a divulgação) não foi explicitado, permanecendo indeterminado.\nContraste: Se a frase fosse \"Os resultados foram divulgados pela TV\", o termo \"pela TV\" (preposição por + a) atuaria como Agente da Passiva.TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004, (Frase 5)\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-007, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-006"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA presença isolada do verbo SER ou de outros verbos de ligação acompanhados de adjetivo predicativo caracteriza Voz Ativa. Para configurar Voz Passiva Analítica, o verbo SER deve ser obrigatoriamente auxiliar de um particípio.\nExplicação Detalhada\nVerbo de Ligação + Adjetivo = Voz Ativa:\n\"A Bíblia é uma coleção de lendas...\" $\\rightarrow$ Verbo é atua como verbo de ligação isolado ligando o sujeito ao predicativo. Voz Ativa.\n\"A cozinha era antiga e escura.\" $\\rightarrow$ antiga e escura são adjetivos. Sujeito gramatical inanimado em oração de Voz Ativa.\nVerbo de Ligação + Particípio = Voz Passiva Analítica:\n\"A cozinha era reformada aos poucos.\" $\\rightarrow$ reformada é particípio do verbo reformar. Locução passiva analítica (era reformada).Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-007, VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-008"
         }
       ]
     },
@@ -390,7 +982,9 @@
               "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001",
               "EXP-IP-A05-G04-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -446,7 +1040,9 @@
               "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
               "EXP-IP-A05-G04-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -564,7 +1160,9 @@
               "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003",
               "EXP-IP-A05-G04-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -718,7 +1316,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-001",
               "EXP-IP-A05-G04-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -767,7 +1367,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-002",
               "EXP-IP-A05-G04-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -810,7 +1412,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-003",
               "EXP-IP-A05-G04-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -853,7 +1457,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-004",
               "EXP-IP-A05-G04-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -896,7 +1502,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-005",
               "EXP-IP-A05-G04-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -939,7 +1547,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-006",
               "EXP-IP-A05-G04-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -982,7 +1592,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-007",
               "EXP-IP-A05-G04-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1031,7 +1643,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-008",
               "EXP-IP-A05-G04-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1074,7 +1688,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-009",
               "EXP-IP-A05-G04-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1117,7 +1733,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-010",
               "EXP-IP-A05-G04-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1160,7 +1778,9 @@
               "WORKED_EXAMPLE-IP-A05-G04-011",
               "EXP-IP-A05-G04-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1210,7 +1830,9 @@
               "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001",
               "EXP-IP-A05-G04-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1246,7 +1868,9 @@
               "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
               "EXP-IP-A05-G04-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1282,7 +1906,9 @@
               "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003",
               "EXP-IP-A05-G04-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1318,7 +1944,9 @@
               "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
               "EXP-IP-A05-G04-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1354,30 +1982,120 @@
               "WARN-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005",
               "EXP-IP-A05-G04-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Estrutura do Tópico Vozes Verbais e Mapeamento dos Três Modelos de Questões de Prova**: Definição ou Ideia Central\nA preparação estratégica para questões de vozes verbais em concursos públicos exige reconhecer previamente a tipologia da pergunta elaborada pela banca examinadora, evitando desperdício de tempo com transpolações desnecessárias.\nExplicação Detalhada\nAs bancas organizadoras dividem suas cobranças em três modelos fundamentais:\nModelo 1 — Identificação da Voz Verbal: A questão apresenta uma oração e exige que o candidato reconheça se o verbo está na Voz Ativa, Voz Passiva Analítica, Voz Passiva Sintética (Pronominal) ou Voz Reflexiva.\nModelo 2 — Possibilidade de Mudança de Voz Verbal: A questão avalia se uma frase na voz ativa admite ou não transposição para a passiva. O candidato deve apenas inspecionar a transitividade do verbo (busca de VTD ou VTDI), dispensando a execução da transposição de todas as alternativas.\nModelo 3 — Reescritura de Vozes Verbais: Exige a conversão sintática efetiva entre as vozes. É estruturado em blocos de complexidade:\nBloco 3.1: Voz Ativa $\\rightarrow$ Voz Passiva Analítica.\nBloco 3.2: Voz Passiva Analítica $\\rightarrow$ Voz Ativa (desde locuções simples de 2 verbos até estruturas complexas com 4 ou 5 verbos).\nBloco 3.3: Voz Passiva Sintética $\\rightarrow$ Voz Ativa / Passiva Analítica.\n\"Na primeira parte do material... você vai aprender a identificar as vozes do verbo... Depois vem a segunda parte... que é o segundo modelo de questão... em que as bancas só querem saber se a frase... admite a transposição para a passiva... O terceiro modelo de questão são as questões de reescritura...\" (013: )\nAnotação manuscrita na tela inicial:\nIdentificação da Voz Verbal\nPossibilidade de mudança de Voz Verbal\nReescritura de Vozes Verbais\nV. ATIVA V.P. Analítica\nVoz P. Analítica V. ATIVA\nVoz Passiva Sintética V. ATIVA / V.P. AnalíticaEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001",
-            "**Conceito de Voz Verbal e Classificação Geral Tripartite**: Definição ou Ideia Central\nVoz verbal é o mecanismo flexional e sintático que indica a relação funcional que se estabelece entre o verbo e o seu sujeito gramatical, revelando se o sujeito pratica, sofre ou pratica e sofre a ação verbal.\nExplicação Detalhada\nNas provas de concursos, adota-se rigorosamente a divisão tripartite:\nVoz Ativa: Sujeito Agente (executa a ação).\nVoz Passiva: Sujeito Paciente (recebe a ação). Subdivide-se em Analítica e Sintética.\nVoz Reflexiva: Sujeito Agente e Paciente (executa e recebe a ação simultaneamente).\nMenções a uma suposta \"voz recíproca\" são academicamente isoladas e sem aplicação nas provas de vozes verbais. A reciprocidade é abordada exclusivamente na morfossintaxe do pronome SE (pronome recíproco).\n\"Voz verbal é a relação que ocorre entre sujeito e verbo... São três as vozes do verbo: ativa, passiva e reflexiva. Há autores que gostam de falar de uma quarta voz aí, que seria a voz recíproca. Só que... isso não tem aplicabilidade nas provas...\" (013: )\nSlide 1 exibe: \"Voz verbal é a relação que ocorre entre sujeito e verbo. São três as vozes do verbo — Ativa, Passiva e Reflexiva.\" (com seta interligando \"sujeito\" e \"verbo\").Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
-            "**Voz Ativa e Sujeito Agente**: Definição ou Ideia Central\nA Voz Ativa configura-se quando o sujeito gramatical da oração é o executor ou agente da ação verbal expressa pelo verbo.\nExplicação Detalhada\nPara identificar a voz ativa:\nEncontra-se o verbo principal.\nPergunta-se pelo sujeito: \"Quem é que [verbo]?\".\nVerificando-se que o sujeito sintático executa ativamente a predicação, confirma-se a voz ativa.\nA voz ativa abrange orações com verbos transitivos diretos, transitivos indiretos, intransitivos e até orações com predicado nominal/verbos de ligação (desde que não possuam locução passiva).\nExemplos\n\"Todos compreenderam a questão.\" (Verbo: compreenderam; Sujeito Agente: Todos).Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
-            "**Voz Passiva Analítica e Estrutura da Locução Verbal**: Definição ou Ideia Central\nA Voz Passiva Analítica é a estrutura passiva expandida em que o sujeito é paciente (sofre a ação) e a ação verbal é expressa por uma locução verbal composta por Verbo Auxiliar (prioritariamente SER) + Verbo Principal no Particípio.\nExplicação Detalhada\nMnemônico: \"Analítica Aumenta\". Ganha complexidade e volume verbal pelo acréscimo do verbo auxiliar.\nFórmula:\n\\text{Verbo Auxiliar (SER / estar / ficar)} + \\text{Verbo Principal no Particípio}\nAuxiliar Canônico na FGV: A Fundação Getulio Vargas adota postura restritiva, reconhecendo estritamente o verbo SER como o auxiliar de passiva analítica nas suas provas.\nConcordância do Particípio: O particípio flexiona-se obrigatoriamente em gênero e número para concordar com o sujeito paciente (\"A questão foi compreendida\" / \"Os alertas foram dados\").TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001, ORAL-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003",
-            "**Agente da Passiva: Preposições, Indeterminação e Pegadinha do Cebraspe**: Definição ou Ideia Central\nO Agente da Passiva é o termo sintático que executa a ação sofrida pelo sujeito paciente na voz passiva analítica. É regido pela preposição por (ou contrações pelo/pela/pelos/pelas) e, excepcionalmente, pela preposição de. O agente sempre existe no plano semântico-lógico, podendo estar explícito ou implícito na oração.\nExplicação Detalhada\nAgente Determinado (Explícito): Mencionado diretamente na oração (ex.: \"por todos\" em \"A questão foi compreendida por todos\").\nAgente Indeterminado (Implícito / Oculto): Não é citado textualmente na frase, mas existe na lógica factual (ex.: \"O alerta foi dado\" $\\rightarrow$ alguém deu o alerta).\nPegadinha Clássica do Cebraspe: O examinador afirma que em orações sem agente expresso \"não existe agente da passiva\". A assertiva é ERRADA, pois o agente da passiva existe conceitualmente, encontrando-se apenas indeterminado/oculto.Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
-            "**Voz Passiva Sintética (Pronominal) e Critérios de Identificação**: Definição ou Ideia Central\nA Voz Passiva Sintética (ou Pronominal) é a estrutura passiva econômica formada obrigatoriamente por um Verbo Transitivo Direto (VTD) ou Verbo Transitivo Direto e Indireto (VTDI) associado ao pronome SE exercendo a função de Partícula Apassivadora (CPA / PA).\nExplicação Detalhada\nMnemônico: \"Sintética Diminui / Economiza\".\nFatores de Economia Sintática:\nNão apresenta o verbo auxiliar SER.\nNão costuma mencionar o agente da passiva.\nAs Duas Verificações Obrigatórias:\nChecagem da Transitividade: O verbo com o SE é VTD ou VTDI? Se for VTI, VI ou VL, não forma passiva sintética.\nTeste de Transposição Analítica: A frase equivale semanticamente e admite conversão direta para a passiva analítica com o verbo SER (\"Vende-se terreno\" $\\rightarrow$ \"Terreno é vendido\")?Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
-            "**O Mantra da Voz Passiva e a Concordância Verbal Obrigatória**: Definição ou Ideia Central\nNa voz passiva, o termo que exercia a função de objeto direto na voz ativa é transformado em sujeito paciente. Portanto, não existe objeto direto dentro de uma oração na voz passiva.\nExplicação Detalhada\nO Mantra:\n\\text{MANTRA: Na Voz Passiva NÃO existe Objeto Direto, e sim Sujeito Paciente!}\nConsequência Direta na Concordância Verbal:\nComo o termo não preposicionado após o verbo + SE é o sujeito paciente, o verbo deve concordar obrigatoriamente em número e pessoa com esse termo.\nSingular: \"Vende-se terreno.\" (terreno = sujeito paciente singular $\\rightarrow$ vende no singular).\nPlural: \"Vendem-se terrenos.\" (terrenos = sujeito paciente plural $\\rightarrow$ vendem no plural).\nErro popular de placas: \"Aluga-se casas\" (Incorreto na norma culta) $\\rightarrow$ Correto: \"Alugam-se casas\" (casas são alugadas).\nComportamento do Objeto Indireto em Verbos VTDI:\nO objeto indireto preposicionado não sofre alteração na transposição passiva sintética, mantendo sua regência.\nExemplo: \"Deu-se às poesias o nome de Primeiros Cantos.\"\nDeu: VTDI\nse: Partícula Apassivadora\nàs poesias: Objeto Indireto\no nome de Primeiros Cantos: Sujeito Paciente singular.QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-001\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003",
-            "**Voz Reflexiva e a Coincidência de Referente entre Sujeito e Complemento (Padrão CEBRASPE)**: Definição ou Ideia Central\nA Voz Reflexiva ocorre quando o sujeito sintático pratica e recebe simultaneamente a ação expressa pelo verbo. A banca Cebraspe conceitua textualmente essa voz afirmando que sujeito e complemento possuem o mesmo referente.\nExplicação Detalhada\nNa análise da sentença \"Ele se cortou\":\nSujeito que pratica a ação: Ele.\nComplemento que sofre a ação: se (pronome reflexivo referindo-se a Ele).\nO agente e o paciente coincidem na mesma pessoa do discurso (mesmeidade de referente).\nExemplos\n\"Ele se cortou.\" (Cortou a si mesmo).\n\"Arrumou-se para o jantar.\" (Arrumou a si mesmo/a).TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-003, QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004",
-            "**Rigidez Estrutural da Voz Passiva vs. Ilusões Semânticas (O Caso do Verbo \"Receber\")**: Definição ou Ideia Central\nA classificação de uma oração na voz passiva obedece estritamente à presença de uma das duas únicas estruturas sintáticas passivas consagradas. Sentimentos semânticos de passividade, inércia ou recepção não tornam a frase passiva se ela estiver estruturada em voz ativa.\nExplicação Detalhada\nAs duas únicas estruturas formais de voz passiva são:\nPassiva Analítica: Verbo Auxiliar (SER/estar/ficar) + Particípio.\nPassiva Sintética: VTD/VTDI + Pronome Apassivador (SE).\nCaso uma frase não contenha nenhuma dessas duas marcas sintáticas, ela é categorizada como Voz Ativa.\nO Caso do Verbo \"Receber\": Na frase \"A comunidade científica recebeu o projeto com ceticismo\", o verbo receber induz o candidato a pensar em passividade semântica. No entanto, sintaticamente, A comunidade científica é sujeito agente em oração de Voz Ativa.QUOTE-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-005\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-006",
-            "**Distinção entre Agente da Passiva e Adjunto Adverbial de Meio**: Definição ou Ideia Central\nO Agente da Passiva exige regência preposicional por por (pelo/pela) ou de. Expressões iniciadas por via (= por meio de) desempenham função sintática de Adjunto Adverbial de Meio, deixando o agente da passiva indeterminado.\nExplicação Detalhada\nAnálise de \"Os resultados foram divulgados via TV\":\nOs resultados: Sujeito Paciente.\nforam divulgados: Locução verbal de voz passiva analítica.\nvia TV: Equivale semanticamente a \"por meio da TV\". Sintaticamente, trata-se de Adjunto Adverbial de Meio. O agente da passiva (quem fez a divulgação) não foi explicitado, permanecendo indeterminado.\nContraste: Se a frase fosse \"Os resultados foram divulgados pela TV\", o termo \"pela TV\" (preposição por + a) atuaria como Agente da Passiva.TIP-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-004, (Frase 5)\nEvidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-007, MARK-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-006",
-            "**Distinção entre Verbo de Ligação Isolado (Voz Ativa) e Voz Passiva Analítica**: Definição ou Ideia Central\nA presença isolada do verbo SER ou de outros verbos de ligação acompanhados de adjetivo predicativo caracteriza Voz Ativa. Para configurar Voz Passiva Analítica, o verbo SER deve ser obrigatoriamente auxiliar de um particípio.\nExplicação Detalhada\nVerbo de Ligação + Adjetivo = Voz Ativa:\n\"A Bíblia é uma coleção de lendas...\" $\\rightarrow$ Verbo é atua como verbo de ligação isolado ligando o sujeito ao predicativo. Voz Ativa.\n\"A cozinha era antiga e escura.\" $\\rightarrow$ antiga e escura são adjetivos. Sujeito gramatical inanimado em oração de Voz Ativa.\nVerbo de Ligação + Particípio = Voz Passiva Analítica:\n\"A cozinha era reformada aos poucos.\" $\\rightarrow$ reformada é particípio do verbo reformar. Locução passiva analítica (era reformada).Evidenciado visualmente por: VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-007, VIS-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-008"
-          ]
+          "term": "Estrutura do Tópico Vozes Verbais e Mapeamento dos Três Modelos de Questões de Prova",
+          "shortDefinition": "A preparação estratégica para questões de vozes verbais em concursos públicos exige reconhecer previamente a tipologia da pergunta elaborada pela banca examinadora, evitando desperdício de tempo com transpolações desnecessárias.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-01"
+          },
+          "operationalUse": "As bancas organizadoras dividem suas cobranças em três modelos fundamentais:"
+        },
+        {
+          "term": "Conceito de Voz Verbal e Classificação Geral Tripartite",
+          "shortDefinition": "Voz verbal é o mecanismo flexional e sintático que indica a relação funcional que se estabelece entre o verbo e o seu sujeito gramatical, revelando se o sujeito pratica, sofre ou pratica e sofre a ação verbal.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-02"
+          },
+          "operationalUse": "Nas provas de concursos, adota-se rigorosamente a divisão tripartite:"
+        },
+        {
+          "term": "Voz Ativa e Sujeito Agente",
+          "shortDefinition": "A Voz Ativa configura-se quando o sujeito gramatical da oração é o executor ou agente da ação verbal expressa pelo verbo.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-03"
+          },
+          "operationalUse": "Para identificar a voz ativa:"
+        },
+        {
+          "term": "Voz Passiva Analítica e Estrutura da Locução Verbal",
+          "shortDefinition": "A Voz Passiva Analítica é a estrutura passiva expandida em que o sujeito é paciente (sofre a ação) e a ação verbal é expressa por uma locução verbal composta por Verbo Auxiliar (prioritariamente SER) + Verbo Principal no Particípio.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-04"
+          }
+        },
+        {
+          "term": "Agente da Passiva: Preposições, Indeterminação e Pegadinha do Cebraspe",
+          "shortDefinition": "O Agente da Passiva é o termo sintático que executa a ação sofrida pelo sujeito paciente na voz passiva analítica. É regido pela preposição por (ou contrações pelo/pela/pelos/pelas) e, excepcionalmente, pela preposição de. O agente sempre existe no plano semântico-lógico, podendo estar explícito ou implícito na oração.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-05"
+          }
+        },
+        {
+          "term": "Voz Passiva Sintética (Pronominal) e Critérios de Identificação",
+          "shortDefinition": "A Voz Passiva Sintética (ou Pronominal) é a estrutura passiva econômica formada obrigatoriamente por um Verbo Transitivo Direto (VTD) ou Verbo Transitivo Direto e Indireto (VTDI) associado ao pronome SE exercendo a função de Partícula Apassivadora (CPA / PA).",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-06"
+          }
+        },
+        {
+          "term": "O Mantra da Voz Passiva e a Concordância Verbal Obrigatória",
+          "shortDefinition": "Na voz passiva, o termo que exercia a função de objeto direto na voz ativa é transformado em sujeito paciente. Portanto, não existe objeto direto dentro de uma oração na voz passiva.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-07"
+          }
+        },
+        {
+          "term": "Voz Reflexiva e a Coincidência de Referente entre Sujeito e Complemento (Padrão CEBRASPE)",
+          "shortDefinition": "A Voz Reflexiva ocorre quando o sujeito sintático pratica e recebe simultaneamente a ação expressa pelo verbo. A banca Cebraspe conceitua textualmente essa voz afirmando que sujeito e complemento possuem o mesmo referente.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-08"
+          },
+          "operationalUse": "Na análise da sentença \"Ele se cortou\":"
+        },
+        {
+          "term": "Rigidez Estrutural da Voz Passiva vs. Ilusões Semânticas (O Caso do Verbo \"Receber\")",
+          "shortDefinition": "A classificação de uma oração na voz passiva obedece estritamente à presença de uma das duas únicas estruturas sintáticas passivas consagradas. Sentimentos semânticos de passividade, inércia ou recepção não tornam a frase passiva se ela estiver estruturada em voz ativa.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-09"
+          },
+          "operationalUse": "As duas únicas estruturas formais de voz passiva são:"
+        },
+        {
+          "term": "Distinção entre Agente da Passiva e Adjunto Adverbial de Meio",
+          "shortDefinition": "O Agente da Passiva exige regência preposicional por por (pelo/pela) ou de. Expressões iniciadas por via (= por meio de) desempenham função sintática de Adjunto Adverbial de Meio, deixando o agente da passiva indeterminado.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-10"
+          },
+          "operationalUse": "Análise de \"Os resultados foram divulgados via TV\":"
+        },
+        {
+          "term": "Distinção entre Verbo de Ligação Isolado (Voz Ativa) e Voz Passiva Analítica",
+          "shortDefinition": "A presença isolada do verbo SER ou de outros verbos de ligação acompanhados de adjetivo predicativo caracteriza Voz Ativa. Para configurar Voz Passiva Analítica, o verbo SER deve ser obrigatoriamente auxiliar de um particípio.",
+          "detailTarget": {
+            "unitId": "IP-A05-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G04-11"
+          }
         }
       ]
     },
@@ -1465,7 +2183,39 @@
         "confidence": 0.97
       },
       "answerSha256": "c4a7872c8c94d160feacd3f1a35be0c9bf4d4dce88390b9e607848d7ab6a60fe",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Há construção na voz passiva e adequada articulação entre os tempos verbais na frase:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Os que apreciarem as instalações, no futuro, talvez poderiam emprestar-lhes o sentido que\nhoje não parecem ter."
+          },
+          {
+            "label": "B",
+            "text": "Ao serem visitadas, as instalações costumam impressionar o público que se deixa levar pela\nsignificação que o próprio autor lhes atribui."
+          },
+          {
+            "label": "C",
+            "text": "Se fosse para levar a sério a materialidade das instalações, nenhuma delas necessita da\njustificativa a ser dada pelo criador."
+          },
+          {
+            "label": "D",
+            "text": "Nunca a linguagem das grandes obras de arte teria necessidade de alguma explicação que\nvenha a se tornar indispensável."
+          },
+          {
+            "label": "E",
+            "text": "Por mais que nos esforcemos para perscrutar o sentido de uma instalação, este sempre\ndependeria das razões alegadas pelo autor."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -1590,7 +2340,39 @@
         "confidence": 0.97
       },
       "answerSha256": "b3c81d274ad95a9ae82ffcf030f881daf6ab04d880b97452beb8ef0fc0804e53",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Qual das seguintes formas verbais admite conversão para a voz passiva?",
+        "options": [
+          {
+            "label": "A",
+            "text": "a tecnologia era a indústria mais legal"
+          },
+          {
+            "label": "B",
+            "text": "as redes promovem aumento"
+          },
+          {
+            "label": "C",
+            "text": "redes sociais levam a interações frágeis"
+          },
+          {
+            "label": "D",
+            "text": "adolescentes estão menos dispostos"
+          },
+          {
+            "label": "E",
+            "text": "dispostos a sair"
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     }
   ]
 }

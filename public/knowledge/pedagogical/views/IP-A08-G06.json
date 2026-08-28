@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A08-G06",
     "lessonId": "A08",
     "title": "Pontuação e Efeitos de Sentido",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A08-G06",
@@ -47,61 +48,722 @@
     "explanation": {
       "groups": [
         {
-          "groupId": "GRP-01",
-          "title": "Como a Pontuação Altera Radicalmente o Sentido",
-          "pedagogicalGoal": "Analisar pares mínimos em que a vírgula altera completamente o valor proposicional.",
+          "groupId": "GRP-A08-G06-CANONICAL-01",
+          "title": "Conjunção \"E\" Polissêmica: Valor Conclusivo/Adversativo e Pontuação Facultativa",
+          "conceptRefs": [
+            "KB-A08-G06-001"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "comparison_matrix",
-              "title": "Pares Mínimos de Pontuação e Sentido",
-              "columns": [
-                "Frase com Pontuação A",
-                "Sentido A",
-                "Frase com Pontuação B",
-                "Sentido B"
-              ],
-              "rows": [
-                [
-                  "Não vou desistir.",
-                  "Recusa terminante de desistir (vai continuar)",
-                  "Não, vou desistir.",
-                  "Confirmação de que vai desistir agora"
-                ],
-                [
-                  "Perdão impossível, quebrar a pena.",
-                  "O réu deve ser punido (sem perdão)",
-                  "Perdão, impossível quebrar a pena.",
-                  "O réu foi perdoado (pena mantida intacta)"
-                ],
-                [
-                  "Os soldados cansados recuaram.",
-                  "Apenas os soldados que estavam cansados recuaram (Restritivo)",
-                  "Os soldados, cansados, recuaram.",
-                  "Todos os soldados estavam cansados e todos recuaram (Explicativo)"
-                ],
-                [
-                  "Ele comeu tudo que podia.",
-                  "Ele comeu aquilo que estava ao seu alcance",
-                  "Ele comeu, tudo que podia.",
-                  "Construção enfática com quebra de ritmo"
-                ]
-              ],
-              "text": "A colocação da vírgula altera as fronteiras de escopo dos operadores de negação e qualificação."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A conjunção coordenativa \"e\", quando conecta orações de mesmo sujeito com valor puramente aditivo, não admite vírgula segundo a norma culta estrita. No entanto, quando adquire valor semântico polissêmico — seja de conclusão (equivalente a portanto, por isso, logo) ou de adversidade (equivalente a mas, porém) —, o emprego da vírgula imediatamente anterior passa a ser plenamente legítimo e facultativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No período examinado pela VUNESP (\"Chegou muito atrasado à reunião [,] e não conseguiu se inteirar...\"), o sujeito de ambas as orações é rigorosamente idêntico (ele). Em se tratando de simples adição de fatos, a pontuação seria proscrita. Contudo, o fato de o sujeito não conseguir se inteirar dos acontecimentos constitui uma consequência ou conclusão lógica de haver chegado atrasado. O conector \"e\" atua, portanto, com carga semântica conclusiva. Nessas circunstâncias, a inclusão ou a omissão da vírgula antes de \"e\" não fere a norma-padrão."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique se as orações coordenadas compartilham o mesmo sujeito gramatical.",
+                "Teste a substituição mental da conjunção \"e\" por portanto ou mas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se a substituição mantiver o sentido lógico do período com valor consecutivo/conclusivo ou contrastivo, a vírgula é facultativa.",
+                "Se o conector expressar soma pura e linear de eventos sem mudança de sujeito, a vírgula permanece proibida."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Com vírgula (Correto - valor conclusivo): \"Chegou muito atrasado à reunião, e não conseguiu se inteirar das novas medidas...\"",
+                "Sem vírgula (Correto - valor conclusivo): \"Chegou muito atrasado à reunião e não conseguiu se inteirar das novas medidas...\"",
+                "Contraexemplo (Adição pura com mesmo sujeito): \"Chegou cedo, e sentou na primeira fileira.\" (Incorreto na norma culta estrita)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-001",
+                  "targetTitle": "Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A08-G06-003",
+                  "targetTitle": "Segmentos Intercalados e a Simetria das Vírgulas Casadas",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
         {
-          "groupId": "canonical-table-coverage",
-          "title": "Quadros canônicos complementares",
-          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
-          "semanticKind": "canonical_table_coverage",
+          "groupId": "GRP-A08-G06-CANONICAL-02",
+          "title": "Adjunto Adverbial no Final do Período em Ordem Direta",
+          "conceptRefs": [
+            "KB-A08-G06-002"
+          ],
+          "semanticKind": "concept_focus",
           "blocks": [
             {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O adjunto adverbial posicionado ao término da oração ou do período sintático ocupa sua posição canônica na ordem direta da língua portuguesa (Sujeito + Verbo + Complementos + Adjunto Adverbial). Nessa posição, o emprego da vírgula é puramente facultativo, independentemente de o adjunto ser de curta ou longa extensão."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na análise da Questão 22 (IBFC) sobre os versos poéticos (\"Foi há muitos e muitos anos já,/ Num reino de ao pé do mar.\"), a locução Num reino de ao pé do mar atua como adjunto adverbial de lugar posicionado no encerramento da frase. Estando na ordem direta ao final, a vírgula antes da locução é opcional, de modo que a assertiva da banca que justificava o sinal pela presença de adjunto adverbial mostrou-se inteiramente procedente."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Localize o adjunto adverbial (expressão com valor circunstancial de tempo, lugar, modo, causa, etc.).",
+                "Verifique sua posição sintática: se estiver ao final da oração principal, após os termos essenciais e integrantes, a vírgula que o precede é opcional (facultativa)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A08-G06-003",
+                  "targetTitle": "Segmentos Intercalados e a Simetria das Vírgulas Casadas",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-002",
+                  "targetTitle": "Questão 22 (IBFC - Pref. São Gonçalo do Amarante - RN / Agente Administrativo)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-03",
+          "title": "Segmentos Intercalados e a Simetria das Vírgulas Casadas",
+          "conceptRefs": [
+            "KB-A08-G06-003"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Orações subordinadas adverbiais, adjuntos adverbiais ou expressões explicativas que se encontrem deslocados e inseridos no interior da oração principal (intercalados) exigem isolamento por pontuação simétrica bilateral obrigatória (\"vírgulas casadas\" ou travessões duplos), delimitando com exatidão onde o segmento circunstancial se inicia e onde se encerra."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No período \"...portanto, como pegou o bonde andando, optou por permanecer calado...\", a oração como pegou o bonde andando expressa circunstância de causa (já que pegou o bonde andando). Estando intercalada entre a conjunção conclusiva portanto e o verbo principal optou, o uso de duas vírgulas é compulsório. A omissão de qualquer uma das vírgulas quebra a simetria sintática e anula a correção do texto. Da mesma forma, em estruturas oracionais longas (como na Questão 38 da Cebraspe), a retirada de travessões que isolam uma oração intercalada causal exige a inserção correspondente de vírgulas de fechamento e abertura."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique o conector circunstancial (como, quando, embora, caso, devido a) no meio da oração principal.",
+                "Delimite o início e o término exato da oração intercalada.",
+                "Certifique-se de que há pontuação no início E no fim do segmento (duas vírgulas, dois travessões ou parênteses).",
+                "Aplique o teste de supressão (PROC-A08-G06-001): a leitura da frase ignorando o bloco intercalado deve manter a integridade sintática da oração principal."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-001",
+                  "targetTitle": "Omissão Unilateral em Vírgulas Casadas",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-004",
+                  "targetTitle": "Pegadinha da \"Supressão Pura\" de Sinais de Intercalação",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G06-001",
+                  "targetTitle": "Teste de Supressão para Vírgulas Casadas e Parênteses",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-001",
+                  "targetTitle": "Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-016",
+                  "targetTitle": "Questão 38 (Cebraspe - DPE-RO / Oficial de Diligência)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-04",
+          "title": "Oração Adjetiva Reduzida de Particípio: Restritiva vs. Explicativa",
+          "conceptRefs": [
+            "KB-A08-G06-004"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A oração subordinada adjetiva (desenvolvida ou reduzida de particípio) que restringe o substantivo antecedente a um subconjunto específico é restritiva e deve ser grafada sem vírgulas nem travessões. Caso seja isolada por pontuação, converte-se em explicativa, passando a atribuir a característica à totalidade dos elementos do conjunto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No fragmento \"...novas medidas tomadas pela diretoria da empresa...\", a oração reduzida de particípio tomadas pela diretoria da empresa (equivalente a que foram tomadas pela diretoria) delimita o universo de medidas: o contexto discursivo não trata de todas as medidas possíveis da empresa, mas unicamente daquelas providenciadas pela diretoria. Portanto, a semântica exige pontuação restritiva (sem vírgulas). Se fossem inseridos travessões ou vírgulas (\"— tomadas pela diretoria da empresa —\"), a oração se tornaria explicativa, afirmando erroneamente que a totalidade das medidas da empresa fora determinada pela diretoria."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Mantra da Restrição: Aplique o advérbio delimitador \"SOMENTE\".",
+                "Se a ideia for: somente aquelas medidas $\\rightarrow$ Restritiva $\\rightarrow$ SEM VÍRGULA.",
+                "Se a ideia for uma explicação aplicável a todos os elementos $\\rightarrow$ Explicativa $\\rightarrow$ COM VÍRGULA / TRAVESSÃO."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-002",
+                  "targetTitle": "Alteração Indevida de Sentido ao Pontuar Adjetiva Restritiva",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-001",
+                  "targetTitle": "Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-05",
+          "title": "Proibição Absoluta de Pontuação entre Verbo e Oração Subordinada Substantiva",
+          "conceptRefs": [
+            "KB-A08-G06-005"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "É terminantemente proibido pela norma culta o emprego de qualquer sinal de pontuação (dois-pontos, vírgula, travessão ou ponto e vírgula) separando o verbo transitivo direto de seu complemento direto oracional (oração subordinada substantiva objetiva direta encabeçada por conjunção integrante)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na proposição analisada na Questão 39 da Cebraspe (\"O código definia que o interessado...\"), a forma verbal definia é transitiva direta (VTD). A oração que se inicia pelo conectivo que funciona como objeto direto oracional. A aplicação do teste do pronome substantivo comprova a integração sintática: \"O código definia isso\". A inserção de dois-pontos (\"O código definia: que...\") rompe o nexo sintático essencial entre o predicador verbal e seu complemento obrigatório, configurando erro gramatical grosseiro."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identifique o verbo e verifique se ele é transitivo direto.",
+                "Substitua a oração iniciada por \"que\" pela palavra \"isso\".",
+                "Se a substituição \"Verbo + isso\" for perfeita, o \"que\" é conjunção integrante e a oração é subordinada substantiva.",
+                "Conclusão: é vedado qualquer sinal de pontuação entre a forma verbal e o conectivo \"que\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-005",
+                  "targetTitle": "Dois-Pontos após Verbo Transitivo Direto",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-017",
+                  "targetTitle": "Questão 39 (Cebraspe - DPE-RO / Oficial de Diligência)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-06",
+          "title": "Vírgula Vicária na Elipse Verbal (Zeugma) e Coordenação Assindética",
+          "conceptRefs": [
+            "KB-A08-G06-006"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A vírgula vicária é o sinal de pontuação utilizado especificamente para assinalar no texto a elipse ou zeugma de um verbo anteriormente expresso no período, atestando a existência de uma oração coordenada subsequente cujo predicado verbal foi omitido para evitar repetição lexical."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No período examinado pela FGV (\"Diz-se da melhor companhia: sua conversa é instrutiva, seu silêncio, formativo.\"):"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "A primeira vírgula separa duas orações coordenadas assindéticas (sua conversa é instrutiva / seu silêncio, formativo).",
+                "A segunda vírgula funciona como vírgula vicária, marcando formalmente a omissão do verbo de ligação é na segunda oração coordenativa (seu silêncio [é] formativo)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença da vírgula vicária comprova que a estrutura é um período composto por coordenação, e não uma frase simples com termos justapostos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Observe se há duas orações coordenadas com predicados análogos.",
+                "Verifique se a vírgula ocupa exatamente a posição sintática em que o verbo antecedente foi suprimido.",
+                "Caso afirmativo, classifique a pontuação funcionalmente como vírgula vicária."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-006",
+                  "targetTitle": "Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-07",
+          "title": "Parênteses como Isoladores de Informações Acessórias e Limites de Uso",
+          "conceptRefs": [
+            "KB-A08-G06-007"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os parênteses têm por destinação exclusiva delimitar esclarecimentos, comentários, fontes ou elementos estritamente acessórios. O segmento contido entre parênteses deve poder ser suprimido integralmente do texto sem provocar truncamento sintático ou quebra na regência da oração principal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Jamais se pode colocar entre parênteses um termo que exerça função nuclear ou obrigatória na oração (como o verbo principal de uma locução ou o complemento exigido pela regência). Na alternativa A da Questão 21 da VUNESP, o período foi grafado como ...e não conseguiu (se inteirar) das novas medidas.... Aplicando-se o teste de remoção, a oração resultante torna-se agramatical (...e não conseguiu das novas medidas...), invalidando o emprego do sinal parentético."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G06-001",
+                  "targetTitle": "Teste de Supressão para Vírgulas Casadas e Parênteses",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-003",
+                  "targetTitle": "Supressão Indevida de Termos Nucleares entre Parênteses",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-001",
+                  "targetTitle": "Questão 21 (VUNESP - Pref. Jundiaí - SP / Agente de Trânsito)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-08",
+          "title": "Funções Discursivas do Travessão: Diálogo vs. Intercalação Explicativa",
+          "conceptRefs": [
+            "KB-A08-G06-008"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O travessão cumpre duas macrofunções na escrita padrão:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Discurso Direto / Diálogo: Travessão simples posicionado no início de linha/parágrafo para assinalar a mudança de turnos de fala entre interlocutores.",
+                "Intercalação Sintática: Travessões duplos (ou travessão e ponto final) isolando segmentos explicativos, apostos, orações intercaladas ou acréscimos conceituais para conferir destaque enfático."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas como a IBFC e a Cebraspe tentam induzir o candidato a erro confundindo essas funções. No verso \"...Mas o nosso amor era mais que amor/ - O meu e o dela a amar;\", o travessão simples não introduz fala de personagem, mas explica o conteúdo de \"nosso amor\". Da mesma forma, na Questão 30 da Cebraspe, os travessões duplos em \"...Em situações de estresse — quando nosso organismo acha que estamos sob ameaça... —, 'alguns circuitos...'...\" servem para isolar a explicação do termo antecedente, enquanto a citação direta da pesquisadora está devidamente assinalada por aspas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o travessão abre linha e alterna réplicas $\\rightarrow$ Mudança de interlocutor / Diálogo.",
+                "Se o travessão ocorre aos pares no corpo do período ou fecha em ponto final $\\rightarrow$ Intercalação explicativa / Ênfase."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-002",
+                  "targetTitle": "Questão 22 (IBFC - Pref. São Gonçalo do Amarante - RN / Agente Administrativo)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-009",
+                  "targetTitle": "Questão 29 (Cebraspe - SEDUC-AL / Professor)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-010",
+                  "targetTitle": "Questão 30 (Cebraspe - SEED-PR / Professor)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-09",
+          "title": "Travessões Duplos: Inserção de Informação (Fato) vs. Comentário (Opinião)",
+          "conceptRefs": [
+            "KB-A08-G06-009"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No plano semântico-discursivo (particularmente em provas de nível superior da VUNESP), o segmento intercalado por travessões duplos deve ser rigorosamente classificado quanto à sua natureza:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Informação: Apresentação de um fato objetivo, dado concreto da realidade verificável, desprovido de juízos de valor.",
+                "Comentário: Emissão de uma opinião subjetiva, ponto de vista, apreciação crítica ou julgamento valorativo do autor."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na passagem da UNICAMP (\"...mecanismo infeccioso que opera dentro dos — e entre os — idiomas...\"), a expressão intercalada pelos travessões (— e entre os —) limita-se a acrescentar um dado objetivo sobre como opera o fenômeno linguístico (dentro e entre idiomas). Não há termos apreciativos, adjetivos valorativos ou posicionamento pessoal. Portanto, trata-se formalmente de uma inserção de informação (fato), e não de um comentário (opinião)."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-003",
+                  "targetTitle": "Questão 23 (VUNESP - UNICAMP / Engenheiro Civil)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-10",
+          "title": "Emprego dos Dois-Pontos: Introdução de Fala vs. Explicação e Citação",
+          "conceptRefs": [
+            "KB-A08-G06-010"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os dois-pontos operam sob duas dinâmicas sintáticas principais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Introdução de Fala / Discurso Direto: Ocorrem imediatamente após um verbo de elocução (verbum dicendi como dizer, falar, responder, indagar), anunciando a reprodução textual das palavras de um emissor.",
+                "Esclarecimento / Explicação: Ocorrem após uma asserção para introduzir o desdobramento, aposto explicativo, especificação ou enumeração do que foi sumariamente enunciado."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para determinar a função dos dois-pontos, adota-se o método da \"banca de seta\" (ORAL-A08-G06-003): rastreia-se o termo que antecede a pontuação."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o termo for um verbo de elocução (ex.: \"disse mais uma vez: sou vigorosa...\"), os dois-pontos introduzem uma fala direta.",
+                "Se o termo for uma expressão nominal genérica (ex.: \"ganhou sentido positivo, invejável: fazer sucesso na internet...\" ou \"Diz-se da melhor companhia: sua conversa...\"), os dois-pontos introduzem a explicação/especificação da passagem antecedente."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-003",
+                  "targetTitle": "Questão 23 (VUNESP - UNICAMP / Engenheiro Civil)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-006",
+                  "targetTitle": "Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-007",
+                  "targetTitle": "Questão 27 (Cebraspe - TJ-RJ / Técnico Judiciário)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-11",
+          "title": "Tríplice Distinção Semântica: Exemplificação vs. Enumeração vs. Explicação",
+          "conceptRefs": [
+            "KB-A08-G06-011"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nas questões da banca Cebraspe, os segmentos introduzidos por dois-pontos ou travessões dividem-se em três categorias semânticas inconfundíveis:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Exemplificação: Amostra concreta e ilustrativa de uma ideia geral; trata-se de um rol aberto que não esgota a totalidade dos elementos (conectados apenas por vírgulas, sem conjunção final).",
+                "Enumeração: Apresentação exaustiva de todos os componentes de um grupo; trata-se de um rol fechado, obrigatoriamente delimitado pela conjunção aditiva \"e\" antes do último elemento.",
+                "Explicação: Esclarecimento de natureza teórica/abstrata, no qual se parafraseia ou elucida o significado do conceito anterior."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No item da SEDUC-AL (\"...do que devemos fazer: correção educacional de pensamentos distorcidos e medicação exata.\"), a banca alegou que os dois-pontos introduziam \"exemplos\". Contudo, ao empregar a conjunção e antes do último elemento, o autor fechou o conjunto de providências devidas, configurando uma enumeração completa das duas medidas necessárias, e não uma amostragem aberta de meros exemplos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Quadro Comparativo Decisivo"
+            },
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A08-G06-001",
+              "tableId": "TABLE-IP-A08-G06-003",
               "table": {
-                "tableId": "TABLE-IP-A08-G06-001",
-                "caption": "Explicação central",
+                "tableId": "TABLE-IP-A08-G06-003",
+                "caption": "Quadro Comparativo Decisivo",
                 "headers": [
                   "Categoria",
                   "Natureza",
@@ -128,15 +790,530 @@
                     "\"Definiu a meta: vencer as eleições.\""
                   ]
                 ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
+              }
             },
             {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G06-002",
+                  "targetTitle": "Diferenciação de Enumeração vs. Exemplificação no Cebraspe",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-006",
+                  "targetTitle": "A Armadilha da Conjunção \"e\" Fechando Listagens",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-008",
+                  "targetTitle": "Questão 28 (Cebraspe - SEDUC-AL / Professor)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-12",
+          "title": "Substituição de Dois-Pontos por Travessão Simples em Final de Período",
+          "conceptRefs": [
+            "KB-A08-G06-012"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando os dois-pontos são empregados para introduzir um segmento explicativo ou apositivo que encerra o período sintático, é plenamente legítimo substituí-los por um travessão simples, preservando a correção gramatical e o sentido original, com ganho de realce enfático."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A estrutura padrão com dois-pontos em fim de período organiza-se como [Oração Principal]: [Explicação].. Ao realizar a substituição por travessão, utiliza-se apenas um travessão (e não dois), uma vez que o fechamento da oração é executado pelo ponto final já existente: [Oração Principal] — [Explicação].."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo validado (Cebraspe): \"Nesse cenário, surgem as chamadas ações afirmativas: medidas políticas que visam acabar...\" $\\rightarrow$ \"Nesse cenário, surgem as chamadas ações afirmativas — medidas políticas que visam acabar...\"."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G06-004",
+                  "targetTitle": "Substituição de Dois-Pontos por Travessão em Reescrita",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-013",
+                  "targetTitle": "Questão 35 (Cebraspe - MPE-SC / Promotor de Justiça)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-13",
+          "title": "Ponto e Vírgula: Casos Canônicos e Inadmissibilidade em Intercalações",
+          "conceptRefs": [
+            "KB-A08-G06-013"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O ponto e vírgula é um sinal organizador facultativo do discurso cuja admissibilidade gramatical restringe-se estritamente a duas situações canônicas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Separar itens em enumerações complexas, notadamente quando os itens são extensos ou já possuem vírgulas internas.",
+                "Separar orações coordenadas independentes (não subordinadas), especialmente quando longas ou com conectivos deslocados."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Regra Negativa Absoluta: O ponto e vírgula nunca é empregado para isolar orações ou termos intercalados, função privativa de vírgulas, travessões ou parênteses."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No julgamento de itens do Cebraspe, a banca frequentemente alega que o ponto e vírgula foi utilizado \"em decorrência da intercalação da oração X\". Essa justificativa é sempre incorreta: a intercalação interna é demarcada por suas próprias vírgulas; o ponto e vírgula atua no nível hierárquico superior, coordenando os blocos da enumeração ou as orações independentes."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-007",
+                  "targetTitle": "Ponto e Vírgula NÃO Decorre de Intercalação",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G06-003",
+                  "targetTitle": "Validação de Ponto e Vírgula no Cebraspe",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-011",
+                  "targetTitle": "Questão 31 (Cebraspe - TRE-RJ / Técnico Judiciário)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-012",
+                  "targetTitle": "Questão 32 (Cebraspe - MJSP / Técnico)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-015",
+                  "targetTitle": "Questão 37 (Cebraspe - Petrobras / Administração)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-14",
+          "title": "Valor Conectivo Adversativo de \"Agora\" e Legitimação do Ponto e Vírgula",
+          "conceptRefs": [
+            "KB-A08-G06-014"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A palavra \"agora\", no plano discursivo da língua padrão, pode deixar de funcionar como mero advérbio de tempo e assumir função de conjunção coordenativa adversativa, equivalente semântico estrito de mas, porém, contudo, todavia. Nessa condição, encabeça uma oração coordenada adversativa, autorizando plenamente a pontuação antecedente por ponto e vírgula."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No texto da Petrobras (\"...dizer 'compartilhei fake news' não carrega sentimento de culpa, ou se carrega, ela é mínima. Agora, dizer 'cometi um crime...' já traz outras implicações...\"), constata-se um contraste manifesto entre as duas proposições:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Proposição A: ausência de culpa / peso mínimo.",
+                "Proposição B: presença de culpa / implicações graves."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "O termo \"agora\" atua contrapondo os fatos (= mas/porém). Por se tratar de oração coordenada (e não de oração subordinada adverbial temporal), é gramaticalmente legítimo substituir o ponto final por ponto e vírgula: \"...ela é mínima; agora, dizer...\"."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-015",
+                  "targetTitle": "Questão 37 (Cebraspe - Petrobras / Administração)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-15",
+          "title": "Critério de Segmentação de Período por Ponto Final",
+          "conceptRefs": [
+            "KB-A08-G06-015"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A substituição de um sinal de pontuação intermediário (travessão, vírgula ou ponto e vírgula) por ponto final é permitida se, e somente se, o segmento posterior possuir autonomia sintática e semântica completa, configurando um período com verbo e sentido próprio, sem deixar orações subordinadas truncadas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao analisar a divisão de períodos extensos na Questão 36 da Cebraspe (\"...sabe-se que a mulher é o principal alvo nessa espécie delitiva — não é à toa que a criminalização da referida conduta era...\" $\\rightarrow$ \"...nessa espécie delitiva. Não é à toa que...\"), constata-se que a segunda oração contém verbo próprio (era), sujeito e complementos, fazendo sentido perfeito isoladamente. Além da correção gramatical, a quebra de períodos com quatro ou mais verbos em períodos de duas a três orações atende às melhores recomendações de clareza em redações dissertativas."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G06-005",
+                  "targetTitle": "Validação de Troca de Pontuação por Ponto Final",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-014",
+                  "targetTitle": "Questão 36 (Cebraspe - PC-SE / Agente de Polícia)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-16",
+          "title": "Interação entre Pontuação e Colocação Pronominal em Reescrita",
+          "conceptRefs": [
+            "KB-A08-G06-016"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A substituição da conjunção aditiva \"e\" por sinais de pontuação de pausa forte (ponto e vírgula ou vírgula) isola a oração subsequente em uma nova fronteira sintática. Pela norma culta padrão prescritiva, é proibido iniciar oração por pronome oblíquo átono (vedação de próclise inicial), tornando indispensável a adaptação enclítica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No texto da Defensoria Pública (\"Acolhe-te quando vens e te deixa ir quando partes\"), o pronome átono te na segunda oração apoiava-se na presença da conjunção coordenativa e. Ao propor a troca de e por ponto e vírgula sem outros ajustes, a oração reescrita torna-se ...; te deixa ir.... Como o ponto e vírgula demarca o início formal de uma nova oração, a próclise passa a violar a norma culta, que exige ênclise: ...; deixa-te ir.... A ausência de menção ao ajuste pronominal torna o item da banca incorreto."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G06-006",
+                  "targetTitle": "Diagnóstico de Efeitos Colaterais em Colocação Pronominal",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-008",
+                  "targetTitle": "Efeito Colateral do Ponto e Vírgula na Colocação Pronominal",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-018",
+                  "targetTitle": "Questão 40 (Cebraspe - DPE-DF / Analista)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-17",
+          "title": "Funções Textuais e Estilísticas das Aspas: Ênfase, Conotação e Ironia",
+          "conceptRefs": [
+            "KB-A08-G06-017"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As aspas (duplas ou simples) exercem múltiplas funções semântico-discursivas no texto, que não podem ser generalizadas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Citação Direta: Reprodução literal da fala de personagem ou de argumento de autoridade.",
+                "Títulos de Obras: Delimitação de títulos de livros, poemas ou produções artísticas.",
+                "Ênfase / Valor Significativo: Destacar uma palavra-chave crucial no debate, cuja importância o autor deseja sublinhar (não se confunde com ironia).",
+                "Sentido Conotativo / Figurado: Indicar que a palavra foi deslocada de seu sentido denotativo literal (translação metafórica).",
+                "Expressões Populares / Metáforas Regionais: Sinalização de termos informais ou metafóricos (ex.: \"seca encarrilhada\"), cuja finalidade é figurada, mesmo que sucedidos pela expressão \"no dizer do povo\".",
+                "Ironia: Emprego deliberado da palavra para significar o oposto de sua literalidade denotativa."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A08-G06-007",
+                  "targetTitle": "Teste de Sentido Denotativo vs. Conotativo em Aspas",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-009",
+                  "targetTitle": "O Mito de que Todo Destaque Entre Aspas É Ironia",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-004",
+                  "targetTitle": "Questão 24 (VUNESP - Câmara de São José dos Campos - SP / Técnico Legislativo)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-005",
+                  "targetTitle": "Questão 25 (FCC - Câmara de Fortaleza - CE / Redator)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-012",
+                  "targetTitle": "Questão 32 (Cebraspe - MJSP / Técnico)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-18",
+          "title": "Hierarquia Gráfica: Aspas Simples no Interior de Aspas Duplas",
+          "conceptRefs": [
+            "KB-A08-G06-018"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As aspas simples (' ') desempenham exatamente as mesmas funções discursivas das aspas duplas (\" \"), diferindo exclusivamente por subordinação tipográfica: são empregadas quando há necessidade de abrir aspas dentro de um trecho que já se encontra delimitado por aspas duplas, evitando fechamento prematuro ou ambiguidade gráfica."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo (FCC / Paulo Freire): \"...Eis aí a concepção 'bancária' da educação...\" dentro de um longo bloco de citação já aberto por aspas duplas."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A08-G06-017",
+                  "targetTitle": "Funções Textuais e Estilísticas das Aspas: Ênfase, Conotação e Ironia",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-005",
+                  "targetTitle": "Questão 25 (FCC - Câmara de Fortaleza - CE / Redator)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-19",
+          "title": "Aspas em Transcrição de Texto Alheio e Prevenção de Plágio",
+          "conceptRefs": [
+            "KB-A08-G06-019"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na linguagem técnica das bancas examinadoras (com destaque para a FGV), a indicação de que as aspas assinalam \"transcrição de texto alheio\" significa meramente que o fragmento pertence a um autor externo e não à própria banca elaboradora da prova. O uso das aspas é mandatório para atestar a autoria externa e prevenir plágio intelectual."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-006",
+                  "targetTitle": "Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-A08-G06-CANONICAL-20",
+          "title": "Função Estrutural do Ponto Final vs. Falsa Tese de Interrupção",
+          "conceptRefs": [
+            "KB-A08-G06-020"
+          ],
+          "semanticKind": "concept_focus",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O ponto final tem por função sintática e textual estrita encerrar e finalizar um período gramatical completo. Ele não sinaliza \"interrupção de pensamentos\" (função típica das reticências ou traços de suspensão). Afirmações de bancas que atribuem ao ponto final o papel de interrupção de raciocínio são incorretas."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A08-G06-010",
+                  "targetTitle": "Ponto Final Não É Sinal de Interrupção",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A08-G06-006",
+                  "targetTitle": "Questão 26 (FGV - Câmara de Aracaju - SE / Assistente Administrativo)",
+                  "targetUnitId": "IP-A08-G06",
+                  "targetSection": "examples"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "groupId": "canonical-table-coverage",
+          "title": "Quadros canônicos complementares",
+          "pedagogicalGoal": "Preservar relações, classificações e sínteses tabulares da base canônica.",
+          "semanticKind": "canonical_table_coverage",
+          "blocks": [
+            {
               "type": "table_ref",
-              "tableId": "TABLE-IP-A08-G06-003",
+              "tableId": "TABLE-IP-A08-G06-001",
               "table": {
-                "tableId": "TABLE-IP-A08-G06-003",
-                "caption": "Quadro Comparativo Decisivo",
+                "tableId": "TABLE-IP-A08-G06-001",
+                "caption": "Explicação central",
                 "headers": [
                   "Categoria",
                   "Natureza",
@@ -326,11 +1503,200 @@
     "glossary": {
       "items": [
         {
-          "term": "Desambiguação Sintática",
-          "shortDefinition": "Processo de eliminação da dupla interpretação de uma frase por meio da pontuação ou reordenação.",
-          "fullDefinition": "Uso estratégico de vírgulas, travessões ou reestruturação de termos para delimitar com precisão o sujeito, os adjuntos e os predicativos de um enunciado, impedindo leituras equívocas ou contraditórias.",
-          "domain": "Semântica e Pontuação",
-          "commonMisconception": "Pensar que o leitor sempre deduz a intenção do autor sem auxílio da pontuação."
+          "term": "Conjunção \"E\" Polissêmica: Valor Conclusivo/Adversativo e Pontuação Facultativa",
+          "shortDefinition": "A conjunção coordenativa \"e\", quando conecta orações de mesmo sujeito com valor puramente aditivo, não admite vírgula segundo a norma culta estrita. No entanto, quando adquire valor semântico polissêmico — seja de conclusão (equivalente a portanto, por isso, logo) ou de adversidade (equivalente a mas, porém) —, o emprego da vírgula imediatamente anterior passa a ser plenamente legítimo e facultativo.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-01"
+          },
+          "operationalUse": "No período examinado pela VUNESP (\"Chegou muito atrasado à reunião [,] e não conseguiu se inteirar...\"), o sujeito de ambas as orações é rigorosamente idêntico (ele)."
+        },
+        {
+          "term": "Adjunto Adverbial no Final do Período em Ordem Direta",
+          "shortDefinition": "O adjunto adverbial posicionado ao término da oração ou do período sintático ocupa sua posição canônica na ordem direta da língua portuguesa (Sujeito + Verbo + Complementos + Adjunto Adverbial). Nessa posição, o emprego da vírgula é puramente facultativo, independentemente de o adjunto ser de curta ou longa extensão.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-02"
+          },
+          "operationalUse": "Na análise da Questão 22 (IBFC) sobre os versos poéticos (\"Foi há muitos e muitos anos já,/ Num reino de ao pé do mar.\"), a locução Num reino de ao pé do mar atua como adjunto adverbial de lugar posicionado no encerramento da frase."
+        },
+        {
+          "term": "Segmentos Intercalados e a Simetria das Vírgulas Casadas",
+          "shortDefinition": "Orações subordinadas adverbiais, adjuntos adverbiais ou expressões explicativas que se encontrem deslocados e inseridos no interior da oração principal (intercalados) exigem isolamento por pontuação simétrica bilateral obrigatória (\"vírgulas casadas\" ou travessões duplos), delimitando com exatidão onde o segmento circunstancial se inicia e onde se encerra.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-03"
+          },
+          "operationalUse": "No período \"...portanto, como pegou o bonde andando, optou por permanecer calado...\", a oração como pegou o bonde andando expressa circunstância de causa (já que pegou o bonde andando)."
+        },
+        {
+          "term": "Oração Adjetiva Reduzida de Particípio: Restritiva vs. Explicativa",
+          "shortDefinition": "A oração subordinada adjetiva (desenvolvida ou reduzida de particípio) que restringe o substantivo antecedente a um subconjunto específico é restritiva e deve ser grafada sem vírgulas nem travessões. Caso seja isolada por pontuação, converte-se em explicativa, passando a atribuir a característica à totalidade dos elementos do conjunto.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-04"
+          },
+          "operationalUse": "No fragmento \"...novas medidas tomadas pela diretoria da empresa...\", a oração reduzida de particípio tomadas pela diretoria da empresa (equivalente a que foram tomadas pela diretoria) delimita o universo de medidas: o contexto discursivo não trata de todas as medidas possíveis da empresa, mas unicamente daquelas providenciadas pela diretoria."
+        },
+        {
+          "term": "Proibição Absoluta de Pontuação entre Verbo e Oração Subordinada Substantiva",
+          "shortDefinition": "É terminantemente proibido pela norma culta o emprego de qualquer sinal de pontuação (dois-pontos, vírgula, travessão ou ponto e vírgula) separando o verbo transitivo direto de seu complemento direto oracional (oração subordinada substantiva objetiva direta encabeçada por conjunção integrante).",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-05"
+          },
+          "operationalUse": "Na proposição analisada na Questão 39 da Cebraspe (\"O código definia que o interessado...\"), a forma verbal definia é transitiva direta (VTD)."
+        },
+        {
+          "term": "Vírgula Vicária na Elipse Verbal (Zeugma) e Coordenação Assindética",
+          "shortDefinition": "A vírgula vicária é o sinal de pontuação utilizado especificamente para assinalar no texto a elipse ou zeugma de um verbo anteriormente expresso no período, atestando a existência de uma oração coordenada subsequente cujo predicado verbal foi omitido para evitar repetição lexical.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-06"
+          },
+          "operationalUse": "No período examinado pela FGV (\"Diz-se da melhor companhia: sua conversa é instrutiva, seu silêncio, formativo.\"):"
+        },
+        {
+          "term": "Parênteses como Isoladores de Informações Acessórias e Limites de Uso",
+          "shortDefinition": "Os parênteses têm por destinação exclusiva delimitar esclarecimentos, comentários, fontes ou elementos estritamente acessórios. O segmento contido entre parênteses deve poder ser suprimido integralmente do texto sem provocar truncamento sintático ou quebra na regência da oração principal.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-07"
+          },
+          "operationalUse": "Jamais se pode colocar entre parênteses um termo que exerça função nuclear ou obrigatória na oração (como o verbo principal de uma locução ou o complemento exigido pela regência)."
+        },
+        {
+          "term": "Funções Discursivas do Travessão: Diálogo vs. Intercalação Explicativa",
+          "shortDefinition": "O travessão cumpre duas macrofunções na escrita padrão:",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-08"
+          },
+          "operationalUse": "Bancas como a IBFC e a Cebraspe tentam induzir o candidato a erro confundindo essas funções."
+        },
+        {
+          "term": "Travessões Duplos: Inserção de Informação (Fato) vs. Comentário (Opinião)",
+          "shortDefinition": "No plano semântico-discursivo (particularmente em provas de nível superior da VUNESP), o segmento intercalado por travessões duplos deve ser rigorosamente classificado quanto à sua natureza:",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-09"
+          },
+          "operationalUse": "Na passagem da UNICAMP (\"...mecanismo infeccioso que opera dentro dos — e entre os — idiomas...\"), a expressão intercalada pelos travessões (— e entre os —) limita-se a acrescentar um dado objetivo sobre como opera o fenômeno linguístico (dentro e entre idiomas)."
+        },
+        {
+          "term": "Emprego dos Dois-Pontos: Introdução de Fala vs. Explicação e Citação",
+          "shortDefinition": "Os dois-pontos operam sob duas dinâmicas sintáticas principais:",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-10"
+          },
+          "operationalUse": "Para determinar a função dos dois-pontos, adota-se o método da \"banca de seta\" (ORAL-A08-G06-003): rastreia-se o termo que antecede a pontuação."
+        },
+        {
+          "term": "Tríplice Distinção Semântica: Exemplificação vs. Enumeração vs. Explicação",
+          "shortDefinition": "Nas questões da banca Cebraspe, os segmentos introduzidos por dois-pontos ou travessões dividem-se em três categorias semânticas inconfundíveis:",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-11"
+          },
+          "operationalUse": "No item da SEDUC-AL (\"...do que devemos fazer: correção educacional de pensamentos distorcidos e medicação exata.\"), a banca alegou que os dois-pontos introduziam \"exemplos\"."
+        },
+        {
+          "term": "Substituição de Dois-Pontos por Travessão Simples em Final de Período",
+          "shortDefinition": "Quando os dois-pontos são empregados para introduzir um segmento explicativo ou apositivo que encerra o período sintático, é plenamente legítimo substituí-los por um travessão simples, preservando a correção gramatical e o sentido original, com ganho de realce enfático.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-12"
+          },
+          "operationalUse": "A estrutura padrão com dois-pontos em fim de período organiza-se como [Oração Principal]: [Explicação].."
+        },
+        {
+          "term": "Ponto e Vírgula: Casos Canônicos e Inadmissibilidade em Intercalações",
+          "shortDefinition": "O ponto e vírgula é um sinal organizador facultativo do discurso cuja admissibilidade gramatical restringe-se estritamente a duas situações canônicas:",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-13"
+          },
+          "operationalUse": "No julgamento de itens do Cebraspe, a banca frequentemente alega que o ponto e vírgula foi utilizado \"em decorrência da intercalação da oração X\"."
+        },
+        {
+          "term": "Valor Conectivo Adversativo de \"Agora\" e Legitimação do Ponto e Vírgula",
+          "shortDefinition": "A palavra \"agora\", no plano discursivo da língua padrão, pode deixar de funcionar como mero advérbio de tempo e assumir função de conjunção coordenativa adversativa, equivalente semântico estrito de mas, porém, contudo, todavia. Nessa condição, encabeça uma oração coordenada adversativa, autorizando plenamente a pontuação antecedente por ponto e vírgula.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-14"
+          },
+          "operationalUse": "No texto da Petrobras (\"...dizer 'compartilhei fake news' não carrega sentimento de culpa, ou se carrega, ela é mínima."
+        },
+        {
+          "term": "Critério de Segmentação de Período por Ponto Final",
+          "shortDefinition": "A substituição de um sinal de pontuação intermediário (travessão, vírgula ou ponto e vírgula) por ponto final é permitida se, e somente se, o segmento posterior possuir autonomia sintática e semântica completa, configurando um período com verbo e sentido próprio, sem deixar orações subordinadas truncadas.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-15"
+          },
+          "operationalUse": "Ao analisar a divisão de períodos extensos na Questão 36 da Cebraspe (\"...sabe-se que a mulher é o principal alvo nessa espécie delitiva — não é à toa que a criminalização da referida conduta era...\" $\\rightarrow$ \"...nessa espécie delitiva."
+        },
+        {
+          "term": "Interação entre Pontuação e Colocação Pronominal em Reescrita",
+          "shortDefinition": "A substituição da conjunção aditiva \"e\" por sinais de pontuação de pausa forte (ponto e vírgula ou vírgula) isola a oração subsequente em uma nova fronteira sintática. Pela norma culta padrão prescritiva, é proibido iniciar oração por pronome oblíquo átono (vedação de próclise inicial), tornando indispensável a adaptação enclítica.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-16"
+          },
+          "operationalUse": "No texto da Defensoria Pública (\"Acolhe-te quando vens e te deixa ir quando partes\"), o pronome átono te na segunda oração apoiava-se na presença da conjunção coordenativa e."
+        },
+        {
+          "term": "Funções Textuais e Estilísticas das Aspas: Ênfase, Conotação e Ironia",
+          "shortDefinition": "As aspas (duplas ou simples) exercem múltiplas funções semântico-discursivas no texto, que não podem ser generalizadas:",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-17"
+          }
+        },
+        {
+          "term": "Hierarquia Gráfica: Aspas Simples no Interior de Aspas Duplas",
+          "shortDefinition": "As aspas simples (' ') desempenham exatamente as mesmas funções discursivas das aspas duplas (\" \"), diferindo exclusivamente por subordinação tipográfica: são empregadas quando há necessidade de abrir aspas dentro de um trecho que já se encontra delimitado por aspas duplas, evitando fechamento prematuro ou ambiguidade gráfica.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-18"
+          }
+        },
+        {
+          "term": "Aspas em Transcrição de Texto Alheio e Prevenção de Plágio",
+          "shortDefinition": "Na linguagem técnica das bancas examinadoras (com destaque para a FGV), a indicação de que as aspas assinalam \"transcrição de texto alheio\" significa meramente que o fragmento pertence a um autor externo e não à própria banca elaboradora da prova. O uso das aspas é mandatório para atestar a autoria externa e prevenir plágio intelectual.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-19"
+          }
+        },
+        {
+          "term": "Função Estrutural do Ponto Final vs. Falsa Tese de Interrupção",
+          "shortDefinition": "O ponto final tem por função sintática e textual estrita encerrar e finalizar um período gramatical completo. Ele não sinaliza \"interrupção de pensamentos\" (função típica das reticências ou traços de suspensão). Afirmações de bancas que atribuem ao ponto final o papel de interrupção de raciocínio são incorretas.",
+          "detailTarget": {
+            "unitId": "IP-A08-G06",
+            "section": "explanation",
+            "groupId": "GRP-A08-G06-CANONICAL-20"
+          }
         }
       ]
     },

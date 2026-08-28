@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A01-G05",
     "lessonId": "A01",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A01-G05",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A01-G05-001"
+          }
         }
       ]
     },
@@ -94,8 +99,57 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nO numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas.\nExplicação Consolidada\nA gramática divide os numerais em quatro categorias funcionais:\nCardinais: Indicam contagem direta e quantidade básica absoluta de seres (ex.: um, dois, treze, mil, milhão). Exemplo em frase: \"Treze candidatos chegaram atrasados.\"\nOrdinais: Indicam a posição, lugar ou ordem relativa de um elemento em uma sequência determinada (ex.: primeiro, segundo, milésimo, milionésimo). Exemplo em frase: \"A primeira conquista foi aos 18 anos.\"\nFracionários: Indicam a divisão proporcional de uma quantidade, referindo-se a frações ou partes do todo (ex.: meio, um terço, três quartos, um quinto). Exemplo em frase: \"Já percorremos um terço do caminho.\"\nMultiplicativos: Indicam o aumento proporcional da quantidade por multiplicação (ex.: dobro, triplo, quádruplo). Exemplo em frase: \"Ele tem o triplo da experiência que eu tenho.\"\nCritérios de Reconhecimento\nPergunte à palavra no texto: ela conta (cardinal), posiciona (ordinal), divide (fracionário) ou multiplica (multiplicativo)?\nRelações\nContrasta com: (Numerais Coletivos).a 005."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A gramática divide os numerais em quatro categorias funcionais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Cardinais: Indicam contagem direta e quantidade básica absoluta de seres (ex.: um, dois, treze, mil, milhão). Exemplo em frase: \"Treze candidatos chegaram atrasados.\"",
+                "Ordinais: Indicam a posição, lugar ou ordem relativa de um elemento em uma sequência determinada (ex.: primeiro, segundo, milésimo, milionésimo). Exemplo em frase: \"A primeira conquista foi aos 18 anos.\"",
+                "Fracionários: Indicam a divisão proporcional de uma quantidade, referindo-se a frações ou partes do todo (ex.: meio, um terço, três quartos, um quinto). Exemplo em frase: \"Já percorremos um terço do caminho.\"",
+                "Multiplicativos: Indicam o aumento proporcional da quantidade por multiplicação (ex.: dobro, triplo, quádruplo). Exemplo em frase: \"Ele tem o triplo da experiência que eu tenho.\""
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de Reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pergunte à palavra no texto: ela conta (cardinal), posiciona (ordinal), divide (fracionário) ou multiplica (multiplicativo)?"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A01-G05-NUMERAIS-INTERJEICOES-004",
+                  "targetTitle": "Numerais Coletivos e a Fronteira com Numerais Cardinais",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +162,73 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nOs vocábulos um e uma (isolados ou em contrações prepositivas como num, numa, dum, duma) só atuam como numerais cardinais se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é artigo indefinido.\nExplicação Consolidada\nBancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: \"faria uma viagem, mas poderia fazer duas\"). No rigor da morfologia de concurso:\nHipótese Inicial Padrão: Todo um/uma deve ser tratado prioritariamente como artigo indefinido (indeterminador/generalizador).\nRequisito para Numeral Cardinal: O termo só mudará de classe para numeral se o contexto trouxer palavras de restrição numérica ou ênfase de contagem (ex.: somente, apenas, unicamente, exclusivamente, não dois, não três).\nCasos com Contração Prepositiva: Em estruturas como \"...se encontrassem num almoço...\" (em + um), o vocábulo um não expressa contagem numérica (não se opõe a dois almoços), mas introduz um evento indeterminado. Logo, num é a contração de preposição em com artigo indefinido um.\nExemplos e Contraexemplos\nArtigo Indefinido (Sem pista de contagem):\n\"Faria uma viagem.\" (indefinido)\n\"Um médico chegou.\" (indefinido)\n\"Assisti a um filme interessante ontem.\" (indefinido)\n\"Precisamos de uma solução para isso.\" (indefinido)\n\"...se encontrassem num almoço...\" (indefinido)\nNumeral Cardinal (Com pista explícita de quantificação):\n\"Tinha somente um vestido.\" (somente = pista)\n\"Trouxe apenas uma moeda.\" (apenas = pista)\n\"Havia apenas uma pessoa na fila de espera.\" (apenas = pista)\n\"A reunião ocorreu num só dia.\" (só = pista)(Método de Classificação de Um/Uma).002, 004, 006."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os vocábulos um e uma (isolados ou em contrações prepositivas como num, numa, dum, duma) só atuam como numerais cardinais se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é artigo indefinido."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: \"faria uma viagem, mas poderia fazer duas\"). No rigor da morfologia de concurso:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Hipótese Inicial Padrão: Todo um/uma deve ser tratado prioritariamente como artigo indefinido (indeterminador/generalizador).",
+                "Requisito para Numeral Cardinal: O termo só mudará de classe para numeral se o contexto trouxer palavras de restrição numérica ou ênfase de contagem (ex.: somente, apenas, unicamente, exclusivamente, não dois, não três).",
+                "Casos com Contração Prepositiva: Em estruturas como \"...se encontrassem num almoço...\" (em + um), o vocábulo um não expressa contagem numérica (não se opõe a dois almoços), mas introduz um evento indeterminado. Logo, num é a contração de preposição em com artigo indefinido um."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e Contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Artigo Indefinido (Sem pista de contagem):",
+                "\"Faria uma viagem.\" (indefinido)",
+                "\"Um médico chegou.\" (indefinido)",
+                "\"Assisti a um filme interessante ontem.\" (indefinido)",
+                "\"Precisamos de uma solução para isso.\" (indefinido)",
+                "\"...se encontrassem num almoço...\" (indefinido)",
+                "Numeral Cardinal (Com pista explícita de quantificação):",
+                "\"Tinha somente um vestido.\" (somente = pista)",
+                "\"Trouxe apenas uma moeda.\" (apenas = pista)",
+                "\"Havia apenas uma pessoa na fila de espera.\" (apenas = pista)",
+                "\"A reunião ocorreu num só dia.\" (só = pista)"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "PROC-A01-G05-NUMERAIS-INTERJEICOES-001",
+                  "targetTitle": "Procedimento para Classificar *Um / Uma* (Artigo Indefinido vs. Numeral Cardinal)",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G05-NUMERAIS-INTERJEICOES-001",
+                  "targetTitle": "Pegadinha de Inferência Extratextual em *Um/Uma*",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +241,55 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA palavra segundo pode atuar como numeral ordinal (indicando ordem sequencial) ou como conector conformativo (introduzindo referência/conformidade, equivalente a de acordo com ou conforme).\nExplicação Consolidada\nEmprego como Numeral Ordinal: Ocorre quando situa um elemento na posição número dois de uma série (ex.: \"Este é o segundo livro da coleção\").\nEmprego como Conector Conformativo: Ocorre quando introduz uma fonte, dado ou conformidade (ex.: \"Segundo o chefe da Divisão...\" / \"Segundo a previsão do tempo...\").\nGramática Tradicional (\"Raiz\"): Classifica o termo como preposição acidental, visto que desempenha o papel da locução prepositiva de acordo com.\nManuais Didáticos e Algumas Bancas: Denominam o termo como conjunção conformativa.\nPostura em Provas: O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal.(Teste de Substituição de Segundo).005, 007."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A palavra segundo pode atuar como numeral ordinal (indicando ordem sequencial) ou como conector conformativo (introduzindo referência/conformidade, equivalente a de acordo com ou conforme)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Emprego como Numeral Ordinal: Ocorre quando situa um elemento na posição número dois de uma série (ex.: \"Este é o segundo livro da coleção\").",
+                "Emprego como Conector Conformativo: Ocorre quando introduz uma fonte, dado ou conformidade (ex.: \"Segundo o chefe da Divisão...\" / \"Segundo a previsão do tempo...\")."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Gramática Tradicional (\"Raiz\"): Classifica o termo como preposição acidental, visto que desempenha o papel da locução prepositiva de acordo com.",
+                "Manuais Didáticos e Algumas Bancas: Denominam o termo como conjunção conformativa.",
+                "Postura em Provas: O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "PROC-A01-G05-NUMERAIS-INTERJEICOES-002",
+                  "targetTitle": "Teste de Substituição para a Palavra \"Segundo\"",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G05-NUMERAIS-INTERJEICOES-002",
+                  "targetTitle": "Julgar a Palavra \"Segundo\" Apenas pela Forma Isolada",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +302,63 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nPalavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos numerais coletivos, não se confundindo morfologicamente com os numerais cardinais.\nExplicação Consolidada\nExemplos canônicos cobrados em concursos:\nDúzia: grupo de 12 unidades.\nDécada: período/grupo de 10 anos.\nBimestre: período de 2 meses.\nNovena: período de 9 dias.\nDezena: grupo de 10 unidades.\nCentena: grupo de 100 unidades.\nAlerta de Prova\nAs bancas tentam induzir o candidato ao erro afirmando que dúzia ou década são numerais cardinais por corresponderem numericamente a 12 ou 10. A norma gramatical prescreve que são numerais coletivos, pois dão nome ao agrupamento de seres.\nRelações\nContrasta com: (Cardinais)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Palavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos numerais coletivos, não se confundindo morfologicamente com os numerais cardinais."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Exemplos canônicos cobrados em concursos:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Dúzia: grupo de 12 unidades.",
+                "Década: período/grupo de 10 anos.",
+                "Bimestre: período de 2 meses.",
+                "Novena: período de 9 dias.",
+                "Dezena: grupo de 10 unidades.",
+                "Centena: grupo de 100 unidades."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Alerta de Prova"
+            },
+            {
+              "type": "paragraph",
+              "text": "As bancas tentam induzir o candidato ao erro afirmando que dúzia ou década são numerais cardinais por corresponderem numericamente a 12 ou 10. A norma gramatical prescreve que são numerais coletivos, pois dão nome ao agrupamento de seres."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A01-G05-NUMERAIS-INTERJEICOES-001",
+                  "targetTitle": "Conceito Gramatical e Categorias Tradicionais de Numerais",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G05-NUMERAIS-INTERJEICOES-003",
+                  "targetTitle": "Confundir Numerais Coletivos com Cardinais",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +371,39 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nEm tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma quantidade aproximada no plano textual, sem perder sua classificação morfológica de numeral cardinal.\nExplicação Consolidada\nEstrutura sem modificador: \"Dez alunos chegaram.\" O vocábulo dez é um numeral cardinal e expressa quantidade exata (rigorosamente 10).\nEstrutura com modificador aproximativo: \"Cerca de dez alunos chegaram.\" A palavra dez continua sendo morfologicamente um numeral cardinal, mas no contexto semântico transmite uma quantidade aproximada."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma quantidade aproximada no plano textual, sem perder sua classificação morfológica de numeral cardinal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Estrutura sem modificador: \"Dez alunos chegaram.\" → O vocábulo dez é um numeral cardinal e expressa quantidade exata (rigorosamente 10).",
+                "Estrutura com modificador aproximativo: \"Cerca de dez alunos chegaram.\" → A palavra dez continua sendo morfologicamente um numeral cardinal, mas no contexto semântico transmite uma quantidade aproximada."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G05-NUMERAIS-INTERJEICOES-004",
+                  "targetTitle": "Ignorar Modificadores Aproximativos em Numerais Cardinais",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +416,48 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nO vocábulo metade é sempre um numeral fracionário. A palavra meio admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número.\nExplicação Consolidada\nA Palavra \"Metade\": É invariavelmente um numeral fracionário e varia em número (a metade, as metades).\nA Palavra \"Meio\":\nA) Numeral Fracionário: Ocorre quando equivale a \"metade de uma fração\". É variável em gênero e número (concorda com o substantivo). Exemplo: \"Tomou meio copo de leite\" / \"Tomou meia caneca de leite\".\nB) Substantivo: Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É variável em número. Exemplo: \"O meio ambiente\" / \"Os meios de comunicação\".\nC) Advérbio: Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a \"um pouco\". É INVARIÁVEL (nunca flexiona para o feminino meia nem para o plural). Exemplo: \"Ela está meio cansada\" (e nunca \"meia cansada\").\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-003 (Substituição por \"um pouco\")."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O vocábulo metade é sempre um numeral fracionário. A palavra meio admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "A Palavra \"Metade\": É invariavelmente um numeral fracionário e varia em número (a metade, as metades).",
+                "A Palavra \"Meio\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A) Numeral Fracionário: Ocorre quando equivale a \"metade de uma fração\". É variável em gênero e número (concorda com o substantivo). Exemplo: \"Tomou meio copo de leite\" / \"Tomou meia caneca de leite\".",
+                "B) Substantivo: Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É variável em número. Exemplo: \"O meio ambiente\" / \"Os meios de comunicação\".",
+                "C) Advérbio: Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a \"um pouco\". É INVARIÁVEL (nunca flexiona para o feminino meia nem para o plural). Exemplo: \"Ela está meio cansada\" (e nunca \"meia cansada\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A01-G05-NUMERAIS-INTERJEICOES-005",
+                  "targetTitle": "Flexão Indevida do Advérbio \"Meio\" no Feminino (*\"Meia Cansada\"*)",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +470,40 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (interjeição simples) ou como grupo de palavras (locução interjetiva).\nPropriedades Gramaticais Críticas\nInvariabilidade Morfológica: Pertence ao bloco das palavras invariáveis (ao lado de preposições, conjunções, advérbios e palavras denotativas), não sofrendo flexão de gênero, número ou pessoa.\nAusência de Função Sintática: A interjeição não exerce nenhuma função sintática na oração (não pode ser sujeito, predicado, objeto direto, objeto indireto, adjunto adnominal, adjunto adverbial ou complemento nominal). Ela atua como um bloco expressivo autônomo.\nPontuação: Embora seja tipicamente acompanhada de ponto de exclamação (!) por sua carga enfática, a interjeição pode vir isolada por vírgulas ou seguida de reticências (...), sem perder sua natureza de interjeição.\nRelações\nExpande em: e 009.\nGlossário associado: TERM-A01-G05-NUMERAIS-INTERJEICOES-007 e 008."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (interjeição simples) ou como grupo de palavras (locução interjetiva)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Propriedades Gramaticais Críticas"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Invariabilidade Morfológica: Pertence ao bloco das palavras invariáveis (ao lado de preposições, conjunções, advérbios e palavras denotativas), não sofrendo flexão de gênero, número ou pessoa.",
+                "Ausência de Função Sintática: A interjeição não exerce nenhuma função sintática na oração (não pode ser sujeito, predicado, objeto direto, objeto indireto, adjunto adnominal, adjunto adverbial ou complemento nominal). Ela atua como um bloco expressivo autônomo.",
+                "Pontuação: Embora seja tipicamente acompanhada de ponto de exclamação (!) por sua carga enfática, a interjeição pode vir isolada por vírgulas ou seguida de reticências (...), sem perder sua natureza de interjeição."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A01-G05-NUMERAIS-INTERJEICOES-008",
+                  "targetTitle": "Metodologia de Concursos para Interjeição: Identificação e Derivação Imprópria",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +516,41 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nNo Modelo I de Questões (Identificação Morfológica), as bancas exigem o reconhecimento da interjeição no texto ou avaliam a derivação imprópria, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada.\nO Caso Emblemático da FGV (Senado Federal)\nTrecho examinado: \"E, surpresa!, quem a esta altura clama pelo surgimento...\"\nAnálise morfológica: O termo surpresa é originariamente um substantivo (\"Ganhei uma surpresa\"). No entanto, colocado entre vírgula e exclamação como brado exclamativo de impacto, ele assume o papel de interjeição.\nPista no enunciado da FGV: O comando da questão advertiu que o termo \"assume um papel gramatical distinto de sua classificação original\", fornecendo a pista direta da mudança de classe.\nDistinção Crucial entre Usos de \"Surpresa\"\nComo Substantivo: \"A festa surpresa foi adiada\" / \"Recebi uma surpresa\".\nComo Adjetivo / Predicativo: \"A professora ficou surpresa\" (qualifica o sujeito).\nComo Interjeição: \"E, surpresa!, consegui a vaga!\" (exclamação isolada emotiva).\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-004.009, 010, 011."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No Modelo I de Questões (Identificação Morfológica), as bancas exigem o reconhecimento da interjeição no texto ou avaliam a derivação imprópria, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "O Caso Emblemático da FGV (Senado Federal)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Trecho examinado: \"E, surpresa!, quem a esta altura clama pelo surgimento...\"",
+                "Análise morfológica: O termo surpresa é originariamente um substantivo (\"Ganhei uma surpresa\"). No entanto, colocado entre vírgula e exclamação como brado exclamativo de impacto, ele assume o papel de interjeição.",
+                "Pista no enunciado da FGV: O comando da questão advertiu que o termo \"assume um papel gramatical distinto de sua classificação original\", fornecendo a pista direta da mudança de classe."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Distinção Crucial entre Usos de \"Surpresa\""
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Como Substantivo: \"A festa surpresa foi adiada\" / \"Recebi uma surpresa\".",
+                "Como Adjetivo / Predicativo: \"A professora ficou surpresa\" (qualifica o sujeito).",
+                "Como Interjeição: \"E, surpresa!, consegui a vaga!\" (exclamação isolada emotiva)."
+              ]
             }
           ]
         },
@@ -206,48 +563,45 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nNo Modelo II de Questões (Valor Semântico), a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição nunca é fixo de forma isolada; ele depende obrigatoriamente da leitura da sequência textual subsequente.\nPrincipais Matizes Semânticos em Concursos\nRealce / Enfatização Expressiva: A interjeição sublinha a emoção ou lirismo da oração seguinte (ex.: \"Ah, que minha história fosse como um raio de sol...\" — CESGRANRIO).\nChamamento (Função Apelativa): A interjeição serve para atrair a atenção do ouvinte, diferindo da ação expressa na oração posterior (ex.: \"Ei! Vamos embora!\" \"Ei!\" expressa chamamento, enquanto \"vamos embora\" é a despedida — CONSESP).\nDesejo / Esperança: Expressa um anseio ou pedido de concretização futura (ex.: \"Oxalá concluas a viagem\" = \"Tomara que concluas...\" — CESPE / Machado de Assis; \"Se Deus quiser...\" — ITAME).\nSurpresa / Espanto: Expressa a quebra de expectativa diante do inesperado (ex.: \"Puxa! Não esperava te ver aqui!\" — ITAME).\nApelo / Súplica: Expressa pedido urgente de ajuda (ex.: \"Socorro! Alguém me dê um coração\" — CESPE / Titãs).\nAlerta / Advertência: Expressa aviso de perigo iminente (ex.: \"Cuidado com o carro!\").(Método de Análise Semântica Contextual).a 017."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No Modelo II de Questões (Valor Semântico), a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição nunca é fixo de forma isolada; ele depende obrigatoriamente da leitura da sequência textual subsequente."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Principais Matizes Semânticos em Concursos"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Realce / Enfatização Expressiva: A interjeição sublinha a emoção ou lirismo da oração seguinte (ex.: \"Ah, que minha história fosse como um raio de sol...\" — CESGRANRIO).",
+                "Chamamento (Função Apelativa): A interjeição serve para atrair a atenção do ouvinte, diferindo da ação expressa na oração posterior (ex.: \"Ei! Vamos embora!\" → \"Ei!\" expressa chamamento, enquanto \"vamos embora\" é a despedida — CONSESP).",
+                "Desejo / Esperança: Expressa um anseio ou pedido de concretização futura (ex.: \"Oxalá concluas a viagem\" = \"Tomara que concluas...\" — CESPE / Machado de Assis; \"Se Deus quiser...\" — ITAME).",
+                "Surpresa / Espanto: Expressa a quebra de expectativa diante do inesperado (ex.: \"Puxa! Não esperava te ver aqui!\" — ITAME).",
+                "Apelo / Súplica: Expressa pedido urgente de ajuda (ex.: \"Socorro! Alguém me dê um coração\" — CESPE / Titãs).",
+                "Alerta / Advertência: Expressa aviso de perigo iminente (ex.: \"Cuidado com o carro!\")."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "PROC-A01-G05-NUMERAIS-INTERJEICOES-004",
+                  "targetTitle": "Método de Análise Semântica Contextual de Interjeições",
+                  "targetUnitId": "IP-A01-G05",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nO numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas.\nExplicação Consolidada\nA gramática divide os numerais em quatro categorias funcionais:\nCardinais: Indicam contagem direta e quantidade básica absoluta de seres (ex.: um, dois, treze, mil, milhão). Exemplo em frase: \"Treze candidatos chegaram atrasados.\"\nOrdinais: Indicam a posição, lugar ou ordem relativa de um elemento em uma sequência determinada (ex.: primeiro, segundo, milésimo, milionésimo). Exemplo em frase: \"A primeira conquista foi aos 18 anos.\"\nFracionários: Indicam a divisão proporcional de uma quantidade, referindo-se a frações ou partes do todo (ex.: meio, um terço, três quartos, um quinto). Exemplo em frase: \"Já percorremos um terço do caminho.\"\nMultiplicativos: Indicam o aumento proporcional da quantidade por multiplicação (ex.: dobro, triplo, quádruplo). Exemplo em frase: \"Ele tem o triplo da experiência que eu tenho.\"\nCritérios de Reconhecimento\nPergunte à palavra no texto: ela conta (cardinal), posiciona (ordinal), divide (fracionário) ou multiplica (multiplicativo)?\nRelações\nContrasta com: (Numerais Coletivos).a 005."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nOs vocábulos um e uma (isolados ou em contrações prepositivas como num, numa, dum, duma) só atuam como numerais cardinais se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é artigo indefinido.\nExplicação Consolidada\nBancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: \"faria uma viagem, mas poderia fazer duas\"). No rigor da morfologia de concurso:\nHipótese Inicial Padrão: Todo um/uma deve ser tratado prioritariamente como artigo indefinido (indeterminador/generalizador).\nRequisito para Numeral Cardinal: O termo só mudará de classe para numeral se o contexto trouxer palavras de restrição numérica ou ênfase de contagem (ex.: somente, apenas, unicamente, exclusivamente, não dois, não três).\nCasos com Contração Prepositiva: Em estruturas como \"...se encontrassem num almoço...\" (em + um), o vocábulo um não expressa contagem numérica (não se opõe a dois almoços), mas introduz um evento indeterminado. Logo, num é a contração de preposição em com artigo indefinido um.\nExemplos e Contraexemplos\nArtigo Indefinido (Sem pista de contagem):\n\"Faria uma viagem.\" (indefinido)\n\"Um médico chegou.\" (indefinido)\n\"Assisti a um filme interessante ontem.\" (indefinido)\n\"Precisamos de uma solução para isso.\" (indefinido)\n\"...se encontrassem num almoço...\" (indefinido)\nNumeral Cardinal (Com pista explícita de quantificação):\n\"Tinha somente um vestido.\" (somente = pista)\n\"Trouxe apenas uma moeda.\" (apenas = pista)\n\"Havia apenas uma pessoa na fila de espera.\" (apenas = pista)\n\"A reunião ocorreu num só dia.\" (só = pista)(Método de Classificação de Um/Uma).002, 004, 006."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA palavra segundo pode atuar como numeral ordinal (indicando ordem sequencial) ou como conector conformativo (introduzindo referência/conformidade, equivalente a de acordo com ou conforme).\nExplicação Consolidada\nEmprego como Numeral Ordinal: Ocorre quando situa um elemento na posição número dois de uma série (ex.: \"Este é o segundo livro da coleção\").\nEmprego como Conector Conformativo: Ocorre quando introduz uma fonte, dado ou conformidade (ex.: \"Segundo o chefe da Divisão...\" / \"Segundo a previsão do tempo...\").\nGramática Tradicional (\"Raiz\"): Classifica o termo como preposição acidental, visto que desempenha o papel da locução prepositiva de acordo com.\nManuais Didáticos e Algumas Bancas: Denominam o termo como conjunção conformativa.\nPostura em Provas: O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal.(Teste de Substituição de Segundo).005, 007."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nPalavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos numerais coletivos, não se confundindo morfologicamente com os numerais cardinais.\nExplicação Consolidada\nExemplos canônicos cobrados em concursos:\nDúzia: grupo de 12 unidades.\nDécada: período/grupo de 10 anos.\nBimestre: período de 2 meses.\nNovena: período de 9 dias.\nDezena: grupo de 10 unidades.\nCentena: grupo de 100 unidades.\nAlerta de Prova\nAs bancas tentam induzir o candidato ao erro afirmando que dúzia ou década são numerais cardinais por corresponderem numericamente a 12 ou 10. A norma gramatical prescreve que são numerais coletivos, pois dão nome ao agrupamento de seres.\nRelações\nContrasta com: (Cardinais)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nEm tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma quantidade aproximada no plano textual, sem perder sua classificação morfológica de numeral cardinal.\nExplicação Consolidada\nEstrutura sem modificador: \"Dez alunos chegaram.\" O vocábulo dez é um numeral cardinal e expressa quantidade exata (rigorosamente 10).\nEstrutura com modificador aproximativo: \"Cerca de dez alunos chegaram.\" A palavra dez continua sendo morfologicamente um numeral cardinal, mas no contexto semântico transmite uma quantidade aproximada."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nO vocábulo metade é sempre um numeral fracionário. A palavra meio admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número.\nExplicação Consolidada\nA Palavra \"Metade\": É invariavelmente um numeral fracionário e varia em número (a metade, as metades).\nA Palavra \"Meio\":\nA) Numeral Fracionário: Ocorre quando equivale a \"metade de uma fração\". É variável em gênero e número (concorda com o substantivo). Exemplo: \"Tomou meio copo de leite\" / \"Tomou meia caneca de leite\".\nB) Substantivo: Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É variável em número. Exemplo: \"O meio ambiente\" / \"Os meios de comunicação\".\nC) Advérbio: Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a \"um pouco\". É INVARIÁVEL (nunca flexiona para o feminino meia nem para o plural). Exemplo: \"Ela está meio cansada\" (e nunca \"meia cansada\").\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-003 (Substituição por \"um pouco\")."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (interjeição simples) ou como grupo de palavras (locução interjetiva).\nPropriedades Gramaticais Críticas\nInvariabilidade Morfológica: Pertence ao bloco das palavras invariáveis (ao lado de preposições, conjunções, advérbios e palavras denotativas), não sofrendo flexão de gênero, número ou pessoa.\nAusência de Função Sintática: A interjeição não exerce nenhuma função sintática na oração (não pode ser sujeito, predicado, objeto direto, objeto indireto, adjunto adnominal, adjunto adverbial ou complemento nominal). Ela atua como um bloco expressivo autônomo.\nPontuação: Embora seja tipicamente acompanhada de ponto de exclamação (!) por sua carga enfática, a interjeição pode vir isolada por vírgulas ou seguida de reticências (...), sem perder sua natureza de interjeição.\nRelações\nExpande em: e 009.\nGlossário associado: TERM-A01-G05-NUMERAIS-INTERJEICOES-007 e 008."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nNo Modelo I de Questões (Identificação Morfológica), as bancas exigem o reconhecimento da interjeição no texto ou avaliam a derivação imprópria, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada.\nO Caso Emblemático da FGV (Senado Federal)\nTrecho examinado: \"E, surpresa!, quem a esta altura clama pelo surgimento...\"\nAnálise morfológica: O termo surpresa é originariamente um substantivo (\"Ganhei uma surpresa\"). No entanto, colocado entre vírgula e exclamação como brado exclamativo de impacto, ele assume o papel de interjeição.\nPista no enunciado da FGV: O comando da questão advertiu que o termo \"assume um papel gramatical distinto de sua classificação original\", fornecendo a pista direta da mudança de classe.\nDistinção Crucial entre Usos de \"Surpresa\"\nComo Substantivo: \"A festa surpresa foi adiada\" / \"Recebi uma surpresa\".\nComo Adjetivo / Predicativo: \"A professora ficou surpresa\" (qualifica o sujeito).\nComo Interjeição: \"E, surpresa!, consegui a vaga!\" (exclamação isolada emotiva).\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-004.009, 010, 011."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nNo Modelo II de Questões (Valor Semântico), a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição nunca é fixo de forma isolada; ele depende obrigatoriamente da leitura da sequência textual subsequente.\nPrincipais Matizes Semânticos em Concursos\nRealce / Enfatização Expressiva: A interjeição sublinha a emoção ou lirismo da oração seguinte (ex.: \"Ah, que minha história fosse como um raio de sol...\" — CESGRANRIO).\nChamamento (Função Apelativa): A interjeição serve para atrair a atenção do ouvinte, diferindo da ação expressa na oração posterior (ex.: \"Ei! Vamos embora!\" \"Ei!\" expressa chamamento, enquanto \"vamos embora\" é a despedida — CONSESP).\nDesejo / Esperança: Expressa um anseio ou pedido de concretização futura (ex.: \"Oxalá concluas a viagem\" = \"Tomara que concluas...\" — CESPE / Machado de Assis; \"Se Deus quiser...\" — ITAME).\nSurpresa / Espanto: Expressa a quebra de expectativa diante do inesperado (ex.: \"Puxa! Não esperava te ver aqui!\" — ITAME).\nApelo / Súplica: Expressa pedido urgente de ajuda (ex.: \"Socorro! Alguém me dê um coração\" — CESPE / Titãs).\nAlerta / Advertência: Expressa aviso de perigo iminente (ex.: \"Cuidado com o carro!\").(Método de Análise Semântica Contextual).a 017."
         }
       ]
     },
@@ -371,7 +725,9 @@
               "RULE-IP-A01-G05-001",
               "EXP-IP-A01-G05-035"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -492,7 +848,9 @@
               "PROC-A01-G05-NUMERAIS-INTERJEICOES-001",
               "EXP-IP-A01-G05-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -570,7 +928,9 @@
               "PROC-A01-G05-NUMERAIS-INTERJEICOES-002",
               "EXP-IP-A01-G05-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -648,7 +1008,9 @@
               "PROC-A01-G05-NUMERAIS-INTERJEICOES-003",
               "EXP-IP-A01-G05-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -759,7 +1121,9 @@
               "PROC-A01-G05-NUMERAIS-INTERJEICOES-004",
               "EXP-IP-A01-G05-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -863,7 +1227,9 @@
               "CONTRAST-IP-A01-G05-001",
               "EXP-IP-A01-G05-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -912,7 +1278,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-001",
               "EXP-IP-A01-G05-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -961,7 +1329,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-002",
               "EXP-IP-A01-G05-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1006,7 +1376,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-003",
               "EXP-IP-A01-G05-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1050,7 +1422,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-004",
               "EXP-IP-A01-G05-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1095,7 +1469,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-005",
               "EXP-IP-A01-G05-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1139,7 +1515,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-006",
               "EXP-IP-A01-G05-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1184,7 +1562,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-007",
               "EXP-IP-A01-G05-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1233,7 +1613,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-008",
               "EXP-IP-A01-G05-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1278,7 +1660,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-009",
               "EXP-IP-A01-G05-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1321,7 +1705,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-010",
               "EXP-IP-A01-G05-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1366,7 +1752,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-011",
               "EXP-IP-A01-G05-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1415,7 +1803,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-012",
               "EXP-IP-A01-G05-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1460,7 +1850,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-013",
               "EXP-IP-A01-G05-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1504,7 +1896,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-014",
               "EXP-IP-A01-G05-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1549,7 +1943,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-015",
               "EXP-IP-A01-G05-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1588,7 +1984,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-016",
               "EXP-IP-A01-G05-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1633,7 +2031,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-017",
               "EXP-IP-A01-G05-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1672,7 +2072,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-018",
               "EXP-IP-A01-G05-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1717,7 +2119,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-019",
               "EXP-IP-A01-G05-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1761,7 +2165,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-020",
               "EXP-IP-A01-G05-064"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1806,7 +2212,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-021",
               "EXP-IP-A01-G05-065"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1850,7 +2258,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-022",
               "EXP-IP-A01-G05-066"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1895,7 +2305,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-023",
               "EXP-IP-A01-G05-067"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1934,7 +2346,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-024",
               "EXP-IP-A01-G05-068"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1979,7 +2393,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-025",
               "EXP-IP-A01-G05-069"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2023,7 +2439,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-026",
               "EXP-IP-A01-G05-070"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2068,7 +2486,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-027",
               "EXP-IP-A01-G05-071"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2127,7 +2547,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-028",
               "EXP-IP-A01-G05-072"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2172,7 +2594,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-029",
               "EXP-IP-A01-G05-073"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2211,7 +2635,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-030",
               "EXP-IP-A01-G05-074"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2256,7 +2682,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-031",
               "EXP-IP-A01-G05-075"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2305,7 +2733,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-032",
               "EXP-IP-A01-G05-076"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2350,7 +2780,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-033",
               "EXP-IP-A01-G05-077"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2389,7 +2821,9 @@
               "WORKED_EXAMPLE-IP-A01-G05-034",
               "EXP-IP-A01-G05-078"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2439,7 +2873,9 @@
               "WARN-A01-G05-NUMERAIS-INTERJEICOES-001",
               "EXP-IP-A01-G05-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2475,7 +2911,9 @@
               "WARN-A01-G05-NUMERAIS-INTERJEICOES-002",
               "EXP-IP-A01-G05-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2511,7 +2949,9 @@
               "WARN-A01-G05-NUMERAIS-INTERJEICOES-003",
               "EXP-IP-A01-G05-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2547,7 +2987,9 @@
               "WARN-A01-G05-NUMERAIS-INTERJEICOES-004",
               "EXP-IP-A01-G05-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2583,7 +3025,9 @@
               "WARN-A01-G05-NUMERAIS-INTERJEICOES-005",
               "EXP-IP-A01-G05-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2619,7 +3063,9 @@
               "WARN-A01-G05-NUMERAIS-INTERJEICOES-006",
               "EXP-IP-A01-G05-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2655,28 +3101,99 @@
               "WARN-A01-G05-NUMERAIS-INTERJEICOES-007",
               "EXP-IP-A01-G05-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Conceito Gramatical e Categorias Tradicionais de Numerais**: Definição ou Ideia Central\nO numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas.\nExplicação Consolidada\nA gramática divide os numerais em quatro categorias funcionais:\nCardinais: Indicam contagem direta e quantidade básica absoluta de seres (ex.: um, dois, treze, mil, milhão). Exemplo em frase: \"Treze candidatos chegaram atrasados.\"\nOrdinais: Indicam a posição, lugar ou ordem relativa de um elemento em uma sequência determinada (ex.: primeiro, segundo, milésimo, milionésimo). Exemplo em frase: \"A primeira conquista foi aos 18 anos.\"\nFracionários: Indicam a divisão proporcional de uma quantidade, referindo-se a frações ou partes do todo (ex.: meio, um terço, três quartos, um quinto). Exemplo em frase: \"Já percorremos um terço do caminho.\"\nMultiplicativos: Indicam o aumento proporcional da quantidade por multiplicação (ex.: dobro, triplo, quádruplo). Exemplo em frase: \"Ele tem o triplo da experiência que eu tenho.\"\nCritérios de Reconhecimento\nPergunte à palavra no texto: ela conta (cardinal), posiciona (ordinal), divide (fracionário) ou multiplica (multiplicativo)?\nRelações\nContrasta com: (Numerais Coletivos).a 005.",
-            "**Diferenciação entre Artigo Indefinido e Numeral Cardinal (*Um/Uma* e a Contração *Num*)**: Definição ou Ideia Central\nOs vocábulos um e uma (isolados ou em contrações prepositivas como num, numa, dum, duma) só atuam como numerais cardinais se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é artigo indefinido.\nExplicação Consolidada\nBancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: \"faria uma viagem, mas poderia fazer duas\"). No rigor da morfologia de concurso:\nHipótese Inicial Padrão: Todo um/uma deve ser tratado prioritariamente como artigo indefinido (indeterminador/generalizador).\nRequisito para Numeral Cardinal: O termo só mudará de classe para numeral se o contexto trouxer palavras de restrição numérica ou ênfase de contagem (ex.: somente, apenas, unicamente, exclusivamente, não dois, não três).\nCasos com Contração Prepositiva: Em estruturas como \"...se encontrassem num almoço...\" (em + um), o vocábulo um não expressa contagem numérica (não se opõe a dois almoços), mas introduz um evento indeterminado. Logo, num é a contração de preposição em com artigo indefinido um.\nExemplos e Contraexemplos\nArtigo Indefinido (Sem pista de contagem):\n\"Faria uma viagem.\" (indefinido)\n\"Um médico chegou.\" (indefinido)\n\"Assisti a um filme interessante ontem.\" (indefinido)\n\"Precisamos de uma solução para isso.\" (indefinido)\n\"...se encontrassem num almoço...\" (indefinido)\nNumeral Cardinal (Com pista explícita de quantificação):\n\"Tinha somente um vestido.\" (somente = pista)\n\"Trouxe apenas uma moeda.\" (apenas = pista)\n\"Havia apenas uma pessoa na fila de espera.\" (apenas = pista)\n\"A reunião ocorreu num só dia.\" (só = pista)(Método de Classificação de Um/Uma).002, 004, 006.",
-            "**Funções e Classificações da Palavra \"Segundo\"**: Definição ou Ideia Central\nA palavra segundo pode atuar como numeral ordinal (indicando ordem sequencial) ou como conector conformativo (introduzindo referência/conformidade, equivalente a de acordo com ou conforme).\nExplicação Consolidada\nEmprego como Numeral Ordinal: Ocorre quando situa um elemento na posição número dois de uma série (ex.: \"Este é o segundo livro da coleção\").\nEmprego como Conector Conformativo: Ocorre quando introduz uma fonte, dado ou conformidade (ex.: \"Segundo o chefe da Divisão...\" / \"Segundo a previsão do tempo...\").\nGramática Tradicional (\"Raiz\"): Classifica o termo como preposição acidental, visto que desempenha o papel da locução prepositiva de acordo com.\nManuais Didáticos e Algumas Bancas: Denominam o termo como conjunção conformativa.\nPostura em Provas: O ponto decisivo para o candidato é identificar o valor semântico de conformidade. Sob nenhuma hipótese o conector conformativo pode ser rotulado como numeral ordinal.(Teste de Substituição de Segundo).005, 007.",
-            "**Numerais Coletivos e a Fronteira com Numerais Cardinais**: Definição ou Ideia Central\nPalavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos numerais coletivos, não se confundindo morfologicamente com os numerais cardinais.\nExplicação Consolidada\nExemplos canônicos cobrados em concursos:\nDúzia: grupo de 12 unidades.\nDécada: período/grupo de 10 anos.\nBimestre: período de 2 meses.\nNovena: período de 9 dias.\nDezena: grupo de 10 unidades.\nCentena: grupo de 100 unidades.\nAlerta de Prova\nAs bancas tentam induzir o candidato ao erro afirmando que dúzia ou década são numerais cardinais por corresponderem numericamente a 12 ou 10. A norma gramatical prescreve que são numerais coletivos, pois dão nome ao agrupamento de seres.\nRelações\nContrasta com: (Cardinais).",
-            "**O Numeral Cardinal e o Papel do Contexto (Quantidade Exata vs. Aproximada)**: Definição ou Ideia Central\nEm tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma quantidade aproximada no plano textual, sem perder sua classificação morfológica de numeral cardinal.\nExplicação Consolidada\nEstrutura sem modificador: \"Dez alunos chegaram.\" O vocábulo dez é um numeral cardinal e expressa quantidade exata (rigorosamente 10).\nEstrutura com modificador aproximativo: \"Cerca de dez alunos chegaram.\" A palavra dez continua sendo morfologicamente um numeral cardinal, mas no contexto semântico transmite uma quantidade aproximada.",
-            "**Empregos e Regras de Flexão de \"Metade\" e \"Meio\"**: Definição ou Ideia Central\nO vocábulo metade é sempre um numeral fracionário. A palavra meio admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número.\nExplicação Consolidada\nA Palavra \"Metade\": É invariavelmente um numeral fracionário e varia em número (a metade, as metades).\nA Palavra \"Meio\":\nA) Numeral Fracionário: Ocorre quando equivale a \"metade de uma fração\". É variável em gênero e número (concorda com o substantivo). Exemplo: \"Tomou meio copo de leite\" / \"Tomou meia caneca de leite\".\nB) Substantivo: Ocorre quando designa um ambiente, lugar, recurso ou elemento central. É variável em número. Exemplo: \"O meio ambiente\" / \"Os meios de comunicação\".\nC) Advérbio: Ocorre quando atua como modificador de um adjetivo ou outro advérbio, equivalendo semanticamente a \"um pouco\". É INVARIÁVEL (nunca flexiona para o feminino meia nem para o plural). Exemplo: \"Ela está meio cansada\" (e nunca \"meia cansada\").\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-003 (Substituição por \"um pouco\").",
-            "**Conceito, Invariabilidade e Ausência de Função Sintática das Interjeições**: Definição ou Ideia Central\nA interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (interjeição simples) ou como grupo de palavras (locução interjetiva).\nPropriedades Gramaticais Críticas\nInvariabilidade Morfológica: Pertence ao bloco das palavras invariáveis (ao lado de preposições, conjunções, advérbios e palavras denotativas), não sofrendo flexão de gênero, número ou pessoa.\nAusência de Função Sintática: A interjeição não exerce nenhuma função sintática na oração (não pode ser sujeito, predicado, objeto direto, objeto indireto, adjunto adnominal, adjunto adverbial ou complemento nominal). Ela atua como um bloco expressivo autônomo.\nPontuação: Embora seja tipicamente acompanhada de ponto de exclamação (!) por sua carga enfática, a interjeição pode vir isolada por vírgulas ou seguida de reticências (...), sem perder sua natureza de interjeição.\nRelações\nExpande em: e 009.\nGlossário associado: TERM-A01-G05-NUMERAIS-INTERJEICOES-007 e 008.",
-            "**Metodologia de Concursos para Interjeição: Identificação e Derivação Imprópria**: Definição ou Ideia Central\nNo Modelo I de Questões (Identificação Morfológica), as bancas exigem o reconhecimento da interjeição no texto ou avaliam a derivação imprópria, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada.\nO Caso Emblemático da FGV (Senado Federal)\nTrecho examinado: \"E, surpresa!, quem a esta altura clama pelo surgimento...\"\nAnálise morfológica: O termo surpresa é originariamente um substantivo (\"Ganhei uma surpresa\"). No entanto, colocado entre vírgula e exclamação como brado exclamativo de impacto, ele assume o papel de interjeição.\nPista no enunciado da FGV: O comando da questão advertiu que o termo \"assume um papel gramatical distinto de sua classificação original\", fornecendo a pista direta da mudança de classe.\nDistinção Crucial entre Usos de \"Surpresa\"\nComo Substantivo: \"A festa surpresa foi adiada\" / \"Recebi uma surpresa\".\nComo Adjetivo / Predicativo: \"A professora ficou surpresa\" (qualifica o sujeito).\nComo Interjeição: \"E, surpresa!, consegui a vaga!\" (exclamação isolada emotiva).\nRelações\nPossui dica: TIP-A01-G05-NUMERAIS-INTERJEICOES-004.009, 010, 011.",
-            "**Metodologia de Concursos para Interjeição: Análise do Valor Semântico Contextual**: Definição ou Ideia Central\nNo Modelo II de Questões (Valor Semântico), a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição nunca é fixo de forma isolada; ele depende obrigatoriamente da leitura da sequência textual subsequente.\nPrincipais Matizes Semânticos em Concursos\nRealce / Enfatização Expressiva: A interjeição sublinha a emoção ou lirismo da oração seguinte (ex.: \"Ah, que minha história fosse como um raio de sol...\" — CESGRANRIO).\nChamamento (Função Apelativa): A interjeição serve para atrair a atenção do ouvinte, diferindo da ação expressa na oração posterior (ex.: \"Ei! Vamos embora!\" \"Ei!\" expressa chamamento, enquanto \"vamos embora\" é a despedida — CONSESP).\nDesejo / Esperança: Expressa um anseio ou pedido de concretização futura (ex.: \"Oxalá concluas a viagem\" = \"Tomara que concluas...\" — CESPE / Machado de Assis; \"Se Deus quiser...\" — ITAME).\nSurpresa / Espanto: Expressa a quebra de expectativa diante do inesperado (ex.: \"Puxa! Não esperava te ver aqui!\" — ITAME).\nApelo / Súplica: Expressa pedido urgente de ajuda (ex.: \"Socorro! Alguém me dê um coração\" — CESPE / Titãs).\nAlerta / Advertência: Expressa aviso de perigo iminente (ex.: \"Cuidado com o carro!\").(Método de Análise Semântica Contextual).a 017."
-          ]
+          "term": "Conceito Gramatical e Categorias Tradicionais de Numerais",
+          "shortDefinition": "O numeral é a classe de palavras que quantifica seres de forma exata, indica sua ordenação em uma série, ou expressa múltiplos e frações matemáticas.",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-01"
+          },
+          "operationalUse": "A gramática divide os numerais em quatro categorias funcionais:"
+        },
+        {
+          "term": "Diferenciação entre Artigo Indefinido e Numeral Cardinal (*Um/Uma* e a Contração *Num*)",
+          "shortDefinition": "Os vocábulos um e uma (isolados ou em contrações prepositivas como num, numa, dum, duma) só atuam como numerais cardinais se houver no contexto uma evidência expressa de contabilização/quantificação. Na ausência de pistas explícitas, a classificação canônica é artigo indefinido.",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-02"
+          },
+          "operationalUse": "Bancas examinadoras (como o CEBRASPE) exploram a tendência do candidato de inferir possibilidades extratextuais (ex.: \"faria uma viagem, mas poderia fazer duas\")."
+        },
+        {
+          "term": "Funções e Classificações da Palavra \"Segundo\"",
+          "shortDefinition": "A palavra segundo pode atuar como numeral ordinal (indicando ordem sequencial) ou como conector conformativo (introduzindo referência/conformidade, equivalente a de acordo com ou conforme).",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-03"
+          }
+        },
+        {
+          "term": "Numerais Coletivos e a Fronteira com Numerais Cardinais",
+          "shortDefinition": "Palavras no singular que designam um conjunto ou agrupamento com número exato de unidades constituem a categoria dos numerais coletivos, não se confundindo morfologicamente com os numerais cardinais.",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-04"
+          },
+          "operationalUse": "Exemplos canônicos cobrados em concursos:"
+        },
+        {
+          "term": "O Numeral Cardinal e o Papel do Contexto (Quantidade Exata vs. Aproximada)",
+          "shortDefinition": "Em tese, a definição formal do numeral cardinal é indicar uma quantidade exata. Todavia, a presença de modificadores contextuais de aproximação faz com que o numeral passe a expressar uma quantidade aproximada no plano textual, sem perder sua classificação morfológica de numeral cardinal.",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-05"
+          }
+        },
+        {
+          "term": "Empregos e Regras de Flexão de \"Metade\" e \"Meio\"",
+          "shortDefinition": "O vocábulo metade é sempre um numeral fracionário. A palavra meio admite três categorizações morfossintáticas distintas (numeral fracionário, substantivo e advérbio), as quais ditam se o termo pode ou não flexionar em gênero e número.",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-06"
+          }
+        },
+        {
+          "term": "Conceito, Invariabilidade e Ausência de Função Sintática das Interjeições",
+          "shortDefinition": "A interjeição é a classe morfológica de palavras ou expressões que expressa estados emocionais, sentimentos, sensações, apelos e reações espontâneas do falante. Ela pode se apresentar como vocábulo isolado (interjeição simples) ou como grupo de palavras (locução interjetiva).",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-07"
+          }
+        },
+        {
+          "term": "Metodologia de Concursos para Interjeição: Identificação e Derivação Imprópria",
+          "shortDefinition": "No Modelo I de Questões (Identificação Morfológica), as bancas exigem o reconhecimento da interjeição no texto ou avaliam a derivação imprópria, processo em que uma palavra pertencente originariamente a outra classe (como um substantivo) passa a atuar como interjeição ao ser empregada com entonação exclamativa isolada.",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-08"
+          }
+        },
+        {
+          "term": "Metodologia de Concursos para Interjeição: Análise do Valor Semântico Contextual",
+          "shortDefinition": "No Modelo II de Questões (Valor Semântico), a banca cobra a interpretação do sentimento ou efeito expressivo veiculado pela interjeição. O sentido de uma interjeição nunca é fixo de forma isolada; ele depende obrigatoriamente da leitura da sequência textual subsequente.",
+          "detailTarget": {
+            "unitId": "IP-A01-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A01-G05-09"
+          }
         }
       ]
     },
@@ -2760,7 +3277,39 @@
         "confidence": 0.95
       },
       "answerSha256": "0b70752fa00bd7b8c77918cd8e54982e593f9295652cb052b8c0f05230375261",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Assinale a alternativa que apresenta um numeral:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Eu estava triste, até que um certo alguém cruzou o meu caminho."
+          },
+          {
+            "label": "B",
+            "text": "Uma boa educação é importante para formar o caráter do indivíduo."
+          },
+          {
+            "label": "C",
+            "text": "Foi um presente te encontrar!"
+          },
+          {
+            "label": "D",
+            "text": "Fui à livraria e comprei somente um livro, embora eu quisesse comprar mais."
+          },
+          {
+            "label": "E",
+            "text": "Hoje faz um lindo dia!"
+          }
+        ],
+        "answer": "D",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",

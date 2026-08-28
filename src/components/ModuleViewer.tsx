@@ -41,7 +41,6 @@ import {
   ExternalLink,
   ShieldCheck,
   LoaderCircle,
-  Workflow,
   Target,
   Sparkles,
   Flame,
@@ -60,6 +59,7 @@ import {
   MacroEntryPanel,
   type MacroAdaptiveRequirement,
 } from './pedagogical/macro/MacroCurriculum';
+import { SuvecaMethodBanner } from './SuvecaMethodBanner';
 
 interface ModuleViewerProps {
   modules: ModuleData[];
@@ -98,6 +98,7 @@ interface ModuleViewerProps {
   onOpenMacroChange?: (macroId: string, unitId: string) => void;
   onPracticeCompetency?: (competencyId: string) => void;
   routeIssue?: 'invalid_unit' | 'invalid_macro' | null;
+  onOpenAnalyzer?: () => void;
 }
 
 type ModuleNotes = Record<string, string>;
@@ -411,6 +412,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   onOpenMacroChange,
   onPracticeCompetency,
   routeIssue = null,
+  onOpenAnalyzer,
 }) => {
   const moduleData =
     modules.find((m) => m.id === selectedModuleId) || modules[0];
@@ -882,37 +884,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             {moduleData.description}
           </p>
 
-          {moduleData.suvecaMethod && ['central', 'strong', 'review'].includes(moduleData.suvecaMethod.level) && (
-            <section className="overflow-hidden rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50/80 via-white to-sky-50/50" aria-labelledby={`suveca-method-${moduleData.id}`}>
-              <div className="flex flex-wrap items-start justify-between gap-3 border-b border-teal-100 px-4 py-4 sm:px-5">
-                <div className="flex min-w-0 items-start gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-900 text-amber-300 shadow-sm">
-                    <Workflow className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <div className="min-w-0">
-                    <span className="inline-flex rounded-full border border-teal-200 bg-white px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-teal-800">
-                      {moduleData.suvecaMethod.label}
-                    </span>
-                    <h2 id={`suveca-method-${moduleData.id}`} className="mt-1.5 break-words text-base font-extrabold text-teal-950 sm:text-lg">
-                      <SuvecaWordHighlight text="Conexão SuVeCA com esta aula" />
-                    </h2>
-                  </div>
-                </div>
-                <span className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-teal-800">
-                  Mapa funcional
-                </span>
-              </div>
-
-              <div className="p-4 sm:p-5">
-                <p className="text-sm leading-relaxed text-slate-700">
-                  {moduleData.suvecaMethod.summary}
-                </p>
-                <p className="mt-2 text-xs font-semibold leading-relaxed text-teal-800">
-                  A aplicação, os testes decisivos e os limites próprios do conteúdo aparecem dentro de cada unidade pedagógica.
-                </p>
-              </div>
-            </section>
-          )}
+          <SuvecaMethodBanner module={moduleData} onOpenAnalyzer={onOpenAnalyzer} />
 
           {moduleData.knowledge && (
             <details className="group rounded-xl border border-violet-200 bg-violet-50/60 p-3.5 text-xs text-slate-700">

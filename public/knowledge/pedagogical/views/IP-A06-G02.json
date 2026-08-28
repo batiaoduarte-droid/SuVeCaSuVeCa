@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A06-G02",
     "lessonId": "A06",
     "title": "Sintaxe da Oração: Tipos de Sujeito, Barreira Preposicional e Impessoalidade",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring (Golden Reference)",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A06-G02",
@@ -105,7 +106,11 @@
               "to": "node_concordancia",
               "relation": "controle_sintatico"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A06-G02-001"
+          }
         }
       ]
     },
@@ -298,8 +303,7 @@
             }
           ]
         }
-      ],
-      "blocks": []
+      ]
     },
     "rules": {
       "items": [
@@ -675,21 +679,42 @@
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Sujeito**: Termo essencial da oração que mantém relação de concordância sintática com o verbo.",
-            "**Núcleo do Sujeito**: Palavra substantiva principal que comanda a concordância, imune a preposições.",
-            "**Sujeito Simples**: Sujeito determinado que possui apenas um núcleo substantivo.",
-            "**Sujeito Composto**: Sujeito determinado que possui dois ou mais núcleos substantivos coordenados.",
-            "**Sujeito Oculto (Desinencial)**: Sujeito elíptico determinável pela terminação verbal ou coesão contextual.",
-            "**Sujeito Indeterminado**: Estrutura em que o agente não pode ou não deve ser identificado (3ª pl. ou VTI+SE).",
-            "**Oração Sem Sujeito**: Oração formada por verbos impessoais (Haver/Fazer) sem qualquer sujeito.",
-            "**Partícula Apassivadora (PA)**: Pronome SE associado a VTD que transforma o objeto em sujeito paciente.",
-            "**Índice de Indeterminação (IIS)**: Pronome SE associado a VTI/VI/VL que indetermina o sujeito."
-          ]
+          "term": "Sujeito",
+          "shortDefinition": "Termo essencial da oração que mantém relação de concordância sintática com o verbo."
+        },
+        {
+          "term": "Núcleo do Sujeito",
+          "shortDefinition": "Palavra substantiva principal que comanda a concordância, imune a preposições."
+        },
+        {
+          "term": "Sujeito Simples",
+          "shortDefinition": "Sujeito determinado que possui apenas um núcleo substantivo."
+        },
+        {
+          "term": "Sujeito Composto",
+          "shortDefinition": "Sujeito determinado que possui dois ou mais núcleos substantivos coordenados."
+        },
+        {
+          "term": "Sujeito Oculto (Desinencial)",
+          "shortDefinition": "Sujeito elíptico determinável pela terminação verbal ou coesão contextual."
+        },
+        {
+          "term": "Sujeito Indeterminado",
+          "shortDefinition": "Estrutura em que o agente não pode ou não deve ser identificado (3ª pl. ou VTI+SE)."
+        },
+        {
+          "term": "Oração Sem Sujeito",
+          "shortDefinition": "Oração formada por verbos impessoais (Haver/Fazer) sem qualquer sujeito."
+        },
+        {
+          "term": "Partícula Apassivadora (PA)",
+          "shortDefinition": "Pronome SE associado a VTD que transforma o objeto em sujeito paciente."
+        },
+        {
+          "term": "Índice de Indeterminação (IIS)",
+          "shortDefinition": "Pronome SE associado a VTI/VI/VL que indetermina o sujeito."
         }
       ]
     },

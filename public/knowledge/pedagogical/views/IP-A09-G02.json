@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A09-G02",
     "lessonId": "A09",
     "title": "Concordância Verbal - Casos Especiais com Sujeito Simples",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A09-G02",
@@ -460,7 +461,6 @@
         {
           "term": "Concordância Atrativa (Sinérese/Silepse)",
           "shortDefinition": "Concordância feita com o termo mais próximo ou com a ideia subjacente, e não com o núcleo gramatical.",
-          "fullDefinition": "Modalidade de concordância facultativa admitida pela norma culta em que a desinência do verbo ou do adjetivo alinha-se ao termo semanticamente mais proeminente ou espacialmente adjacente na cadeia sintática (ex: A maioria dos homens choraram).",
           "domain": "Sintaxe de Concordância",
           "commonMisconception": "Considerar a concordância atrativa um desvio ou erro popular."
         }
@@ -531,7 +531,10 @@
         "confidence": 0.93
       },
       "answerSha256": "9f10442f4a60d4ee82b2c52016fbc60ca73deb48a199f647f5363793ff254c1d",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A09-aula09.q.list_tipos.002"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -581,107 +584,10 @@
         "confidence": 0.93
       },
       "answerSha256": "818e4c738f2ed92c886ab2100014d315b27f461853f1d6ebb74241f4baf44f79",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A09-aula09.q.list_tipos.002",
-      "lessonId": "A09",
-      "sourceQuestionId": "aula09.q.list_tipos.002",
-      "questionPayload": {
-        "question_id": "aula09.q.list_tipos.002",
-        "question_number": 2,
-        "occurrence_kind": "list",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "TELEBRAS",
-        "position": null,
-        "year": 2022,
-        "support_text": "...A telecomunicação militar apoiada em satélites e a eletrônica determinarão as guerras do\nfuturo imediato. Fala-se já de bombas eletrônicas (E) que podem paralisar estabelecimentos\nneurais da sociedade moderna, como hospitais, centrais elétricas, oleodutos etc., destruindo os\nseus circuitos eletrônicos.",
-        "prompt": "No último parágrafo do texto, a partícula “se”, em “Fala-se já de bombas eletrônicas”, indica\nque o sujeito da oração é indeterminado.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.tipos_de_sujeito"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula09_complete",
-          "page_ids": [
-            "aula09_complete.p0101"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.9,
-        "duplicate_of": "aula09.q.commented_tipos.002",
-        "conceptual_question_key": "aula09.conceptual_q.commented_tipos.002"
-      },
-      "questionSha256": "19063ea2f92edf5e9cfc611433bd9cc75d3ee5c9e082328ac1c9e6c2239bd00a",
-      "answerPayload": {
-        "answer_id": "aula09.q.list_tipos.002.answer",
-        "question_id": "aula09.q.list_tipos.002",
-        "answer": "correct",
-        "commentary": "Quanto temos “VTI, VI, ou Vl + SE”, temos estrutura sintática de sujeito indeterminado. Para\nconferir, basta notar que não sabemos quem é o sujeito, não sabemos quem fala. De fato, então,\no “SE” é partícula indeterminadora do sujeito.\n\nQuestão correta.",
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula09_complete",
-          "page_ids": [
-            "aula09_complete.p0102"
-          ]
-        },
-        "confidence": 0.97
-      },
-      "answerSha256": "63e7c168c3393463430dbf27746d65750eded765fe566032898892b63886ae41",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A09-aula09.q.list_tipos.004",
-      "lessonId": "A09",
-      "sourceQuestionId": "aula09.q.list_tipos.004",
-      "questionPayload": {
-        "question_id": "aula09.q.list_tipos.004",
-        "question_number": 4,
-        "occurrence_kind": "list",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "DPE-RS",
-        "position": null,
-        "year": 2022,
-        "support_text": "Na sociedade líquido-moderna da hipermodernidade globalizante, o fazer compras não\npressupõe nenhum discurso. O consumidor — o hiperconsumidor — compra aquilo que lhe\napraz. Ele segue as suas inclinações individuais. O curtir é o seu lema.",
-        "prompt": "No primeiro parágrafo, os sujeitos das formas verbais “pressupõe” e “é” são classificados como\noracionais, por serem constituídos pelos verbos “fazer” e “curtir”, respectivamente.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.grammar.tipos_de_sujeito"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula09_complete",
-          "page_ids": [
-            "aula09_complete.p0102"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.9,
-        "duplicate_of": "aula09.q.commented_tipos.004",
-        "conceptual_question_key": "aula09.conceptual_q.commented_tipos.004"
-      },
-      "questionSha256": "5b38253778f3fb0900a8e84e8f48ba662962fd27e376117943b29e4d8008d2eb",
-      "answerPayload": {
-        "answer_id": "aula09.q.list_tipos.004.answer",
-        "question_id": "aula09.q.list_tipos.004",
-        "answer": "incorrect",
-        "commentary": "Os sujeitos são “o fazer compras” e “O curtir”, que são formas nominais, verbos substantivados\npelo artigo “o”. Não há sujeito oracional.\n\nQuestão incorreta.",
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula09_complete",
-          "page_ids": [
-            "aula09_complete.p0102"
-          ]
-        },
-        "confidence": 0.97
-      },
-      "answerSha256": "579ac3d1903a9c6e48244f5459aa6b1cdfe0561b083ed8de7982f5576145e082",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A09-aula09.q.list_tipos.004"
+      ]
     },
     {
       "schemaVersion": "1.0.0",

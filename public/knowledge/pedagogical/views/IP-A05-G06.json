@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A05-G06",
     "lessonId": "A05",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A05-G06",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A05-G06-001"
+          }
         }
       ]
     },
@@ -94,8 +99,66 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA passagem da voz ativa para a voz passiva analítica fundamenta-se em uma reestruturação relacional (\"cruzamento\"), em que o termo que recebia a ação direta (Objeto Direto) é promovido a núcleo governante da oração (Sujeito Paciente), o executor da ação (Sujeito Agente) passa a termo circunstancial/integrante (Agente da Passiva), e a forma verbal expande-se com a inserção do verbo auxiliar SER.\nExplicação Detalhada\nPólo do Objeto Direto: O Objeto Direto da voz ativa cruza para a posição de Sujeito Paciente da voz passiva, assumindo o controle total da concordância verbal e nominal da locução.\nPólo do Sujeito Agente: O Sujeito Agente cruza para a posição de Agente da Passiva no predicado passivo, sendo obrigatoriamente introduzido pela preposição por (ou suas contrações pelo, pela, pelos, pelas) e, em construções mais raras/estilísticas, por de.\nPólo Verbal: O verbo principal da ativa cede seu tempo e modo para o verbo auxiliar SER, convertendo-se em Particípio.\n\\text{Voz Ativa: } \\underbrace{\\text{Sujeito Agente}}_{\\text{Termo 1}} + \\underbrace{\\text{Verbo Transitivo Direto}}_{\\text{Tempo X}} + \\underbrace{\\text{Objeto Direto}}_{\\text{Termo 2}}\n\\text{Voz Passiva: } \\underbrace{\\text{Sujeito Paciente}}_{(\\text{ex-Termo 2})} + \\underbrace{\\text{Verbo SER}}_{(\\text{no Tempo X})} + \\underbrace{\\text{Particípio}}_{(\\text{concorda com Sujeito})} + \\underbrace{\\text{Agente da Passiva}}_{[\\text{por } + \\text{ ex-Termo 1}]}\n\"Aquilo que fica lá no final da ativa vai lá para o início da passiva. O objeto direto da ativa vira sujeito paciente na passiva... e o verbo ser entra rigorosamente no mesmo tempo verbal da ativa.\" (019 — )\nDiagrama exibindo blocos coloridos cruzados: VOZ ATIVA (Suj. Agente | Tempo Verbal | Objeto Direto) interligada por setas diagonais a VOZ PASSIVA (Sujeito Paciente | SER + Particípio | Agente da Passiva) (VIS-A05-G06-001).\nRelações\nBase para: \nExemplificado em:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A passagem da voz ativa para a voz passiva analítica fundamenta-se em uma reestruturação relacional (\"cruzamento\"), em que o termo que recebia a ação direta (Objeto Direto) é promovido a núcleo governante da oração (Sujeito Paciente), o executor da ação (Sujeito Agente) passa a termo circunstancial/integrante (Agente da Passiva), e a forma verbal expande-se com a inserção do verbo auxiliar SER."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pólo do Objeto Direto: O Objeto Direto da voz ativa cruza para a posição de Sujeito Paciente da voz passiva, assumindo o controle total da concordância verbal e nominal da locução.",
+                "Pólo do Sujeito Agente: O Sujeito Agente cruza para a posição de Agente da Passiva no predicado passivo, sendo obrigatoriamente introduzido pela preposição por (ou suas contrações pelo, pela, pelos, pelas) e, em construções mais raras/estilísticas, por de.",
+                "Pólo Verbal: O verbo principal da ativa cede seu tempo e modo para o verbo auxiliar SER, convertendo-se em Particípio."
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Voz Ativa: } \\underbrace{\\text{Sujeito Agente}}_{\\text{Termo 1}} + \\underbrace{\\text{Verbo Transitivo Direto}}_{\\text{Tempo X}} + \\underbrace{\\text{Objeto Direto}}_{\\text{Termo 2}}"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Voz Passiva: } \\underbrace{\\text{Sujeito Paciente}}_{(\\text{ex-Termo 2})} + \\underbrace{\\text{Verbo SER}}_{(\\text{no Tempo X})} + \\underbrace{\\text{Particípio}}_{(\\text{concorda com Sujeito})} + \\underbrace{\\text{Agente da Passiva}}_{[\\text{por } + \\text{ ex-Termo 1}]}"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Aquilo que fica lá no final da ativa vai lá para o início da passiva. O objeto direto da ativa vira sujeito paciente na passiva... e o verbo ser entra rigorosamente no mesmo tempo verbal da ativa.\" (019 — )"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Diagrama exibindo blocos coloridos cruzados: VOZ ATIVA (Suj. Agente | Tempo Verbal | Objeto Direto) interligada por setas diagonais a VOZ PASSIVA (Sujeito Paciente | SER + Particípio | Agente da Passiva) (VIS-A05-G06-001)."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A05-G06-001",
+                  "targetTitle": "Protocolo Mestre de Transposição (Voz Ativa $\\rightarrow$ Voz Passiva Analítica)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-001",
+                  "targetTitle": "Frase 1 (Fixação): Presente do Indicativo",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +171,59 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nProtocolo de quatro passos analíticos sequenciais que blinda o candidato contra a sobrecarga cognitiva e as armadilhas fonéticas ou estruturais criadas pelas bancas de concursos públicos.\nExplicação Detalhada\nInstrução 1 — \"Chame o feito à ordem\": Antes de qualquer tentativa de reescrita ou leitura de alternativas, examinar a frase ativa e anotar expressamente:\nO Objeto Direto (OD) (isolando seu núcleo substantivo);\nO Sujeito Agente (verificando se é determinado, composto, elíptico ou indeterminado);\nO Tempo e Modo Verbal (anotando a sigla correspondente diretamente acima do verbo).\nTermos acessórios (adjuntos adverbiais, orações intercaladas) devem ser ignorados nesta fase preliminar.\nInstrução 2 — Deslocar o OD para Sujeito Paciente: Posicionar o termo identificado como sujeito da nova oração.\nInstrução 3 — Inserir o Verbo Auxiliar SER + Particípio: Conjugar o verbo SER no exato tempo/modo registrado na Instrução 1, flexionando o particípio do verbo principal em gênero e número para concordar com o novo sujeito.\nInstrução 4 — Converter Sujeito em Agente da Passiva: Posicionar o sujeito primitivo como agente preposicionado (por / pelo), ou omiti-lo se for indeterminado/elíptico na oração original.\n\"Numa questão como essa você tem que ser objetivo, você tem que chamar o feito à ordem, procurar o objeto direto, procurar o sujeito, procurar o tempo do verbo e fazer a transposição no cantinho.\" (020 — )\nRelações\nGera procedimento: \nCombate erro:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Protocolo de quatro passos analíticos sequenciais que blinda o candidato contra a sobrecarga cognitiva e as armadilhas fonéticas ou estruturais criadas pelas bancas de concursos públicos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Detalhada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Instrução 1 — \"Chame o feito à ordem\": Antes de qualquer tentativa de reescrita ou leitura de alternativas, examinar a frase ativa e anotar expressamente:",
+                "O Objeto Direto (OD) (isolando seu núcleo substantivo);",
+                "O Sujeito Agente (verificando se é determinado, composto, elíptico ou indeterminado);",
+                "O Tempo e Modo Verbal (anotando a sigla correspondente diretamente acima do verbo).",
+                "Termos acessórios (adjuntos adverbiais, orações intercaladas) devem ser ignorados nesta fase preliminar.",
+                "Instrução 2 — Deslocar o OD para Sujeito Paciente: Posicionar o termo identificado como sujeito da nova oração.",
+                "Instrução 3 — Inserir o Verbo Auxiliar SER + Particípio: Conjugar o verbo SER no exato tempo/modo registrado na Instrução 1, flexionando o particípio do verbo principal em gênero e número para concordar com o novo sujeito.",
+                "Instrução 4 — Converter Sujeito em Agente da Passiva: Posicionar o sujeito primitivo como agente preposicionado (por / pelo), ou omiti-lo se for indeterminado/elíptico na oração original."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Numa questão como essa você tem que ser objetivo, você tem que chamar o feito à ordem, procurar o objeto direto, procurar o sujeito, procurar o tempo do verbo e fazer a transposição no cantinho.\" (020 — )"
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A05-G06-001",
+                  "targetTitle": "Protocolo Mestre de Transposição (Voz Ativa $\\rightarrow$ Voz Passiva Analítica)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G06-001",
+                  "targetTitle": "O Erro da Análise Sintática Exaustiva e Desnecessária",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +236,139 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA voz passiva analítica não admite alteração de tempo, modo ou aspecto verbal em relação à oração ativa primitiva. O verbo auxiliar SER atua como espelho morfológico estrito do verbo principal ativo.\nTabela Sistemática de Correspondência de Tempos e Modos\nRelações\nAplicado em: Todos os itens práticos ( a )"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A voz passiva analítica não admite alteração de tempo, modo ou aspecto verbal em relação à oração ativa primitiva. O verbo auxiliar SER atua como espelho morfológico estrito do verbo principal ativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Tabela Sistemática de Correspondência de Tempos e Modos"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A05-G06-002",
+              "table": {
+                "tableId": "TABLE-IP-A05-G06-002",
+                "caption": "Tabela Sistemática de Correspondência de Tempos e Modos",
+                "headers": [
+                  "Modo",
+                  "Tempo na Voz Ativa",
+                  "Exemplo na Voz Ativa",
+                  "Locução na Voz Passiva Analítica",
+                  "Exemplo na Voz Passiva"
+                ],
+                "rows": [
+                  [
+                    "Indicativo",
+                    "Presente",
+                    "combate / aborda",
+                    "$\\text{é / são} + \\text{particípio}$",
+                    "é combatido / são combatidos"
+                  ],
+                  [
+                    "Indicativo",
+                    "Pretérito Perfeito",
+                    "expôs / multiplicou",
+                    "$\\text{foi / foram} + \\text{particípio}$",
+                    "foi exposto / foram multiplicados"
+                  ],
+                  [
+                    "Indicativo",
+                    "Pretérito Imperfeito",
+                    "davam / atacava",
+                    "$\\text{era / eram} + \\text{particípio}$",
+                    "eram dados / era atacado"
+                  ],
+                  [
+                    "Indicativo",
+                    "Pretérito Mais-Que-Perfeito",
+                    "expusera",
+                    "$\\text{fora / foram} + \\text{particípio}$",
+                    "fora exposto / foram expostos"
+                  ],
+                  [
+                    "Indicativo",
+                    "Futuro do Presente",
+                    "resolverá / encontrará",
+                    "$\\text{será / serão} + \\text{particípio}$",
+                    "será resolvido / serão resolvidos"
+                  ],
+                  [
+                    "Indicativo",
+                    "Futuro do Pretérito",
+                    "resolveria",
+                    "$\\text{seria / seriam} + \\text{particípio}$",
+                    "seriam resolvidos"
+                  ],
+                  [
+                    "Subjuntivo",
+                    "Presente",
+                    "iludamos",
+                    "$\\text{sejamos} + \\text{particípio}$",
+                    "sejamos iludidos"
+                  ],
+                  [
+                    "Subjuntivo",
+                    "Pretérito Imperfeito",
+                    "expusesse",
+                    "$\\text{fosse / fossem} + \\text{particípio}$",
+                    "fossem expostos"
+                  ],
+                  [
+                    "Subjuntivo",
+                    "Futuro",
+                    "expuser",
+                    "$\\text{for / forem} + \\text{particípio}$",
+                    "forem expostos"
+                  ],
+                  [
+                    "Formas Nominais",
+                    "Infinitivo Impessoal/Pessoal",
+                    "buscar / fotografar",
+                    "$\\text{ser / serem} + \\text{particípio}$",
+                    "ser buscado / serem buscadas"
+                  ],
+                  [
+                    "Formas Nominais",
+                    "Gerúndio",
+                    "ensinando",
+                    "$\\text{sendo} + \\text{particípio}$",
+                    "sendo ensinados"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-001",
+                  "targetTitle": "Frase 1 (Fixação): Presente do Indicativo",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-025",
+                  "targetTitle": "Questão 45 (CESPE / CEBRASPE - BACEN - Analista)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G06-002",
+                  "targetTitle": "Troca Indevida do Tempo Verbal do Auxiliar",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +381,78 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA estrutura da voz passiva analítica expande a cadeia verbal adicionando obrigatoriamente um verbo auxiliar à quantidade de verbos originalmente presentes na voz ativa:\n\\text{Total de Verbos na Passiva Analítica} = \\text{Total de Verbos na Ativa} + 1\nAplicação por Cadeia Verbal\nVerbo Simples na Ativa (1 verbo): Converte-se em locução de 2 verbos ($\\text{SER} + \\text{particípio}$).\nExemplo: colecionam (1) $\\rightarrow$ são colecionados (2).\nLocução Verbal com 2 verbos na Ativa: Converte-se em cadeia de 3 verbos ($\\text{Auxiliar original} + \\text{SIDO/SENDO/SER} + \\text{particípio}$).\nExemplo: havia transferido (2) $\\rightarrow$ haviam sido transferidos (3).\nExemplo: irá ensinando (2) $\\rightarrow$ irão sendo ensinados (3).\nLocução Verbal com 3 verbos na Ativa: Converte-se em cadeia de 4 verbos (padrão CEBRASPE).\nExemplo: deve ir fazendo (3) $\\rightarrow$ deve ir sendo feito (4).\nRelações\nRegra de eliminação: Permite descartar sumariamente alternativas que mantenham a mesma quantidade de verbos ou que eliminem auxiliares originais ()."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A estrutura da voz passiva analítica expande a cadeia verbal adicionando obrigatoriamente um verbo auxiliar à quantidade de verbos originalmente presentes na voz ativa:"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Total de Verbos na Passiva Analítica} = \\text{Total de Verbos na Ativa} + 1"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Aplicação por Cadeia Verbal"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Simples na Ativa (1 verbo): Converte-se em locução de 2 verbos ($\\text{SER} + \\text{particípio}$)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: colecionam (1) $\\rightarrow$ são colecionados (2)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locução Verbal com 2 verbos na Ativa: Converte-se em cadeia de 3 verbos ($\\text{Auxiliar original} + \\text{SIDO/SENDO/SER} + \\text{particípio}$)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: havia transferido (2) $\\rightarrow$ haviam sido transferidos (3).",
+                "Exemplo: irá ensinando (2) $\\rightarrow$ irão sendo ensinados (3)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Locução Verbal com 3 verbos na Ativa: Converte-se em cadeia de 4 verbos (padrão CEBRASPE)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: deve ir fazendo (3) $\\rightarrow$ deve ir sendo feito (4)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A05-G06-003",
+                  "targetTitle": "Eliminação de Verbos Auxiliares em Locuções Preexistentes",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +465,117 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nEm regra geral da sintaxe da língua portuguesa, nas locuções verbais ativas com verbos auxiliares (ter, haver, etc.), o particípio do verbo principal é invariável. A locução verbal da voz passiva analítica é a única exceção, na qual o particípio possui natureza adjetival e flexiona-se obrigatoriamente em gênero e número com o sujeito paciente.\nRegras Específicas de Concordância do Particípio\nSujeito Simples Feminino Singular: Exige terminação em -a.\nExemplo: \"A produção... foi incentivada\" (FCC / 020 — ).\nSujeito Composto com Núcleos do Mesmo Gênero Feminino: Particípio no feminino plural.\nExemplo: \"A felicidade e a paz... serem buscadas\" (FGV / 021 — ).\nExemplo: \"Todas as formas de violência... são combatidas e denunciadas\" (019 — ).\nSujeito Composto Heterogêneo (Feminino + Masculino): Prevalece o masculino plural.\nFórmula: $\\text{Núcleo Feminino} + \\text{Núcleo Masculino} = \\text{Particípio Masculino Plural}$.\nExemplo: \"...a assinatura de contratos [fem.] e o pagamento de impostos [masc.]... são permitidos\" (FCC / 020 — ).\nSujeito Composto Posposto e Particípio: Mesmo que o verbo auxiliar admita concordância atrativa com o primeiro núcleo singular posposto, o particípio deve concordar em gênero com esse núcleo.\nExemplo: Se o primeiro núcleo for feminino (uma receita), a construção deve ser \"não é dada aos formuladores uma receita ou uma estratégia...\", sendo incorreto \"não é dado\" (021 — ).Exemplificado em: , , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em regra geral da sintaxe da língua portuguesa, nas locuções verbais ativas com verbos auxiliares (ter, haver, etc.), o particípio do verbo principal é invariável. A locução verbal da voz passiva analítica é a única exceção, na qual o particípio possui natureza adjetival e flexiona-se obrigatoriamente em gênero e número com o sujeito paciente."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regras Específicas de Concordância do Particípio"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sujeito Simples Feminino Singular: Exige terminação em -a."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"A produção... foi incentivada\" (FCC / 020 — )."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sujeito Composto com Núcleos do Mesmo Gênero Feminino: Particípio no feminino plural."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: \"A felicidade e a paz... serem buscadas\" (FGV / 021 — ).",
+                "Exemplo: \"Todas as formas de violência... são combatidas e denunciadas\" (019 — )."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sujeito Composto Heterogêneo (Feminino + Masculino): Prevalece o masculino plural."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Fórmula: $\\text{Núcleo Feminino} + \\text{Núcleo Masculino} = \\text{Particípio Masculino Plural}$.",
+                "Exemplo: \"...a assinatura de contratos [fem.] e o pagamento de impostos [masc.]... são permitidos\" (FCC / 020 — )."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Sujeito Composto Posposto e Particípio: Mesmo que o verbo auxiliar admita concordância atrativa com o primeiro núcleo singular posposto, o particípio deve concordar em gênero com esse núcleo."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: Se o primeiro núcleo for feminino (uma receita), a construção deve ser \"não é dada aos formuladores uma receita ou uma estratégia...\", sendo incorreto \"não é dado\" (021 — )."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G06-004",
+                  "targetTitle": "Falha na Concordância de Gênero do Particípio Passivo",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-005",
+                  "targetTitle": "Frase 5 (Fixação): Futuro do Presente",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-017",
+                  "targetTitle": "Questão 37 (FCC - SABESP - 2019 - Nível Médio/Superior)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-019",
+                  "targetTitle": "Questão 39 (FCC - Pref. Recife - 2019 - Assistente de Gestão)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-022",
+                  "targetTitle": "Questão 42 (FGV - Senado Federal - Analista de Sistemas)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +588,40 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nQuando a oração na voz ativa apresenta verbo conjugado na 3ª pessoa do plural sem sujeito expresso nem contextualizável (sujeito indeterminado), sua transposição para a passiva analítica resulta em uma oração com agente da passiva indeterminado, não havendo nenhum termo preposicionado explícito na estrutura resultante.\nEsquema de Transformação\nAtiva: \"No Brasil, matam [3ª pl. - Suj. Indeterminado] crianças [OD] à bala.\"\nPassiva Analítica: \"No Brasil, crianças [Suj. Paciente] são mortas [SER no presente + Particípio irregular] à bala.\" (Sem agente expresso).\nValidação em Provas: Questões do CEBRASPE que afirmam que na oração passiva \"o agente é indeterminado\" ou \"não está expresso\" são julgadas como corretas.\nRelações\nExemplificado em: \nTermo associado: TERM-A05-G06-005"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando a oração na voz ativa apresenta verbo conjugado na 3ª pessoa do plural sem sujeito expresso nem contextualizável (sujeito indeterminado), sua transposição para a passiva analítica resulta em uma oração com agente da passiva indeterminado, não havendo nenhum termo preposicionado explícito na estrutura resultante."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Esquema de Transformação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ativa: \"No Brasil, matam [3ª pl. - Suj. Indeterminado] crianças [OD] à bala.\"",
+                "Passiva Analítica: \"No Brasil, crianças [Suj. Paciente] são mortas [SER no presente + Particípio irregular] à bala.\" (Sem agente expresso).",
+                "Validação em Provas: Questões do CEBRASPE que afirmam que na oração passiva \"o agente é indeterminado\" ou \"não está expresso\" são julgadas como corretas."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-007",
+                  "targetTitle": "Frase 7 (Fixação): Sujeito Indeterminado e Particípio Irregular",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +634,91 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nNa transposição de uma oração que já possui locução verbal ou tempo composto na voz ativa, aplica-se o axioma sintático: \"Quem manda é o verbo principal, quem obedece é o verbo auxiliar.\"\nDinâmica Operacional\nO Verbo Principal Manda: A forma nominal em que o verbo principal ativo se encontra dita a forma exata em que o verbo auxiliar SER ingressará na locução passiva:\nSe o principal estava no particípio (transferido), SER entra no particípio: sido.\nSe o principal estava no gerúndio (ensinando), SER entra no gerúndio: sendo.\nSe o principal estava no infinitivo (transferir), SER entra no infinitivo: ser.\nO Verbo Auxiliar Obedece: O verbo auxiliar preexistente na ativa não pode ser descartado. Ele é preservado na primeira posição da locução passiva e adapta sua flexão de número e pessoa para concordar com o novo sujeito paciente.\nO Verbo Principal vai para o Particípio: O verbo que atuava como principal na ativa converte-se em particípio (ou permanece em particípio, se já o era) e flexiona-se em gênero e número com o sujeito paciente.\n\\text{Ativa: } \\text{O Governo [sing.] } \\mathbf{havia} \\text{ [aux.] } \\mathbf{transferido} \\text{ [part.] } \\text{tarefas e recursos [OD pl.]}\n\\text{Passiva: } \\text{Tarefas e recursos [pl.] } \\mathbf{haviam} \\text{ [aux. pl.] } \\mathbf{sido} \\text{ [SER em part.] } \\mathbf{transferidos} \\text{ [part. pl.] } \\text{pelo Governo}\nRelações\nPossui procedimento: 002Exemplificado em: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na transposição de uma oração que já possui locução verbal ou tempo composto na voz ativa, aplica-se o axioma sintático: \"Quem manda é o verbo principal, quem obedece é o verbo auxiliar.\""
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Dinâmica Operacional"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O Verbo Principal Manda: A forma nominal em que o verbo principal ativo se encontra dita a forma exata em que o verbo auxiliar SER ingressará na locução passiva:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se o principal estava no particípio (transferido), SER entra no particípio: sido.",
+                "Se o principal estava no gerúndio (ensinando), SER entra no gerúndio: sendo.",
+                "Se o principal estava no infinitivo (transferir), SER entra no infinitivo: ser."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O Verbo Auxiliar Obedece: O verbo auxiliar preexistente na ativa não pode ser descartado. Ele é preservado na primeira posição da locução passiva e adapta sua flexão de número e pessoa para concordar com o novo sujeito paciente.",
+                "O Verbo Principal vai para o Particípio: O verbo que atuava como principal na ativa converte-se em particípio (ou permanece em particípio, se já o era) e flexiona-se em gênero e número com o sujeito paciente."
+              ]
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Ativa: } \\text{O Governo [sing.] } \\mathbf{havia} \\text{ [aux.] } \\mathbf{transferido} \\text{ [part.] } \\text{tarefas e recursos [OD pl.]}"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Passiva: } \\text{Tarefas e recursos [pl.] } \\mathbf{haviam} \\text{ [aux. pl.] } \\mathbf{sido} \\text{ [SER em part.] } \\mathbf{transferidos} \\text{ [part. pl.] } \\text{pelo Governo}"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Procedimento associado",
+                  "targetRef": "PROC-A05-G06-002",
+                  "targetTitle": "Algoritmo de Transposição de Locuções Verbais e Tempos Compostos",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G06-003",
+                  "targetTitle": "Eliminação de Verbos Auxiliares em Locuções Preexistentes",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G06-005",
+                  "targetTitle": "Confundir Verbo Haver Impessoal com Verbo Haver Auxiliar",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-008",
+                  "targetTitle": "Frase 8 (Fixação): Tempo Composto (Havia Transferido)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-025",
+                  "targetTitle": "Questão 45 (CESPE / CEBRASPE - BACEN - Analista)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +731,55 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nQuando o verbo ativo primitivo está no infinitivo (oração reduzida de infinitivo) e rege um objeto direto composto ou plural, sua transposição para a passiva analítica exige que o verbo auxiliar SER seja flexionado no infinitivo pessoal plural (3ª pessoa do plural: serem), e não mantido no infinitivo impessoal invariável (ser), concordando com o sujeito paciente plural.\nAnálise do Caso FGV\nFrase Ativa: \"Buscar [infinitivo] a felicidade e a paz [OD composto]\"\nPassiva Incorreta (Distrator): \"A felicidade e a paz são buscadas\" (Erro gravíssimo: converteu infinitivo em Presente do Indicativo).\nPassiva Incorreta (Distrator): \"A felicidade e a paz ser buscada\" (Erro: infinitivo impessoal sem flexão e particípio no singular).\nPassiva Correta: \"(...) serem buscadas a felicidade e a paz\" (Infinitivo pessoal plural serem + particípio feminino plural buscadas).\nRelações\nPossui fala relevante: QUOTE-A05-G06-003\nExemplificado em: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando o verbo ativo primitivo está no infinitivo (oração reduzida de infinitivo) e rege um objeto direto composto ou plural, sua transposição para a passiva analítica exige que o verbo auxiliar SER seja flexionado no infinitivo pessoal plural (3ª pessoa do plural: serem), e não mantido no infinitivo impessoal invariável (ser), concordando com o sujeito paciente plural."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Análise do Caso FGV"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Frase Ativa: \"Buscar [infinitivo] a felicidade e a paz [OD composto]\"",
+                "Passiva Incorreta (Distrator): \"A felicidade e a paz são buscadas\" (Erro gravíssimo: converteu infinitivo em Presente do Indicativo).",
+                "Passiva Incorreta (Distrator): \"A felicidade e a paz ser buscada\" (Erro: infinitivo impessoal sem flexão e particípio no singular).",
+                "Passiva Correta: \"(...) serem buscadas a felicidade e a paz\" (Infinitivo pessoal plural serem + particípio feminino plural buscadas)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-020",
+                  "targetTitle": "Questão 40 (FGV - SEE-PE - Professor de Enfermagem)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-021",
+                  "targetTitle": "Questão 41 (FGV - MPE-RJ - Técnico do Ministério Público)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-023",
+                  "targetTitle": "Questão 43 (FGV - DPE-RJ - Técnico Superior Especializado)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +792,62 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nQuando a oração ativa é encabeçada por palavra atrativa de negação, o objeto direto é expresso por pronome pessoal oblíquo átono em próclise e o verbo está conjugado no modo subjuntivo, a transposição exige a conversão do pronome para o caso reto (sujeito) e a conjugação do verbo SER no Presente do Subjuntivo.\nCaso Paradigmático (FCC — SEGEP-MA)\nAtiva: \"Mas não nos [OD] iludamos [Pres. Subjuntivo: que nós iludamos]\"\nMapeamento:\nPronome oblíquo nos $\\rightarrow$ converte-se no pronome reto sujeito Nós.\nVerbo auxiliar SER no Presente do Subjuntivo (1ª pessoa plural): (que nós) sejamos.\nParticípio do verbo principal iludir com concordância plural: iludidos.\nPassiva Resultante: \"Mas não sejamos iludidos\" (com o pronome sujeito nós elíptico).\nRelações\nExemplificado em:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando a oração ativa é encabeçada por palavra atrativa de negação, o objeto direto é expresso por pronome pessoal oblíquo átono em próclise e o verbo está conjugado no modo subjuntivo, a transposição exige a conversão do pronome para o caso reto (sujeito) e a conjugação do verbo SER no Presente do Subjuntivo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Caso Paradigmático (FCC — SEGEP-MA)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ativa: \"Mas não nos [OD] iludamos [Pres. Subjuntivo: que nós iludamos]\"",
+                "Mapeamento:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Pronome oblíquo nos $\\rightarrow$ converte-se no pronome reto sujeito Nós.",
+                "Verbo auxiliar SER no Presente do Subjuntivo (1ª pessoa plural): (que nós) sejamos.",
+                "Particípio do verbo principal iludir com concordância plural: iludidos."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Passiva Resultante: \"Mas não sejamos iludidos\" (com o pronome sujeito nós elíptico)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-018",
+                  "targetTitle": "Questão 38 (FCC - SEGEP-MA - 2018 - Analista Ambiental)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G06-006",
+                  "targetTitle": "Transformação de Objeto Direto em Agente com Preposição",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -220,8 +860,97 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA voz passiva analítica tem como pressuposto de existência sintática a presença de um Objeto Direto na oração primitiva. Verbos Transitivos Indiretos (VTI) — que regem objeto indireto preposicionado — e Verbos Intransitivos (VI) — que não regem complemento — não admitem transposição para a voz passiva analítica.\nCasos Típicos de Bloqueio em Concursos\nVerbo Transitivo Indireto (obedecer):\nAtiva: \"Obedeceu-se às ordens.\" (obedecer a = VTI; às ordens = Objeto Indireto).\nJulgamento: Não admite passivação analítica. A construção coloquial \"As ordens foram obedecidas\" é considerada erro gramatical em concursos (019 — ).\nVerbo Transitivo Indireto (acreditar):\nAtiva: \"Muitos cientistas não acreditam em Deus.\" (acreditar em = VTI; em Deus = Objeto Indireto).\nJulgamento: Não admite transposição.\nVerbo Intransitivo (acordar — FGV):\nAtiva: \"Um homem acorda gravemente ferido.\" (acordar = VI; gravemente ferido = predicativo do sujeito).\nConstrução Incorreta da Banca: \"Um homem é acordado gravemente ferido\" $\\rightarrow$ Inadequada / Erro de passivação (021 — ).Exemplificado em: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A voz passiva analítica tem como pressuposto de existência sintática a presença de um Objeto Direto na oração primitiva. Verbos Transitivos Indiretos (VTI) — que regem objeto indireto preposicionado — e Verbos Intransitivos (VI) — que não regem complemento — não admitem transposição para a voz passiva analítica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Casos Típicos de Bloqueio em Concursos"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Transitivo Indireto (obedecer):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ativa: \"Obedeceu-se às ordens.\" (obedecer a = VTI; às ordens = Objeto Indireto).",
+                "Julgamento: Não admite passivação analítica. A construção coloquial \"As ordens foram obedecidas\" é considerada erro gramatical em concursos (019 — )."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Transitivo Indireto (acreditar):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ativa: \"Muitos cientistas não acreditam em Deus.\" (acreditar em = VTI; em Deus = Objeto Indireto).",
+                "Julgamento: Não admite transposição."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo Intransitivo (acordar — FGV):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Ativa: \"Um homem acorda gravemente ferido.\" (acordar = VI; gravemente ferido = predicativo do sujeito).",
+                "Construção Incorreta da Banca: \"Um homem é acordado gravemente ferido\" $\\rightarrow$ Inadequada / Erro de passivação (021 — )."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A05-G06-007",
+                  "targetTitle": "Tentativa de Passivação de Verbo Transitivo Indireto (VTI) ou Intransitivo (VI)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-009",
+                  "targetTitle": "Frase 9 (Fixação): VTI (Obedecer) — Impossibilidade",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-010",
+                  "targetTitle": "Frase 10 (Fixação): VTI (Acreditar) — Impossibilidade",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-023",
+                  "targetTitle": "Questão 43 (FGV - DPE-RJ - Técnico Superior Especializado)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -234,8 +963,41 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nEm orações adjetivas em que o pronome relativo que funciona como objeto direto do verbo ativo, a transposição para a passiva analítica admite a elipse simultânea do pronome relativo e do verbo auxiliar SER, gerando uma oração reduzida de particípio plenamente válida e com equivalência semântica.\nAnálise Estrutural (CEBRASPE — Polícia Científica-PE)\nTexto Ativo: \"...da tristeza e perplexidade [antecedente composto] que [OD relativo] senti [Pret. Perfeito] na derrota de Lott...\"\nPassiva Analítica Plena: \"...da tristeza e perplexidade que foram sentidas por mim...\"\nPassiva Reduzida por Elipse (Proposta pela banca): \"...da tristeza e perplexidade sentidas por mim...\"\nJulgamento: Item Certo. A supressão de que foram não altera o sentido nem a correção gramatical da estrutura passiva.\nRelações\nExpandido por: ORAL-A05-G06-004\nExemplificado em:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em orações adjetivas em que o pronome relativo que funciona como objeto direto do verbo ativo, a transposição para a passiva analítica admite a elipse simultânea do pronome relativo e do verbo auxiliar SER, gerando uma oração reduzida de particípio plenamente válida e com equivalência semântica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Análise Estrutural (CEBRASPE — Polícia Científica-PE)"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Texto Ativo: \"...da tristeza e perplexidade [antecedente composto] que [OD relativo] senti [Pret. Perfeito] na derrota de Lott...\"",
+                "Passiva Analítica Plena: \"...da tristeza e perplexidade que foram sentidas por mim...\"",
+                "Passiva Reduzida por Elipse (Proposta pela banca): \"...da tristeza e perplexidade sentidas por mim...\"",
+                "Julgamento: Item Certo. A supressão de que foram não altera o sentido nem a correção gramatical da estrutura passiva."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A05-G06-024",
+                  "targetTitle": "Questão 44 (CESPE / CEBRASPE - Polícia Científica-PE)",
+                  "targetUnitId": "IP-A05-G06",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -339,149 +1101,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A05-G06-002",
-              "table": {
-                "tableId": "TABLE-IP-A05-G06-002",
-                "caption": "Tabela Sistemática de Correspondência de Tempos e Modos",
-                "headers": [
-                  "Modo",
-                  "Tempo na Voz Ativa",
-                  "Exemplo na Voz Ativa",
-                  "Locução na Voz Passiva Analítica",
-                  "Exemplo na Voz Passiva"
-                ],
-                "rows": [
-                  [
-                    "Indicativo",
-                    "Presente",
-                    "combate / aborda",
-                    "$\\text{é / são} + \\text{particípio}$",
-                    "é combatido / são combatidos"
-                  ],
-                  [
-                    "Indicativo",
-                    "Pretérito Perfeito",
-                    "expôs / multiplicou",
-                    "$\\text{foi / foram} + \\text{particípio}$",
-                    "foi exposto / foram multiplicados"
-                  ],
-                  [
-                    "Indicativo",
-                    "Pretérito Imperfeito",
-                    "davam / atacava",
-                    "$\\text{era / eram} + \\text{particípio}$",
-                    "eram dados / era atacado"
-                  ],
-                  [
-                    "Indicativo",
-                    "Pretérito Mais-Que-Perfeito",
-                    "expusera",
-                    "$\\text{fora / foram} + \\text{particípio}$",
-                    "fora exposto / foram expostos"
-                  ],
-                  [
-                    "Indicativo",
-                    "Futuro do Presente",
-                    "resolverá / encontrará",
-                    "$\\text{será / serão} + \\text{particípio}$",
-                    "será resolvido / serão resolvidos"
-                  ],
-                  [
-                    "Indicativo",
-                    "Futuro do Pretérito",
-                    "resolveria",
-                    "$\\text{seria / seriam} + \\text{particípio}$",
-                    "seriam resolvidos"
-                  ],
-                  [
-                    "Subjuntivo",
-                    "Presente",
-                    "iludamos",
-                    "$\\text{sejamos} + \\text{particípio}$",
-                    "sejamos iludidos"
-                  ],
-                  [
-                    "Subjuntivo",
-                    "Pretérito Imperfeito",
-                    "expusesse",
-                    "$\\text{fosse / fossem} + \\text{particípio}$",
-                    "fossem expostos"
-                  ],
-                  [
-                    "Subjuntivo",
-                    "Futuro",
-                    "expuser",
-                    "$\\text{for / forem} + \\text{particípio}$",
-                    "forem expostos"
-                  ],
-                  [
-                    "Formas Nominais",
-                    "Infinitivo Impessoal/Pessoal",
-                    "buscar / fotografar",
-                    "$\\text{ser / serem} + \\text{particípio}$",
-                    "ser buscado / serem buscadas"
-                  ],
-                  [
-                    "Formas Nominais",
-                    "Gerúndio",
-                    "ensinando",
-                    "$\\text{sendo} + \\text{particípio}$",
-                    "sendo ensinados"
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA passagem da voz ativa para a voz passiva analítica fundamenta-se em uma reestruturação relacional (\"cruzamento\"), em que o termo que recebia a ação direta (Objeto Direto) é promovido a núcleo governante da oração (Sujeito Paciente), o executor da ação (Sujeito Agente) passa a termo circunstancial/integrante (Agente da Passiva), e a forma verbal expande-se com a inserção do verbo auxiliar SER.\nExplicação Detalhada\nPólo do Objeto Direto: O Objeto Direto da voz ativa cruza para a posição de Sujeito Paciente da voz passiva, assumindo o controle total da concordância verbal e nominal da locução.\nPólo do Sujeito Agente: O Sujeito Agente cruza para a posição de Agente da Passiva no predicado passivo, sendo obrigatoriamente introduzido pela preposição por (ou suas contrações pelo, pela, pelos, pelas) e, em construções mais raras/estilísticas, por de.\nPólo Verbal: O verbo principal da ativa cede seu tempo e modo para o verbo auxiliar SER, convertendo-se em Particípio.\n\\text{Voz Ativa: } \\underbrace{\\text{Sujeito Agente}}_{\\text{Termo 1}} + \\underbrace{\\text{Verbo Transitivo Direto}}_{\\text{Tempo X}} + \\underbrace{\\text{Objeto Direto}}_{\\text{Termo 2}}\n\\text{Voz Passiva: } \\underbrace{\\text{Sujeito Paciente}}_{(\\text{ex-Termo 2})} + \\underbrace{\\text{Verbo SER}}_{(\\text{no Tempo X})} + \\underbrace{\\text{Particípio}}_{(\\text{concorda com Sujeito})} + \\underbrace{\\text{Agente da Passiva}}_{[\\text{por } + \\text{ ex-Termo 1}]}\n\"Aquilo que fica lá no final da ativa vai lá para o início da passiva. O objeto direto da ativa vira sujeito paciente na passiva... e o verbo ser entra rigorosamente no mesmo tempo verbal da ativa.\" (019 — )\nDiagrama exibindo blocos coloridos cruzados: VOZ ATIVA (Suj. Agente | Tempo Verbal | Objeto Direto) interligada por setas diagonais a VOZ PASSIVA (Sujeito Paciente | SER + Particípio | Agente da Passiva) (VIS-A05-G06-001).\nRelações\nBase para: \nExemplificado em:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nProtocolo de quatro passos analíticos sequenciais que blinda o candidato contra a sobrecarga cognitiva e as armadilhas fonéticas ou estruturais criadas pelas bancas de concursos públicos.\nExplicação Detalhada\nInstrução 1 — \"Chame o feito à ordem\": Antes de qualquer tentativa de reescrita ou leitura de alternativas, examinar a frase ativa e anotar expressamente:\nO Objeto Direto (OD) (isolando seu núcleo substantivo);\nO Sujeito Agente (verificando se é determinado, composto, elíptico ou indeterminado);\nO Tempo e Modo Verbal (anotando a sigla correspondente diretamente acima do verbo).\nTermos acessórios (adjuntos adverbiais, orações intercaladas) devem ser ignorados nesta fase preliminar.\nInstrução 2 — Deslocar o OD para Sujeito Paciente: Posicionar o termo identificado como sujeito da nova oração.\nInstrução 3 — Inserir o Verbo Auxiliar SER + Particípio: Conjugar o verbo SER no exato tempo/modo registrado na Instrução 1, flexionando o particípio do verbo principal em gênero e número para concordar com o novo sujeito.\nInstrução 4 — Converter Sujeito em Agente da Passiva: Posicionar o sujeito primitivo como agente preposicionado (por / pelo), ou omiti-lo se for indeterminado/elíptico na oração original.\n\"Numa questão como essa você tem que ser objetivo, você tem que chamar o feito à ordem, procurar o objeto direto, procurar o sujeito, procurar o tempo do verbo e fazer a transposição no cantinho.\" (020 — )\nRelações\nGera procedimento: \nCombate erro:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA voz passiva analítica não admite alteração de tempo, modo ou aspecto verbal em relação à oração ativa primitiva. O verbo auxiliar SER atua como espelho morfológico estrito do verbo principal ativo.\nTabela Sistemática de Correspondência de Tempos e Modos\nRelações\nAplicado em: Todos os itens práticos ( a )"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA estrutura da voz passiva analítica expande a cadeia verbal adicionando obrigatoriamente um verbo auxiliar à quantidade de verbos originalmente presentes na voz ativa:\n\\text{Total de Verbos na Passiva Analítica} = \\text{Total de Verbos na Ativa} + 1\nAplicação por Cadeia Verbal\nVerbo Simples na Ativa (1 verbo): Converte-se em locução de 2 verbos ($\\text{SER} + \\text{particípio}$).\nExemplo: colecionam (1) $\\rightarrow$ são colecionados (2).\nLocução Verbal com 2 verbos na Ativa: Converte-se em cadeia de 3 verbos ($\\text{Auxiliar original} + \\text{SIDO/SENDO/SER} + \\text{particípio}$).\nExemplo: havia transferido (2) $\\rightarrow$ haviam sido transferidos (3).\nExemplo: irá ensinando (2) $\\rightarrow$ irão sendo ensinados (3).\nLocução Verbal com 3 verbos na Ativa: Converte-se em cadeia de 4 verbos (padrão CEBRASPE).\nExemplo: deve ir fazendo (3) $\\rightarrow$ deve ir sendo feito (4).\nRelações\nRegra de eliminação: Permite descartar sumariamente alternativas que mantenham a mesma quantidade de verbos ou que eliminem auxiliares originais ()."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nEm regra geral da sintaxe da língua portuguesa, nas locuções verbais ativas com verbos auxiliares (ter, haver, etc.), o particípio do verbo principal é invariável. A locução verbal da voz passiva analítica é a única exceção, na qual o particípio possui natureza adjetival e flexiona-se obrigatoriamente em gênero e número com o sujeito paciente.\nRegras Específicas de Concordância do Particípio\nSujeito Simples Feminino Singular: Exige terminação em -a.\nExemplo: \"A produção... foi incentivada\" (FCC / 020 — ).\nSujeito Composto com Núcleos do Mesmo Gênero Feminino: Particípio no feminino plural.\nExemplo: \"A felicidade e a paz... serem buscadas\" (FGV / 021 — ).\nExemplo: \"Todas as formas de violência... são combatidas e denunciadas\" (019 — ).\nSujeito Composto Heterogêneo (Feminino + Masculino): Prevalece o masculino plural.\nFórmula: $\\text{Núcleo Feminino} + \\text{Núcleo Masculino} = \\text{Particípio Masculino Plural}$.\nExemplo: \"...a assinatura de contratos [fem.] e o pagamento de impostos [masc.]... são permitidos\" (FCC / 020 — ).\nSujeito Composto Posposto e Particípio: Mesmo que o verbo auxiliar admita concordância atrativa com o primeiro núcleo singular posposto, o particípio deve concordar em gênero com esse núcleo.\nExemplo: Se o primeiro núcleo for feminino (uma receita), a construção deve ser \"não é dada aos formuladores uma receita ou uma estratégia...\", sendo incorreto \"não é dado\" (021 — ).Exemplificado em: , , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nQuando a oração na voz ativa apresenta verbo conjugado na 3ª pessoa do plural sem sujeito expresso nem contextualizável (sujeito indeterminado), sua transposição para a passiva analítica resulta em uma oração com agente da passiva indeterminado, não havendo nenhum termo preposicionado explícito na estrutura resultante.\nEsquema de Transformação\nAtiva: \"No Brasil, matam [3ª pl. - Suj. Indeterminado] crianças [OD] à bala.\"\nPassiva Analítica: \"No Brasil, crianças [Suj. Paciente] são mortas [SER no presente + Particípio irregular] à bala.\" (Sem agente expresso).\nValidação em Provas: Questões do CEBRASPE que afirmam que na oração passiva \"o agente é indeterminado\" ou \"não está expresso\" são julgadas como corretas.\nRelações\nExemplificado em: \nTermo associado: TERM-A05-G06-005"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nNa transposição de uma oração que já possui locução verbal ou tempo composto na voz ativa, aplica-se o axioma sintático: \"Quem manda é o verbo principal, quem obedece é o verbo auxiliar.\"\nDinâmica Operacional\nO Verbo Principal Manda: A forma nominal em que o verbo principal ativo se encontra dita a forma exata em que o verbo auxiliar SER ingressará na locução passiva:\nSe o principal estava no particípio (transferido), SER entra no particípio: sido.\nSe o principal estava no gerúndio (ensinando), SER entra no gerúndio: sendo.\nSe o principal estava no infinitivo (transferir), SER entra no infinitivo: ser.\nO Verbo Auxiliar Obedece: O verbo auxiliar preexistente na ativa não pode ser descartado. Ele é preservado na primeira posição da locução passiva e adapta sua flexão de número e pessoa para concordar com o novo sujeito paciente.\nO Verbo Principal vai para o Particípio: O verbo que atuava como principal na ativa converte-se em particípio (ou permanece em particípio, se já o era) e flexiona-se em gênero e número com o sujeito paciente.\n\\text{Ativa: } \\text{O Governo [sing.] } \\mathbf{havia} \\text{ [aux.] } \\mathbf{transferido} \\text{ [part.] } \\text{tarefas e recursos [OD pl.]}\n\\text{Passiva: } \\text{Tarefas e recursos [pl.] } \\mathbf{haviam} \\text{ [aux. pl.] } \\mathbf{sido} \\text{ [SER em part.] } \\mathbf{transferidos} \\text{ [part. pl.] } \\text{pelo Governo}\nRelações\nPossui procedimento: 002Exemplificado em: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nQuando o verbo ativo primitivo está no infinitivo (oração reduzida de infinitivo) e rege um objeto direto composto ou plural, sua transposição para a passiva analítica exige que o verbo auxiliar SER seja flexionado no infinitivo pessoal plural (3ª pessoa do plural: serem), e não mantido no infinitivo impessoal invariável (ser), concordando com o sujeito paciente plural.\nAnálise do Caso FGV\nFrase Ativa: \"Buscar [infinitivo] a felicidade e a paz [OD composto]\"\nPassiva Incorreta (Distrator): \"A felicidade e a paz são buscadas\" (Erro gravíssimo: converteu infinitivo em Presente do Indicativo).\nPassiva Incorreta (Distrator): \"A felicidade e a paz ser buscada\" (Erro: infinitivo impessoal sem flexão e particípio no singular).\nPassiva Correta: \"(...) serem buscadas a felicidade e a paz\" (Infinitivo pessoal plural serem + particípio feminino plural buscadas).\nRelações\nPossui fala relevante: QUOTE-A05-G06-003\nExemplificado em: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nQuando a oração ativa é encabeçada por palavra atrativa de negação, o objeto direto é expresso por pronome pessoal oblíquo átono em próclise e o verbo está conjugado no modo subjuntivo, a transposição exige a conversão do pronome para o caso reto (sujeito) e a conjugação do verbo SER no Presente do Subjuntivo.\nCaso Paradigmático (FCC — SEGEP-MA)\nAtiva: \"Mas não nos [OD] iludamos [Pres. Subjuntivo: que nós iludamos]\"\nMapeamento:\nPronome oblíquo nos $\\rightarrow$ converte-se no pronome reto sujeito Nós.\nVerbo auxiliar SER no Presente do Subjuntivo (1ª pessoa plural): (que nós) sejamos.\nParticípio do verbo principal iludir com concordância plural: iludidos.\nPassiva Resultante: \"Mas não sejamos iludidos\" (com o pronome sujeito nós elíptico).\nRelações\nExemplificado em:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA voz passiva analítica tem como pressuposto de existência sintática a presença de um Objeto Direto na oração primitiva. Verbos Transitivos Indiretos (VTI) — que regem objeto indireto preposicionado — e Verbos Intransitivos (VI) — que não regem complemento — não admitem transposição para a voz passiva analítica.\nCasos Típicos de Bloqueio em Concursos\nVerbo Transitivo Indireto (obedecer):\nAtiva: \"Obedeceu-se às ordens.\" (obedecer a = VTI; às ordens = Objeto Indireto).\nJulgamento: Não admite passivação analítica. A construção coloquial \"As ordens foram obedecidas\" é considerada erro gramatical em concursos (019 — ).\nVerbo Transitivo Indireto (acreditar):\nAtiva: \"Muitos cientistas não acreditam em Deus.\" (acreditar em = VTI; em Deus = Objeto Indireto).\nJulgamento: Não admite transposição.\nVerbo Intransitivo (acordar — FGV):\nAtiva: \"Um homem acorda gravemente ferido.\" (acordar = VI; gravemente ferido = predicativo do sujeito).\nConstrução Incorreta da Banca: \"Um homem é acordado gravemente ferido\" $\\rightarrow$ Inadequada / Erro de passivação (021 — ).Exemplificado em: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nEm orações adjetivas em que o pronome relativo que funciona como objeto direto do verbo ativo, a transposição para a passiva analítica admite a elipse simultânea do pronome relativo e do verbo auxiliar SER, gerando uma oração reduzida de particípio plenamente válida e com equivalência semântica.\nAnálise Estrutural (CEBRASPE — Polícia Científica-PE)\nTexto Ativo: \"...da tristeza e perplexidade [antecedente composto] que [OD relativo] senti [Pret. Perfeito] na derrota de Lott...\"\nPassiva Analítica Plena: \"...da tristeza e perplexidade que foram sentidas por mim...\"\nPassiva Reduzida por Elipse (Proposta pela banca): \"...da tristeza e perplexidade sentidas por mim...\"\nJulgamento: Item Certo. A supressão de que foram não altera o sentido nem a correção gramatical da estrutura passiva.\nRelações\nExpandido por: ORAL-A05-G06-004\nExemplificado em:"
         }
       ]
     },
@@ -579,7 +1200,9 @@
               "PROC-A05-G06-001",
               "EXP-IP-A05-G06-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -733,7 +1356,9 @@
               "PROC-A05-G06-002",
               "EXP-IP-A05-G06-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -789,7 +1414,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-001",
               "EXP-IP-A05-G06-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -838,7 +1465,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-002",
               "EXP-IP-A05-G06-040"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -887,7 +1516,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-003",
               "EXP-IP-A05-G06-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -936,7 +1567,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-004",
               "EXP-IP-A05-G06-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -985,7 +1618,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-005",
               "EXP-IP-A05-G06-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1034,7 +1669,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-006",
               "EXP-IP-A05-G06-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1083,7 +1720,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-007",
               "EXP-IP-A05-G06-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1132,7 +1771,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-008",
               "EXP-IP-A05-G06-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1181,7 +1822,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-009",
               "EXP-IP-A05-G06-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1230,7 +1873,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-010",
               "EXP-IP-A05-G06-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1279,7 +1924,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-011",
               "EXP-IP-A05-G06-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1328,7 +1975,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-012",
               "EXP-IP-A05-G06-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1377,7 +2026,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-013",
               "EXP-IP-A05-G06-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1426,7 +2077,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-014",
               "EXP-IP-A05-G06-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1475,7 +2128,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-015",
               "EXP-IP-A05-G06-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1524,7 +2179,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-016",
               "EXP-IP-A05-G06-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1573,7 +2230,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-017",
               "EXP-IP-A05-G06-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1622,7 +2281,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-018",
               "EXP-IP-A05-G06-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1671,7 +2332,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-019",
               "EXP-IP-A05-G06-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1720,7 +2383,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-020",
               "EXP-IP-A05-G06-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1769,7 +2434,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-021",
               "EXP-IP-A05-G06-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1818,7 +2485,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-022",
               "EXP-IP-A05-G06-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1867,7 +2536,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-023",
               "EXP-IP-A05-G06-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1916,7 +2587,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-024",
               "EXP-IP-A05-G06-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1965,7 +2638,9 @@
               "WORKED_EXAMPLE-IP-A05-G06-025",
               "EXP-IP-A05-G06-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2016,7 +2691,9 @@
               "WARN-A05-G06-001",
               "EXP-IP-A05-G06-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2053,7 +2730,9 @@
               "WARN-A05-G06-002",
               "EXP-IP-A05-G06-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2090,7 +2769,9 @@
               "WARN-A05-G06-003",
               "EXP-IP-A05-G06-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2127,7 +2808,9 @@
               "WARN-A05-G06-004",
               "EXP-IP-A05-G06-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2164,7 +2847,9 @@
               "WARN-A05-G06-005",
               "EXP-IP-A05-G06-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2201,7 +2886,9 @@
               "WARN-A05-G06-006",
               "EXP-IP-A05-G06-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2238,30 +2925,115 @@
               "WARN-A05-G06-007",
               "EXP-IP-A05-G06-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**O Mecanismo Estrutural do \"Cruzamento Sintático\"**: Definição ou Ideia Central\nA passagem da voz ativa para a voz passiva analítica fundamenta-se em uma reestruturação relacional (\"cruzamento\"), em que o termo que recebia a ação direta (Objeto Direto) é promovido a núcleo governante da oração (Sujeito Paciente), o executor da ação (Sujeito Agente) passa a termo circunstancial/integrante (Agente da Passiva), e a forma verbal expande-se com a inserção do verbo auxiliar SER.\nExplicação Detalhada\nPólo do Objeto Direto: O Objeto Direto da voz ativa cruza para a posição de Sujeito Paciente da voz passiva, assumindo o controle total da concordância verbal e nominal da locução.\nPólo do Sujeito Agente: O Sujeito Agente cruza para a posição de Agente da Passiva no predicado passivo, sendo obrigatoriamente introduzido pela preposição por (ou suas contrações pelo, pela, pelos, pelas) e, em construções mais raras/estilísticas, por de.\nPólo Verbal: O verbo principal da ativa cede seu tempo e modo para o verbo auxiliar SER, convertendo-se em Particípio.\n\\text{Voz Ativa: } \\underbrace{\\text{Sujeito Agente}}_{\\text{Termo 1}} + \\underbrace{\\text{Verbo Transitivo Direto}}_{\\text{Tempo X}} + \\underbrace{\\text{Objeto Direto}}_{\\text{Termo 2}}\n\\text{Voz Passiva: } \\underbrace{\\text{Sujeito Paciente}}_{(\\text{ex-Termo 2})} + \\underbrace{\\text{Verbo SER}}_{(\\text{no Tempo X})} + \\underbrace{\\text{Particípio}}_{(\\text{concorda com Sujeito})} + \\underbrace{\\text{Agente da Passiva}}_{[\\text{por } + \\text{ ex-Termo 1}]}\n\"Aquilo que fica lá no final da ativa vai lá para o início da passiva. O objeto direto da ativa vira sujeito paciente na passiva... e o verbo ser entra rigorosamente no mesmo tempo verbal da ativa.\" (019 — )\nDiagrama exibindo blocos coloridos cruzados: VOZ ATIVA (Suj. Agente | Tempo Verbal | Objeto Direto) interligada por setas diagonais a VOZ PASSIVA (Sujeito Paciente | SER + Particípio | Agente da Passiva) (VIS-A05-G06-001).\nRelações\nBase para: \nExemplificado em:",
-            "**Método das Quatro Instruções (\"Chamar o Feito à Ordem\")**: Definição ou Ideia Central\nProtocolo de quatro passos analíticos sequenciais que blinda o candidato contra a sobrecarga cognitiva e as armadilhas fonéticas ou estruturais criadas pelas bancas de concursos públicos.\nExplicação Detalhada\nInstrução 1 — \"Chame o feito à ordem\": Antes de qualquer tentativa de reescrita ou leitura de alternativas, examinar a frase ativa e anotar expressamente:\nO Objeto Direto (OD) (isolando seu núcleo substantivo);\nO Sujeito Agente (verificando se é determinado, composto, elíptico ou indeterminado);\nO Tempo e Modo Verbal (anotando a sigla correspondente diretamente acima do verbo).\nTermos acessórios (adjuntos adverbiais, orações intercaladas) devem ser ignorados nesta fase preliminar.\nInstrução 2 — Deslocar o OD para Sujeito Paciente: Posicionar o termo identificado como sujeito da nova oração.\nInstrução 3 — Inserir o Verbo Auxiliar SER + Particípio: Conjugar o verbo SER no exato tempo/modo registrado na Instrução 1, flexionando o particípio do verbo principal em gênero e número para concordar com o novo sujeito.\nInstrução 4 — Converter Sujeito em Agente da Passiva: Posicionar o sujeito primitivo como agente preposicionado (por / pelo), ou omiti-lo se for indeterminado/elíptico na oração original.\n\"Numa questão como essa você tem que ser objetivo, você tem que chamar o feito à ordem, procurar o objeto direto, procurar o sujeito, procurar o tempo do verbo e fazer a transposição no cantinho.\" (020 — )\nRelações\nGera procedimento: \nCombate erro:",
-            "**Correspondência Rigorosa de Tempo e Modo do Auxiliar \"SER\"**: Definição ou Ideia Central\nA voz passiva analítica não admite alteração de tempo, modo ou aspecto verbal em relação à oração ativa primitiva. O verbo auxiliar SER atua como espelho morfológico estrito do verbo principal ativo.\nTabela Sistemática de Correspondência de Tempos e Modos\nRelações\nAplicado em: Todos os itens práticos ( a )",
-            "**A Regra Mnemônica da \"Soma Verbal\" ($N \\rightarrow N+1$)**: Definição ou Ideia Central\nA estrutura da voz passiva analítica expande a cadeia verbal adicionando obrigatoriamente um verbo auxiliar à quantidade de verbos originalmente presentes na voz ativa:\n\\text{Total de Verbos na Passiva Analítica} = \\text{Total de Verbos na Ativa} + 1\nAplicação por Cadeia Verbal\nVerbo Simples na Ativa (1 verbo): Converte-se em locução de 2 verbos ($\\text{SER} + \\text{particípio}$).\nExemplo: colecionam (1) $\\rightarrow$ são colecionados (2).\nLocução Verbal com 2 verbos na Ativa: Converte-se em cadeia de 3 verbos ($\\text{Auxiliar original} + \\text{SIDO/SENDO/SER} + \\text{particípio}$).\nExemplo: havia transferido (2) $\\rightarrow$ haviam sido transferidos (3).\nExemplo: irá ensinando (2) $\\rightarrow$ irão sendo ensinados (3).\nLocução Verbal com 3 verbos na Ativa: Converte-se em cadeia de 4 verbos (padrão CEBRASPE).\nExemplo: deve ir fazendo (3) $\\rightarrow$ deve ir sendo feito (4).\nRelações\nRegra de eliminação: Permite descartar sumariamente alternativas que mantenham a mesma quantidade de verbos ou que eliminem auxiliares originais ().",
-            "**Exceção da Flexão e Concordância do Particípio Passivo**: Definição ou Ideia Central\nEm regra geral da sintaxe da língua portuguesa, nas locuções verbais ativas com verbos auxiliares (ter, haver, etc.), o particípio do verbo principal é invariável. A locução verbal da voz passiva analítica é a única exceção, na qual o particípio possui natureza adjetival e flexiona-se obrigatoriamente em gênero e número com o sujeito paciente.\nRegras Específicas de Concordância do Particípio\nSujeito Simples Feminino Singular: Exige terminação em -a.\nExemplo: \"A produção... foi incentivada\" (FCC / 020 — ).\nSujeito Composto com Núcleos do Mesmo Gênero Feminino: Particípio no feminino plural.\nExemplo: \"A felicidade e a paz... serem buscadas\" (FGV / 021 — ).\nExemplo: \"Todas as formas de violência... são combatidas e denunciadas\" (019 — ).\nSujeito Composto Heterogêneo (Feminino + Masculino): Prevalece o masculino plural.\nFórmula: $\\text{Núcleo Feminino} + \\text{Núcleo Masculino} = \\text{Particípio Masculino Plural}$.\nExemplo: \"...a assinatura de contratos [fem.] e o pagamento de impostos [masc.]... são permitidos\" (FCC / 020 — ).\nSujeito Composto Posposto e Particípio: Mesmo que o verbo auxiliar admita concordância atrativa com o primeiro núcleo singular posposto, o particípio deve concordar em gênero com esse núcleo.\nExemplo: Se o primeiro núcleo for feminino (uma receita), a construção deve ser \"não é dada aos formuladores uma receita ou uma estratégia...\", sendo incorreto \"não é dado\" (021 — ).Exemplificado em: , , ,",
-            "**Transposição com Sujeito Indeterminado na Ativa**: Definição ou Ideia Central\nQuando a oração na voz ativa apresenta verbo conjugado na 3ª pessoa do plural sem sujeito expresso nem contextualizável (sujeito indeterminado), sua transposição para a passiva analítica resulta em uma oração com agente da passiva indeterminado, não havendo nenhum termo preposicionado explícito na estrutura resultante.\nEsquema de Transformação\nAtiva: \"No Brasil, matam [3ª pl. - Suj. Indeterminado] crianças [OD] à bala.\"\nPassiva Analítica: \"No Brasil, crianças [Suj. Paciente] são mortas [SER no presente + Particípio irregular] à bala.\" (Sem agente expresso).\nValidação em Provas: Questões do CEBRASPE que afirmam que na oração passiva \"o agente é indeterminado\" ou \"não está expresso\" são julgadas como corretas.\nRelações\nExemplificado em: \nTermo associado: TERM-A05-G06-005",
-            "**Transposição de Locuções Verbais e Tempos Compostos (\"O Principal Manda, o Auxiliar Obedece\")**: Definição ou Ideia Central\nNa transposição de uma oração que já possui locução verbal ou tempo composto na voz ativa, aplica-se o axioma sintático: \"Quem manda é o verbo principal, quem obedece é o verbo auxiliar.\"\nDinâmica Operacional\nO Verbo Principal Manda: A forma nominal em que o verbo principal ativo se encontra dita a forma exata em que o verbo auxiliar SER ingressará na locução passiva:\nSe o principal estava no particípio (transferido), SER entra no particípio: sido.\nSe o principal estava no gerúndio (ensinando), SER entra no gerúndio: sendo.\nSe o principal estava no infinitivo (transferir), SER entra no infinitivo: ser.\nO Verbo Auxiliar Obedece: O verbo auxiliar preexistente na ativa não pode ser descartado. Ele é preservado na primeira posição da locução passiva e adapta sua flexão de número e pessoa para concordar com o novo sujeito paciente.\nO Verbo Principal vai para o Particípio: O verbo que atuava como principal na ativa converte-se em particípio (ou permanece em particípio, se já o era) e flexiona-se em gênero e número com o sujeito paciente.\n\\text{Ativa: } \\text{O Governo [sing.] } \\mathbf{havia} \\text{ [aux.] } \\mathbf{transferido} \\text{ [part.] } \\text{tarefas e recursos [OD pl.]}\n\\text{Passiva: } \\text{Tarefas e recursos [pl.] } \\mathbf{haviam} \\text{ [aux. pl.] } \\mathbf{sido} \\text{ [SER em part.] } \\mathbf{transferidos} \\text{ [part. pl.] } \\text{pelo Governo}\nRelações\nPossui procedimento: 002Exemplificado em: ,",
-            "**Flexão do Infinitivo Pessoal (\"Serem\") na Voz Passiva (Padrão FGV)**: Definição ou Ideia Central\nQuando o verbo ativo primitivo está no infinitivo (oração reduzida de infinitivo) e rege um objeto direto composto ou plural, sua transposição para a passiva analítica exige que o verbo auxiliar SER seja flexionado no infinitivo pessoal plural (3ª pessoa do plural: serem), e não mantido no infinitivo impessoal invariável (ser), concordando com o sujeito paciente plural.\nAnálise do Caso FGV\nFrase Ativa: \"Buscar [infinitivo] a felicidade e a paz [OD composto]\"\nPassiva Incorreta (Distrator): \"A felicidade e a paz são buscadas\" (Erro gravíssimo: converteu infinitivo em Presente do Indicativo).\nPassiva Incorreta (Distrator): \"A felicidade e a paz ser buscada\" (Erro: infinitivo impessoal sem flexão e particípio no singular).\nPassiva Correta: \"(...) serem buscadas a felicidade e a paz\" (Infinitivo pessoal plural serem + particípio feminino plural buscadas).\nRelações\nPossui fala relevante: QUOTE-A05-G06-003\nExemplificado em: , ,",
-            "**Transposição de Pronomes Oblíquos Proclíticos no Modo Subjuntivo (Padrão FCC)**: Definição ou Ideia Central\nQuando a oração ativa é encabeçada por palavra atrativa de negação, o objeto direto é expresso por pronome pessoal oblíquo átono em próclise e o verbo está conjugado no modo subjuntivo, a transposição exige a conversão do pronome para o caso reto (sujeito) e a conjugação do verbo SER no Presente do Subjuntivo.\nCaso Paradigmático (FCC — SEGEP-MA)\nAtiva: \"Mas não nos [OD] iludamos [Pres. Subjuntivo: que nós iludamos]\"\nMapeamento:\nPronome oblíquo nos $\\rightarrow$ converte-se no pronome reto sujeito Nós.\nVerbo auxiliar SER no Presente do Subjuntivo (1ª pessoa plural): (que nós) sejamos.\nParticípio do verbo principal iludir com concordância plural: iludidos.\nPassiva Resultante: \"Mas não sejamos iludidos\" (com o pronome sujeito nós elíptico).\nRelações\nExemplificado em:",
-            "**Bloqueio Sintático de Passivação com Verbos Transitivos Indiretos (VTI) e Intransitivos (VI)**: Definição ou Ideia Central\nA voz passiva analítica tem como pressuposto de existência sintática a presença de um Objeto Direto na oração primitiva. Verbos Transitivos Indiretos (VTI) — que regem objeto indireto preposicionado — e Verbos Intransitivos (VI) — que não regem complemento — não admitem transposição para a voz passiva analítica.\nCasos Típicos de Bloqueio em Concursos\nVerbo Transitivo Indireto (obedecer):\nAtiva: \"Obedeceu-se às ordens.\" (obedecer a = VTI; às ordens = Objeto Indireto).\nJulgamento: Não admite passivação analítica. A construção coloquial \"As ordens foram obedecidas\" é considerada erro gramatical em concursos (019 — ).\nVerbo Transitivo Indireto (acreditar):\nAtiva: \"Muitos cientistas não acreditam em Deus.\" (acreditar em = VTI; em Deus = Objeto Indireto).\nJulgamento: Não admite transposição.\nVerbo Intransitivo (acordar — FGV):\nAtiva: \"Um homem acorda gravemente ferido.\" (acordar = VI; gravemente ferido = predicativo do sujeito).\nConstrução Incorreta da Banca: \"Um homem é acordado gravemente ferido\" $\\rightarrow$ Inadequada / Erro de passivação (021 — ).Exemplificado em: , ,",
-            "**Passivação em Orações Adjetivas e Elipse do Auxiliar (Padrão CEBRASPE)**: Definição ou Ideia Central\nEm orações adjetivas em que o pronome relativo que funciona como objeto direto do verbo ativo, a transposição para a passiva analítica admite a elipse simultânea do pronome relativo e do verbo auxiliar SER, gerando uma oração reduzida de particípio plenamente válida e com equivalência semântica.\nAnálise Estrutural (CEBRASPE — Polícia Científica-PE)\nTexto Ativo: \"...da tristeza e perplexidade [antecedente composto] que [OD relativo] senti [Pret. Perfeito] na derrota de Lott...\"\nPassiva Analítica Plena: \"...da tristeza e perplexidade que foram sentidas por mim...\"\nPassiva Reduzida por Elipse (Proposta pela banca): \"...da tristeza e perplexidade sentidas por mim...\"\nJulgamento: Item Certo. A supressão de que foram não altera o sentido nem a correção gramatical da estrutura passiva.\nRelações\nExpandido por: ORAL-A05-G06-004\nExemplificado em:"
-          ]
+          "term": "O Mecanismo Estrutural do \"Cruzamento Sintático\"",
+          "shortDefinition": "A passagem da voz ativa para a voz passiva analítica fundamenta-se em uma reestruturação relacional (\"cruzamento\"), em que o termo que recebia a ação direta (Objeto Direto) é promovido a núcleo governante da oração (Sujeito Paciente), o executor da ação (Sujeito Agente) passa a termo circunstancial/integrante (Agente da Passiva), e a forma verbal expande-se com a inserção do verbo auxiliar SER.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-01"
+          },
+          "operationalUse": "Diagrama exibindo blocos coloridos cruzados: VOZ ATIVA (Suj."
+        },
+        {
+          "term": "Método das Quatro Instruções (\"Chamar o Feito à Ordem\")",
+          "shortDefinition": "Protocolo de quatro passos analíticos sequenciais que blinda o candidato contra a sobrecarga cognitiva e as armadilhas fonéticas ou estruturais criadas pelas bancas de concursos públicos.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-02"
+          }
+        },
+        {
+          "term": "Correspondência Rigorosa de Tempo e Modo do Auxiliar \"SER\"",
+          "shortDefinition": "A voz passiva analítica não admite alteração de tempo, modo ou aspecto verbal em relação à oração ativa primitiva. O verbo auxiliar SER atua como espelho morfológico estrito do verbo principal ativo.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-03"
+          }
+        },
+        {
+          "term": "A Regra Mnemônica da \"Soma Verbal\" ($N \\rightarrow N+1$)",
+          "shortDefinition": "A estrutura da voz passiva analítica expande a cadeia verbal adicionando obrigatoriamente um verbo auxiliar à quantidade de verbos originalmente presentes na voz ativa:",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-04"
+          }
+        },
+        {
+          "term": "Exceção da Flexão e Concordância do Particípio Passivo",
+          "shortDefinition": "Em regra geral da sintaxe da língua portuguesa, nas locuções verbais ativas com verbos auxiliares (ter, haver, etc.), o particípio do verbo principal é invariável. A locução verbal da voz passiva analítica é a única exceção, na qual o particípio possui natureza adjetival e flexiona-se obrigatoriamente em gênero e número com o sujeito paciente.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-05"
+          }
+        },
+        {
+          "term": "Transposição com Sujeito Indeterminado na Ativa",
+          "shortDefinition": "Quando a oração na voz ativa apresenta verbo conjugado na 3ª pessoa do plural sem sujeito expresso nem contextualizável (sujeito indeterminado), sua transposição para a passiva analítica resulta em uma oração com agente da passiva indeterminado, não havendo nenhum termo preposicionado explícito na estrutura resultante.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-06"
+          }
+        },
+        {
+          "term": "Transposição de Locuções Verbais e Tempos Compostos (\"O Principal Manda, o Auxiliar Obedece\")",
+          "shortDefinition": "Na transposição de uma oração que já possui locução verbal ou tempo composto na voz ativa, aplica-se o axioma sintático: \"Quem manda é o verbo principal, quem obedece é o verbo auxiliar.\"",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-07"
+          }
+        },
+        {
+          "term": "Flexão do Infinitivo Pessoal (\"Serem\") na Voz Passiva (Padrão FGV)",
+          "shortDefinition": "Quando o verbo ativo primitivo está no infinitivo (oração reduzida de infinitivo) e rege um objeto direto composto ou plural, sua transposição para a passiva analítica exige que o verbo auxiliar SER seja flexionado no infinitivo pessoal plural (3ª pessoa do plural: serem), e não mantido no infinitivo impessoal invariável (ser), concordando com o sujeito paciente plural.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-08"
+          }
+        },
+        {
+          "term": "Transposição de Pronomes Oblíquos Proclíticos no Modo Subjuntivo (Padrão FCC)",
+          "shortDefinition": "Quando a oração ativa é encabeçada por palavra atrativa de negação, o objeto direto é expresso por pronome pessoal oblíquo átono em próclise e o verbo está conjugado no modo subjuntivo, a transposição exige a conversão do pronome para o caso reto (sujeito) e a conjugação do verbo SER no Presente do Subjuntivo.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-09"
+          }
+        },
+        {
+          "term": "Bloqueio Sintático de Passivação com Verbos Transitivos Indiretos (VTI) e Intransitivos (VI)",
+          "shortDefinition": "A voz passiva analítica tem como pressuposto de existência sintática a presença de um Objeto Direto na oração primitiva. Verbos Transitivos Indiretos (VTI) — que regem objeto indireto preposicionado — e Verbos Intransitivos (VI) — que não regem complemento — não admitem transposição para a voz passiva analítica.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-10"
+          }
+        },
+        {
+          "term": "Passivação em Orações Adjetivas e Elipse do Auxiliar (Padrão CEBRASPE)",
+          "shortDefinition": "Em orações adjetivas em que o pronome relativo que funciona como objeto direto do verbo ativo, a transposição para a passiva analítica admite a elipse simultânea do pronome relativo e do verbo auxiliar SER, gerando uma oração reduzida de particípio plenamente válida e com equivalência semântica.",
+          "detailTarget": {
+            "unitId": "IP-A05-G06",
+            "section": "explanation",
+            "groupId": "GRP-IP-A05-G06-11"
+          }
         }
       ]
     },
@@ -2443,7 +3215,39 @@
         "confidence": 0.97
       },
       "answerSha256": "e484a619703ce5ebb3d64b68860f815701a8c14a7e361d4316eaf32ecebb24be",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "A frase que NÃO exemplifica a ocorrência de voz passiva é:",
+        "options": [
+          {
+            "label": "A",
+            "text": "“Diante do número de casos de preconceito explícito e agressões, somos levados ao\nquestionamento...”;"
+          },
+          {
+            "label": "B",
+            "text": "“...a sociedade corre o risco de estar tornando-se irracionalmente intolerante”;"
+          },
+          {
+            "label": "C",
+            "text": "“No último ano, foram registradas dezenas de casos de intolerância religiosa...”;"
+          },
+          {
+            "label": "D",
+            "text": "“Preconceito não se tolera, se combate”;"
+          },
+          {
+            "label": "E",
+            "text": "“...muitas ocorrências que deveriam ser registradas como ‘intolerância religiosa’...”."
+          }
+        ],
+        "answer": "B",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -2513,7 +3317,39 @@
         "confidence": 0.97
       },
       "answerSha256": "de940a01f1b4df88d92b0d44eeebebf2410c8aeb15032c80b9ab31aae20d6532",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "A frase do texto que se apresenta na voz passiva é:",
+        "options": [
+          {
+            "label": "A",
+            "text": "“A resistência ao desmonte da cultura em cenário de crises graves não se dá por acaso”;"
+          },
+          {
+            "label": "B",
+            "text": "“...a gestão pública do setor vem sofrendo...”;"
+          },
+          {
+            "label": "C",
+            "text": "...é comum que generalize-se a opinião...”;"
+          },
+          {
+            "label": "D",
+            "text": "“...política públicas para a cultura não devem ser prioritárias”;"
+          },
+          {
+            "label": "E",
+            "text": "“Combater essa generalização equivocada é urgente”."
+          }
+        ],
+        "answer": "C",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -2783,22 +3619,13 @@
         "confidence": 0.99
       },
       "answerSha256": "ba267c6e5ad9479c8236f01513c35d9966b2fdcab5d21bd29592ca1e321e90e2",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A05-aula05.q0067",
-      "lessonId": "A05",
-      "sourceQuestionId": "aula05.q0067",
-      "questionPayload": {
-        "question_id": "aula05.q0067",
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "SEFAZ-RS",
-        "position": null,
-        "year": 2018,
-        "support_text": null,
-        "prompt": "preservou-se, com o passar dos séculos, a associação dos atributos de beleza e expressão\ncultural ao valor monetário das moedas\nA correção gramatical e os sentidos do texto seriam preservados caso a forma “preservou-se”\nfosse substituída por\nA) teriam sido preservados.\nB) tinha sido preservada.\nC) foi preservada.\nD) foram preservados.\nE) teria sido preservada.",
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A05-aula05.q0067"
+      ],
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "preservou-se, com o passar dos séculos, a associação dos atributos de beleza e expressão\ncultural ao valor monetário das moedas\n\nA correção gramatical e os sentidos do texto seriam preservados caso a forma “preservou-se”\nfosse substituída por",
         "options": [
           {
             "label": "A",
@@ -2821,39 +3648,13 @@
             "text": "teria sido preservada."
           }
         ],
-        "tests_concept_ids": [
-          "pt.grammar.voz_passiva"
+        "answer": "C",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
         ],
-        "tests_rule_ids": [
-          "rule.pt.voz_passiva.conversao.001"
-        ],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0040"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "duplicate_of": "aula05.q0045",
-        "extraction_confidence": 0.985
-      },
-      "questionSha256": "efc0b5ea8b46cb5b5d2389c450de5b49e5953ddd1add979d7dac71dd2cd5d631",
-      "answerPayload": {
-        "answer_id": "aula05.q0067.answer",
-        "question_id": "aula05.q0067",
-        "answer": "option_C",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula05_complete",
-          "page_ids": [
-            "aula05_complete.p0042"
-          ]
-        },
-        "confidence": 0.995
-      },
-      "answerSha256": "c5ea068714acb1c3bc2c794b72b3bcc3981669419d03b84d8a2645c18d26fb79",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+        "sourcePayloadPreserved": true
+      }
     }
   ]
 }

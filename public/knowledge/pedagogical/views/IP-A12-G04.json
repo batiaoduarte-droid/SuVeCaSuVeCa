@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A12-G04",
     "lessonId": "A12",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A12-G04",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A12-G04-001"
+          }
         }
       ]
     },
@@ -94,8 +99,92 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA polissemia é a propriedade semântica pela qual um único vocábulo (uma mesma forma gráfica e uma mesma realização fonética), que compartilha uma matriz ou origem etimológica comum, reúne e expressa uma multiplicidade de significações ou acepções contextuais.\nExplicação consolidada\nEtimologicamente, o termo forma-se pelo elemento grego poli- (muitos, vários) e pelo radical -semia (significação, sentido). Diferentemente de palavras distintas que apenas se parecem na pronúncia ou na escrita, na polissemia tem-se rigorosamente uma única unidade lexical cujo espectro semântico expandiu-se historicamente por derivação de uso, necessidade comunicativa ou extensões analógicas/metafóricas.\nA identidade morfológica e fonológica permanece inalterada; o que se diversifica é o campo de referência ativado no discurso.\nCritérios de reconhecimento ou aplicação\nIdentidade formal total: A escrita e o som devem ser rigorosamente idênticos.\nOrigem etimológica comum: O vocábulo descende de uma mesma matriz lexical.\nPluralidade de acepções dicionarizadas: Sob o mesmo verbete de entrada lexical, encontram-se acepções distintas (acepção 1, acepção 2, acepção 3...).\nExemplos e contraexemplos\nExemplo (Planta):\nAcepção 1 (anatômica): \"Sentia dor na planta dos pés.\"\nAcepção 2 (botânica): \"A planta deve receber luz solar.\"\nExemplo (Dama):\nAcepção 1: Senhora distinta / mulher adulta.\nAcepção 2: Carta de baralho / peça de jogo de tabuleiro.\nContraexemplo (Conserto / Concerto): Não é polissemia, pois há formas gráficas distintas com origens latinas independentes (consertare vs. concertare).(Equivalência com Homonímia Perfeita)\nExpande-se em: (Dimensão Denotativa e Conotativa)\nExemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A polissemia é a propriedade semântica pela qual um único vocábulo (uma mesma forma gráfica e uma mesma realização fonética), que compartilha uma matriz ou origem etimológica comum, reúne e expressa uma multiplicidade de significações ou acepções contextuais."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Etimologicamente, o termo forma-se pelo elemento grego poli- (muitos, vários) e pelo radical -semia (significação, sentido). Diferentemente de palavras distintas que apenas se parecem na pronúncia ou na escrita, na polissemia tem-se rigorosamente uma única unidade lexical cujo espectro semântico expandiu-se historicamente por derivação de uso, necessidade comunicativa ou extensões analógicas/metafóricas."
+            },
+            {
+              "type": "paragraph",
+              "text": "A identidade morfológica e fonológica permanece inalterada; o que se diversifica é o campo de referência ativado no discurso."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identidade formal total: A escrita e o som devem ser rigorosamente idênticos.",
+                "Origem etimológica comum: O vocábulo descende de uma mesma matriz lexical.",
+                "Pluralidade de acepções dicionarizadas: Sob o mesmo verbete de entrada lexical, encontram-se acepções distintas (acepção 1, acepção 2, acepção 3...)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo (Planta):",
+                "Acepção 1 (anatômica): \"Sentia dor na planta dos pés.\"",
+                "Acepção 2 (botânica): \"A planta deve receber luz solar.\"",
+                "Exemplo (Dama):",
+                "Acepção 1: Senhora distinta / mulher adulta.",
+                "Acepção 2: Carta de baralho / peça de jogo de tabuleiro.",
+                "Contraexemplo (Conserto / Concerto): Não é polissemia, pois há formas gráficas distintas com origens latinas independentes (consertare vs. concertare)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G04-002",
+                  "targetTitle": "Relação de Equivalência Estrutural com a Homonímia Perfeita",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G04-004",
+                  "targetTitle": "Dimensão Denotativa vs. Conotativa e Mecanismos Metafóricos",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-001",
+                  "targetTitle": "Vocábulos Polissêmicos Básicos de Demonstração",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-002",
+                  "targetTitle": "Exercício de Fixação Semântica das Acepções Múltiplas",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +197,76 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nNo plano estrutural da morfologia e da fonética, todo caso de polissemia coincide com uma relação de homonímia perfeita, pois ambos os conceitos exigem simultaneamente igualdade gráfica plena (homografia) e igualdade sonora absoluta (homofonia), divergindo unicamente no conteúdo semântico.\nExplicação consolidada\nA professora formaliza a equação estrutural que rege o fenômeno:\n\\text{Forma (Grafia + Pronúncia)} = \\text{Igual}\n\\text{Significados} \\neq \\text{Diferentes}\nQuando duas ocorrências de uma palavra apresentam rigorosamente a mesma grafia e o mesmo som com significados divergentes, a tradição gramatical e as bancas examinadoras podem classificar o fenômeno como polissemia ou como homonímia perfeita. A distinção teórica estrita reside no fato de que a polissemia preserva uma matriz etimológica comum com sentidos interligados, enquanto a homonímia em sentido puramente etimológico trata de raízes históricas distintas que convergiram para a mesma forma exterior.\nCritérios de reconhecimento\n\\text{Grafia Igual} + \\text{Pronúncia Igual} + \\text{Sentidos Diferentes} \\Rightarrow \\text{Homonímia Perfeita / Polissemia}\nExemplos\nBanco (instituição financeira) vs. Banco (assento de madeira).\nCedo (1ª pessoa do singular do verbo ceder) vs. Cedo (advérbio temporal).Possui alerta de prova: e TIP-A12-G04-002"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "No plano estrutural da morfologia e da fonética, todo caso de polissemia coincide com uma relação de homonímia perfeita, pois ambos os conceitos exigem simultaneamente igualdade gráfica plena (homografia) e igualdade sonora absoluta (homofonia), divergindo unicamente no conteúdo semântico."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora formaliza a equação estrutural que rege o fenômeno:"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Forma (Grafia + Pronúncia)} = \\text{Igual}"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Significados} \\neq \\text{Diferentes}"
+            },
+            {
+              "type": "paragraph",
+              "text": "Quando duas ocorrências de uma palavra apresentam rigorosamente a mesma grafia e o mesmo som com significados divergentes, a tradição gramatical e as bancas examinadoras podem classificar o fenômeno como polissemia ou como homonímia perfeita. A distinção teórica estrita reside no fato de que a polissemia preserva uma matriz etimológica comum com sentidos interligados, enquanto a homonímia em sentido puramente etimológico trata de raízes históricas distintas que convergiram para a mesma forma exterior."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "formula",
+              "text": "\\text{Grafia Igual} + \\text{Pronúncia Igual} + \\text{Sentidos Diferentes} \\Rightarrow \\text{Homonímia Perfeita / Polissemia}"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Banco (instituição financeira) vs. Banco (assento de madeira).",
+                "Cedo (1ª pessoa do singular do verbo ceder) vs. Cedo (advérbio temporal)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A12-G04-001",
+                  "targetTitle": "Conceito Fundamental e Matriz Etimológica da Polissemia",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A12-G04-001",
+                  "targetTitle": "Confundir Homófonos Heterógrafos com Polissemia",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +279,109 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA polissemia exige identidade formal bilateral (som E grafia). Não constituem polissemia os pares caracterizados por homofonia heterográfica (som igual, grafia diferente), homografia heterófona (grafia igual, pronúncia diferente) ou paronímia (formas parecidas).\nExplicação consolidada\nPara delimitar com precisão o conceito de polissemia, analisa-se o comportamento das relações semânticas concorrentes:\nRELAÇÕES FORMAIS VERSUS SIGNIFICADO ┬ ┬ Fenômeno Forma (Grafia / Som) Significado ┼ ┼ ┤ Polissemia / Hom. Perf. Grafia IGUAL + Som IGUAL Significado DIFERENTE Homófonos Heterógrafos Grafia DIFERENTE + Som = Significado DIFERENTE Homógrafos Heterófonos Grafia IGUAL + Som DIF. Significado DIFERENTE Paronímia Grafia/Som PARECIDOS Significado DIFERENTE Sinonímia Grafia/Som DIFERENTES Significado IGUAL Antonímia Grafia/Som DIFERENTES Significado CONTRÁRIO ┴ ┴ ┘\nHomófonos heterógrafos (Não são polissemia):\nConserto (reparo) vs. Concerto (apresentação musical).\nSela (arreio de cavalo) vs. Cela (cômodo/prisão).\nCesta (recipiente de palha) vs. Sexta (numeral/dia da semana).\nMotivo: Havendo variação ortográfica na letra inicial ou interna, rompe-se a unicidade da palavra.\nHomógrafos heterófonos (Não são polissemia):\nColher (verbo, com timbre vocálico fechado [/o/]) vs. Colher (substantivo/talher, com timbre aberto [/ɔ/]).\nMotivo: A alteração de timbre na vogal tônica desfaz a identidade fonética.\nParônimos (Não são polissemia):\nEmergir (vir à tona) vs. Imergir (mergulhar); Cumprimento (saudação/execução) vs. Comprimento (extensão).\nMotivo: São palavras distintas com leve semelhança gráfica e fonética.\nRelações\nContrasta com: , \nPossui alertas: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A polissemia exige identidade formal bilateral (som E grafia). Não constituem polissemia os pares caracterizados por homofonia heterográfica (som igual, grafia diferente), homografia heterófona (grafia igual, pronúncia diferente) ou paronímia (formas parecidas)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para delimitar com precisão o conceito de polissemia, analisa-se o comportamento das relações semânticas concorrentes:"
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Fronteiras e Contrastes: Homófonos, Homógrafos e Parônimos",
+              "text": "RELAÇÕES FORMAIS VERSUS SIGNIFICADO ┌─────────────────────────┬──────────────────────────┬────────────────────────┐ │ Fenômeno │ Forma (Grafia / Som) │ Significado │ ├─────────────────────────┼──────────────────────────┼────────────────────────┤ │ Polissemia / Hom. Perf. │ Grafia IGUAL + Som IGUAL │ Significado DIFERENTE │ │ Homófonos Heterógrafos │ Grafia DIFERENTE + Som = │ Significado DIFERENTE │ │ Homógrafos Heterófonos │ Grafia IGUAL + Som DIF. │ Significado DIFERENTE │ │ Paronímia │ Grafia/Som PARECIDOS │ Significado DIFERENTE │ │ Sinonímia │ Grafia/Som DIFERENTES │ Significado IGUAL │ │ Antonímia │ Grafia/Som DIFERENTES │ Significado CONTRÁRIO │ └─────────────────────────┴──────────────────────────┴────────────────────────┘"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Homófonos heterógrafos (Não são polissemia):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Conserto (reparo) vs. Concerto (apresentação musical).",
+                "Sela (arreio de cavalo) vs. Cela (cômodo/prisão).",
+                "Cesta (recipiente de palha) vs. Sexta (numeral/dia da semana).",
+                "Motivo: Havendo variação ortográfica na letra inicial ou interna, rompe-se a unicidade da palavra."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Homógrafos heterófonos (Não são polissemia):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Colher (verbo, com timbre vocálico fechado [/o/]) vs. Colher (substantivo/talher, com timbre aberto [/ɔ/]).",
+                "Motivo: A alteração de timbre na vogal tônica desfaz a identidade fonética."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Parônimos (Não são polissemia):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Emergir (vir à tona) vs. Imergir (mergulhar); Cumprimento (saudação/execução) vs. Comprimento (extensão).",
+                "Motivo: São palavras distintas com leve semelhança gráfica e fonética."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G04-001",
+                  "targetTitle": "Conceito Fundamental e Matriz Etimológica da Polissemia",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G04-002",
+                  "targetTitle": "Relação de Equivalência Estrutural com a Homonímia Perfeita",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A12-G04-001",
+                  "targetTitle": "Confundir Homófonos Heterógrafos com Polissemia",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A12-G04-002",
+                  "targetTitle": "Variação de Timbre Vocálico Descaracteriza a Polissemia",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +394,87 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA ramificação dos sentidos de um vocábulo polissêmico pode ocorrer integralmente no domínio denotativo (múltiplas acepções literais dicionarizadas) ou resultar da transposição contínua do sentido denotativo primitivo para sentidos conotativos (usos figurados gerados por metáfora ou catacrese).\nExplicação consolidada\nA ampliação do léxico estrutura-se em duas vertentes:\nPolissemia puramente denotativa (literal): Todas as acepções pertencem ao registro referencial objetivo da língua, constando de modo autônomo no dicionário sem necessidade de decodificação poética ou figurada.\nLetra: Composição musical / Caligrafia / Caractere do alfabeto.\nVela: Cilindro de cera com pavio / Lona de propulsão náutica.\nBanco: Empresa de custódia financeira / Assento físico.\nHistória: Ciência dos fatos humanos (História) / Narração ou conto (história).\nPolissemia denotativa-conotativa (extensão metafórica): A palavra possui um significado literal de base e, por semelhança física, funcional ou comportamental, ganha extensões figuradas consolidadas no uso.\nBoca: Cavidade bucal orgânica (denotativo) $\\rightarrow$ Boca da garrafa / boca da caverna (conotativo/catacrese).\nPorco: Animal mamífero suíno (denotativo) $\\rightarrow$ Pessoa com hábitos anti-higiênicos ou comportamento reprovável (conotativo/metafórico).\nNó: Laço apertado em corda ou cadarço (denotativo) $\\rightarrow$ Nó na garganta como sensação de angústia ou choro contido (conotativo).\nCasa: Edificação/moradia (denotativo) $\\rightarrow$ Faixa de grandeza ou aproximação térmica \"na casa dos 48 °C\" (conotativo).\nToda transposição regular de um vocábulo do sentido real para o sentido figurado, mantendo a forma, constitui autêntica manifestação de polissemia.(CESGRANRIO), (Consulplan),"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A ramificação dos sentidos de um vocábulo polissêmico pode ocorrer integralmente no domínio denotativo (múltiplas acepções literais dicionarizadas) ou resultar da transposição contínua do sentido denotativo primitivo para sentidos conotativos (usos figurados gerados por metáfora ou catacrese)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A ampliação do léxico estrutura-se em duas vertentes:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Polissemia puramente denotativa (literal): Todas as acepções pertencem ao registro referencial objetivo da língua, constando de modo autônomo no dicionário sem necessidade de decodificação poética ou figurada."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Letra: Composição musical / Caligrafia / Caractere do alfabeto.",
+                "Vela: Cilindro de cera com pavio / Lona de propulsão náutica.",
+                "Banco: Empresa de custódia financeira / Assento físico.",
+                "História: Ciência dos fatos humanos (História) / Narração ou conto (história)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Polissemia denotativa-conotativa (extensão metafórica): A palavra possui um significado literal de base e, por semelhança física, funcional ou comportamental, ganha extensões figuradas consolidadas no uso."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Boca: Cavidade bucal orgânica (denotativo) $\\rightarrow$ Boca da garrafa / boca da caverna (conotativo/catacrese).",
+                "Porco: Animal mamífero suíno (denotativo) $\\rightarrow$ Pessoa com hábitos anti-higiênicos ou comportamento reprovável (conotativo/metafórico).",
+                "Nó: Laço apertado em corda ou cadarço (denotativo) $\\rightarrow$ Nó na garganta como sensação de angústia ou choro contido (conotativo).",
+                "Casa: Edificação/moradia (denotativo) $\\rightarrow$ Faixa de grandeza ou aproximação térmica \"na casa dos 48 °C\" (conotativo)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Toda transposição regular de um vocábulo do sentido real para o sentido figurado, mantendo a forma, constitui autêntica manifestação de polissemia."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-003",
+                  "targetTitle": "Questão 09: CESGRANRIO / Petrobras / Médico do Trabalho",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-006",
+                  "targetTitle": "Questão 12: Instituto Consulplan / Pref. de Colômbia / Professor",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-008",
+                  "targetTitle": "Demonstrações Frasais de Contexto Suficiente versus Ambiguidade Viciosa",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +487,56 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA polissemia é um fato estritamente lexical (propriedade de uma palavra possuir múltiplos sentidos no dicionário), ao passo que a ambiguidade é um fenômeno sintático-discursivo (indeterminação ou duplo sentido gerado na frase quando o contexto não é capaz de definir qual acepção foi empregada).\nExplicação consolidada\nA professora sintetiza a relação por meio do mantra pedagógico: \"Nem toda polissemia gera ambiguidade\".\nPOLISSEMIA (LÉXICO) ┴ CONTEXTO DELIMITA O SENTIDO CONTEXTO NÃO DELIMITA (INSUFICIENTE) POLISSEMIA CLARA / AMBIGUIDADE VICIOSA RECURSO ESTILÍSTICO VÁLIDO OU DUPLO SENTIDO INDESEJADO (Sem dúvida interpretativa para o leitor) (Hesitação e prejuízo à clareza textual)\nPolissemia sem ambiguidade: Ocorre na esmagadora maioria dos enunciados cotidianos e cultos. As palavras vizinhas (cotexto) amarram perfeitamente o sentido pretendido. Exemplo: \"Sentia dor na planta dos pés\" — a presença de \"dos pés\" restringe o vocábulo à anatomia humana, eliminando qualquer leitura vegetal.\nPolissemia com ambiguidade: Ocorre quando o ambiente frasal é neutro, vago ou insuficiente, permitindo que duas ou mais acepções façam sentido simultâneo sem que se saiba a intenção do emissor. Exemplo: \"O banco está aqui ao lado\" — o receptor não sabe se o emissor refere-se à agência de crédito ou ao assento de praça.(Papel do Contexto)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A polissemia é um fato estritamente lexical (propriedade de uma palavra possuir múltiplos sentidos no dicionário), ao passo que a ambiguidade é um fenômeno sintático-discursivo (indeterminação ou duplo sentido gerado na frase quando o contexto não é capaz de definir qual acepção foi empregada)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora sintetiza a relação por meio do mantra pedagógico: \"Nem toda polissemia gera ambiguidade\"."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Distinção Teórica e Discursiva entre Polissemia e Ambiguidade",
+              "text": "POLISSEMIA (LÉXICO) │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ CONTEXTO DELIMITA O SENTIDO CONTEXTO NÃO DELIMITA (INSUFICIENTE) │ │ ▼ ▼ POLISSEMIA CLARA / AMBIGUIDADE VICIOSA RECURSO ESTILÍSTICO VÁLIDO OU DUPLO SENTIDO INDESEJADO (Sem dúvida interpretativa para o leitor) (Hesitação e prejuízo à clareza textual)"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Polissemia sem ambiguidade: Ocorre na esmagadora maioria dos enunciados cotidianos e cultos. As palavras vizinhas (cotexto) amarram perfeitamente o sentido pretendido. Exemplo: \"Sentia dor na planta dos pés\" — a presença de \"dos pés\" restringe o vocábulo à anatomia humana, eliminando qualquer leitura vegetal.",
+                "Polissemia com ambiguidade: Ocorre quando o ambiente frasal é neutro, vago ou insuficiente, permitindo que duas ou mais acepções façam sentido simultâneo sem que se saiba a intenção do emissor. Exemplo: \"O banco está aqui ao lado\" — o receptor não sabe se o emissor refere-se à agência de crédito ou ao assento de praça."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G04-006",
+                  "targetTitle": "O Papel Delimitador do Contexto e a Neutralização Semântica",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G04-003",
+                  "targetTitle": "Confundir Ambiguidade Discursiva com Polissemia Lexical",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +549,58 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO contexto linguístico imediato (cotexto) atua como filtro de desambiguação: a presença de elementos restritores específicos seleciona uma única acepção da palavra polissêmica e neutraliza as demais, tornando a oração isenta de duplicidade semântica.\nExplicação consolidada\nA neutralização semântica ocorre quando determinantes, adjetivos descritivos ou correlações lógicas bloqueiam as acepções alternativas do vocábulo:\nRestritores temporais correlatos: Na máxima \"Não deixe para amanhã o que pode fazer hoje\", o termo amanhã é potencialmente polissêmico (dia seguinte vs. futuro indeterminado). Contudo, a presença correlativa de hoje força a leitura restrita de amanhã como dia subsequente, neutralizando a polissemia contextual.\nRestritores adjetivais físicos: Na frase \"Champanhe: borbulhas espumantes, brancas como as pérolas de Cleópatra\", o substantivo pérola admite leituras conotativas (ideias brilhantes, frases célebres). A presença do adjetivo descritivo brancas restringe o termo unicamente à pedra física mineral, desativando qualquer apelo polissêmico.\nContexto institucional desambiguador: No slogan de banco \"Nossa fé nunca nos abandona\", a palavra fé é empregada unicamente como crença/confiança institucional. Não há ativação de outros sentidos potenciais (como fezinha de loteria ou fé pública jurídica), de modo que o contexto resolve plenamente a acepção.TIP-A12-G04-006\nExemplificado por: (FGV - IBGE), (FGV - TCE-TO)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O contexto linguístico imediato (cotexto) atua como filtro de desambiguação: a presença de elementos restritores específicos seleciona uma única acepção da palavra polissêmica e neutraliza as demais, tornando a oração isenta de duplicidade semântica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A neutralização semântica ocorre quando determinantes, adjetivos descritivos ou correlações lógicas bloqueiam as acepções alternativas do vocábulo:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Restritores temporais correlatos: Na máxima \"Não deixe para amanhã o que pode fazer hoje\", o termo amanhã é potencialmente polissêmico (dia seguinte vs. futuro indeterminado). Contudo, a presença correlativa de hoje força a leitura restrita de amanhã como dia subsequente, neutralizando a polissemia contextual.",
+                "Restritores adjetivais físicos: Na frase \"Champanhe: borbulhas espumantes, brancas como as pérolas de Cleópatra\", o substantivo pérola admite leituras conotativas (ideias brilhantes, frases célebres). A presença do adjetivo descritivo brancas restringe o termo unicamente à pedra física mineral, desativando qualquer apelo polissêmico.",
+                "Contexto institucional desambiguador: No slogan de banco \"Nossa fé nunca nos abandona\", a palavra fé é empregada unicamente como crença/confiança institucional. Não há ativação de outros sentidos potenciais (como fezinha de loteria ou fé pública jurídica), de modo que o contexto resolve plenamente a acepção."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G04-003",
+                  "targetTitle": "Protocolo do Contexto para Avaliação de Ambiguidade",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-011",
+                  "targetTitle": "Questão 15: FGV / IBGE / Analista",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-012",
+                  "targetTitle": "Questão 16: FGV / TCE-TO / Analista Técnico",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +613,71 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA repetição de um mesmo significante no texto pode configurar vício redacional (revelador de pobreza vocabular) ou repetição estilística legítima (recurso intencional de expressividade baseado na exploração de sentidos polissêmicos distintos).\nExplicação consolidada\nRepetição Viciosa (inadequada): Ocorre quando o redator emprega o mesmo vocábulo repetidamente com o mesmo sentido semântico por carência de repertório coesivo (falta de pronominalização, sinonímia ou hiperonímia). É severamente penalizada em provas discursivas.\nExemplo: \"O presidente fez a reunião. A reunião durou duas horas e nessa reunião nada se decidiu.\"\nExemplo (maneira): \"Há três maneiras de fazer as coisas: a maneira errada, a maneira certa e uma maneira melhor.\" (Todas as ocorrências significam \"modo/forma\" $\\rightarrow$ mera repetição lexical sem polissemia).\nRepetição Estilística (adequada / jogo de palavras): Ocorre quando o autor repete deliberadamente a mesma forma gráfica e sonora em posições contíguas, porém ativando significados semânticos completamente distintos (polissemia), gerando expressividade poética, paralelismo ou trocadilho sem incorrer em ambiguidade viciosa.\nExemplo (Canto / Canto — FGV): \"O canto das cigarras era mais bem escutado no canto da sala.\" (1º canto = som/melodia de cantar; 2º canto = ângulo/vértice espacial).\nExemplo (Tempo / Tempo / Tempos — Instituto AOCP): \"Pelo jeito o tempo [clima] também precisa de um tempo [intervalo] para se ajustar nestes tempos [época histórica] desajustados.\"Exemplificado por: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A repetição de um mesmo significante no texto pode configurar vício redacional (revelador de pobreza vocabular) ou repetição estilística legítima (recurso intencional de expressividade baseado na exploração de sentidos polissêmicos distintos)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Repetição Viciosa (inadequada): Ocorre quando o redator emprega o mesmo vocábulo repetidamente com o mesmo sentido semântico por carência de repertório coesivo (falta de pronominalização, sinonímia ou hiperonímia). É severamente penalizada em provas discursivas.",
+                "Exemplo: \"O presidente fez a reunião. A reunião durou duas horas e nessa reunião nada se decidiu.\"",
+                "Exemplo (maneira): \"Há três maneiras de fazer as coisas: a maneira errada, a maneira certa e uma maneira melhor.\" (Todas as ocorrências significam \"modo/forma\" $\\rightarrow$ mera repetição lexical sem polissemia).",
+                "Repetição Estilística (adequada / jogo de palavras): Ocorre quando o autor repete deliberadamente a mesma forma gráfica e sonora em posições contíguas, porém ativando significados semânticos completamente distintos (polissemia), gerando expressividade poética, paralelismo ou trocadilho sem incorrer em ambiguidade viciosa.",
+                "Exemplo (Canto / Canto — FGV): \"O canto das cigarras era mais bem escutado no canto da sala.\" (1º canto = som/melodia de cantar; 2º canto = ângulo/vértice espacial).",
+                "Exemplo (Tempo / Tempo / Tempos — Instituto AOCP): \"Pelo jeito o tempo [clima] também precisa de um tempo [intervalo] para se ajustar nestes tempos [época histórica] desajustados.\""
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A12-G04-001",
+                  "targetTitle": "Conceito Fundamental e Matriz Etimológica da Polissemia",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A12-G04-005",
+                  "targetTitle": "Distinção Teórica e Discursiva entre Polissemia e Ambiguidade",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-007",
+                  "targetTitle": "Questão 39: FGV / Câmara dos Deputados / Analista Legislativo",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-009",
+                  "targetTitle": "Questão 13: Instituto AOCP / IF-MA / Professor EBTT",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-014",
+                  "targetTitle": "Questão 18: FGV / TCE-TO / Auditor de Controle Externo",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -192,8 +690,77 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nExiste uma diferença essencial entre uma palavra ser polissêmica em abstrato (no dicionário) e a polissemia estar efetivamente ativada/presente no contexto frasal (quando a estruturação da oração sustenta ou explora intencionalmente dois ou mais sentidos em coexistência).\nExplicação consolidada\nBancas sofisticadas (com destaque para a FGV) elaboram comandos como \"a polissemia está presente em todas as frases, EXCETO\" ou \"a frase cuja estruturação apela para a polissemia é\":\nNível do Vocábulo (Potencialidade Lexical): Praticamente todo substantivo ou verbo comum possui múltiplos verbetes dicionarizados (manga, fé, rádio, vela, proximidade). Isso é apenas a potencialidade do léxico.\nNível Frasal (Ativação Semântica): A polissemia só é considerada \"presente\" ou \"apelada\" na frase se o autor estruturou o período de modo que a duplicidade de acepções permaneça viva e operante (trocadilho, jogo estilístico, duplo sentido intencional). Se o contexto eliminou todas as acepções secundárias e fixou um único sentido, a frase está isenta de polissemia contextual.\nExemplos contrastivos\nPolissemia desativada na frase: \"Os políticos estão nervosos pela proximidade das eleições.\" (Proximidade pode indicar distância física ou tempo, mas na frase opera unicamente como tempo $\\rightarrow$ isenta de jogo polissêmico).\nPolissemia ativada na frase: \"O sábio lê livros, mas também a vida.\" (O verbo ler opera denotativamente com livros [decodificar grafemas] e conotativamente com a vida [interpretar/compreender a existência] $\\rightarrow$ apelo à polissemia).Exemplificado por: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Existe uma diferença essencial entre uma palavra ser polissêmica em abstrato (no dicionário) e a polissemia estar efetivamente ativada/presente no contexto frasal (quando a estruturação da oração sustenta ou explora intencionalmente dois ou mais sentidos em coexistência)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas sofisticadas (com destaque para a FGV) elaboram comandos como \"a polissemia está presente em todas as frases, EXCETO\" ou \"a frase cuja estruturação apela para a polissemia é\":"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Nível do Vocábulo (Potencialidade Lexical): Praticamente todo substantivo ou verbo comum possui múltiplos verbetes dicionarizados (manga, fé, rádio, vela, proximidade). Isso é apenas a potencialidade do léxico.",
+                "Nível Frasal (Ativação Semântica): A polissemia só é considerada \"presente\" ou \"apelada\" na frase se o autor estruturou o período de modo que a duplicidade de acepções permaneça viva e operante (trocadilho, jogo estilístico, duplo sentido intencional). Se o contexto eliminou todas as acepções secundárias e fixou um único sentido, a frase está isenta de polissemia contextual."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos contrastivos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Polissemia desativada na frase: \"Os políticos estão nervosos pela proximidade das eleições.\" (Proximidade pode indicar distância física ou tempo, mas na frase opera unicamente como tempo $\\rightarrow$ isenta de jogo polissêmico).",
+                "Polissemia ativada na frase: \"O sábio lê livros, mas também a vida.\" (O verbo ler opera denotativamente com livros [decodificar grafemas] e conotativamente com a vida [interpretar/compreender a existência] $\\rightarrow$ apelo à polissemia)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G04-004",
+                  "targetTitle": "Técnica das \"Duas Setas\" para Identificar Jogos de Palavras na FGV",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-011",
+                  "targetTitle": "Questão 15: FGV / IBGE / Analista",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-012",
+                  "targetTitle": "Questão 16: FGV / TCE-TO / Analista Técnico",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-015",
+                  "targetTitle": "Questão 19: FGV / SEAD-AP / Professor de Educação Básica",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -206,8 +773,136 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA ambiguidade intencional (estilística ou publicitária) é o uso deliberado do duplo sentido polissêmico para gerar humor, persuasão ou trocadilhos refinados. Em enunciados publicitários ou institucionais, a palavra-chave conecta simultaneamente a atividade funcional do emissor e um sentido abstrato/cotidiano.\nExplicação consolidada\nAo analisar questões da FGV contendo o emissor indicado entre parênteses, aplica-se a correlação dos dois polos semânticos:\nDistinção crítica com Figuras de Linguagem (Personificação)\nSe uma frase institucional empregar termos sem multiplicidade de sentidos ativados, mesmo contendo figura de linguagem (como personificação/prosopopeia), ela está isenta de polissemia.\n(Banco) \"Nossa fé nunca nos abandona.\" $\\rightarrow$ O vocábulo fé atua unicamente como crença/confiança, personificada na ação de \"não abandonar\". Não há ativação de duplicidade semântica com a atividade bancária.Exemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A ambiguidade intencional (estilística ou publicitária) é o uso deliberado do duplo sentido polissêmico para gerar humor, persuasão ou trocadilhos refinados. Em enunciados publicitários ou institucionais, a palavra-chave conecta simultaneamente a atividade funcional do emissor e um sentido abstrato/cotidiano."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao analisar questões da FGV contendo o emissor indicado entre parênteses, aplica-se a correlação dos dois polos semânticos:"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A12-G04-003",
+              "table": {
+                "tableId": "TABLE-IP-A12-G04-003",
+                "caption": "Explicação consolidada",
+                "headers": [
+                  "Emissor Institucional",
+                  "Frase Publicitária / Slogan",
+                  "Sentido A (Área do Emissor)",
+                  "Sentido B (Sentido Geral/Metafórico)"
+                ],
+                "rows": [
+                  [
+                    "Jornal",
+                    "\"Notícia e cafezinho devem ser quentes.\"",
+                    "Recente, furo jornalístico de última hora",
+                    "Alta temperatura física"
+                  ],
+                  [
+                    "Restaurante",
+                    "\"Aqui levamos a massa em consideração.\"",
+                    "Prato culinário / massa alimentícia",
+                    "Coletividade, clientela, povo"
+                  ],
+                  [
+                    "Empresa de ônibus",
+                    "\"A vida é passageira.\"",
+                    "Cliente transportada no veículo",
+                    "Efêmera, transitória, breve"
+                  ],
+                  [
+                    "Delegacia",
+                    "\"Estamos presos ao dever.\"",
+                    "Encarcerados em cela (atividade policial)",
+                    "Comprometidos moralmente com a função"
+                  ],
+                  [
+                    "Consultório / Dentista",
+                    "\"Os delitos do dentista caíram na boca do povo.\"",
+                    "Cavidade bucal (odontologia)",
+                    "Expressão de fofoca / notoriedade pública"
+                  ],
+                  [
+                    "Gabinete de Botânica",
+                    "\"O botânico tinha uma imensa folha corrida na polícia.\"",
+                    "Órgão vegetal",
+                    "Ficha criminal / certidão de antecedentes"
+                  ],
+                  [
+                    "Cia. de Dança",
+                    "\"A bailarina dançou no emprego.\"",
+                    "Arte cênica corporal",
+                    "Dar-se mal / perder o posto de trabalho"
+                  ],
+                  [
+                    "Culinária",
+                    "\"O livro de receitas não abria o apetite para sua leitura.\"",
+                    "Abrir as páginas do livro",
+                    "Despertar/estimular a fome"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Distinção crítica com Figuras de Linguagem (Personificação)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se uma frase institucional empregar termos sem multiplicidade de sentidos ativados, mesmo contendo figura de linguagem (como personificação/prosopopeia), ela está isenta de polissemia."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "(Banco) \"Nossa fé nunca nos abandona.\" $\\rightarrow$ O vocábulo fé atua unicamente como crença/confiança, personificada na ação de \"não abandonar\". Não há ativação de duplicidade semântica com a atividade bancária."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G04-008",
+                  "targetTitle": "Polissemia em Abstrato vs. Polissemia Ativada no Contexto Frasal",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-013",
+                  "targetTitle": "Questão 17: FGV / TRT 16ª Região / Técnico Judiciário",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-015",
+                  "targetTitle": "Questão 19: FGV / SEAD-AP / Professor de Educação Básica",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A12-G04-006",
+                  "targetTitle": "Confundir Personificação/Metáfora Simples com Polissemia",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -220,8 +915,68 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA polissemia manifesta-se também em classes gramaticais relacionais (conectores). As preposições são vocábulos altamente polissêmicos cujo valor semântico exato não é intrínseco, mas determinado pela interação sintático-semântica entre o termo regente e o termo regido.\nExplicação consolidada\nA preposição para expressa uma ampla gama de relações lógicas na língua portuguesa, com destaque para a cobrança da banca FGV:\nINVENTÁRIO DE VALORES SEMÂNTICOS DE \"PARA\" ┬ ┬ Relação Semântica Estrutura Lógica / Combinação Exemplo Canônico ┼ ┼ ┤ Destino / Direção para + substantivo de lugar \"Meu sonho é ir para a Europa\" Finalidade para + oração com verbo de ação \"Saiu para comprar roupas\" Proximidade Temporal estar para + verbo no infinitivo \"Estava para sair quando...\" (Iminência de ação) (prestes a acontecer no tempo) Capacidade / Lotação para + quantificador de suporte \"Ônibus para 50 passageiros\" Ponto de Vista / Opinião para + sujeito avaliador \"Para os pássaros, o canto...\" ┴ ┴ ┘\nRegra operacional de fixação\nPara determinar o valor de para, avalie rigorosamente o termo que vem após a preposição:\npara + lugar = Destino;\npara + verbo de objetivo = Finalidade;\nestar para + verbo = Proximidade temporal / Iminência;\npara + limite numérico = Capacidade/Lotação;\npara + ser senciente = Ponto de vista / Opinião.TIP-A12-G04-007\nExemplificado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A polissemia manifesta-se também em classes gramaticais relacionais (conectores). As preposições são vocábulos altamente polissêmicos cujo valor semântico exato não é intrínseco, mas determinado pela interação sintático-semântica entre o termo regente e o termo regido."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A preposição para expressa uma ampla gama de relações lógicas na língua portuguesa, com destaque para a cobrança da banca FGV:"
+            },
+            {
+              "type": "diagram",
+              "diagramType": "relationship",
+              "title": "Polissemia de Conectores: Valores Semânticos da Preposição \"Para\"",
+              "text": "INVENTÁRIO DE VALORES SEMÂNTICOS DE \"PARA\" ┌──────────────────────────┬─────────────────────────────────┬───────────────────────────────┐ │ Relação Semântica │ Estrutura Lógica / Combinação │ Exemplo Canônico │ ├──────────────────────────┼─────────────────────────────────┼───────────────────────────────┤ │ Destino / Direção │ para + substantivo de lugar │ \"Meu sonho é ir para a Europa\"│ │ Finalidade │ para + oração com verbo de ação │ \"Saiu para comprar roupas\" │ │ Proximidade Temporal │ estar para + verbo no infinitivo│ \"Estava para sair quando...\" │ │ (Iminência de ação) │ (prestes a acontecer no tempo) │ │ │ Capacidade / Lotação │ para + quantificador de suporte │ \"Ônibus para 50 passageiros\" │ │ Ponto de Vista / Opinião │ para + sujeito avaliador │ \"Para os pássaros, o canto...\"│ └──────────────────────────┴─────────────────────────────────┴───────────────────────────────┘"
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regra operacional de fixação"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para determinar o valor de para, avalie rigorosamente o termo que vem após a preposição:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "para + lugar = Destino;",
+                "para + verbo de objetivo = Finalidade;",
+                "estar para + verbo = Proximidade temporal / Iminência;",
+                "para + limite numérico = Capacidade/Lotação;",
+                "para + ser senciente = Ponto de vista / Opinião."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G04-005",
+                  "targetTitle": "Análise dos Valores Semânticos da Preposição \"Para\"",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-017",
+                  "targetTitle": "Questão 21: FGV / SEFAZ-MG / Auditor Fiscal da Receita Estadual",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -234,8 +989,54 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO desconhecimento da amplitude polissêmica dos vocábulos é uma das causas principais do preconceito linguístico e de correções indevidas no cotidiano, quando falantes julgam erroneamente como agramaticais ou impróprias acepções legítimas e históricas da língua.\nExplicação consolidada\nA professora Adriana Figueiredo exemplifica a questão social da polissemia por meio de dois casos reais:\nO caso de \"Arquivo Corrompido\": Falantes que zombam do uso do termo na informática por acreditarem que corrupção aplica-se exclusivamente à esfera da moralidade política. Desconhecem que o étimo latino (corrompere) significa fundamentalmente \"deteriorar, alterar a integridade, estragar\", aplicando-se com rigor técnico à corrupção de dados digitais.\nO caso de \"Enquadrar na Foto\": Falantes que criticam a expressão por associarem enquadrar exclusivamente à abordagem policial/punitiva (\"enquadrar o suspeito\"), ignorando a acepção técnica da fotografia e do cinema de ajustar os limites do enquadramento na lente.\nCompreender a polissemia desenvolve a flexibilidade interpretativa e desarma o policiamento linguístico ignorante.Exemplificado por: (CEBRASPE - MPC-SC)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O desconhecimento da amplitude polissêmica dos vocábulos é uma das causas principais do preconceito linguístico e de correções indevidas no cotidiano, quando falantes julgam erroneamente como agramaticais ou impróprias acepções legítimas e históricas da língua."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A professora Adriana Figueiredo exemplifica a questão social da polissemia por meio de dois casos reais:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O caso de \"Arquivo Corrompido\": Falantes que zombam do uso do termo na informática por acreditarem que corrupção aplica-se exclusivamente à esfera da moralidade política. Desconhecem que o étimo latino (corrompere) significa fundamentalmente \"deteriorar, alterar a integridade, estragar\", aplicando-se com rigor técnico à corrupção de dados digitais.",
+                "O caso de \"Enquadrar na Foto\": Falantes que criticam a expressão por associarem enquadrar exclusivamente à abordagem policial/punitiva (\"enquadrar o suspeito\"), ignorando a acepção técnica da fotografia e do cinema de ajustar os limites do enquadramento na lente."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Compreender a polissemia desenvolve a flexibilidade interpretativa e desarma o policiamento linguístico ignorante."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G04-001",
+                  "targetTitle": "Conceito Fundamental e Matriz Etimológica da Polissemia",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G04-019",
+                  "targetTitle": "Questão 23: CEBRASPE / MPC-SC / Analista de Contas Públicas",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -248,8 +1049,39 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAs bancas examinadoras de concursos públicos apresentam perfis metodológicos nitidamente diferenciados na abordagem da polissemia, variando entre a sofisticação estilística e o reconhecimento conceitual direto.\nMatriz comparativa de bancas examinadoras\nPERFIL DAS BANCAS EM POLISSEMIA ┬ ┬ Banca Examinadora Nível de Cobrança Predominante Estratégia de Resolução ┼ ┼ ┤ FGV Polissemia contextual ativada, Buscar a coexistência de dois trocadilhos, jogos de palavras e sentidos (duas setas); atentar repetições estilísticas. aos emissores entre parênteses. ┼ ┼ ┤ CEBRASPE (Cespe) Conceitual direto; itens de Verificar se o termo reúne mais Certo/Errado avaliando se a de um significado na língua; não palavra tem múltiplos sentidos. superestimar a complexidade. ┼ ┼ ┤ IBADE / CESGRANRIO Semântica aplicada a textos; Diante de disputa entre desempate conceitual entre Polissemia e Homonímia ampla, Polissemia e Homonímia. marcar sempre Polissemia. ┼ ┼ ┤ Inst. AOCP / Objetiva Classificação mnemônica das Usar as fórmulas das relações; relações lexicais e exceções por descartar homófonos heterógrafos homofonia heterográfica. (ex.: cesta vs. sexta). ┼ ┼ ┤ Instituto Consulplan Relação entre sentido próprio Reconhecer que a conotação é (denotativo) e figurado (conot.) uma extensão da polissemia. ┴ ┴ ┘"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "As bancas examinadoras de concursos públicos apresentam perfis metodológicos nitidamente diferenciados na abordagem da polissemia, variando entre a sofisticação estilística e o reconhecimento conceitual direto."
+            },
+            {
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Matriz comparativa de bancas examinadoras",
+              "text": "PERFIL DAS BANCAS EM POLISSEMIA ┌───────────────────────┬──────────────────────────────────┬─────────────────────────────────┐ │ Banca Examinadora │ Nível de Cobrança Predominante │ Estratégia de Resolução │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ FGV │ Polissemia contextual ativada, │ Buscar a coexistência de dois │ │ │ trocadilhos, jogos de palavras e │ sentidos (duas setas); atentar │ │ │ repetições estilísticas. │ aos emissores entre parênteses. │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ CEBRASPE (Cespe) │ Conceitual direto; itens de │ Verificar se o termo reúne mais │ │ │ Certo/Errado avaliando se a │ de um significado na língua; não│ │ │ palavra tem múltiplos sentidos. │ superestimar a complexidade. │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ IBADE / CESGRANRIO │ Semântica aplicada a textos; │ Diante de disputa entre │ │ │ desempate conceitual entre │ Polissemia e Homonímia ampla, │ │ │ Polissemia e Homonímia. │ marcar sempre Polissemia. │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ Inst. AOCP / Objetiva │ Classificação mnemônica das │ Usar as fórmulas das relações; │ │ │ relações lexicais e exceções por │ descartar homófonos heterógrafos│ │ │ homofonia heterográfica. │ (ex.: cesta vs. sexta). │ ├───────────────────────┼──────────────────────────────────┼─────────────────────────────────┤ │ Instituto Consulplan │ Relação entre sentido próprio │ Reconhecer que a conotação é │ │ │ (denotativo) e figurado (conot.) │ uma extensão da polissemia. │ └───────────────────────┴──────────────────────────────────┴─────────────────────────────────┘"
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G04-002",
+                  "targetTitle": "Critério de Desempate Técnico: \"Polissemia\" versus \"Homonímia\"",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G04-004",
+                  "targetTitle": "Técnica das \"Duas Setas\" para Identificar Jogos de Palavras na FGV",
+                  "targetUnitId": "IP-A12-G04",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -323,123 +1155,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A12-G04-003",
-              "table": {
-                "tableId": "TABLE-IP-A12-G04-003",
-                "caption": "Explicação consolidada",
-                "headers": [
-                  "Emissor Institucional",
-                  "Frase Publicitária / Slogan",
-                  "Sentido A (Área do Emissor)",
-                  "Sentido B (Sentido Geral/Metafórico)"
-                ],
-                "rows": [
-                  [
-                    "Jornal",
-                    "\"Notícia e cafezinho devem ser quentes.\"",
-                    "Recente, furo jornalístico de última hora",
-                    "Alta temperatura física"
-                  ],
-                  [
-                    "Restaurante",
-                    "\"Aqui levamos a massa em consideração.\"",
-                    "Prato culinário / massa alimentícia",
-                    "Coletividade, clientela, povo"
-                  ],
-                  [
-                    "Empresa de ônibus",
-                    "\"A vida é passageira.\"",
-                    "Cliente transportada no veículo",
-                    "Efêmera, transitória, breve"
-                  ],
-                  [
-                    "Delegacia",
-                    "\"Estamos presos ao dever.\"",
-                    "Encarcerados em cela (atividade policial)",
-                    "Comprometidos moralmente com a função"
-                  ],
-                  [
-                    "Consultório / Dentista",
-                    "\"Os delitos do dentista caíram na boca do povo.\"",
-                    "Cavidade bucal (odontologia)",
-                    "Expressão de fofoca / notoriedade pública"
-                  ],
-                  [
-                    "Gabinete de Botânica",
-                    "\"O botânico tinha uma imensa folha corrida na polícia.\"",
-                    "Órgão vegetal",
-                    "Ficha criminal / certidão de antecedentes"
-                  ],
-                  [
-                    "Cia. de Dança",
-                    "\"A bailarina dançou no emprego.\"",
-                    "Arte cênica corporal",
-                    "Dar-se mal / perder o posto de trabalho"
-                  ],
-                  [
-                    "Culinária",
-                    "\"O livro de receitas não abria o apetite para sua leitura.\"",
-                    "Abrir as páginas do livro",
-                    "Despertar/estimular a fome"
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA polissemia é a propriedade semântica pela qual um único vocábulo (uma mesma forma gráfica e uma mesma realização fonética), que compartilha uma matriz ou origem etimológica comum, reúne e expressa uma multiplicidade de significações ou acepções contextuais.\nExplicação consolidada\nEtimologicamente, o termo forma-se pelo elemento grego poli- (muitos, vários) e pelo radical -semia (significação, sentido). Diferentemente de palavras distintas que apenas se parecem na pronúncia ou na escrita, na polissemia tem-se rigorosamente uma única unidade lexical cujo espectro semântico expandiu-se historicamente por derivação de uso, necessidade comunicativa ou extensões analógicas/metafóricas.\nA identidade morfológica e fonológica permanece inalterada; o que se diversifica é o campo de referência ativado no discurso.\nCritérios de reconhecimento ou aplicação\nIdentidade formal total: A escrita e o som devem ser rigorosamente idênticos.\nOrigem etimológica comum: O vocábulo descende de uma mesma matriz lexical.\nPluralidade de acepções dicionarizadas: Sob o mesmo verbete de entrada lexical, encontram-se acepções distintas (acepção 1, acepção 2, acepção 3...).\nExemplos e contraexemplos\nExemplo (Planta):\nAcepção 1 (anatômica): \"Sentia dor na planta dos pés.\"\nAcepção 2 (botânica): \"A planta deve receber luz solar.\"\nExemplo (Dama):\nAcepção 1: Senhora distinta / mulher adulta.\nAcepção 2: Carta de baralho / peça de jogo de tabuleiro.\nContraexemplo (Conserto / Concerto): Não é polissemia, pois há formas gráficas distintas com origens latinas independentes (consertare vs. concertare).(Equivalência com Homonímia Perfeita)\nExpande-se em: (Dimensão Denotativa e Conotativa)\nExemplificado por: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nNo plano estrutural da morfologia e da fonética, todo caso de polissemia coincide com uma relação de homonímia perfeita, pois ambos os conceitos exigem simultaneamente igualdade gráfica plena (homografia) e igualdade sonora absoluta (homofonia), divergindo unicamente no conteúdo semântico.\nExplicação consolidada\nA professora formaliza a equação estrutural que rege o fenômeno:\n\\text{Forma (Grafia + Pronúncia)} = \\text{Igual}\n\\text{Significados} \\neq \\text{Diferentes}\nQuando duas ocorrências de uma palavra apresentam rigorosamente a mesma grafia e o mesmo som com significados divergentes, a tradição gramatical e as bancas examinadoras podem classificar o fenômeno como polissemia ou como homonímia perfeita. A distinção teórica estrita reside no fato de que a polissemia preserva uma matriz etimológica comum com sentidos interligados, enquanto a homonímia em sentido puramente etimológico trata de raízes históricas distintas que convergiram para a mesma forma exterior.\nCritérios de reconhecimento\n\\text{Grafia Igual} + \\text{Pronúncia Igual} + \\text{Sentidos Diferentes} \\Rightarrow \\text{Homonímia Perfeita / Polissemia}\nExemplos\nBanco (instituição financeira) vs. Banco (assento de madeira).\nCedo (1ª pessoa do singular do verbo ceder) vs. Cedo (advérbio temporal).Possui alerta de prova: e TIP-A12-G04-002"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA polissemia exige identidade formal bilateral (som E grafia). Não constituem polissemia os pares caracterizados por homofonia heterográfica (som igual, grafia diferente), homografia heterófona (grafia igual, pronúncia diferente) ou paronímia (formas parecidas).\nExplicação consolidada\nPara delimitar com precisão o conceito de polissemia, analisa-se o comportamento das relações semânticas concorrentes:\nRELAÇÕES FORMAIS VERSUS SIGNIFICADO ┬ ┬ Fenômeno Forma (Grafia / Som) Significado ┼ ┼ ┤ Polissemia / Hom. Perf. Grafia IGUAL + Som IGUAL Significado DIFERENTE Homófonos Heterógrafos Grafia DIFERENTE + Som = Significado DIFERENTE Homógrafos Heterófonos Grafia IGUAL + Som DIF. Significado DIFERENTE Paronímia Grafia/Som PARECIDOS Significado DIFERENTE Sinonímia Grafia/Som DIFERENTES Significado IGUAL Antonímia Grafia/Som DIFERENTES Significado CONTRÁRIO ┴ ┴ ┘\nHomófonos heterógrafos (Não são polissemia):\nConserto (reparo) vs. Concerto (apresentação musical).\nSela (arreio de cavalo) vs. Cela (cômodo/prisão).\nCesta (recipiente de palha) vs. Sexta (numeral/dia da semana).\nMotivo: Havendo variação ortográfica na letra inicial ou interna, rompe-se a unicidade da palavra.\nHomógrafos heterófonos (Não são polissemia):\nColher (verbo, com timbre vocálico fechado [/o/]) vs. Colher (substantivo/talher, com timbre aberto [/ɔ/]).\nMotivo: A alteração de timbre na vogal tônica desfaz a identidade fonética.\nParônimos (Não são polissemia):\nEmergir (vir à tona) vs. Imergir (mergulhar); Cumprimento (saudação/execução) vs. Comprimento (extensão).\nMotivo: São palavras distintas com leve semelhança gráfica e fonética.\nRelações\nContrasta com: , \nPossui alertas: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA ramificação dos sentidos de um vocábulo polissêmico pode ocorrer integralmente no domínio denotativo (múltiplas acepções literais dicionarizadas) ou resultar da transposição contínua do sentido denotativo primitivo para sentidos conotativos (usos figurados gerados por metáfora ou catacrese).\nExplicação consolidada\nA ampliação do léxico estrutura-se em duas vertentes:\nPolissemia puramente denotativa (literal): Todas as acepções pertencem ao registro referencial objetivo da língua, constando de modo autônomo no dicionário sem necessidade de decodificação poética ou figurada.\nLetra: Composição musical / Caligrafia / Caractere do alfabeto.\nVela: Cilindro de cera com pavio / Lona de propulsão náutica.\nBanco: Empresa de custódia financeira / Assento físico.\nHistória: Ciência dos fatos humanos (História) / Narração ou conto (história).\nPolissemia denotativa-conotativa (extensão metafórica): A palavra possui um significado literal de base e, por semelhança física, funcional ou comportamental, ganha extensões figuradas consolidadas no uso.\nBoca: Cavidade bucal orgânica (denotativo) $\\rightarrow$ Boca da garrafa / boca da caverna (conotativo/catacrese).\nPorco: Animal mamífero suíno (denotativo) $\\rightarrow$ Pessoa com hábitos anti-higiênicos ou comportamento reprovável (conotativo/metafórico).\nNó: Laço apertado em corda ou cadarço (denotativo) $\\rightarrow$ Nó na garganta como sensação de angústia ou choro contido (conotativo).\nCasa: Edificação/moradia (denotativo) $\\rightarrow$ Faixa de grandeza ou aproximação térmica \"na casa dos 48 °C\" (conotativo).\nToda transposição regular de um vocábulo do sentido real para o sentido figurado, mantendo a forma, constitui autêntica manifestação de polissemia.(CESGRANRIO), (Consulplan),"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA polissemia é um fato estritamente lexical (propriedade de uma palavra possuir múltiplos sentidos no dicionário), ao passo que a ambiguidade é um fenômeno sintático-discursivo (indeterminação ou duplo sentido gerado na frase quando o contexto não é capaz de definir qual acepção foi empregada).\nExplicação consolidada\nA professora sintetiza a relação por meio do mantra pedagógico: \"Nem toda polissemia gera ambiguidade\".\nPOLISSEMIA (LÉXICO) ┴ CONTEXTO DELIMITA O SENTIDO CONTEXTO NÃO DELIMITA (INSUFICIENTE) POLISSEMIA CLARA / AMBIGUIDADE VICIOSA RECURSO ESTILÍSTICO VÁLIDO OU DUPLO SENTIDO INDESEJADO (Sem dúvida interpretativa para o leitor) (Hesitação e prejuízo à clareza textual)\nPolissemia sem ambiguidade: Ocorre na esmagadora maioria dos enunciados cotidianos e cultos. As palavras vizinhas (cotexto) amarram perfeitamente o sentido pretendido. Exemplo: \"Sentia dor na planta dos pés\" — a presença de \"dos pés\" restringe o vocábulo à anatomia humana, eliminando qualquer leitura vegetal.\nPolissemia com ambiguidade: Ocorre quando o ambiente frasal é neutro, vago ou insuficiente, permitindo que duas ou mais acepções façam sentido simultâneo sem que se saiba a intenção do emissor. Exemplo: \"O banco está aqui ao lado\" — o receptor não sabe se o emissor refere-se à agência de crédito ou ao assento de praça.(Papel do Contexto)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO contexto linguístico imediato (cotexto) atua como filtro de desambiguação: a presença de elementos restritores específicos seleciona uma única acepção da palavra polissêmica e neutraliza as demais, tornando a oração isenta de duplicidade semântica.\nExplicação consolidada\nA neutralização semântica ocorre quando determinantes, adjetivos descritivos ou correlações lógicas bloqueiam as acepções alternativas do vocábulo:\nRestritores temporais correlatos: Na máxima \"Não deixe para amanhã o que pode fazer hoje\", o termo amanhã é potencialmente polissêmico (dia seguinte vs. futuro indeterminado). Contudo, a presença correlativa de hoje força a leitura restrita de amanhã como dia subsequente, neutralizando a polissemia contextual.\nRestritores adjetivais físicos: Na frase \"Champanhe: borbulhas espumantes, brancas como as pérolas de Cleópatra\", o substantivo pérola admite leituras conotativas (ideias brilhantes, frases célebres). A presença do adjetivo descritivo brancas restringe o termo unicamente à pedra física mineral, desativando qualquer apelo polissêmico.\nContexto institucional desambiguador: No slogan de banco \"Nossa fé nunca nos abandona\", a palavra fé é empregada unicamente como crença/confiança institucional. Não há ativação de outros sentidos potenciais (como fezinha de loteria ou fé pública jurídica), de modo que o contexto resolve plenamente a acepção.TIP-A12-G04-006\nExemplificado por: (FGV - IBGE), (FGV - TCE-TO)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA repetição de um mesmo significante no texto pode configurar vício redacional (revelador de pobreza vocabular) ou repetição estilística legítima (recurso intencional de expressividade baseado na exploração de sentidos polissêmicos distintos).\nExplicação consolidada\nRepetição Viciosa (inadequada): Ocorre quando o redator emprega o mesmo vocábulo repetidamente com o mesmo sentido semântico por carência de repertório coesivo (falta de pronominalização, sinonímia ou hiperonímia). É severamente penalizada em provas discursivas.\nExemplo: \"O presidente fez a reunião. A reunião durou duas horas e nessa reunião nada se decidiu.\"\nExemplo (maneira): \"Há três maneiras de fazer as coisas: a maneira errada, a maneira certa e uma maneira melhor.\" (Todas as ocorrências significam \"modo/forma\" $\\rightarrow$ mera repetição lexical sem polissemia).\nRepetição Estilística (adequada / jogo de palavras): Ocorre quando o autor repete deliberadamente a mesma forma gráfica e sonora em posições contíguas, porém ativando significados semânticos completamente distintos (polissemia), gerando expressividade poética, paralelismo ou trocadilho sem incorrer em ambiguidade viciosa.\nExemplo (Canto / Canto — FGV): \"O canto das cigarras era mais bem escutado no canto da sala.\" (1º canto = som/melodia de cantar; 2º canto = ângulo/vértice espacial).\nExemplo (Tempo / Tempo / Tempos — Instituto AOCP): \"Pelo jeito o tempo [clima] também precisa de um tempo [intervalo] para se ajustar nestes tempos [época histórica] desajustados.\"Exemplificado por: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nExiste uma diferença essencial entre uma palavra ser polissêmica em abstrato (no dicionário) e a polissemia estar efetivamente ativada/presente no contexto frasal (quando a estruturação da oração sustenta ou explora intencionalmente dois ou mais sentidos em coexistência).\nExplicação consolidada\nBancas sofisticadas (com destaque para a FGV) elaboram comandos como \"a polissemia está presente em todas as frases, EXCETO\" ou \"a frase cuja estruturação apela para a polissemia é\":\nNível do Vocábulo (Potencialidade Lexical): Praticamente todo substantivo ou verbo comum possui múltiplos verbetes dicionarizados (manga, fé, rádio, vela, proximidade). Isso é apenas a potencialidade do léxico.\nNível Frasal (Ativação Semântica): A polissemia só é considerada \"presente\" ou \"apelada\" na frase se o autor estruturou o período de modo que a duplicidade de acepções permaneça viva e operante (trocadilho, jogo estilístico, duplo sentido intencional). Se o contexto eliminou todas as acepções secundárias e fixou um único sentido, a frase está isenta de polissemia contextual.\nExemplos contrastivos\nPolissemia desativada na frase: \"Os políticos estão nervosos pela proximidade das eleições.\" (Proximidade pode indicar distância física ou tempo, mas na frase opera unicamente como tempo $\\rightarrow$ isenta de jogo polissêmico).\nPolissemia ativada na frase: \"O sábio lê livros, mas também a vida.\" (O verbo ler opera denotativamente com livros [decodificar grafemas] e conotativamente com a vida [interpretar/compreender a existência] $\\rightarrow$ apelo à polissemia).Exemplificado por: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA ambiguidade intencional (estilística ou publicitária) é o uso deliberado do duplo sentido polissêmico para gerar humor, persuasão ou trocadilhos refinados. Em enunciados publicitários ou institucionais, a palavra-chave conecta simultaneamente a atividade funcional do emissor e um sentido abstrato/cotidiano.\nExplicação consolidada\nAo analisar questões da FGV contendo o emissor indicado entre parênteses, aplica-se a correlação dos dois polos semânticos:\nDistinção crítica com Figuras de Linguagem (Personificação)\nSe uma frase institucional empregar termos sem multiplicidade de sentidos ativados, mesmo contendo figura de linguagem (como personificação/prosopopeia), ela está isenta de polissemia.\n(Banco) \"Nossa fé nunca nos abandona.\" $\\rightarrow$ O vocábulo fé atua unicamente como crença/confiança, personificada na ação de \"não abandonar\". Não há ativação de duplicidade semântica com a atividade bancária.Exemplificado por: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA polissemia manifesta-se também em classes gramaticais relacionais (conectores). As preposições são vocábulos altamente polissêmicos cujo valor semântico exato não é intrínseco, mas determinado pela interação sintático-semântica entre o termo regente e o termo regido.\nExplicação consolidada\nA preposição para expressa uma ampla gama de relações lógicas na língua portuguesa, com destaque para a cobrança da banca FGV:\nINVENTÁRIO DE VALORES SEMÂNTICOS DE \"PARA\" ┬ ┬ Relação Semântica Estrutura Lógica / Combinação Exemplo Canônico ┼ ┼ ┤ Destino / Direção para + substantivo de lugar \"Meu sonho é ir para a Europa\" Finalidade para + oração com verbo de ação \"Saiu para comprar roupas\" Proximidade Temporal estar para + verbo no infinitivo \"Estava para sair quando...\" (Iminência de ação) (prestes a acontecer no tempo) Capacidade / Lotação para + quantificador de suporte \"Ônibus para 50 passageiros\" Ponto de Vista / Opinião para + sujeito avaliador \"Para os pássaros, o canto...\" ┴ ┴ ┘\nRegra operacional de fixação\nPara determinar o valor de para, avalie rigorosamente o termo que vem após a preposição:\npara + lugar = Destino;\npara + verbo de objetivo = Finalidade;\nestar para + verbo = Proximidade temporal / Iminência;\npara + limite numérico = Capacidade/Lotação;\npara + ser senciente = Ponto de vista / Opinião.TIP-A12-G04-007\nExemplificado por:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO desconhecimento da amplitude polissêmica dos vocábulos é uma das causas principais do preconceito linguístico e de correções indevidas no cotidiano, quando falantes julgam erroneamente como agramaticais ou impróprias acepções legítimas e históricas da língua.\nExplicação consolidada\nA professora Adriana Figueiredo exemplifica a questão social da polissemia por meio de dois casos reais:\nO caso de \"Arquivo Corrompido\": Falantes que zombam do uso do termo na informática por acreditarem que corrupção aplica-se exclusivamente à esfera da moralidade política. Desconhecem que o étimo latino (corrompere) significa fundamentalmente \"deteriorar, alterar a integridade, estragar\", aplicando-se com rigor técnico à corrupção de dados digitais.\nO caso de \"Enquadrar na Foto\": Falantes que criticam a expressão por associarem enquadrar exclusivamente à abordagem policial/punitiva (\"enquadrar o suspeito\"), ignorando a acepção técnica da fotografia e do cinema de ajustar os limites do enquadramento na lente.\nCompreender a polissemia desenvolve a flexibilidade interpretativa e desarma o policiamento linguístico ignorante.Exemplificado por: (CEBRASPE - MPC-SC)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAs bancas examinadoras de concursos públicos apresentam perfis metodológicos nitidamente diferenciados na abordagem da polissemia, variando entre a sofisticação estilística e o reconhecimento conceitual direto.\nMatriz comparativa de bancas examinadoras\nPERFIL DAS BANCAS EM POLISSEMIA ┬ ┬ Banca Examinadora Nível de Cobrança Predominante Estratégia de Resolução ┼ ┼ ┤ FGV Polissemia contextual ativada, Buscar a coexistência de dois trocadilhos, jogos de palavras e sentidos (duas setas); atentar repetições estilísticas. aos emissores entre parênteses. ┼ ┼ ┤ CEBRASPE (Cespe) Conceitual direto; itens de Verificar se o termo reúne mais Certo/Errado avaliando se a de um significado na língua; não palavra tem múltiplos sentidos. superestimar a complexidade. ┼ ┼ ┤ IBADE / CESGRANRIO Semântica aplicada a textos; Diante de disputa entre desempate conceitual entre Polissemia e Homonímia ampla, Polissemia e Homonímia. marcar sempre Polissemia. ┼ ┼ ┤ Inst. AOCP / Objetiva Classificação mnemônica das Usar as fórmulas das relações; relações lexicais e exceções por descartar homófonos heterógrafos homofonia heterográfica. (ex.: cesta vs. sexta). ┼ ┼ ┤ Instituto Consulplan Relação entre sentido próprio Reconhecer que a conotação é (denotativo) e figurado (conot.) uma extensão da polissemia. ┴ ┴ ┘"
         }
       ]
     },
@@ -514,7 +1231,9 @@
               "PROC-A12-G04-001",
               "EXP-IP-A12-G04-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -583,7 +1302,9 @@
               "PROC-A12-G04-002",
               "EXP-IP-A12-G04-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -665,7 +1386,9 @@
               "PROC-A12-G04-003",
               "EXP-IP-A12-G04-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -721,7 +1444,9 @@
               "PROC-A12-G04-004",
               "EXP-IP-A12-G04-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -824,7 +1549,9 @@
               "PROC-A12-G04-005",
               "EXP-IP-A12-G04-PROC-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -938,7 +1665,9 @@
               "CONTRAST-IP-A12-G04-001",
               "EXP-IP-A12-G04-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -967,7 +1696,9 @@
           "contrastId": "CONTRAST-IP-A12-G04-002",
           "blocks": [
             {
-              "type": "paragraph",
+              "type": "diagram",
+              "diagramType": "flow",
+              "title": "Distinção entre níveis de polissemia",
               "text": "┌──────────────────────────────────────────────┬──────────────────────────────────────────────┐ │ POLISSEMIA EM ABSTRATO (DICIONÁRIO) │ POLISSEMIA ATIVADA NO CONTEXTO FRASAL │ ├──────────────────────────────────────────────┼──────────────────────────────────────────────┤ │ Propriedade potencial da palavra no léxico. │ Efeito discursivo construído na oração. │ │ O vocábulo possui múltiplas acepções. │ A frase sustenta dois sentidos ao mesmo tempo│ │ O contexto pode neutralizar a duplicidade. │ Ocorre em trocadilhos, slogans e metáforas. │ │ Ex.: \"Não deixe para amanhã o que pode fazer │ Ex.: \"Os espelhos fariam bem em refletir um │ │ hoje\" (contexto neutralizou a polissemia). │ pouco antes de mostrar imagens\" (ativada). │ └──────────────────────────────────────────────┴──────────────────────────────────────────────┘"
             }
           ],
@@ -978,7 +1709,9 @@
               "CONTRAST-IP-A12-G04-002",
               "EXP-IP-A12-G04-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1047,7 +1780,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-001",
               "EXP-IP-A12-G04-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1109,7 +1844,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-002",
               "EXP-IP-A12-G04-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1164,7 +1901,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-003",
               "EXP-IP-A12-G04-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1219,7 +1958,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-004",
               "EXP-IP-A12-G04-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1268,7 +2009,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-005",
               "EXP-IP-A12-G04-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1317,7 +2060,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-006",
               "EXP-IP-A12-G04-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1372,7 +2117,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-007",
               "EXP-IP-A12-G04-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1421,7 +2168,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-008",
               "EXP-IP-A12-G04-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1470,7 +2219,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-009",
               "EXP-IP-A12-G04-063"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1519,7 +2270,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-010",
               "EXP-IP-A12-G04-064"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1574,7 +2327,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-011",
               "EXP-IP-A12-G04-065"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1629,7 +2384,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-012",
               "EXP-IP-A12-G04-066"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1678,7 +2435,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-013",
               "EXP-IP-A12-G04-067"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1733,7 +2492,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-014",
               "EXP-IP-A12-G04-068"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1788,7 +2549,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-015",
               "EXP-IP-A12-G04-069"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1843,7 +2606,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-016",
               "EXP-IP-A12-G04-070"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1907,7 +2672,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-017",
               "EXP-IP-A12-G04-071"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1962,7 +2729,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-018",
               "EXP-IP-A12-G04-072"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2017,7 +2786,9 @@
               "WORKED_EXAMPLE-IP-A12-G04-019",
               "EXP-IP-A12-G04-073"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2067,7 +2838,9 @@
               "WARN-A12-G04-001",
               "EXP-IP-A12-G04-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2103,7 +2876,9 @@
               "WARN-A12-G04-002",
               "EXP-IP-A12-G04-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2139,7 +2914,9 @@
               "WARN-A12-G04-003",
               "EXP-IP-A12-G04-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2174,7 +2951,9 @@
               "WARN-A12-G04-004",
               "EXP-IP-A12-G04-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2209,7 +2988,9 @@
               "WARN-A12-G04-005",
               "EXP-IP-A12-G04-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2244,7 +3025,9 @@
               "WARN-A12-G04-006",
               "EXP-IP-A12-G04-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2279,7 +3062,9 @@
               "WARN-A12-G04-007",
               "EXP-IP-A12-G04-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2314,31 +3099,133 @@
               "WARN-A12-G04-008",
               "EXP-IP-A12-G04-TRAP-008"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Conceito Fundamental e Matriz Etimológica da Polissemia**: Definição ou ideia central\nA polissemia é a propriedade semântica pela qual um único vocábulo (uma mesma forma gráfica e uma mesma realização fonética), que compartilha uma matriz ou origem etimológica comum, reúne e expressa uma multiplicidade de significações ou acepções contextuais.\nExplicação consolidada\nEtimologicamente, o termo forma-se pelo elemento grego poli- (muitos, vários) e pelo radical -semia (significação, sentido). Diferentemente de palavras distintas que apenas se parecem na pronúncia ou na escrita, na polissemia tem-se rigorosamente uma única unidade lexical cujo espectro semântico expandiu-se historicamente por derivação de uso, necessidade comunicativa ou extensões analógicas/metafóricas.\nA identidade morfológica e fonológica permanece inalterada; o que se diversifica é o campo de referência ativado no discurso.\nCritérios de reconhecimento ou aplicação\nIdentidade formal total: A escrita e o som devem ser rigorosamente idênticos.\nOrigem etimológica comum: O vocábulo descende de uma mesma matriz lexical.\nPluralidade de acepções dicionarizadas: Sob o mesmo verbete de entrada lexical, encontram-se acepções distintas (acepção 1, acepção 2, acepção 3...).\nExemplos e contraexemplos\nExemplo (Planta):\nAcepção 1 (anatômica): \"Sentia dor na planta dos pés.\"\nAcepção 2 (botânica): \"A planta deve receber luz solar.\"\nExemplo (Dama):\nAcepção 1: Senhora distinta / mulher adulta.\nAcepção 2: Carta de baralho / peça de jogo de tabuleiro.\nContraexemplo (Conserto / Concerto): Não é polissemia, pois há formas gráficas distintas com origens latinas independentes (consertare vs. concertare).(Equivalência com Homonímia Perfeita)\nExpande-se em: (Dimensão Denotativa e Conotativa)\nExemplificado por: ,",
-            "**Relação de Equivalência Estrutural com a Homonímia Perfeita**: Definição ou ideia central\nNo plano estrutural da morfologia e da fonética, todo caso de polissemia coincide com uma relação de homonímia perfeita, pois ambos os conceitos exigem simultaneamente igualdade gráfica plena (homografia) e igualdade sonora absoluta (homofonia), divergindo unicamente no conteúdo semântico.\nExplicação consolidada\nA professora formaliza a equação estrutural que rege o fenômeno:\n\\text{Forma (Grafia + Pronúncia)} = \\text{Igual}\n\\text{Significados} \\neq \\text{Diferentes}\nQuando duas ocorrências de uma palavra apresentam rigorosamente a mesma grafia e o mesmo som com significados divergentes, a tradição gramatical e as bancas examinadoras podem classificar o fenômeno como polissemia ou como homonímia perfeita. A distinção teórica estrita reside no fato de que a polissemia preserva uma matriz etimológica comum com sentidos interligados, enquanto a homonímia em sentido puramente etimológico trata de raízes históricas distintas que convergiram para a mesma forma exterior.\nCritérios de reconhecimento\n\\text{Grafia Igual} + \\text{Pronúncia Igual} + \\text{Sentidos Diferentes} \\Rightarrow \\text{Homonímia Perfeita / Polissemia}\nExemplos\nBanco (instituição financeira) vs. Banco (assento de madeira).\nCedo (1ª pessoa do singular do verbo ceder) vs. Cedo (advérbio temporal).Possui alerta de prova: e TIP-A12-G04-002",
-            "**Fronteiras e Contrastes: Homófonos, Homógrafos e Parônimos**: Definição ou ideia central\nA polissemia exige identidade formal bilateral (som E grafia). Não constituem polissemia os pares caracterizados por homofonia heterográfica (som igual, grafia diferente), homografia heterófona (grafia igual, pronúncia diferente) ou paronímia (formas parecidas).\nExplicação consolidada\nPara delimitar com precisão o conceito de polissemia, analisa-se o comportamento das relações semânticas concorrentes:\nRELAÇÕES FORMAIS VERSUS SIGNIFICADO ┬ ┬ Fenômeno Forma (Grafia / Som) Significado ┼ ┼ ┤ Polissemia / Hom. Perf. Grafia IGUAL + Som IGUAL Significado DIFERENTE Homófonos Heterógrafos Grafia DIFERENTE + Som = Significado DIFERENTE Homógrafos Heterófonos Grafia IGUAL + Som DIF. Significado DIFERENTE Paronímia Grafia/Som PARECIDOS Significado DIFERENTE Sinonímia Grafia/Som DIFERENTES Significado IGUAL Antonímia Grafia/Som DIFERENTES Significado CONTRÁRIO ┴ ┴ ┘\nHomófonos heterógrafos (Não são polissemia):\nConserto (reparo) vs. Concerto (apresentação musical).\nSela (arreio de cavalo) vs. Cela (cômodo/prisão).\nCesta (recipiente de palha) vs. Sexta (numeral/dia da semana).\nMotivo: Havendo variação ortográfica na letra inicial ou interna, rompe-se a unicidade da palavra.\nHomógrafos heterófonos (Não são polissemia):\nColher (verbo, com timbre vocálico fechado [/o/]) vs. Colher (substantivo/talher, com timbre aberto [/ɔ/]).\nMotivo: A alteração de timbre na vogal tônica desfaz a identidade fonética.\nParônimos (Não são polissemia):\nEmergir (vir à tona) vs. Imergir (mergulhar); Cumprimento (saudação/execução) vs. Comprimento (extensão).\nMotivo: São palavras distintas com leve semelhança gráfica e fonética.\nRelações\nContrasta com: , \nPossui alertas: ,",
-            "**Dimensão Denotativa vs. Conotativa e Mecanismos Metafóricos**: Definição ou ideia central\nA ramificação dos sentidos de um vocábulo polissêmico pode ocorrer integralmente no domínio denotativo (múltiplas acepções literais dicionarizadas) ou resultar da transposição contínua do sentido denotativo primitivo para sentidos conotativos (usos figurados gerados por metáfora ou catacrese).\nExplicação consolidada\nA ampliação do léxico estrutura-se em duas vertentes:\nPolissemia puramente denotativa (literal): Todas as acepções pertencem ao registro referencial objetivo da língua, constando de modo autônomo no dicionário sem necessidade de decodificação poética ou figurada.\nLetra: Composição musical / Caligrafia / Caractere do alfabeto.\nVela: Cilindro de cera com pavio / Lona de propulsão náutica.\nBanco: Empresa de custódia financeira / Assento físico.\nHistória: Ciência dos fatos humanos (História) / Narração ou conto (história).\nPolissemia denotativa-conotativa (extensão metafórica): A palavra possui um significado literal de base e, por semelhança física, funcional ou comportamental, ganha extensões figuradas consolidadas no uso.\nBoca: Cavidade bucal orgânica (denotativo) $\\rightarrow$ Boca da garrafa / boca da caverna (conotativo/catacrese).\nPorco: Animal mamífero suíno (denotativo) $\\rightarrow$ Pessoa com hábitos anti-higiênicos ou comportamento reprovável (conotativo/metafórico).\nNó: Laço apertado em corda ou cadarço (denotativo) $\\rightarrow$ Nó na garganta como sensação de angústia ou choro contido (conotativo).\nCasa: Edificação/moradia (denotativo) $\\rightarrow$ Faixa de grandeza ou aproximação térmica \"na casa dos 48 °C\" (conotativo).\nToda transposição regular de um vocábulo do sentido real para o sentido figurado, mantendo a forma, constitui autêntica manifestação de polissemia.(CESGRANRIO), (Consulplan),",
-            "**Distinção Teórica e Discursiva entre Polissemia e Ambiguidade**: Definição ou ideia central\nA polissemia é um fato estritamente lexical (propriedade de uma palavra possuir múltiplos sentidos no dicionário), ao passo que a ambiguidade é um fenômeno sintático-discursivo (indeterminação ou duplo sentido gerado na frase quando o contexto não é capaz de definir qual acepção foi empregada).\nExplicação consolidada\nA professora sintetiza a relação por meio do mantra pedagógico: \"Nem toda polissemia gera ambiguidade\".\nPOLISSEMIA (LÉXICO) ┴ CONTEXTO DELIMITA O SENTIDO CONTEXTO NÃO DELIMITA (INSUFICIENTE) POLISSEMIA CLARA / AMBIGUIDADE VICIOSA RECURSO ESTILÍSTICO VÁLIDO OU DUPLO SENTIDO INDESEJADO (Sem dúvida interpretativa para o leitor) (Hesitação e prejuízo à clareza textual)\nPolissemia sem ambiguidade: Ocorre na esmagadora maioria dos enunciados cotidianos e cultos. As palavras vizinhas (cotexto) amarram perfeitamente o sentido pretendido. Exemplo: \"Sentia dor na planta dos pés\" — a presença de \"dos pés\" restringe o vocábulo à anatomia humana, eliminando qualquer leitura vegetal.\nPolissemia com ambiguidade: Ocorre quando o ambiente frasal é neutro, vago ou insuficiente, permitindo que duas ou mais acepções façam sentido simultâneo sem que se saiba a intenção do emissor. Exemplo: \"O banco está aqui ao lado\" — o receptor não sabe se o emissor refere-se à agência de crédito ou ao assento de praça.(Papel do Contexto)",
-            "**O Papel Delimitador do Contexto e a Neutralização Semântica**: Definição ou ideia central\nO contexto linguístico imediato (cotexto) atua como filtro de desambiguação: a presença de elementos restritores específicos seleciona uma única acepção da palavra polissêmica e neutraliza as demais, tornando a oração isenta de duplicidade semântica.\nExplicação consolidada\nA neutralização semântica ocorre quando determinantes, adjetivos descritivos ou correlações lógicas bloqueiam as acepções alternativas do vocábulo:\nRestritores temporais correlatos: Na máxima \"Não deixe para amanhã o que pode fazer hoje\", o termo amanhã é potencialmente polissêmico (dia seguinte vs. futuro indeterminado). Contudo, a presença correlativa de hoje força a leitura restrita de amanhã como dia subsequente, neutralizando a polissemia contextual.\nRestritores adjetivais físicos: Na frase \"Champanhe: borbulhas espumantes, brancas como as pérolas de Cleópatra\", o substantivo pérola admite leituras conotativas (ideias brilhantes, frases célebres). A presença do adjetivo descritivo brancas restringe o termo unicamente à pedra física mineral, desativando qualquer apelo polissêmico.\nContexto institucional desambiguador: No slogan de banco \"Nossa fé nunca nos abandona\", a palavra fé é empregada unicamente como crença/confiança institucional. Não há ativação de outros sentidos potenciais (como fezinha de loteria ou fé pública jurídica), de modo que o contexto resolve plenamente a acepção.TIP-A12-G04-006\nExemplificado por: (FGV - IBGE), (FGV - TCE-TO)",
-            "**Repetição Viciosa versus Repetição Estilística e Jogos de Palavras**: Definição ou ideia central\nA repetição de um mesmo significante no texto pode configurar vício redacional (revelador de pobreza vocabular) ou repetição estilística legítima (recurso intencional de expressividade baseado na exploração de sentidos polissêmicos distintos).\nExplicação consolidada\nRepetição Viciosa (inadequada): Ocorre quando o redator emprega o mesmo vocábulo repetidamente com o mesmo sentido semântico por carência de repertório coesivo (falta de pronominalização, sinonímia ou hiperonímia). É severamente penalizada em provas discursivas.\nExemplo: \"O presidente fez a reunião. A reunião durou duas horas e nessa reunião nada se decidiu.\"\nExemplo (maneira): \"Há três maneiras de fazer as coisas: a maneira errada, a maneira certa e uma maneira melhor.\" (Todas as ocorrências significam \"modo/forma\" $\\rightarrow$ mera repetição lexical sem polissemia).\nRepetição Estilística (adequada / jogo de palavras): Ocorre quando o autor repete deliberadamente a mesma forma gráfica e sonora em posições contíguas, porém ativando significados semânticos completamente distintos (polissemia), gerando expressividade poética, paralelismo ou trocadilho sem incorrer em ambiguidade viciosa.\nExemplo (Canto / Canto — FGV): \"O canto das cigarras era mais bem escutado no canto da sala.\" (1º canto = som/melodia de cantar; 2º canto = ângulo/vértice espacial).\nExemplo (Tempo / Tempo / Tempos — Instituto AOCP): \"Pelo jeito o tempo [clima] também precisa de um tempo [intervalo] para se ajustar nestes tempos [época histórica] desajustados.\"Exemplificado por: , ,",
-            "**Polissemia em Abstrato vs. Polissemia Ativada no Contexto Frasal**: Definição ou ideia central\nExiste uma diferença essencial entre uma palavra ser polissêmica em abstrato (no dicionário) e a polissemia estar efetivamente ativada/presente no contexto frasal (quando a estruturação da oração sustenta ou explora intencionalmente dois ou mais sentidos em coexistência).\nExplicação consolidada\nBancas sofisticadas (com destaque para a FGV) elaboram comandos como \"a polissemia está presente em todas as frases, EXCETO\" ou \"a frase cuja estruturação apela para a polissemia é\":\nNível do Vocábulo (Potencialidade Lexical): Praticamente todo substantivo ou verbo comum possui múltiplos verbetes dicionarizados (manga, fé, rádio, vela, proximidade). Isso é apenas a potencialidade do léxico.\nNível Frasal (Ativação Semântica): A polissemia só é considerada \"presente\" ou \"apelada\" na frase se o autor estruturou o período de modo que a duplicidade de acepções permaneça viva e operante (trocadilho, jogo estilístico, duplo sentido intencional). Se o contexto eliminou todas as acepções secundárias e fixou um único sentido, a frase está isenta de polissemia contextual.\nExemplos contrastivos\nPolissemia desativada na frase: \"Os políticos estão nervosos pela proximidade das eleições.\" (Proximidade pode indicar distância física ou tempo, mas na frase opera unicamente como tempo $\\rightarrow$ isenta de jogo polissêmico).\nPolissemia ativada na frase: \"O sábio lê livros, mas também a vida.\" (O verbo ler opera denotativamente com livros [decodificar grafemas] e conotativamente com a vida [interpretar/compreender a existência] $\\rightarrow$ apelo à polissemia).Exemplificado por: , ,",
-            "**Ambiguidade Estilística, Publicitária e Frases Institucionais**: Definição ou ideia central\nA ambiguidade intencional (estilística ou publicitária) é o uso deliberado do duplo sentido polissêmico para gerar humor, persuasão ou trocadilhos refinados. Em enunciados publicitários ou institucionais, a palavra-chave conecta simultaneamente a atividade funcional do emissor e um sentido abstrato/cotidiano.\nExplicação consolidada\nAo analisar questões da FGV contendo o emissor indicado entre parênteses, aplica-se a correlação dos dois polos semânticos:\nDistinção crítica com Figuras de Linguagem (Personificação)\nSe uma frase institucional empregar termos sem multiplicidade de sentidos ativados, mesmo contendo figura de linguagem (como personificação/prosopopeia), ela está isenta de polissemia.\n(Banco) \"Nossa fé nunca nos abandona.\" $\\rightarrow$ O vocábulo fé atua unicamente como crença/confiança, personificada na ação de \"não abandonar\". Não há ativação de duplicidade semântica com a atividade bancária.Exemplificado por: ,",
-            "**Polissemia de Conectores: Valores Semânticos da Preposição \"Para\"**: Definição ou ideia central\nA polissemia manifesta-se também em classes gramaticais relacionais (conectores). As preposições são vocábulos altamente polissêmicos cujo valor semântico exato não é intrínseco, mas determinado pela interação sintático-semântica entre o termo regente e o termo regido.\nExplicação consolidada\nA preposição para expressa uma ampla gama de relações lógicas na língua portuguesa, com destaque para a cobrança da banca FGV:\nINVENTÁRIO DE VALORES SEMÂNTICOS DE \"PARA\" ┬ ┬ Relação Semântica Estrutura Lógica / Combinação Exemplo Canônico ┼ ┼ ┤ Destino / Direção para + substantivo de lugar \"Meu sonho é ir para a Europa\" Finalidade para + oração com verbo de ação \"Saiu para comprar roupas\" Proximidade Temporal estar para + verbo no infinitivo \"Estava para sair quando...\" (Iminência de ação) (prestes a acontecer no tempo) Capacidade / Lotação para + quantificador de suporte \"Ônibus para 50 passageiros\" Ponto de Vista / Opinião para + sujeito avaliador \"Para os pássaros, o canto...\" ┴ ┴ ┘\nRegra operacional de fixação\nPara determinar o valor de para, avalie rigorosamente o termo que vem após a preposição:\npara + lugar = Destino;\npara + verbo de objetivo = Finalidade;\nestar para + verbo = Proximidade temporal / Iminência;\npara + limite numérico = Capacidade/Lotação;\npara + ser senciente = Ponto de vista / Opinião.TIP-A12-G04-007\nExemplificado por:",
-            "**Polissemia e Combate ao Preconceito Linguístico**: Definição ou ideia central\nO desconhecimento da amplitude polissêmica dos vocábulos é uma das causas principais do preconceito linguístico e de correções indevidas no cotidiano, quando falantes julgam erroneamente como agramaticais ou impróprias acepções legítimas e históricas da língua.\nExplicação consolidada\nA professora Adriana Figueiredo exemplifica a questão social da polissemia por meio de dois casos reais:\nO caso de \"Arquivo Corrompido\": Falantes que zombam do uso do termo na informática por acreditarem que corrupção aplica-se exclusivamente à esfera da moralidade política. Desconhecem que o étimo latino (corrompere) significa fundamentalmente \"deteriorar, alterar a integridade, estragar\", aplicando-se com rigor técnico à corrupção de dados digitais.\nO caso de \"Enquadrar na Foto\": Falantes que criticam a expressão por associarem enquadrar exclusivamente à abordagem policial/punitiva (\"enquadrar o suspeito\"), ignorando a acepção técnica da fotografia e do cinema de ajustar os limites do enquadramento na lente.\nCompreender a polissemia desenvolve a flexibilidade interpretativa e desarma o policiamento linguístico ignorante.Exemplificado por: (CEBRASPE - MPC-SC)",
-            "**Padrões Comparados de Bancas Examinadoras**: Definição ou ideia central\nAs bancas examinadoras de concursos públicos apresentam perfis metodológicos nitidamente diferenciados na abordagem da polissemia, variando entre a sofisticação estilística e o reconhecimento conceitual direto.\nMatriz comparativa de bancas examinadoras\nPERFIL DAS BANCAS EM POLISSEMIA ┬ ┬ Banca Examinadora Nível de Cobrança Predominante Estratégia de Resolução ┼ ┼ ┤ FGV Polissemia contextual ativada, Buscar a coexistência de dois trocadilhos, jogos de palavras e sentidos (duas setas); atentar repetições estilísticas. aos emissores entre parênteses. ┼ ┼ ┤ CEBRASPE (Cespe) Conceitual direto; itens de Verificar se o termo reúne mais Certo/Errado avaliando se a de um significado na língua; não palavra tem múltiplos sentidos. superestimar a complexidade. ┼ ┼ ┤ IBADE / CESGRANRIO Semântica aplicada a textos; Diante de disputa entre desempate conceitual entre Polissemia e Homonímia ampla, Polissemia e Homonímia. marcar sempre Polissemia. ┼ ┼ ┤ Inst. AOCP / Objetiva Classificação mnemônica das Usar as fórmulas das relações; relações lexicais e exceções por descartar homófonos heterógrafos homofonia heterográfica. (ex.: cesta vs. sexta). ┼ ┼ ┤ Instituto Consulplan Relação entre sentido próprio Reconhecer que a conotação é (denotativo) e figurado (conot.) uma extensão da polissemia. ┴ ┴ ┘"
-          ]
+          "term": "Conceito Fundamental e Matriz Etimológica da Polissemia",
+          "shortDefinition": "A polissemia é a propriedade semântica pela qual um único vocábulo (uma mesma forma gráfica e uma mesma realização fonética), que compartilha uma matriz ou origem etimológica comum, reúne e expressa uma multiplicidade de significações ou acepções contextuais.",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-01"
+          },
+          "operationalUse": "Etimologicamente, o termo forma-se pelo elemento grego poli- (muitos, vários) e pelo radical -semia (significação, sentido)."
+        },
+        {
+          "term": "Relação de Equivalência Estrutural com a Homonímia Perfeita",
+          "shortDefinition": "No plano estrutural da morfologia e da fonética, todo caso de polissemia coincide com uma relação de homonímia perfeita, pois ambos os conceitos exigem simultaneamente igualdade gráfica plena (homografia) e igualdade sonora absoluta (homofonia), divergindo unicamente no conteúdo semântico.",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-02"
+          },
+          "operationalUse": "A professora formaliza a equação estrutural que rege o fenômeno:"
+        },
+        {
+          "term": "Fronteiras e Contrastes: Homófonos, Homógrafos e Parônimos",
+          "shortDefinition": "A polissemia exige identidade formal bilateral (som E grafia). Não constituem polissemia os pares caracterizados por homofonia heterográfica (som igual, grafia diferente), homografia heterófona (grafia igual, pronúncia diferente) ou paronímia (formas parecidas).",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-03"
+          },
+          "operationalUse": "Para delimitar com precisão o conceito de polissemia, analisa-se o comportamento das relações semânticas concorrentes:"
+        },
+        {
+          "term": "Dimensão Denotativa vs. Conotativa e Mecanismos Metafóricos",
+          "shortDefinition": "A ramificação dos sentidos de um vocábulo polissêmico pode ocorrer integralmente no domínio denotativo (múltiplas acepções literais dicionarizadas) ou resultar da transposição contínua do sentido denotativo primitivo para sentidos conotativos (usos figurados gerados por metáfora ou catacrese).",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-04"
+          },
+          "operationalUse": "A ampliação do léxico estrutura-se em duas vertentes:"
+        },
+        {
+          "term": "Distinção Teórica e Discursiva entre Polissemia e Ambiguidade",
+          "shortDefinition": "A polissemia é um fato estritamente lexical (propriedade de uma palavra possuir múltiplos sentidos no dicionário), ao passo que a ambiguidade é um fenômeno sintático-discursivo (indeterminação ou duplo sentido gerado na frase quando o contexto não é capaz de definir qual acepção foi empregada).",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-05"
+          },
+          "operationalUse": "A professora sintetiza a relação por meio do mantra pedagógico: \"Nem toda polissemia gera ambiguidade\"."
+        },
+        {
+          "term": "O Papel Delimitador do Contexto e a Neutralização Semântica",
+          "shortDefinition": "O contexto linguístico imediato (cotexto) atua como filtro de desambiguação: a presença de elementos restritores específicos seleciona uma única acepção da palavra polissêmica e neutraliza as demais, tornando a oração isenta de duplicidade semântica.",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-06"
+          },
+          "operationalUse": "A neutralização semântica ocorre quando determinantes, adjetivos descritivos ou correlações lógicas bloqueiam as acepções alternativas do vocábulo:"
+        },
+        {
+          "term": "Repetição Viciosa versus Repetição Estilística e Jogos de Palavras",
+          "shortDefinition": "A repetição de um mesmo significante no texto pode configurar vício redacional (revelador de pobreza vocabular) ou repetição estilística legítima (recurso intencional de expressividade baseado na exploração de sentidos polissêmicos distintos).",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-07"
+          }
+        },
+        {
+          "term": "Polissemia em Abstrato vs. Polissemia Ativada no Contexto Frasal",
+          "shortDefinition": "Existe uma diferença essencial entre uma palavra ser polissêmica em abstrato (no dicionário) e a polissemia estar efetivamente ativada/presente no contexto frasal (quando a estruturação da oração sustenta ou explora intencionalmente dois ou mais sentidos em coexistência).",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-08"
+          },
+          "operationalUse": "Bancas sofisticadas (com destaque para a FGV) elaboram comandos como \"a polissemia está presente em todas as frases, EXCETO\" ou \"a frase cuja estruturação apela para a polissemia é\":"
+        },
+        {
+          "term": "Ambiguidade Estilística, Publicitária e Frases Institucionais",
+          "shortDefinition": "A ambiguidade intencional (estilística ou publicitária) é o uso deliberado do duplo sentido polissêmico para gerar humor, persuasão ou trocadilhos refinados. Em enunciados publicitários ou institucionais, a palavra-chave conecta simultaneamente a atividade funcional do emissor e um sentido abstrato/cotidiano.",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-09"
+          },
+          "operationalUse": "Ao analisar questões da FGV contendo o emissor indicado entre parênteses, aplica-se a correlação dos dois polos semânticos:"
+        },
+        {
+          "term": "Polissemia de Conectores: Valores Semânticos da Preposição \"Para\"",
+          "shortDefinition": "A polissemia manifesta-se também em classes gramaticais relacionais (conectores). As preposições são vocábulos altamente polissêmicos cujo valor semântico exato não é intrínseco, mas determinado pela interação sintático-semântica entre o termo regente e o termo regido.",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-10"
+          },
+          "operationalUse": "A preposição para expressa uma ampla gama de relações lógicas na língua portuguesa, com destaque para a cobrança da banca FGV:"
+        },
+        {
+          "term": "Polissemia e Combate ao Preconceito Linguístico",
+          "shortDefinition": "O desconhecimento da amplitude polissêmica dos vocábulos é uma das causas principais do preconceito linguístico e de correções indevidas no cotidiano, quando falantes julgam erroneamente como agramaticais ou impróprias acepções legítimas e históricas da língua.",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-11"
+          },
+          "operationalUse": "A professora Adriana Figueiredo exemplifica a questão social da polissemia por meio de dois casos reais:"
+        },
+        {
+          "term": "Padrões Comparados de Bancas Examinadoras",
+          "shortDefinition": "As bancas examinadoras de concursos públicos apresentam perfis metodológicos nitidamente diferenciados na abordagem da polissemia, variando entre a sofisticação estilística e o reconhecimento conceitual direto.",
+          "detailTarget": {
+            "unitId": "IP-A12-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G04-12"
+          }
         }
       ]
     },
@@ -2404,7 +3291,10 @@
         "confidence": 0.98
       },
       "answerSha256": "b6257a090fdc873cb3f76930f71842c04ffce7f4f2d0146c2431a97490417639",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A12-aula12.q0153"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2457,7 +3347,10 @@
         "confidence": 0.98
       },
       "answerSha256": "751bd01be0678a1aaee4622fd6ef37eacf1650f6756785b0b771f1591b6fa741",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A12-aula12.q0154"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2512,167 +3405,10 @@
         "confidence": 0.98
       },
       "answerSha256": "4f2ada68119a99e340d2a6a82d3db0a2ee23b4cdb5eef4be732474f35f04188f",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A12-aula12.q0153",
-      "lessonId": "A12",
-      "sourceQuestionId": "aula12.q0153",
-      "questionPayload": {
-        "question_id": "aula12.q0153",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "INSS",
-        "position": null,
-        "year": 2016,
-        "source_label": "(CEBRASPE / INSS / 2016)",
-        "support_text": "Consta-nos que o autor, solicitado por seus numerosos amigos, leu há dias a comédia em\ncasa do Sr. Dr. Estêvão Soares, diante de um luzido auditório, que aplaudiu muito e profetizou no\nSr. Oliveira um futuro Shakespeare.\n Estamos ansiosos por ler a peça do Sr. Oliveira, e ficamos certos de que ela fará a fortuna de\nqualquer teatro.",
-        "prompt": "No texto, a palavra “fortuna” pode ser interpretada tanto como sucesso quanto como riqueza.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.semantics.polissemia"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0096"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.96,
-        "occurrence_type": "question_list",
-        "section_id": "aula12.sec19",
-        "number_in_section": 2,
-        "duplicate_of": "aula12.q0083",
-        "question_family_id": "aula12.qfam0083"
-      },
-      "questionSha256": "bd354ecfd959f67b353c01f2bd6276e51c095ecedf24b8a655c94415e2ad7e4c",
-      "answerPayload": {
-        "answer_id": "aula12.q0153.answer",
-        "question_id": "aula12.q0153",
-        "answer": "correct",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0097"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "e945b3493d6143528cf0ea9ab29b065180c79677ee330b8b716ebfee27b8d6bb",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A12-aula12.q0154",
-      "lessonId": "A12",
-      "sourceQuestionId": "aula12.q0154",
-      "questionPayload": {
-        "question_id": "aula12.q0154",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "INSTITUTO RIO BRANCO",
-        "position": null,
-        "year": 2014,
-        "source_label": "(CEBRASPE / INSTITUTO RIO BRANCO / 2014)",
-        "support_text": null,
-        "prompt": "No verso “As mulheres fumam feito chaminés sozinhas”, a aposição do adjetivo resulta em\nambiguidade estrutural.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.semantics.polissemia",
-          "pt.semantics.ambiguidade"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0096"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.96,
-        "occurrence_type": "question_list",
-        "section_id": "aula12.sec19",
-        "number_in_section": 3,
-        "duplicate_of": "aula12.q0084",
-        "question_family_id": "aula12.qfam0084"
-      },
-      "questionSha256": "b1d9d681b71469b8492cc71d8e28f57a860268c59bc70b8c8d39692e11bb7895",
-      "answerPayload": {
-        "answer_id": "aula12.q0154.answer",
-        "question_id": "aula12.q0154",
-        "answer": "correct",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0097"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "3b9a4101bdcd537a859322f3bb6cb2c22245c370e62b83dc9dc5c44ac4ee5ca4",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A12-aula12.q0158",
-      "lessonId": "A12",
-      "sourceQuestionId": "aula12.q0158",
-      "questionPayload": {
-        "question_id": "aula12.q0158",
-        "question_type": "true_false",
-        "exam_board": "CEBRASPE",
-        "organization": "MPU",
-        "position": "ANALISTA",
-        "year": null,
-        "source_label": "(CEBRASPE / MPU / ANALISTA)",
-        "support_text": "Inovador é o indivíduo que procura propostas originais e pertinentes em situações com as quais\nele se defronta.",
-        "prompt": "Na linha 1, o segmento \"as quais\" remete a \"situações\" e, por isso, admite a substituição pelo\npronome que; no entanto, nesse contexto, tal substituição provocaria ambiguidade.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.semantics.ambiguidade",
-          "pt.semantics.ambiguidade_estrutural",
-          "pt.semantics.ambiguidade_polissêmica",
-          "pt.semantics.polissemia"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0098"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.96,
-        "occurrence_type": "question_list",
-        "section_id": "aula12.sec20",
-        "number_in_section": 4,
-        "duplicate_of": "aula12.q0088",
-        "question_family_id": "aula12.qfam0088"
-      },
-      "questionSha256": "62f0c724ed7f441deadf12bcb06ab22191c1ee50986ba4317c191b31350ed8a4",
-      "answerPayload": {
-        "answer_id": "aula12.q0158.answer",
-        "question_id": "aula12.q0158",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0098"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "f49a1683420b8e4f540ee89e8e5a2420e23dc612efff846d5477b0948a083256",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A12-aula12.q0158"
+      ]
     },
     {
       "schemaVersion": "1.0.0",

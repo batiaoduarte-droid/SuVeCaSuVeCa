@@ -1,12 +1,13 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A10-G01",
     "lessonId": "A10",
     "title": "Regência Verbal - Conceitos Gerais e Verbos de Dupla Regência",
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A10-G01",
@@ -469,7 +470,6 @@
         {
           "term": "Regência Verbal",
           "shortDefinition": "Relação sintático-semântica de dependência entre o verbo e seus complementos.",
-          "fullDefinition": "Domínio da sintaxe que estabelece a necessidade, a presença e a escolha da preposição adequada para articular o verbo ao seu termo regido, determinando os valores nocionais do predicador no enunciado.",
           "domain": "Sintaxe de Regência",
           "commonMisconception": "Pensar que todo verbo tem apenas uma regência imutável no dicionário."
         }
@@ -1054,7 +1054,42 @@
         "confidence": 0.97
       },
       "answerSha256": "4e51b999e4feb0e5dc3d47483e11f3bcf4c97d9a202a9931fe6e77e8cabc77d9",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A10-aula10.q0144"
+      ],
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "agravamento da obesidade.”, no final do penúltimo parágrafo do texto 2A1-I, assinale a opção\ncorreta.",
+        "options": [
+          {
+            "label": "A",
+            "text": "O termo “Disso” retoma “a magreza”, presente no período imediatamente anterior."
+          },
+          {
+            "label": "B",
+            "text": "O termo “Disso” funciona como sujeito da oração que forma o período em questão."
+          },
+          {
+            "label": "C",
+            "text": "O sujeito da oração que forma o período em questão classifica-se como simples."
+          },
+          {
+            "label": "D",
+            "text": "O verbo decorrer exige complemento introduzido por preposição."
+          },
+          {
+            "label": "E",
+            "text": "A substituição do termo “Disso” por Nisso seria gramaticalmente correta."
+          }
+        ],
+        "answer": "D",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -1116,87 +1151,6 @@
         "confidence": 0.97
       },
       "answerSha256": "2f427d58e4ebb6732d82457d07502906a56630122d54dafa1936ebce0c78a244",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A10-aula10.q0144",
-      "lessonId": "A10",
-      "sourceQuestionId": "aula10.q0144",
-      "questionPayload": {
-        "question_id": "aula10.q0144",
-        "occurrence_section": "list_regencia_verbal",
-        "section_question_number": 11,
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "PC-PE",
-        "position": null,
-        "year": 2024,
-        "support_text": "Os fiscais do corpo alheio que se convencem de que estão apenas incentivando as\npessoas a emagrecerem podem não estar ajudando em nada. O estigma social em torno do\ncorpo gordo leva as pessoas a buscar medidas extremas, não para alcançar a saúde, mas a\nmagreza. Disso decorrem diversos transtornos alimentares e até o próprio agravamento da\nobesidade.\nEm relação ao período “Disso decorrem diversos transtornos alimentares e até o próprio",
-        "prompt": "agravamento da obesidade.”, no final do penúltimo parágrafo do texto 2A1-I, assinale a opção\ncorreta.\nA) O termo “Disso” retoma “a magreza”, presente no período imediatamente anterior.\nB) O termo “Disso” funciona como sujeito da oração que forma o período em questão.\nC) O sujeito da oração que forma o período em questão classifica-se como simples.\nD) O verbo decorrer exige complemento introduzido por preposição.\nE) A substituição do termo “Disso” por Nisso seria gramaticalmente correta.",
-        "options": [
-          {
-            "label": "A",
-            "text": "O termo “Disso” retoma “a magreza”, presente no período imediatamente anterior."
-          },
-          {
-            "label": "B",
-            "text": "O termo “Disso” funciona como sujeito da oração que forma o período em questão."
-          },
-          {
-            "label": "C",
-            "text": "O sujeito da oração que forma o período em questão classifica-se como simples."
-          },
-          {
-            "label": "D",
-            "text": "O verbo decorrer exige complemento introduzido por preposição."
-          },
-          {
-            "label": "E",
-            "text": "A substituição do termo “Disso” por Nisso seria gramaticalmente correta."
-          }
-        ],
-        "tests_concept_ids": [
-          "pt.grammar.regencia_verbal"
-        ],
-        "tests_rule_ids": [
-          "rule.aula10.0001",
-          "rule.aula10.0002",
-          "rule.aula10.0003",
-          "rule.aula10.0005",
-          "rule.aula10.0010",
-          "rule.aula10.0012",
-          "rule.aula10.0013",
-          "rule.aula10.0014"
-        ],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0083"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "attribution_raw": "CEBRASPE / PC-PE / 2024",
-        "duplicate_of": "aula10.q0051",
-        "conceptual_question_id": "aula10.q0051"
-      },
-      "questionSha256": "afc9abe5aab0fd952261b13a7f2a01cb3e02809d0577253d7a6a54fc17837879",
-      "answerPayload": {
-        "answer_id": "aula10.q0144.answer",
-        "question_id": "aula10.q0144",
-        "answer": "option_D",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula10_complete",
-          "page_ids": [
-            "aula10_complete.p0091"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "81af4f0da12aec069e68c235a8e7e0dc3fcf4a500700b6c8dff77487984c9b89",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

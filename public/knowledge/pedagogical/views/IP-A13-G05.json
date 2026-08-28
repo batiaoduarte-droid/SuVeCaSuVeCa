@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A13-G05",
     "lessonId": "A13",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A13-G05",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A13-G05-001"
+          }
         }
       ]
     },
@@ -94,8 +99,61 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA organização textual em língua portuguesa estrutura-se fundamentalmente em três macro-tipologias discursivas: narração, descrição e dissertação.\nExplicação Consolidada\nNarração: Modalidade caracterizada por relatar acontecimentos encadeados em uma linha temporal, envolvendo personagens, tempo, espaço e narrador.\nDescrição: Modalidade voltada a caracterizar, qualificar e retratar seres, objetos, cenários ou estados de coisas em um determinado instante (corte temporal sincrônico).\nDissertação: Modalidade que se ocupa do exame, discussão, desenvolvimento, interpretação ou análise crítica de um assunto, tema, conceito ou problema.\nCritérios de Reconhecimento\nPresença de progressão cronológica e ações de personagens -> Narração.\nPredomínio de adjetivos, qualificadores e ausência de progressão temporal -> Descrição.\nExposição de conceitos abstratos, relações de causa/efeito ou defesa de teses sobre um tema -> Dissertação.\nRelações\nOrigina: , \nEvidenciado visualmente por: VIS-A13-G05-001"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A organização textual em língua portuguesa estrutura-se fundamentalmente em três macro-tipologias discursivas: narração, descrição e dissertação."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Narração: Modalidade caracterizada por relatar acontecimentos encadeados em uma linha temporal, envolvendo personagens, tempo, espaço e narrador.",
+                "Descrição: Modalidade voltada a caracterizar, qualificar e retratar seres, objetos, cenários ou estados de coisas em um determinado instante (corte temporal sincrônico).",
+                "Dissertação: Modalidade que se ocupa do exame, discussão, desenvolvimento, interpretação ou análise crítica de um assunto, tema, conceito ou problema."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de Reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Presença de progressão cronológica e ações de personagens -> Narração.",
+                "Predomínio de adjetivos, qualificadores e ausência de progressão temporal -> Descrição.",
+                "Exposição de conceitos abstratos, relações de causa/efeito ou defesa de teses sobre um tema -> Dissertação."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G05-002",
+                  "targetTitle": "Dissertação Expositiva e Informativa: Conceituação e Função",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G05-003",
+                  "targetTitle": "Dissertação Argumentativa, Tese e Mecanismos de Persuasão",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +166,67 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA dissertação expositiva (ou informativa) é a modalidade discursiva em que o autor discute um determinado assunto com o objetivo primordial de expor, explicar e transmitir conhecimentos, conceitos, teorias ou fatos objetivos, sem a intenção de convencer o leitor ou defender uma tomada de posição controversa.\nExplicação Consolidada\nExpositiva: Concentra-se em expor saberes consolidados que o autor domina sobre o tema.\nInformativa: Vertente da exposição na qual o conteúdo é estruturado primordialmente como novidade factual ou explicativa para o público-alvo.\nPostura Enunciativa: O autor atua como mediador de conhecimento (professor, cientista, doutrinador ou relator). O texto busca clareza, neutralidade explicativa e instrução do interlocutor.\nCritérios de Reconhecimento\nFoco em definições conceituais, encadeamento explicativo de fenômenos e partilha de saberes.\nAusência de juízos de valor determinantes que busquem direcionar uma tomada de decisão ou adesão ideológica do leitor.\nConclusão que sintetiza as informações sem convocar o leitor para uma ação ou aceitação de ponto de vista opinativo.\nExemplos e Contraexemplos\nExemplo: Texto histórico que explica a interiorização da capital em Brasília em comparação com cidades fundadas em rotas comerciais ().\nExemplo: Texto acadêmico de Linguística explicando a dimensão argumentativa e o dialogismo da linguagem ().\nRelações\nContrasta com: \nExemplificado por: , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A dissertação expositiva (ou informativa) é a modalidade discursiva em que o autor discute um determinado assunto com o objetivo primordial de expor, explicar e transmitir conhecimentos, conceitos, teorias ou fatos objetivos, sem a intenção de convencer o leitor ou defender uma tomada de posição controversa."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Expositiva: Concentra-se em expor saberes consolidados que o autor domina sobre o tema.",
+                "Informativa: Vertente da exposição na qual o conteúdo é estruturado primordialmente como novidade factual ou explicativa para o público-alvo.",
+                "Postura Enunciativa: O autor atua como mediador de conhecimento (professor, cientista, doutrinador ou relator). O texto busca clareza, neutralidade explicativa e instrução do interlocutor."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de Reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Foco em definições conceituais, encadeamento explicativo de fenômenos e partilha de saberes.",
+                "Ausência de juízos de valor determinantes que busquem direcionar uma tomada de decisão ou adesão ideológica do leitor.",
+                "Conclusão que sintetiza as informações sem convocar o leitor para uma ação ou aceitação de ponto de vista opinativo."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e Contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: Texto histórico que explica a interiorização da capital em Brasília em comparação com cidades fundadas em rotas comerciais (EX-A13-G05-001).",
+                "Exemplo: Texto acadêmico de Linguística explicando a dimensão argumentativa e o dialogismo da linguagem (EX-A13-G05-003)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G05-003",
+                  "targetTitle": "Dissertação Argumentativa, Tese e Mecanismos de Persuasão",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +239,81 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA dissertação argumentativa é a modalidade discursiva na qual o autor desenvolve um tema assumindo um posicionamento explícito — formulando uma tese — e estruturando uma cadeia de justificativas, dados e razões lógicas com o objetivo expresso de persuadir e convencer o leitor.\nExplicação Consolidada\nTese: Proposição central, opinião ou julgamento crítico assumido pelo enunciador diante de um problema ou debate.\nCorpo Argumentativo: Conjunto de estratégias retóricas, refutações de contra-argumentos, relações de causa/efeito e evidências empíricas mobilizadas para respaldar a tese.\nFinalidade Persuasiva: O texto é estruturado para conduzir o leitor a concordar com o posicionamento do autor. Essa postura é frequentemente sinalizada por modalizadores deônticos (expressões de dever/necessidade como \"devem tomar\", \"é imperativo\") e por refutações do senso comum.\nCritérios de Reconhecimento\nExistência de tomada de posição clara e defensável (favorável ou contrária) sobre tema polêmico.\nPresença de argumentos subordinados diretamente à validação da tese.\nParágrafo de fecho estruturado para arrematar o raciocínio e selar a persuasão do leitor.\nExemplos e Contraexemplos\nExemplo: Texto que prescreve a necessidade categórica de a população tomar a terceira dose da vacina contra a Covid-19 ().\nExemplo: Artigo opinativo de jornal que combate a proposta de extinção do foro privilegiado no Brasil ().\nRelações\nContrasta com: \nExemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A dissertação argumentativa é a modalidade discursiva na qual o autor desenvolve um tema assumindo um posicionamento explícito — formulando uma tese — e estruturando uma cadeia de justificativas, dados e razões lógicas com o objetivo expresso de persuadir e convencer o leitor."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Tese: Proposição central, opinião ou julgamento crítico assumido pelo enunciador diante de um problema ou debate.",
+                "Corpo Argumentativo: Conjunto de estratégias retóricas, refutações de contra-argumentos, relações de causa/efeito e evidências empíricas mobilizadas para respaldar a tese.",
+                "Finalidade Persuasiva: O texto é estruturado para conduzir o leitor a concordar com o posicionamento do autor. Essa postura é frequentemente sinalizada por modalizadores deônticos (expressões de dever/necessidade como \"devem tomar\", \"é imperativo\") e por refutações do senso comum."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de Reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Existência de tomada de posição clara e defensável (favorável ou contrária) sobre tema polêmico.",
+                "Presença de argumentos subordinados diretamente à validação da tese.",
+                "Parágrafo de fecho estruturado para arrematar o raciocínio e selar a persuasão do leitor."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e Contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo: Texto que prescreve a necessidade categórica de a população tomar a terceira dose da vacina contra a Covid-19 (EX-A13-G05-002).",
+                "Exemplo: Artigo opinativo de jornal que combate a proposta de extinção do foro privilegiado no Brasil (EX-A13-G05-004)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A13-G05-002",
+                  "targetTitle": "Dissertação Expositiva e Informativa: Conceituação e Função",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G05-001",
+                  "targetTitle": "Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G05-002",
+                  "targetTitle": "Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +326,44 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nO vetor determinante e absoluto para a classificação de um texto dissertativo em concursos públicos é a intenção comunicativa do autor (o seu projeto discursivo de dizer), e jamais a opinião pessoal, crença ou concordância do leitor/candidato.\nExplicação Consolidada\nPara classificar o texto com rigor, o estudante deve aplicar o princípio da alteridade e formular a pergunta-guia:\n\"O que o autor veio fazer neste texto? Qual é o objetivo primordial dele: expor o que sabe sobre determinado assunto ou convencer-me da sua própria opinião?\"\nA análise deve identificar se os recursos linguísticos (exemplos, dados, citações, explicações) estão estruturados como fim informativo em si mesmos ou como meio probatório a serviço de uma tese.\nRelações\nAplica-se em: \nReforçado por: TIP-A13-G05-001, QUOTE-A13-G05-001, QUOTE-A13-G05-002"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O vetor determinante e absoluto para a classificação de um texto dissertativo em concursos públicos é a intenção comunicativa do autor (o seu projeto discursivo de dizer), e jamais a opinião pessoal, crença ou concordância do leitor/candidato."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para classificar o texto com rigor, o estudante deve aplicar o princípio da alteridade e formular a pergunta-guia:"
+            },
+            {
+              "type": "callout",
+              "kind": "note",
+              "text": "\"O que o autor veio fazer neste texto? Qual é o objetivo primordial dele: expor o que sabe sobre determinado assunto ou convencer-me da sua própria opinião?\""
+            },
+            {
+              "type": "paragraph",
+              "text": "A análise deve identificar se os recursos linguísticos (exemplos, dados, citações, explicações) estão estruturados como fim informativo em si mesmos ou como meio probatório a serviço de uma tese."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A13-G05-001",
+                  "targetTitle": "Procedimento Integrado de Diagnóstico Tipológico Cebraspe (\"O Final Matador\")",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +376,47 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA presença de dados estatísticos, porcentagens, relatórios empíricos ou menções a pesquisas científicas não categoriza automaticamente um texto como expositivo. O papel dos dados depende integralmente da função que desempenham na macroestrutura discursiva.\nExplicação Consolidada\nDados na Dissertação Expositiva: Constituem o próprio conteúdo informativo e conceitual veiculado para instruir o leitor sobre a realidade de um tema.\nDados na Dissertação Argumentativa: Atuam como argumento de autoridade / comprovação factual, funcionando como instrumento de sustentação para validar uma tese opinativa e persuadir o leitor.\nDesconstrução de Pegadinhas: Bancas exploram a memorização mecânica de candidatos desatentos. Na redação discursiva e nos textos de concurso, citar dados é técnica fundamental de fundamentação argumentativa.\nRelações\nExpande: 003Evidenciado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença de dados estatísticos, porcentagens, relatórios empíricos ou menções a pesquisas científicas não categoriza automaticamente um texto como expositivo. O papel dos dados depende integralmente da função que desempenham na macroestrutura discursiva."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Dados na Dissertação Expositiva: Constituem o próprio conteúdo informativo e conceitual veiculado para instruir o leitor sobre a realidade de um tema.",
+                "Dados na Dissertação Argumentativa: Atuam como argumento de autoridade / comprovação factual, funcionando como instrumento de sustentação para validar uma tese opinativa e persuadir o leitor.",
+                "Desconstrução de Pegadinhas: Bancas exploram a memorização mecânica de candidatos desatentos. Na redação discursiva e nos textos de concurso, citar dados é técnica fundamental de fundamentação argumentativa."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A13-G05-003",
+                  "targetTitle": "Dissertação Argumentativa, Tese e Mecanismos de Persuasão",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G05-001",
+                  "targetTitle": "Pegadinha da Associação Mecânica entre Dados Estatísticos e Exposição",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +429,54 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA presença de modalizadores discursivos (adjetivos avaliativos, advérbios ou expressões que assinalam a avaliação do enunciador sobre o que diz) em um texto não é condição suficiente para classificá-lo como dissertativo-argumentativo.\nExplicação Consolidada\nModalizador: Elemento linguístico que expressa a atitude ou avaliação do falante em relação ao conteúdo veiculado (ex.: \"aprendizado extremamente importante\").\nA Pegadinha das Bancas (Cebraspe): A banca apresenta um texto acadêmico/teórico contendo uma adjetivação valorativa pontual. O candidato aplica a dedução mecânica incorreta: \"tem adjetivo/modalizador -> tem opinião -> logo é texto argumentativo\".\nCritério Decisório: Deve-se avaliar a predominância da função comunicativa. Um professor ou cientista pode avaliar determinado fenômeno histórico como \"importante\", \"complexo\" ou \"relevante\" dentro de uma dissertação estritamente expositiva, sem que isso configure a defesa de uma tese polêmica pessoal.Evidenciado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A presença de modalizadores discursivos (adjetivos avaliativos, advérbios ou expressões que assinalam a avaliação do enunciador sobre o que diz) em um texto não é condição suficiente para classificá-lo como dissertativo-argumentativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Modalizador: Elemento linguístico que expressa a atitude ou avaliação do falante em relação ao conteúdo veiculado (ex.: \"aprendizado extremamente importante\").",
+                "A Pegadinha das Bancas (Cebraspe): A banca apresenta um texto acadêmico/teórico contendo uma adjetivação valorativa pontual. O candidato aplica a dedução mecânica incorreta: \"tem adjetivo/modalizador -> tem opinião -> logo é texto argumentativo\".",
+                "Critério Decisório: Deve-se avaliar a predominância da função comunicativa. Um professor ou cientista pode avaliar determinado fenômeno histórico como \"importante\", \"complexo\" ou \"relevante\" dentro de uma dissertação estritamente expositiva, sem que isso configure a defesa de uma tese polêmica pessoal."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G05-002",
+                  "targetTitle": "Dissertação Expositiva e Informativa: Conceituação e Função",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A13-G05-004",
+                  "targetTitle": "O Princípio Soberano da Intencionalidade Autoral",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G05-002",
+                  "targetTitle": "Pegadinha da Associação entre Modalizador Isolado e Texto Argumentativo",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -178,40 +489,56 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou Ideia Central\nA menção a princípios jurídicos, ideais humanistas e preceitos constitucionais (como \"sociedade justa, livre e fraterna\", \"transformação social\" e \"missão dos operadores do direito\") constitui exposição de conceitos doutrinários e fatos da ordem jurídica, e não argumentação subjetiva do autor.\nExplicação Consolidada\nEm textos de manuais de Direito, pareceres e obras acadêmicas, termos de forte apelo valorativo expressam o conteúdo formal das leis e da teoria jurídica.\nAo discorrer sobre os fins da justiça ou a missão do magistrado, o autor atua como teórico que expõe o conhecimento do Direito posto. Ele não está formulando uma tese particular para disputar convicções políticas contra um adversário.\nClassifica-se, portanto, como texto dissertativo-expositivo.Evidenciado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou Ideia Central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A menção a princípios jurídicos, ideais humanistas e preceitos constitucionais (como \"sociedade justa, livre e fraterna\", \"transformação social\" e \"missão dos operadores do direito\") constitui exposição de conceitos doutrinários e fatos da ordem jurídica, e não argumentação subjetiva do autor."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação Consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Em textos de manuais de Direito, pareceres e obras acadêmicas, termos de forte apelo valorativo expressam o conteúdo formal das leis e da teoria jurídica.",
+                "Ao discorrer sobre os fins da justiça ou a missão do magistrado, o autor atua como teórico que expõe o conhecimento do Direito posto. Ele não está formulando uma tese particular para disputar convicções políticas contra um adversário.",
+                "Classifica-se, portanto, como texto dissertativo-expositivo."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G05-002",
+                  "targetTitle": "Dissertação Expositiva e Informativa: Conceituação e Função",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A13-G05-006",
+                  "targetTitle": "Modalizadores Discursivos e a Falácia da Opinião Isolada",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A13-G05-003",
+                  "targetTitle": "Confundir Ideário Constitucional e Doutrina com Argumentação Subjetiva",
+                  "targetUnitId": "IP-A13-G05",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA organização textual em língua portuguesa estrutura-se fundamentalmente em três macro-tipologias discursivas: narração, descrição e dissertação.\nExplicação Consolidada\nNarração: Modalidade caracterizada por relatar acontecimentos encadeados em uma linha temporal, envolvendo personagens, tempo, espaço e narrador.\nDescrição: Modalidade voltada a caracterizar, qualificar e retratar seres, objetos, cenários ou estados de coisas em um determinado instante (corte temporal sincrônico).\nDissertação: Modalidade que se ocupa do exame, discussão, desenvolvimento, interpretação ou análise crítica de um assunto, tema, conceito ou problema.\nCritérios de Reconhecimento\nPresença de progressão cronológica e ações de personagens -> Narração.\nPredomínio de adjetivos, qualificadores e ausência de progressão temporal -> Descrição.\nExposição de conceitos abstratos, relações de causa/efeito ou defesa de teses sobre um tema -> Dissertação.\nRelações\nOrigina: , \nEvidenciado visualmente por: VIS-A13-G05-001"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA dissertação expositiva (ou informativa) é a modalidade discursiva em que o autor discute um determinado assunto com o objetivo primordial de expor, explicar e transmitir conhecimentos, conceitos, teorias ou fatos objetivos, sem a intenção de convencer o leitor ou defender uma tomada de posição controversa.\nExplicação Consolidada\nExpositiva: Concentra-se em expor saberes consolidados que o autor domina sobre o tema.\nInformativa: Vertente da exposição na qual o conteúdo é estruturado primordialmente como novidade factual ou explicativa para o público-alvo.\nPostura Enunciativa: O autor atua como mediador de conhecimento (professor, cientista, doutrinador ou relator). O texto busca clareza, neutralidade explicativa e instrução do interlocutor.\nCritérios de Reconhecimento\nFoco em definições conceituais, encadeamento explicativo de fenômenos e partilha de saberes.\nAusência de juízos de valor determinantes que busquem direcionar uma tomada de decisão ou adesão ideológica do leitor.\nConclusão que sintetiza as informações sem convocar o leitor para uma ação ou aceitação de ponto de vista opinativo.\nExemplos e Contraexemplos\nExemplo: Texto histórico que explica a interiorização da capital em Brasília em comparação com cidades fundadas em rotas comerciais ().\nExemplo: Texto acadêmico de Linguística explicando a dimensão argumentativa e o dialogismo da linguagem ().\nRelações\nContrasta com: \nExemplificado por: , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA dissertação argumentativa é a modalidade discursiva na qual o autor desenvolve um tema assumindo um posicionamento explícito — formulando uma tese — e estruturando uma cadeia de justificativas, dados e razões lógicas com o objetivo expresso de persuadir e convencer o leitor.\nExplicação Consolidada\nTese: Proposição central, opinião ou julgamento crítico assumido pelo enunciador diante de um problema ou debate.\nCorpo Argumentativo: Conjunto de estratégias retóricas, refutações de contra-argumentos, relações de causa/efeito e evidências empíricas mobilizadas para respaldar a tese.\nFinalidade Persuasiva: O texto é estruturado para conduzir o leitor a concordar com o posicionamento do autor. Essa postura é frequentemente sinalizada por modalizadores deônticos (expressões de dever/necessidade como \"devem tomar\", \"é imperativo\") e por refutações do senso comum.\nCritérios de Reconhecimento\nExistência de tomada de posição clara e defensável (favorável ou contrária) sobre tema polêmico.\nPresença de argumentos subordinados diretamente à validação da tese.\nParágrafo de fecho estruturado para arrematar o raciocínio e selar a persuasão do leitor.\nExemplos e Contraexemplos\nExemplo: Texto que prescreve a necessidade categórica de a população tomar a terceira dose da vacina contra a Covid-19 ().\nExemplo: Artigo opinativo de jornal que combate a proposta de extinção do foro privilegiado no Brasil ().\nRelações\nContrasta com: \nExemplificado por: ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nO vetor determinante e absoluto para a classificação de um texto dissertativo em concursos públicos é a intenção comunicativa do autor (o seu projeto discursivo de dizer), e jamais a opinião pessoal, crença ou concordância do leitor/candidato.\nExplicação Consolidada\nPara classificar o texto com rigor, o estudante deve aplicar o princípio da alteridade e formular a pergunta-guia:\n\"O que o autor veio fazer neste texto? Qual é o objetivo primordial dele: expor o que sabe sobre determinado assunto ou convencer-me da sua própria opinião?\"\nA análise deve identificar se os recursos linguísticos (exemplos, dados, citações, explicações) estão estruturados como fim informativo em si mesmos ou como meio probatório a serviço de uma tese.\nRelações\nAplica-se em: \nReforçado por: TIP-A13-G05-001, QUOTE-A13-G05-001, QUOTE-A13-G05-002"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA presença de dados estatísticos, porcentagens, relatórios empíricos ou menções a pesquisas científicas não categoriza automaticamente um texto como expositivo. O papel dos dados depende integralmente da função que desempenham na macroestrutura discursiva.\nExplicação Consolidada\nDados na Dissertação Expositiva: Constituem o próprio conteúdo informativo e conceitual veiculado para instruir o leitor sobre a realidade de um tema.\nDados na Dissertação Argumentativa: Atuam como argumento de autoridade / comprovação factual, funcionando como instrumento de sustentação para validar uma tese opinativa e persuadir o leitor.\nDesconstrução de Pegadinhas: Bancas exploram a memorização mecânica de candidatos desatentos. Na redação discursiva e nos textos de concurso, citar dados é técnica fundamental de fundamentação argumentativa.\nRelações\nExpande: 003Evidenciado por:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA presença de modalizadores discursivos (adjetivos avaliativos, advérbios ou expressões que assinalam a avaliação do enunciador sobre o que diz) em um texto não é condição suficiente para classificá-lo como dissertativo-argumentativo.\nExplicação Consolidada\nModalizador: Elemento linguístico que expressa a atitude ou avaliação do falante em relação ao conteúdo veiculado (ex.: \"aprendizado extremamente importante\").\nA Pegadinha das Bancas (Cebraspe): A banca apresenta um texto acadêmico/teórico contendo uma adjetivação valorativa pontual. O candidato aplica a dedução mecânica incorreta: \"tem adjetivo/modalizador -> tem opinião -> logo é texto argumentativo\".\nCritério Decisório: Deve-se avaliar a predominância da função comunicativa. Um professor ou cientista pode avaliar determinado fenômeno histórico como \"importante\", \"complexo\" ou \"relevante\" dentro de uma dissertação estritamente expositiva, sem que isso configure a defesa de uma tese polêmica pessoal.Evidenciado por:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou Ideia Central\nA menção a princípios jurídicos, ideais humanistas e preceitos constitucionais (como \"sociedade justa, livre e fraterna\", \"transformação social\" e \"missão dos operadores do direito\") constitui exposição de conceitos doutrinários e fatos da ordem jurídica, e não argumentação subjetiva do autor.\nExplicação Consolidada\nEm textos de manuais de Direito, pareceres e obras acadêmicas, termos de forte apelo valorativo expressam o conteúdo formal das leis e da teoria jurídica.\nAo discorrer sobre os fins da justiça ou a missão do magistrado, o autor atua como teórico que expõe o conhecimento do Direito posto. Ele não está formulando uma tese particular para disputar convicções políticas contra um adversário.\nClassifica-se, portanto, como texto dissertativo-expositivo.Evidenciado por:"
         }
       ]
     },
@@ -299,7 +626,9 @@
               "RULE-IP-A13-G05-001",
               "EXP-IP-A13-G05-030"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -397,7 +726,9 @@
               "PROC-A13-G05-001",
               "EXP-IP-A13-G05-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -487,7 +818,9 @@
               "CONTRAST-IP-A13-G05-001",
               "EXP-IP-A13-G05-035"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -536,7 +869,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-001",
               "EXP-IP-A13-G05-036"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -591,7 +926,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-002",
               "EXP-IP-A13-G05-037"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -636,7 +973,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-003",
               "EXP-IP-A13-G05-038"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -691,7 +1030,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-004",
               "EXP-IP-A13-G05-039"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -730,7 +1071,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-005",
               "EXP-IP-A13-G05-040"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -775,7 +1118,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-006",
               "EXP-IP-A13-G05-041"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -836,7 +1181,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-007",
               "EXP-IP-A13-G05-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -885,7 +1232,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-008",
               "EXP-IP-A13-G05-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -930,7 +1279,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-009",
               "EXP-IP-A13-G05-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -991,7 +1342,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-010",
               "EXP-IP-A13-G05-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1035,7 +1388,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-011",
               "EXP-IP-A13-G05-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1080,7 +1435,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-012",
               "EXP-IP-A13-G05-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1141,7 +1498,9 @@
               "WORKED_EXAMPLE-IP-A13-G05-013",
               "EXP-IP-A13-G05-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1192,7 +1551,9 @@
               "WARN-A13-G05-001",
               "EXP-IP-A13-G05-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1229,7 +1590,9 @@
               "WARN-A13-G05-002",
               "EXP-IP-A13-G05-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1266,7 +1629,9 @@
               "WARN-A13-G05-003",
               "EXP-IP-A13-G05-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1302,26 +1667,79 @@
               "WARN-A13-G05-004",
               "EXP-IP-A13-G05-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Macro-Tipologias Textuais Canônicas (Narração, Descrição e Dissertação)**: Definição ou Ideia Central\nA organização textual em língua portuguesa estrutura-se fundamentalmente em três macro-tipologias discursivas: narração, descrição e dissertação.\nExplicação Consolidada\nNarração: Modalidade caracterizada por relatar acontecimentos encadeados em uma linha temporal, envolvendo personagens, tempo, espaço e narrador.\nDescrição: Modalidade voltada a caracterizar, qualificar e retratar seres, objetos, cenários ou estados de coisas em um determinado instante (corte temporal sincrônico).\nDissertação: Modalidade que se ocupa do exame, discussão, desenvolvimento, interpretação ou análise crítica de um assunto, tema, conceito ou problema.\nCritérios de Reconhecimento\nPresença de progressão cronológica e ações de personagens -> Narração.\nPredomínio de adjetivos, qualificadores e ausência de progressão temporal -> Descrição.\nExposição de conceitos abstratos, relações de causa/efeito ou defesa de teses sobre um tema -> Dissertação.\nRelações\nOrigina: , \nEvidenciado visualmente por: VIS-A13-G05-001",
-            "**Dissertação Expositiva e Informativa: Conceituação e Função**: Definição ou Ideia Central\nA dissertação expositiva (ou informativa) é a modalidade discursiva em que o autor discute um determinado assunto com o objetivo primordial de expor, explicar e transmitir conhecimentos, conceitos, teorias ou fatos objetivos, sem a intenção de convencer o leitor ou defender uma tomada de posição controversa.\nExplicação Consolidada\nExpositiva: Concentra-se em expor saberes consolidados que o autor domina sobre o tema.\nInformativa: Vertente da exposição na qual o conteúdo é estruturado primordialmente como novidade factual ou explicativa para o público-alvo.\nPostura Enunciativa: O autor atua como mediador de conhecimento (professor, cientista, doutrinador ou relator). O texto busca clareza, neutralidade explicativa e instrução do interlocutor.\nCritérios de Reconhecimento\nFoco em definições conceituais, encadeamento explicativo de fenômenos e partilha de saberes.\nAusência de juízos de valor determinantes que busquem direcionar uma tomada de decisão ou adesão ideológica do leitor.\nConclusão que sintetiza as informações sem convocar o leitor para uma ação ou aceitação de ponto de vista opinativo.\nExemplos e Contraexemplos\nExemplo: Texto histórico que explica a interiorização da capital em Brasília em comparação com cidades fundadas em rotas comerciais ().\nExemplo: Texto acadêmico de Linguística explicando a dimensão argumentativa e o dialogismo da linguagem ().\nRelações\nContrasta com: \nExemplificado por: , ,",
-            "**Dissertação Argumentativa, Tese e Mecanismos de Persuasão**: Definição ou Ideia Central\nA dissertação argumentativa é a modalidade discursiva na qual o autor desenvolve um tema assumindo um posicionamento explícito — formulando uma tese — e estruturando uma cadeia de justificativas, dados e razões lógicas com o objetivo expresso de persuadir e convencer o leitor.\nExplicação Consolidada\nTese: Proposição central, opinião ou julgamento crítico assumido pelo enunciador diante de um problema ou debate.\nCorpo Argumentativo: Conjunto de estratégias retóricas, refutações de contra-argumentos, relações de causa/efeito e evidências empíricas mobilizadas para respaldar a tese.\nFinalidade Persuasiva: O texto é estruturado para conduzir o leitor a concordar com o posicionamento do autor. Essa postura é frequentemente sinalizada por modalizadores deônticos (expressões de dever/necessidade como \"devem tomar\", \"é imperativo\") e por refutações do senso comum.\nCritérios de Reconhecimento\nExistência de tomada de posição clara e defensável (favorável ou contrária) sobre tema polêmico.\nPresença de argumentos subordinados diretamente à validação da tese.\nParágrafo de fecho estruturado para arrematar o raciocínio e selar a persuasão do leitor.\nExemplos e Contraexemplos\nExemplo: Texto que prescreve a necessidade categórica de a população tomar a terceira dose da vacina contra a Covid-19 ().\nExemplo: Artigo opinativo de jornal que combate a proposta de extinção do foro privilegiado no Brasil ().\nRelações\nContrasta com: \nExemplificado por: ,",
-            "**O Princípio Soberano da Intencionalidade Autoral**: Definição ou Ideia Central\nO vetor determinante e absoluto para a classificação de um texto dissertativo em concursos públicos é a intenção comunicativa do autor (o seu projeto discursivo de dizer), e jamais a opinião pessoal, crença ou concordância do leitor/candidato.\nExplicação Consolidada\nPara classificar o texto com rigor, o estudante deve aplicar o princípio da alteridade e formular a pergunta-guia:\n\"O que o autor veio fazer neste texto? Qual é o objetivo primordial dele: expor o que sabe sobre determinado assunto ou convencer-me da sua própria opinião?\"\nA análise deve identificar se os recursos linguísticos (exemplos, dados, citações, explicações) estão estruturados como fim informativo em si mesmos ou como meio probatório a serviço de uma tese.\nRelações\nAplica-se em: \nReforçado por: TIP-A13-G05-001, QUOTE-A13-G05-001, QUOTE-A13-G05-002",
-            "**Função dos Dados Empíricos e Estatísticos na Dissertação**: Definição ou Ideia Central\nA presença de dados estatísticos, porcentagens, relatórios empíricos ou menções a pesquisas científicas não categoriza automaticamente um texto como expositivo. O papel dos dados depende integralmente da função que desempenham na macroestrutura discursiva.\nExplicação Consolidada\nDados na Dissertação Expositiva: Constituem o próprio conteúdo informativo e conceitual veiculado para instruir o leitor sobre a realidade de um tema.\nDados na Dissertação Argumentativa: Atuam como argumento de autoridade / comprovação factual, funcionando como instrumento de sustentação para validar uma tese opinativa e persuadir o leitor.\nDesconstrução de Pegadinhas: Bancas exploram a memorização mecânica de candidatos desatentos. Na redação discursiva e nos textos de concurso, citar dados é técnica fundamental de fundamentação argumentativa.\nRelações\nExpande: 003Evidenciado por:",
-            "**Modalizadores Discursivos e a Falácia da Opinião Isolada**: Definição ou Ideia Central\nA presença de modalizadores discursivos (adjetivos avaliativos, advérbios ou expressões que assinalam a avaliação do enunciador sobre o que diz) em um texto não é condição suficiente para classificá-lo como dissertativo-argumentativo.\nExplicação Consolidada\nModalizador: Elemento linguístico que expressa a atitude ou avaliação do falante em relação ao conteúdo veiculado (ex.: \"aprendizado extremamente importante\").\nA Pegadinha das Bancas (Cebraspe): A banca apresenta um texto acadêmico/teórico contendo uma adjetivação valorativa pontual. O candidato aplica a dedução mecânica incorreta: \"tem adjetivo/modalizador -> tem opinião -> logo é texto argumentativo\".\nCritério Decisório: Deve-se avaliar a predominância da função comunicativa. Um professor ou cientista pode avaliar determinado fenômeno histórico como \"importante\", \"complexo\" ou \"relevante\" dentro de uma dissertação estritamente expositiva, sem que isso configure a defesa de uma tese polêmica pessoal.Evidenciado por:",
-            "**Exposição Doutrinária, Valores Constitucionais e Fatos Jurídicos vs. Argumentação Subjetiva**: Definição ou Ideia Central\nA menção a princípios jurídicos, ideais humanistas e preceitos constitucionais (como \"sociedade justa, livre e fraterna\", \"transformação social\" e \"missão dos operadores do direito\") constitui exposição de conceitos doutrinários e fatos da ordem jurídica, e não argumentação subjetiva do autor.\nExplicação Consolidada\nEm textos de manuais de Direito, pareceres e obras acadêmicas, termos de forte apelo valorativo expressam o conteúdo formal das leis e da teoria jurídica.\nAo discorrer sobre os fins da justiça ou a missão do magistrado, o autor atua como teórico que expõe o conhecimento do Direito posto. Ele não está formulando uma tese particular para disputar convicções políticas contra um adversário.\nClassifica-se, portanto, como texto dissertativo-expositivo.Evidenciado por:"
-          ]
+          "term": "Macro-Tipologias Textuais Canônicas (Narração, Descrição e Dissertação)",
+          "shortDefinition": "A organização textual em língua portuguesa estrutura-se fundamentalmente em três macro-tipologias discursivas: narração, descrição e dissertação.",
+          "detailTarget": {
+            "unitId": "IP-A13-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G05-01"
+          }
+        },
+        {
+          "term": "Dissertação Expositiva e Informativa: Conceituação e Função",
+          "shortDefinition": "A dissertação expositiva (ou informativa) é a modalidade discursiva em que o autor discute um determinado assunto com o objetivo primordial de expor, explicar e transmitir conhecimentos, conceitos, teorias ou fatos objetivos, sem a intenção de convencer o leitor ou defender uma tomada de posição controversa.",
+          "detailTarget": {
+            "unitId": "IP-A13-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G05-02"
+          }
+        },
+        {
+          "term": "Dissertação Argumentativa, Tese e Mecanismos de Persuasão",
+          "shortDefinition": "A dissertação argumentativa é a modalidade discursiva na qual o autor desenvolve um tema assumindo um posicionamento explícito — formulando uma tese — e estruturando uma cadeia de justificativas, dados e razões lógicas com o objetivo expresso de persuadir e convencer o leitor.",
+          "detailTarget": {
+            "unitId": "IP-A13-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G05-03"
+          }
+        },
+        {
+          "term": "O Princípio Soberano da Intencionalidade Autoral",
+          "shortDefinition": "O vetor determinante e absoluto para a classificação de um texto dissertativo em concursos públicos é a intenção comunicativa do autor (o seu projeto discursivo de dizer), e jamais a opinião pessoal, crença ou concordância do leitor/candidato.",
+          "detailTarget": {
+            "unitId": "IP-A13-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G05-04"
+          },
+          "operationalUse": "Para classificar o texto com rigor, o estudante deve aplicar o princípio da alteridade e formular a pergunta-guia:"
+        },
+        {
+          "term": "Função dos Dados Empíricos e Estatísticos na Dissertação",
+          "shortDefinition": "A presença de dados estatísticos, porcentagens, relatórios empíricos ou menções a pesquisas científicas não categoriza automaticamente um texto como expositivo. O papel dos dados depende integralmente da função que desempenham na macroestrutura discursiva.",
+          "detailTarget": {
+            "unitId": "IP-A13-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G05-05"
+          }
+        },
+        {
+          "term": "Modalizadores Discursivos e a Falácia da Opinião Isolada",
+          "shortDefinition": "A presença de modalizadores discursivos (adjetivos avaliativos, advérbios ou expressões que assinalam a avaliação do enunciador sobre o que diz) em um texto não é condição suficiente para classificá-lo como dissertativo-argumentativo.",
+          "detailTarget": {
+            "unitId": "IP-A13-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G05-06"
+          }
+        },
+        {
+          "term": "Exposição Doutrinária, Valores Constitucionais e Fatos Jurídicos vs. Argumentação Subjetiva",
+          "shortDefinition": "A menção a princípios jurídicos, ideais humanistas e preceitos constitucionais (como \"sociedade justa, livre e fraterna\", \"transformação social\" e \"missão dos operadores do direito\") constitui exposição de conceitos doutrinários e fatos da ordem jurídica, e não argumentação subjetiva do autor.",
+          "detailTarget": {
+            "unitId": "IP-A13-G05",
+            "section": "explanation",
+            "groupId": "GRP-IP-A13-G05-07"
+          }
         }
       ]
     },
@@ -1512,7 +1930,10 @@
         "confidence": 0.96
       },
       "answerSha256": "b993f081ee206cfc7dc81cc7bff5f47e77ba3f35b999985c86f1d587fa6c884a",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A13-aula13.q0061"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -1633,7 +2054,42 @@
         "confidence": 0.96
       },
       "answerSha256": "383124b0523dfd7f99a9c79a54748d3bbd93176e09725722c8199e651baa8998",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A13-aula13.q0067"
+      ],
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "No texto CB1A1-II, predomina a tipologia",
+        "options": [
+          {
+            "label": "A",
+            "text": "injuntiva."
+          },
+          {
+            "label": "B",
+            "text": "narrativa."
+          },
+          {
+            "label": "C",
+            "text": "descritiva."
+          },
+          {
+            "label": "D",
+            "text": "expositiva."
+          },
+          {
+            "label": "E",
+            "text": "argumentativa."
+          }
+        ],
+        "answer": "E",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -1704,7 +2160,42 @@
         "confidence": 0.96
       },
       "answerSha256": "d11c4e6ec031c58ce7f01418bf7e09cc500b14926ff234e835ede9093c6e9280",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A13-aula13.q0070"
+      ],
+      "questionPresentation": {
+        "status": "ready",
+        "stem": "Texto 1A2-I\nOs direitos humanos são direitos inerentes a todos os seres humanos, independentemente de\nraça, sexo, nacionalidade, etnia, idioma, religião ou qualquer outra condição. Os direitos\nhumanos incluem o direito à vida e à liberdade, o direito à liberdade de opinião e de expressão,\no direito ao trabalho e à educação, entre muitos outros. Todos merecem estes direitos, sem\ndiscriminação.\nO direito internacional relacionado aos direitos humanos estabelece obrigações para que os\ngovernos ajam de determinadas maneiras ou se abstenham de certos atos, a fim de promover e\nproteger os direitos humanos e as liberdades de grupos ou indivíduos.\nDesde o estabelecimento das Nações Unidas, um de seus objetivos fundamentais tem sido\npromover e encorajar o respeito aos direitos humanos para todos, conforme estipulado na Carta\ndas Nações Unidas.\nOs direitos humanos são fundados no respeito pela dignidade e no valor de cada pessoa. São\nuniversais, ou seja, são aplicados de forma igual e sem discriminação a todas as pessoas. São\ninalienáveis — e ninguém pode ser privado de seus direitos humanos —, mas podem ser\nlimitados em situações específicas: o direito à liberdade pode ser restringido se, após o devido\nprocesso legal, uma pessoa for julgada culpada de um crime punível com privação de liberdade.\nInternet: <https://nacoesunidas.org> (com adaptações).\nCom  relação  à  tipologia  textual,  é  correto  afirmar  que  o  texto  1A2-I  apresenta\npredominantemente",
+        "options": [
+          {
+            "label": "A",
+            "text": "uma combinação de recursos descritivos e narrativos."
+          },
+          {
+            "label": "B",
+            "text": "recursos da tipologia textual argumentativa."
+          },
+          {
+            "label": "C",
+            "text": "elementos que caracterizam textos narrativos."
+          },
+          {
+            "label": "D",
+            "text": "uma articulação entre as tipologias expositiva e narrativa."
+          },
+          {
+            "label": "E",
+            "text": "elementos que caracterizam a tipologia expositiva."
+          }
+        ],
+        "answer": "E",
+        "sourceField": "questionPayload.prompt+options",
+        "cleaningRules": [
+          "separate_inline_options_from_command"
+        ],
+        "sourcePayloadPreserved": true
+      }
     },
     {
       "schemaVersion": "2.0.0",
@@ -1754,194 +2245,6 @@
         "confidence": 0.99
       },
       "answerSha256": "d4373c58977101ccfa464fa6b038d53bee44f5c79bca5756b94cb97faa9c2810",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A13-aula13.q0061",
-      "lessonId": "A13",
-      "sourceQuestionId": "aula13.q0061",
-      "questionPayload": {
-        "question_id": "aula13.q0061",
-        "question_number_in_section": 6,
-        "question_type": "open_or_other",
-        "exam_board": "CEBRASPE",
-        "organization": "CNMP",
-        "position": null,
-        "year": 2023,
-        "support_text": "Ao final do período de revoluções e guerras que caracterizaram a virada do século XVIII para o\nXIX, os recém-emancipados países da América e os antigos Estados europeus se viram diante da\nnecessidade de criar estruturas de governo, marcando a transição do Antigo Regime ao\nconstitucionalismo e do colonialismo à independência. Os arquitetos da nova ordem se\ninspiraram em fontes antigas e modernas: de Aristóteles (384 a.C. – 322 a.C.) e Políbio (c.200 a.C.\n– c.118 a.C.) a John Locke (1632 – 1704) e Montesquieu (1689 – 1755). Um dos principais\nproblemas com os quais lideranças e pensadores políticos se confrontaram estava materializado\nem uma passagem do poeta satírico romano Juvenal (c.55 – c.127), em que se lê: “Quis custodiet\nipsos custodes?”, traduzida como “Quem  vigia os  vigias?” ou “Quem controla os\ncontroladores?”.\n“Uma coisa é teorizar sobre a separação em três poderes, como lemos em Montesquieu.\nOutra coisa é colocar em prática”, observa a historiadora Monica Duarte Dantas, do Instituto de\nEstudos Brasileiros da Universidade de São Paulo. “Aí surgem os problemas, porque um poder\npode tentar assumir as atribuições de outro. Não era possível antever todas as questões que\niriam aparecer, até porque havia assuntos que diziam respeito a mais de um poder. Na prática,\nera preciso definir a quem competia o quê. Essas questões emergiram rapidamente nos séculos\nXVIII e XIX, quando se tentou colocar em prática a separação de poderes.”\nAlguém que acompanhasse os trabalhos de elaboração de textos constitucionais no início\ndo século XIX não necessariamente apostaria que, ao final desse período, estaria consolidado um\nmodelo de organização do Estado em que o poder se desdobraria em três partes: o Executivo, o\nLegislativo e o Judiciário, conforme apresentado pelo filósofo francês Montesquieu em O espírito\ndas leis (1748). Havia projetos com quatro, cinco ou até mais poderes. Na França, o filósofo\npolítico franco-suíço Benjamin Constant (1767 – 1830) imaginou meia dezena: o Judiciário, o\nExecutivo, dois poderes representativos, correspondentes ao Legislativo — o da opinião (Câmara\nBaixa) e o da tradição (Câmara Alta) —, e um poder “neutro”, exercido pelo monarca. O\nrevolucionário venezuelano Simon Bolívar (1783 – 1830) chegou a formular a ideia, em 1819, de\num “poder moral” que deveria cuidar, sobretudo, de educação.\nAs mesmas preocupações estavam na cabeça dos deputados na primeira Assembleia\nConstituinte do Brasil, em 1823. Até que, em novembro, o conflito de poderes se concretizou:\ntropas enviadas pelo imperador Dom Pedro I (1789 – 1834) dissolveram a assembleia. Em março\ndo ano seguinte, quando o imperador outorgou a primeira Constituição brasileira, ela se afastava\npouco do projeto elaborado em 1823, mas continha uma diferença crucial: os poderes eram\nquatro e incluíam um Moderador.\nEntretanto, só em dois países esse quarto poder chegou a ser formalmente inscrito no\ntexto constitucional, como uma instituição em separado. O Brasil, com o título 5.º da Constituição\nde 1824, e Portugal, em 1826, com a Carta Constitucional outorgada também por Dom Pedro —\nem Portugal, IV, e não I —, no breve período de seis dias em que acumulou a coroa de ambos os",
-        "prompt": "países. As funções do Poder Moderador, tanto na doutrina de Constant quanto na Constituição\nbrasileira, guardam semelhanças com algumas das funções que hoje cabem às cortes supremas\n— no Brasil, ao Supremo Tribunal Federal (STF). Trata-se de garantir que a atuação dos poderes,\nseja na formulação de leis, seja na administração pública ou no julgamento de casos, não se\nchoque com as normas constitucionais.\nDiego Viana. Experimentação constitucional fomentou criação de Poder Moderador.\nIn: Revista Pesquisa FAPESP, ago./2022 (com adaptações).\nPredomina no texto a tipologia textual argumentativa.",
-        "options": [],
-        "tests_concept_ids": [
-          "pt.text.o_texto"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0115",
-            "aula13_complete.p0116"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "duplicate_of": "aula13.q0033"
-      },
-      "questionSha256": "7a043657d6e794e5fc9c3101f11f65115ae4ae25ab967d5d7d4d7a06e567f203",
-      "answerPayload": {
-        "answer_id": "aula13.q0061.answer",
-        "question_id": "aula13.q0061",
-        "answer": "incorrect",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0127"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "cae77b2548453f9013315ead6b1dcfa97f8fe8007a130cdef6d2605cf187e934",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A13-aula13.q0067",
-      "lessonId": "A13",
-      "sourceQuestionId": "aula13.q0067",
-      "questionPayload": {
-        "question_id": "aula13.q0067",
-        "question_number_in_section": 12,
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "CGE-CE",
-        "position": null,
-        "year": 2019,
-        "support_text": "Texto CB1A1-II\nAinda hoje, em muitos rincões do nosso país, são encontrados administradores públicos cujas\nações em muito se assemelham às de Nabucodonosor, rei do império babilônico, que, buscando\nsatisfazer sua rainha Meda, saudosa das colinas e florestas de sua pátria, providenciou a\nconstrução de estupendos jardins suspensos. Essa excentricidade, que consumiu anos de labor e\ngastos incalculáveis, culminou em uma das sete maravilhas do mundo antigo.\nTal “maravilha”, que originou mais ônus do que propriamente benefícios, apresenta grande\nsimilitude com devaneios atuais em que se constata o gasto de dinheiro público com atos de\nmotivação fútil e imoral, finalidade dissociada do interesse público e em total afronta à\nrazoabilidade administrativa, com flagrante desproporção entre o numerário despendido e o\nbenefício auferido pela coletividade.\nAlém da insensatez detectada em alguns atos de administração, constata-se a existência de\nsituação mais grave e preocupante, a degeneração de caráter em muitos entre os que ascendem\nà gestão do interesse público. Essa degeneração, em alguns casos, precede a investidura; em\noutros, tem causas endêmicas, sendo o resultado inevitável da interação com um meio viciado.\nEmerson Garcia e Rogério Pacheco Alves. Improbidade\nadministrativa. 8.ª ed. São Paulo: Saraiva, 2014, p. 47 (com adaptações)",
-        "prompt": "No texto CB1A1-II, predomina a tipologia\nA) injuntiva.\nB) narrativa.\nC) descritiva.\nD) expositiva.\nE) argumentativa.",
-        "options": [
-          {
-            "label": "A",
-            "text": "injuntiva."
-          },
-          {
-            "label": "B",
-            "text": "narrativa."
-          },
-          {
-            "label": "C",
-            "text": "descritiva."
-          },
-          {
-            "label": "D",
-            "text": "expositiva."
-          },
-          {
-            "label": "E",
-            "text": "argumentativa."
-          }
-        ],
-        "tests_concept_ids": [
-          "pt.text.o_texto"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0121"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "duplicate_of": "aula13.q0039"
-      },
-      "questionSha256": "62335a8a4d2cc58162b26209d6ee1e5fbb7d378334843237d08062ae53bf60a4",
-      "answerPayload": {
-        "answer_id": "aula13.q0067.answer",
-        "question_id": "aula13.q0067",
-        "answer": "letter_E",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0127"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "9a1db57f11b2bd95f1c1b02ae8572fffd60731a729d3815fabb26d9f42869e79",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A13-aula13.q0070",
-      "lessonId": "A13",
-      "sourceQuestionId": "aula13.q0070",
-      "questionPayload": {
-        "question_id": "aula13.q0070",
-        "question_number_in_section": 15,
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "SEFAZ-RS",
-        "position": null,
-        "year": 2018,
-        "support_text": null,
-        "prompt": "Texto 1A2-I\nOs direitos humanos são direitos inerentes a todos os seres humanos, independentemente de\nraça, sexo, nacionalidade, etnia, idioma, religião ou qualquer outra condição. Os direitos\nhumanos incluem o direito à vida e à liberdade, o direito à liberdade de opinião e de expressão,\no direito ao trabalho e à educação, entre muitos outros. Todos merecem estes direitos, sem\ndiscriminação.\nO direito internacional relacionado aos direitos humanos estabelece obrigações para que os\ngovernos ajam de determinadas maneiras ou se abstenham de certos atos, a fim de promover e\nproteger os direitos humanos e as liberdades de grupos ou indivíduos.\nDesde o estabelecimento das Nações Unidas, um de seus objetivos fundamentais tem sido\npromover e encorajar o respeito aos direitos humanos para todos, conforme estipulado na Carta\ndas Nações Unidas.\nOs direitos humanos são fundados no respeito pela dignidade e no valor de cada pessoa. São\nuniversais, ou seja, são aplicados de forma igual e sem discriminação a todas as pessoas. São\ninalienáveis — e ninguém pode ser privado de seus direitos humanos —, mas podem ser\nlimitados em situações específicas: o direito à liberdade pode ser restringido se, após o devido\nprocesso legal, uma pessoa for julgada culpada de um crime punível com privação de liberdade.\nInternet: <https://nacoesunidas.org> (com adaptações).\nCom  relação  à  tipologia  textual,  é  correto  afirmar  que  o  texto  1A2-I  apresenta\npredominantemente\nA) uma combinação de recursos descritivos e narrativos.\nB) recursos da tipologia textual argumentativa.\nC) elementos que caracterizam textos narrativos.\nD) uma articulação entre as tipologias expositiva e narrativa.\nE) elementos que caracterizam a tipologia expositiva.",
-        "options": [
-          {
-            "label": "A",
-            "text": "uma combinação de recursos descritivos e narrativos."
-          },
-          {
-            "label": "B",
-            "text": "recursos da tipologia textual argumentativa."
-          },
-          {
-            "label": "C",
-            "text": "elementos que caracterizam textos narrativos."
-          },
-          {
-            "label": "D",
-            "text": "uma articulação entre as tipologias expositiva e narrativa."
-          },
-          {
-            "label": "E",
-            "text": "elementos que caracterizam a tipologia expositiva."
-          }
-        ],
-        "tests_concept_ids": [
-          "pt.text.o_texto"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0122",
-            "aula13_complete.p0123"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.94,
-        "duplicate_of": "aula13.q0042"
-      },
-      "questionSha256": "a862932fa3e8e39c809d57d7c03c6e9d20b2e74968aadd840c308dcbe6cde540",
-      "answerPayload": {
-        "answer_id": "aula13.q0070.answer",
-        "question_id": "aula13.q0070",
-        "answer": "letter_E",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula13_complete",
-          "page_ids": [
-            "aula13_complete.p0127"
-          ]
-        },
-        "confidence": 0.99
-      },
-      "answerSha256": "b95d0abd5fddf661a3faf021b04e72736c2ebefa14c270c32f00d7da52f936d0",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

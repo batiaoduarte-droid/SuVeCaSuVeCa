@@ -15,6 +15,7 @@ import {
   CheckSquare,
   Eye,
   EyeOff,
+  Network,
 } from 'lucide-react';
 import type {
   SemanticBlock,
@@ -45,6 +46,7 @@ import type { StudyTone } from '../../study-visuals/studyVisualTokens';
 
 interface SemanticBlockRendererProps {
   block: SemanticBlock;
+  allowLegacyDiagramInference?: boolean;
 }
 
 const mapCalloutKindToTone = (kind?: string): StudyTone => {
@@ -381,7 +383,10 @@ export const ClassificationRenderer: React.FC<{ block: ClassificationBlock }> = 
 /**
  * Dispatcher Central de Blocos Semânticos v4.2 & Legados
  */
-export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({ block }) => {
+export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({
+  block,
+  allowLegacyDiagramInference = true,
+}) => {
   if (!block) return null;
 
   switch (block.type) {
@@ -931,7 +936,7 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({ bl
 
     case 'paragraph': {
       if (!block.text) return null;
-      if (looksLikeConnectionMap(block.text)) {
+      if (allowLegacyDiagramInference && looksLikeConnectionMap(block.text)) {
         return <ConnectionMap source={block.text} />;
       }
       const sanitized = sanitizePedagogicalText(block.text);
@@ -1036,9 +1041,33 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({ bl
         return <ConceptTree nodes={block.nodes} edges={block.edges} />;
       }
       if (block.text) {
-        return <ConnectionMap source={block.text} />;
+        return <ConnectionMap source={block.text} title={block.title} />;
       }
       return null;
+
+    case 'entity_relations':
+      if (!block.relations?.length) return null;
+      return (
+        <div className="my-4 rounded-xl border border-sky-200 bg-sky-50/60 p-3.5">
+          <div className="mb-2 flex items-center gap-2 text-[10px] font-black uppercase tracking-wider text-sky-900">
+            <Network className="h-4 w-4" aria-hidden="true" />
+            <span>{block.title || 'Conexões conceituais'}</span>
+          </div>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {block.relations.map((relation) => (
+              <li key={`${relation.relation}:${relation.targetRef}`} className="rounded-lg border border-sky-100 bg-white px-3 py-2 text-xs leading-relaxed text-slate-800">
+                <span className="font-bold text-sky-900">{relation.relation}: </span>
+                <a
+                  href={`/?unit=${encodeURIComponent(relation.targetUnitId)}&section=${encodeURIComponent(relation.targetSection)}`}
+                  className="font-semibold text-sky-950 underline decoration-sky-300 underline-offset-2 hover:text-sky-700"
+                >
+                  <InlineRichText>{relation.targetTitle}</InlineRichText>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
 
     case 'code':
       return (

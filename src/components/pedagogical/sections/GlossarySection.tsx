@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tag, Search, AlertCircle } from 'lucide-react';
+import { Tag, Search, AlertCircle, ArrowUpRight } from 'lucide-react';
 import type { SemanticBlock, GlossaryItemView } from '../../../types/pedagogicalView';
 import { SemanticBlockRenderer } from '../blocks/SemanticBlockRenderer';
 import { InlineRichText } from '../blocks/InlineRichText';
@@ -42,14 +42,25 @@ export const GlossarySection: React.FC<GlossarySectionProps> = ({ items = [], bl
     }
   }
 
-  const allTerms = hasItems
+  const allTerms: Array<{
+    term: string;
+    def: string;
+    operationalUse?: string;
+    shortExample?: string;
+    detailTarget?: GlossaryItemView['detailTarget'];
+    misconception?: string;
+    domain?: string;
+  }> = hasItems
     ? items.map((it) => ({
         term: it.term,
-        def: it.fullDefinition || it.shortDefinition || '',
+        def: it.shortDefinition || '',
+        operationalUse: it.operationalUse,
+        shortExample: it.shortExample,
+        detailTarget: it.detailTarget,
         misconception: it.commonMisconception,
         domain: it.domain,
       }))
-    : extractedListItems;
+    : extractedListItems.map((item) => ({ ...item }));
 
   const filtered = allTerms.filter(
     (t) =>
@@ -113,6 +124,19 @@ export const GlossarySection: React.FC<GlossarySectionProps> = ({ items = [], bl
                       <InlineRichText>{item.def}</InlineRichText>
                     </p>
                   )}
+
+                  {item.operationalUse && (
+                    <p className="mt-2 rounded-lg bg-teal-50/70 p-2 text-[11px] font-medium leading-relaxed text-teal-950">
+                      <strong className="block text-[10px] uppercase tracking-wider text-teal-800">Na análise</strong>
+                      <InlineRichText>{item.operationalUse}</InlineRichText>
+                    </p>
+                  )}
+
+                  {item.shortExample && (
+                    <p className="mt-2 text-[11px] font-medium leading-relaxed text-slate-700">
+                      <strong>Exemplo: </strong><InlineRichText>{item.shortExample}</InlineRichText>
+                    </p>
+                  )}
                 </div>
 
                 {item.misconception && (
@@ -122,6 +146,15 @@ export const GlossarySection: React.FC<GlossarySectionProps> = ({ items = [], bl
                       <strong>Equívoco Comum:</strong> <InlineRichText>{item.misconception}</InlineRichText>
                     </span>
                   </div>
+                )}
+
+                {item.detailTarget && (
+                  <a
+                    href={`#${item.detailTarget.unitId}-${item.detailTarget.section}`}
+                    className="inline-flex min-h-11 items-center gap-1.5 self-start rounded-lg px-2 text-xs font-bold text-teal-800 hover:bg-teal-50 hover:text-teal-950"
+                  >
+                    Ver explicação completa <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </a>
                 )}
               </div>
             ))}

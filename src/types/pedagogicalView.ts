@@ -252,10 +252,26 @@ export interface CodeBlock {
 
 export interface DiagramBlock {
   type: 'diagram';
+  title?: string;
   diagramType: 'tree' | 'flow' | 'classification' | 'relationship' | 'connection_map';
   text?: string;
   nodes?: ConnectionMapNode[];
   edges?: ConnectionMapEdge[];
+}
+
+export interface EntityRelationTarget {
+  relation: string;
+  targetRef: string;
+  targetTitle: string;
+  targetUnitId: string;
+  targetSection: string;
+}
+
+/** Learner-facing projection of resolved canonical relations. */
+export interface EntityRelationsBlock {
+  type: 'entity_relations';
+  title?: string;
+  relations: EntityRelationTarget[];
 }
 
 /**
@@ -286,7 +302,8 @@ export type SemanticBlock =
   | TableRefBlock
   | CalloutBlock
   | CodeBlock
-  | DiagramBlock;
+  | DiagramBlock
+  | EntityRelationsBlock;
 
 /**
  * Alias de compatibilidade com código existente
@@ -327,6 +344,10 @@ export interface ConnectionMapView {
   nodes: ConnectionMapNode[];
   edges: ConnectionMapEdge[];
   rawAscii?: string;
+  lineage?: {
+    kind: 'canonical' | 'derived_prerequisite_projection';
+    canonicalMapRef: string;
+  };
 }
 
 export interface SuvecaConnectionView {
@@ -361,6 +382,8 @@ export interface SourceBackedPresentation {
   sourceKind: 'canonical_content_block';
   sourceEntityRefs: string[];
   hideGenericScaffold: boolean;
+  renderStrategy?: 'structured_first' | 'source_first' | 'hybrid' | 'source_only';
+  diagramIntent?: 'none' | 'explicit';
 }
 
 export interface CanonicalEntityView {
@@ -482,7 +505,14 @@ export interface GlossaryItemView {
   domain?: string;
   shortDefinition?: string;
   fullDefinition?: string;
+  operationalUse?: string;
+  shortExample?: string;
   commonMisconception?: string;
+  detailTarget?: {
+    unitId: string;
+    section: 'explanation';
+    groupId?: string;
+  };
 }
 
 export interface RecallPromptView {
@@ -544,6 +574,8 @@ export interface OfficialQuestionView {
   solutionStrategy?: string;
   pedagogicalEvaluation?: QuestionPedagogicalEvaluation;
   distractorAnalysis?: DistractorAnalysisView[];
+  /** Proveniências equivalentes agregadas pela projeção learner-facing. */
+  duplicateSourceQuestionRefs?: string[];
   questionPresentation?: OfficialQuestionPresentationView;
   questionPayload?: {
     question_id?: string;

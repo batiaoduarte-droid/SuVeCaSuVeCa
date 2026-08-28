@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A12-G01",
     "lessonId": "A12",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A12-G01",
@@ -79,7 +80,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A12-G01-001"
+          }
         }
       ]
     },
@@ -94,8 +99,48 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA semântica é o ramo dos estudos linguísticos que investiga o significado, a significação e o valor interpretativo das palavras e enunciados, os quais são condicionados de forma estrita pelo contexto em que ocorrem (\"Semântica é Contexto\").\nExplicação consolidada\nA compreensão semântica exige a superação da análise morfológica estática. Enquanto a morfologia classifica os vocábulos isoladamente em classes gramaticais (substantivo, adjetivo, verbo, advérbio), a semântica examina a carga de sentido que a palavra assume em sua teia de relações com os outros termos da oração. Portanto, não se julga se um termo está em sentido próprio ou figurado analisando sua classe ou sua forma dicionarizada isolada, mas sim observando o campo de ideias que ele estabelece com seu referente imediato no texto.\nCritérios de reconhecimento\nA análise deve sempre considerar o período integral.\nO sentido é verificado pela compatibilidade conceitual entre os elementos conectados na frase.\nRelações\nContrasta com: Análise morfológica formal.\nOperacionalizado por: (Método das Setas Semânticas).\nTermo associado: TERM-A12-G01-SEM-FIG-001."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A semântica é o ramo dos estudos linguísticos que investiga o significado, a significação e o valor interpretativo das palavras e enunciados, os quais são condicionados de forma estrita pelo contexto em que ocorrem (\"Semântica é Contexto\")."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A compreensão semântica exige a superação da análise morfológica estática. Enquanto a morfologia classifica os vocábulos isoladamente em classes gramaticais (substantivo, adjetivo, verbo, advérbio), a semântica examina a carga de sentido que a palavra assume em sua teia de relações com os outros termos da oração. Portanto, não se julga se um termo está em sentido próprio ou figurado analisando sua classe ou sua forma dicionarizada isolada, mas sim observando o campo de ideias que ele estabelece com seu referente imediato no texto."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "A análise deve sempre considerar o período integral.",
+                "O sentido é verificado pela compatibilidade conceitual entre os elementos conectados na frase."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G01-SEM-FIG-001",
+                  "targetTitle": "Protocolo Analítico Unificado em 4 Etapas (O Método das Setas Semânticas)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -108,8 +153,76 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nSentido próprio (ou denotativo) é o emprego da palavra em sua acepção primária, literal, lógica, usual e dicionarizada, retratando seres, ações e fatos de forma objetiva e conforme a realidade concreta do mundo físico.\nExplicação consolidada\nAs bancas organizadoras de concursos públicos utilizam um grupo rigoroso de expressões perfeitamente sinônimas para indicar o sentido denotativo:\nCadeia de Sinônimos Oficiais: Sentido Próprio = Sentido Real = Sentido Lógico = Sentido Dicionarizado = Sentido Denotativo = Sentido Literal = Sentido Usual.\nBancas modernas (especialmente a FGV) substituem frequentemente a palavra \"denotativo\" pela expressão \"sentido lógico\", exigindo que o candidato compreenda que não se trata de raciocínio lógico-matemático formal, mas da preservação do sentido dicionarizado básico.\nExemplos\n\"Minha mulher é linda.\" (Propriedade estética expressa literalmente).\n\"O funcionário estava meio confuso com os dados.\" (Estado mental humano literal).\n\"Chorou intensamente até dormir.\" (Ações fisiológicas literais).\n\"Não pode negar, meio feio?\" (Avaliação estética concreta do próprio rosto no espelho).\n\"Eles analisaram as placentas de 17 gestantes.\" (Procedimento de exame laboratorial concreto).\nRelações\nContrasta com: (Sentido Figurado).\nContém: (Polissemia Denotativa).\nPossui alerta em: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Sentido próprio (ou denotativo) é o emprego da palavra em sua acepção primária, literal, lógica, usual e dicionarizada, retratando seres, ações e fatos de forma objetiva e conforme a realidade concreta do mundo físico."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "As bancas organizadoras de concursos públicos utilizam um grupo rigoroso de expressões perfeitamente sinônimas para indicar o sentido denotativo:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Cadeia de Sinônimos Oficiais: Sentido Próprio = Sentido Real = Sentido Lógico = Sentido Dicionarizado = Sentido Denotativo = Sentido Literal = Sentido Usual."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas modernas (especialmente a FGV) substituem frequentemente a palavra \"denotativo\" pela expressão \"sentido lógico\", exigindo que o candidato compreenda que não se trata de raciocínio lógico-matemático formal, mas da preservação do sentido dicionarizado básico."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Minha mulher é linda.\" (Propriedade estética expressa literalmente).",
+                "\"O funcionário estava meio confuso com os dados.\" (Estado mental humano literal).",
+                "\"Chorou intensamente até dormir.\" (Ações fisiológicas literais).",
+                "\"Não pode negar, meio feio?\" (Avaliação estética concreta do próprio rosto no espelho).",
+                "\"Eles analisaram as placentas de 17 gestantes.\" (Procedimento de exame laboratorial concreto)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G01-SEM-FIG-003",
+                  "targetTitle": "Sentido Figurado (Conotação, Sentido Não Lógico e Metafórico)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G01-SEM-FIG-004",
+                  "targetTitle": "Distinção Teórica e Prática entre Polissemia e Sentido Figurado",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A12-G01-SEM-FIG-001",
+                  "targetTitle": "Confundir \"Sentido Lógico\" com Coerência Argumentativa / Lógica Formal",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -122,8 +235,78 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nSentido figurado (ou conotativo) é o emprego da palavra com significado estendido, translato, metafórico, poético ou simbólico, extrapolando as propriedades físicas e lógicas imediatas com base em analogias e associações de ideias (\"como se fosse\").\nExplicação consolidada\nNa linguagem conotativa, ocorre um desvio proposital da literalidade. O vocábulo é transferido de seu domínio semântico original para outro, criando novas camadas de significado expressivo.\nCadeia de Sinônimos Oficiais: Sentido Figurado = Sentido Conotativo = Sentido Não Lógico = Fora do Sentido Lógico = Sentido Metafórico = Sentido Poético = Sentido Não Usual.\nExemplos\n\"Minha mulher é uma flor.\" (Metáfora de delicadeza/beleza; biologicamente uma mulher não é vegetal).\n\"A sala estava um brinco.\" (Metáfora de limpeza impecável; uma sala não é joia).\n\"Humorismo é a arte de fazer cócegas no raciocínio dos outros.\" (Metáfora tátil aplicada a uma faculdade intelectual abstrata).\n\"Minha memória não se desgrudava daquela cena, e meu olhar apagava a paisagem...\" (Ações físicas de colar e apagar projetadas sobre abstrações mentais e sensoriais).\nRelações\nContrasta com: (Sentido Próprio).\nMecanismos específicos: (Reificação), (Conotação Científica), (Crônica Literária)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Sentido figurado (ou conotativo) é o emprego da palavra com significado estendido, translato, metafórico, poético ou simbólico, extrapolando as propriedades físicas e lógicas imediatas com base em analogias e associações de ideias (\"como se fosse\")."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na linguagem conotativa, ocorre um desvio proposital da literalidade. O vocábulo é transferido de seu domínio semântico original para outro, criando novas camadas de significado expressivo."
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Cadeia de Sinônimos Oficiais: Sentido Figurado = Sentido Conotativo = Sentido Não Lógico = Fora do Sentido Lógico = Sentido Metafórico = Sentido Poético = Sentido Não Usual."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Minha mulher é uma flor.\" (Metáfora de delicadeza/beleza; biologicamente uma mulher não é vegetal).",
+                "\"A sala estava um brinco.\" (Metáfora de limpeza impecável; uma sala não é joia).",
+                "\"Humorismo é a arte de fazer cócegas no raciocínio dos outros.\" (Metáfora tátil aplicada a uma faculdade intelectual abstrata).",
+                "\"Minha memória não se desgrudava daquela cena, e meu olhar apagava a paisagem...\" (Ações físicas de colar e apagar projetadas sobre abstrações mentais e sensoriais)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A12-G01-SEM-FIG-002",
+                  "targetTitle": "Sentido Próprio (Denotação, Sentido Lógico, Literal e Dicionarizado)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G01-SEM-FIG-005",
+                  "targetTitle": "O Mecanismo Semântico-Estilístico da Reificação (Coisificação)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G01-SEM-FIG-007",
+                  "targetTitle": "Linguagem Figurada no Discurso Científico e de Divulgação (Padrão FGV)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A12-G01-SEM-FIG-008",
+                  "targetTitle": "Deslocamento Semântico em Textos Literários e Crônicas",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -136,8 +319,129 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA polissemia consiste na multiplicidade de acepções e significados dicionarizados que um mesmo significante (palavra) pode assumir em diferentes contextos reais. O fato de um vocábulo possuir múltiplos sentidos dicionarizados não torna nenhum deles figurado; ambos permanecem no domínio do sentido próprio/denotativo.\nExplicação consolidada\nUma das maiores armadilhas exploradas pelas bancas examinadoras (especialmente FGV e VUNESP) é induzir o estudante a supor que, havendo um sentido mais comum/concreto, os sentidos secundários registrados no dicionário seriam figurados.\nSubstantivo \"Banco\":\nAcepção 1: Instituição financeira comercial (\"Não conseguimos o atendimento no banco\").\nAcepção 2: Peça de mobília / assento (\"Afaste o banco da mesa\").\nConclusão: Ambos são sentidos reais, dicionarizados e denotativos.\nVerbo \"Montar\":\nAcepção 1: Cavalgar animal (\"Montar a cavalo\").\nAcepção 2: Estruturar, equipar, organizar (\"Montar um escritório\", \"Montar um quebra-cabeça\").\nConclusão: Ambos são sentidos próprios dicionarizados. O sentido figurado só surge em construções translato-metafóricas populares (ex.: \"Ele não vai montar em mim\" = abusar da boa vontade).\nVerbo \"Gastar\":\nAcepção 1: Desembolsar moeda / dinheiro (\"Gastar reais\").\nAcepção 2: Despender, consumir tempo ou duração (\"Gastava uma hora no trajeto\").\nConclusão: O uso temporal de gastar é acepção denotativa primária de dicionário, constituindo polissemia denotativa e não linguagem figurada.\nSubstantivo \"Canto\":\nAcepção 1: Vértice físico / espaço (\"O canto da sala\").\nAcepção 2: Melodia vocal (\"O canto dos pássaros\").\nConclusão: Ambos são denotativos.\nRegra de ouro da distinção\nPara que haja sentido figurado, o termo deve romper com a totalidade das acepções literais diretas do dicionário e exigir uma transposição metafórica no contexto.\nRelações\nPossui alerta em: , .\nExemplificado em: , ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A polissemia consiste na multiplicidade de acepções e significados dicionarizados que um mesmo significante (palavra) pode assumir em diferentes contextos reais. O fato de um vocábulo possuir múltiplos sentidos dicionarizados não torna nenhum deles figurado; ambos permanecem no domínio do sentido próprio/denotativo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Uma das maiores armadilhas exploradas pelas bancas examinadoras (especialmente FGV e VUNESP) é induzir o estudante a supor que, havendo um sentido mais comum/concreto, os sentidos secundários registrados no dicionário seriam figurados."
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Substantivo \"Banco\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Acepção 1: Instituição financeira comercial (\"Não conseguimos o atendimento no banco\").",
+                "Acepção 2: Peça de mobília / assento (\"Afaste o banco da mesa\").",
+                "Conclusão: Ambos são sentidos reais, dicionarizados e denotativos."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo \"Montar\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Acepção 1: Cavalgar animal (\"Montar a cavalo\").",
+                "Acepção 2: Estruturar, equipar, organizar (\"Montar um escritório\", \"Montar um quebra-cabeça\").",
+                "Conclusão: Ambos são sentidos próprios dicionarizados. O sentido figurado só surge em construções translato-metafóricas populares (ex.: \"Ele não vai montar em mim\" = abusar da boa vontade)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Verbo \"Gastar\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Acepção 1: Desembolsar moeda / dinheiro (\"Gastar reais\").",
+                "Acepção 2: Despender, consumir tempo ou duração (\"Gastava uma hora no trajeto\").",
+                "Conclusão: O uso temporal de gastar é acepção denotativa primária de dicionário, constituindo polissemia denotativa e não linguagem figurada."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Substantivo \"Canto\":"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Acepção 1: Vértice físico / espaço (\"O canto da sala\").",
+                "Acepção 2: Melodia vocal (\"O canto dos pássaros\").",
+                "Conclusão: Ambos são denotativos."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regra de ouro da distinção"
+            },
+            {
+              "type": "paragraph",
+              "text": "Para que haja sentido figurado, o termo deve romper com a totalidade das acepções literais diretas do dicionário e exigir uma transposição metafórica no contexto."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A12-G01-SEM-FIG-002",
+                  "targetTitle": "Achar que o Segundo Sentido Dicionarizado na Polissemia é Figurado",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A12-G01-SEM-FIG-003",
+                  "targetTitle": "Tratar Expressões Temporais Literais com o Verbo \"Gastar\" como Figuradas",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-001",
+                  "targetTitle": "Exercício 1: Polissemia do Vocábulo \"Banco\" (FGV)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado em",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-010",
+                  "targetTitle": "Questão 02: Sentido Figurado e Polissemia de Montar e Gastar (VUNESP 2023)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -150,8 +454,151 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nReificação (ou coisificação, do latim res, \"coisa\") é o processo semântico-estilístico pelo qual propriedades, comportamentos, funções ou a própria essência de objetos inanimados, máquinas, dispositivos ou alimentos são atribuídos a seres humanos, papéis sociais ou cidades (e vice-versa).\nRegra categórica de prova\nToda reificação configura obrigatoriamente sentido figurado (conotativo).\nExplicação consolidada\nA reificação opera a desumanização metafórica ou a materialização de entidades vivas e abstratas:\nAtribuição de propriedades de alimentos/sabores a pessoas:\n\"Ele foi muito doce e atencioso comigo.\" (Pessoas não possuem sabor doce gustativo; o termo expressa meiguice através da coisificação alimentar).\nAtribuição de peças/dispositivos mecânicos a seres vivos:\n\"A bateria das crianças parece não acabar.\" (Crianças não são aparelhos movidos a acumuladores de eletricidade; a bateria expressa energia vital contínua).\nAtribuição de oscilação física/mecânica a cidades e pessoas:\n\"Para voltar a ser uma cidade vibrante...\" / \"Aluno vibrante.\" (O sentido real de vibrante é oscilar mecanicamente, como em celular vibrante. Aplicado a cidades ou pessoas, significa dinâmica, movimentada, empolgada).\nTransformação de função humana em objeto material:\n\"Nosso papel é ser um trampolim para a observação de aves...\" (Trampolim é a prancha física elástica de salto; atribuído a um papel institucional ou humano, significa instrumento / meio de propulsão).\nIdentificação direta de personagem com objeto consumível:\n\"Ele mesmo um cigarro em chamas.\" (Dalton Trevisan compara o homem ansioso a um rolo de tabaco consumindo-se pelo fogo).\nLimites e exceções\nSe o vocábulo de objeto for aplicado ao próprio objeto físico em seu estado material real (ex.: \"Ele fumava um cigarro\", \"Trocou a bateria do celular\", \"O atleta saltou do trampolim\"), o emprego é denotativo. A reificação exige a projeção do traço de objeto sobre o ser humano ou entidade viva.Termo associado: TERM-A12-G01-SEM-FIG-005."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Reificação (ou coisificação, do latim res, \"coisa\") é o processo semântico-estilístico pelo qual propriedades, comportamentos, funções ou a própria essência de objetos inanimados, máquinas, dispositivos ou alimentos são atribuídos a seres humanos, papéis sociais ou cidades (e vice-versa)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regra categórica de prova"
+            },
+            {
+              "type": "paragraph",
+              "text": "Toda reificação configura obrigatoriamente sentido figurado (conotativo)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A reificação opera a desumanização metafórica ou a materialização de entidades vivas e abstratas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Atribuição de propriedades de alimentos/sabores a pessoas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Ele foi muito doce e atencioso comigo.\" (Pessoas não possuem sabor doce gustativo; o termo expressa meiguice através da coisificação alimentar)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Atribuição de peças/dispositivos mecânicos a seres vivos:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"A bateria das crianças parece não acabar.\" (Crianças não são aparelhos movidos a acumuladores de eletricidade; a bateria expressa energia vital contínua)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Atribuição de oscilação física/mecânica a cidades e pessoas:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Para voltar a ser uma cidade vibrante...\" / \"Aluno vibrante.\" (O sentido real de vibrante é oscilar mecanicamente, como em celular vibrante. Aplicado a cidades ou pessoas, significa dinâmica, movimentada, empolgada)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Transformação de função humana em objeto material:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Nosso papel é ser um trampolim para a observação de aves...\" (Trampolim é a prancha física elástica de salto; atribuído a um papel institucional ou humano, significa instrumento / meio de propulsão)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificação direta de personagem com objeto consumível:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Ele mesmo um cigarro em chamas.\" (Dalton Trevisan compara o homem ansioso a um rolo de tabaco consumindo-se pelo fogo)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Limites e exceções"
+            },
+            {
+              "type": "paragraph",
+              "text": "Se o vocábulo de objeto for aplicado ao próprio objeto físico em seu estado material real (ex.: \"Ele fumava um cigarro\", \"Trocou a bateria do celular\", \"O atleta saltou do trampolim\"), o emprego é denotativo. A reificação exige a projeção do traço de objeto sobre o ser humano ou entidade viva."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-002",
+                  "targetTitle": "Exercício 2: Reificação com o Vocábulo \"Doce\"",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-004",
+                  "targetTitle": "Exercício 4: Reificação Tecnológica (\"Bateria\")",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-010",
+                  "targetTitle": "Questão 02: Sentido Figurado e Polissemia de Montar e Gastar (VUNESP 2023)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-011",
+                  "targetTitle": "Questão 03: Julgamento Misto de Classificação e Significado (VUNESP 2023)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-013",
+                  "targetTitle": "Questão 05: Reificação e Sentido Literal em Dalton Trevisan (FCC 2022)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -164,8 +611,42 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Método das Setas Semânticas é o protocolo visual e cognitivo pelo qual o estudante rastreia as linhas de ligação de um vocábulo até seu referente sintático-semântico e termos coocorrentes no texto-base, delimitando seu campo de ideias para averiguar a compatibilidade física/real do enunciado.\nRegra de distinção crítica: Seta é Semântica, não Sintaxe\nO estudante não deve classificar funções oracionais (adjunto adnominal, complemento nominal, predicativo do sujeito). A função sintática é irrelevante para a conotação. A seta tem finalidade exclusivamente semântica: aponta para a entidade do mundo real à qual a qualidade ou ação está sendo atribuída.\nRelações\nOperacionaliza: .\nEvita o erro: ."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Método das Setas Semânticas é o protocolo visual e cognitivo pelo qual o estudante rastreia as linhas de ligação de um vocábulo até seu referente sintático-semântico e termos coocorrentes no texto-base, delimitando seu campo de ideias para averiguar a compatibilidade física/real do enunciado."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Regra de distinção crítica: Seta é Semântica, não Sintaxe"
+            },
+            {
+              "type": "paragraph",
+              "text": "O estudante não deve classificar funções oracionais (adjunto adnominal, complemento nominal, predicativo do sujeito). A função sintática é irrelevante para a conotação. A seta tem finalidade exclusivamente semântica: aponta para a entidade do mundo real à qual a qualidade ou ação está sendo atribuída."
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G01-SEM-FIG-001",
+                  "targetTitle": "Protocolo Analítico Unificado em 4 Etapas (O Método das Setas Semânticas)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A12-G01-SEM-FIG-005",
+                  "targetTitle": "O Erro de Fazer Análise Sintática em Questões Semânticas",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -178,8 +659,96 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO discurso científico e os textos de divulgação científica empregam intencionalmente vocábulos e metáforas em sentido figurado com finalidade didática, visando aproximar fenômenos biológicos, físicos e químicos complexos da compreensão do leitor leigo, sem que isso configure erro conceitual ou vício de linguagem.\nExplicação consolidada\nA banca FGV explora intensamente a desconstrução do mito de que textos científicos seriam exclusivamente denotativos. Em provas recentes, a banca apresenta trechos de reportagens científicas repletos de metáforas:\nMetáforas físicas de ação em processos biológicos/médicos:\nPesquisa que se aprofunda nos resultados (não há descida espacial a um fundo; há intensificação de análise mental).\nCaracterística genética que impulsiona perda neuronal (não há empurrão mecânico de braços).\nCientistas que buscam chegar a soluções (solução não é destino geográfico).\nHipóteses levantadas (ideias não são erguidas fisicamente do chão).\nPopulação que é bombardeada por poluição ou soterrada por plástico (não há explosivos bélicos nem terra caindo sobre corpos).\nNuvens nas quais chovem microplásticos (transposição meteorológica para deposição particulada).\nO papel tipográfico das aspas demarcatórias:\nNo excerto \"bactéria capaz de 'comer' esse material\", as aspas simples (utilizadas dentro da citação com aspas duplas) servem para sinalizar que o verbo foi empregado fora do sentido fisiológico literal (bactérias realizam catálise enzimática e degradação molecular, não mastigação orgânica).\nO gabarito literal em questões científicas da FGV:\nEm meio a quatro assertivas com metáforas didáticas, a alternativa correta (sentido literal) é aquela que expressa uma ação mecânica/biológica factual direta: cobaias com perda de movimento (locomoção física) ou biólogos que analisaram placentas (exame laboratorial físico).Estratégia associada: .\nTermo associado: TERM-A12-G01-SEM-FIG-008, TERM-A12-G01-SEM-FIG-009."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O discurso científico e os textos de divulgação científica empregam intencionalmente vocábulos e metáforas em sentido figurado com finalidade didática, visando aproximar fenômenos biológicos, físicos e químicos complexos da compreensão do leitor leigo, sem que isso configure erro conceitual ou vício de linguagem."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A banca FGV explora intensamente a desconstrução do mito de que textos científicos seriam exclusivamente denotativos. Em provas recentes, a banca apresenta trechos de reportagens científicas repletos de metáforas:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Metáforas físicas de ação em processos biológicos/médicos:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pesquisa que se aprofunda nos resultados (não há descida espacial a um fundo; há intensificação de análise mental).",
+                "Característica genética que impulsiona perda neuronal (não há empurrão mecânico de braços).",
+                "Cientistas que buscam chegar a soluções (solução não é destino geográfico).",
+                "Hipóteses levantadas (ideias não são erguidas fisicamente do chão).",
+                "População que é bombardeada por poluição ou soterrada por plástico (não há explosivos bélicos nem terra caindo sobre corpos).",
+                "Nuvens nas quais chovem microplásticos (transposição meteorológica para deposição particulada)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O papel tipográfico das aspas demarcatórias:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "No excerto \"bactéria capaz de 'comer' esse material\", as aspas simples (utilizadas dentro da citação com aspas duplas) servem para sinalizar que o verbo foi empregado fora do sentido fisiológico literal (bactérias realizam catálise enzimática e degradação molecular, não mastigação orgânica)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O gabarito literal em questões científicas da FGV:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Em meio a quatro assertivas com metáforas didáticas, a alternativa correta (sentido literal) é aquela que expressa uma ação mecânica/biológica factual direta: cobaias com perda de movimento (locomoção física) ou biólogos que analisaram placentas (exame laboratorial físico)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-015",
+                  "targetTitle": "Questão 07: Discurso Científico e Literalidade Biológica (FGV 2023)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-016",
+                  "targetTitle": "Questão 08: Divulgação Científica e Aspas Demarcatórias (FGV 2023)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A12-G01-SEM-FIG-003",
+                  "targetTitle": "Técnica da Ajuda Mútua e Coerência de Conjunto (Padrão FGV)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "resolution"
+                }
+              ]
             }
           ]
         },
@@ -192,44 +761,108 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA linguagem literária, poética e a crônica jornalística utilizam o deslocamento semântico de termos extraídos de campos religiosos, biológicos, patológicos ou somáticos para metaforizar vaidades humanas, perturbações emocionais e vivências subjetivas.\nManifestações analisadas nas bancas\nDeslocamento zoológico e religioso para a vaidade humana (Consulplan):\n\"Pavão enfático\": A ostentação da ave unida ao ato de dar ênfase qualifica o redator que se exibe narcisicamente.\n\"Volúpia autoral\": Transfere o prazer sensorial/luxúria corporal para a satisfação de ver o próprio texto publicado sem retoques.\n\"Estilo profanado\": Transfere a violação do sagrado/religioso para as correções editoriais em um texto.\nMetáforas somáticas e da loucura em prosa literária (FCC):\n\"Formigas de fogo mordem sob a camisa\": (Dalton Trevisan) Metaforiza a excitação e taquicardia do jovem apaixonado.\n\"Grãozinho de sandice\": (Machado de Assis) Quantificação granulométrica vegetal/mineral aplicada à loucura.\n\"A moléstia lentamente o comeu\": (Machado de Assis) Ação de mastigar/ingerir aplicada à deterioração patológica.\nMetáforas de choque e memória em poesia e ensaios (Cebraspe):\n\"Fui abrir e me constipei\": (Carlos Drummond de Andrade) Sintoma de resfriado corporal expressando a paralisia do choque amoroso.\n\"Livros que deixaram rastros\": Marcas físicas no solo usadas para representar impressões emocionais na infância."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A linguagem literária, poética e a crônica jornalística utilizam o deslocamento semântico de termos extraídos de campos religiosos, biológicos, patológicos ou somáticos para metaforizar vaidades humanas, perturbações emocionais e vivências subjetivas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Manifestações analisadas nas bancas"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Deslocamento zoológico e religioso para a vaidade humana (Consulplan):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Pavão enfático\": A ostentação da ave unida ao ato de dar ênfase qualifica o redator que se exibe narcisicamente.",
+                "\"Volúpia autoral\": Transfere o prazer sensorial/luxúria corporal para a satisfação de ver o próprio texto publicado sem retoques.",
+                "\"Estilo profanado\": Transfere a violação do sagrado/religioso para as correções editoriais em um texto."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Metáforas somáticas e da loucura em prosa literária (FCC):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Formigas de fogo mordem sob a camisa\": (Dalton Trevisan) Metaforiza a excitação e taquicardia do jovem apaixonado.",
+                "\"Grãozinho de sandice\": (Machado de Assis) Quantificação granulométrica vegetal/mineral aplicada à loucura.",
+                "\"A moléstia lentamente o comeu\": (Machado de Assis) Ação de mastigar/ingerir aplicada à deterioração patológica."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Metáforas de choque e memória em poesia e ensaios (Cebraspe):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Fui abrir e me constipei\": (Carlos Drummond de Andrade) Sintoma de resfriado corporal expressando a paralisia do choque amoroso.",
+                "\"Livros que deixaram rastros\": Marcas físicas no solo usadas para representar impressões emocionais na infância."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-012",
+                  "targetTitle": "Questão 04: Conotação e Deslocamento Semântico em Crônica (Consulplan 2023)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-013",
+                  "targetTitle": "Questão 05: Reificação e Sentido Literal em Dalton Trevisan (FCC 2022)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-014",
+                  "targetTitle": "Questão 06: Classificação Sequencial em Machado de Assis (FCC 2022)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-017",
+                  "targetTitle": "Questão 09: Poesia Lírica e Metáfora Somática (Cebraspe 2023)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WORKED_EXAMPLE-IP-A12-G01-018",
+                  "targetTitle": "Questão 10: Rastros em Mediação de Leitura (Cebraspe 2023)",
+                  "targetUnitId": "IP-A12-G01",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA semântica é o ramo dos estudos linguísticos que investiga o significado, a significação e o valor interpretativo das palavras e enunciados, os quais são condicionados de forma estrita pelo contexto em que ocorrem (\"Semântica é Contexto\").\nExplicação consolidada\nA compreensão semântica exige a superação da análise morfológica estática. Enquanto a morfologia classifica os vocábulos isoladamente em classes gramaticais (substantivo, adjetivo, verbo, advérbio), a semântica examina a carga de sentido que a palavra assume em sua teia de relações com os outros termos da oração. Portanto, não se julga se um termo está em sentido próprio ou figurado analisando sua classe ou sua forma dicionarizada isolada, mas sim observando o campo de ideias que ele estabelece com seu referente imediato no texto.\nCritérios de reconhecimento\nA análise deve sempre considerar o período integral.\nO sentido é verificado pela compatibilidade conceitual entre os elementos conectados na frase.\nRelações\nContrasta com: Análise morfológica formal.\nOperacionalizado por: (Método das Setas Semânticas).\nTermo associado: TERM-A12-G01-SEM-FIG-001."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nSentido próprio (ou denotativo) é o emprego da palavra em sua acepção primária, literal, lógica, usual e dicionarizada, retratando seres, ações e fatos de forma objetiva e conforme a realidade concreta do mundo físico.\nExplicação consolidada\nAs bancas organizadoras de concursos públicos utilizam um grupo rigoroso de expressões perfeitamente sinônimas para indicar o sentido denotativo:\nCadeia de Sinônimos Oficiais: Sentido Próprio = Sentido Real = Sentido Lógico = Sentido Dicionarizado = Sentido Denotativo = Sentido Literal = Sentido Usual.\nBancas modernas (especialmente a FGV) substituem frequentemente a palavra \"denotativo\" pela expressão \"sentido lógico\", exigindo que o candidato compreenda que não se trata de raciocínio lógico-matemático formal, mas da preservação do sentido dicionarizado básico.\nExemplos\n\"Minha mulher é linda.\" (Propriedade estética expressa literalmente).\n\"O funcionário estava meio confuso com os dados.\" (Estado mental humano literal).\n\"Chorou intensamente até dormir.\" (Ações fisiológicas literais).\n\"Não pode negar, meio feio?\" (Avaliação estética concreta do próprio rosto no espelho).\n\"Eles analisaram as placentas de 17 gestantes.\" (Procedimento de exame laboratorial concreto).\nRelações\nContrasta com: (Sentido Figurado).\nContém: (Polissemia Denotativa).\nPossui alerta em: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nSentido figurado (ou conotativo) é o emprego da palavra com significado estendido, translato, metafórico, poético ou simbólico, extrapolando as propriedades físicas e lógicas imediatas com base em analogias e associações de ideias (\"como se fosse\").\nExplicação consolidada\nNa linguagem conotativa, ocorre um desvio proposital da literalidade. O vocábulo é transferido de seu domínio semântico original para outro, criando novas camadas de significado expressivo.\nCadeia de Sinônimos Oficiais: Sentido Figurado = Sentido Conotativo = Sentido Não Lógico = Fora do Sentido Lógico = Sentido Metafórico = Sentido Poético = Sentido Não Usual.\nExemplos\n\"Minha mulher é uma flor.\" (Metáfora de delicadeza/beleza; biologicamente uma mulher não é vegetal).\n\"A sala estava um brinco.\" (Metáfora de limpeza impecável; uma sala não é joia).\n\"Humorismo é a arte de fazer cócegas no raciocínio dos outros.\" (Metáfora tátil aplicada a uma faculdade intelectual abstrata).\n\"Minha memória não se desgrudava daquela cena, e meu olhar apagava a paisagem...\" (Ações físicas de colar e apagar projetadas sobre abstrações mentais e sensoriais).\nRelações\nContrasta com: (Sentido Próprio).\nMecanismos específicos: (Reificação), (Conotação Científica), (Crônica Literária)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA polissemia consiste na multiplicidade de acepções e significados dicionarizados que um mesmo significante (palavra) pode assumir em diferentes contextos reais. O fato de um vocábulo possuir múltiplos sentidos dicionarizados não torna nenhum deles figurado; ambos permanecem no domínio do sentido próprio/denotativo.\nExplicação consolidada\nUma das maiores armadilhas exploradas pelas bancas examinadoras (especialmente FGV e VUNESP) é induzir o estudante a supor que, havendo um sentido mais comum/concreto, os sentidos secundários registrados no dicionário seriam figurados.\nSubstantivo \"Banco\":\nAcepção 1: Instituição financeira comercial (\"Não conseguimos o atendimento no banco\").\nAcepção 2: Peça de mobília / assento (\"Afaste o banco da mesa\").\nConclusão: Ambos são sentidos reais, dicionarizados e denotativos.\nVerbo \"Montar\":\nAcepção 1: Cavalgar animal (\"Montar a cavalo\").\nAcepção 2: Estruturar, equipar, organizar (\"Montar um escritório\", \"Montar um quebra-cabeça\").\nConclusão: Ambos são sentidos próprios dicionarizados. O sentido figurado só surge em construções translato-metafóricas populares (ex.: \"Ele não vai montar em mim\" = abusar da boa vontade).\nVerbo \"Gastar\":\nAcepção 1: Desembolsar moeda / dinheiro (\"Gastar reais\").\nAcepção 2: Despender, consumir tempo ou duração (\"Gastava uma hora no trajeto\").\nConclusão: O uso temporal de gastar é acepção denotativa primária de dicionário, constituindo polissemia denotativa e não linguagem figurada.\nSubstantivo \"Canto\":\nAcepção 1: Vértice físico / espaço (\"O canto da sala\").\nAcepção 2: Melodia vocal (\"O canto dos pássaros\").\nConclusão: Ambos são denotativos.\nRegra de ouro da distinção\nPara que haja sentido figurado, o termo deve romper com a totalidade das acepções literais diretas do dicionário e exigir uma transposição metafórica no contexto.\nRelações\nPossui alerta em: , .\nExemplificado em: , ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nReificação (ou coisificação, do latim res, \"coisa\") é o processo semântico-estilístico pelo qual propriedades, comportamentos, funções ou a própria essência de objetos inanimados, máquinas, dispositivos ou alimentos são atribuídos a seres humanos, papéis sociais ou cidades (e vice-versa).\nRegra categórica de prova\nToda reificação configura obrigatoriamente sentido figurado (conotativo).\nExplicação consolidada\nA reificação opera a desumanização metafórica ou a materialização de entidades vivas e abstratas:\nAtribuição de propriedades de alimentos/sabores a pessoas:\n\"Ele foi muito doce e atencioso comigo.\" (Pessoas não possuem sabor doce gustativo; o termo expressa meiguice através da coisificação alimentar).\nAtribuição de peças/dispositivos mecânicos a seres vivos:\n\"A bateria das crianças parece não acabar.\" (Crianças não são aparelhos movidos a acumuladores de eletricidade; a bateria expressa energia vital contínua).\nAtribuição de oscilação física/mecânica a cidades e pessoas:\n\"Para voltar a ser uma cidade vibrante...\" / \"Aluno vibrante.\" (O sentido real de vibrante é oscilar mecanicamente, como em celular vibrante. Aplicado a cidades ou pessoas, significa dinâmica, movimentada, empolgada).\nTransformação de função humana em objeto material:\n\"Nosso papel é ser um trampolim para a observação de aves...\" (Trampolim é a prancha física elástica de salto; atribuído a um papel institucional ou humano, significa instrumento / meio de propulsão).\nIdentificação direta de personagem com objeto consumível:\n\"Ele mesmo um cigarro em chamas.\" (Dalton Trevisan compara o homem ansioso a um rolo de tabaco consumindo-se pelo fogo).\nLimites e exceções\nSe o vocábulo de objeto for aplicado ao próprio objeto físico em seu estado material real (ex.: \"Ele fumava um cigarro\", \"Trocou a bateria do celular\", \"O atleta saltou do trampolim\"), o emprego é denotativo. A reificação exige a projeção do traço de objeto sobre o ser humano ou entidade viva.Termo associado: TERM-A12-G01-SEM-FIG-005."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Método das Setas Semânticas é o protocolo visual e cognitivo pelo qual o estudante rastreia as linhas de ligação de um vocábulo até seu referente sintático-semântico e termos coocorrentes no texto-base, delimitando seu campo de ideias para averiguar a compatibilidade física/real do enunciado.\nRegra de distinção crítica: Seta é Semântica, não Sintaxe\nO estudante não deve classificar funções oracionais (adjunto adnominal, complemento nominal, predicativo do sujeito). A função sintática é irrelevante para a conotação. A seta tem finalidade exclusivamente semântica: aponta para a entidade do mundo real à qual a qualidade ou ação está sendo atribuída.\nRelações\nOperacionaliza: .\nEvita o erro: ."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO discurso científico e os textos de divulgação científica empregam intencionalmente vocábulos e metáforas em sentido figurado com finalidade didática, visando aproximar fenômenos biológicos, físicos e químicos complexos da compreensão do leitor leigo, sem que isso configure erro conceitual ou vício de linguagem.\nExplicação consolidada\nA banca FGV explora intensamente a desconstrução do mito de que textos científicos seriam exclusivamente denotativos. Em provas recentes, a banca apresenta trechos de reportagens científicas repletos de metáforas:\nMetáforas físicas de ação em processos biológicos/médicos:\nPesquisa que se aprofunda nos resultados (não há descida espacial a um fundo; há intensificação de análise mental).\nCaracterística genética que impulsiona perda neuronal (não há empurrão mecânico de braços).\nCientistas que buscam chegar a soluções (solução não é destino geográfico).\nHipóteses levantadas (ideias não são erguidas fisicamente do chão).\nPopulação que é bombardeada por poluição ou soterrada por plástico (não há explosivos bélicos nem terra caindo sobre corpos).\nNuvens nas quais chovem microplásticos (transposição meteorológica para deposição particulada).\nO papel tipográfico das aspas demarcatórias:\nNo excerto \"bactéria capaz de 'comer' esse material\", as aspas simples (utilizadas dentro da citação com aspas duplas) servem para sinalizar que o verbo foi empregado fora do sentido fisiológico literal (bactérias realizam catálise enzimática e degradação molecular, não mastigação orgânica).\nO gabarito literal em questões científicas da FGV:\nEm meio a quatro assertivas com metáforas didáticas, a alternativa correta (sentido literal) é aquela que expressa uma ação mecânica/biológica factual direta: cobaias com perda de movimento (locomoção física) ou biólogos que analisaram placentas (exame laboratorial físico).Estratégia associada: .\nTermo associado: TERM-A12-G01-SEM-FIG-008, TERM-A12-G01-SEM-FIG-009."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA linguagem literária, poética e a crônica jornalística utilizam o deslocamento semântico de termos extraídos de campos religiosos, biológicos, patológicos ou somáticos para metaforizar vaidades humanas, perturbações emocionais e vivências subjetivas.\nManifestações analisadas nas bancas\nDeslocamento zoológico e religioso para a vaidade humana (Consulplan):\n\"Pavão enfático\": A ostentação da ave unida ao ato de dar ênfase qualifica o redator que se exibe narcisicamente.\n\"Volúpia autoral\": Transfere o prazer sensorial/luxúria corporal para a satisfação de ver o próprio texto publicado sem retoques.\n\"Estilo profanado\": Transfere a violação do sagrado/religioso para as correções editoriais em um texto.\nMetáforas somáticas e da loucura em prosa literária (FCC):\n\"Formigas de fogo mordem sob a camisa\": (Dalton Trevisan) Metaforiza a excitação e taquicardia do jovem apaixonado.\n\"Grãozinho de sandice\": (Machado de Assis) Quantificação granulométrica vegetal/mineral aplicada à loucura.\n\"A moléstia lentamente o comeu\": (Machado de Assis) Ação de mastigar/ingerir aplicada à deterioração patológica.\nMetáforas de choque e memória em poesia e ensaios (Cebraspe):\n\"Fui abrir e me constipei\": (Carlos Drummond de Andrade) Sintoma de resfriado corporal expressando a paralisia do choque amoroso.\n\"Livros que deixaram rastros\": Marcas físicas no solo usadas para representar impressões emocionais na infância."
         }
       ]
     },
@@ -284,7 +917,9 @@
               "RULE-IP-A12-G01-001",
               "EXP-IP-A12-G01-034"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -417,7 +1052,9 @@
               "PROC-A12-G01-SEM-FIG-001",
               "EXP-IP-A12-G01-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -507,7 +1144,9 @@
               "PROC-A12-G01-SEM-FIG-002",
               "EXP-IP-A12-G01-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -597,7 +1236,9 @@
               "PROC-A12-G01-SEM-FIG-003",
               "EXP-IP-A12-G01-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -677,7 +1318,9 @@
               "CONTRAST-IP-A12-G01-001",
               "EXP-IP-A12-G01-042"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -753,7 +1396,9 @@
               "CONTRAST-IP-A12-G01-002",
               "EXP-IP-A12-G01-043"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -829,7 +1474,9 @@
               "CONTRAST-IP-A12-G01-003",
               "EXP-IP-A12-G01-044"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -882,7 +1529,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-001",
               "EXP-IP-A12-G01-045"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -931,7 +1580,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-002",
               "EXP-IP-A12-G01-046"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -980,7 +1631,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-003",
               "EXP-IP-A12-G01-047"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1029,7 +1682,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-004",
               "EXP-IP-A12-G01-048"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1078,7 +1733,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-005",
               "EXP-IP-A12-G01-049"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1127,7 +1784,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-006",
               "EXP-IP-A12-G01-050"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1176,7 +1835,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-007",
               "EXP-IP-A12-G01-051"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1225,7 +1886,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-008",
               "EXP-IP-A12-G01-052"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1288,7 +1951,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-009",
               "EXP-IP-A12-G01-053"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1352,7 +2017,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-010",
               "EXP-IP-A12-G01-054"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1416,7 +2083,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-011",
               "EXP-IP-A12-G01-055"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1479,7 +2148,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-012",
               "EXP-IP-A12-G01-056"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1543,7 +2214,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-013",
               "EXP-IP-A12-G01-057"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1617,7 +2290,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-014",
               "EXP-IP-A12-G01-058"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1681,7 +2356,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-015",
               "EXP-IP-A12-G01-059"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1745,7 +2422,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-016",
               "EXP-IP-A12-G01-060"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1800,7 +2479,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-017",
               "EXP-IP-A12-G01-061"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1855,7 +2536,9 @@
               "WORKED_EXAMPLE-IP-A12-G01-018",
               "EXP-IP-A12-G01-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1906,7 +2589,9 @@
               "WARN-A12-G01-SEM-FIG-001",
               "EXP-IP-A12-G01-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1944,7 +2629,9 @@
               "WARN-A12-G01-SEM-FIG-002",
               "EXP-IP-A12-G01-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1981,7 +2668,9 @@
               "WARN-A12-G01-SEM-FIG-003",
               "EXP-IP-A12-G01-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2018,7 +2707,9 @@
               "WARN-A12-G01-SEM-FIG-004",
               "EXP-IP-A12-G01-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2055,7 +2746,9 @@
               "WARN-A12-G01-SEM-FIG-005",
               "EXP-IP-A12-G01-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2092,27 +2785,93 @@
               "WARN-A12-G01-SEM-FIG-006",
               "EXP-IP-A12-G01-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Fundamentos da Semântica e o Primado do Contexto**: Definição ou ideia central\nA semântica é o ramo dos estudos linguísticos que investiga o significado, a significação e o valor interpretativo das palavras e enunciados, os quais são condicionados de forma estrita pelo contexto em que ocorrem (\"Semântica é Contexto\").\nExplicação consolidada\nA compreensão semântica exige a superação da análise morfológica estática. Enquanto a morfologia classifica os vocábulos isoladamente em classes gramaticais (substantivo, adjetivo, verbo, advérbio), a semântica examina a carga de sentido que a palavra assume em sua teia de relações com os outros termos da oração. Portanto, não se julga se um termo está em sentido próprio ou figurado analisando sua classe ou sua forma dicionarizada isolada, mas sim observando o campo de ideias que ele estabelece com seu referente imediato no texto.\nCritérios de reconhecimento\nA análise deve sempre considerar o período integral.\nO sentido é verificado pela compatibilidade conceitual entre os elementos conectados na frase.\nRelações\nContrasta com: Análise morfológica formal.\nOperacionalizado por: (Método das Setas Semânticas).\nTermo associado: TERM-A12-G01-SEM-FIG-001.",
-            "**Sentido Próprio (Denotação, Sentido Lógico, Literal e Dicionarizado)**: Definição ou ideia central\nSentido próprio (ou denotativo) é o emprego da palavra em sua acepção primária, literal, lógica, usual e dicionarizada, retratando seres, ações e fatos de forma objetiva e conforme a realidade concreta do mundo físico.\nExplicação consolidada\nAs bancas organizadoras de concursos públicos utilizam um grupo rigoroso de expressões perfeitamente sinônimas para indicar o sentido denotativo:\nCadeia de Sinônimos Oficiais: Sentido Próprio = Sentido Real = Sentido Lógico = Sentido Dicionarizado = Sentido Denotativo = Sentido Literal = Sentido Usual.\nBancas modernas (especialmente a FGV) substituem frequentemente a palavra \"denotativo\" pela expressão \"sentido lógico\", exigindo que o candidato compreenda que não se trata de raciocínio lógico-matemático formal, mas da preservação do sentido dicionarizado básico.\nExemplos\n\"Minha mulher é linda.\" (Propriedade estética expressa literalmente).\n\"O funcionário estava meio confuso com os dados.\" (Estado mental humano literal).\n\"Chorou intensamente até dormir.\" (Ações fisiológicas literais).\n\"Não pode negar, meio feio?\" (Avaliação estética concreta do próprio rosto no espelho).\n\"Eles analisaram as placentas de 17 gestantes.\" (Procedimento de exame laboratorial concreto).\nRelações\nContrasta com: (Sentido Figurado).\nContém: (Polissemia Denotativa).\nPossui alerta em: .",
-            "**Sentido Figurado (Conotação, Sentido Não Lógico e Metafórico)**: Definição ou ideia central\nSentido figurado (ou conotativo) é o emprego da palavra com significado estendido, translato, metafórico, poético ou simbólico, extrapolando as propriedades físicas e lógicas imediatas com base em analogias e associações de ideias (\"como se fosse\").\nExplicação consolidada\nNa linguagem conotativa, ocorre um desvio proposital da literalidade. O vocábulo é transferido de seu domínio semântico original para outro, criando novas camadas de significado expressivo.\nCadeia de Sinônimos Oficiais: Sentido Figurado = Sentido Conotativo = Sentido Não Lógico = Fora do Sentido Lógico = Sentido Metafórico = Sentido Poético = Sentido Não Usual.\nExemplos\n\"Minha mulher é uma flor.\" (Metáfora de delicadeza/beleza; biologicamente uma mulher não é vegetal).\n\"A sala estava um brinco.\" (Metáfora de limpeza impecável; uma sala não é joia).\n\"Humorismo é a arte de fazer cócegas no raciocínio dos outros.\" (Metáfora tátil aplicada a uma faculdade intelectual abstrata).\n\"Minha memória não se desgrudava daquela cena, e meu olhar apagava a paisagem...\" (Ações físicas de colar e apagar projetadas sobre abstrações mentais e sensoriais).\nRelações\nContrasta com: (Sentido Próprio).\nMecanismos específicos: (Reificação), (Conotação Científica), (Crônica Literária).",
-            "**Distinção Teórica e Prática entre Polissemia e Sentido Figurado**: Definição ou ideia central\nA polissemia consiste na multiplicidade de acepções e significados dicionarizados que um mesmo significante (palavra) pode assumir em diferentes contextos reais. O fato de um vocábulo possuir múltiplos sentidos dicionarizados não torna nenhum deles figurado; ambos permanecem no domínio do sentido próprio/denotativo.\nExplicação consolidada\nUma das maiores armadilhas exploradas pelas bancas examinadoras (especialmente FGV e VUNESP) é induzir o estudante a supor que, havendo um sentido mais comum/concreto, os sentidos secundários registrados no dicionário seriam figurados.\nSubstantivo \"Banco\":\nAcepção 1: Instituição financeira comercial (\"Não conseguimos o atendimento no banco\").\nAcepção 2: Peça de mobília / assento (\"Afaste o banco da mesa\").\nConclusão: Ambos são sentidos reais, dicionarizados e denotativos.\nVerbo \"Montar\":\nAcepção 1: Cavalgar animal (\"Montar a cavalo\").\nAcepção 2: Estruturar, equipar, organizar (\"Montar um escritório\", \"Montar um quebra-cabeça\").\nConclusão: Ambos são sentidos próprios dicionarizados. O sentido figurado só surge em construções translato-metafóricas populares (ex.: \"Ele não vai montar em mim\" = abusar da boa vontade).\nVerbo \"Gastar\":\nAcepção 1: Desembolsar moeda / dinheiro (\"Gastar reais\").\nAcepção 2: Despender, consumir tempo ou duração (\"Gastava uma hora no trajeto\").\nConclusão: O uso temporal de gastar é acepção denotativa primária de dicionário, constituindo polissemia denotativa e não linguagem figurada.\nSubstantivo \"Canto\":\nAcepção 1: Vértice físico / espaço (\"O canto da sala\").\nAcepção 2: Melodia vocal (\"O canto dos pássaros\").\nConclusão: Ambos são denotativos.\nRegra de ouro da distinção\nPara que haja sentido figurado, o termo deve romper com a totalidade das acepções literais diretas do dicionário e exigir uma transposição metafórica no contexto.\nRelações\nPossui alerta em: , .\nExemplificado em: , .",
-            "**O Mecanismo Semântico-Estilístico da Reificação (Coisificação)**: Definição ou ideia central\nReificação (ou coisificação, do latim res, \"coisa\") é o processo semântico-estilístico pelo qual propriedades, comportamentos, funções ou a própria essência de objetos inanimados, máquinas, dispositivos ou alimentos são atribuídos a seres humanos, papéis sociais ou cidades (e vice-versa).\nRegra categórica de prova\nToda reificação configura obrigatoriamente sentido figurado (conotativo).\nExplicação consolidada\nA reificação opera a desumanização metafórica ou a materialização de entidades vivas e abstratas:\nAtribuição de propriedades de alimentos/sabores a pessoas:\n\"Ele foi muito doce e atencioso comigo.\" (Pessoas não possuem sabor doce gustativo; o termo expressa meiguice através da coisificação alimentar).\nAtribuição de peças/dispositivos mecânicos a seres vivos:\n\"A bateria das crianças parece não acabar.\" (Crianças não são aparelhos movidos a acumuladores de eletricidade; a bateria expressa energia vital contínua).\nAtribuição de oscilação física/mecânica a cidades e pessoas:\n\"Para voltar a ser uma cidade vibrante...\" / \"Aluno vibrante.\" (O sentido real de vibrante é oscilar mecanicamente, como em celular vibrante. Aplicado a cidades ou pessoas, significa dinâmica, movimentada, empolgada).\nTransformação de função humana em objeto material:\n\"Nosso papel é ser um trampolim para a observação de aves...\" (Trampolim é a prancha física elástica de salto; atribuído a um papel institucional ou humano, significa instrumento / meio de propulsão).\nIdentificação direta de personagem com objeto consumível:\n\"Ele mesmo um cigarro em chamas.\" (Dalton Trevisan compara o homem ansioso a um rolo de tabaco consumindo-se pelo fogo).\nLimites e exceções\nSe o vocábulo de objeto for aplicado ao próprio objeto físico em seu estado material real (ex.: \"Ele fumava um cigarro\", \"Trocou a bateria do celular\", \"O atleta saltou do trampolim\"), o emprego é denotativo. A reificação exige a projeção do traço de objeto sobre o ser humano ou entidade viva.Termo associado: TERM-A12-G01-SEM-FIG-005.",
-            "**O Método Analítico das Setas Semânticas e Campo de Ideias**: Definição ou ideia central\nO Método das Setas Semânticas é o protocolo visual e cognitivo pelo qual o estudante rastreia as linhas de ligação de um vocábulo até seu referente sintático-semântico e termos coocorrentes no texto-base, delimitando seu campo de ideias para averiguar a compatibilidade física/real do enunciado.\nRegra de distinção crítica: Seta é Semântica, não Sintaxe\nO estudante não deve classificar funções oracionais (adjunto adnominal, complemento nominal, predicativo do sujeito). A função sintática é irrelevante para a conotação. A seta tem finalidade exclusivamente semântica: aponta para a entidade do mundo real à qual a qualidade ou ação está sendo atribuída.\nRelações\nOperacionaliza: .\nEvita o erro: .",
-            "**Linguagem Figurada no Discurso Científico e de Divulgação (Padrão FGV)**: Definição ou ideia central\nO discurso científico e os textos de divulgação científica empregam intencionalmente vocábulos e metáforas em sentido figurado com finalidade didática, visando aproximar fenômenos biológicos, físicos e químicos complexos da compreensão do leitor leigo, sem que isso configure erro conceitual ou vício de linguagem.\nExplicação consolidada\nA banca FGV explora intensamente a desconstrução do mito de que textos científicos seriam exclusivamente denotativos. Em provas recentes, a banca apresenta trechos de reportagens científicas repletos de metáforas:\nMetáforas físicas de ação em processos biológicos/médicos:\nPesquisa que se aprofunda nos resultados (não há descida espacial a um fundo; há intensificação de análise mental).\nCaracterística genética que impulsiona perda neuronal (não há empurrão mecânico de braços).\nCientistas que buscam chegar a soluções (solução não é destino geográfico).\nHipóteses levantadas (ideias não são erguidas fisicamente do chão).\nPopulação que é bombardeada por poluição ou soterrada por plástico (não há explosivos bélicos nem terra caindo sobre corpos).\nNuvens nas quais chovem microplásticos (transposição meteorológica para deposição particulada).\nO papel tipográfico das aspas demarcatórias:\nNo excerto \"bactéria capaz de 'comer' esse material\", as aspas simples (utilizadas dentro da citação com aspas duplas) servem para sinalizar que o verbo foi empregado fora do sentido fisiológico literal (bactérias realizam catálise enzimática e degradação molecular, não mastigação orgânica).\nO gabarito literal em questões científicas da FGV:\nEm meio a quatro assertivas com metáforas didáticas, a alternativa correta (sentido literal) é aquela que expressa uma ação mecânica/biológica factual direta: cobaias com perda de movimento (locomoção física) ou biólogos que analisaram placentas (exame laboratorial físico).Estratégia associada: .\nTermo associado: TERM-A12-G01-SEM-FIG-008, TERM-A12-G01-SEM-FIG-009.",
-            "**Deslocamento Semântico em Textos Literários e Crônicas**: Definição ou ideia central\nA linguagem literária, poética e a crônica jornalística utilizam o deslocamento semântico de termos extraídos de campos religiosos, biológicos, patológicos ou somáticos para metaforizar vaidades humanas, perturbações emocionais e vivências subjetivas.\nManifestações analisadas nas bancas\nDeslocamento zoológico e religioso para a vaidade humana (Consulplan):\n\"Pavão enfático\": A ostentação da ave unida ao ato de dar ênfase qualifica o redator que se exibe narcisicamente.\n\"Volúpia autoral\": Transfere o prazer sensorial/luxúria corporal para a satisfação de ver o próprio texto publicado sem retoques.\n\"Estilo profanado\": Transfere a violação do sagrado/religioso para as correções editoriais em um texto.\nMetáforas somáticas e da loucura em prosa literária (FCC):\n\"Formigas de fogo mordem sob a camisa\": (Dalton Trevisan) Metaforiza a excitação e taquicardia do jovem apaixonado.\n\"Grãozinho de sandice\": (Machado de Assis) Quantificação granulométrica vegetal/mineral aplicada à loucura.\n\"A moléstia lentamente o comeu\": (Machado de Assis) Ação de mastigar/ingerir aplicada à deterioração patológica.\nMetáforas de choque e memória em poesia e ensaios (Cebraspe):\n\"Fui abrir e me constipei\": (Carlos Drummond de Andrade) Sintoma de resfriado corporal expressando a paralisia do choque amoroso.\n\"Livros que deixaram rastros\": Marcas físicas no solo usadas para representar impressões emocionais na infância."
-          ]
+          "term": "Fundamentos da Semântica e o Primado do Contexto",
+          "shortDefinition": "A semântica é o ramo dos estudos linguísticos que investiga o significado, a significação e o valor interpretativo das palavras e enunciados, os quais são condicionados de forma estrita pelo contexto em que ocorrem (\"Semântica é Contexto\").",
+          "detailTarget": {
+            "unitId": "IP-A12-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G01-01"
+          },
+          "operationalUse": "A compreensão semântica exige a superação da análise morfológica estática."
+        },
+        {
+          "term": "Sentido Próprio (Denotação, Sentido Lógico, Literal e Dicionarizado)",
+          "shortDefinition": "Sentido próprio (ou denotativo) é o emprego da palavra em sua acepção primária, literal, lógica, usual e dicionarizada, retratando seres, ações e fatos de forma objetiva e conforme a realidade concreta do mundo físico.",
+          "detailTarget": {
+            "unitId": "IP-A12-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G01-02"
+          },
+          "operationalUse": "As bancas organizadoras de concursos públicos utilizam um grupo rigoroso de expressões perfeitamente sinônimas para indicar o sentido denotativo:"
+        },
+        {
+          "term": "Sentido Figurado (Conotação, Sentido Não Lógico e Metafórico)",
+          "shortDefinition": "Sentido figurado (ou conotativo) é o emprego da palavra com significado estendido, translato, metafórico, poético ou simbólico, extrapolando as propriedades físicas e lógicas imediatas com base em analogias e associações de ideias (\"como se fosse\").",
+          "detailTarget": {
+            "unitId": "IP-A12-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G01-03"
+          },
+          "operationalUse": "Na linguagem conotativa, ocorre um desvio proposital da literalidade."
+        },
+        {
+          "term": "Distinção Teórica e Prática entre Polissemia e Sentido Figurado",
+          "shortDefinition": "A polissemia consiste na multiplicidade de acepções e significados dicionarizados que um mesmo significante (palavra) pode assumir em diferentes contextos reais. O fato de um vocábulo possuir múltiplos sentidos dicionarizados não torna nenhum deles figurado; ambos permanecem no domínio do sentido próprio/denotativo.",
+          "detailTarget": {
+            "unitId": "IP-A12-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G01-04"
+          },
+          "operationalUse": "Uma das maiores armadilhas exploradas pelas bancas examinadoras (especialmente FGV e VUNESP) é induzir o estudante a supor que, havendo um sentido mais comum/concreto, os sentidos secundários registrados no dicionário seriam figurados."
+        },
+        {
+          "term": "O Mecanismo Semântico-Estilístico da Reificação (Coisificação)",
+          "shortDefinition": "Reificação (ou coisificação, do latim res, \"coisa\") é o processo semântico-estilístico pelo qual propriedades, comportamentos, funções ou a própria essência de objetos inanimados, máquinas, dispositivos ou alimentos são atribuídos a seres humanos, papéis sociais ou cidades (e vice-versa).",
+          "detailTarget": {
+            "unitId": "IP-A12-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G01-05"
+          },
+          "operationalUse": "A reificação opera a desumanização metafórica ou a materialização de entidades vivas e abstratas:"
+        },
+        {
+          "term": "O Método Analítico das Setas Semânticas e Campo de Ideias",
+          "shortDefinition": "O Método das Setas Semânticas é o protocolo visual e cognitivo pelo qual o estudante rastreia as linhas de ligação de um vocábulo até seu referente sintático-semântico e termos coocorrentes no texto-base, delimitando seu campo de ideias para averiguar a compatibilidade física/real do enunciado.",
+          "detailTarget": {
+            "unitId": "IP-A12-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G01-06"
+          }
+        },
+        {
+          "term": "Linguagem Figurada no Discurso Científico e de Divulgação (Padrão FGV)",
+          "shortDefinition": "O discurso científico e os textos de divulgação científica empregam intencionalmente vocábulos e metáforas em sentido figurado com finalidade didática, visando aproximar fenômenos biológicos, físicos e químicos complexos da compreensão do leitor leigo, sem que isso configure erro conceitual ou vício de linguagem.",
+          "detailTarget": {
+            "unitId": "IP-A12-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G01-07"
+          },
+          "operationalUse": "A banca FGV explora intensamente a desconstrução do mito de que textos científicos seriam exclusivamente denotativos."
+        },
+        {
+          "term": "Deslocamento Semântico em Textos Literários e Crônicas",
+          "shortDefinition": "A linguagem literária, poética e a crônica jornalística utilizam o deslocamento semântico de termos extraídos de campos religiosos, biológicos, patológicos ou somáticos para metaforizar vaidades humanas, perturbações emocionais e vivências subjetivas.",
+          "detailTarget": {
+            "unitId": "IP-A12-G01",
+            "section": "explanation",
+            "groupId": "GRP-IP-A12-G01-08"
+          }
         }
       ]
     },
@@ -2425,7 +3184,10 @@
         "confidence": 0.98
       },
       "answerSha256": "5346421d2b4f999156cba4a06bafa82e7aad7f6fa7eba6403fce16164c98533c",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A12-aula12.q0108"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2499,7 +3261,10 @@
         "confidence": 0.98
       },
       "answerSha256": "5677b69b56da1a9a1d9f21012e8ba19e8d4cfd7aa0e687acb107ef837e34540c",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
+      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly",
+      "duplicateSourceQuestionRefs": [
+        "OQ-A12-aula12.q0122"
+      ]
     },
     {
       "schemaVersion": "2.0.0",
@@ -2725,154 +3490,6 @@
         "confidence": 0.98
       },
       "answerSha256": "8aa07467a8a3c86e5c640439cd446d7995f8102a0a2036f746a6f76fc6b86948",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A12-aula12.q0108",
-      "lessonId": "A12",
-      "sourceQuestionId": "aula12.q0108",
-      "questionPayload": {
-        "question_id": "aula12.q0108",
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "AGER - MATO GROSSO",
-        "position": null,
-        "year": 2023,
-        "source_label": "(CEBRASPE / AGER - MATO GROSSO / 2023)",
-        "support_text": "De 40 a 80 kHz, esses sons são muito agudos para o ouvido humano, que atua numa faixa de\ncerca de 20 kHz. Mas insetos como mariposas e pequenos mamíferos, incluindo-se ratos, podem\ndetectar essas frequências, o que levanta a possibilidade de que os ruídos possam influenciar seu\ncomportamento, ou seja, os sons ultrassônicos emitidos pelas plantas podem ajudar a moldar\nseus ecossistemas.",
-        "prompt": "No segundo período do terceiro parágrafo do texto CB2A1, o verbo “moldar” é empregado com\no sentido de",
-        "options": [
-          {
-            "label": "A",
-            "text": "marcar."
-          },
-          {
-            "label": "B",
-            "text": "dar forma a."
-          },
-          {
-            "label": "C",
-            "text": "trabalhar."
-          },
-          {
-            "label": "D",
-            "text": "manter."
-          },
-          {
-            "label": "E",
-            "text": "reciclar."
-          }
-        ],
-        "tests_concept_ids": [
-          "pt.semantics.sinonimo",
-          "pt.semantics.antonimo"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0078"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.96,
-        "occurrence_type": "question_list",
-        "section_id": "aula12.sec16",
-        "number_in_section": 18,
-        "duplicate_of": "aula12.q0038",
-        "question_family_id": "aula12.qfam0038"
-      },
-      "questionSha256": "40544b2873d910aa8a6022103af01c99080e138e35ada65738437fda4680e1cc",
-      "answerPayload": {
-        "answer_id": "aula12.q0108.answer",
-        "question_id": "aula12.q0108",
-        "answer": "B",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0090"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "9658dba6d410db30a4d4c38d4638c71a1f53406629c7e1f16aee1f9df91a9d09",
-      "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
-    },
-    {
-      "schemaVersion": "2.0.0",
-      "officialQuestionId": "OQ-A12-aula12.q0122",
-      "lessonId": "A12",
-      "sourceQuestionId": "aula12.q0122",
-      "questionPayload": {
-        "question_id": "aula12.q0122",
-        "question_type": "multiple_choice",
-        "exam_board": "CEBRASPE",
-        "organization": "SEFAZ-RS",
-        "position": "AUDITOR FISCAL",
-        "year": 2019,
-        "source_label": "(CEBRASPE / SEFAZ-RS / AUDITOR FISCAL / 2019)",
-        "support_text": "Pixis foi um músico medíocre, mas teve o seu dia de glória no distante ano de 1837.",
-        "prompt": "No texto 1A11-I, a palavra “medíocre” (L.1) foi empregada com o mesmo sentido de",
-        "options": [
-          {
-            "label": "A",
-            "text": "carente."
-          },
-          {
-            "label": "B",
-            "text": "tímido."
-          },
-          {
-            "label": "C",
-            "text": "humilde."
-          },
-          {
-            "label": "D",
-            "text": "inexpressivo."
-          },
-          {
-            "label": "E",
-            "text": "despretensioso."
-          }
-        ],
-        "tests_concept_ids": [
-          "pt.semantics.sinonimo",
-          "pt.semantics.antonimo"
-        ],
-        "tests_rule_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0083"
-          ]
-        },
-        "annotation_state": "outside_annotated_scope",
-        "extraction_confidence": 0.96,
-        "occurrence_type": "question_list",
-        "section_id": "aula12.sec16",
-        "number_in_section": 32,
-        "duplicate_of": "aula12.q0052",
-        "question_family_id": "aula12.qfam0052"
-      },
-      "questionSha256": "0f06feddab40b685e926591fee56255f12c4c4b565f5614a50c22a7c16bfc1a0",
-      "answerPayload": {
-        "answer_id": "aula12.q0122.answer",
-        "question_id": "aula12.q0122",
-        "answer": "D",
-        "commentary": null,
-        "justification_unit_ids": [],
-        "source": {
-          "document_id": "aula12_complete",
-          "page_ids": [
-            "aula12_complete.p0090"
-          ]
-        },
-        "confidence": 1.0
-      },
-      "answerSha256": "45d4fdb1caf19ba18eda0b0791eb794f69e3b02b0b2832c35835f001689571a1",
       "immutabilityPolicy": "payload_must_match_corpus_apostila_exactly"
     },
     {

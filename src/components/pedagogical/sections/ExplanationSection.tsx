@@ -59,7 +59,7 @@ export const ExplanationSection: React.FC<ExplanationSectionProps> = ({ groups =
 
               <div className="space-y-3 reading-content">
                 {(grp.blocks || []).map((block, bIdx) => (
-                  <SemanticBlockRenderer key={bIdx} block={block} />
+                  <SemanticBlockRenderer key={bIdx} block={block} allowLegacyDiagramInference={false} />
                 ))}
               </div>
             </div>

@@ -1,5 +1,5 @@
 {
-  "viewSchemaVersion": "4.2.2-source-backed-coverage",
+  "viewSchemaVersion": "4.2.3-structured-sections",
   "source": {
     "unitId": "IP-A06-G04",
     "lessonId": "A06",
@@ -7,7 +7,8 @@
     "canonicalSource": "canonical-v2.1-consolidated",
     "rebuildPipeline": "SuVeCa v4.2.1 semantic identity reconciliation",
     "reconciliationSource": "canonical entities from v4.2 context pack with v4.1.1 structural sections",
-    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection"
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
   },
   "unit": {
     "unitId": "IP-A06-G04",
@@ -83,7 +84,11 @@
               "to": "curr_1",
               "relation": "fundamento_para"
             }
-          ]
+          ],
+          "lineage": {
+            "kind": "derived_prerequisite_projection",
+            "canonicalMapRef": "MAP-IP-A06-G04-001"
+          }
         }
       ]
     },
@@ -98,8 +103,94 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nOs termos integrantes da oração são estruturas sintáticas indispensáveis que integram a frase de maneira obrigatória, preenchendo a predicação incompleta de verbos e nomes.\nExplicação consolidada\nNa arquitetura sintática da língua portuguesa, os termos da oração dividem-se hierarquicamente entre essenciais (sujeito e predicado), integrantes (complementos) e acessórios (adjuntos adnominais, adjuntos adverbiais e apostos). Os termos integrantes são categorizados em concursos públicos sob a designação geral de complementos:\nComplementos Verbais: Objeto Direto (OD) e Objeto Indireto (OI).\nComplementos Nominais: Complemento Nominal (CN).\nAo contrário dos termos acessórios — que veiculam dados circunstanciais ou caracterizadores dispensáveis para a integridade sintática elementar —, os termos integrantes não podem ser suprimidos sem provocar incompletude ou agramaticalidade na predicação do verbo ou do nome regente.\nCritérios de reconhecimento ou aplicação\nO termo responde a uma necessidade semântica e sintática de complementação do núcleo verbal transitivo.\nNão possui valor meramente circunstancial de tempo, lugar ou modo (o que configuraria adjunto adverbial).\nExemplos e contraexemplos\nTermo Integrante: \"Os passageiros esperavam o trem.\" (A oração com VTD exige o complemento para fechar a predicação).\nTermo Acessório (Contraponto): \"Os passageiros esperavam o trem na estação.\" (na estação é adjunto adverbial de lugar; sua remoção não destrói a predicação mínima do verbo).\nRelações\nExpande-se em: (OD), (OI) e (VTDI).\nContrasta com: (Termos Acessórios / Adjuntos Adverbiais)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Os termos integrantes da oração são estruturas sintáticas indispensáveis que integram a frase de maneira obrigatória, preenchendo a predicação incompleta de verbos e nomes."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na arquitetura sintática da língua portuguesa, os termos da oração dividem-se hierarquicamente entre essenciais (sujeito e predicado), integrantes (complementos) e acessórios (adjuntos adnominais, adjuntos adverbiais e apostos). Os termos integrantes são categorizados em concursos públicos sob a designação geral de complementos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Complementos Verbais: Objeto Direto (OD) e Objeto Indireto (OI).",
+                "Complementos Nominais: Complemento Nominal (CN)."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao contrário dos termos acessórios — que veiculam dados circunstanciais ou caracterizadores dispensáveis para a integridade sintática elementar —, os termos integrantes não podem ser suprimidos sem provocar incompletude ou agramaticalidade na predicação do verbo ou do nome regente."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O termo responde a uma necessidade semântica e sintática de complementação do núcleo verbal transitivo.",
+                "Não possui valor meramente circunstancial de tempo, lugar ou modo (o que configuraria adjunto adverbial)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Termo Integrante: \"Os passageiros esperavam o trem.\" (A oração com VTD exige o complemento para fechar a predicação).",
+                "Termo Acessório (Contraponto): \"Os passageiros esperavam o trem na estação.\" (na estação é adjunto adverbial de lugar; sua remoção não destrói a predicação mínima do verbo)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G04-002",
+                  "targetTitle": "Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G04-006",
+                  "targetTitle": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G04-009",
+                  "targetTitle": "Verbos Transitivos Diretos e Indiretos (VTDI) e Relatividade da Transitividade",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G04-012",
+                  "targetTitle": "Método Canônico de Análise Sintática: Prioridade do Sujeito e o \"Cheiro de Circunstância\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -112,8 +203,89 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Objeto Direto (OD) é o termo integrante que completa o sentido de um Verbo Transitivo Direto (VTD), vinculando-se a ele diretamente, isto é, sem a exigência de uma preposição gramatical obrigatória.\nExplicação consolidada\nO objeto direto pode ser expresso por substantivos, sintagmas nominais ou pronomes pessoais oblíquos átonos. Na morfossintaxe dos pronomes oblíquos atuando como complemento:\nPronomes Exclusivos de Objeto Direto: o, a, os, as (e suas variantes alomórficas lo/la/los/las e no/na/nos/nas). Exercem estritamente a função de OD na norma culta, independentemente do contexto.\nPronomes Coringas / Dupla Valência: me, te, se, nos, vos. Não possuem função sintática fixa a priori; funcionam como OD quando vinculados a um verbo transitivo direto.\nNa presença de fatores de atração pronominal (como pronomes indefinidos), o pronome oblíquo posiciona-se antes do verbo (próclise). Essa anteposição não altera a função sintática de complemento direto, embora costume induzir o candidato desatento ao erro de tomá-lo como sujeito.\nCritérios de reconhecimento ou aplicação\nAplicar o teste do verbo com substantivo neutro: Verbo + o menino -> VTD.\nIdentificar a ausência de preposição regencial introduzindo o complemento.\nSe expresso por pronome das formas o/a/os/as, classificar categoricamente como OD.\nExemplos e contraexemplos\nForma Substantiva: \"Os passageiros esperavam [VTD] o trem [OD].\"\nForma Pronominal Exclusiva com Próclise: \"Alguém [Suj.] o [OD] chamou [VTD].\"\nForma Pronominal Coringa: \"Aquele homem pretendia enganar-me [OD].\" (pois quem engana, engana o menino -> VTD).Contrasta com: (Objeto Indireto)(Pronome proclítico não é sujeito)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Objeto Direto (OD) é o termo integrante que completa o sentido de um Verbo Transitivo Direto (VTD), vinculando-se a ele diretamente, isto é, sem a exigência de uma preposição gramatical obrigatória."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "O objeto direto pode ser expresso por substantivos, sintagmas nominais ou pronomes pessoais oblíquos átonos. Na morfossintaxe dos pronomes oblíquos atuando como complemento:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pronomes Exclusivos de Objeto Direto: o, a, os, as (e suas variantes alomórficas lo/la/los/las e no/na/nos/nas). Exercem estritamente a função de OD na norma culta, independentemente do contexto.",
+                "Pronomes Coringas / Dupla Valência: me, te, se, nos, vos. Não possuem função sintática fixa a priori; funcionam como OD quando vinculados a um verbo transitivo direto."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Na presença de fatores de atração pronominal (como pronomes indefinidos), o pronome oblíquo posiciona-se antes do verbo (próclise). Essa anteposição não altera a função sintática de complemento direto, embora costume induzir o candidato desatento ao erro de tomá-lo como sujeito."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aplicar o teste do verbo com substantivo neutro: Verbo + o menino -> VTD.",
+                "Identificar a ausência de preposição regencial introduzindo o complemento.",
+                "Se expresso por pronome das formas o/a/os/as, classificar categoricamente como OD."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Forma Substantiva: \"Os passageiros esperavam [VTD] o trem [OD].\"",
+                "Forma Pronominal Exclusiva com Próclise: \"Alguém [Suj.] o [OD] chamou [VTD].\"",
+                "Forma Pronominal Coringa: \"Aquele homem pretendia enganar-me [OD].\" (pois quem engana, engana o menino -> VTD)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-001",
+                  "targetTitle": "Natureza e Classificação dos Termos Integrantes da Oração",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G04-006",
+                  "targetTitle": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G04-001",
+                  "targetTitle": "O Pronome Proclítico não é Sujeito",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -126,8 +298,87 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO \"Bizu do Menino\" é um procedimento heurístico rigoroso de validação de transitividade que consiste em acoplar a palavra \"menino\" (ou outro substantivo masculino singular com artigo) imediatamente após o verbo para atestar se a regência natural exige ou repele preposição.\nExplicação consolidada\nAo analisar pronomes coringas (me, te, se, nos, vos) ou termos complementares duvidosos, o candidato deve abandonar a intuição subjetiva e aplicar o teste:\nSe a junção culta produzir \"o menino\" (artigo puro), o verbo é Transitivo Direto (VTD) e o termo/pronome atua como Objeto Direto.\nSe a junção culta exigir \"ao menino\" (preposição a + artigo o) ou outra preposição (do menino, com o menino), o verbo é Transitivo Indireto (VTI) e o termo/pronome atua como Objeto Indireto.\nDesconstrução Técnica de Macetes Falhos Populares\nSubstituição de me/nos por a mim / a nós: Constitui grave falha metodológica. Os pronomes mim e nós (com preposição) são pronomes oblíquos tônicos, e por imperativo de sua própria morfologia são obrigatoriamente preposicionados. Ao trocar \"Chamou-me\" por \"Chamou a mim\", cria-se um objeto direto preposicionado artificial, falseando o resultado e fazendo o candidato rotular equivocadamente o verbo como VTI.\nSubstituição pelo pronome indefinido alguém: O ouvido do falante coloquial tende a introduzir a preposição a antes de alguém por mera busca de eufonia sonora (\"chamar a alguém\", \"convidar a alguém\"), induzindo à classificação errônea da regência.\nCritérios de reconhecimento ou aplicação\nPosicionar a forma verbal no infinitivo ou conjugada seguida imediatamente de o menino / ao menino.\nIsolar a resposta estrutural espontânea da norma padrão:\nChamar -> Chamar o menino (VTD).\nGostar -> Gostar do menino (VTI).\nObedecer -> Obedecer ao menino (VTI).\nEnganar -> Enganar o menino (VTD).Possui alertas: (Armadilha do a mim) e (Armadilha do alguém)."
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O \"Bizu do Menino\" é um procedimento heurístico rigoroso de validação de transitividade que consiste em acoplar a palavra \"menino\" (ou outro substantivo masculino singular com artigo) imediatamente após o verbo para atestar se a regência natural exige ou repele preposição."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao analisar pronomes coringas (me, te, se, nos, vos) ou termos complementares duvidosos, o candidato deve abandonar a intuição subjetiva e aplicar o teste:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Se a junção culta produzir \"o menino\" (artigo puro), o verbo é Transitivo Direto (VTD) e o termo/pronome atua como Objeto Direto.",
+                "Se a junção culta exigir \"ao menino\" (preposição a + artigo o) ou outra preposição (do menino, com o menino), o verbo é Transitivo Indireto (VTI) e o termo/pronome atua como Objeto Indireto."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 4,
+              "text": "Desconstrução Técnica de Macetes Falhos Populares"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Substituição de me/nos por a mim / a nós: Constitui grave falha metodológica. Os pronomes mim e nós (com preposição) são pronomes oblíquos tônicos, e por imperativo de sua própria morfologia são obrigatoriamente preposicionados. Ao trocar \"Chamou-me\" por \"Chamou a mim\", cria-se um objeto direto preposicionado artificial, falseando o resultado e fazendo o candidato rotular equivocadamente o verbo como VTI.",
+                "Substituição pelo pronome indefinido alguém: O ouvido do falante coloquial tende a introduzir a preposição a antes de alguém por mera busca de eufonia sonora (\"chamar a alguém\", \"convidar a alguém\"), induzindo à classificação errônea da regência."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Posicionar a forma verbal no infinitivo ou conjugada seguida imediatamente de o menino / ao menino.",
+                "Isolar a resposta estrutural espontânea da norma padrão:",
+                "Chamar -> Chamar o menino (VTD).",
+                "Gostar -> Gostar do menino (VTI).",
+                "Obedecer -> Obedecer ao menino (VTI).",
+                "Enganar -> Enganar o menino (VTD)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G04-002",
+                  "targetTitle": "Teste Heurístico do \"Bizu do Menino\" para Transitividade e Pronomes Coringas",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A06-G04-002",
+                  "targetTitle": "A Armadilha de Trocar *Me/Nos* por *A Mim / A Nós*",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "traps"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "WARN-A06-G04-003",
+                  "targetTitle": "A Armadilha do Macete com a Palavra *Alguém*",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -140,8 +391,89 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Objeto Direto Pleonástico é a repetição enfática de um objeto direto já enunciado na oração (comumente topicalizado/deslocado para o início), ocorrendo quase categoricamente sob a forma de um pronome pessoal oblíquo átono com valor anafórico.\nExplicação consolidada\nPleonasmo sintático traduz-se em reiteração funcional expressiva. Na estrutura oracional com objeto direto pleonástico identificam-se dois elementos:\nObjeto Direto Básico (\"Raiz\"): O termo substantivo antecipado em relação ao verbo, separado ou destacado na oração.\nObjeto Direto Pleonástico (\"Nutella / Enfeite / Estilístico\"): O pronome oblíquo átono (o, a, os, as) que retoma anaphoricamente o termo antecipado junto ao verbo regente.\nAmbos exercem a função de complemento direto em relação ao mesmo núcleo verbal, cabendo a qualificação de pleonástico especificamente à forma pronominal de reiteração.\nCritérios de reconhecimento ou aplicação\nPresença de um objeto direto substantivo antecipado ao verbo.\nPresença concomitante de pronome oblíquo átono acoplado ao verbo remetendo ao mesmo referente.\nExemplos e contraexemplos\n\"Os convidados, cumprimentei-os um a um.\"\nOs convidados: Objeto Direto antecipado (raiz).\ncumprimentei: Verbo Transitivo Direto (Sujeito oculto: eu).\n-os: Objeto Direto Pleonástico (pronome anafórico de reiteração).(Objeto Indireto Pleonástico).\nExemplificado por:"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Objeto Direto Pleonástico é a repetição enfática de um objeto direto já enunciado na oração (comumente topicalizado/deslocado para o início), ocorrendo quase categoricamente sob a forma de um pronome pessoal oblíquo átono com valor anafórico."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Pleonasmo sintático traduz-se em reiteração funcional expressiva. Na estrutura oracional com objeto direto pleonástico identificam-se dois elementos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Objeto Direto Básico (\"Raiz\"): O termo substantivo antecipado em relação ao verbo, separado ou destacado na oração.",
+                "Objeto Direto Pleonástico (\"Nutella / Enfeite / Estilístico\"): O pronome oblíquo átono (o, a, os, as) que retoma anaphoricamente o termo antecipado junto ao verbo regente."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Ambos exercem a função de complemento direto em relação ao mesmo núcleo verbal, cabendo a qualificação de pleonástico especificamente à forma pronominal de reiteração."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Presença de um objeto direto substantivo antecipado ao verbo.",
+                "Presença concomitante de pronome oblíquo átono acoplado ao verbo remetendo ao mesmo referente."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Os convidados, cumprimentei-os um a um.\"",
+                "Os convidados: Objeto Direto antecipado (raiz).",
+                "cumprimentei: Verbo Transitivo Direto (Sujeito oculto: eu).",
+                "-os: Objeto Direto Pleonástico (pronome anafórico de reiteração)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-002",
+                  "targetTitle": "Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "KB-A06-G04-007",
+                  "targetTitle": "Objeto Indireto Pleonástico e Inexistência Lógica de \"OI Preposicionado\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G04-004",
+                  "targetTitle": "Objeto Direto Pleonástico",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -154,8 +486,92 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Objeto Direto Preposicionado ocorre quando o complemento de um Verbo Transitivo Direto vem introduzido por uma preposição que não é exigida pela regência do verbo, constando na frase exclusivamente por motivos estilísticos, enfáticos, de clareza ou eufonia clássica.\nExplicação consolidada\nNo OD preposicionado, a presença da preposição é estritamente facultativa. Este fenômeno acarreta três diretrizes para concursos:\nEm Questões Objetivas de Reescrita Textual: A retirada ou inserção da preposição facultativa não fere a correção gramatical nem altera o sentido substancial da frase. A mudança atinge unicamente a ênfase expressiva.\nDiferenciação do Objeto Indireto (OI): O VTI exige preposição obrigatória intrínseca à sua predicação (\"gosta de algo\"). O VTD ligado a OD preposicionado dispensa preposição pelo teste do menino (\"admiro o menino\" -> admirar é VTD).\nAlerta Rigoroso para Provas Discursivas (Redações): O candidato comum não deve utilizar objeto direto preposicionado em redações de concurso. Examinadores de bancas discursivas tendem a não acolher pretensões estilísticas, corrigindo a inserção de preposição em VTD como erro de regência verbal.\nCritérios de reconhecimento ou aplicação\nO verbo principal é VTD comprovado pelo \"Bizu do Menino\".\nO complemento direto inicia-se por preposição (frequentemente a diante de pronomes indefinidos, nomes próprios ou pronomes de tratamento).\nA eliminação da preposição mantém a frase escorreita e compreensível.\nExemplos e contraexemplos\nExemplo com Preposição Facultativa: \"Admiro a todos.\" (Verbo admirar é VTD -> admiro o menino).\nReescrita Equivalente: \"Admiro todos.\" (Correção gramatical plena e mesmo sentido nuclear).Contrasta com: (Preposição obrigatória do OI)(Proibição em redações)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Objeto Direto Preposicionado ocorre quando o complemento de um Verbo Transitivo Direto vem introduzido por uma preposição que não é exigida pela regência do verbo, constando na frase exclusivamente por motivos estilísticos, enfáticos, de clareza ou eufonia clássica."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "No OD preposicionado, a presença da preposição é estritamente facultativa. Este fenômeno acarreta três diretrizes para concursos:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Em Questões Objetivas de Reescrita Textual: A retirada ou inserção da preposição facultativa não fere a correção gramatical nem altera o sentido substancial da frase. A mudança atinge unicamente a ênfase expressiva.",
+                "Diferenciação do Objeto Indireto (OI): O VTI exige preposição obrigatória intrínseca à sua predicação (\"gosta de algo\"). O VTD ligado a OD preposicionado dispensa preposição pelo teste do menino (\"admiro o menino\" -> admirar é VTD).",
+                "Alerta Rigoroso para Provas Discursivas (Redações): O candidato comum não deve utilizar objeto direto preposicionado em redações de concurso. Examinadores de bancas discursivas tendem a não acolher pretensões estilísticas, corrigindo a inserção de preposição em VTD como erro de regência verbal."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "O verbo principal é VTD comprovado pelo \"Bizu do Menino\".",
+                "O complemento direto inicia-se por preposição (frequentemente a diante de pronomes indefinidos, nomes próprios ou pronomes de tratamento).",
+                "A eliminação da preposição mantém a frase escorreita e compreensível."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Exemplo com Preposição Facultativa: \"Admiro a todos.\" (Verbo admirar é VTD -> admiro o menino).",
+                "Reescrita Equivalente: \"Admiro todos.\" (Correção gramatical plena e mesmo sentido nuclear)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-002",
+                  "targetTitle": "Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-003",
+                  "targetTitle": "Estratégia de Identificação de Regência: O \"Bizu do Menino\" vs. Macetes Falhos",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G04-006",
+                  "targetTitle": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G04-004",
+                  "targetTitle": "Proibição de Objeto Direto Preposicionado em Redações / Discursivas",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -168,8 +584,92 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Objeto Indireto (OI) é o termo integrante que completa o sentido de um Verbo Transitivo Indireto (VTI), unindo-se a ele de forma obrigatória por meio de uma preposição regida pelo próprio verbo.\nExplicação consolidada\nAo contrário do que ocorre no OD preposicionado, a preposição do Objeto Indireto é mandatória e resulta da regência verbal estrita. Na sintaxe pronominal dos complementos indiretos:\nPronomes Exclusivos de Objeto Indireto: lhe, lhes. Substituem invariavelmente complementos preposicionados regidos pela preposição a (equivalendo a a ele, a ela, a eles, a elas). Nunca podem atuar como objeto direto na norma padrão contemporânea de concursos.\nPronomes Coringas: me, te, se, nos, vos. Funcionam como Objeto Indireto sempre que vinculados a um verbo transitivo indireto.\nCritérios de reconhecimento ou aplicação\nAplicar o teste: Verbo + ao menino / do menino / para o menino -> VTI.\nConfirmar que a preposição é regida pelo verbo e não possui valor meramente circunstancial de advérbio.\nSe o complemento for o pronome lhe/lhes, a classificação sintática é taxativamente Objeto Indireto.\nExemplos e contraexemplos\nForma Substantiva: \"Carlos gosta de música [OI].\" (gostar exige preposição de -> gosta do menino).\nForma Pronominal Exclusiva: \"Isto pertence ao convidado\" -> \"Isto pertence-lhe [OI].\"\nForma Pronominal Coringa: \"Alguém me [OI] ligou.\" (ligar rege preposição para/a -> ligou para o menino).Contrasta com: (OD) e (Adjunto Adverbial)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Objeto Indireto (OI) é o termo integrante que completa o sentido de um Verbo Transitivo Indireto (VTI), unindo-se a ele de forma obrigatória por meio de uma preposição regida pelo próprio verbo."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao contrário do que ocorre no OD preposicionado, a preposição do Objeto Indireto é mandatória e resulta da regência verbal estrita. Na sintaxe pronominal dos complementos indiretos:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Pronomes Exclusivos de Objeto Indireto: lhe, lhes. Substituem invariavelmente complementos preposicionados regidos pela preposição a (equivalendo a a ele, a ela, a eles, a elas). Nunca podem atuar como objeto direto na norma padrão contemporânea de concursos.",
+                "Pronomes Coringas: me, te, se, nos, vos. Funcionam como Objeto Indireto sempre que vinculados a um verbo transitivo indireto."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Aplicar o teste: Verbo + ao menino / do menino / para o menino -> VTI.",
+                "Confirmar que a preposição é regida pelo verbo e não possui valor meramente circunstancial de advérbio.",
+                "Se o complemento for o pronome lhe/lhes, a classificação sintática é taxativamente Objeto Indireto."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Forma Substantiva: \"Carlos gosta de música [OI].\" (gostar exige preposição de -> gosta do menino).",
+                "Forma Pronominal Exclusiva: \"Isto pertence ao convidado\" -> \"Isto pertence-lhe [OI].\"",
+                "Forma Pronominal Coringa: \"Alguém me [OI] ligou.\" (ligar rege preposição para/a -> ligou para o menino)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-001",
+                  "targetTitle": "Natureza e Classificação dos Termos Integrantes da Oração",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-003",
+                  "targetTitle": "Estratégia de Identificação de Regência: O \"Bizu do Menino\" vs. Macetes Falhos",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G04-002",
+                  "targetTitle": "Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G04-012",
+                  "targetTitle": "Método Canônico de Análise Sintática: Prioridade do Sujeito e o \"Cheiro de Circunstância\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -182,8 +682,74 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO Objeto Indireto Pleonástico consiste na reiteração enfática de um objeto indireto antecipado na oração mediante o emprego de pronome pessoal oblíquo átono (notadamente lhe/lhes). Em contrapartida, inexiste na gramática a figura do \"objeto indireto preposicionado\", já que todo objeto indireto é, por definição, regido por preposição obrigatória.\nExplicação consolidada\nNa análise de orações com complemento indireto duplicado:\nO sintagma preposicionado original surge antecipado (topicalizado) no período.\nO pronome oblíquo átono (lhe/lhes) surge junto ao verbo realizando a retomada anafórica com objetivo de reforço ou clareza.\nInexistência de \"OI Preposicionado\": No Objeto Direto, a preposição pode ser introduzida de forma facultativa e estilística em um verbo que não a exige (originando o OD Preposicionado). No Objeto Indireto, como a preposição já decorre obrigatoriamente da predicação do VTI, não há espaço funcional para uma preposição \"facultativa\". Portanto, todo OI é preposicionado por natureza regencial.\nExemplos e contraexemplos\n\"Aos meus alunos, dedico-lhes esta mensagem.\"\nAos meus alunos: Objeto Indireto antecipado.\ndedico: Verbo Transitivo Direto e Indireto (VTDI).\nesta mensagem: Objeto Direto.\n-lhes: Objeto Indireto Pleonástico.(Pleonasmo) e (OI)\nContrasta com: (OD Preposicionado)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O Objeto Indireto Pleonástico consiste na reiteração enfática de um objeto indireto antecipado na oração mediante o emprego de pronome pessoal oblíquo átono (notadamente lhe/lhes). Em contrapartida, inexiste na gramática a figura do \"objeto indireto preposicionado\", já que todo objeto indireto é, por definição, regido por preposição obrigatória."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Na análise de orações com complemento indireto duplicado:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O sintagma preposicionado original surge antecipado (topicalizado) no período.",
+                "O pronome oblíquo átono (lhe/lhes) surge junto ao verbo realizando a retomada anafórica com objetivo de reforço ou clareza.",
+                "Inexistência de \"OI Preposicionado\": No Objeto Direto, a preposição pode ser introduzida de forma facultativa e estilística em um verbo que não a exige (originando o OD Preposicionado). No Objeto Indireto, como a preposição já decorre obrigatoriamente da predicação do VTI, não há espaço funcional para uma preposição \"facultativa\". Portanto, todo OI é preposicionado por natureza regencial."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Exemplos e contraexemplos"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Aos meus alunos, dedico-lhes esta mensagem.\"",
+                "Aos meus alunos: Objeto Indireto antecipado.",
+                "dedico: Verbo Transitivo Direto e Indireto (VTDI).",
+                "esta mensagem: Objeto Direto.",
+                "-lhes: Objeto Indireto Pleonástico."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-004",
+                  "targetTitle": "Objeto Direto Pleonástico",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-006",
+                  "targetTitle": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Contrasta com",
+                  "targetRef": "KB-A06-G04-005",
+                  "targetTitle": "Objeto Direto Preposicionado: Natureza Facultativa, Reescrita e Riscos em Redação",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                }
+              ]
             }
           ]
         },
@@ -196,8 +762,79 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA substituição de termos substantivos por pronomes oblíquos obedece rigidamente à transitividade verbal: complementos diretos exigem o, a, os, as, enquanto complementos indiretos exigem lhe, lhes. O emprego do pronome lhe em verbos transitivos diretos por falsa sensação de elegância fonética (eufonia) constitui erro crasso de regência verbal.\nExplicação consolidada\nBancas de concurso exploram frequentemente a inclinação coloquial dos falantes de considerarem a pronúncia do pronome lhe mais \"refinada\" ou \"suave\" do que os pronomes o/a. No entanto, a norma culta não é balizada pela eufonia:\nVerbo Transitivo Indireto (VTI): \"Respondeu ao diretor\" -> responder é VTI (respondeu ao menino) -> Substituição correta: \"Respondeu-lhe\".\nVerbo Transitivo Direto (VTD): \"Respeitou o diretor\" -> respeitar é VTD (respeitou o menino) -> Substituição correta: \"Respeitou-o\". A construção \\*\"Respeitou-lhe\" constitui erro gramatical de regência.\nO mesmo princípio veta construções coloquiais românticas como \\*\"Não lhe amo\" ou \\*\"Amo-lhe\", uma vez que o verbo amar é VTD, exigindo \"Não o amo\" ou \"Amo-te\".\nCritérios de reconhecimento ou aplicação\nDeterminar a transitividade do verbo pelo \"Bizu do Menino\".\nSe VTD -> Empregar exclusivamente o, a, os, as (ou alomorfes lo/la, no/na).\nSe VTI regido pela preposição a -> Empregar exclusivamente lhe, lhes.(O falso \"lhe elegante\")"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A substituição de termos substantivos por pronomes oblíquos obedece rigidamente à transitividade verbal: complementos diretos exigem o, a, os, as, enquanto complementos indiretos exigem lhe, lhes. O emprego do pronome lhe em verbos transitivos diretos por falsa sensação de elegância fonética (eufonia) constitui erro crasso de regência verbal."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Bancas de concurso exploram frequentemente a inclinação coloquial dos falantes de considerarem a pronúncia do pronome lhe mais \"refinada\" ou \"suave\" do que os pronomes o/a. No entanto, a norma culta não é balizada pela eufonia:"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Verbo Transitivo Indireto (VTI): \"Respondeu ao diretor\" -> responder é VTI (respondeu ao menino) -> Substituição correta: \"Respondeu-lhe\".",
+                "Verbo Transitivo Direto (VTD): \"Respeitou o diretor\" -> respeitar é VTD (respeitou o menino) -> Substituição correta: \"Respeitou-o\". A construção \\*\"Respeitou-lhe\" constitui erro gramatical de regência.",
+                "O mesmo princípio veta construções coloquiais românticas como \\*\"Não lhe amo\" ou \\*\"Amo-lhe\", uma vez que o verbo amar é VTD, exigindo \"Não o amo\" ou \"Amo-te\"."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Determinar a transitividade do verbo pelo \"Bizu do Menino\".",
+                "Se VTD -> Empregar exclusivamente o, a, os, as (ou alomorfes lo/la, no/na).",
+                "Se VTI regido pela preposição a -> Empregar exclusivamente lhe, lhes."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-002",
+                  "targetTitle": "Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-003",
+                  "targetTitle": "Estratégia de Identificação de Regência: O \"Bizu do Menino\" vs. Macetes Falhos",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-006",
+                  "targetTitle": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G04-005",
+                  "targetTitle": "O Emprego Indevido de *Lhe* com Verbos Transitivos Diretos (\"Lhe Eufônico\")",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -210,8 +847,78 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nVerbos Transitivos Diretos e Indiretos (bitransitivos) são aqueles que demandam simultaneamente dois complementos de naturezas opostas: um Objeto Direto (sem preposição) e um Objeto Indireto (com preposição). A transitividade não é um rótulo fixo do dicionário, mas uma propriedade relativa construída no contexto oracional.\nExplicação consolidada\nA sintaxe da bitransitividade assenta-se sobre dois pilares:\nRegra da Coexistência Exclusiva: Na oração com VTDI, é proibida a duplicação de complementos da mesma natureza. A estrutura deve balancear exatamente um complemento sem preposição e outro com preposição. São agramaticais orações com dois ODs ou dois OIs.\nPrincípio da Relatividade da Transitividade: Desconstrói-se o vício escolar de decorar perguntas fixas ao verbo (ex.: \"quem oferece, oferece algo a alguém\"). O verbo oferecer, por exemplo, comporta-se como:\nVTDI: \"Oferecemos uma medalha (OD) ao primeiro colocado (OI).\"\nVTD contextual: \"Oferecemos café (OD).\" (A oração encerra-se sem complemento preposicionado, atuando o verbo como VTD legítimo).\nCritérios de reconhecimento ou aplicação\nIdentificar se a oração apresenta os dois complementos simultâneos (um preposicionado e outro não preposicionado).\nNão forçar a existência de complementos ausentes na frase analisada.\nRelações\nExpande: e (Proibição de complementos idênticos em VTDI)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Verbos Transitivos Diretos e Indiretos (bitransitivos) são aqueles que demandam simultaneamente dois complementos de naturezas opostas: um Objeto Direto (sem preposição) e um Objeto Indireto (com preposição). A transitividade não é um rótulo fixo do dicionário, mas uma propriedade relativa construída no contexto oracional."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "A sintaxe da bitransitividade assenta-se sobre dois pilares:"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Regra da Coexistência Exclusiva: Na oração com VTDI, é proibida a duplicação de complementos da mesma natureza. A estrutura deve balancear exatamente um complemento sem preposição e outro com preposição. São agramaticais orações com dois ODs ou dois OIs.",
+                "Princípio da Relatividade da Transitividade: Desconstrói-se o vício escolar de decorar perguntas fixas ao verbo (ex.: \"quem oferece, oferece algo a alguém\"). O verbo oferecer, por exemplo, comporta-se como:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "VTDI: \"Oferecemos uma medalha (OD) ao primeiro colocado (OI).\"",
+                "VTD contextual: \"Oferecemos café (OD).\" (A oração encerra-se sem complemento preposicionado, atuando o verbo como VTD legítimo)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Identificar se a oração apresenta os dois complementos simultâneos (um preposicionado e outro não preposicionado).",
+                "Não forçar a existência de complementos ausentes na frase analisada."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A06-G04-002",
+                  "targetTitle": "Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A06-G04-006",
+                  "targetTitle": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G04-006",
+                  "targetTitle": "Erro Crítico: Duplicação de Complementos da Mesma Natureza em VTDI",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -224,8 +931,102 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nAo associar pronomes oblíquos átonos a verbos bitransitivos, as formas fixas (o/a e lhe) devem ser combinadas sem redundância de função, enquanto os pronomes coringas (me, te, se, nos, vos) assumem a função que estiver vaga (OD ou OI) para garantir o equilíbrio sintático da frase.\nExplicação consolidada\nCombinações com Formas Fixas:\nCorreto: \"Ofereceu-lhe [OI] uma medalha [OD].\"\nCorreto: \"Ofereceu-a [OD] ao primeiro colocado [OI].\"\nIncorreto (2 OIs): \\*\"Ofereceu-lhe [OI] ao primeiro colocado [OI].\"\nIncorreto (2 ODs): \\*\"Ofereceu-o [OD] uma medalha [OD].\"\nDinâmica dos Pronomes Coringas (\"Vale Tudo\"):\nSe a oração já possuir um Objeto Direto, o coringa funcionará como Objeto Indireto: \"Deu-me [OI] um presente [OD]\".\nSe a oração já possuir um Objeto Indireto, o coringa funcionará como Objeto Direto: \"Entregou-se [OD] à polícia [OI]\".\nEm orações com locução verbal, a transitividade é governada pelo verbo principal: \"Aquele homem pretendia enganar-me [OD]\" (verbo principal enganar é VTD -> coringa me atua como OD).\nCritérios de reconhecimento ou aplicação\nIdentificar se já existe um complemento substantivo ou pronominal fixo na oração.\nAtribuir ao pronome coringa a função complementar oposta.\nEm locuções verbais, aplicar o \"Bizu do Menino\" no verbo principal no infinitivo/gerúndio/particípio.Exemplificado por: , , ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ao associar pronomes oblíquos átonos a verbos bitransitivos, as formas fixas (o/a e lhe) devem ser combinadas sem redundância de função, enquanto os pronomes coringas (me, te, se, nos, vos) assumem a função que estiver vaga (OD ou OI) para garantir o equilíbrio sintático da frase."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Combinações com Formas Fixas:",
+                "Correto: \"Ofereceu-lhe [OI] uma medalha [OD].\"",
+                "Correto: \"Ofereceu-a [OD] ao primeiro colocado [OI].\"",
+                "Incorreto (2 OIs): \\*\"Ofereceu-lhe [OI] ao primeiro colocado [OI].\"",
+                "Incorreto (2 ODs): \\*\"Ofereceu-o [OD] uma medalha [OD].\"",
+                "Dinâmica dos Pronomes Coringas (\"Vale Tudo\"):",
+                "Se a oração já possuir um Objeto Direto, o coringa funcionará como Objeto Indireto: \"Deu-me [OI] um presente [OD]\".",
+                "Se a oração já possuir um Objeto Indireto, o coringa funcionará como Objeto Direto: \"Entregou-se [OD] à polícia [OI]\".",
+                "Em orações com locução verbal, a transitividade é governada pelo verbo principal: \"Aquele homem pretendia enganar-me [OD]\" (verbo principal enganar é VTD -> coringa me atua como OD)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Identificar se já existe um complemento substantivo ou pronominal fixo na oração.",
+                "Atribuir ao pronome coringa a função complementar oposta.",
+                "Em locuções verbais, aplicar o \"Bizu do Menino\" no verbo principal no infinitivo/gerúndio/particípio."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-002",
+                  "targetTitle": "Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-006",
+                  "targetTitle": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-009",
+                  "targetTitle": "Verbos Transitivos Diretos e Indiretos (VTDI) e Relatividade da Transitividade",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G04-011",
+                  "targetTitle": "Exercício 1: Predicado Verbo-Nominal com Verbo Intransitivo",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G04-012",
+                  "targetTitle": "Exercício 2: Objeto Direto com Adjunto Adverbial de Modo",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G04-016",
+                  "targetTitle": "Exercício 6: Pronome 'O' como Objeto Direto de VTDI",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G04-017",
+                  "targetTitle": "Exercício 7: Pronome Coringa em Locução Verbal",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -238,8 +1039,96 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO verbo haver, no sentido de existir ou ocorrer, é impessoal (sem sujeito), classifica-se como VTD, permanece invariável na 3ª pessoa do singular e rege Objeto Direto. Já o verbo existir é pessoal, classifica-se como Intransitivo (VI), possui sujeito explícito e flexiona-se obrigatoriamente para concordar em número e pessoa com esse sujeito.\nExplicação consolidada\nEm questões de concurso público (notadamente bancas como Cebraspe e FGV), a substituição de haver por existir envolve três dimensões analíticas:\nCritérios de reconhecimento ou aplicação\n\"No parque havia [VTD] crianças [OD].\" -> Fixo no singular; oração sem sujeito.\n\"No parque existiam [VI] crianças [Sujeito].\" -> Flexão no plural obrigatória para concordar com o sujeito crianças.\nErro clássico de concurso: afirmar que a substituição de \"Havia problemas\" por \\*\"Existia problemas\" mantém a correção gramatical (está incorreto por erro de concordância).(Erro de concordância na troca de haver por existir)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O verbo haver, no sentido de existir ou ocorrer, é impessoal (sem sujeito), classifica-se como VTD, permanece invariável na 3ª pessoa do singular e rege Objeto Direto. Já o verbo existir é pessoal, classifica-se como Intransitivo (VI), possui sujeito explícito e flexiona-se obrigatoriamente para concordar em número e pessoa com esse sujeito."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "paragraph",
+              "text": "Em questões de concurso público (notadamente bancas como Cebraspe e FGV), a substituição de haver por existir envolve três dimensões analíticas:"
+            },
+            {
+              "type": "table_ref",
+              "tableId": "TABLE-IP-A06-G04-007",
+              "table": {
+                "tableId": "TABLE-IP-A06-G04-007",
+                "caption": "Explicação consolidada",
+                "headers": [
+                  "Dimensão Analítica",
+                  "Verbo HAVER (sentido de existir)",
+                  "Verbo EXISTIR",
+                  "Efeito da Substituição (Haver -> Existir)"
+                ],
+                "rows": [
+                  [
+                    "Semântica (Sentido)",
+                    "Expressa existência",
+                    "Expressa existência",
+                    "NÃO HÁ alteração de sentido (são sinônimos)."
+                  ],
+                  [
+                    "Relações Sintáticas",
+                    "Verbo Transitivo Direto (VTD)",
+                    "Verbo Intransitivo (VI)",
+                    "HÁ ALTERAÇÃO sintática profunda: o OD vira Sujeito; o VTD vira VI."
+                  ],
+                  [
+                    "Sujeito da Oração",
+                    "Inexistente (Oração sem sujeito)",
+                    "Sujeito expresso (posposto)",
+                    "Passa a ter sujeito sintático obrigatório."
+                  ],
+                  [
+                    "Flexão / Concordância",
+                    "Fixo na 3ª pessoa do singular",
+                    "Concorda com o sujeito",
+                    "Exige ajuste de concordância: se o termo for plural, existir deve ir para o plural."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"No parque havia [VTD] crianças [OD].\" -> Fixo no singular; oração sem sujeito.",
+                "\"No parque existiam [VI] crianças [Sujeito].\" -> Flexão no plural obrigatória para concordar com o sujeito crianças.",
+                "Erro clássico de concurso: afirmar que a substituição de \"Havia problemas\" por \\*\"Existia problemas\" mantém a correção gramatical (está incorreto por erro de concordância)."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G04-003",
+                  "targetTitle": "Procedimento de Validação de Substituição de *Haver* por *Existir*",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G04-007",
+                  "targetTitle": "Armadilha de Concurso: Falha de Concordância na Troca de *Haver* por *Existir*",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -252,8 +1141,118 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nA análise sintática exige a aplicação de uma ordem procedimental inflexível: diante do verbo, identifica-se primeiramente o sujeito por perguntas estruturadas (Quem é que...? / O que é que...?). Termos preposicionados com valor de tempo, lugar, modo ou causa possuem \"cheiro de circunstância\", classificando-se como Adjuntos Adverbiais (termos acessórios) e não como Objeto Indireto, mantendo o verbo como Intransitivo (VI).\nExplicação consolidada\nPrioridade do Sujeito: Nunca classificar complementos antes de isolar o sujeito. Em estruturas invertidas (sujeito pós-posto), o candidato desavisado confunde sujeito com objeto direto:\n\"Chegou a professora\" -> Pergunta: Quem é que chegou? -> Resposta: A professora (Sujeito Simples pós-posto). O verbo chegou é Intransitivo (VI).\n\"Foi determinada a prisão do bandido\" -> Pergunta: O que foi determinado? -> A prisão do bandido (Sujeito Paciente na voz passiva analítica).\nO \"Cheiro de Circunstância\" (Adjunto Adverbial vs. OI):\nNem todo termo preposicionado acoplado ao verbo é Objeto Indireto. Se o termo expressa circunstância de lugar, tempo, modo, meio, causa ou finalidade, trata-se de um Adjunto Adverbial.\nO adjunto adverbial é um termo acessório: sua eliminação mantém a espinha dorsal sintática do predicado.\nQuando um verbo significativo é acompanhado unicamente de adjuntos adverbiais, classifica-se como Verbo Intransitivo (VI).\nDesmistificação do Verbo Intransitivo:\nDesfaz-se a crença errônea de que o verbo intransitivo tem sentido hermético e precisa ficar sempre sozinho na frase. Ele frequentemente vem acompanhado de adjuntos adverbiais (ex.: \"Estou em casa\" -> em casa = Adjunto Adverbial de lugar; estou = VI).\nCritérios de reconhecimento ou aplicação\nFazer a pergunta do sujeito ao verbo.\nIdentificado o sujeito, examinar os termos restantes no predicado.\nTestar a supressão do termo preposicionado: se exprimir circunstância adverbial, classificar como Adjunto Adverbial e o verbo como VI.(Confusão entre sujeito posposto e objeto)"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "A análise sintática exige a aplicação de uma ordem procedimental inflexível: diante do verbo, identifica-se primeiramente o sujeito por perguntas estruturadas (Quem é que...? / O que é que...?). Termos preposicionados com valor de tempo, lugar, modo ou causa possuem \"cheiro de circunstância\", classificando-se como Adjuntos Adverbiais (termos acessórios) e não como Objeto Indireto, mantendo o verbo como Intransitivo (VI)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Prioridade do Sujeito: Nunca classificar complementos antes de isolar o sujeito. Em estruturas invertidas (sujeito pós-posto), o candidato desavisado confunde sujeito com objeto direto:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "\"Chegou a professora\" -> Pergunta: Quem é que chegou? -> Resposta: A professora (Sujeito Simples pós-posto). O verbo chegou é Intransitivo (VI).",
+                "\"Foi determinada a prisão do bandido\" -> Pergunta: O que foi determinado? -> A prisão do bandido (Sujeito Paciente na voz passiva analítica)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "O \"Cheiro de Circunstância\" (Adjunto Adverbial vs. OI):"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Nem todo termo preposicionado acoplado ao verbo é Objeto Indireto. Se o termo expressa circunstância de lugar, tempo, modo, meio, causa ou finalidade, trata-se de um Adjunto Adverbial.",
+                "O adjunto adverbial é um termo acessório: sua eliminação mantém a espinha dorsal sintática do predicado.",
+                "Quando um verbo significativo é acompanhado unicamente de adjuntos adverbiais, classifica-se como Verbo Intransitivo (VI)."
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Desmistificação do Verbo Intransitivo:"
+              ]
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Desfaz-se a crença errônea de que o verbo intransitivo tem sentido hermético e precisa ficar sempre sozinho na frase. Ele frequentemente vem acompanhado de adjuntos adverbiais (ex.: \"Estou em casa\" -> em casa = Adjunto Adverbial de lugar; estou = VI)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": true,
+              "items": [
+                "Fazer a pergunta do sujeito ao verbo.",
+                "Identificado o sujeito, examinar os termos restantes no predicado.",
+                "Testar a supressão do termo preposicionado: se exprimir circunstância adverbial, classificar como Adjunto Adverbial e o verbo como VI."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-001",
+                  "targetTitle": "Natureza e Classificação dos Termos Integrantes da Oração",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Depende de",
+                  "targetRef": "KB-A06-G04-006",
+                  "targetTitle": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G04-001",
+                  "targetTitle": "Protocolo Canônico Universal de Análise Sintática Oracional",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Relacionado a",
+                  "targetRef": "PROC-A06-G04-004",
+                  "targetTitle": "Teste de Eliminação do \"Cheiro de Circunstância\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "resolution"
+                },
+                {
+                  "relation": "Alerta associado",
+                  "targetRef": "WARN-A06-G04-008",
+                  "targetTitle": "Confusão entre Sujeito Pós-posto e Objeto Direto em Voz Passiva / Ordem Inversa",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "traps"
+                }
+              ]
             }
           ]
         },
@@ -266,8 +1265,73 @@
           "semanticKind": "concept_focus",
           "blocks": [
             {
-              "type": "concept_definition",
-              "text": "Definição ou ideia central\nO predicado é a totalidade da oração após o isolamento do sujeito (ou a oração inteira em casos de oração sem sujeito ou sujeito oculto/indeterminado), classificando-se conforme a natureza de seus núcleos significativos em Predicado Verbal (PV), Predicado Nominal (PN) ou Predicado Verbo-Nominal (PVN).\nExplicação consolidada\nPredicado Verbal (PV): Possui como núcleo um verbo significativo de ação ou processo (VI, VTD, VTI ou VTDI), desprovido de qualquer predicativo.\nExemplo: \"Enfrentava as dificuldades sem reclamar\" (VTD + OD + Adj. Adv. de modo -> PV).\nExemplo: \"Foi determinada a prisão do bandido\" (Locução de voz passiva com verbo de ação -> PV).\nPredicado Nominal (PN): Possui como núcleo significativo um nome (Predicativo do Sujeito), intermediado por um verbo de ligação (VL).\nPredicado Verbo-Nominal (PVN): Apresenta dois núcleos significativos simultâneos: um verbo de ação (VI, VTD, VTI ou VTDI) + um nome com função de predicativo (do sujeito ou do objeto), denotando um estado concomitante à ação.\nExemplo: \"Os convidados chegaram atrasados\" (chegaram = VI / núcleo verbal; atrasados = Predicativo do Sujeito / núcleo nominal -> PVN).\nCritérios de reconhecimento ou aplicação\nIsolar o predicado.\nVerificar a existência de predicativo:\nVerbo de ação sem predicativo = PV.\nVerbo de ligação com predicativo = PN.\nVerbo de ação com predicativo = PVN.\nRelações\nExpande: \nExemplificado por: ,"
+              "type": "heading",
+              "level": 3,
+              "text": "Definição ou ideia central"
+            },
+            {
+              "type": "paragraph",
+              "text": "O predicado é a totalidade da oração após o isolamento do sujeito (ou a oração inteira em casos de oração sem sujeito ou sujeito oculto/indeterminado), classificando-se conforme a natureza de seus núcleos significativos em Predicado Verbal (PV), Predicado Nominal (PN) ou Predicado Verbo-Nominal (PVN)."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Explicação consolidada"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Predicado Verbal (PV): Possui como núcleo um verbo significativo de ação ou processo (VI, VTD, VTI ou VTDI), desprovido de qualquer predicativo.",
+                "Exemplo: \"Enfrentava as dificuldades sem reclamar\" (VTD + OD + Adj. Adv. de modo -> PV).",
+                "Exemplo: \"Foi determinada a prisão do bandido\" (Locução de voz passiva com verbo de ação -> PV).",
+                "Predicado Nominal (PN): Possui como núcleo significativo um nome (Predicativo do Sujeito), intermediado por um verbo de ligação (VL).",
+                "Predicado Verbo-Nominal (PVN): Apresenta dois núcleos significativos simultâneos: um verbo de ação (VI, VTD, VTI ou VTDI) + um nome com função de predicativo (do sujeito ou do objeto), denotando um estado concomitante à ação.",
+                "Exemplo: \"Os convidados chegaram atrasados\" (chegaram = VI / núcleo verbal; atrasados = Predicativo do Sujeito / núcleo nominal -> PVN)."
+              ]
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Critérios de reconhecimento ou aplicação"
+            },
+            {
+              "type": "list",
+              "ordered": false,
+              "items": [
+                "Isolar o predicado.",
+                "Verificar a existência de predicativo:",
+                "Verbo de ação sem predicativo = PV.",
+                "Verbo de ligação com predicativo = PN.",
+                "Verbo de ação com predicativo = PVN."
+              ]
+            },
+            {
+              "type": "entity_relations",
+              "title": "Conexões para aprofundar",
+              "relations": [
+                {
+                  "relation": "Aprofunda",
+                  "targetRef": "KB-A06-G04-012",
+                  "targetTitle": "Método Canônico de Análise Sintática: Prioridade do Sujeito e o \"Cheiro de Circunstância\"",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "explanation"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G04-011",
+                  "targetTitle": "Exercício 1: Predicado Verbo-Nominal com Verbo Intransitivo",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "examples"
+                },
+                {
+                  "relation": "Exemplificado por",
+                  "targetRef": "WORKED_EXAMPLE-IP-A06-G04-012",
+                  "targetTitle": "Exercício 2: Objeto Direto com Adjunto Adverbial de Modo",
+                  "targetUnitId": "IP-A06-G04",
+                  "targetSection": "examples"
+                }
+              ]
             }
           ]
         },
@@ -317,103 +1381,8 @@
                 ]
               },
               "coverageOrigin": "canonical_table_backfill"
-            },
-            {
-              "type": "table_ref",
-              "tableId": "TABLE-IP-A06-G04-007",
-              "table": {
-                "tableId": "TABLE-IP-A06-G04-007",
-                "caption": "Explicação consolidada",
-                "headers": [
-                  "Dimensão Analítica",
-                  "Verbo HAVER (sentido de existir)",
-                  "Verbo EXISTIR",
-                  "Efeito da Substituição (Haver -> Existir)"
-                ],
-                "rows": [
-                  [
-                    "Semântica (Sentido)",
-                    "Expressa existência",
-                    "Expressa existência",
-                    "NÃO HÁ alteração de sentido (são sinônimos)."
-                  ],
-                  [
-                    "Relações Sintáticas",
-                    "Verbo Transitivo Direto (VTD)",
-                    "Verbo Intransitivo (VI)",
-                    "HÁ ALTERAÇÃO sintática profunda: o OD vira Sujeito; o VTD vira VI."
-                  ],
-                  [
-                    "Sujeito da Oração",
-                    "Inexistente (Oração sem sujeito)",
-                    "Sujeito expresso (posposto)",
-                    "Passa a ter sujeito sintático obrigatório."
-                  ],
-                  [
-                    "Flexão / Concordância",
-                    "Fixo na 3ª pessoa do singular",
-                    "Concorda com o sujeito",
-                    "Exige ajuste de concordância: se o termo for plural, existir deve ir para o plural."
-                  ]
-                ]
-              },
-              "coverageOrigin": "canonical_table_backfill"
             }
           ]
-        }
-      ],
-      "blocks": [
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nOs termos integrantes da oração são estruturas sintáticas indispensáveis que integram a frase de maneira obrigatória, preenchendo a predicação incompleta de verbos e nomes.\nExplicação consolidada\nNa arquitetura sintática da língua portuguesa, os termos da oração dividem-se hierarquicamente entre essenciais (sujeito e predicado), integrantes (complementos) e acessórios (adjuntos adnominais, adjuntos adverbiais e apostos). Os termos integrantes são categorizados em concursos públicos sob a designação geral de complementos:\nComplementos Verbais: Objeto Direto (OD) e Objeto Indireto (OI).\nComplementos Nominais: Complemento Nominal (CN).\nAo contrário dos termos acessórios — que veiculam dados circunstanciais ou caracterizadores dispensáveis para a integridade sintática elementar —, os termos integrantes não podem ser suprimidos sem provocar incompletude ou agramaticalidade na predicação do verbo ou do nome regente.\nCritérios de reconhecimento ou aplicação\nO termo responde a uma necessidade semântica e sintática de complementação do núcleo verbal transitivo.\nNão possui valor meramente circunstancial de tempo, lugar ou modo (o que configuraria adjunto adverbial).\nExemplos e contraexemplos\nTermo Integrante: \"Os passageiros esperavam o trem.\" (A oração com VTD exige o complemento para fechar a predicação).\nTermo Acessório (Contraponto): \"Os passageiros esperavam o trem na estação.\" (na estação é adjunto adverbial de lugar; sua remoção não destrói a predicação mínima do verbo).\nRelações\nExpande-se em: (OD), (OI) e (VTDI).\nContrasta com: (Termos Acessórios / Adjuntos Adverbiais)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Objeto Direto (OD) é o termo integrante que completa o sentido de um Verbo Transitivo Direto (VTD), vinculando-se a ele diretamente, isto é, sem a exigência de uma preposição gramatical obrigatória.\nExplicação consolidada\nO objeto direto pode ser expresso por substantivos, sintagmas nominais ou pronomes pessoais oblíquos átonos. Na morfossintaxe dos pronomes oblíquos atuando como complemento:\nPronomes Exclusivos de Objeto Direto: o, a, os, as (e suas variantes alomórficas lo/la/los/las e no/na/nos/nas). Exercem estritamente a função de OD na norma culta, independentemente do contexto.\nPronomes Coringas / Dupla Valência: me, te, se, nos, vos. Não possuem função sintática fixa a priori; funcionam como OD quando vinculados a um verbo transitivo direto.\nNa presença de fatores de atração pronominal (como pronomes indefinidos), o pronome oblíquo posiciona-se antes do verbo (próclise). Essa anteposição não altera a função sintática de complemento direto, embora costume induzir o candidato desatento ao erro de tomá-lo como sujeito.\nCritérios de reconhecimento ou aplicação\nAplicar o teste do verbo com substantivo neutro: Verbo + o menino -> VTD.\nIdentificar a ausência de preposição regencial introduzindo o complemento.\nSe expresso por pronome das formas o/a/os/as, classificar categoricamente como OD.\nExemplos e contraexemplos\nForma Substantiva: \"Os passageiros esperavam [VTD] o trem [OD].\"\nForma Pronominal Exclusiva com Próclise: \"Alguém [Suj.] o [OD] chamou [VTD].\"\nForma Pronominal Coringa: \"Aquele homem pretendia enganar-me [OD].\" (pois quem engana, engana o menino -> VTD).Contrasta com: (Objeto Indireto)(Pronome proclítico não é sujeito)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO \"Bizu do Menino\" é um procedimento heurístico rigoroso de validação de transitividade que consiste em acoplar a palavra \"menino\" (ou outro substantivo masculino singular com artigo) imediatamente após o verbo para atestar se a regência natural exige ou repele preposição.\nExplicação consolidada\nAo analisar pronomes coringas (me, te, se, nos, vos) ou termos complementares duvidosos, o candidato deve abandonar a intuição subjetiva e aplicar o teste:\nSe a junção culta produzir \"o menino\" (artigo puro), o verbo é Transitivo Direto (VTD) e o termo/pronome atua como Objeto Direto.\nSe a junção culta exigir \"ao menino\" (preposição a + artigo o) ou outra preposição (do menino, com o menino), o verbo é Transitivo Indireto (VTI) e o termo/pronome atua como Objeto Indireto.\nDesconstrução Técnica de Macetes Falhos Populares\nSubstituição de me/nos por a mim / a nós: Constitui grave falha metodológica. Os pronomes mim e nós (com preposição) são pronomes oblíquos tônicos, e por imperativo de sua própria morfologia são obrigatoriamente preposicionados. Ao trocar \"Chamou-me\" por \"Chamou a mim\", cria-se um objeto direto preposicionado artificial, falseando o resultado e fazendo o candidato rotular equivocadamente o verbo como VTI.\nSubstituição pelo pronome indefinido alguém: O ouvido do falante coloquial tende a introduzir a preposição a antes de alguém por mera busca de eufonia sonora (\"chamar a alguém\", \"convidar a alguém\"), induzindo à classificação errônea da regência.\nCritérios de reconhecimento ou aplicação\nPosicionar a forma verbal no infinitivo ou conjugada seguida imediatamente de o menino / ao menino.\nIsolar a resposta estrutural espontânea da norma padrão:\nChamar -> Chamar o menino (VTD).\nGostar -> Gostar do menino (VTI).\nObedecer -> Obedecer ao menino (VTI).\nEnganar -> Enganar o menino (VTD).Possui alertas: (Armadilha do a mim) e (Armadilha do alguém)."
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Objeto Direto Pleonástico é a repetição enfática de um objeto direto já enunciado na oração (comumente topicalizado/deslocado para o início), ocorrendo quase categoricamente sob a forma de um pronome pessoal oblíquo átono com valor anafórico.\nExplicação consolidada\nPleonasmo sintático traduz-se em reiteração funcional expressiva. Na estrutura oracional com objeto direto pleonástico identificam-se dois elementos:\nObjeto Direto Básico (\"Raiz\"): O termo substantivo antecipado em relação ao verbo, separado ou destacado na oração.\nObjeto Direto Pleonástico (\"Nutella / Enfeite / Estilístico\"): O pronome oblíquo átono (o, a, os, as) que retoma anaphoricamente o termo antecipado junto ao verbo regente.\nAmbos exercem a função de complemento direto em relação ao mesmo núcleo verbal, cabendo a qualificação de pleonástico especificamente à forma pronominal de reiteração.\nCritérios de reconhecimento ou aplicação\nPresença de um objeto direto substantivo antecipado ao verbo.\nPresença concomitante de pronome oblíquo átono acoplado ao verbo remetendo ao mesmo referente.\nExemplos e contraexemplos\n\"Os convidados, cumprimentei-os um a um.\"\nOs convidados: Objeto Direto antecipado (raiz).\ncumprimentei: Verbo Transitivo Direto (Sujeito oculto: eu).\n-os: Objeto Direto Pleonástico (pronome anafórico de reiteração).(Objeto Indireto Pleonástico).\nExemplificado por:"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Objeto Direto Preposicionado ocorre quando o complemento de um Verbo Transitivo Direto vem introduzido por uma preposição que não é exigida pela regência do verbo, constando na frase exclusivamente por motivos estilísticos, enfáticos, de clareza ou eufonia clássica.\nExplicação consolidada\nNo OD preposicionado, a presença da preposição é estritamente facultativa. Este fenômeno acarreta três diretrizes para concursos:\nEm Questões Objetivas de Reescrita Textual: A retirada ou inserção da preposição facultativa não fere a correção gramatical nem altera o sentido substancial da frase. A mudança atinge unicamente a ênfase expressiva.\nDiferenciação do Objeto Indireto (OI): O VTI exige preposição obrigatória intrínseca à sua predicação (\"gosta de algo\"). O VTD ligado a OD preposicionado dispensa preposição pelo teste do menino (\"admiro o menino\" -> admirar é VTD).\nAlerta Rigoroso para Provas Discursivas (Redações): O candidato comum não deve utilizar objeto direto preposicionado em redações de concurso. Examinadores de bancas discursivas tendem a não acolher pretensões estilísticas, corrigindo a inserção de preposição em VTD como erro de regência verbal.\nCritérios de reconhecimento ou aplicação\nO verbo principal é VTD comprovado pelo \"Bizu do Menino\".\nO complemento direto inicia-se por preposição (frequentemente a diante de pronomes indefinidos, nomes próprios ou pronomes de tratamento).\nA eliminação da preposição mantém a frase escorreita e compreensível.\nExemplos e contraexemplos\nExemplo com Preposição Facultativa: \"Admiro a todos.\" (Verbo admirar é VTD -> admiro o menino).\nReescrita Equivalente: \"Admiro todos.\" (Correção gramatical plena e mesmo sentido nuclear).Contrasta com: (Preposição obrigatória do OI)(Proibição em redações)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Objeto Indireto (OI) é o termo integrante que completa o sentido de um Verbo Transitivo Indireto (VTI), unindo-se a ele de forma obrigatória por meio de uma preposição regida pelo próprio verbo.\nExplicação consolidada\nAo contrário do que ocorre no OD preposicionado, a preposição do Objeto Indireto é mandatória e resulta da regência verbal estrita. Na sintaxe pronominal dos complementos indiretos:\nPronomes Exclusivos de Objeto Indireto: lhe, lhes. Substituem invariavelmente complementos preposicionados regidos pela preposição a (equivalendo a a ele, a ela, a eles, a elas). Nunca podem atuar como objeto direto na norma padrão contemporânea de concursos.\nPronomes Coringas: me, te, se, nos, vos. Funcionam como Objeto Indireto sempre que vinculados a um verbo transitivo indireto.\nCritérios de reconhecimento ou aplicação\nAplicar o teste: Verbo + ao menino / do menino / para o menino -> VTI.\nConfirmar que a preposição é regida pelo verbo e não possui valor meramente circunstancial de advérbio.\nSe o complemento for o pronome lhe/lhes, a classificação sintática é taxativamente Objeto Indireto.\nExemplos e contraexemplos\nForma Substantiva: \"Carlos gosta de música [OI].\" (gostar exige preposição de -> gosta do menino).\nForma Pronominal Exclusiva: \"Isto pertence ao convidado\" -> \"Isto pertence-lhe [OI].\"\nForma Pronominal Coringa: \"Alguém me [OI] ligou.\" (ligar rege preposição para/a -> ligou para o menino).Contrasta com: (OD) e (Adjunto Adverbial)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO Objeto Indireto Pleonástico consiste na reiteração enfática de um objeto indireto antecipado na oração mediante o emprego de pronome pessoal oblíquo átono (notadamente lhe/lhes). Em contrapartida, inexiste na gramática a figura do \"objeto indireto preposicionado\", já que todo objeto indireto é, por definição, regido por preposição obrigatória.\nExplicação consolidada\nNa análise de orações com complemento indireto duplicado:\nO sintagma preposicionado original surge antecipado (topicalizado) no período.\nO pronome oblíquo átono (lhe/lhes) surge junto ao verbo realizando a retomada anafórica com objetivo de reforço ou clareza.\nInexistência de \"OI Preposicionado\": No Objeto Direto, a preposição pode ser introduzida de forma facultativa e estilística em um verbo que não a exige (originando o OD Preposicionado). No Objeto Indireto, como a preposição já decorre obrigatoriamente da predicação do VTI, não há espaço funcional para uma preposição \"facultativa\". Portanto, todo OI é preposicionado por natureza regencial.\nExemplos e contraexemplos\n\"Aos meus alunos, dedico-lhes esta mensagem.\"\nAos meus alunos: Objeto Indireto antecipado.\ndedico: Verbo Transitivo Direto e Indireto (VTDI).\nesta mensagem: Objeto Direto.\n-lhes: Objeto Indireto Pleonástico.(Pleonasmo) e (OI)\nContrasta com: (OD Preposicionado)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA substituição de termos substantivos por pronomes oblíquos obedece rigidamente à transitividade verbal: complementos diretos exigem o, a, os, as, enquanto complementos indiretos exigem lhe, lhes. O emprego do pronome lhe em verbos transitivos diretos por falsa sensação de elegância fonética (eufonia) constitui erro crasso de regência verbal.\nExplicação consolidada\nBancas de concurso exploram frequentemente a inclinação coloquial dos falantes de considerarem a pronúncia do pronome lhe mais \"refinada\" ou \"suave\" do que os pronomes o/a. No entanto, a norma culta não é balizada pela eufonia:\nVerbo Transitivo Indireto (VTI): \"Respondeu ao diretor\" -> responder é VTI (respondeu ao menino) -> Substituição correta: \"Respondeu-lhe\".\nVerbo Transitivo Direto (VTD): \"Respeitou o diretor\" -> respeitar é VTD (respeitou o menino) -> Substituição correta: \"Respeitou-o\". A construção \\*\"Respeitou-lhe\" constitui erro gramatical de regência.\nO mesmo princípio veta construções coloquiais românticas como \\*\"Não lhe amo\" ou \\*\"Amo-lhe\", uma vez que o verbo amar é VTD, exigindo \"Não o amo\" ou \"Amo-te\".\nCritérios de reconhecimento ou aplicação\nDeterminar a transitividade do verbo pelo \"Bizu do Menino\".\nSe VTD -> Empregar exclusivamente o, a, os, as (ou alomorfes lo/la, no/na).\nSe VTI regido pela preposição a -> Empregar exclusivamente lhe, lhes.(O falso \"lhe elegante\")"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nVerbos Transitivos Diretos e Indiretos (bitransitivos) são aqueles que demandam simultaneamente dois complementos de naturezas opostas: um Objeto Direto (sem preposição) e um Objeto Indireto (com preposição). A transitividade não é um rótulo fixo do dicionário, mas uma propriedade relativa construída no contexto oracional.\nExplicação consolidada\nA sintaxe da bitransitividade assenta-se sobre dois pilares:\nRegra da Coexistência Exclusiva: Na oração com VTDI, é proibida a duplicação de complementos da mesma natureza. A estrutura deve balancear exatamente um complemento sem preposição e outro com preposição. São agramaticais orações com dois ODs ou dois OIs.\nPrincípio da Relatividade da Transitividade: Desconstrói-se o vício escolar de decorar perguntas fixas ao verbo (ex.: \"quem oferece, oferece algo a alguém\"). O verbo oferecer, por exemplo, comporta-se como:\nVTDI: \"Oferecemos uma medalha (OD) ao primeiro colocado (OI).\"\nVTD contextual: \"Oferecemos café (OD).\" (A oração encerra-se sem complemento preposicionado, atuando o verbo como VTD legítimo).\nCritérios de reconhecimento ou aplicação\nIdentificar se a oração apresenta os dois complementos simultâneos (um preposicionado e outro não preposicionado).\nNão forçar a existência de complementos ausentes na frase analisada.\nRelações\nExpande: e (Proibição de complementos idênticos em VTDI)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nAo associar pronomes oblíquos átonos a verbos bitransitivos, as formas fixas (o/a e lhe) devem ser combinadas sem redundância de função, enquanto os pronomes coringas (me, te, se, nos, vos) assumem a função que estiver vaga (OD ou OI) para garantir o equilíbrio sintático da frase.\nExplicação consolidada\nCombinações com Formas Fixas:\nCorreto: \"Ofereceu-lhe [OI] uma medalha [OD].\"\nCorreto: \"Ofereceu-a [OD] ao primeiro colocado [OI].\"\nIncorreto (2 OIs): \\*\"Ofereceu-lhe [OI] ao primeiro colocado [OI].\"\nIncorreto (2 ODs): \\*\"Ofereceu-o [OD] uma medalha [OD].\"\nDinâmica dos Pronomes Coringas (\"Vale Tudo\"):\nSe a oração já possuir um Objeto Direto, o coringa funcionará como Objeto Indireto: \"Deu-me [OI] um presente [OD]\".\nSe a oração já possuir um Objeto Indireto, o coringa funcionará como Objeto Direto: \"Entregou-se [OD] à polícia [OI]\".\nEm orações com locução verbal, a transitividade é governada pelo verbo principal: \"Aquele homem pretendia enganar-me [OD]\" (verbo principal enganar é VTD -> coringa me atua como OD).\nCritérios de reconhecimento ou aplicação\nIdentificar se já existe um complemento substantivo ou pronominal fixo na oração.\nAtribuir ao pronome coringa a função complementar oposta.\nEm locuções verbais, aplicar o \"Bizu do Menino\" no verbo principal no infinitivo/gerúndio/particípio.Exemplificado por: , , ,"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO verbo haver, no sentido de existir ou ocorrer, é impessoal (sem sujeito), classifica-se como VTD, permanece invariável na 3ª pessoa do singular e rege Objeto Direto. Já o verbo existir é pessoal, classifica-se como Intransitivo (VI), possui sujeito explícito e flexiona-se obrigatoriamente para concordar em número e pessoa com esse sujeito.\nExplicação consolidada\nEm questões de concurso público (notadamente bancas como Cebraspe e FGV), a substituição de haver por existir envolve três dimensões analíticas:\nCritérios de reconhecimento ou aplicação\n\"No parque havia [VTD] crianças [OD].\" -> Fixo no singular; oração sem sujeito.\n\"No parque existiam [VI] crianças [Sujeito].\" -> Flexão no plural obrigatória para concordar com o sujeito crianças.\nErro clássico de concurso: afirmar que a substituição de \"Havia problemas\" por \\*\"Existia problemas\" mantém a correção gramatical (está incorreto por erro de concordância).(Erro de concordância na troca de haver por existir)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nA análise sintática exige a aplicação de uma ordem procedimental inflexível: diante do verbo, identifica-se primeiramente o sujeito por perguntas estruturadas (Quem é que...? / O que é que...?). Termos preposicionados com valor de tempo, lugar, modo ou causa possuem \"cheiro de circunstância\", classificando-se como Adjuntos Adverbiais (termos acessórios) e não como Objeto Indireto, mantendo o verbo como Intransitivo (VI).\nExplicação consolidada\nPrioridade do Sujeito: Nunca classificar complementos antes de isolar o sujeito. Em estruturas invertidas (sujeito pós-posto), o candidato desavisado confunde sujeito com objeto direto:\n\"Chegou a professora\" -> Pergunta: Quem é que chegou? -> Resposta: A professora (Sujeito Simples pós-posto). O verbo chegou é Intransitivo (VI).\n\"Foi determinada a prisão do bandido\" -> Pergunta: O que foi determinado? -> A prisão do bandido (Sujeito Paciente na voz passiva analítica).\nO \"Cheiro de Circunstância\" (Adjunto Adverbial vs. OI):\nNem todo termo preposicionado acoplado ao verbo é Objeto Indireto. Se o termo expressa circunstância de lugar, tempo, modo, meio, causa ou finalidade, trata-se de um Adjunto Adverbial.\nO adjunto adverbial é um termo acessório: sua eliminação mantém a espinha dorsal sintática do predicado.\nQuando um verbo significativo é acompanhado unicamente de adjuntos adverbiais, classifica-se como Verbo Intransitivo (VI).\nDesmistificação do Verbo Intransitivo:\nDesfaz-se a crença errônea de que o verbo intransitivo tem sentido hermético e precisa ficar sempre sozinho na frase. Ele frequentemente vem acompanhado de adjuntos adverbiais (ex.: \"Estou em casa\" -> em casa = Adjunto Adverbial de lugar; estou = VI).\nCritérios de reconhecimento ou aplicação\nFazer a pergunta do sujeito ao verbo.\nIdentificado o sujeito, examinar os termos restantes no predicado.\nTestar a supressão do termo preposicionado: se exprimir circunstância adverbial, classificar como Adjunto Adverbial e o verbo como VI.(Confusão entre sujeito posposto e objeto)"
-        },
-        {
-          "type": "concept_definition",
-          "text": "Definição ou ideia central\nO predicado é a totalidade da oração após o isolamento do sujeito (ou a oração inteira em casos de oração sem sujeito ou sujeito oculto/indeterminado), classificando-se conforme a natureza de seus núcleos significativos em Predicado Verbal (PV), Predicado Nominal (PN) ou Predicado Verbo-Nominal (PVN).\nExplicação consolidada\nPredicado Verbal (PV): Possui como núcleo um verbo significativo de ação ou processo (VI, VTD, VTI ou VTDI), desprovido de qualquer predicativo.\nExemplo: \"Enfrentava as dificuldades sem reclamar\" (VTD + OD + Adj. Adv. de modo -> PV).\nExemplo: \"Foi determinada a prisão do bandido\" (Locução de voz passiva com verbo de ação -> PV).\nPredicado Nominal (PN): Possui como núcleo significativo um nome (Predicativo do Sujeito), intermediado por um verbo de ligação (VL).\nPredicado Verbo-Nominal (PVN): Apresenta dois núcleos significativos simultâneos: um verbo de ação (VI, VTD, VTI ou VTDI) + um nome com função de predicativo (do sujeito ou do objeto), denotando um estado concomitante à ação.\nExemplo: \"Os convidados chegaram atrasados\" (chegaram = VI / núcleo verbal; atrasados = Predicativo do Sujeito / núcleo nominal -> PVN).\nCritérios de reconhecimento ou aplicação\nIsolar o predicado.\nVerificar a existência de predicativo:\nVerbo de ação sem predicativo = PV.\nVerbo de ligação com predicativo = PN.\nVerbo de ação com predicativo = PVN.\nRelações\nExpande: \nExemplificado por: ,"
         }
       ]
     },
@@ -523,7 +1492,9 @@
               "RULE-IP-A06-G04-001",
               "EXP-IP-A06-G04-062"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -802,7 +1773,9 @@
               "PROC-A06-G04-001",
               "EXP-IP-A06-G04-PROC-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -944,7 +1917,9 @@
               "PROC-A06-G04-002",
               "EXP-IP-A06-G04-PROC-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1080,7 +2055,9 @@
               "PROC-A06-G04-003",
               "EXP-IP-A06-G04-PROC-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1222,7 +2199,9 @@
               "PROC-A06-G04-004",
               "EXP-IP-A06-G04-PROC-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "hybrid",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1321,7 +2300,9 @@
               "CONTRAST-IP-A06-G04-001",
               "EXP-IP-A06-G04-071"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1397,7 +2378,9 @@
               "CONTRAST-IP-A06-G04-002",
               "EXP-IP-A06-G04-072"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1471,7 +2454,9 @@
               "CONTRAST-IP-A06-G04-003",
               "EXP-IP-A06-G04-073"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1537,7 +2522,9 @@
               "CONTRAST-IP-A06-G04-004",
               "EXP-IP-A06-G04-074"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -1590,7 +2577,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-001",
               "EXP-IP-A06-G04-075"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1639,7 +2628,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-002",
               "EXP-IP-A06-G04-076"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1688,7 +2679,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-003",
               "EXP-IP-A06-G04-077"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1737,7 +2730,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-004",
               "EXP-IP-A06-G04-078"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1786,7 +2781,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-005",
               "EXP-IP-A06-G04-079"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1835,7 +2832,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-006",
               "EXP-IP-A06-G04-080"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1884,7 +2883,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-007",
               "EXP-IP-A06-G04-081"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1933,7 +2934,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-008",
               "EXP-IP-A06-G04-082"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -1976,7 +2979,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-009",
               "EXP-IP-A06-G04-083"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2029,7 +3034,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-010",
               "EXP-IP-A06-G04-084"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2105,7 +3112,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-011",
               "EXP-IP-A06-G04-085"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2181,7 +3190,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-012",
               "EXP-IP-A06-G04-086"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2257,7 +3268,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-013",
               "EXP-IP-A06-G04-087"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2333,7 +3346,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-014",
               "EXP-IP-A06-G04-088"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2409,7 +3424,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-015",
               "EXP-IP-A06-G04-089"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2485,7 +3502,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-016",
               "EXP-IP-A06-G04-090"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2561,7 +3580,9 @@
               "WORKED_EXAMPLE-IP-A06-G04-017",
               "EXP-IP-A06-G04-091"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ]
@@ -2611,7 +3632,9 @@
               "WARN-A06-G04-001",
               "EXP-IP-A06-G04-TRAP-001"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2648,7 +3671,9 @@
               "WARN-A06-G04-002",
               "EXP-IP-A06-G04-TRAP-002"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2685,7 +3710,9 @@
               "WARN-A06-G04-003",
               "EXP-IP-A06-G04-TRAP-003"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2722,7 +3749,9 @@
               "WARN-A06-G04-004",
               "EXP-IP-A06-G04-TRAP-004"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2759,7 +3788,9 @@
               "WARN-A06-G04-005",
               "EXP-IP-A06-G04-TRAP-005"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2797,7 +3828,9 @@
               "WARN-A06-G04-006",
               "EXP-IP-A06-G04-TRAP-006"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2833,7 +3866,9 @@
               "WARN-A06-G04-007",
               "EXP-IP-A06-G04-TRAP-007"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         },
         {
@@ -2869,32 +3904,142 @@
               "WARN-A06-G04-008",
               "EXP-IP-A06-G04-TRAP-008"
             ],
-            "hideGenericScaffold": true
+            "hideGenericScaffold": true,
+            "renderStrategy": "source_only",
+            "diagramIntent": "none"
           }
         }
       ],
       "supplementaryBlocks": []
     },
     "glossary": {
-      "blocks": [
+      "items": [
         {
-          "type": "bullet_list",
-          "ordered": false,
-          "items": [
-            "**Natureza e Classificação dos Termos Integrantes da Oração**: Definição ou ideia central\nOs termos integrantes da oração são estruturas sintáticas indispensáveis que integram a frase de maneira obrigatória, preenchendo a predicação incompleta de verbos e nomes.\nExplicação consolidada\nNa arquitetura sintática da língua portuguesa, os termos da oração dividem-se hierarquicamente entre essenciais (sujeito e predicado), integrantes (complementos) e acessórios (adjuntos adnominais, adjuntos adverbiais e apostos). Os termos integrantes são categorizados em concursos públicos sob a designação geral de complementos:\nComplementos Verbais: Objeto Direto (OD) e Objeto Indireto (OI).\nComplementos Nominais: Complemento Nominal (CN).\nAo contrário dos termos acessórios — que veiculam dados circunstanciais ou caracterizadores dispensáveis para a integridade sintática elementar —, os termos integrantes não podem ser suprimidos sem provocar incompletude ou agramaticalidade na predicação do verbo ou do nome regente.\nCritérios de reconhecimento ou aplicação\nO termo responde a uma necessidade semântica e sintática de complementação do núcleo verbal transitivo.\nNão possui valor meramente circunstancial de tempo, lugar ou modo (o que configuraria adjunto adverbial).\nExemplos e contraexemplos\nTermo Integrante: \"Os passageiros esperavam o trem.\" (A oração com VTD exige o complemento para fechar a predicação).\nTermo Acessório (Contraponto): \"Os passageiros esperavam o trem na estação.\" (na estação é adjunto adverbial de lugar; sua remoção não destrói a predicação mínima do verbo).\nRelações\nExpande-se em: (OD), (OI) e (VTDI).\nContrasta com: (Termos Acessórios / Adjuntos Adverbiais).",
-            "**Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais**: Definição ou ideia central\nO Objeto Direto (OD) é o termo integrante que completa o sentido de um Verbo Transitivo Direto (VTD), vinculando-se a ele diretamente, isto é, sem a exigência de uma preposição gramatical obrigatória.\nExplicação consolidada\nO objeto direto pode ser expresso por substantivos, sintagmas nominais ou pronomes pessoais oblíquos átonos. Na morfossintaxe dos pronomes oblíquos atuando como complemento:\nPronomes Exclusivos de Objeto Direto: o, a, os, as (e suas variantes alomórficas lo/la/los/las e no/na/nos/nas). Exercem estritamente a função de OD na norma culta, independentemente do contexto.\nPronomes Coringas / Dupla Valência: me, te, se, nos, vos. Não possuem função sintática fixa a priori; funcionam como OD quando vinculados a um verbo transitivo direto.\nNa presença de fatores de atração pronominal (como pronomes indefinidos), o pronome oblíquo posiciona-se antes do verbo (próclise). Essa anteposição não altera a função sintática de complemento direto, embora costume induzir o candidato desatento ao erro de tomá-lo como sujeito.\nCritérios de reconhecimento ou aplicação\nAplicar o teste do verbo com substantivo neutro: Verbo + o menino -> VTD.\nIdentificar a ausência de preposição regencial introduzindo o complemento.\nSe expresso por pronome das formas o/a/os/as, classificar categoricamente como OD.\nExemplos e contraexemplos\nForma Substantiva: \"Os passageiros esperavam [VTD] o trem [OD].\"\nForma Pronominal Exclusiva com Próclise: \"Alguém [Suj.] o [OD] chamou [VTD].\"\nForma Pronominal Coringa: \"Aquele homem pretendia enganar-me [OD].\" (pois quem engana, engana o menino -> VTD).Contrasta com: (Objeto Indireto)(Pronome proclítico não é sujeito)",
-            "**Estratégia de Identificação de Regência: O \"Bizu do Menino\" vs. Macetes Falhos**: Definição ou ideia central\nO \"Bizu do Menino\" é um procedimento heurístico rigoroso de validação de transitividade que consiste em acoplar a palavra \"menino\" (ou outro substantivo masculino singular com artigo) imediatamente após o verbo para atestar se a regência natural exige ou repele preposição.\nExplicação consolidada\nAo analisar pronomes coringas (me, te, se, nos, vos) ou termos complementares duvidosos, o candidato deve abandonar a intuição subjetiva e aplicar o teste:\nSe a junção culta produzir \"o menino\" (artigo puro), o verbo é Transitivo Direto (VTD) e o termo/pronome atua como Objeto Direto.\nSe a junção culta exigir \"ao menino\" (preposição a + artigo o) ou outra preposição (do menino, com o menino), o verbo é Transitivo Indireto (VTI) e o termo/pronome atua como Objeto Indireto.\nDesconstrução Técnica de Macetes Falhos Populares\nSubstituição de me/nos por a mim / a nós: Constitui grave falha metodológica. Os pronomes mim e nós (com preposição) são pronomes oblíquos tônicos, e por imperativo de sua própria morfologia são obrigatoriamente preposicionados. Ao trocar \"Chamou-me\" por \"Chamou a mim\", cria-se um objeto direto preposicionado artificial, falseando o resultado e fazendo o candidato rotular equivocadamente o verbo como VTI.\nSubstituição pelo pronome indefinido alguém: O ouvido do falante coloquial tende a introduzir a preposição a antes de alguém por mera busca de eufonia sonora (\"chamar a alguém\", \"convidar a alguém\"), induzindo à classificação errônea da regência.\nCritérios de reconhecimento ou aplicação\nPosicionar a forma verbal no infinitivo ou conjugada seguida imediatamente de o menino / ao menino.\nIsolar a resposta estrutural espontânea da norma padrão:\nChamar -> Chamar o menino (VTD).\nGostar -> Gostar do menino (VTI).\nObedecer -> Obedecer ao menino (VTI).\nEnganar -> Enganar o menino (VTD).Possui alertas: (Armadilha do a mim) e (Armadilha do alguém).",
-            "**Objeto Direto Pleonástico**: Definição ou ideia central\nO Objeto Direto Pleonástico é a repetição enfática de um objeto direto já enunciado na oração (comumente topicalizado/deslocado para o início), ocorrendo quase categoricamente sob a forma de um pronome pessoal oblíquo átono com valor anafórico.\nExplicação consolidada\nPleonasmo sintático traduz-se em reiteração funcional expressiva. Na estrutura oracional com objeto direto pleonástico identificam-se dois elementos:\nObjeto Direto Básico (\"Raiz\"): O termo substantivo antecipado em relação ao verbo, separado ou destacado na oração.\nObjeto Direto Pleonástico (\"Nutella / Enfeite / Estilístico\"): O pronome oblíquo átono (o, a, os, as) que retoma anaphoricamente o termo antecipado junto ao verbo regente.\nAmbos exercem a função de complemento direto em relação ao mesmo núcleo verbal, cabendo a qualificação de pleonástico especificamente à forma pronominal de reiteração.\nCritérios de reconhecimento ou aplicação\nPresença de um objeto direto substantivo antecipado ao verbo.\nPresença concomitante de pronome oblíquo átono acoplado ao verbo remetendo ao mesmo referente.\nExemplos e contraexemplos\n\"Os convidados, cumprimentei-os um a um.\"\nOs convidados: Objeto Direto antecipado (raiz).\ncumprimentei: Verbo Transitivo Direto (Sujeito oculto: eu).\n-os: Objeto Direto Pleonástico (pronome anafórico de reiteração).(Objeto Indireto Pleonástico).\nExemplificado por:",
-            "**Objeto Direto Preposicionado: Natureza Facultativa, Reescrita e Riscos em Redação**: Definição ou ideia central\nO Objeto Direto Preposicionado ocorre quando o complemento de um Verbo Transitivo Direto vem introduzido por uma preposição que não é exigida pela regência do verbo, constando na frase exclusivamente por motivos estilísticos, enfáticos, de clareza ou eufonia clássica.\nExplicação consolidada\nNo OD preposicionado, a presença da preposição é estritamente facultativa. Este fenômeno acarreta três diretrizes para concursos:\nEm Questões Objetivas de Reescrita Textual: A retirada ou inserção da preposição facultativa não fere a correção gramatical nem altera o sentido substancial da frase. A mudança atinge unicamente a ênfase expressiva.\nDiferenciação do Objeto Indireto (OI): O VTI exige preposição obrigatória intrínseca à sua predicação (\"gosta de algo\"). O VTD ligado a OD preposicionado dispensa preposição pelo teste do menino (\"admiro o menino\" -> admirar é VTD).\nAlerta Rigoroso para Provas Discursivas (Redações): O candidato comum não deve utilizar objeto direto preposicionado em redações de concurso. Examinadores de bancas discursivas tendem a não acolher pretensões estilísticas, corrigindo a inserção de preposição em VTD como erro de regência verbal.\nCritérios de reconhecimento ou aplicação\nO verbo principal é VTD comprovado pelo \"Bizu do Menino\".\nO complemento direto inicia-se por preposição (frequentemente a diante de pronomes indefinidos, nomes próprios ou pronomes de tratamento).\nA eliminação da preposição mantém a frase escorreita e compreensível.\nExemplos e contraexemplos\nExemplo com Preposição Facultativa: \"Admiro a todos.\" (Verbo admirar é VTD -> admiro o menino).\nReescrita Equivalente: \"Admiro todos.\" (Correção gramatical plena e mesmo sentido nuclear).Contrasta com: (Preposição obrigatória do OI)(Proibição em redações)",
-            "**Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"**: Definição ou ideia central\nO Objeto Indireto (OI) é o termo integrante que completa o sentido de um Verbo Transitivo Indireto (VTI), unindo-se a ele de forma obrigatória por meio de uma preposição regida pelo próprio verbo.\nExplicação consolidada\nAo contrário do que ocorre no OD preposicionado, a preposição do Objeto Indireto é mandatória e resulta da regência verbal estrita. Na sintaxe pronominal dos complementos indiretos:\nPronomes Exclusivos de Objeto Indireto: lhe, lhes. Substituem invariavelmente complementos preposicionados regidos pela preposição a (equivalendo a a ele, a ela, a eles, a elas). Nunca podem atuar como objeto direto na norma padrão contemporânea de concursos.\nPronomes Coringas: me, te, se, nos, vos. Funcionam como Objeto Indireto sempre que vinculados a um verbo transitivo indireto.\nCritérios de reconhecimento ou aplicação\nAplicar o teste: Verbo + ao menino / do menino / para o menino -> VTI.\nConfirmar que a preposição é regida pelo verbo e não possui valor meramente circunstancial de advérbio.\nSe o complemento for o pronome lhe/lhes, a classificação sintática é taxativamente Objeto Indireto.\nExemplos e contraexemplos\nForma Substantiva: \"Carlos gosta de música [OI].\" (gostar exige preposição de -> gosta do menino).\nForma Pronominal Exclusiva: \"Isto pertence ao convidado\" -> \"Isto pertence-lhe [OI].\"\nForma Pronominal Coringa: \"Alguém me [OI] ligou.\" (ligar rege preposição para/a -> ligou para o menino).Contrasta com: (OD) e (Adjunto Adverbial)",
-            "**Objeto Indireto Pleonástico e Inexistência Lógica de \"OI Preposicionado\"**: Definição ou ideia central\nO Objeto Indireto Pleonástico consiste na reiteração enfática de um objeto indireto antecipado na oração mediante o emprego de pronome pessoal oblíquo átono (notadamente lhe/lhes). Em contrapartida, inexiste na gramática a figura do \"objeto indireto preposicionado\", já que todo objeto indireto é, por definição, regido por preposição obrigatória.\nExplicação consolidada\nNa análise de orações com complemento indireto duplicado:\nO sintagma preposicionado original surge antecipado (topicalizado) no período.\nO pronome oblíquo átono (lhe/lhes) surge junto ao verbo realizando a retomada anafórica com objetivo de reforço ou clareza.\nInexistência de \"OI Preposicionado\": No Objeto Direto, a preposição pode ser introduzida de forma facultativa e estilística em um verbo que não a exige (originando o OD Preposicionado). No Objeto Indireto, como a preposição já decorre obrigatoriamente da predicação do VTI, não há espaço funcional para uma preposição \"facultativa\". Portanto, todo OI é preposicionado por natureza regencial.\nExemplos e contraexemplos\n\"Aos meus alunos, dedico-lhes esta mensagem.\"\nAos meus alunos: Objeto Indireto antecipado.\ndedico: Verbo Transitivo Direto e Indireto (VTDI).\nesta mensagem: Objeto Direto.\n-lhes: Objeto Indireto Pleonástico.(Pleonasmo) e (OI)\nContrasta com: (OD Preposicionado)",
-            "**A Pegadinha do \"Lhe Eufônico\" e a Regra Estrita de Substituição Pronominal**: Definição ou ideia central\nA substituição de termos substantivos por pronomes oblíquos obedece rigidamente à transitividade verbal: complementos diretos exigem o, a, os, as, enquanto complementos indiretos exigem lhe, lhes. O emprego do pronome lhe em verbos transitivos diretos por falsa sensação de elegância fonética (eufonia) constitui erro crasso de regência verbal.\nExplicação consolidada\nBancas de concurso exploram frequentemente a inclinação coloquial dos falantes de considerarem a pronúncia do pronome lhe mais \"refinada\" ou \"suave\" do que os pronomes o/a. No entanto, a norma culta não é balizada pela eufonia:\nVerbo Transitivo Indireto (VTI): \"Respondeu ao diretor\" -> responder é VTI (respondeu ao menino) -> Substituição correta: \"Respondeu-lhe\".\nVerbo Transitivo Direto (VTD): \"Respeitou o diretor\" -> respeitar é VTD (respeitou o menino) -> Substituição correta: \"Respeitou-o\". A construção \\*\"Respeitou-lhe\" constitui erro gramatical de regência.\nO mesmo princípio veta construções coloquiais românticas como \\*\"Não lhe amo\" ou \\*\"Amo-lhe\", uma vez que o verbo amar é VTD, exigindo \"Não o amo\" ou \"Amo-te\".\nCritérios de reconhecimento ou aplicação\nDeterminar a transitividade do verbo pelo \"Bizu do Menino\".\nSe VTD -> Empregar exclusivamente o, a, os, as (ou alomorfes lo/la, no/na).\nSe VTI regido pela preposição a -> Empregar exclusivamente lhe, lhes.(O falso \"lhe elegante\")",
-            "**Verbos Transitivos Diretos e Indiretos (VTDI) e Relatividade da Transitividade**: Definição ou ideia central\nVerbos Transitivos Diretos e Indiretos (bitransitivos) são aqueles que demandam simultaneamente dois complementos de naturezas opostas: um Objeto Direto (sem preposição) e um Objeto Indireto (com preposição). A transitividade não é um rótulo fixo do dicionário, mas uma propriedade relativa construída no contexto oracional.\nExplicação consolidada\nA sintaxe da bitransitividade assenta-se sobre dois pilares:\nRegra da Coexistência Exclusiva: Na oração com VTDI, é proibida a duplicação de complementos da mesma natureza. A estrutura deve balancear exatamente um complemento sem preposição e outro com preposição. São agramaticais orações com dois ODs ou dois OIs.\nPrincípio da Relatividade da Transitividade: Desconstrói-se o vício escolar de decorar perguntas fixas ao verbo (ex.: \"quem oferece, oferece algo a alguém\"). O verbo oferecer, por exemplo, comporta-se como:\nVTDI: \"Oferecemos uma medalha (OD) ao primeiro colocado (OI).\"\nVTD contextual: \"Oferecemos café (OD).\" (A oração encerra-se sem complemento preposicionado, atuando o verbo como VTD legítimo).\nCritérios de reconhecimento ou aplicação\nIdentificar se a oração apresenta os dois complementos simultâneos (um preposicionado e outro não preposicionado).\nNão forçar a existência de complementos ausentes na frase analisada.\nRelações\nExpande: e (Proibição de complementos idênticos em VTDI)",
-            "**Sintaxe Combinada dos Pronomes Oblíquos em Verbos Bitransitivos e Pronomes Coringas**: Definição ou ideia central\nAo associar pronomes oblíquos átonos a verbos bitransitivos, as formas fixas (o/a e lhe) devem ser combinadas sem redundância de função, enquanto os pronomes coringas (me, te, se, nos, vos) assumem a função que estiver vaga (OD ou OI) para garantir o equilíbrio sintático da frase.\nExplicação consolidada\nCombinações com Formas Fixas:\nCorreto: \"Ofereceu-lhe [OI] uma medalha [OD].\"\nCorreto: \"Ofereceu-a [OD] ao primeiro colocado [OI].\"\nIncorreto (2 OIs): \\*\"Ofereceu-lhe [OI] ao primeiro colocado [OI].\"\nIncorreto (2 ODs): \\*\"Ofereceu-o [OD] uma medalha [OD].\"\nDinâmica dos Pronomes Coringas (\"Vale Tudo\"):\nSe a oração já possuir um Objeto Direto, o coringa funcionará como Objeto Indireto: \"Deu-me [OI] um presente [OD]\".\nSe a oração já possuir um Objeto Indireto, o coringa funcionará como Objeto Direto: \"Entregou-se [OD] à polícia [OI]\".\nEm orações com locução verbal, a transitividade é governada pelo verbo principal: \"Aquele homem pretendia enganar-me [OD]\" (verbo principal enganar é VTD -> coringa me atua como OD).\nCritérios de reconhecimento ou aplicação\nIdentificar se já existe um complemento substantivo ou pronominal fixo na oração.\nAtribuir ao pronome coringa a função complementar oposta.\nEm locuções verbais, aplicar o \"Bizu do Menino\" no verbo principal no infinitivo/gerúndio/particípio.Exemplificado por: , , ,",
-            "**Paralelo Sintático-Semântico: Verbo *Haver* Impessoal vs. Verbo *Existir* Pessoal**: Definição ou ideia central\nO verbo haver, no sentido de existir ou ocorrer, é impessoal (sem sujeito), classifica-se como VTD, permanece invariável na 3ª pessoa do singular e rege Objeto Direto. Já o verbo existir é pessoal, classifica-se como Intransitivo (VI), possui sujeito explícito e flexiona-se obrigatoriamente para concordar em número e pessoa com esse sujeito.\nExplicação consolidada\nEm questões de concurso público (notadamente bancas como Cebraspe e FGV), a substituição de haver por existir envolve três dimensões analíticas:\nCritérios de reconhecimento ou aplicação\n\"No parque havia [VTD] crianças [OD].\" -> Fixo no singular; oração sem sujeito.\n\"No parque existiam [VI] crianças [Sujeito].\" -> Flexão no plural obrigatória para concordar com o sujeito crianças.\nErro clássico de concurso: afirmar que a substituição de \"Havia problemas\" por \\*\"Existia problemas\" mantém a correção gramatical (está incorreto por erro de concordância).(Erro de concordância na troca de haver por existir)",
-            "**Método Canônico de Análise Sintática: Prioridade do Sujeito e o \"Cheiro de Circunstância\"**: Definição ou ideia central\nA análise sintática exige a aplicação de uma ordem procedimental inflexível: diante do verbo, identifica-se primeiramente o sujeito por perguntas estruturadas (Quem é que...? / O que é que...?). Termos preposicionados com valor de tempo, lugar, modo ou causa possuem \"cheiro de circunstância\", classificando-se como Adjuntos Adverbiais (termos acessórios) e não como Objeto Indireto, mantendo o verbo como Intransitivo (VI).\nExplicação consolidada\nPrioridade do Sujeito: Nunca classificar complementos antes de isolar o sujeito. Em estruturas invertidas (sujeito pós-posto), o candidato desavisado confunde sujeito com objeto direto:\n\"Chegou a professora\" -> Pergunta: Quem é que chegou? -> Resposta: A professora (Sujeito Simples pós-posto). O verbo chegou é Intransitivo (VI).\n\"Foi determinada a prisão do bandido\" -> Pergunta: O que foi determinado? -> A prisão do bandido (Sujeito Paciente na voz passiva analítica).\nO \"Cheiro de Circunstância\" (Adjunto Adverbial vs. OI):\nNem todo termo preposicionado acoplado ao verbo é Objeto Indireto. Se o termo expressa circunstância de lugar, tempo, modo, meio, causa ou finalidade, trata-se de um Adjunto Adverbial.\nO adjunto adverbial é um termo acessório: sua eliminação mantém a espinha dorsal sintática do predicado.\nQuando um verbo significativo é acompanhado unicamente de adjuntos adverbiais, classifica-se como Verbo Intransitivo (VI).\nDesmistificação do Verbo Intransitivo:\nDesfaz-se a crença errônea de que o verbo intransitivo tem sentido hermético e precisa ficar sempre sozinho na frase. Ele frequentemente vem acompanhado de adjuntos adverbiais (ex.: \"Estou em casa\" -> em casa = Adjunto Adverbial de lugar; estou = VI).\nCritérios de reconhecimento ou aplicação\nFazer a pergunta do sujeito ao verbo.\nIdentificado o sujeito, examinar os termos restantes no predicado.\nTestar a supressão do termo preposicionado: se exprimir circunstância adverbial, classificar como Adjunto Adverbial e o verbo como VI.(Confusão entre sujeito posposto e objeto)",
-            "**Estrutura do Predicado no Contexto dos Termos da Oração (PV, PN e PVN)**: Definição ou ideia central\nO predicado é a totalidade da oração após o isolamento do sujeito (ou a oração inteira em casos de oração sem sujeito ou sujeito oculto/indeterminado), classificando-se conforme a natureza de seus núcleos significativos em Predicado Verbal (PV), Predicado Nominal (PN) ou Predicado Verbo-Nominal (PVN).\nExplicação consolidada\nPredicado Verbal (PV): Possui como núcleo um verbo significativo de ação ou processo (VI, VTD, VTI ou VTDI), desprovido de qualquer predicativo.\nExemplo: \"Enfrentava as dificuldades sem reclamar\" (VTD + OD + Adj. Adv. de modo -> PV).\nExemplo: \"Foi determinada a prisão do bandido\" (Locução de voz passiva com verbo de ação -> PV).\nPredicado Nominal (PN): Possui como núcleo significativo um nome (Predicativo do Sujeito), intermediado por um verbo de ligação (VL).\nPredicado Verbo-Nominal (PVN): Apresenta dois núcleos significativos simultâneos: um verbo de ação (VI, VTD, VTI ou VTDI) + um nome com função de predicativo (do sujeito ou do objeto), denotando um estado concomitante à ação.\nExemplo: \"Os convidados chegaram atrasados\" (chegaram = VI / núcleo verbal; atrasados = Predicativo do Sujeito / núcleo nominal -> PVN).\nCritérios de reconhecimento ou aplicação\nIsolar o predicado.\nVerificar a existência de predicativo:\nVerbo de ação sem predicativo = PV.\nVerbo de ligação com predicativo = PN.\nVerbo de ação com predicativo = PVN.\nRelações\nExpande: \nExemplificado por: ,"
-          ]
+          "term": "Natureza e Classificação dos Termos Integrantes da Oração",
+          "shortDefinition": "Os termos integrantes da oração são estruturas sintáticas indispensáveis que integram a frase de maneira obrigatória, preenchendo a predicação incompleta de verbos e nomes.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-01"
+          },
+          "operationalUse": "Na arquitetura sintática da língua portuguesa, os termos da oração dividem-se hierarquicamente entre essenciais (sujeito e predicado), integrantes (complementos) e acessórios (adjuntos adnominais, adjuntos adverbiais e apostos)."
+        },
+        {
+          "term": "Objeto Direto (OD): Conceito, Regência e Sintaxe dos Pronomes Pessoais",
+          "shortDefinition": "O Objeto Direto (OD) é o termo integrante que completa o sentido de um Verbo Transitivo Direto (VTD), vinculando-se a ele diretamente, isto é, sem a exigência de uma preposição gramatical obrigatória.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-02"
+          },
+          "operationalUse": "O objeto direto pode ser expresso por substantivos, sintagmas nominais ou pronomes pessoais oblíquos átonos."
+        },
+        {
+          "term": "Estratégia de Identificação de Regência: O \"Bizu do Menino\" vs. Macetes Falhos",
+          "shortDefinition": "O \"Bizu do Menino\" é um procedimento heurístico rigoroso de validação de transitividade que consiste em acoplar a palavra \"menino\" (ou outro substantivo masculino singular com artigo) imediatamente após o verbo para atestar se a regência natural exige ou repele preposição.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-03"
+          },
+          "operationalUse": "Ao analisar pronomes coringas (me, te, se, nos, vos) ou termos complementares duvidosos, o candidato deve abandonar a intuição subjetiva e aplicar o teste:"
+        },
+        {
+          "term": "Objeto Direto Pleonástico",
+          "shortDefinition": "O Objeto Direto Pleonástico é a repetição enfática de um objeto direto já enunciado na oração (comumente topicalizado/deslocado para o início), ocorrendo quase categoricamente sob a forma de um pronome pessoal oblíquo átono com valor anafórico.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-04"
+          },
+          "operationalUse": "Pleonasmo sintático traduz-se em reiteração funcional expressiva."
+        },
+        {
+          "term": "Objeto Direto Preposicionado: Natureza Facultativa, Reescrita e Riscos em Redação",
+          "shortDefinition": "O Objeto Direto Preposicionado ocorre quando o complemento de um Verbo Transitivo Direto vem introduzido por uma preposição que não é exigida pela regência do verbo, constando na frase exclusivamente por motivos estilísticos, enfáticos, de clareza ou eufonia clássica.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-05"
+          },
+          "operationalUse": "No OD preposicionado, a presença da preposição é estritamente facultativa."
+        },
+        {
+          "term": "Objeto Indireto (OI): Conceito, Preposição Obrigatória e Emprego do Pronome \"Lhe\"",
+          "shortDefinition": "O Objeto Indireto (OI) é o termo integrante que completa o sentido de um Verbo Transitivo Indireto (VTI), unindo-se a ele de forma obrigatória por meio de uma preposição regida pelo próprio verbo.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-06"
+          },
+          "operationalUse": "Ao contrário do que ocorre no OD preposicionado, a preposição do Objeto Indireto é mandatória e resulta da regência verbal estrita."
+        },
+        {
+          "term": "Objeto Indireto Pleonástico e Inexistência Lógica de \"OI Preposicionado\"",
+          "shortDefinition": "O Objeto Indireto Pleonástico consiste na reiteração enfática de um objeto indireto antecipado na oração mediante o emprego de pronome pessoal oblíquo átono (notadamente lhe/lhes). Em contrapartida, inexiste na gramática a figura do \"objeto indireto preposicionado\", já que todo objeto indireto é, por definição, regido por preposição obrigatória.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-07"
+          },
+          "operationalUse": "Na análise de orações com complemento indireto duplicado:"
+        },
+        {
+          "term": "A Pegadinha do \"Lhe Eufônico\" e a Regra Estrita de Substituição Pronominal",
+          "shortDefinition": "A substituição de termos substantivos por pronomes oblíquos obedece rigidamente à transitividade verbal: complementos diretos exigem o, a, os, as, enquanto complementos indiretos exigem lhe, lhes. O emprego do pronome lhe em verbos transitivos diretos por falsa sensação de elegância fonética (eufonia) constitui erro crasso de regência verbal.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-08"
+          },
+          "operationalUse": "Bancas de concurso exploram frequentemente a inclinação coloquial dos falantes de considerarem a pronúncia do pronome lhe mais \"refinada\" ou \"suave\" do que os pronomes o/a."
+        },
+        {
+          "term": "Verbos Transitivos Diretos e Indiretos (VTDI) e Relatividade da Transitividade",
+          "shortDefinition": "Verbos Transitivos Diretos e Indiretos (bitransitivos) são aqueles que demandam simultaneamente dois complementos de naturezas opostas: um Objeto Direto (sem preposição) e um Objeto Indireto (com preposição). A transitividade não é um rótulo fixo do dicionário, mas uma propriedade relativa construída no contexto oracional.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-09"
+          },
+          "operationalUse": "A sintaxe da bitransitividade assenta-se sobre dois pilares:"
+        },
+        {
+          "term": "Sintaxe Combinada dos Pronomes Oblíquos em Verbos Bitransitivos e Pronomes Coringas",
+          "shortDefinition": "Ao associar pronomes oblíquos átonos a verbos bitransitivos, as formas fixas (o/a e lhe) devem ser combinadas sem redundância de função, enquanto os pronomes coringas (me, te, se, nos, vos) assumem a função que estiver vaga (OD ou OI) para garantir o equilíbrio sintático da frase.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-10"
+          }
+        },
+        {
+          "term": "Paralelo Sintático-Semântico: Verbo *Haver* Impessoal vs. Verbo *Existir* Pessoal",
+          "shortDefinition": "O verbo haver, no sentido de existir ou ocorrer, é impessoal (sem sujeito), classifica-se como VTD, permanece invariável na 3ª pessoa do singular e rege Objeto Direto. Já o verbo existir é pessoal, classifica-se como Intransitivo (VI), possui sujeito explícito e flexiona-se obrigatoriamente para concordar em número e pessoa com esse sujeito.",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-11"
+          },
+          "operationalUse": "Em questões de concurso público (notadamente bancas como Cebraspe e FGV), a substituição de haver por existir envolve três dimensões analíticas:"
+        },
+        {
+          "term": "Método Canônico de Análise Sintática: Prioridade do Sujeito e o \"Cheiro de Circunstância\"",
+          "shortDefinition": "A análise sintática exige a aplicação de uma ordem procedimental inflexível: diante do verbo, identifica-se primeiramente o sujeito por perguntas estruturadas (Quem é que...? / O que é que...?). Termos preposicionados com valor de tempo, lugar, modo ou causa possuem \"cheiro de circunstância\", classificando-se como Adjuntos Adverbiais (termos acessórios) e não como Objeto Indireto, mantendo o verbo como Intransitivo (VI).",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-12"
+          }
+        },
+        {
+          "term": "Estrutura do Predicado no Contexto dos Termos da Oração (PV, PN e PVN)",
+          "shortDefinition": "O predicado é a totalidade da oração após o isolamento do sujeito (ou a oração inteira em casos de oração sem sujeito ou sujeito oculto/indeterminado), classificando-se conforme a natureza de seus núcleos significativos em Predicado Verbal (PV), Predicado Nominal (PN) ou Predicado Verbo-Nominal (PVN).",
+          "detailTarget": {
+            "unitId": "IP-A06-G04",
+            "section": "explanation",
+            "groupId": "GRP-IP-A06-G04-13"
+          }
         }
       ]
     },

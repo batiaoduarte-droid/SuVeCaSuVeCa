@@ -51,4 +51,20 @@ describe('QuestionBlock em modo de tentativa', () => {
     expect(screen.queryByText(/conteúdo protegido/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/gabarito oficial/i)).not.toBeInTheDocument();
   });
+
+  it('aceita apresentação estruturada no lugar do enunciado plano', () => {
+    render(
+      <QuestionBlock
+        title="Questão estruturada"
+        prompt="Texto plano que não deve aparecer"
+        promptContent={<div>Texto de apoio e comando separados</div>}
+        options={[{ letter: 'A', text: 'Resposta' }]}
+        answer="A"
+        renderMarkdown={(text) => text}
+      />,
+    );
+
+    expect(screen.getByText('Texto de apoio e comando separados')).toBeVisible();
+    expect(screen.queryByText('Texto plano que não deve aparecer')).not.toBeInTheDocument();
+  });
 });
