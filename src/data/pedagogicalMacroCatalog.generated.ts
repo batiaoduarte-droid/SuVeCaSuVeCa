@@ -4,10 +4,11032 @@ import type {
   PedagogicalMacroIndexEntry,
 } from '../types/pedagogicalMacro';
 
-/**
- * Bootstrap placeholder. The build script replaces it as soon as the
- * published factory catalog is present; --check fails while it is stale.
- */
-export const PEDAGOGICAL_MACRO_CATALOG_ID = '';
-export const PEDAGOGICAL_MACRO_INDEX = [] as const satisfies readonly PedagogicalMacroIndexEntry[];
-export const PEDAGOGICAL_MACRO_ADAPTIVE_LINKS = [] as const satisfies readonly PedagogicalMacroAdaptiveLink[];
+export const PEDAGOGICAL_MACRO_CATALOG_ID = "suveca-macro-curriculum-v1";
+export const PEDAGOGICAL_MACRO_INDEX = [
+  {
+    "macroId": "MACRO-A00-01",
+    "lessonId": "A00",
+    "order": 1,
+    "title": "Fonética, fonologia e estrutura silábica",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A00-G01",
+      "IP-A00-G02",
+      "IP-A00-G03"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A00-G01",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A00-G02",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A00-G03",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G02-G03",
+        "from": "G02",
+        "to": "G03",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A00-02",
+    "lessonId": "A00",
+    "order": 2,
+    "title": "Acentuação gráfica",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A00-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G04-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A00-G04",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A00-03",
+    "lessonId": "A00",
+    "order": 3,
+    "title": "Emprego do hífen",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A00-G05",
+      "IP-A00-G06"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A00-G05",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A00-G06",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G05-G06",
+        "from": "G05",
+        "to": "G06",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A00-04",
+    "lessonId": "A00",
+    "order": 4,
+    "title": "Emprego dos porquês",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A00-G07"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G07-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A00-G07",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A01-01",
+    "lessonId": "A01",
+    "order": 1,
+    "title": "Mapa das classes variáveis e invariáveis",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A01-G01"
+    ],
+    "competencyRefs": [
+      "COMP-A01-G01-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A01-G01",
+        "role": "foundation"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A01-02",
+    "lessonId": "A01",
+    "order": 2,
+    "title": "Emprego contextual das classes e aprofundamento de advérbios",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A01-G02",
+      "IP-A01-G03"
+    ],
+    "competencyRefs": [
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A01-G02",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A01-G03",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G02-G03",
+        "from": "G02",
+        "to": "G03",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A01-03",
+    "lessonId": "A01",
+    "order": 3,
+    "title": "Artigos",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A01-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A01-G04",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A01-04",
+    "lessonId": "A01",
+    "order": 4,
+    "title": "Numerais e interjeições",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A01-G05"
+    ],
+    "competencyRefs": [
+      "COMP-A01-G05-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A01-G05",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A02-01",
+    "lessonId": "A02",
+    "order": 1,
+    "title": "Preposições",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A02-G01"
+    ],
+    "competencyRefs": [
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A02-G01",
+        "role": "foundation"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A02-02",
+    "lessonId": "A02",
+    "order": 2,
+    "title": "Coordenação e valores de E e POIS",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A02-G02",
+      "IP-A02-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A02-G02-01",
+      "COMP-A02-G04-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A02-G02",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A02-G04",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G02-G04",
+        "from": "G02",
+        "to": "G04",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A02-03",
+    "lessonId": "A02",
+    "order": 3,
+    "title": "Subordinação e laboratório de conectores polissêmicos",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A02-G03",
+      "IP-A02-G05"
+    ],
+    "competencyRefs": [
+      "COMP-A02-G03-01",
+      "COMP-A02-G05-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A02-G03",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A02-G05",
+        "role": "integration"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G03-G05",
+        "from": "G03",
+        "to": "G05",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpointId": "CP-A02-G05-READINESS",
+        "requiredNodeIds": [
+          "G03"
+        ],
+        "mode": "all",
+        "evidenceSource": "competency_mastery",
+        "masteryInheritance": false
+      }
+    ],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A03-01",
+    "lessonId": "A03",
+    "order": 1,
+    "title": "Pronomes pessoais — regras e aplicação",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A03-G01",
+      "IP-A03-G02"
+    ],
+    "competencyRefs": [
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A03-G01",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A03-G02",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A03-02",
+    "lessonId": "A03",
+    "order": 2,
+    "title": "Possessivos, indefinidos e interrogativos",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A03-G03"
+    ],
+    "competencyRefs": [
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A03-G03",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A03-03",
+    "lessonId": "A03",
+    "order": 3,
+    "title": "Demonstrativos, relativos, regência e reescrita",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A03-G04",
+      "IP-A03-G05",
+      "IP-A03-G06"
+    ],
+    "competencyRefs": [
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A03-G04",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A03-G05",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A03-G06",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G04-G05",
+        "from": "G04",
+        "to": "G05",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G05-G06",
+        "from": "G05",
+        "to": "G06",
+        "policy": "blocked_transition",
+        "masteryInheritance": false,
+        "blockerRef": "BLOCK-A03-G05-G06-QUEM"
+      }
+    ],
+    "checkpoints": [],
+    "blockers": [
+      {
+        "blockerId": "BLOCK-A03-G05-G06-QUEM",
+        "edgeId": "E-G05-G06",
+        "status": "active",
+        "reasonCode": "unadjudicated_normative_conflict",
+        "description": "Conflito normativo pendente sobre o pronome relativo quem; bloqueia somente o avanço automático de G05 para G06.",
+        "directAccessAllowed": true,
+        "resolutionPolicy": "external_editorial_adjudication_required",
+        "masteryInheritance": false
+      }
+    ]
+  },
+  {
+    "macroId": "MACRO-A03-04",
+    "lessonId": "A03",
+    "order": 4,
+    "title": "Colocação pronominal",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A03-G07",
+      "IP-A03-G08"
+    ],
+    "competencyRefs": [
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A03-G07",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G08",
+        "unitRef": "IP-A03-G08",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G07-G08",
+        "from": "G07",
+        "to": "G08",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A04-01",
+    "lessonId": "A04",
+    "order": 1,
+    "title": "Identificação e semântica de tempos e modos",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A04-G01",
+      "IP-A04-G02"
+    ],
+    "competencyRefs": [
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A04-G01",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A04-G02",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A04-02",
+    "lessonId": "A04",
+    "order": 2,
+    "title": "Estrutura e desinências verbais",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A04-G03"
+    ],
+    "competencyRefs": [
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A04-G03",
+        "role": "foundation"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A04-03",
+    "lessonId": "A04",
+    "order": 3,
+    "title": "Formas nominais do verbo",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A04-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A04-G04-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A04-G04",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A04-04",
+    "lessonId": "A04",
+    "order": 4,
+    "title": "Verbos irregulares — líderes e aplicação",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A04-G05",
+      "IP-A04-G06"
+    ],
+    "competencyRefs": [
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A04-G05",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A04-G06",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G05-G06",
+        "from": "G05",
+        "to": "G06",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A04-05",
+    "lessonId": "A04",
+    "order": 5,
+    "title": "Exceções de conjugação e defectividade",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A04-G07",
+      "IP-A04-G08"
+    ],
+    "competencyRefs": [
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A04-G07",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G08",
+        "unitRef": "IP-A04-G08",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G07-G08",
+        "from": "G07",
+        "to": "G08",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A04-06",
+    "lessonId": "A04",
+    "order": 6,
+    "title": "Correlação de tempos verbais",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A04-G09"
+    ],
+    "competencyRefs": [
+      "COMP-A04-G09-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G09",
+        "unitRef": "IP-A04-G09",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A05-01",
+    "lessonId": "A05",
+    "order": 1,
+    "title": "Transitividade verbal — fundamentos e aplicação",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A05-G01",
+      "IP-A05-G02"
+    ],
+    "competencyRefs": [
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A05-G01",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A05-G02",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A05-02",
+    "lessonId": "A05",
+    "order": 2,
+    "title": "Complementos e objetos pleonásticos",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A05-G03"
+    ],
+    "competencyRefs": [
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A05-G03",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A05-03",
+    "lessonId": "A05",
+    "order": 3,
+    "title": "Vozes verbais — reconhecimento e aplicação",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A05-G04",
+      "IP-A05-G05"
+    ],
+    "competencyRefs": [
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A05-G04",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A05-G05",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G04-G05",
+        "from": "G04",
+        "to": "G05",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A05-04",
+    "lessonId": "A05",
+    "order": 4,
+    "title": "Transposição e reescritura de vozes",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A05-G06",
+      "IP-A05-G07",
+      "IP-A05-G08",
+      "IP-A05-G09"
+    ],
+    "competencyRefs": [
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A05-G06",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A05-G07",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G08",
+        "unitRef": "IP-A05-G08",
+        "role": "application"
+      },
+      {
+        "nodeId": "G09",
+        "unitRef": "IP-A05-G09",
+        "role": "integration"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G06-G07",
+        "from": "G06",
+        "to": "G07",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G07-G08",
+        "from": "G07",
+        "to": "G08",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G08-G09",
+        "from": "G08",
+        "to": "G09",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpointId": "CP-A05-VOICE-CASES",
+        "requiredNodeIds": [
+          "G06",
+          "G07",
+          "G08"
+        ],
+        "mode": "all",
+        "evidenceSource": "competency_mastery",
+        "masteryInheritance": false
+      }
+    ],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A05-05",
+    "lessonId": "A05",
+    "order": 5,
+    "title": "Verbos impessoais e auxiliares",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A05-G10",
+      "IP-A05-G11"
+    ],
+    "competencyRefs": [
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G10",
+        "unitRef": "IP-A05-G10",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G11",
+        "unitRef": "IP-A05-G11",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G10-G11",
+        "from": "G10",
+        "to": "G11",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A05-06",
+    "lessonId": "A05",
+    "order": 6,
+    "title": "Verbos pronominais",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A05-G12"
+    ],
+    "competencyRefs": [
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G12",
+        "unitRef": "IP-A05-G12",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A06-01",
+    "lessonId": "A06",
+    "order": 1,
+    "title": "Conceitos iniciais da análise sintática",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A06-G01"
+    ],
+    "competencyRefs": [
+      "COMP-A06-G01-01",
+      "COMP-A06-G01-02",
+      "COMP-A06-G01-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A06-G01-01",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Fundamentos de Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-02",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-03",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A06-G01",
+        "role": "foundation"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A06-02",
+    "lessonId": "A06",
+    "order": 2,
+    "title": "Tipos de sujeito",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A06-G02"
+    ],
+    "competencyRefs": [
+      "COMP-A06-G02-01",
+      "COMP-A06-G02-02",
+      "COMP-A06-G02-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A06-G02-01",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Fundamentos de Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-02",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-03",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Tipos de Sujeito — Tipos de Sujeito"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A06-G02",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A06-03",
+    "lessonId": "A06",
+    "order": 3,
+    "title": "Predicação, transitividade e objetos",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A06-G03",
+      "IP-A06-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A06-G03-01",
+      "COMP-A06-G04-01",
+      "COMP-A06-G04-02",
+      "COMP-A06-G04-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A06-G03-01",
+        "unitId": "IP-A06-G03",
+        "title": "Competência: Objetivo 1 — Predicação Verbal e Tipos de Predicado"
+      },
+      {
+        "competencyId": "COMP-A06-G04-01",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Fundamentos de Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-02",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-03",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A06-G03",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A06-G04",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G03-G04",
+        "from": "G03",
+        "to": "G04",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A06-04",
+    "lessonId": "A06",
+    "order": 4,
+    "title": "Complemento nominal e agente da passiva",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A06-G05"
+    ],
+    "competencyRefs": [
+      "COMP-A06-G05-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A06-G05-01",
+        "unitId": "IP-A06-G05",
+        "title": "Competência: Objetivo 1 — Complemento Nominal e Agente da Passiva"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A06-G05",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A06-05",
+    "lessonId": "A06",
+    "order": 5,
+    "title": "Vocativo e aposto",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A06-G06"
+    ],
+    "competencyRefs": [
+      "COMP-A06-G06-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A06-G06-01",
+        "unitId": "IP-A06-G06",
+        "title": "Competência: Objetivo 1 — Vocativo e Aposto"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A06-G06",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A06-06",
+    "lessonId": "A06",
+    "order": 6,
+    "title": "Adjuntos e contraste com predicativos",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A06-G07",
+      "IP-A06-G08"
+    ],
+    "competencyRefs": [
+      "COMP-A06-G07-01",
+      "COMP-A06-G07-02",
+      "COMP-A06-G07-03",
+      "COMP-A06-G08-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A06-G07-01",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Fundamentos de Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-02",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-03",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G08-01",
+        "unitId": "IP-A06-G08",
+        "title": "Competência: Objetivo 1 — Predicativos versus Adjunto Adnominal"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A06-G07",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G08",
+        "unitRef": "IP-A06-G08",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G07-G08",
+        "from": "G07",
+        "to": "G08",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A07-01",
+    "lessonId": "A07",
+    "order": 1,
+    "title": "Período composto e coordenação",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A07-G01",
+      "IP-A07-G02"
+    ],
+    "competencyRefs": [
+      "COMP-A07-G01-01",
+      "COMP-A07-G02-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A07-G01-01",
+        "unitId": "IP-A07-G01",
+        "title": "Competência: Objetivo 1 — Período Composto - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G02-01",
+        "unitId": "IP-A07-G02",
+        "title": "Competência: Objetivo 1 — Orações Coordenadas Sindéticas"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A07-G01",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A07-G02",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A07-02",
+    "lessonId": "A07",
+    "order": 2,
+    "title": "Subordinação substantiva/adjetiva e funções da palavra QUE",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A07-G03",
+      "IP-A07-G09"
+    ],
+    "competencyRefs": [
+      "COMP-A07-G03-01",
+      "COMP-A07-G03-02",
+      "COMP-A07-G03-03",
+      "COMP-A07-G09-01",
+      "COMP-A07-G09-02",
+      "COMP-A07-G09-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A07-G03-01",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Fundamentos de Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-02",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-03",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G09-01",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Fundamentos de Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-02",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-03",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra QUE — Palavra QUE"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A07-G03",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G09",
+        "unitRef": "IP-A07-G09",
+        "role": "integration"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G03-G09",
+        "from": "G03",
+        "to": "G09",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A07-03",
+    "lessonId": "A07",
+    "order": 3,
+    "title": "Orações subordinadas adverbiais",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A07-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A07-G04-01",
+      "COMP-A07-G04-02",
+      "COMP-A07-G04-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A07-G04-01",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Fundamentos de Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-02",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-03",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A07-G04",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A07-04",
+    "lessonId": "A07",
+    "order": 4,
+    "title": "Orações reduzidas — fundamentos, aplicação, revisão e desenvolvimento",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A07-G05",
+      "IP-A07-G06",
+      "IP-A07-G07",
+      "IP-A07-G08"
+    ],
+    "competencyRefs": [
+      "COMP-A07-G05-01",
+      "COMP-A07-G05-02",
+      "COMP-A07-G05-03",
+      "COMP-A07-G06-01",
+      "COMP-A07-G06-02",
+      "COMP-A07-G06-03",
+      "COMP-A07-G07-01",
+      "COMP-A07-G07-02",
+      "COMP-A07-G07-03",
+      "COMP-A07-G08-01",
+      "COMP-A07-G08-02",
+      "COMP-A07-G08-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A07-G05-01",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-02",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-03",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G06-01",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-02",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-03",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G07-01",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-02",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-03",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G08-01",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Fundamentos de Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-02",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-03",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A07-G05",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A07-G06",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A07-G07",
+        "role": "application"
+      },
+      {
+        "nodeId": "G08",
+        "unitRef": "IP-A07-G08",
+        "role": "integration"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G05-G06",
+        "from": "G05",
+        "to": "G06",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G06-G07",
+        "from": "G06",
+        "to": "G07",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G07-G08",
+        "from": "G07",
+        "to": "G08",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A07-05",
+    "lessonId": "A07",
+    "order": 5,
+    "title": "Palavra SE",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A07-G10"
+    ],
+    "competencyRefs": [
+      "COMP-A07-G10-01",
+      "COMP-A07-G10-02",
+      "COMP-A07-G10-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A07-G10-01",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Fundamentos de Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-02",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-03",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra SE — Palavra SE"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G10",
+        "unitRef": "IP-A07-G10",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A08-01",
+    "lessonId": "A08",
+    "order": 1,
+    "title": "Vírgula — estrutura, fundamentos e casos avançados",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A08-G01",
+      "IP-A08-G02",
+      "IP-A08-G03"
+    ],
+    "competencyRefs": [
+      "COMP-A08-G01-01",
+      "COMP-A08-G02-01",
+      "COMP-A08-G03-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A08-G01-01",
+        "unitId": "IP-A08-G01",
+        "title": "Competência: Objetivo 1 — Sinais de Pontuação - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A08-G02-01",
+        "unitId": "IP-A08-G02",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A08-G03-01",
+        "unitId": "IP-A08-G03",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Aprofundamento"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A08-G01",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A08-G02",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A08-G03",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G02-G03",
+        "from": "G02",
+        "to": "G03",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A08-02",
+    "lessonId": "A08",
+    "order": 2,
+    "title": "Demais sinais de pontuação",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A08-G04",
+      "IP-A08-G05"
+    ],
+    "competencyRefs": [
+      "COMP-A08-G04-01",
+      "COMP-A08-G04-02",
+      "COMP-A08-G04-03",
+      "COMP-A08-G05-01",
+      "COMP-A08-G05-02",
+      "COMP-A08-G05-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A08-G04-01",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Fundamentos de Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-02",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-03",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G05-01",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Fundamentos de Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-02",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-03",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Travessão e Parênteses — Travessão e Parênteses"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A08-G04",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A08-G05",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G04-G05",
+        "from": "G04",
+        "to": "G05",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A08-03",
+    "lessonId": "A08",
+    "order": 3,
+    "title": "Oficina cumulativa de pontuação e reescrita",
+    "entryKind": "autonomous",
+    "topology": "capstone",
+    "unitRefs": [
+      "IP-A08-G06"
+    ],
+    "competencyRefs": [
+      "COMP-A08-G06-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A08-G06-01",
+        "unitId": "IP-A08-G06",
+        "title": "Competência: Objetivo 1 — Pontuação - Revisão e Reescrita"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A08-G06",
+        "role": "capstone"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [
+      {
+        "checkpointId": "CP-A08-G06-CAPSTONE",
+        "requiredNodeIds": [
+          "G06"
+        ],
+        "mode": "all",
+        "evidenceSource": "competency_mastery",
+        "masteryInheritance": false
+      }
+    ],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A09-01",
+    "lessonId": "A09",
+    "order": 1,
+    "title": "Concordância verbal",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A09-G01",
+      "IP-A09-G02",
+      "IP-A09-G03",
+      "IP-A09-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A09-G01-01",
+      "COMP-A09-G02-01",
+      "COMP-A09-G03-01",
+      "COMP-A09-G04-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A09-G01-01",
+        "unitId": "IP-A09-G01",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A09-G02-01",
+        "unitId": "IP-A09-G02",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A09-G03-01",
+        "unitId": "IP-A09-G03",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A09-G04-01",
+        "unitId": "IP-A09-G04",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Casos Especiais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A09-G01",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A09-G02",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A09-G03",
+        "role": "application"
+      },
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A09-G04",
+        "role": "integration"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G02-G03",
+        "from": "G02",
+        "to": "G03",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G03-G04",
+        "from": "G03",
+        "to": "G04",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A09-02",
+    "lessonId": "A09",
+    "order": 2,
+    "title": "Concordância nominal",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A09-G05",
+      "IP-A09-G06",
+      "IP-A09-G07",
+      "IP-A09-G08"
+    ],
+    "competencyRefs": [
+      "COMP-A09-G05-01",
+      "COMP-A09-G05-02",
+      "COMP-A09-G05-03",
+      "COMP-A09-G06-01",
+      "COMP-A09-G06-02",
+      "COMP-A09-G06-03",
+      "COMP-A09-G07-01",
+      "COMP-A09-G07-02",
+      "COMP-A09-G07-03",
+      "COMP-A09-G08-01",
+      "COMP-A09-G08-02",
+      "COMP-A09-G08-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A09-G05-01",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-02",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-03",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G06-01",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-02",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-03",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G07-01",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-02",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-03",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G08-01",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Fundamentos de Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-02",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-03",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A09-G05",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A09-G06",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A09-G07",
+        "role": "application"
+      },
+      {
+        "nodeId": "G08",
+        "unitRef": "IP-A09-G08",
+        "role": "integration"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G05-G06",
+        "from": "G05",
+        "to": "G06",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G06-G07",
+        "from": "G06",
+        "to": "G07",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G07-G08",
+        "from": "G07",
+        "to": "G08",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A10-01",
+    "lessonId": "A10",
+    "order": 1,
+    "title": "Regência verbal",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A10-G01",
+      "IP-A10-G02"
+    ],
+    "competencyRefs": [
+      "COMP-A10-G01-01",
+      "COMP-A10-G02-01",
+      "COMP-A10-G02-02",
+      "COMP-A10-G02-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A10-G01-01",
+        "unitId": "IP-A10-G01",
+        "title": "Competência: Objetivo 1 — Regência Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A10-G02-01",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Fundamentos de Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G02-02",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G02-03",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A10-G01",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A10-G02",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A10-02",
+    "lessonId": "A10",
+    "order": 2,
+    "title": "Regência na substituição pronominal",
+    "entryKind": "journey",
+    "topology": "parallel",
+    "unitRefs": [
+      "IP-A10-G03",
+      "IP-A10-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A10-G03-01",
+      "COMP-A10-G04-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A10-G03-01",
+        "unitId": "IP-A10-G03",
+        "title": "Competência: Objetivo 1 — Regência e Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A10-G04-01",
+        "unitId": "IP-A10-G04",
+        "title": "Competência: Objetivo 1 — Regência e Pronomes Pessoais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A10-G03",
+        "role": "application"
+      },
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A10-G04",
+        "role": "application"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [
+      {
+        "checkpointId": "CP-A10-G03-INDEPENDENT",
+        "requiredNodeIds": [
+          "G03"
+        ],
+        "mode": "all",
+        "evidenceSource": "competency_mastery",
+        "masteryInheritance": false
+      },
+      {
+        "checkpointId": "CP-A10-G04-INDEPENDENT",
+        "requiredNodeIds": [
+          "G04"
+        ],
+        "mode": "all",
+        "evidenceSource": "competency_mastery",
+        "masteryInheritance": false
+      }
+    ],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A10-03",
+    "lessonId": "A10",
+    "order": 3,
+    "title": "Regência nominal",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A10-G05"
+    ],
+    "competencyRefs": [
+      "COMP-A10-G05-01",
+      "COMP-A10-G05-02",
+      "COMP-A10-G05-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A10-G05-01",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Fundamentos de Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G05-02",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G05-03",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Regência Nominal — Regência Nominal"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A10-G05",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A10-04",
+    "lessonId": "A10",
+    "order": 4,
+    "title": "Crase",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A10-G06",
+      "IP-A10-G07"
+    ],
+    "competencyRefs": [
+      "COMP-A10-G06-01",
+      "COMP-A10-G07-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A10-G06-01",
+        "unitId": "IP-A10-G06",
+        "title": "Competência: Objetivo 1 — Crase - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A10-G07-01",
+        "unitId": "IP-A10-G07",
+        "title": "Competência: Objetivo 1 — Crase - Aprofundamento e Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A10-G06",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A10-G07",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G06-G07",
+        "from": "G06",
+        "to": "G07",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A11-01",
+    "lessonId": "A11",
+    "order": 1,
+    "title": "Coesão textual",
+    "entryKind": "journey",
+    "topology": "branched",
+    "unitRefs": [
+      "IP-A11-G01",
+      "IP-A11-G02",
+      "IP-A11-G03"
+    ],
+    "competencyRefs": [
+      "COMP-A11-G01-01",
+      "COMP-A11-G01-02",
+      "COMP-A11-G01-03",
+      "COMP-A11-G02-01",
+      "COMP-A11-G02-02",
+      "COMP-A11-G02-03",
+      "COMP-A11-G03-01",
+      "COMP-A11-G03-02",
+      "COMP-A11-G03-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A11-G01-01",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Fundamentos de Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G01-02",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G01-03",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G02-01",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Fundamentos de Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G02-02",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G02-03",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-01",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Fundamentos de Coesão Referencial — Coesão Referencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-02",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Referencial — Coesão Referencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-03",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Referencial — Coesão Referencial"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A11-G01",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A11-G02",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A11-G03",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G01-G03",
+        "from": "G01",
+        "to": "G03",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpointId": "CP-A11-INTEGRATION",
+        "requiredNodeIds": [
+          "G02",
+          "G03"
+        ],
+        "mode": "all",
+        "evidenceSource": "competency_mastery",
+        "masteryInheritance": false
+      }
+    ],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A12-01",
+    "lessonId": "A12",
+    "order": 1,
+    "title": "Sentido contextual, conotação e polissemia",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A12-G01",
+      "IP-A12-G04"
+    ],
+    "competencyRefs": [
+      "COMP-A12-G01-01",
+      "COMP-A12-G04-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A12-G01-01",
+        "unitId": "IP-A12-G01",
+        "title": "Competência: Objetivo 1 — Sentido Próprio e Figurado"
+      },
+      {
+        "competencyId": "COMP-A12-G04-01",
+        "unitId": "IP-A12-G04",
+        "title": "Competência: Objetivo 1 — Polissemia"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A12-G01",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A12-G04",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G04",
+        "from": "G01",
+        "to": "G04",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A12-02",
+    "lessonId": "A12",
+    "order": 2,
+    "title": "Relações lexicais, hierarquias e ambiguidade",
+    "entryKind": "journey",
+    "topology": "branched",
+    "unitRefs": [
+      "IP-A12-G02",
+      "IP-A12-G03",
+      "IP-A12-G05"
+    ],
+    "competencyRefs": [
+      "COMP-A12-G02-01",
+      "COMP-A12-G03-01",
+      "COMP-A12-G05-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A12-G02-01",
+        "unitId": "IP-A12-G02",
+        "title": "Competência: Objetivo 1 — Sinônimos e Antônimos"
+      },
+      {
+        "competencyId": "COMP-A12-G03-01",
+        "unitId": "IP-A12-G03",
+        "title": "Competência: Objetivo 1 — Hiperonímia e Hiponímia"
+      },
+      {
+        "competencyId": "COMP-A12-G05-01",
+        "unitId": "IP-A12-G05",
+        "title": "Competência: Objetivo 1 — Ambiguidade Homônimos e Parônimos"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A12-G02",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A12-G03",
+        "role": "application"
+      },
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A12-G05",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G02-G03",
+        "from": "G02",
+        "to": "G03",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G02-G05",
+        "from": "G02",
+        "to": "G05",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpointId": "CP-A12-BRANCHES",
+        "requiredNodeIds": [
+          "G03",
+          "G05"
+        ],
+        "mode": "all",
+        "evidenceSource": "competency_mastery",
+        "masteryInheritance": false
+      }
+    ],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A12-03",
+    "lessonId": "A12",
+    "order": 3,
+    "title": "Figuras de linguagem",
+    "entryKind": "fusion",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A12-G06",
+      "IP-A12-G07"
+    ],
+    "competencyRefs": [
+      "COMP-A12-G06-01",
+      "COMP-A12-G06-02",
+      "COMP-A12-G06-03",
+      "COMP-A12-G07-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A12-G06-01",
+        "unitId": "IP-A12-G06",
+        "title": "Competência: Fundamentos de Figuras de Linguagem - Fundamentos — Figuras de Linguagem - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A12-G06-02",
+        "unitId": "IP-A12-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Figuras de Linguagem - Fundamentos — Figuras de Linguagem - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A12-G06-03",
+        "unitId": "IP-A12-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Figuras de Linguagem - Fundamentos — Figuras de Linguagem - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A12-G07-01",
+        "unitId": "IP-A12-G07",
+        "title": "Competência: Objetivo 1 — Figuras de Linguagem - Aprofundamento"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A12-G06",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A12-G07",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G06-G07",
+        "from": "G06",
+        "to": "G07",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A13-01",
+    "lessonId": "A13",
+    "order": 1,
+    "title": "Recorrência e inferência",
+    "entryKind": "journey",
+    "topology": "contrastive",
+    "unitRefs": [
+      "IP-A13-G01",
+      "IP-A13-G02"
+    ],
+    "competencyRefs": [
+      "COMP-A13-G01-01",
+      "COMP-A13-G01-02",
+      "COMP-A13-G01-03",
+      "COMP-A13-G02-01",
+      "COMP-A13-G02-02",
+      "COMP-A13-G02-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A13-G01-01",
+        "unitId": "IP-A13-G01",
+        "title": "Competência: Fundamentos de Recorrência — Recorrência"
+      },
+      {
+        "competencyId": "COMP-A13-G01-02",
+        "unitId": "IP-A13-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Recorrência — Recorrência"
+      },
+      {
+        "competencyId": "COMP-A13-G01-03",
+        "unitId": "IP-A13-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Recorrência — Recorrência"
+      },
+      {
+        "competencyId": "COMP-A13-G02-01",
+        "unitId": "IP-A13-G02",
+        "title": "Competência: Fundamentos de Inferência — Inferência"
+      },
+      {
+        "competencyId": "COMP-A13-G02-02",
+        "unitId": "IP-A13-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Inferência — Inferência"
+      },
+      {
+        "competencyId": "COMP-A13-G02-03",
+        "unitId": "IP-A13-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Inferência — Inferência"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G01",
+        "unitRef": "IP-A13-G01",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G02",
+        "unitRef": "IP-A13-G02",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G01-G02",
+        "from": "G01",
+        "to": "G02",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A13-02",
+    "lessonId": "A13",
+    "order": 2,
+    "title": "Contrastes de tipologia textual",
+    "entryKind": "journey",
+    "topology": "linear",
+    "unitRefs": [
+      "IP-A13-G03",
+      "IP-A13-G04",
+      "IP-A13-G05"
+    ],
+    "competencyRefs": [
+      "COMP-A13-G03-01",
+      "COMP-A13-G04-01",
+      "COMP-A13-G04-02",
+      "COMP-A13-G04-03",
+      "COMP-A13-G05-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A13-G03-01",
+        "unitId": "IP-A13-G03",
+        "title": "Competência: Objetivo 1 — Narração e Descrição"
+      },
+      {
+        "competencyId": "COMP-A13-G04-01",
+        "unitId": "IP-A13-G04",
+        "title": "Competência: Fundamentos de Narração e Dissertação Expositiva — Narração e Dissertação Expositiva"
+      },
+      {
+        "competencyId": "COMP-A13-G04-02",
+        "unitId": "IP-A13-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Narração e Dissertação Expositiva — Narração e Dissertação Expositiva"
+      },
+      {
+        "competencyId": "COMP-A13-G04-03",
+        "unitId": "IP-A13-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Narração e Dissertação Expositiva — Narração e Dissertação Expositiva"
+      },
+      {
+        "competencyId": "COMP-A13-G05-01",
+        "unitId": "IP-A13-G05",
+        "title": "Competência: Objetivo 1 — Dissertação Expositiva e Argumentativa"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G03",
+        "unitRef": "IP-A13-G03",
+        "role": "foundation"
+      },
+      {
+        "nodeId": "G04",
+        "unitRef": "IP-A13-G04",
+        "role": "acquisition"
+      },
+      {
+        "nodeId": "G05",
+        "unitRef": "IP-A13-G05",
+        "role": "application"
+      }
+    ],
+    "edges": [
+      {
+        "edgeId": "E-G03-G04",
+        "from": "G03",
+        "to": "G04",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      },
+      {
+        "edgeId": "E-G04-G05",
+        "from": "G04",
+        "to": "G05",
+        "policy": "checkpoint",
+        "masteryInheritance": false
+      }
+    ],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A13-03",
+    "lessonId": "A13",
+    "order": 3,
+    "title": "Oficina integradora de tipologias e interpretação",
+    "entryKind": "autonomous",
+    "topology": "capstone",
+    "unitRefs": [
+      "IP-A13-G06"
+    ],
+    "competencyRefs": [
+      "COMP-A13-G06-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A13-G06-01",
+        "unitId": "IP-A13-G06",
+        "title": "Competência: Objetivo 1 — Miscelânea de Interpretação"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G06",
+        "unitRef": "IP-A13-G06",
+        "role": "capstone"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [
+      {
+        "checkpointId": "CP-A13-G06-CAPSTONE",
+        "requiredNodeIds": [
+          "G06"
+        ],
+        "mode": "all",
+        "evidenceSource": "competency_mastery",
+        "masteryInheritance": false
+      }
+    ],
+    "blockers": []
+  },
+  {
+    "macroId": "MACRO-A13-04",
+    "lessonId": "A13",
+    "order": 4,
+    "title": "Funções da linguagem",
+    "entryKind": "autonomous",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A13-G07"
+    ],
+    "competencyRefs": [
+      "COMP-A13-G07-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A13-G07-01",
+        "unitId": "IP-A13-G07",
+        "title": "Competência: Objetivo 1 — Funções da Linguagem"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "G07",
+        "unitRef": "IP-A13-G07",
+        "role": "acquisition"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S01",
+    "lessonId": "A14",
+    "order": 1,
+    "title": "Revisão Cumulativa: Ortografia",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S01"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S01",
+        "unitRef": "IP-A14-S01",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S02",
+    "lessonId": "A14",
+    "order": 2,
+    "title": "Revisão Cumulativa: Classes de palavras I",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S02"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S02",
+        "unitRef": "IP-A14-S02",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S03",
+    "lessonId": "A14",
+    "order": 3,
+    "title": "Revisão Cumulativa: Classes de palavras II",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S03"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S03",
+        "unitRef": "IP-A14-S03",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S04",
+    "lessonId": "A14",
+    "order": 4,
+    "title": "Revisão Cumulativa: Classes de palavras III",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S04"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S04",
+        "unitRef": "IP-A14-S04",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S05",
+    "lessonId": "A14",
+    "order": 5,
+    "title": "Revisão Cumulativa: Sintaxe",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S05"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S05",
+        "unitRef": "IP-A14-S05",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S06",
+    "lessonId": "A14",
+    "order": 6,
+    "title": "Revisão Cumulativa: Colocação Pronominal",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S06"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01",
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03",
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03",
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03",
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01",
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01",
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      },
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      },
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S06",
+        "unitRef": "IP-A14-S06",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S07",
+    "lessonId": "A14",
+    "order": 7,
+    "title": "Revisão Cumulativa: Pontuação",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S07"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01",
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03",
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03",
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03",
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01",
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01",
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03",
+      "COMP-A06-G01-01",
+      "COMP-A06-G01-02",
+      "COMP-A06-G01-03",
+      "COMP-A06-G02-01",
+      "COMP-A06-G02-02",
+      "COMP-A06-G02-03",
+      "COMP-A06-G03-01",
+      "COMP-A06-G04-01",
+      "COMP-A06-G04-02",
+      "COMP-A06-G04-03",
+      "COMP-A06-G05-01",
+      "COMP-A06-G06-01",
+      "COMP-A06-G07-01",
+      "COMP-A06-G07-02",
+      "COMP-A06-G07-03",
+      "COMP-A06-G08-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      },
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      },
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-01",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Fundamentos de Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-02",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-03",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G02-01",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Fundamentos de Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-02",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-03",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G03-01",
+        "unitId": "IP-A06-G03",
+        "title": "Competência: Objetivo 1 — Predicação Verbal e Tipos de Predicado"
+      },
+      {
+        "competencyId": "COMP-A06-G04-01",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Fundamentos de Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-02",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-03",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G05-01",
+        "unitId": "IP-A06-G05",
+        "title": "Competência: Objetivo 1 — Complemento Nominal e Agente da Passiva"
+      },
+      {
+        "competencyId": "COMP-A06-G06-01",
+        "unitId": "IP-A06-G06",
+        "title": "Competência: Objetivo 1 — Vocativo e Aposto"
+      },
+      {
+        "competencyId": "COMP-A06-G07-01",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Fundamentos de Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-02",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-03",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G08-01",
+        "unitId": "IP-A06-G08",
+        "title": "Competência: Objetivo 1 — Predicativos versus Adjunto Adnominal"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S07",
+        "unitRef": "IP-A14-S07",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S08",
+    "lessonId": "A14",
+    "order": 8,
+    "title": "Revisão Cumulativa: Concordância",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S08"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01",
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03",
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03",
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03",
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01",
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01",
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03",
+      "COMP-A06-G01-01",
+      "COMP-A06-G01-02",
+      "COMP-A06-G01-03",
+      "COMP-A06-G02-01",
+      "COMP-A06-G02-02",
+      "COMP-A06-G02-03",
+      "COMP-A06-G03-01",
+      "COMP-A06-G04-01",
+      "COMP-A06-G04-02",
+      "COMP-A06-G04-03",
+      "COMP-A06-G05-01",
+      "COMP-A06-G06-01",
+      "COMP-A06-G07-01",
+      "COMP-A06-G07-02",
+      "COMP-A06-G07-03",
+      "COMP-A06-G08-01",
+      "COMP-A07-G01-01",
+      "COMP-A07-G02-01",
+      "COMP-A07-G03-01",
+      "COMP-A07-G03-02",
+      "COMP-A07-G03-03",
+      "COMP-A07-G04-01",
+      "COMP-A07-G04-02",
+      "COMP-A07-G04-03",
+      "COMP-A07-G05-01",
+      "COMP-A07-G05-02",
+      "COMP-A07-G05-03",
+      "COMP-A07-G06-01",
+      "COMP-A07-G06-02",
+      "COMP-A07-G06-03",
+      "COMP-A07-G07-01",
+      "COMP-A07-G07-02",
+      "COMP-A07-G07-03",
+      "COMP-A07-G08-01",
+      "COMP-A07-G08-02",
+      "COMP-A07-G08-03",
+      "COMP-A07-G09-01",
+      "COMP-A07-G09-02",
+      "COMP-A07-G09-03",
+      "COMP-A07-G10-01",
+      "COMP-A07-G10-02",
+      "COMP-A07-G10-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      },
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      },
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-01",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Fundamentos de Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-02",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-03",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G02-01",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Fundamentos de Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-02",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-03",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G03-01",
+        "unitId": "IP-A06-G03",
+        "title": "Competência: Objetivo 1 — Predicação Verbal e Tipos de Predicado"
+      },
+      {
+        "competencyId": "COMP-A06-G04-01",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Fundamentos de Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-02",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-03",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G05-01",
+        "unitId": "IP-A06-G05",
+        "title": "Competência: Objetivo 1 — Complemento Nominal e Agente da Passiva"
+      },
+      {
+        "competencyId": "COMP-A06-G06-01",
+        "unitId": "IP-A06-G06",
+        "title": "Competência: Objetivo 1 — Vocativo e Aposto"
+      },
+      {
+        "competencyId": "COMP-A06-G07-01",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Fundamentos de Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-02",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-03",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G08-01",
+        "unitId": "IP-A06-G08",
+        "title": "Competência: Objetivo 1 — Predicativos versus Adjunto Adnominal"
+      },
+      {
+        "competencyId": "COMP-A07-G01-01",
+        "unitId": "IP-A07-G01",
+        "title": "Competência: Objetivo 1 — Período Composto - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G02-01",
+        "unitId": "IP-A07-G02",
+        "title": "Competência: Objetivo 1 — Orações Coordenadas Sindéticas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-01",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Fundamentos de Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-02",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-03",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G04-01",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Fundamentos de Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-02",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-03",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G05-01",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-02",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-03",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G06-01",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-02",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-03",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G07-01",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-02",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-03",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G08-01",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Fundamentos de Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-02",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-03",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G09-01",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Fundamentos de Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-02",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-03",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-01",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Fundamentos de Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-02",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-03",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra SE — Palavra SE"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S08",
+        "unitRef": "IP-A14-S08",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S09",
+    "lessonId": "A14",
+    "order": 9,
+    "title": "Revisão Cumulativa: Regência Verbal e Nominal e Crase",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S09"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01",
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03",
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03",
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03",
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01",
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01",
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03",
+      "COMP-A06-G01-01",
+      "COMP-A06-G01-02",
+      "COMP-A06-G01-03",
+      "COMP-A06-G02-01",
+      "COMP-A06-G02-02",
+      "COMP-A06-G02-03",
+      "COMP-A06-G03-01",
+      "COMP-A06-G04-01",
+      "COMP-A06-G04-02",
+      "COMP-A06-G04-03",
+      "COMP-A06-G05-01",
+      "COMP-A06-G06-01",
+      "COMP-A06-G07-01",
+      "COMP-A06-G07-02",
+      "COMP-A06-G07-03",
+      "COMP-A06-G08-01",
+      "COMP-A07-G01-01",
+      "COMP-A07-G02-01",
+      "COMP-A07-G03-01",
+      "COMP-A07-G03-02",
+      "COMP-A07-G03-03",
+      "COMP-A07-G04-01",
+      "COMP-A07-G04-02",
+      "COMP-A07-G04-03",
+      "COMP-A07-G05-01",
+      "COMP-A07-G05-02",
+      "COMP-A07-G05-03",
+      "COMP-A07-G06-01",
+      "COMP-A07-G06-02",
+      "COMP-A07-G06-03",
+      "COMP-A07-G07-01",
+      "COMP-A07-G07-02",
+      "COMP-A07-G07-03",
+      "COMP-A07-G08-01",
+      "COMP-A07-G08-02",
+      "COMP-A07-G08-03",
+      "COMP-A07-G09-01",
+      "COMP-A07-G09-02",
+      "COMP-A07-G09-03",
+      "COMP-A07-G10-01",
+      "COMP-A07-G10-02",
+      "COMP-A07-G10-03",
+      "COMP-A08-G01-01",
+      "COMP-A08-G02-01",
+      "COMP-A08-G03-01",
+      "COMP-A08-G04-01",
+      "COMP-A08-G04-02",
+      "COMP-A08-G04-03",
+      "COMP-A08-G05-01",
+      "COMP-A08-G05-02",
+      "COMP-A08-G05-03",
+      "COMP-A08-G06-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      },
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      },
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-01",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Fundamentos de Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-02",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-03",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G02-01",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Fundamentos de Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-02",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-03",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G03-01",
+        "unitId": "IP-A06-G03",
+        "title": "Competência: Objetivo 1 — Predicação Verbal e Tipos de Predicado"
+      },
+      {
+        "competencyId": "COMP-A06-G04-01",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Fundamentos de Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-02",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-03",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G05-01",
+        "unitId": "IP-A06-G05",
+        "title": "Competência: Objetivo 1 — Complemento Nominal e Agente da Passiva"
+      },
+      {
+        "competencyId": "COMP-A06-G06-01",
+        "unitId": "IP-A06-G06",
+        "title": "Competência: Objetivo 1 — Vocativo e Aposto"
+      },
+      {
+        "competencyId": "COMP-A06-G07-01",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Fundamentos de Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-02",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-03",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G08-01",
+        "unitId": "IP-A06-G08",
+        "title": "Competência: Objetivo 1 — Predicativos versus Adjunto Adnominal"
+      },
+      {
+        "competencyId": "COMP-A07-G01-01",
+        "unitId": "IP-A07-G01",
+        "title": "Competência: Objetivo 1 — Período Composto - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G02-01",
+        "unitId": "IP-A07-G02",
+        "title": "Competência: Objetivo 1 — Orações Coordenadas Sindéticas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-01",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Fundamentos de Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-02",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-03",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G04-01",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Fundamentos de Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-02",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-03",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G05-01",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-02",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-03",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G06-01",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-02",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-03",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G07-01",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-02",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-03",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G08-01",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Fundamentos de Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-02",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-03",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G09-01",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Fundamentos de Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-02",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-03",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-01",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Fundamentos de Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-02",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-03",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A08-G01-01",
+        "unitId": "IP-A08-G01",
+        "title": "Competência: Objetivo 1 — Sinais de Pontuação - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A08-G02-01",
+        "unitId": "IP-A08-G02",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A08-G03-01",
+        "unitId": "IP-A08-G03",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A08-G04-01",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Fundamentos de Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-02",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-03",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G05-01",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Fundamentos de Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-02",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-03",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G06-01",
+        "unitId": "IP-A08-G06",
+        "title": "Competência: Objetivo 1 — Pontuação - Revisão e Reescrita"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S09",
+        "unitRef": "IP-A14-S09",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S10",
+    "lessonId": "A14",
+    "order": 10,
+    "title": "Revisão Cumulativa: Coesão, Coerência e Reescritura",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S10"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01",
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03",
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03",
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03",
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01",
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01",
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03",
+      "COMP-A06-G01-01",
+      "COMP-A06-G01-02",
+      "COMP-A06-G01-03",
+      "COMP-A06-G02-01",
+      "COMP-A06-G02-02",
+      "COMP-A06-G02-03",
+      "COMP-A06-G03-01",
+      "COMP-A06-G04-01",
+      "COMP-A06-G04-02",
+      "COMP-A06-G04-03",
+      "COMP-A06-G05-01",
+      "COMP-A06-G06-01",
+      "COMP-A06-G07-01",
+      "COMP-A06-G07-02",
+      "COMP-A06-G07-03",
+      "COMP-A06-G08-01",
+      "COMP-A07-G01-01",
+      "COMP-A07-G02-01",
+      "COMP-A07-G03-01",
+      "COMP-A07-G03-02",
+      "COMP-A07-G03-03",
+      "COMP-A07-G04-01",
+      "COMP-A07-G04-02",
+      "COMP-A07-G04-03",
+      "COMP-A07-G05-01",
+      "COMP-A07-G05-02",
+      "COMP-A07-G05-03",
+      "COMP-A07-G06-01",
+      "COMP-A07-G06-02",
+      "COMP-A07-G06-03",
+      "COMP-A07-G07-01",
+      "COMP-A07-G07-02",
+      "COMP-A07-G07-03",
+      "COMP-A07-G08-01",
+      "COMP-A07-G08-02",
+      "COMP-A07-G08-03",
+      "COMP-A07-G09-01",
+      "COMP-A07-G09-02",
+      "COMP-A07-G09-03",
+      "COMP-A07-G10-01",
+      "COMP-A07-G10-02",
+      "COMP-A07-G10-03",
+      "COMP-A08-G01-01",
+      "COMP-A08-G02-01",
+      "COMP-A08-G03-01",
+      "COMP-A08-G04-01",
+      "COMP-A08-G04-02",
+      "COMP-A08-G04-03",
+      "COMP-A08-G05-01",
+      "COMP-A08-G05-02",
+      "COMP-A08-G05-03",
+      "COMP-A08-G06-01",
+      "COMP-A09-G01-01",
+      "COMP-A09-G02-01",
+      "COMP-A09-G03-01",
+      "COMP-A09-G04-01",
+      "COMP-A09-G05-01",
+      "COMP-A09-G05-02",
+      "COMP-A09-G05-03",
+      "COMP-A09-G06-01",
+      "COMP-A09-G06-02",
+      "COMP-A09-G06-03",
+      "COMP-A09-G07-01",
+      "COMP-A09-G07-02",
+      "COMP-A09-G07-03",
+      "COMP-A09-G08-01",
+      "COMP-A09-G08-02",
+      "COMP-A09-G08-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      },
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      },
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-01",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Fundamentos de Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-02",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-03",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G02-01",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Fundamentos de Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-02",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-03",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G03-01",
+        "unitId": "IP-A06-G03",
+        "title": "Competência: Objetivo 1 — Predicação Verbal e Tipos de Predicado"
+      },
+      {
+        "competencyId": "COMP-A06-G04-01",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Fundamentos de Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-02",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-03",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G05-01",
+        "unitId": "IP-A06-G05",
+        "title": "Competência: Objetivo 1 — Complemento Nominal e Agente da Passiva"
+      },
+      {
+        "competencyId": "COMP-A06-G06-01",
+        "unitId": "IP-A06-G06",
+        "title": "Competência: Objetivo 1 — Vocativo e Aposto"
+      },
+      {
+        "competencyId": "COMP-A06-G07-01",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Fundamentos de Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-02",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-03",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G08-01",
+        "unitId": "IP-A06-G08",
+        "title": "Competência: Objetivo 1 — Predicativos versus Adjunto Adnominal"
+      },
+      {
+        "competencyId": "COMP-A07-G01-01",
+        "unitId": "IP-A07-G01",
+        "title": "Competência: Objetivo 1 — Período Composto - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G02-01",
+        "unitId": "IP-A07-G02",
+        "title": "Competência: Objetivo 1 — Orações Coordenadas Sindéticas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-01",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Fundamentos de Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-02",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-03",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G04-01",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Fundamentos de Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-02",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-03",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G05-01",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-02",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-03",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G06-01",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-02",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-03",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G07-01",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-02",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-03",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G08-01",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Fundamentos de Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-02",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-03",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G09-01",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Fundamentos de Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-02",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-03",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-01",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Fundamentos de Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-02",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-03",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A08-G01-01",
+        "unitId": "IP-A08-G01",
+        "title": "Competência: Objetivo 1 — Sinais de Pontuação - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A08-G02-01",
+        "unitId": "IP-A08-G02",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A08-G03-01",
+        "unitId": "IP-A08-G03",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A08-G04-01",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Fundamentos de Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-02",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-03",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G05-01",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Fundamentos de Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-02",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-03",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G06-01",
+        "unitId": "IP-A08-G06",
+        "title": "Competência: Objetivo 1 — Pontuação - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A09-G01-01",
+        "unitId": "IP-A09-G01",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A09-G02-01",
+        "unitId": "IP-A09-G02",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A09-G03-01",
+        "unitId": "IP-A09-G03",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A09-G04-01",
+        "unitId": "IP-A09-G04",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Casos Especiais"
+      },
+      {
+        "competencyId": "COMP-A09-G05-01",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-02",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-03",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G06-01",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-02",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-03",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G07-01",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-02",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-03",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G08-01",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Fundamentos de Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-02",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-03",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S10",
+        "unitRef": "IP-A14-S10",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S11",
+    "lessonId": "A14",
+    "order": 11,
+    "title": "Revisão Cumulativa: Semântica",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S11"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01",
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03",
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03",
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03",
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01",
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01",
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03",
+      "COMP-A06-G01-01",
+      "COMP-A06-G01-02",
+      "COMP-A06-G01-03",
+      "COMP-A06-G02-01",
+      "COMP-A06-G02-02",
+      "COMP-A06-G02-03",
+      "COMP-A06-G03-01",
+      "COMP-A06-G04-01",
+      "COMP-A06-G04-02",
+      "COMP-A06-G04-03",
+      "COMP-A06-G05-01",
+      "COMP-A06-G06-01",
+      "COMP-A06-G07-01",
+      "COMP-A06-G07-02",
+      "COMP-A06-G07-03",
+      "COMP-A06-G08-01",
+      "COMP-A07-G01-01",
+      "COMP-A07-G02-01",
+      "COMP-A07-G03-01",
+      "COMP-A07-G03-02",
+      "COMP-A07-G03-03",
+      "COMP-A07-G04-01",
+      "COMP-A07-G04-02",
+      "COMP-A07-G04-03",
+      "COMP-A07-G05-01",
+      "COMP-A07-G05-02",
+      "COMP-A07-G05-03",
+      "COMP-A07-G06-01",
+      "COMP-A07-G06-02",
+      "COMP-A07-G06-03",
+      "COMP-A07-G07-01",
+      "COMP-A07-G07-02",
+      "COMP-A07-G07-03",
+      "COMP-A07-G08-01",
+      "COMP-A07-G08-02",
+      "COMP-A07-G08-03",
+      "COMP-A07-G09-01",
+      "COMP-A07-G09-02",
+      "COMP-A07-G09-03",
+      "COMP-A07-G10-01",
+      "COMP-A07-G10-02",
+      "COMP-A07-G10-03",
+      "COMP-A08-G01-01",
+      "COMP-A08-G02-01",
+      "COMP-A08-G03-01",
+      "COMP-A08-G04-01",
+      "COMP-A08-G04-02",
+      "COMP-A08-G04-03",
+      "COMP-A08-G05-01",
+      "COMP-A08-G05-02",
+      "COMP-A08-G05-03",
+      "COMP-A08-G06-01",
+      "COMP-A09-G01-01",
+      "COMP-A09-G02-01",
+      "COMP-A09-G03-01",
+      "COMP-A09-G04-01",
+      "COMP-A09-G05-01",
+      "COMP-A09-G05-02",
+      "COMP-A09-G05-03",
+      "COMP-A09-G06-01",
+      "COMP-A09-G06-02",
+      "COMP-A09-G06-03",
+      "COMP-A09-G07-01",
+      "COMP-A09-G07-02",
+      "COMP-A09-G07-03",
+      "COMP-A09-G08-01",
+      "COMP-A09-G08-02",
+      "COMP-A09-G08-03",
+      "COMP-A10-G01-01",
+      "COMP-A10-G02-01",
+      "COMP-A10-G02-02",
+      "COMP-A10-G02-03",
+      "COMP-A10-G03-01",
+      "COMP-A10-G04-01",
+      "COMP-A10-G05-01",
+      "COMP-A10-G05-02",
+      "COMP-A10-G05-03",
+      "COMP-A10-G06-01",
+      "COMP-A10-G07-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      },
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      },
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-01",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Fundamentos de Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-02",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-03",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G02-01",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Fundamentos de Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-02",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-03",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G03-01",
+        "unitId": "IP-A06-G03",
+        "title": "Competência: Objetivo 1 — Predicação Verbal e Tipos de Predicado"
+      },
+      {
+        "competencyId": "COMP-A06-G04-01",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Fundamentos de Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-02",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-03",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G05-01",
+        "unitId": "IP-A06-G05",
+        "title": "Competência: Objetivo 1 — Complemento Nominal e Agente da Passiva"
+      },
+      {
+        "competencyId": "COMP-A06-G06-01",
+        "unitId": "IP-A06-G06",
+        "title": "Competência: Objetivo 1 — Vocativo e Aposto"
+      },
+      {
+        "competencyId": "COMP-A06-G07-01",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Fundamentos de Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-02",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-03",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G08-01",
+        "unitId": "IP-A06-G08",
+        "title": "Competência: Objetivo 1 — Predicativos versus Adjunto Adnominal"
+      },
+      {
+        "competencyId": "COMP-A07-G01-01",
+        "unitId": "IP-A07-G01",
+        "title": "Competência: Objetivo 1 — Período Composto - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G02-01",
+        "unitId": "IP-A07-G02",
+        "title": "Competência: Objetivo 1 — Orações Coordenadas Sindéticas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-01",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Fundamentos de Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-02",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-03",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G04-01",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Fundamentos de Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-02",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-03",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G05-01",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-02",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-03",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G06-01",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-02",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-03",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G07-01",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-02",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-03",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G08-01",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Fundamentos de Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-02",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-03",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G09-01",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Fundamentos de Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-02",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-03",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-01",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Fundamentos de Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-02",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-03",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A08-G01-01",
+        "unitId": "IP-A08-G01",
+        "title": "Competência: Objetivo 1 — Sinais de Pontuação - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A08-G02-01",
+        "unitId": "IP-A08-G02",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A08-G03-01",
+        "unitId": "IP-A08-G03",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A08-G04-01",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Fundamentos de Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-02",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-03",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G05-01",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Fundamentos de Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-02",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-03",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G06-01",
+        "unitId": "IP-A08-G06",
+        "title": "Competência: Objetivo 1 — Pontuação - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A09-G01-01",
+        "unitId": "IP-A09-G01",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A09-G02-01",
+        "unitId": "IP-A09-G02",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A09-G03-01",
+        "unitId": "IP-A09-G03",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A09-G04-01",
+        "unitId": "IP-A09-G04",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Casos Especiais"
+      },
+      {
+        "competencyId": "COMP-A09-G05-01",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-02",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-03",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G06-01",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-02",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-03",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G07-01",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-02",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-03",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G08-01",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Fundamentos de Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-02",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-03",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A10-G01-01",
+        "unitId": "IP-A10-G01",
+        "title": "Competência: Objetivo 1 — Regência Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A10-G02-01",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Fundamentos de Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G02-02",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G02-03",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G03-01",
+        "unitId": "IP-A10-G03",
+        "title": "Competência: Objetivo 1 — Regência e Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A10-G04-01",
+        "unitId": "IP-A10-G04",
+        "title": "Competência: Objetivo 1 — Regência e Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A10-G05-01",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Fundamentos de Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G05-02",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G05-03",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G06-01",
+        "unitId": "IP-A10-G06",
+        "title": "Competência: Objetivo 1 — Crase - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A10-G07-01",
+        "unitId": "IP-A10-G07",
+        "title": "Competência: Objetivo 1 — Crase - Aprofundamento e Questões"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S11",
+        "unitRef": "IP-A14-S11",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S12",
+    "lessonId": "A14",
+    "order": 12,
+    "title": "Revisão Cumulativa: Tipologia Textual",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S12"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01",
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03",
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03",
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03",
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01",
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01",
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03",
+      "COMP-A06-G01-01",
+      "COMP-A06-G01-02",
+      "COMP-A06-G01-03",
+      "COMP-A06-G02-01",
+      "COMP-A06-G02-02",
+      "COMP-A06-G02-03",
+      "COMP-A06-G03-01",
+      "COMP-A06-G04-01",
+      "COMP-A06-G04-02",
+      "COMP-A06-G04-03",
+      "COMP-A06-G05-01",
+      "COMP-A06-G06-01",
+      "COMP-A06-G07-01",
+      "COMP-A06-G07-02",
+      "COMP-A06-G07-03",
+      "COMP-A06-G08-01",
+      "COMP-A07-G01-01",
+      "COMP-A07-G02-01",
+      "COMP-A07-G03-01",
+      "COMP-A07-G03-02",
+      "COMP-A07-G03-03",
+      "COMP-A07-G04-01",
+      "COMP-A07-G04-02",
+      "COMP-A07-G04-03",
+      "COMP-A07-G05-01",
+      "COMP-A07-G05-02",
+      "COMP-A07-G05-03",
+      "COMP-A07-G06-01",
+      "COMP-A07-G06-02",
+      "COMP-A07-G06-03",
+      "COMP-A07-G07-01",
+      "COMP-A07-G07-02",
+      "COMP-A07-G07-03",
+      "COMP-A07-G08-01",
+      "COMP-A07-G08-02",
+      "COMP-A07-G08-03",
+      "COMP-A07-G09-01",
+      "COMP-A07-G09-02",
+      "COMP-A07-G09-03",
+      "COMP-A07-G10-01",
+      "COMP-A07-G10-02",
+      "COMP-A07-G10-03",
+      "COMP-A08-G01-01",
+      "COMP-A08-G02-01",
+      "COMP-A08-G03-01",
+      "COMP-A08-G04-01",
+      "COMP-A08-G04-02",
+      "COMP-A08-G04-03",
+      "COMP-A08-G05-01",
+      "COMP-A08-G05-02",
+      "COMP-A08-G05-03",
+      "COMP-A08-G06-01",
+      "COMP-A09-G01-01",
+      "COMP-A09-G02-01",
+      "COMP-A09-G03-01",
+      "COMP-A09-G04-01",
+      "COMP-A09-G05-01",
+      "COMP-A09-G05-02",
+      "COMP-A09-G05-03",
+      "COMP-A09-G06-01",
+      "COMP-A09-G06-02",
+      "COMP-A09-G06-03",
+      "COMP-A09-G07-01",
+      "COMP-A09-G07-02",
+      "COMP-A09-G07-03",
+      "COMP-A09-G08-01",
+      "COMP-A09-G08-02",
+      "COMP-A09-G08-03",
+      "COMP-A10-G01-01",
+      "COMP-A10-G02-01",
+      "COMP-A10-G02-02",
+      "COMP-A10-G02-03",
+      "COMP-A10-G03-01",
+      "COMP-A10-G04-01",
+      "COMP-A10-G05-01",
+      "COMP-A10-G05-02",
+      "COMP-A10-G05-03",
+      "COMP-A10-G06-01",
+      "COMP-A10-G07-01",
+      "COMP-A11-G01-01",
+      "COMP-A11-G01-02",
+      "COMP-A11-G01-03",
+      "COMP-A11-G02-01",
+      "COMP-A11-G02-02",
+      "COMP-A11-G02-03",
+      "COMP-A11-G03-01",
+      "COMP-A11-G03-02",
+      "COMP-A11-G03-03"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      },
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      },
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-01",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Fundamentos de Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-02",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-03",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G02-01",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Fundamentos de Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-02",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-03",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G03-01",
+        "unitId": "IP-A06-G03",
+        "title": "Competência: Objetivo 1 — Predicação Verbal e Tipos de Predicado"
+      },
+      {
+        "competencyId": "COMP-A06-G04-01",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Fundamentos de Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-02",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-03",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G05-01",
+        "unitId": "IP-A06-G05",
+        "title": "Competência: Objetivo 1 — Complemento Nominal e Agente da Passiva"
+      },
+      {
+        "competencyId": "COMP-A06-G06-01",
+        "unitId": "IP-A06-G06",
+        "title": "Competência: Objetivo 1 — Vocativo e Aposto"
+      },
+      {
+        "competencyId": "COMP-A06-G07-01",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Fundamentos de Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-02",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-03",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G08-01",
+        "unitId": "IP-A06-G08",
+        "title": "Competência: Objetivo 1 — Predicativos versus Adjunto Adnominal"
+      },
+      {
+        "competencyId": "COMP-A07-G01-01",
+        "unitId": "IP-A07-G01",
+        "title": "Competência: Objetivo 1 — Período Composto - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G02-01",
+        "unitId": "IP-A07-G02",
+        "title": "Competência: Objetivo 1 — Orações Coordenadas Sindéticas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-01",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Fundamentos de Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-02",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-03",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G04-01",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Fundamentos de Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-02",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-03",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G05-01",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-02",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-03",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G06-01",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-02",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-03",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G07-01",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-02",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-03",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G08-01",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Fundamentos de Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-02",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-03",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G09-01",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Fundamentos de Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-02",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-03",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-01",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Fundamentos de Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-02",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-03",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A08-G01-01",
+        "unitId": "IP-A08-G01",
+        "title": "Competência: Objetivo 1 — Sinais de Pontuação - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A08-G02-01",
+        "unitId": "IP-A08-G02",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A08-G03-01",
+        "unitId": "IP-A08-G03",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A08-G04-01",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Fundamentos de Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-02",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-03",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G05-01",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Fundamentos de Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-02",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-03",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G06-01",
+        "unitId": "IP-A08-G06",
+        "title": "Competência: Objetivo 1 — Pontuação - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A09-G01-01",
+        "unitId": "IP-A09-G01",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A09-G02-01",
+        "unitId": "IP-A09-G02",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A09-G03-01",
+        "unitId": "IP-A09-G03",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A09-G04-01",
+        "unitId": "IP-A09-G04",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Casos Especiais"
+      },
+      {
+        "competencyId": "COMP-A09-G05-01",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-02",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-03",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G06-01",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-02",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-03",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G07-01",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-02",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-03",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G08-01",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Fundamentos de Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-02",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-03",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A10-G01-01",
+        "unitId": "IP-A10-G01",
+        "title": "Competência: Objetivo 1 — Regência Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A10-G02-01",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Fundamentos de Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G02-02",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G02-03",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G03-01",
+        "unitId": "IP-A10-G03",
+        "title": "Competência: Objetivo 1 — Regência e Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A10-G04-01",
+        "unitId": "IP-A10-G04",
+        "title": "Competência: Objetivo 1 — Regência e Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A10-G05-01",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Fundamentos de Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G05-02",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G05-03",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G06-01",
+        "unitId": "IP-A10-G06",
+        "title": "Competência: Objetivo 1 — Crase - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A10-G07-01",
+        "unitId": "IP-A10-G07",
+        "title": "Competência: Objetivo 1 — Crase - Aprofundamento e Questões"
+      },
+      {
+        "competencyId": "COMP-A11-G01-01",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Fundamentos de Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G01-02",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G01-03",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G02-01",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Fundamentos de Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G02-02",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G02-03",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-01",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Fundamentos de Coesão Referencial — Coesão Referencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-02",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Referencial — Coesão Referencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-03",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Referencial — Coesão Referencial"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S12",
+        "unitRef": "IP-A14-S12",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  },
+  {
+    "macroId": "REVIEW-A14-S13",
+    "lessonId": "A14",
+    "order": 13,
+    "title": "Revisão Cumulativa: Compreensão e Interpretação de Textos",
+    "entryKind": "cumulative_review",
+    "topology": "single",
+    "unitRefs": [
+      "IP-A14-S13"
+    ],
+    "competencyRefs": [
+      "COMP-A00-G01-01",
+      "COMP-A00-G02-01",
+      "COMP-A00-G03-01",
+      "COMP-A00-G03-02",
+      "COMP-A00-G03-03",
+      "COMP-A00-G04-01",
+      "COMP-A00-G05-01",
+      "COMP-A00-G06-01",
+      "COMP-A00-G07-01",
+      "COMP-A01-G01-01",
+      "COMP-A01-G02-01",
+      "COMP-A01-G03-01",
+      "COMP-A01-G03-02",
+      "COMP-A01-G03-03",
+      "COMP-A01-G04-01",
+      "COMP-A01-G04-02",
+      "COMP-A01-G04-03",
+      "COMP-A01-G05-01",
+      "COMP-A02-G01-01",
+      "COMP-A02-G01-02",
+      "COMP-A02-G01-03",
+      "COMP-A02-G02-01",
+      "COMP-A02-G03-01",
+      "COMP-A02-G04-01",
+      "COMP-A02-G05-01",
+      "COMP-A03-G01-01",
+      "COMP-A03-G01-02",
+      "COMP-A03-G01-03",
+      "COMP-A03-G02-01",
+      "COMP-A03-G03-01",
+      "COMP-A03-G03-02",
+      "COMP-A03-G03-03",
+      "COMP-A03-G04-01",
+      "COMP-A03-G05-01",
+      "COMP-A03-G06-01",
+      "COMP-A03-G06-02",
+      "COMP-A03-G06-03",
+      "COMP-A03-G07-01",
+      "COMP-A03-G08-01",
+      "COMP-A04-G01-01",
+      "COMP-A04-G02-01",
+      "COMP-A04-G03-01",
+      "COMP-A04-G03-02",
+      "COMP-A04-G03-03",
+      "COMP-A04-G04-01",
+      "COMP-A04-G05-01",
+      "COMP-A04-G06-01",
+      "COMP-A04-G06-02",
+      "COMP-A04-G06-03",
+      "COMP-A04-G07-01",
+      "COMP-A04-G08-01",
+      "COMP-A04-G08-02",
+      "COMP-A04-G08-03",
+      "COMP-A04-G09-01",
+      "COMP-A05-G01-01",
+      "COMP-A05-G02-01",
+      "COMP-A05-G02-02",
+      "COMP-A05-G02-03",
+      "COMP-A05-G03-01",
+      "COMP-A05-G03-02",
+      "COMP-A05-G03-03",
+      "COMP-A05-G04-01",
+      "COMP-A05-G04-02",
+      "COMP-A05-G04-03",
+      "COMP-A05-G05-01",
+      "COMP-A05-G05-02",
+      "COMP-A05-G05-03",
+      "COMP-A05-G06-01",
+      "COMP-A05-G07-01",
+      "COMP-A05-G07-02",
+      "COMP-A05-G07-03",
+      "COMP-A05-G08-01",
+      "COMP-A05-G08-02",
+      "COMP-A05-G08-03",
+      "COMP-A05-G09-01",
+      "COMP-A05-G10-01",
+      "COMP-A05-G11-01",
+      "COMP-A05-G12-01",
+      "COMP-A05-G12-02",
+      "COMP-A05-G12-03",
+      "COMP-A06-G01-01",
+      "COMP-A06-G01-02",
+      "COMP-A06-G01-03",
+      "COMP-A06-G02-01",
+      "COMP-A06-G02-02",
+      "COMP-A06-G02-03",
+      "COMP-A06-G03-01",
+      "COMP-A06-G04-01",
+      "COMP-A06-G04-02",
+      "COMP-A06-G04-03",
+      "COMP-A06-G05-01",
+      "COMP-A06-G06-01",
+      "COMP-A06-G07-01",
+      "COMP-A06-G07-02",
+      "COMP-A06-G07-03",
+      "COMP-A06-G08-01",
+      "COMP-A07-G01-01",
+      "COMP-A07-G02-01",
+      "COMP-A07-G03-01",
+      "COMP-A07-G03-02",
+      "COMP-A07-G03-03",
+      "COMP-A07-G04-01",
+      "COMP-A07-G04-02",
+      "COMP-A07-G04-03",
+      "COMP-A07-G05-01",
+      "COMP-A07-G05-02",
+      "COMP-A07-G05-03",
+      "COMP-A07-G06-01",
+      "COMP-A07-G06-02",
+      "COMP-A07-G06-03",
+      "COMP-A07-G07-01",
+      "COMP-A07-G07-02",
+      "COMP-A07-G07-03",
+      "COMP-A07-G08-01",
+      "COMP-A07-G08-02",
+      "COMP-A07-G08-03",
+      "COMP-A07-G09-01",
+      "COMP-A07-G09-02",
+      "COMP-A07-G09-03",
+      "COMP-A07-G10-01",
+      "COMP-A07-G10-02",
+      "COMP-A07-G10-03",
+      "COMP-A08-G01-01",
+      "COMP-A08-G02-01",
+      "COMP-A08-G03-01",
+      "COMP-A08-G04-01",
+      "COMP-A08-G04-02",
+      "COMP-A08-G04-03",
+      "COMP-A08-G05-01",
+      "COMP-A08-G05-02",
+      "COMP-A08-G05-03",
+      "COMP-A08-G06-01",
+      "COMP-A09-G01-01",
+      "COMP-A09-G02-01",
+      "COMP-A09-G03-01",
+      "COMP-A09-G04-01",
+      "COMP-A09-G05-01",
+      "COMP-A09-G05-02",
+      "COMP-A09-G05-03",
+      "COMP-A09-G06-01",
+      "COMP-A09-G06-02",
+      "COMP-A09-G06-03",
+      "COMP-A09-G07-01",
+      "COMP-A09-G07-02",
+      "COMP-A09-G07-03",
+      "COMP-A09-G08-01",
+      "COMP-A09-G08-02",
+      "COMP-A09-G08-03",
+      "COMP-A10-G01-01",
+      "COMP-A10-G02-01",
+      "COMP-A10-G02-02",
+      "COMP-A10-G02-03",
+      "COMP-A10-G03-01",
+      "COMP-A10-G04-01",
+      "COMP-A10-G05-01",
+      "COMP-A10-G05-02",
+      "COMP-A10-G05-03",
+      "COMP-A10-G06-01",
+      "COMP-A10-G07-01",
+      "COMP-A11-G01-01",
+      "COMP-A11-G01-02",
+      "COMP-A11-G01-03",
+      "COMP-A11-G02-01",
+      "COMP-A11-G02-02",
+      "COMP-A11-G02-03",
+      "COMP-A11-G03-01",
+      "COMP-A11-G03-02",
+      "COMP-A11-G03-03",
+      "COMP-A12-G01-01",
+      "COMP-A12-G02-01",
+      "COMP-A12-G03-01",
+      "COMP-A12-G04-01",
+      "COMP-A12-G05-01",
+      "COMP-A12-G06-01",
+      "COMP-A12-G06-02",
+      "COMP-A12-G06-03",
+      "COMP-A12-G07-01"
+    ],
+    "competencies": [
+      {
+        "competencyId": "COMP-A00-G01-01",
+        "unitId": "IP-A00-G01",
+        "title": "Competência: Objetivo 1 — Fonética e Fonologia"
+      },
+      {
+        "competencyId": "COMP-A00-G02-01",
+        "unitId": "IP-A00-G02",
+        "title": "Competência: Objetivo 1 — Estudo da Sílaba - Teoria"
+      },
+      {
+        "competencyId": "COMP-A00-G03-01",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Fundamentos de Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-02",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G03-03",
+        "unitId": "IP-A00-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba - Questões — Estudo da Sílaba - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G04-01",
+        "unitId": "IP-A00-G04",
+        "title": "Competência: Objetivo 1 — Acentuação Gráfica"
+      },
+      {
+        "competencyId": "COMP-A00-G05-01",
+        "unitId": "IP-A00-G05",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A00-G06-01",
+        "unitId": "IP-A00-G06",
+        "title": "Competência: Objetivo 1 — Emprego do Hífen - Questões"
+      },
+      {
+        "competencyId": "COMP-A00-G07-01",
+        "unitId": "IP-A00-G07",
+        "title": "Competência: Objetivo 1 — Emprego dos Porquês"
+      },
+      {
+        "competencyId": "COMP-A01-G01-01",
+        "unitId": "IP-A01-G01",
+        "title": "Competência: Objetivo 1 — Classes Variáveis e Invariáveis"
+      },
+      {
+        "competencyId": "COMP-A01-G02-01",
+        "unitId": "IP-A01-G02",
+        "title": "Competência: Objetivo 1 — Emprego das Classes de Palavras"
+      },
+      {
+        "competencyId": "COMP-A01-G03-01",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Fundamentos de Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-02",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G03-03",
+        "unitId": "IP-A01-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Advérbios — Advérbios"
+      },
+      {
+        "competencyId": "COMP-A01-G04-01",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Fundamentos de Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-02",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G04-03",
+        "unitId": "IP-A01-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Artigos — Artigos"
+      },
+      {
+        "competencyId": "COMP-A01-G05-01",
+        "unitId": "IP-A01-G05",
+        "title": "Competência: Objetivo 1 — Numerais e Interjeições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-01",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Fundamentos de Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-02",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G01-03",
+        "unitId": "IP-A02-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Preposições — Preposições"
+      },
+      {
+        "competencyId": "COMP-A02-G02-01",
+        "unitId": "IP-A02-G02",
+        "title": "Competência: Objetivo 1 — Conjunções Coordenativas"
+      },
+      {
+        "competencyId": "COMP-A02-G03-01",
+        "unitId": "IP-A02-G03",
+        "title": "Competência: Objetivo 1 — Conjunções Subordinativas e Desde Que"
+      },
+      {
+        "competencyId": "COMP-A02-G04-01",
+        "unitId": "IP-A02-G04",
+        "title": "Competência: Objetivo 1 — Valores de E e Pois"
+      },
+      {
+        "competencyId": "COMP-A02-G05-01",
+        "unitId": "IP-A02-G05",
+        "title": "Competência: Objetivo 1 — Valores de Como e Questões Miscelâneas"
+      },
+      {
+        "competencyId": "COMP-A03-G01-01",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Fundamentos de Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-02",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G01-03",
+        "unitId": "IP-A03-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Pessoais — Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A03-G02-01",
+        "unitId": "IP-A03-G02",
+        "title": "Competência: Objetivo 1 — Pronomes Pessoais - Questões"
+      },
+      {
+        "competencyId": "COMP-A03-G03-01",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Fundamentos de Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-02",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G03-03",
+        "unitId": "IP-A03-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Possessivos Indefinidos e Interrogativos — Possessivos Indefinidos e Interrogativos"
+      },
+      {
+        "competencyId": "COMP-A03-G04-01",
+        "unitId": "IP-A03-G04",
+        "title": "Competência: Objetivo 1 — Demonstrativos e Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G05-01",
+        "unitId": "IP-A03-G05",
+        "title": "Competência: Objetivo 1 — Emprego dos Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A03-G06-01",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Fundamentos de Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-02",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G06-03",
+        "unitId": "IP-A03-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Pronomes Relativos - Regência e Reescrita — Pronomes Relativos - Regência e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A03-G07-01",
+        "unitId": "IP-A03-G07",
+        "title": "Competência: Objetivo 1 — Colocação dos Pronomes Átonos"
+      },
+      {
+        "competencyId": "COMP-A03-G08-01",
+        "unitId": "IP-A03-G08",
+        "title": "Competência: Objetivo 1 — Colocação Pronominal - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G01-01",
+        "unitId": "IP-A04-G01",
+        "title": "Competência: Objetivo 1 — Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G02-01",
+        "unitId": "IP-A04-G02",
+        "title": "Competência: Objetivo 1 — Semântica dos Tempos e Modos Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-01",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Fundamentos de Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-02",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G03-03",
+        "unitId": "IP-A04-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desinências Verbais — Desinências Verbais"
+      },
+      {
+        "competencyId": "COMP-A04-G04-01",
+        "unitId": "IP-A04-G04",
+        "title": "Competência: Objetivo 1 — Formas Nominais do Verbo"
+      },
+      {
+        "competencyId": "COMP-A04-G05-01",
+        "unitId": "IP-A04-G05",
+        "title": "Competência: Objetivo 1 — Verbos Irregulares - Líderes e Bons Amigos"
+      },
+      {
+        "competencyId": "COMP-A04-G06-01",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Fundamentos de Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-02",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G06-03",
+        "unitId": "IP-A04-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Irregulares - Questões — Verbos Irregulares - Questões"
+      },
+      {
+        "competencyId": "COMP-A04-G07-01",
+        "unitId": "IP-A04-G07",
+        "title": "Competência: Objetivo 1 — Falsos Amigos e Difícil Conjugação"
+      },
+      {
+        "competencyId": "COMP-A04-G08-01",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Fundamentos de Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-02",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G08-03",
+        "unitId": "IP-A04-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos em EAR e IAR e Defectivos — Verbos em EAR e IAR e Defectivos"
+      },
+      {
+        "competencyId": "COMP-A04-G09-01",
+        "unitId": "IP-A04-G09",
+        "title": "Competência: Objetivo 1 — Correlação de Tempos Verbais"
+      },
+      {
+        "competencyId": "COMP-A05-G01-01",
+        "unitId": "IP-A05-G01",
+        "title": "Competência: Objetivo 1 — Transitividade Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G02-01",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Fundamentos de Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-02",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G02-03",
+        "unitId": "IP-A05-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Transitividade Verbal - Questões — Transitividade Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G03-01",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Fundamentos de Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-02",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G03-03",
+        "unitId": "IP-A05-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Complementos e Objetos Pleonásticos — Complementos e Objetos Pleonásticos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-01",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Fundamentos de Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-02",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G04-03",
+        "unitId": "IP-A05-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Fundamentos — Vozes Verbais - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G05-01",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Fundamentos de Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-02",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G05-03",
+        "unitId": "IP-A05-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Vozes Verbais - Questões — Vozes Verbais - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G06-01",
+        "unitId": "IP-A05-G06",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A05-G07-01",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-02",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G07-03",
+        "unitId": "IP-A05-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 02 e 03 — Reescritura de Vozes - Partes 02 e 03"
+      },
+      {
+        "competencyId": "COMP-A05-G08-01",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Fundamentos de Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-02",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G08-03",
+        "unitId": "IP-A05-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Reescritura de Vozes - Partes 04 a 07 — Reescritura de Vozes - Partes 04 a 07"
+      },
+      {
+        "competencyId": "COMP-A05-G09-01",
+        "unitId": "IP-A05-G09",
+        "title": "Competência: Objetivo 1 — Reescritura de Vozes - Parte 08"
+      },
+      {
+        "competencyId": "COMP-A05-G10-01",
+        "unitId": "IP-A05-G10",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares"
+      },
+      {
+        "competencyId": "COMP-A05-G11-01",
+        "unitId": "IP-A05-G11",
+        "title": "Competência: Objetivo 1 — Verbos Impessoais e Auxiliares - Questões"
+      },
+      {
+        "competencyId": "COMP-A05-G12-01",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Fundamentos de Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-02",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Aplicação Prática e Decisão em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A05-G12-03",
+        "unitId": "IP-A05-G12",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Verbos Pronominais — Verbos Pronominais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-01",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Fundamentos de Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-02",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G01-03",
+        "unitId": "IP-A06-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Análise Sintática - Conceitos Iniciais — Análise Sintática - Conceitos Iniciais"
+      },
+      {
+        "competencyId": "COMP-A06-G02-01",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Fundamentos de Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-02",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G02-03",
+        "unitId": "IP-A06-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Tipos de Sujeito — Tipos de Sujeito"
+      },
+      {
+        "competencyId": "COMP-A06-G03-01",
+        "unitId": "IP-A06-G03",
+        "title": "Competência: Objetivo 1 — Predicação Verbal e Tipos de Predicado"
+      },
+      {
+        "competencyId": "COMP-A06-G04-01",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Fundamentos de Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-02",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G04-03",
+        "unitId": "IP-A06-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Objetos e Transitividade Verbal — Objetos e Transitividade Verbal"
+      },
+      {
+        "competencyId": "COMP-A06-G05-01",
+        "unitId": "IP-A06-G05",
+        "title": "Competência: Objetivo 1 — Complemento Nominal e Agente da Passiva"
+      },
+      {
+        "competencyId": "COMP-A06-G06-01",
+        "unitId": "IP-A06-G06",
+        "title": "Competência: Objetivo 1 — Vocativo e Aposto"
+      },
+      {
+        "competencyId": "COMP-A06-G07-01",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Fundamentos de Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-02",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G07-03",
+        "unitId": "IP-A06-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Adjuntos Adverbial e Adnominal — Adjuntos Adverbial e Adnominal"
+      },
+      {
+        "competencyId": "COMP-A06-G08-01",
+        "unitId": "IP-A06-G08",
+        "title": "Competência: Objetivo 1 — Predicativos versus Adjunto Adnominal"
+      },
+      {
+        "competencyId": "COMP-A07-G01-01",
+        "unitId": "IP-A07-G01",
+        "title": "Competência: Objetivo 1 — Período Composto - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G02-01",
+        "unitId": "IP-A07-G02",
+        "title": "Competência: Objetivo 1 — Orações Coordenadas Sindéticas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-01",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Fundamentos de Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-02",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G03-03",
+        "unitId": "IP-A07-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Subordinadas Substantivas e Adjetivas — Subordinadas Substantivas e Adjetivas"
+      },
+      {
+        "competencyId": "COMP-A07-G04-01",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Fundamentos de Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-02",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G04-03",
+        "unitId": "IP-A07-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Subordinadas Adverbiais — Orações Subordinadas Adverbiais"
+      },
+      {
+        "competencyId": "COMP-A07-G05-01",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-02",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G05-03",
+        "unitId": "IP-A07-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Fundamentos — Orações Reduzidas - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A07-G06-01",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-02",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G06-03",
+        "unitId": "IP-A07-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Questões — Orações Reduzidas - Questões"
+      },
+      {
+        "competencyId": "COMP-A07-G07-01",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Fundamentos de Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-02",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G07-03",
+        "unitId": "IP-A07-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Orações Reduzidas - Revisão e Reescrita — Orações Reduzidas - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A07-G08-01",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Fundamentos de Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-02",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G08-03",
+        "unitId": "IP-A07-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Desenvolvimento das Orações Reduzidas — Desenvolvimento das Orações Reduzidas"
+      },
+      {
+        "competencyId": "COMP-A07-G09-01",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Fundamentos de Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-02",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G09-03",
+        "unitId": "IP-A07-G09",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra QUE — Palavra QUE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-01",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Fundamentos de Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-02",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Aplicação Prática e Decisão em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A07-G10-03",
+        "unitId": "IP-A07-G10",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Palavra SE — Palavra SE"
+      },
+      {
+        "competencyId": "COMP-A08-G01-01",
+        "unitId": "IP-A08-G01",
+        "title": "Competência: Objetivo 1 — Sinais de Pontuação - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A08-G02-01",
+        "unitId": "IP-A08-G02",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A08-G03-01",
+        "unitId": "IP-A08-G03",
+        "title": "Competência: Objetivo 1 — Uso da Vírgula - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A08-G04-01",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Fundamentos de Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-02",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Aplicação Prática e Decisão em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G04-03",
+        "unitId": "IP-A08-G04",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Ponto e Vírgula Dois-Pontos e Aspas — Ponto e Vírgula Dois-Pontos e Aspas"
+      },
+      {
+        "competencyId": "COMP-A08-G05-01",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Fundamentos de Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-02",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G05-03",
+        "unitId": "IP-A08-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Travessão e Parênteses — Travessão e Parênteses"
+      },
+      {
+        "competencyId": "COMP-A08-G06-01",
+        "unitId": "IP-A08-G06",
+        "title": "Competência: Objetivo 1 — Pontuação - Revisão e Reescrita"
+      },
+      {
+        "competencyId": "COMP-A09-G01-01",
+        "unitId": "IP-A09-G01",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A09-G02-01",
+        "unitId": "IP-A09-G02",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A09-G03-01",
+        "unitId": "IP-A09-G03",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Questões"
+      },
+      {
+        "competencyId": "COMP-A09-G04-01",
+        "unitId": "IP-A09-G04",
+        "title": "Competência: Objetivo 1 — Concordância Verbal - Casos Especiais"
+      },
+      {
+        "competencyId": "COMP-A09-G05-01",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-02",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G05-03",
+        "unitId": "IP-A09-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 01 — Concordância Nominal - Parte 01"
+      },
+      {
+        "competencyId": "COMP-A09-G06-01",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-02",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G06-03",
+        "unitId": "IP-A09-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 02 — Concordância Nominal - Parte 02"
+      },
+      {
+        "competencyId": "COMP-A09-G07-01",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Fundamentos de Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-02",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G07-03",
+        "unitId": "IP-A09-G07",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Parte 03 — Concordância Nominal - Parte 03"
+      },
+      {
+        "competencyId": "COMP-A09-G08-01",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Fundamentos de Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-02",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Aplicação Prática e Decisão em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A09-G08-03",
+        "unitId": "IP-A09-G08",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Concordância Nominal - Partes 04 e 05 — Concordância Nominal - Partes 04 e 05"
+      },
+      {
+        "competencyId": "COMP-A10-G01-01",
+        "unitId": "IP-A10-G01",
+        "title": "Competência: Objetivo 1 — Regência Verbal - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A10-G02-01",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Fundamentos de Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G02-02",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G02-03",
+        "unitId": "IP-A10-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Regência Verbal - Aprofundamento — Regência Verbal - Aprofundamento"
+      },
+      {
+        "competencyId": "COMP-A10-G03-01",
+        "unitId": "IP-A10-G03",
+        "title": "Competência: Objetivo 1 — Regência e Pronomes Relativos"
+      },
+      {
+        "competencyId": "COMP-A10-G04-01",
+        "unitId": "IP-A10-G04",
+        "title": "Competência: Objetivo 1 — Regência e Pronomes Pessoais"
+      },
+      {
+        "competencyId": "COMP-A10-G05-01",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Fundamentos de Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G05-02",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Aplicação Prática e Decisão em Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G05-03",
+        "unitId": "IP-A10-G05",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Regência Nominal — Regência Nominal"
+      },
+      {
+        "competencyId": "COMP-A10-G06-01",
+        "unitId": "IP-A10-G06",
+        "title": "Competência: Objetivo 1 — Crase - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A10-G07-01",
+        "unitId": "IP-A10-G07",
+        "title": "Competência: Objetivo 1 — Crase - Aprofundamento e Questões"
+      },
+      {
+        "competencyId": "COMP-A11-G01-01",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Fundamentos de Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G01-02",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G01-03",
+        "unitId": "IP-A11-G01",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Textual - Visão Geral — Coesão Textual - Visão Geral"
+      },
+      {
+        "competencyId": "COMP-A11-G02-01",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Fundamentos de Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G02-02",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G02-03",
+        "unitId": "IP-A11-G02",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Sequencial — Coesão Sequencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-01",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Fundamentos de Coesão Referencial — Coesão Referencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-02",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Aplicação Prática e Decisão em Coesão Referencial — Coesão Referencial"
+      },
+      {
+        "competencyId": "COMP-A11-G03-03",
+        "unitId": "IP-A11-G03",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Coesão Referencial — Coesão Referencial"
+      },
+      {
+        "competencyId": "COMP-A12-G01-01",
+        "unitId": "IP-A12-G01",
+        "title": "Competência: Objetivo 1 — Sentido Próprio e Figurado"
+      },
+      {
+        "competencyId": "COMP-A12-G02-01",
+        "unitId": "IP-A12-G02",
+        "title": "Competência: Objetivo 1 — Sinônimos e Antônimos"
+      },
+      {
+        "competencyId": "COMP-A12-G03-01",
+        "unitId": "IP-A12-G03",
+        "title": "Competência: Objetivo 1 — Hiperonímia e Hiponímia"
+      },
+      {
+        "competencyId": "COMP-A12-G04-01",
+        "unitId": "IP-A12-G04",
+        "title": "Competência: Objetivo 1 — Polissemia"
+      },
+      {
+        "competencyId": "COMP-A12-G05-01",
+        "unitId": "IP-A12-G05",
+        "title": "Competência: Objetivo 1 — Ambiguidade Homônimos e Parônimos"
+      },
+      {
+        "competencyId": "COMP-A12-G06-01",
+        "unitId": "IP-A12-G06",
+        "title": "Competência: Fundamentos de Figuras de Linguagem - Fundamentos — Figuras de Linguagem - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A12-G06-02",
+        "unitId": "IP-A12-G06",
+        "title": "Competência: Aplicação Prática e Decisão em Figuras de Linguagem - Fundamentos — Figuras de Linguagem - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A12-G06-03",
+        "unitId": "IP-A12-G06",
+        "title": "Competência: Articulação SuVeCA e Armadilhas de Prova em Figuras de Linguagem - Fundamentos — Figuras de Linguagem - Fundamentos"
+      },
+      {
+        "competencyId": "COMP-A12-G07-01",
+        "unitId": "IP-A12-G07",
+        "title": "Competência: Objetivo 1 — Figuras de Linguagem - Aprofundamento"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "S13",
+        "unitRef": "IP-A14-S13",
+        "role": "integration"
+      }
+    ],
+    "edges": [],
+    "checkpoints": [],
+    "blockers": []
+  }
+] as const satisfies readonly PedagogicalMacroIndexEntry[];
+export const PEDAGOGICAL_MACRO_ADAPTIVE_LINKS = [
+  {
+    "adaptiveLinkId": "ADAPT-A02-G02-G05",
+    "fromUnitRef": "IP-A02-G02",
+    "toUnitRef": "IP-A02-G05",
+    "scope": "within_lesson",
+    "relationType": "integration_readiness",
+    "policy": "advisory_prerequisite",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  },
+  {
+    "adaptiveLinkId": "ADAPT-A02-G04-G05",
+    "fromUnitRef": "IP-A02-G04",
+    "toUnitRef": "IP-A02-G05",
+    "scope": "within_lesson",
+    "relationType": "integration_readiness",
+    "policy": "advisory_prerequisite",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  },
+  {
+    "adaptiveLinkId": "ADAPT-A04-G02-G03-REMEDIATION",
+    "fromUnitRef": "IP-A04-G02",
+    "toUnitRef": "IP-A04-G03",
+    "returnUnitRef": "IP-A04-G02",
+    "scope": "within_lesson",
+    "relationType": "remediation",
+    "policy": "diagnostic_remediation",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  },
+  {
+    "adaptiveLinkId": "ADAPT-A05-G01-A06-G03",
+    "fromUnitRef": "IP-A05-G01",
+    "toUnitRef": "IP-A06-G03",
+    "scope": "cross_lesson",
+    "relationType": "prerequisite",
+    "policy": "advisory_prerequisite",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  },
+  {
+    "adaptiveLinkId": "ADAPT-A05-G02-A06-G04",
+    "fromUnitRef": "IP-A05-G02",
+    "toUnitRef": "IP-A06-G04",
+    "scope": "cross_lesson",
+    "relationType": "prerequisite",
+    "policy": "advisory_prerequisite",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  },
+  {
+    "adaptiveLinkId": "ADAPT-A08-G01-G06",
+    "fromUnitRef": "IP-A08-G01",
+    "toUnitRef": "IP-A08-G06",
+    "scope": "within_lesson",
+    "relationType": "capstone_readiness",
+    "policy": "advisory_prerequisite",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  },
+  {
+    "adaptiveLinkId": "ADAPT-A08-G02-G06",
+    "fromUnitRef": "IP-A08-G02",
+    "toUnitRef": "IP-A08-G06",
+    "scope": "within_lesson",
+    "relationType": "capstone_readiness",
+    "policy": "advisory_prerequisite",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  },
+  {
+    "adaptiveLinkId": "ADAPT-A08-G03-G06",
+    "fromUnitRef": "IP-A08-G03",
+    "toUnitRef": "IP-A08-G06",
+    "scope": "within_lesson",
+    "relationType": "capstone_readiness",
+    "policy": "advisory_prerequisite",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  },
+  {
+    "adaptiveLinkId": "ADAPT-A13-G05-G06",
+    "fromUnitRef": "IP-A13-G05",
+    "toUnitRef": "IP-A13-G06",
+    "scope": "within_lesson",
+    "relationType": "capstone_readiness",
+    "policy": "advisory_prerequisite",
+    "evidenceSource": "competency_mastery",
+    "masteryInheritance": false
+  }
+] as const satisfies readonly PedagogicalMacroAdaptiveLink[];

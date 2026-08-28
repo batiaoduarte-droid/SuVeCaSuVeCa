@@ -260,17 +260,9 @@
   }
 
   .pedagogical-toc-list {
-    display: flex;
-    margin-inline: -0.25rem;
-    overflow-x: auto;
-    padding: 0.125rem 0.25rem 0.375rem;
-    scroll-padding-inline: 0.25rem;
-    scroll-snap-type: x proximity;
-  }
-
-  .pedagogical-toc-list > li {
-    flex: 0 0 min(78vw, 15rem);
-    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    overflow: visible;
   }
 
   .pedagogical-section-actions > div,
@@ -279,8 +271,8 @@
   }
 
   .pedagogical-section-body :is(p, li, dd) {
-    font-size: 0.8125rem;
-    line-height: 1.62;
+    font-size: 0.9375rem;
+    line-height: 1.65;
   }
 
   .explanation-frame {
@@ -307,7 +299,16 @@
 .pedagogical-section-body p,
 .pedagogical-section-body li,
 .module-unit-shell > .reading-content p {
-  max-width: 82ch;
+  width: 100%;
+  max-width: none;
+}
+
+/* A navegação fixa nunca pode disputar a mesma área interativa de um diálogo.
+   :has() é suportado pelos navegadores-alvo e mantém a regra centralizada para
+   busca, questões, simulados e o painel "Mais". */
+body:has([role='dialog'][aria-modal='true']) .mobile-bottom-navigation {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .page-header {

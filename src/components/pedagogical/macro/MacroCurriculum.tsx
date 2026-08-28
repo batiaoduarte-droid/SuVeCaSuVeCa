@@ -360,7 +360,7 @@ export const MacroChapterNavigator: React.FC<MacroChapterNavigatorProps> = ({
 
   return (
     <div className="space-y-3">
-      <nav aria-label={`Capítulos de ${entry.title}`}>
+      <nav aria-label={`Unidades pedagógicas de ${entry.title}`}>
         <ol className="m-0 grid list-none gap-2 p-0 md:grid-cols-2 xl:grid-cols-3">
           {entry.nodes.map((node, index) => {
             const selected = node.unitRef === activeUnitId;

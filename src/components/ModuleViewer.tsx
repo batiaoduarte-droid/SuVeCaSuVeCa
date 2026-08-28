@@ -48,7 +48,6 @@ import {
   Trophy,
 } from 'lucide-react';
 import { SuvecaWordHighlight } from './ui/SuvecaBrandHighlight';
-import { SuvecaEquationBlocks } from './study-visuals';
 import { MACRO_CURRICULUM_ENABLED } from '../lib/featureFlags';
 import {
   getPedagogicalMacrosForLesson,
@@ -429,9 +428,10 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const activeMacroUnitId = selectedMacro
     ? (openUnitId && selectedMacro.unitRefs.includes(openUnitId) ? openUnitId : selectedMacro.unitRefs[0])
     : null;
+  const focusedUnitId = activeMacroUnitId || openUnitId;
   const visibleSections = useMemo(
-    () => selectVisibleModuleSections(moduleData, macroMode, activeMacroUnitId),
-    [activeMacroUnitId, macroMode, moduleData],
+    () => selectVisibleModuleSections(moduleData, macroMode || Boolean(openUnitId), focusedUnitId),
+    [focusedUnitId, macroMode, moduleData, openUnitId],
   );
   const unitTitles = useMemo(() => Object.fromEntries(
     moduleData.sections
@@ -855,7 +855,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
         )}
         {/* O módulo introdutório concentra sua apresentação no primeiro guia
             interativo. Os demais módulos preservam o cabeçalho curricular completo. */}
-        {!isIntroModule && (
+        {!isIntroModule && !openUnitId && (
         <header className={isFocusMode ? 'hidden' : 'module-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4'}>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full flex items-center gap-1.5">
@@ -903,43 +903,14 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                 </span>
               </div>
 
-              <div className="space-y-4 p-4 sm:p-5">
-                <SuvecaEquationBlocks compact />
-                <p className="text-[11px] font-semibold leading-relaxed text-slate-500">
-                  Os blocos representam funções e relações; podem aparecer em outra ordem, implícitos ou ausentes.
+              <div className="p-4 sm:p-5">
+                <p className="text-sm leading-relaxed text-slate-700">
+                  {moduleData.suvecaMethod.summary}
                 </p>
-                <div className="grid gap-3 md:grid-cols-2">
-                  <div className="rounded-xl border border-teal-200 bg-white p-3.5">
-                    <span className="text-[10px] font-black uppercase tracking-wider text-teal-700">Como ler o mapa</span>
-                    <p className="mt-1 text-xs font-medium leading-relaxed text-teal-950 sm:text-sm">
-                      {moduleData.suvecaMethod.definition}
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-sky-200 bg-sky-50/60 p-3.5">
-                    <span className="text-[10px] font-black uppercase tracking-wider text-sky-700">Aplicação nesta aula</span>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-700 sm:text-sm">
-                      {moduleData.suvecaMethod.summary}
-                    </p>
-                  </div>
-                </div>
+                <p className="mt-2 text-xs font-semibold leading-relaxed text-teal-800">
+                  A aplicação, os testes decisivos e os limites próprios do conteúdo aparecem dentro de cada unidade pedagógica.
+                </p>
               </div>
-              <details className="group mt-4 border-t border-teal-200/80 pt-3 text-sm text-slate-700">
-                <summary className="flex min-h-[44px] cursor-pointer list-none items-center gap-2 px-4 font-bold text-teal-900 marker:hidden sm:px-5">
-                  <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true" />
-                  Como aplicar o mapa neste tema
-                </summary>
-                <ol className="mt-2 space-y-2 px-5 pb-1 pl-10 leading-relaxed marker:font-bold marker:text-teal-800">
-                  {moduleData.suvecaMethod.steps.map((step) => <li key={step}>{step}</li>)}
-                </ol>
-                {moduleData.suvecaMethod.limits.map((limit) => (
-                  <p key={limit} className="mx-5 mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-950">
-                    <strong>Limite:</strong> {limit}
-                  </p>
-                ))}
-                <p className="mx-5 mb-4 mt-3 text-xs leading-relaxed text-slate-500">
-                  {moduleData.suvecaMethod.authorityNote}
-                </p>
-              </details>
             </section>
           )}
 
@@ -1018,7 +989,46 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           </aside>
         )}
 
-        {macroMode ? (
+        {openUnitId && !macroMode ? (
+          <nav
+            aria-label={`Unidades pedagógicas de ${moduleData.title}`}
+            className="space-y-3 rounded-xl border border-teal-200 bg-white px-4 py-3 shadow-xs"
+          >
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="min-w-0">
+              <p className="text-[10px] font-black uppercase tracking-wider text-teal-700">Unidade em foco</p>
+              <p className="break-words text-sm font-bold text-slate-900">{unitTitles[openUnitId] || moduleData.title}</p>
+            </div>
+            <button type="button" role="link" onClick={() => onOpenUnitChange?.(null, null)} className="button-secondary min-h-11 text-xs">
+              Voltar às unidades
+            </button>
+          </div>
+          <ol className="m-0 flex list-none gap-2 overflow-x-auto p-0 pb-1" aria-label="Trocar unidade em foco">
+            {moduleData.sections.map((section, index) => {
+              const unitId = integrationUnitIdForSection(section);
+              if (!unitId) return null;
+              const isCurrent = unitId === openUnitId;
+              return (
+                <li key={unitId} className="m-0 shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => onOpenUnitChange?.(unitId, null)}
+                    aria-current={isCurrent ? 'location' : undefined}
+                    aria-label={`Unidade ${index + 1}: ${section.title}`}
+                    className={`min-h-11 rounded-lg border px-3 py-2 text-xs font-bold transition ${
+                      isCurrent
+                        ? 'border-teal-700 bg-teal-50 text-teal-950'
+                        : 'border-slate-200 bg-white text-slate-700 hover:border-teal-400'
+                    }`}
+                  >
+                    {index + 1}
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+          </nav>
+        ) : macroMode ? (
           <div className="space-y-4">
             <MacroCurriculumNavigator
               entries={macroEntries}

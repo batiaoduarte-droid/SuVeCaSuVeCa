@@ -32,11 +32,21 @@ import {
   StudyCallout,
 } from './study-visuals';
 import { QuestionPresentationContent } from './QuestionPresentationContent';
+import { InlineRichText } from './pedagogical/blocks/InlineRichText';
 
 const DEFAULT_EXAM_DURATION_SECONDS = 40 * 60;
 const PAUSED_SIMULADO_STORAGE_PREFIX = 'suveca_simulado_pausado';
 const pausedSimuladoStorageKey = (userId?: string) =>
   `${PAUSED_SIMULADO_STORAGE_PREFIX}_${userId || 'guest'}`;
+
+export const simuladoAnswerLabel = (question: Pick<QuizQuestion, 'type' | 'correctAnswer'>): string => {
+  const answer = String(question.correctAnswer || '').trim().toUpperCase();
+  if (question.type === 'CERTO_ERRADO') {
+    if (answer === 'C' || answer === 'CERTO' || answer === 'CORRETO') return 'Certo';
+    if (answer === 'E' || answer === 'ERRADO' || answer === 'INCORRETO') return 'Errado';
+  }
+  return `Letra ${answer}`;
+};
 
 interface PausedSimuladoState {
   version: 1;
@@ -468,6 +478,8 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
   }, [secondsLeft, isSubmitted, isTimerEnabled, isTimerRunning]);
 
   const currentQ = questions[currentQIndex];
+  const currentContextUnavailable = currentQ?.presentation?.contextStatus === 'source_missing'
+    || currentQ?.presentation?.formattingStatus === 'source_missing';
   const isOfficialQuestion = currentQ?.origin === 'official';
   const isOfficialQuestionSet = questions.length > 0 && questions.every((question) => question.origin === 'official');
   const questionSetVersions = new Set(questions.map((question) => question.questionSetVersion).filter(Boolean));
@@ -796,7 +808,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                       <button
                         key={val}
                         onClick={() => handleSelectAnswer(currentQ.id, val)}
-                        disabled={isSubmitted || isExamPaused}
+                        disabled={isSubmitted || isExamPaused || currentContextUnavailable}
                         className={`p-4 rounded-xl font-bold text-sm sm:text-base transition border min-h-[44px] cursor-pointer ${btnClass}`}
                       >
                         {val === 'C' ? 'CERTO' : 'ERRADO'}
@@ -822,13 +834,13 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                       <button
                         key={opt.letter}
                         onClick={() => handleSelectAnswer(currentQ.id, opt.letter)}
-                        disabled={isSubmitted || isExamPaused}
+                        disabled={isSubmitted || isExamPaused || currentContextUnavailable}
                         className={`w-full text-left p-4 rounded-xl text-xs sm:text-sm font-medium transition border flex items-start space-x-3 min-h-[44px] cursor-pointer ${optClass}`}
                       >
                         <span className="font-bold shrink-0 w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs">
                           {opt.letter}
                         </span>
-                        <span className="pt-0.5 leading-relaxed">{opt.text}</span>
+                        <span className="pt-0.5 leading-relaxed"><InlineRichText>{opt.text}</InlineRichText></span>
                       </button>
                     );
                   })}
@@ -878,7 +890,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                   <GoldenRuleCard
                     rule={{
                       entityId: `sim-rule-${currentQ.id}`,
-                      title: `Gabarito Oficial: Letra ${currentQ.correctAnswer}`,
+                      title: `Gabarito Oficial: ${simuladoAnswerLabel(currentQ)}`,
                       statement: currentQ.commentary,
                       blocks: [],
                     }}

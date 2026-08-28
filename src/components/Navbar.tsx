@@ -507,7 +507,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Bottom Fixed Bar (390px / small screens) */}
       <nav
-        className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-lg flex items-center justify-around min-h-[64px] pb-[env(safe-area-inset-bottom,0px)] px-1"
+        className="mobile-bottom-navigation lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-lg flex items-center justify-around min-h-[64px] pb-[env(safe-area-inset-bottom,0px)] px-1"
         aria-label="Navegação móvel"
       >
         {primaryTabs.map((item) => {

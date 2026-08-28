@@ -236,6 +236,23 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
     setOpenSections(new Set());
   };
 
+  const toggleAllPreservingViewport = () => {
+    const anchor = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+    const anchorTop = anchor?.getBoundingClientRect().top;
+    setOpenSections(allOpen ? new Set() : new Set(presentSections.map((section) => section.id)));
+    if (anchor && typeof anchorTop === 'number') {
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          const displacement = anchor.getBoundingClientRect().top - anchorTop;
+          if (Math.abs(displacement) > 0.5) window.scrollBy({ top: displacement });
+          anchor.focus({ preventScroll: true });
+        });
+      });
+    }
+  };
+
   const openFromToc = (id: string) => {
     setOpenSections((prev) => new Set(prev).add(id));
     onActiveSectionChange?.(id);
@@ -303,7 +320,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
           </h2>
           <button
             type="button"
-            onClick={() => setOpenSections(allOpen ? new Set() : new Set(presentSections.map((s) => s.id)))}
+            onClick={toggleAllPreservingViewport}
             className="min-h-11 rounded-lg border border-teal-200 bg-white px-3 py-2 text-xs font-bold text-teal-900 hover:bg-teal-50 transition cursor-pointer shadow-2xs"
           >
             {allOpen ? 'Recolher todas' : 'Expandir todas'}
@@ -324,7 +341,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                     <Icon className="h-3.5 w-3.5" />
                   </span>
                   <span className="font-bold text-teal-700">{index + 1}.</span>
-                  <span className="font-semibold truncate"><SuvecaWordHighlight text={section.title} /></span>
+                  <span className="min-w-0 break-words font-semibold"><SuvecaWordHighlight text={section.title} /></span>
                 </button>
               </li>
             );

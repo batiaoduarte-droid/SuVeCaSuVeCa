@@ -6,7 +6,7 @@ import { Navbar, TabType } from './components/Navbar';
 import { DailyTipCard } from './components/DailyTipCard';
 import { DailyReviewReminder } from './components/DailyReviewReminder';
 import { ContinueLearningCard } from './components/ContinueLearningCard';
-import { fetchOfficialQuestionSample, officialDetailToQuizQuestion } from './lib/officialQuestions';
+import { fetchOfficialQuestionSample, officialDetailToQuizQuestion, type OfficialQuestionFilters } from './lib/officialQuestions';
 import { SuvecaMethodBanner } from './components/SuvecaMethodBanner';
 import { WeeklyGoalCard } from './components/WeeklyGoalCard';
 import { OnboardingTour, hasCompletedOnboarding } from './components/OnboardingTour';
@@ -34,6 +34,7 @@ import {
 } from './lib/studyLocation';
 import { resolvePedagogicalMacroForUnit } from './data/pedagogicalMacroCatalog';
 import { MACRO_CURRICULUM_ENABLED } from './lib/featureFlags';
+import { readToolLocation, writeToolLocation } from './lib/toolLocation';
 
 // Each study tool is a self-contained route-sized chunk. In particular, this
 // keeps Recharts, Gemini panels and the duel engine out of the first mobile
@@ -123,7 +124,8 @@ const unitIdForSection = (section: (typeof MODULES_DATA)[number]['sections'][num
 
 export default function App() {
   const initialStudyLocation = useRef(readStudyLocation()).current;
-  const [activeTab, setActiveTab] = useState<TabType>('modules');
+  const initialToolLocation = useRef(readToolLocation()).current;
+  const [activeTab, setActiveTab] = useState<TabType>(initialToolLocation.tab);
   const lastNonPomodoroTab = useRef<TabType>('modules');
   const [selectedModuleId, setSelectedModuleId] = useState<string>(initialStudyLocation.moduleId || 'mod-intro');
   const [selectedMacroId, setSelectedMacroId] = useState<string | null>(
@@ -138,6 +140,9 @@ export default function App() {
   const [tutorContext, setTutorContext] = useState<string>('');
   const [isImmersiveFocus, setIsImmersiveFocus] = useState(false);
   const [officialSimuladoQuestions, setOfficialSimuladoQuestions] = useState<QuizQuestion[] | null>(null);
+  const [officialQuestionFilters, setOfficialQuestionFilters] = useState<OfficialQuestionFilters>(initialToolLocation.questionFilters);
+  const [requestedOfficialQuestionId, setRequestedOfficialQuestionId] = useState<string | null>(initialToolLocation.questionId);
+  const restoredEditorialPractice = useRef(false);
   const [isOnboardingOpen, setIsOnboardingOpen] = useState<boolean>(() => !hasCompletedOnboarding());
 
   useEffect(() => {
@@ -173,16 +178,36 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const location = readStudyLocation();
+      const toolLocation = readToolLocation();
       setSelectedModuleId(location.moduleId || 'mod-intro');
       setSelectedMacroId(MACRO_CURRICULUM_ENABLED ? location.macroId : null);
       setOpenUnitId(location.unitId);
       setOpenUnitSectionId(location.sectionId);
       setStudyRouteIssue(location.routeIssue);
-      setActiveTab('modules');
+      setOfficialQuestionFilters(toolLocation.questionFilters);
+      setRequestedOfficialQuestionId(toolLocation.questionId);
+      setActiveTab(toolLocation.tab);
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  useEffect(() => {
+    writeToolLocation({
+      tab: activeTab,
+      questionId: activeTab === 'questions' ? requestedOfficialQuestionId : null,
+      questionFilters: officialQuestionFilters,
+      editorialPractice: activeTab === 'simulado' && Boolean(officialSimuladoQuestions),
+    }, 'replace');
+  }, [activeTab, officialQuestionFilters, officialSimuladoQuestions, requestedOfficialQuestionId]);
+
+  useEffect(() => {
+    if (!initialToolLocation.editorialPractice || initialToolLocation.tab !== 'simulado' || restoredEditorialPractice.current) return;
+    restoredEditorialPractice.current = true;
+    void fetchOfficialQuestionSample(initialToolLocation.questionFilters, 10)
+      .then((sample) => setOfficialSimuladoQuestions(sample.questions.map(officialDetailToQuizQuestion)))
+      .catch(() => setOfficialSimuladoQuestions(null));
+  }, [initialToolLocation]);
 
   // Track auth changes and load Firestore data
   useEffect(() => {
@@ -398,6 +423,7 @@ export default function App() {
   };
 
   const handleSelectModule = (id: string) => {
+    setActiveTab('modules');
     setSelectedModuleId(id);
     setSelectedMacroId(null);
     setOpenUnitId(null);
@@ -413,6 +439,7 @@ export default function App() {
     sectionId: string | null = null,
     requestedMacroId: string | null = null,
   ) => {
+    setActiveTab('modules');
     const moduleId = moduleIdForUnit(unitId) || selectedModuleId;
     const isNewUnit = unitId !== openUnitId;
     const inferredMacro = MACRO_CURRICULUM_ENABLED && unitId
@@ -551,7 +578,7 @@ export default function App() {
             <Suspense fallback={<ToolLoading />}>
             {activeTab === 'modules' && (
               <div className="space-y-6">
-                {!isImmersiveFocus && (
+                {!isImmersiveFocus && !openUnitId && (
                   <>
                     {selectedCurriculumModule && (
                       <SuvecaMethodBanner
@@ -744,7 +771,14 @@ export default function App() {
 
             {activeTab === 'questions' && (
               <OfficialQuestionsExplorer
-                onStartSimulado={(questions) => {
+                initialFilters={officialQuestionFilters}
+                initialQuestionId={requestedOfficialQuestionId}
+                onNavigationStateChange={({ filters, questionId }) => {
+                  setOfficialQuestionFilters(filters);
+                  setRequestedOfficialQuestionId(questionId);
+                }}
+                onStartSimulado={(questions, filters) => {
+                  setOfficialQuestionFilters(filters);
                   setOfficialSimuladoQuestions(questions);
                   setActiveTab('simulado');
                 }}
@@ -839,7 +873,11 @@ export default function App() {
             }}
             errors={cadernoErrors}
             userId={user?.uid}
-            onOpenOfficialQuestions={() => setActiveTab('questions')}
+            onOpenOfficialQuestion={(questionId) => {
+              setRequestedOfficialQuestionId(questionId);
+              setOfficialQuestionFilters({});
+              setActiveTab('questions');
+            }}
           />
         </Suspense>
       )}

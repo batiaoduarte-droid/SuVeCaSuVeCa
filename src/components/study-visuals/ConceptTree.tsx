@@ -36,12 +36,15 @@ const buildTreeFromGraph = (
   if (!nodes || nodes.length === 0) return [];
 
   const nodeMap = new Map<string, ConceptTreeNode>();
-  nodes.forEach((n) => {
-    nodeMap.set(n.nodeId, {
-      id: n.nodeId,
+  nodes.forEach((n, index) => {
+    const legacy = n as ConnectionMapNode & { id?: string; status?: string };
+    const nodeId = n.nodeId || legacy.id || `node-${index}`;
+    if (nodeMap.has(nodeId)) return;
+    nodeMap.set(nodeId, {
+      id: nodeId,
       label: n.label,
-      type: n.nodeType === 'topic' ? 'root' : n.nodeType === 'concept' ? 'category' : 'leaf',
-      badge: n.nodeType,
+      type: n.nodeType === 'topic' || legacy.status === 'current_focus' ? 'root' : n.nodeType === 'concept' ? 'category' : 'leaf',
+      badge: legacy.status === 'required' ? 'pré-requisito' : legacy.status === 'current_focus' ? 'foco atual' : legacy.status === 'next_target' ? 'próximo passo' : n.nodeType,
       children: [],
     });
   });
@@ -52,17 +55,24 @@ const buildTreeFromGraph = (
     const child = nodeMap.get(edge.to);
     if (parent && child) {
       if (!parent.children) parent.children = [];
-      parent.children.push(child);
+      if (!parent.children.some((candidate) => candidate.id === child.id)) {
+        parent.children.push(child);
+      }
       childrenSet.add(edge.to);
     }
   });
 
   // Raízes são nós que não são destino de nenhuma aresta
   const roots: ConceptTreeNode[] = [];
-  nodes.forEach((n) => {
-    if (!childrenSet.has(n.nodeId)) {
-      const rootNode = nodeMap.get(n.nodeId);
-      if (rootNode) roots.push(rootNode);
+  const rootIds = new Set<string>();
+  nodes.forEach((n, index) => {
+    const nodeId = n.nodeId || (n as ConnectionMapNode & { id?: string }).id || `node-${index}`;
+    if (!childrenSet.has(nodeId)) {
+      const rootNode = nodeMap.get(nodeId);
+      if (rootNode && !rootIds.has(rootNode.id)) {
+        roots.push(rootNode);
+        rootIds.add(rootNode.id);
+      }
     }
   });
 

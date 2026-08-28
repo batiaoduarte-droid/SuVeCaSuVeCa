@@ -1,6 +1,6 @@
 # Macroentradas pedagógicas
 
-Status atual: implementação de produto preparada, desativada e sem catálogo publicado. A ativação permanece bloqueada pelo Gate 0 da fábrica.
+Status atual: catálogo publicado, Gate 0 aprovado e navegação macro ativada como padrão operacional.
 
 ## Contrato
 
@@ -14,7 +14,7 @@ Status atual: implementação de produto preparada, desativada e sem catálogo p
 
 ## Rollout fail-closed
 
-`VITE_MACRO_CURRICULUM_ENABLED=true` é o único opt-in. Ausente, falso, catálogo ausente ou índice vazio mantêm a navegação atômica. Desativar a flag é o rollback; nenhum dado do aluno precisa ser desmigrado.
+O catálogo homologado é ativado por padrão. `VITE_MACRO_CURRICULUM_ENABLED=false` restaura a navegação atômica; nenhum dado do aluno precisa ser desmigrado. Catálogo ausente ou índice vazio continuam falhando fechado na camada de auditoria/build.
 
 O índice gerado não pode ser produzido de um rascunho: o build exige `publicationStatus=publishable`, `gate0.status=pass`, hash e tamanho exatos.
 
@@ -45,4 +45,4 @@ npm test
 npm run ai-studio:preflight
 ```
 
-Somente após esses gates e as medições A11/A13 a flag pode ser ativada no ambiente de homologação. Publicar o catálogo não ativa a interface automaticamente.
+O rollout foi ativado somente após esses gates. A11/A13 permanecem casos de regressão obrigatórios na auditoria, e o rollback continua sendo `VITE_MACRO_CURRICULUM_ENABLED=false`.

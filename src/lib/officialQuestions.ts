@@ -126,7 +126,8 @@ export function officialDetailToQuizQuestion(detail: OfficialQuestionDetail): Qu
     options: multipleChoice
       ? (normalized.options || []).map((option, index) => ({
           letter: String(option.letter || option.label || String.fromCharCode(65 + index)).toUpperCase(),
-          text: formatOfficialContent(option.text),
+          text: normalized.presentation?.optionRichText?.[String(option.letter || option.label || String.fromCharCode(65 + index)).toUpperCase()]
+            || formatOfficialContent(option.text),
         }))
       : undefined,
     correctAnswer: String(normalized.correctAnswer || detail.editorialProjection.correctAnswer),

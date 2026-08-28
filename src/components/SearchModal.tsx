@@ -15,7 +15,7 @@ interface SearchModalProps {
   onSelectModule: (moduleId: string) => void;
   errors?: CadernoErroItem[];
   userId?: string;
-  onOpenOfficialQuestions?: () => void;
+  onOpenOfficialQuestion?: (questionId: string) => void;
 }
 
 const HighlightedText: React.FC<{ text: string; query: string }> = ({ text, query }) => (
@@ -43,7 +43,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   onSelectModule,
   errors = [],
   userId,
-  onOpenOfficialQuestions,
+  onOpenOfficialQuestion,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [officialResults, setOfficialResults] = useState<OfficialQuestionIndexItem[]>([]);
@@ -222,7 +222,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             {(officialResults.length > 0 || isLoadingOfficial) && <h3 className="px-1 pt-4 text-xs font-extrabold uppercase tracking-wide text-slate-700">Questões editoriais</h3>}
             {isLoadingOfficial && <p role="status" className="p-3 text-xs text-slate-600">Consultando o banco editorial…</p>}
             {officialResults.map((question) => (
-              <button key={question.questionId} type="button" onClick={() => { onOpenOfficialQuestions?.(); onClose(); }} className="w-full rounded-xl border border-violet-200 bg-violet-50/60 p-4 text-left">
+              <button key={question.questionId} type="button" onClick={() => { onOpenOfficialQuestion?.(question.questionId); onClose(); }} className="w-full rounded-xl border border-violet-200 bg-violet-50/60 p-4 text-left">
                 <div className="flex items-center gap-2 text-sm font-bold text-violet-950"><Database className="h-4 w-4" /> Questão {question.questionId}</div>
                 <p className="mt-1 text-xs leading-5 text-slate-700">{question.editorialProjection.topicNames.join(', ') || 'Língua Portuguesa'} · {question.editorialProjection.banks.join(', ') || 'Fonte da apostila'}</p>
               </button>

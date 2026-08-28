@@ -1,5 +1,6 @@
 import { BookOpenText, ChevronDown, FileImage, ScanText } from 'lucide-react';
 import type { QuestionPresentation, QuestionSupportBlock } from '../types/questionPresentation';
+import { InlineRichText } from './pedagogical/blocks/InlineRichText';
 
 interface QuestionPresentationContentProps {
   presentation?: QuestionPresentation;
@@ -15,20 +16,22 @@ const fallbackBlocks = (supportText?: string): QuestionSupportBlock[] =>
     .map((text) => ({ type: 'paragraph', text }));
 
 const SupportBlock = ({ block }: { block: QuestionSupportBlock }) => {
+  const text = block.richText || block.text;
   if (block.type === 'heading') {
-    return <h4 className="font-serif text-base font-bold leading-snug text-slate-950 sm:text-lg">{block.text}</h4>;
+    return <h4 className="font-serif text-base font-bold leading-snug text-slate-950 sm:text-lg"><InlineRichText>{text}</InlineRichText></h4>;
   }
   if (block.type === 'source' || block.type === 'caption') {
-    return <footer className="border-t border-slate-200 pt-3 text-xs leading-relaxed text-slate-600">{block.text}</footer>;
+    return <footer className="border-t border-slate-200 pt-3 text-xs leading-relaxed text-slate-600"><InlineRichText>{text}</InlineRichText></footer>;
   }
   if (block.type === 'verse') {
-    return <p className="whitespace-pre-line border-l-2 border-teal-200 pl-4 font-serif text-sm leading-7 text-slate-800">{block.text}</p>;
+    return <p className="whitespace-pre-line border-l-2 border-teal-200 pl-4 font-serif text-sm leading-7 text-slate-800"><InlineRichText>{text}</InlineRichText></p>;
   }
-  return <p className="font-serif text-sm leading-7 text-slate-800 sm:text-[15px]">{block.text}</p>;
+  return <p className="font-serif text-sm leading-7 text-slate-800 sm:text-[15px]"><InlineRichText>{text}</InlineRichText></p>;
 };
 
 export function QuestionPresentationContent({ presentation, supportText, prompt }: QuestionPresentationContentProps) {
   const blocks = presentation?.supportBlocks?.length ? presentation.supportBlocks : fallbackBlocks(supportText);
+  const supportRichText = presentation?.supportRichText;
   const command = presentation?.command || prompt;
   const media = presentation?.media || [];
   const showMediaAsPrimary = presentation?.displayMode === 'image_primary' || presentation?.displayMode === 'text_and_image';
@@ -36,17 +39,31 @@ export function QuestionPresentationContent({ presentation, supportText, prompt 
 
   return (
     <div className="space-y-4">
-      {blocks.length > 0 && (
+      {presentation?.contextStatus === 'source_missing' && (
+        <div role="alert" className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+          <strong className="block font-black">Texto-base indisponível na fonte publicada</strong>
+          A tentativa foi bloqueada porque o comando depende de um texto identificado que não pôde ser recuperado com segurança.
+        </div>
+      )}
+      {presentation?.formattingStatus === 'source_missing' && (
+        <div role="alert" className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+          <strong className="block font-black">Destaque visual indisponível na fonte publicada</strong>
+          A tentativa foi bloqueada porque o comando depende de uma marcação tipográfica que não pôde ser recuperada com segurança.
+        </div>
+      )}
+      {(blocks.length > 0 || supportRichText) && (
         <details open className="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/80">
           <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 text-sm font-bold text-slate-900 marker:hidden">
             <span className="flex items-center gap-2"><BookOpenText className="h-4 w-4 text-teal-700" /> Texto de apoio</span>
             <span className="flex items-center gap-2 text-xs font-semibold text-slate-500">
-              {blocks.length} {blocks.length === 1 ? 'bloco' : 'blocos'}
+              {supportRichText ? 'texto estruturado' : `${blocks.length} ${blocks.length === 1 ? 'bloco' : 'blocos'}`}
               <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
             </span>
           </summary>
           <div className="mx-auto max-w-[76ch] space-y-4 px-4 py-5 sm:px-6">
-            {blocks.map((block, index) => <SupportBlock key={`${block.type}-${index}`} block={block} />)}
+            {supportRichText
+              ? <p className="whitespace-pre-line font-serif text-sm leading-7 text-slate-800 sm:text-[15px]"><InlineRichText>{supportRichText}</InlineRichText></p>
+              : blocks.map((block, index) => <SupportBlock key={`${block.type}-${index}`} block={block} />)}
           </div>
         </details>
       )}
@@ -77,7 +94,7 @@ export function QuestionPresentationContent({ presentation, supportText, prompt 
 
       <section className="rounded-2xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5" aria-label="Comando da questão">
         <p className="mb-2 text-[10px] font-black uppercase tracking-[0.14em] text-teal-800">Comando</p>
-        <p className="text-sm font-semibold leading-7 text-slate-950 sm:text-base">{command}</p>
+        <p className="text-sm font-semibold leading-7 text-slate-950 sm:text-base"><InlineRichText>{presentation?.commandRichText || command}</InlineRichText></p>
       </section>
     </div>
   );

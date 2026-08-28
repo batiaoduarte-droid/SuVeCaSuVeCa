@@ -29,6 +29,7 @@ import { formatOfficialContent } from '../lib/officialContent';
 import { useModalFocus } from '../hooks/useModalFocus';
 import type { QuestionPresentation } from '../types/questionPresentation';
 import { QuestionPresentationContent } from './QuestionPresentationContent';
+import { InlineRichText } from './pedagogical/blocks/InlineRichText';
 import {
   GoldenRuleCard,
   StudyBadge,
@@ -53,7 +54,13 @@ interface EditorialNormalizedQuestion {
 }
 
 interface OfficialQuestionsExplorerProps {
-  onStartSimulado?: (questions: QuizQuestion[]) => void;
+  onStartSimulado?: (questions: QuizQuestion[], filters: OfficialQuestionFilters) => void;
+  initialFilters?: OfficialQuestionFilters;
+  initialQuestionId?: string | null;
+  onNavigationStateChange?: (state: {
+    filters: OfficialQuestionFilters;
+    questionId: string | null;
+  }) => void;
 }
 
 const answerLabel = (answer?: string) => {
@@ -66,7 +73,12 @@ const answerLabel = (answer?: string) => {
 const learnerTopicName = (topics: string[]) =>
   topics.find((topic) => !/^aula\s*\d+/i.test(topic.trim())) || topics[0] || 'Língua Portuguesa';
 
-export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestionsExplorerProps) {
+export function OfficialQuestionsExplorer({
+  onStartSimulado,
+  initialFilters = {},
+  initialQuestionId = null,
+  onNavigationStateChange,
+}: OfficialQuestionsExplorerProps) {
   const moduleOptions = useMemo(
     () =>
       MODULES_DATA.filter((module) => /^mod\d+$/.test(module.id)).map((module) => ({
@@ -75,8 +87,8 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
       })),
     []
   );
-  const [filters, setFilters] = useState<OfficialQuestionFilters>({});
-  const [draftQuery, setDraftQuery] = useState('');
+  const [filters, setFilters] = useState<OfficialQuestionFilters>(initialFilters);
+  const [draftQuery, setDraftQuery] = useState(String(initialFilters.query || ''));
   const [offset, setOffset] = useState(0);
   const [items, setItems] = useState<OfficialQuestionIndexItem[]>([]);
   const [total, setTotal] = useState(0);
@@ -84,6 +96,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const [detail, setDetail] = useState<OfficialQuestionDetail | null>(null);
+  const [activeQuestionId, setActiveQuestionId] = useState<string | null>(initialQuestionId);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
   const [isBuildingSample, setIsBuildingSample] = useState(false);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
@@ -93,11 +106,13 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
   const isDetailOpen = Boolean(detail || isLoadingDetail);
   const closeDetail = useCallback(() => {
     setDetail(null);
+    setActiveQuestionId(null);
     setIsLoadingDetail(false);
     setDetailAnswer('');
     setIsDetailRevealed(false);
   }, []);
   const detailDialogRef = useModalFocus(isDetailOpen, closeDetail, closeButtonRef);
+  const requestedQuestionRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (detail) closeButtonRef.current?.focus();
@@ -131,6 +146,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
     .filter(Boolean).length;
 
   const openQuestion = async (questionId: string) => {
+    setActiveQuestionId(questionId);
     setIsLoadingDetail(true);
     setError('');
     setDetailAnswer('');
@@ -138,11 +154,26 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
     try {
       setDetail(await fetchOfficialQuestion(questionId));
     } catch (loadError) {
+      setActiveQuestionId(null);
       setError(loadError instanceof Error ? loadError.message : 'Não foi possível abrir a questão editorial.');
     } finally {
       setIsLoadingDetail(false);
     }
   };
+
+  useEffect(() => {
+    if (!initialQuestionId) {
+      requestedQuestionRef.current = null;
+      return;
+    }
+    if (requestedQuestionRef.current === initialQuestionId) return;
+    requestedQuestionRef.current = initialQuestionId;
+    void openQuestion(initialQuestionId);
+  }, [initialQuestionId]);
+
+  useEffect(() => {
+    onNavigationStateChange?.({ filters, questionId: activeQuestionId });
+  }, [activeQuestionId, filters, onNavigationStateChange]);
 
   const startEditorialSimulado = async () => {
     if (!onStartSimulado) return;
@@ -150,7 +181,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
     setError('');
     try {
       const sample = await fetchOfficialQuestionSample(filters, 10);
-      onStartSimulado(sample.questions.map(officialDetailToQuizQuestion));
+      onStartSimulado(sample.questions.map(officialDetailToQuizQuestion), filters);
     } catch (sampleError) {
       setError(sampleError instanceof Error ? sampleError.message : 'Não foi possível montar a prática editorial.');
     } finally {
@@ -308,6 +339,8 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
             ) : (() => {
               const normalized = detail.editorial.normalized as EditorialNormalizedQuestion;
               const isTrueFalse = normalized.questionType === 'CERTO_ERRADO';
+              const presentationUnavailable = normalized.presentation?.contextStatus === 'source_missing'
+                || normalized.presentation?.formattingStatus === 'source_missing';
               const correctAnswer = String(normalized.correctAnswer || detail.editorialProjection.correctAnswer).toUpperCase();
               const source = normalized.bank || normalized.sourceLabel || 'Fonte editorial da apostila';
               return (
@@ -345,7 +378,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
                               ? 'border-teal-500 bg-teal-50 text-teal-950 ring-2 ring-teal-500'
                               : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50';
                         return (
-                          <button key={answer} type="button" disabled={isDetailRevealed} onClick={() => setDetailAnswer(answer)} aria-pressed={isSelected} className={`min-h-12 rounded-xl border p-3.5 text-center text-sm font-bold transition ${stateClass}`}>
+                          <button key={answer} type="button" disabled={isDetailRevealed || presentationUnavailable} onClick={() => setDetailAnswer(answer)} aria-pressed={isSelected} className={`min-h-12 rounded-xl border p-3.5 text-center text-sm font-bold transition disabled:cursor-not-allowed disabled:opacity-50 ${stateClass}`}>
                             {isDetailRevealed && isCorrect && <CheckCircle2 className="mr-1.5 inline h-4 w-4 text-emerald-700" />}{answer === 'C' ? 'Certo' : 'Errado'}
                           </button>
                         );
@@ -366,8 +399,9 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
                               : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50';
                         return (
                           <li key={`${letter}-${index}`}>
-                            <button type="button" disabled={isDetailRevealed} onClick={() => setDetailAnswer(letter)} aria-pressed={isSelected} className={`min-h-12 w-full rounded-xl border p-3.5 text-left text-sm leading-relaxed transition ${stateClass}`}>
-                              {isDetailRevealed && isCorrect && <CheckCircle2 className="mr-1.5 inline h-4 w-4 text-emerald-700" />}<strong>{letter}.</strong> {formatOfficialContent(option.text)}
+                            <button type="button" disabled={isDetailRevealed || presentationUnavailable} onClick={() => setDetailAnswer(letter)} aria-pressed={isSelected} className={`min-h-12 w-full rounded-xl border p-3.5 text-left text-sm leading-relaxed transition disabled:cursor-not-allowed disabled:opacity-50 ${stateClass}`}>
+                              {isDetailRevealed && isCorrect && <CheckCircle2 className="mr-1.5 inline h-4 w-4 text-emerald-700" />}<strong>{letter}.</strong>{' '}
+                              <InlineRichText>{normalized.presentation?.optionRichText?.[letter] || formatOfficialContent(option.text)}</InlineRichText>
                             </button>
                           </li>
                         );
@@ -375,7 +409,7 @@ export function OfficialQuestionsExplorer({ onStartSimulado }: OfficialQuestions
                     </ol>
                   )}
                   {!isDetailRevealed ? (
-                    <button type="button" disabled={!detailAnswer} onClick={() => setIsDetailRevealed(true)} className="button-primary min-h-11 w-full disabled:cursor-not-allowed disabled:opacity-50">
+                    <button type="button" disabled={!detailAnswer || presentationUnavailable} onClick={() => setIsDetailRevealed(true)} className="button-primary min-h-11 w-full disabled:cursor-not-allowed disabled:opacity-50">
                       Verificar resposta
                     </button>
                   ) : (

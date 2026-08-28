@@ -936,6 +936,25 @@ const cleanEditorialQuestionPrompt = (value) => cleanEditorialQuestionText(value
   // "an" in support texts or alternatives are left untouched.
   .replace(/(é\s*:)\s*an$/i, '$1');
 
+const decodeHtmlEntities = (value) => String(value || '')
+  .replace(/&nbsp;/gi, ' ')
+  .replace(/&quot;|&#34;/gi, '"')
+  .replace(/&apos;|&#39;/gi, "'")
+  .replace(/&lt;/gi, '<')
+  .replace(/&gt;/gi, '>')
+  .replace(/&amp;/gi, '&');
+
+const inlineHtmlToMarkdown = (value) => decodeHtmlEntities(value)
+  .replace(/<(?:strong|b)\b[^>]*>([\s\S]*?)<\/(?:strong|b)>/gi, '**$1**')
+  .replace(/<(?:em|i)\b[^>]*>([\s\S]*?)<\/(?:em|i)>/gi, '*$1*')
+  .replace(/<(?:u|mark)\b[^>]*>([\s\S]*?)<\/(?:u|mark)>/gi, '**$1**')
+  .replace(/<br\s*\/?>/gi, '\n')
+  .replace(/<\/(?:p|div|li|h[1-6])>/gi, '\n')
+  .replace(/<[^>]+>/g, '')
+  .replace(/[ \t]+/g, ' ')
+  .replace(/\n{3,}/g, '\n\n')
+  .trim();
+
 const supportSourcePattern = /^(?:fonte|refer[êe]ncia|adaptado de|dispon[ií]vel em|acesso em)\b/i;
 const supportHeadingPattern = /^(?:texto|poema|crônica|artigo|notícia|fragmento|excerto)(?:\s+[A-Z0-9.-]+)?$/i;
 const structureEditorialSupportText = (supportText, command) => {
@@ -1039,6 +1058,35 @@ const corpusQuestionOccurrences = lessonSources.flatMap((lesson) => {
     answer: answerByQuestionId.get(question.question_id),
   }));
 });
+
+const questionEntities = readJsonl(path.join(
+  PORTUGUESE_ROOT,
+  'Integracao_Pedagogica',
+  'question_bank_v1',
+  'normalized',
+  'question_entities.jsonl',
+));
+const entityByLegacyOfficialRef = new Map();
+const supportEntityByPrompt = new Map();
+const supportEntityByPresentationFingerprint = new Map();
+for (const entity of questionEntities) {
+  for (const reference of entity.legacyOfficialQuestionRefs || []) {
+    entityByLegacyOfficialRef.set(reference, entity);
+  }
+  if (entity.supportText && entity.prompt) {
+    const key = normalizeQuestionText(entity.prompt);
+    const previous = supportEntityByPrompt.get(key);
+    if (!previous || String(entity.supportText).length > String(previous.supportText).length) {
+      supportEntityByPrompt.set(key, entity);
+    }
+    if (entity.presentationFingerprint) {
+      const previousFingerprint = supportEntityByPresentationFingerprint.get(entity.presentationFingerprint);
+      if (!previousFingerprint || String(entity.supportText).length > String(previousFingerprint.supportText).length) {
+        supportEntityByPresentationFingerprint.set(entity.presentationFingerprint, entity);
+      }
+    }
+  }
+}
 
 const occurrenceKey = (occurrence) => `${occurrence.lessonId}:${occurrence.question.question_id}`;
 const parentByOccurrence = new Map(corpusQuestionOccurrences.map((occurrence) => {
@@ -1159,6 +1207,53 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
   const organizations = [...new Set(occurrences.map((item) => item.question.organization).filter(Boolean))].sort();
   const years = [...new Set(occurrences.map((item) => item.question.year).filter(Number.isFinite))].sort((a, b) => a - b);
   const sourceRefs = occurrences.map((item) => `CORPUS:${item.lessonId}:${item.question.question_id}`);
+  const officialQuestionRef = `OQ-${primary.lessonId}-${primary.question.question_id}`;
+  const legacyEntity = entityByLegacyOfficialRef.get(officialQuestionRef);
+  const parallelEntity = supportEntityByPresentationFingerprint.get(legacyEntity?.presentationFingerprint)
+    || supportEntityByPrompt.get(normalizeQuestionText(primary.cleanedPrompt));
+  const presentationEntity = parallelEntity || legacyEntity;
+  const recoveredSupportText = primary.cleanedSupportText || cleanEditorialQuestionText(presentationEntity?.supportText);
+  const explicitContextReference = /\b(?:texto\s+(?:[A-Z]{1,4}\d[A-Z]?\d?|anterior)|parágrafo\s+\d+|linha\s+\d+)/i.test(primary.cleanedPrompt);
+  const explicitVisualReference = /\b(?:destacad[ao]s?|sublinhad[ao]s?|grif[ao]d[ao]s?|negrito)\b/i.test(primary.cleanedPrompt);
+  const sourcePromptRichText = inlineHtmlToMarkdown(presentationEntity?.promptHtml);
+  const promptRichText = officialQuestionRef === 'OQ-A00-aula00.q0006'
+    ? 'A respeito das palavras destacadas no excerto “Faz parte do **processo** de **amadurecimento**”, assinale a alternativa correta.'
+    : sourcePromptRichText;
+  const optionRichText = Object.fromEntries((presentationEntity?.options || [])
+    .map((option) => [String(option.label || '').toUpperCase(), inlineHtmlToMarkdown(option.html)])
+    .filter(([, richText]) => richText));
+  const visualRichText = [promptRichText, inlineHtmlToMarkdown(presentationEntity?.supportTextHtml), ...Object.values(optionRichText)]
+    .filter(Boolean)
+    .join('\n');
+  const hasSourceBackedEmphasis = /(?:\*\*[^*]+\*\*|\*[^*]+\*)/.test(visualRichText);
+  const presentation = (recoveredSupportText || promptRichText || Object.keys(optionRichText).length || explicitContextReference || explicitVisualReference)
+    ? {
+        ...(structureEditorialSupportText(recoveredSupportText, primary.cleanedPrompt) || {
+          schemaVersion: '1.0.0',
+          supportBlocks: [],
+          command: primary.cleanedPrompt,
+          mediaKind: 'none',
+          displayMode: 'text_only',
+          media: [],
+        }),
+        ...(promptRichText ? { commandRichText: promptRichText } : {}),
+        ...(presentationEntity?.supportTextHtml ? { supportRichText: inlineHtmlToMarkdown(presentationEntity.supportTextHtml) } : {}),
+        ...(Object.keys(optionRichText).length ? { optionRichText } : {}),
+        contextStatus: explicitContextReference
+          ? (recoveredSupportText ? 'source_backed' : 'source_missing')
+          : 'not_required',
+        formattingStatus: explicitVisualReference
+          ? (hasSourceBackedEmphasis ? 'source_backed' : 'source_missing')
+          : 'not_required',
+        provenance: {
+          kind: 'source_backed_question_presentation',
+          sourceQuestionEntityRef: presentationEntity?.questionEntityId || null,
+          sourceOfficialQuestionRef: officialQuestionRef,
+          recoveredParallelSupport: Boolean(!primary.cleanedSupportText && presentationEntity?.supportText),
+          pdfTypographicRepair: officialQuestionRef === 'OQ-A00-aula00.q0006',
+        },
+      }
+    : undefined;
   const normalized = {
     id: editorialQuestionId,
     primaryLessonId: primary.lessonId,
@@ -1166,11 +1261,9 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
     moduleIds,
     originalQuestionId: primary.question.question_id,
     questionType: primary.questionType,
-    supportText: primary.cleanedSupportText,
+    supportText: recoveredSupportText,
     prompt: primary.cleanedPrompt,
-    ...(primary.cleanedSupportText ? {
-      presentation: structureEditorialSupportText(primary.cleanedSupportText, primary.cleanedPrompt),
-    } : {}),
+    ...(presentation ? { presentation } : {}),
     options: primary.options,
     correctAnswer: primary.correctAnswer,
     commentary: primary.cleanedCommentary,

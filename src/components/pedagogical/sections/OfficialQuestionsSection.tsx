@@ -13,6 +13,11 @@ import {
   presentOfficialQuestionOptions,
 } from '../../../lib/officialQuestionPresentation';
 import { recordQuestionEncounter } from '../../../lib/questionEncounterLedger';
+import {
+  containsRichEmphasis,
+  requiresIdentifiedContext,
+  requiresVisualEmphasis,
+} from '../../../lib/questionPresentationSafety';
 
 interface OfficialQuestionsSectionProps {
   questions?: OfficialQuestionView[];
@@ -127,9 +132,6 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
 
           let prompt = presentation?.stem || normalized?.prompt || payload.prompt || q.prompt || '';
           const supportText = normalized?.supportText || payload.support_text;
-          if (supportText && !prompt.includes(supportText)) {
-            prompt = `${supportText}\n\n${prompt}`;
-          }
           if (prompt.includes('Julgue o item a seguir referente aos preceitos gramaticais da questão OQ-')) {
             if ((q.options || payload.options || []).length > 0) {
               prompt = 'Assinale a alternativa correta referente aos conceitos gramaticais e fonéticos estudados:';
@@ -138,7 +140,18 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
             }
           }
 
-          const presentationBlocksInteraction = presentation?.status === 'source_incomplete'
+          const commandRichText = normalized?.presentation?.commandRichText || prompt;
+          const supportRichText = normalized?.presentation?.supportRichText
+            || normalized?.presentation?.supportBlocks?.map((block) => block.richText || block.text).join('\n\n')
+            || supportText;
+          const missingIdentifiedContext = requiresIdentifiedContext(prompt) && !String(supportRichText || '').trim();
+          const missingVisualEmphasis = requiresVisualEmphasis(prompt)
+            && !containsRichEmphasis(commandRichText, supportRichText, ...Object.values(normalized?.presentation?.optionRichText || {}));
+          const presentationBlocksInteraction = normalized?.presentation?.contextStatus === 'source_missing'
+            || normalized?.presentation?.formattingStatus === 'source_missing'
+            || missingIdentifiedContext
+            || missingVisualEmphasis
+            || presentation?.status === 'source_incomplete'
             || presentation?.status === 'source_conflict';
           const publishedOptions = presentation?.status === 'ready'
             ? presentation.options
@@ -149,11 +162,11 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
               : presentation?.status !== 'ready' && normalized?.options && normalized.options.length > 0
               ? normalized.options.map((opt: any) => ({
                   letter: (opt.letter || opt.label || '').toUpperCase(),
-                  text: opt.text || '',
+                  text: normalized?.presentation?.optionRichText?.[(opt.letter || opt.label || '').toUpperCase()] || opt.richText || opt.text || '',
                 }))
               : publishedOptions.map((opt) => ({
                   letter: (opt.label || opt.letter || '').toUpperCase(),
-                  text: opt.text || '',
+                  text: normalized?.presentation?.optionRichText?.[(opt.label || opt.letter || '').toUpperCase()] || ('richText' in opt ? String(opt.richText || '') : '') || opt.text || '',
                 }));
           const solution = presentationBlocksInteraction
             ? undefined
@@ -183,13 +196,17 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
               title={`Questão ${pageStart + idx + 1}: ${organization || board || 'Concurso Público'}`}
               board={board}
               year={year}
-              prompt={prompt}
+              prompt={supportRichText ? `**Texto de apoio:** ${supportRichText}\n\n**Comando:** ${commandRichText}` : commandRichText}
               options={options}
               solution={solution}
               answer={answer}
               interactionUnavailableReason={
                 presentationBlocksInteraction
-                  ? presentation?.reason
+                  ? normalized?.presentation?.contextStatus === 'source_missing' || missingIdentifiedContext
+                    ? 'O texto-base identificado no comando não está disponível em fonte compatível; a tentativa foi bloqueada.'
+                    : normalized?.presentation?.formattingStatus === 'source_missing' || missingVisualEmphasis
+                    ? 'A marcação tipográfica exigida pelo comando não está disponível em fonte compatível; a tentativa foi bloqueada.'
+                    : presentation?.reason
                   : options.length === 0
                   ? 'Esta questão não possui alternativas completas para uma tentativa segura.'
                   : undefined
