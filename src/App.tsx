@@ -27,6 +27,13 @@ import {
   setDoc,
   getDoc,
 } from 'firebase/firestore';
+import {
+  moduleIdForUnit,
+  readStudyLocation,
+  writeStudyLocation,
+} from './lib/studyLocation';
+import { resolvePedagogicalMacroForUnit } from './data/pedagogicalMacroCatalog';
+import { MACRO_CURRICULUM_ENABLED } from './lib/featureFlags';
 
 // Each study tool is a self-contained route-sized chunk. In particular, this
 // keeps Recharts, Gemini panels and the duel engine out of the first mobile
@@ -114,50 +121,18 @@ const unitIdForSection = (section: (typeof MODULES_DATA)[number]['sections'][num
   return section.editorial?.integrationUnitId || (cumulativeMatch ? `IP-A14-${cumulativeMatch[1]}` : null);
 };
 
-interface StudyLocation {
-  moduleId: string | null;
-  unitId: string | null;
-  sectionId: string | null;
-}
-
-const moduleIdForUnit = (unitId: string | null) => {
-  if (!unitId) return null;
-  return MODULES_DATA.find((module) => module.sections.some(
-    (section) => unitIdForSection(section) === unitId,
-  ))?.id || null;
-};
-
-const readStudyLocation = (): StudyLocation => {
-  const params = new URLSearchParams(window.location.search);
-  const unitId = params.get('unit');
-  const requestedModule = params.get('module');
-  const moduleId = moduleIdForUnit(unitId)
-    || (requestedModule && MODULES_DATA.some((module) => module.id === requestedModule) ? requestedModule : null);
-  return {
-    moduleId,
-    unitId: moduleIdForUnit(unitId) ? unitId : null,
-    sectionId: /^[a-z][a-z0-9-]*$/.test(params.get('section') || '') ? params.get('section') : null,
-  };
-};
-
-const writeStudyLocation = (location: StudyLocation, mode: 'push' | 'replace') => {
-  const url = new URL(window.location.href);
-  const setOrDelete = (key: string, value: string | null) => value
-    ? url.searchParams.set(key, value)
-    : url.searchParams.delete(key);
-  setOrDelete('module', location.moduleId);
-  setOrDelete('unit', location.unitId);
-  setOrDelete('section', location.sectionId);
-  window.history[mode === 'push' ? 'pushState' : 'replaceState']({}, '', `${url.pathname}${url.search}${url.hash}`);
-};
-
 export default function App() {
   const initialStudyLocation = useRef(readStudyLocation()).current;
   const [activeTab, setActiveTab] = useState<TabType>('modules');
   const lastNonPomodoroTab = useRef<TabType>('modules');
   const [selectedModuleId, setSelectedModuleId] = useState<string>(initialStudyLocation.moduleId || 'mod-intro');
+  const [selectedMacroId, setSelectedMacroId] = useState<string | null>(
+    MACRO_CURRICULUM_ENABLED ? initialStudyLocation.macroId : null,
+  );
   const [openUnitId, setOpenUnitId] = useState<string | null>(initialStudyLocation.unitId);
   const [openUnitSectionId, setOpenUnitSectionId] = useState<string | null>(initialStudyLocation.sectionId);
+  const [studyRouteIssue, setStudyRouteIssue] = useState(initialStudyLocation.routeIssue);
+  const [requestedPBLCompetencyId, setRequestedPBLCompetencyId] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isTutorOpen, setIsTutorOpen] = useState<boolean>(false);
   const [tutorContext, setTutorContext] = useState<string>('');
@@ -174,7 +149,14 @@ export default function App() {
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [cadernoReadyFor, setCadernoReadyFor] = useState<string | null>('guest');
   const authHydrationId = useRef(0);
-  const { metrics, markModuleVisited, addAttempt, markSectionRead, recordModulePractice } = useLearningMetrics(user);
+  const {
+    metrics,
+    markModuleVisited,
+    markMacroVisited,
+    addAttempt,
+    markSectionRead,
+    recordModulePractice,
+  } = useLearningMetrics(user);
   const {
     progress: achievementProgress,
     isLoading: isLoadingAchievements,
@@ -192,8 +174,10 @@ export default function App() {
     const handlePopState = () => {
       const location = readStudyLocation();
       setSelectedModuleId(location.moduleId || 'mod-intro');
+      setSelectedMacroId(MACRO_CURRICULUM_ENABLED ? location.macroId : null);
       setOpenUnitId(location.unitId);
       setOpenUnitSectionId(location.sectionId);
+      setStudyRouteIssue(location.routeIssue);
       setActiveTab('modules');
     };
     window.addEventListener('popstate', handlePopState);
@@ -415,20 +399,42 @@ export default function App() {
 
   const handleSelectModule = (id: string) => {
     setSelectedModuleId(id);
+    setSelectedMacroId(null);
     setOpenUnitId(null);
     setOpenUnitSectionId(null);
-    writeStudyLocation({ moduleId: id, unitId: null, sectionId: null }, 'push');
+    setStudyRouteIssue(null);
+    writeStudyLocation({ moduleId: id, macroId: null, unitId: null, sectionId: null }, 'push');
     localStorage.setItem(lastModuleStorageKey(user?.uid), id);
     markModuleVisited(id);
   };
 
-  const handleOpenUnitChange = (unitId: string | null, sectionId: string | null = null) => {
+  const handleOpenUnitChange = (
+    unitId: string | null,
+    sectionId: string | null = null,
+    requestedMacroId: string | null = null,
+  ) => {
     const moduleId = moduleIdForUnit(unitId) || selectedModuleId;
     const isNewUnit = unitId !== openUnitId;
+    const inferredMacro = MACRO_CURRICULUM_ENABLED && unitId
+      ? resolvePedagogicalMacroForUnit(unitId)?.macroId || null
+      : null;
+    const macroId = MACRO_CURRICULUM_ENABLED ? requestedMacroId || inferredMacro : null;
     setSelectedModuleId(moduleId);
+    setSelectedMacroId(macroId);
     setOpenUnitId(unitId);
     setOpenUnitSectionId(sectionId);
-    writeStudyLocation({ moduleId, unitId, sectionId }, isNewUnit ? 'push' : 'replace');
+    setStudyRouteIssue(null);
+    writeStudyLocation({ moduleId, macroId, unitId, sectionId }, isNewUnit ? 'push' : 'replace');
+    if (macroId) markMacroVisited(macroId);
+  };
+
+  const handleOpenMacroChange = (macroId: string, unitId: string) => {
+    handleOpenUnitChange(unitId, null, macroId);
+  };
+
+  const handlePracticeCompetency = (competencyId: string) => {
+    setRequestedPBLCompetencyId(competencyId);
+    setActiveTab('pbl');
   };
 
   // Find simulado questions
@@ -455,7 +461,13 @@ export default function App() {
     const moduleId = selectedCurriculumModule.id;
     const currentUnitBelongsToModule = moduleIdForUnit(openUnitId) === moduleId;
     const firstUnreadSectionIndex = selectedCurriculumModule.sections.findIndex(
-      (_section, index) => !metrics.readSectionIds.includes(`${moduleId}:section-${index}`)
+      (section, index) => {
+        const unitId = unitIdForSection(section);
+        return !(
+          (unitId && metrics.readUnitIds.includes(unitId))
+          || metrics.readSectionIds.includes(`${moduleId}:section-${index}`)
+        );
+      }
     );
     const resumeSectionIndex = firstUnreadSectionIndex >= 0
       ? firstUnreadSectionIndex
@@ -464,20 +476,25 @@ export default function App() {
       ? openUnitId
       : unitIdForSection(selectedCurriculumModule.sections[resumeSectionIndex]);
     const resumeSectionId = currentUnitBelongsToModule ? openUnitSectionId : null;
+    const resumeMacroId = MACRO_CURRICULUM_ENABLED && resumeUnitId
+      ? resolvePedagogicalMacroForUnit(resumeUnitId)?.macroId || null
+      : null;
     const locationChanged = moduleId !== selectedModuleId
       || resumeUnitId !== openUnitId
       || resumeSectionId !== openUnitSectionId;
 
     setSelectedModuleId(moduleId);
+    setSelectedMacroId(resumeMacroId);
     setOpenUnitId(resumeUnitId);
     setOpenUnitSectionId(resumeSectionId);
     setIsImmersiveFocus(true);
     writeStudyLocation(
-      { moduleId, unitId: resumeUnitId, sectionId: resumeSectionId },
+      { moduleId, macroId: resumeMacroId, unitId: resumeUnitId, sectionId: resumeSectionId },
       locationChanged ? 'push' : 'replace'
     );
     localStorage.setItem(lastModuleStorageKey(user?.uid), moduleId);
     markModuleVisited(moduleId);
+    if (resumeMacroId) markMacroVisited(resumeMacroId);
 
     window.requestAnimationFrame(() => {
       if (resumeUnitId) {
@@ -579,6 +596,7 @@ export default function App() {
                   onAnswerResult={recordAnswer}
                   onSectionRead={markSectionRead}
                   readSectionIds={metrics.readSectionIds}
+                  readUnitIds={metrics.readUnitIds}
                   onPracticeResult={recordModulePractice}
                   onPracticeConcept={handlePracticeConcept}
                   onCompleteModule={() => recordStudyActivity()}
@@ -590,6 +608,10 @@ export default function App() {
                   openUnitId={openUnitId}
                   openUnitSectionId={openUnitSectionId}
                   onOpenUnitChange={handleOpenUnitChange}
+                  selectedMacroId={selectedMacroId}
+                  onOpenMacroChange={handleOpenMacroChange}
+                  onPracticeCompetency={handlePracticeCompetency}
+                  routeIssue={studyRouteIssue}
                 />
               </div>
             )}
@@ -597,6 +619,8 @@ export default function App() {
             {activeTab === 'pbl' && (
               <PBLDashboard
                 userId={user?.uid || 'guest'}
+                requestedTargetCompetencyId={requestedPBLCompetencyId}
+                onRequestedTargetHandled={() => setRequestedPBLCompetencyId(null)}
                 onAddErrorToNotebook={handleAddErrorDirect}
                 onRecordAttempt={(attempt) => {
                   recordAnswer(attempt.isCorrect);

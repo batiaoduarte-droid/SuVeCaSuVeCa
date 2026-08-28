@@ -76,7 +76,14 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
       )}
       {transferItem && kind === 'transfer' && !hasAuditedTransferType && (
         <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
-          Esta questão verifica nova aplicação. A distância estrutural do item ainda não é usada como evidência de transferência distante.
+          {transferItem.recentExposureFallback
+            ? 'Este item foi visto recentemente e só foi reutilizado porque não havia alternativa nova publicada. O resultado conta como prática, sem confirmar transferência.'
+            : 'Esta questão verifica nova aplicação. A distância estrutural do item ainda não é usada como evidência de transferência distante.'}
+        </div>
+      )}
+      {transferItem?.recentExposureFallback && kind === 'reattempt' && (
+        <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs text-amber-950">
+          Esta questão precisou ser reutilizada por falta de outra aplicação publicada. O acerto ajuda a praticar, mas não comprova generalização.
         </div>
       )}
 

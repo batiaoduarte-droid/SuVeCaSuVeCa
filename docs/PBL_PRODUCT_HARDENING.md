@@ -29,23 +29,34 @@ caso inicial
 
 O gabarito bruto não é mostrado antes da intervenção. A nova aplicação não repete a questão âncora. A sessão não entra em ciclo infinito: dificuldade persistente é registrada como `needs_review`.
 
-## Critério de domínio
+## Critérios de evidência de aprendizagem
 
-Uma competência só recebe o resultado `mastered` quando os itens de transferência satisfazem simultaneamente:
+O runtime não chama desempenho imediato de domínio duradouro. Quando os itens de transferência satisfazem simultaneamente os critérios do conjunto, o resultado é:
 
 - a taxa mínima de acerto do respectivo transfer set;
 - a quantidade exigida de acertos consecutivos.
 
-Esgotar até três itens sem satisfazer o critério produz `needs_review`. Finalizar a prática não é sinônimo automático de domínio.
+- `transfer_confirmed`, em uma sessão de aquisição ou diagnóstico: evidência de reaplicação imediata;
+- `retention_confirmed`, somente em uma sessão de revisão posterior: evidência de recuperação após intervalo;
+- `needs_review`, quando a evidência é insuficiente ou o aluno solicita revisão na reflexão.
+
+`mastered` permanece apenas como valor legado de hidratação e é normalizado para `transfer_confirmed`; não é produzido por sessões novas. Esgotar até quatro tentativas de transferência sem satisfazer o critério produz `needs_review`. Finalizar a prática, acumular XP, marcar recall ou ler uma unidade não equivale automaticamente a domínio.
 
 ## Sessão e persistência
 
-- Sessão recomendada ou diagnóstica: uma competência, estimativa de 3–5 minutos.
-- Revisão cumulativa: até duas competências, estimativa de 6–10 minutos.
+- Sessão recomendada ou diagnóstica: uma competência, orçamento de até 12 minutos de tempo ativo.
+- Revisão cumulativa: até duas competências, orçamento de até 18 minutos de tempo ativo.
 - Sair exige escolher entre pausar, encerrar ou continuar estudando.
 - Sessões pausadas podem ser retomadas pelo Dashboard.
 - Tempos são medidos por tentativa, sem soma cumulativa duplicada.
+- Atingir o orçamento encerra com segurança e registra `needs_review`; o tempo, por si só, nunca confirma aprendizagem.
 - LocalStorage é a persistência imediata; Firestore é sincronizado em paralelo para usuários autenticados.
+
+## Novidade da evidência e prevenção de respostas mecânicas
+
+O produto mantém um ledger compacto de encontros com questões por usuário, finalidade e sessão. Ao selecionar nova aplicação ou transferência, o motor evita questões vistas recentemente — inclusive itens com identificadores diferentes, mas enunciado equivalente — e prefere itens auditados ainda não expostos.
+
+Quando não existe alternativa fresca, o fallback recente é permitido apenas para manter a sessão operável, é marcado como `unverified` para fins de evidência e aparece de forma transparente na interface. Assim, uma resposta potencialmente contaminada por memória do item não pode, sozinha, sustentar confirmação de transferência ou retenção.
 
 ## Caderno de Erros e revisão
 
@@ -60,9 +71,9 @@ Entradas PBL usam o contrato de `CadernoErroItem`:
 
 O resumo da sessão oferece acesso direto ao Caderno e à Revisão Diária.
 
-## Exceção protegida
+## Integridade de gabaritos
 
-`PBL-CASE-A04-G02-01` possui payload oficial sem gabarito publicável. O produto não infere nem inventa uma resposta: a competência fica desabilitada para início direto até que a fonte editorial protegida seja resolvida com autorização apropriada.
+O runtime continua fail-closed: nenhum caso sem apresentação ou gabarito interpretável pode ser graduado, e o produto nunca infere nem inventa resposta. No baseline publicado atual, a auditoria encontra 190 casos graduáveis e nenhum caso bloqueado. Isso descreve o deployment vigente e não autoriza mutação de payload oficial ou reabertura de decisão editorial protegida.
 
 ## Gates de manutenção
 
@@ -77,6 +88,6 @@ npm run ai-studio:preflight
 
 O auditor PBL verifica, além da integridade referencial:
 
-- renderização dos gabaritos dos 189 casos graduáveis;
-- bloqueio explícito do caso sem gabarito;
+- renderização dos gabaritos dos 190 casos graduáveis;
+- bloqueio fail-closed de qualquer caso que volte a não possuir apresentação ou gabarito interpretável;
 - disponibilidade de transferência real nas 190 competências.

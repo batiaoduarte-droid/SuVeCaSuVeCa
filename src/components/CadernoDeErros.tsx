@@ -113,7 +113,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
       case 'dia30':
         return { label: 'Dia 30 (Revisão Mensal)', color: 'bg-blue-50 text-blue-800 border-blue-200' };
       case 'dominado':
-        return { label: 'Dominado! (Aprendido)', color: 'bg-emerald-50 text-emerald-800 border-emerald-200' };
+        return { label: 'Ciclo espaçado consolidado', color: 'bg-emerald-50 text-emerald-800 border-emerald-200' };
     }
   };
 
@@ -257,7 +257,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
           { id: 'dia1', label: 'Dia 1 (24h)', count: errors.filter((e) => e.status === 'dia1').length },
           { id: 'dia7', label: 'Dia 7 (Semanal)', count: errors.filter((e) => e.status === 'dia7').length },
           { id: 'dia30', label: 'Dia 30 (Mensal)', count: errors.filter((e) => e.status === 'dia30').length },
-          { id: 'dominado', label: 'Dominados', count: errors.filter((e) => e.status === 'dominado').length },
+          { id: 'dominado', label: 'Consolidados', count: errors.filter((e) => e.status === 'dominado').length },
         ].map((tab) => (
           <button
             key={tab.id}
@@ -381,7 +381,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
                         dia1: 'D1',
                         dia7: 'D7',
                         dia30: 'D30',
-                        dominado: '✓ Dominado',
+                        dominado: '✓ Consolidado',
                       };
                       return (
                         <span

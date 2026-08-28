@@ -49,6 +49,18 @@ import {
 } from 'lucide-react';
 import { SuvecaWordHighlight } from './ui/SuvecaBrandHighlight';
 import { SuvecaEquationBlocks } from './study-visuals';
+import { MACRO_CURRICULUM_ENABLED } from '../lib/featureFlags';
+import {
+  getPedagogicalMacrosForLesson,
+  resolveAdaptiveMacroLinksFromUnit,
+  resolveAdaptiveMacroLinksToUnit,
+  resolvePedagogicalMacroForUnit,
+} from '../data/pedagogicalMacroCatalog';
+import {
+  MacroCurriculumNavigator,
+  MacroEntryPanel,
+  type MacroAdaptiveRequirement,
+} from './pedagogical/macro/MacroCurriculum';
 
 interface ModuleViewerProps {
   modules: ModuleData[];
@@ -64,8 +76,9 @@ interface ModuleViewerProps {
   user?: User | null;
   onNoteSaved?: () => void;
   onAnswerResult?: (isCorrect: boolean) => void;
-  onSectionRead?: (moduleId: string, sectionIndex: number) => void;
+  onSectionRead?: (moduleId: string, sectionIndex: number, unitId?: string | null) => void;
   readSectionIds?: string[];
+  readUnitIds?: string[];
   onPracticeResult?: (moduleId: string, correct: boolean, completed: boolean) => void;
   onPracticeConcept?: (conceptIds: string[], moduleId: string) => void;
   /** Called once when every practice question in the selected module is answered. */
@@ -82,6 +95,10 @@ interface ModuleViewerProps {
   openUnitId?: string | null;
   openUnitSectionId?: string | null;
   onOpenUnitChange?: (unitId: string | null, sectionId?: string | null) => void;
+  selectedMacroId?: string | null;
+  onOpenMacroChange?: (macroId: string, unitId: string) => void;
+  onPracticeCompetency?: (competencyId: string) => void;
+  routeIssue?: 'invalid_unit' | 'invalid_macro' | null;
 }
 
 type ModuleNotes = Record<string, string>;
@@ -136,15 +153,70 @@ const integrationUnitIdForSection = (section: ModuleSection) => {
   return section.editorial?.integrationUnitId || (a14Match ? `IP-A14-${a14Match[1]}` : null);
 };
 
+export const selectVisibleModuleSections = (
+  module: ModuleData,
+  macroMode: boolean,
+  activeUnitId: string | null,
+) => {
+  const indexed = module.sections.map((section, index) => ({ section, index }));
+  if (!macroMode) return indexed;
+  if (!activeUnitId) return [];
+  return indexed.filter(({ section }) => integrationUnitIdForSection(section) === activeUnitId);
+};
+
+export const migrateModuleNotesToStableUnitIds = (
+  module: ModuleData,
+  notes: ModuleNotes,
+): ModuleNotes => {
+  const migrated = { ...notes };
+  module.sections.forEach((section, index) => {
+    const unitId = integrationUnitIdForSection(section);
+    const legacyKey = `section-${index}`;
+    const stableKey = unitId ? `unit:${unitId}` : legacyKey;
+    if (stableKey !== legacyKey && migrated[legacyKey] && !migrated[stableKey]) {
+      migrated[stableKey] = migrated[legacyKey];
+    }
+  });
+  return migrated;
+};
+
+export const mergeModuleNotesPreservingConflicts = (
+  localNotes: ModuleNotes,
+  cloudNotes: ModuleNotes,
+): ModuleNotes => {
+  const merged = { ...localNotes };
+  for (const [key, cloudValue] of Object.entries(cloudNotes)) {
+    const localValue = merged[key];
+    if (!localValue || localValue === cloudValue) {
+      merged[key] = cloudValue;
+      continue;
+    }
+    // A versão sincronizada permanece principal, mas o texto local divergente
+    // recebe chave recuperável e visível. Nunca há last-write-wins silencioso.
+    const conflictBase = `conflict:local:${key}`;
+    let conflictKey = conflictBase;
+    let suffix = 2;
+    while (merged[conflictKey] && merged[conflictKey] !== localValue) {
+      conflictKey = `${conflictBase}:${suffix}`;
+      suffix += 1;
+    }
+    merged[conflictKey] = localValue;
+    merged[key] = cloudValue;
+  }
+  return merged;
+};
+
 export const PedagogicalDeepDive: React.FC<{
   section: ModuleSection;
   onAskTutor?: (contextText: string) => void;
   onPracticeExercises?: (topic?: string) => void;
+  userId?: string;
   isOpen?: boolean;
   activeSectionId?: string | null;
   onOpenChange?: (open: boolean) => void;
   onActiveSectionChange?: (sectionId: string | null) => void;
-}> = ({ section, onAskTutor, onPracticeExercises, isOpen: controlledOpen, activeSectionId, onOpenChange, onActiveSectionChange }) => {
+  collapsible?: boolean;
+}> = ({ section, onAskTutor, onPracticeExercises, userId, isOpen: controlledOpen, activeSectionId, onOpenChange, onActiveSectionChange, collapsible = true }) => {
   const panelId = useId();
   const [internalOpen, setInternalOpen] = useState(false);
   const isOpen = controlledOpen ?? internalOpen;
@@ -222,6 +294,7 @@ export const PedagogicalDeepDive: React.FC<{
 
   return (
     <div className="pedagogical-deep-dive overflow-hidden rounded-2xl border border-teal-200 bg-teal-50/40">
+      {collapsible ? (
       <button
         type="button"
         onClick={() => {
@@ -242,6 +315,17 @@ export const PedagogicalDeepDive: React.FC<{
           <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
         </span>
       </button>
+      ) : (
+        <div className="flex min-h-[52px] w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-bold text-teal-950">
+          <span className="flex min-w-0 items-center gap-2">
+            <BookOpen className="h-4 w-4 shrink-0 text-teal-700" />
+            <span>Unidade pedagógica completa</span>
+          </span>
+          {section.estimatedMinutes ? (
+            <span className="shrink-0 text-xs font-semibold text-teal-800">{section.estimatedMinutes} min</span>
+          ) : null}
+        </div>
+      )}
       {isOpen && (
         <div id={panelId} className="pedagogical-deep-dive-panel border-t border-teal-200 bg-white p-2 sm:p-4 lg:p-6">
           {state === 'loading' && (
@@ -266,6 +350,7 @@ export const PedagogicalDeepDive: React.FC<{
               view={viewModel as PedagogicalUnitView}
               onAskTutor={onAskTutor}
               onPracticeExercises={onPracticeExercises}
+              userId={userId}
               activeSectionId={activeSectionId}
               onActiveSectionChange={onActiveSectionChange}
             />
@@ -311,6 +396,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   onAnswerResult,
   onSectionRead,
   readSectionIds = [],
+  readUnitIds = [],
   onPracticeResult,
   onPracticeConcept,
   onCompleteModule,
@@ -322,9 +408,65 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   openUnitId = null,
   openUnitSectionId = null,
   onOpenUnitChange,
+  selectedMacroId = null,
+  onOpenMacroChange,
+  onPracticeCompetency,
+  routeIssue = null,
 }) => {
   const moduleData =
     modules.find((m) => m.id === selectedModuleId) || modules[0];
+  const lessonId = moduleData.sections.find((section) => section.lessonId)?.lessonId || null;
+  const macroEntries = useMemo(
+    () => lessonId ? getPedagogicalMacrosForLesson(lessonId) : [],
+    [lessonId],
+  );
+  const macroMode = MACRO_CURRICULUM_ENABLED && macroEntries.length > 0;
+  const selectedMacro = macroMode
+    ? macroEntries.find((entry) => entry.macroId === selectedMacroId)
+      || macroEntries.find((entry) => openUnitId ? entry.unitRefs.includes(openUnitId) : false)
+      || null
+    : null;
+  const activeMacroUnitId = selectedMacro
+    ? (openUnitId && selectedMacro.unitRefs.includes(openUnitId) ? openUnitId : selectedMacro.unitRefs[0])
+    : null;
+  const visibleSections = useMemo(
+    () => selectVisibleModuleSections(moduleData, macroMode, activeMacroUnitId),
+    [activeMacroUnitId, macroMode, moduleData],
+  );
+  const unitTitles = useMemo(() => Object.fromEntries(
+    moduleData.sections
+      .map((section) => [integrationUnitIdForSection(section), section.title] as const)
+      .filter((entry): entry is readonly [string, string] => Boolean(entry[0])),
+  ), [moduleData.sections]);
+  const adaptiveRequirements = useMemo<MacroAdaptiveRequirement[]>(() => {
+    if (!macroMode || !activeMacroUnitId) return [];
+    const inbound = resolveAdaptiveMacroLinksToUnit(activeMacroUnitId)
+      .filter((link) => link.relationType !== 'remediation')
+      .map((link) => ({ link, evidenceUnitId: link.fromUnitRef, actionUnitId: link.fromUnitRef }));
+    const remediation = resolveAdaptiveMacroLinksFromUnit(activeMacroUnitId)
+      .filter((link) => link.relationType === 'remediation')
+      .map((link) => ({ link, evidenceUnitId: activeMacroUnitId, actionUnitId: link.toUnitRef }));
+
+    return [...inbound, ...remediation].flatMap(({ link, evidenceUnitId, actionUnitId }) => {
+      const evidenceMacro = resolvePedagogicalMacroForUnit(evidenceUnitId);
+      const actionMacro = resolvePedagogicalMacroForUnit(actionUnitId);
+      if (!evidenceMacro || !actionMacro) return [];
+      const evidenceCompetencyIds = evidenceMacro.competencies
+        .filter((competency) => competency.unitId === evidenceUnitId)
+        .map((competency) => competency.competencyId);
+      const actionCompetency = actionMacro.competencies.find((competency) => (
+        competency.unitId === actionUnitId
+      ));
+      return [{
+        requirementId: link.adaptiveLinkId,
+        kind: link.relationType,
+        evidenceCompetencyIds,
+        actionMacroId: actionMacro.macroId,
+        actionUnitId,
+        actionTitle: actionCompetency?.title || actionMacro.title,
+      }];
+    });
+  }, [activeMacroUnitId, macroMode]);
 
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
   const [showFeedback, setShowFeedback] = useState<Record<string, boolean>>({});
@@ -337,6 +479,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const [isModuleMenuOpen, setIsModuleMenuOpen] = useState<boolean>(false);
   const moduleMenuRef = useRef<HTMLDivElement>(null);
   const [loadedNotesOwnerId, setLoadedNotesOwnerId] = useState<string | null>(null);
+  const activeUnitHeadingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     if (!isModuleMenuOpen) return;
@@ -370,8 +513,11 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     if (!openUnitId) return;
     const target = document.getElementById(`module-unit-${openUnitId}`);
     if (!target) return;
-    window.requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
-  }, [moduleData.id, openUnitId]);
+    window.requestAnimationFrame(() => {
+      target.scrollIntoView({ block: 'start' });
+      if (macroMode) activeUnitHeadingRef.current?.focus({ preventScroll: true });
+    });
+  }, [macroMode, moduleData.id, openUnitId]);
 
   // Notes are namespaced by the editorial build so content from a previous
   // curriculum cannot appear under reused module/section identifiers.
@@ -379,7 +525,11 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     let cancelled = false;
     const moduleId = moduleData.id;
     const userId = user?.uid;
-    const localNotes = readLocalNotes(moduleId, userId);
+    const localNotes = migrateModuleNotesToStableUnitIds(
+      moduleData,
+      readLocalNotes(moduleId, userId),
+    );
+    saveLocalNotes(moduleId, localNotes, userId);
 
     activeModuleIdRef.current = moduleId;
     setLoadedNotesOwnerId(null);
@@ -406,9 +556,24 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
         if (cancelled) return;
 
         if (snapshot.exists() && snapshot.data().curriculumBuildId === CURRICULUM_BUILD_ID) {
-          const cloudNotes = normalizeNotes(snapshot.data().notes);
-          setSectionNotes(cloudNotes);
-          saveLocalNotes(moduleId, cloudNotes, user.uid);
+          const cloudNotes = migrateModuleNotesToStableUnitIds(
+            moduleData,
+            normalizeNotes(snapshot.data().notes),
+          );
+          const mergedNotes = migrateModuleNotesToStableUnitIds(
+            moduleData,
+            mergeModuleNotesPreservingConflicts(localNotes, cloudNotes),
+          );
+          setSectionNotes(mergedNotes);
+          saveLocalNotes(moduleId, mergedNotes, user.uid);
+          if (JSON.stringify(mergedNotes) !== JSON.stringify(snapshot.data().notes || {})) {
+            await setDoc(noteRef, {
+              moduleId,
+              curriculumBuildId: CURRICULUM_BUILD_ID,
+              notes: mergedNotes,
+              updatedAt: new Date().toISOString(),
+            }, { merge: true });
+          }
           setNotesSyncState('saved');
           setLoadedNotesOwnerId(user.uid);
           return;
@@ -842,6 +1007,40 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
         </header>
         )}
 
+        {routeIssue && (
+          <aside role="alert" className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+            <strong className="block font-black">Não foi possível abrir o destino solicitado.</strong>
+            <span>
+              {routeIssue === 'invalid_unit'
+                ? 'A unidade informada não existe neste currículo. Nenhum conteúdo semelhante foi escolhido automaticamente.'
+                : 'O percurso informado não existe. A navegação atômica continua disponível.'}
+            </span>
+          </aside>
+        )}
+
+        {macroMode ? (
+          <div className="space-y-4">
+            <MacroCurriculumNavigator
+              entries={macroEntries}
+              selectedMacroId={selectedMacro?.macroId || null}
+              readUnitIds={readUnitIds}
+              onSelectMacro={(entry) => onOpenMacroChange?.(entry.macroId, entry.unitRefs[0])}
+            />
+            {selectedMacro && activeMacroUnitId && (
+              <MacroEntryPanel
+                entry={selectedMacro}
+                activeUnitId={activeMacroUnitId}
+                unitTitles={unitTitles}
+                readUnitIds={readUnitIds}
+                userId={userId || user?.uid || 'guest'}
+                onSelectUnit={(unitId) => onOpenMacroChange?.(selectedMacro.macroId, unitId)}
+                onPracticeCompetency={onPracticeCompetency}
+                adaptiveRequirements={adaptiveRequirements}
+                onOpenAdaptiveUnit={onOpenMacroChange}
+              />
+            )}
+          </div>
+        ) : (
         <nav
           className="rounded-2xl border border-teal-200 bg-teal-50/60 p-4 sm:p-5"
           aria-label={`Unidades pedagógicas de ${moduleData.title}`}
@@ -893,11 +1092,35 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             })}
           </ol>
         </nav>
+        )}
 
         {/* Sections Content with Markdown */}
         <div className="space-y-8">
-          {moduleData.sections.map((section, idx) => {
-            const noteKey = `section-${idx}`;
+          {visibleSections.map(({ section, index: idx }) => {
+            const stableUnitId = integrationUnitIdForSection(section);
+            const legacyReadId = `${moduleData.id}:section-${idx}`;
+            const sectionIsRead = Boolean(
+              (stableUnitId && readUnitIds.includes(stableUnitId))
+              || readSectionIds.includes(legacyReadId)
+            );
+            const legacyNoteKey = `section-${idx}`;
+            const noteKey = stableUnitId ? `unit:${stableUnitId}` : legacyNoteKey;
+            const hasLegacyNoteConflict = Boolean(
+              stableUnitId
+              && sectionNotes[noteKey]
+              && sectionNotes[legacyNoteKey]
+              && sectionNotes[noteKey] !== sectionNotes[legacyNoteKey]
+            );
+            const preservedConflictNotes = Object.entries(sectionNotes)
+              .filter(([key, value]) => key.startsWith(`conflict:local:${noteKey}`)
+                && value !== sectionNotes[noteKey])
+              .map(([, value]) => value);
+            if (
+              hasLegacyNoteConflict
+              && !preservedConflictNotes.includes(sectionNotes[legacyNoteKey])
+            ) {
+              preservedConflictNotes.push(sectionNotes[legacyNoteKey]);
+            }
             const noteIsEmpty = isRichNoteEmpty(sectionNotes[noteKey]);
             const noteEditorIsOpen = Boolean(openNoteEditors[idx]);
             const notePanelId = `section-note-editor-${moduleData.id}-${idx}`;
@@ -915,7 +1138,11 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               <div className="border-b border-slate-100 pb-3 flex items-start justify-between gap-3">
                 <div className="min-w-0 space-y-2">
                   <div className="flex flex-wrap items-center gap-2">
-                    <h2 className="break-words text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
+                    <h2
+                      ref={stableUnitId === activeMacroUnitId ? activeUnitHeadingRef : undefined}
+                      tabIndex={stableUnitId === activeMacroUnitId ? -1 : undefined}
+                      className="break-words text-lg sm:text-xl font-bold text-slate-900 tracking-tight outline-none"
+                    >
                       {section.title}
                     </h2>
                     {!noteIsEmpty && (
@@ -946,14 +1173,17 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               </div>
 
               <PedagogicalDeepDive
+                key={stableUnitId || `${moduleData.id}-${idx}`}
                 section={section}
+                userId={userId}
                 onAskTutor={onAskTutor}
-                isOpen={integrationUnitIdForSection(section) === openUnitId}
+                isOpen={macroMode ? true : integrationUnitIdForSection(section) === openUnitId}
                 activeSectionId={integrationUnitIdForSection(section) === openUnitId ? openUnitSectionId : null}
-                onOpenChange={(open) => onOpenUnitChange?.(
-                  open ? integrationUnitIdForSection(section) : null,
-                  null,
-                )}
+                collapsible={!macroMode}
+                onOpenChange={macroMode ? undefined : (open) => onOpenUnitChange?.(
+                    open ? integrationUnitIdForSection(section) : null,
+                    null,
+                  )}
                 onActiveSectionChange={(sectionId) => onOpenUnitChange?.(
                   integrationUnitIdForSection(section),
                   sectionId,
@@ -1123,6 +1353,19 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                       autoFocus
                       placeholder="Registre a regra, uma exceção ou seu próprio exemplo..."
                     />
+                    {preservedConflictNotes.length > 0 && (
+                      <aside className="rounded-xl border border-amber-300 bg-amber-50 p-3 text-xs text-amber-950">
+                        <strong className="block font-black">Anotação divergente preservada</strong>
+                        <p className="my-1">Uma versão anterior ou local é diferente da nota sincronizada. Nenhum texto foi sobrescrito.</p>
+                        {preservedConflictNotes.map((note, conflictIndex) => (
+                          <div
+                            key={conflictIndex}
+                            className="mt-2 rounded-lg border border-amber-200 bg-white p-2 text-slate-800"
+                            dangerouslySetInnerHTML={{ __html: note }}
+                          />
+                        ))}
+                      </aside>
+                    )}
                     {!user && <p className="text-xs text-slate-500">Entre na sua conta para sincronizar esta anotação com o Firestore.</p>}
                   </div>
                 )}
@@ -1132,12 +1375,12 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                 <div className="flex flex-wrap gap-2">
                 <button
                   type="button"
-                  onClick={() => onSectionRead(moduleData.id, idx)}
-                  disabled={readSectionIds.includes(`${moduleData.id}:section-${idx}`)}
+                  onClick={() => onSectionRead(moduleData.id, idx, stableUnitId)}
+                  disabled={sectionIsRead}
                   className="button-secondary min-h-[44px] text-xs disabled:cursor-default disabled:bg-emerald-50 disabled:text-emerald-800 disabled:opacity-100"
                 >
                   <CheckCircle className="h-4 w-4" />
-                  {readSectionIds.includes(`${moduleData.id}:section-${idx}`) ? 'Seção concluída' : 'Marcar seção como estudada'}
+                  {sectionIsRead ? 'Seção concluída' : 'Marcar seção como estudada'}
                 </button>
                 <button type="button" onClick={() => askTutorAboutSection(section)} className="button-secondary min-h-[44px] text-xs">
                   <Bot className="h-4 w-4 text-teal-700" /> Perguntar sobre esta seção
@@ -1164,7 +1407,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
         )}
 
         {/* Practice Questions for this Module */}
-        {!isFocusMode && moduleData.questions && moduleData.questions.length > 0 && (
+        {!macroMode && !isFocusMode && moduleData.questions && moduleData.questions.length > 0 && (
           <section className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6">
             <div className="border-b border-slate-100 pb-4 flex items-center justify-between flex-wrap gap-2">
               <div>

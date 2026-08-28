@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { CadernoErroItem } from '../../types/suveca';
 import type {
   PBLAttemptTelemetryPayload,
@@ -22,6 +22,8 @@ interface PBLDashboardProps {
   onRecordAttempt?: (attempt: PBLAttemptTelemetryPayload) => void;
   onCompleteSession?: () => void;
   onOpenNotebook?: () => void;
+  requestedTargetCompetencyId?: string | null;
+  onRequestedTargetHandled?: () => void;
 }
 
 const PAGE_SIZE = 12;
@@ -32,6 +34,8 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   onRecordAttempt,
   onCompleteSession,
   onOpenNotebook,
+  requestedTargetCompetencyId = null,
+  onRequestedTargetHandled,
 }) => {
   const [competencies, setCompetencies] = useState<PBLCompetency[]>([]);
   const [cumulativeSessions, setCumulativeSessions] = useState<PBLCumulativeSession[]>([]);
@@ -45,6 +49,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   const [page, setPage] = useState(1);
   const [showAllCumulative, setShowAllCumulative] = useState(false);
   const [unavailableCompetencyIds, setUnavailableCompetencyIds] = useState<Set<string>>(new Set());
+  const handledRequestedTargetRef = useRef<string | null>(null);
 
   const loadDashboardData = async () => {
     setLoading(true);
@@ -112,6 +117,40 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
     }
   };
 
+  const requestedCompetency = useMemo(
+    () => competencies.find((competency) => competency.competencyId === requestedTargetCompetencyId) || null,
+    [competencies, requestedTargetCompetencyId],
+  );
+
+  useEffect(() => {
+    if (!requestedTargetCompetencyId) {
+      handledRequestedTargetRef.current = null;
+      return;
+    }
+    if (loading || activeSession || resumableSession) return;
+    if (handledRequestedTargetRef.current === requestedTargetCompetencyId) return;
+    handledRequestedTargetRef.current = requestedTargetCompetencyId;
+
+    if (!requestedCompetency || unavailableCompetencyIds.has(requestedTargetCompetencyId)) {
+      setErrorMessage('A prática seletiva indicada não está disponível neste baseline. Nenhuma competência substituta foi escolhida.');
+      onRequestedTargetHandled?.();
+      return;
+    }
+
+    void handleStartSession({
+      mode: 'guided',
+      targetCompetencyId: requestedTargetCompetencyId,
+    }).finally(() => onRequestedTargetHandled?.());
+  }, [
+    activeSession,
+    loading,
+    onRequestedTargetHandled,
+    requestedCompetency,
+    requestedTargetCompetencyId,
+    resumableSession,
+    unavailableCompetencyIds,
+  ]);
+
   const filteredCompetencies = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase('pt-BR');
     return competencies.filter((competency) =>
@@ -171,6 +210,15 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   return (
     <div className="pbl-dashboard tool-content-shell space-y-8">
       {errorMessage && <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm font-semibold text-rose-900">{errorMessage}</div>}
+
+      {requestedCompetency && resumableSession && (
+        <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-5 text-indigo-950">
+          <h2 className="text-sm font-black">Prática seletiva colocada como próximo passo</h2>
+          <p className="mt-1 text-xs leading-relaxed">
+            {presentCompetencyTitle(requestedCompetency.title).title} será iniciada depois que você retomar ou encerrar a sessão pausada. A sessão existente não foi substituída.
+          </p>
+        </div>
+      )}
 
       {resumableSession && (
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5">

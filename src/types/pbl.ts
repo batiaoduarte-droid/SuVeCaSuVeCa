@@ -28,6 +28,8 @@ export interface PBLCompetency {
     mechanismOnlyMappings: number;
     policy: 'single_response_is_hypothesis';
     reviewedAt: string;
+    availability?: 'ready' | 'feedback_only';
+    reason?: string;
   };
   prerequisiteCompetencyRefs: string[];
   eligibleQuestionRefs: string[];
@@ -51,7 +53,8 @@ export interface PBLCompetency {
     auditedTransferCandidates?: number;
     unverifiedTransferCandidates?: number;
     validationCandidates: number;
-    gapType: 'none' | 'content' | 'semantic_validation';
+    gapType: 'none' | 'content' | 'semantic_validation' | 'transfer_evidence';
+    limitationReason?: string;
     reason?: string;
     auditedAt: string;
   };
@@ -306,6 +309,8 @@ export interface PBLTransferItem {
     model?: string;
     reviewedAt?: string;
   };
+  /** Item reutilizado porque nenhum candidato novo e publicado estava disponível. */
+  recentExposureFallback?: boolean;
 }
 
 export interface PBLQuestionPresentation {

@@ -21,6 +21,10 @@ import {
 } from '../../lib/pbl/session/PBLSessionTiming';
 import { formatPBLAnswer } from '../../lib/pbl/answerAdapter';
 import type { PBLRulePresentation } from '../../lib/pbl/data/PBLRepository';
+import {
+  recordQuestionEncounter,
+  type QuestionEncounterPurpose,
+} from '../../lib/questionEncounterLedger';
 import { PBLProblemCard } from './PBLProblemCard';
 import { PBLConfidenceSelector } from './PBLConfidenceSelector';
 import { PBLDiagnosticView } from './PBLDiagnosticView';
@@ -59,6 +63,21 @@ const learnerFacingRule = (value: string | null | undefined) => {
   const text = String(value || '').trim();
   if (text.length < 12) return '';
   return /^(?:RULE|RULF|PROC|WARN|MISC|KB|OBJ|COMP)-[A-Z0-9-]+$/i.test(text) ? '' : text;
+};
+
+const encounterPurposeFor = (
+  mode: PBLSession['mode'],
+  phaseOrStage: PBLSession['phase'] | PBLAttemptStage,
+): QuestionEncounterPurpose => {
+  if (mode === 'review' || mode === 'cumulative') return 'review';
+  return phaseOrStage === 'transfer' ? 'transfer' : 'diagnostic';
+};
+
+const confidenceScore: Record<PBLConfidenceLevel, number> = {
+  guess: 0.20,
+  low: 0.40,
+  medium: 0.70,
+  high: 0.90,
 };
 
 export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
@@ -221,6 +240,16 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   }, [session.phase, session.currentQuestionRef]);
 
   useEffect(() => {
+    if (!currentQuestion || currentQuestion.questionRef !== session.currentQuestionRef) return;
+    recordQuestionEncounter(session.userId, {
+      questionId: currentQuestion.questionRef,
+      purpose: encounterPurposeFor(session.mode, session.phase),
+      encounteredAt: new Date().toISOString(),
+      sessionId: session.sessionId,
+    });
+  }, [currentQuestion, session.currentQuestionRef, session.mode, session.phase, session.sessionId, session.userId]);
+
+  useEffect(() => {
     setSelectedAnswer('');
     setConfidence(null);
     setReasoning('');
@@ -290,6 +319,15 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
         assistanceLevel,
       });
       const nextSession = await commitSession({ ...result.session });
+      recordQuestionEncounter(session.userId, {
+        questionId: questionRef,
+        purpose: encounterPurposeFor(session.mode, stage),
+        encounteredAt: result.attempt.createdAt,
+        correct: result.attempt.isCorrect,
+        confidence: confidenceScore[confidence],
+        assistanceLevel,
+        sessionId: session.sessionId,
+      });
       pblSessionManager.emit(
         stage === 'initial' ? 'pbl_initial_attempt' : stage === 'transfer' ? 'pbl_transfer_attempt' : 'pbl_reattempt',
         { attempt: result.attempt }

@@ -25,33 +25,33 @@
   "files": {
     "question_pedagogy.jsonl": {
       "recordCount": 4945,
-      "sizeBytes": 21311958,
-      "sha256": "c1acbdc70873e1c06e7b3c4341f0f212ff5f12fcb5e4d3a71e8caa34cbd57d6b"
+      "sizeBytes": 22066036,
+      "sha256": "d74946a59f2d2e5d166bf8113ca8e11fb12f1beba1e479ecdbd0ae71bca0576f"
     },
     "question_competency_links.jsonl": {
       "recordCount": 4945,
-      "sizeBytes": 11893076,
-      "sha256": "923f82b16462434fa3e5e617bad2df1b0e74f04884e9460775080fba8d786827"
+      "sizeBytes": 11893145,
+      "sha256": "8f611a56ab633319f405289bf7454568ba6afdc5a7bb3c6d4a7b192e3db2ca17"
     },
     "pbl_competency_map.jsonl": {
       "recordCount": 190,
-      "sizeBytes": 877008,
-      "sha256": "9846506888a6df898c2ff7fd9295671bb56c5fce2e975d3129b6ad9a07a4b769"
+      "sizeBytes": 851426,
+      "sha256": "8ed4386e97992299db798e2e09b6681c8f9e149befafadb55834c9878fd381b7"
     },
     "pbl_cases.jsonl": {
       "recordCount": 190,
-      "sizeBytes": 1295909,
-      "sha256": "71affe0c1675cc181649d2b1ea019d0166e9e4413d82631fa3fab6c8740c038d"
+      "sizeBytes": 1329562,
+      "sha256": "d4999c0de10132fb5a94214fc31b79d6be23e1db3380289a3224f1210e3b2375"
     },
     "pbl_transfer_sets.jsonl": {
       "recordCount": 190,
-      "sizeBytes": 2217693,
-      "sha256": "0ad4d73b35d6d1e8a897bc158e815da1584cb362af566b59c42fcad16b7f0411"
+      "sizeBytes": 2070543,
+      "sha256": "c591c8dde2091c19dbc83eb6e9bace1a21a50509e725277754cce78ce3c0c88a"
     },
     "pbl_diagnostic_paths.jsonl": {
       "recordCount": 190,
       "sizeBytes": 645275,
-      "sha256": "88507b296a355fd19f990d5e8f39ca40a7934d60bbe94962dc1f0e0aa6429a83"
+      "sha256": "0aed7584b196ef61eb45c15155cc80576c64ff7bb89c49003d7e3562fdf63ab0"
     },
     "pbl_cumulative_review_sessions.jsonl": {
       "recordCount": 13,
@@ -60,18 +60,18 @@
     },
     "pbl_authored_questions.jsonl": {
       "recordCount": 81,
-      "sizeBytes": 109468,
-      "sha256": "9d1bccc3b7154145944c2e97e437a77615a91ac26ca12ca17bf481f21ef0a48a"
+      "sizeBytes": 109487,
+      "sha256": "59b9334e582cda288b1a93473e635085dc6eb9422edd19f413d88087294982f4"
     },
     "pbl_causal_distractor_mappings.jsonl": {
-      "recordCount": 620,
-      "sizeBytes": 2583730,
-      "sha256": "f3428707b662df019bebb83585ec68c08eff24a0f1c420c00da8d328fee31652"
+      "recordCount": 619,
+      "sizeBytes": 2461021,
+      "sha256": "fb8b48d3fed1c9103d8075d19ae0704602aa392414973a81c8c0aac170ac6761"
     },
     "pbl_transfer_audits.jsonl": {
       "recordCount": 1418,
-      "sizeBytes": 2119135,
-      "sha256": "92235c2dbbd2c4a189fce1aaf0563aa007d16ca09d1f3a72abf70d934b31703b"
+      "sizeBytes": 1970175,
+      "sha256": "edf23dc976b2f05ad52c4ce413ad7f3ce5896b006727b0a22bf803a6c1022d63"
     }
   },
   "questionBankOverlay": {
@@ -94,20 +94,32 @@
     "approvalPolicyRefs": [
       "QAPOL-AGENT-APPROVAL-2026-08-24"
     ],
-    "officialQuestions": 4864,
-    "authoredQuestions": 81,
     "questionLinks": 4945,
-    "questionPedagogy": 4945
+    "questionPedagogy": 4945,
+    "transferPairAudits": 1418,
+    "auditedTransferPairs": 1344,
+    "unverifiedTransferPairs": 74
   },
   "semanticHardening": {
-    "causalDistractorMappings": 620,
-    "causallyReviewedQuestions": 620,
+    "causalDistractorMappings": 619,
+    "causallyReviewedQuestions": 619,
     "transferPairAudits": 1418,
-    "auditedTransferPairs": 1418,
-    "unverifiedTransferPairs": 0,
+    "auditedTransferPairs": 1344,
+    "unverifiedTransferPairs": 74,
     "diagnosisPolicy": "single_response_is_hypothesis_repeated_mechanism_confirms",
     "prerequisitePolicy": "branch_only_from_question_authorized_for_prerequisite_competency",
     "transferPolicy": "item_level_structural_audit_required_for_mastery_credit",
-    "reviewedAt": "2026-08-26T00:00:00-03:00"
+    "reviewedAt": "2026-08-28T01:20:41-03:00"
+  },
+  "causalDiagnosticOverlay": {
+    "status": "dual_pass_reviewed",
+    "source": "pbl_causal_distractor_mappings.jsonl",
+    "sha256": "fb8b48d3fed1c9103d8075d19ae0704602aa392414973a81c8c0aac170ac6761",
+    "reviewedQuestions": 619,
+    "diagnosticQuestionsAuthorized": 380,
+    "optionMappings": 1819,
+    "reviewedAt": "2026-08-28T01:36:00-03:00",
+    "reviewMethod": "manual_gemini_closed_context_dual_pass",
+    "model": "gemini-3.7-flash"
   }
 }

@@ -14,8 +14,18 @@ export interface NormalizedQuestion {
   year?: number;
 }
 
+interface OfficialQuestionsManifest {
+  shards?: Array<{
+    questionIds?: string[];
+    normalized?: { file?: string };
+  }>;
+}
+
 const partCache = new Map<string, Record<string, NormalizedQuestion>>();
+const shardCache = new Map<string, Promise<Record<string, NormalizedQuestion>>>();
+const resolvedShardCache = new Map<string, Record<string, NormalizedQuestion>>();
 const lessonShardCache = new Map<string, string[]>();
+let manifestPromise: Promise<OfficialQuestionsManifest | null> | null = null;
 
 const LESSON_PARTS_MAP: Record<string, string[]> = {
   A00: ['001'],
@@ -34,16 +44,26 @@ const LESSON_PARTS_MAP: Record<string, string[]> = {
   A13: ['009', '010'],
 };
 
+const fetchManifest = (): Promise<OfficialQuestionsManifest | null> => {
+  if (manifestPromise) return manifestPromise;
+  manifestPromise = (async () => {
+    try {
+      const response = await fetch('/knowledge/official-questions.manifest.json', {
+        headers: { Accept: 'application/json' },
+      });
+      if (!response.ok) return null;
+      return await response.json() as OfficialQuestionsManifest;
+    } catch {
+      return null;
+    }
+  })();
+  return manifestPromise;
+};
+
 const resolveNormalizedShardFiles = async (lessonCode: string): Promise<string[]> => {
   if (lessonShardCache.has(lessonCode)) return lessonShardCache.get(lessonCode)!;
-  try {
-    const response = await fetch('/knowledge/official-questions.manifest.json', {
-      headers: { Accept: 'application/json' },
-    });
-    if (response.ok) {
-      const manifest = await response.json() as {
-        shards?: Array<{ questionIds?: string[]; normalized?: { file?: string } }>;
-      };
+  const manifest = await fetchManifest();
+  if (manifest) {
       const prefix = `${lessonCode}:`;
       const files = (manifest.shards || [])
         .filter((shard) => (shard.questionIds || []).some((id) => id.startsWith(prefix)))
@@ -53,14 +73,86 @@ const resolveNormalizedShardFiles = async (lessonCode: string): Promise<string[]
         lessonShardCache.set(lessonCode, files);
         return files;
       }
-    }
-  } catch {
-    // O fallback abaixo preserva compatibilidade com manifests legados.
   }
+  // O fallback abaixo preserva compatibilidade com manifests legados.
   const fallback = (LESSON_PARTS_MAP[lessonCode] || ['001'])
     .map((part) => `official-question-parts/official-questions.normalized.part-${part}.json`);
   lessonShardCache.set(lessonCode, fallback);
   return fallback;
+};
+
+const addQuestionAliases = (
+  map: Record<string, NormalizedQuestion>,
+  item: NormalizedQuestion,
+) => {
+  if (item.originalQuestionId) {
+    map[item.originalQuestionId] = item;
+  }
+  if (!item.id) return;
+  map[item.id] = item;
+  const separator = item.id.indexOf(':');
+  if (separator < 0) return;
+  const lessonId = item.id.slice(0, separator).toUpperCase();
+  const sourceId = item.id.slice(separator + 1);
+  map[sourceId] = item;
+  map[`OQ-${lessonId}-${sourceId}`] = item;
+};
+
+const fetchNormalizedShard = (
+  shardFile: string,
+  signal?: AbortSignal,
+): Promise<Record<string, NormalizedQuestion>> => {
+  const resolved = resolvedShardCache.get(shardFile);
+  if (resolved) return Promise.resolve(resolved);
+  const cached = signal ? undefined : shardCache.get(shardFile);
+  if (cached) return cached;
+
+  const request = (async () => {
+    const shardMap: Record<string, NormalizedQuestion> = {};
+    try {
+      const res = await fetch(`/knowledge/${shardFile}`, {
+        headers: { Accept: 'application/json' },
+        signal,
+      });
+      if (!res.ok) return shardMap;
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('text/html')) return shardMap;
+      const text = await res.text();
+      if (!text || text.trim().startsWith('<')) return shardMap;
+      const data = JSON.parse(text);
+      if (Array.isArray(data)) {
+        for (const item of data as NormalizedQuestion[]) {
+          addQuestionAliases(shardMap, item);
+        }
+      }
+    } catch {
+      // A View publicada continua sendo o fallback seguro quando um shard falha.
+    }
+    if (!signal?.aborted) resolvedShardCache.set(shardFile, shardMap);
+    return shardMap;
+  })();
+  if (!signal) shardCache.set(shardFile, request);
+  return request;
+};
+
+const mergeShards = async (
+  shardFiles: string[],
+  signal?: AbortSignal,
+): Promise<Record<string, NormalizedQuestion>> => {
+  const combinedMap: Record<string, NormalizedQuestion> = {};
+  const shards = await Promise.all(shardFiles.map((file) => fetchNormalizedShard(file, signal)));
+  for (const shard of shards) Object.assign(combinedMap, shard);
+  return combinedMap;
+};
+
+const canonicalQuestionRef = (questionRef: string, lessonCode: string): string => {
+  const pblRef = parsePBLQuestionRef(questionRef);
+  if (pblRef) return `${pblRef.lessonId}:${pblRef.sourceId}`;
+  if (/^A\d{2}:/i.test(questionRef)) {
+    const [lessonId, ...sourceParts] = questionRef.split(':');
+    return `${lessonId.toUpperCase()}:${sourceParts.join(':')}`;
+  }
+  return `${lessonCode.toUpperCase()}:${questionRef}`;
 };
 
 export const fetchNormalizedQuestionsForLesson = async (
@@ -72,40 +164,34 @@ export const fetchNormalizedQuestionsForLesson = async (
   }
 
   const shardFiles = await resolveNormalizedShardFiles(code);
-  const combinedMap: Record<string, NormalizedQuestion> = {};
-
-  for (const shardFile of shardFiles) {
-    try {
-      const res = await fetch(`/knowledge/${shardFile}`, {
-        headers: { Accept: 'application/json' },
-      });
-      if (!res.ok) continue;
-      const contentType = res.headers.get('content-type') || '';
-      if (contentType.includes('text/html')) continue;
-      const text = await res.text();
-      if (!text || text.trim().startsWith('<')) continue;
-      const data = JSON.parse(text);
-      if (Array.isArray(data)) {
-        for (const item of data) {
-          if (item.originalQuestionId) {
-            combinedMap[item.originalQuestionId] = item;
-          }
-          if (item.id) {
-            combinedMap[item.id] = item;
-            const subparts = item.id.split(':');
-            if (subparts.length > 1) {
-              combinedMap[subparts[1]] = item;
-            }
-          }
-        }
-      }
-    } catch {
-      // Silencioso em caso de falha de rede ou parsing
-    }
-  }
+  const combinedMap = await mergeShards(shardFiles);
 
   partCache.set(code, combinedMap);
   return combinedMap;
+};
+
+/**
+ * Carrega somente os shards que contêm as questões que serão montadas na tela.
+ * Se o manifest não estiver disponível, preserva o fallback legado por aula.
+ */
+export const fetchNormalizedQuestionsByRefs = async (
+  questionRefs: string[],
+  lessonCode: string,
+  signal?: AbortSignal,
+): Promise<Record<string, NormalizedQuestion>> => {
+  if (questionRefs.length === 0) return {};
+  const code = lessonCode.toUpperCase();
+  const requestedIds = new Set(questionRefs.map((ref) => canonicalQuestionRef(ref, code)));
+  const manifest = await fetchManifest();
+  if (!manifest) return fetchNormalizedQuestionsForLesson(code);
+
+  const shardFiles = (manifest.shards || [])
+    .filter((shard) => (shard.questionIds || []).some((id) => requestedIds.has(id)))
+    .map((shard) => shard.normalized?.file)
+    .filter((file): file is string => Boolean(file));
+
+  if (shardFiles.length === 0) return {};
+  return mergeShards([...new Set(shardFiles)], signal);
 };
 
 export const parsePBLQuestionRef = (questionRef: string): { lessonId: string; sourceId: string } | null => {

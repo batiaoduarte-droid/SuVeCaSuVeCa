@@ -520,7 +520,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       });
       setReviewFeedback(
         nextStatus === 'dominado'
-          ? 'Todos os cartões desta regra demonstraram domínio sem ajuda. Regra dominada!'
+          ? 'Todos os cartões desta regra completaram o critério espaçado sem ajuda. Regra consolidada no Caderno; valide transferência e retenção no PBL.'
           : scheduledCard.lastRating === 'again'
           ? 'Este cartão volta em cerca de 4 horas; os demais mantêm seus próprios intervalos.'
           : `Cartão agendado individualmente para ${Math.max(1, Math.round((scheduledCard.intervalDays || 0) * 24))} hora(s). A regra avança pelo cartão mais frágil.`

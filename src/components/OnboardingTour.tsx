@@ -465,7 +465,7 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({
                 </span>
                 <span className="text-slate-400 font-bold">→</span>
                 <span className="rounded-md border border-emerald-300 bg-emerald-100 px-2.5 py-0.5 text-[11px] font-black text-emerald-900 shadow-2xs">
-                  🏆 Dominado!
+                  🏆 Ciclo consolidado!
                 </span>
               </div>
 

@@ -151,6 +151,23 @@ export class QuestionPoolSelector {
     competencyId: string,
     seed = 'readiness'
   ): Promise<PBLPracticeReadiness> {
+    const competency = await this.repo.getCompetency(competencyId);
+    if (!competency) {
+      return {
+        ready: false,
+        transferQuestionRefs: [],
+        reason: 'Competência PBL não encontrada.',
+      };
+    }
+    if (competency.practiceCoverage && competency.practiceCoverage.status !== 'ready') {
+      return {
+        ready: false,
+        transferQuestionRefs: [],
+        reason: competency.practiceCoverage.limitationReason
+          || competency.practiceCoverage.reason
+          || 'A competência ainda não possui evidência suficiente para uma sessão PBL completa.',
+      };
+    }
     const onlineAnchor = await this.selectQuestion(competencyId, 'anchor', {
       onlineOnly: true,
       seed,

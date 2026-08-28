@@ -51,9 +51,13 @@ if (!errors.length) {
   check(xfers.length === 190, `Transfer sets count expected 190, found ${xfers.length}`);
   check(diags.length === 190, `Diagnostic paths count expected 190, found ${diags.length}`);
   check(sessions.length === 13, `Cumulative review sessions count expected 13, found ${sessions.length}`);
-  const expectedQuestionLinks = manifest.totalQuestionLinks
-    || manifest.totalOfficialQuestionsCovered + (manifest.totalAuthoredQuestions || 0);
-  const expectedQuestionPedagogy = manifest.totalQuestionPedagogy;
+  const expectedQuestionLinks = manifest.totalRuntimeQuestionLinks
+    ?? manifest.totalQuestionLinks
+    ?? manifest.totalOfficialQuestionsCovered + (manifest.totalAuthoredQuestions || 0);
+  const expectedQuestionPedagogy = manifest.totalRuntimeQuestionPedagogy
+    ?? manifest.totalQuestionPedagogy;
+  const expectedRuntimeAuthoredQuestions = manifest.totalRuntimeAuthoredQuestions
+    ?? manifest.totalAuthoredQuestions;
   check(
     Object.keys(qcl).length === expectedQuestionLinks,
     `Question competency links count expected ${expectedQuestionLinks}, found ${Object.keys(qcl).length}`,
@@ -62,8 +66,24 @@ if (!errors.length) {
     Object.keys(qp).length === expectedQuestionPedagogy,
     `Question pedagogy index count expected ${expectedQuestionPedagogy}, found ${Object.keys(qp).length}`,
   );
-  check(Object.keys(authoredQuestions).length === 81, `Authored PBL questions expected 81, found ${Object.keys(authoredQuestions).length}`);
+  check(
+    Object.keys(authoredQuestions).length === expectedRuntimeAuthoredQuestions,
+    `Runtime authored PBL questions expected ${expectedRuntimeAuthoredQuestions}, found ${Object.keys(authoredQuestions).length}`,
+  );
   check(manifest.totalAuthoredQuestions === 81, `Manifest authored-question count expected 81, found ${manifest.totalAuthoredQuestions}`);
+  if (manifest.totalRuntimeAuthoredQuestions !== undefined) {
+    const quarantinedQuestionRef = 'PBLQ-A04-G03-020';
+    const quarantinedRefs = manifest.questionBankOverlay?.questionQuarantine?.blockedQuestionRefs || [];
+    check(quarantinedRefs.includes(quarantinedQuestionRef), 'Manifest lost the authored-question quarantine ledger');
+    check(manifest.totalRuntimeAuthoredQuestions === 80, `Runtime authored-question count expected 80, found ${manifest.totalRuntimeAuthoredQuestions}`);
+    check(!(quarantinedQuestionRef in authoredQuestions), 'Quarantined authored question leaked into presentations');
+    check(!(quarantinedQuestionRef in qcl), 'Quarantined authored question leaked into competency links');
+    check(!(quarantinedQuestionRef in qp), 'Quarantined authored question leaked into pedagogy index');
+    check(
+      ![comps, cases, xfers, diags, sessions].some((value) => JSON.stringify(value).includes(quarantinedQuestionRef)),
+      'Quarantined authored question leaked into a runtime PBL structure',
+    );
+  }
 
   const compIds = new Set(comps.map((c) => c.competencyId));
   check(cases.every((c) => compIds.has(c.competencyRef)), 'Case references non-existent competency');
@@ -94,9 +114,19 @@ if (!errors.length) {
     .filter((competency) => competency.practiceCoverage?.status === 'limited')
     .map((competency) => competency.competencyId)
     .sort();
+  const expectedTransferLimitedCompetencies = [
+    'COMP-A05-G03-01',
+    'COMP-A05-G03-02',
+    'COMP-A05-G03-03',
+    'COMP-A07-G05-01',
+    'COMP-A07-G05-02',
+    'COMP-A07-G05-03',
+    'COMP-A07-G06-01',
+    'COMP-A07-G06-02',
+  ];
   check(
-    actualLimitedCompetencies.length === 0,
-    `Competencies remained limited after authored remediation: ${actualLimitedCompetencies.join(', ')}`
+    JSON.stringify(actualLimitedCompetencies) === JSON.stringify(expectedTransferLimitedCompetencies),
+    `Transfer-limited competencies diverge from item-level audit: ${actualLimitedCompetencies.join(', ')}`
   );
   check(contentGaps.summary?.hardGapFamilies === 0, 'Hard-gap families remained after authored remediation');
   check(contentGaps.summary?.hardGapCompetencies === 0, 'Hard-gap competencies remained after authored remediation');
@@ -107,8 +137,15 @@ if (!errors.length) {
     comps.every((competency) => competency.practiceCoverage?.auditedAt === semanticCoverage.auditedAt),
     'Competency semantic coverage metadata is missing or stale'
   );
-  check(semanticCoverage.summary?.ready === 190, `Expected 190 ready competencies, found ${semanticCoverage.summary?.ready}`);
-  check(semanticCoverage.summary?.limited === 0, `Expected 0 limited competencies, found ${semanticCoverage.summary?.limited}`);
+  const readyCompetencies = comps.filter((competency) => competency.practiceCoverage?.status === 'ready').length;
+  check(
+    semanticCoverage.summary?.ready === readyCompetencies,
+    `Semantic coverage ready count diverges: ${semanticCoverage.summary?.ready}/${readyCompetencies}`
+  );
+  check(
+    semanticCoverage.summary?.limited === actualLimitedCompetencies.length,
+    `Semantic coverage limited count diverges: ${semanticCoverage.summary?.limited}/${actualLimitedCompetencies.length}`
+  );
   check(semanticCoverage.summary?.blocked === 0, 'Semantic coverage still reports blocked competencies');
 
   const semanticRuntimeEligibility = (competency, questionRef, role) => {
@@ -229,6 +266,24 @@ if (!errors.length) {
       `Authored question must be approved for the three competency variants: ${questionRef}`
     );
   }
+  const adjudicatedA04G03 = authoredQuestions['PBLQ-A04-G03-020'];
+  check(
+    adjudicatedA04G03?.correctAnswer === 'B',
+    'PBLQ-A04-G03-020 must publish the authorially adjudicated answer B'
+  );
+  check(
+    qp['PBLQ-A04-G03-020']?.causalDiagnosticReview?.status === 'not_reviewed'
+    && qp['PBLQ-A04-G03-020']?.errorDiagnosticPotential?.diagnosable === false,
+    'PBLQ-A04-G03-020 must remain practice-only until a new causal dual pass'
+  );
+  check(
+    comps.every((competency) =>
+      !(competency.diagnosticCandidateRefs || []).includes('PBLQ-A04-G03-020')
+      && !(competency.transferCandidateRefs || []).includes('PBLQ-A04-G03-020')
+      && !(competency.validationCandidateRefs || []).includes('PBLQ-A04-G03-020')
+    ),
+    'PBLQ-A04-G03-020 re-entered a specialized PBL pool without new review'
+  );
 
   const cleanAnswer = (answer) => String(answer || '').trim().toUpperCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -451,6 +506,46 @@ if (!errors.length) {
     diagnosableWithoutAnyCausalMapping,
     policy: 'single option => causal hypothesis; only recurrence in an independent probe confirms the mechanism',
   };
+  const reviewedCausalPedagogy = pedagogyItems.filter((item) =>
+    item.causalDiagnosticReview?.status === 'dual_pass_reviewed'
+  );
+  const reviewedCausalOptionMappings = reviewedCausalPedagogy.flatMap((item) =>
+    (item.distractorAnalysis || []).filter((entry) =>
+      entry.causalStatus === 'causal_candidate' || entry.causalStatus === 'feedback_only'
+    )
+  ).length;
+  const feedbackOnlyReviewedQuestions = reviewedCausalPedagogy.filter((item) =>
+    !(item.distractorAnalysis || []).some(hasReviewedCausalMapping)
+  ).length;
+  for (const competency of comps) {
+    const coverage = competency.causalDiagnosticCoverage;
+    const candidates = competency.diagnosticCandidateRefs || [];
+    check(Boolean(coverage), `Competency lacks causal coverage metadata: ${competency.competencyId}`);
+    check(
+      JSON.stringify(coverage?.reviewedQuestionRefs || []) === JSON.stringify(candidates),
+      `Causal coverage diverges from diagnostic candidates: ${competency.competencyId}`
+    );
+    check(
+      coverage?.availability === (candidates.length > 0 ? 'ready' : 'feedback_only'),
+      `Causal availability diverges from reviewed candidates: ${competency.competencyId}`
+    );
+  }
+  check(
+    semanticCoverage.summary?.causallyReviewedDiagnosticQuestions === reviewedCausalPedagogy.length,
+    'Semantic coverage overstates or understates dual-pass causal reviews'
+  );
+  check(
+    semanticCoverage.summary?.causalDiagnosticQuestionsAuthorized === diagnosticQuestionRefs.size,
+    'Semantic coverage diverges from the authorized causal diagnostic universe'
+  );
+  check(
+    semanticCoverage.summary?.causalFeedbackOnlyReviewedQuestions === feedbackOnlyReviewedQuestions,
+    'Semantic coverage diverges from feedback-only reviewed questions'
+  );
+  check(
+    semanticCoverage.summary?.causalOptionMappings === reviewedCausalOptionMappings,
+    'Semantic coverage diverges from reviewed causal option mappings'
+  );
   check(
     questionsWithReviewedCausalMapping === diagnosticQuestionRefs.size,
     `Causal coverage incomplete: ${questionsWithReviewedCausalMapping}/${diagnosticQuestionRefs.size}`

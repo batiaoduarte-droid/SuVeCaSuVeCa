@@ -19,7 +19,8 @@ export class NextActionPolicy {
 
   public async decideNextAction(
     session: PBLSession,
-    lastAttempt: PBLAttempt
+    lastAttempt: PBLAttempt,
+    recentlyExposedQuestionRefs: string[] = []
   ): Promise<NextActionDecision> {
     const { competencyRef, evaluation, stage, isCorrect } = lastAttempt;
     const currentMastery = session.masterySnapshot[competencyRef];
@@ -42,7 +43,8 @@ export class NextActionPolicy {
           currentMastery,
           attemptedQuestionRefs,
           true,
-          session.sessionId
+          session.sessionId,
+          recentlyExposedQuestionRefs
         );
 
         if (xferItem) {
@@ -85,7 +87,8 @@ export class NextActionPolicy {
           currentMastery,
           attemptedQuestionRefs,
           true,
-          session.sessionId
+          session.sessionId,
+          recentlyExposedQuestionRefs
         );
         if (xferItem) {
           return {
@@ -121,7 +124,8 @@ export class NextActionPolicy {
           currentMastery,
           attemptedQuestionRefs,
           true,
-          session.sessionId
+          session.sessionId,
+          recentlyExposedQuestionRefs
         );
 
         if (xferItem) {
@@ -220,7 +224,8 @@ export class NextActionPolicy {
         currentMastery,
         attemptedQuestionRefs,
         true,
-        session.sessionId
+        session.sessionId,
+        recentlyExposedQuestionRefs
       );
 
       if (!xferItem || transferAttempts.length >= maxTransferAttempts) {

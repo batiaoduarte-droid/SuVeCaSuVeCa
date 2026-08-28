@@ -3,11 +3,17 @@ import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { db, type User } from '../lib/firebase';
 import type { LearningAttempt } from '../components/StatisticsDashboard';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
+import { MODULES_DATA } from '../data/modulesData';
 
 export interface LearningMetrics {
+  schemaVersion: 2;
   curriculumBuildId: string;
   attempts: LearningAttempt[];
   visitedModuleIds: string[];
+  visitedMacroIds: string[];
+  readUnitIds: string[];
+  legacyReadSectionIds: string[];
+  /** Compatibilidade v1; novas decisões devem preferir readUnitIds. */
   readSectionIds: string[];
   modulePractice: Record<string, { answered: number; correct: number; completed: boolean }>;
   updatedAt?: string;
@@ -15,11 +21,33 @@ export interface LearningMetrics {
 
 const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
 const EMPTY_METRICS: LearningMetrics = {
+  schemaVersion: 2,
   curriculumBuildId: CURRICULUM_BUILD_ID,
   attempts: [],
   visitedModuleIds: [],
+  visitedMacroIds: [],
+  readUnitIds: [],
+  legacyReadSectionIds: [],
   readSectionIds: [],
   modulePractice: {},
+};
+
+const unitIdForSection = (section?: (typeof MODULES_DATA)[number]['sections'][number]) => {
+  const cumulativeMatch = section.contentUrl?.match(/A14-(S\d+)/);
+  return section.editorial?.integrationUnitId
+    || (cumulativeMatch ? `IP-A14-${cumulativeMatch[1]}` : null);
+};
+
+export const resolveLegacyReadUnitIds = (readSectionIds: string[]): string[] => {
+  const unitIds = readSectionIds.flatMap((sectionId) => {
+    const match = /^(.*):section-(\d+)$/.exec(sectionId);
+    if (!match) return [];
+    const module = MODULES_DATA.find((candidate) => candidate.id === match[1]);
+    const section = module?.sections[Number(match[2])];
+    const unitId = section ? unitIdForSection(section) : null;
+    return unitId ? [unitId] : [];
+  });
+  return [...new Set(unitIds)];
 };
 
 const storageKeyFor = (userId?: string | null) =>
@@ -33,11 +61,21 @@ const readLocalMetrics = (userId?: string | null): LearningMetrics => {
     if (!stored) return EMPTY_METRICS;
     const parsed = JSON.parse(stored) as Partial<LearningMetrics>;
     if (parsed.curriculumBuildId !== CURRICULUM_BUILD_ID) return EMPTY_METRICS;
+    const legacyReadSectionIds = Array.isArray(parsed.legacyReadSectionIds)
+      ? parsed.legacyReadSectionIds
+      : Array.isArray(parsed.readSectionIds) ? parsed.readSectionIds : [];
     return {
+      schemaVersion: 2,
       curriculumBuildId: CURRICULUM_BUILD_ID,
       attempts: Array.isArray(parsed.attempts) ? parsed.attempts : [],
       visitedModuleIds: Array.isArray(parsed.visitedModuleIds) ? parsed.visitedModuleIds : [],
-      readSectionIds: Array.isArray(parsed.readSectionIds) ? parsed.readSectionIds : [],
+      visitedMacroIds: Array.isArray(parsed.visitedMacroIds) ? parsed.visitedMacroIds : [],
+      readUnitIds: [...new Set([
+        ...(Array.isArray(parsed.readUnitIds) ? parsed.readUnitIds : []),
+        ...resolveLegacyReadUnitIds(legacyReadSectionIds),
+      ])],
+      legacyReadSectionIds,
+      readSectionIds: legacyReadSectionIds,
       modulePractice: parsed.modulePractice && typeof parsed.modulePractice === 'object' ? parsed.modulePractice : {},
       updatedAt: parsed.updatedAt,
     };
@@ -51,11 +89,21 @@ const normalizeMetrics = (value: unknown): LearningMetrics => {
   if (!value || typeof value !== 'object') return EMPTY_METRICS;
   const data = value as Partial<LearningMetrics>;
   if (data.curriculumBuildId !== CURRICULUM_BUILD_ID) return EMPTY_METRICS;
+  const legacyReadSectionIds = Array.isArray(data.legacyReadSectionIds)
+    ? data.legacyReadSectionIds
+    : Array.isArray(data.readSectionIds) ? data.readSectionIds : [];
   return {
+    schemaVersion: 2,
     curriculumBuildId: CURRICULUM_BUILD_ID,
     attempts: Array.isArray(data.attempts) ? data.attempts : [],
     visitedModuleIds: Array.isArray(data.visitedModuleIds) ? data.visitedModuleIds : [],
-    readSectionIds: Array.isArray(data.readSectionIds) ? data.readSectionIds : [],
+    visitedMacroIds: Array.isArray(data.visitedMacroIds) ? data.visitedMacroIds : [],
+    readUnitIds: [...new Set([
+      ...(Array.isArray(data.readUnitIds) ? data.readUnitIds : []),
+      ...resolveLegacyReadUnitIds(legacyReadSectionIds),
+    ])],
+    legacyReadSectionIds,
+    readSectionIds: legacyReadSectionIds,
     modulePractice: data.modulePractice && typeof data.modulePractice === 'object' ? data.modulePractice : {},
     updatedAt: typeof data.updatedAt === 'string' ? data.updatedAt : undefined,
   };
@@ -76,10 +124,20 @@ const mergeMetrics = (local: LearningMetrics, cloud: LearningMetrics): LearningM
     .slice(-50);
 
   return {
+    schemaVersion: 2,
     curriculumBuildId: CURRICULUM_BUILD_ID,
     attempts,
     visitedModuleIds: [...new Set([...local.visitedModuleIds, ...cloud.visitedModuleIds])],
-    readSectionIds: [...new Set([...local.readSectionIds, ...cloud.readSectionIds])],
+    visitedMacroIds: [...new Set([...local.visitedMacroIds, ...cloud.visitedMacroIds])],
+    readUnitIds: [...new Set([...local.readUnitIds, ...cloud.readUnitIds])],
+    legacyReadSectionIds: [...new Set([
+      ...local.legacyReadSectionIds,
+      ...cloud.legacyReadSectionIds,
+    ])],
+    readSectionIds: [...new Set([
+      ...local.legacyReadSectionIds,
+      ...cloud.legacyReadSectionIds,
+    ])],
     modulePractice: { ...local.modulePractice, ...cloud.modulePractice },
     updatedAt: cloud.updatedAt || local.updatedAt,
   };
@@ -186,6 +244,19 @@ export const useLearningMetrics = (user: User | null) => {
     });
   }, [activeStorageUserId, currentUserId, recordActivity]);
 
+  const markMacroVisited = useCallback((macroId: string) => {
+    if (!macroId || activeStorageUserId !== currentUserId) return;
+    recordActivity();
+    setMetrics((current) => {
+      if (current.visitedMacroIds.includes(macroId)) return current;
+      return {
+        ...current,
+        visitedMacroIds: [...current.visitedMacroIds, macroId],
+        updatedAt: new Date().toISOString(),
+      };
+    });
+  }, [activeStorageUserId, currentUserId, recordActivity]);
+
   const addAttempt = useCallback((attempt: LearningAttempt) => {
     if (!attempt?.id) return;
     if (activeStorageUserId !== currentUserId) return;
@@ -225,15 +296,29 @@ export const useLearningMetrics = (user: User | null) => {
     }
   }, [activeStorageUserId, currentUserId, recordActivity]);
 
-  const markSectionRead = useCallback((moduleId: string, sectionIndex: number) => {
+  const markSectionRead = useCallback((moduleId: string, sectionIndex: number, unitId?: string | null) => {
     if (activeStorageUserId !== currentUserId) return;
     const sectionId = `${moduleId}:section-${sectionIndex}`;
     recordActivity();
-    setMetrics((current) => current.readSectionIds.includes(sectionId) ? current : ({
-      ...current,
-      readSectionIds: [...current.readSectionIds, sectionId],
-      updatedAt: new Date().toISOString(),
-    }));
+    setMetrics((current) => {
+      const resolvedUnitId = unitId
+        || unitIdForSection(MODULES_DATA.find((module) => module.id === moduleId)?.sections[sectionIndex]);
+      const alreadyRead = current.legacyReadSectionIds.includes(sectionId)
+        && (!resolvedUnitId || current.readUnitIds.includes(resolvedUnitId));
+      if (alreadyRead) return current;
+      const legacyReadSectionIds = current.legacyReadSectionIds.includes(sectionId)
+        ? current.legacyReadSectionIds
+        : [...current.legacyReadSectionIds, sectionId];
+      return {
+        ...current,
+        readUnitIds: resolvedUnitId && !current.readUnitIds.includes(resolvedUnitId)
+          ? [...current.readUnitIds, resolvedUnitId]
+          : current.readUnitIds,
+        legacyReadSectionIds,
+        readSectionIds: legacyReadSectionIds,
+        updatedAt: new Date().toISOString(),
+      };
+    });
   }, [activeStorageUserId, currentUserId, recordActivity]);
 
   const recordModulePractice = useCallback((moduleId: string, correct: boolean, completed: boolean) => {
@@ -260,6 +345,7 @@ export const useLearningMetrics = (user: User | null) => {
     metrics,
     isLoadingMetrics,
     markModuleVisited,
+    markMacroVisited,
     addAttempt,
     markSectionRead,
     recordModulePractice,

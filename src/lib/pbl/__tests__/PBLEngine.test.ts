@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { PBLEngine } from '../engine/PBLEngine';
 import { PBLRepository } from '../data/PBLRepository';
+import { TransferSelector } from '../engine/TransferSelector';
 import type { CompetencyMastery, PBLCompetency, PBLCase, PBLTransferSet, PBLDiagnosticPath, QuestionCompetencyLink, QuestionPedagogy, PBLQuestionPresentation } from '../../../types/pbl';
 
 describe('PBLEngine Full Flow Integration', () => {
@@ -571,5 +572,72 @@ describe('PBLEngine Full Flow Integration', () => {
     expect(completed.status).toBe('completed');
     expect(completed.competencyOutcomes?.[mockComp.competencyId]).toBe('needs_review');
     expect(completed.reflectionEntries?.[mockComp.competencyId].decision).toBe('needs_review');
+  });
+
+  it('prefers an audited transfer item that was not exposed recently', async () => {
+    const selected = await engine.transferSelector.selectNextTransferItem(
+      mockComp.competencyId,
+      'strong_correct',
+      0,
+      undefined,
+      [],
+      true,
+      'freshness-test',
+      [mockTransferQuestion.questionRef],
+    );
+
+    expect(selected?.officialQuestionRef).toBe(mockSecondTransferQuestion.questionRef);
+    expect(selected?.validationStatus).toBe('audited');
+    expect(selected?.recentExposureFallback).not.toBe(true);
+  });
+
+  it('allows recent reuse only as unverified practice when no fresh transfer exists', async () => {
+    const selected = await engine.transferSelector.selectNextTransferItem(
+      mockComp.competencyId,
+      'strong_correct',
+      0,
+      undefined,
+      [],
+      true,
+      'reuse-test',
+      [mockTransferQuestion.questionRef, mockSecondTransferQuestion.questionRef],
+    );
+
+    expect(selected?.recentExposureFallback).toBe(true);
+    expect(selected?.validationStatus).toBe('unverified');
+  });
+
+  it('treats a different ID with the same prompt as recent exposure', async () => {
+    const duplicateRepo = new PBLRepository();
+    duplicateRepo.loadDirectly({
+      competencies: [mockComp],
+      cases: [mockCase],
+      transferSets: [mockXfer],
+      questionLinksMap: {
+        [mockTransferQuestion.questionRef]: mockLink(mockTransferQuestion.questionRef, 'transfer'),
+        [mockSecondTransferQuestion.questionRef]: mockLink(mockSecondTransferQuestion.questionRef, 'transfer'),
+      },
+      questionPresentations: {
+        [mockTransferQuestion.questionRef]: mockTransferQuestion,
+        [mockSecondTransferQuestion.questionRef]: {
+          ...mockSecondTransferQuestion,
+          prompt: mockTransferQuestion.prompt,
+        },
+      },
+    });
+
+    const selected = await new TransferSelector(duplicateRepo).selectNextTransferItem(
+      mockComp.competencyId,
+      'strong_correct',
+      0,
+      undefined,
+      [],
+      true,
+      'duplicate-prompt-test',
+      [mockTransferQuestion.questionRef],
+    );
+
+    expect(selected?.validationStatus).toBe('unverified');
+    expect(selected?.recentExposureFallback).toBe(true);
   });
 });

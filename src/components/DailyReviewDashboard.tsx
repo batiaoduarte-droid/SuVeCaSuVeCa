@@ -208,7 +208,7 @@ const statusLabel = (status: CadernoErroItem['status']) => {
     dia1: 'Dia 1',
     dia7: 'Dia 7',
     dia30: 'Dia 30',
-    dominado: 'Dominado',
+    dominado: 'Consolidado',
   };
   return labels[status];
 };

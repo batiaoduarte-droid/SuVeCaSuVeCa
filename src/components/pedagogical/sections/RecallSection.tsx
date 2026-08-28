@@ -86,9 +86,11 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
   }, [blocks]);
 
   const totalPrompts = prompts.length > 0 ? prompts.length : checklistItems.length;
-  const masteredCount = Object.values(confidenceState).filter((c) => c === 'mastered').length;
+  // `mastered` é mantido no payload v2 por compatibilidade; learner-facing ele
+  // representa apenas uma recuperação autorrelatada nesta exposição.
+  const retrievedCount = Object.values(confidenceState).filter((c) => c === 'mastered').length;
   const partialCount = Object.values(confidenceState).filter((c) => c === 'partial').length;
-  const progressPercent = totalPrompts > 0 ? Math.round((masteredCount / totalPrompts) * 100) : 0;
+  const progressPercent = totalPrompts > 0 ? Math.round((retrievedCount / totalPrompts) * 100) : 0;
 
   const otherBlocks = blocks.filter(
     (b) => b.type !== 'list' && b.type !== 'bullet_list' && b.type !== 'recall_prompt'
@@ -119,18 +121,21 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
               <p className="text-xs text-slate-600 font-medium m-0">
                 Teste sua retenção mental antes de consultar os pontos-chave
               </p>
+              <p className="mt-1 text-[11px] font-semibold text-slate-600">
+                Esta autoavaliação registra recuperação percebida; domínio, transferência e retenção só são confirmados no PBL.
+              </p>
             </div>
           </div>
 
-          {/* Medidor de Domínio */}
+          {/* Medidor de recuperação autorrelatada */}
           {totalPrompts > 0 && (
             <div className="flex items-center gap-3 bg-white border border-teal-200 px-3.5 py-2 rounded-xl shadow-2xs select-none">
               <Award className="h-4 w-4 text-teal-700 shrink-0" />
               <div className="text-right">
                 <div className="text-xs font-black text-teal-950">
-                  {masteredCount} de {totalPrompts} dominados {progressPercent > 0 ? `(${progressPercent}%)` : ''}
+                  {retrievedCount} de {totalPrompts} recuperados {progressPercent > 0 ? `(${progressPercent}%)` : ''}
                 </div>
-                <div className="w-24 bg-slate-100 rounded-full h-1.5 mt-1 overflow-hidden" role="progressbar" aria-label="Domínio na recuperação ativa" aria-valuemin={0} aria-valuemax={totalPrompts} aria-valuenow={masteredCount}>
+                <div className="w-24 bg-slate-100 rounded-full h-1.5 mt-1 overflow-hidden" role="progressbar" aria-label="Itens recuperados nesta autoavaliação" aria-valuemin={0} aria-valuemax={totalPrompts} aria-valuenow={retrievedCount}>
                   <div
                     className="bg-emerald-600 h-full rounded-full transition-all duration-300"
                     style={{ width: `${progressPercent}%` }}
@@ -148,7 +153,7 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
           {prompts.map((p, idx) => {
             const isRevealed = !!revealedMap[idx];
             const conf = confidenceState[idx] || 'none';
-            const canEvaluate = !p.keyPoints?.length || isRevealed || !!attemptedMap[idx];
+            const canEvaluate = Boolean(attemptedMap[idx]);
 
             return (
               <div
@@ -195,6 +200,16 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                       )}
                     </button>
                   )}
+                  {(!p.keyPoints || p.keyPoints.length === 0) && (
+                    <button
+                      type="button"
+                      aria-pressed={Boolean(attemptedMap[idx])}
+                      onClick={() => setAttemptedMap((current) => ({ ...current, [idx]: true }))}
+                      className="flex min-h-11 items-center rounded-lg border border-teal-200 bg-teal-50 px-3 py-2 text-xs font-bold text-teal-900 hover:bg-teal-100"
+                    >
+                      Já respondi sem consultar
+                    </button>
+                  )}
                 </div>
 
                 {isRevealed && p.keyPoints && p.keyPoints.length > 0 && (
@@ -237,7 +252,7 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                           : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                       }`}
                     >
-                      Dominado
+                      Recuperei
                     </button>
                   </div>
                 </div>
@@ -318,7 +333,7 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                         : 'bg-white text-slate-500 border-slate-200 hover:bg-emerald-50'
                     }`}
                   >
-                    Domino ✓
+                    Recuperei ✓
                   </button>
                 </div>
               </div>

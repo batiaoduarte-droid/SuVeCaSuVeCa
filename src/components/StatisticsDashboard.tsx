@@ -291,7 +291,7 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
       {
         stage: 'Dominar',
         progress: percent(masteredErrors, Math.max(errors.length, 1)),
-        detail: errors.length ? `${masteredErrors}/${errors.length} regras dominadas` : 'Sem regras dominadas',
+        detail: errors.length ? `${masteredErrors}/${errors.length} regras consolidadas no ciclo` : 'Sem regras consolidadas',
       },
     ],
     [allAnswered, allCorrect, errors.length, masteredErrors, readSections, reviewedErrors, totalModules, totalSections, visitedModules]
@@ -373,14 +373,14 @@ export const StatisticsDashboard: React.FC<StatisticsDashboardProps> = ({
         <MetricCard
           label="Regras revisadas"
           value={`${reviewedErrors}/${errors.length}`}
-          hint={errors.length ? 'Ciclo Dia 1, 7, 30 ou dominado' : 'Adicione regras ao Caderno'}
+          hint={errors.length ? 'Ciclo Dia 1, 7, 30 ou consolidado' : 'Adicione regras ao Caderno'}
           icon={BookOpenCheck}
           color="amber"
         />
         <MetricCard
-          label="Regras dominadas"
+          label="Regras consolidadas"
           value={String(masteredErrors)}
-          hint={errors.length ? `${percent(masteredErrors, errors.length)}% do Caderno` : 'Seu domínio aparece aqui'}
+          hint={errors.length ? `${percent(masteredErrors, errors.length)}% do Caderno com ciclo espaçado completo` : 'A consolidação aparecerá aqui'}
           icon={CheckCircle2}
           color="emerald"
         />

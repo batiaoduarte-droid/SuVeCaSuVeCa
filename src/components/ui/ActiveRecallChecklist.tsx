@@ -8,7 +8,7 @@ interface ActiveRecallChecklistProps {
 
 export const ActiveRecallChecklist: React.FC<ActiveRecallChecklistProps> = ({
   items,
-  unitTitle = 'Checklist de Domínio da Unidade',
+  unitTitle = 'Checklist de recuperação da unidade',
 }) => {
   const [checkedState, setCheckedState] = useState<Record<number, boolean>>({});
 
@@ -33,10 +33,14 @@ export const ActiveRecallChecklist: React.FC<ActiveRecallChecklistProps> = ({
         <div className="flex items-center gap-2 rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-900 border border-teal-200">
           <Award className="h-4 w-4 text-teal-600" />
           <span>
-            {completedCount} de {totalCount} dominados ({progressPercent}%)
+            {completedCount} de {totalCount} itens marcados ({progressPercent}%)
           </span>
         </div>
       </div>
+
+      <p className="mt-3 text-[11px] font-semibold text-slate-600">
+        Marcar um item registra apenas sua autoavaliação; não confirma domínio ou retenção.
+      </p>
 
       <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-slate-100">
         <div

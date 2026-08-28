@@ -38,6 +38,7 @@ interface PedagogicalUnitRendererProps {
   view: PedagogicalUnitView;
   onAskTutor?: (contextText: string) => void;
   onPracticeExercises?: (topic?: string) => void;
+  userId?: string;
   activeSectionId?: string | null;
   onActiveSectionChange?: (sectionId: string | null) => void;
 }
@@ -53,6 +54,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
   view,
   onAskTutor,
   onPracticeExercises,
+  userId,
   activeSectionId,
   onActiveSectionChange,
 }) => {
@@ -392,6 +394,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
           <OfficialQuestionsSection
             questions={officialQuestions}
             lessonId={unit.unitId ? unit.unitId.split('-')[1] : 'A00'}
+            userId={userId}
             onPracticeMore={onPracticeExercises}
           />
         </div>

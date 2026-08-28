@@ -2,7 +2,7 @@
 
 ## 1. Finalidade e estado deste documento
 
-Este guia descreve o comportamento publicado do fluxo **Aprender por Problemas (PBL)** da SuVeCA em 25 de agosto de 2026. Ele serve de referência comum para produto, pedagogia, curadoria de questões, desenvolvimento e homologação.
+Este guia descreve o comportamento implementado do fluxo **Aprender por Problemas (PBL)** da SuVeCA em 27 de agosto de 2026. Ele serve de referência comum para produto, pedagogia, curadoria de questões, desenvolvimento e homologação. Alterações ainda não publicadas devem ser homologadas pelos gates antes de serem chamadas de baseline publicado.
 
 O PBL não é apenas uma lista de questões. Cada sessão parte de uma competência, observa a resposta e a confiança do aluno, decide se é necessário diagnosticar ou intervir, exige aplicação em novos contextos e termina com uma decisão concreta para a próxima questão.
 
@@ -53,9 +53,9 @@ Somente atribuições explicitamente aprovadas entram no runtime. Ausência, pen
 
 ### 3.2 Evidência de transferência
 
-Acertar o caso inicial não basta para declarar domínio. O aluno precisa reaplicar a competência em questões com variação de banca, formulação, complexidade, contexto ou polaridade.
+Acertar o caso inicial não basta para declarar aprendizagem consolidada. O aluno precisa reaplicar a competência em questões com variação de banca, formulação, complexidade, contexto ou polaridade.
 
-Cada conjunto define sua taxa mínima e a sequência de acertos exigida. Em geral, o fluxo busca dois acertos consecutivos e pode usar itens adicionais, respeitando o limite do conjunto. Se o critério não for alcançado, o resultado é `needs_review`, e não um domínio artificial.
+Cada conjunto define sua taxa mínima e a sequência de acertos exigida. Em geral, o fluxo busca dois acertos consecutivos e pode usar itens adicionais, com limite operacional de quatro tentativas de transferência. Em sessão de aquisição, o sucesso produz `transfer_confirmed`: evidência de reaplicação imediata, não de retenção. `retention_confirmed` só pode ser produzido por revisão posterior. Se o critério não for alcançado, o resultado é `needs_review`.
 
 ### 3.3 Gabarito e autoria protegidos
 
@@ -94,7 +94,7 @@ Feedback diagnóstico
 
 O Dashboard apresenta as competências disponíveis, recomenda uma sessão e informa a cobertura. O aluno pode iniciar uma prática recomendada, filtrar o catálogo ou retomar uma sessão pausada.
 
-A sessão recomendada normalmente trabalha uma competência e dura de três a cinco minutos. A revisão cumulativa pode combinar até duas competências e dura aproximadamente seis a dez minutos.
+A sessão recomendada normalmente trabalha uma competência e possui orçamento de até 12 minutos de tempo ativo. A revisão cumulativa pode combinar até duas competências e possui orçamento de até 18 minutos. Atingir o orçamento encerra com segurança e encaminha evidência insuficiente para revisão; duração nunca funciona como evidência de aprendizagem.
 
 ### 4.2 Caso inicial
 
@@ -129,7 +129,9 @@ Em seguida, o aluno aplica o critério em outra questão. A nova aplicação nã
 
 O conjunto progride de contextos próximos para variações mais exigentes. Os tipos previstos incluem transferência isomórfica, próxima, caso-limite, distante e invertida.
 
-O motor encerra a transferência quando o critério de domínio é atingido ou quando o limite de tentativas demonstra que a competência deve ser revisada. Assim, finalizar a sessão e dominar a competência são resultados distintos.
+O motor encerra a transferência quando o critério de evidência imediata é atingido ou quando o limite de quatro tentativas demonstra que a competência deve ser revisada. Assim, finalizar a sessão, confirmar transferência imediata e demonstrar retenção posterior são resultados distintos.
+
+Para reduzir respostas mecânicas, o seletor consulta o histórico recente de exposição e evita tanto a mesma referência quanto enunciados equivalentes sob identificadores diferentes. Prefere itens auditados e ainda não vistos. Se a rotação não oferecer item fresco, o fallback recente fica explicitamente marcado como evidência não verificada e não deve confirmar transferência ou retenção sozinho.
 
 ### 4.6 Decisão reflexiva
 
@@ -152,7 +154,7 @@ A escolha é intencionalmente breve. Ela não pede um resumo abstrato do conteú
 O resumo registra, por competência:
 
 - resultado inicial, pós-intervenção e transferência;
-- resultado `mastered` ou `needs_review`;
+- resultado `transfer_confirmed`, `retention_confirmed` ou `needs_review`;
 - decisão reflexiva salva;
 - data recomendada para a próxima revisão.
 
@@ -171,7 +173,7 @@ Considere a competência `COMP-A00-G01-01`, que trata da relação entre letras 
 7. **Nova aplicação:** o aluno resolve outro item sem repetir a âncora e aplica o teste sonoro.
 8. **Transferência:** o conjunto pode usar, entre outras, as questões `OQ-A00-aula00.q0001` e `OQ-A00-aula00.q0002`, com variação de formulação e banca. O critério deste conjunto é nota mínima de 75% e dois acertos consecutivos.
 9. **Reflexão:** após dois acertos, a tela mostra a evidência e uma formulação pedagógica, não o código `RULE-...`. Um fechamento possível em **Consigo explicar** é: *Primeiro verificarei se as duas letras produzem um único som; depois classificarei o grupo.*
-10. **Resumo:** a competência fica dominada se os critérios forem satisfeitos. Se não forem, fica marcada para revisão, sem apagar as evidências da sessão.
+10. **Resumo:** a sessão registra transferência imediata se os critérios forem satisfeitos. A retenção só poderá ser confirmada em revisão posterior; se a evidência for insuficiente, a competência fica marcada para revisão, sem apagar o histórico.
 
 ## 6. Persistência, pausa e retomada
 
@@ -181,6 +183,7 @@ Considere a competência `COMP-A00-G01-01`, que trata da relação entre letras 
 - Ao sair, o aluno escolhe entre pausar, encerrar ou continuar estudando.
 - Uma sessão pausada aparece no Dashboard e pode ser retomada do mesmo ponto.
 - Tempos e tentativas são registrados sem duplicação cumulativa.
+- Encontros recentes com questões são registrados por finalidade para evitar reutilização contaminada em nova aplicação e transferência.
 
 ## 7. Fontes de verdade
 

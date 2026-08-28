@@ -80,7 +80,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
     0
   );
 
-  // Cálculo de XP de Nível de Mestre
+  // XP de atividade; não é projeção de mastery PBL.
   const mastery = calculateMasteryProgress({
     practiceCorrectCount,
     simuladoCorrectCount,
@@ -119,7 +119,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
               {user?.displayName || 'Seu perfil de estudos'}
             </h1>
             <p className="text-sm text-slate-600 mt-1">
-              Acompanhe seu Nível de Mestre, conquistas e equilíbrio de domínio sintático.
+              Acompanhe experiência de estudo e conquistas. Domínio e retenção são validados no PBL.
             </p>
           </div>
         </div>
@@ -167,7 +167,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
           }`}
         >
           <Trophy className="w-4 h-4 text-amber-600" />
-          Nível de Mestre & Conquistas
+          Experiência & Conquistas
         </button>
 
         <button
@@ -187,7 +187,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
       {/* Sub-Tab 1: Achievements & Ranking */}
       {activeSubTab === 'achievements' && (
         <div className="space-y-8">
-          {/* Card Central de Nível de Mestre com Recharts e Missões */}
+          {/* Card central de experiência e missões */}
           <MasteryLevelCard mastery={mastery} onNavigateToTab={onNavigateToTab} />
 
           {/* Sequências & Estatísticas Rápidas */}

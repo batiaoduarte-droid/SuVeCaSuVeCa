@@ -361,7 +361,7 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
     ]);
   });
 
-  it('should reproduce full runtime readiness after traceable authored remediation', async () => {
+  it('should expose readiness without promoting unverified transfer evidence', async () => {
     const selector = new QuestionPoolSelector(repo);
     const competencies = await repo.getAllCompetencies();
     expect(competencies).toHaveLength(190);
@@ -371,18 +371,36 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
       'COMP-A04-G08-02',
       'COMP-A04-G08-03',
     ];
+    const transferLimitedIds = new Set([
+      'COMP-A05-G03-01',
+      'COMP-A05-G03-02',
+      'COMP-A05-G03-03',
+      'COMP-A07-G05-01',
+      'COMP-A07-G05-02',
+      'COMP-A07-G05-03',
+      'COMP-A07-G06-01',
+      'COMP-A07-G06-02',
+    ]);
 
     for (const competency of competencies) {
       const readiness = await selector.evaluatePracticeReadiness(
         competency.competencyId,
         `full-audit:${competency.competencyId}`
       );
-      expect(competency.practiceCoverage?.status, competency.competencyId).toBe('ready');
-      expect(readiness.ready, `${competency.competencyId}: ${readiness.reason || ''}`).toBe(true);
-      expect(readiness.transferQuestionRefs).toHaveLength(2);
+      if (transferLimitedIds.has(competency.competencyId)) {
+        expect(competency.practiceCoverage?.status, competency.competencyId).toBe('limited');
+        expect(readiness.ready, competency.competencyId).toBe(false);
+        expect(readiness.transferQuestionRefs).toHaveLength(0);
+        expect(competency.practiceCoverage?.auditedTransferCandidates).toBe(1);
+      } else {
+        expect(competency.practiceCoverage?.status, competency.competencyId).toBe('ready');
+        expect(readiness.ready, `${competency.competencyId}: ${readiness.reason || ''}`).toBe(true);
+        expect(readiness.transferQuestionRefs).toHaveLength(2);
+      }
     }
 
-    expect(competencies.filter((item) => item.practiceCoverage?.status === 'ready')).toHaveLength(190);
+    expect(competencies.filter((item) => item.practiceCoverage?.status === 'ready')).toHaveLength(182);
+    expect(competencies.filter((item) => item.practiceCoverage?.status === 'limited')).toHaveLength(8);
     for (const competencyId of g03Ids) {
       const competency = competencies.find((item) => item.competencyId === competencyId)!;
       expect(competency.practiceCoverage?.distinctQuestions).toBe(43);

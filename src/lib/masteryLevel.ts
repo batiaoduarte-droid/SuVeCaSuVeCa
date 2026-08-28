@@ -37,7 +37,7 @@ export const MASTERY_LEVELS: MasteryLevelDefinition[] = [
     maxXp: 1499,
     badge: 'Analista',
     iconName: 'SearchCheck',
-    description: 'Domínio de verbos transitivos diretos, indiretos, pronominais e termos preposicionados.',
+    description: 'Prática consistente de verbos transitivos diretos, indiretos, pronominais e termos preposicionados.',
     unlockedBenefit: 'Treino intensivo de questões de bancas com gabarito comentado.',
   },
   {
@@ -62,13 +62,13 @@ export const MASTERY_LEVELS: MasteryLevelDefinition[] = [
   },
   {
     level: 6,
-    title: 'Mestre Supremo SuVeCA',
+    title: 'Veterano SuVeCA',
     minXp: 4000,
     maxXp: null,
-    badge: 'Mestre Supremo',
+    badge: 'Veterano',
     iconName: 'Crown',
-    description: 'Domínio absoluto da sintaxe para gabaritar Língua Portuguesa em qualquer concurso.',
-    unlockedBenefit: 'Título de Mestria Máxima e presença no topo do ranking.',
+    description: 'Maior faixa de experiência de estudo no produto; não equivale a domínio curricular.',
+    unlockedBenefit: 'Faixa máxima de experiência e presença no topo do ranking.',
   },
 ];
 
@@ -129,7 +129,7 @@ export const calculateMasteryProgress = (input: MasteryCalculationInput): Master
   const studyStreak = input.activeStudyStreak || 0;
   const bestStreak = input.bestStreak || 0;
 
-  // Pontuações por Domínio
+  // Pontuações de atividade; XP não é evidência de domínio.
   const questionsXp = practiceCorrect * 15 + simuladoCorrect * 20;
   const lessonsXp = readSections * 10 + visitedModules * 30;
   const notesXp = notesCount * 25;
@@ -160,7 +160,7 @@ export const calculateMasteryProgress = (input: MasteryCalculationInput): Master
     progressPercentInLevel = Math.min(100, Math.max(0, Math.round((xpInCurrentLevel / levelSpan) * 100)));
   }
 
-  // Gráfico de Equilíbrio de Domínio Sintático
+  // Distribuição de XP por tipo de atividade.
   const breakdown: DomainBreakdownItem[] = [
     {
       category: 'Questões',
@@ -187,7 +187,7 @@ export const calculateMasteryProgress = (input: MasteryCalculationInput): Master
       category: 'Vacinas de Erro',
       xp: errorVaccinesXp,
       count: masteredErrors,
-      unit: 'dominadas',
+      unit: 'consolidadas',
       fill: '#d97706', // amber-600
     },
     {
@@ -224,7 +224,7 @@ export const calculateMasteryProgress = (input: MasteryCalculationInput): Master
     },
     {
       id: 'mission_errors',
-      title: 'Dominar e vacinar 1 regra no Caderno de Erros',
+      title: 'Consolidar e vacinar 1 regra no Caderno de Erros',
       rewardXp: 35,
       completed: masteredErrors >= 1,
       actionText: 'Revisar erros',

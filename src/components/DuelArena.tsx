@@ -566,7 +566,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({
                   <span>Iniciar Rodada Relâmpago (3 Questões · 45s cada)</span>
                 </button>
                 <p className="text-xs text-slate-500">
-                  ⚡ Concluir a rodada computa sua sequência diária (Study Streak) e concede XP no Nível de Mestre.
+                  ⚡ Concluir a rodada computa sua sequência diária e concede XP de experiência de estudo.
                 </p>
               </div>
             </div>
@@ -882,7 +882,7 @@ export const DuelArena: React.FC<DuelArenaProps> = ({
                 <Sparkles className="w-8 h-8 text-purple-600" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-2xl font-black text-slate-900">Pares Sintáticos Dominados!</h3>
+                <h3 className="text-2xl font-black text-slate-900">Pares Sintáticos Concluídos!</h3>
                 <p className="text-xs sm:text-sm text-slate-600">
                   Você conectou todos os 4 conceitos da metodologia SuVeCA em {memoryMoves} tentativas (+40 XP).
                 </p>

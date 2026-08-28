@@ -17,6 +17,7 @@ import { TransferSelector } from './TransferSelector';
 import { MasteryUpdater } from './MasteryUpdater';
 import { NextActionPolicy } from './NextActionPolicy';
 import { QuestionPoolSelector } from './QuestionPoolSelector';
+import { getRecentQuestionEncounterRefs } from '../../questionEncounterLedger';
 
 export interface PBLReflectionSubmission {
   decision: PBLReflectionDecision;
@@ -58,17 +59,44 @@ export class PBLEngine {
       .map((attempt) => attempt.questionRef);
     const lastAttempt = session.attempts[session.attempts.length - 1];
     const poolSelector = new QuestionPoolSelector(this.repo);
-    const validationCandidate = await poolSelector.selectQuestion(
+    const recentlyExposedQuestionRefs = getRecentQuestionEncounterRefs(session.userId, {
+      excludeSessionId: session.sessionId,
+    });
+    const freshExclusions = [...new Set([
+      ...attemptedQuestionRefs,
+      ...recentlyExposedQuestionRefs,
+    ])];
+    const recentExposureFingerprints = await poolSelector.getPromptFingerprints(
+      recentlyExposedQuestionRefs
+    );
+    let validationCandidate = await poolSelector.selectQuestion(
       session.currentCompetencyRef,
       'validation',
       {
-        excludedQuestionRefs: attemptedQuestionRefs,
-        onlineOnly: true,
+          excludedQuestionRefs: freshExclusions,
+          excludedPromptFingerprints: [...recentExposureFingerprints],
+          onlineOnly: true,
         seed: session.sessionId,
       }
     );
+    let recentExposureFallback = false;
+    if (!validationCandidate && recentlyExposedQuestionRefs.length > 0) {
+      validationCandidate = await poolSelector.selectQuestion(
+        session.currentCompetencyRef,
+        'validation',
+        {
+          excludedQuestionRefs: attemptedQuestionRefs,
+          onlineOnly: true,
+          seed: `${session.sessionId}:recent-reuse`,
+        }
+      );
+      recentExposureFallback = Boolean(validationCandidate);
+    }
     const item = validationCandidate
-      ? poolSelector.toTransferItem(validationCandidate, 'isomorphic', 1)
+      ? {
+          ...poolSelector.toTransferItem(validationCandidate, 'isomorphic', 1),
+          recentExposureFallback,
+        }
       : await this.transferSelector.selectNextTransferItem(
           session.currentCompetencyRef,
           lastAttempt?.evaluation || 'error',
@@ -76,7 +104,8 @@ export class PBLEngine {
           session.masterySnapshot[session.currentCompetencyRef],
           attemptedQuestionRefs,
           true,
-          session.sessionId
+          session.sessionId,
+          recentlyExposedQuestionRefs
         );
     if (!item) throw new Error('Não há questão isomórfica publicada para a nova tentativa.');
     session.currentTransferItem = item;
@@ -297,7 +326,14 @@ export class PBLEngine {
       session.masterySnapshot[attempt.competencyRef] = updatedMastery;
     }
 
-    let nextAction = await this.nextActionPolicy.decideNextAction(session, attempt);
+    const recentlyExposedQuestionRefs = getRecentQuestionEncounterRefs(session.userId, {
+      excludeSessionId: session.sessionId,
+    });
+    let nextAction = await this.nextActionPolicy.decideNextAction(
+      session,
+      attempt,
+      recentlyExposedQuestionRefs
+    );
     if (
       attempt.stage === 'initial'
       && diagnostic?.needsProbe

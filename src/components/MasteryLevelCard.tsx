@@ -78,7 +78,7 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
     <div className="space-y-6">
       {/* Card Principal de Destaque de Nível */}
       <section
-        aria-label="Nível de Mestre Atual"
+        aria-label="Nível de experiência atual"
         className="relative overflow-hidden rounded-3xl border border-teal-200/90 bg-gradient-to-br from-teal-900 via-teal-950 to-slate-950 p-6 sm:p-8 text-white shadow-md"
       >
         {/* Glow & Pattern sutil */}
@@ -142,18 +142,18 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
         </div>
       </section>
 
-      {/* Grid: Gráfico de Domínio Sintático + Missões de XP */}
+      {/* Grid: distribuição de atividade + missões de XP */}
       <div className="grid gap-6 lg:grid-cols-12">
         {/* Distribuição de XP por pilar, legível também quando há valores zerados */}
         <section
-          aria-label="Equilíbrio de Domínio Sintático"
+          aria-label="Distribuição da experiência de estudo"
           className="lg:col-span-7 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs"
         >
           <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 pb-4">
             <div>
               <h3 className="m-0 text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
                 <Zap className="h-4.5 w-4.5 text-teal-700" />
-                Equilíbrio de Domínio Sintático
+                Distribuição da Experiência de Estudo
               </h3>
               <p className="m-0 text-xs text-slate-500 font-medium mt-0.5">
                 Compare seus pilares e descubra onde concentrar a próxima sessão.
@@ -184,7 +184,7 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
               </div>
             ) : (
               <div className="flex min-h-12 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50 px-4 text-center text-xs font-semibold text-slate-600">
-                Seu mapa de domínio aparecerá assim que você concluir a primeira atividade.
+                Seu mapa de atividades aparecerá assim que você concluir a primeira atividade.
               </div>
             )}
           </div>
@@ -325,7 +325,7 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
 
           <div className="mt-4 pt-3 border-t border-slate-100 text-center">
             <span className="text-xs text-slate-500 font-medium">
-              Conclua missões diárias para atingir o <strong>Nível 6: Mestre Supremo</strong>.
+              XP mede participação no estudo. Domínio e retenção são validados separadamente no PBL.
             </span>
           </div>
         </section>
@@ -333,17 +333,17 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
 
       {/* Jornada Completa de Níveis */}
       <section
-        aria-label="Escala de Mestria SuVeCA"
+        aria-label="Escala de experiência SuVeCA"
         className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs space-y-4"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
           <div>
             <h3 className="m-0 text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
               <Award className="h-4.5 w-4.5 text-teal-700" />
-              Escala de Mestria SuVeCA (6 Níveis)
+              Escala de Experiência SuVeCA (6 Níveis)
             </h3>
             <p className="m-0 text-xs text-slate-500 font-medium mt-0.5">
-              Sua trajetória de evolução do Aprendiz até o Mestre Supremo
+              Sua trajetória de participação, do Aprendiz ao Veterano
             </p>
           </div>
           <button

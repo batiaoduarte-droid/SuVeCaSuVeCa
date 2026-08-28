@@ -172,12 +172,12 @@ describe('PedagogicalUnitRenderer (View Model V1)', () => {
     const expandAllButton = screen.getByRole('button', { name: /expandir todas/i });
     await user.click(expandAllButton);
 
-    expect(screen.getByText(/0 de 2 dominados/i)).toBeInTheDocument();
+    expect(screen.getByText(/0 de 2 recuperados/i)).toBeInTheDocument();
 
     const check1 = screen.getByRole('button', { name: /sei calcular f = l - d/i });
     await user.click(check1);
-    await user.click(screen.getAllByRole('button', { name: /domino/i })[0]);
-    expect(screen.getByText(/1 de 2 dominados \(50%\)/i)).toBeInTheDocument();
+    await user.click(screen.getAllByRole('button', { name: /recuperei/i })[0]);
+    expect(screen.getByText(/1 de 2 recuperados \(50%\)/i)).toBeInTheDocument();
   });
 
   it('renderiza questões oficiais estruturadas com banca e ano', () => {

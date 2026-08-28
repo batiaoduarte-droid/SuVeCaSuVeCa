@@ -7,7 +7,7 @@ import {
   computeExamBoardStats,
   generateRecoverySimulado,
   computeWeeklyGoalProgress,
-  computeModuleDomain360,
+  computeModuleStudyProgress,
   computeRetentionCurveEstimate,
   CANONICAL_BANK_TRAPS,
   SYNTAX_MATCH_PAIRS,
@@ -202,7 +202,7 @@ describe('learnerIntelligence', () => {
     expect(progress.isGoalMet).toBe(false);
   });
 
-  it('computes 360 domain score combining theory, practice and notebook errors', () => {
+  it('computes study readiness without inferring mastery from exposure', () => {
     const mockModules = [
       { id: 'mod01', num: 1, title: 'Aula 01 - Ortografia', sections: [{}, {}, {}, {}] },
       { id: 'mod02', num: 2, title: 'Aula 02 - Morfossintaxe', sections: [{}, {}] },
@@ -220,20 +220,36 @@ describe('learnerIntelligence', () => {
       },
     ];
 
-    const domain360 = computeModuleDomain360(
+    const studyProgress = computeModuleStudyProgress(
       mockModules,
       mockErrors,
       ['mod01:sec1', 'mod01:sec2'],
       { mod01: { answered: 10, correct: 9 } }
     );
 
-    expect(domain360).toHaveLength(2);
-    expect(domain360[0].moduleId).toBe('mod01');
-    expect(domain360[0].theoryReadCount).toBe(2);
-    expect(domain360[0].theoryProgressPct).toBe(50);
-    expect(domain360[0].practiceProgressPct).toBe(90);
-    expect(domain360[0].pendingErrorsCount).toBe(1);
-    expect(domain360[0].overallScore).toBeGreaterThan(0);
+    expect(studyProgress).toHaveLength(2);
+    expect(studyProgress[0].moduleId).toBe('mod01');
+    expect(studyProgress[0].theoryReadCount).toBe(2);
+    expect(studyProgress[0].theoryProgressPct).toBe(50);
+    expect(studyProgress[0].practiceAccuracyPct).toBe(90);
+    expect(studyProgress[0].practiceEvidenceWeight).toBe(1);
+    expect(studyProgress[0].pendingErrorsCount).toBe(1);
+    expect(studyProgress[0].studyProgressScore).toBeGreaterThan(0);
+    expect(studyProgress[0].status).not.toBe('dominado');
+  });
+
+  it('does not treat one correct answer plus full reading as mastery or validation readiness', () => {
+    const [studyProgress] = computeModuleStudyProgress(
+      [{ id: 'mod01', num: 1, title: 'Aula 01', sections: [{}, {}] }],
+      [],
+      ['mod01:sec1', 'mod01:sec2'],
+      { mod01: { answered: 1, correct: 1 } },
+    );
+
+    expect(studyProgress.practiceAccuracyPct).toBe(100);
+    expect(studyProgress.practiceEvidenceWeight).toBe(0.2);
+    expect(studyProgress.studyProgressScore).toBe(60);
+    expect(studyProgress.status).toBe('em_desenvolvimento');
   });
 
   it('computes retention curve estimate with decay projection and tactical advice', () => {

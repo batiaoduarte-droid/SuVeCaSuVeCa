@@ -748,10 +748,10 @@ export function computeWeeklyGoalProgress(
 }
 
 // -----------------------------------------------------------------------------
-// 8. MAPA DE DOMÍNIO 360° DO EDITAL
+// 8. MAPA DE PROGRESSO DE ESTUDO DO EDITAL
 // -----------------------------------------------------------------------------
 
-export interface ModuleDomain360Score {
+export interface ModuleStudyProgressScore {
   moduleId: string;
   moduleNum: number;
   title: string;
@@ -760,19 +760,25 @@ export interface ModuleDomain360Score {
   theoryProgressPct: number;
   practiceCorrectCount: number;
   practiceTotalCount: number;
-  practiceProgressPct: number;
+  practiceAccuracyPct: number;
+  practiceEvidenceWeight: number;
   pendingErrorsCount: number;
   masteredErrorsCount: number;
-  overallScore: number;
-  status: 'dominado' | 'em_desenvolvimento' | 'alerta_erros' | 'inicial' | 'nao_iniciado';
+  studyProgressScore: number;
+  status: 'pronto_para_validacao' | 'em_desenvolvimento' | 'alerta_erros' | 'inicial' | 'nao_iniciado';
 }
 
-export function computeModuleDomain360(
+/**
+ * Resume exposição e prática genérica para orientar o estudo. Este indicador
+ * não infere aquisição, transferência, retenção nem domínio; essas decisões
+ * pertencem ao mastery PBL por competência.
+ */
+export function computeModuleStudyProgress(
   modules: Array<{ id: string; num: string | number; title: string; sections: Array<unknown> }>,
   errors: CadernoErroItem[],
   readSectionIds: string[] = [],
   practiceData: Record<string, { answered: number; correct: number }> = {}
-): ModuleDomain360Score[] {
+): ModuleStudyProgressScore[] {
   return modules.map((m) => {
     const totalSections = Math.max(1, m.sections.length);
     const readCount = readSectionIds.filter((id) => id.startsWith(`${m.id}:`)).length;
@@ -781,7 +787,11 @@ export function computeModuleDomain360(
     const practice = practiceData[m.id] || { answered: 0, correct: 0 };
     const practiceTotal = practice.answered;
     const practiceCorrect = practice.correct;
-    const practiceProgressPct = practiceTotal > 0 ? Math.round((practiceCorrect / practiceTotal) * 100) : 0;
+    const practiceAccuracyPct = practiceTotal > 0 ? Math.round((practiceCorrect / practiceTotal) * 100) : 0;
+    // Uma única resposta correta não pode valer como evidência tão forte quanto
+    // uma pequena série. Cinco respostas apenas estabilizam o indicador de
+    // prontidão; ainda não o transformam em mastery.
+    const practiceEvidenceWeight = Math.min(1, practiceTotal / 5);
 
     // Erros vinculados ao módulo
     const moduleErrors = errors.filter(
@@ -790,19 +800,16 @@ export function computeModuleDomain360(
     const pendingErrorsCount = moduleErrors.filter((e) => e.status !== 'dominado').length;
     const masteredErrorsCount = moduleErrors.filter((e) => e.status === 'dominado').length;
 
-    // Cálculo ponderado: 40% Leitura + 40% Prática + 20% Ausência de erros pendentes
-    let score = Math.round(theoryProgressPct * 0.4 + practiceProgressPct * 0.4);
-    if (pendingErrorsCount > 0) {
-      score = Math.max(0, score - pendingErrorsCount * 10);
-    } else if (masteredErrorsCount > 0) {
-      score = Math.min(100, score + 20);
-    }
+    // Ausência de erro registrado não é evidência positiva. O score representa
+    // somente progresso/prontidão e pondera a acurácia pelo tamanho da amostra.
+    const weightedPracticePct = practiceAccuracyPct * practiceEvidenceWeight;
+    const score = Math.round(theoryProgressPct * 0.5 + weightedPracticePct * 0.5);
 
-    let status: ModuleDomain360Score['status'] = 'nao_iniciado';
+    let status: ModuleStudyProgressScore['status'] = 'nao_iniciado';
     if (pendingErrorsCount >= 2) {
       status = 'alerta_erros';
-    } else if (score >= 85) {
-      status = 'dominado';
+    } else if (score >= 85 && practiceTotal >= 5) {
+      status = 'pronto_para_validacao';
     } else if (score >= 45) {
       status = 'em_desenvolvimento';
     } else if (score > 0 || readCount > 0) {
@@ -818,10 +825,11 @@ export function computeModuleDomain360(
       theoryProgressPct,
       practiceCorrectCount: practiceCorrect,
       practiceTotalCount: practiceTotal,
-      practiceProgressPct,
+      practiceAccuracyPct,
+      practiceEvidenceWeight,
       pendingErrorsCount,
       masteredErrorsCount,
-      overallScore: score,
+      studyProgressScore: score,
       status,
     };
   });

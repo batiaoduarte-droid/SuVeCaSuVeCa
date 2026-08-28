@@ -21,7 +21,7 @@ import { ProgressBar } from './ui/ProgressBar';
 import { MODULES_DATA } from '../data/modulesData';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import { getLessonName } from '../data/lessonCatalog';
-import { computeModuleDomain360 } from '../lib/learnerIntelligence';
+import { computeModuleStudyProgress } from '../lib/learnerIntelligence';
 
 interface StudyPlannerProps {
   errors?: CadernoErroItem[];
@@ -65,8 +65,8 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
   const tabListRef = useRef<HTMLDivElement>(null);
   const [tabScroll, setTabScroll] = useState({ left: false, right: true });
 
-  const domain360Data = useMemo(
-    () => computeModuleDomain360(MODULES_DATA, errors, readSectionIds, modulePractice),
+  const studyProgressData = useMemo(
+    () => computeModuleStudyProgress(MODULES_DATA, errors, readSectionIds, modulePractice),
     [errors, readSectionIds, modulePractice]
   );
 
@@ -111,8 +111,8 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
     localStorage.setItem(CHECKLIST_STORAGE_KEY, JSON.stringify(updated));
   };
 
-  const masteredCount = checklist.filter((c) => c.status === 'dominado').length;
-  const progressPct = Math.round((masteredCount / checklist.length) * 100);
+  const selfReviewedCount = checklist.filter((c) => c.status === 'dominado').length;
+  const checklistProgressPct = Math.round((selfReviewedCount / checklist.length) * 100);
 
   return (
     <div className="tool-content-shell space-y-8 pb-16">
@@ -124,19 +124,19 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
             <span>Gestão Estratégica do Edital</span>
           </div>
           <div className="text-xs font-bold text-slate-800 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
-            {masteredCount} de {checklist.length} Tópicos Dominados ({progressPct}%)
+            {selfReviewedCount} de {checklist.length} tópicos marcados como revisados ({checklistProgressPct}%)
           </div>
         </div>
 
         <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-          Planejamento & Domínio 360° do Edital
+          Planejamento e progresso do edital
         </h1>
         <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
-          Monitore seu domínio real em cada módulo (Teoria + Prática + Blindagem de Erros) e acompanhe a trilha estratégica de aprovação.
+          Acompanhe leitura, prática e erros pendentes. Domínio, transferência e retenção são confirmados somente pelas evidências do ciclo PBL.
         </p>
 
         {/* Progress Bar */}
-        <ProgressBar value={progressPct} showPercent={false} size="md" ariaLabel={`${progressPct}% dos tópicos do edital dominados`} />
+        <ProgressBar value={checklistProgressPct} showPercent={false} size="md" ariaLabel={`${checklistProgressPct}% dos tópicos marcados como revisados`} />
       </header>
 
       {/* Tabs */}
@@ -155,7 +155,7 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
           }`}
         >
           <Globe className="w-3.5 h-3.5 text-teal-700" />
-          <span>Domínio 360° do Edital</span>
+          <span>Progresso de estudo</span>
         </button>
         <button
           type="button"
@@ -206,16 +206,16 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
             <div>
               <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
                 <Globe className="w-5 h-5 text-teal-700" />
-                <span>Matriz de Domínio 360° por Módulo Curricular</span>
+                <span>Matriz de progresso por módulo curricular</span>
               </h2>
               <p className="text-xs text-slate-500 mt-1">
-                Score composto ponderado: 40% Leitura Teórica + 40% Resolução de Questões + 20% Blindagem contra Erros do Caderno.
+                Indicador de prontidão: leitura e acurácia ponderada por pelo menos cinco respostas. Ele não concede domínio.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {domain360Data.map((item) => {
+            {studyProgressData.map((item) => {
               let statusBadge = (
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">
                   Não Iniciado
@@ -229,11 +229,11 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
                     {item.pendingErrorsCount} {item.pendingErrorsCount === 1 ? 'erro pendente' : 'erros pendentes'}
                   </span>
                 );
-              } else if (item.status === 'dominado') {
+              } else if (item.status === 'pronto_para_validacao') {
                 statusBadge = (
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center gap-1">
                     <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                    Dominado
+                    Pronto para validar no PBL
                   </span>
                 );
               } else if (item.status === 'em_desenvolvimento') {
@@ -267,17 +267,17 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
                       {item.title}
                     </h3>
 
-                    {/* Barra de Score Geral 360 */}
+                    {/* Indicador de prontidão, sem inferência de domínio */}
                     <div className="space-y-1">
                       <div className="flex justify-between text-[11px]">
-                        <span className="text-slate-500 font-semibold">Índice de Domínio 360°</span>
-                        <span className="font-mono font-black text-slate-900">{item.overallScore}%</span>
+                        <span className="text-slate-500 font-semibold">Progresso para validação</span>
+                        <span className="font-mono font-black text-slate-900">{item.studyProgressScore}%</span>
                       </div>
                       <ProgressBar
-                        value={item.overallScore}
+                        value={item.studyProgressScore}
                         showPercent={false}
                         size="sm"
-                        color={item.overallScore >= 80 ? 'emerald' : item.overallScore >= 45 ? 'amber' : 'teal'}
+                        color={item.studyProgressScore >= 80 ? 'emerald' : item.studyProgressScore >= 45 ? 'amber' : 'teal'}
                       />
                     </div>
 
@@ -338,7 +338,7 @@ export const StudyPlanner: React.FC<StudyPlannerProps> = ({
                     { id: 'nao_iniciado', label: 'Não Iniciado', color: 'bg-slate-100 text-slate-600' },
                     { id: 'em_estudo', label: 'Em Estudo', color: 'bg-amber-50 text-amber-800 border-amber-200' },
                     { id: 'revisar', label: 'Revisar', color: 'bg-purple-50 text-purple-800 border-purple-200' },
-                    { id: 'dominado', label: 'Dominado!', color: 'bg-emerald-50 text-emerald-800 border-emerald-200 font-bold' },
+                    { id: 'dominado', label: 'Revisado por mim', color: 'bg-emerald-50 text-emerald-800 border-emerald-200 font-bold' },
                   ].map((st) => (
                     <button
                       key={st.id}
