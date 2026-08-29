@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { containsRichEmphasis, requiresIdentifiedContext, requiresVisualEmphasis } from './questionPresentationSafety';
+import {
+  containsRichEmphasis,
+  hasSourceBackedVisualPresentation,
+  requiresIdentifiedContext,
+  requiresVisualEmphasis,
+} from './questionPresentationSafety';
 
 describe('question presentation safety', () => {
   it('recognizes identified external context', () => {
@@ -12,5 +17,12 @@ describe('question presentation safety', () => {
     expect(requiresVisualEmphasis('A respeito das palavras destacadas, assinale.')).toBe(true);
     expect(containsRichEmphasis('Faz parte do **processo** de **amadurecimento**.')).toBe(true);
     expect(containsRichEmphasis('Faz parte do processo de amadurecimento.')).toBe(false);
+  });
+
+  it('accepts an original source image as the recovered visual reference', () => {
+    expect(hasSourceBackedVisualPresentation({
+      media: [{ url: '/knowledge/question-assets/charge.png' }],
+    })).toBe(true);
+    expect(hasSourceBackedVisualPresentation({ media: [] })).toBe(false);
   });
 });

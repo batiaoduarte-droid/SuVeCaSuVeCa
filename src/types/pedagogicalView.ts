@@ -253,30 +253,75 @@ export interface CodeBlock {
 export interface DiagramBlock {
   type: 'diagram';
   title?: string;
-  diagramType: 'tree' | 'flow' | 'classification' | 'relationship' | 'connection_map';
+  diagramType: 'tree' | 'flow' | 'classification' | 'relationship' | 'connection_map' | DiagramVisualType;
   text?: string;
   structure?: DiagramStructure;
   nodes?: ConnectionMapNode[];
   edges?: ConnectionMapEdge[];
+  variant?: 'standalone' | 'embedded';
+  sectionRole?: 'overview' | 'step_detail' | 'standalone';
 }
 
-export type DiagramStructureKind = 'sequence' | 'branches' | 'relations' | 'source_segments';
+export type DiagramVisualType =
+  | 'sequence'
+  | 'decision_flow'
+  | 'branches'
+  | 'comparison'
+  | 'taxonomy'
+  | 'relations';
 
-export interface DiagramStructureItem {
+export type DiagramNodeKind =
+  | 'start'
+  | 'process'
+  | 'decision'
+  | 'category'
+  | 'rule'
+  | 'example'
+  | 'result'
+  | 'formula';
+
+export interface DiagramStructureNode {
   id: string;
+  kind: DiagramNodeKind;
   label: string;
   details?: string[];
+  groupId?: string;
+}
+
+export interface DiagramStructureEdge {
+  from: string;
+  to: string;
+  label?: string;
+}
+
+export interface DiagramStructureGroup {
+  id: string;
+  label: string;
+  order: number;
 }
 
 /**
- * Projeção editorial explícita de um desenho textual legado.
- * `sourceText` permanece no bloco `diagram.text`; esta estrutura apenas declara
- * como apresentar as relações já presentes na fonte, sem reinterpretá-las no UI.
+ * Projeção topológica explícita de um desenho legado ou de autoria nativa.
+ * O texto literal permanece em `diagram.text`; o frontend consome somente este
+ * grafo auditado e nunca tenta reconstruir relações por regex.
  */
 export interface DiagramStructure {
-  kind: DiagramStructureKind;
-  rootLabel?: string;
-  items: DiagramStructureItem[];
+  schemaVersion: '2.0.0' | '2.1.0';
+  visualType: DiagramVisualType;
+  layout: 'vertical' | 'horizontal' | 'grid' | 'responsive';
+  rootId?: string;
+  /** Leitura textual derivada do AST; nunca substitui o texto-fonte literal. */
+  structuredText?: string;
+  groups?: DiagramStructureGroup[];
+  nodes: DiagramStructureNode[];
+  edges: DiagramStructureEdge[];
+  provenance: {
+    sourceFormat: 'ascii' | 'mermaid' | 'native_ast';
+    classificationMethod: 'semantic_review' | 'explicit_authoring' | 'deterministic_projection';
+    reviewStatus: 'reviewed' | 'source_backed';
+    confidence: number;
+  };
+  mermaidSource?: string;
 }
 
 export interface EntityRelationTarget {

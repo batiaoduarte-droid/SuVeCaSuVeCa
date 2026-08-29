@@ -3,6 +3,7 @@ import type { QuestionPresentation } from '../types/questionPresentation';
 export interface NormalizedQuestion {
   id: string;
   originalQuestionId: string;
+  officialQuestionAliases?: string[];
   prompt: string;
   supportText?: string;
   presentation?: QuestionPresentation;
@@ -26,6 +27,7 @@ const shardCache = new Map<string, Promise<Record<string, NormalizedQuestion>>>(
 const resolvedShardCache = new Map<string, Record<string, NormalizedQuestion>>();
 const lessonShardCache = new Map<string, string[]>();
 let manifestPromise: Promise<OfficialQuestionsManifest | null> | null = null;
+let presentationFallbackPromise: Promise<Record<string, NormalizedQuestion>> | null = null;
 
 const LESSON_PARTS_MAP: Record<string, string[]> = {
   A00: ['001'],
@@ -60,6 +62,23 @@ const fetchManifest = (): Promise<OfficialQuestionsManifest | null> => {
   return manifestPromise;
 };
 
+const fetchPresentationFallbacks = (): Promise<Record<string, NormalizedQuestion>> => {
+  if (presentationFallbackPromise) return presentationFallbackPromise;
+  presentationFallbackPromise = (async () => {
+    try {
+      const response = await fetch('/knowledge/official-question-presentation-fallbacks.json', {
+        headers: { Accept: 'application/json' },
+      });
+      if (!response.ok) return {};
+      const payload = await response.json() as { presentations?: Record<string, NormalizedQuestion> };
+      return payload.presentations || {};
+    } catch {
+      return {};
+    }
+  })();
+  return presentationFallbackPromise;
+};
+
 const resolveNormalizedShardFiles = async (lessonCode: string): Promise<string[]> => {
   if (lessonShardCache.has(lessonCode)) return lessonShardCache.get(lessonCode)!;
   const manifest = await fetchManifest();
@@ -87,6 +106,14 @@ const addQuestionAliases = (
 ) => {
   if (item.originalQuestionId) {
     map[item.originalQuestionId] = item;
+  }
+  for (const alias of item.officialQuestionAliases || []) {
+    map[alias] = item;
+    const parsed = parsePBLQuestionRef(alias);
+    if (parsed) {
+      map[parsed.sourceId] = item;
+      map[`${parsed.lessonId}:${parsed.sourceId}`] = item;
+    }
   }
   if (!item.id) return;
   map[item.id] = item;
@@ -190,8 +217,29 @@ export const fetchNormalizedQuestionsByRefs = async (
     .map((shard) => shard.normalized?.file)
     .filter((file): file is string => Boolean(file));
 
-  if (shardFiles.length === 0) return {};
-  return mergeShards([...new Set(shardFiles)], signal);
+  const resolvedFiles = shardFiles.length === 0
+    ? await resolveNormalizedShardFiles(code)
+    : [...new Set(shardFiles)];
+  const combined = await mergeShards(resolvedFiles, signal);
+  const unresolvedRefs = questionRefs.filter((questionRef) => {
+    const canonical = canonicalQuestionRef(questionRef, code);
+    return !combined[questionRef] && !combined[canonical];
+  });
+  if (unresolvedRefs.length === 0) return combined;
+  const fallbacks = await fetchPresentationFallbacks();
+  for (const questionRef of unresolvedRefs) {
+    const canonical = canonicalQuestionRef(questionRef, code);
+    const alreadyResolved = combined[questionRef] || combined[canonical];
+    if (alreadyResolved) continue;
+    const parsed = parsePBLQuestionRef(questionRef);
+    const fallback = fallbacks[questionRef]
+      || (parsed ? fallbacks[`OQ-${parsed.lessonId}-${parsed.sourceId}`] : undefined);
+    if (!fallback) continue;
+    addQuestionAliases(combined, fallback);
+    combined[questionRef] = fallback;
+    combined[canonical] = fallback;
+  }
+  return combined;
 };
 
 export const parsePBLQuestionRef = (questionRef: string): { lessonId: string; sourceId: string } | null => {

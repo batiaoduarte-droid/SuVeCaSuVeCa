@@ -1448,8 +1448,181 @@
           "procedureId": "PROC-A04-G08-VERBOS-EAR-IAR-DEFECTIVOS-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[Início: Questão de Flexão Verbal ou Preenchimento de Lacuna] │ ▼ Identificar a Categoria do Verbo │ ┌────────────────────┼────────────────────┬────────────────────┐ ▼ ▼ ▼ ▼ Terminado em -EAR Terminado em -IAR Grupo MARIO Defectivo / Especial (ex: recear, frear) (ex: maquiar, premiar)(ex: mediar, ansiar) (reaver, precaver-se) │ │ │ │ ▼ ▼ ▼ ▼ Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: PASSEAR CRIAR ODIAR HAVER ou BEBER │ │ │ │ └────────────────────┴─────────┬──────────┴────────────────────┘ │ ▼ Inserir a Palavra-Gatilho de Tempo/Modo: • Presente do Indicativo ➔ \"Hoje\" • Presente do Subjuntivo ➔ \"Que\" • Pretérito Perfeito ➔ \"Ontem\" • Pretérito Imperfeito Subj. ➔ \"Se\" │ ▼ Conjugar o Verbo Líder na Estrutura Obtida (Exemplo: \"Que nós [odiar]\" ➔ \"Que nós odiemos\") │ ▼ Transportar a Terminação Exata para o Verbo-Alvo (Resultado: \"Que nós mediemos\")"
+              "type": "diagram",
+              "diagramType": "branches",
+              "title": "Método de Substituição Direta pelo Verbo Líder",
+              "text": "[Início: Questão de Flexão Verbal ou Preenchimento de Lacuna] │ ▼ Identificar a Categoria do Verbo │ ┌────────────────────┼────────────────────┬────────────────────┐ ▼ ▼ ▼ ▼ Terminado em -EAR Terminado em -IAR Grupo MARIO Defectivo / Especial (ex: recear, frear) (ex: maquiar, premiar)(ex: mediar, ansiar) (reaver, precaver-se) │ │ │ │ ▼ ▼ ▼ ▼ Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: Adotar LÍDER: PASSEAR CRIAR ODIAR HAVER ou BEBER │ │ │ │ └────────────────────┴─────────┬──────────┴────────────────────┘ │ ▼ Inserir a Palavra-Gatilho de Tempo/Modo: • Presente do Indicativo ➔ \"Hoje\" • Presente do Subjuntivo ➔ \"Que\" • Pretérito Perfeito ➔ \"Ontem\" • Pretérito Imperfeito Subj. ➔ \"Se\" │ ▼ Conjugar o Verbo Líder na Estrutura Obtida (Exemplo: \"Que nós [odiar]\" ➔ \"Que nós odiemos\") │ ▼ Transportar a Terminação Exata para o Verbo-Alvo (Resultado: \"Que nós mediemos\")",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-flexao-verbal",
+                "groups": [
+                  {
+                    "id": "g-identificacao-categoria",
+                    "label": "Etapa 1: Identificação da Categoria Verbal",
+                    "order": 1
+                  },
+                  {
+                    "id": "g-aplicacao-lider",
+                    "label": "Etapa 2: Aplicação do Líder e Desinência",
+                    "order": 2
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-flexao-verbal",
+                    "kind": "start",
+                    "label": "Início: Questão de Flexão Verbal ou Lacuna",
+                    "details": [
+                      "Identificar o verbo-alvo no enunciado da questão e reconhecer sua terminação ou irregularidade."
+                    ],
+                    "groupId": "g-identificacao-categoria"
+                  },
+                  {
+                    "id": "decisao-categoria-verbo",
+                    "kind": "decision",
+                    "label": "Identificar a Categoria Morfológica do Verbo",
+                    "details": [
+                      "Classificar o verbo em: Terminado em -EAR, -IAR regular, Grupo MARIO ou Defectivo/Especial."
+                    ],
+                    "groupId": "g-identificacao-categoria"
+                  },
+                  {
+                    "id": "categoria-ear",
+                    "kind": "category",
+                    "label": "Terminados em -EAR (ex.: recear, frear, passear)",
+                    "details": [
+                      "Recebem o ditongo -EI- nas formas rizotônicas (eu receio, que eles freiem).",
+                      "Adotar Verbo Líder Universal: PASSEAR."
+                    ],
+                    "groupId": "g-identificacao-categoria"
+                  },
+                  {
+                    "id": "categoria-iar-regular",
+                    "kind": "category",
+                    "label": "Terminados em -IAR Regulares (ex.: maquiar, premiar, criar)",
+                    "details": [
+                      "Mantêm o 'i' puro e conjugação regular sem acréscimo de 'e'.",
+                      "Adotar Verbo Líder Universal: CRIAR."
+                    ],
+                    "groupId": "g-identificacao-categoria"
+                  },
+                  {
+                    "id": "categoria-mario",
+                    "kind": "category",
+                    "label": "Grupo MARIO (Mediar, Ansiar, Remediar, Incendiar, Odiar)",
+                    "details": [
+                      "Conjugam-se obrigatoriamente como os verbos em -EAR, gerando ditongo -EI- nas formas rizotônicas.",
+                      "Adotar Verbo Líder Universal: ODIAR."
+                    ],
+                    "groupId": "g-identificacao-categoria"
+                  },
+                  {
+                    "id": "categoria-defectivo",
+                    "kind": "category",
+                    "label": "Defectivos / Especiais (ex.: reaver, precaver-se)",
+                    "details": [
+                      "Não possuem todas as formas na conjugação.",
+                      "Reaver conjuga como HAVER onde há 'v' (nós havemos -> reavemos); precaver conjuga como BEBER onde há 'v'.",
+                      "Adotar Verbos Líderes: HAVER ou BEBER."
+                    ],
+                    "groupId": "g-identificacao-categoria"
+                  },
+                  {
+                    "id": "inserir-gatilho-temporal",
+                    "kind": "process",
+                    "label": "Inserir a Palavra-Gatilho de Tempo/Modo",
+                    "details": [
+                      "Presente do Indicativo ➔ 'Hoje' (ex.: Hoje eu passeio / odeio)",
+                      "Presente do Subjuntivo ➔ 'Que' (ex.: Que ele passeie / odeie)",
+                      "Pretérito Perfeito ➔ 'Ontem' (ex.: Ontem nós passeamos / odiamos)",
+                      "Pretérito Imperfeito do Subjuntivo ➔ 'Se' (ex.: Se nós passeássemos / odiássemos)"
+                    ],
+                    "groupId": "g-aplicacao-lider"
+                  },
+                  {
+                    "id": "conjugar-verbo-lider",
+                    "kind": "process",
+                    "label": "Conjugar o Verbo Líder na Estrutura Obtida",
+                    "details": [
+                      "Exemplo com MARIO: 'Que nós [odiar]' ➔ 'Que nós odiemos'."
+                    ],
+                    "groupId": "g-aplicacao-lider"
+                  },
+                  {
+                    "id": "transportar-terminacao-alvo",
+                    "kind": "result",
+                    "label": "Transportar a Terminação Exata para o Verbo-Alvo",
+                    "details": [
+                      "Transpor o sufixo flexionado do líder para o radical do verbo solicitado.",
+                      "Resultado: 'Que nós mediemos' (e nunca *medeemos*)."
+                    ],
+                    "groupId": "g-aplicacao-lider"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-flexao-verbal",
+                    "to": "decisao-categoria-verbo"
+                  },
+                  {
+                    "from": "decisao-categoria-verbo",
+                    "to": "categoria-ear",
+                    "label": "Terminação -EAR"
+                  },
+                  {
+                    "from": "decisao-categoria-verbo",
+                    "to": "categoria-iar-regular",
+                    "label": "Terminação -IAR regular"
+                  },
+                  {
+                    "from": "decisao-categoria-verbo",
+                    "to": "categoria-mario",
+                    "label": "Acrônimo MARIO"
+                  },
+                  {
+                    "from": "decisao-categoria-verbo",
+                    "to": "categoria-defectivo",
+                    "label": "Defectivo / Especial"
+                  },
+                  {
+                    "from": "categoria-ear",
+                    "to": "inserir-gatilho-temporal"
+                  },
+                  {
+                    "from": "categoria-iar-regular",
+                    "to": "inserir-gatilho-temporal"
+                  },
+                  {
+                    "from": "categoria-mario",
+                    "to": "inserir-gatilho-temporal"
+                  },
+                  {
+                    "from": "categoria-defectivo",
+                    "to": "inserir-gatilho-temporal"
+                  },
+                  {
+                    "from": "inserir-gatilho-temporal",
+                    "to": "conjugar-verbo-lider"
+                  },
+                  {
+                    "from": "conjugar-verbo-lider",
+                    "to": "transportar-terminacao-alvo"
+                  }
+                ],
+                "structuredText": "### Método de Substituição Direta pelo Verbo Líder\n\n1. **Início:** Ao deparar-se com questão de flexão verbal ou preenchimento de lacuna, identifique a categoria morfológica do verbo-alvo.\n2. **Categorização e Seleção do Líder:**\n   - **Terminados em -EAR:** Adotar LÍDER **PASSEAR** (ex.: recear, frear).\n   - **Terminados em -IAR regulares:** Adotar LÍDER **CRIAR** (ex.: maquiar, premiar).\n   - **Grupo MARIO (Mediar, Ansiar, Remediar, Incendiar, Odiar):** Adotar LÍDER **ODIAR**.\n   - **Defectivos / Especiais (reaver, precaver-se):** Adotar LÍDER **HAVER** ou **BEBER**.\n3. **Inserção do Gatilho Temporal:** Apoiar-se nas palavras-âncora de tempo/modo:\n   - Presente do Indicativo ➔ 'Hoje'\n   - Presente do Subjuntivo ➔ 'Que'\n   - Pretérito Perfeito ➔ 'Ontem'\n   - Pretérito Imperfeito do Subjuntivo ➔ 'Se'\n4. **Conjugação do Líder:** Conjugar o verbo líder com o gatilho (ex.: 'Que nós odiemos').\n5. **Transporte Final:** Transportar a terminação exata para o verbo-alvo (ex.: 'Que nós mediemos').",
+                "mermaidSource": "flowchart TD\n    inicio-flexao-verbal[\"Início: Questão de Flexão Verbal ou Lacuna\"] --> decisao-categoria-verbo{\"Identificar Categoria do Verbo\"}\n    decisao-categoria-verbo -- \"Terminação -EAR\" --> categoria-ear[\"Terminados em -EAR<br>Líder: PASSEAR\"]\n    decisao-categoria-verbo -- \"Terminação -IAR regular\" --> categoria-iar-regular[\"Terminados em -IAR regular<br>Líder: CRIAR\"]\n    decisao-categoria-verbo -- \"Acrônimo MARIO\" --> categoria-mario[\"Grupo MARIO<br>Líder: ODIAR\"]\n    decisao-categoria-verbo -- \"Defectivo / Especial\" --> categoria-defectivo[\"Defectivos / Especiais<br>Líder: HAVER ou BEBER\"]\n    categoria-ear --> inserir-gatilho-temporal[\"Inserir Palavra-Gatilho de Tempo/Modo\"]\n    categoria-iar-regular --> inserir-gatilho-temporal\n    categoria-mario --> inserir-gatilho-temporal\n    categoria-defectivo --> inserir-gatilho-temporal\n    inserir-gatilho-temporal --> conjugar-verbo-lider[\"Conjugar Verbo Líder com Gatilho\"]\n    conjugar-verbo-lider --> transportar-terminacao-alvo[\"Transportar Terminação para Verbo-Alvo\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             }
           ],
           "presentation": {
@@ -1460,8 +1633,8 @@
               "EXP-IP-A04-G08-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

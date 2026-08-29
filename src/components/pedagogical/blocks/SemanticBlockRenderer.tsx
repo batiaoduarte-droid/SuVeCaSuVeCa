@@ -1038,12 +1038,13 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({
       );
 
     case 'diagram':
-      if (block.structure?.items?.length) {
+      if (block.structure?.nodes?.length) {
         return (
           <StructuredDiagram
             title={block.title}
             source={block.text}
             structure={block.structure}
+            variant={block.variant || 'standalone'}
           />
         );
       }

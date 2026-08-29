@@ -209,25 +209,89 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "relations",
               "title": "A Mecânica de Concordância e Referenciação dos Pronomes Possessivos",
               "text": "[João] (Masculino Singular ── REFERENTE / POSSUIDOR) │ │ (aponta para) ▼ \"sua\" (Feminino Singular ── CONCORDA COM) ──► [mãe] (Feminino Singular)",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "relations",
+                "layout": "responsive",
+                "rootId": "pronome-possessivo-nucleo",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "[João] (Masculino Singular ── REFERENTE / POSSUIDOR)"
+                    "id": "possuidor-referente-joao",
+                    "kind": "category",
+                    "label": "Possuidor / Referente ([João])",
+                    "details": [
+                      "Propriedades: Masculino Singular / 3ª pessoa do discurso",
+                      "Papel semântico: Determina a pessoa gramatical e a relação de posse ('dele')",
+                      "Vínculo: A referência semântica aponta para o possuidor"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "(aponta para)"
+                    "id": "pronome-possessivo-nucleo",
+                    "kind": "category",
+                    "label": "Pronome Possessivo ('sua')",
+                    "details": [
+                      "Carrega duplo vetor de vinculação:",
+                      "1. Vetor Semântico (Referência): aponta para o possuidor (João = 3ª pessoa)",
+                      "2. Vetor Sintático (Concordância): flexiona em gênero e número com a coisa possuída ('mãe')",
+                      "Forma resultante: Feminino Singular ('sua')"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "\"sua\" (Feminino Singular ── CONCORDA COM)  →  [mãe] (Feminino Singular)"
+                    "id": "coisa-possuida-mae",
+                    "kind": "category",
+                    "label": "Coisa Possuída / Substantivo Determinado ([mãe])",
+                    "details": [
+                      "Propriedades: Feminino Singular",
+                      "Papel sintático: Rege a concordância em gênero e número do pronome possessivo",
+                      "Vínculo: O pronome concorda gramaticalmente com a coisa possuída"
+                    ]
+                  },
+                  {
+                    "id": "regra-ouro-dupla-conexao",
+                    "kind": "rule",
+                    "label": "Regra Canônica da Dupla Conexão dos Possessivos",
+                    "details": [
+                      "Pegadinha de prova: Afirmar que o pronome concorda em gênero/número com o possuidor",
+                      "Gabarito correto: O possessivo refere-se à pessoa do possuidor (semântica), mas concorda estritamente em gênero e número com o substantivo que determina (sintaxe)"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "pronome-possessivo-nucleo",
+                    "to": "possuidor-referente-joao",
+                    "label": "Vetor Semântico (Aponta para o Possuidor)"
+                  },
+                  {
+                    "from": "pronome-possessivo-nucleo",
+                    "to": "coisa-possuida-mae",
+                    "label": "Vetor Sintático (Concorda em Gênero/Número)"
+                  },
+                  {
+                    "from": "possuidor-referente-joao",
+                    "to": "regra-ouro-dupla-conexao",
+                    "label": "Referência"
+                  },
+                  {
+                    "from": "coisa-possuida-mae",
+                    "to": "regra-ouro-dupla-conexao",
+                    "label": "Concordância"
+                  }
+                ],
+                "structuredText": "A Mecânica de Concordância e Referenciação dos Pronomes Possessivos:\n\nExemplo: '[João] visitou [sua] [mãe].'\n- [João] (Masc. Sing. — Possuidor/Referente): O pronome 'sua' refere-se semanticamente a ele (3ª pessoa).\n- 'sua' (Fem. Sing. — Pronome Possessivo): Flexiona no feminino singular para concordar com a coisa possuída.\n- [mãe] (Fem. Sing. — Substantivo Determinado): Rege a concordância morfológica do pronome.\n\nRegra Canônica: O pronome possessivo aponta semanticamente para o POSSUIDOR, mas concorda gramaticalmente em gênero e número com a COISA POSSUÍDA.",
+                "provenance": {
+                  "unit": "IP-A03-G03",
+                  "mapId": "MAP-A03-013",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    pronome-possessivo-nucleo[\"Pronome Possessivo ('sua')\"] --> |\"Vetor Semântico (Aponta para o Possuidor)\"| possuidor-referente-joao[\"Possuidor / Referente ([João])\"]\n    pronome-possessivo-nucleo --> |\"Vetor Sintático (Concorda em Gênero/Número)\"| coisa-possuida-mae[\"Coisa Possuída / Substantivo Determinado ([mãe])\"]\n    possuidor-referente-joao --> regra-ouro-dupla-conexao[\"Regra Canônica da Dupla Conexão dos Possessivos\"]\n    coisa-possuida-mae --> regra-ouro-dupla-conexao"
               }
             },
             {
@@ -585,25 +649,71 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "taxonomy",
               "title": "Pronomes Interrogativos e a Relação de Inclusão com os Pronomes Indefinidos",
               "text": "┌────────────────────────────────────────────────────────┐ │ PRONOMES INDEFINIDOS (Ideia vaga / 3ª pessoa) │ │ │ │ ┌──────────────────────────────────────────────┐ │ │ │ PRONOMES INTERROGATIVOS │ │ │ │ (que, quem, qual, quanto em perguntas) │ │ │ └──────────────────────────────────────────────┘ │ └────────────────────────────────────────────────────────┘",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "taxonomy",
+                "layout": "vertical",
+                "rootId": "categoria-pronomes-indefinidos",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "PRONOMES INDEFINIDOS (Ideia vaga / 3ª pessoa)"
+                    "id": "categoria-pronomes-indefinidos",
+                    "kind": "category",
+                    "label": "Pronomes Indefinidos (Conjunto Amplo)",
+                    "details": [
+                      "Definição canônica: Pronomes que se referem à 3ª pessoa do discurso conferindo-lhe sentido vago, indeterminado ou impreciso",
+                      "Vocábulos típicos: alguém, ninguém, tudo, nada, outrem, algum, nenhum, todo, muito, pouco, certo, vários, qualquer",
+                      "Formas polivalentes: que, quem, qual, quanto"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "PRONOMES INTERROGATIVOS"
+                    "id": "subclasse-pronomes-interrogativos",
+                    "kind": "category",
+                    "label": "Pronomes Interrogativos (Subclasse Inclusa)",
+                    "details": [
+                      "Relação de inclusão: Todo pronome interrogativo é, por natureza mórfica, um pronome indefinido",
+                      "Definição específica: Pronomes indefinidos empregados na formulação de perguntas diretas ou indiretas",
+                      "Quadro restrito: 'que', 'quem', 'qual', 'quanto'",
+                      "Exemplo direto: 'Quem compôs esta obra?'",
+                      "Exemplo indireto: 'Não sei qual decisão tomaram.'"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "(que, quem, qual, quanto em perguntas)"
+                    "id": "criterio-distincao-interrogacao",
+                    "kind": "rule",
+                    "label": "Critério de Reconhecimento em Concursos",
+                    "details": [
+                      "1. Frase interrogativa direta: identificada visualmente pelo ponto de interrogação (?)",
+                      "2. Frase interrogativa indireta: identificada por verbo matriz de desconhecimento/cognição (saber, ignorar, perguntar, indagar, desconhecer)",
+                      "3. Teste de Inversão: transforme a indireta em direta. Se mantiver sentido de questionamento, a palavra é Pronome Interrogativo."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "categoria-pronomes-indefinidos",
+                    "to": "subclasse-pronomes-interrogativos",
+                    "label": "Relação de Subconjunto / Especialização funcional"
+                  },
+                  {
+                    "from": "subclasse-pronomes-interrogativos",
+                    "to": "criterio-distincao-interrogacao",
+                    "label": "Aplicação em Análise Sintático-Semântica"
+                  }
+                ],
+                "structuredText": "Pronomes Interrogativos e a Relação de Inclusão com os Pronomes Indefinidos:\n\n1. Pronomes Indefinidos (Conjunto Amplo):\n   - Referem-se à 3ª pessoa de forma indeterminada, vaga ou imprecisa.\n\n2. Pronomes Interrogativos (Subconjunto Especializado):\n   - São pronomes indefinidos ('que', 'quem', 'qual', 'quanto') empregados especificamente na formulação de questionamentos diretos ('Quem veio?') ou indiretos ('Ignoro quem veio').\n\n3. Relação Estrutural: Todo pronome interrogativo é morfologicamente um pronome indefinido.",
+                "provenance": {
+                  "unit": "IP-A03-G03",
+                  "mapId": "MAP-A03-014",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    categoria-pronomes-indefinidos[\"Pronomes Indefinidos (Conjunto Amplo)\"] --> |\"Relação de Subconjunto / Especialização funcional\"| subclasse-pronomes-interrogativos[\"Pronomes Interrogativos (Subclasse Inclusa)\"]\n    subclasse-pronomes-interrogativos --> criterio-distincao-interrogacao[\"Critério de Reconhecimento em Concursos\"]"
               }
             },
             {
@@ -789,18 +899,92 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "comparison",
               "title": "Morfossintaxe e Semântica do Vocábulo \"Mais\" (FGV)",
               "text": "SEMÂNTICA: INTENSIDADE ◄─────────────► QUANTIDADE ▲ ▲ │ │ MORFOLOGIA: ADVÉRBIO ◄─────────────► PRONOME INDEFINIDO (Seta para Verbo/Adj/Adv) (Seta para Substantivo)",
               "structure": {
-                "kind": "source_segments",
-                "rootLabel": "SEMÂNTICA: INTENSIDADE ◄ →  QUANTIDADE",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "comparison",
+                "layout": "grid",
+                "rootId": "raiz-morfossintaxe-mais",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "MORFOLOGIA: ADVÉRBIO ◄ →  PRONOME INDEFINIDO (Seta para Verbo/Adj/Adv) (Seta para Substantivo)"
+                    "id": "raiz-morfossintaxe-mais",
+                    "kind": "category",
+                    "label": "Morfossintaxe e Semântica do Vocábulo 'Mais'",
+                    "details": [
+                      "Padrão de cobrança rigoroso da FGV e Cebraspe",
+                      "Dualidade funcional: Advérbio de Intensidade vs. Pronome Indefinido de Quantidade",
+                      "Método da Seta: rastrear o termo sintático modificado pelo vocábulo 'mais'"
+                    ]
+                  },
+                  {
+                    "id": "mais-adverbio-intensidade",
+                    "kind": "category",
+                    "label": "Advérbio de Intensidade (Seta para Verbo/Adj/Adv)",
+                    "details": [
+                      "Plano Morfológico: ADVÉRBIO (palavra invariável)",
+                      "Plano Semântico: INTENSIDADE (graduação de ação, qualidade ou circunstância)",
+                      "Plano Sintático: Modifica diretamente Verbo, Adjetivo ou outro Advérbio",
+                      "Exemplo com Verbo: 'Estudou mais durante a semana.' (modifica 'estudou')",
+                      "Exemplo com Adjetivo: 'Um servidor mais dedicado.' (modifica 'dedicado')",
+                      "Exemplo com Advérbio: 'Falou mais claramente.' (modifica 'claramente')"
+                    ]
+                  },
+                  {
+                    "id": "mais-pronome-quantidade",
+                    "kind": "category",
+                    "label": "Pronome Indefinido Adjetivo (Seta para Substantivo)",
+                    "details": [
+                      "Plano Morfológico: PRONOME INDEFINIDO (classe nominal/pronominal)",
+                      "Plano Semântico: QUANTIDADE (indeterminação de número ou porção de seres/coisas)",
+                      "Plano Sintático: Refere-se diretamente a um SUBSTANTIVO (anteposto ou posposto)",
+                      "Exemplo canônico: 'Preciso de mais tempo.' (modifica o substantivo 'tempo')",
+                      "Exemplo canônico: 'Recebeu mais livros na biblioteca.' (modifica o substantivo 'livros')"
+                    ]
+                  },
+                  {
+                    "id": "regra-desempate-fgv",
+                    "kind": "rule",
+                    "label": "Mantra do Desempate FGV",
+                    "details": [
+                      "1. Puxe a seta sintática a partir de 'mais'.",
+                      "2. Se a seta atingir Substantivo -> PRONOME INDEFINIDO / QUANTIDADE.",
+                      "3. Se a seta atingir Verbo, Adjetivo ou Advérbio -> ADVÉRBIO / INTENSIDADE."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "raiz-morfossintaxe-mais",
+                    "to": "mais-adverbio-intensidade",
+                    "label": "Modifica Verbo, Adjetivo ou Advérbio"
+                  },
+                  {
+                    "from": "raiz-morfossintaxe-mais",
+                    "to": "mais-pronome-quantidade",
+                    "label": "Modifica Substantivo"
+                  },
+                  {
+                    "from": "mais-adverbio-intensidade",
+                    "to": "regra-desempate-fgv"
+                  },
+                  {
+                    "from": "mais-pronome-quantidade",
+                    "to": "regra-desempate-fgv"
+                  }
+                ],
+                "structuredText": "Morfossintaxe e Semântica do Vocábulo 'Mais' (Padrão FGV):\n\n1. ADVÉRBIO DE INTENSIDADE:\n   - Semântica: Intensidade.\n   - Morfologia: Advérbio (invariável).\n   - Sintaxe: Seta aponta para Verbo, Adjetivo ou Advérbio.\n   - Ex.: 'Trabalhou mais' / 'Mais eficiente'.\n\n2. PRONOME INDEFINIDO:\n   - Semântica: Quantidade.\n   - Morfologia: Pronome Indefinido Adjetivo.\n   - Sintaxe: Seta aponta para Substantivo.\n   - Ex.: 'Mais recursos' / 'Mais oportunidades'.",
+                "provenance": {
+                  "unit": "IP-A03-G03",
+                  "mapId": "MAP-A03-015",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    raiz-morfossintaxe-mais[\"Morfossintaxe e Semântica do Vocábulo 'Mais'\"] --> |\"Modifica Verbo, Adjetivo ou Advérbio\"| mais-adverbio-intensidade[\"Advérbio de Intensidade (Seta para Verbo/Adj/Adv)\"]\n    raiz-morfossintaxe-mais --> |\"Modifica Substantivo\"| mais-pronome-quantidade[\"Pronome Indefinido Adjetivo (Seta para Substantivo)\"]\n    mais-adverbio-intensidade --> regra-desempate-fgv[\"Mantra do Desempate FGV\"]\n    mais-pronome-quantidade --> regra-desempate-fgv"
               }
             },
             {
@@ -1214,8 +1398,147 @@
               "text": "Classificar termos mutáveis (mais, menos, bastante, muito, pouco, todo) entre Adjetivo, Advérbio e Pronome Indefinido."
             },
             {
-              "type": "paragraph",
-              "text": "[Palavra em Análise] ──► Trace a Seta ──► [Termo-Alvo Modificado] │ ┌────────────────────────────────────────┴────────────────────────────────────────┐ ▼ ▼ [VERBO / ADJETIVO / ADVÉRBIO] [SUBSTANTIVO] │ │ ▼ ▼ ADVÉRBIO ┌──────────────────┴──────────────────┐ (Invariável / Intensidade) ▼ ▼ ADJETIVO PRONOME INDEFINIDO (Qualifica / Suficiente) (Indetermina / Quantidade)"
+              "type": "diagram",
+              "diagramType": "branches",
+              "title": "Método das Setas de Referência para Discriminação Multiclasse",
+              "text": "[Palavra em Análise] ──► Trace a Seta ──► [Termo-Alvo Modificado] │ ┌────────────────────────────────────────┴────────────────────────────────────────┐ ▼ ▼ [VERBO / ADJETIVO / ADVÉRBIO] [SUBSTANTIVO] │ │ ▼ ▼ ADVÉRBIO ┌──────────────────┴──────────────────┐ (Invariável / Intensidade) ▼ ▼ ADJETIVO PRONOME INDEFINIDO (Qualifica / Suficiente) (Indetermina / Quantidade)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-metodo-setas-multiclasse",
+                "groups": [
+                  {
+                    "id": "fase-rastreamento-seta",
+                    "label": "Fase 1: Rastreamento Sintático da Modificação",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-classificacao-alvo",
+                    "label": "Fase 2: Classificação do Termo-Alvo",
+                    "order": 2
+                  },
+                  {
+                    "id": "fase-desempate-substantivo",
+                    "label": "Fase 3: Desempate Semântico-Sintático",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-metodo-setas-multiclasse",
+                    "kind": "start",
+                    "label": "Passo 1: Traçar a Seta de Modificação",
+                    "details": [
+                      "Identificar a palavra sob análise (ex.: bastante, muito, meio, certo, mais)",
+                      "Perguntar à frase: 'A qual palavra este vocábulo se refere diretamente?'"
+                    ],
+                    "groupId": "fase-rastreamento-seta"
+                  },
+                  {
+                    "id": "decisao-natureza-termo-alvo",
+                    "kind": "decision",
+                    "label": "Qual é a classe gramatical do Termo-Alvo atingido pela seta?",
+                    "details": [
+                      "Verificar se a seta atinge Verbo/Adjetivo/Advérbio ou Substantivo"
+                    ],
+                    "groupId": "fase-classificacao-alvo"
+                  },
+                  {
+                    "id": "res-classe-adverbio",
+                    "kind": "result",
+                    "label": "Classificação: ADVÉRBIO (Invariável / Intensidade)",
+                    "details": [
+                      "Termo-alvo: Verbo, Adjetivo ou Advérbio",
+                      "Propriedade: Invariável em gênero e número",
+                      "Sentido: Intensidade, modo ou circunstância adverbial",
+                      "Exemplo: 'Eles trabalham BASTANTE.' / 'Elas estão MEIO cansadas.'"
+                    ],
+                    "groupId": "fase-classificacao-alvo"
+                  },
+                  {
+                    "id": "proc-analise-substantivo-alvo",
+                    "kind": "process",
+                    "label": "Termo-Alvo é SUBSTANTIVO ──► Desempate",
+                    "details": [
+                      "A palavra NÃO é advérbio",
+                      "Deve-se desempatar entre Adjetivo e Pronome Indefinido"
+                    ],
+                    "groupId": "fase-desempate-substantivo"
+                  },
+                  {
+                    "id": "decisao-desempate-adjetivo-pronome",
+                    "kind": "decision",
+                    "label": "A palavra qualifica (suficiente) ou quantifica/indetermina?",
+                    "details": [
+                      "Teste de substituição semântica e posicional"
+                    ],
+                    "groupId": "fase-desempate-substantivo"
+                  },
+                  {
+                    "id": "res-classe-adjetivo",
+                    "kind": "result",
+                    "label": "Classificação: ADJETIVO (Qualifica / Suficiente)",
+                    "details": [
+                      "Função: Atribui qualidade/característica ao substantivo (geralmente posposto)",
+                      "Teste: Substitui-se por 'suficiente(s)' ou 'correto/exato'",
+                      "Exemplo: 'Temos provas BASTANTES.' (= suficientes) / 'A resposta CERTA.' (= correta)"
+                    ],
+                    "groupId": "fase-desempate-substantivo"
+                  },
+                  {
+                    "id": "res-classe-pronome-indefinido",
+                    "kind": "result",
+                    "label": "Classificação: PRONOME INDEFINIDO (Indetermina / Quantidade)",
+                    "details": [
+                      "Função: Quantifica ou determina vagamente o substantivo (geralmente anteposto)",
+                      "Teste: Substitui-se por 'muito(s)', 'muita(s)' ou 'um qualquer'",
+                      "Exemplo: 'Comprei BASTANTES livros.' (= muitos) / 'CERTO dia cheguei.' (= um dia qualquer)"
+                    ],
+                    "groupId": "fase-desempate-substantivo"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-metodo-setas-multiclasse",
+                    "to": "decisao-natureza-termo-alvo"
+                  },
+                  {
+                    "from": "decisao-natureza-termo-alvo",
+                    "to": "res-classe-adverbio",
+                    "label": "Seta aponta para Verbo, Adjetivo ou Advérbio"
+                  },
+                  {
+                    "from": "decisao-natureza-termo-alvo",
+                    "to": "proc-analise-substantivo-alvo",
+                    "label": "Seta aponta para Substantivo"
+                  },
+                  {
+                    "from": "proc-analise-substantivo-alvo",
+                    "to": "decisao-desempate-adjetivo-pronome"
+                  },
+                  {
+                    "from": "decisao-desempate-adjetivo-pronome",
+                    "to": "res-classe-adjetivo",
+                    "label": "Qualifica / Equivale a 'suficiente'"
+                  },
+                  {
+                    "from": "decisao-desempate-adjetivo-pronome",
+                    "to": "res-classe-pronome-indefinido",
+                    "label": "Quantifica / Equivale a 'muito' ou indeterminação"
+                  }
+                ],
+                "structuredText": "Método das Setas de Referência para Discriminação Multiclasse:\n\n1. Trace a Seta da palavra sob análise para o termo modificado.\n2. Verifique o Termo-Alvo:\n   - Se apontar para VERBO / ADJETIVO / ADVÉRBIO -> ADVÉRBIO (Invariável / Intensidade).\n   - Se apontar para SUBSTANTIVO -> Não é advérbio. Desempate:\n     - Qualifica / Equivale a 'suficiente' -> ADJETIVO.\n     - Indetermina / Quantifica / Equivale a 'muito' -> PRONOME INDEFINIDO.",
+                "provenance": {
+                  "unit": "IP-A03-G03",
+                  "procedureId": "decision:IP-A03-G03:002",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-metodo-setas-multiclasse[\"Passo 1: Traçar a Seta de Modificação\"] --> decisao-natureza-termo-alvo{\"Qual é a classe gramatical do Termo-Alvo atingido pela seta?\"}\n    decisao-natureza-termo-alvo -- \"Seta aponta para Verbo, Adjetivo ou Advérbio\" --> res-classe-adverbio[\"Classificação: ADVÉRBIO (Invariável / Intensidade)\"]\n    decisao-natureza-termo-alvo -- \"Seta aponta para Substantivo\" --> proc-analise-substantivo-alvo[\"Termo-Alvo é SUBSTANTIVO ──► Desempate\"]\n    proc-analise-substantivo-alvo --> decisao-desempate-adjetivo-pronome{\"A palavra qualifica (suficiente) ou quantifica/indetermina?\"}\n    decisao-desempate-adjetivo-pronome -- \"Qualifica / Equivale a 'suficiente'\" --> res-classe-adjetivo[\"Classificação: ADJETIVO (Qualifica / Suficiente)\"]\n    decisao-desempate-adjetivo-pronome -- \"Quantifica / Equivale a 'muito' ou indeterminação\" --> res-classe-pronome-indefinido[\"Classificação: PRONOME INDEFINIDO (Indetermina / Quantidade)\"]"
+              }
             },
             {
               "type": "heading",
@@ -1262,8 +1585,8 @@
               "EXP-IP-A03-G03-PROC-002"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

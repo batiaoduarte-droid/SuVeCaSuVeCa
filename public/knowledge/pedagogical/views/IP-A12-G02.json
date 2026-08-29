@@ -901,13 +901,126 @@
               "text": "Determinar categoricamente se um par de vocábulos constitui caso de homonímia (perfeita, homógrafa ou homófona) ou de paronímia."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Diagrama de Execução"
-            },
-            {
-              "type": "paragraph",
-              "text": "[ ANALISAR O PAR DE VOCÁBULOS ] │ ┌──────────────────────┴──────────────────────┐ ▼ ▼ [ Teste 1: Grafia ] [ Teste 2: Pronúncia ] A grafia é IDÊNTICA? A pronúncia é IDÊNTICA? │ │ ┌───────┴───────┐ ┌───────┴───────┐ SIM NÃO SIM NÃO │ │ │ │ ▼ ▼ ▼ ▼ (Homônimo (Pode ser (Homônimo (Pode ser Perfeito ou Homófono ou Perfeito ou Homógrafo ou Homógrafo) Parônimo) Homófono) Parônimo) │ │ │ │ └───────────────┼─────────────────────────────┘ │ ▼ │ [ AO MENOS UM TESTE DEU \"SIM\"? ] │ │ │ ┌───────┴───────┐ │ SIM NÃO ◄──────────────────────────────────┘ │ │ ▼ ▼ [ HOMÔNIMO ] [ PARÔNIMO ] (ALGO É IGUAL) (NADA É IGUAL, SÓ PARECIDO)"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Diagrama de Execução",
+              "text": "[ ANALISAR O PAR DE VOCÁBULOS ] │ ┌──────────────────────┴──────────────────────┐ ▼ ▼ [ Teste 1: Grafia ] [ Teste 2: Pronúncia ] A grafia é IDÊNTICA? A pronúncia é IDÊNTICA? │ │ ┌───────┴───────┐ ┌───────┴───────┐ SIM NÃO SIM NÃO │ │ │ │ ▼ ▼ ▼ ▼ (Homônimo (Pode ser (Homônimo (Pode ser Perfeito ou Homófono ou Perfeito ou Homógrafo ou Homógrafo) Parônimo) Homófono) Parônimo) │ │ │ │ └───────────────┼─────────────────────────────┘ │ ▼ │ [ AO MENOS UM TESTE DEU \"SIM\"? ] │ │ │ ┌───────┴───────┐ │ SIM NÃO ◄──────────────────────────────────┘ │ │ ▼ ▼ [ HOMÔNIMO ] [ PARÔNIMO ] (ALGO É IGUAL) (NADA É IGUAL, SÓ PARECIDO)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-analise-par-vocabulos",
+                "structuredText": "# Teste Fono-Ortográfico de Decisão: Homônimo vs. Parônimo\n\nRoteiro determinístico sequencial de verificação fono-ortográfica para diferenciação de homônimos e parônimos:\n\n1. **Início: Analisar o Par de Vocábulos**\n   - Colocar os dois vocábulos em confronto direto quanto à grafia (letras) e à fonética (som e timbre).\n\n2. **Decisão 1: A grafia é 100% idêntica?**\n   - **SIM (Grafia Idêntica)**:\n     • Classificação: **HOMÔNIMO** (Algo é 100% igual).\n     • Subtipos:\n       - *Homônimo Perfeito*: mesma grafia e mesmo som (*manga* [fruta] vs. *manga* [camisa]; *cedo* [verbo] vs. *cedo* [advérbio]).\n       - *Homógrafo Heterófono*: mesma grafia e som diferente (*almoço* [ô / substantivo] vs. *almoço* [ó / verbo]; *colher* [ê / verbo] vs. *colher* [é / substantivo]).\n   - **NÃO (Grafias Diferentes)**:\n     • Encaminha para a verificação fonética.\n\n3. **Decisão 2: A pronúncia e o timbre são 100% idênticos?**\n   - **SIM (Som Idêntico)**:\n     • Classificação: **HOMÔNIMO** (Identidade fônica total).\n     • Subtipo:\n       - *Homófono Heterógrafo*: grafia diferente e mesmo som (*sessão* [tempo] vs. *seção* [divisão] vs. *cessão* [ato de ceder]; *cem* [numeral] vs. *sem* [preposição]; *concerto* [musical] vs. *conserto* [reparo]).\n   - **NÃO (Som Diferente)**:\n     • Classificação: **PARÔNIMO** (Nada é 100% igual; palavras apenas parecidas ou semelhantes na grafia e na pronúncia).\n     • Exemplos Clássicos:\n       - *descrição* (ato de descrever) vs. *discrição* (reserva, prudência);\n       - *eminente* (ilustre, elevado) vs. *iminente* (prestes a acontecer);\n       - *flagrante* (no ato) vs. *fragrante* (perfumado);\n       - *ratificar* (confirmar) vs. *retificar* (corrigir);\n       - *tráfego* (trânsito) vs. *tráfico* (comércio ilícito).",
+                "groups": [
+                  {
+                    "id": "grupo-testes-grafia",
+                    "label": "Fase 1: Teste de Identidade Gráfica",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-testes-fonetica",
+                    "label": "Fase 2: Teste de Identidade Fônica",
+                    "order": 2
+                  },
+                  {
+                    "id": "grupo-classificacao-final",
+                    "label": "Fase 3: Classificação Fono-Ortográfica Conclusiva",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-analise-par-vocabulos",
+                    "kind": "start",
+                    "label": "Início: Analisar o Par de Vocábulos",
+                    "details": [
+                      "Confrontar o par de palavras sob julgamento ortográfico e semântico.",
+                      "Examinar isoladamente o plano gráfico (letras) e o plano fônico (sons e timbres)."
+                    ]
+                  },
+                  {
+                    "id": "decisao-teste-grafia",
+                    "kind": "decision",
+                    "label": "A grafia é 100% idêntica (mesmas letras)?",
+                    "details": [
+                      "Verificar se os dois vocábulos possuem exatamente a mesma composição de letras e caracteres gráficos.",
+                      "Se houver qualquer divergência de letras (ex.: s vs. c, ç vs. ss, e vs. i), a resposta é NÃO."
+                    ],
+                    "groupId": "grupo-testes-grafia"
+                  },
+                  {
+                    "id": "decisao-teste-pronuncia",
+                    "kind": "decision",
+                    "label": "A pronúncia e o timbre são 100% idênticos?",
+                    "details": [
+                      "Verificar se os dois vocábulos produzem exatamente a mesma cadeia de fonemas, sem variação de timbre vocálico ou consoante.",
+                      "Exemplo: 'sessão' / 'seção' / 'cessão' possuem pronúncia rigorosamente idêntica (/se'sãw/)."
+                    ],
+                    "groupId": "grupo-testes-fonetica"
+                  },
+                  {
+                    "id": "resultado-homonimo-confirmado",
+                    "kind": "result",
+                    "label": "Classificação: HOMÔNIMO (Algo é 100% Igual)",
+                    "details": [
+                      "1. Homônimo Perfeito: mesma grafia e mesmo som (cedo / cedo, manga / manga, cura / cura).",
+                      "2. Homógrafo Heterófono: mesma grafia, som diferente (almoço / almoço, colher / colher, sede / sede).",
+                      "3. Homófono Heterógrafo: grafia diferente, mesmo som (sessão / seção / cessão, cem / sem, concerto / conserto, cinto / sinto)."
+                    ],
+                    "groupId": "grupo-classificacao-final"
+                  },
+                  {
+                    "id": "resultado-paronimo-confirmado",
+                    "kind": "result",
+                    "label": "Classificação: PARÔNIMO (Nada é Igual, Apenas Parecido)",
+                    "details": [
+                      "Palavras com grafia parecida E som parecido, com significados totalmente distintos:",
+                      "• descrição (relatar) vs. discrição (prudência);",
+                      "• eminente (notável) vs. iminente (prestes a ocorrer);",
+                      "• flagrante (evidente / no ato) vs. fragrante (aromático);",
+                      "• ratificar (validar / confirmar) vs. retificar (corrigir / emendar);",
+                      "• tráfego (trânsito) vs. tráfico (comércio ilícito / contrabando)."
+                    ],
+                    "groupId": "grupo-classificacao-final"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-analise-par-vocabulos",
+                    "to": "decisao-teste-grafia",
+                    "label": ""
+                  },
+                  {
+                    "from": "decisao-teste-grafia",
+                    "to": "resultado-homonimo-confirmado",
+                    "label": "SIM (Grafia Idêntica)"
+                  },
+                  {
+                    "from": "decisao-teste-grafia",
+                    "to": "decisao-teste-pronuncia",
+                    "label": "NÃO (Grafias Diferentes)"
+                  },
+                  {
+                    "from": "decisao-teste-pronuncia",
+                    "to": "resultado-homonimo-confirmado",
+                    "label": "SIM (Som Idêntico)"
+                  },
+                  {
+                    "from": "decisao-teste-pronuncia",
+                    "to": "resultado-paronimo-confirmado",
+                    "label": "NÃO (Som Diferente)"
+                  }
+                ],
+                "provenance": {
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.98,
+                  "author": "agent_3_intermediate_results",
+                  "regenerationVersion": "v2.1.0-convergence-hardened"
+                },
+                "mermaidSource": "flowchart TD\n    inicio-analise-par-vocabulos[\"Início: Analisar o Par de Vocábulos\"]\n    decisao-teste-grafia{\"A grafia é 100% idêntica?<br/>(mesmas letras)\"}\n    decisao-teste-pronuncia{\"A pronúncia e o timbre são 100% idênticos?\"}\n    resultado-homonimo-confirmado[\"Classificação: HOMÔNIMO<br/>• Homônimo Perfeito (mesma grafia e som)<br/>• Homógrafo (mesma grafia, som diferente)<br/>• Homófono (grafia diferente, mesmo som)\"]\n    resultado-paronimo-confirmado[\"Classificação: PARÔNIMO<br/>• Nada é 100% igual, apenas parecido<br/>• descrição/discrição, eminente/iminente<br/>• flagrante/fragrante, ratificar/retificar\"]\n\n    inicio-analise-par-vocabulos --> decisao-teste-grafia\n    decisao-teste-grafia -->|SIM: Grafia Idêntica| resultado-homonimo-confirmado\n    decisao-teste-grafia -->|NÃO: Grafias Diferentes| decisao-teste-pronuncia\n    decisao-teste-pronuncia -->|SIM: Som Idêntico| resultado-homonimo-confirmado\n    decisao-teste-pronuncia -->|NÃO: Som Diferente| resultado-paronimo-confirmado"
+              }
             },
             {
               "type": "heading",
@@ -942,8 +1055,8 @@
               "EXP-IP-A12-G02-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

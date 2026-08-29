@@ -210,38 +210,102 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "taxonomy",
               "title": "Conceito de Hiperonímia e Hiponímia e o Teste Lógico do \"Tipo de\"",
               "text": "┌────────────────────────────────────────┐ │ HIPERÔNIMO (Geral) │ │ ex.: Animais, Veículo, Alimento │ └───────────────────┬────────────────────┘ │ engloba / inclui │ ┌───────────────────▼────────────────────┐ │ HIPÔNIMO (Específico) │ ──> Teste: \"Pássaro é um │ ex.: Pássaros, Carro, Gelatina │ TIPO DE animal\" └────────────────────────────────────────┘",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "HIPERÔNIMO (Geral)",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "taxonomy",
+                "layout": "vertical",
+                "rootId": "relacao-taxonomica-genero-especie",
+                "structuredText": "# Hiperonímia e Hiponímia: Estrutura Taxonômica e Teste do \"Tipo de\"\n\nA relação entre hiperônimos e hipônimos baseia-se na inclusão hierárquica de sentido (gênero e espécie):\n\n1. **Hiperônimo (Termo Geral / Hiper-referente)**:\n   - Possui maior extensão lexical e menor especificidade conceitual (engloba/inclui outros termos).\n   - Exemplos: *Animal*, *Veículo*, *Alimento*, *Sentimento*.\n\n2. **Hipônimo (Termo Específico / Hipo-referente)**:\n   - Possui menor extensão lexical e maior riqueza de traços semânticos distintivos (está contido no hiperônimo).\n   - Exemplos: *Pássaro* (tipo de animal), *Carro* (tipo de veículo), *Gelatina* (tipo de alimento).\n\n3. **Teste Operacional do 'Tipo de'**:\n   - *'[Hipônimo] é um TIPO DE [Hiperônimo]'* -> Afirmação logicamente verdadeira (ex.: *'Pássaro é um tipo de animal'*).\n   - A inversão é falsa (*'Animal é um tipo de pássaro'* = FALSO).\n\n4. **Mecanismo de Coesão Textual**:\n   - O hiperônimo é tipicamente usado como elemento anafórico para retomar o hipônimo já citado, ampliando a generalização sem repetir a palavra exata.",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "ex.: Animais, Veículo, Alimento"
+                    "id": "relacao-taxonomica-genero-especie",
+                    "kind": "category",
+                    "label": "Relação Taxonômica: Hiperonímia e Hiponímia",
+                    "details": [
+                      "Hierarquia semântica de inclusão categorial baseada na teoria dos conjuntos e da taxonomia lexical.",
+                      "Recurso coesivo central de reiteração anafórica não repetitiva."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "engloba / inclui"
+                    "id": "hiperonimo-conceito-geral",
+                    "kind": "category",
+                    "label": "Hiperônimo (Termo Geral / Gênero)",
+                    "details": [
+                      "Maior extensão semântica: engloba múltiplos termos específicos.",
+                      "Exemplos canônicos: Animal, Veículo, Móvel, Alimento, Doença, Flor.",
+                      "Função coesiva: retoma um termo específico prévio de forma sintética."
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "HIPÔNIMO (Específico)"
+                    "id": "hiponimo-conceito-especifico",
+                    "kind": "category",
+                    "label": "Hipônimo (Termo Específico / Espécie)",
+                    "details": [
+                      "Menor extensão e maior especificação semântica: está incluído no gênero.",
+                      "Exemplos canônicos: Pássaro, Carro, Cadeira, Gelatina, Febre, Rosa.",
+                      "Função textual: particulariza o referente na narrativa ou dissertação."
+                    ]
                   },
                   {
-                    "id": "segment-04",
-                    "label": "Teste: \"Pássaro é um"
+                    "id": "teste-operacional-tipo-de",
+                    "kind": "formula",
+                    "label": "Teste Operacional do 'Tipo de'",
+                    "details": [
+                      "Equação diagnóstica: '[Hipônimo] é um TIPO DE [Hiperônimo]'.",
+                      "Aplicação: 'Pássaro é um tipo de animal' (Verdadeiro -> Pássaro = Hipônimo; Animal = Hiperônimo).",
+                      "A direcionalidade do teste impede a confusão entre gênero e espécie."
+                    ]
                   },
                   {
-                    "id": "segment-05",
-                    "label": "ex.: Pássaros, Carro, Gelatina"
-                  },
-                  {
-                    "id": "segment-06",
-                    "label": "TIPO DE animal\""
+                    "id": "regra-coesao-anaforica-hiperonimica",
+                    "kind": "rule",
+                    "label": "Regra da Coesão Anafórica Hiperonímica",
+                    "details": [
+                      "Padrão textual culto: cita-se primeiro o hipônimo (específico) e retoma-se adiante pelo hiperônimo (geral).",
+                      "Exemplo: 'O beija-flor pousou na janela. A ave parecia faminta.' (ave = hiperônimo anafórico de beija-flor)."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "relacao-taxonomica-genero-especie",
+                    "to": "hiperonimo-conceito-geral",
+                    "label": "Superordenação (Gênero)"
+                  },
+                  {
+                    "from": "relacao-taxonomica-genero-especie",
+                    "to": "hiponimo-conceito-especifico",
+                    "label": "Subordinação (Espécie)"
+                  },
+                  {
+                    "from": "hiperonimo-conceito-geral",
+                    "to": "hiponimo-conceito-especifico",
+                    "label": "Engloba / Inclui"
+                  },
+                  {
+                    "from": "hiponimo-conceito-especifico",
+                    "to": "teste-operacional-tipo-de",
+                    "label": "Validação lógica"
+                  },
+                  {
+                    "from": "relacao-taxonomica-genero-especie",
+                    "to": "regra-coesao-anaforica-hiperonimica",
+                    "label": "Aplicação textual"
+                  }
+                ],
+                "provenance": {
+                  "source": "canonical_context",
+                  "unitId": "IP-A12-G03",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    relacao-taxonomica-genero-especie[\"Relação Taxonômica: Hiperonímia e Hiponímia\"] -->|\"Superordenação (Gênero)\"| hiperonimo-conceito-geral[\"Hiperônimo (Termo Geral / Gênero)\"]\n    relacao-taxonomica-genero-especie -->|\"Subordinação (Espécie)\"| hiponimo-conceito-especifico[\"Hipônimo (Termo Específico / Espécie)\"]\n    hiperonimo-conceito-geral -->|\"Engloba / Inclui\"| hiponimo-conceito-especifico\n    hiponimo-conceito-especifico -->|\"Validação lógica\"| teste-operacional-tipo-de[\"Teste Operacional do 'Tipo de'\"]\n    relacao-taxonomica-genero-especie -->|\"Aplicação textual\"| regra-coesao-anaforica-hiperonimica[\"Regra da Coesão Anafórica Hiperonímica\"]\n"
               }
             },
             {
@@ -1334,8 +1398,187 @@
               "text": "Finalidade: Identificar com precisão matemática se uma relação entre dois vocábulos configura Sinonímia, Hiperonímia, Hiponímia ou Campo Semântico (Anáfora Associativa)."
             },
             {
-              "type": "paragraph",
-              "text": "Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico \"TIPO DE\" │ │ \"T1 é tipo de T2\" OU \"T2 é tipo de T1\"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas",
+              "text": "Início: Identificar Termo 1 (T1) e Termo 2 (T2) │ ▼ ┌───────────────────────────────────────────┐ │ Passo 1: Avaliar Equivalência Semântica │ │ T1 e T2 estão no mesmo patamar │ │ de sentido no contexto da frase? │ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ SINONÍMIA │ │ Ir para Passo 2 │ │ (ex.: ceia/jantar│ └─────────┬────────┘ │ telas/quadros) │ │ └──────────────────┘ ▼ ┌───────────────────────────────────────────┐ │ Passo 2: Aplicar Teste Lógico \"TIPO DE\" │ │ \"T1 é tipo de T2\" OU \"T2 é tipo de T1\"?│ └─────────────────────┬─────────────────────┘ │ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ │ Passo 2b: Checar Direcionalidade│ │ Passo 3: Avaliar Campo Semântico │ │ - Se T1=Específico e T2=Geral: │ │ T1 e T2 pertencem ao mesmo tema │ │ ──> HIPONÍMIA │ │ sem relação taxonômica de gênero?│ │ - Se T1=Geral e T2=Específico: │ └──────────────────┬───────────────┘ │ ──> HIPERONÍMIA │ │ └──────────────────────────────────┘ SIM ───────────┴─────────── NÃO │ │ ▼ ▼ ┌──────────────────┐ ┌──────────────────┐ │ CAMPO SEMÂNTICO │ │ Relações Lógicas │ │ Anáfora │ │ Distintas │ │ Associativa │ │ (Antonímia, │ │ (ex.: febre/ │ │ Paronímia, │ │ doença; pista/ │ │ Coordenação) │ │ aeroporto) │ └──────────────────┘ └──────────────────┘",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-diagnostico-relacoes-lexicais",
+                "structuredText": "# Algoritmo de Diagnóstico de Relações Semânticas Lexicais em Provas\n\nProcedimento sequencial e decisório para classificar a relação semântica entre dois termos (T1 e T2):\n\n1. **Passo 1 — Avaliar Equivalência Semântica**: T1 e T2 estão no mesmo patamar de sentido no contexto frasal?\n   - **SIM** -> **Sinonímia** (ex.: *ceia / jantar*; *telas / quadros*).\n   - **NÃO** -> Avançar para o Passo 2.\n2. **Passo 2 — Aplicar o Teste Lógico 'TIPO DE'**: É verdadeiro afirmar que *'T1 é tipo de T2'* ou que *'T2 é tipo de T1'*?\n   - **SIM** -> **Passo 2b (Checar Direcionalidade)**:\n     - Se T1 = Específico e T2 = Geral -> **Hiponímia** (ex.: *pássaro* em relação a *animal*).\n     - Se T1 = Geral e T2 = Específico -> **Hiperonímia** (ex.: *veículo* em relação a *carro*).\n   - **NÃO** -> Avançar para o Passo 3.\n3. **Passo 3 — Avaliar Campo Semântico**: T1 e T2 pertencem ao mesmo domínio temático sem relação taxonômica de gênero/espécie?\n   - **SIM** -> **Campo Semântico / Anáfora Associativa** (ex.: *febre / doença*; *pista / aeroporto*).\n   - **NÃO** -> **Relações Lógicas Distintas** (Antonímia, Paronímia ou Coordenação).",
+                "groups": [
+                  {
+                    "id": "grupo-passo-1",
+                    "label": "Passo 1 — Equivalência Semântica",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-passo-2",
+                    "label": "Passo 2 — Teste Taxonômico 'Tipo De'",
+                    "order": 2
+                  },
+                  {
+                    "id": "grupo-passo-3",
+                    "label": "Passo 3 — Campo Semântico e Demais Relações",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-diagnostico-relacoes-lexicais",
+                    "kind": "start",
+                    "label": "Início: Identificar Termo 1 (T1) e Termo 2 (T2)",
+                    "details": [
+                      "Identificação do par de vocábulos sob análise no texto ou assertiva da prova."
+                    ]
+                  },
+                  {
+                    "id": "decisao-passo-1-equivalencia",
+                    "kind": "decision",
+                    "groupId": "grupo-passo-1",
+                    "label": "Passo 1: T1 e T2 estão no mesmo patamar de equivalência semântica no contexto?",
+                    "details": [
+                      "Testar se ambos os vocábulos expressam o mesmo núcleo significativo na frase.",
+                      "Exemplos: ceia / jantar; telas / quadros; óbito / falecimento."
+                    ]
+                  },
+                  {
+                    "id": "resultado-sinonimia",
+                    "kind": "result",
+                    "groupId": "grupo-passo-1",
+                    "label": "Sinonímia Confirmada",
+                    "details": [
+                      "Relação de equivalência no mesmo nível de abstração.",
+                      "Função textual: substituição lexical para evitar reiteração viciosa."
+                    ]
+                  },
+                  {
+                    "id": "decisao-passo-2-tipo-de",
+                    "kind": "decision",
+                    "groupId": "grupo-passo-2",
+                    "label": "Passo 2: Aplica-se o teste 'T1 é tipo de T2' ou 'T2 é tipo de T1'?",
+                    "details": [
+                      "Avaliar se há subordinação hierárquica de gênero e espécie (taxonomia lógica)."
+                    ]
+                  },
+                  {
+                    "id": "decisao-passo-2b-direcionalidade",
+                    "kind": "decision",
+                    "groupId": "grupo-passo-2",
+                    "label": "Passo 2b: Qual é a direção da relação taxonômica entre T1 e T2?",
+                    "details": [
+                      "Verificar se T1 é a espécie subordinada ou o gênero superordenado em relação a T2."
+                    ]
+                  },
+                  {
+                    "id": "resultado-hiponimia",
+                    "kind": "result",
+                    "groupId": "grupo-passo-2",
+                    "label": "Hiponímia (T1 Específico -> T2 Geral)",
+                    "details": [
+                      "T1 é hipônimo (espécie, termo de menor extensão e maior compreensão).",
+                      "Exemplo: 'pássaro' é hipônimo de 'animal'; 'rosa' é hipônimo de 'flor'."
+                    ]
+                  },
+                  {
+                    "id": "resultado-hiperonimia",
+                    "kind": "result",
+                    "groupId": "grupo-passo-2",
+                    "label": "Hiperonímia (T1 Geral -> T2 Específico)",
+                    "details": [
+                      "T1 é hiperônimo (gênero, termo de maior extensão e menor compreensão).",
+                      "Exemplo: 'veículo' é hiperônimo de 'carro'; 'alimento' é hiperônimo de 'fruta'."
+                    ]
+                  },
+                  {
+                    "id": "decisao-passo-3-campo-semantico",
+                    "kind": "decision",
+                    "groupId": "grupo-passo-3",
+                    "label": "Passo 3: T1 e T2 pertencem ao mesmo tema sem relação taxonômica de gênero?",
+                    "details": [
+                      "Avaliar se há contiguidade contextual ou universo temático compartilhado.",
+                      "Exemplos: febre e doença; pista, hangar e aeroporto; bisturi e cirurgião."
+                    ]
+                  },
+                  {
+                    "id": "resultado-campo-semantico",
+                    "kind": "result",
+                    "groupId": "grupo-passo-3",
+                    "label": "Campo Semântico / Anáfora Associativa",
+                    "details": [
+                      "Coocorrência temática que ancora a progressão textual.",
+                      "Não há relação de 'tipo de', mas sim de domínio compartilhado."
+                    ]
+                  },
+                  {
+                    "id": "resultado-relacoes-distintas",
+                    "kind": "result",
+                    "groupId": "grupo-passo-3",
+                    "label": "Relações Lógicas Distintas (Antonímia, Paronímia ou Coordenação)",
+                    "details": [
+                      "Avaliar se os termos expressam oposição (Antonímia) ou semelhança formal (Paronímia)."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-diagnostico-relacoes-lexicais",
+                    "to": "decisao-passo-1-equivalencia",
+                    "label": ""
+                  },
+                  {
+                    "from": "decisao-passo-1-equivalencia",
+                    "to": "resultado-sinonimia",
+                    "label": "Sim (Equivalência no mesmo patamar)"
+                  },
+                  {
+                    "from": "decisao-passo-1-equivalencia",
+                    "to": "decisao-passo-2-tipo-de",
+                    "label": "Não (Avançar para teste taxonômico)"
+                  },
+                  {
+                    "from": "decisao-passo-2-tipo-de",
+                    "to": "decisao-passo-2b-direcionalidade",
+                    "label": "Sim (Relação de gênero/espécie)"
+                  },
+                  {
+                    "from": "decisao-passo-2-tipo-de",
+                    "to": "decisao-passo-3-campo-semantico",
+                    "label": "Não (Sem relação de 'tipo de')"
+                  },
+                  {
+                    "from": "decisao-passo-2b-direcionalidade",
+                    "to": "resultado-hiponimia",
+                    "label": "T1 é específico (espécie) e T2 é geral"
+                  },
+                  {
+                    "from": "decisao-passo-2b-direcionalidade",
+                    "to": "resultado-hiperonimia",
+                    "label": "T1 é geral (gênero) e T2 é específico"
+                  },
+                  {
+                    "from": "decisao-passo-3-campo-semantico",
+                    "to": "resultado-campo-semantico",
+                    "label": "Sim (Mesmo domínio temático)"
+                  },
+                  {
+                    "from": "decisao-passo-3-campo-semantico",
+                    "to": "resultado-relacoes-distintas",
+                    "label": "Não (Oposição ou semelhança fônica)"
+                  }
+                ],
+                "provenance": {
+                  "source": "canonical_context",
+                  "unitId": "IP-A12-G03",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-diagnostico-relacoes-lexicais[\"Início: Identificar Termo 1 (T1) e Termo 2 (T2)\"] --> decisao-passo-1-equivalencia{\"Passo 1: T1 e T2 estão no mesmo patamar de equivalência semântica no contexto?\"}\n    decisao-passo-1-equivalencia -->|\"Sim (Equivalência no mesmo patamar)\"| resultado-sinonimia[\"Sinonímia Confirmada\"]\n    decisao-passo-1-equivalencia -->|\"Não (Avançar para teste taxonômico)\"| decisao-passo-2-tipo-de{\"Passo 2: Aplica-se o teste 'T1 é tipo de T2' ou 'T2 é tipo de T1'?\"}\n    decisao-passo-2-tipo-de -->|\"Sim (Relação de gênero/espécie)\"| decisao-passo-2b-direcionalidade{\"Passo 2b: Qual é a direção da relação taxonômica entre T1 e T2?\"}\n    decisao-passo-2-tipo-de -->|\"Não (Sem relação de 'tipo de')\"| decisao-passo-3-campo-semantico{\"Passo 3: T1 e T2 pertencem ao mesmo tema sem relação taxonômica de gênero?\"}\n    decisao-passo-2b-direcionalidade -->|\"T1 é específico (espécie) e T2 é geral\"| resultado-hiponimia[\"Hiponímia (T1 Específico -> T2 Geral)\"]\n    decisao-passo-2b-direcionalidade -->|\"T1 é geral (gênero) e T2 é específico\"| resultado-hiperonimia[\"Hiperonímia (T1 Geral -> T2 Específico)\"]\n    decisao-passo-3-campo-semantico -->|\"Sim (Mesmo domínio temático)\"| resultado-campo-semantico[\"Campo Semântico / Anáfora Associativa\"]\n    decisao-passo-3-campo-semantico -->|\"Não (Oposição ou semelhança fônica)\"| resultado-relacoes-distintas[\"Relações Lógicas Distintas (Antonímia, Paronímia ou Coordenação)\"]\n"
+              }
             }
           ],
           "presentation": {
@@ -1346,8 +1589,8 @@
               "EXP-IP-A12-G03-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

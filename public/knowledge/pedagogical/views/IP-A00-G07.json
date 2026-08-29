@@ -1376,8 +1376,177 @@
           "procedureId": "PROC-A00-G07-PORQUES-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[Início: Análise da Lacuna] │ ▼ Passo 1: Há determinante (artigo \"o/um\", pronome \"meu/este\", numeral \"dois\", contração \"do\") antes da lacuna? ├─► SIM: Escreva \"PORQUÊ\" (junto com acento) ──► [Classe: Substantivo] └─► NÃO: Prossiga para o Passo 2. │ ▼ Passo 2: A lacuna introduz justificativa, causa ou finalidade (com verbo no subjuntivo), substituível por \"pois\" ou \"para que\"? ├─► SIM: Escreva \"PORQUE\" (junto sem acento) ──► [Classe: Conjunção] └─► NÃO: Prossiga para o Passo 3. │ ▼ Passo 3: A expressão situa-se imediatamente antes de uma PAUSA discursiva (pontuação ?,.,,,;,... ou pausa oral de final de interrogativa)? ├─► SIM: Escreva \"POR QUÊ\" (separado com acento) ──► [Classe: Locução Adverbial Interrogativa Tônica] └─► NÃO: Prossiga para o Passo 4. │ ▼ Passo 4: Verifique as funções do \"POR QUE\" (separado sem acento): ├─ Retoma antecedente? (= pelo qual) ──► Pronome Relativo ├─ Acompanha substantivo posterior? (= por qual) ──► Pronome Indefinido / Interrogativo ├─ Pergunta direta ou indireta no início/meio? (= por qual motivo) ──► Locução Adverbial ├─ Regência de VTI + oração (\"ansiar por isso\")? ──► Preposição + Conjunção Integrante └─ Precedido de \"Eis\"? ──► Palavra Denotativa + Conector └─► RESULTADO: Escreva \"POR QUE\" (separado sem acento)."
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês",
+              "text": "[Início: Análise da Lacuna] │ ▼ Passo 1: Há determinante (artigo \"o/um\", pronome \"meu/este\", numeral \"dois\", contração \"do\") antes da lacuna? ├─► SIM: Escreva \"PORQUÊ\" (junto com acento) ──► [Classe: Substantivo] └─► NÃO: Prossiga para o Passo 2. │ ▼ Passo 2: A lacuna introduz justificativa, causa ou finalidade (com verbo no subjuntivo), substituível por \"pois\" ou \"para que\"? ├─► SIM: Escreva \"PORQUE\" (junto sem acento) ──► [Classe: Conjunção] └─► NÃO: Prossiga para o Passo 3. │ ▼ Passo 3: A expressão situa-se imediatamente antes de uma PAUSA discursiva (pontuação ?,.,,,;,... ou pausa oral de final de interrogativa)? ├─► SIM: Escreva \"POR QUÊ\" (separado com acento) ──► [Classe: Locução Adverbial Interrogativa Tônica] └─► NÃO: Prossiga para o Passo 4. │ ▼ Passo 4: Verifique as funções do \"POR QUE\" (separado sem acento): ├─ Retoma antecedente? (= pelo qual) ──► Pronome Relativo ├─ Acompanha substantivo posterior? (= por qual) ──► Pronome Indefinido / Interrogativo ├─ Pergunta direta ou indireta no início/meio? (= por qual motivo) ──► Locução Adverbial ├─ Regência de VTI + oração (\"ansiar por isso\")? ──► Preposição + Conjunção Integrante └─ Precedido de \"Eis\"? ──► Palavra Denotativa + Conector └─► RESULTADO: Escreva \"POR QUE\" (separado sem acento).",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-analise-lacuna",
+                "structuredText": "# Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês\n\nÁrvore de decisão em 4 passos sequenciais para identificar a forma correta dos quatro porquês:\n\n1. **Passo 1: Há determinante (artigo 'o/um', pronome 'meu/este', numeral 'dois', contração 'do') antes da lacuna?**\n   - **SIM** -> Escreva **PORQUÊ** (junto com acento) [Classe: Substantivo masculino, equivale a 'o motivo/a razão'].\n   - **NÃO** -> Prossiga para o Passo 2.\n\n2. **Passo 2: A lacuna introduz justificativa, causa ou finalidade, substituível por 'pois' ou 'para que'?**\n   - **SIM** -> Escreva **PORQUE** (junto sem acento) [Classe: Conjunção causal, explicativa ou final].\n   - **NÃO** -> Prossiga para o Passo 3.\n\n3. **Passo 3: A expressão situa-se imediatamente antes de uma PAUSA discursiva / pontuação (?, !, ., ;, ...)?**\n   - **SIM** -> Escreva **POR QUÊ** (separado com acento) [Classe: Locução adverbial interrogativa tônica / pronome tônico de fim de oração].\n   - **NÃO** -> Prossiga para o Passo 4.\n\n4. **Passo 4: Demais ocorrências contextuais -> Escreva POR QUE (separado sem acento):**\n   - *Pronome Relativo* (= pelo qual, pelos quais, pela qual, pelas quais).\n   - *Locução Adverbial Interrogativa* (= por qual razão, por qual motivo) em início ou meio de frase.\n   - *Pronome Indefinido/Interrogativo Adjeto* (= por qual + substantivo).\n   - *Preposição 'por' (regência de VTI) + Conjunção Integrante 'que'*.\n   - *Conector após 'Eis'* (*Eis por que...*).",
+                "groups": [
+                  {
+                    "id": "etapa-1-substantivo",
+                    "label": "Passo 1: Teste de Substantivação (Porquê)",
+                    "order": 1
+                  },
+                  {
+                    "id": "etapa-2-conjuncao",
+                    "label": "Passo 2: Teste de Conjunção Causal/Explicativa/Final (Porque)",
+                    "order": 2
+                  },
+                  {
+                    "id": "etapa-3-final-oracao",
+                    "label": "Passo 3: Teste de Posição Terminal/Pausa (Por quê)",
+                    "order": 3
+                  },
+                  {
+                    "id": "etapa-4-separado-sem-acento",
+                    "label": "Passo 4: Funções Sintáticas de Abertura/Relativação (Por que)",
+                    "order": 4
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-analise-lacuna",
+                    "kind": "start",
+                    "label": "Início: Análise da Lacuna do Porquê",
+                    "details": [
+                      "Protocolo determinístico em 4 passos sequenciais para identificar a grafia e função sintática exata dos 4 porquês.",
+                      "Objeto: termo sob julgamento ortográfico ou sintático na frase."
+                    ],
+                    "groupId": "etapa-1-substantivo"
+                  },
+                  {
+                    "id": "teste-passo-1-determinante",
+                    "kind": "decision",
+                    "label": "Há determinante antes da lacuna?",
+                    "details": [
+                      "Verificar se a lacuna é antecedida por artigo (o, um), pronome (este, meu), numeral (dois) ou contração (do, num).",
+                      "Mnemônica: 'Antecedido de determinante vira substantivo'."
+                    ],
+                    "groupId": "etapa-1-substantivo"
+                  },
+                  {
+                    "id": "resultado-porque-substantivo",
+                    "kind": "result",
+                    "label": "Escreva PORQUÊ (Junto com Acento) [Substantivo]",
+                    "details": [
+                      "Classe gramatical: Substantivo masculino.",
+                      "Significado: O motivo, a razão, a causa.",
+                      "Admite pluralização: os porquês.",
+                      "Exemplo: 'Não compreendi o porquê de tanta confusão'."
+                    ],
+                    "groupId": "etapa-1-substantivo"
+                  },
+                  {
+                    "id": "teste-passo-2-conjuncao",
+                    "kind": "decision",
+                    "label": "A lacuna introduz justificativa, causa ou finalidade?",
+                    "details": [
+                      "Verificar se a oração introduz justificativa ou causa (substituível por 'pois', 'já que', 'visto que') ou finalidade com verbo no subjuntivo (substituível por 'para que').",
+                      "Mnemônica: 'Resposta/Explicação se grafa junto e sem acento'."
+                    ],
+                    "groupId": "etapa-2-conjuncao"
+                  },
+                  {
+                    "id": "resultado-porque-conjuncao",
+                    "kind": "result",
+                    "label": "Escreva PORQUE (Junto sem Acento) [Conjunção]",
+                    "details": [
+                      "Classe gramatical: Conjunção subordinativa causal, coordenativa explicativa ou subordinativa final.",
+                      "Substituível por: pois, já que, visto que, como, para que.",
+                      "Exemplo Causal/Explicativo: 'Não fui à aula porque estava doente.'",
+                      "Exemplo Final: 'Oremos porque não entremos em tentação (= para que)'."
+                    ],
+                    "groupId": "etapa-2-conjuncao"
+                  },
+                  {
+                    "id": "teste-passo-3-pausa",
+                    "kind": "decision",
+                    "label": "Passo 3: Situa-se Imediatamente Antes de Pausa ou Pontuação?",
+                    "details": [
+                      "Verificar se a expressão está em final de frase ou antes de pontuação terminal (?, !, ., ;, ...).",
+                      "Por cair em posição tônica pré-pausa, o monossílabo 'que' atrai acento circunflexo ('quê')."
+                    ],
+                    "groupId": "etapa-3-final-oracao"
+                  },
+                  {
+                    "id": "resultado-por-que-final",
+                    "kind": "result",
+                    "label": "Escreva POR QUÊ (Separado com Acento)",
+                    "details": [
+                      "Classe gramatical: Locução adverbial interrogativa tônica ou pronome interrogativo tônico.",
+                      "Ocorre em fim de oração ou isolado antes de pontuação.",
+                      "Exemplos: 'Eles estão revoltados por quê?', 'Você não comeu nada. Por quê?'"
+                    ],
+                    "groupId": "etapa-3-final-oracao"
+                  },
+                  {
+                    "id": "resultado-por-que-abertura",
+                    "kind": "result",
+                    "label": "Escreva POR QUE (Separado sem Acento) [5 Funções Sintáticas]",
+                    "details": [
+                      "Forma padrão de abertura/meio sem substantivação nem valor conjuntivo direto:",
+                      "1. Pronome Relativo (= pelo qual / pela qual): 'Os caminhos por que passei...'",
+                      "2. Locução Adverbial Interrogativa (= por qual razão/motivo): 'Por que você não veio ontem?' / 'Não sei por que ele chorou.'",
+                      "3. Pronome Indefinido / Interrogativo Adjeto (= por qual + substantivo): 'Por que motivo você se atrasou?'",
+                      "4. Preposição por (regência de VTI) + Conjunção Integrante que: 'Anseio por que todos passem.'",
+                      "5. Expressão denotativa com 'Eis': 'Eis por que decidi partir.'"
+                    ],
+                    "groupId": "etapa-4-separado-sem-acento"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-analise-lacuna",
+                    "to": "teste-passo-1-determinante"
+                  },
+                  {
+                    "from": "teste-passo-1-determinante",
+                    "to": "resultado-porque-substantivo",
+                    "label": "Sim (Há determinante)"
+                  },
+                  {
+                    "from": "teste-passo-1-determinante",
+                    "to": "teste-passo-2-conjuncao",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "teste-passo-2-conjuncao",
+                    "to": "resultado-porque-conjuncao",
+                    "label": "Sim (= pois / para que)"
+                  },
+                  {
+                    "from": "teste-passo-2-conjuncao",
+                    "to": "teste-passo-3-pausa",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "teste-passo-3-pausa",
+                    "to": "resultado-por-que-final",
+                    "label": "Sim (Antes de pausa/fim)"
+                  },
+                  {
+                    "from": "teste-passo-3-pausa",
+                    "to": "resultado-por-que-abertura",
+                    "label": "Não (Demais casos)"
+                  }
+                ],
+                "provenance": {
+                  "regenerationVersion": "v2.0.0-semantic-high-thinking",
+                  "author": "agent_1_A00_A01",
+                  "lesson": "A00",
+                  "reviewed": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-analise-lacuna[\"Início: Análise da Lacuna do Porquê\"]\n    teste-passo-1-determinante{\"Passo 1: Há determinante antes da lacuna?<br/>(o, um, este, meu, dois, do)\"}\n    resultado-porque-substantivo[\"Escreva PORQUÊ (junto com acento)<br/>[Classe: Substantivo = o motivo, a razão]\"]\n    teste-passo-2-conjuncao{\"Passo 2: Introduz causa, explicação ou finalidade?<br/>(= pois, já que, visto que, para que)\"}\n    resultado-porque-conjuncao[\"Escreva PORQUE (junto sem acento)<br/>[Classe: Conjunção Causal/Explicativa/Final]\"]\n    teste-passo-3-pausa{\"Passo 3: Está antes de pausa terminal ou pontuação?<br/>(?, !, ., ;, ...)\"}\n    resultado-por-que-final[\"Escreva POR QUÊ (separado com acento)<br/>[Classe: Interrogativo Tônico de Fim de Frase]\"]\n    resultado-por-que-abertura[\"Escreva POR QUE (separado sem acento)<br/>• Pronome Relativo (= pelo qual)<br/>• Interrogativo início/meio (= por qual razão)<br/>• Pronome Adjeto (= por qual motivo)<br/>• VTI prep. por + Conjunção que<br/>• Precedido de 'Eis'\"]\n\n    inicio-analise-lacuna --> teste-passo-1-determinante\n    teste-passo-1-determinante -->|Sim| resultado-porque-substantivo\n    teste-passo-1-determinante -->|Não| teste-passo-2-conjuncao\n    teste-passo-2-conjuncao -->|Sim| resultado-porque-conjuncao\n    teste-passo-2-conjuncao -->|Não| teste-passo-3-pausa\n    teste-passo-3-pausa -->|Sim| resultado-por-que-final\n    teste-passo-3-pausa -->|Não| resultado-por-que-abertura"
+              }
             }
           ],
           "presentation": {
@@ -1388,8 +1557,8 @@
               "EXP-IP-A00-G07-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

@@ -187,37 +187,116 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "taxonomy",
               "title": "Delimitação Operacional do Sujeito, Núcleo e Predicado",
               "text": "[ Uma comitiva de empresários ] [ chegou ontem a São Paulo. ] │ │ │ │ │ ▼ │ ▼ │ NÚCLEO │ PREDICADO │ (sem prep.) │ (Tudo menos o sujeito) └────────────────────┘ SUJEITO",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "taxonomy",
+                "layout": "vertical",
+                "rootId": "delimitacao-oracao-exemplo",
+                "structuredText": "### Delimitação Operacional do Sujeito, Núcleo e Predicado\n- **Oração em Análise**: `\"[Uma comitiva de empresários] [chegou ontem a São Paulo.]\"`\n- **Decomposição em Blocos Sintáticos**:\n  - **1. Bloco do Sujeito**: `[Uma comitiva de empresários]`\n    - **Núcleo do Sujeito**: `comitiva` (substantivo não preposicionado que comanda a concordância verbal na 3ª pessoa do singular).\n    - **Adjuntos Adnominais Satélites**:\n      - `Uma`: artigo indefinido que modifica o núcleo \"comitiva\".\n      - `de empresários`: locução adjetiva preposicionada que qualifica \"comitiva\" (termo preposicionado NUNCA é núcleo de sujeito).\n  - **2. Bloco do Predicado**: `[chegou ontem a São Paulo]`\n    - **Definição Operacional**: Tudo o que resta na oração após a extração integral do sujeito (`Predicado = Oração - Sujeito`).\n    - **Núcleo Verbal**: `chegou` (verbo intransitivo que concorda com o núcleo \"comitiva\").\n    - **Adjuntos Adverbiais**: `ontem` (tempo) e `a São Paulo` (lugar).",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "[ Uma comitiva de empresários ] [ chegou ontem a São Paulo. ]"
+                    "id": "delimitacao-oracao-exemplo",
+                    "kind": "start",
+                    "label": "Oração: [Uma comitiva de empresários] [chegou ontem a São Paulo]",
+                    "details": [
+                      "Exemplo canônico para visualização dos blocos essenciais da oração",
+                      "Demonstra a regra áurea de que o núcleo do sujeito nunca é preposicionado"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "NÚCLEO"
+                    "id": "bloco-sujeito-integral",
+                    "kind": "category",
+                    "label": "Bloco do Sujeito: [Uma comitiva de empresários]",
+                    "details": [
+                      "Sintagma nominal completo identificado pela pergunta: 'Quem é que chegou ontem?'",
+                      "Contém o núcleo substantivo e seus termos determinantes/modificadores"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "PREDICADO"
+                    "id": "nucleo-do-sujeito",
+                    "kind": "rule",
+                    "label": "Núcleo do Sujeito: 'comitiva' (sem preposição)",
+                    "details": [
+                      "Substantivo não preposicionado que comanda a flexão verbal no singular ('chegou')",
+                      "A expressão preposicionada 'de empresários' é mero adjunto adnominal, não o núcleo"
+                    ]
                   },
                   {
-                    "id": "segment-04",
-                    "label": "(sem prep.)"
+                    "id": "bloco-predicado-integral",
+                    "kind": "category",
+                    "label": "Bloco do Predicado: [chegou ontem a São Paulo]",
+                    "details": [
+                      "Todo o segmento remanescente após a remoção do sujeito",
+                      "Fórmula: Predicado = Oração Inteira - Sujeito",
+                      "Classificação: Predicado Verbal (PV)"
+                    ]
                   },
                   {
-                    "id": "segment-05",
-                    "label": "(Tudo menos o sujeito)"
+                    "id": "nucleo-e-adjuntos-predicado",
+                    "kind": "rule",
+                    "label": "Constituintes do Predicado: Verbo + Adjuntos Adverbiais",
+                    "details": [
+                      "Núcleo verbal: 'chegou' (Verbo Intransitivo)",
+                      "Adjunto adverbial de tempo: 'ontem'",
+                      "Adjunto adverbial de lugar: 'a São Paulo'"
+                    ]
                   },
                   {
-                    "id": "segment-06",
-                    "label": "SUJEITO"
+                    "id": "regra-concordancia-verbal",
+                    "kind": "result",
+                    "label": "Regra de Ouro de Concordância Verbal",
+                    "details": [
+                      "O verbo flexiona-se obrigatoriamente em concordância com o núcleo 'comitiva' (singular)",
+                      "A atração pelo termo plural preposicionado 'empresários' é erro clássico em redação e provas"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "delimitacao-oracao-exemplo",
+                    "to": "bloco-sujeito-integral",
+                    "label": "termo essencial 1"
+                  },
+                  {
+                    "from": "delimitacao-oracao-exemplo",
+                    "to": "bloco-predicado-integral",
+                    "label": "termo essencial 2"
+                  },
+                  {
+                    "from": "bloco-sujeito-integral",
+                    "to": "nucleo-do-sujeito",
+                    "label": "núcleo não preposicionado"
+                  },
+                  {
+                    "from": "bloco-predicado-integral",
+                    "to": "nucleo-e-adjuntos-predicado",
+                    "label": "elementos internos"
+                  },
+                  {
+                    "from": "nucleo-do-sujeito",
+                    "to": "regra-concordancia-verbal",
+                    "label": "comanda o verbo 'chegou'"
+                  },
+                  {
+                    "from": "nucleo-e-adjuntos-predicado",
+                    "to": "regra-concordancia-verbal",
+                    "label": "concordância com o sujeito"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    delimitacao-oracao-exemplo[\"Oração: [Uma comitiva de empresários] [chegou ontem a São Paulo]\"] -->|termo essencial 1| bloco-sujeito-integral[\"Bloco do Sujeito: [Uma comitiva de empresários]\"]\n    delimitacao-oracao-exemplo -->|termo essencial 2| bloco-predicado-integral[\"Bloco do Predicado: [chegou ontem a São Paulo]\"]\n    bloco-sujeito-integral -->|núcleo não preposicionado| nucleo-do-sujeito[\"Núcleo do Sujeito: 'comitiva' (sem preposição)\"]\n    bloco-predicado-integral -->|elementos internos| nucleo-e-adjuntos-predicado[\"Constituintes do Predicado: Verbo + Adjuntos Adverbiais\"]\n    nucleo-do-sujeito -->|comanda o verbo 'chegou'| regra-concordancia-verbal[\"Regra de Ouro de Concordância Verbal\"]\n    nucleo-e-adjuntos-predicado -->|concordância com o sujeito| regra-concordancia-verbal"
               }
             },
             {
@@ -356,17 +435,98 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "taxonomy",
               "title": "Macrodivisão Verbal: Verbos Nocionais (Ação) vs. Verbos Relacionais (Estado)",
               "text": "VERBOS │ ┌──────────────────┴──────────────────┐ ▼ ▼",
               "structure": {
-                "kind": "source_segments",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "taxonomy",
+                "layout": "vertical",
+                "rootId": "macrodivisao-verbal",
+                "structuredText": "### Macrodivisão Verbal: Verbos Nocionais vs. Verbos Relacionais\n- **Macrodivisão dos Verbos na Sintaxe**:\n  - **Verbos Nocionais (Significativos / Lexicais)**:\n    - Expressam ações, processos, fenômenos naturais ou estados dinâmicos com significado lexical pleno.\n    - Subdividem-se em:\n      - *Verbos Intransitivos (VI)*: Não exigem complemento verbal.\n      - *Verbos Transitivos (VTD, VTI, VTDI)*: Exigem complementos (objeto direto e/ou indireto).\n    - Função sintática: Atuam como núcleo do *Predicado Verbal (PV)* ou como núcleo verbal do *Predicado Verbo-Nominal (PVN)*.\n  - **Verbos Relacionais (Não Nocionais / de Ligação / Cópula)**:\n    - Não expressam ação; funcionam como simples elo conectivo entre o sujeito e um atributo (predicativo do sujeito).\n    - Exemplos: *ser, estar, parecer, permanecer, ficar, continuar, andar (em estado)*.\n    - Função sintática: Não são núcleo do predicado; formam o *Predicado Nominal (PN)*, cujo núcleo é o predicativo.",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "VERBOS"
+                    "id": "macrodivisao-verbal",
+                    "kind": "start",
+                    "label": "Macrodivisão dos Verbos na Sintaxe",
+                    "details": [
+                      "Critério semântico-sintático que divide os verbos conforme seu conteúdo significativo e papel no predicado",
+                      "Base para a classificação de toda a predicação verbal e dos tipos de predicado"
+                    ]
+                  },
+                  {
+                    "id": "verbos-nocionais",
+                    "kind": "category",
+                    "label": "Verbos Nocionais (Significativos / Ação)",
+                    "details": [
+                      "Possuem significado lexical próprio e dinâmico (ação, processo, fenômeno)",
+                      "Subtipos: Intransitivos (VI), Transitivos Diretos (VTD), Transitivos Indiretos (VTI) e Bitransitivos (VTDI)",
+                      "Atuam obrigatoriamente como núcleo verbal do predicado"
+                    ]
+                  },
+                  {
+                    "id": "verbos-relacionais",
+                    "kind": "category",
+                    "label": "Verbos Relacionais (Não Nocionais / Estado)",
+                    "details": [
+                      "Desprovidos de conteúdo nocional de ação; atuam como nexo conectivo",
+                      "Correspondem aos Verbos de Ligação (VL): ser, estar, parecer, permanecer, ficar, continuar, tornar-se",
+                      "Sua única função sintática é vincular o sujeito ao Predicativo do Sujeito"
+                    ]
+                  },
+                  {
+                    "id": "impacto-predicado-verbal-pvn",
+                    "kind": "result",
+                    "label": "Geração de Predicado Verbal (PV) ou Verbo-Nominal (PVN)",
+                    "details": [
+                      "Predicado Verbal (PV): Verbo nocional sem predicativo (ex.: 'O aluno estudou')",
+                      "Predicado Verbo-Nominal (PVN): Verbo nocional com predicativo (ex.: 'O aluno saiu feliz')",
+                      "O verbo nocional é o núcleo (ou um dos núcleos) da oração"
+                    ]
+                  },
+                  {
+                    "id": "impacto-predicado-nominal",
+                    "kind": "result",
+                    "label": "Geração de Predicado Nominal (PN)",
+                    "details": [
+                      "Predicado Nominal (PN): Verbo de Ligação + Predicativo do Sujeito (ex.: 'O aluno estava cansado')",
+                      "O núcleo semântico do predicado é exclusivamente o nome (adjetivo/substantivo)"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "macrodivisao-verbal",
+                    "to": "verbos-nocionais",
+                    "label": "expressam ação/processo"
+                  },
+                  {
+                    "from": "macrodivisao-verbal",
+                    "to": "verbos-relacionais",
+                    "label": "expressam estado/ligação"
+                  },
+                  {
+                    "from": "verbos-nocionais",
+                    "to": "impacto-predicado-verbal-pvn",
+                    "label": "constituem núcleo verbal"
+                  },
+                  {
+                    "from": "verbos-relacionais",
+                    "to": "impacto-predicado-nominal",
+                    "label": "conectam ao predicativo"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    macrodivisao-verbal[\"Macrodivisão dos Verbos na Sintaxe\"] -->|expressam ação/processo| verbos-nocionais[\"Verbos Nocionais (Significativos / Ação)\"]\n    macrodivisao-verbal -->|expressam estado/ligação| verbos-relacionais[\"Verbos Relacionais (Não Nocionais / Estado)\"]\n    verbos-nocionais -->|constituem núcleo verbal| impacto-predicado-verbal-pvn[\"Geração de Predicado Verbal (PV) ou Verbo-Nominal (PVN)\"]\n    verbos-relacionais -->|conectam ao predicativo| impacto-predicado-nominal[\"Geração de Predicado Nominal (PN)\"]"
               }
             },
             {
@@ -378,25 +538,137 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "taxonomy",
               "title": "Macrodivisão Verbal: Verbos Nocionais (Ação) vs. Verbos Relacionais (Estado)",
               "text": "(Nocionais) (Relacionais) │ │ ┌────────┴────────┬─────────┐ ▼ ▼ ▼ ▼ VERBO DE LIGAÇÃO V.I. V.T.D. V.T.I. (V.L.) │ │ │ └────────┬────────┴─────────┘ ▼ V.T.D.I.",
               "structure": {
-                "kind": "branches",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "taxonomy",
+                "layout": "vertical",
+                "rootId": "taxonomia-predicacao-verbal",
+                "structuredText": "### Macrodivisão Verbal: Nocionais vs. Relacionais e Tipos de Predicação\n- **Macrodivisão dos Verbos**:\n  - **Verbos Nocionais (Expressam Ação, Processo ou Fenômeno)**:\n    - *Verbo Intransitivo (V.I.)*: Não requer complemento verbal para integrar o sentido básico da ação (ex.: *\"O bebê dormiu\"*).\n    - *Verbo Transitivo Direto (V.T.D.)*: Requer complemento sem preposição obrigatória (*Objeto Direto*, ex.: *\"Comprei flores\"*).\n    - *Verbo Transitivo Indireto (V.T.I.)*: Requer complemento com preposição regencial (*Objeto Indireto*, ex.: *\"Gosto de música\"*).\n    - *Verbo Transitivo Direto e Indireto (V.T.D.I.)*: Requer simultaneamente Objeto Direto e Objeto Indireto (ex.: *\"Enviei uma carta ao diretor\"*).\n  - **Verbos Relacionais (Expressam Estado ou Vínculo)**:\n    - *Verbo de Ligação (V.L.)*: Liga o sujeito ao seu predicativo, indicando estado passageiro, permanente, mutatório ou aparente (ex.: *\"A aluna parecia confiante\"*).",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "(Nocionais) (Relacionais)"
+                    "id": "taxonomia-predicacao-verbal",
+                    "kind": "start",
+                    "label": "Tipologia Completa da Predicação Verbal",
+                    "details": [
+                      "Estrutura canônica de categorização dos verbos conforme sua natureza significativa e regime de complementação",
+                      "Fundamento para a delimitação dos três tipos de predicado"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "VERBO DE LIGAÇÃO V.I. V.T.D. V.T.I. (V.L.)"
+                    "id": "bloco-nocionais",
+                    "kind": "category",
+                    "label": "Verbos Nocionais (Significativos / Ação)",
+                    "details": [
+                      "Portadores de carga semântica autônoma",
+                      "Dividem-se em 4 padrões de transitividade"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "V.T.D.I."
+                    "id": "bloco-relacionais",
+                    "kind": "category",
+                    "label": "Verbos Relacionais (Não Nocionais / Estado)",
+                    "details": [
+                      "Não expressam ação; funcionam como conectivo predicativo",
+                      "Correspondem aos Verbos de Ligação (VL)"
+                    ]
+                  },
+                  {
+                    "id": "tipo-vi",
+                    "kind": "rule",
+                    "label": "Verbo Intransitivo (V.I.)",
+                    "details": [
+                      "Não transita para objeto; sentido completo ou modificado apenas por adjuntos adverbiais",
+                      "Exemplo: 'O pássaro voou para o ninho'"
+                    ]
+                  },
+                  {
+                    "id": "tipo-vtd",
+                    "kind": "rule",
+                    "label": "Verbo Transitivo Direto (V.T.D.)",
+                    "details": [
+                      "Exige Objeto Direto (sem preposição obrigatória)",
+                      "Exemplo: 'O cidadão assinou o documento'"
+                    ]
+                  },
+                  {
+                    "id": "tipo-vti",
+                    "kind": "rule",
+                    "label": "Verbo Transitivo Indireto (V.T.I.)",
+                    "details": [
+                      "Exige Objeto Indireto (com preposição regencial obrigatória)",
+                      "Exemplo: 'Concordamos com a proposta'"
+                    ]
+                  },
+                  {
+                    "id": "tipo-vtdi",
+                    "kind": "rule",
+                    "label": "Verbo Transitivo Direto e Indireto (V.T.D.I.)",
+                    "details": [
+                      "Bitransitivo: exige 1 Objeto Direto + 1 Objeto Indireto",
+                      "Exemplo: 'O professor entregou o prêmio ao aluno'"
+                    ]
+                  },
+                  {
+                    "id": "tipo-vl",
+                    "kind": "rule",
+                    "label": "Verbo de Ligação (V.L.)",
+                    "details": [
+                      "Conecta o sujeito ao Predicativo do Sujeito",
+                      "Exemplo: 'Os concurseiros permanecem focados'"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "taxonomia-predicacao-verbal",
+                    "to": "bloco-nocionais",
+                    "label": "verbos de ação/processo"
+                  },
+                  {
+                    "from": "taxonomia-predicacao-verbal",
+                    "to": "bloco-relacionais",
+                    "label": "verbos de estado/ligação"
+                  },
+                  {
+                    "from": "bloco-nocionais",
+                    "to": "tipo-vi",
+                    "label": "sem objeto"
+                  },
+                  {
+                    "from": "bloco-nocionais",
+                    "to": "tipo-vtd",
+                    "label": "com objeto direto"
+                  },
+                  {
+                    "from": "bloco-nocionais",
+                    "to": "tipo-vti",
+                    "label": "com objeto indireto"
+                  },
+                  {
+                    "from": "bloco-nocionais",
+                    "to": "tipo-vtdi",
+                    "label": "com dois objetos"
+                  },
+                  {
+                    "from": "bloco-relacionais",
+                    "to": "tipo-vl",
+                    "label": "com predicativo do sujeito"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    taxonomia-predicacao-verbal[\"Tipologia Completa da Predicação Verbal\"] -->|verbos de ação/processo| bloco-nocionais[\"Verbos Nocionais (Significativos / Ação)\"]\n    taxonomia-predicacao-verbal -->|verbos de estado/ligação| bloco-relacionais[\"Verbos Relacionais (Não Nocionais / Estado)\"]\n    bloco-nocionais -->|sem objeto| tipo-vi[\"Verbo Intransitivo (V.I.)\"]\n    bloco-nocionais -->|com objeto direto| tipo-vtd[\"Verbo Transitivo Direto (V.T.D.)\"]\n    bloco-nocionais -->|com objeto indireto| tipo-vti[\"Verbo Transitivo Indireto (V.T.I.)\"]\n    bloco-nocionais -->|com dois objetos| tipo-vtdi[\"Verbo Transitivo Direto e Indireto (V.T.D.I.)\"]\n    bloco-relacionais -->|com predicativo do sujeito| tipo-vl[\"Verbo de Ligação (V.L.)\"]"
               }
             },
             {
@@ -489,25 +761,104 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "relations",
               "title": "Verbo Intransitivo e o Princípio da Dispensabilidade do Adjunto Adverbial",
               "text": "[O menino] foi [ao clube]. │ │ │ Sujeito (V.I.) Adj. Adverbial de Lugar (Circunstância) ▲ │ └─────────────┘ (Seta aponta para o verbo)",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "relations",
+                "layout": "vertical",
+                "rootId": "oracao-analisada",
+                "structuredText": "### Análise Sintática da Oração: \"[O menino] foi [ao clube]\"\n- **Estrutura Oracional**:\n  - **Sujeito Determinado Simples**: `[O menino]` (núcleo substantivo não preposicionado: \"menino\"; modificador: \"O\" como adjunto adnominal).\n  - **Predicado Verbal**: `foi [ao clube]`.\n    - **Verbo Intransitivo (V.I.)**: `foi` (verbo de movimento com sentido pleno, que não demanda complemento verbal transitivo).\n    - **Adjunto Adverbial de Lugar**: `[ao clube]` (termo preposicionado que expressa a circunstância locativa e se liga diretamente ao verbo).\n- **Relação Funcional (Método das Setas)**:\n  - A seta sintática parte de `[ao clube]` e aponta para o verbo `foi`, qualificando a circunstância espacial do deslocamento.\n- **Princípio da Dispensabilidade e Diferenciação**:\n  - `[ao clube]` é termo acessório dispensável; sua ausência não quebra a predicação intransitiva essencial.\n  - Não confundir com Objeto Indireto: termos que indicam circunstância (onde, quando, como) são sempre adjuntos adverbiais, mesmo que preposicionados.",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "[O menino] foi [ao clube]."
+                    "id": "oracao-analisada",
+                    "kind": "start",
+                    "label": "Estrutura da Oração: [O menino] foi [ao clube]",
+                    "details": [
+                      "Exemplo canônico de análise sintática oracional envolvendo verbo de deslocamento",
+                      "Ordem direta: Sujeito + Verbo + Adjunto Adverbial de Lugar"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "Sujeito (V.I.) Adj. Adverbial de Lugar (Circunstância)"
+                    "id": "sujeito-simples",
+                    "kind": "category",
+                    "label": "Sujeito Determinado Simples: [O menino]",
+                    "details": [
+                      "Núcleo do sujeito: 'menino' (substantivo não preposicionado)",
+                      "Modificador: 'O' atua como adjunto adnominal do núcleo",
+                      "Dita a concordância verbal na 3ª pessoa do singular ('foi')"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "(Seta aponta para o verbo)"
+                    "id": "verbo-intransitivo",
+                    "kind": "rule",
+                    "label": "Verbo Intransitivo (V.I.): 'foi'",
+                    "details": [
+                      "Verbo de movimento que encerra predicação completa",
+                      "Não transita para objeto direto nem objeto indireto",
+                      "Atua como núcleo único do Predicado Verbal (PV)"
+                    ]
+                  },
+                  {
+                    "id": "adjunto-adverbial-lugar",
+                    "kind": "rule",
+                    "label": "Adjunto Adverbial de Lugar: [ao clube]",
+                    "details": [
+                      "Termo preposicionado ('a' + 'o') que denota circunstância de destino/lugar",
+                      "Seta relacional aponta diretamente para o verbo 'foi'",
+                      "Princípio da acessoriedade: termo periférico dispensável à gramaticalidade básica"
+                    ]
+                  },
+                  {
+                    "id": "diferenciacao-objeto-indireto",
+                    "kind": "result",
+                    "label": "Diferenciação Crítica: Adjunto Adverbial vs. Objeto Indireto",
+                    "details": [
+                      "Pegadinha de prova: tratar termos locativos preposicionados como complemento verbal",
+                      "Critério semântico: expressando 'onde/aonde/de onde', a função é invariavelmente Adjunto Adverbial",
+                      "O Objeto Indireto completa o sentido verbal sem veicular valor circunstancial"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "oracao-analisada",
+                    "to": "sujeito-simples",
+                    "label": "segmento do sujeito"
+                  },
+                  {
+                    "from": "oracao-analisada",
+                    "to": "verbo-intransitivo",
+                    "label": "núcleo do predicado"
+                  },
+                  {
+                    "from": "oracao-analisada",
+                    "to": "adjunto-adverbial-lugar",
+                    "label": "circunstância acessória"
+                  },
+                  {
+                    "from": "adjunto-adverbial-lugar",
+                    "to": "verbo-intransitivo",
+                    "label": "seta sintática modifica"
+                  },
+                  {
+                    "from": "adjunto-adverbial-lugar",
+                    "to": "diferenciacao-objeto-indireto",
+                    "label": "critério normativo"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    oracao-analisada[\"Estrutura da Oração: [O menino] foi [ao clube]\"] -->|segmento do sujeito| sujeito-simples[\"Sujeito Determinado Simples: [O menino]\"]\n    oracao-analisada -->|núcleo do predicado| verbo-intransitivo[\"Verbo Intransitivo (V.I.): 'foi'\"]\n    oracao-analisada -->|circunstância acessória| adjunto-adverbial-lugar[\"Adjunto Adverbial de Lugar: [ao clube]\"]\n    adjunto-adverbial-lugar -->|seta sintática modifica| verbo-intransitivo\n    adjunto-adverbial-lugar -->|critério normativo| diferenciacao-objeto-indireto[\"Diferenciação Crítica: Adjunto Adverbial vs. Objeto Indireto\"]"
               }
             },
             {
@@ -572,30 +923,111 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "taxonomy",
               "title": "Sistema de Transitividade Verbal: VTD, VTI e VTDI",
               "text": "VERBOS TRANSITIVOS │ ┌────────────────────────┼────────────────────────┐ ▼ ▼ ▼ TRANSITIVO DIRETO TRANSITIVO INDIRETO TRANSITIVO DIRETO E (V.T.D.) (V.T.I.) INDIRETO (V.T.D.I.) │ │ (ou Bitransitivo) ▼ ▼ │ Complemento SEM Complemento COM ▼ preposição preposição Exige 2 complementos: (Objeto Direto) (Objeto Indireto) 1 SEM prep. (O.D.)",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "VERBOS TRANSITIVOS",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "taxonomy",
+                "layout": "vertical",
+                "rootId": "sistema-verbos-transitivos",
+                "structuredText": "### Sistema de Transitividade Verbal: VTD, VTI e VTDI\n- **Verbos Transitivos (Necessitam de Complementação Verbal)**:\n  - **Transitivo Direto (V.T.D.)**:\n    - Exige complemento **sem preposição obrigatória** (*Objeto Direto*).\n    - Pergunta canônica: `Quem?` ou `O quê?`\n    - Exemplo: *\"O aluno leu o livro.\"*\n  - **Transitivo Indireto (V.T.I.)**:\n    - Exige complemento **com preposição obrigatória regencial** (*Objeto Indireto*).\n    - Pergunta canônica: `De quê?`, `A quem?`, `Em quem?`, `Por quê?`\n    - Exemplo: *\"O cidadão obedeceu às normas.\"*\n  - **Transitivo Direto e Indireto / Bitransitivo (V.T.D.I.)**:\n    - Exige simultaneamente **dois complementos**:\n      - 1 complemento SEM preposição (*Objeto Direto* - a coisa)\n      - 1 complemento COM preposição (*Objeto Indireto* - a pessoa/destinatário)\n    - Pergunta canônica: `O quê a quem?`\n    - Exemplo: *\"O professor entregou a prova aos alunos.\"*",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "TRANSITIVO DIRETO TRANSITIVO INDIRETO TRANSITIVO DIRETO E (V.T.D.) (V.T.I.) INDIRETO (V.T.D.I.)"
+                    "id": "sistema-verbos-transitivos",
+                    "kind": "start",
+                    "label": "Sistema dos Verbos Transitivos",
+                    "details": [
+                      "Verbos nocionais de sentido incompleto que demandam complementos verbais para integrar sua predicação",
+                      "A regência verbal determina se o objeto exige ou dispensa preposição"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "(ou Bitransitivo)"
+                    "id": "verbo-transitivo-direto",
+                    "kind": "category",
+                    "label": "Transitivo Direto (V.T.D.)",
+                    "details": [
+                      "Exige complemento verbal direto SEM preposição obrigatória",
+                      "Regulado por perguntas imediatas: 'O que?' ou 'Quem?'",
+                      "O complemento exerce a função de Objeto Direto (OD)",
+                      "Exemplo: 'O pesquisador publicou o artigo'"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "Complemento SEM Complemento COM"
+                    "id": "verbo-transitivo-indireto",
+                    "kind": "category",
+                    "label": "Transitivo Indireto (V.T.I.)",
+                    "details": [
+                      "Exige complemento verbal indireto COM preposição obrigatória regencial",
+                      "Regulado por perguntas preposicionadas: 'A quem?', 'De que?', 'Em que?'",
+                      "O complemento exerce a função de Objeto Indireto (OI)",
+                      "Exemplo: 'Os cidadãos necessitam de auxílio'"
+                    ]
                   },
                   {
-                    "id": "segment-04",
-                    "label": "preposição preposição Exige 2 complementos: (Objeto Direto) (Objeto Indireto) 1 SEM prep. (O.D.)"
+                    "id": "verbo-bitransitivo",
+                    "kind": "category",
+                    "label": "Transitivo Direto e Indireto (V.T.D.I.)",
+                    "details": [
+                      "Também chamado de Bitransitivo; exige simultaneamente dois objetos",
+                      "1 Objeto Direto (sem preposição) + 1 Objeto Indireto (com preposição)",
+                      "Princípio da não duplicação: não pode ter dois ODs nem dois OIs canônicos",
+                      "Exemplo: 'O banco concedeu empréstimo aos clientes'"
+                    ]
+                  },
+                  {
+                    "id": "complementos-verbais-decorrentes",
+                    "kind": "result",
+                    "label": "Integração pelos Complementos Verbais (OD e OI)",
+                    "details": [
+                      "Os complementos integram o sentido verbal e constituem o núcleo do predicado verbal junto com o verbo",
+                      "Diferenciam-se de adjuntos adverbiais (que são circunstanciais e acessórios)"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "sistema-verbos-transitivos",
+                    "to": "verbo-transitivo-direto",
+                    "label": "exige objeto direto"
+                  },
+                  {
+                    "from": "sistema-verbos-transitivos",
+                    "to": "verbo-transitivo-indireto",
+                    "label": "exige objeto indireto"
+                  },
+                  {
+                    "from": "sistema-verbos-transitivos",
+                    "to": "verbo-bitransitivo",
+                    "label": "exige ambos os objetos"
+                  },
+                  {
+                    "from": "verbo-transitivo-direto",
+                    "to": "complementos-verbais-decorrentes",
+                    "label": "gera OD"
+                  },
+                  {
+                    "from": "verbo-transitivo-indireto",
+                    "to": "complementos-verbais-decorrentes",
+                    "label": "gera OI"
+                  },
+                  {
+                    "from": "verbo-bitransitivo",
+                    "to": "complementos-verbais-decorrentes",
+                    "label": "gera OD + OI"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    sistema-verbos-transitivos[\"Sistema dos Verbos Transitivos\"] -->|exige objeto direto| verbo-transitivo-direto[\"Transitivo Direto (V.T.D.)\"]\n    sistema-verbos-transitivos -->|exige objeto indireto| verbo-transitivo-indireto[\"Transitivo Indireto (V.T.I.)\"]\n    sistema-verbos-transitivos -->|exige ambos os objetos| verbo-bitransitivo[\"Transitivo Direto e Indireto (V.T.D.I.)\"]\n    verbo-transitivo-direto -->|gera OD| complementos-verbais-decorrentes[\"Integração pelos Complementos Verbais (OD e OI)\"]\n    verbo-transitivo-indireto -->|gera OI| complementos-verbais-decorrentes\n    verbo-bitransitivo -->|gera OD + OI| complementos-verbais-decorrentes"
               }
             },
             {
@@ -1703,8 +2135,217 @@
               "text": "Identificar com 100% de segurança o sujeito, delimitar o predicado, classificar a transitividade do verbo e definir o tipo de predicado em qualquer questão de concurso público."
             },
             {
-              "type": "paragraph",
-              "text": "[ INÍCIO: LOCALIZAR O VERBO ] │ ▼ Etapa 1: \"VIVA O VERBO\" (Isolar o Sujeito) Pergunta: \"Quem é que / O que é que + VERBO?\" │ ▼ Etapa 2: Delimitar o Predicado Equação: Predicado = Oração - Sujeito │ ▼ Etapa 3: \"A GRANDE SACADA\" (Natureza Verbal) O verbo expressa ESTADO ou AÇÃO/PROCESSO? │ ┌─────────────────────┴─────────────────────┐ ▼ ▼ VERBO DE ESTADO VERBO DE AÇÃO │ │ ▼ ▼ Tem Predicativo do Sujeito? Inspecionar termos pós-verbais ┌───────┴───────┐ (\"Mantra do Contexto\"): ▼ ▼ - Sem objeto (só adjunto adv.) ➔ VI [ SIM ] [ NÃO ] - Objeto sem preposição ➔ VTD │ │ - Objeto com preposição ➔ VTI ▼ ▼ - Ambos os objetos ➔ VTDI VERBO DE VERBO DE │ LIGAÇÃO AÇÃO ▼ (VL) (VI) Há termo adjetivo predicativo? │ │ │ ▼ ▼ ┌─────────┴─────────┐ PREDICADO PREDICADO ▼ ▼ NOMINAL VERBAL [ NÃO ] [ SIM ] (PN) (PV) │ │ ▼ ▼ PREDICADO PREDICADO VERBAL VERBO-NOMINAL (PV) (PVN)"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo Integrado de Análise Sintática Oracional",
+              "text": "[ INÍCIO: LOCALIZAR O VERBO ] │ ▼ Etapa 1: \"VIVA O VERBO\" (Isolar o Sujeito) Pergunta: \"Quem é que / O que é que + VERBO?\" │ ▼ Etapa 2: Delimitar o Predicado Equação: Predicado = Oração - Sujeito │ ▼ Etapa 3: \"A GRANDE SACADA\" (Natureza Verbal) O verbo expressa ESTADO ou AÇÃO/PROCESSO? │ ┌─────────────────────┴─────────────────────┐ ▼ ▼ VERBO DE ESTADO VERBO DE AÇÃO │ │ ▼ ▼ Tem Predicativo do Sujeito? Inspecionar termos pós-verbais ┌───────┴───────┐ (\"Mantra do Contexto\"): ▼ ▼ - Sem objeto (só adjunto adv.) ➔ VI [ SIM ] [ NÃO ] - Objeto sem preposição ➔ VTD │ │ - Objeto com preposição ➔ VTI ▼ ▼ - Ambos os objetos ➔ VTDI VERBO DE VERBO DE │ LIGAÇÃO AÇÃO ▼ (VL) (VI) Há termo adjetivo predicativo? │ │ │ ▼ ▼ ┌─────────┴─────────┐ PREDICADO PREDICADO ▼ ▼ NOMINAL VERBAL [ NÃO ] [ SIM ] (PN) (PV) │ │ ▼ ▼ PREDICADO PREDICADO VERBAL VERBO-NOMINAL (PV) (PVN)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-localizar-verbo",
+                "structuredText": "### Algoritmo Integrado de Análise Sintática Oracional\n1. **Início: Localização do Verbo**:\n   - Ancorar no verbo principal ou locução verbal (\"No desespero, vírgula, vá ao verbo\").\n2. **Etapa 1: Viva o Verbo (Isolamento do Sujeito)**:\n   - Formular a pergunta: `\"Quem é que / O que é que + [VERBO]?\"`. Extrair o sujeito e isolar seu núcleo não preposicionado.\n3. **Etapa 2: Delimitação do Predicado**:\n   - Aplicar a equação: `Predicado = Oração Inteira - Sujeito`.\n4. **Etapa 3: A Grande Sacada (Natureza Verbal)**:\n   - Testar se o verbo expressa **Estado** ou **Ação/Processo**:\n     - **Se Verbo de Estado**:\n       - *Há Predicativo do Sujeito?*\n         - **SIM**: Verbo de Ligação (VL) $\rightarrow$ **Predicado Nominal (PN)**.\n         - **NÃO**: Verbo Intransitivo contextual (VI) $\rightarrow$ **Predicado Verbal (PV)**.\n     - **Se Verbo de Ação**:\n       - Inspecionar complementos pós-verbais (Mantra do Contexto):\n         - Sem objeto $\rightarrow$ VI; Objeto sem prep. $\rightarrow$ VTD; Objeto com prep. $\rightarrow$ VTI; Ambos $\rightarrow$ VTDI.\n       - *Há termo adjetivo predicativo (do sujeito ou objeto)?*\n         - **NÃO**: **Predicado Verbal (PV)** (núcleo exclusivamente verbal).\n         - **SIM**: **Predicado Verbo-Nominal (PVN)** (dois núcleos: verbo nocional + predicativo).",
+                "groups": [
+                  {
+                    "id": "etapa-sujeito",
+                    "label": "Etapa 1: Ancoragem e Sujeito",
+                    "order": 1
+                  },
+                  {
+                    "id": "etapa-predicado",
+                    "label": "Etapa 2: Delimitação do Predicado",
+                    "order": 2
+                  },
+                  {
+                    "id": "etapa-natureza",
+                    "label": "Etapa 3: Natureza Verbal",
+                    "order": 3
+                  },
+                  {
+                    "id": "etapa-classificacao",
+                    "label": "Etapa 4: Classificação da Predicação e Predicado",
+                    "order": 4
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-localizar-verbo",
+                    "kind": "start",
+                    "label": "Início: Localizar o Verbo Principal",
+                    "groupId": "etapa-sujeito",
+                    "details": [
+                      "Identificar a forma verbal finita ou locução verbal da oração",
+                      "Ponto de partida inegociável de toda análise sintática"
+                    ]
+                  },
+                  {
+                    "id": "isolar-sujeito",
+                    "kind": "process",
+                    "label": "Etapa 1: Isolar o Sujeito ('Viva o Verbo')",
+                    "groupId": "etapa-sujeito",
+                    "details": [
+                      "Fazer a pergunta pré-verbal: 'Quem é que / O que é que [verbo]?'",
+                      "Identificar o sujeito (simples, composto, oculto, indeterminado ou oração sem sujeito)",
+                      "Isole o núcleo do sujeito (substantivo não preposicionado)"
+                    ]
+                  },
+                  {
+                    "id": "delimitar-predicado",
+                    "kind": "process",
+                    "label": "Etapa 2: Delimitar o Predicado",
+                    "groupId": "etapa-predicado",
+                    "details": [
+                      "Aplicar a fórmula fundamental: Predicado = Oração - Sujeito",
+                      "Se o sujeito for inexistente ou elíptico, a oração inteira é predicado"
+                    ]
+                  },
+                  {
+                    "id": "decisao-natureza-verbo",
+                    "kind": "decision",
+                    "label": "O verbo expressa Estado ou Ação/Processo no contexto?",
+                    "groupId": "etapa-natureza",
+                    "details": [
+                      "Mantra da Sintaxe Contextual: não classificar pelo dicionário, mas pelo comportamento na frase",
+                      "Estado = atribuição de qualidade/condição; Ação/Processo = fato dinâmico"
+                    ]
+                  },
+                  {
+                    "id": "decisao-predicativo-estado",
+                    "kind": "decision",
+                    "label": "Há Predicativo do Sujeito acompanhando o verbo de estado?",
+                    "groupId": "etapa-classificacao",
+                    "details": [
+                      "Verificar se há adjetivo/substantivo caracterizando o sujeito",
+                      "Ex.: 'O réu estava nervoso' vs 'O réu estava em casa'"
+                    ]
+                  },
+                  {
+                    "id": "resultado-verbo-ligacao-pn",
+                    "kind": "result",
+                    "label": "Verbo de Ligação (VL) -> Predicado Nominal (PN)",
+                    "groupId": "etapa-classificacao",
+                    "details": [
+                      "O verbo atua como mero elo de ligação",
+                      "O núcleo significativo do predicado é o Predicativo do Sujeito"
+                    ]
+                  },
+                  {
+                    "id": "resultado-verbo-intransitivo-estado",
+                    "kind": "result",
+                    "label": "Verbo Intransitivo (VI) -> Predicado Verbal (PV)",
+                    "groupId": "etapa-classificacao",
+                    "details": [
+                      "Quando o verbo de estado vem acompanhado apenas de adjunto adverbial (ex.: 'Ele está em Brasília')",
+                      "Reclassifica-se contextualmente como VI e o predicado é Verbal"
+                    ]
+                  },
+                  {
+                    "id": "inspecionar-complementos-acao",
+                    "kind": "process",
+                    "label": "Inspecionar Complementos Pós-Verbais (VI, VTD, VTI, VTDI)",
+                    "groupId": "etapa-classificacao",
+                    "details": [
+                      "Sem objeto (apenas adjunto adv.) -> VI",
+                      "Objeto sem preposição -> VTD",
+                      "Objeto com preposição regencial -> VTI",
+                      "Ambos os objetos simultâneos -> VTDI"
+                    ]
+                  },
+                  {
+                    "id": "decisao-predicativo-acao",
+                    "kind": "decision",
+                    "label": "Há termo adjetivo predicativo (do sujeito ou do objeto)?",
+                    "groupId": "etapa-classificacao",
+                    "details": [
+                      "Verificar se há qualidade atribuída ao sujeito ou ao objeto durante a ação",
+                      "Ex.: 'O aluno chegou cansado' / 'O júri considerou o réu inocente'"
+                    ]
+                  },
+                  {
+                    "id": "resultado-predicado-verbal",
+                    "kind": "result",
+                    "label": "Predicado Verbal (PV)",
+                    "groupId": "etapa-classificacao",
+                    "details": [
+                      "Possui um único núcleo: o verbo nocional significativo",
+                      "Exemplo: 'O aluno estudou toda a matéria ontem'"
+                    ]
+                  },
+                  {
+                    "id": "resultado-predicado-verbo-nominal",
+                    "kind": "result",
+                    "label": "Predicado Verbo-Nominal (PVN)",
+                    "groupId": "etapa-classificacao",
+                    "details": [
+                      "Possui dois núcleos: o verbo nocional (ação) + o nome predicativo (estado)",
+                      "Exemplo: 'O atleta correu exausto' (núcleos: correu + exausto)"
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-localizar-verbo",
+                    "to": "isolar-sujeito",
+                    "label": "verbo identificado"
+                  },
+                  {
+                    "from": "isolar-sujeito",
+                    "to": "delimitar-predicado",
+                    "label": "sujeito extraído"
+                  },
+                  {
+                    "from": "delimitar-predicado",
+                    "to": "decisao-natureza-verbo",
+                    "label": "analisar predicado"
+                  },
+                  {
+                    "from": "decisao-natureza-verbo",
+                    "to": "decisao-predicativo-estado",
+                    "label": "Se Verbo de Estado"
+                  },
+                  {
+                    "from": "decisao-natureza-verbo",
+                    "to": "inspecionar-complementos-acao",
+                    "label": "Se Verbo de Ação"
+                  },
+                  {
+                    "from": "decisao-predicativo-estado",
+                    "to": "resultado-verbo-ligacao-pn",
+                    "label": "Sim (há predicativo)"
+                  },
+                  {
+                    "from": "decisao-predicativo-estado",
+                    "to": "resultado-verbo-intransitivo-estado",
+                    "label": "Não (só adjunto adv.)"
+                  },
+                  {
+                    "from": "inspecionar-complementos-acao",
+                    "to": "decisao-predicativo-acao",
+                    "label": "transitividade definida"
+                  },
+                  {
+                    "from": "decisao-predicativo-acao",
+                    "to": "resultado-predicado-verbal",
+                    "label": "Não (sem predicativo)"
+                  },
+                  {
+                    "from": "decisao-predicativo-acao",
+                    "to": "resultado-predicado-verbo-nominal",
+                    "label": "Sim (com predicativo)"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-localizar-verbo[\"Início: Localizar o Verbo Principal\"] -->|verbo identificado| isolar-sujeito[\"Etapa 1: Isolar o Sujeito ('Viva o Verbo')\"]\n    isolar-sujeito -->|sujeito extraído| delimitar-predicado[\"Etapa 2: Delimitar o Predicado\"]\n    delimitar-predicado -->|analisar predicado| decisao-natureza-verbo{\"O verbo expressa Estado ou Ação/Processo no contexto?\"}\n    decisao-natureza-verbo -->|Se Verbo de Estado| decisao-predicativo-estado{\"Há Predicativo do Sujeito acompanhando o verbo de estado?\"}\n    decisao-natureza-verbo -->|Se Verbo de Ação| inspecionar-complementos-acao[\"Inspecionar Complementos Pós-Verbais (VI, VTD, VTI, VTDI)\"]\n    decisao-predicativo-estado -->|Sim (há predicativo)| resultado-verbo-ligacao-pn[\"Verbo de Ligação (VL) -> Predicado Nominal (PN)\"]\n    decisao-predicativo-estado -->|Não (só adjunto adv.)| resultado-verbo-intransitivo-estado[\"Verbo Intransitivo (VI) -> Predicado Verbal (PV)\"]\n    inspecionar-complementos-acao -->|transitividade definida| decisao-predicativo-acao{\"Há termo adjetivo predicativo (do sujeito ou do objeto)?\"}\n    decisao-predicativo-acao -->|Não (sem predicativo)| resultado-predicado-verbal[\"Predicado Verbal (PV)\"]\n    decisao-predicativo-acao -->|Sim (com predicativo)| resultado-predicado-verbo-nominal[\"Predicado Verbo-Nominal (PVN)\"]"
+              }
             },
             {
               "type": "heading",
@@ -1784,8 +2425,8 @@
               "EXP-IP-A06-G03-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

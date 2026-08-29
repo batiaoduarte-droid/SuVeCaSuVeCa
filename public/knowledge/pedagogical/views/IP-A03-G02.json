@@ -1348,13 +1348,201 @@
               "text": "Identificar erros de duplicidade de objetos diretos (OD + OD) ou indiretos (OI + OI) em itens de concurso (especialmente CEBRASPE/CESPE)."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Fluxo Operacional"
-            },
-            {
-              "type": "paragraph",
-              "text": "[Início: Questão de Reescrita Pronominal] │ ▼ [Passo 1: Isolar o verbo principal e identificar o Sujeito] │ ▼ [Passo 2: Inventariar os complementos já presentes na frase original] │ ├── Cenário A: A frase já possui Objeto Direto (OD) substantivado sem preposição? │ │ │ └── SIM ──► O novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Indireto (lhe / a ele). │ └── Se a banca propôs pronome de OD (o, a, los, las, nos, nas): │ ==► MARCAR ITEM COMO ERRADO (Erro: OD + OD). │ └── Cenário B: A frase já possui Objeto Indireto (OI) preposicionado (ex.: \"a artigos\")? │ └── SIM ──► O novo pronome associado OBRIGATORIAMENTE deve ser Objeto Direto (o, a, me). └── Se a banca propôs trocar o pronome direto por \"lhe\": ==► MARCAR ITEM COMO ERRADO (Erro: OI + OI)."
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Fluxo Operacional",
+              "text": "[Início: Questão de Reescrita Pronominal] │ ▼ [Passo 1: Isolar o verbo principal e identificar o Sujeito] │ ▼ [Passo 2: Inventariar os complementos já presentes na frase original] │ ├── Cenário A: A frase já possui Objeto Direto (OD) substantivado sem preposição? │ │ │ └── SIM ──► O novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Indireto (lhe / a ele). │ └── Se a banca propôs pronome de OD (o, a, los, las, nos, nas): │ ==► MARCAR ITEM COMO ERRADO (Erro: OD + OD). │ └── Cenário B: A frase já possui Objeto Indireto (OI) preposicionado (ex.: \"a artigos\")? │ └── SIM ──► O novo pronome associado OBRIGATORIAMENTE deve ser Objeto Direto (o, a, me). └── Se a banca propôs trocar o pronome direto por \"lhe\": ==► MARCAR ITEM COMO ERRADO (Erro: OI + OI).",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-reescrita-vtdi",
+                "groups": [
+                  {
+                    "id": "grupo-passo-1-vtdi",
+                    "label": "Passo 1: Isolamento do Verbo e do Sujeito",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-passo-2-inventario",
+                    "label": "Passo 2: Inventário dos Complementos Originais",
+                    "order": 2
+                  },
+                  {
+                    "id": "grupo-julgamento-vtdi",
+                    "label": "Julgamento da Proposta de Reescrita",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-reescrita-vtdi",
+                    "kind": "start",
+                    "label": "Início: Questão de Reescrita com Pronomes em VTDI",
+                    "details": [
+                      "Identificar verbo bitransitivo (VTDI) que exige simultaneamente Objeto Direto (OD) e Objeto Indireto (OI)",
+                      "Regra canônica de bipolaridade: um VTDI nunca aceita dois ODs nem dois OIs na mesma oração"
+                    ],
+                    "groupId": "grupo-passo-1-vtdi"
+                  },
+                  {
+                    "id": "proc-isolar-verbo-sujeito-vtdi",
+                    "kind": "process",
+                    "label": "Passo 1: Isolar o Verbo Principal e o Sujeito",
+                    "details": [
+                      "Localizar a forma verbal e o sujeito que pratica a ação",
+                      "Exemplo: 'O diretor informou os novos procedimentos aos funcionários.'"
+                    ],
+                    "groupId": "grupo-passo-1-vtdi"
+                  },
+                  {
+                    "id": "decisao-cenario-complemento-presente",
+                    "kind": "decision",
+                    "label": "Qual complemento já está redigido na frase original?",
+                    "details": [
+                      "Cenário A: A frase já possui Objeto Direto (OD) sem preposição",
+                      "Cenário B: A frase já possui Objeto Indireto (OI) preposicionado"
+                    ],
+                    "groupId": "grupo-passo-2-inventario"
+                  },
+                  {
+                    "id": "proc-cenario-a-tem-od",
+                    "kind": "process",
+                    "label": "Cenário A: Frase Já Possui Objeto Direto (OD)",
+                    "details": [
+                      "Exemplo: 'informou os novos procedimentos [OD] ...'",
+                      "Por exclusão mútua: o novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Indireto ('lhe' / 'lhes' / 'a ele')"
+                    ],
+                    "groupId": "grupo-julgamento-vtdi"
+                  },
+                  {
+                    "id": "decisao-proposta-banca-cenario-a",
+                    "kind": "decision",
+                    "label": "Qual pronome a banca propôs inserir no Cenário A?",
+                    "details": [
+                      "Verificar se a proposta usou pronome direto ou indireto"
+                    ],
+                    "groupId": "grupo-julgamento-vtdi"
+                  },
+                  {
+                    "id": "res-cenario-a-lhe-certo",
+                    "kind": "result",
+                    "label": "Propôs 'LHE / A ELE' ──► Marcar CERTO",
+                    "details": [
+                      "Configuração correta: Verbo + OD + OI ('informou-lhe os procedimentos')",
+                      "Harmonia sintática perfeita do VTDI"
+                    ],
+                    "groupId": "grupo-julgamento-vtdi"
+                  },
+                  {
+                    "id": "res-cenario-a-od-errado",
+                    "kind": "result",
+                    "label": "Propôs 'O / OS / A / AS' ──► Marcar ERRADO",
+                    "details": [
+                      "Erro de duplicação: OD + OD ('informou-os os procedimentos')",
+                      "Agramaticalidade grave"
+                    ],
+                    "groupId": "grupo-julgamento-vtdi"
+                  },
+                  {
+                    "id": "proc-cenario-b-tem-oi",
+                    "kind": "process",
+                    "label": "Cenário B: Frase Já Possui Objeto Indireto (OI)",
+                    "details": [
+                      "Exemplo: 'informou aos funcionários [OI] ...'",
+                      "Por exclusão mútua: o novo pronome inserido OBRIGATORIAMENTE deve ser Objeto Direto ('o' / 'a' / 'os' / 'as')"
+                    ],
+                    "groupId": "grupo-julgamento-vtdi"
+                  },
+                  {
+                    "id": "decisao-proposta-banca-cenario-b",
+                    "kind": "decision",
+                    "label": "Qual pronome a banca propôs inserir no Cenário B?",
+                    "details": [
+                      "Verificar se a proposta usou pronome direto ou indireto"
+                    ],
+                    "groupId": "grupo-julgamento-vtdi"
+                  },
+                  {
+                    "id": "res-cenario-b-o-certo",
+                    "kind": "result",
+                    "label": "Propôs 'O / OS / A / AS' ──► Marcar CERTO",
+                    "details": [
+                      "Configuração correta: Verbo + OI + OD ('informou-os aos funcionários')",
+                      "Harmonia sintática perfeita do VTDI"
+                    ],
+                    "groupId": "grupo-julgamento-vtdi"
+                  },
+                  {
+                    "id": "res-cenario-b-lhe-errado",
+                    "kind": "result",
+                    "label": "Propôs 'LHE / LHES' ──► Marcar ERRADO",
+                    "details": [
+                      "Erro de duplicação: OI + OI ('informou-lhes aos funcionários')",
+                      "Agramaticalidade grave"
+                    ],
+                    "groupId": "grupo-julgamento-vtdi"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-reescrita-vtdi",
+                    "to": "proc-isolar-verbo-sujeito-vtdi"
+                  },
+                  {
+                    "from": "proc-isolar-verbo-sujeito-vtdi",
+                    "to": "decisao-cenario-complemento-presente"
+                  },
+                  {
+                    "from": "decisao-cenario-complemento-presente",
+                    "to": "proc-cenario-a-tem-od",
+                    "label": "Frase original possui Objeto Direto (OD)"
+                  },
+                  {
+                    "from": "decisao-cenario-complemento-presente",
+                    "to": "proc-cenario-b-tem-oi",
+                    "label": "Frase original possui Objeto Indireto (OI)"
+                  },
+                  {
+                    "from": "proc-cenario-a-tem-od",
+                    "to": "decisao-proposta-banca-cenario-a"
+                  },
+                  {
+                    "from": "decisao-proposta-banca-cenario-a",
+                    "to": "res-cenario-a-lhe-certo",
+                    "label": "Propôs pronome indireto (lhe / a ele)"
+                  },
+                  {
+                    "from": "decisao-proposta-banca-cenario-a",
+                    "to": "res-cenario-a-od-errado",
+                    "label": "Propôs pronome direto (o / a / os / as)"
+                  },
+                  {
+                    "from": "proc-cenario-b-tem-oi",
+                    "to": "decisao-proposta-banca-cenario-b"
+                  },
+                  {
+                    "from": "decisao-proposta-banca-cenario-b",
+                    "to": "res-cenario-b-o-certo",
+                    "label": "Propôs pronome direto (o / a / os / as)"
+                  },
+                  {
+                    "from": "decisao-proposta-banca-cenario-b",
+                    "to": "res-cenario-b-lhe-errado",
+                    "label": "Propôs pronome indireto (lhe / lhes)"
+                  }
+                ],
+                "structuredText": "Algoritmo de Validação de Reescritas em Verbos Transitivos Diretos e Indiretos (VTDI):\n\nPasso 1: Isolar o verbo principal e identificar o Sujeito.\nPasso 2: Inventariar os complementos já presentes na frase original:\n  - Cenário A (Frase já possui OD sem preposição):\n    - Novo pronome DEVE ser OI ('lhe' / 'a ele'). Se a banca propôs 'o/a/os/as' -> Marcar ERRADO (Erro: OD + OD).\n  - Cenário B (Frase já possui OI preposicionado):\n    - Novo pronome DEVE ser OD ('o/a/os/as'). Se a banca propôs 'lhe' -> Marcar ERRADO (Erro: OI + OI).",
+                "provenance": {
+                  "unit": "IP-A03-G02",
+                  "procedureId": "decision:IP-A03-G02:004",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-reescrita-vtdi[\"Início: Questão de Reescrita com Pronomes em VTDI\"] --> proc-isolar-verbo-sujeito-vtdi[\"Passo 1: Isolar o Verbo Principal e o Sujeito\"]\n    proc-isolar-verbo-sujeito-vtdi --> decisao-cenario-complemento-presente{\"Qual complemento já está redigido na frase original?\"}\n    decisao-cenario-complemento-presente -- \"Frase original possui Objeto Direto (OD)\" --> proc-cenario-a-tem-od[\"Cenário A: Frase Já Possui Objeto Direto (OD)\"]\n    decisao-cenario-complemento-presente -- \"Frase original possui Objeto Indireto (OI)\" --> proc-cenario-b-tem-oi[\"Cenário B: Frase Já Possui Objeto Indireto (OI)\"]\n    proc-cenario-a-tem-od --> decisao-proposta-banca-cenario-a{\"Qual pronome a banca propôs inserir no Cenário A?\"}\n    decisao-proposta-banca-cenario-a -- \"Propôs pronome indireto (lhe / a ele)\" --> res-cenario-a-lhe-certo[\"Propôs 'LHE / A ELE' ──► Marcar CERTO\"]\n    decisao-proposta-banca-cenario-a -- \"Propôs pronome direto (o / a / os / as)\" --> res-cenario-a-od-errado[\"Propôs 'O / OS / A / AS' ──► Marcar ERRADO\"]\n    proc-cenario-b-tem-oi --> decisao-proposta-banca-cenario-b{\"Qual pronome a banca propôs inserir no Cenário B?\"}\n    decisao-proposta-banca-cenario-b -- \"Propôs pronome direto (o / a / os / as)\" --> res-cenario-b-o-certo[\"Propôs 'O / OS / A / AS' ──► Marcar CERTO\"]\n    decisao-proposta-banca-cenario-b -- \"Propôs pronome indireto (lhe / lhes)\" --> res-cenario-b-lhe-errado[\"Propôs 'LHE / LHES' ──► Marcar ERRADO\"]"
+              }
             }
           ],
           "presentation": {
@@ -1365,8 +1553,8 @@
               "EXP-IP-A03-G02-PROC-004"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         }
       ]

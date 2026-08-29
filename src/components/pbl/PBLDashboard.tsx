@@ -204,11 +204,11 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   }
 
   if (loading && !competencies.length) {
-    return <div role="status" className="tool-content-shell p-8 text-center text-sm font-semibold text-slate-700">Carregando trilhas PBL…</div>;
+    return <div role="status" className="w-full p-8 text-center text-sm font-semibold text-slate-700">Carregando trilhas PBL…</div>;
   }
 
   return (
-    <div className="pbl-dashboard tool-content-shell space-y-8">
+    <div className="pbl-dashboard w-full space-y-8">
       {errorMessage && <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm font-semibold text-rose-900">{errorMessage}</div>}
 
       {requestedCompetency && resumableSession && (

@@ -968,13 +968,141 @@
               "text": "Identificar e classificar com exatidão a função de termos modificadores dependentes, garantindo a correspondência entre a relação sintática e a morfologia receptora."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Sequência operacional"
-            },
-            {
-              "type": "paragraph",
-              "text": "Início da Análise do Termo │ ▼ [Passo 1: Conversar com a Frase & Lançar a SETA] │ Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina. │ Traçar visualmente a seta do termo emissor para o vocábulo receptor. │ ▼ [Passo 2: Identificar a Classe da Palavra Receptora] │ Classificar morfologicamente a palavra que recebeu a ponta da seta: │ ├── Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL │ └── Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) │ ▼ [Passo 3: Dupla Etiquetagem Morfossintática] │ Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico). │ ▼ Fim do Procedimento"
+              "type": "diagram",
+              "diagramType": "taxonomy",
+              "title": "Sequência operacional",
+              "text": "Início da Análise do Termo │ ▼ [Passo 1: Conversar com a Frase & Lançar a SETA] │ Interrogar a estrutura da oração para descobrir a qual palavra exata o termo em análise se subordina. │ Traçar visualmente a seta do termo emissor para o vocábulo receptor. │ ▼ [Passo 2: Identificar a Classe da Palavra Receptora] │ Classificar morfologicamente a palavra que recebeu a ponta da seta: │ ├── Se recebeu seta em VERBO, ADJETIVO ou ADVÉRBIO + denota circunstância → ADJUNTO ADVERBIAL │ └── Se recebeu seta em SUBSTANTIVO → ADJUNTO ADNOMINAL (ou Predicativo) │ ▼ [Passo 3: Dupla Etiquetagem Morfossintática] │ Definir Função Sintática (nível relacional) + Classe Gramatical (nível morfológico). │ ▼ Fim do Procedimento",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-metodo-seta",
+                "structuredText": "### O Método dos Dois Passos da Análise Sintática (Método da Seta)\n1. **Passo 1: Conversar com a Frase & Lançar a Seta**:\n   - Interrogar a estrutura da oração para descobrir a qual vocábulo exato o termo em análise se subordina contextualmente.\n   - Traçar visualmente a seta relacional do termo emissor para o vocábulo receptor.\n2. **Passo 2: Identificar a Classe da Palavra Receptora**:\n   - Classificar morfologicamente a palavra que recebeu a ponta da seta:\n     - **Se a seta apontar para VERBO, ADJETIVO ou ADVÉRBIO (com ideia de circunstância)**:\n       - $\rightarrow$ **ADJUNTO ADVERBIAL**.\n     - **Se a seta apontar para SUBSTANTIVO (ou pronome substantivo)**:\n       - $\rightarrow$ **ADJUNTO ADNOMINAL** (ou Predicativo, se indicar estado).\n3. **Passo 3: Dupla Etiquetagem Morfossintática**:\n   - Definir obrigatoriamente a *Função Sintática* (nível relacional na oração) e a *Classe Gramatical* (nível morfológico intrínseco).",
+                "groups": [
+                  {
+                    "id": "passo-1-seta",
+                    "label": "Passo 1: Vetorização da Relação",
+                    "order": 1
+                  },
+                  {
+                    "id": "passo-2-receptor",
+                    "label": "Passo 2: Diagnóstico da Palavra Receptora",
+                    "order": 2
+                  },
+                  {
+                    "id": "passo-3-etiquetagem",
+                    "label": "Passo 3: Dupla Etiquetagem",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-metodo-seta",
+                    "kind": "start",
+                    "label": "Início da Análise Sintática do Termo",
+                    "groupId": "passo-1-seta",
+                    "details": [
+                      "Método universal para definir a função sintática de modificadores dependentes",
+                      "Evita a rotulagem intuitiva ou isolada da palavra"
+                    ]
+                  },
+                  {
+                    "id": "passo-1-lancar-seta",
+                    "kind": "process",
+                    "label": "Passo 1: Conversar com a Frase & Lançar a Seta",
+                    "groupId": "passo-1-seta",
+                    "details": [
+                      "Identificar a que palavra o termo em análise se subordina semanticamente",
+                      "Traçar visualmente a seta do termo emissor até a palavra receptora"
+                    ]
+                  },
+                  {
+                    "id": "decisao-classe-receptora",
+                    "kind": "decision",
+                    "label": "Qual é a classe morfológica da palavra que recebeu a ponta da seta?",
+                    "groupId": "passo-2-receptor",
+                    "details": [
+                      "A morfologia do termo regente dita a função sintática do termo regido"
+                    ]
+                  },
+                  {
+                    "id": "ramo-adjunto-adverbial",
+                    "kind": "rule",
+                    "label": "Seta em Verbo, Adjetivo ou Advérbio -> Adjunto Adverbial",
+                    "groupId": "passo-2-receptor",
+                    "details": [
+                      "Denota circunstância (tempo, modo, lugar, intensidade, causa, etc.)",
+                      "Modifica o verbo, adjetivo ou outro advérbio",
+                      "Exemplo: 'Chegou cedo' (seta em verbo) / 'Muito bonito' (seta em adjetivo)"
+                    ]
+                  },
+                  {
+                    "id": "ramo-adjunto-adnominal",
+                    "kind": "rule",
+                    "label": "Seta em Substantivo -> Adjunto Adnominal (ou Predicativo)",
+                    "groupId": "passo-2-receptor",
+                    "details": [
+                      "Modifica ou determina um substantivo núcleo",
+                      "Se caracterizar estado via predicação verbal, é Predicativo",
+                      "Exemplo: 'Carro veloz' (seta em substantivo)"
+                    ]
+                  },
+                  {
+                    "id": "passo-3-dupla-etiquetagem",
+                    "kind": "result",
+                    "label": "Passo 3: Dupla Etiquetagem Morfossintática",
+                    "groupId": "passo-3-etiquetagem",
+                    "details": [
+                      "Atribuir Classe Gramatical (ex.: Advérbio, Adjetivo, Artigo)",
+                      "Atribuir Função Sintática (ex.: Adjunto Adverbial, Adjunto Adnominal)",
+                      "Conclusão e encerramento do procedimento analítico"
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-metodo-seta",
+                    "to": "passo-1-lancar-seta",
+                    "label": "analisar termo"
+                  },
+                  {
+                    "from": "passo-1-lancar-seta",
+                    "to": "decisao-classe-receptora",
+                    "label": "ponta da seta fixada"
+                  },
+                  {
+                    "from": "decisao-classe-receptora",
+                    "to": "ramo-adjunto-adverbial",
+                    "label": "Seta em Verbo, Adjetivo ou Advérbio"
+                  },
+                  {
+                    "from": "decisao-classe-receptora",
+                    "to": "ramo-adjunto-adnominal",
+                    "label": "Seta em Substantivo"
+                  },
+                  {
+                    "from": "ramo-adjunto-adverbial",
+                    "to": "passo-3-dupla-etiquetagem",
+                    "label": "etiquetar função"
+                  },
+                  {
+                    "from": "ramo-adjunto-adnominal",
+                    "to": "passo-3-dupla-etiquetagem",
+                    "label": "etiquetar função"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-metodo-seta[\"Início da Análise Sintática do Termo\"] -->|analisar termo| passo-1-lancar-seta[\"Passo 1: Conversar com a Frase & Lançar a Seta\"]\n    passo-1-lancar-seta -->|ponta da seta fixada| decisao-classe-receptora{\"Qual é a classe morfológica da palavra que recebeu a ponta da seta?\"}\n    decisao-classe-receptora -->|Seta em Verbo, Adjetivo ou Advérbio| ramo-adjunto-adverbial[\"Seta em Verbo, Adjetivo ou Advérbio -> Adjunto Adverbial\"]\n    decisao-classe-receptora -->|Seta em Substantivo| ramo-adjunto-adnominal[\"Seta em Substantivo -> Adjunto Adnominal (ou Predicativo)\"]\n    ramo-adjunto-adverbial -->|etiquetar função| passo-3-dupla-etiquetagem[\"Passo 3: Dupla Etiquetagem Morfossintática\"]\n    ramo-adjunto-adnominal -->|etiquetar função| passo-3-dupla-etiquetagem"
+              }
             }
           ],
           "presentation": {
@@ -985,8 +1113,8 @@
               "EXP-IP-A06-G07-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {
@@ -1046,13 +1174,121 @@
               "text": "Classificar termos preposicionados associados a verbos, evitando a armadilha de rotular qualquer estrutura preposicionada como objeto indireto."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Sequência operacional"
-            },
-            {
-              "type": "paragraph",
-              "text": "Termo Preposicionado Ligado a Verbo │ ▼ [Etapa 1] Traçar a seta do termo preposicionado até o verbo regente/referente. │ ▼ [Etapa 2] Confirmar que a palavra receptora é um VERBO. │ ▼ [Etapa 3] Teste Semântico: \"A expressão tem CHEIRO DE CIRCUNSTÂNCIA?\" │ ├── SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) │ │ │ ▼ │ [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca). │ └── NÃO (Preposição é GRAMATICAL: completa o verbo sem carga adverbial própria) │ ▼ [Etapa 4B] Classificar como OBJETO INDIRETO (Termo Integrante / Complemento Verbal)."
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Sequência operacional",
+              "text": "Termo Preposicionado Ligado a Verbo │ ▼ [Etapa 1] Traçar a seta do termo preposicionado até o verbo regente/referente. │ ▼ [Etapa 2] Confirmar que a palavra receptora é um VERBO. │ ▼ [Etapa 3] Teste Semântico: \"A expressão tem CHEIRO DE CIRCUNSTÂNCIA?\" │ ├── SIM (Preposição é NOCIONAL: indica causa, modo, tempo, lugar, instrumento, etc.) │ │ │ ▼ │ [Etapa 4A] Classificar como ADJUNTO ADVERBIAL (Termo Acessório / Fofoca). │ └── NÃO (Preposição é GRAMATICAL: completa o verbo sem carga adverbial própria) │ ▼ [Etapa 4B] Classificar como OBJETO INDIRETO (Termo Integrante / Complemento Verbal).",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "termo-preposicionado-verbo",
+                "structuredText": "### Algoritmo de 4 Etapas para Diferenciar Adjunto Adverbial de Objeto Indireto\n1. **Ponto de Partida**: Termo preposicionado ligado a verbo na oração.\n2. **Etapa 1: Traçar a Seta**:\n   - Lançar a seta relacional do termo preposicionado até o verbo regente/referente.\n3. **Etapa 2: Confirmar a Palavra Receptora**:\n   - Confirmar que a palavra receptora é efetivamente um **VERBO**.\n4. **Etapa 3: Teste Semântico (\"Cheiro de Circunstância\")**:\n   - Avaliar a natureza da relação semântica: *\"A expressão tem cheiro de circunstância?\"*\n     - **SIM (Preposição Nocional)**:\n       - A preposição veicula sentido próprio (lugar, tempo, modo, causa, instrumento, companhia, etc.).\n       - **Etapa 4A**: Classificar como **ADJUNTO ADVERBIAL** (Termo Acessório / Fofoca).\n     - **NÃO (Preposição Gramatical Pura)**:\n       - A preposição é mera exigência sintática vazia de sentido circunstancial, completando o verbo transitivo indireto.\n       - **Etapa 4B**: Classificar como **OBJETO INDIRETO** (Termo Integrante / Complemento Verbal).",
+                "groups": [
+                  {
+                    "id": "etapa-ancoragem",
+                    "label": "Etapas 1 e 2: Ancoragem e Confirmação Verbal",
+                    "order": 1
+                  },
+                  {
+                    "id": "etapa-teste-semantico",
+                    "label": "Etapa 3: Teste Semântico Nocional",
+                    "order": 2
+                  },
+                  {
+                    "id": "etapa-classificacao-final",
+                    "label": "Etapa 4: Classificação Sintática Definitiva",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "termo-preposicionado-verbo",
+                    "kind": "start",
+                    "label": "Termo Preposicionado Ligado a Verbo",
+                    "groupId": "etapa-ancoragem",
+                    "details": [
+                      "Estrutura sob dúvida: termo introduzido por preposição associado a uma forma verbal",
+                      "Evita a armadilha comum de rotular qualquer termo preposicionado como Objeto Indireto"
+                    ]
+                  },
+                  {
+                    "id": "etapa-1-e-2-ancoragem",
+                    "kind": "process",
+                    "label": "Etapas 1 e 2: Traçar Seta e Confirmar que o Receptor é Verbo",
+                    "groupId": "etapa-ancoragem",
+                    "details": [
+                      "Etapa 1: Traçar a seta do termo preposicionado ao verbo regente",
+                      "Etapa 2: Confirmar que a palavra apontada é estritamente um VERBO (e não um nome substantivo/adjetivo)"
+                    ]
+                  },
+                  {
+                    "id": "decisao-cheiro-circunstancia",
+                    "kind": "decision",
+                    "label": "A expressão tem 'cheiro de circunstância' (preposição nocional)?",
+                    "groupId": "etapa-teste-semantico",
+                    "details": [
+                      "Preposição Nocional: indica causa, modo, tempo, lugar, instrumento, finalidade, companhia",
+                      "Preposição Gramatical: exigência mecânica de regência sem valor circunstancial autônomo"
+                    ]
+                  },
+                  {
+                    "id": "etapa-4a-adjunto-adverbial",
+                    "kind": "result",
+                    "label": "Etapa 4A: Classificar como Adjunto Adverbial",
+                    "groupId": "etapa-classificacao-final",
+                    "details": [
+                      "Termo Acessório (indica circunstância / detalhe situacional)",
+                      "Não transita o verbo; o verbo é intransitivo ou transitivo direto com adjunto adverbial",
+                      "Exemplo: 'Mora em São Paulo' / 'Viajou com os amigos' / 'Morreu de frio'"
+                    ]
+                  },
+                  {
+                    "id": "etapa-4b-objeto-indireto",
+                    "kind": "result",
+                    "label": "Etapa 4B: Classificar como Objeto Indireto",
+                    "groupId": "etapa-classificacao-final",
+                    "details": [
+                      "Termo Integrante / Complemento Verbal obrigatório",
+                      "Preposição puramente gramatical regida por VTI ou VTDI",
+                      "Exemplo: 'Gosta de cinema' / 'Obedece aos pais' / 'Acredita em milagres'"
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "termo-preposicionado-verbo",
+                    "to": "etapa-1-e-2-ancoragem",
+                    "label": "analisar vínculo"
+                  },
+                  {
+                    "from": "etapa-1-e-2-ancoragem",
+                    "to": "decisao-cheiro-circunstancia",
+                    "label": "aplicar teste semântico"
+                  },
+                  {
+                    "from": "decisao-cheiro-circunstancia",
+                    "to": "etapa-4a-adjunto-adverbial",
+                    "label": "SIM (Preposição Nocional com Circunstância)"
+                  },
+                  {
+                    "from": "decisao-cheiro-circunstancia",
+                    "to": "etapa-4b-objeto-indireto",
+                    "label": "NÃO (Preposição Gramatical / Complemento Puro)"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    termo-preposicionado-verbo[\"Termo Preposicionado Ligado a Verbo\"] -->|analisar vínculo| etapa-1-e-2-ancoragem[\"Etapas 1 e 2: Traçar Seta e Confirmar que o Receptor é Verbo\"]\n    etapa-1-e-2-ancoragem -->|aplicar teste semântico| decisao-cheiro-circunstancia{\"A expressão tem 'cheiro de circunstância' (preposição nocional)?\"}\n    decisao-cheiro-circunstancia -->|SIM (Preposição Nocional com Circunstância)| etapa-4a-adjunto-adverbial[\"Etapa 4A: Classificar como Adjunto Adverbial\"]\n    decisao-cheiro-circunstancia -->|NÃO (Preposição Gramatical / Complemento Puro)| etapa-4b-objeto-indireto[\"Etapa 4B: Classificar como Objeto Indireto\"]"
+              }
             }
           ],
           "presentation": {
@@ -1063,8 +1299,8 @@
               "EXP-IP-A06-G07-PROC-002"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {
@@ -1124,13 +1360,132 @@
               "text": "Localizar todos os adjuntos adnominais em qualquer segmento do período com 100% de segurança."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Sequência operacional"
-            },
-            {
-              "type": "paragraph",
-              "text": "Varredura do Período │ ▼ [Passo 1: Localizar o SUBSTANTIVO NÚCLEO] │ Varrer o período identificando todos os substantivos que encabeçam funções sintáticas │ (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.). │ ▼ [Passo 2: Rastrear os TERMOS SATÉLITES] │ Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos. │ ▼ [Passo 3: Validar a Classe do Satélite] │ Verificar se o modificador pertence a uma das 5 classes: │ [Artigo | Numeral | Pronome Adjetivo | Adjetivo | Locução Adjetiva] │ ▼ [Passo 4: Teste de Acessoriedade] │ Confirmar que o termo não atua como predicativo indispensável à predicação verbal. │ ▼ Classificação Concluída: ADJUNTO ADNOMINAL"
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Sequência operacional",
+              "text": "Varredura do Período │ ▼ [Passo 1: Localizar o SUBSTANTIVO NÚCLEO] │ Varrer o período identificando todos os substantivos que encabeçam funções sintáticas │ (estejam dentro do sujeito, objetos, predicativos, complementos nominais, etc.). │ ▼ [Passo 2: Rastrear os TERMOS SATÉLITES] │ Inspecionar o entorno imediato do substantivo núcleo em busca de modificadores diretos. │ ▼ [Passo 3: Validar a Classe do Satélite] │ Verificar se o modificador pertence a uma das 5 classes: │ [Artigo | Numeral | Pronome Adjetivo | Adjetivo | Locução Adjetiva] │ ▼ [Passo 4: Teste de Acessoriedade] │ Confirmar que o termo não atua como predicativo indispensável à predicação verbal. │ ▼ Classificação Concluída: ADJUNTO ADNOMINAL",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "inicio-farejador",
+                "structuredText": "### Método do Farejador de Adjuntos Adnominais\n1. **Passo 1: Localizar o Substantivo Núcleo**:\n   - Varrer o período identificando todos os substantivos que encabeçam funções sintáticas (no sujeito, objetos, predicativos, complementos nominais, apostos).\n2. **Passo 2: Rastrear os Termos Satélites**:\n   - Inspecionar o entorno imediato de cada substantivo núcleo em busca de modificadores diretos subordinados a ele.\n3. **Passo 3: Validar a Classe Gramatical do Satélite**:\n   - Confirmar se o termo pertence a uma das 5 classes adnominais canônicas:\n     - *Artigo* (definido/indefinido)\n     - *Numeral* (adjetivo)\n     - *Pronome Adjetivo* (possessivo, demonstrativo, indefinido, etc.)\n     - *Adjetivo*\n     - *Locução Adjetiva* (termo preposicionado de valor qualificador/especificador)\n4. **Passo 4: Teste de Acessoriedade**:\n   - Comprovar que o modificador atua como termo acessório e intrínseco ao sintagma nominal, não atuando como predicativo exigido pela predicação verbal.\n5. **Classificação Concluída**:\n   - Termo rotulado com 100% de segurança como **Adjunto Adnominal**.",
+                "groups": [
+                  {
+                    "id": "fase-localizacao",
+                    "label": "Fase 1: Mapeamento do Sintagma Nominal",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-validacao",
+                    "label": "Fase 2: Validação Morfológica e Sintática",
+                    "order": 2
+                  },
+                  {
+                    "id": "fase-conclusao",
+                    "label": "Fase 3: Rotulagem Final",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-farejador",
+                    "kind": "start",
+                    "label": "Início da Varredura do Período",
+                    "details": [
+                      "Protocolo sistemático para identificação exaustiva de adjuntos adnominais em qualquer segmento do período"
+                    ]
+                  },
+                  {
+                    "id": "passo-1-substantivo-nucleo",
+                    "kind": "process",
+                    "label": "Passo 1: Localizar o Substantivo Núcleo",
+                    "groupId": "fase-localizacao",
+                    "details": [
+                      "Identificar os substantivos que ancoram funções sintáticas (sujeito, objetos, predicativo, etc.)",
+                      "O substantivo funciona como o 'Sol' que atrai os termos satélites"
+                    ]
+                  },
+                  {
+                    "id": "passo-2-rastrear-satelites",
+                    "kind": "process",
+                    "label": "Passo 2: Rastrear os Termos Satélites",
+                    "groupId": "fase-localizacao",
+                    "details": [
+                      "Inspecionar as palavras ligadas diretamente ao substantivo núcleo",
+                      "Traçar a seta relacional do satélite para o substantivo"
+                    ]
+                  },
+                  {
+                    "id": "passo-3-validar-classes",
+                    "kind": "process",
+                    "label": "Passo 3: Validar a Classe do Satélite (5 Classes)",
+                    "groupId": "fase-validacao",
+                    "details": [
+                      "Verificar se pertence a: Artigo, Numeral, Pronome Adjetivo, Adjetivo ou Locução Adjetiva",
+                      "Se não pertencer a uma dessas classes, rejeitar a hipótese de adjunto adnominal"
+                    ]
+                  },
+                  {
+                    "id": "passo-4-teste-acessoriedade",
+                    "kind": "process",
+                    "label": "Passo 4: Teste de Acessoriedade",
+                    "groupId": "fase-validacao",
+                    "details": [
+                      "Confirmar que o termo está dentro do sintagma nominal (termo acessório)",
+                      "Distinguir de Predicativo do Objeto (que atribui estado transitório via verbo)"
+                    ]
+                  },
+                  {
+                    "id": "classificacao-adjunto-adnominal",
+                    "kind": "result",
+                    "label": "Classificação Concluída: Adjunto Adnominal",
+                    "groupId": "fase-conclusao",
+                    "details": [
+                      "Termo validado como Adjunto Adnominal em nível sintático",
+                      "Dupla etiquetagem: Classe Morfológica + Função Sintática"
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-farejador",
+                    "to": "passo-1-substantivo-nucleo",
+                    "label": "iniciar protocolo"
+                  },
+                  {
+                    "from": "passo-1-substantivo-nucleo",
+                    "to": "passo-2-rastrear-satelites",
+                    "label": "núcleo localizado"
+                  },
+                  {
+                    "from": "passo-2-rastrear-satelites",
+                    "to": "passo-3-validar-classes",
+                    "label": "satélites detectados"
+                  },
+                  {
+                    "from": "passo-3-validar-classes",
+                    "to": "passo-4-teste-acessoriedade",
+                    "label": "classe confirmada"
+                  },
+                  {
+                    "from": "passo-4-teste-acessoriedade",
+                    "to": "classificacao-adjunto-adnominal",
+                    "label": "teste aprovado"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-farejador[\"Início da Varredura do Período\"] -->|iniciar protocolo| passo-1-substantivo-nucleo[\"Passo 1: Localizar o Substantivo Núcleo\"]\n    passo-1-substantivo-nucleo -->|núcleo localizado| passo-2-rastrear-satelites[\"Passo 2: Rastrear os Termos Satélites\"]\n    passo-2-rastrear-satelites -->|satélites detectados| passo-3-validar-classes[\"Passo 3: Validar a Classe do Satélite (5 Classes)\"]\n    passo-3-validar-classes -->|classe confirmada| passo-4-teste-acessoriedade[\"Passo 4: Teste de Acessoriedade\"]\n    passo-4-teste-acessoriedade -->|teste aprovado| classificacao-adjunto-adnominal[\"Classificação Concluída: Adjunto Adnominal\"]"
+              }
             }
           ],
           "presentation": {
@@ -1141,8 +1496,8 @@
               "EXP-IP-A06-G07-PROC-003"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "sequence"
           }
         }
       ]

@@ -2,7 +2,10 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { normalizePedagogicalMarkdown } from './lib/pedagogical-markdown.mjs';
-import { separateInlineOptionsFromCommand } from './lib/official-question-presentation.mjs';
+import {
+  separateEmbeddedSupportFromCommand,
+  separateInlineOptionsFromCommand,
+} from './lib/official-question-presentation.mjs';
 import { projectQuestionSupportBlocks } from './lib/question-support-presentation.mjs';
 import { projectStructuredDiagramFromMarkdown } from './lib/structured-diagram.mjs';
 
@@ -47,6 +50,21 @@ const resolvePortugueseRoot = () => {
 const PORTUGUESE_ROOT = resolvePortugueseRoot();
 const PUBLIC_ROOT = path.join(ROOT, 'public', 'knowledge', 'pedagogical');
 const UNIT_OUTPUT_ROOT = path.join(PUBLIC_ROOT, 'units');
+const APOSTILA_PRESENTATION_RECOVERY_PATH = path.join(
+  PORTUGUESE_ROOT,
+  'Integracao_Pedagogica',
+  'question_bank_v1',
+  'compiled',
+  'question_presentations.apostila-recovered.jsonl',
+);
+const APOSTILA_PRESENTATION_ASSET_ROOT = path.join(
+  PORTUGUESE_ROOT,
+  'Integracao_Pedagogica',
+  'question_bank_v1',
+  'compiled',
+  'question_presentation_assets',
+);
+const QUESTION_ASSET_PUBLIC_ROOT = path.join(ROOT, 'public', 'knowledge', 'question-assets');
 const SUVECA_METHOD_PATH = path.join(ROOT, 'knowledge', 'editorial', 'suveca-method.json');
 const SUVECA_GROUP_CONNECTIONS_PATH = path.join(ROOT, 'knowledge', 'editorial', 'suveca-group-connections.json');
 const SUVECA_EDITORIAL_CONNECTIONS_PATH = path.join(ROOT, 'knowledge', 'editorial', 'suveca-connections-editorial.json');
@@ -624,6 +642,12 @@ const sourceFiles = [
   a14RulesPath,
   a14ExamplesPath,
   a14ChunksPath,
+  ...(fs.existsSync(APOSTILA_PRESENTATION_RECOVERY_PATH) ? [APOSTILA_PRESENTATION_RECOVERY_PATH] : []),
+  ...(fs.existsSync(APOSTILA_PRESENTATION_ASSET_ROOT)
+    ? fs.readdirSync(APOSTILA_PRESENTATION_ASSET_ROOT)
+      .map((name) => path.join(APOSTILA_PRESENTATION_ASSET_ROOT, name))
+      .filter((file) => fs.statSync(file).isFile())
+    : []),
 ];
 const sourceDigest = sha256(sourceFiles.map((file) => `${relative(file)}:${sha256File(file)}`).join('\n'));
 const buildId = sha256(`${SCHEMA_VERSION}:${COMPILER_VERSION}:${sourceDigest}`).slice(0, 16);
@@ -1070,6 +1094,19 @@ const questionEntities = readJsonl(path.join(
   'normalized',
   'question_entities.jsonl',
 ));
+const apostilaPresentationRecoveryByRef = new Map(
+  readJsonl(APOSTILA_PRESENTATION_RECOVERY_PATH).map((record) => [record.officialQuestionRef, record]),
+);
+const recoveredQuestionMediaAssets = [...apostilaPresentationRecoveryByRef.values()]
+  .flatMap((record) => record.media || [])
+  .filter((asset) => asset?.assetFile)
+  .filter((asset, index, values) => values.findIndex((candidate) => candidate.assetFile === asset.assetFile) === index);
+const projectRecoveredMedia = (record) => (record?.media || []).map((asset) => ({
+  mediaRef: asset.mediaRef,
+  url: `/knowledge/question-assets/${asset.assetFile}`,
+  role: asset.role,
+  altText: asset.altText,
+}));
 const entityByLegacyOfficialRef = new Map();
 const supportEntityByPrompt = new Map();
 const supportEntityByPresentationFingerprint = new Map();
@@ -1155,7 +1192,9 @@ const normalizeEligibleQuestion = (occurrence) => {
        text: cleanEditorialQuestionText(option.text),
     }));
   const promptProjection = separateInlineOptionsFromCommand(sourcePrompt, options);
-  const cleanedPrompt = promptProjection.command;
+  const supportProjection = separateEmbeddedSupportFromCommand(promptProjection.command);
+  const cleanedPrompt = supportProjection.command;
+  const projectedSupportText = cleanedSupportText || cleanEditorialQuestionText(supportProjection.supportText);
   const multipleChoiceAnswer = answerLetter(answer.answer);
   let questionType;
   let correctAnswer;
@@ -1179,7 +1218,8 @@ const normalizeEligibleQuestion = (occurrence) => {
     options: normalizedOptions,
     cleanedPrompt,
     inlineOptionsSeparated: promptProjection.duplicatedInlineOptions,
-    cleanedSupportText,
+    cleanedSupportText: projectedSupportText,
+    embeddedSupportSeparated: supportProjection.embeddedSupportSeparated,
     cleanedCommentary,
   };
 };
@@ -1214,12 +1254,19 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
   const organizations = [...new Set(occurrences.map((item) => item.question.organization).filter(Boolean))].sort();
   const years = [...new Set(occurrences.map((item) => item.question.year).filter(Number.isFinite))].sort((a, b) => a - b);
   const sourceRefs = occurrences.map((item) => `CORPUS:${item.lessonId}:${item.question.question_id}`);
+  const officialQuestionAliases = occurrences
+    .map((item) => `OQ-${item.lessonId}-${item.question.question_id}`)
+    .sort();
   const officialQuestionRef = `OQ-${primary.lessonId}-${primary.question.question_id}`;
   const legacyEntity = entityByLegacyOfficialRef.get(officialQuestionRef);
   const parallelEntity = supportEntityByPresentationFingerprint.get(legacyEntity?.presentationFingerprint)
     || supportEntityByPrompt.get(normalizeQuestionText(primary.cleanedPrompt));
   const presentationEntity = parallelEntity || legacyEntity;
-  const recoveredSupportText = primary.cleanedSupportText || cleanEditorialQuestionText(presentationEntity?.supportText);
+  const recoveredPresentation = apostilaPresentationRecoveryByRef.get(officialQuestionRef)
+    || officialQuestionAliases.map((alias) => apostilaPresentationRecoveryByRef.get(alias)).find(Boolean);
+  const recoveredSupportText = primary.cleanedSupportText
+    || cleanEditorialQuestionText(recoveredPresentation?.supportText)
+    || cleanEditorialQuestionText(presentationEntity?.supportText);
   const structuredSupportPresentation = structureEditorialSupportText(recoveredSupportText, primary.cleanedPrompt);
   const publishedSupportText = structuredSupportPresentation
     ? structuredSupportPresentation.supportBlocks.map((block) => block.richText || block.text).filter(Boolean).join('\n\n')
@@ -1231,16 +1278,28 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
   const sourcePromptRichText = primary.inlineOptionsSeparated
     ? (sourcePromptRichTextProjection.duplicatedInlineOptions ? sourcePromptRichTextProjection.command : undefined)
     : sourcePromptRichTextCandidate;
-  const promptRichText = officialQuestionRef === 'OQ-A00-aula00.q0006'
-    ? 'A respeito das palavras destacadas no excerto “Faz parte do **processo** de **amadurecimento**”, assinale a alternativa correta.'
-    : sourcePromptRichText;
-  const optionRichText = Object.fromEntries((presentationEntity?.options || [])
+  const recoveredPromptRichTextProjection = separateInlineOptionsFromCommand(
+    recoveredPresentation?.commandRichText,
+    primary.options,
+  );
+  const recoveredPromptRichText = recoveredPresentation?.commandRichText
+    ? (recoveredPromptRichTextProjection.duplicatedInlineOptions
+      ? recoveredPromptRichTextProjection.command
+      : recoveredPresentation.commandRichText)
+    : undefined;
+  const promptRichText = recoveredPromptRichText || sourcePromptRichText;
+  const recoveredMedia = projectRecoveredMedia(recoveredPresentation);
+  const optionRichText = {
+    ...Object.fromEntries((presentationEntity?.options || [])
     .map((option) => [String(option.label || '').toUpperCase(), inlineHtmlToMarkdown(option.html)])
-    .filter(([, richText]) => richText));
+    .filter(([, richText]) => richText)),
+    ...(recoveredPresentation?.optionRichText || {}),
+  };
   const visualRichText = [promptRichText, inlineHtmlToMarkdown(presentationEntity?.supportTextHtml), ...Object.values(optionRichText)]
     .filter(Boolean)
     .join('\n');
   const hasSourceBackedEmphasis = /(?:\*\*[^*]+\*\*|\*[^*]+\*)/.test(visualRichText);
+  const hasSourceBackedVisual = hasSourceBackedEmphasis || recoveredMedia.length > 0;
   const presentation = (recoveredSupportText || promptRichText || Object.keys(optionRichText).length || explicitContextReference || explicitVisualReference || primary.inlineOptionsSeparated)
     ? {
         ...(structuredSupportPresentation || {
@@ -1252,21 +1311,28 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
           media: [],
         }),
         ...(promptRichText ? { commandRichText: promptRichText } : {}),
+        ...(recoveredMedia.length ? {
+          mediaKind: recoveredPresentation.mediaKind || 'visual_essential',
+          displayMode: recoveredPresentation.displayMode || 'text_and_image',
+          media: recoveredMedia,
+        } : {}),
         ...(presentationEntity?.supportTextHtml ? { supportRichText: inlineHtmlToMarkdown(presentationEntity.supportTextHtml) } : {}),
         ...(Object.keys(optionRichText).length ? { optionRichText } : {}),
         contextStatus: explicitContextReference
           ? (recoveredSupportText ? 'source_backed' : 'source_missing')
           : 'not_required',
         formattingStatus: explicitVisualReference
-          ? (hasSourceBackedEmphasis ? 'source_backed' : 'source_missing')
+          ? (hasSourceBackedVisual ? 'source_backed' : 'source_missing')
           : 'not_required',
         provenance: {
           kind: 'source_backed_question_presentation',
           sourceQuestionEntityRef: presentationEntity?.questionEntityId || null,
           sourceOfficialQuestionRef: officialQuestionRef,
           recoveredParallelSupport: Boolean(!primary.cleanedSupportText && presentationEntity?.supportText),
-          pdfTypographicRepair: officialQuestionRef === 'OQ-A00-aula00.q0006',
+          pdfTypographicRepair: Boolean(recoveredPresentation),
+          ...(recoveredPresentation?.provenance ? { pdfTypographicProvenance: recoveredPresentation.provenance } : {}),
           inlineOptionsSeparated: primary.inlineOptionsSeparated,
+          embeddedSupportSeparated: primary.embeddedSupportSeparated,
         },
       }
     : undefined;
@@ -1276,6 +1342,7 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
     lessonIds,
     moduleIds,
     originalQuestionId: primary.question.question_id,
+    officialQuestionAliases,
     questionType: primary.questionType,
     supportText: publishedSupportText,
     prompt: primary.cleanedPrompt,
@@ -1331,6 +1398,95 @@ const editorialQuestionRecords = [...eligibleByGroup.values()].map((group) => {
   };
   return { raw, normalized, index };
 }).sort((left, right) => left.normalized.id.localeCompare(right.normalized.id, 'en'));
+
+const apostilaPresentationFallbacks = Object.fromEntries(corpusQuestionOccurrences.flatMap((occurrence) => {
+  const { lessonId, question, answer } = occurrence;
+  if (!question?.question_id) return [];
+  const officialQuestionRef = `OQ-${lessonId}-${question.question_id}`;
+  const sourcePrompt = cleanEditorialQuestionPrompt(question.prompt);
+  const sourceOptions = (question.options || [])
+    .filter((option) => String(option?.text || '').trim())
+    .map((option) => ({
+      letter: answerLetter(option.label) || String(option.label || '').trim().toUpperCase(),
+      text: cleanEditorialQuestionText(option.text),
+    }));
+  const optionProjection = separateInlineOptionsFromCommand(sourcePrompt, sourceOptions);
+  const supportProjection = separateEmbeddedSupportFromCommand(optionProjection.command);
+  const command = supportProjection.command;
+  const recoveredPresentation = apostilaPresentationRecoveryByRef.get(officialQuestionRef);
+  const supportText = cleanEditorialQuestionText(question.support_text)
+    || cleanEditorialQuestionText(supportProjection.supportText)
+    || cleanEditorialQuestionText(recoveredPresentation?.supportText);
+  const explicitContextReference = /\b(?:texto\s+(?:[A-Z]{1,4}\d[A-Z]?\d?|anterior)|parágrafo\s+\d+|linha\s+\d+)/i.test(command);
+  const explicitVisualReference = /\b(?:destacad[ao]s?|sublinhad[ao]s?|grif[ao]d[ao]s?|negrito)\b/i.test(command);
+  if (!explicitContextReference && !explicitVisualReference && !supportProjection.embeddedSupportSeparated && !recoveredPresentation) {
+    return [];
+  }
+  const recoveredRichProjection = separateInlineOptionsFromCommand(
+    recoveredPresentation?.commandRichText,
+    sourceOptions,
+  );
+  const commandRichText = recoveredPresentation?.commandRichText
+    ? (recoveredRichProjection.duplicatedInlineOptions
+      ? recoveredRichProjection.command
+      : recoveredPresentation.commandRichText)
+    : undefined;
+  const recoveredFallbackRichText = [
+    commandRichText,
+    ...Object.values(recoveredPresentation?.optionRichText || {}),
+  ].filter(Boolean).join('\n');
+  const hasRecoveredFallbackEmphasis = /(?:\*\*[^*]+\*\*|\*[^*]+\*)/.test(recoveredFallbackRichText);
+  const recoveredMedia = projectRecoveredMedia(recoveredPresentation);
+  const hasRecoveredFallbackVisual = hasRecoveredFallbackEmphasis || recoveredMedia.length > 0;
+  const structuredSupport = structureEditorialSupportText(supportText, command) || {
+    schemaVersion: '1.0.0',
+    supportBlocks: [],
+    command,
+    mediaKind: 'none',
+    displayMode: 'text_only',
+    media: [],
+  };
+  const presentation = {
+    ...structuredSupport,
+    ...(recoveredMedia.length ? {
+      mediaKind: recoveredPresentation.mediaKind || 'visual_essential',
+      displayMode: recoveredPresentation.displayMode || 'text_and_image',
+      media: recoveredMedia,
+    } : {}),
+    ...(commandRichText ? { commandRichText } : {}),
+    ...(recoveredPresentation?.optionRichText ? { optionRichText: recoveredPresentation.optionRichText } : {}),
+    contextStatus: explicitContextReference
+      ? (supportText ? 'source_backed' : 'source_missing')
+      : 'not_required',
+    formattingStatus: explicitVisualReference
+      ? (hasRecoveredFallbackVisual ? 'source_backed' : 'source_missing')
+      : 'not_required',
+    provenance: {
+      kind: 'source_backed_apostila_presentation_fallback',
+      sourceOfficialQuestionRef: officialQuestionRef,
+      sourcePayloadPreserved: true,
+      inlineOptionsSeparated: optionProjection.duplicatedInlineOptions,
+      embeddedSupportSeparated: supportProjection.embeddedSupportSeparated,
+      ...(recoveredPresentation?.provenance
+        ? { pdfTypographicProvenance: recoveredPresentation.provenance }
+        : {}),
+    },
+  };
+  const correctAnswer = answerLetter(answer?.answer) || binaryAnswer(answer?.answer) || String(answer?.answer || '').trim();
+  return [[officialQuestionRef, {
+    id: `${lessonId}:${question.question_id}`,
+    originalQuestionId: question.question_id,
+    prompt: command,
+    supportText,
+    presentation,
+    questionType: question.question_type,
+    options: sourceOptions,
+    correctAnswer,
+    commentary: cleanEditorialQuestionText(answer?.commentary),
+    bank: question.exam_board || undefined,
+    year: Number.isFinite(question.year) ? question.year : undefined,
+  }]];
+}));
 
 const apostilaEditorialQuestionCount = editorialQuestionRecords.length;
 const apostilaEditorialQuestionIds = new Set(editorialQuestionRecords.map((record) => record.normalized.id));
@@ -1673,11 +1829,36 @@ const procedures = decisionCandidates.map((candidate) => {
   };
 }).filter((item) => item.lessonId && item.title && item.markdown.length >= 80);
 assert(procedures.length >= 350, `Roteiros de decisão insuficientes: ${procedures.length}.`);
+const structuredMapOverlayPath = path.join(PUBLIC_ROOT, 'structured-map-presentations.json');
+assert(fs.existsSync(structuredMapOverlayPath), 'Overlay tipado de mapas estruturados ausente.');
+const structuredMapPresentations = readJson(structuredMapOverlayPath);
+assert(structuredMapPresentations.schemaVersion === '2.1.0', 'Schema do overlay tipado de mapas inválido.');
 
-const duelCandidates = simuladoQuestions
+const simuladoQuestionIds = new Set(simuladoQuestions.map((question) => question.officialQuestionId));
+const duelSupplement = editorialQuestionRecords
+  .filter((record) => apostilaEditorialQuestionIds.has(record.normalized.id))
+  .filter((record) => !simuladoQuestionIds.has(record.normalized.id))
+  .map(({ normalized }) => ({
+    id: `editorial-duel-source-${normalized.id}`,
+    type: normalized.questionType,
+    correctAnswer: normalized.correctAnswer,
+    supportText: normalized.supportText,
+    questionText: normalized.prompt,
+    commentary: normalized.commentary,
+    sourceRefs: [`QUESTION:${normalized.id}`, ...normalized.sourceRefs],
+  }));
+const duelEligible = [...simuladoQuestions, ...duelSupplement]
   .filter((question) => question.type === 'CERTO_ERRADO' && ['C', 'E'].includes(question.correctAnswer))
-  .filter((question) => (question.supportText || '').length <= 280 && question.questionText.length <= 320)
-  .slice(0, 12);
+  .filter((question) => question.questionText.length <= 320);
+const duelCompact = duelEligible.filter((question) => (question.supportText || '').length <= 280);
+const compactQuestionIds = new Set(duelCompact.map((question) => question.id));
+const duelCandidates = [
+  ...duelCompact,
+  ...duelEligible.filter((question) => (
+    !compactQuestionIds.has(question.id)
+    && (question.supportText || '').length <= 1_600
+  )),
+].slice(0, 12);
 assert(duelCandidates.length === 12, `Duelo editorial: ${duelCandidates.length}/12 questões.`);
 const duelQuestions = duelCandidates.map((question, index) => ({
   id: `editorial-duel-${String(index + 1).padStart(2, '0')}`,
@@ -1724,6 +1905,7 @@ const curriculumArtifact = {
     studyUnits: runtimeSections.length,
     flashcards: selectedFlashcards.length,
     decisionProcedures: procedures.length,
+    structuredMapPresentations: structuredMapPresentations.count,
     simuladoQuestions: simuladoQuestions.length,
     editorialQuestions: editorialQuestionRecords.length,
     approvedOnlineQuestions: approvedOnlineQuestions.length,
@@ -1735,6 +1917,8 @@ const curriculumArtifact = {
     methodologyGroupConnections: Object.keys(suvecaGroupConnections.connections).length,
     methodologyStudyConnections: runtimeSections.length,
     methodologyGroupDistribution,
+    // As dependências de mídia das questões vivem na apresentação editorial e
+    // não tornam as unidades curriculares dependentes de mídia.
     mediaDependencies: 0,
   },
   methodology: publishedSuvecaMethod,
@@ -1881,6 +2065,12 @@ const generatedFiles = [
   [path.join(ROOT, 'functions', 'src', 'officialQuestions.ts'), simuladoFunctionsSource],
   [path.join(ROOT, 'public', 'knowledge', 'official-questions.raw.json'), stableJson(editorialQuestionRaw)],
   [path.join(ROOT, 'public', 'knowledge', 'official-questions.normalized.json'), stableJson(editorialQuestionNormalized)],
+  [path.join(ROOT, 'public', 'knowledge', 'official-question-presentation-fallbacks.json'), compactJson({
+    schemaVersion: '1.0.0',
+    kind: 'source-backed-apostila-question-presentation-fallbacks',
+    count: Object.keys(apostilaPresentationFallbacks).length,
+    presentations: apostilaPresentationFallbacks,
+  })],
   // Keep the query index below the AI Studio per-file import ceiling. Raw and
   // normalized projections are deployed as verified shards.
   [path.join(ROOT, 'public', 'knowledge', 'official-question-index.json'), compactJson(editorialQuestionIndex)],
@@ -1888,13 +2078,23 @@ const generatedFiles = [
   [path.join(ROOT, 'public', 'knowledge', 'editorial-question-quality.json'), stableJson(editorialQuestionQuality)],
   [path.join(PUBLIC_ROOT, 'suveca-method.json'), stableJson({ ...publishedSuvecaMethod, buildId })],
   [path.join(PUBLIC_ROOT, 'decision-procedures.json'), stableJson({
-    schemaVersion: SCHEMA_VERSION,
+    schemaVersion: '4.3.0',
     buildId,
     count: procedures.length,
     procedures,
   })],
 ];
 for (const [file, content] of generatedFiles) write(file, content);
+
+fs.mkdirSync(QUESTION_ASSET_PUBLIC_ROOT, { recursive: true });
+for (const asset of recoveredQuestionMediaAssets) {
+  const source = path.join(APOSTILA_PRESENTATION_ASSET_ROOT, asset.assetFile);
+  const destination = path.join(QUESTION_ASSET_PUBLIC_ROOT, asset.assetFile);
+  assert(fs.existsSync(source), `Mídia recuperada ausente: ${source}`);
+  fs.copyFileSync(source, destination);
+}
+const recoveredQuestionMediaFiles = recoveredQuestionMediaAssets
+  .map((asset) => path.join(QUESTION_ASSET_PUBLIC_ROOT, asset.assetFile));
 
 const artifacts = [
   ...generatedFiles
@@ -1904,6 +2104,8 @@ const artifacts = [
       path.join(ROOT, 'public', 'knowledge', 'official-questions.normalized.json'),
     ].includes(file)),
   ...fs.readdirSync(UNIT_OUTPUT_ROOT).map((name) => path.join(UNIT_OUTPUT_ROOT, name)),
+  structuredMapOverlayPath,
+  ...recoveredQuestionMediaFiles,
 ].sort((a, b) => relative(a).localeCompare(relative(b), 'en'));
 
 const publicManifest = {

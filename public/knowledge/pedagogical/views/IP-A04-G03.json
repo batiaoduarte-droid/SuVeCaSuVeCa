@@ -418,39 +418,134 @@
             },
             {
               "type": "diagram",
-              "diagramType": "flow",
+              "diagramType": "sequence",
               "title": "Explicação consolidada",
               "text": "ALGORITMO DOS 3 PASSOS │ 1º PASSO: ACHAR A VOGAL TEMÁTICA ▼ • \"Jogar\" o verbo para o Infinitivo Impessoal. • Identificar a vogal antes do \"-r\" (A = 1ª, E = 2ª, I = 3ª). • Isolar o Radical e obter a base do Tema (Radical + VT). │ 2º PASSO: ACHAR A DESINÊNCIA MODO-TEMPORAL (DMT) ▼ • Conjugar mentalmente o tempo verbal com o apoio de marcadores. • Isolar a desinência COMUM que se repete em todas as pessoas. │ 3º PASSO: ACHAR A DESINÊNCIA NÚMERO-PESSOAL (DNP) ▼ • Observar a terminação específica da pessoa solicitada. • Isolar a desinência PARTICULAR que varia de pessoa para pessoa.",
               "structure": {
-                "kind": "sequence",
-                "rootLabel": "Algoritmo dos 3 passos",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "inicio-analise-morfologica",
+                "groups": [
                   {
-                    "id": "step-1",
-                    "label": "ACHAR A VOGAL TEMÁTICA",
-                    "details": [
-                      "\"Jogar\" o verbo para o Infinitivo Impessoal",
-                      "Identificar a vogal antes do \"-r\" (A = 1ª, E = 2ª, I = 3ª)",
-                      "Isolar o Radical e obter a base do Tema (Radical + VT)"
-                    ]
+                    "id": "g-passo1",
+                    "label": "1º Passo: Vogal Temática e Tema",
+                    "order": 1
                   },
                   {
-                    "id": "step-2",
-                    "label": "ACHAR A DESINÊNCIA MODO-TEMPORAL (DMT)",
-                    "details": [
-                      "Conjugar mentalmente o tempo verbal com o apoio de marcadores",
-                      "Isolar a desinência COMUM que se repete em todas as pessoas"
-                    ]
+                    "id": "g-passo2",
+                    "label": "2º Passo: Desinência Modo-Temporal (DMT)",
+                    "order": 2
                   },
                   {
-                    "id": "step-3",
-                    "label": "ACHAR A DESINÊNCIA NÚMERO-PESSOAL (DNP)",
-                    "details": [
-                      "Observar a terminação específica da pessoa solicitada",
-                      "Isolar a desinência PARTICULAR que varia de pessoa para pessoa"
-                    ]
+                    "id": "g-passo3",
+                    "label": "3º Passo: Desinência Número-Pessoal (DNP)",
+                    "order": 3
                   }
-                ]
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-analise-morfologica",
+                    "kind": "start",
+                    "label": "Início: Identificação Mofossintática da Forma Verbal",
+                    "details": [
+                      "Objetivo: decompor com segurança o verbo em Radical, Vogal Temática, DMT e DNP."
+                    ]
+                  },
+                  {
+                    "id": "infinitivo-impessoal",
+                    "kind": "process",
+                    "label": "Passo 1.1: Converter para o Infinitivo Impessoal",
+                    "details": [
+                      "Jogar mentalmente o verbo para a forma terminada em -R (ex.: cantávamos ➔ cantar)."
+                    ],
+                    "groupId": "g-passo1"
+                  },
+                  {
+                    "id": "identificar-vt-tema",
+                    "kind": "process",
+                    "label": "Passo 1.2: Identificar a Vogal Temática e Isolar o Tema",
+                    "details": [
+                      "Vogal antes do '-r': A = 1ª conjugação, E = 2ª conjugação, I = 3ª conjugação.",
+                      "Tema = Radical + Vogal Temática (ex.: CANTA-)."
+                    ],
+                    "groupId": "g-passo1"
+                  },
+                  {
+                    "id": "conjugar-com-gatilho",
+                    "kind": "process",
+                    "label": "Passo 2.1: Conjugar com Marcadores Temporais",
+                    "details": [
+                      "Apoiar-se em marcadores: 'Hoje' (Pres.), 'Ontem' (Pret. Perf.), 'Se' (Pret. Imp. Subj.)."
+                    ],
+                    "groupId": "g-passo2"
+                  },
+                  {
+                    "id": "isolar-dmt",
+                    "kind": "process",
+                    "label": "Passo 2.2: Isolar a Desinência Modo-Temporal (DMT)",
+                    "details": [
+                      "Identificar a desinência COMUM que se repete em todas as pessoas do paradigma (ex.: -va- em cantávamos, cantavas)."
+                    ],
+                    "groupId": "g-passo2"
+                  },
+                  {
+                    "id": "observar-terminacao-pessoa",
+                    "kind": "process",
+                    "label": "Passo 3.1: Observar a Terminação da Pessoa Solicitada",
+                    "details": [
+                      "Examinar o sufixo final correspondente a eu, tu, ele, nós, vós, eles."
+                    ],
+                    "groupId": "g-passo3"
+                  },
+                  {
+                    "id": "isolar-dnp-resultado",
+                    "kind": "result",
+                    "label": "Passo 3.2: Isolar a Desinência Número-Pessoal (DNP)",
+                    "details": [
+                      "Isolar a desinência PARTICULAR que varia de pessoa para pessoa (ex.: -mos para 1ª pessoa do plural).",
+                      "Estrutura completa: Radical + VT + DMT + DNP."
+                    ],
+                    "groupId": "g-passo3"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-analise-morfologica",
+                    "to": "infinitivo-impessoal"
+                  },
+                  {
+                    "from": "infinitivo-impessoal",
+                    "to": "identificar-vt-tema"
+                  },
+                  {
+                    "from": "identificar-vt-tema",
+                    "to": "conjugar-com-gatilho"
+                  },
+                  {
+                    "from": "conjugar-com-gatilho",
+                    "to": "isolar-dmt"
+                  },
+                  {
+                    "from": "isolar-dmt",
+                    "to": "observar-terminacao-pessoa"
+                  },
+                  {
+                    "from": "observar-terminacao-pessoa",
+                    "to": "isolar-dnp-resultado"
+                  }
+                ],
+                "structuredText": "### Algoritmo dos 3 Passos para Identificação de Desinências Verbais\n\n1. **1º PASSO: ACHAR A VOGAL TEMÁTICA E O TEMA**\n   - 'Jogar' o verbo para o Infinitivo Impessoal.\n   - Identificar a vogal antes do '-r' (A = 1ª, E = 2ª, I = 3ª conjugação).\n   - Isolar o Radical e obter a base do Tema (Radical + VT).\n2. **2º PASSO: ACHAR A DESINÊNCIA MODO-TEMPORAL (DMT)**\n   - Conjugar mentalmente o tempo verbal com o apoio de marcadores temporais.\n   - Isolar a desinência COMUM que se repete em todas as pessoas do tempo verbal.\n3. **3º PASSO: ACHAR A DESINÊNCIA NÚMERO-PESSOAL (DNP)**\n   - Observar a terminação específica da pessoa solicitada.\n   - Isolar a desinência PARTICULAR que varia de pessoa para pessoa.",
+                "mermaidSource": "flowchart TD\n    inicio-analise-morfologica[\"Início: Análise Mórfica Verbal\"] --> infinitivo-impessoal[\"Passo 1.1: Infinitivo Impessoal\"]\n    infinitivo-impessoal --> identificar-vt-tema[\"Passo 1.2: Vogal Temática e Tema\"]\n    identificar-vt-tema --> conjugar-com-gatilho[\"Passo 2.1: Conjugação com Marcadores\"]\n    conjugar-com-gatilho --> isolar-dmt[\"Passo 2.2: Isolar Desinência Modo-Temporal DMT\"]\n    isolar-dmt --> observar-terminacao-pessoa[\"Passo 3.1: Observar Pessoa Solicitada\"]\n    observar-terminacao-pessoa --> isolar-dnp-resultado[\"Passo 3.2: Isolar Desinência Número-Pessoal DNP\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {

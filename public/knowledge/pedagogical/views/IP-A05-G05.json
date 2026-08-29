@@ -235,34 +235,107 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "comparison",
               "title": "A Distinção Crítica entre Sujeito Sintático (Paciente) e Agente da Passiva",
               "text": "┌─────────────────────────────────────────────────────────┐ │ A EQUAÇÃO INVIOLÁVEL: SUJEITO ≠ AGENTE DA PASSIVA │ └─────────────────────────────────────────────────────────┘ \"São excluídos do cálculo os desligamentos...\" │ │ └───────────────┘ │ │ │ │ │ └── SUJEITO SINTÁTICO PACIENTE │ │ (Determinado, no plural e posposto) │ │ │ └── ADJUNTO ADVERBIAL │ └── LOCUÇÃO PASSIVA ANALÍTICA (SER + PARTICÍPIO)",
               "structure": {
-                "kind": "relations",
-                "rootLabel": "A EQUAÇÃO INVIOLÁVEL: SUJEITO ≠ AGENTE DA PASSIVA",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "comparison",
+                "layout": "vertical",
+                "rootId": "equacao-inviolavel-sujeito-agente",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "\"São excluídos do cálculo os desligamentos...\""
+                    "id": "equacao-inviolavel-sujeito-agente",
+                    "kind": "start",
+                    "label": "A Equação Inviolável: Sujeito Sintático ≠ Agente da Passiva",
+                    "details": [
+                      "Desconstrução do erro de confundir a função sintática de sujeito com a função semântica de agente na voz passiva."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "SUJEITO SINTÁTICO PACIENTE"
+                    "id": "exemplo-oracao-passiva",
+                    "kind": "example",
+                    "label": "Oração: 'São excluídos do cálculo os desligamentos...'",
+                    "details": [
+                      "Exemplo de concurso com inversão sintática clássica."
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "(Determinado, no plural e posposto)"
+                    "id": "analise-locucao",
+                    "kind": "process",
+                    "label": "Locução Passiva Analítica: 'São excluídos'",
+                    "details": [
+                      "Formada pelo auxiliar SER ('São' = Pres. Ind. 3ª pl.) + Particípio ('excluídos')."
+                    ]
                   },
                   {
-                    "id": "segment-04",
-                    "label": "ADJUNTO ADVERBIAL"
+                    "id": "analise-adjunto",
+                    "kind": "process",
+                    "label": "Adjunto Adverbial: 'do cálculo'",
+                    "details": [
+                      "Termo preposicionado circunstancial que NÃO atua como sujeito nem como agente da passiva."
+                    ]
                   },
                   {
-                    "id": "segment-05",
-                    "label": "LOCUÇÃO PASSIVA ANALÍTICA (SER + PARTICÍPIO)"
+                    "id": "analise-sujeito-paciente",
+                    "kind": "result",
+                    "label": "Sujeito Sintático Paciente: 'os desligamentos'",
+                    "details": [
+                      "Termo determinado, no plural e posposto ao verbo.",
+                      "Comanda a concordância obrigatória da locução passiva ('São excluídos')."
+                    ]
+                  },
+                  {
+                    "id": "regra-distincao",
+                    "kind": "rule",
+                    "label": "Regra Normativa Inviolável",
+                    "details": [
+                      "O sujeito sintático paciente comanda a concordância do verbo auxiliar; o agente da passiva é termo preposicionado que expressa o praticante da ação."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "equacao-inviolavel-sujeito-agente",
+                    "to": "exemplo-oracao-passiva"
+                  },
+                  {
+                    "from": "exemplo-oracao-passiva",
+                    "to": "analise-locucao"
+                  },
+                  {
+                    "from": "exemplo-oracao-passiva",
+                    "to": "analise-adjunto"
+                  },
+                  {
+                    "from": "exemplo-oracao-passiva",
+                    "to": "analise-sujeito-paciente"
+                  },
+                  {
+                    "from": "analise-locucao",
+                    "to": "regra-distincao"
+                  },
+                  {
+                    "from": "analise-adjunto",
+                    "to": "regra-distincao"
+                  },
+                  {
+                    "from": "analise-sujeito-paciente",
+                    "to": "regra-distincao"
+                  }
+                ],
+                "structuredText": "### A Distinção Crítica entre Sujeito Sintático e Agente da Passiva\n\n- **A EQUAÇÃO INVIOLÁVEL: SUJEITO ≠ AGENTE DA PASSIVA**\n- *Oração Analisada:* 'São excluídos do cálculo os desligamentos...'\n  - ├── **'São excluídos':** LOCUÇÃO PASSIVA ANALÍTICA (SER + PARTICÍPIO)\n  - ├── **'do cálculo':** ADJUNTO ADVERBIAL\n  - └── **'os desligamentos':** SUJEITO SINTÁTICO PACIENTE (Determinado, plural e posposto)\n- *Regra de Ouro:* O sujeito paciente posposto comanda a flexão do verbo auxiliar.",
+                "mermaidSource": "flowchart TD\n    equacao-inviolavel-sujeito-agente[\"Equação Inviolável:<br>SUJEITO ≠ AGENTE DA PASSIVA\"] --> exemplo-oracao-passiva[\"Oração: 'São excluídos do cálculo os desligamentos'\"]\n    exemplo-oracao-passiva --> analise-locucao[\"Locução Passiva:<br>'São excluídos'\"]\n    exemplo-oracao-passiva --> analise-adjunto[\"Adjunto Adverbial:<br>'do cálculo'\"]\n    exemplo-oracao-passiva --> analise-sujeito-paciente[\"Sujeito Paciente:<br>'os desligamentos' (posposto/plural)\"]\n    analise-locucao --> regra-distincao[\"Regra: Sujeito comanda Concordância\"]\n    analise-adjunto --> regra-distincao\n    analise-sujeito-paciente --> regra-distincao",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
@@ -600,82 +673,122 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "taxonomy",
               "title": "Quadro Sinótico de Desambiguação do \"SE\"",
               "text": "┌──────────────────────────────────┐ │ ANÁLISE SINTÁTICA DO \"SE\" │ └──────────────────────────────────┘ │ ┌──────────────────────────────┬───────┴──────────────────────┬──────────────────────────────┐ ▼ ▼ ▼ ▼ [ 1. VTD / VTDI ] [ 2. VI / VTI / VL ] [ 3. VERBO PRONOMINAL ] [ 4. VALOR ANAFÓRICO ] │ │ │ │ • SE = Pronome Apassivador • SE = Índice de Indeterm. • SE = Parte Integrante (PIV) • SE = Pronome Reflexivo • Sujeito = Paciente • Sujeito = Indeterminado • Sujeito = Agente / Exper. • Sujeito = Agente e Paciente • Admite Passiva Analítica • Verbo fixo no singular 3ª • Verbo de afeto/mudança/fato • Equivale a \"a si mesmo\" • VOZ PASSIVA SINTÉTICA • VOZ ATIVA • VOZ ATIVA • VOZ REFLEXIVA / RECÍP. (ex.: \"Vendem-se casas\") (ex.: \"Trabalha-se muito\") (ex.: \"Queixou-se da dor\") (ex.: \"O homem feriu-se\")",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "ANÁLISE SINTÁTICA DO \"SE\"",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "taxonomy",
+                "layout": "vertical",
+                "rootId": "analise-sintatica-do-se",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "[ 1. VTD / VTDI ] [ 2. VI / VTI / VL ] [ 3. VERBO PRONOMINAL ] [ 4. VALOR ANAFÓRICO ]"
+                    "id": "analise-sintatica-do-se",
+                    "kind": "start",
+                    "label": "ANÁLISE SINTÁTICA DO 'SE' (Quadro Sinótico de Desambiguação)",
+                    "details": [
+                      "Classificação estrutural dos quatro principais valores sintáticos da partícula 'SE'."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "SE = Pronome Apassivador"
+                    "id": "caso-1-vtd-vtdi",
+                    "kind": "category",
+                    "label": "1. Com VTD / VTDI ➔ Pronome Apassivador (PA / CPA)",
+                    "details": [
+                      "• SE = Pronome Apassivador",
+                      "• Sujeito = Paciente",
+                      "• Admite Passiva Analítica (SER + Particípio)",
+                      "• VOZ PASSIVA SINTÉTICA (ex.: 'Vendem-se casas')"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "SE = Índice de Indeterm."
+                    "id": "caso-2-vi-vti-vl",
+                    "kind": "category",
+                    "label": "2. Com VI / VTI / VL ➔ Índice de Indeterminação (IIS / PIS)",
+                    "details": [
+                      "• SE = Índice de Indeterminação",
+                      "• Sujeito = Indeterminado",
+                      "• Verbo fixo na 3ª pessoa do singular",
+                      "• VOZ ATIVA (ex.: 'Trabalha-se muito', 'Precisa-se de técnicos')"
+                    ]
                   },
                   {
-                    "id": "segment-04",
-                    "label": "SE = Parte Integrante (PIV)"
+                    "id": "caso-3-verbo-pronominal",
+                    "kind": "category",
+                    "label": "3. Com Verbo Pronominal ➔ Parte Integrante do Verbo (PIV)",
+                    "details": [
+                      "• SE = Parte Integrante do Verbo (PIV)",
+                      "• Sujeito = Agente / Experienciador",
+                      "• Verbo de afeto, sentimento ou mudança de estado",
+                      "• VOZ ATIVA (ex.: 'Queixou-se da dor', 'Arrependeu-se')"
+                    ]
                   },
                   {
-                    "id": "segment-05",
-                    "label": "SE = Pronome Reflexivo"
+                    "id": "caso-4-valor-anaforico",
+                    "kind": "category",
+                    "label": "4. Com Valor Anafórico ➔ Pronome Reflexivo / Recíproco",
+                    "details": [
+                      "• SE = Pronome Reflexivo / Recíproco",
+                      "• Sujeito = Agente e Paciente simultaneamente",
+                      "• Equivale a 'a si mesmo' ou 'mutuamente'",
+                      "• VOZ REFLEXIVA / RECÍPROCA (ex.: 'O homem feriu-se')"
+                    ]
                   },
                   {
-                    "id": "segment-06",
-                    "label": "Sujeito = Paciente"
-                  },
-                  {
-                    "id": "segment-07",
-                    "label": "Sujeito = Indeterminado"
-                  },
-                  {
-                    "id": "segment-08",
-                    "label": "Sujeito = Agente / Exper."
-                  },
-                  {
-                    "id": "segment-09",
-                    "label": "Sujeito = Agente e Paciente"
-                  },
-                  {
-                    "id": "segment-10",
-                    "label": "Admite Passiva Analítica"
-                  },
-                  {
-                    "id": "segment-11",
-                    "label": "Verbo fixo no singular 3ª"
-                  },
-                  {
-                    "id": "segment-12",
-                    "label": "Verbo de afeto/mudança/fato"
-                  },
-                  {
-                    "id": "segment-13",
-                    "label": "Equivale a \"a si mesmo\""
-                  },
-                  {
-                    "id": "segment-14",
-                    "label": "VOZ PASSIVA SINTÉTICA"
-                  },
-                  {
-                    "id": "segment-15",
-                    "label": "VOZ ATIVA"
-                  },
-                  {
-                    "id": "segment-16",
-                    "label": "VOZ ATIVA"
-                  },
-                  {
-                    "id": "segment-17",
-                    "label": "VOZ REFLEXIVA / RECÍP. (ex.: \"Vendem-se casas\") (ex.: \"Trabalha-se muito\") (ex.: \"Queixou-se da dor\") (ex.: \"O homem feriu-se\")"
+                    "id": "sintese-desambiguacao",
+                    "kind": "rule",
+                    "label": "Regra Geral de Desambiguação do SE",
+                    "details": [
+                      "A determinação da função do 'SE' decorre da transitividade do verbo, da presença de preposição e do sentido reflexivo/pronominal."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "analise-sintatica-do-se",
+                    "to": "caso-1-vtd-vtdi"
+                  },
+                  {
+                    "from": "analise-sintatica-do-se",
+                    "to": "caso-2-vi-vti-vl"
+                  },
+                  {
+                    "from": "analise-sintatica-do-se",
+                    "to": "caso-3-verbo-pronominal"
+                  },
+                  {
+                    "from": "analise-sintatica-do-se",
+                    "to": "caso-4-valor-anaforico"
+                  },
+                  {
+                    "from": "caso-1-vtd-vtdi",
+                    "to": "sintese-desambiguacao"
+                  },
+                  {
+                    "from": "caso-2-vi-vti-vl",
+                    "to": "sintese-desambiguacao"
+                  },
+                  {
+                    "from": "caso-3-verbo-pronominal",
+                    "to": "sintese-desambiguacao"
+                  },
+                  {
+                    "from": "caso-4-valor-anaforico",
+                    "to": "sintese-desambiguacao"
+                  }
+                ],
+                "structuredText": "### Quadro Sinótico de Desambiguação do 'SE'\n\n- **1. VTD / VTDI:** SE = Pronome Apassivador | Sujeito Paciente | Admite Passiva Analítica | VOZ PASSIVA SINTÉTICA (ex.: 'Vendem-se casas').\n- **2. VI / VTI / VL:** SE = Índice de Indeterminação | Sujeito Indeterminado | Verbo fixo no singular 3ª | VOZ ATIVA (ex.: 'Trabalha-se muito').\n- **3. VERBO PRONOMINAL:** SE = Parte Integrante (PIV) | Sujeito Agente/Experienciador | Verbo de sentimento | VOZ ATIVA (ex.: 'Queixou-se da dor').\n- **4. VALOR ANAFÓRICO:** SE = Pronome Reflexivo | Sujeito Agente e Paciente | Equivale a 'a si mesmo' | VOZ REFLEXIVA (ex.: 'O homem feriu-se').",
+                "mermaidSource": "flowchart TD\n    analise-sintatica-do-se[\"ANÁLISE SINTÁTICA DO 'SE'\"] --> caso-1-vtd-vtdi[\"1. VTD / VTDI<br>Pronome Apassivador CPA<br>Voz Passiva Sintética\"]\n    analise-sintatica-do-se --> caso-2-vi-vti-vl[\"2. VI / VTI / VL<br>Índice de Indeterminação PIS<br>Voz Ativa\"]\n    analise-sintatica-do-se --> caso-3-verbo-pronominal[\"3. Verbo Pronominal<br>Parte Integrante PIV<br>Voz Ativa\"]\n    analise-sintatica-do-se --> caso-4-valor-anaforico[\"4. Valor Anafórico<br>Pronome Reflexivo / Recíproco<br>Voz Reflexiva\"]\n    caso-1-vtd-vtdi --> sintese-desambiguacao[\"Regra Geral de Desambiguação\"]\n    caso-2-vi-vti-vl --> sintese-desambiguacao\n    caso-3-verbo-pronominal --> sintese-desambiguacao\n    caso-4-valor-anaforico --> sintese-desambiguacao",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
@@ -897,22 +1010,77 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "comparison",
               "title": "Condições Sintáticas para Admissão de Transposição (VTD / VTDI)",
               "text": "MECÂNICA ESTRUTURAL DA TRANSPOSIÇÃO DE VOZES ┌──────────────────────────────────────────────────────────┐ │ VOZ ATIVA: [ Sujeito Agente ] + [ VTD / VTDI ] + [ OBJETO DIRETO ] │ │ │ │ ▼ ▼ │ VOZ PASSIVA: [ Agente da Passiva ] + [ SER + Particípio ] + [ SUJEITO PACIENTE ] └──────────────────────────────────────────────────────────┘",
               "structure": {
-                "kind": "relations",
-                "rootLabel": "MECÂNICA ESTRUTURAL DA TRANSPOSIÇÃO DE VOZES",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "comparison",
+                "layout": "vertical",
+                "rootId": "mecanica-estrutural-transposicao",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "VOZ ATIVA: [ Sujeito Agente ] + [ VTD / VTDI ] + [ OBJETO DIRETO ]"
+                    "id": "mecanica-estrutural-transposicao",
+                    "kind": "start",
+                    "label": "Mecânica Estrutural da Transposição de Vozes Verbais",
+                    "details": [
+                      "Mapeamento dos eixos sintáticos entre a Voz Ativa e a Voz Passiva Analítica com verbos VTD e VTDI."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "VOZ PASSIVA: [ Agente da Passiva ] + [ SER + Particípio ] + [ SUJEITO PACIENTE ]"
+                    "id": "estrutura-voz-ativa",
+                    "kind": "process",
+                    "label": "VOZ ATIVA: [ Sujeito Agente ] + [ VTD / VTDI ] + [ OBJETO DIRETO ]",
+                    "details": [
+                      "O Sujeito pratica a ação verbal.",
+                      "O verbo VTD/VTDI rege o complemento direto sem preposição."
+                    ]
+                  },
+                  {
+                    "id": "cruzamento-sintatico",
+                    "kind": "rule",
+                    "label": "Cruzamento Sintático dos Termos Oracionais",
+                    "details": [
+                      "1. O Sujeito Agente vira Agente da Passiva (regido por 'por/de').",
+                      "2. O Verbo VTD/VTDI vira Locução Passiva [ SER + Particípio ].",
+                      "3. O Objeto Direto vira SUJEITO PACIENTE."
+                    ]
+                  },
+                  {
+                    "id": "estrutura-voz-passiva",
+                    "kind": "result",
+                    "label": "VOZ PASSIVA: [ Agente da Passiva ] + [ SER + Particípio ] + [ SUJEITO PACIENTE ]",
+                    "details": [
+                      "O Sujeito Paciente sofre a ação verbal e comanda a concordância de toda a locução passiva."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "mecanica-estrutural-transposicao",
+                    "to": "estrutura-voz-ativa"
+                  },
+                  {
+                    "from": "estrutura-voz-ativa",
+                    "to": "cruzamento-sintatico"
+                  },
+                  {
+                    "from": "cruzamento-sintatico",
+                    "to": "estrutura-voz-passiva"
+                  }
+                ],
+                "structuredText": "### Mecânica Estrutural da Transposição de Vozes (VTD / VTDI)\n\n- **VOZ ATIVA:** `[ Sujeito Agente ] + [ VTD / VTDI ] + [ OBJETO DIRETO ]`\n  │ │ │\n  ▼ ▼ ▼\n- **VOZ PASSIVA:** `[ Agente da Passiva ] + [ SER + Particípio ] + [ SUJEITO PACIENTE ]`\n- *Condição Essencial:* Apenas verbos com objeto direto (VTD e VTDI) admitem conversão para passiva analítica.",
+                "mermaidSource": "flowchart TD\n    mecanica-estrutural-transposicao[\"Mecânica Estrutural da Transposição\"] --> estrutura-voz-ativa[\"VOZ ATIVA:<br>Sujeito Agente + VTD/VTDI + OBJETO DIRETO\"]\n    estrutura-voz-ativa --> cruzamento-sintatico[\"Cruzamento Sintático:<br>Agente ➔ Agente da Passiva | VTD ➔ SER+Particípio | OD ➔ Sujeito Paciente\"]\n    cruzamento-sintatico --> estrutura-voz-passiva[\"VOZ PASSIVA:<br>Agente da Passiva + SER+Particípio + SUJEITO PACIENTE\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
@@ -1236,40 +1404,184 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "relations",
               "title": "Transposição Passiva e Coerência Argumentativa Textual em Bancas de Alto Nível (CESPE)",
               "text": "QUEBRA DE COERÊNCIA ARGUMENTATIVA NO CESPE ESTADO ORIGINAL (ATIVO - COERENTE): [ O regime trabalhista ] ──(sujeito lógico)──► [ ao adotar estratégias... ] │ └───────────────(sujeito agente)──► [ institui mecanismos de monitoração ]",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "relations",
+                "layout": "vertical",
+                "rootId": "estado-original-ativo-coerente",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "QUEBRA DE COERÊNCIA ARGUMENTATIVA NO CESPE ESTADO ORIGINAL (ATIVO - COERENTE): [ O regime trabalhista ] ──(sujeito lógico) →  [ ao adotar estratégias... ]"
+                    "id": "estado-original-ativo-coerente",
+                    "kind": "start",
+                    "label": "Estado Original (Voz Ativa Coerente no Contexto)",
+                    "details": [
+                      "Estrutura de referência em que a relação entre oração principal e oração reduzida é perfeitamente harmônica."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "(sujeito agente) →  [ institui mecanismos de monitoração ]"
+                    "id": "sujeito-agente-regime",
+                    "kind": "process",
+                    "label": "Sujeito Agente Coerente: '[ O regime trabalhista ]'",
+                    "details": [
+                      "Atua simultaneamente como sujeito lógico da oração reduzida e sujeito agente do verbo principal.",
+                      "Entidade institucional capaz de praticar ações normativas."
+                    ]
+                  },
+                  {
+                    "id": "oracao-reduzida-adotar",
+                    "kind": "process",
+                    "label": "Oração Reduzida: '[ ao adotar estratégias... ]'",
+                    "details": [
+                      "O regime trabalhista adota legitimamente as estratégias produtivas."
+                    ]
+                  },
+                  {
+                    "id": "verbo-principal-institui",
+                    "kind": "process",
+                    "label": "Oração Principal: '[ institui mecanismos de monitoração ]'",
+                    "details": [
+                      "O regime trabalhista institui ativamente os mecanismos de controle."
+                    ]
+                  },
+                  {
+                    "id": "validacao-coerencia-textual",
+                    "kind": "result",
+                    "label": "Coerência Argumentativa Plena",
+                    "details": [
+                      "Perfeita congruência semântica e sintática no texto de origem."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "estado-original-ativo-coerente",
+                    "to": "sujeito-agente-regime"
+                  },
+                  {
+                    "from": "sujeito-agente-regime",
+                    "to": "oracao-reduzida-adotar",
+                    "label": "Sujeito Lógico"
+                  },
+                  {
+                    "from": "sujeito-agente-regime",
+                    "to": "verbo-principal-institui",
+                    "label": "Sujeito Agente"
+                  },
+                  {
+                    "from": "oracao-reduzida-adotar",
+                    "to": "validacao-coerencia-textual"
+                  },
+                  {
+                    "from": "verbo-principal-institui",
+                    "to": "validacao-coerencia-textual"
+                  }
+                ],
+                "structuredText": "### Transposição Passiva e Coerência Argumentativa Textual (CESPE) — Estado Original Ativo\n\n- **ESTADO ORIGINAL (ATIVO - COERENTE):**\n  `[ O regime trabalhista ] ──(sujeito lógico)──► [ ao adotar estratégias... ]`\n  `│`\n  `└───────────────(sujeito agente)──► [ institui mecanismos de monitoração ]`\n- *Validação:* O sujeito agente institucional governa coerentemente tanto a oração reduzida quanto a oração principal.",
+                "mermaidSource": "flowchart TD\n    estado-original-ativo-coerente[\"Estado Original: Ativo Coerente\"] --> sujeito-agente-regime[\"Sujeito Agente:<br>O regime trabalhista\"]\n    sujeito-agente-regime -- \"Sujeito Lógico\" --> oracao-reduzida-adotar[\"Oração Reduzida:<br>ao adotar estratégias...\"]\n    sujeito-agente-regime -- \"Sujeito Agente\" --> verbo-principal-institui[\"Oração Principal:<br>institui mecanismos de monitoração\"]\n    oracao-reduzida-adotar --> validacao-coerencia-textual[\"Coerência Argumentativa Plena\"]\n    verbo-principal-institui --> validacao-coerencia-textual",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "relations",
               "title": "Transposição Passiva e Coerência Argumentativa Textual em Bancas de Alto Nível (CESPE)",
               "text": "ESTADO REESCRITO (PASSIVO - INCOERENTE): [ Mecanismos de monitoração ] ──(novo referente forçado)──► [ ao adotar estratégias... ] (ABSURDO!) │ └───────────────────(sujeito paciente)────────► [ são instituídos ]",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "relations",
+                "layout": "vertical",
+                "rootId": "estado-passivo-incoerente",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "ESTADO REESCRITO (PASSIVO - INCOERENTE): [ Mecanismos de monitoração ] ──(novo referente forçado) →  [ ao adotar estratégias... ] (ABSURDO!)"
+                    "id": "estado-passivo-incoerente",
+                    "kind": "start",
+                    "label": "Estado Reescrito (Voz Passiva Incoerente - Pegadinha CESPE)",
+                    "details": [
+                      "Exemplo de erro semântico sutil em que a transposição passiva altera a referência do sujeito da oração subordinada reduzida."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "(sujeito paciente) →  [ são instituídos ]"
+                    "id": "novo-sujeito-mecanismos",
+                    "kind": "process",
+                    "label": "Sujeito Paciente: '[ Mecanismos de monitoração ]'",
+                    "details": [
+                      "Termo promovido a sujeito sintático da locução passiva: 'são instituídos'.",
+                      "Assume indevidamente o controle semântico da oração reduzida anterior."
+                    ]
+                  },
+                  {
+                    "id": "oracao-reduzida-adotando",
+                    "kind": "process",
+                    "label": "Oração Reduzida Antecedente: '[ ao adotar estratégias... ]'",
+                    "details": [
+                      "Oração temporal/condicional que exige um sujeito agente capaz de adotar estratégias.",
+                      "Coerência original exigia 'O regime trabalhista'."
+                    ]
+                  },
+                  {
+                    "id": "quebra-coerencia",
+                    "kind": "rule",
+                    "label": "Quebra de Coerência Argumentativa (ABSURDO LÓGICO)",
+                    "details": [
+                      "'Mecanismos de monitoração' passam a figurar como sujeito de 'adotar estratégias', gerando incompatibilidade semântica no texto.",
+                      "A correção gramatical isolada não compensa a destruição do sentido global."
+                    ]
+                  },
+                  {
+                    "id": "resultado-julgamento-cespe",
+                    "kind": "result",
+                    "label": "Julgamento da Assertiva: ITEM ERRADO",
+                    "details": [
+                      "A banca avalia a manutenção da coerência textual global, reprovando transposições cegas."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "estado-passivo-incoerente",
+                    "to": "novo-sujeito-mecanismos"
+                  },
+                  {
+                    "from": "novo-sujeito-mecanismos",
+                    "to": "oracao-reduzida-adotando"
+                  },
+                  {
+                    "from": "novo-sujeito-mecanismos",
+                    "to": "quebra-coerencia"
+                  },
+                  {
+                    "from": "oracao-reduzida-adotando",
+                    "to": "quebra-coerencia"
+                  },
+                  {
+                    "from": "quebra-coerencia",
+                    "to": "resultado-julgamento-cespe"
+                  }
+                ],
+                "structuredText": "### Transposição Passiva e Coerência Argumentativa Textual (CESPE) — Estado Incoerente\n\n- **ESTADO REESCRITO (PASSIVO - INCOERENTE):**\n  `[ Mecanismos de monitoração ] ──(novo referente forçado)──► [ ao adotar estratégias... ] (ABSURDO!)`\n  `│`\n  `└───────────────────(sujeito paciente)────────► [ são instituídos ]`\n- *Análise Pedagógica:* O termo inanimado 'mecanismos' torna-se falso sujeito agente da oração reduzida, quebrando a coerência discursiva.",
+                "mermaidSource": "flowchart TD\n    estado-passivo-incoerente[\"Estado Reescrito: Passivo Incoerente\"] --> novo-sujeito-mecanismos[\"Sujeito Paciente:<br>Mecanismos de monitoração\"]\n    novo-sujeito-mecanismos --> oracao-reduzida-adotando[\"Oração Reduzida:<br>ao adotar estratégias...\"]\n    novo-sujeito-mecanismos --> quebra-coerencia[\"Quebra de Coerência Argumentativa<br>Mecanismos não adotam estratégias\"]\n    oracao-reduzida-adotando --> quebra-coerencia\n    quebra-coerencia --> resultado-julgamento-cespe[\"Gabarito CESPE: ITEM ERRADO\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
@@ -1758,8 +2070,132 @@
               "text": "Determinar em poucos segundos, sem reescrever frases por extenso, qual alternativa admite ou não transposição para a passiva analítica."
             },
             {
-              "type": "paragraph",
-              "text": "FLUXOGRAMA DE DECISÃO: ADMISSIBILIDADE DE TRANSPOSIÇÃO [ Localizar o Verbo Principal ] │ ┌──────────────────────────┴──────────────────────────┐ ▼ ▼ [ Presença de Preposição ] [ Sem Preposição Imediata ] │ │ ┌───────────┴───────────┐ ┌───────────┴───────────┐ ▼ ▼ ▼ ▼ [ VTI / VI ] [ Locução com VL ] [ Verbo \"Haver\" ] [ VTD / VTDI Pleno ] │ │ │ │ ▼ ▼ ▼ ▼ (NÃO ADMITE) (NÃO ADMITE) (NÃO ADMITE) (ADMITE) (ex.: queixar-se de) (ex.: deixou de ser) (Exceção Semântica) (ex.: publico fotos)"
+              "type": "diagram",
+              "diagramType": "branches",
+              "title": "Protocolo Rápido de Admissibilidade de Transposição de Voz",
+              "text": "FLUXOGRAMA DE DECISÃO: ADMISSIBILIDADE DE TRANSPOSIÇÃO [ Localizar o Verbo Principal ] │ ┌──────────────────────────┴──────────────────────────┐ ▼ ▼ [ Presença de Preposição ] [ Sem Preposição Imediata ] │ │ ┌───────────┴───────────┐ ┌───────────┴───────────┐ ▼ ▼ ▼ ▼ [ VTI / VI ] [ Locução com VL ] [ Verbo \"Haver\" ] [ VTD / VTDI Pleno ] │ │ │ │ ▼ ▼ ▼ ▼ (NÃO ADMITE) (NÃO ADMITE) (NÃO ADMITE) (ADMITE) (ex.: queixar-se de) (ex.: deixou de ser) (Exceção Semântica) (ex.: publico fotos)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-admissibilidade-transposicao",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "inicio-admissibilidade-transposicao",
+                    "kind": "start",
+                    "label": "Início: Localizar o Verbo Principal da Oração",
+                    "details": [
+                      "Verificação rápida para determinar se uma oração admite ou não transposição para a voz passiva."
+                    ]
+                  },
+                  {
+                    "id": "decisao-preposicao",
+                    "kind": "decision",
+                    "label": "O complemento do verbo exige preposição imediata?",
+                    "details": [
+                      "Análise da regência verbal direta vs. indireta."
+                    ]
+                  },
+                  {
+                    "id": "ramo-com-preposicao",
+                    "kind": "decision",
+                    "label": "Qual é a classificação do verbo preposicionado?",
+                    "details": [
+                      "Classificação sintática entre VTI/VI e Locução com Verbo de Ligação."
+                    ]
+                  },
+                  {
+                    "id": "ramo-sem-preposicao",
+                    "kind": "decision",
+                    "label": "O verbo é 'Haver' impessoal ou VTD/VTDI pleno?",
+                    "details": [
+                      "Identificação de restrições semânticas especiais."
+                    ]
+                  },
+                  {
+                    "id": "nao-admite-vti-vi",
+                    "kind": "result",
+                    "label": "VTI / VI ➔ NÃO ADMITE Passiva",
+                    "details": [
+                      "Verbos transitivos indiretos (ex.: 'queixar-se de') e intransitivos não geram sujeito paciente.",
+                      "Ausência estrutural de Objeto Direto para promoção a sujeito."
+                    ]
+                  },
+                  {
+                    "id": "nao-admite-vl",
+                    "kind": "result",
+                    "label": "Locução com Verbo de Ligação ➔ NÃO ADMITE Passiva",
+                    "details": [
+                      "Estruturas com VL (ex.: 'deixou de ser') expressam estado/qualidade e não admitem voz passiva."
+                    ]
+                  },
+                  {
+                    "id": "nao-admite-haver",
+                    "kind": "result",
+                    "label": "Verbo 'Haver' Impessoal ➔ NÃO ADMITE Passiva",
+                    "details": [
+                      "Exceção semântica: 'Haver' com sentido de existir/ocorrer é VTD sem sujeito e bloqueia transposição passiva analítica."
+                    ]
+                  },
+                  {
+                    "id": "admite-vtd-vtdi",
+                    "kind": "result",
+                    "label": "VTD / VTDI Pleno ➔ ADMITE Transposição",
+                    "details": [
+                      "O objeto direto converte-se plenamente em sujeito paciente.",
+                      "Exemplo: 'Publico fotos' ➔ 'Fotos são publicadas por mim'."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-admissibilidade-transposicao",
+                    "to": "decisao-preposicao"
+                  },
+                  {
+                    "from": "decisao-preposicao",
+                    "to": "ramo-com-preposicao",
+                    "label": "Presença de Preposição"
+                  },
+                  {
+                    "from": "decisao-preposicao",
+                    "to": "ramo-sem-preposicao",
+                    "label": "Sem Preposição Imediata"
+                  },
+                  {
+                    "from": "ramo-com-preposicao",
+                    "to": "nao-admite-vti-vi",
+                    "label": "VTI / VI"
+                  },
+                  {
+                    "from": "ramo-com-preposicao",
+                    "to": "nao-admite-vl",
+                    "label": "Locução com VL"
+                  },
+                  {
+                    "from": "ramo-sem-preposicao",
+                    "to": "nao-admite-haver",
+                    "label": "Verbo 'Haver' Impessoal"
+                  },
+                  {
+                    "from": "ramo-sem-preposicao",
+                    "to": "admite-vtd-vtdi",
+                    "label": "VTD / VTDI Pleno"
+                  }
+                ],
+                "structuredText": "### Protocolo Rápido de Admissibilidade de Transposição de Voz\n\n1. **Localizar o Verbo Principal:**\n2. **Presença de Preposição:**\n   - **VTI / VI:** NÃO ADMITE (ex.: queixar-se de).\n   - **Locução com VL:** NÃO ADMITE (ex.: deixou de ser).\n3. **Sem Preposição Imediata:**\n   - **Verbo 'Haver' Impessoal:** NÃO ADMITE (exceção semântica).\n   - **VTD / VTDI Pleno:** ADMITE (ex.: publico fotos ➔ fotos são publicadas).",
+                "mermaidSource": "flowchart TD\n    inicio-admissibilidade-transposicao[\"Localizar o Verbo Principal\"] --> decisao-preposicao{\"Presença de Preposição?\"}\n    decisao-preposicao -- \"Presença de Preposição\" --> ramo-com-preposicao{\"Classificação?\"}\n    decisao-preposicao -- \"Sem Preposição Imediata\" --> ramo-sem-preposicao{\"Verbo Específico?\"}\n    ramo-com-preposicao -- \"VTI / VI\" --> nao-admite-vti-vi[\"VTI / VI ➔ NÃO ADMITE<br>ex.: queixar-se de\"]\n    ramo-com-preposicao -- \"Locução com VL\" --> nao-admite-vl[\"Locução com VL ➔ NÃO ADMITE<br>ex.: deixou de ser\"]\n    ramo-sem-preposicao -- \"Verbo 'Haver' Impessoal\" --> nao-admite-haver[\"Verbo 'Haver' ➔ NÃO ADMITE<br>Exceção Semântica\"]\n    ramo-sem-preposicao -- \"VTD / VTDI Pleno\" --> admite-vtd-vtdi[\"VTD / VTDI Pleno ➔ ADMITE<br>ex.: publico fotos\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             },
             {
               "type": "list",
@@ -1780,8 +2216,8 @@
               "EXP-IP-A05-G05-PROC-003"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

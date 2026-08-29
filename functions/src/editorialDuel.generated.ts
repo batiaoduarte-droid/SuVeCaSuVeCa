@@ -2,15 +2,15 @@
 export const EDITORIAL_DUEL_ANSWER_KEY = {
   "editorial-duel-01": "C",
   "editorial-duel-02": "C",
-  "editorial-duel-03": "C",
+  "editorial-duel-03": "E",
   "editorial-duel-04": "E",
   "editorial-duel-05": "E",
-  "editorial-duel-06": "E",
-  "editorial-duel-07": "E",
+  "editorial-duel-06": "C",
+  "editorial-duel-07": "C",
   "editorial-duel-08": "E",
-  "editorial-duel-09": "C",
+  "editorial-duel-09": "E",
   "editorial-duel-10": "E",
-  "editorial-duel-11": "E",
+  "editorial-duel-11": "C",
   "editorial-duel-12": "C"
 } as const;
-export const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-fd08548efb8e4232';
+export const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-f325f31b30b382a7';

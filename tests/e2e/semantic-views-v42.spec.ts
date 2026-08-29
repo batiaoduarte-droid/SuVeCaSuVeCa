@@ -1,6 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { PEDAGOGICAL_VIEW_INDEX } from '../../src/data/pedagogicalViewIndex.generated';
-import { expect, expectNoDocumentOverflow, openApp, test } from './fixtures';
+import { expect, expectNoDocumentOverflow, openApp, openTab, test } from './fixtures';
 
 const REGULAR_UNIT = 'IP-A00-G01';
 const CUMULATIVE_UNIT = 'IP-A14-S13';
@@ -78,6 +78,52 @@ test.describe('SuVeCa v4.2 — contrato publicado e experiência nativa', () => 
     if (await alternatives.count()) await alternatives.first().click();
     await question.getByRole('button', { name: /confirmar tentativa/i }).click();
     await expect(question.getByText(/gabarito oficial/i)).toBeVisible();
+  });
+
+  test('Roteiros carrega o dataset AST v2.1 sem descartar registros visuais', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-1440', 'Contrato funcional completo executado no desktop');
+    await openApp(page);
+    await openTab(page, 'Roteiros');
+
+    await expect(page.getByRole('alert')).toHaveCount(0);
+    await expect(page.getByRole('status')).toContainText('413 roteiros encontrados');
+    const results = page.getByRole('navigation', { name: /roteiros de resolução encontrados/i });
+    await expect(results).toBeVisible();
+    await page.getByLabel(/buscar nos roteiros/i).fill('Algoritmo Universal de Contagem de Fonemas e Letras');
+    await results.getByRole('button', { name: /algoritmo universal de contagem de fonemas e letras/i }).click();
+    await expect(page.getByRole('tab', { name: /visual/i })).toBeVisible();
+    await expect(page.getByRole('tab', { name: /estrutura textual/i })).toBeVisible();
+    await expect(page.getByRole('tab', { name: /fonte original/i })).toBeVisible();
+  });
+
+  test('mapas corrigidos preservam decisões, ramos e etapas no DOM operacional', async ({ page }, testInfo) => {
+    test.skip(!['desktop-1440', 'mobile-390'].includes(testInfo.project.name), 'Regressões topológicas validadas em desktop e mobile');
+    await openApp(page);
+    await openTab(page, 'Roteiros');
+    const search = page.getByLabel(/buscar nos roteiros/i);
+    const results = page.getByRole('navigation', { name: /roteiros de resolução encontrados/i });
+
+    await search.fill('Roteiro Geral de Decisão Ortográfica e Sintática dos Porquês');
+    await results.getByRole('button', { name: /roteiro geral de decisão ortográfica e sintática dos porquês/i }).click();
+    await expect(page.getByText('Há determinante antes da lacuna?')).toBeVisible();
+    await expect(page.getByText('A lacuna introduz justificativa, causa ou finalidade?')).toBeVisible();
+    await expect(page.getByText('Escreva POR QUÊ')).toBeVisible();
+
+    await search.fill('Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos');
+    await results.getByRole('button', { name: /algoritmo mestre de decisão rápida para hifenização de prefixos/i }).click();
+    await expect(page.getByText('O segundo elemento começa com H?')).toBeVisible();
+    await expect(page.getByText('Prefixo regular em vogal')).toBeVisible();
+    await expect(page.getByText('Vogal + R ou S')).toBeVisible();
+    await expect(page.getByText(/^SIM NÃO$/i)).toHaveCount(0);
+    await page.getByRole('list', { name: /fluxo de decisão/i }).screenshot({ path: `test-results/structured-map-hifenizacao-${testInfo.project.name}.png` });
+
+    await search.fill('Protocolo Mestre de Transposição da Passiva Analítica para a Ativa');
+    await results.getByRole('button', { name: /protocolo mestre de transposição da passiva analítica para a ativa/i }).click();
+    await expect(page.getByRole('region', { name: /chamamento do feito à ordem/i })).toBeVisible();
+    await expect(page.getByRole('region', { name: /definição do sujeito ativo/i })).toBeVisible();
+    await expect(page.getByRole('region', { name: /transformação e redução verbal/i })).toBeVisible();
+    await expect(page.getByRole('region', { name: /conversão do objeto e validação/i })).toBeVisible();
+    await page.getByRole('list', { name: /sequência de análise/i }).screenshot({ path: `test-results/structured-map-transposicao-${testInfo.project.name}.png` });
   });
 
   test('Axe não encontra violações nas experiências regular e A14', async ({ page }, testInfo) => {

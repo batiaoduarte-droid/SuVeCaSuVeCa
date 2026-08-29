@@ -3487,5 +3487,5 @@ export const OFFICIAL_CORPUS_ANSWER_KEY = {
   "A13:estrategia.880963733": "C"
 } as const;
 
-export const OFFICIAL_CORPUS_VERSION = 'editorial-corpus-fd08548efb8e4232';
+export const OFFICIAL_CORPUS_VERSION = 'editorial-corpus-f325f31b30b382a7';
 export const OFFICIAL_CORPUS_SAMPLE_SIZE = 10;

@@ -217,26 +217,97 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "taxonomy",
               "title": "Morfologia das Formas Nominais e Desinências Características",
               "text": "RADICAL + VOGAL TEMÁTICA + DESINÊNCIA NOMINAL ├─ FALA + -R ──> Infinitivo (falar) ├─ FALA + -NDO ──> Gerúndio (falando) └─ FALA + -DO ──> Particípio Regular (falado)",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "RADICAL + VOGAL TEMÁTICA + DESINÊNCIA NOMINAL",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "taxonomy",
+                "layout": "vertical",
+                "rootId": "morfologia-formas-nominais",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "FALA + -R  →  Infinitivo (falar)"
+                    "id": "morfologia-formas-nominais",
+                    "kind": "start",
+                    "label": "Estrutura Mórfica: Radical + Vogal Temática + Desinência Nominal",
+                    "details": [
+                      "Composição canônica das formas nominais do verbo na língua portuguesa."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "FALA + -NDO  →  Gerúndio (falando)"
+                    "id": "desinencia-infinitivo",
+                    "kind": "category",
+                    "label": "Infinitivo Impessoal (Desinência -R)",
+                    "details": [
+                      "Fórmula: FALA + -R ➔ Falar (2ª conj.: vender; 3ª conj.: partir).",
+                      "Valor substantivo; expressa o processo verbal em seu estado potencial puro."
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "FALA + -DO  →  Particípio Regular (falado)"
+                    "id": "desinencia-gerundio",
+                    "kind": "category",
+                    "label": "Gerúndio (Desinência -NDO)",
+                    "details": [
+                      "Fórmula: FALA + -NDO ➔ Falando (2ª conj.: vendendo; 3ª conj.: partindo).",
+                      "Valor adverbial ou adjetivo; expressa a ação verbal em curso/continuidade."
+                    ]
+                  },
+                  {
+                    "id": "desinencia-participio",
+                    "kind": "category",
+                    "label": "Particípio Regular (Desinência -DO)",
+                    "details": [
+                      "Fórmula: FALA + -DO ➔ Falado (2ª conj.: vendido; 3ª conj.: partido).",
+                      "Valor adjetivo; expressa ação concluída e admite flexão de gênero e número."
+                    ]
+                  },
+                  {
+                    "id": "sintese-formas-nominais",
+                    "kind": "rule",
+                    "label": "Regra de Reconhecimento Morfológico",
+                    "details": [
+                      "Identificação inequívoca das três formas nominais pelas desinências características: -R (Infinitivo), -NDO (Gerúndio) e -DO (Particípio)."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "morfologia-formas-nominais",
+                    "to": "desinencia-infinitivo"
+                  },
+                  {
+                    "from": "morfologia-formas-nominais",
+                    "to": "desinencia-gerundio"
+                  },
+                  {
+                    "from": "morfologia-formas-nominais",
+                    "to": "desinencia-participio"
+                  },
+                  {
+                    "from": "desinencia-infinitivo",
+                    "to": "sintese-formas-nominais"
+                  },
+                  {
+                    "from": "desinencia-gerundio",
+                    "to": "sintese-formas-nominais"
+                  },
+                  {
+                    "from": "desinencia-participio",
+                    "to": "sintese-formas-nominais"
+                  }
+                ],
+                "structuredText": "### Morfologia das Formas Nominais e Desinências Características\n\n- **RADICAL + VOGAL TEMÁTICA + DESINÊNCIA NOMINAL:**\n  - ├─ FALA + -R ──> **Infinitivo** (falar)\n  - ├─ FALA + -NDO ──> **Gerúndio** (falando)\n  - └─ FALA + -DO ──> **Particípio Regular** (falado)\n- *Funções Nominais:* Infinitivo atua como substantivo; Gerúndio como advérbio/adjetivo; Particípio como adjetivo flexionado.",
+                "mermaidSource": "flowchart TD\n    morfologia-formas-nominais[\"Estrutura Mórfica:<br>Radical + VT + Desinência Nominal\"] --> desinencia-infinitivo[\"Infinitivo: Desinência -R<br>FALA + -R = falar\"]\n    morfologia-formas-nominais --> desinencia-gerundio[\"Gerúndio: Desinência -NDO<br>FALA + -NDO = falando\"]\n    morfologia-formas-nominais --> desinencia-participio[\"Particípio: Desinência -DO<br>FALA + -DO = falado\"]\n    desinencia-infinitivo --> sintese-formas-nominais[\"Regra de Reconhecimento Morfológico\"]\n    desinencia-gerundio --> sintese-formas-nominais\n    desinencia-participio --> sintese-formas-nominais",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
@@ -1363,8 +1434,157 @@
           "procedureId": "PROC-A04-G04-FORMAS-NOMINAIS-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "INÍCIO: Identificar o verbo principal da oração a ser colocado no particípio. │ ├── PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? │ ├── SIM ──> \"Regra do Vale Tudo\": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar. (FIM) │ └── NÃO ──> Avançar para o PASSO 2. │ ├── PASSO 2: O verbo é ABUNDANTE no particípio? │ ├── NÃO ──> Use a ÚNICA forma existente do verbo na norma culta: │ │ • Se for exclusivamente regular: usar em -DO (ex.: \"tinha chegado\", \"foi trazido\"). │ │ • Se for exclusivamente irregular: usar forma reduzida (ex.: \"tinha dito\", \"foi posto\", \"estava coberto\"). (FIM) │ └── SIM ──> Avançar para o PASSO 3. │ └── PASSO 3: Identificar o VERBO AUXILIAR da locução: ├── Se for TER ou HAVER (Voz Ativa / Tempos Compostos): │ └── Selecionar obrigatoriamente o PARTICÍPIO REGULAR em -DO (ex.: \"havia entregado\", \"tinham imprimido\"). │ └── Se for SER, ESTAR, FICAR (ou voz passiva / estado / oração reduzida): └── Selecionar obrigatoriamente o PARTICÍPIO IRREGULAR (ex.: \"foi entregue\", \"estava impresso\", \"ficou suspenso\"). (FIM)"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo de Escolha da Forma de Particípio em Locuções",
+              "text": "INÍCIO: Identificar o verbo principal da oração a ser colocado no particípio. │ ├── PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)? │ ├── SIM ──> \"Regra do Vale Tudo\": Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar. (FIM) │ └── NÃO ──> Avançar para o PASSO 2. │ ├── PASSO 2: O verbo é ABUNDANTE no particípio? │ ├── NÃO ──> Use a ÚNICA forma existente do verbo na norma culta: │ │ • Se for exclusivamente regular: usar em -DO (ex.: \"tinha chegado\", \"foi trazido\"). │ │ • Se for exclusivamente irregular: usar forma reduzida (ex.: \"tinha dito\", \"foi posto\", \"estava coberto\"). (FIM) │ └── SIM ──> Avançar para o PASSO 3. │ └── PASSO 3: Identificar o VERBO AUXILIAR da locução: ├── Se for TER ou HAVER (Voz Ativa / Tempos Compostos): │ └── Selecionar obrigatoriamente o PARTICÍPIO REGULAR em -DO (ex.: \"havia entregado\", \"tinham imprimido\"). │ └── Se for SER, ESTAR, FICAR (ou voz passiva / estado / oração reduzida): └── Selecionar obrigatoriamente o PARTICÍPIO IRREGULAR (ex.: \"foi entregue\", \"estava impresso\", \"ficou suspenso\"). (FIM)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-escolha-participio",
+                "groups": [
+                  {
+                    "id": "g-excecoes",
+                    "label": "Filtro 1: Verbos de Livre Escolha",
+                    "order": 1
+                  },
+                  {
+                    "id": "g-abundancia",
+                    "label": "Filtro 2: Abundância Verbal",
+                    "order": 2
+                  },
+                  {
+                    "id": "g-auxiliar",
+                    "label": "Filtro 3: Diagnóstico do Verbo Auxiliar",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-escolha-participio",
+                    "kind": "start",
+                    "label": "Início: Identificar o Verbo Principal no Particípio",
+                    "details": [
+                      "Procedimento para seleção correta entre particípio regular (-DO) e irregular em locuções verbais."
+                    ]
+                  },
+                  {
+                    "id": "decisao-excecoes-4",
+                    "kind": "decision",
+                    "label": "O verbo é uma das 4 exceções: GANHAR, GASTAR, PEGAR, PAGAR?",
+                    "details": [
+                      "Verbos com regime especial de dupla forma livre no português contemporâneo."
+                    ],
+                    "groupId": "g-excecoes"
+                  },
+                  {
+                    "id": "regra-vale-tudo",
+                    "kind": "result",
+                    "label": "'Regra do Vale Tudo': Uso Livre de Regular ou Irregular",
+                    "details": [
+                      "Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar (TER/HAVER/SER/ESTAR).",
+                      "Exemplos: 'tinha ganho' / 'tinha ganhado'; 'foi pago' / 'foi pagado'."
+                    ],
+                    "groupId": "g-excecoes"
+                  },
+                  {
+                    "id": "decisao-abundancia",
+                    "kind": "decision",
+                    "label": "O verbo é ABUNDANTE no particípio?",
+                    "details": [
+                      "Verificar se o verbo possui duas formas consagradas de particípio na norma culta."
+                    ],
+                    "groupId": "g-abundancia"
+                  },
+                  {
+                    "id": "uso-forma-unica",
+                    "kind": "result",
+                    "label": "Usar a Única Forma Existente na Norma Culta",
+                    "details": [
+                      "Se exclusivamente regular: usar sempre em -DO (ex.: 'tinha chegado', 'foi trazido').",
+                      "Se exclusivamente irregular: usar forma reduzida (ex.: 'tinha dito', 'foi posto', 'estava coberto')."
+                    ],
+                    "groupId": "g-abundancia"
+                  },
+                  {
+                    "id": "decisao-auxiliar",
+                    "kind": "decision",
+                    "label": "Identificar o VERBO AUXILIAR da Locução",
+                    "details": [
+                      "Classificar o auxiliar que precede o particípio abundante."
+                    ],
+                    "groupId": "g-auxiliar"
+                  },
+                  {
+                    "id": "auxiliar-ter-haver",
+                    "kind": "result",
+                    "label": "Com TER ou HAVER ➔ PARTICÍPIO REGULAR em -DO",
+                    "details": [
+                      "Obrigatório na Voz Ativa / Tempos Compostos.",
+                      "Exemplos: 'havia entregado', 'tinham imprimido', 'teria acendido'."
+                    ],
+                    "groupId": "g-auxiliar"
+                  },
+                  {
+                    "id": "auxiliar-ser-estar",
+                    "kind": "result",
+                    "label": "Com SER, ESTAR, FICAR ➔ PARTICÍPIO IRREGULAR",
+                    "details": [
+                      "Obrigatório na Voz Passiva Analítica, Estados e Orações Reduzidas.",
+                      "Exemplos: 'foi entregue', 'estava impresso', 'ficou suspenso'."
+                    ],
+                    "groupId": "g-auxiliar"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-escolha-participio",
+                    "to": "decisao-excecoes-4"
+                  },
+                  {
+                    "from": "decisao-excecoes-4",
+                    "to": "regra-vale-tudo",
+                    "label": "Sim (Ganhar/Gastar/Pegar/Pagar)"
+                  },
+                  {
+                    "from": "decisao-excecoes-4",
+                    "to": "decisao-abundancia",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "decisao-abundancia",
+                    "to": "uso-forma-unica",
+                    "label": "Não (Forma Única)"
+                  },
+                  {
+                    "from": "decisao-abundancia",
+                    "to": "decisao-auxiliar",
+                    "label": "Sim (Abundante)"
+                  },
+                  {
+                    "from": "decisao-auxiliar",
+                    "to": "auxiliar-ter-haver",
+                    "label": "Auxiliar TER ou HAVER"
+                  },
+                  {
+                    "from": "decisao-auxiliar",
+                    "to": "auxiliar-ser-estar",
+                    "label": "Auxiliar SER, ESTAR ou FICAR"
+                  }
+                ],
+                "structuredText": "### Algoritmo de Escolha da Forma de Particípio em Locuções\n\n1. **INÍCIO:** Identificar o verbo principal da oração a ser colocado no particípio.\n2. **PASSO 1: O verbo é uma das 4 exceções (GANHAR, GASTAR, PEGAR, PAGAR)?**\n   - **SIM:** 'Regra do Vale Tudo': Use livremente REGULAR (-do) ou IRREGULAR com qualquer auxiliar.\n   - **NÃO:** Avançar para o Passo 2.\n3. **PASSO 2: O verbo é ABUNDANTE no particípio?**\n   - **NÃO:** Use a ÚNICA forma existente na norma culta (ex.: 'tinha chegado', 'foi posto').\n   - **SIM:** Avançar para o Passo 3.\n4. **PASSO 3: Identificar o VERBO AUXILIAR da locução:**\n   - **TER ou HAVER:** Selecionar obrigatoriamente o PARTICÍPIO REGULAR em -DO (ex.: 'havia entregado').\n   - **SER, ESTAR, FICAR:** Selecionar obrigatoriamente o PARTICÍPIO IRREGULAR (ex.: 'foi entregue').",
+                "mermaidSource": "flowchart TD\n    inicio-escolha-participio[\"Início: Verbo no Particípio\"] --> decisao-excecoes-4{\"É Ganhar, Gastar, Pegar ou Pagar?\"}\n    decisao-excecoes-4 -- \"Sim\" --> regra-vale-tudo[\"Regra do Vale Tudo<br>Forma Regular ou Irregular Livre\"]\n    decisao-excecoes-4 -- \"Não\" --> decisao-abundancia{\"Verbo é Abundante?\"}\n    decisao-abundancia -- \"Não\" --> uso-forma-unica[\"Usar Única Forma Existente<br>-DO ou Irregular\"]\n    decisao-abundancia -- \"Sim\" --> decisao-auxiliar{\"Qual é o Verbo Auxiliar?\"}\n    decisao-auxiliar -- \"TER ou HAVER\" --> auxiliar-ter-haver[\"PARTICÍPIO REGULAR em -DO<br>havia entregado, tinha imprimido\"]\n    decisao-auxiliar -- \"SER, ESTAR, FICAR\" --> auxiliar-ser-estar[\"PARTICÍPIO IRREGULAR<br>foi entregue, estava impresso\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             }
           ],
           "presentation": {
@@ -1375,8 +1595,8 @@
               "EXP-IP-A04-G04-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

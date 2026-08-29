@@ -907,13 +907,185 @@
               "text": "Classificar qualquer ocorrência da palavra \"SE\" em provas de concurso em menos de 30 segundos, eliminando distratores por testes de hipótese."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Fluxograma Operacional"
-            },
-            {
-              "type": "paragraph",
-              "text": "text [ PALAVRA \"SE\" ] │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ [ETAPA 1: TESTE DE CONJUNÇÃO] [ETAPA 2: TESTE DE REALCE] A palavra liga duas orações? Pode retirar o \"se\" sem qualquer alteração ├─ Troca a oração por \"ISSO\"? ──► CONJUNÇÃO INTEGRANTE estrutural ou semântica? (ex.: foram-se) ├─ Troca por \"CASO\"? ───────────► CONJUNÇÃO CONDICIONAL └─ Sim ──► PARTÍCULA DE REALCE / EXPLETIVA ├─ Troca por \"JÁ QUE\"? ─────────► CONJUNÇÃO CAUSAL └─ Troca por \"EMBORA\"? ─────────► CONJUNÇÃO CONCESSIVA │ (Se não for conjunção nem realce) ▼ [ETAPA 3: TESTE PRONOMINAL / SINTÁTICO] │ ┌───────────────────────────────────────┬────────────────────────┴──────────────┬────────────────────────────────────────┐ ▼ ▼ ▼ ▼ [TESTE DA PASSIVA (PA)] [TESTE DO SUJEITO (PIS)] [TESTE DO MENINO (REFLEX)] [TESTE DA CONJUGAÇÃO (PIV)] Verbo VTD/VTDI + termo sem Verbo VTI/VI/VL + termo com Ação sobre o próprio corpo; Verbo só existe com pronome ou preposição: converte em passiva preposição: verbo fixo no permite transferir a terceiro muda regência; conjuga em analítica (ser + particípio). singular (\"alguém...\"). (\"olhou o menino\"). todas as pessoas (me/te/se...). └─► PRONOME APASSIVADOR └─► ÍNDICE INDETERMINADOR └─► PRONOME REFLEXIVO └─► PARTE INTEGRANTE (PIV) (Se plural mútuo ─► RECÍPROCO)"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Fluxograma Operacional",
+              "text": "text [ PALAVRA \"SE\" ] │ ┌────────────────────────────────┴────────────────────────────────┐ ▼ ▼ [ETAPA 1: TESTE DE CONJUNÇÃO] [ETAPA 2: TESTE DE REALCE] A palavra liga duas orações? Pode retirar o \"se\" sem qualquer alteração ├─ Troca a oração por \"ISSO\"? ──► CONJUNÇÃO INTEGRANTE estrutural ou semântica? (ex.: foram-se) ├─ Troca por \"CASO\"? ───────────► CONJUNÇÃO CONDICIONAL └─ Sim ──► PARTÍCULA DE REALCE / EXPLETIVA ├─ Troca por \"JÁ QUE\"? ─────────► CONJUNÇÃO CAUSAL └─ Troca por \"EMBORA\"? ─────────► CONJUNÇÃO CONCESSIVA │ (Se não for conjunção nem realce) ▼ [ETAPA 3: TESTE PRONOMINAL / SINTÁTICO] │ ┌───────────────────────────────────────┬────────────────────────┴──────────────┬────────────────────────────────────────┐ ▼ ▼ ▼ ▼ [TESTE DA PASSIVA (PA)] [TESTE DO SUJEITO (PIS)] [TESTE DO MENINO (REFLEX)] [TESTE DA CONJUGAÇÃO (PIV)] Verbo VTD/VTDI + termo sem Verbo VTI/VI/VL + termo com Ação sobre o próprio corpo; Verbo só existe com pronome ou preposição: converte em passiva preposição: verbo fixo no permite transferir a terceiro muda regência; conjuga em analítica (ser + particípio). singular (\"alguém...\"). (\"olhou o menino\"). todas as pessoas (me/te/se...). └─► PRONOME APASSIVADOR └─► ÍNDICE INDETERMINADOR └─► PRONOME REFLEXIVO └─► PARTE INTEGRANTE (PIV) (Se plural mútuo ─► RECÍPROCO)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-fluxo-se-30s",
+                "groups": [
+                  {
+                    "id": "g-e1-conj",
+                    "label": "Etapa 1: Teste de Conjunção",
+                    "order": 1
+                  },
+                  {
+                    "id": "g-e2-real",
+                    "label": "Etapa 2: Teste de Realce",
+                    "order": 2
+                  },
+                  {
+                    "id": "g-e3-sint",
+                    "label": "Etapa 3: Teste Pronominal / Sintático",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-fluxo-se-30s",
+                    "kind": "start",
+                    "label": "Início: Diagnóstico da Palavra 'SE' em 30 Segundos",
+                    "details": [
+                      "Roteiro decisório rápido e excludente para identificar as funções do 'SE'."
+                    ]
+                  },
+                  {
+                    "id": "dec-liga-oracoes",
+                    "kind": "decision",
+                    "label": "A palavra 'SE' liga duas orações subordinadas?",
+                    "details": [
+                      "Teste de conjunção integrante vs. subordinativas adverbiais."
+                    ],
+                    "groupId": "g-e1-conj"
+                  },
+                  {
+                    "id": "res-conjuncoes-detalhe",
+                    "kind": "result",
+                    "label": "Conjunção (Integrante, Condicional, Causal ou Concessiva)",
+                    "details": [
+                      "Troca por 'ISSO' ➔ Conjunção Integrante.",
+                      "Troca por 'CASO' ➔ Conjunção Condicional.",
+                      "Troca por 'JÁ QUE' ➔ Conjunção Causal.",
+                      "Troca por 'EMBORA' ➔ Conjunção Concessiva."
+                    ],
+                    "groupId": "g-e1-conj"
+                  },
+                  {
+                    "id": "dec-retirar-se",
+                    "kind": "decision",
+                    "label": "Pode retirar o 'SE' sem alteração estrutural ou de sentido?",
+                    "details": [
+                      "Teste de partícula de realce / expletiva (ex.: 'Foram-se')."
+                    ],
+                    "groupId": "g-e2-real"
+                  },
+                  {
+                    "id": "res-particula-realce",
+                    "kind": "result",
+                    "label": "Partícula de Realce / Expletiva",
+                    "details": [
+                      "Elemento puramente enfático ou estilístico."
+                    ],
+                    "groupId": "g-e2-real"
+                  },
+                  {
+                    "id": "dec-tipo-sintatico-se",
+                    "kind": "decision",
+                    "label": "Qual é o comportamento sintático do verbo associado ao 'SE'?",
+                    "details": [
+                      "Aplicação dos 4 testes clássicos: PA, PIS, Reflexivo e PIV."
+                    ],
+                    "groupId": "g-e3-sint"
+                  },
+                  {
+                    "id": "res-pa-apassivador",
+                    "kind": "result",
+                    "label": "Pronome Apassivador (PA / CPA)",
+                    "details": [
+                      "Verbo VTD/VTDI + termo sem preposição ➔ converte em passiva analítica (SER + particípio).",
+                      "Sujeito Paciente comanda a concordância verbal."
+                    ],
+                    "groupId": "g-e3-sint"
+                  },
+                  {
+                    "id": "res-pis-indeterminador",
+                    "kind": "result",
+                    "label": "Índice de Indeterminação do Sujeito (PIS / IIS)",
+                    "details": [
+                      "Verbo VTI/VI/VL + termo preposicionado ➔ verbo fixo na 3ª pessoa do singular ('alguém')."
+                    ],
+                    "groupId": "g-e3-sint"
+                  },
+                  {
+                    "id": "res-reflexivo-reciproco",
+                    "kind": "result",
+                    "label": "Pronome Reflexivo / Recíproco",
+                    "details": [
+                      "Ação recai sobre o próprio sujeito ('a si mesmo'); no plural indica reciprocidade ('mutuamente')."
+                    ],
+                    "groupId": "g-e3-sint"
+                  },
+                  {
+                    "id": "res-piv-integrante",
+                    "kind": "result",
+                    "label": "Parte Integrante do Verbo (PIV)",
+                    "details": [
+                      "Verbo pronominal essencial que só existe com pronome e flexiona em todas as pessoas."
+                    ],
+                    "groupId": "g-e3-sint"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-fluxo-se-30s",
+                    "to": "dec-liga-oracoes"
+                  },
+                  {
+                    "from": "dec-liga-oracoes",
+                    "to": "res-conjuncoes-detalhe",
+                    "label": "Sim (Conjunção)"
+                  },
+                  {
+                    "from": "dec-liga-oracoes",
+                    "to": "dec-retirar-se",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "dec-retirar-se",
+                    "to": "res-particula-realce",
+                    "label": "Sim (Expletivo)"
+                  },
+                  {
+                    "from": "dec-retirar-se",
+                    "to": "dec-tipo-sintatico-se",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "dec-tipo-sintatico-se",
+                    "to": "res-pa-apassivador",
+                    "label": "VTD/VTDI sem Preposição"
+                  },
+                  {
+                    "from": "dec-tipo-sintatico-se",
+                    "to": "res-pis-indeterminador",
+                    "label": "VTI/VI/VL com Preposição"
+                  },
+                  {
+                    "from": "dec-tipo-sintatico-se",
+                    "to": "res-reflexivo-reciproco",
+                    "label": "Ação sobre Si Mesmo"
+                  },
+                  {
+                    "from": "dec-tipo-sintatico-se",
+                    "to": "res-piv-integrante",
+                    "label": "Verbo Essencial Pronominal"
+                  }
+                ],
+                "structuredText": "### Fluxograma Operacional de Identificação Rápida do 'SE'\n\n1. **[PALAVRA 'SE']**\n2. **ETAPA 1: TESTE DE CONJUNÇÃO** ➔ A palavra liga duas orações?\n   - 'ISSO' ➔ CONJUNÇÃO INTEGRANTE | 'CASO' ➔ CONDICIONAL | 'JÁ QUE' ➔ CAUSAL | 'EMBORA' ➔ CONCESSIVA.\n3. **ETAPA 2: TESTE DE REALCE** ➔ Pode retirar o 'se' sem alteração? ➔ PARTÍCULA DE REALCE / EXPLETIVA.\n4. **ETAPA 3: TESTE PRONOMINAL / SINTÁTICO**\n   - **PA:** VTD/VTDI sem preposição ➔ PRONOME APASSIVADOR.\n   - **PIS:** VTI/VI/VL com preposição ➔ ÍNDICE DE INDETERMINAÇÃO.\n   - **REFLEX:** Ação reflexiva/recíproca ➔ PRONOME REFLEXIVO.\n   - **PIV:** Verbo pronominal essencial ➔ PARTE INTEGRANTE.",
+                "mermaidSource": "flowchart TD\n    inicio-fluxo-se-30s[\"PALAVRA 'SE'\"] --> dec-liga-oracoes{\"Liga duas orações?\"}\n    dec-liga-oracoes -- \"Sim (Conjunção)\" --> res-conjuncoes-detalhe[\"ETAPA 1: CONJUNÇÃO<br>Integrante, Condicional, Causal, Concessiva\"]\n    dec-liga-oracoes -- \"Não\" --> dec-retirar-se{\"Pode retirar sem alteração?\"}\n    dec-retirar-se -- \"Sim (Expletivo)\" --> res-particula-realce[\"ETAPA 2: REALCE / EXPLETIVA\"]\n    dec-retirar-se -- \"Não\" --> dec-tipo-sintatico-se{\"ETAPA 3: Teste Pronominal\"}\n    dec-tipo-sintatico-se -- \"VTD/VTDI sem Preposição\" --> res-pa-apassivador[\"PRONOME APASSIVADOR (PA)\"]\n    dec-tipo-sintatico-se -- \"VTI/VI/VL com Preposição\" --> res-pis-indeterminador[\"ÍNDICE DE INDETERMINAÇÃO (PIS)\"]\n    dec-tipo-sintatico-se -- \"Ação sobre Si Mesmo\" --> res-reflexivo-reciproco[\"PRONOME REFLEXIVO / RECÍPROCO\"]\n    dec-tipo-sintatico-se -- \"Verbo Essencial Pronominal\" --> res-piv-integrante[\"PARTE INTEGRANTE DO VERBO (PIV)\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             }
           ],
           "presentation": {
@@ -924,8 +1096,8 @@
               "EXP-IP-A05-G12-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

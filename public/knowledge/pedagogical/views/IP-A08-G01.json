@@ -748,8 +748,170 @@
               ]
             },
             {
-              "type": "paragraph",
-              "text": "[ PASSO 1: LOCALIZAR O VERBO ] │ ▼ [ PASSO 2: PERGUNTAR PELO SUJEITO ] ───► Há vírgula antes do Verbo? ───► SIM: ERRO (Quebra S-V) │ NÃO: Válido ▼ [ PASSO 3: PERGUNTAR PELO COMPLEMENTO ] ─► Há vírgula após o Verbo? ───► SIM: ERRO (Quebra V-C) NÃO: Válido"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Método Analítico \"Diante do Verbo\" para Identificação de Vírgula Proibida",
+              "text": "[ PASSO 1: LOCALIZAR O VERBO ] │ ▼ [ PASSO 2: PERGUNTAR PELO SUJEITO ] ───► Há vírgula antes do Verbo? ───► SIM: ERRO (Quebra S-V) │ NÃO: Válido ▼ [ PASSO 3: PERGUNTAR PELO COMPLEMENTO ] ─► Há vírgula após o Verbo? ───► SIM: ERRO (Quebra V-C) NÃO: Válido",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "identificar-verbo",
+                "structuredText": "MÉTODO ANALÍTICO 'DIANTE DO VERBO' PARA IDENTIFICAÇÃO DE VÍRGULA PROIBIDA\n\n1. PASSO 1: LOCALIZAR O VERBO PRINCIPAL\n   - Identifique a forma verbal simples ou locução que rege a oração.\n\n2. PASSO 2: ANÁLISE DA FRONTEIRA SUJEITO-VERBO\n   - Interrogue o verbo ('Quem/O que é que [verbo]?') para delimitar todo o sintagma do Sujeito.\n   - Teste de Decisão: Há vírgula simples imediatamente antes do verbo?\n     * SIM: ERRO GRAMATICAL (Quebra proibida da relação Sujeito-Verbo - S-V).\n     * NÃO: Estrutura válida na fronteira inicial. Prossiga para o Passo 3.\n\n3. PASSO 3: ANÁLISE DA FRONTEIRA VERBO-COMPLEMENTO\n   - Determine a transitividade do verbo e localize os complementos diretos ou indiretos (OD/OI).\n   - Teste de Decisão: Há vírgula simples entre o verbo e seus complementos?\n     * SIM: ERRO GRAMATICAL (Quebra proibida da relação Verbo-Complemento - V-C).\n     * NÃO: ESTRUTURA SINTÁTICA VÁLIDA (A cadeia S-V-C está íntegra e em conformidade com o padrão culto).",
+                "groups": [
+                  {
+                    "id": "fase-localizacao",
+                    "label": "Passo 1: Identificação do Núcleo Verbal",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-analise-sujeito",
+                    "label": "Passo 2: Análise da Fronteira Sujeito-Verbo",
+                    "order": 2
+                  },
+                  {
+                    "id": "fase-analise-complemento",
+                    "label": "Passo 3: Análise da Fronteira Verbo-Complemento",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "identificar-verbo",
+                    "kind": "start",
+                    "label": "Localizar o Verbo Principal",
+                    "details": [
+                      "Isole a forma verbal simples ou a locução verbal que rege a oração sob análise.",
+                      "Exemplo: 'Os novos servidores públicos federais [assinaram] o termo de posse.'",
+                      "O verbo é o eixo sintático que determina os termos essenciais e integrantes."
+                    ],
+                    "groupId": "fase-localizacao"
+                  },
+                  {
+                    "id": "perguntar-sujeito",
+                    "kind": "process",
+                    "label": "Perguntar pelo Sujeito ao Verbo",
+                    "details": [
+                      "Formule a pergunta diagnóstica: 'Quem é que [verbo]?' ou 'O que é que [verbo]?'.",
+                      "Todo o bloco textual da resposta constitui o Sujeito da oração, independentemente de sua extensão ou complexidade.",
+                      "Exemplo: 'Quem é que assinou o termo? Resposta: [Os novos servidores públicos federais].'"
+                    ],
+                    "groupId": "fase-analise-sujeito"
+                  },
+                  {
+                    "id": "decisao-virgula-sujeito",
+                    "kind": "decision",
+                    "label": "Há vírgula simples imediatamente antes do Verbo?",
+                    "details": [
+                      "Examine a junção exata entre o término do sujeito e o início do verbo.",
+                      "Atenção: Termos intercalados isolados por DUAS vírgulas simétricas são válidos.",
+                      "O erro ocorre na presença de vírgula simples solitária que rompe o nexo S-V."
+                    ],
+                    "groupId": "fase-analise-sujeito"
+                  },
+                  {
+                    "id": "erro-quebra-sv",
+                    "kind": "result",
+                    "label": "Erro Gramatical: Quebra da Relação Sujeito-Verbo",
+                    "details": [
+                      "É terminantemente proibido separar por vírgula simples o sujeito de seu predicado/verbo.",
+                      "Exemplo incorreto: *'Os novos servidores públicos federais, assinaram o termo.'",
+                      "Gabarito: Marcar item como INCORRETO ou justificar a infração à regra canônica."
+                    ],
+                    "groupId": "fase-analise-sujeito"
+                  },
+                  {
+                    "id": "perguntar-complemento",
+                    "kind": "process",
+                    "label": "Perguntar pelos Complementos Verbais",
+                    "details": [
+                      "Determine a transitividade do verbo (VTD ou VTDI) e localize seus argumentos complementares ('O quê?', 'Quem?', 'A quem?').",
+                      "Identifique se o complemento é um sintagma nominal (OD/OI) ou uma oração subordinada substantiva integrante.",
+                      "Exemplo: 'Assinaram [o termo de posse] (Objeto Direto).'"
+                    ],
+                    "groupId": "fase-analise-complemento"
+                  },
+                  {
+                    "id": "decisao-virgula-complemento",
+                    "kind": "decision",
+                    "label": "Há vírgula simples entre o Verbo e o Complemento?",
+                    "details": [
+                      "Inspecione a fronteira entre a forma verbal e o início do objeto direto ou indireto.",
+                      "Também se aplica diante de orações subordinadas substantivas com 'que' ou 'se'.",
+                      "A quebra por vírgula simples viola a transitividade verbal canônica."
+                    ],
+                    "groupId": "fase-analise-complemento"
+                  },
+                  {
+                    "id": "erro-quebra-vc",
+                    "kind": "result",
+                    "label": "Erro Gramatical: Quebra da Relação Verbo-Complemento",
+                    "details": [
+                      "É terminantemente proibido separar o verbo de seus complementos diretos ou indiretos por vírgula simples.",
+                      "Exemplo incorreto: *'Os servidores assinaram, o termo de posse.'",
+                      "Exemplo oracional incorreto: *'O diretor afirmou, que todos seriam convocados.'",
+                      "Gabarito: Marcar item como INCORRETO."
+                    ],
+                    "groupId": "fase-analise-complemento"
+                  },
+                  {
+                    "id": "estrutura-valida",
+                    "kind": "result",
+                    "label": "Estrutura Sintática Válida",
+                    "details": [
+                      "A cadeia sintática básica Sujeito-Verbo-Complemento (S-V-C) está preservada sem quebras indevidas.",
+                      "Pontuação plenamente correta segundo o padrão culto normativo.",
+                      "Exemplo canônico: 'Os novos servidores públicos federais assinaram o termo de posse.'"
+                    ],
+                    "groupId": "fase-analise-complemento"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "identificar-verbo",
+                    "to": "perguntar-sujeito"
+                  },
+                  {
+                    "from": "perguntar-sujeito",
+                    "to": "decisao-virgula-sujeito"
+                  },
+                  {
+                    "from": "decisao-virgula-sujeito",
+                    "to": "erro-quebra-sv",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "decisao-virgula-sujeito",
+                    "to": "perguntar-complemento",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "perguntar-complemento",
+                    "to": "decisao-virgula-complemento"
+                  },
+                  {
+                    "from": "decisao-virgula-complemento",
+                    "to": "erro-quebra-vc",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "decisao-virgula-complemento",
+                    "to": "estrutura-valida",
+                    "label": "Não"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila/roteiros",
+                  "canonicalUnit": "IP-A08-G01",
+                  "lesson": "A08",
+                  "generationMethod": "semantic-regeneration-v2",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    identificar-verbo[\"Localizar o Verbo Principal\"] --> perguntar-sujeito[\"Perguntar pelo Sujeito ao Verbo\"]\n    perguntar-sujeito --> decisao-virgula-sujeito{\"Há vírgula simples imediatamente antes do Verbo?\"}\n    decisao-virgula-sujeito -- \"Sim\" --> erro-quebra-sv[\"Erro Gramatical: Quebra S-V\"]\n    decisao-virgula-sujeito -- \"Não\" --> perguntar-complemento[\"Perguntar pelos Complementos Verbais\"]\n    perguntar-complemento --> decisao-virgula-complemento{\"Há vírgula simples entre o Verbo e o Complemento?\"}\n    decisao-virgula-complemento -- \"Sim\" --> erro-quebra-vc[\"Erro Gramatical: Quebra V-C\"]\n    decisao-virgula-complemento -- \"Não\" --> estrutura-valida[\"Estrutura Sintática Válida\"]\n\n    classDef start fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;\n    classDef process fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;\n    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;\n    classDef result fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;\n    classDef error fill:#ffebee,stroke:#d32f2f,stroke-width:2px;\n    class identificar-verbo start;\n    class perguntar-sujeito,perguntar-complemento process;\n    class decisao-virgula-sujeito,decisao-virgula-complemento decision;\n    class estrutura-valida result;\n    class erro-quebra-sv,erro-quebra-vc error;"
+              }
             }
           ],
           "presentation": {
@@ -760,8 +922,8 @@
               "EXP-IP-A08-G01-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

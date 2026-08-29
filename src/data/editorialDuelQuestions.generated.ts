@@ -2,26 +2,6 @@
 export const EDITORIAL_DUEL_QUESTIONS = [
   {
     "id": "editorial-duel-01",
-    "prompt": "O emprego do diminutivo no texto está relacionado à expressão de afeto e ao gênero textual: carta familiar.",
-    "options": [
-      {
-        "id": "C",
-        "text": "Certo"
-      },
-      {
-        "id": "E",
-        "text": "Errado"
-      }
-    ],
-    "correctOptionId": "C",
-    "explanation": "O diminutivo, aqui formado pelo sufixo “-inha”, pode ter valor afetivo, subjetivo, carinhoso. Esse uso é\nperfeitamente coerente com a linguagem familiar e cheia de afeto usada pela avó para falar com seu neto\nnuma carta. Questão correta.\n\n\n\n\n\nSINTAGMA: Expressão composta por uma ou mais palavras que funciona como uma unidade sintática\nindivisível, em que existe um núcleo. As palavras não podem ser separadas, são ligadas sintaticamente.\nPodemos ter sintagmas nominais, verbais, adjetivais. O sintagma relevante de fato é o \"nominal\".\n\n\n\n\n\n\n\n\nSINTAGMA NOMINAL: Expressão composta por um núcleo nominal, isto é, estrutura em que a palavra\nprincipal é um nome, normalmente um substantivo. Os exemplos mais clássicos são um núcleo substantivo,\nseguido de determinantes (artigo, pronome, numeral, adjetivo ou locução adjetiva)\n\nEx: [O homem previdente] cuida do futuro.\n\nEx: [Certas pessoas] nunca aprendem.\n\nEx: [Os meus dois amigos mineiros de longa data] chegaram hoje.\n\n\nPapel Sintático do Substantivo\n\nA partir de agora, veremos como a “classe” da palavra e “função sintática” se comunicam. Veremos,\ninclusive, que são indissociáveis.\nPara isso, será necessário fazer referência a algumas funções sintáticas. Se você por acaso não recordar\nem absoluto dessas funções, não se preocupe: aprofundaremos esse ponto em “Sintaxe”. Vejamos...\n\n\nPara identificar o substantivo, devemos saber: quando tivermos uma função sintática nominal (centrada\nem um nome), como sujeito, objeto, adjunto adnominal e complemento nominal, o substantivo será\nnormalmente o núcleo dessa função, o elemento central e principal, e será modificado por termos\n“satélites” (orbitam, ficam “em volta”), como artigos, numerais, adjetivos e pronomes.\nMuito gramatiquês junto?! Vamos ver isso num exemplo:\n\n\n\nOs seus cinco patinhos amarelos nadam na lagoa\nSujeito Adj. Adv.\n\n\nVejamos as classes de cada uma das palavras do exemplo acima:\nOs: artigo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero (masculino) e\nnúmero (plural).\nSeus: pronome possessivo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero\n(masculino) e número (plural).\nCinco: numeral adjetivo, variável, também se refere ao substantivo \"patinhos\".\nPatinhos: substantivo, núcleo da função sintática \"sujeito\" e é responsável pela concordância das\nclasses que se referem a ele.\nAmarelos: adjetivo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em gênero\n(masculino) e número (plural).\nNadam: verbo, variável, se refere ao substantivo \"patinhos\" e concorda com ele em terceira pessoa\n(eles) e número (plural).\nNa lagoa: locução adverbial de lugar. Exprime circunstância e equivale a um advérbio (classe), que é\ninvariável e tem função sintática de adjunto adverbial de lugar.\n\n\n\n\n\n\n\nVejamos agora um segundo exemplo\n\n\n“O1 meu2 violão3 novo4 quebrou”.\n\n\nQual termo dá nome ao objeto? A resposta deverá ser: Violão.\nSe eu perguntar: “o que quebrou?”, a resposta será O1 meu2 violão3 novo4. Dessa expressão inteira, a\npalavra central é “violão”, que é especificada por termos acessórios (o, meu, novo). Por isso, “violão” é\no núcleo do sujeito.\n\n\n\n\n\nO substantivo é classe nominal variável e ocupa sempre o núcleo de qualquer função sintática\nnominal.\n\nNa expressão: “tenho medo de bruxas”, o complemento nominal “de bruxas” tem como núcleo\no substantivo “bruxas” e completa o sentido vago da palavra “medo”.\n\nSe o substantivo é “núcleo”, há classes que são “satélites” e “orbitam” em volta dele e concordam\ncom ele.\nEssas classes que se referem ao substantivo são o artigo, o numeral, o adjetivo e o pronome\n(veremos essas classes adiante).\n\n\nEntão, já podemos perceber que o “substantivo” é o núcleo dos termos sintáticos sublinhados nos\nexemplos abaixo:\n1As meninas ricas do Leblon compraram 2muitos vestidos.\nO muro 3de concreto é resistente.\nEles têm consciência 4de meus defeitos.\n\n\nEm 1, “meninas” é o núcleo do sujeito, que está sublinhado.\nEm 2, “vestidos” é núcleo do objeto de “compraram”, complemento desse verbo (\"Quem compra,\ncompra alguma coisa\". Nesse caso, compra “muitos vestidos”).\nEm 3, o termo “de concreto” qualifica o substantivo “muro” e está “junto” a ele. Então, temos uma\nfunção chamada “adjunto adnominal” e seu núcleo é justamente o substantivo “concreto”.\nEm 4, o termo “de meus defeitos” complementa o nome “consciência”, porque \"quem tem consciência\ntem consciência de alguma coisa\". No caso, consciência “de meus defeitos”. Observe novamente como o\nnúcleo é um substantivo.\n\n\n\n\n\n\n\n\n\nPor outro lado, algumas classes de palavras também podem vir classificadas como “substantivas” (função ou\npapel de substantivo), se puderem substituir um nome, ou seja, se puderem vir no lugar de um substantivo,\ncomo “núcleo”.\n\nVejamos o exemplo abaixo\n\nMinhas mãos estão limpas, lave as suas [mãos].\n\n\nNote que \"suas\" é pronome possessivo substantivo, pois substitui o substantivo “mãos”, que está\nimplícito.\n\n\nTranquilo?! Não se preocupe, aprofundaremos tais funções futuramente. Mas já fica registrada a relação\nbásica entre a classe e a função sintática.\n\n\n\n\n\n\n\n\n\nADJETIVO\n\nO adjetivo é a classe variável que se refere ao substantivo ou termo de valor substantivo (como\npronomes), para atribuir a ele alguma qualificação, condição ou estado, restringindo ou\nespecificando seu sentido.\n\nEx: homem mau, mulher simples, céu azul, casa arruinada.\n\n\nÉ classe variável, que “orbita” em torno do substantivo e concorda com ele em gênero e número.\n\n\n\n\nEx: homens maus, mulheres simples, céus azuis, casas arruinadas.\n\n\nO adjetivo pode também ser substantivado:\n\n“Céu azul” => “O azul do céu”.\n\n\nÉ comum também substituir o adjetivo por “locução” ou “oração” adjetiva:\n\nEx: “Cidadão inglês”x “Cidadão da Inglaterra” x “Cidadão que é nativo da Inglaterra”.\n\n\nClassificação dos adjetivos\n\n\n\nCLASSIFICAÇÃO DEFINIÇÃO EXEMPLOS\n\nSIMPLES Possui apenas um radical. Estilo literário.\n\nCOMPOSTO Possui mais de um radical. Estilo lítero-musical.\n\nForma original, não derivado de outra\nPRIMITIVO Homem bom. palavra.\n\nDERIVADO É formado a partir de outra palavra. Ele é bondoso.\n\nIndica característica inerente e geral do Homem mortal.\nEXPLICATIVO ser.\n\nIndica característica que não é própria\nRESTRITIVO Homem valente. do ser.\n\nGENTÍLICO Relativos a povos e raças. israelita\n\nRelativos a cidades, estados, países e\nPÁTRIO israelense continentes.\n\n\n\n\n\n\n\n\n\nVejamos alguns exemplos de adjetivos pátrios, atenção à formação.\n\nVou destacar as terminações típicas dos adjetivos que indicam origem.\n\n/ês/: português, inglês, francês, camaronês, norueguês\n\n/ano/: goiano, americano, africano, angolano, mexicano\n\n/ense/: estadunidense, fluminense, amazonense\n\n/ão/, /eiro/: afegão, alemão, catalão, brasileiro, mineiro\n\n/ol/, /eta/, /ita/: espanhol, mongol, lisboeta, vietnamita\n\n/ino/, /eu/: argentino londrino, europeu, judeu\n\n/tico/: asiático\n\n/enho/: panamenho, costa-riquenho, porto-riquenho\n\n\nCuidado: esses adjetivos são grafados com letras minúsculas.\n\n\nComo apresentado na tabela, os adjetivos chamados de “uniformes” têm uma só forma para\nmasculino ou feminino e normalmente são os terminados em /a/, /e/, /ar/, /or/, /s/, /z/ ou /m/:\n\nEx: hipócrita, homicida, asteca, agrícola, cosmopolita\n\nárabe, breve, doce, constante, pedinte, cearense\n\nsuperior, exemplar, ímpar\n\nsimples, reles\n\nfeliz, feroz\n\nruim, comum\n\n\nFlexão dos adjetivos compostos\n\nNo plural dos adjetivos compostos, como luso-americanos, afro-brasileiras, obras político-sociais,\na primeira parte do composto é reduzida e somente o segundo item da composição vai para o\nplural.\n\nEssa é a regra para o plural dos adjetivos compostos em geral. Contudo, vejamos algumas\nexceções que são recorrentes em sua prova:\n\n\nAdjetivo composto formado por “adjetivo + substantivo”\n\nSe houver um substantivo na composição do adjetivo composto (adjetivo + substantivo),\nnenhuma das partes vai variar:\n\nEx: amarelo-ouro => camisa amarelo-ouro; camisas amarelo-ouro\n\nverde-oliva => parede verde-oliva; paredes verde-oliva\n\nvermelho-sangue => caneta vermelho-sangue; canetas vermelho-sangue\n\n\n\n\n\n\n\nAdjetivos compostos invariáveis\n\nAlguns adjetivos, no entanto, são sempre invariáveis. Vejamos:\n\nazul-marinho => camisa azul-marinho; camisas azul-marinho\n\nazul-celeste => parede azul-celeste; paredes azul-celeste\n\nfurta-cor => calça furta-cor; calças furta-cor\n\nultravioleta => raio ultravioleta; raios ultravioleta\n\nsem-terra => povo sem-terra; povos sem-terra\n\nverde-musgo => almofada verde-musgo; almofadas verde-musgo\n\ncor-de-rosa => jaqueta cor-de-rosa; jaquetas cor-de-rosa\n\n\n\n\n\nzero-quilômetro => caminhonete zero-quilômetro; caminhonetes zero-quilômetro\n\n\nValor objetivo (fato) x Valor subjetivo (opinião)\n\nOs adjetivos podem ter valor subjetivo, quando expressam opinião; ou podem ter valor objetivo,\nquando atestam qualidade que é fato e não depende de interpretação.\n\nOs adjetivos opinativos, por serem marca de expressão de uma opinião, são acessórios, podem\nser retirados, sem prejuízo gramatical.\n\nVeja:\n\nAdjetivos opinativos X Adjetivos objetivos\n\ncarro bonito carro preto\n\nturista animado turista japonês\n\n\nOs adjetivos chamados “de relação” são objetivos e, por isso, não aceitam variação de grau e\nnão podem ser deslocados livremente, posicionando-se normalmente após o substantivo.\n\nSão derivados de substantivos e estabelecem com o substantivo uma relação de tempo, espaço,\nmatéria, finalidade, propriedade, procedência etc.\n\nTais adjetivos indicam uma categorização “técnica”, “objetiva” e tornam mais preciso o conceito\nexpresso pelo substantivo, restringindo seu significado.\n\nO gramático Celso Cunha dá os seguintes exemplos:\n\nNota mensal => nota relativa ao mês\n\nMovimento estudantil => movimento feito por estudantes\n\nCasa paterna => casa onde habitam os pais\n\nVinho português => vinho proveniente de Portugal\n\n\n\n\n\n\n\n\n\n\nObserve que não podemos escrever “português vinho” nem “vinho muito português”. Ser\n“português” é uma categorização objetiva do vinho, não expressa opinião.\n\n\nEssas características vão nos ajudar em questões sobre a inversão da ordem “substantivo +\nadjetivo”, estudada adiante.",
-    "sourceRefs": [
-      "QUESTION:A01:aula01.q0005",
-      "CORPUS:A01:aula01.q0005"
-    ]
-  },
-  {
-    "id": "editorial-duel-02",
     "prompt": "A palavra “portanto” introduz, no período em que ocorre, uma ideia de conclusão.",
     "options": [
       {
@@ -42,7 +22,7 @@ export const EDITORIAL_DUEL_QUESTIONS = [
     ]
   },
   {
-    "id": "editorial-duel-03",
+    "id": "editorial-duel-02",
     "prompt": "No trecho “É verdade que não se poderia contar com ela para nada”, o uso da próclise justifica-se pela presença da palavra negativa “não”.",
     "options": [
       {
@@ -62,27 +42,7 @@ export const EDITORIAL_DUEL_QUESTIONS = [
     ]
   },
   {
-    "id": "editorial-duel-04",
-    "prompt": "Nesse futuro não tão remoto, teremos conquistado a utopia de uma verdadeira justiça social.\nA substituição de “teremos conquistado” por conquistaremos manteria os sentidos originais do\ntexto.",
-    "options": [
-      {
-        "id": "C",
-        "text": "Certo"
-      },
-      {
-        "id": "E",
-        "text": "Errado"
-      }
-    ],
-    "correctOptionId": "E",
-    "explanation": "“Teremos conquistado” é forma de futuro do presente composto e indica que ação estará\nconcluída no momento futuro sugerido.\nTrazendo para um exemplo mais simples, compare:\nÀs 21h, jantarei (começarei a comer).\nÀs 21h, terei jantado (já terei terminado de comer).\nEntão, “teremos conquistados” indica que a ação de conquistar já estará completa,\nperfeitamente concluída. “Conquistaremos” não tem esse sentido, apenas indica a ação como\nalgo que ocorrerá no futuro, sem esse valor de ação “já concluída” naquele momento.\nQuestão incorreta.",
-    "sourceRefs": [
-      "QUESTION:A05:aula05.q0030",
-      "CORPUS:A05:aula05.q0030"
-    ]
-  },
-  {
-    "id": "editorial-duel-05",
+    "id": "editorial-duel-03",
     "prompt": "Texto: “Já houve acusados que se declararam culpados de crimes que não cometeram.”\n\nO sujeito da forma verbal “cometeram” é indeterminado.",
     "options": [
       {
@@ -102,27 +62,7 @@ export const EDITORIAL_DUEL_QUESTIONS = [
     ]
   },
   {
-    "id": "editorial-duel-06",
-    "prompt": "(CEBRASPE / MP-CE / 2020) No trecho “Nem ela própria contava consigo, como o galo crê na sua crista” (2º parágrafo), existe uma relação de oposição entre as orações que compõem o período.",
-    "options": [
-      {
-        "id": "C",
-        "text": "Certo"
-      },
-      {
-        "id": "E",
-        "text": "Errado"
-      }
-    ],
-    "correctOptionId": "E",
-    "explanation": "“como” é conjunção comparativa: a galinha não contava consigo da mesma forma que o galo crê na sua crista. Questão incorreta.",
-    "sourceRefs": [
-      "QUESTION:A07:aula07.q0061",
-      "CORPUS:A07:aula07.q0061"
-    ]
-  },
-  {
-    "id": "editorial-duel-07",
+    "id": "editorial-duel-04",
     "prompt": "Texto: “(CEBRASPE / IHBDF / 2018)”\n\nO sujeito da forma verbal “parou” (l. 7) é “fábrica”.",
     "options": [
       {
@@ -142,7 +82,7 @@ export const EDITORIAL_DUEL_QUESTIONS = [
     ]
   },
   {
-    "id": "editorial-duel-08",
+    "id": "editorial-duel-05",
     "prompt": "A substituição do pronome “o”, em “reduziu-o a artigos”, por “lhe” preservaria a correção\ngramatical do texto.",
     "options": [
       {
@@ -162,7 +102,7 @@ export const EDITORIAL_DUEL_QUESTIONS = [
     ]
   },
   {
-    "id": "editorial-duel-09",
+    "id": "editorial-duel-06",
     "prompt": "A expressão “suas relações” refere-se às relações da “democracia ateniense”.",
     "options": [
       {
@@ -182,47 +122,7 @@ export const EDITORIAL_DUEL_QUESTIONS = [
     ]
   },
   {
-    "id": "editorial-duel-10",
-    "prompt": "Texto: “Utilize o texto da questão anterior.”\n\nInfere-se que o autor do texto é espanhol.",
-    "options": [
-      {
-        "id": "C",
-        "text": "Certo"
-      },
-      {
-        "id": "E",
-        "text": "Errado"
-      }
-    ],
-    "correctOptionId": "E",
-    "explanation": "Não se pode afirmar isso. Apenas foi dito que o nome é hispânico. Garcia é um nome hispânico e\nnem todo Garcia é espanhol. Questão incorreta.",
-    "sourceRefs": [
-      "QUESTION:A13:aula13.q0171",
-      "CORPUS:A13:aula13.q0171"
-    ]
-  },
-  {
-    "id": "editorial-duel-11",
-    "prompt": "Texto: “Ainda que os produtos e os resultados sejam importantes, os processos e o valor agregado são ainda mais.\n\nJulgue o item a seguir.”\n\nA palavra “ainda” expressa ideia de tempo.",
-    "options": [
-      {
-        "id": "C",
-        "text": "Certo"
-      },
-      {
-        "id": "E",
-        "text": "Errado"
-      }
-    ],
-    "correctOptionId": "E",
-    "explanation": "Nesse caso, temos “ainda” com mero valor enfático, como em: chegou ainda agora (acabou de chegar),\nestudou mais ainda (mais e mais). Questão incorreta.\n\n\n\n\n\n\n\n\n\n\nEvite usar “o mesmo” retomando pessoas/objetos, como se fosse “ele”, em construções como:\nEx: O suspeito chegou ao local. O mesmo fugiu dos policiais sem que os mesmos\npudessem perceber. (troque por “ele” e “eles”)\nContudo, é correto usar “o mesmo”, invariável, quando significa “a mesma coisa/o mesmo fato”.\nEx: Todos têm dificuldade com essa matéria, o mesmo ocorrerá com você. (a mesma coisa\nocorrerá com você, isso também ocorrerá com você)\n\n\n\n\n\n\n\n\nUSO DE “O MESMO”\n\nA expressão \"o mesmo\" é muitas vezes usada para evitar repetições excessivas em textos formais,\nespecialmente em contextos burocráticos ou administrativos. No entanto, “o mesmo” não é pronome\npessoal e não deve ser usado como tal. Esse uso É INADEQUADO:\n\nEx: \"O aluno entregou o trabalho. O mesmo será corrigido em breve.\"\n\nEx: \"O funcionário foi notificado sobre sua conduta. O mesmo deverá comparecer à reunião para\nesclarecimentos.\"\n\nNos dois casos acima, bastaria usar o pronome pessoal “ele”:\n\nEx: \"O aluno entregou o trabalho. ELE será corrigido em breve.\"\n\nEx: \"O funcionário foi notificado sobre sua conduta. ELE deverá comparecer à reunião para esclarecimentos.\"\n\nPorém, o uso de “o mesmo” para substituir um segmento anterior é correto quando retoma um evento\nocorrido/processo mencionado antes, com sentido de “a mesma coisa/o mesmo fato”.\n\nVárias pessoas foram assaltadas; o mesmo aconteceu comigo. (certo).\n\nVárias pessoas foram assaltadas; o mesmo fato/ a mesma coisa [ser assaltado] aconteceu comigo. (certo).",
-    "sourceRefs": [
-      "QUESTION:A01:aula01.q0030",
-      "CORPUS:A01:aula01.q0030"
-    ]
-  },
-  {
-    "id": "editorial-duel-12",
+    "id": "editorial-duel-07",
     "prompt": "Em “Mas não me deixe sentar”, a colocação do pronome “me” após a forma verbal “deixe” — deixe-me — prejudicaria a correção gramatical do trecho.",
     "options": [
       {
@@ -240,6 +140,107 @@ export const EDITORIAL_DUEL_QUESTIONS = [
       "QUESTION:A03:aula03.q0149",
       "CORPUS:A03:aula03.q0149"
     ]
+  },
+  {
+    "id": "editorial-duel-08",
+    "prompt": "Dada a regência do verbo tender, é facultativo o emprego do sinal indicativo de crase no\nvocábulo “a” em “tendem a ser menos efetivas”.",
+    "options": [
+      {
+        "id": "C",
+        "text": "Certo"
+      },
+      {
+        "id": "E",
+        "text": "Errado"
+      }
+    ],
+    "correctOptionId": "E",
+    "explanation": "Considerando o termo a que se liga a expressão “tendem a”, o emprego do acento grave\nindicativo da crase seria inadequado em termos de correção gramatical. Questão incorreta.",
+    "sourceRefs": [
+      "QUESTION:A10:aula10.q0065",
+      "CORPUS:A10:aula10.q0065",
+      "CORPUS:A10:aula10.q0033"
+    ]
+  },
+  {
+    "id": "editorial-duel-09",
+    "prompt": "Considerando o emprego do vocábulo “perenes”, julgue o item a seguir. O vocábulo é uma paroxítona e pode ser classificado como polissílabo.",
+    "options": [
+      {
+        "id": "C",
+        "text": "Certo"
+      },
+      {
+        "id": "E",
+        "text": "Errado"
+      }
+    ],
+    "correctOptionId": "E",
+    "explanation": "Na verdade, é uma paroxítona trissílaba. Polissílaba deve possuir 4 ou mais sílabas. Gabarito: questão incorreta.",
+    "sourceRefs": [
+      "QUESTION:A00:aula00.q0003",
+      "CORPUS:A00:aula00.q0003"
+    ]
+  },
+  {
+    "id": "editorial-duel-10",
+    "prompt": "Julgue o item a seguir. Assim como o vocábulo “remédios”, a forma verbal da oração Eu sempre remédio a situação lá em casa. também está corretamente acentuada.",
+    "options": [
+      {
+        "id": "C",
+        "text": "Certo"
+      },
+      {
+        "id": "E",
+        "text": "Errado"
+      }
+    ],
+    "correctOptionId": "E",
+    "explanation": "O substantivo “re-mé-dio” é acentuado por ser uma paroxítona terminada em ditongo. A forma verbal seria “remedeio”, não remedio. Gabarito: questão incorreta.",
+    "sourceRefs": [
+      "QUESTION:A00:aula00.q0004",
+      "CORPUS:A00:aula00.q0004"
+    ]
+  },
+  {
+    "id": "editorial-duel-11",
+    "prompt": "Tendo em vistas as regras de acentuação gráfica da Língua Portuguesa, julgue o item a seguir. “Será que têm bagagem suficiente para criticar?” – “será” recebe acento por se tratar de uma oxítona terminada em “a”.",
+    "options": [
+      {
+        "id": "C",
+        "text": "Certo"
+      },
+      {
+        "id": "E",
+        "text": "Errado"
+      }
+    ],
+    "correctOptionId": "C",
+    "explanation": "Exatamente: se-rá - acentuam-se as oxítonas terminadas A, E, O, em, ens (primeira regra). Questão correta.",
+    "sourceRefs": [
+      "QUESTION:A00:aula00.q0008",
+      "CORPUS:A00:aula00.q0008"
+    ]
+  },
+  {
+    "id": "editorial-duel-12",
+    "prompt": "São exemplos de palavras oxítonas acentuadas graficamente: “também”, “permitirá” e “elevará”.",
+    "options": [
+      {
+        "id": "C",
+        "text": "Certo"
+      },
+      {
+        "id": "E",
+        "text": "Errado"
+      }
+    ],
+    "correctOptionId": "C",
+    "explanation": "Acentuam-se as oxítonas terminadas em “A(s), E(s), O(s), Em, Ens”. Questão correta. Paroxítonas Na segunda linha, por oposição, teremos que todas as paroxítonas são acentuadas, exceto aquelas terminadas em A, E, O, EM, ENS. Ou seja, as outras terminações (l, n, um, om, r, ns, x, i, is, us, ps, ã, ão) são acentuadas. Essa é a regra geral, que engloba as diversas terminações de paroxítonas. Portanto, não será acentuada a paroxítona que tiver as terminações de oxítona acentuada (A, E, O, EM, ENS - assim como as palavras MatA, AbadE, CopO, HomEM, HomENS, HifENS...). Além dessa regra geral, é importante saber que há uma OUTRA REGRA específica que despenca em prova: Acentuam-se as paroxítonas terminadas em ditongo! Veja o quadro da acentuação das paroxítonas: ACENTUAÇÃO DAS PAROXÍTONAS REGRA GERAL REGRA ESPECÍFICA Acentuam-se todas exceto as terminadas Acentuam-se as terminadas em ditongo oral em A, E, O, EM, ENS. Fácil, hífen, álbum, cadáver, álbuns, tórax, júri, lápis, vírus, bíceps, órfão, ímã, próton. Indivíduos, precárias, série, história, homogênea, médio, bromélia, imóveis, água, distância, primário, indústria, rádio, Brasília, cenário, próprio, amáveis. Cuidado: não pense que a palavra “água” termina em “a”, ela termina em “ua”, ditongo. Por outro lado, já em consonância com a nova ortografia, as paroxítonas que tragam ditongo aberto não são acentuadas: heroico, assembleia, ideia, androide, debiloide, colmeia, boia, estoico, ideia, asteroide, paranoico... Novo Acordo Ortográfico Não são acentuadas São acentuadas Palavras com ditongo aberto (ei,oi) na posição Palavras com ditongo aberto (ei,oi) na paroxítona posição oxítona Ideia, plateia, colmeia, assembleia, colmeia Anéis, infiéis, papéis Heroico, asteroide, paranoico, estoico, jiboia Herói, corrói, constrói OBS: Novamente, há exceções, como os verbos terminados em ditongo -AM. Palavras como Cantam e Choram não são acentuadas (e dificilmente um candidato pensaria que são). Anote também que o ditongo nasal “ão” faz parte da regra geral, a regra das paroxítonas terminadas em ditongo se refere aos ditongos orais. Os prefixos paroxítonos terminados em r ou i também não são acentuados, como hiper, super, mini, anti, semi. Méier e Destróier são acentuadas, pois terminam em R e caem na regra geral!",
+    "sourceRefs": [
+      "QUESTION:A00:aula00.q0009",
+      "CORPUS:A00:aula00.q0009"
+    ]
   }
 ] as const;
-export const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-fd08548efb8e4232';
+export const EDITORIAL_DUEL_QUESTION_SET_VERSION = 'editorial-duel-f325f31b30b382a7';

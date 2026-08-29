@@ -1029,8 +1029,143 @@
           "procedureId": "PROC-A05-V013-014-VOZES-VERBAIS-FUNDAMENTOS-002",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[Início: Frase contém Verbo + SE] │ ▼ [Etapa 1: Checar Transitividade Verbal] O verbo é Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI)? ├── NÃO ──► [NÃO é Passiva Sintética (SE é IIS, PIV, etc.)] └── SIM ──► [Avançar para a Etapa 2] │ ▼ [Etapa 2: Teste de Transposição para a Passiva Analítica] A frase aceita conversão natural para \"Sujeito + SER + Particípio\"? ├── NÃO ──► [NÃO é Passiva Sintética] └── SIM ──► [CONFIRMADO: Voz Passiva Sintética / SE = CPA] │ ▼ [Regra de Concordância Obrigatória] O verbo deve concordar em número com o Sujeito Paciente!"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Método das Duas Verificações para Validar a Passiva Sintética",
+              "text": "[Início: Frase contém Verbo + SE] │ ▼ [Etapa 1: Checar Transitividade Verbal] O verbo é Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI)? ├── NÃO ──► [NÃO é Passiva Sintética (SE é IIS, PIV, etc.)] └── SIM ──► [Avançar para a Etapa 2] │ ▼ [Etapa 2: Teste de Transposição para a Passiva Analítica] A frase aceita conversão natural para \"Sujeito + SER + Particípio\"? ├── NÃO ──► [NÃO é Passiva Sintética] └── SIM ──► [CONFIRMADO: Voz Passiva Sintética / SE = CPA] │ ▼ [Regra de Concordância Obrigatória] O verbo deve concordar em número com o Sujeito Paciente!",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-duas-verificacoes",
+                "groups": [
+                  {
+                    "id": "g-verif1",
+                    "label": "1ª Verificação: Transitividade Verbal (VTD / VTDI)",
+                    "order": 1
+                  },
+                  {
+                    "id": "g-verif2",
+                    "label": "2ª Verificação: Transposição para Passiva Analítica",
+                    "order": 2
+                  },
+                  {
+                    "id": "g-conclusao",
+                    "label": "Conclusão e Regra de Concordância",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-duas-verificacoes",
+                    "kind": "start",
+                    "label": "Início: Frase contém Verbo + SE",
+                    "details": [
+                      "Análise de sentença candidata à voz passiva sintética com pronome apassivador."
+                    ],
+                    "groupId": "g-verif1"
+                  },
+                  {
+                    "id": "decisao-vtd-vtdi",
+                    "kind": "decision",
+                    "label": "1ª Verificação: O verbo é VTD ou VTDI?",
+                    "details": [
+                      "Testar a transitividade do verbo na oração analisada.",
+                      "VTD/VTDI: exige complemento direto sem preposição."
+                    ],
+                    "groupId": "g-verif1"
+                  },
+                  {
+                    "id": "decisao-analitica",
+                    "kind": "decision",
+                    "label": "2ª Verificação: A frase aceita transposição para a passiva analítica?",
+                    "details": [
+                      "Testar a conversão para a estrutura correspondente 'Sujeito + SER + Particípio'.",
+                      "Exemplo: 'Vendem-se casas' ➔ 'Casas são vendidas'."
+                    ],
+                    "groupId": "g-verif2"
+                  },
+                  {
+                    "id": "resultado-nao-passiva-1",
+                    "kind": "result",
+                    "label": "Não é Passiva Sintética (SE é IIS, PIV, etc.)",
+                    "details": [
+                      "O 'SE' classifica-se como Índice de Indeterminação do Sujeito (PIS/IIS), Parte Integrante do Verbo (PIV) ou Conjunção."
+                    ],
+                    "groupId": "g-verif1"
+                  },
+                  {
+                    "id": "resultado-nao-passiva-2",
+                    "kind": "result",
+                    "label": "Não é Passiva Sintética",
+                    "details": [
+                      "A impossibilidade de transposição para a forma analítica equivalente descaracteriza a voz passiva sintética."
+                    ],
+                    "groupId": "g-verif2"
+                  },
+                  {
+                    "id": "confirmado-passiva-sintetica",
+                    "kind": "process",
+                    "label": "Confirmado: Voz Passiva Sintética / SE = CPA (Pronome Apassivador)",
+                    "details": [
+                      "Ambas as verificações foram satisfeitas com sucesso.",
+                      "O termo sem preposição atua categoricamente como Sujeito Paciente."
+                    ],
+                    "groupId": "g-conclusao"
+                  },
+                  {
+                    "id": "regra-concordancia-obrigatoria",
+                    "kind": "result",
+                    "label": "Regra de Concordância Obrigatória com o Sujeito Paciente",
+                    "details": [
+                      "O verbo DEVE concordar obrigatoriamente em número (singular ou plural) com o Sujeito Paciente.",
+                      "Exemplos: 'Vende-se casa' (singular) / 'Vendem-se casas' (plural)."
+                    ],
+                    "groupId": "g-conclusao"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-duas-verificacoes",
+                    "to": "decisao-vtd-vtdi"
+                  },
+                  {
+                    "from": "decisao-vtd-vtdi",
+                    "to": "decisao-analitica",
+                    "label": "Sim (É VTD ou VTDI)"
+                  },
+                  {
+                    "from": "decisao-vtd-vtdi",
+                    "to": "resultado-nao-passiva-1",
+                    "label": "Não (É VTI, VI ou VL)"
+                  },
+                  {
+                    "from": "decisao-analitica",
+                    "to": "confirmado-passiva-sintetica",
+                    "label": "Sim (Aceita Passiva Analítica)"
+                  },
+                  {
+                    "from": "decisao-analitica",
+                    "to": "resultado-nao-passiva-2",
+                    "label": "Não (Não Aceita)"
+                  },
+                  {
+                    "from": "confirmado-passiva-sintetica",
+                    "to": "regra-concordancia-obrigatoria"
+                  }
+                ],
+                "structuredText": "### Método das Duas Verificações para Validar a Passiva Sintética\n\n1. **Início:** Frase contém Verbo + SE.\n2. **1ª Verificação:** O verbo é Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI)?\n   - **NÃO ➔** Não é Passiva Sintética (SE é IIS, PIV, etc.).\n   - **SIM ➔** Avançar para a 2ª Verificação.\n3. **2ª Verificação:** A frase aceita conversão para a Passiva Analítica ('Sujeito + SER + Particípio')?\n   - **NÃO ➔** Não é Passiva Sintética.\n   - **SIM ➔** CONFIRMADO: Voz Passiva Sintética / SE = CPA (Pronome Apassivador).\n4. **Regra de Concordância Obrigatória:** O verbo deve concordar obrigatoriamente em número com o Sujeito Paciente (ex.: *Vende-se casa* / *Vendem-se casas*).",
+                "mermaidSource": "flowchart TD\n    inicio-duas-verificacoes[\"Início: Frase contém Verbo + SE\"] --> decisao-vtd-vtdi{\"1ª Verificação: O verbo é VTD ou VTDI?\"}\n    decisao-vtd-vtdi -- \"Sim (É VTD ou VTDI)\" --> decisao-analitica{\"2ª Verificação: Aceita Passiva Analítica?\"}\n    decisao-vtd-vtdi -- \"Não (É VTI, VI ou VL)\" --> resultado-nao-passiva-1[\"NÃO é Passiva Sintética<br>SE é IIS, PIV, etc.\"]\n    decisao-analitica -- \"Sim (Aceita Passiva Analítica)\" --> confirmado-passiva-sintetica[\"CONFIRMADO: Voz Passiva Sintética<br>SE = Pronome Apassivador CPA\"]\n    decisao-analitica -- \"Não (Não Aceita)\" --> resultado-nao-passiva-2[\"NÃO é Passiva Sintética\"]\n    confirmado-passiva-sintetica --> regra-concordancia-obrigatoria[\"Regra de Concordância Obrigatória:<br>Verbo concorda com Sujeito Paciente\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             }
           ],
           "presentation": {
@@ -1041,8 +1176,8 @@
               "EXP-IP-A05-G04-PROC-002"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

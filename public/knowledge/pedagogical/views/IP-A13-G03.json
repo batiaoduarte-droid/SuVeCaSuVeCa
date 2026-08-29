@@ -1004,13 +1004,148 @@
               "text": "Determinar com exatidão matemática a tipologia de qualquer excerto de prova de concurso público, eliminando falsas deduções baseadas apenas na terminação verbal."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Fluxograma Operacional"
-            },
-            {
-              "type": "paragraph",
-              "text": "text [FRAGMENTO TEXTUAL DE PROVA] │ ▼ PASSO 1: Mapear as ações, estados e intenção discursiva central │ ▼ PASSO 2: Aplicar o Teste da Temporalidade Interna ───────────────────────────────────────────────── As ações / estados ocorrem em momentos cronológicos sucessivos? │ ┌─────────────────┴─────────────────┐ ▼ ▼ [SIM] [NÃO] │ │ ▼ ▼ O tempo avançou? As ações e atributos coexistem Há linha de \"antes e depois\"? em um só instante (fotografia)? (Teste: \"1º... depois... então\") (Teste: \"Cena congelada\") │ │ ▼ ▼ ┌───────────┐ ┌───────────┐ │ NARRAÇÃO │ │ DESCRIÇÃO │ └───────────┘ └───────────┘ │ │ ▼ ▼ PASSO 3: Validação Secundária por Intenção Comunicativa"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Fluxograma Operacional",
+              "text": "text [FRAGMENTO TEXTUAL DE PROVA] │ ▼ PASSO 1: Mapear as ações, estados e intenção discursiva central │ ▼ PASSO 2: Aplicar o Teste da Temporalidade Interna ───────────────────────────────────────────────── As ações / estados ocorrem em momentos cronológicos sucessivos? │ ┌─────────────────┴─────────────────┐ ▼ ▼ [SIM] [NÃO] │ │ ▼ ▼ O tempo avançou? As ações e atributos coexistem Há linha de \"antes e depois\"? em um só instante (fotografia)? (Teste: \"1º... depois... então\") (Teste: \"Cena congelada\") │ │ ▼ ▼ ┌───────────┐ ┌───────────┐ │ NARRAÇÃO │ │ DESCRIÇÃO │ └───────────┘ └───────────┘ │ │ ▼ ▼ PASSO 3: Validação Secundária por Intenção Comunicativa",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-analise-fragmento-tipologico",
+                "structuredText": "# Fluxograma Operacional: Teste da Temporalidade Interna (Narração vs. Descrição)\n\nProcedimento canônico em 3 passos para discriminar entre sequências narrativas e descritivas:\n\n1. **Passo 1 — Mapeamento Inicial**: Mapear as ações, estados, atributos e a intenção discursiva central do fragmento textual.\n2. **Passo 2 — Aplicação do Teste da Temporalidade Interna**:\n   - *Pergunta de Controle*: As ações / estados ocorrem em momentos cronológicos sucessivos?\n   - **SIM** -> O tempo avançou? Há linha de *'antes e depois'*? (Teste: *'1º... depois... então'* / *Pretérito Perfeito*) -> **NARRAÇÃO**.\n   - **NÃO** -> As ações e atributos coexistem em um só instante temporal? (Teste: *'Cena congelada / Fotografia'* / *Pretérito Imperfeito*) -> **DESCRIÇÃO**.\n3. **Passo 3 — Validação Secundária por Intenção Comunicativa**: Confirmar o resultado avaliando se o objetivo do autor era relatar uma transformação de estado ou caracterizar seres/cenários no espaço.",
+                "groups": [
+                  {
+                    "id": "grupo-passo-1-mapeamento",
+                    "label": "Passo 1 — Mapeamento de Ações e Estados",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-passo-2-temporalidade",
+                    "label": "Passo 2 — Teste da Temporalidade Interna",
+                    "order": 2
+                  },
+                  {
+                    "id": "grupo-passo-3-validacao",
+                    "label": "Passo 3 — Validação Secundária por Intenção",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-analise-fragmento-tipologico",
+                    "kind": "start",
+                    "label": "Início: Fragmento Textual de Prova",
+                    "details": [
+                      "Excerto com predicados verbais e nominais para discriminação tipológica."
+                    ]
+                  },
+                  {
+                    "id": "passo-1-mapear-acoes-estados",
+                    "kind": "process",
+                    "groupId": "grupo-passo-1-mapeamento",
+                    "label": "Passo 1: Mapear Ações, Estados e Intenção Discursiva",
+                    "details": [
+                      "Identificar todos os verbos e suas flexões temporais (perfeito vs. imperfeito).",
+                      "Sublinhar atributos, adjetivos e circunstâncias espaciais/temporais."
+                    ]
+                  },
+                  {
+                    "id": "decisao-passo-2-teste-temporalidade",
+                    "kind": "decision",
+                    "groupId": "grupo-passo-2-temporalidade",
+                    "label": "Passo 2: As ações/estados ocorrem em momentos cronológicos sucessivos?",
+                    "details": [
+                      "Teste da linha do tempo: é possível inserir mentalmente conectivos de sequência ('primeiro... depois... em seguida')?"
+                    ]
+                  },
+                  {
+                    "id": "resultado-narracao",
+                    "kind": "result",
+                    "groupId": "grupo-passo-2-temporalidade",
+                    "label": "Tipologia: NARRAÇÃO (Avanço Temporal / Transformação de Estado)",
+                    "details": [
+                      "Existe vetor de antes e depois.",
+                      "Predomínio de verbos no Pretérito Perfeito do Indicativo (ações pontuais acabadas)."
+                    ]
+                  },
+                  {
+                    "id": "resultado-descricao",
+                    "kind": "result",
+                    "groupId": "grupo-passo-2-temporalidade",
+                    "label": "Tipologia: DESCRIÇÃO (Coexistência Espacial / Cena Congelada)",
+                    "details": [
+                      "Todas as ações e atributos ocorrem simultaneamente no mesmo recorte temporal.",
+                      "Predomínio de verbos no Pretérito Imperfeito ou Presente do Indicativo e adjetivação."
+                    ]
+                  },
+                  {
+                    "id": "passo-3-validacao-intencao-comunicativa",
+                    "kind": "process",
+                    "groupId": "grupo-passo-3-validacao",
+                    "label": "Passo 3: Validação Secundária por Intenção Comunicativa",
+                    "details": [
+                      "Confirmar se o propósito central do autor é contar um enredo ou retratar um cenário/personagem.",
+                      "Blindagem contra falsas deduções baseadas apenas na presença de verbos de movimento."
+                    ]
+                  },
+                  {
+                    "id": "conclusao-tipologia-consolidada",
+                    "kind": "result",
+                    "groupId": "grupo-passo-3-validacao",
+                    "label": "Diagnóstico Tipológico Consolidado",
+                    "details": [
+                      "Classificação definitiva pronta para assinalar a alternativa no gabarito."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-analise-fragmento-tipologico",
+                    "to": "passo-1-mapear-acoes-estados",
+                    "label": ""
+                  },
+                  {
+                    "from": "passo-1-mapear-acoes-estados",
+                    "to": "decisao-passo-2-teste-temporalidade",
+                    "label": ""
+                  },
+                  {
+                    "from": "decisao-passo-2-teste-temporalidade",
+                    "to": "resultado-narracao",
+                    "label": "Sim (O tempo avançou / Há antes e depois)"
+                  },
+                  {
+                    "from": "decisao-passo-2-teste-temporalidade",
+                    "to": "resultado-descricao",
+                    "label": "Não (Ações coexistem no mesmo instante / Fotografia)"
+                  },
+                  {
+                    "from": "resultado-narracao",
+                    "to": "passo-3-validacao-intencao-comunicativa",
+                    "label": "Validar com intenção"
+                  },
+                  {
+                    "from": "resultado-descricao",
+                    "to": "passo-3-validacao-intencao-comunicativa",
+                    "label": "Validar com intenção"
+                  },
+                  {
+                    "from": "passo-3-validacao-intencao-comunicativa",
+                    "to": "conclusao-tipologia-consolidada",
+                    "label": "Gabarito validado"
+                  }
+                ],
+                "provenance": {
+                  "source": "canonical_context",
+                  "unitId": "IP-A13-G03",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-analise-fragmento-tipologico[\"Início: Fragmento Textual de Prova\"] --> passo-1-mapear-acoes-estados[\"Passo 1: Mapear Ações, Estados e Intenção Discursiva\"]\n    passo-1-mapear-acoes-estados --> decisao-passo-2-teste-temporalidade{\"Passo 2: As ações/estados ocorrem em momentos cronológicos sucessivos?\"}\n    decisao-passo-2-teste-temporalidade -->|\"Sim (O tempo avançou / Há antes e depois)\"| resultado-narracao[\"Tipologia: NARRAÇÃO (Avanço Temporal / Transformação de Estado)\"]\n    decisao-passo-2-teste-temporalidade -->|\"Não (Ações coexistem no mesmo instante / Fotografia)\"| resultado-descricao[\"Tipologia: DESCRIÇÃO (Coexistência Espacial / Cena Congelada)\"]\n    resultado-narracao -->|\"Validar com intenção\"| passo-3-validacao-intencao-comunicativa[\"Passo 3: Validação Secundária por Intenção Comunicativa\"]\n    resultado-descricao -->|\"Validar com intenção\"| passo-3-validacao-intencao-comunicativa\n    passo-3-validacao-intencao-comunicativa -->|\"Gabarito validado\"| conclusao-tipologia-consolidada[\"Diagnóstico Tipológico Consolidado\"]\n"
+              }
             },
             {
               "type": "list",
@@ -1029,8 +1164,8 @@
               "EXP-IP-A13-G03-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

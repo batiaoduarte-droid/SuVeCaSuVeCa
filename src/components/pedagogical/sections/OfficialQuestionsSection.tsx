@@ -15,7 +15,7 @@ import {
 } from '../../../lib/officialQuestionPresentation';
 import { recordQuestionEncounter } from '../../../lib/questionEncounterLedger';
 import {
-  containsRichEmphasis,
+  hasSourceBackedVisualPresentation,
   requiresIdentifiedContext,
   requiresVisualEmphasis,
 } from '../../../lib/questionPresentationSafety';
@@ -72,7 +72,7 @@ const hasSafePracticePresentation = (
   if (requiresIdentifiedContext(prompt) && !String(support || '').trim()) return false;
   return !(
     requiresVisualEmphasis(prompt)
-    && !containsRichEmphasis(command, support, ...Object.values(normalized.presentation?.optionRichText || {}))
+    && !hasSourceBackedVisualPresentation(normalized.presentation, support)
   );
 };
 
@@ -223,7 +223,7 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
             || supportText;
           const missingIdentifiedContext = requiresIdentifiedContext(prompt) && !String(supportRichText || '').trim();
           const missingVisualEmphasis = requiresVisualEmphasis(prompt)
-            && !containsRichEmphasis(commandRichText, supportRichText, ...Object.values(normalized?.presentation?.optionRichText || {}));
+            && !hasSourceBackedVisualPresentation(normalized?.presentation, supportRichText);
           const presentationBlocksInteraction = normalized?.presentation?.contextStatus === 'source_missing'
             || normalized?.presentation?.formattingStatus === 'source_missing'
             || missingIdentifiedContext

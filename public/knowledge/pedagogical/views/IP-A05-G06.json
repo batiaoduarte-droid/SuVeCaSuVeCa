@@ -1168,29 +1168,384 @@
               "text": "Verificar se a oração possui Verbo Transitivo Direto (VTD) ou Transitivo Direto e Indireto (VTDI) com Objeto Direto legítimo. Se houver apenas VTI, VI ou VL, abortar a transposição (estrutura não admite passiva analítica)."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Sequência de Execução em 5 Passos"
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Sequência de Execução em 5 Passos",
+              "text": "[Passo 1: Chamar o Feito à Ordem no Enunciado] ├── Sublinhar e isolar o Núcleo do Objeto Direto (OD). ├── Identificar o Sujeito Agente (expresso, composto, elíptico ou indeterminado). └── Anotar no topo a sigla exata do Tempo e Modo Verbal (ex: PRET. PERF., PRES. SUBJ., INF.).",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "passo-1-chamar-ordem",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "passo-1-chamar-ordem",
+                    "kind": "start",
+                    "label": "Passo 1: Chamar o Feito à Ordem no Enunciado",
+                    "details": [
+                      "Diagnóstico minucioso dos elementos da oração ativa antes de qualquer reescrita."
+                    ]
+                  },
+                  {
+                    "id": "isolar-nucleo-od",
+                    "kind": "process",
+                    "label": "Sublinhar e Isolar o Núcleo do Objeto Direto (OD)",
+                    "details": [
+                      "Evitar confusões com adjuntos adnominais ou termos preposicionados satélites."
+                    ]
+                  },
+                  {
+                    "id": "identificar-sujeito-agente",
+                    "kind": "process",
+                    "label": "Identificar o Sujeito Agente",
+                    "details": [
+                      "Verificar se o sujeito agente é expresso, composto, elíptico ou indeterminado."
+                    ]
+                  },
+                  {
+                    "id": "anotar-tempo-modo",
+                    "kind": "result",
+                    "label": "Anotar a Sigla Exata do Tempo e Modo Verbal",
+                    "details": [
+                      "Exemplos: PRET. PERF., PRES. SUBJ., INF.",
+                      "Garante que o auxiliar SER receberá a carga temporal exata na montagem passiva."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "passo-1-chamar-ordem",
+                    "to": "isolar-nucleo-od"
+                  },
+                  {
+                    "from": "isolar-nucleo-od",
+                    "to": "identificar-sujeito-agente"
+                  },
+                  {
+                    "from": "identificar-sujeito-agente",
+                    "to": "anotar-tempo-modo"
+                  }
+                ],
+                "structuredText": "### Protocolo Mestre de Transposição — Passo 1: Chamar o Feito à Ordem no Enunciado\n\n- **[Passo 1: Chamar o Feito à Ordem no Enunciado]**\n  ├── Sublinhar e isolar o Núcleo do Objeto Direto (OD).\n  ├── Identificar o Sujeito Agente (expresso, composto, elíptico ou indeterminado).\n  └── Anotar no topo a sigla exata do Tempo e Modo Verbal (ex: PRET. PERF., PRES. SUBJ., INF.).",
+                "mermaidSource": "flowchart TD\n    passo-1-chamar-ordem[\"Passo 1: Chamar o Feito à Ordem\"] --> isolar-nucleo-od[\"Sublinhar e Isolar o Núcleo do OD\"]\n    isolar-nucleo-od --> identificar-sujeito-agente[\"Identificar o Sujeito Agente\"]\n    identificar-sujeito-agente --> anotar-tempo-modo[\"Anotar Sigla Exata do Tempo e Modo Verbal\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             },
             {
-              "type": "paragraph",
-              "text": "[Passo 1: Chamar o Feito à Ordem no Enunciado] ├── Sublinhar e isolar o Núcleo do Objeto Direto (OD). ├── Identificar o Sujeito Agente (expresso, composto, elíptico ou indeterminado). └── Anotar no topo a sigla exata do Tempo e Modo Verbal (ex: PRET. PERF., PRES. SUBJ., INF.)."
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Protocolo Mestre de Transposição (Voz Ativa $\\rightarrow$ Voz Passiva Analítica)",
+              "text": "[Passo 2: Conversão do Sujeito] └── Deslocar o núcleo do OD para a função de Sujeito Paciente.",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "passo-2-inicio",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "passo-2-inicio",
+                    "kind": "start",
+                    "label": "Passo 2: Conversão do Sujeito (Protocolo Mestre)",
+                    "details": [
+                      "Etapa dedicada à promoção sintática do complemento da voz ativa."
+                    ]
+                  },
+                  {
+                    "id": "deslocar-od",
+                    "kind": "process",
+                    "label": "Deslocar o Núcleo do Objeto Direto (OD)",
+                    "details": [
+                      "Localizar o núcleo do OD na oração ativa e deslocá-lo para a posição funcional de Sujeito Paciente.",
+                      "Preservar modificadores e adjuntos vinculados ao núcleo."
+                    ]
+                  },
+                  {
+                    "id": "validar-novo-sujeito",
+                    "kind": "result",
+                    "label": "Sujeito Paciente Estabelecido",
+                    "details": [
+                      "O novo Sujeito Paciente determinará a concordância de número e pessoa de toda a locução passiva analítica."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "passo-2-inicio",
+                    "to": "deslocar-od"
+                  },
+                  {
+                    "from": "deslocar-od",
+                    "to": "validar-novo-sujeito"
+                  }
+                ],
+                "structuredText": "### Protocolo Mestre de Transposição — Passo 2: Conversão do Sujeito\n\n- **[Passo 2: Conversão do Sujeito]**\n  └── Deslocar o núcleo do Objeto Direto (OD) para a função de Sujeito Paciente na voz passiva analítica.\n  └── O novo sujeito passivo comandará a flexão do verbo auxiliar SER e do particípio.",
+                "mermaidSource": "flowchart TD\n    passo-2-inicio[\"Passo 2: Conversão do Sujeito\"] --> deslocar-od[\"Deslocar Núcleo do OD para Sujeito Paciente\"]\n    deslocar-od --> validar-novo-sujeito[\"Sujeito Paciente Estabelecido<br>Comanda Concordância Passiva\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             },
             {
-              "type": "paragraph",
-              "text": "[Passo 2: Conversão do Sujeito] └── Deslocar o núcleo do OD para a função de Sujeito Paciente."
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Protocolo Mestre de Transposição (Voz Ativa $\\rightarrow$ Voz Passiva Analítica)",
+              "text": "[Passo 3: Montagem da Locução Passiva no Rascunho] ├── Inserir o verbo auxiliar SER exatamente no tempo/modo registrado no Passo 1. ├── Se o Sujeito for Composto ou Plural e o verbo for Infinitivo -> flexionar para \"SEREM\". ├── Ajustar a concordância de número e pessoa do auxiliar SER com o novo sujeito. ├── Converter o verbo principal ativo em PARTICÍPIO. └── Flexionar o PARTICÍPIO em gênero e número (concordância nominal com o Sujeito Paciente).",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "passo-3-montagem-locucao",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "passo-3-montagem-locucao",
+                    "kind": "start",
+                    "label": "Passo 3: Montagem da Locução Passiva no Rascunho (Protocolo Mestre)",
+                    "details": [
+                      "Construção morfológica rigorosa da locução auxiliar SER + Particípio."
+                    ]
+                  },
+                  {
+                    "id": "inserir-auxiliar-ser",
+                    "kind": "process",
+                    "label": "Inserir Auxiliar SER no Tempo/Modo Exato do Passo 1",
+                    "details": [
+                      "Preservar rigorosamente a carga temporal da ativa (ex.: pretérito perfeito ➔ 'foi/foram'; presente do subjuntivo ➔ 'seja/sejam')."
+                    ]
+                  },
+                  {
+                    "id": "tratar-infinitivo-plural",
+                    "kind": "rule",
+                    "label": "Tratar Sujeito Plural em Infinitivo",
+                    "details": [
+                      "Se o Sujeito for Composto ou Plural e o verbo for Infinitivo ➔ flexionar para 'SEREM'."
+                    ]
+                  },
+                  {
+                    "id": "ajustar-concordancia-ser",
+                    "kind": "process",
+                    "label": "Ajustar Concordância de Número e Pessoa do SER",
+                    "details": [
+                      "O verbo auxiliar SER concorda em número (singular/plural) e pessoa com o novo Sujeito Paciente."
+                    ]
+                  },
+                  {
+                    "id": "converter-participio",
+                    "kind": "process",
+                    "label": "Converter o Verbo Principal Ativo em PARTICÍPIO",
+                    "details": [
+                      "Transformar o verbo principal na forma de particípio regular ou irregular."
+                    ]
+                  },
+                  {
+                    "id": "flexionar-participio-genero-numero",
+                    "kind": "result",
+                    "label": "Flexionar o PARTICÍPIO em Gênero e Número",
+                    "details": [
+                      "Concordância nominal obrigatória com o Sujeito Paciente (ex.: 'as decisões foram tomadas')."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "passo-3-montagem-locucao",
+                    "to": "inserir-auxiliar-ser"
+                  },
+                  {
+                    "from": "inserir-auxiliar-ser",
+                    "to": "tratar-infinitivo-plural"
+                  },
+                  {
+                    "from": "tratar-infinitivo-plural",
+                    "to": "ajustar-concordancia-ser"
+                  },
+                  {
+                    "from": "ajustar-concordancia-ser",
+                    "to": "converter-participio"
+                  },
+                  {
+                    "from": "converter-participio",
+                    "to": "flexionar-participio-genero-numero"
+                  }
+                ],
+                "structuredText": "### Protocolo Mestre de Transposição — Passo 3: Montagem da Locução Passiva\n\n- **[Passo 3: Montagem da Locução Passiva no Rascunho]**\n  ├── Inserir o verbo auxiliar SER exatamente no tempo/modo registrado no Passo 1.\n  ├── Se o Sujeito for Composto ou Plural e o verbo for Infinitivo ➔ flexionar para 'SEREM'.\n  ├── Ajustar a concordância de número e pessoa do auxiliar SER com o novo sujeito.\n  ├── Converter o verbo principal ativo em PARTICÍPIO.\n  └── Flexionar o PARTICÍPIO em gênero e número (concordância nominal com o Sujeito Paciente).",
+                "mermaidSource": "flowchart TD\n    passo-3-montagem-locucao[\"Passo 3: Montagem da Locução Passiva\"] --> inserir-auxiliar-ser[\"Inserir SER no Tempo/Modo Exato\"]\n    inserir-auxiliar-ser --> tratar-infinitivo-plural[\"Infinitivo com Sujeito Plural ➔ 'SEREM'\"]\n    tratar-infinitivo-plural --> ajustar-concordancia-ser[\"Ajustar Concordância do SER com Sujeito Paciente\"]\n    ajustar-concordancia-ser --> converter-participio[\"Converter Verbo Principal em PARTICÍPIO\"]\n    converter-participio --> flexionar-participio-genero-numero[\"Flexionar Particípio em Gênero e Número\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             },
             {
-              "type": "paragraph",
-              "text": "[Passo 3: Montagem da Locução Passiva no Rascunho] ├── Inserir o verbo auxiliar SER exatamente no tempo/modo registrado no Passo 1. ├── Se o Sujeito for Composto ou Plural e o verbo for Infinitivo -> flexionar para \"SEREM\". ├── Ajustar a concordância de número e pessoa do auxiliar SER com o novo sujeito. ├── Converter o verbo principal ativo em PARTICÍPIO. └── Flexionar o PARTICÍPIO em gênero e número (concordância nominal com o Sujeito Paciente)."
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Protocolo Mestre de Transposição (Voz Ativa $\\rightarrow$ Voz Passiva Analítica)",
+              "text": "[Passo 4: Tratamento do Agente da Passiva] ├── Se Sujeito Agente expresso -> introduzir com preposição POR/PELO ou DE. └── Se Sujeito Agente elíptico/indeterminado -> manter o Agente da Passiva Oculto/Indeterminado.",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "passo-4-tratamento-agente",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "passo-4-tratamento-agente",
+                    "kind": "start",
+                    "label": "Passo 4: Tratamento do Agente da Passiva (Protocolo Mestre)",
+                    "details": [
+                      "Regras de conversão do sujeito agente da voz ativa para a voz passiva analítica."
+                    ]
+                  },
+                  {
+                    "id": "decisao-tipo-sujeito-agente",
+                    "kind": "decision",
+                    "label": "O Sujeito Agente ativo é expresso ou elíptico/indeterminado?",
+                    "details": [
+                      "Avaliação da presença morfológica do agente na oração ativa de partida."
+                    ]
+                  },
+                  {
+                    "id": "agente-expresso",
+                    "kind": "result",
+                    "label": "Sujeito Expresso ➔ Agente da Passiva com POR/PELO ou DE",
+                    "details": [
+                      "Introduzir o termo preposicionado na voz passiva analítica.",
+                      "Exemplo: 'O diretor assinou o termo' ➔ '... pelo diretor'."
+                    ]
+                  },
+                  {
+                    "id": "agente-oculto-indeterminado",
+                    "kind": "result",
+                    "label": "Sujeito Elíptico/Indeterminado ➔ Agente da Passiva Oculto",
+                    "details": [
+                      "Manter o agente da passiva não expresso na voz passiva analítica.",
+                      "Exemplo: 'Assinaram o termo' ➔ 'O termo foi assinado'."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "passo-4-tratamento-agente",
+                    "to": "decisao-tipo-sujeito-agente"
+                  },
+                  {
+                    "from": "decisao-tipo-sujeito-agente",
+                    "to": "agente-expresso",
+                    "label": "Sujeito Agente Expresso"
+                  },
+                  {
+                    "from": "decisao-tipo-sujeito-agente",
+                    "to": "agente-oculto-indeterminado",
+                    "label": "Sujeito Elíptico / Indeterminado"
+                  }
+                ],
+                "structuredText": "### Protocolo Mestre de Transposição — Passo 4: Tratamento do Agente da Passiva\n\n- **[Passo 4: Tratamento do Agente da Passiva]**\n  ├── Se Sujeito Agente expresso ➔ introduzir com preposição POR/PELO ou DE.\n  └── Se Sujeito Agente elíptico/indeterminado ➔ manter o Agente da Passiva Oculto/Indeterminado.",
+                "mermaidSource": "flowchart TD\n    passo-4-tratamento-agente[\"Passo 4: Tratamento do Agente da Passiva\"] --> decisao-tipo-sujeito-agente{\"Sujeito Agente Ativo?\"}\n    decisao-tipo-sujeito-agente -- \"Sujeito Agente Expresso\" --> agente-expresso[\"Agente da Passiva com POR / PELO ou DE\"]\n    decisao-tipo-sujeito-agente -- \"Sujeito Elíptico / Indeterminado\" --> agente-oculto-indeterminado[\"Agente da Passiva Oculto / Indeterminado\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             },
             {
-              "type": "paragraph",
-              "text": "[Passo 4: Tratamento do Agente da Passiva] ├── Se Sujeito Agente expresso -> introduzir com preposição POR/PELO ou DE. └── Se Sujeito Agente elíptico/indeterminado -> manter o Agente da Passiva Oculto/Indeterminado."
-            },
-            {
-              "type": "paragraph",
-              "text": "[Passo 5: Confronto com as Alternativas da Questão] └── Buscar a opção idêntica ao rascunho montado, ignorando a ordem superficial dos adjuntos."
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Protocolo Mestre de Transposição (Voz Ativa $\\rightarrow$ Voz Passiva Analítica)",
+              "text": "[Passo 5: Confronto com as Alternativas da Questão] └── Buscar a opção idêntica ao rascunho montado, ignorando a ordem superficial dos adjuntos.",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "passo-5-inicio",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "passo-5-inicio",
+                    "kind": "start",
+                    "label": "Passo 5: Confronto com as Alternativas da Questão (Protocolo Mestre)",
+                    "details": [
+                      "Fase conclusiva de validação e marcação do gabarito em provas objetivas."
+                    ]
+                  },
+                  {
+                    "id": "confronto-rascunho",
+                    "kind": "process",
+                    "label": "Buscar a Opção Idêntica ao Rascunho Montado",
+                    "details": [
+                      "Comparar as alternativas da questão diretamente com a oração reconstruída nos passos 1 a 4.",
+                      "Verificar exata coincidência do tempo do auxiliar SER e da flexão do particípio."
+                    ]
+                  },
+                  {
+                    "id": "ignorar-ordem-adjuntos",
+                    "kind": "rule",
+                    "label": "Ignorar a Ordem Superficial dos Adjuntos Adverbiais",
+                    "details": [
+                      "Adjuntos adverbiais antepostos, intercalados ou pospostos não afetam a validade da transposição passiva.",
+                      "Manter o foco na locução verbal e no sujeito paciente."
+                    ]
+                  },
+                  {
+                    "id": "marcacao-segura",
+                    "kind": "result",
+                    "label": "Marcação Rápida e Infalível do Gabarito",
+                    "details": [
+                      "Garantia de acerto em tempo mínimo sem hesitação diante de distratores."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "passo-5-inicio",
+                    "to": "confronto-rascunho"
+                  },
+                  {
+                    "from": "confronto-rascunho",
+                    "to": "ignorar-ordem-adjuntos"
+                  },
+                  {
+                    "from": "ignorar-ordem-adjuntos",
+                    "to": "marcacao-segura"
+                  }
+                ],
+                "structuredText": "### Protocolo Mestre de Transposição — Passo 5: Confronto com as Alternativas\n\n- **[Passo 5: Confronto com as Alternativas da Questão]**\n  └── Buscar a opção idêntica ao rascunho montado, ignorando a ordem superficial dos adjuntos.\n  └── Validar a concordância de número e pessoa da locução passiva SER + Particípio.",
+                "mermaidSource": "flowchart TD\n    passo-5-inicio[\"Passo 5: Confronto com Alternativas\"] --> confronto-rascunho[\"Buscar Opção Idêntica ao Rascunho\"]\n    confronto-rascunho --> ignorar-ordem-adjuntos[\"Ignorar Ordem Superficial de Adjuntos\"]\n    ignorar-ordem-adjuntos --> marcacao-segura[\"Marcação Segura do Gabarito\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             }
           ],
           "presentation": {
@@ -1201,8 +1556,8 @@
               "EXP-IP-A05-G06-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "sequence"
           }
         },
         {

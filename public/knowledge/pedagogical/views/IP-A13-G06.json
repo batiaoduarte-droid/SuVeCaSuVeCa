@@ -561,13 +561,172 @@
               "text": "Roteiro operacional padronizado para identificar, classificar e validar a tipologia textual e os fenômenos de hibridismo discursivo em provas de concursos públicos elaboradas pelo Cebraspe."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Sequência de passos operacionais"
-            },
-            {
-              "type": "paragraph",
-              "text": "┌───────────────────────────────────┐ │ PASSO 1: TRIAGEM DAS EXTREMIDADES │ │ (Início, Final, Título e Fonte) │ └─────────────────┬─────────────────┘ │ ┌────────────────┴────────────────┐ ▼ ▼ O texto tem tema/assunto? O texto tem história/ações? (ESTRUTURA DISSERTATIVA) (NARRATIVO / DESCRITIVO) │ │ ┌──────────────┴──────────────┐ │ ▼ ▼ ▼ PASSO 2: EXPOSITIVO PASSO 2: ARGUMENTATIVO PASSO 3: DOMINÂNCIA • Intenção: expor o • Intenção: convencer e • Ações temporais + que sabe ou informar defender tese central detalhes físicos = • Não busca persuadir • Juízos de valor e dados Predominantemente • Opiniões pontuais usados para persuasão Narrativo com aspectos não alteram o tipo • Propósito comunicativo descritivos mesclados"
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Sequência de passos operacionais",
+              "text": "┌───────────────────────────────────┐ │ PASSO 1: TRIAGEM DAS EXTREMIDADES │ │ (Início, Final, Título e Fonte) │ └─────────────────┬─────────────────┘ │ ┌────────────────┴────────────────┐ ▼ ▼ O texto tem tema/assunto? O texto tem história/ações? (ESTRUTURA DISSERTATIVA) (NARRATIVO / DESCRITIVO) │ │ ┌──────────────┴──────────────┐ │ ▼ ▼ ▼ PASSO 2: EXPOSITIVO PASSO 2: ARGUMENTATIVO PASSO 3: DOMINÂNCIA • Intenção: expor o • Intenção: convencer e • Ações temporais + que sabe ou informar defender tese central detalhes físicos = • Não busca persuadir • Juízos de valor e dados Predominantemente • Opiniões pontuais usados para persuasão Narrativo com aspectos não alteram o tipo • Propósito comunicativo descritivos mesclados",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-algoritmo-anotaai",
+                "structuredText": "# Protocolo de Resolução de Questões de Tipologia Textual (Algoritmo #ANOTAAÍ em Três Passos)\n\nProcedimento sistemático para diagnosticar a tipologia textual predominante em qualquer questão de concurso:\n\n1. **Passo 1 — Triagem das Extremidades (Início, Fim, Título e Fonte)**:\n   - O texto organiza-se em torno de um tema/conceito/ideia? -> **Estrutura Dissertativa** (avançar para o Passo 2).\n   - O texto relata fatos no tempo ou retrata seres no espaço? -> **Estrutura Narrativa / Descritiva** (avançar para o Passo 3).\n\n2. **Passo 2 — Discriminação Dissertativa (Expositivo vs. Argumentativo)**:\n   - **Dissertativo-Expositivo**: Intenção puramente informativa ou didática; expõe conceitos, dados e funcionamento sem defender tese; opiniões pontuais não alteram o gênero expositivo.\n   - **Dissertativo-Argumentativo**: Intenção deliberada de convencer e persuadir o leitor; presença de tese central, juízos de valor e recursos retóricos de adesão.\n\n3. **Passo 3 — Avaliação de Dominância (Narrativo vs. Descritivo)**:\n   - Se há sucessão cronológica e transformação de estados -> **Predominantemente Narrativo** (mesmo com passagens descritivas).\n   - Se há simultaneidade espacial e cena congelada -> **Predominantemente Descritivo**.",
+                "groups": [
+                  {
+                    "id": "grupo-passo-1-triagem",
+                    "label": "Passo 1 — Triagem das Extremidades",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-passo-2-dissertacao",
+                    "label": "Passo 2 — Discriminação Dissertativa",
+                    "order": 2
+                  },
+                  {
+                    "id": "grupo-passo-3-dominancia",
+                    "label": "Passo 3 — Avaliação de Dominância",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-algoritmo-anotaai",
+                    "kind": "start",
+                    "label": "Início: Fragmento Textual para Diagnóstico Tipológico",
+                    "details": [
+                      "Aplicação do algoritmo '#ANOTAAÍ' em três passos operacionais."
+                    ]
+                  },
+                  {
+                    "id": "passo-1-triagem-extremidades",
+                    "kind": "process",
+                    "groupId": "grupo-passo-1-triagem",
+                    "label": "Passo 1: Triagem das Extremidades (Título, Início, Fim e Fonte)",
+                    "details": [
+                      "Ler o título, as primeiras e últimas linhas, e a referência bibliográfica da fonte (jornal, artigo acadêmico, conto, lei)."
+                    ]
+                  },
+                  {
+                    "id": "decisao-macro-tipologia",
+                    "kind": "decision",
+                    "groupId": "grupo-passo-1-triagem",
+                    "label": "Qual é o eixo estruturante primordial do texto?",
+                    "details": [
+                      "Verificar se o texto debate um tema/conceito abstrato ou se desenvolve ações/cenas materiais."
+                    ]
+                  },
+                  {
+                    "id": "decisao-dissertativa-exposicao-argumentacao",
+                    "kind": "decision",
+                    "groupId": "grupo-passo-2-dissertacao",
+                    "label": "Passo 2: O autor busca expor um saber ou defender uma tese persuasiva?",
+                    "details": [
+                      "Exposição: apresentar dados, definições e história sem exigir concordância do leitor.",
+                      "Argumentação: sustentar ponto de vista com argumentos e modalizadores apreciativos."
+                    ]
+                  },
+                  {
+                    "id": "resultado-dissertativo-expositivo",
+                    "kind": "result",
+                    "groupId": "grupo-passo-2-dissertacao",
+                    "label": "Texto Dissertativo-Expositivo",
+                    "details": [
+                      "Propósito comunicativo: informar e ensinar.",
+                      "Ausência de tese polêmica; neutralidade expositiva predominante."
+                    ]
+                  },
+                  {
+                    "id": "resultado-dissertativo-argumentativo",
+                    "kind": "result",
+                    "groupId": "grupo-passo-2-dissertacao",
+                    "label": "Texto Dissertativo-Argumentativo",
+                    "details": [
+                      "Propósito comunicativo: convencer e persuadir.",
+                      "Presença mandatória de tese central e juízos de valor articulados."
+                    ]
+                  },
+                  {
+                    "id": "decisao-narrativo-descritivo",
+                    "kind": "decision",
+                    "groupId": "grupo-passo-3-dominancia",
+                    "label": "Passo 3: As ações avançam no tempo cronológico ou retratam uma cena congelada?",
+                    "details": [
+                      "Avanço temporal (antes e depois): narrativa.",
+                      "Coexistência espacial de atributos simultâneos: descritiva."
+                    ]
+                  },
+                  {
+                    "id": "resultado-narrativo-predominante",
+                    "kind": "result",
+                    "groupId": "grupo-passo-3-dominancia",
+                    "label": "Texto Predominantemente Narrativo",
+                    "details": [
+                      "Sucessão cronológica de eventos com transformação de estados.",
+                      "Passagens descritivas funcionam como detalhamento acessório de personagens ou cenários."
+                    ]
+                  },
+                  {
+                    "id": "resultado-descritivo-predominante",
+                    "kind": "result",
+                    "groupId": "grupo-passo-3-dominancia",
+                    "label": "Texto Predominantemente Descritivo",
+                    "details": [
+                      "Cena congelada, predominância de adjetivos, predicativos e verbos de estado no imperfeito."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-algoritmo-anotaai",
+                    "to": "passo-1-triagem-extremidades",
+                    "label": ""
+                  },
+                  {
+                    "from": "passo-1-triagem-extremidades",
+                    "to": "decisao-macro-tipologia",
+                    "label": "Examinar extremos"
+                  },
+                  {
+                    "from": "decisao-macro-tipologia",
+                    "to": "decisao-dissertativa-exposicao-argumentacao",
+                    "label": "Eixo Temático / Conceitual (Dissertativo)"
+                  },
+                  {
+                    "from": "decisao-macro-tipologia",
+                    "to": "decisao-narrativo-descritivo",
+                    "label": "Eixo de Ações / Cenas (Narrativo / Descritivo)"
+                  },
+                  {
+                    "from": "decisao-dissertativa-exposicao-argumentacao",
+                    "to": "resultado-dissertativo-expositivo",
+                    "label": "Expor saber / Informar (Sem tese)"
+                  },
+                  {
+                    "from": "decisao-dissertativa-exposicao-argumentacao",
+                    "to": "resultado-dissertativo-argumentativo",
+                    "label": "Defender tese / Persuadir (Com juízos de valor)"
+                  },
+                  {
+                    "from": "decisao-narrativo-descritivo",
+                    "to": "resultado-narrativo-predominante",
+                    "label": "Ações sucessivas no tempo (Linha cronológica)"
+                  },
+                  {
+                    "from": "decisao-narrativo-descritivo",
+                    "to": "resultado-descritivo-predominante",
+                    "label": "Simultaneidade espacial (Cena congelada)"
+                  }
+                ],
+                "provenance": {
+                  "source": "canonical_context",
+                  "unitId": "IP-A13-G06",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-algoritmo-anotaai[\"Início: Fragmento Textual para Diagnóstico Tipológico\"] --> passo-1-triagem-extremidades[\"Passo 1: Triagem das Extremidades (Título, Início, Fim e Fonte)\"]\n    passo-1-triagem-extremidades -->|\"Examinar extremos\"| decisao-macro-tipologia{\"Qual é o eixo estruturante primordial do texto?\"}\n    decisao-macro-tipologia -->|\"Eixo Temático / Conceitual (Dissertativo)\"| decisao-dissertativa-exposicao-argumentacao{\"Passo 2: O autor busca expor um saber ou defender uma tese persuasiva?\"}\n    decisao-macro-tipologia -->|\"Eixo de Ações / Cenas (Narrativo / Descritivo)\"| decisao-narrativo-descritivo{\"Passo 3: As ações avançam no tempo cronológico ou retratam uma cena congelada?\"}\n    decisao-dissertativa-exposicao-argumentacao -->|\"Expor saber / Informar (Sem tese)\"| resultado-dissertativo-expositivo[\"Texto Dissertativo-Expositivo\"]\n    decisao-dissertativa-exposicao-argumentacao -->|\"Defender tese / Persuadir (Com juízos de valor)\"| resultado-dissertativo-argumentativo[\"Texto Dissertativo-Argumentativo\"]\n    decisao-narrativo-descritivo -->|\"Ações sucessivas no tempo (Linha cronológica)\"| resultado-narrativo-predominante[\"Texto Predominantemente Narrativo\"]\n    decisao-narrativo-descritivo -->|\"Simultaneidade espacial (Cena congelada)\"| resultado-descritivo-predominante[\"Texto Predominantemente Descritivo\"]\n"
+              }
             },
             {
               "type": "list",
@@ -667,8 +826,8 @@
               "EXP-IP-A13-G06-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         }
       ]

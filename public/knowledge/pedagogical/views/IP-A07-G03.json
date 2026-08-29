@@ -1568,8 +1568,124 @@
           "procedureId": "PROC-A07-G03-005",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[Início: Período Composto com Pronome Relativo] │ ▼ [PASSO 1: ISOLAR A ORAÇÃO ADJETIVA] ├─ Inserir barra (|) antes do pronome relativo e no fim da oração adjetiva. └─ Realçar com marca-texto (bloquear visualmente a Oração Principal). │ ▼ [PASSO 2: SUBSTITUIR PELO ANTECEDENTE] ├─ Localizar o núcleo nominal antecedente na OP. └─ Reescrever a oração adjetiva inserindo o substantivo no lugar do pronome relativo. │ ▼ [PASSO 3: ORDEM DIRETA (S - V - C) E ANÁLISE] ├─ Organizar: Sujeito + Verbo + Complemento / Adjunto. ├─ Fazer a análise sintática do substantivo perante o verbo da oração adjetiva. └─ A função obtida É A FUNÇÃO SINTÁTICA DO PRONOME RELATIVO."
+              "type": "diagram",
+              "diagramType": "taxonomy",
+              "title": "Algoritmo dos Três Passos para Funções Sintáticas dos Relativos",
+              "text": "[Início: Período Composto com Pronome Relativo] │ ▼ [PASSO 1: ISOLAR A ORAÇÃO ADJETIVA] ├─ Inserir barra (|) antes do pronome relativo e no fim da oração adjetiva. └─ Realçar com marca-texto (bloquear visualmente a Oração Principal). │ ▼ [PASSO 2: SUBSTITUIR PELO ANTECEDENTE] ├─ Localizar o núcleo nominal antecedente na OP. └─ Reescrever a oração adjetiva inserindo o substantivo no lugar do pronome relativo. │ ▼ [PASSO 3: ORDEM DIRETA (S - V - C) E ANÁLISE] ├─ Organizar: Sujeito + Verbo + Complemento / Adjunto. ├─ Fazer a análise sintática do substantivo perante o verbo da oração adjetiva. └─ A função obtida É A FUNÇÃO SINTÁTICA DO PRONOME RELATIVO.",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "inicio-periodo-relativo",
+                "structuredText": "### Algoritmo dos Três Passos para Funções Sintáticas dos Relativos\n1. **Início**: Período composto com pronome relativo (`que`, `o qual`, `quem`, `cujo`, `onde`).\n2. **Passo 1: Isolar a Oração Adjetiva**:\n   - Inserir barra divisória (`|`) imediatamente antes do pronome relativo e no término da oração adjetiva.\n   - Bloquear visualmente a Oração Principal para evitar contaminação da análise sintática.\n3. **Passo 2: Substituir pelo Antecedente**:\n   - Localizar o núcleo nominal antecedente na Oração Principal.\n   - Reescrever a oração adjetiva inserindo o substantivo antecedente no lugar exato do pronome relativo.\n4. **Passo 3: Ordem Direta (S - V - C) e Análise Sintática**:\n   - Reorganizar a frase reescrita na ordem canônica direta: `Sujeito + Verbo + Complementos + Adjuntos`.\n   - Fazer a análise sintática do substantivo antecedente perante o verbo da oração adjetiva:\n     - Se o substantivo responde a *\"Quem é que [verbo]?\"* $\rightarrow$ **Sujeito**.\n     - Se completa o verbo sem preposição $\rightarrow$ **Objeto Direto**.\n     - Se completa o verbo com preposição $\rightarrow$ **Objeto Indireto**.\n     - Se completa um nome com preposição $\rightarrow$ **Complemento Nominal**.\n     - Se indica circunstância locativa $\rightarrow$ **Adjunto Adverbial de Lugar**.\n5. **Conclusão**:\n   - A função sintática encontrada para o substantivo antecedente **É A FUNÇÃO SINTÁTICA DO PRONOME RELATIVO**.",
+                "groups": [
+                  {
+                    "id": "passo-1-grupo",
+                    "label": "Passo 1: Isolamento e Blindagem",
+                    "order": 1
+                  },
+                  {
+                    "id": "passo-2-grupo",
+                    "label": "Passo 2: Substituição pelo Antecedente",
+                    "order": 2
+                  },
+                  {
+                    "id": "passo-3-grupo",
+                    "label": "Passo 3: Ordem Direta e Análise",
+                    "order": 3
+                  },
+                  {
+                    "id": "conclusao-grupo",
+                    "label": "Passo 4: Atribuição Funcional Definitiva",
+                    "order": 4
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-periodo-relativo",
+                    "kind": "start",
+                    "label": "Início: Período Composto com Pronome Relativo",
+                    "groupId": "passo-1-grupo",
+                    "details": [
+                      "Identificação da oração subordinada adjetiva introduzida por pronome relativo",
+                      "Regra de blindagem: a função do pronome relativo pertence exclusivamente à oração adjetiva"
+                    ]
+                  },
+                  {
+                    "id": "passo-1-isolar-oracao",
+                    "kind": "process",
+                    "label": "Passo 1: Isolar a Oração Adjetiva (| ... |)",
+                    "groupId": "passo-1-grupo",
+                    "details": [
+                      "Inserir barras divisórias antes do pronome relativo e no fim do predicado adjetivo",
+                      "Bloquear visualmente a Oração Principal para não misturar funções sintáticas distintas"
+                    ]
+                  },
+                  {
+                    "id": "passo-2-substituir-antecedente",
+                    "kind": "process",
+                    "label": "Passo 2: Substituir pelo Antecedente Nominal",
+                    "groupId": "passo-2-grupo",
+                    "details": [
+                      "Localizar na oração principal o substantivo/pronome que o pronome relativo retoma",
+                      "Reescrever a oração adjetiva inserindo o substantivo no lugar do pronome relativo"
+                    ]
+                  },
+                  {
+                    "id": "passo-3-ordem-direta-analise",
+                    "kind": "process",
+                    "label": "Passo 3: Reorganizar na Ordem Direta (S - V - C) e Analisar",
+                    "groupId": "passo-3-grupo",
+                    "details": [
+                      "Organizar a oração: Sujeito + Verbo + Complemento Verbal / Adjunto",
+                      "Analisar a função que o substantivo desempenha em relação ao verbo da oração adjetiva"
+                    ]
+                  },
+                  {
+                    "id": "conclusao-funcao-sintatica-relativo",
+                    "kind": "result",
+                    "label": "Conclusão: Atribuir a Função Sintática ao Pronome Relativo",
+                    "groupId": "conclusao-grupo",
+                    "details": [
+                      "A função obtida pelo substantivo (Sujeito, OD, OI, CN, Adj. Adverbial, etc.) é transferida ao Pronome Relativo",
+                      "Validação de 100% de precisão para assertivas de concurso"
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-periodo-relativo",
+                    "to": "passo-1-isolar-oracao",
+                    "label": "localizar relativo"
+                  },
+                  {
+                    "from": "passo-1-isolar-oracao",
+                    "to": "passo-2-substituir-antecedente",
+                    "label": "oração adjetiva isolada"
+                  },
+                  {
+                    "from": "passo-2-substituir-antecedente",
+                    "to": "passo-3-ordem-direta-analise",
+                    "label": "antecedente inserido"
+                  },
+                  {
+                    "from": "passo-3-ordem-direta-analise",
+                    "to": "conclusao-funcao-sintatica-relativo",
+                    "label": "função sintática determinada"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-periodo-relativo[\"Início: Período Composto com Pronome Relativo\"] -->|localizar relativo| passo-1-isolar-oracao[\"Passo 1: Isolar a Oração Adjetiva (| ... |)\"]\n    passo-1-isolar-oracao -->|oração adjetiva isolada| passo-2-substituir-antecedente[\"Passo 2: Substituir pelo Antecedente Nominal\"]\n    passo-2-substituir-antecedente -->|antecedente inserido| passo-3-ordem-direta-analise[\"Passo 3: Reorganizar na Ordem Direta (S - V - C) e Analisar\"]\n    passo-3-ordem-direta-analise -->|função sintática determinada| conclusao-funcao-sintatica-relativo[\"Conclusão: Atribuir a Função Sintática ao Pronome Relativo\"]"
+              }
             }
           ],
           "presentation": {
@@ -1580,8 +1696,8 @@
               "EXP-IP-A07-G03-PROC-005"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "sequence"
           }
         }
       ]

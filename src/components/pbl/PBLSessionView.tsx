@@ -510,7 +510,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const budgetMinutes = Math.round((session.sessionBudgetMs || 12 * 60_000) / 60_000);
 
   return (
-    <div className="mx-auto w-full max-w-6xl space-y-6">
+    <div className="w-full space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
         <button type="button" onClick={() => setShowExitConfirmation(true)} className="inline-flex min-h-11 items-center gap-1 text-xs font-bold text-slate-600 hover:text-slate-900">
           <ArrowLeft className="h-4 w-4" /> Sair da sessão

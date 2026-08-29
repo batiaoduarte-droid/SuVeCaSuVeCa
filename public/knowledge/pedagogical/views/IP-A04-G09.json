@@ -242,28 +242,94 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "decision_flow",
               "title": "Regra Fundamental do Primeiro Verbo como Bússola Temporal",
               "text": "┌──► Eixo do PRESENTE ──► Exige PRESENTE ou FUTURO DO PRESENTE 1º VERBO (Bússola) └──► Eixo do PRETÉRITO ──► Exige PRETÉRITO ou FUTURO DO PRETÉRITO",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "1º verbo (bússola temporal)",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "primeiro-verbo-bussola",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "primeiro-verbo-bussola",
+                    "kind": "start",
+                    "label": "1º VERBO DA ORAÇÃO (A Bússola Temporal)",
+                    "details": [
+                      "O primeiro verbo define a âncora cronológica e determina a correlação de todos os verbos seguintes."
+                    ]
+                  },
+                  {
+                    "id": "decisao-eixo-temporal",
+                    "kind": "decision",
+                    "label": "Qual é o eixo temporal do 1º Verbo?",
+                    "details": [
+                      "Avaliar se a oração principal ou âncora inicial pertence ao Eixo do Presente ou ao Eixo do Pretérito."
+                    ]
+                  },
                   {
                     "id": "eixo-presente",
-                    "label": "Eixo do presente",
+                    "kind": "process",
+                    "label": "Eixo do PRESENTE ➔ Exige PRESENTE ou FUTURO DO PRESENTE",
                     "details": [
-                      "Exige presente ou futuro do presente."
+                      "Oração subordinada deve manter-se no presente ou projetar-se no futuro do presente.",
+                      "Exemplo: 'Penso que ele virá' / 'Desejo que ele seja feliz'."
                     ]
                   },
                   {
                     "id": "eixo-preterito",
-                    "label": "Eixo do pretérito",
+                    "kind": "process",
+                    "label": "Eixo do PRETÉRITO ➔ Exige PRETÉRITO ou FUTURO DO PRETÉRITO",
                     "details": [
-                      "Exige pretérito ou futuro do pretérito."
+                      "Oração subordinada deve manter-se no pretérito ou projetar-se no futuro do pretérito.",
+                      "Exemplo: 'Pensei que ele viria' / 'Desejava que ele fosse feliz'."
+                    ]
+                  },
+                  {
+                    "id": "resultado-coerencia-temporal",
+                    "kind": "result",
+                    "label": "Coerência Temporal e Sintática Assegurada",
+                    "details": [
+                      "Eliminação imediata de alternativas que quebram a harmonia do eixo temporal estabelecido."
                     ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "primeiro-verbo-bussola",
+                    "to": "decisao-eixo-temporal"
+                  },
+                  {
+                    "from": "decisao-eixo-temporal",
+                    "to": "eixo-presente",
+                    "label": "1º Verbo no Presente"
+                  },
+                  {
+                    "from": "decisao-eixo-temporal",
+                    "to": "eixo-preterito",
+                    "label": "1º Verbo no Pretérito"
+                  },
+                  {
+                    "from": "eixo-presente",
+                    "to": "resultado-coerencia-temporal"
+                  },
+                  {
+                    "from": "eixo-preterito",
+                    "to": "resultado-coerencia-temporal"
+                  }
+                ],
+                "structuredText": "### Regra Fundamental do Primeiro Verbo como Bússola Temporal\n\n- **1º VERBO (Bússola Temporal):**\n  - ┌──► **Eixo do PRESENTE:** Exige PRESENTE ou FUTURO DO PRESENTE na oração correlata.\n  - └──► **Eixo do PRETÉRITO:** Exige PRETÉRITO ou FUTURO DO PRETÉRITO na oração correlata.\n- *Princípio Pedagógico:* O tempo do verbo âncora comanda a linha de tempo do discurso, vedando transições incoerentes entre passado e presente.",
+                "mermaidSource": "flowchart TD\n    primeiro-verbo-bussola[\"1º VERBO: Bússola Temporal\"] --> decisao-eixo-temporal{\"Eixo do 1º Verbo?\"}\n    decisao-eixo-temporal -- \"1º Verbo no Presente\" --> eixo-presente[\"Eixo do PRESENTE<br>Exige Presente ou Futuro do Presente\"]\n    decisao-eixo-temporal -- \"1º Verbo no Pretérito\" --> eixo-preterito[\"Eixo do PRETÉRITO<br>Exige Pretérito ou Futuro do Pretérito\"]\n    eixo-presente --> resultado-coerencia-temporal[\"Coerência Temporal Assegurada\"]\n    eixo-preterito --> resultado-coerencia-temporal",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
@@ -625,37 +691,176 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "branches",
               "title": "Explicação Consolidada",
               "text": "┌──► Amigo do PRESENTE (Indicativo ou Subjuntivo) FUTURO DO PRESENTE ──┼──► Amigo do FUTURO DO SUBJUNTIVO (Tem muitos amigos) └──► Amigo do próprio FUTURO DO PRESENTE",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "Futuro do presente",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "branches",
+                "layout": "vertical",
+                "rootId": "futuro-do-presente-matriz",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "friend-present",
-                    "label": "Amigo do presente",
+                    "id": "futuro-do-presente-matriz",
+                    "kind": "start",
+                    "label": "FUTURO DO PRESENTE ('Tem Muitos Amigos')",
                     "details": [
-                      "Indicativo ou subjuntivo."
+                      "O Futuro do Presente do Indicativo possui ampla flexibilidade sintática na correlação verbal."
                     ]
                   },
                   {
-                    "id": "friend-subjunctive",
-                    "label": "Amigo do futuro do subjuntivo",
+                    "id": "amigo-presente",
+                    "kind": "category",
+                    "label": "1. Amigo do PRESENTE (Indicativo ou Subjuntivo)",
                     "details": [
-                      "Tem muitos amigos."
+                      "Harmoniza-se diretamente com o Presente do Indicativo ou Presente do Subjuntivo.",
+                      "Exemplo: 'Afirmo que ele cumprirá o prazo' / 'Espero que ele traga o parecer e o apresentará amanhã'."
                     ]
                   },
                   {
-                    "id": "friend-future",
-                    "label": "Amigo do próprio futuro do presente"
+                    "id": "amigo-futuro-subjuntivo",
+                    "kind": "category",
+                    "label": "2. Amigo do FUTURO DO SUBJUNTIVO",
+                    "details": [
+                      "Par canônico de orações adverbiais temporais e condicionais.",
+                      "Exemplo: 'Quando você chegar, realizaremos a conferência' / 'Se você estudar, passará'."
+                    ]
+                  },
+                  {
+                    "id": "amigo-futuro-presente",
+                    "kind": "category",
+                    "label": "3. Amigo do próprio FUTURO DO PRESENTE",
+                    "details": [
+                      "Coordenação de ações futuras paralelas ou sucessivas.",
+                      "Exemplo: 'O projeto avançará e trará benefícios para a sociedade'."
+                    ]
+                  },
+                  {
+                    "id": "regra-sintese-futuro-presente",
+                    "kind": "rule",
+                    "label": "Regra de Ouro da Correlação do Futuro do Presente",
+                    "details": [
+                      "O Futuro do Presente aceita múltiplos parceiros temporais no horizonte presente/futuro, mas NUNCA se correlaciona com o Pretérito Imperfeito do Subjuntivo."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "futuro-do-presente-matriz",
+                    "to": "amigo-presente"
+                  },
+                  {
+                    "from": "futuro-do-presente-matriz",
+                    "to": "amigo-futuro-subjuntivo"
+                  },
+                  {
+                    "from": "futuro-do-presente-matriz",
+                    "to": "amigo-futuro-presente"
+                  },
+                  {
+                    "from": "amigo-presente",
+                    "to": "regra-sintese-futuro-presente"
+                  },
+                  {
+                    "from": "amigo-futuro-subjuntivo",
+                    "to": "regra-sintese-futuro-presente"
+                  },
+                  {
+                    "from": "amigo-futuro-presente",
+                    "to": "regra-sintese-futuro-presente"
+                  }
+                ],
+                "structuredText": "### Correlação Temporal: Os Amigos do Futuro do Presente\n\n- **FUTURO DO PRESENTE (Tem muitos amigos):**\n  - ➔ **Amigo do PRESENTE:** (Indicativo ou Subjuntivo).\n  - ➔ **Amigo do FUTURO DO SUBJUNTIVO:** correlação canônica temporal/condicional (Quando chegar... faremos).\n  - ➔ **Amigo do próprio FUTURO DO PRESENTE:** ações coordenadas futuras.\n- *Ressalva:* Bloqueia combinação com Pretérito Imperfeito do Subjuntivo (*Se fizesse, fará* ➔ Incorreto).",
+                "mermaidSource": "flowchart TD\n    futuro-do-presente-matriz[\"FUTURO DO PRESENTE<br>Tem Muitos Amigos\"] --> amigo-presente[\"Amigo do PRESENTE<br>Indicativo ou Subjuntivo\"]\n    futuro-do-presente-matriz --> amigo-futuro-subjuntivo[\"Amigo do FUTURO DO SUBJUNTIVO<br>Quando chegar... faremos\"]\n    futuro-do-presente-matriz --> amigo-futuro-presente[\"Amigo do próprio FUTURO DO PRESENTE<br>Ações coordenadas\"]\n    amigo-presente --> regra-sintese-futuro-presente[\"Regra de Ouro da Correlação\"]\n    amigo-futuro-subjuntivo --> regra-sintese-futuro-presente\n    amigo-futuro-presente --> regra-sintese-futuro-presente",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
-              "type": "paragraph",
-              "text": "FUTURO DO PRETÉRITO ────► Amigo EXCLUSIVO do PRETÉRITO (especialmente Pret. Imp. Subj.) (Só tem 1 amigo)"
+              "type": "diagram",
+              "diagramType": "branches",
+              "title": "A Dinâmica dos Futuros: Flexibilidade do Futuro do Presente vs. Exclusividade do Futuro do Pretérito",
+              "text": "FUTURO DO PRETÉRITO ────► Amigo EXCLUSIVO do PRETÉRITO (especialmente Pret. Imp. Subj.) (Só tem 1 amigo)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "branches",
+                "layout": "vertical",
+                "rootId": "futuro-do-preterito-matriz",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "futuro-do-preterito-matriz",
+                    "kind": "start",
+                    "label": "FUTURO DO PRETÉRITO ('Só Tem 1 Amigo')",
+                    "details": [
+                      "O Futuro do Pretérito do Indicativo possui vínculo exclusivo e rígido com o eixo pretérito."
+                    ]
+                  },
+                  {
+                    "id": "ramo-pret-imp-subj",
+                    "kind": "category",
+                    "label": "Amigo EXCLUSIVO: PRETÉRITO IMPERFEITO DO SUBJUNTIVO",
+                    "details": [
+                      "Par clássico de hipótese e condição irreal: -SSE ➔ -RIA.",
+                      "Exemplo: 'Se eu pudesse (Pret. Imp. Subj.), ajudaria (Fut. Pret.) agora mesmo'."
+                    ]
+                  },
+                  {
+                    "id": "bloqueio-mistura-eixos",
+                    "kind": "rule",
+                    "label": "Proibição de Mistura com Eixos do Presente",
+                    "details": [
+                      "É erro gravíssimo em concursos correlacionar Futuro do Pretérito com Presente ou Futuro do Subjuntivo.",
+                      "Incorreto: *Se eu puder, ajudaria* / *Quando eu chegar, faria*."
+                    ]
+                  },
+                  {
+                    "id": "resultado-regra-ouro",
+                    "kind": "result",
+                    "label": "Regra de Ouro: -SSE ➔ -RIA",
+                    "details": [
+                      "Ao identificar a terminação -RIA na oração principal, exija obrigatoriamente a terminação -SSE na oração condicional."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "futuro-do-preterito-matriz",
+                    "to": "ramo-pret-imp-subj"
+                  },
+                  {
+                    "from": "futuro-do-preterito-matriz",
+                    "to": "bloqueio-mistura-eixos"
+                  },
+                  {
+                    "from": "ramo-pret-imp-subj",
+                    "to": "resultado-regra-ouro"
+                  },
+                  {
+                    "from": "bloqueio-mistura-eixos",
+                    "to": "resultado-regra-ouro"
+                  }
+                ],
+                "structuredText": "### Correlação Temporal: A Exclusividade do Futuro do Pretérito\n\n- **FUTURO DO PRETÉRITO (Só tem 1 amigo):**\n  - ────► **Amigo EXCLUSIVO do PRETÉRITO:** vincula-se estritamente ao **Pretérito Imperfeito do Subjuntivo** (-sse ➔ -ria).\n  - *Exemplo Canônico:* 'Se ele estudasse, passaria no concurso'.\n  - *Vedação:* Não admite correlação com Presente do Subjuntivo nem com Futuro do Subjuntivo.",
+                "mermaidSource": "flowchart TD\n    futuro-do-preterito-matriz[\"FUTURO DO PRETÉRITO<br>Só Tem 1 Amigo\"] --> ramo-pret-imp-subj[\"Amigo EXCLUSIVO:<br>Pretérito Imperfeito do Subjuntivo\"]\n    futuro-do-preterito-matriz --> bloqueio-mistura-eixos[\"Proibição de Mistura com Presente\"]\n    ramo-pret-imp-subj --> resultado-regra-ouro[\"Regra de Ouro: -SSE ➔ -RIA\"]\n    bloqueio-mistura-eixos --> resultado-regra-ouro",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             },
             {
               "type": "list",
@@ -1187,13 +1392,136 @@
               "text": "Resolver questões de correlação verbal de múltipla escolha (VUNESP, FCC, FGV) com rapidez e segurança, descartando alternativas inviáveis em segundos."
             },
             {
-              "type": "heading",
-              "level": 3,
-              "text": "Fluxograma Operacional"
-            },
-            {
-              "type": "paragraph",
-              "text": "[ Passo 1: Leitura Vertical e Localização do 1º Verbo ] │ ▼ [ Passo 2: Diagnóstico Semântico Rápido ] ├── Ideia de PRESENTE / FUTURO? └── Ideia de PASSADO / HIPÓTESE? │ ▼ [ Passo 3: Varredura e Eliminação em Bloco ] ├── Descartar misturas grosseiras (Futuro + Pretérito Perfeito, etc.) └── Reter apenas as 2 ou 3 alternativas com eixos congruentes │ ▼ [ Passo 4: Verificação de Gatilhos Sintáticos e Conectivos ] ├── Presença de Concessiva (mesmo que / embora) -> exige Subjuntivo ├── Presença de Verbo Volitivo (desejava que) -> exige Pret. Imp. Subj. └── Presença de Condicional irreal (se / caso) -> exige correlação modal │ ▼ [ Passo 5: Teste de Lógica Textual e Marcação ] ├── Confirmar nexo semântico global └── Marcar gabarito SEM tentar consertar alternativas erradas"
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Fluxograma Operacional",
+              "text": "[ Passo 1: Leitura Vertical e Localização do 1º Verbo ] │ ▼ [ Passo 2: Diagnóstico Semântico Rápido ] ├── Ideia de PRESENTE / FUTURO? └── Ideia de PASSADO / HIPÓTESE? │ ▼ [ Passo 3: Varredura e Eliminação em Bloco ] ├── Descartar misturas grosseiras (Futuro + Pretérito Perfeito, etc.) └── Reter apenas as 2 ou 3 alternativas com eixos congruentes │ ▼ [ Passo 4: Verificação de Gatilhos Sintáticos e Conectivos ] ├── Presença de Concessiva (mesmo que / embora) -> exige Subjuntivo ├── Presença de Verbo Volitivo (desejava que) -> exige Pret. Imp. Subj. └── Presença de Condicional irreal (se / caso) -> exige correlação modal │ ▼ [ Passo 5: Teste de Lógica Textual e Marcação ] ├── Confirmar nexo semântico global └── Marcar gabarito SEM tentar consertar alternativas erradas",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "inicio-eliminacao-bloco",
+                "groups": [
+                  {
+                    "id": "g-e1",
+                    "label": "Passo 1: Localização",
+                    "order": 1
+                  },
+                  {
+                    "id": "g-e2",
+                    "label": "Passo 2: Diagnóstico Semântico",
+                    "order": 2
+                  },
+                  {
+                    "id": "g-e3",
+                    "label": "Passo 3: Varredura em Bloco",
+                    "order": 3
+                  },
+                  {
+                    "id": "g-e4",
+                    "label": "Passo 4: Verificação de Gatilhos",
+                    "order": 4
+                  },
+                  {
+                    "id": "g-e5",
+                    "label": "Passo 5: Teste Lógico e Marcação",
+                    "order": 5
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-eliminacao-bloco",
+                    "kind": "start",
+                    "label": "Início: Questão de Correlação Verbal de Múltipla Escolha",
+                    "details": [
+                      "Técnica de resolução ágil eliminando alternativas incoerentes em bloco."
+                    ]
+                  },
+                  {
+                    "id": "p1-leitura-vertical",
+                    "kind": "process",
+                    "label": "Passo 1: Leitura Vertical e Localização do 1º Verbo",
+                    "details": [
+                      "Identificar o verbo de referência (bússola) que ancora a linha temporal do período."
+                    ],
+                    "groupId": "g-e1"
+                  },
+                  {
+                    "id": "p2-diagnostico-semantico",
+                    "kind": "process",
+                    "label": "Passo 2: Diagnóstico Semântico Rápido",
+                    "details": [
+                      "Ideia de PRESENTE / FUTURO? ➔ Eixo do Presente.",
+                      "Ideia de PASSADO / HIPÓTESE? ➔ Eixo do Pretérito."
+                    ],
+                    "groupId": "g-e2"
+                  },
+                  {
+                    "id": "p3-varredura-bloco",
+                    "kind": "process",
+                    "label": "Passo 3: Varredura e Eliminação em Bloco",
+                    "details": [
+                      "Descartar imediatamente misturas grosseiras (ex.: Futuro do Presente + Pretérito Perfeito).",
+                      "Reter apenas as 2 ou 3 alternativas com eixos temporais congruentes."
+                    ],
+                    "groupId": "g-e3"
+                  },
+                  {
+                    "id": "p4-verificacao-gatilhos",
+                    "kind": "process",
+                    "label": "Passo 4: Verificação de Gatilhos Sintáticos e Conectivos",
+                    "details": [
+                      "Presença de Concessiva ('mesmo que' / 'embora') ➔ exige Subjuntivo.",
+                      "Presença de Verbo Volitivo ('desejava que') ➔ exige Pretérito Imperfeito do Subjuntivo.",
+                      "Presença de Condicional irreal ('se' / 'caso') ➔ exige correlação modal estrita (-sse + -ria)."
+                    ],
+                    "groupId": "g-e4"
+                  },
+                  {
+                    "id": "p5-teste-marcacao",
+                    "kind": "result",
+                    "label": "Passo 5: Teste de Lógica Textual e Marcação",
+                    "details": [
+                      "Confirmar o nexo semântico global da assertiva selecionada.",
+                      "Marcar o gabarito sem tentar consertar alternativas descartadas."
+                    ],
+                    "groupId": "g-e5"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-eliminacao-bloco",
+                    "to": "p1-leitura-vertical"
+                  },
+                  {
+                    "from": "p1-leitura-vertical",
+                    "to": "p2-diagnostico-semantico"
+                  },
+                  {
+                    "from": "p2-diagnostico-semantico",
+                    "to": "p3-varredura-bloco"
+                  },
+                  {
+                    "from": "p3-varredura-bloco",
+                    "to": "p4-verificacao-gatilhos"
+                  },
+                  {
+                    "from": "p4-verificacao-gatilhos",
+                    "to": "p5-teste-marcacao"
+                  }
+                ],
+                "structuredText": "### Método Operacional de Eliminação em Bloco para Questões de Múltipla Escolha\n\n1. **[Passo 1: Leitura Vertical e Localização do 1º Verbo]** Localizar a âncora verbal do período.\n2. **[Passo 2: Diagnóstico Semântico Rápido]** Identificar se a linha temporal pertence ao eixo de PRESENTE/FUTURO ou ao eixo de PASSADO/HIPÓTESE.\n3. **[Passo 3: Varredura e Eliminação em Bloco]** Descartar misturas incongruentes de eixos e reter apenas opções congruentes.\n4. **[Passo 4: Verificação de Gatilhos Sintáticos e Conectivos]** Checar conectivos concessivos, volitivos e condicionais.\n5. **[Passo 5: Teste de Lógica Textual e Marcação]** Validar o nexo global e marcar o gabarito com rapidez.",
+                "mermaidSource": "flowchart TD\n    inicio-eliminacao-bloco[\"Início: Questão de Múltipla Escolha\"] --> p1-leitura-vertical[\"Passo 1: Leitura Vertical e 1º Verbo\"]\n    p1-leitura-vertical --> p2-diagnostico-semantico[\"Passo 2: Diagnóstico Semântico do Eixo\"]\n    p2-diagnostico-semantico --> p3-varredura-bloco[\"Passo 3: Eliminação em Bloco de Misturas\"]\n    p3-varredura-bloco --> p4-verificacao-gatilhos[\"Passo 4: Verificação de Conectivos e Gatilhos\"]\n    p4-verificacao-gatilhos --> p5-teste-marcacao[\"Passo 5: Teste Lógico e Marcação do Gabarito\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             }
           ],
           "presentation": {
@@ -1204,8 +1532,8 @@
               "EXP-IP-A04-G09-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "sequence"
           }
         },
         {

@@ -1232,8 +1232,199 @@
           "procedureId": "PROC-A08-G03-002",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[Identificação da Oração Adjetiva] │ Fazer o Teste de Unicidade do Referente: \"No contexto, pode haver mais de um elemento?\" │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ SIM (Referente Múltiplo) NÃO (Referente Único) [Cenário 1: Duas Leituras] [Cenário 2: Leitura Única] │ │ ┌────────────────┴────────────────┐ ┌────────────────┴────────────────┐ ▼ ▼ ▼ ▼ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo (Explicativa) (Restritiva) (Homem, Tejo, Mãe) Declarado no Texto │ │ │ │ └────────────────┬────────────────┘ ▼ ▼ │ SÓ PODE SER EXPLICATIVA SÓ PODE SER RESTRITIVA ▼ (Exige vírgulas) (Proíbe vírgulas) VÍRGULAS SÃO OPCIONAIS │ │ • Inserir/retirar vírgulas: ▼ ▼ ✔ MANTÉM a correção gramatical Alterar pontuação: Alterar pontuação: ❌ ALTERA o sentido do texto ❌ GERA ERRO GRAMATICAL ❌ GERA ERRO GRAMATICAL ❌ GERA INCOERÊNCIA ❌ GERA INCOERÊNCIA"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo de Decisão de Prova para Impacto da Pontuação em Orações Adjetivas",
+              "text": "[Identificação da Oração Adjetiva] │ Fazer o Teste de Unicidade do Referente: \"No contexto, pode haver mais de um elemento?\" │ ┌───────────────────────┴───────────────────────┐ ▼ ▼ SIM (Referente Múltiplo) NÃO (Referente Único) [Cenário 1: Duas Leituras] [Cenário 2: Leitura Única] │ │ ┌────────────────┴────────────────┐ ┌────────────────┴────────────────┐ ▼ ▼ ▼ ▼ Com Vírgulas Sem Vírgulas Antecedente Único Contexto Múltiplo (Explicativa) (Restritiva) (Homem, Tejo, Mãe) Declarado no Texto │ │ │ │ └────────────────┬────────────────┘ ▼ ▼ │ SÓ PODE SER EXPLICATIVA SÓ PODE SER RESTRITIVA ▼ (Exige vírgulas) (Proíbe vírgulas) VÍRGULAS SÃO OPCIONAIS │ │ • Inserir/retirar vírgulas: ▼ ▼ ✔ MANTÉM a correção gramatical Alterar pontuação: Alterar pontuação: ❌ ALTERA o sentido do texto ❌ GERA ERRO GRAMATICAL ❌ GERA ERRO GRAMATICAL ❌ GERA INCOERÊNCIA ❌ GERA INCOERÊNCIA",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "identificar-oracao-adjetiva",
+                "structuredText": "ALGORITMO DE DECISÃO PARA IMPACTO DA PONTUAÇÃO EM ORAÇÕES ADJETIVAS\n\n1. DIAGNÓSTICO: TESTE DE UNICIDADE DO REFERENTE\n   - Pergunta: 'No contexto do texto, pode haver mais de um elemento no conjunto do referente?'\n\n2. CENÁRIO 1: SIM (REFERENTE MÚLTIPLO - DUAS LEITURAS POSSÍVEIS)\n   - Com Vírgulas: Oração Adjetiva Explicativa (Generaliza para a totalidade do conjunto).\n   - Sem Vírgulas: Oração Adjetiva Restritiva (Limita a uma parte do conjunto).\n   - IMPACTO DE PROVA:\n     * Inserir ou retirar vírgulas: MANTÉM A CORREÇÃO GRAMATICAL.\n     * Inserir ou retirar vírgulas: ALTERA O SENTIDO DO TEXTO.\n\n3. CENÁRIO 2: NÃO (REFERENTE ÚNICO - LEITURA ÚNICA OBRIGATÓRIA)\n   - Se o antecedente for único (ex.: O sol, Tejo, Mãe): SÓ PODE SER EXPLICATIVA (Vírgulas obrigatórias). Retirar vírgulas gera erro gramatical e incoerência.\n   - Se o contexto exigir restrição estrita: SÓ PODE SER RESTRITIVA (Proíbe vírgulas). Inserir vírgulas gera erro gramatical e incoerência.",
+                "groups": [
+                  {
+                    "id": "fase-diagnostico-unicidade",
+                    "label": "Fase 1: Diagnóstico de Unicidade do Referente",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-referente-multiplo",
+                    "label": "Cenário 1: Referente Múltiplo (Dupla Leitura)",
+                    "order": 2
+                  },
+                  {
+                    "id": "fase-referente-unico",
+                    "label": "Cenário 2: Referente Único (Leitura Bloqueada)",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "identificar-oracao-adjetiva",
+                    "kind": "start",
+                    "label": "Identificar Oração Subordinada Adjetiva",
+                    "details": [
+                      "Localize a oração introduzida por pronome relativo (que, o qual, cujo, onde, quem) subordinada a um substantivo antecedente.",
+                      "Exemplo: 'Os servidores públicos [que foram aprovados em concurso] exercem função de Estado.'"
+                    ],
+                    "groupId": "fase-diagnostico-unicidade"
+                  },
+                  {
+                    "id": "decisao-unicidade-referente",
+                    "kind": "decision",
+                    "label": "No contexto, pode haver mais de um elemento no conjunto do referente?",
+                    "details": [
+                      "Teste de Unicidade do Referente:",
+                      "Existe possibilidade de coexistirem elementos com e sem a característica no universo do discurso?",
+                      "Ou o antecedente designa entidade semanticamente única/totalitária?"
+                    ],
+                    "groupId": "fase-diagnostico-unicidade"
+                  },
+                  {
+                    "id": "cenario-referente-multiplo",
+                    "kind": "category",
+                    "label": "Cenário 1: Referente Múltiplo (Duas Leituras Gramaticais)",
+                    "details": [
+                      "O substantivo antecedente admite subdivisão em subconjuntos no discurso.",
+                      "Permite tanto a interpretação restritiva quanto a explicativa."
+                    ],
+                    "groupId": "fase-referente-multiplo"
+                  },
+                  {
+                    "id": "com-virgulas-explicativa",
+                    "kind": "rule",
+                    "label": "Com Vírgulas: Oração Explicativa",
+                    "details": [
+                      "Sintaxe: Isolada por vírgulas.",
+                      "Semântica: Atribui predicado à totalidade dos elementos do conjunto (Generalização).",
+                      "Exemplo: 'Os servidores, que foram aprovados, trabalharão' (Todos os servidores foram aprovados)."
+                    ],
+                    "groupId": "fase-referente-multiplo"
+                  },
+                  {
+                    "id": "sem-virgulas-restritiva",
+                    "kind": "rule",
+                    "label": "Sem Vírgulas: Oração Restritiva",
+                    "details": [
+                      "Sintaxe: Sem nenhuma vírgula.",
+                      "Semântica: Delimita e particulariza apenas uma fração dos elementos do conjunto (Restrição).",
+                      "Exemplo: 'Os servidores que foram aprovados trabalharão' (Apenas os aprovados, não todos)."
+                    ],
+                    "groupId": "fase-referente-multiplo"
+                  },
+                  {
+                    "id": "impacto-prova-multiplo",
+                    "kind": "result",
+                    "label": "Impacto de Prova: Vírgulas Opcionais",
+                    "details": [
+                      "Inserir ou retirar as vírgulas MANTÉM a correção gramatical.",
+                      "Mas ALTERA compulsoriamente o sentido do texto (de restritivo para explicativo ou vice-versa).",
+                      "Gabarito: Itens que afirmam manutenção do sentido são ERRADOS; que afirmam preservação gramatical são CERTOS."
+                    ],
+                    "groupId": "fase-referente-multiplo"
+                  },
+                  {
+                    "id": "cenario-referente-unico",
+                    "kind": "category",
+                    "label": "Cenário 2: Referente Único (Leitura Única Bloqueada)",
+                    "details": [
+                      "O antecedente é ontologicamente ou contextualmente único no universo do texto.",
+                      "Apenas uma das modalidades sintáticas é admissível."
+                    ],
+                    "groupId": "fase-referente-unico"
+                  },
+                  {
+                    "id": "decisao-tipo-bloqueio",
+                    "kind": "decision",
+                    "label": "O referente é entidade única ou contexto já restringiu o conjunto?",
+                    "details": [
+                      "Avalie a natureza do antecedente:",
+                      "1. Entidade única / singular absoluta (ex.: 'O sol', 'O rio Tejo', 'A mãe de Pedro');",
+                      "2. Contexto de restrição prévia declarada no texto."
+                    ],
+                    "groupId": "fase-referente-unico"
+                  },
+                  {
+                    "id": "so-explicativa",
+                    "kind": "result",
+                    "label": "Só Pode Ser Explicativa (Exige Vírgulas)",
+                    "details": [
+                      "Entidades únicas não admitem particularização restritiva.",
+                      "Exemplo: 'O sol, que ilumina a Terra, é uma estrela' (Com vírgulas obrigatórias).",
+                      "Retirar as vírgulas GERA ERRO GRAMATICAL e incoerência semântica imediata."
+                    ],
+                    "groupId": "fase-referente-unico"
+                  },
+                  {
+                    "id": "so-restritiva",
+                    "kind": "result",
+                    "label": "Só Pode Ser Restritiva (Proíbe Vírgulas)",
+                    "details": [
+                      "Se o contexto já delimitou expressamente o subconjunto como indispensável à identificação.",
+                      "Inserir vírgulas GERA ERRO GRAMATICAL e quebra de coerência."
+                    ],
+                    "groupId": "fase-referente-unico"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "identificar-oracao-adjetiva",
+                    "to": "decisao-unicidade-referente"
+                  },
+                  {
+                    "from": "decisao-unicidade-referente",
+                    "to": "cenario-referente-multiplo",
+                    "label": "Sim (Referente Múltiplo)"
+                  },
+                  {
+                    "from": "decisao-unicidade-referente",
+                    "to": "cenario-referente-unico",
+                    "label": "Não (Referente Único)"
+                  },
+                  {
+                    "from": "cenario-referente-multiplo",
+                    "to": "com-virgulas-explicativa"
+                  },
+                  {
+                    "from": "cenario-referente-multiplo",
+                    "to": "sem-virgulas-restritiva"
+                  },
+                  {
+                    "from": "com-virgulas-explicativa",
+                    "to": "impacto-prova-multiplo"
+                  },
+                  {
+                    "from": "sem-virgulas-restritiva",
+                    "to": "impacto-prova-multiplo"
+                  },
+                  {
+                    "from": "cenario-referente-unico",
+                    "to": "decisao-tipo-bloqueio"
+                  },
+                  {
+                    "from": "decisao-tipo-bloqueio",
+                    "to": "so-explicativa",
+                    "label": "Antecedente Único Absoluto"
+                  },
+                  {
+                    "from": "decisao-tipo-bloqueio",
+                    "to": "so-restritiva",
+                    "label": "Contexto Declarado Restritivo"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila/roteiros",
+                  "canonicalUnit": "IP-A08-G03",
+                  "lesson": "A08",
+                  "generationMethod": "semantic-regeneration-v2",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    identificar-oracao-adjetiva[\"Identificar Oração Adjetiva\"] --> decisao-unicidade-referente{\"Pode haver mais de um elemento no referente?\"}\n    decisao-unicidade-referente -- \"Sim (Referente Múltiplo)\" --> cenario-referente-multiplo[\"Cenário 1: Referente Múltiplo\"]\n    decisao-unicidade-referente -- \"Não (Referente Único)\" --> cenario-referente-unico[\"Cenário 2: Referente Único\"]\n    cenario-referente-multiplo --> com-virgulas-explicativa[\"Com Vírgulas (Explicativa: Todos)\"]\n    cenario-referente-multiplo --> sem-virgulas-restritiva[\"Sem Vírgulas (Restritiva: Apenas alguns)\"]\n    com-virgulas-explicativa --> impacto-prova-multiplo[\"Vírgulas Opcionais:<br>✔ Mantém correção gramatical<br>❌ Altera o sentido do texto\"]\n    sem-virgulas-restritiva --> impacto-prova-multiplo\n    cenario-referente-unico --> decisao-tipo-bloqueio{\"Tipo de Bloqueio\"}\n    decisao-tipo-bloqueio -- \"Antecedente Único Absoluto\" --> so-explicativa[\"Só Explicativa (Vírgulas Obrigatórias)<br>Alterar gera ERRO GRAMATICAL\"]\n    decisao-tipo-bloqueio -- \"Contexto Declarado Restritivo\" --> so-restritiva[\"Só Restritiva (Proíbe Vírgulas)<br>Alterar gera ERRO GRAMATICAL\"]\n\n    classDef start fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;\n    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;\n    classDef cat fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;\n    classDef rule fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;\n    classDef error fill:#ffebee,stroke:#d32f2f,stroke-width:2px;\n    class identificar-oracao-adjetiva start;\n    class decisao-unicidade-referente,decisao-tipo-bloqueio decision;\n    class cenario-referente-multiplo,cenario-referente-unico cat;\n    class com-virgulas-explicativa,sem-virgulas-restritiva,impacto-prova-multiplo rule;\n    class so-explicativa,so-restritiva error;"
+              }
             }
           ],
           "presentation": {
@@ -1244,8 +1435,8 @@
               "EXP-IP-A08-G03-PROC-002"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {
@@ -1545,8 +1736,124 @@
           "procedureId": "PROC-A08-G03-005",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[Questão de Supressão de Vírgula] │ Tradução: \"A vírgula examinada é FACULTATIVA?\" │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ SE ENQUADRA EM: NÃO SE ENQUADRA"
+              "type": "diagram",
+              "diagramType": "branches",
+              "title": "Protocolo Master para Questões de \"Supressão de Vírgula\" no Cebraspe",
+              "text": "[Questão de Supressão de Vírgula] │ Tradução: \"A vírgula examinada é FACULTATIVA?\" │ ┌─────────────────────────┴─────────────────────────┐ ▼ ▼ SE ENQUADRA EM: NÃO SE ENQUADRA",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "questao-supressao-virgula",
+                "structuredText": "PROTOCOLO MASTER PARA QUESTÕES DE SUPRESSÃO DE VÍRGULA NO CEBRASPE\n\n1. FASE 1: TRADUÇÃO DO COMANDO DE PROVA\n   - Diante do item: 'A supressão da vírgula prejudica a correção gramatical?'.\n   - Aplique a tradução mental direta: 'A vírgula examinada é FACULTATIVA?'.\n\n2. FASE 2: ENQUADRAMENTO SINTÁTICO\n   - A vírgula se enquadra nos 4 casos facultativos clássicos (adverbial no final, adjunto curto deslocado <= 2 palavras, conjunção 'e' com sujeitos diferentes, adjetiva de referente múltiplo)?\n     * SIM: A VÍRGULA É FACULTATIVA.\n     * NÃO: A VÍRGULA É OBRIGATÓRIA (adjunto longo >= 3 palavras, oração subordinada adverbial anteposta, aposto, vocativo).\n\n3. FASE 3: JULGAMENTO DO ITEM\n   - Para Vírgula Facultativa: Supressão NÃO prejudica a correção (Afirmar 'prejudica' = ERRADO; afirmar 'mantém correção' = CERTO).\n   - Para Vírgula Obrigatória: Supressão PREJUDICA a correção (Afirmar 'prejudica' = CERTO; afirmar 'mantém correção' = ERRADO).",
+                "groups": [
+                  {
+                    "id": "fase-traducao-comando",
+                    "label": "Fase 1: Tradução do Comando de Prova",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-enquadramento-normativo",
+                    "label": "Fase 2: Enquadramento Normativo",
+                    "order": 2
+                  },
+                  {
+                    "id": "fase-julgamento-item",
+                    "label": "Fase 3: Julgamento do Item Cebraspe",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "questao-supressao-virgula",
+                    "kind": "start",
+                    "label": "Questão de Supressão de Vírgula no Cebraspe",
+                    "details": [
+                      "Comando típico: 'A supressão da vírgula imediatamente após o termo X prejudicaria a correção gramatical do texto?'.",
+                      "Técnica Cebraspe: Inversão reflexiva do enunciado."
+                    ],
+                    "groupId": "fase-traducao-comando"
+                  },
+                  {
+                    "id": "traducao-operacional",
+                    "kind": "formula",
+                    "label": "Tradução: A vírgula examinada é FACULTATIVA?",
+                    "details": [
+                      "Se a vírgula for facultativa, suprimi-la não prejudica a correção gramatical.",
+                      "Se a vírgula for obrigatória, suprimi-la prejudica a correção gramatical.",
+                      "Redefina a análise em termos de obrigatoriedade vs. facultatividade sintática."
+                    ],
+                    "groupId": "fase-traducao-comando"
+                  },
+                  {
+                    "id": "decisao-enquadramento-facultativa",
+                    "kind": "decision",
+                    "label": "A vírgula se enquadra em hipótese estritamente facultativa?",
+                    "details": [
+                      "Hipóteses facultativas canônicas:",
+                      "1. Termo adverbial na ordem direta ao final do período;",
+                      "2. Adjunto adverbial curto deslocado (<= 2 palavras);",
+                      "3. Conjunção 'e' com sujeitos distintos ou valor adversativo;",
+                      "4. Oração adjetiva explicativa em contexto de referente múltiplo (variação estilística)."
+                    ],
+                    "groupId": "fase-enquadramento-normativo"
+                  },
+                  {
+                    "id": "resultado-virgula-facultativa",
+                    "kind": "rule",
+                    "label": "Vírgula é FACULTATIVA: Supressão Válida",
+                    "details": [
+                      "A eliminação da vírgula mantém a correção gramatical plena do período.",
+                      "Se o item afirmar que a supressão PREJUDICA -> Marcar ERRADO.",
+                      "Se o item afirmar que a supressão MANTÉM a correção -> Marcar CERTO."
+                    ],
+                    "groupId": "fase-julgamento-item"
+                  },
+                  {
+                    "id": "resultado-virgula-obrigatoria",
+                    "kind": "rule",
+                    "label": "Vírgula é OBRIGATÓRIA: Supressão Incorreta",
+                    "details": [
+                      "Enquadramento em casos obrigatórios: adjunto adverbial longo deslocado (>= 3 palavras), oração subordinada adverbial anteposta, aposto explicativo, vocativo, oração adjetiva explicativa de referente único.",
+                      "A eliminação da vírgula PREJUDICA a correção gramatical.",
+                      "Se o item afirmar que a supressão PREJUDICA -> Marcar CERTO.",
+                      "Se o item afirmar que a supressão MANTÉM a correção -> Marcar ERRADO."
+                    ],
+                    "groupId": "fase-julgamento-item"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "questao-supressao-virgula",
+                    "to": "traducao-operacional"
+                  },
+                  {
+                    "from": "traducao-operacional",
+                    "to": "decisao-enquadramento-facultativa"
+                  },
+                  {
+                    "from": "decisao-enquadramento-facultativa",
+                    "to": "resultado-virgula-facultativa",
+                    "label": "Sim (Se Enquadra)"
+                  },
+                  {
+                    "from": "decisao-enquadramento-facultativa",
+                    "to": "resultado-virgula-obrigatoria",
+                    "label": "Não (Não Se Enquadra)"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila/roteiros",
+                  "canonicalUnit": "IP-A08-G03",
+                  "lesson": "A08",
+                  "generationMethod": "semantic-regeneration-v2",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    questao-supressao-virgula[\"Questão de Supressão de Vírgula\"] --> traducao-operacional[\"Tradução: A vírgula examinada é FACULTATIVA?\"]\n    traducao-operacional --> decisao-enquadramento-facultativa{\"Enquadra-se em hipótese facultativa?\"}\n    decisao-enquadramento-facultativa -- \"Sim (Se Enquadra)\" --> resultado-virgula-facultativa[\"Vírgula é FACULTATIVA: Supressão Válida\"]\n    decisao-enquadramento-facultativa -- \"Não (Não Se Enquadra)\" --> resultado-virgula-obrigatoria[\"Vírgula é OBRIGATÓRIA: Supressão Prejudica\"]\n\n    classDef start fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;\n    classDef formula fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;\n    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;\n    classDef result fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;\n    classDef error fill:#ffebee,stroke:#d32f2f,stroke-width:2px;\n    class questao-supressao-virgula start;\n    class traducao-operacional formula;\n    class decisao-enquadramento-facultativa decision;\n    class resultado-virgula-facultativa result;\n    class resultado-virgula-obrigatoria error;"
+              }
             },
             {
               "type": "list",
@@ -1559,8 +1866,138 @@
               ]
             },
             {
-              "type": "paragraph",
-              "text": "│ │ ▼ ▼ VÍRGULA É FACULTATIVA VÍRGULA É OBRIGATÓRIA • Supressão NÃO prejudica a correção • Supressão PREJUDICA a correção • Se o item diz \"prejudica\" -> ERRADO • Se o item diz \"prejudica\" -> CERTO • Se o item diz \"mantém correção\" -> CERTO • Se o item diz \"mantém correção\" -> ERRADO"
+              "type": "diagram",
+              "diagramType": "relations",
+              "title": "Protocolo Master para Questões de \"Supressão de Vírgula\" no Cebraspe",
+              "text": "│ │ ▼ ▼ VÍRGULA É FACULTATIVA VÍRGULA É OBRIGATÓRIA • Supressão NÃO prejudica a correção • Supressão PREJUDICA a correção • Se o item diz \"prejudica\" -> ERRADO • Se o item diz \"prejudica\" -> CERTO • Se o item diz \"mantém correção\" -> CERTO • Se o item diz \"mantém correção\" -> ERRADO",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "comparison",
+                "layout": "vertical",
+                "rootId": "matriz-supressao-virgula",
+                "structuredText": "MATRIZ COMPARATIVA PARA QUESTÕES DE SUPRESSÃO DE VÍRGULA NO CEBRASPE\n\n1. EIXO 1: VÍRGULA FACULTATIVA\n   - Impacto Normativo: Supressão NÃO prejudica a correção gramatical.\n   - Julgamento do Item:\n     * Se o item diz 'prejudica a correção' -> ERRADO.\n     * Se o item diz 'mantém a correção' -> CERTO.\n\n2. EIXO 2: VÍRGULA OBRIGATÓRIA\n   - Impacto Normativo: Supressão PREJUDICA a correção gramatical.\n   - Julgamento do Item:\n     * Se o item diz 'prejudica a correção' -> CERTO.\n     * Se o item diz 'mantém a correção' -> ERRADO.",
+                "groups": [
+                  {
+                    "id": "eixo-facultativo",
+                    "label": "Eixo 1: Regime de Vírgula Facultativa",
+                    "order": 1
+                  },
+                  {
+                    "id": "eixo-obrigatorio",
+                    "label": "Eixo 2: Regime de Vírgula Obrigatória",
+                    "order": 2
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "matriz-supressao-virgula",
+                    "kind": "start",
+                    "label": "Matriz Comparativa para Questões de Supressão de Vírgula",
+                    "details": [
+                      "Quadro decisório de impacto para resolução de itens Cebraspe sobre supressão pontual de vírgula.",
+                      "Compara as duas categorias normativas fundamentais: Vírgula Facultativa vs. Vírgula Obrigatória."
+                    ],
+                    "groupId": "eixo-facultativo"
+                  },
+                  {
+                    "id": "ramo-virgula-facultativa",
+                    "kind": "category",
+                    "label": "Regime: VÍRGULA FACULTATIVA",
+                    "details": [
+                      "Hipóteses aplicáveis: adjunto adverbial curto deslocado (<= 2 palavras), adverbial na ordem direta ao final, 'e' com sujeitos distintos, adjetiva com referente múltiplo.",
+                      "Natureza: Pontuação estilística e opcional."
+                    ],
+                    "groupId": "eixo-facultativo"
+                  },
+                  {
+                    "id": "impacto-supressao-facultativa",
+                    "kind": "rule",
+                    "label": "Impacto: Supressão NÃO Prejudica a Correção",
+                    "details": [
+                      "A supressão do sinal mantém a correção gramatical e a legitimidade sintática da frase.",
+                      "Não introduz truncamento nem quebra de subordinação/coordenação."
+                    ],
+                    "groupId": "eixo-facultativo"
+                  },
+                  {
+                    "id": "julgamento-item-facultativo",
+                    "kind": "result",
+                    "label": "Gabarito Cebraspe (Vírgula Facultativa)",
+                    "details": [
+                      "• Se o item da prova afirma 'prejudica a correção' -> Julgar ERRADO.",
+                      "• Se o item da prova afirma 'mantém a correção' -> Julgar CERTO."
+                    ],
+                    "groupId": "eixo-facultativo"
+                  },
+                  {
+                    "id": "ramo-virgula-obrigatoria",
+                    "kind": "category",
+                    "label": "Regime: VÍRGULA OBRIGATÓRIA",
+                    "details": [
+                      "Hipóteses aplicáveis: adjunto adverbial longo deslocado (>= 3 palavras), oração subordinada adverbial anteposta/intercalada, aposto explicativo, vocativo, oração adjetiva explicativa de referente único.",
+                      "Natureza: Pontuação estritamente gramatical e compulsória."
+                    ],
+                    "groupId": "eixo-obrigatorio"
+                  },
+                  {
+                    "id": "impacto-supressao-obrigatoria",
+                    "kind": "rule",
+                    "label": "Impacto: Supressão PREJUDICA a Correção",
+                    "details": [
+                      "A supressão do sinal gera erro gramatical imediato e compromete a estruturação sintática.",
+                      "Violação direta da norma culta padrão."
+                    ],
+                    "groupId": "eixo-obrigatorio"
+                  },
+                  {
+                    "id": "julgamento-item-obrigatorio",
+                    "kind": "result",
+                    "label": "Gabarito Cebraspe (Vírgula Obrigatória)",
+                    "details": [
+                      "• Se o item da prova afirma 'prejudica a correção' -> Julgar CERTO.",
+                      "• Se o item da prova afirma 'mantém a correção' -> Julgar ERRADO."
+                    ],
+                    "groupId": "eixo-obrigatorio"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "matriz-supressao-virgula",
+                    "to": "ramo-virgula-facultativa"
+                  },
+                  {
+                    "from": "matriz-supressao-virgula",
+                    "to": "ramo-virgula-obrigatoria"
+                  },
+                  {
+                    "from": "ramo-virgula-facultativa",
+                    "to": "impacto-supressao-facultativa"
+                  },
+                  {
+                    "from": "impacto-supressao-facultativa",
+                    "to": "julgamento-item-facultativo"
+                  },
+                  {
+                    "from": "ramo-virgula-obrigatoria",
+                    "to": "impacto-supressao-obrigatoria"
+                  },
+                  {
+                    "from": "impacto-supressao-obrigatoria",
+                    "to": "julgamento-item-obrigatorio"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila/roteiros",
+                  "canonicalUnit": "IP-A08-G03",
+                  "lesson": "A08",
+                  "generationMethod": "semantic-regeneration-v2",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    matriz-supressao-virgula[\"Matriz de Supressão de Vírgula\"] --> ramo-virgula-facultativa[\"VÍRGULA É FACULTATIVA\"]\n    matriz-supressao-virgula --> ramo-virgula-obrigatoria[\"VÍRGULA É OBRIGATÓRIA\"]\n    ramo-virgula-facultativa --> impacto-supressao-facultativa[\"Supressão NÃO prejudica a correção\"]\n    impacto-supressao-facultativa --> julgamento-item-facultativo[\"Item afirma prejudica -> ERRADO<br>Item afirma mantém -> CERTO\"]\n    ramo-virgula-obrigatoria --> impacto-supressao-obrigatoria[\"Supressão PREJUDICA a correção\"]\n    impacto-supressao-obrigatoria --> julgamento-item-obrigatorio[\"Item afirma prejudica -> CERTO<br>Item afirma mantém -> ERRADO\"]\n\n    classDef start fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;\n    classDef cat1 fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;\n    classDef cat2 fill:#ffebee,stroke:#d32f2f,stroke-width:2px;\n    class matriz-supressao-virgula start;\n    class ramo-virgula-facultativa,impacto-supressao-facultativa,julgamento-item-facultativo cat1;\n    class ramo-virgula-obrigatoria,impacto-supressao-obrigatoria,julgamento-item-obrigatorio cat2;"
+              }
             }
           ],
           "presentation": {
@@ -1571,8 +2008,8 @@
               "EXP-IP-A08-G03-PROC-005"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         }
       ]

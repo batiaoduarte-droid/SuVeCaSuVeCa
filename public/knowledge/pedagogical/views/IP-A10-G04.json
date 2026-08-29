@@ -2154,8 +2154,152 @@
           "procedureId": "PROC-A10-G04-007",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "┌──────────────────────────────────────────────┐ │ Verbo Bitransitivo (VTDI) com Pronome │ └──────────────────────┬───────────────────────┘ │ ▼ ┌──────────────────────────────────────────────┐ │ Qual complemento já está explícito no texto? │ └──────┬────────────────────────────────┬──────┘ │ │ [Objeto Direto] [Objeto Indireto] (sem preposição) (com preposição) │ │ ▼ ▼ ┌──────────────────────┐ ┌──────────────────────┐ │ O pronome inserido │ │ O pronome inserido │ │ DEVE SER INDIRETO │ │ DEVE SER DIRETO │ │ (lhe / lhes / a ele) │ │ (o / a / os / as) │ └──────────────────────┘ └──────────────────────┘ │ │ ▼ ▼ ┌──────────────────────┐ ┌──────────────────────┐ │ Proibido inserir: │ │ Proibido inserir: │ │ o / a / os / as │ │ lhe / lhes │ └──────────────────────┘ └──────────────────────┘"
+              "type": "diagram",
+              "diagramType": "branches",
+              "title": "Algoritmo de Bloqueio de Duplo Complemento em Verbos Bitransitivos (VTDI)",
+              "text": "┌──────────────────────────────────────────────┐ │ Verbo Bitransitivo (VTDI) com Pronome │ └──────────────────────┬───────────────────────┘ │ ▼ ┌──────────────────────────────────────────────┐ │ Qual complemento já está explícito no texto? │ └──────┬────────────────────────────────┬──────┘ │ │ [Objeto Direto] [Objeto Indireto] (sem preposição) (com preposição) │ │ ▼ ▼ ┌──────────────────────┐ ┌──────────────────────┐ │ O pronome inserido │ │ O pronome inserido │ │ DEVE SER INDIRETO │ │ DEVE SER DIRETO │ │ (lhe / lhes / a ele) │ │ (o / a / os / as) │ └──────────────────────┘ └──────────────────────┘ │ │ ▼ ▼ ┌──────────────────────┐ ┌──────────────────────┐ │ Proibido inserir: │ │ Proibido inserir: │ │ o / a / os / as │ │ lhe / lhes │ └──────────────────────┘ └──────────────────────┘",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-vtdi-pronominal",
+                "structuredText": "[Início] [Etapa: Etapa 1: Diagnóstico do Complemento Explícito] Verbo Bitransitivo (VTDI) com Complemento Pronominal\n  • Verbos bitransitivos exigem obrigatoriamente dois complementos de naturezas distintas: um Objeto Direto (sem preposição) e um Objeto Indireto (com preposição).\n  • Exemplos: entregar, doar, informar, pagar, perdoar, avisar.\n[Decisão] [Etapa: Etapa 1: Diagnóstico do Complemento Explícito] Qual complemento já está explícito no texto?\n  • Inspecionar o segmento oracional para verificar a presença de preposição no complemento já materializado.\n├─ Objeto Direto já explícito → [Processo] [Etapa: Etapa 2: Seleção e Bloqueio Pronominal] Objeto Direto já explícito (sem preposição)\n├─   • Exemplo: 'Entregou o relatório ___'. O termo 'o relatório' ocupa a casela de Objeto Direto.\n├─ [Regra] [Etapa: Etapa 2: Seleção e Bloqueio Pronominal] O pronome inserido DEVE SER INDIRETO\n├─   • Formas canônicas: lhe, lhes, a ele, a ela, a eles, a elas.\n├─   • Exemplo correto: 'Entregou-lhe o relatório' ou 'Entregou o relatório a ele'.\n├─ [Resultado] [Etapa: Etapa 2: Seleção e Bloqueio Pronominal] PROIBIDO inserir pronome direto (o, a, os, as)\n├─   • Regra de Bloqueio: É proibido duplicar a função de Objeto Direto.\n├─   • Construção agramatical: 'Entregou-o o relatório' (Incorreto por duplo OD).\n└─ Objeto Indireto já explícito → [Processo] [Etapa: Etapa 2: Seleção e Bloqueio Pronominal] Objeto Indireto já explícito (com preposição)\n└─   • Exemplo: 'Entregou ao diretor ___'. O termo 'ao diretor' ocupa a casela de Objeto Indireto.\n└─ [Regra] [Etapa: Etapa 2: Seleção e Bloqueio Pronominal] O pronome inserido DEVE SER DIRETO\n└─   • Formas canônicas: o, a, os, as (ou alomorfes -lo, -la, -no, -na).\n└─   • Exemplo correto: 'Entregou-o ao diretor'.\n└─ [Resultado] [Etapa: Etapa 2: Seleção e Bloqueio Pronominal] PROIBIDO inserir pronome indireto (lhe, lhes)\n└─   • Regra de Bloqueio: É proibido duplicar a função de Objeto Indireto.\n└─   • Construção agramatical: 'Entregou-lhe ao diretor' (Incorreto por duplo OI).",
+                "nodes": [
+                  {
+                    "id": "inicio-vtdi-pronominal",
+                    "kind": "start",
+                    "groupId": "etapa-identificacao",
+                    "label": "Verbo Bitransitivo (VTDI) com Complemento Pronominal",
+                    "details": [
+                      "Verbos bitransitivos exigem obrigatoriamente dois complementos de naturezas distintas: um Objeto Direto (sem preposição) e um Objeto Indireto (com preposição).",
+                      "Exemplos: entregar, doar, informar, pagar, perdoar, avisar."
+                    ]
+                  },
+                  {
+                    "id": "decisao-complemento-explicito",
+                    "kind": "decision",
+                    "groupId": "etapa-identificacao",
+                    "label": "Qual complemento já está explícito no texto?",
+                    "details": [
+                      "Inspecionar o segmento oracional para verificar a presença de preposição no complemento já materializado."
+                    ]
+                  },
+                  {
+                    "id": "ramo-od-explicito",
+                    "kind": "process",
+                    "groupId": "etapa-selecao",
+                    "label": "Objeto Direto já explícito (sem preposição)",
+                    "details": [
+                      "Exemplo: 'Entregou o relatório ___'. O termo 'o relatório' ocupa a casela de Objeto Direto."
+                    ]
+                  },
+                  {
+                    "id": "regra-inserir-indireto",
+                    "kind": "rule",
+                    "groupId": "etapa-selecao",
+                    "label": "O pronome inserido DEVE SER INDIRETO",
+                    "details": [
+                      "Formas canônicas: lhe, lhes, a ele, a ela, a eles, a elas.",
+                      "Exemplo correto: 'Entregou-lhe o relatório' ou 'Entregou o relatório a ele'."
+                    ]
+                  },
+                  {
+                    "id": "bloqueio-inserir-direto",
+                    "kind": "result",
+                    "groupId": "etapa-selecao",
+                    "label": "PROIBIDO inserir pronome direto (o, a, os, as)",
+                    "details": [
+                      "Regra de Bloqueio: É proibido duplicar a função de Objeto Direto.",
+                      "Construção agramatical: 'Entregou-o o relatório' (Incorreto por duplo OD)."
+                    ]
+                  },
+                  {
+                    "id": "ramo-oi-explicito",
+                    "kind": "process",
+                    "groupId": "etapa-selecao",
+                    "label": "Objeto Indireto já explícito (com preposição)",
+                    "details": [
+                      "Exemplo: 'Entregou ao diretor ___'. O termo 'ao diretor' ocupa a casela de Objeto Indireto."
+                    ]
+                  },
+                  {
+                    "id": "regra-inserir-direto",
+                    "kind": "rule",
+                    "groupId": "etapa-selecao",
+                    "label": "O pronome inserido DEVE SER DIRETO",
+                    "details": [
+                      "Formas canônicas: o, a, os, as (ou alomorfes -lo, -la, -no, -na).",
+                      "Exemplo correto: 'Entregou-o ao diretor'."
+                    ]
+                  },
+                  {
+                    "id": "bloqueio-inserir-indireto",
+                    "kind": "result",
+                    "groupId": "etapa-selecao",
+                    "label": "PROIBIDO inserir pronome indireto (lhe, lhes)",
+                    "details": [
+                      "Regra de Bloqueio: É proibido duplicar a função de Objeto Indireto.",
+                      "Construção agramatical: 'Entregou-lhe ao diretor' (Incorreto por duplo OI)."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-vtdi-pronominal",
+                    "to": "decisao-complemento-explicito",
+                    "label": ""
+                  },
+                  {
+                    "from": "decisao-complemento-explicito",
+                    "to": "ramo-od-explicito",
+                    "label": "Objeto Direto já explícito"
+                  },
+                  {
+                    "from": "decisao-complemento-explicito",
+                    "to": "ramo-oi-explicito",
+                    "label": "Objeto Indireto já explícito"
+                  },
+                  {
+                    "from": "ramo-od-explicito",
+                    "to": "regra-inserir-indireto",
+                    "label": ""
+                  },
+                  {
+                    "from": "regra-inserir-indireto",
+                    "to": "bloqueio-inserir-direto",
+                    "label": ""
+                  },
+                  {
+                    "from": "ramo-oi-explicito",
+                    "to": "regra-inserir-direto",
+                    "label": ""
+                  },
+                  {
+                    "from": "regra-inserir-direto",
+                    "to": "bloqueio-inserir-indireto",
+                    "label": ""
+                  }
+                ],
+                "provenance": {
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.99
+                },
+                "mermaidSource": "flowchart TD\n    inicio-vtdi-pronominal([\"Verbo Bitransitivo (VTDI) com Complemento Pronominal\"])\n    decisao-complemento-explicito{\"Qual complemento já está explícito no texto?\"}\n    ramo-od-explicito[\"Objeto Direto já explícito (sem preposição)\"]\n    regra-inserir-indireto[\"O pronome inserido DEVE SER INDIRETO\"]\n    bloqueio-inserir-direto([\"PROIBIDO inserir pronome direto (o, a, os, as)\"])\n    ramo-oi-explicito[\"Objeto Indireto já explícito (com preposição)\"]\n    regra-inserir-direto[\"O pronome inserido DEVE SER DIRETO\"]\n    bloqueio-inserir-indireto([\"PROIBIDO inserir pronome indireto (lhe, lhes)\"])\n    inicio-vtdi-pronominal --> decisao-complemento-explicito\n    decisao-complemento-explicito -->|\"Objeto Direto já explícito\"| ramo-od-explicito\n    decisao-complemento-explicito -->|\"Objeto Indireto já explícito\"| ramo-oi-explicito\n    ramo-od-explicito --> regra-inserir-indireto\n    regra-inserir-indireto --> bloqueio-inserir-direto\n    ramo-oi-explicito --> regra-inserir-direto\n    regra-inserir-direto --> bloqueio-inserir-indireto",
+                "groups": [
+                  {
+                    "id": "etapa-identificacao",
+                    "label": "Etapa 1: Diagnóstico do Complemento Explícito",
+                    "order": 1
+                  },
+                  {
+                    "id": "etapa-selecao",
+                    "label": "Etapa 2: Seleção e Bloqueio Pronominal",
+                    "order": 2
+                  }
+                ]
+              }
             }
           ],
           "presentation": {
@@ -2166,8 +2310,8 @@
               "EXP-IP-A10-G04-PROC-007"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         }
       ]

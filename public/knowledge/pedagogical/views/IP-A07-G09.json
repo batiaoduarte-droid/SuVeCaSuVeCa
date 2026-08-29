@@ -619,54 +619,96 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "decision_flow",
               "title": "Advérbio de Intensidade vs. Pronome Indefinido: O Método das Setas",
               "text": "MÉTODO DAS SETAS ┌─────────┐ aponta para ┌────────────────────────┐ Classificação: │ QUE │ ──────────────> │ ADJETIVO ou ADVÉRBIO │ ═> ADVÉRBIO DE INTENSIDADE └─────────┘ └────────────────────────┘ ┌─────────┐ aponta para ┌────────────────────────┐ Classificação: │ QUE │ ──────────────> │ SUBSTANTIVO │ ═> PRONOME INDEFINIDO └─────────┘ └────────────────────────┘",
               "structure": {
-                "kind": "relations",
-                "rootLabel": "MÉTODO DAS SETAS",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "palavra-que-modificadora",
+                "structuredText": "### Advérbio de Intensidade vs. Pronome Indefinido: O Método das Setas\n- **Ponto de Partida**: Palavra `\"QUE\"` atuando como modificador enfático/exclamativo.\n- **Procedimento do Método das Setas**:\n  1. Posicionar o ponto de partida da seta sobre a palavra `\"QUE\"`.\n  2. Traçar a seta até o termo que o `\"QUE\"` modifica diretamente na frase.\n  3. Classificar morfologicamente o termo apontado:\n     - **Se a seta aponta para ADJETIVO ou ADVÉRBIO**:\n       - $\\Rightarrow$ Classificação: **ADVÉRBIO DE INTENSIDADE** (equivale a *quão / muito*).\n       - *Exemplo*: *\"Que linda manhã!\"* (seta em \"linda\" = adjetivo) / *\"Que longe você foi!\"* (seta em \"longe\" = advérbio).\n     - **Se a seta aponta para SUBSTANTIVO**:\n       - $\\Rightarrow$ Classificação: **PRONOME INDEFINIDO** (pronome adjetivo; equivale a *quanto / que quantidade de*).\n       - *Exemplo*: *\"Que calor faz aqui!\"* (seta em \"calor\" = substantivo) / *\"Que bobagens você disse!\"* (seta em \"bobagens\" = substantivo).\n- **Regra de Bloqueio**: Não se basear pela presença de ponto de exclamação nem trocar mecanicamente por \"muito\".",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "aponta para"
+                    "id": "palavra-que-modificadora",
+                    "kind": "start",
+                    "label": "Palavra 'QUE' Modificadora em Contexto Exclamativo/Enfático",
+                    "details": [
+                      "Ocorrência da palavra 'QUE' antes de termos em orações exclamativas ou enfáticas",
+                      "Dúvida morfológica recorrente: Advérbio de Intensidade vs. Pronome Indefinido"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "Classificação:"
+                    "id": "lancar-seta-modificador",
+                    "kind": "process",
+                    "label": "Aplicar o Método das Setas: Traçar Seta até o Termo Modificado",
+                    "details": [
+                      "Identificar a palavra imediatamente subordinada ao 'QUE'",
+                      "Traçar a seta relacional do 'QUE' para o vocábulo alvo"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "QUE"
+                    "id": "decisao-classe-termo-apontado",
+                    "kind": "decision",
+                    "label": "A qual classe gramatical pertence a palavra apontada pela seta?",
+                    "details": [
+                      "Critério morfológico objetivo de classificação"
+                    ]
                   },
                   {
-                    "id": "segment-04",
-                    "label": "ADJETIVO ou ADVÉRBIO"
+                    "id": "resultado-adverbio-intensidade",
+                    "kind": "result",
+                    "label": "Classificação: Advérbio de Intensidade",
+                    "details": [
+                      "A seta aponta para ADJETIVO ou ADVÉRBIO",
+                      "Equivale semanticamente a 'quão' ou 'muito'",
+                      "Exemplos: 'Que bela!' (adjetivo) / 'Que longe!' (advérbio)"
+                    ]
                   },
                   {
-                    "id": "segment-05",
-                    "label": "ADVÉRBIO DE INTENSIDADE"
-                  },
-                  {
-                    "id": "segment-06",
-                    "label": "aponta para"
-                  },
-                  {
-                    "id": "segment-07",
-                    "label": "Classificação:"
-                  },
-                  {
-                    "id": "segment-08",
-                    "label": "QUE"
-                  },
-                  {
-                    "id": "segment-09",
-                    "label": "SUBSTANTIVO"
-                  },
-                  {
-                    "id": "segment-10",
-                    "label": "PRONOME INDEFINIDO"
+                    "id": "resultado-pronome-indefinido",
+                    "kind": "result",
+                    "label": "Classificação: Pronome Indefinido (Pronome Adjetivo)",
+                    "details": [
+                      "A seta aponta para SUBSTANTIVO",
+                      "Equivale semanticamente a 'quanto', 'quanta' ou 'que quantidade de'",
+                      "Exemplos: 'Que calor!' (substantivo) / 'Que audácia!' (substantivo)"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "palavra-que-modificadora",
+                    "to": "lancar-seta-modificador",
+                    "label": "analisar modificador"
+                  },
+                  {
+                    "from": "lancar-seta-modificador",
+                    "to": "decisao-classe-termo-apontado",
+                    "label": "verificar termo receptor"
+                  },
+                  {
+                    "from": "decisao-classe-termo-apontado",
+                    "to": "resultado-adverbio-intensidade",
+                    "label": "Aponta para ADJETIVO ou ADVÉRBIO"
+                  },
+                  {
+                    "from": "decisao-classe-termo-apontado",
+                    "to": "resultado-pronome-indefinido",
+                    "label": "Aponta para SUBSTANTIVO"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    palavra-que-modificadora[\"Palavra 'QUE' Modificadora em Contexto Exclamativo/Enfático\"] -->|analisar modificador| lancar-seta-modificador[\"Aplicar o Método das Setas: Traçar Seta até o Termo Modificado\"]\n    lancar-seta-modificador -->|verificar termo receptor| decisao-classe-termo-apontado{\"A qual classe gramatical pertence a palavra apontada pela seta?\"}\n    decisao-classe-termo-apontado -->|Aponta para ADJETIVO ou ADVÉRBIO| resultado-adverbio-intensidade[\"Classificação: Advérbio de Intensidade\"]\n    decisao-classe-termo-apontado -->|Aponta para SUBSTANTIVO| resultado-pronome-indefinido[\"Classificação: Pronome Indefinido (Pronome Adjetivo)\"]"
               }
             },
             {
@@ -868,62 +910,148 @@
             },
             {
               "type": "diagram",
-              "diagramType": "flow",
+              "diagramType": "decision_flow",
               "title": "Algoritmo Decisório da Tríade Conectiva",
               "text": "TESTE DE RESOLUÇÃO DA TRÍADE CONECTIVA │ Existe nexo de Causa e Efeito no plano dos fatos? (\"O fato de X fez com que ocorresse Y?\") │ ┌───────────────┴───────────────┐ SIM NÃO │ │ ┌──────────────┴──────────────┐ CONJUNÇÃO EXPLICATIVA │ Exclui-se a Explicativa! │ • Com Imperativo (ordem/pedido) │ Aplica-se o critério │ • Justificativa / Dedução │ cronológico dos fatos │ baseada em indício visível └──────────────┬──────────────┘ (sem causa física geradora) │ ┌──────────────┴──────────────┐ │ │ \"QUE\" introduz o 1º FATO \"QUE\" introduz o 2º FATO (o motivo / fato gerador) (o resultado / consequência) │ │ CONJUNÇÃO CAUSAL CONJUNÇÃO CONSECUTIVA (= porque / visto que) (admite \"tão/tanto... que\")",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "TESTE DE RESOLUÇÃO DA TRÍADE CONECTIVA",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-triade-conectiva",
+                "structuredText": "### Algoritmo Decisório da Tríade Conectiva da Palavra \"QUE\"\n1. **Etapa 1: Teste de Causalidade Factual**:\n   - Pergunta norteadora: *\"Existe nexo de Causa e Efeito real no plano dos fatos ('O fato X fez com que ocorresse Y')?\"*\n     - **NÃO**:\n       - $\rightarrow$ **CONJUNÇÃO COORDENADA EXPLICATIVA**.\n       - Ocorre com verbo no Imperativo (ordem/pedido, ex.: *\"Venha, que já é tarde\"*), ou justificativa/dedução lógica baseada em indício visível sem causa física geradora (ex.: *\"Choveu, que o chão está molhado\"*).\n     - **SIM**:\n       - Exclui-se a Explicativa e passa-se à Etapa 2 (Critério Cronológico).\n2. **Etapa 2: Critério Cronológico dos Fatos**:\n   - Analisar qual fato da linha do tempo o conectivo `\"QUE\"` introduz:\n     - **\"QUE\" introduz o 1º FATO (o motivo / fato gerador anterior)**:\n       - $\rightarrow$ **CONJUNÇÃO SUBORDINATIVA CAUSAL** (equivale a *porque, visto que, já que*).\n       - *Exemplo*: *\"Não foi trabalhar que estava com febre.\"* (febre = 1º fato / causa).\n     - **\"QUE\" introduz o 2º FATO (o resultado / efeito posterior decorrente)**:\n       - $\rightarrow$ **CONJUNÇÃO SUBORDINATIVA CONSECUTIVA** (admite a inserção de *tão/tanto... que* na oração principal).\n       - *Exemplo*: *\"Gritou tanto que ficou rouco.\"* (rouquidão = 2º fato / consequência).",
+                "groups": [
                   {
-                    "id": "segment-01",
-                    "label": "Existe nexo de Causa e Efeito no plano dos fatos? (\"O fato de X fez com que ocorresse Y?\")"
+                    "id": "fase-causalidade",
+                    "label": "Etapa 1: Teste de Causalidade Factual",
+                    "order": 1
                   },
                   {
-                    "id": "segment-02",
-                    "label": "SIM NÃO"
+                    "id": "fase-cronologia",
+                    "label": "Etapa 2: Análise Cronológica dos Fatos",
+                    "order": 2
                   },
                   {
-                    "id": "segment-03",
-                    "label": "CONJUNÇÃO EXPLICATIVA"
-                  },
-                  {
-                    "id": "segment-04",
-                    "label": "Exclui-se a Explicativa!"
-                  },
-                  {
-                    "id": "segment-05",
-                    "label": "Com Imperativo (ordem/pedido)"
-                  },
-                  {
-                    "id": "segment-06",
-                    "label": "Aplica-se o critério"
-                  },
-                  {
-                    "id": "segment-07",
-                    "label": "Justificativa / Dedução"
-                  },
-                  {
-                    "id": "segment-08",
-                    "label": "cronológico dos fatos"
-                  },
-                  {
-                    "id": "segment-09",
-                    "label": "baseada em indício visível"
-                  },
-                  {
-                    "id": "segment-10",
-                    "label": "(sem causa física geradora)"
-                  },
-                  {
-                    "id": "segment-11",
-                    "label": "\"QUE\" introduz o 1º FATO \"QUE\" introduz o 2º FATO (o motivo / fato gerador) (o resultado / consequência)"
-                  },
-                  {
-                    "id": "segment-12",
-                    "label": "CONJUNÇÃO CAUSAL CONJUNÇÃO CONSECUTIVA (= porque / visto que) (admite \"tão/tanto... que\")"
+                    "id": "fase-conclusao",
+                    "label": "Etapa 3: Classificação Conectiva Final",
+                    "order": 3
                   }
-                ]
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-triade-conectiva",
+                    "kind": "start",
+                    "label": "Início: Resolução da Tríade Conectiva (Causal vs. Consecutiva vs. Explicativa)",
+                    "groupId": "fase-causalidade",
+                    "details": [
+                      "Protocolo decisório para desambiguação da palavra 'QUE' conectiva em contextos explicativos e causais/consecutivos",
+                      "Um dos tópicos de maior índice de erro em concursos"
+                    ]
+                  },
+                  {
+                    "id": "decisao-causa-efeito-factual",
+                    "kind": "decision",
+                    "label": "Existe nexo de Causa e Efeito real no plano dos fatos ('O fato X produziu fisicamente o fato Y')?",
+                    "groupId": "fase-causalidade",
+                    "details": [
+                      "Verificar se há causalidade no mundo material ou mera justificativa/argumentação no discurso"
+                    ]
+                  },
+                  {
+                    "id": "resultado-conjuncao-explicativa",
+                    "kind": "result",
+                    "label": "Classificação: Conjunção Coordenativa Explicativa",
+                    "groupId": "fase-conclusao",
+                    "details": [
+                      "Com verbo no Imperativo (ordem/sugestão/pedido: 'Venha, que é tarde')",
+                      "Ou justificativa/hipótese dedutiva baseada em indício visível ('Choveu, que a rua está molhada')",
+                      "Sem causa física geradora direta"
+                    ]
+                  },
+                  {
+                    "id": "passo-cronologia-fatos",
+                    "kind": "process",
+                    "label": "Excluir a Explicativa & Avaliar a Cronologia dos Fatos",
+                    "groupId": "fase-cronologia",
+                    "details": [
+                      "Identificar qual fato ocorreu em 1º lugar no tempo (causa) e qual ocorreu em 2º lugar (efeito)",
+                      "Verificar qual dos dois fatos é introduzido pela palavra 'QUE'"
+                    ]
+                  },
+                  {
+                    "id": "decisao-posicao-cronologica-que",
+                    "kind": "decision",
+                    "label": "Qual dos fatos da linha temporal a oração iniciada por 'QUE' introduz?",
+                    "groupId": "fase-cronologia",
+                    "details": [
+                      "Mantra do conectivo: 'O que vem depois salva'"
+                    ]
+                  },
+                  {
+                    "id": "resultado-conjuncao-causal",
+                    "kind": "result",
+                    "label": "Classificação: Conjunção Subordinativa Causal",
+                    "groupId": "fase-conclusao",
+                    "details": [
+                      "'QUE' introduz o 1º FATO (o motivo / fato gerador)",
+                      "Equivale a: 'porque', 'já que', 'visto que'",
+                      "Exemplo: 'Ficou em casa que estava doente' (1º adoeceu = Causa)"
+                    ]
+                  },
+                  {
+                    "id": "resultado-conjuncao-consecutiva",
+                    "kind": "result",
+                    "label": "Classificação: Conjunção Subordinativa Consecutiva",
+                    "groupId": "fase-conclusao",
+                    "details": [
+                      "'QUE' introduz o 2º FATO (o resultado / consequência)",
+                      "Admite a correlação ou inserção implícita de 'tão/tanto... que'",
+                      "Exemplo: 'Estudou tanto que foi aprovado' (2º passou = Consequência)"
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-triade-conectiva",
+                    "to": "decisao-causa-efeito-factual",
+                    "label": "testar causalidade"
+                  },
+                  {
+                    "from": "decisao-causa-efeito-factual",
+                    "to": "resultado-conjuncao-explicativa",
+                    "label": "NÃO (Justificativa / Imperativo / Dedução)"
+                  },
+                  {
+                    "from": "decisao-causa-efeito-factual",
+                    "to": "passo-cronologia-fatos",
+                    "label": "SIM (Há Causa e Efeito Factual)"
+                  },
+                  {
+                    "from": "passo-cronologia-fatos",
+                    "to": "decisao-posicao-cronologica-que",
+                    "label": "analisar oração com 'QUE'"
+                  },
+                  {
+                    "from": "decisao-posicao-cronologica-que",
+                    "to": "resultado-conjuncao-causal",
+                    "label": "'QUE' introduz o 1º FATO (Causa / Motivo)"
+                  },
+                  {
+                    "from": "decisao-posicao-cronologica-que",
+                    "to": "resultado-conjuncao-consecutiva",
+                    "label": "'QUE' introduz o 2º FATO (Efeito / Consequência)"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-triade-conectiva[\"Início: Resolução da Tríade Conectiva (Causal vs. Consecutiva vs. Explicativa)\"] -->|testar causalidade| decisao-causa-efeito-factual{\"Existe nexo de Causa e Efeito real no plano dos fatos ('O fato X produziu fisicamente o fato Y')?\"}\n    decisao-causa-efeito-factual -->|NÃO (Justificativa / Imperativo / Dedução)| resultado-conjuncao-explicativa[\"Classificação: Conjunção Coordenativa Explicativa\"]\n    decisao-causa-efeito-factual -->|SIM (Há Causa e Efeito Factual)| passo-cronologia-fatos[\"Excluir a Explicativa & Avaliar a Cronologia dos Fatos\"]\n    passo-cronologia-fatos -->|analisar oração com 'QUE'| decisao-posicao-cronologica-que{\"Qual dos fatos da linha temporal a oração iniciada por 'QUE' introduz?\"}\n    decisao-posicao-cronologica-que -->|'QUE' introduz o 1º FATO (Causa / Motivo)| resultado-conjuncao-causal[\"Classificação: Conjunção Subordinativa Causal\"]\n    decisao-posicao-cronologica-que -->|'QUE' introduz o 2º FATO (Efeito / Consequência)| resultado-conjuncao-consecutiva[\"Classificação: Conjunção Subordinativa Consecutiva\"]"
               }
             },
             {

@@ -1262,8 +1262,168 @@
           "procedureId": "PROC-A08-G04-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[ Proposta de Ponto e Vírgula ] │ ▼ A oração subsequente é SUBORDINADA adverbial (6Cs + FTP) ou oração reduzida com valor causal/condicional? ├─► SIM ──► [ MARCAR ERRADO / PROIBIDO ] └─► NÃO │ ▼ A estrutura é uma ENUMERAÇÃO ou ORAÇÃO COORDENADA? ├─► NÃO ──► [ MARCAR ERRADO ] └─► SIM │ ▼ [ CHECAGEM DA TRAVA DE COLOCAÇÃO PRONOMINAL ] Ao retirar o conectivo, a oração após ';' inicia-se por pronome oblíquo átono (ex: '; te deixa')? ├─► SIM ──► [ MARCAR ERRADO (Erro de Próclise) ] └─► NÃO ──► [ MARCAR CERTO (Validação Concluída) ]"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo de Validação de Ponto e Vírgula e Trava de Próclise",
+              "text": "[ Proposta de Ponto e Vírgula ] │ ▼ A oração subsequente é SUBORDINADA adverbial (6Cs + FTP) ou oração reduzida com valor causal/condicional? ├─► SIM ──► [ MARCAR ERRADO / PROIBIDO ] └─► NÃO │ ▼ A estrutura é uma ENUMERAÇÃO ou ORAÇÃO COORDENADA? ├─► NÃO ──► [ MARCAR ERRADO ] └─► SIM │ ▼ [ CHECAGEM DA TRAVA DE COLOCAÇÃO PRONOMINAL ] Ao retirar o conectivo, a oração após ';' inicia-se por pronome oblíquo átono (ex: '; te deixa')? ├─► SIM ──► [ MARCAR ERRADO (Erro de Próclise) ] └─► NÃO ──► [ MARCAR CERTO (Validação Concluída) ]",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "proposta-ponto-virgula",
+                "structuredText": "ALGORITMO DE VALIDAÇÃO DE PONTO E VÍRGULA E TRAVA DE PRÓCLISE\n\n1. FILTRO 1: TESTE DE SUBORDINAÇÃO ADVERBIAL\n   - A oração subsequente ao ponto e vírgula é subordinada adverbial (6C + FTP) ou reduzida com valor causal/condicional?\n     * SIM: MARCAR ERRADO / PROIBIDO (Ponto e vírgula não separa oração principal de subordinada adverbial integrada).\n     * NÃO: Avançar para o Filtro 2.\n\n2. FILTRO 2: VALIDAÇÃO DE COORDENAÇÃO OU ENUMERAÇÃO\n   - A estrutura sintática constitui uma enumeração de itens longos ou orações coordenadas autônomas?\n     * NÃO: MARCAR ERRADO (Uso ilegítimo de ponto e vírgula fora de coordenação/enumeração).\n     * SIM: Avançar para o Filtro 3.\n\n3. FILTRO 3: CHECAGEM DA TRAVA DE COLOCAÇÃO PRONOMINAL\n   - Ao retirar o conectivo, a oração após o ponto e vírgula inicia-se por pronome oblíquo átono (ex.: '; te deixa', '; se faz')?\n     * SIM: MARCAR ERRADO (Violação da regra de colocação pronominal / próclise proibida em início de oração após pausa forte).\n     * NÃO: MARCAR CERTO (Validação concluída: estrutura sintática e colocação pronominal perfeitas).",
+                "groups": [
+                  {
+                    "id": "fase-subordinacao",
+                    "label": "Filtro 1: Teste de Subordinação Adverbial",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-coordenacao",
+                    "label": "Filtro 2: Validação de Coordenação ou Enumeração",
+                    "order": 2
+                  },
+                  {
+                    "id": "fase-proclise",
+                    "label": "Filtro 3: Trava de Colocação Pronominal",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "proposta-ponto-virgula",
+                    "kind": "start",
+                    "label": "Proposta de Uso de Ponto e Vírgula (;)",
+                    "details": [
+                      "Item de prova propõe inserir ou substituir sinal de pontuação por ponto e vírgula.",
+                      "O ponto e vírgula estabelece uma pausa intermediária entre a vírgula e o ponto final."
+                    ],
+                    "groupId": "fase-subordinacao"
+                  },
+                  {
+                    "id": "decisao-subordinada",
+                    "kind": "decision",
+                    "label": "A oração subsequente é subordinada adverbial ou reduzida causal/condicional?",
+                    "details": [
+                      "Verifique se a oração expressa circunstância adverbial (6C + FTP: Causal, Comparativa, Concessiva, Condicional, Conformativa, Consecutiva, Final, Temporal, Proporcional).",
+                      "Inclui orações reduzidas iniciadas por particípio, gerúndio ou preposição com valor circunstancial (ex.: 'Com a aprovação do projeto...')."
+                    ],
+                    "groupId": "fase-subordinacao"
+                  },
+                  {
+                    "id": "resultado-proibido-subordinada",
+                    "kind": "result",
+                    "label": "Marcar Errado: Ponto e Vírgula Proibido em Subordinação",
+                    "details": [
+                      "O ponto e vírgula não pode separar orações subordinadas integradas de sua oração principal.",
+                      "Construções como *'Ele não veio; porque estava doente' são terminantemente incorretas.",
+                      "Gabarito: Item ERRADO."
+                    ],
+                    "groupId": "fase-subordinacao"
+                  },
+                  {
+                    "id": "decisao-estrutura-coordenada",
+                    "kind": "decision",
+                    "label": "A estrutura é uma enumeração complexa ou oração coordenada?",
+                    "details": [
+                      "Verifique se o sinal separa membros de uma enumeração com termos internos já pontuados.",
+                      "Ou se separa orações coordenadas sindéticas (adversativas, conclusivas) ou assindéticas com simetria sintática."
+                    ],
+                    "groupId": "fase-coordenacao"
+                  },
+                  {
+                    "id": "resultado-errado-sem-coordenacao",
+                    "kind": "result",
+                    "label": "Marcar Errado: Ausência de Estrutura Coordenada ou Enumerativa",
+                    "details": [
+                      "O ponto e vírgula exige paridade sintática autônoma entre os membros coordenados ou tópicos enumerativos.",
+                      "Se a estrutura não for coordenada nem enumeração, o emprego é ilegítimo.",
+                      "Gabarito: Item ERRADO."
+                    ],
+                    "groupId": "fase-coordenacao"
+                  },
+                  {
+                    "id": "decisao-trava-proclise",
+                    "kind": "decision",
+                    "label": "Ao retirar o conectivo, a oração após ';' inicia-se por pronome oblíquo átono?",
+                    "details": [
+                      "Teste da Trava de Próclise: examine o termo imediatamente seguinte ao ponto e vírgula.",
+                      "Exemplo: Se a retirada da conjunção 'e' deixar '; te convido' ou '; se trata'.",
+                      "O ponto e vírgula atua como fronteira oracional forte que impede próclise absoluta em início de oração."
+                    ],
+                    "groupId": "fase-proclise"
+                  },
+                  {
+                    "id": "resultado-erro-proclise",
+                    "kind": "result",
+                    "label": "Marcar Errado: Violação da Trava de Próclise",
+                    "details": [
+                      "É proibido iniciar oração com pronome oblíquo átono após pausa forte pontuada por ponto e vírgula.",
+                      "Exemplo incorreto: *'O edital foi publicado; me informaram sobre as datas.' (Deveria ser 'informaram-me').",
+                      "Gabarito: Item ERRADO."
+                    ],
+                    "groupId": "fase-proclise"
+                  },
+                  {
+                    "id": "resultado-validacao-concluida",
+                    "kind": "result",
+                    "label": "Marcar Certo: Validação Concluída com Sucesso",
+                    "details": [
+                      "A estrutura cumpre todos os requisitos sintáticos e morfológicos normativos.",
+                      "Separação coordenada/enumerativa válida e colocação pronominal impecável.",
+                      "Gabarito: Item CERTO."
+                    ],
+                    "groupId": "fase-proclise"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "proposta-ponto-virgula",
+                    "to": "decisao-subordinada"
+                  },
+                  {
+                    "from": "decisao-subordinada",
+                    "to": "resultado-proibido-subordinada",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "decisao-subordinada",
+                    "to": "decisao-estrutura-coordenada",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "decisao-estrutura-coordenada",
+                    "to": "resultado-errado-sem-coordenacao",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "decisao-estrutura-coordenada",
+                    "to": "decisao-trava-proclise",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "decisao-trava-proclise",
+                    "to": "resultado-erro-proclise",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "decisao-trava-proclise",
+                    "to": "resultado-validacao-concluida",
+                    "label": "Não"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila/roteiros",
+                  "canonicalUnit": "IP-A08-G04",
+                  "lesson": "A08",
+                  "generationMethod": "semantic-regeneration-v2",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    proposta-ponto-virgula[\"Proposta de Ponto e Vírgula (;)\"] --> decisao-subordinada{\"A oração subsequente é subordinada adverbial ou reduzida?\"}\n    decisao-subordinada -- \"Sim\" --> resultado-proibido-subordinada[\"Marcar Errado: Proibido em Subordinação\"]\n    decisao-subordinada -- \"Não\" --> decisao-estrutura-coordenada{\"É enumeração ou oração coordenada?\"}\n    decisao-estrutura-coordenada -- \"Não\" --> resultado-errado-sem-coordenacao[\"Marcar Errado: Ausência de Coordenação\"]\n    decisao-estrutura-coordenada -- \"Sim\" --> decisao-trava-proclise{\"Inicia por pronome oblíquo átono após ';' ?\"}\n    decisao-trava-proclise -- \"Sim\" --> resultado-erro-proclise[\"Marcar Errado: Violação da Trava de Próclise\"]\n    decisao-trava-proclise -- \"Não\" --> resultado-validacao-concluida[\"Marcar Certo: Validação Concluída\"]\n\n    classDef start fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;\n    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;\n    classDef result fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;\n    classDef error fill:#ffebee,stroke:#d32f2f,stroke-width:2px;\n    class proposta-ponto-virgula start;\n    class decisao-subordinada,decisao-estrutura-coordenada,decisao-trava-proclise decision;\n    class resultado-validacao-concluida result;\n    class resultado-proibido-subordinada,resultado-errado-sem-coordenacao,resultado-erro-proclise error;"
+              }
             }
           ],
           "presentation": {
@@ -1274,8 +1434,8 @@
               "EXP-IP-A08-G04-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {
@@ -1657,8 +1817,183 @@
           "procedureId": "PROC-A08-G04-005",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[ Palavra Aspeada Identificada ] │ ▼ O trecho é reprodução da fala/texto de outrem? ├─► SIM ──► [ CITAÇÃO DIRETA / DISCURSO DIRETO ] └─► NÃO │ ▼ É estrangeirismo, neologismo, arcaísmo ou gíria? ├─► SIM ──► [ DESVIO LEXICAL / NEOLOGISMO / ESTRANGEIRISMO ] └─► NÃO │ ▼ [ APLICAR O MÉTODO DAS SETAS NO CONTEXTO ] │ ├─► A seta liga a termo que CONTRADIZ o sentido literal? │ (Ex.: \"brilhante\" ───► \"aquela asneira\") │ └─► [ IRONIA (Diz o oposto do que se pensa) ] │ ├─► A palavra opera por transposição metafórica / relativizada? │ (Ex.: \"traduzem\" ───► registro coloquial dos réus) │ └─► [ SENTIDO FIGURADO / CONOTATIVO / RELATIVIZADO ] │ └─► Inexiste figura ou contradição, apenas realce do vocábulo? (Ex.: Diga-me \"como\" direi isso) └─► [ DESTAQUE / ÊNFASE / RESSALTE ]"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Método das Setas Contextuais para Diferenciação das Aspas",
+              "text": "[ Palavra Aspeada Identificada ] │ ▼ O trecho é reprodução da fala/texto de outrem? ├─► SIM ──► [ CITAÇÃO DIRETA / DISCURSO DIRETO ] └─► NÃO │ ▼ É estrangeirismo, neologismo, arcaísmo ou gíria? ├─► SIM ──► [ DESVIO LEXICAL / NEOLOGISMO / ESTRANGEIRISMO ] └─► NÃO │ ▼ [ APLICAR O MÉTODO DAS SETAS NO CONTEXTO ] │ ├─► A seta liga a termo que CONTRADIZ o sentido literal? │ (Ex.: \"brilhante\" ───► \"aquela asneira\") │ └─► [ IRONIA (Diz o oposto do que se pensa) ] │ ├─► A palavra opera por transposição metafórica / relativizada? │ (Ex.: \"traduzem\" ───► registro coloquial dos réus) │ └─► [ SENTIDO FIGURADO / CONOTATIVO / RELATIVIZADO ] │ └─► Inexiste figura ou contradição, apenas realce do vocábulo? (Ex.: Diga-me \"como\" direi isso) └─► [ DESTAQUE / ÊNFASE / RESSALTE ]",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "termo-aspeado-identificado",
+                "structuredText": "MÉTODO DAS SETAS CONTEXTUAIS PARA DIFERENCIAÇÃO DAS ASPAS\n\n1. ETAPA 1: TRIAGEM DISCURSIVA E DE AUTORIA\n   - O trecho aspeado é reprodução da fala/texto de outrem?\n     * SIM: CITAÇÃO DIRETA / DISCURSO DIRETO (Mudança de interlocutor).\n     * NÃO: Avançar para a Etapa 2.\n\n2. ETAPA 2: TRIAGEM LEXICAL E REGISTRO LINGUÍSTICO\n   - É estrangeirismo, neologismo, arcaísmo ou gíria?\n     * SIM: DESVIO LEXICAL / NEOLOGISMO / ESTRANGEIRISMO.\n     * NÃO: Avançar para o Método das Setas Semânticas (Etapa 3).\n\n3. ETAPA 3: APLICAÇÃO DO MÉTODO DAS SETAS NO CONTEXTO\n   - Rastreie o vetor semântico estabelecido pelo vocábulo no cotexto:\n     * Ramo A (Contradição): A seta liga a termo que CONTRADIZ o sentido literal (ex.: 'brilhante' -> 'aquela asneira') -> IRONIA (Diz o oposto do que se pensa).\n     * Ramo B (Transposição): A palavra opera por metáfora ou registro relativizado (ex.: 'traduzem' -> registro coloquial) -> SENTIDO FIGURADO / CONOTATIVO.\n     * Ramo C (Realce Puro): Inexiste figura ou contradição, servindo apenas para ressaltar a própria palavra (ex.: Diga-me o 'como') -> DESTAQUE / ÊNFASE / RESSALTE.",
+                "groups": [
+                  {
+                    "id": "fase-autoria",
+                    "label": "Etapa 1: Triagem Discursiva e de Autoria",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-registro",
+                    "label": "Etapa 2: Triagem Lexical e Registro Linguístico",
+                    "order": 2
+                  },
+                  {
+                    "id": "fase-setas-semanticas",
+                    "label": "Etapa 3: Método das Setas Contextuais",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "termo-aspeado-identificado",
+                    "kind": "start",
+                    "label": "Identificar Palavra ou Trecho Entre Aspas",
+                    "details": [
+                      "Isole o vocábulo ou sintagma grafado entre aspas duplas no texto da questão.",
+                      "O emprego de aspas pode sinalizar mudança de voz, desvio lexical, sentido figurado, ironia ou realce."
+                    ],
+                    "groupId": "fase-autoria"
+                  },
+                  {
+                    "id": "decisao-citacao-direta",
+                    "kind": "decision",
+                    "label": "O trecho é reprodução literal da fala ou texto de outrem?",
+                    "details": [
+                      "Verifique se há verbos de elocução (disse, afirmou, declarou) ou citação de autor terceiro.",
+                      "Configura transcrição textual fidedigna alheia ao enunciador principal."
+                    ],
+                    "groupId": "fase-autoria"
+                  },
+                  {
+                    "id": "resultado-citacao-direta",
+                    "kind": "result",
+                    "label": "Citação Direta / Discurso Direto",
+                    "details": [
+                      "Função: Delimitar a voz de outro interlocutor inserida no discurso.",
+                      "Exemplo: O ministro declarou: 'Não haverá contingenciamento'.",
+                      "Eliminar alternativas que alegam ironia ou neologismo."
+                    ],
+                    "groupId": "fase-autoria"
+                  },
+                  {
+                    "id": "decisao-desvio-lexical",
+                    "kind": "decision",
+                    "label": "É estrangeirismo, neologismo, gíria ou arcaísmo?",
+                    "details": [
+                      "Examine se o termo pertence a idioma estrangeiro sem aportuguesamento (ex.: 'compliance', 'software').",
+                      "Ou se é uma criação vocabular recente (neologismo) ou expressão marcadamente gíria/coloquial."
+                    ],
+                    "groupId": "fase-registro"
+                  },
+                  {
+                    "id": "resultado-desvio-lexical",
+                    "kind": "result",
+                    "label": "Desvio Lexical / Estrangeirismo / Neologismo",
+                    "details": [
+                      "Função: Assinalar vocábulo não integrado ao vocabulário formal padrão da língua.",
+                      "Exemplo: Realizou um 'brainstorming' com a equipe técnica.",
+                      "Gabarito: Marcar enquadramento lexical."
+                    ],
+                    "groupId": "fase-registro"
+                  },
+                  {
+                    "id": "decisao-setas-contexto",
+                    "kind": "decision",
+                    "label": "Aplicar o Método das Setas Semânticas no Contexto",
+                    "details": [
+                      "Rastreie a correlação semântica entre o termo aspeado e os termos vizinhos no período.",
+                      "Avalie se a relação é de contradição irônica, transposição conotativa ou simples realce metalinguístico."
+                    ],
+                    "groupId": "fase-setas-semanticas"
+                  },
+                  {
+                    "id": "resultado-ironia",
+                    "kind": "result",
+                    "label": "Ironia: Sentido Oposto ao Literal",
+                    "details": [
+                      "A seta liga a termo que CONTRADIZ explicitamente o sentido literal do vocábulo.",
+                      "Exemplo: Foi uma decisão 'brilhante' que gerou prejuízos irreparáveis a todos.",
+                      "Função: Expressar crítica, sarcasmo ou desaprovação sutil."
+                    ],
+                    "groupId": "fase-setas-semanticas"
+                  },
+                  {
+                    "id": "resultado-sentido-figurado",
+                    "kind": "result",
+                    "label": "Sentido Figurado / Conotativo / Relativizado",
+                    "details": [
+                      "A palavra opera por metáfora, extensão semântica ou registro relativizado.",
+                      "Exemplo: Os dados 'conversam' entre si demonstrando a tendência de alta.",
+                      "Função: Indicar que o termo não deve ser interpretado em sua acepção denotativa estrita."
+                    ],
+                    "groupId": "fase-setas-semanticas"
+                  },
+                  {
+                    "id": "resultado-destaque-enfase",
+                    "kind": "result",
+                    "label": "Destaque / Ênfase / Ressalte Metalinguístico",
+                    "details": [
+                      "Inexiste figura de linguagem ou contradição irônica, buscando apenas chamar a atenção sobre o próprio signo.",
+                      "Exemplo: Explique-me o 'como' e o 'quando' desta operação.",
+                      "Função: Realce formal ou foco metalinguístico."
+                    ],
+                    "groupId": "fase-setas-semanticas"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "termo-aspeado-identificado",
+                    "to": "decisao-citacao-direta"
+                  },
+                  {
+                    "from": "decisao-citacao-direta",
+                    "to": "resultado-citacao-direta",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "decisao-citacao-direta",
+                    "to": "decisao-desvio-lexical",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "decisao-desvio-lexical",
+                    "to": "resultado-desvio-lexical",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "decisao-desvio-lexical",
+                    "to": "decisao-setas-contexto",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "decisao-setas-contexto",
+                    "to": "resultado-ironia",
+                    "label": "Seta contradiz sentido literal"
+                  },
+                  {
+                    "from": "decisao-setas-contexto",
+                    "to": "resultado-sentido-figurado",
+                    "label": "Seta opera transposição conotativa"
+                  },
+                  {
+                    "from": "decisao-setas-contexto",
+                    "to": "resultado-destaque-enfase",
+                    "label": "Seta apenas realça o vocábulo"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila/roteiros",
+                  "canonicalUnit": "IP-A08-G04",
+                  "lesson": "A08",
+                  "generationMethod": "semantic-regeneration-v2",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    termo-aspeado-identificado[\"Identificar Palavra/Trecho Entre Aspas\"] --> decisao-citacao-direta{\"É reprodução de fala/texto de outrem?\"}\n    decisao-citacao-direta -- \"Sim\" --> resultado-citacao-direta[\"Citação Direta / Discurso Direto\"]\n    decisao-citacao-direta -- \"Não\" --> decisao-desvio-lexical{\"É estrangeirismo, neologismo ou gíria?\"}\n    decisao-desvio-lexical -- \"Sim\" --> resultado-desvio-lexical[\"Desvio Lexical / Estrangeirismo\"]\n    decisao-desvio-lexical -- \"Não\" --> decisao-setas-contexto{\"Aplicar Método das Setas no Contexto\"}\n    decisao-setas-contexto -- \"Seta contradiz sentido literal\" --> resultado-ironia[\"Ironia: Sentido Oposto\"]\n    decisao-setas-contexto -- \"Seta opera transposição conotativa\" --> resultado-sentido-figurado[\"Sentido Figurado / Conotativo\"]\n    decisao-setas-contexto -- \"Seta apenas realça o vocábulo\" --> resultado-destaque-enfase[\"Destaque / Ênfase Metalinguística\"]\n\n    classDef start fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;\n    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;\n    classDef result fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;\n    class termo-aspeado-identificado start;\n    class decisao-citacao-direta,decisao-desvio-lexical,decisao-setas-contexto decision;\n    class resultado-citacao-direta,resultado-desvio-lexical,resultado-ironia,resultado-sentido-figurado,resultado-destaque-enfase result;"
+              }
             }
           ],
           "presentation": {
@@ -1669,8 +2004,8 @@
               "EXP-IP-A08-G04-PROC-005"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

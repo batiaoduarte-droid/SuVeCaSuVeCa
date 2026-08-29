@@ -610,17 +610,115 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "comparison",
               "title": "A Matriz Semântica Cebraspe: Hipótese vs. Dúvida vs. Impossibilidade",
               "text": "MATRIZ DE VALORES SEMÂNTICOS NO CEBRASPE │ ┌────────────────────────────┼────────────────────────────┐ │ │ │",
               "structure": {
-                "kind": "source_segments",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "comparison",
+                "layout": "vertical",
+                "rootId": "matriz-semantica-cebraspe",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "MATRIZ DE VALORES SEMÂNTICOS NO CEBRASPE"
+                    "id": "matriz-semantica-cebraspe",
+                    "kind": "start",
+                    "label": "Matriz Semântica Cebraspe: Hipótese vs. Dúvida vs. Impossibilidade",
+                    "details": [
+                      "Desconstrução do mito da exclusividade hipotética do subjuntivo e consolidação das distinções semânticas cobradas em bancas de alto nível."
+                    ]
+                  },
+                  {
+                    "id": "eixo-hipotese",
+                    "kind": "category",
+                    "label": "1. Hipótese / Possibilidade (Fato Factível)",
+                    "details": [
+                      "Expressa tanto pelo MODO SUBJUNTIVO quanto pelo FUTURO DO PRETÉRITO DO INDICATIVO.",
+                      "Indica fato factível, tese teórica plausível ou formulação científica.",
+                      "Equação Canônica: Hipótese = Possibilidade ≠ Impossibilidade.",
+                      "Pegadinha Cebraspe: banca afirma falsamente que a forma hipotética indica 'certeza da impossibilidade' ou 'fato improvável' ➔ Assertiva ERRADA."
+                    ]
+                  },
+                  {
+                    "id": "eixo-duvida",
+                    "kind": "category",
+                    "label": "2. Dúvida / Incerteza (Contestação Explícita)",
+                    "details": [
+                      "Marcada por hesitação epistemológica, questionamento direto ou contestação discursiva.",
+                      "Regra Contextual 'O que vem depois salva': valida-se a dúvida examinando o período seguinte (ex.: autor refuta a citação com 'A verdade é outra').",
+                      "Exemplo: 'Haverá alguém em casa?' ou formulação em futuro do pretérito que expressa incerteza assumida."
+                    ]
+                  },
+                  {
+                    "id": "eixo-impossibilidade",
+                    "kind": "category",
+                    "label": "3. Impossibilidade / Fato Irrealizável (Negação Categórica)",
+                    "details": [
+                      "Negação absoluta e categórica de factibilidade no mundo real.",
+                      "Não se confunde com hipótese teórica ou projeção condicional viável.",
+                      "A banca tenta induzir o candidato a tratar formulações de possibilidade como 'impossibilidade de realização'."
+                    ]
+                  },
+                  {
+                    "id": "criterio-diferenciacao",
+                    "kind": "rule",
+                    "label": "Critério de Resolução Cebraspe",
+                    "details": [
+                      "Se o texto traz Subjuntivo ou Futuro do Pretérito descrevendo cenário factível: marcar HIPÓTESE / POSSIBILIDADE.",
+                      "Se houver refutação ou interrogação explícita no contexto: marcar DÚVIDA / INCERTEZA.",
+                      "Jamais marcar IMPOSSIBILIDADE para assertivas que descrevem hipóteses viáveis."
+                    ]
+                  },
+                  {
+                    "id": "resultado-gabarito",
+                    "kind": "result",
+                    "label": "Gabarito Validado com Precisão Semântica",
+                    "details": [
+                      "Julgamento determinístico de assertivas de semântica verbal e valores modais."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "matriz-semantica-cebraspe",
+                    "to": "eixo-hipotese"
+                  },
+                  {
+                    "from": "matriz-semantica-cebraspe",
+                    "to": "eixo-duvida"
+                  },
+                  {
+                    "from": "matriz-semantica-cebraspe",
+                    "to": "eixo-impossibilidade"
+                  },
+                  {
+                    "from": "eixo-hipotese",
+                    "to": "criterio-diferenciacao"
+                  },
+                  {
+                    "from": "eixo-duvida",
+                    "to": "criterio-diferenciacao"
+                  },
+                  {
+                    "from": "eixo-impossibilidade",
+                    "to": "criterio-diferenciacao"
+                  },
+                  {
+                    "from": "criterio-diferenciacao",
+                    "to": "resultado-gabarito"
+                  }
+                ],
+                "structuredText": "### Matriz Semântica Cebraspe: Hipótese vs. Dúvida vs. Impossibilidade\n\n- **1. Hipótese / Possibilidade:** Fato factível, tese teórica ou definição científica. Expressa pelo Subjuntivo ou pelo Futuro do Pretérito do Indicativo. *Equação:* Hipótese = Possibilidade ≠ Impossibilidade.\n- **2. Dúvida / Incerteza:** Questionamento ou tese sob contestação discursiva explícita (validada pelo contexto subsequente 'o que vem depois salva').\n- **3. Impossibilidade / Fato Irrealizável:** Negação categórica de factibilidade. A banca erra ao classificar hipóteses teóricas como fatos impossíveis.\n- **Critério Cebraspe:** Diferenciar a potencialidade viável (hipótese) da contestação expressa (dúvida) e da negação absoluta (impossibilidade).",
+                "mermaidSource": "flowchart TD\n    matriz-semantica-cebraspe[\"Matriz Semântica Cebraspe\"] --> eixo-hipotese[\"1. Hipótese / Possibilidade<br>Subjuntivo e Futuro do Pretérito\"]\n    matriz-semantica-cebraspe --> eixo-duvida[\"2. Dúvida / Incerteza<br>Contestação e Contexto\"]\n    matriz-semantica-cebraspe --> eixo-impossibilidade[\"3. Impossibilidade<br>Negação Categórica\"]\n    eixo-hipotese --> criterio-diferenciacao[\"Critério de Resolução Cebraspe\"]\n    eixo-duvida --> criterio-diferenciacao\n    eixo-impossibilidade --> criterio-diferenciacao\n    criterio-diferenciacao --> resultado-gabarito[\"Gabarito Validado\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {

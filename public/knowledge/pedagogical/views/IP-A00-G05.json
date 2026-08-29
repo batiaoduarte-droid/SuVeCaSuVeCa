@@ -1005,8 +1005,218 @@
           "procedureId": "PROC-A00-G05-HIFEN-FUNDAMENTOS-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "PASSO 1: O segundo elemento começa com \"H\"? │ ┌──────────────┴──────────────┐ ▼ ▼ SIM NÃO │ │ ▼ ▼ [ USA HÍFEN (-) ] Vá para o PASSO 2 (\"H é um problema\") │ ▼ PASSO 2: O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) │ ├─► É Independente / Tônico? ──► [ USA HÍFEN (-) ] (\"O forte se basta\") ├─► É \"MAL\"? ──────────────────► Vogal/H = HÍFEN | Consoante = JUNTO ├─► É \"CO-\"? ──────────────────► SEMPRE JUNTO (salvo H; dobra S/R) ├─► É \"SUB-\" / \"AD-\"? ─────────► B, D, R = HÍFEN (não dobra R) | Resto = JUNTO └─► Prefixo regular em vogal? ─► Vá para o PASSO 3 │ ▼ PASSO 3: Teste de Colisão / Encontro entre as Letras │ ┌──────────────┼─────────────────────────────┐ ▼ ▼ ▼ LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S │ │ │ ▼ ▼ ▼ [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] (\"Iguais se repelem\") (\"Diferentes se atraem\") ( RR ou SS )"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos",
+              "text": "PASSO 1: O segundo elemento começa com \"H\"? │ ┌──────────────┴──────────────┐ ▼ ▼ SIM NÃO │ │ ▼ ▼ [ USA HÍFEN (-) ] Vá para o PASSO 2 (\"H é um problema\") │ ▼ PASSO 2: O prefixo é INDEPENDENTE, TÔNICO ou ESPECIAL? (além, ex, recém, sem, vice, grão, pré-, pró-, pós-) │ ├─► É Independente / Tônico? ──► [ USA HÍFEN (-) ] (\"O forte se basta\") ├─► É \"MAL\"? ──────────────────► Vogal/H = HÍFEN | Consoante = JUNTO ├─► É \"CO-\"? ──────────────────► SEMPRE JUNTO (salvo H; dobra S/R) ├─► É \"SUB-\" / \"AD-\"? ─────────► B, D, R = HÍFEN (não dobra R) | Resto = JUNTO └─► Prefixo regular em vogal? ─► Vá para o PASSO 3 │ ▼ PASSO 3: Teste de Colisão / Encontro entre as Letras │ ┌──────────────┼─────────────────────────────┐ ▼ ▼ ▼ LETRAS IGUAIS VOGAIS DIFERENTES VOGAL + R ou S │ │ │ ▼ ▼ ▼ [ USA HÍFEN (-) ] [ GRAFA JUNTO ] [ GRAFA JUNTO E DOBRA ] (\"Iguais se repelem\") (\"Diferentes se atraem\") ( RR ou SS )",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "decisao-letra-h",
+                "structuredText": "# Algoritmo Mestre de Decisão Rápida para Hifenização de Prefixos\n\nÁrvore de decisão em 3 passos para o emprego do hífen em palavras prefixadas:\n\n1. **Passo 1: Verificação da Letra H**:\n   - **Sim (Segundo elemento inicia com H)**: **USA HÍFEN (-)** (*anti-higiênico*, *super-homem*, *micro-história*).\n   - **Não**: Prossiga para o Passo 2.\n\n2. **Passo 2: Verificação do Tipo de Prefixo**:\n   - **Tônico / Autônomo** (*além*, *ex*, *recém*, *sem*, *vice*, *grão*, *pré/pró/pós tônicos*): **USA HÍFEN (-)** (*ex-diretor*, *recém-nascido*, *pré-escola*).\n   - **Prefixo MAL**: Seguido de Vogal/H = **HÍFEN** (*mal-estar*, *mal-humorado*); Consoante = **JUNTO** (*malcriado*, *malfeito*).\n   - **Prefixo CO- / RE-**: **SEMPRE JUNTO** (*coobrigação*, *coautor*, *reeditar*, *corréu*, *cosseno*).\n   - **Prefixo SUB- / AD-**: Diante de B, D ou R = **HÍFEN** sem dobrar (*sub-base*, *sub-reitor*, *ad-rogar*); Resto = **JUNTO** (*subchefe*).\n   - **Prefixo Regular em Vogal**: Prossiga para o Passo 3.\n\n3. **Passo 3: Teste de Colisão das Letras de Contato**:\n   - **Letras Iguais**: **USA HÍFEN (-)** (*micro-ondas*, *anti-inflamatório*, *contra-ataque*).\n   - **Vogais Diferentes**: **GRAFA JUNTO** (*autoescola*, *infraestrutura*, *semianalfabeto*).\n   - **Vogal + R ou S**: **GRAFA JUNTO E DOBRA (RR / SS)** (*antirreflexo*, *minissaia*, *ultrassom*, *contrarregra*).",
+                "groups": [
+                  {
+                    "id": "passo-1-h",
+                    "label": "Passo 1: Verificação da Letra H",
+                    "order": 1
+                  },
+                  {
+                    "id": "passo-2-prefixos-especiais",
+                    "label": "Passo 2: Verificação de Prefixos Especiais e Tônicos",
+                    "order": 2
+                  },
+                  {
+                    "id": "passo-3-colisao-vogais",
+                    "label": "Passo 3: Teste de Colisão das Letras de Contato",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "decisao-letra-h",
+                    "kind": "decision",
+                    "label": "O segundo elemento começa com H?",
+                    "details": [
+                      "Regra da letra H: a presença de H no segundo elemento impõe o uso do hífen com qualquer prefixo.",
+                      "Mnemônica: 'H é um problema / H não tem som, logo exige hífen para manter a integridade gráfica'."
+                    ],
+                    "groupId": "passo-1-h"
+                  },
+                  {
+                    "id": "resultado-hifen-h",
+                    "kind": "result",
+                    "label": "Usa Hífen (-) [Regra do H]",
+                    "details": [
+                      "Exemplos canônicos: anti-higiênico, super-homem, sobre-humano, micro-história, sub-hepático.",
+                      "Exceções consagradas por aglutinação histórica: desonra, desumano, inábil, reabilitar, coabitar."
+                    ],
+                    "groupId": "passo-1-h"
+                  },
+                  {
+                    "id": "decisao-tipo-prefixo",
+                    "kind": "decision",
+                    "label": "Passo 2: O Prefixo É Especial, Tônico ou com Regra Própria?",
+                    "details": [
+                      "Examinar a natureza morfológica e prosódica do prefixo:",
+                      "1. Prefixos autônomos/tônicos (além, recém, sem, ex, vice, grão, pré-, pró-, pós- tônicos acentuados).",
+                      "2. Prefixo MAL.",
+                      "3. Prefixo CO- / RE-.",
+                      "4. Prefixos SUB- / AD-.",
+                      "5. Prefixos regulares terminados em vogal (auto-, anti-, micro-, semi-, supra-, ultra-)."
+                    ],
+                    "groupId": "passo-2-prefixos-especiais"
+                  },
+                  {
+                    "id": "prefixo-tonico-autonomo",
+                    "kind": "result",
+                    "label": "Usa Hífen (-) [Prefixo Tônico/Autônomo]",
+                    "details": [
+                      "Mnemônica: 'O forte se separa / O forte se basta'.",
+                      "Prefixos sempre hifenizados: além-, recém-, sem-, ex- (com sentido de cessação), vice-, grão-, grã-, soto-, vizo-.",
+                      "Prefixos tônicos acentuados: pré-escola, pós-graduação, pró-reitoria.",
+                      "Contraste: formas átonas aglutinam (preconceito, pospor, propor)."
+                    ],
+                    "groupId": "passo-2-prefixos-especiais"
+                  },
+                  {
+                    "id": "regra-prefixo-mal",
+                    "kind": "rule",
+                    "label": "Regra do Prefixo MAL",
+                    "details": [
+                      "MAL + Vogal ou H = USA HÍFEN (ex.: mal-estar, mal-humorado, mal-afamado).",
+                      "MAL + Consoante (exceto H) = GRAFA JUNTO SEM HÍFEN (ex.: malcriado, malfeito, malvisto, maldito)."
+                    ],
+                    "groupId": "passo-2-prefixos-especiais"
+                  },
+                  {
+                    "id": "regra-prefixo-co-re",
+                    "kind": "rule",
+                    "label": "Regra dos Prefixos CO- e RE-",
+                    "details": [
+                      "Prefixos aglutinantes por excelência: SEMPRE GRAFAM JUNTO.",
+                      "Aglutinam mesmo diante de vogal igual: coobrigação, coordenar, coautor, reeditar, reeleição.",
+                      "Se seguidos de R ou S, dobram a consoante: corréu, cosseno, correligionário.",
+                      "Diante de H, o H cai na aglutinação: coabitar, reabilitar."
+                    ],
+                    "groupId": "passo-2-prefixos-especiais"
+                  },
+                  {
+                    "id": "regra-prefixo-sub-ad",
+                    "kind": "rule",
+                    "label": "Regra dos Prefixos SUB- e AD-",
+                    "details": [
+                      "SUB- / AD- diante de B, D ou R = USA HÍFEN (ex.: sub-base, sub-reitor, sub-região, ad-rogar).",
+                      "Atenção: NÃO dobram o R (grafia correta: sub-reitor, e nunca subrreitor).",
+                      "Diante das demais letras = GRAFA JUNTO (ex.: subchefe, subsolo, adjunto, adrenalina)."
+                    ],
+                    "groupId": "passo-2-prefixos-especiais"
+                  },
+                  {
+                    "id": "decisao-colisao-vogais",
+                    "kind": "decision",
+                    "label": "Prefixo regular em vogal",
+                    "details": [
+                      "Aplica-se aos prefixos regulares terminados em vogal (anti-, auto-, contra-, extra-, infra-, hiper-, etc.).",
+                      "Verificar a relação entre a letra final do prefixo e a letra inicial do segundo elemento."
+                    ],
+                    "groupId": "passo-3-colisao-vogais"
+                  },
+                  {
+                    "id": "resultado-letras-iguais",
+                    "kind": "result",
+                    "label": "Usa Hífen (-) [Iguais se Repelem]",
+                    "details": [
+                      "Vogal igual à vogal seguinte = USA HÍFEN.",
+                      "Exemplos canônicos: micro-ondas, anti-inflamatório, contra-ataque, semi-interno, arqui-inimigo, supra-auricular."
+                    ],
+                    "groupId": "passo-3-colisao-vogais"
+                  },
+                  {
+                    "id": "resultado-vogais-diferentes",
+                    "kind": "result",
+                    "label": "Grafa Junto [Diferentes se Atraem]",
+                    "details": [
+                      "Vogal diferente da vogal seguinte = GRAFA JUNTO SEM HÍFEN.",
+                      "Exemplos canônicos: autoescola, infraestrutura, contraindicação, hidroelétrica, semianalfabeto, antiaéreo."
+                    ],
+                    "groupId": "passo-3-colisao-vogais"
+                  },
+                  {
+                    "id": "resultado-vogal-r-s",
+                    "kind": "result",
+                    "label": "Vogal + R ou S",
+                    "details": [
+                      "Prefixo terminado em vogal + palavra iniciada por R ou S = GRAFA JUNTO E DOBRA a consoante.",
+                      "Exemplos canônicos: antirreflexo, minissaia, ultrassom, contrarregra, antissocial, microssistema."
+                    ],
+                    "groupId": "passo-3-colisao-vogais"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "decisao-letra-h",
+                    "to": "resultado-hifen-h",
+                    "label": "Sim (Inicia com H)"
+                  },
+                  {
+                    "from": "decisao-letra-h",
+                    "to": "decisao-tipo-prefixo",
+                    "label": "Não (Outras Letras)"
+                  },
+                  {
+                    "from": "decisao-tipo-prefixo",
+                    "to": "prefixo-tonico-autonomo",
+                    "label": "Prefixo Tônico/Autônomo"
+                  },
+                  {
+                    "from": "decisao-tipo-prefixo",
+                    "to": "regra-prefixo-mal",
+                    "label": "Prefixo MAL"
+                  },
+                  {
+                    "from": "decisao-tipo-prefixo",
+                    "to": "regra-prefixo-co-re",
+                    "label": "Prefixo CO- / RE-"
+                  },
+                  {
+                    "from": "decisao-tipo-prefixo",
+                    "to": "regra-prefixo-sub-ad",
+                    "label": "Prefixo SUB- / AD-"
+                  },
+                  {
+                    "from": "decisao-tipo-prefixo",
+                    "to": "decisao-colisao-vogais",
+                    "label": "Terminado em vogal"
+                  },
+                  {
+                    "from": "decisao-colisao-vogais",
+                    "to": "resultado-letras-iguais",
+                    "label": "Letras Iguais"
+                  },
+                  {
+                    "from": "decisao-colisao-vogais",
+                    "to": "resultado-vogais-diferentes",
+                    "label": "Vogais Diferentes"
+                  },
+                  {
+                    "from": "decisao-colisao-vogais",
+                    "to": "resultado-vogal-r-s",
+                    "label": "Inicia com R ou S"
+                  }
+                ],
+                "provenance": {
+                  "regenerationVersion": "v2.0.0-semantic-high-thinking",
+                  "author": "agent_1_A00_A01",
+                  "lesson": "A00",
+                  "reviewed": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    decisao-letra-h{\"Passo 1: O segundo elemento começa com H?\"}\n    resultado-hifen-h[\"USA HÍFEN (-)<br/>(ex.: anti-higiênico, super-homem)\"]\n    decisao-tipo-prefixo{\"Passo 2: O prefixo é Especial, Tônico ou Específico?\"}\n    prefixo-tonico-autonomo[\"USA HÍFEN (-)<br/>(além, ex, recém, sem, vice, grão, pré-, pró-, pós-)\"]\n    regra-prefixo-mal[\"Prefixo MAL:<br/>Vogal/H = HÍFEN (mal-estar)<br/>Consoante = JUNTO (malcriado)\"]\n    regra-prefixo-co-re[\"Prefixos CO- / RE-:<br/>SEMPRE JUNTO (coobrigação, reeditar)<br/>Dobra R/S (corréu, cosseno)\"]\n    regra-prefixo-sub-ad[\"Prefixos SUB- / AD-:<br/>Diante de B, D, R = HÍFEN (sub-reitor)<br/>Demais letras = JUNTO (subchefe)\"]\n    decisao-colisao-vogais{\"Passo 3: Teste de Colisão entre Letras\"}\n    resultado-letras-iguais[\"USA HÍFEN (-)<br/>(Iguais se repelem: micro-ondas, anti-inflamatório)\"]\n    resultado-vogais-diferentes[\"GRAFA JUNTO<br/>(Diferentes se atraem: autoescola, infraestrutura)\"]\n    resultado-vogal-r-s[\"GRAFA JUNTO E DOBRA (RR/SS)<br/>(antirreflexo, minissaia, ultrassom)\"]\n\n    decisao-letra-h -->|Sim| resultado-hifen-h\n    decisao-letra-h -->|Não| decisao-tipo-prefixo\n    decisao-tipo-prefixo -->|Tônico / Autônomo| prefixo-tonico-autonomo\n    decisao-tipo-prefixo -->|Prefixo MAL| regra-prefixo-mal\n    decisao-tipo-prefixo -->|Prefixos CO- / RE-| regra-prefixo-co-re\n    decisao-tipo-prefixo -->|Prefixos SUB- / AD-| regra-prefixo-sub-ad\n    decisao-tipo-prefixo -->|Prefixo Regular em Vogal| decisao-colisao-vogais\n    decisao-colisao-vogais -->|Letras Iguais| resultado-letras-iguais\n    decisao-colisao-vogais -->|Vogais Diferentes| resultado-vogais-diferentes\n    decisao-colisao-vogais -->|Vogal + R ou S| resultado-vogal-r-s"
+              }
             }
           ],
           "presentation": {
@@ -1017,8 +1227,8 @@
               "EXP-IP-A00-G05-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

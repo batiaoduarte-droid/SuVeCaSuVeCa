@@ -166,7 +166,36 @@ if (!errors.length) {
   check(integratedCardUnits.size === 102, `Cobertura das unidades integradas por flashcards: ${integratedCardUnits.size}/102.`);
 
   const procedures = readJson(path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'decision-procedures.json'));
-  check(procedures.schemaVersion === '4.2.1', `Schema dos roteiros decisórios inesperado: ${procedures.schemaVersion}.`);
+  const structuredMaps = readJson(path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'structured-map-presentations.json'));
+  check(structuredMaps.schemaVersion === '2.1.0', `Schema do overlay de mapas inesperado: ${structuredMaps.schemaVersion}.`);
+  check(structuredMaps.count === structuredMaps.presentations?.length, 'Contagem do overlay de mapas divergente.');
+  check(structuredMaps.count === 145, `Cobertura operacional de mapas: ${structuredMaps.count}/145.`);
+  check(new Set(structuredMaps.presentations.map((item) => item.sourceHash)).size === structuredMaps.count, 'Overlay possui hashes de fonte duplicados.');
+  check(structuredMaps.presentations.every((item) => item.structure?.schemaVersion === '2.1.0'), 'Overlay possui mapa sem AST v2.1.');
+  check(structuredMaps.presentations.every((item) => item.structure?.structuredText?.trim()), 'Overlay possui mapa sem estrutura textual derivada.');
+  check(structuredMaps.presentations.every((item) => {
+    const groupIds = new Set((item.structure?.groups || []).map((group) => group.id));
+    return item.structure?.nodes?.every((node) => !node.groupId || groupIds.has(node.groupId));
+  }), 'Overlay possui nó associado a grupo inexistente.');
+  check(
+    ['not_required_source_backed', 'dual_pass_reviewed'].includes(structuredMaps.semanticReviewStatus),
+    `Estado de revisão semântica do overlay inválido: ${structuredMaps.semanticReviewStatus}.`,
+  );
+  check(
+    structuredMaps.presentations.every((item) => {
+      const provenance = item.structure?.provenance;
+      if (structuredMaps.semanticReviewStatus === 'dual_pass_reviewed') {
+        return provenance?.classificationMethod === 'semantic_review'
+          && provenance?.reviewStatus === 'reviewed'
+          && ['confirmed', 'corrected'].includes(item.review?.decision);
+      }
+      return provenance?.classificationMethod === 'deterministic_projection'
+        && provenance?.reviewStatus === 'source_backed'
+        && item.review?.decision === 'source_backed_validated';
+    }),
+    'Proveniência dos mapas contradiz o estado editorial declarado pelo overlay.',
+  );
+  check(procedures.schemaVersion === '4.3.0', `Schema dos roteiros decisórios inesperado: ${procedures.schemaVersion}.`);
   check(procedures.count === procedures.procedures?.length, 'Contagem de roteiros decisórios divergente.');
   check(procedures.count === manifest.totals.decisionProcedures, 'Manifesto diverge dos roteiros decisórios.');
   check(new Set(procedures.procedures.map((item) => item.id)).size === procedures.count, 'IDs de roteiros decisórios duplicados.');
@@ -181,13 +210,53 @@ if (!errors.length) {
     procedures.procedures.every((item) => item.sourceRefs?.some((ref) => /^PROC-/u.test(ref))),
     'Há roteiro decisório sem referência canônica PROC-*.',
   );
+  const visualTypes = new Set(['sequence', 'decision_flow', 'branches', 'comparison', 'taxonomy', 'relations']);
+  const nodeKinds = new Set(['start', 'process', 'decision', 'category', 'rule', 'example', 'result', 'formula']);
+  const hasValidTopology = (structure) => {
+    const ids = new Set(structure.nodes.map((entry) => entry.id));
+    if (!ids.has(structure.rootId) || !structure.edges?.length) return false;
+    if (!structure.edges.every((edge) => ids.has(edge.from) && ids.has(edge.to) && edge.from !== edge.to)) return false;
+    const outgoing = new Map();
+    for (const edge of structure.edges) outgoing.set(edge.from, [...(outgoing.get(edge.from) || []), edge]);
+    const reachable = new Set();
+    const stack = [structure.rootId];
+    while (stack.length) {
+      const current = stack.pop();
+      if (reachable.has(current)) continue;
+      reachable.add(current);
+      stack.push(...(outgoing.get(current) || []).map((edge) => edge.to));
+    }
+    if (reachable.size !== ids.size) return false;
+    return structure.nodes
+      .filter((node) => node.kind === 'decision')
+      .every((node) => {
+        const exits = outgoing.get(node.id) || [];
+        return exits.length < 2 || exits.every((edge) => edge.label?.trim());
+      });
+  };
   check(
-    visualProcedures.every((item) => item.sourceText?.trim() && item.structure.items?.length > 0),
-    'Há roteiro visual sem texto-fonte ou sem itens estruturados.',
+    visualProcedures.every((item) => item.sourceText?.trim() && item.structure?.schemaVersion === '2.1.0' && item.structure.structuredText?.trim() && item.structure.nodes?.length > 1),
+    'Há roteiro visual sem fonte original, estrutura textual ou grafo estruturado v2.1.',
   );
   check(
-    visualProcedures.every((item) => item.structure.items.every((entry) => entry.id?.trim() && entry.label?.trim())),
-    'Há roteiro visual com item vazio ou sem identidade.',
+    visualProcedures.every((item) => visualTypes.has(item.structure.visualType)),
+    'Há roteiro visual com taxonomia de apresentação inválida.',
+  );
+  check(
+    visualProcedures.every((item) => item.structure.nodes.every((entry) => entry.id?.trim() && entry.label?.trim() && nodeKinds.has(entry.kind))),
+    'Há roteiro visual com nó vazio, sem identidade ou com função inválida.',
+  );
+  check(
+    visualProcedures.every((item) => hasValidTopology(item.structure)),
+    'Há roteiro visual desconectado, com raiz/aresta inválida ou saída decisória sem rótulo.',
+  );
+  check(
+    structuredMaps.presentations.every((item) => hasValidTopology(item.structure)),
+    'Overlay possui grafo desconectado, com raiz/aresta inválida ou saída decisória sem rótulo.',
+  );
+  check(
+    structuredMaps.presentations.every((item) => item.structure.nodes.every((node) => !/\bSIM\s+NÃO\b|ETAPA\s+\d.+ETAPA\s+\d/iu.test(node.label))),
+    'Overlay possui ramos ou etapas achatados no mesmo nó.',
   );
 
   const knowledgeShardFiles = fs.readdirSync(path.join(ROOT, 'src', 'data'))

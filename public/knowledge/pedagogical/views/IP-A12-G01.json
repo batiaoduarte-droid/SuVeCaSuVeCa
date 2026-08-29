@@ -1012,8 +1012,174 @@
           "procedureId": "PROC-A12-G01-SEM-FIG-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[TEXTO INTEGRAL DA QUESTÃO] │ ▼ [Etapa 1: Farejamento e Traçado da Seta] (Conectar palavra suspeita ao referente textual) │ ▼ [Etapa 2: Resgate do Sentido Nuclear Dicionarizado] (Definir significado físico/primário no dicionário) │ ▼ [Etapa 3: Teste da Compatibilidade Física/Real] / \\ / \\ [Compatibilidade Direta] [Incompatibilidade / Metáfora] (Assaltante de máscara, (Memória que desgruda, roedores em movimento) pessoa doce, trampolim) │ │ ▼ ▼ SENTIDO DENOTATIVO SENTIDO CONOTATIVO (PROPRIO / LÓGICO) (FIGURADO / NÃO LÓGICO) │ ▼ [Etapa 4: Teste da Paráfrase Inversa] (Substituir mentalmente pelo termo real)"
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Protocolo Analítico Unificado em 4 Etapas (O Método das Setas Semânticas)",
+              "text": "[TEXTO INTEGRAL DA QUESTÃO] │ ▼ [Etapa 1: Farejamento e Traçado da Seta] (Conectar palavra suspeita ao referente textual) │ ▼ [Etapa 2: Resgate do Sentido Nuclear Dicionarizado] (Definir significado físico/primário no dicionário) │ ▼ [Etapa 3: Teste da Compatibilidade Física/Real] / \\ / \\ [Compatibilidade Direta] [Incompatibilidade / Metáfora] (Assaltante de máscara, (Memória que desgruda, roedores em movimento) pessoa doce, trampolim) │ │ ▼ ▼ SENTIDO DENOTATIVO SENTIDO CONOTATIVO (PROPRIO / LÓGICO) (FIGURADO / NÃO LÓGICO) │ ▼ [Etapa 4: Teste da Paráfrase Inversa] (Substituir mentalmente pelo termo real)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-metodo-setas-semanticas",
+                "structuredText": "# Protocolo Analítico Unificado em 4 Etapas (O Método das Setas Semânticas)\n\nProcedimento decisório rigoroso para determinar a natureza denotativa ou conotativa de um vocábulo em contexto frasal:\n\n1. **Etapa 1 — Localização e Traçado da Seta**: Identificar a palavra em análise (adjetivo, verbo ou substantivo) e traçar uma seta para o referente sintático a que ela se liga.\n2. **Etapa 2 — Resgate do Sentido Nuclear Dicionarizado**: Definir o significado primordial físico, visual ou mecânico do vocábulo (ex.: *doce* = sabor de açúcar; *trampolim* = prancha de salto; *desgrudar* = descolar superfície aderida).\n3. **Etapa 3 — Teste de Compatibilidade Física / Real**:\n   - **Sim (Compatibilidade Direta)**: O referente realiza/possui de fato a propriedade física no plano material -> **Sentido Denotativo / Próprio (Lógico)** (ex.: *assaltante de máscara*; *movimento de roedores*).\n   - **Não (Incompatibilidade / Metáfora / Reificação)**: O referente é abstrato, humano ou conceitualmente incompatível com a ação física direta -> **Sentido Conotativo / Figurado (Não Lógico)** (ex.: *memória que desgruda*; *pessoa doce*; *projeto como trampolim*).\n4. **Etapa 4 — Contraprova da Paráfrase Denotativa Inversa**: Substituir mentalmente o vocábulo figurado pelo seu sinônimo literal (*pessoa doce* -> *gentil*; *trampolim* -> *meio/degrau*). Se a paráfrase for perfeitamente coerente no plano real, confirma-se o sentido figurado.",
+                "groups": [
+                  {
+                    "id": "grupo-etapa-1",
+                    "label": "Etapa 1 — Localização e Traçado da Seta",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-etapa-2",
+                    "label": "Etapa 2 — Resgate do Sentido Nuclear",
+                    "order": 2
+                  },
+                  {
+                    "id": "grupo-etapa-3",
+                    "label": "Etapa 3 — Teste de Compatibilidade Real",
+                    "order": 3
+                  },
+                  {
+                    "id": "grupo-etapa-4",
+                    "label": "Etapa 4 — Contraprova da Paráfrase Inversa",
+                    "order": 4
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-metodo-setas-semanticas",
+                    "kind": "start",
+                    "label": "Início: Texto da Questão de Prova",
+                    "details": [
+                      "Fragmento textual contendo vocábulo ou expressão a ser classificada.",
+                      "Objetivo: discriminar com certeza técnica entre sentido próprio e sentido figurado."
+                    ]
+                  },
+                  {
+                    "id": "etapa-1-tracado-seta",
+                    "kind": "process",
+                    "groupId": "grupo-etapa-1",
+                    "label": "Etapa 1: Localização e Traçado da Seta Semântica",
+                    "details": [
+                      "Examinar verbos, adjetivos e substantivos em contexto ('farejamento').",
+                      "Desenhar mentalmente ou no papel uma seta ligando o termo suspeito ao seu referente sintático."
+                    ]
+                  },
+                  {
+                    "id": "etapa-2-resgate-sentido-nuclear",
+                    "kind": "process",
+                    "groupId": "grupo-etapa-2",
+                    "label": "Etapa 2: Resgate do Sentido Nuclear Dicionarizado",
+                    "details": [
+                      "Pergunta de controle: Qual é o sentido comum, concreto, visual ou mecânico primordial deste vocábulo?",
+                      "Exemplos: 'brinco' = adorno auricular; 'trampolim' = prancha flexível de salto; 'vibrante' = o que oscila fisicamente."
+                    ]
+                  },
+                  {
+                    "id": "etapa-3-teste-compatibilidade",
+                    "kind": "decision",
+                    "groupId": "grupo-etapa-3",
+                    "label": "Etapa 3: O referente realiza/possui concretamente a propriedade física no plano material?",
+                    "details": [
+                      "Avaliar se o processo físico ou biológico ocorre de fato no mundo objetivo.",
+                      "Exemplos de compatibilidade direta: assaltante de máscara, movimento de roedores, análise de placentas.",
+                      "Exemplos de incompatibilidade: memória que desgruda, pessoa doce, trampolim social."
+                    ]
+                  },
+                  {
+                    "id": "resultado-sentido-denotativo",
+                    "kind": "result",
+                    "groupId": "grupo-etapa-3",
+                    "label": "Sentido Próprio / Denotativo (Lógico)",
+                    "details": [
+                      "O referente executa a ação de forma literal e empírica.",
+                      "Ausência de translação metafórica.",
+                      "Nomenclaturas oficiais: Próprio, Denotativo, Literal, Real, Lógico."
+                    ]
+                  },
+                  {
+                    "id": "resultado-sentido-conotativo",
+                    "kind": "result",
+                    "groupId": "grupo-etapa-3",
+                    "label": "Sentido Figurado / Conotativo (Não Lógico)",
+                    "details": [
+                      "Ocorre incompatibilidade conceitual ou reificação (atribuição de traços de coisas a humanos ou abstrações).",
+                      "Nomenclaturas oficiais: Figurado, Conotativo, Translato, Não Lógico, Metafórico."
+                    ]
+                  },
+                  {
+                    "id": "etapa-4-parafrase-denotativa-inversa",
+                    "kind": "process",
+                    "groupId": "grupo-etapa-4",
+                    "label": "Etapa 4: Teste da Paráfrase Denotativa Inversa",
+                    "details": [
+                      "Substituir o termo figurado por seu sinônimo denotativo direto.",
+                      "Exemplos: 'cidade vibrante' -> 'cidade agitada/movimentada'; 'trampolim' -> 'meio de ascensão'.",
+                      "Se a substituição fizer sentido pleno, a classificação figurada fica blindada contra recursos."
+                    ]
+                  },
+                  {
+                    "id": "conclusao-validada-gabarito",
+                    "kind": "result",
+                    "groupId": "grupo-etapa-4",
+                    "label": "Gabarito Validado e Blindado",
+                    "details": [
+                      "Confirmação definitiva da alternativa correta na questão de prova.",
+                      "Aplicação das diretrizes da banca examinadora."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-metodo-setas-semanticas",
+                    "to": "etapa-1-tracado-seta",
+                    "label": ""
+                  },
+                  {
+                    "from": "etapa-1-tracado-seta",
+                    "to": "etapa-2-resgate-sentido-nuclear",
+                    "label": ""
+                  },
+                  {
+                    "from": "etapa-2-resgate-sentido-nuclear",
+                    "to": "etapa-3-teste-compatibilidade",
+                    "label": ""
+                  },
+                  {
+                    "from": "etapa-3-teste-compatibilidade",
+                    "to": "resultado-sentido-denotativo",
+                    "label": "Sim (Compatibilidade Direta e Factual)"
+                  },
+                  {
+                    "from": "etapa-3-teste-compatibilidade",
+                    "to": "resultado-sentido-conotativo",
+                    "label": "Não (Incompatibilidade / Metáfora / Reificação)"
+                  },
+                  {
+                    "from": "resultado-sentido-denotativo",
+                    "to": "conclusao-validada-gabarito",
+                    "label": "Sentido próprio confirmado"
+                  },
+                  {
+                    "from": "resultado-sentido-conotativo",
+                    "to": "etapa-4-parafrase-denotativa-inversa",
+                    "label": "Avançar para contraprova"
+                  },
+                  {
+                    "from": "etapa-4-parafrase-denotativa-inversa",
+                    "to": "conclusao-validada-gabarito",
+                    "label": "Paráfrase literal congruente"
+                  }
+                ],
+                "provenance": {
+                  "source": "canonical_context",
+                  "unitId": "IP-A12-G01",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-metodo-setas-semanticas[\"Início: Texto da Questão de Prova\"] --> etapa-1-tracado-seta[\"Etapa 1: Localização e Traçado da Seta Semântica\"]\n    etapa-1-tracado-seta --> etapa-2-resgate-sentido-nuclear[\"Etapa 2: Resgate do Sentido Nuclear Dicionarizado\"]\n    etapa-2-resgate-sentido-nuclear --> etapa-3-teste-compatibilidade{\"Etapa 3: O referente realiza/possui concretamente a propriedade física no plano material?\"}\n    etapa-3-teste-compatibilidade -->|\"Sim (Compatibilidade Direta e Factual)\"| resultado-sentido-denotativo[\"Sentido Próprio / Denotativo (Lógico)\"]\n    etapa-3-teste-compatibilidade -->|\"Não (Incompatibilidade / Metáfora / Reificação)\"| resultado-sentido-conotativo[\"Sentido Figurado / Conotativo (Não Lógico)\"]\n    resultado-sentido-denotativo -->|\"Sentido próprio confirmado\"| conclusao-validada-gabarito[\"Gabarito Validado e Blindado\"]\n    resultado-sentido-conotativo -->|\"Avançar para contraprova\"| etapa-4-parafrase-denotativa-inversa[\"Etapa 4: Teste da Paráfrase Denotativa Inversa\"]\n    etapa-4-parafrase-denotativa-inversa -->|\"Paráfrase literal congruente\"| conclusao-validada-gabarito\n"
+              }
             },
             {
               "type": "heading",
@@ -1053,8 +1219,8 @@
               "EXP-IP-A12-G01-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

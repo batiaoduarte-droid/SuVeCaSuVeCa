@@ -1432,8 +1432,80 @@
               ]
             },
             {
-              "type": "paragraph",
-              "text": "↳ \"Você tem sujeito?\" ───┬──► [SIM: Pessoal] ──► Identifique o Sujeito └──► [NÃO: Impessoal] ──► Oração Sem Sujeito / OD │ ▼"
+              "type": "diagram",
+              "diagramType": "branches",
+              "title": "Método da Análise Verbal de Trás para Frente",
+              "text": "↳ \"Você tem sujeito?\" ───┬──► [SIM: Pessoal] ──► Identifique o Sujeito └──► [NÃO: Impessoal] ──► Oração Sem Sujeito / OD │ ▼",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-fluxograma-tras-frente",
+                "groups": [],
+                "nodes": [
+                  {
+                    "id": "inicio-fluxograma-tras-frente",
+                    "kind": "start",
+                    "label": "Interrogação Sintática ao Verbo Principal",
+                    "details": [
+                      "Aplicação do teste sintático direto ao verbo que encerra a cadeia verbal."
+                    ]
+                  },
+                  {
+                    "id": "decisao-tem-sujeito",
+                    "kind": "decision",
+                    "label": "Pergunta ao Verbo Principal: 'Você tem sujeito?'",
+                    "details": [
+                      "Verificar se o verbo principal possui sujeito gramatical ou se é impessoal por natureza."
+                    ]
+                  },
+                  {
+                    "id": "resultado-sim-pessoal",
+                    "kind": "result",
+                    "label": "SIM: Pessoal ➔ Identifique o Sujeito",
+                    "details": [
+                      "O verbo possui sujeito pessoal determinável.",
+                      "O primeiro verbo auxiliar flexiona em concordância de número e pessoa com o sujeito."
+                    ]
+                  },
+                  {
+                    "id": "resultado-nao-impessoal",
+                    "kind": "result",
+                    "label": "NÃO: Impessoal ➔ Oração Sem Sujeito / Termo é Objeto Direto",
+                    "details": [
+                      "O verbo é impessoal (ex.: HAVER ou FAZER temporal).",
+                      "O termo aparente é Objeto Direto e o 1º auxiliar é travado na 3ª pessoa do singular."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-fluxograma-tras-frente",
+                    "to": "decisao-tem-sujeito"
+                  },
+                  {
+                    "from": "decisao-tem-sujeito",
+                    "to": "resultado-sim-pessoal",
+                    "label": "SIM: Pessoal"
+                  },
+                  {
+                    "from": "decisao-tem-sujeito",
+                    "to": "resultado-nao-impessoal",
+                    "label": "NÃO: Impessoal"
+                  }
+                ],
+                "structuredText": "### Interrogação Sintática ao Verbo Principal (Análise de Trás para Frente)\n\n- ↳ **'Você tem sujeito?'**\n  ├──► **[SIM: Pessoal]** ──► Identifique o Sujeito (comanda a flexão do 1º auxiliar).\n  └──► **[NÃO: Impessoal]** ──► Oração Sem Sujeito / Termo é Objeto Direto (trava o 1º auxiliar na 3ª sing.).",
+                "mermaidSource": "flowchart TD\n    inicio-fluxograma-tras-frente[\"Interrogação ao Verbo Principal\"] --> decisao-tem-sujeito{\"Você tem sujeito?\"}\n    decisao-tem-sujeito -- \"SIM: Pessoal\" --> resultado-sim-pessoal[\"SIM: Pessoal ➔ Identificar Sujeito\"]\n    decisao-tem-sujeito -- \"NÃO: Impessoal\" --> resultado-nao-impessoal[\"NÃO: Impessoal ➔ Oração Sem Sujeito / OD\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             },
             {
               "type": "list",
@@ -1466,8 +1538,8 @@
               "EXP-IP-A05-G10-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

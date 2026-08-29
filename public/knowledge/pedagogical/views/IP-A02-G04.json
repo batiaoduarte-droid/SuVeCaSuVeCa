@@ -322,22 +322,89 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "branches",
               "title": "Padrão de Cobrança das Bancas para \"E com Valor Diferente\" (#ANOTAAÍ)",
               "text": "┌──► \"E\" COM VALOR ADVERSATIVO (= porém, mas) QUANDO A BANCA PEDE UM \"E\" │ COM \"VALOR DIFERENTE\" ─────────┤ └──► \"E\" COM VALOR CONCLUSIVO/CONSECUTIVO (= logo, por isso)",
               "structure": {
-                "kind": "relations",
-                "rootLabel": "\"E\" COM VALOR ADVERSATIVO (= porém, mas) QUANDO A BANCA PEDE UM \"E\"",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "branches",
+                "layout": "horizontal",
+                "rootId": "raiz-e-valor-diferente",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "COM \"VALOR DIFERENTE\""
+                    "id": "raiz-e-valor-diferente",
+                    "kind": "category",
+                    "label": "Cobrança de 'E' com Valor Não Aditivo",
+                    "details": [
+                      "Padrão recorrente em bancas examinadoras (#ANOTAAÍ)",
+                      "Quando a questão solicita identificar uma oração em que a conjunção 'E' possui 'valor semântico diferente da adição'",
+                      "A conjunção 'E' assume predominantemente dois valores não aditivos essenciais no padrão culto"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "\"E\" COM VALOR CONCLUSIVO/CONSECUTIVO (= logo, por isso)"
+                    "id": "ramo-e-adversativo",
+                    "kind": "category",
+                    "label": "'E' com Valor Adversativo / Oposição",
+                    "details": [
+                      "Equivalência funcional: substitui-se perfeitamente por 'porém', 'mas', 'contudo', 'todavia', 'no entanto'",
+                      "Efeito semântico: Quebra de expectativa, contraste ou oposição entre os fatos narrados",
+                      "Exemplo canônico: 'Estudou com afinco durante anos, e não obteve a classificação.' (= porém não obteve)",
+                      "Pontuação recomendada: admite vírgula antes do 'e' para enfatizar o contraste"
+                    ]
+                  },
+                  {
+                    "id": "ramo-e-conclusivo",
+                    "kind": "category",
+                    "label": "'E' com Valor Conclusivo / Consecutivo",
+                    "details": [
+                      "Equivalência funcional: substitui-se perfeitamente por 'logo', 'por isso', 'portanto', 'por conseguinte'",
+                      "Efeito semântico: Resultado fático, dedução lógica ou consequência direta do fato anterior",
+                      "Exemplo canônico: 'Descumpriu normas expressas do edital, e foi desclassificado do certame.' (= por isso foi desclassificado)",
+                      "Relação de causa e efeito: Oração 1 = Causa / Fato gerador -> Oração 2 com 'E' = Consequência"
+                    ]
+                  },
+                  {
+                    "id": "dica-metodologica-bancas",
+                    "kind": "rule",
+                    "label": "Mantra do Teste de Comutação",
+                    "details": [
+                      "1. Substitua mentalmente o 'E' por 'MAS / PORÉM'. Se fizer sentido, é Adversativo.",
+                      "2. Substitua mentalmente o 'E' por 'POR ISSO / LOGO'. Se fizer sentido, é Conclusivo/Consecutivo.",
+                      "3. Se nenhuma das trocas fizer sentido e houver soma pura de orações/termos compatíveis, é Aditivo puro."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "raiz-e-valor-diferente",
+                    "to": "ramo-e-adversativo",
+                    "label": "Sentido de contraste ou quebra de expectativa"
+                  },
+                  {
+                    "from": "raiz-e-valor-diferente",
+                    "to": "ramo-e-conclusivo",
+                    "label": "Sentido de efeito, resultado ou decorrência"
+                  },
+                  {
+                    "from": "ramo-e-adversativo",
+                    "to": "dica-metodologica-bancas"
+                  },
+                  {
+                    "from": "ramo-e-conclusivo",
+                    "to": "dica-metodologica-bancas"
+                  }
+                ],
+                "structuredText": "Padrão de Cobrança das Bancas para 'E com Valor Diferente':\n\nQuando a banca exige identificar a conjunção 'E' com valor não aditivo, as duas alternativas canônicas são:\n1. 'E' com Valor Adversativo (= porém, mas):\n   - Estabelece quebra de expectativa ou oposição entre orações.\n   - Ex.: 'Dedicou-se integralmente, e não conseguiu aprovação.' (= porém não conseguiu)\n\n2. 'E' com Valor Conclusivo / Consecutivo (= logo, por isso):\n   - Estabelece resultado fático ou conclusão necessária da oração anterior.\n   - Ex.: 'Praticou a infração, e sofreu as penalidades legais.' (= por isso sofreu)",
+                "provenance": {
+                  "unit": "IP-A02-G04",
+                  "mapId": "MAP-A02-016",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    raiz-e-valor-diferente[\"Cobrança de 'E' com Valor Não Aditivo\"] --> |\"Sentido de contraste ou quebra de expectativa\"| ramo-e-adversativo[\"'E' com Valor Adversativo / Oposição\"]\n    raiz-e-valor-diferente --> |\"Sentido de efeito, resultado ou decorrência\"| ramo-e-conclusivo[\"'E' com Valor Conclusivo / Consecutivo\"]\n    ramo-e-adversativo --> dica-metodologica-bancas[\"Mantra do Teste de Comutação\"]\n    ramo-e-conclusivo --> dica-metodologica-bancas"
               }
             }
           ]
@@ -800,29 +867,112 @@
             },
             {
               "type": "diagram",
-              "diagramType": "flow",
+              "diagramType": "sequence",
               "title": "Desmistificação do \"Mito do Pois Entre Vírgulas\" e Adjuntos Intercalados",
               "text": "\"...não é fato episódico, mas uma nova tendência, pois, desde 2010, cresce o peso...\" ▲ └─────┬─────┘ ▲ Vírgula da oração ────────┘ Adjunto └─ Verbo da oração intercalado (O \"pois\" está ANTES dele!)",
               "structure": {
-                "kind": "branches",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "analise-frase-modelo",
+                "groups": [
                   {
-                    "id": "segment-01",
-                    "label": "\"...não é fato episódico, mas uma nova tendência, pois, desde 2010, cresce o peso...\""
+                    "id": "etapa-dissecacao",
+                    "label": "Etapa 1: Dissecação Sintática da Frase",
+                    "order": 1
                   },
                   {
-                    "id": "segment-02",
-                    "label": "Vírgula da oração"
-                  },
-                  {
-                    "id": "segment-03",
-                    "label": "Adjunto"
-                  },
-                  {
-                    "id": "segment-04",
-                    "label": "Verbo da oração intercalado (O \"pois\" está ANTES dele!)"
+                    "id": "etapa-diagnostico",
+                    "label": "Etapa 2: Diagnóstico Posicional e Classificação",
+                    "order": 2
                   }
-                ]
+                ],
+                "nodes": [
+                  {
+                    "id": "analise-frase-modelo",
+                    "kind": "start",
+                    "label": "Frase-Modelo: '..., pois, desde 2010, cresce o peso...'",
+                    "details": [
+                      "Exemplo clássico de questão de concurso (Cebraspe)",
+                      "Aparência visual ilusória: a palavra 'pois' encontra-se entre duas vírgulas",
+                      "Pegadinha: muitos candidatos decoram a regra simplista de que 'pois entre vírgulas é sempre conclusivo'"
+                    ],
+                    "groupId": "etapa-dissecacao"
+                  },
+                  {
+                    "id": "identificar-funcao-virgulas",
+                    "kind": "process",
+                    "label": "Identificar a Natureza Sintática das Vírgulas",
+                    "details": [
+                      "Vírgula 1 (antes de 'pois'): separa a oração coordenada/subordinada da oração anterior",
+                      "Vírgulas 2 e 3 (isolando 'desde 2010'): marcam a intercalação de um Adjunto Adverbial de Tempo deslocado",
+                      "As vírgulas NÃO pertencem ao conector 'pois', mas sim ao adjunto intercalado"
+                    ],
+                    "groupId": "etapa-dissecacao"
+                  },
+                  {
+                    "id": "localizar-verbo-oracao",
+                    "kind": "process",
+                    "label": "Localizar o Verbo da Oração ('cresce')",
+                    "details": [
+                      "O verbo da oração introduzida pelo 'pois' é 'cresce'",
+                      "Avaliando a ordem estrutural real: 'pois' antecede o verbo 'cresce'",
+                      "Ordem canônica sem intercalação: '... pois cresce o peso desde 2010...'"
+                    ],
+                    "groupId": "etapa-dissecacao"
+                  },
+                  {
+                    "id": "constatar-posicao-preverbal",
+                    "kind": "rule",
+                    "label": "Constatação: O 'Pois' é Pré-Verbal (Início Real da Oração)",
+                    "details": [
+                      "O 'pois' está situado no início da sua oração e ANTES do verbo",
+                      "A presença de adjunto adverbial intercalado entre vírgulas após o 'pois' NÃO o torna pós-verbal",
+                      "Regra do Falso Pois Deslocado: Não confunda 'pois + adjunto intercalado + verbo' com 'verbo + pois deslocado'"
+                    ],
+                    "groupId": "etapa-diagnostico"
+                  },
+                  {
+                    "id": "conclusao-classificacao-semantica",
+                    "kind": "result",
+                    "label": "Classificação: Causal / Explicativo (= Porque)",
+                    "details": [
+                      "Sentido: Causa ou explicação do fato expresso na oração anterior",
+                      "Equivalência: '..., porque, desde 2010, cresce o peso...'",
+                      "NÃO é conclusivo (não equivale a 'portanto')",
+                      "Gabarito da banca: Julgar ERRADA qualquer afirmação de sentido conclusivo"
+                    ],
+                    "groupId": "etapa-diagnostico"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "analise-frase-modelo",
+                    "to": "identificar-funcao-virgulas"
+                  },
+                  {
+                    "from": "identificar-funcao-virgulas",
+                    "to": "localizar-verbo-oracao"
+                  },
+                  {
+                    "from": "localizar-verbo-oracao",
+                    "to": "constatar-posicao-preverbal"
+                  },
+                  {
+                    "from": "constatar-posicao-preverbal",
+                    "to": "conclusao-classificacao-semantica"
+                  }
+                ],
+                "structuredText": "Desmistificação do 'Mito do Pois Entre Vírgulas' e Adjuntos Intercalados:\n\n1. Frase-Modelo: '...não é fato episódico, mas uma nova tendência, pois, desde 2010, cresce o peso...'\n2. Análise da Pontuação:\n   - A vírgula antes de 'pois' separa as orações.\n   - As vírgulas ao redor de 'desde 2010' isolam o adjunto adverbial de tempo intercalado.\n3. Posição em Relação ao Verbo:\n   - O verbo da oração é 'cresce'. O 'pois' situa-se ANTES do verbo (início da oração).\n4. Constatação Sintática:\n   - Trata-se de posição PRÉ-VERBAL. A intercalação do adjunto não transforma o 'pois' em pós-verbal.\n5. Classificação Semântica Definitiva:\n   - O 'pois' é Causal/Explicativo (= porque). NUNCA é conclusivo!",
+                "provenance": {
+                  "unit": "IP-A02-G04",
+                  "mapId": "MAP-A02-017",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    analise-frase-modelo[\"Frase-Modelo: '..., pois, desde 2010, cresce o peso...'\"] --> identificar-funcao-virgulas[\"Identificar a Natureza Sintática das Vírgulas\"]\n    identificar-funcao-virgulas --> localizar-verbo-oracao[\"Localizar o Verbo da Oração ('cresce')\"]\n    localizar-verbo-oracao --> constatar-posicao-preverbal[\"Constatação: O 'Pois' é Pré-Verbal (Início Real da Oração)\"]\n    constatar-posicao-preverbal --> conclusao-classificacao-semantica[\"Classificação: Causal / Explicativo (= Porque)\"]"
               }
             },
             {
@@ -1016,8 +1166,127 @@
           "procedureId": "PROC-A02-G04-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[PASSO 1: Localizar a conjunção \"E\" na oração] │ ▼ [PASSO 2: Isolar o segmento posterior (termo ou oração seguinte)] │ ▼ [PASSO 3: Perguntar a relação lógica estabelecida com o segmento anterior] │ ├─► Representa SOMA de ações/atributos compatíveis? ─────────────► CLASSIFICAÇÃO: ADITIVO │ ├─► Representa QUEBRA DE EXPECTATIVA / CONTRASTE (= porém)? ─────► CLASSIFICAÇÃO: ADVERSATIVO (Oposição) │ └─► Representa RESULTADO FÁTICO / CONCLUSÃO LÓGICA (= por isso)? ─► CLASSIFICAÇÃO: CONCLUSIVO / CONSECUTIVO"
+              "type": "diagram",
+              "diagramType": "taxonomy",
+              "title": "Roteiro de Identificação Semântica da Conjunção \"E\"",
+              "text": "[PASSO 1: Localizar a conjunção \"E\" na oração] │ ▼ [PASSO 2: Isolar o segmento posterior (termo ou oração seguinte)] │ ▼ [PASSO 3: Perguntar a relação lógica estabelecida com o segmento anterior] │ ├─► Representa SOMA de ações/atributos compatíveis? ─────────────► CLASSIFICAÇÃO: ADITIVO │ ├─► Representa QUEBRA DE EXPECTATIVA / CONTRASTE (= porém)? ─────► CLASSIFICAÇÃO: ADVERSATIVO (Oposição) │ └─► Representa RESULTADO FÁTICO / CONCLUSÃO LÓGICA (= por isso)? ─► CLASSIFICAÇÃO: CONCLUSIVO / CONSECUTIVO",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-roteiro-e",
+                "groups": [
+                  {
+                    "id": "grupo-isolamento-e",
+                    "label": "Fase 1: Isolamento Sintático",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-diagnostico-e",
+                    "label": "Fase 2: Diagnóstico Semântico e Classificação",
+                    "order": 2
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-roteiro-e",
+                    "kind": "start",
+                    "label": "Passo 1: Localizar a Conjunção 'E' na Oração",
+                    "details": [
+                      "Destacar o conectivo 'E' no período sob exame",
+                      "Identificar os dois segmentos oracionais ou termos por ele interligados"
+                    ],
+                    "groupId": "grupo-isolamento-e"
+                  },
+                  {
+                    "id": "proc-isolar-segmento-posterior",
+                    "kind": "process",
+                    "label": "Passo 2: Isolar o Segmento Posterior",
+                    "details": [
+                      "Focar na oração ou termo que vem imediatamente após a conjunção 'E'",
+                      "Analisar a proposição expressa pelo segmento posterior"
+                    ],
+                    "groupId": "grupo-isolamento-e"
+                  },
+                  {
+                    "id": "decisao-relacao-logica-e",
+                    "kind": "decision",
+                    "label": "Qual é a relação lógica do segmento posterior com o anterior?",
+                    "details": [
+                      "Aplicar a pergunta diagnóstica para classificar o nexo interoracional"
+                    ],
+                    "groupId": "grupo-diagnostico-e"
+                  },
+                  {
+                    "id": "res-e-aditivo",
+                    "kind": "result",
+                    "label": "Classificação: ADITIVO (Soma)",
+                    "details": [
+                      "Critério: Representa soma de ações, estados ou atributos compatíveis",
+                      "Sentido: Adição cumulativa pura",
+                      "Exemplo: 'Estudou teoria e resolveu duzentas questões.'"
+                    ],
+                    "groupId": "grupo-diagnostico-e"
+                  },
+                  {
+                    "id": "res-e-adversativo",
+                    "kind": "result",
+                    "label": "Classificação: ADVERSATIVO (Oposição)",
+                    "details": [
+                      "Critério: Representa quebra de expectativa ou contraste fático",
+                      "Equivalência: Substitui-se por 'porém', 'mas', 'contudo'",
+                      "Exemplo: 'Estudou muito durante meses, e não conseguiu aprovação.'"
+                    ],
+                    "groupId": "grupo-diagnostico-e"
+                  },
+                  {
+                    "id": "res-e-conclusivo-consecutivo",
+                    "kind": "result",
+                    "label": "Classificação: CONCLUSIVO / CONSECUTIVO",
+                    "details": [
+                      "Critério: Representa resultado fático, consequência direta ou conclusão lógica",
+                      "Equivalência: Substitui-se por 'por isso', 'logo', 'portanto'",
+                      "Exemplo: 'Estudou estrategicamente, e conquistou a primeira vaga no certame.'"
+                    ],
+                    "groupId": "grupo-diagnostico-e"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-roteiro-e",
+                    "to": "proc-isolar-segmento-posterior"
+                  },
+                  {
+                    "from": "proc-isolar-segmento-posterior",
+                    "to": "decisao-relacao-logica-e"
+                  },
+                  {
+                    "from": "decisao-relacao-logica-e",
+                    "to": "res-e-aditivo",
+                    "label": "Soma de ações/atributos compatíveis"
+                  },
+                  {
+                    "from": "decisao-relacao-logica-e",
+                    "to": "res-e-adversativo",
+                    "label": "Quebra de expectativa / Contraste (= porém)"
+                  },
+                  {
+                    "from": "decisao-relacao-logica-e",
+                    "to": "res-e-conclusivo-consecutivo",
+                    "label": "Resultado fático / Conclusão (= por isso)"
+                  }
+                ],
+                "structuredText": "Roteiro de Identificação Semântica da Conjunção 'E':\n\nPasso 1: Localizar a conjunção 'E' no período.\nPasso 2: Isolar o segmento posterior (termo ou oração seguinte).\nPasso 3: Perguntar a relação lógica estabelecida com o segmento anterior:\n  - Representa SOMA de ações compatíveis -> CLASSIFICAÇÃO: ADITIVO.\n  - Representa QUEBRA DE EXPECTATIVA / CONTRASTE (= porém) -> CLASSIFICAÇÃO: ADVERSATIVO (Oposição).\n  - Representa RESULTADO FÁTICO / CONCLUSÃO LÓGICA (= por isso) -> CLASSIFICAÇÃO: CONCLUSIVO / CONSECUTIVO.",
+                "provenance": {
+                  "unit": "IP-A02-G04",
+                  "procedureId": "decision:IP-A02-G04:001",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-roteiro-e[\"Passo 1: Localizar a Conjunção 'E' na Oração\"] --> proc-isolar-segmento-posterior[\"Passo 2: Isolar o Segmento Posterior\"]\n    proc-isolar-segmento-posterior --> decisao-relacao-logica-e{\"Qual é a relação lógica do segmento posterior com o anterior?\"}\n    decisao-relacao-logica-e -- \"Soma de ações/atributos compatíveis\" --> res-e-aditivo[\"Classificação: ADITIVO (Soma)\"]\n    decisao-relacao-logica-e -- \"Quebra de expectativa / Contraste (= porém)\" --> res-e-adversativo[\"Classificação: ADVERSATIVO (Oposição)\"]\n    decisao-relacao-logica-e -- \"Resultado fático / Conclusão (= por isso)\" --> res-e-conclusivo-consecutivo[\"Classificação: CONCLUSIVO / CONSECUTIVO\"]"
+              }
             }
           ],
           "presentation": {
@@ -1028,8 +1297,8 @@
               "EXP-IP-A02-G04-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {
@@ -1184,8 +1453,158 @@
           "procedureId": "PROC-A02-G04-003",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[PASSO 1: RASTREAR A POSIÇÃO DO \"POIS\" EM RELAÇÃO AO VERBO DA ORAÇÃO] │ ├─► O \"pois\" está DEPOIS DO VERBO (pós-verbal / intercalado entre vírgulas)? │ │ │ └─► SIM: É CONCLUSIVO (= portanto / consequência). [FIM DO TESTE] │ └─► O \"pois\" está ANTES DO VERBO (no início da oração, mesmo com intercalações)? │ └─► SIM: Equivale a PORQUE. NUNCA é conclusivo! │ ▼ [PASSO 2: AVALIAR O COMANDO DA QUESTÃO DA BANCA] │ ├─► A banca afirma que o \"pois\" inicial é CONCLUSIVO? ───────────► Julgue ERRADO imediatamente! │ ├─► A banca propõe substituir por PORQUANTO / JÁ QUE / PORQUE? ──► Julgue CERTO (troca válida)! │ └─► A banca exige diferenciar CAUSA de EXPLICAÇÃO? ──────────────► Aplique o \"Mantra da Causa\" (PROC-A02-G04-004)."
+              "type": "diagram",
+              "diagramType": "sequence",
+              "title": "Algoritmo em 2 Passos para Análise do \"Pois\" no Cebraspe",
+              "text": "[PASSO 1: RASTREAR A POSIÇÃO DO \"POIS\" EM RELAÇÃO AO VERBO DA ORAÇÃO] │ ├─► O \"pois\" está DEPOIS DO VERBO (pós-verbal / intercalado entre vírgulas)? │ │ │ └─► SIM: É CONCLUSIVO (= portanto / consequência). [FIM DO TESTE] │ └─► O \"pois\" está ANTES DO VERBO (no início da oração, mesmo com intercalações)? │ └─► SIM: Equivale a PORQUE. NUNCA é conclusivo! │ ▼ [PASSO 2: AVALIAR O COMANDO DA QUESTÃO DA BANCA] │ ├─► A banca afirma que o \"pois\" inicial é CONCLUSIVO? ───────────► Julgue ERRADO imediatamente! │ ├─► A banca propõe substituir por PORQUANTO / JÁ QUE / PORQUE? ──► Julgue CERTO (troca válida)! │ └─► A banca exige diferenciar CAUSA de EXPLICAÇÃO? ──────────────► Aplique o \"Mantra da Causa\" (PROC-A02-G04-004).",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-rastreamento-pois",
+                "groups": [
+                  {
+                    "id": "fase-posicao",
+                    "label": "Passo 1: Rastreamento Posicional do 'Pois'",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-julgamento",
+                    "label": "Passo 2: Avaliação do Comando e Julgamento",
+                    "order": 2
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-rastreamento-pois",
+                    "kind": "start",
+                    "label": "Início do Rastreamento do 'Pois'",
+                    "details": [
+                      "Identificar a conjunção 'pois' no trecho destacado pela questão",
+                      "Inspecionar a posição do conector em face do verbo da sua respectiva oração"
+                    ],
+                    "groupId": "fase-posicao"
+                  },
+                  {
+                    "id": "decisao-posicao-oracao",
+                    "kind": "decision",
+                    "label": "O 'pois' encontra-se em posição pós-verbal ou pré-verbal?",
+                    "details": [
+                      "Pós-verbal: colocado após o verbo conjugado, entre vírgulas",
+                      "Pré-verbal: introduzindo a oração antes do verbo (no início do período ou da oração coordenada)"
+                    ],
+                    "groupId": "fase-posicao"
+                  },
+                  {
+                    "id": "resultado-conclusivo-direto",
+                    "kind": "result",
+                    "label": "Classificação: Conclusivo (= Portanto)",
+                    "details": [
+                      "Valor semântico: Conclusão lógica ou consequência fática consumada",
+                      "Conectivos sinônimos: 'portanto', 'por isso', 'logo', 'dessarte'",
+                      "Exemplo: 'O projeto foi aprovado; teremos, pois, novos recursos.'",
+                      "Fim do teste operacional: não há ramificação adicional."
+                    ],
+                    "groupId": "fase-posicao"
+                  },
+                  {
+                    "id": "processo-preverbal-valor",
+                    "kind": "process",
+                    "label": "Classificação: Causal ou Explicativo (= Porque)",
+                    "details": [
+                      "Valor semântico: Introduz motivo, justificativa ou causa",
+                      "Regra mandatória: 'Pois' pré-verbal NUNCA possui valor conclusivo",
+                      "Atenção para intercalações: termos adverbiais entre vírgulas não descaracterizam a posição inicial"
+                    ],
+                    "groupId": "fase-posicao"
+                  },
+                  {
+                    "id": "decisao-tipo-questao",
+                    "kind": "decision",
+                    "label": "Qual é a tese sustentada pela questão da banca?",
+                    "details": [
+                      "Classificar o comando do item para aplicar o gabarito correto"
+                    ],
+                    "groupId": "fase-julgamento"
+                  },
+                  {
+                    "id": "resultado-afirmacao-errada",
+                    "kind": "result",
+                    "label": "Item ERRADO (Pois Inicial Não é Conclusivo)",
+                    "details": [
+                      "A banca tenta induzir o candidato ao erro afirmando que 'pois' no início veicula sentido de conclusão",
+                      "Julgamento técnico: Errado"
+                    ],
+                    "groupId": "fase-julgamento"
+                  },
+                  {
+                    "id": "resultado-troca-correta",
+                    "kind": "result",
+                    "label": "Item CERTO (Comutação Causal/Explicativa)",
+                    "details": [
+                      "Substituição por 'porquanto', 'já que', 'uma vez que', 'porque' ou 'visto que'",
+                      "Preserva o sentido original e a estrita correção gramatical"
+                    ],
+                    "groupId": "fase-julgamento"
+                  },
+                  {
+                    "id": "processo-mantra-causa-detalhe",
+                    "kind": "rule",
+                    "label": "Executar Protocolo Causa vs. Explicação",
+                    "details": [
+                      "Aplicação do procedimento canônico PROC-A02-G04-004",
+                      "Critério 1: Oração do 'pois' é fato anterior gerador de consequência posterior? -> CAUSA",
+                      "Critério 2: Oração principal é verbo no imperativo/ordem ou conselho? -> EXPLICAÇÃO"
+                    ],
+                    "groupId": "fase-julgamento"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-rastreamento-pois",
+                    "to": "decisao-posicao-oracao"
+                  },
+                  {
+                    "from": "decisao-posicao-oracao",
+                    "to": "resultado-conclusivo-direto",
+                    "label": "Pós-verbal (depois do verbo / intercalado)"
+                  },
+                  {
+                    "from": "decisao-posicao-oracao",
+                    "to": "processo-preverbal-valor",
+                    "label": "Pré-verbal (antes do verbo / início da oração)"
+                  },
+                  {
+                    "from": "processo-preverbal-valor",
+                    "to": "decisao-tipo-questao"
+                  },
+                  {
+                    "from": "decisao-tipo-questao",
+                    "to": "resultado-afirmacao-errada",
+                    "label": "Afirma valor conclusivo"
+                  },
+                  {
+                    "from": "decisao-tipo-questao",
+                    "to": "resultado-troca-correta",
+                    "label": "Propõe troca por porquanto / já que / porque"
+                  },
+                  {
+                    "from": "decisao-tipo-questao",
+                    "to": "processo-mantra-causa-detalhe",
+                    "label": "Exige discriminar causa de explicação"
+                  }
+                ],
+                "structuredText": "Algoritmo em 2 Passos para Análise do 'Pois' no Cebraspe (Apostila):\n\nPasso 1 (Rastreamento Posicional):\n- Pois pós-verbal (após o verbo / intercalado entre vírgulas) -> Classificação CONCLUSIVA (= portanto / por conseguinte). Fim do teste.\n- Pois pré-verbal (início da oração / antes do verbo) -> Classificação CAUSAL ou EXPLICATIVA (= porque). NUNCA é conclusivo!\n\nPasso 2 (Avaliação do Comando da Banca):\n- Se a banca alegar sentido conclusivo para o 'pois' inicial -> Julgue ERRADO.\n- Se a banca sugerir comutação por 'porquanto', 'já que' ou 'porque' -> Julgue CERTO.\n- Se a banca exigir distinção entre causa e explicação -> Execute o Mantra da Causa (Fato gerador = Causa; Verbo no imperativo/ordem = Explicação).",
+                "provenance": {
+                  "unit": "IP-A02-G04",
+                  "mapId": "MAP-A02-019",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-rastreamento-pois[\"Início do Rastreamento do 'Pois'\"] --> decisao-posicao-oracao{\"O 'pois' encontra-se em posição pós-verbal ou pré-verbal?\"}\n    decisao-posicao-oracao -- \"Pós-verbal (depois do verbo / intercalado)\" --> resultado-conclusivo-direto[\"Classificação: Conclusivo (= Portanto)\"]\n    decisao-posicao-oracao -- \"Pré-verbal (antes do verbo / início da oração)\" --> processo-preverbal-valor[\"Classificação: Causal ou Explicativo (= Porque)\"]\n    processo-preverbal-valor --> decisao-tipo-questao{\"Qual é a tese sustentada pela questão da banca?\"}\n    decisao-tipo-questao -- \"Afirma valor conclusivo\" --> resultado-afirmacao-errada[\"Item ERRADO (Pois Inicial Não é Conclusivo)\"]\n    decisao-tipo-questao -- \"Propõe troca por porquanto / já que / porque\" --> resultado-troca-correta[\"Item CERTO (Comutação Causal/Explicativa)\"]\n    decisao-tipo-questao -- \"Exige discriminar causa de explicação\" --> processo-mantra-causa-detalhe[\"Executar Protocolo Causa vs. Explicação\"]"
+              }
             }
           ],
           "presentation": {
@@ -1196,8 +1615,8 @@
               "EXP-IP-A02-G04-PROC-003"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

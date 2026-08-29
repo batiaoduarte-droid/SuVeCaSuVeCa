@@ -821,28 +821,78 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "decision_flow",
               "title": "Particípio Irregular Homógrafo de VIR/INTERVIR e o Teste Diagnóstico do Verbo CHEGAR",
               "text": "┌── VINDO = CHEGADO ──> PARTICÍPIO IRREGULAR FORMA \"VINDO\" ─┤ └── VINDO = CHEGANDO ──> GERÚNDIO REGULAR",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "Forma “vindo”: classifique pelo uso no contexto",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-teste-chegar",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "vindo-participio",
-                    "label": "Vindo = chegado",
+                    "id": "inicio-teste-chegar",
+                    "kind": "start",
+                    "label": "Forma Homógrafa 'VINDO' em Análise (VIR / INTERVIR)",
                     "details": [
-                      "Particípio irregular — forma “vindo”."
+                      "Desambiguação morfológica entre Particípio Irregular e Gerúndio Regular da forma verbal 'vindo'."
                     ]
                   },
                   {
-                    "id": "vindo-gerundio",
-                    "label": "Vindo = chegando",
+                    "id": "teste-substituicao-chegar",
+                    "kind": "decision",
+                    "label": "Substituir a forma 'VINDO' pelo verbo CHEGAR",
                     "details": [
-                      "Gerúndio regular."
+                      "Aplicar o teste de comutação contextual com as formas 'chegado' e 'chegando'."
+                    ]
+                  },
+                  {
+                    "id": "resultado-chegado",
+                    "kind": "result",
+                    "label": "VINDO = CHEGADO ➔ PARTICÍPIO IRREGULAR",
+                    "details": [
+                      "Se a frase aceita 'chegado' (ex.: 'Tendo vindo de longe' = 'Tendo chegado de longe'), a forma é PARTICÍPIO IRREGULAR.",
+                      "Emprega-se em tempos compostos e estruturas com auxiliares."
+                    ]
+                  },
+                  {
+                    "id": "resultado-chegando",
+                    "kind": "result",
+                    "label": "VINDO = CHEGANDO ➔ GERÚNDIO REGULAR",
+                    "details": [
+                      "Se a frase aceita 'chegando' (ex.: 'Ele está vindo agora' = 'Ele está chegando agora'), a forma é GERÚNDIO REGULAR.",
+                      "Expressa aspecto continuativo / progressivo."
                     ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-teste-chegar",
+                    "to": "teste-substituicao-chegar"
+                  },
+                  {
+                    "from": "teste-substituicao-chegar",
+                    "to": "resultado-chegado",
+                    "label": "Equivale a 'Chegado'"
+                  },
+                  {
+                    "from": "teste-substituicao-chegar",
+                    "to": "resultado-chegando",
+                    "label": "Equivale a 'Chegando'"
+                  }
+                ],
+                "structuredText": "### Mecanismo do Teste do Verbo CHEGAR\n\n- **Forma 'VINDO':**\n  - Se **VINDO = CHEGADO** ➔ Trata-se de **PARTICÍPIO IRREGULAR** (ex.: 'Tendo vindo de Brasília').\n  - Se **VINDO = CHEGANDO** ➔ Trata-se de **GERÚNDIO REGULAR** (ex.: 'O trem está vindo').",
+                "mermaidSource": "flowchart TD\n    inicio-teste-chegar[\"Forma 'VINDO' em Análise\"] --> teste-substituicao-chegar{\"Teste de Substituição pelo Verbo CHEGAR\"}\n    teste-substituicao-chegar -- \"Equivale a 'Chegado'\" --> resultado-chegado[\"PARTICÍPIO IRREGULAR<br>VINDO = CHEGADO\"]\n    teste-substituicao-chegar -- \"Equivale a 'Chegando'\" --> resultado-chegando[\"GERÚNDIO REGULAR<br>VINDO = CHEGANDO\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
@@ -1219,8 +1269,116 @@
           "procedureId": "PROC-A04-G05-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[PASSO 1: INFINITIVO] Isolar o verbo solicitado na sua forma infinitiva. (Exemplo: Frase pede \"DETER\" ou \"INTERVIR\") │ ▼ [PASSO 2: PENSAR NO LÍDER] Identificar o verbo primitivo matriz de mesmo radical. (Exemplo: DETER -> TER | INTERVIR -> VIR) │ ▼ [PASSO 3: ACOMODAR O LÍDER NA FRASE] PASSO MAIS IMPORTANTE! Não conjugar desde o início (\"eu tenho...\"). Aplicar o gatilho temporal (\"Rodinha\") e conjugar o LÍDER diretamente para o sujeito da frase. (Exemplo: Pretérito Perfeito + \"Os fiscais\" -> \"Ontem eles TIVERAM\") │ ▼ [PASSO 4: TROCAR PELO VERBO PRETENDIDO] Reanexar o prefixo à forma flexionada do líder obtida no Passo 3. (Exemplo: \"DE-\" + \"TIVERAM\" = \"DETIVERAM\")"
+              "type": "diagram",
+              "diagramType": "comparison",
+              "title": "O Método Operacional dos 4 Passos para Verbos Derivados",
+              "text": "[PASSO 1: INFINITIVO] Isolar o verbo solicitado na sua forma infinitiva. (Exemplo: Frase pede \"DETER\" ou \"INTERVIR\") │ ▼ [PASSO 2: PENSAR NO LÍDER] Identificar o verbo primitivo matriz de mesmo radical. (Exemplo: DETER -> TER | INTERVIR -> VIR) │ ▼ [PASSO 3: ACOMODAR O LÍDER NA FRASE] PASSO MAIS IMPORTANTE! Não conjugar desde o início (\"eu tenho...\"). Aplicar o gatilho temporal (\"Rodinha\") e conjugar o LÍDER diretamente para o sujeito da frase. (Exemplo: Pretérito Perfeito + \"Os fiscais\" -> \"Ontem eles TIVERAM\") │ ▼ [PASSO 4: TROCAR PELO VERBO PRETENDIDO] Reanexar o prefixo à forma flexionada do líder obtida no Passo 3. (Exemplo: \"DE-\" + \"TIVERAM\" = \"DETIVERAM\")",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "sequence",
+                "layout": "vertical",
+                "rootId": "inicio-metodo-4passos-derivados",
+                "groups": [
+                  {
+                    "id": "g-inf",
+                    "label": "Passo 1: Infinitivo",
+                    "order": 1
+                  },
+                  {
+                    "id": "g-lid",
+                    "label": "Passo 2: Verbo Líder",
+                    "order": 2
+                  },
+                  {
+                    "id": "g-aco",
+                    "label": "Passo 3: Acomodação na Frase",
+                    "order": 3
+                  },
+                  {
+                    "id": "g-tro",
+                    "label": "Passo 4: Acoplamento Final",
+                    "order": 4
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-metodo-4passos-derivados",
+                    "kind": "start",
+                    "label": "Início: Resolução de Questões com Verbos Derivados",
+                    "details": [
+                      "Método operacional em 4 passos para garantir conjugação impecável de verbos com prefixos."
+                    ]
+                  },
+                  {
+                    "id": "p1-isolar-infinitivo-imp",
+                    "kind": "process",
+                    "label": "Passo 1: Isolar o Verbo Solicitado no Infinitivo",
+                    "details": [
+                      "Determinar o infinitivo impessoal da forma verbal solicitada (Exemplo: 'DETER' ou 'INTERVIR')."
+                    ],
+                    "groupId": "g-inf"
+                  },
+                  {
+                    "id": "p2-identificar-matriz",
+                    "kind": "process",
+                    "label": "Passo 2: Identificar o Verbo Primitivo Matriz (Líder)",
+                    "details": [
+                      "Identificar o verbo primitivo que comanda o radical: DETER ➔ TER | INTERVIR ➔ VIR | PROPOR ➔ PÔR."
+                    ],
+                    "groupId": "g-lid"
+                  },
+                  {
+                    "id": "p3-acomodar-com-gatilho",
+                    "kind": "process",
+                    "label": "Passo 3: Acomodar o Líder na Frase com Gatilho Temporal",
+                    "details": [
+                      "PASSO MAIS IMPORTANTE: Não conjugar desde a 1ª pessoa ('eu tenho...').",
+                      "Aplicar a palavra-gatilho temporal ('Rodinha') e conjugar o LÍDER diretamente para o sujeito da frase.",
+                      "Exemplo: Pretérito Perfeito + 'Os fiscais' ➔ 'Ontem eles TIVERAM'."
+                    ],
+                    "groupId": "g-aco"
+                  },
+                  {
+                    "id": "p4-trocar-pelo-pretendido",
+                    "kind": "result",
+                    "label": "Passo 4: Reanexar o Prefixo à Forma Flexionada",
+                    "details": [
+                      "Reanexar o prefixo à forma flexionada do líder obtida no Passo 3.",
+                      "Exemplo: 'DE-' + 'TIVERAM' = 'DETIVERAM' (Gabarito validado com segurança)."
+                    ],
+                    "groupId": "g-tro"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-metodo-4passos-derivados",
+                    "to": "p1-isolar-infinitivo-imp"
+                  },
+                  {
+                    "from": "p1-isolar-infinitivo-imp",
+                    "to": "p2-identificar-matriz"
+                  },
+                  {
+                    "from": "p2-identificar-matriz",
+                    "to": "p3-acomodar-com-gatilho"
+                  },
+                  {
+                    "from": "p3-acomodar-com-gatilho",
+                    "to": "p4-trocar-pelo-pretendido"
+                  }
+                ],
+                "structuredText": "### O Método Operacional dos 4 Passos para Verbos Derivados\n\n1. **[PASSO 1: INFINITIVO]** Isolar o verbo solicitado na sua forma infinitiva (Exemplo: Frase pede 'DETER' ou 'INTERVIR').\n2. **[PASSO 2: PENSAR NO LÍDER]** Identificar o verbo primitivo matriz de mesmo radical (Exemplo: DETER ➔ TER | INTERVIR ➔ VIR).\n3. **[PASSO 3: ACOMODAR O LÍDER NA FRASE]** PASSO MAIS IMPORTANTE! Não conjugar desde o início ('eu tenho...'). Aplicar o gatilho temporal ('Rodinha') e conjugar o LÍDER diretamente para o sujeito da frase (Exemplo: Pretérito Perfeito + 'Os fiscais' ➔ 'Ontem eles TIVERAM').\n4. **[PASSO 4: TROCAR PELO VERBO PRETENDIDO]** Reanexar o prefixo à forma flexionada do líder obtida no Passo 3 (Exemplo: 'DE-' + 'TIVERAM' = 'DETIVERAM').",
+                "mermaidSource": "flowchart TD\n    inicio-metodo-4passos-derivados[\"Início: Verbo Derivado\"] --> p1-isolar-infinitivo-imp[\"Passo 1: Isolar Infinitivo\"]\n    p1-isolar-infinitivo-imp --> p2-identificar-matriz[\"Passo 2: Identificar Verbo Líder Matriz\"]\n    p2-identificar-matriz --> p3-acomodar-com-gatilho[\"Passo 3: Acomodar Líder com Gatilho\"]\n    p3-acomodar-com-gatilho --> p4-trocar-pelo-pretendido[\"Passo 4: Reanexar Prefixo ao Líder\"]",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
+              }
             }
           ],
           "presentation": {
@@ -1231,8 +1389,8 @@
               "EXP-IP-A04-G05-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "sequence"
           }
         },
         {

@@ -399,8 +399,98 @@
               ]
             },
             {
-              "type": "paragraph",
-              "text": "[ Oração Reduzida com Preposição ] ────────► VERBO = Objetiva Indireta [ Oração Reduzida com Preposição ] ────────► NOME = Completiva Nominal (substantivo / adjetivo)"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Técnica das Setas: Diferenciação entre Objetiva Indireta e Completiva Nominal",
+              "text": "[ Oração Reduzida com Preposição ] ────────► VERBO = Objetiva Indireta [ Oração Reduzida com Preposição ] ────────► NOME = Completiva Nominal (substantivo / adjetivo)",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "oracao-reduzida-preposicionada",
+                "structuredText": "### Técnica das Setas: Objetiva Indireta vs. Completiva Nominal em Orações Reduzidas\n- **Ponto de Partida**: Oração Reduzida (no infinitivo, gerúndio ou particípio) introduzida por preposição.\n- **Procedimento Decisório**:\n  1. *Lançar a seta relacional*: Partir da oração reduzida preposicionada e apontar para a palavra regente imediata à esquerda.\n  2. *Classificar a palavra regente*:\n     - **Se a seta aponta para um VERBO**:\n       - $\rightarrow$ **Oração Subordinada Substantiva Objetiva Indireta** (completa verbo transitivo indireto).\n       - *Exemplo*: *\"O diretor necessitava [de contratar mais funcionários].\"* (seta em \"necessitava\" = verbo).\n     - **Se a seta aponta para um NOME (Substantivo ou Adjetivo)**:\n       - $\rightarrow$ **Oração Subordinada Substantiva Completiva Nominal** (completa sentido de nome transitivo).\n       - *Exemplo*: *\"O diretor tinha a necessidade [de contratar mais funcionários].\"* (seta em \"necessidade\" = substantivo).\n       - *Exemplo com Adjetivo*: *\"Os candidatos estavam ansiosos [por saber o resultado].\"* (seta em \"ansiosos\" = adjetivo).",
+                "nodes": [
+                  {
+                    "id": "oracao-reduzida-preposicionada",
+                    "kind": "start",
+                    "label": "Oração Reduzida Introduzida por Preposição",
+                    "details": [
+                      "Estrutura subordinada substantiva reduzida com conectivo preposicional (de, a, por, em, etc.)",
+                      "Dúvida sintática frequente entre complemento verbal (OI) e complemento nominal (CN)"
+                    ]
+                  },
+                  {
+                    "id": "lancar-seta-regente",
+                    "kind": "process",
+                    "label": "Traçar a Seta Sintática para o Vocábulo Regente à Esquerda",
+                    "details": [
+                      "Identificar a palavra que exige sintaticamente a preposição",
+                      "Focar no termo imediatamente antecedente"
+                    ]
+                  },
+                  {
+                    "id": "decisao-regente-verbo-ou-nome",
+                    "kind": "decision",
+                    "label": "A qual classe gramatical pertence o vocábulo regente que recebeu a ponta da seta?",
+                    "details": [
+                      "Critério morfológico absoluto: Verbo transita em Objeto; Nome transita em Complemento Nominal"
+                    ]
+                  },
+                  {
+                    "id": "resultado-objetiva-indireta",
+                    "kind": "result",
+                    "label": "Oração Subordinada Substantiva Objetiva Indireta",
+                    "details": [
+                      "A palavra regente é um VERBO (VTI ou VTDI)",
+                      "A oração reduzida funciona como Objeto Indireto do verbo",
+                      "Exemplo: 'Gostava de viajar' / 'Insistiu em participar'"
+                    ]
+                  },
+                  {
+                    "id": "resultado-completiva-nominal",
+                    "kind": "result",
+                    "label": "Oração Subordinada Substantiva Completiva Nominal",
+                    "details": [
+                      "A palavra regente é um NOME (Substantivo Abstrato ou Adjetivo)",
+                      "A oração reduzida funciona como Complemento Nominal do nome",
+                      "Exemplo: 'Tinha certeza de vencer' (substantivo) / 'Estava apto a concorrer' (adjetivo)"
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "oracao-reduzida-preposicionada",
+                    "to": "lancar-seta-regente",
+                    "label": "analisar regência"
+                  },
+                  {
+                    "from": "lancar-seta-regente",
+                    "to": "decisao-regente-verbo-ou-nome",
+                    "label": "ponta da seta fixada"
+                  },
+                  {
+                    "from": "decisao-regente-verbo-ou-nome",
+                    "to": "resultado-objetiva-indireta",
+                    "label": "Seta aponta para VERBO"
+                  },
+                  {
+                    "from": "decisao-regente-verbo-ou-nome",
+                    "to": "resultado-completiva-nominal",
+                    "label": "Seta aponta para NOME (Substantivo ou Adjetivo)"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    oracao-reduzida-preposicionada[\"Oração Reduzida Introduzida por Preposição\"] -->|analisar regência| lancar-seta-regente[\"Traçar a Seta Sintática para o Vocábulo Regente à Esquerda\"]\n    lancar-seta-regente -->|ponta da seta fixada| decisao-regente-verbo-ou-nome{\"A qual classe gramatical pertence o vocábulo regente que recebeu a ponta da seta?\"}\n    decisao-regente-verbo-ou-nome -->|Seta aponta para VERBO| resultado-objetiva-indireta[\"Oração Subordinada Substantiva Objetiva Indireta\"]\n    decisao-regente-verbo-ou-nome -->|Seta aponta para NOME (Substantivo ou Adjetivo)| resultado-completiva-nominal[\"Oração Subordinada Substantiva Completiva Nominal\"]"
+              }
             },
             {
               "type": "paragraph",
@@ -942,69 +1032,97 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "decision_flow",
               "title": "Semântica do Gerúndio: Causa (Anterioridade), Modo e Consequência (Posterioridade)",
               "text": "LINHA CRONOLÓGICA DOS EVENTOS 1º Fato (Anterior) 2º Fato (Posterior) ┌─────────────────────────────────┐ ┌─────────────────────────────────┐ │ CAUSA │ ────────────► │ EFEITO / CONSEQUÊNCIA │ │ \"temendo por sua saúde\" │ │ \"escreveu um testamento\" │ │ (Gerúndio Causal) │ │ (Verbo Principal) │ └─────────────────────────────────┘ └─────────────────────────────────┘ OU ┌─────────────────────────────────┐ ┌─────────────────────────────────┐ │ AÇÃO PRINCIPAL │ ────────────► │ EFEITO / CONSEQUÊNCIA │ │ \"montar os trilhões...\" │ │ \"criando o arco-íris...\" │ │ (Infinitivo / Fato Gerador) │ │ (Gerúndio Consecutivo) │ └─────────────────────────────────┘ └─────────────────────────────────┘",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "analise-semantica-gerundio",
+                "structuredText": "### Semântica do Gerúndio: Causa (Anterioridade), Modo (Simultaneidade) e Consequência (Posterioridade)\n- **Linha Cronológica dos Eventos na Oração Reduzida de Gerúndio**:\n  - **1. Gerúndio Causal (Anterioridade Temporal / Fato Gerador)**:\n    - O gerúndio ocorre em **1º lugar no tempo real** e atua como a causa geradora do verbo principal.\n    - *Esquema*: `1º Fato (Causa / Gerúndio) ──> 2º Fato (Efeito / Verbo Principal)`.\n    - *Exemplo*: *\"Temendo por sua saúde [1º fato], escreveu um testamento [2º fato].\"*\n  - **2. Gerúndio Modal (Simultaneidade Temporal / Modo de Execução)**:\n    - O gerúndio ocorre **ao mesmo tempo** que a ação principal e responde à pergunta `Como?`.\n    - *Exemplo*: *\"O advogado defendeu o cliente argumentando com firmeza [como defendeu].\"*\n  - **3. Gerúndio Consecutivo (Posterioridade Temporal / Consequência Decorrente)**:\n    - O gerúndio ocorre em **2º lugar no tempo real** como resultado/efeito decorrente da ação principal.\n    - *Esquema*: `1º Fato (Ação Principal / Fato Gerador) ──> 2º Fato (Consequência / Gerúndio)`.\n    - *Exemplo*: *\"Montou conexões elétricas, criando um curto-circuito [efeito decorrente].\"*",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "LINHA CRONOLÓGICA DOS EVENTOS 1º Fato (Anterior) 2º Fato (Posterior)"
+                    "id": "analise-semantica-gerundio",
+                    "kind": "start",
+                    "label": "Análise da Relação Temporal e Semântica do Gerúndio",
+                    "details": [
+                      "Orações reduzidas de gerúndio possuem flexibilidade semântica resolvida pela cronologia dos fatos",
+                      "Diferenciação fundamental entre Causa (anterior), Modo (simultâneo) e Consequência (posterior)"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "CAUSA"
+                    "id": "decisao-cronologia-gerundio",
+                    "kind": "decision",
+                    "label": "Qual é a posição cronológica do fato no gerúndio em relação ao verbo principal?",
+                    "details": [
+                      "Pergunta chave: O fato no gerúndio ocorreu antes, ao mesmo tempo ou depois da ação principal no mundo real?"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "EFEITO / CONSEQUÊNCIA"
+                    "id": "gerundio-causal",
+                    "kind": "result",
+                    "label": "Gerúndio Causal (1º Fato / Anterioridade Temporal)",
+                    "details": [
+                      "Ocorre em 1º lugar no tempo real (motivo / fato gerador)",
+                      "Equivale a: 'porque / já que + verbo flexionado'",
+                      "Exemplo: 'Temendo por sua saúde (1º), redigiu o documento (2º)'"
+                    ]
                   },
                   {
-                    "id": "segment-04",
-                    "label": "\"temendo por sua saúde\""
+                    "id": "gerundio-modal",
+                    "kind": "result",
+                    "label": "Gerúndio Modal (Simultaneidade / Maneira)",
+                    "details": [
+                      "Ocorre simultaneamente à ação principal e responde à pergunta '[Verbo Principal] + COMO?'",
+                      "Indica o modo, método ou instrumento da ação",
+                      "Exemplo: 'Entrou na sala correndo' (como entrou? correndo)"
+                    ]
                   },
                   {
-                    "id": "segment-05",
-                    "label": "\"escreveu um testamento\""
-                  },
-                  {
-                    "id": "segment-06",
-                    "label": "(Gerúndio Causal)"
-                  },
-                  {
-                    "id": "segment-07",
-                    "label": "(Verbo Principal)"
-                  },
-                  {
-                    "id": "segment-08",
-                    "label": "OU"
-                  },
-                  {
-                    "id": "segment-09",
-                    "label": "AÇÃO PRINCIPAL"
-                  },
-                  {
-                    "id": "segment-10",
-                    "label": "EFEITO / CONSEQUÊNCIA"
-                  },
-                  {
-                    "id": "segment-11",
-                    "label": "\"montar os trilhões...\""
-                  },
-                  {
-                    "id": "segment-12",
-                    "label": "\"criando o arco-íris...\""
-                  },
-                  {
-                    "id": "segment-13",
-                    "label": "(Infinitivo / Fato Gerador)"
-                  },
-                  {
-                    "id": "segment-14",
-                    "label": "(Gerúndio Consecutivo)"
+                    "id": "gerundio-consecutivo",
+                    "kind": "result",
+                    "label": "Gerúndio Consecutivo (2º Fato / Posterioridade Temporal)",
+                    "details": [
+                      "Ocorre em 2º lugar no tempo real como efeito ou consequência decorrente",
+                      "Equivale a: 'de modo que / e consequentemente + verbo flexionado'",
+                      "Exemplo: 'Montou o circuito elétrico (1º), criando um curto-circuito (2º)'"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "analise-semantica-gerundio",
+                    "to": "decisao-cronologia-gerundio",
+                    "label": "avaliar linha temporal"
+                  },
+                  {
+                    "from": "decisao-cronologia-gerundio",
+                    "to": "gerundio-causal",
+                    "label": "Fato Anterior (1º Fato / Causa Geradora)"
+                  },
+                  {
+                    "from": "decisao-cronologia-gerundio",
+                    "to": "gerundio-modal",
+                    "label": "Fato Simultâneo (Modo / Responde 'Como?')"
+                  },
+                  {
+                    "from": "decisao-cronologia-gerundio",
+                    "to": "gerundio-consecutivo",
+                    "label": "Fato Posterior (2º Fato / Efeito Decorrente)"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    analise-semantica-gerundio[\"Análise da Relação Temporal e Semântica do Gerúndio\"] -->|avaliar linha temporal| decisao-cronologia-gerundio{\"Qual é a posição cronológica do fato no gerúndio em relação ao verbo principal?\"}\n    decisao-cronologia-gerundio -->|Fato Anterior (1º Fato / Causa Geradora)| gerundio-causal[\"Gerúndio Causal (1º Fato / Anterioridade Temporal)\"]\n    decisao-cronologia-gerundio -->|Fato Simultâneo (Modo / Responde 'Como?')| gerundio-modal[\"Gerúndio Modal (Simultaneidade / Maneira)\"]\n    decisao-cronologia-gerundio -->|Fato Posterior (2º Fato / Efeito Decorrente)| gerundio-consecutivo[\"Gerúndio Consecutivo (2º Fato / Posterioridade Temporal)\"]"
               }
             },
             {

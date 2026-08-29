@@ -352,62 +352,277 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "branches",
               "title": "Estrutura dos Três Grupos (#ANOTAAÍ)",
               "text": "GRUPO 1: O / A / OS / AS ├── Natureza: Complementos SEM PREPOSIÇÃO └── Função Sintática: Exclusivamente OBJETO DIRETO (O.D.)",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "GRUPO 1: O / A / OS / AS",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "branches",
+                "layout": "vertical",
+                "rootId": "grupo-1-o-a-os-as",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "Natureza: Complementos SEM PREPOSIÇÃO"
+                    "id": "grupo-1-o-a-os-as",
+                    "kind": "start",
+                    "label": "GRUPO 1: O / A / OS / AS (#ANOTAAÍ)",
+                    "details": [
+                      "Morfossintaxe dos pronomes oblíquos átonos de 3ª pessoa não preposicionados."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "Função Sintática: Exclusivamente OBJETO DIRETO (O.D.)"
+                    "id": "natureza-grupo1",
+                    "kind": "category",
+                    "label": "Natureza Semântico-Sintática",
+                    "details": [
+                      "Complementos SEM PREPOSIÇÃO.",
+                      "Substituem termos substantivos masculinos/femininos, singulares/plurais."
+                    ]
+                  },
+                  {
+                    "id": "funcao-objeto-direto",
+                    "kind": "rule",
+                    "label": "Função Sintática Exclusiva: OBJETO DIRETO (O.D.)",
+                    "details": [
+                      "Desempenham unicamente a função de Objeto Direto junto a Verbos Transitivos Diretos (VTD).",
+                      "Nunca funcionam como Objeto Indireto em norma culta."
+                    ]
+                  },
+                  {
+                    "id": "variantes-alofonicas",
+                    "kind": "rule",
+                    "label": "Variantes Fonéticas: -lo(s)/-la(s) e -no(s)/-na(s)",
+                    "details": [
+                      "Após terminações em -R, -S, -Z: o verbo perde a consoante e o pronome vira -lo, -la, -los, -las (ex.: fazer + o ➔ fazê-lo).",
+                      "Após terminações nasais (-m, -ão, -õe): o pronome assume as formas -no, -na, -nos, -nas (ex.: viram + o ➔ viram-no)."
+                    ]
+                  },
+                  {
+                    "id": "resultado-grupo1",
+                    "kind": "result",
+                    "label": "Domínio Seguro de O / A / OS / AS em Concursos",
+                    "details": [
+                      "Aplicação direta em questões de substituição pronominal e regência de VTD."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "grupo-1-o-a-os-as",
+                    "to": "natureza-grupo1"
+                  },
+                  {
+                    "from": "grupo-1-o-a-os-as",
+                    "to": "funcao-objeto-direto"
+                  },
+                  {
+                    "from": "natureza-grupo1",
+                    "to": "variantes-alofonicas"
+                  },
+                  {
+                    "from": "funcao-objeto-direto",
+                    "to": "resultado-grupo1"
+                  },
+                  {
+                    "from": "variantes-alofonicas",
+                    "to": "resultado-grupo1"
+                  }
+                ],
+                "structuredText": "### Estrutura dos Três Grupos (#ANOTAAÍ) — Grupo 1: O / A / OS / AS\n\n- **GRUPO 1: O / A / OS / AS:**\n  - ├── **Natureza:** Complementos SEM PREPOSIÇÃO.\n  - └── **Função Sintática:** Exclusivamente **OBJETO DIRETO (O.D.)**.\n- *Variantes Fonéticas:* -lo(s)/-la(s) após -r/-s/-z; -no(s)/-na(s) após som nasal.",
+                "mermaidSource": "flowchart TD\n    grupo-1-o-a-os-as[\"GRUPO 1: O / A / OS / AS<br>Pronomes Oblíquos Diretos\"] --> natureza-grupo1[\"Natureza: Complemento SEM Preposição\"]\n    grupo-1-o-a-os-as --> funcao-objeto-direto[\"Função Sintática Exclusiva:<br>OBJETO DIRETO O.D.\"]\n    natureza-grupo1 --> variantes-alofonicas[\"Variantes Fonéticas:<br>-lo/la (-r,-s,-z) | -no/na (nasais)\"]\n    funcao-objeto-direto --> resultado-grupo1[\"Domínio Seguro em Provas\"]\n    variantes-alofonicas --> resultado-grupo1",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "branches",
               "title": "Os Três Grupos dos Pronomes Oblíquos Átonos",
               "text": "GRUPO 2: LHE / LHES ├── Natureza: Complementos COM PREPOSIÇÃO (\"a ele\", \"a ela\", \"a eles\", \"a elas\") └── Função Sintática: Exclusivamente OBJETO INDIRETO (O.I.)",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "GRUPO 2: LHE / LHES",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "branches",
+                "layout": "vertical",
+                "rootId": "grupo-2-lhe-lhes",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "Natureza: Complementos COM PREPOSIÇÃO (\"a ele\", \"a ela\", \"a eles\", \"a elas\")"
+                    "id": "grupo-2-lhe-lhes",
+                    "kind": "start",
+                    "label": "GRUPO 2: LHE / LHES (#ANOTAAÍ)",
+                    "details": [
+                      "Morfossintaxe e função sintática rígida dos pronomes oblíquos preposicionados de 3ª pessoa."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "Função Sintática: Exclusivamente OBJETO INDIRETO (O.I.)"
+                    "id": "natureza-lhe",
+                    "kind": "category",
+                    "label": "Natureza Semântico-Sintática",
+                    "details": [
+                      "Representam complementos COM PREPOSIÇÃO implícita ('a ele', 'a ela', 'a eles', 'a elas').",
+                      "Referem-se preferencialmente a pessoas ou entes personificados."
+                    ]
+                  },
+                  {
+                    "id": "funcao-objeto-indireto",
+                    "kind": "rule",
+                    "label": "Função Sintática Exclusiva: OBJETO INDIRETO (O.I.)",
+                    "details": [
+                      "Desempenham como complementos verbais exclusivamente a função de Objeto Indireto.",
+                      "Ressalva adnominal: podem funcionar como Adjunto Adnominal de posse junto a substantivos (ex.: 'Beijou-lhe as mãos' = as mãos dele)."
+                    ]
+                  },
+                  {
+                    "id": "proibicao-vtd",
+                    "kind": "rule",
+                    "label": "Proibição com Verbo Transitivo Direto (VTD)",
+                    "details": [
+                      "É erro crasso em concurso usar 'lhe' como complemento de VTD puro.",
+                      "Incorreto: *Eu lhe vi ontem* | Correto: 'Eu o vi ontem'."
+                    ]
+                  },
+                  {
+                    "id": "resultado-grupo2",
+                    "kind": "result",
+                    "label": "Domínio da Regência de LHE / LHES",
+                    "details": [
+                      "Garantia de acerto em substituição de complementos preposicionados regidos por 'a'."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "grupo-2-lhe-lhes",
+                    "to": "natureza-lhe"
+                  },
+                  {
+                    "from": "grupo-2-lhe-lhes",
+                    "to": "funcao-objeto-indireto"
+                  },
+                  {
+                    "from": "natureza-lhe",
+                    "to": "proibicao-vtd"
+                  },
+                  {
+                    "from": "funcao-objeto-indireto",
+                    "to": "resultado-grupo2"
+                  },
+                  {
+                    "from": "proibicao-vtd",
+                    "to": "resultado-grupo2"
+                  }
+                ],
+                "structuredText": "### Estrutura dos Três Grupos (#ANOTAAÍ) — Grupo 2: LHE / LHES\n\n- **GRUPO 2: LHE / LHES:**\n  - ├── **Natureza:** Complementos COM PREPOSIÇÃO ('a ele', 'a ela', 'a eles', 'a elas').\n  - └── **Função Sintática:** Exclusivamente **OBJETO INDIRETO (O.I.)** (ou adjunto adnominal de posse).\n- *Vedação Absoluta:* Jamais atua como Objeto Direto de VTD puro.",
+                "mermaidSource": "flowchart TD\n    grupo-2-lhe-lhes[\"GRUPO 2: LHE / LHES<br>Pronomes Oblíquos Preposicionados\"] --> natureza-lhe[\"Natureza: Complemento COM Preposição<br>'a ele', 'a ela'\"]\n    grupo-2-lhe-lhes --> funcao-objeto-indireto[\"Função Sintática Exclusiva:<br>OBJETO INDIRETO O.I.\"]\n    natureza-lhe --> proibicao-vtd[\"Proibição com VTD puro<br>Vedado *Eu lhe vi*\"]\n    funcao-objeto-indireto --> resultado-grupo2[\"Domínio Seguro da Regência\"]\n    proibicao-vtd --> resultado-grupo2",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "branches",
               "title": "Os Três Grupos dos Pronomes Oblíquos Átonos",
               "text": "GRUPO 3: ME / TE / SE / NOS / VOS (CORINGAS) ├── Natureza: Complementos com ou sem preposição └── Função Sintática: OBJETO DIRETO ou OBJETO INDIRETO (depende da regência do verbo)",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "GRUPO 3: ME / TE / SE / NOS / VOS (CORINGAS)",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "branches",
+                "layout": "vertical",
+                "rootId": "grupo-3-pronomes-coringas",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "Natureza: Complementos com ou sem preposição"
+                    "id": "grupo-3-pronomes-coringas",
+                    "kind": "start",
+                    "label": "GRUPO 3: ME / TE / SE / NOS / VOS (CORINGAS)",
+                    "details": [
+                      "Morfossintaxe dos pronomes oblíquos átonos de 1ª, 2ª e 3ª pessoas com dupla função sintática."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "Função Sintática: OBJETO DIRETO ou OBJETO INDIRETO (depende da regência do verbo)"
+                    "id": "natureza-grupo3",
+                    "kind": "category",
+                    "label": "Natureza Semântico-Sintática",
+                    "details": [
+                      "Complementos COM ou SEM preposição na regência oracional.",
+                      "Atuam como complementos verbais diretos ou indiretos."
+                    ]
+                  },
+                  {
+                    "id": "funcao-dupla-od-oi",
+                    "kind": "rule",
+                    "label": "Função Sintática: OBJETO DIRETO ou OBJETO INDIRETO",
+                    "details": [
+                      "A função exata depende exclusivamente da regência do verbo associado.",
+                      "Com VTD: Objeto Direto (ex.: 'Ele me convidou' ➔ convidou quem? a mim = OD).",
+                      "Com VTI/VTDI: Objeto Indireto (ex.: 'Ele me obedeceu' ➔ obedeceu a quem? a mim = OI)."
+                    ]
+                  },
+                  {
+                    "id": "teste-substituicao-3p",
+                    "kind": "rule",
+                    "label": "Teste Prático de Desambiguação",
+                    "details": [
+                      "Substituir o pronome coringa por forma da 3ª pessoa:",
+                      "Se aceitar 'o/a', a função é OBJETO DIRETO.",
+                      "Se aceitar 'lhe', a função é OBJETO INDIRETO."
+                    ]
+                  },
+                  {
+                    "id": "resultado-grupo3",
+                    "kind": "result",
+                    "label": "Domínio Seguro dos Pronomes Coringas",
+                    "details": [
+                      "Determinação precisa da função sintática com base na regência verbal contextual."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "grupo-3-pronomes-coringas",
+                    "to": "natureza-grupo3"
+                  },
+                  {
+                    "from": "grupo-3-pronomes-coringas",
+                    "to": "funcao-dupla-od-oi"
+                  },
+                  {
+                    "from": "natureza-grupo3",
+                    "to": "teste-substituicao-3p"
+                  },
+                  {
+                    "from": "funcao-dupla-od-oi",
+                    "to": "resultado-grupo3"
+                  },
+                  {
+                    "from": "teste-substituicao-3p",
+                    "to": "resultado-grupo3"
+                  }
+                ],
+                "structuredText": "### Estrutura dos Três Grupos (#ANOTAAÍ) — Grupo 3: ME / TE / SE / NOS / VOS (CORINGAS)\n\n- **GRUPO 3: ME / TE / SE / NOS / VOS (CORINGAS):**\n  - ├── **Natureza:** Complementos com ou sem preposição.\n  - └── **Função Sintática:** **OBJETO DIRETO** ou **OBJETO INDIRETO** (depende da regência do verbo).\n- *Teste de Desambiguação:* Substituição por 'o/a' (OD) vs. 'lhe' (OI).",
+                "mermaidSource": "flowchart TD\n    grupo-3-pronomes-coringas[\"GRUPO 3: ME / TE / SE / NOS / VOS<br>Pronomes Coringas\"] --> natureza-grupo3[\"Natureza: Com ou Sem Preposição\"]\n    grupo-3-pronomes-coringas --> funcao-dupla-od-oi[\"Função Sintática:<br>OBJETO DIRETO ou OBJETO INDIRETO\"]\n    natureza-grupo3 --> teste-substituicao-3p[\"Teste: Troca por 'o/a' (OD) ou 'lhe' (OI)\"]\n    funcao-dupla-od-oi --> resultado-grupo3[\"Domínio Seguro da Regência\"]\n    teste-substituicao-3p --> resultado-grupo3",
+                "provenance": {
+                  "generatedBy": "agent_3_A04_A05",
+                  "version": "v2.0.0-semantic-high-thinking",
+                  "timestamp": "2026-08-29T13:30:00Z",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                }
               }
             },
             {

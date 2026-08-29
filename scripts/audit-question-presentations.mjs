@@ -5,6 +5,7 @@ import { hasQuestionSupportEditorialLeak } from './lib/question-support-presenta
 
 const root = process.cwd();
 const normalizedPath = path.join(root, 'public', 'knowledge', 'official-questions.normalized.json');
+const fallbackPath = path.join(root, 'public', 'knowledge', 'official-question-presentation-fallbacks.json');
 const viewsDir = path.join(root, 'public', 'knowledge', 'pedagogical', 'views');
 const contextReference = /\b(?:texto\s+(?:[A-Z]{1,4}\d[A-Z]?\d?|anterior)|parágrafo\s+\d+|linha\s+\d+)/i;
 const visualReference = /\b(?:destacad[ao]s?|sublinhad[ao]s?|grif[ao]d[ao]s?|negrito)\b/i;
@@ -16,6 +17,9 @@ const fail = (message) => {
 };
 
 const normalized = JSON.parse(fs.readFileSync(normalizedPath, 'utf8'));
+const presentationFallbacks = fs.existsSync(fallbackPath)
+  ? JSON.parse(fs.readFileSync(fallbackPath, 'utf8')).presentations || {}
+  : {};
 if (!Array.isArray(normalized)) {
   fail('official-questions.normalized.json must contain an array');
   process.exit();
@@ -34,6 +38,9 @@ for (const question of normalized) {
     const [lessonId, ...sourceParts] = question.id.split(':');
     byOfficialRef.set(`OQ-${lessonId}-${sourceParts.join(':')}`, question);
   }
+  for (const alias of question?.officialQuestionAliases || []) {
+    if (typeof alias === 'string' && alias) byOfficialRef.set(alias, question);
+  }
   const learnerCommand = question?.presentation?.commandRichText
     || question?.presentation?.command
     || question?.prompt;
@@ -43,6 +50,9 @@ for (const question of normalized) {
   if (hasQuestionSupportEditorialLeak(question?.presentation?.supportBlocks)) {
     supportEditorialLeaks.push(question.id || '(sem id)');
   }
+}
+for (const [officialRef, question] of Object.entries(presentationFallbacks)) {
+  if (!byOfficialRef.has(officialRef)) byOfficialRef.set(officialRef, question);
 }
 
 if (duplicatedInlineOptions.length) {
@@ -81,6 +91,8 @@ const presentationRichText = (question) => [
   question?.presentation?.supportRichText,
   ...Object.values(question?.presentation?.optionRichText || {}),
 ].filter(Boolean).join('\n');
+const hasSourceVisual = (question) => (question?.presentation?.media || [])
+  .some((asset) => typeof asset?.url === 'string' && asset.url.trim());
 
 const contextual = [];
 const visual = [];
@@ -96,7 +108,7 @@ for (const [ref, viewQuestion] of viewQuestions) {
   }
   if (visualReference.test(prompt)) {
     const sourceBacked = question?.presentation?.formattingStatus === 'source_backed'
-      && richEmphasis.test(presentationRichText(question));
+      && (richEmphasis.test(presentationRichText(question)) || hasSourceVisual(question));
     visual.push({ ref, sourceBacked });
   }
 }
@@ -105,6 +117,15 @@ const highlighted = byOfficialRef.get('OQ-A00-aula00.q0006');
 const highlightedCommand = String(highlighted?.presentation?.commandRichText || '');
 if (!highlightedCommand.includes('**processo**') || !highlightedCommand.includes('**amadurecimento**')) {
   fail('OQ-A00-aula00.q0006 lost its two source-backed typographic highlights');
+}
+
+const recoveredCharge = byOfficialRef.get('OQ-A00-aula00.q0038');
+if (
+  recoveredCharge?.presentation?.formattingStatus !== 'source_backed'
+  || recoveredCharge?.presentation?.mediaKind !== 'visual_essential'
+  || !recoveredCharge?.presentation?.media?.some((asset) => asset.url === '/knowledge/question-assets/OQ-A00-aula00.q0038.png')
+) {
+  fail('OQ-A00-aula00.q0038 lost its source-backed original charge');
 }
 
 const recovered = byOfficialRef.get('OQ-A00-aula00.q0077');
@@ -132,10 +153,13 @@ console.log(JSON.stringify({
   contextualQuestionRefs: contextual.length,
   sourceBackedContextRefs: contextual.filter((item) => item.sourceBacked).length,
   failClosedContextRefs: contextual.filter((item) => !item.sourceBacked).length,
+  failClosedContextRefIds: contextual.filter((item) => !item.sourceBacked).map((item) => item.ref).sort(),
   visualReferenceQuestionRefs: visual.length,
   sourceBackedVisualRefs: visual.filter((item) => item.sourceBacked).length,
   failClosedVisualRefs: visual.filter((item) => !item.sourceBacked).length,
+  failClosedVisualRefIds: visual.filter((item) => !item.sourceBacked).map((item) => item.ref).sort(),
   highlightedRegression: 'OQ-A00-aula00.q0006',
+  recoveredVisualRegression: 'OQ-A00-aula00.q0038',
   recoveredSupportRegression: 'OQ-A00-aula00.q0077',
   duplicatedInlineOptions: duplicatedInlineOptions.length,
   supportEditorialLeaks: supportEditorialLeaks.length,

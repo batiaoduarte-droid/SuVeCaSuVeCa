@@ -767,21 +767,103 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "comparison",
               "title": "Distinção Categórica entre Sujeito (Sintático) e Referente (Semântico)",
               "text": "Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol. ▲ │ (Seta Semântica / Referência Coesiva) Oração 2: [Ø] (Sujeito Sintático Oculto / Desinencial) Jogam futebol todos os dias.",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "comparison",
+                "layout": "horizontal",
+                "rootId": "distincao-sujeito-referente",
+                "structuredText": "### Distinção Categórica entre Sujeito (Sintático) e Referente (Semântico)\n- **Comparação entre os Níveis Sintático e Semântico**:\n  - **Oração 1: \"[Os meninos] jogam futebol.\"**\n    - *Sujeito Sintático*: Determinado Simples e Explícito (`[Os meninos]`, com núcleo substantivo \"meninos\").\n    - *Referente Semântico*: O grupo de garotos no mundo extralinguístico.\n  - **Oração 2: \"[Ø] Jogam futebol todos os dias.\"**\n    - *Sujeito Sintático*: Oculto / Desinencial / Elíptico (determinado estritamente pela desinência número-pessoal da 3ª pessoa do plural do verbo \"Jogam\").\n    - *Referente Semântico*: \"Os meninos\" (recuperado contextualmente por coesão anafórica interoracional).\n- **Alerta Pedagógico para Concursos**:\n  - É erro grave afirmar que o sujeito da Oração 2 é \"Os meninos\". O termo \"Os meninos\" pertence sintaticamente apenas à Oração 1.\n  - Na Oração 2, o sujeito sintático é elíptico/desinencial; o referente semântico no discurso é \"Os meninos\".",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol."
+                    "id": "distincao-sujeito-referente",
+                    "kind": "start",
+                    "label": "Distinção entre Sujeito Sintático e Referente Semântico",
+                    "details": [
+                      "Diferenciação obrigatória entre o plano sintático (interno à oração) e o plano semântico (coesão discursiva)",
+                      "Tema recorrente em bancas examinadoras (FGV, Cebraspe, FCC)"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "(Seta Semântica / Referência Coesiva) Oração 2: [Ø] (Sujeito Sintático Oculto / Desinencial) Jogam futebol todos os dias."
+                    "id": "oracao-1-analise",
+                    "kind": "example",
+                    "label": "Oração 1: '[Os meninos] jogam futebol'",
+                    "details": [
+                      "Sujeito Sintático: Explícito / Simples ('Os meninos')",
+                      "Núcleo do sujeito: 'meninos' (substantivo não preposicionado)",
+                      "Papel referencial: Introduz o referente textual no discurso"
+                    ]
+                  },
+                  {
+                    "id": "oracao-2-analise",
+                    "kind": "example",
+                    "label": "Oração 2: '[Ø] Jogam futebol todos os dias'",
+                    "details": [
+                      "Sujeito Sintático: Oculto / Desinencial / Elíptico (marcado na desinência verbal de 3ª pessoa do plural)",
+                      "Nenhum termo substantivo ocupa a posição de sujeito sintático nesta oração",
+                      "Predicado: toda a oração ('Jogam futebol todos os dias')"
+                    ]
+                  },
+                  {
+                    "id": "mecanismo-coesao-semantica",
+                    "kind": "rule",
+                    "label": "Mecanismo de Coesão Anafórica (Seta Semântica)",
+                    "details": [
+                      "A elipse do sujeito na Oração 2 aponta contextualmente para 'Os meninos' da Oração 1",
+                      "'Os meninos' atua como Referente Semântico discursivo, NÃO como sujeito sintático da Oração 2"
+                    ]
+                  },
+                  {
+                    "id": "gabarito-normativo-bancas",
+                    "kind": "result",
+                    "label": "Gabarito Normativo em Provas de Concurso",
+                    "details": [
+                      "Se a banca perguntar o Sujeito da Oração 2: Gabarito = Oculto / Desinencial",
+                      "Se a banca perguntar o Referente / Sentido do sujeito elíptico: Gabarito = 'Os meninos'",
+                      "Misturar os dois conceitos conduz a julgamento incorreto da assertiva"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "distincao-sujeito-referente",
+                    "to": "oracao-1-analise",
+                    "label": "caso de sujeito explícito"
+                  },
+                  {
+                    "from": "distincao-sujeito-referente",
+                    "to": "oracao-2-analise",
+                    "label": "caso de sujeito elíptico"
+                  },
+                  {
+                    "from": "oracao-2-analise",
+                    "to": "mecanismo-coesao-semantica",
+                    "label": "retomada por coesão"
+                  },
+                  {
+                    "from": "mecanismo-coesao-semantica",
+                    "to": "oracao-1-analise",
+                    "label": "seta semântica aponta para"
+                  },
+                  {
+                    "from": "mecanismo-coesao-semantica",
+                    "to": "gabarito-normativo-bancas",
+                    "label": "orientação para provas"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    distincao-sujeito-referente[\"Distinção entre Sujeito Sintático e Referente Semântico\"] -->|caso de sujeito explícito| oracao-1-analise[\"Oração 1: '[Os meninos] jogam futebol'\"]\n    distincao-sujeito-referente -->|caso de sujeito elíptico| oracao-2-analise[\"Oração 2: '[Ø] Jogam futebol todos os dias'\"]\n    oracao-2-analise -->|retomada por coesão| mecanismo-coesao-semantica[\"Mecanismo de Coesão Anafórica (Seta Semântica)\"]\n    mecanismo-coesao-semantica -->|seta semântica aponta para| oracao-1-analise\n    mecanismo-coesao-semantica -->|orientação para provas| gabarito-normativo-bancas[\"Gabarito Normativo em Provas de Concurso\"]"
               }
             },
             {
@@ -1238,21 +1320,103 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "comparison",
               "title": "Distinção Categórica entre Sujeito (Sintático) e Referente (Semântico)",
               "text": "Análise Sintática vs. Semântica: Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol. Oração 2: [Ø] (Sujeito Sintático Oculto) Jogam futebol todos os dias. │ └──> Aponta contextualmente para \"Os meninos\" (REFERENTE SEMÂNTICO)",
               "structure": {
-                "kind": "relations",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "comparison",
+                "layout": "vertical",
+                "rootId": "analise-sintatica-vs-semantica",
+                "structuredText": "### Análise Sintática vs. Semântica: Sujeito e Referente Textual\n- **Análise Comparativa dos Dois Planos**:\n  - **Oração 1: \"[Os meninos] jogam futebol.\"**\n    - *Plano Sintático*: Sujeito Sintático Explícito / Simples (`[Os meninos]`, com núcleo substantivo \"meninos\").\n    - *Plano Semântico*: O referente extralinguístico são os garotos do contexto.\n  - **Oração 2: \"[Ø] Jogam futebol todos os dias.\"**\n    - *Plano Sintático*: Sujeito Sintático Oculto / Desinencial (`[Ø]`, determinado pela terminação verbal `-m` da 3ª pessoa do plural).\n    - *Plano Semântico*: O termo `[Ø]` aponta contextualmente por anáfora coesiva para `\"Os meninos\"` (REFERENTE SEMÂNTICO).\n- **Conceitos Contrastados**:\n  - *Sujeito Sintático*: Termo gramatical oracional que dita a concordância do verbo (existe estritamente dentro dos limites da oração).\n  - *Referente Semântico*: Entidade do discurso ou do texto a quem a ação se refere no plano do significado.",
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "Análise Sintática vs. Semântica: Oração 1: [Os meninos] (Sujeito Sintático Explícito) jogam futebol. Oração 2: [Ø] (Sujeito Sintático Oculto) Jogam futebol todos os dias."
+                    "id": "analise-sintatica-vs-semantica",
+                    "kind": "start",
+                    "label": "Análise Sintática vs. Análise Semântica",
+                    "details": [
+                      "Separação indispensável entre o nível microestrutural oracional (sintaxe) e o nível macroestrutural textual (semântica)",
+                      "Previne confusão entre a determinação do sujeito e a recuperação de referentes no texto"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "Aponta contextualmente para \"Os meninos\" (REFERENTE SEMÂNTICO)"
+                    "id": "oracao-1-estrutura",
+                    "kind": "category",
+                    "label": "Oração 1: '[Os meninos] (Sujeito Explícito) jogam futebol'",
+                    "details": [
+                      "Sujeito sintático materializado no texto ('Os meninos')",
+                      "Núcleo do sujeito: 'meninos' (substantivo não preposicionado)",
+                      "O sujeito sintático coincide diretamente com a introdução do referente"
+                    ]
+                  },
+                  {
+                    "id": "oracao-2-estrutura",
+                    "kind": "category",
+                    "label": "Oração 2: '[Ø] (Sujeito Oculto) Jogam futebol todos os dias'",
+                    "details": [
+                      "Sujeito sintático: Oculto / Desinencial / Elíptico",
+                      "A flexão de 3ª pessoa do plural marca gramaticalmente a pessoa verbal",
+                      "Sintaticamente, o sujeito NÃO é a expressão 'Os meninos'"
+                    ]
+                  },
+                  {
+                    "id": "referente-semantico-coesao",
+                    "kind": "rule",
+                    "label": "Referente Semântico (Apontamento Coesivo)",
+                    "details": [
+                      "O sujeito elíptico da oração 2 ancora-se no referente semântico 'Os meninos' da oração 1",
+                      "A relação é de Coesão Referencial Anafórica, não de função sintática compartilhada"
+                    ]
+                  },
+                  {
+                    "id": "sintese-pedagogica-provas",
+                    "kind": "result",
+                    "label": "Síntese Pedagógica para Provas",
+                    "details": [
+                      "Em questões de sintaxe estrita: o sujeito da Oração 2 é desinencial/elíptico",
+                      "Em questões de compreensão e coesão textual: o sujeito elíptico refere-se a 'os meninos'",
+                      "Atenção aos enunciados que misturam 'função sintática' com 'sentido/referência'"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "analise-sintatica-vs-semantica",
+                    "to": "oracao-1-estrutura",
+                    "label": "primeira oração"
+                  },
+                  {
+                    "from": "analise-sintatica-vs-semantica",
+                    "to": "oracao-2-estrutura",
+                    "label": "segunda oração"
+                  },
+                  {
+                    "from": "oracao-2-estrutura",
+                    "to": "referente-semantico-coesao",
+                    "label": "seta coesiva anafórica"
+                  },
+                  {
+                    "from": "referente-semantico-coesao",
+                    "to": "oracao-1-estrutura",
+                    "label": "retoma o antecedente"
+                  },
+                  {
+                    "from": "referente-semantico-coesao",
+                    "to": "sintese-pedagogica-provas",
+                    "label": "aplicação normativa"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila",
+                  "assignedAgent": "agent_4_A06_A07",
+                  "generatedAt": "2026-08-29T16:35:56Z",
+                  "regenerated": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    analise-sintatica-vs-semantica[\"Análise Sintática vs. Análise Semântica\"] -->|primeira oração| oracao-1-estrutura[\"Oração 1: '[Os meninos] (Sujeito Explícito) jogam futebol'\"]\n    analise-sintatica-vs-semantica -->|segunda oração| oracao-2-estrutura[\"Oração 2: '[Ø] (Sujeito Oculto) Jogam futebol todos os dias'\"]\n    oracao-2-estrutura -->|seta coesiva anafórica| referente-semantico-coesao[\"Referente Semântico (Apontamento Coesivo)\"]\n    referente-semantico-coesao -->|retoma o antecedente| oracao-1-estrutura\n    referente-semantico-coesao -->|aplicação normativa| sintese-pedagogica-provas[\"Síntese Pedagógica para Provas\"]"
               }
             },
             {

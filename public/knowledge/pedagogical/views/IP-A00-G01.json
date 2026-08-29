@@ -228,22 +228,75 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "branches",
               "title": "Explicação consolidada",
               "text": "┌── CONSONANTAIS: CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU, QU │ (som resultante = consoante; ex.: chave /x/, guerra /g/) DÍGRAFOS (2L = 1 Som) ──┤ └── VOCÁLICOS: AM, EM, IM, OM, UM / AN, EN, IN, ON, UN (som resultante = vogal nasal; m/n atuam como til)",
               "structure": {
-                "kind": "relations",
-                "rootLabel": "CONSONANTAIS: CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU, QU",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "branches",
+                "layout": "responsive",
+                "rootId": "conceito-digrafo",
+                "structuredText": "# Dígrafos: Classificação Estrutural\n\nO dígrafo ocorre quando duas letras representam um único som (relação 2 Letras = 1 Fonema / $F = L - 1$):\n\n1. **Dígrafos Consonantais**:\n   - O som resultante é um fonema consonantal.\n   - Dígrafos fixos: **CH, LH, NH, RR, SS, SC, SÇ, XC, XS**.\n   - Grupos especiais: **GU** e **QU** antes de E/I com U mudo (*guerra*, *quilo*).\n   - Exemplos: *chave*, *palha*, *ninho*, *carro*, *massa*, *nascer*, *exceção*.\n\n2. **Dígrafos Vocálicos**:\n   - Sequência de vogal seguida de **M** ou **N** no final da mesma sílaba (**AM, EM, IM, OM, UM / AN, EN, IN, ON, UN**).\n   - O M e o N funcionam como marcadores de nasalização (til).\n   - Exemplos: *tampa* (/tã-pa/), *vento* (/vẽ-to/), *tinta* (/tĩ-ta/), *ombro* (/õ-bro/), *mundo* (/mũ-do/).",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "(som resultante = consoante; ex.: chave /x/, guerra /g/) DÍGRAFOS (2L = 1 Som)"
+                    "id": "conceito-digrafo",
+                    "kind": "category",
+                    "label": "Dígrafos (2 Letras = 1 Fonema)",
+                    "details": [
+                      "Dígrafo é o grupo de duas letras que representa um único fonema na fala.",
+                      "Regra aritmética fundamental: a cada dígrafo presente, subtrai-se 1 do total de letras (F = L - 1).",
+                      "Divide-se em duas categorias normativas: Dígrafos Consonantais e Dígrafos Vocálicos."
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "VOCÁLICOS: AM, EM, IM, OM, UM / AN, EN, IN, ON, UN (som resultante = vogal nasal; m/n atuam como til)"
+                    "id": "digrafos-consonantais",
+                    "kind": "category",
+                    "label": "Dígrafos Consonantais",
+                    "details": [
+                      "Grupo de duas letras que produz um único fonema consonantal.",
+                      "Sequências fixas: CH, LH, NH, RR, SS, SC, SÇ, XC, XS.",
+                      "Grupos GU e QU diante de E/I quando a letra U for átona/muda (guerra /g/, queijo /k/).",
+                      "Comportamento silábico: RR, SS, SC, SÇ, XC separam-se na divisão; CH, LH, NH, GU, QU são inseparáveis.",
+                      "Exemplos canônicos: chave (/ʃ/), ilha (/ʎ/), ninho (/ɲ/), carro (/ʁ/), pássaro (/s/), piscina (/s/), desça (/s/), excelente (/s/). "
+                    ]
+                  },
+                  {
+                    "id": "digrafos-vocalicos",
+                    "kind": "category",
+                    "label": "Dígrafos Vocálicos",
+                    "details": [
+                      "Sequência de vogal + M ou N na mesma sílaba (posição pós-vocálica/travamento).",
+                      "Pares formadores: AM, EM, IM, OM, UM / AN, EN, IN, ON, UN.",
+                      "As letras M e N não representam consoantes plenas; atuam meramente como sinal diacrítico de nasalização (equivalente ao til ~).",
+                      "Produzem uma única vogal nasal (/ã/, /ẽ/, /ĩ/, /õ/, /ũ/).",
+                      "Exemplos canônicos: tampa (/tãpa/), vento (/vẽtu/), cinto (/sĩtu/), campo (/kãpu/), mundo (/mũdu/)."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "conceito-digrafo",
+                    "to": "digrafos-consonantais",
+                    "label": "Som Consonantal"
+                  },
+                  {
+                    "from": "conceito-digrafo",
+                    "to": "digrafos-vocalicos",
+                    "label": "Som de Vogal Nasal"
+                  }
+                ],
+                "provenance": {
+                  "regenerationVersion": "v2.0.0-semantic-high-thinking",
+                  "author": "agent_1_A00_A01",
+                  "lesson": "A00",
+                  "reviewed": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    conceito-digrafo[\"DÍGRAFOS<br/>(2 Letras = 1 Fonema / F = L - 1)\"]\n    digrafos-consonantais[\"Dígrafos Consonantais<br/>(Som resultante = Consoante)<br/>CH, LH, NH, RR, SS, SC, SÇ, XC, XS, GU/QU<br/>ex.: chave /ʃ/, guerra /g/, piscina /s/\"]\n    digrafos-vocalicos[\"Dígrafos Vocálicos<br/>(Som resultante = Vogal Nasal)<br/>AM, EM, IM, OM, UM / AN, EN, IN, ON, UN<br/>ex.: tampa /tã/, vento /vẽ/, cinto /sĩ/\"]\n\n    conceito-digrafo -->|Som Consonantal| digrafos-consonantais\n    conceito-digrafo -->|Som de Vogal Nasal| digrafos-vocalicos"
               }
             },
             {
@@ -354,18 +407,104 @@
             },
             {
               "type": "diagram",
-              "diagramType": "relationship",
+              "diagramType": "branches",
               "title": "Explicação consolidada",
               "text": "QUADRO DA POLIFONIA DO X │ ┌──────────────────┬─────────────────┴─────────────────┬──────────────────┐ ▼ ▼ ▼ ▼ SOM DE /s/ SOM DE /z/ SOM DE /ʃ/ SOM DE /ks/ (1L = 1 Som) (1L = 1 Som) (1L = 1 Som) (1L = 2 SONS) experiência, exílio, caixa, complexo, táxi, exceder, exemplo mexer, tórax, fixo, excelente mexicano látex, nexo [Relação 1:1] [Relação 1:1] [Relação 1:1] [DÍFONO: F = L + 1]",
               "structure": {
-                "kind": "source_segments",
-                "rootLabel": "QUADRO DA POLIFONIA DO X",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "branches",
+                "layout": "responsive",
+                "rootId": "polifonia-do-x",
+                "structuredText": "# Quadro da Polifonia da Letra X\n\nA letra **X** no sistema ortográfico da Língua Portuguesa apresenta quatro valores fonéticos distintos:\n\n1. **Som de /s/** (Relação 1:1, F = L):\n   - Realização como fricativa alveolar surda.\n   - Exemplos: *experiência*, *exceder*, *excelente*, *texto*, *trouxe*, *sintaxe*.\n\n2. **Som de /z/** (Relação 1:1, F = L):\n   - Realização como fricativa alveolar sonora, típica em posição intervocálica.\n   - Exemplos: *exílio*, *exemplo*, *exame*, *exército*, *exato*.\n\n3. **Som de /ʃ/** (Relação 1:1, F = L):\n   - Realização como fricativa pós-alveolar surda (som de 'ch').\n   - Exemplos: *caixa*, *mexer*, *mexicano*, *lixo*, *enxame*, *xadrez*.\n\n4. **Som de /ks/** (Dífono: Relação 1:2, F = L + 1):\n   - Realização bifonêmica (/k/ + /s/) representada por um único grafema.\n   - Atua como elemento ampliador na contagem fonética (+1 fonema).\n   - Exemplos: *complexo*, *táxi*, *tórax*, *fixo*, *látex*, *nexo*, *oxigênio*.",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "SOM DE /s/ SOM DE /z/ SOM DE /ʃ/ SOM DE /ks/ (1L = 1 Som) (1L = 1 Som) (1L = 1 Som) (1L = 2 SONS) experiência, exílio, caixa, complexo, táxi, exceder, exemplo mexer, tórax, fixo, excelente mexicano látex, nexo [Relação 1:1] [Relação 1:1] [Relação 1:1] [DÍFONO: F = L + 1]"
+                    "id": "polifonia-do-x",
+                    "kind": "category",
+                    "label": "Quadro da Polifonia da Letra X",
+                    "details": [
+                      "A letra X é um grafema polifônico que assume quatro valores fonéticos distintos no português.",
+                      "Três realizações mantêm a relação grafema-fonema 1:1 (F = L).",
+                      "Uma realização atua como dífono com relação 1:2 (F = L + 1)."
+                    ]
+                  },
+                  {
+                    "id": "som-de-s",
+                    "kind": "category",
+                    "label": "Som de /s/ (Fricativa Alveolar Surda)",
+                    "details": [
+                      "Relação grafema-fonema 1:1 (1 Letra = 1 Fonema /s/).",
+                      "Não altera a contagem aritmética: F = L.",
+                      "Exemplos canônicos: experiência, exceder, excelente, texto, trouxe, sintaxe."
+                    ]
+                  },
+                  {
+                    "id": "som-de-z",
+                    "kind": "category",
+                    "label": "Som de /z/ (Fricativa Alveolar Sonora)",
+                    "details": [
+                      "Relação grafema-fonema 1:1 (1 Letra = 1 Fonema /z/).",
+                      "Ocorre frequentemente no prefixo 'ex-' seguido de vogal.",
+                      "Não altera a contagem aritmética: F = L.",
+                      "Exemplos canônicos: exílio, exemplo, exame, exército, exato, êxodo."
+                    ]
+                  },
+                  {
+                    "id": "som-de-ch",
+                    "kind": "category",
+                    "label": "Som de /ʃ/ (Fricativa Pós-Alveolar Surda)",
+                    "details": [
+                      "Relação grafema-fonema 1:1 (1 Letra = 1 Fonema /ʃ/, som de 'ch').",
+                      "Valor fonético padrão após ditongos e após 'en-' inicial.",
+                      "Não altera a contagem aritmética: F = L.",
+                      "Exemplos canônicos: caixa, mexer, mexicano, lixo, enxame, xadrez, frouxo."
+                    ]
+                  },
+                  {
+                    "id": "som-de-ks",
+                    "kind": "rule",
+                    "label": "Som de /ks/ (Dífono: 1 Letra = 2 Fonemas)",
+                    "details": [
+                      "Relação grafema-fonema 1:2 (1 Letra = 2 Fonemas simultâneos: /k/ + /s/).",
+                      "Elemento ampliador fonético: acrescenta 1 fonema à contagem.",
+                      "Equação aritmética: F = L + 1.",
+                      "Exemplos canônicos: complexo, táxi, tórax, fixo, látex, nexo, oxigênio, reflexo."
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "polifonia-do-x",
+                    "to": "som-de-s",
+                    "label": "Valor /s/ (1:1)"
+                  },
+                  {
+                    "from": "polifonia-do-x",
+                    "to": "som-de-z",
+                    "label": "Valor /z/ (1:1)"
+                  },
+                  {
+                    "from": "polifonia-do-x",
+                    "to": "som-de-ch",
+                    "label": "Valor /ʃ/ (1:1)"
+                  },
+                  {
+                    "from": "polifonia-do-x",
+                    "to": "som-de-ks",
+                    "label": "Valor /ks/ (1:2 Dífono)"
+                  }
+                ],
+                "provenance": {
+                  "regenerationVersion": "v2.0.0-semantic-high-thinking",
+                  "author": "agent_1_A00_A01",
+                  "lesson": "A00",
+                  "reviewed": true,
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    polifonia-do-x[\"Quadro da Polifonia da Letra X\"]\n    som-de-s[\"Som de /s/<br/>(1L = 1 Som / F = L)<br/>ex.: experiência, excelente, texto\"]\n    som-de-z[\"Som de /z/<br/>(1L = 1 Som / F = L)<br/>ex.: exílio, exemplo, exame\"]\n    som-de-ch[\"Som de /ʃ/<br/>(1L = 1 Som / F = L)<br/>ex.: caixa, mexer, mexicano\"]\n    som-de-ks[\"Som de /ks/ (Dífono)<br/>(1L = 2 Sons / F = L + 1)<br/>ex.: complexo, táxi, tórax, fixo\"]\n\n    polifonia-do-x -->|Valor /s/ 1:1| som-de-s\n    polifonia-do-x -->|Valor /z/ 1:1| som-de-z\n    polifonia-do-x -->|Valor /ʃ/ 1:1| som-de-ch\n    polifonia-do-x -->|Valor /ks/ 1:2 Dífono| som-de-ks"
               }
             },
             {

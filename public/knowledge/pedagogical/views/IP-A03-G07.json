@@ -1139,24 +1139,383 @@
           "procedureId": "PROC-A03-G07-COLOCACAO-PRONOMES-ATONOS-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "PASSO 1: TESTAR AS 3 PROIBIÇÕES ABSOLUTAS NA PROPOSTA │ ├── A posição pretendida inicia oração ou período? ─────────────► SIM: PROIBIDO! (Item Errado) ├── A posição pretendida faz ênclise a verbo no Futuro? ────────► SIM: PROIBIDO! (Item Errado) ├── A posição pretendida faz ênclise a verbo no Particípio? ────► SIM: PROIBIDO! (Item Errado) └── NÃO: Prosseguir para o PASSO 2."
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo Geral de Resolução de Colocação Pronominal",
+              "text": "PASSO 1: TESTAR AS 3 PROIBIÇÕES ABSOLUTAS NA PROPOSTA │ ├── A posição pretendida inicia oração ou período? ─────────────► SIM: PROIBIDO! (Item Errado) ├── A posição pretendida faz ênclise a verbo no Futuro? ────────► SIM: PROIBIDO! (Item Errado) ├── A posição pretendida faz ênclise a verbo no Particípio? ────► SIM: PROIBIDO! (Item Errado) └── NÃO: Prosseguir para o PASSO 2.",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-passo-1-proibicoes",
+                "groups": [
+                  {
+                    "id": "grupo-teste-proibicoes",
+                    "label": "Triagem das 3 Proibições Absolutas",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-resultado-passo-1",
+                    "label": "Conclusão do Passo 1",
+                    "order": 2
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-passo-1-proibicoes",
+                    "kind": "start",
+                    "label": "Passo 1: Testar as 3 Proibições Absolutas na Proposta",
+                    "details": [
+                      "Primeira etapa eliminatória de qualquer questão de colocação pronominal",
+                      "Avaliar a estrutura oracional e a forma do verbo antes de analisar palavras atrativas"
+                    ],
+                    "groupId": "grupo-teste-proibicoes"
+                  },
+                  {
+                    "id": "decisao-proibicao-inicio-frase",
+                    "kind": "decision",
+                    "label": "A posição pretendida INICIA ORAÇÃO ou período?",
+                    "details": [
+                      "Pronome oblíquo átono iniciando período, parágrafo ou oração após ponto, ponto e vírgula ou vírgula",
+                      "Exemplo proibido: 'Me empresta o livro?' / 'Chegou cedo; se dedicou ao trabalho.'"
+                    ],
+                    "groupId": "grupo-teste-proibicoes"
+                  },
+                  {
+                    "id": "res-proibido-inicio-frase",
+                    "kind": "result",
+                    "label": "PROIBIDO! (Item Errado — Início de Oração)",
+                    "details": [
+                      "É vedado iniciar período ou oração com pronome oblíquo átono no padrão culto",
+                      "Descarte imediato do item"
+                    ],
+                    "groupId": "grupo-resultado-passo-1"
+                  },
+                  {
+                    "id": "decisao-proibicao-futuro",
+                    "kind": "decision",
+                    "label": "A posição pretendida faz ÊNCLISE A VERBO NO FUTURO?",
+                    "details": [
+                      "Verbo no Futuro do Presente (cantará) ou Futuro do Pretérito (cantaria)",
+                      "Exemplo proibido: 'Entregarei-te o prêmio' / 'Faria-lhe uma visita'"
+                    ],
+                    "groupId": "grupo-teste-proibicoes"
+                  },
+                  {
+                    "id": "res-proibido-futuro",
+                    "kind": "result",
+                    "label": "PROIBIDO! (Item Errado — Ênclise no Futuro)",
+                    "details": [
+                      "Com verbo no futuro sem fator atrativo prévio, a colocação obrigatória é a MESÓCLISE ('Entregar-te-ei', 'Far-lhe-ia')",
+                      "A ênclise no futuro é erro crasso"
+                    ],
+                    "groupId": "grupo-resultado-passo-1"
+                  },
+                  {
+                    "id": "decisao-proibicao-participio",
+                    "kind": "decision",
+                    "label": "A posição pretendida faz ÊNCLISE A VERBO NO PARTICÍPIO?",
+                    "details": [
+                      "Verbo no Particípio (-do, -to, -so: falado, feito, escrito)",
+                      "Exemplo proibido: 'Tinha falado-me a verdade' / 'Haviam entregado-nos os documentos'"
+                    ],
+                    "groupId": "grupo-teste-proibicoes"
+                  },
+                  {
+                    "id": "res-proibido-participio",
+                    "kind": "result",
+                    "label": "PROIBIDO! (Item Errado — Ênclise no Particípio)",
+                    "details": [
+                      "O particípio NUNCA admite ênclise na língua portuguesa",
+                      "O pronome deve ficar próclise ao auxiliar ou posposto ao auxiliar"
+                    ],
+                    "groupId": "grupo-resultado-passo-1"
+                  },
+                  {
+                    "id": "res-avanco-passo-2",
+                    "kind": "result",
+                    "label": "NÃO Há Proibição ──► Prosseguir para o PASSO 2",
+                    "details": [
+                      "Nenhuma das 3 proibições absolutas incidiu",
+                      "Avançar para a checagem de palavras atrativas (Passo 2)"
+                    ],
+                    "groupId": "grupo-resultado-passo-1"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-passo-1-proibicoes",
+                    "to": "decisao-proibicao-inicio-frase"
+                  },
+                  {
+                    "from": "decisao-proibicao-inicio-frase",
+                    "to": "res-proibido-inicio-frase",
+                    "label": "Sim, inicia oração"
+                  },
+                  {
+                    "from": "decisao-proibicao-inicio-frase",
+                    "to": "decisao-proibicao-futuro",
+                    "label": "Não inicia oração"
+                  },
+                  {
+                    "from": "decisao-proibicao-futuro",
+                    "to": "res-proibido-futuro",
+                    "label": "Sim, ênclise no futuro"
+                  },
+                  {
+                    "from": "decisao-proibicao-futuro",
+                    "to": "decisao-proibicao-participio",
+                    "label": "Não é ênclise no futuro"
+                  },
+                  {
+                    "from": "decisao-proibicao-participio",
+                    "to": "res-proibido-participio",
+                    "label": "Sim, ênclise no particípio"
+                  },
+                  {
+                    "from": "decisao-proibicao-participio",
+                    "to": "res-avanco-passo-2",
+                    "label": "Não é particípio"
+                  }
+                ],
+                "structuredText": "Algoritmo Geral de Colocação Pronominal — Passo 1 (As 3 Proibições Absolutas):\n\n1. A posição pretendida inicia oração ou período?\n   - SIM -> PROIBIDO! (Item Errado).\n   - NÃO -> Testar próxima proibição.\n\n2. A posição pretendida faz ênclise a verbo no Futuro (Presente ou Pretérito)?\n   - SIM -> PROIBIDO! (Item Errado — Exige Mesóclise).\n   - NÃO -> Testar próxima proibição.\n\n3. A posição pretendida faz ênclise a verbo no Particípio?\n   - SIM -> PROIBIDO! (Item Errado — Particípio não aceita ênclise).\n   - NÃO -> Prosseguir para o PASSO 2 (Pesquisa de Palavras Atrativas).",
+                "provenance": {
+                  "unit": "IP-A03-G07",
+                  "mapId": "MAP-A03-045",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-passo-1-proibicoes[\"Passo 1: Testar as 3 Proibições Absolutas na Proposta\"] --> decisao-proibicao-inicio-frase{\"A posição pretendida INICIA ORAÇÃO ou período?\"}\n    decisao-proibicao-inicio-frase -- \"Sim, inicia oração\" --> res-proibido-inicio-frase[\"PROIBIDO! (Item Errado — Início de Oração)\"]\n    decisao-proibicao-inicio-frase -- \"Não inicia oração\" --> decisao-proibicao-futuro{\"A posição pretendida faz ÊNCLISE A VERBO NO FUTURO?\"}\n    decisao-proibicao-futuro -- \"Sim, ênclise no futuro\" --> res-proibido-futuro[\"PROIBIDO! (Item Errado — Ênclise no Futuro)\"]\n    decisao-proibicao-futuro -- \"Não é ênclise no futuro\" --> decisao-proibicao-participio{\"A posição pretendida faz ÊNCLISE A VERBO NO PARTICÍPIO?\"}\n    decisao-proibicao-participio -- \"Sim, ênclise no particípio\" --> res-proibido-participio[\"PROIBIDO! (Item Errado — Ênclise no Particípio)\"]\n    decisao-proibicao-participio -- \"Não é particípio\" --> res-avanco-passo-2[\"NÃO Há Proibição ──► Prosseguir para o PASSO 2\"]"
+              }
             },
             {
               "type": "formula",
               "text": "\\Downarrow"
             },
             {
-              "type": "paragraph",
-              "text": "PASSO 2: TESTAR A PRESENÇA DE PALAVRA ATRATIVA ANTES DO VERBO │ ├── Há palavra invariável (advérbio, conj. subordinativa, preposição, pron. interrogativo)? ├── Há pronome relativo (\"que\", \"o qual\", \"cujo\") ou pronome indefinido (\"ninguém\", \"todos\")? │ │ │ ├── NÃO ──► A colocação é FACULTATIVA (Próclise ou Ênclise são válidas — Mantra). │ └── SIM ──► Prosseguir para o PASSO 3."
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo Geral de Resolução de Colocação Pronominal",
+              "text": "PASSO 2: TESTAR A PRESENÇA DE PALAVRA ATRATIVA ANTES DO VERBO │ ├── Há palavra invariável (advérbio, conj. subordinativa, preposição, pron. interrogativo)? ├── Há pronome relativo (\"que\", \"o qual\", \"cujo\") ou pronome indefinido (\"ninguém\", \"todos\")? │ │ │ ├── NÃO ──► A colocação é FACULTATIVA (Próclise ou Ênclise são válidas — Mantra). │ └── SIM ──► Prosseguir para o PASSO 3.",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-passo-2-atracao",
+                "groups": [
+                  {
+                    "id": "grupo-pesquisa-atrativos",
+                    "label": "Pesquisa do Fator de Atração Pré-Verbal",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-conclusao-passo-2",
+                    "label": "Decisão sobre Facultatividade vs. Passo 3",
+                    "order": 2
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-passo-2-atracao",
+                    "kind": "start",
+                    "label": "Passo 2: Testar Presença de Palavra Atrativa",
+                    "details": [
+                      "Superado o Passo 1 (não há proibição absoluta: não inicia período, não é futuro com ênclise, não é particípio)",
+                      "Inspecionar todos os termos que antecedem imediatamente o verbo na mesma oração"
+                    ],
+                    "groupId": "grupo-pesquisa-atrativos"
+                  },
+                  {
+                    "id": "decisao-existe-palavra-atrativa",
+                    "kind": "decision",
+                    "label": "Há palavra atrativa antes do verbo?",
+                    "details": [
+                      "1. Palavras invariáveis: Advérbios (não, nunca, já, sempre, aqui, talvez), Conjunções subordinativas (que, se, quando, embora, porque), Preposições, Pronomes interrogativos (quem, qual, que)",
+                      "2. Pronomes: Pronomes relativos ('que', 'o qual', 'cujo', 'quem', 'onde') e Pronomes indefinidos ('ninguém', 'todos', 'alguém', 'tudo', 'nada')"
+                    ],
+                    "groupId": "grupo-pesquisa-atrativos"
+                  },
+                  {
+                    "id": "res-colocacao-facultativa-mantra",
+                    "kind": "result",
+                    "label": "Colocação FACULTATIVA (Mantra Próclise ou Ênclise)",
+                    "details": [
+                      "Ausência de fator atrativo e presença de sujeito explícito ou oração iniciada por termo não atrativo",
+                      "Tanto a PRÓCLISE quanto a ÊNCLISE são plenamente válidas no padrão culto",
+                      "Exemplo canônico: 'O aluno se dedicou' = 'O aluno dedicou-se' (ambas corretas)"
+                    ],
+                    "groupId": "grupo-conclusao-passo-2"
+                  },
+                  {
+                    "id": "proc-avancar-passo-3-excecoes",
+                    "kind": "process",
+                    "label": "Prosseguir para o PASSO 3 (Testar Exceções da Atração)",
+                    "details": [
+                      "Fator de atração detectado antes do verbo",
+                      "Necessário verificar se incide uma das 2 exceções canônicas da atração (Infinitivo ou Conjunção Coordenativa) antes de cravar a próclise obrigatória"
+                    ],
+                    "groupId": "grupo-conclusao-passo-2"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-passo-2-atracao",
+                    "to": "decisao-existe-palavra-atrativa"
+                  },
+                  {
+                    "from": "decisao-existe-palavra-atrativa",
+                    "to": "res-colocacao-facultativa-mantra",
+                    "label": "Não há palavra atrativa"
+                  },
+                  {
+                    "from": "decisao-existe-palavra-atrativa",
+                    "to": "proc-avancar-passo-3-excecoes",
+                    "label": "Sim, há palavra atrativa"
+                  }
+                ],
+                "structuredText": "Algoritmo Geral de Colocação Pronominal — Passo 2 (Palavra Atrativa):\n\n1. Inspecione o contexto anterior ao verbo na oração.\n2. Verifique se há palavra atrativa:\n   - Palavras invariáveis (advérbio, conjunção subordinativa, preposição, pronome interrogativo);\n   - Pronomes relativos ('que', 'o qual', 'cujo') ou indefinidos ('ninguém', 'todos', 'alguém').\n3. Decisão:\n   - NÃO há palavra atrativa -> Colocação FACULTATIVA (Próclise ou Ênclise válidas — Mantra).\n   - SIM, há palavra atrativa -> Prosseguir para o PASSO 3 (Testar se incide exceção de Infinitivo ou Conjunção Coordenativa).",
+                "provenance": {
+                  "unit": "IP-A03-G07",
+                  "procedureId": "decision:IP-A03-G07:001",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-passo-2-atracao[\"Passo 2: Testar Presença de Palavra Atrativa\"] --> decisao-existe-palavra-atrativa{\"Há palavra atrativa antes do verbo?\"}\n    decisao-existe-palavra-atrativa -- \"Não há palavra atrativa\" --> res-colocacao-facultativa-mantra[\"Colocação FACULTATIVA (Mantra Próclise ou Ênclise)\"]\n    decisao-existe-palavra-atrativa -- \"Sim, há palavra atrativa\" --> proc-avancar-passo-3-excecoes[\"Prosseguir para o PASSO 3 (Testar Exceções da Atração)\"]"
+              }
             },
             {
               "type": "formula",
               "text": "\\Downarrow"
             },
             {
-              "type": "paragraph",
-              "text": "PASSO 3: TESTAR SE INCIDE UMA DAS 2 EXCEÇÕES DA ATRAÇÃO │ ├── O verbo está no INFINITIVO? ───────────────────────────────► SIM: Ênclise PERMITIDA (Facultativo). ├── A palavra atrativa é CONJUNÇÃO COORDENATIVA? ──────────────► SIM: Ênclise PERMITIDA (Facultativo). └── NÃO É EXCEÇÃO ─────────────────────────────────────────────► PRÓCLISE ESTRITAMENTE OBRIGATÓRIA."
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo Geral de Resolução de Colocação Pronominal",
+              "text": "PASSO 3: TESTAR SE INCIDE UMA DAS 2 EXCEÇÕES DA ATRAÇÃO │ ├── O verbo está no INFINITIVO? ───────────────────────────────► SIM: Ênclise PERMITIDA (Facultativo). ├── A palavra atrativa é CONJUNÇÃO COORDENATIVA? ──────────────► SIM: Ênclise PERMITIDA (Facultativo). └── NÃO É EXCEÇÃO ─────────────────────────────────────────────► PRÓCLISE ESTRITAMENTE OBRIGATÓRIA.",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-passo-3-excecoes",
+                "groups": [
+                  {
+                    "id": "grupo-teste-excecoes",
+                    "label": "Triagem das 2 Exceções da Atração",
+                    "order": 1
+                  },
+                  {
+                    "id": "grupo-decisao-final-passo-3",
+                    "label": "Resultado Colocacional",
+                    "order": 2
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "inicio-passo-3-excecoes",
+                    "kind": "start",
+                    "label": "Passo 3: Testar as 2 Exceções da Atração",
+                    "details": [
+                      "Fator de atração detectado no Passo 2",
+                      "Regra Geral: palavra atrativa exige PRÓCLISE OBRIGATÓRIA",
+                      "Antes de cravar próclise, é mandatório testar a incidência de uma das 2 exceções que admitem ênclise"
+                    ],
+                    "groupId": "grupo-teste-excecoes"
+                  },
+                  {
+                    "id": "decisao-excecao-infinitivo",
+                    "kind": "decision",
+                    "label": "O verbo encontra-se no INFINITIVO?",
+                    "details": [
+                      "Verbo terminado em -r (infinitivo impessoal ou flexionado)",
+                      "Regra da Imunidade do Infinitivo: o infinitivo NUNCA aceita próclise obrigatória em concurso — a ênclise é SEMPRE permitida",
+                      "Exemplo: 'Para não incomodar-te' = 'Para não te incomodar' (ambas corretas)"
+                    ],
+                    "groupId": "grupo-teste-excecoes"
+                  },
+                  {
+                    "id": "res-enclise-infinitivo-permitida",
+                    "kind": "result",
+                    "label": "Ênclise PERMITIDA (Facultativo)",
+                    "details": [
+                      "Exceção 1 confirmada: Verbo no Infinitivo",
+                      "A presença de palavra atrativa NÃO proíbe a ênclise ao infinitivo",
+                      "Tanto a próclise quanto a ênclise são legítimas"
+                    ],
+                    "groupId": "grupo-decisao-final-passo-3"
+                  },
+                  {
+                    "id": "decisao-excecao-coordenativa",
+                    "kind": "decision",
+                    "label": "A palavra atrativa é CONJUNÇÃO COORDENATIVA?",
+                    "details": [
+                      "Conjunções coordenativas aditivas, adversativas, alternativas, conclusivas ou explicativas (ex.: mas, e, porém, contudo)",
+                      "A atração exercida por conjunção coordenativa é fraca e facultativa na tradição gramatical aceita pelas bancas"
+                    ],
+                    "groupId": "grupo-teste-excecoes"
+                  },
+                  {
+                    "id": "res-enclise-coordenativa-permitida",
+                    "kind": "result",
+                    "label": "Ênclise PERMITIDA (Facultativo)",
+                    "details": [
+                      "Exceção 2 confirmada: Conjunção Coordenativa",
+                      "Admite tanto próclise ('mas o vi') quanto ênclise ('mas vi-o')"
+                    ],
+                    "groupId": "grupo-decisao-final-passo-3"
+                  },
+                  {
+                    "id": "res-proclise-estritamente-obrigatoria",
+                    "kind": "result",
+                    "label": "PRÓCLISE ESTRITAMENTE OBRIGATÓRIA",
+                    "details": [
+                      "Não incide nenhuma das duas exceções",
+                      "Palavra atrativa típica (advérbio de negação, conjunção subordinativa, pronome relativo, etc.) com verbo conjugado em forma finita",
+                      "A ênclise é proibida e torna o item ERRADO"
+                    ],
+                    "groupId": "grupo-decisao-final-passo-3"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-passo-3-excecoes",
+                    "to": "decisao-excecao-infinitivo"
+                  },
+                  {
+                    "from": "decisao-excecao-infinitivo",
+                    "to": "res-enclise-infinitivo-permitida",
+                    "label": "Sim, verbo no infinitivo"
+                  },
+                  {
+                    "from": "decisao-excecao-infinitivo",
+                    "to": "decisao-excecao-coordenativa",
+                    "label": "Não é infinitivo"
+                  },
+                  {
+                    "from": "decisao-excecao-coordenativa",
+                    "to": "res-enclise-coordenativa-permitida",
+                    "label": "Sim, conjunção coordenativa"
+                  },
+                  {
+                    "from": "decisao-excecao-coordenativa",
+                    "to": "res-proclise-estritamente-obrigatoria",
+                    "label": "Não é exceção"
+                  }
+                ],
+                "structuredText": "Algoritmo Geral de Colocação Pronominal — Passo 3 (Exceções da Atração):\n\n1. O verbo está no INFINITIVO?\n   - SIM -> Ênclise PERMITIDA (Colocação Facultativa).\n   - NÃO -> Testar próxima exceção.\n\n2. A palavra atrativa é CONJUNÇÃO COORDENATIVA?\n   - SIM -> Ênclise PERMITIDA (Colocação Facultativa).\n   - NÃO -> PRÓCLISE ESTRITAMENTE OBRIGATÓRIA (Ênclise Proibida).",
+                "provenance": {
+                  "unit": "IP-A03-G07",
+                  "mapId": "MAP-A03-047",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    inicio-passo-3-excecoes[\"Passo 3: Testar as 2 Exceções da Atração\"] --> decisao-excecao-infinitivo{\"O verbo encontra-se no INFINITIVO?\"}\n    decisao-excecao-infinitivo -- \"Sim, verbo no infinitivo\" --> res-enclise-infinitivo-permitida[\"Ênclise PERMITIDA (Facultativo)\"]\n    decisao-excecao-infinitivo -- \"Não é infinitivo\" --> decisao-excecao-coordenativa{\"A palavra atrativa é CONJUNÇÃO COORDENATIVA?\"}\n    decisao-excecao-coordenativa -- \"Sim, conjunção coordenativa\" --> res-enclise-coordenativa-permitida[\"Ênclise PERMITIDA (Facultativo)\"]\n    decisao-excecao-coordenativa -- \"Não é exceção\" --> res-proclise-estritamente-obrigatoria[\"PRÓCLISE ESTRITAMENTE OBRIGATÓRIA\"]"
+              }
             }
           ],
           "presentation": {
@@ -1167,8 +1526,8 @@
               "EXP-IP-A03-G07-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

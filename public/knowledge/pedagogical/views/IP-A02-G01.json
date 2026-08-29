@@ -325,42 +325,89 @@
             },
             {
               "type": "diagram",
-              "diagramType": "flow",
+              "diagramType": "comparison",
               "title": "Explicação Consolidada",
               "text": "DICOTOMIA DA PREPOSIÇÃO │ ┌─────────────────────────────┴─────────────────────────────┐ ▼ ▼ VALOR RELACIONAL (GRAMATICAL) VALOR NOCIONAL (SEMÂNTICO) • Obrigatória por Regência Verbal/Nominal • Não obrigatória por Regência • Carga Semântica: NULA • Carga Semântica: PLENA (introduz noções) • Inicia Termos Integrantes Regidos: • Inicia Termos Acessórios / Não Regidos:",
               "structure": {
-                "kind": "branches",
-                "rootLabel": "DICOTOMIA DA PREPOSIÇÃO",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "comparison",
+                "layout": "grid",
+                "rootId": "raiz-dicotomia-preposicao",
+                "groups": [],
+                "nodes": [
                   {
-                    "id": "segment-01",
-                    "label": "VALOR RELACIONAL (GRAMATICAL) VALOR NOCIONAL (SEMÂNTICO)"
+                    "id": "raiz-dicotomia-preposicao",
+                    "kind": "category",
+                    "label": "Dicotomia Funcional da Preposição",
+                    "details": [
+                      "Fundamento sintático-semântico das preposições na Língua Portuguesa",
+                      "Divisão entre exigência estrutural da regência (gramatical) e autonomia circunstancial (semântica)"
+                    ]
                   },
                   {
-                    "id": "segment-02",
-                    "label": "Obrigatória por Regência Verbal/Nominal"
+                    "id": "preposicao-relacional",
+                    "kind": "category",
+                    "label": "Valor Relacional (Gramatical)",
+                    "details": [
+                      "Obrigatoriedade: Obrigatória por Regência Verbal ou Nominal (exigida por termo regente)",
+                      "Carga Semântica: NULA (atua como mero conector sintático de subordinação)",
+                      "Funções Introduzidas: Termos Integrantes Regidos (Objeto Indireto, Complemento Nominal, Agente da Passiva)",
+                      "Exemplos canônicos: 'Gosto DE chocolate' (OI regido por gostar), 'Tenho necessidade DE apoio' (CN regido por necessidade)",
+                      "Teste: A preposição não pode ser suprimida nem alterada sem ferir a regência culta"
+                    ]
                   },
                   {
-                    "id": "segment-03",
-                    "label": "Não obrigatória por Regência"
+                    "id": "preposicao-nocional",
+                    "kind": "category",
+                    "label": "Valor Nocional (Semântico)",
+                    "details": [
+                      "Obrigatoriedade: NÃO obrigatória por Regência (livremente escolhida pelo enunciador)",
+                      "Carga Semântica: PLENA (introduz noções circunstanciais autônomas)",
+                      "Funções Introduzidas: Termos Acessórios / Não Regidos (Adjunto Adnominal, Adjunto Adverbial)",
+                      "Noções semânticas: Posse ('casa de Maria'), Matéria ('mesa de vidro'), Conteúdo ('xícara de chá'), Instrumento ('escrever a caneta'), Causa ('morrer de frio'), Lugar ('viajar para Roma'), Finalidade ('estudar para vencer')",
+                      "Regra 'O que vem depois salva': o valor semântico é dado pelo substantivo subordinado à preposição"
+                    ]
                   },
                   {
-                    "id": "segment-04",
-                    "label": "Carga Semântica: NULA"
-                  },
-                  {
-                    "id": "segment-05",
-                    "label": "Carga Semântica: PLENA (introduz noções)"
-                  },
-                  {
-                    "id": "segment-06",
-                    "label": "Inicia Termos Integrantes Regidos:"
-                  },
-                  {
-                    "id": "segment-07",
-                    "label": "Inicia Termos Acessórios / Não Regidos:"
+                    "id": "contraste-sintatico-critico",
+                    "kind": "rule",
+                    "label": "Critério Diferencial em Questões de Prova",
+                    "details": [
+                      "Se o termo preposicionado responde a uma exigência do verbo/nome regente -> Preposição Relacional (Gramatical)",
+                      "Se o termo preposicionado agrega circunstância adverbial ou atributiva dispensável pela regência -> Preposição Nocional (Semântica)"
+                    ]
                   }
-                ]
+                ],
+                "edges": [
+                  {
+                    "from": "raiz-dicotomia-preposicao",
+                    "to": "preposicao-relacional",
+                    "label": "Exigida por regência / Semântica nula"
+                  },
+                  {
+                    "from": "raiz-dicotomia-preposicao",
+                    "to": "preposicao-nocional",
+                    "label": "Circunstancial / Semântica plena"
+                  },
+                  {
+                    "from": "preposicao-relacional",
+                    "to": "contraste-sintatico-critico"
+                  },
+                  {
+                    "from": "preposicao-nocional",
+                    "to": "contraste-sintatico-critico"
+                  }
+                ],
+                "structuredText": "Dicotomia da Preposição:\n\n1. Preposição Relacional (Gramatical):\n   - Obrigatoriedade: Exigida obrigatoriamente por regência verbal ou nominal.\n   - Carga Semântica: NULA (mero conectivo sintático).\n   - Termos Introduzidos: Integrantes e regidos (Objeto Indireto, Complemento Nominal).\n   - Ex.: 'Necessito DE ajuda' / 'Confio EM você'.\n\n2. Preposição Nocional (Semântica):\n   - Obrigatoriedade: Não exigida por regência.\n   - Carga Semântica: PLENA (introduz noções circunstanciais como matéria, posse, causa, finalidade, lugar).\n   - Termos Introduzidos: Acessórios (Adjunto Adnominal, Adjunto Adverbial).\n   - Ex.: 'Copo DE vidro' (matéria) / 'Saiu COM amigos' (companhia).",
+                "provenance": {
+                  "unit": "IP-A02-G01",
+                  "mapId": "MAP-A02-003",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    raiz-dicotomia-preposicao[\"Dicotomia Funcional da Preposição\"] --> |\"Exigida por regência / Semântica nula\"| preposicao-relacional[\"Valor Relacional (Gramatical)\"]\n    raiz-dicotomia-preposicao --> |\"Circunstancial / Semântica plena\"| preposicao-nocional[\"Valor Nocional (Semântico)\"]\n    preposicao-relacional --> contraste-sintatico-critico[\"Critério Diferencial em Questões de Prova\"]\n    preposicao-nocional --> contraste-sintatico-critico"
               }
             },
             {

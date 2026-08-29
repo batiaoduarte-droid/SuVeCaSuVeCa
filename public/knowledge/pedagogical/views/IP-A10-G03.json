@@ -235,23 +235,141 @@
             },
             {
               "type": "diagram",
-              "diagramType": "flow",
+              "diagramType": "decision_flow",
               "title": "Critérios de reconhecimento ou aplicação",
               "text": "text [Oração Principal: Antecedente] + [Prep? + Pronome Relativo] + [Sujeito] + [Verbo Regente] ▲ │ │ │ └──────── Passo 3: Encaixe ◄────────┘ (Ordem Direta: Sujeito + Verbo + Prep + Antecedente)",
               "structure": {
-                "kind": "relations",
-                "rootLabel": "Passo 3: encaixe",
-                "items": [
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "inicio-oracao-adjetiva",
+                "structuredText": "[Início] [Etapa: Passo 1: Identificação do Regente Posterior] Oração Adjetiva com Pronome Relativo\n  • Estrutura canônica: [Oração Principal: Antecedente] + [Preposição? + Pronome Relativo] + [Sujeito] + [Verbo Regente].\n  • Objetivo: Determinar se o pronome relativo exige ou repele preposição anteposta.\n[Processo] [Etapa: Passo 1: Identificação do Regente Posterior] Localizar o termo regente posposto ao relativo\n  • Sublinhar o verbo ou nome situado após o pronome relativo no interior da oração subordinada.\n  • Regra do Verbo Principal em Locuções: A regência da locução verbal é subordinada unicamente ao último verbo (verbo principal).\n[Processo] [Etapa: Passo 2: Transposição para a Ordem Direta] Montar a oração adjetiva na ordem canônica direta\n  • Esquema estrutural da ordem direta: [Sujeito] + [Verbo Regente / Locução] + [Lacuna do Complemento].\n  • Exemplo mental: 'Você gosta + [lacuna]'.\n[Processo] [Etapa: Passo 3: Encaixe do Antecedente e Decisão de Regência] Encaixar o substantivo antecedente na lacuna\n  • Preencher a lacuna sintática do complemento com o termo antecedente substituído pelo pronome relativo.\n  • Exemplo: 'Você gosta + [o livro]' -> 'Você gosta DE o livro'.\n[Decisão] [Etapa: Passo 3: Encaixe do Antecedente e Decisão de Regência] A junção do regente com o antecedente exige preposição?\n  • Avaliar a transitividade do regente com o substantivo encaixado.\n├─ Não exige preposição (VTD) → [Regra] [Etapa: Passo 3: Encaixe do Antecedente e Decisão de Regência] Empregar pronome relativo puro sem preposição\n├─   • Se o regente for VTD (não exige preposição), utiliza-se o pronome relativo puro ('que', 'o qual', 'cujo').\n├─   • Exemplo: 'O livro que comprei' (Comprei o livro -> VTD).\n└─ Exige preposição (VTI / Nome) → [Regra] [Etapa: Passo 3: Encaixe do Antecedente e Decisão de Regência] Antepor obrigatoriamente a preposição ao pronome relativo\n└─   • Regra da Anteposição Preposicional: Toda preposição solicitada por verbo ou nome na adjetiva deve situar-se imediatamente antes do relativo.\n└─   • Formas resultantes: 'a que', 'de que', 'em que', 'no qual', 'com quem', 'a cujo'.\n└─   • Exemplo: 'O livro de que gosto' (Gostar exige 'de' -> 'de que').",
+                "nodes": [
                   {
-                    "id": "relative-layout",
-                    "label": "Antecedente + preposição, se exigida + pronome relativo + sujeito + verbo regente"
+                    "id": "inicio-oracao-adjetiva",
+                    "kind": "start",
+                    "groupId": "passo-1-regente",
+                    "label": "Oração Adjetiva com Pronome Relativo",
+                    "details": [
+                      "Estrutura canônica: [Oração Principal: Antecedente] + [Preposição? + Pronome Relativo] + [Sujeito] + [Verbo Regente].",
+                      "Objetivo: Determinar se o pronome relativo exige ou repele preposição anteposta."
+                    ]
                   },
                   {
-                    "id": "direct-order",
-                    "label": "Ordem direta para o teste",
+                    "id": "localizar-regente-posposto",
+                    "kind": "process",
+                    "groupId": "passo-1-regente",
+                    "label": "Localizar o termo regente posposto ao relativo",
                     "details": [
-                      "Sujeito + verbo + preposição + antecedente."
+                      "Sublinhar o verbo ou nome situado após o pronome relativo no interior da oração subordinada.",
+                      "Regra do Verbo Principal em Locuções: A regência da locução verbal é subordinada unicamente ao último verbo (verbo principal)."
                     ]
+                  },
+                  {
+                    "id": "transpor-ordem-direta",
+                    "kind": "process",
+                    "groupId": "passo-2-ordem-direta",
+                    "label": "Montar a oração adjetiva na ordem canônica direta",
+                    "details": [
+                      "Esquema estrutural da ordem direta: [Sujeito] + [Verbo Regente / Locução] + [Lacuna do Complemento].",
+                      "Exemplo mental: 'Você gosta + [lacuna]'."
+                    ]
+                  },
+                  {
+                    "id": "recompor-com-antecedente",
+                    "kind": "process",
+                    "groupId": "passo-3-encaixe-decisao",
+                    "label": "Encaixar o substantivo antecedente na lacuna",
+                    "details": [
+                      "Preencher a lacuna sintática do complemento com o termo antecedente substituído pelo pronome relativo.",
+                      "Exemplo: 'Você gosta + [o livro]' -> 'Você gosta DE o livro'."
+                    ]
+                  },
+                  {
+                    "id": "decisao-exigencia-preposicao",
+                    "kind": "decision",
+                    "groupId": "passo-3-encaixe-decisao",
+                    "label": "A junção do regente com o antecedente exige preposição?",
+                    "details": [
+                      "Avaliar a transitividade do regente com o substantivo encaixado."
+                    ]
+                  },
+                  {
+                    "id": "resultado-sem-preposicao",
+                    "kind": "rule",
+                    "groupId": "passo-3-encaixe-decisao",
+                    "label": "Empregar pronome relativo puro sem preposição",
+                    "details": [
+                      "Se o regente for VTD (não exige preposição), utiliza-se o pronome relativo puro ('que', 'o qual', 'cujo').",
+                      "Exemplo: 'O livro que comprei' (Comprei o livro -> VTD)."
+                    ]
+                  },
+                  {
+                    "id": "resultado-com-preposicao",
+                    "kind": "rule",
+                    "groupId": "passo-3-encaixe-decisao",
+                    "label": "Antepor obrigatoriamente a preposição ao pronome relativo",
+                    "details": [
+                      "Regra da Anteposição Preposicional: Toda preposição solicitada por verbo ou nome na adjetiva deve situar-se imediatamente antes do relativo.",
+                      "Formas resultantes: 'a que', 'de que', 'em que', 'no qual', 'com quem', 'a cujo'.",
+                      "Exemplo: 'O livro de que gosto' (Gostar exige 'de' -> 'de que')."
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "inicio-oracao-adjetiva",
+                    "to": "localizar-regente-posposto",
+                    "label": ""
+                  },
+                  {
+                    "from": "localizar-regente-posposto",
+                    "to": "transpor-ordem-direta",
+                    "label": ""
+                  },
+                  {
+                    "from": "transpor-ordem-direta",
+                    "to": "recompor-com-antecedente",
+                    "label": ""
+                  },
+                  {
+                    "from": "recompor-com-antecedente",
+                    "to": "decisao-exigencia-preposicao",
+                    "label": ""
+                  },
+                  {
+                    "from": "decisao-exigencia-preposicao",
+                    "to": "resultado-sem-preposicao",
+                    "label": "Não exige preposição (VTD)"
+                  },
+                  {
+                    "from": "decisao-exigencia-preposicao",
+                    "to": "resultado-com-preposicao",
+                    "label": "Exige preposição (VTI / Nome)"
+                  }
+                ],
+                "provenance": {
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.99
+                },
+                "mermaidSource": "flowchart TD\n    inicio-oracao-adjetiva([\"Oração Adjetiva com Pronome Relativo\"])\n    localizar-regente-posposto[\"Localizar o termo regente posposto ao relativo\"]\n    transpor-ordem-direta[\"Montar a oração adjetiva na ordem canônica direta\"]\n    recompor-com-antecedente[\"Encaixar o substantivo antecedente na lacuna\"]\n    decisao-exigencia-preposicao{\"A junção do regente com o antecedente exige preposição?\"}\n    resultado-sem-preposicao[\"Empregar pronome relativo puro sem preposição\"]\n    resultado-com-preposicao[\"Antepor obrigatoriamente a preposição ao pronome relativo\"]\n    inicio-oracao-adjetiva --> localizar-regente-posposto\n    localizar-regente-posposto --> transpor-ordem-direta\n    transpor-ordem-direta --> recompor-com-antecedente\n    recompor-com-antecedente --> decisao-exigencia-preposicao\n    decisao-exigencia-preposicao -->|\"Não exige preposição (VTD)\"| resultado-sem-preposicao\n    decisao-exigencia-preposicao -->|\"Exige preposição (VTI / Nome)\"| resultado-com-preposicao",
+                "groups": [
+                  {
+                    "id": "passo-1-regente",
+                    "label": "Passo 1: Identificação do Regente Posterior",
+                    "order": 1
+                  },
+                  {
+                    "id": "passo-2-ordem-direta",
+                    "label": "Passo 2: Transposição para a Ordem Direta",
+                    "order": 2
+                  },
+                  {
+                    "id": "passo-3-encaixe-decisao",
+                    "label": "Passo 3: Encaixe do Antecedente e Decisão de Regência",
+                    "order": 3
                   }
                 ]
               }

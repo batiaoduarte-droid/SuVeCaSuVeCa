@@ -5,6 +5,7 @@ import { projectStructuredDiagramFromMarkdown } from './lib/structured-diagram.m
 
 const ROOT = process.cwd();
 const artifactPath = path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'decision-procedures.json');
+const structuredMapsPath = path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'structured-map-presentations.json');
 const factoryRoot = path.resolve(ROOT, '..', 'Notebook LM', '02_Portugues', 'Aula Processada');
 
 const readJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/u, ''));
@@ -15,6 +16,7 @@ const readJsonl = (file) => fs.readFileSync(file, 'utf8')
   .map((line) => JSON.parse(line));
 
 if (!fs.existsSync(artifactPath)) throw new Error(`Artefato não encontrado: ${artifactPath}`);
+if (!fs.existsSync(structuredMapsPath)) throw new Error(`Overlay de mapas não encontrado: ${structuredMapsPath}`);
 if (!fs.existsSync(factoryRoot)) throw new Error(`Fábrica não encontrada: ${factoryRoot}`);
 
 const candidates = new Map();
@@ -48,9 +50,9 @@ payload.procedures = payload.procedures.map((procedure) => {
   };
 });
 
-payload.schemaVersion = '4.2.1';
+payload.schemaVersion = '4.3.0';
 payload.projection = {
-  kind: 'source_backed_structured_decision_procedures',
+  kind: 'source_backed_semantically_typed_decision_procedures',
   visualProjectionCount,
   markdownProcedureCount: payload.procedures.length - visualProjectionCount,
   sourceBackedRefCount,
@@ -58,6 +60,9 @@ payload.projection = {
 fs.writeFileSync(artifactPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 const artifactBuffer = fs.readFileSync(artifactPath);
 const artifactRelativePath = 'public/knowledge/pedagogical/decision-procedures.json';
+const structuredMapsBuffer = fs.readFileSync(structuredMapsPath);
+const structuredMapsRelativePath = 'public/knowledge/pedagogical/structured-map-presentations.json';
+const structuredMaps = readJson(structuredMapsPath);
 for (const manifestPath of [
   path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'manifest.json'),
   path.join(ROOT, 'knowledge', 'canonical', 'pedagogical-source-manifest.json'),
@@ -67,6 +72,14 @@ for (const manifestPath of [
   if (!descriptor) throw new Error(`${manifestPath}: descritor do artefato ausente.`);
   descriptor.bytes = artifactBuffer.length;
   descriptor.sha256 = createHash('sha256').update(artifactBuffer).digest('hex');
+  let mapDescriptor = manifest.artifacts?.find((entry) => entry.path === structuredMapsRelativePath);
+  if (!mapDescriptor) {
+    mapDescriptor = { path: structuredMapsRelativePath, bytes: 0, sha256: '' };
+    manifest.artifacts.push(mapDescriptor);
+  }
+  mapDescriptor.bytes = structuredMapsBuffer.length;
+  mapDescriptor.sha256 = createHash('sha256').update(structuredMapsBuffer).digest('hex');
+  manifest.totals = { ...(manifest.totals || {}), structuredMapPresentations: structuredMaps.count };
   fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
 }
 console.log(JSON.stringify({

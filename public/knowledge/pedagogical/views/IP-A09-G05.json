@@ -750,8 +750,143 @@
           "procedureId": "PROC-A09-G05-001",
           "blocks": [
             {
-              "type": "paragraph",
-              "text": "[Início: Analisar a sentença proposta] │ ├── 1. Identificar a Posição Sintática do Adjetivo: │ │ │ ├── SE ANTEPOSTO: │ │ └── Aplicar OBRIGATORIAMENTE a CONCORDÂNCIA ATRATIVA: │ │ - Identificar o gênero e o número do 1º substantivo (o mais próximo). │ │ - Flexionar o adjetivo em estrita concordância com ele. │ │ - ELIMINAR qualquer alternativa com plural total na anteposição. │ │ │ └── SE POSPOSTO: │ └── Passo 2: Testar a Coerência Semântica Contextual: │ │ │ ├── O adjetivo cabe logicamente a APENAS UM substantivo? │ │ │ │ │ ├── SIM (Restrição Semântica / Ex.: preço baixo, pão torrado): │ │ │ └── Concordar EXCLUSIVAMENTE com o substantivo pertinente. │ │ │ │ │ └── NÃO (Qualificação Geral / Ex.: cabelos e barba, sala e quarto): │ │ └── Aplicar a DUPLA POSSIBILIDADE: │ │ ├── Opção 1 (Concordância Total): │ │ │ - Mesmo gênero → Plural desse gênero. │ │ │ - Gêneros diferentes → Masculino Plural. │ │ └── Opção 2 (Concordância Atrativa): │ │ - Concordar com o substantivo imediatamente adjacente. │ └── [Fim do procedimento]"
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Algoritmo Decisório de Concordância de Adjunto Adnominal",
+              "text": "[Início: Analisar a sentença proposta] │ ├── 1. Identificar a Posição Sintática do Adjetivo: │ │ │ ├── SE ANTEPOSTO: │ │ └── Aplicar OBRIGATORIAMENTE a CONCORDÂNCIA ATRATIVA: │ │ - Identificar o gênero e o número do 1º substantivo (o mais próximo). │ │ - Flexionar o adjetivo em estrita concordância com ele. │ │ - ELIMINAR qualquer alternativa com plural total na anteposição. │ │ │ └── SE POSPOSTO: │ └── Passo 2: Testar a Coerência Semântica Contextual: │ │ │ ├── O adjetivo cabe logicamente a APENAS UM substantivo? │ │ │ │ │ ├── SIM (Restrição Semântica / Ex.: preço baixo, pão torrado): │ │ │ └── Concordar EXCLUSIVAMENTE com o substantivo pertinente. │ │ │ │ │ └── NÃO (Qualificação Geral / Ex.: cabelos e barba, sala e quarto): │ │ └── Aplicar a DUPLA POSSIBILIDADE: │ │ ├── Opção 1 (Concordância Total): │ │ │ - Mesmo gênero → Plural desse gênero. │ │ │ - Gêneros diferentes → Masculino Plural. │ │ └── Opção 2 (Concordância Atrativa): │ │ - Concordar com o substantivo imediatamente adjacente. │ └── [Fim do procedimento]",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "vertical",
+                "rootId": "analisar-sentenca-proposta",
+                "structuredText": "ALGORITMO DECISÓRIO DE CONCORDÂNCIA DE ADJUNTO ADNOMINAL\n\n1. ETAPA 1: IDENTIFICAR A POSIÇÃO SINTÁTICA DO ADJETIVO\n   - Ramo Anteposto:\n     * APLICAR OBRIGATORIAMENTE A CONCORDÂNCIA ATRATIVA.\n     * Flexionar o adjetivo em gênero e número estritamente com o 1º substantivo (o mais próximo).\n     * ELIMINAR qualquer alternativa com plural total na anteposição.\n   - Ramo Posposto -> Avançar para a Etapa 2.\n\n2. ETAPA 2: TESTAR A COERÊNCIA SEMÂNTICA CONTEXTUAL (ADJETIVO POSPOSTO)\n   - O adjetivo cabe logicamente a apenas um dos substantivos?\n     * SIM (Restrição Semântica / ex.: 'preço baixo', 'carne assada'): Concordar EXCLUSIVAMENTE com o substantivo pertinente.\n     * NÃO (Qualificação Geral / ex.: 'cabelos e barba', 'sala e quarto'): Aplicar a DUPLA POSSIBILIDADE GRAMATICAL:\n       • Opção 1 (Concordância Total): Mesmo gênero -> plural desse gênero; Gêneros diferentes -> masculino plural.\n       • Opção 2 (Concordância Atrativa): Concordar com o substantivo imediatamente adjacente (o mais próximo).",
+                "groups": [
+                  {
+                    "id": "fase-posicao",
+                    "label": "Etapa 1: Identificação da Posição Sintática do Adjetivo",
+                    "order": 1
+                  },
+                  {
+                    "id": "fase-anteposicao",
+                    "label": "Ramo A: Adjetivo Anteposto aos Substantivos",
+                    "order": 2
+                  },
+                  {
+                    "id": "fase-posposicao",
+                    "label": "Ramo B: Adjetivo Posposto aos Substantivos",
+                    "order": 3
+                  }
+                ],
+                "nodes": [
+                  {
+                    "id": "analisar-sentenca-proposta",
+                    "kind": "start",
+                    "label": "Analisar Sentença com Adjetivo e Múltiplos Substantivos",
+                    "details": [
+                      "Localize o adjetivo na função de adjunto adnominal que qualifica dois ou mais substantivos no período.",
+                      "Exemplos: 'Encontrei [adjetivo] rapaz e moça' vs. 'Encontrei rapaz e moça [adjetivo]'."
+                    ],
+                    "groupId": "fase-posicao"
+                  },
+                  {
+                    "id": "decisao-posicao-adjetivo",
+                    "kind": "decision",
+                    "label": "Qual é a posição sintática do adjetivo em relação aos substantivos?",
+                    "details": [
+                      "Anteposto: O adjetivo precede os substantivos qualificados.",
+                      "Posposto: O adjetivo sucede os substantivos qualificados."
+                    ],
+                    "groupId": "fase-posicao"
+                  },
+                  {
+                    "id": "regra-concordancia-atrativa-anteposto",
+                    "kind": "result",
+                    "label": "Adjetivo Anteposto: Concordância Atrativa OBRIGATÓRIA",
+                    "details": [
+                      "Identifique o gênero e o número do 1º substantivo (o mais próximo).",
+                      "O adjetivo flexiona-se compulsoriamente em estrita concordância com ele.",
+                      "Exemplos:",
+                      "• 'Comprei linda casa e apartamento.'",
+                      "• 'Comprei lindo apartamento e casa.'",
+                      "Trava de prova: É TERMINANTEMENTE PROIBIDO o plural total na anteposição (*'Comprei lindos casa e apartamento' = ERRO)."
+                    ],
+                    "groupId": "fase-anteposicao"
+                  },
+                  {
+                    "id": "decisao-coerencia-semantica",
+                    "kind": "decision",
+                    "label": "O adjetivo cabe logicamente a APENAS UM substantivo (Restrição Semântica)?",
+                    "details": [
+                      "Teste de Coerência Contextual:",
+                      "Avalie se a qualificação restringe-se por natureza ou lógica a apenas um dos elementos.",
+                      "Exemplos: 'Comi pão e carne assada' (só a carne é assada), 'Comprei terno e camisa social'."
+                    ],
+                    "groupId": "fase-posposicao"
+                  },
+                  {
+                    "id": "regra-restricao-semantica",
+                    "kind": "result",
+                    "label": "Restrição Semântica: Concordância Exclusiva",
+                    "details": [
+                      "O adjetivo concorda EXCLUSIVAMENTE com o substantivo pertinente a que se refere semanticamente.",
+                      "Exemplo correto: 'Comi arroz e banana madura' (Banana madura).",
+                      "Não cabe plural total quando houver incompatibilidade semântica."
+                    ],
+                    "groupId": "fase-posposicao"
+                  },
+                  {
+                    "id": "regra-dupla-possibilidade-posposto",
+                    "kind": "result",
+                    "label": "Qualificação Geral: DUPLA POSSIBILIDADE de Concordância",
+                    "details": [
+                      "Quando o adjetivo qualifica ambos os substantivos, aplicam-se duas opções canônicas válidas:",
+                      "1. Concordância Total (Gramatical):",
+                      "   • Mesmo gênero -> Plural desse gênero (ex.: 'sala e cozinha limpas').",
+                      "   • Gêneros diferentes -> Masculino Plural (ex.: 'sala e quarto limpos').",
+                      "2. Concordância Atrativa:",
+                      "   • Concorda com o substantivo imediatamente adjacente / mais próximo (ex.: 'sala e quarto limpo', 'quarto e sala limpa')."
+                    ],
+                    "groupId": "fase-posposicao"
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "analisar-sentenca-proposta",
+                    "to": "decisao-posicao-adjetivo"
+                  },
+                  {
+                    "from": "decisao-posicao-adjetivo",
+                    "to": "regra-concordancia-atrativa-anteposto",
+                    "label": "Adjetivo Anteposto"
+                  },
+                  {
+                    "from": "decisao-posicao-adjetivo",
+                    "to": "decisao-coerencia-semantica",
+                    "label": "Adjetivo Posposto"
+                  },
+                  {
+                    "from": "decisao-coerencia-semantica",
+                    "to": "regra-restricao-semantica",
+                    "label": "Sim (Restrição a Apenas Um)"
+                  },
+                  {
+                    "from": "decisao-coerencia-semantica",
+                    "to": "regra-dupla-possibilidade-posposto",
+                    "label": "Não (Qualificação Geral de Ambos)"
+                  }
+                ],
+                "provenance": {
+                  "source": "apostila/roteiros",
+                  "canonicalUnit": "IP-A09-G05",
+                  "lesson": "A09",
+                  "generationMethod": "semantic-regeneration-v2",
+                  "sourceFormat": "ascii",
+                  "classificationMethod": "semantic_review",
+                  "reviewStatus": "reviewed",
+                  "confidence": 0.95
+                },
+                "mermaidSource": "flowchart TD\n    analisar-sentenca-proposta[\"Analisar Sentença Proposta\"] --> decisao-posicao-adjetivo{\"Posição Sintática do Adjetivo\"}\n    decisao-posicao-adjetivo -- \"Adjetivo Anteposto\" --> regra-concordancia-atrativa-anteposto[\"Concordância Atrativa OBRIGATÓRIA<br>(Concorda com o 1º substantivo | Proibido Plural Total)\"]\n    decisao-posicao-adjetivo -- \"Adjetivo Posposto\" --> decisao-coerencia-semantica{\"Cabe a apenas um substantivo (Restrição)?\"}\n    decisao-coerencia-semantica -- \"Sim (Restrição a Apenas Um)\" --> regra-restricao-semantica[\"Restrição Semântica:<br>Concordar EXCLUSIVAMENTE com o pertinente\"]\n    decisao-coerencia-semantica -- \"Não (Qualificação Geral de Ambos)\" --> regra-dupla-possibilidade-posposto[\"DUPLA POSSIBILIDADE:<br>1. Total: Plural (Masc. se gêneros mistos)<br>2. Atrativa: Concorda com o mais próximo\"]\n\n    classDef start fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;\n    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;\n    classDef result fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;\n    class analisar-sentenca-proposta start;\n    class decisao-posicao-adjetivo,decisao-coerencia-semantica decision;\n    class regra-concordancia-atrativa-anteposto,regra-restricao-semantica,regra-dupla-possibilidade-posposto result;"
+              }
             }
           ],
           "presentation": {
@@ -762,8 +897,8 @@
               "EXP-IP-A09-G05-PROC-001"
             ],
             "hideGenericScaffold": true,
-            "renderStrategy": "hybrid",
-            "diagramIntent": "none"
+            "renderStrategy": "source_only",
+            "diagramIntent": "decision_flow"
           }
         },
         {

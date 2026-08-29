@@ -120,16 +120,21 @@ const checkBlock = (block, unitId) => {
       `${unitId}: diagrama mantém título genérico '${block.title}'`
     );
     if (block.text) {
-      assert(block.structure && Array.isArray(block.structure.items), `${unitId}: diagrama textual sem AST visual explícita`);
-      assert(block.structure.items.length > 0, `${unitId}: AST visual vazia em '${block.title}'`);
+      assert(block.structure?.schemaVersion === '2.1.0' && Array.isArray(block.structure.nodes), `${unitId}: diagrama textual sem AST topológica v2.1`);
+      assert(block.structure.structuredText?.trim(), `${unitId}: diagrama textual sem leitura estruturada derivada`);
+      assert(block.structure.nodes.length > 1, `${unitId}: AST visual insuficiente em '${block.title}'`);
       assert(
-        ['sequence', 'branches', 'relations', 'source_segments'].includes(block.structure.kind),
+        ['sequence', 'decision_flow', 'branches', 'comparison', 'taxonomy', 'relations'].includes(block.structure.visualType),
         `${unitId}: tipo de estrutura visual inválido em '${block.title}'`,
       );
-      for (const item of block.structure.items) {
-        assert(item.id?.trim() && item.label?.trim(), `${unitId}: item visual sem identidade ou rótulo em '${block.title}'`);
-        assert(!/^Tópicos Principais$/i.test(item.label), `${unitId}: categoria genérica inferida em '${block.title}'`);
+      const nodeIds = new Set(block.structure.nodes.map((node) => node.id));
+      assert(nodeIds.has(block.structure.rootId), `${unitId}: raiz visual inexistente em '${block.title}'`);
+      assert(Array.isArray(block.structure.edges) && block.structure.edges.length > 0, `${unitId}: diagrama sem arestas em '${block.title}'`);
+      for (const node of block.structure.nodes) {
+        assert(node.id?.trim() && node.label?.trim(), `${unitId}: nó visual sem identidade ou rótulo em '${block.title}'`);
+        assert(!/^Tópicos Principais$/i.test(node.label), `${unitId}: categoria genérica inferida em '${block.title}'`);
       }
+      for (const edge of block.structure.edges) assert(nodeIds.has(edge.from) && nodeIds.has(edge.to) && edge.from !== edge.to, `${unitId}: aresta visual inválida em '${block.title}'`);
       explicitDiagramStructures += 1;
     }
   }
@@ -227,7 +232,10 @@ const assertSourceBackedProjection = (family, item, unitId) => {
       ['structured_first', 'source_first', 'hybrid', 'source_only'].includes(presentation.renderStrategy),
       `${unitId}: estratégia de renderização ausente em '${entityId}'`
     );
-    assert(['none', 'explicit'].includes(presentation.diagramIntent), `${unitId}: intenção de diagrama ausente em '${entityId}'`);
+    assert(
+      ['none', 'explicit', 'sequence', 'decision_flow', 'branches', 'comparison', 'taxonomy', 'relations'].includes(presentation.diagramIntent),
+      `${unitId}: intenção de diagrama ausente em '${entityId}'`,
+    );
     sourceBackedPresentations += 1;
   }
   if (!generic) return;
@@ -374,8 +382,14 @@ for (const file of viewFiles) {
       for (const proc of sec.procedures) {
         assertSourceBackedProjection('procedures', proc, unitId);
         if (proc.presentation?.status === 'source_backed') {
-          assert(proc.presentation.renderStrategy === 'hybrid', `${unitId}: procedimento '${proc.title}' não usa representação atômica híbrida`);
-          assert(proc.presentation.diagramIntent === 'none', `${unitId}: procedimento '${proc.title}' ainda solicita inferência de diagrama`);
+          const explicitDiagram = proc.blocks?.find((block) => block.type === 'diagram' && block.structure?.schemaVersion === '2.1.0');
+          if (explicitDiagram) {
+            assert(proc.presentation.renderStrategy === 'source_only', `${unitId}: procedimento visual '${proc.title}' duplica stepper e grafo`);
+            assert(proc.presentation.diagramIntent === explicitDiagram.structure.visualType, `${unitId}: procedimento visual '${proc.title}' diverge da topologia publicada`);
+          } else {
+            assert(['hybrid', 'source_only'].includes(proc.presentation.renderStrategy), `${unitId}: procedimento '${proc.title}' sem estratégia atômica`);
+            assert(proc.presentation.diagramIntent === 'none', `${unitId}: procedimento '${proc.title}' ainda solicita inferência de diagrama`);
+          }
         }
         assert(Array.isArray(proc.steps) && proc.steps.length > 0, `${unitId}: procedimento '${proc.title}' sem passos`);
         for (const step of proc.steps) {

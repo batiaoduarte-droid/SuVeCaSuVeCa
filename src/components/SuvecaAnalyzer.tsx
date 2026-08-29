@@ -138,7 +138,7 @@ export const SuvecaAnalyzer: React.FC<SuvecaAnalyzerProps> = ({
 
   return (
     <div
-      className="tool-content-shell space-y-8 pb-16"
+      className="w-full space-y-8 pb-16"
     >
       {/* Header Banner */}
       {isFocusMode ? (
