@@ -119,6 +119,19 @@ const checkBlock = (block, unitId) => {
       !['Esquema Estruturado da Unidade', 'Quadro Estruturado da Unidade'].includes(block.title),
       `${unitId}: diagrama mantém título genérico '${block.title}'`
     );
+    if (block.text) {
+      assert(block.structure && Array.isArray(block.structure.items), `${unitId}: diagrama textual sem AST visual explícita`);
+      assert(block.structure.items.length > 0, `${unitId}: AST visual vazia em '${block.title}'`);
+      assert(
+        ['sequence', 'branches', 'relations', 'source_segments'].includes(block.structure.kind),
+        `${unitId}: tipo de estrutura visual inválido em '${block.title}'`,
+      );
+      for (const item of block.structure.items) {
+        assert(item.id?.trim() && item.label?.trim(), `${unitId}: item visual sem identidade ou rótulo em '${block.title}'`);
+        assert(!/^Tópicos Principais$/i.test(item.label), `${unitId}: categoria genérica inferida em '${block.title}'`);
+      }
+      explicitDiagramStructures += 1;
+    }
   }
   const visibleText = [block.text, block.definition, block.statement, ...(block.items || [])]
     .filter((value) => typeof value === 'string')
@@ -145,6 +158,7 @@ let structuredExplanationGroups = 0;
 let operationalGlossaryItems = 0;
 let resolvedEntityRelations = 0;
 let mapsWithLineage = 0;
+let explicitDiagramStructures = 0;
 
 const normalizeToken = (value = '') => (value || '')
   .normalize('NFD')
@@ -482,6 +496,7 @@ console.log(JSON.stringify({
   operationalGlossaryItems,
   resolvedEntityRelations,
   mapsWithLineage,
+  explicitDiagramStructures,
   unresolvedRefs: manifest.unresolvedRefs,
   unknownBlockTypes: manifest.unknownBlockTypes,
 }, null, 2));

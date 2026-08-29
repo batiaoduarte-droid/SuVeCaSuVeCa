@@ -90,7 +90,36 @@
               "type": "diagram",
               "diagramType": "relationship",
               "title": "O Mecanismo Fundamental de Transposição da Passiva Analítica para a Ativa",
-              "text": "Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar SER (Tempo T)] + [Particípio] + [por + Agente da Passiva] │ │ │ │ │ (vira OD) │ (eliminado) │ (assume Tempo T) │ (vira Sujeito) ▼ ▼ ▼ ▼ Voz Ativa: [Agente da Passiva] + [Verbo Principal Conjugado no Tempo T] + [Sujeito Paciente]"
+              "text": "Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar SER (Tempo T)] + [Particípio] + [por + Agente da Passiva] │ │ │ │ │ (vira OD) │ (eliminado) │ (assume Tempo T) │ (vira Sujeito) ▼ ▼ ▼ ▼ Voz Ativa: [Agente da Passiva] + [Verbo Principal Conjugado no Tempo T] + [Sujeito Paciente]",
+              "structure": {
+                "kind": "relations",
+                "items": [
+                  {
+                    "id": "segment-01",
+                    "label": "Voz Passiva Analítica: [Sujeito Paciente] + [Auxiliar SER (Tempo T)] + [Particípio] + [por + Agente da Passiva]"
+                  },
+                  {
+                    "id": "segment-02",
+                    "label": "(vira OD)"
+                  },
+                  {
+                    "id": "segment-03",
+                    "label": "(eliminado)"
+                  },
+                  {
+                    "id": "segment-04",
+                    "label": "(assume Tempo T)"
+                  },
+                  {
+                    "id": "segment-05",
+                    "label": "(vira Sujeito)"
+                  },
+                  {
+                    "id": "segment-06",
+                    "label": "Voz Ativa: [Agente da Passiva] + [Verbo Principal Conjugado no Tempo T] + [Sujeito Paciente]"
+                  }
+                ]
+              }
             },
             {
               "type": "entity_relations",
@@ -140,7 +169,57 @@
               "type": "diagram",
               "diagramType": "flow",
               "title": "As Cinco Instruções Passo a Passo",
-              "text": "MÉTODO DAS 5 INSTRUÇÕES │ ┌──────────────────────────────────────┼──────────────────────────────────────┐ ▼ ▼ ▼ INSTRUÇÃO 1: INSTRUÇÃO 2: INSTRUÇÃO 3: \"Chamar o feito à ordem\" Agente ➔ Sujeito Ativo Eliminação do \"SER\" • Identificar Agente da Passiva • Deslocar para início da oração • Riscar o verbo \"ser\" • Identificar Tempo do Verbo \"Ser\" • Eliminar a preposição \"por/de\" • Desenhar seta para verbo seguinte • Identificar Sujeito Paciente • Preservar artigos e modificadores • Transferir carga temporal/modo │ │ └──────────────────────────────────────┬──────────────────────────────────────┘ │ ┌──────────────────────────────────────┴──────────────────────────────────────┐ ▼ ▼ INSTRUÇÃO 4: INSTRUÇÃO 5: Sujeito Paciente ➔ Objeto Direto Agente Indeterminado ➔ Sujeito Indeterminado • Termo paciente vira complemento do verbo • Se agente não for expresso (\"por quem? não sei\"): • Pronomes retos (ele/eu) viram oblíquos (o/me) - O verbo ativo flexiona na 3ª pessoa do plural • Respeitar regras de próclise com palavras atrativas - Não inserir pronome substantivo expresso"
+              "text": "MÉTODO DAS 5 INSTRUÇÕES │ ┌──────────────────────────────────────┼──────────────────────────────────────┐ ▼ ▼ ▼ INSTRUÇÃO 1: INSTRUÇÃO 2: INSTRUÇÃO 3: \"Chamar o feito à ordem\" Agente ➔ Sujeito Ativo Eliminação do \"SER\" • Identificar Agente da Passiva • Deslocar para início da oração • Riscar o verbo \"ser\" • Identificar Tempo do Verbo \"Ser\" • Eliminar a preposição \"por/de\" • Desenhar seta para verbo seguinte • Identificar Sujeito Paciente • Preservar artigos e modificadores • Transferir carga temporal/modo │ │ └──────────────────────────────────────┬──────────────────────────────────────┘ │ ┌──────────────────────────────────────┴──────────────────────────────────────┐ ▼ ▼ INSTRUÇÃO 4: INSTRUÇÃO 5: Sujeito Paciente ➔ Objeto Direto Agente Indeterminado ➔ Sujeito Indeterminado • Termo paciente vira complemento do verbo • Se agente não for expresso (\"por quem? não sei\"): • Pronomes retos (ele/eu) viram oblíquos (o/me) - O verbo ativo flexiona na 3ª pessoa do plural • Respeitar regras de próclise com palavras atrativas - Não inserir pronome substantivo expresso",
+              "structure": {
+                "kind": "sequence",
+                "rootLabel": "Método das 5 instruções",
+                "items": [
+                  {
+                    "id": "instruction-1",
+                    "label": "Chamar o feito à ordem",
+                    "details": [
+                      "Identificar o agente da passiva.",
+                      "Identificar o tempo do verbo ser.",
+                      "Identificar o sujeito paciente."
+                    ]
+                  },
+                  {
+                    "id": "instruction-2",
+                    "label": "Agente da passiva → sujeito ativo",
+                    "details": [
+                      "Deslocar o agente para o início da oração.",
+                      "Eliminar a preposição por/de.",
+                      "Preservar artigos e modificadores."
+                    ]
+                  },
+                  {
+                    "id": "instruction-3",
+                    "label": "Eliminar o verbo ser",
+                    "details": [
+                      "Riscar o verbo ser.",
+                      "Relacioná-lo ao verbo seguinte.",
+                      "Transferir a carga temporal e modal."
+                    ]
+                  },
+                  {
+                    "id": "instruction-4",
+                    "label": "Sujeito paciente → objeto direto",
+                    "details": [
+                      "O termo paciente vira complemento do verbo.",
+                      "Pronomes retos viram oblíquos: ele/eu → o/me.",
+                      "Respeitar as regras de próclise com palavras atrativas."
+                    ]
+                  },
+                  {
+                    "id": "instruction-5",
+                    "label": "Agente indeterminado → sujeito indeterminado",
+                    "details": [
+                      "Se o agente não for expresso, o verbo ativo flexiona na 3ª pessoa do plural.",
+                      "Não inserir pronome substantivo expresso."
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "entity_relations",
@@ -187,7 +266,24 @@
               "type": "diagram",
               "diagramType": "flow",
               "title": "Transposição com Agente da Passiva Indeterminado",
-              "text": "Passiva Analítica sem Agente: \"As palavras precisavam ser interpretadas [por quem? Não diz]\" │ ▼ (Transposição para a Ativa) Voz Ativa com Sujeito Indet.: \"[Eles] Precisavam interpretar as palavras.\" └── Auxiliar flexionado na 3ª pessoa do plural"
+              "text": "Passiva Analítica sem Agente: \"As palavras precisavam ser interpretadas [por quem? Não diz]\" │ ▼ (Transposição para a Ativa) Voz Ativa com Sujeito Indet.: \"[Eles] Precisavam interpretar as palavras.\" └── Auxiliar flexionado na 3ª pessoa do plural",
+              "structure": {
+                "kind": "relations",
+                "items": [
+                  {
+                    "id": "segment-01",
+                    "label": "Passiva Analítica sem Agente: \"As palavras precisavam ser interpretadas [por quem? Não diz]\""
+                  },
+                  {
+                    "id": "segment-02",
+                    "label": "(Transposição para a Ativa) Voz Ativa com Sujeito Indet.: \"[Eles] Precisavam interpretar as palavras.\""
+                  },
+                  {
+                    "id": "segment-03",
+                    "label": "Auxiliar flexionado na 3ª pessoa do plural"
+                  }
+                ]
+              }
             },
             {
               "type": "entity_relations",
@@ -359,7 +455,32 @@
               "type": "diagram",
               "diagramType": "flow",
               "title": "Locuções de Três Verbos: Dinâmica entre Auxiliar e Principal",
-              "text": "Passiva: \"As negociações deverão ser concluídas...\" │ │ │ ▼ ▼ (sai) ▼ (vira infinitivo puro) Ativa: \"[Eles] deverão [ X ] concluir as negociações.\" └── 3ª pessoa plural └── Invariável (NÃO flexiona)"
+              "text": "Passiva: \"As negociações deverão ser concluídas...\" │ │ │ ▼ ▼ (sai) ▼ (vira infinitivo puro) Ativa: \"[Eles] deverão [ X ] concluir as negociações.\" └── 3ª pessoa plural └── Invariável (NÃO flexiona)",
+              "structure": {
+                "kind": "relations",
+                "items": [
+                  {
+                    "id": "segment-01",
+                    "label": "Passiva: \"As negociações deverão ser concluídas...\""
+                  },
+                  {
+                    "id": "segment-02",
+                    "label": "(sai)"
+                  },
+                  {
+                    "id": "segment-03",
+                    "label": "(vira infinitivo puro) Ativa: \"[Eles] deverão [ X ] concluir as negociações.\""
+                  },
+                  {
+                    "id": "segment-04",
+                    "label": "3ª pessoa plural"
+                  },
+                  {
+                    "id": "segment-05",
+                    "label": "Invariável (NÃO flexiona)"
+                  }
+                ]
+              }
             },
             {
               "type": "entity_relations",
@@ -442,7 +563,36 @@
               "type": "diagram",
               "diagramType": "flow",
               "title": "Sujeito Paciente Oculto/Elíptico, Pronomes Oblíquos e Próclise",
-              "text": "Passiva: \"Se [eu] não for atendido em minha reivindicação...\" │ │ │ │ │ (vira \"me\") │ (atrai) │ (sai) ▼ (assume futuro do subjuntivo 3ª pl.) ▼ ▼ ▼ [atenderem] Ativa: \"Se não + me atenderem em minha reivindicação...\""
+              "text": "Passiva: \"Se [eu] não for atendido em minha reivindicação...\" │ │ │ │ │ (vira \"me\") │ (atrai) │ (sai) ▼ (assume futuro do subjuntivo 3ª pl.) ▼ ▼ ▼ [atenderem] Ativa: \"Se não + me atenderem em minha reivindicação...\"",
+              "structure": {
+                "kind": "relations",
+                "items": [
+                  {
+                    "id": "segment-01",
+                    "label": "Passiva: \"Se [eu] não for atendido em minha reivindicação...\""
+                  },
+                  {
+                    "id": "segment-02",
+                    "label": "(vira \"me\")"
+                  },
+                  {
+                    "id": "segment-03",
+                    "label": "(atrai)"
+                  },
+                  {
+                    "id": "segment-04",
+                    "label": "(sai)"
+                  },
+                  {
+                    "id": "segment-05",
+                    "label": "(assume futuro do subjuntivo 3ª pl.)"
+                  },
+                  {
+                    "id": "segment-06",
+                    "label": "[atenderem] Ativa: \"Se não + me atenderem em minha reivindicação...\""
+                  }
+                ]
+              }
             },
             {
               "type": "entity_relations",

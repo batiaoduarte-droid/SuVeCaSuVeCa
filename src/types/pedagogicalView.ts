@@ -255,8 +255,28 @@ export interface DiagramBlock {
   title?: string;
   diagramType: 'tree' | 'flow' | 'classification' | 'relationship' | 'connection_map';
   text?: string;
+  structure?: DiagramStructure;
   nodes?: ConnectionMapNode[];
   edges?: ConnectionMapEdge[];
+}
+
+export type DiagramStructureKind = 'sequence' | 'branches' | 'relations' | 'source_segments';
+
+export interface DiagramStructureItem {
+  id: string;
+  label: string;
+  details?: string[];
+}
+
+/**
+ * Projeção editorial explícita de um desenho textual legado.
+ * `sourceText` permanece no bloco `diagram.text`; esta estrutura apenas declara
+ * como apresentar as relações já presentes na fonte, sem reinterpretá-las no UI.
+ */
+export interface DiagramStructure {
+  kind: DiagramStructureKind;
+  rootLabel?: string;
+  items: DiagramStructureItem[];
 }
 
 export interface EntityRelationTarget {

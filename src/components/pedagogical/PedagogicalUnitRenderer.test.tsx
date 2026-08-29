@@ -180,11 +180,11 @@ describe('PedagogicalUnitRenderer (View Model V1)', () => {
     expect(screen.getByText(/1 de 2 recuperados \(50%\)/i)).toBeInTheDocument();
   });
 
-  it('renderiza questões oficiais estruturadas com banca e ano', () => {
+  it('renderiza questões oficiais estruturadas com banca e ano após a verificação de integridade', async () => {
     render(<PedagogicalUnitRenderer view={sampleUnitView} />);
 
     expect(screen.getByText(/questões oficiais de prova/i)).toBeInTheDocument();
-    expect(screen.getByText('FGV')).toBeInTheDocument();
+    expect(await screen.findByText('FGV')).toBeInTheDocument();
     expect(screen.getByText('2024')).toBeInTheDocument();
     expect(screen.getByText(/assinale a opção com dígrafo/i)).toBeInTheDocument();
   });

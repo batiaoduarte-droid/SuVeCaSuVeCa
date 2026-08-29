@@ -41,6 +41,7 @@ import { FormulaBlock as FormulaBlockView } from './FormulaBlock';
 import { ResponsiveStudyTable } from '../../study-visuals/ResponsiveStudyTable';
 import { StudyCallout } from '../../study-visuals/StudyCallout';
 import { ConceptTree } from '../../study-visuals/ConceptTree';
+import { StructuredDiagram } from '../../study-visuals/StructuredDiagram';
 import { ConnectionMap, looksLikeConnectionMap } from '../../ui/ConnectionMap';
 import type { StudyTone } from '../../study-visuals/studyVisualTokens';
 
@@ -1037,6 +1038,15 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({
       );
 
     case 'diagram':
+      if (block.structure?.items?.length) {
+        return (
+          <StructuredDiagram
+            title={block.title}
+            source={block.text}
+            structure={block.structure}
+          />
+        );
+      }
       if (block.nodes && block.edges && block.nodes.length > 0) {
         return <ConceptTree nodes={block.nodes} edges={block.edges} />;
       }

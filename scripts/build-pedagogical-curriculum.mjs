@@ -4,6 +4,7 @@ import path from 'node:path';
 import { normalizePedagogicalMarkdown } from './lib/pedagogical-markdown.mjs';
 import { separateInlineOptionsFromCommand } from './lib/official-question-presentation.mjs';
 import { projectQuestionSupportBlocks } from './lib/question-support-presentation.mjs';
+import { projectStructuredDiagramFromMarkdown } from './lib/structured-diagram.mjs';
 
 const ROOT = process.cwd();
 const SCHEMA_VERSION = '4.2.0';
@@ -1653,6 +1654,8 @@ assert(selectedFlashcards.length >= EXPECTED_INTEGRATED_UNITS, 'Poucos flashcard
 
 const procedures = decisionCandidates.map((candidate) => {
   const unit = unitById.get(candidate.unit_id);
+  const markdown = cleanLearnerMarkdown(candidate.procedure_markdown).trim();
+  const visualProjection = projectStructuredDiagramFromMarkdown(markdown);
   return {
     id: candidate.decision_candidate_id,
     unitId: candidate.unit_id,
@@ -1662,8 +1665,11 @@ const procedures = decisionCandidates.map((candidate) => {
     topic: unit?.title || candidate.canonical_topic_id,
     canonicalTopicId: candidate.canonical_topic_id,
     title: cleanLearnerMarkdown(candidate.title).trim(),
-    markdown: cleanLearnerMarkdown(candidate.procedure_markdown).trim(),
-    sourceRefs: unit ? [`EDITORIAL:${unit.unit_id}`] : [],
+    markdown,
+    ...(visualProjection || {}),
+    sourceRefs: Array.isArray(candidate.source_refs) && candidate.source_refs.length
+      ? candidate.source_refs
+      : unit ? [`EDITORIAL:${unit.unit_id}`] : [],
   };
 }).filter((item) => item.lessonId && item.title && item.markdown.length >= 80);
 assert(procedures.length >= 350, `Roteiros de decisão insuficientes: ${procedures.length}.`);

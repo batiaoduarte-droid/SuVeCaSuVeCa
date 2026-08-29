@@ -38,6 +38,44 @@ const questionReference = (question: OfficialQuestionView): string => {
     || '';
 };
 
+const normalizedQuestionFor = (
+  question: OfficialQuestionView,
+  lessonId: string,
+  map: Record<string, NormalizedQuestion>,
+): NormalizedQuestion | undefined => {
+  const payload = question.questionPayload || {};
+  const sourceQuestionId = question.sourceQuestionId || payload.question_id || question.questionId || '';
+  const questionId = question.officialQuestionId || question.questionId || sourceQuestionId;
+  return map[questionId] || map[sourceQuestionId] || map[`${lessonId}:${sourceQuestionId}`];
+};
+
+const hasSafePracticePresentation = (
+  question: OfficialQuestionView,
+  lessonId: string,
+  map: Record<string, NormalizedQuestion>,
+): boolean => {
+  const presentation = question.questionPresentation;
+  if (['source_incomplete', 'source_conflict'].includes(presentation?.status || '')) return false;
+  const normalized = normalizedQuestionFor(question, lessonId, map);
+  if (!normalized) return true;
+  if (
+    normalized.presentation?.contextStatus === 'source_missing'
+    || normalized.presentation?.formattingStatus === 'source_missing'
+  ) return false;
+  const payload = question.questionPayload || {};
+  const prompt = presentation?.stem || normalized.prompt || payload.prompt || question.prompt || '';
+  const support = normalized.presentation?.supportRichText
+    || normalized.presentation?.supportBlocks?.map((block) => block.richText || block.text).join('\n\n')
+    || normalized.supportText
+    || payload.support_text;
+  const command = normalized.presentation?.commandRichText || prompt;
+  if (requiresIdentifiedContext(prompt) && !String(support || '').trim()) return false;
+  return !(
+    requiresVisualEmphasis(prompt)
+    && !containsRichEmphasis(command, support, ...Object.values(normalized.presentation?.optionRichText || {}))
+  );
+};
+
 export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> = ({
   questions = [],
   lessonId = 'A00',
@@ -45,26 +83,40 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
   onPracticeMore,
 }) => {
   const [enrichedMap, setEnrichedMap] = useState<Record<string, NormalizedQuestion>>({});
+  const [resolvedQuestionSetKey, setResolvedQuestionSetKey] = useState('');
   const [page, setPage] = useState(0);
   const questionListRef = useRef<HTMLDivElement>(null);
   const encounteredRefs = useRef(new Set<string>());
-  const practiceQuestions = useMemo(
+  const sourceEligibleQuestions = useMemo(
     () => questions.filter((question) => !['source_incomplete', 'source_conflict'].includes(
       question.questionPresentation?.status || '',
     )),
     [questions],
   );
-  const excludedQuestions = questions.length - practiceQuestions.length;
   const questionSetKey = questions.map(questionReference).join('\u001f');
+  const enrichmentReady = resolvedQuestionSetKey === questionSetKey;
+  const practiceQuestions = useMemo(
+    () => enrichmentReady
+      ? sourceEligibleQuestions.filter((question) => hasSafePracticePresentation(question, lessonId, enrichedMap))
+      : [],
+    [enrichedMap, enrichmentReady, lessonId, sourceEligibleQuestions],
+  );
+  const excludedQuestions = enrichmentReady
+    ? questions.length - practiceQuestions.length
+    : questions.length - sourceEligibleQuestions.length;
+  const displayedQuestionCount = enrichmentReady ? practiceQuestions.length : sourceEligibleQuestions.length;
   const pageCount = Math.max(1, Math.ceil(practiceQuestions.length / QUESTIONS_PAGE_SIZE));
   const pageStart = page * QUESTIONS_PAGE_SIZE;
   const visibleQuestions = practiceQuestions.slice(pageStart, pageStart + QUESTIONS_PAGE_SIZE);
   const visibleRefs = visibleQuestions.map(questionReference).filter(Boolean);
   const visibleRefsKey = visibleRefs.join('\u001f');
+  const eligibleRefs = sourceEligibleQuestions.map(questionReference).filter(Boolean);
+  const eligibleRefsKey = eligibleRefs.join('\u001f');
 
   useEffect(() => {
     setPage(0);
     setEnrichedMap({});
+    setResolvedQuestionSetKey('');
     encounteredRefs.current.clear();
   }, [lessonId, questionSetKey]);
 
@@ -72,9 +124,10 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
     let active = true;
     const controller = new AbortController();
     const loadRealQuestions = async () => {
-      const map = await fetchNormalizedQuestionsByRefs(visibleRefs, lessonId, controller.signal);
-      if (active && Object.keys(map).length > 0) {
-        setEnrichedMap((current) => ({ ...current, ...map }));
+      const map = await fetchNormalizedQuestionsByRefs(eligibleRefs, lessonId, controller.signal);
+      if (active) {
+        setEnrichedMap(map);
+        setResolvedQuestionSetKey(questionSetKey);
       }
     };
     loadRealQuestions();
@@ -82,7 +135,7 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
       active = false;
       controller.abort();
     };
-  }, [lessonId, visibleRefsKey]);
+  }, [eligibleRefsKey, lessonId, questionSetKey]);
 
   useEffect(() => {
     const root = questionListRef.current;
@@ -123,7 +176,7 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
       <div className="flex items-center gap-2 border-b border-teal-100/80 pb-3">
         <HelpCircle className="h-5 w-5 text-teal-700" />
         <h3 className="m-0 text-base font-black text-slate-900">
-          Questões Oficiais de Prova ({practiceQuestions.length})
+          Questões Oficiais de Prova ({displayedQuestionCount})
         </h3>
       </div>
 
@@ -139,16 +192,20 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
         </div>
       )}
 
-      <div ref={questionListRef} className="space-y-6">
+      {!enrichmentReady && (
+        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600" role="status">
+          Verificando a integridade das questões desta unidade…
+        </div>
+      )}
+
+      {enrichmentReady && <div ref={questionListRef} className="space-y-6">
         {visibleQuestions.map((q, idx) => {
           const payload = q.questionPayload || {};
           const answerPayload = q.answerPayload || {};
           const presentation = q.questionPresentation;
           const sourceQuestionId = q.sourceQuestionId || payload.question_id || q.questionId || '';
           const qId = q.officialQuestionId || q.questionId || sourceQuestionId;
-          const normalized = enrichedMap[qId]
-            || enrichedMap[sourceQuestionId]
-            || enrichedMap[`${lessonId}:${sourceQuestionId}`];
+          const normalized = normalizedQuestionFor(q, lessonId, enrichedMap);
 
           let prompt = presentation?.stem || normalized?.prompt || payload.prompt || q.prompt || '';
           const supportText = normalized?.supportText || payload.support_text;
@@ -242,7 +299,12 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
             </div>
           );
         })}
-      </div>
+      </div>}
+      {enrichmentReady && practiceQuestions.length === 0 && (
+        <div className="rounded-xl border border-teal-200 bg-teal-50 p-4 text-sm leading-relaxed text-teal-950" role="status">
+          Nenhuma questão desta seleção possui fonte suficiente para uma tentativa segura. Use a prática adaptativa abaixo para continuar no mesmo tema.
+        </div>
+      )}
       {practiceQuestions.length > 0 && (
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
         <p className="m-0 text-xs font-semibold text-slate-700" aria-live="polite">

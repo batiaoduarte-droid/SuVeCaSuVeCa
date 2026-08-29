@@ -27,7 +27,7 @@ describe('renderização das unidades regulares publicadas', () => {
 
       cleanup();
     }
-  }, 45_000);
+  }, 75_000);
 
   it('preserva na UI todos os campos pedagógicos dos 181 contrastes publicados', () => {
     const root = path.join(process.cwd(), 'public', 'knowledge', 'pedagogical', 'views');

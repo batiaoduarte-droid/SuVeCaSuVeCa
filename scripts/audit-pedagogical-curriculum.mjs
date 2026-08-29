@@ -166,11 +166,29 @@ if (!errors.length) {
   check(integratedCardUnits.size === 102, `Cobertura das unidades integradas por flashcards: ${integratedCardUnits.size}/102.`);
 
   const procedures = readJson(path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'decision-procedures.json'));
+  check(procedures.schemaVersion === '4.2.1', `Schema dos roteiros decisórios inesperado: ${procedures.schemaVersion}.`);
   check(procedures.count === procedures.procedures?.length, 'Contagem de roteiros decisórios divergente.');
   check(procedures.count === manifest.totals.decisionProcedures, 'Manifesto diverge dos roteiros decisórios.');
   check(new Set(procedures.procedures.map((item) => item.id)).size === procedures.count, 'IDs de roteiros decisórios duplicados.');
   check(procedures.procedures.every((item) => !forbiddenMedia.test(`${item.title} ${item.markdown}`)), 'Há roteiro decisório dependente de mídia.');
   check(procedures.procedures.every((item) => !forbiddenEditorialResidue.test(`${item.title} ${item.markdown}`)), 'Há roteiro decisório com resíduo técnico/editorial.');
+  const visualProcedures = procedures.procedures.filter((item) => item.structure);
+  check(
+    visualProcedures.length === procedures.projection?.visualProjectionCount,
+    'Contagem de roteiros com AST visual diverge da projeção declarada.',
+  );
+  check(
+    procedures.procedures.every((item) => item.sourceRefs?.some((ref) => /^PROC-/u.test(ref))),
+    'Há roteiro decisório sem referência canônica PROC-*.',
+  );
+  check(
+    visualProcedures.every((item) => item.sourceText?.trim() && item.structure.items?.length > 0),
+    'Há roteiro visual sem texto-fonte ou sem itens estruturados.',
+  );
+  check(
+    visualProcedures.every((item) => item.structure.items.every((entry) => entry.id?.trim() && entry.label?.trim())),
+    'Há roteiro visual com item vazio ou sem identidade.',
+  );
 
   const knowledgeShardFiles = fs.readdirSync(path.join(ROOT, 'src', 'data'))
     .filter((name) => /^pedagogicalKnowledge\.part-\d+\.generated\.ts$/.test(name))

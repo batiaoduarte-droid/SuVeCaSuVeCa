@@ -10,8 +10,10 @@ import {
   Search,
 } from 'lucide-react';
 import { MarkdownContent } from './ui/MarkdownContent';
+import { StructuredDiagram } from './study-visuals/StructuredDiagram';
 import { StudyBadge, StudySurface } from './study-visuals';
 import { getLessonName, getLessonSearchLabel } from '../data/lessonCatalog';
+import type { DiagramStructure } from '../types/pedagogicalView';
 
 interface DecisionProcedure {
   id: string;
@@ -23,6 +25,8 @@ interface DecisionProcedure {
   canonicalTopicId: string;
   title: string;
   markdown: string;
+  sourceText?: string;
+  structure?: DiagramStructure;
   sourceRefs: string[];
 }
 
@@ -49,7 +53,11 @@ const isDecisionProcedure = (value: unknown): value is DecisionProcedure => {
     typeof procedure.lessonId === 'string' &&
     typeof procedure.topic === 'string' &&
     typeof procedure.title === 'string' &&
-    typeof procedure.markdown === 'string'
+    typeof procedure.markdown === 'string' &&
+    (procedure.structure === undefined || (
+      typeof procedure.structure === 'object' &&
+      Array.isArray((procedure.structure as Record<string, unknown>).items)
+    ))
   );
 };
 
@@ -418,7 +426,15 @@ export const DecisionTreeViewer: React.FC = () => {
                     </div>
                   </header>
                   <div className="p-5 sm:p-7">
-                    <MarkdownContent content={selectedProcedure.markdown} className="mx-auto" />
+                    {selectedProcedure.structure?.items?.length ? (
+                      <StructuredDiagram
+                        title={selectedProcedure.title}
+                        source={selectedProcedure.sourceText}
+                        structure={selectedProcedure.structure}
+                      />
+                    ) : (
+                      <MarkdownContent content={selectedProcedure.markdown} className="mx-auto" />
+                    )}
                   </div>
                 </article>
               ) : (

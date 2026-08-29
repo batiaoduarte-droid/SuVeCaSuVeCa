@@ -31,33 +31,28 @@ describe('OfficialQuestionsSection', () => {
     vi.mocked(fetchNormalizedQuestionsByRefs).mockClear();
   });
 
-  it('mantém no máximo cinco questões no DOM e carrega somente a página visível', async () => {
+  it('valida o conjunto completo antes de paginar e mantém no máximo cinco questões no DOM', async () => {
     const user = userEvent.setup();
     const questions = makeQuestions(12);
     const { container } = render(
       <OfficialQuestionsSection questions={questions} lessonId="A00" />,
     );
 
-    expect(container.querySelectorAll('.question-block')).toHaveLength(5);
-    expect(screen.getByText('Página 1 de 3. Exibindo 1–5 de 12 questões.')).toBeVisible();
+    expect(screen.getByText(/verificando a integridade/i)).toBeVisible();
     await waitFor(() => {
       expect(fetchNormalizedQuestionsByRefs).toHaveBeenLastCalledWith(
-        questions.slice(0, 5).map((question) => question.officialQuestionId),
+        questions.map((question) => question.officialQuestionId),
         'A00',
         expect.any(AbortSignal),
       );
     });
+    await waitFor(() => expect(container.querySelectorAll('.question-block')).toHaveLength(5));
+    expect(screen.getByText('Página 1 de 3. Exibindo 1–5 de 12 questões.')).toBeVisible();
 
     await user.click(screen.getByRole('button', { name: 'Próxima página' }));
     expect(container.querySelectorAll('.question-block')).toHaveLength(5);
     expect(screen.getByText('Página 2 de 3. Exibindo 6–10 de 12 questões.')).toBeVisible();
-    await waitFor(() => {
-      expect(fetchNormalizedQuestionsByRefs).toHaveBeenLastCalledWith(
-        questions.slice(5, 10).map((question) => question.officialQuestionId),
-        'A00',
-        expect.any(AbortSignal),
-      );
-    });
+    expect(fetchNormalizedQuestionsByRefs).toHaveBeenCalledTimes(1);
 
     await user.click(screen.getByRole('button', { name: 'Próxima página' }));
     expect(container.querySelectorAll('.question-block')).toHaveLength(2);
@@ -73,6 +68,7 @@ describe('OfficialQuestionsSection', () => {
     const { container, rerender } = render(
       <OfficialQuestionsSection questions={makeQuestions(9, 'A00')} lessonId="A00" />,
     );
+    await screen.findByRole('button', { name: 'Próxima página' });
     await user.click(screen.getByRole('button', { name: 'Próxima página' }));
     expect(container.querySelectorAll('.question-block')).toHaveLength(4);
 
@@ -100,7 +96,7 @@ describe('OfficialQuestionsSection', () => {
     expect(firstSignal?.aborted).toBe(true);
   });
 
-  it('omite da sequência praticável uma questão com fonte incompleta', () => {
+  it('omite da sequência praticável uma questão com fonte incompleta', async () => {
     const questions = makeQuestions(2);
     questions[0].questionPresentation = {
       status: 'source_incomplete',
@@ -112,9 +108,39 @@ describe('OfficialQuestionsSection', () => {
       <OfficialQuestionsSection questions={questions} lessonId="A00" />,
     );
 
-    expect(container.querySelectorAll('.question-block')).toHaveLength(1);
+    await waitFor(() => expect(container.querySelectorAll('.question-block')).toHaveLength(1));
     expect(screen.getByText(/1 questão foi omitida da prática/i)).toBeVisible();
     expect(screen.getByText(/Questões Oficiais de Prova \(1\)/i)).toBeVisible();
+  });
+
+  it('omite antes da paginação uma questão normalizada sem destaque tipográfico recuperável', async () => {
+    const questions = makeQuestions(2);
+    vi.mocked(fetchNormalizedQuestionsByRefs).mockResolvedValueOnce({
+      [questions[0].officialQuestionId!]: {
+        id: 'A00:aula.q0001',
+        originalQuestionId: 'aula.q0001',
+        prompt: 'A forma verbal destacada indica:',
+        presentation: {
+          schemaVersion: '1.0.0',
+          supportBlocks: [],
+          command: 'A forma verbal destacada indica:',
+          mediaKind: 'none',
+          displayMode: 'text_only',
+          media: [],
+          contextStatus: 'not_required',
+          formattingStatus: 'source_missing',
+          provenance: { kind: 'source_backed_question_presentation' },
+        },
+      },
+    } as any);
+
+    const { container } = render(
+      <OfficialQuestionsSection questions={questions} lessonId="A00" />,
+    );
+
+    await waitFor(() => expect(container.querySelectorAll('.question-block')).toHaveLength(1));
+    expect(screen.getByText(/1 questão foi omitida da prática/i)).toBeVisible();
+    expect(screen.queryByText(/tentativa indisponível/i)).not.toBeInTheDocument();
   });
 
   it('separa texto de apoio e comando usando a apresentação estruturada', async () => {
@@ -154,7 +180,7 @@ describe('OfficialQuestionsSection', () => {
     expect(screen.getByText('Texto de apoio')).toBeVisible();
   });
 
-  it('não repete no comando as alternativas projetadas como opções', () => {
+  it('não repete no comando as alternativas projetadas como opções', async () => {
     const questions = makeQuestions(1);
     questions[0].prompt = 'Assinale a forma correta:\na) Alternativa A\nb) Alternativa B';
     questions[0].questionPresentation = {
@@ -171,7 +197,7 @@ describe('OfficialQuestionsSection', () => {
 
     render(<OfficialQuestionsSection questions={questions} lessonId="A00" />);
 
-    expect(screen.getByText('Assinale a forma correta:')).toBeVisible();
+    expect(await screen.findByText('Assinale a forma correta:')).toBeVisible();
     expect(screen.queryByText(/Assinale a forma correta:\s*a\)/i)).not.toBeInTheDocument();
     expect(screen.getByText('Alternativa A')).toBeVisible();
     expect(screen.getByText('Alternativa B')).toBeVisible();
