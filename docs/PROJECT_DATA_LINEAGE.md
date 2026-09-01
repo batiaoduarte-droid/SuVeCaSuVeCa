@@ -274,11 +274,40 @@ Questões também podem aparecer dentro das Views publicadas. Ocorrência em Vie
 - `audit-pedagogical-curriculum.mjs`;
 - auditoria PBL quando houver vínculos pedagógicos.
 
-### Ao alterar
+### Overlays de comentários pedagógicos regenerados (Extensos v2 integrais + Comuns v1)
 
-Nunca corrigir silenciosamente o payload oficial. Para erro learner-facing com payload íntegro, corrigir `question_presentations` e sua projeção auditável, manter proveniência e reconstruir raw/normalized/shards somente quando o universo publicado mudar.
-
-O prompt `Notebook LM/07_Prompts/consolidacao/system_prompt_conversao_apostila_completa_e_grifada.md` não pertence a esta linhagem: é um alias de compatibilidade do fluxo de Lógica, produz Markdown e proíbe produzir `corpus_apostila`/JSONL. Alterá-lo não previne erros das questões de Português.
+- **Finalidade:** Fornecer comentários explicativos ricos em Markdown estruturados proporcionalmente:
+  - **Comentários Extensos (`extended` e `very_extended`):** arquitetura em duas camadas (Camada 1: resolução autossuficiente e Camada 2: aprofundamento e expansão pedagógica).
+  - **Comentários Comuns (`common`):** arquitetura em camada única direta (`### Resolução`, justificativa individual de alternativas e regra essencial opcional concisa), preservando integralmente o comentário legado para auditoria e rollback.
+- **Universo factual alvo:**
+  - 867 questões extensas protegidas (apostila: >79 palavras `extended`, >133 `very_extended`; plataforma online: >401 palavras `extended`, >614 `very_extended`).
+  - 2.618 questões comuns (3.485 comentadas totais - 867 extensas protegidas = 2.618 comuns).
+- **Prompts editoriais mandatórios:**
+  - Extensos: `Notebook LM/07_Prompts/questoes/PROMPT_REGENERACAO_PEDAGOGICA_COMENTARIOS_QUESTOES.md` (seções 1–43).
+  - Comuns: `Notebook LM/07_Prompts/questoes/PROMPT_REGENERACAO_PEDAGOGICA_COMENTARIOS_COMUNS.md` (seções 1–39).
+- **Árvore de autoria e evidência na fábrica:**
+  - Extensos publicáveis: `Notebook LM/03_Autoria_Semantica/question_commentaries/v2/question_commentary_regenerations.jsonl` e `Notebook LM/05_Auditorias/questoes/commentary_regeneration/v2/` (867/867 alvos aprovados com `status: ready`, 0 pendências).
+  - A rodada extensa v1 determinística não homologada permanece somente para auditoria e rollback em `Notebook LM/05_Auditorias/questoes/commentary_regeneration/v1_failed_deterministic/`; ela não pode ser republicada.
+  - Comuns: `Notebook LM/03_Autoria_Semantica/question_commentaries/common/v1/question_commentary_regenerations.common.jsonl` e `Notebook LM/05_Auditorias/questoes/commentary_regeneration/common/v1/` (`manifest.json`, `target_inventory.jsonl`, `context_packs/`, `responses/`, `validated/`, `failures.jsonl`, `human_review_queue.jsonl`, `manual_review_resolutions.jsonl`, `audit_report.json`, `publication_report.json`).
+  - Alertas do agente não são apagados para forçar publicação. Uma resolução manual só libera o comentário quando referencia fonte verificável, confirma gabarito e alternativas, declara os controles semânticos obrigatórios e corresponde ao SHA-256 exato do texto learner-facing. Qualquer alteração posterior invalida automaticamente a aprovação.
+- **Compiladores e validadores:**
+  - `Notebook LM/06_Ferramentas/compilacao/validate_commentary_responses_v2.py`
+  - `Notebook LM/06_Ferramentas/compilacao/materialize_common_commentary_packs.py`
+  - `Notebook LM/06_Ferramentas/compilacao/generate_common_commentary_regenerations.py`
+  - `Notebook LM/06_Ferramentas/compilacao/validate_common_commentary_responses.py`
+  - `Notebook LM/06_Ferramentas/compilacao/apply_common_commentary_overlays.py`
+  - `SuVeCaSuVeCa/scripts/apply-commentary-overlays.mjs`
+- **Artefato publicado no produto:**
+  - `SuVeCaSuVeCa/public/knowledge/editorial-question-commentary-overlays.json` (overlay consolidado contendo os 867 registros extensos v2 publicáveis + 2.618 registros comuns aprovados, totalizando 3.485 overlays ativos em 2026-09-01, com 0 pendências).
+- **Integração no banco de deployment:**
+  - Aplicado sobre `SuVeCaSuVeCa/public/knowledge/official-questions.normalized.json` com merge por `questionId`, validação de SHA-256 do comentário anterior, gravação de `commentaryFormat: "markdown"` e `commentaryOrigin: "pedagogical_regeneration"`, preservando o comentário legado no campo `legacyCommentary`.
+  - Reconstrução de shards via `scripts/build-deployment-shards.mjs`.
+- **Renderização learner-facing:**
+  - `src/components/ui/QuestionCommentaryRenderer.tsx` com renderização GFM, suporte a camada única (comum) e dupla camada (extenso), remoção do bloco de controle editorial, proteção contra HTML script e fallback para texto simples em comentários legados.
+  - Consumido por `OfficialQuestionsExplorer.tsx`, `QuestionBlock.tsx`, `SimuladoEngine.tsx`.
+- **Testes e validação:**
+  - Fábrica: `Notebook LM/09_Testes/test_commentary_regeneration.py` e `Notebook LM/09_Testes/test_common_commentary_regeneration.py`.
+  - Produto: `src/components/ui/QuestionCommentaryRenderer.test.tsx`, `npm run lint`, `npm test`, `npm run audit:pedagogical`, `npm run audit:pbl`, `npm run build`.
 
 ## 9. Apresentação de questões
 

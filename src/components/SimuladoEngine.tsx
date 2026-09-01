@@ -33,6 +33,7 @@ import {
 } from './study-visuals';
 import { QuestionPresentationContent } from './QuestionPresentationContent';
 import { InlineRichText } from './pedagogical/blocks/InlineRichText';
+import { QuestionCommentaryRenderer } from './ui/QuestionCommentaryRenderer';
 
 const DEFAULT_EXAM_DURATION_SECONDS = 40 * 60;
 const PAUSED_SIMULADO_STORAGE_PREFIX = 'suveca_simulado_pausado';
@@ -887,13 +888,9 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                     )}
                   </div>
 
-                  <GoldenRuleCard
-                    rule={{
-                      entityId: `sim-rule-${currentQ.id}`,
-                      title: `Gabarito Oficial: ${simuladoAnswerLabel(currentQ)}`,
-                      statement: currentQ.commentary,
-                      blocks: [],
-                    }}
+                  <QuestionCommentaryRenderer
+                    commentary={currentQ.commentary}
+                    correctAnswerLabel={simuladoAnswerLabel(currentQ)}
                   />
                 </div>
               )}

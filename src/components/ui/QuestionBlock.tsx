@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AlertTriangle, BadgeCheck, Building2, CalendarDays, CircleHelp, Check, X, Eye, EyeOff, Sparkles } from 'lucide-react';
+import { QuestionCommentaryRenderer } from './QuestionCommentaryRenderer';
 
 export interface QuestionBlockModel {
   title: string;
@@ -206,15 +207,10 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
             )}
 
             {solution && (
-              <div className="rounded-xl border border-blue-200 bg-blue-50/60 p-4 shadow-2xs">
-                <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-blue-950 mb-2">
-                  <Sparkles className="h-3.5 w-3.5 text-blue-600" />
-                  <span>Comentário & Justificativa do Gabarito</span>
-                </div>
-                <div className="text-xs sm:text-sm leading-relaxed text-slate-800 font-medium">
-                  {renderMarkdown(solution)}
-                </div>
-              </div>
+              <QuestionCommentaryRenderer
+                commentary={solution}
+                correctAnswerLabel={answer}
+              />
             )}
           </div>
         )}

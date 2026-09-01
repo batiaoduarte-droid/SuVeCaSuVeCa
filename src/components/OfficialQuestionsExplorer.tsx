@@ -35,6 +35,7 @@ import {
   StudyBadge,
   StudySurface,
 } from './study-visuals';
+import { QuestionCommentaryRenderer } from './ui/QuestionCommentaryRenderer';
 
 const PAGE_SIZE = 12;
 
@@ -417,13 +418,9 @@ export function OfficialQuestionsExplorer({
                       <div role="status" className={`rounded-xl border p-3 text-sm font-bold ${detailAnswer === correctAnswer ? 'border-emerald-300 bg-emerald-50 text-emerald-950' : 'border-rose-300 bg-rose-50 text-rose-950'}`}>
                         {detailAnswer === correctAnswer ? 'Resposta correta.' : `Resposta incorreta. Gabarito: ${answerLabel(correctAnswer)}.`}
                       </div>
-                      <GoldenRuleCard
-                        rule={{
-                          entityId: `off-q-${normalized.primaryLessonId || '1'}`,
-                          title: `Comentário Pedagógico · Gabarito ${answerLabel(correctAnswer)}`,
-                          statement: formatOfficialContent(normalized.commentary) || 'Comentário não disponível na fonte editorial.',
-                          blocks: [],
-                        }}
+                      <QuestionCommentaryRenderer
+                        commentary={normalized.commentary || ''}
+                        correctAnswerLabel={answerLabel(correctAnswer)}
                       />
                       <button type="button" onClick={() => { setDetailAnswer(''); setIsDetailRevealed(false); }} className="button-secondary min-h-11 w-full">
                         Tentar novamente
