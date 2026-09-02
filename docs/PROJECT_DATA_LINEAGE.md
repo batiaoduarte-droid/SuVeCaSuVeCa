@@ -114,6 +114,30 @@ estado do aluno em LocalStorage e Firebase
 7. compilação das Views em `Notebook LM/04_Views_Compiladas/v4.2/`;
 8. publicação controlada das Views necessárias ao produto.
 
+#### Aquisição multimodal de videoaulas
+
+```text
+MP4 preservado em 01_Extracao + transcrição Markdown com timestamps
+→ processar_videoaulas_gemini.py
+→ Gemini Interaction (agentic/low por padrão, thinking high)
+→ resposta validada por JSON Schema e contrato Markdown
+→ Knowledge_Bases_Gemini/*.md + *.manifest.json
+→ consolidação temática posterior
+→ integração pedagógica/canonical
+```
+
+O manifesto da KB é a prova operacional da chamada: hashes das duas entradas e do
+prompt, modelo, modo de processamento, resolução, projeto/chave por fingerprint,
+ID e estado da Interaction, tokens por categoria, tempos e limpeza dos recursos
+remotos. Interações em background interrompidas permanecem retomáveis pelo mesmo
+ID e projeto, sem novo upload. A Files API e a Interaction são intermediários da
+fábrica; não são publicados no produto.
+
+As cotas Gemini são tratadas no escopo de projeto. No inventário atual, cada chave
+foi declarada como pertencente a um projeto individual; se essa premissa mudar, o
+runner deve ser executado com `--keys-share-project`. O Batch API não participa da
+aquisição multimodal, porque esta usa Interactions agentic com vídeo.
+
 ### Artefatos
 
 - corpus local: `Aula XX/corpus_apostila/`;
@@ -485,6 +509,8 @@ Compatibilidade legada: users/<uid>/data/flashcards_caderno
 Não misturar cards editoriais gerados no build com cards pessoais. Mudanças de chave persistida exigem migração ou fallback explícito.
 
 ## 13. PBL
+
+Detalhamento operacional, composição pedagógica e mapa completo de formação até o runtime: `docs/PBL_PRODUCT_HARDENING.md`.
 
 ### Origem
 

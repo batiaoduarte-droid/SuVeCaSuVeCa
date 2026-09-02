@@ -185,7 +185,38 @@ Considere a competência `COMP-A00-G01-01`, que trata da relação entre letras 
 - Tempos e tentativas são registrados sem duplicação cumulativa.
 - Encontros recentes com questões são registrados por finalidade para evitar reutilização contaminada em nova aplicação e transferência.
 
-## 7. Fontes de verdade
+## 7. Fontes de verdade e formação dos dados
+
+O PBL não nasce apenas do banco de questões. Ele combina o currículo canônico, o conteúdo semântico das unidades, questões e gabaritos, vínculos questão–competência, pedagogia da questão, revisão causal dos distratores, auditoria dos pares de transferência e estado do aluno.
+
+```text
+canonical
+├─ unidades + objetivos + pré-requisitos
+└─ regras + procedimentos + contrastes + traps + misconceptions
+                         │
+questões oficiais + apresentações + comentários
+questões autorais PBL autorizadas
+                         │
+                         ▼
+question_competency_links + question_pedagogy
+                         │
+                         ▼
+mapeamentos causais + auditorias de transferência
+                         │
+                         ▼
+competências + casos + caminhos diagnósticos
++ transfer sets + revisões cumulativas
+                         │
+                         ▼ publicação da fábrica para o produto
+public/knowledge/pbl + banco publicado de questões
+                         │
+                         ▼
+PBLRepository → PBLEngine → sessão adaptada ao estado do aluno
+```
+
+O comentário publicado de uma questão pode aparecer como resolução do exemplo trabalhado durante a intervenção. Sua regeneração não recalcula automaticamente a competência associada, os papéis da questão, a hipótese causal, a misconception, o caminho diagnóstico nem a validade de transferência.
+
+O mapa completo, a responsabilidade de cada entrada, as transformações e as contagens do snapshot vigente estão em `docs/PBL_PRODUCT_HARDENING.md`. A linhagem global do projeto está em `docs/PROJECT_DATA_LINEAGE.md`.
 
 - Manifesto e totais: `public/knowledge/pbl/pbl_manifest.json`.
 - Competências: `public/knowledge/pbl/pbl_competency_map.json`.
