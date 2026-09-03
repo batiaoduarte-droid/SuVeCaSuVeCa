@@ -4,7 +4,8 @@ import { hasDuplicatedInlineOptions } from './lib/official-question-presentation
 import { hasQuestionSupportEditorialLeak } from './lib/question-support-presentation.mjs';
 
 const root = process.cwd();
-const normalizedPath = path.join(root, 'public', 'knowledge', 'official-questions.normalized.json');
+const knowledgeDir = path.join(root, 'public', 'knowledge');
+const questionManifestPath = path.join(knowledgeDir, 'official-questions.manifest.json');
 const fallbackPath = path.join(root, 'public', 'knowledge', 'official-question-presentation-fallbacks.json');
 const viewsDir = path.join(root, 'public', 'knowledge', 'pedagogical', 'views');
 const contextReference = /\b(?:texto\s+(?:[A-Z]{1,4}\d[A-Z]?\d?|anterior)|parágrafo\s+\d+|linha\s+\d+)/i;
@@ -16,12 +17,15 @@ const fail = (message) => {
   process.exitCode = 1;
 };
 
-const normalized = JSON.parse(fs.readFileSync(normalizedPath, 'utf8'));
+const questionManifest = JSON.parse(fs.readFileSync(questionManifestPath, 'utf8'));
+const normalized = (questionManifest.shards || []).flatMap((shard) =>
+  JSON.parse(fs.readFileSync(path.join(knowledgeDir, shard.normalized.file), 'utf8'))
+);
 const presentationFallbacks = fs.existsSync(fallbackPath)
   ? JSON.parse(fs.readFileSync(fallbackPath, 'utf8')).presentations || {}
   : {};
 if (!Array.isArray(normalized)) {
-  fail('official-questions.normalized.json must contain an array');
+  fail('Os shards normalizados de questões devem formar um array');
   process.exit();
 }
 

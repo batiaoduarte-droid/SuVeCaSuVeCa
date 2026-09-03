@@ -223,8 +223,8 @@ O mapa completo, a responsabilidade de cada entrada, as transformações e as co
 - Casos-âncora: `public/knowledge/pbl/pbl_cases.json`.
 - Transferência: `public/knowledge/pbl/pbl_transfer_sets.json`.
 - Diagnóstico: `public/knowledge/pbl/pbl_diagnostic_paths.json`.
-- Ligações semânticas: `public/knowledge/pbl/question_competency_links.json`.
-- Pedagogia da questão: `public/knowledge/pbl/question_pedagogy_index.json`.
+- Ligações semânticas e pedagogia no runtime: `public/knowledge/pbl/pbl_runtime_manifest.json` + `public/knowledge/pbl/runtime-parts/`.
+- Agregados de publicação/auditoria: `public/knowledge/pbl/question_competency_links.json` e `public/knowledge/pbl/question_pedagogy_index.json`.
 - Questões autorais: `public/knowledge/pbl/pbl_authored_questions.json`.
 - Cobertura semântica: `public/knowledge/pbl/pbl_semantic_coverage_report.json`.
 - Lacunas reais: `public/knowledge/pbl/pbl_content_gap_report.json`.

@@ -7,6 +7,8 @@ import type {
   PBLTransferSet,
   PBLCumulativeSession,
   PBLManifest,
+  PBLRuntimeShardDataset,
+  PBLRuntimeShardManifest,
   PBLQuestionPresentation,
 } from '../../../types/pbl';
 import { fetchNormalizedQuestion } from '../../officialQuestionsLoader';
@@ -85,6 +87,23 @@ export class PBLRepository implements IPBLRepository {
 
   constructor(private basePath: string = '/knowledge/pbl') {}
 
+  private reset(): void {
+    this.competencies.clear();
+    this.cases.clear();
+    this.caseByCompetency.clear();
+    this.transferSets.clear();
+    this.transferByCompetency.clear();
+    this.diagnosticPaths.clear();
+    this.diagnosticByCompetency.clear();
+    this.cumulativeSessions.clear();
+    this.questionPedagogyMap.clear();
+    this.questionLinksMap.clear();
+    this.questionPresentations.clear();
+    this.unitViewCache.clear();
+    this.manifest = null;
+    this.initialized = false;
+  }
+
   private async safeFetchJson<T>(url: string): Promise<T | null> {
     try {
       const res = await fetch(url, {
@@ -108,6 +127,88 @@ export class PBLRepository implements IPBLRepository {
     }
   }
 
+  private async fetchRequiredText(url: string): Promise<string> {
+    let response: Response;
+    try {
+      response = await fetch(url, { headers: { Accept: 'application/json' } });
+    } catch (error) {
+      throw new Error(`Falha ao buscar o artefato PBL obrigatório ${url}.`, { cause: error });
+    }
+    if (!response.ok) {
+      throw new Error(`Artefato PBL obrigatório ausente ou inacessível: ${url} (HTTP ${response.status}).`);
+    }
+    const contentType = response.headers.get('content-type') || '';
+    const text = await response.text();
+    if (contentType.includes('text/html') || !text || text.trim().startsWith('<')) {
+      throw new Error(`Artefato PBL obrigatório inválido: ${url} não retornou JSON.`);
+    }
+    return text;
+  }
+
+  private async fetchRequiredJson<T>(url: string): Promise<T> {
+    const text = await this.fetchRequiredText(url);
+    try {
+      return JSON.parse(text) as T;
+    } catch (error) {
+      throw new Error(`JSON inválido no artefato PBL obrigatório ${url}.`, { cause: error });
+    }
+  }
+
+  private async sha256(text: string): Promise<string> {
+    if (!globalThis.crypto?.subtle) {
+      throw new Error('Web Crypto indisponível; não é possível validar os shards PBL com segurança.');
+    }
+    const digest = await globalThis.crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+  }
+
+  private async fetchShardedRecord<T>(dataset: PBLRuntimeShardDataset): Promise<Record<string, T>> {
+    if (!Array.isArray(dataset.shards) || dataset.shards.length === 0) {
+      throw new Error('Manifesto PBL não declara shards para um dataset obrigatório.');
+    }
+    const parts = await Promise.all(dataset.shards.map(async (shard) => {
+      const url = `${this.basePath}/${shard.file}`;
+      const text = await this.fetchRequiredText(url);
+      const bytes = new TextEncoder().encode(text).byteLength;
+      if (bytes !== shard.bytes) {
+        throw new Error(`Shard PBL truncado ou divergente: ${url} (${bytes}/${shard.bytes} bytes).`);
+      }
+      const digest = await this.sha256(text);
+      if (digest !== shard.sha256) {
+        throw new Error(`Hash SHA-256 divergente no shard PBL ${url}.`);
+      }
+      let payload: Record<string, T>;
+      try {
+        payload = JSON.parse(text) as Record<string, T>;
+      } catch (error) {
+        throw new Error(`JSON inválido no shard PBL ${url}.`, { cause: error });
+      }
+      if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
+        throw new Error(`Shard PBL ${url} não contém um objeto indexado.`);
+      }
+      const entries = Object.entries(payload);
+      if (entries.length !== shard.recordCount) {
+        throw new Error(`Contagem divergente no shard PBL ${url}: ${entries.length}/${shard.recordCount}.`);
+      }
+      if (entries[0]?.[0] !== shard.firstQuestionRef || entries.at(-1)?.[0] !== shard.lastQuestionRef) {
+        throw new Error(`Fronteiras de IDs divergentes no shard PBL ${url}.`);
+      }
+      return entries;
+    }));
+
+    const combined: Record<string, T> = {};
+    for (const [questionRef, record] of parts.flat()) {
+      if (Object.prototype.hasOwnProperty.call(combined, questionRef)) {
+        throw new Error(`Referência duplicada entre shards PBL: ${questionRef}.`);
+      }
+      combined[questionRef] = record;
+    }
+    if (Object.keys(combined).length !== dataset.totalRecords) {
+      throw new Error(`Dataset PBL shardado incompleto: ${Object.keys(combined).length}/${dataset.totalRecords}.`);
+    }
+    return combined;
+  }
+
   public isReady(): boolean {
     return this.initialized;
   }
@@ -115,126 +216,80 @@ export class PBLRepository implements IPBLRepository {
   public async init(): Promise<void> {
     if (this.initialized) return;
 
+    this.reset();
     try {
-      // 1. Fetch competencies
-      const compsData = await this.safeFetchJson<PBLCompetency[]>(`${this.basePath}/pbl_competency_map.json`);
-      if (compsData && Array.isArray(compsData)) {
-        compsData.forEach((c) => this.competencies.set(c.competencyId, c));
-      }
-
-      // 2. Fetch cases
-      const casesData = await this.safeFetchJson<PBLCase[]>(`${this.basePath}/pbl_cases.json`);
-      if (casesData && Array.isArray(casesData)) {
-        casesData.forEach((cs) => {
-          this.cases.set(cs.caseId, cs);
-          this.caseByCompetency.set(cs.competencyRef, cs);
-        });
-      }
-
-      // 3. Fetch transfer sets
-      const xfersData = await this.safeFetchJson<PBLTransferSet[]>(`${this.basePath}/pbl_transfer_sets.json`);
-      if (xfersData && Array.isArray(xfersData)) {
-        xfersData.forEach((x) => {
-          this.transferSets.set(x.transferSetId, x);
-          this.transferByCompetency.set(x.competencyRef, x);
-        });
-      }
-
-      // 4. Fetch diagnostic paths
-      const diagsData = await this.safeFetchJson<PBLDiagnosticPath[]>(`${this.basePath}/pbl_diagnostic_paths.json`);
-      if (diagsData && Array.isArray(diagsData)) {
-        diagsData.forEach((d) => {
-          this.diagnosticPaths.set(d.pathId, d);
-          this.diagnosticByCompetency.set(d.competencyRef, d);
-        });
-      }
-
-      // 5. Fetch cumulative review sessions
-      const sessData = await this.safeFetchJson<PBLCumulativeSession[]>(`${this.basePath}/pbl_cumulative_review_sessions.json`);
-      if (sessData && Array.isArray(sessData)) {
-        sessData.forEach((s) => this.cumulativeSessions.set(s.sessionId, s));
-      }
-
-      // 6. Fetch Question Links
-      const qclData = await this.safeFetchJson<Record<string, QuestionCompetencyLink>>(`${this.basePath}/question_competency_links.json`);
-      if (qclData && typeof qclData === 'object') {
-        Object.entries(qclData).forEach(([qid, link]) => this.questionLinksMap.set(qid, link));
-      }
-
-      // 7. Fetch Question Pedagogy Index
-      const qpData = await this.safeFetchJson<Record<string, QuestionPedagogy>>(`${this.basePath}/question_pedagogy_index.json`);
-      if (qpData && typeof qpData === 'object') {
-        Object.entries(qpData).forEach(([qid, qp]) => this.questionPedagogyMap.set(qid, qp));
-      }
-
-      // 8. Fetch explicitly authored PBL question presentations. They live in
-      // a separate file so they can never be mistaken for captured official
-      // questions while still participating in the same semantic runtime.
-      const authoredData = await this.safeFetchJson<Record<string, PBLQuestionPresentation>>(
-        `${this.basePath}/pbl_authored_questions.json`
+      const manData = await this.fetchRequiredJson<PBLManifest>(`${this.basePath}/pbl_manifest.json`);
+      const runtimeManifestFile = manData.runtimeProjection?.manifestFile || 'pbl_runtime_manifest.json';
+      const runtimeManifest = await this.fetchRequiredJson<PBLRuntimeShardManifest>(
+        `${this.basePath}/${runtimeManifestFile}`,
       );
-      if (authoredData && typeof authoredData === 'object') {
-        Object.entries(authoredData).forEach(([qid, presentation]) =>
-          this.questionPresentations.set(qid, presentation)
-        );
+      if (runtimeManifest.kind !== 'suveca-pbl-runtime-shards' || runtimeManifest.schemaVersion !== '1.0.0') {
+        throw new Error('Manifesto de shards PBL ausente ou incompatível.');
       }
 
-      // 9. Fetch Manifest
-      const manData = await this.safeFetchJson<PBLManifest>(`${this.basePath}/pbl_manifest.json`);
-      if (manData) {
-        this.manifest = manData;
+      const [compsData, casesData, xfersData, diagsData, sessData, qclData, qpData, authoredData] = await Promise.all([
+        this.fetchRequiredJson<PBLCompetency[]>(`${this.basePath}/pbl_competency_map.json`),
+        this.fetchRequiredJson<PBLCase[]>(`${this.basePath}/pbl_cases.json`),
+        this.fetchRequiredJson<PBLTransferSet[]>(`${this.basePath}/pbl_transfer_sets.json`),
+        this.fetchRequiredJson<PBLDiagnosticPath[]>(`${this.basePath}/pbl_diagnostic_paths.json`),
+        this.fetchRequiredJson<PBLCumulativeSession[]>(`${this.basePath}/pbl_cumulative_review_sessions.json`),
+        this.fetchShardedRecord<QuestionCompetencyLink>(runtimeManifest.datasets.questionCompetencyLinks),
+        this.fetchShardedRecord<QuestionPedagogy>(runtimeManifest.datasets.questionPedagogy),
+        this.fetchRequiredJson<Record<string, PBLQuestionPresentation>>(`${this.basePath}/pbl_authored_questions.json`),
+      ]);
+
+      if (![compsData, casesData, xfersData, diagsData, sessData].every(Array.isArray)) {
+        throw new Error('Um artefato estrutural PBL obrigatório não contém uma lista válida.');
+      }
+      const expectedLinks = manData.totalRuntimeQuestionLinks ?? manData.totalQuestionLinks;
+      const expectedPedagogy = manData.totalRuntimeQuestionPedagogy ?? manData.totalQuestionPedagogy;
+      const expectedAuthored = manData.totalRuntimeAuthoredQuestions ?? manData.totalAuthoredQuestions ?? 0;
+      const countChecks = [
+        [compsData.length, manData.totalCompetencies, 'competências'],
+        [casesData.length, manData.totalPBLCases, 'casos'],
+        [xfersData.length, manData.totalTransferSets, 'conjuntos de transferência'],
+        [diagsData.length, manData.totalDiagnosticPaths, 'caminhos diagnósticos'],
+        [sessData.length, manData.totalCumulativeSessions, 'sessões cumulativas'],
+        [Object.keys(qclData).length, expectedLinks, 'vínculos questão–competência'],
+        [Object.keys(qpData).length, expectedPedagogy, 'pedagogias de questão'],
+        [Object.keys(authoredData).length, expectedAuthored, 'questões autorais'],
+      ] as const;
+      for (const [actual, expected, label] of countChecks) {
+        if (typeof expected !== 'number' || actual !== expected) {
+          throw new Error(`Base PBL incompleta: ${label} ${actual}/${String(expected)}.`);
+        }
+      }
+      if (
+        runtimeManifest.datasets.questionCompetencyLinks.totalRecords !== expectedLinks
+        || runtimeManifest.datasets.questionPedagogy.totalRecords !== expectedPedagogy
+      ) {
+        throw new Error('As contagens do manifesto de shards divergem do manifesto pedagógico PBL.');
       }
 
-      // 10. Síntese de fallback para questionLinksMap a partir dos cases e competências
-      if (this.questionLinksMap.size === 0 && this.cases.size > 0) {
-        this.cases.forEach((cs) => {
-          if (cs.anchorQuestionRef && cs.unitRef) {
-            const lessonId = cs.unitRef.replace(/^IP-/, '').split('-')[0] || '';
-            const reviewedAt = cs.editorialStatus?.reviewedAt || new Date(0).toISOString();
-            this.questionLinksMap.set(cs.anchorQuestionRef, {
-              schemaVersion: '3.0.0',
-              linkId: `LINK-${cs.caseId}`,
-              officialQuestionRef: cs.anchorQuestionRef,
-              competencyId: cs.competencyRef,
-              unitId: cs.unitRef,
-              lessonId,
-              prerequisiteRefs: cs.prerequisiteRefs || [],
-              pblSuitabilityScores: {
-                anchor: 1,
-                diagnostic: 0.8,
-                transfer: 0.8,
-                validation: 0.8,
-                primaryRole: 'anchor',
-              },
-              assignedPBLRole: 'anchor',
-              diagnosticPotential: 1,
-              semanticReview: {
-                status: 'approved',
-                reviewedAt,
-                reason: 'Vínculo reconstruído a partir de um caso PBL editorial publicado.',
-                evidenceRefs: [`CASE:${cs.caseId}`],
-              },
-              competencyAssignments: [{
-                assignmentId: `${cs.anchorQuestionRef}::${cs.competencyRef}`,
-                competencyId: cs.competencyRef,
-                unitId: cs.unitRef,
-                lessonId,
-                relation: 'primary',
-                semanticStatus: 'approved',
-                allowedRoles: ['anchor'],
-                roleScores: { anchor: 1, diagnostic: 0, transfer: 0, validation: 0 },
-                evidenceRefs: [`CASE:${cs.caseId}`],
-                reviewMethod: 'editorial',
-                reviewedAt,
-                reason: 'Âncora explicitamente vinculada pelo caso PBL editorial.',
-              }],
-            });
-          }
-        });
-      }
+      compsData.forEach((competency) => this.competencies.set(competency.competencyId, competency));
+      casesData.forEach((pblCase) => {
+        this.cases.set(pblCase.caseId, pblCase);
+        this.caseByCompetency.set(pblCase.competencyRef, pblCase);
+      });
+      xfersData.forEach((transferSet) => {
+        this.transferSets.set(transferSet.transferSetId, transferSet);
+        this.transferByCompetency.set(transferSet.competencyRef, transferSet);
+      });
+      diagsData.forEach((diagnosticPath) => {
+        this.diagnosticPaths.set(diagnosticPath.pathId, diagnosticPath);
+        this.diagnosticByCompetency.set(diagnosticPath.competencyRef, diagnosticPath);
+      });
+      sessData.forEach((session) => this.cumulativeSessions.set(session.sessionId, session));
+      Object.entries(qclData).forEach(([questionRef, link]) => this.questionLinksMap.set(questionRef, link));
+      Object.entries(qpData).forEach(([questionRef, pedagogy]) => this.questionPedagogyMap.set(questionRef, pedagogy));
+      Object.entries(authoredData).forEach(([questionRef, presentation]) =>
+        this.questionPresentations.set(questionRef, presentation)
+      );
+      this.manifest = manData;
 
       this.initialized = true;
     } catch (err) {
+      this.reset();
       console.error('[PBLRepository] Error initializing PBL Repository:', err);
       throw err;
     }

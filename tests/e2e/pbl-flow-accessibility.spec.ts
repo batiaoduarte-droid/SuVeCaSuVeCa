@@ -9,11 +9,17 @@ interface PublishedQuestionAnswer {
   options?: unknown[];
 }
 
+const knowledgeDir = path.resolve('public/knowledge');
+const questionManifest = JSON.parse(fs.readFileSync(
+  path.join(knowledgeDir, 'official-questions.manifest.json'),
+  'utf8',
+)) as { shards: Array<{ normalized: { file: string } }> };
+const normalizedQuestions = questionManifest.shards.flatMap((shard) =>
+  JSON.parse(fs.readFileSync(path.join(knowledgeDir, shard.normalized.file), 'utf8')) as PublishedQuestionAnswer[]
+);
+
 const publishedQuestionAnswers = new Map(
-  (JSON.parse(fs.readFileSync(
-    path.resolve('public/knowledge/official-questions.normalized.json'),
-    'utf8'
-  )) as PublishedQuestionAnswer[]).map((question) => [
+  normalizedQuestions.map((question) => [
     `OQ-${question.id.replace(':', '-')}`,
     question,
   ])

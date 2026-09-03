@@ -112,11 +112,18 @@ pbl_cumulative_review_sessions.json
 pbl_diagnostic_paths.json
 pbl_manifest.json
 pbl_transfer_sets.json
-question_competency_links.json
-question_pedagogy_index.json
+pbl_runtime_manifest.json
+runtime-parts/question-competency-links.part-*.json
+runtime-parts/question-pedagogy.part-*.json
 ```
 
 `pbl_content_gap_report.json` e `pbl_semantic_coverage_report.json` são relatórios de cobertura e auditoria; não substituem os datasets executáveis.
+
+Os arquivos monolíticos `question_competency_links.json` e `question_pedagogy_index.json` permanecem como agregados de publicação e reconciliação. O frontend carrega a projeção shardada, com arquivos de no máximo 2 MiB, e valida bytes, SHA-256, fronteiras de IDs, duplicidades e totais antes de liberar o repositório. Assim, ambientes gerenciados que omitam arquivos grandes não tornam os dois agregados uma dependência operacional.
+
+`PBLRepository.init()` opera em modo fail-closed: shard ausente, truncado, alterado ou com contagem divergente bloqueia a inicialização com erro explícito. O runtime não sintetiza vínculos nem pedagogia a partir dos casos, porque isso perderia papéis, atribuições atômicas e revisões semânticas.
+
+Após uma publicação PBL autorizada, execute `npm run build:pbl-shards` e `npm run audit:pbl`. Os shards e o manifesto são artefatos versionados do produto.
 
 No manifest publicado de 2026-08-26, esse conjunto representa 190 competências, 190 casos, 190 caminhos diagnósticos, 190 transfer sets, 13 sessões cumulativas, 4.945 vínculos/pedagogias de questão e 81 questões autorais PBL. O hardening registra 619 questões com revisão causal, das quais 380 foram autorizadas para diagnóstico, além de 1.418 registros de auditoria de transferência, com 1.344 pares auditados e 74 não verificados. Essas contagens são um snapshot; o manifest e o auditor do HEAD são sempre a referência numérica vigente.
 

@@ -412,6 +412,9 @@ export interface PBLManifest {
   totalAuthoredQuestions?: number;
   totalQuestionLinks?: number;
   totalQuestionPedagogy: number;
+  totalRuntimeQuestionLinks?: number;
+  totalRuntimeQuestionPedagogy?: number;
+  totalRuntimeAuthoredQuestions?: number;
   totalCompetencies: number;
   totalPBLCases: number;
   totalTransferSets: number;
@@ -427,6 +430,48 @@ export interface PBLManifest {
     officialQuestionsCovered: number;
     officialQuestionsTotal: number;
     officialQuestionsCoveragePct: number;
+  };
+  runtimeProjection?: {
+    kind: 'suveca-pbl-runtime-shards';
+    manifestFile: string;
+    questionLinks: number;
+    questionPedagogy: number;
+    maximumShardBytes: number;
+  };
+}
+
+export interface PBLRuntimeShardDescriptor {
+  part: number;
+  file: string;
+  recordCount: number;
+  bytes: number;
+  sha256: string;
+  firstQuestionRef: string;
+  lastQuestionRef: string;
+}
+
+export interface PBLRuntimeShardDataset {
+  source: {
+    file: string;
+    bytes: number;
+    sha256: string;
+  };
+  totalRecords: number;
+  shards: PBLRuntimeShardDescriptor[];
+}
+
+export interface PBLRuntimeShardManifest {
+  schemaVersion: '1.0.0';
+  kind: 'suveca-pbl-runtime-shards';
+  generatedAt: string;
+  partitionPolicy: {
+    ordering: 'source-object-key-order';
+    targetBytesPerFile: number;
+    equivalence: 'deep-json-by-question-reference';
+  };
+  datasets: {
+    questionCompetencyLinks: PBLRuntimeShardDataset;
+    questionPedagogy: PBLRuntimeShardDataset;
   };
 }
 

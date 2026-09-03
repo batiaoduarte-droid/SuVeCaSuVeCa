@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const ROOT = process.cwd();
 const PBL_DIR = path.join(ROOT, 'public', 'knowledge', 'pbl');
@@ -12,8 +13,7 @@ const requiredFiles = [
   'pbl_transfer_sets.json',
   'pbl_diagnostic_paths.json',
   'pbl_cumulative_review_sessions.json',
-  'question_competency_links.json',
-  'question_pedagogy_index.json',
+  'pbl_runtime_manifest.json',
   'pbl_authored_questions.json',
   'pbl_semantic_coverage_report.json',
   'pbl_content_gap_report.json'
@@ -22,6 +22,55 @@ const requiredFiles = [
 const errors = [];
 const check = (condition, message) => {
   if (!condition) errors.push(message);
+};
+
+const sha256 = (value) => createHash('sha256').update(value).digest('hex');
+
+const readRuntimeDataset = (runtimeManifest, datasetName) => {
+  const dataset = runtimeManifest.datasets?.[datasetName];
+  check(dataset && Array.isArray(dataset.shards) && dataset.shards.length > 0, `Dataset shardado ausente: ${datasetName}`);
+  if (!dataset?.shards?.length) return {};
+  const combined = {};
+  for (const shard of dataset.shards) {
+    const fullPath = path.join(PBL_DIR, shard.file || '');
+    check(fullPath.startsWith(`${PBL_DIR}${path.sep}`), `Caminho de shard PBL inválido: ${shard.file}`);
+    check(fs.existsSync(fullPath), `Shard PBL ausente: ${shard.file}`);
+    if (!fs.existsSync(fullPath)) continue;
+    const source = fs.readFileSync(fullPath);
+    check(source.length === shard.bytes, `Bytes divergentes no shard PBL ${shard.file}`);
+    check(sha256(source) === shard.sha256, `SHA-256 divergente no shard PBL ${shard.file}`);
+    let payload = {};
+    try {
+      payload = JSON.parse(source.toString('utf8'));
+    } catch {
+      check(false, `JSON inválido no shard PBL ${shard.file}`);
+      continue;
+    }
+    const entries = Object.entries(payload);
+    check(entries.length === shard.recordCount, `Contagem divergente no shard PBL ${shard.file}`);
+    check(entries[0]?.[0] === shard.firstQuestionRef, `Primeiro ID divergente no shard PBL ${shard.file}`);
+    check(entries.at(-1)?.[0] === shard.lastQuestionRef, `Último ID divergente no shard PBL ${shard.file}`);
+    for (const [questionRef, record] of entries) {
+      check(!(questionRef in combined), `ID duplicado entre shards PBL: ${questionRef}`);
+      combined[questionRef] = record;
+    }
+  }
+  check(Object.keys(combined).length === dataset.totalRecords, `Total shardado divergente em ${datasetName}`);
+  const aggregatePath = path.join(PBL_DIR, dataset.source?.file || '');
+  if (dataset.source?.file && fs.existsSync(aggregatePath)) {
+    const aggregateSource = fs.readFileSync(aggregatePath);
+    check(aggregateSource.length === dataset.source.bytes, `Bytes divergentes no agregado opcional ${dataset.source.file}`);
+    check(sha256(aggregateSource) === dataset.source.sha256, `SHA-256 divergente no agregado opcional ${dataset.source.file}`);
+    try {
+      check(
+        JSON.stringify(JSON.parse(aggregateSource.toString('utf8'))) === JSON.stringify(combined),
+        `Shards divergem semanticamente do agregado opcional ${dataset.source.file}`,
+      );
+    } catch {
+      check(false, `JSON inválido no agregado opcional ${dataset.source.file}`);
+    }
+  }
+  return combined;
 };
 
 for (const file of requiredFiles) {
@@ -38,14 +87,18 @@ if (!errors.length) {
   const xfers = readJson('pbl_transfer_sets.json');
   const diags = readJson('pbl_diagnostic_paths.json');
   const sessions = readJson('pbl_cumulative_review_sessions.json');
-  const qcl = readJson('question_competency_links.json');
-  const qp = readJson('question_pedagogy_index.json');
+  const runtimeManifest = readJson('pbl_runtime_manifest.json');
+  const qcl = readRuntimeDataset(runtimeManifest, 'questionCompetencyLinks');
+  const qp = readRuntimeDataset(runtimeManifest, 'questionPedagogy');
   const authoredQuestions = readJson('pbl_authored_questions.json');
   const semanticCoverage = readJson('pbl_semantic_coverage_report.json');
   const contentGaps = readJson('pbl_content_gap_report.json');
 
   check(manifest.schemaVersion === '1.0.0', `Manifest schema version mismatch: ${manifest.schemaVersion}`);
   check(manifest.manifestId === 'PBL-MANIFEST-PORTUGUES-V3', `Manifest ID mismatch: ${manifest.manifestId}`);
+  check(runtimeManifest.schemaVersion === '1.0.0', `PBL runtime manifest schema mismatch: ${runtimeManifest.schemaVersion}`);
+  check(runtimeManifest.kind === 'suveca-pbl-runtime-shards', `PBL runtime manifest kind mismatch: ${runtimeManifest.kind}`);
+  check(manifest.runtimeProjection?.manifestFile === 'pbl_runtime_manifest.json', 'PBL manifest does not declare the runtime shard projection');
   check(comps.length === 190, `Competencies count expected 190, found ${comps.length}`);
   check(cases.length === 190, `Cases count expected 190, found ${cases.length}`);
   check(xfers.length === 190, `Transfer sets count expected 190, found ${xfers.length}`);
@@ -66,6 +119,8 @@ if (!errors.length) {
     Object.keys(qp).length === expectedQuestionPedagogy,
     `Question pedagogy index count expected ${expectedQuestionPedagogy}, found ${Object.keys(qp).length}`,
   );
+  check(runtimeManifest.datasets?.questionCompetencyLinks?.totalRecords === expectedQuestionLinks, 'Runtime link manifest count diverges');
+  check(runtimeManifest.datasets?.questionPedagogy?.totalRecords === expectedQuestionPedagogy, 'Runtime pedagogy manifest count diverges');
   check(
     Object.keys(authoredQuestions).length === expectedRuntimeAuthoredQuestions,
     `Runtime authored PBL questions expected ${expectedRuntimeAuthoredQuestions}, found ${Object.keys(authoredQuestions).length}`,

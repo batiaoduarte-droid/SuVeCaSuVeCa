@@ -555,7 +555,7 @@ Diretório:
 
 `SuVeCaSuVeCa/public/knowledge/pbl/`
 
-O núcleo carregado pelo `PBLRepository` inclui casos, mapa de competências, revisões cumulativas, caminhos, transfer sets, links e pedagogia. Relatórios de lacuna e cobertura são evidência de deployment, não substitutos desses datasets.
+O núcleo carregado pelo `PBLRepository` inclui casos, mapa de competências, revisões cumulativas, caminhos, transfer sets, links e pedagogia. Links e pedagogia são consumidos pela projeção `pbl_runtime_manifest.json` + `runtime-parts/`, gerada por `scripts/build-pbl-runtime-shards.mjs` a partir dos agregados publicados. Relatórios de lacuna e cobertura são evidência de deployment, não substitutos desses datasets.
 
 ### Consumo e persistência
 
@@ -581,7 +581,7 @@ Firebase: users/<uid>/pblMastery/<competencyId>
 
 ### Ao alterar
 
-Manter IDs de competência, proveniência da questão e política fail-closed. Recompilar apenas coleções afetadas e nunca substituir datasets completos por fallback do frontend.
+Manter IDs de competência, proveniência da questão e política fail-closed. Recompilar apenas coleções afetadas, executar `npm run build:pbl-shards` e nunca substituir datasets completos por fallback do frontend. O `PBLRepository` valida todos os shards antes de ficar pronto; ausência ou divergência é erro de deployment/importação, não autoriza reconstrução semântica no cliente.
 
 ## 14. Macrogrupos e percurso curricular
 

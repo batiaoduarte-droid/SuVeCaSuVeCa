@@ -127,4 +127,18 @@ describe('PBLRepository', () => {
       expect.any(Object)
     );
   });
+
+  it('falha de forma fechada quando a importação não contém os artefatos PBL obrigatórios', async () => {
+    const incompleteRepo = new PBLRepository('/knowledge/pbl');
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: false,
+      status: 404,
+      headers: { get: () => 'application/json' },
+      text: async () => '',
+    }));
+
+    await expect(incompleteRepo.init()).rejects.toThrow(/artefato PBL obrigatório ausente/i);
+    expect(incompleteRepo.isReady()).toBe(false);
+    await expect(incompleteRepo.getAllCompetencies()).resolves.toEqual([]);
+  });
 });

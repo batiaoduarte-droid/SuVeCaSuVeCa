@@ -88,8 +88,8 @@ Sessão PBL
   - `pbl_transfer_sets.json`: 190 transfer sets com 1.476 itens de transferência.
   - `pbl_diagnostic_paths.json`: 190 trilhas diagnósticas com 942 nós de decisão.
   - `pbl_cumulative_review_sessions.json`: 13 sessões espirais da Camada A14.
-  - `question_competency_links.json`: 2.588 links desnormalizados (100% Direct Match).
-  - `question_pedagogy_index.json`: 2.588 registros de Question Intelligence.
+  - `pbl_runtime_manifest.json` + `runtime-parts/`: projeção runtime shardada e verificável de 4.945 vínculos e 4.945 registros de pedagogia.
+  - `question_competency_links.json` e `question_pedagogy_index.json`: agregados de publicação/auditoria; o frontend não depende deles para inicializar.
 
 ---
 
@@ -125,6 +125,13 @@ A aplicação opera em modo duplo (**Autenticado via Firebase** ou **Visitante v
 - ❌ **IDs Canônicos**: Identificadores de questões (`OQ-...`), competências (`COMP-...`), casos (`PBL-CASE-...`), regras (`RULE-...`), procedimentos (`PROC-...`) e armadilhas (`WARN-...`).
 - ❌ **Semântica das 11 Seções**: A ordem lógica e significado das seções da apostila.
 - ❌ **Contratos de Persistência e Eventos**: Os esquemas de gravação no Firestore e LocalStorage.
+
+### Integridade da importação
+
+- Execute `npm run audit:pbl` antes de investigar ou modificar o PBL. O gate valida os shards, hashes, contagens e referências.
+- A ausência de um shard é uma importação incompleta. Não regenere links, pedagogias, papéis ou competências a partir de casos, texto ou semelhança lexical.
+- Os agregados PBL grandes podem ser omitidos por um ambiente gerenciado sem afetar o runtime; `pbl_runtime_manifest.json` e todos os arquivos declarados em `runtime-parts/` são obrigatórios.
+- Se o gate falhar, preserve os dados e corrija a transferência/importação do repositório. Nunca fabrique um dataset substituto para fazer a interface abrir.
 
 ---
 

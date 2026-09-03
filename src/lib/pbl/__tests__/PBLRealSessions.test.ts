@@ -17,6 +17,7 @@ import type {
   PBLCumulativeSession,
   QuestionPedagogy,
   QuestionCompetencyLink,
+  PBLRuntimeShardManifest,
 } from '../../../types/pbl';
 import { answerChoiceFor, normalizePBLAnswer } from '../answerAdapter';
 import { loadPublishedQuestionPresentations } from './publishedQuestionTestData';
@@ -27,6 +28,21 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
   let realCases: PBLCase[];
   let realTransferSets: PBLTransferSet[];
   let publishedPresentations: ReturnType<typeof loadPublishedQuestionPresentations>;
+
+  const loadRuntimeDataset = <T,>(
+    pblDir: string,
+    dataset: PBLRuntimeShardManifest['datasets']['questionCompetencyLinks'],
+  ): Record<string, T> => {
+    const combined: Record<string, T> = {};
+    for (const shard of dataset.shards) {
+      Object.assign(
+        combined,
+        JSON.parse(fs.readFileSync(path.join(pblDir, shard.file), 'utf8')) as Record<string, T>,
+      );
+    }
+    expect(Object.keys(combined)).toHaveLength(dataset.totalRecords);
+    return combined;
+  };
 
   beforeAll(() => {
     const pblDir = path.resolve('public/knowledge/pbl');
@@ -45,11 +61,16 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
     const sessions: PBLCumulativeSession[] = JSON.parse(
       fs.readFileSync(path.join(pblDir, 'pbl_cumulative_review_sessions.json'), 'utf8')
     );
-    const qcl: Record<string, QuestionCompetencyLink> = JSON.parse(
-      fs.readFileSync(path.join(pblDir, 'question_competency_links.json'), 'utf8')
+    const runtimeManifest: PBLRuntimeShardManifest = JSON.parse(
+      fs.readFileSync(path.join(pblDir, 'pbl_runtime_manifest.json'), 'utf8')
     );
-    const qp: Record<string, QuestionPedagogy> = JSON.parse(
-      fs.readFileSync(path.join(pblDir, 'question_pedagogy_index.json'), 'utf8')
+    const qcl = loadRuntimeDataset<QuestionCompetencyLink>(
+      pblDir,
+      runtimeManifest.datasets.questionCompetencyLinks,
+    );
+    const qp = loadRuntimeDataset<QuestionPedagogy>(
+      pblDir,
+      runtimeManifest.datasets.questionPedagogy,
     );
     const questionPresentations = loadPublishedQuestionPresentations();
     realCases = cases;
