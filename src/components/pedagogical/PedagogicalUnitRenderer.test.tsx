@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { PedagogicalUnitRenderer } from './PedagogicalUnitRenderer';
 import type { PedagogicalUnitView } from '../../types/pedagogicalView';
 
@@ -202,5 +202,40 @@ describe('PedagogicalUnitRenderer (View Model V1)', () => {
 
     expect(screen.getByText(/^Retomada:/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /começar pela seção 1/i })).toBeInTheDocument();
+  });
+
+  it('não dispara onActiveSectionChange na montagem inicial com a primeira seção aberta por padrão', () => {
+    const onActiveSectionChange = vi.fn();
+    render(<PedagogicalUnitRenderer view={sampleSyntacticUnitView} onActiveSectionChange={onActiveSectionChange} />);
+
+    expect(onActiveSectionChange).not.toHaveBeenCalled();
+  });
+
+  it('chama onActiveSectionChange ao selecionar uma seção explicitamente pelo sumário (TOC)', async () => {
+    const user = userEvent.setup();
+    const onActiveSectionChange = vi.fn();
+    render(<PedagogicalUnitRenderer view={sampleUnitView} onActiveSectionChange={onActiveSectionChange} />);
+
+    const tocNav = screen.getByRole('navigation', { name: /sumário da unidade/i });
+    const tocButton = within(tocNav).getByRole('button', { name: /roteiros de resolução/i });
+    await user.click(tocButton);
+
+    expect(onActiveSectionChange).toHaveBeenCalledWith('resolution');
+  });
+
+  it('não chama onActiveSectionChange ao expandir ou recolher acordeões manualmente', async () => {
+    const user = userEvent.setup();
+    const onActiveSectionChange = vi.fn();
+    const { container } = render(
+      <PedagogicalUnitRenderer view={sampleUnitView} onActiveSectionChange={onActiveSectionChange} />,
+    );
+
+    const trapsSummary = container.querySelector('#IP-A00-G01-traps summary');
+    expect(trapsSummary).not.toBeNull();
+    if (trapsSummary) {
+      await user.click(trapsSummary);
+    }
+
+    expect(onActiveSectionChange).not.toHaveBeenCalled();
   });
 });

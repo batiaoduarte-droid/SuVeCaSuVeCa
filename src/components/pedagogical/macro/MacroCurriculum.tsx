@@ -395,7 +395,12 @@ export const MacroChapterNavigator: React.FC<MacroChapterNavigatorProps> = ({
                 <button
                   type="button"
                   disabled={directBlocked}
-                  onClick={() => onSelectUnit(node.unitRef)}
+                  onClick={() => {
+                    onSelectUnit(node.unitRef);
+                    window.requestAnimationFrame(() => {
+                      document.getElementById(`module-unit-${node.unitRef}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
+                  }}
                   aria-current={selected ? 'step' : undefined}
                   className={`flex min-h-16 w-full items-start gap-3 rounded-xl border p-3 text-left text-sm transition disabled:cursor-not-allowed disabled:opacity-50 ${
                     selected
@@ -421,7 +426,13 @@ export const MacroChapterNavigator: React.FC<MacroChapterNavigatorProps> = ({
         <button
           type="button"
           disabled={!previousUnit}
-          onClick={() => previousUnit && onSelectUnit(previousUnit)}
+          onClick={() => {
+            if (!previousUnit) return;
+            onSelectUnit(previousUnit);
+            window.requestAnimationFrame(() => {
+              document.getElementById(`module-unit-${previousUnit}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+          }}
           className="button-secondary min-h-10 px-3 text-xs disabled:opacity-40"
         >
           <ArrowLeft className="h-3.5 w-3.5" /> Capítulo anterior
@@ -429,7 +440,13 @@ export const MacroChapterNavigator: React.FC<MacroChapterNavigatorProps> = ({
         <button
           type="button"
           disabled={!nextUnit || !decision?.autoAdvanceAllowed}
-          onClick={() => nextUnit && decision?.autoAdvanceAllowed && onSelectUnit(nextUnit)}
+          onClick={() => {
+            if (!nextUnit || !decision?.autoAdvanceAllowed) return;
+            onSelectUnit(nextUnit);
+            window.requestAnimationFrame(() => {
+              document.getElementById(`module-unit-${nextUnit}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+          }}
           className="button-primary min-h-10 px-3 text-xs disabled:cursor-not-allowed disabled:opacity-50"
         >
           Próximo capítulo <ArrowRight className="h-3.5 w-3.5" />
@@ -482,7 +499,7 @@ export const MacroEntryPanel: React.FC<MacroEntryPanelProps> = ({
     mastery,
   );
   return (
-    <section className="space-y-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-xs sm:p-5" aria-labelledby="active-macro-title">
+    <section id="active-macro-panel" className="scroll-mt-24 sm:scroll-mt-28 space-y-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-xs sm:p-5" aria-labelledby="active-macro-title">
       <header className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 pb-3">
         <div className="min-w-0">
           <div className="mb-1 flex items-center gap-2 text-xs font-bold text-teal-800">
@@ -493,7 +510,7 @@ export const MacroEntryPanel: React.FC<MacroEntryPanelProps> = ({
                 : <Route className="h-4 w-4" />}
             {ENTRY_KIND_LABELS[entry.entryKind]} · {TOPOLOGY_LABELS[entry.topology]}
           </div>
-          <h2 id="active-macro-title" className="m-0 text-lg font-black text-slate-950 sm:text-xl">{entry.title}</h2>
+          <h2 id="active-macro-title" tabIndex={-1} className="m-0 text-lg font-black text-slate-950 sm:text-xl outline-none">{entry.title}</h2>
         </div>
         <div className="rounded-lg border border-teal-200 bg-teal-50 px-3 py-2 text-right text-xs text-teal-950">
           <strong className="block">Progresso de estudo</strong>

@@ -224,12 +224,12 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
 
   const toggleSection = (id: string, isOpen: boolean) => {
     setOpenSections((prev) => {
+      if (prev.has(id) === isOpen) return prev;
       const next = new Set(prev);
       if (isOpen) next.add(id);
       else next.delete(id);
       return next;
     });
-    if (isOpen) onActiveSectionChange?.(id);
   };
 
   const expandAll = () => {

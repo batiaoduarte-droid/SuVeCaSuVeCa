@@ -513,15 +513,50 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   );
   const currentNotesOwnerId = user?.uid || 'guest';
 
+  const prevModuleIdRef = useRef(moduleData.id);
+  const prevSelectedMacroIdRef = useRef<string | null>(null);
+  const prevOpenUnitIdRef = useRef<string | null>(null);
+
   useEffect(() => {
     if (!openUnitId) return;
-    const target = document.getElementById(`module-unit-${openUnitId}`);
-    if (!target) return;
-    window.requestAnimationFrame(() => {
-      target.scrollIntoView({ block: 'start' });
-      if (macroMode) activeUnitHeadingRef.current?.focus({ preventScroll: true });
-    });
-  }, [macroMode, moduleData.id, openUnitId]);
+
+    const moduleChanged = moduleData.id !== prevModuleIdRef.current;
+    if (moduleChanged) {
+      prevModuleIdRef.current = moduleData.id;
+      prevSelectedMacroIdRef.current = null;
+      prevOpenUnitIdRef.current = null;
+    }
+
+    const macroChanged = macroMode && Boolean(selectedMacroId && selectedMacroId !== prevSelectedMacroIdRef.current);
+    const unitChanged = openUnitId !== prevOpenUnitIdRef.current;
+
+    prevSelectedMacroIdRef.current = selectedMacroId || null;
+    prevOpenUnitIdRef.current = openUnitId;
+
+    if (openUnitSectionId) {
+      return;
+    }
+
+    if (macroMode && macroChanged) {
+      window.requestAnimationFrame(() => {
+        const macroPanel = document.getElementById('active-macro-panel');
+        if (macroPanel) {
+          macroPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.getElementById('active-macro-title')?.focus({ preventScroll: true });
+        }
+      });
+      return;
+    }
+
+    if (unitChanged) {
+      const target = document.getElementById(`module-unit-${openUnitId}`);
+      if (!target) return;
+      window.requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (macroMode) activeUnitHeadingRef.current?.focus({ preventScroll: true });
+      });
+    }
+  }, [macroMode, moduleData.id, openUnitId, openUnitSectionId, selectedMacroId]);
 
   // Notes are namespaced by the editorial build so content from a previous
   // curriculum cannot appear under reused module/section identifiers.
@@ -1008,7 +1043,16 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               entries={macroEntries}
               selectedMacroId={selectedMacro?.macroId || null}
               readUnitIds={readUnitIds}
-              onSelectMacro={(entry) => onOpenMacroChange?.(entry.macroId, entry.unitRefs[0])}
+              onSelectMacro={(entry) => {
+                onOpenMacroChange?.(entry.macroId, entry.unitRefs[0]);
+                window.requestAnimationFrame(() => {
+                  const panel = document.getElementById('active-macro-panel');
+                  if (panel) {
+                    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('active-macro-title')?.focus({ preventScroll: true });
+                  }
+                });
+              }}
             />
             {selectedMacro && activeMacroUnitId && (
               <MacroEntryPanel

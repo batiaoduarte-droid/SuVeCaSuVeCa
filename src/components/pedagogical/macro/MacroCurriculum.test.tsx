@@ -5,6 +5,7 @@ import type { PedagogicalMacroIndexEntry } from '../../../types/pedagogicalMacro
 import {
   evaluateMacroTransition,
   MacroChapterNavigator,
+  MacroEntryPanel,
   MacroMasterySummary,
   selectActionableAdaptiveRequirements,
 } from './MacroCurriculum';
@@ -155,5 +156,26 @@ describe('macro curriculum transitions', () => {
       { 'COMP-A03-G04-01': retained },
       now,
     )).toEqual([]);
+  });
+
+  it('renderiza o painel ativo com id de âncora, margem de rolagem e título acessível', () => {
+    const { container } = render(
+      <MacroEntryPanel
+        entry={entry}
+        activeUnitId="IP-A03-G04"
+        unitTitles={{ 'IP-A03-G04': 'Demonstrativos', 'IP-A03-G05': 'Relativos', 'IP-A03-G06': 'Reescrita' }}
+        readUnitIds={[]}
+        userId="test-user"
+        onSelectUnit={vi.fn()}
+      />,
+    );
+
+    const panel = container.querySelector('#active-macro-panel');
+    expect(panel).toBeInTheDocument();
+    expect(panel?.className).toContain('scroll-mt-');
+
+    const heading = screen.getByRole('heading', { level: 2, name: entry.title });
+    expect(heading).toHaveAttribute('id', 'active-macro-title');
+    expect(heading).toHaveAttribute('tabIndex', '-1');
   });
 });
