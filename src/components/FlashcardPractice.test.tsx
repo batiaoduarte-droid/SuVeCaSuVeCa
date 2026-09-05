@@ -86,4 +86,41 @@ describe('FlashcardPractice', () => {
     await user.click(moduleBaseButton);
     expect(await screen.findByRole('button', { name: /mostrar resposta/i })).toBeVisible();
   });
+
+  it('concede XP uma única vez quando a recordação é correta', async () => {
+    const user = userEvent.setup();
+    const onCorrectAnswer = vi.fn();
+    render(
+      <FlashcardPractice
+        errors={[error]}
+        onUpdateErrorStatus={vi.fn()}
+        onCorrectAnswer={onCorrectAnswer}
+      />,
+    );
+
+    await user.click(await screen.findByRole('button', { name: /mostrar resposta/i }));
+    await user.click(screen.getByRole('button', { name: /^bom$/i }));
+
+    expect(onCorrectAnswer).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('+10 XP')).toBeVisible();
+    expect(screen.queryByRole('button', { name: /^bom$/i })).not.toBeInTheDocument();
+  });
+
+  it('não concede XP quando o usuário erra o flashcard', async () => {
+    const user = userEvent.setup();
+    const onCorrectAnswer = vi.fn();
+    render(
+      <FlashcardPractice
+        errors={[error]}
+        onUpdateErrorStatus={vi.fn()}
+        onCorrectAnswer={onCorrectAnswer}
+      />,
+    );
+
+    await user.click(await screen.findByRole('button', { name: /mostrar resposta/i }));
+    await user.click(screen.getByRole('button', { name: /errei/i }));
+
+    expect(onCorrectAnswer).not.toHaveBeenCalled();
+    expect(screen.queryByText(/\+10 XP/i)).not.toBeInTheDocument();
+  });
 });

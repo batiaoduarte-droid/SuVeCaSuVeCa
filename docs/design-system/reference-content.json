@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-09-05",
+  "status": "Conteúdo factual para composição normalizada no Figma. Nenhum React ou conteúdo pedagógico alterado.",
+  "rules": [
+    "IDs e proveniência são metadados; não devem aparecer no produto.",
+    "Valores de progresso zero representam o visitante observado nas capturas.",
+    "A captura Apostila está no módulo introdutório; a referência normalizada seleciona Ortografia e fonologia com títulos publicados.",
+    "Questão copiada literalmente; gabarito e comentários excluídos do estado inicial."
+  ],
+  "shell": {
+    "brand": "SuVeCA",
+    "subtitle": "Português para concursos",
+    "desktopTabs": ["Apostila", "Analisador", "Aprender por Problemas (PBL)", "Simulado", "Caderno de erros", "Flashcards", "Review diário", "Mais"],
+    "mobileTabs": ["Apostila", "Analisador", "PBL", "Simulado", "Mais"],
+    "login": "Entrar",
+    "provenance": "src/components/Navbar.tsx:101"
+  },
+  "screens": [
+    {
+      "id": "apostila-overview",
+      "route": "/?module=mod0",
+      "evidence": ["docs/design-system/evidence/modules-1440.png", "docs/design-system/evidence/modules-390.png"],
+      "title": "Ortografia e fonologia",
+      "titleProvenance": "src/data/lessonCatalog.ts:10",
+      "continue": {
+        "eyebrow": "Continue de onde parou",
+        "description": "Retome sua aula de onde parou e avance no percurso curricular.",
+        "action": "Continuar aula",
+        "provenance": "src/components/ContinueLearningCard.tsx:32"
+      },
+      "weekly": {
+        "eyebrow": "Progresso Semanal",
+        "title": "Meta Semanal de Estudo",
+        "action": "Ajustar",
+        "sectionLabel": "Seções Lidas",
+        "questionLabel": "Questões Praticadas",
+        "sections": "0/8 (0%)",
+        "questions": "0/15 (0%)",
+        "progress": "0%",
+        "footer": "Mantenha o ritmo diário",
+        "provenance": "src/components/WeeklyGoalCard.tsx; docs/design-system/evidence/modules-1440.png",
+        "state": "visitante sem atividade"
+      },
+      "units": [
+        {"title": "Fonética e Fonologia", "provenance": "public/knowledge/pedagogical/views/IP-A00-G01.json#/unit/title"},
+        {"title": "Encontros Vocálicos e Consonantais", "provenance": "public/knowledge/pedagogical/views/IP-A00-G02.json#/unit/title"},
+        {"title": "Divisão Silábica e Translineação", "provenance": "public/knowledge/pedagogical/views/IP-A00-G03.json#/unit/title"},
+        {"title": "Acentuação Gráfica - Regras Gerais", "provenance": "public/knowledge/pedagogical/views/IP-A00-G04.json#/unit/title"},
+        {"title": "Emprego do Hífen - Fundamentos", "provenance": "public/knowledge/pedagogical/views/IP-A00-G05.json#/unit/title"},
+        {"title": "Emprego do Hífen - Questões", "provenance": "public/knowledge/pedagogical/views/IP-A00-G06.json#/unit/title"},
+        {"title": "Emprego dos Porquês", "provenance": "public/knowledge/pedagogical/views/IP-A00-G07.json#/unit/title"}
+      ],
+      "normalization": "Compor continuidade, meta e catálogo sem reproduzir a divergência da captura entre módulo da continuidade e módulo selecionado. Títulos de unidades são reais; não criar catálogo fictício."
+    },
+    {
+      "id": "leitura-fonetica",
+      "route": "/?module=mod0&unit=IP-A00-G01&section=explanation",
+      "evidence": ["docs/design-system/evidence/unit-explanation-1440.png", "docs/design-system/evidence/unit-explanation-390.png"],
+      "title": "Fonética e Fonologia",
+      "section": "Explicação didática aprofundada",
+      "provenance": "public/knowledge/pedagogical/views/IP-A00-G01.json#/unit/title; src/components/pedagogical/PedagogicalUnitRenderer.tsx",
+      "groups": [
+        {
+          "title": "1. Enquadramento Editalício e Função Estruturante da Fonética",
+          "paragraph": "A matéria de Fonética e Fonologia raramente é discriminada com esse nome formal nos editais de concursos públicos; ela é cobrada sistematicamente sob o tópico de Ortografia (ou \"Ortografia Oficial\") e atua como a base conceitual indispensável para o estudo de Acentuação Gráfica e Divisão Silábica.",
+          "provenance": "public/knowledge/pedagogical/views/IP-A00-G01.json#/sections/explanation/groups/0"
+        },
+        {
+          "title": "2. Distinção Fundamental entre Letra (Grafema) e Fonema (Som)",
+          "paragraph": "A Letra (Grafema) é a representação visual, gráfica e escrita da língua. O Fonema é a menor unidade acústica e sonora capaz de diferenciar significados entre palavras no sistema linguístico.",
+          "provenance": "public/knowledge/pedagogical/views/IP-A00-G01.json#/sections/explanation/groups/1"
+        },
+        {
+          "title": "3. Conceito e Classificação Completa dos Dígrafos",
+          "paragraph": "Dígrafo é o encontro de duas letras consecutivas que representam um único fonema (uma só emissão sonora). Classificam-se estritamente em Dígrafos Consonantais e Dígrafos Vocálicos.",
+          "provenance": "public/knowledge/pedagogical/views/IP-A00-G01.json#/sections/explanation/groups/2"
+        }
+      ],
+      "sectionLabels": ["Pré-requisitos e modelo mental", "Explicação didática aprofundada", "Regras decisivas", "Roteiros de resolução", "Contrastes que a prova explora", "Exemplos comentados", "Memorização inteligente", "Erros comuns e pegadinhas", "Glossário operacional", "Síntese para recuperação ativa"],
+      "sectionLabelsProvenance": "src/components/pedagogical/PedagogicalUnitRenderer.tsx:100",
+      "actions": ["Exercícios Relacionados", "Abrir no Tutor IA"],
+      "actionsProvenance": "docs/design-system/evidence/unit-explanation-1440.png",
+      "normalization": "Priorizar o segundo grupo na composição curta, mantendo texto literal. Remover molduras redundantes e preservar uma coluna de prosa legível."
+    },
+    {
+      "id": "pbl-dashboard",
+      "route": "/?tool=pbl",
+      "evidence": ["docs/design-system/evidence/pbl-1440.png", "docs/design-system/evidence/pbl-390.png"],
+      "eyebrow": "Aprendizagem Baseada em Problemas",
+      "title": "Aprenda Português resolvendo problemas reais",
+      "description": "Sessões curtas com uma competência, diagnóstico, intervenção e transferência. O tempo real inclui leitura, microestudo e reflexão e é medido durante a sessão.",
+      "actions": ["Iniciar sessão recomendada", "Diagnóstico de competência ainda não praticada"],
+      "provenance": "src/components/pbl/PBLDashboard.tsx:230",
+      "reviews": {
+        "title": "Revisões espirais cumulativas",
+        "description": "Duas competências intercaladas; a duração varia conforme a necessidade de apoio.",
+        "count": 13,
+        "countProvenance": "public/knowledge/pbl/pbl_cumulative_review_sessions.json; array.length verificado",
+        "cards": [
+          {"title": "Ortografia", "description": "Consolidar a retenção e a transferência cumulativa dos conteúdos de Ortografia e fonologia."},
+          {"title": "Classes de palavras I", "description": "Consolidar a retenção e a transferência cumulativa dos conteúdos de Ortografia e fonologia até Classes de palavras I."},
+          {"title": "Classes de palavras II", "description": "Consolidar a retenção e a transferência cumulativa dos conteúdos de Ortografia e fonologia até Classes de palavras II."}
+        ],
+        "action": "Praticar revisão",
+        "more": "Ver as 13 revisões",
+        "provenance": "src/components/pbl/PBLDashboard.tsx:270; docs/design-system/evidence/pbl-1440.png; public/knowledge/pbl/pbl_cumulative_review_sessions.json"
+      },
+      "competencies": {
+        "title": "Escolher uma competência",
+        "search": "Buscar tema",
+        "filter": "Todos os temas curriculares",
+        "action": "Iniciar prática",
+        "state": "Em aquisição",
+        "provenance": "src/components/pbl/PBLDashboard.tsx:287"
+      },
+      "normalization": "Preservar indigo como identidade da prática, limitar a altura do hero e usar geometria e componentes comuns."
+    },
+    {
+      "id": "questoes-editoriais",
+      "route": "/?tool=questions",
+      "evidence": ["docs/design-system/evidence/questions-1440.png", "docs/design-system/evidence/questions-390.png"],
+      "title": "Banco de questões editoriais",
+      "description": "Enunciados, alternativas, gabaritos e comentários vêm do percurso curricular; a revisão geral organiza a retomada cumulativa.",
+      "total": 3485,
+      "totalProvenance": "public/knowledge/official-questions.normalized.json; array.length verificado; conferido na captura questions-1440.png",
+      "action": "Praticar 10 questões dos filtros",
+      "search": "Buscar nas questões",
+      "filters": ["Todos os temas curriculares", "Tema", "Banca ou fonte", "Ano"],
+      "cardAction": "Estudar questão",
+      "empty": "Nenhuma questão corresponde aos filtros escolhidos.",
+      "provenance": "src/components/OfficialQuestionsExplorer.tsx:194",
+      "cards": [
+        {"internalId": "A00:aula00.q0001", "bank": "PREF. CARIACICA–ES", "year": 2020, "type": "MÚLTIPLA ESCOLHA", "curriculum": "Ortografia e fonologia", "provenance": "public/knowledge/official-questions.normalized.json#/0"},
+        {"internalId": "A00:aula00.q0002", "bank": "ALEPI", "year": 2020, "type": "MÚLTIPLA ESCOLHA", "curriculum": "Ortografia e fonologia", "provenance": "public/knowledge/official-questions.normalized.json#/1"},
+        {"internalId": "A00:aula00.q0003", "bank": "PREF. DE GRAMADO", "year": 2019, "type": "CERTO/ERRADO", "curriculum": "Ortografia e fonologia", "provenance": "public/knowledge/official-questions.normalized.json#/2"},
+        {"internalId": "A00:aula00.q0004", "bank": "CRF-TO", "year": 2019, "type": "CERTO/ERRADO", "curriculum": "Ortografia e fonologia", "provenance": "public/knowledge/official-questions.normalized.json#/3"}
+      ],
+      "optionalQuestionDetail": {
+        "state": "unanswered",
+        "internalId": "A00:aula00.q0001",
+        "prompt": "Assinale a alternativa que apresenta uma palavra que NÃO tenha um dígrafo consonantal, ou seja, duas letras que, juntas, representam um som de consoante.",
+        "options": [{"letter": "A", "text": "Esquecer."}, {"letter": "B", "text": "Trabalhar."}, {"letter": "C", "text": "Sorriso."}, {"letter": "D", "text": "Principalmente."}],
+        "showAnswer": false,
+        "showCommentary": false,
+        "provenance": "public/knowledge/official-questions.normalized.json#/0/prompt e /0/options; copia literal"
+      },
+      "normalization": "Usar tema curricular legível como título dos cards; omitir Build editorial. Manter gabarito oculto antes da tentativa."
+    }
+  ]
+}

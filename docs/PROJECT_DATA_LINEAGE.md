@@ -117,14 +117,25 @@ estado do aluno em LocalStorage e Firebase
 #### Aquisição multimodal de videoaulas
 
 ```text
-MP4 preservado em 01_Extracao + transcrição Markdown com timestamps
+download MP4 → normalização atômica adaptativa
+→ vídeo copy se ≤300 kb/s ou H.264 480p/CRF 28 se >300 kb/s
+→ AAC 24 kb/s mono/24 kHz
+→ MP4 transitório em 01_Extracao + transcrição Markdown com timestamps
 → processar_videoaulas_gemini.py
 → Gemini Interaction (agentic/low por padrão, thinking high)
 → resposta validada por JSON Schema e contrato Markdown
 → Knowledge_Bases_Gemini/*.md + *.manifest.json
+→ exclusão do MP4 local somente após validação da KB
 → consolidação temática posterior
 → integração pedagógica/canonical
 ```
+
+O download MP4 anterior à normalização é um intermediário transitório. O
+substituto só assume o mesmo caminho após validação por `ffprobe`; o
+`_indice.json` registra perfil, bytes anteriores e finais, redução e SHA-256.
+Assim, o MP4 normalizado é uma entrada operacional transitória. URL, identidade
+da aula, hashes e demais metadados de proveniência permanecem nos manifests e
+no índice; transcrição e KB validada são os artefatos locais persistentes.
 
 O manifesto da KB é a prova operacional da chamada: hashes das duas entradas e do
 prompt, modelo, modo de processamento, resolução, projeto/chave por fingerprint,
@@ -132,6 +143,38 @@ ID e estado da Interaction, tokens por categoria, tempos e limpeza dos recursos
 remotos. Interações em background interrompidas permanecem retomáveis pelo mesmo
 ID e projeto, sem novo upload. A Files API e a Interaction são intermediários da
 fábrica; não são publicados no produto.
+
+Quando configurado, o fallback de modelo preserva a ordem da linhagem da chamada:
+HTTP 429 ou 503 no modelo principal tenta o modelo alternativo na mesma
+chave/projeto e reutiliza o upload; se ambos falharem, o runner rotaciona o
+projeto e reinicia pelo principal. Timeout e 504 não percorrem a cadeia. O
+manifesto distingue `requested_model` de `model` efetivo e preserva
+`model_history` com chave por fingerprint, resultado, código e duração.
+Respostas cujo Markdown inteiro venha com uma camada adicional de escapes são
+normalizadas deterministicamente antes da validação; comandos LaTeX permanecem
+intactos. O delimitador YAML precisa ocupar uma linha isolada. A telemetria só
+registra `success` depois da validação do contrato e usa `validation_error` para
+uma chamada concluída cuja resposta tenha sido recusada.
+
+#### Trilha central de chamadas de IA
+
+Toda chamada remota da fábrica Notebook LM, incluindo Gemini e Mistral, passa
+por `Notebook LM/06_Ferramentas/ia/call_audit.py`. Cada chamada recebe `call_id`
+e `run_id`; preserva provedor, rota, etapa, modelo solicitado/efetivo, configuração,
+hashes das entradas, chave por nome/fingerprint, tempos, retries, erros, metadados
+de uso, parsing e ligação com os artefatos resultantes. A requisição e cada
+resposta bruta ficam comprimidas em:
+
+- `Notebook LM/05_Auditorias/ia/chamadas/AAAA-MM-DD/<call_id>.json`;
+- `Notebook LM/05_Auditorias/ia/payloads/AAAA-MM-DD/<call_id>.json.gz`;
+- `Notebook LM/05_Auditorias/ia/payloads/AAAA-MM-DD/<call_id>.attempt-NNN.json.gz`.
+
+O registro é habilitado por padrão, usa substituição atômica e remove campos de
+credencial. Não há expurgo automático. Esses dados pertencem exclusivamente à
+fábrica para auditoria e reprodução; nunca entram nas Views nem na publicação
+do produto. O gate
+`Notebook LM/06_Ferramentas/validacao/auditar_cobertura_chamadas_ia.py` impede
+novos pontos conhecidos de SDK sem integração com a trilha central.
 
 As cotas Gemini são tratadas no escopo de projeto. No inventário atual, cada chave
 foi declarada como pertencente a um projeto individual; se essa premissa mudar, o

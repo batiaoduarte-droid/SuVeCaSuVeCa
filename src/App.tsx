@@ -167,6 +167,7 @@ export default function App() {
     recordNote,
     recordAnswer,
     recordStudyActivity,
+    recordFlashcardCorrect,
   } = useAchievements(user);
 
   // Caderno de Erros state
@@ -614,6 +615,7 @@ export default function App() {
                   user={user}
                   onNoteSaved={recordNote}
                   onAnswerResult={recordAnswer}
+                  onFlashcardCorrect={recordFlashcardCorrect}
                   onSectionRead={markSectionRead}
                   readSectionIds={metrics.readSectionIds}
                   readUnitIds={metrics.readUnitIds}
@@ -716,6 +718,7 @@ export default function App() {
                 onUpdateErrorStatus={handleUpdateErrorStatus}
                 onDeleteError={handleDeleteError}
                 userId={user?.uid}
+                onFlashcardCorrect={recordFlashcardCorrect}
                 onStartRecoverySimulado={(questions) => {
                   setOfficialSimuladoQuestions(questions);
                   setActiveTab('simulado');
@@ -728,6 +731,7 @@ export default function App() {
                 errors={cadernoErrors}
                 onUpdateErrorStatus={handleUpdateErrorStatus}
                 userId={user?.uid}
+                onCorrectAnswer={recordFlashcardCorrect}
               />
             )}
 

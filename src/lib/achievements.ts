@@ -3,6 +3,8 @@ export type AchievementId = 'first_note' | 'streak_10';
 export interface AchievementProgress {
   currentStreak: number;
   bestStreak: number;
+  /** Total de recordações corretas avaliadas nos flashcards. */
+  flashcardCorrectCount: number;
   /** Consecutive calendar days with a completed study activity. */
   studyStreak: number;
   longestStudyStreak: number;
@@ -36,6 +38,7 @@ export const ACHIEVEMENTS: AchievementDefinition[] = [
 export const EMPTY_ACHIEVEMENT_PROGRESS: AchievementProgress = {
   currentStreak: 0,
   bestStreak: 0,
+  flashcardCorrectCount: 0,
   studyStreak: 0,
   longestStudyStreak: 0,
   lastStudyDate: undefined,
@@ -71,6 +74,10 @@ export const normalizeAchievementProgress = (
     bestStreak:
       typeof candidate.bestStreak === 'number' && candidate.bestStreak >= 0
         ? candidate.bestStreak
+        : 0,
+    flashcardCorrectCount:
+      typeof candidate.flashcardCorrectCount === 'number' && candidate.flashcardCorrectCount >= 0
+        ? Math.floor(candidate.flashcardCorrectCount)
         : 0,
     studyStreak:
       typeof candidate.studyStreak === 'number' && candidate.studyStreak >= 0
@@ -127,6 +134,13 @@ export const recordAnswerResult = (
 
   return next;
 };
+
+export const recordFlashcardCorrect = (
+  progress: AchievementProgress
+): AchievementProgress => ({
+  ...progress,
+  flashcardCorrectCount: progress.flashcardCorrectCount + 1,
+});
 
 /**
  * Uses the learner's local day instead of UTC so a late-night Brazilian study

@@ -35,6 +35,7 @@ interface CadernoDeErrosProps {
   ) => void;
   onDeleteError: (id: string) => void;
   userId?: string;
+  onFlashcardCorrect?: () => void;
   onStartRecoverySimulado?: (questions: QuizQuestion[]) => void;
 }
 
@@ -56,6 +57,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
   onUpdateErrorStatus,
   onDeleteError,
   userId,
+  onFlashcardCorrect,
   onStartRecoverySimulado,
 }) => {
   const [activeFilter, setActiveFilter] = useState<string>('todos');
@@ -245,6 +247,7 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
           errors={errors}
           onUpdateErrorStatus={onUpdateErrorStatus}
           userId={userId}
+          onCorrectAnswer={onFlashcardCorrect}
         />
       ) : (
         <>

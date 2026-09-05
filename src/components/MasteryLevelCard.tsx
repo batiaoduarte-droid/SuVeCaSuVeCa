@@ -15,6 +15,7 @@ import {
   Award,
   Flame,
   NotebookPen,
+  Brain,
 } from 'lucide-react';
 import {
   MASTERY_LEVELS,
@@ -38,6 +39,7 @@ const levelIconMap: Record<string, React.ComponentType<{ className?: string }>> 
 
 const DOMAIN_PRESENTATION = [
   { icon: SearchCheck, action: 'Resolver questões', tab: 'questions', tone: 'bg-teal-50 text-teal-800 border-teal-200' },
+  { icon: Brain, action: 'Revisar flashcards', tab: 'flashcards', tone: 'bg-indigo-50 text-indigo-800 border-indigo-200' },
   { icon: Compass, action: 'Continuar aula', tab: 'modules', tone: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
   { icon: NotebookPen, action: 'Criar anotação', tab: 'modules', tone: 'bg-sky-50 text-sky-800 border-sky-200' },
   { icon: Shield, action: 'Revisar erros', tab: 'errors', tone: 'bg-amber-50 text-amber-800 border-amber-200' },
@@ -63,6 +65,7 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
   const totalDomainXp = breakdown.reduce((total, item) => total + item.xp, 0);
   const maxDomainXp = Math.max(1, ...breakdown.map((item) => item.xp));
   const activeDomainCount = breakdown.filter((item) => item.xp > 0).length;
+  const domainCount = breakdown.length;
   const leadingDomainIndex = breakdown.reduce(
     (bestIndex, item, index, items) => item.xp > items[bestIndex].xp ? index : bestIndex,
     0
@@ -165,7 +168,7 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
                 <span className="text-[9px] font-black uppercase tracking-wider text-teal-700">distribuídos</span>
               </div>
               <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-right">
-                <strong className="block text-sm font-black text-slate-900">{activeDomainCount}/5</strong>
+                <strong className="block text-sm font-black text-slate-900">{activeDomainCount}/{domainCount}</strong>
                 <span className="text-[9px] font-black uppercase tracking-wider text-slate-500">pilares ativos</span>
               </div>
             </div>
@@ -173,7 +176,7 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
 
           <div className="mt-4" aria-label="Distribuição proporcional do XP">
             {totalDomainXp > 0 ? (
-              <div className="flex h-3 w-full overflow-hidden rounded-full bg-slate-100" role="img" aria-label={`XP distribuído em ${activeDomainCount} de 5 pilares`}>
+              <div className="flex h-3 w-full overflow-hidden rounded-full bg-slate-100" role="img" aria-label={`XP distribuído em ${activeDomainCount} de ${domainCount} pilares`}>
                 {breakdown.map((item) => item.xp > 0 && (
                   <span
                     key={item.category}
@@ -310,6 +313,7 @@ export const MasteryLevelCard: React.FC<MasteryLevelCardProps> = ({
                       type="button"
                       onClick={() => {
                         if (mission.id.includes('questions')) onNavigateToTab('questions');
+                        else if (mission.id.includes('flashcards')) onNavigateToTab('flashcards');
                         else if (mission.id.includes('read') || mission.id.includes('note')) onNavigateToTab('modules');
                         else if (mission.id.includes('errors')) onNavigateToTab('errors');
                       }}

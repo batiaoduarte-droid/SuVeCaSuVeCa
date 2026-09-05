@@ -6,6 +6,7 @@ import {
   hasNewUnlock,
   normalizeAchievementProgress,
   recordAnswerResult,
+  recordFlashcardCorrect as recordFlashcardCorrectInProgress,
   recordStudyActivity as recordStudyActivityInProgress,
   recordStudyNote,
   type AchievementId,
@@ -113,6 +114,7 @@ export const useAchievements = (
       const dataToSave: Record<string, unknown> = {
         currentStreak: progress.currentStreak,
         bestStreak: progress.bestStreak,
+        flashcardCorrectCount: progress.flashcardCorrectCount,
         studyStreak: progress.studyStreak,
         longestStudyStreak: progress.longestStudyStreak,
         unlocked: progress.unlocked || {},
@@ -172,6 +174,10 @@ export const useAchievements = (
     applyProgress((current) => recordStudyActivityInProgress(current));
   }, [applyProgress]);
 
+  const recordFlashcardCorrect = useCallback(() => {
+    applyProgress((current) => recordFlashcardCorrectInProgress(current));
+  }, [applyProgress]);
+
   return {
     progress,
     isLoading,
@@ -180,5 +186,6 @@ export const useAchievements = (
     recordNote,
     recordAnswer,
     recordStudyActivity,
+    recordFlashcardCorrect,
   };
 };

@@ -84,6 +84,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
   const mastery = calculateMasteryProgress({
     practiceCorrectCount,
     simuladoCorrectCount,
+    flashcardCorrectCount: progress.flashcardCorrectCount,
     readSectionsCount,
     visitedModulesCount,
     notesCount: progress.unlocked.first_note ? Math.max(1, notesCount) : notesCount,

@@ -83,6 +83,7 @@ export interface DomainBreakdownItem {
 export interface MasteryCalculationInput {
   practiceCorrectCount?: number;
   simuladoCorrectCount?: number;
+  flashcardCorrectCount?: number;
   readSectionsCount?: number;
   visitedModulesCount?: number;
   notesCount?: number;
@@ -112,10 +113,13 @@ export interface RecommendedMission {
   actionText: string;
 }
 
+export const FLASHCARD_CORRECT_XP = 10;
+
 export const calculateMasteryProgress = (input: MasteryCalculationInput): MasteryProgressResult => {
   const practiceCorrect = input.practiceCorrectCount || 0;
   const simuladoCorrect = input.simuladoCorrectCount || 0;
   const totalCorrectQuestions = practiceCorrect + simuladoCorrect;
+  const flashcardCorrect = input.flashcardCorrectCount || 0;
 
   const readSections = input.readSectionsCount || 0;
   const visitedModules = input.visitedModulesCount || 0;
@@ -131,12 +135,13 @@ export const calculateMasteryProgress = (input: MasteryCalculationInput): Master
 
   // Pontuações de atividade; XP não é evidência de domínio.
   const questionsXp = practiceCorrect * 15 + simuladoCorrect * 20;
+  const flashcardsXp = flashcardCorrect * FLASHCARD_CORRECT_XP;
   const lessonsXp = readSections * 10 + visitedModules * 30;
   const notesXp = notesCount * 25;
   const errorVaccinesXp = masteredErrors * 35 + reviewingErrors * 10;
   const badgesAndStreakXp = badgesCount * 75 + studyStreak * 20 + bestStreak * 10;
 
-  const totalXp = questionsXp + lessonsXp + notesXp + errorVaccinesXp + badgesAndStreakXp;
+  const totalXp = questionsXp + flashcardsXp + lessonsXp + notesXp + errorVaccinesXp + badgesAndStreakXp;
 
   // Encontrar Nível Atual
   let currentLevel = MASTERY_LEVELS[0];
@@ -168,6 +173,13 @@ export const calculateMasteryProgress = (input: MasteryCalculationInput): Master
       count: totalCorrectQuestions,
       unit: 'acertos',
       fill: '#0d9488', // teal-600
+    },
+    {
+      category: 'Flashcards',
+      xp: flashcardsXp,
+      count: flashcardCorrect,
+      unit: 'acertos',
+      fill: '#4f46e5', // indigo-600
     },
     {
       category: 'Aulas',
@@ -214,6 +226,13 @@ export const calculateMasteryProgress = (input: MasteryCalculationInput): Master
       rewardXp: 50,
       completed: readSections >= 5,
       actionText: 'Abrir apostila',
+    },
+    {
+      id: 'mission_flashcards',
+      title: 'Acertar 10 flashcards em revisões ativas',
+      rewardXp: 100,
+      completed: flashcardCorrect >= 10,
+      actionText: 'Revisar flashcards',
     },
     {
       id: 'mission_note',

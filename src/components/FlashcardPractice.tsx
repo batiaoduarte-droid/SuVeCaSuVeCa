@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { toLearnerFacingContent } from '../lib/learnerContent';
 import { deriveErrorReviewStatus, scheduleFlashcard } from '../lib/spacedRepetition';
+import { FLASHCARD_CORRECT_XP } from '../lib/masteryLevel';
 import { authenticatedFetch } from '../lib/authenticatedFetch';
 import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
@@ -61,6 +62,8 @@ interface FlashcardPracticeProps {
   userId?: string;
   /** Quando informado pelo ModuleViewer, limita a base editorial à aula atual. */
   editorialModuleId?: string;
+  /** Registra no perfil uma recordação avaliada como correta. */
+  onCorrectAnswer?: () => void;
 }
 
 const isFlashcard = (value: unknown): value is ErrorFlashcard => {
@@ -143,6 +146,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   onUpdateErrorStatus,
   userId,
   editorialModuleId,
+  onCorrectAnswer,
 }) => {
   const [authUserId, setAuthUserId] = useState<string | undefined>(() => auth.currentUser?.uid);
   const resolvedUserId = userId ?? authUserId;
@@ -501,10 +505,12 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
         ? errors.find((error) => error.id === activeCard.errorId)
         : undefined;
     const scheduledCard = scheduleFlashcard(activeCard, rating, isHintVisible, now);
+    const isCorrect = scheduledCard.lastRating !== 'again';
     const nextCards = flashcards.map((card) => card.id === activeCard.id ? scheduledCard : card);
     setFlashcards(nextCards);
     void persistFlashcards(nextCards);
-    setReviewResult(scheduledCard.lastRating === 'again' ? 'incorrect' : 'correct');
+    setReviewResult(isCorrect ? 'correct' : 'incorrect');
+    if (isCorrect) onCorrectAnswer?.();
     setReviewClock(now.getTime());
 
     if (relatedError) {
@@ -652,6 +658,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             </StudyBadge>
             <span className="text-xs text-slate-500 font-medium">
               {activeCard.correctCount} acerto(s) · {activeCard.incorrectCount} revisão(ões)
+              {onCorrectAnswer && <> · {FLASHCARD_CORRECT_XP} XP por acerto</>}
             </span>
           </div>
 
@@ -728,6 +735,9 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                       (reviewResult === 'correct'
                         ? 'Ótimo! O desempenho foi registrado.'
                         : 'Sem problema: este conteúdo voltará para revisão.')}
+                    {reviewResult === 'correct' && onCorrectAnswer && (
+                      <strong className="ml-1 whitespace-nowrap">+{FLASHCARD_CORRECT_XP} XP</strong>
+                    )}
                   </span>
                   <button type="button" onClick={chooseNextCard} className="button-secondary min-h-[44px] text-xs px-3 py-2 whitespace-nowrap">
                     Próximo <ChevronRight className="w-3.5 h-3.5 text-teal-700" />

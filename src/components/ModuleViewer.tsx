@@ -75,6 +75,7 @@ interface ModuleViewerProps {
   user?: User | null;
   onNoteSaved?: () => void;
   onAnswerResult?: (isCorrect: boolean) => void;
+  onFlashcardCorrect?: () => void;
   onSectionRead?: (moduleId: string, sectionIndex: number, unitId?: string | null) => void;
   readSectionIds?: string[];
   readUnitIds?: string[];
@@ -394,6 +395,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   user,
   onNoteSaved,
   onAnswerResult,
+  onFlashcardCorrect,
   onSectionRead,
   readSectionIds = [],
   readUnitIds = [],
@@ -1385,6 +1387,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             onUpdateErrorStatus={onUpdateErrorStatus}
             userId={userId}
             editorialModuleId={moduleData.id}
+            onCorrectAnswer={onFlashcardCorrect}
           />
         )}
 
