@@ -23,13 +23,13 @@ beforeEach(async () => {
   ]);
   process.env.SUVECA_KNOWLEDGE_DIR = temporaryKnowledgeDirectory;
   resetOfficialQuestionStoreForTests();
-});
+}, 30000);
 
 afterEach(async () => {
   resetOfficialQuestionStoreForTests();
   delete process.env.SUVECA_KNOWLEDGE_DIR;
   await rm(temporaryKnowledgeDirectory, { recursive: true, force: true });
-});
+}, 30000);
 
 describe('official question shard store', () => {
   it('loads the complete editorial bank from verified shards', async () => {

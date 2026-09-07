@@ -83,8 +83,8 @@ export class PBLSessionRepository {
     }
 
     // Sincronização remota: restrita a usuários de conta autenticados (não convidados)
+    // O caminho de escrita remota de pblSessions é exclusivamente concentrado no servidor (/api/pbl/session/sync)
     let syncedViaHttp = false;
-    let syncedFirestore = false;
 
     if (session.userId && session.userId !== 'guest') {
       if (registeredSyncHook) {
@@ -112,24 +112,23 @@ export class PBLSessionRepository {
         }
       }
 
+      // Sincronização de cache de domínio do aluno (pblMastery) se autenticado no cliente
+      // pblSessions NÃO é gravado diretamente pelo cliente para garantir caminho único e controlado no servidor
       if (typeof window !== 'undefined' && db && auth?.currentUser) {
         try {
-          const sessionRef = doc(db, 'users', session.userId, 'pblSessions', session.sessionId);
-          await Promise.all([
-            setDoc(sessionRef, session, { merge: true }),
-            ...Object.entries(session.masterySnapshot).map(([compId, mastery]) => {
+          await Promise.all(
+            Object.entries(session.masterySnapshot).map(([compId, mastery]) => {
               const masteryRef = doc(db, 'users', session.userId, 'pblMastery', compId);
               return setDoc(masteryRef, mastery, { merge: true });
-            }),
-          ]);
-          syncedFirestore = true;
+            })
+          );
         } catch (err) {
-          console.warn('[PBLSessionRepository] Remote Firestore sync error:', err);
+          console.warn('[PBLSessionRepository] Remote Firestore mastery sync error:', err);
         }
       }
     }
 
-    return { syncedRemotely: syncedViaHttp || syncedFirestore };
+    return { syncedRemotely: syncedViaHttp };
   }
 
   public static async getSession(sessionId: string, userId?: string): Promise<PBLSession | null> {

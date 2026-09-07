@@ -5,13 +5,19 @@ import {
   PBL_TUTOR_SYSTEM_INSTRUCTION,
   formatTutorPrompt,
 } from './pblTutorPrompt';
-import type {
-  PBLTutorTurnRequest,
+import type { PBLTutorTurnRequest,
   PBLTutorTurnResponse,
   PBLTutorQuestionContext,
   PBLTutorContinuityRecommendation,
 } from '../../../types/pblTutor';
 import type { PBLSession } from '../../../types/pbl';
+import {
+  normalizePBLAnswer,
+  isPBLAnswerCorrect,
+  isExplicitMultipleChoiceAnswer,
+  type PBLAnswerMode,
+} from '../answerAdapter';
+import { AttemptEvaluator } from '../engine/AttemptEvaluator';
 
 const tutorResponseSchema = {
   type: Type.OBJECT,
@@ -299,7 +305,7 @@ export async function handlePBLSessionSync(req: Request, res: Response): Promise
       return;
     }
 
-    // 3. Validação estrutural e contratual das tentativas
+    // 3. Validação rigorosa das tentativas e autoridade avaliativa do servidor
     if (session.attempts) {
       if (!Array.isArray(session.attempts)) {
         res.status(400).json({ error: 'Formato inválido para attempts: deve ser um array.' });
@@ -307,21 +313,114 @@ export async function handlePBLSessionSync(req: Request, res: Response): Promise
       }
 
       for (const attempt of session.attempts) {
-        if (!attempt.attemptId || typeof attempt.attemptId !== 'string' ||
-            !attempt.questionRef || typeof attempt.questionRef !== 'string' ||
-            !attempt.userAnswer || typeof attempt.userAnswer !== 'string' ||
-            attempt.userAnswer.trim().length === 0 ||
-            attempt.sessionId !== session.sessionId) {
+        if (
+          !attempt.attemptId || typeof attempt.attemptId !== 'string' || attempt.attemptId.trim().length === 0 ||
+          !attempt.questionRef || typeof attempt.questionRef !== 'string' || attempt.questionRef.trim().length === 0 ||
+          !attempt.userAnswer || typeof attempt.userAnswer !== 'string' || attempt.userAnswer.trim().length === 0 ||
+          attempt.sessionId !== session.sessionId
+        ) {
           res.status(400).json({ error: 'Tentativa inválida: vínculo de sessão ou formato de resposta incorreto.' });
           return;
+        }
+
+        if (attempt.userAnswer.length > 200) {
+          res.status(400).json({ error: 'Tentativa inválida: resposta excede o limite permitido de caracteres.' });
+          return;
+        }
+
+        // Conferência da existência real da questão no acervo canônico
+        const qCtx = await pblTutorContextResolver.getTutorQuestionContext(attempt.questionRef);
+        if (!qCtx) {
+          res.status(400).json({ error: `Tentativa inválida: questão '${attempt.questionRef}' não encontrada no acervo.` });
+          return;
+        }
+
+        // Validação de formato da resposta contra o contexto oficial da questão
+        const rawOptions = qCtx.presentation?.options;
+        const hasDefinedOptions = Array.isArray(rawOptions) && rawOptions.length > 0;
+        const normalizedAnswer = normalizePBLAnswer(attempt.userAnswer);
+
+        if (hasDefinedOptions) {
+          const allowedLabels = rawOptions.map((opt) => normalizePBLAnswer(opt.label));
+          if (!allowedLabels.includes(normalizedAnswer)) {
+            res.status(400).json({
+              error: `Resposta inválida: '${attempt.userAnswer}' não corresponde a uma opção válida da questão ${attempt.questionRef}. Opções permitidas: ${allowedLabels.join(', ')}.`,
+            });
+            return;
+          }
+        } else {
+          // Formato Certo / Errado padrão quando options não são explicitadas
+          if (!['C', 'E'].includes(normalizedAnswer)) {
+            res.status(400).json({
+              error: `Resposta inválida: '${attempt.userAnswer}' não é um julgamento válido (Certo/Errado) para a questão ${attempt.questionRef}.`,
+            });
+            return;
+          }
+        }
+
+        // Preservação da autoridade avaliativa do servidor:
+        // O servidor é a única autoridade sobre o gabarito oficial e cálculo de acerto/erro
+        const officialAnswer = qCtx.presentation?.officialAnswer;
+        const isUnavailable = Boolean(
+          qCtx.presentation?.isUnavailable ||
+          !officialAnswer ||
+          officialAnswer === 'REDACTED'
+        );
+
+        if (isUnavailable) {
+          // Questão sem gabarito disponível para avaliação:
+          // Anula valores fornecidos pelo cliente, não permitindo fabricação de aprovação
+          attempt.correctAnswer = undefined;
+          attempt.isCorrect = false;
+          attempt.evaluation = 'unassessed' as any;
+        } else {
+          // Determina o answerMode oficial a partir da questão canônica (nunca do cliente)
+          const officialMode: PBLAnswerMode =
+            hasDefinedOptions && rawOptions.length > 2
+              ? 'multiple_choice'
+              : isExplicitMultipleChoiceAnswer(officialAnswer)
+                ? 'multiple_choice'
+                : 'true_false';
+
+          attempt.correctAnswer = officialAnswer;
+          attempt.isCorrect = isPBLAnswerCorrect(attempt.userAnswer, officialAnswer, officialMode);
+          attempt.evaluation = AttemptEvaluator.evaluateConfidence(
+            attempt.isCorrect,
+            attempt.confidence || 'medium'
+          );
         }
       }
     }
 
-    // 4. Salvar sessão permitindo estados com ou sem tentativa (ex.: ajuda prévia na fase tutor)
-    pblServerSessionRepository.saveSession(session, authenticatedUserId);
+    // 4. Salvar sessão atomicamente no servidor (transação no Firestore + ordenação)
+    const saveResult = await pblServerSessionRepository.saveSession(session, authenticatedUserId);
+    if (!saveResult.saved) {
+      if (saveResult.reason === 'stale_snapshot') {
+        res.json({ ok: true, ignored: true, reason: 'stale_snapshot' });
+        return;
+      }
+      if (
+        saveResult.reason === 'attempt_history_truncated' ||
+        saveResult.reason === 'attempt_immutable_violation'
+      ) {
+        res.status(400).json({
+          error: 'Tentativa violada: histórico de tentativas é estritamente append-only e imutável.',
+        });
+        return;
+      }
+      res.status(500).json({ error: 'Falha na persistência remota da sessão no Firestore.' });
+      return;
+    }
+
     res.json({ ok: true, sessionId: session.sessionId });
   } catch (err: any) {
+    if (
+      err?.code === 'attempt_history_truncated' ||
+      err?.code === 'attempt_immutable_violation'
+    ) {
+      res.status(400).json({ error: err.message });
+      return;
+    }
     res.status(500).json({ error: 'Erro ao sincronizar sessão PBL.', details: err.message });
   }
 }
@@ -330,7 +429,7 @@ export function registerAuthoritativeSession(session: any, authenticatedUserId?:
   if (session?.sessionId) {
     const effectiveUser = authenticatedUserId || session.userId;
     if (effectiveUser && effectiveUser !== 'guest') {
-      pblServerSessionRepository.saveSession(session, effectiveUser);
+      pblServerSessionRepository.saveSession(session, effectiveUser).catch(() => {});
     }
   }
 }

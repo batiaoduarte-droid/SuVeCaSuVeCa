@@ -57,9 +57,9 @@ describe('PBLTutorServerRoute Handlers', () => {
 
   beforeEach(() => {
     process.env = { ...originalEnv };
-    PBLSessionRepository.registerSyncHook((s) => {
+    PBLSessionRepository.registerSyncHook(async (s) => {
       const effectiveUser = s.userId && s.userId !== 'guest' ? s.userId : 'user_test_student_123';
-      pblServerSessionRepository.saveSession(s, effectiveUser);
+      await pblServerSessionRepository.saveSession(s, effectiveUser);
     });
   });
 
@@ -479,7 +479,7 @@ describe('PBLTutorServerRoute Handlers', () => {
         updatedAt: '2026-09-07T15:00:00.000Z',
         phase: 'tutor',
       });
-      pblServerSessionRepository.saveSession(sessionNewer, defaultUserId);
+      await pblServerSessionRepository.saveSession(sessionNewer, defaultUserId);
 
       // Attempt to save an older snapshot of the same session
       const sessionOlder = makeMockSession({
@@ -487,7 +487,7 @@ describe('PBLTutorServerRoute Handlers', () => {
         updatedAt: '2026-09-07T14:00:00.000Z',
         phase: 'problem',
       });
-      pblServerSessionRepository.saveSession(sessionOlder, defaultUserId);
+      await pblServerSessionRepository.saveSession(sessionOlder, defaultUserId);
 
       const stored = await pblServerSessionRepository.getSession('sess_order_test_001', defaultUserId);
       expect(stored?.phase).toBe('tutor');
@@ -547,7 +547,7 @@ describe('PBLTutorServerRoute Handlers', () => {
         ],
       });
 
-      pblServerSessionRepository.saveSession(session, defaultUserId);
+      await pblServerSessionRepository.saveSession(session, defaultUserId);
 
       // Query context specifically for previousQuestionRef (Q1)
       const { req, res, getStatusCode, getBody } = createMockReqRes(
@@ -701,7 +701,7 @@ describe('PBLTutorServerRoute Handlers', () => {
         ],
       });
 
-      pblServerSessionRepository.saveSession(session, 'user_alice_456');
+      await pblServerSessionRepository.saveSession(session, 'user_alice_456');
 
       // Bob requests Alice's session
       const { req, res, getStatusCode, getBody } = createMockReqRes(
@@ -751,6 +751,299 @@ describe('PBLTutorServerRoute Handlers', () => {
       // Verify that remote server repository was NOT populated
       const serverStored = await pblServerSessionRepository.getSession('sess_guest_local_only', 'guest');
       expect(serverStored).toBeNull();
+    });
+
+    it('handlePBLSessionSync rejects attempt pointing to non-existent questionRef (400)', async () => {
+      const session = makeMockSession({
+        sessionId: 'sess_bad_question_001',
+        attempts: [
+          makeMockAttempt({
+            sessionId: 'sess_bad_question_001',
+            questionRef: 'NON-EXISTENT-QUESTION-REF-999',
+            userAnswer: 'A',
+          }),
+        ],
+      });
+
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        session,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(400);
+      expect(getBody().error).toContain('não encontrada no acervo');
+    });
+
+    it('handlePBLSessionSync rejects answer that does not match available options (e.g. banana in options A-E) (400)', async () => {
+      // questionRef has options A, B, C, D, E. "banana" is invalid!
+      const session = makeMockSession({
+        sessionId: 'sess_bad_answer_format_001',
+        attempts: [
+          makeMockAttempt({
+            sessionId: 'sess_bad_answer_format_001',
+            questionRef,
+            userAnswer: 'banana',
+          }),
+        ],
+      });
+
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        session,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(400);
+      expect(getBody().error).toContain('não corresponde a uma opção válida');
+    });
+
+    it('handlePBLSessionSync enforces server evaluative authority: recalculates isCorrect and correctAnswer from canonical source', async () => {
+      // Client maliciously claims isCorrect: true and correctAnswer: 'A' when official answer is 'D'
+      const session = makeMockSession({
+        sessionId: 'sess_forged_eval_001',
+        attempts: [
+          makeMockAttempt({
+            sessionId: 'sess_forged_eval_001',
+            questionRef,
+            userAnswer: 'C', // Official answer is 'D', so 'C' is INCORRECT
+            correctAnswer: 'C', // Client forged
+            isCorrect: true, // Client forged
+          }),
+        ],
+      });
+
+      const { req, res, getStatusCode } = createMockReqRes(
+        session,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      // Verify the persisted state in server repository: client's forged claim was overwritten by server!
+      const stored = await pblServerSessionRepository.getSession('sess_forged_eval_001', defaultUserId);
+      expect(stored).toBeDefined();
+      expect(stored?.attempts[0].correctAnswer).toBe('D'); // Canonical official answer
+      expect(stored?.attempts[0].isCorrect).toBe(false); // Server-calculated
+      expect(stored?.attempts[0].evaluation).toBe('high_confidence_error'); // Server-evaluated
+    });
+
+    it('handlePBLSessionSync rejects truncation of attempt history (append-only violation) (400)', async () => {
+      // 1. Initial valid sync with 2 attempts
+      const initialSession = makeMockSession({
+        sessionId: 'sess_append_only_001',
+        attempts: [
+          makeMockAttempt({
+            attemptId: 'att_001',
+            sessionId: 'sess_append_only_001',
+            questionRef,
+            userAnswer: 'A',
+          }),
+          makeMockAttempt({
+            attemptId: 'att_002',
+            sessionId: 'sess_append_only_001',
+            questionRef: previousQuestionRef,
+            userAnswer: 'D',
+          }),
+        ],
+      });
+
+      const { req: req1, res: res1, getStatusCode: getStatus1 } = createMockReqRes(
+        initialSession,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req1, res1);
+      expect(getStatus1()).toBe(200);
+
+      // 2. Incoming snapshot removes the second attempt (truncation)
+      const truncatedSession = makeMockSession({
+        sessionId: 'sess_append_only_001',
+        attempts: [
+          makeMockAttempt({
+            attemptId: 'att_001',
+            sessionId: 'sess_append_only_001',
+            questionRef,
+            userAnswer: 'A',
+          }),
+        ],
+      });
+
+      const { req: req2, res: res2, getStatusCode: getStatus2, getBody: getBody2 } = createMockReqRes(
+        truncatedSession,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req2, res2);
+      expect(getStatus2()).toBe(400);
+      expect(getBody2().error).toContain('Tentativa violada');
+    });
+
+    it('handlePBLSessionSync rejects retroactive modification of previous userAnswer (immutability violation) (400)', async () => {
+      // 1. Initial valid sync with attempt att_001 having userAnswer 'A'
+      const initialSession = makeMockSession({
+        sessionId: 'sess_immutability_001',
+        attempts: [
+          makeMockAttempt({
+            attemptId: 'att_001',
+            sessionId: 'sess_immutability_001',
+            questionRef,
+            userAnswer: 'A',
+          }),
+        ],
+      });
+
+      const { req: req1, res: res1, getStatusCode: getStatus1 } = createMockReqRes(
+        initialSession,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req1, res1);
+      expect(getStatus1()).toBe(200);
+
+      // 2. Client attempts to retroactively change att_001's userAnswer to 'D'
+      const modifiedSession = makeMockSession({
+        sessionId: 'sess_immutability_001',
+        attempts: [
+          makeMockAttempt({
+            attemptId: 'att_001',
+            sessionId: 'sess_immutability_001',
+            questionRef,
+            userAnswer: 'D', // modified retroactively!
+          }),
+        ],
+      });
+
+      const { req: req2, res: res2, getStatusCode: getStatus2, getBody: getBody2 } = createMockReqRes(
+        modifiedSession,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req2, res2);
+      expect(getStatus2()).toBe(400);
+      expect(getBody2().error).toContain('Tentativa violada');
+    });
+
+    it('pblServerSessionRepository.saveSession serializes concurrent writes and maintains ordering', async () => {
+      const sessionId = 'sess_concurrent_queue_001';
+      const snap1 = makeMockSession({
+        sessionId,
+        updatedAt: '2026-09-07T16:00:00.000Z',
+        phase: 'problem',
+      });
+      const snap2 = makeMockSession({
+        sessionId,
+        updatedAt: '2026-09-07T16:01:00.000Z',
+        phase: 'tutor',
+      });
+      const snap3 = makeMockSession({
+        sessionId,
+        updatedAt: '2026-09-07T16:02:00.000Z',
+        phase: 'intervention',
+      });
+
+      // Fire concurrent saves
+      const [res1, res2, res3] = await Promise.all([
+        pblServerSessionRepository.saveSession(snap1, defaultUserId),
+        pblServerSessionRepository.saveSession(snap2, defaultUserId),
+        pblServerSessionRepository.saveSession(snap3, defaultUserId),
+      ]);
+
+      expect(res1.saved).toBe(true);
+      expect(res2.saved).toBe(true);
+      expect(res3.saved).toBe(true);
+
+      const finalState = await pblServerSessionRepository.getSession(sessionId, defaultUserId);
+      expect(finalState?.phase).toBe('intervention');
+      expect(finalState?.updatedAt).toBe('2026-09-07T16:02:00.000Z');
+    });
+
+    it('handlePBLSessionSync treats question with missing or redacted official answer as unassessed and clears client-forged evaluation', async () => {
+      // Mock pblTutorContextResolver.getTutorQuestionContext to simulate a question without an officialAnswer
+      const { pblTutorContextResolver } = await import('../PBLTutorContextResolver.server');
+      const realGetCtx = pblTutorContextResolver.getTutorQuestionContext.bind(pblTutorContextResolver);
+
+      const spy = vi.spyOn(pblTutorContextResolver, 'getTutorQuestionContext').mockImplementation(async (ref, comp) => {
+        if (ref === 'OQ-NO-ANSWER-TEST') {
+          return {
+            presentation: {
+              prompt: 'Questão em auditoria',
+              officialAnswer: 'REDACTED',
+              isUnavailable: true,
+              options: [{ label: 'A', text: 'Opção A' }, { label: 'B', text: 'Opção B' }],
+            },
+          } as any;
+        }
+        return realGetCtx(ref, comp);
+      });
+
+      const session = makeMockSession({
+        sessionId: 'sess_unassessed_001',
+        attempts: [
+          makeMockAttempt({
+            sessionId: 'sess_unassessed_001',
+            questionRef: 'OQ-NO-ANSWER-TEST',
+            userAnswer: 'A',
+            isCorrect: true, // Malicious client claim
+            correctAnswer: 'A', // Malicious client claim
+            evaluation: 'strong_correct', // Malicious client claim
+          }),
+        ],
+      });
+
+      const { req, res, getStatusCode } = createMockReqRes(
+        session,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const stored = await pblServerSessionRepository.getSession('sess_unassessed_001', defaultUserId);
+      expect(stored).toBeDefined();
+      expect(stored?.attempts[0].correctAnswer).toBeUndefined();
+      expect(stored?.attempts[0].isCorrect).toBe(false);
+      expect(stored?.attempts[0].evaluation).toBe('unassessed');
+
+      spy.mockRestore();
+    });
+
+    it('handlePBLSessionSync returns 500 when remote persistence fails, leaving persistence unconfirmed', async () => {
+      const spy = vi.spyOn(pblServerSessionRepository, 'saveSession').mockResolvedValueOnce({
+        saved: false,
+        reason: 'invalid_session',
+      });
+
+      const session = makeMockSession({ sessionId: 'sess_fail_remote_001' });
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        session,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(500);
+      expect(getBody().error).toContain('Falha na persistência remota');
+
+      spy.mockRestore();
     });
   });
 });

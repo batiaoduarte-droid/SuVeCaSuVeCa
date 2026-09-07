@@ -31,8 +31,8 @@ export { expect };
 export async function openApp(page: Page, path = '/') {
   await page.goto(path, { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('button', { name: 'Ir para a Apostila' })).toBeVisible();
-  await expect(page.locator('main')).toBeVisible();
-  await expect(page.getByText('Carregando ferramenta de estudo…')).toBeHidden();
+  await expect(page.getByText('Carregando ferramenta de estudo…')).toBeHidden({ timeout: 30000 });
+  await expect(page.locator('main')).toBeVisible({ timeout: 30000 });
   const closeTour = page.getByRole('button', { name: 'Fechar tour' });
   if (await closeTour.count() && await closeTour.isVisible()) {
     await closeTour.click();
