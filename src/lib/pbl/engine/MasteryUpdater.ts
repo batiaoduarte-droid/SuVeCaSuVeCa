@@ -30,6 +30,7 @@ const assistanceFactor = (evidence: MasteryEvidence): number => {
     case 'full': return 0.30;
     case 'partial': return 0.55;
     case 'diagnostic': return 0.80;
+    case 'hint': return 0.85;
     default: return 1;
   }
 };

@@ -45,6 +45,9 @@ export class PBLSessionRepository {
         session.sessionBudgetMs ?? (session.mode === 'cumulative' ? 18 * 60_000 : 12 * 60_000)
       ),
       phaseTimings: session.phaseTimings || {},
+      conductionMode: session.conductionMode || 'tutor',
+      currentTutorEpisodeId: session.currentTutorEpisodeId,
+      tutorEpisodes: session.tutorEpisodes || {},
       masterySnapshot: Object.fromEntries(
         Object.entries(session.masterySnapshot || {}).map(([competencyId, mastery]) => [
           competencyId,

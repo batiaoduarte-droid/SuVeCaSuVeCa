@@ -2,7 +2,7 @@
 
 Status: **contrato operacional vivo**
 Escopo: `Notebook LM/` (fábrica) e `SuVeCaSuVeCa/` (produto)
-Última verificação factual: **2026-08-29**
+Última verificação factual: **2026-09-07**
 
 ## 1. Finalidade
 
@@ -626,6 +626,22 @@ Firebase: users/<uid>/pblMastery/<competencyId>
 
 Manter IDs de competência, proveniência da questão e política fail-closed. Recompilar apenas coleções afetadas, executar `npm run build:pbl-shards` e nunca substituir datasets completos por fallback do frontend. O `PBLRepository` valida todos os shards antes de ficar pronto; ausência ou divergência é erro de deployment/importação, não autoriza reconstrução semântica no cliente.
 
+### 13.1 Tutor Pedagógico Contextual no PBL (Professor SuVeCA)
+
+#### Origem e Projeção
+- Conhecimento compilado por `scripts/build-pbl-tutor-context.mjs` a partir das views pedagógicas e metadados de questões em `public/knowledge/pbl/tutor/`.
+- Estruturado em 22 shards sob `public/knowledge/pbl/tutor/parts/` indexados por `pbl_tutor_manifest.json` com verificação de bytes e SHA-256 no carregamento por `PBLTutorContextResolver.server.ts`.
+- Inventário de cobertura por competência registrado em `pbl_tutor_coverage_inventory.json`.
+- Exclusão estrita de hipóteses causais punitivas da fábrica e preservação exclusiva de fatos gramaticais e pedagógicos.
+- Homologação auditada do benchmark `OQ-A00-estrategia.4001030449` ("porem": infinitivo pessoal do verbo pôr, corrigindo falso futuro do subjuntivo).
+
+#### Runtime e Endpoints
+- Modelo de linguagem: Gemini 3.1 Flash-Lite (`gemini-3.1-flash-lite`) com thinking level `low` e timeout de 30s.
+- Rota autenticada: `POST /api/pbl/tutor/turn` com rate limiting (40 req / 15 min), controle por variáveis de ambiente (`PBL_TUTOR_ENABLED`, `PBL_TUTOR_MODEL`, `PBL_TUTOR_THINKING_LEVEL`) e fallback construtivo determinístico.
+- Rotas de consulta: `GET /api/pbl/tutor/manifest` e `GET /api/pbl/tutor/context/:questionRef`.
+- Compensação de latência: latência de IA é deduzida do cronômetro ativo da sessão (`deductPBLSessionWaitTime`).
+- Integração de estado: episódios e turnos salvos no payload da sessão (`session.tutorEpisodes`), com redação obrigatória de gabarito para exploração independente.
+
 ## 14. Macrogrupos e percurso curricular
 
 ### Origem
@@ -811,7 +827,78 @@ npm run build
 npm run ai-studio:preflight
 ```
 
-## 23. Limites deste documento
+## 23. Piloto de autoria própria do PBL — 2026-09-07
+
+Esta é uma ramificação experimental na fábrica, ainda sem publicação no dataset PBL. Não substitui a linhagem operacional descrita acima.
+
+```text
+corpus_apostila + canonical (conceitos, tabelas, limites, questões)
++ projeção pública de questões com contexto completo
+→ seleção de evidências por registro/pointer e SHA-256
+→ autoria humana/modelo em 03_Autoria_Semantica/pbl/pilot-v1/packages
+→ revisão semântica independente com hashes dos pacotes
+→ pbl_authorship_pilot.cjs: validação e projeção local
+→ 05_Auditorias/pbl-authorship-pilot-v1/compiled
+→ preview/App.tsx + SemanticBlockRenderer + QuestionPresentationContent
+```
+
+- Autoridade normativa permanece no corpus/canonical. A nova camada é autoria derivada de aplicação por questão/competência, com hipóteses, apoios graduados, procedimentos, contrastes, fechos pertinentes ao item, rubricas e limites de evidência.
+- Contrato experimental: `Notebook LM/03_Autoria_Semantica/pbl/pilot-v1/contract.ts`; schema `Notebook LM/03_Autoria_Semantica/pbl/schemas/pbl_authorship_pilot.schema.json`. Versão `pbl-authorship-pilot/1.0.0`, sem consumidores publicados dessa versão.
+- `GroundedBlock.appliesToQuestionRefs` seleciona o fechamento de uma questão. Blocos compartilhados preservam conteúdo completo; fechos de itens reservados não aparecem em outros itens. `journey.reattemptPurpose` comunica mudanças de alcance da habilidade.
+- Questões oficiais são resolvidas por referência: a autoria não replica nem substitui enunciado, alternativas ou gabarito. Questões novas têm IDs `PILOT-*` e não recebem autorização operacional de âncora/sondagem/transferência apenas por existirem na prévia.
+- A leitura auxiliar de `public/knowledge/official-questions.normalized.json` serve para os payloads completos já disponíveis nesses três itens do piloto. Não promove a projeção do produto a autoridade normativa. Antes de expansão/publicação, a fábrica deve reconciliar a origem autorizada desses payloads e registrar a transformação; não consolidar dependência circular por conveniência.
+- O compilador registra hashes de fontes, pacotes, contrato, schema, consumidor e saídas em `build-report.json`; `source-evidence.json` preserva os trechos selecionados. `STRUCTURAL_PASS` não aprova conteúdo: a decisão semântica está em `independent-review.md` com os bytes revisados.
+- A prévia usa o renderer real, mas tem um controlador próprio e limitado. Não valida `PBLEngine`, políticas de domínio, backend ou o Caderno publicado. Os oito arquivos operacionais PBL, shards e índices permanecem sob seus compiladores atuais.
+- Persistência exclusiva da prévia: `suveca_pbl_authorship_pilot_v1` e `suveca_pbl_authorship_pilot_v1_archive`, LocalStorage. Não migra nem escreve nas chaves de sessões do produto/Firebase. Guarda rascunhos, confiança e exposição; seus resultados não emitem domínio ou retenção.
+- Correção do consumidor comum nesta missão: `SemanticBlockRenderer` passa a apresentar `contrast.sideA/sideB.criteria` e `procedure.steps[].test`, campos já tipados anteriormente. Mantém a apresentação legada `conceptA/conceptB`; não cria regra por inferência nem modifica os payloads das views.
+- Gates proporcionais: schema/ref/hash, mutações negativas, TypeScript da prévia, testes do renderer e ensaio Playwright/Axe em 320/390/768/1440 px. Integração futura ao produto exige testes do motor, persistência, deployment e preflight completo. Um relógio sintético testa a trava de revisão; não comprova retenção de um aluno.
+- Reversão: a prévia é isolada; não há publicação a desfazer. Reverter a correção do renderer afeta apenas a apresentação dos campos citados. Não apagar dados canônicos ou sessões de usuário para reverter um piloto.
+
+## 24. Autoria semântica v2 do PBL — Delegação por subagentes e runtime integrado (2026-09-07)
+
+A camada própria de autoria pedagógica do PBL evoluiu da prévia isolada para uma arquitetura com geração e auditoria por subagentes especializados nativos e integração direta ao runtime de produção:
+
+```text
+FÁBRICA
+canonical (concepts, rules, procedures, contrasts, limits, questions)
++ PBL datasets (competency map, cases, diagnostic paths, transfer sets)
+→ 06_Ferramentas/pbl/gerar_context_pack_pbl.py
+→ Context Pack estruturado (03_Autoria_Semantica/pbl/v2/context_packs/)
+→ Subagente Autor (pbl_pedagogical_author, Model: inherit)
+→ Pacote estruturado v2 (03_Autoria_Semantica/pbl/v2/packages/)
+→ Subagente Revisor Independente (pbl_independent_reviewer, Model: inherit)
+→ Auditoria crítica (reviews/*_review.md)
+→ Subagente Aluno Cego (pbl_blind_student_simulator, Model: inherit)
+→ Simulação cognitiva cega e diário de bordo (simulations/*_session_*.md)
+
+                          ↓ publicação autorizada
+
+PRODUTO
+public/knowledge/pbl/pbl_authored_packages.json
+→ PBLRepository.ts (registro e getAuthoredPackage)
+→ InterventionPlanner.ts (projeção de blocos semânticos hint, partial, full)
+→ PBLInterventionView.tsx (SemanticBlockRenderer, tabelas resolvidas, passos procedimentais)
+→ PBLTransferView.tsx (ocultamento de delta, assistência por pista)
+→ PBLSessionView.tsx (persistência de rascunhos em localStorage)
+→ learnerIntelligence.ts (normalização e salvamento no Caderno de Erros)
+```
+
+- **Contratos e Schemas:** `Notebook LM/03_Autoria_Semantica/pbl/v2/contract.ts` e `schemas/pbl_authorship_v2.schema.json`.
+- **Artefato Publicado:** `SuVeCaSuVeCa/public/knowledge/pbl/pbl_authored_packages.json` (9 pacotes homologados).
+- **Cobertura Homologada (9 pacotes):**
+  1. `COMP-A00-G01-01` (Fonética e Fonologia: Encontros Vocálicos, Consonantais e Dígrafos)
+  2. `COMP-A00-G07-01` (Ortografia: Emprego dos Porquês)
+  3. `COMP-A04-G02-01` (Semântica dos Tempos e Modos Verbais: Correlação e Aspecto)
+  4. `COMP-A03-G01-01` (Pronomes Pessoais: Retos vs. Oblíquos e Regência de Complementos)
+  5. `COMP-A00-G04-01` (Ortografia: Regras Gerais e Especiais de Acentuação Gráfica)
+  6. `COMP-A00-G05-01` (Ortografia: Emprego do Hífen — Regras Gerais e Prefixos)
+  7. `COMP-A00-G06-01` (Ortografia: Emprego do Hífen — Casos Especiais e Compostos)
+  8. `COMP-A12-G01-01` (Semântica: Sentido Próprio e Figurado — Denotação vs. Conotação)
+  9. `COMP-A12-G02-01` (Semântica Lexical: Sinônimos, Antônimos e Adequação Contextual)
+- **Saneamento e Homologação:** 125 mapeamentos distratores legados e 1.033 registros pedagógicos saneados na fábrica e nos 11 shards de runtime; auditoria cega independente (100% PASS) e simulações cognitivas de alunos registradas em `Notebook LM/03_Autoria_Semantica/pbl/v2/simulations/`.
+- **Testes e Verificação:** `AuthoredPilotRuntime.test.ts` (4 testes), `AdversarialAudit.test.ts` (25 testes), `DOMMechanicalAudit.test.ts` (115 unidades), `audit-pbl-runtime.mjs` (status: ok, 190 cases, 0 blocked), Vitest 71 arquivos / 341 testes (100% PASS), `npm run lint` (0 erros), `npm run build` (sucesso).
+
+## 25. Limites deste documento
 
 - Contagens mudam com builds; a fonte numérica vigente são os manifests e auditores executados.
 - Caminhos históricos podem continuar em ledgers antigos e não devem ser reescritos.

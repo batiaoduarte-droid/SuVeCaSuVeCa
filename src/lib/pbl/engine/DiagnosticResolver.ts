@@ -191,6 +191,7 @@ export class DiagnosticResolver {
       attempt.stage === 'probe'
       && previousDiagnostic?.diagnosisKind === 'mapped_error_hypothesis'
       && currentMechanism
+      && currentMechanism !== 'category_confusion'
       && priorMechanism === currentMechanism
     );
 

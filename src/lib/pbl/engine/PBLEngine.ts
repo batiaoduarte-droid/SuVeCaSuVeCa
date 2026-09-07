@@ -6,6 +6,11 @@ import type {
   NextActionDecision,
   PBLReflectionDecision,
   PBLCompetencyOutcome,
+  PBLTutorEpisode,
+  PBLTutorTurn,
+  PBLAttemptStage,
+  PBLConfidenceLevel,
+  PBLAssistanceLevel,
 } from '../../../types/pbl';
 import { IPBLRepository, pblRepository } from '../data/PBLRepository';
 import { SessionPlanner, SessionPlanRequest } from './SessionPlanner';
@@ -18,6 +23,7 @@ import { MasteryUpdater } from './MasteryUpdater';
 import { NextActionPolicy } from './NextActionPolicy';
 import { QuestionPoolSelector } from './QuestionPoolSelector';
 import { getRecentQuestionEncounterRefs } from '../../questionEncounterLedger';
+import { deductPBLSessionWaitTime } from '../session/PBLSessionTiming';
 
 export interface PBLReflectionSubmission {
   decision: PBLReflectionDecision;
@@ -156,11 +162,14 @@ export class PBLEngine {
     if (!action || (action.type !== 'advance_competency' && action.type !== 'complete_session')) {
       return session;
     }
-    const note = reflection.decision === 'needs_review'
-      ? 'Ainda não consigo formular a regra; encaminhar para revisão.'
-      : reflection.decision === 'suggested_rule'
-        ? reflection.suggestedRule.trim()
-        : reflection.note.trim();
+    const studentNote = reflection.note?.trim() || '';
+    const note = studentNote
+      ? studentNote
+      : reflection.decision === 'needs_review'
+        ? 'Solicitada revisão para esta competência.'
+        : reflection.decision === 'suggested_rule'
+          ? reflection.suggestedRule.trim()
+          : '';
     session.reflectionNotes = {
       ...(session.reflectionNotes || {}),
       [session.currentCompetencyRef]: note,
@@ -262,7 +271,7 @@ export class PBLEngine {
         ? session.lastDiagnosticResult
         : undefined;
       diagnostic = await this.diagnosticResolver.resolveDiagnostic(attempt, previousDiagnostic);
-      if (attempt.stage === 'probe') {
+      if (attempt.stage === 'probe' || attempt.stage === 'reattempt') {
         diagnostic.needsProbe = false;
         diagnostic.probeQuestionRef = undefined;
       }
@@ -292,6 +301,8 @@ export class PBLEngine {
         diagnosticConfidence: 0.40,
         diagnosticSummary: 'A sondagem independente não reproduziu o mecanismo; a hipótese inicial foi descartada.',
       };
+    } else if (attempt.stage === 'reattempt' && attempt.isCorrect) {
+      session.lastDiagnosticResult = undefined;
     }
 
     session.attempts.push(attempt);
@@ -389,7 +400,18 @@ export class PBLEngine {
     if (attempt.stage === 'transfer') {
       if (!attempt.isCorrect || attempt.evaluation === 'fragile_correct') {
         if (nextAction.type === 'request_transfer') session.currentTransferItemIndex += 1;
-        session.phase = 'diagnostic';
+        if (session.conductionMode === 'tutor') {
+          session.phase = 'tutor';
+          this.startTutorEpisode(session, {
+            questionRef: attempt.questionRef,
+            competencyRef: attempt.competencyRef,
+            attemptStage: attempt.stage,
+            initialUserAnswer: attempt.userAnswer,
+            initialConfidence: attempt.confidence,
+          });
+        } else {
+          session.phase = 'diagnostic';
+        }
       } else if (nextAction.type === 'request_transfer') {
         session.currentTransferItemIndex += 1;
         session.phase = 'transfer';
@@ -397,7 +419,32 @@ export class PBLEngine {
         session.phase = 'reflection';
       }
     } else {
-      session.phase = 'diagnostic';
+      if (!attempt.isCorrect || attempt.evaluation === 'fragile_correct') {
+        if (session.conductionMode === 'tutor') {
+          session.phase = 'tutor';
+          this.startTutorEpisode(session, {
+            questionRef: attempt.questionRef,
+            competencyRef: attempt.competencyRef,
+            attemptStage: attempt.stage,
+            initialUserAnswer: attempt.userAnswer,
+            initialConfidence: attempt.confidence,
+          });
+        } else {
+          session.phase = 'diagnostic';
+        }
+      } else {
+        if (session.conductionMode === 'tutor') {
+          if (nextAction.type === 'request_transfer') {
+            session.phase = 'transfer';
+          } else if (nextAction.type === 'advance_competency' || nextAction.type === 'complete_session') {
+            session.phase = 'reflection';
+          } else {
+            session.phase = 'diagnostic';
+          }
+        } else {
+          session.phase = 'diagnostic';
+        }
+      }
     }
 
     if (attempt.stage === 'reattempt') {
@@ -447,6 +494,117 @@ export class PBLEngine {
       session.attempts.flatMap((attempt) => attempt.detectedMisconceptionRefs)
     ).size;
     session.sessionStats.totalTimeMs += Math.max(0, responseTimeMs);
+  }
+
+  public startTutorEpisode(
+    session: PBLSession,
+    params: {
+      questionRef: string;
+      competencyRef: string;
+      attemptStage: PBLAttemptStage;
+      initialUserAnswer?: string;
+      initialConfidence?: PBLConfidenceLevel;
+      assistanceRequested?: boolean;
+    }
+  ): PBLTutorEpisode {
+    const episodeId = `ep_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+    const now = new Date().toISOString();
+    const assistanceLevel: PBLAssistanceLevel = params.assistanceRequested ? 'hint' : 'none';
+
+    if (params.assistanceRequested) {
+      session.interventionAssistance = {
+        ...(session.interventionAssistance || {}),
+        [params.competencyRef]: 'hint',
+      };
+    }
+
+    const episode: PBLTutorEpisode = {
+      episodeId,
+      sessionId: session.sessionId,
+      competencyRef: params.competencyRef,
+      questionRef: params.questionRef,
+      attemptStage: params.attemptStage,
+      initialUserAnswer: params.initialUserAnswer,
+      initialConfidence: params.initialConfidence,
+      assistanceLevel,
+      startedAt: now,
+      updatedAt: now,
+      turns: [],
+      resolved: false,
+      totalAiLatencyMs: 0,
+    };
+
+    session.tutorEpisodes = {
+      ...(session.tutorEpisodes || {}),
+      [episodeId]: episode,
+    };
+    session.currentTutorEpisodeId = episodeId;
+    session.phase = 'tutor';
+    session.updatedAt = now;
+    return episode;
+  }
+
+  public recordTutorTurn(
+    session: PBLSession,
+    episodeId: string,
+    turn: PBLTutorTurn
+  ): PBLSession {
+    const episode = session.tutorEpisodes?.[episodeId];
+    if (!episode) return session;
+
+    episode.turns.push(turn);
+    episode.updatedAt = new Date().toISOString();
+
+    if (turn.studentAssistanceRequested) {
+      episode.assistanceLevel = 'partial';
+      session.interventionAssistance = {
+        ...(session.interventionAssistance || {}),
+        [episode.competencyRef]: 'partial',
+      };
+    }
+
+    if (turn.notebookDraft) {
+      episode.notebookDraft = turn.notebookDraft;
+    }
+
+    if (turn.executionMetadata?.durationMs) {
+      episode.totalAiLatencyMs += turn.executionMetadata.durationMs;
+      session = deductPBLSessionWaitTime(session, turn.executionMetadata.durationMs);
+    }
+
+    session.updatedAt = new Date().toISOString();
+    return session;
+  }
+
+  public async concludeTutorEpisode(
+    session: PBLSession,
+    episodeId: string,
+    action: 'try_same' | 'try_alternative' | 'proceed_transfer' | 'proceed_reflection'
+  ): Promise<PBLSession> {
+    const episode = session.tutorEpisodes?.[episodeId];
+    if (episode) {
+      episode.resolved = true;
+      episode.updatedAt = new Date().toISOString();
+    }
+
+    if (action === 'try_same') {
+      if (episode?.attemptStage === 'transfer') {
+        session.phase = 'transfer';
+      } else if (episode?.attemptStage === 'reattempt') {
+        session.phase = 'reattempt';
+      } else {
+        session.phase = 'problem';
+      }
+    } else if (action === 'try_alternative') {
+      return this.prepareReattempt(session);
+    } else if (action === 'proceed_transfer') {
+      session.phase = 'transfer';
+    } else if (action === 'proceed_reflection') {
+      session.phase = 'reflection';
+    }
+
+    session.updatedAt = new Date().toISOString();
+    return session;
   }
 }
 

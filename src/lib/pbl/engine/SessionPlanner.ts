@@ -17,6 +17,7 @@ export interface SessionPlanRequest {
   cumulativeSessionId?: string;
   currentMasteryMap?: Record<string, CompetencyMastery>;
   maxCompetencies?: number;
+  conductionMode?: 'legacy' | 'tutor';
 }
 
 interface RankedCumulativeCandidate {
@@ -310,6 +311,8 @@ export class SessionPlanner {
       wallTimeMs: 0,
       sessionBudgetMs: mode === 'cumulative' ? 18 * 60_000 : 12 * 60_000,
       phaseTimings: {},
+      conductionMode: request.conductionMode || 'legacy',
+      tutorEpisodes: {},
       sessionStats: {
         initialAccuracy: 0,
         postInterventionAccuracy: 0,

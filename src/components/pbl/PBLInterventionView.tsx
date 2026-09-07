@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import type { InterventionPayload, PBLAssistanceLevel } from '../../types/pbl';
+import { SemanticBlockRenderer } from '../pedagogical/blocks/SemanticBlockRenderer';
 import { ArrowRight, CheckSquare, Eye, Scale, Sparkles } from 'lucide-react';
 
 interface PBLInterventionViewProps {
@@ -11,6 +12,7 @@ interface PBLInterventionViewProps {
 
 const assistanceRank: Record<PBLAssistanceLevel, number> = {
   none: 0,
+  hint: 1,
   diagnostic: 1,
   partial: 2,
   full: 3,
@@ -38,10 +40,15 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
 
   const hasPartialSupport = Boolean(
     intervention.procedureSteps.length
+    || (intervention.structuredSteps && intervention.structuredSteps.length > 0)
     || intervention.contrastingPoleA
     || intervention.contrastingPoleB
+    || (intervention.semanticBlocks?.partial && intervention.semanticBlocks.partial.length > 0)
   );
-  const hasFullSupport = Boolean(intervention.workedExample);
+  const hasFullSupport = Boolean(
+    intervention.workedExample
+    || (intervention.semanticBlocks?.full && intervention.semanticBlocks.full.length > 0)
+  );
   const showPartialSupport = assistanceRank[assistanceLevel] >= assistanceRank.partial;
   const showFullSupport = assistanceRank[assistanceLevel] >= assistanceRank.full;
 
@@ -68,6 +75,58 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
             <strong>Por que o critério decide:</strong> {intervention.ruleStatement}
           </p>
         )}
+        {intervention.ruleConditions && intervention.ruleConditions.length > 0 && (
+          <div className="mt-3 rounded-xl border border-indigo-100 bg-white/80 p-3 text-xs text-indigo-950">
+            <strong className="block mb-1 font-bold text-indigo-900">Condições de aplicação:</strong>
+            <ul className="list-disc pl-4 space-y-1">
+              {intervention.ruleConditions.map((cond, i) => (
+                <li key={i}>{cond}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {intervention.ruleExceptions && intervention.ruleExceptions.length > 0 && (
+          <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/80 p-3 text-xs text-amber-950">
+            <strong className="block mb-1 font-bold text-amber-900">Exceções e limites:</strong>
+            <ul className="list-disc pl-4 space-y-1">
+              {intervention.ruleExceptions.map((exc, i) => (
+                <li key={i}>{exc}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {intervention.resolvedTable && (
+          <div className="mt-4 overflow-x-auto rounded-xl border border-indigo-200/80 bg-white shadow-xs">
+            <div className="bg-indigo-50/60 px-4 py-2 text-xs font-bold text-indigo-950 border-b border-indigo-100">
+              {intervention.resolvedTable.title}
+            </div>
+            <table className="w-full text-left text-xs">
+              <thead className="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200">
+                <tr>
+                  {intervention.resolvedTable.columns.map((col, cIdx) => (
+                    <th key={cIdx} className="px-3 py-2">{col}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {intervention.resolvedTable.rows.map((row, rIdx) => (
+                  <tr key={rIdx} className="hover:bg-slate-50/50">
+                    {row.map((cell, cIdx) => (
+                      <td key={cIdx} className="px-3 py-2 text-slate-800 leading-relaxed">{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        {intervention.semanticBlocks?.hint && intervention.semanticBlocks.hint.length > 0 && (
+          <div className="mt-4 space-y-3">
+            {intervention.semanticBlocks.hint.map((block, idx) => (
+              <SemanticBlockRenderer key={idx} block={block} />
+            ))}
+          </div>
+        )}
         <p className="mt-3 text-[11px] leading-relaxed text-indigo-800">
           Tente seguir apenas com esta pista. Abra os apoios seguintes somente se ainda não conseguir formular o procedimento.
         </p>
@@ -88,7 +147,34 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
         </div>
       )}
 
-      {showPartialSupport && intervention.procedureSteps.length > 0 && (
+      {showPartialSupport && intervention.structuredSteps && intervention.structuredSteps.length > 0 ? (
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
+            <CheckSquare className="h-4 w-4 text-indigo-600" />
+            Procedimento estruturado de resolução
+          </div>
+          <div className="mt-4 space-y-3">
+            {intervention.structuredSteps.map((step, idx) => (
+              <div key={idx} className="rounded-xl border border-slate-100 bg-slate-50/70 p-3 text-xs text-slate-800 space-y-1.5">
+                <div className="flex items-start gap-2.5">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-[10px] font-bold text-white">
+                    {step.order || idx + 1}
+                  </span>
+                  <span className="font-bold text-slate-900 leading-relaxed">{step.action}</span>
+                </div>
+                {step.explanation && (
+                  <p className="pl-7 text-slate-600 leading-relaxed">{step.explanation}</p>
+                )}
+                {step.test && (
+                  <div className="ml-7 rounded-lg border border-indigo-100 bg-indigo-50/60 p-2 text-[11px] text-indigo-900">
+                    <strong>Teste prático:</strong> {step.test}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : showPartialSupport && intervention.procedureSteps.length > 0 ? (
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
             <CheckSquare className="h-4 w-4 text-indigo-600" />
@@ -105,7 +191,7 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
             ))}
           </div>
         </div>
-      )}
+      ) : null}
 
       {showPartialSupport && (intervention.contrastingPoleA || intervention.contrastingPoleB) && (
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -123,6 +209,18 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
               <p className="mt-2 text-rose-800">{intervention.contrastingPoleB}</p>
             </div>
           </div>
+        </div>
+      )}
+
+      {showPartialSupport && intervention.semanticBlocks?.partial && intervention.semanticBlocks.partial.length > 0 && (
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
+            <Sparkles className="h-4 w-4 text-indigo-600" />
+            Apoio pedagógico canônico
+          </div>
+          {intervention.semanticBlocks.partial.map((block, idx) => (
+            <SemanticBlockRenderer key={idx} block={block} />
+          ))}
         </div>
       )}
 
@@ -155,6 +253,18 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
           <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-xs leading-relaxed text-emerald-950">
             <strong>Resolução:</strong> {intervention.workedExample.resolution}
           </div>
+        </div>
+      )}
+
+      {showFullSupport && intervention.semanticBlocks?.full && intervention.semanticBlocks.full.length > 0 && (
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
+            <Sparkles className="h-4 w-4 text-indigo-600" />
+            Aprofundamento canônico completo
+          </div>
+          {intervention.semanticBlocks.full.map((block, idx) => (
+            <SemanticBlockRenderer key={idx} block={block} />
+          ))}
         </div>
       )}
 

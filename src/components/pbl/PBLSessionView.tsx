@@ -9,6 +9,7 @@ import type {
   PBLQuestionPresentation,
   PBLReflectionDecision,
   PBLSession,
+  PBLTutorTurn,
 } from '../../types/pbl';
 import { pblEngine } from '../../lib/pbl/engine/PBLEngine';
 import { PBLSessionRepository } from '../../lib/pbl/persistence/PBLSessionRepository';
@@ -19,7 +20,7 @@ import {
   currentPBLWallTimeMs,
   hydratePBLSessionTiming,
 } from '../../lib/pbl/session/PBLSessionTiming';
-import { formatPBLAnswer } from '../../lib/pbl/answerAdapter';
+import { formatPBLAnswer, normalizePBLAnswer } from '../../lib/pbl/answerAdapter';
 import type { PBLRulePresentation } from '../../lib/pbl/data/PBLRepository';
 import {
   recordQuestionEncounter,
@@ -29,9 +30,10 @@ import { PBLProblemCard } from './PBLProblemCard';
 import { PBLConfidenceSelector } from './PBLConfidenceSelector';
 import { PBLDiagnosticView } from './PBLDiagnosticView';
 import { PBLInterventionView } from './PBLInterventionView';
+import { PBLTutorChatView } from './PBLTutorChatView';
 import { PBLTransferView } from './PBLTransferView';
 import { PBLSessionSummary } from './PBLSessionSummary';
-import { ArrowLeft, BookOpenCheck, CheckCircle2, Eye, Lightbulb, PauseCircle, Timer, Trash2 } from 'lucide-react';
+import { ArrowLeft, BookOpenCheck, CheckCircle2, Eye, Lightbulb, PauseCircle, Timer, Trash2, Bot } from 'lucide-react';
 
 interface PBLSessionViewProps {
   onAddErrorToNotebook?: (
@@ -53,6 +55,7 @@ const phaseLabels: Record<PBLSession['phase'], string> = {
   hypothesis: 'Sondagem',
   diagnostic: 'Feedback',
   intervention: 'Microestudo',
+  tutor: 'Tutor SuVeCA',
   reattempt: 'Nova aplicação',
   transfer: 'Transferência',
   reflection: 'Reflexão',
@@ -110,6 +113,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const [revealedSuggestedRule, setRevealedSuggestedRule] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [transferHintsUsed, setTransferHintsUsed] = useState<Record<string, boolean>>({});
   const [showExitConfirmation, setShowExitConfirmation] = useState(false);
   const [clockNow, setClockNow] = useState(Date.now());
   const attemptStartedAt = useRef(Date.now());
@@ -222,7 +226,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
 
   useEffect(() => {
     let active = true;
-    const needsPublishedQuestion = ['problem', 'hypothesis', 'reattempt', 'transfer'].includes(session.phase);
+    const needsPublishedQuestion = ['problem', 'hypothesis', 'tutor', 'reattempt', 'transfer'].includes(session.phase);
     if (!needsPublishedQuestion) {
       setCurrentQuestion(null);
       return () => { active = false; };
@@ -250,11 +254,45 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   }, [currentQuestion, session.currentQuestionRef, session.mode, session.phase, session.sessionId, session.userId]);
 
   useEffect(() => {
-    setSelectedAnswer('');
-    setConfidence(null);
-    setReasoning('');
+    if (!session.currentQuestionRef) {
+      setSelectedAnswer('');
+      setConfidence(null);
+      setReasoning('');
+      attemptStartedAt.current = Date.now();
+      return;
+    }
+    const draftKey = `suveca_pbl_draft_${session.sessionId}_${session.currentQuestionRef}`;
+    try {
+      const saved = localStorage.getItem(draftKey);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setSelectedAnswer(parsed.selectedAnswer || '');
+        setConfidence(parsed.confidence || null);
+        setReasoning(parsed.reasoning || '');
+      } else {
+        setSelectedAnswer('');
+        setConfidence(null);
+        setReasoning('');
+      }
+    } catch {
+      setSelectedAnswer('');
+      setConfidence(null);
+      setReasoning('');
+    }
     attemptStartedAt.current = Date.now();
-  }, [session.phase, session.currentQuestionRef]);
+  }, [session.phase, session.currentQuestionRef, session.sessionId]);
+
+  useEffect(() => {
+    if (!session.currentQuestionRef) return;
+    const draftKey = `suveca_pbl_draft_${session.sessionId}_${session.currentQuestionRef}`;
+    if (selectedAnswer || confidence || reasoning) {
+      try {
+        localStorage.setItem(draftKey, JSON.stringify({ selectedAnswer, confidence, reasoning }));
+      } catch {
+        // Ignore localStorage errors
+      }
+    }
+  }, [selectedAnswer, confidence, reasoning, session.currentQuestionRef, session.sessionId]);
 
   const persist = async (nextSession: PBLSession) => {
     try {
@@ -297,7 +335,14 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
         ? session.interventionAssistance?.[session.currentCompetencyRef] || 'diagnostic'
         : stage === 'probe'
           ? 'diagnostic'
-          : 'none';
+          : stage === 'transfer' && transferHintsUsed[questionRef]
+            ? 'hint'
+            : 'none';
+      try {
+        localStorage.removeItem(`suveca_pbl_draft_${session.sessionId}_${questionRef}`);
+      } catch {
+        // Ignore localStorage error
+      }
       const timingSnapshot = accumulatePBLSessionTiming(
         session,
         timingCursor.current,
@@ -394,12 +439,62 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     }
   };
 
+  const handleRecordTutorTurn = (turn: PBLTutorTurn) => {
+    const currentEpisodeId = session.currentTutorEpisodeId;
+    if (!currentEpisodeId) return;
+    const updatedSession = pblEngine.recordTutorTurn(session, currentEpisodeId, turn);
+    sessionRef.current = updatedSession;
+    setSession({ ...updatedSession });
+    PBLSessionRepository.saveSessionLocally(updatedSession);
+  };
+
+  const handleConcludeTutorEpisode = async (
+    action: 'try_same' | 'try_alternative' | 'proceed_transfer' | 'proceed_reflection'
+  ) => {
+    const currentEpisodeId = session.currentTutorEpisodeId;
+    if (!currentEpisodeId) return;
+    setLoading(true);
+    try {
+      const updatedSession = await pblEngine.concludeTutorEpisode(session, currentEpisodeId, action);
+      setSelectedAnswer('');
+      setConfidence(null);
+      setReasoning('');
+      sessionRef.current = updatedSession;
+      await commitSession({ ...updatedSession });
+    } catch (err: any) {
+      setErrorMessage(err.message || 'Erro ao avançar para a próxima etapa.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleRequestTutor = () => {
+    const currentQuestionRef = currentQuestion?.questionRef || session.currentQuestionRef;
+    const updatedSession = { ...session };
+    pblEngine.startTutorEpisode(updatedSession, {
+      questionRef: currentQuestionRef,
+      competencyRef: updatedSession.currentCompetencyRef,
+      attemptStage: updatedSession.phase === 'transfer' ? 'transfer' : updatedSession.phase === 'reattempt' ? 'reattempt' : 'initial',
+      initialUserAnswer: selectedAnswer || undefined,
+      initialConfidence: confidence || undefined,
+      assistanceRequested: true,
+    });
+    sessionRef.current = updatedSession;
+    setSession(updatedSession);
+    PBLSessionRepository.saveSessionLocally(updatedSession);
+  };
+
   const handleSaveToCaderno = async () => {
     const lastAttempt = session.attempts[session.attempts.length - 1];
     if (!lastAttempt || session.savedErrorQuestionRefs?.includes(lastAttempt.questionRef)) return;
     const presentation = await pblEngine.repo.getQuestionPresentation(lastAttempt.questionRef);
     const isMultipleChoice = Boolean(presentation?.options.length || currentCase?.options.length);
     const mastery = session.masterySnapshot[lastAttempt.competencyRef];
+    const normalizedSelected = normalizePBLAnswer(lastAttempt.userAnswer, isMultipleChoice ? 'multiple_choice' : 'true_false');
+    const normalizedCorrect = normalizePBLAnswer(lastAttempt.correctAnswer, isMultipleChoice ? 'multiple_choice' : 'true_false');
+    const rawOptions = presentation?.options?.length ? presentation.options : currentCase?.options;
+    const options = rawOptions?.map((opt) => ({ letter: opt.label, text: opt.text }));
+
     onAddErrorToNotebook?.(
       presentation?.prompt || currentCase?.questionStem || 'Questão PBL',
       `Escolhi ${formatPBLAnswer(lastAttempt.userAnswer, isMultipleChoice)}; a resposta oficial é ${formatPBLAnswer(lastAttempt.correctAnswer, isMultipleChoice)}.`,
@@ -409,8 +504,10 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
         moduleRef: currentCase?.unitRef,
         origin: 'pbl',
         questionText: presentation?.prompt || currentCase?.questionStem,
-        selectedAnswer: formatPBLAnswer(lastAttempt.userAnswer, isMultipleChoice),
-        correctAnswer: formatPBLAnswer(lastAttempt.correctAnswer, isMultipleChoice),
+        selectedAnswer: normalizedSelected,
+        correctAnswer: normalizedCorrect,
+        questionType: isMultipleChoice ? 'MULTIPLA_ESCOLHA' : 'CERTO_ERRADO',
+        options,
         bank: presentation?.examBoard || 'PBL SuVeCA',
         year: presentation?.year,
         conceptIds: currentCase?.targetConceptRefs,
@@ -545,6 +642,17 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
             onSelectAnswer={setSelectedAnswer}
             disabled={loading}
           />
+          <div className="mt-2.5 flex justify-end">
+            <button
+              type="button"
+              onClick={handleRequestTutor}
+              disabled={loading}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50/70 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300 transition-colors shadow-xs"
+            >
+              <Bot className="h-3.5 w-3.5" />
+              <span>Tirar dúvida com Professor SuVeCA</span>
+            </button>
+          </div>
           {selectedAnswer && (
             <PBLConfidenceSelector
               confidence={confidence}
@@ -563,6 +671,18 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
         </div>
       )}
 
+      {session.phase === 'tutor' && session.currentTutorEpisodeId && session.tutorEpisodes?.[session.currentTutorEpisodeId] && (
+        <PBLTutorChatView
+          session={session}
+          episode={session.tutorEpisodes[session.currentTutorEpisodeId]}
+          question={currentQuestion}
+          onRecordTurn={handleRecordTutorTurn}
+          onConclude={handleConcludeTutorEpisode}
+          onSaveToCaderno={handleSaveToCaderno}
+          isSavedToCaderno={Boolean(session.savedErrorQuestionRefs?.includes(session.tutorEpisodes[session.currentTutorEpisodeId].questionRef))}
+        />
+      )}
+
       {session.phase === 'diagnostic' && lastAttempt && (
         <PBLDiagnosticView
           attempt={lastAttempt}
@@ -574,13 +694,30 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
         />
       )}
 
-      {session.phase === 'intervention' && session.lastInterventionPayload && (
-        <PBLInterventionView
-          intervention={session.lastInterventionPayload}
-          initialAssistanceLevel={session.interventionAssistance?.[session.currentCompetencyRef]}
-          onAssistanceChange={handleAssistanceChange}
-          onReattempt={handlePrepareReattempt}
-        />
+      {session.phase === 'intervention' && (
+        session.lastInterventionPayload ? (
+          <PBLInterventionView
+            intervention={session.lastInterventionPayload}
+            initialAssistanceLevel={session.interventionAssistance?.[session.currentCompetencyRef]}
+            onAssistanceChange={handleAssistanceChange}
+            onReattempt={handlePrepareReattempt}
+          />
+        ) : (
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 text-center space-y-4">
+            <h3 className="text-sm font-bold text-amber-950">Intervenção pedagógica</h3>
+            <p className="text-xs text-amber-900 leading-relaxed max-w-xl mx-auto">
+              {session.lastDiagnosticResult?.intervention.microLesson ||
+                'Revise o critério decisivo da competência antes de avançar para a nova aplicação prática.'}
+            </p>
+            <button
+              type="button"
+              onClick={() => handlePrepareReattempt('diagnostic')}
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-indigo-600 px-6 text-xs font-bold text-white shadow-md hover:bg-indigo-700"
+            >
+              Avançar para nova aplicação
+            </button>
+          </div>
+        )
       )}
 
       {['hypothesis', 'reattempt', 'transfer'].includes(session.phase) && currentQuestion && (
@@ -594,7 +731,23 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
             onSelectAnswer={setSelectedAnswer}
             disabled={loading}
             feedbackMessage={session.phase === 'transfer' ? session.lastFeedbackMessage : undefined}
+            onRevealHint={() => {
+              if (currentQuestion) {
+                setTransferHintsUsed((prev) => ({ ...prev, [currentQuestion.questionRef]: true }));
+              }
+            }}
           />
+          <div className="mt-2.5 flex justify-end">
+            <button
+              type="button"
+              onClick={handleRequestTutor}
+              disabled={loading}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50/70 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300 transition-colors shadow-xs"
+            >
+              <Bot className="h-3.5 w-3.5" />
+              <span>Tirar dúvida com Professor SuVeCA</span>
+            </button>
+          </div>
           {selectedAnswer && (
             <PBLConfidenceSelector
               confidence={confidence}

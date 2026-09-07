@@ -3,6 +3,8 @@
  * Schema v3.0.0 Compatible
  */
 
+import type { SemanticBlock } from './pedagogicalView';
+
 export interface PBLCompetency {
   schemaVersion: string;
   competencyId: string;
@@ -136,6 +138,9 @@ export interface SolutionStrategyStep {
   rationale: string;
   appliedRuleRef?: string | null;
   procedureStepRef?: string;
+  order?: number;
+  explanation?: string;
+  test?: string;
 }
 
 export interface QuestionPedagogy {
@@ -486,6 +491,7 @@ export type PBLSessionPhase =
   | 'hypothesis'
   | 'diagnostic'
   | 'intervention'
+  | 'tutor'
   | 'reattempt'
   | 'transfer'
   | 'reflection'
@@ -493,7 +499,7 @@ export type PBLSessionPhase =
 
 export type PBLAttemptStage = 'initial' | 'reattempt' | 'transfer' | 'probe';
 export type PBLConfidenceLevel = 'guess' | 'low' | 'medium' | 'high';
-export type PBLAssistanceLevel = 'none' | 'diagnostic' | 'partial' | 'full';
+export type PBLAssistanceLevel = 'none' | 'hint' | 'diagnostic' | 'partial' | 'full';
 
 export type ConfidenceEvaluation =
   | 'strong_correct'
@@ -624,6 +630,25 @@ export interface InterventionPayload {
   ruleTitle?: string;
   ruleStatement?: string;
   procedureSteps: string[];
+  structuredSteps?: Array<{
+    order: number;
+    action: string;
+    explanation?: string;
+    test?: string;
+  }>;
+  ruleConditions?: string[];
+  ruleExceptions?: string[];
+  resolvedTable?: {
+    id: string;
+    title: string;
+    columns: string[];
+    rows: string[][];
+  };
+  semanticBlocks?: {
+    hint?: SemanticBlock[];
+    partial?: SemanticBlock[];
+    full?: SemanticBlock[];
+  };
   contrastingPoleA?: string;
   contrastingPoleB?: string;
   workedExample?: {
@@ -710,6 +735,9 @@ export interface PBLSession {
   wallTimeMs?: number;
   sessionBudgetMs?: number;
   phaseTimings?: Partial<Record<PBLSessionPhase, number>>;
+  conductionMode?: 'legacy' | 'tutor';
+  currentTutorEpisodeId?: string;
+  tutorEpisodes?: Record<string, import('./pblTutor').PBLTutorEpisode>;
   lastFeedbackMessage?: string;
   lastDiagnosticResult?: DiagnosticResult;
   lastInterventionPayload?: InterventionPayload;
@@ -727,6 +755,9 @@ export type PBLEventType =
   | 'pbl_initial_attempt'
   | 'pbl_diagnostic_triggered'
   | 'pbl_intervention_completed'
+  | 'pbl_tutor_started'
+  | 'pbl_tutor_turn'
+  | 'pbl_tutor_completed'
   | 'pbl_reattempt'
   | 'pbl_transfer_attempt'
   | 'pbl_competency_mastered'
@@ -761,3 +792,5 @@ export interface MasteryModel {
   update(previous: CompetencyMastery, evidence: MasteryEvidence): CompetencyMastery;
 }
 import type { QuestionPresentation } from './questionPresentation';
+
+export * from './pblTutor';

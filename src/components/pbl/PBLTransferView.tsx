@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import type { PBLQuestionPresentation, PBLTransferItem } from '../../types/pbl';
-import { Layers, SearchCheck } from 'lucide-react';
+import { Layers, Lightbulb, SearchCheck } from 'lucide-react';
 import { QuestionPresentationContent } from '../QuestionPresentationContent';
 
 interface PBLTransferViewProps {
@@ -13,6 +13,8 @@ interface PBLTransferViewProps {
   onSelectAnswer: (answer: string) => void;
   disabled?: boolean;
   feedbackMessage?: string;
+  revealedDelta?: boolean;
+  onRevealHint?: () => void;
 }
 
 export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
@@ -25,7 +27,16 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
   onSelectAnswer,
   disabled = false,
   feedbackMessage,
+  revealedDelta = false,
+  onRevealHint,
 }) => {
+  const [internalRevealedDelta, setInternalRevealedDelta] = useState(false);
+
+  useEffect(() => {
+    setInternalRevealedDelta(false);
+  }, [question.questionRef]);
+
+  const showDelta = Boolean(revealedDelta || internalRevealedDelta || feedbackMessage);
   const typeLabels: Record<string, string> = {
     isomorphic: 'Mesma regra em novo contexto',
     near_transfer: 'Transferência próxima',
@@ -70,9 +81,26 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
       )}
 
       {transferItem?.cognitiveDelta && kind === 'transfer' && hasAuditedTransferType && (
-        <div className="mb-4 rounded-xl border border-indigo-100 bg-indigo-50/50 p-3 text-xs text-indigo-950">
-          <strong>O que mudou:</strong> {transferItem.cognitiveDelta}
-        </div>
+        showDelta ? (
+          <div className="mb-4 rounded-xl border border-indigo-100 bg-indigo-50/50 p-3 text-xs text-indigo-950">
+            <strong>O que mudou:</strong> {transferItem.cognitiveDelta}
+          </div>
+        ) : (
+          <div className="mb-4">
+            <button
+              type="button"
+              disabled={disabled}
+              onClick={() => {
+                setInternalRevealedDelta(true);
+                onRevealHint?.();
+              }}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-indigo-200 bg-indigo-50/60 px-3 py-1.5 text-xs font-semibold text-indigo-800 hover:bg-indigo-100/80 transition-colors"
+            >
+              <Lightbulb className="h-3.5 w-3.5 text-indigo-600" />
+              Pedir pista: O que mudou nesta questão?
+            </button>
+          </div>
+        )
       )}
       {transferItem && kind === 'transfer' && !hasAuditedTransferType && (
         <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">

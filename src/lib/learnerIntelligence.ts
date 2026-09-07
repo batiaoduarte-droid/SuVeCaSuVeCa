@@ -1,4 +1,5 @@
 import type { CadernoErroItem, QuizQuestion } from '../types/suveca';
+import { normalizePBLAnswer } from './pbl/answerAdapter';
 import { EDITORIAL_DUEL_QUESTIONS } from '../data/editorialDuelQuestions.generated';
 
 export interface WeaknessDiagnosis {
@@ -669,24 +670,37 @@ export function generateRecoverySimulado(
     ];
   }
 
-  return targetErrors.map((err, index) => ({
-    id: `recov_${err.id || index}`,
-    type: 'CERTO_ERRADO' as const,
-    topic: err.conteudo || 'Recuperação Sintática',
-    questionText: err.questionText || `Julgue a correção gramatical da seguinte regra: ${err.regraDecisiva}`,
-    options: [
-      { letter: 'C', text: 'Certo' },
-      { letter: 'E', text: 'Errado' },
-    ],
-    correctAnswer: err.correctAnswer || (err.selectedAnswer === 'C' ? 'E' : 'C'),
-    commentary: err.regraDecisiva || 'Aplicação rigorosa do método SuVeCA.',
-    bank: err.bank ? `${err.bank}${err.year ? ` (${err.year})` : ''}` : 'Banca Oficial',
-    resolution: {
-      decisiveRule: err.regraDecisiva,
-      mentalTest: err.novoExemplo || 'Reordenar termos na estrutura Su-Ve-C-A.',
-      whyCorrect: `Erro catalogado: ${err.erroCometido}. Correção: ${err.regraDecisiva}`,
-    },
-  }));
+  return targetErrors.map((err, index) => {
+    const isMultipleChoice = Boolean(
+      (err.options && err.options.length > 0) || err.questionType === 'MULTIPLA_ESCOLHA'
+    );
+    const mode = isMultipleChoice ? 'multiple_choice' : 'true_false';
+    const normalizedCorrect =
+      normalizePBLAnswer(err.correctAnswer || '', mode) ||
+      (err.selectedAnswer === 'C' ? 'E' : 'C');
+    const options = err.options && err.options.length > 0
+      ? err.options.map((opt) => ({ letter: opt.letter, text: opt.text }))
+      : [
+          { letter: 'C', text: 'Certo' },
+          { letter: 'E', text: 'Errado' },
+        ];
+
+    return {
+      id: `recov_${err.id || index}`,
+      type: isMultipleChoice ? 'MULTIPLA_ESCOLHA' : 'CERTO_ERRADO',
+      topic: err.conteudo || 'Recuperação Sintática',
+      questionText: err.questionText || `Julgue a correção gramatical da seguinte regra: ${err.regraDecisiva}`,
+      options,
+      correctAnswer: normalizedCorrect,
+      commentary: err.regraDecisiva || 'Aplicação rigorosa do método SuVeCA.',
+      bank: err.bank ? `${err.bank}${err.year ? ` (${err.year})` : ''}` : 'Banca Oficial',
+      resolution: {
+        decisiveRule: err.regraDecisiva,
+        mentalTest: err.novoExemplo || 'Reordenar termos na estrutura Su-Ve-C-A.',
+        whyCorrect: `Erro catalogado: ${err.erroCometido}. Correção: ${err.regraDecisiva}`,
+      },
+    };
+  });
 }
 
 // -----------------------------------------------------------------------------

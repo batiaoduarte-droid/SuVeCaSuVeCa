@@ -104,6 +104,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
         cumulativeSessionId,
         currentMasteryMap: userMastery,
         maxCompetencies: mode === 'cumulative' ? 2 : 1,
+        conductionMode: 'tutor',
       });
       await PBLSessionRepository.saveSession(session);
       setActiveSession(session);

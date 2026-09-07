@@ -29,6 +29,27 @@ import type {
 } from '../../../types/pedagogicalView';
 
 describe('SemanticBlockRenderer - Unit Tests for v4.2 AST Blocks', () => {
+  it('preserva critérios dos dois lados tipados de um contraste', () => {
+    render(<SemanticBlockRenderer block={{
+      type: 'contrast', title: 'Compare as pronúncias',
+      sideA: { label: 'Quero', criteria: ['O u não é pronunciado.', 'Qu representa um fonema.'] },
+      sideB: { label: 'Qualidade', criteria: ['O u participa da pronúncia.', 'Qu não representa um único fonema.'] },
+      decisiveDifference: 'Verifique o som do u.',
+    }} />);
+    for (const text of ['Quero', 'Qualidade', 'O u não é pronunciado.', 'Qu representa um fonema.', 'O u participa da pronúncia.', 'Qu não representa um único fonema.', 'Verifique o som do u.']) {
+      expect(screen.getByText(text)).toBeVisible();
+    }
+  });
+
+  it('preserva ação, explicação e teste de um passo tipado', () => {
+    render(<SemanticBlockRenderer block={{ type: 'procedure', steps: [{
+      order: 1, action: 'Confira a pronúncia.', explanation: 'A grafia sozinha não decide.', test: 'O u é pronunciado nesta palavra?',
+    }] }} />);
+    expect(screen.getByText('Confira a pronúncia.')).toBeVisible();
+    expect(screen.getByText('A grafia sozinha não decide.')).toBeVisible();
+    expect(screen.getByText('O u é pronunciado nesta palavra?')).toBeVisible();
+  });
+
   it('renderiza concept_definition com termo e definição sempre visíveis', () => {
     const block: ConceptDefinitionBlock = {
       type: 'concept_definition',

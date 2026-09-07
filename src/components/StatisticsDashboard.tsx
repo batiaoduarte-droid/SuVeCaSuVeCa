@@ -28,6 +28,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import type { CadernoErroItem } from '../types/suveca';
+import type { PBLAssistanceLevel } from '../types/pbl';
 import { ProgressBar } from './ui/ProgressBar';
 import { MODULES_DATA } from '../data/modulesData';
 import { getPriorityModuleRecommendation } from '../lib/priorityModuleRecommender';
@@ -54,7 +55,7 @@ export interface LearningAttempt {
   isCorrect?: boolean;
   confidence?: 'guess' | 'low' | 'medium' | 'high';
   stage?: 'initial' | 'reattempt' | 'transfer' | 'probe';
-  assistanceLevel?: 'none' | 'diagnostic' | 'partial' | 'full';
+  assistanceLevel?: PBLAssistanceLevel;
   competencyId?: string;
 }
 

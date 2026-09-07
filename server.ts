@@ -19,6 +19,11 @@ import { toLearnerFacingContent } from "./src/lib/learnerContent";
 import { formatSuvecaMethodContext } from "./src/lib/suvecaMethod";
 import { applicationDefault, getApps as getAdminApps, initializeApp as initializeAdminApp } from "firebase-admin/app";
 import { getAuth as getAdminAuth } from "firebase-admin/auth";
+import {
+  handlePBLTutorTurn,
+  handlePBLTutorManifest,
+  handlePBLTutorContext,
+} from "./src/lib/pbl/tutor/pblTutorServerRoute";
 
 // Local development follows the README and keeps the Gemini key in .env.local.
 // Load it first, then use .env only as a fallback for values not already set.
@@ -66,7 +71,13 @@ const limitAiRequests: express.RequestHandler = (req, res, next) => {
 };
 
 app.use(
-  ["/api/suveca/analyze", "/api/gemini/explain", "/api/gemini/generate-questions", "/api/gemini/generate-error-flashcards"],
+  [
+    "/api/suveca/analyze",
+    "/api/gemini/explain",
+    "/api/gemini/generate-questions",
+    "/api/gemini/generate-error-flashcards",
+    "/api/pbl/tutor/turn",
+  ],
   requireFirebaseUser,
   limitAiRequests,
 );
@@ -187,6 +198,11 @@ app.get("/api/knowledge/questions/:questionId", async (req, res) => {
     return res.status(500).json({ error: "Não foi possível carregar a questão editorial.", details: error.message });
   }
 });
+
+// PBL Contextual Pedagogical Tutor API
+app.post("/api/pbl/tutor/turn", handlePBLTutorTurn);
+app.get("/api/pbl/tutor/manifest", handlePBLTutorManifest);
+app.get("/api/pbl/tutor/context/:questionRef", handlePBLTutorContext);
 
 // API: Analyze sentence with SuVeCA method
 app.post("/api/suveca/analyze", async (req, res) => {

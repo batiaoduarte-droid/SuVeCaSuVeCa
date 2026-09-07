@@ -158,6 +158,24 @@ caso inicial
 
 O gabarito bruto não é mostrado antes da intervenção. A nova aplicação não repete a questão âncora. A sessão não entra em ciclo infinito: dificuldade persistente é registrada como `needs_review`.
 
+### Condução pelo Tutor Contextual (Professor SuVeCA)
+
+Nas novas sessões (`conductionMode: 'tutor'`), a mediação conversacional socrática substitui os cartões fixos de diagnóstico e intervenção:
+
+```text
+caso inicial
+→ resposta + confiança explícita
+→ [se incorreto ou dúvida] intervenção conversacional com Professor SuVeCA (Gemini 3.1 Flash-Lite)
+  - investigação da dúvida e explicação de regras normativas, contrastes e tabelas
+  - sugestão de registro no Caderno de Erros (gatilho, regra e exemplo contrastivo)
+  - compensação automática da latência da IA no cronômetro da sessão
+→ nova aplicação / reattempt / transferência direta autorizada
+→ transferência em questões oficiais reais
+→ reflexão e síntese
+```
+
+Sessões legadas ou testes de compatibilidade retroativa podem continuar usando o fluxo diagnóstico tradicional mantendo `conductionMode: 'legacy'`.
+
 ## Critérios de evidência de aprendizagem
 
 O runtime não chama desempenho imediato de domínio duradouro. Quando os itens de transferência satisfazem simultaneamente os critérios do conjunto, o resultado é:

@@ -611,6 +611,7 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({
               {steps.map((st, idx) => {
                 const action = typeof st === 'string' ? st : st.action;
                 const expl = typeof st === 'string' ? '' : st.explanation;
+                const test = typeof st === 'string' ? '' : st.test;
                 return (
                   <li key={idx} className="flex items-start gap-2.5 rounded-lg bg-slate-50 p-2.5 border border-slate-100">
                     <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-900 text-[10px] font-bold text-white select-none">
@@ -625,6 +626,11 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({
                           <InlineRichText>{expl}</InlineRichText>
                         </span>
                       )}
+                      {test && (
+                        <span className="text-sky-900 font-medium leading-relaxed block text-xs">
+                          <strong>Verificação: </strong><InlineRichText>{test}</InlineRichText>
+                        </span>
+                      )}
                     </div>
                   </li>
                 );
@@ -636,7 +642,7 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({
     }
 
     case 'contrast': {
-      const { title, conceptA, conceptB, decisiveDifference, decisionCriterion, text } = block;
+      const { title, conceptA, conceptB, sideA, sideB, decisiveDifference, decisionCriterion, text } = block;
       return (
         <div className="my-4 rounded-xl border border-slate-200 bg-white p-4 select-text space-y-3 shadow-2xs">
           <div className="flex items-center gap-2 border-b border-slate-100 pb-2">
@@ -645,7 +651,24 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({
               <InlineRichText>{title || `${conceptA || 'A'} vs ${conceptB || 'B'}`}</InlineRichText>
             </h5>
           </div>
-          {(conceptA || conceptB) && (
+          {(sideA || sideB) ? (
+            <div className="grid gap-3 sm:grid-cols-2 text-xs">
+              {[sideA, sideB].map((side, index) => side ? (
+                <div key={index} className="rounded-lg border border-slate-200 bg-slate-50/80 p-3">
+                  <h6 className="font-bold text-slate-900 mb-2"><InlineRichText>{side.label}</InlineRichText></h6>
+                  <ul className="list-disc pl-4 space-y-1 text-slate-700">
+                    {side.criteria.map((criterion, criterionIndex) => (
+                      <li key={criterionIndex}><InlineRichText>{criterion}</InlineRichText></li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <div key={index} className="rounded-lg border border-slate-200 bg-slate-50/80 p-3">
+                  <span className="font-bold text-slate-900"><InlineRichText>{(index === 0 ? conceptA : conceptB) || ''}</InlineRichText></span>
+                </div>
+              ))}
+            </div>
+          ) : (conceptA || conceptB) && (
             <div className="grid gap-2 sm:grid-cols-2 text-xs">
               <div className="rounded-lg border border-slate-200 bg-slate-50/80 p-3">
                 <span className="font-black text-slate-900 block mb-1 uppercase tracking-wider text-[10px]">
@@ -669,7 +692,7 @@ export const SemanticBlockRenderer: React.FC<SemanticBlockRendererProps> = ({
               <strong>Critério de Desempate:</strong> <InlineRichText>{decisionCriterion}</InlineRichText>
             </div>
           )}
-          {text && !decisiveDifference && !decisionCriterion && !conceptA && !conceptB && (
+          {text && !decisiveDifference && !decisionCriterion && !conceptA && !conceptB && !sideA && !sideB && (
             <p className="text-xs text-slate-700 font-medium leading-relaxed m-0">
               <InlineRichText>{text}</InlineRichText>
             </p>

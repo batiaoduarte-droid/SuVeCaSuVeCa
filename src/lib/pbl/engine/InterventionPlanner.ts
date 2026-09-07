@@ -57,6 +57,44 @@ export class InterventionPlanner {
       '3. Aplique o critério e confira cada opção antes de responder.',
     ];
 
+    const structuredSteps = !isSecondaryAssignment && qp?.solutionStrategy?.length
+      ? qp.solutionStrategy.map((step, idx) => ({
+          order: step.order || step.stepNumber || idx + 1,
+          action: cleanCompiledProcedureStep(step.action),
+          explanation: cleanCompiledProcedureStep(step.explanation || step.rationale),
+          test: step.test ? cleanCompiledProcedureStep(step.test) : undefined,
+        }))
+      : undefined;
+
+    // Verificar se há pacote de autoria próprio registrado para a competência
+    const authoredPkg = this.repo.getAuthoredPackage?.(diagResult.competencyRef);
+    let authoredBlocks: { hint?: any[]; partial?: any[]; full?: any[] } | undefined = undefined;
+    let authoredTakeaway: string | undefined = undefined;
+    let authoredTitle: string | undefined = undefined;
+
+    if (authoredPkg) {
+      const authoredQ = authoredPkg.questions?.find((q: any) => q.id === diagResult.questionRef);
+      const authoredInt = authoredPkg.interventions?.find((i: any) =>
+        i.appliesToQuestionRefs?.includes(diagResult.questionRef)
+      ) || (authoredQ?.interventionId
+        ? authoredPkg.interventions?.find((i: any) => i.id === authoredQ.interventionId)
+        : authoredPkg.interventions?.[0]);
+
+      if (authoredInt) {
+        authoredTitle = authoredInt.title;
+        authoredTakeaway = authoredInt.takeaway;
+        const matchingFull = (authoredInt.full || [])
+          .filter((b: any) => !b.appliesToQuestionRefs || b.appliesToQuestionRefs.includes(diagResult.questionRef));
+        const resolvedFull = matchingFull.length > 0 ? matchingFull : (authoredInt.full || []);
+
+        authoredBlocks = {
+          hint: (authoredInt.hint || []).map((b: any) => b.block),
+          partial: (authoredInt.partial || []).map((b: any) => b.block),
+          full: resolvedFull.map((b: any) => b.block),
+        };
+      }
+    }
+
     const contrast = pblCase.contrastingScaffold;
     const useSpecificContrast = Boolean(
       contrast
@@ -70,15 +108,21 @@ export class InterventionPlanner {
       misconceptionRef: mappedDiagnosis ? diagResult.misconceptionRefs[0] || null : null,
       trapRef: diagResult.trapRefs[0] || null,
       microLessonText: formatPBLPedagogicalText(
+        authoredTakeaway ||
         diagResult.intervention.microLesson ||
         `Domínio de ${comp?.title || 'Tópico'}: aplique o procedimento sistemático e evite atratores sintáticos.`
       ),
-      ruleTitle: rulePresentation?.title || `Critério decisivo — ${comp?.title || 'aplicação da regra'}`,
+      ruleTitle: authoredTitle || rulePresentation?.title || `Critério decisivo — ${comp?.title || 'aplicação da regra'}`,
       ruleStatement:
         formatPBLPedagogicalText(rulePresentation?.statement || '')
         || formatPBLPedagogicalText(diagResult.intervention.refutationText || '') ||
         'Use o critério apresentado na microaula e verifique-o diretamente no enunciado.',
       procedureSteps: resolvedProcedureSteps,
+      structuredSteps,
+      ruleConditions: rulePresentation?.conditions,
+      ruleExceptions: rulePresentation?.exceptions,
+      resolvedTable: rulePresentation?.resolvedTable,
+      semanticBlocks: authoredBlocks,
       contrastingPoleA: useSpecificContrast ? contrast?.poleA : undefined,
       contrastingPoleB: useSpecificContrast ? contrast?.poleB : undefined,
       workedExample: {

@@ -1,5 +1,6 @@
 import React from 'react';
-import type { DiagnosticResult, NextActionDecision, PBLAttempt } from '../../types/pbl';
+import type { DiagnosticResult, NextActionDecision, PBLAttempt, PBLConfidenceLevel } from '../../types/pbl';
+import { formatPBLAnswer } from '../../lib/pbl/answerAdapter';
 import { Brain, CheckCircle2, SearchCheck, ShieldAlert, XCircle } from 'lucide-react';
 
 interface PBLDiagnosticViewProps {
@@ -10,6 +11,13 @@ interface PBLDiagnosticViewProps {
   nextAction?: NextActionDecision;
   onContinue: () => void;
 }
+
+const confidenceLabels: Record<PBLConfidenceLevel, string> = {
+  guess: 'Chute',
+  low: 'Pouco seguro',
+  medium: 'Seguro',
+  high: 'Muito seguro',
+};
 
 export const PBLDiagnosticView: React.FC<PBLDiagnosticViewProps> = ({
   attempt,
@@ -43,7 +51,7 @@ export const PBLDiagnosticView: React.FC<PBLDiagnosticViewProps> = ({
               : isHighConfidenceError ? 'A resposta não corresponde ao gabarito e foi dada com alta confiança' : 'A resposta não corresponde ao gabarito'}
           </h3>
           <p className="mt-1 text-xs opacity-90">
-            Sua resposta: <strong>{attempt.userAnswer}</strong> · Confiança: <strong>{attempt.confidence.toUpperCase()}</strong>
+            Sua resposta: <strong>{formatPBLAnswer(attempt.userAnswer)}</strong> · Confiança: <strong>{confidenceLabels[attempt.confidence] || attempt.confidence}</strong>
           </p>
         </div>
       </div>

@@ -31,6 +31,7 @@ export interface IPBLRepository {
   getQuestionCompetencyLink(questionId: string): Promise<QuestionCompetencyLink | null>;
   getQuestionPresentation(questionId: string): Promise<PBLQuestionPresentation | null>;
   getRulePresentation(unitId: string, ruleRef: string): Promise<PBLRulePresentation | null>;
+  getAuthoredPackage?(competencyId: string): any | null;
 
   getDiagnosticPath(id: string): Promise<PBLDiagnosticPath | null>;
   getDiagnosticPathForCompetency(competencyId: string): Promise<PBLDiagnosticPath | null>;
@@ -48,6 +49,15 @@ export interface PBLRulePresentation {
   ruleRef: string;
   title: string;
   statement: string;
+  conditions?: string[];
+  exceptions?: string[];
+  blocks?: any[];
+  resolvedTable?: {
+    id: string;
+    title: string;
+    columns: string[];
+    rows: string[][];
+  };
 }
 
 interface PedagogicalUnitView {
@@ -58,9 +68,18 @@ interface PedagogicalUnitView {
         entityId?: string;
         title?: string;
         statement?: string;
+        conditions?: string[];
+        exceptions?: string[];
+        blocks?: any[];
       }>;
     };
   };
+  tables?: Array<{
+    id: string;
+    title: string;
+    columns: string[];
+    rows: string[][];
+  }>;
 }
 
 const normalizedRuleRef = (value: string) => String(value || '')
@@ -285,6 +304,14 @@ export class PBLRepository implements IPBLRepository {
       Object.entries(authoredData).forEach(([questionRef, presentation]) =>
         this.questionPresentations.set(questionRef, presentation)
       );
+
+      const authoredPackagesData = await this.safeFetchJson<any[]>(`${this.basePath}/pbl_authored_packages.json`);
+      if (Array.isArray(authoredPackagesData)) {
+        for (const pkg of authoredPackagesData) {
+          this.registerAuthoredPackage(pkg);
+        }
+      }
+
       this.manifest = manData;
 
       this.initialized = true;
@@ -305,9 +332,11 @@ export class PBLRepository implements IPBLRepository {
     questionPedagogyMap?: Record<string, QuestionPedagogy>;
     questionLinksMap?: Record<string, QuestionCompetencyLink>;
     questionPresentations?: Record<string, PBLQuestionPresentation>;
+    authoredPackages?: any[];
     manifest?: PBLManifest;
   }): void {
     if (data.competencies) data.competencies.forEach((c) => this.competencies.set(c.competencyId, c));
+    if (data.authoredPackages) data.authoredPackages.forEach((pkg) => this.registerAuthoredPackage(pkg));
     if (data.cases) {
       data.cases.forEach((cs) => {
         this.cases.set(cs.caseId, cs);
@@ -394,6 +423,18 @@ export class PBLRepository implements IPBLRepository {
     return view;
   }
 
+  public authoredPackages = new Map<string, any>();
+
+  public getAuthoredPackage(competencyId: string): any | null {
+    return this.authoredPackages.get(competencyId) || null;
+  }
+
+  public registerAuthoredPackage(pkg: any): void {
+    if (pkg?.competencyRef) {
+      this.authoredPackages.set(pkg.competencyRef, pkg);
+    }
+  }
+
   public async getRulePresentation(
     unitId: string,
     ruleRef: string
@@ -409,10 +450,37 @@ export class PBLRepository implements IPBLRepository {
         : undefined);
     const statement = formatOfficialContent(matchedRule?.statement);
     if (!matchedRule || !statement) return null;
+
+    let resolvedTable: { id: string; title: string; columns: string[]; rows: string[][] } | undefined = undefined;
+    if (matchedRule.blocks?.length && view?.tables?.length) {
+      const tableRefBlock = matchedRule.blocks.find((b: any) => b.type === 'table_ref');
+      if (tableRefBlock?.tableId) {
+        const foundTable = view.tables.find((t: any) => t.id === tableRefBlock.tableId);
+        if (foundTable) {
+          resolvedTable = foundTable;
+        }
+      }
+    }
+    if (!resolvedTable && matchedRule.blocks?.length) {
+      const directTable = matchedRule.blocks.find((b: any) => b.type === 'table');
+      if (directTable?.columns && directTable?.rows) {
+        resolvedTable = {
+          id: directTable.id || 'rule_table',
+          title: directTable.title || 'Tabela da regra',
+          columns: directTable.columns,
+          rows: directTable.rows,
+        };
+      }
+    }
+
     return {
       ruleRef: matchedRule.entityId || ruleRef,
       title: formatOfficialContent(matchedRule.title) || 'Critério decisivo',
       statement,
+      conditions: matchedRule.conditions,
+      exceptions: matchedRule.exceptions,
+      blocks: matchedRule.blocks,
+      resolvedTable,
     };
   }
 

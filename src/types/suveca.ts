@@ -182,6 +182,8 @@ export interface CadernoErroItem {
   questionText?: string;
   selectedAnswer?: string;
   correctAnswer?: string;
+  questionType?: QuestionType;
+  options?: Array<{ letter: string; text: string }>;
   bank?: string;
   year?: number;
   difficulty?: string;
