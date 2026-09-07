@@ -630,7 +630,7 @@ Manter IDs de competência, proveniência da questão e política fail-closed. R
 
 #### Origem e Projeção
 - Conhecimento compilado por `scripts/build-pbl-tutor-context.mjs` a partir das views pedagógicas e metadados de questões em `public/knowledge/pbl/tutor/`.
-- Estruturado em 22 shards sob `public/knowledge/pbl/tutor/parts/` indexados por `pbl_tutor_manifest.json` com verificação de bytes e SHA-256 no carregamento por `PBLTutorContextResolver.server.ts`.
+- Estruturado em 35 shards sob `public/knowledge/pbl/tutor/parts/` indexados por `pbl_tutor_manifest.json` com verificação de bytes e SHA-256 no carregamento por `PBLTutorContextResolver.server.ts`.
 - Inventário de cobertura por competência registrado em `pbl_tutor_coverage_inventory.json`.
 - Exclusão estrita de hipóteses causais punitivas da fábrica e preservação exclusiva de fatos gramaticais e pedagógicos.
 - Homologação auditada do benchmark `OQ-A00-estrategia.4001030449` ("porem": infinitivo pessoal do verbo pôr, corrigindo falso futuro do subjuntivo).
@@ -639,8 +639,45 @@ Manter IDs de competência, proveniência da questão e política fail-closed. R
 - Modelo de linguagem: Gemini 3.1 Flash-Lite (`gemini-3.1-flash-lite`) com thinking level `low` e timeout de 30s.
 - Rota autenticada: `POST /api/pbl/tutor/turn` com rate limiting (40 req / 15 min), controle por variáveis de ambiente (`PBL_TUTOR_ENABLED`, `PBL_TUTOR_MODEL`, `PBL_TUTOR_THINKING_LEVEL`) e fallback construtivo determinístico.
 - Rotas de consulta: `GET /api/pbl/tutor/manifest` e `GET /api/pbl/tutor/context/:questionRef`.
+  - **Política e invariante de segurança do endpoint do aluno (RGO-001):**
+    1. A autorização de exposição pedagógica é avaliada **server-side a partir do estado autoritativo da sessão** consultado via `pblServerSessionRepository` (alimentado via `POST /api/pbl/session/sync` e `PBLSessionRepository.saveSession`, identificado via header `x-pbl-session-id` ou token Bearer com isolamento por usuário), nunca por parâmetros fornecidos pelo cliente.
+    2. Flags de URL (`hasAttempted`, `stage`, `attemptStage`, `full`, `includeSolution`) têm autoridade nula e não elevam o nível de exposição.
+    3. Pré-tentativa (ou sem tentativa real registrada no estado da sessão): `hideAnswer: true` é estritamente aplicado. Gabarito (`officialAnswer`), ponto decisivo (`decisivePoint`), estratégia de resolução (`solutionStrategy`) e refutações resolutivas permanecem redigidos. Se o aluno acionar o tutor em fase `'tutor'` antes de responder ao item, o gabarito e a resolução continuam estritamente protegidos.
+    4. Pós-tentativa: a resolução completa só é liberada se uma tentativa genuína (com resposta preenchida) existir no histórico da sessão (`attempts`) E a etapa autorizada pelo motor (`session.phase`) pertencer ao conjunto pós-tentativa aprovado (`tutor`, `intervention`, `reflection`, `summary`, `completed`, `reattempt`).
+    5. Consumidor interno server-side: serviços de backend (ex.: construtor do prompt socrático do Gemini) mantêm acesso in-memory direto e irrestrito através de `PBLTutorContextResolver.server.ts`.
 - Compensação de latência: latência de IA é deduzida do cronômetro ativo da sessão (`deductPBLSessionWaitTime`).
 - Integração de estado: episódios e turnos salvos no payload da sessão (`session.tutorEpisodes`), com redação obrigatória de gabarito para exploração independente.
+- **Modo de condução e entrada padrão (Frente 1):**
+  - O modo padrão de condução pedagógica para qualquer nova sessão iniciada é `'tutor'` (`SessionPlanner.ts` e `PBLDashboard.tsx`).
+  - O modo `'legacy'` é estritamente opcional e reservado a:
+    1. Parâmetro explícito de URL `?conduction=legacy`;
+    2. Preferência persistida do aluno em `localStorage.getItem('suveca_pbl_conduction_mode') === 'legacy'`.
+  - Sessões em andamento retomadas preservam o `session.conductionMode` gravado em sua criação.
+
+### 13.2 Motor de Sessão PBL e Políticas de Transição (RGO-005)
+
+- **Preservação de ação terminal:** Quando o motor emite ou registra ações terminais (`complete_session`, `advance_competency`, `needs_review`), `prepareTransfer` e `concludeTutorEpisode` preservam rigorosamente o `pendingNextAction` e direcionam a sessão à etapa de reflexão, sem sobrescrever o diagnóstico nem selecionar novo item espúrio.
+- **Orçamento temporal da sessão:** Verificação obrigatória do limite de tempo de parede (`wallTimeMs >= sessionBudgetMs`). Sessões estouradas são conduzidas a encerramento ou revisão sem novas questões.
+- **Exclusão estrita de itens candidatos:** A seleção de transferência exclui obrigatoriamente a questão atual não respondida (`currentQuestionRef`), itens já expostos em episódios socráticos do tutor (`tutorEpisodes`) e erros registrados no histórico da sessão (`savedErrorQuestionRefs`).
+- **Esgotamento contextual do banco:** Quando a competência esgota itens válidos sem candidatos de transferência, o motor emite feedback contextual amigável e encaminha à consolidação em vez de falha silenciosa.
+
+### 13.3 Publicação de Pacotes de Autoria Pedagógica v2 (RGO-002)
+
+- **Portão exclusivo de publicação:** `SuVeCaSuVeCa/scripts/publish-pbl-packages.mjs`.
+- **Autoridade estruturada exclusiva:** A publicação é governada unicamente pelo `Notebook LM/03_Autoria_Semantica/pbl/v2/reviews/pbl_review_ledger.json` validado pelo schema Draft 2020-12 (`pbl_review_decision.schema.json`). O relatório em Markdown (`*_review.md`) é verificado apenas quanto à sua existência e legibilidade no disco para garantia de trilha de auditoria humana, sendo terminantemente proibido o uso de heurísticas por regex no Markdown para definir ou sobrepor o veredito de publicação.
+- **Critérios de aprovação do ledger:**
+  - `status === 'PASS'` e `finalVerdict === 'PASS'` estritamente no objeto de decisão estruturado;
+  - Correspondência exata do hash SHA-256 dos bytes do pacote no disco com `entry.reviewedSha256` (ou `reconciliation.targetSha256`);
+  - Reconciliação verificável obrigatória (`dependentRequired: ["reconciliation"]` se `preApprovalSha256` for declarado):
+    1. Vinculação criptográfica dos bytes em disco (`targetSha256 === actualSha256`) e verificação do hash da versão revisada original (`reviewedSha256`);
+    2. Exigência de `comparisonResult === 'MATCH_VERIFIED'` tanto no ledger quanto no artefato estruturado (`comparisonArtifact`);
+    3. Verificação física da existência e hash dos bytes do arquivo original revisado (`_reviewed.json`);
+    4. Execução de diffing semântico estruturado real de objetos (`getObjectDiffPaths`) entre o original revisado e o pacote de destino;
+    5. Whitelist estrita de metadados administrativos (`ALLOWED_ADMIN_METADATA_PATHS`) para `metadata_only`, com proibição absoluta de mutações em prefixos pedagógicos protegidos e conferência biunívoca com `changedPaths`;
+    6. Exigência de zero diferenças estruturais para `structural_formatting_only`;
+    7. Integridade pedagógica comprovada (`pedagogicalContentIntegrity: true`), com `authorizedBy` e `authorizedAt`.
+  - Bloqueio fail-closed se o artefato de comparação contiver delta incompatível, alteração em campos pedagógicos protegidos sob `metadata_only`, ou integridade pedagógica não confirmada.
+- **Seleção estrita de lote:** A execução sem parâmetros bloqueia a publicação (fail-closed), exigindo explicitamente `--batch <competencyId...>` ou `--all`.
 
 ## 14. Macrogrupos e percurso curricular
 
@@ -732,7 +769,7 @@ Estado runtime nunca deve ser confundido com conteúdo editorial.
 | Estado | LocalStorage/Firebase principal | Responsável |
 | --- | --- | --- |
 | Recall da unidade | `suveca_recall_v2_<unitId>` | `RecallSection` |
-| PBL | `suveca_pbl_session_*`, `suveca_pbl_mastery_*` e coleções PBL do usuário | `PBLSessionRepository` |
+| PBL | `suveca_pbl_session_*`, `suveca_pbl_mastery_*`, `suveca_pbl_conduction_mode` e coleções PBL do usuário | `PBLSessionRepository`, `PBLDashboard` |
 | Flashcards | `suveca_flashcards_*` e documentos `flashcards_caderno*` | `FlashcardPractice` |
 | Métricas | chave versionada pelo build e `learning_metrics_<buildId>` | `useLearningMetrics` |
 | Notas | chave por módulo e `users/<uid>/module_notes/` | `ModuleViewer` |
@@ -884,19 +921,98 @@ public/knowledge/pbl/pbl_authored_packages.json
 ```
 
 - **Contratos e Schemas:** `Notebook LM/03_Autoria_Semantica/pbl/v2/contract.ts` e `schemas/pbl_authorship_v2.schema.json`.
-- **Artefato Publicado:** `SuVeCaSuVeCa/public/knowledge/pbl/pbl_authored_packages.json` (9 pacotes homologados).
-- **Cobertura Homologada (9 pacotes):**
-  1. `COMP-A00-G01-01` (Fonética e Fonologia: Encontros Vocálicos, Consonantais e Dígrafos)
-  2. `COMP-A00-G07-01` (Ortografia: Emprego dos Porquês)
-  3. `COMP-A04-G02-01` (Semântica dos Tempos e Modos Verbais: Correlação e Aspecto)
-  4. `COMP-A03-G01-01` (Pronomes Pessoais: Retos vs. Oblíquos e Regência de Complementos)
-  5. `COMP-A00-G04-01` (Ortografia: Regras Gerais e Especiais de Acentuação Gráfica)
-  6. `COMP-A00-G05-01` (Ortografia: Emprego do Hífen — Regras Gerais e Prefixos)
-  7. `COMP-A00-G06-01` (Ortografia: Emprego do Hífen — Casos Especiais e Compostos)
-  8. `COMP-A12-G01-01` (Semântica: Sentido Próprio e Figurado — Denotação vs. Conotação)
-  9. `COMP-A12-G02-01` (Semântica Lexical: Sinônimos, Antônimos e Adequação Contextual)
-- **Saneamento e Homologação:** 125 mapeamentos distratores legados e 1.033 registros pedagógicos saneados na fábrica e nos 11 shards de runtime; auditoria cega independente (100% PASS) e simulações cognitivas de alunos registradas em `Notebook LM/03_Autoria_Semantica/pbl/v2/simulations/`.
-- **Testes e Verificação:** `AuthoredPilotRuntime.test.ts` (4 testes), `AdversarialAudit.test.ts` (25 testes), `DOMMechanicalAudit.test.ts` (115 unidades), `audit-pbl-runtime.mjs` (status: ok, 190 cases, 0 blocked), Vitest 71 arquivos / 341 testes (100% PASS), `npm run lint` (0 erros), `npm run build` (sucesso).
+- **Artefato Publicado:** `SuVeCaSuVeCa/public/knowledge/pbl/pbl_authored_packages.json` (11 pacotes publicados: 2 base pilots + 9 pacotes auditados e homologados via ledger).
+- **Cobertura Homologada (11 pacotes publicados / 179 competências pendentes de autoria):**
+  1. `COMP-A00-G01-01` (Fonética e Fonologia: Encontros Vocálicos, Consonantais e Dígrafos) — Piloto base
+  2. `COMP-A00-G07-01` (Ortografia: Emprego dos Porquês) — Piloto base
+  3. `COMP-A00-G02-01` (Estudo da Sílaba - Teoria) — Certificado via ledger
+  4. `COMP-A00-G03-01` (Fundamentos de Estudo da Sílaba - Questões) — Certificado via ledger
+  5. `COMP-A00-G04-01` (Ortografia: Regras Gerais e Especiais de Acentuação Gráfica) — Certificado via ledger
+  6. `COMP-A00-G05-01` (Ortografia: Emprego do Hífen — Regras Gerais e Prefixos) — Certificado via ledger
+  7. `COMP-A00-G06-01` (Ortografia: Emprego do Hífen — Casos Especiais e Compostos) — Certificado via ledger
+  8. `COMP-A03-G01-01` (Pronomes Pessoais: Retos vs. Oblíquos e Regência de Complementos) — Certificado via ledger
+  9. `COMP-A04-G02-01` (Semântica dos Tempos e Modos Verbais: Correlação e Aspecto) — Certificado via ledger
+  10. `COMP-A12-G01-01` (Semântica: Sentido Próprio e Figurado — Denotação vs. Conotação) — Certificado via ledger
+  11. `COMP-A12-G02-01` (Semântica Lexical: Sinônimos, Antônimos e Adequação Contextual) — Certificado via ledger
+- **Saneamento e Homologação:** Mapeamentos distratores legados e registros pedagógicos saneados na fábrica e nos shards de runtime; auditorias independentes registradas em `reviews/*_review.md` com conferência estrita de critérios e limites normativos; simulações de alunos reclassificadas metodologicamente (resoluções assistidas com parâmetros de teste explícitos).
+- **Testes e Verificação:** `PBLTutorContextResolver.test.ts`, `PBLTutorServerRoute.test.ts`, `pblTutorPrompt.test.ts`, `AuthoredPilotRuntime.test.ts`, `AdversarialAudit.test.ts`, `audit-pbl-runtime.mjs` (status: ok, 190 cases, 0 blocked), Vitest tutor suite (18/18 testes, 100% PASS), `npm run lint` (0 erros).
+
+### 24.1. Pipeline de Contexto do Tutor PBL e Review Ledger (2026-09-07)
+
+A integração entre autoria semântica v2 e a IA do Tutor PBL (`/api/gemini/pbl/tutor`) opera com validação criptográfica fail-closed e compilação em shards:
+
+```text
+FÁBRICA (Notebook LM)
+03_Autoria_Semantica/pbl/v2/packages/*.json
+                     ↓
+reviews/pbl_review_ledger.json (SHA-256 byte hashes exatos + parecer PASS)
+                     ↓
+scripts/publish-pbl-packages.mjs (verificação estrita de hash byte-a-byte)
+                     ↓ publicação segura
+PRODUTO (SuVeCaSuVeCa)
+public/knowledge/pbl/pbl_authored_packages.json (11 pacotes)
+                     ↓
+scripts/build-pbl-tutor-context.mjs (resolução em cascata: viewQuestion -> authoredQuestions -> officialNormalizedMap)
+                     ↓
+public/knowledge/pbl/tutor/parts/tutor-context.part-*.json (35 shards, 4.945 questões com variantes dinâmicas de multicompetência)
+                     ↓
+PBLTutorContextResolver.ts (carregamento sob demanda do shard exato e resolução de variantes)
+                     ↓
+pblTutorPrompt.ts (injeção de regras, limites, tabelas, contrastes e estratégia)
+                     ↓ fail-closed se isUnavailable
+pblTutorServerRoute.ts (desvio determinístico seguro sem inventar gabarito)
+```
+
+1. **Review Ledger Criptográfico:** `Notebook LM/03_Autoria_Semantica/pbl/v2/reviews/pbl_review_ledger.json` armazena o status de aprovação, revisor e o hash SHA-256 exato dos bytes de cada pacote auditado. Nenhum pacote novo entra na publicação sem corresponder perfeitamente ao seu hash no ledger.
+2. **Publicador Verificável (`publish-pbl-packages.mjs`):** Valida cada pacote contra o ledger antes de compilar o arquivo de deployment `public/knowledge/pbl/pbl_authored_packages.json`. Se o hash diferir por 1 byte sequer, a publicação é abortada imediatamente (*fail-closed*).
+3. **Resolução de Contexto em Cascata:** O compilador `build-pbl-tutor-context.mjs` extrai enunciados (`prompt`), alternativas (`options` com `letter` e `label`) e gabaritos (`officialAnswer`) de três fontes com prioridade decrescente:
+   - `viewQuestion`: seções pedagógicas da unidade no produto;
+   - `authoredQuestions`: projeções e questões modeladas no pacote de autoria v2;
+   - `officialNormalizedMap`: base normalizada de questões oficiais.
+4. **Tratamento Fail-Closed de Indisponibilidade:** Questões com enunciado ou gabarito comprovadamente ausentes nas fontes são marcadas com `isUnavailable: true`. A rota de servidor do tutor (`pblTutorServerRoute.ts`) intercepta a requisição sem invocar a LLM, retornando recomendação determinística segura para avançar para a transferência sem inventar resposta.
+5. **Formatação de Prompt sem Vazamento:** `pblTutorPrompt.ts` injeta tabelas normativas, limites de regras (`boundaries`), critérios bilaterais de contraste (`sideACriteria` / `sideBCriteria`), e estratégias de resolução (`solutionStrategy`, `decisivePoint`, `Hipótese Frequente de Distrator (Banca)`), prevenindo tokens `[undefined]` e garantindo clareza sem expor o gabarito no nível de *hint*.
+6. **Métricas Vigentes:**
+   - Pacotes de autoria publicados: 11 (2 pilotos base + 9 ledger homologados).
+   - Competências pendentes de autoria v2: 179 (do total de 190 do mapa curricular).
+   - Shards de contexto do tutor: 35 arquivos JSON particionados (~90 MB total, max ~2.9 MB/shard).
+   - Cobertura de questões do tutor: 4.945 questões base indexadas com resolução de variantes de multicompetência (`competencyVariants`) e suporte a chaves compostas `${questionRef}::${competencyRef}`.
+
+### 24.2. Governança de Publicação pelo Ledger Estruturado e Reconciliação Verificável (RGO-002)
+
+1. **Autoridade Exclusiva da Decisão Estruturada:** A decisão registrada no `pbl_review_ledger.json` e validada pelo schema Draft 2020-12 (`pbl_review_decision.schema.json`) é a autoridade exclusiva para autorizar a publicação de pacotes pedagógicos. O relatório em Markdown (`*_review.md`) é conferido apenas quanto à existência em disco para preservar a trilha de auditoria humana, sendo proibido o uso de heurísticas por regex no Markdown para definir ou sobrepor o veredito de publicação.
+2. **Reconciliação Verificável por Comparação Efetiva de Versões:** Quando um pacote requer saneamento pós-aprovação (ex.: metadados ou formatação estrutural), o ledger deve registrar um objeto `reconciliation` rigorosamente tipado contendo:
+   - `reviewedSha256`: hash do arquivo no momento da auditoria independente;
+   - `targetSha256`: hash exato dos bytes do arquivo saneado em disco;
+   - `comparisonArtifact`: caminho para o artefato de auditoria/reconciliação que compara os dois estados;
+   - `comparisonResult`: valor estrito `'MATCH_VERIFIED'`, tanto no ledger quanto no artefato;
+   - `reviewedVersionFile`: caminho do arquivo da versão original revisada preservada em disco (`_reviewed.json`);
+   - `changedPaths`: lista exata de caminhos alterados;
+   - `deltaSummary`: justificativa explícita das alterações;
+   - `deltaClassification`: restrito a `metadata_only` ou `structural_formatting_only`;
+   - `pedagogicalContentIntegrity`: `const true`, atestando que o conteúdo pedagógico, enunciados e gabaritos não sofreram mutações;
+   - `authorizedBy` e `authorizedAt`: identificação e timestamp do auditor responsável.
+3. **Diffing Semântico Estruturado Real e Bloqueio Fail-Closed:** O publicador (`publish-pbl-packages.mjs`) computa o SHA-256 em tempo real e:
+   - Rejeita qualquer pacote cujo hash em disco não coincida estritamente com `targetSha256` (ou `reviewedSha256`);
+   - Localiza e valida o hash da versão revisada original em disco;
+   - Executa diffing estruturado de objetos (`getObjectDiffPaths`) entre o original revisado e o pacote atual;
+   - Para `metadata_only`: valida que todos os caminhos alterados reais pertencem à whitelist `ALLOWED_ADMIN_METADATA_PATHS` (`authorship.reviewStatus`, `authorship.publicationStatus`, `authorship.verifiedSha256`, `authorship.reviewedAt`, `authorship.reviewedBy`, `authorship.publishedAt`, `authorship.approvedSha256`, `authorship.reconciliationNotes`, `authorship.model`, `authorship.delegatedSessionId`), não tocam em nenhum prefixo pedagógico protegido e coincidem biunivocamente com `changedPaths`;
+   - Para `structural_formatting_only`: exige zero diferenças semânticas reais;
+   - Rejeita `comparisonResult !== 'MATCH_VERIFIED'` fail-closed.
+
+### 24.3. Política de Exposição Pré vs. Pós-Tentativa e Sincronização Autenticada de Sessão (RGO-001)
+
+1. **Autenticação Obrigatória na Sincronização (`POST /api/pbl/session/sync`):** O endpoint de sincronização no backend exige autenticação via token Bearer verificado pelo Firebase Admin (`requireFirebaseUser`). Requisições sem token, com token expirado ou de convidado (`guest`) são sumariamente rejeitadas com status `401 Unauthorized`.
+2. **Propriedade Estrita e Particionamento de Cache por Usuário:**
+   - O repositório em memória do servidor (`PBLServerSessionRepository`) utiliza chave composta `${authenticatedUserId}::${sessionId}` para armazenar sessões.
+   - O `userId` da sessão é forçado para o UID verificado no token. Tentativas do corpo da requisição de declarar um `userId` divergente do token autenticado resultam em rejeição com `403 Forbidden`.
+   - É impossibilitado o acesso ou cruzamento de sessões entre diferentes usuários.
+3. **Validação Estrutural e Contratual de Tentativas:** A sincronização valida a integridade do array `attempts` (presença de `attemptId`, `questionRef`, `userAnswer` não vazio e coerência com `sessionId`). Snapshots corrompidos são rejeitados com `400 Bad Request`.
+4. **Diferenciação entre Salvar Sessão e Liberar Resolução:** É permitido sincronizar e persistir sessões em fase `'tutor'` antes de o aluno responder (ex.: solicitação prévia de ajuda ao tutor). Contudo, a liberação do gabarito e da resolução na rota de contexto permanece bloqueada (`hideAnswer: true`) até que uma tentativa legítima seja submetida.
+5. **Vinculação à Questão Solicitada e ao Episódio:** A liberação da resolução vincula-se à presença de tentativa efetiva na questão especificamente solicitada (`questionRef`), independentemente de o motor ter avançado `currentQuestionRef` para a questão seguinte.
+6. **Proteção da Consulta de Leitura (`GET /api/pbl/tutor/context/:questionRef`):** A leitura que libera resolução pós-tentativa exige identidade verificada do usuário e confirmação de propriedade sobre a sessão. Consultas públicas ou não autenticadas recebem unicamente a projeção sem resolução (`hideAnswer: true`). Parâmetros de query do cliente (`hasAttempted`, `stage`, `full`, `includeSolution`) possuem autoridade zero.
+7. **Ordenação Temporal e Resiliência Local no Cliente:**
+   - O servidor verifica a monotonicidade do campo `updatedAt`, impedindo que um snapshot atrasado sobrescreva um estado mais recente da sessão.
+   - No cliente (`PBLSessionRepository.saveSession`), o salvamento local em `localStorage` é executado de forma síncrona/prioritária. Para usuários autenticados, a sincronização remota via `authenticatedFetch` é aguardada (`await`), retornando `{ syncedRemotely: true }` em caso de sucesso ou `{ syncedRemotely: false }` com preservação dos dados locais em caso de indisponibilidade de rede. Sessões de convidados (`guest`) permanecem estritamente locais.
 
 ## 25. Limites deste documento
 

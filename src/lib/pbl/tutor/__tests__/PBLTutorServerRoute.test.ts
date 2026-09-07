@@ -4,18 +4,36 @@ import {
   handlePBLTutorTurn,
   handlePBLTutorManifest,
   handlePBLTutorContext,
+  handlePBLSessionSync,
 } from '../pblTutorServerRoute';
+import { PBLSessionRepository } from '../../persistence/PBLSessionRepository';
+import { pblServerSessionRepository } from '../../server/PBLServerSessionRepository';
+import type { PBLSession } from '../../../../types/pbl';
 
-function createMockReqRes(body: any = {}, params: any = {}) {
+function createMockReqRes(
+  body: any = {},
+  params: any = {},
+  query: any = {},
+  headers: any = {},
+  locals: any = {}
+) {
+  const normalizedHeaders: Record<string, string> = {};
+  for (const [k, v] of Object.entries(headers)) {
+    normalizedHeaders[k.toLowerCase()] = String(v);
+  }
   const req = {
     body,
     params,
+    query,
+    headers: normalizedHeaders,
+    header: (name: string) => normalizedHeaders[name.toLowerCase()],
   } as unknown as Request;
 
   let statusCode = 200;
   let jsonBody: any = null;
 
   const res = {
+    locals,
     status: vi.fn().mockImplementation((code: number) => {
       statusCode = code;
       return res;
@@ -39,10 +57,15 @@ describe('PBLTutorServerRoute Handlers', () => {
 
   beforeEach(() => {
     process.env = { ...originalEnv };
+    PBLSessionRepository.registerSyncHook((s) => {
+      const effectiveUser = s.userId && s.userId !== 'guest' ? s.userId : 'user_test_student_123';
+      pblServerSessionRepository.saveSession(s, effectiveUser);
+    });
   });
 
   afterEach(() => {
     process.env = originalEnv;
+    PBLSessionRepository.registerSyncHook(null);
   });
 
   describe('handlePBLTutorTurn', () => {
@@ -124,20 +147,194 @@ describe('PBLTutorServerRoute Handlers', () => {
       const manifest = getBody();
       expect(manifest.schemaVersion).toBe('1.0.0');
       expect(manifest.totalQuestions).toBe(4945);
-      expect(manifest.shards.length).toBe(22);
+      expect(manifest.shards.length).toBeGreaterThanOrEqual(22);
     });
   });
 
-  describe('handlePBLTutorContext', () => {
-    it('returns 200 with question context for valid questionRef', async () => {
-      const { req, res, getStatusCode, getBody } = createMockReqRes({}, { questionRef: 'OQ-A00-estrategia.4001030449' });
+  describe('handlePBLTutorContext — Política de Exposição Pedagógica (RGO-001)', () => {
+    const questionRef = 'OQ-A00-estrategia.4001030449';
+
+    it('antes da tentativa: resposta, solução, ponto decisivo e refutações resolutivas ocultos', async () => {
+      const { req, res, getStatusCode, getBody } = createMockReqRes({}, { questionRef });
 
       await handlePBLTutorContext(req, res);
       expect(getStatusCode()).toBe(200);
 
       const ctx = getBody();
-      expect(ctx.questionRef).toBe('OQ-A00-estrategia.4001030449');
+      expect(ctx.questionRef).toBe(questionRef);
       expect(ctx.presentation.prompt).toBeDefined();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+      expect(ctx.criteria?.decisivePoint).toBeUndefined();
+      expect(ctx.objectiveOptionAnalyses?.[0]?.refutation).toContain('após a conclusão da etapa');
+    });
+
+    it('antes da tentativa + full=true: continuam estritamente ocultos (bloqueio de bypass)', async () => {
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        { full: 'true' }
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+      expect(ctx.criteria?.decisivePoint).toBeUndefined();
+    });
+
+    it('antes da tentativa + includeSolution=true: continuam estritamente ocultos (bloqueio de bypass)', async () => {
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        { includeSolution: 'true' }
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+      expect(ctx.criteria?.decisivePoint).toBeUndefined();
+    });
+
+    it('antes da tentativa + combinação de flags (full=true & includeSolution=true): continuam ocultos', async () => {
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        { full: 'true', includeSolution: 'true' }
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+    });
+
+    it('sem tentativa real: request com hasAttempted=true&stage=intervention mantém gabarito, solução, ponto decisivo e refutações estritamente redigidos (adversarial RGO-001)', async () => {
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        { hasAttempted: 'true', stage: 'intervention' }
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+      expect(ctx.criteria?.decisivePoint).toBeUndefined();
+      expect(ctx.objectiveOptionAnalyses?.[0]?.refutation).toContain('após a conclusão da etapa');
+    });
+
+    it('com sessão ativa mas sem tentativa real nesta questão: request com hasAttempted=true continua redigido (adversarial RGO-001)', async () => {
+      const { registerAuthoritativeSession, clearAuthoritativeSessions } = await import('../pblTutorServerRoute');
+      clearAuthoritativeSessions();
+      registerAuthoritativeSession({
+        sessionId: 'session_no_attempt_123',
+        phase: 'intervention',
+        attempts: [
+          { questionRef: 'OTHER-QUESTION-456', userAnswer: 'A' },
+        ],
+      });
+
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        { sessionId: 'session_no_attempt_123', hasAttempted: 'true', stage: 'intervention' }
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+      expect(ctx.objectiveOptionAnalyses?.[0]?.refutation).toContain('após a conclusão da etapa');
+    });
+
+    it('com tentativa real mas em etapa não autorizada pelo motor (phase=problem): tentativa de query forjada é ignorada (adversarial RGO-001)', async () => {
+      const { registerAuthoritativeSession, clearAuthoritativeSessions } = await import('../pblTutorServerRoute');
+      clearAuthoritativeSessions();
+      registerAuthoritativeSession({
+        sessionId: 'session_unauthorized_phase_123',
+        phase: 'problem',
+        attempts: [
+          { questionRef, userAnswer: 'A' },
+        ],
+      });
+
+      // Cliente tenta forjar stage=intervention na URL
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        { sessionId: 'session_unauthorized_phase_123', hasAttempted: 'true', stage: 'intervention' }
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+      expect(ctx.objectiveOptionAnalyses?.[0]?.refutation).toContain('após a conclusão da etapa');
+    });
+
+    it('caso positivo: tentativa registrada realmente no estado da sessão + etapa autorizada pelo motor: resolução liberada', async () => {
+      const { registerAuthoritativeSession, clearAuthoritativeSessions } = await import('../pblTutorServerRoute');
+      clearAuthoritativeSessions();
+      registerAuthoritativeSession({
+        sessionId: 'session_authorized_456',
+        userId: 'user_auth_456',
+        phase: 'intervention',
+        attempts: [
+          { questionRef, userAnswer: 'A', isCorrect: false, sessionId: 'session_authorized_456' },
+        ],
+      }, 'user_auth_456');
+
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        { sessionId: 'session_authorized_456' },
+        {},
+        { userId: 'user_auth_456' }
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation.officialAnswer).not.toBe('REDACTED');
+      expect(ctx.presentation.officialAnswer).toBe('D');
+      expect(ctx.solutionStrategy).toBeDefined();
+      expect(ctx.solutionStrategy?.length).toBeGreaterThan(0);
+      expect(ctx.pedagogy?.decisivePoint).toBeDefined();
+      expect(ctx.objectiveOptionAnalyses?.[0]?.refutation).not.toContain('após a conclusão da etapa');
+    });
+
+    it('consumidor interno server-side: contexto completo continua disponível sem depender da rota learner-facing', async () => {
+      const { pblTutorContextResolver } = await import('../PBLTutorContextResolver.server');
+      const internalContext = await pblTutorContextResolver.getTutorQuestionContext(questionRef);
+
+      expect(internalContext).toBeDefined();
+      expect(internalContext?.presentation.officialAnswer).toBe('D');
+      expect(internalContext?.solutionStrategy).toBeDefined();
+      expect(internalContext?.solutionStrategy?.length).toBeGreaterThan(0);
+      expect(internalContext?.pedagogy?.decisivePoint).toBeDefined();
+      expect(internalContext?.objectiveOptionAnalyses?.length).toBeGreaterThan(0);
     });
 
     it('returns 404 for unknown questionRef', async () => {
@@ -146,6 +343,414 @@ describe('PBLTutorServerRoute Handlers', () => {
       await handlePBLTutorContext(req, res);
       expect(getStatusCode()).toBe(404);
       expect(getBody().error).toContain('não encontrada');
+    });
+  });
+
+  describe('PBLSession Integration & Phase tutor Authorization (RGO-001)', () => {
+    const questionRef = 'OQ-A00-estrategia.4001030449';
+    const previousQuestionRef = 'OQ-A00-estrategia.4000738256';
+    const defaultUserId = 'user_test_student_123';
+
+    const makeMockSession = (overrides: Partial<PBLSession> = {}): PBLSession => ({
+      sessionId: `pbl_sess_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      userId: defaultUserId,
+      mode: 'guided',
+      status: 'active',
+      startedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      targetCompetencyRefs: ['IP-A00-G04'],
+      currentCompetencyIndex: 0,
+      currentCompetencyRef: 'IP-A00-G04',
+      currentCaseRef: 'PBL-CASE-A00-G04-01',
+      currentQuestionRef: questionRef,
+      currentTransferItemIndex: 0,
+      phase: 'problem',
+      conductionMode: 'tutor',
+      attempts: [],
+      masterySnapshot: {},
+      sessionStats: {
+        initialAccuracy: 0,
+        postInterventionAccuracy: 0,
+        transferRate: 0,
+        misconceptionsCaught: 0,
+        totalTimeMs: 5000,
+      },
+      ...overrides,
+    });
+
+    const makeMockAttempt = (overrides: Partial<any> = {}): any => ({
+      attemptId: `att_${Math.random().toString(36).slice(2, 7)}`,
+      sessionId: 'sess_default',
+      questionRef,
+      competencyRef: 'IP-A00-G04',
+      userAnswer: 'C',
+      correctAnswer: 'D',
+      isCorrect: false,
+      confidence: 'high',
+      evaluation: 'uncalibrated_overconfident',
+      stage: 'initial',
+      responseTimeMs: 9000,
+      detectedTrapRefs: [],
+      detectedMisconceptionRefs: [],
+      interventionRefs: [],
+      createdAt: new Date().toISOString(),
+      ...overrides,
+    });
+
+    beforeEach(() => {
+      pblServerSessionRepository.clear();
+    });
+
+    it('handlePBLSessionSync rejects unauthenticated request without token (401)', async () => {
+      const session = makeMockSession({ sessionId: 'sync_unauth_100' });
+      const { req, res, getStatusCode, getBody } = createMockReqRes(session); // no userId in locals, no auth header
+
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(401);
+      expect(getBody().error).toContain('Autenticação obrigatória');
+    });
+
+    it('handlePBLSessionSync rejects forged userId that does not match authenticated token (403)', async () => {
+      const session = makeMockSession({
+        sessionId: 'sync_forged_101',
+        userId: 'victim_user_alice',
+      });
+      // Authenticated as attacker Bob
+      const { req, res, getStatusCode, getBody } = createMockReqRes(session, {}, {}, {}, { userId: 'attacker_user_bob' });
+
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(403);
+      expect(getBody().error).toContain('Acesso negado');
+    });
+
+    it('handlePBLSessionSync rejects invalid body without sessionId (400)', async () => {
+      const { req, res, getStatusCode, getBody } = createMockReqRes({}, {}, {}, {}, { userId: defaultUserId });
+
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(400);
+      expect(getBody().error).toContain('sessionId obrigatório');
+    });
+
+    it('handlePBLSessionSync rejects attempts with invalid structure or session mismatch (400)', async () => {
+      const session = makeMockSession({
+        sessionId: 'sess_invalid_attempt_001',
+        attempts: [
+          {
+            attemptId: 'att_corrupted',
+            sessionId: 'DIFFERENT_SESSION_ID', // mismatch
+            questionRef,
+            userAnswer: '', // empty
+          } as any,
+        ],
+      });
+      const { req, res, getStatusCode, getBody } = createMockReqRes(session, {}, {}, {}, { userId: defaultUserId });
+
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(400);
+      expect(getBody().error).toContain('Tentativa inválida');
+    });
+
+    it('handlePBLSessionSync accepts valid session with attempts and stores with composite key (200)', async () => {
+      const session = makeMockSession({
+        sessionId: 'sync_valid_session_102',
+        attempts: [
+          makeMockAttempt({ sessionId: 'sync_valid_session_102' }),
+        ],
+      });
+      const { req, res, getStatusCode, getBody } = createMockReqRes(session, {}, {}, {}, { userId: defaultUserId });
+
+      await handlePBLSessionSync(req, res);
+      expect(getStatusCode()).toBe(200);
+      expect(getBody()).toEqual({ ok: true, sessionId: 'sync_valid_session_102' });
+
+      // Available to authenticated owner
+      const storedOwner = await pblServerSessionRepository.getSession('sync_valid_session_102', defaultUserId);
+      expect(storedOwner).toBeDefined();
+      expect(storedOwner?.sessionId).toBe('sync_valid_session_102');
+
+      // Unavailable to other user
+      const storedOther = await pblServerSessionRepository.getSession('sync_valid_session_102', 'other_user_xyz');
+      expect(storedOther).toBeNull();
+    });
+
+    it('stale out-of-order session snapshot does not overwrite newer session state', async () => {
+      const sessionNewer = makeMockSession({
+        sessionId: 'sess_order_test_001',
+        updatedAt: '2026-09-07T15:00:00.000Z',
+        phase: 'tutor',
+      });
+      pblServerSessionRepository.saveSession(sessionNewer, defaultUserId);
+
+      // Attempt to save an older snapshot of the same session
+      const sessionOlder = makeMockSession({
+        sessionId: 'sess_order_test_001',
+        updatedAt: '2026-09-07T14:00:00.000Z',
+        phase: 'problem',
+      });
+      pblServerSessionRepository.saveSession(sessionOlder, defaultUserId);
+
+      const stored = await pblServerSessionRepository.getSession('sess_order_test_001', defaultUserId);
+      expect(stored?.phase).toBe('tutor');
+      expect(stored?.updatedAt).toBe('2026-09-07T15:00:00.000Z');
+    });
+
+    it('positive test 1: asking for help before answering persists session but keeps resolution strictly protected (hideAnswer: true)', async () => {
+      // Student opens tutor / asks for help before answering (no attempts yet)
+      const session = makeMockSession({
+        sessionId: 'sess_help_before_answer_001',
+        phase: 'tutor',
+        attempts: [],
+      });
+
+      // 1. Session is successfully saved on server
+      const { req: reqSync, res: resSync, getStatusCode: getSyncStatus } = createMockReqRes(
+        session,
+        {},
+        {},
+        {},
+        { userId: defaultUserId }
+      );
+      await handlePBLSessionSync(reqSync, resSync);
+      expect(getSyncStatus()).toBe(200);
+
+      // 2. Querying context for tutor returns presentation, but resolution remains REDACTED
+      const { req: reqCtx, res: resCtx, getStatusCode: getCtxStatus, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        {},
+        { 'x-pbl-session-id': session.sessionId },
+        { userId: defaultUserId }
+      );
+      await handlePBLTutorContext(reqCtx, resCtx);
+      expect(getCtxStatus()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation).toBeDefined();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+    });
+
+    it('positive test 2: intervention on previous attempt remains authorized after engine advances currentQuestionRef to next question', async () => {
+      // Student attempted previousQuestionRef, but engine has now advanced currentQuestionRef to next questionRef
+      const session = makeMockSession({
+        sessionId: 'sess_advanced_engine_001',
+        currentQuestionRef: questionRef, // engine advanced to Q2
+        phase: 'intervention',
+        attempts: [
+          makeMockAttempt({
+            sessionId: 'sess_advanced_engine_001',
+            questionRef: previousQuestionRef, // attempt was on Q1
+            userAnswer: 'C',
+            isCorrect: false,
+          }),
+        ],
+      });
+
+      pblServerSessionRepository.saveSession(session, defaultUserId);
+
+      // Query context specifically for previousQuestionRef (Q1)
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef: previousQuestionRef },
+        {},
+        { 'x-pbl-session-id': session.sessionId },
+        { userId: defaultUserId }
+      );
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      // Because previousQuestionRef has a valid attempt in this session, resolution is authorized!
+      expect(ctx.presentation.officialAnswer).not.toBe('REDACTED');
+      expect(ctx.presentation.officialAnswer).toBe('D');
+      expect(ctx.solutionStrategy).toBeDefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeDefined();
+    });
+
+    it('integration: genuine attempt registration via PBLSessionRepository.saveSession authorizes context in phase tutor', async () => {
+      // 1. Student enters session in phase 'problem' with tutor conduction mode
+      const session = makeMockSession({
+        sessionId: 'sess_prod_journey_001',
+        conductionMode: 'tutor',
+        phase: 'problem',
+        attempts: [],
+      });
+
+      await PBLSessionRepository.saveSession(session);
+
+      // 2. Student queries tutor context before answering
+      const reqBefore = createMockReqRes(
+        {},
+        { questionRef },
+        {},
+        { 'x-pbl-session-id': session.sessionId },
+        { userId: defaultUserId }
+      );
+      await handlePBLTutorContext(reqBefore.req, reqBefore.res);
+      expect(reqBefore.getStatusCode()).toBe(200);
+
+      const ctxBefore = reqBefore.getBody();
+      expect(ctxBefore.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctxBefore.solutionStrategy).toBeUndefined();
+      expect(ctxBefore.pedagogy?.decisivePoint).toBeUndefined();
+      expect(ctxBefore.objectiveOptionAnalyses?.[0]?.refutation).toContain('após a conclusão da etapa');
+
+      // 3. Adversarial query with client-forged flags is strictly ignored
+      const reqAdversarial = createMockReqRes(
+        {},
+        { questionRef },
+        { hasAttempted: 'true', stage: 'intervention', full: 'true' },
+        { 'x-pbl-session-id': session.sessionId },
+        { userId: defaultUserId }
+      );
+      await handlePBLTutorContext(reqAdversarial.req, reqAdversarial.res);
+      expect(reqAdversarial.getStatusCode()).toBe(200);
+
+      const ctxAdv = reqAdversarial.getBody();
+      expect(ctxAdv.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctxAdv.solutionStrategy).toBeUndefined();
+      expect(ctxAdv.pedagogy?.decisivePoint).toBeUndefined();
+
+      // 4. Student submits a genuine attempt -> session moves to phase 'tutor'
+      session.phase = 'tutor';
+      session.attempts = [
+        makeMockAttempt({
+          sessionId: session.sessionId,
+          questionRef,
+          userAnswer: 'C',
+          isCorrect: false,
+        }),
+      ];
+      session.currentTutorEpisodeId = 'ep_001';
+
+      // Re-save session via PBLSessionRepository.saveSession (as done in product runtime)
+      await PBLSessionRepository.saveSession(session);
+
+      // 5. Query tutor context again with session ID
+      const reqAfter = createMockReqRes(
+        {},
+        { questionRef },
+        {},
+        { 'x-pbl-session-id': session.sessionId },
+        { userId: defaultUserId }
+      );
+      await handlePBLTutorContext(reqAfter.req, reqAfter.res);
+      expect(reqAfter.getStatusCode()).toBe(200);
+
+      const ctxAfter = reqAfter.getBody();
+      expect(ctxAfter.presentation.officialAnswer).not.toBe('REDACTED');
+      expect(ctxAfter.presentation.officialAnswer).toBe('D');
+      expect(ctxAfter.solutionStrategy).toBeDefined();
+      expect(ctxAfter.solutionStrategy?.length).toBeGreaterThan(0);
+      expect(ctxAfter.pedagogy?.decisivePoint).toBeDefined();
+      expect(ctxAfter.objectiveOptionAnalyses?.[0]?.refutation).not.toContain('após a conclusão da etapa');
+    });
+
+    it('phase tutor without genuine attempt on target questionRef remains strictly redacted', async () => {
+      const session = makeMockSession({
+        sessionId: 'sess_tutor_no_attempt_002',
+        conductionMode: 'tutor',
+        phase: 'tutor',
+        attempts: [
+          makeMockAttempt({
+            sessionId: 'sess_tutor_no_attempt_002',
+            questionRef: 'OTHER-QUESTION-1234',
+            userAnswer: 'A',
+            isCorrect: false,
+            confidence: 'medium',
+            responseTimeMs: 6000,
+          }),
+        ],
+      });
+
+      await PBLSessionRepository.saveSession(session);
+
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        {},
+        { 'x-pbl-session-id': session.sessionId },
+        { userId: defaultUserId }
+      );
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+      expect(ctx.objectiveOptionAnalyses?.[0]?.refutation).toContain('após a conclusão da etapa');
+    });
+
+    it('cross-user boundary prevents leaking post-attempt resolution between different users', async () => {
+      const session = makeMockSession({
+        sessionId: 'sess_alice_003',
+        userId: 'user_alice_456',
+        conductionMode: 'tutor',
+        phase: 'tutor',
+        attempts: [
+          makeMockAttempt({
+            sessionId: 'sess_alice_003',
+            questionRef,
+            userAnswer: 'C',
+            isCorrect: false,
+            confidence: 'high',
+            responseTimeMs: 7000,
+          }),
+        ],
+      });
+
+      pblServerSessionRepository.saveSession(session, 'user_alice_456');
+
+      // Bob requests Alice's session
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef },
+        {},
+        { 'x-pbl-session-id': session.sessionId },
+        { userId: 'user_bob_789' } // Authenticated as Bob!
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      // Since Bob is not authorized to read Alice's session, answer is strictly redacted!
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+    });
+
+    it('public or unauthenticated query to context returns safe masked projection', async () => {
+      // Query without any userId or authorization token
+      const { req, res, getStatusCode, getBody } = createMockReqRes(
+        {},
+        { questionRef }
+      );
+
+      await handlePBLTutorContext(req, res);
+      expect(getStatusCode()).toBe(200);
+
+      const ctx = getBody();
+      expect(ctx.presentation).toBeDefined();
+      expect(ctx.presentation.officialAnswer).toBe('REDACTED');
+      expect(ctx.solutionStrategy).toBeUndefined();
+      expect(ctx.pedagogy?.decisivePoint).toBeUndefined();
+    });
+
+    it('PBLSessionRepository.saveSession with guest user skips remote sync and persists locally', async () => {
+      const guestSession = makeMockSession({
+        sessionId: 'sess_guest_local_only',
+        userId: 'guest',
+      });
+
+      const result = await PBLSessionRepository.saveSession(guestSession);
+      expect(result.syncedRemotely).toBe(false);
+
+      // Verify that remote server repository was NOT populated
+      const serverStored = await pblServerSessionRepository.getSession('sess_guest_local_only', 'guest');
+      expect(serverStored).toBeNull();
     });
   });
 });

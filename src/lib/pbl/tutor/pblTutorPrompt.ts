@@ -30,13 +30,27 @@ export function formatTutorPrompt(
   context: PBLTutorQuestionContext
 ): string {
   const parts: string[] = [];
+  const hasAttempted = Boolean(request.studentAttemptContext?.userAnswer);
+  const isDirectExplanation = Boolean(request.directExplanationRequested);
+  const isUnavailable = Boolean(
+    context.presentation.isUnavailable ||
+    !context.presentation.prompt ||
+    !context.presentation.officialAnswer
+  );
 
   parts.push(`=== DADOS DA QUESTÃO E COMPETÊNCIA ===`);
   const compRef = context.primaryCompetencyRef || context.competencyRefs?.[0] || 'Competência PBL';
   const compTitle = context.competencyTitle || compRef;
   parts.push(`Competência: ${compTitle} (${compRef})`);
+  if (context.pedagogy?.learningObjectives && context.pedagogy.learningObjectives.length > 0) {
+    parts.push(`Objetivos de Aprendizagem: ${context.pedagogy.learningObjectives.join(', ')}`);
+  }
   parts.push(`Enunciado da Questão:`);
-  parts.push(context.presentation.prompt);
+  if (isUnavailable) {
+    parts.push(`[QUESTÃO INDISPONÍVEL]: O conteúdo desta questão não possui todos os dados necessários (enunciado ou gabarito) para resolução assistida pelo tutor.`);
+  } else {
+    parts.push(context.presentation.prompt || '(Enunciado não fornecido)');
+  }
   if (context.presentation.command && context.presentation.command !== context.presentation.prompt) {
     parts.push(`Comando: ${context.presentation.command}`);
   }
@@ -44,16 +58,23 @@ export function formatTutorPrompt(
   if (context.presentation.options && context.presentation.options.length > 0) {
     parts.push(`Alternativas:`);
     for (const opt of context.presentation.options) {
-      parts.push(`[${opt.label}] ${opt.text}`);
+      const optLetter = opt.label || (opt as any).letter || '';
+      parts.push(`[${optLetter}] ${opt.text}`);
     }
   }
 
-  parts.push(`Gabarito Oficial: ${context.presentation.officialAnswer}`);
-  if (context.officialCommentary) {
-    parts.push(`Comentário Oficial: ${context.officialCommentary}`);
+  if (hasAttempted) {
+    parts.push(`Gabarito Oficial: ${context.presentation.officialAnswer || '(Não disponível)'}`);
+    if (context.officialCommentary) {
+      parts.push(`Comentário Oficial: ${context.officialCommentary}`);
+    }
+  } else {
+    parts.push(`Gabarito Oficial: [RESERVADO ATÉ A SUBMISSÃO DA RESPOSTA]`);
   }
 
   const rules = context.criteria?.rules || context.pedagogy?.rules || [];
+  const renderedBoundaryRefs = new Set<string>();
+
   if (rules.length > 0) {
     parts.push(`\n=== REGRAS E CONDIÇÕES NORMATIVAS ===`);
     for (const rule of rules) {
@@ -65,6 +86,19 @@ export function formatTutorPrompt(
       if (rule.exceptions && rule.exceptions.length > 0) {
         parts.push(`  Exceções: ${rule.exceptions.join('; ')}`);
       }
+      if (rule.boundaries && rule.boundaries.length > 0) {
+        for (const b of rule.boundaries) {
+          renderedBoundaryRefs.add(b.boundaryRef || b.id || b.title);
+          parts.push(`  Limite/Contorno da Regra (${b.title}):`);
+          if (b.text) parts.push(`    Diretriz: ${b.text}`);
+          if (b.conditions?.length) parts.push(`    Condições: ${b.conditions.join('; ')}`);
+          if (b.exceptions?.length) parts.push(`    Exceções: ${b.exceptions.join('; ')}`);
+          if (b.scope) parts.push(`    Escopo: ${b.scope}`);
+          if (b.limits?.length) parts.push(`    Limites: ${b.limits.join('; ')}`);
+          if (b.nonApplicabilityConditions?.length) parts.push(`    Não se aplica quando: ${b.nonApplicabilityConditions.join('; ')}`);
+          if (b.traps?.length) parts.push(`    Armadilhas de banca: ${b.traps.join('; ')}`);
+        }
+      }
       if (rule.resolvedTable) {
         parts.push(`  Tabela de Apoio (${rule.resolvedTable.title}):`);
         parts.push(`  Colunas: ${rule.resolvedTable.columns.join(' | ')}`);
@@ -75,6 +109,24 @@ export function formatTutorPrompt(
     }
   }
 
+  // Standalone boundaries not attached to an individual rule
+  const standaloneBoundaries = (context.criteria?.boundaries || []).filter(
+    (b) => !renderedBoundaryRefs.has(b.boundaryRef || b.id || b.title)
+  );
+  if (standaloneBoundaries.length > 0) {
+    parts.push(`\n=== LIMITES E FRONTEIRAS NORMATIVAS (RULE BOUNDARIES) ===`);
+    for (const b of standaloneBoundaries) {
+      parts.push(`• Limite: ${b.title}`);
+      if (b.text) parts.push(`  Diretriz: ${b.text}`);
+      if (b.conditions?.length) parts.push(`  Condições: ${b.conditions.join('; ')}`);
+      if (b.exceptions?.length) parts.push(`  Exceções: ${b.exceptions.join('; ')}`);
+      if (b.scope) parts.push(`  Escopo: ${b.scope}`);
+      if (b.limits?.length) parts.push(`  Limites: ${b.limits.join('; ')}`);
+      if (b.nonApplicabilityConditions?.length) parts.push(`  Não se aplica quando: ${b.nonApplicabilityConditions.join('; ')}`);
+      if (b.traps?.length) parts.push(`  Armadilhas de banca: ${b.traps.join('; ')}`);
+    }
+  }
+
   const contrasts = context.criteria?.contrasts || context.pedagogy?.contrasts || [];
   if (contrasts.length > 0) {
     parts.push(`\n=== CONTRASTES DECISIVOS ===`);
@@ -82,6 +134,12 @@ export function formatTutorPrompt(
       parts.push(`• Contraste: ${contrast.title}`);
       parts.push(`  Polo A: ${contrast.poleA} vs Polo B: ${contrast.poleB}`);
       parts.push(`  Critério Decisivo: ${contrast.decisionCriterion}`);
+      if (contrast.sideACriteria && contrast.sideACriteria.length > 0) {
+        parts.push(`    Critérios Polo A (${contrast.poleA}): ${contrast.sideACriteria.join('; ')}`);
+      }
+      if (contrast.sideBCriteria && contrast.sideBCriteria.length > 0) {
+        parts.push(`    Critérios Polo B (${contrast.poleB}): ${contrast.sideBCriteria.join('; ')}`);
+      }
     }
   }
 
@@ -94,10 +152,48 @@ export function formatTutorPrompt(
     }
   }
 
-  if (context.objectiveOptionAnalyses && context.objectiveOptionAnalyses.length > 0) {
+  const standaloneTables = context.criteria?.tables || context.pedagogy?.tables || [];
+  if (standaloneTables.length > 0) {
+    parts.push(`\n=== TABELAS DE APOIO E MATRIZES NORMATIVAS ===`);
+    for (const table of standaloneTables) {
+      parts.push(`• Tabela: ${table.title}`);
+      parts.push(`  Colunas: ${table.columns.join(' | ')}`);
+      for (const row of table.rows) {
+        parts.push(`  Linha: ${row.join(' | ')}`);
+      }
+    }
+  }
+
+  // Worked example / Solution strategy is exposed ONLY after the attempt has been submitted
+  if (hasAttempted && context.solutionStrategy && context.solutionStrategy.length > 0) {
+    parts.push(`\n=== ESTRATÉGIA DE RESOLUÇÃO GUIADA (WORKED EXAMPLE) ===`);
+    for (const step of context.solutionStrategy) {
+      parts.push(`Passo ${step.stepNumber}: ${step.action}`);
+      if (step.rationale) {
+        parts.push(`  Justificativa: ${step.rationale}`);
+      }
+    }
+  }
+
+  // Decisive point and distractor common mistakes are exposed ONLY after the attempt has been submitted
+  const decisivePoint = context.pedagogy?.decisivePoint;
+  const commonMistake = context.pedagogy?.commonMistake;
+  if (hasAttempted && (decisivePoint || commonMistake)) {
+    parts.push(`\n=== INTELIGÊNCIA PEDAGÓGICA DA BANCA ===`);
+    if (decisivePoint) {
+      parts.push(`• Ponto Decisivo: ${decisivePoint}`);
+    }
+    if (commonMistake) {
+      parts.push(`• Hipótese Frequente de Distrator (Banca): ${commonMistake}`);
+    }
+  }
+
+  // Objective option refutations are exposed ONLY after the attempt has been submitted
+  if (hasAttempted && context.objectiveOptionAnalyses && context.objectiveOptionAnalyses.length > 0) {
     parts.push(`\n=== ANÁLISE OBJETIVA DAS ALTERNATIVAS ===`);
     for (const opt of context.objectiveOptionAnalyses) {
-      parts.push(`[${opt.label}] ${opt.isCorrect ? '(CORRETA)' : '(INCORRETA)'} ${opt.optionText}`);
+      const optLetter = opt.label || (opt as any).letter || '';
+      parts.push(`[${optLetter}] ${opt.isCorrect ? '(CORRETA)' : '(INCORRETA)'} ${opt.optionText}`);
       parts.push(`Refutação Didática: ${opt.refutation}`);
     }
   }
@@ -106,8 +202,10 @@ export function formatTutorPrompt(
   if (request.studentAttemptContext) {
     const at = request.studentAttemptContext;
     parts.push(`Etapa da tentativa: ${at.attemptStage}`);
-    parts.push(`Resposta marcada pelo aluno: ${at.userAnswer}`);
-    parts.push(`Resultado da tentativa: ${at.isCorrect ? 'Correta' : 'Incorreta'}`);
+    parts.push(`Resposta marcada pelo aluno: ${at.userAnswer || '(Ainda não respondeu)'}`);
+    if (at.userAnswer) {
+      parts.push(`Resultado da tentativa: ${at.isCorrect ? 'Correta' : 'Incorreta'}`);
+    }
     if (at.confidence) {
       parts.push(`Nível de confiança declarado pelo aluno: ${at.confidence}`);
     }
@@ -115,7 +213,15 @@ export function formatTutorPrompt(
     parts.push(`O aluno solicitou apoio antes de submeter a tentativa.`);
   }
 
-  if (request.directExplanationRequested) {
+  if (!hasAttempted) {
+    if (isDirectExplanation) {
+      parts.push(`\n[MODO EXPLICAÇÃO DIRETA PRÉ-TENTATIVA]: O aluno solicitou explicação direta antes de responder à questão. Explique com profundidade as regras normativas, critérios e métodos procedimentais aplicáveis, mas NÃO revele a alternativa correta nem a resolução pronta desta questão específica.`);
+    } else {
+      parts.push(`\n[MODO AJUDA PRÉVIA / PISTA]: O aluno ainda NÃO respondeu à questão. Forneça orientação socrática, relembre a regra geral, o contraste ou o método procedimental SEM revelar a alternativa correta ou dar a resposta pronta.`);
+    }
+  }
+
+  if (request.directExplanationRequested && hasAttempted) {
     parts.push(`[SOLICITAÇÃO EXPLÍCITA]: O aluno pediu explicação direta da regra e do gabarito.`);
   }
   if (request.cadernoSynthesisRequested) {

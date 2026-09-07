@@ -32,15 +32,167 @@ async function main() {
   console.log('[build-pbl-tutor-context] Iniciando compilação da projeção do tutor PBL...');
 
   // 1. Carregar artefatos base do PBL
-  const [competencyMap, cases, authoredQuestions, pedagogyIndex, linksIndex] = await Promise.all([
+  const [competencyMap, cases, authoredQuestions, pedagogyIndex, linksIndex, authoredPackages] = await Promise.all([
     readJson(path.join(PBL_DIR, 'pbl_competency_map.json')),
     readJson(path.join(PBL_DIR, 'pbl_cases.json')),
     readJson(path.join(PBL_DIR, 'pbl_authored_questions.json')),
     readJson(path.join(PBL_DIR, 'question_pedagogy_index.json')),
     readJson(path.join(PBL_DIR, 'question_competency_links.json')),
+    readJson(path.join(PBL_DIR, 'pbl_authored_packages.json')).catch(() => []),
   ]);
 
-  console.log(`[build-pbl-tutor-context] Carregadas ${competencyMap.length} competências e ${cases.length} casos.`);
+  console.log(`[build-pbl-tutor-context] Carregadas ${competencyMap.length} competências, ${cases.length} casos e ${authoredPackages.length} pacotes de autoria.`);
+
+  const authoredPackageQuestions = new Map();
+  const authoredPackageQuestionsByComp = new Map();
+  const authoredWorkedExamples = new Map();
+  const authoredWorkedExamplesByComp = new Map();
+  const authoredRulesByQuestion = new Map();
+  const authoredProceduresByQuestion = new Map();
+  const authoredContrastsByQuestion = new Map();
+  const authoredTablesByQuestion = new Map();
+  const authoredBoundariesByQuestion = new Map();
+
+  for (const pkg of (authoredPackages || [])) {
+    for (const q of (pkg.questions || [])) {
+      if (q.id) {
+        authoredPackageQuestionsByComp.set(`${q.id}::${pkg.competencyRef}`, q);
+        if (!authoredPackageQuestions.has(q.id)) {
+          authoredPackageQuestions.set(q.id, q);
+        }
+      }
+    }
+
+    for (const itv of (pkg.interventions || [])) {
+      const qRefs = itv.appliesToQuestionRefs || [];
+
+      for (const h of (itv.hint || [])) {
+        if (h.block?.type === 'rule') {
+          const ruleObj = {
+            ruleRef: h.id || `RULE-${pkg.competencyRef}`,
+            unitId: pkg.unitId,
+            title: h.block.title || 'Regra Canônica',
+            statement: h.block.statement || '',
+            conditions: Array.isArray(h.block.conditions) ? h.block.conditions : [],
+            exceptions: Array.isArray(h.block.exceptions) ? h.block.exceptions : [],
+          };
+          for (const qRef of qRefs) {
+            if (!authoredRulesByQuestion.has(qRef)) authoredRulesByQuestion.set(qRef, []);
+            authoredRulesByQuestion.get(qRef).push(ruleObj);
+          }
+        } else if (h.block?.type === 'rule_boundary') {
+          const boundaryObj = {
+            boundaryRef: h.id || `BOUNDARY-HNT-${pkg.competencyRef}`,
+            title: h.block.title || 'Limites e Armadilhas da Regra',
+            text: h.block.text || '',
+            conditions: Array.isArray(h.block.conditions) ? h.block.conditions : [],
+            exceptions: Array.isArray(h.block.exceptions) ? h.block.exceptions : [],
+            scope: h.block.scope || '',
+            limits: Array.isArray(h.block.limits) ? h.block.limits : [],
+            traps: Array.isArray(h.block.traps) ? h.block.traps : [],
+            nonApplicabilityConditions: Array.isArray(h.block.nonApplicabilityConditions) ? h.block.nonApplicabilityConditions : [],
+            sourceRefs: Array.isArray(h.sourceRefs) ? h.sourceRefs : [],
+            derivation: h.derivation || undefined,
+            interventionId: itv.id,
+            layer: 'hint',
+          };
+          for (const qRef of qRefs) {
+            if (!authoredBoundariesByQuestion.has(qRef)) authoredBoundariesByQuestion.set(qRef, []);
+            authoredBoundariesByQuestion.get(qRef).push(boundaryObj);
+          }
+        } else if (h.block?.type === 'table') {
+          const tableObj = {
+            id: h.id || `TABLE-HNT-${pkg.competencyRef}-${authoredTablesByQuestion.size + 1}`,
+            unitId: pkg.unitId,
+            title: h.block.title || h.block.caption || 'Tabela de Apoio',
+            columns: Array.isArray(h.block.headers) ? h.block.headers : (Array.isArray(h.block.columns) ? h.block.columns : []),
+            rows: Array.isArray(h.block.rows) ? h.block.rows : [],
+          };
+          for (const qRef of qRefs) {
+            if (!authoredTablesByQuestion.has(qRef)) authoredTablesByQuestion.set(qRef, []);
+            authoredTablesByQuestion.get(qRef).push(tableObj);
+          }
+        }
+      }
+
+      for (const p of (itv.partial || [])) {
+        if (p.block?.type === 'procedure') {
+          const pObj = {
+            procedureRef: p.id || `PROC-${pkg.competencyRef}`,
+            title: p.block.title || 'Procedimento Passo a Passo',
+            markdown: Array.isArray(p.block.steps)
+              ? p.block.steps.map((s) => `${s.order || ''}. **${s.action || ''}**: ${s.explanation || ''} _(Teste: ${s.test || ''})_`).join('\n\n')
+              : '',
+            unitId: pkg.unitId,
+          };
+          for (const qRef of qRefs) {
+            if (!authoredProceduresByQuestion.has(qRef)) authoredProceduresByQuestion.set(qRef, []);
+            authoredProceduresByQuestion.get(qRef).push(pObj);
+          }
+        } else if (p.block?.type === 'contrast') {
+          const cObj = {
+            contrastRef: p.id || `CONTRAST-${pkg.competencyRef}`,
+            unitId: pkg.unitId,
+            title: p.block.title || 'Contraste Conceitual',
+            poleA: p.block.sideA?.label || '',
+            poleB: p.block.sideB?.label || '',
+            sideACriteria: Array.isArray(p.block.sideA?.criteria) ? p.block.sideA.criteria : [],
+            sideBCriteria: Array.isArray(p.block.sideB?.criteria) ? p.block.sideB.criteria : [],
+            decisionCriterion: p.block.decisiveDifference || '',
+            examples: [],
+          };
+          for (const qRef of qRefs) {
+            if (!authoredContrastsByQuestion.has(qRef)) authoredContrastsByQuestion.set(qRef, []);
+            authoredContrastsByQuestion.get(qRef).push(cObj);
+          }
+        } else if (p.block?.type === 'table') {
+          const tableObj = {
+            id: p.id || `TABLE-PRT-${pkg.competencyRef}-${authoredTablesByQuestion.size + 1}`,
+            unitId: pkg.unitId,
+            title: p.block.title || p.block.caption || 'Tabela de Procedimento',
+            columns: Array.isArray(p.block.headers) ? p.block.headers : (Array.isArray(p.block.columns) ? p.block.columns : []),
+            rows: Array.isArray(p.block.rows) ? p.block.rows : [],
+          };
+          for (const qRef of qRefs) {
+            if (!authoredTablesByQuestion.has(qRef)) authoredTablesByQuestion.set(qRef, []);
+            authoredTablesByQuestion.get(qRef).push(tableObj);
+          }
+        } else if (p.block?.type === 'rule_boundary') {
+          const boundaryObj = {
+            boundaryRef: p.id || `BOUNDARY-PRT-${pkg.competencyRef}`,
+            title: p.block.title || 'Limites e Armadilhas da Regra',
+            text: p.block.text || '',
+            conditions: Array.isArray(p.block.conditions) ? p.block.conditions : [],
+            exceptions: Array.isArray(p.block.exceptions) ? p.block.exceptions : [],
+            scope: p.block.scope || '',
+            limits: Array.isArray(p.block.limits) ? p.block.limits : [],
+            traps: Array.isArray(p.block.traps) ? p.block.traps : [],
+            nonApplicabilityConditions: Array.isArray(p.block.nonApplicabilityConditions) ? p.block.nonApplicabilityConditions : [],
+            sourceRefs: Array.isArray(p.sourceRefs) ? p.sourceRefs : [],
+            derivation: p.derivation || undefined,
+            interventionId: itv.id,
+            layer: 'partial',
+          };
+          for (const qRef of qRefs) {
+            if (!authoredBoundariesByQuestion.has(qRef)) authoredBoundariesByQuestion.set(qRef, []);
+            authoredBoundariesByQuestion.get(qRef).push(boundaryObj);
+          }
+        }
+      }
+
+      for (const f of (itv.full || [])) {
+        const fullQRefs = f.appliesToQuestionRefs || qRefs;
+        for (const qRef of fullQRefs) {
+          authoredWorkedExamplesByComp.set(`${qRef}::${pkg.competencyRef}`, f);
+          if (!authoredWorkedExamples.has(qRef)) {
+            authoredWorkedExamples.set(qRef, f);
+          }
+        }
+      }
+    }
+  }
+
+  console.log(`[build-pbl-tutor-context] Indexados ${authoredPackageQuestions.size} itens únicos (${authoredPackageQuestionsByComp.size} mapeamentos por competência) e ${authoredWorkedExamples.size} resoluções guiadas dos pacotes de autoria.`);
 
   const competenciesById = new Map();
   for (const comp of competencyMap) {
@@ -245,7 +397,7 @@ async function main() {
   // 5. Carregar shards de questões normalizadas para fallback
   console.log('[build-pbl-tutor-context] Carregando shards de questões oficiais...');
   const officialNormalizedMap = new Map();
-  const officialPartFiles = (await readdir(OFFICIAL_PARTS_DIR)).filter((f) => f.endsWith('.json'));
+  const officialPartFiles = (await readdir(OFFICIAL_PARTS_DIR)).filter((f) => f.includes('.normalized.') && f.endsWith('.json'));
   for (const partFile of officialPartFiles) {
     const partData = await readJson(path.join(OFFICIAL_PARTS_DIR, partFile));
     if (Array.isArray(partData)) {
@@ -293,13 +445,13 @@ async function main() {
 
   for (const [questionRef, pedagogy] of Object.entries(pedagogyIndex)) {
     const link = linksIndex[questionRef] || {};
-    const primaryCompRef = link.primaryCompetencyRef || pedagogy.primaryUnitRef || '';
+    const primaryCompRef = link.primaryCompetencyRef || link.competencyId || pedagogy.primaryUnitRef || '';
     const comp = competenciesById.get(primaryCompRef);
     const pblCase = comp ? casesByCompetency.get(comp.competencyId) : undefined;
     const unitId = comp?.unitId || pedagogy.primaryUnitRef || (pedagogy.allUnitRefs && pedagogy.allUnitRefs[0]) || '';
     const lessonId = comp?.lessonId || pedagogy.lessonId || (unitId ? unitId.split('-')[1] : '');
 
-    // A. Resolução dos dados da questão
+    // A. Resolução em cascata dos dados da questão (priorizando viewQuestion com payload completo)
     let prompt = '';
     let command = '';
     let supportBlocks = [];
@@ -315,54 +467,128 @@ async function main() {
     const normalized = officialNormalizedMap.get(questionRef);
 
     if (viewQuestion) {
-      prompt = viewQuestion.prompt || viewQuestion.presentation?.command || '';
-      command = viewQuestion.presentation?.command || prompt;
-      supportBlocks = Array.isArray(viewQuestion.presentation?.supportBlocks)
-        ? viewQuestion.presentation.supportBlocks
-        : [];
-      options = Array.isArray(viewQuestion.options)
-        ? viewQuestion.options.map((opt) => ({
-            letter: opt.label || opt.letter || '',
-            text: opt.text || '',
-          }))
-        : [];
-      officialAnswer = viewQuestion.officialAnswer || '';
-      questionType = viewQuestion.questionType || (options.length > 2 ? 'multiple_choice' : 'true_false');
-      examBoard = viewQuestion.examBoard || '';
-      year = viewQuestion.year;
-      officialCommentary = viewQuestion.explanation || viewQuestion.commentary || '';
-    } else if (authored) {
-      prompt = authored.prompt || '';
-      command = prompt;
-      options = Array.isArray(authored.options)
-        ? authored.options.map((opt) => ({
-            letter: opt.label || opt.letter || '',
-            text: opt.text || '',
-          }))
-        : [];
-      officialAnswer = authored.correctAnswer || '';
-      questionType = authored.questionType || (options.length > 2 ? 'multiple_choice' : 'true_false');
-      examBoard = authored.examBoard || 'Questão autoral SuVeCA';
-      year = authored.year || 2026;
-      officialCommentary = authored.commentary || '';
-    } else if (normalized) {
-      prompt = normalized.prompt || '';
-      command = prompt;
-      if (normalized.supportText) {
+      prompt = viewQuestion.questionPayload?.prompt
+        || viewQuestion.prompt
+        || viewQuestion.presentation?.prompt
+        || viewQuestion.presentation?.command
+        || '';
+      command = viewQuestion.presentation?.command
+        || viewQuestion.questionPayload?.prompt
+        || prompt;
+
+      if (Array.isArray(viewQuestion.presentation?.supportBlocks) && viewQuestion.presentation.supportBlocks.length > 0) {
+        supportBlocks = viewQuestion.presentation.supportBlocks;
+      } else if (viewQuestion.questionPayload?.support_text) {
+        supportBlocks = [{ type: 'text', content: viewQuestion.questionPayload.support_text }];
+      }
+
+      const rawOpts = viewQuestion.questionPayload?.options || viewQuestion.options || viewQuestion.presentation?.options || [];
+      if (Array.isArray(rawOpts) && rawOpts.length > 0) {
+        options = rawOpts.map((opt) => ({
+          label: String(opt.label || opt.letter || '').trim().toUpperCase(),
+          letter: String(opt.letter || opt.label || '').trim().toUpperCase(),
+          text: opt.text || '',
+        }));
+      }
+
+      officialAnswer = String(
+        viewQuestion.answerPayload?.answer
+        || viewQuestion.officialAnswer
+        || viewQuestion.presentation?.officialAnswer
+        || ''
+      ).trim().toUpperCase();
+
+      questionType = viewQuestion.questionPayload?.question_type
+        || viewQuestion.questionType
+        || (options.length > 2 ? 'multiple_choice' : 'true_false');
+
+      examBoard = viewQuestion.questionPayload?.exam_board || viewQuestion.examBoard || '';
+      year = viewQuestion.questionPayload?.year || viewQuestion.year;
+      officialCommentary = viewQuestion.answerPayload?.commentary
+        || viewQuestion.explanation
+        || viewQuestion.commentary
+        || '';
+    }
+
+    // Fallback para authoredQuestions se campos vitais estiverem ausentes
+    if ((!prompt || options.length === 0 || !officialAnswer) && authored) {
+      if (!prompt && authored.prompt) {
+        prompt = authored.prompt;
+        command = prompt;
+      }
+      if (options.length === 0 && Array.isArray(authored.options)) {
+        options = authored.options.map((opt) => ({
+          label: String(opt.label || opt.letter || '').trim().toUpperCase(),
+          letter: String(opt.letter || opt.label || '').trim().toUpperCase(),
+          text: opt.text || '',
+        }));
+      }
+      if (!officialAnswer && authored.correctAnswer) {
+        officialAnswer = String(authored.correctAnswer).trim().toUpperCase();
+      }
+      if (!questionType && authored.questionType) {
+        questionType = authored.questionType;
+      }
+      if (!examBoard && authored.examBoard) {
+        examBoard = authored.examBoard;
+      }
+      if (!year && authored.year) {
+        year = authored.year;
+      }
+      if (!officialCommentary && authored.commentary) {
+        officialCommentary = authored.commentary;
+      }
+    }
+
+    // Fallback para officialNormalizedMap se ainda faltar prompt ou gabarito
+    if ((!prompt || options.length === 0 || !officialAnswer) && normalized) {
+      if (!prompt && normalized.prompt) {
+        prompt = normalized.prompt;
+        command = prompt;
+      }
+      if (supportBlocks.length === 0 && normalized.supportText) {
         supportBlocks = [{ type: 'text', content: normalized.supportText }];
       }
-      options = Array.isArray(normalized.options)
-        ? normalized.options.map((opt) => ({
-            letter: opt.letter || opt.label || '',
-            text: opt.text || '',
-          }))
-        : [];
-      officialAnswer = normalized.correctAnswer || '';
-      questionType = normalized.questionType === 'CERTO_ERRADO' ? 'true_false' : 'multiple_choice';
-      examBoard = normalized.bank || '';
-      year = normalized.year;
-      officialCommentary = normalized.commentary || '';
+      if (options.length === 0 && Array.isArray(normalized.options)) {
+        options = normalized.options.map((opt) => ({
+          label: String(opt.letter || opt.label || '').trim().toUpperCase(),
+          letter: String(opt.letter || opt.label || '').trim().toUpperCase(),
+          text: opt.text || '',
+        }));
+      }
+      if (!officialAnswer && normalized.correctAnswer) {
+        officialAnswer = String(normalized.correctAnswer).trim().toUpperCase();
+      }
+      if (!questionType) {
+        questionType = normalized.questionType === 'CERTO_ERRADO' ? 'true_false' : 'multiple_choice';
+      }
+      if (!examBoard && normalized.bank) {
+        examBoard = normalized.bank;
+      }
+      if (!year && normalized.year) {
+        year = normalized.year;
+      }
+      if (!officialCommentary && normalized.commentary) {
+        officialCommentary = normalized.commentary;
+      }
     }
+
+    // Normalização canônica para questões de Certo/Errado
+    if (officialAnswer === 'INCORRECT' || officialAnswer === 'ERRADO') {
+      officialAnswer = 'E';
+    } else if (officialAnswer === 'CORRECT' || officialAnswer === 'CERTO') {
+      officialAnswer = 'C';
+    }
+
+    if (options.length === 0 && (questionType === 'true_false' || officialAnswer === 'C' || officialAnswer === 'E')) {
+      questionType = 'true_false';
+      options = [
+        { label: 'C', letter: 'C', text: 'Certo' },
+        { label: 'E', letter: 'E', text: 'Errado' },
+      ];
+    }
+
+    const isUnavailable = !prompt || !officialAnswer;
 
     // B. Resolução de regras normativas
     const candidateRuleRefs = [
@@ -415,6 +641,16 @@ async function main() {
       });
     }
 
+    // Incorporar regras autoradas do pacote se existirem para esta questão
+    if (authoredRulesByQuestion.has(questionRef)) {
+      const authRules = authoredRulesByQuestion.get(questionRef) || [];
+      for (const ar of authRules) {
+        if (!rules.some((r) => r.ruleRef === ar.ruleRef)) {
+          rules.unshift(ar);
+        }
+      }
+    }
+
     // C. Resolução de procedimentos
     const candidateProcRefs = [
       ...(pedagogy.procedureRefs || []),
@@ -438,6 +674,15 @@ async function main() {
         markdown: pblCase.solutionStrategy.stepByStepAlgorithm.join('\n'),
         unitId,
       });
+    }
+    // Incorporar procedimentos autorados do pacote se existirem para esta questão
+    if (authoredProceduresByQuestion.has(questionRef)) {
+      const authProcs = authoredProceduresByQuestion.get(questionRef) || [];
+      for (const ap of authProcs) {
+        if (!procedures.some((p) => p.procedureRef === ap.procedureRef)) {
+          procedures.unshift(ap);
+        }
+      }
     }
 
     // D. Resolução de contrastes
@@ -466,11 +711,34 @@ async function main() {
         examples: [],
       });
     }
+    // Incorporar contrastes autorados do pacote se existirem para esta questão
+    if (authoredContrastsByQuestion.has(questionRef)) {
+      const authContrasts = authoredContrastsByQuestion.get(questionRef) || [];
+      for (const ac of authContrasts) {
+        if (!contrasts.some((c) => c.contrastRef === ac.contrastRef)) {
+          contrasts.unshift(ac);
+        }
+      }
+    }
 
     // E. Estratégia de resolução (solutionStrategy)
+    const workedExample = authoredWorkedExamplesByComp.get(`${questionRef}::${primaryCompRef}`)
+      || authoredWorkedExamples.get(questionRef);
     const rawStrategy = viewQuestion?.solutionStrategy || pedagogy.solutionStrategy;
     let solutionStrategy = undefined;
-    if (Array.isArray(rawStrategy) && rawStrategy.length > 0) {
+    if (workedExample?.block?.analysisSteps && workedExample.block.analysisSteps.length > 0) {
+      solutionStrategy = workedExample.block.analysisSteps.map((step, idx) => {
+        const text = typeof step === 'string' ? step : JSON.stringify(step);
+        const parts = text.split(':');
+        const action = parts.length > 1 ? parts[0].trim() : `Passo ${idx + 1}`;
+        const rationale = parts.length > 1 ? parts.slice(1).join(':').trim() : text;
+        return {
+          stepNumber: idx + 1,
+          action,
+          rationale,
+        };
+      });
+    } else if (Array.isArray(rawStrategy) && rawStrategy.length > 0) {
       solutionStrategy = rawStrategy.map((step, idx) => ({
         stepNumber: step.stepNumber || step.order || idx + 1,
         action: typeof step.action === 'string' ? step.action : String(step.action || ''),
@@ -481,22 +749,21 @@ async function main() {
     }
 
     // F. Análises objetivas das alternativas
-    // PRIORIZAÇÃO: viewQuestion.distractorAnalysis (curado e conciso) -> pedagogy.distractorAnalysis (limpo)
-    // EXCLUI: errorPattern, mappingEvidence, errorMechanism, likelyMisconceptionRef, diagnosticConfidence
-    const rawDistractors = (Array.isArray(viewQuestion?.distractorAnalysis) && viewQuestion.distractorAnalysis.length > 0)
-      ? viewQuestion.distractorAnalysis
-      : pedagogy.distractorAnalysis;
-
+    // PRIORIZAÇÃO: authoredPkgQ.feedback -> viewQuestion.distractorAnalysis -> pedagogy.distractorAnalysis
+    const authoredPkgQ = authoredPackageQuestionsByComp.get(`${questionRef}::${primaryCompRef}`)
+      || authoredPackageQuestions.get(questionRef);
     let objectiveOptionAnalyses = undefined;
-    if (Array.isArray(rawDistractors) && rawDistractors.length > 0) {
-      objectiveOptionAnalyses = rawDistractors.map((d) => {
-        let refutation = d.analysis || d.refutation || '';
+    if (authoredPkgQ?.feedback && Object.keys(authoredPkgQ.feedback).length > 0) {
+      const seenLabels = new Set();
+      objectiveOptionAnalyses = Object.entries(authoredPkgQ.feedback).map(([rawLabel, rawRefutation]) => {
+        const label = String(rawLabel || '').trim().toUpperCase();
+        if (!label || seenLabels.has(label)) return null;
+        seenLabels.add(label);
+        let refutation = rawRefutation;
 
         // BENCHMARK TÉCNICO AUDITÁVEL DO CASO "PORÉM / POREM" (OQ-A00-estrategia.4001030449)
-        // O comentário derivado associava erroneamente "porem" ao futuro do subjuntivo.
-        // "porem" é infinitivo pessoal (para porem); o futuro do subjuntivo é "quando puserem".
         if (
-          (questionRef === 'OQ-A00-estrategia.4001030449' && d.label === 'C') ||
+          (questionRef === 'OQ-A00-estrategia.4001030449' && label === 'C') ||
           (/\bporem\b/i.test(refutation) && /futuro do subjuntivo/i.test(refutation) && /p[oô]r/i.test(refutation))
         ) {
           const originalText = refutation;
@@ -504,7 +771,7 @@ async function main() {
 
           auditedCorrections.push({
             questionRef,
-            label: d.label,
+            label,
             rule: 'correcao_futuro_subjuntivo_porem',
             reason: 'Separação auditável de erro gramatical na explicação derivada: porem é infinitivo pessoal, não futuro do subjuntivo.',
             originalRefutation: originalText,
@@ -512,14 +779,62 @@ async function main() {
           });
         }
 
+        const isCorrect = Boolean(officialAnswer && label === officialAnswer);
+        const matchingOpt = options.find((o) => (o.label || o.letter) === label);
+
         return {
-          label: d.label || '',
-          isCorrect: Boolean(d.isCorrect || (officialAnswer && d.label === officialAnswer)),
-          optionText: d.optionText || (options.find((o) => o.letter === d.label)?.text) || '',
+          label,
+          letter: label,
+          isCorrect,
+          optionText: matchingOpt?.text || '',
           refutation,
-          authoritative: false, // Explicitamente marcada como explicação didática derivada, e não autoridade normativa
+          authoritative: false,
         };
-      });
+      }).filter(Boolean);
+    } else {
+      const rawDistractors = (Array.isArray(viewQuestion?.distractorAnalysis) && viewQuestion.distractorAnalysis.length > 0)
+        ? viewQuestion.distractorAnalysis
+        : pedagogy.distractorAnalysis;
+
+      if (Array.isArray(rawDistractors) && rawDistractors.length > 0) {
+        const seenLabels = new Set();
+        objectiveOptionAnalyses = rawDistractors.map((d) => {
+          const label = String(d.label || '').trim().toUpperCase();
+          if (!label || seenLabels.has(label)) return null;
+          seenLabels.add(label);
+          let refutation = d.analysis || d.refutation || '';
+
+          // BENCHMARK TÉCNICO AUDITÁVEL DO CASO "PORÉM / POREM" (OQ-A00-estrategia.4001030449)
+          if (
+            (questionRef === 'OQ-A00-estrategia.4001030449' && label === 'C') ||
+            (/\bporem\b/i.test(refutation) && /futuro do subjuntivo/i.test(refutation) && /p[oô]r/i.test(refutation))
+          ) {
+            const originalText = refutation;
+            refutation = "Incorreta. A supressão do acento de 'porém' origina a forma verbal 'porem' (flexão de infinitivo pessoal do verbo pôr: 'para eles porem'). Nota: o futuro do subjuntivo do verbo pôr é 'quando eles puserem'.";
+
+            auditedCorrections.push({
+              questionRef,
+              label,
+              rule: 'correcao_futuro_subjuntivo_porem',
+              reason: 'Separação auditável de erro gramatical na explicação derivada: porem é infinitivo pessoal, não futuro do subjuntivo.',
+              originalRefutation: originalText,
+              correctedRefutation: refutation,
+            });
+          }
+
+          const isCorrect = Boolean(d.isCorrect || (officialAnswer && label === officialAnswer));
+          const matchingOpt = options.find((o) => (o.label || o.letter) === label);
+
+          return {
+            label,
+            letter: label,
+            isCorrect,
+            optionText: d.optionText || matchingOpt?.text || '',
+            refutation,
+            authoritative: false,
+          };
+        }).filter(Boolean);
+      }
     }
 
     // Também corrigir menção a "porem / futuro do subjuntivo" em officialCommentary se existir
@@ -540,15 +855,147 @@ async function main() {
     if (!contrasts.length) gapDetails.push('Pares de contraste não vinculados');
     if (!solutionStrategy) gapDetails.push('Estratégia passo a passo ausente');
     if (!options.length) gapDetails.push('Alternativas da questão não estruturadas');
+    if (!prompt) gapDetails.push('missing_prompt');
+    if (!officialAnswer) gapDetails.push('missing_official_answer');
+    if (isUnavailable) gapDetails.push('question_unavailable');
 
     const hasGaps = gapDetails.length > 0;
 
     // I. Montagem do payload projetado
+    const candidateTables = [
+      ...(authoredTablesByQuestion.get(questionRef) || []),
+    ];
+    if (candidateTables.length === 0 && unitId && tablesByUnit.has(unitId)) {
+      candidateTables.push(...tablesByUnit.get(unitId).slice(0, 2));
+    }
+
+    const boundaries = authoredBoundariesByQuestion.get(questionRef) || [];
+    const criteriaRules = rules.map((r, idx) => ({
+      ruleRef: r.ruleRef,
+      title: r.title,
+      statement: r.statement,
+      conditions: r.conditions,
+      exceptions: r.exceptions,
+      boundaries: (idx === 0 && boundaries.length > 0)
+        ? boundaries.map((b) => ({
+            boundaryRef: b.boundaryRef,
+            title: b.title,
+            text: b.text,
+            conditions: b.conditions,
+            exceptions: b.exceptions,
+            scope: b.scope,
+            limits: b.limits,
+            traps: b.traps,
+            nonApplicabilityConditions: b.nonApplicabilityConditions,
+            sourceRefs: b.sourceRefs,
+            derivation: b.derivation,
+            interventionId: b.interventionId,
+            layer: b.layer,
+          }))
+        : undefined,
+      resolvedTable: r.resolvedTable,
+    }));
+    const criteriaProcedures = procedures.map((p) => ({
+      procedureRef: p.procedureRef,
+      title: p.title,
+      markdown: p.markdown,
+    }));
+    const criteriaContrasts = contrasts.map((c) => ({
+      contrastRef: c.contrastRef,
+      title: c.title,
+      poleA: c.poleA,
+      poleB: c.poleB,
+      sideACriteria: c.sideACriteria,
+      sideBCriteria: c.sideBCriteria,
+      decisionCriterion: c.decisionCriterion,
+    }));
+
+    // Construção de variantes de competência para questões compartilhadas/multicompetência
+    const rawSecondaryFromAssignments = Array.isArray(link.competencyAssignments)
+      ? link.competencyAssignments.map((a) => a.competencyId).filter(Boolean)
+      : [];
+    const allCompRefsForQuestion = [
+      primaryCompRef,
+      ...(Array.isArray(link.secondaryCompetencyRefs) ? link.secondaryCompetencyRefs : []),
+      ...rawSecondaryFromAssignments,
+    ].filter(Boolean);
+
+    for (const key of authoredPackageQuestionsByComp.keys()) {
+      if (key.startsWith(`${questionRef}::`)) {
+        const cRef = key.split('::')[1];
+        if (cRef && !allCompRefsForQuestion.includes(cRef)) {
+          allCompRefsForQuestion.push(cRef);
+        }
+      }
+    }
+    for (const key of authoredWorkedExamplesByComp.keys()) {
+      if (key.startsWith(`${questionRef}::`)) {
+        const cRef = key.split('::')[1];
+        if (cRef && !allCompRefsForQuestion.includes(cRef)) {
+          allCompRefsForQuestion.push(cRef);
+        }
+      }
+    }
+
+    const uniqueCompRefs = [...new Set(allCompRefsForQuestion)];
+
+    const competencyVariants = {};
+    for (const compRef of uniqueCompRefs) {
+      if (compRef === primaryCompRef) continue;
+      const cComp = competenciesById.get(compRef);
+      const cWorkedExample = authoredWorkedExamplesByComp.get(`${questionRef}::${compRef}`);
+      const cPkgQ = authoredPackageQuestionsByComp.get(`${questionRef}::${compRef}`);
+
+      if (cPkgQ || cWorkedExample || cComp) {
+        let cStrategy = undefined;
+        if (cWorkedExample?.block?.analysisSteps?.length > 0) {
+          cStrategy = cWorkedExample.block.analysisSteps.map((step, idx) => {
+            const text = typeof step === 'string' ? step : JSON.stringify(step);
+            const parts = text.split(':');
+            const action = parts.length > 1 ? parts[0].trim() : `Passo ${idx + 1}`;
+            const rationale = parts.length > 1 ? parts.slice(1).join(':').trim() : text;
+            return { stepNumber: idx + 1, action, rationale };
+          });
+        }
+
+        let cOptAnalyses = undefined;
+        if (cPkgQ?.feedback && Object.keys(cPkgQ.feedback).length > 0) {
+          const seenLabels = new Set();
+          cOptAnalyses = Object.entries(cPkgQ.feedback).map(([rawLabel, rawRefutation]) => {
+            const label = String(rawLabel || '').trim().toUpperCase();
+            if (!label || seenLabels.has(label)) return null;
+            seenLabels.add(label);
+            const isCorrect = Boolean(officialAnswer && label === officialAnswer);
+            const matchingOpt = options.find((o) => (o.label || o.letter) === label);
+            return {
+              label,
+              letter: label,
+              isCorrect,
+              optionText: matchingOpt?.text || '',
+              refutation: rawRefutation,
+              authoritative: false,
+            };
+          }).filter(Boolean);
+        }
+
+        competencyVariants[compRef] = {
+          competencyRef: compRef,
+          competencyTitle: cComp?.title || undefined,
+          pedagogy: {
+            learningObjectives: cComp?.learningObjectiveRefs || [],
+            testedConcepts: cComp?.conceptRefs || [],
+            decisivePoint: cWorkedExample?.block?.decisivePoint || undefined,
+            commonMistake: cWorkedExample?.block?.commonMistake || undefined,
+          },
+          solutionStrategy: cStrategy,
+          objectiveOptionAnalyses: cOptAnalyses,
+        };
+      }
+    }
+
     const projected = {
       questionRef,
-      competencyRefs: link.secondaryCompetencyRefs
-        ? [primaryCompRef, ...link.secondaryCompetencyRefs].filter(Boolean)
-        : [primaryCompRef].filter(Boolean),
+      competencyRefs: uniqueCompRefs.length > 0 ? uniqueCompRefs : [primaryCompRef].filter(Boolean),
       primaryCompetencyRef: primaryCompRef || undefined,
       lessonId,
       unitRefs: pedagogy.allUnitRefs || (unitId ? [unitId] : []),
@@ -561,38 +1008,27 @@ async function main() {
         questionType,
         examBoard: examBoard || undefined,
         year: year || undefined,
+        isUnavailable: isUnavailable || undefined,
       },
       pedagogy: {
         cognitiveDemand: pedagogy.cognitiveDemand || 'analise_estrutural',
         difficulty: pedagogy.difficulty || 'medio',
         learningObjectives: pedagogy.targetLearningObjectiveRefs || comp?.learningObjectiveRefs || [],
         testedConcepts: pedagogy.testedConceptRefs || comp?.conceptRefs || [],
+        decisivePoint: workedExample?.block?.decisivePoint || undefined,
+        commonMistake: workedExample?.block?.commonMistake || undefined,
       },
       criteria: {
-        rules: rules.map((r) => ({
-          ruleRef: r.ruleRef,
-          title: r.title,
-          statement: r.statement,
-          conditions: r.conditions,
-          exceptions: r.exceptions,
-          resolvedTable: r.resolvedTable,
-        })),
-        procedures: procedures.map((p) => ({
-          procedureRef: p.procedureRef,
-          title: p.title,
-          markdown: p.markdown,
-        })),
-        contrasts: contrasts.map((c) => ({
-          contrastRef: c.contrastRef,
-          title: c.title,
-          poleA: c.poleA,
-          poleB: c.poleB,
-          decisionCriterion: c.decisionCriterion,
-        })),
+        rules: criteriaRules,
+        procedures: criteriaProcedures,
+        contrasts: criteriaContrasts,
+        tables: candidateTables.length > 0 ? candidateTables : undefined,
+        boundaries: boundaries.length > 0 ? boundaries : undefined,
       },
       solutionStrategy,
       officialCommentary: officialCommentary || undefined,
       objectiveOptionAnalyses,
+      competencyVariants: Object.keys(competencyVariants).length > 0 ? competencyVariants : undefined,
       curriculum: {
         macroGroupId: macro?.macroId,
         macroGroupTitle: macro?.title,
@@ -612,7 +1048,7 @@ async function main() {
     if (rules.length) coverageInventory.summary.questionsWithRules += 1;
     if (procedures.length) coverageInventory.summary.questionsWithProcedures += 1;
     if (contrasts.length) coverageInventory.summary.questionsWithContrasts += 1;
-    if (rules.some((r) => r.resolvedTable)) coverageInventory.summary.questionsWithTables += 1;
+    if (rules.some((r) => r.resolvedTable) || candidateTables.length > 0) coverageInventory.summary.questionsWithTables += 1;
     if (solutionStrategy) coverageInventory.summary.questionsWithSolutionStrategy += 1;
     if (questionRef === 'OQ-A00-estrategia.4001030449') {
       coverageInventory.summary.auditedPoremQuestionChecked = true;
@@ -620,17 +1056,22 @@ async function main() {
   }
 
   // J. Inventário de cobertura por competência
+  const authoredCompRefs = new Set((authoredPackages || []).map((p) => p.competencyRef));
+  coverageInventory.summary.authoredPackages = authoredCompRefs.size;
+  coverageInventory.summary.pendingAuthorship = competencyMap.length - authoredCompRefs.size;
+
   for (const comp of competencyMap) {
     const eligibleRefs = comp.eligibleQuestionRefs || [];
     const questionsInComp = eligibleRefs.map((ref) => projectedQuestions.get(ref)).filter(Boolean);
 
+    const hasAuthoredPackage = authoredCompRefs.has(comp.competencyId);
     const hasRules = questionsInComp.some((q) => q.criteria.rules.length > 0);
     const hasProcedures = questionsInComp.some((q) => q.criteria.procedures.length > 0);
     const hasContrasts = questionsInComp.some((q) => q.criteria.contrasts.length > 0);
-    const hasTables = questionsInComp.some((q) => q.criteria.rules.some((r) => r.resolvedTable));
+    const hasTables = questionsInComp.some((q) => q.criteria.rules.some((r) => r.resolvedTable) || (q.criteria.tables && q.criteria.tables.length > 0));
     const allHaveAnswers = questionsInComp.length > 0 && questionsInComp.every((q) => Boolean(q.presentation.officialAnswer));
 
-    const isReady = questionsInComp.length > 0 && hasRules && allHaveAnswers;
+    const isReady = hasAuthoredPackage && questionsInComp.length > 0 && hasRules && allHaveAnswers;
 
     if (isReady) {
       coverageInventory.summary.ready += 1;
@@ -643,6 +1084,7 @@ async function main() {
       unitId: comp.unitId,
       lessonId: comp.lessonId,
       status: isReady ? 'ready' : 'limited',
+      hasAuthoredPackage,
       totalProjectedQuestions: questionsInComp.length,
       hasRules,
       hasProcedures,
@@ -651,6 +1093,7 @@ async function main() {
       allHaveAnswers,
       learningObjectivesCount: comp.learningObjectiveRefs?.length || 0,
       missingOptionalEnrichments: [
+        ...(!hasAuthoredPackage ? ['pacote_autoria_semantica'] : []),
         ...(!hasProcedures ? ['procedimentos_especificos'] : []),
         ...(!hasContrasts ? ['contrastes_especificos'] : []),
         ...(!hasTables ? ['tabelas_normativas'] : []),

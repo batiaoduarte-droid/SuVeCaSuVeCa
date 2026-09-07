@@ -23,6 +23,7 @@ import {
   handlePBLTutorTurn,
   handlePBLTutorManifest,
   handlePBLTutorContext,
+  handlePBLSessionSync,
 } from "./src/lib/pbl/tutor/pblTutorServerRoute";
 
 // Local development follows the README and keeps the Gemini key in .env.local.
@@ -81,6 +82,8 @@ app.use(
   requireFirebaseUser,
   limitAiRequests,
 );
+
+app.use("/api/pbl/session/sync", requireFirebaseUser);
 
 const withAiTimeout = async <T,>(operation: Promise<T>, timeoutMs = 30_000): Promise<T> => {
   let timer: NodeJS.Timeout | undefined;
@@ -203,6 +206,7 @@ app.get("/api/knowledge/questions/:questionId", async (req, res) => {
 app.post("/api/pbl/tutor/turn", handlePBLTutorTurn);
 app.get("/api/pbl/tutor/manifest", handlePBLTutorManifest);
 app.get("/api/pbl/tutor/context/:questionRef", handlePBLTutorContext);
+app.post("/api/pbl/session/sync", handlePBLSessionSync);
 
 // API: Analyze sentence with SuVeCA method
 app.post("/api/suveca/analyze", async (req, res) => {

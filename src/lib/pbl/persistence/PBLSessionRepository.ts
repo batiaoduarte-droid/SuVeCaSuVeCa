@@ -1,11 +1,17 @@
 import type { PBLSession, CompetencyMastery } from '../../../types/pbl';
-import { db } from '../../firebase';
+import { db, auth } from '../../firebase';
 import { doc, setDoc, getDoc, collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
 
 const LOCAL_STORAGE_KEY_PREFIX = 'suveca_pbl_session_';
 const LOCAL_STORAGE_MASTERY_PREFIX = 'suveca_pbl_mastery_';
 
+type SessionSyncHook = (session: PBLSession) => void | Promise<void>;
+let registeredSyncHook: SessionSyncHook | null = null;
+
 export class PBLSessionRepository {
+  public static registerSyncHook(hook: SessionSyncHook | null): void {
+    registeredSyncHook = hook;
+  }
   private static hydrateMastery(mastery: CompetencyMastery): CompetencyMastery {
     const inferredState = mastery.retentionConfirmedAt
       ? 'retention_confirmed'
@@ -76,22 +82,54 @@ export class PBLSessionRepository {
       throw new Error('Não foi possível salvar a sessão neste dispositivo.');
     }
 
-    if (session.userId && session.userId !== 'guest' && db) {
-      try {
-        const sessionRef = doc(db, 'users', session.userId, 'pblSessions', session.sessionId);
-        await Promise.all([
-          setDoc(sessionRef, session, { merge: true }),
-          ...Object.entries(session.masterySnapshot).map(([compId, mastery]) => {
-          const masteryRef = doc(db, 'users', session.userId, 'pblMastery', compId);
-            return setDoc(masteryRef, mastery, { merge: true });
-          }),
-        ]);
-        return { syncedRemotely: true };
-      } catch (err) {
-        console.warn('[PBLSessionRepository] Remote sync error:', err);
+    // Sincronização remota: restrita a usuários de conta autenticados (não convidados)
+    let syncedViaHttp = false;
+    let syncedFirestore = false;
+
+    if (session.userId && session.userId !== 'guest') {
+      if (registeredSyncHook) {
+        try {
+          await registeredSyncHook(session);
+          syncedViaHttp = true;
+        } catch (hookErr) {
+          console.warn('[PBLSessionRepository] Sync hook error:', hookErr);
+        }
+      } else if (typeof window !== 'undefined') {
+        try {
+          const { authenticatedFetch } = await import('../../authenticatedFetch');
+          const res = await authenticatedFetch('/api/pbl/session/sync', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(session),
+          });
+          if (res.ok) {
+            syncedViaHttp = true;
+          } else {
+            console.warn('[PBLSessionRepository] HTTP sync failed with status:', res.status);
+          }
+        } catch (netErr) {
+          console.warn('[PBLSessionRepository] HTTP sync network error:', netErr);
+        }
+      }
+
+      if (typeof window !== 'undefined' && db && auth?.currentUser) {
+        try {
+          const sessionRef = doc(db, 'users', session.userId, 'pblSessions', session.sessionId);
+          await Promise.all([
+            setDoc(sessionRef, session, { merge: true }),
+            ...Object.entries(session.masterySnapshot).map(([compId, mastery]) => {
+              const masteryRef = doc(db, 'users', session.userId, 'pblMastery', compId);
+              return setDoc(masteryRef, mastery, { merge: true });
+            }),
+          ]);
+          syncedFirestore = true;
+        } catch (err) {
+          console.warn('[PBLSessionRepository] Remote Firestore sync error:', err);
+        }
       }
     }
-    return { syncedRemotely: false };
+
+    return { syncedRemotely: syncedViaHttp || syncedFirestore };
   }
 
   public static async getSession(sessionId: string, userId?: string): Promise<PBLSession | null> {

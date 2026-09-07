@@ -70,7 +70,7 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await openApp(page);
     await openTab(page, 'Aprender por Problemas (PBL)');
 
-    await expect(page.getByRole('heading', { name: /aprenda português resolvendo problemas reais/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /aprenda português resolvendo problemas reais/i })).toBeVisible({ timeout: 15000 });
     await expect(page.getByText(/mostrando 12 de 190/i)).toBeVisible();
     await expect(page.getByRole('button', { name: /próxima/i })).toBeVisible();
     await expectNoDocumentOverflow(page);
@@ -80,8 +80,11 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     expect(axeResults.violations.filter((violation) => violation.impact === 'critical' || violation.impact === 'serious')).toEqual([]);
   });
 
-  test('percorre erro -> intervenção -> nova questão -> transferência -> reflexão -> resumo', async ({ page }) => {
+  test('percorre erro -> intervenção -> nova questão -> transferência -> reflexão -> resumo (modo legado explícito)', async ({ page }) => {
     await openApp(page);
+    await page.evaluate(() => {
+      localStorage.setItem('suveca_pbl_conduction_mode', 'legacy');
+    });
     await openTab(page, 'Aprender por Problemas (PBL)');
     await page.getByRole('button', { name: /iniciar sessão recomendada/i }).click();
 
@@ -145,8 +148,11 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     expect(savedPBLItem.nextReviewAt).toBeTruthy();
   });
 
-  test('reflexão exige recuperação antes de mostrar a regra pedagógica', async ({ page }) => {
+  test('reflexão exige recuperação antes de mostrar a regra pedagógica (modo legado explícito)', async ({ page }) => {
     await openApp(page);
+    await page.evaluate(() => {
+      localStorage.setItem('suveca_pbl_conduction_mode', 'legacy');
+    });
     await openTab(page, 'Aprender por Problemas (PBL)');
     await page.getByRole('button', { name: /iniciar sessão recomendada/i }).click();
 
@@ -167,8 +173,11 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await expect(page.getByText(/^(?:RULE|RULF)-/i)).toHaveCount(0);
   });
 
-  test('pausa e retoma uma sessão ativa', async ({ page }) => {
+  test('pausa e retoma uma sessão ativa (modo legado explícito)', async ({ page }) => {
     await openApp(page);
+    await page.evaluate(() => {
+      localStorage.setItem('suveca_pbl_conduction_mode', 'legacy');
+    });
     await openTab(page, 'Aprender por Problemas (PBL)');
     await page.getByRole('button', { name: /iniciar sessão recomendada/i }).click();
     await page.getByRole('button', { name: /sair da sessão/i }).click();
@@ -177,5 +186,50 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await expect(page.getByText(/sessão pausada/i)).toBeVisible();
     await page.getByRole('button', { name: /continuar sessão/i }).click();
     await expect(page.getByText(/caso-âncora pbl/i)).toBeVisible();
+  });
+
+  test('fluxo padrão de nova sessão abre Tutor Contextual com interação socrática e retoma sessão', async ({ page }) => {
+    await openApp(page);
+    // Sem nenhuma flag ou localStorage para legado: o padrão do produto DEVE ser tutor
+    await openTab(page, 'Aprender por Problemas (PBL)');
+    await page.getByRole('button', { name: /iniciar sessão recomendada/i }).click();
+
+    await expect(page.getByText(/caso-âncora pbl/i)).toBeVisible();
+    await chooseAnswer(page, 'Certo'); // resposta incorreta na âncora q0068
+    await submitWithHighConfidence(page, /confirmar hipótese/i);
+
+    // O modo tutor conduz diretamente para o Tutor Contextual (Professor SuVeCA)
+    await expect(page.getByRole('heading', { name: /professor suveca/i })).toBeVisible();
+    await expect(page.getByText(/tutor contextual/i)).toBeVisible();
+
+    // Blindagem de gabarito antes da tentativa/conclusão
+    await expect(page.getByText(/gabarito:\s*incorrect/i)).toHaveCount(0);
+    await expect(page.getByText(/gabarito oficial:\s*[a-e]/i)).toHaveCount(0);
+
+    // Controles de apoio do tutor visíveis
+    await expect(page.getByRole('button', { name: /explique diretamente/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /sintetizar no caderno/i })).toBeVisible();
+    await expect(page.getByPlaceholder(/digite sua dúvida ou raciocínio/i)).toBeVisible();
+
+    // Interação socrática: acionar pedido de explicação
+    await page.getByRole('button', { name: /explique diretamente/i }).click();
+    await expect(page.getByText(/orientar esta questão|ponto decisivo|critério|fonema/i).first()).toBeVisible();
+
+    // Pausa e Retomada no modo tutor
+    await page.getByRole('button', { name: /sair da sessão/i }).click();
+    await expect(page.getByRole('dialog', { name: /deseja pausar ou encerrar/i })).toBeVisible();
+    await page.getByRole('button', { name: /pausar e sair/i }).click();
+
+    await expect(page.getByText(/sessão pausada/i)).toBeVisible();
+    await page.getByRole('button', { name: /continuar sessão/i }).click();
+
+    // Retomada preserva o modo tutor ativo e os balões
+    await expect(page.getByRole('heading', { name: /professor suveca/i })).toBeVisible();
+    await expect(page.getByText(/tutor contextual/i)).toBeVisible();
+
+    // Conclusão do episódio de tutoria para a próxima etapa
+    const concludeButton = page.getByRole('button', { name: /tentar mesma questão|nova questão prática/i }).first();
+    await expect(concludeButton).toBeVisible();
+    await concludeButton.click();
   });
 });

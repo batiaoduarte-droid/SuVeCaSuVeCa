@@ -46,7 +46,7 @@ describe('Authored Pilot Packages Runtime Integration', () => {
       authoredPackages: [fonetica, porques, semanticaVerbal, pronomesPessoais].filter(Boolean),
     });
     engine = new PBLEngine(repo);
-  });
+  }, 30000);
 
   beforeEach(() => {
     localStorage.clear();

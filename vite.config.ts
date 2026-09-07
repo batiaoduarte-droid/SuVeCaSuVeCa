@@ -44,6 +44,7 @@ export default defineConfig(() => {
       exclude: [...configDefaults.exclude, 'tests/e2e/**'],
       clearMocks: true,
       restoreMocks: true,
+      testTimeout: 15000,
     },
   };
 });

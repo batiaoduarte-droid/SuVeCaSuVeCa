@@ -151,7 +151,7 @@ export const PBLInterventionView: React.FC<PBLInterventionViewProps> = ({
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
             <CheckSquare className="h-4 w-4 text-indigo-600" />
-            Procedimento estruturado de resolução
+            Procedimento de resolução
           </div>
           <div className="mt-4 space-y-3">
             {intervention.structuredSteps.map((step, idx) => (

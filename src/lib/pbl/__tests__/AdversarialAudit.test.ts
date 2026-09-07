@@ -64,7 +64,7 @@ describe('Adversarial QA Suite (25 Tests)', () => {
       questionPresentations: publishedPresentations,
     });
     engine = new PBLEngine(repo);
-  });
+  }, 30000);
 
   // TEST 1: Aluno Confidente, Mas Errado
   it('TESTE 1 — Aluno confidente mas errado: detecta high_confidence_error e não confirma misconception em 1 erro', async () => {

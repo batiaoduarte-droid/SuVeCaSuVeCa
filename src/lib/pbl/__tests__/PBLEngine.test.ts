@@ -640,4 +640,120 @@ describe('PBLEngine Full Flow Integration', () => {
     expect(selected?.validationStatus).toBe('unverified');
     expect(selected?.recentExposureFallback).toBe(true);
   });
+
+  describe('prepareTransfer safeguards and motor policy (RGO-005)', () => {
+    it('preserves pendingNextAction and transitions to reflection when terminal action needs_review is set', async () => {
+      let session = await engine.startSession({
+        userId: 'test-user',
+        mode: 'guided',
+        targetCompetencyId: mockComp.competencyId,
+        conductionMode: 'tutor',
+      });
+
+      session.pendingNextAction = {
+        type: 'complete_session',
+        outcome: 'needs_review',
+        reason: 'Aluno necessita revisão após erros repetidos.',
+        feedbackMessage: 'Revisão recomendada para consolidar a regra.',
+      };
+
+      const result = await engine.prepareTransfer(session);
+
+      expect(result.phase).toBe('reflection');
+      expect(result.pendingNextAction).toBeDefined();
+      expect(result.pendingNextAction?.outcome).toBe('needs_review');
+      expect(result.pendingNextAction?.type).toBe('complete_session');
+      expect(result.currentTransferItem).toBeUndefined();
+      expect(result.lastFeedbackMessage).toBe('Revisão recomendada para consolidar a regra.');
+    });
+
+    it('redirects to reflection when session budget is exhausted', async () => {
+      let session = await engine.startSession({
+        userId: 'test-user',
+        mode: 'guided',
+        targetCompetencyId: mockComp.competencyId,
+      });
+
+      session.sessionBudgetMs = 10 * 60_000;
+      session.wallTimeMs = 11 * 60_000; // Over budget
+
+      const result = await engine.prepareTransfer(session);
+
+      expect(result.phase).toBe('reflection');
+      expect(result.currentTransferItem).toBeUndefined();
+      expect(result.lastFeedbackMessage).toContain('Tempo limite da sessão atingido');
+    });
+
+    it('excludes currentQuestionRef and exposed tutor episode questionRefs from transfer candidates', async () => {
+      let session = await engine.startSession({
+        userId: 'test-user',
+        mode: 'guided',
+        targetCompetencyId: mockComp.competencyId,
+      });
+
+      // Set currentQuestionRef to the first transfer candidate (even though no attempt is recorded yet)
+      session.currentQuestionRef = 'OQ-A10-aula10.q0012';
+      session.tutorEpisodes = {
+        'ep-1': {
+          episodeId: 'ep-1',
+          sessionId: session.sessionId,
+          competencyRef: mockComp.competencyId,
+          questionRef: 'OQ-A10-aula10.q0013', // second transfer candidate
+          attemptStage: 'transfer',
+          assistanceLevel: 'hint',
+          startedAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          turns: [],
+          resolved: true,
+          totalAiLatencyMs: 0,
+        },
+      };
+
+      // Both available transfer items (q0012 and q0013) are in currentQuestionRef and tutorEpisodes
+      const result = await engine.prepareTransfer(session);
+
+      // Since all transfer candidates are excluded, it should transition to reflection with accurate messaging
+      expect(result.phase).toBe('reflection');
+      expect(result.currentTransferItem).toBeUndefined();
+      expect(result.lastFeedbackMessage).toContain('Não há questões adicionais de transferência disponíveis');
+    });
+
+    it('provides accurate messaging when pool is empty with 0 attempts vs completed attempts', async () => {
+      let session = await engine.startSession({
+        userId: 'test-user',
+        mode: 'guided',
+        targetCompetencyId: mockComp.competencyId,
+      });
+
+      // Exclude both candidates
+      session.currentQuestionRef = 'OQ-A10-aula10.q0012';
+      session.savedErrorQuestionRefs = ['OQ-A10-aula10.q0013'];
+
+      // Case A: 0 attempts -> does NOT claim all were completed
+      const resultNoAttempts = await engine.prepareTransfer(session);
+      expect(resultNoAttempts.lastFeedbackMessage).toBe('Não há questões adicionais de transferência disponíveis no momento para esta competência.');
+
+      // Case B: With attempts -> claims available transfer items completed
+      session.attempts = [{
+        attemptId: 'att-1',
+        sessionId: session.sessionId,
+        competencyRef: mockComp.competencyId,
+        questionRef: 'OQ-A10-aula10.q0010',
+        stage: 'initial',
+        userAnswer: 'Certo',
+        correctAnswer: 'Certo',
+        isCorrect: true,
+        confidence: 'high',
+        evaluation: 'strong_correct',
+        responseTimeMs: 5000,
+        detectedTrapRefs: [],
+        detectedMisconceptionRefs: [],
+        interventionRefs: [],
+        createdAt: new Date().toISOString(),
+      }];
+
+      const resultWithAttempts = await engine.prepareTransfer(session);
+      expect(resultWithAttempts.lastFeedbackMessage).toBe('Transferência concluída para as questões disponíveis desta competência.');
+    });
+  });
 });

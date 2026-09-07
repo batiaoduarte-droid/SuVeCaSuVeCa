@@ -75,12 +75,31 @@ export interface PBLTutorOptionAnalysis {
   authoritative: boolean;
 }
 
+export interface PBLTutorRuleBoundary {
+  boundaryRef?: string;
+  id?: string;
+  title: string;
+  text?: string;
+  conditions?: string[];
+  exceptions?: string[];
+  scope?: string;
+  limits?: string[];
+  traps?: string[];
+  nonApplicabilityConditions?: string[];
+  sourceRefs?: string[];
+  derivation?: string;
+  targetRuleRefs?: string[];
+  interventionId?: string;
+  layer?: 'hint' | 'partial' | 'full';
+}
+
 export interface PBLTutorPedagogyRule {
   ruleRef: string;
   title: string;
   statement: string;
   conditions?: string[];
   exceptions?: string[];
+  boundaries?: PBLTutorRuleBoundary[];
   resolvedTable?: {
     id: string;
     unitId: string;
@@ -94,6 +113,12 @@ export interface PBLTutorPedagogyProcedure {
   procedureRef: string;
   title: string;
   markdown: string;
+  steps?: Array<{
+    order?: number;
+    action?: string;
+    explanation?: string;
+    test?: string;
+  }>;
 }
 
 export interface PBLTutorPedagogyContrast {
@@ -102,17 +127,60 @@ export interface PBLTutorPedagogyContrast {
   poleA: string;
   poleB: string;
   decisionCriterion: string;
+  sideACriteria?: string[];
+  sideBCriteria?: string[];
+}
+
+export interface PBLTutorTable {
+  id: string;
+  unitId?: string;
+  title: string;
+  columns: string[];
+  rows: string[][];
 }
 
 export interface PBLTutorQuestionPresentation {
   prompt: string;
   command?: string;
   supportBlocks?: any[];
-  options: Array<{ label: string; text: string }>;
+  options: Array<{ label: string; text: string; letter?: string }>;
   officialAnswer: string;
   questionType?: string;
   examBoard?: string;
   year?: number;
+  isUnavailable?: boolean;
+}
+
+export interface PBLTutorCompetencyVariant {
+  competencyRef: string;
+  competencyTitle: string;
+  unitRefs?: string[];
+  pedagogy?: {
+    cognitiveDemand?: string;
+    difficulty?: string;
+    learningObjectives?: string[];
+    testedConcepts?: string[];
+    decisivePoint?: string;
+    commonMistake?: string;
+    rules?: PBLTutorPedagogyRule[];
+    procedures?: PBLTutorPedagogyProcedure[];
+    contrasts?: PBLTutorPedagogyContrast[];
+    tables?: PBLTutorTable[];
+    boundaries?: PBLTutorRuleBoundary[];
+  };
+  criteria?: {
+    rules: PBLTutorPedagogyRule[];
+    procedures: PBLTutorPedagogyProcedure[];
+    contrasts: PBLTutorPedagogyContrast[];
+    tables?: PBLTutorTable[];
+    boundaries?: PBLTutorRuleBoundary[];
+  };
+  solutionStrategy?: Array<{
+    stepNumber: number;
+    action: string;
+    rationale?: string;
+  }>;
+  objectiveOptionAnalyses?: PBLTutorOptionAnalysis[];
 }
 
 export interface PBLTutorQuestionContext {
@@ -128,15 +196,22 @@ export interface PBLTutorQuestionContext {
     difficulty?: string;
     learningObjectives?: string[];
     testedConcepts?: string[];
+    decisivePoint?: string;
+    commonMistake?: string;
     rules?: PBLTutorPedagogyRule[];
     procedures?: PBLTutorPedagogyProcedure[];
     contrasts?: PBLTutorPedagogyContrast[];
+    tables?: PBLTutorTable[];
+    boundaries?: PBLTutorRuleBoundary[];
   };
   criteria: {
     rules: PBLTutorPedagogyRule[];
     procedures: PBLTutorPedagogyProcedure[];
     contrasts: PBLTutorPedagogyContrast[];
+    tables?: PBLTutorTable[];
+    boundaries?: PBLTutorRuleBoundary[];
   };
+  competencyVariants?: Record<string, PBLTutorCompetencyVariant>;
   officialCommentary?: string;
   solutionStrategy?: Array<{
     stepNumber: number;
@@ -175,6 +250,7 @@ export interface PBLTutorTurnRequest {
   assistanceRequested?: boolean;
   directExplanationRequested?: boolean;
   cadernoSynthesisRequested?: boolean;
+  allowedContinuityActions?: PBLTutorContinuityRecommendation[];
 }
 
 export interface PBLTutorTurnResponse {

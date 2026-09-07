@@ -104,7 +104,11 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
         cumulativeSessionId,
         currentMasteryMap: userMastery,
         maxCompetencies: mode === 'cumulative' ? 2 : 1,
-        conductionMode: 'tutor',
+        conductionMode: (
+          typeof window !== 'undefined' &&
+          (new URLSearchParams(window.location.search).get('conduction') === 'legacy' ||
+           localStorage.getItem('suveca_pbl_conduction_mode') === 'legacy')
+        ) ? 'legacy' : 'tutor',
       });
       await PBLSessionRepository.saveSession(session);
       setActiveSession(session);

@@ -124,6 +124,95 @@ export class PBLEngine {
     return session;
   }
 
+  public async prepareTransfer(session: PBLSession): Promise<PBLSession> {
+    // 1. Motor policy & Terminal action check (RGO-005):
+    // Se há uma ação pendente terminal (complete_session, advance_competency ou outcome === 'needs_review'),
+    // a decisão do motor DEVE ser preservada e direcionada para reflexão/finalização, sem ser sobrescrita.
+    const pendingAction = session.pendingNextAction;
+    const isTerminalAction = Boolean(
+      pendingAction && (
+        pendingAction.type === 'complete_session' ||
+        pendingAction.type === 'advance_competency' ||
+        pendingAction.outcome === 'needs_review'
+      )
+    );
+
+    // Verificação de orçamento / limite de tempo da sessão
+    const isBudgetExhausted = Boolean(
+      session.sessionBudgetMs && (session.wallTimeMs || 0) >= session.sessionBudgetMs
+    );
+
+    if (isTerminalAction || isBudgetExhausted) {
+      session.phase = 'reflection';
+      session.currentTransferItem = undefined;
+      session.lastFeedbackMessage = isBudgetExhausted
+        ? 'Tempo limite da sessão atingido. Avançando para consolidação e reflexão.'
+        : (pendingAction?.feedbackMessage || 'Sessão direcionada para consolidação e reflexão pelo motor pedagógico.');
+      session.updatedAt = new Date().toISOString();
+      return session;
+    }
+
+    // 2. Exclusões abrangentes (RGO-005):
+    // - Questões já respondidas nesta competência nesta sessão
+    const attemptedQuestionRefs = session.attempts
+      .filter((attempt) => attempt.competencyRef === session.currentCompetencyRef)
+      .map((attempt) => attempt.questionRef);
+
+    // - Questões recentemente expostas de outras sessões
+    const recentlyExposedQuestionRefs = getRecentQuestionEncounterRefs(session.userId, {
+      excludeSessionId: session.sessionId,
+    });
+
+    // - Questão atual explicada/ativa (mesmo se ainda sem tentativa oficial gravada no episódio)
+    const sessionExposedRefs = new Set<string>(attemptedQuestionRefs);
+    if (session.currentQuestionRef) {
+      sessionExposedRefs.add(session.currentQuestionRef);
+    }
+    // - Questões dos episódios de tutoria e intervenções da sessão
+    if (session.tutorEpisodes) {
+      for (const episode of Object.values(session.tutorEpisodes)) {
+        if (episode.questionRef) sessionExposedRefs.add(episode.questionRef);
+      }
+    }
+    if (session.savedErrorQuestionRefs) {
+      for (const ref of session.savedErrorQuestionRefs) {
+        sessionExposedRefs.add(ref);
+      }
+    }
+
+    const lastAttempt = session.attempts[session.attempts.length - 1];
+
+    const item = await this.transferSelector.selectNextTransferItem(
+      session.currentCompetencyRef,
+      lastAttempt?.evaluation || 'error',
+      session.currentTransferItemIndex,
+      session.masterySnapshot[session.currentCompetencyRef],
+      Array.from(sessionExposedRefs),
+      true,
+      session.sessionId,
+      recentlyExposedQuestionRefs
+    );
+
+    if (item) {
+      session.currentTransferItem = item;
+      session.currentQuestionRef = item.officialQuestionRef;
+      session.phase = 'transfer';
+      session.pendingNextAction = undefined;
+      session.lastFeedbackMessage = undefined;
+    } else {
+      session.currentTransferItem = undefined;
+      session.phase = 'reflection';
+      session.pendingNextAction = undefined;
+      // Mensagem precisa e contextual (evita alegar que todas foram concluídas quando o pool está indisponível/vazio)
+      session.lastFeedbackMessage = attemptedQuestionRefs.length > 0
+        ? 'Transferência concluída para as questões disponíveis desta competência.'
+        : 'Não há questões adicionais de transferência disponíveis no momento para esta competência.';
+    }
+
+    session.updatedAt = new Date().toISOString();
+    return session;
+  }
+
   public continueAfterDiagnostic(session: PBLSession): PBLSession {
     const action = session.pendingNextAction;
     if (!action) return session;
@@ -598,7 +687,7 @@ export class PBLEngine {
     } else if (action === 'try_alternative') {
       return this.prepareReattempt(session);
     } else if (action === 'proceed_transfer') {
-      session.phase = 'transfer';
+      return this.prepareTransfer(session);
     } else if (action === 'proceed_reflection') {
       session.phase = 'reflection';
     }

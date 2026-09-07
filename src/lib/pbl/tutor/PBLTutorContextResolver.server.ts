@@ -1,7 +1,7 @@
 import { access, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
-import type { PBLTutorQuestionContext } from '../../../types/pblTutor';
+import type { PBLTutorQuestionContext, PBLTutorCompetencyVariant } from '../../../types/pblTutor';
 
 interface ShardDescriptor {
   part: number;
@@ -152,49 +152,185 @@ class PBLTutorContextResolver {
     return this.manifest!;
   }
 
-  public async getTutorQuestionContext(questionRef: string): Promise<PBLTutorQuestionContext | null> {
+  public async getTutorQuestionContext(
+    questionRef: string,
+    competencyRef?: string
+  ): Promise<PBLTutorQuestionContext | null> {
     await this.initialize();
+
+    if (questionRef.includes('::')) {
+      const [baseRef, explicitComp] = questionRef.split('::');
+      return this.getTutorQuestionContext(baseRef, competencyRef || explicitComp);
+    }
+
     const manifest = this.manifest!;
 
-    // 1. Check if we already know which shard owns this questionRef
+    // 2. Look up base question context
+    let baseContext: PBLTutorQuestionContext | null = null;
     const knownShard = this.questionToShardMap.get(questionRef);
     if (knownShard) {
       const shardMap = await this.loadShard(knownShard);
-      return shardMap.get(questionRef) || null;
-    }
-
-    // 2. Identify candidate shards by range: firstQuestionRef <= questionRef <= lastQuestionRef
-    // Note: If questionRef falls exactly in range, test candidate shard
-    const candidateShards = manifest.shards.filter(
-      (s) => questionRef >= s.firstQuestionRef && questionRef <= s.lastQuestionRef
-    );
-
-    for (const descriptor of candidateShards) {
-      const shardMap = await this.loadShard(descriptor);
       const found = shardMap.get(questionRef);
-      if (found) return found;
+      if (found) baseContext = found;
     }
 
-    // 3. Fallback: If not found in range (rare edge case), search remaining shards
-    for (const descriptor of manifest.shards) {
-      if (candidateShards.includes(descriptor)) continue;
-      const shardMap = await this.loadShard(descriptor);
-      const found = shardMap.get(questionRef);
-      if (found) return found;
+    if (!baseContext) {
+      // Range check
+      const candidateShards = manifest.shards.filter(
+        (s) => questionRef >= s.firstQuestionRef && questionRef <= s.lastQuestionRef
+      );
+
+      for (const descriptor of candidateShards) {
+        const shardMap = await this.loadShard(descriptor);
+        const found = shardMap.get(questionRef);
+        if (found) {
+          baseContext = found;
+          break;
+        }
+      }
+
+      if (!baseContext) {
+        for (const descriptor of manifest.shards) {
+          if (candidateShards.includes(descriptor)) continue;
+          const shardMap = await this.loadShard(descriptor);
+          const found = shardMap.get(questionRef);
+          if (found) {
+            baseContext = found;
+            break;
+          }
+        }
+      }
     }
 
-    return null;
+    if (!baseContext) return null;
+
+    // 3. Competency resolution and validation
+    if (competencyRef) {
+      const isPrimary = baseContext.primaryCompetencyRef === competencyRef;
+      const isSecondary = baseContext.competencyRefs?.includes(competencyRef);
+      const hasVariant = Boolean(baseContext.competencyVariants?.[competencyRef]);
+      const isUnit = baseContext.unitRefs?.includes(competencyRef);
+
+      if (!isPrimary && !isSecondary && !hasVariant && !isUnit) {
+        console.warn(
+          `[PBLTutorContextResolver] Competência '${competencyRef}' não autorizada para a questão '${questionRef}'. Relação curricular inexistente.`
+        );
+        return null;
+      }
+
+      if (hasVariant) {
+        const variant = baseContext.competencyVariants![competencyRef];
+        const mergedPedagogy = {
+          ...baseContext.pedagogy,
+          ...(variant.pedagogy || {}),
+          learningObjectives:
+            variant.pedagogy?.learningObjectives && variant.pedagogy.learningObjectives.length > 0
+              ? variant.pedagogy.learningObjectives
+              : baseContext.pedagogy?.learningObjectives || [],
+          testedConcepts:
+            variant.pedagogy?.testedConcepts && variant.pedagogy.testedConcepts.length > 0
+              ? variant.pedagogy.testedConcepts
+              : baseContext.pedagogy?.testedConcepts || [],
+          cognitiveDemand: variant.pedagogy?.cognitiveDemand || baseContext.pedagogy?.cognitiveDemand,
+          difficulty: variant.pedagogy?.difficulty || baseContext.pedagogy?.difficulty,
+          decisivePoint: variant.pedagogy?.decisivePoint || baseContext.pedagogy?.decisivePoint,
+          commonMistake: variant.pedagogy?.commonMistake || baseContext.pedagogy?.commonMistake,
+          rules: variant.pedagogy?.rules?.length ? variant.pedagogy.rules : baseContext.pedagogy?.rules,
+          procedures: variant.pedagogy?.procedures?.length ? variant.pedagogy.procedures : baseContext.pedagogy?.procedures,
+          contrasts: variant.pedagogy?.contrasts?.length ? variant.pedagogy.contrasts : baseContext.pedagogy?.contrasts,
+          tables: variant.pedagogy?.tables?.length ? variant.pedagogy.tables : baseContext.pedagogy?.tables,
+          boundaries: variant.pedagogy?.boundaries?.length ? variant.pedagogy.boundaries : baseContext.pedagogy?.boundaries,
+        };
+
+        const mergedCriteria = {
+          rules: variant.criteria?.rules?.length ? variant.criteria.rules : baseContext.criteria?.rules || [],
+          procedures: variant.criteria?.procedures?.length ? variant.criteria.procedures : baseContext.criteria?.procedures || [],
+          contrasts: variant.criteria?.contrasts?.length ? variant.criteria.contrasts : baseContext.criteria?.contrasts || [],
+          tables: variant.criteria?.tables?.length ? variant.criteria.tables : baseContext.criteria?.tables || [],
+          boundaries: variant.criteria?.boundaries?.length ? variant.criteria.boundaries : baseContext.criteria?.boundaries || [],
+        };
+
+        const resolved: PBLTutorQuestionContext = {
+          ...baseContext,
+          primaryCompetencyRef: variant.competencyRef,
+          competencyTitle: variant.competencyTitle || baseContext.competencyTitle,
+          unitRefs: variant.unitRefs || baseContext.unitRefs,
+          pedagogy: mergedPedagogy,
+          criteria: mergedCriteria,
+          solutionStrategy:
+            variant.solutionStrategy && variant.solutionStrategy.length > 0
+              ? variant.solutionStrategy
+              : baseContext.solutionStrategy,
+          objectiveOptionAnalyses:
+            variant.objectiveOptionAnalyses && variant.objectiveOptionAnalyses.length > 0
+              ? variant.objectiveOptionAnalyses
+              : baseContext.objectiveOptionAnalyses,
+        };
+        return this.enrichLoadedContext(resolved);
+      }
+
+      if (isSecondary && !isPrimary) {
+        // Authorized secondary competency sharing base pedagogy
+        const resolved: PBLTutorQuestionContext = {
+          ...baseContext,
+          primaryCompetencyRef: competencyRef,
+        };
+        return this.enrichLoadedContext(resolved);
+      }
+    }
+
+    return this.enrichLoadedContext(baseContext);
+  }
+
+  private enrichLoadedContext(context: PBLTutorQuestionContext): PBLTutorQuestionContext {
+    if (context.criteria?.rules && (!context.pedagogy?.rules || context.pedagogy.rules.length === 0)) {
+      return {
+        ...context,
+        pedagogy: {
+          ...context.pedagogy,
+          rules: context.criteria.rules,
+          procedures: context.criteria.procedures,
+          contrasts: context.criteria.contrasts,
+        },
+      };
+    }
+    return context;
   }
 
   /**
    * Sanitizes question context for the student / frontend if needed,
-   * redacting direct answers when an attempt is in progress or on reserved questions.
+   * redacting direct answers, worked examples, decisive points and option analyses
+   * across base context and all competency variants when an attempt is in progress.
    */
   public filterTutorContextForStudent(
     context: PBLTutorQuestionContext,
     options?: { hideAnswer?: boolean }
   ): PBLTutorQuestionContext {
     if (!options?.hideAnswer) return context;
+
+    const sanitizedVariants: Record<string, PBLTutorCompetencyVariant> | undefined = context.competencyVariants
+      ? Object.fromEntries(
+          Object.entries(context.competencyVariants).map(([key, v]) => [
+            key,
+            {
+              ...v,
+              solutionStrategy: undefined,
+              pedagogy: v.pedagogy
+                ? {
+                    ...v.pedagogy,
+                    decisivePoint: undefined,
+                    commonMistake: undefined,
+                  }
+                : undefined,
+              objectiveOptionAnalyses: v.objectiveOptionAnalyses?.map((opt) => ({
+                ...opt,
+                isCorrect: false,
+                refutation: 'A análise estará disponível após a conclusão da etapa.',
+              })),
+            },
+          ])
+        )
+      : undefined;
 
     return {
       ...context,
@@ -203,11 +339,20 @@ class PBLTutorContextResolver {
         officialAnswer: 'REDACTED',
       },
       officialCommentary: undefined,
+      solutionStrategy: undefined,
+      pedagogy: context.pedagogy
+        ? {
+            ...context.pedagogy,
+            decisivePoint: undefined,
+            commonMistake: undefined,
+          }
+        : undefined,
       objectiveOptionAnalyses: context.objectiveOptionAnalyses?.map((opt) => ({
         ...opt,
         isCorrect: false,
-        refutation: options.hideAnswer ? 'A análise estará disponível após a conclusão da etapa.' : opt.refutation,
+        refutation: 'A análise estará disponível após a conclusão da etapa.',
       })),
+      competencyVariants: sanitizedVariants,
     };
   }
 }

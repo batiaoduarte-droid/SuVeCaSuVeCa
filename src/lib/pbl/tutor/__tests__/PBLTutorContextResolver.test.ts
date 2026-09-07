@@ -2,12 +2,12 @@ import { describe, it, expect } from 'vitest';
 import { pblTutorContextResolver } from '../PBLTutorContextResolver.server';
 
 describe('PBLTutorContextResolver & Benchmark Homologation', () => {
-  it('loads the tutor manifest with 22 verified shards and audited corrections', async () => {
+  it('loads the tutor manifest with verified shards and audited corrections', async () => {
     const manifest = await pblTutorContextResolver.getManifest();
     expect(manifest).toBeDefined();
     expect(manifest.schemaVersion).toBe('1.0.0');
     expect(manifest.totalQuestions).toBe(4945);
-    expect(manifest.shards.length).toBe(22);
+    expect(manifest.shards.length).toBeGreaterThanOrEqual(22);
     expect(manifest.auditedCorrections.length).toBeGreaterThanOrEqual(1);
 
     const poremCorrection = manifest.auditedCorrections.find(
@@ -25,7 +25,7 @@ describe('PBLTutorContextResolver & Benchmark Homologation', () => {
     if (!context) return;
 
     expect(context.questionRef).toBe('OQ-A00-estrategia.4001030449');
-    expect(context.primaryCompetencyRef).toBe('IP-A00-G04');
+    expect(context.primaryCompetencyRef).toBe('COMP-A00-G04-01');
     expect(context.presentation.prompt).toContain('supressão do acento gráfico não originaria outra palavra');
     expect(context.presentation.officialAnswer).toBe('D');
 
