@@ -1035,6 +1035,8 @@ Esta alteração de runtime acompanha a execução dos lotes do trabalho `568bc2
 - **Persistência:** os campos novos são opcionais e seguem o payload existente da sessão, em `suveca_pbl_session_*` e `pblSessions`; não há migração de coleção ou de pacotes autorais. Sessões antigas continuam retomáveis.
 - **Validação:** regressões em `PBLAdaptiveInterventionView.test.tsx`, `PBLSessionView.test.tsx`, `PBLTutorEngineFlow.test.ts` e `pblTutorPedagogicalSafety.test.ts` cobrem pré-tentativa, confiança, apoio em AST, assistência persistida, identidade e checagem. O preflight obrigatório continua sendo `npm run ai-studio:preflight`. Efeito sobre aprendizagem e respostas reais de IA exigem avaliação pedagógica própria; estes testes validam os contratos de software.
 
+- **Portabilidade dos hashes:** `.gitattributes` define `-text` para os JSONs do manifest/inventário e dos shards em `public/knowledge/pbl/tutor/`, preservando bytes em exportações e checkouts Windows com `core.autocrlf=true`. Esta proteção não reescreve artefatos nem recalcula hashes.
+
 ## 25. Limites deste documento
 
 - Contagens mudam com builds; a fonte numérica vigente são os manifests e auditores executados.
