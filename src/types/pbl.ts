@@ -649,6 +649,7 @@ export interface InterventionPayload {
     partial?: SemanticBlock[];
     full?: SemanticBlock[];
   };
+  contrastDecisionCriterion?: string;
   contrastingPoleA?: string;
   contrastingPoleB?: string;
   workedExample?: {

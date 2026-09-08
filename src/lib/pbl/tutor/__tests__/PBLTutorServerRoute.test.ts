@@ -112,7 +112,9 @@ describe('PBLTutorServerRoute Handlers', () => {
       const body = getBody();
       expect(body).toBeDefined();
       expect(body.pedagogicalText).toBeDefined();
-      expect(body.pedagogicalText).toContain('infinitivo pessoal');
+      expect(body.pedagogicalText).toContain('Critério normativo da competência');
+      expect(body.quickCheck).toBeUndefined();
+      expect(body.metacognitiveInsight).toBeUndefined();
       expect(body.intent).toBe('explain_rule');
       expect(body.continuityRecommendation).toBe('try_same');
       expect(body.executionMetadata.fallback).toBe(true);

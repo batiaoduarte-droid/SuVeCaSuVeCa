@@ -1,3 +1,4 @@
+import { getEpisodeAttempt, validateQuickCheck } from './pblTutorPedagogy';
 import type { Request, Response } from 'express';
 import { GoogleGenAI, Type } from '@google/genai';
 import { pblTutorContextResolver } from './PBLTutorContextResolver.server';
@@ -51,6 +52,37 @@ const tutorResponseSchema = {
         contrastExample: { type: Type.STRING },
       },
       description: 'Estruturação do erro para o Caderno de Erros quando pertinente ou solicitado.',
+    },
+    quickCheck: {
+      type: Type.OBJECT,
+      properties: {
+        prompt: { type: Type.STRING, description: 'Frase ou pergunta curta (1 linha) para checagem de compreensão imediata.' },
+        options: {
+          type: Type.ARRAY,
+          items: {
+            type: Type.OBJECT,
+            properties: {
+              label: { type: Type.STRING },
+              text: { type: Type.STRING },
+            },
+            required: ['label', 'text'],
+          },
+          description: 'Duas opções concisas de resposta (ex.: Certo/Errado ou A/B).',
+        },
+        sourceRefs: { type: Type.ARRAY, items: { type: Type.STRING }, description: 'IDs de regras ou contrastes fornecidos que sustentam a resposta.' },
+        correctOption: { type: Type.STRING, description: 'Label da opção correta do micro-desafio.' },
+        explanation: { type: Type.STRING, description: 'Justificativa em 1 linha.' },
+      },
+      description: 'Micro-desafio prático de fixação rápida para verificar compreensão imediata do critério.',
+    },
+    reasoningChips: {
+      type: Type.ARRAY,
+      items: { type: Type.STRING },
+      description: '3 a 4 opções curtas de dúvidas ou hipóteses que o aluno pode clicar sem precisar digitar.',
+    },
+    metacognitiveInsight: {
+      type: Type.STRING,
+      description: 'Uma frase curta sobre a calibração metacognitiva do aluno.',
     },
   },
   required: ['pedagogicalText', 'intent', 'continuityRecommendation', 'sourceRefs'],
@@ -116,11 +148,34 @@ function generateDeterministicFallback(
     ...(contrasts[0] ? [contrasts[0].title] : []),
   ];
 
+  const reasoningChips = [
+    'Quais critérios preciso distinguir?',
+    'Como aplicar este critério passo a passo?',
+    'Mostre o contraste com outro exemplo',
+    'Consultar formulação canônica da regra',
+  ];
+
+  const studentAt = request.studentAttemptContext;
+  let metacognitiveInsight: string | undefined = undefined;
+  if (studentAt) {
+    if (AttemptEvaluator.evaluateConfidence(studentAt.isCorrect, studentAt.confidence || 'medium') === 'high_confidence_error') {
+      metacognitiveInsight = 'Você declarou alta confiança e a resposta divergiu do gabarito. Vamos investigar o critério que orientou sua escolha.';
+    } else if (!studentAt.isCorrect && (studentAt.confidence === 'guess' || studentAt.confidence === 'low')) {
+      metacognitiveInsight = 'Você declarou dúvida. Podemos percorrer os passos e conferir onde sua hipótese diverge do critério.';
+    } else if (studentAt.isCorrect && (studentAt.confidence === 'guess' || studentAt.confidence === 'low')) {
+      metacognitiveInsight = 'Acerto com dúvida: vamos consolidar o critério para que a assertividade se torne intencional.';
+    } else if (studentAt.isCorrect) {
+      metacognitiveInsight = 'Você acertou este item. Explique o critério e verifique sua aplicação em um novo caso.';
+    }
+  }
+
   return {
     pedagogicalText: text,
     intent: 'explain_rule',
     continuityRecommendation: 'try_same',
     sourceRefs,
+    reasoningChips,
+    metacognitiveInsight,
     executionMetadata: {
       model: 'fallback-deterministic',
       durationMs: 0,
@@ -131,7 +186,7 @@ function generateDeterministicFallback(
 
 export async function handlePBLTutorTurn(req: Request, res: Response): Promise<void> {
   const startTime = Date.now();
-  const request = req.body as PBLTutorTurnRequest;
+  let request = { ...req.body } as PBLTutorTurnRequest;
 
   if (!request || !request.questionRef) {
     res.status(400).json({ error: 'questionRef é obrigatório.' });
@@ -186,6 +241,36 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
     return;
   }
 
+  // Submitted drafts and client-provided correctness cannot authorize solution exposure.
+  try {
+    const userId = (res.locals as any)?.userId || await resolveTokenUserId(req);
+    const session = userId && userId !== 'guest' && typeof request.sessionId === 'string'
+      ? await pblServerSessionRepository.getSession(request.sessionId, userId) : null;
+    const episodeId = request.episodeId || session?.currentTutorEpisodeId;
+    const episode = episodeId ? session?.tutorEpisodes?.[episodeId] : undefined;
+    const matchesEpisode = episode && episode.questionRef === request.questionRef &&
+      episode.competencyRef === request.competencyRef && episode.sessionId === session?.sessionId;
+    const attempt = session && matchesEpisode ? getEpisodeAttempt(session, episode) : undefined;
+    const allowedPhase = session && ['tutor', 'intervention', 'reflection', 'completed', 'reattempt'].includes(session.phase);
+    const hasAttempted = Boolean(attempt && allowedPhase);
+    request = {
+      ...request,
+      studentAttemptContext: hasAttempted && attempt ? {
+        userAnswer: attempt.userAnswer,
+        isCorrect: attempt.isCorrect,
+        confidence: attempt.confidence,
+        attemptStage: attempt.stage,
+      } : undefined,
+      // History belongs to this episode; a request cannot substitute a different solved item.
+      history: matchesEpisode ? episode.turns.filter((turn) => turn.role === 'student' || turn.role === 'tutor')
+        .map((turn) => ({ role: turn.role as 'student' | 'tutor', text: turn.content, intent: turn.intent })) : [],
+    };
+    context = pblTutorContextResolver.filterTutorContextForStudent(context, { hideAnswer: !hasAttempted });
+  } catch {
+    res.status(503).json({ error: 'Não foi possível confirmar o estado da tentativa. Sua sessão pode ser retomada.' });
+    return;
+  }
+
   const tutorEnabled = process.env.PBL_TUTOR_ENABLED !== 'false' && Boolean(process.env.GEMINI_API_KEY);
   const targetModel = process.env.PBL_TUTOR_MODEL || 'gemini-3.1-flash-lite';
   const thinkingLevel = (process.env.PBL_TUTOR_THINKING_LEVEL || 'low') as any;
@@ -220,15 +305,32 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
 
     const rawText = aiResponse.text || '{}';
     const parsed = JSON.parse(rawText);
+    if (!parsed || typeof parsed.pedagogicalText !== 'string' || !parsed.pedagogicalText.trim()) {
+      throw new Error('INVALID_PEDAGOGICAL_RESPONSE');
+    }
+    const intents = ['investigate_confusion', 'explain_rule', 'contrast_options', 'recommend_practice', 'synthesize_notebook', 'encourage_reattempt', 'direct_clarification', 'wrap_up'];
+    const continuity = ['try_same', 'try_alternative', 'review_contrast', 'proceed_transfer', 'proceed_reflection'];
+    const allowedRefs = new Set([
+      ...(context.criteria?.rules || []).flatMap((rule) => [rule.ruleRef, rule.title]),
+      ...(context.criteria?.contrasts || []).flatMap((contrast) => [contrast.contrastRef, contrast.title]),
+      ...(context.criteria?.procedures || []).flatMap((procedure) => [procedure.procedureRef, procedure.title]),
+    ]);
+    const hasAttempted = Boolean(request.studentAttemptContext);
+    const notebookDraft = hasAttempted && parsed.notebookDraft &&
+      ['title', 'triggerCondition', 'decisionRule', 'contrastExample'].every((key) => typeof parsed.notebookDraft[key] === 'string' && parsed.notebookDraft[key].trim())
+      ? parsed.notebookDraft : undefined;
 
     const durationMs = Date.now() - startTime;
 
     const responsePayload: PBLTutorTurnResponse = {
       pedagogicalText: String(parsed.pedagogicalText || '').trim(),
-      intent: parsed.intent || 'explain_rule',
-      continuityRecommendation: parsed.continuityRecommendation || 'try_same',
-      sourceRefs: Array.isArray(parsed.sourceRefs) ? parsed.sourceRefs : [],
-      notebookDraft: parsed.notebookDraft || undefined,
+      intent: intents.includes(parsed.intent) ? parsed.intent : 'explain_rule',
+      continuityRecommendation: continuity.includes(parsed.continuityRecommendation) ? parsed.continuityRecommendation : 'try_same',
+      sourceRefs: Array.isArray(parsed.sourceRefs) ? parsed.sourceRefs.filter((ref: unknown) => typeof ref === 'string' && allowedRefs.has(ref)) : [],
+      notebookDraft,
+      quickCheck: hasAttempted ? validateQuickCheck(parsed.quickCheck, allowedRefs) : undefined,
+      reasoningChips: Array.isArray(parsed.reasoningChips) ? parsed.reasoningChips.filter((chip: unknown) => typeof chip === 'string' && chip.trim()).slice(0, 4) : undefined,
+      metacognitiveInsight: hasAttempted && typeof parsed.metacognitiveInsight === 'string' ? parsed.metacognitiveInsight : undefined,
       executionMetadata: {
         model: targetModel,
         durationMs,

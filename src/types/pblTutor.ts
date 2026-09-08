@@ -2,6 +2,8 @@ import type {
   PBLAssistanceLevel,
   PBLAttemptStage,
   PBLConfidenceLevel,
+  DiagnosticResult,
+  InterventionPayload,
 } from './pbl';
 
 export type PBLTutorIntent =
@@ -28,6 +30,14 @@ export interface PBLTutorNotebookDraft {
   contrastExample: string;
 }
 
+export interface PBLTutorQuickCheck {
+  sourceRefs?: string[];
+  prompt: string;
+  options: Array<{ label: string; text: string }>;
+  correctOption: string;
+  explanation: string;
+}
+
 export interface PBLTutorTurn {
   turnId: string;
   role: 'student' | 'tutor' | 'system';
@@ -42,6 +52,9 @@ export interface PBLTutorTurn {
   };
   sourceRefs?: string[];
   notebookDraft?: PBLTutorNotebookDraft;
+  quickCheck?: PBLTutorQuickCheck;
+  reasoningChips?: string[];
+  metacognitiveInsight?: string;
   executionMetadata?: {
     model: string;
     durationMs: number;
@@ -51,6 +64,10 @@ export interface PBLTutorTurn {
 }
 
 export interface PBLTutorEpisode {
+  attemptId?: string;
+  diagnostic?: DiagnosticResult;
+  intervention?: InterventionPayload;
+  quickCheckResponse?: { activityId: string; answer: string };
   episodeId: string;
   sessionId: string;
   competencyRef: string;
@@ -232,6 +249,7 @@ export interface PBLTutorQuestionContext {
 }
 
 export interface PBLTutorTurnRequest {
+  episodeId?: string;
   sessionId: string;
   competencyRef: string;
   questionRef: string;
@@ -263,6 +281,9 @@ export interface PBLTutorTurnResponse {
     promptPreview: string;
   };
   notebookDraft?: PBLTutorNotebookDraft;
+  quickCheck?: PBLTutorQuickCheck;
+  reasoningChips?: string[];
+  metacognitiveInsight?: string;
   executionMetadata: {
     model: string;
     durationMs: number;

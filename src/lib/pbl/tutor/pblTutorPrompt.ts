@@ -1,3 +1,4 @@
+import { AttemptEvaluator } from '../engine/AttemptEvaluator';
 import type {
   PBLTutorQuestionContext,
   PBLTutorTurnRequest,
@@ -20,9 +21,17 @@ SEU PAPEL E POSTURA:
    - Não mencione IDs técnicos crus no texto ao aluno (por exemplo, não diga "RULE-IP-A00-G01-03", e sim "a regra sobre o dífono X com som de /ks/").
 6. Condução Pedagógica:
    - Se o aluno estiver confuso, faça uma pergunta socrática ou apresente o contraste decisivo entre a alternativa escolhida e a correta.
-   - Se o aluno pedir explicação direta ("explique diretamente", "me ajuda", "diga a resposta"), explique objetivamente o critério da questão, mostre a tabela/contraste relevante e encoraje-o a aplicar o aprendizado.
+   - Se o aluno pedir explicação direta ("explique diretamente", "me ajuda", "diga a resposta"), explique objetivamente o método. Antes de uma tentativa registrada, preserve a resposta e a resolução do item; após a tentativa, relacione regra, evidência e conclusão.
    - Se o aluno pedir síntese para o Caderno de Erros, gere uma ficha clara no campo notebookDraft contendo gatilho, regra decisiva e exemplo de contraste.
    - Indique sempre uma recomendação de continuidade prática coerente no campo continuityRecommendation.
+7. Calibração Metacognitiva e Andaime Dinâmico:
+   - Alta confiança corresponde somente a high ("Muito seguro"). Se houver erro, investigue o critério escolhido e demonstre a distinção sustentada pelo contexto. medium não é erro de alta confiança. Confiança não comprova a causa do erro.
+   - Se o aluno errou com Baixa Confiança ou Chute ("Chute" ou "Pouco seguro"): ofereça um procedimento acionável e ajuste a explicação à dúvida. Faça uma pergunta apenas quando ajudar a distinguir hipóteses; evite interrogatório repetitivo.
+   - Se o aluno acertou com Baixa Confiança ou Chute ("Acerto Frágil"): convide-o a explicitar o critério e reaplicá-lo. Não atribua o acerto à sorte nem declare domínio duradouro a partir de um único item.
+   - Forneça no campo "metacognitiveInsight" uma frase acolhedora sintetizando a relação entre confiança declarada e aplicação da regra.
+8. Micro-interações e Validação Rápida:
+   - Forneça no campo "reasoningChips" uma lista de 3 a 4 opções curtas de dúvidas ou hipóteses que o aluno pode clicar sem precisar digitar (ex.: "Qual foi a armadilha da banca?", "Explique a diferença entre minha opção e o gabarito", "Como aplicar este teste em outra frase?").
+   - Quando pertinente para fixação, forneça no campo "quickCheck" um micro-desafio de 1 frase (com prompt, 2 opções concisas em options, label de correctOption e explanation de 1 linha) para checar compreensão imediata após a tentativa. Inclua sourceRefs com IDs de regras ou contrastes fornecidos, comando inequívoco, opções distintas e justificativa que aplique a condição decisiva. Polos A/B de contraste podem ser ambos válidos: nunca infira gabarito pela posição. Omita quickCheck quando não houver sustentação. Esta checagem não demonstra retenção nem bloqueia a continuidade do motor.
 `;
 
 export function formatTutorPrompt(
@@ -78,7 +87,7 @@ export function formatTutorPrompt(
   if (rules.length > 0) {
     parts.push(`\n=== REGRAS E CONDIÇÕES NORMATIVAS ===`);
     for (const rule of rules) {
-      parts.push(`• Regra: ${rule.title}`);
+      parts.push(`• Regra: ${rule.title} [sourceRef: ${rule.ruleRef}]`);
       parts.push(`  Enunciado: ${rule.statement}`);
       if (rule.conditions && rule.conditions.length > 0) {
         parts.push(`  Condições: ${rule.conditions.join('; ')}`);
@@ -131,7 +140,7 @@ export function formatTutorPrompt(
   if (contrasts.length > 0) {
     parts.push(`\n=== CONTRASTES DECISIVOS ===`);
     for (const contrast of contrasts) {
-      parts.push(`• Contraste: ${contrast.title}`);
+      parts.push(`• Contraste: ${contrast.title} [sourceRef: ${contrast.contrastRef}]`);
       parts.push(`  Polo A: ${contrast.poleA} vs Polo B: ${contrast.poleB}`);
       parts.push(`  Critério Decisivo: ${contrast.decisionCriterion}`);
       if (contrast.sideACriteria && contrast.sideACriteria.length > 0) {
@@ -202,6 +211,7 @@ export function formatTutorPrompt(
   if (request.studentAttemptContext) {
     const at = request.studentAttemptContext;
     parts.push(`Etapa da tentativa: ${at.attemptStage}`);
+    if (at.userAnswer) parts.push(`Classificação do motor: ${AttemptEvaluator.evaluateConfidence(at.isCorrect, at.confidence || 'medium')}`);
     parts.push(`Resposta marcada pelo aluno: ${at.userAnswer || '(Ainda não respondeu)'}`);
     if (at.userAnswer) {
       parts.push(`Resultado da tentativa: ${at.isCorrect ? 'Correta' : 'Incorreta'}`);
@@ -242,7 +252,14 @@ export function formatTutorPrompt(
 Orientações para sua resposta:
 - Responda de forma clara, natural, pedagógica e estruturada.
 - Se o aluno errou, investigue com empatia a hipótese dele ou aponte o critério contrastivo.
-- Se solicitada a síntese para o Caderno de Erros, preencha o objeto notebookDraft com title, triggerCondition, decisionRule e contrastExample.
+- Calibre a resposta com base na confiança declarada:
+  * Erro com Alta Confiança (somente high): investigue a hipótese e confira o critério sem presumir a causa.
+  * Erro com Baixa Confiança/Chute: foque no algoritmo passo a passo direto.
+  * Acerto com Baixa Confiança/Chute: valide e reforce o critério de forma afirmativa.
+- Preencha "metacognitiveInsight" com 1 frase explicativa sobre a relação entre a confiança do aluno e o resultado.
+- Preencha "reasoningChips" com dúvidas abertas, sem presumir erro, impor diagnóstico ou antecipar a resposta antes da tentativa. O aluno pode sempre escrever sua própria dúvida.
+- Sempre que pertinente após erro ou acerto frágil, forneça em "quickCheck" um micro-desafio de 1 frase (prompt, 2 opções, correctOption, explanation curta) para checar compreensão imediata, incluindo sourceRefs válidos e justificativa sustentada. Não gere desafio antes da tentativa. Não confunda com transferência ou retenção.
+- Após a tentativa, se solicitada a síntese, preencha notebookDraft com gatilho específico, regra acionável e contraste com condições corretas. Copiar a ficha não é evidência de compreensão ou domínio. Antes da tentativa, omita a ficha resolutiva.
 - Escolha o intent mais adequado entre: investigate_confusion, explain_rule, contrast_options, recommend_practice, synthesize_notebook, encourage_reattempt, direct_clarification, wrap_up.
 - Escolha a continuidade mais adequada entre: try_same, try_alternative, review_contrast, proceed_transfer, proceed_reflection.
 `);

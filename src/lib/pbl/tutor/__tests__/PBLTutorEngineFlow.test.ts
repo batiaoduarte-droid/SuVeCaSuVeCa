@@ -382,4 +382,40 @@ describe('PBLEngine Tutor Mode Conduction Flow', () => {
     expect(session.phase).toBe('transfer');
     expect(session.tutorEpisodes![episode.episodeId].resolved).toBe(true);
   });
+  it('preserva ajuda máxima ao retomar o item e não avalia a resposta como independente', async () => {
+    let session = await engine.startSession({ userId: 'assisted-student', mode: 'guided', targetLessonId: 'A10', conductionMode: 'tutor' });
+    const episode = engine.startTutorEpisode(session, { questionRef: mockAnchorQuestion.questionRef, competencyRef: mockComp.competencyId, attemptStage: 'initial', assistanceRequested: true, initialUserAnswer: 'Certo' });
+    expect(episode.attemptId).toBeUndefined();
+    expect(episode.initialUserAnswer).toBeUndefined();
+    engine.recordTutorAssistance(session, episode.episodeId, 'full');
+    engine.recordTutorTurn(session, episode.episodeId, { turnId: 'help', role: 'student', content: 'Como aplicar?', timestamp: new Date().toISOString(), studentAssistanceRequested: true });
+    expect(episode.assistanceLevel).toBe('full');
+    expect(session.interventionAssistance?.[mockComp.competencyId]).toBe('full');
+    session.currentQuestionRef = mockTransferQuestion.questionRef;
+    session = await engine.concludeTutorEpisode(session, episode.episodeId, 'try_same');
+    expect(session.currentQuestionRef).toBe(mockAnchorQuestion.questionRef);
+    const result = await engine.submitAttempt(session, { sessionId: session.sessionId, questionRef: mockAnchorQuestion.questionRef, competencyRef: mockComp.competencyId, userAnswer: 'Certo', correctAnswer: 'Certo', confidence: 'high', stage: 'initial', responseTimeMs: 1000, assistanceLevel: 'none' });
+    expect(result.attempt.assistanceLevel).toBe('full');
+    expect(result.session.masterySnapshot[mockComp.competencyId]?.learningState).not.toBe('retention_confirmed');
+  });
+
+  it('fixa a identidade da tentativa e do diagnóstico ao iniciar o episódio', async () => {
+    const session = await engine.startSession({ userId: 'episode-student', mode: 'guided', targetLessonId: 'A10', conductionMode: 'tutor' });
+    const result = await engine.submitAttempt(session, { sessionId: session.sessionId, questionRef: mockAnchorQuestion.questionRef, competencyRef: mockComp.competencyId, userAnswer: 'Errado', correctAnswer: 'Certo', confidence: 'high', stage: 'initial', responseTimeMs: 1000 });
+    const episode = result.session.tutorEpisodes![result.session.currentTutorEpisodeId!];
+    expect(episode.attemptId).toBe(result.attempt.attemptId);
+    expect(episode.diagnostic?.questionRef).toBe(result.attempt.questionRef);
+    expect(episode.intervention?.competencyRef).toBe(result.attempt.competencyRef);
+  });
+
+  it('encerra apoio sem atribuir domínio e permite concluir a reflexão', async () => {
+    let session = await engine.startSession({ userId: 'reflection-student', mode: 'guided', targetLessonId: 'A10', conductionMode: 'tutor' });
+    const episode = engine.startTutorEpisode(session, { questionRef: mockAnchorQuestion.questionRef, competencyRef: mockComp.competencyId, attemptStage: 'initial' });
+    session = await engine.concludeTutorEpisode(session, episode.episodeId, 'proceed_reflection');
+    expect(session.pendingNextAction?.outcome).toBe('needs_review');
+    session = engine.completeReflection(session, { decision: 'needs_review', note: 'Preciso recuperar a condição.', suggestedRule: '' });
+    expect(session.phase).toBe('completed');
+    expect(session.competencyOutcomes?.[mockComp.competencyId]).toBe('needs_review');
+  });
+
 });

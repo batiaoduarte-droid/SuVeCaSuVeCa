@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { PBLSession } from '../../types/pbl';
 import { PBLSessionView } from './PBLSessionView';
+import { pblEngine } from '../../lib/pbl/engine/PBLEngine';
 
 const mocks = vi.hoisted(() => ({
   completeReflection: vi.fn((session: PBLSession, reflection: Record<string, unknown>) => ({
@@ -33,6 +34,7 @@ vi.mock('../../lib/pbl/engine/PBLEngine', () => ({
       getRulePresentation: vi.fn(async () => null),
     },
     completeReflection: mocks.completeReflection,
+    recordTutorAssistance: vi.fn((current) => current),
   },
 }));
 
@@ -112,4 +114,19 @@ describe('PBLSessionView reflection', () => {
       revealedSuggestedRule: true,
     }));
   });
+  it('carrega a questão do episódio e não a próxima sondagem pendente', async () => {
+    vi.mocked(pblEngine.repo.getQuestionPresentation).mockImplementation(async (ref) => ({ questionRef: ref, prompt: ref === 'QUESTION-1' ? 'Questão que originou a explicação' : 'Sondagem futura reservada', questionType: 'true_false', options: [], correctAnswer: 'C' }));
+    const attempt = { attemptId: 'ATT1', sessionId: session.sessionId, questionRef: 'QUESTION-1', competencyRef: 'COMP-1', stage: 'initial', userAnswer: 'E', isCorrect: false, confidence: 'medium', createdAt: session.startedAt } as PBLSession['attempts'][number];
+    const tutorSession: PBLSession = {
+      ...session, phase: 'tutor', currentQuestionRef: 'FUTURE-PROBE', attempts: [attempt], currentTutorEpisodeId: 'EP1',
+      tutorEpisodes: { EP1: { episodeId: 'EP1', sessionId: session.sessionId, questionRef: 'QUESTION-1', competencyRef: 'COMP-1', attemptStage: 'initial', attemptId: 'ATT1', assistanceLevel: 'hint', startedAt: session.startedAt, updatedAt: session.updatedAt, resolved: false, totalAiLatencyMs: 0, turns: [{ turnId: 'TURN1', role: 'tutor', timestamp: session.updatedAt, content: 'Confira o critério usado.' }] } },
+    };
+    render(<PBLSessionView initialSession={tutorSession} onExit={vi.fn()} />);
+    expect(await screen.findByText('Questão que originou a explicação')).toBeInTheDocument();
+    expect(screen.queryByText('Sondagem futura reservada')).not.toBeInTheDocument();
+    expect(pblEngine.repo.getQuestionPresentation).toHaveBeenCalledWith('QUESTION-1');
+    expect(pblEngine.repo.getQuestionPresentation).not.toHaveBeenCalledWith('FUTURE-PROBE');
+    expect(screen.getByText('Resposta Incorreta')).toBeInTheDocument();
+  });
+
 });

@@ -1,3 +1,4 @@
+import { maximumAssistance } from '../tutor/pblTutorPedagogy';
 import type {
   PBLSession,
   PBLAttempt,
@@ -338,9 +339,10 @@ export class PBLEngine {
       && attemptParams.isDelayedRetrieval !== false;
     const attempt = this.attemptEvaluator.evaluate({
       ...attemptParams,
-      assistanceLevel: attemptParams.assistanceLevel
-        || session.interventionAssistance?.[attemptParams.competencyRef]
-        || 'none',
+      assistanceLevel: maximumAssistance(
+        attemptParams.assistanceLevel ?? session.interventionAssistance?.[attemptParams.competencyRef],
+        ...Object.values(session.tutorEpisodes || {}).filter((episode) => episode.questionRef === attemptParams.questionRef).map((episode) => episode.assistanceLevel)
+      ),
       // O runtime não aceita um sinal positivo autorrelatado como prova de
       // espaçamento: a janela precisa ser sustentada pelo timestamp persistido.
       isDelayedRetrieval: qualifiesAsDelayedRetrieval,
@@ -598,22 +600,30 @@ export class PBLEngine {
   ): PBLTutorEpisode {
     const episodeId = `ep_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
     const now = new Date().toISOString();
-    const assistanceLevel: PBLAssistanceLevel = params.assistanceRequested ? 'hint' : 'none';
+    const assistanceLevel = maximumAssistance(session.interventionAssistance?.[params.competencyRef], params.assistanceRequested ? 'hint' : 'none');
+    const attempt = params.initialUserAnswer ? [...session.attempts].reverse().find((item) =>
+      item.questionRef === params.questionRef && item.competencyRef === params.competencyRef &&
+      item.stage === params.attemptStage && item.userAnswer === params.initialUserAnswer) : undefined;
 
     if (params.assistanceRequested) {
       session.interventionAssistance = {
         ...(session.interventionAssistance || {}),
-        [params.competencyRef]: 'hint',
+        [params.competencyRef]: assistanceLevel,
       };
     }
 
+    const diagnostic = attempt && session.lastDiagnosticResult?.questionRef === attempt.questionRef
+      && session.lastDiagnosticResult.competencyRef === attempt.competencyRef ? session.lastDiagnosticResult : undefined;
     const episode: PBLTutorEpisode = {
       episodeId,
       sessionId: session.sessionId,
       competencyRef: params.competencyRef,
       questionRef: params.questionRef,
       attemptStage: params.attemptStage,
-      initialUserAnswer: params.initialUserAnswer,
+      attemptId: attempt?.attemptId,
+      diagnostic,
+      intervention: diagnostic ? session.lastInterventionPayload : undefined,
+      initialUserAnswer: attempt?.userAnswer,
       initialConfidence: params.initialConfidence,
       assistanceLevel,
       startedAt: now,
@@ -633,23 +643,31 @@ export class PBLEngine {
     return episode;
   }
 
+  public recordTutorAssistance(session: PBLSession, episodeId: string, level: PBLAssistanceLevel): PBLSession {
+    const episode = session.tutorEpisodes?.[episodeId];
+    if (!episode || episode.resolved) return session;
+    episode.assistanceLevel = maximumAssistance(episode.assistanceLevel, level);
+    session.interventionAssistance = {
+      ...session.interventionAssistance,
+      [episode.competencyRef]: maximumAssistance(session.interventionAssistance?.[episode.competencyRef], episode.assistanceLevel),
+    };
+    episode.updatedAt = session.updatedAt = new Date().toISOString();
+    return session;
+  }
+
   public recordTutorTurn(
     session: PBLSession,
     episodeId: string,
     turn: PBLTutorTurn
   ): PBLSession {
     const episode = session.tutorEpisodes?.[episodeId];
-    if (!episode) return session;
+    if (!episode || episode.resolved || episode.turns.some((existing) => existing.turnId === turn.turnId)) return session;
 
     episode.turns.push(turn);
     episode.updatedAt = new Date().toISOString();
 
     if (turn.studentAssistanceRequested) {
-      episode.assistanceLevel = 'partial';
-      session.interventionAssistance = {
-        ...(session.interventionAssistance || {}),
-        [episode.competencyRef]: 'partial',
-      };
+      this.recordTutorAssistance(session, episodeId, 'partial');
     }
 
     if (turn.notebookDraft) {
@@ -676,9 +694,12 @@ export class PBLEngine {
       episode.updatedAt = new Date().toISOString();
     }
 
-    if (action === 'try_same') {
+    if (action === 'try_same' && episode) {
+      session.currentQuestionRef = episode.questionRef;
       if (episode?.attemptStage === 'transfer') {
         session.phase = 'transfer';
+      } else if (episode?.attemptStage === 'probe') {
+        session.phase = 'hypothesis';
       } else if (episode?.attemptStage === 'reattempt') {
         session.phase = 'reattempt';
       } else {
@@ -689,6 +710,13 @@ export class PBLEngine {
     } else if (action === 'proceed_transfer') {
       return this.prepareTransfer(session);
     } else if (action === 'proceed_reflection') {
+      if (!['complete_session', 'advance_competency'].includes(session.pendingNextAction?.type || '')) {
+        session.pendingNextAction = {
+          type: session.currentCompetencyIndex + 1 < session.targetCompetencyRefs.length ? 'advance_competency' : 'complete_session',
+          outcome: 'needs_review',
+          reason: 'O aluno encerrou o apoio antes de confirmar nova aplicação independente.',
+        };
+      }
       session.phase = 'reflection';
     }
 

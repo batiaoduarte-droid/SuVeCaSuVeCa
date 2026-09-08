@@ -123,6 +123,7 @@ export class InterventionPlanner {
       ruleExceptions: rulePresentation?.exceptions,
       resolvedTable: rulePresentation?.resolvedTable,
       semanticBlocks: authoredBlocks,
+      contrastDecisionCriterion: useSpecificContrast ? contrast?.distinctionKey : undefined,
       contrastingPoleA: useSpecificContrast ? contrast?.poleA : undefined,
       contrastingPoleB: useSpecificContrast ? contrast?.poleB : undefined,
       workedExample: {

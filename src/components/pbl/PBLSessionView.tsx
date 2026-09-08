@@ -1,3 +1,4 @@
+import { getEpisodeAttempt, maximumAssistance } from '../../lib/pbl/tutor/pblTutorPedagogy';
 import React, { useEffect, useRef, useState } from 'react';
 import type { CadernoErroItem } from '../../types/suveca';
 import type {
@@ -31,6 +32,7 @@ import { PBLConfidenceSelector } from './PBLConfidenceSelector';
 import { PBLDiagnosticView } from './PBLDiagnosticView';
 import { PBLInterventionView } from './PBLInterventionView';
 import { PBLTutorChatView } from './PBLTutorChatView';
+import { PBLAdaptiveInterventionView } from './PBLAdaptiveInterventionView';
 import { PBLTransferView } from './PBLTransferView';
 import { PBLSessionSummary } from './PBLSessionSummary';
 import { ArrowLeft, BookOpenCheck, CheckCircle2, Eye, Lightbulb, PauseCircle, Timer, Trash2, Bot } from 'lucide-react';
@@ -119,6 +121,10 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const attemptStartedAt = useRef(Date.now());
   const sessionRef = useRef(session);
   const timingCursor = useRef(createPBLTimingCursor(session));
+  const tutorEpisode = session.currentTutorEpisodeId ? session.tutorEpisodes?.[session.currentTutorEpisodeId] : undefined;
+  const tutorAttempt = getEpisodeAttempt(session, tutorEpisode);
+  const displayedQuestionRef = session.phase === 'tutor' && tutorEpisode ? tutorEpisode.questionRef : session.currentQuestionRef;
+
 
   useEffect(() => {
     sessionRef.current = session;
@@ -233,7 +239,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     }
     setCurrentQuestion(null);
     void (async () => {
-      const presentation = await pblEngine.repo.getQuestionPresentation(session.currentQuestionRef);
+      const presentation = await pblEngine.repo.getQuestionPresentation(displayedQuestionRef);
       if (!active) return;
       setCurrentQuestion(presentation);
       if (!presentation && session.phase !== 'problem') {
@@ -241,17 +247,17 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
       }
     })();
     return () => { active = false; };
-  }, [session.phase, session.currentQuestionRef]);
+  }, [session.phase, displayedQuestionRef]);
 
   useEffect(() => {
-    if (!currentQuestion || currentQuestion.questionRef !== session.currentQuestionRef) return;
+    if (!currentQuestion || currentQuestion.questionRef !== displayedQuestionRef) return;
     recordQuestionEncounter(session.userId, {
       questionId: currentQuestion.questionRef,
       purpose: encounterPurposeFor(session.mode, session.phase),
       encounteredAt: new Date().toISOString(),
       sessionId: session.sessionId,
     });
-  }, [currentQuestion, session.currentQuestionRef, session.mode, session.phase, session.sessionId, session.userId]);
+  }, [currentQuestion, displayedQuestionRef, session.mode, session.phase, session.sessionId, session.userId]);
 
   useEffect(() => {
     if (!session.currentQuestionRef) {
@@ -410,7 +416,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
       ...session,
       interventionAssistance: {
         ...(session.interventionAssistance || {}),
-        [session.currentCompetencyRef]: level,
+        [session.currentCompetencyRef]: maximumAssistance(session.interventionAssistance?.[session.currentCompetencyRef], level),
       },
       updatedAt: new Date().toISOString(),
     };
@@ -427,7 +433,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
         ...session,
         interventionAssistance: {
           ...(session.interventionAssistance || {}),
-          [session.currentCompetencyRef]: level,
+          [session.currentCompetencyRef]: maximumAssistance(session.interventionAssistance?.[session.currentCompetencyRef], level),
         },
       };
       const nextSession = { ...await pblEngine.prepareReattempt(assistedSession) };
@@ -440,12 +446,50 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   };
 
   const handleRecordTutorTurn = (turn: PBLTutorTurn) => {
-    const currentEpisodeId = session.currentTutorEpisodeId;
+    const currentEpisodeId = tutorEpisode?.episodeId;
+    if (sessionRef.current.currentTutorEpisodeId !== currentEpisodeId) return;
     if (!currentEpisodeId) return;
-    const updatedSession = pblEngine.recordTutorTurn(session, currentEpisodeId, turn);
+    const updatedSession = pblEngine.recordTutorTurn(sessionRef.current, currentEpisodeId, turn);
     sessionRef.current = updatedSession;
     setSession({ ...updatedSession });
     PBLSessionRepository.saveSessionLocally(updatedSession);
+  };
+
+  const handleTutorAssistance = (level: PBLAssistanceLevel) => {
+    if (!tutorEpisode || sessionRef.current.currentTutorEpisodeId !== tutorEpisode.episodeId) return;
+    const updated = pblEngine.recordTutorAssistance(sessionRef.current, tutorEpisode.episodeId, level);
+    sessionRef.current = updated;
+    setSession({ ...updated });
+    PBLSessionRepository.saveSessionLocally(updated);
+  };
+
+  const handleQuickCheckAnswer = (activityId: string, answer: string) => {
+    const current = sessionRef.current;
+    const episode = tutorEpisode && current.tutorEpisodes?.[tutorEpisode.episodeId];
+    if (!episode || episode.resolved || current.currentTutorEpisodeId !== episode.episodeId) return;
+    episode.quickCheckResponse = { activityId, answer };
+    episode.updatedAt = current.updatedAt = new Date().toISOString();
+    setSession({ ...current });
+    PBLSessionRepository.saveSessionLocally(current);
+  };
+
+  const prepareTutorRequest = async () => {
+    if (sessionRef.current.userId !== 'guest') await PBLSessionRepository.saveSession(sessionRef.current);
+  };
+
+  const handleSaveTutorCaderno: NonNullable<PBLSessionViewProps['onAddErrorToNotebook']> = (content, error, rule, metadata) => {
+    if (!onAddErrorToNotebook || !tutorAttempt || !tutorEpisode) return;
+    onAddErrorToNotebook(content, error, rule, {
+      ...metadata, questionId: tutorEpisode.questionRef, origin: 'pbl',
+      questionText: currentQuestion?.prompt,
+      sourceRefs: [`QUESTION:${tutorEpisode.questionRef}`, `PBL_SESSION:${session.sessionId}`],
+      nextReviewAt: session.masterySnapshot[tutorEpisode.competencyRef]?.nextReviewRecommendedAt,
+    });
+    const current = sessionRef.current;
+    const updated = { ...current, savedErrorQuestionRefs: [...new Set([...(current.savedErrorQuestionRefs || []), tutorEpisode.questionRef])] };
+    sessionRef.current = updated;
+    setSession(updated);
+    PBLSessionRepository.saveSessionLocally(updated);
   };
 
   const handleConcludeTutorEpisode = async (
@@ -455,7 +499,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     if (!currentEpisodeId) return;
     setLoading(true);
     try {
-      const updatedSession = await pblEngine.concludeTutorEpisode(session, currentEpisodeId, action);
+      const updatedSession = await pblEngine.concludeTutorEpisode(sessionRef.current, currentEpisodeId, action);
       setSelectedAnswer('');
       setConfidence(null);
       setReasoning('');
@@ -475,7 +519,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
       questionRef: currentQuestionRef,
       competencyRef: updatedSession.currentCompetencyRef,
       attemptStage: updatedSession.phase === 'transfer' ? 'transfer' : updatedSession.phase === 'reattempt' ? 'reattempt' : 'initial',
-      initialUserAnswer: selectedAnswer || undefined,
+      initialUserAnswer: undefined,
       initialConfidence: confidence || undefined,
       assistanceRequested: true,
     });
@@ -672,14 +716,21 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
       )}
 
       {session.phase === 'tutor' && session.currentTutorEpisodeId && session.tutorEpisodes?.[session.currentTutorEpisodeId] && (
-        <PBLTutorChatView
+        <PBLAdaptiveInterventionView
+          key={tutorEpisode!.episodeId}
           session={session}
-          episode={session.tutorEpisodes[session.currentTutorEpisodeId]}
-          question={currentQuestion}
+          episode={tutorEpisode}
+          question={currentQuestion?.questionRef === tutorEpisode!.questionRef ? currentQuestion : null}
+          intervention={tutorAttempt ? tutorEpisode?.intervention || (session.lastDiagnosticResult?.questionRef === tutorEpisode?.questionRef ? session.lastInterventionPayload : undefined) : undefined}
+          attempt={tutorAttempt}
+          diagnostic={tutorAttempt ? tutorEpisode?.diagnostic || (session.lastDiagnosticResult?.questionRef === tutorEpisode?.questionRef ? session.lastDiagnosticResult : undefined) : undefined}
           onRecordTurn={handleRecordTutorTurn}
+          onAssistanceChange={handleTutorAssistance}
+          onQuickCheckAnswer={handleQuickCheckAnswer}
+          onBeforeTutorRequest={prepareTutorRequest}
           onConclude={handleConcludeTutorEpisode}
-          onSaveToCaderno={handleSaveToCaderno}
-          isSavedToCaderno={Boolean(session.savedErrorQuestionRefs?.includes(session.tutorEpisodes[session.currentTutorEpisodeId].questionRef))}
+          onSaveToCaderno={onAddErrorToNotebook ? handleSaveTutorCaderno : undefined}
+          isSavedToCaderno={Boolean(session.savedErrorQuestionRefs?.includes(tutorEpisode!.questionRef))}
         />
       )}
 
