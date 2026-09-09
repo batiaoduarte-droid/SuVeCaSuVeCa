@@ -921,48 +921,24 @@ public/knowledge/pbl/pbl_authored_packages.json
 ```
 
 - **Contratos e Schemas:** `Notebook LM/03_Autoria_Semantica/pbl/v2/contract.ts` e `schemas/pbl_authorship_v2.schema.json`.
-- **Artefato Publicado:** `SuVeCaSuVeCa/public/knowledge/pbl/pbl_authored_packages.json` (25 pacotes publicados: 2 base pilots + 23 pacotes auditados e homologados via ledger).
-- **Cobertura Homologada (25 pacotes publicados / 165 competências pendentes de autoria):**
-  1. `COMP-A00-G01-01` (Fonética e Fonologia: Encontros Vocálicos, Consonantais e Dígrafos) — Piloto base
-  2. `COMP-A00-G07-01` (Ortografia: Emprego dos Porquês) — Piloto base
-  3. `COMP-A00-G02-01` (Estudo da Sílaba - Teoria) — Certificado via ledger
-  4. `COMP-A00-G03-01` (Fundamentos de Estudo da Sílaba - Questões) — Certificado via ledger
-  5. `COMP-A00-G04-01` (Ortografia: Regras Gerais e Especiais de Acentuação Gráfica) — Certificado via ledger
-  6. `COMP-A00-G05-01` (Ortografia: Emprego do Hífen — Regras Gerais e Prefixos) — Certificado via ledger
-  7. `COMP-A00-G06-01` (Ortografia: Emprego do Hífen — Casos Especiais e Compostos) — Certificado via ledger
-  8. `COMP-A03-G01-01` (Pronomes Pessoais: Retos vs. Oblíquos e Regência de Complementos) — Certificado via ledger
-  9. `COMP-A04-G02-01` (Semântica dos Tempos e Modos Verbais: Correlação e Aspecto) — Certificado via ledger
-  10. `COMP-A12-G01-01` (Semântica: Sentido Próprio e Figurado — Denotação vs. Conotação) — Certificado via ledger
-  11. `COMP-A12-G02-01` (Semântica Lexical: Sinônimos, Antônimos e Adequação Contextual) — Certificado via ledger
-  12. `COMP-A00-G03-02` (Aplicação Prática e Decisão em Estudo da Sílaba - Questões) — Lote 03 (Certificado via ledger)
-  13. `COMP-A00-G03-03` (Articulação SuVeCA e Armadilhas de Prova em Estudo da Sílaba) — Lote 03 (Certificado via ledger)
-  14. `COMP-A01-G01-01` (Morfologia: Critérios Distintivos entre Classes Gramaticais Variáveis e Invariáveis) — Lote 03 (Certificado via ledger)
-  15. `COMP-A01-G02-01` (Morfossintaxe: Determinação, Modificação e Transposição Categorial de Classes de Palavras) — Lote 03 (Certificado via ledger)
-  16. `COMP-A01-G03-01` (Fundamentos e Identificação Morfossintática de Advérbios e Locuções Adverbiais) — Lote 03 (Certificado via ledger)
-  17. `COMP-A01-G03-02` (Aplicação Prática, Valores Semânticos e Circunstâncias de Advérbios e Locuções Adverbiais) — Lote 03 (Certificado via ledger)
-  18. `COMP-A01-G03-03` (Articulação SuVeCA, Invariabilidade e Armadilhas de Prova em Advérbios) — Lote 03 (Certificado via ledger)
-  19. `COMP-A01-G04-01` (Fundamentos e Identificação Morfossintática de Artigos Definidos e Indefinidos) — Lote 03 (Certificado via ledger)
-  20. `COMP-A01-G04-02` (Aplicação Prática, Determinação, Generalização e Substantivação em Artigos) — Lote 03 (Certificado via ledger)
-  21. `COMP-A01-G04-03` (Articulação SuVeCA, Valores Semântico-Discursivos e Armadilhas de Prova em Artigos) — Lote 03 (Certificado via ledger)
-  22. `COMP-A01-G05-01` (Morfologia e Valores Discursivos de Numerais e Interjeições) — Lote 03 (Certificado via ledger)
-  23. `COMP-A02-G01-01` (Fundamentos, Classificação e Identificação de Preposições e Locuções Prepositivas) — Lote 03 (Certificado via ledger)
-  24. `COMP-A02-G01-02` (Aplicação Prática, Polissemia e Valores Semânticos de Preposições) — Lote 03 (Certificado via ledger)
-  25. `COMP-A02-G01-03` (Articulação SuVeCA, Regência, Relações Gramaticais e Armadilhas de Prova em Preposições) — Lote 03 (Certificado via ledger)
-  26. `COMP-A02-G02-01` (Conjunções Coordenativas) — Lote 04 (Certificado via ledger)
-  27. `COMP-A02-G03-01` (Conjunções Subordinativas e Desde Que) — Lote 04 (Certificado via ledger)
-  28. `COMP-A02-G04-01` (Valores de E e Pois) — Lote 04 (Certificado via ledger)
-  29. `COMP-A02-G05-01` (Valores de Como e Questões Miscelâneas) — Lote 04 (Certificado via ledger)
-  30. `COMP-A03-G01-02` (Pronomes Pessoais — Aplicação Prática) — Lote 04 (Certificado via ledger)
-  31. `COMP-A03-G01-03` (Pronomes Pessoais — Armadilhas de Prova) — Lote 04 (Certificado via ledger)
-  32. `COMP-A03-G02-01` (Pronomes Pessoais - Questões) — Lote 04 (Certificado via ledger)
-  33. `COMP-A03-G03-01` (Possessivos Indefinidos e Interrogativos — Fundamentos) — Lote 04 (Certificado via ledger)
-  34. `COMP-A03-G03-02` (Possessivos Indefinidos e Interrogativos — Aplicação Prática) — Lote 04 (Certificado via ledger)
-  35. `COMP-A03-G03-03` (Possessivos Indefinidos e Interrogativos — Armadilhas de Prova) — Lote 04 (Certificado via ledger)
-  36. `COMP-A03-G04-01` (Demonstrativos e Relativos) — Lote 04 (Certificado via ledger)
-  37. `COMP-A03-G05-01` (Emprego dos Pronomes Relativos) — Lote 04 (Certificado via ledger)
-  38. `COMP-A03-G06-01` (Pronomes Relativos - Regência e Reescrita — Fundamentos) — Lote 04 (Certificado via ledger)
-  39. `COMP-A03-G06-02` (Pronomes Relativos - Regência e Reescrita — Aplicação Prática) — Lote 04 (Certificado via ledger)
-- **Saneamento e Homologação:** Mapeamentos distratores legados e registros pedagógicos saneados na fábrica e nos shards de runtime; auditorias independentes registradas em `reviews/*_review.md` com conferência estrita de critérios e limites normativos; simulações de alunos reclassificadas metodologicamente (resoluções assistidas com parâmetros de teste explícitos).
+- **Artefato Publicado:** `SuVeCaSuVeCa/public/knowledge/pbl/pbl_authored_packages.json` (190 pacotes publicados: 2 base pilots + 188 pacotes auditados e homologados via ledger).
+- **Cobertura Homologada (190 pacotes publicados / 0 competências pendentes de autoria — 100% do catálogo curricular concluído):**
+  - **Pilotos Base (2):** `COMP-A00-G01-01` e `COMP-A00-G07-01`.
+  - **Lote 01 e 02 (9):** `COMP-A00-G02-01`, `COMP-A00-G03-01`, `COMP-A00-G04-01`, `COMP-A00-G05-01`, `COMP-A00-G06-01`, `COMP-A03-G01-01`, `COMP-A04-G02-01`, `COMP-A12-G01-01`, `COMP-A12-G02-01`.
+  - **Lote 03 (14):** `COMP-A00-G03-02` a `COMP-A02-G01-03` (A00, A01, A02 morfologia e preposições).
+  - **Lote 04 (14):** `COMP-A02-G02-01` a `COMP-A03-G06-02` (conjunções e pronomes).
+  - **Lote 05 (14):** `COMP-A03-G06-03` a `COMP-A04-G08-01` (pronomes relativos e verbos regulares/irregulares).
+  - **Lote 06 (14):** `COMP-A04-G09-01` a `COMP-A05-G05-01` (vozes verbais e sintaxe de termos essenciais/integrantes).
+  - **Lote 07 (14):** `COMP-A05-G05-02` a `COMP-A06-G01-02` (termos acessórios e regência verbal).
+  - **Lote 08 (14):** `COMP-A06-G02-01` a `COMP-A07-G02-02` (regência verbal/nominal e crase).
+  - **Lote 09 (14):** `COMP-A07-G03-01` a `COMP-A08-G03-01` (crase especial e concordância verbal/nominal).
+  - **Lote 10 (14):** `COMP-A08-G03-02` a `COMP-A09-G04-01` (concordância avançada e orações coordenadas/subordinadas).
+  - **Lote 11 (14):** `COMP-A09-G04-02` a `COMP-A10-G02-02` (subordinadas adjetivas/adverbiais e pontuação básica).
+  - **Lote 12 (14):** `COMP-A10-G03-01` a `COMP-A11-G01-01` (pontuação avançada e tipologia textual).
+  - **Lote 13 (14):** `COMP-A11-G01-02` a `COMP-A11-G02-01` (gêneros e reescrita de frases).
+  - **Lote 14 (14):** `COMP-A11-G02-02` a `COMP-A13-G01-02` (reescrita, coesão, coerência e interpretação inicial).
+  - **Lote 15 (11):** `COMP-A13-G01-03` a `COMP-A13-G07-01` (recorrência, inferência, modos de discurso e funções da linguagem).
+- **Saneamento e Homologação:** 100% dos 190 pacotes auditados pelos 3 fluxos formais (`pbl_pedagogical_author`, `pbl_independent_reviewer` e `pbl_blind_student_simulator`), com SHA-256 byte-a-byte no ledger, isolamento cognitivo estrito e scaffolds em 3 camadas (`hint` com `#ANOTAAÍ`, `partial` com algoritmo procedural trifásico e `full` com worked example autônomo sem contaminação lexical).
 - **Testes e Verificação:** `PBLTutorContextResolver.test.ts`, `PBLTutorServerRoute.test.ts`, `pblTutorPrompt.test.ts`, `AuthoredPilotRuntime.test.ts`, `AdversarialAudit.test.ts`, `audit-pbl-runtime.mjs` (status: ok, 190 cases, 0 blocked), Vitest tutor suite (36/36 testes, 100% PASS), `npm run lint` (0 erros).
 
 ### 24.1. Pipeline de Contexto do Tutor PBL e Review Ledger (2026-09-07)
@@ -978,11 +954,11 @@ reviews/pbl_review_ledger.json (SHA-256 byte hashes exatos + parecer PASS)
 scripts/publish-pbl-packages.mjs (verificação estrita de hash byte-a-byte)
                      ↓ publicação segura
 PRODUTO (SuVeCaSuVeCa)
-public/knowledge/pbl/pbl_authored_packages.json (39 pacotes)
+public/knowledge/pbl/pbl_authored_packages.json (190 pacotes)
                      ↓
 scripts/build-pbl-tutor-context.mjs (resolução em cascata: viewQuestion -> authoredQuestions -> officialNormalizedMap)
                      ↓
-public/knowledge/pbl/tutor/parts/tutor-context.part-*.json (36 shards, 4.945 questões com variantes dinâmicas de multicompetência)
+public/knowledge/pbl/tutor/parts/tutor-context.part-*.json (39 shards, 4.945 questões com variantes dinâmicas de multicompetência)
                      ↓
 PBLTutorContextResolver.ts (carregamento sob demanda do shard exato e resolução de variantes)
                      ↓
@@ -1000,9 +976,9 @@ pblTutorServerRoute.ts (desvio determinístico seguro sem inventar gabarito)
 4. **Tratamento Fail-Closed de Indisponibilidade:** Questões com enunciado ou gabarito comprovadamente ausentes nas fontes são marcadas com `isUnavailable: true`. A rota de servidor do tutor (`pblTutorServerRoute.ts`) intercepta a requisição sem invocar a LLM, retornando recomendação determinística segura para avançar para a transferência sem inventar resposta.
 5. **Formatação de Prompt sem Vazamento:** `pblTutorPrompt.ts` injeta tabelas normativas, limites de regras (`boundaries`), critérios bilaterais de contraste (`sideACriteria` / `sideBCriteria`), e estratégias de resolução (`solutionStrategy`, `decisivePoint`, `Hipótese Frequente de Distrator (Banca)`), prevenindo tokens `[undefined]` e garantindo clareza sem expor o gabarito no nível de *hint*.
 6. **Métricas Vigentes:**
-   - Pacotes de autoria publicados: 39 (2 pilotos base + 37 ledger homologados).
-   - Competências pendentes de autoria v2: 151 (do total de 190 do mapa curricular).
-   - Shards de contexto do tutor: 36 arquivos JSON particionados.
+   - Pacotes de autoria publicados: 190 (2 pilotos base + 188 ledger homologados — 100% do universo curricular).
+   - Competências pendentes de autoria v2: 0 (conclusão plena dos 15 lotes curriculares).
+   - Shards de contexto do tutor: 39 arquivos JSON particionados.
    - Cobertura de questões do tutor: 4.945 questões base indexadas com resolução de variantes de multicompetência (`competencyVariants`) e suporte a chaves compostas `${questionRef}::${competencyRef}`.
 
 ### 24.2. Governança de Publicação pelo Ledger Estruturado e Reconciliação Verificável (RGO-002)
