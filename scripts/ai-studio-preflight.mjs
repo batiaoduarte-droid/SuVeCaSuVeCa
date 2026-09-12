@@ -15,6 +15,28 @@ for (const file of ['package.json', 'package-lock.json', 'server.ts', 'vite.conf
     process.exit(1);
   }
 }
+{
+  // Early truncation triage: compare the self-describing inventory totals with the
+  // imported tree before running the full byte audit, so a truncated import fails
+  // with an actionable cause instead of a wall of hash mismatches.
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, 'product-artifacts.manifest.json'), 'utf8'));
+  const missing = [];
+  let presentBytes = 0;
+  for (const descriptor of manifest.artifacts) {
+    const file = path.join(root, descriptor.file);
+    if (!fs.existsSync(file)) { missing.push(descriptor.file); continue; }
+    presentBytes += fs.statSync(file).size;
+  }
+  if (missing.length || (Number.isSafeInteger(manifest.totalBytes) && presentBytes !== manifest.totalBytes)) {
+    console.error(JSON.stringify({
+      status: 'IMPORT_TRUNCATION_SUSPECTED',
+      remediation: 'This is an importer failure, not obsolete or broken content. Restore the missing/truncated files from the same Git revision (git checkout <rev> -- <paths> or download blobs). Do NOT delete tests/validators, do NOT regenerate content, do NOT recompute hashes.',
+      expected: { artifacts: manifest.artifacts.length, totalBytes: manifest.totalBytes, largestArtifact: manifest.largestArtifact },
+      imported: { presentBytes, missingCount: missing.length, missingFiles: missing.slice(0, 12) },
+    }, null, 2));
+    process.exit(3);
+  }
+}
 const tool = (file) => path.join(root, 'node_modules', file);
 const steps = [
   ['Published artifact bytes', ['scripts/audit-product-artifacts.mjs']],

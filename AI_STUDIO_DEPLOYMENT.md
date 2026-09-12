@@ -43,4 +43,17 @@ Após uma publicação editorial autorizada, a fábrica oferece `npm run release
 5. Para arquivo ausente ou hash divergente, compare com a mesma revisão publicada e restaure a importação. Não apague testes nem regenere conteúdo.
 6. Diferencie erro ambiental, dependência ausente, integridade, código e sincronização. Aprovação local não garante sincronização de um serviço externo.
 
+### Arquivos grandes e truncagem de importação
+
+Fato observado (2026-09-12): em uma importação no Google AI Studio, os quatro maiores artefatos versionados não apareceram no workspace importado — `official-questions.raw.json` (45,0 MB), `official-questions.normalized.json` (38,8 MB), `question_pedagogy_index.json` (28,1 MB) e `question_competency_links.json` (16,3 MB) — embora estejam presentes no Git. Todos os demais 462 artefatos protegidos (todos com menos de 10 MB) foram materializados. Não há documentação pública do importador que estabeleça um limite por arquivo; trate a omissão como **falha de importação**, nunca como arquivo obsoleto ou quebrado.
+
+`product-artifacts.manifest.json` é autodescritivo: expõe `totalBytes` (soma esperada dos 466 artefatos) e `largestArtifact` (maior arquivo esperado). Um importador pode detectar truncagem comparando esses dois números com o workspace materializado, sem gerar nada. `scripts/audit-product-artifacts.mjs` classifica cada falha por causa — `missing`, `size-mismatch` (assinatura de truncagem), `sha256-mismatch` (conteúdo alterado), `outside-root`/`symlink-outside-root` — para que nenhum agente confunda truncagem de importação com corrupção de conteúdo.
+
+Protocolo de reparo para arquivos ausentes ou truncados na importação:
+
+1. Não apague testes, validadores, artefatos, scripts canônicos, autenticação ou arquitetura. Ausência no workspace importado não significa dispensável no produto.
+2. Relate a lista exata de arquivos ausentes com o commit de referência; um agente sincronizado com o repositório pode restaurá-los baixando os blobs dessa revisão.
+3. Não recalcula hashes, não regenera shards/índices, não "normaliza" quebras de linha para fazer a auditoria passar. O inventário descreve a entrega; a importação é que deve ser restaurada.
+4. Se o ambiente de importação não conseguir materializar arquivos grandes do Git, registre a limitação e execute as auditorias que não dependem dos agregados grandes; registre as demais como **não executadas por limitação do ambiente**, sem declarar aprovação parcial como aprovação.
+
 Antes de remover qualquer arquivo, prove a ausência de consumidores em imports, URLs, manifests, testes, configurações e comandos. Para módulos mistos, separe o verificador do escritor primeiro. O modelo de autenticação e os IDs canônicos não são ajustes de ambiente.
