@@ -23,27 +23,17 @@ knowledge/editorial/*
 knowledge/schema/
 knowledge/kb.config.json
 scripts/*
-!scripts/build-deployment-shards.mjs
-!scripts/build-pbl-runtime-shards.mjs
-!scripts/build-pbl-tutor-context.mjs
-!scripts/publish-pbl-packages.mjs
-!scripts/build-pedagogical-view-index.mjs
 !scripts/audit-deployment-shards.mjs
-!scripts/consolidate-modules-v3.mjs
 !scripts/run-ai-evals.mjs
-!scripts/build-pedagogical-curriculum.mjs
 !scripts/audit-pedagogical-curriculum.mjs
 !scripts/audit-pedagogical-markdown.mjs
 !scripts/audit-pedagogical-views.mjs
 !scripts/audit-question-presentations.mjs
-!scripts/build-pedagogical-macro-index.mjs
 !scripts/audit-pedagogical-macros.mjs
 !scripts/audit-pbl-runtime.mjs
 !scripts/ai-studio-preflight.mjs
-!scripts/project-decision-procedures.mjs
 !scripts/lib/
 !scripts/lib/pedagogical-markdown.mjs
-!scripts/lib/structured-diagram.mjs
 
 # Keep only the consolidated runtime knowledge artifact
 knowledge/generated/*
@@ -65,3 +55,22 @@ qa/
 # Design system audit traces and screenshots
 docs/design-system/evidence/
 docs/design-system/figma-run/
+
+# Product-only validators and operations
+!scripts/audit-pbl-packages.mjs
+!scripts/audit-pbl-tutor.mjs
+!scripts/audit-product-artifacts.mjs
+!scripts/audit-pedagogical-view-index.mjs
+!scripts/audit-pedagogical-macro-index.mjs
+!scripts/clean.mjs
+!scripts/lib/release-integrity.mjs
+!scripts/lib/official-question-presentation.mjs
+!scripts/lib/question-support-presentation.mjs
+
+# Factory inputs are external; only validation snapshots remain in the product.
+knowledge/canonical/*
+!knowledge/canonical/pedagogical-curriculum.json
+!knowledge/canonical/pedagogical-source-manifest.json
+knowledge/editorial/
+!knowledge/canonical/modules-v3-consolidated.json
+!knowledge/canonical/modules.json

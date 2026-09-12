@@ -61,13 +61,6 @@ export const PEDAGOGICAL_VIEW_BY_ID = Object.fromEntries(
 ) as Record<string, PedagogicalViewIndexEntry>;
 `;
 
-if (process.argv.includes('--check')) {
-  const current = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, 'utf8') : '';
-  if (current !== source) {
-    throw new Error('Ã�ndice de View Models desatualizado. Execute npm run build:view-index.');
-  }
-  console.log(`Pedagogical view index contract: PASS (${entries.length} unidades).`);
-} else {
-  fs.writeFileSync(outputPath, source, 'utf8');
-  console.log(`Pedagogical view index: ${entries.length} unidades (${regularCount} regulares, ${cumulativeCount} cumulativas).`);
-}
+const current = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, 'utf8') : '';
+if (current !== source) throw new Error('Published view index differs from published views. Restore the matching release; editorial generation is external.');
+console.log('Pedagogical view index contract: PASS');

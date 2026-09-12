@@ -106,10 +106,7 @@ test.describe('Validação Visual e Captura dos 6 Mapas Estruturados Corrigidos'
     test.skip(!['desktop-1440', 'mobile-390'].includes(testInfo.project.name), 'Screenshots apenas em desktop-1440 e mobile-390');
 
     const mode = testInfo.project.name === 'desktop-1440' ? 'desktop' : 'mobile';
-    const outputDir = path.resolve(
-      process.cwd(),
-      `../Notebook LM/05_Auditorias/semantica/structured-maps-v2-regeneration/reports/assets/six-map-fix/${mode}`,
-    );
+    const outputDir = testInfo.outputPath(`six-map-fix/${mode}`);
     fs.mkdirSync(outputDir, { recursive: true });
 
     await openApp(page);
@@ -247,10 +244,8 @@ test.describe('Validação Visual e Captura dos 6 Mapas Estruturados Corrigidos'
     expect(await embeddedSections.count()).toBeGreaterThanOrEqual(5);
 
     // Capture screenshot of the clean composed view
-    const outputDir = path.resolve(
-      process.cwd(),
-      '../Notebook LM/05_Auditorias/semantica/structured-maps-v2-regeneration/reports/assets/six-map-fix/desktop',
-    );
+    const outputDir = testInfo.outputPath('six-map-fix/desktop');
+    fs.mkdirSync(outputDir, { recursive: true });
     const screenshotPath = path.join(outputDir, 'IP-A05-G06-composed-transposicao.png');
     await resolutionSection.screenshot({ path: screenshotPath });
     expect(fs.existsSync(screenshotPath)).toBe(true);

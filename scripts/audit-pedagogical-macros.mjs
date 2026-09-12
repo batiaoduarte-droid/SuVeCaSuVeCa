@@ -346,7 +346,7 @@ check((catalog.adaptiveLinks ?? []).some((link) =>
   && link.evidenceSource === 'competency_mastery'), 'Dependência adaptativa A05→A06 ausente.');
 
 try {
-  execFileSync(process.execPath, ['scripts/build-pedagogical-macro-index.mjs', '--check'], {
+  execFileSync(process.execPath, ['scripts/audit-pedagogical-macro-index.mjs'], {
     cwd: root,
     stdio: 'pipe',
   });

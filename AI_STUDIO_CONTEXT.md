@@ -1,5 +1,7 @@
 # Guia de Contexto e Arquitetura: SuVeCaSuVeCa no Google AI Studio
 
+Contrato operacional atualizado: [AI_STUDIO_DEPLOYMENT.md](AI_STUDIO_DEPLOYMENT.md). Os comandos desse contrato prevalecem sobre exemplos históricos. O produto valida artefatos existentes; geração, revisão e publicação editorial residem exclusivamente na fábrica. Não remova arquivos por nome ou tamanho.
+
 Este documento serve como mapa de bordo e autoridade arquitetural para agentes de IA e desenvolvedores que operam no projeto **SuVeCaSuVeCa** dentro do Google AI Studio.
 
 ---
@@ -130,7 +132,7 @@ A aplicação opera em modo duplo (**Autenticado via Firebase** ou **Visitante v
 
 - Execute `npm run audit:pbl` antes de investigar ou modificar o PBL. O gate valida os shards, hashes, contagens e referências.
 - A ausência de um shard é uma importação incompleta. Não regenere links, pedagogias, papéis ou competências a partir de casos, texto ou semelhança lexical.
-- Os agregados PBL grandes podem ser omitidos por um ambiente gerenciado sem afetar o runtime; `pbl_runtime_manifest.json` e todos os arquivos declarados em `runtime-parts/` são obrigatórios.
+- O runtime usa shards, mas esta entrega conserva os agregados versionados. Todos os arquivos de product-artifacts.manifest.json são obrigatórios; não omita agregados para reparar importação.
 - Se o gate falhar, preserve os dados e corrija a transferência/importação do repositório. Nunca fabrique um dataset substituto para fazer a interface abrir.
 
 ---
@@ -140,6 +142,6 @@ A aplicação opera em modo duplo (**Autenticado via Firebase** ou **Visitante v
 Sempre que realizar alterações no Google AI Studio, valide a estabilidade do projeto executando:
 
 ```bash
-# Executa os 8 gates de pré-voo do AI Studio
+# Executa os gates atuais de validação do produto
 npm run ai-studio:preflight
 ```

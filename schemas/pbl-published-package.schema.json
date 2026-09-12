@@ -1,0 +1,749 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:suveca:pbl-authorship-pilot:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packageId",
+    "title",
+    "unitId",
+    "competencyRef",
+    "learningObjectiveRef",
+    "scope",
+    "authorship",
+    "sources",
+    "questions",
+    "hypotheses",
+    "interventions",
+    "journey",
+    "reflection",
+    "revision",
+    "exclusions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "enum": [
+        "pbl-authorship/2.0.0",
+        "pbl-authorship-pilot/1.0.0"
+      ]
+    },
+    "packageId": {
+      "$ref": "#/$defs/text"
+    },
+    "title": {
+      "$ref": "#/$defs/text"
+    },
+    "unitId": {
+      "$ref": "#/$defs/text"
+    },
+    "competencyRef": {
+      "$ref": "#/$defs/text"
+    },
+    "learningObjectiveRef": {
+      "$ref": "#/$defs/text"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "focus",
+        "exclusions"
+      ],
+      "properties": {
+        "focus": {
+          "$ref": "#/$defs/text"
+        },
+        "exclusions": {
+          "$ref": "#/$defs/texts"
+        }
+      }
+    },
+    "authorship": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "author",
+        "method",
+        "reviewStatus",
+        "publicationStatus"
+      ],
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "reviewStatus": {
+          "type": "string"
+        },
+        "publicationStatus": {
+          "enum": [
+            "preview_only",
+            "product_ready"
+          ]
+        },
+        "model": {
+          "type": "string"
+        },
+        "delegatedSessionId": {
+          "type": "string"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "collection",
+          "recordId",
+          "pointer",
+          "supports"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/text"
+          },
+          "collection": {
+            "enum": [
+              "corpus",
+              "concepts",
+              "tables",
+              "limits_exceptions",
+              "official",
+              "published"
+            ]
+          },
+          "recordId": {
+            "$ref": "#/$defs/text"
+          },
+          "pointer": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "supports": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "triggerQuestionRef",
+          "triggerAnswers",
+          "interpretation",
+          "alternativeCauses",
+          "probeQuestionRef",
+          "supportingAnswers",
+          "evidenceLimit"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/text"
+          },
+          "triggerQuestionRef": {
+            "$ref": "#/$defs/text"
+          },
+          "triggerAnswers": {
+            "$ref": "#/$defs/texts"
+          },
+          "interpretation": {
+            "$ref": "#/$defs/text"
+          },
+          "alternativeCauses": {
+            "$ref": "#/$defs/texts"
+          },
+          "probeQuestionRef": {
+            "$ref": "#/$defs/text"
+          },
+          "supportingAnswers": {
+            "$ref": "#/$defs/texts"
+          },
+          "evidenceLimit": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "interventions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "appliesToQuestionRefs",
+          "hint",
+          "partial",
+          "full",
+          "takeaway"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/text"
+          },
+          "title": {
+            "$ref": "#/$defs/text"
+          },
+          "appliesToQuestionRefs": {
+            "$ref": "#/$defs/texts"
+          },
+          "hint": {
+            "$ref": "#/$defs/blocks"
+          },
+          "partial": {
+            "$ref": "#/$defs/blocks"
+          },
+          "full": {
+            "$ref": "#/$defs/blocks"
+          },
+          "takeaway": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "journey": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anchor",
+        "reattempt",
+        "transfers",
+        "review",
+        "rolePolicy",
+        "reattemptPurpose"
+      ],
+      "properties": {
+        "anchor": {
+          "$ref": "#/$defs/text"
+        },
+        "reattempt": {
+          "$ref": "#/$defs/text"
+        },
+        "review": {
+          "$ref": "#/$defs/text"
+        },
+        "rolePolicy": {
+          "type": "string"
+        },
+        "transfers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "questionRef",
+              "kind",
+              "rationale"
+            ],
+            "properties": {
+              "questionRef": {
+                "$ref": "#/$defs/text"
+              },
+              "kind": {
+                "enum": [
+                  "near_transfer",
+                  "boundary_case"
+                ]
+              },
+              "rationale": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        },
+        "reattemptPurpose": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "reflection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prompt",
+        "rubric",
+        "assessment"
+      ],
+      "properties": {
+        "prompt": {
+          "$ref": "#/$defs/text"
+        },
+        "assessment": {
+          "type": "string"
+        },
+        "rubric": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "criterion",
+              "sufficientExample",
+              "insufficientExample"
+            ],
+            "properties": {
+              "criterion": {
+                "$ref": "#/$defs/text"
+              },
+              "sufficientExample": {
+                "$ref": "#/$defs/text"
+              },
+              "insufficientExample": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        }
+      }
+    },
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "delayHours",
+        "prompt",
+        "evidenceLimit"
+      ],
+      "properties": {
+        "delayHours": {
+          "type": "number"
+        },
+        "prompt": {
+          "$ref": "#/$defs/text"
+        },
+        "evidenceLimit": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "questionRef",
+          "reason"
+        ],
+        "properties": {
+          "questionRef": {
+            "$ref": "#/$defs/text"
+          },
+          "reason": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "texts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "text"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/text"
+        },
+        "text": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceKind",
+        "feedback",
+        "interventionId"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "sourceKind": {
+          "enum": [
+            "official",
+            "authored_pilot"
+          ]
+        },
+        "sourceRef": {
+          "$ref": "#/$defs/text"
+        },
+        "sourceRefs": {
+          "$ref": "#/$defs/texts"
+        },
+        "prompt": {
+          "$ref": "#/$defs/text"
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        },
+        "correctAnswer": {
+          "$ref": "#/$defs/text"
+        },
+        "feedback": {
+          "type": "object",
+          "minProperties": 2,
+          "additionalProperties": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "interventionId": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "sourceKind": {
+                "const": "official"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sourceRef"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "prompt"
+                  ]
+                },
+                {
+                  "required": [
+                    "options"
+                  ]
+                },
+                {
+                  "required": [
+                    "correctAnswer"
+                  ]
+                }
+              ]
+            }
+          },
+          "else": {
+            "required": [
+              "sourceRefs",
+              "prompt",
+              "options",
+              "correctAnswer"
+            ]
+          }
+        }
+      ]
+    },
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "sourceRefs",
+          "derivation",
+          "block"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/text"
+          },
+          "sourceRefs": {
+            "$ref": "#/$defs/texts"
+          },
+          "derivation": {
+            "enum": [
+              "paraphrase",
+              "didactic_application"
+            ]
+          },
+          "block": {
+            "$ref": "#/$defs/block"
+          },
+          "appliesToQuestionRefs": {
+            "$ref": "#/$defs/texts"
+          }
+        }
+      }
+    },
+    "block": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "text"
+          ],
+          "properties": {
+            "type": {
+              "const": "paragraph"
+            },
+            "text": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "title",
+            "statement",
+            "conditions",
+            "exceptions"
+          ],
+          "properties": {
+            "type": {
+              "const": "rule"
+            },
+            "title": {
+              "$ref": "#/$defs/text"
+            },
+            "statement": {
+              "$ref": "#/$defs/text"
+            },
+            "conditions": {
+              "$ref": "#/$defs/texts"
+            },
+            "exceptions": {
+              "$ref": "#/$defs/texts"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "title",
+            "text",
+            "conditions",
+            "exceptions"
+          ],
+          "properties": {
+            "type": {
+              "const": "rule_boundary"
+            },
+            "title": {
+              "$ref": "#/$defs/text"
+            },
+            "text": {
+              "$ref": "#/$defs/text"
+            },
+            "conditions": {
+              "$ref": "#/$defs/texts"
+            },
+            "exceptions": {
+              "$ref": "#/$defs/texts"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "title",
+            "steps"
+          ],
+          "properties": {
+            "type": {
+              "const": "procedure"
+            },
+            "title": {
+              "$ref": "#/$defs/text"
+            },
+            "objective": {
+              "$ref": "#/$defs/text"
+            },
+            "steps": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "order",
+                  "action",
+                  "explanation"
+                ],
+                "properties": {
+                  "order": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "action": {
+                    "$ref": "#/$defs/text"
+                  },
+                  "explanation": {
+                    "$ref": "#/$defs/text"
+                  },
+                  "test": {
+                    "$ref": "#/$defs/text"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "title",
+            "sideA",
+            "sideB",
+            "decisiveDifference"
+          ],
+          "properties": {
+            "type": {
+              "const": "contrast"
+            },
+            "title": {
+              "$ref": "#/$defs/text"
+            },
+            "sideA": {
+              "$ref": "#/$defs/side"
+            },
+            "sideB": {
+              "$ref": "#/$defs/side"
+            },
+            "decisiveDifference": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "title",
+            "columns",
+            "rows"
+          ],
+          "properties": {
+            "type": {
+              "const": "table"
+            },
+            "title": {
+              "$ref": "#/$defs/text"
+            },
+            "columns": {
+              "$ref": "#/$defs/texts"
+            },
+            "rows": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/texts"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "title",
+            "prompt",
+            "analysisSteps",
+            "result"
+          ],
+          "properties": {
+            "type": {
+              "const": "worked_example"
+            },
+            "title": {
+              "$ref": "#/$defs/text"
+            },
+            "prompt": {
+              "$ref": "#/$defs/text"
+            },
+            "analysisSteps": {
+              "$ref": "#/$defs/texts"
+            },
+            "result": {
+              "$ref": "#/$defs/text"
+            },
+            "decisivePoint": {
+              "$ref": "#/$defs/text"
+            },
+            "commonMistake": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      ]
+    },
+    "side": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "criteria"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/text"
+        },
+        "criteria": {
+          "$ref": "#/$defs/texts"
+        }
+      }
+    }
+  },
+  "": "urn:suveca:pbl-authorship:2.0.0"
+}

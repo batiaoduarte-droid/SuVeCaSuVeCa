@@ -1,5 +1,11 @@
 # Projeto SuVeCa — linhagem, transformação, publicação e uso dos dados
 
+## Fronteira operacional atualizada — 2026-09-12
+
+O produto permanece consumidor de artefatos publicados. Compiladores, publicador PBL e seus testes foram transferidos para `Notebook LM/06_Ferramentas/produto-editorial/`, com ambiente npm próprio. Os caminhos antigos de scripts citados abaixo descrevem linhagem histórica, não comandos atuais do produto. Nenhum payload, hash existente ou ID canônico foi alterado nesta separação.
+
+Os verificadores `audit-pedagogical-view-index.mjs` e `audit-pedagogical-macro-index.mjs` conferem índices sem gravar. `validate:knowledge` exige macros, audita todos os shards do tutor, valida o schema local dos pacotes e confere `product-artifacts.manifest.json`. Esse inventário deve acompanhar futuras publicações editoriais homologadas; não é atualizado pelo preflight. Os testes do produto não consultam a fábrica. Os testes do publicador permanecem na fábrica. Contrato de instalação, execução e entrega: `AI_STUDIO_DEPLOYMENT.md`.
+
 Status: **contrato operacional vivo**
 Escopo: `Notebook LM/` (fábrica) e `SuVeCaSuVeCa/` (produto)
 Última verificação factual: **2026-09-07**
@@ -1047,3 +1053,7 @@ Esta alteração de runtime acompanha a execução dos lotes do trabalho `568bc2
 - Caminhos históricos podem continuar em ledgers antigos e não devem ser reescritos.
 - Este documento descreve Português e o produto atual; Lógica possui pipeline próprio e deve ganhar seção específica antes de cruzar a fronteira de publicação.
 - Nenhum conteúdo bruto, canonical completo, prompt, ledger ou intermediário deve ser copiado para o produto apenas para facilitar depuração.
+
+### Insumos locais e snapshots consumidores — separação de 2026-09-12
+
+Dez arquivos exclusivos de autoria saíram de `knowledge/canonical` e `knowledge/editorial` para `Notebook LM/06_Ferramentas/produto-editorial/inputs/knowledge`, com conferência de SHA-256. Permanecem os snapshots `pedagogical-curriculum.json`, `pedagogical-source-manifest.json`, `modules.json` e `modules-v3-consolidated.json`: os auditores e manifests ainda os exigem. `public/knowledge` e código gerado consumido permanecem byte a byte iguais. O inventário consumidor cobre 466 artefatos.

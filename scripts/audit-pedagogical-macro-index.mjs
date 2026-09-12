@@ -143,11 +143,6 @@ export const PEDAGOGICAL_MACRO_INDEX = ${JSON.stringify(projectedEntries, null, 
 export const PEDAGOGICAL_MACRO_ADAPTIVE_LINKS = ${JSON.stringify(catalog.adaptiveLinks, null, 2)} as const satisfies readonly PedagogicalMacroAdaptiveLink[];
 `;
 
-if (process.argv.includes('--check')) {
-  const current = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, 'utf8') : '';
-  if (current !== source) fail('arquivo generated desatualizado; execute npm run build:macro-index.');
-  console.log(`Pedagogical macro index contract: PASS (${projectedEntries.length} entradas, ${assignedUnits.size} unidades).`);
-} else {
-  fs.writeFileSync(outputPath, source, 'utf8');
-  console.log(`Pedagogical macro index: ${projectedEntries.length} entradas, ${assignedUnits.size} unidades, ${competencies.length} competências.`);
-}
+const current = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, 'utf8') : '';
+if (current !== source) fail('Published macro index differs from the published catalog. Restore the matching release; editorial generation is external.');
+console.log('Pedagogical macro index contract: PASS');
