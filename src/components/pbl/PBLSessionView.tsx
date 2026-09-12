@@ -57,7 +57,7 @@ const phaseLabels: Record<PBLSession['phase'], string> = {
   hypothesis: 'Sondagem',
   diagnostic: 'Feedback',
   intervention: 'Microestudo',
-  tutor: 'Tutor SuVeCA',
+  tutor: 'Tutor PBL',
   reattempt: 'Nova aplicação',
   transfer: 'Transferência',
   reflection: 'Reflexão',
@@ -694,7 +694,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50/70 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300 transition-colors shadow-xs"
             >
               <Bot className="h-3.5 w-3.5" />
-              <span>Tirar dúvida com Professor SuVeCA</span>
+              <span>Tirar dúvida com Professor PBL</span>
             </button>
           </div>
           {selectedAnswer && (
@@ -796,7 +796,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50/70 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300 transition-colors shadow-xs"
             >
               <Bot className="h-3.5 w-3.5" />
-              <span>Tirar dúvida com Professor SuVeCA</span>
+              <span>Tirar dúvida com Professor PBL</span>
             </button>
           </div>
           {selectedAnswer && (

@@ -418,4 +418,29 @@ describe('PBLEngine Tutor Mode Conduction Flow', () => {
     expect(session.competencyOutcomes?.[mockComp.competencyId]).toBe('needs_review');
   });
 
+  it('desduplica turnos idênticos consecutivos no motor para evitar repetição de orientações', async () => {
+    let session = await engine.startSession({ userId: 'dedup-student', mode: 'guided', targetLessonId: 'A10', conductionMode: 'tutor' });
+    const episode = engine.startTutorEpisode(session, { questionRef: mockAnchorQuestion.questionRef, competencyRef: mockComp.competencyId, attemptStage: 'initial' });
+    const turn1: PBLTutorTurn = {
+      turnId: 'turn-1',
+      role: 'tutor',
+      content: 'Identifique o que o comando pede e qual relação gramatical deve ser examinada.',
+      timestamp: new Date().toISOString(),
+      intent: 'explain_rule',
+    };
+    session = engine.recordTutorTurn(session, episode.episodeId, turn1);
+    expect(session.tutorEpisodes![episode.episodeId].turns).toHaveLength(1);
+
+    // Tentativa de adicionar turno idêntico consecutivo com ID diferente
+    const turn2: PBLTutorTurn = {
+      turnId: 'turn-2',
+      role: 'tutor',
+      content: '  Identifique o que o comando pede e qual relação gramatical deve ser examinada.  ',
+      timestamp: new Date().toISOString(),
+      intent: 'explain_rule',
+    };
+    session = engine.recordTutorTurn(session, episode.episodeId, turn2);
+    // Deve manter exatamente 1 turno
+    expect(session.tutorEpisodes![episode.episodeId].turns).toHaveLength(1);
+  });
 });

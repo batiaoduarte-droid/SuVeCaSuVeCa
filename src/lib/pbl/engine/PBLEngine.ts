@@ -661,7 +661,14 @@ export class PBLEngine {
     turn: PBLTutorTurn
   ): PBLSession {
     const episode = session.tutorEpisodes?.[episodeId];
-    if (!episode || episode.resolved || episode.turns.some((existing) => existing.turnId === turn.turnId)) return session;
+    if (!episode || episode.resolved) return session;
+
+    const isDuplicateTurn =
+      episode.turns.some((existing) => existing.turnId === turn.turnId) ||
+      (episode.turns.length > 0 &&
+        episode.turns[episode.turns.length - 1].role === turn.role &&
+        episode.turns[episode.turns.length - 1].content.trim() === turn.content.trim());
+    if (isDuplicateTurn) return session;
 
     episode.turns.push(turn);
     episode.updatedAt = new Date().toISOString();

@@ -26,7 +26,7 @@ const tutorResponseSchema = {
     pedagogicalText: {
       type: Type.STRING,
       description:
-        'Explicação ou orientação pedagógica do Professor SuVeCA em Markdown. Linguagem acolhedora, sem IDs técnicos.',
+        'Explicação ou orientação pedagógica do Professor PBL em Markdown. Linguagem acolhedora, sem IDs técnicos.',
     },
     intent: {
       type: Type.STRING,

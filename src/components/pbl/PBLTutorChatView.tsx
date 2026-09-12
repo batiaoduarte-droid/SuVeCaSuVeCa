@@ -72,6 +72,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const requestedInitialEpisodesRef = useRef<Set<string>>(new Set());
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -83,7 +84,12 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
 
   // Se o episódio acabou de ser criado e não possui turnos, enviar o turno de abertura automaticamente
   useEffect(() => {
-    if (episode.turns.length === 0 && !loading) {
+    if (
+      episode.turns.length === 0 &&
+      !loading &&
+      !requestedInitialEpisodesRef.current.has(episode.episodeId)
+    ) {
+      requestedInitialEpisodesRef.current.add(episode.episodeId);
       void sendInitialTutorTurn();
     }
   }, [episode.episodeId]);
@@ -158,15 +164,17 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
         setActiveNotebookDraft(data.notebookDraft);
       }
 
+      if (episode.turns.some((t) => t.role === 'tutor' && t.content.trim() === data.pedagogicalText.trim())) return;
       onRecordTurn(tutorTurn);
     } catch (err: any) {
       console.error('[PBLTutorChatView] Erro no turno inicial do tutor:', err);
+      if (episode.turns.some((t) => t.role === 'tutor')) return;
       // Fallback gracioso local se houver falha de rede total
+      const fallbackContent = 'Olá! Estou aqui para te orientar no raciocínio desta questão. O que te levou a escolher essa alternativa, ou qual parte do enunciado te gerou dúvida?';
       const fallbackTurn: PBLTutorTurn = {
         turnId: `turn_fallback_${Date.now()}`,
         role: 'tutor',
-        content:
-          'Olá! Estou aqui para te orientar no raciocínio desta questão. O que te levou a escolher essa alternativa, ou qual parte do enunciado te gerou dúvida?',
+        content: fallbackContent,
         timestamp: new Date().toISOString(),
         intent: 'investigate_confusion',
         continuityRecommendation: 'try_same',
@@ -176,6 +184,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
           fallback: true,
         },
       };
+      if (episode.turns.some((t) => t.role === 'tutor' && t.content.trim() === fallbackContent.trim())) return;
       onRecordTurn(fallbackTurn);
     } finally {
       setLoading(false);
@@ -269,7 +278,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
     } catch (err: any) {
       console.error('[PBLTutorChatView] Erro ao enviar mensagem ao tutor:', err);
       setErrorMessage(
-        'Houve uma instabilidade temporária na conexão com o Professor SuVeCA. Sua mensagem foi mantida abaixo para que você possa tentar novamente.'
+        'Houve uma instabilidade temporária na conexão com o Professor PBL. Sua mensagem foi mantida abaixo para que você possa tentar novamente.'
       );
       if (!customMessage) {
         setInputText(textToSend);
@@ -323,7 +332,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-sm font-bold text-slate-900">Professor SuVeCA</h2>
+                <h2 className="text-sm font-bold text-slate-900">Professor PBL</h2>
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-indigo-100 text-indigo-700">
                   Tutor Contextual
                 </span>
@@ -401,7 +410,11 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
         className="flex-1 p-4 overflow-y-auto space-y-4 min-h-[320px] max-h-[460px] bg-slate-50/40"
         aria-live="polite"
       >
-        {episode.turns.map((turn) => {
+        {((episode.turns || []).filter((turn, idx, arr) => {
+          if (idx === 0) return true;
+          const prev = arr[idx - 1];
+          return !(prev.role === turn.role && prev.content.trim() === turn.content.trim());
+        })).map((turn) => {
           const isTutor = turn.role === 'tutor';
           return (
             <div
@@ -460,7 +473,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
             </div>
             <div className="rounded-2xl bg-white border border-indigo-100 p-3 shadow-sm flex items-center gap-2 text-xs text-indigo-700">
               <RefreshCw className="h-3.5 w-3.5 animate-spin" />
-              <span>Professor SuVeCA está analisando os critérios...</span>
+              <span>Professor PBL está analisando os critérios...</span>
             </div>
           </div>
         )}
@@ -587,7 +600,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={handleKeyDown}
             disabled={loading}
-            placeholder="Digite sua dúvida ou raciocínio para o Professor SuVeCA (Enter para enviar)..."
+            placeholder="Digite sua dúvida ou raciocínio para o Professor PBL (Enter para enviar)..."
             rows={2}
             className="flex-1 resize-none rounded-xl border border-slate-300 p-2.5 text-xs text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100 disabled:bg-slate-100"
           />

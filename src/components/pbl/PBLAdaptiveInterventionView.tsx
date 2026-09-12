@@ -89,6 +89,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const activeEpisodeRef = useRef(episode?.episodeId);
+  const requestedInitialEpisodesRef = useRef<Set<string>>(new Set());
   useEffect(() => {
     activeEpisodeRef.current = episode?.episodeId;
     setAssistanceLevel(maximumAssistance(episode?.assistanceLevel, 'diagnostic'));
@@ -151,7 +152,13 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
 
   // Se o episódio foi iniciado e ainda não possui turnos, enviar o turno de abertura automaticamente
   useEffect(() => {
-    if (episode && episode.turns.length === 0 && !loading) {
+    if (
+      episode &&
+      episode.turns.length === 0 &&
+      !loading &&
+      !requestedInitialEpisodesRef.current.has(episode.episodeId)
+    ) {
+      requestedInitialEpisodesRef.current.add(episode.episodeId);
       void sendInitialTutorTurn();
     }
   }, [episode?.episodeId]);
@@ -234,10 +241,13 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       };
 
       if (activeEpisodeRef.current !== requestEpisodeId) return;
+      if (episode.turns.some((t) => t.role === 'tutor' && t.content.trim() === data.pedagogicalText.trim())) return;
       onAssistanceChange?.(hasAttempted ? 'full' : 'partial');
       onRecordTurn?.(tutorTurn);
     } catch (err: any) {
       console.error('[PBLAdaptiveInterventionView] Erro no turno inicial do tutor:', err);
+      if (activeEpisodeRef.current !== requestEpisodeId) return;
+      if (episode.turns.some((t) => t.role === 'tutor')) return;
       const fallbackTurn: PBLTutorTurn = {
         turnId: `turn_fallback_${Date.now()}`,
         role: 'tutor',
@@ -254,6 +264,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         },
       };
       if (activeEpisodeRef.current !== requestEpisodeId) return;
+      if (episode.turns.some((t) => t.role === 'tutor')) return;
       onAssistanceChange?.(hasAttempted ? 'partial' : 'hint');
       onRecordTurn?.(fallbackTurn);
     } finally {
@@ -438,13 +449,15 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
           <div className="text-right">
             <div className="text-xs text-slate-500 font-medium">Sua resposta</div>
             <div className={`font-mono text-sm font-bold ${isCorrect ? 'text-emerald-700' : 'text-rose-700'}`}>
-              {hasAttempted ? formatPBLAnswer(attempt!.userAnswer) : 'Ainda não enviada'}
+              {hasAttempted
+                ? formatPBLAnswer(attempt!.userAnswer, Boolean(question?.questionType === 'multiple_choice' || (question?.options && question.options.length > 2)))
+                : 'Ainda não enviada'}
             </div>
             {hasAttempted && !isCorrect && question?.correctAnswer && (
               <div className="mt-1">
                 <span className="text-[11px] text-slate-500">Gabarito: </span>
                 <span className="font-mono text-xs font-bold text-emerald-700">
-                  {formatPBLAnswer(question.correctAnswer)}
+                  {formatPBLAnswer(question.correctAnswer, Boolean(question?.questionType === 'multiple_choice' || (question?.options && question.options.length > 2)))}
                 </span>
               </div>
             )}
@@ -522,7 +535,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         </div>
       )}
 
-      {/* 3. COPILOT DO PROFESSOR SUVECA (DIÁLOGO E CHIPS RÁPIDOS) */}
+      {/* 3. COPILOT DO PROFESSOR PBL (DIÁLOGO E CHIPS RÁPIDOS) */}
       <div className="rounded-2xl border border-indigo-200 bg-white shadow-sm overflow-hidden">
         <div className="flex items-center justify-between border-b border-indigo-100 bg-indigo-50/70 p-4">
           <div className="flex items-center gap-2.5">
@@ -531,7 +544,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-sm font-bold text-slate-900">Professor SuVeCA</h3>
+                <h3 className="text-sm font-bold text-slate-900">Professor PBL</h3>
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-700">
                   Tutor Contextual
                 </span>
@@ -557,7 +570,11 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
           <div>
             {/* Histórico do diálogo */}
             <div className="p-4 space-y-3 max-h-[360px] overflow-y-auto bg-slate-50/30">
-              {episode?.turns.map((turn) => {
+              {((episode?.turns || []).filter((turn, idx, arr) => {
+                if (idx === 0) return true;
+                const prev = arr[idx - 1];
+                return !(prev.role === turn.role && prev.content.trim() === turn.content.trim());
+              })).map((turn) => {
                 const isTutor = turn.role === 'tutor';
                 return (
                   <div key={turn.turnId} className={`flex gap-2.5 ${isTutor ? 'justify-start' : 'justify-end'}`}>
@@ -593,7 +610,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
                   </div>
                   <div className="rounded-2xl bg-white border border-indigo-100 p-2.5 shadow-2xs flex items-center gap-2 text-xs text-indigo-700">
                     <RefreshCw className="h-3.5 w-3.5 animate-spin" />
-                    <span>Professor SuVeCA está analisando os critérios...</span>
+                    <span>Professor PBL está analisando os critérios...</span>
                   </div>
                 </div>
               )}
@@ -669,7 +686,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
                     }
                   }}
                   disabled={loading}
-                  placeholder="Digite sua dúvida ou raciocínio para o Professor SuVeCA (Enter para enviar)..."
+                  placeholder="Digite sua dúvida ou raciocínio para o Professor PBL (Enter para enviar)..."
                   className="flex-1 rounded-xl border border-slate-300 px-3 py-2 text-xs text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100 disabled:bg-slate-100"
                 />
                 <button

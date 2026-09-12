@@ -370,4 +370,41 @@ describe('PBLAdaptiveInterventionView', () => {
     expect(screen.getByText(/Acerto frágil/)).toBeInTheDocument();
   });
 
+  it('exibe o nome Professor PBL e desduplica balões de orientação repetidos', () => {
+    const duplicateTurnsEpisode: PBLTutorEpisode = {
+      ...mockEpisode,
+      turns: [
+        {
+          turnId: 't-1',
+          role: 'tutor',
+          content: 'Identifique o que o comando pede e qual relação gramatical deve ser examinada.',
+          timestamp: '2026-09-07T12:01:06.000Z',
+          intent: 'explain_rule',
+        },
+        {
+          turnId: 't-2',
+          role: 'tutor',
+          content: 'Identifique o que o comando pede e qual relação gramatical deve ser examinada.',
+          timestamp: '2026-09-07T12:01:07.000Z',
+          intent: 'explain_rule',
+        },
+      ],
+    };
+
+    render(
+      <PBLAdaptiveInterventionView
+        session={mockSession}
+        episode={duplicateTurnsEpisode}
+        question={mockQuestion}
+        intervention={mockIntervention}
+        attempt={mockAttempt}
+        onConclude={vi.fn()}
+      />
+    );
+
+    expect(screen.getByRole('heading', { name: /professor pbl/i })).toBeInTheDocument();
+    expect(screen.queryByText(/professor suveca/i)).not.toBeInTheDocument();
+    expect(screen.getAllByText(/Orientação do Professor/i)).toHaveLength(1);
+    expect(screen.getAllByText(/Identifique o que o comando pede/i)).toHaveLength(1);
+  });
 });

@@ -198,8 +198,8 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await chooseAnswer(page, 'Certo'); // resposta incorreta na âncora q0068
     await submitWithHighConfidence(page, /confirmar hipótese/i);
 
-    // O modo tutor conduz diretamente para o Tutor Contextual (Professor SuVeCA)
-    await expect(page.getByRole('heading', { name: /professor suveca/i })).toBeVisible();
+    // O modo tutor conduz diretamente para o Tutor Contextual (Professor PBL)
+    await expect(page.getByRole('heading', { name: /professor pbl/i })).toBeVisible();
     await expect(page.getByText(/tutor contextual/i)).toBeVisible();
 
     // Blindagem de gabarito antes da tentativa/conclusão
@@ -224,7 +224,7 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await page.getByRole('button', { name: /continuar sessão/i }).click();
 
     // Retomada preserva o modo tutor ativo e os balões
-    await expect(page.getByRole('heading', { name: /professor suveca/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /professor pbl/i })).toBeVisible();
     await expect(page.getByText(/tutor contextual/i)).toBeVisible();
 
     // Conclusão do episódio de tutoria para a próxima etapa

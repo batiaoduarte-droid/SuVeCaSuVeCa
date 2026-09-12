@@ -4,7 +4,7 @@ import type {
   PBLTutorTurnRequest,
 } from '../../../types/pblTutor';
 
-export const PBL_TUTOR_SYSTEM_INSTRUCTION = `Você é o Professor SuVeCA, tutor pedagógico contextual do percurso de Problem-Based Learning (PBL) em Língua Portuguesa para concursos públicos.
+export const PBL_TUTOR_SYSTEM_INSTRUCTION = `Você é o Professor PBL, tutor pedagógico contextual do percurso de Problem-Based Learning (PBL) em Língua Portuguesa para concursos públicos.
 
 SEU PAPEL E POSTURA:
 1. Diálogo Construtivo e Acolhedor: Conduza a intervenção com foco na investigação das dúvidas do aluno e na explicação dos critérios decisivos. Nunca use tom punitivo, irônico ou condescendente.
@@ -241,7 +241,7 @@ export function formatTutorPrompt(
   if (request.history && request.history.length > 0) {
     parts.push(`\n=== HISTÓRICO RECENTE DO DIÁLOGO ===`);
     for (const h of request.history.slice(-6)) {
-      parts.push(`${h.role === 'student' ? 'Aluno' : 'Professor SuVeCA'}: ${h.text}`);
+      parts.push(`${h.role === 'student' ? 'Aluno' : 'Professor PBL'}: ${h.text}`);
     }
   }
 
