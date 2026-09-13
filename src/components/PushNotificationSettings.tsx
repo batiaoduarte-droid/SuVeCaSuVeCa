@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
+import { deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { BellRing, Info, Send, Smartphone, WifiOff } from 'lucide-react';
-import { db } from '../lib/firebase';
+import { db, safeSetDoc } from '../lib/firebase';
 import {
   getTokenDocumentId,
   listenForForegroundPushes,
@@ -133,7 +133,7 @@ export const PushNotificationSettings: React.FC<PushNotificationSettingsProps> =
     if (!userId || !isEnabledOnDevice) return;
 
     const timer = window.setTimeout(() => {
-      void setDoc(
+      void safeSetDoc(
         pushSettingsRef(userId),
         {
           enabled: true,
@@ -187,7 +187,7 @@ export const PushNotificationSettings: React.FC<PushNotificationSettingsProps> =
       const subscriptionId = await getTokenDocumentId(result.token);
       const now = new Date().toISOString();
       await Promise.all([
-        setDoc(
+        safeSetDoc(
           doc(db, 'users', userId, 'push_subscriptions', subscriptionId),
           {
             schemaVersion: 1,
@@ -200,7 +200,7 @@ export const PushNotificationSettings: React.FC<PushNotificationSettingsProps> =
           },
           { merge: true }
         ),
-        setDoc(
+        safeSetDoc(
           pushSettingsRef(userId),
           {
             schemaVersion: 1,

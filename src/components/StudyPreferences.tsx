@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
+import { doc, getDoc, deleteDoc } from 'firebase/firestore';
 import {
   Bell,
   BellRing,
@@ -19,7 +19,7 @@ import {
   WifiOff,
   RotateCcw,
 } from 'lucide-react';
-import { db, type User } from '../lib/firebase';
+import { db, safeSetDoc, type User } from '../lib/firebase';
 import {
   getTokenDocumentId,
   listenForForegroundPushes,
@@ -273,8 +273,8 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
       };
 
       await Promise.all([
-        setDoc(doc(db, 'users', userId, 'data', 'study_preferences'), payload, { merge: true }),
-        setDoc(
+        safeSetDoc(doc(db, 'users', userId, 'data', 'study_preferences'), payload, { merge: true }),
+        safeSetDoc(
           doc(db, 'users', userId, 'data', 'push_notifications'),
           {
             schemaVersion: 1,
@@ -290,7 +290,7 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
           },
           { merge: true }
         ),
-        setDoc(
+        safeSetDoc(
           doc(db, 'users', userId, 'data', 'notification_preferences'),
           {
             emailReviewEnabled: updated.emailBackupEnabled,
@@ -365,7 +365,7 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
         const now = new Date().toISOString();
 
         await Promise.all([
-          setDoc(
+          safeSetDoc(
             doc(db, 'users', userId, 'push_subscriptions', subscriptionId),
             {
               schemaVersion: 1,
@@ -378,7 +378,7 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
             },
             { merge: true }
           ),
-          setDoc(
+          safeSetDoc(
             doc(db, 'users', userId, 'data', 'push_notifications'),
             {
               schemaVersion: 1,

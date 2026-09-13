@@ -25,8 +25,8 @@ import {
 import { MODULES_DATA } from '../data/modulesData';
 import type { CadernoErroItem, PomodoroSession } from '../types/suveca';
 import type { User } from '../lib/firebase';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { doc, getDoc } from 'firebase/firestore';
+import { db, safeSetDoc } from '../lib/firebase';
 import { StudyBadge, StudySurface } from './study-visuals';
 import { generateChallengeRound, type ChallengeQuestion } from '../lib/learnerIntelligence';
 
@@ -218,7 +218,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
 
       if (currentUserId) {
         const ref = doc(db, 'users', currentUserId, 'data', 'pomodoro_sessions');
-        void setDoc(ref, {
+        void safeSetDoc(ref, {
           items: newSessions,
           updatedAt: new Date().toISOString(),
         }).catch((err) => console.error('Erro ao sincronizar histórico Pomodoro:', err));

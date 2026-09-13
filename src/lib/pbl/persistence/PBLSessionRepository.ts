@@ -1,6 +1,6 @@
 import type { PBLSession, CompetencyMastery } from '../../../types/pbl';
-import { db, auth } from '../../firebase';
-import { doc, setDoc, getDoc, collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
+import { db, auth, safeSetDoc } from '../../firebase';
+import { doc, getDoc, collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
 
 const LOCAL_STORAGE_KEY_PREFIX = 'suveca_pbl_session_';
 const LOCAL_STORAGE_MASTERY_PREFIX = 'suveca_pbl_mastery_';
@@ -119,7 +119,7 @@ export class PBLSessionRepository {
           await Promise.all(
             Object.entries(session.masterySnapshot).map(([compId, mastery]) => {
               const masteryRef = doc(db, 'users', session.userId, 'pblMastery', compId);
-              return setDoc(masteryRef, mastery, { merge: true });
+              return safeSetDoc(masteryRef, mastery, { merge: true });
             })
           );
         } catch (err) {

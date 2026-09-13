@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { Bell, BellOff, CheckCircle2, Clock3, Mail, ShieldCheck } from 'lucide-react';
 import type { CadernoErroItem } from '../types/suveca';
-import { db } from '../lib/firebase';
+import { db, safeSetDoc } from '../lib/firebase';
 import { PushNotificationSettings } from './PushNotificationSettings';
 
 const DEFAULT_REMINDER_TIME = '09:00';
@@ -214,7 +214,7 @@ export const DailyReviewReminder: React.FC<DailyReviewReminderProps> = ({
         payload.lastNotifiedOn = preference.lastNotifiedOn;
       }
 
-      void setDoc(
+      void safeSetDoc(
         doc(db, 'users', userId, 'data', 'daily_review_reminder'),
         payload,
         { merge: true }
@@ -339,7 +339,7 @@ export const DailyReviewReminder: React.FC<DailyReviewReminderProps> = ({
   const updateEmailReminder = (enabled: boolean) => {
     if (!userId) return;
     setEmailReviewEnabled(enabled);
-    void setDoc(
+    void safeSetDoc(
       doc(db, 'users', userId, 'data', 'notification_preferences'),
       {
         emailReviewEnabled: enabled,

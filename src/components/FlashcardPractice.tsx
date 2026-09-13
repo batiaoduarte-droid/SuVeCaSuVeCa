@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { CadernoErroItem, ErrorFlashcard, FlashcardRating } from '../types/suveca';
-import { auth, db, onAuthStateChanged } from '../lib/firebase';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { auth, db, onAuthStateChanged, safeSetDoc } from '../lib/firebase';
+import { doc, getDoc } from 'firebase/firestore';
 import {
   AlertCircle,
   BookOpen,
@@ -83,21 +83,22 @@ const mergeEditorialCards = (savedCards: ErrorFlashcard[]): ErrorFlashcard[] => 
   const editorialCards = EDITORIAL_CARDS.map((card) => {
     const saved = savedById.get(card.id);
     if (!saved) return card;
-    return {
+    const merged: ErrorFlashcard = {
       ...card,
-      hintUsedCount: saved.hintUsedCount,
-      lastReviewUsedHint: saved.lastReviewUsedHint,
-      lastReviewedAt: saved.lastReviewedAt,
-      nextReviewAt: saved.nextReviewAt,
-      correctCount: saved.correctCount,
-      incorrectCount: saved.incorrectCount,
-      repetitions: saved.repetitions,
-      intervalDays: saved.intervalDays,
-      easeFactor: saved.easeFactor,
-      lapseCount: saved.lapseCount,
-      lastRating: saved.lastRating,
-      masteryScore: saved.masteryScore,
+      correctCount: typeof saved.correctCount === 'number' ? saved.correctCount : card.correctCount,
+      incorrectCount: typeof saved.incorrectCount === 'number' ? saved.incorrectCount : card.incorrectCount,
     };
+    if (saved.hintUsedCount !== undefined) merged.hintUsedCount = saved.hintUsedCount;
+    if (saved.lastReviewUsedHint !== undefined) merged.lastReviewUsedHint = saved.lastReviewUsedHint;
+    if (saved.lastReviewedAt !== undefined) merged.lastReviewedAt = saved.lastReviewedAt;
+    if (saved.nextReviewAt !== undefined) merged.nextReviewAt = saved.nextReviewAt;
+    if (saved.repetitions !== undefined) merged.repetitions = saved.repetitions;
+    if (saved.intervalDays !== undefined) merged.intervalDays = saved.intervalDays;
+    if (saved.easeFactor !== undefined) merged.easeFactor = saved.easeFactor;
+    if (saved.lapseCount !== undefined) merged.lapseCount = saved.lapseCount;
+    if (saved.lastRating !== undefined) merged.lastRating = saved.lastRating;
+    if (saved.masteryScore !== undefined) merged.masteryScore = saved.masteryScore;
+    return merged;
   });
   const cadernoCards = Array.from(
     new Map(
@@ -245,12 +246,12 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             ? legacyItems.filter(isFlashcard).filter((card) => card.source === 'caderno')
             : [];
           const initialCards = mergeEditorialCards([...localCards, ...legacyCards]);
-          await setDoc(ref, {
+          await safeSetDoc(ref, {
             curriculumBuildId: CURRICULUM_BUILD_ID,
             items: initialCards,
             updatedAt: new Date().toISOString(),
           });
-          await setDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
+          await safeSetDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
             schemaVersion: 2,
             contentKind: 'personal_caderno_cards',
             items: initialCards.filter((card) => card.source === 'caderno'),
@@ -288,12 +289,12 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     try {
       const updatedAt = new Date().toISOString();
       await Promise.all([
-        setDoc(doc(db, 'users', resolvedUserId, 'data', flashcardsDocumentId), {
+        safeSetDoc(doc(db, 'users', resolvedUserId, 'data', flashcardsDocumentId), {
           curriculumBuildId: CURRICULUM_BUILD_ID,
           items: nextCards,
           updatedAt,
         }),
-        setDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
+        safeSetDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
           schemaVersion: 2,
           contentKind: 'personal_caderno_cards',
           items: nextCards.filter((card) => card.source === 'caderno'),
@@ -393,22 +394,28 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
           const candidate = card as { front?: unknown; back?: unknown; hint?: unknown; explanation?: unknown };
           return typeof candidate.front === 'string' && typeof candidate.back === 'string';
         })
-        .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown }, index: number) => ({
-          id: `flash_${error.id}_${Date.now()}_${index}`,
-          errorId: error.id,
-          source: 'caderno',
-          topic: error.conteudo,
-          front: toLearnerFacingContent(card.front),
-          back: toLearnerFacingContent(card.back),
-          hint: toLearnerFacingContent(card.hint) || undefined,
-          explanation: toLearnerFacingContent(card.explanation) || undefined,
-          sourceRefs: Array.isArray(card.sourceRefs)
-            ? card.sourceRefs.filter((reference): reference is string => typeof reference === 'string')
-            : undefined,
-          createdAt: now,
-          correctCount: 0,
-          incorrectCount: 0,
-        }));
+        .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown }, index: number) => {
+          const newCard: ErrorFlashcard = {
+            id: `flash_${error.id}_${Date.now()}_${index}`,
+            errorId: error.id,
+            source: 'caderno',
+            topic: error.conteudo,
+            front: toLearnerFacingContent(card.front),
+            back: toLearnerFacingContent(card.back),
+            createdAt: now,
+            correctCount: 0,
+            incorrectCount: 0,
+          };
+          const hint = toLearnerFacingContent(card.hint);
+          if (hint) newCard.hint = hint;
+          const explanation = toLearnerFacingContent(card.explanation);
+          if (explanation) newCard.explanation = explanation;
+          if (Array.isArray(card.sourceRefs)) {
+            const refs = card.sourceRefs.filter((reference): reference is string => typeof reference === 'string');
+            if (refs.length) newCard.sourceRefs = refs;
+          }
+          return newCard;
+        });
 
       if (!generatedCards.length) throw new Error('Nenhum card aproveitável foi gerado.');
 
@@ -456,22 +463,28 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             const candidate = card as { front?: unknown; back?: unknown };
             return typeof candidate.front === 'string' && typeof candidate.back === 'string';
           })
-          .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown }, index: number) => ({
-            id: `flash_${error.id}_${Date.now()}_${index}`,
-            errorId: error.id,
-            source: 'caderno',
-            topic: error.conteudo,
-            front: toLearnerFacingContent(card.front),
-            back: toLearnerFacingContent(card.back),
-            hint: toLearnerFacingContent(card.hint) || undefined,
-            explanation: toLearnerFacingContent(card.explanation) || undefined,
-            sourceRefs: Array.isArray(card.sourceRefs)
-              ? card.sourceRefs.filter((reference): reference is string => typeof reference === 'string')
-              : undefined,
-            createdAt: now,
-            correctCount: 0,
-            incorrectCount: 0,
-        }));
+          .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown }, index: number) => {
+            const newCard: ErrorFlashcard = {
+              id: `flash_${error.id}_${Date.now()}_${index}`,
+              errorId: error.id,
+              source: 'caderno',
+              topic: error.conteudo,
+              front: toLearnerFacingContent(card.front),
+              back: toLearnerFacingContent(card.back),
+              createdAt: now,
+              correctCount: 0,
+              incorrectCount: 0,
+            };
+            const hint = toLearnerFacingContent(card.hint);
+            if (hint) newCard.hint = hint;
+            const explanation = toLearnerFacingContent(card.explanation);
+            if (explanation) newCard.explanation = explanation;
+            if (Array.isArray(card.sourceRefs)) {
+              const refs = card.sourceRefs.filter((reference): reference is string => typeof reference === 'string');
+              if (refs.length) newCard.sourceRefs = refs;
+            }
+            return newCard;
+          });
 
         if (newCards.length) {
           nextCards = [...nextCards.filter((card) => card.errorId !== error.id), ...newCards];

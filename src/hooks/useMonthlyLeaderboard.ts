@@ -7,9 +7,8 @@ import {
   onSnapshot,
   orderBy,
   query,
-  setDoc,
 } from 'firebase/firestore';
-import { db, type User } from '../lib/firebase';
+import { db, safeSetDoc, type User } from '../lib/firebase';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
 export interface LeaderboardAttempt {
@@ -188,7 +187,7 @@ export const useMonthlyLeaderboard = ({
       if (!userId) return;
 
       setShareFirstName(shouldShare);
-      void setDoc(
+      void safeSetDoc(
         doc(db, 'users', userId, 'data', 'leaderboard_preferences'),
         {
           shareFirstName: shouldShare,

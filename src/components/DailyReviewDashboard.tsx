@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import {
   BookOpen,
   CalendarCheck,
@@ -14,7 +14,7 @@ import {
   AlertCircle,
 } from 'lucide-react';
 import type { CadernoErroItem, ErrorFlashcard } from '../types/suveca';
-import { db } from '../lib/firebase';
+import { db, safeSetDoc } from '../lib/firebase';
 import { ProgressBar } from './ui/ProgressBar';
 import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
@@ -73,7 +73,7 @@ const normalizeProgress = (value: unknown): DailyReviewProgress => {
       : fallback.goal;
   const isCurrentDay = candidate.day === fallback.day;
 
-  return {
+  const progress: DailyReviewProgress = {
     curriculumBuildId: CURRICULUM_BUILD_ID,
     day: fallback.day,
     completedCount:
@@ -81,8 +81,11 @@ const normalizeProgress = (value: unknown): DailyReviewProgress => {
         ? Math.max(0, Math.floor(candidate.completedCount))
         : 0,
     goal: validGoal,
-    updatedAt: typeof candidate.updatedAt === 'string' ? candidate.updatedAt : undefined,
   };
+  if (typeof candidate.updatedAt === 'string') {
+    progress.updatedAt = candidate.updatedAt;
+  }
+  return progress;
 };
 
 const readLocalProgress = (userId?: string) => {
@@ -129,21 +132,23 @@ const normalizeCards = (value: unknown): ErrorFlashcard[] => {
   const savedById = new Map(saved.map((card) => [card.id, card]));
   const editorial = EDITORIAL_CARDS.map((card) => {
     const progress = savedById.get(card.id);
-    return {
+    if (!progress) return card;
+    const merged: ErrorFlashcard = {
       ...card,
-      hintUsedCount: progress?.hintUsedCount,
-      lastReviewUsedHint: progress?.lastReviewUsedHint,
-      lastReviewedAt: progress?.lastReviewedAt,
-      nextReviewAt: progress?.nextReviewAt,
-      correctCount: progress?.correctCount ?? card.correctCount,
-      incorrectCount: progress?.incorrectCount ?? card.incorrectCount,
-      repetitions: progress?.repetitions,
-      intervalDays: progress?.intervalDays,
-      easeFactor: progress?.easeFactor,
-      lapseCount: progress?.lapseCount,
-      lastRating: progress?.lastRating,
-      masteryScore: progress?.masteryScore,
+      correctCount: progress.correctCount ?? card.correctCount,
+      incorrectCount: progress.incorrectCount ?? card.incorrectCount,
     };
+    if (progress.hintUsedCount !== undefined) merged.hintUsedCount = progress.hintUsedCount;
+    if (progress.lastReviewUsedHint !== undefined) merged.lastReviewUsedHint = progress.lastReviewUsedHint;
+    if (progress.lastReviewedAt !== undefined) merged.lastReviewedAt = progress.lastReviewedAt;
+    if (progress.nextReviewAt !== undefined) merged.nextReviewAt = progress.nextReviewAt;
+    if (progress.repetitions !== undefined) merged.repetitions = progress.repetitions;
+    if (progress.intervalDays !== undefined) merged.intervalDays = progress.intervalDays;
+    if (progress.easeFactor !== undefined) merged.easeFactor = progress.easeFactor;
+    if (progress.lapseCount !== undefined) merged.lapseCount = progress.lapseCount;
+    if (progress.lastRating !== undefined) merged.lastRating = progress.lastRating;
+    if (progress.masteryScore !== undefined) merged.masteryScore = progress.masteryScore;
+    return merged;
   });
   const caderno = Array.from(
     new Map(
@@ -292,12 +297,12 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
           setCards(migratedCards);
           const updatedAt = new Date().toISOString();
           await Promise.all([
-            setDoc(doc(db, 'users', userId, 'data', flashcardsDocumentId), {
+            safeSetDoc(doc(db, 'users', userId, 'data', flashcardsDocumentId), {
               curriculumBuildId: CURRICULUM_BUILD_ID,
               items: migratedCards,
               updatedAt,
             }),
-            setDoc(doc(db, 'users', userId, 'data', 'flashcards_caderno'), {
+            safeSetDoc(doc(db, 'users', userId, 'data', 'flashcards_caderno'), {
               schemaVersion: 2,
               contentKind: 'personal_caderno_cards',
               items: migratedCards.filter((card) => card.source === 'caderno'),
@@ -349,7 +354,7 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
     if (!userId) return;
 
     const timeout = window.setTimeout(() => {
-      void setDoc(
+      void safeSetDoc(
         doc(db, 'users', userId, 'data', agendaDocumentId),
         {
           ...progress,

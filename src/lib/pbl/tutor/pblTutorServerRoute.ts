@@ -372,7 +372,7 @@ async function resolveTokenUserId(req: Request): Promise<string | undefined> {
     const { getAuth } = await import('firebase-admin/auth');
     const apps = getApps();
     if (apps.length > 0) {
-      const decoded = await getAuth(apps[0]).verifyIdToken(token, true);
+      const decoded = await getAuth(apps[0]).verifyIdToken(token);
       return decoded.uid;
     }
   } catch {

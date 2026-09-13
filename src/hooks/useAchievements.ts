@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { db, type User } from '../lib/firebase';
+import { doc, getDoc } from 'firebase/firestore';
+import { db, safeSetDoc, type User } from '../lib/firebase';
 import {
   EMPTY_ACHIEVEMENT_PROGRESS,
   hasNewUnlock,
@@ -124,7 +124,7 @@ export const useAchievements = (
         dataToSave.lastStudyDate = progress.lastStudyDate;
       }
 
-      void setDoc(
+      void safeSetDoc(
         doc(db, 'users', currentUserId, 'data', 'achievements'),
         dataToSave,
         { merge: true }

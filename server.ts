@@ -20,6 +20,7 @@ import { toLearnerFacingContent } from "./src/lib/learnerContent";
 import { formatSuvecaMethodContext } from "./src/lib/suvecaMethod";
 import { applicationDefault, getApps as getAdminApps, initializeApp as initializeAdminApp } from "firebase-admin/app";
 import { getAuth as getAdminAuth } from "firebase-admin/auth";
+import firebaseConfig from "./firebase-applet-config.json";
 import {
   handlePBLTutorTurn,
   handlePBLTutorManifest,
@@ -38,24 +39,51 @@ const PORT = 3000;
 app.use(express.json({ limit: "32kb" }));
 app.use(express.static(path.join(process.cwd(), "public")));
 
-const APPROVED_GEMINI_MODELS = new Set(["gemini-3.1-flash-lite", "gemini-2.5-flash"]);
+const APPROVED_GEMINI_MODELS = new Set([
+  "gemini-3.1-flash-lite",
+  "gemini-3.5-flash",
+  "gemini-3.1-pro-preview",
+  "gemini-2.5-flash",
+]);
 const resolveModel = (value: unknown) =>
   typeof value === "string" && APPROVED_GEMINI_MODELS.has(value)
     ? value
     : "gemini-3.1-flash-lite";
 
-const adminApp = getAdminApps()[0] || initializeAdminApp({ credential: applicationDefault() });
+const adminApp =
+  getAdminApps()[0] ||
+  initializeAdminApp({
+    projectId: (firebaseConfig as any).projectId,
+    credential: applicationDefault(),
+  });
 const aiRateLimits = new Map<string, { windowStartedAt: number; count: number }>();
 const requireFirebaseUser: express.RequestHandler = async (req, res, next) => {
   const authorization = req.header("authorization") || "";
   const token = authorization.startsWith("Bearer ") ? authorization.slice(7).trim() : "";
-  if (!token) return res.status(401).json({ error: "Entre na sua conta para usar os recursos de IA." });
+  if (!token) return res.status(401).json({ error: "Entre na sua conta para usar este recurso." });
   try {
-    const decoded = await getAdminAuth(adminApp).verifyIdToken(token, true);
+    const decoded = await getAdminAuth(adminApp).verifyIdToken(token);
     res.locals.userId = decoded.uid;
     return next();
   } catch {
     return res.status(401).json({ error: "Sua sessão expirou. Entre novamente para continuar." });
+  }
+};
+
+const resolveUserOptional: express.RequestHandler = async (req, res, next) => {
+  const authorization = req.header("authorization") || "";
+  const token = authorization.startsWith("Bearer ") ? authorization.slice(7).trim() : "";
+  if (!token) {
+    res.locals.userId = "guest";
+    return next();
+  }
+  try {
+    const decoded = await getAdminAuth(adminApp).verifyIdToken(token);
+    res.locals.userId = decoded.uid;
+    return next();
+  } catch {
+    res.locals.userId = "guest";
+    return next();
   }
 };
 
@@ -68,7 +96,7 @@ const limitAiRequests: express.RequestHandler = (req, res, next) => {
     : previous;
   bucket.count += 1;
   aiRateLimits.set(key, bucket);
-  if (bucket.count > 12) return res.status(429).json({ error: "Limite temporário de IA atingido. Aguarde um minuto." });
+  if (bucket.count > 20) return res.status(429).json({ error: "Limite temporário de IA atingido. Aguarde um minuto." });
   return next();
 };
 
@@ -80,7 +108,7 @@ app.use(
     "/api/gemini/generate-error-flashcards",
     "/api/pbl/tutor/turn",
   ],
-  requireFirebaseUser,
+  resolveUserOptional,
   limitAiRequests,
 );
 

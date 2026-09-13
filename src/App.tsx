@@ -20,10 +20,14 @@ import {
   onAuthStateChanged,
   db,
   type User,
+  signInWithGoogle,
+  firebaseProjectId,
+  type AuthErrorInfo,
+  safeSetDoc,
 } from './lib/firebase';
+import { AuthDomainModal } from './components/AuthDomainModal';
 import {
   doc,
-  setDoc,
   getDoc,
 } from 'firebase/firestore';
 import {
@@ -237,7 +241,7 @@ export default function App() {
 
       try {
         const userDocRef = doc(db, 'users', currentUserId);
-        await setDoc(
+        await safeSetDoc(
           userDocRef,
           {
             uid: currentUserId,
@@ -258,7 +262,7 @@ export default function App() {
           const items = docSnap.data()?.items;
           if (Array.isArray(items)) resolvedErrors = items as CadernoErroItem[];
         } else {
-          await setDoc(userErrorsRef, {
+          await safeSetDoc(userErrorsRef, {
             items: localErrors,
             updatedAt: new Date().toISOString(),
           });
@@ -294,7 +298,7 @@ export default function App() {
         setIsSyncing(true);
         try {
           const userErrorsRef = doc(db, 'users', storageUserId, 'data', 'caderno_erros');
-          await setDoc(userErrorsRef, {
+          await safeSetDoc(userErrorsRef, {
             items: cadernoErrors,
             updatedAt: new Date().toISOString(),
           });
@@ -313,11 +317,31 @@ export default function App() {
     }
   }, [cadernoErrors, cadernoReadyFor, user?.uid]);
 
+  const [authError, setAuthError] = useState<AuthErrorInfo | null>(null);
+
+  useEffect(() => {
+    const handleAuthErrorEvent = (event: Event) => {
+      const customEvent = event as CustomEvent<AuthErrorInfo>;
+      if (customEvent.detail) {
+        setAuthError(customEvent.detail);
+      }
+    };
+    window.addEventListener('suveca:auth-error', handleAuthErrorEvent);
+    return () => window.removeEventListener('suveca:auth-error', handleAuthErrorEvent);
+  }, []);
+
   const handleSignIn = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (err) {
-      console.error('Erro ao realizar login Google:', err);
+      setAuthError(null);
+      await signInWithGoogle();
+    } catch (err: any) {
+      console.warn('Aviso ao realizar login Google:', err?.message || err);
+      setAuthError({
+        code: err?.code || 'auth/unknown',
+        message: err?.message || 'Erro ao realizar login Google.',
+        domain: typeof window !== 'undefined' ? window.location.hostname : undefined,
+        projectId: firebaseProjectId,
+      });
     }
   };
 
@@ -897,6 +921,13 @@ export default function App() {
           />
         </Suspense>
       )}
+
+      {/* Modal de Alerta de Domínio Não Autorizado / Erro de Autenticação */}
+      <AuthDomainModal
+        error={authError}
+        onClose={() => setAuthError(null)}
+        onRetry={handleSignIn}
+      />
     </div>
   );
 }

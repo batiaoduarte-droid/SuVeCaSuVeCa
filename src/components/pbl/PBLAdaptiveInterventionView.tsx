@@ -32,8 +32,11 @@ import {
   BookOpen,
   Zap,
   HelpCircle,
+  AlertCircle,
+  LogIn,
+  X,
 } from 'lucide-react';
-import { auth } from '../../lib/firebase';
+import { auth, signInWithGoogle } from '../../lib/firebase';
 import { formatPBLAnswer } from '../../lib/pbl/answerAdapter';
 
 interface PBLAdaptiveInterventionViewProps {
@@ -245,7 +248,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       onAssistanceChange?.(hasAttempted ? 'full' : 'partial');
       onRecordTurn?.(tutorTurn);
     } catch (err: any) {
-      console.error('[PBLAdaptiveInterventionView] Erro no turno inicial do tutor:', err);
+      console.warn('[PBLAdaptiveInterventionView] Aviso no turno inicial do tutor, usando fallback pedagógico:', err?.message || err);
       if (activeEpisodeRef.current !== requestEpisodeId) return;
       if (episode.turns.some((t) => t.role === 'tutor')) return;
       const fallbackTurn: PBLTutorTurn = {
@@ -360,10 +363,33 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       onAssistanceChange?.(hasAttempted ? 'full' : 'partial');
       onRecordTurn?.(tutorTurn);
     } catch (err: any) {
-      console.error('[PBLAdaptiveInterventionView] Erro ao enviar mensagem:', err);
-      setErrorMessage('Houve uma instabilidade temporária na conexão com a IA. Tente novamente ou use os atalhos abaixo.');
+      console.warn('[PBLAdaptiveInterventionView] Aviso ao enviar mensagem à IA:', err?.message || err);
+      const isAuthError =
+        err?.message?.includes('Entre na sua conta') ||
+        err?.message?.includes('sessão expirou') ||
+        err?.message?.includes('401');
+      if (isAuthError) {
+        setErrorMessage('Entre na sua conta Google para sincronizar e utilizar todos os recursos.');
+      } else {
+        const fallbackTurn: PBLTutorTurn = {
+          turnId: `turn_fallback_${Date.now()}`,
+          role: 'tutor',
+          content: hasAttempted && intervention?.microLessonText
+            ? `Analisando seu questionamento: ${intervention.microLessonText}\n\n**Critério Decisivo:** ${intervention.ruleStatement || 'Consulte a regra gramatical canônica.'}`
+            : 'Observe os termos sintáticos destacados e verifique qual critério gramatical canônico orienta a escolha correta.',
+          timestamp: new Date().toISOString(),
+          intent: 'explain_rule',
+          continuityRecommendation: 'try_same',
+          executionMetadata: {
+            model: 'local-fallback',
+            durationMs: Date.now() - startTime,
+            fallback: true,
+          },
+        };
+        onRecordTurn?.(fallbackTurn);
+      }
       if (!customMessage) {
-        setInputText(textToSend);
+        setInputText('');
       }
     } finally {
       setLoading(false);
@@ -670,6 +696,55 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
                 ))}
               </div>
             </div>
+
+            {/* Avisos de autenticação e erros da IA */}
+            {errorMessage && (
+              <div className="mx-3 my-2 p-2.5 rounded-xl border border-amber-200 bg-amber-50 text-xs text-amber-900 flex items-start justify-between gap-2 animate-in fade-in">
+                <div className="flex items-start gap-2">
+                  <AlertCircle className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <span className="font-semibold">{errorMessage}</span>
+                    {!auth?.currentUser && (
+                      <div>
+                        <button
+                          type="button"
+                          onClick={() => void signInWithGoogle()}
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-indigo-700 hover:text-indigo-900 underline"
+                        >
+                          <LogIn className="h-3 w-3" />
+                          <span>Entrar com Google agora</span>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setErrorMessage('')}
+                  className="text-amber-500 hover:text-amber-800 p-0.5 rounded cursor-pointer"
+                  aria-label="Fechar mensagem"
+                >
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            )}
+
+            {!auth?.currentUser && !errorMessage && (
+              <div className="mx-3 my-2 p-2.5 rounded-xl border border-indigo-100 bg-indigo-50/70 text-xs text-indigo-950 flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-indigo-600 shrink-0" />
+                  <span>Conecte sua conta para conversar com o Professor IA e tirar dúvidas.</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => void signInWithGoogle()}
+                  className="button-primary py-1 px-2.5 text-xs shrink-0 flex items-center gap-1 shadow-2xs"
+                >
+                  <LogIn className="h-3 w-3" />
+                  <span>Entrar</span>
+                </button>
+              </div>
+            )}
 
             {/* Input para dúvida personalizada */}
             <div className="p-3 border-t border-slate-200 bg-white">

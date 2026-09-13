@@ -1,7 +1,7 @@
 import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { CadernoErroItem, ModuleData, ModuleSection, SuvecaMethodConnection } from '../types/suveca';
-import { db, type User } from '../lib/firebase';
+import { db, safeSetDoc, type User } from '../lib/firebase';
 import { MarkdownContent } from './ui/MarkdownContent';
 import { PedagogicalUnitRenderer } from './pedagogical/PedagogicalUnitRenderer';
 import { CumulativeReviewRenderer } from './pedagogical/CumulativeReviewRenderer';
@@ -606,7 +606,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
           setSectionNotes(mergedNotes);
           saveLocalNotes(moduleId, mergedNotes, user.uid);
           if (JSON.stringify(mergedNotes) !== JSON.stringify(snapshot.data().notes || {})) {
-            await setDoc(noteRef, {
+            await safeSetDoc(noteRef, {
               moduleId,
               curriculumBuildId: CURRICULUM_BUILD_ID,
               notes: mergedNotes,
@@ -620,7 +620,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
         // Preserve notes created before sign-in by seeding a module document.
         if (Object.keys(localNotes).length > 0) {
-          await setDoc(noteRef, {
+          await safeSetDoc(noteRef, {
             moduleId,
             curriculumBuildId: CURRICULUM_BUILD_ID,
             notes: localNotes,
@@ -656,7 +656,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     if (activeModuleIdRef.current === moduleId) setNotesSyncState('saving');
 
     try {
-      await setDoc(
+      await safeSetDoc(
         doc(db, 'users', userId, 'module_notes', `${CURRICULUM_BUILD_ID}_${moduleId}`),
         {
           moduleId,

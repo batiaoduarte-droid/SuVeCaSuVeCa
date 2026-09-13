@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { QuizQuestion, SimuladoAttempt, TopicAttemptStats } from '../types/suveca';
-import { auth, db, onAuthStateChanged } from '../lib/firebase';
-import { deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
+import { auth, db, onAuthStateChanged, safeSetDoc } from '../lib/firebase';
+import { deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { useModalFocus } from '../hooks/useModalFocus';
 import { authenticatedFetch } from '../lib/authenticatedFetch';
 import {
@@ -195,7 +195,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
     try {
       localStorage.setItem(pausedStorageKey, JSON.stringify(session));
       if (persistenceUserId) {
-        await setDoc(
+        await safeSetDoc(
           doc(db, 'users', persistenceUserId, 'data', 'simulado_em_andamento'),
           session
         );

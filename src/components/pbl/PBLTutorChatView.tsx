@@ -167,7 +167,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
       if (episode.turns.some((t) => t.role === 'tutor' && t.content.trim() === data.pedagogicalText.trim())) return;
       onRecordTurn(tutorTurn);
     } catch (err: any) {
-      console.error('[PBLTutorChatView] Erro no turno inicial do tutor:', err);
+      console.warn('[PBLTutorChatView] Aviso no turno inicial do tutor, usando fallback pedagógico:', err?.message || err);
       if (episode.turns.some((t) => t.role === 'tutor')) return;
       // Fallback gracioso local se houver falha de rede total
       const fallbackContent = 'Olá! Estou aqui para te orientar no raciocínio desta questão. O que te levou a escolher essa alternativa, ou qual parte do enunciado te gerou dúvida?';
@@ -276,7 +276,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
 
       onRecordTurn(tutorTurn);
     } catch (err: any) {
-      console.error('[PBLTutorChatView] Erro ao enviar mensagem ao tutor:', err);
+      console.warn('[PBLTutorChatView] Aviso ao enviar mensagem ao tutor:', err?.message || err);
       setErrorMessage(
         'Houve uma instabilidade temporária na conexão com o Professor PBL. Sua mensagem foi mantida abaixo para que você possa tentar novamente.'
       );

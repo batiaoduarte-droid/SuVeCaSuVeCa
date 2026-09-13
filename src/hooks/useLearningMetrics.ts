@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
-import { db, type User } from '../lib/firebase';
+import { doc, getDoc, serverTimestamp } from 'firebase/firestore';
+import { db, safeSetDoc, type User } from '../lib/firebase';
 import type { LearningAttempt } from '../components/StatisticsDashboard';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import { MODULES_DATA } from '../data/modulesData';
@@ -195,7 +195,7 @@ export const useLearningMetrics = (user: User | null) => {
     if (!user || isLoadingMetrics || activeStorageUserId !== currentUserId) return;
 
     const timeout = window.setTimeout(() => {
-      void setDoc(
+      void safeSetDoc(
         doc(db, 'users', currentUserId, 'data', `learning_metrics_${CURRICULUM_BUILD_ID}`),
         { ...metrics, curriculumBuildId: CURRICULUM_BUILD_ID, updatedAt: new Date().toISOString() },
         { merge: true }
@@ -216,7 +216,7 @@ export const useLearningMetrics = (user: User | null) => {
     if (now - lastActivityTouchRef.current < 10 * 60 * 1000) return;
     lastActivityTouchRef.current = now;
 
-    void setDoc(
+    void safeSetDoc(
       doc(db, 'users', currentUserId),
       {
         lastActivityAt: serverTimestamp(),
@@ -281,7 +281,7 @@ export const useLearningMetrics = (user: User | null) => {
       answerMap &&
       Object.keys(answerMap).length > 0
     ) {
-      void setDoc(
+      void safeSetDoc(
         doc(db, 'users', currentUserId, 'attempt_submissions', attempt.id),
         {
           schemaVersion: 1,
