@@ -83,9 +83,9 @@ describe('currículo editorial das aulas 00–14', () => {
     );
   });
 
-  it('roteia o Professor para a base editorial nova', () => {
+  it('roteia o Professor para a base editorial nova', async () => {
     expect(PEDAGOGICAL_KNOWLEDGE_INDEX).toHaveLength(115);
-    const records = retrieveKnowledge('quando usar crase antes de nome feminino?', 3);
+    const records = await retrieveKnowledge('quando usar crase antes de nome feminino?', 3);
     expect(records.some((record) => record.lessonId === 'A10')).toBe(true);
     const context = formatKnowledgeContext(records);
     expect(context).toContain('BASE EDITORIAL SuVeCa');
@@ -97,14 +97,14 @@ describe('currículo editorial das aulas 00–14', () => {
     expect(context).not.toContain('PERFIL CANÔNICO V3');
   });
 
-  it('não força a SuVeCA em fonologia e a usa fortemente nos porquês', () => {
-    const phonetics = retrieveKnowledge('fonemas grafemas dígrafos', 1);
+  it('não força a SuVeCA em fonologia e a usa fortemente nos porquês', async () => {
+    const phonetics = await retrieveKnowledge('fonemas grafemas dígrafos', 1);
     expect(phonetics[0]?.lessonId).toBe('A00');
     expect(phonetics[0]?.groupId).toBe('G01');
     expect(phonetics[0]?.methodology.level).toBe('outside_core');
     expect(formatKnowledgeContext(phonetics)).toContain('Não force uma decomposição SuVeCA');
 
-    const porques = retrieveKnowledge('emprego dos porquês', 1);
+    const porques = await retrieveKnowledge('emprego dos porquês', 1);
     expect(porques[0]?.lessonId).toBe('A00');
     expect(porques[0]?.groupId).toBe('G07');
     expect(porques[0]?.methodology.level).toBe('strong');

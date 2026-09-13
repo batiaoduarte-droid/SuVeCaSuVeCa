@@ -1,9 +1,32 @@
-import {
-  PEDAGOGICAL_KNOWLEDGE_INDEX,
-} from '../data/pedagogicalKnowledgeIndex.generated';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 
-export type KnowledgeRecord = (typeof PEDAGOGICAL_KNOWLEDGE_INDEX)[number];
+/**
+ * The knowledge index (115 editorial units across 8 generated parts, ~2 MB of
+ * generated TypeScript) is loaded on first use instead of statically imported.
+ * This keeps the heavy generated corpus out of the eagerly evaluated module
+ * graph (client bundles and any module importing this one before a search
+ * happens). The promise is cached, so subsequent calls share one resolution.
+ */
+type GeneratedKnowledgeIndex = typeof import('../data/pedagogicalKnowledgeIndex.generated')['PEDAGOGICAL_KNOWLEDGE_INDEX'];
+type KnowledgeRecord = GeneratedKnowledgeIndex[number];
+export type { KnowledgeRecord };
+
+let indexPromise: Promise<GeneratedKnowledgeIndex> | null = null;
+
+const loadKnowledgeIndex = (): Promise<GeneratedKnowledgeIndex> => {
+  if (!indexPromise) {
+    indexPromise = import('../data/pedagogicalKnowledgeIndex.generated')
+      .then((module) => module.PEDAGOGICAL_KNOWLEDGE_INDEX);
+  }
+  return indexPromise;
+};
+
+/** Test hook: clears the cached promise so suites can exercise cold and warm paths. */
+export const resetKnowledgeIndexCacheForTests = () => {
+  indexPromise = null;
+};
+
+export { PEDAGOGICAL_KNOWLEDGE_BUILD };
 
 const normalize = (value: string) =>
   value
@@ -48,12 +71,13 @@ const recordSearchFields = (record: KnowledgeRecord) => ({
  * Recupera unidades da fonte editorial nova. A busca privilegia o tópico e os
  * termos de roteamento; o corpo didático funciona como recall complementar.
  */
-export const retrieveKnowledge = (query: string, limit = 3): KnowledgeRecord[] => {
+export const retrieveKnowledge = async (query: string, limit = 3): Promise<KnowledgeRecord[]> => {
+  const index = await loadKnowledgeIndex();
   const normalizedQuery = normalize(query);
   const queryTokens = tokens(query);
   const safeLimit = Math.max(1, limit);
 
-  const ranked = PEDAGOGICAL_KNOWLEDGE_INDEX.map((record) => {
+  const ranked = index.map((record) => {
     const fields = recordSearchFields(record);
     let score = 0;
 
@@ -77,7 +101,7 @@ export const retrieveKnowledge = (query: string, limit = 3): KnowledgeRecord[] =
 
   // Revisão cumulativa é a melhor porta de entrada quando a pergunta não contém
   // termos suficientes para apontar um subtópico específico.
-  return PEDAGOGICAL_KNOWLEDGE_INDEX
+  return index
     .filter((record) => record.lessonId === 'A14')
     .slice(0, safeLimit);
 };

@@ -7,6 +7,7 @@ import {
   formatKnowledgeContext,
   KNOWLEDGE_BUILD,
   retrieveKnowledge,
+  type KnowledgeRecord,
 } from "./src/lib/knowledgeRetrieval";
 import {
   formatOfficialQuestionContext,
@@ -99,14 +100,14 @@ const withAiTimeout = async <T,>(operation: Promise<T>, timeoutMs = 30_000): Pro
   }
 };
 
-const knowledgeRefsFor = (record: ReturnType<typeof retrieveKnowledge>[number]) => {
+const knowledgeRefsFor = (record: KnowledgeRecord) => {
   const editorialRefs = Array.isArray(record.sourceRefs)
     ? record.sourceRefs.filter((reference): reference is string => typeof reference === "string")
     : [];
   return editorialRefs;
 };
 
-const allowedRefsFor = (records: ReturnType<typeof retrieveKnowledge>, extraContext = "") => {
+const allowedRefsFor = (records: readonly KnowledgeRecord[], extraContext = "") => {
   const allowed = new Set(records.flatMap(knowledgeRefsFor));
   for (const match of extraContext.matchAll(/\[((?:QUESTION|EDITORIAL|CORPUS):[^\]]+)\]/gi)) {
     allowed.add(match[1]);
@@ -218,7 +219,7 @@ app.post("/api/suveca/analyze", async (req, res) => {
 
     const safeSentence = sentence.trim().slice(0, 800);
     const ai = getGenAIClient();
-    const knowledgeRecords = retrieveKnowledge(`${safeSentence} sujeito verbo complemento sintaxe oração`, 3);
+    const knowledgeRecords = await retrieveKnowledge(`${safeSentence} sujeito verbo complemento sintaxe oração`, 3);
     const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const methodContext = formatSuvecaMethodContext();
     const prompt = `Analise a seguinte oração em português do Brasil aplicando rigorosamente o Método SuVeCA:
@@ -338,7 +339,7 @@ app.post("/api/gemini/explain", async (req, res) => {
       : "Sem mensagens anteriores relevantes.";
 
     const ai = getGenAIClient();
-    const knowledgeRecords = retrieveKnowledge(`${safeContext} ${safeQuestion}`, 3);
+    const knowledgeRecords = await retrieveKnowledge(`${safeContext} ${safeQuestion}`, 3);
     const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const officialQuestionContext = await formatOfficialQuestionContext(`${safeContext} ${safeQuestion}`, 2);
     const prompt = `Contexto da aula: ${safeContext}
@@ -423,7 +424,7 @@ app.post("/api/gemini/generate-questions", async (req, res) => {
     const safeBank = typeof bank === "string" ? bank.trim().slice(0, 80) : "CEBRASPE / FGV";
     const safeCount = Math.min(5, Math.max(1, Number(count) || 3));
     const ai = getGenAIClient();
-    const knowledgeRecords = retrieveKnowledge(`${safeTopic} ${safeBank}`, 3);
+    const knowledgeRecords = await retrieveKnowledge(`${safeTopic} ${safeBank}`, 3);
     const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const officialQuestionContext = await formatOfficialQuestionContext(`${safeTopic} ${safeBank}`, 2);
 
@@ -530,7 +531,7 @@ app.post("/api/gemini/generate-error-flashcards", async (req, res) => {
     const cardCount = Math.min(Math.max(Number(count) || 2, 1), 4);
     const truncate = (value: string) => value.trim().slice(0, 2400);
     const ai = getGenAIClient();
-    const knowledgeRecords = retrieveKnowledge(`${error.conteudo} ${error.regraDecisiva}`, 2);
+    const knowledgeRecords = await retrieveKnowledge(`${error.conteudo} ${error.regraDecisiva}`, 2);
     const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const prompt = `Transforme o seguinte registro do Caderno de Erros em ${cardCount} flashcards curtos de revisão ativa.
 

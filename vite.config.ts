@@ -25,6 +25,18 @@ export default defineConfig(() => {
           // referenced only by lazy study tools (charts/AI) are fetched only
           // after the learner opens that tool.
           manualChunks(id) {
+            // Generated curriculum data is versioned content that only changes
+            // across editorial releases. Isolating it in stable chunks keeps
+            // the app entry small and lets browsers cache data across deploys
+            // that only touch application code.
+            if (id.includes('/src/data/') && id.endsWith('.generated.ts')) {
+              if (id.includes('/src/data/pedagogicalKnowledge.part-')) return 'knowledge-parts';
+              if (id.includes('/src/data/pedagogicalKnowledgeIndex.generated')) return 'knowledge-index';
+              if (id.includes('/src/data/modules.generated')) return 'curriculum-modules';
+              if (id.includes('/src/data/editorialFlashcards.generated')) return 'flashcards';
+              if (id.includes('/src/data/pedagogicalMacroCatalog.generated')) return 'macro-catalog';
+              return 'generated-data';
+            }
             if (!id.includes('node_modules')) return undefined;
             if (id.includes('/node_modules/recharts/') || id.includes('/node_modules/victory-vendor/')) {
               return 'charts';
