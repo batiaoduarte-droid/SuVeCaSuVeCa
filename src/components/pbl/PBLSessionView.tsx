@@ -35,6 +35,7 @@ import { PBLTutorChatView } from './PBLTutorChatView';
 import { PBLAdaptiveInterventionView } from './PBLAdaptiveInterventionView';
 import { PBLTransferView } from './PBLTransferView';
 import { PBLSessionSummary } from './PBLSessionSummary';
+import { SelfExplanationModal } from '../pedagogical/SelfExplanationModal';
 import { ArrowLeft, BookOpenCheck, CheckCircle2, Eye, Lightbulb, PauseCircle, Timer, Trash2, Bot } from 'lucide-react';
 
 interface PBLSessionViewProps {
@@ -117,6 +118,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const [errorMessage, setErrorMessage] = useState('');
   const [transferHintsUsed, setTransferHintsUsed] = useState<Record<string, boolean>>({});
   const [showExitConfirmation, setShowExitConfirmation] = useState(false);
+  const [showDefenseModal, setShowDefenseModal] = useState(false);
   const [clockNow, setClockNow] = useState(Date.now());
   const attemptStartedAt = useRef(Date.now());
   const sessionRef = useRef(session);
@@ -703,6 +705,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
               onSelectConfidence={setConfidence}
               reasoning={reasoning}
               onChangeReasoning={setReasoning}
+              onOpenDefense={() => setShowDefenseModal(true)}
               onSubmit={() => submitAttempt(
                 'initial',
                 currentQuestion?.questionRef || currentCase.anchorQuestionRef,
@@ -927,6 +930,19 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
           onOpenNotebook={onOpenNotebook}
           onOpenReview={onOpenReview}
           onFinishSession={() => { onCompleteSession?.(); onExit(); }}
+        />
+      )}
+
+      {currentCase && (
+        <SelfExplanationModal
+          isOpen={showDefenseModal}
+          onClose={() => setShowDefenseModal(false)}
+          topicTitle={currentCase.title}
+          targetRuleContext={currentCase.questionStem || currentQuestion?.prompt}
+          sourceType="pbl_case"
+          sourceId={currentCase.caseId}
+          userId={session.userId}
+          onSaveToCaderno={onAddErrorToNotebook}
         />
       )}
     </div>

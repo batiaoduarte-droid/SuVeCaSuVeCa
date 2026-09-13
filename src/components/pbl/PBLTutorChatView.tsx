@@ -49,6 +49,7 @@ const intentLabels: Record<PBLTutorIntent, string> = {
   synthesize_notebook: 'Síntese para o Caderno de Erros',
   encourage_reattempt: 'Orientação para nova tentativa',
   direct_clarification: 'Esclarecimento pontual',
+  defend_hypothesis: 'Defesa de hipótese / Sustentação',
   wrap_up: 'Conclusão pedagógica',
 };
 
@@ -588,6 +589,16 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
         >
           <HelpCircle className="h-3 w-3 text-indigo-500" />
           <span>Comparar com a certa</span>
+        </button>
+
+        <button
+          type="button"
+          disabled={loading}
+          onClick={() => handleSendMessage('Gostaria de defender minha hipótese e explicar por que escolhi essa alternativa.')}
+          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white border border-teal-200 text-teal-800 hover:bg-teal-50 hover:border-teal-300 disabled:opacity-50"
+        >
+          <Sparkles className="h-3 w-3 text-teal-600" />
+          <span>Defender raciocínio</span>
         </button>
       </div>
 

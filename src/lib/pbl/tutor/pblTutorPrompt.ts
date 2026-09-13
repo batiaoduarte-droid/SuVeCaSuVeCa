@@ -260,7 +260,7 @@ Orientações para sua resposta:
 - Preencha "reasoningChips" com dúvidas abertas, sem presumir erro, impor diagnóstico ou antecipar a resposta antes da tentativa. O aluno pode sempre escrever sua própria dúvida.
 - Sempre que pertinente após erro ou acerto frágil, forneça em "quickCheck" um micro-desafio de 1 frase (prompt, 2 opções, correctOption, explanation curta) para checar compreensão imediata, incluindo sourceRefs válidos e justificativa sustentada. Não gere desafio antes da tentativa. Não confunda com transferência ou retenção.
 - Após a tentativa, se solicitada a síntese, preencha notebookDraft com gatilho específico, regra acionável e contraste com condições corretas. Copiar a ficha não é evidência de compreensão ou domínio. Antes da tentativa, omita a ficha resolutiva.
-- Escolha o intent mais adequado entre: investigate_confusion, explain_rule, contrast_options, recommend_practice, synthesize_notebook, encourage_reattempt, direct_clarification, wrap_up.
+- Escolha o intent mais adequado entre: investigate_confusion, explain_rule, contrast_options, recommend_practice, synthesize_notebook, encourage_reattempt, direct_clarification, defend_hypothesis, wrap_up.
 - Escolha a continuidade mais adequada entre: try_same, try_alternative, review_contrast, proceed_transfer, proceed_reflection.
 `);
 

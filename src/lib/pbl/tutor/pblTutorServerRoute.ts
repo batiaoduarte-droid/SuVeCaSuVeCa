@@ -31,7 +31,7 @@ const tutorResponseSchema = {
     intent: {
       type: Type.STRING,
       description:
-        'investigate_confusion | explain_rule | contrast_options | recommend_practice | synthesize_notebook | encourage_reattempt | direct_clarification | wrap_up',
+        'investigate_confusion | explain_rule | contrast_options | recommend_practice | synthesize_notebook | encourage_reattempt | direct_clarification | defend_hypothesis | wrap_up',
     },
     continuityRecommendation: {
       type: Type.STRING,
@@ -308,7 +308,7 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
     if (!parsed || typeof parsed.pedagogicalText !== 'string' || !parsed.pedagogicalText.trim()) {
       throw new Error('INVALID_PEDAGOGICAL_RESPONSE');
     }
-    const intents = ['investigate_confusion', 'explain_rule', 'contrast_options', 'recommend_practice', 'synthesize_notebook', 'encourage_reattempt', 'direct_clarification', 'wrap_up'];
+    const intents = ['investigate_confusion', 'explain_rule', 'contrast_options', 'recommend_practice', 'synthesize_notebook', 'encourage_reattempt', 'direct_clarification', 'defend_hypothesis', 'wrap_up'];
     const continuity = ['try_same', 'try_alternative', 'review_contrast', 'proceed_transfer', 'proceed_reflection'];
     const allowedRefs = new Set([
       ...(context.criteria?.rules || []).flatMap((rule) => [rule.ruleRef, rule.title]),

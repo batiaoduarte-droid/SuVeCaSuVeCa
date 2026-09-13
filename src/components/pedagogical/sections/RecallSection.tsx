@@ -6,6 +6,7 @@ import {
   EyeOff,
   HelpCircle,
   Award,
+  Brain,
 } from 'lucide-react';
 import type {
   SemanticBlock,
@@ -14,9 +15,17 @@ import type {
 } from '../../../types/pedagogicalView';
 import { InlineRichText } from '../blocks/InlineRichText';
 import { SemanticBlockRenderer } from '../blocks/SemanticBlockRenderer';
+import { SelfExplanationModal } from '../SelfExplanationModal';
 
 interface RecallSectionProps extends RecallSectionView {
   unitId: string;
+  userId?: string;
+  onSaveToCaderno?: (
+    conteudo: string,
+    erroCometido: string,
+    regraDecisiva: string,
+    metadata?: Partial<any>
+  ) => void;
 }
 
 type ConfidenceLevel = 'none' | 'partial' | 'mastered';
@@ -25,6 +34,8 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
   prompts = [],
   blocks = [],
   unitId,
+  userId,
+  onSaveToCaderno,
 }) => {
   const storageKey = `suveca_recall_v2_${unitId}`;
   const storedState = React.useMemo(() => {
@@ -37,6 +48,15 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
   const [revealedMap, setRevealedMap] = useState<Record<number, boolean>>(() => storedState.revealedMap || {});
   const [attemptedMap, setAttemptedMap] = useState<Record<number, boolean>>(() => storedState.attemptedMap || {});
   const [confidenceState, setConfidenceState] = useState<Record<number, ConfidenceLevel>>(() => storedState.confidenceState || {});
+  const [feynmanModal, setFeynmanModal] = useState<{
+    isOpen: boolean;
+    topicTitle: string;
+    ruleContext: string;
+  }>({
+    isOpen: false,
+    topicTitle: '',
+    ruleContext: '',
+  });
 
   React.useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify({ revealedMap, attemptedMap, confidenceState }));
@@ -183,33 +203,48 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                     </div>
                   </div>
 
-                  {p.keyPoints && p.keyPoints.length > 0 && (
+                  <div className="flex items-center gap-1.5 shrink-0">
                     <button
                       type="button"
-                      onClick={() => toggleReveal(idx)}
-                      className="flex min-h-11 items-center gap-1.5 px-2.5 py-2 text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 rounded-lg hover:bg-teal-100 transition cursor-pointer select-none shrink-0"
+                      onClick={() => setFeynmanModal({
+                        isOpen: true,
+                        topicTitle: p.targetConcept || `Recuperação Ativa #${idx + 1}`,
+                        ruleContext: p.question,
+                      })}
+                      className="flex min-h-11 items-center gap-1.5 px-2.5 py-2 text-xs font-bold text-teal-950 bg-teal-100/90 border border-teal-300 rounded-lg hover:bg-teal-200 transition cursor-pointer select-none"
+                      title="Explicar com minhas palavras (Método Feynman)"
                     >
-                      {isRevealed ? (
-                        <>
-                          <EyeOff className="h-3.5 w-3.5" /> Ocultar
-                        </>
-                      ) : (
-                        <>
-                          <Eye className="h-3.5 w-3.5" /> Já respondi — conferir
-                        </>
-                      )}
+                      <Brain className="h-3.5 w-3.5 text-teal-800" />
+                      <span>Feynman</span>
                     </button>
-                  )}
-                  {(!p.keyPoints || p.keyPoints.length === 0) && (
-                    <button
-                      type="button"
-                      aria-pressed={Boolean(attemptedMap[idx])}
-                      onClick={() => setAttemptedMap((current) => ({ ...current, [idx]: true }))}
-                      className="flex min-h-11 items-center rounded-lg border border-teal-200 bg-teal-50 px-3 py-2 text-xs font-bold text-teal-900 hover:bg-teal-100"
-                    >
-                      Já respondi sem consultar
-                    </button>
-                  )}
+                    {p.keyPoints && p.keyPoints.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => toggleReveal(idx)}
+                        className="flex min-h-11 items-center gap-1.5 px-2.5 py-2 text-xs font-bold text-teal-800 bg-teal-50 border border-teal-200 rounded-lg hover:bg-teal-100 transition cursor-pointer select-none shrink-0"
+                      >
+                        {isRevealed ? (
+                          <>
+                            <EyeOff className="h-3.5 w-3.5" /> Ocultar
+                          </>
+                        ) : (
+                          <>
+                            <Eye className="h-3.5 w-3.5" /> Já respondi — conferir
+                          </>
+                        )}
+                      </button>
+                    )}
+                    {(!p.keyPoints || p.keyPoints.length === 0) && (
+                      <button
+                        type="button"
+                        aria-pressed={Boolean(attemptedMap[idx])}
+                        onClick={() => setAttemptedMap((current) => ({ ...current, [idx]: true }))}
+                        className="flex min-h-11 items-center rounded-lg border border-teal-200 bg-teal-50 px-3 py-2 text-xs font-bold text-teal-900 hover:bg-teal-100"
+                      >
+                        Já respondi sem consultar
+                      </button>
+                    )}
+                  </div>
                 </div>
 
                 {isRevealed && p.keyPoints && p.keyPoints.length > 0 && (
@@ -301,6 +336,19 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
                 <div className="flex items-center gap-1.5 self-end sm:self-center shrink-0 select-none">
                   <button
                     type="button"
+                    onClick={() => setFeynmanModal({
+                      isOpen: true,
+                      topicTitle: `Item de Recuperação #${idx + 1}`,
+                      ruleContext: item,
+                    })}
+                    className="flex min-h-11 items-center gap-1 px-2.5 py-2 rounded-lg text-xs font-bold text-teal-950 bg-teal-100/90 border border-teal-300 hover:bg-teal-200 transition cursor-pointer"
+                    title="Explicar com minhas palavras (Método Feynman)"
+                  >
+                    <Brain className="h-3.5 w-3.5 text-teal-800" />
+                    <span>Feynman</span>
+                  </button>
+                  <button
+                    type="button"
                     disabled={!hasAttempted}
                     onClick={() => setConfidence(idx, 'none')}
                     className={`min-h-11 px-3 py-2 rounded-lg text-[11px] font-bold transition cursor-pointer border disabled:cursor-not-allowed disabled:opacity-45 ${
@@ -350,6 +398,18 @@ export const RecallSection: React.FC<RecallSectionProps> = ({
           ))}
         </div>
       )}
+
+      {/* Modal de Autoexplicação Feynman */}
+      <SelfExplanationModal
+        isOpen={feynmanModal.isOpen}
+        onClose={() => setFeynmanModal((prev) => ({ ...prev, isOpen: false }))}
+        topicTitle={feynmanModal.topicTitle}
+        targetRuleContext={feynmanModal.ruleContext}
+        sourceType="module_section"
+        sourceId={unitId}
+        userId={userId}
+        onSaveToCaderno={onSaveToCaderno}
+      />
     </div>
   );
 };

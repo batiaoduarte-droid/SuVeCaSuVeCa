@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PBLConfidenceLevel } from '../../types/pbl';
-import { HelpCircle, AlertCircle, CheckCircle2, Flame } from 'lucide-react';
+import { HelpCircle, AlertCircle, CheckCircle2, Flame, Mic } from 'lucide-react';
 
 interface PBLConfidenceSelectorProps {
   confidence: PBLConfidenceLevel | null;
@@ -10,6 +10,7 @@ interface PBLConfidenceSelectorProps {
   onSubmit: () => void;
   disabled?: boolean;
   submitLabel?: string;
+  onOpenDefense?: () => void;
 }
 
 export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
@@ -20,6 +21,7 @@ export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
   onSubmit,
   disabled = false,
   submitLabel = 'Confirmar hipótese e analisar',
+  onOpenDefense,
 }) => {
   const levels: Array<{ id: PBLConfidenceLevel; label: string; icon: React.ElementType; color: string; desc: string }> = [
     {
@@ -91,9 +93,22 @@ export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
       </div>
 
       <div className="mt-4">
-        <label className="text-xs font-semibold text-slate-700">
-          Qual foi o seu critério ou regra de decisão? <span className="text-slate-600">(opcional)</span>
-        </label>
+        <div className="flex items-center justify-between">
+          <label className="text-xs font-semibold text-slate-700">
+            Qual foi o seu critério ou regra de decisão? <span className="text-slate-600">(opcional)</span>
+          </label>
+          {onOpenDefense && (
+            <button
+              type="button"
+              onClick={onOpenDefense}
+              className="inline-flex items-center gap-1 text-[11px] font-bold text-teal-700 hover:text-teal-900 transition cursor-pointer select-none"
+              title="Explicar oralmente ou via texto expandido (Método Feynman)"
+            >
+              <Mic className="h-3.5 w-3.5 text-teal-600" />
+              <span>Sustentar / Gravar hipótese</span>
+            </button>
+          )}
+        </div>
         <input
           type="text"
           value={reasoning}

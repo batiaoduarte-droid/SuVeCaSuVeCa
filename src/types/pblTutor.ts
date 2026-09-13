@@ -14,6 +14,7 @@ export type PBLTutorIntent =
   | 'synthesize_notebook'
   | 'encourage_reattempt'
   | 'direct_clarification'
+  | 'defend_hypothesis'
   | 'wrap_up';
 
 export type PBLTutorContinuityRecommendation =

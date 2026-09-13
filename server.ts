@@ -36,6 +36,7 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
+app.use("/api/pedagogy/evaluate-explanation", express.json({ limit: "10mb" }));
 app.use(express.json({ limit: "32kb" }));
 app.use(express.static(path.join(process.cwd(), "public")));
 
@@ -107,6 +108,7 @@ app.use(
     "/api/gemini/generate-questions",
     "/api/gemini/generate-error-flashcards",
     "/api/pbl/tutor/turn",
+    "/api/pedagogy/evaluate-explanation",
   ],
   resolveUserOptional,
   limitAiRequests,
@@ -643,6 +645,207 @@ A explicação não deve apenas repetir o verso. Não invente regras sem apoio n
     console.error("Erro ao gerar flashcards:", error);
     return res.status(500).json({
       error: "Não foi possível gerar flashcards via IA no momento.",
+      details: error.message,
+    });
+  }
+});
+
+// API: Evaluate Self-Explanation / Feynman Method (Text or Audio)
+app.post("/api/pedagogy/evaluate-explanation", async (req, res) => {
+  try {
+    const {
+      topicTitle,
+      sourceType,
+      sourceId,
+      targetRuleContext,
+      userText,
+      audioBase64,
+      audioMimeType,
+      model,
+    } = req.body || {};
+
+    if (!topicTitle || typeof topicTitle !== "string" || !topicTitle.trim()) {
+      return res.status(400).json({ error: "Título do tópico não informado." });
+    }
+
+    const hasText = typeof userText === "string" && userText.trim().length > 0;
+    const hasAudio = typeof audioBase64 === "string" && audioBase64.trim().length > 0;
+
+    if (!hasText && !hasAudio) {
+      return res.status(400).json({
+        error: "Envie uma explicação por texto ou gravação de áudio.",
+      });
+    }
+
+    const safeTopic = topicTitle.trim().slice(0, 300);
+    const safeRuleContext = typeof targetRuleContext === "string"
+      ? targetRuleContext.trim().slice(0, 1500)
+      : "";
+    const safeUserText = hasText ? userText.trim().slice(0, 4000) : "";
+
+    const ai = getGenAIClient();
+    const knowledgeRecords = await retrieveKnowledge(`${safeTopic} ${safeRuleContext}`, 3);
+    const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
+    const allowedSources = allowedRefsFor(knowledgeRecords);
+
+    const promptText = `Você é o Tutor Socrático e Avaliador de Autoexplicação (Método Feynman) do SuVeCA, especialista em Língua Portuguesa para concursos públicos de alto rendimento.
+Base Editorial de Sustentação:
+${knowledgeContext}
+
+Contexto da Regra / Lição:
+Tópico: ${safeTopic}
+${safeRuleContext ? `Detalhes do ponto gramatical: ${safeRuleContext}` : ""}
+
+${hasText ? `Explicação do aluno (texto escrito):\n"${safeUserText}"` : "O aluno enviou a explicação gravada em áudio (anexa na mensagem multimodal)."}
+
+SUA MISSÃO PEDAGÓGICA (MÉTODO FEYNMAN / AUTOEXPLICAÇÃO):
+1. Avalie com rigor a capacidade do aluno de explicar a regra gramatical e o raciocínio decisivo com as próprias palavras, sem se limitar a jargões vazios ou intuição ingênua.
+2. Destaque em 'strengths' o que foi explicado corretamente.
+3. Destaque em 'conceptualGaps' o que foi omitido, simplificado indevidamente, ou onde houve confusão de termos ou exceções.
+4. Em 'bancaTrapAddressed', indique se o aluno identificou ou neutralizou a armadilha/pegadinha clássica das bancas examinadoras (FGV, Cebraspe, FCC).
+5. Atribua 'masteryScore' de 0 a 100 e classifique 'conceptualAccuracy' ('alta' >= 75, 'parcial' 40..74, 'insuficiente' < 40).
+6. Redija em 'bancaFeedback' um parecer pedagógico acolhedor, objetivo e gramaticalmente rigoroso sobre a explicação.
+7. Elabore um 'suggestedFlashcard' de fixação contendo 'front' (pergunta de recuperação ativa), 'back' (resposta concisa), 'hint' opcional, 'explanation' detalhada (com o teste mental na prova) e 'sourceRefs'.
+8. Preencha 'sourceRefs' estritamente com os identificadores EDITORIAL e CORPUS fornecidos na Base Editorial que respaldam a análise. Não inclua identificadores técnicos no texto apresentado ao aluno.`;
+
+    const contents: any[] = [];
+    if (hasAudio) {
+      const cleanBase64 = audioBase64.replace(/^data:[^;]+;base64,/, "");
+      contents.push({
+        inlineData: {
+          mimeType: audioMimeType || "audio/webm",
+          data: cleanBase64,
+        },
+      });
+    }
+    contents.push({ text: promptText });
+
+    const selectedModel = resolveModel(model);
+
+    const response = await withAiTimeout(ai.models.generateContent({
+      model: selectedModel,
+      contents,
+      config: {
+        systemInstruction:
+          "Você é o Tutor Socrático do SuVeCA para Autoexplicação e Método Feynman. Use prioritariamente a Base Editorial SuVeCA: o corpus_apostila é a autoridade normativa e a Integracao_Pedagogica é a expansão didática. Avalie se o raciocínio oral ou escrito expressa compreensão real e critérios decisivos. Mantenha os identificadores técnicos exclusivamente no campo sourceRefs.",
+        responseMimeType: "application/json",
+        responseSchema: {
+          type: Type.OBJECT,
+          properties: {
+            masteryScore: { type: Type.INTEGER, description: "Nota de domínio de 0 a 100" },
+            conceptualAccuracy: {
+              type: Type.STRING,
+              description: "alta | parcial | insuficiente",
+            },
+            strengths: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING },
+              description: "Pontos conceituais dominados e explicados corretamente",
+            },
+            conceptualGaps: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING },
+              description: "Lacunas conceituais, termos vagos ou omissões",
+            },
+            bancaTrapAddressed: {
+              type: Type.BOOLEAN,
+              description: "Se o aluno tratou a pegadinha ou distrator comum de banca",
+            },
+            bancaFeedback: {
+              type: Type.STRING,
+              description: "Feedback pedagógico completo sem identificadores de fontes",
+            },
+            suggestedFlashcard: {
+              type: Type.OBJECT,
+              properties: {
+                front: { type: Type.STRING, description: "Pergunta de recuperação ativa" },
+                back: { type: Type.STRING, description: "Resposta objetiva" },
+                hint: { type: Type.STRING, description: "Dica opcional" },
+                explanation: { type: Type.STRING, description: "Explicação pedagógica com teste mental" },
+                sourceRefs: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Referências EDITORIAL e CORPUS do flashcard",
+                },
+              },
+              required: ["front", "back", "explanation", "sourceRefs"],
+            },
+            sourceRefs: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING },
+              description: "Referências EDITORIAL e CORPUS efetivamente mobilizadas",
+            },
+          },
+          required: [
+            "masteryScore",
+            "conceptualAccuracy",
+            "strengths",
+            "conceptualGaps",
+            "bancaTrapAddressed",
+            "bancaFeedback",
+            "sourceRefs",
+          ],
+        },
+      },
+    }));
+
+    const jsonStr = response.text || "{}";
+    const data = JSON.parse(jsonStr);
+
+    const validSourceRefs = keepAllowedRefs(data.sourceRefs, allowedSources);
+    const effectiveSourceRefs = validSourceRefs.length
+      ? validSourceRefs
+      : allowedSources.size > 0
+        ? [Array.from(allowedSources)[0]]
+        : [];
+
+    if (!effectiveSourceRefs.length) {
+      return res.status(422).json({
+        error: "A base de conhecimento não sustentou uma avaliação com proveniência verificável.",
+      });
+    }
+
+    const strengths = Array.isArray(data.strengths)
+      ? data.strengths.map(toLearnerFacingContent).filter(Boolean)
+      : [];
+    const conceptualGaps = Array.isArray(data.conceptualGaps)
+      ? data.conceptualGaps.map(toLearnerFacingContent).filter(Boolean)
+      : [];
+    const bancaFeedback = toLearnerFacingContent(data.bancaFeedback) || "Explicação analisada pelo tutor.";
+
+    let suggestedFlashcard = undefined;
+    if (data.suggestedFlashcard) {
+      const cardSourceRefs = keepAllowedRefs(
+        data.suggestedFlashcard.sourceRefs,
+        allowedSources
+      );
+      suggestedFlashcard = {
+        front: toLearnerFacingContent(data.suggestedFlashcard.front) || "",
+        back: toLearnerFacingContent(data.suggestedFlashcard.back) || "",
+        hint: toLearnerFacingContent(data.suggestedFlashcard.hint) || undefined,
+        explanation: toLearnerFacingContent(data.suggestedFlashcard.explanation) || "",
+        sourceRefs: cardSourceRefs.length ? cardSourceRefs : effectiveSourceRefs,
+      };
+    }
+
+    const accuracy = ["alta", "parcial", "insuficiente"].includes(data.conceptualAccuracy)
+      ? (data.conceptualAccuracy as "alta" | "parcial" | "insuficiente")
+      : data.masteryScore >= 75 ? "alta" : data.masteryScore >= 40 ? "parcial" : "insuficiente";
+
+    return res.json({
+      masteryScore: Math.min(100, Math.max(0, Number(data.masteryScore) || 50)),
+      conceptualAccuracy: accuracy,
+      strengths,
+      conceptualGaps,
+      bancaTrapAddressed: Boolean(data.bancaTrapAddressed),
+      bancaFeedback,
+      suggestedFlashcard,
+      sourceRefs: effectiveSourceRefs,
+    });
+  } catch (error: any) {
+    console.error("Erro na avaliação Feynman:", error);
+    return res.status(500).json({
+      error: "Não foi possível avaliar a autoexplicação no momento.",
       details: error.message,
     });
   }

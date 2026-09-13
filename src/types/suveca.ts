@@ -177,7 +177,7 @@ export interface CadernoErroItem {
   novoExemplo: string;
   status: 'dia0' | 'dia1' | 'dia7' | 'dia30' | 'dominado';
   moduleRef?: string;
-  origin?: 'manual' | 'module_question' | 'official_question' | 'simulado' | 'ai_generated' | 'pbl';
+  origin?: 'manual' | 'module_question' | 'official_question' | 'simulado' | 'ai_generated' | 'pbl' | 'feynman';
   questionId?: string;
   questionText?: string;
   selectedAnswer?: string;
