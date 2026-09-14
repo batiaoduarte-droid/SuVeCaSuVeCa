@@ -43,10 +43,13 @@ app.use(express.json({ limit: "32kb" }));
 app.use(express.static(path.join(process.cwd(), "public")));
 
 const APPROVED_GEMINI_MODELS = new Set([
-  "gemini-3.1-flash-lite",
+  "gemini-3.8-flash",
+  "gemini-3.7-flash",
   "gemini-3.5-flash",
-  "gemini-3.1-pro-preview",
-  "gemini-2.5-flash",
+  "gemini-3.5-flash-lite",
+  "gemini-3.1-flash-lite",
+  "gemini-3.1-flash-tts-preview",
+  "gemini-3.1-flash-live-preview",
 ]);
 const resolveModel = (value: unknown) =>
   typeof value === "string" && APPROVED_GEMINI_MODELS.has(value)
