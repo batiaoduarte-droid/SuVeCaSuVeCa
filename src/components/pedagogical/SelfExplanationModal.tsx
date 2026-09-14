@@ -23,7 +23,7 @@ import type {
   FeynmanEvaluationRequest,
 } from '../../types/feynman';
 import type { CadernoErroItem } from '../../types/suveca';
-import { auth } from '../../lib/firebase';
+import { auth, getCurrentUserToken } from '../../lib/firebase';
 
 export interface SelfExplanationModalProps {
   isOpen: boolean;
@@ -194,7 +194,7 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
         }
       }
 
-      const token = await auth?.currentUser?.getIdToken().catch(() => null);
+      const token = await getCurrentUserToken().catch(() => null);
       const headers: Record<string, string> = {
         'Content-Type': 'application/json',
       };

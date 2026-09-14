@@ -1049,6 +1049,58 @@ Esta alteração de runtime acompanha a execução dos lotes do trabalho `568bc2
 
 ## 25. Limites deste documento
 
+### Aquisição de outros cursos e cópias pessoais — 2026-09-14
+
+`Notebook LM/06_Ferramentas/captura/capturar_curso.py` reutiliza o capturador
+de videoaulas do Estratégia com configuração por curso em `08_Config/`.
+As fontes PDF/MP4/MP3 ficam em `01_Extracao/cursos/<slug>/Aula XX/`, nas
+subpastas `Apostilas`, `Materiais`, `Videos` e `Audios`. `_indice.json` mantém
+a proveniência do capturador; `_materiais.json` projeta caminhos relativos,
+tamanhos e SHA-256 verificados; `_envios.json` registra identidade do curso,
+conclusão de captura e destinos. O perfil Chromium fica separado em
+`01_Extracao/perfis_cursos/<slug>/`. A normalização de MP4 é herdada do capturador.
+
+Os consumidores opcionais são cópias pessoais no Google Drive (mesma hierarquia)
+e cadernos NotebookLM por aula/volume (PDF e áudio, sem upload de MP4 neste
+fluxo). Somente materiais concluídos do índice são enviados, após conferência
+de tamanho/hash e conclusão das aulas configuradas. O Drive identifica curso e
+caminho por propriedades privadas; o NotebookLM reconcilia fontes por título
+com hash. Arquivos locais são preservados. Credenciais, perfis e estado de envio
+não são publicados. Testes: `09_Testes/test_capturar_curso.py`; operação detalhada
+em `06_Ferramentas/captura/README_CAPTURAR_CURSO.md` na fábrica. Estes insumos
+não alteram canonical, Views, PBL nem os artefatos consumidos pelo produto.
+
+No pacote EMATER-MG (`400592`), os cursos confirmados são `399536` (Gerais),
+`399914` (Português) e `400100` (Matemática/Lógica). Snapshots sanitizados em
+`01_Extracao/emater_mg_catalogo` distinguem aulas liberadas de futuras.
+`comparar_acervo_cursos.py` cruza IDs/SHA-256 com índices históricos e manifests
+de transcrições em `02_Portugues`/`02_Logica`; título isolado não confirma
+identidade. Os relatórios ficam em `05_Auditorias/emater_mg` e cópias independentes
+de MP4 existentes em `01_Extracao/emater_mg_preservados`.
+
+`preparar_materiais_curso.py` gera cópias padronizadas em `Organizado/Aula XX — Tema`:
+transcrições validadas existentes podem ser reutilizadas com proveniência;
+demais áudios passam por Mistral Voxtral e livros eletrônicos originais por
+Mistral OCR, com auditoria central `ia.call_audit`. Respostas brutas/cache ficam
+em `_processamento`, estado em `_preparacao.json`, erros em `_preparacao_falhas.json`
+e inventário dos derivados em `_organizados.json`. O NotebookLM recebe somente
+transcrições e livros convertidos no modo `processados`; mapas/slides/mídias e
+versões alternativas ficam no Drive/local. Imagens extraídas do OCR são arquivos
+separados no Drive; Markdown isolado não transporta suas imagens. Validação de
+páginas/segmentos não é homologação semântica. Fontes anteriores não são alteradas
+nem apagadas. Gates adicionais: `test_preparar_materiais_curso.py` e auditor de
+cobertura de chamadas de IA.
+
+Atualização EMATER: `executar_emater_streaming.py` usa a sessão autenticada do
+Estratégia e a API observada na navegação para transferir cada arquivo, em
+`01_Extracao/emater_mg_execucao/<slug>`. Drive recebe apostilas, MP4 480p e mapas;
+NotebookLM recebe Markdown por aula. `_streaming.json` registra recibos remotos,
+MD5/tamanho conferidos e correspondências. A instrução mais recente permite
+remover todos os MP4 desta captura, inclusive repetidos, após verificação remota
+e conferência local; fontes do acervo anterior permanecem intactas. Transcrições,
+livros em Markdown e intermediários retomáveis continuam locais. Gate de exclusão:
+`09_Testes/test_emater_streaming.py`.
+
 - Contagens mudam com builds; a fonte numérica vigente são os manifests e auditores executados.
 - Caminhos históricos podem continuar em ledgers antigos e não devem ser reescritos.
 - Este documento descreve Português e o produto atual; Lógica possui pipeline próprio e deve ganhar seção específica antes de cruzar a fronteira de publicação.

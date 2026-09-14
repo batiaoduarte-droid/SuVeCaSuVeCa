@@ -4,9 +4,17 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
-  onAuthStateChanged,
+  onAuthStateChanged as firebaseOnAuthStateChanged,
   User,
 } from 'firebase/auth';
+import {
+  LOCAL_DEV_TOKEN,
+  LOCAL_TEST_USER,
+  LOCAL_TEST_USER_ID,
+  isLocalAuthActive,
+  setLocalAuthActive,
+  toggleLocalAuth,
+} from './auth/localDevAuth';
 import {
   getFirestore,
   initializeFirestore,
@@ -82,7 +90,74 @@ export const signInWithGoogle = async (): Promise<User> => {
   }
 };
 
-export { signInWithPopup, signOut, onAuthStateChanged };
+export const onAuthStateChanged = (
+  authInstance: any,
+  nextOrObserver: any,
+  error?: any,
+  completed?: any
+) => {
+  const callback = typeof nextOrObserver === 'function' ? nextOrObserver : nextOrObserver?.next;
+
+  if (isLocalAuthActive()) {
+    if (callback) {
+      setTimeout(() => callback(LOCAL_TEST_USER), 0);
+    }
+  }
+
+  const unsubscribeFirebase = firebaseOnAuthStateChanged(
+    authInstance,
+    (user) => {
+      if (!isLocalAuthActive()) {
+        if (callback) callback(user);
+      }
+    },
+    error,
+    completed
+  );
+
+  const handleLocalChange = (e: Event) => {
+    const custom = e as CustomEvent<{ active: boolean }>;
+    if (custom.detail?.active) {
+      if (callback) callback(LOCAL_TEST_USER);
+    } else {
+      if (callback) callback(auth.currentUser);
+    }
+  };
+
+  if (typeof window !== 'undefined') {
+    window.addEventListener('suveca:local-auth-change', handleLocalChange);
+  }
+
+  return () => {
+    unsubscribeFirebase();
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('suveca:local-auth-change', handleLocalChange);
+    }
+  };
+};
+
+export const getCurrentUserToken = async (): Promise<string | null> => {
+  if (isLocalAuthActive()) {
+    return LOCAL_DEV_TOKEN;
+  }
+  if (!auth.currentUser) return null;
+  try {
+    return await auth.currentUser.getIdToken();
+  } catch {
+    return null;
+  }
+};
+
+export {
+  signInWithPopup,
+  signOut,
+  LOCAL_DEV_TOKEN,
+  LOCAL_TEST_USER,
+  LOCAL_TEST_USER_ID,
+  isLocalAuthActive,
+  setLocalAuthActive,
+  toggleLocalAuth,
+};
 export type { User };
 
 function isPlainObject(value: unknown): value is Record<string, unknown> {
@@ -120,10 +195,18 @@ export const safeSetDoc = async <T extends Record<string, any>>(
   options?: SetOptions
 ) => {
   const cleanedData = removeUndefinedFields(data);
-  if (options) {
-    return setDoc(reference, cleanedData, options);
+  try {
+    if (options) {
+      return await setDoc(reference, cleanedData, options);
+    }
+    return await setDoc(reference, cleanedData);
+  } catch (err) {
+    if (isLocalAuthActive() || reference.path.includes(LOCAL_TEST_USER_ID)) {
+      // Em modo local ou usuário de teste, persistência permanece no localStorage
+      return;
+    }
+    throw err;
   }
-  return setDoc(reference, cleanedData);
 };
 
 export enum OperationType {

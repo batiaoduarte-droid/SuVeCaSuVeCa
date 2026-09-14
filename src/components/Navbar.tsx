@@ -25,7 +25,12 @@ import {
   Zap,
   CheckCircle2,
 } from 'lucide-react';
-import type { User } from '../lib/firebase';
+import {
+  type User,
+  isLocalAuthActive,
+  toggleLocalAuth,
+  LOCAL_TEST_USER_ID,
+} from '../lib/firebase';
 import { useModalFocus } from '../hooks/useModalFocus';
 
 export type TabType =
@@ -358,46 +363,89 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               {/* Account / User profile */}
               {user ? (
-                <div className="flex items-center space-x-2 pl-2">
-                  {user.photoURL ? (
-                    <img
-                      src={user.photoURL}
-                      alt={user.displayName || 'Usuário'}
-                      className="w-8 h-8 rounded-full border border-slate-200 object-cover"
-                    />
-                  ) : (
-                    <div className="w-8 h-8 rounded-full bg-teal-100 text-teal-800 font-bold text-xs flex items-center justify-center border border-teal-200">
-                      {user.email?.[0].toUpperCase() || 'U'}
+                user.uid === LOCAL_TEST_USER_ID ? (
+                  <div className="flex items-center space-x-2 pl-2">
+                    <div
+                      className="w-8 h-8 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center border border-amber-600 shadow-2xs"
+                      title="Usuário Local de Teste"
+                    >
+                      <Zap className="w-4 h-4 fill-white" />
                     </div>
-                  )}
-
-                  <div className="hidden sm:block text-left">
-                    <div className="text-xs font-semibold text-[var(--text-strong)] truncate max-w-[120px]">
-                      {user.displayName || user.email?.split('@')[0]}
+                    <div className="hidden sm:block text-left">
+                      <div className="text-xs font-bold text-amber-950 flex items-center gap-1">
+                        <span>Eu (Local)</span>
+                        <span className="text-[9px] bg-amber-100 text-amber-900 border border-amber-300 px-1 py-0.2 rounded font-semibold">
+                          Offline
+                        </span>
+                      </div>
+                      <div className="text-[10px] text-slate-500 font-medium">Persistência local ativa</div>
                     </div>
-                    {isSyncing && (
-                      <div className="text-[10px] text-teal-700 flex items-center gap-1 font-medium">
-                        <RefreshCw className="w-2.5 h-2.5 animate-spin" />
-                        <span>Sincronizando...</span>
+                    <button
+                      type="button"
+                      onClick={() => toggleLocalAuth()}
+                      className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition"
+                      title="Sair do modo local"
+                      aria-label="Sair do modo local"
+                    >
+                      <LogOut className="w-4 h-4" />
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex items-center space-x-2 pl-2">
+                    {user.photoURL ? (
+                      <img
+                        src={user.photoURL}
+                        alt={user.displayName || 'Usuário'}
+                        className="w-8 h-8 rounded-full border border-slate-200 object-cover"
+                      />
+                    ) : (
+                      <div className="w-8 h-8 rounded-full bg-teal-100 text-teal-800 font-bold text-xs flex items-center justify-center border border-teal-200">
+                        {user.email?.[0].toUpperCase() || 'U'}
                       </div>
                     )}
-                  </div>
 
-                  <button
-                    type="button"
-                    onClick={onSignOut}
-                    className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition"
-                    title="Sair da conta"
-                    aria-label="Sair da conta"
-                  >
-                    <LogOut className="w-4 h-4" />
+                    <div className="hidden sm:block text-left">
+                      <div className="text-xs font-semibold text-[var(--text-strong)] truncate max-w-[120px]">
+                        {user.displayName || user.email?.split('@')[0]}
+                      </div>
+                      {isSyncing && (
+                        <div className="text-[10px] text-teal-700 flex items-center gap-1 font-medium">
+                          <RefreshCw className="w-2.5 h-2.5 animate-spin" />
+                          <span>Sincronizando...</span>
+                        </div>
+                      )}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={onSignOut}
+                      className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition"
+                      title="Sair da conta"
+                      aria-label="Sair da conta"
+                    >
+                      <LogOut className="w-4 h-4" />
+                    </button>
+                  </div>
+                )
+              ) : (
+                <div className="flex items-center space-x-2">
+                  {Boolean(import.meta.env.DEV || isLocalAuthActive()) && (
+                    <button
+                      type="button"
+                      onClick={() => toggleLocalAuth()}
+                      className="button-secondary min-h-[44px] text-xs flex items-center gap-1.5 border-amber-300 bg-amber-50 text-amber-950 hover:bg-amber-100 hover:border-amber-400 cursor-pointer shadow-2xs font-bold"
+                      title="Entrar diretamente como usuário de teste local (sem Firebase/Google)"
+                    >
+                      <Zap className="w-3.5 h-3.5 text-amber-600 fill-amber-500" />
+                      <span className="hidden sm:inline">Entrar como Eu (Local)</span>
+                      <span className="sm:hidden">Eu</span>
+                    </button>
+                  )}
+                  <button type="button" onClick={onSignIn} className="button-primary min-h-[44px] text-xs">
+                    <LogIn className="w-4 h-4" />
+                    <span>Entrar</span>
                   </button>
                 </div>
-              ) : (
-                <button type="button" onClick={onSignIn} className="button-primary min-h-[44px] text-xs">
-                  <LogIn className="w-4 h-4" />
-                  <span>Entrar</span>
-                </button>
               )}
             </div>
           </div>

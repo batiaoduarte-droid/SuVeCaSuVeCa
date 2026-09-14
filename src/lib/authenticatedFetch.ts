@@ -1,8 +1,8 @@
-import { auth } from './firebase';
+import { auth, isLocalAuthActive, LOCAL_TEST_USER } from './firebase';
 
 /** Sends a short-lived Firebase identity token only to same-origin APIs. */
 export async function authenticatedFetch(input: string, init: RequestInit = {}) {
-  const user = auth.currentUser;
+  const user = isLocalAuthActive() ? LOCAL_TEST_USER : auth.currentUser;
   if (!user) {
     return new Response(
       JSON.stringify({ error: 'Entre na sua conta para usar os recursos de IA.' }),
