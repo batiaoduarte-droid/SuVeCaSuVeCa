@@ -18,6 +18,7 @@ export interface AuditRequestConfig {
   route: string;
   stage?: string;
   modelRequested: string;
+  promptVersion?: string;
   systemPrompt?: string;
   userInput?: string;
   fullPrompt?: string;
@@ -41,11 +42,36 @@ export class AIAuditLogger {
   private auditBaseDir: string | null = null;
   private warnedDir = false;
 
-  constructor() {
-    this.resolveAuditDirectory();
+  constructor(private options: { directory?: string; allowTestWrites?: boolean } = {}) {}
+
+  private isTestExecution(): boolean {
+    return process.env.NODE_ENV === 'test' || Boolean(process.env.VITEST);
+  }
+
+  private sanitize(value: any): any {
+    if (typeof value === 'string') {
+      let text = value;
+      for (const [name, secret] of Object.entries(process.env)) {
+        if (/(?:API_KEY|SECRET|PASSWORD|TOKEN|PRIVATE_KEY)/i.test(name) && secret && secret.length >= 8) {
+          text = text.split(secret).join('[REDACTED]');
+        }
+      }
+      return text.replace(/Bearer\s+[^\s"']+/gi, 'Bearer [REDACTED]')
+        .replace(/AIza[\w-]{30,}/g, '[REDACTED]');
+    }
+    if (Array.isArray(value)) return value.map((item) => this.sanitize(item));
+    if (value && typeof value === 'object') {
+      return Object.fromEntries(Object.entries(value).map(([key, item]) => [key,
+        /^(?:authorization|api[_-]?key|access[_-]?token|refresh[_-]?token|password|secret|private[_-]?key)$/i.test(key)
+          ? '[REDACTED]' : this.sanitize(item),
+      ]));
+    }
+    return value;
   }
 
   private resolveAuditDirectory(): string | null {
+    if (this.isTestExecution() && !(this.options.allowTestWrites && this.options.directory)) return null;
+    if (this.options.directory) return this.options.directory;
     if (this.auditBaseDir) return this.auditBaseDir;
 
     // 1. Variável explícita de ambiente
@@ -84,8 +110,7 @@ export class AIAuditLogger {
 
   private formatIsoWithMicroseconds(d = new Date()): string {
     const iso = d.toISOString(); // YYYY-MM-DDTHH:mm:ss.sssZ
-    const micros = String(Math.floor(Math.random() * 900 + 100)); // 3 dígitos adicionais simulados
-    return iso.replace('Z', `${micros}+00:00`);
+    return iso;
   }
 
   private getRunId(date: Date): string {
@@ -129,6 +154,8 @@ export class AIAuditLogger {
 
       const record = {
         schema_version: 1,
+        capture_version: 2,
+        execution_mode: this.isTestExecution() ? 'test' : 'runtime',
         call_id: callId,
         run_id: runId,
         status: options.status,
@@ -148,9 +175,11 @@ export class AIAuditLogger {
           system_prompt_sha256: sysPromptSha,
           user_input_sha256: usrInputSha,
           request_sha256: requestSha,
+          system_prompt: sysPrompt,
+          user_input: usrInput,
           config: options.request.config || {},
           versions: {
-            prompt: null,
+            prompt: options.request.promptVersion || null,
             parser: null,
             postprocessor: null,
           },
@@ -174,9 +203,12 @@ export class AIAuditLogger {
         fs.mkdirSync(targetDir, { recursive: true });
       }
 
+      const safeRecord = this.sanitize(record);
+      safeRecord.request.prompt_redacted = safeRecord.request.system_prompt !== sysPrompt || safeRecord.request.user_input !== usrInput;
+      safeRecord.request.captured_request_sha256 = this.sha256(`${safeRecord.request.system_prompt}\n---\n${safeRecord.request.user_input}`);
       const filePath = path.join(targetDir, `${callId}.json`);
       try {
-        await fs.promises.writeFile(filePath, JSON.stringify(record, null, 2), 'utf8');
+        await fs.promises.writeFile(filePath, JSON.stringify(safeRecord, null, 2), 'utf8');
       } catch (err: any) {
         console.warn('[AIAuditLogger] Falha ao escrever arquivo de auditoria:', err?.message);
       }

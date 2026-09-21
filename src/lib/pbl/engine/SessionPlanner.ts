@@ -7,6 +7,7 @@ import type {
 } from '../../../types/pbl';
 import type { IPBLRepository } from '../data/PBLRepository';
 import { QuestionPoolSelector } from './QuestionPoolSelector';
+import { getRecentQuestionEncounterRefs } from '../../questionEncounterLedger';
 
 export interface SessionPlanRequest {
   userId: string;
@@ -283,7 +284,52 @@ export class SessionPlanner {
     const firstCompId = targetCompetencyRefs[0];
     const initialCase = await this.repo.getCaseForCompetency(firstCompId);
     const initialCaseId = initialCase?.caseId || `PBL-CASE-${firstCompId.replace('COMP-', '')}`;
-    const initialQuestionId = initialAnchorByCompetency.get(firstCompId) || '';
+    
+    // Rotação de Âncoras: se o usuário já encontrou questões recentemente, seleciona uma nova âncora disponível
+    const recentlyExposedRefs = getRecentQuestionEncounterRefs(userId);
+    let initialQuestionId = initialAnchorByCompetency.get(firstCompId) || '';
+
+    if (recentlyExposedRefs.length > 0) {
+      const freshAnchor = await this.questionPoolSelector.selectQuestion(
+        firstCompId,
+        'anchor',
+        {
+          excludedQuestionRefs: recentlyExposedRefs,
+          onlineOnly: true,
+          seed: `${userId}:${sessionId}`,
+        }
+      ) || await this.questionPoolSelector.selectQuestion(
+        firstCompId,
+        'anchor',
+        {
+          excludedQuestionRefs: recentlyExposedRefs,
+          seed: `${userId}:${sessionId}`,
+        }
+      );
+
+      if (freshAnchor) {
+        initialQuestionId = freshAnchor.questionRef;
+      } else {
+        // Se todas as âncoras disponíveis já foram resolvidas recentemente, rotaciona usando o seed da sessão
+        const rotatedAnchor = await this.questionPoolSelector.selectQuestion(
+          firstCompId,
+          'anchor',
+          {
+            onlineOnly: true,
+            seed: `${userId}:${sessionId}`,
+          }
+        ) || await this.questionPoolSelector.selectQuestion(
+          firstCompId,
+          'anchor',
+          {
+            seed: `${userId}:${sessionId}`,
+          }
+        );
+        if (rotatedAnchor) {
+          initialQuestionId = rotatedAnchor.questionRef;
+        }
+      }
+    }
     const now = new Date().toISOString();
 
     const session: PBLSession = {

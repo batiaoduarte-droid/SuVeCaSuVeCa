@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatTutorPrompt } from '../pblTutorPrompt';
+import { formatTutorPrompt, PBL_TUTOR_SYSTEM_INSTRUCTION } from '../pblTutorPrompt';
 import type { PBLTutorQuestionContext, PBLTutorTurnRequest } from '../../../../types/pblTutor';
 
 describe('formatTutorPrompt (ATU-001, ATU-002, ATU-003, ATU-008 Verification)', () => {
@@ -130,9 +130,9 @@ describe('formatTutorPrompt (ATU-001, ATU-002, ATU-003, ATU-008 Verification)', 
     expect(prompt).toContain('Passo 1: Isolar os vocábulos');
     expect(prompt).toContain('Justificativa: Permite examinar a tonicidade separadamente.');
 
-    expect(prompt).toContain('=== INTELIGÊNCIA PEDAGÓGICA DA BANCA ===');
+    expect(prompt).toContain('=== PEDAGOGIA PUBLICADA DA QUESTÃO ===');
     expect(prompt).toContain('• Ponto Decisivo: Ambos os vocábulos são paroxítonos, mas diferem pela regra.');
-    expect(prompt).toContain('• Hipótese Frequente de Distrator (Banca): Confundir hiato com ditongo crescente.');
+    expect(prompt).toContain('• Hipótese Pedagógica de Distrator: Confundir hiato com ditongo crescente.');
 
     expect(prompt).toContain('Limite/Contorno da Regra (Limites dos Hiatos):');
     expect(prompt).toContain('Limites: Não acentua se seguido de NH na sílaba seguinte');
@@ -159,5 +159,41 @@ describe('formatTutorPrompt (ATU-001, ATU-002, ATU-003, ATU-008 Verification)', 
     };
     const prompt = formatTutorPrompt(request, unavailableContext);
     expect(prompt).toContain('[QUESTÃO INDISPONÍVEL]');
+  });
+
+  it('keeps fallback commentary and derived analyses distinct from the official answer', () => {
+    const contextWithPresentationCommentary: PBLTutorQuestionContext = {
+      ...baseContext,
+      officialCommentary: undefined,
+      presentation: {
+        ...baseContext.presentation,
+        commentary: 'A banca considerou correta a alternativa A com base na regra de paroxítonas.',
+      },
+    };
+
+    const attemptedRequest: PBLTutorTurnRequest = {
+      ...request,
+      studentAttemptContext: {
+        userAnswer: 'A',
+        isCorrect: true,
+        confidence: 'high',
+        attemptStage: 'initial',
+      },
+    };
+
+    const prompt = formatTutorPrompt(attemptedRequest, contextWithPresentationCommentary);
+    expect(prompt).not.toContain('FONTE FACTUAL INEGOCIÁVEL');
+    expect(prompt).toContain('A banca considerou correta a alternativa A com base na regra de paroxítonas.');
+    expect(prompt).toContain('derivada');
+    expect(prompt).not.toContain('representam o padrão oficial da banca');
+  });
+});
+
+describe('source authority and objections', () => {
+  it('requires evidence and permits correction without claiming external consultation', () => {
+    expect(PBL_TUTOR_SYSTEM_INSTRUCTION).toContain('Não alegue ter consultado');
+    expect(PBL_TUTOR_SYSTEM_INSTRUCTION).toContain('reexamine a objeção');
+    expect(PBL_TUTOR_SYSTEM_INSTRUCTION).toContain('decomponha e analise cada termo');
+    expect(PBL_TUTOR_SYSTEM_INSTRUCTION).not.toContain('FONTE FACTUAL INEGOCIÁVEL');
   });
 });

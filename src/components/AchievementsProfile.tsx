@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   BellRing,
   CalendarDays,
@@ -10,8 +10,18 @@ import {
   Trophy,
   Crown,
   Sparkles,
+  AlertTriangle,
+  ArrowRight,
+  Zap,
+  ShieldCheck,
 } from 'lucide-react';
-import type { User } from '../lib/firebase';
+import {
+  type User,
+  isTestUser,
+  isPersonalLocalUser,
+} from '../lib/firebase';
+import type { CadernoErroItem } from '../types/suveca';
+import { getLessonName } from '../data/lessonCatalog';
 import {
   ACHIEVEMENTS,
   getActiveStudyStreak,
@@ -30,6 +40,7 @@ interface AchievementsProfileProps {
   progress: AchievementProgress;
   isLoading?: boolean;
   onOpenModules?: () => void;
+  onOpenLocalAuth?: () => void;
   attempts?: readonly LeaderboardAttempt[];
   pendingErrorCount?: number;
   masteredErrorCount?: number;
@@ -39,6 +50,7 @@ interface AchievementsProfileProps {
   notesCount?: number;
   onNavigateToTab?: (tab: string) => void;
   onOpenTour?: () => void;
+  errors?: CadernoErroItem[];
 }
 
 type ProfileSubTab = 'achievements' | 'preferences';
@@ -57,6 +69,7 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
   progress,
   isLoading = false,
   onOpenModules,
+  onOpenLocalAuth,
   attempts = [],
   pendingErrorCount = 0,
   masteredErrorCount = 0,
@@ -66,8 +79,35 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
   notesCount = 0,
   onNavigateToTab,
   onOpenTour,
+  errors = [],
 }) => {
   const [activeSubTab, setActiveSubTab] = useState<ProfileSubTab>('achievements');
+
+  // Top 3 Temas Críticos com mais erros
+  const topErrorThemes = useMemo(() => {
+    if (!errors || errors.length === 0) return [];
+    const activeErrors = errors.filter((e) => e.status !== 'dominado');
+    if (activeErrors.length === 0) return [];
+
+    const counts: Record<string, { label: string; count: number; moduleRef?: string }> = {};
+    for (const item of activeErrors) {
+      const key = item.moduleRef || item.conteudo || 'Gramática Geral';
+      const label = item.conteudo || (item.moduleRef ? getLessonName(item.moduleRef, 'full') : 'Gramática Geral');
+      if (!counts[key]) {
+        counts[key] = { label, count: 0, moduleRef: item.moduleRef };
+      }
+      counts[key].count += 1;
+    }
+
+    const totalActive = activeErrors.length;
+    return Object.values(counts)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 3)
+      .map((theme) => ({
+        ...theme,
+        percent: Math.round((theme.count / totalActive) * 100),
+      }));
+  }, [errors]);
 
   const unlockedCount = ACHIEVEMENTS.filter(
     (achievement) => progress.unlocked[achievement.id]
@@ -156,6 +196,60 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
         </div>
       </header>
 
+      {/* Account Type Banner */}
+      {isTestUser(user) && (
+        <div className="bg-amber-50/90 border border-amber-300/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-2xs">
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+              <Zap className="w-5 h-5 fill-white" />
+            </div>
+            <div>
+              <div className="text-sm font-bold text-amber-950 flex items-center gap-2">
+                <span>Você está usando a Conta Teste (Padrão)</span>
+                <span className="text-[10px] bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded-full">
+                  Offline
+                </span>
+              </div>
+              <div className="text-xs text-amber-800 mt-0.5 leading-relaxed">
+                As métricas acima pertencem à conta teste. Para acompanhar seu progresso e erros individuais, acesse ou crie sua conta própria com login e senha.
+              </div>
+            </div>
+          </div>
+          {onOpenLocalAuth && (
+            <button
+              type="button"
+              onClick={onOpenLocalAuth}
+              className="button-primary min-h-[40px] text-xs font-bold shrink-0 self-end sm:self-auto cursor-pointer shadow-xs"
+            >
+              Entrar na Minha Conta
+            </button>
+          )}
+        </div>
+      )}
+
+      {isPersonalLocalUser(user) && (
+        <div className="bg-teal-50/80 border border-teal-200 rounded-2xl p-4 flex items-center justify-between gap-4 text-xs text-teal-900">
+          <div className="flex items-center gap-2.5">
+            <ShieldCheck className="w-5 h-5 text-teal-700 shrink-0" />
+            <div>
+              <strong className="font-bold">Conta Pessoal Ativa: {user?.displayName}</strong>
+              <div className="text-slate-600 text-[11px] mt-0.5">
+                Seu Caderno de Erros, histórico Pomodoro e conquistas estão registrados individualmente para você.
+              </div>
+            </div>
+          </div>
+          {onOpenLocalAuth && (
+            <button
+              type="button"
+              onClick={onOpenLocalAuth}
+              className="button-secondary min-h-[34px] py-1 px-3 text-xs font-bold text-teal-800 border-teal-300 hover:bg-teal-100 cursor-pointer"
+            >
+              Trocar de Conta
+            </button>
+          )}
+        </div>
+      )}
+
       {/* Navigation Sub-Tabs inside Profile */}
       <nav aria-label="Navegação do Perfil" className="flex items-center gap-2 p-1.5 bg-slate-100 rounded-xl border border-slate-200">
         <button
@@ -230,6 +324,69 @@ export const AchievementsProfile: React.FC<AchievementsProfileProps> = ({
               </div>
             </div>
           </section>
+
+          {/* Top 3 Temas com Mais Erros */}
+          {topErrorThemes.length > 0 && (
+            <section className="bg-white rounded-2xl p-6 border border-amber-200 shadow-xs space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-100 pb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center border border-amber-300">
+                    <AlertTriangle className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-base font-bold text-slate-900">
+                      Top 3 Fragilidades Gramaticais (Caderno de Erros)
+                    </h2>
+                    <p className="text-xs text-slate-600">
+                      Temas onde você mais cometeu falhas. Clique para revisar as questões correspondentes.
+                    </p>
+                  </div>
+                </div>
+                {onNavigateToTab && (
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToTab('errors')}
+                    className="text-xs font-bold text-teal-800 hover:text-teal-950 flex items-center gap-1 self-start sm:self-auto cursor-pointer"
+                  >
+                    <span>Ver todo o Caderno</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+
+              <div className="space-y-3 pt-1">
+                {topErrorThemes.map((theme, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => onNavigateToTab?.('errors')}
+                    className="w-full p-3.5 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50/40 transition text-left space-y-2 group cursor-pointer"
+                    title={`Revisar ${theme.count} erro(s) em ${theme.label}`}
+                  >
+                    <div className="flex items-center justify-between gap-3 text-xs">
+                      <span className="font-extrabold text-slate-900 group-hover:text-amber-950 flex items-center gap-1.5 min-w-0">
+                        <span className="w-5 h-5 rounded-md bg-amber-100 text-amber-900 flex items-center justify-center text-[10px] font-black shrink-0">
+                          {index + 1}
+                        </span>
+                        <span className="truncate">{theme.label}</span>
+                      </span>
+                      <span className="font-bold text-amber-900 shrink-0 bg-amber-100 px-2 py-0.5 rounded-md text-[11px]">
+                        {theme.count} {theme.count === 1 ? 'erro' : 'erros'} ({theme.percent}%)
+                      </span>
+                    </div>
+
+                    {/* Barra de Progresso / Incidência */}
+                    <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-amber-500 to-rose-500 transition-all duration-500"
+                        style={{ width: `${Math.max(8, Math.min(100, theme.percent))}%` }}
+                      />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Quick Callout to Preferences */}
           <div className="bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl p-5 border border-teal-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

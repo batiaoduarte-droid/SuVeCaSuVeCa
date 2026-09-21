@@ -36,7 +36,15 @@ import {
   LogIn,
   X,
 } from 'lucide-react';
-import { auth, signInWithGoogle } from '../../lib/firebase';
+import {
+  auth,
+  signInWithGoogle,
+  isLocalAuthActive,
+  getActiveLocalUser,
+  LOCAL_TEST_USER,
+  getCurrentUserToken,
+  onAuthStateChanged,
+} from '../../lib/firebase';
 import { formatPBLAnswer } from '../../lib/pbl/answerAdapter';
 
 interface PBLAdaptiveInterventionViewProps {
@@ -86,6 +94,21 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
   const [copilotExpanded, setCopilotExpanded] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
   const [savedLocally, setSavedLocally] = useState(isSavedToCaderno);
+  const [currentUser, setCurrentUser] = useState<any>(() => {
+    if (isLocalAuthActive()) {
+      return getActiveLocalUser() || LOCAL_TEST_USER;
+    }
+    return auth?.currentUser || null;
+  });
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (user: any) => {
+      setCurrentUser(user);
+    });
+    return unsub;
+  }, []);
+
+  const isAuthenticated = Boolean(currentUser);
 
   // QuickCheck state
   const [quickCheckResponse, setQuickCheckResponse] = useState(episode?.quickCheckResponse);
@@ -168,9 +191,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
 
   const getAuthToken = async (): Promise<string | null> => {
     try {
-      const currentUser = auth?.currentUser;
-      if (!currentUser) return null;
-      return await currentUser.getIdToken();
+      return await getCurrentUserToken();
     } catch {
       return null;
     }
@@ -192,6 +213,10 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       if (token) {
         headers['Authorization'] = `Bearer ${token}`;
       }
+      if (isLocalAuthActive()) {
+        headers['x-local-dev-user'] = 'true';
+        headers['x-local-user-id'] = getActiveLocalUser()?.uid || LOCAL_TEST_USER.uid;
+      }
 
       const userMessage = attempt?.userAnswer
         ? isFragileCorrect
@@ -204,6 +229,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         headers,
         body: JSON.stringify({
           episodeId: episode.episodeId,
+          expectedAttemptId: attempt?.attemptId,
           sessionId: session.sessionId,
           competencyRef: episode.competencyRef,
           questionRef: episode.questionRef,
@@ -213,6 +239,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
             isCorrect,
             confidence: episode.initialConfidence || attempt?.confidence,
             attemptStage: episode.attemptStage,
+            reasoning: attempt?.reasoning || episode.initialReasoning,
           },
           history: [],
           assistanceRequested: true,
@@ -248,6 +275,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       onAssistanceChange?.(hasAttempted ? 'full' : 'partial');
       onRecordTurn?.(tutorTurn);
     } catch (err: any) {
+      setErrorMessage(err?.message || 'Não foi possível conectar com o Professor PBL. Tente novamente.');
       console.warn('[PBLAdaptiveInterventionView] Aviso no turno inicial do tutor, usando fallback pedagógico:', err?.message || err);
       if (activeEpisodeRef.current !== requestEpisodeId) return;
       if (episode.turns.some((t) => t.role === 'tutor')) return;
@@ -307,6 +335,10 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       if (token) {
         headers['Authorization'] = `Bearer ${token}`;
       }
+      if (isLocalAuthActive()) {
+        headers['x-local-dev-user'] = 'true';
+        headers['x-local-user-id'] = getActiveLocalUser()?.uid || LOCAL_TEST_USER.uid;
+      }
 
       const conversationHistory = [...(episode.turns || []), studentTurn].map((t) => ({
         role: t.role as 'student' | 'tutor',
@@ -319,6 +351,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         headers,
         body: JSON.stringify({
           episodeId: episode.episodeId,
+          expectedAttemptId: attempt?.attemptId,
           sessionId: session.sessionId,
           competencyRef: episode.competencyRef,
           questionRef: episode.questionRef,
@@ -328,6 +361,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
             isCorrect,
             confidence: episode.initialConfidence || attempt?.confidence,
             attemptStage: episode.attemptStage,
+            reasoning: attempt?.reasoning || episode.initialReasoning,
           },
           history: conversationHistory,
           directExplanationRequested: options?.directExplanation,
@@ -364,12 +398,13 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       onRecordTurn?.(tutorTurn);
     } catch (err: any) {
       console.warn('[PBLAdaptiveInterventionView] Aviso ao enviar mensagem à IA:', err?.message || err);
+      setErrorMessage(err?.message || 'Não foi possível conectar com o Professor PBL. Tente novamente.');
       const isAuthError =
         err?.message?.includes('Entre na sua conta') ||
         err?.message?.includes('sessão expirou') ||
         err?.message?.includes('401');
-      if (isAuthError) {
-        setErrorMessage('Entre na sua conta Google para sincronizar e utilizar todos os recursos.');
+      if (isAuthError && !isLocalAuthActive()) {
+        setErrorMessage('Entre na sua conta para conversar com o Professor PBL.');
       } else {
         const fallbackTurn: PBLTutorTurn = {
           turnId: `turn_fallback_${Date.now()}`,
@@ -389,7 +424,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         onRecordTurn?.(fallbackTurn);
       }
       if (!customMessage) {
-        setInputText('');
+        setInputText(textToSend);
       }
     } finally {
       setLoading(false);
@@ -612,10 +647,28 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
                     <div className={`max-w-[88%] rounded-2xl p-3.5 text-xs leading-relaxed shadow-2xs ${
                       isTutor ? 'bg-white border border-slate-200 text-slate-900' : 'bg-indigo-600 text-white'
                     }`}>
-                      {isTutor && turn.intent && (
-                        <div className="mb-1.5 flex items-center gap-1.5 text-[10px] font-bold text-indigo-700">
-                          <Sparkles className="h-3 w-3" />
-                          <span>Orientação do Professor</span>
+                      {isTutor && (
+                        <div className="mb-1.5 flex flex-wrap items-center gap-1.5 text-[10px]">
+                          <span className="font-bold text-indigo-700 flex items-center gap-1">
+                            <Sparkles className="h-3 w-3" />
+                            <span>Orientação do Professor</span>
+                          </span>
+                          {Boolean(
+                            turn.executionMetadata &&
+                            !turn.executionMetadata.fallback &&
+                            turn.executionMetadata.model &&
+                            !turn.executionMetadata.model.includes('fallback')
+                          ) ? (
+                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                              <Sparkles className="h-2.5 w-2.5 text-emerald-600" />
+                              <span>Chamada Real IA</span>
+                            </span>
+                          ) : (
+                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                              <BookOpen className="h-2.5 w-2.5 text-amber-600" />
+                              <span>Base Canônica (Sem IA)</span>
+                            </span>
+                          )}
                         </div>
                       )}
                       <div className="whitespace-pre-wrap">{turn.content}</div>
@@ -704,7 +757,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
                   <AlertCircle className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
                   <div className="space-y-1">
                     <span className="font-semibold">{errorMessage}</span>
-                    {!auth?.currentUser && (
+                    {!isAuthenticated && (
                       <div>
                         <button
                           type="button"
@@ -729,7 +782,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
               </div>
             )}
 
-            {!auth?.currentUser && !errorMessage && (
+            {!isAuthenticated && !errorMessage && (
               <div className="mx-3 my-2 p-2.5 rounded-xl border border-indigo-100 bg-indigo-50/70 text-xs text-indigo-950 flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-indigo-600 shrink-0" />

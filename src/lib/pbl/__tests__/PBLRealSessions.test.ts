@@ -363,6 +363,40 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
     )).toBeDefined();
   });
 
+  it('rotaciona o caso âncora inicial ao iniciar nova sessão quando uma âncora já foi vista pelo aluno', async () => {
+    const acentuacaoCompId = 'COMP-A00-G04-01';
+    const userId = 'rotating_anchor_student';
+
+    const session1 = await engine.startSession({
+      userId,
+      mode: 'guided',
+      targetCompetencyId: acentuacaoCompId,
+    });
+    const firstAnchor = session1.currentQuestionRef;
+    expect(firstAnchor).toBeTruthy();
+
+    const { recordQuestionEncounter } = await import('../../questionEncounterLedger');
+    recordQuestionEncounter(userId, {
+      questionId: firstAnchor,
+      purpose: 'diagnostic',
+      encounteredAt: new Date().toISOString(),
+      correct: true,
+      confidence: 1,
+      assistanceLevel: 'none',
+      sessionId: session1.sessionId,
+    });
+
+    const session2 = await engine.startSession({
+      userId,
+      mode: 'guided',
+      targetCompetencyId: acentuacaoCompId,
+    });
+    const secondAnchor = session2.currentQuestionRef;
+
+    expect(secondAnchor).toBeTruthy();
+    expect(secondAnchor).not.toBe(firstAnchor);
+  });
+
   it('should block the hybrid q0020 from Fonética e Fonologia and expose audited coverage', async () => {
     const selector = new QuestionPoolSelector(repo);
     expect(await selector.isQuestionEligibleForCompetency(

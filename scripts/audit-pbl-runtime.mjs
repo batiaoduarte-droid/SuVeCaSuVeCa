@@ -125,12 +125,12 @@ if (!errors.length) {
     Object.keys(authoredQuestions).length === expectedRuntimeAuthoredQuestions,
     `Runtime authored PBL questions expected ${expectedRuntimeAuthoredQuestions}, found ${Object.keys(authoredQuestions).length}`,
   );
-  check(manifest.totalAuthoredQuestions === 81, `Manifest authored-question count expected 81, found ${manifest.totalAuthoredQuestions}`);
+  check(manifest.totalAuthoredQuestions === 89, `Manifest authored-question count expected 89, found ${manifest.totalAuthoredQuestions}`);
   if (manifest.totalRuntimeAuthoredQuestions !== undefined) {
     const quarantinedQuestionRef = 'PBLQ-A04-G03-020';
     const quarantinedRefs = manifest.questionBankOverlay?.questionQuarantine?.blockedQuestionRefs || [];
     check(quarantinedRefs.includes(quarantinedQuestionRef), 'Manifest lost the authored-question quarantine ledger');
-    check(manifest.totalRuntimeAuthoredQuestions === 80, `Runtime authored-question count expected 80, found ${manifest.totalRuntimeAuthoredQuestions}`);
+    check(manifest.totalRuntimeAuthoredQuestions === 88, `Runtime authored-question count expected 88, found ${manifest.totalRuntimeAuthoredQuestions}`);
     check(!(quarantinedQuestionRef in authoredQuestions), 'Quarantined authored question leaked into presentations');
     check(!(quarantinedQuestionRef in qcl), 'Quarantined authored question leaked into competency links');
     check(!(quarantinedQuestionRef in qp), 'Quarantined authored question leaked into pedagogy index');
@@ -186,8 +186,8 @@ if (!errors.length) {
   check(contentGaps.summary?.hardGapFamilies === 0, 'Hard-gap families remained after authored remediation');
   check(contentGaps.summary?.hardGapCompetencies === 0, 'Hard-gap competencies remained after authored remediation');
   check(contentGaps.summary?.minimumQuestionsForAllSessions === 0, 'A session still requires new questions after remediation');
-  check(contentGaps.summary?.remediatedFamilies === 2, 'Expected two remediated semantic families');
-  check(contentGaps.summary?.authoredQuestionsGenerated === 81, 'Expected 81 generated authored questions');
+  check(contentGaps.summary?.remediatedFamilies === 6, 'Expected six remediated semantic families');
+  check(contentGaps.summary?.authoredQuestionsGenerated === 89, 'Expected 89 generated authored questions');
   check(
     comps.every((competency) => competency.practiceCoverage?.auditedAt === semanticCoverage.auditedAt),
     'Competency semantic coverage metadata is missing or stale'
@@ -316,9 +316,10 @@ if (!errors.length) {
     const link = qcl[questionRef];
     check(link?.sourceKind === 'authored_pbl', `Authored link provenance missing: ${questionRef}`);
     check(qp[questionRef]?.provenance?.semanticOrigin === 'authored_pbl_gap_remediation', `Authored pedagogy provenance missing: ${questionRef}`);
+    const unitVariantsCount = comps.filter((c) => c.unitId === link.unitId).length;
     check(
-      link?.competencyAssignments?.filter((assignment) => assignment.semanticStatus === 'approved').length === 3,
-      `Authored question must be approved for the three competency variants: ${questionRef}`
+      link?.competencyAssignments?.filter((assignment) => assignment.semanticStatus === 'approved').length === unitVariantsCount,
+      `Authored question must be approved for all unit competency variants: ${questionRef}`
     );
   }
   const adjudicatedA04G03 = authoredQuestions['PBLQ-A04-G03-020'];

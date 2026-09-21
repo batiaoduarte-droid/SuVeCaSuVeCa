@@ -1,4 +1,5 @@
 import type { PBLSession } from '../../../types/pbl';
+import { isLocalDevUserId } from '../../auth/localDevAuth.server';
 
 export interface SaveSessionResult {
   saved: boolean;
@@ -16,7 +17,9 @@ export class PBLServerSessionRepository {
     return `${userId}::${sessionId}`;
   }
 
-  private async getFirestoreInstance() {
+  private async getFirestoreInstance(userId: string) {
+    // Local profiles synchronize browser persistence to process memory, without cloud credentials.
+    if (['development', 'test'].includes(process.env.NODE_ENV || '') && isLocalDevUserId(userId)) return null;
     if (typeof process === 'undefined' || !process.versions?.node) return null;
     try {
       const { getApps } = await import('firebase-admin/app');
@@ -49,7 +52,7 @@ export class PBLServerSessionRepository {
     const previousTask = this.sessionWriteQueues.get(key) || Promise.resolve({ saved: true } as SaveSessionResult);
 
     const currentTask = previousTask.catch(() => ({ saved: false } as SaveSessionResult)).then(async (): Promise<SaveSessionResult> => {
-      const firestore = await this.getFirestoreInstance();
+      const firestore = await this.getFirestoreInstance(authenticatedUserId);
       const enrichedSession: PBLSession = {
         ...session,
         userId: authenticatedUserId,
@@ -165,7 +168,7 @@ export class PBLServerSessionRepository {
 
     if (!session) {
       try {
-        const firestore = await this.getFirestoreInstance();
+        const firestore = await this.getFirestoreInstance(authenticatedUserId);
         if (firestore) {
           const docSnap = await firestore
             .collection('users')

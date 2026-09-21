@@ -14,6 +14,16 @@ import {
   isLocalAuthActive,
   setLocalAuthActive,
   toggleLocalAuth,
+  getActiveLocalUser,
+  setActiveLocalUser,
+  loginAsTestUser,
+  loginLocalAccount,
+  createLocalAccount,
+  logoutLocalUser,
+  ensureDefaultLocalAuth,
+  isTestUser,
+  isPersonalLocalUser,
+  isAnyLocalUser,
 } from './auth/localDevAuth';
 import {
   getFirestore,
@@ -100,7 +110,8 @@ export const onAuthStateChanged = (
 
   if (isLocalAuthActive()) {
     if (callback) {
-      setTimeout(() => callback(LOCAL_TEST_USER), 0);
+      const activeUser = getActiveLocalUser() || LOCAL_TEST_USER;
+      setTimeout(() => callback(activeUser), 0);
     }
   }
 
@@ -116,9 +127,10 @@ export const onAuthStateChanged = (
   );
 
   const handleLocalChange = (e: Event) => {
-    const custom = e as CustomEvent<{ active: boolean }>;
+    const custom = e as CustomEvent<{ active: boolean; user?: User }>;
     if (custom.detail?.active) {
-      if (callback) callback(LOCAL_TEST_USER);
+      const u = custom.detail.user || getActiveLocalUser() || LOCAL_TEST_USER;
+      if (callback) callback(u);
     } else {
       if (callback) callback(auth.currentUser);
     }
@@ -157,6 +169,16 @@ export {
   isLocalAuthActive,
   setLocalAuthActive,
   toggleLocalAuth,
+  getActiveLocalUser,
+  setActiveLocalUser,
+  loginAsTestUser,
+  loginLocalAccount,
+  createLocalAccount,
+  logoutLocalUser,
+  ensureDefaultLocalAuth,
+  isTestUser,
+  isPersonalLocalUser,
+  isAnyLocalUser,
 };
 export type { User };
 
@@ -201,7 +223,7 @@ export const safeSetDoc = async <T extends Record<string, any>>(
     }
     return await setDoc(reference, cleanedData);
   } catch (err) {
-    if (isLocalAuthActive() || reference.path.includes(LOCAL_TEST_USER_ID)) {
+    if (isLocalAuthActive() || reference.path.includes('local-')) {
       // Em modo local ou usuário de teste, persistência permanece no localStorage
       return;
     }

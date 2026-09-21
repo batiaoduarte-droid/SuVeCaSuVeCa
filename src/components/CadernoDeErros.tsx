@@ -309,6 +309,16 @@ export const CadernoDeErros: React.FC<CadernoDeErrosProps> = ({
                         {item.origin === 'official_question' ? 'Questão Oficial' : item.origin === 'module_question' ? 'Questão do tema' : item.origin === 'ai_generated' ? 'Tutor IA' : item.origin === 'pbl' ? 'Sessão PBL' : 'Simulado'}
                       </span>
                     )}
+                    {item.learningObjectiveId && (
+                      <span className="rounded-md border border-cyan-200 bg-cyan-50 px-2 py-0.5 text-[10px] font-bold text-cyan-800" title={`Objetivo: ${item.learningObjectiveId}`}>
+                        {item.learningObjectiveId}
+                      </span>
+                    )}
+                    {item.conceptId && (
+                      <span className="rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-[10px] font-bold text-slate-700" title={`Conceito: ${item.conceptId}`}>
+                        {item.conceptId}
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex items-center gap-2 select-none">

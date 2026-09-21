@@ -1,10 +1,12 @@
-export type AchievementId = 'first_note' | 'streak_10';
+export type AchievementId = 'first_note' | 'streak_10' | 'feynman_master';
 
 export interface AchievementProgress {
   currentStreak: number;
   bestStreak: number;
   /** Total de recordações corretas avaliadas nos flashcards. */
   flashcardCorrectCount: number;
+  /** Sessões de autoexplicação Feynman com precisão alta. */
+  feynmanHighAccuracyCount: number;
   /** Consecutive calendar days with a completed study activity. */
   studyStreak: number;
   longestStudyStreak: number;
@@ -17,7 +19,7 @@ export interface AchievementDefinition {
   id: AchievementId;
   title: string;
   description: string;
-  kind: 'note' | 'streak';
+  kind: 'note' | 'streak' | 'feynman';
 }
 
 export const ACHIEVEMENTS: AchievementDefinition[] = [
@@ -33,12 +35,19 @@ export const ACHIEVEMENTS: AchievementDefinition[] = [
     description: 'Conquiste 10 acertos seguidos em exercícios ou simulados.',
     kind: 'streak',
   },
+  {
+    id: 'feynman_master',
+    title: 'Orador Feynman',
+    description: 'Acumule 5 sessões de autoexplicação com precisão conceitual alta.',
+    kind: 'feynman',
+  },
 ];
 
 export const EMPTY_ACHIEVEMENT_PROGRESS: AchievementProgress = {
   currentStreak: 0,
   bestStreak: 0,
   flashcardCorrectCount: 0,
+  feynmanHighAccuracyCount: 0,
   studyStreak: 0,
   longestStudyStreak: 0,
   lastStudyDate: undefined,
@@ -46,7 +55,7 @@ export const EMPTY_ACHIEVEMENT_PROGRESS: AchievementProgress = {
 };
 
 const isAchievementId = (value: string): value is AchievementId =>
-  value === 'first_note' || value === 'streak_10';
+  value === 'first_note' || value === 'streak_10' || value === 'feynman_master';
 
 export const normalizeAchievementProgress = (
   value: unknown
@@ -78,6 +87,10 @@ export const normalizeAchievementProgress = (
     flashcardCorrectCount:
       typeof candidate.flashcardCorrectCount === 'number' && candidate.flashcardCorrectCount >= 0
         ? Math.floor(candidate.flashcardCorrectCount)
+        : 0,
+    feynmanHighAccuracyCount:
+      typeof candidate.feynmanHighAccuracyCount === 'number' && candidate.feynmanHighAccuracyCount >= 0
+        ? Math.floor(candidate.feynmanHighAccuracyCount)
         : 0,
     studyStreak:
       typeof candidate.studyStreak === 'number' && candidate.studyStreak >= 0
@@ -141,6 +154,23 @@ export const recordFlashcardCorrect = (
   ...progress,
   flashcardCorrectCount: progress.flashcardCorrectCount + 1,
 });
+
+export const recordFeynmanHighAccuracy = (
+  progress: AchievementProgress,
+  now = new Date().toISOString()
+): AchievementProgress => {
+  const nextCount = (progress.feynmanHighAccuracyCount || 0) + 1;
+  let next: AchievementProgress = {
+    ...progress,
+    feynmanHighAccuracyCount: nextCount,
+  };
+
+  if (nextCount >= 5) {
+    next = unlock(next, 'feynman_master', now);
+  }
+
+  return next;
+};
 
 /**
  * Uses the learner's local day instead of UTC so a late-night Brazilian study

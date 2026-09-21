@@ -188,7 +188,11 @@ export interface CadernoErroItem {
   year?: number;
   difficulty?: string;
   topic?: string;
+  conceptId?: string;
   conceptIds?: string[];
+  learningObjectiveId?: string;
+  competencyId?: string;
+  semanticBlockId?: string;
   sourceRefs?: string[];
   lastReviewedAt?: string;
   nextReviewAt?: string;
@@ -203,6 +207,9 @@ export interface ErrorFlashcard {
   moduleId?: string;
   source: 'caderno' | 'suveca';
   topic: string;
+  conceptId?: string;
+  conceptIds?: string[];
+  learningObjectiveId?: string;
   front: string;
   back: string;
   hint?: string;
@@ -240,6 +247,7 @@ export interface StudyPreferences {
   emailBackupEnabled: boolean;
   soundEnabled: boolean;
   timeZone: string;
+  studyMode?: 'complete' | 'pbl_only';
   updatedAt: string;
 }
 

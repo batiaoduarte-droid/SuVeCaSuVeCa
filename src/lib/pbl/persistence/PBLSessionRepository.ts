@@ -131,6 +131,17 @@ export class PBLSessionRepository {
     return { syncedRemotely: syncedViaHttp };
   }
 
+  /** Do not send a post-attempt tutor turn until the server confirms this session. */
+  public static async prepareTutorSession(session: PBLSession): Promise<void> {
+    if (!session.userId || session.userId === 'guest') {
+      throw new Error('Entre na sua conta para conversar com o Professor PBL. Sua prática continua salva neste dispositivo.');
+    }
+    const result = await this.saveSession(session);
+    if (!result.syncedRemotely) {
+      throw new Error('Não foi possível confirmar sua tentativa com o Professor PBL. Sua resposta está salva; tente novamente.');
+    }
+  }
+
   public static async getSession(sessionId: string, userId?: string): Promise<PBLSession | null> {
     try {
       const key = `${LOCAL_STORAGE_KEY_PREFIX}${sessionId}`;

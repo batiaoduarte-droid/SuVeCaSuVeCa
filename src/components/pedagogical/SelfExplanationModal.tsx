@@ -11,6 +11,8 @@ import {
   ShieldAlert,
   RotateCcw,
   Volume2,
+  VolumeX,
+  Download,
   BookmarkPlus,
   LoaderCircle,
   FileText,
@@ -62,10 +64,109 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
   const [diagnosis, setDiagnosis] = useState<FeynmanDiagnosis | null>(null);
   const [isSaved, setIsSaved] = useState(false);
 
+  // Live Duplex Voice states
+  const [liveStatus, setLiveStatus] = useState<'idle' | 'connecting' | 'connected' | 'speaking' | 'error'>('idle');
+  const [liveTranscript, setLiveTranscript] = useState<Array<{ sender: 'user' | 'bot'; text: string }>>([]);
+  const liveWsRef = useRef<WebSocket | null>(null);
+  const liveStreamRef = useRef<MediaStream | null>(null);
+  const liveAudioRef = useRef<HTMLAudioElement | null>(null);
+
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<number | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+
+  const startLiveSession = async () => {
+    try {
+      setLiveStatus('connecting');
+      setErrorMessage('');
+
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      liveStreamRef.current = stream;
+
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const wsUrl = `${protocol}//${window.location.host}/api/gemini/live`;
+      const socket = new WebSocket(wsUrl);
+      liveWsRef.current = socket;
+
+      socket.onopen = () => {
+        setLiveStatus('connected');
+        socket.send(
+          JSON.stringify({
+            turns: `Olá Professor SuVeCA, sou o aluno e gostaria de iniciar a sabatina oral no Método Feynman sobre o tópico: "${topicTitle}". ${
+              targetRuleContext ? `Ponto focal da regra: ${targetRuleContext}.` : ''
+            }`,
+          })
+        );
+      };
+
+      socket.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          if (data.type === 'error') {
+            setErrorMessage(data.message || 'Erro no canal Live duplex');
+            setLiveStatus('error');
+            return;
+          }
+          const parts = data.serverContent?.modelTurn?.parts;
+          if (Array.isArray(parts)) {
+            for (const part of parts) {
+              if (part.text) {
+                setLiveTranscript((prev) => [...prev, { sender: 'bot', text: part.text }]);
+              }
+              if (part.inlineData?.data) {
+                setLiveStatus('speaking');
+                if (liveAudioRef.current) {
+                  liveAudioRef.current.pause();
+                }
+                const audio = new Audio(
+                  `data:${part.inlineData.mimeType || 'audio/wav'};base64,${part.inlineData.data}`
+                );
+                liveAudioRef.current = audio;
+                audio.onended = () => setLiveStatus('connected');
+                void audio.play().catch(() => setLiveStatus('connected'));
+              }
+            }
+          }
+        } catch (err) {
+          console.error('[LiveAPI] Erro ao decodificar resposta:', err);
+        }
+      };
+
+      socket.onerror = () => {
+        setErrorMessage('Instabilidade na conexão WebSocket com o servidor Live.');
+        setLiveStatus('error');
+      };
+
+      socket.onclose = () => {
+        setLiveStatus('idle');
+      };
+    } catch (err: any) {
+      console.error('[LiveAPI] Erro ao solicitar microfone ou conectar:', err);
+      setErrorMessage(
+        err.name === 'NotAllowedError'
+          ? 'Acesso ao microfone foi negado. Habilite a permissão no navegador para usar a sabatina oral.'
+          : 'Não foi possível conectar ao serviço Live.'
+      );
+      setLiveStatus('error');
+    }
+  };
+
+  const stopLiveSession = () => {
+    if (liveAudioRef.current) {
+      liveAudioRef.current.pause();
+      liveAudioRef.current = null;
+    }
+    if (liveWsRef.current) {
+      liveWsRef.current.close();
+      liveWsRef.current = null;
+    }
+    if (liveStreamRef.current) {
+      liveStreamRef.current.getTracks().forEach((track) => track.stop());
+      liveStreamRef.current = null;
+    }
+    setLiveStatus('idle');
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -227,11 +328,106 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
 
       const result: FeynmanDiagnosis = await res.json();
       setDiagnosis(result);
+
+      if (result.conceptualAccuracy === 'alta' && typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('suveca:feynman-high-accuracy'));
+      }
     } catch (err: any) {
       setErrorMessage(err.message || 'Ocorreu um erro ao processar a avaliação pedagógica.');
     } finally {
       setLoading(false);
     }
+  };
+
+  const [isSpeakingFeedback, setIsSpeakingFeedback] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  const handleToggleSpeech = (text: string) => {
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+      setErrorMessage('A síntese de voz não é suportada neste navegador.');
+      return;
+    }
+
+    if (isSpeakingFeedback) {
+      window.speechSynthesis.cancel();
+      setIsSpeakingFeedback(false);
+      return;
+    }
+
+    const cleanText = text.replace(/[*_#`~]/g, '').trim();
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.lang = 'pt-BR';
+    utterance.rate = 1.0;
+
+    const voices = window.speechSynthesis.getVoices();
+    const ptVoice = voices.find(
+      (v) =>
+        v.lang.startsWith('pt') &&
+        (v.name.includes('Google') ||
+          v.name.includes('Natural') ||
+          v.name.includes('Luciana') ||
+          v.name.includes('Francisca') ||
+          v.name.includes('Daniel'))
+    ) || voices.find((v) => v.lang.startsWith('pt'));
+
+    if (ptVoice) utterance.voice = ptVoice;
+
+    utterance.onend = () => setIsSpeakingFeedback(false);
+    utterance.onerror = () => setIsSpeakingFeedback(false);
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+    setIsSpeakingFeedback(true);
+  };
+
+  const handleExportMarkdown = () => {
+    if (!diagnosis) return;
+
+    const lines = [
+      `# Diagnóstico Feynman: ${topicTitle}`,
+      `*Data: ${new Date().toLocaleDateString('pt-BR')} às ${new Date().toLocaleTimeString('pt-BR')}*`,
+      `*Precisão Conceitual: ${diagnosis.conceptualAccuracy.toUpperCase()}*`,
+      `*Pegadinha da Banca Abordada: ${diagnosis.bancaTrapAddressed ? 'SIM' : 'NÃO'}*`,
+      '',
+      '## 🟢 Pontos Fortes Dominados',
+      ...(diagnosis.strengths.length > 0
+        ? diagnosis.strengths.map((s) => `- ${s}`)
+        : ['- Nenhum critério formal consolidado evidente.']),
+      '',
+      '## ⚠️ Pontos Cegos e Omissões Detectadas',
+      ...(diagnosis.conceptualGaps.length > 0
+        ? diagnosis.conceptualGaps.map((g) => `- ${g}`)
+        : ['- Nenhuma lacuna crítica detectada.']),
+      '',
+      '## 🧑‍🏫 Parecer do Tutor SuVeCA',
+      diagnosis.bancaFeedback,
+      '',
+    ];
+
+    if (diagnosis.suggestedFlashcard) {
+      lines.push(
+        '## 🗂️ Flashcard de Reforço Sugerido (SM-2)',
+        `**Frente:** ${diagnosis.suggestedFlashcard.front}`,
+        `**Verso:** ${diagnosis.suggestedFlashcard.back}`,
+        ''
+      );
+    }
+
+    const content = lines.join('\n');
+    const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `Feynman_${topicTitle.replace(/[^\w\d-_]/g, '_')}_${Date.now()}.md`;
+    link.click();
+    URL.revokeObjectURL(url);
   };
 
   const handleSaveFlashcardToCaderno = () => {
@@ -460,23 +656,89 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
               )}
 
               {mode === 'live_voice' && (
-                <div className="rounded-2xl border border-indigo-200 bg-indigo-50/50 p-6 text-center space-y-3">
-                  <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-full bg-indigo-100 text-indigo-800">
-                    <Radio className="h-7 w-7 animate-pulse text-indigo-700" />
+                <div className="rounded-2xl border border-indigo-200 bg-indigo-50/50 p-6 text-center space-y-4">
+                  <div className="flex h-16 w-16 mx-auto items-center justify-center rounded-full bg-indigo-100 text-indigo-800 shadow-xs">
+                    <Radio className={`h-8 w-8 ${liveStatus === 'speaking' || liveStatus === 'connected' ? 'animate-pulse text-indigo-600' : 'text-indigo-400'}`} />
                   </div>
-                  <h3 className="text-sm font-bold text-indigo-950">Gemini Live API em Tempo Real</h3>
-                  <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
-                    O modo Live estabelece uma conexão contínua de áudio duplex com o Tutor Socrático. Para ambientes silenciosos e estudo com fone de ouvido, você pode alternar para o <strong>Áudio Gravado</strong> para avaliação assíncrona imediata ou usar o texto.
-                  </p>
-                  <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={() => setMode('audio_batch')}
-                      className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-bold text-white hover:bg-indigo-700 transition cursor-pointer"
-                    >
-                      <Mic className="h-4 w-4" /> Usar Modo Áudio Gravado
-                    </button>
+
+                  <div>
+                    <h3 className="text-sm font-bold text-indigo-950">Gemini Live API · Sabatina Oral Feynman</h3>
+                    <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed mt-1">
+                      Conexão contínua de áudio duplex com o Professor SuVeCA. Fale ao microfone para defender seu raciocínio e receba arguições orais imediatas em tempo real.
+                    </p>
                   </div>
+
+                  {liveStatus === 'idle' && (
+                    <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2">
+                      <button
+                        type="button"
+                        onClick={startLiveSession}
+                        className="inline-flex items-center gap-2 rounded-xl bg-teal-700 px-5 py-3 text-xs font-bold text-white hover:bg-teal-800 transition shadow-xs cursor-pointer"
+                      >
+                        <Mic className="h-4 w-4" /> Iniciar Sabatina Oral
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setMode('audio_batch')}
+                        className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition cursor-pointer"
+                      >
+                        Alternar para Áudio Gravado
+                      </button>
+                    </div>
+                  )}
+
+                  {liveStatus === 'connecting' && (
+                    <div className="flex items-center justify-center gap-2 text-xs font-bold text-indigo-900 bg-indigo-100/70 p-3 rounded-xl">
+                      <LoaderCircle className="h-4 w-4 animate-spin text-indigo-700" />
+                      <span>Conectando ao túnel WebSocket do Gemini Live...</span>
+                    </div>
+                  )}
+
+                  {(liveStatus === 'connected' || liveStatus === 'speaking') && (
+                    <div className="space-y-4 bg-white border border-indigo-200 rounded-xl p-4 text-left">
+                      <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                        <div className="flex items-center gap-2">
+                          <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping" />
+                          <span className="text-xs font-bold text-slate-900">
+                            {liveStatus === 'speaking' ? 'Professor SuVeCA falando...' : 'Microfone ativo · Pode falar'}
+                          </span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={stopLiveSession}
+                          className="text-xs font-bold text-rose-600 hover:text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-2.5 py-1 transition cursor-pointer"
+                        >
+                          Concluir Sabatina
+                        </button>
+                      </div>
+
+                      {liveTranscript.length > 0 ? (
+                        <div className="max-h-40 overflow-y-auto space-y-2 text-xs">
+                          {liveTranscript.map((turn, i) => (
+                            <div key={i} className={`p-2 rounded-lg ${turn.sender === 'bot' ? 'bg-indigo-50 text-indigo-950' : 'bg-slate-100 text-slate-800'}`}>
+                              <strong>{turn.sender === 'bot' ? 'Professor:' : 'Você:'}</strong> {turn.text}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-xs text-slate-500 italic text-center py-3 m-0">
+                          Aguardando intervenção oral do Professor SuVeCA...
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {liveStatus === 'error' && (
+                    <div className="pt-2 flex items-center justify-center gap-2">
+                      <button
+                        type="button"
+                        onClick={startLiveSession}
+                        className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-bold text-white hover:bg-indigo-700 transition cursor-pointer"
+                      >
+                        <RotateCcw className="h-4 w-4" /> Tentar Conectar Novamente
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -568,10 +830,30 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
               </div>
 
               {/* Banca / Examiner Feedback */}
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 space-y-1.5">
-                <span className="text-[11px] font-black uppercase tracking-wider text-slate-500">
-                  Parecer do Tutor SuVeCa:
-                </span>
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-black uppercase tracking-wider text-slate-500">
+                    Parecer do Tutor SuVeCa:
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handleToggleSpeech(diagnosis.bancaFeedback)}
+                    className="inline-flex items-center gap-1 text-xs font-bold text-teal-800 hover:text-teal-950 bg-teal-50 border border-teal-200/80 px-2.5 py-1 rounded-lg transition cursor-pointer"
+                    title={isSpeakingFeedback ? 'Pausar áudio' : 'Ouvir parecer do tutor'}
+                  >
+                    {isSpeakingFeedback ? (
+                      <>
+                        <VolumeX className="h-3.5 w-3.5 text-teal-700" />
+                        <span>Pausar</span>
+                      </>
+                    ) : (
+                      <>
+                        <Volume2 className="h-3.5 w-3.5 text-teal-700" />
+                        <span>Ouvir Parecer</span>
+                      </>
+                    )}
+                  </button>
+                </div>
                 <p className="text-xs sm:text-sm text-slate-800 leading-relaxed m-0 font-medium">
                   {diagnosis.bancaFeedback}
                 </p>
@@ -649,6 +931,17 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
               </button>
 
               <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handleExportMarkdown}
+                  className="flex items-center gap-1.5 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 hover:bg-slate-50 transition cursor-pointer"
+                  title="Baixar diagnóstico completo em formato Markdown (.md)"
+                >
+                  <Download className="h-3.5 w-3.5 text-teal-700" />
+                  <span className="hidden sm:inline">Exportar Resumo (.md)</span>
+                  <span className="sm:hidden">.md</span>
+                </button>
+
                 {onSaveToCaderno && (
                   <button
                     type="button"

@@ -380,6 +380,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
               bank: q.bank,
               topic: q.topic,
               moduleRef: q.moduleId,
+              conceptId: q.conceptIds?.[0],
               conceptIds: q.conceptIds,
               sourceRefs: q.sourceRefs,
             }
@@ -875,6 +876,7 @@ export const SimuladoEngine: React.FC<SimuladoEngineProps> = ({
                               bank: currentQ.bank,
                               topic: currentQ.topic,
                               moduleRef: currentQ.moduleId,
+                              conceptId: currentQ.conceptIds?.[0],
                               conceptIds: currentQ.conceptIds,
                               sourceRefs: currentQ.sourceRefs,
                             }

@@ -45,6 +45,7 @@ import {
   Sparkles,
   Flame,
   Trophy,
+  RotateCcw,
 } from 'lucide-react';
 import { SuvecaWordHighlight } from './ui/SuvecaBrandHighlight';
 import { MACRO_CURRICULUM_ENABLED } from '../lib/featureFlags';
@@ -728,6 +729,16 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     );
   };
 
+  const handleResetLayout = () => {
+    onOpenUnitChange?.(null, null);
+    onOpenMacroChange?.('', '');
+    if (isFocusMode && onToggleFocusMode) {
+      onToggleFocusMode();
+    }
+    setOpenNoteEditors({});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const currentIndex = modules.findIndex((m) => m.id === moduleData.id);
   const prevModule = currentIndex > 0 ? modules[currentIndex - 1] : null;
   const nextModule = currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null;
@@ -982,6 +993,14 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             </button>
             <button type="button" onClick={onToggleFocusMode} className="button-secondary text-xs">
               <Maximize2 className="w-4 h-4 text-teal-700" /> Modo Foco Total
+            </button>
+            <button
+              type="button"
+              onClick={handleResetLayout}
+              className="button-secondary text-xs flex items-center gap-1.5 hover:border-amber-300 hover:bg-amber-50/60 cursor-pointer"
+              title="Restaurar visualização panorâmica da apostila, fechar unidades e anotações abertas"
+            >
+              <RotateCcw className="w-4 h-4 text-teal-700" /> Reset de Layout
             </button>
           </div>
         </header>

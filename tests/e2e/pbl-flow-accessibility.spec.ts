@@ -140,7 +140,8 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await expect(page.getByRole('button', { name: /voltar à fila de revisão/i })).toBeVisible();
 
     const savedPBLItem = await page.evaluate(() => {
-      const raw = localStorage.getItem('suveca_caderno_erros_guest');
+      const userId = localStorage.getItem('suveca_active_local_user') || 'guest';
+      const raw = localStorage.getItem(`suveca_caderno_erros_${userId}`);
       const items = raw ? JSON.parse(raw) : [];
       return items.find((item: { origin?: string }) => item.origin === 'pbl');
     });

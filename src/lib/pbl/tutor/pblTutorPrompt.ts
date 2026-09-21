@@ -4,6 +4,8 @@ import type {
   PBLTutorTurnRequest,
 } from '../../../types/pblTutor';
 
+export const PBL_TUTOR_PROMPT_VERSION = '2026-09-21-evidence-and-attempt';
+
 export const PBL_TUTOR_SYSTEM_INSTRUCTION = `Você é o Professor PBL, tutor pedagógico contextual do percurso de Problem-Based Learning (PBL) em Língua Portuguesa para concursos públicos.
 
 SEU PAPEL E POSTURA:
@@ -11,10 +13,14 @@ SEU PAPEL E POSTURA:
 2. Não Presumir Falhas Pessoais: É TERMINANTEMENTE PROIBIDO emitir hipóteses depreciativas sobre o aluno (por exemplo: nunca diga que ele errou "por falta de atenção", "leitura descuidada", "pressa", "falha de interpretação básica" ou "vício"). Trate todo erro como uma hipótese pedagógica compreensível ou confusão entre critérios concorrentes.
 3. Separação Tripartite:
    - Raciocínio do Aluno: hipótese que orientou a escolha.
-   - Gabarito Oficial: critério normativo exigido pela banca.
-   - Explicação Didática Derivada: material de apoio que complementa a regra (e que pode conter lapsos pontuais que devem ser tratados com rigor técnico).
-4. Rigor Normativo Canônico (Benchmark Gramatical):
-   - Caso clássico "porém / porem": ao tratar da perda de acento em "porém", destaque com clareza inegociável que "porem" é forma de infinitivo pessoal do verbo pôr (ex.: "para eles porem o livro na estante"). O futuro do subjuntivo do verbo pôr é "quando eles puserem" (ex.: "quando eles puserem tudo em ordem"). Jamais confunda ou classifique "porem" como futuro do subjuntivo.
+   - Gabarito Oficial: resposta publicada que determina a avaliação do item; preserve-a sem tratá-la como prova de uma regra geral.
+   - Explicação Didática Derivada: comentários e análises pedagógicas que apoiam a compreensão, mas podem conter lapsos e não substituem as fontes normativas nem as decisões editoriais fornecidas.
+4. Rigor Normativo e Revisão de Objeções:
+   - Fundamente cada conclusão nas regras, condições, limites e evidências fornecidos para esta questão. Não substitua a fonte por intuição de pronúncia, associação de palavras ou lembrança do modelo. Não alegue ter consultado gramáticos, dicionários ou outros materiais que não constem do contexto.
+   - Em assertivas que agrupam vocábulos ou regras, decomponha e analise cada termo isoladamente antes de concluir sobre o conjunto. O erro de um termo não demonstra que os demais também estejam errados.
+   - Quando o aluno contestar uma explicação, reexamine a objeção e sua resposta anterior à luz do contexto. Se a fonte sustentar a objeção, reconheça o erro e explique a correção. Não concorde nem insista apenas por causa da confiança de quem afirmou.
+   - Distinga o gabarito da justificativa: um comentário publicado ou uma refutação didática não é automaticamente uma declaração da banca. Respeite a autoridade declarada nos dados; análises marcadas como derivadas não têm autoridade normativa própria.
+   - Se houver conflito entre explicações e fontes ou falta de evidência para um detalhe, explicite o limite e a divergência sem inventar uma regra, alterar o gabarito ou transformar a explicação derivada em verdade absoluta. Preserve as decisões editoriais fornecidas e não reabra casos adjudicados.
 5. Ancoragem no Contexto Fornecido:
    - Use com rigor as regras, condições de aplicação, exceções, tabelas comparativas e procedimentos decisórios fornecidos no contexto da questão.
    - Não invente regras gramaticais inexistentes.
@@ -72,10 +78,12 @@ export function formatTutorPrompt(
     }
   }
 
+  // The legacy field name does not establish official authorship of the commentary.
+  const publishedCommentary = context.officialCommentary || context.presentation?.commentary;
   if (hasAttempted) {
     parts.push(`Gabarito Oficial: ${context.presentation.officialAnswer || '(Não disponível)'}`);
-    if (context.officialCommentary) {
-      parts.push(`Comentário Oficial: ${context.officialCommentary}`);
+    if (publishedCommentary) {
+      parts.push(`Comentário publicado da questão (não atribuir à banca sem proveniência explícita):\n${publishedCommentary}`);
     }
   } else {
     parts.push(`Gabarito Oficial: [RESERVADO ATÉ A SUBMISSÃO DA RESPOSTA]`);
@@ -188,23 +196,27 @@ export function formatTutorPrompt(
   const decisivePoint = context.pedagogy?.decisivePoint;
   const commonMistake = context.pedagogy?.commonMistake;
   if (hasAttempted && (decisivePoint || commonMistake)) {
-    parts.push(`\n=== INTELIGÊNCIA PEDAGÓGICA DA BANCA ===`);
+    parts.push(`\n=== PEDAGOGIA PUBLICADA DA QUESTÃO ===`);
     if (decisivePoint) {
       parts.push(`• Ponto Decisivo: ${decisivePoint}`);
     }
     if (commonMistake) {
-      parts.push(`• Hipótese Frequente de Distrator (Banca): ${commonMistake}`);
+      parts.push(`• Hipótese Pedagógica de Distrator: ${commonMistake}`);
     }
   }
 
   // Objective option refutations are exposed ONLY after the attempt has been submitted
   if (hasAttempted && context.objectiveOptionAnalyses && context.objectiveOptionAnalyses.length > 0) {
-    parts.push(`\n=== ANÁLISE OBJETIVA DAS ALTERNATIVAS ===`);
+    parts.push(`\n=== ANÁLISES PUBLICADAS DAS ALTERNATIVAS ===`);
     for (const opt of context.objectiveOptionAnalyses) {
       const optLetter = opt.label || (opt as any).letter || '';
       parts.push(`[${optLetter}] ${opt.isCorrect ? '(CORRETA)' : '(INCORRETA)'} ${opt.optionText}`);
+      parts.push(opt.authoritative === true
+        ? `Autoridade: declarada no artefato; não inferir autoria da banca.`
+        : `Autoridade: explicação didática derivada, sem autoridade normativa própria.`);
       parts.push(`Refutação Didática: ${opt.refutation}`);
     }
+    parts.push(`Use estas análises em conjunto com as regras e os limites fornecidos. Preserve o gabarito e explicite eventual conflito de justificativas, sem atribuir à banca uma explicação derivada.`);
   }
 
   parts.push(`\n=== SITUAÇÃO ATUAL DO ALUNO NA SESSÃO ===`);
@@ -218,6 +230,9 @@ export function formatTutorPrompt(
     }
     if (at.confidence) {
       parts.push(`Nível de confiança declarado pelo aluno: ${at.confidence}`);
+    }
+    if (at.reasoning && at.reasoning.trim()) {
+      parts.push(`Hipótese/critério declarado pelo aluno: "${at.reasoning.trim()}"`);
     }
   } else {
     parts.push(`O aluno solicitou apoio antes de submeter a tentativa.`);

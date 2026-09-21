@@ -67,6 +67,7 @@ const DEFAULT_PREFERENCES: StudyPreferencesType = {
   emailBackupEnabled: false,
   soundEnabled: true,
   timeZone: typeof Intl !== 'undefined' ? Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Sao_Paulo' : 'America/Sao_Paulo',
+  studyMode: 'complete',
   updatedAt: new Date().toISOString(),
 };
 
@@ -105,6 +106,7 @@ const readLocalPreferences = (userId?: string | null): StudyPreferencesType => {
     return {
       ...DEFAULT_PREFERENCES,
       ...parsed,
+      studyMode: parsed.studyMode === 'pbl_only' ? 'pbl_only' : 'complete',
       topics: {
         ...DEFAULT_PREFERENCES.topics,
         ...(parsed.topics || {}),
@@ -255,6 +257,14 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
     setPrefs(updated);
     const storageKey = storageKeyForUser(userId);
     window.localStorage.setItem(storageKey, JSON.stringify(updated));
+
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(
+        new CustomEvent('suveca:study-mode-changed', {
+          detail: { mode: updated.studyMode || 'complete' },
+        })
+      );
+    }
 
     if (!userId) {
       setMessage({
@@ -584,6 +594,73 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
           <div className="flex-1 text-xs sm:text-sm leading-relaxed">{message.text}</div>
         </div>
       )}
+
+      {/* Modo de Navegação & Conteúdo */}
+      <section className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
+        <div className="flex items-start gap-3.5 border-b border-slate-100 pb-4">
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border bg-purple-50 text-purple-700 border-purple-200">
+            <Sparkles className="w-6 h-6" />
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-slate-900">
+              Modo de Navegação & Conteúdo
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 mt-1">
+              Personalize o fluxo de estudo conforme o seu momento de preparação (reta final ou aprendizado completo).
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          {/* Opção 1: Modo Completo */}
+          <button
+            type="button"
+            onClick={() => void savePreferences({ ...prefs, studyMode: 'complete' })}
+            className={`p-4 rounded-xl border-2 text-left transition flex flex-col justify-between gap-3 cursor-pointer ${
+              prefs.studyMode !== 'pbl_only'
+                ? 'border-teal-600 bg-teal-50/50 shadow-2xs'
+                : 'border-slate-200 bg-white hover:border-slate-300'
+            }`}
+          >
+            <div className="flex items-center justify-between w-full">
+              <span className="font-extrabold text-sm text-slate-900 flex items-center gap-2">
+                <CheckCircle2 className={`w-4 h-4 ${prefs.studyMode !== 'pbl_only' ? 'text-teal-700' : 'text-slate-300'}`} />
+                Modo Completo
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-teal-100 text-teal-800">
+                Padrão
+              </span>
+            </div>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Experiência integral com Apostila Teórica (14 módulos), Analisador Sintático SuVeCA, Casos Clínicos PBL, Simulados e ferramentas de revisão.
+            </p>
+          </button>
+
+          {/* Opção 2: Modo PBL Puro */}
+          <button
+            type="button"
+            onClick={() => void savePreferences({ ...prefs, studyMode: 'pbl_only' })}
+            className={`p-4 rounded-xl border-2 text-left transition flex flex-col justify-between gap-3 cursor-pointer ${
+              prefs.studyMode === 'pbl_only'
+                ? 'border-purple-600 bg-purple-50/50 shadow-2xs'
+                : 'border-slate-200 bg-white hover:border-slate-300'
+            }`}
+          >
+            <div className="flex items-center justify-between w-full">
+              <span className="font-extrabold text-sm text-slate-900 flex items-center gap-2">
+                <CheckCircle2 className={`w-4 h-4 ${prefs.studyMode === 'pbl_only' ? 'text-purple-700' : 'text-slate-300'}`} />
+                Modo PBL Puro
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-purple-100 text-purple-800">
+                Foco Prático
+              </span>
+            </div>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Foco prático total em Casos Clínicos PBL. Oculta a Apostila e o Analisador Sintático da barra de navegação, direcionando todo o fluxo para resolução ativa de problemas e Caderno de Erros.
+            </p>
+          </button>
+        </div>
+      </section>
 
       {/* FCM Push Activation Card */}
       <section className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">

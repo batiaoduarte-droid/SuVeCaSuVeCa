@@ -162,7 +162,7 @@ export class GeminiKeyManager {
   public isQuotaError(err: any): boolean {
     if (!err) return false;
     const status = err.status || err.statusCode || err.response?.status;
-    if (status === 429) return true;
+    if (status === 429 || status === 503) return true;
     const msg = String(err.message || err.error || err).toLowerCase();
     return (
       msg.includes('quota') ||
@@ -170,7 +170,10 @@ export class GeminiKeyManager {
       msg.includes('ratelimit') ||
       msg.includes('too_many_requests') ||
       msg.includes('resource_exhausted') ||
-      msg.includes('exceeded a quota')
+      msg.includes('exceeded a quota') ||
+      msg.includes('high demand') ||
+      msg.includes('unavailable') ||
+      msg.includes('overloaded')
     );
   }
 
@@ -246,11 +249,13 @@ export class GeminiKeyManager {
 
         lastError = err;
 
-        // Se for erro de cota e ainda houver chaves para tentar, rotaciona e repete
+        // Se for erro de cota ou sobrecarga (503/429) e ainda houver tentativas, aguarda e rotaciona
         if (isQuota && attemptNum < maxAttempts) {
+          const delayMs = Math.min(1000 * Math.pow(2, attemptNum - 1), 5000);
           console.warn(
-            `[GeminiKeyManager] Cota excedida na chave ${currentKey.label} (${currentKey.fingerprint}). Rotacionando para próxima chave (tentativa ${attemptNum + 1}/${maxAttempts})...`
+            `[GeminiKeyManager] Erro transitório/cota (${err.status || errorType}) na chave ${currentKey.label} (${currentKey.fingerprint}). Aguardando ${delayMs}ms e rotacionando para próxima chave (tentativa ${attemptNum + 1}/${maxAttempts})...`
           );
+          await new Promise((res) => setTimeout(res, delayMs));
           this.rotateKey();
           continue;
         }

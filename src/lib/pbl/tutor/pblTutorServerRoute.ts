@@ -1,4 +1,5 @@
 import { getEpisodeAttempt, validateQuickCheck } from './pblTutorPedagogy';
+import { resolveLocalDevUserId } from '../../auth/localDevAuth.server';
 import type { Request, Response } from 'express';
 import { GoogleGenAI, Type } from '@google/genai';
 import { pblTutorContextResolver } from './PBLTutorContextResolver.server';
@@ -6,6 +7,7 @@ import { geminiKeyManager } from '../../ai/geminiKeyManager.server';
 import { aiAuditLogger } from '../../audit/aiAuditLogger.server';
 import {
   PBL_TUTOR_SYSTEM_INSTRUCTION,
+  PBL_TUTOR_PROMPT_VERSION,
   formatTutorPrompt,
 } from './pblTutorPrompt';
 import type { PBLTutorTurnRequest,
@@ -120,15 +122,18 @@ function generateDeterministicFallback(
 
   const rules = context.criteria?.rules || context.pedagogy?.rules || [];
   const primaryRule = rules[0];
+  const publishedCommentary = context.officialCommentary || context.presentation?.commentary;
   const ruleStatement = primaryRule
     ? `**${primaryRule.title}**: ${primaryRule.statement}`
     : 'Consulte a regra gramatical decisiva antes de tentar novamente.';
 
   let text = '';
-  if (optAnalysis && !optAnalysis.isCorrect) {
+  if (request.directExplanationRequested && request.studentAttemptContext?.userAnswer && publishedCommentary) {
+    text = `**Gabarito oficial: ${context.presentation.officialAnswer}**\n\n**Comentário publicado da questão:**\n\n${publishedCommentary}`;
+  } else if (optAnalysis && !optAnalysis.isCorrect) {
     text = `Vamos analisar o critério decisivo desta questão:\n\n${optAnalysis.refutation}\n\n${ruleStatement}\n\nQuer tentar responder novamente a esta questão ou prefere ver outro exemplo prático?`;
-  } else if (context.officialCommentary) {
-    text = `Avaliando a questão:\n\n${context.officialCommentary}\n\n${ruleStatement}\n\nComo você aplicaria este critério em uma nova questão?`;
+  } else if (publishedCommentary) {
+    text = `Avaliando a questão:\n\n${publishedCommentary}\n\n${ruleStatement}\n\nComo você aplicaria este critério em uma nova questão?`;
   } else {
     text = `Critério normativo da competência:\n\n${ruleStatement}\n\nObserve as condições de aplicação e tente refazer a análise com calma.`;
   }
@@ -234,7 +239,7 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
 
   // Submitted drafts and client-provided correctness cannot authorize solution exposure.
   try {
-    const userId = (res.locals as any)?.userId || await resolveTokenUserId(req);
+    const userId = await resolveRequestUserId(req, res);
     const session = userId && userId !== 'guest' && typeof request.sessionId === 'string'
       ? await pblServerSessionRepository.getSession(request.sessionId, userId) : null;
     const episodeId = request.episodeId || session?.currentTutorEpisodeId;
@@ -244,6 +249,10 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
     const attempt = session && matchesEpisode ? getEpisodeAttempt(session, episode) : undefined;
     const allowedPhase = session && ['tutor', 'intervention', 'reflection', 'completed', 'reattempt'].includes(session.phase);
     const hasAttempted = Boolean(attempt && allowedPhase);
+    if (request.expectedAttemptId && (!hasAttempted || attempt?.attemptId !== request.expectedAttemptId)) {
+      res.status(409).json({ error: 'Sua tentativa ainda não foi confirmada pelo Professor PBL. Sincronize a sessão e tente novamente.' });
+      return;
+    }
     request = {
       ...request,
       studentAttemptContext: hasAttempted && attempt ? {
@@ -251,6 +260,7 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
         isCorrect: attempt.isCorrect,
         confidence: attempt.confidence,
         attemptStage: attempt.stage,
+        reasoning: attempt.reasoning,
       } : undefined,
       // History belongs to this episode; a request cannot substitute a different solved item.
       history: matchesEpisode ? episode.turns.filter((turn) => turn.role === 'student' || turn.role === 'tutor')
@@ -262,7 +272,8 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
     return;
   }
 
-  const tutorEnabled = process.env.PBL_TUTOR_ENABLED !== 'false' && Boolean(process.env.GEMINI_API_KEY);
+  const tutorEnabled = process.env.PBL_TUTOR_ENABLED !== 'false' && Boolean(process.env.GEMINI_API_KEY)
+    && Boolean(res.locals.userId && res.locals.userId !== 'guest');
   const targetModel = process.env.PBL_TUTOR_MODEL || 'gemini-3.1-flash-lite';
   const thinkingLevel = (process.env.PBL_TUTOR_THINKING_LEVEL || 'low') as any;
 
@@ -273,6 +284,12 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
   }
 
   const prompt = formatTutorPrompt(request, context);
+  const auditContext = {
+    questionRef: request.questionRef, competencyRef: request.competencyRef,
+    sessionId: request.sessionId, episodeId: request.episodeId, userId: res.locals.userId,
+    attemptConfirmed: Boolean(request.studentAttemptContext),
+    expectedAttemptId: request.expectedAttemptId,
+  };
   const config: any = {
     systemInstruction: PBL_TUTOR_SYSTEM_INSTRUCTION,
     responseMimeType: 'application/json',
@@ -286,34 +303,31 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
   try {
     executionResult = await geminiKeyManager.executeWithKeyRotation(
       targetModel,
-      (client) =>
-        withAiTimeout(
+      (client) => {
+        const controller = new AbortController();
+        return withAiTimeout(
           client.models.generateContent({
             model: targetModel,
             contents: prompt,
-            config,
+            config: { ...config, abortSignal: controller.signal },
           }),
           30_000
-        ),
+        ).finally(() => controller.abort());
+      },
       { userAgent: 'suveca-pbl-tutor' }
     );
   } catch (error: any) {
-    void aiAuditLogger.logCall({
+    await aiAuditLogger.logCall({
       status: 'erro_provider',
       request: {
         route: 'pbl_tutor',
         stage: 'turn',
         modelRequested: targetModel,
+        promptVersion: PBL_TUTOR_PROMPT_VERSION,
         systemPrompt: PBL_TUTOR_SYSTEM_INSTRUCTION,
         userInput: prompt,
         config,
-        context: {
-          questionRef: request.questionRef,
-          competencyRef: request.competencyRef,
-          sessionId: request.sessionId,
-          episodeId: request.episodeId,
-          userId: (res.locals as any)?.userId,
-        },
+        context: auditContext,
       },
       attempts: (error as any)?.attempts || [],
       error: { type: error.name || 'APIError', message: error.message },
@@ -370,22 +384,17 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
       },
     };
 
-    void aiAuditLogger.logCall({
+    await aiAuditLogger.logCall({
       status: 'concluida',
       request: {
         route: 'pbl_tutor',
         stage: 'turn',
         modelRequested: targetModel,
+        promptVersion: PBL_TUTOR_PROMPT_VERSION,
         systemPrompt: PBL_TUTOR_SYSTEM_INSTRUCTION,
         userInput: prompt,
         config,
-        context: {
-          questionRef: request.questionRef,
-          competencyRef: request.competencyRef,
-          sessionId: request.sessionId,
-          episodeId: request.episodeId,
-          userId: (res.locals as any)?.userId,
-        },
+        context: auditContext,
       },
       attempts,
       response: responsePayload,
@@ -396,6 +405,16 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
     res.json(responsePayload);
   } catch (error: any) {
     console.error('[PBLTutor] Falha no parse da resposta do Gemini, ativando fallback construtivo:', error.message);
+    await aiAuditLogger.logCall({
+      status: 'erro_parse',
+      request: { route: 'pbl_tutor', stage: 'turn', modelRequested: targetModel,
+        promptVersion: PBL_TUTOR_PROMPT_VERSION, systemPrompt: PBL_TUTOR_SYSTEM_INSTRUCTION,
+        userInput: prompt, config, context: auditContext },
+      attempts: executionResult.attempts,
+      response: executionResult.result.text,
+      error: { type: error.name || 'ParseError', message: error.message },
+      startTime, endTime: Date.now(),
+    });
     const durationMs = Date.now() - startTime;
     const fallbackResponse = generateDeterministicFallback(
       request,
@@ -421,14 +440,9 @@ import { pblServerSessionRepository } from '../server/PBLServerSessionRepository
 async function resolveTokenUserId(req: Request): Promise<string | undefined> {
   const authorization = (typeof req.header === 'function' ? req.header("authorization") : (req.headers as any)?.authorization) || "";
   const token = authorization.startsWith("Bearer ") ? authorization.slice(7).trim() : "";
-  if (
-    token === "local-dev-token" ||
-    (process.env.NODE_ENV !== "production" &&
-      ((typeof req.header === 'function' && req.header("x-local-dev-user") === "true") ||
-        (req.headers as any)?.["x-local-dev-user"] === "true"))
-  ) {
-    return "local-test-user";
-  }
+  const localUserId = resolveLocalDevUserId(req);
+  if (localUserId) return localUserId;
+  if (token === 'local-dev-token') return undefined;
   if (!token || typeof process === 'undefined' || !process.versions?.node) return undefined;
   try {
     const { getApps } = await import('firebase-admin/app');
@@ -444,6 +458,13 @@ async function resolveTokenUserId(req: Request): Promise<string | undefined> {
   return undefined;
 }
 
+async function resolveRequestUserId(req: Request, res: Response): Promise<string | undefined> {
+  const existing = res.locals?.userId;
+  const userId = existing && existing !== 'guest' ? existing : await resolveTokenUserId(req);
+  if (userId) res.locals.userId = userId;
+  return userId;
+}
+
 // Handler para sincronização de sessões entre cliente e servidor
 export async function handlePBLSessionSync(req: Request, res: Response): Promise<void> {
   try {
@@ -454,10 +475,7 @@ export async function handlePBLSessionSync(req: Request, res: Response): Promise
     }
 
     // 1. Identidade verificada obrigatória (fail-closed)
-    let authenticatedUserId: string | undefined = (res.locals as any)?.userId;
-    if (!authenticatedUserId) {
-      authenticatedUserId = await resolveTokenUserId(req);
-    }
+    const authenticatedUserId = await resolveRequestUserId(req, res);
 
     if (!authenticatedUserId || authenticatedUserId === 'guest') {
       res.status(401).json({ error: 'Autenticação obrigatória para sincronizar sessão no servidor.' });
@@ -490,6 +508,10 @@ export async function handlePBLSessionSync(req: Request, res: Response): Promise
 
         if (attempt.userAnswer.length > 200) {
           res.status(400).json({ error: 'Tentativa inválida: resposta excede o limite permitido de caracteres.' });
+          return;
+        }
+        if (attempt.reasoning !== undefined && (typeof attempt.reasoning !== 'string' || attempt.reasoning.length > 6000)) {
+          res.status(400).json({ error: 'Tentativa inválida: o raciocínio deve ser um texto de até 6000 caracteres.' });
           return;
         }
 
@@ -614,10 +636,7 @@ export async function handlePBLTutorContext(req: Request, res: Response): Promis
     }
 
     // 1. Identificar autenticação do usuário
-    let authenticatedUserId: string | undefined = (res.locals as any)?.userId;
-    if (!authenticatedUserId) {
-      authenticatedUserId = await resolveTokenUserId(req);
-    }
+    const authenticatedUserId = await resolveRequestUserId(req, res);
 
     // Se a consulta for pública ou não autenticada, retorna estritamente a projeção sem resolução (fail-closed)
     if (!authenticatedUserId || authenticatedUserId === 'guest') {
@@ -678,4 +697,3 @@ export async function handlePBLTutorContext(req: Request, res: Response): Promis
     res.status(500).json({ error: 'Erro ao consultar questão do tutor.', details: err.message });
   }
 }
-

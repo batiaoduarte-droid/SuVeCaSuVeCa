@@ -9,6 +9,7 @@ import type {
   PBLQuestionPresentation,
 } from '../../types/pbl';
 import type { CadernoErroItem } from '../../types/suveca';
+import { PBLSessionRepository } from '../../lib/pbl/persistence/PBLSessionRepository';
 import {
   Send,
   Sparkles,
@@ -24,7 +25,13 @@ import {
   CheckCircle2,
   HelpCircle,
 } from 'lucide-react';
-import { auth } from '../../lib/firebase';
+import {
+  auth,
+  getCurrentUserToken,
+  isLocalAuthActive,
+  getActiveLocalUser,
+  LOCAL_TEST_USER,
+} from '../../lib/firebase';
 
 interface PBLTutorChatViewProps {
   session: PBLSession;
@@ -97,9 +104,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
 
   const getAuthToken = async (): Promise<string | null> => {
     try {
-      const currentUser = auth?.currentUser;
-      if (!currentUser) return null;
-      return await currentUser.getIdToken();
+      return await getCurrentUserToken();
     } catch {
       return null;
     }
@@ -111,6 +116,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
     const startTime = Date.now();
 
     try {
+      await PBLSessionRepository.prepareTutorSession(session);
       const token = await getAuthToken();
       const headers: Record<string, string> = {
         'Content-Type': 'application/json',
@@ -118,11 +124,17 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
       if (token) {
         headers['Authorization'] = `Bearer ${token}`;
       }
+      if (isLocalAuthActive()) {
+        headers['x-local-dev-user'] = 'true';
+        headers['x-local-user-id'] = getActiveLocalUser()?.uid || LOCAL_TEST_USER.uid;
+      }
 
       const res = await fetch('/api/pbl/tutor/turn', {
         method: 'POST',
         headers,
         body: JSON.stringify({
+          episodeId: episode.episodeId,
+          expectedAttemptId: episode.attemptId,
           sessionId: session.sessionId,
           competencyRef: episode.competencyRef,
           questionRef: episode.questionRef,
@@ -134,6 +146,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
             isCorrect: false,
             confidence: episode.initialConfidence,
             attemptStage: episode.attemptStage,
+            reasoning: episode.initialReasoning,
           },
           history: [],
           assistanceRequested: episode.assistanceLevel !== 'none',
@@ -168,6 +181,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
       if (episode.turns.some((t) => t.role === 'tutor' && t.content.trim() === data.pedagogicalText.trim())) return;
       onRecordTurn(tutorTurn);
     } catch (err: any) {
+      setErrorMessage(err?.message || 'Não foi possível conectar com o Professor PBL. Tente novamente.');
       console.warn('[PBLTutorChatView] Aviso no turno inicial do tutor, usando fallback pedagógico:', err?.message || err);
       if (episode.turns.some((t) => t.role === 'tutor')) return;
       // Fallback gracioso local se houver falha de rede total
@@ -215,12 +229,17 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
     onRecordTurn(studentTurn);
 
     try {
+      await PBLSessionRepository.prepareTutorSession(session);
       const token = await getAuthToken();
       const headers: Record<string, string> = {
         'Content-Type': 'application/json',
       };
       if (token) {
         headers['Authorization'] = `Bearer ${token}`;
+      }
+      if (isLocalAuthActive()) {
+        headers['x-local-dev-user'] = 'true';
+        headers['x-local-user-id'] = getActiveLocalUser()?.uid || LOCAL_TEST_USER.uid;
       }
 
       // Preparar histórico
@@ -234,6 +253,8 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
         method: 'POST',
         headers,
         body: JSON.stringify({
+          episodeId: episode.episodeId,
+          expectedAttemptId: episode.attemptId,
           sessionId: session.sessionId,
           competencyRef: episode.competencyRef,
           questionRef: episode.questionRef,
@@ -243,6 +264,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
             isCorrect: false,
             confidence: episode.initialConfidence,
             attemptStage: episode.attemptStage,
+            reasoning: episode.initialReasoning,
           },
           history: conversationHistory,
           directExplanationRequested: options?.directExplanation,
@@ -435,12 +457,29 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
                     : 'bg-indigo-600 text-white'
                 }`}
               >
-                {isTutor && turn.intent && (
-                  <div className="mb-2 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 border border-indigo-100 px-2 py-0.5 text-[10px] font-bold text-indigo-700">
-                      <Sparkles className="h-3 w-3" />
-                      {intentLabels[turn.intent] || turn.intent}
-                    </span>
+                {isTutor && (
+                  <div className="mb-2 flex flex-wrap items-center gap-1.5 text-[10px]">
+                    {Boolean(
+                      turn.executionMetadata &&
+                      !turn.executionMetadata.fallback &&
+                      turn.executionMetadata.model &&
+                      !turn.executionMetadata.model.includes('fallback')
+                    ) ? (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 px-2 py-0.5 font-bold text-emerald-800">
+                        <Sparkles className="h-3 w-3 text-emerald-600" />
+                        Chamada Real IA
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 border border-amber-200 px-2 py-0.5 font-bold text-amber-800">
+                        <BookOpen className="h-3 w-3 text-amber-600" />
+                        Base Canônica (Sem IA)
+                      </span>
+                    )}
+                    {turn.intent && (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 border border-indigo-100 px-2 py-0.5 font-semibold text-indigo-700">
+                        {intentLabels[turn.intent] || turn.intent}
+                      </span>
+                    )}
                     {turn.sourceRefs && turn.sourceRefs.length > 0 && (
                       <span className="text-[10px] text-slate-600 font-medium">
                         Fonte: {turn.sourceRefs[0]}

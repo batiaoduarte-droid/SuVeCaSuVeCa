@@ -10,9 +10,12 @@ import {
   ChevronDown,
   ChevronRight,
   ChevronUp,
+  Headphones,
   Lightbulb,
   RefreshCw,
   Sparkles,
+  Volume2,
+  VolumeX,
 } from 'lucide-react';
 import { toLearnerFacingContent } from '../lib/learnerContent';
 import { deriveErrorReviewStatus, scheduleFlashcard } from '../lib/spacedRepetition';
@@ -170,6 +173,129 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   const [isGeneratingFor, setIsGeneratingFor] = useState<string | null>(null);
   const [generationMessage, setGenerationMessage] = useState<string | null>(null);
   const [reviewClock, setReviewClock] = useState(() => Date.now());
+  const [isHandsFree, setIsHandsFree] = useState(false);
+  const [handsFreeStep, setHandsFreeStep] = useState<'idle' | 'question' | 'thinking' | 'answer' | 'advancing'>('idle');
+  const [handsFreeCycle, setHandsFreeCycle] = useState(0);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [audioLoading, setAudioLoading] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const handsFreeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isHandsFreeRef = useRef(isHandsFree);
+  isHandsFreeRef.current = isHandsFree;
+
+  const stopAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.onended = null;
+      audioRef.current.onerror = null;
+      audioRef.current = null;
+    }
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      if (utteranceRef.current) {
+        utteranceRef.current.onend = null;
+        utteranceRef.current.onerror = null;
+        utteranceRef.current = null;
+      }
+    }
+    if (handsFreeTimerRef.current) {
+      clearTimeout(handsFreeTimerRef.current);
+      handsFreeTimerRef.current = null;
+    }
+    setIsSpeaking(false);
+    setAudioLoading(false);
+    setHandsFreeStep('idle');
+  };
+
+  const fallbackBrowserSpeech = (text: string, onEnd?: () => void) => {
+    setAudioLoading(false);
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      const cleanText = toLearnerFacingContent(text).replace(/\[.*?\]/g, '').trim();
+      if (!cleanText) {
+        setIsSpeaking(false);
+        onEnd?.();
+        return;
+      }
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utteranceRef.current = utterance;
+      utterance.lang = 'pt-BR';
+      utterance.rate = 1.0;
+      utterance.onend = () => {
+        setIsSpeaking(false);
+        utteranceRef.current = null;
+        onEnd?.();
+      };
+      utterance.onerror = () => {
+        setIsSpeaking(false);
+        utteranceRef.current = null;
+        onEnd?.();
+      };
+      window.speechSynthesis.speak(utterance);
+    } else {
+      setIsSpeaking(false);
+      onEnd?.();
+    }
+  };
+
+  const speakText = async (text: string, onEnd?: () => void) => {
+    if (!text || typeof window === 'undefined') {
+      onEnd?.();
+      return;
+    }
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    setIsSpeaking(true);
+    setAudioLoading(true);
+
+    const cleanText = toLearnerFacingContent(text).replace(/\[.*?\]/g, '').trim();
+    if (!cleanText) {
+      setIsSpeaking(false);
+      setAudioLoading(false);
+      onEnd?.();
+      return;
+    }
+
+    try {
+      const response = await authenticatedFetch('/api/gemini/tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: cleanText }),
+      });
+      const data = await response.json();
+
+      if (response.ok && data.audioBase64) {
+        setAudioLoading(false);
+        const audio = new Audio(`data:${data.mimeType || 'audio/wav'};base64,${data.audioBase64}`);
+        audioRef.current = audio;
+        audio.onended = () => {
+          setIsSpeaking(false);
+          audioRef.current = null;
+          onEnd?.();
+        };
+        audio.onerror = () => {
+          fallbackBrowserSpeech(cleanText, onEnd);
+        };
+        await audio.play();
+        return;
+      }
+    } catch (err) {
+      console.warn('[TTS] Falha na síntese remota, usando sintetizador nativo:', err);
+    }
+
+    fallbackBrowserSpeech(cleanText, onEnd);
+  };
+
+  useEffect(() => {
+    return () => {
+      stopAudio();
+    };
+  }, []);
   const visibleFlashcards =
     flashcardScopeRef.current === storageKey ? flashcards : EDITORIAL_CARDS;
 
@@ -373,6 +499,103 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     setReviewFeedback(null);
   };
 
+  // Hands-free automated audio cycle
+  const chooseNextCardRef = useRef(chooseNextCard);
+  chooseNextCardRef.current = chooseNextCard;
+
+  useEffect(() => {
+    if (!isHandsFree || !activeCard) {
+      setHandsFreeStep('idle');
+      return;
+    }
+
+    let isMounted = true;
+    setHandsFreeStep('question');
+    setIsAnswerVisible(false);
+
+    // 1. Narrar a pergunta
+    void speakText(activeCard.front, () => {
+      if (!isMounted || !isHandsFreeRef.current) return;
+
+      // 2. Pausa reflexiva para o aluno pensar
+      setHandsFreeStep('thinking');
+      handsFreeTimerRef.current = setTimeout(() => {
+        if (!isMounted || !isHandsFreeRef.current) return;
+
+        // 3. Mostrar e narrar a resposta
+        setIsAnswerVisible(true);
+        setHandsFreeStep('answer');
+        void speakText(activeCard.back, () => {
+          if (!isMounted || !isHandsFreeRef.current) return;
+
+          // 4. Pausa de assimilação antes de auto-avançar
+          setHandsFreeStep('advancing');
+          handsFreeTimerRef.current = setTimeout(() => {
+            if (!isMounted || !isHandsFreeRef.current) return;
+            chooseNextCardRef.current();
+            setHandsFreeCycle((prev) => prev + 1);
+          }, 3500);
+        });
+      }, 4000);
+    });
+
+    return () => {
+      isMounted = false;
+      if (handsFreeTimerRef.current) {
+        clearTimeout(handsFreeTimerRef.current);
+        handsFreeTimerRef.current = null;
+      }
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      setIsSpeaking(false);
+      setAudioLoading(false);
+    };
+  }, [isHandsFree, activeCard?.id, handsFreeCycle]);
+
+  // Media Session API para fones de ouvido e controles de mídia
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('mediaSession' in navigator) || !activeCard) {
+      return;
+    }
+
+    try {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: toLearnerFacingContent(activeCard.front).slice(0, 120),
+        artist: 'SuVeCa Mãos Livres',
+        album: activeCard.topic || 'Flashcards de Português',
+      });
+
+      navigator.mediaSession.setActionHandler('play', () => {
+        setIsHandsFree(true);
+      });
+      navigator.mediaSession.setActionHandler('pause', () => {
+        setIsHandsFree(false);
+        stopAudio();
+      });
+      navigator.mediaSession.setActionHandler('nexttrack', () => {
+        chooseNextCardRef.current();
+        setHandsFreeCycle((prev) => prev + 1);
+      });
+    } catch (err) {
+      console.warn('[MediaSession] Controles de mídia não puderam ser vinculados:', err);
+    }
+
+    return () => {
+      if (typeof window !== 'undefined' && 'mediaSession' in navigator) {
+        try {
+          navigator.mediaSession.setActionHandler('play', null);
+          navigator.mediaSession.setActionHandler('pause', null);
+          navigator.mediaSession.setActionHandler('nexttrack', null);
+        } catch {}
+      }
+    };
+  }, [activeCard?.id, activeCard?.front, activeCard?.topic]);
+
   const generateFlashcardsForError = async (error: CadernoErroItem) => {
     setIsGeneratingFor(error.id);
     setGenerationMessage(null);
@@ -399,7 +622,11 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             id: `flash_${error.id}_${Date.now()}_${index}`,
             errorId: error.id,
             source: 'caderno',
+            moduleId: error.moduleRef,
             topic: error.conteudo,
+            conceptId: error.conceptId,
+            conceptIds: error.conceptIds,
+            learningObjectiveId: error.learningObjectiveId || error.competencyId,
             front: toLearnerFacingContent(card.front),
             back: toLearnerFacingContent(card.back),
             createdAt: now,
@@ -468,7 +695,11 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               id: `flash_${error.id}_${Date.now()}_${index}`,
               errorId: error.id,
               source: 'caderno',
+              moduleId: error.moduleRef,
               topic: error.conteudo,
+              conceptId: error.conceptId,
+              conceptIds: error.conceptIds,
+              learningObjectiveId: error.learningObjectiveId || error.competencyId,
               front: toLearnerFacingContent(card.front),
               back: toLearnerFacingContent(card.back),
               createdAt: now,
@@ -570,26 +801,50 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               </p>
             </div>
           </div>
-          {errorsWithoutCards.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
-              onClick={generateAllPendingCards}
-              disabled={isGeneratingFor !== null}
-              className="button-primary min-h-[44px] text-xs px-4 py-2.5 shrink-0"
+              onClick={() => {
+                if (isHandsFree) {
+                  setIsHandsFree(false);
+                  stopAudio();
+                } else {
+                  setIsHandsFree(true);
+                }
+              }}
+              className={`min-h-[44px] text-xs font-bold px-3.5 py-2 rounded-xl border flex items-center gap-2 transition ${
+                isHandsFree
+                  ? 'bg-violet-700 text-white border-violet-800 shadow-sm ring-2 ring-violet-300'
+                  : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+              }`}
+              aria-pressed={isHandsFree}
+              aria-label="Ativar modo mãos livres com narração em áudio"
             >
-              {isGeneratingFor === 'all' ? (
-                <>
-                  <RefreshCw className="w-4 h-4 animate-spin" />
-                  <span>Gerando cards...</span>
-                </>
-              ) : (
-                <>
-                  <Sparkles className="w-4 h-4" />
-                  <span>Gerar cards pendentes ({errorsWithoutCards.length})</span>
-                </>
-              )}
+              <Volume2 className={`w-4 h-4 ${isHandsFree ? 'text-amber-300 animate-pulse' : 'text-slate-500'}`} />
+              <span>{isHandsFree ? 'Mãos Livres (Ativo)' : 'Modo Mãos Livres'}</span>
             </button>
-          )}
+
+            {errorsWithoutCards.length > 0 && (
+              <button
+                type="button"
+                onClick={generateAllPendingCards}
+                disabled={isGeneratingFor !== null}
+                className="button-primary min-h-[44px] text-xs px-4 py-2.5 shrink-0"
+              >
+                {isGeneratingFor === 'all' ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 animate-spin" />
+                    <span>Gerando cards...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-4 h-4" />
+                    <span>Gerar cards pendentes ({errorsWithoutCards.length})</span>
+                  </>
+                )}
+              </button>
+            )}
+          </div>
         </div>
 
         {generationMessage && (
@@ -675,8 +930,69 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             </span>
           </div>
 
+          {isHandsFree && (
+            <div className="bg-gradient-to-r from-violet-900 to-indigo-950 text-white rounded-2xl p-4 border border-violet-700/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-violet-800/80 border border-violet-600/40 flex items-center justify-center shrink-0">
+                  <Headphones className="w-5 h-5 text-amber-300 animate-pulse" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <p className="text-xs font-bold text-violet-100">Player Mãos Livres Ativo</p>
+                    <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-violet-800 text-amber-300 border border-violet-700">
+                      Auto-avanço
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-violet-200 mt-0.5 font-medium">
+                    {handsFreeStep === 'question' && 'Narrando pergunta...'}
+                    {handsFreeStep === 'thinking' && 'Pausa reflexiva (4s)... Pense na resposta!'}
+                    {handsFreeStep === 'answer' && 'Narrando resposta e regra gramatical...'}
+                    {handsFreeStep === 'advancing' && 'Avançando automaticamente para o próximo cartão...'}
+                    {handsFreeStep === 'idle' && 'Aguardando próximo ciclo...'}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 self-end sm:self-center">
+                <button
+                  type="button"
+                  onClick={() => {
+                    chooseNextCard();
+                    setHandsFreeCycle((c) => c + 1);
+                  }}
+                  className="min-h-[38px] text-xs px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 transition font-medium flex items-center gap-1.5"
+                >
+                  <span>Pular</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsHandsFree(false);
+                    stopAudio();
+                  }}
+                  className="min-h-[38px] text-xs px-3.5 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold transition flex items-center gap-1.5"
+                >
+                  <VolumeX className="w-3.5 h-3.5" />
+                  <span>Parar</span>
+                </button>
+              </div>
+            </div>
+          )}
+
           <div className="min-h-40 flex flex-col justify-center rounded-2xl bg-slate-50 border border-slate-200 p-5 sm:p-7">
-            <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 mb-3">Pergunta / Desafio Sintático</span>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">Pergunta / Desafio Sintático</span>
+              <button
+                type="button"
+                onClick={() => void speakText(activeCard.front)}
+                disabled={isSpeaking || audioLoading}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-teal-800 bg-white border border-slate-200 hover:border-teal-300 rounded-lg px-2.5 py-1 transition"
+                aria-label="Ouvir pergunta"
+              >
+                <Volume2 className={`w-3.5 h-3.5 ${isSpeaking ? 'text-teal-600 animate-pulse' : 'text-slate-500'}`} />
+                <span>{audioLoading ? 'Carregando...' : isSpeaking ? 'Ouvindo...' : 'Ouvir'}</span>
+              </button>
+            </div>
             <p className="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">{toLearnerFacingContent(activeCard.front)}</p>
             {activeCard.hint && !isAnswerVisible && (
               <div className="mt-4">
@@ -714,6 +1030,19 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                   blocks: [],
                 }}
               />
+
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => void speakText(activeCard.back)}
+                  disabled={isSpeaking || audioLoading}
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-teal-800 bg-white border border-slate-200 hover:border-teal-300 rounded-lg px-2.5 py-1 transition"
+                  aria-label="Ouvir resposta"
+                >
+                  <Volume2 className={`w-3.5 h-3.5 ${isSpeaking ? 'text-teal-600 animate-pulse' : 'text-slate-500'}`} />
+                  <span>{audioLoading ? 'Carregando áudio...' : isSpeaking ? 'Ouvindo...' : 'Ouvir resposta'}</span>
+                </button>
+              </div>
 
               {activeCard.explanation && (
                 <div className="space-y-3">

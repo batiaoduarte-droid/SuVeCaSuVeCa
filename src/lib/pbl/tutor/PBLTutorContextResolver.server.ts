@@ -283,18 +283,19 @@ class PBLTutorContextResolver {
   }
 
   private enrichLoadedContext(context: PBLTutorQuestionContext): PBLTutorQuestionContext {
+    let updated = context;
     if (context.criteria?.rules && (!context.pedagogy?.rules || context.pedagogy.rules.length === 0)) {
-      return {
-        ...context,
+      updated = {
+        ...updated,
         pedagogy: {
-          ...context.pedagogy,
+          ...updated.pedagogy,
           rules: context.criteria.rules,
           procedures: context.criteria.procedures,
           contrasts: context.criteria.contrasts,
         },
       };
     }
-    return context;
+    return updated;
   }
 
   /**
@@ -337,6 +338,7 @@ class PBLTutorContextResolver {
       presentation: {
         ...context.presentation,
         officialAnswer: 'REDACTED',
+        commentary: undefined,
       },
       officialCommentary: undefined,
       solutionStrategy: undefined,

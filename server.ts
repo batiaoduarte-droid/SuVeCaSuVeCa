@@ -1,8 +1,10 @@
 import express from "express";
 import path from "path";
 import dotenv from "dotenv";
+import { createServer as createHttpServer } from "node:http";
+import { WebSocketServer } from "ws";
 import { createServer as createViteServer } from "vite";
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenAI, Modality, Type } from "@google/genai";
 import {
   formatKnowledgeContext,
   KNOWLEDGE_BUILD,
@@ -29,11 +31,13 @@ import {
 } from "./src/lib/pbl/tutor/pblTutorServerRoute";
 import { geminiKeyManager } from "./src/lib/ai/geminiKeyManager.server";
 import { aiAuditLogger } from "./src/lib/audit/aiAuditLogger.server";
+import { createRequireApiUser } from "./src/lib/auth/requireApiUser.server";
 
 // Local development follows the README and keeps the Gemini key in .env.local.
 // Load it first, then use .env only as a fallback for values not already set.
 dotenv.config({ path: '.env.local' });
 dotenv.config();
+process.env.NODE_ENV ??= "development";
 
 const app = express();
 const PORT = 3000;
@@ -51,10 +55,10 @@ const APPROVED_GEMINI_MODELS = new Set([
   "gemini-3.1-flash-tts-preview",
   "gemini-3.1-flash-live-preview",
 ]);
-const resolveModel = (value: unknown) =>
+const resolveModel = (value: unknown, fallback: string = "gemini-3.1-flash-lite") =>
   typeof value === "string" && APPROVED_GEMINI_MODELS.has(value)
     ? value
-    : "gemini-3.1-flash-lite";
+    : fallback;
 
 const adminApp = (() => {
   try {
@@ -72,56 +76,9 @@ const adminApp = (() => {
 })();
 
 const aiRateLimits = new Map<string, { windowStartedAt: number; count: number }>();
-const requireFirebaseUser: express.RequestHandler = async (req, res, next) => {
-  const authorization = req.header("authorization") || "";
-  const token = authorization.startsWith("Bearer ") ? authorization.slice(7).trim() : "";
-  if (
-    token === "local-dev-token" ||
-    (process.env.NODE_ENV !== "production" && req.header("x-local-dev-user") === "true")
-  ) {
-    res.locals.userId = "local-test-user";
-    return next();
-  }
-  if (!token) return res.status(401).json({ error: "Entre na sua conta para usar este recurso." });
-  if (!adminApp) {
-    if (process.env.NODE_ENV !== "production") {
-      res.locals.userId = "local-test-user";
-      return next();
-    }
-    return res.status(503).json({ error: "Serviço de autenticação Firebase Admin indisponível no servidor." });
-  }
-  try {
-    const decoded = await getAdminAuth(adminApp).verifyIdToken(token);
-    res.locals.userId = decoded.uid;
-    return next();
-  } catch {
-    return res.status(401).json({ error: "Sua sessão expirou. Entre novamente para continuar." });
-  }
-};
-
-const resolveUserOptional: express.RequestHandler = async (req, res, next) => {
-  const authorization = req.header("authorization") || "";
-  const token = authorization.startsWith("Bearer ") ? authorization.slice(7).trim() : "";
-  if (
-    token === "local-dev-token" ||
-    (process.env.NODE_ENV !== "production" && req.header("x-local-dev-user") === "true")
-  ) {
-    res.locals.userId = "local-test-user";
-    return next();
-  }
-  if (!token || !adminApp) {
-    res.locals.userId = "guest";
-    return next();
-  }
-  try {
-    const decoded = await getAdminAuth(adminApp).verifyIdToken(token);
-    res.locals.userId = decoded.uid;
-    return next();
-  } catch {
-    res.locals.userId = "guest";
-    return next();
-  }
-};
+const requireFirebaseUser = createRequireApiUser(
+  adminApp ? (token) => getAdminAuth(adminApp).verifyIdToken(token) : null,
+);
 
 const limitAiRequests: express.RequestHandler = (req, res, next) => {
   const key = String(res.locals.userId || req.ip || "anonymous");
@@ -144,8 +101,9 @@ app.use(
     "/api/gemini/generate-error-flashcards",
     "/api/pbl/tutor/turn",
     "/api/pedagogy/evaluate-explanation",
+    "/api/gemini/tts",
   ],
-  resolveUserOptional,
+  requireFirebaseUser,
   limitAiRequests,
 );
 
@@ -441,7 +399,7 @@ Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cad
 app.post("/api/gemini/explain", async (req, res) => {
   const executionStartTime = Date.now();
   try {
-    const { question, context, history, model } = req.body || {};
+    const { question, context, history, model, studentProfile } = req.body || {};
     if (typeof question !== "string" || !question.trim()) {
       return res.status(400).json({ error: "Pergunta não informada." });
     }
@@ -461,12 +419,22 @@ app.post("/api/gemini/explain", async (req, res) => {
       ? safeHistory.map((message) => `${message.role === "user" ? "Aluno" : "Professor"}: ${message.text}`).join("\n\n")
       : "Sem mensagens anteriores relevantes.";
 
+    const studentProfileContext =
+      Array.isArray(studentProfile?.recentErrors) && studentProfile.recentErrors.length > 0
+        ? `PERFIL COGNITIVO DO ALUNO (Erros Recentes Cadastrados no Caderno de Erros):
+${studentProfile.recentErrors
+  .slice(0, 5)
+  .map((e: any) => `- Tópico: ${e.topic || "Geral"} | Regra violada: ${e.rule || ""}`)
+  .join("\n")}
+(Atenção pedagógica: Aborde a dúvida atual reforçando distinções claras contra essas armadilhas caso o assunto guarde qualquer correlação.)\n\n`
+        : "";
+
     const knowledgeRecords = await retrieveKnowledge(`${safeContext} ${safeQuestion}`, 3);
     const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const officialQuestionContext = await formatOfficialQuestionContext(`${safeContext} ${safeQuestion}`, 2);
     const prompt = `Contexto da aula: ${safeContext}
 
-HISTÓRICO RECENTE:
+${studentProfileContext}HISTÓRICO RECENTE:
 ${conversationContext}
 
 DÚVIDA ATUAL DO ALUNO:
@@ -494,7 +462,7 @@ REGRAS PARA sourceRefs:
  - Trate o corpus_apostila como autoridade normativa e a Integracao_Pedagogica como expansão didática. Preserve também o conteúdo das questões editoriais citado; não o corrija, reescreva nem atribua à SuVeCA.
 - Quando relações sintáticas forem decisivas, aplique a SuVeCA como mapa relacional, preservando ordem inversa, omissões e orações sem sujeito. Não force a metodologia em questões puramente gráficas, lexicais ou discursivas.`;
 
-    const selectedModel = resolveModel(model);
+    const selectedModel = resolveModel(model, "gemini-3.1-flash-lite");
     const systemInstruction =
       "Você é o Professor SuVeCA, tutor ancorado na Base Editorial SuVeCA. O corpus_apostila é a autoridade normativa; a Integracao_Pedagogica organiza e expande o conteúdo para o ensino; a SuVeCA é o mapa metodológico que reconstrói relações sintáticas sem impor ordem linear. Use o mapa quando ele ajudar a decisão e explicite seus limites quando a questão pertencer à forma, ao léxico, ao texto ou ao discurso. Preserve a separação e a hierarquia entre essas camadas, aplique limites, exceções, contrastes e testes decisórios, responda com rigor pedagógico e mantenha toda proveniência exclusivamente em sourceRefs.";
 
@@ -596,7 +564,7 @@ REGRAS PARA sourceRefs:
       endTime: Date.now(),
     });
 
-    return res.json({ answerMarkdown, sourceRefs });
+    return res.json({ answerMarkdown, sourceRefs, isRealAi: true });
   } catch (error: any) {
     console.error("Erro no Professor SuVeCA:", error);
     return res.status(500).json({
@@ -608,12 +576,12 @@ REGRAS PARA sourceRefs:
 
 // API: Generate Custom Questões
 app.post("/api/gemini/generate-questions", async (req, res) => {
+  const executionStartTime = Date.now();
   try {
     const { topic, bank, count, model } = req.body;
     const safeTopic = typeof topic === "string" ? topic.trim().slice(0, 240) : "Concordância";
     const safeBank = typeof bank === "string" ? bank.trim().slice(0, 80) : "CEBRASPE / FGV";
     const safeCount = Math.min(5, Math.max(1, Number(count) || 3));
-    const ai = getGenAIClient();
     const knowledgeRecords = await retrieveKnowledge(`${safeTopic} ${safeBank}`, 3);
     const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const officialQuestionContext = await formatOfficialQuestionContext(`${safeTopic} ${safeBank}`, 2);
@@ -626,54 +594,110 @@ ${officialQuestionContext}
 
 Use a Base Editorial como sustentação conceitual: o corpus_apostila é a autoridade normativa e a Integracao_Pedagogica fornece a expansão didática. Quando a resolução depender de relações sintáticas, use a SuVeCA como mapa — não como ordem obrigatória — e respeite termos omitidos e orações sem sujeito; não a force em fenômenos de outra camada. As questões editoriais acima servem apenas como referência de incidência e formato. Não copie, corrija nem reescreva seus enunciados ou soluções. Forneça questões novas com enunciado, alternativas/opções ou julgamento Certo/Errado, resposta correta, comentário gramatical detalhado e sourceRefs separados. O comentário é conteúdo do aluno e não pode conter EDITORIAL, CORPUS, QUESTION, PASSAGE, KB ou IDs técnicos; as referências internas ficam exclusivamente em sourceRefs.`;
 
-    const selectedModel = resolveModel(model);
-
-    const response = await withAiTimeout(ai.models.generateContent({
-      model: selectedModel,
-      contents: prompt,
-      config: {
-        systemInstruction: "Você é um elaborador de questões de Língua Portuguesa para concursos públicos ancorado na Base Editorial SuVeCA. Preserve a autoridade normativa do corpus_apostila, use a Integracao_Pedagogica para clareza, gradação e qualidade didática e aplique a SuVeCA apenas como mapa de relações sintáticas quando ela for pertinente, nunca como molde linear, sem inventar proveniência.",
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            questions: {
-              type: Type.ARRAY,
-              items: {
-                type: Type.OBJECT,
-                properties: {
-                  id: { type: Type.STRING },
-                  type: { type: Type.STRING, description: "CERTO_ERRADO ou MULTIPLA_ESCOLHA" },
-                  bank: { type: Type.STRING },
-                  topic: { type: Type.STRING },
-                  supportText: { type: Type.STRING, description: "Texto de apoio opcional" },
-                  questionText: { type: Type.STRING },
-                  options: {
-                    type: Type.ARRAY,
-                    items: {
-                      type: Type.OBJECT,
-                      properties: {
-                        letter: { type: Type.STRING },
-                        text: { type: Type.STRING },
-                      },
+    const selectedModel = resolveModel(model, "gemini-3.8-flash");
+    const config = {
+      systemInstruction: "Você é um elaborador de questões de Língua Portuguesa para concursos públicos ancorado na Base Editorial SuVeCA. Preserve a autoridade normativa do corpus_apostila, use a Integracao_Pedagogica para clareza, gradação e qualidade didática e aplique a SuVeCA apenas como mapa de relações sintáticas quando ela for pertinente, nunca como molde linear, sem inventar proveniência.",
+      responseMimeType: "application/json",
+      responseSchema: {
+        type: Type.OBJECT,
+        properties: {
+          questions: {
+            type: Type.ARRAY,
+            items: {
+              type: Type.OBJECT,
+              properties: {
+                id: { type: Type.STRING, description: "ID único curto da questão gerada" },
+                type: { type: Type.STRING, description: "CERTO_ERRADO ou MULTIPLA_ESCOLHA" },
+                bank: { type: Type.STRING },
+                topic: { type: Type.STRING },
+                supportText: { type: Type.STRING, description: "Texto base ou excerto curto de apoio, quando necessário" },
+                questionText: { type: Type.STRING, description: "Comando ou item assertivo da questão" },
+                options: {
+                  type: Type.ARRAY,
+                  items: {
+                    type: Type.OBJECT,
+                    properties: {
+                      letter: { type: Type.STRING },
+                      text: { type: Type.STRING },
                     },
+                    required: ["letter", "text"],
                   },
-                  correctAnswer: { type: Type.STRING, description: "C ou E se for Certo/Errado, ou A, B, C, D, E" },
-                  commentary: { type: Type.STRING, description: "Comentário pedagógico completo com a regra decisiva" },
-                  sourceRefs: {
-                    type: Type.ARRAY,
-                    items: { type: Type.STRING },
-                    description: "Referências internas EDITORIAL, CORPUS e, quando usada como referência de incidência, QUESTION.",
-                  },
+                  description: "Lista de 4 a 5 alternativas quando MULTIPLA_ESCOLHA",
                 },
-                required: ["id", "type", "questionText", "correctAnswer", "commentary", "sourceRefs"],
+                correctAnswer: { type: Type.STRING, description: "C ou E para CERTO_ERRADO; letra A, B, C, D ou E para MULTIPLA_ESCOLHA" },
+                commentary: { type: Type.STRING, description: "Comentário pedagógico completo com a regra decisiva" },
+                sourceRefs: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Referências internas EDITORIAL, CORPUS e, quando usada como referência de incidência, QUESTION.",
+                },
               },
+              required: ["id", "type", "questionText", "correctAnswer", "commentary", "sourceRefs"],
             },
           },
-          required: ["questions"],
         },
+        required: ["questions"],
       },
-    }));
+    };
+
+    let response: any;
+    let attempts: any[] = [];
+    let effectiveModel = selectedModel;
+    try {
+      const result = await geminiKeyManager.executeWithKeyRotation(
+        selectedModel,
+        (client) =>
+          withAiTimeout(
+            client.models.generateContent({
+              model: selectedModel,
+              contents: prompt,
+              config,
+            }),
+            60_000
+          ),
+        { userAgent: "suveca-questions" }
+      );
+      response = result.result;
+      attempts = result.attempts || [];
+    } catch (primaryErr: any) {
+      if (selectedModel === "gemini-3.8-flash") {
+        console.warn("[Questions] 3.8-flash esgotou quota ou timeout. Fallback para 3.5-flash-lite:", primaryErr?.message);
+        effectiveModel = "gemini-3.5-flash-lite";
+        const fallbackResult = await geminiKeyManager.executeWithKeyRotation(
+          "gemini-3.5-flash-lite",
+          (client) =>
+            withAiTimeout(
+              client.models.generateContent({
+                model: "gemini-3.5-flash-lite",
+                contents: prompt,
+                config,
+              }),
+              30_000
+            ),
+          { userAgent: "suveca-questions-fallback" }
+        );
+        response = fallbackResult.result;
+        attempts = [...(primaryErr?.attempts || []), ...(fallbackResult.attempts || [])];
+      } else {
+        void aiAuditLogger.logCall({
+          status: "erro_provider",
+          request: {
+            route: "gemini_generate_questions",
+            stage: "question_generation",
+            modelRequested: selectedModel,
+            systemPrompt: config.systemInstruction,
+            userInput: prompt,
+            config,
+            context: { userId: res.locals.userId, topic: safeTopic, bank: safeBank },
+          },
+          attempts: (primaryErr as any)?.attempts || [],
+          error: { type: primaryErr.name || "APIError", message: primaryErr.message },
+          startTime: executionStartTime,
+          endTime: Date.now(),
+        });
+        throw primaryErr;
+      }
+    }
 
     const jsonStr = response.text || "{}";
     const data = JSON.parse(jsonStr);
@@ -693,6 +717,24 @@ Use a Base Editorial como sustentação conceitual: o corpus_apostila é a autor
     if (!questions.length) {
       return res.status(422).json({ error: "A base não sustentou questões inéditas com proveniência verificável para este pedido." });
     }
+
+    void aiAuditLogger.logCall({
+      status: "concluida",
+      request: {
+        route: "gemini_generate_questions",
+        stage: "question_generation",
+        modelRequested: effectiveModel,
+        systemPrompt: config.systemInstruction,
+        userInput: prompt,
+        config,
+        context: { userId: res.locals.userId, topic: safeTopic, bank: safeBank },
+      },
+      attempts,
+      response: { questionsCount: questions.length },
+      startTime: executionStartTime,
+      endTime: Date.now(),
+    });
+
     return res.json({ questions });
   } catch (error: any) {
     console.error("Erro ao gerar questões:", error);
@@ -720,7 +762,6 @@ app.post("/api/gemini/generate-error-flashcards", async (req, res) => {
 
     const cardCount = Math.min(Math.max(Number(count) || 2, 1), 4);
     const truncate = (value: string) => value.trim().slice(0, 2400);
-    const ai = getGenAIClient();
     const knowledgeRecords = await retrieveKnowledge(`${error.conteudo} ${error.regraDecisiva}`, 2);
     const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
     const prompt = `Transforme o seguinte registro do Caderno de Erros em ${cardCount} flashcards curtos de revisão ativa.
@@ -741,52 +782,62 @@ Para cada flashcard produza:
 
 A explicação não deve apenas repetir o verso. Não invente regras sem apoio na Base Editorial: o corpus_apostila é a autoridade normativa e a Integracao_Pedagogica é a expansão didática. Nenhum texto de front, back, hint ou explanation pode conter EDITORIAL, CORPUS, QUESTION, PASSAGE, KB, IDs ou referências técnicas; mantenha-os exclusivamente em sourceRefs.`;
 
-    const response = await withAiTimeout(ai.models.generateContent({
-      model: resolveModel(model),
-      contents: prompt,
-      config: {
-        systemInstruction:
-          "Você é um professor de Língua Portuguesa para concursos ancorado na Base Editorial SuVeCA. Crie flashcards claros, autocontidos e focados em revisar a regra decisiva; preserve a autoridade normativa do corpus_apostila, use a Integracao_Pedagogica para aprofundamento didático e aplique a SuVeCA, quando pertinente, como mapa de relações sintáticas que admite inversões, omissões e ausência de sujeito.",
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            flashcards: {
-              type: Type.ARRAY,
-              items: {
+    const selectedModel = resolveModel(model, "gemini-3.5-flash-lite");
+    const executionResult = await geminiKeyManager.executeWithKeyRotation(
+      selectedModel,
+      (client) =>
+        withAiTimeout(
+          client.models.generateContent({
+            model: selectedModel,
+            contents: prompt,
+            config: {
+              systemInstruction:
+                "Você é um professor de Língua Portuguesa para concursos ancorado na Base Editorial SuVeCA. Crie flashcards claros, autocontidos e focados em revisar a regra decisiva; preserve a autoridade normativa do corpus_apostila, use a Integracao_Pedagogica para aprofundamento didático e aplique a SuVeCA, quando pertinente, como mapa de relações sintáticas que admite inversões, omissões e ausência de sujeito.",
+              responseMimeType: "application/json",
+              responseSchema: {
                 type: Type.OBJECT,
                 properties: {
-                  front: {
-                    type: Type.STRING,
-                    description: "Pergunta de recuperação ativa, em português do Brasil.",
-                  },
-                  back: {
-                    type: Type.STRING,
-                    description: "Resposta explicada, breve e correta.",
-                  },
-                  hint: {
-                    type: Type.STRING,
-                    description: "Dica curta opcional, sem entregar a resposta inteira.",
-                  },
-                  explanation: {
-                    type: Type.STRING,
-                    description: "Aprofundamento pedagógico com raciocínio, exemplo, contraste e pegadinha, sem IDs técnicos.",
-                  },
-                  sourceRefs: {
+                  flashcards: {
                     type: Type.ARRAY,
-                    items: { type: Type.STRING },
-                    description: "Referências internas EDITORIAL e CORPUS efetivamente utilizadas.",
+                    items: {
+                      type: Type.OBJECT,
+                      properties: {
+                        front: {
+                          type: Type.STRING,
+                          description: "Pergunta de recuperação ativa, em português do Brasil.",
+                        },
+                        back: {
+                          type: Type.STRING,
+                          description: "Resposta explicada, breve e correta.",
+                        },
+                        hint: {
+                          type: Type.STRING,
+                          description: "Dica curta opcional, sem entregar a resposta inteira.",
+                        },
+                        explanation: {
+                          type: Type.STRING,
+                          description: "Aprofundamento pedagógico com raciocínio, exemplo, contraste e pegadinha, sem IDs técnicos.",
+                        },
+                        sourceRefs: {
+                          type: Type.ARRAY,
+                          items: { type: Type.STRING },
+                          description: "Referências internas EDITORIAL e CORPUS efetivamente utilizadas.",
+                        },
+                      },
+                      required: ["front", "back", "explanation", "sourceRefs"],
+                    },
                   },
                 },
-                required: ["front", "back", "explanation", "sourceRefs"],
+                required: ["flashcards"],
               },
             },
-          },
-          required: ["flashcards"],
-        },
-      },
-    }));
+          }),
+          30_000
+        ),
+      { userAgent: "suveca-error-flashcards" }
+    );
 
+    const response = executionResult.result;
     const data = JSON.parse(response.text || "{}");
     const flashcards = Array.isArray(data.flashcards)
       ? data.flashcards.map((card: any) => ({
@@ -806,6 +857,76 @@ A explicação não deve apenas repetir o verso. Não invente regras sem apoio n
     return res.status(500).json({
       error: "Não foi possível gerar flashcards via IA no momento.",
       details: error.message,
+    });
+  }
+});
+
+// API: Text-to-Speech (Modo Mãos Livres nos Flashcards)
+app.post("/api/gemini/tts", async (req, res) => {
+  try {
+    const { text, voice, model } = req.body || {};
+    if (typeof text !== "string" || !text.trim()) {
+      return res.status(400).json({ error: "Texto não informado para síntese de áudio." });
+    }
+
+    const safeText = text.trim().slice(0, 1200);
+    const selectedModel = resolveModel(model, "gemini-3.1-flash-tts-preview");
+
+    try {
+      const result = await geminiKeyManager.executeWithKeyRotation(
+        selectedModel,
+        (client) =>
+          withAiTimeout(
+            client.models.generateContent({
+              model: selectedModel,
+              contents: [
+                {
+                  role: "user",
+                  parts: [{ text: safeText }],
+                },
+              ],
+              config: {
+                responseModalities: [Modality.AUDIO],
+                speechConfig: {
+                  voiceConfig: {
+                    prebuiltVoiceConfig: {
+                      voiceName: voice || "Puck",
+                    },
+                  },
+                } as any,
+              },
+            }),
+            25_000
+          ),
+        { userAgent: "suveca-tts" }
+      );
+
+      const candidate = result.result?.candidates?.[0];
+      const audioPart = candidate?.content?.parts?.find(
+        (part: any) => part.inlineData && typeof part.inlineData.data === "string"
+      );
+
+      if (audioPart?.inlineData?.data) {
+        return res.json({
+          audioBase64: audioPart.inlineData.data,
+          mimeType: audioPart.inlineData.mimeType || "audio/wav",
+          provider: "gemini-tts",
+        });
+      }
+    } catch (ttsErr: any) {
+      console.warn("[TTS] Gemini TTS indisponível no momento, instruindo fallback:", ttsErr?.message);
+    }
+
+    return res.json({
+      fallbackToSpeechSynthesis: true,
+      text: safeText,
+      provider: "browser-fallback",
+    });
+  } catch (error: any) {
+    console.error("Erro na síntese vocal:", error);
+    return res.status(500).json({
+      error: "Erro na síntese vocal.",
+      fallbackToSpeechSynthesis: true,
     });
   }
 });
@@ -880,7 +1001,7 @@ SUA MISSÃO PEDAGÓGICA (MÉTODO FEYNMAN / AUTOEXPLICAÇÃO):
     }
     contents.push({ text: promptText });
 
-    const selectedModel = resolveModel(model);
+    const selectedModel = resolveModel(model, "gemini-3.5-flash-lite");
     const executionStartTime = Date.now();
     const systemInstruction =
       "Você é o Tutor Socrático do SuVeCA para Autoexplicação e Método Feynman. Use prioritariamente a Base Editorial SuVeCA: o corpus_apostila é a autoridade normativa e a Integracao_Pedagogica é a expansão didática. Avalie se o raciocínio oral ou escrito expressa compreensão real e critérios decisivos. Mantenha os identificadores técnicos exclusivamente no campo sourceRefs.";
@@ -1115,7 +1236,97 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
+  const httpServer = createHttpServer(app);
+
+  // WebSocket relay para Gemini Live Duplex (Fase 3: Sabatina Oral Feynman em tempo real)
+  // Compatível com Cloud Run (suporta bidi-streaming, HTTP/2 e WebSocket com keep-alive)
+  const wss = new WebSocketServer({ server: httpServer, path: "/api/gemini/live" });
+  wss.on("connection", async (ws: any) => {
+    console.log("[LiveAPI] Cliente conectado à Sabatina Oral Feynman");
+    let liveSession: any = null;
+
+    // Keep-alive heartbeat para conexões Cloud Run
+    const keepAliveInterval = setInterval(() => {
+      if (ws.readyState === ws.OPEN) {
+        ws.ping();
+      }
+    }, 25000);
+
+    try {
+      const liveClient = geminiKeyManager.getGenAIClient(null, "suveca-live-duplex");
+      liveSession = await liveClient.live.connect({
+        model: "gemini-3.1-flash-live-preview",
+        config: {
+          responseModalities: [Modality.AUDIO],
+          systemInstruction: {
+            parts: [
+              {
+                text: "Você é o Professor SuVeCA em sabatina oral socrática (Método Feynman). Conduza a arguição em português do Brasil com respostas faladas curtas e desafiadoras sobre Língua Portuguesa para concursos.",
+              },
+            ],
+          },
+        },
+        callbacks: {
+          onmessage: (serverMessage: any) => {
+            if (ws.readyState === ws.OPEN) {
+              ws.send(JSON.stringify(serverMessage));
+            }
+          },
+          onerror: (err: any) => {
+            console.error("[LiveAPI] Erro na sessão Gemini Live:", err?.message);
+            if (ws.readyState === ws.OPEN) {
+              ws.send(JSON.stringify({ type: "error", message: err?.message || "Erro no canal de áudio da IA" }));
+            }
+          },
+          onclose: () => {
+            console.log("[LiveAPI] Sessão Gemini Live encerrada");
+            if (ws.readyState === ws.OPEN) {
+              ws.close();
+            }
+          },
+        },
+      });
+    } catch (connectErr: any) {
+      console.error("[LiveAPI] Não foi possível conectar ao Gemini Live:", connectErr?.message);
+      clearInterval(keepAliveInterval);
+      if (ws.readyState === ws.OPEN) {
+        ws.send(JSON.stringify({ type: "error", message: "Serviço Gemini Live indisponível no momento." }));
+        ws.close();
+      }
+      return;
+    }
+
+    ws.on("message", (data: any) => {
+      try {
+        if (liveSession) {
+          const payload = JSON.parse(data.toString());
+          if (payload.realtimeInput && typeof liveSession.sendRealtimeInput === "function") {
+            liveSession.sendRealtimeInput(payload.realtimeInput);
+          } else if ((payload.audio || payload.text) && typeof liveSession.sendRealtimeInput === "function") {
+            liveSession.sendRealtimeInput(payload);
+          } else if (typeof liveSession.sendClientContent === "function") {
+            liveSession.sendClientContent(payload);
+          }
+        }
+      } catch (parseErr) {
+        console.warn("[LiveAPI] Mensagem de áudio/texto inválida:", parseErr);
+      }
+    });
+
+    ws.on("close", () => {
+      console.log("[LiveAPI] Conexão encerrada pelo cliente");
+      clearInterval(keepAliveInterval);
+      if (liveSession) {
+        try {
+          liveSession.close();
+        } catch {
+          // ignore
+        }
+      }
+    });
+  });
+
+  httpServer.listen(PORT, "0.0.0.0", () => {
     console.log(`SuVeCA Server running on http://localhost:${PORT}`);
   });
 }

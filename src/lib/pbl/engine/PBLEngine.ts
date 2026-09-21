@@ -499,6 +499,7 @@ export class PBLEngine {
             attemptStage: attempt.stage,
             initialUserAnswer: attempt.userAnswer,
             initialConfidence: attempt.confidence,
+            initialReasoning: attempt.reasoning,
           });
         } else {
           session.phase = 'diagnostic';
@@ -519,6 +520,7 @@ export class PBLEngine {
             attemptStage: attempt.stage,
             initialUserAnswer: attempt.userAnswer,
             initialConfidence: attempt.confidence,
+            initialReasoning: attempt.reasoning,
           });
         } else {
           session.phase = 'diagnostic';
@@ -595,6 +597,7 @@ export class PBLEngine {
       attemptStage: PBLAttemptStage;
       initialUserAnswer?: string;
       initialConfidence?: PBLConfidenceLevel;
+      initialReasoning?: string;
       assistanceRequested?: boolean;
     }
   ): PBLTutorEpisode {
@@ -625,6 +628,7 @@ export class PBLEngine {
       intervention: diagnostic ? session.lastInterventionPayload : undefined,
       initialUserAnswer: attempt?.userAnswer,
       initialConfidence: params.initialConfidence,
+      initialReasoning: attempt?.reasoning || params.initialReasoning,
       assistanceLevel,
       startedAt: now,
       updatedAt: now,

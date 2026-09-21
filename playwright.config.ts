@@ -36,6 +36,7 @@ export default defineConfig({
   },
   webServer: {
     command: 'npm run dev',
+    env: { PBL_TUTOR_ENABLED: 'false' },
     url: 'http://127.0.0.1:3000',
     reuseExistingServer: !isCI,
     timeout: 120_000,

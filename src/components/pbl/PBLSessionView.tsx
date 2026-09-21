@@ -482,7 +482,13 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const handleSaveTutorCaderno: NonNullable<PBLSessionViewProps['onAddErrorToNotebook']> = (content, error, rule, metadata) => {
     if (!onAddErrorToNotebook || !tutorAttempt || !tutorEpisode) return;
     onAddErrorToNotebook(content, error, rule, {
-      ...metadata, questionId: tutorEpisode.questionRef, origin: 'pbl',
+      ...metadata,
+      questionId: tutorEpisode.questionRef,
+      origin: 'pbl',
+      learningObjectiveId: tutorEpisode.competencyRef || session.currentCompetencyRef,
+      competencyId: tutorEpisode.competencyRef || session.currentCompetencyRef,
+      conceptId: currentCase?.targetConceptRefs?.[0],
+      conceptIds: currentCase?.targetConceptRefs,
       questionText: currentQuestion?.prompt,
       sourceRefs: [`QUESTION:${tutorEpisode.questionRef}`, `PBL_SESSION:${session.sessionId}`],
       nextReviewAt: session.masterySnapshot[tutorEpisode.competencyRef]?.nextReviewRecommendedAt,
@@ -556,7 +562,11 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
         options,
         bank: presentation?.examBoard || 'PBL SuVeCA',
         year: presentation?.year,
+        conceptId: currentCase?.targetConceptRefs?.[0],
         conceptIds: currentCase?.targetConceptRefs,
+        learningObjectiveId: lastAttempt.competencyRef,
+        competencyId: lastAttempt.competencyRef,
+        semanticBlockId: session.lastInterventionPayload?.ruleId || session.lastInterventionPayload?.procedureId,
         sourceRefs: [`QUESTION:${lastAttempt.questionRef}`, `PBL_SESSION:${session.sessionId}`],
         nextReviewAt: mastery?.nextReviewRecommendedAt,
         novoExemplo: 'Resolver uma questão isomórfica sem consultar o gabarito e explicitar o critério usado.',

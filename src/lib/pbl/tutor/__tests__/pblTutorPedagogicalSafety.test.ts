@@ -38,7 +38,7 @@ describe('pedagogical safeguards at the tutor boundary', () => {
     vi.spyOn(pblTutorContextResolver, 'getTutorQuestionContext').mockResolvedValue(structuredClone(context));
     vi.spyOn(pblServerSessionRepository, 'getSession').mockResolvedValue(structuredClone(session));
   });
-  afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); generateContent.mockReset(); });
+  afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks(); vi.unstubAllEnvs(); generateContent.mockReset(); });
 
   it('redacts pre-attempt context even with forged correctness and direct explanation', async () => {
     vi.mocked(pblServerSessionRepository.getSession).mockResolvedValue({ ...session, attempts: [] });
@@ -54,6 +54,7 @@ describe('pedagogical safeguards at the tutor boundary', () => {
     expect(result.pedagogicalText).toContain('RESOLUÇÃO RESERVADA');
     expect(result.metacognitiveInsight).toBeUndefined();
     expect(result.quickCheck).toBeUndefined(); // Both contrast poles are valid, not a binary quiz.
+    expect(result.pedagogicalText).toContain('Gabarito oficial: B');
   });
 
   it('does not unlock the solution with an attempt on another question or episode', async () => {
@@ -85,6 +86,39 @@ describe('pedagogical safeguards at the tutor boundary', () => {
     expect((await turn()).quickCheck).toEqual(validCheck);
   });
 
+  it('sends the persisted reasoning, confidence and history instead of client assertions', async () => {
+    vi.stubEnv('PBL_TUTOR_ENABLED', 'true'); vi.stubEnv('GEMINI_API_KEY', 'test-key');
+    vi.mocked(pblServerSessionRepository.getSession).mockResolvedValue({ ...session,
+      attempts: [{ ...attempt, reasoning: 'Considerei a posição entre vogais.' }],
+      tutorEpisodes: { EP1: { ...episode, turns: [{ turnId: 'T1', role: 'student', content: 'Minha objeção anterior.', timestamp: episode.startedAt }] } },
+    });
+    generateContent.mockResolvedValue({ text: JSON.stringify({ pedagogicalText: 'Confira a condição.' }) });
+    await turn({ studentAttemptContext: { userAnswer: 'B', reasoning: 'RACIOCÍNIO FORJADO', confidence: 'high' } });
+    const prompt = generateContent.mock.calls[0][0].contents;
+    expect(prompt).toContain('Considerei a posição entre vogais.');
+    expect(prompt).toContain('Minha objeção anterior.');
+    expect(prompt).toContain('Gabarito Oficial: B');
+    expect(prompt).toContain('RESOLUÇÃO RESERVADA');
+    expect(prompt).toContain('confiança declarado pelo aluno: medium');
+    expect(prompt).not.toContain('RACIOCÍNIO FORJADO');
+  });
+
+  it('never calls the model for a guest even when the client claims a completed attempt', async () => {
+    vi.stubEnv('PBL_TUTOR_ENABLED', 'true'); vi.stubEnv('GEMINI_API_KEY', 'test-key');
+    const result = await turn({}, 'guest');
+    expect(generateContent).not.toHaveBeenCalled();
+    expect(pblServerSessionRepository.getSession).not.toHaveBeenCalled();
+    expect(result.executionMetadata.fallback).toBe(true);
+    expect(result.pedagogicalText).not.toContain('RESOLUÇÃO RESERVADA');
+  });
+
+  it('reports an unconfirmed attempt instead of silently switching a submitted dialogue to pre-attempt mode', async () => {
+    vi.mocked(pblServerSessionRepository.getSession).mockResolvedValue({ ...session, attempts: [] });
+    const result = await turn({ expectedAttemptId: attempt.attemptId });
+    expect(result.error).toContain('ainda não foi confirmada');
+    expect(generateContent).not.toHaveBeenCalled();
+  });
+
   it('keeps the fallback redacted when the model fails before an attempt', async () => {
     vi.stubEnv('PBL_TUTOR_ENABLED', 'true'); vi.stubEnv('GEMINI_API_KEY', 'test-key');
     vi.mocked(pblServerSessionRepository.getSession).mockResolvedValue({ ...session, attempts: [] });
@@ -92,6 +126,19 @@ describe('pedagogical safeguards at the tutor boundary', () => {
     const result = await turn();
     expect(result.executionMetadata.fallback).toBe(true);
     expect(result.pedagogicalText).not.toContain('RESOLUÇÃO RESERVADA');
+  });
+
+  it('aborts a timed-out provider request and keeps the confirmed explanation available', async () => {
+    vi.useFakeTimers();
+    vi.stubEnv('PBL_TUTOR_ENABLED', 'true'); vi.stubEnv('GEMINI_API_KEY', 'test-key');
+    generateContent.mockImplementation(() => new Promise(() => {}));
+    const pending = turn();
+    await vi.advanceTimersByTimeAsync(30_001);
+    const result = await pending;
+    expect(generateContent.mock.calls[0][0].config.abortSignal.aborted).toBe(true);
+    expect(result.executionMetadata.fallback).toBe(true);
+    expect(result.pedagogicalText).toContain('Gabarito oficial: B');
+    expect(result.pedagogicalText).toContain('RESOLUÇÃO RESERVADA');
   });
 });
 

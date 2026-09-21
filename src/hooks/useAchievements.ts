@@ -7,6 +7,7 @@ import {
   normalizeAchievementProgress,
   recordAnswerResult,
   recordFlashcardCorrect as recordFlashcardCorrectInProgress,
+  recordFeynmanHighAccuracy,
   recordStudyActivity as recordStudyActivityInProgress,
   recordStudyNote,
   type AchievementId,
@@ -178,6 +179,18 @@ export const useAchievements = (
     applyProgress((current) => recordFlashcardCorrectInProgress(current));
   }, [applyProgress]);
 
+  const recordFeynmanEvaluation = useCallback(() => {
+    applyProgress((current) => recordFeynmanHighAccuracy(current));
+  }, [applyProgress]);
+
+  useEffect(() => {
+    const handleFeynmanUnlock = () => {
+      recordFeynmanEvaluation();
+    };
+    window.addEventListener('suveca:feynman-high-accuracy', handleFeynmanUnlock);
+    return () => window.removeEventListener('suveca:feynman-high-accuracy', handleFeynmanUnlock);
+  }, [recordFeynmanEvaluation]);
+
   return {
     progress,
     isLoading,
@@ -187,5 +200,6 @@ export const useAchievements = (
     recordAnswer,
     recordStudyActivity,
     recordFlashcardCorrect,
+    recordFeynmanEvaluation,
   };
 };

@@ -56,4 +56,27 @@ describe('PBLTutorContextResolver & Benchmark Homologation', () => {
     expect(filtered.officialCommentary).toBeUndefined();
     expect(filtered.objectiveOptionAnalyses?.every((opt) => !opt.isCorrect)).toBe(true);
   });
+
+  it('preserves presentation commentary without promoting its authority and hides it before an attempt', () => {
+    const mockContext = {
+      questionRef: 'OQ-MOCK-001',
+      presentation: {
+        prompt: 'Enunciado de teste',
+        officialAnswer: 'C',
+        options: [],
+        commentary: 'Comentário didático vindo da apresentação oficial da questão.',
+      },
+      criteria: { rules: [], procedures: [], contrasts: [] },
+      curriculum: {},
+      provenance: {},
+    };
+
+    const enriched = (pblTutorContextResolver as any).enrichLoadedContext(mockContext);
+    expect(enriched.officialCommentary).toBeUndefined();
+    expect(enriched.presentation.commentary).toBe(mockContext.presentation.commentary);
+    const hidden = pblTutorContextResolver.filterTutorContextForStudent(enriched, { hideAnswer: true });
+    expect(hidden.presentation.commentary).toBeUndefined();
+    expect(hidden.officialCommentary).toBeUndefined();
+    expect(mockContext.presentation.commentary).toBeTruthy();
+  });
 });

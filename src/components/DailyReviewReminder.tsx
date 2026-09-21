@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
-import { Bell, BellOff, CheckCircle2, Clock3, Mail, ShieldCheck } from 'lucide-react';
+import { Bell, BellOff, CheckCircle2, Clock3, Mail, ShieldCheck, AlertTriangle } from 'lucide-react';
 import type { CadernoErroItem } from '../types/suveca';
 import { db, safeSetDoc } from '../lib/firebase';
 import { PushNotificationSettings } from './PushNotificationSettings';
@@ -12,6 +12,7 @@ interface ReminderPreference {
   enabled: boolean;
   reminderTime: string;
   lastNotifiedOn?: string;
+  toastErrorThreshold: number;
   updatedAt: string;
 }
 
@@ -25,6 +26,7 @@ interface DailyReviewReminderProps {
 const createDefaultPreference = (): ReminderPreference => ({
   enabled: false,
   reminderTime: DEFAULT_REMINDER_TIME,
+  toastErrorThreshold: 5,
   updatedAt: new Date().toISOString(),
 });
 
@@ -48,6 +50,10 @@ const normalizePreference = (value: unknown): ReminderPreference => {
       typeof candidate.lastNotifiedOn === 'string'
         ? candidate.lastNotifiedOn
         : undefined,
+    toastErrorThreshold:
+      typeof candidate.toastErrorThreshold === 'number' && candidate.toastErrorThreshold >= 1
+        ? candidate.toastErrorThreshold
+        : 5,
     updatedAt:
       typeof candidate.updatedAt === 'string'
         ? candidate.updatedAt
@@ -106,6 +112,27 @@ export const DailyReviewReminder: React.FC<DailyReviewReminderProps> = ({
     () => errors.filter((error) => error.status !== 'dominado').length,
     [errors]
   );
+
+  const [showToast, setShowToast] = useState(false);
+
+  useEffect(() => {
+    const threshold = preference.toastErrorThreshold || 5;
+    const isDismissed =
+      typeof window !== 'undefined' &&
+      window.sessionStorage.getItem('suveca_review_toast_dismissed');
+    if (pendingErrorCount >= threshold && !isDismissed) {
+      setShowToast(true);
+    } else {
+      setShowToast(false);
+    }
+  }, [pendingErrorCount, preference.toastErrorThreshold]);
+
+  const handleDismissToast = () => {
+    setShowToast(false);
+    if (typeof window !== 'undefined') {
+      window.sessionStorage.setItem('suveca_review_toast_dismissed', 'true');
+    }
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -437,6 +464,32 @@ export const DailyReviewReminder: React.FC<DailyReviewReminderProps> = ({
         </div>
       </div>
 
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-violet-100/70 pt-3">
+        <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+          <AlertTriangle className="h-4 w-4 text-amber-600" />
+          <span>Alerta de acúmulo no Caderno:</span>
+          <div className="inline-flex items-center gap-1 rounded-lg bg-slate-100 p-0.5">
+            {[3, 5, 10].map((threshold) => (
+              <button
+                key={threshold}
+                type="button"
+                onClick={() => updatePreference((curr) => ({ ...curr, toastErrorThreshold: threshold }))}
+                className={`px-2.5 py-1 text-[11px] font-bold rounded-md transition cursor-pointer ${
+                  (preference.toastErrorThreshold || 5) === threshold
+                    ? 'bg-white text-slate-900 shadow-2xs border border-slate-200'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                {threshold} erros
+              </button>
+            ))}
+          </div>
+        </div>
+        <span className="text-[11px] text-slate-500">
+          Dispara um aviso rápido na tela quando o Caderno acumular {preference.toastErrorThreshold || 5} erros pendentes.
+        </span>
+      </div>
+
       <PushNotificationSettings
         userId={userId}
         reminderTime={preference.reminderTime}
@@ -473,6 +526,48 @@ export const DailyReviewReminder: React.FC<DailyReviewReminderProps> = ({
       <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
         O aviso simples é emitido quando a plataforma estiver aberta ou voltar ao foco. Ative o push acima para receber o lembrete também com o navegador fechado.
       </p>
+
+      {/* Floating Error Review Toast */}
+      {showToast && (
+        <aside
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 max-w-sm rounded-2xl border border-amber-300 bg-white/95 backdrop-blur-md p-4 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-300"
+        >
+          <div className="flex items-start gap-3">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-900 border border-amber-200">
+              <AlertTriangle className="h-5 w-5" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xs font-black uppercase tracking-wider text-amber-950">
+                Caderno de Erros Acumulado
+              </h3>
+              <p className="text-xs text-slate-700 mt-1 leading-relaxed">
+                Você acumulou <strong>{pendingErrorCount} questões</strong> com lacunas conceituais. Deseja realizar uma revisão expressa agora?
+              </p>
+              <div className="flex items-center gap-2 mt-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    handleDismissToast();
+                    window.dispatchEvent(new CustomEvent('suveca:navigate-tab', { detail: { tab: 'errors' } }));
+                  }}
+                  className="rounded-lg bg-teal-800 px-3 py-1.5 text-xs font-bold text-white hover:bg-teal-900 transition shadow-2xs cursor-pointer"
+                >
+                  Revisar Agora
+                </button>
+                <button
+                  type="button"
+                  onClick={handleDismissToast}
+                  className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition cursor-pointer"
+                >
+                  Mais tarde
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      )}
     </section>
   );
 };

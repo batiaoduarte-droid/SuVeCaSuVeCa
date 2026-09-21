@@ -626,6 +626,8 @@ export interface InterventionPayload {
   competencyRef: string;
   misconceptionRef?: string | null;
   trapRef?: string | null;
+  ruleId?: string;
+  procedureId?: string;
   microLessonText: string;
   ruleTitle?: string;
   ruleStatement?: string;

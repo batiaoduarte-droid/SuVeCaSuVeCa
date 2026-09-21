@@ -76,6 +76,7 @@ export interface PBLTutorEpisode {
   attemptStage: PBLAttemptStage;
   initialUserAnswer?: string;
   initialConfidence?: PBLConfidenceLevel;
+  initialReasoning?: string;
   assistanceLevel: PBLAssistanceLevel;
   startedAt: string;
   updatedAt: string;
@@ -163,6 +164,8 @@ export interface PBLTutorQuestionPresentation {
   supportBlocks?: any[];
   options: Array<{ label: string; text: string; letter?: string }>;
   officialAnswer: string;
+  /** Published explanatory text; its location does not establish official authorship. */
+  commentary?: string;
   questionType?: string;
   examBoard?: string;
   year?: number;
@@ -230,6 +233,7 @@ export interface PBLTutorQuestionContext {
     boundaries?: PBLTutorRuleBoundary[];
   };
   competencyVariants?: Record<string, PBLTutorCompetencyVariant>;
+  /** Legacy field for published commentary, including derived editorial explanations. */
   officialCommentary?: string;
   solutionStrategy?: Array<{
     stepNumber: number;
@@ -250,6 +254,8 @@ export interface PBLTutorQuestionContext {
 }
 
 export interface PBLTutorTurnRequest {
+  /** Consistency check only: the server still authorizes from the saved session. */
+  expectedAttemptId?: string;
   episodeId?: string;
   sessionId: string;
   competencyRef: string;
@@ -260,6 +266,7 @@ export interface PBLTutorTurnRequest {
     isCorrect: boolean;
     confidence?: PBLConfidenceLevel;
     attemptStage: PBLAttemptStage;
+    reasoning?: string;
   };
   history?: Array<{
     role: 'student' | 'tutor';

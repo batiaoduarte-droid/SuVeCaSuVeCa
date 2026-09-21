@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type {
@@ -136,6 +136,30 @@ const mockEpisode: PBLTutorEpisode = {
 
 describe('PBLAdaptiveInterventionView', () => {
   afterEach(() => vi.unstubAllGlobals());
+  it('waits for session synchronization and binds the submitted attempt to the tutor request', async () => {
+    let confirm!: () => void;
+    const onBeforeTutorRequest = vi.fn(() => new Promise<void>((resolve) => { confirm = resolve; }));
+    const fetchMock = vi.fn(async () => ({ ok: true, json: async () => ({ pedagogicalText: 'Resposta de teste.', executionMetadata: {} }) }));
+    vi.stubGlobal('fetch', fetchMock);
+    render(<PBLAdaptiveInterventionView session={mockSession} episode={{ ...mockEpisode, turns: [] }}
+      question={mockQuestion} attempt={mockAttempt} onBeforeTutorRequest={onBeforeTutorRequest} onConclude={vi.fn()} />);
+    await waitFor(() => expect(onBeforeTutorRequest).toHaveBeenCalledOnce());
+    expect(fetchMock).not.toHaveBeenCalled();
+    confirm();
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledOnce());
+    const body = JSON.parse((fetchMock.mock.calls[0] as unknown as [string, RequestInit])[1].body as string);
+    expect(body.expectedAttemptId).toBe(mockAttempt.attemptId);
+    expect(body.episodeId).toBe(mockEpisode.episodeId);
+  });
+
+  it('does not send the tutor turn when synchronization fails and shows the retry message', async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal('fetch', fetchMock);
+    render(<PBLAdaptiveInterventionView session={mockSession} episode={{ ...mockEpisode, turns: [] }}
+      question={mockQuestion} attempt={mockAttempt} onBeforeTutorRequest={async () => { throw new Error('Sua resposta está salva; tente novamente.'); }} onConclude={vi.fn()} />);
+    await waitFor(() => expect(screen.getByText('Sua resposta está salva; tente novamente.')).toBeInTheDocument());
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
   it('exibe ancoragem da questão, destaque de resposta do aluno e insight metacognitivo imediato', () => {
     render(
       <PBLAdaptiveInterventionView

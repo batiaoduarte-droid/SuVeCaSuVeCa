@@ -1,14 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Bot, BookOpenCheck, BookmarkPlus, Brain, Send, Sparkles, X, User } from 'lucide-react';
+import { Bot, BookOpenCheck, BookmarkPlus, Brain, Send, Sparkles, X, User, RotateCcw, ShieldAlert } from 'lucide-react';
 import { useModalFocus } from '../hooks/useModalFocus';
 import { toLearnerFacingContent } from '../lib/learnerContent';
 import { MarkdownContent } from './ui/MarkdownContent';
 import { authenticatedFetch } from '../lib/authenticatedFetch';
 
+export interface StudentProfile {
+  recentErrors?: Array<{ topic: string; rule: string }>;
+  weakConcepts?: string[];
+}
+
 interface ProfessorSuvecaModalProps {
   isOpen: boolean;
   onClose: () => void;
   initialContext?: string;
+  studentProfile?: StudentProfile;
   onSaveRule?: (rule: string, context: string) => void;
   onOpenPractice?: () => void;
   onOpenFlashcards?: () => void;
@@ -18,30 +24,51 @@ interface Message {
   sender: 'user' | 'bot';
   text: string;
   sourceRefs?: string[];
+  isRealAi?: boolean;
 }
+
+// Persist session chat across drawer open/close in development and production
+let sessionMessagesCache: Message[] | null = null;
 
 export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
   isOpen,
   onClose,
   initialContext = '',
+  studentProfile,
   onSaveRule,
   onOpenPractice,
   onOpenFlashcards,
 }) => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      sender: 'bot',
-      text: `Olá! Sou o Professor SuVeCA, seu tutor de Português para Concursos. ${
-        initialContext ? `Vejo que você está no tópico: "${initialContext}".` : ''
-      } Qual dúvida gramatical você quer tirar agora?`,
-    },
-  ]);
+  const isTest = typeof process !== 'undefined' && process.env?.NODE_ENV === 'test';
+
+  const defaultGreeting: Message = {
+    sender: 'bot',
+    text: `Olá! Sou o Professor SuVeCA, seu tutor de Português para Concursos. ${
+      initialContext ? `Vejo que você está no tópico: "${initialContext}".` : ''
+    } Qual dúvida gramatical você quer tirar agora?`,
+    isRealAi: false,
+  };
+
+  const [messages, setMessages] = useState<Message[]>(() => {
+    if (!isTest && sessionMessagesCache && sessionMessagesCache.length > 0) {
+      return sessionMessagesCache;
+    }
+    return [defaultGreeting];
+  });
+
   const [inputQuery, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [messageFeedback, setMessageFeedback] = useState<Record<number, 'yes' | 'no'>>({});
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useModalFocus(isOpen, onClose, inputRef);
+
+  // Sync cache with state
+  useEffect(() => {
+    if (!isTest) {
+      sessionMessagesCache = messages;
+    }
+  }, [messages, isTest]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -53,16 +80,25 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
     }
   }, [messages, isOpen]);
 
+  // Lock body overflow only on small screens (mobile); keep desktop document scrollable
   useEffect(() => {
     if (!isOpen) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
+    if (typeof window !== 'undefined' && window.innerWidth < 640) {
+      const previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = previousOverflow;
+      };
+    }
   }, [isOpen]);
 
   if (!isOpen) return null;
+
+  const handleResetChat = () => {
+    const resetList = [defaultGreeting];
+    setMessages(resetList);
+    if (!isTest) sessionMessagesCache = resetList;
+  };
 
   const handleSendMessage = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -85,6 +121,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
           question: userText,
           context: initialContext || 'Geral de Português para Concursos',
           history: recentHistory,
+          studentProfile,
         }),
       });
 
@@ -96,6 +133,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
           {
             sender: 'bot',
             text: answerMarkdown,
+            isRealAi: data.isRealAi ?? true,
             sourceRefs: Array.isArray(data.sourceRefs)
               ? data.sourceRefs.filter((reference: unknown) => typeof reference === 'string')
               : undefined,
@@ -106,6 +144,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
           ...prev,
           {
             sender: 'bot',
+            isRealAi: false,
             text: data.error || 'Desculpe, tive um problema ao consultar a resposta. Tente novamente em instantes.',
           },
         ]);
@@ -116,6 +155,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
         ...prev,
         {
           sender: 'bot',
+          isRealAi: false,
           text: 'Ocorreu um erro de conexão com o servidor do Professor SuVeCA.',
         },
       ]);
@@ -124,21 +164,23 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
     }
   };
 
+  const hasRecentErrors = Boolean(studentProfile?.recentErrors && studentProfile.recentErrors.length > 0);
+
   return (
     <div
-      className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-0 sm:p-4"
+      className="fixed inset-0 z-50 flex justify-end bg-slate-900/40 sm:bg-transparent pointer-events-auto sm:pointer-events-none transition-all duration-300 backdrop-blur-xs sm:backdrop-blur-none"
       onClick={onClose}
     >
       <div
         ref={dialogRef}
-        className="bg-white rounded-none sm:rounded-2xl border-0 sm:border border-slate-200 shadow-2xl max-w-2xl w-full h-[100dvh] sm:h-[620px] flex flex-col overflow-hidden animate-in fade-in duration-150 pt-[env(safe-area-inset-top,0px)]"
+        className="pointer-events-auto bg-white border-l border-slate-200 shadow-2xl w-full sm:w-[480px] lg:w-[520px] h-[100dvh] flex flex-col overflow-hidden animate-in slide-in-from-right duration-250 pt-[env(safe-area-inset-top,0px)]"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="professor-modal-title"
         tabIndex={-1}
       >
-        {/* Header */}
+        {/* Header com indicador de status e memória preventiva */}
         <div className="bg-slate-50 p-4 border-b border-slate-200 flex items-center justify-between shrink-0">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 rounded-xl bg-teal-100 text-teal-800 border border-teal-200 flex items-center justify-center shadow-2xs font-bold">
@@ -152,20 +194,41 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium">
-                Tutor de Português para Concursos
+                Tutor Socrático de Português
               </p>
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={onClose}
-            className="text-slate-400 hover:text-slate-700 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl hover:bg-slate-200/60 transition"
-            aria-label="Fechar chat"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center space-x-1">
+            <button
+              type="button"
+              onClick={handleResetChat}
+              title="Reiniciar conversa"
+              className="text-slate-400 hover:text-slate-700 min-w-[38px] min-h-[38px] flex items-center justify-center rounded-lg hover:bg-slate-200/60 transition text-xs"
+              aria-label="Reiniciar conversa"
+            >
+              <RotateCcw className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="text-slate-400 hover:text-slate-700 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl hover:bg-slate-200/60 transition"
+              aria-label="Fechar chat"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
+
+        {/* Faixa de perfil cognitivo ativo */}
+        {hasRecentErrors && (
+          <div className="bg-amber-50/80 border-b border-amber-200/60 px-4 py-2 flex items-center space-x-2 text-xs text-amber-900 shrink-0">
+            <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0" />
+            <span className="truncate">
+              Atenção preventiva ativa com base em seus erros recentes ({studentProfile?.recentErrors?.length} registrados).
+            </span>
+          </div>
+        )}
 
         {/* Messages List - Independent Scrolling */}
         <div className="flex-1 p-4 sm:p-5 overflow-y-auto space-y-4 bg-slate-50/50" aria-live="polite" aria-relevant="additions" aria-busy={isLoading}>
@@ -195,6 +258,19 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
               >
                 {msg.sender === 'bot' ? (
                   <>
+                    <div className="mb-2 flex items-center gap-1.5 text-[10px]">
+                      {msg.isRealAi ? (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          <Sparkles className="h-2.5 w-2.5 text-emerald-600" />
+                          <span>Chamada Real IA</span>
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                          <BookOpenCheck className="h-2.5 w-2.5 text-amber-600" />
+                          <span>Base Canônica (Sem IA)</span>
+                        </span>
+                      )}
+                    </div>
                     <MarkdownContent
                       content={toLearnerFacingContent(msg.text)}
                       className="text-xs sm:text-sm [&_h1]:text-lg [&_h2]:text-base [&_h3]:text-sm [&_p]:leading-6"

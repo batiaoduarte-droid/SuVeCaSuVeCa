@@ -13,6 +13,7 @@ interface MobileFABProps {
   onOpenTutor: () => void;
   onOpenCadernoErros: () => void;
   errorCount?: number;
+  studyMode?: 'complete' | 'pbl_only';
 }
 
 export const MobileFAB: React.FC<MobileFABProps> = ({
@@ -20,6 +21,7 @@ export const MobileFAB: React.FC<MobileFABProps> = ({
   onOpenTutor,
   onOpenCadernoErros,
   errorCount = 0,
+  studyMode = 'complete',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -60,23 +62,25 @@ export const MobileFAB: React.FC<MobileFABProps> = ({
       {/* Expanded Quick Action Items */}
       {isOpen && (
         <div className="mb-3 flex flex-col items-end space-y-2.5 animate-in fade-in slide-in-from-bottom-3 duration-200">
-          {/* Item 1: Analisador Sintático */}
-          <button
-            type="button"
-            onClick={() => {
-              onOpenAnalisador();
-              setIsOpen(false);
-            }}
-            className="flex items-center gap-2.5 rounded-full bg-white pl-3.5 pr-2 py-1.5 shadow-lg border border-teal-200/90 text-slate-800 hover:bg-teal-50 active:scale-95 transition cursor-pointer"
-            aria-label="Abrir Analisador Sintático"
-          >
-            <span className="text-xs font-black tracking-tight text-teal-950">
-              Analisador Sintático
-            </span>
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-800 text-white shadow-2xs">
-              <Workflow className="h-4 w-4" />
-            </span>
-          </button>
+          {/* Item 1: Analisador Sintático (oculto no Modo PBL Puro) */}
+          {studyMode !== 'pbl_only' && (
+            <button
+              type="button"
+              onClick={() => {
+                onOpenAnalisador();
+                setIsOpen(false);
+              }}
+              className="flex items-center gap-2.5 rounded-full bg-white pl-3.5 pr-2 py-1.5 shadow-lg border border-teal-200/90 text-slate-800 hover:bg-teal-50 active:scale-95 transition cursor-pointer"
+              aria-label="Abrir Analisador Sintático"
+            >
+              <span className="text-xs font-black tracking-tight text-teal-950">
+                Analisador Sintático
+              </span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-800 text-white shadow-2xs">
+                <Workflow className="h-4 w-4" />
+              </span>
+            </button>
+          )}
 
           {/* Item 2: Tutor IA */}
           <button
