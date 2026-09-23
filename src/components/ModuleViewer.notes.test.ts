@@ -28,6 +28,17 @@ describe('migração de anotações por unidade', () => {
     expect(migrated['unit:IP-A00-G01']).toBe('<p>Nota atual.</p>');
   });
 
+  it('preserva as notas de todas as revisões A14 sem URLs legadas', () => {
+    const moduleA14 = MODULES_DATA.find((module) => module.id === 'mod14')!;
+    const legacy = Object.fromEntries(moduleA14.sections.map((_, index) => [`section-${index}`, `<p>Nota ${index}</p>`]));
+    const migrated = migrateModuleNotesToStableUnitIds(moduleA14, legacy);
+    moduleA14.sections.forEach((section, index) => {
+      expect(section.contentUrl).toBeUndefined();
+      expect(migrated[`unit:IP-A14-S${String(index + 1).padStart(2, '0')}`]).toBe(legacy[`section-${index}`]);
+      expect(migrated[`section-${index}`]).toBe(legacy[`section-${index}`]);
+    });
+  });
+
   it('preserva a versão local quando a nuvem tem texto divergente', () => {
     const merged = mergeModuleNotesPreservingConflicts(
       { 'unit:IP-A00-G01': '<p>Nota local.</p>' },

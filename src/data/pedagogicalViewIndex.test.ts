@@ -1,11 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { MODULES_DATA } from './modulesData';
 import { PEDAGOGICAL_VIEW_BY_ID, PEDAGOGICAL_VIEW_INDEX } from './pedagogicalViewIndex.generated';
-
-const unitIdForSection = (section: (typeof MODULES_DATA)[number]['sections'][number]) => {
-  const cumulative = section.contentUrl?.match(/A14-(S\d+)/);
-  return section.editorial?.integrationUnitId || (cumulative ? `IP-A14-${cumulative[1]}` : null);
-};
+import { unitIdForSection } from '../lib/pedagogicalViewContract';
 
 describe('índice de publicação pedagógica', () => {
   it('representa exatamente as 115 unidades publicadas', () => {
@@ -22,7 +18,9 @@ describe('índice de publicação pedagógica', () => {
       .filter(({ unitId }) => Boolean(unitId));
     expect(mapped.every(({ unitId }) => PEDAGOGICAL_VIEW_BY_ID[unitId!])).toBe(true);
     expect(mapped).toHaveLength(115);
+    expect(new Set(mapped.map(({ unitId }) => unitId)).size).toBe(115);
     for (const { section, unitId } of mapped) {
+      expect(section).not.toHaveProperty('contentUrl');
       expect(section.title).toBe(PEDAGOGICAL_VIEW_BY_ID[unitId!].title);
     }
   });

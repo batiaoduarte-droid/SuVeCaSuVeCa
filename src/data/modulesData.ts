@@ -2,8 +2,9 @@
  * Runtime projection of the compiled curriculum.
  *
  * `modules.generated.ts` still carries the legacy editorial summaries used by
- * search and by the explicit Markdown fallback. Published v4.2 View Models are
- * authoritative for the learner-facing unit identity, so this facade overlays
+ * search. Legacy Markdown URLs are omitted from the runtime projection.
+ * Published v4.2 View Models are authoritative for the learner-facing unit
+ * identity, so this facade overlays
  * title/objective metadata from the deterministic view index without changing
  * either source artifact.
  */
@@ -22,13 +23,14 @@ export const MODULES_DATA: ModuleData[] = [
       title: lesson?.shortTitle || module.title,
       subtitle: lesson ? `${lesson.fullTitle} · ${module.sections.length} unidades pedagógicas` : module.subtitle,
       sections: module.sections.map((section) => {
+        const { contentUrl: _legacyUrl, ...runtimeSection } = section;
         const unitId = section.editorial?.integrationUnitId;
         const publishedView = unitId ? PEDAGOGICAL_VIEW_BY_ID[unitId] : undefined;
-        if (!publishedView) return section;
+        if (!publishedView) return runtimeSection;
 
         const objective = publishedView.learningObjectives.join(' ').trim();
         return {
-          ...section,
+          ...runtimeSection,
           title: publishedView.title,
           summary: objective || section.summary,
           contentMarkdown: objective

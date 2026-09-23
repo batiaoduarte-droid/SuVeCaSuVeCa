@@ -42,7 +42,7 @@ const steps = [
   ['Published artifact bytes', ['scripts/audit-product-artifacts.mjs']],
   ['Product types', [tool('typescript/bin/tsc'), '--noEmit']],
   ['Product tests', [tool('vitest/vitest.mjs'), 'run', '--maxWorkers=2']],
-  ...['pedagogical-curriculum', 'deployment-shards', 'question-presentations', 'pedagogical-views', 'pedagogical-view-index', 'pedagogical-macros', 'pedagogical-markdown', 'pbl-runtime', 'pbl-tutor', 'pbl-packages'].map((audit) => [audit, [`scripts/audit-${audit}.mjs`]]),
+  ...['pedagogical-curriculum', 'deployment-shards', 'question-presentations', 'pedagogical-views', 'pedagogical-view-index', 'pedagogical-macros', 'pbl-runtime', 'pbl-tutor', 'pbl-packages'].map((audit) => [audit, [`scripts/audit-${audit}.mjs`]]),
   ['Browser prerequisites', ['--input-type=module', '-e', "import fs from 'node:fs'; import { chromium } from '@playwright/test'; if (!fs.existsSync(chromium.executablePath())) { console.error('ENVIRONMENT_DEPENDENCY_MISSING: Chromium. Install the browser for the locked Playwright version.'); process.exit(2); }"]],
   ['Browser regressions and accessibility', [tool('@playwright/test/cli.js'), 'test', 'tests/e2e/pbl-flow-accessibility.spec.ts', 'tests/e2e/semantic-views-v42.spec.ts', '--workers=1']],
   ['Client production build', [tool('vite/bin/vite.js'), 'build']],

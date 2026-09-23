@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { auditPublishedUnits } from './lib/published-unit-delivery.mjs';
 
 const ROOT = process.cwd();
 const manifestPath = path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'manifest.json');
@@ -114,36 +115,10 @@ if (!errors.length) {
     check(sha256File(file) === descriptor.sha256, `${descriptor.path}: SHA-256 divergente.`);
   }
 
-  const learnerFiles = studySections.map((section) => {
-    check(typeof section.contentUrl === 'string' && section.contentUrl.startsWith('/knowledge/pedagogical/units/'), `${section.lessonId}/${section.groupId}: URL de aprofundamento inválida.`);
-    return path.join(ROOT, 'public', section.contentUrl?.replace(/^\//, '') || '__missing__');
-  });
+  errors.push(...auditPublishedUnits(ROOT, studySections));
+  check(!fs.existsSync(path.join(ROOT, 'public', 'knowledge', 'pedagogical', 'units')), 'Markdown v3 aposentado voltou ao deployment.');
   const forbiddenMedia = /\b(?:vídeos?|videoaulas?|transcrições?|timestamps?|\.mp4|\.srt)\b/i;
-  const forbiddenTechnicalId = /\b(?:CANON|MARK|ORAL|QUOTE|TERM|VIS|KB|PROC|EX|WARN|TIP|UNCERTAIN|REL|CARD)-[A-Z0-9_-]+\b/;
   const forbiddenEditorialResidue = /==[0-9a-f]{6,}==|\b(?:proveniência|rastreabilidade):\s|\b\d{3}\s+-[^\n]+-\s+720p\.md\b/i;
-  for (const file of learnerFiles) {
-    if (!fs.existsSync(file)) {
-      errors.push(`${path.relative(ROOT, file)}: aprofundamento ausente.`);
-      continue;
-    }
-    const markdown = fs.readFileSync(file, 'utf8');
-    check(markdown.trim().length >= 500, `${path.relative(ROOT, file)}: conteúdo superficial ou vazio.`);
-    check(!forbiddenMedia.test(markdown), `${path.relative(ROOT, file)}: dependência audiovisual em conteúdo do aluno.`);
-    check(!forbiddenTechnicalId.test(markdown), `${path.relative(ROOT, file)}: ID técnico exposto ao aluno.`);
-    check(!forbiddenEditorialResidue.test(markdown), `${path.relative(ROOT, file)}: resíduo técnico/editorial exposto ao aluno.`);
-    check(!/\bmaterial de origem\b/i.test(markdown), `${path.relative(ROOT, file)}: linguagem de processamento exposta.`);
-    check(markdown.includes('## Conexão com o método SuVeCA'), `${path.relative(ROOT, file)}: conexão SuVeCA ausente.`);
-    const section = studySections.find((item) => path.join(ROOT, 'public', item.contentUrl?.replace(/^\//, '') || '__missing__') === file);
-    if (section?.lessonId !== 'A14') {
-      check(markdown.includes('### Testes decisivos'), `${path.relative(ROOT, file)}: testes editoriais SuVeCA ausentes.`);
-    }
-    if (section?.suvecaMethod?.level === 'outside_core') {
-      check(
-        markdown.indexOf('## Conexão com o método SuVeCA') > markdown.indexOf('## Pré-requisitos e modelo mental'),
-        `${path.relative(ROOT, file)}: SuVeCA foi anteposta à regra própria de um tema fora do núcleo.`,
-      );
-    }
-  }
 
   check(method.buildId === curriculum.buildId, 'Método SuVeCA público diverge do build curricular.');
   check(method.methodId === 'suveca-analysis-map-v1', 'Método SuVeCA público possui identidade inválida.');

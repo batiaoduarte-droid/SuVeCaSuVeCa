@@ -1,4 +1,10 @@
 import type { CumulativeReviewView, PedagogicalUnitView } from '../types/pedagogicalView';
+import type { ModuleSection } from '../types/suveca';
+
+// All 115 published sections, including A14, already carry this stable ID.
+// Routing and persisted notes/progress must never infer it from a legacy URL.
+export const unitIdForSection = (section?: ModuleSection): string | null =>
+  section?.editorial?.integrationUnitId || null;
 
 export type PublishedPedagogicalView = PedagogicalUnitView | CumulativeReviewView;
 

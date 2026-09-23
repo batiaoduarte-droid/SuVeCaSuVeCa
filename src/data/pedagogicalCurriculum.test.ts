@@ -13,6 +13,7 @@ import {
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from './pedagogicalKnowledge.generated';
 import { SUVECA_METHOD } from './suvecaMethod.generated';
 import { formatKnowledgeContext, retrieveKnowledge } from '../lib/knowledgeRetrieval';
+import { parsePublishedPedagogicalView } from '../lib/pedagogicalViewContract';
 
 describe('currículo editorial das aulas 00–14', () => {
   const coreModules = MODULES_DATA.filter((module) => /^mod\d+$/.test(module.id));
@@ -24,7 +25,7 @@ describe('currículo editorial das aulas 00–14', () => {
     );
     expect(sections).toHaveLength(115);
     expect(sections.filter((section) => section.lessonId === 'A14')).toHaveLength(13);
-    expect(new Set(sections.map((section) => section.contentUrl)).size).toBe(115);
+    expect(new Set(sections.map((section) => section.editorial?.integrationUnitId)).size).toBe(115);
     expect(sections.every((section) => !/^[GR]\d{2}\s*[·—-]/.test(section.title))).toBe(true);
     expect(coreModules.find((module) => module.id === 'mod13')?.title).toBe(
       'Compreensão, Interpretação e Tipologia Textual',
@@ -54,16 +55,15 @@ describe('currículo editorial das aulas 00–14', () => {
     expect(sections.filter((section) => section.lessonId === 'A14').every((section) => section.suvecaMethod?.level === 'review')).toBe(true);
   });
 
-  it('publica somente conteúdos de estudo independentes de mídia e IDs internos', () => {
-    const forbiddenTechnical = /==[0-9a-fA-F]{6,}==|\b(?:CANON|MARK|ORAL|QUOTE|TERM|VIS|KB|PROC|EX|WARN|TIP|UNCERTAIN|REL|CARD)-[A-Z0-9_-]+\b/;
-    const forbiddenMedia = /\b(?:vídeos?|videoaulas?|timestamps?|\.mp4|\.srt)\b/i;
+  it('entrega as 115 Views por identidade explícita sem depender dos Markdown históricos', () => {
     for (const section of sections) {
-      const file = path.join(process.cwd(), 'public', section.contentUrl!.replace(/^\//, ''));
-      expect(fs.existsSync(file), section.contentUrl).toBe(true);
-      const markdown = fs.readFileSync(file, 'utf8');
-      expect(markdown, section.contentUrl).not.toMatch(forbiddenTechnical);
-      expect(markdown, section.contentUrl).not.toMatch(forbiddenMedia);
+      const unitId = section.editorial!.integrationUnitId!;
+      const file = path.join(process.cwd(), 'public/knowledge/pedagogical/views', `${unitId}.json`);
+      const view = parsePublishedPedagogicalView(JSON.parse(fs.readFileSync(file, 'utf8')), unitId);
+      expect(view.unit.lessonId).toBe(section.lessonId);
+      expect(Object.keys(view.sections).length).toBeGreaterThan(0);
     }
+    expect(fs.existsSync('public/knowledge/pedagogical/units')).toBe(false);
   }, 20000);
 
   it('cobre todas as unidades integradas nos flashcards e usa questões editoriais', () => {

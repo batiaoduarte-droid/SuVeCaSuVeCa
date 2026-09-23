@@ -1,4 +1,5 @@
 import { MODULES_DATA } from '../data/modulesData';
+import { unitIdForSection } from './pedagogicalViewContract';
 import {
   getPedagogicalMacroById,
   resolvePedagogicalMacroForUnit,
@@ -19,11 +20,6 @@ export interface StudyLocationResolver {
   unitsForMacro(macroId: string): readonly string[] | null;
 }
 
-const unitIdForSection = (section: (typeof MODULES_DATA)[number]['sections'][number]) => {
-  const cumulativeMatch = section.contentUrl?.match(/A14-(S\d+)/);
-  return section.editorial?.integrationUnitId
-    || (cumulativeMatch ? `IP-A14-${cumulativeMatch[1]}` : null);
-};
 export const moduleIdForUnit = (unitId: string | null): string | null => {
   if (!unitId) return null;
   return MODULES_DATA.find((module) => module.sections.some(

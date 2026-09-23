@@ -32,7 +32,8 @@ export const sanitizePedagogicalText = (text: string): string => {
     .replace(/Preposiçãopor/g, 'Preposição "por"')
     .replace(/Preposiçãoque/g, 'Preposição + Conjunção "que"')
     .replace(/DesignaçãoEis/g, 'Designação "Eis"')
-    .replace(/(Preposição|Conjunção|Substantivo|Pronome|Adjetivo|Advérbio)([A-ZÁÉÍÓÚÀÂÊÔÃÕ])/g, '$1 $2');
+    .replace(/(Preposição|Conjunção|Substantivo|Pronome|Adjetivo|Advérbio)([A-ZÁÉÍÓÚÀÂÊÔÃÕ])/g, '$1 $2')
+    .replace(/[ \t]+([,.;:!?])/g, '$1');
 
   // Normaliza setas simples e superescritos ordinais clássicos do português e LaTeX
   sanitized = sanitized

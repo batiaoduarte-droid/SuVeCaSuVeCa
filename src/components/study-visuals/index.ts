@@ -17,3 +17,4 @@ export * from './WorkedExampleCard';
 export * from './BeforeAfterCard';
 export * from './ContrastBoard';
 export * from './MnemonicCard';
+export * from './FlashcardBackView';

@@ -1,5 +1,57 @@
 # Projeto SuVeCa — linhagem, transformação, publicação e uso dos dados
 
+## Retirada do Markdown v3 do produto — 2026-09-23
+
+Migração de fronteira a partir de `730f969`, conforme a missão de enxugar o app
+discutida no chat Antigravity `22bba91a-0932-4fa0-a8af-491cd18420ab`.
+As 115 unidades são abertas exclusivamente pelas Views JSON já publicadas:
+102 regulares v4.2.x e 13 revisões A14 v1.0.0. Os arquivos de Views, questões,
+PBL, índices gerados, snapshots canônicos e semântica homologada conservam seus
+bytes. Não houve nova compilação editorial nem mudança de autoridade.
+
+- **Consumo:** `ModuleViewer`, navegação, anotações e métricas resolvem a unidade
+  por `editorial.integrationUnitId`, inclusive A14. `modulesData.ts` omite
+  `contentUrl` da projeção de runtime. Esse campo permanece apenas como metadado
+  histórico nos snapshots/artefatos gerados existentes; não aciona um fetch.
+- **Carregamento:** `PedagogicalDeepDive` busca somente
+  `/knowledge/pedagogical/views/<unitId>.json`, verifica identidade e conserva
+  cache por URL. Falhas de rede, HTTP, JSON ou identidade mostram erro com
+  “Tentar novamente”. Fechar/trocar de unidade cancela a carga e respostas
+  obsoletas são ignoradas. Não há fallback para uma unidade Markdown.
+- **Entrega:** os 115 arquivos de `public/knowledge/pedagogical/units/`
+  (4.625.885 bytes) saíram do produto. O manifest público perdeu somente seus
+  descritores. O inventário consumidor passou de 466 para 351 artefatos e de
+  424.555.472 para 419.905.645 bytes. Entre os artefatos retidos, somente o
+  manifest público mudou de hash; os outros 350 mantêm bytes e descritores.
+  `knowledge/canonical/pedagogical-source-manifest.json` permanece evidência
+  histórica da compilação, inclusive seus descritores antigos. O inventário
+  consumidor e o manifest público descrevem a entrega atual.
+- **Preservação e reversão:** cópia conferida por SHA-256, manifests anteriores
+  e recibo em `Notebook LM/90_Historico/2026-09-23-v3-product-retirement/`.
+  O recibo lista todos os caminhos/hashes retirados. Uma reversão deve restaurar
+  código, gates, arquivos e os dois manifests da mesma revisão; não se devem
+  recalcular hashes de conteúdo para acomodar ausência.
+- **Fábrica:** `build-pedagogical-curriculum.mjs` v1.6.1 deixa futuros Markdown
+  em `Notebook LM/90_Historico/curriculo-markdown-v3/<buildId>/`, omite
+  `contentUrl` em futuras saídas e não inclui esses Markdown no manifest de
+  entrega. O compilador foi ajustado, mas não executado nesta migração. Novas
+  publicações continuam exigindo missão editorial própria.
+- **Persistência:** build ID `f325f31b30b382a7`, IDs de unidade, chaves de notas,
+  progresso, recall e PBL permanecem iguais. A migração existente de índices de
+  seção para IDs estáveis continua operante, incluindo as 13 revisões A14.
+- **Gates:** `audit-pedagogical-curriculum.mjs` verifica entrega, identidade,
+  aula e versão das 115 Views via `published-unit-delivery.mjs` e reprova o
+  retorno da pasta `units`. Os auditores de Views, índices, questões e PBL
+  permanecem. O auditor exclusivo de Markdown v3 e sua biblioteca sem outros
+  consumidores foram arquivados e retirados do produto/preflight. Testes de
+  renderer/DOM e Playwright continuam validando o conteúdo exibido; testes
+  novos cobrem retry, cancelamento, respostas obsoletas e preservação da A14.
+
+A economia é de arquivos de deployment; os Markdown já eram buscados sob
+demanda, portanto estes números não representam redução do download inicial
+da página. `MarkdownContent` e suas dependências permanecem para os resumos,
+comentários e demais consumidores ativos.
+
 ## Fronteira operacional atualizada — 2026-09-12
 
 O produto permanece consumidor de artefatos publicados. Compiladores, publicador PBL e seus testes foram transferidos para `Notebook LM/06_Ferramentas/produto-editorial/`, com ambiente npm próprio. Os caminhos antigos de scripts citados abaixo descrevem linhagem histórica, não comandos atuais do produto. Nenhum payload, hash existente ou ID canônico foi alterado nesta separação.

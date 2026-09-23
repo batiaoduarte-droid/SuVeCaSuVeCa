@@ -2,6 +2,8 @@
 
 Este Git contém a aplicação e os artefatos homologados que ela consome. Permanece aqui o necessário para instalar, executar, testar, validar, compilar e entregar o produto. Produção, transformação, revisão, homologação e republicação editorial pertencem à fábrica externa.
 
+Desde a migração de 2026-09-23, as 115 unidades usam exclusivamente Views JSON e `editorial.integrationUnitId`, inclusive A14. `public/knowledge/pedagogical/units` foi aposentada e arquivada na fábrica; não a restaure como reparo de importação. URLs `contentUrl` nos snapshots preservados são históricas. O inventário atual tem 351 artefatos; consulte a seção de retirada v3 em `docs/PROJECT_DATA_LINEAGE.md`. Falhas de View devem preservar o erro explícito e a opção de tentar novamente.
+
 Leia `AI_STUDIO_DEPLOYMENT.md` e `docs/PROJECT_DATA_LINEAGE.md` antes de alterar contratos. Preserve alterações preexistentes. Nunca remova arquivo por nome, tamanho ou sufixo `generated`; comprove consumidores em imports, URLs, manifests, testes e scripts. Se um módulo misturar escrita editorial e validação, separe as responsabilidades antes de retirar o escritor.
 
 Não regenere `public/knowledge`, índices, IDs ou hashes para corrigir importação. Ausência de `.git` pode indicar um arquivo-fonte exportado; não implica código quebrado. Não modifique autenticação ou arquitetura como tentativa genérica de resolver sincronização. Relate comando, diretório e erro observado.

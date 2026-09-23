@@ -9,6 +9,7 @@ import type { CumulativeReviewView, PedagogicalUnitView } from '../types/pedagog
 import {
   isCumulativeReviewView,
   parsePublishedPedagogicalView,
+  unitIdForSection as integrationUnitIdForSection,
   type PublishedPedagogicalView,
 } from '../lib/pedagogicalViewContract';
 import {
@@ -147,13 +148,7 @@ const saveLocalNotes = (moduleId: string, notes: ModuleNotes, userId?: string) =
   localStorage.setItem(notesStorageKey(moduleId, userId), JSON.stringify(notes));
 };
 
-const deepDiveMarkdownCache = new Map<string, string>();
 const deepDiveViewCache = new Map<string, PublishedPedagogicalView>();
-
-const integrationUnitIdForSection = (section: ModuleSection) => {
-  const a14Match = section.contentUrl?.match(/A14-(S\d+)/);
-  return section.editorial?.integrationUnitId || (a14Match ? `IP-A14-${a14Match[1]}` : null);
-};
 
 export const selectVisibleModuleSections = (
   module: ModuleData,
@@ -225,62 +220,42 @@ export const PedagogicalDeepDive: React.FC<{
   const integrationUnitId = integrationUnitIdForSection(section);
   const viewUrl = integrationUnitId ? `/knowledge/pedagogical/views/${integrationUnitId}.json` : null;
 
-  const [viewModel, setViewModel] = useState<PublishedPedagogicalView | null>(() =>
-    viewUrl ? deepDiveViewCache.get(viewUrl) || null : null
-  );
-  const [content, setContent] = useState<string | null>(() =>
-    !viewUrl && section.contentUrl ? deepDiveMarkdownCache.get(section.contentUrl) || null : null
-  );
-  const [state, setState] = useState<'idle' | 'loading' | 'loaded' | 'error'>(
-    viewModel || content ? 'loaded' : 'idle'
-  );
+  const [retryCount, setRetryCount] = useState(0);
+  const [request, setRequest] = useState<{
+    url: string;
+    state: 'loading' | 'loaded' | 'error';
+    view?: PublishedPedagogicalView;
+  } | null>(null);
+  // Do not display a previous unit while a new request is pending.
+  const currentRequest = request?.url === viewUrl ? request : null;
+  const viewModel = currentRequest?.view || (viewUrl ? deepDiveViewCache.get(viewUrl) : undefined);
+  const state = viewModel ? 'loaded' : currentRequest?.state || 'loading';
 
   useEffect(() => {
-    if (!isOpen || (!viewUrl && !section.contentUrl) || viewModel || content) return;
+    if (!isOpen || !viewUrl || !integrationUnitId) return;
+    const cached = deepDiveViewCache.get(viewUrl);
+    if (cached) {
+      setRequest({ url: viewUrl, state: 'loaded', view: cached });
+      return;
+    }
     const controller = new AbortController();
     let active = true;
-    setState('loading');
+    setRequest({ url: viewUrl, state: 'loading' });
 
     const loadContent = async () => {
-      // Prioridade 1: Tentar carregar View Model JSON Canônico V1
-      if (viewUrl) {
-        try {
-          const res = await fetch(viewUrl, {
-            signal: controller.signal,
-            headers: { Accept: 'application/json' },
-          });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const data = parsePublishedPedagogicalView(await res.json(), integrationUnitId);
-          if (active) {
-            deepDiveViewCache.set(viewUrl, data);
-            setViewModel(data);
-            setState('loaded');
-            return;
-          }
-        } catch {
-          if (active) setState('error');
-          return;
+      try {
+        const res = await fetch(viewUrl, {
+          signal: controller.signal,
+          headers: { Accept: 'application/json' },
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = parsePublishedPedagogicalView(await res.json(), integrationUnitId);
+        if (active) {
+          deepDiveViewCache.set(viewUrl, data);
+          setRequest({ url: viewUrl, state: 'loaded', view: data });
         }
-      }
-
-      // Prioridade 2 (Fallback): Carregar Markdown legado / A14
-      if (section.contentUrl) {
-        try {
-          const res = await fetch(section.contentUrl, {
-            signal: controller.signal,
-            headers: { Accept: 'text/markdown' },
-          });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const md = await res.text();
-          if (active) {
-            deepDiveMarkdownCache.set(section.contentUrl, md);
-            setContent(md);
-            setState('loaded');
-          }
-        } catch (err: unknown) {
-          if (!active || (err instanceof DOMException && err.name === 'AbortError')) return;
-          setState('error');
-        }
+      } catch {
+        if (active) setRequest({ url: viewUrl, state: 'error' });
       }
     };
 
@@ -290,9 +265,9 @@ export const PedagogicalDeepDive: React.FC<{
       active = false;
       controller.abort();
     };
-  }, [content, isOpen, section.contentUrl, viewModel, viewUrl]);
+  }, [integrationUnitId, isOpen, retryCount, viewUrl]);
 
-  if (!viewUrl && !section.contentUrl) return null;
+  if (!viewUrl) return null;
 
   return (
     <div className="pedagogical-deep-dive overflow-hidden rounded-2xl border border-teal-200 bg-teal-50/40">
@@ -337,11 +312,19 @@ export const PedagogicalDeepDive: React.FC<{
           )}
           {state === 'error' && (
             <div className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-900" role="alert">
-              Não foi possível carregar esta unidade. Verifique a conexão e tente abri-la novamente.
+              <p>Não foi possível carregar esta unidade. Verifique a conexão e tente novamente.</p>
+              <button
+                type="button"
+                className="mt-3 min-h-11 rounded-lg border border-rose-300 px-4 py-2 font-semibold hover:bg-rose-100"
+                onClick={() => setRetryCount((count) => count + 1)}
+              >
+                Tentar novamente
+              </button>
             </div>
           )}
           {viewModel && (isCumulativeReviewView(viewModel) ? (
             <CumulativeReviewRenderer
+              key={viewModel.unit.unitId}
               view={viewModel as CumulativeReviewView}
               activeSectionId={activeSectionId}
               onActiveSectionChange={onActiveSectionChange}
@@ -349,6 +332,7 @@ export const PedagogicalDeepDive: React.FC<{
             />
           ) : (
             <PedagogicalUnitRenderer
+              key={viewModel.unit.unitId}
               view={viewModel as PedagogicalUnitView}
               onAskTutor={onAskTutor}
               onPracticeExercises={onPracticeExercises}
@@ -357,7 +341,6 @@ export const PedagogicalDeepDive: React.FC<{
               onActiveSectionChange={onActiveSectionChange}
             />
           ))}
-          {!viewModel && content && <MarkdownContent content={content} pedagogical />}
         </div>
       )}
     </div>
@@ -1176,7 +1159,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             return (
             <section
               id={integrationUnitIdForSection(section) ? `module-unit-${integrationUnitIdForSection(section)}` : `intro-section-${idx}`}
-              key={`${section.lessonId || moduleData.id}:${section.groupId || idx}:${section.contentUrl || section.title}`}
+              key={integrationUnitIdForSection(section) || `${moduleData.id}:section-${idx}`}
               className={`module-unit-shell min-w-0 overflow-hidden space-y-5 ${
                 isIntroOverview ? 'p-0' : 'surface p-2.5 sm:p-6'
               } ${integrationUnitIdForSection(section) === openUnitId ? 'module-unit-shell--open' : ''}`}

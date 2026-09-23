@@ -2,6 +2,14 @@
 
 Este repositório instala, executa, testa, valida, compila e entrega a aplicação com artefatos já publicados. Produzir, revisar, homologar ou republicar esses artefatos pertence à fábrica externa. Arquivos gerados necessários ao produto permanecem versionados.
 
+Na migração de fronteira de 2026-09-23, os 115 Markdown de `pedagogical/units`
+foram arquivados na fábrica e retirados da entrega. O inventário atual contém
+351 artefatos (419.905.645 bytes). As 115 Views permanecem intactas e são a única
+fonte de aprofundamento da interface. Os snapshots editoriais preservam URLs
+históricas, omitidas pela projeção de runtime. Ausência da antiga pasta `units`
+é esperada nesta revisão; ausência de uma View continua sendo falha. Consulte
+`docs/PROJECT_DATA_LINEAGE.md` para hashes, persistência e reversão.
+
 ## Instalação e execução
 
 Use uma versão de Node compatível com `engines` e a versão npm declarada em `packageManager`. Execute `npm ci` na raiz. `npm run dev` inicia Express com Vite em desenvolvimento. `npm run build` compila o cliente; não cria um bundle do servidor. `npm start` executa `server.ts` com `tsx`: em produção, configure `NODE_ENV=production` e mantenha as ferramentas exigidas por `tsx` e Vite. `npm run preview` mostra apenas o cliente e não substitui a API Express.
@@ -12,7 +20,7 @@ Configure `GEMINI_API_KEY` e as credenciais Firebase do servidor no ambiente par
 
 - `npm run typecheck`: tipos do produto e servidor.
 - `npm test`: testes autônomos do produto; recursos relativos `/knowledge` são lidos dos arquivos publicados.
-- `npm run validate:knowledge`: inventário de bytes, currículo, questões, views, índices, macros obrigatórias, Markdown, PBL, todos os shards do tutor e schema dos pacotes publicados.
+- `npm run validate:knowledge`: inventário de bytes, currículo ligado às 115 Views por identidade, questões, views, índices, macros obrigatórias, PBL, todos os shards do tutor e schema dos pacotes publicados.
 - `npx playwright install chromium`: provisionamento explícito do navegador da versão instalada, fora do preflight.
 - `npm run ai-studio:preflight`: validação do produto, regressões de navegador e build do cliente. Não exige Git nem a fábrica.
 - `npm run verify:release`: acrescenta a verificação de dependências e tipos das Functions; não publica serviços nem certifica credenciais remotas.
@@ -47,7 +55,7 @@ Após uma publicação editorial autorizada, a fábrica oferece `npm run release
 
 Fato observado (2026-09-12): em uma importação no Google AI Studio, os quatro maiores artefatos versionados não apareceram no workspace importado — `official-questions.raw.json` (45,0 MB), `official-questions.normalized.json` (38,8 MB), `question_pedagogy_index.json` (28,1 MB) e `question_competency_links.json` (16,3 MB) — embora estejam presentes no Git. Todos os demais 462 artefatos protegidos (todos com menos de 10 MB) foram materializados. Não há documentação pública do importador que estabeleça um limite por arquivo; trate a omissão como **falha de importação**, nunca como arquivo obsoleto ou quebrado.
 
-`product-artifacts.manifest.json` é autodescritivo: expõe `totalBytes` (soma esperada dos 466 artefatos) e `largestArtifact` (maior arquivo esperado). Um importador pode detectar truncagem comparando esses dois números com o workspace materializado, sem gerar nada. `scripts/audit-product-artifacts.mjs` classifica cada falha por causa — `missing`, `size-mismatch` (assinatura de truncagem), `sha256-mismatch` (conteúdo alterado), `outside-root`/`symlink-outside-root` — para que nenhum agente confunda truncagem de importação com corrupção de conteúdo.
+`product-artifacts.manifest.json` é autodescritivo: expõe `totalBytes` (soma esperada dos artefatos da revisão importada) e `largestArtifact` (maior arquivo esperado). Um importador pode detectar truncagem comparando esses dois números com o workspace materializado, sem gerar nada. `scripts/audit-product-artifacts.mjs` classifica cada falha por causa — `missing`, `size-mismatch` (assinatura de truncagem), `sha256-mismatch` (conteúdo alterado), `outside-root`/`symlink-outside-root` — para que nenhum agente confunda truncagem de importação com corrupção de conteúdo.
 
 Protocolo de reparo para arquivos ausentes ou truncados na importação:
 

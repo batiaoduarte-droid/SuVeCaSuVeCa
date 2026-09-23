@@ -123,4 +123,101 @@ describe('FlashcardPractice', () => {
     expect(onCorrectAnswer).not.toHaveBeenCalled();
     expect(screen.queryByText(/\+10 XP/i)).not.toBeInTheDocument();
   });
+
+  it('omite o botão de explicação quando back e explanation forem idênticos', async () => {
+    const user = userEvent.setup();
+    localStorage.setItem('suveca_flashcards_guest', JSON.stringify([{
+      id: 'card-duplicado',
+      errorId: error.id,
+      source: 'caderno',
+      topic: error.conteudo,
+      front: 'Pergunta com explicação idêntica',
+      back: 'Esta é a resposta exata.',
+      explanation: 'Esta é a resposta exata.',
+      createdAt: '2026-08-11T00:00:00.000Z',
+      correctCount: 0,
+      incorrectCount: 0,
+    }]));
+
+    render(<FlashcardPractice errors={[error]} onUpdateErrorStatus={vi.fn()} />);
+
+    await user.click(await screen.findByRole('button', { name: /mostrar resposta/i }));
+    expect(screen.getByText('Esta é a resposta exata.')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /explicação complementar/i })).not.toBeInTheDocument();
+  });
+
+  it('aplica penalidade de dica no SM-2 e exibe blocos semânticos de erro e correção', async () => {
+    const user = userEvent.setup();
+    localStorage.setItem('suveca_flashcards_guest', JSON.stringify([{
+      id: 'card-pegadinha',
+      errorId: error.id,
+      source: 'caderno',
+      topic: error.conteudo,
+      front: 'Como evitar o erro de particípio?',
+      back: 'Problema: Esquecer a elipse do verbo auxiliar. Forma Correta: Reconstruir o verbo ter ou haver.',
+      hint: 'Pense na locução passiva com auxiliar oculto.',
+      createdAt: '2026-08-11T00:00:00.000Z',
+      correctCount: 0,
+      incorrectCount: 0,
+    }]));
+
+    const onUpdateErrorStatus = vi.fn();
+    render(<FlashcardPractice errors={[error]} onUpdateErrorStatus={onUpdateErrorStatus} onCorrectAnswer={vi.fn()} />);
+
+    // Usa dica antes de responder (o que reduz a avaliação no SM-2)
+    await user.click(await screen.findByRole('button', { name: /ver dica/i }));
+    expect(screen.getByText('Pense na locução passiva com auxiliar oculto.')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: /mostrar resposta/i }));
+
+    // Verifica blocos semânticos particionados
+    expect(screen.getByText('Atenção ao Erro Comum')).toBeInTheDocument();
+    expect(screen.getByText('Esquecer a elipse do verbo auxiliar.')).toBeInTheDocument();
+    expect(screen.getByText('Forma Correta')).toBeInTheDocument();
+    expect(screen.getByText('Reconstruir o verbo ter ou haver.')).toBeInTheDocument();
+
+    // Seleciona "Difícil" (com dica, Difícil é penalizado para Errei / again no motor SM-2)
+    await user.click(screen.getByRole('button', { name: /difícil/i }));
+
+    // Verifica que o card recebeu agendamento com intervalo curto de reforço (penalizado para again)
+    expect(screen.getByText(/Este cartão volta em cerca de 4 horas/i)).toBeInTheDocument();
+  });
+
+  it('renderiza os três blocos pedagógicos para o padrão O Erro / Por que ocorre / Como evitar e atualiza indicador de sessão', async () => {
+    const user = userEvent.setup();
+    localStorage.setItem('suveca_flashcards_guest', JSON.stringify([{
+      id: 'card-haver-fazem',
+      errorId: error.id,
+      source: 'caderno',
+      topic: 'Concordância Verbal',
+      front: 'Qual erro deve ser evitado ao empregar haver e fazer?',
+      back: 'O Erro: Escrever "Haviam muitas pessoas", "Fazem dez meses". Por que ocorre: No cotidiano informal, o falante transfere a concordância. Como evitar: Haver (= existir) e fazer (tempo) são estritamente impessoais: Havia muitas pessoas, Faz dez meses.',
+      createdAt: '2026-08-11T00:00:00.000Z',
+      correctCount: 0,
+      incorrectCount: 0,
+    }]));
+
+    render(<FlashcardPractice errors={[error]} onUpdateErrorStatus={vi.fn()} />);
+
+    // Verifica indicador de sessão inicial
+    expect(screen.getByText(/0 concluído\(s\) nesta sessão · 1 pendente\(s\)/i)).toBeInTheDocument();
+
+    await user.click(await screen.findByRole('button', { name: /mostrar resposta/i }));
+
+    // Verifica os 3 blocos individualizados
+    expect(screen.getByText('O Erro')).toBeInTheDocument();
+    expect(screen.getByText('Escrever "Haviam muitas pessoas", "Fazem dez meses".')).toBeInTheDocument();
+
+    expect(screen.getByText('Por que ocorre')).toBeInTheDocument();
+    expect(screen.getByText('No cotidiano informal, o falante transfere a concordância.')).toBeInTheDocument();
+
+    expect(screen.getByText('Como evitar')).toBeInTheDocument();
+    expect(screen.getByText('Haver (= existir) e fazer (tempo) são estritamente impessoais: Havia muitas pessoas, Faz dez meses.')).toBeInTheDocument();
+
+    // Avalia o card
+    await user.click(screen.getByRole('button', { name: /^bom$/i }));
+
+    // O indicador de sessão atualiza imediatamente
+    expect(screen.getByText(/1 concluído\(s\) nesta sessão/i)).toBeInTheDocument();
+  });
 });

@@ -68,6 +68,31 @@ test.describe('SuVeCa v4.2 — contrato publicado e experiência nativa', () => 
     await expectNoDocumentOverflow(page);
   });
 
+  test('recupera falha de download pela mesma View sem buscar Markdown legado', async ({ page }) => {
+    const markdownRequests: string[] = [];
+    page.on('request', (request) => {
+      if (request.url().includes('/pedagogical/units/')) markdownRequests.push(request.url());
+    });
+    let attempts = 0;
+    let unavailable = true;
+    await page.route(`**/knowledge/pedagogical/views/${REGULAR_UNIT}.json`, async (route) => {
+      attempts += 1;
+      // Keep the outage active across development StrictMode remounts.
+      if (unavailable) await route.fulfill({ status: 503, contentType: 'application/json', body: '{}' });
+      else await route.continue();
+    });
+    await openApp(page, `/?unit=${REGULAR_UNIT}&section=rules`);
+    await expect(page.getByRole('alert')).toContainText('Não foi possível carregar esta unidade');
+    const failedAttempts = attempts;
+    unavailable = false;
+    await page.getByRole('button', { name: 'Tentar novamente', exact: true }).click();
+    await expect(page.locator('.pedagogical-unit-view')).toBeVisible();
+    await expect(page.locator(`#${REGULAR_UNIT}-rules`)).toHaveAttribute('open', '');
+    expect(attempts).toBeGreaterThan(failedAttempts);
+    expect(markdownRequests).toEqual([]);
+    await expectNoDocumentOverflow(page);
+  });
+
   test('resposta oficial fica oculta até uma tentativa explícita', async ({ page }) => {
     await openApp(page, `/?unit=${REGULAR_UNIT}&section=official-questions`);
     const question = page.locator('.question-block').first();

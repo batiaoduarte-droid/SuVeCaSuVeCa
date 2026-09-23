@@ -1,6 +1,7 @@
 import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MODULES_DATA } from './data/modulesData';
+import { unitIdForSection } from './lib/pedagogicalViewContract';
 import { CadernoErroItem, QuizQuestion } from './types/suveca';
 import { Navbar, TabType } from './components/Navbar';
 import { DailyTipCard } from './components/DailyTipCard';
@@ -119,11 +120,6 @@ const readStoredErrors = (userId?: string | null): CadernoErroItem[] | null => {
 
 const lastModuleStorageKey = (userId?: string | null) =>
   `suveca_last_module_${userId || 'guest'}`;
-
-const unitIdForSection = (section: (typeof MODULES_DATA)[number]['sections'][number]) => {
-  const cumulativeMatch = section.contentUrl?.match(/A14-(S\d+)/);
-  return section.editorial?.integrationUnitId || (cumulativeMatch ? `IP-A14-${cumulativeMatch[1]}` : null);
-};
 
 export default function App() {
   const initialStudyLocation = useRef(readStudyLocation()).current;

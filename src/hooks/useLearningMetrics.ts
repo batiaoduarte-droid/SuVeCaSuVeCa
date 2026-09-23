@@ -4,6 +4,7 @@ import { db, safeSetDoc, type User } from '../lib/firebase';
 import type { LearningAttempt } from '../components/StatisticsDashboard';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import { MODULES_DATA } from '../data/modulesData';
+import { unitIdForSection } from '../lib/pedagogicalViewContract';
 
 export interface LearningMetrics {
   schemaVersion: 2;
@@ -30,12 +31,6 @@ const EMPTY_METRICS: LearningMetrics = {
   legacyReadSectionIds: [],
   readSectionIds: [],
   modulePractice: {},
-};
-
-const unitIdForSection = (section?: (typeof MODULES_DATA)[number]['sections'][number]) => {
-  const cumulativeMatch = section.contentUrl?.match(/A14-(S\d+)/);
-  return section.editorial?.integrationUnitId
-    || (cumulativeMatch ? `IP-A14-${cumulativeMatch[1]}` : null);
 };
 
 export const resolveLegacyReadUnitIds = (readSectionIds: string[]): string[] => {

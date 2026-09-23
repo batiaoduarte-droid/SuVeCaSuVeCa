@@ -38,7 +38,7 @@ export interface QuizQuestion {
 export interface ModuleSection {
   title: string;
   contentMarkdown: string;
-  /** Conteúdo aprofundado publicado separadamente e carregado apenas quando o aluno o abre. */
+  /** @deprecated Metadado histórico dos snapshots editoriais; não é uma URL de runtime. */
   contentUrl?: string;
   summary?: string;
   lessonId?: string;
