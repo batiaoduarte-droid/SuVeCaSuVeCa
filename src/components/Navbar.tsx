@@ -1,3 +1,4 @@
+import type { StudyMode } from '../lib/studyMode';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   BookOpen,
@@ -51,6 +52,7 @@ export type TabType =
   | 'pbl';
 
 interface NavbarProps {
+  studyMode?: StudyMode;
   activeTab: TabType;
   setActiveTab: (tab: TabType) => void;
   onOpenSearch: () => void;
@@ -77,6 +79,7 @@ interface NavItem {
 
 export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
+  studyMode = 'complete',
   setActiveTab,
   onOpenSearch,
   errorCount,
@@ -103,12 +106,14 @@ export const Navbar: React.FC<NavbarProps> = ({
     mobileDrawerCloseRef
   );
 
-  const primaryTabs: NavItem[] = [
+  const studyTabs: NavItem[] = [
     { id: 'modules', label: 'Apostila', icon: BookOpen },
     { id: 'analyzer', label: 'Analisador', icon: Cpu, isIa: true },
     { id: 'pbl', label: 'Aprender por Problemas (PBL)', mobileLabel: 'PBL', icon: Sparkles, isIa: true },
     { id: 'simulado', label: 'Simulado', icon: GraduationCap },
   ];
+
+  const primaryTabs = studyTabs.filter(item => studyMode !== 'pbl_only' || !['modules', 'analyzer'].includes(item.id));
 
   const secondaryTabs: NavItem[] = [
     {
@@ -208,8 +213,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               className="flex items-center space-x-3 cursor-pointer group min-h-[44px] rounded-xl -ml-2 px-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2"
-              onClick={() => setActiveTab('modules')}
-              aria-label="Ir para a Apostila"
+              onClick={() => setActiveTab(studyMode === 'pbl_only' ? 'pbl' : 'modules')}
+              aria-label={studyMode === 'pbl_only' ? 'Ir para PBL' : 'Ir para a Apostila'}
             >
               <div className="w-10 h-10 rounded-xl bg-teal-700 text-white font-bold text-lg flex items-center justify-center shadow-xs">
                 S

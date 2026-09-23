@@ -2,10 +2,23 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { SelfExplanationModal } from './SelfExplanationModal';
+import { LiveAudioClient } from '../../lib/audio/liveAudioClient';
 
 describe('SelfExplanationModal', () => {
   beforeEach(() => {
     vi.restoreAllMocks();
+  });
+
+  it('encerra a conversa em andamento ao trocar de conta com o modal aberto', async () => {
+    const start = vi.spyOn(LiveAudioClient.prototype, 'start').mockResolvedValue(undefined);
+    const stop = vi.spyOn(LiveAudioClient.prototype, 'stop').mockImplementation(() => {});
+    const props = { isOpen: true, onClose: vi.fn(), topicTitle: 'Regência', sourceType: 'module_section' as const, sourceId: 'IP-A00-G01' };
+    const view = render(<SelfExplanationModal {...props} userId="alice" />);
+    await userEvent.click(screen.getByRole('tab', { name: /live duplex/i }));
+    await userEvent.click(screen.getByRole('button', { name: /iniciar sabatina oral/i }));
+    expect(start).toHaveBeenCalledOnce();
+    view.rerender(<SelfExplanationModal {...props} userId="bob" />);
+    expect(stop).toHaveBeenCalledOnce();
   });
 
   it('não renderiza nada quando isOpen é false', () => {

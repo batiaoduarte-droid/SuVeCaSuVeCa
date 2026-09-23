@@ -1,3 +1,4 @@
+import { TTSPlayer } from '../lib/audio/ttsService';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { CadernoErroItem, ErrorFlashcard, FlashcardRating } from '../types/suveca';
 import { auth, db, onAuthStateChanged, safeSetDoc } from '../lib/firebase';
@@ -181,117 +182,24 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   const [handsFreeCycle, setHandsFreeCycle] = useState(0);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [audioLoading, setAudioLoading] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const ttsRef = useRef<TTSPlayer | null>(null);
+  if (!ttsRef.current) ttsRef.current = new TTSPlayer();
   const handsFreeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isHandsFreeRef = useRef(isHandsFree);
   isHandsFreeRef.current = isHandsFree;
 
   const stopAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.onended = null;
-      audioRef.current.onerror = null;
-      audioRef.current = null;
-    }
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      if (utteranceRef.current) {
-        utteranceRef.current.onend = null;
-        utteranceRef.current.onerror = null;
-        utteranceRef.current = null;
-      }
-    }
-    if (handsFreeTimerRef.current) {
-      clearTimeout(handsFreeTimerRef.current);
-      handsFreeTimerRef.current = null;
-    }
-    setIsSpeaking(false);
-    setAudioLoading(false);
-    setHandsFreeStep('idle');
+    ttsRef.current?.stop();
+    if (handsFreeTimerRef.current) clearTimeout(handsFreeTimerRef.current);
+    handsFreeTimerRef.current = null;
+    setIsSpeaking(false); setAudioLoading(false); setHandsFreeStep('idle');
   };
-
-  const fallbackBrowserSpeech = (text: string, onEnd?: () => void) => {
-    setAudioLoading(false);
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      const cleanText = toLearnerFacingContent(text).replace(/\[.*?\]/g, '').trim();
-      if (!cleanText) {
-        setIsSpeaking(false);
-        onEnd?.();
-        return;
-      }
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      utteranceRef.current = utterance;
-      utterance.lang = 'pt-BR';
-      utterance.rate = 1.0;
-      utterance.onend = () => {
-        setIsSpeaking(false);
-        utteranceRef.current = null;
-        onEnd?.();
-      };
-      utterance.onerror = () => {
-        setIsSpeaking(false);
-        utteranceRef.current = null;
-        onEnd?.();
-      };
-      window.speechSynthesis.speak(utterance);
-    } else {
-      setIsSpeaking(false);
-      onEnd?.();
-    }
-  };
-
-  const speakText = async (text: string, onEnd?: () => void) => {
-    if (!text || typeof window === 'undefined') {
-      onEnd?.();
-      return;
-    }
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current = null;
-    }
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-    }
-    setIsSpeaking(true);
-    setAudioLoading(true);
-
-    const cleanText = toLearnerFacingContent(text).replace(/\[.*?\]/g, '').trim();
-    if (!cleanText) {
-      setIsSpeaking(false);
-      setAudioLoading(false);
-      onEnd?.();
-      return;
-    }
-
-    try {
-      const response = await authenticatedFetch('/api/gemini/tts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: cleanText }),
-      });
-      const data = await response.json();
-
-      if (response.ok && data.audioBase64) {
-        setAudioLoading(false);
-        const audio = new Audio(`data:${data.mimeType || 'audio/wav'};base64,${data.audioBase64}`);
-        audioRef.current = audio;
-        audio.onended = () => {
-          setIsSpeaking(false);
-          audioRef.current = null;
-          onEnd?.();
-        };
-        audio.onerror = () => {
-          fallbackBrowserSpeech(cleanText, onEnd);
-        };
-        await audio.play();
-        return;
-      }
-    } catch (err) {
-      console.warn('[TTS] Falha na síntese remota, usando sintetizador nativo:', err);
-    }
-
-    fallbackBrowserSpeech(cleanText, onEnd);
+  const speakText = (text: string, onEnd?: () => void) => {
+    setIsSpeaking(true); setAudioLoading(true);
+    return ttsRef.current!.speak(text, {
+      onReady: () => setAudioLoading(false),
+      onEnd: () => { setIsSpeaking(false); setAudioLoading(false); onEnd?.(); },
+    });
   };
 
   useEffect(() => {
@@ -461,6 +369,8 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     ? visibleFlashcards.find((card) => card.id === activeCardId)
     : undefined;
   const activeCard = reviewedCard || activeCards.find((card) => card.id === activeCardId) || activeCards[0];
+  useEffect(() => { stopAudio(); setIsHandsFree(false); }, [resolvedUserId]);
+  useEffect(() => { if (!isHandsFree) stopAudio(); }, [activeCard?.id]);
   const reviewResource = useReviewResource(activeCard?.source === 'suveca' ? activeCard.id : undefined);
   const errorsWithoutCards = errors.filter(
     (error) => !cadernoCards.some((card) => card.errorId === error.id)
@@ -550,13 +460,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
         clearTimeout(handsFreeTimerRef.current);
         handsFreeTimerRef.current = null;
       }
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
+      ttsRef.current?.stop();
       setIsSpeaking(false);
       setAudioLoading(false);
     };

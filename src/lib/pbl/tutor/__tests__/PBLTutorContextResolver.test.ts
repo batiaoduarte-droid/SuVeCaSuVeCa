@@ -7,7 +7,10 @@ describe('PBLTutorContextResolver & Benchmark Homologation', () => {
     expect(manifest).toBeDefined();
     expect(manifest.schemaVersion).toBe('1.0.0');
     expect(manifest.totalQuestions).toBe(4945);
-    expect(manifest.shards.length).toBeGreaterThanOrEqual(22);
+    expect(manifest.shards.length).toBeGreaterThan(0);
+    expect(manifest.shards.length).toBeLessThan(22);
+    expect(manifest.shards.reduce((sum, shard) => sum + shard.recordCount, 0)).toBe(4945);
+    expect(manifest.shards.every(shard => shard.bytes <= 8 * 1024 * 1024)).toBe(true);
     expect(manifest.auditedCorrections.length).toBeGreaterThanOrEqual(1);
 
     const poremCorrection = manifest.auditedCorrections.find(

@@ -4,7 +4,7 @@ Este repositório instala, executa, testa, valida, compila e entrega a aplicaç�
 
 ## Entrega seletiva — 2026-09-23
 
-O contrato de entrega v1 substitui os quatro agregados oficiais/PBL por manifests e fragmentos obrigatórios. Views regulares separam corpo didático e páginas de até cinco questões; A14 mantém seu contrato. O catálogo inicial é leve, e detalhes, busca e conteúdos PBL carregam conforme o uso. Consulte `docs/PRODUCT_SLIMMING_IMPLEMENTATION.md` para evidências e reversão. Os números e procedimentos de importação anteriores, abaixo, descrevem revisões históricas.
+O contrato de entrega v1 substitui os quatro agregados oficiais/PBL por manifests e fragmentos obrigatórios. Views regulares separam corpo didático e questões, exibidas em páginas de cinco itens; A14 mantém seu contrato. Os fragmentos físicos de questões agora reúnem várias páginas, até 1 MiB. Oficiais usam nove pares de fragmentos de até 4 MiB; o tutor, dez fragmentos privados de até 8 MiB. O catálogo inicial é leve, e detalhes, busca e conteúdos PBL carregam conforme o uso. `audit:artifacts` exige menos de 1.000 arquivos na árvore de entrega. Consulte `docs/AI_STUDIO_INTEGRATION.md` para a consolidação atual e `docs/PRODUCT_SLIMMING_IMPLEMENTATION.md` para a migração anterior.
 
 Para produção, execute `npm run build:production` e `npm run start:production`. O servidor compilado inicia com Node, sem Vite/tsx. `npm run package:production` monta uma pasta nova em `release/`, com cliente, servidor, dados privados, dependências diretas declaradas e arquivos gzip/Brotli. Transfira essa pasta inteira, execute nela `npm install --omit=dev` e `npm start`. As cópias comprimidas e os bundles não entram no Git. `npm run dev` e `npm start` na raiz continuam sendo o fluxo anterior com tsx; `preview` não fornece APIs.
 
@@ -12,11 +12,12 @@ O pacote tem uma única cópia lógica dos dados: dados públicos em `dist/knowl
 
 O preflight também compila e testa o servidor em produção. `verify:release` acrescenta os gates das Functions. Validações locais não certificam credenciais, sincronização externa ou serviços autenticados remotos.
 
-Na fábrica, a ordem após uma publicação autorizada é: reconstruir os shards afetados a partir de `inputs/deployment-aggregates`, executar `npm run publish:delivery`, atualizar índices afetados, executar `npm run release:inventory` e validar o produto. O publicador de overlays finaliza a entrega seletiva; o de pacotes PBL finaliza PBL/compactação. Esses comandos não pertencem ao runtime e não podem ser usados para reparar uma importação incompleta. O auditor rejeita a reintrodução dos quatro agregados.
+Na fábrica, a ordem após uma publicação autorizada é: reconstruir os shards afetados a partir de `inputs/deployment-aggregates`, executar `npm run publish:delivery` (inclui consolidação verificada), atualizar índices afetados, executar `npm run release:inventory` e validar o produto. O publicador de overlays finaliza a entrega seletiva; o de pacotes PBL finaliza PBL/compactação. Esses comandos não pertencem ao runtime e não podem ser usados para reparar uma importação incompleta. O auditor rejeita a reintrodução dos quatro agregados.
 
 Na migração de fronteira de 2026-09-23, os 115 Markdown de `pedagogical/units`
-foram arquivados na fábrica e retirados da entrega. O inventário atual contém
-351 artefatos (419.905.645 bytes). As 115 Views permanecem intactas e são a única
+foram arquivados na fábrica e retirados da entrega. Naquela etapa o inventário continha
+351 artefatos (419.905.645 bytes); após entrega seletiva e consolidação, são
+562 artefatos (280.334.563 bytes). As 115 Views preservam o conteúdo e são a única
 fonte de aprofundamento da interface. Os snapshots editoriais preservam URLs
 históricas, omitidas pela projeção de runtime. Ausência da antiga pasta `units`
 é esperada nesta revisão; ausência de uma View continua sendo falha. Consulte
@@ -37,8 +38,11 @@ Configure `GEMINI_API_KEY` e as credenciais Firebase do servidor no ambiente par
 - `npm run ai-studio:preflight`: validação do produto, regressões de navegador e build do cliente. Não exige Git nem a fábrica.
 - `npm run verify:release`: acrescenta a verificação de dependências e tipos das Functions; não publica serviços nem certifica credenciais remotas.
 - `npm run eval:ai`: avaliação opcional contra uma API real, com `SUVECA_EVAL_ID_TOKEN` e `SUVECA_EVAL_BASE_URL`.
+- `npm run test:firestore`: testes das regras, com `FIRESTORE_EMULATOR_HOST=127.0.0.1:8185` apontando para um emulador Firestore local já iniciado. O teste usa `demo-suveca-rules`, rejeita hosts externos e não faz deployment. É verificação adicional ao preflight.
 
 O preflight não instala dependências, não gera conteúdo e não conserta manifests. Logs são preservados no terminal. Falha ou ausência de pré-requisito encerra a execução sem declarar aprovação. Bundles e relatórios de testes ficam em diretórios ignorados.
+
+O áudio remoto requer Firebase autenticado e Gemini configurado no servidor. TTS usa `/api/gemini/tts`, com fallback para a voz do navegador. A conversa ao vivo obtém ticket via `POST /api/gemini/live-ticket` e conecta em `/api/gemini/live`; o proxy de produção deve preservar Host/Origin e suportar upgrade WebSocket. O ticket dura 30 segundos, vale uma vez e pertence ao processo que o emitiu: múltiplas instâncias precisam de afinidade entre essas duas requisições. Cada conta tem uma sessão por processo, limitada a dez minutos. Permissão de microfone e HTTPS são necessários no navegador. Testes locais de transporte não certificam disponibilidade dos modelos ou credenciais remotas.
 
 ## Firebase Functions
 

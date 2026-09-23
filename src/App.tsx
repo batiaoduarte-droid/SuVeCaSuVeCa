@@ -1,3 +1,4 @@
+import { useStudyMode } from './lib/studyMode';
 import { useModuleDelivery } from './hooks/useModuleDelivery';
 import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -151,6 +152,7 @@ export default function App() {
 
   // Firebase Auth State
   const [user, setUser] = useState<User | null>(null);
+  const [studyMode, restoreCompleteMode] = useStudyMode(user?.uid);
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [cadernoReadyFor, setCadernoReadyFor] = useState<string | null>('guest');
   const authHydrationId = useRef(0);
@@ -562,6 +564,7 @@ export default function App() {
       {/* Editorial Navigation */}
       {!isImmersiveFocus && (
         <Navbar
+          studyMode={studyMode}
           activeTab={activeTab}
           setActiveTab={(tab) => {
             if (tab === 'tutor') {
@@ -590,6 +593,9 @@ export default function App() {
           ? 'mx-auto w-full flex-1 px-4 py-4 sm:px-6 lg:px-10'
           : 'app-content-shell py-4 sm:py-6 pb-28 lg:pb-8 flex-1'
       }`}>
+          {studyMode === 'pbl_only' && <div className="app-content-shell py-2 text-sm text-purple-950" role="status">
+            Navegação com foco em PBL. <button type="button" className="min-h-11 underline" onClick={restoreCompleteMode}>Mostrar navegação completa</button>
+          </div>}
         <DailyReviewReminder
           errors={cadernoErrors}
           userId={user?.uid}
@@ -621,6 +627,7 @@ export default function App() {
                     </div>
                     {/* Linha 2 do Dashboard: Dica do Dia */}
                     <DailyTipCard
+                      userId={user?.uid}
                       onOpenModule={(id) => {
                         handleSelectModule(id);
                         setActiveTab('modules');

@@ -1,5 +1,7 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ArrowRight, Lightbulb, RefreshCw, Sparkles, Bookmark, BookmarkCheck, ChevronLeft } from 'lucide-react';
+import { useSavedTips } from '../hooks/useSavedTips';
+import { SavedTipsView } from './SavedTipsView';
 import { DAILY_TIPS, DailyTip, getDailyTip } from '../data/dailyTips';
 
 interface DailyTipCardProps {
@@ -7,41 +9,14 @@ interface DailyTipCardProps {
   userId?: string;
 }
 
-const STORAGE_KEY = 'suveca_favorite_tips';
 
 export const DailyTipCard: React.FC<DailyTipCardProps> = ({ onOpenModule, userId }) => {
   const tip = useMemo(() => getDailyTip(), []);
   const [shownTip, setShownTip] = useState<DailyTip>(tip);
   const [activeView, setActiveView] = useState<'daily' | 'saved'>('daily');
 
-  const [savedTipIds, setSavedTipIds] = useState<string[]>(() => {
-    if (typeof window === 'undefined') return [];
-    try {
-      const saved = localStorage.getItem(userId ? `${STORAGE_KEY}_${userId}` : STORAGE_KEY);
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
-  });
-
+  const { savedIds: savedTipIds, toggle: toggleFavorite, message, sync } = useSavedTips(userId);
   const isCurrentFavorite = savedTipIds.includes(shownTip.id);
-
-  const toggleFavorite = (tipId: string) => {
-    setSavedTipIds((prev) => {
-      const next = prev.includes(tipId)
-        ? prev.filter((id) => id !== tipId)
-        : [...prev, tipId];
-      try {
-        localStorage.setItem(
-          userId ? `${STORAGE_KEY}_${userId}` : STORAGE_KEY,
-          JSON.stringify(next)
-        );
-      } catch {
-        // quota exceeded
-      }
-      return next;
-    });
-  };
 
   const handleShowAnother = () => {
     if (DAILY_TIPS.length < 2) return;
@@ -69,11 +44,11 @@ export const DailyTipCard: React.FC<DailyTipCardProps> = ({ onOpenModule, userId
                     <Sparkles className="h-3.5 w-3.5" />
                     Dica do dia
                   </div>
-                  {savedTipIds.length > 0 && (
+                  {(
                     <button
                       type="button"
                       onClick={() => setActiveView('saved')}
-                      className="text-[11px] font-bold text-teal-800 hover:text-teal-950 underline underline-offset-2 cursor-pointer"
+                      className="min-h-11 text-[11px] font-bold text-teal-800 hover:text-teal-950 underline underline-offset-2 cursor-pointer"
                     >
                       Dicas salvas ({savedTipIds.length})
                     </button>
@@ -91,10 +66,10 @@ export const DailyTipCard: React.FC<DailyTipCardProps> = ({ onOpenModule, userId
                 <button
                   type="button"
                   onClick={() => toggleFavorite(shownTip.id)}
-                  className={`flex h-10 w-10 items-center justify-center rounded-xl border transition cursor-pointer ${
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl border transition cursor-pointer ${
                     isCurrentFavorite
                       ? 'border-amber-400 bg-amber-100 text-amber-900 shadow-2xs'
-                      : 'border-slate-200 bg-white text-slate-400 hover:text-amber-700 hover:border-amber-300'
+                      : 'border-slate-200 bg-white text-slate-600 hover:text-amber-700 hover:border-amber-300'
                   }`}
                   title={isCurrentFavorite ? 'Remover dos favoritos' : 'Salvar dica para consulta posterior'}
                   aria-label={isCurrentFavorite ? 'Remover dica dos favoritos' : 'Salvar dica como favorita'}
@@ -105,7 +80,7 @@ export const DailyTipCard: React.FC<DailyTipCardProps> = ({ onOpenModule, userId
                     <Bookmark className="h-5 w-5" />
                   )}
                 </button>
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-200 bg-white text-amber-700 shadow-xs">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-amber-200 bg-white text-amber-700 shadow-xs">
                   <Lightbulb className="h-5 w-5" />
                 </div>
               </div>
@@ -145,7 +120,7 @@ export const DailyTipCard: React.FC<DailyTipCardProps> = ({ onOpenModule, userId
               <button
                 type="button"
                 onClick={() => setActiveView('daily')}
-                className="inline-flex items-center gap-1 text-xs font-bold text-teal-800 hover:text-teal-950 cursor-pointer"
+                className="inline-flex min-h-11 items-center gap-1 text-xs font-bold text-teal-800 hover:text-teal-950 cursor-pointer"
               >
                 <ChevronLeft className="h-4 w-4" /> Voltar à dica de hoje
               </button>
@@ -154,54 +129,13 @@ export const DailyTipCard: React.FC<DailyTipCardProps> = ({ onOpenModule, userId
               </span>
             </div>
 
-            {savedTipsList.length === 0 ? (
-              <div className="text-center py-6 text-xs text-slate-500 space-y-1">
-                <Bookmark className="h-6 w-6 mx-auto text-slate-300" />
-                <p className="font-semibold text-slate-700">Nenhuma dica salva ainda.</p>
-                <p>Clique no ícone de marcador na dica do dia para guardá-la aqui.</p>
-              </div>
-            ) : (
-              <div className="max-h-60 overflow-y-auto space-y-2.5 pr-1">
-                {savedTipsList.map((tipItem) => (
-                  <div
-                    key={tipItem.id}
-                    className="p-3 bg-white/90 rounded-xl border border-amber-200/90 shadow-2xs space-y-1.5"
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <span className="text-[10px] font-bold uppercase text-teal-800 bg-teal-50 px-1.5 py-0.5 rounded">
-                          {tipItem.category}
-                        </span>
-                        <h4 className="text-xs font-extrabold text-slate-900 mt-1">{tipItem.rule}</h4>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => toggleFavorite(tipItem.id)}
-                        className="text-amber-700 hover:text-rose-600 p-1 cursor-pointer"
-                        title="Remover dos favoritos"
-                        aria-label="Remover dos favoritos"
-                      >
-                        <BookmarkCheck className="h-4 w-4" />
-                      </button>
-                    </div>
-                    <p className="text-[11px] text-slate-600 leading-relaxed">{tipItem.explanation}</p>
-                    <p className="text-[11px] italic text-teal-950 font-medium">“{tipItem.example}”</p>
-                    {tipItem.moduleId && onOpenModule && (
-                      <button
-                        type="button"
-                        onClick={() => onOpenModule(tipItem.moduleId!)}
-                        className="text-[10px] font-bold text-teal-800 hover:underline inline-flex items-center gap-1 cursor-pointer pt-0.5"
-                      >
-                        Abrir módulo correspondente <ArrowRight className="h-3 w-3" />
-                      </button>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
+            <SavedTipsView tips={savedTipsList} onRemove={toggleFavorite} onOpenModule={onOpenModule} />
           </div>
         </div>
       )}
+      {message && <div role="status" className="relative mt-3 text-sm text-amber-950">{message}
+        <button type="button" onClick={() => void sync()} className="ml-2 min-h-11 underline">Tentar sincronizar</button>
+      </div>}
     </section>
   );
 };

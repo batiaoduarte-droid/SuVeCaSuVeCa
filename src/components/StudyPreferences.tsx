@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { announceStudyMode } from '../lib/studyMode';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { doc, getDoc, deleteDoc } from 'firebase/firestore';
 import {
   Bell,
@@ -138,6 +139,7 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
 }) => {
   const userId = user?.uid;
   const isSupported = supportsPushNotifications();
+  const modeRevision = useRef(0);
 
   const [prefs, setPrefs] = useState<StudyPreferencesType>(() =>
     readLocalPreferences(userId)
@@ -147,9 +149,22 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
   const [isWorking, setIsWorking] = useState(false);
   const [message, setMessage] = useState<{ text: string; type: 'success' | 'error' | 'info' } | null>(null);
 
+  useEffect(() => {
+    const updateMode = (event: Event) => {
+      const detail = (event as CustomEvent).detail;
+      if (detail?.userId === (userId || 'guest')) {
+        modeRevision.current++;
+        setPrefs(current => ({ ...current, studyMode: detail.mode === 'pbl_only' ? 'pbl_only' : 'complete' }));
+      }
+    };
+    window.addEventListener('suveca:study-mode-changed', updateMode);
+    return () => window.removeEventListener('suveca:study-mode-changed', updateMode);
+  }, [userId]);
+
   // Load preferences from Firestore / LocalStorage
   useEffect(() => {
     let cancelled = false;
+    const initialModeRevision = modeRevision.current;
 
     const loadData = async () => {
       setIsLoading(true);
@@ -204,8 +219,12 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
           merged.emailBackupEnabled = notificationSnap.data()?.emailReviewEnabled === true;
         }
 
+        if (modeRevision.current !== initialModeRevision) {
+          merged.studyMode = readLocalPreferences(userId).studyMode;
+        }
         setPrefs(merged);
         window.localStorage.setItem(storageKeyForUser(userId), JSON.stringify(merged));
+        announceStudyMode(merged.studyMode === 'pbl_only' ? 'pbl_only' : 'complete', userId);
 
         // Check if device subscription exists
         const deviceId = readDeviceId(userId);
@@ -261,7 +280,7 @@ export const StudyPreferences: React.FC<StudyPreferencesProps> = ({
     if (typeof window !== 'undefined') {
       window.dispatchEvent(
         new CustomEvent('suveca:study-mode-changed', {
-          detail: { mode: updated.studyMode || 'complete' },
+          detail: { mode: updated.studyMode || 'complete', userId: userId || 'guest' },
         })
       );
     }

@@ -20,7 +20,8 @@ it('preserves every occurrence and applies the same eligibility rule to all publ
     const normalized = await fetchNormalizedQuestionsByRefs(questions.map(questionReference).filter(Boolean), full.unit.lessonId);
     const eligible = questions.map((question: any, index: number) => ({ question, index })).filter((r: any) => hasSafePracticePresentation(r.question, full.unit.lessonId, normalized));
     const pages = body.questionDelivery.pages.flatMap((descriptor: any) => {
-      expect(descriptor.count).toBeLessThanOrEqual(5);
+      expect(descriptor.count).toBeGreaterThan(0);
+      expect(descriptor.bytes).toBeLessThanOrEqual(1024 * 1024);
       return readVerifiedJson(root, descriptor);
     });
     expect(pages, name).toEqual(eligible);

@@ -11,6 +11,7 @@ const refs = new Set();
 const parts = new Set();
 const files = new Set();
 for (const descriptor of manifest.shards) {
+  assert.ok(descriptor.bytes <= manifest.maximumShardBytes && descriptor.bytes <= 8 * 1024 * 1024, 'Tutor shard exceeds import budget');
   assert.ok(!parts.has(descriptor.part) && !files.has(descriptor.file), 'Duplicate tutor shard');
   parts.add(descriptor.part);
   files.add(descriptor.file);

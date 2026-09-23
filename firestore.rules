@@ -78,6 +78,17 @@ service cloud.firestore {
         allow read, write: if isOwner(userId);
       }
 
+      // Sessions are validated and written exclusively by the authenticated server.
+      match /pblSessions/{sessionId} {
+        allow read: if isOwner(userId);
+        allow write: if false;
+      }
+
+      // Private learner cache, never an authoritative assessment or public score.
+      match /pblMastery/{competencyId} {
+        allow read, write: if isOwner(userId);
+      }
+
       // A client can create one immutable answer-map submission. A Cloud
       // Function recomputes the score and writes the verified result.
       match /attempt_submissions/{attemptId} {

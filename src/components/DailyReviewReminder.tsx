@@ -98,6 +98,7 @@ export const DailyReviewReminder: React.FC<DailyReviewReminderProps> = ({
   hidden = false,
 }) => {
   const scope = userId ? `user:${userId}` : 'guest';
+  const toastDismissedKey = `suveca_review_toast_dismissed_${userId || 'guest'}`;
   const [preference, setPreference] = useState<ReminderPreference>(() =>
     readLocalPreference(userId)
   );
@@ -119,18 +120,18 @@ export const DailyReviewReminder: React.FC<DailyReviewReminderProps> = ({
     const threshold = preference.toastErrorThreshold || 5;
     const isDismissed =
       typeof window !== 'undefined' &&
-      window.sessionStorage.getItem('suveca_review_toast_dismissed');
+      window.sessionStorage.getItem(toastDismissedKey);
     if (pendingErrorCount >= threshold && !isDismissed) {
       setShowToast(true);
     } else {
       setShowToast(false);
     }
-  }, [pendingErrorCount, preference.toastErrorThreshold]);
+  }, [pendingErrorCount, preference.toastErrorThreshold, toastDismissedKey]);
 
   const handleDismissToast = () => {
     setShowToast(false);
     if (typeof window !== 'undefined') {
-      window.sessionStorage.setItem('suveca_review_toast_dismissed', 'true');
+      window.sessionStorage.setItem(toastDismissedKey, 'true');
     }
   };
 
@@ -235,6 +236,7 @@ export const DailyReviewReminder: React.FC<DailyReviewReminderProps> = ({
       const payload: Record<string, unknown> = {
         enabled: preference.enabled,
         reminderTime: preference.reminderTime,
+        toastErrorThreshold: preference.toastErrorThreshold,
         updatedAt: preference.updatedAt,
       };
       if (preference.lastNotifiedOn !== undefined) {

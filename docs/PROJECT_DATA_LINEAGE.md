@@ -1,5 +1,76 @@
 # Projeto SuVeCa — linhagem, transformação, publicação e uso dos dados
 
+## Integração AI Studio e consolidação física — 2026-09-23
+
+Baseline do produto: `main` em `2687969`. O ZIP do AI Studio foi referência
+para comparação de funcionalidades; não substituiu o código, os contratos nem
+a autoridade pedagógica da main. Esta migração autorizada modifica representação
+de entrega e persistência do aluno, sem nova autoria, alteração de gabaritos,
+IDs, decisões homologadas ou canonical.
+
+- **Questões das Views:** 628 fragmentos físicos passam a 123 (117 elegíveis e
+  seis de exclusões preservadas). `questionDelivery.pages` continua sendo uma
+  lista de descritores, agora com até 1 MiB por arquivo e limites alinhados a
+  grupos de cinco. `PublishedQuestionsSection` resolve o fragmento por contagem
+  acumulada e recorta a página visual de cinco itens. Tentativas visitadas
+  permanecem montadas, com isolamento por usuário. `reconstructedSha256`
+  continua identificando a View completa; o objeto pedagógico não muda.
+- **Oficiais e tutor:** 57 pares raw/normalized tornam-se nove pares de até
+  4 MiB, preservando 3.485 questões em cada representação. Os 39 fragmentos
+  privados do tutor tornam-se dez de até 8 MiB, preservando os 4.945 contextos
+  completos e suas variantes. O tutor continua fora da raiz pública.
+- **Recursos e estruturas:** 27 arquivos de recursos de revisão tornam-se um
+  `review-resources/resources.json`, com 54 recursos e 27 entradas de unidade
+  no manifest; os consumidores continuam filtrando por identidade. Os 28
+  fragmentos de casos, diagnósticos, transferências e questões autorais PBL
+  tornam-se quatro `structure-parts/<tipo>/all.json`; índices apontam para o
+  fragmento único de cada coleção. Não há alteração das sessões ou pacotes.
+- **Produção e reversão:** `consolidate-product-files.mjs`, na fábrica em
+  `06_Ferramentas/produto-editorial/scripts`, verifica hashes de entrada e
+  igualdade JSON completa de 110 conjuntos, arquiva preimagens e só então
+  aposenta arquivos individuais. `finalize-product-delivery.mjs` inclui essa
+  etapa; os publicadores de questões, recursos, estruturas e tutor já usam os
+  novos limites. Recibos em `05_Auditorias/product-consolidation-1790203698434`
+  e `product-consolidation-1790203958772`. Restaurar código, artefatos e manifests
+  juntos. O inventário atual contém 562 artefatos e 280.334.563 bytes. O gate
+  `audit:artifacts` passa a exigir uma árvore de entrega com menos de 1.000
+  arquivos, contando candidatos Git existentes ou arquivos de exportação sem
+  dependências, builds e caches locais.
+- **Bizus salvos:** `DailyTipCard` usa `useSavedTips` e `SavedTipsView`.
+  Conteúdo continua vindo do catálogo publicado; somente IDs e marcadores
+  `{saved, updatedAt}` são persistidos. Chave local nova:
+  `suveca_saved_tips_v1_<uid|guest>`; documento remoto:
+  `users/<uid>/data/saved_tips`, schema 1. Migração lê a chave antiga da main
+  `suveca_favorite_tips[_<uid>]` e o formato antigo do ZIP
+  `suveca_saved_tips_<uid|guest>`/`{tips: [...]}`. A chave compartilhada antiga
+  pertence ao visitante. Transações mesclam pelo timestamp e conservam
+  remoções; empate favorece remoção. Falha remota preserva o estado local e
+  informa sincronização pendente. Respostas atrasadas não atravessam contas.
+- **Preferências e lembretes:** `studyMode.ts`, `App`, `Navbar` e
+  `StudyPreferences` usam a chave existente `suveca_study_prefs_<uid|guest>` e
+  `users/<uid>/data/study_preferences`. `pbl_only` reduz a navegação principal,
+  preserva deep links e oferece restauração do modo completo. O evento
+  `suveca:study-mode-changed` passa a carregar `userId`. A dispensa diária de
+  lembretes é isolada por conta; o limite de erros também é salvo nas
+  preferências remotas. Push mantém o serviço e a Function já existentes.
+- **Áudio e IA:** `TTSPlayer` é compartilhado por flashcards e autoexplicação,
+  encapsula PCM em WAV sem alterar amostras e cancela respostas obsoletas.
+  Gemini indisponível usa leitura completa pela voz do navegador. O cliente
+  Live captura PCM16 a 16 kHz e reproduz áudio recebido. O servidor exige
+  ticket de uso único obtido por HTTP autenticado, valida origem, limita
+  volume/duração e encerra recursos. `geminiTaskMapping.ts` restringe modelos
+  por capacidade e mantém os padrões da main. Auditoria registra TTS e
+  metadados da sessão Live, sem guardar o fluxo bruto do microfone. Não há
+  nova coleção de áudio nem nova autoridade pedagógica da IA.
+- **Regras:** `users/<uid>/pblSessions` admite leitura do proprietário e nega
+  escrita direta do cliente, preservando avaliação pelo servidor.
+  `pblMastery` permanece cache do proprietário, sem poder liberar gabarito.
+  Tokens push e favoritos usam caminhos privados já existentes.
+  `npm run test:firestore` verifica essas fronteiras em emulador local; não
+  publica regras. Vitest, navegador/Axe, auditorias de equivalência e
+  preflight continuam obrigatórios. Evidências e limites desta execução:
+  `docs/AI_STUDIO_INTEGRATION.md`.
+
 ## Entrega seletiva do produto — 2026-09-23 (release validado localmente)
 
 A representação de entrega tem versão própria **1**, independente das versões
@@ -13,7 +84,8 @@ semânticas 4.2.x/1.0.0, do build curricular e das chaves persistidas. A base é
   obrigatórios do runtime. IDs, ordem, payloads, respostas e hashes de
   proveniência permanecem preservados.
 - Views regulares: o corpo em `pedagogical/views` declara `questionDelivery`,
-  com páginas de até cinco ocorrências elegíveis e um fragmento de ocorrências
+  inicialmente com arquivos de até cinco ocorrências elegíveis (consolidados
+  na migração acima, preservando cinco por página visual) e um fragmento de ocorrências
   bloqueadas. Cada ocorrência conserva índice e objeto completos; não há
   deduplicação. `readPublishedView` recompõe e verifica o SHA-256 do modelo
   completo arquivado na fábrica. A14 conserva o contrato próprio.

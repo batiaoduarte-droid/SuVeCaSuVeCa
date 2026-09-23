@@ -1,3 +1,5 @@
+import { TTSPlayer } from '../../lib/audio/ttsService';
+import { LiveAudioClient } from '../../lib/audio/liveAudioClient';
 import React, { useState, useRef, useEffect } from 'react';
 import {
   X,
@@ -67,106 +69,29 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
   // Live Duplex Voice states
   const [liveStatus, setLiveStatus] = useState<'idle' | 'connecting' | 'connected' | 'speaking' | 'error'>('idle');
   const [liveTranscript, setLiveTranscript] = useState<Array<{ sender: 'user' | 'bot'; text: string }>>([]);
-  const liveWsRef = useRef<WebSocket | null>(null);
-  const liveStreamRef = useRef<MediaStream | null>(null);
-  const liveAudioRef = useRef<HTMLAudioElement | null>(null);
+  const liveClientRef = useRef<LiveAudioClient | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<number | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
+  const stopLiveSession = () => { liveClientRef.current?.stop(); liveClientRef.current = null; };
   const startLiveSession = async () => {
-    try {
-      setLiveStatus('connecting');
-      setErrorMessage('');
-
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      liveStreamRef.current = stream;
-
-      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-      const wsUrl = `${protocol}//${window.location.host}/api/gemini/live`;
-      const socket = new WebSocket(wsUrl);
-      liveWsRef.current = socket;
-
-      socket.onopen = () => {
-        setLiveStatus('connected');
-        socket.send(
-          JSON.stringify({
-            turns: `Olá Professor SuVeCA, sou o aluno e gostaria de iniciar a sabatina oral no Método Feynman sobre o tópico: "${topicTitle}". ${
-              targetRuleContext ? `Ponto focal da regra: ${targetRuleContext}.` : ''
-            }`,
-          })
-        );
-      };
-
-      socket.onmessage = (event) => {
-        try {
-          const data = JSON.parse(event.data);
-          if (data.type === 'error') {
-            setErrorMessage(data.message || 'Erro no canal Live duplex');
-            setLiveStatus('error');
-            return;
-          }
-          const parts = data.serverContent?.modelTurn?.parts;
-          if (Array.isArray(parts)) {
-            for (const part of parts) {
-              if (part.text) {
-                setLiveTranscript((prev) => [...prev, { sender: 'bot', text: part.text }]);
-              }
-              if (part.inlineData?.data) {
-                setLiveStatus('speaking');
-                if (liveAudioRef.current) {
-                  liveAudioRef.current.pause();
-                }
-                const audio = new Audio(
-                  `data:${part.inlineData.mimeType || 'audio/wav'};base64,${part.inlineData.data}`
-                );
-                liveAudioRef.current = audio;
-                audio.onended = () => setLiveStatus('connected');
-                void audio.play().catch(() => setLiveStatus('connected'));
-              }
-            }
-          }
-        } catch (err) {
-          console.error('[LiveAPI] Erro ao decodificar resposta:', err);
-        }
-      };
-
-      socket.onerror = () => {
-        setErrorMessage('Instabilidade na conexão WebSocket com o servidor Live.');
-        setLiveStatus('error');
-      };
-
-      socket.onclose = () => {
-        setLiveStatus('idle');
-      };
-    } catch (err: any) {
-      console.error('[LiveAPI] Erro ao solicitar microfone ou conectar:', err);
-      setErrorMessage(
-        err.name === 'NotAllowedError'
-          ? 'Acesso ao microfone foi negado. Habilite a permissão no navegador para usar a sabatina oral.'
-          : 'Não foi possível conectar ao serviço Live.'
-      );
-      setLiveStatus('error');
-    }
+    stopLiveSession();
+    setErrorMessage(''); setLiveTranscript([]);
+    const client = new LiveAudioClient({
+      onStatus: setLiveStatus,
+      onText: text => setLiveTranscript(previous => [...previous, { sender: 'bot', text }]),
+      onError: setErrorMessage,
+    });
+    liveClientRef.current = client;
+    await client.start(`Gostaria de explicar o tópico: ${topicTitle}. Contexto publicado: ${targetRuleContext || 'Faça perguntas sobre meu raciocínio e explicite limites quando faltar contexto.'}`);
   };
-
-  const stopLiveSession = () => {
-    if (liveAudioRef.current) {
-      liveAudioRef.current.pause();
-      liveAudioRef.current = null;
-    }
-    if (liveWsRef.current) {
-      liveWsRef.current.close();
-      liveWsRef.current = null;
-    }
-    if (liveStreamRef.current) {
-      liveStreamRef.current.getTracks().forEach((track) => track.stop());
-      liveStreamRef.current = null;
-    }
-    setLiveStatus('idle');
-  };
+  useEffect(() => {
+    if (!isOpen || mode !== 'live_voice') stopLiveSession();
+    return () => stopLiveSession();
+  }, [isOpen, mode, userId, sourceId, topicTitle]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -340,51 +265,14 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
   };
 
   const [isSpeakingFeedback, setIsSpeakingFeedback] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
-    };
-  }, []);
-
+  const feedbackPlayer = useRef<TTSPlayer | null>(null);
+  if (!feedbackPlayer.current) feedbackPlayer.current = new TTSPlayer();
+  useEffect(() => () => feedbackPlayer.current?.stop(), []);
+  useEffect(() => { feedbackPlayer.current?.stop(); setIsSpeakingFeedback(false); }, [isOpen, mode, userId]);
   const handleToggleSpeech = (text: string) => {
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-      setErrorMessage('A síntese de voz não é suportada neste navegador.');
-      return;
-    }
-
-    if (isSpeakingFeedback) {
-      window.speechSynthesis.cancel();
-      setIsSpeakingFeedback(false);
-      return;
-    }
-
-    const cleanText = text.replace(/[*_#`~]/g, '').trim();
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.lang = 'pt-BR';
-    utterance.rate = 1.0;
-
-    const voices = window.speechSynthesis.getVoices();
-    const ptVoice = voices.find(
-      (v) =>
-        v.lang.startsWith('pt') &&
-        (v.name.includes('Google') ||
-          v.name.includes('Natural') ||
-          v.name.includes('Luciana') ||
-          v.name.includes('Francisca') ||
-          v.name.includes('Daniel'))
-    ) || voices.find((v) => v.lang.startsWith('pt'));
-
-    if (ptVoice) utterance.voice = ptVoice;
-
-    utterance.onend = () => setIsSpeakingFeedback(false);
-    utterance.onerror = () => setIsSpeakingFeedback(false);
-
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
+    if (isSpeakingFeedback) { feedbackPlayer.current?.stop(); setIsSpeakingFeedback(false); return; }
     setIsSpeakingFeedback(true);
+    void feedbackPlayer.current!.speak(text, { onEnd: () => setIsSpeakingFeedback(false) });
   };
 
   const handleExportMarkdown = () => {

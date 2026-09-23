@@ -41,6 +41,7 @@ check(indexPayload.questionSetVersion === `editorial-corpus-${indexPayload.build
 check(Array.isArray(manifest.shards) && manifest.shards.length === manifest.totals?.shards, 'Quantidade de shards divergente no manifesto.');
 
 for (const shard of manifest.shards || []) {
+  check(shard.raw.bytes <= 4 * 1024 * 1024 && shard.normalized.bytes <= 4 * 1024 * 1024, `Shard ${shard.part}: limite de 4 MiB excedido.`);
   const [rawBuffer, normalizedBuffer] = await Promise.all([
     auditFile(base, shard.raw),
     auditFile(base, shard.normalized),

@@ -140,7 +140,7 @@ describe('PBLTutorServerRoute Handlers', () => {
   });
 
   describe('handlePBLTutorManifest', () => {
-    it('returns 200 and the complete tutor manifest with 22 shards', async () => {
+    it('returns 200 and the complete tutor manifest with bounded consolidated shards', async () => {
       const { req, res, getStatusCode, getBody } = createMockReqRes();
 
       await handlePBLTutorManifest(req, res);
@@ -149,7 +149,9 @@ describe('PBLTutorServerRoute Handlers', () => {
       const manifest = getBody();
       expect(manifest.schemaVersion).toBe('1.0.0');
       expect(manifest.totalQuestions).toBe(4945);
-      expect(manifest.shards.length).toBeGreaterThanOrEqual(22);
+      expect(manifest.shards.length).toBeGreaterThan(0);
+      expect(manifest.shards.reduce((sum, shard) => sum + shard.recordCount, 0)).toBe(4945);
+      expect(manifest.shards.every(shard => shard.bytes <= 8 * 1024 * 1024)).toBe(true);
     });
   });
 
