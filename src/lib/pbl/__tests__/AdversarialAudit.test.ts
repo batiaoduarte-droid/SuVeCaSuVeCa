@@ -1,3 +1,4 @@
+import { readPublishedCollection } from '../../../../scripts/lib/published-data.mjs';
 import { describe, it, expect, beforeAll } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -35,9 +36,9 @@ describe('Adversarial QA Suite (25 Tests)', () => {
   beforeAll(() => {
     const pblDir = path.resolve('public/knowledge/pbl');
     comps = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_competency_map.json'), 'utf8'));
-    cases = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_cases.json'), 'utf8'));
-    xfers = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_transfer_sets.json'), 'utf8'));
-    diags = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_diagnostic_paths.json'), 'utf8'));
+    cases = readPublishedCollection(path.join(pblDir, 'pbl_cases.json'));
+    xfers = readPublishedCollection(path.join(pblDir, 'pbl_transfer_sets.json'));
+    diags = readPublishedCollection(path.join(pblDir, 'pbl_diagnostic_paths.json'));
     sessions = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_cumulative_review_sessions.json'), 'utf8'));
     const runtimeManifest: PBLRuntimeShardManifest = JSON.parse(
       fs.readFileSync(path.join(pblDir, 'pbl_runtime_manifest.json'), 'utf8')

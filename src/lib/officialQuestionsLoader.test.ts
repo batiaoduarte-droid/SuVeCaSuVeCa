@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 describe('officialQuestionsLoader', () => {
@@ -39,7 +40,19 @@ describe('officialQuestionsLoader', () => {
       }
       throw new Error(`Shard inesperado: ${url}`);
     });
-    vi.stubGlobal('fetch', fetchMock);
+    const realMock = vi.fn(async (input: RequestInfo | URL) => {
+      const response = await fetchMock(input);
+      if (!String(input).endsWith('official-questions.manifest.json')) return response;
+      const manifest = await response.json();
+      for (const shard of manifest.shards) {
+        let bytes = '';
+        try { bytes = await (await fetchMock('/knowledge/' + shard.normalized.file)).text(); } catch { bytes = '[]'; }
+        shard.normalized.bytes = new TextEncoder().encode(bytes).length;
+        shard.normalized.sha256 = createHash('sha256').update(bytes).digest('hex');
+      }
+      return new Response(JSON.stringify(manifest));
+    });
+    vi.stubGlobal('fetch', realMock);
 
     const { fetchNormalizedQuestionsByRefs } = await import('./officialQuestionsLoader');
     const result = await fetchNormalizedQuestionsByRefs(
@@ -50,8 +63,8 @@ describe('officialQuestionsLoader', () => {
     expect(result['OQ-A00-aula.q0001']?.prompt).toBe('Questão seletiva');
     expect(result['A00:aula.q0001']).toBe(result['OQ-A00-aula.q0001']);
     expect(result['aula.q0001']).toBe(result['OQ-A00-aula.q0001']);
-    expect(fetchMock).toHaveBeenCalledTimes(2);
-    expect(fetchMock).not.toHaveBeenCalledWith(
+    expect(realMock).toHaveBeenCalledTimes(2);
+    expect(realMock).not.toHaveBeenCalledWith(
       '/knowledge/parts/part-b.json',
       expect.anything(),
     );
@@ -83,7 +96,19 @@ describe('officialQuestionsLoader', () => {
       }
       throw new Error(`Recurso inesperado: ${url}`);
     });
-    vi.stubGlobal('fetch', fetchMock);
+    const realMock = vi.fn(async (input: RequestInfo | URL) => {
+      const response = await fetchMock(input);
+      if (!String(input).endsWith('official-questions.manifest.json')) return response;
+      const manifest = await response.json();
+      for (const shard of manifest.shards) {
+        let bytes = '';
+        try { bytes = await (await fetchMock('/knowledge/' + shard.normalized.file)).text(); } catch { bytes = '[]'; }
+        shard.normalized.bytes = new TextEncoder().encode(bytes).length;
+        shard.normalized.sha256 = createHash('sha256').update(bytes).digest('hex');
+      }
+      return new Response(JSON.stringify(manifest));
+    });
+    vi.stubGlobal('fetch', realMock);
 
     const { fetchNormalizedQuestionsByRefs } = await import('./officialQuestionsLoader');
     await fetchNormalizedQuestionsByRefs(
@@ -98,6 +123,6 @@ describe('officialQuestionsLoader', () => {
     );
 
     expect(second['OQ-A00-aula.q0002']?.prompt).toBe('Segunda');
-    expect(fetchMock.mock.calls.filter(([url]) => String(url).endsWith('part-shared.json'))).toHaveLength(1);
+    expect(realMock.mock.calls.filter(([url]) => String(url).endsWith('part-shared.json'))).toHaveLength(1);
   });
 });

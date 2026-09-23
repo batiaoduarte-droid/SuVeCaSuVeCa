@@ -1,3 +1,4 @@
+import { questionReference, normalizedQuestionFor, hasSafePracticePresentation } from '../../../lib/officialPracticePresentation';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { AlertTriangle, HelpCircle } from 'lucide-react';
 import type { OfficialQuestionView } from '../../../types/pedagogicalView';
@@ -22,6 +23,9 @@ import {
 
 interface OfficialQuestionsSectionProps {
   questions?: OfficialQuestionView[];
+  totalQuestions?: number;
+  numberOffset?: number;
+  showPagination?: boolean;
   lessonId?: string;
   userId?: string;
   onPracticeMore?: () => void;
@@ -29,55 +33,8 @@ interface OfficialQuestionsSectionProps {
 
 const QUESTIONS_PAGE_SIZE = 5;
 
-const questionReference = (question: OfficialQuestionView): string => {
-  const payload = question.questionPayload || {};
-  return question.officialQuestionId
-    || question.sourceQuestionId
-    || payload.question_id
-    || question.questionId
-    || '';
-};
-
-const normalizedQuestionFor = (
-  question: OfficialQuestionView,
-  lessonId: string,
-  map: Record<string, NormalizedQuestion>,
-): NormalizedQuestion | undefined => {
-  const payload = question.questionPayload || {};
-  const sourceQuestionId = question.sourceQuestionId || payload.question_id || question.questionId || '';
-  const questionId = question.officialQuestionId || question.questionId || sourceQuestionId;
-  return map[questionId] || map[sourceQuestionId] || map[`${lessonId}:${sourceQuestionId}`];
-};
-
-const hasSafePracticePresentation = (
-  question: OfficialQuestionView,
-  lessonId: string,
-  map: Record<string, NormalizedQuestion>,
-): boolean => {
-  const presentation = question.questionPresentation;
-  if (['source_incomplete', 'source_conflict'].includes(presentation?.status || '')) return false;
-  const normalized = normalizedQuestionFor(question, lessonId, map);
-  if (!normalized) return true;
-  if (
-    normalized.presentation?.contextStatus === 'source_missing'
-    || normalized.presentation?.formattingStatus === 'source_missing'
-  ) return false;
-  const payload = question.questionPayload || {};
-  const prompt = presentation?.stem || normalized.prompt || payload.prompt || question.prompt || '';
-  const support = normalized.presentation?.supportRichText
-    || normalized.presentation?.supportBlocks?.map((block) => block.richText || block.text).join('\n\n')
-    || normalized.supportText
-    || payload.support_text;
-  const command = normalized.presentation?.commandRichText || prompt;
-  if (requiresIdentifiedContext(prompt) && !String(support || '').trim()) return false;
-  return !(
-    requiresVisualEmphasis(prompt)
-    && !hasSourceBackedVisualPresentation(normalized.presentation, support)
-  );
-};
-
 export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> = ({
-  questions = [],
+  questions = [], totalQuestions, numberOffset = 0, showPagination = true,
   lessonId = 'A00',
   userId,
   onPracticeMore,
@@ -85,6 +42,8 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
   const [enrichedMap, setEnrichedMap] = useState<Record<string, NormalizedQuestion>>({});
   const [resolvedQuestionSetKey, setResolvedQuestionSetKey] = useState('');
   const [page, setPage] = useState(0);
+  const [loadError, setLoadError] = useState(false);
+  const [retry, setRetry] = useState(0);
   const questionListRef = useRef<HTMLDivElement>(null);
   const encounteredRefs = useRef(new Set<string>());
   const sourceEligibleQuestions = useMemo(
@@ -130,12 +89,13 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
         setResolvedQuestionSetKey(questionSetKey);
       }
     };
-    loadRealQuestions();
+    setLoadError(false);
+    void loadRealQuestions().catch(() => { if (active) setLoadError(true); });
     return () => {
       active = false;
       controller.abort();
     };
-  }, [eligibleRefsKey, lessonId, questionSetKey]);
+  }, [eligibleRefsKey, lessonId, questionSetKey, retry]);
 
   useEffect(() => {
     const root = questionListRef.current;
@@ -176,7 +136,7 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
       <div className="flex items-center gap-2 border-b border-teal-100/80 pb-3">
         <HelpCircle className="h-5 w-5 text-teal-700" />
         <h3 className="m-0 text-base font-black text-slate-900">
-          Questões Oficiais de Prova ({displayedQuestionCount})
+          Questões Oficiais de Prova ({totalQuestions ?? displayedQuestionCount})
         </h3>
       </div>
 
@@ -192,7 +152,8 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
         </div>
       )}
 
-      {!enrichmentReady && (
+      {loadError && <div role="alert">Não foi possível carregar as questões. <button type="button" onClick={() => setRetry(n => n + 1)}>Tentar novamente</button></div>}
+      {!enrichmentReady && !loadError && (
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600" role="status">
           Verificando a integridade das questões desta unidade…
         </div>
@@ -268,9 +229,9 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
           const organization = payload.organization || q.organization;
 
           return (
-            <div key={qId || idx} data-question-encounter-ref={qId || sourceQuestionId}>
+            <div key={`${numberOffset + pageStart + idx}:${qId}`} data-question-encounter-ref={qId || sourceQuestionId}>
             <QuestionBlock
-              title={`Questão ${pageStart + idx + 1}: ${organization || board || 'Concurso Público'}`}
+              title={`Questão ${numberOffset + pageStart + idx + 1}: ${organization || board || 'Concurso Público'}`}
               board={board}
               year={year}
               promptContent={(
@@ -305,7 +266,7 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
           Nenhuma questão desta seleção possui fonte suficiente para uma tentativa segura. Use a prática adaptativa abaixo para continuar no mesmo tema.
         </div>
       )}
-      {practiceQuestions.length > 0 && (
+      {showPagination && practiceQuestions.length > 0 && (
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
         <p className="m-0 text-xs font-semibold text-slate-700" aria-live="polite">
           Página {page + 1} de {pageCount}. Exibindo {pageStart + 1}–{pageStart + visibleQuestions.length} de {practiceQuestions.length} questões.

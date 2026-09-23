@@ -62,7 +62,7 @@ export class GeminiKeyManager {
     // 2. Se nenhuma chave ou se estivermos em ambiente local de desenvolvimento,
     // tentar carregar o arquivo canônico do Notebook LM (apenas fora de testes automatizados)
     const notebookLmEnvPath = 'C:\\Users\\origi\\OneDrive\\Desktop\\Códigos\\portugues\\Notebook LM\\.env';
-    if (!isTestEnv && fs.existsSync(notebookLmEnvPath)) {
+    if (!isTestEnv && process.env.NODE_ENV !== 'production' && fs.existsSync(notebookLmEnvPath)) {
       try {
         const content = fs.readFileSync(notebookLmEnvPath, 'utf8');
         const lines = content.split(/\r?\n/);

@@ -1,3 +1,4 @@
+import { readPublishedView } from './lib/published-data.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { hasDuplicatedInlineOptions } from './lib/official-question-presentation.mjs';
@@ -79,7 +80,7 @@ const collectQuestions = (value) => {
 
 for (const filename of fs.readdirSync(viewsDir)) {
   if (!filename.endsWith('.json') || filename === 'manifest.json') continue;
-  collectQuestions(JSON.parse(fs.readFileSync(path.join(viewsDir, filename), 'utf8')));
+  collectQuestions(readPublishedView(path.join(viewsDir, filename)));
 }
 
 const promptFor = (viewQuestion, normalizedQuestion) => String(

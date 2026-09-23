@@ -1,3 +1,4 @@
+import { readPublishedCollection } from '../../../../scripts/lib/published-data.mjs';
 import { describe, it, expect, beforeAll } from 'vitest';
 import fs from 'fs';
 import path from 'path';
@@ -49,15 +50,9 @@ describe('PBLEngine Real Datasets Comprehensive Homologation', () => {
     const comps: PBLCompetency[] = JSON.parse(
       fs.readFileSync(path.join(pblDir, 'pbl_competency_map.json'), 'utf8')
     );
-    const cases: PBLCase[] = JSON.parse(
-      fs.readFileSync(path.join(pblDir, 'pbl_cases.json'), 'utf8')
-    );
-    const xfers: PBLTransferSet[] = JSON.parse(
-      fs.readFileSync(path.join(pblDir, 'pbl_transfer_sets.json'), 'utf8')
-    );
-    const diags: PBLDiagnosticPath[] = JSON.parse(
-      fs.readFileSync(path.join(pblDir, 'pbl_diagnostic_paths.json'), 'utf8')
-    );
+    const cases: PBLCase[] = readPublishedCollection(path.join(pblDir, 'pbl_cases.json'));
+    const xfers: PBLTransferSet[] = readPublishedCollection(path.join(pblDir, 'pbl_transfer_sets.json'));
+    const diags: PBLDiagnosticPath[] = readPublishedCollection(path.join(pblDir, 'pbl_diagnostic_paths.json'));
     const sessions: PBLCumulativeSession[] = JSON.parse(
       fs.readFileSync(path.join(pblDir, 'pbl_cumulative_review_sessions.json'), 'utf8')
     );

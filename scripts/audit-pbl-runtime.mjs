@@ -1,3 +1,4 @@
+import { readPublishedCollection, readPublishedView } from './lib/published-data.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
@@ -79,7 +80,7 @@ for (const file of requiredFiles) {
 }
 
 if (!errors.length) {
-  const readJson = (name) => JSON.parse(fs.readFileSync(path.join(PBL_DIR, name), 'utf8'));
+  const readJson = (name) => readPublishedCollection(path.join(PBL_DIR, name));
 
   const manifest = readJson('pbl_manifest.json');
   const comps = readJson('pbl_competency_map.json');
@@ -370,7 +371,7 @@ if (!errors.length) {
   officialIndex.items.forEach((item) => publishedQuestionRefs.add(`OQ-${item.questionId.replace(':', '-')}`));
   const viewsDir = path.join(KNOWLEDGE_DIR, 'pedagogical', 'views');
   for (const file of fs.readdirSync(viewsDir).filter((name) => name.endsWith('.json') && name !== 'manifest.json')) {
-    const view = JSON.parse(fs.readFileSync(path.join(viewsDir, file), 'utf8'));
+    const view = readPublishedView(path.join(viewsDir, file));
     for (const question of view.officialQuestions || []) {
       const questionRef = question.officialQuestionId || question.questionId;
       const answer = question.answerPayload?.answer || question.officialAnswer;

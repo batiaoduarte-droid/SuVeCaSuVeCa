@@ -1,5 +1,60 @@
 # Projeto SuVeCa — linhagem, transformação, publicação e uso dos dados
 
+## Entrega seletiva do produto — 2026-09-23 (release validado localmente)
+
+A representação de entrega tem versão própria **1**, independente das versões
+semânticas 4.2.x/1.0.0, do build curricular e das chaves persistidas. A base é
+`5e8a28c`, que já incorpora a retirada v3 e as mudanças de flashcards.
+
+- Os quatro agregados raw/normalized oficiais e links/pedagogias PBL são
+  entradas da fábrica em `06_Ferramentas/produto-editorial/inputs/deployment-aggregates`.
+  O produto exige manifests e fragmentos; sua ausência é erro explícito.
+  Os recibos originais em `sources` descrevem a fonte arquivada, não arquivos
+  obrigatórios do runtime. IDs, ordem, payloads, respostas e hashes de
+  proveniência permanecem preservados.
+- Views regulares: o corpo em `pedagogical/views` declara `questionDelivery`,
+  com páginas de até cinco ocorrências elegíveis e um fragmento de ocorrências
+  bloqueadas. Cada ocorrência conserva índice e objeto completos; não há
+  deduplicação. `readPublishedView` recompõe e verifica o SHA-256 do modelo
+  completo arquivado na fábrica. A14 conserva o contrato próprio.
+- PBL: `init()` lê manifests, competências e revisões cumulativas. Índices
+  localizam questões, estruturas e pacotes autorais. Getters assíncronos
+  carregam os fragmentos necessários e validam tamanho, SHA-256, contagem e
+  identidade. Erro de rede interrompe a operação, sem escolher outro candidato.
+  A retomada prepara os conteúdos antes de habilitar a sessão.
+- Navegação e migrações usam `moduleCatalog.generated.ts`, preservando
+  identidade, ordem, objetivos e conceitos. Detalhes em `catalog/modules`
+  são carregados ao selecionar o módulo; `catalog/search.json` preserva os
+  campos pesquisáveis e snippets e só é carregado ao abrir a busca.
+- A busca de questões do servidor usa `official-question-search.json`,
+  derivado exclusivamente dos mesmos campos normalized/índice e com as
+  mesmas regras de normalização, pontuação e desempate. A API mantém a
+  resposta completa por padrão e aceita `projection=practice` para omitir
+  raw dos detalhes e amostras.
+- Contextos exclusivos do tutor ficam em `server-data/pbl/tutor`, fora de
+  `public` e `dist`. Resolver e auditor usam essa fronteira; o produto não
+  consulta a fábrica. Autenticação e confirmação de tentativa continuam
+  obrigatórias nas APIs existentes.
+- JSON de entrega é compacto; canonical, fontes, decisões e evidência histórica
+  não são reformatados. Recibos de compactação guardam hashes anteriores e
+  novos na fábrica. O catálogo macro mantém seus bytes, vinculados ao índice.
+- O cache de dados compartilhado contabiliza bytes serializados e limita a
+  retenção a 32 MiB. Componentes e sessões ativos mantêm suas referências
+  durante a remoção de entradas inativas; respostas não são guardadas nele.
+- `build:production` compila cliente e servidor Node; `package:production`
+  inclui apenas dist, servidor, dados privados, configuração incorporada e
+  dependências diretas de execução. gzip/Brotli são gerados no pacote ignorado
+  pelo Git. URLs mutáveis revalidam; apenas assets com hash são imutáveis.
+- Auditorias reconstituem o universo completo. O inventário consumidor inclui
+  novas páginas, índices e dados privados. Publicar exige projeção seletiva,
+  compactação, atualização explícita do inventário e todos os gates.
+- Arquivo/reversão: `Notebook LM/90_Historico/2026-09-23-product-slimming`.
+  Restaurar código, dados e manifests como um conjunto; nunca restaurar só
+  um descritor. O relatório da missão registra gates e métricas efetivos;
+  esta seção não constitui homologação.
+
+
+
 ## Retirada do Markdown v3 do produto — 2026-09-23
 
 Migração de fronteira a partir de `730f969`, conforme a missão de enxugar o app

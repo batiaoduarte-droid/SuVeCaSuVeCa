@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, render, fireEvent } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import type { PedagogicalUnitView } from '../../types/pedagogicalView';
 import { PedagogicalUnitRenderer } from './PedagogicalUnitRenderer';
@@ -18,6 +18,7 @@ describe('renderização das unidades regulares publicadas', () => {
       localStorage.clear();
       const view = JSON.parse(fs.readFileSync(path.join(root, file), 'utf8')) as PedagogicalUnitView;
       const rendered = render(<PedagogicalUnitRenderer view={view} />);
+      fireEvent.click(rendered.getByRole('button', { name: /Expandir todas/i }));
       const match = rendered.container.textContent?.match(/\b(?:KB|PROC|WARN)-[A-Z0-9_-]+\b/);
       if (match) {
         throw new Error(`FILE ${file} CONTAINS INTERNAL ID: [${match[0]}] in context: "${rendered.container.textContent?.slice(Math.max(0, rendered.container.textContent.indexOf(match[0]) - 50), Math.min(rendered.container.textContent.length, rendered.container.textContent.indexOf(match[0]) + 100))}"`);
@@ -27,7 +28,7 @@ describe('renderização das unidades regulares publicadas', () => {
 
       cleanup();
     }
-  }, 75_000);
+  }, 120_000);
 
   it('preserva na UI todos os campos pedagógicos dos 181 contrastes publicados', () => {
     const root = path.join(process.cwd(), 'public', 'knowledge', 'pedagogical', 'views');

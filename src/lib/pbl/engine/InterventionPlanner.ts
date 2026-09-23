@@ -67,7 +67,7 @@ export class InterventionPlanner {
       : undefined;
 
     // Verificar se há pacote de autoria próprio registrado para a competência
-    const authoredPkg = this.repo.getAuthoredPackage?.(diagResult.competencyRef);
+    const authoredPkg = await this.repo.getAuthoredPackage?.(diagResult.competencyRef);
     let authoredBlocks: { hint?: any[]; partial?: any[]; full?: any[] } | undefined = undefined;
     let authoredTakeaway: string | undefined = undefined;
     let authoredTitle: string | undefined = undefined;

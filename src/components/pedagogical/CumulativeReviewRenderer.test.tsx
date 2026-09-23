@@ -69,6 +69,7 @@ describe('CumulativeReviewRenderer', () => {
 
   it('renderiza os chips do mapa de conceitos', () => {
     render(<CumulativeReviewRenderer view={mockCumulativeReview} />);
+    fireEvent.click(screen.getByRole('button', { name: /mapa de conceitos/i }));
     expect(screen.getByText('Hiato')).toBeInTheDocument();
     expect(screen.getByText('Ditongo Aberto')).toBeInTheDocument();
     expect(screen.getByText('Hífen')).toBeInTheDocument();
@@ -82,6 +83,7 @@ describe('CumulativeReviewRenderer', () => {
 
   it('interage com o checklist do protocolo de revisão ativa', () => {
     render(<CumulativeReviewRenderer view={mockCumulativeReview} />);
+    fireEvent.click(screen.getByRole('button', { name: /protocolo de revisão/i }));
     const protocolButton = screen.getByText(/Identificar a regra central/i);
     expect(protocolButton).toBeInTheDocument();
 

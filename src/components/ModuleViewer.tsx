@@ -1,3 +1,6 @@
+import { fetchPublishedJson, invalidatePublishedData } from '../lib/publishedData';
+import { MODULES_DATA } from '../data/modulesData';
+import { useModuleDelivery } from '../hooks/useModuleDelivery';
 import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { CadernoErroItem, ModuleData, ModuleSection, SuvecaMethodConnection } from '../types/suveca';
@@ -148,7 +151,7 @@ const saveLocalNotes = (moduleId: string, notes: ModuleNotes, userId?: string) =
   localStorage.setItem(notesStorageKey(moduleId, userId), JSON.stringify(notes));
 };
 
-const deepDiveViewCache = new Map<string, PublishedPedagogicalView>();
+
 
 export const selectVisibleModuleSections = (
   module: ModuleData,
@@ -228,34 +231,23 @@ export const PedagogicalDeepDive: React.FC<{
   } | null>(null);
   // Do not display a previous unit while a new request is pending.
   const currentRequest = request?.url === viewUrl ? request : null;
-  const viewModel = currentRequest?.view || (viewUrl ? deepDiveViewCache.get(viewUrl) : undefined);
+  const viewModel = currentRequest?.view;
   const state = viewModel ? 'loaded' : currentRequest?.state || 'loading';
 
   useEffect(() => {
     if (!isOpen || !viewUrl || !integrationUnitId) return;
-    const cached = deepDiveViewCache.get(viewUrl);
-    if (cached) {
-      setRequest({ url: viewUrl, state: 'loaded', view: cached });
-      return;
-    }
     const controller = new AbortController();
     let active = true;
     setRequest({ url: viewUrl, state: 'loading' });
 
     const loadContent = async () => {
       try {
-        const res = await fetch(viewUrl, {
-          signal: controller.signal,
-          headers: { Accept: 'application/json' },
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = parsePublishedPedagogicalView(await res.json(), integrationUnitId);
+        const data = parsePublishedPedagogicalView(await fetchPublishedJson(viewUrl, undefined, controller.signal), integrationUnitId);
         if (active) {
-          deepDiveViewCache.set(viewUrl, data);
           setRequest({ url: viewUrl, state: 'loaded', view: data });
         }
       } catch {
-        if (active) setRequest({ url: viewUrl, state: 'error' });
+        if (active) { invalidatePublishedData(viewUrl); setRequest({ url: viewUrl, state: 'error' }); }
       }
     };
 
@@ -400,8 +392,10 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   routeIssue = null,
   onOpenAnalyzer,
 }) => {
-  const moduleData =
-    modules.find((m) => m.id === selectedModuleId) || modules[0];
+  const summary = modules.find((m) => m.id === selectedModuleId) || modules[0];
+  const needsDelivery = MODULES_DATA.includes(summary);
+  const delivery = useModuleDelivery(needsDelivery ? summary.id : null);
+  const moduleData = delivery.module || summary;
   const lessonId = moduleData.sections.find((section) => section.lessonId)?.lessonId || null;
   const macroEntries = useMemo(
     () => lessonId ? getPedagogicalMacrosForLesson(lessonId) : [],
@@ -729,6 +723,12 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const hasSimulado = modules.some((module) => module.id === 'simulado');
   const isExpandedStudy = isFocusMode || Boolean(openUnitId);
   const isIntroModule = moduleData.id === 'mod-intro';
+
+  if (needsDelivery && !delivery.module) return (
+    <div role={delivery.error ? 'alert' : 'status'} className="p-6">
+      {delivery.error ? <>Não foi possível carregar a aula. <button type="button" onClick={delivery.retry}>Tentar novamente</button></> : 'Carregando aula…'}
+    </div>
+  );
 
   return (
     <div className={`module-viewer w-full space-y-6 pb-16 ${isExpandedStudy ? 'module-viewer--reading' : ''}`}>

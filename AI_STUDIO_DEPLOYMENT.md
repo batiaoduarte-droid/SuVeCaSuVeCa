@@ -2,6 +2,18 @@
 
 Este repositório instala, executa, testa, valida, compila e entrega a aplicação com artefatos já publicados. Produzir, revisar, homologar ou republicar esses artefatos pertence à fábrica externa. Arquivos gerados necessários ao produto permanecem versionados.
 
+## Entrega seletiva — 2026-09-23
+
+O contrato de entrega v1 substitui os quatro agregados oficiais/PBL por manifests e fragmentos obrigatórios. Views regulares separam corpo didático e páginas de até cinco questões; A14 mantém seu contrato. O catálogo inicial é leve, e detalhes, busca e conteúdos PBL carregam conforme o uso. Consulte `docs/PRODUCT_SLIMMING_IMPLEMENTATION.md` para evidências e reversão. Os números e procedimentos de importação anteriores, abaixo, descrevem revisões históricas.
+
+Para produção, execute `npm run build:production` e `npm run start:production`. O servidor compilado inicia com Node, sem Vite/tsx. `npm run package:production` monta uma pasta nova em `release/`, com cliente, servidor, dados privados, dependências diretas declaradas e arquivos gzip/Brotli. Transfira essa pasta inteira, execute nela `npm install --omit=dev` e `npm start`. As cópias comprimidas e os bundles não entram no Git. `npm run dev` e `npm start` na raiz continuam sendo o fluxo anterior com tsx; `preview` não fornece APIs.
+
+O pacote tem uma única cópia lógica dos dados: dados públicos em `dist/knowledge` e contextos do tutor em `server-data/pbl/tutor`. Não exponha `server-data` como raiz estática. Configure segredos no ambiente do servidor. URLs mutáveis revalidam; apenas assets com hash recebem cache prolongado.
+
+O preflight também compila e testa o servidor em produção. `verify:release` acrescenta os gates das Functions. Validações locais não certificam credenciais, sincronização externa ou serviços autenticados remotos.
+
+Na fábrica, a ordem após uma publicação autorizada é: reconstruir os shards afetados a partir de `inputs/deployment-aggregates`, executar `npm run publish:delivery`, atualizar índices afetados, executar `npm run release:inventory` e validar o produto. O publicador de overlays finaliza a entrega seletiva; o de pacotes PBL finaliza PBL/compactação. Esses comandos não pertencem ao runtime e não podem ser usados para reparar uma importação incompleta. O auditor rejeita a reintrodução dos quatro agregados.
+
 Na migração de fronteira de 2026-09-23, os 115 Markdown de `pedagogical/units`
 foram arquivados na fábrica e retirados da entrega. O inventário atual contém
 351 artefatos (419.905.645 bytes). As 115 Views permanecem intactas e são a única
@@ -12,7 +24,7 @@ históricas, omitidas pela projeção de runtime. Ausência da antiga pasta `uni
 
 ## Instalação e execução
 
-Use uma versão de Node compatível com `engines` e a versão npm declarada em `packageManager`. Execute `npm ci` na raiz. `npm run dev` inicia Express com Vite em desenvolvimento. `npm run build` compila o cliente; não cria um bundle do servidor. `npm start` executa `server.ts` com `tsx`: em produção, configure `NODE_ENV=production` e mantenha as ferramentas exigidas por `tsx` e Vite. `npm run preview` mostra apenas o cliente e não substitui a API Express.
+Use uma versão de Node compatível com `engines` e a versão npm declarada em `packageManager`. Execute `npm ci` na raiz. `npm run dev` inicia Express com Vite em desenvolvimento. `npm run build` compila apenas o cliente; `build:production` compila também o servidor. Para entrega, siga o procedimento acima. `npm run preview` mostra apenas o cliente e não substitui a API Express.
 
 Configure `GEMINI_API_KEY` e as credenciais Firebase do servidor no ambiente para as funcionalidades autenticadas. Não versione segredos e não remova autenticação para resolver importação. O modo visitante não comprova funcionamento das APIs autenticadas.
 
@@ -36,7 +48,7 @@ O subprojeto `functions` declara Node 20 para implantação. Instale com `npm --
 
 `product-artifacts.manifest.json` identifica os arquivos publicados por caminho, tamanho e SHA-256. É um contrato de entrega, não um gerador. Atualize o inventário somente como parte de uma publicação editorial autorizada, depois de homologar os novos artefatos; nunca para acomodar uma importação truncada. `.gitattributes` preserva os bytes dos artefatos com hash.
 
-`public/knowledge`, código gerado em `src/data`, snapshots canônicos consumidos pelos auditores e evidências de publicação permanecem no produto. Agregados grandes não foram removidos. Comentários `AUTO-GENERATED` conservam o caminho histórico do produtor para manter bytes; não representam comandos disponíveis neste repositório.
+`public/knowledge`, `server-data`, código gerado em `src/data`, snapshots canônicos consumidos pelos auditores e evidências de publicação permanecem no Git. Os quatro agregados redundantes foram arquivados na fábrica; manifests e fragmentos são obrigatórios no produto. Comentários `AUTO-GENERATED` conservam o caminho histórico do produtor para manter bytes; não representam comandos disponíveis neste repositório.
 
 A fábrica hospeda as ferramentas em `Notebook LM/06_Ferramentas/produto-editorial`, com pacote npm, compiladores e testes próprios. Ela publica artefatos homologados para o produto. O produto não importa ferramentas, schemas editoriais externos, ledger ou Python. `schemas/pbl-published-package.schema.json` é o contrato local de leitura dos pacotes, preservado a partir do schema de autoria existente. Ele não reinterpreta metadados históricos como nova homologação.
 

@@ -18,6 +18,7 @@ beforeEach(async () => {
   const source = path.resolve('public', 'knowledge');
   await Promise.all([
     cp(path.join(source, 'official-question-parts'), path.join(temporaryKnowledgeDirectory, 'official-question-parts'), { recursive: true }),
+    cp(path.join(source, 'official-question-search.json'), path.join(temporaryKnowledgeDirectory, 'official-question-search.json')),
     cp(path.join(source, 'official-question-index.json'), path.join(temporaryKnowledgeDirectory, 'official-question-index.json')),
     cp(path.join(source, 'official-questions.manifest.json'), path.join(temporaryKnowledgeDirectory, 'official-questions.manifest.json')),
   ]);
@@ -82,4 +83,31 @@ describe('official question shard store', () => {
       questionId: manifest.shards[0].questionIds[0],
     });
   });
+  it('preserves text ranking while raw shards are unavailable and keeps practice opt-in', async () => {
+    const normalize = (value: unknown) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
+    const manifest = JSON.parse(await readFile(path.join(temporaryKnowledgeDirectory, 'official-questions.manifest.json'), 'utf8'));
+    const index = JSON.parse(await readFile(path.join(temporaryKnowledgeDirectory, 'official-question-index.json'), 'utf8')).items;
+    const normalized = (await Promise.all(manifest.shards.map((s: any) => readFile(path.join(temporaryKnowledgeDirectory, s.normalized.file), 'utf8').then(JSON.parse)))).flat();
+    const byId = new Map(normalized.map(q => [q.id, q]));
+    const practice = await getOfficialQuestion(index[0].questionId, 'practice');
+    const full = await getOfficialQuestion(index[0].questionId);
+    expect(practice?.editorial).not.toHaveProperty('raw');
+    expect(full?.editorial).toHaveProperty('raw');
+    expect(practice?.editorial.normalized).toEqual(full?.editorial.normalized);
+    for (const shard of manifest.shards) await rm(path.join(temporaryKnowledgeDirectory, shard.raw.file));
+    resetOfficialQuestionStoreForTests();
+    for (const query of ['concordância verbal', 'crase', 'FGV', 'interpretação', 'de']) {
+      const terms = normalize(query).split(/\s+/).filter(t => t.length > 2);
+      const expected = index.map((item: any) => {
+        const q: any = byId.get(item.questionId);
+        const p = item.editorialProjection;
+        const text = normalize([q.supportText, q.prompt, q.commentary, ...(q.options || []).map((o: any) => o.text), ...p.topicNames, ...p.banks, ...p.organizations].join(' '));
+        return { id: item.questionId, score: terms.reduce((sum, term) => sum + Number(text.includes(term)), 0) };
+      }).filter((r: any) => r.score > 0).sort((a: any, b: any) => b.score - a.score || a.id.localeCompare(b.id, 'en'));
+      const actual = await queryOfficialQuestions({ query }, { limit: 100 });
+      expect(actual.total).toBe(expected.length);
+      expect(actual.items.map(i => i.questionId)).toEqual(expected.slice(0, 100).map((i: any) => i.id));
+    }
+  });
+
 });

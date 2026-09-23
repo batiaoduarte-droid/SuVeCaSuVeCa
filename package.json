@@ -29,7 +29,11 @@
     "typecheck:functions": "npm --prefix functions run lint",
     "build:functions": "npm --prefix functions run build",
     "eval:ai": "node scripts/run-ai-evals.mjs",
-    "audit:artifacts": "node scripts/audit-product-artifacts.mjs"
+    "audit:artifacts": "node scripts/audit-product-artifacts.mjs",
+    "build:server": "node scripts/build-server.mjs",
+    "build:production": "npm run build && npm run build:server",
+    "start:production": "node server-dist/server.cjs",
+    "package:production": "npm run build:production && node scripts/package-production.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
@@ -50,7 +54,8 @@
     "recharts": "^3.10.1",
     "rehype-katex": "^7.0.1",
     "remark-gfm": "^4.0.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

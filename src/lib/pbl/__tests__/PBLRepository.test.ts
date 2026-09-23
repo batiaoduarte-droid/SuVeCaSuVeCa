@@ -139,6 +139,6 @@ describe('PBLRepository', () => {
 
     await expect(incompleteRepo.init()).rejects.toThrow(/artefato PBL obrigatório ausente/i);
     expect(incompleteRepo.isReady()).toBe(false);
-    await expect(incompleteRepo.getAllCompetencies()).resolves.toEqual([]);
+    await expect(incompleteRepo.getAllCompetencies()).rejects.toThrow(/artefato PBL obrigatório ausente/i);
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, within, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { PedagogicalUnitRenderer } from './PedagogicalUnitRenderer';
@@ -183,7 +183,9 @@ describe('PedagogicalUnitRenderer (View Model V1)', () => {
   it('renderiza questões oficiais estruturadas com banca e ano após a verificação de integridade', async () => {
     render(<PedagogicalUnitRenderer view={sampleUnitView} />);
 
-    expect(screen.getByText(/questões oficiais de prova/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/questões oficiais de prova/i)[0]).toBeInTheDocument();
+    expect(screen.queryByText('FGV')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: /expandir todas/i }));
     expect(await screen.findByText('FGV')).toBeInTheDocument();
     expect(screen.getByText('2024')).toBeInTheDocument();
     expect(screen.getByText(/assinale a opção com dígrafo/i)).toBeInTheDocument();

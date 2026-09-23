@@ -1,3 +1,4 @@
+import { readPublishedCollection, readPublishedView } from '../../../../scripts/lib/published-data.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import type { PBLQuestionPresentation } from '../../../types/pbl';
@@ -8,7 +9,7 @@ export const loadPublishedQuestionPresentations = (): Record<string, PBLQuestion
   if (fs.existsSync(authoredFile)) {
     Object.assign(
       result,
-      JSON.parse(fs.readFileSync(authoredFile, 'utf8')) as Record<string, PBLQuestionPresentation>
+      readPublishedCollection(authoredFile) as Record<string, PBLQuestionPresentation>
     );
   }
 
@@ -39,7 +40,7 @@ export const loadPublishedQuestionPresentations = (): Record<string, PBLQuestion
 
   const viewsDir = path.resolve('public/knowledge/pedagogical/views');
   for (const file of fs.readdirSync(viewsDir).filter((name) => name.endsWith('.json') && name !== 'manifest.json')) {
-    const view = JSON.parse(fs.readFileSync(path.join(viewsDir, file), 'utf8')) as { officialQuestions?: Array<Record<string, any>> };
+    const view = readPublishedView(path.join(viewsDir, file)) as { officialQuestions?: Array<Record<string, any>> };
     for (const question of view.officialQuestions || []) {
       const payload = question.questionPayload || question;
       const answerPayload = question.answerPayload || {};

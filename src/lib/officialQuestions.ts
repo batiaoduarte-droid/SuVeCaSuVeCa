@@ -35,7 +35,7 @@ export interface OfficialQuestionDetail {
     editorialHashSha256: string;
   };
   editorial: {
-    raw: Record<string, unknown>;
+    raw?: Record<string, unknown>;
     normalized: Record<string, unknown>;
   };
   editorialProjection: OfficialQuestionIndexItem['editorialProjection'];
@@ -80,7 +80,7 @@ export async function fetchOfficialQuestions(
 }
 
 export async function fetchOfficialQuestion(questionId: string) {
-  const response = await fetch(`/api/knowledge/questions/${encodeURIComponent(questionId)}`);
+  const response = await fetch(`/api/knowledge/questions/${encodeURIComponent(questionId)}?projection=practice`);
   if (!response.ok) throw new Error('Falha ao carregar a questão editorial.');
   return response.json() as Promise<OfficialQuestionDetail>;
 }
@@ -89,7 +89,7 @@ export async function fetchOfficialQuestionSample(filters: OfficialQuestionFilte
   const response = await fetch('/api/knowledge/questions/sample', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ...filters, count }),
+    body: JSON.stringify({ ...filters, count, projection: 'practice' }),
   });
   if (!response.ok) throw new Error('Falha ao montar a amostra de questões editoriais.');
   return response.json() as Promise<{

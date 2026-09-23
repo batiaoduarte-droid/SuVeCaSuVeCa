@@ -1,3 +1,5 @@
+import { fetchPublishedJson, publishedUrl, type PublishedFile } from '../../publishedData';
+import type { QuestionDelivery } from '../../../types/pedagogicalView';
 import type {
   PBLCompetency,
   PBLCase,
@@ -31,7 +33,8 @@ export interface IPBLRepository {
   getQuestionCompetencyLink(questionId: string): Promise<QuestionCompetencyLink | null>;
   getQuestionPresentation(questionId: string): Promise<PBLQuestionPresentation | null>;
   getRulePresentation(unitId: string, ruleRef: string): Promise<PBLRulePresentation | null>;
-  getAuthoredPackage?(competencyId: string): any | null;
+  getAuthoredPackage?(competencyId: string): Promise<any | null>;
+  prepareCompetencies?(ids: string[]): Promise<void>;
 
   getDiagnosticPath(id: string): Promise<PBLDiagnosticPath | null>;
   getDiagnosticPathForCompetency(competencyId: string): Promise<PBLDiagnosticPath | null>;
@@ -61,6 +64,7 @@ export interface PBLRulePresentation {
 }
 
 interface PedagogicalUnitView {
+  questionDelivery?: QuestionDelivery;
   officialQuestions?: Array<Record<string, unknown>>;
   sections?: {
     rules?: {
@@ -100,9 +104,11 @@ export class PBLRepository implements IPBLRepository {
   private questionPedagogyMap: Map<string, QuestionPedagogy> = new Map();
   private questionLinksMap: Map<string, QuestionCompetencyLink> = new Map();
   private questionPresentations: Map<string, PBLQuestionPresentation> = new Map();
-  private unitViewCache: Map<string, PedagogicalUnitView> = new Map();
   private manifest: PBLManifest | null = null;
   private initialized = false;
+  private initPromise: Promise<void> | null = null;
+  private runtimeManifest: (PBLRuntimeShardManifest & { deliveryVersion: number; catalog: Record<string, PublishedFile>; structures: Record<string, { parts: Array<PublishedFile & { count: number }>; byId: Record<string, number>; byCompetency: Record<string, number> }> }) | null = null;
+  private packageIndex: { packages: Array<PublishedFile & { competencyRef: string }> } | null = null;
 
   constructor(private basePath: string = '/knowledge/pbl') {}
 
@@ -118,32 +124,11 @@ export class PBLRepository implements IPBLRepository {
     this.questionPedagogyMap.clear();
     this.questionLinksMap.clear();
     this.questionPresentations.clear();
-    this.unitViewCache.clear();
     this.manifest = null;
     this.initialized = false;
-  }
-
-  private async safeFetchJson<T>(url: string): Promise<T | null> {
-    try {
-      const res = await fetch(url, {
-        headers: { Accept: 'application/json' },
-      });
-      if (!res.ok) return null;
-      const contentType = res.headers.get('content-type') || '';
-      if (contentType.includes('text/html')) {
-        console.warn(`[PBLRepository] Esperava JSON de ${url}, mas recebeu HTML.`);
-        return null;
-      }
-      const text = await res.text();
-      if (!text || text.trim().startsWith('<')) {
-        console.warn(`[PBLRepository] Resposta de ${url} não é um JSON válido.`);
-        return null;
-      }
-      return JSON.parse(text) as T;
-    } catch (err) {
-      console.warn(`[PBLRepository] Erro ao carregar ${url}:`, err);
-      return null;
-    }
+    this.runtimeManifest = null;
+    this.packageIndex = null;
+    this.authoredPackages.clear();
   }
 
   private async fetchRequiredText(url: string): Promise<string> {
@@ -173,152 +158,77 @@ export class PBLRepository implements IPBLRepository {
     }
   }
 
-  private async sha256(text: string): Promise<string> {
-    if (!globalThis.crypto?.subtle) {
-      throw new Error('Web Crypto indisponível; não é possível validar os shards PBL com segurança.');
-    }
-    const digest = await globalThis.crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-    return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
-  }
-
-  private async fetchShardedRecord<T>(dataset: PBLRuntimeShardDataset): Promise<Record<string, T>> {
-    if (!Array.isArray(dataset.shards) || dataset.shards.length === 0) {
-      throw new Error('Manifesto PBL não declara shards para um dataset obrigatório.');
-    }
-    const parts = await Promise.all(dataset.shards.map(async (shard) => {
-      const url = `${this.basePath}/${shard.file}`;
-      const text = await this.fetchRequiredText(url);
-      const bytes = new TextEncoder().encode(text).byteLength;
-      if (bytes !== shard.bytes) {
-        throw new Error(`Shard PBL truncado ou divergente: ${url} (${bytes}/${shard.bytes} bytes).`);
-      }
-      const digest = await this.sha256(text);
-      if (digest !== shard.sha256) {
-        throw new Error(`Hash SHA-256 divergente no shard PBL ${url}.`);
-      }
-      let payload: Record<string, T>;
-      try {
-        payload = JSON.parse(text) as Record<string, T>;
-      } catch (error) {
-        throw new Error(`JSON inválido no shard PBL ${url}.`, { cause: error });
-      }
-      if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
-        throw new Error(`Shard PBL ${url} não contém um objeto indexado.`);
-      }
-      const entries = Object.entries(payload);
-      if (entries.length !== shard.recordCount) {
-        throw new Error(`Contagem divergente no shard PBL ${url}: ${entries.length}/${shard.recordCount}.`);
-      }
-      if (entries[0]?.[0] !== shard.firstQuestionRef || entries.at(-1)?.[0] !== shard.lastQuestionRef) {
-        throw new Error(`Fronteiras de IDs divergentes no shard PBL ${url}.`);
-      }
-      return entries;
-    }));
-
-    const combined: Record<string, T> = {};
-    for (const [questionRef, record] of parts.flat()) {
-      if (Object.prototype.hasOwnProperty.call(combined, questionRef)) {
-        throw new Error(`Referência duplicada entre shards PBL: ${questionRef}.`);
-      }
-      combined[questionRef] = record;
-    }
-    if (Object.keys(combined).length !== dataset.totalRecords) {
-      throw new Error(`Dataset PBL shardado incompleto: ${Object.keys(combined).length}/${dataset.totalRecords}.`);
-    }
-    return combined;
-  }
-
   public isReady(): boolean {
     return this.initialized;
   }
 
   public async init(): Promise<void> {
     if (this.initialized) return;
+    if (this.initPromise) return this.initPromise;
+    this.initPromise = this.initializeCatalog();
+    try { await this.initPromise; } finally { this.initPromise = null; }
+  }
 
+  private async initializeCatalog(): Promise<void> {
     this.reset();
     try {
-      const manData = await this.fetchRequiredJson<PBLManifest>(`${this.basePath}/pbl_manifest.json`);
-      const runtimeManifestFile = manData.runtimeProjection?.manifestFile || 'pbl_runtime_manifest.json';
-      const runtimeManifest = await this.fetchRequiredJson<PBLRuntimeShardManifest>(
-        `${this.basePath}/${runtimeManifestFile}`,
-      );
-      if (runtimeManifest.kind !== 'suveca-pbl-runtime-shards' || runtimeManifest.schemaVersion !== '1.0.0') {
-        throw new Error('Manifesto de shards PBL ausente ou incompatível.');
+      const manifest = await this.fetchRequiredJson<PBLManifest>(`${this.basePath}/pbl_manifest.json`);
+      const runtime = await this.fetchRequiredJson<NonNullable<PBLRepository['runtimeManifest']>>(`${this.basePath}/${manifest.runtimeProjection?.manifestFile || 'pbl_runtime_manifest.json'}`);
+      if (runtime.kind !== 'suveca-pbl-runtime-shards' || runtime.schemaVersion !== '1.0.0' || runtime.deliveryVersion !== 1 || !runtime.structures || !runtime.catalog) throw new Error('Manifesto PBL incompatível.');
+      for (const [name, dataset] of Object.entries(runtime.datasets)) {
+        const expected = name === 'questionCompetencyLinks'
+          ? manifest.totalRuntimeQuestionLinks ?? manifest.totalQuestionLinks
+          : manifest.totalRuntimeQuestionPedagogy ?? manifest.totalQuestionPedagogy;
+        if (dataset.totalRecords !== expected || !dataset.questionToShard || Object.keys(dataset.questionToShard).length !== expected) throw new Error('Índice de questões PBL incompleto.');
       }
-
-      const [compsData, casesData, xfersData, diagsData, sessData, qclData, qpData, authoredData] = await Promise.all([
-        this.fetchRequiredJson<PBLCompetency[]>(`${this.basePath}/pbl_competency_map.json`),
-        this.fetchRequiredJson<PBLCase[]>(`${this.basePath}/pbl_cases.json`),
-        this.fetchRequiredJson<PBLTransferSet[]>(`${this.basePath}/pbl_transfer_sets.json`),
-        this.fetchRequiredJson<PBLDiagnosticPath[]>(`${this.basePath}/pbl_diagnostic_paths.json`),
-        this.fetchRequiredJson<PBLCumulativeSession[]>(`${this.basePath}/pbl_cumulative_review_sessions.json`),
-        this.fetchShardedRecord<QuestionCompetencyLink>(runtimeManifest.datasets.questionCompetencyLinks),
-        this.fetchShardedRecord<QuestionPedagogy>(runtimeManifest.datasets.questionPedagogy),
-        this.fetchRequiredJson<Record<string, PBLQuestionPresentation>>(`${this.basePath}/pbl_authored_questions.json`),
+      const [competencies, sessions] = await Promise.all([
+        fetchPublishedJson<PBLCompetency[]>(`${this.basePath}/pbl_competency_map.json`, runtime.catalog['pbl_competency_map.json']),
+        fetchPublishedJson<PBLCumulativeSession[]>(`${this.basePath}/pbl_cumulative_review_sessions.json`, runtime.catalog['pbl_cumulative_review_sessions.json']),
       ]);
+      if (!Array.isArray(competencies) || competencies.length !== manifest.totalCompetencies || !Array.isArray(sessions) || sessions.length !== manifest.totalCumulativeSessions) throw new Error('Catálogo PBL incompleto.');
+      competencies.forEach(c => this.competencies.set(c.competencyId, c));
+      sessions.forEach(s => this.cumulativeSessions.set(s.sessionId, s));
+      this.manifest = manifest; this.runtimeManifest = runtime; this.initialized = true;
+    } catch (error) { this.reset(); throw error; }
+  }
 
-      if (![compsData, casesData, xfersData, diagsData, sessData].every(Array.isArray)) {
-        throw new Error('Um artefato estrutural PBL obrigatório não contém uma lista válida.');
-      }
-      const expectedLinks = manData.totalRuntimeQuestionLinks ?? manData.totalQuestionLinks;
-      const expectedPedagogy = manData.totalRuntimeQuestionPedagogy ?? manData.totalQuestionPedagogy;
-      const expectedAuthored = manData.totalRuntimeAuthoredQuestions ?? manData.totalAuthoredQuestions ?? 0;
-      const countChecks = [
-        [compsData.length, manData.totalCompetencies, 'competências'],
-        [casesData.length, manData.totalPBLCases, 'casos'],
-        [xfersData.length, manData.totalTransferSets, 'conjuntos de transferência'],
-        [diagsData.length, manData.totalDiagnosticPaths, 'caminhos diagnósticos'],
-        [sessData.length, manData.totalCumulativeSessions, 'sessões cumulativas'],
-        [Object.keys(qclData).length, expectedLinks, 'vínculos questão–competência'],
-        [Object.keys(qpData).length, expectedPedagogy, 'pedagogias de questão'],
-        [Object.keys(authoredData).length, expectedAuthored, 'questões autorais'],
-      ] as const;
-      for (const [actual, expected, label] of countChecks) {
-        if (typeof expected !== 'number' || actual !== expected) {
-          throw new Error(`Base PBL incompleta: ${label} ${actual}/${String(expected)}.`);
-        }
-      }
-      if (
-        runtimeManifest.datasets.questionCompetencyLinks.totalRecords !== expectedLinks
-        || runtimeManifest.datasets.questionPedagogy.totalRecords !== expectedPedagogy
-      ) {
-        throw new Error('As contagens do manifesto de shards divergem do manifesto pedagógico PBL.');
-      }
+  private async ensureStructure(kind: 'cases' | 'transfers' | 'diagnostics' | 'authored', id?: string): Promise<any[]> {
+    if (!this.initialized) await this.init();
+    if (!this.runtimeManifest) return [];
+    const index = this.runtimeManifest.structures[kind];
+    if (!index) throw new Error('Índice de estruturas PBL ausente.');
+    const part = id === undefined ? undefined : index.byId[id] ?? index.byCompetency[id];
+    if (id !== undefined && part === undefined) return [];
+    const parts = part === undefined ? index.parts : [index.parts[part]];
+    return (await Promise.all(parts.map(async descriptor => {
+      if (!descriptor) throw new Error('Fragmento PBL ausente no índice.');
+      const data = await fetchPublishedJson<any[]>(publishedUrl(this.basePath, descriptor.file), descriptor);
+      if (!Array.isArray(data) || data.length !== descriptor.count) throw new Error('Estrutura PBL incompleta.');
+      const field = { cases: 'caseId', transfers: 'transferSetId', diagnostics: 'pathId', authored: '' }[kind];
+      if (data.some(r => index.parts[index.byId[kind === 'authored' ? r[0] : r[field]]]?.file !== descriptor.file)) throw new Error('Identidade da estrutura PBL divergente.');
+      return data;
+    }))).flat();
+  }
 
-      compsData.forEach((competency) => this.competencies.set(competency.competencyId, competency));
-      casesData.forEach((pblCase) => {
-        this.cases.set(pblCase.caseId, pblCase);
-        this.caseByCompetency.set(pblCase.competencyRef, pblCase);
-      });
-      xfersData.forEach((transferSet) => {
-        this.transferSets.set(transferSet.transferSetId, transferSet);
-        this.transferByCompetency.set(transferSet.competencyRef, transferSet);
-      });
-      diagsData.forEach((diagnosticPath) => {
-        this.diagnosticPaths.set(diagnosticPath.pathId, diagnosticPath);
-        this.diagnosticByCompetency.set(diagnosticPath.competencyRef, diagnosticPath);
-      });
-      sessData.forEach((session) => this.cumulativeSessions.set(session.sessionId, session));
-      Object.entries(qclData).forEach(([questionRef, link]) => this.questionLinksMap.set(questionRef, link));
-      Object.entries(qpData).forEach(([questionRef, pedagogy]) => this.questionPedagogyMap.set(questionRef, pedagogy));
-      Object.entries(authoredData).forEach(([questionRef, presentation]) =>
-        this.questionPresentations.set(questionRef, presentation)
-      );
+  private async questionRecord<T>(datasetName: 'questionCompetencyLinks' | 'questionPedagogy', questionId: string): Promise<T | null> {
+    if (!this.initialized) await this.init();
+    const dataset = this.runtimeManifest?.datasets[datasetName];
+    if (!dataset) return null;
+    const part = dataset.questionToShard?.[questionId];
+    if (part === undefined) return null;
+    const descriptor = dataset.shards.find(s => s.part === part);
+    if (!descriptor) throw new Error('Índice PBL aponta para shard ausente.');
+    const records = await fetchPublishedJson<Record<string, T>>(publishedUrl(this.basePath, descriptor.file), descriptor);
+    const keys = Object.keys(records);
+    if (keys.length !== descriptor.recordCount || keys[0] !== descriptor.firstQuestionRef || keys.at(-1) !== descriptor.lastQuestionRef || !records[questionId]) throw new Error('Identidade dos registros PBL divergente.');
+    return records[questionId];
+  }
 
-      const authoredPackagesData = await this.safeFetchJson<any[]>(`${this.basePath}/pbl_authored_packages.json`);
-      if (Array.isArray(authoredPackagesData)) {
-        for (const pkg of authoredPackagesData) {
-          this.registerAuthoredPackage(pkg);
-        }
-      }
-
-      this.manifest = manData;
-
-      this.initialized = true;
-    } catch (err) {
-      this.reset();
-      console.error('[PBLRepository] Error initializing PBL Repository:', err);
-      throw err;
+  public async prepareCompetencies(ids: string[]): Promise<void> {
+    await this.init();
+    for (const id of ids) {
+      if (!this.competencies.has(id)) throw new Error(`Competência PBL ausente: ${id}`);
+      await Promise.all([this.getCaseForCompetency(id), this.getDiagnosticPathForCompetency(id), this.getTransferSetForCompetency(id), this.getAuthoredPackage(id)]);
     }
   }
 
@@ -378,55 +288,65 @@ export class PBLRepository implements IPBLRepository {
   }
 
   public async getCompetency(id: string): Promise<PBLCompetency | null> {
+    if (!this.initialized) await this.init();
     return this.competencies.get(id) || null;
   }
 
   public async getAllCompetencies(): Promise<PBLCompetency[]> {
+    if (!this.initialized) await this.init();
     return Array.from(this.competencies.values());
   }
 
   public async getCompetenciesForUnit(unitId: string): Promise<PBLCompetency[]> {
+    if (!this.initialized) await this.init();
     return Array.from(this.competencies.values()).filter((c) => c.unitId === unitId);
   }
 
   public async getCompetenciesForLesson(lessonId: string): Promise<PBLCompetency[]> {
+    if (!this.initialized) await this.init();
     return Array.from(this.competencies.values()).filter((c) => c.lessonId === lessonId);
   }
 
   public async getCase(id: string): Promise<PBLCase | null> {
-    return this.cases.get(id) || null;
+    const records = await this.ensureStructure('cases', id);
+    return records.find(r => r.caseId === id) || this.cases.get(id) || null;
   }
 
   public async getCaseForCompetency(competencyId: string): Promise<PBLCase | null> {
-    return this.caseByCompetency.get(competencyId) || null;
+    const records = await this.ensureStructure('cases', competencyId);
+    return records.find(r => r.competencyRef === competencyId) || this.caseByCompetency.get(competencyId) || null;
   }
 
   public async getAllCases(): Promise<PBLCase[]> {
-    return Array.from(this.cases.values());
+    const records = await this.ensureStructure('cases');
+    return this.runtimeManifest ? records : Array.from(this.cases.values());
   }
 
   public async getQuestionPedagogy(questionId: string): Promise<QuestionPedagogy | null> {
-    return this.questionPedagogyMap.get(questionId) || null;
+    return this.questionPedagogyMap.get(questionId) || this.questionRecord<QuestionPedagogy>('questionPedagogy', questionId);
   }
 
   public async getQuestionCompetencyLink(questionId: string): Promise<QuestionCompetencyLink | null> {
-    return this.questionLinksMap.get(questionId) || null;
+    return this.questionLinksMap.get(questionId) || this.questionRecord<QuestionCompetencyLink>('questionCompetencyLinks', questionId);
   }
 
   private async getUnitView(unitId: string): Promise<PedagogicalUnitView | null> {
-    const cached = this.unitViewCache.get(unitId);
-    if (cached) return cached;
-    const view = await this.safeFetchJson<PedagogicalUnitView>(
-      `/knowledge/pedagogical/views/${unitId}.json`
-    );
-    if (view) this.unitViewCache.set(unitId, view);
-    return view;
+    return fetchPublishedJson<PedagogicalUnitView>(`/knowledge/pedagogical/views/${unitId}.json`);
   }
 
   public authoredPackages = new Map<string, any>();
 
-  public getAuthoredPackage(competencyId: string): any | null {
-    return this.authoredPackages.get(competencyId) || null;
+  public async getAuthoredPackage(competencyId: string): Promise<any | null> {
+    if (!this.initialized) await this.init();
+    if (this.authoredPackages.has(competencyId)) return this.authoredPackages.get(competencyId);
+    if (!this.runtimeManifest) return null;
+    this.packageIndex ||= await fetchPublishedJson(`${this.basePath}/pbl_authored_packages.json`);
+    if (!Array.isArray(this.packageIndex?.packages)) throw new Error('Índice de pacotes autorais inválido.');
+    const descriptor = this.packageIndex.packages.find(p => p.competencyRef === competencyId);
+    if (!descriptor) return null;
+    const pkg = await fetchPublishedJson<any>(publishedUrl(this.basePath, descriptor.file), descriptor);
+    if (pkg.competencyRef !== competencyId) throw new Error('Pacote de outra competência.');
+    return pkg;
   }
 
   public registerAuthoredPackage(pkg: any): void {
@@ -485,13 +405,15 @@ export class PBLRepository implements IPBLRepository {
   }
 
   public async getQuestionPresentation(questionId: string): Promise<PBLQuestionPresentation | null> {
-    const cached = this.questionPresentations.get(questionId);
+    const records = await this.ensureStructure('authored', questionId);
+    const cached = records.find(r => r[0] === questionId)?.[1] || this.questionPresentations.get(questionId);
     if (cached) return cached;
 
     let normalized = null;
     try {
       normalized = await fetchNormalizedQuestion(questionId);
-    } catch {
+    } catch (error) {
+      if (this.runtimeManifest) throw error;
       normalized = null;
     }
     if (normalized?.prompt && normalized.correctAnswer) {
@@ -510,16 +432,25 @@ export class PBLRepository implements IPBLRepository {
         examBoard: normalized.bank,
         year: normalized.year,
       };
-      this.questionPresentations.set(questionId, presentation);
+      if (!this.runtimeManifest) this.questionPresentations.set(questionId, presentation);
       return presentation;
     }
 
-    const link = this.questionLinksMap.get(questionId);
+    const link = await this.getQuestionCompetencyLink(questionId);
     if (!link?.unitId) return null;
     const view = await this.getUnitView(link.unitId);
     if (!view) return null;
 
-    const question = view.officialQuestions?.find((candidate) =>
+    let questions = view.officialQuestions;
+    if (view.questionDelivery) {
+      const descriptors = [...view.questionDelivery.pages, ...(view.questionDelivery.excluded ? [view.questionDelivery.excluded] : [])];
+      const descriptor = descriptors.find(d => d.refs.includes(questionId));
+      if (descriptor) {
+        const records = await fetchPublishedJson<Array<{question: Record<string, unknown>}>>(publishedUrl('/knowledge/pedagogical', descriptor.file), descriptor);
+        questions = records.map(r => r.question);
+      }
+    }
+    const question = questions?.find((candidate) =>
       candidate.officialQuestionId === questionId || candidate.questionId === questionId
     );
     if (!question) return null;
@@ -556,37 +487,44 @@ export class PBLRepository implements IPBLRepository {
       organization: String(payload.organization || question.organization || '') || undefined,
       year: typeof payload.year === 'number' ? payload.year : typeof question.year === 'number' ? question.year : undefined,
     };
-    this.questionPresentations.set(questionId, presentation);
+    if (!this.runtimeManifest) this.questionPresentations.set(questionId, presentation);
     return presentation;
   }
 
   public async getDiagnosticPath(id: string): Promise<PBLDiagnosticPath | null> {
-    return this.diagnosticPaths.get(id) || null;
+    const records = await this.ensureStructure('diagnostics', id);
+    return records.find(r => r.pathId === id) || this.diagnosticPaths.get(id) || null;
   }
 
   public async getDiagnosticPathForCompetency(competencyId: string): Promise<PBLDiagnosticPath | null> {
-    return this.diagnosticByCompetency.get(competencyId) || null;
+    const records = await this.ensureStructure('diagnostics', competencyId);
+    return records.find(r => r.competencyRef === competencyId) || this.diagnosticByCompetency.get(competencyId) || null;
   }
 
   public async getTransferSet(id: string): Promise<PBLTransferSet | null> {
-    return this.transferSets.get(id) || null;
+    const records = await this.ensureStructure('transfers', id);
+    return records.find(r => r.transferSetId === id) || this.transferSets.get(id) || null;
   }
 
   public async getTransferSetForCompetency(competencyId: string): Promise<PBLTransferSet | null> {
-    return this.transferByCompetency.get(competencyId) || null;
+    const records = await this.ensureStructure('transfers', competencyId);
+    return records.find(r => r.competencyRef === competencyId) || this.transferByCompetency.get(competencyId) || null;
   }
 
   public async getCumulativeSessions(): Promise<PBLCumulativeSession[]> {
+    if (!this.initialized) await this.init();
     return Array.from(this.cumulativeSessions.values()).sort(
       (a, b) => a.spiralProgressionLevel - b.spiralProgressionLevel
     );
   }
 
   public async getCumulativeSession(sessionId: string): Promise<PBLCumulativeSession | null> {
+    if (!this.initialized) await this.init();
     return this.cumulativeSessions.get(sessionId) || null;
   }
 
   public async getManifest(): Promise<PBLManifest | null> {
+    if (!this.initialized) await this.init();
     return this.manifest;
   }
 }

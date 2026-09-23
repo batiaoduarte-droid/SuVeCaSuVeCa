@@ -1,3 +1,4 @@
+import { readPublishedCollection } from '../../../../scripts/lib/published-data.mjs';
 import { describe, expect, it, beforeEach, beforeAll } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -5,7 +6,8 @@ import { PBLEngine } from '../engine/PBLEngine';
 import { PBLRepository } from '../data/PBLRepository';
 import { answerChoiceFor } from '../answerAdapter';
 import { loadPublishedQuestionPresentations } from './publishedQuestionTestData';
-import foneticaPkg from '../../../../public/knowledge/pbl/pbl_authored_packages.json';
+import { readPublishedPackages } from '../../../../scripts/lib/published-data.mjs';
+const foneticaPkg = readPublishedPackages(path.resolve('public/knowledge/pbl/pbl_authored_packages.json'));
 
 describe('Authored Pilot Packages Runtime Integration', () => {
   const fonetica = (foneticaPkg as any[]).find((p) => p.competencyRef === 'COMP-A00-G01-01');
@@ -19,9 +21,9 @@ describe('Authored Pilot Packages Runtime Integration', () => {
   beforeAll(() => {
     const pblDir = path.resolve('public/knowledge/pbl');
     const comps = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_competency_map.json'), 'utf8'));
-    const cases = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_cases.json'), 'utf8'));
-    const xfers = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_transfer_sets.json'), 'utf8'));
-    const diags = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_diagnostic_paths.json'), 'utf8'));
+    const cases = readPublishedCollection(path.join(pblDir, 'pbl_cases.json'));
+    const xfers = readPublishedCollection(path.join(pblDir, 'pbl_transfer_sets.json'));
+    const diags = readPublishedCollection(path.join(pblDir, 'pbl_diagnostic_paths.json'));
     const runtimeManifest = JSON.parse(fs.readFileSync(path.join(pblDir, 'pbl_runtime_manifest.json'), 'utf8'));
     
     const qcl: Record<string, any> = {};
@@ -53,7 +55,7 @@ describe('Authored Pilot Packages Runtime Integration', () => {
   });
 
   it('carrega e extrai blocos semânticos autorados do pacote de Fonética na intervenção', async () => {
-    const pkg = engine.repo.getAuthoredPackage('COMP-A00-G01-01');
+    const pkg = await engine.repo.getAuthoredPackage('COMP-A00-G01-01');
     expect(pkg).toBeDefined();
     expect(pkg.packageId).toBe('PBL-AUTH-PILOT-G01-01');
     expect(pkg.interventions.length).toBeGreaterThan(0);
@@ -127,7 +129,7 @@ describe('Authored Pilot Packages Runtime Integration', () => {
   });
 
   it('integra o pacote de Porquês e preserva fluxo completo até reflexão', async () => {
-    const pkg = engine.repo.getAuthoredPackage('COMP-A00-G07-01');
+    const pkg = await engine.repo.getAuthoredPackage('COMP-A00-G07-01');
     expect(pkg).toBeDefined();
     expect(pkg.packageId).toBe('PBL-AUTH-PILOT-G07-01');
 
@@ -164,7 +166,7 @@ describe('Authored Pilot Packages Runtime Integration', () => {
   });
 
   it('integra o pacote de Semântica Verbal (A04-G02-01) e extrai regras e procedimentos autorados', async () => {
-    const pkg = engine.repo.getAuthoredPackage('COMP-A04-G02-01');
+    const pkg = await engine.repo.getAuthoredPackage('COMP-A04-G02-01');
     expect(pkg).toBeDefined();
     expect(pkg.packageId).toBe('PKG-COMP-A04-G02-01');
     expect(pkg.interventions.length).toBe(2);
@@ -230,7 +232,7 @@ describe('Authored Pilot Packages Runtime Integration', () => {
   });
 
   it('integra o pacote de Pronomes Pessoais (A03-G01-01) e extrai regras e procedimentos de complementos', async () => {
-    const pkg = engine.repo.getAuthoredPackage('COMP-A03-G01-01');
+    const pkg = await engine.repo.getAuthoredPackage('COMP-A03-G01-01');
     expect(pkg).toBeDefined();
     expect(pkg.packageId).toBe('PKG-COMP-A03-G01-01');
     expect(pkg.interventions.length).toBe(2);

@@ -1,3 +1,5 @@
+import { loadModuleSearch } from '../lib/moduleDelivery';
+import type { ModuleData } from '../types/suveca';
 import React, { useEffect, useRef, useState } from 'react';
 import { MODULES_DATA } from '../data/modulesData';
 import { getHighlightedSegments, getModuleSearchSnippet, moduleMatchesSearch } from '../lib/search';
@@ -46,6 +48,19 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   onOpenOfficialQuestion,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchModules, setSearchModules] = useState<ModuleData[]>([]);
+  const [catalogError, setCatalogError] = useState(false);
+  const [catalogRetry, setCatalogRetry] = useState(0);
+  useEffect(() => {
+    if (!isOpen) return;
+    const controller = new AbortController();
+    setCatalogError(false);
+    void loadModuleSearch(controller.signal).then(value => {
+      if (!controller.signal.aborted) setSearchModules(value);
+    }).catch(() => { if (!controller.signal.aborted) setCatalogError(true); });
+    return () => controller.abort();
+  }, [isOpen, catalogRetry]);
+
   const [officialResults, setOfficialResults] = useState<OfficialQuestionIndexItem[]>([]);
   const [isLoadingOfficial, setIsLoadingOfficial] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -80,7 +95,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
   if (!isOpen) return null;
 
-  const results = MODULES_DATA.filter((module) => moduleMatchesSearch(module, query));
+  const results = searchModules.filter((module) => moduleMatchesSearch(module, query));
   const errorResults = query ? errors.filter((error) => hasSearchMatch(
     `${error.conteudo} ${error.erroCometido} ${error.regraDecisiva} ${error.questionText || ''}`,
     query
@@ -118,6 +133,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         aria-labelledby="search-modal-title"
         tabIndex={-1}
       >
+        {catalogError && <div role="alert">Não foi possível carregar a busca de aulas. <button type="button" onClick={() => setCatalogRetry(n => n + 1)}>Tentar novamente</button></div>}
         <h2 id="search-modal-title" className="sr-only">Buscar em aulas, anotações, erros e questões editoriais</h2>
 
         <div className="p-4 sm:p-5 border-b border-slate-200 bg-slate-50 flex items-center space-x-3 shrink-0">

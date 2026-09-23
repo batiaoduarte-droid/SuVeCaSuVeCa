@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -5,7 +7,14 @@ import {configDefaults, defineConfig} from 'vitest/config';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), {
+      name: 'version-service-worker-shell',
+      closeBundle() {
+        if (!fs.existsSync('dist/index.html') || !fs.existsSync('dist/sw.js')) return;
+        const version = createHash('sha256').update(fs.readFileSync('dist/index.html')).digest('hex').slice(0, 16);
+        fs.writeFileSync('dist/sw.js', fs.readFileSync('dist/sw.js', 'utf8').replace('__SUVECA_SHELL_VERSION__', version));
+      },
+    }],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
@@ -21,6 +30,7 @@ export default defineConfig(() => {
     build: {
       rollupOptions: {
         output: {
+          onlyExplicitManualChunks: true,
           // Keep expensive libraries out of the application entry. Chunks
           // referenced only by lazy study tools (charts/AI) are fetched only
           // after the learner opens that tool.
@@ -38,6 +48,7 @@ export default defineConfig(() => {
               return 'generated-data';
             }
             if (!id.includes('node_modules')) return undefined;
+            if (/\/node_modules\/(react|react-dom|scheduler)\//.test(id)) return 'react-vendor';
             if (id.includes('/node_modules/recharts/') || id.includes('/node_modules/victory-vendor/')) {
               return 'charts';
             }

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, render, fireEvent } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import type { PedagogicalUnitView, CumulativeReviewView } from '../../types/pedagogicalView';
 import { PedagogicalUnitRenderer } from './PedagogicalUnitRenderer';
@@ -51,6 +51,7 @@ describe('Varredura Mecânica Rigorosa do DOM/HTML', () => {
         ? render(<CumulativeReviewRenderer view={raw as CumulativeReviewView} />)
         : render(<PedagogicalUnitRenderer view={raw as PedagogicalUnitView} />);
 
+      if (!isCumulative) fireEvent.click(rendered.getByRole('button', { name: /Expandir todas/i }));
       const container = rendered.container;
 
       // Força a expansão de todas as seções <details> no DOM
@@ -59,6 +60,7 @@ describe('Varredura Mecânica Rigorosa do DOM/HTML', () => {
       detailsList.forEach((d) => {
         d.setAttribute('open', '');
         d.open = true;
+        fireEvent(d, new Event('toggle'));
       });
 
       // -------------------------------------------------------------

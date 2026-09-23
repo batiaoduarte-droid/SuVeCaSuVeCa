@@ -1,6 +1,7 @@
 /* global firebase */
 
-const CACHE_NAME = 'suveca-shell-v2';
+const CACHE_NAME = 'suveca-shell-__SUVECA_SHELL_VERSION__';
+const ASSET_CACHE = 'suveca-hashed-assets-v1';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -23,7 +24,7 @@ self.addEventListener('activate', (event) => {
     caches.keys()
       .then((keys) => Promise.all(
         keys
-          .filter((key) => key.startsWith('suveca-') && key !== CACHE_NAME)
+          .filter((key) => key.startsWith('suveca-') && key !== CACHE_NAME && key !== ASSET_CACHE)
           .map((key) => caches.delete(key))
       ))
       .then(() => self.clients.claim())
@@ -50,39 +51,24 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  const isCodeAsset = request.destination === 'script' || request.destination === 'style' || url.pathname.startsWith('/assets/');
-  const isStaticAsset = ['image', 'font'].includes(request.destination) || isCodeAsset;
-
+  const immutable = /^\/assets\/.+-[A-Za-z0-9_-]{8,}\.[^.]+$/.test(url.pathname);
+  const isStaticAsset = ['script', 'style', 'image', 'font'].includes(request.destination);
   if (!isStaticAsset) return;
-
-  // Code assets (JS/CSS) use Network First so newly deployed lazy chunks match the active shell
-  if (isCodeAsset) {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          if (response.ok) {
-            const copy = response.clone();
-            void caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-          }
-          return response;
-        })
-        .catch(async () => (await caches.match(request)) || Response.error())
-    );
-    return;
-  }
-
-  // Media assets (images/fonts) use Cache First
-  event.respondWith(
-    caches.match(request).then(async (cached) => {
+  event.respondWith((async () => {
+    const cache = await caches.open(immutable ? ASSET_CACHE : CACHE_NAME);
+    if (immutable) {
+      const cached = await cache.match(request);
       if (cached) return cached;
+    }
+    try {
       const response = await fetch(request);
-      if (response.ok) {
-        const copy = response.clone();
-        void caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-      }
+      if (response.ok) await cache.put(request, response.clone());
       return response;
-    })
-  );
+    } catch {
+      return (await cache.match(request)) || Response.error();
+    }
+  })());
+
 });
 
 const showReviewNotification = (payload = {}) => {

@@ -53,10 +53,10 @@ interface QuestionStore {
   buildId: string;
   questionSetVersion: string;
   expectedTotal: number;
-  source: 'monolithic' | 'sharded';
+  source: 'sharded';
   sourceLocation: string;
   ensureQuestionLoaded: (questionId: string) => Promise<void>;
-  ensureAllLoaded: () => Promise<void>;
+  loadSearchIndex: () => Promise<Map<string, string>>;
 }
 
 interface ShardDescriptor {
@@ -73,6 +73,7 @@ interface OfficialQuestionManifest {
   expectedTotal: number;
   totals: { raw: number; normalized: number; indexed: number; uniqueQuestionIds: number; shards: number };
   shards: ShardDescriptor[];
+  search: { file: string; bytes: number; sha256: string };
 }
 
 const normalize = (value: unknown) => String(value || '')
@@ -113,13 +114,10 @@ const resolveKnowledgeSource = async () => {
   for (const candidate of knowledgeCandidates()) {
     checked.push(candidate.label);
     if (!await fileExists(path.join(candidate.directory, 'official-question-index.json'))) continue;
-    const [manifestExists, rawExists, normalizedExists] = await Promise.all([
-      fileExists(path.join(candidate.directory, 'official-questions.manifest.json')),
-      fileExists(path.join(candidate.directory, 'official-questions.raw.json')),
-      fileExists(path.join(candidate.directory, 'official-questions.normalized.json')),
-    ]);
-    if (manifestExists) return { ...candidate, mode: 'sharded' as const };
-    if (rawExists && normalizedExists) return { ...candidate, mode: 'monolithic' as const };
+    if (!await fileExists(path.join(candidate.directory, 'official-questions.manifest.json'))) {
+      throw new Error(`Manifesto editorial obrigatório ausente em ${candidate.label}.`);
+    }
+    return { ...candidate, mode: 'sharded' as const };
   }
   throw new Error(`Banco editorial indisponível. Locais verificados: ${checked.join(', ')}.`);
 };
@@ -157,22 +155,6 @@ const validateIndex = (payload: QuestionIndexPayload) => {
   return expected;
 };
 
-const validateMonolithicInputs = (
-  raw: JsonRecord[],
-  normalized: JsonRecord[],
-  indexPayload: QuestionIndexPayload,
-) => {
-  const expected = validateIndex(indexPayload);
-  if (!Array.isArray(raw) || raw.length !== expected) throw new Error(`Corpus bruto incompleto: ${raw?.length || 0}/${expected}.`);
-  if (!Array.isArray(normalized) || normalized.length !== expected) throw new Error(`Corpus normalizado incompleto: ${normalized?.length || 0}/${expected}.`);
-  const rawIds = raw.map((question) => String(question.id || ''));
-  const normalizedIds = normalized.map((question) => String(question.id || ''));
-  const indexIds = indexPayload.items.map((item) => item.questionId);
-  if (JSON.stringify(rawIds) !== JSON.stringify(normalizedIds) || JSON.stringify(rawIds) !== JSON.stringify(indexIds)) {
-    throw new Error('A ordem dos IDs bruto, normalizado e índice diverge.');
-  }
-};
-
 let storePromise: Promise<QuestionStore> | null = null;
 export const resetOfficialQuestionStoreForTests = () => {
   storePromise = null;
@@ -189,19 +171,9 @@ const loadStore = async (): Promise<QuestionStore> => {
     const rawById = new Map<string, JsonRecord>();
     const normalizedById = new Map<string, JsonRecord>();
     let ensureQuestionLoaded: (questionId: string) => Promise<void>;
-    let ensureAllLoaded: () => Promise<void>;
+    let loadSearchIndex: () => Promise<Map<string, string>>;
 
-    if (source.mode === 'monolithic') {
-      const [raw, normalized] = await Promise.all([
-        readFile(path.join(source.directory, 'official-questions.raw.json'), 'utf8').then((value) => JSON.parse(value) as JsonRecord[]),
-        readFile(path.join(source.directory, 'official-questions.normalized.json'), 'utf8').then((value) => JSON.parse(value) as JsonRecord[]),
-      ]);
-      validateMonolithicInputs(raw, normalized, indexPayload);
-      raw.forEach((question) => rawById.set(String(question.id), question));
-      normalized.forEach((question) => normalizedById.set(String(question.id), question));
-      ensureQuestionLoaded = async () => undefined;
-      ensureAllLoaded = async () => undefined;
-    } else {
+    {
       const manifest = JSON.parse(
         await readFile(path.join(source.directory, 'official-questions.manifest.json'), 'utf8'),
       ) as OfficialQuestionManifest;
@@ -269,8 +241,13 @@ const loadStore = async (): Promise<QuestionStore> => {
         const shard = questionToShard.get(questionId);
         if (shard) await loadShard(shard);
       };
-      ensureAllLoaded = async () => {
-        await Promise.all(manifest.shards.map(loadShard));
+      let searchPromise: Promise<Map<string, string>> | null = null;
+      loadSearchIndex = () => {
+        if (!manifest.search) throw new Error('Índice textual obrigatório ausente.');
+        return searchPromise ||= readVerifiedShard(source.directory, manifest.search).then(rows => {
+          if (rows.length !== expectedTotal || rows.some((r, i) => r.id !== indexPayload.items[i].questionId || typeof r.text !== 'string')) throw new Error('Identidade do índice textual divergente.');
+          return new Map(rows.map(r => [String(r.id), String(r.text)]));
+        }).catch(error => { searchPromise = null; throw error; });
       };
     }
 
@@ -285,7 +262,7 @@ const loadStore = async (): Promise<QuestionStore> => {
       source: source.mode,
       sourceLocation: source.label,
       ensureQuestionLoaded,
-      ensureAllLoaded,
+      loadSearchIndex,
     };
   })().catch((error) => {
     storePromise = null;
@@ -342,12 +319,13 @@ const textualScore = (normalizedQuestion: JsonRecord | undefined, item: Official
 };
 
 const filteredIndex = async (store: QuestionStore, filters: OfficialQuestionFilters) => {
-  if (filters.query) await store.ensureAllLoaded();
+  const text = filters.query ? await store.loadSearchIndex() : null;
+  const terms = normalize(filters.query).split(/\s+/).filter(t => t.length > 2);
   return store.index
     .filter((item) => matchesFilters(item, filters))
     .map((item) => ({
       item,
-      score: filters.query ? textualScore(store.normalizedById.get(item.questionId), item, filters.query) : 0,
+      score: filters.query ? terms.reduce((score, term) => score + (text!.get(item.questionId)!.includes(term) ? 1 : 0), 0) : 0,
     }))
     .filter(({ score }) => !filters.query || score > 0)
     .sort((left, right) => right.score - left.score || left.item.questionId.localeCompare(right.item.questionId, 'en'));
@@ -371,7 +349,7 @@ export async function queryOfficialQuestions(
   };
 }
 
-export async function getOfficialQuestion(questionId: string) {
+export async function getOfficialQuestion(questionId: string, projection: 'full' | 'practice' = 'full') {
   const store = await loadStore();
   const id = String(questionId);
   await store.ensureQuestionLoaded(id);
@@ -390,13 +368,13 @@ export async function getOfficialQuestion(questionId: string) {
       questionSetVersion: store.questionSetVersion,
       editorialHashSha256: index.editorialHashSha256,
     },
-    editorial: { raw, normalized },
+    editorial: { ...(projection === 'full' ? { raw } : {}), normalized },
     editorialProjection: index.editorialProjection,
     suvecaDerived: index.suvecaDerived,
   };
 }
 
-export async function sampleOfficialQuestions(filters: OfficialQuestionFilters, count = 10) {
+export async function sampleOfficialQuestions(filters: OfficialQuestionFilters, count = 10, projection: 'full' | 'practice' = 'full') {
   const store = await loadStore();
   const filtered = await filteredIndex(store, filters);
   const pool = filtered.map(({ item }) => item);
@@ -405,7 +383,7 @@ export async function sampleOfficialQuestions(filters: OfficialQuestionFilters, 
     [pool[index], pool[swapIndex]] = [pool[swapIndex], pool[index]];
   }
   const selected = pool.slice(0, Math.min(50, Math.max(1, count)));
-  return Promise.all(selected.map((item) => getOfficialQuestion(item.questionId)));
+  return Promise.all(selected.map((item) => getOfficialQuestion(item.questionId, projection)));
 }
 
 export async function formatOfficialQuestionContext(query: string, limit = 2) {

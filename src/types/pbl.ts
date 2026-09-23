@@ -456,6 +456,7 @@ export interface PBLRuntimeShardDescriptor {
 }
 
 export interface PBLRuntimeShardDataset {
+  questionToShard?: Record<string, number>;
   source: {
     file: string;
     bytes: number;

@@ -82,7 +82,7 @@ export class AIAuditLogger {
 
     // 2. Diretório canônico do ecossistema Notebook LM
     const canonicalNotebookLmAuditDir = 'C:\\Users\\origi\\OneDrive\\Desktop\\Códigos\\portugues\\Notebook LM\\05_Auditorias\\ia';
-    if (fs.existsSync(canonicalNotebookLmAuditDir)) {
+    if (process.env.NODE_ENV !== 'production' && fs.existsSync(canonicalNotebookLmAuditDir)) {
       this.auditBaseDir = canonicalNotebookLmAuditDir;
       return this.auditBaseDir;
     }

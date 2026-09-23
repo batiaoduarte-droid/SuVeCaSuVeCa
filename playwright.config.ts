@@ -1,6 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
 const isCI = Boolean(process.env.CI);
+const port = process.env.SUVECA_TEST_PORT || '3000';
 
 export default defineConfig({
   testDir: './tests/e2e',
@@ -25,7 +26,7 @@ export default defineConfig({
   ],
   snapshotPathTemplate: '{testDir}/__snapshots__/{testFilePath}/{projectName}/{arg}{ext}',
   use: {
-    baseURL: 'http://127.0.0.1:3000',
+    baseURL: `http://127.0.0.1:${port}`,
     colorScheme: 'light',
     locale: 'pt-BR',
     timezoneId: 'America/Sao_Paulo',
@@ -36,8 +37,8 @@ export default defineConfig({
   },
   webServer: {
     command: 'npm run dev',
-    env: { PBL_TUTOR_ENABLED: 'false' },
-    url: 'http://127.0.0.1:3000',
+    env: { PBL_TUTOR_ENABLED: 'false', PORT: port },
+    url: `http://127.0.0.1:${port}`,
     reuseExistingServer: !isCI,
     timeout: 120_000,
     stdout: 'pipe',

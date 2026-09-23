@@ -1,8 +1,9 @@
 import { toLearnerFacingContent } from './learnerContent';
 import type { ErrorFlashcard } from '../types/suveca';
+import type { ReviewResource } from '../types/reviewResource';
 
 export interface FlashcardSemanticBlock {
-  kind: 'trap' | 'mechanism' | 'correction' | 'example';
+  kind: 'trap' | 'mechanism' | 'correction' | 'example' | 'context' | 'boundary' | 'answer' | 'step' | 'left' | 'right';
   title: string;
   text: string;
 }
@@ -167,7 +168,7 @@ export const parseSemanticBlocks = (rawBack: string): FlashcardSemanticBlock[] |
  * - Identifica blocos semânticos garantindo preservação integral sem duplicação visual.
  * - Mantém o objeto de entrada ErrorFlashcard estritamente imutável.
  */
-export const projectFlashcardContent = (card: ErrorFlashcard): FlashcardContentProjection => {
+export const projectFlashcardContent = (card: ErrorFlashcard, resource?: ReviewResource | null): FlashcardContentProjection => {
   const front = toLearnerFacingContent(card.front).trim();
   const back = toLearnerFacingContent(card.back).trim();
   const hint = card.hint ? toLearnerFacingContent(card.hint).trim() : undefined;
@@ -180,7 +181,18 @@ export const projectFlashcardContent = (card: ErrorFlashcard): FlashcardContentP
   const normExp = normalizeForDeduplication(explanation);
   const shouldShowExplanation = Boolean(normExp && normExp !== normBack);
 
-  const semanticBlocks = parseSemanticBlocks(back);
+  if (resource && (resource.cardId !== card.id || resource.front !== card.front || resource.back !== card.back)) {
+    throw new Error('Recurso de revisão incompatível com o cartão.');
+  }
+  const semanticBlocks: FlashcardSemanticBlock[] | undefined = resource
+    ? resource.answer.type === 'structured'
+      ? resource.answer.blocks.map(block => ({
+        kind: block.role === 'error' ? 'trap' : block.role === 'criterion' ? 'correction' : block.role,
+        title: block.title,
+        text: toLearnerFacingContent(block.text),
+      }))
+      : undefined
+    : parseSemanticBlocks(back);
 
   return {
     front,

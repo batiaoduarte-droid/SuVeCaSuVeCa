@@ -1,3 +1,4 @@
+import { useModuleDelivery } from './hooks/useModuleDelivery';
 import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MODULES_DATA } from './data/modulesData';
@@ -485,7 +486,8 @@ export default function App() {
   };
 
   // Find simulado questions
-  const simuladoModule = MODULES_DATA.find((m) => m.id === 'simulado');
+  const simuladoDelivery = useModuleDelivery(activeTab === 'simulado' ? 'simulado' : null);
+  const simuladoModule = simuladoDelivery.module;
   const simuladoQuestions = simuladoModule?.questions || [];
   const coreModules = MODULES_DATA.filter((module) => /^mod\d+$/.test(module.id));
   const selectedCurriculumModule = coreModules.find((module) => module.id === selectedModuleId) || coreModules[0];
@@ -696,7 +698,8 @@ export default function App() {
               />
             )}
 
-            {activeTab === 'simulado' && (
+            {activeTab === 'simulado' && !simuladoModule && <div role={simuladoDelivery.error ? 'alert' : 'status'}>{simuladoDelivery.error ? <>Não foi possível carregar o simulado. <button type="button" onClick={simuladoDelivery.retry}>Tentar novamente</button></> : 'Carregando simulado…'}</div>}
+            {activeTab === 'simulado' && simuladoModule && (
               <div className="space-y-3">
                 {officialSimuladoQuestions && (
                   <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-teal-200 bg-teal-50 p-3 text-sm text-teal-900">

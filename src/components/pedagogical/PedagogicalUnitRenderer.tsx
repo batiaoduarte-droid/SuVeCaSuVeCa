@@ -1,3 +1,5 @@
+import { PublishedQuestionsSection } from './sections/PublishedQuestionsSection';
+import { MountOnFirstOpen } from '../ui/MountOnFirstOpen';
 import React, { useEffect, useState, useMemo } from 'react';
 import {
   Brain,
@@ -60,7 +62,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
 }) => {
   if (!view || !view.unit) return null;
 
-  const { unit, sections, officialQuestions } = view;
+  const { unit, sections, officialQuestions, questionDelivery } = view;
 
   const presentSections: SectionDescriptor[] = useMemo(() => {
     const list: SectionDescriptor[] = [];
@@ -200,8 +202,12 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
       });
     }
 
+    if (officialQuestions?.length || questionDelivery?.totalOccurrences) {
+      list.push({ id: 'official-questions', title: 'Questões Oficiais de Prova', icon: HelpCircle,
+        render: () => questionDelivery ? <PublishedQuestionsSection delivery={questionDelivery} lessonId={unit.lessonId} userId={userId} onPracticeMore={onPracticeExercises} /> : <OfficialQuestionsSection questions={officialQuestions} lessonId={unit.lessonId} userId={userId} onPracticeMore={onPracticeExercises} /> });
+    }
     return list;
-  }, [sections, unit.unitId]);
+  }, [sections, unit, officialQuestions, questionDelivery, userId, onPracticeExercises]);
 
   const [openSections, setOpenSections] = useState<Set<string>>(
     () => new Set([
@@ -273,6 +279,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
       onPracticeExercises(sectionTitle);
       return;
     }
+    setOpenSections((current) => new Set(current).add('official-questions'));
     const el = document.getElementById(`${unit.unitId}-official-questions`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -390,7 +397,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
                 <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
               </summary>
               <div className="pedagogical-section-body border-t border-slate-200 p-3 sm:p-5 reading-content">
-                {sec.render()}
+                <MountOnFirstOpen open={isOpen}>{sec.render()}</MountOnFirstOpen>
 
                 {/* Botões de Ação Rápida no final de cada seção */}
                 <div className="pedagogical-section-actions mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 select-none">
@@ -421,18 +428,6 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
           );
         })}
       </div>
-
-      {/* Questões Oficiais de Banca */}
-      {officialQuestions && officialQuestions.length > 0 && (
-        <div id={`${unit.unitId}-official-questions`} className="mt-8 pt-6 border-t border-slate-200">
-          <OfficialQuestionsSection
-            questions={officialQuestions}
-            lessonId={unit.unitId ? unit.unitId.split('-')[1] : 'A00'}
-            userId={userId}
-            onPracticeMore={onPracticeExercises}
-          />
-        </div>
-      )}
 
       <section className="mt-8 rounded-2xl border border-teal-200 bg-teal-50/70 p-4 sm:p-5" aria-label="Próximo passo da unidade">
         <h2 className="m-0 text-base font-black text-teal-950">Feche o ciclo com aplicação</h2>

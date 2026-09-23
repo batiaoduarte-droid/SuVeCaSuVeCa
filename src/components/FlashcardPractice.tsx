@@ -20,6 +20,7 @@ import {
 import { toLearnerFacingContent } from '../lib/learnerContent';
 import { deriveErrorReviewStatus, scheduleFlashcard } from '../lib/spacedRepetition';
 import { projectFlashcardContent } from '../lib/flashcardContent';
+import { useReviewResource } from '../hooks/useReviewResource';
 import { FLASHCARD_CORRECT_XP } from '../lib/masteryLevel';
 import { authenticatedFetch } from '../lib/authenticatedFetch';
 import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
@@ -460,6 +461,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     ? visibleFlashcards.find((card) => card.id === activeCardId)
     : undefined;
   const activeCard = reviewedCard || activeCards.find((card) => card.id === activeCardId) || activeCards[0];
+  const reviewResource = useReviewResource(activeCard?.source === 'suveca' ? activeCard.id : undefined);
   const errorsWithoutCards = errors.filter(
     (error) => !cadernoCards.some((card) => card.errorId === error.id)
   );
@@ -1052,7 +1054,9 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               <>
                 {/* Projeção Semântica e Componente Editorial do Verso */}
                 {(() => {
-                  const projection = projectFlashcardContent(activeCard);
+                  const resource = reviewResource.resource;
+                  const compatible = resource?.front === activeCard.front && resource?.back === activeCard.back;
+                  const projection = projectFlashcardContent(activeCard, compatible ? resource : null);
                   return (
                     <div className="space-y-4">
                       <FlashcardBackView
@@ -1060,6 +1064,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                         isExplanationVisible={isExplanationVisible}
                         onToggleExplanation={() => setIsExplanationVisible((v) => !v)}
                       />
+                      {(reviewResource.error || (resource && !compatible)) && <button type="button" className="min-h-11 text-sm text-teal-800 underline" onClick={reviewResource.retry}>Tentar carregar a apresentação detalhada novamente</button>}
 
                       <div className="flex justify-end">
                         <button

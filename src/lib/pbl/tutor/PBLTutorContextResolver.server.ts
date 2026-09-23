@@ -49,16 +49,9 @@ const knowledgeCandidates = () => {
   const cwd = process.cwd();
   const executableDirectory = path.dirname(path.resolve(process.argv[1] || '.'));
   const entries = [
-    ...(process.env.SUVECA_KNOWLEDGE_DIR
-      ? [{ directory: path.resolve(process.env.SUVECA_KNOWLEDGE_DIR), label: 'configured/knowledge' }]
-      : []),
-    { directory: path.join(cwd, 'public', 'knowledge'), label: 'public/knowledge' },
-    { directory: path.join(cwd, 'dist', 'knowledge'), label: 'dist/knowledge' },
-    { directory: path.join(cwd, 'applet', 'public', 'knowledge'), label: 'applet/public/knowledge' },
-    { directory: path.join(cwd, 'applet', 'dist', 'knowledge'), label: 'applet/dist/knowledge' },
-    { directory: path.join(executableDirectory, 'knowledge'), label: 'runtime/knowledge' },
-    { directory: path.resolve(executableDirectory, '..', 'public', 'knowledge'), label: 'runtime/../public/knowledge' },
-    { directory: path.resolve(executableDirectory, '..', 'dist', 'knowledge'), label: 'runtime/../dist/knowledge' },
+    ...(process.env.SUVECA_SERVER_DATA_DIR ? [{ directory: path.resolve(process.env.SUVECA_SERVER_DATA_DIR), label: 'configured/server-data' }] : []),
+    { directory: path.join(cwd, 'server-data'), label: 'server-data' },
+    { directory: path.resolve(executableDirectory, '..', 'server-data'), label: 'runtime/server-data' },
   ];
   return entries.filter(
     (entry, index) => entries.findIndex((candidate) => candidate.directory === entry.directory) === index
@@ -104,7 +97,7 @@ class PBLTutorContextResolver {
       // Index questions to shards.
       // We can scan or load shards on demand. Because questionRefs in shards are lexicographically ordered:
       // shard.firstQuestionRef <= questionRef <= shard.lastQuestionRef.
-    })();
+    })().catch(error => { this.initPromise = null; this.manifest = null; throw error; });
 
     return this.initPromise;
   }

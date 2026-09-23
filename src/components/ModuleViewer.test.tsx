@@ -17,7 +17,7 @@ const view = (unitId: string, title = 'Conteúdo aprofundado carregado') => ({
   unit: { unitId, lessonId: unitId.slice(3, 6), title, learningObjectives: ['Distinguir classes por critérios formais.'] },
   sections: { explanation: { groups: [{ title: 'Modelo mental', blocks: [{ type: 'paragraph', text: 'Conteúdo semântico nativo.' }] }] } },
 });
-const response = (data: unknown) => ({ ok: true, json: async () => data }) as Response;
+const response = (data: unknown) => ({ ok: true, text: async () => JSON.stringify(data) }) as Response;
 
 describe('aprofundamento pedagógico', () => {
   afterEach(() => vi.unstubAllGlobals());

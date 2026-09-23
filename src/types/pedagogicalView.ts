@@ -735,6 +735,7 @@ export interface PedagogicalUnitView {
   };
   sections: PedagogicalUnitSections;
   officialQuestions?: OfficialQuestionView[];
+  questionDelivery?: QuestionDelivery;
 }
 
 export interface CumulativeReviewView {
@@ -787,4 +788,13 @@ export interface PedagogicalViewsManifest {
   unknownBlockTypes?: number;
   generatedAt?: string;
   generatedUnits?: string[];
+}
+
+export interface QuestionDelivery {
+  version: 1;
+  totalOccurrences: number;
+  availableCount: number;
+  reconstructedSha256: string;
+  pages: Array<{ file: string; bytes: number; sha256: string; count: number; refs: string[] }>;
+  excluded?: { file: string; bytes: number; sha256: string; count: number; refs: string[] };
 }

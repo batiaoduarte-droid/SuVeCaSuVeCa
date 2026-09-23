@@ -3,7 +3,7 @@ import path from "path";
 import dotenv from "dotenv";
 import { createServer as createHttpServer } from "node:http";
 import { WebSocketServer } from "ws";
-import { createServer as createViteServer } from "vite";
+import { productionStatic } from "./src/lib/productionStatic.server";
 import { GoogleGenAI, Modality, Type } from "@google/genai";
 import {
   formatKnowledgeContext,
@@ -40,11 +40,11 @@ dotenv.config();
 process.env.NODE_ENV ??= "development";
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT || 3000);
 
 app.use("/api/pedagogy/evaluate-explanation", express.json({ limit: "10mb" }));
 app.use(express.json({ limit: "32kb" }));
-app.use(express.static(path.join(process.cwd(), "public")));
+if (process.env.NODE_ENV !== "production") app.use(express.static(path.join(process.cwd(), "public")));
 
 const APPROVED_GEMINI_MODELS = new Set([
   "gemini-3.8-flash",
@@ -194,7 +194,7 @@ app.post("/api/knowledge/questions/sample", async (req, res) => {
   try {
     const filters = questionFiltersFrom((req.body || {}) as Record<string, unknown>);
     const count = Math.min(50, Math.max(1, Number(req.body?.count) || 10));
-    const questions = (await sampleOfficialQuestions(filters, count)).filter(Boolean);
+    const questions = (await sampleOfficialQuestions(filters, count, req.body?.projection === "practice" ? "practice" : "full")).filter(Boolean);
     return res.json({
       count: questions.length,
       questionSetVersion: questions[0]?.provenance.questionSetVersion || "",
@@ -207,7 +207,7 @@ app.post("/api/knowledge/questions/sample", async (req, res) => {
 
 app.get("/api/knowledge/questions/:questionId", async (req, res) => {
   try {
-    const question = await getOfficialQuestion(req.params.questionId);
+    const question = await getOfficialQuestion(req.params.questionId, req.query.projection === "practice" ? "practice" : "full");
     if (!question) return res.status(404).json({ error: "Questão editorial não encontrada." });
     return res.json(question);
   } catch (error: any) {
@@ -1223,6 +1223,7 @@ SUA MISSÃO PEDAGÓGICA (MÉTODO FEYNMAN / AUTOEXPLICAÇÃO):
 // Vite & Static file handling
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -1230,8 +1231,10 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
+    app.use(productionStatic(distPath));
+    app.use("/knowledge", (_req, res) => { res.status(404).json({ error: "Published file missing" }); });
     app.get("*", (_req, res) => {
+      res.setHeader("Cache-Control", "no-cache");
       res.sendFile(path.join(distPath, "index.html"));
     });
   }

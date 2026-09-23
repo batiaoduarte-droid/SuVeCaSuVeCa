@@ -228,7 +228,15 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
       {resumableSession && (
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5">
           <div><h2 className="text-sm font-bold text-amber-950">Você tem uma sessão pausada</h2><p className="mt-1 text-xs text-amber-900">Retome da etapa {resumableSession.phase === 'problem' ? 'caso inicial' : 'em que parou'}, sem perder tentativas.</p></div>
-          <button type="button" onClick={() => setActiveSession(resumableSession)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-amber-400 px-5 text-xs font-extrabold text-amber-950"><RotateCw className="h-4 w-4" /> Continuar sessão</button>
+          <button type="button" onClick={async () => {
+            setLoading(true); setErrorMessage('');
+            try {
+              await pblRepository.prepareCompetencies(resumableSession.targetCompetencyRefs);
+              await pblRepository.getQuestionPresentation(resumableSession.currentQuestionRef);
+              setActiveSession(resumableSession);
+            } catch { setErrorMessage('Não foi possível preparar a sessão. Tente novamente; seu progresso foi preservado.'); }
+            finally { setLoading(false); }
+          }} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-amber-400 px-5 text-xs font-extrabold text-amber-950"><RotateCw className="h-4 w-4" /> Continuar sessão</button>
         </div>
       )}
 

@@ -35,3 +35,7 @@ if (failures.length) {
   process.exit(1);
 }
 console.log(JSON.stringify(summary));
+
+for (const file of ["public/knowledge/official-questions.raw.json", "public/knowledge/official-questions.normalized.json", "public/knowledge/pbl/question_competency_links.json", "public/knowledge/pbl/question_pedagogy_index.json"]) {
+  if (fs.existsSync(file)) throw new Error(`Retired aggregate returned to product: ${file}`);
+}

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+import { readPublishedView } from './lib/published-data.mjs';
 /**
  * scripts/audit-pedagogical-views.mjs
  *
@@ -257,7 +257,7 @@ const assertValidOptions = (options, answer, unitId, qId) => {
 
 for (const file of viewFiles) {
   const filePath = path.join(VIEWS_DIR, file);
-  const view = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  const view = readPublishedView(filePath);
   const unitId = view.unit?.unitId;
 
   assert(unitId, `${file}: unitId ausente`);

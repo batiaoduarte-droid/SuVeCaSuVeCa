@@ -3,7 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { verifyArtifact } from './lib/release-integrity.mjs';
 
-const root = path.resolve('public/knowledge/pbl/tutor');
+const root = path.resolve('server-data/pbl/tutor');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'pbl_tutor_manifest.json'), 'utf8'));
 assert.equal(manifest.schemaVersion, '1.0.0');
 assert.ok(manifest.shards?.length, 'Tutor shards missing');

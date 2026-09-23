@@ -1,3 +1,4 @@
+import { MountOnFirstOpen } from '../ui/MountOnFirstOpen';
 import React, { useEffect, useState } from 'react';
 import { ChevronDown, ListTree, RotateCcw, CheckSquare, Square, Scale, BookOpen, Layers } from 'lucide-react';
 import type { CumulativeReviewView } from '../../types/pedagogicalView';
@@ -135,10 +136,12 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
           <span><span className="mr-2 text-teal-700">1.</span>Conexão com o método SuVeCA</span>
           <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
         </summary>
+<MountOnFirstOpen open={openSections.has('suveca')}>
         <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6">
           <SuvecaSection view={sections.suveca} />
         </div>
-      </details>
+      </MountOnFirstOpen>
+</details>
 
       {/* Seção 2: Mapa de Conceitos */}
       {sections.conceptMap?.items?.length > 0 && (
@@ -152,6 +155,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
             <span><span className="mr-2 text-teal-700">2.</span>Mapa de Conceitos ({sections.conceptMap.items.length} tópicos)</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
+<MountOnFirstOpen open={openSections.has('concepts')}>
           <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6">
             <div className="flex flex-wrap gap-2">
               {(showAllConcepts ? sections.conceptMap.items : sections.conceptMap.items.slice(0, 24)).map((item, idx) => (
@@ -169,7 +173,8 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
               </button>
             )}
           </div>
-        </details>
+        </MountOnFirstOpen>
+</details>
       )}
 
       {/* Seção 3: Regras Priorizadas */}
@@ -184,6 +189,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
             <span><span className="mr-2 text-teal-700">3.</span>Regras Priorizadas de Prova ({sections.prioritizedRules.items.length})</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
+<MountOnFirstOpen open={openSections.has('rules')}>
           <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6">
             <div className="space-y-2.5">
               {(showAllRules ? sections.prioritizedRules.items : sections.prioritizedRules.items.slice(0, 12)).map((rule, idx) => (
@@ -204,7 +210,8 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
               </button>
             )}
           </div>
-        </details>
+        </MountOnFirstOpen>
+</details>
       )}
 
       {/* Seção 4: Síntese Estruturada */}
@@ -219,12 +226,14 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
             <span><span className="mr-2 text-teal-700">4.</span>Síntese Estruturada</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
+<MountOnFirstOpen open={openSections.has('synthesis')}>
           <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6 space-y-3">
             {sections.structuredSynthesis.blocks.map((block, idx) => (
               <ContentBlockRenderer key={idx} block={block} allowLegacyDiagramInference={false} />
             ))}
           </div>
-        </details>
+        </MountOnFirstOpen>
+</details>
       )}
 
       {/* Seção 5: Exemplos para Recuperação */}
@@ -239,12 +248,14 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
             <span><span className="mr-2 text-teal-700">5.</span>Exemplos para Recuperação</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
+<MountOnFirstOpen open={openSections.has('recovery')}>
           <div className="pedagogical-section-body border-t border-slate-200 p-4 sm:p-6 space-y-3">
             {sections.recoveryExamples.blocks.map((block, idx) => (
               <ContentBlockRenderer key={idx} block={block} />
             ))}
           </div>
-        </details>
+        </MountOnFirstOpen>
+</details>
       )}
 
       {/* Seção 6: Protocolo de Revisão Ativa */}
@@ -259,6 +270,7 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
             <span><span className="mr-2 text-teal-700">6.</span>Protocolo de Revisão Ativa ({completedProtocol}/{protocolItems.length})</span>
             <ChevronDown className="h-5 w-5 shrink-0 text-teal-700 transition-transform group-open:rotate-180" />
           </summary>
+<MountOnFirstOpen open={openSections.has('protocol')}>
           <div className="pedagogical-section-body border-t border-teal-200 p-4 sm:p-6 space-y-4">
             <div
               className="h-2 w-full overflow-hidden rounded-full bg-slate-100"
@@ -300,7 +312,8 @@ export const CumulativeReviewRenderer: React.FC<CumulativeReviewRendererProps> =
               })}
             </div>
           </div>
-        </details>
+        </MountOnFirstOpen>
+</details>
       )}
 
       <section className="rounded-2xl border border-teal-200 bg-teal-50/70 p-4 sm:p-5" aria-label="Próximo passo da revisão">
