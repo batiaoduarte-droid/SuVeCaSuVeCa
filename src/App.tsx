@@ -1,4 +1,6 @@
 import { useStudyMode } from './lib/studyMode';
+import { READING_ATTEMPT_EVENT, restoreReadingAttempts, type ReadingAttempt } from './lib/readingAttempts';
+import { recordQuestionEncounter } from './lib/questionEncounterLedger';
 import { useModuleDelivery } from './hooks/useModuleDelivery';
 import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -27,8 +29,11 @@ import {
   firebaseProjectId,
   type AuthErrorInfo,
   safeSetDoc,
+  isAnyLocalUser,
+  logoutLocalUser,
 } from './lib/firebase';
 import { AuthDomainModal } from './components/AuthDomainModal';
+import { LocalAuthModal } from './components/LocalAuthModal';
 import {
   doc,
   getDoc,
@@ -126,7 +131,10 @@ const lastModuleStorageKey = (userId?: string | null) =>
 export default function App() {
   const initialStudyLocation = useRef(readStudyLocation()).current;
   const initialToolLocation = useRef(readToolLocation()).current;
-  const [activeTab, setActiveTab] = useState<TabType>(initialToolLocation.tab);
+  const [activeTab, updateActiveTab] = useState<TabType>(initialToolLocation.tab);
+  const hasNavigated = useRef(false);
+  const hasExplicitEntry = useRef(['tool', 'module', 'unit', 'section', 'macro', 'question'].some(key => new URLSearchParams(window.location.search).has(key))).current;
+  const setActiveTab = (tab: TabType) => { hasNavigated.current = true; updateActiveTab(tab); };
   const lastNonPomodoroTab = useRef<TabType>('modules');
   const [selectedModuleId, setSelectedModuleId] = useState<string>(initialStudyLocation.moduleId || 'mod-intro');
   const [selectedMacroId, setSelectedMacroId] = useState<string | null>(
@@ -153,6 +161,15 @@ export default function App() {
   // Firebase Auth State
   const [user, setUser] = useState<User | null>(null);
   const [studyMode, restoreCompleteMode] = useStudyMode(user?.uid);
+  useEffect(() => {
+    if (!hasExplicitEntry && !hasNavigated.current && studyMode === 'pbl_only') updateActiveTab('pbl');
+  }, [studyMode, hasExplicitEntry]);
+  useEffect(() => {
+    const restore = () => { void restoreReadingAttempts(user?.uid).catch(() => {}); };
+    restore();
+    window.addEventListener('online', restore);
+    return () => window.removeEventListener('online', restore);
+  }, [user?.uid]);
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [cadernoReadyFor, setCadernoReadyFor] = useState<string | null>('guest');
   const authHydrationId = useRef(0);
@@ -317,6 +334,7 @@ export default function App() {
   }, [cadernoErrors, cadernoReadyFor, user?.uid]);
 
   const [authError, setAuthError] = useState<AuthErrorInfo | null>(null);
+  const [isLocalAuthOpen, setIsLocalAuthOpen] = useState(false);
 
   useEffect(() => {
     const handleAuthErrorEvent = (event: Event) => {
@@ -329,10 +347,17 @@ export default function App() {
     return () => window.removeEventListener('suveca:auth-error', handleAuthErrorEvent);
   }, []);
 
-  const handleSignIn = async () => {
+  const handleSignIn = () => {
+    setAuthError(null);
+    setIsLocalAuthOpen(true);
+  };
+
+  const handleGoogleSignIn = async () => {
     try {
       setAuthError(null);
       await signInWithGoogle();
+      // The Firebase observer resumes when the local session is disabled.
+      logoutLocalUser(false);
     } catch (err: any) {
       console.warn('Aviso ao realizar login Google:', err?.message || err);
       setAuthError({
@@ -345,6 +370,10 @@ export default function App() {
   };
 
   const handleSignOut = async () => {
+    if (isAnyLocalUser(user)) {
+      logoutLocalUser(false);
+      return;
+    }
     try {
       await signOut(auth);
     } catch (err) {
@@ -397,6 +426,31 @@ export default function App() {
       return [{ ...existing, ...newItem, id: existing.id }, ...prev.filter((_, index) => index !== duplicateIndex)];
     });
   };
+
+  useEffect(() => {
+    const receive = (event: Event) => {
+      const detail = (event as CustomEvent).detail;
+      if (detail?.userId !== (user?.uid || 'guest')) return;
+      const attempt = detail.attempt as ReadingAttempt;
+      recordAnswer(attempt.correct);
+      addAttempt({ id: attempt.id, createdAt: attempt.createdAt, completedAt: attempt.createdAt,
+        correct: attempt.correct ? 1 : 0, total: 1, source: 'apostila', isCorrect: attempt.correct,
+        confidence: attempt.confidence, assistanceLevel: attempt.assistanceLevel || 'none', answerMap: { [attempt.questionId]: attempt.answer } });
+      recordQuestionEncounter(user?.uid, { questionId: attempt.questionId, purpose: 'acquisition_practice',
+        encounteredAt: attempt.createdAt, correct: attempt.correct,
+        confidence: { guess: 0, low: 0.25, medium: 0.6, high: 1 }[attempt.confidence], assistanceLevel: attempt.assistanceLevel || 'none' });
+      if (!attempt.correct || attempt.confidence === 'guess' || attempt.confidence === 'low') {
+        handleAddErrorDirect(detail.prompt || detail.title, `Resposta: ${attempt.answer}. ${attempt.justification}`,
+          detail.solution || `Rever o gabarito publicado: ${detail.answer || ''}`, {
+            questionId: attempt.questionId, origin: 'module_question',
+            selectedAnswer: attempt.answer, correctAnswer: detail.answer, questionText: detail.prompt,
+            nextReviewAt: new Date(Date.now() + 86_400_000).toISOString(),
+          });
+      }
+    };
+    window.addEventListener(READING_ATTEMPT_EVENT, receive);
+    return () => window.removeEventListener(READING_ATTEMPT_EVENT, receive);
+  }, [user?.uid, addAttempt, recordAnswer]);
 
   const handleUpdateErrorStatus = (
     id: string,
@@ -565,6 +619,7 @@ export default function App() {
       {!isImmersiveFocus && (
         <Navbar
           studyMode={studyMode}
+          onRestoreCompleteMode={restoreCompleteMode}
           activeTab={activeTab}
           setActiveTab={(tab) => {
             if (tab === 'tutor') {
@@ -593,9 +648,6 @@ export default function App() {
           ? 'mx-auto w-full flex-1 px-4 py-4 sm:px-6 lg:px-10'
           : 'app-content-shell py-4 sm:py-6 pb-28 lg:pb-8 flex-1'
       }`}>
-          {studyMode === 'pbl_only' && <div className="app-content-shell py-2 text-sm text-purple-950" role="status">
-            Navegação com foco em PBL. <button type="button" className="min-h-11 underline" onClick={restoreCompleteMode}>Mostrar navegação completa</button>
-          </div>}
         <DailyReviewReminder
           errors={cadernoErrors}
           userId={user?.uid}
@@ -640,6 +692,20 @@ export default function App() {
                   selectedModuleId={selectedModuleId}
                   onSelectModule={handleSelectModule}
                   onAskTutor={handleOpenTutorWithContext}
+                  onSaveStudyNote={(note) => {
+                    const scope = user?.uid || 'guest';
+                    if (cadernoReadyFor !== scope) return false;
+                    try {
+                      const previous = readStoredErrors(user?.uid) || [];
+                      const old = previous.find(e => e.origin === 'worked_example' && e.questionId === note.questionId);
+                      const entry: CadernoErroItem = { id: old?.id || crypto.randomUUID(), date: new Date().toLocaleDateString('pt-BR'),
+                        status: 'dia0', novoExemplo: '', ...note };
+                      const next = [entry, ...previous.filter(e => e.id !== entry.id)];
+                      localStorage.setItem(cadernoStorageKeyFor(user?.uid), JSON.stringify(next));
+                      setCadernoErrors(next);
+                      return true;
+                    } catch { return false; }
+                  }}
                   onRecordError={handleAddErrorDirect}
                   user={user}
                   onNoteSaved={recordNote}
@@ -929,10 +995,16 @@ export default function App() {
       )}
 
       {/* Modal de Alerta de Domínio Não Autorizado / Erro de Autenticação */}
+      <LocalAuthModal
+        isOpen={isLocalAuthOpen}
+        onClose={() => setIsLocalAuthOpen(false)}
+        currentUser={user}
+        onSignInGoogle={handleGoogleSignIn}
+      />
       <AuthDomainModal
         error={authError}
         onClose={() => setAuthError(null)}
-        onRetry={handleSignIn}
+        onRetry={handleGoogleSignIn}
       />
     </div>
   );

@@ -30,6 +30,7 @@ import {
   type User,
   isLocalAuthActive,
   toggleLocalAuth,
+  loginAsTestUser,
   LOCAL_TEST_USER_ID,
 } from '../lib/firebase';
 import { useModalFocus } from '../hooks/useModalFocus';
@@ -53,6 +54,7 @@ export type TabType =
 
 interface NavbarProps {
   studyMode?: StudyMode;
+  onRestoreCompleteMode?: () => void;
   activeTab: TabType;
   setActiveTab: (tab: TabType) => void;
   onOpenSearch: () => void;
@@ -80,6 +82,7 @@ interface NavItem {
 export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
   studyMode = 'complete',
+  onRestoreCompleteMode,
   setActiveTab,
   onOpenSearch,
   errorCount,
@@ -236,6 +239,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Right side: Streak Counter, Search & User Profile */}
             <div className="flex items-center space-x-2 sm:space-x-3">
+              {studyMode === 'pbl_only' && <button type="button" onClick={onRestoreCompleteMode} aria-label="Mostrar navegação completa" className="min-h-11 rounded-lg px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100" title="Mostrar navegação completa">Modo completo</button>}
               {/* Visual Daily Study Streak Counter Badge */}
               <div className="relative">
                 <button
@@ -387,6 +391,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                     </div>
                     <button
                       type="button"
+                      onClick={onSignIn}
+                      className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-600 hover:text-teal-800 hover:bg-teal-50 rounded-lg transition"
+                      title="Trocar conta"
+                      aria-label="Trocar conta"
+                    >
+                      <UserIcon className="w-4 h-4" />
+                    </button>
+                    <button
+                      type="button"
                       onClick={() => toggleLocalAuth()}
                       className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition"
                       title="Sair do modo local"
@@ -437,7 +450,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   {Boolean(import.meta.env.DEV || isLocalAuthActive()) && (
                     <button
                       type="button"
-                      onClick={() => toggleLocalAuth()}
+                      onClick={() => loginAsTestUser()}
                       className="button-secondary min-h-[44px] text-xs flex items-center gap-1.5 border-amber-300 bg-amber-50 text-amber-950 hover:bg-amber-100 hover:border-amber-400 cursor-pointer shadow-2xs font-bold"
                       title="Entrar diretamente como usuário de teste local (sem Firebase/Google)"
                     >

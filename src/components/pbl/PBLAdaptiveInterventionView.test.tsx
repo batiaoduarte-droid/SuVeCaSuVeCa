@@ -135,6 +135,35 @@ const mockEpisode: PBLTutorEpisode = {
 };
 
 describe('PBLAdaptiveInterventionView', () => {
+  it('rejects text-only synthesis, retries with the same action and saves only the new draft on confirmation', async () => {
+    const user = userEvent.setup();
+    const onSaveToCaderno = vi.fn();
+    const onRecordTurn = vi.fn();
+    const notebookDraft = { title: 'Nova ficha', triggerCondition: 'Condição específica', decisionRule: 'Nova regra', contrastExample: 'Novo contraste' };
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ pedagogicalText: 'Preparei sua ficha!' }) })
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ pedagogicalText: 'Confira a ficha.', notebookDraft }) });
+    vi.stubGlobal('fetch', fetchMock);
+    render(<PBLAdaptiveInterventionView session={mockSession} episode={mockEpisode} attempt={mockAttempt}
+      question={mockQuestion} onRecordTurn={onRecordTurn} onSaveToCaderno={onSaveToCaderno} onConclude={vi.fn()} />);
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Modelo de resposta' }), 'gemini-3.5-flash-lite');
+    await user.click(screen.getByRole('button', { name: 'Gerar síntese para o Caderno' }));
+    expect(await screen.findByRole('button', { name: 'Tentar novamente' })).toBeVisible();
+    expect(screen.queryByRole('button', { name: /Salvar no Meu Caderno/i })).not.toBeInTheDocument();
+    expect(onRecordTurn.mock.calls.every(([turn]) => turn.role === 'student')).toBe(true);
+    expect(onSaveToCaderno).not.toHaveBeenCalled();
+    await user.click(screen.getByRole('button', { name: 'Tentar novamente' }));
+    const save = await screen.findByRole('button', { name: /Salvar no Meu Caderno/i });
+    expect(screen.getByText('Síntese para o Caderno de Erros: Nova ficha')).toBeVisible();
+    expect(screen.getByRole('region', { name: 'Ficha para o Caderno de Erros' })).toHaveFocus();
+    expect(onSaveToCaderno).not.toHaveBeenCalled();
+    expect(fetchMock.mock.calls.map(([, init]) => JSON.parse(init.body).cadernoSynthesisRequested)).toEqual([true, true]);
+    expect(fetchMock.mock.calls.map(([, init]) => JSON.parse(init.body).model)).toEqual(['gemini-3.5-flash-lite', 'gemini-3.5-flash-lite']);
+    expect(fetchMock.mock.calls.every(([, init]) => JSON.parse(init.body).history === undefined)).toBe(true);
+    await user.click(save);
+    expect(onSaveToCaderno).toHaveBeenCalledWith('Nova ficha', 'Alternativa marcada: E', 'Nova regra', expect.objectContaining({ novoExemplo: 'Novo contraste', questionId: 'Q-1' }));
+    expect(screen.getByRole('button', { name: 'Salvo no Caderno' })).toBeDisabled();
+  });
   afterEach(() => vi.unstubAllGlobals());
   it('waits for session synchronization and binds the submitted attempt to the tutor request', async () => {
     let confirm!: () => void;

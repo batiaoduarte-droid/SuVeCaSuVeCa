@@ -112,7 +112,8 @@ export class PBLEngine {
           attemptedQuestionRefs,
           true,
           session.sessionId,
-          recentlyExposedQuestionRefs
+          recentlyExposedQuestionRefs,
+          session.attempts.find(attempt => attempt.competencyRef === session.currentCompetencyRef && attempt.stage === 'initial')?.questionRef || session.currentQuestionRef,
         );
     if (!item) throw new Error('Não há questão isomórfica publicada para a nova tentativa.');
     session.currentTransferItem = item;
@@ -191,7 +192,8 @@ export class PBLEngine {
       Array.from(sessionExposedRefs),
       true,
       session.sessionId,
-      recentlyExposedQuestionRefs
+      recentlyExposedQuestionRefs,
+      session.attempts.find(attempt => attempt.competencyRef === session.currentCompetencyRef && attempt.stage === 'initial')?.questionRef || session.currentQuestionRef,
     );
 
     if (item) {
@@ -341,6 +343,7 @@ export class PBLEngine {
       ...attemptParams,
       assistanceLevel: maximumAssistance(
         attemptParams.assistanceLevel ?? session.interventionAssistance?.[attemptParams.competencyRef],
+        session.transferHintsUsed?.[attemptParams.questionRef] ? 'hint' : 'none',
         ...Object.values(session.tutorEpisodes || {}).filter((episode) => episode.questionRef === attemptParams.questionRef).map((episode) => episode.assistanceLevel)
       ),
       // O runtime não aceita um sinal positivo autorrelatado como prova de
@@ -349,7 +352,10 @@ export class PBLEngine {
       elapsedSinceLastPracticeMs,
     });
     if (attempt.stage === 'transfer') {
-      attempt.transferValidationStatus = session.currentTransferItem?.validationStatus || 'unverified';
+      const anchor = session.attempts.find(previous => previous.competencyRef === attempt.competencyRef && previous.stage === 'initial');
+      const item = session.currentTransferItem;
+      attempt.transferValidationStatus = anchor && item?.anchorQuestionRef === anchor.questionRef
+        && item.officialQuestionRef === attempt.questionRef ? item.validationStatus || 'unverified' : 'unverified';
     }
     if (attempt.assistanceLevel !== 'none' && session.lastInterventionPayload) {
       attempt.interventionRefs = [session.lastInterventionPayload.interventionId];

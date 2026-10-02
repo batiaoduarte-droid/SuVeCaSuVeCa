@@ -10,6 +10,9 @@ describe('question presentation safety', () => {
   it('recognizes identified external context', () => {
     expect(requiresIdentifiedContext('Empregado no texto CB2A1, o vocábulo...')).toBe(true);
     expect(requiresIdentifiedContext('Considere o texto anterior.')).toBe(true);
+    expect(requiresIdentifiedContext('No texto 2 há um erro de grafia.')).toBe(true);
+    expect(requiresIdentifiedContext('Considere o texto II.')).toBe(true);
+    expect(requiresIdentifiedContext('O texto mostra um exemplo.')).toBe(false);
     expect(requiresIdentifiedContext('Analise a frase abaixo.')).toBe(false);
   });
 

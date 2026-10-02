@@ -4,6 +4,9 @@ import { useModalFocus } from '../hooks/useModalFocus';
 import { toLearnerFacingContent } from '../lib/learnerContent';
 import { MarkdownContent } from './ui/MarkdownContent';
 import { authenticatedFetch } from '../lib/authenticatedFetch';
+import { createAiDeadline, withAiSignal } from '../lib/ai/aiRequest';
+import { professorTimeoutMs, professorModelLabel, type ProfessorModel } from '../lib/geminiTaskMapping';
+import { ProfessorModelSelect } from './ProfessorModelSelect';
 
 export interface StudentProfile {
   recentErrors?: Array<{ topic: string; rule: string }>;
@@ -20,15 +23,25 @@ interface ProfessorSuvecaModalProps {
   onOpenFlashcards?: () => void;
 }
 
+interface ProfessorRequest {
+  model?: ProfessorModel;
+  question: string;
+  context: string;
+  history: Array<{ role: string; text: string }>;
+  studentProfile?: StudentProfile;
+}
+
 interface Message {
   sender: 'user' | 'bot';
   text: string;
   sourceRefs?: string[];
   isRealAi?: boolean;
+  failedRequest?: ProfessorRequest;
 }
 
 // Persist session chat across drawer open/close in development and production
 let sessionMessagesCache: Message[] | null = null;
+let sessionContextCache = '';
 
 export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
   isOpen,
@@ -44,13 +57,13 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
   const defaultGreeting: Message = {
     sender: 'bot',
     text: `Olá! Sou o Professor SuVeCA, seu tutor de Português para Concursos. ${
-      initialContext ? `Vejo que você está no tópico: "${initialContext}".` : ''
+      initialContext ? 'Vamos trabalhar com o conteúdo que você está estudando.' : ''
     } Qual dúvida gramatical você quer tirar agora?`,
     isRealAi: false,
   };
 
   const [messages, setMessages] = useState<Message[]>(() => {
-    if (!isTest && sessionMessagesCache && sessionMessagesCache.length > 0) {
+    if (!isTest && sessionContextCache === initialContext && sessionMessagesCache && sessionMessagesCache.length > 0) {
       return sessionMessagesCache;
     }
     return [defaultGreeting];
@@ -58,15 +71,57 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
 
   const [inputQuery, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedModel, setSelectedModel] = useState<ProfessorModel>('gemini-3.1-flash-lite');
+  const [pendingModel, setPendingModel] = useState<ProfessorModel>('gemini-3.1-flash-lite');
   const [messageFeedback, setMessageFeedback] = useState<Record<number, 'yes' | 'no'>>({});
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useModalFocus(isOpen, onClose, inputRef);
+  const activeRequest = useRef<AbortController | null>(null);
+  const pendingRequest = useRef<{ request: ProfessorRequest; retryIndex?: number } | null>(null);
+  const latestMessages = useRef(messages);
+  latestMessages.current = messages;
+  const mounted = useRef(true);
+  const previousContext = useRef(initialContext);
+  useEffect(() => {
+    if (previousContext.current === initialContext) return;
+    previousContext.current = initialContext;
+    const pending = activeRequest.current;
+    activeRequest.current = null;
+    pendingRequest.current = null;
+    pending?.abort();
+    setIsLoading(false);
+    setInputText('');
+    setMessageFeedback({});
+    setMessages([defaultGreeting]);
+  }, [initialContext]);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+      activeRequest.current?.abort();
+      // App unmounts this modal on close; preserve the interrupted request in its existing cache.
+      const pending = pendingRequest.current;
+      if (!isTest && pending) {
+        const failure: Message = {
+          sender: 'bot', isRealAi: false, failedRequest: pending.request,
+          text: 'A consulta foi interrompida. Sua pergunta foi preservada; você pode tentar novamente.',
+        };
+        sessionMessagesCache = pending.retryIndex === undefined
+          ? [...latestMessages.current, failure]
+          : latestMessages.current.map((message, index) => index === pending.retryIndex ? failure : message);
+      }
+    };
+  }, []);
+  useEffect(() => {
+    if (!isOpen) activeRequest.current?.abort();
+  }, [isOpen]);
 
   // Sync cache with state
   useEffect(() => {
     if (!isTest) {
       sessionMessagesCache = messages;
+      sessionContextCache = initialContext;
     }
   }, [messages, isTest]);
 
@@ -95,73 +150,86 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
   if (!isOpen) return null;
 
   const handleResetChat = () => {
+    const previous = activeRequest.current;
+    activeRequest.current = null;
+    pendingRequest.current = null;
+    previous?.abort();
+    setIsLoading(false);
     const resetList = [defaultGreeting];
     setMessages(resetList);
     if (!isTest) sessionMessagesCache = resetList;
   };
 
-  const handleSendMessage = async (e?: React.FormEvent) => {
-    if (e) e.preventDefault();
-    if (!inputQuery.trim() || isLoading) return;
-
-    const userText = inputQuery.trim();
-    const recentHistory = messages.slice(-6).map((message) => ({
-      role: message.sender === 'bot' ? 'assistant' : 'user',
-      text: message.text,
-    }));
-    setInputText('');
-    setMessages((prev) => [...prev, { sender: 'user', text: userText }]);
+  const sendRequest = async (request: ProfessorRequest, retryIndex?: number) => {
+    if (activeRequest.current) return;
+    const deadline = createAiDeadline(professorTimeoutMs(request.model) + 5_000);
+    setPendingModel(request.model || 'gemini-3.1-flash-lite');
+    activeRequest.current = deadline.controller;
+    pendingRequest.current = { request, retryIndex };
     setIsLoading(true);
-
+    const publish = (message: Message) => {
+      if (!mounted.current || activeRequest.current !== deadline.controller) return;
+      setMessages(prev => retryIndex === undefined ? [...prev, message] : prev.map((old, index) => index === retryIndex ? message : old));
+    };
     try {
-      const response = await authenticatedFetch('/api/gemini/explain', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          question: userText,
-          context: initialContext || 'Geral de Português para Concursos',
-          history: recentHistory,
-          studentProfile,
-        }),
-      });
-
-      const data = await response.json();
+      const { response, data } = await withAiSignal(async () => {
+        const response = await authenticatedFetch('/api/gemini/explain', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          signal: deadline.signal,
+          body: JSON.stringify(request),
+        });
+        return { response, data: await response.json() };
+      }, deadline.signal);
       const answerMarkdown = toLearnerFacingContent(data.answerMarkdown || data.answer);
       if (response.ok && answerMarkdown) {
-        setMessages((prev) => [
-          ...prev,
-          {
-            sender: 'bot',
-            text: answerMarkdown,
-            isRealAi: data.isRealAi ?? true,
-            sourceRefs: Array.isArray(data.sourceRefs)
-              ? data.sourceRefs.filter((reference: unknown) => typeof reference === 'string')
-              : undefined,
-          },
-        ]);
+        publish({
+          sender: 'bot',
+          text: answerMarkdown,
+          isRealAi: data.isRealAi ?? true,
+          sourceRefs: Array.isArray(data.sourceRefs)
+            ? data.sourceRefs.filter((reference: unknown) => typeof reference === 'string')
+            : undefined,
+        });
       } else {
-        setMessages((prev) => [
-          ...prev,
-          {
-            sender: 'bot',
-            isRealAi: false,
-            text: data.error || 'Desculpe, tive um problema ao consultar a resposta. Tente novamente em instantes.',
-          },
-        ]);
-      }
-    } catch (err) {
-      console.error(err);
-      setMessages((prev) => [
-        ...prev,
-        {
+        publish({
           sender: 'bot',
           isRealAi: false,
-          text: 'Ocorreu um erro de conexão com o servidor do Professor SuVeCA.',
-        },
-      ]);
+          failedRequest: request,
+          text: data.error || 'O Professor está temporariamente indisponível. Sua pergunta foi preservada. Tente novamente em instantes.',
+        });
+      }
+    } catch {
+      publish({
+        sender: 'bot',
+        isRealAi: false,
+        failedRequest: request,
+        text: deadline.signal.reason?.message === 'AI_TIMEOUT'
+          ? 'O Professor demorou mais que o esperado. Sua pergunta foi preservada. Tente novamente.'
+          : deadline.signal.aborted
+            ? 'A consulta foi interrompida. Sua pergunta foi preservada; você pode tentar novamente.'
+            : 'Não foi possível conectar ao Professor. Sua pergunta foi preservada. Tente novamente em instantes.',
+      });
     } finally {
-      setIsLoading(false);
+      deadline.dispose();
+      if (activeRequest.current === deadline.controller) {
+        activeRequest.current = null;
+        pendingRequest.current = null;
+        if (mounted.current) setIsLoading(false);
+      }
     }
+  };
+
+  const handleSendMessage = (e?: React.FormEvent) => {
+    e?.preventDefault();
+    if (!inputQuery.trim() || activeRequest.current) return;
+    const question = inputQuery.trim();
+    const history = messages.filter(message => !message.failedRequest).slice(-6).map(message => ({
+      role: message.sender === 'bot' ? 'assistant' : 'user', text: message.text,
+    }));
+    setInputText('');
+    setMessages(prev => [...prev, { sender: 'user', text: question }]);
+    void sendRequest({ question, context: initialContext || 'Geral de Português para Concursos', history, studentProfile, model: selectedModel });
   };
 
   const hasRecentErrors = Boolean(studentProfile?.recentErrors && studentProfile.recentErrors.length > 0);
@@ -190,7 +258,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
               <div className="flex items-center space-x-2">
                 <h3 id="professor-modal-title" className="font-extrabold text-sm text-slate-900">Professor SuVeCA IA</h3>
                 <span className="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded-full border border-emerald-200 font-bold">
-                  Online
+                  {isLoading ? 'Consultando' : 'Assistente IA'}
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium">
@@ -221,6 +289,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
         </div>
 
         {/* Faixa de perfil cognitivo ativo */}
+        <ProfessorModelSelect value={selectedModel} onChange={setSelectedModel} disabled={isLoading} />
         {hasRecentErrors && (
           <div className="bg-amber-50/80 border-b border-amber-200/60 px-4 py-2 flex items-center space-x-2 text-xs text-amber-900 shrink-0">
             <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0" />
@@ -259,7 +328,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
                 {msg.sender === 'bot' ? (
                   <>
                     <div className="mb-2 flex items-center gap-1.5 text-[10px]">
-                      {msg.isRealAi ? (
+                      {msg.failedRequest ? <span role="status" className="font-semibold text-amber-800">Resposta não concluída</span> : msg.isRealAi ? (
                         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
                           <Sparkles className="h-2.5 w-2.5 text-emerald-600" />
                           <span>Chamada Real IA</span>
@@ -275,6 +344,11 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
                       content={toLearnerFacingContent(msg.text)}
                       className="text-xs sm:text-sm [&_h1]:text-lg [&_h2]:text-base [&_h3]:text-sm [&_p]:leading-6"
                     />
+                    {msg.failedRequest && idx === messages.length - 1 && (
+                      <button type="button" disabled={isLoading} onClick={() => void sendRequest({ ...msg.failedRequest!, model: selectedModel }, idx)} className="button-secondary mt-3 min-h-[44px] px-3 text-sm">
+                        Tentar novamente
+                      </button>
+                    )}
                     {idx > 0 && Boolean(msg.sourceRefs?.length) && (
                       <div className="mt-3 border-t border-slate-100 pt-3">
                         {(onSaveRule || onOpenPractice || onOpenFlashcards) && (
@@ -306,7 +380,7 @@ export const ProfessorSuvecaModal: React.FC<ProfessorSuvecaModalProps> = ({
           {isLoading && (
             <div className="flex items-center space-x-2 text-xs text-teal-800 font-semibold bg-teal-50 border border-teal-200 p-3 rounded-xl w-fit">
               <Sparkles className="w-4 h-4 animate-spin text-teal-700" />
-              <span>O Professor SuVeCA está formulando a explicação...</span>
+              <span role="status">{professorModelLabel(pendingModel)} está gerando a resposta…</span>
             </div>
           )}
 

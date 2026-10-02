@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Lightbulb,
   CheckCircle2,
@@ -9,21 +9,67 @@ import {
 } from 'lucide-react';
 import type { WorkedExampleView, ContentBlock } from '../../types/pedagogicalView';
 import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
+import { saveExampleStudy } from '../../lib/exampleStudy';
 
 interface WorkedExampleCardProps {
+  unitId?: string;
+  userId?: string;
   example: WorkedExampleView;
   renderBlock?: (block: ContentBlock) => React.ReactNode;
   className?: string;
+  hideHeader?: boolean;
 }
 
 export const WorkedExampleCard: React.FC<WorkedExampleCardProps> = ({
+  unitId,
+  userId,
   example,
   renderBlock,
   className = '',
+  hideHeader = false,
 }) => {
+  const [revealed, setRevealed] = useState<Record<string, boolean>>({});
+  const [reflections, setReflections] = useState<Record<string, string>>({});
+  const [saveStatus, setSaveStatus] = useState('');
+  const record = (kind: 'attempt' | 'reveal', itemId: string) => {
+    if (!unitId || !example.exampleId) return;
+    const saved = saveExampleStudy(userId, { unitId, exampleId: example.exampleId, itemId, kind, reflection: kind === 'attempt' ? reflections[itemId] : undefined });
+    setSaveStatus(saved ? 'Interação registrada neste dispositivo, sem nota de acerto.' : 'Não foi possível salvar neste dispositivo. Seu texto continua disponível nesta tela.');
+  };
+  if (example.practiceItems?.length && renderBlock) {
+    return <article className={`space-y-4 border-b border-slate-200 py-4 ${className}`}>
+      <h4 className="text-base font-bold text-teal-950"><InlineRichText>{example.title}</InlineRichText></h4>
+      {example.practiceItems.map(item => <section key={item.id} className="space-y-3 rounded-xl border border-slate-200 p-3">
+        <p className="text-sm leading-relaxed text-slate-900"><InlineRichText>{item.prompt}</InlineRichText></p>
+        <label className="block text-xs font-semibold text-slate-700">Sua resposta e raciocínio (opcional)
+          <textarea maxLength={4000} value={reflections[item.id] || ''} onChange={e => setReflections(current => ({ ...current, [item.id]: e.target.value }))} className="mt-1 block w-full rounded-lg border border-slate-300 p-2 text-sm" rows={2} />
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {unitId && example.exampleId && <button type="button" className="button-secondary min-h-11 text-xs" disabled={!reflections[item.id]?.trim() || revealed[item.id]} onClick={() => record('attempt', item.id)}>Registrar tentativa</button>}
+          <button type="button" className="button-primary min-h-11 text-xs" aria-expanded={!!revealed[item.id]} onClick={() => {
+            if (!revealed[item.id]) record('reveal', item.id);
+            setRevealed(current => ({ ...current, [item.id]: !current[item.id] }));
+          }}>{revealed[item.id] ? 'Ocultar resolução' : 'Ver resolução'}</button>
+        </div>
+        {revealed[item.id] && <div className="space-y-2 border-t border-teal-100 pt-3">{item.solutionBlocks.map((block, index) => <React.Fragment key={index}>{renderBlock(block)}</React.Fragment>)}</div>}
+      </section>)}
+      {saveStatus && <p role="status" className="text-xs text-slate-600">{saveStatus}</p>}
+    </article>;
+  }
   const resolvedPrompt = example.prompt || example.sentence;
   const resolvedResult = example.result || example.pedagogicalTakeaway;
   const showStructuredScaffold = !example.presentation?.hideGenericScaffold;
+  if (example.spellingReview) {
+    const review = example.spellingReview;
+    return <article className={`border-b border-slate-200 py-5 ${className}`}>
+      {!hideHeader && <h4 className="mb-3 text-sm font-bold text-slate-900"><InlineRichText>{example.title}</InlineRichText></h4>}
+      <dl className="grid gap-3 sm:grid-cols-2">
+        <div className={`rounded-lg p-3 ${review.judgment === 'correct' ? 'bg-emerald-50 text-emerald-950' : 'bg-rose-50 text-rose-950'}`}><dt className="text-xs font-semibold">Grafia apresentada · {review.judgmentLabel}</dt><dd className="mt-1 text-lg font-bold"><InlineRichText>{review.proposed}</InlineRichText></dd></div>
+        <div className="rounded-lg bg-emerald-50 p-3 text-emerald-950"><dt className="text-xs font-semibold">Grafia correta</dt><dd className="mt-1 text-lg font-bold"><InlineRichText>{review.corrected}</InlineRichText></dd></div>
+        <div className="sm:col-span-2"><dt className="text-xs font-semibold text-slate-700">Por quê?</dt><dd className="mt-1 text-sm leading-relaxed text-slate-800"><InlineRichText>{review.explanation}</InlineRichText></dd></div>
+      </dl>
+    </article>;
+  }
   type NormalizedExampleStep = { order: number; action: string; rationale?: string };
 
   const normalizedSteps: NormalizedExampleStep[] = (example.analysisSteps || [])
@@ -52,20 +98,22 @@ export const WorkedExampleCard: React.FC<WorkedExampleCardProps> = ({
       className={`rounded-2xl border border-emerald-200 bg-white p-4 sm:p-6 shadow-xs hover:border-emerald-300 transition-all space-y-4 select-text ${className}`}
     >
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-100 pb-3">
-        <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-800 text-white select-none shadow-2xs">
-            <Lightbulb className="h-4 w-4" />
+      {!hideHeader && (
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-100 pb-3">
+          <div className="flex items-center gap-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-800 text-white select-none shadow-2xs">
+              <Lightbulb className="h-4 w-4" />
+            </div>
+            <h4 className="text-sm sm:text-base font-black tracking-tight text-emerald-950">
+              <InlineRichText>{example.title}</InlineRichText>
+            </h4>
           </div>
-          <h4 className="text-sm sm:text-base font-black tracking-tight text-emerald-950">
-            <InlineRichText>{example.title}</InlineRichText>
-          </h4>
-        </div>
 
-        <span className="rounded-full bg-emerald-50 border border-emerald-300 px-2.5 py-0.5 text-[10px] font-black text-emerald-900 uppercase tracking-wider select-none">
-          Exemplo Comentado
-        </span>
-      </div>
+          <span className="rounded-full bg-emerald-50 border border-emerald-300 px-2.5 py-0.5 text-[10px] font-black text-emerald-900 uppercase tracking-wider select-none">
+            {example.studyKind === 'reference' ? 'Quadro de consulta' : 'Exemplo Comentado'}
+          </span>
+        </div>
+      )}
 
       {/* Prompt / Frase em análise */}
       {showStructuredScaffold && resolvedPrompt && (

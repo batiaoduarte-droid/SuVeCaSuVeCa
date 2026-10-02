@@ -105,6 +105,42 @@ if (!errors.length) {
   check(xfers.length === 190, `Transfer sets count expected 190, found ${xfers.length}`);
   check(diags.length === 190, `Diagnostic paths count expected 190, found ${diags.length}`);
   check(sessions.length === 13, `Cumulative review sessions count expected 13, found ${sessions.length}`);
+
+  // --- Anti-Template and Pedagogical Quality Gate (Módulo 5) ---
+  const bannedTemplatePatterns = [
+    /Compreender e definir os princípios normativos/i,
+    /Aplicar regras canônicas e procedimentos decisórios/i,
+    /Analisar o papel de .* no eixo Camada própria/i,
+    /Analisar o papel de .* no eixo Método central/i,
+    /- Questões\b/i,
+  ];
+
+  for (const competency of comps) {
+    for (const pattern of bannedTemplatePatterns) {
+      check(!pattern.test(competency.description), `Anti-template violation in ${competency.competencyId} description: ${pattern}`);
+      check(!pattern.test(competency.title), `Anti-template residue in ${competency.competencyId} title: ${pattern}`);
+      if (competency.cleanedTitle) {
+        check(!pattern.test(competency.cleanedTitle), `Anti-template residue in ${competency.competencyId} cleanedTitle: ${pattern}`);
+      }
+    }
+    if (competency.cleanedTitle && competency.keyTopics) {
+      const descWordCount = competency.description.trim().split(/\s+/).filter(Boolean).length;
+      check(descWordCount >= 25 && descWordCount <= 55, `Competency ${competency.competencyId} description word count out of range (25-55): ${descWordCount} words`);
+      if (competency.summary) {
+        const summaryWordCount = competency.summary.trim().split(/\s+/).filter(Boolean).length;
+        check(summaryWordCount >= 10 && summaryWordCount <= 20, `Competency ${competency.competencyId} summary word count out of range (10-20): ${summaryWordCount} words`);
+      }
+      check(Array.isArray(competency.keyTopics) && competency.keyTopics.length >= 3 && competency.keyTopics.length <= 5, `Competency ${competency.competencyId} keyTopics must have 3-5 items`);
+    }
+  }
+
+  for (const session of sessions) {
+    check(!session.sessionGoal.includes('Consolidar a retenção e a transferência cumulativa dos temas de'), `A14 session ${session.sessionId} has generic template goal residue`);
+    const goalWordCount = session.sessionGoal.trim().split(/\s+/).filter(Boolean).length;
+    check(goalWordCount >= 25 && goalWordCount <= 55, `A14 session ${session.sessionId} goal word count out of range (25-55): ${goalWordCount} words`);
+    check(session.activeReviewProtocols && session.activeReviewProtocols.length === 4, `A14 session ${session.sessionId} must have exactly 4 active review protocols`);
+    check(session.activeReviewProtocols.every((p) => !p.startsWith('.')), `A14 session ${session.sessionId} protocol has leading dot formatting residue`);
+  }
   const expectedQuestionLinks = manifest.totalRuntimeQuestionLinks
     ?? manifest.totalQuestionLinks
     ?? manifest.totalOfficialQuestionsCovered + (manifest.totalAuthoredQuestions || 0);

@@ -16,22 +16,16 @@ import {
 import type { CadernoErroItem, ErrorFlashcard } from '../types/suveca';
 import { db, safeSetDoc } from '../lib/firebase';
 import { ProgressBar } from './ui/ProgressBar';
-import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
+import { useFlashcardStore } from '../hooks/useFlashcardStore';
 import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import { StudyBadge, StudySurface } from './study-visuals';
 import { computeRetentionCurveEstimate } from '../lib/learnerIntelligence';
 
-const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
 const AGENDA_STORAGE_PREFIX = 'suveca_daily_review_agenda';
 const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
-const flashcardsDocumentId = `flashcards_caderno_${CURRICULUM_BUILD_ID}`;
 const agendaDocumentId = `daily_review_agenda_${CURRICULUM_BUILD_ID}`;
 
 const storageScope = (userId?: string) => userId || 'guest';
-const flashcardsStorageKey = (userId?: string) =>
-  `${FLASHCARDS_STORAGE_PREFIX}_${CURRICULUM_BUILD_ID}_${storageScope(userId)}`;
-const legacyFlashcardsStorageKey = (userId?: string) =>
-  `${FLASHCARDS_STORAGE_PREFIX}_${storageScope(userId)}`;
 const agendaStorageKey = (userId?: string) =>
   `${AGENDA_STORAGE_PREFIX}_${CURRICULUM_BUILD_ID}_${storageScope(userId)}`;
 
@@ -97,89 +91,6 @@ const readLocalProgress = (userId?: string) => {
   }
 };
 
-const isFlashcard = (value: unknown): value is ErrorFlashcard => {
-  if (!value || typeof value !== 'object') return false;
-  const candidate = value as Partial<ErrorFlashcard>;
-  return (
-    typeof candidate.id === 'string' &&
-    typeof candidate.front === 'string' &&
-    typeof candidate.back === 'string' &&
-    (candidate.source === 'caderno' || candidate.source === 'suveca')
-  );
-};
-
-const EDITORIAL_CARDS: ErrorFlashcard[] = EDITORIAL_FLASHCARDS.map((card) => ({
-  id: card.id,
-  source: 'suveca',
-  topic: card.topic,
-  front: card.front,
-  back: card.back,
-  hint: card.hint,
-  explanation: card.explanation,
-  sourceRefs: [...card.sourceRefs],
-  createdAt: card.createdAt,
-  correctCount: card.correctCount,
-  incorrectCount: card.incorrectCount,
-}));
-const EDITORIAL_CARD_IDS = new Set(EDITORIAL_CARDS.map((card) => card.id));
-
-const normalizeCards = (value: unknown): ErrorFlashcard[] => {
-  const saved = Array.isArray(value)
-    ? value
-        .filter(isFlashcard)
-        .filter((card) => card.source === 'caderno' || EDITORIAL_CARD_IDS.has(card.id))
-    : [];
-  const savedById = new Map(saved.map((card) => [card.id, card]));
-  const editorial = EDITORIAL_CARDS.map((card) => {
-    const progress = savedById.get(card.id);
-    if (!progress) return card;
-    const merged: ErrorFlashcard = {
-      ...card,
-      correctCount: progress.correctCount ?? card.correctCount,
-      incorrectCount: progress.incorrectCount ?? card.incorrectCount,
-    };
-    if (progress.hintUsedCount !== undefined) merged.hintUsedCount = progress.hintUsedCount;
-    if (progress.lastReviewUsedHint !== undefined) merged.lastReviewUsedHint = progress.lastReviewUsedHint;
-    if (progress.lastReviewedAt !== undefined) merged.lastReviewedAt = progress.lastReviewedAt;
-    if (progress.nextReviewAt !== undefined) merged.nextReviewAt = progress.nextReviewAt;
-    if (progress.repetitions !== undefined) merged.repetitions = progress.repetitions;
-    if (progress.intervalDays !== undefined) merged.intervalDays = progress.intervalDays;
-    if (progress.easeFactor !== undefined) merged.easeFactor = progress.easeFactor;
-    if (progress.lapseCount !== undefined) merged.lapseCount = progress.lapseCount;
-    if (progress.lastRating !== undefined) merged.lastRating = progress.lastRating;
-    if (progress.masteryScore !== undefined) merged.masteryScore = progress.masteryScore;
-    return merged;
-  });
-  const caderno = Array.from(
-    new Map(
-      saved
-        .filter((card) => card.source === 'caderno')
-        .map((card) => [card.id, card] as const)
-    ).values()
-  );
-  return [...editorial, ...caderno];
-};
-
-const readLocalCards = (userId?: string) => {
-  try {
-    const saved = localStorage.getItem(flashcardsStorageKey(userId));
-    if (saved) {
-      const parsed = JSON.parse(saved) as { curriculumBuildId?: unknown; items?: unknown };
-      if (parsed?.curriculumBuildId === CURRICULUM_BUILD_ID) return normalizeCards(parsed.items);
-    }
-    const legacy = localStorage.getItem(legacyFlashcardsStorageKey(userId));
-    const parsedLegacy = legacy ? (JSON.parse(legacy) as unknown) : [];
-    const legacyItems = Array.isArray(parsedLegacy)
-      ? parsedLegacy
-      : parsedLegacy && typeof parsedLegacy === 'object' && Array.isArray((parsedLegacy as { items?: unknown }).items)
-      ? (parsedLegacy as { items: unknown[] }).items
-      : [];
-    return normalizeCards(legacyItems.filter(isFlashcard).filter((card) => card.source === 'caderno'));
-  } catch {
-    return EDITORIAL_CARDS;
-  }
-};
-
 const isDue = (card: ErrorFlashcard, now: number) => {
   if (!card.nextReviewAt) return true;
   const reviewDate = Date.parse(card.nextReviewAt);
@@ -229,7 +140,8 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
   onOpenErrors,
 }) => {
   const scope = storageScope(userId);
-  const [cards, setCards] = useState<ErrorFlashcard[]>(() => readLocalCards(userId));
+  const cardStore = useFlashcardStore(userId);
+  const cards = useMemo(() => cardStore.cards.filter(card => !card.archived), [cardStore.cards]);
   const [progress, setProgress] = useState<DailyReviewProgress>(() => readLocalProgress(userId));
   const [readyScope, setReadyScope] = useState<string | null>(null);
   const [isLoadingCards, setIsLoadingCards] = useState(Boolean(userId));
@@ -259,8 +171,6 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
 
   useEffect(() => {
     let cancelled = false;
-    const localCards = readLocalCards(userId);
-    setCards(localCards);
     setProgress(readLocalProgress(userId));
     setReadyScope(null);
 
@@ -275,41 +185,8 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
     setIsLoadingCards(true);
     const loadAgenda = async () => {
       try {
-        const [cardsSnapshot, progressSnapshot, legacyCardsSnapshot] = await Promise.all([
-          getDoc(doc(db, 'users', userId, 'data', flashcardsDocumentId)),
-          getDoc(doc(db, 'users', userId, 'data', agendaDocumentId)),
-          getDoc(doc(db, 'users', userId, 'data', 'flashcards_caderno')),
-        ]);
+        const progressSnapshot = await getDoc(doc(db, 'users', userId, 'data', agendaDocumentId));
         if (cancelled) return;
-
-        if (
-          cardsSnapshot.exists() &&
-          cardsSnapshot.data()?.curriculumBuildId === CURRICULUM_BUILD_ID
-        ) {
-          setCards(normalizeCards(cardsSnapshot.data()?.items));
-        } else {
-          const legacyItems = legacyCardsSnapshot.data()?.items;
-          const migratedCards = normalizeCards(
-            Array.isArray(legacyItems)
-              ? legacyItems.filter(isFlashcard).filter((card) => card.source === 'caderno')
-              : localCards.filter((card) => card.source === 'caderno')
-          );
-          setCards(migratedCards);
-          const updatedAt = new Date().toISOString();
-          await Promise.all([
-            safeSetDoc(doc(db, 'users', userId, 'data', flashcardsDocumentId), {
-              curriculumBuildId: CURRICULUM_BUILD_ID,
-              items: migratedCards,
-              updatedAt,
-            }),
-            safeSetDoc(doc(db, 'users', userId, 'data', 'flashcards_caderno'), {
-              schemaVersion: 2,
-              contentKind: 'personal_caderno_cards',
-              items: migratedCards.filter((card) => card.source === 'caderno'),
-              updatedAt,
-            }),
-          ]);
-        }
         if (
           progressSnapshot.exists() &&
           progressSnapshot.data()?.curriculumBuildId === CURRICULUM_BUILD_ID
@@ -331,22 +208,6 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
       cancelled = true;
     };
   }, [userId]);
-
-  useEffect(() => {
-    if (readyScope !== scope) return;
-    localStorage.setItem(
-      flashcardsStorageKey(userId),
-      JSON.stringify({ curriculumBuildId: CURRICULUM_BUILD_ID, items: cards })
-    );
-    localStorage.setItem(
-      legacyFlashcardsStorageKey(userId),
-      JSON.stringify({
-        schemaVersion: 2,
-        contentKind: 'personal_caderno_cards',
-        items: cards.filter((card) => card.source === 'caderno'),
-      })
-    );
-  }, [cards, readyScope, scope, userId]);
 
   useEffect(() => {
     if (readyScope !== scope) return;
@@ -389,7 +250,7 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
   );
   const currentDay = dayKey(new Date(reviewNow));
   const completedToday = useMemo(
-    () => cards.filter((card) => card.lastReviewedAt?.slice(0, 10) === currentDay).length,
+    () => cards.filter((card) => card.lastReviewedAt && dayKey(new Date(card.lastReviewedAt)) === currentDay).length,
     [cards, currentDay]
   );
   const goalPercent = Math.min(100, Math.round((completedToday / progress.goal) * 100));
@@ -399,7 +260,7 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
       computeRetentionCurveEstimate(
         errors,
         completedToday,
-        cards.filter((c) => (c.masteryScore || 0) >= 80).length
+        cards.filter((c) => (c.masteryScore || 0) >= 0.8).length
       ),
     [errors, completedToday, cards]
   );
@@ -414,6 +275,11 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
 
   return (
     <div className="tool-content-shell space-y-6 pb-16">
+      {(cardStore.status === 'error' || cardStore.status === 'pending') && <div role="status" className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
+        A agenda está usando os cards disponíveis neste dispositivo. A conferência com a nuvem ainda não foi concluída.
+        {cardStore.message && <p>{cardStore.message}</p>}
+        <button type="button" className="min-h-11 underline" onClick={() => void cardStore.retry()}>Tentar sincronizar novamente</button>
+      </div>}
       <header className="tool-page-header bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>
@@ -529,7 +395,7 @@ export const DailyReviewDashboard: React.FC<DailyReviewDashboardProps> = ({
           <div className="w-10 h-10 rounded-xl bg-violet-50 border border-violet-200 text-violet-800 flex items-center justify-center">
             <Sparkles className="w-5 h-5" />
           </div>
-          <div className="mt-4 text-2xl font-black text-slate-900">{isLoadingCards ? '—' : dueCards.length}</div>
+          <div className="mt-4 text-2xl font-black text-slate-900">{isLoadingCards || cardStore.status === 'loading' ? '—' : dueCards.length}</div>
           <div className="text-sm font-bold text-slate-800">Cards vencidos</div>
           <p className="text-xs text-slate-500 mt-1">Prontos para repetição espaçada.</p>
         </article>

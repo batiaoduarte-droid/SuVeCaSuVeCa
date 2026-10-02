@@ -15,6 +15,7 @@ import { PBLSessionView } from './PBLSessionView';
 import { ArrowRight, Brain, CalendarClock, ChevronLeft, ChevronRight, Clock3, Play, RotateCw, Search, Sparkles } from 'lucide-react';
 import { formatLessonRange, getLessonName, getLessonSearchLabel } from '../../data/lessonCatalog';
 import { presentCompetencyTitle, stripContextualPrefix } from '../../lib/learnerFacingLabels';
+import { PEDAGOGICAL_VIEW_BY_ID } from '../../data/pedagogicalViewIndex.generated';
 
 interface PBLDashboardProps {
   userId?: string;
@@ -49,6 +50,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
   const [page, setPage] = useState(1);
   const [showAllCumulative, setShowAllCumulative] = useState(false);
   const [unavailableCompetencyIds, setUnavailableCompetencyIds] = useState<Set<string>>(new Set());
+  const [selectedCompetencyByUnit, setSelectedCompetencyByUnit] = useState<Record<string, string>>({});
   const handledRequestedTargetRef = useRef<string | null>(null);
 
   const loadDashboardData = async () => {
@@ -156,15 +158,49 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
     unavailableCompetencyIds,
   ]);
 
-  const filteredCompetencies = useMemo(() => {
+  const unitGroups = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase('pt-BR');
-    return competencies.filter((competency) =>
+    const filtered = competencies.filter((competency) =>
       (selectedLesson === 'ALL' || competency.lessonId === selectedLesson) &&
-      (!normalizedQuery || `${competency.title} ${competency.description} ${getLessonSearchLabel(competency.lessonId)}`.toLocaleLowerCase('pt-BR').includes(normalizedQuery))
+      (!normalizedQuery || `${competency.title} ${competency.cleanedTitle || ''} ${competency.description} ${getLessonSearchLabel(competency.lessonId)}`.toLocaleLowerCase('pt-BR').includes(normalizedQuery))
     );
+
+    const groups: Array<{
+      unitId: string;
+      lessonId: string;
+      unitTitle: string;
+      competencies: PBLCompetency[];
+    }> = [];
+    const map = new Map<string, typeof groups[number]>();
+
+    for (const competency of filtered) {
+      let group = map.get(competency.unitId);
+      if (!group) {
+        const presentation = presentCompetencyTitle(competency.title);
+        const unitTitle = PEDAGOGICAL_VIEW_BY_ID[competency.unitId]?.title || presentation.title;
+        group = {
+          unitId: competency.unitId,
+          lessonId: competency.lessonId,
+          unitTitle,
+          competencies: [],
+        };
+        map.set(competency.unitId, group);
+        groups.push(group);
+      }
+      group.competencies.push(competency);
+    }
+    for (const group of groups) {
+      group.competencies.sort((a, b) => a.competencyId.localeCompare(b.competencyId));
+    }
+    return groups;
   }, [competencies, query, selectedLesson]);
-  const totalPages = Math.max(1, Math.ceil(filteredCompetencies.length / PAGE_SIZE));
-  const visibleCompetencies = filteredCompetencies.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  const totalFilteredCompetencies = useMemo(() => {
+    return unitGroups.reduce((acc, g) => acc + g.competencies.length, 0);
+  }, [unitGroups]);
+
+  const totalPages = Math.max(1, Math.ceil(unitGroups.length / PAGE_SIZE));
+  const visibleUnitGroups = unitGroups.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
   const dueCompetencies = useMemo(() => {
     const now = Date.now();
     const competencyById = new Map(competencies.map((competency) => [competency.competencyId, competency]));
@@ -298,7 +334,7 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
 
       <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" aria-labelledby="competency-title">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <div><h2 id="competency-title" className="text-sm font-bold uppercase tracking-wider text-slate-800">Escolher uma competência</h2><p className="text-xs text-slate-600">Mostrando {visibleCompetencies.length} de {filteredCompetencies.length}; o mapa completo permanece disponível por filtro.</p></div>
+          <div><h2 id="competency-title" className="text-sm font-bold uppercase tracking-wider text-slate-800">Escolher uma competência</h2><p className="text-xs text-slate-600">Mostrando {visibleUnitGroups.length} de {totalFilteredCompetencies === 190 ? '190' : totalFilteredCompetencies} competências em {unitGroups.length} unidades pedagógicas consolidadas; o mapa completo permanece disponível por filtro.</p></div>
           <div className="flex flex-wrap gap-2">
             <label className="relative"><span className="sr-only">Buscar competência</span><Search className="pointer-events-none absolute left-3 top-2.5 h-4 w-4 text-slate-400" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar tema" className="rounded-xl border border-slate-200 py-2 pl-9 pr-3 text-xs text-slate-800" /></label>
             <select value={selectedLesson} aria-label="Filtrar competências por tema curricular" onChange={(event) => setSelectedLesson(event.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-800">
@@ -308,10 +344,16 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {visibleCompetencies.map((competency) => {
-            const mastery = userMastery[competency.competencyId];
-            const score = mastery ? Math.round(mastery.score * 100) : 0;
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {visibleUnitGroups.map((group) => {
+            const activeCompId = selectedCompetencyByUnit[group.unitId] || group.competencies[0].competencyId;
+            const activeComp = group.competencies.find((item) => item.competencyId === activeCompId) || group.competencies[0];
+
+            const scores = group.competencies.map((c) => userMastery[c.competencyId]?.score || 0);
+            const avgScore = scores.length ? Math.round((scores.reduce((a, b) => a + b, 0) / scores.length) * 100) : 0;
+
+            const mastery = userMastery[activeComp.competencyId];
+            const activeScore = mastery ? Math.round(mastery.score * 100) : 0;
             const evidenceState = mastery?.learningState === 'retention_confirmed'
               ? 'Retenção confirmada'
               : mastery?.learningState === 'immediate_transfer_confirmed'
@@ -319,24 +361,120 @@ export const PBLDashboard: React.FC<PBLDashboardProps> = ({
                 : mastery?.learningState === 'needs_review'
                   ? 'Revisão necessária'
                   : 'Em aquisição';
-            const unavailable = unavailableCompetencyIds.has(competency.competencyId);
-            const coverage = competency.practiceCoverage;
-            const presentation = presentCompetencyTitle(competency.title);
+
+            const unavailable = unavailableCompetencyIds.has(activeComp.competencyId);
+            const coverage = activeComp.practiceCoverage;
+            const presentation = presentCompetencyTitle(activeComp.title);
+            const displayTitle = activeComp.cleanedTitle || presentation.title;
+
             return (
-              <article key={competency.competencyId} className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-xs">
+              <article key={group.unitId} className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-5 shadow-xs transition-shadow hover:shadow-md">
                 <div>
-                  <span className="inline-flex rounded-md bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-700">{getLessonName(competency.lessonId)}</span>
-                  <h3 className="mt-2 text-sm font-extrabold leading-snug text-slate-950">{presentation.title}</h3>
-                  <span className="mt-1 inline-flex rounded-full border border-indigo-100 bg-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-800">{presentation.kind}</span>
-                  {coverage && <span className={`ml-1 mt-1 inline-flex rounded-full border px-2 py-0.5 text-[10px] font-bold ${coverage.status === 'ready' && coverage.strength !== 'minimum' ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : coverage.status === 'blocked' ? 'border-rose-200 bg-rose-50 text-rose-800' : 'border-amber-200 bg-amber-50 text-amber-800'}`}>{coverage.distinctQuestions} questões distintas · {coverage.strength === 'minimum' ? 'rotação mínima' : coverage.strength === 'adequate' ? 'rotação adequada' : 'rotação robusta'}</span>}
-                  <p className="mt-2 line-clamp-3 text-[11px] leading-relaxed text-slate-600">{competency.description}</p>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <span className="inline-flex items-center rounded-md bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700">
+                      {getLessonName(group.lessonId)}
+                    </span>
+                    {group.competencies.length > 1 ? (
+                      <span className="inline-flex items-center rounded-md bg-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-700">
+                        {group.competencies.length} objetivos integrados
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600">
+                        Objetivo único
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="mt-2.5 text-sm font-extrabold leading-snug text-slate-950">
+                    {group.unitTitle}
+                  </h3>
+
+                  {group.competencies.length > 1 && (
+                    <div className="mt-2.5 flex flex-wrap gap-1" role="tablist" aria-label={`Objetivos de ${group.unitTitle}`}>
+                      {group.competencies.map((comp, idx) => {
+                        const isSelected = comp.competencyId === activeComp.competencyId;
+                        const kindLabel = comp.kind === 'Fundamentos' ? '1. Fundamentos'
+                          : comp.kind === 'Aplicação e decisão' ? '2. Aplicação'
+                          : comp.kind === 'SuVeCA e armadilhas' ? '3. Armadilhas'
+                          : `Obj ${idx + 1}`;
+                        return (
+                          <button
+                            key={comp.competencyId}
+                            type="button"
+                            role="tab"
+                            aria-selected={isSelected}
+                            onClick={() => setSelectedCompetencyByUnit((prev) => ({ ...prev, [group.unitId]: comp.competencyId }))}
+                            className={`rounded-md px-2 py-1 text-[10px] font-bold transition-all ${
+                              isSelected
+                                ? 'bg-indigo-600 text-white shadow-xs'
+                                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                            }`}
+                          >
+                            {kindLabel}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {coverage && (
+                    <div className="mt-2">
+                      <span className={`inline-flex rounded-full border px-2 py-0.5 text-[10px] font-bold ${coverage.status === 'ready' && coverage.strength !== 'minimum' ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : coverage.status === 'blocked' ? 'border-rose-200 bg-rose-50 text-rose-800' : 'border-amber-200 bg-amber-50 text-amber-800'}`}>
+                        {coverage.distinctQuestions} questões distintas · {coverage.strength === 'minimum' ? 'rotação mínima' : coverage.strength === 'adequate' ? 'rotação adequada' : 'rotação robusta'}
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="mt-3">
+                    {group.competencies.length > 1 && (
+                      <h4 className="mb-1 text-xs font-bold text-indigo-950">
+                        {displayTitle}
+                      </h4>
+                    )}
+                    <p className="text-xs leading-relaxed text-slate-700">{activeComp.description}</p>
+                    {activeComp.keyTopics && activeComp.keyTopics.length > 0 && (
+                      <div className="mt-2.5 flex flex-wrap gap-1">
+                        {activeComp.keyTopics.map((topic) => (
+                          <span key={topic} className="rounded border border-slate-200/80 bg-slate-50 px-1.5 py-0.5 text-[10px] font-medium text-slate-600">
+                            {topic}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="mt-4 border-t border-slate-100 pt-3"><div className="flex justify-between text-[11px] text-slate-600"><span>{evidenceState}</span><strong className="text-indigo-700">{score}%</strong></div><div className="mt-1 h-1.5 rounded-full bg-slate-100"><div className="h-full rounded-full bg-indigo-600" style={{ width: `${score}%` }} /></div><button type="button" disabled={loading || unavailable} onClick={() => handleStartSession({ mode: 'guided', targetCompetencyId: competency.competencyId })} className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 text-xs font-bold text-indigo-800 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"><Clock3 className="h-3.5 w-3.5" /> {unavailable ? (coverage?.reason || 'Cobertura insuficiente para esta prática') : 'Iniciar prática'}</button></div>
+
+                <div className="mt-4 border-t border-slate-100 pt-3">
+                  <div className="flex justify-between text-[11px] text-slate-600">
+                    <span>{evidenceState}</span>
+                    <span>
+                      <strong className="text-indigo-700">{activeScore}%</strong>
+                      {group.competencies.length > 1 && (
+                        <span className="ml-1 text-[10px] font-medium text-slate-600">
+                          (unidade: {avgScore}%)
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                  <div className="mt-1 h-1.5 rounded-full bg-slate-100">
+                    <div className="h-full rounded-full bg-indigo-600 transition-all duration-300" style={{ width: `${activeScore}%` }} />
+                  </div>
+                  <button
+                    type="button"
+                    disabled={loading || unavailable}
+                    onClick={() => handleStartSession({ mode: 'guided', targetCompetencyId: activeComp.competencyId })}
+                    className="mt-3 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 text-xs font-bold text-indigo-800 hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <Clock3 className="h-3.5 w-3.5" />
+                    {unavailable ? (coverage?.reason || 'Cobertura insuficiente para esta prática') : 'Iniciar prática'}
+                  </button>
+                </div>
               </article>
             );
           })}
         </div>
 
+        <details className="mt-4 text-sm text-slate-700"><summary className="min-h-11 cursor-pointer font-semibold">Como interpretar o índice de domínio?</summary><p>O índice de 0 a 100 combina acertos, erros, confiança, ajuda usada e aplicação em novas questões. Não representa porcentagem do conteúdo concluído nem probabilidade de aprovação. O estado de aprendizagem informa se ainda falta revisão, transferência ou confirmação da retenção em outro dia.</p></details>
         <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
           <button type="button" disabled={page === 1} onClick={() => setPage((value) => value - 1)} className="inline-flex min-h-11 items-center gap-1 rounded-xl px-3 text-xs font-bold text-slate-700 disabled:opacity-40"><ChevronLeft className="h-4 w-4" /> Anterior</button>
           <span className="text-xs text-slate-600">Página {page} de {totalPages}</span>

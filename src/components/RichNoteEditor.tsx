@@ -220,29 +220,42 @@ export const RichNoteEditor: React.FC<RichNoteEditorProps> = ({
     editor.focus();
 
     const selection = window.getSelection();
-    if (!selection || !selection.rangeCount || !editor.contains(selection.anchorNode)) {
-      // Append to the end
-      const span = document.createElement('span');
-      span.className = badgeClass;
-      span.textContent = label;
-      editor.appendChild(document.createTextNode(' '));
-      editor.appendChild(span);
-      editor.appendChild(document.createTextNode(' '));
-    } else {
-      const range = selection.getRangeAt(0);
-      const span = document.createElement('span');
-      span.className = badgeClass;
-      span.textContent = label;
-      range.insertNode(document.createTextNode(' '));
-      range.insertNode(span);
-      range.insertNode(document.createTextNode(' '));
+    const range = selection?.rangeCount && editor.contains(selection.anchorNode)
+      ? selection.getRangeAt(0) : document.createRange();
+    if (!selection?.rangeCount || !editor.contains(selection.anchorNode)) {
+      range.selectNodeContents(editor);
       range.collapse(false);
     }
+    const span = document.createElement('span');
+    span.className = badgeClass;
+    span.textContent = label;
+    const trailingSpace = document.createTextNode('\u00a0');
+    const fragment = document.createDocumentFragment();
+    fragment.append(document.createTextNode(' '), span, trailingSpace);
+    range.deleteContents();
+    range.insertNode(fragment);
+    range.setStart(trailingSpace, 1);
+    range.collapse(true);
+    selection?.removeAllRanges();
+    selection?.addRange(range);
     emitValue();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (disabled) return;
+    if (e.key === 'Escape') {
+      const selection = window.getSelection();
+      const element = selection?.anchorNode instanceof Element ? selection.anchorNode : selection?.anchorNode?.parentElement;
+      const marker = element?.closest('span, mark, code');
+      if (marker && editorRef.current?.contains(marker)) {
+        e.preventDefault(); e.stopPropagation();
+        const after = document.createTextNode('\u00a0');
+        marker.after(after);
+        const range = document.createRange(); range.setStart(after, 1); range.collapse(true);
+        selection?.removeAllRanges(); selection?.addRange(range);
+        emitValue();
+      }
+    }
     if (e.ctrlKey || e.metaKey) {
       if (e.key === 'b' || e.key === 'B') {
         e.preventDefault();

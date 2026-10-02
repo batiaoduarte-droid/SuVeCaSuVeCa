@@ -128,6 +128,12 @@ describe('PBLRepository', () => {
     );
   });
 
+  it('não usa a posição de uma regra para substituir identidade ausente', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, headers: { get: () => 'application/json' }, text: async () => JSON.stringify({ sections: { rules: { items: [{ ruleId: 'R-SIL-01', title: 'Prefixos', statement: 'Uma regra de outro assunto.' }] } } }) }));
+    expect(await repo.getRulePresentation('IP-A00-G03', 'RULE-IP-A00-G02-001')).toBeNull();
+    expect(await repo.getRulePresentation('IP-A00-G03', 'R-SIL-01')).toMatchObject({ ruleRef: 'R-SIL-01' });
+  });
+
   it('falha de forma fechada quando a importação não contém os artefatos PBL obrigatórios', async () => {
     const incompleteRepo = new PBLRepository('/knowledge/pbl');
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({

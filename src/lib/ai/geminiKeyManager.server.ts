@@ -2,6 +2,27 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { GoogleGenAI } from '@google/genai';
+import { createAiDeadline, waitForAiRetry, withAiSignal } from './aiRequest';
+
+export function classifyGeminiError(error: any): 'quota' | 'unavailable' | 'network' | 'timeout' | 'cancelled' | 'fatal' {
+  const seen = new Set<unknown>();
+  for (let current = error; current && !seen.has(current); current = current.cause) {
+    seen.add(current);
+    const status = Number(current.status || current.statusCode || current.response?.status);
+    if (status === 429 || status === 403) return 'quota';
+    if ([500, 502, 503, 504].includes(status)) return 'unavailable';
+    if (status >= 400 && status < 500) return 'fatal';
+    if (current.code === 'AI_TIMEOUT' || current.message === 'AI_TIMEOUT' || current.name === 'TimeoutError') return 'timeout';
+    if (current.name === 'AbortError') return 'cancelled';
+    if (['UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_HEADERS_TIMEOUT', 'UND_ERR_BODY_TIMEOUT', 'UND_ERR_SOCKET',
+      'ECONNRESET', 'ECONNREFUSED', 'ETIMEDOUT', 'EAI_AGAIN', 'ENETUNREACH', 'EHOSTUNREACH'].includes(current.code)) return 'network';
+  }
+  const message = String(error?.message || error?.error || '').toLowerCase();
+  if (/quota|rate.?limit|too_many_requests|resource_exhausted|denied access|permission_denied/.test(message)) return 'quota';
+  if (/high demand|unavailable|overloaded/.test(message)) return 'unavailable';
+  // An opaque fetch failure alone is not enough to retry certificate/configuration errors.
+  return 'fatal';
+}
 
 export interface KeyEntry {
   label: string;
@@ -160,21 +181,7 @@ export class GeminiKeyManager {
   }
 
   public isQuotaError(err: any): boolean {
-    if (!err) return false;
-    const status = err.status || err.statusCode || err.response?.status;
-    if (status === 429 || status === 503) return true;
-    const msg = String(err.message || err.error || err).toLowerCase();
-    return (
-      msg.includes('quota') ||
-      msg.includes('rate limit') ||
-      msg.includes('ratelimit') ||
-      msg.includes('too_many_requests') ||
-      msg.includes('resource_exhausted') ||
-      msg.includes('exceeded a quota') ||
-      msg.includes('high demand') ||
-      msg.includes('unavailable') ||
-      msg.includes('overloaded')
-    );
+    return classifyGeminiError(err) === 'quota';
   }
 
   /**
@@ -183,15 +190,17 @@ export class GeminiKeyManager {
    */
   public async executeWithKeyRotation<T>(
     model: string,
-    operation: (client: GoogleGenAI, keyEntry: KeyEntry) => Promise<T>,
+    operation: (client: GoogleGenAI, keyEntry: KeyEntry, signal?: AbortSignal) => Promise<T>,
     options: {
       maxAttempts?: number;
       userAgent?: string;
+      signal?: AbortSignal;
+      attemptTimeoutMs?: number;
     } = {}
   ): Promise<{ result: T; attempts: TechnicalAttempt[]; effectiveKey: KeyEntry }> {
     const active = this.getActiveKey();
     const poolSize = this.keys.length;
-    const maxAttempts = options.maxAttempts ?? (poolSize > 0 ? Math.min(poolSize, 5) : 1);
+    const maxAttempts = options.maxAttempts ?? 5;
     const attempts: TechnicalAttempt[] = [];
 
     if (poolSize === 0 || !active) {
@@ -199,73 +208,87 @@ export class GeminiKeyManager {
     }
 
     let lastError: any = null;
+    let currentKey = active;
 
-    for (let attemptNum = 1; attemptNum <= maxAttempts; attemptNum++) {
-      const currentKey = this.getActiveKey()!;
-      const client = this.getGenAIClient(currentKey, options.userAgent);
-      const startTime = Date.now();
+    try {
+      for (let attemptNum = 1; attemptNum <= maxAttempts; attemptNum++) {
+        options.signal?.throwIfAborted();
+        const client = this.getGenAIClient(currentKey, options.userAgent);
+        const startTime = Date.now();
+        const deadline = options.attemptTimeoutMs === undefined ? undefined : createAiDeadline(options.attemptTimeoutMs, options.signal);
+        const signal = deadline?.signal || options.signal;
 
-      try {
-        const result = await operation(client, currentKey);
-        const elapsed = (Date.now() - startTime) / 1000;
+        try {
+          const result = signal
+            ? await withAiSignal(() => operation(client, currentKey, signal), signal)
+            : await operation(client, currentKey);
+          const elapsed = (Date.now() - startTime) / 1000;
 
-        attempts.push({
-          attempt: attemptNum,
-          model,
-          key_label: currentKey.label,
-          key_fingerprint: currentKey.fingerprint,
-          outcome: 'success',
-          error_code: null,
-          error_type: null,
-          error: null,
-          elapsed_seconds: Number(elapsed.toFixed(3)),
-          raw_response_sha256: null,
-          payload_path: null,
-          response_metadata: (result as any)?.usageMetadata
-            ? { usage: (result as any).usageMetadata }
-            : undefined,
-        });
+          attempts.push({
+            attempt: attemptNum,
+            model,
+            key_label: currentKey.label,
+            key_fingerprint: currentKey.fingerprint,
+            outcome: 'success',
+            error_code: null,
+            error_type: null,
+            error: null,
+            elapsed_seconds: Number(elapsed.toFixed(3)),
+            raw_response_sha256: null,
+            payload_path: null,
+            response_metadata: (result as any)?.usageMetadata
+              ? { usage: (result as any).usageMetadata }
+              : undefined,
+          });
 
-        return { result, attempts, effectiveKey: currentKey };
-      } catch (err: any) {
-        const elapsed = (Date.now() - startTime) / 1000;
-        const isQuota = this.isQuotaError(err);
-        const errorType = isQuota ? 'RateLimitError' : (err.name || 'APIError');
-        const errorMessage = String(err.message || err);
+          return { result, attempts, effectiveKey: currentKey };
+        } catch (err: any) {
+          const elapsed = (Date.now() - startTime) / 1000;
+          const kind = classifyGeminiError(err);
+          const errorType = kind === 'quota' ? 'RateLimitError' : kind;
+          const errorMessage = String(err.message || err);
 
-        attempts.push({
-          attempt: attemptNum,
-          model,
-          key_label: currentKey.label,
-          key_fingerprint: currentKey.fingerprint,
-          outcome: 'error',
-          error_code: err.status || err.statusCode || null,
-          error_type: errorType,
-          error: errorMessage,
-          elapsed_seconds: Number(elapsed.toFixed(3)),
-          raw_response_sha256: null,
-          payload_path: null,
-        });
+          attempts.push({
+            attempt: attemptNum,
+            model,
+            key_label: currentKey.label,
+            key_fingerprint: currentKey.fingerprint,
+            outcome: 'error',
+            error_code: err.status || err.statusCode || err.code || err.cause?.code || null,
+            error_type: errorType,
+            error: errorMessage,
+            elapsed_seconds: Number(elapsed.toFixed(3)),
+            raw_response_sha256: null,
+            payload_path: null,
+          });
 
-        lastError = err;
+          lastError = err;
 
-        // Se for erro de cota ou sobrecarga (503/429) e ainda houver tentativas, aguarda e rotaciona
-        if (isQuota && attemptNum < maxAttempts) {
-          const delayMs = Math.min(1000 * Math.pow(2, attemptNum - 1), 5000);
-          console.warn(
-            `[GeminiKeyManager] Erro transitório/cota (${err.status || errorType}) na chave ${currentKey.label} (${currentKey.fingerprint}). Aguardando ${delayMs}ms e rotacionando para próxima chave (tentativa ${attemptNum + 1}/${maxAttempts})...`
-          );
-          await new Promise((res) => setTimeout(res, delayMs));
-          this.rotateKey();
-          continue;
+          deadline?.dispose();
+          options.signal?.throwIfAborted();
+          if (!err.noRetry && (['quota', 'network', 'unavailable'].includes(kind) || (kind === 'timeout' && deadline)) && attemptNum < maxAttempts) {
+            const delayMs = Math.min(1000 * Math.pow(2, attemptNum - 1), 5000);
+            console.warn(
+              `[GeminiKeyManager] ${kind}: aguardando ${delayMs}ms; ${kind === 'quota' ? 'rotacionando chave' : 'mantendo chave'} (tentativa ${attemptNum + 1}/${maxAttempts}).`
+            );
+            await waitForAiRetry(delayMs, options.signal);
+            if (kind === 'quota') currentKey = this.rotateKey()!;
+            continue;
+          }
+
+          // Se não for erro de cota ou acabaram as tentativas, interrompe
+          throw err;
+        } finally {
+          deadline?.dispose();
         }
-
-        // Se não for erro de cota ou acabaram as tentativas, interrompe
-        throw err;
       }
-    }
 
-    throw lastError;
+      throw lastError;
+    } catch (error) {
+      const failure = error instanceof Error ? error : new Error(String(error));
+      Object.assign(failure, { attempts });
+      throw failure;
+    }
   }
 }
 

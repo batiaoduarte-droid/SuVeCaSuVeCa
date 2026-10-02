@@ -1,23 +1,33 @@
+import { ExampleStudySection, type SaveExampleNote } from './ExampleStudySection';
 import React, { useState } from 'react';
 import { BookOpenCheck, Copy, Check } from 'lucide-react';
-import type { SemanticBlock, WorkedExampleView } from '../../../types/pedagogicalView';
+import type { ExampleStudyProjection, SemanticBlock, WorkedExampleView } from '../../../types/pedagogicalView';
 import { WorkedExampleCard } from '../../study-visuals/WorkedExampleCard';
 import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
 import { semanticBlocksToPlainText } from '../../../lib/semanticBlockText';
 
 interface ExamplesSectionProps {
+  study?: ExampleStudyProjection;
+  onAskTutor?: (text: string) => void;
+  onSaveStudyNote?: SaveExampleNote;
+  unitId?: string;
+  userId?: string;
+  embedded?: boolean;
   items?: WorkedExampleView[];
   supplementaryBlocks?: SemanticBlock[];
 }
 
-export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], supplementaryBlocks = [] }) => {
+export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ study, onAskTutor, onSaveStudyNote, items = [], supplementaryBlocks = [], unitId, userId, embedded = false }) => {
   const [copied, setCopied] = useState(false);
+
+  if (study && unitId) return <ExampleStudySection {...{ study, items, unitId, userId, supplementaryBlocks, onAskTutor, onSaveStudyNote }} />;
 
   if (!items || items.length === 0) return null;
 
   const handleCopy = () => {
     const text = items
       .map((e, i) => {
+        if (e.practiceItems?.length) return `${i + 1}. ${e.title}\n${e.practiceItems.map(item => `${item.prompt}\n${semanticBlocksToPlainText(item.solutionBlocks)}`).join('\n\n')}`;
         if (e.presentation?.hideGenericScaffold) {
           return `${i + 1}. ${e.title}\n${semanticBlocksToPlainText(e.blocks)}`;
         }
@@ -38,7 +48,7 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], su
   return (
     <div className="space-y-5 select-text">
       {/* Cabeçalho da Seção */}
-      <div className="rounded-2xl border border-emerald-200 bg-white p-3 sm:p-5 shadow-xs space-y-4">
+      <div className="space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-emerald-100 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-900 text-emerald-200 shadow-2xs select-none">
@@ -46,9 +56,9 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], su
             </div>
             <div>
               <div className="flex flex-col items-start gap-1.5 sm:flex-row sm:items-center sm:gap-2">
-                <h3 className="text-base font-black tracking-tight text-slate-900">
+                {!embedded && <h3 className="text-base font-black tracking-tight text-slate-900">
                   Exemplos Comentados
-                </h3>
+                </h3>}
                 <span className="inline-flex shrink-0 whitespace-nowrap rounded-full bg-emerald-100 text-emerald-900 px-2 py-0.5 text-xs font-black leading-5 select-none border border-emerald-200">
                   {items.length} {items.length === 1 ? 'exemplo' : 'exemplos'}
                 </span>
@@ -63,7 +73,7 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], su
             type="button"
             onClick={handleCopy}
             className="flex min-h-11 items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition hover:bg-slate-50 cursor-pointer shadow-2xs select-none"
-            title="Copiar exemplos"
+            title="Copiar exemplos com resoluções"
           >
             {copied ? (
               <>
@@ -73,7 +83,7 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], su
             ) : (
               <>
                 <Copy className="h-3.5 w-3.5 text-slate-500" />
-                <span>Copiar</span>
+                <span>Copiar com resoluções</span>
               </>
             )}
           </button>
@@ -83,7 +93,9 @@ export const ExamplesSection: React.FC<ExamplesSectionProps> = ({ items = [], su
         <div className="space-y-4">
           {items.map((example, eIdx) => (
             <WorkedExampleCard
-              key={example.exampleId || eIdx}
+              key={`${userId || 'guest'}:${unitId || ''}:${example.exampleId || eIdx}`}
+              unitId={unitId}
+              userId={userId}
               example={example}
             renderBlock={(b) => <ContentBlockRenderer block={b} allowLegacyDiagramInference={false} />}
             />

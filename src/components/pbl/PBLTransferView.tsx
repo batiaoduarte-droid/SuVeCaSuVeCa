@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { PBLQuestionPresentation, PBLTransferItem } from '../../types/pbl';
 import { Layers, Lightbulb, SearchCheck } from 'lucide-react';
 import { QuestionPresentationContent } from '../QuestionPresentationContent';
+import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
 
 interface PBLTransferViewProps {
   transferItem?: PBLTransferItem;
@@ -15,6 +16,7 @@ interface PBLTransferViewProps {
   feedbackMessage?: string;
   revealedDelta?: boolean;
   onRevealHint?: () => void;
+  actualAnchorQuestionRef?: string;
 }
 
 export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
@@ -29,6 +31,7 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
   feedbackMessage,
   revealedDelta = false,
   onRevealHint,
+  actualAnchorQuestionRef,
 }) => {
   const [internalRevealedDelta, setInternalRevealedDelta] = useState(false);
 
@@ -36,7 +39,7 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
     setInternalRevealedDelta(false);
   }, [question.questionRef]);
 
-  const showDelta = Boolean(revealedDelta || internalRevealedDelta || feedbackMessage);
+  const showDelta = Boolean(revealedDelta || internalRevealedDelta);
   const typeLabels: Record<string, string> = {
     isomorphic: 'Mesma regra em novo contexto',
     near_transfer: 'Transferência próxima',
@@ -44,7 +47,8 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
     far_transfer: 'Transferência distante',
     inverted_transfer: 'Transferência invertida',
   };
-  const hasAuditedTransferType = transferItem?.validationStatus === 'audited';
+  const hasAuditedTransferType = transferItem?.validationStatus === 'audited'
+    && (!actualAnchorQuestionRef || transferItem.anchorQuestionRef === actualAnchorQuestionRef);
   const heading = kind === 'probe'
     ? 'Sondagem diagnóstica'
     : kind === 'reattempt'
@@ -136,7 +140,7 @@ export const PBLTransferView: React.FC<PBLTransferViewProps> = ({
               <span className={`flex h-6 min-w-6 items-center justify-center rounded-lg px-1 text-xs font-bold ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-700'}`}>
                 {option.label.toUpperCase()}
               </span>
-              <span className="mt-0.5 leading-relaxed">{option.text}</span>
+              <span className="mt-0.5 leading-relaxed"><InlineRichText>{question.presentation?.optionRichText?.[option.label.toUpperCase()] || option.text}</InlineRichText></span>
             </button>
           );
         })}

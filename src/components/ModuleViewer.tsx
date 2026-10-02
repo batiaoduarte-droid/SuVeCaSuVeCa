@@ -1,7 +1,9 @@
+import type { SaveExampleNote } from './pedagogical/sections/ExampleStudySection';
 import { fetchPublishedJson, invalidatePublishedData } from '../lib/publishedData';
 import { MODULES_DATA } from '../data/modulesData';
 import { useModuleDelivery } from '../hooks/useModuleDelivery';
 import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { CadernoErroItem, ModuleData, ModuleSection, SuvecaMethodConnection } from '../types/suveca';
 import { db, safeSetDoc, type User } from '../lib/firebase';
@@ -67,6 +69,7 @@ import {
 import { SuvecaMethodBanner } from './SuvecaMethodBanner';
 
 interface ModuleViewerProps {
+  onSaveStudyNote?: SaveExampleNote;
   modules: ModuleData[];
   selectedModuleId: string;
   onSelectModule: (id: string) => void;
@@ -207,6 +210,8 @@ export const mergeModuleNotesPreservingConflicts = (
 };
 
 export const PedagogicalDeepDive: React.FC<{
+  onSaveStudyNote?: SaveExampleNote;
+  embedded?: boolean;
   section: ModuleSection;
   onAskTutor?: (contextText: string) => void;
   onPracticeExercises?: (topic?: string) => void;
@@ -216,7 +221,7 @@ export const PedagogicalDeepDive: React.FC<{
   onOpenChange?: (open: boolean) => void;
   onActiveSectionChange?: (sectionId: string | null) => void;
   collapsible?: boolean;
-}> = ({ section, onAskTutor, onPracticeExercises, userId, isOpen: controlledOpen, activeSectionId, onOpenChange, onActiveSectionChange, collapsible = true }) => {
+}> = ({ section, onSaveStudyNote, onAskTutor, onPracticeExercises, userId, isOpen: controlledOpen, activeSectionId, onOpenChange, onActiveSectionChange, collapsible = true, embedded = false }) => {
   const panelId = useId();
   const [internalOpen, setInternalOpen] = useState(false);
   const isOpen = controlledOpen ?? internalOpen;
@@ -284,17 +289,7 @@ export const PedagogicalDeepDive: React.FC<{
           <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
         </span>
       </button>
-      ) : (
-        <div className="flex min-h-[52px] w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-bold text-teal-950">
-          <span className="flex min-w-0 items-center gap-2">
-            <BookOpen className="h-4 w-4 shrink-0 text-teal-700" />
-            <span>Unidade pedagógica completa</span>
-          </span>
-          {section.estimatedMinutes ? (
-            <span className="shrink-0 text-xs font-semibold text-teal-800">{section.estimatedMinutes} min</span>
-          ) : null}
-        </div>
-      )}
+      ) : null}
       {isOpen && (
         <div id={panelId} className="pedagogical-deep-dive-panel border-t border-teal-200 bg-white p-2 sm:p-4 lg:p-6">
           {state === 'loading' && (
@@ -324,6 +319,8 @@ export const PedagogicalDeepDive: React.FC<{
             />
           ) : (
             <PedagogicalUnitRenderer
+              onSaveStudyNote={onSaveStudyNote}
+              embedded={embedded}
               key={viewModel.unit.unitId}
               view={viewModel as PedagogicalUnitView}
               onAskTutor={onAskTutor}
@@ -368,6 +365,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   onSelectModule,
   onAskTutor,
   onRecordError,
+  onSaveStudyNote,
   user,
   onNoteSaved,
   onAnswerResult,
@@ -454,6 +452,30 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const [showFeedback, setShowFeedback] = useState<Record<string, boolean>>({});
   const [sectionNotes, setSectionNotes] = useState<ModuleNotes>({});
   const [openNoteEditors, setOpenNoteEditors] = useState<Record<number, boolean>>({});
+  const [floatingNotesOpen, setFloatingNotesOpen] = useState(false);
+  const [readingToolsOpen, setReadingToolsOpen] = useState(false);
+  const readingToolsRef = useRef<HTMLElement>(null);
+  const readingToolsButtonRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!readingToolsOpen) return;
+    const outside = (event: PointerEvent) => {
+      if (!readingToolsRef.current?.contains(event.target as Node)) setReadingToolsOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setReadingToolsOpen(false); readingToolsButtonRef.current?.focus(); }
+    };
+    document.addEventListener('pointerdown', outside);
+    document.addEventListener('keydown', escape);
+    return () => { document.removeEventListener('pointerdown', outside); document.removeEventListener('keydown', escape); };
+  }, [readingToolsOpen]);
+  const floatingNotesRef = useModalFocus(floatingNotesOpen, () => setFloatingNotesOpen(false));
+  useEffect(() => { setFloatingNotesOpen(false); setReadingToolsOpen(false); }, [focusedUnitId, selectedModuleId, user?.uid]);
+  useEffect(() => {
+    if (!floatingNotesOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = previous; };
+  }, [floatingNotesOpen]);
   const [notesSyncState, setNotesSyncState] = useState<
     'idle' | 'loading' | 'saving' | 'saved' | 'error' | 'local'
   >('idle');
@@ -657,7 +679,8 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
     const moduleId = moduleData.id;
     const notes = { ...sectionNotes, [noteKey]: sanitizeRichNoteHtml(value) };
     setSectionNotes(notes);
-    saveLocalNotes(moduleId, notes, user?.uid);
+    try { saveLocalNotes(moduleId, notes, user?.uid); }
+    catch { setNotesSyncState('error'); return; }
 
     if (!isRichNoteEmpty(value)) onNoteSaved?.();
 
@@ -719,6 +742,19 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
   const currentIndex = modules.findIndex((m) => m.id === moduleData.id);
   const prevModule = currentIndex > 0 ? modules[currentIndex - 1] : null;
   const nextModule = currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null;
+  const orderedUnits = [...new Set(macroMode
+    ? macroEntries.flatMap(entry => entry.unitRefs)
+    : moduleData.sections.map(integrationUnitIdForSection).filter((id): id is string => Boolean(id)))];
+  const unitIndex = focusedUnitId ? orderedUnits.indexOf(focusedUnitId) : -1;
+  const previousUnit = unitIndex > 0 ? orderedUnits[unitIndex - 1] : null;
+  const nextUnit = unitIndex >= 0 ? orderedUnits[unitIndex + 1] : null;
+  const navigateUnit = (unitId: string) => {
+    const macro = macroEntries.find(entry => entry.unitRefs.includes(unitId));
+    if (macroMode && macro && onOpenMacroChange) onOpenMacroChange(macro.macroId, unitId);
+    else onOpenUnitChange?.(unitId, null);
+  };
+  const readingSection = moduleData.sections.find(section => integrationUnitIdForSection(section) === focusedUnitId);
+  const floatingNoteKey = focusedUnitId ? `unit:${focusedUnitId}` : '';
   const coreModuleCount = modules.filter((module) => /^mod\d+$/.test(module.id)).length;
   const hasSimulado = modules.some((module) => module.id === 'simulado');
   const isExpandedStudy = isFocusMode || Boolean(openUnitId);
@@ -1198,11 +1234,13 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
               )}
 
               {/* Editorial Markdown Body */}
-              <div className={`text-slate-800 text-base leading-relaxed ${isIntroOverview ? '' : 'reading-content'}`}>
+              {(!stableUnitId || (!macroMode && stableUnitId !== openUnitId)) && <div className={`text-slate-800 text-base leading-relaxed ${isIntroOverview ? '' : 'reading-content'}`}>
                 <MarkdownContent content={section.contentMarkdown} />
-              </div>
+              </div>}
 
               <PedagogicalDeepDive
+                onSaveStudyNote={onSaveStudyNote}
+                embedded
                 key={stableUnitId || `${moduleData.id}-${idx}`}
                 section={section}
                 userId={userId}
@@ -1371,7 +1409,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
                           : notesSyncState === 'saved'
                           ? '✓ Sincronizado no Firestore'
                           : notesSyncState === 'error'
-                          ? 'Falha ao sincronizar'
+                          ? 'Falha ao salvar ou sincronizar'
                           : 'Salvo localmente'}
                       </span>
                     </div>
@@ -1433,6 +1471,7 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
             onUpdateErrorStatus={onUpdateErrorStatus}
             userId={userId}
             editorialModuleId={moduleData.id}
+            editorialUnitId={openUnitId || undefined}
             onCorrectAnswer={onFlashcardCorrect}
           />
         )}
@@ -1619,31 +1658,49 @@ export const ModuleViewer: React.FC<ModuleViewerProps> = ({
 
         {/* Prev / Next Navigation */}
         {!isFocusMode && <nav
-          className="flex items-center justify-between pt-4 border-t border-slate-200"
-          aria-label="Navegação entre aulas"
+          className="flex flex-wrap gap-3 items-center justify-between pt-4 border-t border-slate-200"
+          aria-label="Continuar percurso de estudo"
         >
-          {prevModule ? (
+          {previousUnit || prevModule ? (
             <button
-              onClick={() => onSelectModule(prevModule.id)}
+              onClick={() => previousUnit ? navigateUnit(previousUnit) : prevModule && onSelectModule(prevModule.id)}
               className="button-secondary text-xs sm:text-sm"
             >
               <ChevronLeft className="w-4 h-4 text-teal-700" />
-              <span>Anterior: M{prevModule.num}</span>
+              <span>Anterior: {previousUnit ? unitTitles[previousUnit] : prevModule?.title}</span>
             </button>
           ) : (
             <div />
           )}
 
-          {nextModule && (
+          {(nextUnit || nextModule) && (
             <button
-              onClick={() => onSelectModule(nextModule.id)}
+              onClick={() => nextUnit ? navigateUnit(nextUnit) : nextModule && onSelectModule(nextModule.id)}
               className="button-primary text-xs sm:text-sm"
             >
-              <span>Próximo: M{nextModule.num}</span>
+              <span>Próximo: {nextUnit ? unitTitles[nextUnit] : nextModule?.title}</span>
               <ChevronRight className="w-4 h-4" />
             </button>
           )}
         </nav>}
+        {readingSection && createPortal(<>
+          <nav ref={readingToolsRef} aria-label="Ferramentas de leitura" className="fixed bottom-24 right-3 z-40 flex flex-col items-end gap-2 sm:right-6">
+            {readingToolsOpen && <div id="reading-tools-actions" className="flex flex-col gap-1 rounded-xl border border-slate-200 bg-white p-1.5 shadow-lg">
+              <button type="button" onClick={() => { readingToolsButtonRef.current?.focus(); setReadingToolsOpen(false); setFloatingNotesOpen(true); }} className="flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm text-slate-700 hover:bg-teal-50"><FileText className="h-4 w-4" />Anotações</button>
+              <button type="button" onClick={() => { readingToolsButtonRef.current?.focus(); setReadingToolsOpen(false); askTutorAboutSection(readingSection); }} className="flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm text-slate-700 hover:bg-teal-50"><Bot className="h-4 w-4" />Professor</button>
+            </div>}
+            <button ref={readingToolsButtonRef} type="button" aria-label="Ferramentas de leitura" title="Ferramentas de leitura" aria-expanded={readingToolsOpen} aria-controls="reading-tools-actions" onClick={() => setReadingToolsOpen(open => !open)} className="flex h-11 w-11 items-center justify-center rounded-full border border-teal-200 bg-white text-teal-800 shadow-md transition hover:bg-teal-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">{readingToolsOpen ? <X className="h-5 w-5" /> : <BookOpen className="h-5 w-5" />}</button>
+          </nav>
+          {floatingNotesOpen && <div className="fixed inset-0 z-50 flex justify-end bg-slate-900/40 sm:bg-transparent pointer-events-auto sm:pointer-events-none" onClick={() => setFloatingNotesOpen(false)}>
+            <div ref={floatingNotesRef} role="dialog" aria-modal="true" aria-label="Anotações da unidade" tabIndex={-1} onClick={event => event.stopPropagation()} className="pointer-events-auto flex h-[100dvh] w-full flex-col overflow-hidden border-l border-slate-200 bg-white shadow-2xl sm:w-[480px] lg:w-[520px] pt-[env(safe-area-inset-top,0px)]">
+              <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 p-4"><div className="min-w-0"><h2 className="text-sm font-bold text-slate-900">Anotações</h2><p className="mt-1 text-xs text-slate-600 break-words">{readingSection.title}</p></div><button type="button" className="button-secondary h-11 w-11 shrink-0" aria-label="Fechar anotações da unidade" onClick={() => setFloatingNotesOpen(false)}><X className="h-4 w-4" /></button></div>
+              <div className="min-h-0 flex-1 overflow-y-auto p-3 sm:p-4">
+              <RichNoteEditor value={sectionNotes[floatingNoteKey] || ''} onChange={value => handleNoteChange(floatingNoteKey, value)} disabled={notesSyncState === 'loading' || loadedNotesOwnerId !== currentNotesOwnerId} ariaLabel={`Anotações da seção ${readingSection.title}`} />
+              <p role="status" className="mt-2 text-xs text-slate-600">{notesSyncState === 'error' ? 'Falha ao salvar ou sincronizar. Mantenha a tela aberta e copie sua anotação.' : notesSyncState === 'saving' ? 'Sincronizando…' : notesSyncState === 'loading' ? 'Carregando anotações…' : 'Anotações salvas neste dispositivo.'}</p>
+              </div>
+            </div>
+          </div>}
+        </>, document.body)}
       </article>
     </div>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import type { PBLCase, PBLQuestionPresentation } from '../../types/pbl';
 import { Sparkles } from 'lucide-react';
 import { QuestionPresentationContent } from '../QuestionPresentationContent';
+import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
 
 interface PBLProblemCardProps {
   pblCase: PBLCase;
@@ -74,7 +75,7 @@ export const PBLProblemCard: React.FC<PBLProblemCardProps> = ({
                   >
                     {opt.label}
                   </span>
-                  <span className="mt-0.5 leading-relaxed">{opt.text}</span>
+                  <span className="mt-0.5 leading-relaxed"><InlineRichText>{question?.presentation?.optionRichText?.[opt.label.toUpperCase()] || opt.text}</InlineRichText></span>
                 </button>
               );
             })}

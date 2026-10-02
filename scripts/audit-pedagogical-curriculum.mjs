@@ -130,7 +130,9 @@ if (!errors.length) {
 
   const flashcardPath = path.join(ROOT, 'src', 'data', 'editorialFlashcards.generated.ts');
   const flashcardSource = fs.readFileSync(flashcardPath, 'utf8');
-  const flashcards = JSON.parse(/export const EDITORIAL_FLASHCARDS = ([\s\S]*?) as const;/.exec(flashcardSource)?.[1] || '[]');
+  const flashcardMatch = /export const EDITORIAL_FLASHCARDS(?:: ErrorFlashcard\[\])? = (\[[\s\S]*\])(?: as const)?;\s*$/u.exec(flashcardSource);
+  check(Boolean(flashcardMatch), 'Formato do catálogo de flashcards não reconhecido.');
+  const flashcards = JSON.parse(flashcardMatch?.[1] || '[]');
   check(flashcards.length === manifest.totals.flashcards, 'Contagem de flashcards divergente.');
   check(flashcards.length >= 115, 'Cobertura de flashcards insuficiente.');
   check(new Set(flashcards.map((card) => card.id)).size === flashcards.length, 'IDs de flashcards duplicados.');

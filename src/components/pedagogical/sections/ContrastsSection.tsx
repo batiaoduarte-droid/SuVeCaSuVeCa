@@ -6,11 +6,12 @@ import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
 import { semanticBlocksToPlainText } from '../../../lib/semanticBlockText';
 
 interface ContrastsSectionProps {
+  embedded?: boolean;
   items?: ContrastView[];
   supplementaryBlocks?: SemanticBlock[];
 }
 
-export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [], supplementaryBlocks = [] }) => {
+export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [], supplementaryBlocks = [], embedded = false }) => {
   const [copied, setCopied] = useState(false);
 
   if (!items || items.length === 0) return null;
@@ -28,7 +29,7 @@ export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [], 
   return (
     <div className="space-y-5 select-text">
       {/* Cabeçalho da Seção */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-5 shadow-xs space-y-4">
+      <div className={embedded ? 'space-y-4' : 'rounded-2xl border border-slate-200 bg-white p-3 sm:p-5 shadow-xs space-y-4'}>
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white shadow-2xs select-none">
@@ -36,9 +37,9 @@ export const ContrastsSection: React.FC<ContrastsSectionProps> = ({ items = [], 
             </div>
             <div>
               <div className="flex flex-col items-start gap-1.5 sm:flex-row sm:items-center sm:gap-2">
-                <h3 className="text-base font-black tracking-tight text-slate-900">
+                {!embedded && <h3 className="text-base font-black tracking-tight text-slate-900">
                   Contrastes de Prova
-                </h3>
+                </h3>}
                 <span className="inline-flex shrink-0 whitespace-nowrap rounded-full bg-slate-100 text-slate-800 px-2 py-0.5 text-xs font-black leading-5 select-none border border-slate-200">
                   {items.length} {items.length === 1 ? 'contraste' : 'contrastes'}
                 </span>

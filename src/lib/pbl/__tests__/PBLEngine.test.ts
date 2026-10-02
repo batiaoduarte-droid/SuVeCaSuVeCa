@@ -151,6 +151,7 @@ describe('PBLEngine Full Flow Integration', () => {
         examBoard: 'FGV',
         difficulty: 'medio',
         cognitiveDelta: 'Variação para FGV com outro nome de lugar determinado.',
+        anchorQuestionRef: 'OQ-A10-aula10.q0010',
         expectedObstacle: 'Reconhecer a especificação.',
         validationStatus: 'audited',
       },
@@ -161,6 +162,7 @@ describe('PBLEngine Full Flow Integration', () => {
         examBoard: 'CEBRASPE',
         difficulty: 'medio',
         cognitiveDelta: 'Novo topônimo em formulação distinta.',
+        anchorQuestionRef: 'OQ-A10-aula10.q0010',
         expectedObstacle: 'Aplicar o teste sem depender do exemplo anterior.',
         validationStatus: 'audited',
       },
@@ -589,6 +591,28 @@ describe('PBLEngine Full Flow Integration', () => {
     expect(selected?.officialQuestionRef).toBe(mockSecondTransferQuestion.questionRef);
     expect(selected?.validationStatus).toBe('audited');
     expect(selected?.recentExposureFallback).not.toBe(true);
+  });
+
+  it('does not certify a comparison against a different session anchor', async () => {
+    const selected = await engine.transferSelector.selectNextTransferItem(
+      mockComp.competencyId, 'strong_correct', 0, undefined, [], true, 'rotated-anchor', [], 'OQ-A10-other',
+    );
+    expect(selected).not.toBeNull();
+    expect(selected?.validationStatus).toBe('unverified');
+    expect(selected?.cognitiveDelta).toBe('');
+  });
+
+  it('revalidates persisted transfer identity and hint usage at submission', async () => {
+    const session = await engine.startSession({ userId: 'test-user', mode: 'guided', targetCompetencyId: mockComp.competencyId });
+    const initial = await engine.submitAttempt(session, { sessionId: session.sessionId, questionRef: mockAnchorQuestion.questionRef,
+      competencyRef: mockComp.competencyId, userAnswer: 'Certo', correctAnswer: 'Certo', confidence: 'high', stage: 'initial', responseTimeMs: 1000 });
+    const resumed = initial.session;
+    resumed.currentTransferItem = { ...mockXfer.items[0], anchorQuestionRef: 'another-anchor' };
+    resumed.transferHintsUsed = { [mockTransferQuestion.questionRef]: true };
+    const result = await engine.submitAttempt(resumed, { sessionId: resumed.sessionId, questionRef: mockTransferQuestion.questionRef,
+      competencyRef: mockComp.competencyId, userAnswer: 'correct', correctAnswer: 'correct', confidence: 'high', stage: 'transfer', responseTimeMs: 1000, assistanceLevel: 'none' });
+    expect(result.attempt.transferValidationStatus).toBe('unverified');
+    expect(result.attempt.assistanceLevel).toBe('hint');
   });
 
   it('allows recent reuse only as unverified practice when no fresh transfer exists', async () => {

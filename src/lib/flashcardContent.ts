@@ -1,14 +1,23 @@
 import { toLearnerFacingContent } from './learnerContent';
 import type { ErrorFlashcard } from '../types/suveca';
 import type { ReviewResource } from '../types/reviewResource';
+import { parseFlashcardContent, flashcardAnswerBlocks, flashcardContentBack, type FlashcardFamily, type FlashcardAnswerBlock } from '../types/flashcardContent';
 
 export interface FlashcardSemanticBlock {
   kind: 'trap' | 'mechanism' | 'correction' | 'example' | 'context' | 'boundary' | 'answer' | 'step' | 'left' | 'right';
   title: string;
   text: string;
+  /** Native typed content uses slots; legacy delimiters remain an explicit fallback. */
+  slot?: FlashcardAnswerBlock['slot'];
+  exampleRole?: FlashcardAnswerBlock['exampleRole'];
+  explanation?: string;
+  operation?: string;
 }
 
 export interface FlashcardContentProjection {
+  family?: FlashcardFamily;
+  tags?: string[];
+  difficulty?: 'facil' | 'medio' | 'dificil';
   front: string;
   back: string;
   hint?: string;
@@ -164,22 +173,36 @@ export const parseSemanticBlocks = (rawBack: string): FlashcardSemanticBlock[] |
 
 /**
  * Projeta o conteúdo de um flashcard de forma pura para consumo na UI.
- * - Deduplica conservadoramente o campo explanation em relação ao back.
+ * - Conteúdo tipado apresenta a seleção editorial de deepDive, sem inferir paráfrase.
+ * - Legado omite somente explicação integralmente igual ao verso.
  * - Identifica blocos semânticos garantindo preservação integral sem duplicação visual.
  * - Mantém o objeto de entrada ErrorFlashcard estritamente imutável.
  */
 export const projectFlashcardContent = (card: ErrorFlashcard, resource?: ReviewResource | null): FlashcardContentProjection => {
+  if (card.content) {
+    const content = parseFlashcardContent(card.content);
+    const back = flashcardContentBack(content);
+    return {
+      family: content.family, front: content.front, back, hint: content.hint || undefined,
+      explanation: content.deepDive || undefined, tags: content.tags, difficulty: content.difficulty,
+      shouldShowExplanation: Boolean(content.deepDive),
+      semanticBlocks: flashcardAnswerBlocks(content),
+    };
+  }
   const front = toLearnerFacingContent(card.front).trim();
   const back = toLearnerFacingContent(card.back).trim();
   const hint = card.hint ? toLearnerFacingContent(card.hint).trim() : undefined;
   const explanation = card.explanation ? toLearnerFacingContent(card.explanation).trim() : undefined;
 
   // Deduplicação conservadora:
-  // Se a explicação for idêntica ao verso após normalização técnica mínima,
+  // Se a explicação for integralmente idêntica ao verso após normalização técnica mínima,
   // ou se for vazia, não há por que exibir o botão secundário.
   const normBack = normalizeForDeduplication(back);
   const normExp = normalizeForDeduplication(explanation);
-  const shouldShowExplanation = Boolean(normExp && normExp !== normBack);
+  const shouldShowExplanation = Boolean(
+    normExp &&
+    normExp !== normBack
+  );
 
   if (resource && (resource.cardId !== card.id || resource.front !== card.front || resource.back !== card.back)) {
     throw new Error('Recurso de revisão incompatível com o cartão.');

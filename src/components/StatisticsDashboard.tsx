@@ -51,7 +51,7 @@ export interface LearningAttempt {
   byTopic?: unknown;
   answerMap?: Record<string, string>;
   questionSetVersion?: string;
-  source?: 'simulado' | 'pbl';
+  source?: 'simulado' | 'pbl' | 'apostila';
   isCorrect?: boolean;
   confidence?: 'guess' | 'low' | 'medium' | 'high';
   stage?: 'initial' | 'reattempt' | 'transfer' | 'probe';

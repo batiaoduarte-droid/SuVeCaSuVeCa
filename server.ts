@@ -1,9 +1,11 @@
 import express from "express";
+import { configureJsonBodies } from './src/lib/httpBody.server';
 import path from "path";
 import dotenv from "dotenv";
 import { createServer as createHttpServer } from "node:http";
 import { attachLiveAudio, LiveTickets } from './src/lib/audio/liveAudio.server';
-import { resolveModelForTask } from './src/lib/geminiTaskMapping';
+import { resolveModelForTask, isProfessorModel, professorTimeoutMs, PROFESSOR_MAX_ATTEMPTS } from './src/lib/geminiTaskMapping';
+import { generateProfessorResponse } from './src/lib/ai/professorGeneration.server';
 import { productionStatic } from "./src/lib/productionStatic.server";
 import { GoogleGenAI, Modality, Type } from "@google/genai";
 import {
@@ -30,9 +32,11 @@ import {
   handlePBLTutorContext,
   handlePBLSessionSync,
 } from "./src/lib/pbl/tutor/pblTutorServerRoute";
-import { geminiKeyManager } from "./src/lib/ai/geminiKeyManager.server";
+import { geminiKeyManager, classifyGeminiError } from "./src/lib/ai/geminiKeyManager.server";
+import { createAiDeadline, withAiSignal } from './src/lib/ai/aiRequest';
 import { aiAuditLogger } from "./src/lib/audit/aiAuditLogger.server";
 import { createRequireApiUser } from "./src/lib/auth/requireApiUser.server";
+import { FLASHCARD_BATCH_SCHEMA, FLASHCARD_AUTHORING_INSTRUCTION, parseFlashcardBatch, flashcardContentBack } from './src/types/flashcardContent';
 
 // Local development follows the README and keeps the Gemini key in .env.local.
 // Load it first, then use .env only as a fallback for values not already set.
@@ -43,8 +47,7 @@ process.env.NODE_ENV ??= "development";
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
 
-app.use("/api/pedagogy/evaluate-explanation", express.json({ limit: "10mb" }));
-app.use(express.json({ limit: "32kb" }));
+configureJsonBodies(app);
 if (process.env.NODE_ENV !== "production") app.use(express.static(path.join(process.cwd(), "public")));
 
 const adminApp = (() => {
@@ -386,138 +389,162 @@ Forneça um JSON estruturado com os blocos sintáticos, classe gramatical de cad
 // API: Ask Professor SuVeCA (AI Grammar Tutor)
 app.post("/api/gemini/explain", async (req, res) => {
   const executionStartTime = Date.now();
+  if (req.body?.model !== undefined && !isProfessorModel(req.body.model)) {
+    return res.status(400).json({ error: 'Modelo de resposta inválido.' });
+  }
+  const deadline = createAiDeadline(professorTimeoutMs(req.body?.model));
+  const disconnect = () => { if (!res.writableEnded) deadline.controller.abort(new DOMException('Client disconnected', 'AbortError')); };
+  res.on('close', disconnect);
   try {
-    const { question, context, history, model, studentProfile } = req.body || {};
-    if (typeof question !== "string" || !question.trim()) {
-      return res.status(400).json({ error: "Pergunta não informada." });
-    }
+    return await withAiSignal(async () => {
+      const { question, context, history, model, studentProfile } = req.body || {};
+      if (typeof question !== "string" || !question.trim()) {
+        return res.status(400).json({ error: "Pergunta não informada." });
+      }
 
-    const safeQuestion = question.trim().slice(0, 4000);
-    const safeContext = typeof context === "string"
-      ? context.trim().slice(0, 800)
-      : "Geral de Português para Concursos";
-    const safeHistory = Array.isArray(history)
-      ? history
-          .slice(-6)
-          .filter((message) => message && (message.role === "user" || message.role === "assistant") && typeof message.text === "string")
-          .map((message) => ({ role: message.role as "user" | "assistant", text: message.text.trim().slice(0, 4000) }))
-          .filter((message) => message.text)
-      : [];
-    const conversationContext = safeHistory.length
-      ? safeHistory.map((message) => `${message.role === "user" ? "Aluno" : "Professor"}: ${message.text}`).join("\n\n")
-      : "Sem mensagens anteriores relevantes.";
+      const safeQuestion = question.trim().slice(0, 4000);
+      const safeContext = typeof context === "string"
+        ? context.trim().slice(0, 800)
+        : "Geral de Português para Concursos";
+      const safeHistory = Array.isArray(history)
+        ? history
+            .slice(-6)
+            .filter((message) => message && (message.role === "user" || message.role === "assistant") && typeof message.text === "string")
+            .map((message) => ({ role: message.role as "user" | "assistant", text: message.text.trim().slice(0, 4000) }))
+            .filter((message) => message.text)
+        : [];
+      const conversationContext = safeHistory.length
+        ? safeHistory.map((message) => `${message.role === "user" ? "Aluno" : "Professor"}: ${message.text}`).join("\n\n")
+        : "Sem mensagens anteriores relevantes.";
 
-    const studentProfileContext =
-      Array.isArray(studentProfile?.recentErrors) && studentProfile.recentErrors.length > 0
-        ? `PERFIL COGNITIVO DO ALUNO (Erros Recentes Cadastrados no Caderno de Erros):
-${studentProfile.recentErrors
-  .slice(0, 5)
-  .map((e: any) => `- Tópico: ${e.topic || "Geral"} | Regra violada: ${e.rule || ""}`)
-  .join("\n")}
-(Atenção pedagógica: Aborde a dúvida atual reforçando distinções claras contra essas armadilhas caso o assunto guarde qualquer correlação.)\n\n`
-        : "";
+      const studentProfileContext =
+        Array.isArray(studentProfile?.recentErrors) && studentProfile.recentErrors.length > 0
+          ? `PERFIL COGNITIVO DO ALUNO (Erros Recentes Cadastrados no Caderno de Erros):
+  ${studentProfile.recentErrors
+    .slice(0, 5)
+    .map((e: any) => `- Tópico: ${e.topic || "Geral"} | Regra violada: ${e.rule || ""}`)
+    .join("\n")}
+  (Atenção pedagógica: Aborde a dúvida atual reforçando distinções claras contra essas armadilhas caso o assunto guarde qualquer correlação.)\n\n`
+          : "";
 
-    const knowledgeRecords = await retrieveKnowledge(`${safeContext} ${safeQuestion}`, 3);
-    const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
-    const officialQuestionContext = await formatOfficialQuestionContext(`${safeContext} ${safeQuestion}`, 2);
-    const prompt = `Contexto da aula: ${safeContext}
+      const knowledgeRecords = await retrieveKnowledge(`${safeContext} ${safeQuestion}`, 3);
+      const knowledgeContext = formatKnowledgeContext(knowledgeRecords);
+      const officialQuestionContext = await formatOfficialQuestionContext(`${safeContext} ${safeQuestion}`, 2);
+      const prompt = `Contexto da aula: ${safeContext}
 
-${studentProfileContext}HISTÓRICO RECENTE:
-${conversationContext}
+  ${studentProfileContext}HISTÓRICO RECENTE:
+  ${conversationContext}
 
-DÚVIDA ATUAL DO ALUNO:
-${safeQuestion}
+  DÚVIDA ATUAL DO ALUNO:
+  ${safeQuestion}
 
-${knowledgeContext}
+  ${knowledgeContext}
 
-${officialQuestionContext}
+  ${officialQuestionContext}
 
-Produza answerMarkdown e sourceRefs separadamente.
+  Produza answerMarkdown e sourceRefs separadamente.
 
-REGRAS PARA answerMarkdown:
-- Responda diretamente à dúvida atual levando em conta o histórico; não se apresente novamente.
-- Explique o porquê, o teste mental repetível na prova e a regra decisiva.
-- Quando útil, dê um exemplo positivo e um contrastivo e destaque a pegadinha típica.
-- Diferencie eixos classificatórios distintos (por exemplo, impessoalidade e transitividade).
-- Faça uma verificação de coerência: não apresente a mesma construção como certa e errada sob as mesmas condições.
-- Use Markdown com títulos curtos, negrito, listas ou tabelas somente quando melhorarem a compreensão.
-- Não inclua EDITORIAL, CORPUS, QUESTION, PASSAGE, KB, IDs, hashes ou referências técnicas no texto pedagógico.
-- Se a base não sustentar uma afirmação específica, diga isso claramente em linguagem natural.
+  REGRAS PARA answerMarkdown:
+  - Responda diretamente à dúvida atual levando em conta o histórico; não se apresente novamente.
+  - Explique o porquê, o teste mental repetível na prova e a regra decisiva.
+  - Quando útil, dê um exemplo positivo e um contrastivo e destaque a pegadinha típica.
+  - Diferencie eixos classificatórios distintos (por exemplo, impessoalidade e transitividade).
+  - Faça uma verificação de coerência: não apresente a mesma construção como certa e errada sob as mesmas condições.
+  - Use Markdown com títulos curtos, negrito, listas ou tabelas somente quando melhorarem a compreensão.
+  - Não inclua EDITORIAL, CORPUS, QUESTION, PASSAGE, KB, IDs, hashes ou referências técnicas no texto pedagógico.
+  - Se a base não sustentar uma afirmação específica, diga isso claramente em linguagem natural.
 
-REGRAS PARA sourceRefs:
-- Liste apenas os identificadores EDITORIAL, CORPUS e QUESTION efetivamente usados.
-- As referências são metadados internos e nunca devem ser explicadas dentro de answerMarkdown.
- - Trate o corpus_apostila como autoridade normativa e a Integracao_Pedagogica como expansão didática. Preserve também o conteúdo das questões editoriais citado; não o corrija, reescreva nem atribua à SuVeCA.
-- Quando relações sintáticas forem decisivas, aplique a SuVeCA como mapa relacional, preservando ordem inversa, omissões e orações sem sujeito. Não force a metodologia em questões puramente gráficas, lexicais ou discursivas.`;
+  REGRAS PARA sourceRefs:
+  - Liste apenas os identificadores EDITORIAL, CORPUS e QUESTION efetivamente usados.
+  - As referências são metadados internos e nunca devem ser explicadas dentro de answerMarkdown.
+   - Trate o corpus_apostila como autoridade normativa e a Integracao_Pedagogica como expansão didática. Preserve também o conteúdo das questões editoriais citado; não o corrija, reescreva nem atribua à SuVeCA.
+  - Quando relações sintáticas forem decisivas, aplique a SuVeCA como mapa relacional, preservando ordem inversa, omissões e orações sem sujeito. Não force a metodologia em questões puramente gráficas, lexicais ou discursivas.`;
 
-    const selectedModel = resolveModelForTask('explain', model);
-    const systemInstruction =
-      "Você é o Professor SuVeCA, tutor ancorado na Base Editorial SuVeCA. O corpus_apostila é a autoridade normativa; a Integracao_Pedagogica organiza e expande o conteúdo para o ensino; a SuVeCA é o mapa metodológico que reconstrói relações sintáticas sem impor ordem linear. Use o mapa quando ele ajudar a decisão e explicite seus limites quando a questão pertencer à forma, ao léxico, ao texto ou ao discurso. Preserve a separação e a hierarquia entre essas camadas, aplique limites, exceções, contrastes e testes decisórios, responda com rigor pedagógico e mantenha toda proveniência exclusivamente em sourceRefs.";
+      const selectedModel = isProfessorModel(model) ? model : 'gemini-3.1-flash-lite';
+      const systemInstruction =
+        "Você é o Professor SuVeCA, tutor ancorado na Base Editorial SuVeCA. O corpus_apostila é a autoridade normativa; a Integracao_Pedagogica organiza e expande o conteúdo para o ensino; a SuVeCA é o mapa metodológico que reconstrói relações sintáticas sem impor ordem linear. Use o mapa quando ele ajudar a decisão e explicite seus limites quando a questão pertencer à forma, ao léxico, ao texto ou ao discurso. Preserve a separação e a hierarquia entre essas camadas, aplique limites, exceções, contrastes e testes decisórios, responda com rigor pedagógico e mantenha toda proveniência exclusivamente em sourceRefs.";
 
-    const config = {
-      systemInstruction,
-      responseMimeType: "application/json",
-      responseSchema: {
-        type: Type.OBJECT,
-        properties: {
-          answerMarkdown: {
-            type: Type.STRING,
-            description: "Resposta pedagógica em Markdown sem identificadores técnicos de fontes.",
+      const config = {
+        systemInstruction,
+        responseMimeType: "application/json",
+        responseSchema: {
+          type: Type.OBJECT,
+          properties: {
+            answerMarkdown: {
+              type: Type.STRING,
+              description: "Resposta pedagógica em Markdown sem identificadores técnicos de fontes.",
+            },
+            sourceRefs: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING },
+              description: "Referências internas EDITORIAL, CORPUS e QUESTION efetivamente utilizadas.",
+            },
           },
-          sourceRefs: {
-            type: Type.ARRAY,
-            items: { type: Type.STRING },
-            description: "Referências internas EDITORIAL, CORPUS e QUESTION efetivamente utilizadas.",
+          required: ["answerMarkdown", "sourceRefs"],
+        },
+      };
+
+      let executionResult;
+      try {
+        executionResult = await geminiKeyManager.executeWithKeyRotation(
+          selectedModel,
+          (client, _key, signal) =>
+              generateProfessorResponse(client, {
+                model: selectedModel,
+                contents: prompt,
+                config: { ...config, abortSignal: signal },
+              }),
+          { userAgent: "suveca-professor-explain", signal: deadline.signal, attemptTimeoutMs: professorTimeoutMs(selectedModel), maxAttempts: PROFESSOR_MAX_ATTEMPTS }
+        );
+      } catch (err: any) {
+        void aiAuditLogger.logCall({
+          status: "erro_provider",
+          request: {
+            route: "gemini_explain",
+            stage: "question_explanation",
+            modelRequested: selectedModel,
+            systemPrompt: systemInstruction,
+            userInput: prompt,
+            config,
+            context: { userId: res.locals.userId, lessonContext: safeContext },
           },
-        },
-        required: ["answerMarkdown", "sourceRefs"],
-      },
-    };
+          attempts: (err as any)?.attempts || [],
+          error: { type: err.name || "APIError", message: err.message },
+          startTime: executionStartTime,
+          endTime: Date.now(),
+        });
+        throw err;
+      }
 
-    let executionResult;
-    try {
-      executionResult = await geminiKeyManager.executeWithKeyRotation(
-        selectedModel,
-        (client) =>
-          withAiTimeout(
-            client.models.generateContent({
-              model: selectedModel,
-              contents: prompt,
-              config,
-            })
-          ),
-        { userAgent: "suveca-professor-explain" }
-      );
-    } catch (err: any) {
-      void aiAuditLogger.logCall({
-        status: "erro_provider",
-        request: {
-          route: "gemini_explain",
-          stage: "question_explanation",
-          modelRequested: selectedModel,
-          systemPrompt: systemInstruction,
-          userInput: prompt,
-          config,
-          context: { userId: res.locals.userId, lessonContext: safeContext },
-        },
-        attempts: (err as any)?.attempts || [],
-        error: { type: err.name || "APIError", message: err.message },
-        startTime: executionStartTime,
-        endTime: Date.now(),
-      });
-      throw err;
-    }
+      const { result: response, attempts } = executionResult;
+      const data = JSON.parse(response.text || "{}");
+      const answerMarkdown = toLearnerFacingContent(data.answerMarkdown);
+      if (!answerMarkdown) throw new Error("O Professor não retornou conteúdo pedagógico válido.");
+      const sourceRefs = keepAllowedRefs(data.sourceRefs, allowedRefsFor(knowledgeRecords, officialQuestionContext));
+      if (!sourceRefs.length) {
+        void aiAuditLogger.logCall({
+          status: "erro_parse",
+          parseStatus: "error",
+          parseError: "Sem proveniência válida",
+          request: {
+            route: "gemini_explain",
+            stage: "question_explanation",
+            modelRequested: selectedModel,
+            systemPrompt: systemInstruction,
+            userInput: prompt,
+            config,
+            context: { userId: res.locals.userId, lessonContext: safeContext },
+          },
+          attempts,
+          response: data,
+          startTime: executionStartTime,
+          endTime: Date.now(),
+        });
+        return res.status(422).json({ error: "A base recuperada não sustentou uma resposta com proveniência verificável. Reformule a dúvida." });
+      }
 
-    const { result: response, attempts } = executionResult;
-    const data = JSON.parse(response.text || "{}");
-    const answerMarkdown = toLearnerFacingContent(data.answerMarkdown);
-    if (!answerMarkdown) throw new Error("O Professor não retornou conteúdo pedagógico válido.");
-    const sourceRefs = keepAllowedRefs(data.sourceRefs, allowedRefsFor(knowledgeRecords, officialQuestionContext));
-    if (!sourceRefs.length) {
       void aiAuditLogger.logCall({
-        status: "erro_parse",
-        parseStatus: "error",
-        parseError: "Sem proveniência válida",
+        status: "concluida",
         request: {
           route: "gemini_explain",
           stage: "question_explanation",
@@ -528,37 +555,31 @@ REGRAS PARA sourceRefs:
           context: { userId: res.locals.userId, lessonContext: safeContext },
         },
         attempts,
-        response: data,
+        response: { answerMarkdown, sourceRefs },
         startTime: executionStartTime,
         endTime: Date.now(),
       });
-      return res.status(422).json({ error: "A base recuperada não sustentou uma resposta com proveniência verificável. Reformule a dúvida." });
-    }
 
-    void aiAuditLogger.logCall({
-      status: "concluida",
-      request: {
-        route: "gemini_explain",
-        stage: "question_explanation",
-        modelRequested: selectedModel,
-        systemPrompt: systemInstruction,
-        userInput: prompt,
-        config,
-        context: { userId: res.locals.userId, lessonContext: safeContext },
-      },
-      attempts,
-      response: { answerMarkdown, sourceRefs },
-      startTime: executionStartTime,
-      endTime: Date.now(),
-    });
-
-    return res.json({ answerMarkdown, sourceRefs, isRealAi: true });
+      return res.json({ answerMarkdown, sourceRefs, isRealAi: true });
+    }, deadline.signal);
   } catch (error: any) {
     console.error("Erro no Professor SuVeCA:", error);
-    return res.status(500).json({
-      error: "Erro ao consultar o Professor SuVeCA.",
-      details: error.message,
+    if (res.destroyed || res.headersSent) return;
+    const kind = classifyGeminiError(error);
+    const timedOut = kind === 'timeout';
+    const unavailable = ['network', 'unavailable', 'quota'].includes(kind);
+    return res.status(timedOut ? 504 : unavailable ? 503 : 500).json({
+      error: timedOut
+        ? 'O Professor demorou mais que o esperado. Sua pergunta foi preservada. Tente novamente.'
+        : unavailable
+          ? 'Não foi possível conectar ao Professor agora. Sua pergunta foi preservada. Tente novamente em instantes.'
+          : 'Não foi possível concluir a resposta do Professor. Sua pergunta foi preservada.',
+      code: timedOut ? 'AI_TIMEOUT' : unavailable ? 'AI_UNAVAILABLE' : 'AI_FAILED',
+      retryable: timedOut || unavailable,
     });
+  } finally {
+    deadline.dispose();
+    res.off('close', disconnect);
   }
 });
 
@@ -759,83 +780,30 @@ Erro cometido: ${truncate(error.erroCometido)}
 Regra decisiva: ${truncate(error.regraDecisiva)}
 Exemplo de fixação: ${typeof error.novoExemplo === "string" ? truncate(error.novoExemplo) : "não informado"}
 
-${knowledgeContext}
-
-Para cada flashcard produza:
-- front: pergunta curta de recuperação ativa;
-- back: resposta objetiva para conferência rápida;
-- hint: dica opcional que conduz ao raciocínio sem entregar a resposta;
-- explanation: explicação detalhada com o porquê, teste mental, ao menos um exemplo, contraste quando útil e pegadinha de concurso;
-- sourceRefs: referências EDITORIAL e CORPUS efetivamente usadas, como metadados internos.
-
-A explicação não deve apenas repetir o verso. Não invente regras sem apoio na Base Editorial: o corpus_apostila é a autoridade normativa e a Integracao_Pedagogica é a expansão didática. Nenhum texto de front, back, hint ou explanation pode conter EDITORIAL, CORPUS, QUESTION, PASSAGE, KB, IDs ou referências técnicas; mantenha-os exclusivamente em sourceRefs.`;
+${knowledgeContext}`;
 
     const selectedModel = resolveModelForTask('flashcards', model);
-    const executionResult = await geminiKeyManager.executeWithKeyRotation(
-      selectedModel,
-      (client) =>
-        withAiTimeout(
-          client.models.generateContent({
-            model: selectedModel,
-            contents: prompt,
-            config: {
-              systemInstruction:
-                "Você é um professor de Língua Portuguesa para concursos ancorado na Base Editorial SuVeCA. Crie flashcards claros, autocontidos e focados em revisar a regra decisiva; preserve a autoridade normativa do corpus_apostila, use a Integracao_Pedagogica para aprofundamento didático e aplique a SuVeCA, quando pertinente, como mapa de relações sintáticas que admite inversões, omissões e ausência de sujeito.",
-              responseMimeType: "application/json",
-              responseSchema: {
-                type: Type.OBJECT,
-                properties: {
-                  flashcards: {
-                    type: Type.ARRAY,
-                    items: {
-                      type: Type.OBJECT,
-                      properties: {
-                        front: {
-                          type: Type.STRING,
-                          description: "Pergunta de recuperação ativa, em português do Brasil.",
-                        },
-                        back: {
-                          type: Type.STRING,
-                          description: "Resposta explicada, breve e correta.",
-                        },
-                        hint: {
-                          type: Type.STRING,
-                          description: "Dica curta opcional, sem entregar a resposta inteira.",
-                        },
-                        explanation: {
-                          type: Type.STRING,
-                          description: "Aprofundamento pedagógico com raciocínio, exemplo, contraste e pegadinha, sem IDs técnicos.",
-                        },
-                        sourceRefs: {
-                          type: Type.ARRAY,
-                          items: { type: Type.STRING },
-                          description: "Referências internas EDITORIAL e CORPUS efetivamente utilizadas.",
-                        },
-                      },
-                      required: ["front", "back", "explanation", "sourceRefs"],
-                    },
-                  },
-                },
-                required: ["flashcards"],
-              },
-            },
-          }),
-          30_000
-        ),
-      { userAgent: "suveca-error-flashcards" }
-    );
-
-    const response = executionResult.result;
-    const data = JSON.parse(response.text || "{}");
-    const flashcards = Array.isArray(data.flashcards)
-      ? data.flashcards.map((card: any) => ({
-          front: toLearnerFacingContent(card.front),
-          back: toLearnerFacingContent(card.back),
-          hint: toLearnerFacingContent(card.hint) || undefined,
-          explanation: toLearnerFacingContent(card.explanation),
-          sourceRefs: keepAllowedRefs(card.sourceRefs, allowedRefsFor(knowledgeRecords)),
-        })).filter((card: any) => card.front && card.back && card.explanation && card.sourceRefs.length)
-      : [];
+    const deadline = createAiDeadline(120_000);
+    const cancel = () => { if (!res.writableEnded) deadline.controller.abort(); };
+    res.on('close', cancel);
+    let response;
+    try {
+      const execution = await geminiKeyManager.executeWithKeyRotation(
+        selectedModel,
+        (client, _key, signal) => client.models.generateContent({
+          model: selectedModel, contents: prompt,
+          config: { systemInstruction: FLASHCARD_AUTHORING_INSTRUCTION, responseMimeType: 'application/json', responseJsonSchema: FLASHCARD_BATCH_SCHEMA, abortSignal: signal },
+        }),
+        { userAgent: 'suveca-error-flashcards-v2', maxAttempts: 12, signal: deadline.signal, attemptTimeoutMs: 60_000 },
+      );
+      response = execution.result;
+    } finally { res.off('close', cancel); deadline.dispose(); }
+    const data = JSON.parse(response.text || '{}');
+    const allowed = allowedRefsFor(knowledgeRecords);
+    const flashcards = parseFlashcardBatch(data, allowed).map(content => {
+      return { content, front: content.front, back: flashcardContentBack(content),
+        hint: content.hint || undefined, explanation: content.deepDive || undefined, sourceRefs: content.sourceRefs };
+    });
     if (!flashcards.length) {
       return res.status(422).json({ error: "A base não sustentou flashcards com proveniência verificável para esta regra." });
     }

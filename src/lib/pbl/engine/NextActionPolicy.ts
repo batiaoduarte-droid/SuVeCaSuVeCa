@@ -24,6 +24,9 @@ export class NextActionPolicy {
   ): Promise<NextActionDecision> {
     const { competencyRef, evaluation, stage, isCorrect } = lastAttempt;
     const currentMastery = session.masterySnapshot[competencyRef];
+    const actualAnchorQuestionRef = session.attempts.find(
+      (attempt) => attempt.competencyRef === competencyRef && attempt.stage === 'initial'
+    )?.questionRef || lastAttempt.questionRef;
     const attemptedQuestionRefs = session.attempts
       .filter((attempt) => attempt.competencyRef === competencyRef)
       .map((attempt) => attempt.questionRef);
@@ -44,7 +47,8 @@ export class NextActionPolicy {
           attemptedQuestionRefs,
           true,
           session.sessionId,
-          recentlyExposedQuestionRefs
+          recentlyExposedQuestionRefs,
+          actualAnchorQuestionRef,
         );
 
         if (xferItem) {
@@ -88,7 +92,8 @@ export class NextActionPolicy {
           attemptedQuestionRefs,
           true,
           session.sessionId,
-          recentlyExposedQuestionRefs
+          recentlyExposedQuestionRefs,
+          actualAnchorQuestionRef,
         );
         if (xferItem) {
           return {
@@ -125,7 +130,8 @@ export class NextActionPolicy {
           attemptedQuestionRefs,
           true,
           session.sessionId,
-          recentlyExposedQuestionRefs
+          recentlyExposedQuestionRefs,
+          actualAnchorQuestionRef,
         );
 
         if (xferItem) {
@@ -225,7 +231,8 @@ export class NextActionPolicy {
         attemptedQuestionRefs,
         true,
         session.sessionId,
-        recentlyExposedQuestionRefs
+        recentlyExposedQuestionRefs,
+        actualAnchorQuestionRef,
       );
 
       if (!xferItem || transferAttempts.length >= maxTransferAttempts) {

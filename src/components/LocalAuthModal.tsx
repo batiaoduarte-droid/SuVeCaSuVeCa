@@ -9,18 +9,17 @@ import {
   LogIn,
   UserPlus,
   AlertCircle,
-  Sparkles,
   ShieldCheck,
 } from 'lucide-react';
 import {
   loginLocalAccount,
   createLocalAccount,
   loginAsTestUser,
-  getActiveLocalUser,
   isTestUser,
   isPersonalLocalUser,
   type User,
 } from '../lib/firebase';
+import { useModalFocus } from '../hooks/useModalFocus';
 
 interface LocalAuthModalProps {
   isOpen: boolean;
@@ -54,24 +53,27 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const initialInputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useModalFocus(isOpen, () => {
+    if (!isLoading) onClose();
+  }, initialInputRef);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    setTab('login');
+    setLoginPassword('');
+    setRegPassword('');
+    setRegConfirmPassword('');
+    setShowPassword(false);
+  }, [isOpen]);
 
   // Focus input when modal opens or tab changes
   useEffect(() => {
     if (isOpen) {
       setError(null);
-      setTimeout(() => initialInputRef.current?.focus(), 80);
+      const frame = window.requestAnimationFrame(() => initialInputRef.current?.focus());
+      return () => window.cancelAnimationFrame(frame);
     }
   }, [isOpen, tab]);
-
-  // Handle ESC to close
-  useEffect(() => {
-    if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -135,11 +137,12 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
       aria-modal="true"
       aria-labelledby="local-auth-modal-title"
     >
-      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-2xl space-y-5 relative max-h-[92vh] overflow-y-auto">
+      <div ref={dialogRef} tabIndex={-1} className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-2xl space-y-5 relative max-h-[92vh] overflow-y-auto">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
+          disabled={isLoading}
           className="absolute top-5 right-5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-1.5 rounded-lg transition"
           aria-label="Fechar janela"
         >
@@ -197,6 +200,7 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
           <button
             type="button"
             role="tab"
+            disabled={isLoading}
             aria-selected={tab === 'login'}
             onClick={() => {
               setTab('login');
@@ -214,6 +218,7 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
           <button
             type="button"
             role="tab"
+            disabled={isLoading}
             aria-selected={tab === 'register'}
             onClick={() => {
               setTab('register');
@@ -232,7 +237,7 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
 
         {/* Error alert */}
         {error && (
-          <div className="bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl p-3 flex items-start gap-2.5 animate-in fade-in duration-150">
+          <div role="alert" className="bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl p-3 flex items-start gap-2.5 animate-in fade-in duration-150">
             <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
             <span className="leading-snug">{error}</span>
           </div>
@@ -246,7 +251,7 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
                 htmlFor="login-username"
                 className="block text-xs font-bold text-slate-700 mb-1"
               >
-                Usuário ou Login
+                Usuário ou e-mail
               </label>
               <div className="relative">
                 <UserIcon className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -257,7 +262,7 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
                   required
                   value={loginUsername}
                   onChange={(e) => setLoginUsername(e.target.value)}
-                  placeholder="Ex: seu.usuario"
+                  placeholder="Ex: seu.usuario ou e-mail"
                   autoComplete="username"
                   className="w-full rounded-xl border border-slate-300 pl-9 pr-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700 transition"
                 />
@@ -332,7 +337,7 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
                 htmlFor="reg-username"
                 className="block text-xs font-bold text-slate-700 mb-1"
               >
-                Usuário / Login (letras e números)
+                Usuário ou e-mail
               </label>
               <div className="relative">
                 <UserIcon className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -419,6 +424,7 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
           <button
             type="button"
             onClick={handleSelectTestAccount}
+            disabled={isLoading}
             className="w-full py-2.5 px-3 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100/90 text-amber-950 flex items-center justify-between transition group cursor-pointer shadow-2xs"
           >
             <div className="flex items-center gap-2 text-left">
@@ -452,6 +458,7 @@ export const LocalAuthModal: React.FC<LocalAuthModalProps> = ({
                 onClose();
                 onSignInGoogle();
               }}
+              disabled={isLoading}
               className="w-full button-secondary py-2 text-xs font-medium rounded-xl justify-center cursor-pointer text-slate-600 hover:text-slate-900"
             >
               <span>Ou conectar com conta Google</span>

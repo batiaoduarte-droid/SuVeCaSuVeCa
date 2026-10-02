@@ -254,6 +254,7 @@ export interface PBLTutorQuestionContext {
 }
 
 export interface PBLTutorTurnRequest {
+  model?: string;
   /** Consistency check only: the server still authorizes from the saved session. */
   expectedAttemptId?: string;
   episodeId?: string;

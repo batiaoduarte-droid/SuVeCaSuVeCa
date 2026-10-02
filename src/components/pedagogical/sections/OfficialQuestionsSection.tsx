@@ -1,6 +1,6 @@
 import { questionReference, normalizedQuestionFor, hasSafePracticePresentation } from '../../../lib/officialPracticePresentation';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { AlertTriangle, HelpCircle } from 'lucide-react';
+import { AlertTriangle, ArrowRight, ChevronLeft, ChevronRight, HelpCircle } from 'lucide-react';
 import type { OfficialQuestionView } from '../../../types/pedagogicalView';
 import { QuestionBlock } from '../../ui/QuestionBlock';
 import { InlineRichText } from '../blocks/InlineRichText';
@@ -231,6 +231,8 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
           return (
             <div key={`${numberOffset + pageStart + idx}:${qId}`} data-question-encounter-ref={qId || sourceQuestionId}>
             <QuestionBlock
+              attemptIdentity={{ questionId: qId || sourceQuestionId, lessonId, userId }}
+              prompt={prompt}
               title={`Questão ${numberOffset + pageStart + idx + 1}: ${organization || board || 'Concurso Público'}`}
               board={board}
               year={year}
@@ -266,35 +268,48 @@ export const OfficialQuestionsSection: React.FC<OfficialQuestionsSectionProps> =
           Nenhuma questão desta seleção possui fonte suficiente para uma tentativa segura. Use a prática adaptativa abaixo para continuar no mesmo tema.
         </div>
       )}
-      {showPagination && practiceQuestions.length > 0 && (
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-        <p className="m-0 text-xs font-semibold text-slate-700" aria-live="polite">
-          Página {page + 1} de {pageCount}. Exibindo {pageStart + 1}–{pageStart + visibleQuestions.length} de {practiceQuestions.length} questões.
-        </p>
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            disabled={page === 0}
-            onClick={() => setPage((current) => Math.max(0, current - 1))}
-            className="min-h-11 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-900 hover:border-teal-400 hover:bg-teal-50 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            Página anterior
-          </button>
-          <button
-            type="button"
-            disabled={page >= pageCount - 1}
-            onClick={() => setPage((current) => Math.min(pageCount - 1, current + 1))}
-            className="min-h-11 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-900 hover:border-teal-400 hover:bg-teal-50 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            Próxima página
-          </button>
+      {((showPagination && practiceQuestions.length > 0) || onPracticeMore) && (
+        <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50/90 p-4 shadow-2xs sm:flex-row sm:items-center sm:justify-between">
+          {showPagination && practiceQuestions.length > 0 && (
+            <nav aria-label="Páginas de questões" className="flex flex-wrap items-center justify-between gap-3 sm:justify-start">
+              <p className="m-0 inline-flex items-center rounded-lg border border-slate-200/90 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 shadow-2xs" aria-live="polite">
+                Página {page + 1} de {pageCount}. Exibindo {pageStart + 1}–{pageStart + visibleQuestions.length} de {practiceQuestions.length} questões.
+              </p>
+              <div className="inline-flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  disabled={page === 0}
+                  onClick={() => setPage((current) => Math.max(0, current - 1))}
+                  className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-xs sm:text-sm font-bold text-slate-800 shadow-2xs transition hover:border-teal-400 hover:bg-teal-50/70 hover:text-teal-950 disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-slate-300 disabled:hover:bg-white cursor-pointer"
+                >
+                  <ChevronLeft className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  <span>Página anterior</span>
+                </button>
+                <button
+                  type="button"
+                  disabled={page >= pageCount - 1}
+                  onClick={() => setPage((current) => Math.min(pageCount - 1, current + 1))}
+                  className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-xs sm:text-sm font-bold text-slate-800 shadow-2xs transition hover:border-teal-400 hover:bg-teal-50/70 hover:text-teal-950 disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-slate-300 disabled:hover:bg-white cursor-pointer"
+                >
+                  <span>Próxima página</span>
+                  <ChevronRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                </button>
+              </div>
+            </nav>
+          )}
+          {onPracticeMore && (
+            <div className={`flex items-center ${showPagination && practiceQuestions.length > 0 ? 'sm:border-l sm:border-slate-200/90 sm:pl-3' : ''}`}>
+              <button
+                type="button"
+                onClick={onPracticeMore}
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-teal-800 px-4 py-2.5 text-xs sm:text-sm font-bold text-white shadow-2xs transition hover:bg-teal-900 sm:w-auto cursor-pointer"
+              >
+                <span>Continuar praticando este tema</span>
+                <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+              </button>
+            </div>
+          )}
         </div>
-      </div>
-      )}
-      {onPracticeMore && (
-        <button type="button" onClick={onPracticeMore} className="min-h-11 rounded-xl border border-teal-300 bg-teal-50 px-4 py-2 text-sm font-bold text-teal-900 hover:bg-teal-100">
-          Continuar praticando este tema
-        </button>
       )}
     </div>
   );

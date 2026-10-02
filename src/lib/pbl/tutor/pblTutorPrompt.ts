@@ -251,6 +251,7 @@ export function formatTutorPrompt(
   }
   if (request.cadernoSynthesisRequested) {
     parts.push(`[SOLICITAÇÃO EXPLÍCITA]: O aluno pediu síntese estruturada para o Caderno de Erros.`);
+    if (hasAttempted) parts.push(`Entregue notebookDraft completo com title, triggerCondition, decisionRule e contrastExample, todos não vazios e sustentados pelo contexto. pedagogicalText deve apresentar brevemente a ficha, sem substituir seus campos. Não diga que salvou: o aluno ainda precisa confirmar o salvamento.`);
   }
 
   if (request.history && request.history.length > 0) {

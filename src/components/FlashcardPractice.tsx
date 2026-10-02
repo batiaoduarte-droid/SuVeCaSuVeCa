@@ -1,8 +1,10 @@
 import { TTSPlayer } from '../lib/audio/ttsService';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { CadernoErroItem, ErrorFlashcard, FlashcardRating } from '../types/suveca';
-import { auth, db, onAuthStateChanged, safeSetDoc } from '../lib/firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { auth, onAuthStateChanged } from '../lib/firebase';
+import { useFlashcardStore } from '../hooks/useFlashcardStore';
+import { appendCardEvent, readStoredFlashcards, recordCardReview } from '../lib/flashcardStore';
+import { FlashcardLibrary } from './FlashcardLibrary';
 import {
   AlertCircle,
   BookOpen,
@@ -19,13 +21,12 @@ import {
   VolumeX,
 } from 'lucide-react';
 import { toLearnerFacingContent } from '../lib/learnerContent';
-import { deriveErrorReviewStatus, scheduleFlashcard } from '../lib/spacedRepetition';
+import { deriveErrorReviewStatus } from '../lib/spacedRepetition';
 import { projectFlashcardContent } from '../lib/flashcardContent';
+import { parseFlashcardContent, flashcardContentBack, type FlashcardContentV2 } from '../types/flashcardContent';
 import { useReviewResource } from '../hooks/useReviewResource';
 import { FLASHCARD_CORRECT_XP } from '../lib/masteryLevel';
 import { authenticatedFetch } from '../lib/authenticatedFetch';
-import { EDITORIAL_FLASHCARDS } from '../data/editorialFlashcards.generated';
-import { PEDAGOGICAL_KNOWLEDGE_BUILD } from '../data/pedagogicalKnowledge.generated';
 import {
   FlashcardBackView,
   StudyBadge,
@@ -33,30 +34,34 @@ import {
   StudySurface,
 } from './study-visuals';
 
-const FLASHCARDS_STORAGE_PREFIX = 'suveca_flashcards';
-const CURRICULUM_BUILD_ID = PEDAGOGICAL_KNOWLEDGE_BUILD.buildId;
-const flashcardsStorageKey = (userId?: string) =>
-  `${FLASHCARDS_STORAGE_PREFIX}_${CURRICULUM_BUILD_ID}_${userId || 'guest'}`;
-const legacyFlashcardsStorageKey = (userId?: string) =>
-  `${FLASHCARDS_STORAGE_PREFIX}_${userId || 'guest'}`;
-const flashcardsDocumentId = `flashcards_caderno_${CURRICULUM_BUILD_ID}`;
+import { PEDAGOGICAL_VIEW_INDEX } from '../data/pedagogicalViewIndex.generated';
+
+const UNIT_TITLE_BY_ID = new Map(
+  PEDAGOGICAL_VIEW_INDEX.map((u) => [u.unitId.toUpperCase(), u.title.replace(/\s*-\s*Questões$/i, '')])
+);
+
+export const getCardTopicLabel = (card?: ErrorFlashcard | null): string => {
+  if (!card) return '';
+  const match = card.id && card.id.match(/editorial-flash-(ip-[a-z0-9]+-[a-z0-9]+)/i);
+  if (match) {
+    const unitId = match[1].toUpperCase();
+    if (UNIT_TITLE_BY_ID.has(unitId)) return UNIT_TITLE_BY_ID.get(unitId)!;
+  }
+  const str = card.topic || '';
+  if (!str.startsWith('pt:')) return str;
+  const slug = str.split(':').pop() || str;
+  return slug
+    .split('-')
+    .map((word, idx) => {
+      const lower = word.toLowerCase();
+      if (idx > 0 && ['de', 'do', 'da', 'dos', 'das', 'e', 'em'].includes(lower)) return lower;
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(' ');
+};
+
 const isCardDue = (card: ErrorFlashcard, now: number) =>
   !card.nextReviewAt || Number.isNaN(Date.parse(card.nextReviewAt)) || Date.parse(card.nextReviewAt) <= now;
-
-const EDITORIAL_CARDS: ErrorFlashcard[] = EDITORIAL_FLASHCARDS.map((card) => ({
-  id: card.id,
-  moduleId: card.moduleId,
-  source: 'suveca',
-  topic: card.topic,
-  front: card.front,
-  back: card.back,
-  hint: card.hint,
-  explanation: card.explanation,
-  sourceRefs: [...card.sourceRefs],
-  createdAt: card.createdAt,
-  correctCount: card.correctCount,
-  incorrectCount: card.incorrectCount,
-}));
 
 interface FlashcardPracticeProps {
   errors: CadernoErroItem[];
@@ -68,104 +73,29 @@ interface FlashcardPracticeProps {
   userId?: string;
   /** Quando informado pelo ModuleViewer, limita a base editorial à aula atual. */
   editorialModuleId?: string;
+  editorialUnitId?: string;
   /** Registra no perfil uma recordação avaliada como correta. */
   onCorrectAnswer?: () => void;
 }
-
-const isFlashcard = (value: unknown): value is ErrorFlashcard => {
-  if (!value || typeof value !== 'object') return false;
-  const card = value as Partial<ErrorFlashcard>;
-  return (
-    typeof card.id === 'string' &&
-    (card.source === 'caderno' || card.source === 'suveca') &&
-    typeof card.topic === 'string' &&
-    typeof card.front === 'string' &&
-    typeof card.back === 'string'
-  );
-};
-
-const mergeEditorialCards = (savedCards: ErrorFlashcard[]): ErrorFlashcard[] => {
-  const savedById = new Map(savedCards.map((card) => [card.id, card]));
-  const editorialCards = EDITORIAL_CARDS.map((card) => {
-    const saved = savedById.get(card.id);
-    if (!saved) return card;
-    const merged: ErrorFlashcard = {
-      ...card,
-      correctCount: typeof saved.correctCount === 'number' ? saved.correctCount : card.correctCount,
-      incorrectCount: typeof saved.incorrectCount === 'number' ? saved.incorrectCount : card.incorrectCount,
-    };
-    if (saved.hintUsedCount !== undefined) merged.hintUsedCount = saved.hintUsedCount;
-    if (saved.lastReviewUsedHint !== undefined) merged.lastReviewUsedHint = saved.lastReviewUsedHint;
-    if (saved.lastReviewedAt !== undefined) merged.lastReviewedAt = saved.lastReviewedAt;
-    if (saved.nextReviewAt !== undefined) merged.nextReviewAt = saved.nextReviewAt;
-    if (saved.repetitions !== undefined) merged.repetitions = saved.repetitions;
-    if (saved.intervalDays !== undefined) merged.intervalDays = saved.intervalDays;
-    if (saved.easeFactor !== undefined) merged.easeFactor = saved.easeFactor;
-    if (saved.lapseCount !== undefined) merged.lapseCount = saved.lapseCount;
-    if (saved.lastRating !== undefined) merged.lastRating = saved.lastRating;
-    if (saved.masteryScore !== undefined) merged.masteryScore = saved.masteryScore;
-    return merged;
-  });
-  const cadernoCards = Array.from(
-    new Map(
-      savedCards
-        .filter((card) => card.source === 'caderno')
-        .map((card) => [card.id, card] as const)
-    ).values()
-  );
-  return [...editorialCards, ...cadernoCards];
-};
-
-const parseCurrentCards = (value: string | null): ErrorFlashcard[] | null => {
-  if (!value) return null;
-  try {
-    const parsed = JSON.parse(value) as { curriculumBuildId?: unknown; items?: unknown };
-    if (
-      parsed?.curriculumBuildId === CURRICULUM_BUILD_ID &&
-      Array.isArray(parsed.items) &&
-      parsed.items.every(isFlashcard)
-    ) {
-      return mergeEditorialCards(parsed.items);
-    }
-  } catch {
-    // O chamador aplica o fallback seguro.
-  }
-  return null;
-};
-
-const parseLegacyCadernoCards = (value: string | null): ErrorFlashcard[] => {
-  if (!value) return [];
-  try {
-    const parsed = JSON.parse(value) as unknown;
-    const items = Array.isArray(parsed)
-      ? parsed
-      : parsed && typeof parsed === 'object' && Array.isArray((parsed as { items?: unknown }).items)
-      ? (parsed as { items: unknown[] }).items
-      : [];
-    return items.filter(isFlashcard).filter((card) => card.source === 'caderno');
-  } catch {
-    return [];
-  }
-};
 
 export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   errors,
   onUpdateErrorStatus,
   userId,
   editorialModuleId,
+  editorialUnitId,
   onCorrectAnswer,
 }) => {
+  const [wholeLesson, setWholeLesson] = useState(false);
   const [authUserId, setAuthUserId] = useState<string | undefined>(() => auth.currentUser?.uid);
   const resolvedUserId = userId ?? authUserId;
-  const storageKey = flashcardsStorageKey(resolvedUserId);
-  const flashcardScopeRef = useRef(storageKey);
-  const [flashcards, setFlashcards] = useState<ErrorFlashcard[]>(() => {
-    const current = parseCurrentCards(localStorage.getItem(storageKey));
-    if (current) return current;
-    return mergeEditorialCards(
-      parseLegacyCadernoCards(localStorage.getItem(legacyFlashcardsStorageKey(resolvedUserId)))
-    );
-  });
+  const store = useFlashcardStore(resolvedUserId);
+  const flashcards = store.cards;
+  const ownerRef = useRef(resolvedUserId); ownerRef.current = resolvedUserId;
+  const generationBusy = useRef(false);
+  const generationController = useRef<AbortController | null>(null);
+  const revealRef = useRef<{ cardId: string; eventId: string } | null>(null);
+  const [view, setView] = useState<'review' | 'library' | 'study'>('review');
   const [mode, setMode] = useState<'caderno' | 'suveca'>(errors.length ? 'caderno' : 'suveca');
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [isAnswerVisible, setIsAnswerVisible] = useState(false);
@@ -207,8 +137,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       stopAudio();
     };
   }, []);
-  const visibleFlashcards =
-    flashcardScopeRef.current === storageKey ? flashcards : EDITORIAL_CARDS;
+  const visibleFlashcards = flashcards;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -223,138 +152,36 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
   }, []);
 
   useEffect(() => {
-    let active = true;
-    flashcardScopeRef.current = storageKey;
-    setFlashcards(EDITORIAL_CARDS);
-    setActiveCardId(null);
-    setIsAnswerVisible(false);
-    setIsHintVisible(false);
-    setIsExplanationVisible(false);
-    setReviewResult(null);
-    setReviewFeedback(null);
-
-    const loadFlashcards = async () => {
-      let localCards = EDITORIAL_CARDS;
-      try {
-        localCards =
-          parseCurrentCards(localStorage.getItem(storageKey)) ??
-          mergeEditorialCards(
-            parseLegacyCadernoCards(localStorage.getItem(legacyFlashcardsStorageKey(resolvedUserId)))
-          );
-      } catch (error) {
-        console.error('Não foi possível carregar os flashcards locais:', error);
-      }
-
-      if (!resolvedUserId) {
-        localStorage.setItem(
-          storageKey,
-          JSON.stringify({ curriculumBuildId: CURRICULUM_BUILD_ID, items: localCards })
-        );
-        localStorage.setItem(
-          legacyFlashcardsStorageKey(),
-          JSON.stringify({
-            schemaVersion: 2,
-            contentKind: 'personal_caderno_cards',
-            items: localCards.filter((card) => card.source === 'caderno'),
-          })
-        );
-        if (active) setFlashcards(localCards);
-        return;
-      }
-
-      try {
-        const ref = doc(db, 'users', resolvedUserId, 'data', flashcardsDocumentId);
-        const snapshot = await getDoc(ref);
-        const cloudData = snapshot.data();
-        const cloudCards = cloudData?.items;
-        if (
-          snapshot.exists() &&
-          cloudData?.curriculumBuildId === CURRICULUM_BUILD_ID &&
-          Array.isArray(cloudCards) &&
-          cloudCards.every(isFlashcard)
-        ) {
-          if (active) setFlashcards(mergeEditorialCards(cloudCards));
-        } else {
-          const legacySnapshot = await getDoc(
-            doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno')
-          );
-          const legacyItems = legacySnapshot.data()?.items;
-          const legacyCards = Array.isArray(legacyItems)
-            ? legacyItems.filter(isFlashcard).filter((card) => card.source === 'caderno')
-            : [];
-          const initialCards = mergeEditorialCards([...localCards, ...legacyCards]);
-          await safeSetDoc(ref, {
-            curriculumBuildId: CURRICULUM_BUILD_ID,
-            items: initialCards,
-            updatedAt: new Date().toISOString(),
-          });
-          await safeSetDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
-            schemaVersion: 2,
-            contentKind: 'personal_caderno_cards',
-            items: initialCards.filter((card) => card.source === 'caderno'),
-            updatedAt: new Date().toISOString(),
-          });
-          if (active) setFlashcards(initialCards);
-        }
-      } catch (error) {
-        console.error('Não foi possível sincronizar os flashcards:', error);
-        if (active) setFlashcards(localCards);
-      }
-    };
-
-    void loadFlashcards();
-    return () => {
-      active = false;
-    };
-  }, [resolvedUserId, storageKey]);
-
-  const persistFlashcards = async (nextCards: ErrorFlashcard[]) => {
-    localStorage.setItem(
-      storageKey,
-      JSON.stringify({ curriculumBuildId: CURRICULUM_BUILD_ID, items: nextCards })
-    );
-    localStorage.setItem(
-      legacyFlashcardsStorageKey(resolvedUserId),
-      JSON.stringify({
-        schemaVersion: 2,
-        contentKind: 'personal_caderno_cards',
-        items: nextCards.filter((card) => card.source === 'caderno'),
-      })
-    );
-    if (!resolvedUserId) return;
-
-    try {
-      const updatedAt = new Date().toISOString();
-      await Promise.all([
-        safeSetDoc(doc(db, 'users', resolvedUserId, 'data', flashcardsDocumentId), {
-          curriculumBuildId: CURRICULUM_BUILD_ID,
-          items: nextCards,
-          updatedAt,
-        }),
-        safeSetDoc(doc(db, 'users', resolvedUserId, 'data', 'flashcards_caderno'), {
-          schemaVersion: 2,
-          contentKind: 'personal_caderno_cards',
-          items: nextCards.filter((card) => card.source === 'caderno'),
-          updatedAt,
-        }),
-      ]);
-    } catch (error) {
-      console.error('Não foi possível salvar os flashcards:', error);
-    }
+    setActiveCardId(null); setReviewResult(null); setIsAnswerVisible(false);
+    setIsHintVisible(false); setGenerationMessage(null); setIsGeneratingFor(null);
+    generationBusy.current = false;
+    return () => { generationController.current?.abort(); };
+  }, [resolvedUserId]);
+  const mutate = (action: () => void) => {
+    try { action(); store.refresh(); void store.retry(); return true; }
+    catch (error) { store.reportError(error); return false; }
+  };
+  const revealAnswer = () => {
+    if (!activeCard) return;
+    if (mutate(() => {
+      const event = appendCardEvent(resolvedUserId, { kind: view === 'study' || isHandsFree ? 'exposure' : 'reveal', cardId: activeCard.id });
+      revealRef.current = { cardId: activeCard.id, eventId: event.id };
+    })) setIsAnswerVisible(true);
   };
 
   const cadernoCards = useMemo(
     () =>
       visibleFlashcards.filter(
-        (card) => card.source === 'caderno' && !!card.errorId && errors.some((error) => error.id === card.errorId)
+        (card) => card.source === 'caderno' && !card.archived
       ),
     [errors, visibleFlashcards]
   );
   const suvecaCards = useMemo(
     () => visibleFlashcards.filter(
-      (card) => card.source === 'suveca' && (!editorialModuleId || card.moduleId === editorialModuleId)
+      (card) => card.source === 'suveca' && !card.archived && (!editorialModuleId || card.moduleId === editorialModuleId)
+        && (!editorialUnitId || wholeLesson || card.sourceRefs?.includes(`EDITORIAL:${editorialUnitId}`) || card.id.includes(`-${editorialUnitId.toLowerCase()}-`))
     ),
-    [editorialModuleId, visibleFlashcards]
+    [editorialModuleId, editorialUnitId, wholeLesson, visibleFlashcards]
   );
   const dueCadernoCards = useMemo(
     () => cadernoCards.filter((card) => isCardDue(card, reviewClock)),
@@ -364,14 +191,20 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     () => suvecaCards.filter((card) => isCardDue(card, reviewClock)),
     [reviewClock, suvecaCards]
   );
-  const activeCards = mode === 'caderno' ? dueCadernoCards : dueSuvecaCards;
+  const activeCards = view === 'study' ? (mode === 'caderno' ? cadernoCards : suvecaCards) : mode === 'caderno' ? dueCadernoCards : dueSuvecaCards;
   const reviewedCard = reviewResult
     ? visibleFlashcards.find((card) => card.id === activeCardId)
     : undefined;
   const activeCard = reviewedCard || activeCards.find((card) => card.id === activeCardId) || activeCards[0];
+  const genericEditorialHints = [
+    'Nomeie primeiro o erro; depois reconstrua a regra corretiva.',
+    'Recupere o critério decisivo antes de consultar a resposta.',
+    'Formule a regra e produza um exemplo próprio antes de virar o cartão.',
+  ];
+  const usefulHint = activeCard?.hint && !(activeCard.source === 'suveca' && genericEditorialHints.includes(activeCard.hint));
   useEffect(() => { stopAudio(); setIsHandsFree(false); }, [resolvedUserId]);
   useEffect(() => { if (!isHandsFree) stopAudio(); }, [activeCard?.id]);
-  const reviewResource = useReviewResource(activeCard?.source === 'suveca' ? activeCard.id : undefined);
+  const reviewResource = useReviewResource(activeCard?.source === 'suveca' && !activeCard.content ? activeCard.id : undefined);
   const errorsWithoutCards = errors.filter(
     (error) => !cadernoCards.some((card) => card.errorId === error.id)
   );
@@ -400,9 +233,23 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     setReviewResult(null);
     setReviewFeedback(null);
   };
+  useEffect(() => {
+    setWholeLesson(false);
+    if (editorialUnitId) switchMode('suveca');
+  }, [editorialUnitId, editorialModuleId]);
 
   const chooseNextCard = () => {
-    if (!activeCards.length) return;
+    if (!activeCards.length) {
+      setActiveCardId(null);
+      setReviewResult(null);
+      setReviewFeedback(null);
+      setIsAnswerVisible(false);
+      setIsHintVisible(false);
+      setIsExplanationVisible(false);
+      setIsHandsFree(false);
+      stopAudio();
+      return;
+    }
     const alternatives = activeCards.filter((card) => card.id !== activeCard?.id);
     const pool = alternatives.length ? alternatives : activeCards;
     const next = pool[Math.floor(Math.random() * pool.length)];
@@ -438,7 +285,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
         if (!isMounted || !isHandsFreeRef.current) return;
 
         // 3. Mostrar e narrar a resposta
-        setIsAnswerVisible(true);
+        revealAnswer();
         setHandsFreeStep('answer');
         void speakText(activeCard.back, () => {
           if (!isMounted || !isHandsFreeRef.current) return;
@@ -480,7 +327,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       });
 
       navigator.mediaSession.setActionHandler('play', () => {
-        setIsHandsFree(true);
+        setView('study'); setReviewResult(null); setIsHandsFree(true);
       });
       navigator.mediaSession.setActionHandler('pause', () => {
         setIsHandsFree(false);
@@ -505,30 +352,26 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
     };
   }, [activeCard?.id, activeCard?.front, activeCard?.topic]);
 
-  const generateFlashcardsForError = async (error: CadernoErroItem) => {
-    setIsGeneratingFor(error.id);
-    setGenerationMessage(null);
-    try {
-      const response = await authenticatedFetch('/api/gemini/generate-error-flashcards', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error, count: 2 }),
-      });
-      const data = await response.json();
-      if (!response.ok || !Array.isArray(data.flashcards)) {
-        throw new Error(data.error || 'A IA não retornou flashcards válidos.');
-      }
-
+  const requestCards = async (error: CadernoErroItem, signal: AbortSignal) => {
+    const owner = resolvedUserId;
+    const response = await authenticatedFetch('/api/gemini/generate-error-flashcards', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, signal,
+      body: JSON.stringify({ error, count: 2 }),
+    });
+    const data = await response.json();
+    if (signal.aborted || ownerRef.current !== owner) throw new Error('A conta foi alterada.');
+    if (!response.ok || !Array.isArray(data.flashcards)) throw new Error(data.error || 'Resposta de IA inválida.');
       const now = new Date().toISOString();
       const generatedCards: ErrorFlashcard[] = data.flashcards
         .filter((card: unknown) => {
           if (!card || typeof card !== 'object') return false;
           const candidate = card as { front?: unknown; back?: unknown; hint?: unknown; explanation?: unknown };
-          return typeof candidate.front === 'string' && typeof candidate.back === 'string';
+          return typeof candidate.front === 'string' && !!candidate.front.trim() && typeof candidate.back === 'string' && !!candidate.back.trim() && (candidate.hint === undefined || typeof candidate.hint === 'string') && (candidate.explanation === undefined || typeof candidate.explanation === 'string');
         })
-        .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown }, index: number) => {
+        .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown; content?: FlashcardContentV2 }, index: number) => {
+          const content = card.content ? parseFlashcardContent(card.content) : undefined;
           const newCard: ErrorFlashcard = {
-            id: `flash_${error.id}_${Date.now()}_${index}`,
+            id: `flash_${crypto.randomUUID()}`,
             errorId: error.id,
             source: 'caderno',
             moduleId: error.moduleRef,
@@ -536,8 +379,9 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             conceptId: error.conceptId,
             conceptIds: error.conceptIds,
             learningObjectiveId: error.learningObjectiveId || error.competencyId,
-            front: toLearnerFacingContent(card.front),
-            back: toLearnerFacingContent(card.back),
+            content,
+            front: content?.front || toLearnerFacingContent(card.front),
+            back: content ? flashcardContentBack(content) : toLearnerFacingContent(card.back),
             createdAt: now,
             correctCount: 0,
             incorrectCount: 0,
@@ -553,103 +397,74 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
           return newCard;
         });
 
-      if (!generatedCards.length) throw new Error('Nenhum card aproveitável foi gerado.');
-
-      const nextCards = [...flashcards.filter((card) => card.errorId !== error.id), ...generatedCards];
-      setFlashcards(nextCards);
-      await persistFlashcards(nextCards);
-      setMode('caderno');
-      setActiveCardId(generatedCards[0].id);
-      setIsAnswerVisible(false);
-      setIsHintVisible(false);
-      setIsExplanationVisible(false);
-      setReviewResult(null);
-      setGenerationMessage(`Criamos ${generatedCards.length} flashcards para “${error.conteudo}”.`);
+    if (!generatedCards.length) throw new Error('Nenhum card aproveitável foi gerado.');
+    const known = new Map<string, string[]>();
+    for (const card of readStoredFlashcards(owner).filter(c => c.source === 'caderno' && c.errorId === error.id && !c.archived)) {
+      const fingerprint = JSON.stringify([card.front.trim(), card.back.trim()]);
+      known.set(fingerprint, [...(known.get(fingerprint) || []), card.id]);
+    }
+    const added: ErrorFlashcard[] = [];
+    const retainedIds = new Set<string>();
+    for (const card of generatedCards) {
+      if (!card.front.trim() || !card.back.trim()) continue;
+      const fingerprint = JSON.stringify([card.front.trim(), card.back.trim()]);
+      const matchingIds = known.get(fingerprint);
+      if (matchingIds) {
+        for (const id of matchingIds) retainedIds.add(id);
+        continue;
+      }
+      appendCardEvent(owner, { kind: 'snapshot', cardId: card.id, card });
+      known.set(fingerprint, [card.id]); added.push(card);
+    }
+    store.refresh(); void store.retry();
+    return { added, retainedIds };
+  };
+  const generateFlashcardsForError = async (error: CadernoErroItem, replace = false) => {
+    if (generationBusy.current || store.status === 'loading') return;
+    if (replace && !window.confirm('Substituir os cards desta regra? Os anteriores e seu histórico ficarão arquivados na biblioteca.')) return;
+    generationBusy.current = true;
+    const controller = new AbortController(); generationController.current = controller;
+    const previous = readStoredFlashcards(resolvedUserId).filter(c => c.source === 'caderno' && c.errorId === error.id && !c.archived);
+    setIsGeneratingFor(error.id); setGenerationMessage('A IA está gerando os cards.');
+    try {
+      const { added, retainedIds } = await requestCards(error, controller.signal);
+      if (replace && (added.length || retainedIds.size)) {
+        for (const card of previous) {
+          if (!retainedIds.has(card.id)) appendCardEvent(resolvedUserId, { kind: 'archive', cardId: card.id, archived: true });
+        }
+      }
+      store.refresh(); void store.retry();
+      switchMode('caderno'); setView('review');
+      if (added.length) setActiveCardId(added[0].id);
+      setGenerationMessage(`${added.length} novo(s) card(s) salvo(s). Cards idênticos foram preservados sem duplicar.`);
     } catch (error) {
-      console.error('Não foi possível gerar os flashcards:', error);
-      setGenerationMessage(
-        error instanceof Error ? error.message : 'Não foi possível gerar os flashcards agora.'
-      );
+      if (!controller.signal.aborted) { store.reportError(error); setGenerationMessage((error as Error).message); }
     } finally {
-      setIsGeneratingFor(null);
+      if (generationController.current === controller) { generationBusy.current = false; setIsGeneratingFor(null); }
     }
   };
-
   const generateAllPendingCards = async () => {
-    if (!errorsWithoutCards.length) return;
-    setIsGeneratingFor('all');
-    setGenerationMessage(null);
-
-    let generated = 0;
-    let nextCards = flashcards;
+    if (generationBusy.current || store.status === 'loading') return;
+    generationBusy.current = true;
+    const controller = new AbortController(); generationController.current = controller;
+    setIsGeneratingFor('all'); setGenerationMessage('A IA está gerando os cards.');
+    let generated = 0, failed = 0;
     for (const error of errorsWithoutCards) {
-      try {
-        const response = await authenticatedFetch('/api/gemini/generate-error-flashcards', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ error, count: 2 }),
-        });
-        const data = await response.json();
-        if (!response.ok || !Array.isArray(data.flashcards)) continue;
-
-        const now = new Date().toISOString();
-        const newCards: ErrorFlashcard[] = data.flashcards
-          .filter((card: unknown) => {
-            if (!card || typeof card !== 'object') return false;
-            const candidate = card as { front?: unknown; back?: unknown };
-            return typeof candidate.front === 'string' && typeof candidate.back === 'string';
-          })
-          .map((card: { front: string; back: string; hint?: string; explanation?: string; sourceRefs?: unknown }, index: number) => {
-            const newCard: ErrorFlashcard = {
-              id: `flash_${error.id}_${Date.now()}_${index}`,
-              errorId: error.id,
-              source: 'caderno',
-              moduleId: error.moduleRef,
-              topic: error.conteudo,
-              conceptId: error.conceptId,
-              conceptIds: error.conceptIds,
-              learningObjectiveId: error.learningObjectiveId || error.competencyId,
-              front: toLearnerFacingContent(card.front),
-              back: toLearnerFacingContent(card.back),
-              createdAt: now,
-              correctCount: 0,
-              incorrectCount: 0,
-            };
-            const hint = toLearnerFacingContent(card.hint);
-            if (hint) newCard.hint = hint;
-            const explanation = toLearnerFacingContent(card.explanation);
-            if (explanation) newCard.explanation = explanation;
-            if (Array.isArray(card.sourceRefs)) {
-              const refs = card.sourceRefs.filter((reference): reference is string => typeof reference === 'string');
-              if (refs.length) newCard.sourceRefs = refs;
-            }
-            return newCard;
-          });
-
-        if (newCards.length) {
-          nextCards = [...nextCards.filter((card) => card.errorId !== error.id), ...newCards];
-          generated += newCards.length;
-        }
-      } catch (error) {
-        console.error(`Não foi possível gerar cards para ${error.id}:`, error);
-      }
+      if (controller.signal.aborted) break;
+      // Recheck after hydration and after every response; never replace an existing deck.
+      if (readStoredFlashcards(resolvedUserId).some(c => c.errorId === error.id && !c.archived)) continue;
+      try { generated += (await requestCards(error, controller.signal)).added.length; }
+      catch { failed++; }
     }
-
-    if (generated) {
-      setFlashcards(nextCards);
-      await persistFlashcards(nextCards);
-      setMode('caderno');
+    if (!controller.signal.aborted) {
+      setGenerationMessage(`${generated} card(s) salvo(s). ${failed} regra(s) não puderam ser geradas; tente novamente nas pendentes.`);
+      switchMode('caderno');
     }
-    setIsGeneratingFor(null);
-    setGenerationMessage(
-      generated
-        ? `${generated} flashcards foram gerados para sua revisão ativa.`
-        : 'Não foi possível gerar cards para os erros pendentes agora.'
-    );
+    if (generationController.current === controller) { generationBusy.current = false; setIsGeneratingFor(null); }
   };
 
   const handleReview = (rating: FlashcardRating) => {
-    if (!activeCard || reviewResult) return;
+    if (!activeCard || reviewResult || view !== 'review' || isHandsFree) return;
     const now = new Date();
     if (!isCardDue(activeCard, now.getTime())) return;
 
@@ -657,18 +472,21 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
       activeCard.source === 'caderno' && activeCard.errorId
         ? errors.find((error) => error.id === activeCard.errorId)
         : undefined;
-    const scheduledCard = scheduleFlashcard(activeCard, rating, isHintVisible, now);
+    let nextCards: ReturnType<typeof readStoredFlashcards>;
+    try {
+      nextCards = recordCardReview(resolvedUserId, activeCard.id, rating, isHintVisible,
+        revealRef.current?.cardId === activeCard.id ? revealRef.current.eventId : undefined);
+    } catch (error) { store.reportError(error); store.refresh(); return; }
+    store.refresh(); void store.retry();
+    const scheduledCard = nextCards.find(card => card.id === activeCard.id)!;
     const isCorrect = scheduledCard.lastRating !== 'again';
-    const nextCards = flashcards.map((card) => card.id === activeCard.id ? scheduledCard : card);
-    setFlashcards(nextCards);
-    void persistFlashcards(nextCards);
     setReviewResult(isCorrect ? 'correct' : 'incorrect');
     setSessionReviewedCount((prev) => prev + 1);
     if (isCorrect) onCorrectAnswer?.();
     setReviewClock(now.getTime());
 
     if (relatedError) {
-      const relatedCards = nextCards.filter((card) => card.errorId === relatedError.id);
+      const relatedCards = nextCards.filter((card) => card.errorId === relatedError.id && !card.archived);
       const nextStatus = deriveErrorReviewStatus(relatedCards);
       const nextRuleReview = relatedCards
         .map((card) => card.nextReviewAt)
@@ -696,6 +514,11 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
 
   return (
     <div className="tool-content-shell space-y-6">
+      <div role="status" className="rounded-xl border border-slate-200 bg-white p-3 text-sm text-slate-700">
+        {store.status === 'loading' ? 'Carregando e conferindo os cards salvos…' : store.status === 'synced' ? 'Cards salvos neste dispositivo e sincronizados.' : store.status === 'local' ? 'Cards salvos neste dispositivo.' : store.status === 'pending' ? 'Alterações locais aguardam sincronização.' : 'Não foi possível concluir o salvamento ou a sincronização. Confira novamente antes de gerar cards que pareçam ausentes.'}
+        {store.message && <p>{store.message}</p>}
+        <button type="button" className="ml-2 min-h-11 text-teal-800 underline" onClick={() => void store.retry()}>Conferir e sincronizar novamente</button>
+      </div>
       <section className="tool-page-header bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-start gap-3">
@@ -719,7 +542,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                   setIsHandsFree(false);
                   stopAudio();
                 } else {
-                  setIsHandsFree(true);
+                  setView('study'); setReviewResult(null); setIsHandsFree(true);
                 }
               }}
               className={`min-h-[44px] text-xs font-bold px-3.5 py-2 rounded-xl border flex items-center gap-2 transition ${
@@ -738,7 +561,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               <button
                 type="button"
                 onClick={generateAllPendingCards}
-                disabled={isGeneratingFor !== null}
+                disabled={isGeneratingFor !== null || store.status === 'loading'}
                 className="button-primary min-h-[44px] text-xs px-4 py-2.5 shrink-0"
               >
                 {isGeneratingFor === 'all' ? (
@@ -764,23 +587,24 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
         )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {errors.slice(0, 6).map((error) => {
+          {errors.map((error) => {
             const hasCards = cadernoCards.some((card) => card.errorId === error.id);
             const generating = isGeneratingFor === error.id || isGeneratingFor === 'all';
             return (
               <div key={error.id} className="border border-slate-200 rounded-xl p-3 flex items-center justify-between gap-3 bg-slate-50">
                 <div className="min-w-0">
                   <p className="text-xs font-bold text-slate-800 truncate">{error.conteudo}</p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">{hasCards ? 'Cards prontos para revisão' : 'Sem cards gerados'}</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">{hasCards ? 'Cards salvos na biblioteca' : store.status === 'loading' || store.status === 'error' ? 'Conferência dos cards pendente' : 'Sem cards ativos'}</p>
                 </div>
                 <button
                   type="button"
                   onClick={() => void generateFlashcardsForError(error)}
-                  disabled={isGeneratingFor !== null}
+                  disabled={isGeneratingFor !== null || store.status === 'loading'}
                   className="min-h-[44px] text-xs font-bold text-violet-800 bg-white border border-violet-200 hover:bg-violet-50 rounded-lg px-2.5 py-2 shrink-0 transition disabled:opacity-60"
                 >
-                  {generating ? 'Gerando...' : hasCards ? 'Gerar de novo' : 'Gerar IA'}
+                  {generating ? 'Gerando...' : hasCards ? 'Gerar mais' : 'Gerar IA'}
                 </button>
+                {hasCards && <button type="button" className="min-h-11 text-xs text-slate-700 underline" disabled={isGeneratingFor !== null} onClick={() => void generateFlashcardsForError(error, true)}>Substituir</button>}
               </div>
             );
           })}
@@ -806,11 +630,18 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             mode === 'suveca' ? 'bg-white text-slate-900 shadow-2xs' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          {editorialModuleId ? 'Base desta aula' : 'Base editorial'} ({dueSuvecaCards.length}/{suvecaCards.length})
+          {editorialUnitId && !wholeLesson ? 'Base desta unidade' : editorialModuleId ? 'Base desta aula' : 'Base editorial'} ({dueSuvecaCards.length}/{suvecaCards.length})
         </button>
       </div>
 
-      {!activeCard ? (
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Modo de estudo">
+        {(['review', 'library', 'study'] as const).map(option => <button key={option} type="button" aria-pressed={view === option} className={view === option ? 'button-primary min-h-11 px-4' : 'button-secondary min-h-11 px-4'} onClick={() => {
+          stopAudio(); setIsHandsFree(false); setView(option); setReviewResult(null); setIsAnswerVisible(false); setIsHintVisible(false); setActiveCardId(null);
+        }}>{option === 'review' ? 'Revisar devidos' : option === 'library' ? 'Biblioteca e histórico' : 'Estudo livre'}</button>)}
+      </div>
+      <p className="text-xs text-slate-600">Os contadores mostram cards devidos / cards ativos. Cards agendados e arquivados continuam na biblioteca.</p>
+      {editorialUnitId && <label className="flex min-h-11 items-center gap-2 text-sm text-slate-700"><input type="checkbox" checked={wholeLesson} onChange={(event) => { setWholeLesson(event.target.checked); switchMode('suveca'); }} /> Incluir todas as unidades desta aula</label>}
+      {view === 'library' ? <FlashcardLibrary cards={visibleFlashcards.filter(c => mode === 'caderno' ? c.source === 'caderno' : c.source === 'suveca' && (!editorialModuleId || c.moduleId === editorialModuleId) && (!editorialUnitId || wholeLesson || c.sourceRefs?.includes(`EDITORIAL:${editorialUnitId}`) || c.id.includes(`-${editorialUnitId.toLowerCase()}-`)))} errors={errors} uid={resolvedUserId} onChange={() => { store.refresh(); void store.retry(); }} onError={store.reportError} onStudy={(id) => { setView('study'); setActiveCardId(id); setReviewResult(null); setIsAnswerVisible(false); }} /> : !activeCard ? (
         <div className="bg-white rounded-2xl border border-slate-200 p-10 text-center space-y-3 shadow-xs">
           <BookOpen className="w-10 h-10 text-slate-400 mx-auto" />
           <h2 className="text-sm font-bold text-slate-800">
@@ -823,8 +654,10 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               : 'Ainda não há cards para esta revisão'}
           </h2>
           <p className="text-xs text-slate-500 max-w-md mx-auto">
-            {mode === 'caderno' && cadernoCards.length
-              ? 'O intervalo de repetição espaçada está ativo. Volte no horário programado ou revise a base editorial.'
+            {sessionReviewedCount > 0
+              ? `Revisão concluída: ${sessionReviewedCount} avaliação(ões) nesta sessão. Os cartões voltarão conforme o intervalo de revisão; isso não significa domínio de todo o conteúdo.`
+              : (mode === 'caderno' ? cadernoCards.length : suvecaCards.length)
+              ? 'Nenhum cartão está devido agora. Volte no horário programado ou escolha outra unidade.'
               : 'Gere cards com IA para algum erro acima ou pratique a base editorial na aba ao lado enquanto registra novos erros.'}
           </p>
         </div>
@@ -833,7 +666,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
             <div className="flex items-center gap-2 flex-wrap">
               <StudyBadge tone="concept">
-                {activeCard.topic}
+                {getCardTopicLabel(activeCard)}
               </StudyBadge>
               <span className="text-xs font-semibold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded-full">
                 {sessionReviewedCount} concluído(s) nesta sessão · {activeCards.length} pendente(s)
@@ -924,12 +757,12 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
               >
                 {toLearnerFacingContent(activeCard.front)}
               </p>
-              {activeCard.hint && !isAnswerVisible && (
+              {usefulHint && !isAnswerVisible && (
                 <div className="mt-4">
                   {!isHintVisible ? (
                     <button
                       type="button"
-                      onClick={() => setIsHintVisible(true)}
+                      onClick={() => { if (mutate(() => { appendCardEvent(resolvedUserId, { kind: 'exposure', cardId: activeCard.id }); })) setIsHintVisible(true); }}
                       aria-expanded="false"
                       className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-teal-200 bg-white px-3.5 py-2 text-xs font-bold text-teal-800 transition hover:bg-teal-50"
                     >
@@ -949,7 +782,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
             {!isAnswerVisible ? (
               <button
                 type="button"
-                onClick={() => setIsAnswerVisible(true)}
+                onClick={revealAnswer}
                 className="button-primary min-h-[48px] w-full py-3 text-sm shadow-sm"
               >
                 Mostrar resposta
@@ -986,7 +819,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                   );
                 })()}
 
-                {reviewResult ? (
+                {view === 'study' || isHandsFree ? <p className="text-sm text-slate-600">Estudo livre: sem XP e sem alterar o agendamento.</p> : reviewResult ? (
                   <div
                     className={`rounded-xl p-3 border text-xs font-semibold flex items-center justify-between gap-3 ${
                       reviewResult === 'correct'
@@ -1008,7 +841,7 @@ export const FlashcardPractice: React.FC<FlashcardPracticeProps> = ({
                       onClick={chooseNextCard}
                       className="button-secondary min-h-[44px] text-xs px-3 py-2 whitespace-nowrap"
                     >
-                      Próximo <ChevronRight className="w-3.5 h-3.5 text-teal-700" />
+                      {activeCards.length ? 'Próximo' : 'Concluir revisão'} <ChevronRight className="w-3.5 h-3.5 text-teal-700" />
                     </button>
                   </div>
                 ) : (

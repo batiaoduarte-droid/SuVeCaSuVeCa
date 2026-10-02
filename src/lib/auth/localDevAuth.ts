@@ -143,7 +143,11 @@ function saveLocalAccounts(accounts: LocalAccount[]): void {
 
 export function findLocalAccount(username: string): LocalAccount | undefined {
   const clean = username.trim().toLowerCase();
-  return getLocalAccounts().find((acc) => acc.username.toLowerCase() === clean);
+  const accounts = getLocalAccounts();
+  // Prefer the original login if older accounts share a derived e-mail.
+  return accounts.find((acc) => acc.username.toLowerCase() === clean)
+    || accounts.find((acc) => !acc.username.includes('@')
+      && `${acc.username}@suveca.local`.toLowerCase() === clean);
 }
 
 export async function createLocalAccount(
@@ -167,7 +171,9 @@ export async function createLocalAccount(
     return { success: false, error: 'Este nome de usuário é reservado para a conta de testes.' };
   }
 
-  const existing = findLocalAccount(cleanUser);
+  const existing = findLocalAccount(cleanUser) || findLocalAccount(
+    cleanUser.includes('@') ? cleanUser : `${cleanUser}@suveca.local`
+  );
   if (existing) {
     return { success: false, error: 'Já existe uma conta com este nome de usuário.' };
   }

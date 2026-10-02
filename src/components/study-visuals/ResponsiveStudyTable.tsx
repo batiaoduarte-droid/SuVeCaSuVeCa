@@ -109,7 +109,10 @@ export const ResponsiveStudyTable: React.FC<ResponsiveStudyTableProps> = ({
 
       {/* Desktop / Tablet Table View */}
       <div
-        className={`overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-2xs ${
+        tabIndex={0}
+        role="region"
+        aria-label={table.caption || 'Tabela de dados'}
+        className={`overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-2xs focus:outline-hidden focus:ring-2 focus:ring-teal-500 ${
           mobileView === 'cards' && defaultMode === 'auto' ? 'hidden sm:block' : 'block'
         }`}
       >

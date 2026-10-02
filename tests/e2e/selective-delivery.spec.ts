@@ -15,6 +15,7 @@ test('a explicação não baixa questões e a navegação conserva a tentativa',
   await expect(section.locator('.question-block:visible')).toHaveCount(5);
   const options = first.locator('section[aria-label^="Alternativas de"] button');
   if (await options.count()) await options.first().click();
+  await first.getByRole('button', { name: /^Seguro/ }).click();
   await first.getByRole('button', { name: /confirmar tentativa/i }).click();
   await expect(first.getByText(/gabarito oficial/i)).toBeVisible();
   const pages = () => [...new Set(requests.filter(url => url.includes('/question-pages/')))];
@@ -28,6 +29,32 @@ test('a explicação não baixa questões e a navegação conserva a tentativa',
   await section.locator(':scope > summary').click();
   await expect(section.locator('.question-block:visible').first().getByText(/gabarito oficial/i)).toBeVisible();
   expect(pages()).toHaveLength(1);
+});
+
+test('tentativa da apostila sobrevive ao recarregamento', async ({ page }) => {
+  await openApp(page, '/?unit=IP-A13-G01&section=official-questions');
+  const section = page.locator('#IP-A13-G01-official-questions');
+  if (!(await section.getAttribute('open') !== null)) await section.locator(':scope > summary').click();
+  const first = section.locator('.question-block:visible').first();
+  await expect(first).toBeVisible();
+  await first.locator('section[aria-label^="Alternativas de"] button').first().click();
+  await first.getByRole('button', { name: /^Seguro/ }).click();
+  await first.getByRole('button', { name: /confirmar tentativa/i }).click();
+  await expect(first.getByText(/gabarito oficial/i)).toBeVisible();
+  await page.reload();
+  await expect(section).toBeVisible();
+  if (!(await section.getAttribute('open') !== null)) await section.locator(':scope > summary').click();
+  await expect(first.getByText(/gabarito oficial/i)).toBeVisible();
+});
+
+test('preferência PBL define entrada e conserva links da apostila', async ({ page }) => {
+  await openApp(page, '/');
+  await page.evaluate(() => localStorage.setItem('suveca_study_prefs_guest', JSON.stringify({ studyMode: 'pbl_only' })));
+  await page.goto('/');
+  await expect(page.getByRole('heading', { name: /aprenda português resolvendo problemas reais/i }).first()).toBeVisible();
+  await page.goto('/?unit=IP-A00-G05&section=mnemonics');
+  await expect(page.locator('.pedagogical-unit-view')).toBeVisible();
+  await expectNoDocumentOverflow(page);
 });
 
 test('o painel PBL não baixa conteúdos de sessão antecipadamente', async ({ page }) => {

@@ -34,6 +34,8 @@ import { PBLInterventionView } from './PBLInterventionView';
 import { PBLTutorChatView } from './PBLTutorChatView';
 import { PBLAdaptiveInterventionView } from './PBLAdaptiveInterventionView';
 import { PBLTransferView } from './PBLTransferView';
+import { QuestionCommentaryRenderer, parseCommentaryLayers } from '../ui/QuestionCommentaryRenderer';
+import { InlineRichText } from '../pedagogical/blocks/InlineRichText';
 import { PBLSessionSummary } from './PBLSessionSummary';
 import { SelfExplanationModal } from '../pedagogical/SelfExplanationModal';
 import { ArrowLeft, BookOpenCheck, CheckCircle2, Eye, Lightbulb, PauseCircle, Timer, Trash2, Bot } from 'lucide-react';
@@ -107,6 +109,8 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const [currentCase, setCurrentCase] = useState<PBLCase | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<PBLQuestionPresentation | null>(null);
   const [currentRule, setCurrentRule] = useState<PBLRulePresentation | null>(null);
+  const [answeredQuestion, setAnsweredQuestion] = useState<PBLQuestionPresentation | null>(null);
+  const [reviewExpanded, setReviewExpanded] = useState(false);
   const [competencyTitles, setCompetencyTitles] = useState<Record<string, string>>({});
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [confidence, setConfidence] = useState<PBLConfidenceLevel | null>(null);
@@ -116,7 +120,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const [revealedSuggestedRule, setRevealedSuggestedRule] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [transferHintsUsed, setTransferHintsUsed] = useState<Record<string, boolean>>({});
+  const [transferHintsUsed, setTransferHintsUsed] = useState<Record<string, boolean>>(initialSession.transferHintsUsed || {});
   const [showExitConfirmation, setShowExitConfirmation] = useState(false);
   const [showDefenseModal, setShowDefenseModal] = useState(false);
   const [clockNow, setClockNow] = useState(Date.now());
@@ -126,6 +130,15 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const tutorEpisode = session.currentTutorEpisodeId ? session.tutorEpisodes?.[session.currentTutorEpisodeId] : undefined;
   const tutorAttempt = getEpisodeAttempt(session, tutorEpisode);
   const displayedQuestionRef = session.phase === 'tutor' && tutorEpisode ? tutorEpisode.questionRef : session.currentQuestionRef;
+  const latestAttempt = session.attempts.at(-1);
+  useEffect(() => {
+    let active = true;
+    setAnsweredQuestion(null);
+    setReviewExpanded(false);
+    if (latestAttempt) void pblEngine.repo.getQuestionPresentation(latestAttempt.questionRef)
+      .then(question => { if (active) setAnsweredQuestion(question); }).catch(() => {});
+    return () => { active = false; };
+  }, [latestAttempt?.attemptId]);
 
 
   useEffect(() => {
@@ -225,7 +238,11 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     let active = true;
     void (async () => {
       const entries = await Promise.all(
-        session.targetCompetencyRefs.map(async (id) => [id, (await pblEngine.repo.getCompetency(id))?.title || 'Competência em estudo'] as const)
+        session.targetCompetencyRefs.map(async (id) => {
+          const comp = await pblEngine.repo.getCompetency(id);
+          const title = comp?.cleanedTitle || comp?.title?.replace(/^Competência:\s*/i, '').replace(/\s*—.*$/, '').trim() || 'Competência em estudo';
+          return [id, title] as const;
+        })
       );
       if (active) setCompetencyTitles(Object.fromEntries(entries));
     })();
@@ -579,16 +596,18 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
     await commitSession(nextSession);
   };
 
+  const targetTitle = (competencyTitles[session.currentCompetencyRef] || 'esta competência')
+    .replace(/^Competência:\s*/i, '')
+    .replace(/\s*—.*$/, '')
+    .trim();
   const suggestedReflectionRule = [
+    answeredQuestion?.commentary ? parseCommentaryLayers(answeredQuestion.commentary).layer2 : undefined,
+    answeredQuestion?.commentary,
     session.lastInterventionPayload?.ruleStatement,
-    currentRule?.statement,
-    session.lastDiagnosticResult?.intervention.microLesson,
-    ...(currentCase?.solutionStrategy.formulasOrRulesApplied || []),
-    currentCase?.cognitiveDiagnostic.correctiveGuidance,
-    ...(currentCase?.solutionStrategy.stepByStepAlgorithm || []),
+    currentCase?.anchorQuestionRef === latestAttempt?.questionRef ? currentRule?.statement : undefined,
   ].map(learnerFacingRule).find(Boolean)
-    || `Antes de responder, identifique o critério decisivo de ${competencyTitles[session.currentCompetencyRef] || 'esta competência'} e aplique-o ao enunciado.`;
-  const suggestedReflectionRuleTitle = learnerFacingRule(session.lastInterventionPayload?.ruleTitle)
+    || `Antes de responder, identifique o critério decisivo de ${targetTitle} e aplique-o ao enunciado.`;
+  const suggestedReflectionRuleTitle = (answeredQuestion?.commentary ? 'Critério da questão respondida' : '') || learnerFacingRule(session.lastInterventionPayload?.ruleTitle)
     || currentRule?.title
     || 'Orientação prática';
   const reflectionWordCount = reflection.trim().split(/\s+/).filter(Boolean).length;
@@ -663,7 +682,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
   const budgetMinutes = Math.round((session.sessionBudgetMs || 12 * 60_000) / 60_000);
 
   return (
-    <div className="w-full space-y-6">
+    <div className="tool-content-shell space-y-6 pb-12">
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
         <button type="button" onClick={() => setShowExitConfirmation(true)} className="inline-flex min-h-11 items-center gap-1 text-xs font-bold text-slate-600 hover:text-slate-900">
           <ArrowLeft className="h-4 w-4" /> Sair da sessão
@@ -676,6 +695,13 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
       </div>
 
       {errorMessage && <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs font-semibold text-rose-900">{errorMessage}</div>}
+      {latestAttempt && answeredQuestion?.questionRef === latestAttempt.questionRef && <details open={reviewExpanded} onToggle={event => setReviewExpanded(event.currentTarget.open)} className="rounded-xl border border-slate-200 bg-white p-4">
+        <summary className="min-h-11 cursor-pointer font-semibold text-slate-800">Rever resolução da última tentativa — {latestAttempt.isCorrect ? 'acerto' : 'revisão necessária'}</summary>
+        {reviewExpanded && <><p className="my-3 text-sm">{answeredQuestion.prompt}</p>
+        <p className="my-3 text-sm">Sua resposta: {latestAttempt.userAnswer}. Gabarito: {answeredQuestion.correctAnswer}.</p>
+        {answeredQuestion.commentary ? <QuestionCommentaryRenderer commentary={answeredQuestion.commentary} correctAnswerLabel={answeredQuestion.correctAnswer} /> : <p>Esta questão ainda não tem comentário publicado.</p>}
+        </>}
+      </details>}
 
       {showExitConfirmation && (
         <div role="dialog" aria-modal="true" aria-labelledby="pbl-exit-title" className="rounded-2xl border border-amber-200 bg-amber-50 p-5 shadow-sm">
@@ -787,6 +813,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
       {['hypothesis', 'reattempt', 'transfer'].includes(session.phase) && currentQuestion && (
         <div>
           <PBLTransferView
+            actualAnchorQuestionRef={session.attempts.find(attempt => attempt.competencyRef === session.currentCompetencyRef && attempt.stage === 'initial')?.questionRef}
             transferItem={session.currentTransferItem}
             question={currentQuestion}
             kind={session.phase === 'hypothesis' ? 'probe' : session.phase === 'reattempt' ? 'reattempt' : 'transfer'}
@@ -797,7 +824,12 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
             feedbackMessage={session.phase === 'transfer' ? session.lastFeedbackMessage : undefined}
             onRevealHint={() => {
               if (currentQuestion) {
-                setTransferHintsUsed((prev) => ({ ...prev, [currentQuestion.questionRef]: true }));
+                const hints = { ...transferHintsUsed, [currentQuestion.questionRef]: true };
+                setTransferHintsUsed(hints);
+                const next = { ...sessionRef.current, transferHintsUsed: hints };
+                sessionRef.current = next;
+                setSession(next);
+                PBLSessionRepository.saveSessionLocally(next);
               }
             }}
           />
@@ -896,7 +928,7 @@ export const PBLSessionView: React.FC<PBLSessionViewProps> = ({
             <div className="mt-4 rounded-xl border border-indigo-100 bg-indigo-50 p-4" aria-live="polite">
               <p className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-indigo-700"><Lightbulb className="h-3.5 w-3.5" /> Orientação para comparação</p>
               <p className="mt-2 text-xs font-bold text-indigo-950">{suggestedReflectionRuleTitle}</p>
-              <p className="mt-1 text-xs leading-relaxed text-indigo-950">{suggestedReflectionRule}</p>
+              <div className="mt-1 text-xs leading-relaxed text-indigo-950"><InlineRichText>{suggestedReflectionRule}</InlineRichText></div>
             </div>
           )}
 

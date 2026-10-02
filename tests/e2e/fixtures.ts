@@ -18,8 +18,8 @@ export const test = base.extend({
 
       Object.setPrototypeOf(FixedDate, NativeDate);
       window.Date = FixedDate as DateConstructor;
-      window.localStorage.clear();
-      window.sessionStorage.clear();
+      // Each test receives an isolated browser context. Reloads within that
+      // context must preserve storage so persistence can actually be tested.
     }, { now: FIXED_NOW });
 
     await use(page);
@@ -68,7 +68,7 @@ export async function openTab(page: Page, name: string) {
   if (/cron.metro foco/i.test(name)) {
     await expect(page.getByRole('heading', { name: /cron.metro de foco/i })).toBeVisible();
   } else {
-    await expect(page.locator('main .tab-content-enter')).toBeVisible();
+    await expect(page.locator('main .tab-content-enter').first()).toBeVisible();
   }
   await page.waitForTimeout(350);
 }

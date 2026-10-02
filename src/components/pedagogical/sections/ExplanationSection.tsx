@@ -5,19 +5,20 @@ import { SemanticBlockRenderer } from '../blocks/SemanticBlockRenderer';
 import { InlineRichText } from '../blocks/InlineRichText';
 
 interface ExplanationSectionProps {
+  embedded?: boolean;
   groups?: ExplanationGroup[];
   blocks?: SemanticBlock[];
 }
 
-export const ExplanationSection: React.FC<ExplanationSectionProps> = ({ groups = [], blocks = [] }) => {
+export const ExplanationSection: React.FC<ExplanationSectionProps> = ({ groups = [], blocks = [], embedded = false }) => {
   const hasGroups = groups && groups.length > 0;
   const hasBlocks = blocks && blocks.length > 0;
 
   if (!hasGroups && !hasBlocks) return null;
 
   return (
-    <div className="explanation-frame space-y-5 surface p-3 sm:p-5 select-text">
-      <div className="flex items-center gap-3 border-b border-slate-100 pb-3 mb-2">
+    <div className={`explanation-frame space-y-5 select-text ${embedded ? '' : 'surface p-3 sm:p-5'}`}>
+      {!embedded && <div className="flex items-center gap-3 border-b border-slate-100 pb-3 mb-2">
         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-800 shadow-2xs select-none">
           <BookOpen className="h-5 w-5" />
         </span>
@@ -29,7 +30,7 @@ export const ExplanationSection: React.FC<ExplanationSectionProps> = ({ groups =
             Fundamentação teórica, mecanismos sintáticos e análise conceitual
           </p>
         </div>
-      </div>
+      </div>}
 
       {/* Renderiza Grupos Semânticos Hierárquicos v4.2 */}
       {hasGroups ? (
@@ -61,6 +62,10 @@ export const ExplanationSection: React.FC<ExplanationSectionProps> = ({ groups =
                 {(grp.blocks || []).map((block, bIdx) => (
                   <SemanticBlockRenderer key={bIdx} block={block} allowLegacyDiagramInference={false} />
                 ))}
+                {!!grp.supportingBlocks?.length && <details className="border-t border-slate-200 pt-3">
+                  <summary className="min-h-11 cursor-pointer text-sm font-semibold text-teal-900">Consultar explicação textual e exemplos complementares</summary>
+                  <div className="space-y-3">{grp.supportingBlocks.map((block, index) => <SemanticBlockRenderer key={index} block={block} allowLegacyDiagramInference={false} />)}</div>
+                </details>}
               </div>
             </div>
           ))}

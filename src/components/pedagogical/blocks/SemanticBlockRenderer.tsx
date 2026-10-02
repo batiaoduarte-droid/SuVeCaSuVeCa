@@ -167,7 +167,7 @@ export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock
             {normalizedRows.map((row, rIdx) => (
               <tr key={rIdx} className={rIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
                 {cleanColumns.map((col, cIdx) => (
-                  <td key={cIdx} className="px-3.5 py-2.5 text-slate-700 leading-relaxed font-medium align-top">
+                  <td key={cIdx} className="whitespace-pre-line px-3.5 py-2.5 text-slate-700 leading-relaxed font-medium align-top">
                     {row[col] ? <InlineRichText>{row[col]}</InlineRichText> : <span className="text-slate-300 font-mono text-xs select-none">—</span>}
                   </td>
                 ))}
@@ -192,7 +192,7 @@ export const ResponsiveComparisonMatrix: React.FC<{ block: ComparisonMatrixBlock
                   <span className="font-bold text-slate-900 block text-[11px] uppercase tracking-wider">
                     <InlineRichText>{col.trim() || `Coluna ${cIdx + 1}`}</InlineRichText>:
                   </span>
-                  <span className="text-slate-700 font-medium pl-1">
+                  <span className="whitespace-pre-line text-slate-700 font-medium pl-1">
                     <InlineRichText>{val}</InlineRichText>
                   </span>
                 </div>

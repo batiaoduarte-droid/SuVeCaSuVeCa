@@ -1,9 +1,12 @@
 import { getEpisodeAttempt, validateQuickCheck } from './pblTutorPedagogy';
 import { resolveLocalDevUserId } from '../../auth/localDevAuth.server';
 import type { Request, Response } from 'express';
-import { GoogleGenAI, Type } from '@google/genai';
+import { Type } from '@google/genai';
 import { pblTutorContextResolver } from './PBLTutorContextResolver.server';
 import { geminiKeyManager } from '../../ai/geminiKeyManager.server';
+import { generateProfessorResponse } from '../../ai/professorGeneration.server';
+import { createAiDeadline } from '../../ai/aiRequest';
+import { isProfessorModel, professorTimeoutMs, PROFESSOR_MAX_ATTEMPTS } from '../../geminiTaskMapping';
 import { aiAuditLogger } from '../../audit/aiAuditLogger.server';
 import {
   PBL_TUTOR_SYSTEM_INSTRUCTION,
@@ -23,6 +26,7 @@ import {
   type PBLAnswerMode,
 } from '../answerAdapter';
 import { AttemptEvaluator } from '../engine/AttemptEvaluator';
+import { formatOfficialContent } from '../../officialContent';
 
 const tutorResponseSchema = {
   type: Type.OBJECT,
@@ -92,24 +96,6 @@ const tutorResponseSchema = {
   required: ['pedagogicalText', 'intent', 'continuityRecommendation', 'sourceRefs'],
 };
 
-function getGenAIClient(): GoogleGenAI {
-  return geminiKeyManager.getGenAIClient(null, 'suveca-pbl-tutor');
-}
-
-const withAiTimeout = async <T,>(operation: Promise<T>, timeoutMs = 30_000): Promise<T> => {
-  let timer: NodeJS.Timeout | undefined;
-  try {
-    return await Promise.race([
-      operation,
-      new Promise<T>((_, reject) => {
-        timer = setTimeout(() => reject(new Error('AI_TIMEOUT')), timeoutMs);
-      }),
-    ]);
-  } finally {
-    if (timer) clearTimeout(timer);
-  }
-};
-
 function generateDeterministicFallback(
   request: PBLTutorTurnRequest,
   context: PBLTutorQuestionContext,
@@ -122,7 +108,7 @@ function generateDeterministicFallback(
 
   const rules = context.criteria?.rules || context.pedagogy?.rules || [];
   const primaryRule = rules[0];
-  const publishedCommentary = context.officialCommentary || context.presentation?.commentary;
+  const publishedCommentary = formatOfficialContent(context.officialCommentary || context.presentation?.commentary);
   const ruleStatement = primaryRule
     ? `**${primaryRule.title}**: ${primaryRule.statement}`
     : 'Consulte a regra gramatical decisiva antes de tentar novamente.';
@@ -274,10 +260,26 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
 
   const tutorEnabled = process.env.PBL_TUTOR_ENABLED !== 'false' && Boolean(process.env.GEMINI_API_KEY)
     && Boolean(res.locals.userId && res.locals.userId !== 'guest');
-  const targetModel = process.env.PBL_TUTOR_MODEL || 'gemini-3.1-flash-lite';
+  if (request.model !== undefined && !isProfessorModel(request.model)) {
+    res.status(400).json({ error: 'Modelo de resposta inválido.' });
+    return;
+  }
+  const targetModel = request.model || (isProfessorModel(process.env.PBL_TUTOR_MODEL) ? process.env.PBL_TUTOR_MODEL : 'gemini-3.1-flash-lite');
   const thinkingLevel = (process.env.PBL_TUTOR_THINKING_LEVEL || 'low') as any;
 
+  const synthesisFailure = (timedOut = false) => res.status(timedOut ? 504 : 502).json({
+    code: 'NOTEBOOK_SYNTHESIS_FAILED', retryable: true,
+    error: timedOut
+      ? 'O modelo demorou mais que o esperado para gerar a ficha. Nada foi salvo. Tente novamente ou selecione outro modelo.'
+      : 'Não foi possível gerar a ficha para o Caderno. Tente novamente. Nada foi salvo.',
+  });
+  if (request.cadernoSynthesisRequested && !request.studentAttemptContext) {
+    res.status(409).json({ code: 'NOTEBOOK_ATTEMPT_REQUIRED', retryable: false,
+      error: 'Responda à questão antes de gerar a síntese para o Caderno.' });
+    return;
+  }
   if (!tutorEnabled) {
+    if (request.cadernoSynthesisRequested) { synthesisFailure(); return; }
     const fallbackResponse = generateDeterministicFallback(request, context, 'Tutor IA desativado temporariamente.');
     res.json(fallbackResponse);
     return;
@@ -293,28 +295,30 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
   const config: any = {
     systemInstruction: PBL_TUTOR_SYSTEM_INSTRUCTION,
     responseMimeType: 'application/json',
-    responseSchema: tutorResponseSchema,
+    responseSchema: request.cadernoSynthesisRequested
+      ? { ...tutorResponseSchema, required: [...tutorResponseSchema.required, 'notebookDraft'] }
+      : tutorResponseSchema,
     thinkingConfig: {
       thinkingLevel,
     },
   };
 
   let executionResult;
+  const deadline = createAiDeadline(professorTimeoutMs(targetModel));
+  const disconnect = () => { if (!res.writableEnded) deadline.controller.abort(); };
+  res.on?.('close', disconnect);
   try {
     executionResult = await geminiKeyManager.executeWithKeyRotation(
       targetModel,
-      (client) => {
-        const controller = new AbortController();
-        return withAiTimeout(
-          client.models.generateContent({
+      (client, _key, signal) => {
+        return generateProfessorResponse(client, {
             model: targetModel,
             contents: prompt,
-            config: { ...config, abortSignal: controller.signal },
-          }),
-          30_000
-        ).finally(() => controller.abort());
+            config: { ...config, abortSignal: signal },
+          });
       },
-      { userAgent: 'suveca-pbl-tutor' }
+      { userAgent: 'suveca-pbl-tutor', maxAttempts: PROFESSOR_MAX_ATTEMPTS,
+        signal: deadline.signal, attemptTimeoutMs: professorTimeoutMs(targetModel) }
     );
   } catch (error: any) {
     await aiAuditLogger.logCall({
@@ -343,8 +347,12 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
       error.message === 'AI_TIMEOUT' ? 'Tempo de resposta excedido.' : 'Instabilidade temporária na IA.'
     );
     fallbackResponse.executionMetadata.durationMs = durationMs;
+    if (request.cadernoSynthesisRequested) { synthesisFailure(error.message === 'AI_TIMEOUT'); return; }
     res.json(fallbackResponse);
     return;
+  } finally {
+    deadline.dispose();
+    res.off?.('close', disconnect);
   }
 
   try {
@@ -365,6 +373,9 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
     const notebookDraft = hasAttempted && parsed.notebookDraft &&
       ['title', 'triggerCondition', 'decisionRule', 'contrastExample'].every((key) => typeof parsed.notebookDraft[key] === 'string' && parsed.notebookDraft[key].trim())
       ? parsed.notebookDraft : undefined;
+    if (request.cadernoSynthesisRequested && !notebookDraft) {
+      throw new Error('NOTEBOOK_SYNTHESIS_FAILED');
+    }
 
     const durationMs = Date.now() - startTime;
 
@@ -422,6 +433,7 @@ export async function handlePBLTutorTurn(req: Request, res: Response): Promise<v
       'Instabilidade temporária na IA.'
     );
     fallbackResponse.executionMetadata.durationMs = durationMs;
+    if (request.cadernoSynthesisRequested) { synthesisFailure(); return; }
     res.json(fallbackResponse);
   }
 }

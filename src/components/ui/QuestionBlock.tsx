@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { readReadingAttempts, saveReadingAttempt, READING_ATTEMPT_EVENT, READING_ATTEMPTS_UPDATED, type ReadingAttempt } from '../../lib/readingAttempts';
+import { normalizeOfficialAnswer } from '../../lib/officialQuestionPresentation';
 import { AlertTriangle, BadgeCheck, Building2, CalendarDays, CircleHelp, Check, X, Eye, EyeOff, Sparkles } from 'lucide-react';
+import { ConfidenceChoice } from './ConfidenceChoice';
+import { QuestionOptions } from './QuestionOptions';
 import { QuestionCommentaryRenderer } from './QuestionCommentaryRenderer';
 
 export interface QuestionBlockModel {
@@ -18,6 +22,7 @@ export interface QuestionBlockModel {
 interface QuestionBlockProps extends QuestionBlockModel {
   renderMarkdown: (markdown: string) => React.ReactNode;
   onAskTutor?: (questionContext: string) => void;
+  attemptIdentity?: { questionId: string; lessonId: string; userId?: string };
 }
 
 export const QuestionBlock: React.FC<QuestionBlockProps> = ({
@@ -33,21 +38,69 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
   interactionUnavailableReason,
   renderMarkdown,
   onAskTutor,
+  attemptIdentity,
 }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
+  const [confirmed, setConfirmed] = useState(false);
+  const [confidence, setConfidence] = useState<ReadingAttempt['confidence'] | null>(null);
+  const [justification, setJustification] = useState('');
+  const [saveMessage, setSaveMessage] = useState('');
+  const identity = `${attemptIdentity?.userId || 'guest'}:${attemptIdentity?.questionId || ''}`;
+  const identityRef = useRef(identity);
+  identityRef.current = identity;
+  useEffect(() => {
+    setSelectedOption(null); setShowAnswer(false); setConfirmed(false); setSaveMessage('');
+    setJustification(''); setConfidence(null);
+    const restore = () => {
+      if (!attemptIdentity) return;
+      const attempt = readReadingAttempts(attemptIdentity.userId).filter(a => a.questionId === attemptIdentity.questionId).at(-1);
+      if (attempt) {
+        setSelectedOption(attempt.answer); setConfirmed(true); setShowAnswer(true);
+        setConfidence(attempt.confidence); setJustification(attempt.justification);
+      }
+    };
+    restore();
+    const update = (event: Event) => {
+      if ((event as CustomEvent).detail?.userId === (attemptIdentity?.userId || 'guest')) restore();
+    };
+    window.addEventListener(READING_ATTEMPTS_UPDATED, update);
+    return () => window.removeEventListener(READING_ATTEMPTS_UPDATED, update);
+  }, [attemptIdentity?.questionId, attemptIdentity?.userId]);
 
   // Normaliza a letra do gabarito (ex: 'A', 'B', 'C', 'Certo', 'Errado')
   const cleanAnswer = (answer || '').trim();
-  const answerLetter = cleanAnswer.replace(/^.*(?:letra|alternativa|item)\s*([A-Ea-e]|certo|errado).*$/i, '$1').toUpperCase();
 
   const handleSelectOption = (letter: string) => {
-    if (showAnswer) return;
+    if (confirmed) return;
     setSelectedOption(letter);
   };
 
   const hasSelectableAnswer = options.length > 0;
-  const canRevealAnswer = hasSelectableAnswer && selectedOption !== null;
+  const canRevealAnswer = hasSelectableAnswer && selectedOption !== null && (!attemptIdentity || confidence !== null);
+  const reveal = () => {
+    if (confirmed) { setShowAnswer(value => !value); return; }
+    if (!selectedOption || (attemptIdentity && !confidence)) return;
+    if (attemptIdentity) {
+      const attempt: ReadingAttempt = {
+        id: crypto.randomUUID(), questionId: attemptIdentity.questionId, lessonId: attemptIdentity.lessonId,
+        answer: selectedOption, correct: normalizeOfficialAnswer(selectedOption) === normalizeOfficialAnswer(answer),
+        assistanceLevel: readReadingAttempts(attemptIdentity.userId).some(previous => previous.questionId === attemptIdentity.questionId) ? 'full' : 'none',
+        confidence: confidence!, confidenceSource: 'explicit', justification, createdAt: new Date().toISOString(),
+      };
+      void saveReadingAttempt(attemptIdentity.userId, attempt, () => {
+        if (identityRef.current !== identity) return;
+        setConfirmed(true); setShowAnswer(true);
+        setSaveMessage('Tentativa salva neste dispositivo.');
+        window.dispatchEvent(new CustomEvent(READING_ATTEMPT_EVENT, { detail: {
+          userId: attemptIdentity.userId || 'guest', attempt, title, prompt, solution, answer,
+        } }));
+      }).then(synced => {
+        if (identityRef.current === identity) setSaveMessage(synced ? 'Tentativa salva.' : 'Tentativa salva neste dispositivo. Sincronização pendente.');
+      }).catch(() => { if (identityRef.current === identity) setSaveMessage('Não foi possível salvar a tentativa neste dispositivo.'); });
+    }
+    if (!attemptIdentity) { setConfirmed(true); setShowAnswer(true); }
+  };
 
   return (
     <article className="question-block my-5 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs transition">
@@ -81,7 +134,7 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
           <button
             type="button"
             disabled={!showAnswer && !canRevealAnswer}
-            onClick={() => setShowAnswer((prev) => !prev)}
+            onClick={reveal}
             className={`flex min-h-11 items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-bold transition shadow-2xs disabled:cursor-not-allowed disabled:opacity-55 ${
               showAnswer
                 ? 'border border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100'
@@ -129,57 +182,9 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
         {/* Alternativas Interativas */}
         {options.length > 0 && (
           <section aria-label={`Alternativas de ${title}`}>
-            <ol className="m-0 grid list-none gap-2.5 p-0">
-              {options.map((option, optionIndex) => {
-                const optLetter = option.letter.toUpperCase();
-                const isSelected = selectedOption === optLetter;
-                const isCorrect = showAnswer && (answerLetter === optLetter || cleanAnswer.toUpperCase().includes(`(${optLetter})`) || cleanAnswer.toUpperCase().startsWith(optLetter));
-                const isWrongSelected = showAnswer && isSelected && !isCorrect;
-
-                let borderClasses = 'border-slate-200 hover:border-teal-300 bg-white';
-                let badgeClasses = 'bg-slate-100 text-slate-800';
-
-                if (showAnswer) {
-                  if (isCorrect) {
-                    borderClasses = 'border-emerald-500 bg-emerald-50/70 ring-1 ring-emerald-400';
-                    badgeClasses = 'bg-emerald-600 text-white font-black';
-                  } else if (isWrongSelected) {
-                    borderClasses = 'border-rose-400 bg-rose-50/60 ring-1 ring-rose-300';
-                    badgeClasses = 'bg-rose-600 text-white font-black';
-                  }
-                } else if (isSelected) {
-                  borderClasses = 'border-teal-600 bg-teal-50/60 ring-1 ring-teal-500';
-                  badgeClasses = 'bg-teal-700 text-white font-black';
-                }
-
-                return (
-                  <li key={`${option.letter}-${optionIndex}`}>
-                    <button
-                      type="button"
-                      onClick={() => handleSelectOption(optLetter)}
-                      aria-pressed={isSelected}
-                      disabled={showAnswer}
-                      className={`grid w-full grid-cols-[2rem_1fr] items-start gap-3 rounded-xl border p-3 text-left text-xs sm:text-sm transition cursor-pointer shadow-2xs ${borderClasses}`}
-                    >
-                      <span
-                        className={`flex h-7 w-7 items-center justify-center rounded-lg text-xs font-bold transition ${badgeClasses}`}
-                      >
-                        {showAnswer && isCorrect ? (
-                          <Check className="h-4 w-4" />
-                        ) : showAnswer && isWrongSelected ? (
-                          <X className="h-4 w-4" />
-                        ) : (
-                          option.letter
-                        )}
-                      </span>
-                      <span className="min-w-0 pt-0.5 text-slate-800 leading-relaxed font-medium">
-                        {renderMarkdown(option.text)}
-                      </span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ol>
+            <QuestionOptions options={options.map(o => ({ id: o.letter.toUpperCase(), text: o.text }))}
+              selected={selectedOption} answer={showAnswer ? normalizeOfficialAnswer(answer) || undefined : undefined}
+              disabled={confirmed} onSelect={handleSelectOption} renderText={renderMarkdown} />
           </section>
         )}
 
@@ -193,6 +198,29 @@ export const QuestionBlock: React.FC<QuestionBlockProps> = ({
           </div>
         )}
 
+        {attemptIdentity && !confirmed && <div className="space-y-3">
+          <ConfidenceChoice value={confidence} onChange={setConfidence} />
+          <label className="block text-sm font-semibold text-slate-800">
+            Qual critério você usou? (opcional)
+            <textarea
+              rows={2}
+              className="mt-1.5 w-full rounded-xl border border-slate-300 bg-white p-3 text-sm font-normal text-slate-800 shadow-2xs transition focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+              maxLength={1000}
+              value={justification}
+              onChange={event => setJustification(event.target.value)}
+            />
+          </label>
+        </div>}
+        {saveMessage && <p role="status" className="text-sm text-slate-700">{saveMessage}</p>}
+        {confirmed && (
+          <button
+            type="button"
+            className="min-h-11 rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-800 shadow-2xs transition hover:border-teal-400 hover:bg-teal-50 cursor-pointer"
+            onClick={() => { setConfirmed(false); setShowAnswer(false); setSelectedOption(null); setJustification(''); setConfidence(null); setSaveMessage(''); }}
+          >
+            Tentar novamente
+          </button>
+        )}
         {/* Gabarito e Solução Comentada (Revelada apenas quando showAnswer é true) */}
         {showAnswer && (
           <div className="space-y-3 pt-2" aria-live="polite">

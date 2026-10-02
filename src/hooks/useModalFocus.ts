@@ -34,6 +34,8 @@ export const useModalFocus = (
     const focusInitialElement = () => {
       const dialog = dialogRef.current;
       if (!dialog) return;
+      // A user may already have focused an input before the animation frame.
+      if (dialog.contains(document.activeElement)) return;
       const focusTarget = initialFocusRef?.current || getFocusableElements(dialog)[0] || dialog;
       focusTarget.focus();
     };

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import type {
   PBLSession,
   PBLTutorEpisode,
@@ -472,7 +474,7 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
                     ) : (
                       <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 border border-amber-200 px-2 py-0.5 font-bold text-amber-800">
                         <BookOpen className="h-3 w-3 text-amber-600" />
-                        Base Canônica (Sem IA)
+                        Material publicado (sem IA)
                       </span>
                     )}
                     {turn.intent && (
@@ -488,11 +490,11 @@ export const PBLTutorChatView: React.FC<PBLTutorChatViewProps> = ({
                   </div>
                 )}
 
-                <div className="whitespace-pre-wrap">{turn.content}</div>
+                <div className="space-y-3 break-words [&_p]:my-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5"><ReactMarkdown remarkPlugins={[remarkGfm]} skipHtml>{turn.content}</ReactMarkdown></div>
 
                 {isTutor && turn.executionMetadata?.fallback && (
                   <div className="mt-2 text-[10px] text-amber-700 bg-amber-50 rounded p-1.5 border border-amber-200">
-                    Modo seguro offline: orientação baseada diretamente na regra canônica.
+                    Orientação sem IA, baseada no material publicado para esta questão.
                   </div>
                 )}
               </div>

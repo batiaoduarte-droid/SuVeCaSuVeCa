@@ -29,7 +29,7 @@ interface ParsedCommentary {
   isLayered: boolean;
 }
 
-const parseCommentaryLayers = (rawText: string): ParsedCommentary => {
+export const parseCommentaryLayers = (rawText: string): ParsedCommentary => {
   if (!rawText || typeof rawText !== 'string') {
     return { layer1: '', isLayered: false };
   }
@@ -50,8 +50,8 @@ const parseCommentaryLayers = (rawText: string): ParsedCommentary => {
   text = text.replace(/^#+\s+Coment[áa]rio\s+regenerado\s*/i, '').trim();
 
   // Check for ### Camada 1 and ### Camada 2
-  const layer1Match = text.match(/###\s+Camada\s+1\s*[—–-]\s*Resolu[çc][ãa]o\s+da\s+quest[ãa]o/i);
-  const layer2Match = text.match(/###\s+Camada\s+2\s*[—–-]\s*Expans[ãa]o\s+pedag[óo]gica/i);
+  const layer1Match = text.match(/(?:###\s+Camada\s+1\s*[—–-]\s*Resolu[çc][ãa]o\s+da\s+quest[ãa]o|^#{2,3}\s+Resolução[^\n]*)/im);
+  const layer2Match = text.match(/(?:###\s+Camada\s+2\s*[—–-]\s*Expans[ãa]o\s+pedag[óo]gica|^#{2,3}\s+Regra essencial[^\n]*)/im);
 
   if (!layer1Match && !layer2Match) {
     return {

@@ -70,6 +70,7 @@ interface PedagogicalUnitView {
     rules?: {
       items?: Array<{
         entityId?: string;
+        ruleId?: string;
         title?: string;
         statement?: string;
         conditions?: string[];
@@ -363,11 +364,8 @@ export class PBLRepository implements IPBLRepository {
     const view = await this.getUnitView(unitId);
     const rules = view?.sections?.rules?.items || [];
     const requestedRef = normalizedRuleRef(ruleRef);
-    const requestedOrdinal = Number.parseInt(/-(\d+)$/.exec(requestedRef)?.[1] || '', 10);
-    const matchedRule = rules.find((rule) => normalizedRuleRef(rule.entityId || '') === requestedRef)
-      || (Number.isFinite(requestedOrdinal) && requestedOrdinal > 0
-        ? rules[requestedOrdinal - 1]
-        : undefined);
+    const matchedRule = rules.find((rule) =>
+      [rule.entityId, rule.ruleId].some((id) => id && normalizedRuleRef(id) === requestedRef));
     const statement = formatOfficialContent(matchedRule?.statement);
     if (!matchedRule || !statement) return null;
 
@@ -394,7 +392,7 @@ export class PBLRepository implements IPBLRepository {
     }
 
     return {
-      ruleRef: matchedRule.entityId || ruleRef,
+      ruleRef: matchedRule.entityId || matchedRule.ruleId || ruleRef,
       title: formatOfficialContent(matchedRule.title) || 'Critério decisivo',
       statement,
       conditions: matchedRule.conditions,
@@ -428,7 +426,7 @@ export class PBLRepository implements IPBLRepository {
           text: formatOfficialContent(option.text),
         })),
         correctAnswer: normalized.correctAnswer,
-        commentary: formatOfficialContent(normalized.commentary) || undefined,
+        commentary: normalized.commentary || undefined,
         examBoard: normalized.bank,
         year: normalized.year,
       };

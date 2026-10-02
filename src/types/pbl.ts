@@ -12,6 +12,10 @@ export interface PBLCompetency {
   unitId: string;
   canonicalTopicId?: string;
   title: string;
+  cleanedTitle?: string;
+  kind?: string;
+  summary?: string;
+  keyTopics?: string[];
   description: string;
   pedagogicalDomain: string;
   bloomLevel: string;
@@ -743,6 +747,7 @@ export interface PBLSession {
   currentTutorEpisodeId?: string;
   tutorEpisodes?: Record<string, import('./pblTutor').PBLTutorEpisode>;
   lastFeedbackMessage?: string;
+  transferHintsUsed?: Record<string, boolean>;
   lastDiagnosticResult?: DiagnosticResult;
   lastInterventionPayload?: InterventionPayload;
   sessionStats: {

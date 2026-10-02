@@ -1,0 +1,58 @@
+import { render, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { ExampleStudySection } from './ExampleStudySection';
+import type { ExampleStudyProjection, WorkedExampleView } from '../../../types/pedagogicalView';
+const originals: WorkedExampleView[] = [{ exampleId: 'source', title: 'Resolução de referência', prompt: 'Original', result: 'Comentário final', blocks: [], analysisSteps: [] }];
+const study: ExampleStudyProjection = { schemaVersion: 2, revision: 'r1', sourceOccurrences: 1, items: [{ id: 'question', kind: 'question', title: 'Questão 1', aliases: [{ exampleId: 'source' }], sourceRefs: [], contentRefs: [{ exampleId: 'source' }], prompt: ['Julgue a afirmação.'], options: [{ id: 'C', text: 'Certo' }, { id: 'E', text: 'Errado' }], grading: { available: true, answerId: 'E' } }] };
+beforeEach(() => { localStorage.clear(); vi.restoreAllMocks(); });
+describe('global example study', () => {
+  it('requires confidence, restores history, isolates users and resets a new attempt', async () => {
+    const user = userEvent.setup(); const view = render(<ExampleStudySection study={study} items={originals} unitId="unit" userId="one" />);
+    expect(screen.queryByText('Comentário final')).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'C Certo' }));
+    expect(screen.getByRole('button', { name: 'Registrar tentativa' })).toBeDisabled();
+    await user.click(screen.getByRole('button', { name: /^Pouco Seguro/ }));
+    await user.click(screen.getByRole('button', { name: 'Registrar tentativa' }));
+    expect(screen.getByText('Comentário final')).toBeInTheDocument();
+    view.unmount();
+    const remount = render(<ExampleStudySection study={study} items={originals} unitId="unit" userId="one" />);
+    expect(screen.getByText(/Histórico · 1/)).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Nova tentativa' }));
+    await user.click(screen.getByRole('button', { name: 'C Certo' }));
+    expect(screen.getByRole('button', { name: /^Pouco Seguro/ })).toHaveAttribute('aria-pressed', 'false');
+    expect(screen.queryByText('Comentário final')).not.toBeInTheDocument();
+    remount.rerender(<ExampleStudySection study={study} items={originals} unitId="unit" userId="two" />);
+    expect(screen.queryByText(/Histórico ·/)).not.toBeInTheDocument();
+  });
+  it('retains typed text on quota errors and does not claim an unsaved attempt', async () => {
+    const user = userEvent.setup(); render(<ExampleStudySection study={study} items={originals} unitId="unit" />);
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('quota'); });
+    await user.click(screen.getByRole('button', { name: 'C Certo' }));
+    await user.click(screen.getByRole('button', { name: /^Seguro/ }));
+    await user.type(screen.getByRole('textbox'), 'Minha reflexão');
+    await user.click(screen.getByRole('button', { name: 'Registrar tentativa' }));
+    expect(screen.getByRole('textbox')).toHaveValue('Minha reflexão');
+    expect(screen.queryByText(/Histórico ·/)).not.toBeInTheDocument();
+    expect(screen.queryByText('Comentário final')).not.toBeInTheDocument();
+    expect(screen.getByRole('status')).toHaveTextContent('Não foi possível salvar');
+  });
+  it('marks voluntary consultation and saves notebook only after explicit editable preview', async () => {
+    const user = userEvent.setup(); const save = vi.fn().mockReturnValue(true); const tutor = vi.fn();
+    render(<ExampleStudySection study={study} items={originals} unitId="unit" onAskTutor={tutor} onSaveStudyNote={save} />);
+    await user.click(screen.getByRole('button', { name: 'Perguntar ao Professor' }));
+    expect(tutor.mock.calls[0][0]).not.toContain('Comentário final');
+    await user.click(screen.getByRole('button', { name: 'Consultar resolução' }));
+    await user.click(screen.getByRole('button', { name: 'Ocultar resolução' }));
+    await user.click(screen.getByRole('button', { name: 'E Errado' }));
+    await user.click(screen.getByRole('button', { name: /^Muito Seguro/ }));
+    await user.click(screen.getByRole('button', { name: 'Registrar tentativa' }));
+    await user.click(screen.getByRole('button', { name: 'Adicionar ao Caderno' }));
+    expect(save).not.toHaveBeenCalled();
+    const preview = screen.getByRole('region', { name: 'Prévia do Caderno' });
+    await user.type(within(preview).getByRole('textbox'), 'Minha regra revisada');
+    await user.click(within(preview).getByRole('button', { name: 'Confirmar inclusão no Caderno' }));
+    expect(save).toHaveBeenCalledWith(expect.objectContaining({ origin: 'worked_example', regraDecisiva: 'Minha regra revisada' }));
+    expect(screen.getByText('Com consulta nesta tentativa', { exact: false })).toBeInTheDocument();
+  });
+});

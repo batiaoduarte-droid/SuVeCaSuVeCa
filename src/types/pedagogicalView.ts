@@ -524,7 +524,37 @@ export interface ContrastView {
   presentation?: SourceBackedPresentation;
 }
 
+export interface ExampleStudyProjection {
+  schemaVersion: 2;
+  revision: string;
+  sourceOccurrences: number;
+  items: ExampleStudyItem[];
+}
+export interface ExampleStudyItem {
+  id: string;
+  kind: 'question' | 'open_exercise' | 'demonstration' | 'reference' | 'spelling_review' | 'commented_incomplete';
+  title: string;
+  aliases: Array<{ exampleId: string; itemId?: string }>;
+  sourceRefs: Array<{ exampleId: string; sha256: string; file?: string; pointer?: string }>;
+  presentationRefs?: Array<{ field: string; exampleId: string; pointer: string; start: number; end: number; sha256: string }>;
+  contentRefs: Array<{ exampleId: string; itemId?: string; blockIndexes?: number[]; listItem?: number }>;
+  prompt?: string[];
+  support?: string[];
+  options?: Array<{ id: string; text: string }>;
+  grading: { available: boolean; answerId?: string; reason?: string };
+  metadata?: {
+    board?: string;
+    year?: string | number;
+    organization?: string;
+    videoSource?: string;
+    kbSource?: string;
+  };
+}
+
 export interface WorkedExampleView {
+  studyKind?: 'reference' | 'worked_example';
+  practiceItems?: Array<{ id: string; prompt: string; solutionBlocks: SemanticBlock[] }>;
+  spellingReview?: { proposed: string; judgment: 'correct' | 'incorrect'; judgmentLabel: string; corrected: string; explanation: string };
   exampleId?: string;
   title: string;
   prompt?: string;
@@ -659,6 +689,7 @@ export interface OfficialQuestionView {
 }
 
 export interface ExplanationGroup {
+  supportingBlocks?: SemanticBlock[];
   groupId?: string;
   title?: string;
   pedagogicalGoal?: string;
@@ -695,6 +726,7 @@ export interface PedagogicalUnitSections {
     supplementaryBlocks?: SemanticBlock[];
   };
   examples?: {
+    study?: ExampleStudyProjection;
     items: WorkedExampleView[];
     supplementaryBlocks?: SemanticBlock[];
   };

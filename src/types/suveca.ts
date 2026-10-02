@@ -177,7 +177,7 @@ export interface CadernoErroItem {
   novoExemplo: string;
   status: 'dia0' | 'dia1' | 'dia7' | 'dia30' | 'dominado';
   moduleRef?: string;
-  origin?: 'manual' | 'module_question' | 'official_question' | 'simulado' | 'ai_generated' | 'pbl' | 'feynman';
+  origin?: 'manual' | 'module_question' | 'official_question' | 'simulado' | 'ai_generated' | 'pbl' | 'feynman' | 'worked_example';
   questionId?: string;
   questionText?: string;
   selectedAnswer?: string;
@@ -201,6 +201,10 @@ export interface CadernoErroItem {
 export type FlashcardRating = 'again' | 'hard' | 'good' | 'easy';
 
 export interface ErrorFlashcard {
+  content?: import('./flashcardContent').FlashcardContentV2;
+  /** Retired editorial text remains available with its own learning history. */
+  editorialStatus?: 'active' | 'retired';
+  supersedes?: string[];
   id: string;
   errorId?: string;
   /** Módulo editorial ao qual o cartão pertence; usado no recorte contextual da apostila. */

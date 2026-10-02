@@ -4,6 +4,23 @@ import { describe, expect, it } from 'vitest';
 import { QuestionBlock } from './QuestionBlock';
 
 describe('QuestionBlock em modo de tentativa', () => {
+  it('restaura tentativa após desmontagem e isola contas', async () => {
+    const user = userEvent.setup();
+    const props = { title: 'Persistência', options: [{ letter: 'A', text: 'Primeira' }, { letter: 'B', text: 'Segunda' }], answer: 'B', solution: 'Resolução preservada.', renderMarkdown: (text: string) => text };
+    const first = render(<QuestionBlock {...props} attemptIdentity={{ questionId: 'persist-test', lessonId: 'A00', userId: 'guest' }} />);
+    await user.click(screen.getByRole('button', { name: /Primeira/ }));
+    await user.click(screen.getByRole('button', { name: /^Pouco Seguro/ }));
+    await user.type(screen.getByRole('textbox'), 'Usei o critério da aula.');
+    await user.click(screen.getByRole('button', { name: /Confirmar tentativa/ }));
+    first.unmount();
+    const second = render(<QuestionBlock {...props} attemptIdentity={{ questionId: 'persist-test', lessonId: 'A00', userId: 'guest' }} />);
+    expect(screen.getByText('Resolução preservada.')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Primeira/ })).toHaveAttribute('aria-pressed', 'true');
+    second.rerender(<QuestionBlock {...props} attemptIdentity={{ questionId: 'persist-test', lessonId: 'A00', userId: 'other-user' }} />);
+    expect(screen.queryByText('Resolução preservada.')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Selecione uma resposta/ })).toBeDisabled();
+    localStorage.removeItem('suveca_reading_attempts_v1_guest');
+  });
   it('não expõe resposta antes de seleção e confirmação', async () => {
     const user = userEvent.setup();
     render(
@@ -27,7 +44,7 @@ describe('QuestionBlock em modo de tentativa', () => {
 
     expect(screen.getByText(/justificativa decisiva/i)).toBeVisible();
     expect(screen.getByText(/gabarito oficial:/i)).toBeVisible();
-    expect(screen.getByText(/^B$/)).toBeVisible();
+    expect(screen.getAllByText(/^B$/).length).toBeGreaterThan(0);
   });
 
   it('não revela gabarito quando a questão não tem alternativas', async () => {

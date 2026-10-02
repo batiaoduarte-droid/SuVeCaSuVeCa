@@ -170,7 +170,8 @@ test.describe('PBL Adaptativo - fluxo, layout e acessibilidade', () => {
     await page.getByLabel(/na próxima questão, primeiro vou/i).fill('Primeiro compararei letras e fonemas usando o critério recuperado sem consultar a explicação.');
     await page.getByRole('button', { name: /comparar com a orientação/i }).click();
     await expect(page.getByText(/orientação para comparação/i)).toBeVisible();
-    await expect(page.getByText(/número de fonemas.*número de letras/i)).toBeVisible();
+    await expect(page.getByText('Critério da questão respondida', { exact: true })).toBeVisible();
+    await expect(page.getByText(/Dígrafos "gu" e "qu"/i)).toBeVisible();
     await expect(page.getByText(/^(?:RULE|RULF)-/i)).toHaveCount(0);
   });
 

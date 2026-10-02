@@ -1,6 +1,8 @@
 import { TTSPlayer } from '../../lib/audio/ttsService';
 import { LiveAudioClient } from '../../lib/audio/liveAudioClient';
 import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { useModalFocus } from '../../hooks/useModalFocus';
 import {
   X,
   Sparkles,
@@ -74,7 +76,7 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<number | null>(null);
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = useModalFocus(isOpen, onClose);
 
   const stopLiveSession = () => { liveClientRef.current?.stop(); liveClientRef.current = null; };
   const startLiveSession = async () => {
@@ -94,14 +96,11 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
   }, [isOpen, mode, userId, sourceId, topicTitle]);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+    if (!isOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = previous; };
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -347,7 +346,7 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-3 sm:p-4 backdrop-blur-xs overflow-y-auto"
       role="dialog"
@@ -356,20 +355,21 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
     >
       <div
         ref={modalRef}
+        tabIndex={-1}
         className="relative flex flex-col w-full max-w-2xl max-h-[92vh] rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden"
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-slate-100 bg-linear-to-r from-teal-900 to-teal-800 px-5 py-4 text-white">
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-700 text-teal-100 shadow-xs">
+        <div className="flex shrink-0 items-center justify-between gap-2 border-b border-slate-100 bg-linear-to-r from-teal-900 to-teal-800 px-3 py-3 sm:px-5 text-white">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <div className="hidden sm:flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-700 text-teal-100 shadow-xs">
               <Brain className="h-5 w-5" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h2 id="feynman-modal-title" className="text-base font-bold tracking-tight text-white m-0">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 id="feynman-modal-title" className="text-sm sm:text-base font-bold tracking-tight text-white m-0">
                   Método Feynman · Autoexplicação Ativa
                 </h2>
-                <span className="rounded-full bg-teal-700/80 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-teal-200">
+                <span className="hidden sm:inline rounded-full bg-teal-700/80 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-teal-200">
                   Recuperação Ativa
                 </span>
               </div>
@@ -381,7 +381,7 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-teal-200 hover:bg-teal-700/50 hover:text-white transition cursor-pointer"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-white hover:bg-teal-700/50 transition cursor-pointer"
             aria-label="Fechar modal"
           >
             <X className="h-4 w-4" />
@@ -409,7 +409,7 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
               </div>
 
               {/* Mode Selector Tabs */}
-              <div className="flex rounded-xl bg-slate-100 p-1 gap-1" role="tablist">
+              <div className="flex flex-wrap rounded-xl bg-slate-100 p-1 gap-1" role="tablist" aria-label="Modo de autoexplicação">
                 <button
                   type="button"
                   role="tab"
@@ -858,6 +858,7 @@ export const SelfExplanationModal: React.FC<SelfExplanationModalProps> = ({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 };

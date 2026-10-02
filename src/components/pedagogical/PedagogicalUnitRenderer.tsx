@@ -1,3 +1,4 @@
+import type { SaveExampleNote } from './sections/ExampleStudySection';
 import { PublishedQuestionsSection } from './sections/PublishedQuestionsSection';
 import { MountOnFirstOpen } from '../ui/MountOnFirstOpen';
 import React, { useEffect, useState, useMemo } from 'react';
@@ -37,6 +38,8 @@ import { SuvecaWordHighlight } from '../ui/SuvecaBrandHighlight';
 import { SUVECA_METHOD } from '../../data/suvecaMethod.generated';
 
 interface PedagogicalUnitRendererProps {
+  onSaveStudyNote?: SaveExampleNote;
+  embedded?: boolean;
   view: PedagogicalUnitView;
   onAskTutor?: (contextText: string) => void;
   onPracticeExercises?: (topic?: string) => void;
@@ -53,6 +56,8 @@ interface SectionDescriptor {
 }
 
 export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = ({
+  onSaveStudyNote,
+  embedded = false,
   view,
   onAskTutor,
   onPracticeExercises,
@@ -117,7 +122,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
         id: 'explanation',
         title: 'Explicação didática aprofundada',
         icon: BookOpen,
-        render: () => <ExplanationSection {...sections.explanation} />,
+        render: () => <ExplanationSection {...sections.explanation} embedded />,
       });
     }
 
@@ -144,7 +149,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
         id: 'contrasts',
         title: 'Contrastes que a prova explora',
         icon: ArrowLeftRight,
-        render: () => <ContrastsSection {...sections.contrasts} />,
+        render: () => <ContrastsSection {...sections.contrasts} embedded />,
       });
     }
 
@@ -153,7 +158,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
         id: 'examples',
         title: 'Exemplos comentados',
         icon: FileText,
-        render: () => <ExamplesSection {...sections.examples} />,
+        render: () => <ExamplesSection onAskTutor={onAskTutor} onSaveStudyNote={onSaveStudyNote} {...sections.examples} embedded unitId={unit.unitId} userId={userId} />,
       });
     }
 
@@ -207,7 +212,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
         render: () => questionDelivery ? <PublishedQuestionsSection delivery={questionDelivery} lessonId={unit.lessonId} userId={userId} onPracticeMore={onPracticeExercises} /> : <OfficialQuestionsSection questions={officialQuestions} lessonId={unit.lessonId} userId={userId} onPracticeMore={onPracticeExercises} /> });
     }
     return list;
-  }, [sections, unit, officialQuestions, questionDelivery, userId, onPracticeExercises]);
+  }, [sections, unit, officialQuestions, questionDelivery, userId, onPracticeExercises, onAskTutor, onSaveStudyNote]);
 
   const [openSections, setOpenSections] = useState<Set<string>>(
     () => new Set([
@@ -295,7 +300,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
   return (
     <div className="pedagogical-unit-view structured-content space-y-4 sm:space-y-6">
       {/* Cabeçalho da Unidade */}
-      <div className="space-y-3">
+      {!embedded && <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-800">
           <span className="rounded-md bg-teal-100 px-2 py-0.5 text-teal-900 font-extrabold">Conteúdo aprofundado</span>
           <span>•</span>
@@ -304,7 +309,7 @@ export const PedagogicalUnitRenderer: React.FC<PedagogicalUnitRendererProps> = (
         <h1 className="m-0 text-2xl sm:text-3xl font-black tracking-tight text-teal-950">
           <SuvecaWordHighlight text={unit.title} />
         </h1>
-      </div>
+      </div>}
 
       {/* Objetivos de Aprendizagem */}
       {unit.learningObjectives && unit.learningObjectives.length > 0 && (

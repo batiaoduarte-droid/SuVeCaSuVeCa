@@ -1,4 +1,4 @@
-const CONTEXT_REFERENCE = /\b(?:texto\s+(?:[A-Z]{1,4}\d[A-Z]?\d?|anterior)|parágrafo\s+\d+|linha\s+\d+)/i;
+const CONTEXT_REFERENCE = /\b(?:texto\s+(?:[A-Z]{1,4}\d[A-Z]?\d?|\d+|[IVXLCDM]+\b|anterior)|parágrafo\s+\d+|linha\s+\d+)/i;
 const VISUAL_REFERENCE = /\b(?:destacad[ao]s?|sublinhad[ao]s?|grif[ao]d[ao]s?|negrito)\b/i;
 const RICH_EMPHASIS = /(?:\*\*[^*]+\*\*|\*[^*]+\*)/;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { PBLConfidenceLevel } from '../../types/pbl';
-import { HelpCircle, AlertCircle, CheckCircle2, Flame, Mic } from 'lucide-react';
+import { Mic } from 'lucide-react';
+import { ConfidenceChoice } from '../ui/ConfidenceChoice';
 
 interface PBLConfidenceSelectorProps {
   confidence: PBLConfidenceLevel | null;
@@ -23,37 +24,6 @@ export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
   submitLabel = 'Confirmar hipótese e analisar',
   onOpenDefense,
 }) => {
-  const levels: Array<{ id: PBLConfidenceLevel; label: string; icon: React.ElementType; color: string; desc: string }> = [
-    {
-      id: 'guess',
-      label: 'Chute',
-      icon: HelpCircle,
-      color: 'border-slate-300 hover:border-slate-400 text-slate-700 bg-slate-50',
-      desc: 'Não tenho certeza da regra',
-    },
-    {
-      id: 'low',
-      label: 'Pouco Seguro',
-      icon: AlertCircle,
-      color: 'border-amber-300 hover:border-amber-400 text-amber-800 bg-amber-50',
-      desc: 'Lembro vagamente',
-    },
-    {
-      id: 'medium',
-      label: 'Seguro',
-      icon: CheckCircle2,
-      color: 'border-blue-300 hover:border-blue-400 text-blue-800 bg-blue-50',
-      desc: 'Conheço a regra padrão',
-    },
-    {
-      id: 'high',
-      label: 'Muito Seguro',
-      icon: Flame,
-      color: 'border-emerald-400 hover:border-emerald-500 text-emerald-900 bg-emerald-50',
-      desc: 'Certeza absoluta e justificável',
-    },
-  ];
-
   return (
     <div className="mt-6 rounded-2xl border border-indigo-100 bg-linear-to-br from-indigo-50/50 to-white p-5 shadow-xs">
       <div className="mb-3">
@@ -65,32 +35,7 @@ export const PBLConfidenceSelector: React.FC<PBLConfidenceSelectorProps> = ({
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        {levels.map((lvl) => {
-          const Icon = lvl.icon;
-          const isSelected = confidence === lvl.id;
-          return (
-            <button
-              key={lvl.id}
-              type="button"
-              disabled={disabled}
-              aria-pressed={isSelected}
-              onClick={() => onSelectConfidence(lvl.id)}
-              className={`flex flex-col items-center justify-center rounded-xl border p-3 text-center transition-all ${
-                isSelected
-                  ? 'border-indigo-600 bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300 ring-offset-1'
-                  : lvl.color
-              }`}
-            >
-              <Icon className={`h-5 w-5 ${isSelected ? 'text-white' : ''}`} />
-              <span className="mt-1 text-xs font-bold">{lvl.label}</span>
-              <span className={`text-[10px] ${isSelected ? 'text-indigo-100' : 'text-slate-600'}`}>
-                {lvl.desc}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+      <ConfidenceChoice value={confidence} onChange={onSelectConfidence} disabled={disabled} />
 
       <div className="mt-4">
         <div className="flex items-center justify-between">

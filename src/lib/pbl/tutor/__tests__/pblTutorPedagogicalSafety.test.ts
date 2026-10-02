@@ -33,6 +33,38 @@ async function turn(extra = {}, userId: string | undefined = 'U1') {
 }
 
 describe('pedagogical safeguards at the tutor boundary', () => {
+  it('uses the selected Flash-lite model and rejects unsupported overrides', async () => {
+    vi.stubEnv('PBL_TUTOR_ENABLED', 'true'); vi.stubEnv('GEMINI_API_KEY', 'test-key');
+    generateContent.mockResolvedValue({ text: JSON.stringify({ pedagogicalText: 'Confira a condição.' }) });
+    expect((await turn({ model: 'gemini-3.5-flash-lite' })).executionMetadata.model).toBe('gemini-3.5-flash-lite');
+    expect(generateContent.mock.calls[0][0].model).toBe('gemini-3.5-flash-lite');
+    generateContent.mockClear();
+    expect((await turn({ model: 'invalid-model' })).error).toContain('Modelo');
+    expect(generateContent).not.toHaveBeenCalled();
+  });
+  it.each([undefined, { title: 'Ficha', triggerCondition: ' ', decisionRule: 'Regra', contrastExample: 'Contraste' }])('rejects a requested synthesis without a complete draft', async (notebookDraft) => {
+    vi.stubEnv('PBL_TUTOR_ENABLED', 'true'); vi.stubEnv('GEMINI_API_KEY', 'test-key');
+    generateContent.mockResolvedValue({ text: JSON.stringify({ pedagogicalText: 'Preparei a ficha!', notebookDraft }) });
+    const result = await turn({ cadernoSynthesisRequested: true });
+    expect(result).toMatchObject({ code: 'NOTEBOOK_SYNTHESIS_FAILED', retryable: true });
+    expect(result.pedagogicalText).toBeUndefined();
+    expect(generateContent.mock.calls[0][0].config.responseSchema.required).toContain('notebookDraft');
+  });
+
+  it('returns the requested draft and refuses synthesis before a confirmed attempt', async () => {
+    vi.stubEnv('PBL_TUTOR_ENABLED', 'true'); vi.stubEnv('GEMINI_API_KEY', 'test-key');
+    const notebookDraft = { title: 'Ficha', triggerCondition: 'Condição', decisionRule: 'Regra', contrastExample: 'Contraste' };
+    generateContent.mockResolvedValue({ text: JSON.stringify({ pedagogicalText: 'Confira a ficha.', notebookDraft }) });
+    expect((await turn({ cadernoSynthesisRequested: true })).notebookDraft).toEqual(notebookDraft);
+    generateContent.mockClear();
+    vi.mocked(pblServerSessionRepository.getSession).mockResolvedValue({ ...session, attempts: [] });
+    expect((await turn({ cadernoSynthesisRequested: true })).code).toBe('NOTEBOOK_ATTEMPT_REQUIRED');
+    expect(generateContent).not.toHaveBeenCalled();
+  });
+
+  it('does not disguise unavailable synthesis as a successful deterministic response', async () => {
+    expect((await turn({ cadernoSynthesisRequested: true })).code).toBe('NOTEBOOK_SYNTHESIS_FAILED');
+  });
   beforeEach(() => {
     vi.stubEnv('PBL_TUTOR_ENABLED', 'false');
     vi.spyOn(pblTutorContextResolver, 'getTutorQuestionContext').mockResolvedValue(structuredClone(context));
@@ -133,7 +165,7 @@ describe('pedagogical safeguards at the tutor boundary', () => {
     vi.stubEnv('PBL_TUTOR_ENABLED', 'true'); vi.stubEnv('GEMINI_API_KEY', 'test-key');
     generateContent.mockImplementation(() => new Promise(() => {}));
     const pending = turn();
-    await vi.advanceTimersByTimeAsync(30_001);
+    await vi.advanceTimersByTimeAsync(90_001);
     const result = await pending;
     expect(generateContent.mock.calls[0][0].config.abortSignal.aborted).toBe(true);
     expect(result.executionMetadata.fallback).toBe(true);

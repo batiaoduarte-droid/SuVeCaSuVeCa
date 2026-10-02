@@ -50,7 +50,8 @@ export class TransferSelector {
     excludedQuestionRefs: string[] = [],
     requirePresentation = false,
     seed = '',
-    recentlyExposedQuestionRefs: string[] = []
+    recentlyExposedQuestionRefs: string[] = [],
+    actualAnchorQuestionRef?: string,
   ): Promise<PBLTransferItem | null> {
     const xferSet = await this.repo.getTransferSetForCompetency(competencyId);
     if (xferSet?.items.length) {
@@ -78,7 +79,10 @@ export class TransferSelector {
           && Boolean(presentation)
           && !excludedFingerprints.has(buildQuestionFingerprint(presentation!))
         );
-      const items = eligibleItems.map(({ item }) => item);
+      const items = eligibleItems.map(({ item }) => actualAnchorQuestionRef
+        && item.anchorQuestionRef !== actualAnchorQuestionRef
+        ? { ...item, validationStatus: 'unverified' as const, cognitiveDelta: '', changedDimensions: [] }
+        : item);
       const recentlyExposedFingerprints = new Set(
         eligibleItems
           .filter(({ presentation }) => recentExposureFingerprints.has(

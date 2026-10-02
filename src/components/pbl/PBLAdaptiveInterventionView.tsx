@@ -1,5 +1,8 @@
 import { assistanceRank, maximumAssistance, validateQuickCheck, quickCheckIdentity } from '../../lib/pbl/tutor/pblTutorPedagogy';
 import { AttemptEvaluator } from '../../lib/pbl/engine/AttemptEvaluator';
+import { PROFESSOR_MODELS, professorModelLabel, professorTimeoutMs, type ProfessorModel } from '../../lib/geminiTaskMapping';
+import { ProfessorModelSelect } from '../ProfessorModelSelect';
+import { createAiDeadline, withAiSignal } from '../../lib/ai/aiRequest';
 import React, { useEffect, useRef, useState } from 'react';
 import type {
   InterventionPayload,
@@ -33,7 +36,9 @@ import {
   Zap,
   HelpCircle,
   AlertCircle,
+  Compass,
   LogIn,
+  RotateCcw,
   X,
 } from 'lucide-react';
 import {
@@ -91,8 +96,26 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
   // Chat & Copilot state
   const [inputText, setInputText] = useState('');
   const [loading, setLoading] = useState(false);
+  const [selectedModel, setSelectedModel] = useState<ProfessorModel>(PROFESSOR_MODELS[0].id);
+  const activeGeneration = useRef<AbortController | null>(null);
+  async function fetchTutor(input: RequestInfo, init: RequestInit) {
+    const deadline = createAiDeadline(professorTimeoutMs(selectedModel) + 5000);
+    activeGeneration.current = deadline.controller;
+    try {
+      return await withAiSignal(async () => {
+        const response = await fetch(input, { ...init, signal: deadline.signal });
+        const data = await response.json();
+        return { ok: response.ok, status: response.status, json: async () => data };
+      }, deadline.signal);
+    } finally {
+      deadline.dispose();
+      if (activeGeneration.current === deadline.controller) activeGeneration.current = null;
+    }
+  }
   const [copilotExpanded, setCopilotExpanded] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+  const [synthesisState, setSynthesisState] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle');
+  const [generatedDraft, setGeneratedDraft] = useState<PBLTutorNotebookDraft | null>(null);
   const [savedLocally, setSavedLocally] = useState(isSavedToCaderno);
   const [currentUser, setCurrentUser] = useState<any>(() => {
     if (isLocalAuthActive()) {
@@ -118,13 +141,22 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
   const requestedInitialEpisodesRef = useRef<Set<string>>(new Set());
   useEffect(() => {
     activeEpisodeRef.current = episode?.episodeId;
+    setSynthesisState('idle');
+    setLoading(false);
+    setGeneratedDraft(null);
+    setSavedLocally(isSavedToCaderno);
+    setErrorMessage('');
     setAssistanceLevel(maximumAssistance(episode?.assistanceLevel, 'diagnostic'));
     setQuickCheckResponse(episode?.quickCheckResponse);
     onAssistanceChange?.(hasAttempted ? 'partial' : 'hint');
-    return () => { activeEpisodeRef.current = undefined; };
+    return () => { activeEpisodeRef.current = undefined; activeGeneration.current?.abort(); };
   }, [episode?.episodeId]);
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const notebookRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (synthesisState === 'ready') notebookRef.current?.focus();
+  }, [synthesisState]);
 
   const isCorrect = attempt?.isCorrect;
   const evaluation = attempt ? AttemptEvaluator.evaluateConfidence(attempt.isCorrect, attempt.confidence) : undefined;
@@ -134,7 +166,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
 
   // Active notebook draft
   const activeNotebookDraft: PBLTutorNotebookDraft | null =
-    latestTurn?.notebookDraft ||
+    synthesisState === 'loading' || synthesisState === 'error' ? null : generatedDraft || latestTurn?.notebookDraft ||
     episode?.notebookDraft ||
     (intervention
       ? {
@@ -206,7 +238,9 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
 
     try {
       await onBeforeTutorRequest?.();
+      if (activeEpisodeRef.current !== requestEpisodeId) return;
       const token = await getAuthToken();
+      if (activeEpisodeRef.current !== requestEpisodeId) return;
       const headers: Record<string, string> = {
         'Content-Type': 'application/json',
       };
@@ -224,10 +258,11 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
           : isCorrect ? `Acertei com "${attempt.userAnswer}". Gostaria de conferir meu critério.` : `Respondi "${attempt.userAnswer}" e errei. Como conferir o critério que usei?`
         : 'Gostaria de entender o critério decisivo desta questão.';
 
-      const res = await fetch('/api/pbl/tutor/turn', {
+      const res = await fetchTutor('/api/pbl/tutor/turn', {
         method: 'POST',
         headers,
         body: JSON.stringify({
+          model: selectedModel,
           episodeId: episode.episodeId,
           expectedAttemptId: attempt?.attemptId,
           sessionId: session.sessionId,
@@ -275,6 +310,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       onAssistanceChange?.(hasAttempted ? 'full' : 'partial');
       onRecordTurn?.(tutorTurn);
     } catch (err: any) {
+      if (activeEpisodeRef.current !== requestEpisodeId) return;
       setErrorMessage(err?.message || 'Não foi possível conectar com o Professor PBL. Tente novamente.');
       console.warn('[PBLAdaptiveInterventionView] Aviso no turno inicial do tutor, usando fallback pedagógico:', err?.message || err);
       if (activeEpisodeRef.current !== requestEpisodeId) return;
@@ -299,16 +335,20 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       onAssistanceChange?.(hasAttempted ? 'partial' : 'hint');
       onRecordTurn?.(fallbackTurn);
     } finally {
-      setLoading(false);
+      if (activeEpisodeRef.current === requestEpisodeId) setLoading(false);
     }
   };
 
   const handleSendMessage = async (customMessage?: string, options?: { directExplanation?: boolean; synthesize?: boolean }) => {
     if (!episode || loading) return;
-    const textToSend = (customMessage ?? inputText).trim();
+    const textToSend = options?.synthesize ? 'Sintetize esta questão para meu Caderno de Erros.' : (customMessage ?? inputText).trim();
+    if (options?.synthesize) {
+      setSynthesisState('loading');
+      setGeneratedDraft(null);
+    }
     if (!textToSend && !options?.directExplanation && !options?.synthesize) return;
 
-    if (!customMessage) {
+    if (!customMessage && !options?.synthesize) {
       setInputText('');
     }
 
@@ -328,7 +368,9 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
 
     try {
       await onBeforeTutorRequest?.();
+      if (activeEpisodeRef.current !== requestEpisodeId) return;
       const token = await getAuthToken();
+      if (activeEpisodeRef.current !== requestEpisodeId) return;
       const headers: Record<string, string> = {
         'Content-Type': 'application/json',
       };
@@ -340,16 +382,11 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         headers['x-local-user-id'] = getActiveLocalUser()?.uid || LOCAL_TEST_USER.uid;
       }
 
-      const conversationHistory = [...(episode.turns || []), studentTurn].map((t) => ({
-        role: t.role as 'student' | 'tutor',
-        text: t.content,
-        intent: t.intent,
-      }));
-
-      const res = await fetch('/api/pbl/tutor/turn', {
+      const res = await fetchTutor('/api/pbl/tutor/turn', {
         method: 'POST',
         headers,
         body: JSON.stringify({
+          model: selectedModel,
           episodeId: episode.episodeId,
           expectedAttemptId: attempt?.attemptId,
           sessionId: session.sessionId,
@@ -363,7 +400,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
             attemptStage: episode.attemptStage,
             reasoning: attempt?.reasoning || episode.initialReasoning,
           },
-          history: conversationHistory,
+          // The server supplies the authoritative history from the saved episode.
           directExplanationRequested: options?.directExplanation,
           cadernoSynthesisRequested: options?.synthesize,
         }),
@@ -375,6 +412,16 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       }
 
       const data = await res.json();
+      if (activeEpisodeRef.current !== requestEpisodeId) return;
+      if (options?.synthesize) {
+        if (!data.notebookDraft || !['title', 'triggerCondition', 'decisionRule', 'contrastExample']
+          .every((key) => typeof data.notebookDraft[key] === 'string' && data.notebookDraft[key].trim())) {
+          throw new Error('Não foi possível gerar a ficha para o Caderno. Tente novamente. Nada foi salvo.');
+        }
+        setGeneratedDraft(data.notebookDraft);
+        setSynthesisState('ready');
+        setSavedLocally(false);
+      }
       const tutorTurn: PBLTutorTurn = {
         turnId: `turn_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
         role: 'tutor',
@@ -397,6 +444,8 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       onAssistanceChange?.(hasAttempted ? 'full' : 'partial');
       onRecordTurn?.(tutorTurn);
     } catch (err: any) {
+      if (activeEpisodeRef.current !== requestEpisodeId) return;
+      if (options?.synthesize) setSynthesisState('error');
       console.warn('[PBLAdaptiveInterventionView] Aviso ao enviar mensagem à IA:', err?.message || err);
       setErrorMessage(err?.message || 'Não foi possível conectar com o Professor PBL. Tente novamente.');
       const isAuthError =
@@ -405,7 +454,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         err?.message?.includes('401');
       if (isAuthError && !isLocalAuthActive()) {
         setErrorMessage('Entre na sua conta para conversar com o Professor PBL.');
-      } else {
+      } else if (!options?.synthesize) {
         const fallbackTurn: PBLTutorTurn = {
           turnId: `turn_fallback_${Date.now()}`,
           role: 'tutor',
@@ -423,13 +472,13 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         };
         onRecordTurn?.(fallbackTurn);
       }
-      if (!customMessage) {
+      if (!customMessage && !options?.synthesize) {
         setInputText(textToSend);
       }
     } finally {
-      setLoading(false);
+      if (activeEpisodeRef.current === requestEpisodeId) setLoading(false);
       setTimeout(() => {
-        inputRef.current?.focus();
+        if (!options?.synthesize && activeEpisodeRef.current === requestEpisodeId) inputRef.current?.focus();
       }, 50);
     }
   };
@@ -474,7 +523,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
   const showFullSupport = assistanceRank[assistanceLevel] >= assistanceRank.full;
 
   return (
-    <div className="w-full space-y-6 max-w-4xl mx-auto">
+    <div className="w-full space-y-6">
       {/* 1. CABEÇALHO DE RESULTADO E CALIBRAÇÃO METACOGNITIVA */}
       <div className={`rounded-2xl border p-5 shadow-sm transition-all ${
         !hasAttempted ? 'border-slate-200 bg-white' : isCorrect
@@ -689,7 +738,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
                   </div>
                   <div className="rounded-2xl bg-white border border-indigo-100 p-2.5 shadow-2xs flex items-center gap-2 text-xs text-indigo-700">
                     <RefreshCw className="h-3.5 w-3.5 animate-spin" />
-                    <span>Professor PBL está analisando os critérios...</span>
+                    <span role="status">{professorModelLabel(selectedModel)} está gerando a resposta…</span>
                   </div>
                 </div>
               )}
@@ -710,12 +759,13 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
 
               <button
                 type="button"
-                disabled={loading}
+                disabled={loading || !hasAttempted}
                 onClick={() => void handleSendMessage(undefined, { synthesize: true })}
+                title={!hasAttempted ? "Responda à questão antes de gerar a síntese" : undefined}
                 className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white border border-slate-200 text-slate-700 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-200 disabled:opacity-50 transition-colors"
               >
                 <BookOpen className="h-3 w-3 text-amber-600" />
-                <span>Sintetizar no Caderno</span>
+                <span>Gerar síntese para o Caderno</span>
               </button>
 
               <button
@@ -751,7 +801,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
             </div>
 
             {/* Avisos de autenticação e erros da IA */}
-            {errorMessage && (
+            {errorMessage && synthesisState !== 'error' && (
               <div className="mx-3 my-2 p-2.5 rounded-xl border border-amber-200 bg-amber-50 text-xs text-amber-900 flex items-start justify-between gap-2 animate-in fade-in">
                 <div className="flex items-start gap-2">
                   <AlertCircle className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
@@ -799,6 +849,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
               </div>
             )}
 
+            <ProfessorModelSelect value={selectedModel} onChange={setSelectedModel} disabled={loading} />
             {/* Input para dúvida personalizada */}
             <div className="p-3 border-t border-slate-200 bg-white">
               <div className="flex gap-2 items-center">
@@ -831,6 +882,65 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
           </div>
         )}
       </div>
+
+      {synthesisState === 'loading' && <p role="status">Gerando a ficha para o Caderno…</p>}
+      {synthesisState === 'error' && (
+        <div role="alert" className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950">
+          <p>{errorMessage || 'A síntese não foi gerada. Nada foi salvo no Caderno.'}</p>
+          <button type="button" disabled={loading} className="mt-2 min-h-11 rounded-lg border px-4 font-semibold"
+            onClick={() => void handleSendMessage(undefined, { synthesize: true })}>Tentar novamente</button>
+        </div>
+      )}
+      {/* 5. FICHA ONE-CLICK PARA O CADERNO DE ERROS */}
+      {hasAttempted && activeNotebookDraft && (
+        <div ref={notebookRef} tabIndex={-1} role="region" aria-label="Ficha para o Caderno de Erros" className="rounded-2xl border border-amber-200 bg-amber-50/70 p-4 shadow-xs">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 font-bold text-amber-950 text-xs">
+                <BookOpen className="h-4 w-4 text-amber-700" />
+                <span>Síntese para o Caderno de Erros: {activeNotebookDraft.title}</span>
+              </div>
+              <p className="text-xs text-amber-900">
+                <span className="font-semibold">Gatilho da banca:</span> {activeNotebookDraft.triggerCondition}
+              </p>
+              <p className="text-xs text-amber-900">
+                <span className="font-semibold">Regra Decisiva:</span> {activeNotebookDraft.decisionRule}
+              </p>
+              {activeNotebookDraft.contrastExample && (
+                <p className="text-xs text-amber-900">
+                  <span className="font-semibold">Contraste:</span> {activeNotebookDraft.contrastExample}
+                </p>
+              )}
+            </div>
+
+            {!onSaveToCaderno && <p role="status">O salvamento no Caderno não está disponível nesta sessão.</p>}
+            {onSaveToCaderno && (
+              <button
+                type="button"
+                onClick={handleSaveCaderno}
+                disabled={savedLocally}
+                className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-xs ${
+                  savedLocally
+                    ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                    : 'bg-amber-600 text-white hover:bg-amber-700'
+                }`}
+              >
+                {savedLocally ? (
+                  <>
+                    <CheckCircle2 className="h-4 w-4" />
+                    <span>Salvo no Caderno</span>
+                  </>
+                ) : (
+                  <>
+                    <BookOpen className="h-4 w-4" />
+                    <span>Salvar no Meu Caderno</span>
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* 4. SCAFFOLDING COGNITIVO CANÔNICO (PISTA -> CONTRASTE -> PROCEDIMENTO -> TABELA) */}
       {intervention && (
@@ -1018,56 +1128,6 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
         </div>
       )}
 
-      {/* 5. FICHA ONE-CLICK PARA O CADERNO DE ERROS */}
-      {hasAttempted && activeNotebookDraft && (
-        <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-4 shadow-xs">
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 font-bold text-amber-950 text-xs">
-                <BookOpen className="h-4 w-4 text-amber-700" />
-                <span>Síntese para o Caderno de Erros: {activeNotebookDraft.title}</span>
-              </div>
-              <p className="text-xs text-amber-900">
-                <span className="font-semibold">Gatilho da banca:</span> {activeNotebookDraft.triggerCondition}
-              </p>
-              <p className="text-xs text-amber-900">
-                <span className="font-semibold">Regra Decisiva:</span> {activeNotebookDraft.decisionRule}
-              </p>
-              {activeNotebookDraft.contrastExample && (
-                <p className="text-xs text-amber-900">
-                  <span className="font-semibold">Contraste:</span> {activeNotebookDraft.contrastExample}
-                </p>
-              )}
-            </div>
-
-            {onSaveToCaderno && (
-              <button
-                type="button"
-                onClick={handleSaveCaderno}
-                disabled={savedLocally}
-                className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-xs ${
-                  savedLocally
-                    ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
-                    : 'bg-amber-600 text-white hover:bg-amber-700'
-                }`}
-              >
-                {savedLocally ? (
-                  <>
-                    <CheckCircle2 className="h-4 w-4" />
-                    <span>Salvo no Caderno</span>
-                  </>
-                ) : (
-                  <>
-                    <BookOpen className="h-4 w-4" />
-                    <span>Salvar no Meu Caderno</span>
-                  </>
-                )}
-              </button>
-            )}
-          </div>
-        </div>
-      )}
-
       {/* Checagem imediata: não é evidência de retenção ou domínio. */}
       {quickCheck && (
         <div className="rounded-2xl border border-indigo-200 bg-linear-to-br from-indigo-50/80 to-white p-5 shadow-xs">
@@ -1131,19 +1191,30 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
       )}
 
       {/* 7. NAVEGAÇÃO DE CONTINUIDADE (AÇÕES DECISIVAS) */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="text-xs text-slate-600 font-medium">
-            Pronto para prosseguir? Escolha seu próximo passo no percurso:
-          </span>
+      <div className="sticky bottom-4 z-20 rounded-2xl border border-slate-200/90 bg-white/95 backdrop-blur-md p-4 shadow-lg transition-all">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3.5">
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100/80 shadow-2xs">
+              <Compass className="h-4 w-4" />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-slate-900 leading-tight">
+                Pronto para prosseguir?
+              </p>
+              <p className="text-[11px] text-slate-500 font-medium">
+                Escolha seu próximo passo no percurso adaptativo:
+              </p>
+            </div>
+          </div>
 
-          <div className="flex flex-wrap gap-2.5">
+          <div className="flex flex-wrap items-center gap-2.5">
             <button
               type="button"
               disabled={loading}
               onClick={() => onConclude('try_same')}
-              className="inline-flex min-h-11 items-center gap-1.5 px-4 rounded-xl border border-slate-300 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+              className="inline-flex min-h-11 items-center justify-center gap-2 px-4 rounded-xl border border-slate-300 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50 hover:border-slate-400 transition-all shadow-2xs disabled:opacity-50"
             >
+              <RotateCcw className="h-3.5 w-3.5 text-slate-500" />
               <span>Tentar mesma questão</span>
             </button>
 
@@ -1151,7 +1222,7 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
               type="button"
               disabled={loading}
               onClick={() => onConclude('try_alternative')}
-              className="inline-flex min-h-11 items-center gap-2 px-5 rounded-xl bg-indigo-600 text-xs font-bold text-white shadow-sm hover:bg-indigo-700 transition-colors"
+              className="inline-flex min-h-11 items-center justify-center gap-2 px-5 rounded-xl bg-indigo-600 text-xs font-bold text-white shadow-sm hover:bg-indigo-700 hover:shadow-md transition-all disabled:opacity-50"
             >
               <span>Nova questão prática</span>
               <ArrowRight className="h-4 w-4" />
@@ -1161,8 +1232,9 @@ export const PBLAdaptiveInterventionView: React.FC<PBLAdaptiveInterventionViewPr
               type="button"
               disabled={loading}
               onClick={() => onConclude('proceed_reflection')}
-              className="inline-flex min-h-11 items-center gap-1 px-4 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+              className="inline-flex min-h-11 items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all shadow-2xs disabled:opacity-50"
             >
+              <CheckCircle2 className="h-3.5 w-3.5 text-slate-500" />
               <span>Concluir e revisar</span>
             </button>
           </div>

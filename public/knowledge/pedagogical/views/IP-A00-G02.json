@@ -1,1 +1,1871 @@
-{"viewSchemaVersion":"4.2.3-structured-sections","source":{"unitId":"IP-A00-G02","lessonId":"A00","title":"Encontros Vocálicos e Consonantais","canonicalSource":"canonical-v2.1-consolidated","rebuildPipeline":"SuVeCa v4.2 Full Corpus Gemini Semantic Authoring","presentationCoverageRepair":"canonical content blocks restored after v4.2.1 identity projection","structuredSectionsProjection":"canonical contentBlocks projected as typed AST; glossary and relation targets resolved"},"unit":{"unitId":"IP-A00-G02","lessonId":"A00","title":"Encontros Vocálicos e Consonantais","learningObjectives":["Construir do zero a base fonológica e silábica da Língua Portuguesa, conceituando o papel da vogal como centro da sílaba, detalhando todos os encontros vocálicos (ditongos crescentes e decrescentes, tritongos e hiatos), encontros consonantais (perfeitos e imperfeitos), dígrafos (consonantais e vocálicos), dífono da letra X, regras de partição silábica e o cálculo exato de grafemas versus fonemas, articulando teoria, mnemônicos (\"mantras\") e resolução de vocábulos complexos em nível de concursos públicos (Cebraspe, FGV, FCC)."],"conceptCount":2,"ruleCount":1,"canonicalLearningObjectiveRefs":["OBJ-IP-A00-G02-01"],"learningThreadRefs":["TH-A00-G02-01","TH-A00-G02-02"]},"sections":{"suveca":{"macroContext":"A fonética estuda os sons da língua e sua representação gráfica. O domínio dos encontros vocálicos e consonantais é a base indispensável para a correta divisão silábica, acentuação gráfica e contagem fonêmica em provas de concursos.","visualBlueprint":"Vogal (base da sílaba) <-> Semivogal (apoio fonético). Ditongo: V+SV ou SV+V na mesma sílaba. Hiato: V+V em sílabas distintas. Dígrafo: 2 letras = 1 fonema. Encontro Consonantal: 2 consoantes = 2 fonemas.","cognitiveAnchor":"Em Língua Portuguesa não existe sílaba sem vogal, nem sílaba com mais de uma vogal autêntica.","strategicSignificance":"Distingue pegadinhas clássicas de bancas sobre contagem de letras e fonemas e classificação de encontros em palavras como 'chuva' (dígrafo) vs 'prato' (encontro consonantal).","coreTension":"Confusão entre dígrafo (duas letras, um som) e encontro consonantal (duas letras, dois sons) ou entre ditongo crescente e hiato."},"prerequisites":{"items":[{"prerequisiteId":"PR-A00-01","name":"Conceito de Fonema e Letra","reason":"Diferenciar a unidade sonora (fonema) do sinal gráfico (letra) para correta classificação dos encontros.","activationPrompt":"Quantos fonemas e letras existem na palavra 'táxi'?","isCritical":true}]},"explanation":{"groups":[{"groupId":"GRP-01","title":"Encontros Vocálicos: Ditongo, Tritongo e Hiato","pedagogicalGoal":"Compreender a dinâmica entre vogais e semivogais e identificar os tipos de encontros vocálicos.","blocks":[{"type":"concept_definition","term":"Ditongo","definition":"Encontro de uma vogal e uma semivogal (ou vice-versa) na mesma sílaba fonética.","text":"Ditongo é a combinação fonética indivisível na mesma sílaba."},{"type":"classification","title":"Tipos de Encontros Vocálicos","categories":[{"category":"Ditongo Crescente","items":["glória (i+a)","pátria (i+a)"],"description":"Semivogal + Vogal"},{"category":"Ditongo Decrescente","items":["pai (a+i)","noite (o+i)"],"description":"Vogal + Semivogal"},{"category":"Tritongo","items":["Paraguai (u+a+i)","quão (u+a+o)"],"description":"Semivogal + Vogal + Semivogal na mesma sílaba"},{"category":"Hiato","items":["sa-ú-de (a-u)","pa-ís (a-i)"],"description":"Duas vogais que ficam em sílabas separadas"}],"text":"Os encontros vocálicos dividem-se em ditongos (crescentes/decrescentes, orais/nasais), tritongos e hiatos."}]},{"groupId":"GRP-02","title":"Dígrafos vs Encontros Consonantais","pedagogicalGoal":"Distinguir com precisão dígrafos (2 letras = 1 som) de encontros consonantais (2 letras = 2 sons).","blocks":[{"type":"comparison_matrix","title":"Dígrafo vs Encontro Consonantal","columns":["Critério","Dígrafo","Encontro Consonantal"],"rows":[["Definição","Duas letras que representam um único fonema","Duas consoantes contíguas que mantêm seus fonemas distintos"],["Exemplo","passo (ss = /s/), chave (ch = /ʃ/)","prato (/p/+/r/), pacto (/k/+/t/)"],["Contagem","Nº letras > Nº fonemas","Nº letras == Nº fonemas (geralmente)"]],"text":"Dígrafo representa economia fonêmica; encontro consonantal preserva a integridade de cada fonema."}]}]},"rules":{"items":[{"ruleId":"R-FON-01","title":"Unicidade da Vogal Silábica","statement":"Toda sílaba da língua portuguesa possui uma e apenas uma vogal fonética como centro.","formalCondition":"Para toda sílaba S, |Vogal(S)| = 1.","scope":"Universal na fonologia do português padrão.","normativity":"MANDATORY","exceptions":[],"examples":["pai (a=vogal, i=semivogal)","ru-a (u=vogal, a=vogal em sílabas distintas)"]}]},"resolution":{"procedures":[{"procedureId":"PROC-FON-01","title":"Algoritmo de Contagem de Letras e Fonemas","triggerCondition":"Questões de prova que exigem número exato de fonemas e letras.","steps":["1. Conte todas as letras gráficas da palavra.","2. Identifique os dígrafos consonantais (ch, lh, nh, rr, ss, sc, sç, xc, qu/gu antes de e/i) e subtraia 1 para cada um.","3. Identifique os dígrafos vocálicos (am, an, em, en, im, in, om, on, um, un em posição final ou antes de consoante) e subtraia 1 para cada um.","4. Identifique o dífono 'x' com som de /ks/ (táxi, fixo) e adicione 1.","5. Calcule o resultado final: Nº Fonemas = Nº Letras - Dígrafos + Dífonos."],"verificationCriteria":"Verificar se as letras 'qu' e 'gu' possuem 'u' pronunciado (se pronunciado, não é dígrafo, ex: 'cinquenta').","typicalFailureModes":["Esquecer de subtrair dígrafos vocálicos em palavras como 'canto' (/kã-tu/ = 5 letras, 4 fonemas)."]}]},"contrasts":{"items":[{"contrastId":"C-FON-01","conceptA":"Dígrafo Vocálico","conceptB":"Encontro Consonantal","decisiveDifference":"Dígrafo vocálico ocorre quando m/n nasalizam a vogal anterior sem som consonantal pleno; encontro consonantal tem duas consoantes com sons audíveis.","minimalPair":{"sentenceA":"O canto da ave ecoou. ('canto' = 5 letras, 4 fonemas)","sentenceB":"O pacto foi firmado. ('pacto' = 5 letras, 5 fonemas)","difference":"'an' em canto é dígrafo vocálico (/ã/); 'ct' em pacto é encontro consonantal (/k/+/t/)."},"practicalHeuristic":"Se o M ou N estiver em fim de sílaba nasalizando a vogal, trata-se de dígrafo vocálico.","pitfall":"Classificar 'nt' como encontro consonantal em vez de reconhecer 'an' como dígrafo vocálico."}],"supplementaryBlocks":[{"type":"table_ref","tableId":"TABLE-IP-A00-G02-001","table":{"tableId":"TABLE-IP-A00-G02-001","caption":"Contrastes decisivos","headers":["Critério","Encontro Consonantal","Dígrafo Consonantal","Ditongo Crescente","Ditongo Decrescente","Hiato"],"rows":[["Composição Fonética","Consoante + Consoante","2 letras = 1 fonema","$\\text{Semivogal} + \\text{Vogal}$","$\\text{Vogal} + \\text{Semivogal}$","$\\text{Vogal} + \\text{Vogal}$"],["Alocação Silábica","Mesma ou separada","Mesma ou separada","Mesma sílaba","Mesma sílaba","Sílabas distintas"],["Comportamento ($= H$)","Inaplicável","Inaplicável","Pode virar Hiato ($DC=H$)","NUNCA vira Hiato ($DD \\neq H$)","É o próprio Hiato"],["Presença de Semivogal","Não","Não","Sim (1 semivogal)","Sim (1 semivogal)","NÃO possui semivogal"],["Exemplo Típico","BLUSA, AFTA","CHAVE, CARRO","SÉRIE, LÍRIO","PAI, ÓRFÃO","JUIZ, SAÚDE"]]},"coverageOrigin":"canonical_table_backfill"}]},"examples":{"items":[{"exampleId":"EX-FON-01","title":"Análise Fonêmica de 'Guerreiro'","sentence":"O guerreiro enfrentou o desafio.","analysis":"Palavra 'guerreiro': 9 letras (g-u-e-r-r-e-i-r-o). Dígrafos: 'gu' (/g/) e 'rr' (/ʁ/). Ditongo decrescente: 'ei'. Fonemas: /g-e-ʁ-e-j-r-u/ = 7 fonemas.","pedagogicalTakeaway":"Dígrafos reduzem a contagem fonêmica em relação ao número de letras gráficas.","targetLO":"LO-A00-G02-01"}]},"mnemonics":{"blocks":[{"type":"mnemonic","mnemonicId":"MNEM-FON-01","title":"Dígrafo vs Encontro: 2x1 vs 2x2","content":"Dígrafo = 2 letras por 1 som. Encontro = 2 letras por 2 sons.","classification":"EXAM_HEURISTIC","appliesTo":"Contagem rápida de fonemas em questões objetivas.","limitations":"Atenção ao dífono 'x' = 1 letra por 2 sons (/ks/).","text":"Dígrafo (2 letras = 1 som) vs Encontro Consonantal (2 letras = 2 sons)."}]},"traps":{"items":[{"trapId":"TRAP-FON-01","title":"A Ilusão do QU/GU","trigger":"Palavras com 'qu' e 'gu' antes de 'e' ou 'i'.","whyItFails":"O aluno assume que todo 'qu'/'gu' é dígrafo, esquecendo que quando o 'u' é pronunciado, há encontro vocálico (ditongo).","correctApproach":"Verificar a pronúncia: em 'guerra' o 'u' é mudo (dígrafo); em 'aguentar' o 'u' é sonoro (ditongo crescente).","bankTechnique":"Colocar alternativas emparelhando 'questão' (dígrafo) com 'frequente' (ditongo).","counterRule":"Se o 'u' soar foneticamente, não há dígrafo."}]},"glossary":{"items":[{"term":"Semivogal","shortDefinition":"Fonema vocálico átono que se apoia em uma vogal na mesma sílaba.","domain":"Fonética e Fonologia","commonMisconception":"Pensar que semivogal pode formar o núcleo de uma sílaba sozinha."}]},"recall":{"prompts":[{"promptId":"REC-FON-01","question":"Qual a diferença essencial entre dígrafo e encontro consonantal?","keyPoints":["Dígrafo: duas letras representam um único fonema.","Encontro consonantal: duas consoantes mantêm fonemas autônomos."],"targetConcept":"Dígrafo vs Encontro","targetLO":"LO-A00-G02-01"}]}},"questionDelivery":{"version":1,"totalOccurrences":9,"availableCount":9,"reconstructedSha256":"68137de4e0269e8ea1bff90824962341c6569b268c629bd2d82b8715a5d4b5f7","pages":[{"file":"question-pages/IP-A00-G02/questions-1.json","bytes":19373,"sha256":"e9990d0c141edea6c1836aa8e14291dd3f15af372a03aaee7ddaf09db257104a","count":9,"refs":["OQ-A00-aula00.q0006","OQ-A00-aula00.q0007","OQ-A00-aula00.q0074","OQ-A00-aula00.q0077","OQ-A00-aula00.q0089","OQ-A00-aula00.q0100","OQ-A00-aula00.q0104","OQ-A00-aula00.q0113","OQ-A00-aula00.q0204"]}]}}
+{
+  "viewSchemaVersion": "4.2.3-structured-sections",
+  "source": {
+    "unitId": "IP-A00-G02",
+    "lessonId": "A00",
+    "title": "Encontros Vocálicos e Consonantais",
+    "canonicalSource": "canonical-v2.1-consolidated",
+    "rebuildPipeline": "SuVeCa v4.2 Full Corpus Gemini Semantic Authoring",
+    "presentationCoverageRepair": "canonical content blocks restored after v4.2.1 identity projection",
+    "structuredSectionsProjection": "canonical contentBlocks projected as typed AST; glossary and relation targets resolved"
+  },
+  "unit": {
+    "unitId": "IP-A00-G02",
+    "lessonId": "A00",
+    "title": "Encontros Vocálicos e Consonantais",
+    "learningObjectives": [
+      "Construir do zero a base fonológica e silábica da Língua Portuguesa, conceituando o papel da vogal como centro da sílaba, detalhando todos os encontros vocálicos (ditongos crescentes e decrescentes, tritongos e hiatos), encontros consonantais (perfeitos e imperfeitos), dígrafos (consonantais e vocálicos), dífono da letra X, regras de partição silábica e o cálculo exato de grafemas versus fonemas, articulando teoria, mnemônicos (\"mantras\") e resolução de vocábulos complexos em nível de concursos públicos (Cebraspe, FGV, FCC)."
+    ],
+    "conceptCount": 2,
+    "ruleCount": 1,
+    "canonicalLearningObjectiveRefs": [
+      "OBJ-IP-A00-G02-01"
+    ],
+    "learningThreadRefs": [
+      "TH-A00-G02-01",
+      "TH-A00-G02-02"
+    ]
+  },
+  "sections": {
+    "suveca": {
+      "macroContext": "A fonética estuda os sons da língua e sua representação gráfica. O domínio dos encontros vocálicos e consonantais é a base indispensável para a correta divisão silábica, acentuação gráfica e contagem fonêmica em provas de concursos.",
+      "visualBlueprint": "Vogal (base da sílaba) <-> Semivogal (apoio fonético). Ditongo: V+SV ou SV+V na mesma sílaba. Hiato: V+V em sílabas distintas. Dígrafo: 2 letras = 1 fonema. Encontro Consonantal: 2 consoantes = 2 fonemas.",
+      "cognitiveAnchor": "Em Língua Portuguesa não existe sílaba sem vogal, nem sílaba com mais de uma vogal autêntica.",
+      "strategicSignificance": "Distingue pegadinhas clássicas de bancas sobre contagem de letras e fonemas e classificação de encontros em palavras como 'chuva' (dígrafo) vs 'prato' (encontro consonantal).",
+      "coreTension": "Confusão entre dígrafo (duas letras, um som) e encontro consonantal (duas letras, dois sons) ou entre ditongo crescente e hiato."
+    },
+    "prerequisites": {
+      "items": [
+        {
+          "prerequisiteId": "PR-A00-01",
+          "name": "Conceito de Fonema e Letra",
+          "reason": "Diferenciar a unidade sonora (fonema) do sinal gráfico (letra) para correta classificação dos encontros.",
+          "activationPrompt": "Quantos fonemas e letras existem na palavra 'táxi'?",
+          "isCritical": true
+        }
+      ]
+    },
+    "explanation": {
+      "groups": [
+        {
+          "groupId": "GRP-01",
+          "title": "Encontros Vocálicos: Ditongo, Tritongo e Hiato",
+          "pedagogicalGoal": "Compreender a dinâmica entre vogais e semivogais e identificar os tipos de encontros vocálicos.",
+          "blocks": [
+            {
+              "type": "concept_definition",
+              "term": "Ditongo",
+              "definition": "Encontro de uma vogal e uma semivogal (ou vice-versa) na mesma sílaba fonética.",
+              "text": "Ditongo é a combinação fonética indivisível na mesma sílaba."
+            },
+            {
+              "type": "classification",
+              "title": "Tipos de Encontros Vocálicos",
+              "categories": [
+                {
+                  "category": "Ditongo Crescente",
+                  "items": [
+                    "glória (i+a)",
+                    "pátria (i+a)"
+                  ],
+                  "description": "Semivogal + Vogal"
+                },
+                {
+                  "category": "Ditongo Decrescente",
+                  "items": [
+                    "pai (a+i)",
+                    "noite (o+i)"
+                  ],
+                  "description": "Vogal + Semivogal"
+                },
+                {
+                  "category": "Tritongo",
+                  "items": [
+                    "Paraguai (u+a+i)",
+                    "quão (u+a+o)"
+                  ],
+                  "description": "Semivogal + Vogal + Semivogal na mesma sílaba"
+                },
+                {
+                  "category": "Hiato",
+                  "items": [
+                    "sa-ú-de (a-u)",
+                    "pa-ís (a-i)"
+                  ],
+                  "description": "Duas vogais que ficam em sílabas separadas"
+                }
+              ],
+              "text": "Os encontros vocálicos dividem-se em ditongos (crescentes/decrescentes, orais/nasais), tritongos e hiatos."
+            }
+          ]
+        },
+        {
+          "groupId": "GRP-02",
+          "title": "Dígrafos vs Encontros Consonantais",
+          "pedagogicalGoal": "Distinguir com precisão dígrafos (2 letras = 1 som) de encontros consonantais (2 letras = 2 sons).",
+          "blocks": [
+            {
+              "type": "comparison_matrix",
+              "title": "Dígrafo vs Encontro Consonantal",
+              "columns": [
+                "Critério",
+                "Dígrafo",
+                "Encontro Consonantal"
+              ],
+              "rows": [
+                [
+                  "Definição",
+                  "Duas letras que representam um único fonema",
+                  "Duas consoantes contíguas que mantêm seus fonemas distintos"
+                ],
+                [
+                  "Exemplo",
+                  "passo (ss = /s/), chave (ch = /ʃ/)",
+                  "prato (/p/+/r/), pacto (/k/+/t/)"
+                ],
+                [
+                  "Contagem",
+                  "Nº letras > Nº fonemas",
+                  "Nº letras == Nº fonemas (geralmente)"
+                ]
+              ],
+              "text": "Dígrafo representa economia fonêmica; encontro consonantal preserva a integridade de cada fonema."
+            }
+          ]
+        }
+      ]
+    },
+    "rules": {
+      "items": [
+        {
+          "ruleId": "R-FON-01",
+          "title": "Unicidade da Vogal Silábica",
+          "statement": "Toda sílaba da língua portuguesa possui uma e apenas uma vogal fonética como centro.",
+          "formalCondition": "Para toda sílaba S, |Vogal(S)| = 1.",
+          "scope": "Universal na fonologia do português padrão.",
+          "normativity": "MANDATORY",
+          "exceptions": [],
+          "examples": [
+            "pai (a=vogal, i=semivogal)",
+            "ru-a (u=vogal, a=vogal em sílabas distintas)"
+          ]
+        }
+      ]
+    },
+    "resolution": {
+      "procedures": [
+        {
+          "procedureId": "PROC-FON-01",
+          "title": "Algoritmo de Contagem de Letras e Fonemas",
+          "triggerCondition": "Questões de prova que exigem número exato de fonemas e letras.",
+          "steps": [
+            "1. Conte todas as letras gráficas da palavra.",
+            "2. Identifique os dígrafos consonantais (ch, lh, nh, rr, ss, sc, sç, xc, qu/gu antes de e/i) e subtraia 1 para cada um.",
+            "3. Identifique os dígrafos vocálicos (am, an, em, en, im, in, om, on, um, un em posição final ou antes de consoante) e subtraia 1 para cada um.",
+            "4. Identifique o dífono 'x' com som de /ks/ (táxi, fixo) e adicione 1.",
+            "5. Calcule o resultado final: Nº Fonemas = Nº Letras - Dígrafos + Dífonos."
+          ],
+          "verificationCriteria": "Verificar se as letras 'qu' e 'gu' possuem 'u' pronunciado (se pronunciado, não é dígrafo, ex: 'cinquenta').",
+          "typicalFailureModes": [
+            "Esquecer de subtrair dígrafos vocálicos em palavras como 'canto' (/kã-tu/ = 5 letras, 4 fonemas)."
+          ],
+          "blocks": [
+            {
+              "type": "diagram",
+              "diagramType": "decision_flow",
+              "title": "Fluxograma Algorítmico de Dedução de Fonemas",
+              "text": "### Algoritmo de Contagem de Letras e Fonemas (SuVeCA)\n\n1. **Contagem Gráfica Inicial**: Conte todas as letras gráficas do vocábulo ($NL$).\n2. **Dedução de Dígrafos Consonantais**: Identifique dígrafos consonantais (*ch, lh, nh, rr, ss, sc, sç, xc, qu/gu antes de e/i*). Subtraia 1 para cada dígrafo encontrado ($DC$).\n3. **Dedução de Dígrafos Vocálicos**: Identifique dígrafos vocálicos (*am, an, em, en, im, in, om, on, um, un* em posição final ou antes de consoante). Subtraia 1 para cada dígrafo encontrado ($DV$).\n4. **Adição de Dífonos**: Identifique o dífono 'x' com som de $/ks/$ (ex.: *táxi, fixo*). Adicione 1 para cada ocorrência ($DF$).\n5. **Cálculo Final**: Obtenha o número exato de fonemas pela equação:\n   $$\\text{Nº Fonemas} = \\text{Nº Letras} - (DC + DV) + DF$$",
+              "structure": {
+                "schemaVersion": "2.1.0",
+                "visualType": "decision_flow",
+                "layout": "responsive",
+                "rootId": "start",
+                "structuredText": "### Algoritmo de Contagem de Letras e Fonemas (SuVeCA)\n\n1. **Contagem Gráfica Inicial**: Conte todas as letras gráficas do vocábulo ($NL$).\n2. **Dedução de Dígrafos Consonantais**: Identifique dígrafos consonantais (*ch, lh, nh, rr, ss, sc, sç, xc, qu/gu antes de e/i*). Subtraia 1 para cada dígrafo encontrado ($DC$).\n3. **Dedução de Dígrafos Vocálicos**: Identifique dígrafos vocálicos (*am, an, em, en, im, in, om, on, um, un* em posição final ou antes de consoante). Subtraia 1 para cada dígrafo encontrado ($DV$).\n4. **Adição de Dífonos**: Identifique o dífono 'x' com som de $/ks/$ (ex.: *táxi, fixo*). Adicione 1 para cada ocorrência ($DF$).\n5. **Cálculo Final**: Obtenha o número exato de fonemas pela equação:\n   $$\\text{Nº Fonemas} = \\text{Nº Letras} - (DC + DV) + DF$$",
+                "mermaidSource": "flowchart TD\n  start[\"Início: Palavra para Análise Algorítmica\"] --> proc_contar_letras[\"Passo 1: Contar todas as letras gráficas (NL)\"]\n  proc_contar_letras --> dec_tem_dc{\"Passo 2: Há dígrafos consonantais?\"}\n  dec_tem_dc -- \"Sim\" --> proc_sub_dc[\"Subtrair 1 por dígrafo: DC = DC + n\"]\n  dec_tem_dc -- \"Não\" --> dec_tem_dv{\"Passo 3: Há dígrafos vocálicos?\"}\n  proc_sub_dc --> dec_tem_dv\n  dec_tem_dv -- \"Sim\" --> proc_sub_dv[\"Subtrair 1 por dígrafo: DV = DV + n\"]\n  dec_tem_dv -- \"Não\" --> dec_tem_difono{\"Passo 4: Há dífono x com som /ks/?\"}\n  proc_sub_dv --> dec_tem_difono\n  dec_tem_difono -- \"Sim\" --> proc_add_difono[\"Adicionar 1 por dífono: DF = DF + n\"]\n  dec_tem_difono -- \"Não\" --> res_calculo_final[\"Passo 5: Resultado Final (NF = NL - Dígrafos + DF)\"]\n  proc_add_difono --> res_calculo_final",
+                "nodes": [
+                  {
+                    "id": "start",
+                    "kind": "start",
+                    "label": "Início: Palavra para Análise Algorítmica",
+                    "details": [
+                      "Entrada: vocábulo para processamento fonológico",
+                      "Inicializar contadores: NL = 0, DC = 0, DV = 0, DF = 0"
+                    ]
+                  },
+                  {
+                    "id": "proc_contar_letras",
+                    "kind": "process",
+                    "label": "Passo 1: Contar todas as letras gráficas (NL)",
+                    "details": [
+                      "Varredura de caracteres da palavra",
+                      "Definir NL = Total de caracteres alfabéticos"
+                    ]
+                  },
+                  {
+                    "id": "dec_tem_dc",
+                    "kind": "decision",
+                    "label": "Passo 2: Há dígrafos consonantais?",
+                    "details": [
+                      "ch, lh, nh, rr, ss, sc, sç, xc",
+                      "qu/gu seguidos de e/i sem pronúncia do 'u'"
+                    ]
+                  },
+                  {
+                    "id": "proc_sub_dc",
+                    "kind": "process",
+                    "label": "Subtrair 1 por dígrafo: DC = DC + n",
+                    "details": [
+                      "Cada dígrafo consonantal representa 1 único som consonantal",
+                      "Incrementar DC com o total de ocorrências"
+                    ]
+                  },
+                  {
+                    "id": "dec_tem_dv",
+                    "kind": "decision",
+                    "label": "Passo 3: Há dígrafos vocálicos?",
+                    "details": [
+                      "am, an, em, en, im, in, om, on, um, un",
+                      "Em posição final de sílaba ou precedendo consoante"
+                    ]
+                  },
+                  {
+                    "id": "proc_sub_dv",
+                    "kind": "process",
+                    "label": "Subtrair 1 por dígrafo: DV = DV + n",
+                    "details": [
+                      "A consoante nasal funciona apenas como marca de nasalidade da vogal",
+                      "Incrementar DV com o total de ocorrências"
+                    ]
+                  },
+                  {
+                    "id": "dec_tem_difono",
+                    "kind": "decision",
+                    "label": "Passo 4: Há dífono x com som /ks/?",
+                    "details": [
+                      "Letra 'x' com valor fônico duplo (/k/ + /s/)",
+                      "Exemplos: táxi, fixo, anexo, reflexo"
+                    ]
+                  },
+                  {
+                    "id": "proc_add_difono",
+                    "kind": "process",
+                    "label": "Adicionar 1 por dífono: DF = DF + n",
+                    "details": [
+                      "Adicionar +1 para cada letra 'x' dífona",
+                      "Incrementar DF com o total de ocorrências"
+                    ]
+                  },
+                  {
+                    "id": "res_calculo_final",
+                    "kind": "result",
+                    "label": "Passo 5: Resultado Final (NF = NL - Dígrafos + DF)",
+                    "details": [
+                      "Cálculo: Nº Fonemas = Nº Letras - (DC + DV) + DF",
+                      "Apresentação: Total de Letras = NL | Total de Fonemas = NF"
+                    ]
+                  }
+                ],
+                "edges": [
+                  {
+                    "from": "start",
+                    "to": "proc_contar_letras",
+                    "label": "Contar caracteres"
+                  },
+                  {
+                    "from": "proc_contar_letras",
+                    "to": "dec_tem_dc",
+                    "label": "Avaliar dígrafos consonantais"
+                  },
+                  {
+                    "from": "dec_tem_dc",
+                    "to": "proc_sub_dc",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "dec_tem_dc",
+                    "to": "dec_tem_dv",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "proc_sub_dc",
+                    "to": "dec_tem_dv",
+                    "label": "Dígrafos consonantais deduzidos"
+                  },
+                  {
+                    "from": "dec_tem_dv",
+                    "to": "proc_sub_dv",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "dec_tem_dv",
+                    "to": "dec_tem_difono",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "proc_sub_dv",
+                    "to": "dec_tem_difono",
+                    "label": "Dígrafos vocálicos deduzidos"
+                  },
+                  {
+                    "from": "dec_tem_difono",
+                    "to": "proc_add_difono",
+                    "label": "Sim"
+                  },
+                  {
+                    "from": "dec_tem_difono",
+                    "to": "res_calculo_final",
+                    "label": "Não"
+                  },
+                  {
+                    "from": "proc_add_difono",
+                    "to": "res_calculo_final",
+                    "label": "Dífonos adicionados"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "contrasts": {
+      "items": [
+        {
+          "contrastId": "C-FON-01",
+          "conceptA": "Dígrafo Vocálico",
+          "conceptB": "Encontro Consonantal",
+          "decisiveDifference": "O dígrafo vocálico é a combinação de uma vogal com as letras 'm' ou 'n' em final de sílaba para representar um único fonema vocálico nasal (/ã/, /ẽ/, /ĩ/, /õ/, /ũ/), ao passo que o encontro consonantal consiste no agrupamento de duas ou mais consoantes fonéticas sucessivas, cada uma preservando seu próprio fonema audível.",
+          "minimalPair": {
+            "sentenceA": "O comandante monitorou o ponto estratégico da operação.",
+            "sentenceB": "O comandante monitorou o porto estratégico da operação.",
+            "difference": "Em 'ponto', o grupo 'on' forma dígrafo vocálico nasal, resultando em 4 fonemas para 5 letras (/p-õ-t-u/), pois o 'n' funciona apenas como marca diacrítica de nasalização. Em 'porto', o grupo 'rt' forma encontro consonantal com 5 fonemas para 5 letras (/p-o-r-t-u/), pois 'r' e 't' são consoantes autônomas pronunciadas sucessivamente."
+          },
+          "practicalHeuristic": "Aplique o teste visual do til: tente substituir mentalmente a consoante nasal 'm' ou 'n' pós-vocálica por um til sobre a vogal anterior; se a palavra mantiver a pronúncia idêntica (ex.: põ-to, cã-po, vẽ-to), trata-se de dígrafo vocálico e ocorre perda de um fonema na contagem (número de fonemas = total de letras - 1). Se ambas as consoantes precisarem ser articuladas individualmente com sons consonantais próprios sem fusão à vogal (ex.: p-o-r-t-o), trata-se de encontro consonantal e cada letra preserva seu respectivo fonema.",
+          "pitfall": "Bancas como Cebraspe, FGV e FCC exploram o engano visual induzindo o candidato a classificar encontros gráficos como 'nt', 'mp', 'nd' e 'nc' como 'encontros consonantais'. Na grafia, 'm' e 'n' são letras do alfabeto classificadas como consoantes, mas no plano fonológico dessas palavras atuam estritamente como sinais de nasalidade da vogal precedente, configurando dígrafo vocálico e reduzindo a contagem final de fonemas do vocábulo."
+        }
+      ],
+      "supplementaryBlocks": [
+        {
+          "type": "table_ref",
+          "tableId": "TABLE-IP-A00-G02-001",
+          "table": {
+            "tableId": "TABLE-IP-A00-G02-001",
+            "caption": "Contrastes decisivos",
+            "headers": [
+              "Critério",
+              "Encontro Consonantal",
+              "Dígrafo Consonantal",
+              "Ditongo Crescente",
+              "Ditongo Decrescente",
+              "Hiato"
+            ],
+            "rows": [
+              [
+                "Composição Fonética",
+                "Consoante + Consoante",
+                "2 letras = 1 fonema",
+                "$\\text{Semivogal} + \\text{Vogal}$",
+                "$\\text{Vogal} + \\text{Semivogal}$",
+                "$\\text{Vogal} + \\text{Vogal}$"
+              ],
+              [
+                "Alocação Silábica",
+                "Mesma ou separada",
+                "Mesma ou separada",
+                "Mesma sílaba",
+                "Mesma sílaba",
+                "Sílabas distintas"
+              ],
+              [
+                "Comportamento ($= H$)",
+                "Inaplicável",
+                "Inaplicável",
+                "Pode virar Hiato ($DC=H$)",
+                "NUNCA vira Hiato ($DD \\neq H$)",
+                "É o próprio Hiato"
+              ],
+              [
+                "Presença de Semivogal",
+                "Não",
+                "Não",
+                "Sim (1 semivogal)",
+                "Sim (1 semivogal)",
+                "NÃO possui semivogal"
+              ],
+              [
+                "Exemplo Típico",
+                "BLUSA, AFTA",
+                "CHAVE, CARRO",
+                "SÉRIE, LÍRIO",
+                "PAI, ÓRFÃO",
+                "JUIZ, SAÚDE"
+              ]
+            ]
+          },
+          "coverageOrigin": "canonical_table_backfill"
+        }
+      ]
+    },
+    "examples": {
+      "items": [
+        {
+          "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001",
+          "title": "Resolução Completa: \"Queijo\"",
+          "prompt": "Realize a separação silábica da palavra \"Queijo\", analise os encontros vocálicos, consonantais ou dígrafos presentes e determine a contagem de letras e fonemas.",
+          "sentence": "Realize a separação silábica da palavra \"Queijo\", analise os encontros vocálicos, consonantais ou dígrafos presentes e determine a contagem de letras e fonemas.",
+          "statement": "Realize a separação silábica da palavra \"Queijo\", analise os encontros vocálicos, consonantais ou dígrafos presentes e determine a contagem de letras e fonemas.",
+          "analysis": "Análise passo a passo apresentada pelo professor em videoaula.",
+          "result": "Resolvido em aula conforme passo a passo.",
+          "blocks": [
+            {
+              "type": "worked_example",
+              "text": "Análise passo a passo apresentada pelo professor em videoaula."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001"
+            ],
+            "renderStrategy": "source_only",
+            "diagramIntent": "none",
+            "hideGenericScaffold": true
+          },
+          "metadata": {
+            "board": null,
+            "year": null,
+            "organization": null,
+            "videoSource": "006 - Estudo da Sílaba - Parte 04 - 720p.md",
+            "kbSource": "EX-A00-V006-ESTUDO-DA-SILABA-P4-001",
+            "timestamp": null
+          }
+        },
+        {
+          "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002",
+          "title": "Resolução Completa: \"Quebranto\"",
+          "prompt": "Realize a separação silábica da palavra \"Quebranto\", identifique os dígrafos e encontros consonantais presentes e determine a contagem de letras e fonemas.",
+          "sentence": "Realize a separação silábica da palavra \"Quebranto\", identifique os dígrafos e encontros consonantais presentes e determine a contagem de letras e fonemas.",
+          "statement": "Realize a separação silábica da palavra \"Quebranto\", identifique os dígrafos e encontros consonantais presentes e determine a contagem de letras e fonemas.",
+          "analysis": "Análise passo a passo apresentada pelo professor em videoaula.",
+          "result": "Resolvido em aula conforme passo a passo.",
+          "blocks": [
+            {
+              "type": "worked_example",
+              "text": "Análise passo a passo apresentada pelo professor em videoaula."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002"
+            ],
+            "renderStrategy": "source_only",
+            "diagramIntent": "none",
+            "hideGenericScaffold": true
+          },
+          "metadata": {
+            "board": null,
+            "year": null,
+            "organization": null,
+            "videoSource": "006 - Estudo da Sílaba - Parte 04 - 720p.md",
+            "kbSource": "EX-A00-V006-ESTUDO-DA-SILABA-P4-006",
+            "timestamp": null
+          }
+        },
+        {
+          "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003",
+          "title": "Resolução Completa: \"Uruguai\" e \"Quais\"",
+          "prompt": "Realize a separação silábica das palavras \"Uruguai\" e \"Quais\" e determine a classificação do encontro vocálico presente em cada uma.",
+          "sentence": "Realize a separação silábica das palavras \"Uruguai\" e \"Quais\" e determine a classificação do encontro vocálico presente em cada uma.",
+          "statement": "Realize a separação silábica das palavras \"Uruguai\" e \"Quais\" e determine a classificação do encontro vocálico presente em cada uma.",
+          "analysis": "Análise passo a passo apresentada pelo professor em videoaula.",
+          "result": "Resolvido em aula conforme passo a passo.",
+          "blocks": [
+            {
+              "type": "worked_example",
+              "text": "Análise passo a passo apresentada pelo professor em videoaula."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003"
+            ],
+            "renderStrategy": "source_only",
+            "diagramIntent": "none",
+            "hideGenericScaffold": true
+          },
+          "metadata": {
+            "board": null,
+            "year": null,
+            "organization": null,
+            "videoSource": "003, 004, 005",
+            "kbSource": "003 (EX-006), 004 (EX-003, EX-008), 005 (VIS-001)",
+            "timestamp": null
+          }
+        },
+        {
+          "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004",
+          "title": "Resolução Completa: \"Enxurrada\"",
+          "prompt": "Realize a separação silábica da palavra \"Enxurrada\", identificando os tipos de dígrafos presentes, o valor fonético do \"x\" e o cômputo de letras e fonemas.",
+          "sentence": "Realize a separação silábica da palavra \"Enxurrada\", identificando os tipos de dígrafos presentes, o valor fonético do \"x\" e o cômputo de letras e fonemas.",
+          "statement": "Realize a separação silábica da palavra \"Enxurrada\", identificando os tipos de dígrafos presentes, o valor fonético do \"x\" e o cômputo de letras e fonemas.",
+          "analysis": "Análise passo a passo apresentada pelo professor em videoaula.",
+          "result": "Resolvido em aula conforme passo a passo.",
+          "blocks": [
+            {
+              "type": "worked_example",
+              "text": "Análise passo a passo apresentada pelo professor em videoaula."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004"
+            ],
+            "renderStrategy": "source_only",
+            "diagramIntent": "none",
+            "hideGenericScaffold": true
+          },
+          "metadata": {
+            "board": null,
+            "year": null,
+            "organization": null,
+            "videoSource": "006 - Estudo da Sílaba - Parte 04 - 720p.md",
+            "kbSource": "EX-A00-V006-ESTUDO-DA-SILABA-P4-005",
+            "timestamp": null
+          }
+        },
+        {
+          "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005",
+          "title": "Resolução Completa: \"Aguento\"",
+          "prompt": "Realize a separação silábica da palavra \"Aguento\", analise o comportamento fonético do grupo \"gue\" e do grupo \"en\", e determine o cômputo de letras e fonemas.",
+          "sentence": "Realize a separação silábica da palavra \"Aguento\", analise o comportamento fonético do grupo \"gue\" e do grupo \"en\", e determine o cômputo de letras e fonemas.",
+          "statement": "Realize a separação silábica da palavra \"Aguento\", analise o comportamento fonético do grupo \"gue\" e do grupo \"en\", e determine o cômputo de letras e fonemas.",
+          "analysis": "Análise passo a passo apresentada pelo professor em videoaula.",
+          "result": "Resolvido em aula conforme passo a passo.",
+          "blocks": [
+            {
+              "type": "worked_example",
+              "text": "Análise passo a passo apresentada pelo professor em videoaula."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005"
+            ],
+            "renderStrategy": "source_only",
+            "diagramIntent": "none",
+            "hideGenericScaffold": true
+          },
+          "metadata": {
+            "board": null,
+            "year": null,
+            "organization": null,
+            "videoSource": "005 - Estudo da Sílaba - Parte 03 - 720p.md",
+            "kbSource": "EX-A00-V005-ESTUDO-DA-SILABA-P03-001",
+            "timestamp": null
+          }
+        },
+        {
+          "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006",
+          "title": "Resolução Completa: \"Sexo\" e \"Tóxico\" (Dífono)",
+          "prompt": "Analise a função fonética da consoante \"x\" nas palavras \"Sexo\" e \"Tóxico\", indicando a separação silábica e o cômputo de letras e fonemas.",
+          "sentence": "Analise a função fonética da consoante \"x\" nas palavras \"Sexo\" e \"Tóxico\", indicando a separação silábica e o cômputo de letras e fonemas.",
+          "statement": "Analise a função fonética da consoante \"x\" nas palavras \"Sexo\" e \"Tóxico\", indicando a separação silábica e o cômputo de letras e fonemas.",
+          "analysis": "Análise passo a passo apresentada pelo professor em videoaula.",
+          "result": "Resolvido em aula conforme passo a passo.",
+          "blocks": [
+            {
+              "type": "worked_example",
+              "text": "Análise passo a passo apresentada pelo professor em videoaula."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006"
+            ],
+            "renderStrategy": "source_only",
+            "diagramIntent": "none",
+            "hideGenericScaffold": true
+          },
+          "metadata": {
+            "board": null,
+            "year": null,
+            "organization": null,
+            "videoSource": "007 - Estudo da Sílaba - Parte 05 - 720p.md",
+            "kbSource": "EX-A00-V007-007-ESTUDO-DA-SILABA-PARTE-05-001",
+            "timestamp": null
+          }
+        },
+        {
+          "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+          "title": "Bateria Sintética de Fixação",
+          "prompt": "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas.",
+          "sentence": "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas.",
+          "statement": "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas.",
+          "analysis": "Análise passo a passo apresentada pelo professor em videoaula.",
+          "result": "Resolvido em aula conforme passo a passo.",
+          "blocks": [
+            {
+              "type": "worked_example",
+              "text": "Análise passo a passo apresentada pelo professor em videoaula."
+            }
+          ],
+          "presentation": {
+            "status": "source_backed",
+            "sourceKind": "canonical_content_block",
+            "sourceEntityRefs": [
+              "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007"
+            ],
+            "renderStrategy": "source_only",
+            "diagramIntent": "none",
+            "hideGenericScaffold": true
+          },
+          "practiceItems": [
+            {
+              "id": "SUB-01",
+              "prompt": "Navio",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: na-vi-o | Classificação: Hiato (V+V) | Letras: 5 | Fonemas: 5 — Na palavra \"Navio\", as vogais 'i' e 'o' ficam em sílabas separadas ('na-vi-o'), formando um hiato (V+V). Cada letra equivale a um fonema distinto (5 letras, 5 fonemas)."
+                }
+              ]
+            },
+            {
+              "id": "SUB-02",
+              "prompt": "Heroico",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: he-roi-co | Classificação: Ditongo Decrescente (ROI = V+SV) | Letras: 7 | Fonemas: 7 — Na sílaba 'roi', o encontro vocálico é composto pela vogal 'o' e pela semivogal 'i' na mesma sílaba, configurando um ditongo decrescente oral. Conta com 7 letras e 7 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-03",
+              "prompt": "Lua",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: lu-a | Classificação: Hiato (V+V) | Letras: 3 | Fonemas: 3 — As vogais 'u' e 'a' separam-se em sílabas distintas ('lu-a'), constituindo hiato (V+V). Possui 3 letras e 3 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-04",
+              "prompt": "Tranquilo",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: tran-qui-lo | Classificação: Dígrafo Vocálico (AN) + Ditongo Crescente (QUI = SV+V) | Letras: 9 | Fonemas: 8 — O grupo 'AN' é dígrafo vocálico (produz uma vogal nasalizada /ã/), reduzindo 1 fonema. Na sílaba 'qui', o 'u' é pronunciado como semivogal antes da vogal 'i', formando ditongo crescente. Total: 9 letras e 8 fonemas (9 - 1 = 8)."
+                }
+              ]
+            },
+            {
+              "id": "SUB-05",
+              "prompt": "Álcool",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: ál-co-ol | Classificação: Hiato (O+O) | Letras: 6 | Fonemas: 6 — Duas vogais idênticas ('o-o') separam-se compulsoriamente em sílabas distintas ('ál-co-ol'), formando hiato. Possui 6 letras e 6 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-06",
+              "prompt": "Gênio",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: gê-nio | Classificação: Ditongo Crescente (NIO = SV+V) | Letras: 5 | Fonemas: 5 — Na sílaba final 'nio', a semivogal 'i' antecede a vogal 'o' na mesma sílaba, caracterizando ditongo crescente. Possui 5 letras e 5 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-07",
+              "prompt": "Noite",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: noi-te | Classificação: Ditongo Decrescente (NOI = V+SV) | Letras: 5 | Fonemas: 5 — Na sílaba 'noi', temos a vogal 'o' seguida da semivogal 'i' na mesma sílaba, configurando ditongo decrescente oral. Possui 5 letras e 5 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-08",
+              "prompt": "Raiz",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: ra-iz | Classificação: Hiato (V+V) | Letras: 4 | Fonemas: 4 — As vogais 'a' e 'i' separam-se em sílabas diferentes ('ra-iz'), configurando hiato (V+V). Possui 4 letras e 4 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-09",
+              "prompt": "Irmão",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: ir-mão | Classificação: Ditongo Decrescente Nasal (ÃO = V+SV) | Letras: 5 | Fonemas: 5 — Na terminação 'mão', 'ão' forma um ditongo decrescente nasal composto pela vogal nasal 'ã' e pela semivogal 'o' (/w/). Possui 5 letras e 5 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-10",
+              "prompt": "Senhor",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: se-nhor | Classificação: Dígrafo Consonantal (NH) | Letras: 6 | Fonemas: 5 — O grupo 'NH' constitui dígrafo consonantal inseparável, correspondente a um único fonema palatal /ɲ/. Com isso, a palavra tem 6 letras e 5 fonemas (6 - 1 = 5)."
+                }
+              ]
+            },
+            {
+              "id": "SUB-11",
+              "prompt": "Peixe",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: pei-xe | Classificação: Ditongo Decrescente (EI) + X=/x/ | Letras: 5 | Fonemas: 5 — Na sílaba 'pei', 'ei' é ditongo decrescente (vogal 'e' + semivogal 'i'). O grafema 'x' soa como o fonema fricativo /x/. Possui 5 letras e 5 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-12",
+              "prompt": "Cadeira",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: ca-dei-ra | Classificação: Ditongo Decrescente (EI) | Letras: 7 | Fonemas: 7 — Na sílaba medial 'dei', o encontro 'ei' configura um ditongo decrescente (vogal 'e' + semivogal 'i'). A palavra possui 7 letras e 7 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-13",
+              "prompt": "Juiz",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: ju-iz | Classificação: Hiato (V+V) | Letras: 4 | Fonemas: 4 — As vogais 'u' e 'i' separam-se em sílabas distintas ('ju-iz'), formando hiato (V+V). Possui 4 letras e 4 fonemas."
+                }
+              ]
+            },
+            {
+              "id": "SUB-14",
+              "prompt": "Hora",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: ho-ra | Classificação: H inicial mudo (sem fonema) | Letras: 4 | Fonemas: 3 — A letra 'H' inicial é etimológica e não possui valor fonético na Língua Portuguesa (não representa fonema). Assim, temos 4 letras e 3 fonemas (4 - 1 = 3)."
+                }
+              ]
+            },
+            {
+              "id": "SUB-15",
+              "prompt": "Chave",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: cha-ve | Classificação: Dígrafo Consonantal Inseparável (CH) | Letras: 5 | Fonemas: 4 — O par 'CH' é dígrafo consonantal inseparável, representando o fonema /ʃ/. Totaliza 5 letras e 4 fonemas (5 - 1 = 4)."
+                }
+              ]
+            },
+            {
+              "id": "SUB-16",
+              "prompt": "Tampa",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: tam-pa | Classificação: Dígrafo Vocálico (AM) | Letras: 5 | Fonemas: 4 — O encontro 'AM' é dígrafo vocálico (indica a vogal nasalizada /ã/), equivalendo a 1 fonema. Logo, são 5 letras e 4 fonemas (5 - 1 = 4)."
+                }
+              ]
+            },
+            {
+              "id": "SUB-17",
+              "prompt": "Barril",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: bar-ril | Classificação: Dígrafo Consonantal Separável (RR) + L consonantal | Letras: 6 | Fonemas: 5 — O grupo 'RR' é um dígrafo consonantal separável ('bar-ril') que soa como um único fonema /R/. A letra 'l' final preserva valor consonantal. Logo, são 6 letras e 5 fonemas (6 - 1 = 5)."
+                }
+              ]
+            },
+            {
+              "id": "SUB-18",
+              "prompt": "Descer",
+              "solutionBlocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Resposta: Divisão Silábica: des-cer | Classificação: Dígrafo Consonantal Separável (SC) | Letras: 6 | Fonemas: 5 — O encontro 'SC' seguido de 'e' forma dígrafo consonantal separável ('des-cer'), emitindo o fonema /s/. Possui 6 letras e 5 fonemas (6 - 1 = 5)."
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "board": null,
+            "year": null,
+            "organization": null,
+            "videoSource": "003, 004, 005, 006, 007",
+            "kbSource": "003, 004, 005, 006, 007",
+            "timestamp": null
+          }
+        }
+      ],
+      "study": {
+        "schemaVersion": 2,
+        "revision": "example-study-2026-10-01-v1",
+        "sourceOccurrences": 24,
+        "items": [
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001",
+            "kind": "demonstration",
+            "title": "Resolução Completa: \"Queijo\"",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001",
+                "sha256": "19bced3938e61bb7465dc5f2e09717818368ac7337689e74c69e01f2f27ba42e"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-001"
+              }
+            ],
+            "prompt": [
+              "Realize a separação silábica da palavra \"Queijo\", analise os encontros vocálicos, consonantais ou dígrafos presentes e determine a contagem de letras e fonemas."
+            ],
+            "support": [],
+            "grading": {
+              "available": false,
+              "reason": "Exemplo demonstrativo resolvido em aula."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "006 - Estudo da Sílaba - Parte 04 - 720p.md",
+              "kbSource": "EX-A00-V006-ESTUDO-DA-SILABA-P4-001",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002",
+            "kind": "demonstration",
+            "title": "Resolução Completa: \"Quebranto\"",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002",
+                "sha256": "46ca23e184d6727ffdb408cca086979412e9b47d9a5aed17f263ca197108450e"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-002"
+              }
+            ],
+            "prompt": [
+              "Realize a separação silábica da palavra \"Quebranto\", identifique os dígrafos e encontros consonantais presentes e determine a contagem de letras e fonemas."
+            ],
+            "support": [],
+            "grading": {
+              "available": false,
+              "reason": "Exemplo demonstrativo resolvido em aula."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "006 - Estudo da Sílaba - Parte 04 - 720p.md",
+              "kbSource": "EX-A00-V006-ESTUDO-DA-SILABA-P4-006",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003",
+            "kind": "demonstration",
+            "title": "Resolução Completa: \"Uruguai\" e \"Quais\"",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003",
+                "sha256": "1767ecdc9ba9fa6f50916e3b98f6e9f704b760551895386ba1910ff27811701c"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-003"
+              }
+            ],
+            "prompt": [
+              "Realize a separação silábica das palavras \"Uruguai\" e \"Quais\" e determine a classificação do encontro vocálico presente em cada uma."
+            ],
+            "support": [],
+            "grading": {
+              "available": false,
+              "reason": "Exemplo demonstrativo resolvido em aula."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005",
+              "kbSource": "003 (EX-006), 004 (EX-003, EX-008), 005 (VIS-001)",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004",
+            "kind": "demonstration",
+            "title": "Resolução Completa: \"Enxurrada\"",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004",
+                "sha256": "c3eb502c3dc930d72b6db11252fa44ec0b1aabbe6de3abc3c136cafd4045fea0"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-004"
+              }
+            ],
+            "prompt": [
+              "Realize a separação silábica da palavra \"Enxurrada\", identificando os tipos de dígrafos presentes, o valor fonético do \"x\" e o cômputo de letras e fonemas."
+            ],
+            "support": [],
+            "grading": {
+              "available": false,
+              "reason": "Exemplo demonstrativo resolvido em aula."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "006 - Estudo da Sílaba - Parte 04 - 720p.md",
+              "kbSource": "EX-A00-V006-ESTUDO-DA-SILABA-P4-005",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005",
+            "kind": "demonstration",
+            "title": "Resolução Completa: \"Aguento\"",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005",
+                "sha256": "c64e48e7c62a1b5865913793e046de3e9117ed6c654d20ca5ee35bdbe64e44a4"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-005"
+              }
+            ],
+            "prompt": [
+              "Realize a separação silábica da palavra \"Aguento\", analise o comportamento fonético do grupo \"gue\" e do grupo \"en\", e determine o cômputo de letras e fonemas."
+            ],
+            "support": [],
+            "grading": {
+              "available": false,
+              "reason": "Exemplo demonstrativo resolvido em aula."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "005 - Estudo da Sílaba - Parte 03 - 720p.md",
+              "kbSource": "EX-A00-V005-ESTUDO-DA-SILABA-P03-001",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006",
+            "kind": "demonstration",
+            "title": "Resolução Completa: \"Sexo\" e \"Tóxico\" (Dífono)",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006",
+                "sha256": "ca846b3f088e3c99fa859724ce909d04015bc3db00dcb25892d113e1a6113e2b"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-006"
+              }
+            ],
+            "prompt": [
+              "Analise a função fonética da consoante \"x\" nas palavras \"Sexo\" e \"Tóxico\", indicando a separação silábica e o cômputo de letras e fonemas."
+            ],
+            "support": [],
+            "grading": {
+              "available": false,
+              "reason": "Exemplo demonstrativo resolvido em aula."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "007 - Estudo da Sílaba - Parte 05 - 720p.md",
+              "kbSource": "EX-A00-V007-007-ESTUDO-DA-SILABA-PARTE-05-001",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-01",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-01",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-01"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-01"
+              }
+            ],
+            "prompt": [
+              "Navio"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-02",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-02",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-02"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-02"
+              }
+            ],
+            "prompt": [
+              "Heroico"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-03",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-03",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-03"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-03"
+              }
+            ],
+            "prompt": [
+              "Lua"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-04",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-04",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-04"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-04"
+              }
+            ],
+            "prompt": [
+              "Tranquilo"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-05",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-05",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-05"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-05"
+              }
+            ],
+            "prompt": [
+              "Álcool"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-06",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-06",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-06"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-06"
+              }
+            ],
+            "prompt": [
+              "Gênio"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-07",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-07",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-07"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-07"
+              }
+            ],
+            "prompt": [
+              "Noite"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-08",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-08",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-08"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-08"
+              }
+            ],
+            "prompt": [
+              "Raiz"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-09",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-09",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-09"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-09"
+              }
+            ],
+            "prompt": [
+              "Irmão"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-10",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-10",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-10"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-10"
+              }
+            ],
+            "prompt": [
+              "Senhor"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-11",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-11",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-11"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-11"
+              }
+            ],
+            "prompt": [
+              "Peixe"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-12",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-12",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-12"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-12"
+              }
+            ],
+            "prompt": [
+              "Cadeira"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-13",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-13",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-13"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-13"
+              }
+            ],
+            "prompt": [
+              "Juiz"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-14",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-14",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-14"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-14"
+              }
+            ],
+            "prompt": [
+              "Hora"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-15",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-15",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-15"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-15"
+              }
+            ],
+            "prompt": [
+              "Chave"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-16",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-16",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-16"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-16"
+              }
+            ],
+            "prompt": [
+              "Tampa"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-17",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-17",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-17"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-17"
+              }
+            ],
+            "prompt": [
+              "Barril"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          },
+          {
+            "id": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007-SUB-18",
+            "kind": "open_exercise",
+            "title": "Bateria Sintética de Fixação · SUB-18",
+            "aliases": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-18"
+              }
+            ],
+            "sourceRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "sha256": "ec857fe63dc73d953a20454ca19ece3f651ab4789e6c0f1c8d150468761136f7"
+              }
+            ],
+            "contentRefs": [
+              {
+                "exampleId": "EX-A00-G02-ESTUDO-DA-SILABA-TEORIA-007",
+                "itemId": "SUB-18"
+              }
+            ],
+            "prompt": [
+              "Descer"
+            ],
+            "support": [
+              "Para cada uma das palavras a seguir, realize a divisão silábica, informe a classificação dos encontros vocálicos ou consonantais/dígrafos e determine a contagem de letras e fonemas."
+            ],
+            "grading": {
+              "available": false,
+              "reason": "Exercício de fixação sem alternativa múltipla."
+            },
+            "metadata": {
+              "board": null,
+              "year": null,
+              "organization": null,
+              "videoSource": "003, 004, 005, 006, 007",
+              "kbSource": "003, 004, 005, 006, 007",
+              "timestamp": null
+            }
+          }
+        ]
+      },
+      "supplementaryBlocks": []
+    },
+    "mnemonics": {
+      "blocks": [
+        {
+          "type": "mnemonic",
+          "mnemonicId": "MNEM-FON-01",
+          "title": "Dígrafo vs Encontro: 2x1 vs 2x2",
+          "content": "Dígrafo = 2 letras por 1 som. Encontro = 2 letras por 2 sons.",
+          "classification": "EXAM_HEURISTIC",
+          "appliesTo": "Contagem rápida de fonemas em questões objetivas.",
+          "limitations": "Atenção ao dífono 'x' = 1 letra por 2 sons (/ks/).",
+          "text": "Dígrafo (2 letras = 1 som) vs Encontro Consonantal (2 letras = 2 sons)."
+        }
+      ]
+    },
+    "traps": {
+      "items": [
+        {
+          "trapId": "TRAP-FON-01",
+          "title": "A Ilusão do QU/GU",
+          "trigger": "Palavras com 'qu' e 'gu' antes de 'e' ou 'i'.",
+          "whyItFails": "O aluno assume que todo 'qu'/'gu' é dígrafo, esquecendo que quando o 'u' é pronunciado, há encontro vocálico (ditongo).",
+          "correctApproach": "Verificar a pronúncia: em 'guerra' o 'u' é mudo (dígrafo); em 'aguentar' o 'u' é sonoro (ditongo crescente).",
+          "bankTechnique": "Colocar alternativas emparelhando 'questão' (dígrafo) com 'frequente' (ditongo).",
+          "counterRule": "Se o 'u' soar foneticamente, não há dígrafo."
+        }
+      ]
+    },
+    "glossary": {
+      "items": [
+        {
+          "term": "Semivogal",
+          "shortDefinition": "Fonema vocálico átono que se apoia em uma vogal na mesma sílaba.",
+          "domain": "Fonética e Fonologia",
+          "commonMisconception": "Pensar que semivogal pode formar o núcleo de uma sílaba sozinha."
+        }
+      ]
+    },
+    "recall": {
+      "prompts": [
+        {
+          "promptId": "REC-FON-01",
+          "question": "Qual a diferença essencial entre dígrafo e encontro consonantal?",
+          "keyPoints": [
+            "Dígrafo: duas letras representam um único fonema.",
+            "Encontro consonantal: duas consoantes mantêm fonemas autônomos."
+          ],
+          "targetConcept": "Dígrafo vs Encontro",
+          "targetLO": "LO-A00-G02-01"
+        }
+      ]
+    }
+  },
+  "questionDelivery": {
+    "version": 1,
+    "totalOccurrences": 9,
+    "availableCount": 9,
+    "reconstructedSha256": "0aa9375cb6e13044bc03ae2f8fa52a8cdc31edc1dd49451261926bd9fe9245f3",
+    "pages": [
+      {
+        "file": "question-pages/IP-A00-G02/questions-1.json",
+        "bytes": 19373,
+        "sha256": "e9990d0c141edea6c1836aa8e14291dd3f15af372a03aaee7ddaf09db257104a",
+        "count": 9,
+        "refs": [
+          "OQ-A00-aula00.q0006",
+          "OQ-A00-aula00.q0007",
+          "OQ-A00-aula00.q0074",
+          "OQ-A00-aula00.q0077",
+          "OQ-A00-aula00.q0089",
+          "OQ-A00-aula00.q0100",
+          "OQ-A00-aula00.q0104",
+          "OQ-A00-aula00.q0113",
+          "OQ-A00-aula00.q0204"
+        ]
+      }
+    ]
+  }
+}
